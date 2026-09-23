@@ -1,6 +1,6 @@
 # DRG C++ SDK for AssetGen
 
-The Deep Rock Galactic API headers that [AssetGen](https://github.com/Elytras/AssetGen) mods compile
+The Deep Rock Galactic API headers that [AssetGen](https://github.com/Elytras/CPP-to-blueprint-compiler) mods compile
 against, generated from an **unmodded** game. That means no MINT integration pak and no other mods,
 so every class and struct here is the stock one.
 

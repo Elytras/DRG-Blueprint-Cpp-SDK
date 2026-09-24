@@ -178,7 +178,7 @@ public:
     class APlayerCharacter* CleanPodItemUser;
     bool CleaningPodHasBeenCalled;
     static constexpr const char* CleaningPodHasBeenCalled__Replicated = "OnRep_CleaningPodHasBeenCalled:";
-    TMulticastInlineDelegate<void(TArray<BP_PlagueHeartShield_Base_C*> Shield)> UpdateShieldStatus;
+    TMulticastInlineDelegate<void(TArray<BP_PlagueHeartShield_Base_C*>& Shield)> UpdateShieldStatus;
     TArray<BP_PlagueHeartShield_Base_C*> Shields;
     FVector LastUpVector;
     FRotator BodyRotation;

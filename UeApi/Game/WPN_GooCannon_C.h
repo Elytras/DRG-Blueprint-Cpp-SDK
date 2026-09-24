@@ -62,9 +62,10 @@ public:
     void UserConstructionScript();
     void Handle_Charge_Audio(float charge);
     static constexpr const char* Handle_Charge_Audio__UeName = "Handle Charge Audio";
+    void FadeOutIfValid(class UAudioComponent*& AC);
     void GetNearbyPuddles();
     void ApplyUpgradeModifiers(class UItemUpgrade* ItemUpgrade);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

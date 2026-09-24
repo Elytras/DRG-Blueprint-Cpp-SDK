@@ -50,6 +50,7 @@ class UOnsetNRT : public UAudioSynesthesiaNRT
 public:
     UE_CLASS("/Script/AudioSynesthesia", "OnsetNRT");
     class UOnsetNRTSettings* Settings;
+    static constexpr const char* Settings__UeSubobject = "DefaultOnsetNRTSettings /Script/AudioSynesthesia.OnsetNRTSettings";
     void GetChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int InChannel, TArray<float>& OutOnsetTimestamps, TArray<float>& OutOnsetStrengths) const;
     void GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int InChannel, TArray<float>& OutOnsetTimestamps, TArray<float>& OutOnsetStrengths) const;
 };
@@ -82,6 +83,7 @@ class UConstantQNRT : public UAudioSynesthesiaNRT
 public:
     UE_CLASS("/Script/AudioSynesthesia", "ConstantQNRT");
     class UConstantQNRTSettings* Settings;
+    static constexpr const char* Settings__UeSubobject = "DefaultConstantQNRTSettings /Script/AudioSynesthesia.ConstantQNRTSettings";
     void GetChannelConstantQAtTime(float InSeconds, int InChannel, TArray<float>& OutConstantQ) const;
     void GetNormalizedChannelConstantQAtTime(float InSeconds, int InChannel, TArray<float>& OutConstantQ) const;
 };
@@ -102,6 +104,7 @@ class ULoudnessNRT : public UAudioSynesthesiaNRT
 public:
     UE_CLASS("/Script/AudioSynesthesia", "LoudnessNRT");
     class ULoudnessNRTSettings* Settings;
+    static constexpr const char* Settings__UeSubobject = "DefaultLoudnessNRTSettings /Script/AudioSynesthesia.LoudnessNRTSettings";
     void GetChannelLoudnessAtTime(float InSeconds, int InChannel, float& OutLoudness) const;
     void GetLoudnessAtTime(float InSeconds, float& OutLoudness) const;
     void GetNormalizedChannelLoudnessAtTime(float InSeconds, int InChannel, float& OutLoudness) const;

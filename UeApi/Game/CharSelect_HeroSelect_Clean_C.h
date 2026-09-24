@@ -54,12 +54,12 @@ public:
     void Next();
     void Prev();
     void Select();
-    FEventReply HandleKeyEvent(FKeyEvent InKeyEvent, bool IsDown, bool& Handled);
+    FEventReply HandleKeyEvent(FKeyEvent& InKeyEvent, bool IsDown, bool& Handled);
     void GetSelectedIndex(int& Index_0);
     void SetSelectedIndex(int Index_0, bool& Valid);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void HighlightClassChallenge(TArray<class UObject*> ClassRefs, bool ShouldHighlight, class USeasonChallenge* Challenge);
+    void HighlightClassChallenge(TArray<class UObject*>& ClassRefs, bool ShouldHighlight, class USeasonChallenge* Challenge);
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

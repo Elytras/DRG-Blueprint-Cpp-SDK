@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_UI_HazPlus_Condensed(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetMutators(TArray<FDifficultyMutatorItem> InMutator);
+    void SetMutators(TArray<FDifficultyMutatorItem>& InMutator);
     UE_PURE class UWidget* GetToolTip();
     void GetMutators(TArray<FDifficultyMutatorItem>& OutResult);
 };

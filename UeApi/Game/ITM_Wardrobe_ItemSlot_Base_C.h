@@ -113,7 +113,7 @@ public:
     void ReceiveGetSelectedIndex(int& OutIndex);
     void SelectorItemHovered(int Index_0);
     void SelectorItemUnhovered(int Index_0);
-    void SetRefreshSlotsOnChange(TArray<ITM_Wardrobe_ItemSlot_Base_C*> InOtherSlots);
+    void SetRefreshSlotsOnChange(TArray<ITM_Wardrobe_ItemSlot_Base_C*>& InOtherSlots);
     void ReceiveEquipItem(int InIndex, bool& OutSuccess);
     void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
     void SetHovered(bool InSlotHovered);

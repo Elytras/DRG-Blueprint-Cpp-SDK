@@ -81,7 +81,7 @@ public:
     void Reset();
     void SetData(class UGeneratedMission* mission_0, ITM_MisSel_FullBiome_C* BiomeController_0);
     UE_PURE bool HasMission();
-    void GetNumberOfActiveMissions(TArray<FBlueprintSessionResult> Array, int& sessions);
+    void GetNumberOfActiveMissions(TArray<FBlueprintSessionResult>& Array, int& sessions);
     void SelectOptions();
     void GetPlayerController(BP_PlayerController_SpaceRig_C*& AsBP_Player_Controller_Space_Rig);
     void ShouldEnableJoinButton(bool& Show);

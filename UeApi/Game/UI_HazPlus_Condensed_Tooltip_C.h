@@ -30,7 +30,7 @@ public:
     static constexpr const char* Text_Offset__UeName = "Text Offset";
     void ExecuteUbergraph_UI_HazPlus_Condensed_Tooltip(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetMutators(TArray<FDifficultyMutatorItem> InMutator);
+    void SetMutators(TArray<FDifficultyMutatorItem>& InMutator);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

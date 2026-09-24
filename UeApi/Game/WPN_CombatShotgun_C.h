@@ -52,7 +52,7 @@ public:
     void OnNotifyBegin_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void OnNotifyEnd_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun

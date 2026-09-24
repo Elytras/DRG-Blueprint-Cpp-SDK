@@ -1106,8 +1106,8 @@ class UKismetAnimationLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "KismetAnimationLibrary");
-    static float K2_CalculateVelocityFromPositionHistory(float DeltaSeconds, FVector Position, FPositionHistory History, int NumberOfSamples, float VelocityMin, float VelocityMax);
-    static float K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, FName SocketOrBoneName, FName ReferenceSocketOrBone, ERelativeTransformSpace SocketSpace, FVector OffsetInBoneSpace, FPositionHistory History, int NumberOfSamples, float VelocityMin, float VelocityMax, EEasingFuncType EasingType, FRuntimeFloatCurve CustomCurve);
+    static float K2_CalculateVelocityFromPositionHistory(float DeltaSeconds, FVector Position, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax);
+    static float K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, FName SocketOrBoneName, FName ReferenceSocketOrBone, ERelativeTransformSpace SocketSpace, FVector OffsetInBoneSpace, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax, EEasingFuncType EasingType, FRuntimeFloatCurve CustomCurve);
     UE_PURE static FVector K2_DirectionBetweenSockets(class USkeletalMeshComponent* Component, FName SocketOrBoneNameFrom, FName SocketOrBoneNameTo);
     UE_PURE static float K2_DistanceBetweenTwoSocketsAndMapRange(class USkeletalMeshComponent* Component, FName SocketOrBoneNameA, ERelativeTransformSpace SocketSpaceA, FName SocketOrBoneNameB, ERelativeTransformSpace SocketSpaceB, bool bRemapRange, float InRangeMin, float InRangeMax, float OutRangeMin, float OutRangeMax);
     static float K2_EndProfilingTimer(bool bLog, FString LogPrefix);

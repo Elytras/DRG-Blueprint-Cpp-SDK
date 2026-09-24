@@ -30,7 +30,7 @@ public:
     void ExecuteUbergraph_WPN_GrenadeLauncher(int EntryPoint);
     void CustomEvent1(class UItemUpgrade* Event);
     void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher

@@ -169,7 +169,7 @@ public:
     static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
     void Remove_Button_If_Condition(Header_ButtonCutCorner_C* InButton, bool InCondition);
     static constexpr const char* Remove_Button_If_Condition__UeName = "Remove Button If Condition";
-    void Remove_Buttons_If_Condition(TArray<Header_ButtonCutCorner_C*> InButtons, bool InCondition);
+    void Remove_Buttons_If_Condition(TArray<Header_ButtonCutCorner_C*>& InButtons, bool InCondition);
     static constexpr const char* Remove_Buttons_If_Condition__UeName = "Remove Buttons If Condition";
 };
 

@@ -70,7 +70,7 @@ public:
     void BndEvt__Button_MissionInfo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetData(class UGeneratedMission* mission, FGameDifficulty Difficulty);
-    void HandleAssignments(class UGeneratedMission* mission, FGameDifficulty optionalDifficulty);
+    void HandleAssignments(class UGeneratedMission* mission, FGameDifficulty& optionalDifficulty);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

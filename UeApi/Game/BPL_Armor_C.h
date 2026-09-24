@@ -17,7 +17,7 @@ class BPL_Armor_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/BPL_Armor", "BPL_Armor_C");
-    static void AddBaseArmorStats(class AFSDPlayerState* Player, TArray<FGearStatEntry> Stats, class UClass* armorClass, class UObject* __WorldContext);
+    static void AddBaseArmorStats(class AFSDPlayerState* Player, TArray<FGearStatEntry>& Stats, class UClass* armorClass, class UObject* __WorldContext);
 };
 
 }}}   // namespace Game::WeaponsNTools::Armor

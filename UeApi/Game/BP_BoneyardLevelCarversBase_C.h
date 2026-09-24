@@ -24,8 +24,8 @@ public:
     TArray<class UTerrainMaterial*> EligibleMaterialsRockFormation;
     void UserConstructionScript();
     void AddRockFormation(FTransform RelativeTransform, float TraceDistance, float RotationRandomAngle, float OffsetAlongSurface);
-    void RepositionToMiddle(TArray<class UStaticMesh*> InStaticMeshes, TArray<float> InHeights, TArray<float> InTraceThresholds);
-    int GetDistanceIndex(float InputValue, TArray<float> ThresholdLevels, bool& InRange);
+    void RepositionToMiddle(TArray<class UStaticMesh*>& InStaticMeshes, TArray<float>& InHeights, TArray<float>& InTraceThresholds);
+    int GetDistanceIndex(float InputValue, TArray<float>& ThresholdLevels, bool& InRange);
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers

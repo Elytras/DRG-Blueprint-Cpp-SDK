@@ -38,8 +38,8 @@ public:
     void SetIsCuttable(bool InCuttable);
     void SetCuttableTint(FLinearColor Appearance_Cuttable_Tint);
     void GetWireDistance(float InStartKey, float InEndKey, float& OutDist);
-    UE_COSMETIC void OnPaint(FPaintContext Context) const;
-    void DrawCurveEnd(FPaintContext Context, FVector2D DrawSize, FCurve2DAppearance InAppearance, float Start, float End, bool InvertTangents) const;
+    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
+    void DrawCurveEnd(FPaintContext& Context, FVector2D DrawSize, FCurve2DAppearance InAppearance, float Start, float End, bool InvertTangents) const;
 };
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse

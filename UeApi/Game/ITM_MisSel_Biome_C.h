@@ -79,11 +79,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Select();
     void Unselect();
-    void GetMissionsForBiome(TArray<class UGeneratedMission*> Array, TArray<class UGeneratedMission*>& missions_0);
-    void SortMissions(TArray<class UGeneratedMission*> missions_0, TMap<class UMissionTemplate*, int>& MissionCount1);
+    void GetMissionsForBiome(TArray<class UGeneratedMission*>& Array, TArray<class UGeneratedMission*>& missions_0);
+    void SortMissions(TArray<class UGeneratedMission*>& missions_0, TMap<class UMissionTemplate*, int>& MissionCount1);
     void GetController(BP_PlayerController_SpaceRig_C*& AsBP_Player_Controller_Space_Rig);
     UE_PURE bool HasMissions();
-    void CreateMissionIcons(TArray<class UGeneratedMission*> Array);
+    void CreateMissionIcons(TArray<class UGeneratedMission*>& Array);
     UE_PURE bool IsUnlocked();
     void SetCampaignVisiblity();
     void GetSoundCoordinate(FVector& SoundWorldPos);

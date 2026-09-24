@@ -63,7 +63,7 @@ public:
     void MakeBouncy();
     void OnImpacted(bool PredictedImpact, FHitResult HitResult);
     void BounceFeedback();
-    void HandleImpact(FHitResult HitResult);
+    void HandleImpact(FHitResult& HitResult);
     bool ShouldBreakArmorBeforeDamage(class AActor* Target);
     class UDamageComponent* GetDamageComponent();
 };

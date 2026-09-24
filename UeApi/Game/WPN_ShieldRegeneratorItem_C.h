@@ -33,7 +33,7 @@ public:
     void RecieveStartUsing();
     void UserConstructionScript();
     void UpdateMaterial();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator

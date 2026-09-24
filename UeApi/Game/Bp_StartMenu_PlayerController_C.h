@@ -48,7 +48,7 @@ public:
     FString Current_Id;
     static constexpr const char* Current_Id__UeName = "Current Id";
     void ShouldPromptUserToDeleteMainSaves(bool& Should, TArray<class UFSDSaveGame*>& outMainSaves);
-    void Prompt_Delete_Main_Save(TArray<class UFSDSaveGame*> Saves);
+    void Prompt_Delete_Main_Save(TArray<class UFSDSaveGame*>& Saves);
     static constexpr const char* Prompt_Delete_Main_Save__UeName = "Prompt Delete Main Save";
     void OnModdedSaveCancelled();
     void ModdingSavegameCheck(bool& WaitForCallback);

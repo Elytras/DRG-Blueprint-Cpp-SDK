@@ -9,6 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../Engine.h"
 #include "../FSD.h"
 
+class UMissionDNA;
 class UObject;
 class URoomGenerator;
 class URoomGeneratorGroup;
@@ -21,8 +22,9 @@ class BPL_ProceduralLevelSetup_C : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/BPL_ProceduralLevelSetup", "BPL_ProceduralLevelSetup_C");
     using PLS_Base_C = Game::Landscape::PLS_Base_C;
-    static void CreateLinearPathGrouped(PLS_Base_C* ProceduralSetup, FVector Origin, FVector PathDirection, int RoomCount, float horizontalDeviation, float verticalDeviation, FRandRange PathRoomDistance, TArray<class URoomGeneratorGroup*> RoomGroups, bool PlaceFirstRoomAtOrigin, bool AddRoomRadiusToRoomDistance, class UObject* __WorldContext, FVector& LastOrigin, int& LastRoomID, class URoomGenerator*& LastRoomGenerator);
-    static void CreateLinearPath(PLS_Base_C* ProceduralSetup, FVector Origin, FVector PathDirection, FVector2D GraphDeviation, int RoomCount, TArray<class URoomGenerator*> PathRooms, FRandRange PathRoomDistance, bool PlaceFirstRoomAtOrigin, class UObject* __WorldContext, FVector& LastOrigin, int& LastRoomID);
+    static void CreateLinearPathGrouped(PLS_Base_C* ProceduralSetup, FVector Origin, FVector PathDirection, int RoomCount, float horizontalDeviation, float verticalDeviation, FRandRange PathRoomDistance, TArray<class URoomGeneratorGroup*>& RoomGroups, bool PlaceFirstRoomAtOrigin, bool AddRoomRadiusToRoomDistance, class UObject* __WorldContext, FVector& LastOrigin, int& LastRoomID, class URoomGenerator*& LastRoomGenerator);
+    static void CreateLinearPath(PLS_Base_C* ProceduralSetup, FVector Origin, FVector& PathDirection, FVector2D& GraphDeviation, int RoomCount, TArray<class URoomGenerator*>& PathRooms, FRandRange& PathRoomDistance, bool PlaceFirstRoomAtOrigin, class UObject* __WorldContext, FVector& LastOrigin, int& LastRoomID);
+    static void CreateLinearPathFromDNA(PLS_Base_C* ProceduralSetup, FVector Origin, FVector PathDirection, float horizontalDeviation, float verticalDeviation, FRandRange PathRoomDistance, bool PlaceFirstRoomAtOrigin, bool AddRoomRadiusToRoomDistance, class UMissionDNA*& DNA, FRoomGeneratorGroupInstance& groupInstance, class UObject* __WorldContext, FVector& LastOrigin, int& LastRoomID, class URoomGenerator*& LastRoomGenerator);
 };
 
 }}}   // namespace Game::Landscape::ProceduralLevelSetups

@@ -80,7 +80,7 @@ public:
     void NextGroup();
     void PrevGroup();
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void GetNextAvailableRank(TArray<class UVanityItem*> In_Vanity_Items, int& VisibleRank);
+    void GetNextAvailableRank(TArray<class UVanityItem*>& In_Vanity_Items, int& VisibleRank);
     void SetPreviewItem(TScriptInterface<class ICraftable> Item, bool Show);
     void RefreshCanAfford();
 };

@@ -61,7 +61,7 @@ public:
     static constexpr const char* Increase_FOV__UeName = "Increase FOV";
     void OnTemperatureChanged(float temperature, bool overheated_0);
     class USceneComponent* GetHeatingAudioSceneComponent();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::Drills

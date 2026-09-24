@@ -37,7 +37,7 @@ public:
     void AddResourceCustom(class UResourceData* InResource, float InAmount, float InRequiredAmount, bool IconOnRight, bool ShowRequiredAmount_0);
     void Clear();
     void AddResource(class UResourceData* InResource, float InAmount, float InRequiredAmount);
-    void SetCraftingCost(TArray<FCraftingCost> Cost, bool& OutCanAfford);
+    void SetCraftingCost(TArray<FCraftingCost>& Cost, bool& OutCanAfford);
     void SetFromDict(TMap<class UResourceData*, int> InResources);
 };
 

@@ -33,7 +33,7 @@ public:
     void ExecuteUbergraph_ITM_Campaign_Icon(int EntryPoint);
     void SetCampaignIconData(TArray<class UGeneratedMission*> missions);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void IsAnyMissionCampaign(TArray<class UGeneratedMission*> missions, class AFSDPlayerState* Player, bool& IsOnMission);
+    void IsAnyMissionCampaign(TArray<class UGeneratedMission*>& missions, class AFSDPlayerState* Player, bool& IsOnMission);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

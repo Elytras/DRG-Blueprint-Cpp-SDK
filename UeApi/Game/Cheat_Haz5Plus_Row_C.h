@@ -34,7 +34,7 @@ public:
     void BndEvt__Cheat_SetPerk_Row_MinusBtn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void SetMutatorForRow(class UDifficultyMutatorSetupItem* Mutator);
     void FindCurrentMutatorRank(class UDifficultyMutatorSetupItem* LookUpMutator, int& Rank);
-    void ChangeMutatorRank(TArray<FDifficultyMutatorItem> InMutators, class UDifficultyMutatorSetupItem* InMutatorToChange, int NewRank, TArray<FDifficultyMutatorItem>& OutMutators);
+    void ChangeMutatorRank(TArray<FDifficultyMutatorItem>& InMutators, class UDifficultyMutatorSetupItem* InMutatorToChange, int NewRank, TArray<FDifficultyMutatorItem>& OutMutators);
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

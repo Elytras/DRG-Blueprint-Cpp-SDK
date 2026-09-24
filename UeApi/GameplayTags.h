@@ -153,8 +153,8 @@ class UBlueprintGameplayTagLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/GameplayTags", "BlueprintGameplayTagLibrary");
-    static void AddGameplayTag(FGameplayTagContainer TagContainer, FGameplayTag Tag);
-    static void AppendGameplayTagContainers(FGameplayTagContainer InOutTagContainer, FGameplayTagContainer InTagContainer);
+    static void AddGameplayTag(FGameplayTagContainer& TagContainer, FGameplayTag Tag);
+    static void AppendGameplayTagContainers(FGameplayTagContainer& InOutTagContainer, FGameplayTagContainer InTagContainer);
     static void BreakGameplayTagContainer(FGameplayTagContainer GameplayTagContainer, TArray<FGameplayTag>& GameplayTags);
     UE_PURE static bool DoesContainerMatchTagQuery(FGameplayTagContainer TagContainer, FGameplayTagQuery tagQuery);
     UE_PURE static bool DoesTagAssetInterfaceHaveTag(TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface, FGameplayTag Tag);
@@ -183,7 +183,7 @@ public:
     UE_PURE static bool NotEqual_GameplayTagContainer(FGameplayTagContainer A, FGameplayTagContainer B);
     UE_PURE static bool NotEqual_TagContainerTagContainer(FGameplayTagContainer A, FString B);
     UE_PURE static bool NotEqual_TagTag(FGameplayTag A, FString B);
-    static bool RemoveGameplayTag(FGameplayTagContainer TagContainer, FGameplayTag Tag);
+    static bool RemoveGameplayTag(FGameplayTagContainer& TagContainer, FGameplayTag Tag);
 };
 
 class IGameplayTagAssetInterface

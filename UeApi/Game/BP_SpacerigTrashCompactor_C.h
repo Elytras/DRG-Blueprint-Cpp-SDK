@@ -51,7 +51,7 @@ public:
     void Fadeout__UpdateFunc();
     void Fadeout__FinishedFunc();
     void SetupInstances();
-    void AddStaticMeshes(TArray<FTransform> Transforms);
+    void AddStaticMeshes(TArray<FTransform>& Transforms);
     void ChooseList();
 };
 

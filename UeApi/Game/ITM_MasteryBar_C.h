@@ -42,7 +42,7 @@ public:
     void ExecuteUbergraph_ITM_MasteryBar(int EntryPoint);
     void ItemUpgradePurchased();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void CreateMasteryLevels(int maxMastery, int CurrentMastery, class UItemID* Item, TArray<FMasteryItem> masteryLevels);
+    void CreateMasteryLevels(int maxMastery, int CurrentMastery, class UItemID* Item, TArray<FMasteryItem>& masteryLevels);
     void AddMasteryBox(class UWidget* Content);
     void SetMasteryData(class AFSDPlayerState* Player, class UItemID* Item, bool& HasMasteryLevels);
 };

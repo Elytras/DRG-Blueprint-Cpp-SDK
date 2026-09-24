@@ -42,7 +42,7 @@ public:
     void OnExploded();
     void UserConstructionScript();
     void OnRep_ParticleRandomSeed();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

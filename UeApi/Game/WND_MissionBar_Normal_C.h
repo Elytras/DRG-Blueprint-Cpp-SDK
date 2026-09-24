@@ -76,7 +76,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetGeneratedMission(class UGeneratedMission* InMission);
     void CampaignChecks(class UGeneratedMission* mission, bool& CampaignMission, bool& AreRestrictionsMet);
-    void SetDifficultyData(FGameDifficulty Target);
+    void SetDifficultyData(FGameDifficulty& Target);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview

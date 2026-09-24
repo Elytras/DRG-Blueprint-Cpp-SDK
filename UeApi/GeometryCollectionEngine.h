@@ -251,9 +251,9 @@ public:
     void SetCollisionEventRequestSettings(FChaosCollisionEventRequestSettings InSettings);
     void SetTrailingEventEnabled(bool bIsEnabled);
     void SetTrailingEventRequestSettings(FChaosTrailingEventRequestSettings InSettings);
-    void SortBreakingEvents(TArray<FChaosBreakingEventData> BreakingEvents, EChaosBreakingSortMethod SortMethod);
-    void SortCollisionEvents(TArray<FChaosCollisionEventData> CollisionEvents, EChaosCollisionSortMethod SortMethod);
-    void SortTrailingEvents(TArray<FChaosTrailingEventData> TrailingEvents, EChaosTrailingSortMethod SortMethod);
+    void SortBreakingEvents(TArray<FChaosBreakingEventData>& BreakingEvents, EChaosBreakingSortMethod SortMethod);
+    void SortCollisionEvents(TArray<FChaosCollisionEventData>& CollisionEvents, EChaosCollisionSortMethod SortMethod);
+    void SortTrailingEvents(TArray<FChaosTrailingEventData>& TrailingEvents, EChaosTrailingSortMethod SortMethod);
     UE_PURE bool IsEventListening() const;
 };
 
@@ -263,6 +263,8 @@ public:
     UE_CLASS("/Script/GeometryCollectionEngine", "GeometryCollectionActor");
     class UGeometryCollectionComponent* GeometryCollectionComponent;
     class UGeometryCollectionDebugDrawComponent* GeometryCollectionDebugDrawComponent;
+    static constexpr const char* GeometryCollectionComponent__UeSubobject = "GeometryCollectionComponent0 /Script/GeometryCollectionEngine.GeometryCollectionComponent";
+    static constexpr const char* RootComponent__UeSubobject = "GeometryCollectionComponent0 /Script/GeometryCollectionEngine.GeometryCollectionComponent";
     bool RaycastSingle(FVector Start, FVector End, FHitResult& OutHit) const;
 };
 
@@ -386,6 +388,7 @@ public:
     FColor VertexIndexColor;
     FColor VertexNormalColor;
     class UBillboardComponent* SpriteComponent;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
 };
 
 class UGeometryCollectionDebugDrawComponent : public UActorComponent
@@ -437,6 +440,7 @@ public:
     float Isovalue;
     bool Enabled;
     bool RenderVolumeBoundingBox;
+    static constexpr const char* RootComponent__UeSubobject = "PostProcessComponent0 /Script/Engine.PostProcessComponent";
 };
 
 class USkeletalMeshSimulationComponent : public UActorComponent

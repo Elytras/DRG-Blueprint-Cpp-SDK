@@ -36,7 +36,7 @@ public:
     class UVerticalBox* RewardHolder;
     UI_MasteryReward_C* UI_MasteryReward;
     class UImage* UpperBarCorner;
-    TMulticastInlineDelegate<void(TArray<class UUnlockReward*> Rewards)> OnFinished;
+    TMulticastInlineDelegate<void(TArray<class UUnlockReward*>& Rewards)> OnFinished;
     TArray<class UUnlockReward*> Unlocks;
     void ExecuteUbergraph_ITM_UnlockedCelebration(int EntryPoint);
     void ShowRewards(FMasteryItem Rewards, class UClass* Item);

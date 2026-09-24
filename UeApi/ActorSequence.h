@@ -52,6 +52,7 @@ public:
     UE_CLASS("/Script/ActorSequence", "ActorSequence");
     class UMovieScene* MovieScene;
     FActorSequenceObjectReferenceMap ObjectReferences;
+    static constexpr const char* MovieScene__UeSubobject = "MovieScene /Script/MovieScene.MovieScene";
 };
 
 class UActorSequenceComponent : public UActorComponent
@@ -61,6 +62,7 @@ public:
     FMovieSceneSequencePlaybackSettings PlaybackSettings;
     class UActorSequence* Sequence;
     class UActorSequencePlayer* SequencePlayer;
+    static constexpr const char* Sequence__UeSubobject = "Sequence /Script/ActorSequence.ActorSequence";
 };
 
 class UActorSequencePlayer : public UMovieSceneSequencePlayer

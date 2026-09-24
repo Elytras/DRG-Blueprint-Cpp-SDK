@@ -95,7 +95,7 @@ public:
     void OnCloseMenuReleased(bool& Handled);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void HighlightClassChallenges(TArray<class UObject*> AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
+    void HighlightClassChallenges(TArray<class UObject*>& AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

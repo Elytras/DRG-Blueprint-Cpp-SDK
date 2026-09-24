@@ -31,7 +31,7 @@ public:
     void ExecuteUbergraph_ITM_Loadout_UpgradeBar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void GetUpgradeFromList(int Index_0, TArray<class UItemUpgrade*> Upgrades, class UItemUpgrade*& Output);
+    void GetUpgradeFromList(int Index_0, TArray<class UItemUpgrade*>& Upgrades, class UItemUpgrade*& Output);
     void ShowItemUpgrades(class UPlayerCharacterID* InCharacterID, class UClass* InItemClass, class AFSDPlayerState* InPlayerState, bool EnableHoverTooltip);
 };
 

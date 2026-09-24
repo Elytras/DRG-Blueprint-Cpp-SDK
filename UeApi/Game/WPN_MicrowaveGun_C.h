@@ -61,7 +61,7 @@ public:
     void AddedToInventory(class APlayerCharacter* ItemOwner);
     void ReceiveBeginPlay();
     void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun

@@ -77,7 +77,7 @@ public:
     void RecieveEquipped();
     void ReceiveBeginPlay();
     void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

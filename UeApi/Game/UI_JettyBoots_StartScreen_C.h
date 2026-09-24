@@ -34,7 +34,7 @@ public:
     UE_COSMETIC void Construct();
     void Finished_FD22870B47131B500E9FB18111157FEE();
     void Finished_501568F5450B58B30B9BA992AA66184E();
-    void SetHighScores(TArray<FJettyBootsScore> InHighScores, int InLastIndex, int& OutCurrentBest);
+    void SetHighScores(TArray<FJettyBootsScore>& InHighScores, int InLastIndex, int& OutCurrentBest);
     void Start(bool StartWithHighScores);
     void SetFSDEventSettings(bool InHasSettings, FJettyBootEventSettings InSettings);
 };

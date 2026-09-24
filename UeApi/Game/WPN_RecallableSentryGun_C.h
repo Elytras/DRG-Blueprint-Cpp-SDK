@@ -22,7 +22,7 @@ public:
     void ExecuteUbergraph_WPN_RecallableSentryGun(int EntryPoint);
     void BndEvt__WPN_RecallableSentryGun_ItemPlacer_K2Node_ComponentBoundEvent_0_MarkerDelegate__DelegateSignature(class AItemMarker* Marker);
     void SetArcIndicatorActive(bool Active);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

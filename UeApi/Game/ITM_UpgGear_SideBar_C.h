@@ -62,6 +62,7 @@ public:
     void BuyConfirmation(bool Yes);
     void BndEvt__Basic_FlatButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Basic_FlatButton_C* Button);
     void SetYesNoPrompt(Basic_Popup_YesNoPrompt_C* Prompt);
+    void SetItem(class UClass*& InCharacterClass, class UClass*& InItemClass, EItemCategory& InCategory);
     void SetUpgradePurchasedShout(class UDialogDataAsset* ShoutUpgradePurchased_0);
     void SetCompactModeProgress(float InValue);
     void SetActivePage(class UWidget* Widget);

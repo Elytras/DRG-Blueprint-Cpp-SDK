@@ -64,7 +64,7 @@ public:
     void LockingStopped_Event();
     void LockingStarted_Event();
     void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle

@@ -61,7 +61,7 @@ public:
     void SetSession(FBlueprintSessionResult Session_0);
     void SetNoMission();
     void ToggleMissionDetails(bool Visible, bool& OutVisible);
-    void SetColumnWidths(TArray<float> InWidths);
+    void SetColumnWidths(TArray<float>& InWidths);
     UE_PURE class UWidget* GetMissionToolTip();
     void SetMissionNameWidth(float Width);
     void SetServername();

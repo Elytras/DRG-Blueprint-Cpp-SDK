@@ -68,7 +68,7 @@ public:
     void GetCableParent(class USceneComponent*& Muzzle);
     void SetCableEndPoint(FVector Location);
     UE_PURE FTransform GetCableTransform();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun

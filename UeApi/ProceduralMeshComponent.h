@@ -62,7 +62,7 @@ class UKismetProceduralMeshLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/ProceduralMeshComponent", "KismetProceduralMeshLibrary");
     static void CalculateTangentsForMesh(TArray<FVector> Vertices, TArray<int> Triangles, TArray<FVector2D> UVs, TArray<FVector>& Normals, TArray<FProcMeshTangent>& Tangents);
-    static void ConvertQuadToTriangles(TArray<int> Triangles, int Vert0, int Vert1, int Vert2, int Vert3);
+    static void ConvertQuadToTriangles(TArray<int>& Triangles, int Vert0, int Vert1, int Vert2, int Vert3);
     static void CopyProceduralMeshFromStaticMeshComponent(class UStaticMeshComponent* StaticMeshComponent, int LODIndex, class UProceduralMeshComponent* ProcMeshComponent, bool bCreateCollision);
     static void CreateGridMeshSplit(int NumX, int NumY, TArray<int>& Triangles, TArray<FVector>& Vertices, TArray<FVector2D>& UVs, TArray<FVector2D>& UV1s, float GridSpacing);
     static void CreateGridMeshTriangles(int NumX, int NumY, bool bWinding, TArray<int>& Triangles);

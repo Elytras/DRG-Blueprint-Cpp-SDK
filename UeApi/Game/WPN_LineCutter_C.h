@@ -81,7 +81,7 @@ public:
     void GetHomingIgnoreList(TArray<class AActor*>& OutTargets);
     void Get_Homing_Target_Location(FVector& OutLocation);
     static constexpr const char* Get_Homing_Target_Location__UeName = "Get Homing Target Location";
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

@@ -64,7 +64,7 @@ public:
     void SetAnimOpenProgress(float InProgress);
     void ItemHovered(int Index_0, ITM_Wardrobe_ItemSelector_Entry_C* InEntryWidget);
     void ItemUnhovered(int Index_0, ITM_Wardrobe_ItemSelector_Entry_C* InEntryWidget);
-    void SetVisibleItems(TArray<ITM_Wardrobe_ItemSelector_Entry_C*> InItems);
+    void SetVisibleItems(TArray<ITM_Wardrobe_ItemSelector_Entry_C*>& InItems);
     void ApplyFilter();
     void IsOpen(bool& SelectorOpen_0);
     void Close();

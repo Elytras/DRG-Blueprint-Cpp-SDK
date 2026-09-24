@@ -19,7 +19,7 @@ public:
     float EstimatedStartDuration;
     float InitialDelay;
     FVector GetRandomLaunchLocation();
-    void GetClosestLaunchLocation(FVector TargetLocation, FVector& Result);
+    void GetClosestLaunchLocation(FVector& TargetLocation, FVector& Result);
     UE_PURE bool HasAutority();
     void GetClosestPhaseBombSocket(FVector Location, FName& Result);
     void GetEstimatedStartDuration(float& StartDuration);

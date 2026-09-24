@@ -27,7 +27,7 @@ public:
     float ClusterEjectionForce;
     void ExecuteUbergraph_Grenade_Cluster(int EntryPoint);
     void OnExploded();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Cluster

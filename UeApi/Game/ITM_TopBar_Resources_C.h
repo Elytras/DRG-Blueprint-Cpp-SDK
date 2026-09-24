@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_ITM_TopBar_Resources(int EntryPoint);
     void UpdateResourceBehavior(bool HideWhenZero_0, bool DoCountAnim_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime_0);
-    void SetResources(TArray<class UResourceData*> InResources);
+    void SetResources(TArray<class UResourceData*>& InResources);
     void AddResource(class UResourceData* InResource, bool InHideWhenZero);
     void GetResourceAmount(class UResourceData* Resource, float& amount);
 };

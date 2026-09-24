@@ -103,7 +103,7 @@ public:
     void BndEvt__ITM_Skins_Mesh_K2Node_ComponentBoundEvent_6_OnOpened__DelegateSignature();
     void BndEvt__ITM_Skins_Color_K2Node_ComponentBoundEvent_5_OnOpened__DelegateSignature();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_0_NewLoadoutSelected__DelegateSignature();
-    void OnFinished(TArray<class UUnlockReward*> Rewards);
+    void OnFinished(TArray<class UUnlockReward*>& Rewards);
     void OnItemRewarded(FMasteryItem Reward);
     void OnPreviewUpgradeChangedEvent(class UItemUpgrade* PreviewUpgrade);
     void OnGrenadeSelected(class UClass* itemClass_0, bool Equip, bool IsUnlocked);

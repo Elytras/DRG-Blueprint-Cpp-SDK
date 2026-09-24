@@ -29,7 +29,7 @@ public:
     void ReceiveSubObjectiveActivated(class ABatchSubObjective* SubObjective, class APlayerCharacter* instigatingPlayer);
     FText GetObjectiveDescription(float missionLength);
     void MarkSpecialDigsites();
-    void GetNumberOfSpecialDigsites(TArray<class AActor*> TargetArray, int& Count);
+    void GetNumberOfSpecialDigsites(TArray<class AActor*>& TargetArray, int& Count);
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
     class UTexture2D* GetObjectiveIcon() const;

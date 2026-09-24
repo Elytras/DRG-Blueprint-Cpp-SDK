@@ -24,7 +24,7 @@ public:
     using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
     using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    TMulticastInlineDelegate<void(TArray<TScriptInterface<class ICraftable>> NewItems)> OnAvailableCraftingItems;
+    TMulticastInlineDelegate<void(TArray<TScriptInterface<class ICraftable>>& NewItems)> OnAvailableCraftingItems;
     bool EligibleForRetirementAssignment;
     TMulticastInlineDelegate<void(BP_GameInstance_C* GameInstance)> OnEligibleForRetirementAssignment;
     WND_JoiningPassword_C* JoinFriendInvitePasswordWidget;

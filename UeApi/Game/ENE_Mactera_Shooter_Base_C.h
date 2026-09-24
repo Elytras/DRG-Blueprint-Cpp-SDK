@@ -59,7 +59,7 @@ public:
     void SetBurnMaterialSettings();
     void SetCookMaterialSettings();
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemcialArrow);
-    UE_PURE bool ShouldExplode(TArray<class UDamageTag*> Tags_0) const;
+    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0) const;
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

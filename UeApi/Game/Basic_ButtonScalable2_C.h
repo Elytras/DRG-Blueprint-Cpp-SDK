@@ -87,6 +87,7 @@ public:
     void OnNewLine(int Index_0);
     void SetIconTint(FLinearColor PC__Icon_Tint, FLinearColor Controller_Icon_Tint);
     void SetTints(FLinearColor PC__Icon_Tint, FLinearColor Controller_Icon_Tint);
+    void SetIconBrush(class UImage*& Icon, FSlateBrush InBrush, FMargin InPadding);
     void SetCountDown(int SecondsRemaining, int MinimumIntegralDigits);
     void HideCountDown();
 };

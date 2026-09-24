@@ -54,7 +54,7 @@ public:
     void ReceiveBeginPlay();
     void OnExploded();
     void ReceiveTick(float DeltaSeconds);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy

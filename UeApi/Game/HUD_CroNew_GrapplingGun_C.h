@@ -23,7 +23,7 @@ public:
     class UTextBlock* Text_Distance;
     class UTextBlock* Text_FailMessage;
     FTimerHandle FailTimer;
-    void FailMessage(FText Msg);
+    void FailMessage(FText& Msg);
     void DistanceMessage(float Dist, bool TooFar);
     void ClearMessages();
     void Recharging(float Progress);

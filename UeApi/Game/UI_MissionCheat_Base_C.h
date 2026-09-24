@@ -7,12 +7,19 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../UMG.h"
 
+class AActor;
+class UPanelWidget;
+namespace Game { namespace UI { namespace Menu_Cheats { class CheatMenu_BasicButtonWText_C; }}}
+
 namespace Game { namespace UI { namespace Menu_Cheats { namespace MissionCheat {
 
 class UI_MissionCheat_Base_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_MissionCheat_Base", "UI_MissionCheat_Base_C");
+    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    CheatMenu_BasicButtonWText_C* CreateButton(FString Base_Text, FString Item_Text, class UPanelWidget*& Panel, TArray<CheatMenu_BasicButtonWText_C*> TargetArray);
+    void TeleportTo(float desiredDistance, class AActor*& Taget);
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat

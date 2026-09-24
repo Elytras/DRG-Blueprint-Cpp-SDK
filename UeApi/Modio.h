@@ -850,34 +850,34 @@ class UModioCreateModLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioCreateModLibrary");
-    static void SetChangelogString(FModioCreateModFileParams In, FString Changelog);
-    static void SetDescription(FModioCreateModParams In, FString Description);
-    static void SetHomepageURL(FModioCreateModParams In, FString HomepageURL);
-    static void SetInitialVisibility(FModioCreateModParams In, EModioObjectVisibilityFlags InitialVisibility);
-    static void SetInitialVisibility_DEPRECATED(FModioCreateModParams In, bool InitialVisibility);
-    static void SetMarkAsActiveRelease(FModioCreateModFileParams In, bool bMarkAsActiveRelease);
-    static void SetMetadataBlob(FModioCreateModParams In, FString MetadataBlob);
-    static void SetModFileMetadataBlob(FModioCreateModFileParams In, FString MetadataBlob);
-    static void SetModfilePlatforms(FModioCreateModFileParams In, TArray<EModioModfilePlatform> Platforms);
-    static void SetTags(FModioCreateModParams In, TArray<FString> Tags);
-    static void SetVersionString(FModioCreateModFileParams In, FString Version);
+    static void SetChangelogString(FModioCreateModFileParams& In, FString Changelog);
+    static void SetDescription(FModioCreateModParams& In, FString Description);
+    static void SetHomepageURL(FModioCreateModParams& In, FString HomepageURL);
+    static void SetInitialVisibility(FModioCreateModParams& In, EModioObjectVisibilityFlags InitialVisibility);
+    static void SetInitialVisibility_DEPRECATED(FModioCreateModParams& In, bool InitialVisibility);
+    static void SetMarkAsActiveRelease(FModioCreateModFileParams& In, bool bMarkAsActiveRelease);
+    static void SetMetadataBlob(FModioCreateModParams& In, FString MetadataBlob);
+    static void SetModFileMetadataBlob(FModioCreateModFileParams& In, FString MetadataBlob);
+    static void SetModfilePlatforms(FModioCreateModFileParams& In, TArray<EModioModfilePlatform>& Platforms);
+    static void SetTags(FModioCreateModParams& In, TArray<FString>& Tags);
+    static void SetVersionString(FModioCreateModFileParams& In, FString Version);
 };
 
 class UModioEditModLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioEditModLibrary");
-    static void SetDescription(FModioEditModParams In, FString Description);
-    static void SetHomepageURL(FModioEditModParams In, FString HomepageURL);
-    static void SetLogoPath(FModioEditModParams In, FString LogoPath);
-    static void SetMaturityFlags(FModioEditModParams In, EModioMaturityFlags MaturityFlags);
-    static void SetMetadataBlob(FModioEditModParams In, FString MetadataBlob);
-    static void SetName(FModioEditModParams In, FString Name_0);
-    static void SetNamePath(FModioEditModParams In, FString NamePath);
-    static void SetSummary(FModioEditModParams In, FString Summary);
-    static void SetTags(FModioEditModParams In, TArray<FString> Tags);
-    static void SetVisibility(FModioEditModParams In, EModioObjectVisibilityFlags Visibility);
-    static void SetVisibility_DEPRECATED(FModioEditModParams In, bool Visibility);
+    static void SetDescription(FModioEditModParams& In, FString Description);
+    static void SetHomepageURL(FModioEditModParams& In, FString HomepageURL);
+    static void SetLogoPath(FModioEditModParams& In, FString LogoPath);
+    static void SetMaturityFlags(FModioEditModParams& In, EModioMaturityFlags MaturityFlags);
+    static void SetMetadataBlob(FModioEditModParams& In, FString MetadataBlob);
+    static void SetName(FModioEditModParams& In, FString Name_0);
+    static void SetNamePath(FModioEditModParams& In, FString NamePath);
+    static void SetSummary(FModioEditModParams& In, FString Summary);
+    static void SetTags(FModioEditModParams& In, TArray<FString>& Tags);
+    static void SetVisibility(FModioEditModParams& In, EModioObjectVisibilityFlags Visibility);
+    static void SetVisibility_DEPRECATED(FModioEditModParams& In, bool Visibility);
 };
 
 class UModioErrorCodeLibrary : public UBlueprintFunctionLibrary
@@ -910,20 +910,20 @@ class UModioFilterParamsLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioFilterParamsLibrary");
-    UE_PURE static FModioFilterParams ExcludingIDs(FModioFilterParams Filter, TArray<FModioModID> IDs);
-    UE_PURE static FModioFilterParams IndexedResults(FModioFilterParams Filter, int64 StartIndex, int64 ResultCount);
-    UE_PURE static FModioFilterParams MarkedLiveAfter(FModioFilterParams Filter, FDateTime LiveAfter);
-    UE_PURE static FModioFilterParams MarkedLiveBefore(FModioFilterParams Filter, FDateTime LiveBefore);
-    UE_PURE static FModioFilterParams MatchingIDs(FModioFilterParams Filter, TArray<FModioModID> IDs);
-    UE_PURE static FModioFilterParams MetadataLike(FModioFilterParams Filter, FString SearchString);
-    UE_PURE static FModioFilterParams NameContains(FModioFilterParams Filter, FString SearchString);
-    UE_PURE static FModioFilterParams NameContainsStrings(FModioFilterParams Filter, TArray<FString> SearchStrings);
-    UE_PURE static FModioFilterParams PagedResults(FModioFilterParams Filter, int64 PageNumber, int64 PageSize);
-    UE_PURE static FModioFilterParams SortBy(FModioFilterParams Filter, EModioSortFieldType ByField, EModioSortDirection ByDirection);
-    UE_PURE static FModioFilterParams WithoutTag(FModioFilterParams Filter, FString Tag);
-    UE_PURE static FModioFilterParams WithoutTags(FModioFilterParams Filter, TArray<FString> NewTags);
-    UE_PURE static FModioFilterParams WithTag(FModioFilterParams Filter, FString Tag);
-    UE_PURE static FModioFilterParams WithTags(FModioFilterParams Filter, TArray<FString> NewTags);
+    static FModioFilterParams ExcludingIDs(FModioFilterParams& Filter, TArray<FModioModID> IDs);
+    static FModioFilterParams IndexedResults(FModioFilterParams& Filter, int64 StartIndex, int64 ResultCount);
+    static FModioFilterParams MarkedLiveAfter(FModioFilterParams& Filter, FDateTime LiveAfter);
+    static FModioFilterParams MarkedLiveBefore(FModioFilterParams& Filter, FDateTime LiveBefore);
+    static FModioFilterParams MatchingIDs(FModioFilterParams& Filter, TArray<FModioModID> IDs);
+    static FModioFilterParams MetadataLike(FModioFilterParams& Filter, FString SearchString);
+    static FModioFilterParams NameContains(FModioFilterParams& Filter, FString SearchString);
+    static FModioFilterParams NameContainsStrings(FModioFilterParams& Filter, TArray<FString> SearchStrings);
+    static FModioFilterParams PagedResults(FModioFilterParams& Filter, int64 PageNumber, int64 PageSize);
+    static FModioFilterParams SortBy(FModioFilterParams& Filter, EModioSortFieldType ByField, EModioSortDirection ByDirection);
+    static FModioFilterParams WithoutTag(FModioFilterParams& Filter, FString Tag);
+    static FModioFilterParams WithoutTags(FModioFilterParams& Filter, TArray<FString> NewTags);
+    static FModioFilterParams WithTag(FModioFilterParams& Filter, FString Tag);
+    static FModioFilterParams WithTags(FModioFilterParams& Filter, TArray<FString> NewTags);
 };
 
 class UModioImageLibrary : public UBlueprintFunctionLibrary

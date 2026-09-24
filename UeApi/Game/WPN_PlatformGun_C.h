@@ -42,7 +42,7 @@ public:
     void Upgraded_Blueprint_Implementation(TArray<class UItemUpgrade*> Upgrades);
     void BndEvt__ProjectileLauncher_K2Node_ComponentBoundEvent_4_WeaponFiredDelegate__DelegateSignature(FVector Location);
     void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun

@@ -34,7 +34,7 @@ public:
     void EnableWeakeningEffect();
     void OnRep_Stick();
     void AttachToValidSurface();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG

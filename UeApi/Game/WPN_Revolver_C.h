@@ -53,7 +53,7 @@ public:
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
     void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
 };

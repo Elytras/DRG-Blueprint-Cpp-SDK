@@ -139,7 +139,7 @@ public:
     void BndEvt___SCREEN_MissionSelectionMK3_Button_Dice_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
     void BndEvt___SCREEN_MissionSelectionMK3_Button_Dice_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void OnDifficultyChanged(FGameDifficulty NewDifficulty, class UGeneratedMission* mission);
-    void BndEvt__ITM_Challenge_InfoBox_K2Node_ComponentBoundEvent_1_OnChallengeHovered__DelegateSignature(TArray<class UObject*> AssetReferences, bool InHovered, class USeasonChallenge* Challenge);
+    void BndEvt__ITM_Challenge_InfoBox_K2Node_ComponentBoundEvent_1_OnChallengeHovered__DelegateSignature(TArray<class UObject*>& AssetReferences, bool InHovered, class USeasonChallenge* Challenge);
     void OnStartSoloMission();
     void StartupCameraPan();
     void OnClosed();

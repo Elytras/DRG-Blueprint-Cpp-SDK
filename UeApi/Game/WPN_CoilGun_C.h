@@ -93,7 +93,8 @@ public:
     void UserConstructionScript();
     void HandleChargeAudio(float charge);
     void HandleHeatAudio();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void FadeOutIfValid(class UAudioComponent*& AC);
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

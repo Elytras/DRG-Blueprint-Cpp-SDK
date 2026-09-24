@@ -53,7 +53,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Should_Show_Online_Restriction(bool& Should_Show);
     static constexpr const char* Should_Show_Online_Restriction__UeName = "Should Show Online Restriction";
-    void SetBlockedReasonString(TArray<EBlueprintablePrivilegeResults> InResults);
+    void SetBlockedReasonString(TArray<EBlueprintablePrivilegeResults>& InResults);
     void SetBlockSolution(EBlueprintablePrivilegeResults priviligeResults);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetFontSize(int inFontSize);

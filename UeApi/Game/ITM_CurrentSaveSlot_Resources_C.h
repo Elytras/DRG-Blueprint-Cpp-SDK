@@ -28,7 +28,7 @@ public:
     bool IsDesignTime;
     void ExecuteUbergraph_ITM_CurrentSaveSlot_Resources(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime_0);
-    void SetResources(TArray<class UResourceData*> InResources);
+    void SetResources(TArray<class UResourceData*>& InResources);
     void AddResource(class UResourceData* InResource, bool InHideWhenZero, int Index_0);
     void UpdateResourceAmount(class UFSDSaveGame* SaveSlot);
 };

@@ -29,7 +29,7 @@ public:
     int MaxIcons;
     void ExecuteUbergraph_TOOLTIP_ServerEntry_Team(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(ITM_ServerList_Entry_PlayerIcons_C* TeamWidget, TArray<class UPlayerCharacterID*> Players, bool IsClassLocked);
+    void SetData(ITM_ServerList_Entry_PlayerIcons_C* TeamWidget, TArray<class UPlayerCharacterID*>& Players, bool IsClassLocked);
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

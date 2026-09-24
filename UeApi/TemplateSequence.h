@@ -93,6 +93,8 @@ public:
     bool bRandomSegment;
     class USequenceCameraShakeSequencePlayer* Player;
     class USequenceCameraShakeCameraStandIn* CameraStandIn;
+    static constexpr const char* CameraStandIn__UeSubobject = "CameraStandIn /Script/TemplateSequence.SequenceCameraShakeCameraStandIn";
+    static constexpr const char* Player__UeSubobject = "Player /Script/TemplateSequence.SequenceCameraShakeSequencePlayer";
 };
 
 class USequenceCameraShakeSequencePlayer : public UObject
@@ -113,6 +115,8 @@ public:
     static constexpr const char* SequencePlayer__Replicated = ":";
     FSoftObjectPath TemplateSequence;
     FTemplateSequenceBindingOverrideData BindingOverride;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/TemplateSequence.TemplateSequencePlayer";
     void SetBinding(class AActor* Actor, bool bOverridesDefault);
     void SetSequence(class UTemplateSequence* InSequence);
     UE_PURE class UTemplateSequence* GetSequence() const;

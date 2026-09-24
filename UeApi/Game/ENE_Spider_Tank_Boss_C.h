@@ -121,7 +121,7 @@ public:
     void CheckForPlayersAliveWithNoAmmo();
     void Set_achievement_from_server_to_all(class UFSDAchievement* achievement_to_set, float Progress);
     static constexpr const char* Set_achievement_from_server_to_all__UeName = "Set achievement from server to all";
-    UE_PURE bool ShouldExplode(TArray<class UDamageTag*> Tags_0);
+    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void CheckIfOnlyOnePlayerAlive();
 };

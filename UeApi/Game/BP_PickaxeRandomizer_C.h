@@ -46,7 +46,7 @@ public:
     void LoadedMaterial();
     void Loaded();
     void ReceiveBeginPlay();
-    void SelectRandomMesh(TArray<TSoftObjectPtr<class UStaticMesh>> Array);
+    void SelectRandomMesh(TArray<TSoftObjectPtr<class UStaticMesh>>& Array);
     void SetStaticMesh(class UStaticMeshComponent* MeshComponent, int Index_0);
 };
 

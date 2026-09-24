@@ -79,7 +79,7 @@ public:
     void PlayAnimatedDeath(int AnimationIndex);
     void OnRagdoll();
     UE_PURE float GetEnemyDamageResistance();
-    UE_PURE bool ShouldExplode(TArray<class UDamageTag*> Tags_0);
+    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void AddDamageDoneToTwinMap();
     UE_PURE bool IsTwinAlive() const;

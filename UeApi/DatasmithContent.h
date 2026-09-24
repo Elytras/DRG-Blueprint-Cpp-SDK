@@ -533,6 +533,7 @@ class ADatasmithImportedSequencesActor : public AActor
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithImportedSequencesActor");
     TArray<class ULevelSequence*> ImportedSequences;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void PlayLevelSequence(class ULevelSequence* SequenceToPlay);
 };
 

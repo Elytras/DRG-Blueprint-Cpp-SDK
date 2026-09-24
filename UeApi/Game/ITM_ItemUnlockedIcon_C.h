@@ -32,7 +32,7 @@ public:
     void OnAnimFinished();
     void HideIcon();
     void SetVisible();
-    void SetItemIDArray(TArray<class UObject*> ObjectsWithID, bool MatchChildNotifications_0);
+    void SetItemIDArray(TArray<class UObject*>& ObjectsWithID, bool MatchChildNotifications_0);
     void RemoveNotification();
     void AddChildNotification(ITM_ItemUnlockedIcon_C* ChildIcon);
     void ChildNotificationChanged();

@@ -58,7 +58,7 @@ public:
     void Store_Mode(int Index_0);
     static constexpr const char* Store_Mode__UeName = "Store Mode";
     void GetMissionStats(TArray<class UMissionStat*>& assets);
-    void SortStats(TArray<class UMissionStat*> InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
+    void SortStats(TArray<class UMissionStat*>& InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary

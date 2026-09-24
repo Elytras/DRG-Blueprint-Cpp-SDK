@@ -19,13 +19,13 @@ class EndScreenSetups_C : public UActorComponent
 public:
     UE_CLASS("/Game/Character/CharacterSelection/EndScreenSetups", "EndScreenSetups_C");
     FRandomStream RandStream;
-    void RandomAnimElement(TArray<class UAnimSequence*> Array, class UAnimSequence*& Output);
+    void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
     void ResetMovesets(int NewSeed);
     void SplitMoveSetAnims(TArray<TSoftObjectPtr<class UAnimSequence>> TargetArray, class UAnimSequence*& Selected1, TArray<TSoftObjectPtr<class UAnimSequence>>& Rest1);
     void LoadAnimSeq(TSoftObjectPtr<class UAnimSequence> Soft, class UAnimSequence*& Hard);
-    void LoadAnimSeqArray(TArray<TSoftObjectPtr<class UAnimSequence>> Soft, TArray<class UAnimSequence*>& Hard);
+    void LoadAnimSeqArray(TArray<TSoftObjectPtr<class UAnimSequence>>& Soft, TArray<class UAnimSequence*>& Hard);
     void LoadActorClass(TSoftClassPtr<class UClass> Soft, class UClass*& Hard);
-    void GetRandomWalkAnim(class UVictoryPose* VicPose, FRandomStream RandStream_0, TSoftObjectPtr<class UAnimSequence>& Walk);
+    void GetRandomWalkAnim(class UVictoryPose* VicPose, FRandomStream& RandStream_0, TSoftObjectPtr<class UAnimSequence>& Walk);
 };
 
 }}}   // namespace Game::Character::CharacterSelection

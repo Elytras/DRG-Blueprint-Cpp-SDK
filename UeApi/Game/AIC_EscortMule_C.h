@@ -50,7 +50,7 @@ public:
     void OnMessageBehaviorTreeEvent_Event(FName Message);
     void ReceivePossess(class APawn* PossessedPawn);
     void ReceiveBeginPlay();
-    void DebugPath(TArray<FVector> inArray, FLinearColor Color);
+    void DebugPath(TArray<FVector>& inArray, FLinearColor Color);
     void UpdateDrillSegmentCubic();
     void GetPointBehindMule(float atDistance, FVector& Point);
     void CalculateSpeedModifier();

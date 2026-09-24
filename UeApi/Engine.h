@@ -28,6 +28,7 @@ class UObject;
 class UPackage;
 class UPackageMap;
 class UPhysicalMaterial;
+class UQuartzClockHandle;
 class UScriptStruct;
 class USoundfieldEffectBase;
 class USoundfieldEncodingSettingsBase;
@@ -12026,7 +12027,7 @@ public:
     void SetPropagateNotifiesToLinkedInstances(bool bSet);
     void SetReceiveNotifiesFromLinkedInstances(bool bSet);
     void SetRootMotionMode(ERootMotionMode Value);
-    void SnapshotPose(FPoseSnapshot Snapshot);
+    void SnapshotPose(FPoseSnapshot& Snapshot);
     void StopSlotAnimation(float InBlendOutTime, FName SlotNodeName);
     void UnlinkAnimClassLayers(TSubclassOf<class UAnimInstance> InClass);
     UE_AUTHORITY_ONLY void UnlockAIResources(bool bUnlockMovement, bool UnlockAILogic);
@@ -12347,6 +12348,8 @@ public:
     class USceneComponent* TransformComponent;
     FRotator ControlRotation;
     bool bAttachToPawn;
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     class APlayerController* CastToPlayerController();
     UE_CLIENT UE_RELIABLE void ClientSetLocation(FVector NewLocation, FRotator NewRotation);
     UE_CLIENT UE_RELIABLE void ClientSetRotation(FRotator NewRotation, bool bResetCamera);
@@ -12837,6 +12840,9 @@ public:
     TArray<FSimulatedRootMotionReplicatedMove> RootMotionRepMoves;
     FRepRootMotionMontage RepRootMotion;
     static constexpr const char* RepRootMotion__Replicated = "OnRep_RootMotion:";
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
+    static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
     void CacheInitialMeshOffset(FVector MeshRelativeLocation, FRotator MeshRelativeRotation);
     UE_CLIENT void ClientAckGoodMove(float Timestamp);
     UE_CLIENT void ClientAdjustPosition(float Timestamp, FVector NewLoc, FVector NewVel, class UPrimitiveComponent* NewBase, FName NewBaseBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
@@ -13201,6 +13207,8 @@ public:
     bool bIsLocalPlayerController;
     FVector SpawnLocation;
     static constexpr const char* SpawnLocation__Replicated = ":";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void ActivateTouchInterface(class UTouchInterface* NewTouchInterface);
     void AddPitchInput(float Val);
     void AddRollInput(float Val);
@@ -13346,6 +13354,8 @@ public:
     class USkyLightComponent* LightComponent;
     bool bEnabled;
     static constexpr const char* bEnabled__Replicated = "OnRep_bEnabled):";
+    static constexpr const char* LightComponent__UeSubobject = "SkyLightComponent0 /Script/Engine.SkyLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SkyLightComponent0 /Script/Engine.SkyLightComponent";
     void OnRep_bEnabled();
 };
 
@@ -13407,6 +13417,8 @@ public:
     static constexpr const char* ReplicatedMaterial0__Replicated = "OnRep_ReplicatedMaterial0:";
     class UMaterialInterface* ReplicatedMaterial1;
     static constexpr const char* ReplicatedMaterial1__Replicated = "OnRep_ReplicatedMaterial1:";
+    static constexpr const char* RootComponent__UeSubobject = "SkeletalMeshComponent0 /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* SkeletalMeshComponent__UeSubobject = "SkeletalMeshComponent0 /Script/Engine.SkeletalMeshComponent";
     void OnRep_ReplicatedMaterial0();
     void OnRep_ReplicatedMaterial1();
     void OnRep_ReplicatedMesh();
@@ -13507,6 +13519,8 @@ public:
     float ViewRollMin;
     float ViewRollMax;
     float ServerUpdateCameraTimeout;
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     class AEmitterCameraLensEffectBase* AddCameraLensEffect(TSubclassOf<class AEmitterCameraLensEffectBase> LensEffectEmitterClass);
     class UCameraModifier* AddNewCameraModifier(TSubclassOf<class UCameraModifier> ModifierClass);
     UE_COSMETIC bool BlueprintUpdateCamera(class AActor* CameraTarget, FVector& NewCameraLocation, FRotator& NewCameraRotation, float& NewCameraFOV);
@@ -13620,6 +13634,8 @@ public:
     bool GetCookedFFTData(TArray<float> FrequenciesToGet, TArray<FSoundWaveSpectralData>& OutSoundWaveSpectralData);
     bool GetCookedFFTDataForAllPlayingSounds(TArray<FSoundWaveSpectralDataPerSound>& OutSoundWaveSpectralData);
     void Play(float StartTime);
+    void PlayQuantized(class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, FQuartzQuantizationBoundary& InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
+    void PlayQuantized(class UQuartzClockHandle*& InClockHandle, FQuartzQuantizationBoundary& InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
     void SetAudioBusSendPostEffect(class UAudioBus* AudioBus, float AudioBusSendLevel);
     void SetAudioBusSendPreEffect(class UAudioBus* AudioBus, float AudioBusSendLevel);
     void SetBoolParameter(FName InName, bool InBool);
@@ -13653,6 +13669,8 @@ public:
     class UStaticMeshComponent* StaticMeshComponent;
     bool bStaticMeshReplicateMovement;
     ENavDataGatheringMode NavigationGeometryGatheringMode;
+    static constexpr const char* RootComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
+    static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
     void SetMobility(EComponentMobility InMobility);
 };
 
@@ -13781,6 +13799,9 @@ public:
     class USphereComponent* CollisionComponent;
     class UStaticMeshComponent* MeshComponent;
     bool bAddDefaultMovementBindings;
+    static constexpr const char* CollisionComponent__UeSubobject = "CollisionComponent0 /Script/Engine.SphereComponent";
+    static constexpr const char* MeshComponent__UeSubobject = "MeshComponent0 /Script/Engine.StaticMeshComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "MovementComponent0 /Script/Engine.FloatingPawnMovement";
     void LookUpAtRate(float Rate);
     void MoveForward(float Val);
     void MoveRight(float Val);
@@ -13792,6 +13813,9 @@ class ASpectatorPawn : public ADefaultPawn
 {
 public:
     UE_CLASS("/Script/Engine", "SpectatorPawn");
+    static constexpr const char* CollisionComponent__UeSubobject = "CollisionComponent0 /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "MovementComponent0 /Script/Engine.SpectatorPawnMovement";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionComponent0 /Script/Engine.SphereComponent";
 };
 
 class UCameraShakeBase : public UObject
@@ -13849,6 +13873,8 @@ public:
     float FOVAngle;
     float PostProcessBlendWeight;
     FPostProcessSettings PostProcessSettings;
+    static constexpr const char* CameraComponent__UeSubobject = "CameraComponent /Script/Engine.CameraComponent";
+    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
     UE_PURE int GetAutoActivatePlayerIndex() const;
 };
 
@@ -14049,6 +14075,8 @@ public:
     TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleCount)> OnParticleBurst;
     TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction)> OnParticleDeath;
     TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction, FVector Normal, FName BoneName, class UPhysicalMaterial* PhysMat)> OnParticleCollide;
+    static constexpr const char* ParticleSystemComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* RootComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
     void Activate();
     void Deactivate();
     void OnParticleSystemFinished(class UParticleSystemComponent* FinishedComponent);
@@ -14076,6 +14104,8 @@ public:
     bool bResetWhenRetriggered;
     TArray<TSubclassOf<class AEmitterCameraLensEffectBase>> EmittersToTreatAsSame;
     float DistFromCamera;
+    static constexpr const char* ParticleSystemComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* RootComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
 };
 
 class ATriggerBase : public AActor
@@ -14089,6 +14119,8 @@ class ATriggerCapsule : public ATriggerBase
 {
 public:
     UE_CLASS("/Script/Engine", "TriggerCapsule");
+    static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.CapsuleComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.CapsuleComponent";
 };
 
 class UInputSettings : public UObject
@@ -14174,6 +14206,8 @@ class APhysicsThruster : public ARigidBodyBase
 public:
     UE_CLASS("/Script/Engine", "PhysicsThruster");
     class UPhysicsThrusterComponent* ThrusterComponent;
+    static constexpr const char* RootComponent__UeSubobject = "Thruster0 /Script/Engine.PhysicsThrusterComponent";
+    static constexpr const char* ThrusterComponent__UeSubobject = "Thruster0 /Script/Engine.PhysicsThrusterComponent";
 };
 
 class UNetDriver : public UObject
@@ -14324,6 +14358,7 @@ class ASphereReflectionCapture : public AReflectionCapture
 public:
     UE_CLASS("/Script/Engine", "SphereReflectionCapture");
     class UDrawSphereComponent* DrawCaptureRadius;
+    static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.SphereReflectionCaptureComponent";
 };
 
 class UMaterialExpressionDistance : public UMaterialExpression
@@ -14877,6 +14912,7 @@ class ALightmassPortal : public AActor
 public:
     UE_CLASS("/Script/Engine", "LightmassPortal");
     class ULightmassPortalComponent* PortalComponent;
+    static constexpr const char* PortalComponent__UeSubobject = "PortalComponent /Script/Engine.LightmassPortalComponent";
 };
 
 class UParticleModuleLocationBase : public UParticleModule
@@ -15233,18 +15269,24 @@ public:
     class UBrushComponent* BrushComponent;
     bool bInManipulation;
     TArray<FGeomSelection> SavedSelections;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class AVolume : public ABrush
 {
 public:
     UE_CLASS("/Script/Engine", "Volume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class ALightmassCharacterIndirectDetailVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "LightmassCharacterIndirectDetailVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UStereoLayerShape : public UObject
@@ -15306,6 +15348,8 @@ public:
     UE_CLASS("/Script/Engine", "LevelBounds");
     class UBoxComponent* BoxComponent;
     bool bAutoUpdateBounds;
+    static constexpr const char* BoxComponent__UeSubobject = "BoxComponent0 /Script/Engine.BoxComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BoxComponent0 /Script/Engine.BoxComponent";
 };
 
 class UParticleModuleTypeDataBase : public UParticleModule
@@ -15463,11 +15507,11 @@ public:
     class UClass* GetAnimClass();
     void GetCurrentJointAngles(FName InBoneName, float& Swing1Angle, float& TwistAngle, float& Swing2Angle);
     bool GetFloatAttribute(FName BoneName, FName AttributeName, float DefaultValue, float& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetFloatAttribute_Ref(FName BoneName, FName AttributeName, float OutValue, ECustomBoneAttributeLookup LookupType);
+    bool GetFloatAttribute_Ref(FName BoneName, FName AttributeName, float& OutValue, ECustomBoneAttributeLookup LookupType);
     bool GetIntegerAttribute(FName BoneName, FName AttributeName, int DefaultValue, int& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetIntegerAttribute_Ref(FName BoneName, FName AttributeName, int OutValue, ECustomBoneAttributeLookup LookupType);
+    bool GetIntegerAttribute_Ref(FName BoneName, FName AttributeName, int& OutValue, ECustomBoneAttributeLookup LookupType);
     bool GetStringAttribute(FName BoneName, FName AttributeName, FString DefaultValue, FString& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetStringAttribute_Ref(FName BoneName, FName AttributeName, FString OutValue, ECustomBoneAttributeLookup LookupType);
+    bool GetStringAttribute_Ref(FName BoneName, FName AttributeName, FString& OutValue, ECustomBoneAttributeLookup LookupType);
     bool IsBodyGravityEnabled(FName BoneName);
     void LinkAnimClassLayers(TSubclassOf<class UAnimInstance> InClass);
     void LinkAnimGraphByTag(FName InTag, TSubclassOf<class UAnimInstance> InClass);
@@ -15511,7 +15555,7 @@ public:
     void SetTeleportRotationThreshold(float Threshold);
     void SetUpdateAnimationInEditor(bool NewUpdateState);
     void SetUpdateClothInEditor(bool NewUpdateState);
-    void SnapshotPose(FPoseSnapshot Snapshot);
+    void SnapshotPose(FPoseSnapshot& Snapshot);
     void Stop();
     void SuspendClothingSimulation();
     void TermBodiesBelow(FName ParentBoneName);
@@ -15552,6 +15596,8 @@ public:
     class UBillboardComponent* GoodSprite;
     class UBillboardComponent* BadSprite;
     bool bIsPIEPlayerStart;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
 };
 
 class UHLODEngineSubsystem : public UEngineSubsystem
@@ -15615,6 +15661,8 @@ class ADirectionalLight : public ALight
 {
 public:
     UE_CLASS("/Script/Engine", "DirectionalLight");
+    static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.DirectionalLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.DirectionalLightComponent";
 };
 
 class UMaterialExpressionAtmosphericFogColor : public UMaterialExpression
@@ -15678,6 +15726,8 @@ public:
     UE_CLASS("/Script/Engine", "SceneCapture");
     class UStaticMeshComponent* MeshComp;
     class USceneComponent* SceneComponent;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
 };
 
 class ASceneCapture2D : public ASceneCapture
@@ -15685,6 +15735,8 @@ class ASceneCapture2D : public ASceneCapture
 public:
     UE_CLASS("/Script/Engine", "SceneCapture2D");
     class USceneCaptureComponent2D* CaptureComponent2D;
+    static constexpr const char* CaptureComponent2D__UeSubobject = "NewSceneCaptureComponent2D /Script/Engine.SceneCaptureComponent2D";
+    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
     void OnInterpToggle(bool bEnable);
 };
 
@@ -16218,6 +16270,8 @@ class APlayerStart : public ANavigationObjectBase
 public:
     UE_CLASS("/Script/Engine", "PlayerStart");
     FName PlayerStartTag;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
 };
 
 class UInterpTrackInstSlomo : public UInterpTrackInst
@@ -17352,6 +17406,8 @@ public:
     float InitialMaxSpeed;
     float InitialAccel;
     float InitialDecel;
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void ReceiveOnActivate(class APlayerController* OriginalPC);
     void ReceiveOnActorSelected(class AActor* NewSelectedActor, FVector SelectHitLocation, FVector SelectHitNormal, FHitResult Hit);
     void ReceiveOnDeactivate(class APlayerController* RestoredPC);
@@ -17366,6 +17422,8 @@ class AAmbientSound : public AActor
 public:
     UE_CLASS("/Script/Engine", "AmbientSound");
     class UAudioComponent* AudioComponent;
+    static constexpr const char* AudioComponent__UeSubobject = "AudioComponent0 /Script/Engine.AudioComponent";
+    static constexpr const char* RootComponent__UeSubobject = "AudioComponent0 /Script/Engine.AudioComponent";
     void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel);
     void FadeIn(float FadeInDuration, float FadeVolumeLevel);
     void FadeOut(float FadeoutDuration, float FadeVolumeLevel);
@@ -17585,6 +17643,7 @@ class UAnimCurveCompressionSettings : public UObject
 public:
     UE_CLASS("/Script/Engine", "AnimCurveCompressionSettings");
     class UAnimCurveCompressionCodec* Codec;
+    static constexpr const char* Codec__UeSubobject = "CurveCompressionCodec /Script/Engine.AnimCurveCompressionCodec_CompressedRichCurve";
 };
 
 class UMaterialExpressionDistanceCullFade : public UMaterialExpression
@@ -17658,6 +17717,8 @@ class ATriggerBox : public ATriggerBase
 {
 public:
     UE_CLASS("/Script/Engine", "TriggerBox");
+    static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.BoxComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.BoxComponent";
 };
 
 class UAnimNotify_PlayParticleEffect : public UAnimNotify
@@ -18030,6 +18091,8 @@ class AWindDirectionalSource : public AInfo
 public:
     UE_CLASS("/Script/Engine", "WindDirectionalSource");
     class UWindDirectionalSourceComponent* Component;
+    static constexpr const char* Component__UeSubobject = "WindDirectionalSourceComponent0 /Script/Engine.WindDirectionalSourceComponent";
+    static constexpr const char* RootComponent__UeSubobject = "WindDirectionalSourceComponent0 /Script/Engine.WindDirectionalSourceComponent";
 };
 
 class UAsyncActionChangePrimaryAssetBundles : public UAsyncActionLoadPrimaryAssetBase
@@ -18048,6 +18111,8 @@ class AAtmosphericFog : public AInfo
 public:
     UE_CLASS("/Script/Engine", "AtmosphericFog");
     class UAtmosphericFogComponent* AtmosphericFogComponent;
+    static constexpr const char* AtmosphericFogComponent__UeSubobject = "AtmosphericFogComponent0 /Script/Engine.AtmosphericFogComponent";
+    static constexpr const char* RootComponent__UeSubobject = "AtmosphericFogComponent0 /Script/Engine.AtmosphericFogComponent";
 };
 
 class UMaterialExpressionBlendMaterialAttributes : public UMaterialExpression
@@ -18188,6 +18253,8 @@ public:
     FInteriorSettings AmbientZoneSettings;
     TArray<FAudioVolumeSubmixSendSettings> SubmixSendSettings;
     TArray<FAudioVolumeSubmixOverrideSettings> SubmixOverrideSettings;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     void OnRep_bEnabled();
     void SetEnabled(bool bNewEnabled);
     void SetInteriorSettings(FInteriorSettings NewInteriorSettings);
@@ -18349,6 +18416,8 @@ class ABlockingVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "BlockingVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UBlueprintExtension : public UObject
@@ -18562,6 +18631,7 @@ class ABoxReflectionCapture : public AReflectionCapture
 {
 public:
     UE_CLASS("/Script/Engine", "BoxReflectionCapture");
+    static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.BoxReflectionCaptureComponent";
 };
 
 class UMaterialExpressionStaticBoolParameter : public UMaterialExpressionParameter
@@ -18632,6 +18702,8 @@ class ABrushShape : public ABrush
 {
 public:
     UE_CLASS("/Script/Engine", "BrushShape");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UTimelineComponent : public UActorComponent
@@ -18677,6 +18749,8 @@ class ACameraBlockingVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "CameraBlockingVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UKismetMathLibrary : public UBlueprintFunctionLibrary
@@ -18851,7 +18925,7 @@ public:
     UE_PURE static float FInterpTo(float Current, float Target, float DeltaTime, float InterpSpeed);
     UE_PURE static float FInterpTo_Constant(float Current, float Target, float DeltaTime, float InterpSpeed);
     UE_PURE static float FixedTurn(float InCurrent, float InDesired, float InDeltaRate);
-    static float FloatSpringInterp(float Current, float Target, FFloatSpringState SpringState, float Stiffness, float CriticalDampingFactor, float DeltaTime, float Mass);
+    static float FloatSpringInterp(float Current, float Target, FFloatSpringState& SpringState, float Stiffness, float CriticalDampingFactor, float DeltaTime, float Mass);
     UE_PURE static float FMax(float A, float B);
     UE_PURE static float FMin(float A, float B);
     static int FMod(float Dividend, float Divisor, float& Remainder);
@@ -18973,13 +19047,13 @@ public:
     UE_PURE static FColor LinearColor_Quantize(FLinearColor InColor);
     UE_PURE static FColor LinearColor_QuantizeRound(FLinearColor InColor);
     UE_PURE static FLinearColor LinearColor_Red();
-    static void LinearColor_Set(FLinearColor InOutColor, FLinearColor InColor);
-    static void LinearColor_SetFromHSV(FLinearColor InOutColor, float H, float S, float V, float A);
-    static void LinearColor_SetFromPow22(FLinearColor InOutColor, FColor InColor);
-    static void LinearColor_SetFromSRGB(FLinearColor InOutColor, FColor InSRGB);
-    static void LinearColor_SetRandomHue(FLinearColor InOutColor);
-    static void LinearColor_SetRGBA(FLinearColor InOutColor, float R, float G, float B, float A);
-    static void LinearColor_SetTemperature(FLinearColor InOutColor, float InTemperature);
+    static void LinearColor_Set(FLinearColor& InOutColor, FLinearColor InColor);
+    static void LinearColor_SetFromHSV(FLinearColor& InOutColor, float H, float S, float V, float A);
+    static void LinearColor_SetFromPow22(FLinearColor& InOutColor, FColor InColor);
+    static void LinearColor_SetFromSRGB(FLinearColor& InOutColor, FColor InSRGB);
+    static void LinearColor_SetRandomHue(FLinearColor& InOutColor);
+    static void LinearColor_SetRGBA(FLinearColor& InOutColor, float R, float G, float B, float A);
+    static void LinearColor_SetTemperature(FLinearColor& InOutColor, float InTemperature);
     UE_PURE static FLinearColor LinearColor_ToNewOpacity(FLinearColor InColor, float InOpacity);
     UE_PURE static FColor LinearColor_ToRGBE(FLinearColor InLinearColor);
     UE_PURE static FLinearColor LinearColor_Transparent();
@@ -19048,12 +19122,12 @@ public:
     UE_PURE static FVector Matrix_InverseTransformPosition(FMatrix M, FVector V);
     UE_PURE static FVector Matrix_InverseTransformVector(FMatrix M, FVector V);
     UE_PURE static FMatrix Matrix_Mirror(FMatrix M, EAxis MirrorAxis, EAxis FlipAxis);
-    static void Matrix_RemoveScaling(FMatrix M, float Tolerance);
+    static void Matrix_RemoveScaling(FMatrix& M, float Tolerance);
     UE_PURE static FMatrix Matrix_RemoveTranslation(FMatrix M);
     UE_PURE static FMatrix Matrix_ScaleTranslation(FMatrix M, FVector Scale3D);
-    static void Matrix_SetAxis(FMatrix M, EAxis Axis, FVector AxisVector);
-    static void Matrix_SetColumn(FMatrix M, EMatrixColumns Column, FVector Value);
-    static void Matrix_SetOrigin(FMatrix M, FVector NewOrigin);
+    static void Matrix_SetAxis(FMatrix& M, EAxis Axis, FVector AxisVector);
+    static void Matrix_SetColumn(FMatrix& M, EMatrixColumns Column, FVector Value);
+    static void Matrix_SetOrigin(FMatrix& M, FVector NewOrigin);
     UE_PURE static FQuat Matrix_ToQuat(FMatrix M);
     UE_PURE static FVector4 Matrix_TransformPosition(FMatrix M, FVector V);
     UE_PURE static FVector4 Matrix_TransformVector(FMatrix M, FVector V);
@@ -19101,7 +19175,7 @@ public:
     UE_PURE static FVector NegateVector(FVector A);
     UE_PURE static FVector Normal(FVector A, float Tolerance);
     UE_PURE static FVector2D Normal2D(FVector2D A);
-    static void Normalize2D(FVector2D A, float Tolerance);
+    static void Normalize2D(FVector2D& A, float Tolerance);
     UE_PURE static float NormalizeAxis(float Angle);
     UE_PURE static FRotator NormalizedDeltaRotator(FRotator A, FRotator B);
     UE_PURE static float NormalizeToRange(float Value, float RangeMin, float RangeMax);
@@ -19142,7 +19216,7 @@ public:
     UE_PURE static FVector ProjectVectorOnToPlane(FVector V, FVector PlaneNormal);
     UE_PURE static FVector ProjectVectorOnToVector(FVector V, FVector Target);
     UE_PURE static float Quat_AngularDistance(FQuat A, FQuat B);
-    static void Quat_EnforceShortestArcWith(FQuat A, FQuat B);
+    static void Quat_EnforceShortestArcWith(FQuat& A, FQuat B);
     UE_PURE static FVector Quat_Euler(FQuat Q);
     UE_PURE static FQuat Quat_Exp(FQuat Q);
     UE_PURE static float Quat_GetAngle(FQuat Q);
@@ -19158,12 +19232,12 @@ public:
     UE_PURE static bool Quat_IsNormalized(FQuat Q);
     UE_PURE static FQuat Quat_Log(FQuat Q);
     UE_PURE static FQuat Quat_MakeFromEuler(FVector Euler);
-    static void Quat_Normalize(FQuat Q, float Tolerance);
+    static void Quat_Normalize(FQuat& Q, float Tolerance);
     UE_PURE static FQuat Quat_Normalized(FQuat Q, float Tolerance);
     UE_PURE static FVector Quat_RotateVector(FQuat Q, FVector V);
     UE_PURE static FRotator Quat_Rotator(FQuat Q);
-    static void Quat_SetComponents(FQuat Q, float X, float Y, float Z, float W);
-    static void Quat_SetFromEuler(FQuat Q, FVector Euler);
+    static void Quat_SetComponents(FQuat& Q, float X, float Y, float Z, float W);
+    static void Quat_SetFromEuler(FQuat& Q, FVector Euler);
     UE_PURE static float Quat_Size(FQuat Q);
     UE_PURE static float Quat_SizeSquared(FQuat Q);
     UE_PURE static FVector Quat_UnrotateVector(FQuat Q, FVector V);
@@ -19199,9 +19273,9 @@ public:
     static FVector RandomUnitVectorInEllipticalConeInRadians(FVector ConeDir, float MaxYawInRadians, float MaxPitchInRadians);
     static FVector RandomUnitVectorInEllipticalConeInRadiansFromStream(FVector ConeDir, float MaxYawInRadians, float MaxPitchInRadians, FRandomStream Stream);
     UE_PURE static FRotator REase(FRotator A, FRotator B, float alpha, bool bShortestPath, EEasingFunc EasingFunc, float BlendExp, int Steps);
-    static void ResetFloatSpringState(FFloatSpringState SpringState);
+    static void ResetFloatSpringState(FFloatSpringState& SpringState);
     static void ResetRandomStream(FRandomStream Stream);
-    static void ResetVectorSpringState(FVectorSpringState SpringState);
+    static void ResetVectorSpringState(FVectorSpringState& SpringState);
     UE_PURE static FLinearColor RGBLinearToHSV(FLinearColor RGB);
     static void RGBToHSV(FLinearColor InColor, float& H, float& S, float& V, float& A);
     static void RGBToHSV_Vector(FLinearColor RGB, FLinearColor& HSV);
@@ -19213,7 +19287,7 @@ public:
     UE_PURE static int Round(float A);
     UE_PURE static int64 Round64(float A);
     UE_PURE static float SafeDivide(float A, float B);
-    static void SeedRandomStream(FRandomStream Stream);
+    static void SeedRandomStream(FRandomStream& Stream);
     UE_PURE static class UClass* SelectClass(class UClass* A, class UClass* B, bool bSelectA);
     UE_PURE static FLinearColor SelectColor(FLinearColor A, FLinearColor B, bool bPickA);
     UE_PURE static float SelectFloat(float A, float B, bool bPickA);
@@ -19223,8 +19297,8 @@ public:
     UE_PURE static FString SelectString(FString A, FString B, bool bPickA);
     UE_PURE static FTransform SelectTransform(FTransform A, FTransform B, bool bPickA);
     UE_PURE static FVector SelectVector(FVector A, FVector B, bool bPickA);
-    static void Set2D(FVector2D A, float X, float Y);
-    static void SetRandomStreamSeed(FRandomStream Stream, int NewSeed);
+    static void Set2D(FVector2D& A, float X, float Y);
+    static void SetRandomStreamSeed(FRandomStream& Stream, int NewSeed);
     UE_PURE static float SignOfFloat(float A);
     UE_PURE static int SignOfInteger(int A);
     UE_PURE static int64 SignOfInteger64(int64 A);
@@ -19274,7 +19348,7 @@ public:
     UE_PURE static FVector2D Vector2D_Zero();
     UE_PURE static FVector2D Vector2DInterpTo(FVector2D Current, FVector2D Target, float DeltaTime, float InterpSpeed);
     UE_PURE static FVector2D Vector2DInterpTo_Constant(FVector2D Current, FVector2D Target, float DeltaTime, float InterpSpeed);
-    static void Vector4_Assign(FVector4 A, FVector4 InVector);
+    static void Vector4_Assign(FVector4& A, FVector4 InVector);
     UE_PURE static FVector4 Vector4_CrossProduct3(FVector4 A, FVector4 B);
     UE_PURE static float Vector4_DotProduct(FVector4 A, FVector4 B);
     UE_PURE static float Vector4_DotProduct3(FVector4 A, FVector4 B);
@@ -19286,16 +19360,16 @@ public:
     UE_PURE static FVector4 Vector4_MirrorByVector3(FVector4 Direction, FVector4 SurfaceNormal);
     UE_PURE static FVector4 Vector4_Negated(FVector4 A);
     UE_PURE static FVector4 Vector4_Normal3(FVector4 A, float Tolerance);
-    static void Vector4_Normalize3(FVector4 A, float Tolerance);
+    static void Vector4_Normalize3(FVector4& A, float Tolerance);
     UE_PURE static FVector4 Vector4_NormalUnsafe3(FVector4 A);
-    static void Vector4_Set(FVector4 A, float X, float Y, float Z, float W);
+    static void Vector4_Set(FVector4& A, float X, float Y, float Z, float W);
     UE_PURE static float Vector4_Size(FVector4 A);
     UE_PURE static float Vector4_Size3(FVector4 A);
     UE_PURE static float Vector4_SizeSquared(FVector4 A);
     UE_PURE static float Vector4_SizeSquared3(FVector4 A);
     UE_PURE static FVector4 Vector4_Zero();
-    static void Vector_AddBounded(FVector A, FVector InAddVect, float InRadius);
-    static void Vector_Assign(FVector A, FVector InVector);
+    static void Vector_AddBounded(FVector& A, FVector InAddVect, float InRadius);
+    static void Vector_Assign(FVector& A, FVector InVector);
     UE_PURE static FVector Vector_Backward();
     UE_PURE static FVector Vector_BoundedToBox(FVector InVect, FVector InBoxMin, FVector InBoxMax);
     UE_PURE static FVector Vector_BoundedToCube(FVector InVect, float InRadius);
@@ -19326,21 +19400,21 @@ public:
     UE_PURE static FVector Vector_Left();
     UE_PURE static FVector Vector_MirrorByPlane(FVector A, FPlane InPlane);
     UE_PURE static FVector Vector_Normal2D(FVector A, float Tolerance);
-    static void Vector_Normalize(FVector A, float Tolerance);
+    static void Vector_Normalize(FVector& A, float Tolerance);
     UE_PURE static FVector Vector_NormalUnsafe(FVector A);
     UE_PURE static FVector Vector_One();
     UE_PURE static FVector Vector_ProjectOnToNormal(FVector V, FVector InNormal);
     UE_PURE static FVector Vector_Reciprocal(FVector A);
     UE_PURE static FVector Vector_Right();
-    static void Vector_Set(FVector A, float X, float Y, float Z);
+    static void Vector_Set(FVector& A, float X, float Y, float Z);
     UE_PURE static FVector Vector_SnappedToGrid(FVector InVect, float InGridSize);
     UE_PURE static FVector Vector_ToDegrees(FVector A);
     UE_PURE static FVector Vector_ToRadians(FVector A);
     UE_PURE static FVector2D Vector_UnitCartesianToSpherical(FVector A);
-    static void Vector_UnwindEuler(FVector A);
+    static void Vector_UnwindEuler(FVector& A);
     UE_PURE static FVector Vector_Up();
     UE_PURE static FVector Vector_Zero();
-    static FVector VectorSpringInterp(FVector Current, FVector Target, FVectorSpringState SpringState, float Stiffness, float CriticalDampingFactor, float DeltaTime, float Mass);
+    static FVector VectorSpringInterp(FVector Current, FVector Target, FVectorSpringState& SpringState, float Stiffness, float CriticalDampingFactor, float DeltaTime, float Mass);
     UE_PURE static FVector VInterpTo(FVector Current, FVector Target, float DeltaTime, float InterpSpeed);
     UE_PURE static FVector VInterpTo_Constant(FVector Current, FVector Target, float DeltaTime, float InterpSpeed);
     UE_PURE static FVector VLerp(FVector A, FVector B, float alpha);
@@ -19404,6 +19478,8 @@ class ACameraShakeSourceActor : public AActor
 public:
     UE_CLASS("/Script/Engine", "CameraShakeSourceActor");
     class UCameraShakeSourceComponent* CameraShakeSourceComponent;
+    static constexpr const char* CameraShakeSourceComponent__UeSubobject = "CameraShakeSourceComponent /Script/Engine.CameraShakeSourceComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CameraShakeSourceComponent /Script/Engine.CameraShakeSourceComponent";
 };
 
 class UTextureMipDataProviderFactory : public UAssetUserData
@@ -19472,6 +19548,7 @@ public:
     class UInterpTrackMove* MoveTrack;
     class UInterpTrackInstMove* MoveInst;
     ECameraShakePlaySpace PlaySpace;
+    static constexpr const char* InterpGroupInst__UeSubobject = "InterpGroupInst0 /Script/Engine.InterpGroupInst";
     void SetDuration(float NewDuration);
     void SetScale(float NewDuration);
     void Stop(bool bImmediate);
@@ -19808,6 +19885,8 @@ public:
     UE_CLASS("/Script/Engine", "CullDistanceVolume");
     TArray<FCullDistanceSizePair> CullDistances;
     bool bEnabled;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UMaterialExpressionShaderStageSwitch : public UMaterialExpression
@@ -19879,6 +19958,8 @@ class ATriggerSphere : public ATriggerBase
 {
 public:
     UE_CLASS("/Script/Engine", "TriggerSphere");
+    static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.SphereComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.SphereComponent";
 };
 
 class UDataDrivenConsoleVariableSettings : public UDeveloperSettings
@@ -19948,6 +20029,8 @@ class ADecalActor : public AActor
 public:
     UE_CLASS("/Script/Engine", "DecalActor");
     class UDecalComponent* Decal;
+    static constexpr const char* Decal__UeSubobject = "NewDecalComponent /Script/Engine.DecalComponent";
+    static constexpr const char* RootComponent__UeSubobject = "NewDecalComponent /Script/Engine.DecalComponent";
     class UMaterialInstanceDynamic* CreateDynamicMaterialInstance();
     void SetDecalMaterial(class UMaterialInterface* NewDecalMaterial);
     UE_PURE class UMaterialInterface* GetDecalMaterial() const;
@@ -20026,12 +20109,16 @@ public:
     float FluidFriction;
     bool bWaterVolume;
     bool bPhysicsOnContact;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class ADefaultPhysicsVolume : public APhysicsVolume
 {
 public:
     UE_CLASS("/Script/Engine", "DefaultPhysicsVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UInterpTrackSlomo : public UInterpTrackFloatBase
@@ -20103,7 +20190,7 @@ public:
     UE_CLASS("/Script/Engine", "KismetGuidLibrary");
     UE_PURE static FString Conv_GuidToString(FGuid InGuid);
     UE_PURE static bool EqualEqual_GuidGuid(FGuid A, FGuid B);
-    static void Invalidate_Guid(FGuid InGuid);
+    static void Invalidate_Guid(FGuid& InGuid);
     UE_PURE static bool IsValid_Guid(FGuid InGuid);
     static FGuid NewGuid();
     UE_PURE static bool NotEqual_GuidGuid(FGuid A, FGuid B);
@@ -20487,6 +20574,7 @@ class ADocumentationActor : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "DocumentationActor");
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class UDrawFrustumComponent : public UPrimitiveComponent
@@ -20574,6 +20662,8 @@ class ALightmassImportanceVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "LightmassImportanceVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UMaterialExpressionSaturate : public UMaterialExpression
@@ -20772,6 +20862,8 @@ public:
     class UExponentialHeightFogComponent* Component;
     bool bEnabled;
     static constexpr const char* bEnabled__Replicated = "OnRep_bEnabled):";
+    static constexpr const char* Component__UeSubobject = "HeightFogComponent0 /Script/Engine.ExponentialHeightFogComponent";
+    static constexpr const char* RootComponent__UeSubobject = "HeightFogComponent0 /Script/Engine.ExponentialHeightFogComponent";
     void OnRep_bEnabled();
 };
 
@@ -20909,6 +21001,8 @@ class AVolumetricLightmapDensityVolume : public AVolume
 public:
     UE_CLASS("/Script/Engine", "VolumetricLightmapDensityVolume");
     FInt32Interval AllowedMipLevelRange;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UFontFace : public UObject
@@ -21301,6 +21395,9 @@ class ASpotLight : public ALight
 public:
     UE_CLASS("/Script/Engine", "SpotLight");
     class USpotLightComponent* SpotLightComponent;
+    static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+    static constexpr const char* SpotLightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
     void SetInnerConeAngle(float NewInnerConeAngle);
     void SetOuterConeAngle(float NewOuterConeAngle);
 };
@@ -21315,6 +21412,9 @@ class AGeneratedMeshAreaLight : public ASpotLight
 {
 public:
     UE_CLASS("/Script/Engine", "GeneratedMeshAreaLight");
+    static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+    static constexpr const char* SpotLightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
 };
 
 class UTextureRenderTarget2DArray : public UTextureRenderTarget
@@ -21425,6 +21525,8 @@ class ASkyAtmosphere : public AInfo
 public:
     UE_CLASS("/Script/Engine", "SkyAtmosphere");
     class USkyAtmosphereComponent* SkyAtmosphereComponent;
+    static constexpr const char* RootComponent__UeSubobject = "SkyAtmosphereComponent /Script/Engine.SkyAtmosphereComponent";
+    static constexpr const char* SkyAtmosphereComponent__UeSubobject = "SkyAtmosphereComponent /Script/Engine.SkyAtmosphereComponent";
 };
 
 class UImportanceSamplingLibrary : public UBlueprintFunctionLibrary
@@ -22015,6 +22117,8 @@ class AKillZVolume : public APhysicsVolume
 {
 public:
     UE_CLASS("/Script/Engine", "KillZVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UKismetInputLibrary : public UBlueprintFunctionLibrary
@@ -22165,7 +22269,7 @@ public:
     UE_PURE static bool NotEqual_StrStr(FString A, FString B);
     UE_PURE static TArray<FString> ParseIntoArray(FString SourceString, FString Delimiter, bool CullEmptyStrings);
     UE_PURE static FString Replace(FString SourceString, FString from, FString to, ESearchCase SearchCase);
-    static int ReplaceInline(FString SourceString, FString SearchText, FString ReplacementText, ESearchCase SearchCase);
+    static int ReplaceInline(FString& SourceString, FString SearchText, FString ReplacementText, ESearchCase SearchCase);
     UE_PURE static FString Reverse(FString SourceString);
     UE_PURE static FString Right(FString SourceString, int Count);
     UE_PURE static FString RightChop(FString SourceString, int Count);
@@ -22363,8 +22467,8 @@ public:
     UE_PURE static bool IsValidPrimaryAssetType(FPrimaryAssetType PrimaryAssetType);
     UE_PURE static bool IsValidSoftClassReference(TSoftClassPtr<class UClass> SoftClassReference);
     UE_PURE static bool IsValidSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference);
-    static void K2_ClearAndInvalidateTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    static void K2_ClearAndInvalidateTimerHandle(FTimerHandle Handle);
+    static void K2_ClearAndInvalidateTimerHandle(class UObject* WorldContextObject, FTimerHandle& Handle);
+    static void K2_ClearAndInvalidateTimerHandle(FTimerHandle& Handle);
     static void K2_ClearTimer(class UObject* Object, FString FunctionName);
     static void K2_ClearTimerDelegate(TDelegate<void()> Delegate);
     static void K2_ClearTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
@@ -22377,7 +22481,7 @@ public:
     UE_PURE static float K2_GetTimerRemainingTimeDelegate(TDelegate<void()> Delegate);
     UE_PURE static float K2_GetTimerRemainingTimeHandle(class UObject* WorldContextObject, FTimerHandle Handle);
     UE_PURE static float K2_GetTimerRemainingTimeHandle(FTimerHandle Handle);
-    static FTimerHandle K2_InvalidateTimerHandle(FTimerHandle Handle);
+    static FTimerHandle K2_InvalidateTimerHandle(FTimerHandle& Handle);
     UE_PURE static bool K2_IsTimerActive(class UObject* Object, FString FunctionName);
     UE_PURE static bool K2_IsTimerActiveDelegate(TDelegate<void()> Delegate);
     UE_PURE static bool K2_IsTimerActiveHandle(class UObject* WorldContextObject, FTimerHandle Handle);
@@ -22545,6 +22649,8 @@ public:
     bool bEditorPreVisOnly;
     bool bDisabled;
     EStreamingVolumeUsage StreamingUsage;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class ULightMapTexture2D : public UTexture2D
@@ -22583,6 +22689,8 @@ public:
     int LODLevel;
     TArray<class AActor*> SubActors;
     uint8 CachedNumHLODLevels;
+    static constexpr const char* RootComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
+    static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
 };
 
 class ILODSyncInterface
@@ -22904,6 +23012,8 @@ class AVectorFieldVolume : public AActor
 public:
     UE_CLASS("/Script/Engine", "VectorFieldVolume");
     class UVectorFieldComponent* VectorFieldComponent;
+    static constexpr const char* RootComponent__UeSubobject = "VectorFieldComponent0 /Script/Engine.VectorFieldComponent";
+    static constexpr const char* VectorFieldComponent__UeSubobject = "VectorFieldComponent0 /Script/Engine.VectorFieldComponent";
 };
 
 class UMaterialExpressionFunctionInput : public UMaterialExpression
@@ -23851,6 +23961,7 @@ class AMaterialInstanceActor : public AActor
 public:
     UE_CLASS("/Script/Engine", "MaterialInstanceActor");
     TArray<class AActor*> TargetActors;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class UMaterialInstanceDynamic : public UMaterialInstance
@@ -23937,6 +24048,7 @@ public:
     TMulticastInlineDelegate<void()> OnPlay;
     TMulticastInlineDelegate<void()> OnStop;
     TMulticastInlineDelegate<void()> OnPause;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void ChangePlaybackDirection();
     void EnableGroupByName(FString GroupName, bool bEnable);
     void Pause();
@@ -23952,6 +24064,7 @@ class AMatineeActorCameraAnim : public AMatineeActor
 public:
     UE_CLASS("/Script/Engine", "MatineeActorCameraAnim");
     class UCameraAnim* CameraAnim;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class IMatineeAnimInterface
@@ -23970,6 +24083,8 @@ class AMeshMergeCullingVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "MeshMergeCullingVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class USkeletalMeshSocket : public UObject
@@ -24148,6 +24263,7 @@ class ANote : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "Note");
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class UObjectLibrary : public UObject
@@ -24191,6 +24307,8 @@ public:
     bool bEntryPain;
     bool BACKUP_bPainCausing;
     class AController* DamageInstigator;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UParticleEmitter : public UObject
@@ -24366,6 +24484,8 @@ class ATextRenderActor : public AActor
 public:
     UE_CLASS("/Script/Engine", "TextRenderActor");
     class UTextRenderComponent* TextRender;
+    static constexpr const char* RootComponent__UeSubobject = "NewTextRenderComponent /Script/Engine.TextRenderComponent";
+    static constexpr const char* TextRender__UeSubobject = "NewTextRenderComponent /Script/Engine.TextRenderComponent";
 };
 
 class UParticleModuleAttractorPointGravity : public UParticleModuleAttractorBase
@@ -25531,6 +25651,8 @@ public:
     class AActor* ConstraintActor1;
     class AActor* ConstraintActor2;
     bool bDisableCollision;
+    static constexpr const char* ConstraintComp__UeSubobject = "MyConstraintComp /Script/Engine.PhysicsConstraintComponent";
+    static constexpr const char* RootComponent__UeSubobject = "MyConstraintComp /Script/Engine.PhysicsConstraintComponent";
 };
 
 class UPhysicsConstraintComponent : public USceneComponent
@@ -25686,6 +25808,8 @@ public:
     UE_CLASS("/Script/Engine", "PlanarReflection");
     class UPlanarReflectionComponent* PlanarReflectionComponent;
     bool bShowPreviewPlane;
+    static constexpr const char* PlanarReflectionComponent__UeSubobject = "NewPlanarReflectionComponent /Script/Engine.PlanarReflectionComponent";
+    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
     void OnInterpToggle(bool bEnable);
 };
 
@@ -25713,6 +25837,7 @@ class APlaneReflectionCapture : public AReflectionCapture
 {
 public:
     UE_CLASS("/Script/Engine", "PlaneReflectionCapture");
+    static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.PlaneReflectionCaptureComponent";
 };
 
 class UPlaneReflectionCaptureComponent : public UReflectionCaptureComponent
@@ -25753,6 +25878,8 @@ class APlayerStartPIE : public APlayerStart
 {
 public:
     UE_CLASS("/Script/Engine", "PlayerStartPIE");
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
 };
 
 class UPluginCommandlet : public UCommandlet
@@ -25766,6 +25893,9 @@ class APointLight : public ALight
 public:
     UE_CLASS("/Script/Engine", "PointLight");
     class UPointLightComponent* PointLightComponent;
+    static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
+    static constexpr const char* PointLightComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
     void SetLightFalloffExponent(float NewLightFalloffExponent);
     void SetRadius(float NewRadius);
 };
@@ -25824,6 +25954,8 @@ public:
     float BlendWeight;
     bool bEnabled;
     bool bUnbound;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     void AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight);
 };
 
@@ -25834,12 +25966,16 @@ public:
     TArray<class AActor*> OverrideVisibleActors;
     TArray<class AActor*> OverrideInvisibleActors;
     TArray<FName> OverrideInvisibleLevels;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class APrecomputedVisibilityVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "PrecomputedVisibilityVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class IPreviewCollectionInterface
@@ -25872,6 +26008,8 @@ class ARadialForceActor : public ARigidBodyBase
 public:
     UE_CLASS("/Script/Engine", "RadialForceActor");
     class URadialForceComponent* ForceComponent;
+    static constexpr const char* ForceComponent__UeSubobject = "ForceComponent0 /Script/Engine.RadialForceComponent";
+    static constexpr const char* RootComponent__UeSubobject = "ForceComponent0 /Script/Engine.RadialForceComponent";
     void DisableForce();
     void EnableForce();
     void FireImpulse();
@@ -25900,6 +26038,9 @@ class ARectLight : public ALight
 public:
     UE_CLASS("/Script/Engine", "RectLight");
     class URectLightComponent* RectLightComponent;
+    static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
+    static constexpr const char* RectLightComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
 };
 
 class URectLightComponent : public ULocalLightComponent
@@ -26179,6 +26320,8 @@ class ARuntimeVirtualTextureVolume : public AActor
 public:
     UE_CLASS("/Script/Engine", "RuntimeVirtualTextureVolume");
     class URuntimeVirtualTextureComponent* VirtualTextureComponent;
+    static constexpr const char* RootComponent__UeSubobject = "VirtualTextureComponent /Script/Engine.RuntimeVirtualTextureComponent";
+    static constexpr const char* VirtualTextureComponent__UeSubobject = "VirtualTextureComponent /Script/Engine.RuntimeVirtualTextureComponent";
 };
 
 class IRVOAvoidanceInterface
@@ -26222,6 +26365,8 @@ class ASceneCaptureCube : public ASceneCapture
 public:
     UE_CLASS("/Script/Engine", "SceneCaptureCube");
     class USceneCaptureComponentCube* CaptureComponentCube;
+    static constexpr const char* CaptureComponentCube__UeSubobject = "NewSceneCaptureComponentCube /Script/Engine.SceneCaptureComponentCube";
+    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
     void OnInterpToggle(bool bEnable);
 };
 
@@ -26446,6 +26591,8 @@ class ASplineMeshActor : public AActor
 public:
     UE_CLASS("/Script/Engine", "SplineMeshActor");
     class USplineMeshComponent* SplineMeshComponent;
+    static constexpr const char* RootComponent__UeSubobject = "SplineMeshComponent0 /Script/Engine.SplineMeshComponent";
+    static constexpr const char* SplineMeshComponent__UeSubobject = "SplineMeshComponent0 /Script/Engine.SplineMeshComponent";
 };
 
 class USpringArmComponent : public USceneComponent
@@ -26540,6 +26687,7 @@ class ATargetPoint : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "TargetPoint");
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class UTextureLightProfile : public UTexture2D
@@ -26577,6 +26725,8 @@ class ATriggerVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Engine", "TriggerVolume");
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UTwitterIntegrationBase : public UPlatformInterfaceBase
@@ -26629,6 +26779,8 @@ class AVolumetricCloud : public AInfo
 public:
     UE_CLASS("/Script/Engine", "VolumetricCloud");
     class UVolumetricCloudComponent* VolumetricCloudComponent;
+    static constexpr const char* RootComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
+    static constexpr const char* VolumetricCloudComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
 };
 
 inline bool operator==(const FGuid&, const FGuid&) { return {}; }

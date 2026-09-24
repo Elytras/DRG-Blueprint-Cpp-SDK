@@ -11,6 +11,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 class UHorizontalBox;
 class UVerticalBox;
+class UWidgetSwitcher;
 namespace Game { namespace UI { namespace Art { namespace WidgetParts { class Basic_Image_C; }}}}
 
 namespace Game { namespace UI { namespace Art { namespace WidgetParts {
@@ -36,6 +37,7 @@ public:
     void SetCount();
     void SetSelectedIndex(int InSelectedDotIndex);
     void SetCountAndSelected(int InCount, int InSelected);
+    void SetFromWidgetSwitcher(class UWidgetSwitcher*& InSwitcher);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

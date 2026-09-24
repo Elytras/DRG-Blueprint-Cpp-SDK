@@ -441,6 +441,8 @@ class AControlPointMeshActor : public AActor
 public:
     UE_CLASS("/Script/Landscape", "ControlPointMeshActor");
     class UControlPointMeshComponent* ControlPointMeshComponent;
+    static constexpr const char* ControlPointMeshComponent__UeSubobject = "ControlPointMeshComponent0 /Script/Landscape.ControlPointMeshComponent";
+    static constexpr const char* RootComponent__UeSubobject = "ControlPointMeshComponent0 /Script/Landscape.ControlPointMeshComponent";
 };
 
 class UControlPointMeshComponent : public UStaticMeshComponent
@@ -517,6 +519,7 @@ public:
     bool bUseLandscapeForCullingInvisibleHLODVertices;
     bool bHasLayersContent;
     TMap<class UTexture2D*, class ULandscapeWeightmapUsage*> WeightmapUsageMap;
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
     void ChangeComponentScreenSizeToUseSubSections(float InComponentScreenSizeToUseSubSections);
     void ChangeLODDistanceFactor(float InLODDistanceFactor);
     void ChangeTessellationComponentScreenSize(float InTessellationComponentScreenSize);
@@ -534,6 +537,7 @@ class ALandscape : public ALandscapeProxy
 {
 public:
     UE_CLASS("/Script/Landscape", "Landscape");
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
 };
 
 class ALandscapeBlueprintBrushBase : public AActor
@@ -593,6 +597,7 @@ public:
     class UMaterialInterface* MobileMaterialInterface;
     TArray<class UMaterialInterface*> MobileMaterialInterfaces;
     TArray<class UTexture2D*> MobileWeightmapTextures;
+    static constexpr const char* LODStreamingProxy__UeSubobject = "LandscapeLODStreamingProxy /Script/Landscape.LandscapeLODStreamingProxy";
     float EditorGetPaintLayerWeightAtLocation(FVector InLocation, class ULandscapeLayerInfoObject* PaintLayer);
     float EditorGetPaintLayerWeightByNameAtLocation(FVector InLocation, FName InPaintLayerName);
     UE_PURE class UMaterialInstanceDynamic* GetMaterialInstanceDynamic(int InIndex) const;
@@ -602,6 +607,7 @@ class ALandscapeGizmoActor : public AActor
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeGizmoActor");
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
 };
 
 class ALandscapeGizmoActiveActor : public ALandscapeGizmoActor
@@ -699,6 +705,8 @@ class ALandscapeMeshProxyActor : public AActor
 public:
     UE_CLASS("/Script/Landscape", "LandscapeMeshProxyActor");
     class ULandscapeMeshProxyComponent* LandscapeMeshProxyComponent;
+    static constexpr const char* LandscapeMeshProxyComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
 };
 
 class ULandscapeMeshProxyComponent : public UStaticMeshComponent
@@ -761,6 +769,7 @@ class ALandscapeStreamingProxy : public ALandscapeProxy
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeStreamingProxy");
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
 };
 
 class ULandscapeSubsystem : public UTickableWorldSubsystem

@@ -68,7 +68,7 @@ public:
     void GetWireLength(float& OutDist);
     void PingSockets();
     UE_PURE bool IsWireSelected();
-    UE_COSMETIC void OnPaint(FPaintContext Context) const;
+    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
     void IsWireCut(bool& WireCut_0) const;
 };
 

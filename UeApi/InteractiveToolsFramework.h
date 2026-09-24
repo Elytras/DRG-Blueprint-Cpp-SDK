@@ -222,6 +222,7 @@ class UInteractiveGizmo : public UObject
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "InteractiveGizmo");
     class UInputBehaviorSet* InputBehaviors;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UAxisAngleGizmo : public UInteractiveGizmo
@@ -241,6 +242,7 @@ public:
     FVector InteractionCurPoint;
     float InteractionStartAngle;
     float InteractionCurAngle;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UAxisPositionGizmoBuilder : public UInteractiveGizmoBuilder
@@ -266,6 +268,7 @@ public:
     float InteractionStartParameter;
     float InteractionCurParameter;
     float ParameterSign;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UGizmoConstantAxisSource : public UObject
@@ -330,18 +333,21 @@ public:
     UE_CLASS("/Script/InteractiveToolsFramework", "InteractiveTool");
     class UInputBehaviorSet* InputBehaviors;
     TArray<class UObject*> ToolPropertyObjects;
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class USingleSelectionTool : public UInteractiveTool
 {
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "SingleSelectionTool");
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UMeshSurfacePointTool : public USingleSelectionTool
 {
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "MeshSurfacePointTool");
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UBaseBrushTool : public UMeshSurfacePointTool
@@ -354,6 +360,7 @@ public:
     FBrushStampData LastBrushStamp;
     TSoftClassPtr<class UClass> PropertyClass;
     class UBrushStampIndicator* BrushStampIndicator;
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UBrushStampIndicatorBuilder : public UInteractiveGizmoBuilder
@@ -380,6 +387,7 @@ public:
     float SecondaryLineThickness;
     FLinearColor SecondaryLineColor;
     class UPrimitiveComponent* AttachedComponent;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UClickDragInputBehavior : public UAnyButtonInputBehavior
@@ -411,6 +419,7 @@ class UClickDragTool : public UInteractiveTool
 {
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "ClickDragTool");
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class AInternalToolFrameworkActor : public AActor
@@ -582,6 +591,7 @@ public:
     bool bAutoInvalidateOnHover;
     bool bAutoInvalidateOnCapture;
     class UInputBehaviorSet* ActiveInputBehaviors;
+    static constexpr const char* ActiveInputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UInteractionMechanic : public UObject
@@ -636,6 +646,7 @@ public:
     class UGizmoLineHandleComponent* UpIntervalComponent;
     class UGizmoLineHandleComponent* DownIntervalComponent;
     class UGizmoLineHandleComponent* ForwardIntervalComponent;
+    static constexpr const char* RootComponent__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
 };
 
 class UIntervalGizmoBuilder : public UInteractiveGizmoBuilder
@@ -654,6 +665,7 @@ public:
     TArray<class UInteractiveGizmo*> ActiveGizmos;
     class UGizmoComponentAxisSource* AxisYSource;
     class UGizmoComponentAxisSource* AxisZSource;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UGizmoBaseFloatParameterSource : public UObject
@@ -699,6 +711,7 @@ class UMultiSelectionTool : public UInteractiveTool
 {
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "MultiSelectionTool");
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UGizmoLocalFloatParameterSource : public UGizmoBaseFloatParameterSource
@@ -837,6 +850,7 @@ public:
     FVector2D InteractionStartParameter;
     FVector2D InteractionCurParameter;
     FVector2D ParameterSigns;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class USelectionSet : public UObject
@@ -872,6 +886,7 @@ class USingleClickTool : public UInteractiveTool
 {
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "SingleClickTool");
+    static constexpr const char* InputBehaviors__UeSubobject = "InputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UGizmoNilStateTarget : public UObject
@@ -919,6 +934,23 @@ public:
     class UPrimitiveComponent* PlaneScaleYZ;
     class UPrimitiveComponent* PlaneScaleXZ;
     class UPrimitiveComponent* PlaneScaleXY;
+    static constexpr const char* AxisScaleX__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* AxisScaleY__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* AxisScaleZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* PlaneScaleXY__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* PlaneScaleXZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* PlaneScaleYZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* RootComponent__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* RotateX__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* RotateY__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* RotateZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* TranslateX__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* TranslateXY__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* TranslateXZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* TranslateY__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* TranslateYZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* TranslateZ__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
+    static constexpr const char* UniformScale__UeSubobject = "GizmoCenter /Script/Engine.SphereComponent";
 };
 
 class UTransformGizmoBuilder : public UInteractiveGizmoBuilder
@@ -952,6 +984,7 @@ public:
     class UGizmoComponentAxisSource* UnitAxisZSource;
     class UGizmoTransformChangeStateTarget* StateTarget;
     class UGizmoScaledTransformSource* ScaledTransformSource;
+    static constexpr const char* InputBehaviors__UeSubobject = "GizmoInputBehaviors /Script/InteractiveToolsFramework.InputBehaviorSet";
 };
 
 class UTransformProxy : public UObject

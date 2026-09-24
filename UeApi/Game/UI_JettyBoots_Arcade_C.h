@@ -90,7 +90,7 @@ public:
     static constexpr const char* Display_Lives__UeName = "Display Lives";
     void Display_Level(int InValue);
     static constexpr const char* Display_Level__UeName = "Display Level";
-    void SetHighScores(TArray<FJettyBootsScore> InHighScores, int InLastIndex);
+    void SetHighScores(TArray<FJettyBootsScore>& InHighScores, int InLastIndex);
     void StartGame(class APlayerCharacter* InUser, class AJettyBootsArcadeActor* InArcade);
     void GetUserName(FString& OutName);
     void StopGame();

@@ -360,13 +360,14 @@ public:
     void GetCountDown(bool First, BP_Widget_DropPod_AltitudeMeter_C*& AsBP_Count_Down_Actor);
     void SetAllPlayersAnsel(bool Active);
     void RemoveDangerousCaveItems(float Distance);
-    void DestroyIfClose(TArray<class AActor*> Actors, float DistanceSQ);
+    void DestroyIfClose(TArray<class AActor*>& Actors, float DistanceSQ);
     void SetPathBlockersEnabled(bool enable);
     void HandleRampPhotosensitivity();
     bool AnyPlayersOnRamp();
     float OperateMuleBay(bool Open, class UAnimMontage*& Montage);
     void OnRep_DoorState();
     void EnableMulebay();
+    void GetMuleUnloadTarget(class AMULE*& MULE, FTransform& RelativeTransform);
     void OnRep_MuleUnloadTransform();
     void CollectMule(class AMULE* MULE);
     void OnRep_MuleSequenceComplete();

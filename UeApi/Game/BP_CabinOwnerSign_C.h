@@ -35,7 +35,7 @@ public:
     void ChangeName(FString NewName);
     void SetCabinOwner(class AFSDPlayerState* PlayerState);
     void UserConstructionScript();
-    void SetPlayerName(FText Value);
+    void SetPlayerName(FText& Value);
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

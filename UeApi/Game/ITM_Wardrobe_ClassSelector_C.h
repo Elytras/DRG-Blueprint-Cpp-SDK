@@ -7,7 +7,6 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../Engine.h"
 #include "../FSD.h"
-#include "../SlateCore.h"
 #include "../UMG.h"
 
 class APlayerCharacter;
@@ -71,7 +70,7 @@ public:
     void GetNextCharacter(class UPlayerCharacterID*& Character);
     void GetPrevCharacter(class UPlayerCharacterID*& Character);
     void SetSwitchButtonState();
-    FEventReply HandleKeyInput(FKeyEvent InKeyEvent, bool& Handled);
+    FEventReply HandleKeyInput(FKeyEvent& InKeyEvent, bool& Handled);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

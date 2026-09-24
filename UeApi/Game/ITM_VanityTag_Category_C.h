@@ -40,7 +40,7 @@ public:
     static constexpr const char* Set_Category_and_Tags__UeName = "Set Category and Tags";
     void GetSelected(TArray<class UDetailedTag*>& OutSelected);
     void EntryClicked();
-    void SetSelected(TArray<class UDetailedTag*> InSelectedTags);
+    void SetSelected(TArray<class UDetailedTag*>& InSelectedTags);
     void ClearSelected();
 };
 

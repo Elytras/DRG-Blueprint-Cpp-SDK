@@ -103,7 +103,7 @@ public:
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_DrillDozer_AnimGraphNode_ModifyBone_4EC2EAF14F6A06C6251C51AC7BA1E0AA();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_DrillDozer_AnimGraphNode_ModifyBone_644B4D324C3487FB1FFBDDB7E60E99BF();
     void FindHits(FName FrontSocket, FName CenterSocket, FName BackSocket, int& NumberOfHits, float& ZDist, FRotator& Rotation);
-    void ApplyForces(float SuspensionAlpha, FRotator TrackRotator, float TargetDist, FRotator TargetRotation);
+    void ApplyForces(float& SuspensionAlpha, FRotator& TrackRotator, float TargetDist, FRotator TargetRotation);
     void AnimGraph(FPoseLink& AnimGraph_0);
 };
 

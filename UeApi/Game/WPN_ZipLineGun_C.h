@@ -75,7 +75,7 @@ public:
     bool CanFireWeapon(FText& FailMsg, class UDialogDataAsset*& FailShout);
     UE_PURE FVector CalcFirstPersonMuzzleLocation();
     void GetGrounded(bool& OutGrounded);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

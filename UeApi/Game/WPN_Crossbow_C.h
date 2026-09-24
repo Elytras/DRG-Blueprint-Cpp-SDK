@@ -36,7 +36,7 @@ public:
     void SetAnimatedFPMeshComponentFromBP(class AActor* animatedArrow);
     void UpdateRecallProgress();
     void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     void GetEquippedSpecialArrow(class AFSDPlayerState* Player, class UClass*& Projectile) const;
     void Get_Reload_Stat(class AFSDPlayerState* PlayerState, FGearStatEntry& GearStatEntry) const;
     static constexpr const char* Get_Reload_Stat__UeName = "Get Reload Stat";

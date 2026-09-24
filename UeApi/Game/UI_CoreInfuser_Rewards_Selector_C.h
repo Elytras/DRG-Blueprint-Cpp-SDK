@@ -32,7 +32,7 @@ public:
     TMulticastInlineDelegate<void(class USchematic* Reward)> OnRewardSelected;
     bool IsOpen;
     TMulticastInlineDelegate<void(bool Open)> OnOpenChanged;
-    TMulticastInlineDelegate<void(TArray<class USchematic*> Rewards)> OnRewardsChanged;
+    TMulticastInlineDelegate<void(TArray<class USchematic*>& Rewards)> OnRewardsChanged;
     bool IsRewardSelected;
     void ExecuteUbergraph_UI_CoreInfuser_Rewards_Selector(int EntryPoint);
     void SetDispenser(class AEventRewardDispenser* InDispenser);
@@ -40,7 +40,7 @@ public:
     void RewardUnhovered(UI_CoreInfuser_Reward_Icon_C* IconWidget);
     void RewardHovered(UI_CoreInfuser_Reward_Icon_C* IconWidget);
     UE_COSMETIC void Construct();
-    void SetSchematicRewards(TArray<class USchematic*> InRewards);
+    void SetSchematicRewards(TArray<class USchematic*>& InRewards);
     void SetSelectedReward(class USchematic* InReward, bool& IsRewardValid);
     void SetOpen(bool InIsOpen);
 };

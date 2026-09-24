@@ -7,7 +7,6 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../CoreUObject.h"
 #include "../Engine.h"
-#include "../FSD.h"
 #include "../UMG.h"
 
 class AActor;
@@ -37,7 +36,7 @@ public:
     void ExecuteUbergraph_HUD_Directional_Damage_IndicatorV2(int EntryPoint);
     void StartTick();
     UE_COSMETIC void Construct();
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, FDamageData& DamageData, bool anyHealthLost);
     UE_PURE float CalcFadeStrength(float TimeLeft, float HitSize);
     void UpdatePoints();
 };

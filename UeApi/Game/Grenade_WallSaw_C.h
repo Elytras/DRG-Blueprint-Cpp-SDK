@@ -26,7 +26,7 @@ public:
     void OnExploded();
     void ReceiveBeginPlay();
     void GetDurationBeforeExpiration(float& Duration_0);
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::WallSaw

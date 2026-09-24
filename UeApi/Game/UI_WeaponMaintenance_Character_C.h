@@ -36,7 +36,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetCharacter(class UPlayerCharacterID* InCharacterID);
-    void SetItems(class UPanelWidget* InPanel, TArray<class UItemID*> InItems);
+    void SetItems(class UPanelWidget* InPanel, TArray<class UItemID*>& InItems);
 };
 
 }}}   // namespace Game::UI::WeaponMaintenance

@@ -6,7 +6,6 @@ A member is here if and only if AssetGen can compile a use of it.
 */
 #include "../UeMeta.h"
 #include "../Engine.h"
-#include "../FSD.h"
 #include "ENE_SpiderBase_Large_C.h"
 
 class AActor;
@@ -104,13 +103,13 @@ public:
     void DamageAndCarve();
     void OnRep_IsSucking();
     void SetAchievementFromServerToAll(class UFSDAchievement* AchievementToSet, float Progress);
-    UE_PURE bool ShouldExplode(TArray<class UDamageTag*> Tags_0);
+    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void GetEnemySpawnedCount(int& SpawnCount);
-    void Apply_Force_to_Players_in_Range(TArray<class APlayerCharacter*> Array_of_Players, float Directional_Force_to_Apply);
+    void Apply_Force_to_Players_in_Range(TArray<class APlayerCharacter*>& Array_of_Players, float Directional_Force_to_Apply);
     static constexpr const char* Apply_Force_to_Players_in_Range__UeName = "Apply Force to Players in Range";
     void MakeCrater();
     void SetupWeakpointGlow();
-    void SetRagdollImpulse(FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     UE_PURE bool GetIsTargetable() const;
 };
 

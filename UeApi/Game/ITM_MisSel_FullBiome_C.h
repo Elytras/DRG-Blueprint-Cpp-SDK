@@ -40,7 +40,7 @@ public:
     void ClearMissions();
     void GetRandomFreeMissionSlot(ITM_MisSel_MissionMapIcon_C*& Output);
     void UpdateMapPan(FVector2D InPosition);
-    void HighlightMissions(TArray<class UObject*> AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
+    void HighlightMissions(TArray<class UObject*>& AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

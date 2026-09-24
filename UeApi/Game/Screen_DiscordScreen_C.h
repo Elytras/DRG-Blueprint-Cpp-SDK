@@ -84,7 +84,7 @@ public:
     static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
     UE_COSMETIC void Construct();
     void TestCommunityGoals();
-    void SetGoals(TArray<FString> Goals, TArray<float> Values, TArray<int> Members);
+    void SetGoals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members);
     void SetGoalState(bool isGoal, bool isRecruitment);
     void CurrentPlayerFaction(class UCommunityGoalFaction*& Current_Faction);
     void BuildRewardUI();

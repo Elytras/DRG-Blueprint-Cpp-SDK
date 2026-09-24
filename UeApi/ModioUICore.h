@@ -194,16 +194,16 @@ class UModioNotificationParamsLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioNotificationParamsLibrary");
-    static FModioNotificationParams AddFormatText(FModioNotificationParams NotificationParams, FName Name_0, FText Text);
+    static FModioNotificationParams AddFormatText(FModioNotificationParams& NotificationParams, FName Name_0, FText Text);
     static FModioNotificationParams CreateInstallationNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
     static FModioNotificationParams CreateNotificationParams(FModioErrorCode StatusCode, FText TitleText, FText SuccessText, FText ErrorText);
     static FModioNotificationParams CreateRatingNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
     static FModioNotificationParams CreateSubscriptionNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
     static FModioNotificationParams CreateUninstallNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
-    static FModioNotificationParams SetFloatArg(FModioNotificationParams NotificationParams, FString Name_0, float Value);
-    static FModioNotificationParams SetIntegerArg(FModioNotificationParams NotificationParams, FString Name_0, int Value);
-    static FModioNotificationParams SetStringArg(FModioNotificationParams NotificationParams, FString Name_0, FString Value);
-    static FModioNotificationParams SetTextArg(FModioNotificationParams NotificationParams, FString Name_0, FText Text);
+    static FModioNotificationParams SetFloatArg(FModioNotificationParams& NotificationParams, FString Name_0, float Value);
+    static FModioNotificationParams SetIntegerArg(FModioNotificationParams& NotificationParams, FString Name_0, int Value);
+    static FModioNotificationParams SetStringArg(FModioNotificationParams& NotificationParams, FString Name_0, FString Value);
+    static FModioNotificationParams SetTextArg(FModioNotificationParams& NotificationParams, FString Name_0, FText Text);
 };
 
 class IModioUINotification
@@ -335,7 +335,7 @@ public:
     TDelegate<void(FModioModID Mod)> GetModEnabledDelegate;
     void CloseModBrowserUI();
     void DisplayErrorDialog(FModioErrorCode ErrorCode);
-    void DisplayNotification(TScriptInterface<class IModioUINotification> Notification);
+    void DisplayNotification(TScriptInterface<class IModioUINotification>& Notification);
     void DisplayNotificationManual(FText Title, FText Message, bool bIsError);
     void DisplayNotificationParams(FModioNotificationParams Params_0);
     FText FormatText(FText Input);

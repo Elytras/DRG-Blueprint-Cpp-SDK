@@ -69,7 +69,7 @@ public:
     void StartAnsel();
     void ReStartAnsel();
     void GetUnlockedItems(EItemCategory Category, TArray<class UClass*>& Unlocked_Items);
-    void SetUnlockAnalytics(TArray<class UClass*> Primary, TArray<class UClass*> Secundary);
+    void SetUnlockAnalytics(TArray<class UClass*>& Primary, TArray<class UClass*>& Secundary);
     void SetClassAnalytics();
     void ItemFilter(class UClass* itemClass, bool& Result);
     void SetHasShownCharacterSelector(bool HasShown);

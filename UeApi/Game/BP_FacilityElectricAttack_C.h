@@ -40,7 +40,7 @@ public:
     UE_MULTICAST void AttackEffets();
     void ReceiveAttackTarget(class AActor* Target);
     void ReceiveTick(float DeltaSeconds);
-    void SetupDamage(class UDamageComponent* Damage, TArray<int> Feedbackbar_0);
+    void SetupDamage(class UDamageComponent* Damage, TArray<int>& Feedbackbar_0);
     void OnRep_Stage();
 };
 

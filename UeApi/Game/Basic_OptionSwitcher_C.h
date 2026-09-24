@@ -39,7 +39,7 @@ public:
     void BndEvt__Button_Right_K2Node_ComponentBoundEvent_164_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Left_K2Node_ComponentBoundEvent_143_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Set_Options(TArray<FText> options_0, int DefaultIndex);
+    void Set_Options(TArray<FText>& options_0, int DefaultIndex);
     static constexpr const char* Set_Options__UeName = "Set Options";
     void SetSelectedIndex(int NewIndex);
     void SetSelectedValue(FText Value);
@@ -49,7 +49,7 @@ public:
     static constexpr const char* Add_Option__UeName = "Add Option";
     void ClearOptions();
     void GetOptionCount(int& Count);
-    bool RemoveOption(FText Item);
+    bool RemoveOption(FText& Item);
     void ContainsOption(FText Option, bool& DoesContain);
 };
 

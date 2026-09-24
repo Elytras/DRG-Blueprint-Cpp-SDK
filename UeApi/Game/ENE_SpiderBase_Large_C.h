@@ -85,7 +85,7 @@ public:
     void Play_Burn_Death();
     static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
     void UserConstructionScript();
-    void SetRagdollImpulse(FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     void SpawnLeg(FName InSocketName, FVector force);
     void OnRep_DeathType();
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
@@ -96,9 +96,9 @@ public:
     void SetBurnMaterialSettings();
     void SetCookMaterialSettings();
     void SetDeathAnimationCategory(ESpiderDeathAnimationCategory Category);
-    UE_PURE FVector GetImpactImpulse(EImpulseDirectionSource Selection, FDamageData DamageData, float UpForceScale);
-    void HandleNormalDeath(FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
-    void HandleWeapointDeath(FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    FVector GetImpactImpulse(EImpulseDirectionSource Selection, FDamageData& DamageData, float UpForceScale);
+    void HandleNormalDeath(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
+    void HandleWeapointDeath(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     void GetFXMeshScale(float& Scale);
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemicalArrow);
     void CalcDissolveDelay(float& Delay);

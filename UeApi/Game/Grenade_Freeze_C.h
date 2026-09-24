@@ -33,7 +33,7 @@ public:
     void ExecuteUbergraph_Grenade_Freeze(int EntryPoint);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void OnExploded();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Freeze

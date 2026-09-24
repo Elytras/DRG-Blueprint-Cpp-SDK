@@ -16,6 +16,8 @@ class ACableActor : public AActor
 public:
     UE_CLASS("/Script/CableComponent", "CableActor");
     class UCableComponent* CableComponent;
+    static constexpr const char* CableComponent__UeSubobject = "CableComponent0 /Script/CableComponent.CableComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CableComponent0 /Script/CableComponent.CableComponent";
 };
 
 class UCableComponent : public UMeshComponent

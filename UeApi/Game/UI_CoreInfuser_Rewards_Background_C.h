@@ -36,7 +36,7 @@ public:
     void OnRewardHovered_Event(UI_CoreInfuser_Reward_Icon_C* Reward);
     void SetHovered(int InIndex, bool InHovered);
     void GetIconWidget(int Index_0, UI_CoreInfuser_Reward_Background_C*& IconWidget);
-    void SetRewards(TArray<class USchematic*> InRewards);
+    void SetRewards(TArray<class USchematic*>& InRewards);
     void SetRewardGiven(int Index_0);
     void SetOpen(bool IsOpen_0);
 };

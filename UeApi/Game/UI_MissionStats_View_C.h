@@ -58,7 +58,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetMissionStats(TArray<class UMissionStat*>& assets);
-    void SortStats(TArray<class UMissionStat*> InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
+    void SortStats(TArray<class UMissionStat*>& InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
     void NextStoreMode();
 };
 

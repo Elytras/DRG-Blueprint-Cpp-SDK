@@ -114,7 +114,7 @@ public:
     void OnModStateDependencyChanged(bool IsChecked, bool ShouldDisableCheckmark, bool& HasChanged);
     void CheckGameVersionBeforeEnable(bool InEnabled);
     class UWidget* CreateversionTooltip();
-    void FindParentsInArray(TArray<class UWidget*> PotentialParents);
+    void FindParentsInArray(TArray<class UWidget*>& PotentialParents);
     UE_PURE class UWidget* GetDependencyCheckboxTooltip();
     void SetFromPackage(class UUGCPackage* InPackage);
     void CheckIfSavedInSlot();

@@ -26,6 +26,8 @@ class AFieldSystemActor : public AActor
 public:
     UE_CLASS("/Script/FieldSystemEngine", "FieldSystemActor");
     class UFieldSystemComponent* FieldSystemComponent;
+    static constexpr const char* FieldSystemComponent__UeSubobject = "FieldSystemComponent /Script/FieldSystemEngine.FieldSystemComponent";
+    static constexpr const char* RootComponent__UeSubobject = "FieldSystemComponent /Script/FieldSystemEngine.FieldSystemComponent";
 };
 
 class UFieldSystem : public UObject

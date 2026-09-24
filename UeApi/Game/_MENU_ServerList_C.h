@@ -222,7 +222,7 @@ public:
     void OnSuccess_155E2CBD4AAE55F9B2CDDA9239840B3A();
     void OnFailure_155E2CBD4AAE55F9B2CDDA9239840B3A();
     void CreateSubMenus();
-    void PopulateServerList(TArray<FBlueprintSessionResult> servers);
+    void PopulateServerList(TArray<FBlueprintSessionResult>& servers);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetSelectedSearchDistance();
     void ShowNoServersFound(bool Visible);

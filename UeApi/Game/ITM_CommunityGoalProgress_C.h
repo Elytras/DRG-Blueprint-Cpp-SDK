@@ -49,7 +49,7 @@ public:
     UE_COSMETIC void Construct();
     void SetTime(float Seconds);
     void TestCommunityGoal();
-    void SetGoals(TArray<FString> Goals, TArray<float> Values, TArray<int> Members, float Miners_Union_Tier, bool ForceRefresh);
+    void SetGoals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members, float Miners_Union_Tier, bool ForceRefresh);
     void SetInfoToCurrentFaction();
 };
 

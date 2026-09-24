@@ -44,7 +44,7 @@ public:
     void Recieve_UpdateMeshses(bool IsFirstPerson_0);
     void ReceiveBeginPlay();
     void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle

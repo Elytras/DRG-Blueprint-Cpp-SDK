@@ -27,7 +27,7 @@ public:
     void ExecuteUbergraph_UI_RoundedCanvas(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateMaterial();
-    UE_COSMETIC void OnPaint(FPaintContext Context) const;
+    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

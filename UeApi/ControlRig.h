@@ -4782,6 +4782,8 @@ public:
     TArray<class UStaticMeshComponent*> Components;
     TArray<class UMaterialInstanceDynamic*> Materials;
     FName ColorParameterName;
+    static constexpr const char* ActorRootComponent__UeSubobject = "SceneComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SceneComponent0 /Script/Engine.SceneComponent";
     void Clear();
     void Refresh();
 };
@@ -4803,6 +4805,8 @@ public:
     class UControlRig* InteractionRig;
     TSubclassOf<class UControlRig> InteractionRigClass;
     TArray<class UAssetUserData*> AssetUserData;
+    static constexpr const char* DataSourceRegistry__UeSubobject = "DataSourceRegistry /Script/AnimationCore.AnimationDataSourceRegistry";
+    static constexpr const char* VM__UeSubobject = "VM /Script/RigVM.RigVM";
     void SetInteractionRig(class UControlRig* InInteractionRig);
     void SetInteractionRigClass(TSubclassOf<class UControlRig> InInteractionRigClass);
     UE_PURE class UControlRig* GetInteractionRig() const;
@@ -4822,6 +4826,7 @@ public:
     bool bSelected;
     bool bSelectable;
     bool bHovered;
+    static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
     void OnEnabledChanged(bool bIsEnabled);
     void OnHoveredChanged(bool bIsSelected);
     void OnManipulatingChanged(bool bIsManipulating);
@@ -4842,6 +4847,8 @@ class UAdditiveControlRig : public UControlRig
 {
 public:
     UE_CLASS("/Script/ControlRig", "AdditiveControlRig");
+    static constexpr const char* DataSourceRegistry__UeSubobject = "DataSourceRegistry /Script/AnimationCore.AnimationDataSourceRegistry";
+    static constexpr const char* VM__UeSubobject = "VM /Script/RigVM.RigVM";
 };
 
 class UControlRigAnimInstance : public UAnimInstance
@@ -4998,6 +5005,8 @@ public:
     UE_CLASS("/Script/ControlRig", "FKControlRig");
     TArray<bool> IsControlActive;
     EControlRigFKRigExecuteMode ApplyMode;
+    static constexpr const char* DataSourceRegistry__UeSubobject = "DataSourceRegistry /Script/AnimationCore.AnimationDataSourceRegistry";
+    static constexpr const char* VM__UeSubobject = "VM /Script/RigVM.RigVM";
 };
 
 class UMovieSceneControlRigParameterSection : public UMovieSceneParameterSection

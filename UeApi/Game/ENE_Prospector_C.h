@@ -146,7 +146,7 @@ public:
     static constexpr const char* Spawn_Dirt_Samples__UeName = "Spawn Dirt Samples";
     void AddDirtSample();
     void SetupResources();
-    void SetupGameplayTags(TArray<FGameplayTag> TagsToAdd, TArray<FGameplayTag> TagsToRemove);
+    void SetupGameplayTags(TArray<FGameplayTag>& TagsToAdd, TArray<FGameplayTag>& TagsToRemove);
     void TriggerAlarmedFeedback(bool BlinkLights);
     void ToggleBossFight(bool IsActive);
     void CheckForDamageCause(class AActor* DamageCauser, bool& ShouldReact);

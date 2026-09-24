@@ -73,7 +73,7 @@ public:
     static constexpr const char* Cancel_Order__UeName = "Cancel Order";
     void OnDrinksPurchased_Event(class UDrinkableDataAsset* Drink);
     void OnDrinkAdded(UI_Bar_OrderMenu_Item_C* DrinkWidget);
-    void SetMenu(class UDrinkableDataAsset* Special, TArray<class UDrinkableDataAsset*> Drinks, class UDrinkableDataAsset* SpecialEventBeer);
+    void SetMenu(class UDrinkableDataAsset* Special, TArray<class UDrinkableDataAsset*>& Drinks, class UDrinkableDataAsset* SpecialEventBeer);
     TArray<class UDrinkableDataAsset*> GetDrinkables(class UDrinkableDataAsset*& SpecialEventBeer);
 };
 

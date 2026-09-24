@@ -58,7 +58,7 @@ public:
     void UserConstructionScript();
     void StartFadeOut(float& Time);
     void UpdateShadowRadius();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::Flares

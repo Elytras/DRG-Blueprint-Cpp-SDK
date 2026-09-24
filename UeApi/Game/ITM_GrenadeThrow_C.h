@@ -47,7 +47,7 @@ public:
     void RecieveUnequipped();
     void RecieveEquipped();
     void ReceiveTick(float DeltaSeconds);
-    void UpdateSpline(TArray<FVector> Array, float DeltaTime);
+    void UpdateSpline(TArray<FVector>& Array, float& DeltaTime);
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

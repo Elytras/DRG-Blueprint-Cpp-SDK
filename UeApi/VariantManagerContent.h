@@ -73,6 +73,7 @@ public:
     UE_CLASS("/Script/VariantManagerContent", "LevelVariantSetsActor");
     FSoftObjectPath LevelVariantSets;
     TMap<class UClass*, class ULevelVariantSetsFunctionDirector*> DirectorInstances;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     class ULevelVariantSets* GetLevelVariantSets(bool bLoad);
     void SetLevelVariantSets(class ULevelVariantSets* InVariantSets);
     bool SwitchOnVariantByIndex(int VariantSetIndex, int VariantIndex);
@@ -145,6 +146,8 @@ public:
     UE_CLASS("/Script/VariantManagerContent", "SwitchActor");
     class USceneComponent* SceneComponent;
     int LastSelectedOption;
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* SceneComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void SelectOption(int OptionIndex);
     UE_PURE TArray<class AActor*> GetOptions() const;
     UE_PURE int GetSelectedOption() const;

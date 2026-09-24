@@ -99,6 +99,10 @@ public:
     TArray<double> PoseTimes;
     class UOculusMR_Settings* MRSettings;
     class UOculusMR_State* MRState;
+    static constexpr const char* CaptureComponent2D__UeSubobject = "NewSceneCaptureComponent2D /Script/Engine.SceneCaptureComponent2D";
+    static constexpr const char* PlaneMeshComponent__UeSubobject = "PlaneMeshComponent /Script/OculusMR.OculusMR_PlaneMeshComponent";
+    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+    static constexpr const char* VRNotificationComponent__UeSubobject = "VRNotificationComponent /Script/HeadMountedDisplay.VRNotificationsComponent";
 };
 
 class UOculusMR_PlaneMeshComponent : public UMeshComponent

@@ -84,7 +84,7 @@ public:
     void SetWeakpointVisibility(bool Visible, class UDestructibleSubHealthComponent* Health);
     UE_PURE bool IsArmorIntact();
     void OnRep_HeavyTankState();
-    UE_PURE bool ShouldExplode(TArray<class UDamageTag*> Tags_0);
+    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void SetArmorMeshState(bool ArmorOpen);
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void SetupWeakspotGlow();

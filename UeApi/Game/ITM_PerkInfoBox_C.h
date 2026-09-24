@@ -44,7 +44,7 @@ public:
     UE_COSMETIC void Construct();
     void GetEquippedPerksByType(class UPlayerCharacterID* InCharacter, EPerkUsageType InType, TArray<class UPerkAsset*>& perks);
     void CreateSlots(class UPanelWidget* InSlotsBox, EPerkUsageType InType);
-    void GetEquippedPerkAt(int Idx, TArray<class UPerkAsset*> perks, class UPerkAsset*& Perk);
+    void GetEquippedPerkAt(int Idx, TArray<class UPerkAsset*>& perks, class UPerkAsset*& Perk);
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

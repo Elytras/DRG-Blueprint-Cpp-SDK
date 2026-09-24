@@ -80,7 +80,7 @@ public:
     void SetHovered(bool Hovered);
     UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
     UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    void SetCategoryFilter(TArray<class UTexture2D*> Filter);
+    void SetCategoryFilter(TArray<class UTexture2D*>& Filter);
     void GetIcon(class UTexture2D*& Icon);
     void GetIsClaimable(bool& ItemClaimable_0);
     void UpdateRewardStar(int Index_0);

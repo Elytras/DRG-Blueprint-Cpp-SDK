@@ -23,7 +23,7 @@ public:
     void ExecuteUbergraph_HUD_ActivatablePerks(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void SetPerks(TArray<class UPerkAsset*> Array);
+    void SetPerks(TArray<class UPerkAsset*>& Array);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Perks

@@ -40,7 +40,7 @@ struct FRandomStream;
     int LastIndex() const; \
     int Length() const; \
     void Random(T& OutItem, int& OutIndex) const; \
-    void RandomFromStream(FRandomStream RandomStream, T& OutItem, int& OutIndex) const; \
+    void RandomFromStream(FRandomStream& RandomStream, T& OutItem, int& OutIndex) const; \
     void Remove(int IndexToRemove); \
     bool RemoveItem(const T& Item); \
     void Resize(int Size); \

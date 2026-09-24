@@ -1131,6 +1131,8 @@ class AARSharedWorldPlayerController : public APlayerController
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARSharedWorldPlayerController");
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     UE_CLIENT UE_RELIABLE void ClientInitSharedWorld(int PreviewImageSize, int ARWorldDataSize);
     UE_CLIENT UE_RELIABLE void ClientUpdateARWorldData(int Offset, TArray<uint8> Buffer);
     UE_CLIENT UE_RELIABLE void ClientUpdatePreviewImageData(int Offset, TArray<uint8> Buffer);
@@ -1142,6 +1144,8 @@ class AARSkyLight : public ASkyLight
 public:
     UE_CLASS("/Script/AugmentedReality", "ARSkyLight");
     class UAREnvironmentCaptureProbe* CaptureProbe;
+    static constexpr const char* LightComponent__UeSubobject = "SkyLightComponent0 /Script/Engine.SkyLightComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SkyLightComponent0 /Script/Engine.SkyLightComponent";
     void SetEnvironmentCaptureProbe(class UAREnvironmentCaptureProbe* InCaptureProbe);
 };
 

@@ -40,7 +40,7 @@ public:
     void BreakFinished(class UAnimMontage* Montage, bool bInterrupted);
     void PoseFinished(class UAnimMontage* Montage, bool bInterrupted);
     void ReceiveBeginPlay();
-    void RandomAnimElement(TArray<class UAnimSequence*> Array, class UAnimSequence*& Output);
+    void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
     void InitFXLights(FTransform SpawnTransform, bool Survived);
     void Cleanup();
     void SpawnAttachmentIfNeeded();

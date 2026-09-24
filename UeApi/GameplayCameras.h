@@ -110,6 +110,7 @@ public:
     float OscillatorTimeRemaining;
     class UCameraAnimInst* AnimInst;
     class USequenceCameraShakePattern* SequenceShakePattern;
+    static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.MatineeCameraShakePattern";
     static class UMatineeCameraShake* StartMatineeCameraShake(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class UMatineeCameraShake> ShakeClass, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
     static class UMatineeCameraShake* StartMatineeCameraShakeFromSource(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class UMatineeCameraShake> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
     void BlueprintUpdateCameraShake(float DeltaTime, float alpha, FMinimalViewInfo POV, FMinimalViewInfo& ModifiedPOV);
@@ -152,6 +153,7 @@ class UDefaultCameraShakeBase : public UCameraShakeBase
 {
 public:
     UE_CLASS("/Script/GameplayCameras", "DefaultCameraShakeBase");
+    static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.PerlinNoiseCameraShakePattern";
 };
 
 class UMatineeCameraShakePattern : public UCameraShakePattern

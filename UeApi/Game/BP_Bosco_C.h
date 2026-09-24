@@ -63,7 +63,7 @@ public:
     void ReceiveBeginPlay();
     bool OnTriggerAI(FName TriggerName);
     void ScareEffect();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState_0, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState_0, TArray<FGearStatEntry>& Stats) const;
     void Handle_Projectile_diffs(FGearStatEntry Gear_stat, EItemPreviewStatus Cryo_upgrade_preview_status, EDamageUpgrade damage_upgrade_type, class AFSDPlayerState* FSD_player_state, FGearStatEntry& gear_stat_out) const;
     static constexpr const char* Handle_Projectile_diffs__UeName = "Handle Projectile diffs";
 };

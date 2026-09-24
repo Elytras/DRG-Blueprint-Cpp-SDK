@@ -48,7 +48,7 @@ public:
     void Receive_ReloadBegin();
     void ReceiveBeginPlay();
     void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
 };

@@ -31,7 +31,7 @@ public:
     static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     void ExecuteUbergraph_WPN_FlareGun(int EntryPoint);
     void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::FlareGun

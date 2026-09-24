@@ -241,6 +241,7 @@ class AInstancedFoliageActor : public AActor
 {
 public:
     UE_CLASS("/Script/Foliage", "InstancedFoliageActor");
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
 };
 
 class AInteractiveFoliageActor : public AStaticMeshActor
@@ -261,6 +262,8 @@ public:
     float MaxTouchImpulse;
     float MaxForce;
     float Mass;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Foliage.InteractiveFoliageComponent";
     void CapsuleTouched(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult OverlapInfo);
 };
 
@@ -269,6 +272,8 @@ class AProceduralFoliageBlockingVolume : public AVolume
 public:
     UE_CLASS("/Script/Foliage", "ProceduralFoliageBlockingVolume");
     class AProceduralFoliageVolume* ProceduralFoliageVolume;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UProceduralFoliageComponent : public UActorComponent
@@ -306,4 +311,7 @@ class AProceduralFoliageVolume : public AVolume
 public:
     UE_CLASS("/Script/Foliage", "ProceduralFoliageVolume");
     class UProceduralFoliageComponent* ProceduralComponent;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* ProceduralComponent__UeSubobject = "ProceduralFoliageComponent /Script/Foliage.ProceduralFoliageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };

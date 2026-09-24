@@ -369,6 +369,8 @@ public:
     UE_CLASS("/Script/AudioMixer", "QuartzSubsystem");
     class UQuartzClockHandle* CreateNewClock(class UObject* WorldContextObject, FName ClockName, FQuartzClockSettings InSettings, bool bOverrideSettingsIfClockExists, bool bUseAudioEngineClockManager);
     class UQuartzClockHandle* CreateNewClock(FName ClockName, FQuartzClockSettings InSettings, bool bOverrideSettingsIfClockExists, bool bUseAudioEngineClockManager);
+    void DeleteClockByHandle(class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle);
+    void DeleteClockByHandle(class UQuartzClockHandle*& InClockHandle);
     void DeleteClockByName(class UObject* WorldContextObject, FName ClockName);
     void DeleteClockByName(FName ClockName);
     bool DoesClockExist(class UObject* WorldContextObject, FName ClockName);

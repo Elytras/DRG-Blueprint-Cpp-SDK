@@ -2932,6 +2932,7 @@ public:
     class UMaterialParameterCollection* SourceMaterialCollection;
     class UNiagaraParameterCollectionInstance* DefaultInstance;
     FGuid CompileId;
+    static constexpr const char* DefaultInstance__UeSubobject = "Default Instance /Script/Niagara.NiagaraParameterCollectionInstance";
 };
 
 class UNiagaraParameterDefinitionsBase : public UObject
@@ -3065,6 +3066,7 @@ public:
     int NumX;
     int NumY;
     TArray<class UChildActorComponent*> PreviewComponents;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void ActivatePreviews(bool bReset);
     void DeactivatePreviews();
     void GetPreviews(TArray<class UNiagaraComponent*>& OutPreviews);
@@ -3259,6 +3261,8 @@ public:
     UE_CLASS("/Script/Niagara", "NiagaraActor");
     class UNiagaraComponent* NiagaraComponent;
     bool bDestroyOnSystemFinish;
+    static constexpr const char* NiagaraComponent__UeSubobject = "NiagaraComponent0 /Script/Niagara.NiagaraComponent";
+    static constexpr const char* RootComponent__UeSubobject = "NiagaraComponent0 /Script/Niagara.NiagaraComponent";
     void OnNiagaraSystemFinished(class UNiagaraComponent* FinishedComponent);
     void SetDestroyOnSystemFinish(bool bShouldDestroyOnSystemFinish);
 };

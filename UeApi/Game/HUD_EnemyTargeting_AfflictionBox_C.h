@@ -36,7 +36,7 @@ public:
     void ToggleAffliction(class UPawnAffliction* InAffliction, bool InVisible);
     void ClearAfflictions();
     void ToggleIgnoreAffliction(class UPawnAffliction* Affliction, bool ShouldIgnore);
-    void ToggleIgnoreAfflictions(TArray<class UPawnAffliction*> Affliction, bool ShouldIgnore);
+    void ToggleIgnoreAfflictions(TArray<class UPawnAffliction*>& Affliction, bool ShouldIgnore);
     void SetAfflictionComponent(class UPawnAfflictionComponent* InAfflictionComponent);
 };
 

@@ -31,7 +31,7 @@ public:
     TSoftClassPtr<class UClass> BoscoSoftRef;
     void ExecuteUbergraph_TOOLTIP_MasteryIcon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetUnlocks(TArray<class UUnlockReward*> Array);
+    void SetUnlocks(TArray<class UUnlockReward*>& Array);
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

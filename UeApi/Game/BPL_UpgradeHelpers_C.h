@@ -28,6 +28,7 @@ public:
     static void UPGDESC_Item(class AFSDPlayerState* Player, class UClass* Item, EInventoryItemUpgradeType upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_SingleUsable_UseDuration(class UClass* Item, class UClass* subItem, class AFSDPlayerState* Player, class UObject* __WorldContext, FGearStatEntry& GearStatEntry);
     static void UPGDESC_HitScan(class UClass* Item, class AFSDPlayerState* Player, EHitScanBaseUpgradeType upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
+    static void UPGDESC_Damage(class UClass*& Item, class UClass* upgradedItem, class AFSDPlayerState*& Player, EDamageUpgrade upgradeType, FText Prefix, EDamageComponentType DamageComponentType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_PushStatus(class UClass* Item, class AFSDPlayerState* Player, class UClass* StatusEffect, FText StatName, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_ElectricalSMG(class UClass* Item, class AFSDPlayerState* Player, EElectricalSMGUpgrades upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_StatusBonus(class UClass* Item, class AFSDPlayerState* Player, class UClass* SstatusEffectIn, FText StatName, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
@@ -64,7 +65,7 @@ public:
     static void UPGDESC_Detpack(class UClass* Item, class AFSDPlayerState* PlayerState, EDetPackUpgrades upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_SentryGun(class UClass* Item, class AFSDPlayerState* Player, ESentryGunUpgradeType Upgrade_Type, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& Has_Upgraded_Value);
     static void UPGDESC_DualMPs(class UClass* Item, class AFSDPlayerState* Player, EDualMachinePistolsUpgrades upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
-    static void UPGDESC_AmmoDrivenEx(class UClass* Item, class AFSDPlayerState* Player, TArray<EAmmoDrivenWeapnUpgradeType> UpgradeTypes, TArray<FGearStatEntry> GearStats, class UObject* __WorldContext);
+    static void UPGDESC_AmmoDrivenEx(class UClass* Item, class AFSDPlayerState* Player, TArray<EAmmoDrivenWeapnUpgradeType>& UpgradeTypes, TArray<FGearStatEntry>& GearStats, class UObject* __WorldContext);
     static void UPGDESC_HitCounter(class UClass* Item, class AFSDPlayerState* Player, class UClass* HitCounterClass, FText Upgrade_Text, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_Random(class UClass* Item, class AFSDPlayerState* Player, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_CryoSprayProjectile(class UClass* Item, class AFSDPlayerState* Player, class UClass* ProjectileClass, FText UpgradeText, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);

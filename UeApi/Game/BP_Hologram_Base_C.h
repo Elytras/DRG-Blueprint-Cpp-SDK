@@ -33,7 +33,7 @@ public:
     void ExecuteUbergraph_BP_Hologram_Base(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
-    void SetHologramMaterials(TArray<class UMaterialInterface*> InMaterials);
+    void SetHologramMaterials(TArray<class UMaterialInterface*>& InMaterials);
 };
 
 }}}   // namespace Game::GameElements::Misc

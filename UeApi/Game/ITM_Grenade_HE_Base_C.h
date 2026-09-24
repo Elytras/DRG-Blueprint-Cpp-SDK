@@ -30,7 +30,7 @@ public:
     class USoundBase* ExplosionSound;
     void ExecuteUbergraph_ITM_Grenade_HE_Base(int EntryPoint);
     void OnExploded();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

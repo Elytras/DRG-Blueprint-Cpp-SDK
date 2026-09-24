@@ -26,7 +26,7 @@ public:
     void ExecuteUbergraph_Grenade_Pheromone(int EntryPoint);
     void ApplyPheromones();
     void OnExploded();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Pheromone

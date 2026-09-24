@@ -123,7 +123,7 @@ public:
     void SetUsable(bool Usable);
     void FactionLogosOn();
     void StopAllLogos();
-    void Set_Goals(TArray<FString> Goals, TArray<float> Values, TArray<int> Members);
+    void Set_Goals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members);
     static constexpr const char* Set_Goals__UeName = "Set Goals";
     void MinersUnionTier(float& DSMUTier);
     void Update_Content_Switcher_Content();

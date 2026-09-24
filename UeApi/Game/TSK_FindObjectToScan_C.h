@@ -25,7 +25,7 @@ public:
     FBlackboardKeySelector Target;
     void ExecuteUbergraph_TSK_FindObjectToScan(int EntryPoint);
     void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void SelectRandomTarget(TArray<class AActor*> Actors, AIC_Prospector_C* Prospector, class AActor*& Target_0);
+    void SelectRandomTarget(TArray<class AActor*>& Actors, AIC_Prospector_C* Prospector, class AActor*& Target_0);
     UE_PURE bool IsValidObjectToScan(class AActor* Object, AIC_Prospector_C* Prospector);
 };
 

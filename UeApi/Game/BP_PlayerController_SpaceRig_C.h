@@ -10,6 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../FSD.h"
 #include "BP_SR_PlayerControllerBase_C.h"
 #include "../InputCore.h"
+#include "../UMG.h"
 
 class APawn;
 class ASpaceRigBar;
@@ -184,6 +185,7 @@ public:
     void InpActEvt_PushToTalk_K2Node_InputActionEvent_5(FKey Key);
     void CreateUI();
     void ChangeCharacter(class UPlayerCharacterID* NewCharacter);
+    void AddWidget(class UUserWidget*& Widget, int ZOrder, ESlateVisibility InVisibility);
     void SelectLastPlayedCharacter();
     void ChangeHUDVisible(bool IsHUDVisible_0, EHUDVisibilityReason reason);
     bool HUDVisible();

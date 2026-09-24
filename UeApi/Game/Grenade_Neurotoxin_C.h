@@ -27,7 +27,7 @@ public:
     static constexpr const char* P_Grenade_Neurotoxin_NozzleCone2__UeScsNode = "6f9be4e566ee0448924c5780da11d317";
     void ExecuteUbergraph_Grenade_Neurotoxin(int EntryPoint);
     void OnExploded();
-    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin

@@ -70,7 +70,7 @@ public:
     void OnDisengaged();
     void OnCanTakeDamageChanged(bool OutCanTakeDamage);
     void GetBossFight(FBossFight& BossFight_0);
-    void UpdateFromShields(TArray<BP_PlagueHeartShield_Base_C*> Shields);
+    void UpdateFromShields(TArray<BP_PlagueHeartShield_Base_C*>& Shields);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

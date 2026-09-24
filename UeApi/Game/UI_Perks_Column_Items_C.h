@@ -31,7 +31,7 @@ public:
     TMulticastInlineDelegate<void(UI_Perks_Item_C* PerkWidget)> OnPerkClicked;
     bool TierUnLocked;
     void ExecuteUbergraph_UI_Perks_Column_Items(int EntryPoint);
-    void SetPerks(TArray<class UPerkAsset*> Array);
+    void SetPerks(TArray<class UPerkAsset*>& Array);
     void OnPerkClaimed_Event(class UPerkAsset* Perk, int ClaimedTier);
     void OnPerkClicked_Event(UI_Perks_Item_C* Widget);
     UE_COSMETIC void Construct();

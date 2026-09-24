@@ -31,7 +31,7 @@ public:
     bool IsVisible;
     TMulticastInlineDelegate<void(class USchematic* SchematicReward)> OnRewardSelected;
     void ExecuteUbergraph_BP_CoreInfuser_Rewards_Selector(int EntryPoint);
-    void Set_Selectable_Rewards(TArray<class USchematic*> InRewards);
+    void Set_Selectable_Rewards(TArray<class USchematic*>& InRewards);
     static constexpr const char* Set_Selectable_Rewards__UeName = "Set Selectable Rewards";
     void SetDispenser(class AEventRewardDispenser* InDispenser);
     void SetSelectedReward(class USchematic* InReward);

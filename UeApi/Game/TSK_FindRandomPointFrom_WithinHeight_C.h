@@ -39,7 +39,7 @@ public:
     void ContinueWithBadVal();
     void CheckAgain();
     void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector Location);
+    void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector& Location);
     UE_PURE FVector GetLocation();
     void PassHeightCheck(FVector Candidate, FVector Origin_0, bool& pass);
     void GetBestFlatGround(FVector Location, FVector& Array_Element);

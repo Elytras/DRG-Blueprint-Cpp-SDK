@@ -85,7 +85,9 @@ public:
     void UserConstructionScript();
     void HandleChargeAudio(float charge);
     void HandleHeatAudio();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void Fade_Out_if_Valid(class UAudioComponent*& AC);
+    static constexpr const char* Fade_Out_if_Valid__UeName = "Fade Out if Valid";
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

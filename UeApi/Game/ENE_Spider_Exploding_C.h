@@ -6,7 +6,6 @@ A member is here if and only if AssetGen can compile a use of it.
 */
 #include "../UeMeta.h"
 #include "../Engine.h"
-#include "../FSD.h"
 #include "ENE_SpiderBase_Large_C.h"
 
 class AActor;
@@ -61,7 +60,7 @@ public:
     void PlayRumbeAndShake();
     void DamageAndCarve();
     UE_PURE float GetDistanceToLocalPlayer();
-    void SetRagdollImpulse(FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     UE_PURE bool GetIsTargetable() const;
 };
 

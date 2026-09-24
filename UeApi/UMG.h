@@ -570,7 +570,7 @@ public:
     UE_COSMETIC UE_PURE bool IsInViewport() const;
     UE_PURE bool IsListeningForInputAction(FName ActionName) const;
     UE_PURE bool IsPlayingAnimation() const;
-    UE_COSMETIC void OnPaint(FPaintContext Context) const;
+    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
 };
 
 class URichTextBlockDecorator : public UObject
@@ -2212,21 +2212,21 @@ class UWidgetBlueprintLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/UMG", "WidgetBlueprintLibrary");
     static void CancelDragDrop();
-    UE_PURE static FEventReply CaptureJoystick(FEventReply Reply, class UWidget* CapturingWidget, bool bInAllJoysticks);
-    UE_PURE static FEventReply CaptureMouse(FEventReply Reply, class UWidget* CapturingWidget);
-    UE_PURE static FEventReply ClearUserFocus(FEventReply Reply, bool bInAllUsers);
+    static FEventReply CaptureJoystick(FEventReply& Reply, class UWidget* CapturingWidget, bool bInAllJoysticks);
+    static FEventReply CaptureMouse(FEventReply& Reply, class UWidget* CapturingWidget);
+    static FEventReply ClearUserFocus(FEventReply& Reply, bool bInAllUsers);
     UE_COSMETIC static class UUserWidget* Create(class UObject* WorldContextObject, TSubclassOf<class UUserWidget> WidgetType, class APlayerController* OwningPlayer);
     UE_COSMETIC static class UUserWidget* Create(TSubclassOf<class UUserWidget> WidgetType, class APlayerController* OwningPlayer);
     static class UDragDropOperation* CreateDragDropOperation(TSubclassOf<class UDragDropOperation> OperationClass);
-    UE_PURE static FEventReply DetectDrag(FEventReply Reply, class UWidget* WidgetDetectingDrag, FKey DragKey);
+    static FEventReply DetectDrag(FEventReply& Reply, class UWidget* WidgetDetectingDrag, FKey DragKey);
     static FEventReply DetectDragIfPressed(FPointerEvent PointerEvent, class UWidget* WidgetDetectingDrag, FKey DragKey);
     UE_COSMETIC static void DismissAllMenus();
-    static void DrawBox(FPaintContext Context, FVector2D Position, FVector2D Size, class USlateBrushAsset* Brush, FLinearColor Tint);
-    static void DrawLine(FPaintContext Context, FVector2D PositionA, FVector2D PositionB, FLinearColor Tint, bool bAntiAlias, float Thickness);
-    static void DrawLines(FPaintContext Context, TArray<FVector2D> Points, FLinearColor Tint, bool bAntiAlias, float Thickness);
-    static void DrawText(FPaintContext Context, FString inString, FVector2D Position, FLinearColor Tint);
-    static void DrawTextFormatted(FPaintContext Context, FText Text, FVector2D Position, class UFont* Font, int FontSize, FName FontTypeFace, FLinearColor Tint);
-    UE_PURE static FEventReply EndDragDrop(FEventReply Reply);
+    static void DrawBox(FPaintContext& Context, FVector2D Position, FVector2D Size, class USlateBrushAsset* Brush, FLinearColor Tint);
+    static void DrawLine(FPaintContext& Context, FVector2D PositionA, FVector2D PositionB, FLinearColor Tint, bool bAntiAlias, float Thickness);
+    static void DrawLines(FPaintContext& Context, TArray<FVector2D> Points, FLinearColor Tint, bool bAntiAlias, float Thickness);
+    static void DrawText(FPaintContext& Context, FString inString, FVector2D Position, FLinearColor Tint);
+    static void DrawTextFormatted(FPaintContext& Context, FText Text, FVector2D Position, class UFont* Font, int FontSize, FName FontTypeFace, FLinearColor Tint);
+    static FEventReply EndDragDrop(FEventReply& Reply);
     UE_COSMETIC static void GetAllWidgetsOfClass(class UObject* WorldContextObject, TArray<class UUserWidget*>& FoundWidgets, TSubclassOf<class UUserWidget> WidgetClass, bool TopLevelOnly);
     UE_COSMETIC static void GetAllWidgetsOfClass(TArray<class UUserWidget*>& FoundWidgets, TSubclassOf<class UUserWidget> WidgetClass, bool TopLevelOnly);
     UE_COSMETIC static void GetAllWidgetsWithInterface(class UObject* WorldContextObject, TArray<class UUserWidget*>& FoundWidgets, TSubclassOf<class IInterface> Interface, bool TopLevelOnly);
@@ -2235,7 +2235,7 @@ public:
     UE_PURE static class UMaterialInterface* GetBrushResourceAsMaterial(FSlateBrush Brush);
     UE_PURE static class UTexture2D* GetBrushResourceAsTexture2D(FSlateBrush Brush);
     UE_COSMETIC UE_PURE static class UDragDropOperation* GetDragDroppingContent();
-    UE_PURE static class UMaterialInstanceDynamic* GetDynamicMaterial(FSlateBrush Brush);
+    static class UMaterialInstanceDynamic* GetDynamicMaterial(FSlateBrush& Brush);
     UE_PURE static FInputEvent GetInputEventFromCharacterEvent(FCharacterEvent Event);
     UE_PURE static FInputEvent GetInputEventFromKeyEvent(FKeyEvent Event);
     UE_PURE static FInputEvent GetInputEventFromNavigationEvent(FNavigationEvent Event);
@@ -2245,16 +2245,16 @@ public:
     static void GetSafeZonePadding(FVector4& SafePadding, FVector2D& SafePaddingScale, FVector4& SpillOverPadding);
     UE_PURE static FEventReply Handled();
     UE_COSMETIC UE_PURE static bool IsDragDropping();
-    UE_PURE static FEventReply LockMouse(FEventReply Reply, class UWidget* CapturingWidget);
+    static FEventReply LockMouse(FEventReply& Reply, class UWidget* CapturingWidget);
     UE_PURE static FSlateBrush MakeBrushFromAsset(class USlateBrushAsset* BrushAsset);
     UE_PURE static FSlateBrush MakeBrushFromMaterial(class UMaterialInterface* Material, int Width, int Height);
     UE_PURE static FSlateBrush MakeBrushFromTexture(class UTexture2D* Texture, int Width, int Height);
     UE_PURE static FSlateBrush NoResourceBrush();
-    UE_PURE static FEventReply ReleaseJoystickCapture(FEventReply Reply, bool bInAllJoysticks);
-    UE_PURE static FEventReply ReleaseMouseCapture(FEventReply Reply);
+    static FEventReply ReleaseJoystickCapture(FEventReply& Reply, bool bInAllJoysticks);
+    static FEventReply ReleaseMouseCapture(FEventReply& Reply);
     static void RestorePreviousWindowTitleBarState();
-    static void SetBrushResourceToMaterial(FSlateBrush Brush, class UMaterialInterface* Material);
-    static void SetBrushResourceToTexture(FSlateBrush Brush, class UTexture2D* Texture);
+    static void SetBrushResourceToMaterial(FSlateBrush& Brush, class UMaterialInterface* Material);
+    static void SetBrushResourceToTexture(FSlateBrush& Brush, class UTexture2D* Texture);
     UE_COSMETIC static void SetColorVisionDeficiencyType(EColorVisionDeficiency Type, float Severity, bool CorrectDeficiency, bool ShowCorrectionWithDeficiency);
     UE_COSMETIC static void SetFocusToGameViewport();
     static bool SetHardwareCursor(class UObject* WorldContextObject, EMouseCursor CursorShape, FName CursorName, FVector2D HotSpot);
@@ -2264,13 +2264,13 @@ public:
     UE_COSMETIC static void SetInputMode_GameOnly(class APlayerController* PlayerController);
     UE_COSMETIC static void SetInputMode_UIOnly(class APlayerController* Target, class UWidget* InWidgetToFocus, bool bLockMouseToViewport);
     UE_COSMETIC static void SetInputMode_UIOnlyEx(class APlayerController* PlayerController, class UWidget* InWidgetToFocus, EMouseLockMode InMouseLockMode);
-    UE_PURE static FEventReply SetMousePosition(FEventReply Reply, FVector2D NewMousePosition);
-    UE_PURE static FEventReply SetUserFocus(FEventReply Reply, class UWidget* FocusWidget, bool bInAllUsers);
+    static FEventReply SetMousePosition(FEventReply& Reply, FVector2D NewMousePosition);
+    static FEventReply SetUserFocus(FEventReply& Reply, class UWidget* FocusWidget, bool bInAllUsers);
     static void SetWindowTitleBarCloseButtonActive(bool bActive);
     static void SetWindowTitleBarOnCloseClickedDelegate(TDelegate<void()> Delegate);
     static void SetWindowTitleBarState(class UWidget* TitleBarContent, EWindowTitleBarMode Mode, bool bTitleBarDragEnabled, bool bWindowButtonsVisible, bool bTitleBarVisible);
     UE_PURE static FEventReply Unhandled();
-    UE_PURE static FEventReply UnlockMouse(FEventReply Reply);
+    static FEventReply UnlockMouse(FEventReply& Reply);
 };
 
 class UWidgetInteractionComponent : public USceneComponent

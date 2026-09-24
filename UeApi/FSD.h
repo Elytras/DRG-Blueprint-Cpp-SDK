@@ -103,6 +103,7 @@ class UReverbEffect;
 class URichTextBlock;
 class USceneCaptureComponent2D;
 class USceneComponent;
+class USizeBox;
 class USkeletalMesh;
 class USkeletalMeshComponent;
 class USoundAttenuation;
@@ -10436,6 +10437,10 @@ public:
     TMulticastInlineDelegate<void(FName Message)> OnMessageBehaviorTreeEvent;
     TMulticastInlineDelegate<void()> OnAlertedEvent;
     ECollisionChannel LOSTraceChannel;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnAttackingChanged(bool attacking);
     void PauseLogic();
     void Recieve_BlackboardValueChanged(FName KeyName);
@@ -10453,6 +10458,10 @@ public:
     float UpdateLosInterval;
     bool SetTargetOnAlert;
     bool SyncTargetWithBB;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnFlyingBugAlerted();
 };
 
@@ -10485,6 +10494,10 @@ public:
     float ReviveHealthPercentage;
     class UDroneUseComponent* CurrentUse;
     class AActor* TryingToPickItem;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void CarriableDrop();
     void ConfirmPickup();
     void GenerateRelativeLocation(class AActor* aTarget, float aRange, float aHeightRestriction, float aMinRange, bool aTryToStayOutOfTheWay, bool aStayBehind);
@@ -10517,6 +10530,10 @@ public:
     int TunnelStartIndex;
     int TunnelEndIndex;
     FRandomStream RandomStream;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void CHEAT_SetDozerLastPathSegment();
     void FindDozerPath(FVector StartPosition);
     UE_PURE FVector GetPathEndTagent();
@@ -10531,6 +10548,10 @@ class AEnemyAIController : public AFSDAIController
 {
 public:
     UE_CLASS("/Script/FSD", "EnemyAIController");
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class AFacilityTurretController : public AFSDAIController
@@ -10541,6 +10562,12 @@ public:
     float RememberTargetTime;
     float RetargetOnAttackChance;
     bool RespectAttack;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* Perception__UeSubobject = "Perception /Script/AIModule.AIPerceptionComponent";
+    static constexpr const char* PerceptionComponent__UeSubobject = "Perception /Script/AIModule.AIPerceptionComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnPerceptionUpdated(class AActor* sensedActor, FAIStimulus Stimulus);
     void OnTargetDied(class UHealthComponentBase* Health);
     void OnTargetRevived();
@@ -10564,6 +10591,10 @@ public:
     class UBehaviorTree* BehaviourTree;
     float UpdateTargetInterval;
     float PowerDownAfterSeconds;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void ResetCloseTimer();
 };
 
@@ -10574,6 +10605,10 @@ public:
     class UBehaviorTree* BehaviourTree;
     class AActor* CurrentTarget;
     static constexpr const char* CurrentTarget__Replicated = ":";
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class UFuelCannisterItemAnimInstance : public UAnimInstance
@@ -10624,6 +10659,7 @@ public:
     float ResourceAmount;
     bool hasBeenReleased;
     bool canPickUpBeforeReleased;
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.CarriableInstantUsable";
     void SetCanPickUpBeforeReleased(bool canPickUpBeforeReleased_0);
     void SetHasBeenReleased(bool hasBeenReleased_0);
     UE_PURE bool GetCanPickUpBeforeReleased() const;
@@ -10650,6 +10686,8 @@ public:
     class USceneComponent* Root;
     class UStaticMeshComponent* StaticMesh;
     TArray<class ARocketAttachment*> RocketAttachments;
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
     UE_AUTHORITY_ONLY void OnExcavationPhaseFinished();
     void OnRocketAttachmentStateChanged(ERocketAttachmentState NewState);
     void ReceiveAttachmentPhaseComplete();
@@ -10704,6 +10742,7 @@ public:
     bool SkipEventStarters;
     TArray<class AActor*> EventParticipants;
     static constexpr const char* EventParticipants__Replicated = "OnRep_EventParticipants:";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     UE_AUTHORITY_ONLY void AddStageProgress(float progressToAdd);
     void BootUpEvent();
     FTransform DebreePositionPoint(class AProceduralSetup* Setup, FVector fromLocation, float MinDistance, float desiredDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, float maxPathLength);
@@ -10752,6 +10791,8 @@ public:
     TArray<class AFSDPawn*> spawnedEnemies;
     float InitialDelayBeforeSpawn;
     float MaxSpawnRange;
+    static constexpr const char* EndExplosionDamage__UeSubobject = "ExplosionDamage /Script/FSD.DamageComponent";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     void OnEnemySpawned(class APawn* Pawn);
     void OnSpawnedDeath(class UHealthComponentBase* spawnedHealthComponent);
 };
@@ -10779,6 +10820,7 @@ public:
     TSubclassOf<class ALoadoutItemProxy> LoadoutProxy;
     class UItemID* ItemID;
     TSubclassOf<class AActor> WeaponPreviewClass;
+    static constexpr const char* Upgradable__UeSubobject = "Upgradable /Script/FSD.UpgradableGearComponent";
     UE_PURE static class AArmorPiece* GetArmorPieceDefaultObject(TSubclassOf<class AArmorPiece> armorPieceClass);
     UE_PURE TSubclassOf<class AActor> GetWeaponViewClass() const;
 };
@@ -10914,6 +10956,9 @@ public:
     bool IsOpen;
     static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
     bool KillItemsOnDestuction;
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.InstantUsable";
     UE_AUTHORITY_ONLY void Close();
     void OnItemSpawnedEvent(class AActor* Item);
     void OnOpenChanged(bool Open_0);
@@ -10990,6 +11035,8 @@ public:
     int ContentIndex;
     static constexpr const char* ContentIndex__Replicated = "OnRep_ContentIndex:";
     class UDialogDataAsset* BeerMugShout;
+    static constexpr const char* ContentMesh__UeSubobject = "ContentMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void ChangeContent();
     void InitializeCase();
     void OnRep_ContentIndex();
@@ -11011,6 +11058,7 @@ public:
     class USoundCue* PickupSound;
     class UResourceData* ResourceData;
     TArray<class APlayerCharacter*> OverlappingPlayers;
+    static constexpr const char* InfoComponent__UeSubobject = "Info /Script/FSD.SimpleObjectInfoComponent";
     void CalcMovement(float InProgress, FVector InVector, FVector& OutVelocity, FVector& OutAngularVelocity);
     void OnRep_CollectedBy();
     void SetCollectOpen();
@@ -11048,6 +11096,8 @@ public:
     class USoundBase* SpawnSound;
     TSubclassOf<class UStatusEffect> InflictedStatusEffect;
     float LifeTime;
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SphereTrigger__UeSubobject = "SphereTrigger /Script/Engine.SphereComponent";
     void OnPuddleBeginOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void OnPuddleEndOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void Receive_OnPlayerBeginOverlap(class APlayerCharacter* Player);
@@ -11080,6 +11130,8 @@ public:
     float WhizByCooldown;
     float WhizByStartDistance;
     EOnProjectileImpactBehaviourEnum EOnImpactBehaviour;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static void DisableProjectileCollision(class AProjectileBase* projectileA, class AProjectileBase* projectileB);
     void Activate(class AActor* owningActor, FVector Origin, FVector_NetQuantizeNormal Direction, FVector_NetQuantizeNormal initialBonusVelocity);
     UE_CLIENT UE_RELIABLE void Client_DrawServersDebugPath(FVector Location);
@@ -11117,6 +11169,9 @@ public:
     bool UseArmorDamageBoneCheck;
     TArray<TSubclassOf<class AActor>> IgnoreActorClasses;
     class UFSDProjectileMovementComponent* MovementComponent;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static class AProjectileBase* SpawnBallisticProjectile(class UObject* WorldContextObject, TSubclassOf<class AProjectile> ProjectileClass, class APawn* projectileOwner, FVector Origin, FVector Velocity);
     static class AProjectileBase* SpawnBallisticProjectile(TSubclassOf<class AProjectile> ProjectileClass, class APawn* projectileOwner, FVector Origin, FVector Velocity);
     static class AProjectileBase* SpawnProjectile(class UObject* WorldContextObject, TSubclassOf<class AProjectileBase> ProjectileClass, class APawn* projectileOwner, FVector Origin, FRotator velocityDirection);
@@ -11156,6 +11211,8 @@ public:
     class UCapsuleComponent* Collision;
     bool CheckStartOverlaps;
     bool CheckEndOverlaps;
+    static constexpr const char* Collision__UeSubobject = "Collision /Script/Engine.CapsuleComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void Receive_OnAbilityDataSet();
@@ -11168,6 +11225,8 @@ public:
     UE_CLASS("/Script/FSD", "DroneVacuumStream");
     class USceneComponent* VacuumPoint;
     TArray<class AFoamPuddle*> PuddlesInside;
+    static constexpr const char* Collision__UeSubobject = "Collision /Script/Engine.CapsuleComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     UE_SERVER UE_RELIABLE void Server_StartVacuumingPuddle(class AFoamPuddle* puddle);
 };
 
@@ -11379,6 +11438,38 @@ public:
     bool HasInitializedPerks;
     class UCharacterVanityComponent* CharacterVanity;
     FCameraSpringSettings CameraSpringSettings;
+    static constexpr const char* ActorTracking__UeSubobject = "ActorTracking /Script/FSD.ActorTrackingComponent";
+    static constexpr const char* AttackerPositioningComponent__UeSubobject = "AttackerPositioning /Script/FSD.PlayerAttackPositionComponent";
+    static constexpr const char* CameraController__UeSubobject = "CameraController /Script/FSD.CharacterCameraController";
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/FSD.PlayerMovementComponent";
+    static constexpr const char* CharacterVanity__UeSubobject = "CharacterVanity /Script/FSD.CharacterVanityComponent";
+    static constexpr const char* CommunicationComponent__UeSubobject = "Communication /Script/FSD.CommunicationComponent";
+    static constexpr const char* DownCamera__UeSubobject = "DownCamera /Script/Engine.CameraComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FirstPersonCamera__UeSubobject = "FirstPersonCamera /Script/Engine.CameraComponent";
+    static constexpr const char* FollowCamera__UeSubobject = "FollowCamera /Script/Engine.CameraComponent";
+    static constexpr const char* FollowSpringArm__UeSubobject = "FollowSpringArm /Script/Engine.SpringArmComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "Health /Script/FSD.PlayerHealthComponent";
+    static constexpr const char* InfectionComponent__UeSubobject = "InfectionComponent /Script/FSD.PlayerInfectionComponent";
+    static constexpr const char* InventoryComponent__UeSubobject = "Inventory /Script/FSD.InventoryComponent";
+    static constexpr const char* MissionStatsCollector__UeSubobject = "MissionStatsCollector /Script/FSD.MissionStatsCollector";
+    static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
+    static constexpr const char* PawnAfflictionComponent__UeSubobject = "PawnAfflictions /Script/FSD.PlayerAfflictionComponent";
+    static constexpr const char* PawnStatsComponent__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PlayerInfoComponent__UeSubobject = "PlayerInfoComponent /Script/FSD.PlayerInfoComponent";
+    static constexpr const char* ReactiveTerrainTracker__UeSubobject = "TerrainTracker /Script/FSD.PlayerReactiveTerrainTrackerComponent";
+    static constexpr const char* RecoilComponent__UeSubobject = "RecoilComponent /Script/FSD.CharacterRecoilComponent";
+    static constexpr const char* SightComponent__UeSubobject = "SightComponent /Script/FSD.CharacterSightComponent";
+    static constexpr const char* StatusEffectsComponent__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* TemperatureComponent__UeSubobject = "TemperatureComponent /Script/FSD.PlayerTemperatureComponent";
+    static constexpr const char* ThirdPersonCamera__UeSubobject = "ThirdPersonCamera /Script/Engine.CameraComponent";
+    static constexpr const char* ThirdPersonLight__UeSubobject = "ThirdPersonLight /Script/Engine.PointLightComponent";
+    static constexpr const char* ThirdPersonSpringArm__UeSubobject = "ThirdPersonSpringArm /Script/Engine.SpringArmComponent";
+    static constexpr const char* TrackGrindUsableComponent__UeSubobject = "TrackGrindUsable /Script/FSD.InstantUsable";
+    static constexpr const char* UsableComponent__UeSubobject = "UsableComponent /Script/FSD.SingleUsableComponent";
+    static constexpr const char* UseComponentNew__UeSubobject = "UseComponentNew /Script/FSD.CharacterUseComponent";
+    static constexpr const char* WidgetInteraction__UeSubobject = "WidgetInteraction /Script/UMG.WidgetInteractionComponent";
     static void ShowSimpleHoldProgress(class APlayerController* PlayerController, FText InDescription, float InProgress);
     void AcceptInvite();
     UE_SERVER UE_RELIABLE void AcknowledgeCharacterState(ECharacterState eState);
@@ -11583,6 +11674,8 @@ public:
     bool FleeInsteadOfBackingOff;
     bool IsFleeing;
     class UPawnStatsComponent* PawnStatsInstance;
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BackOffFromLocation(FVector fromLocation);
     UE_AUTHORITY_ONLY void ExplodePawn();
     void Freeze(class AActor* Source);
@@ -11632,6 +11725,11 @@ public:
     float AttackerRadius;
     TArray<class UMaterialInterface*> CachedMaterials;
     float AllowedInFormationChance;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void LeaveFormation();
     void OnControlledByPlayer(bool IsControlled_0, bool IsLocallyControlled_0);
     void OnPausedMovementElapsed();
@@ -11744,6 +11842,29 @@ public:
     class ABoscoController* DroneController;
     EDroneAIState CurrentState;
     static constexpr const char* CurrentState__Replicated = "OnRep_State:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* BobbingComponent__UeSubobject = "BobbingComponent /Script/FSD.BobbingComponent";
+    static constexpr const char* BoscoMesh__UeSubobject = "BoscoMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* DroneHitScan__UeSubobject = "BoscoHitscan /Script/FSD.HitscanComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
+    static constexpr const char* LTrail__UeSubobject = "LTrail /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* MeleeTool__UeSubobject = "MeleeTool /Script/FSD.DroneMeleeTool";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* MiningTool__UeSubobject = "MiningTool /Script/FSD.DroneMiningToolBase";
+    static constexpr const char* MomentumSound__UeSubobject = "MomentumAudio /Script/Engine.AudioComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PointLightComponent__UeSubobject = "PointLightComponent /Script/Engine.PointLightComponent";
+    static constexpr const char* PrimaryAbility__UeSubobject = "PrimaryAbility /Script/FSD.BoscoAbillityComponent";
+    static constexpr const char* RTrail__UeSubobject = "RTrail /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* SecondaryAbility__UeSubobject = "SecondaryAbility /Script/FSD.BoscoAbillityComponent";
+    static constexpr const char* Senses__UeSubobject = "Senses /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* ShootSoundInstance__UeSubobject = "MomentumAudio /Script/Engine.AudioComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.DroneSkinnableComponent";
+    static constexpr const char* SpotLightComponent__UeSubobject = "SpotLightComponent /Script/Engine.SpotLightComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* Upgradable__UeSubobject = "Upgradable /Script/FSD.UpgradableBoscoComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_MULTICAST void All_OnSelfDestruct();
     bool DoPickupGemAnimation();
     class UUpgradableBoscoComponent* GetUpgradeComponent();
@@ -11838,6 +11959,7 @@ public:
     static constexpr const char* bConnected__Replicated = "OnRep_Connected:";
     bool ClearPointsWhenDone;
     TArray<class USplineMeshComponent*> MeshComponents;
+    static constexpr const char* PathSplineComponent__UeSubobject = "PathSplineComponent /Script/Engine.SplineComponent";
     void OnRep_Connected();
     void OnRep_Path();
     void OnUpdateMaterials();
@@ -11878,6 +12000,9 @@ public:
     static constexpr const char* Duration__Replicated = ":";
     bool IsFlareOn;
     static constexpr const char* IsFlareOn__Replicated = "OnRep_IsFlareOn:";
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void ActivateFlare();
     void Inhibit();
     void OnDroppodImpact(class ATeamTransport* DropPod);
@@ -12000,6 +12125,8 @@ public:
     FVector VineVelocity;
     FVector VineLocation;
     FVector VineStartLocation;
+    static constexpr const char* SplineMeshComponent__UeSubobject = "SplineMeshComponent /Script/Engine.SplineMeshComponent";
+    static constexpr const char* VineHead__UeSubobject = "VineHead /Script/Engine.SceneComponent";
     void BP_OnInitialized();
     void BP_OnTargetChanged(class UHealthComponent* NewTarget);
 };
@@ -12055,6 +12182,10 @@ public:
     float MinPitch;
     float MaxPitch;
     class USceneComponent* CameraFocusPoint;
+    static constexpr const char* ActiveCaptureComponent__UeSubobject = "SceneCapture /Script/Engine.SceneCaptureComponent2D";
+    static constexpr const char* CameraFocusPoint__UeSubobject = "CameraFocusPoint /Script/Engine.SceneComponent";
+    static constexpr const char* SceneCapture__UeSubobject = "SceneCapture /Script/Engine.SceneCaptureComponent2D";
+    static constexpr const char* SceneCapure__UeSubobject = "SceneCapture /Script/Engine.SceneCaptureComponent2D";
     class UTextureRenderTarget2D* CreateRenderTarget();
     class USceneCaptureComponent2D* GetActiveCaptureComponent();
     void ReceiveInitialize(class UTextureRenderTarget2D* RenderTarget);
@@ -12096,6 +12227,8 @@ public:
     class UCurveFloat* DropCurve;
     class AActor* PlayerSpawnPoint;
     float CloseToImpactDistance;
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     UE_AUTHORITY_ONLY static class AActor* DropToTarget(class UObject* WorldContextObject, TSubclassOf<class ARessuplyPod> podClass, FVector Location, class AActor* requester);
     UE_AUTHORITY_ONLY static class AActor* DropToTarget(TSubclassOf<class ARessuplyPod> podClass, FVector Location, class AActor* requester);
     void OnDroppodCloseToImpact();
@@ -12112,6 +12245,8 @@ class ACleanupPod : public ARessuplyPod
 public:
     UE_CLASS("/Script/FSD", "CleanupPod");
     class USphereComponent* RemovePlagueCollision;
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RemovePlagueCollision__UeSubobject = "RemovePlague /Script/Engine.SphereComponent";
     void ChangedState(class ARessuplyPod* InPod, ERessuplyPodState InState);
     void OnObjectiveChanged(class UObjective* Objective);
 };
@@ -12132,6 +12267,9 @@ public:
     TSubclassOf<class UStatusEffect> ElectricEffect;
     TArray<TSubclassOf<class UStatusEffect>> EffectsToApply;
     TSet<class AActor*> HitActors;
+    static constexpr const char* Collision__UeSubobject = "Collision /Script/Engine.CapsuleComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* Trail__UeSubobject = "TrailNiagara /Script/Niagara.NiagaraComponent";
     void OnActorEnteredTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void OnActorLeaveTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnInited_Callback();
@@ -12204,6 +12342,16 @@ public:
     float BossHealthBarDelay;
     ECoreCorruptionCrystalState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
+    static constexpr const char* AliveSound__UeSubobject = "AliveSound /Script/Engine.AudioComponent";
+    static constexpr const char* CrystalMesh__UeSubobject = "SKMeshComponent /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Health__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* KnockbackSphere__UeSubobject = "KnockbackTriggerComponent /Script/Engine.SphereComponent";
+    static constexpr const char* PillarSpawner__UeSubobject = "SpawnerComponent /Script/FSD.CoreCorruptionPillarSpawnerComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* ShieldCollision__UeSubobject = "ShieldCollision /Script/FSD.PathfinderCollisionComponent";
+    static constexpr const char* ShieldMesh__UeSubobject = "ShieldMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* WeakpointCollision__UeSubobject = "WeakpointCollisionComponent /Script/Engine.CapsuleComponent";
+    static constexpr const char* enemy__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
     UE_MULTICAST void All_AddKnockback(FVector_NetQuantize Direction, float force);
     UE_MULTICAST void All_ShowPillarSpawnEffects(FVector_NetQuantize pillarStoneLocation);
     void OnDamaged(float Damage, FDamageData DamageData, bool anyHealthLost);
@@ -12251,6 +12399,20 @@ public:
     class USoundCue* StoneDestroyedSound;
     class UCurveVector* DeathRattle;
     bool bCarvable;
+    static constexpr const char* DestroyPillarCarver__UeSubobject = "DestroyPillarCarver /Script/FSD.MeshCarverComponent";
+    static constexpr const char* Light__UeSubobject = "Light /Script/Engine.PointLightComponent";
+    static constexpr const char* PillarCarver__UeSubobject = "PillarCarver /Script/FSD.MeshCarverComponent";
+    static constexpr const char* PillarMesh__UeSubobject = "PillarMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* PillarParticles__UeSubobject = "PillarParticles /Script/Niagara.NiagaraComponent";
+    static constexpr const char* RockIdleSound__UeSubobject = "RockIdleSound /Script/Engine.AudioComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* ShieldBeam__UeSubobject = "ShieldBeam /Script/Niagara.NiagaraComponent";
+    static constexpr const char* ShieldBeamSpline__UeSubobject = "ShieldBeamSpline /Script/Engine.SplineComponent";
+    static constexpr const char* SpaceCarver__UeSubobject = "SpaceCarver /Script/FSD.MeshCarverComponent";
+    static constexpr const char* StoneMesh__UeSubobject = "StoneMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* StoneRoot__UeSubobject = "StoneRoot /Script/Engine.SceneComponent";
+    static constexpr const char* TerrainDetector__UeSubobject = "TerrainDetector /Script/FSD.TerrainDetectComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "terrainPlacement /Script/FSD.TerrainPlacementComponent";
     void ActivatePillar();
     UE_MULTICAST void All_DestroyPillar();
     void CarvePillar();
@@ -12276,6 +12438,11 @@ public:
     int Seed;
     static constexpr const char* Seed__Replicated = "OnRep_Seed:";
     TSubclassOf<class ACoreCorruptionCrystal> CrystalClass;
+    static constexpr const char* CrystalDeathPosition__UeSubobject = "CrystalDeathPosition /Script/Engine.SceneComponent";
+    static constexpr const char* CrystalSpawnPosition__UeSubobject = "CrystalSpawnPosition /Script/Engine.SceneComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* SpikeLocationSpline__UeSubobject = "SpikelocationComponent /Script/Engine.SplineComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "Placement /Script/FSD.TerrainPlacementComponent";
     TArray<FTransform> GetFallbackPillarTransforms();
     void OnRep_Seed();
     void Receive_MakeDormant();
@@ -12299,6 +12466,8 @@ public:
     int BonesToSpawn;
     int Seed;
     static constexpr const char* Seed__Replicated = "OnRep_Seed:";
+    static constexpr const char* SpikeLocationSpline__UeSubobject = "SpikelocationComponent /Script/Engine.SplineComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "Placement /Script/FSD.TerrainPlacementComponent";
     void OnRep_Seed();
     void ScaleUp();
     void SpawnSpikes();
@@ -12311,6 +12480,12 @@ public:
     class UEnemyHealthComponent* HealthComponent;
     FQueuedMontage QueuedMontage;
     static constexpr const char* QueuedMontage__Replicated = "OnRep_QueuedMontage:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_QueuedMontage();
     void SwitchToDynamicBaseShader(class UMaterialInterface* baseShader, class UMeshComponent* MeshComponent) const;
 };
@@ -12327,6 +12502,21 @@ public:
     class UPathfinderReactiveTerrainTrackerComponent* PathfinderReactiveTerrainTracker;
     class UPawnAlertComponent* PawnAlert;
     class UDeathComponent* Death;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Death__UeSubobject = "Death /Script/FSD.DeathComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PathfinderReactiveTerrainTracker__UeSubobject = "PathfinderReactiveTerrainTracker /Script/FSD.PathfinderReactiveTerrainTrackerComponent";
+    static constexpr const char* PawnAlert__UeSubobject = "PawnAlert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* PawnSensing__UeSubobject = "PawnSensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UWeaponHitEffectComponent : public UActorComponent
@@ -12367,6 +12557,10 @@ public:
     class UStaticMesh* SegmentMesh;
     int Seed;
     static constexpr const char* Seed__Replicated = ":";
+    static constexpr const char* AudioComponent__UeSubobject = "AudioComponent /Script/Engine.AudioComponent";
+    static constexpr const char* PlantEndPoint__UeSubobject = "PlantEndPoint /Script/Engine.SceneComponent";
+    static constexpr const char* PlantSpline__UeSubobject = "PlantSpline /Script/Engine.SplineComponent";
+    static constexpr const char* SplineInstance__UeSubobject = "PlantSpline /Script/Engine.SplineComponent";
     void ReceiveMovementFinished(float InDistanceProgress);
     void ReceiveMovementStarted(float InTargetDistance);
     void ReceiveMovementUpdated(float InDistanceProgress);
@@ -12407,6 +12601,9 @@ public:
     bool ShouldFlicker;
     bool IsLit;
     static constexpr const char* IsLit__Replicated = "OnRep_Flag:";
+    static constexpr const char* BeamEffect__UeSubobject = "BeamEffect /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* ZappSound__UeSubobject = "ZappSound /Script/Engine.AudioComponent";
+    static constexpr const char* collider__UeSubobject = "collider /Script/Engine.CapsuleComponent";
     void DeactivateCollisionAndEffect();
     class UAudioComponent* GetAudio();
     class UCapsuleComponent* GetCollider();
@@ -12429,6 +12626,9 @@ public:
     float UpdateRateSeconds;
     EElectroBeamState BeamState;
     static constexpr const char* BeamState__Replicated = "OnRep_BeamState:";
+    static constexpr const char* BeamEffect__UeSubobject = "BeamEffect /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* ZappSound__UeSubobject = "ZappSound /Script/Engine.AudioComponent";
+    static constexpr const char* collider__UeSubobject = "collider /Script/Engine.CapsuleComponent";
     void OnRep_BeamState();
     void SetMaxRange(float InMaxRange);
     void StartRecalculatingBeam();
@@ -12438,6 +12638,9 @@ class ACrossbowElectroBeam : public ARecalculatedElectroBeam
 {
 public:
     UE_CLASS("/Script/FSD", "CrossbowElectroBeam");
+    static constexpr const char* BeamEffect__UeSubobject = "BeamEffect /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* ZappSound__UeSubobject = "ZappSound /Script/Engine.AudioComponent";
+    static constexpr const char* collider__UeSubobject = "collider /Script/Engine.CapsuleComponent";
 };
 
 class UAttackerPositioningComponent : public UActorComponent
@@ -12486,6 +12689,9 @@ public:
     class USphereComponent* LaserCollider;
     class ACrossbowProjectileBase* BaseProjectile;
     static constexpr const char* BaseProjectile__Replicated = ":";
+    static constexpr const char* AttachmentRoot__UeSubobject = "Root /Script/Engine.SphereComponent";
+    static constexpr const char* LaserCollider__UeSubobject = "Root /Script/Engine.SphereComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SphereComponent";
     UE_MULTICAST UE_RELIABLE void All_OnCavePointRemoved(class USceneComponent* Point);
     void MatchParentDestroy(class UHealthComponentBase* destroyed);
     void OnRep_BansheePulseEnabled();
@@ -12604,6 +12810,8 @@ public:
     TArray<FVector> PointsToIncludeInBoudingSphere;
     FTerrainLateJoinData LateJoinData;
     TArray<FEncodedChunkId> VisibleChunks;
+    static constexpr const char* AsyncPathRequests__UeSubobject = "AsyncPathRequests /Script/FSD.AsyncPathRequests";
+    static constexpr const char* RootComponent__UeSubobject = "FakeMoeventBase /Script/Engine.ArrowComponent";
     static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, FLatentActionInfo LatentInfo);
     static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale);
     static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
@@ -12716,6 +12924,8 @@ public:
     class USoundCue* Ambient;
     class UAudioComponent* AmbientInstance;
     float Priority;
+    static constexpr const char* BoxCollision__UeSubobject = "Collision /Script/Engine.BoxComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Collision /Script/Engine.BoxComponent";
 };
 
 class AMorkiteSeedNut : public AActor
@@ -12748,6 +12958,10 @@ public:
     bool ExplodesOnDeath;
     bool HasExtraStaggerRadius;
     bool HasExtraFearRadius;
+    static constexpr const char* Explosion__UeSubobject = "Explosion /Script/FSD.ExplosionComponent";
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
+    static constexpr const char* SimpleHealth__UeSubobject = "SimpleHealth /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* UseComp__UeSubobject = "UseComp /Script/FSD.SingleUsableComponent";
     void OnDetPackDeath(class UHealthComponentBase* HealthComponent);
     void OnDetPackPickedUp(class APlayerCharacter* User, EInputKeys Key);
     void OnExploded();
@@ -12832,6 +13046,13 @@ public:
     class USimpleObjectInfoComponent* ObjectInfo;
     bool IsDown;
     static constexpr const char* IsDown__Replicated = "OnRep_IsDown:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ObjectInfo__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_IsDown();
     void SetControlledByDropShip(bool Control);
     void SetIsDown(bool IsDown_0);
@@ -12846,6 +13067,15 @@ public:
     class UOutlineComponent* OutlineComponent;
     float ShowButtonDelay;
     TMulticastInlineDelegate<void()> OnReachedDropShip;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ObjectInfo__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* ResourceBank__UeSubobject = "ResourceBank /Script/FSD.ResourceBank";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void AddTrayEffect(class UNiagaraSystem* Effect, int numberOfTraysAffected);
     void EnableButton();
     void OnRep_CalledBy();
@@ -12861,6 +13091,8 @@ public:
     UE_CLASS("/Script/FSD", "DorrettaHead");
     class UCarriableInstantUsable* Usable;
     class UCarriableComponent* CarriableComponent;
+    static constexpr const char* CarriableComponent__UeSubobject = "CarriableComponent /Script/FSD.CarriableComponent";
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.CarriableInstantUsable";
 };
 
 class UDamageComponent : public UActorComponent
@@ -12946,6 +13178,9 @@ public:
     class USingleUsableComponent* MaintainerUsableComponent;
     class USkeletalMeshComponent* EngineMeshComponent;
     class UMaterialInstanceDynamic* EngineMaterial;
+    static constexpr const char* EngineMeshComponent__UeSubobject = "EngineMeshComponent /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* MaintainerUsableComponent__UeSubobject = "UsableComponent /Script/FSD.SingleUsableComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     void EvaluateDamageLevel();
     void OnRep_DamageLevel();
     void OnRep_Health();
@@ -12974,6 +13209,8 @@ public:
     float DrillSpeed;
     float FreeFallAcceleration;
     float FreeFallSpeed;
+    static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     static class ADroppableOutpost* DropOutpostToMission(class UObject* WorldContextObject, TSubclassOf<class ADroppableOutpost> podClass, FVector Location);
     static class ADroppableOutpost* DropOutpostToMission(TSubclassOf<class ADroppableOutpost> podClass, FVector Location);
     UE_AUTHORITY_ONLY void Depart();
@@ -13018,6 +13255,8 @@ public:
     float TimeToDrop;
     class UObjectivesManager* ObjectivesManager;
     bool ShouldAttachPlayers;
+    static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     static FVector AdjustLandingLocationToGround(class UObject* WorldContextObjet, FVector initialLocation, float maxDownAdjustment);
     static FVector AdjustLandingLocationToGround(FVector initialLocation, float maxDownAdjustment);
     static class ATeamTransport* DropToMission(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, FVector Location);
@@ -13060,6 +13299,8 @@ class ADropPod : public ATeamTransport
 public:
     UE_CLASS("/Script/FSD", "DropPod");
     FMiningPodDialogs Dialogs;
+    static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     FVector GetDonkeyReturnPickupLocation();
 };
 
@@ -13181,6 +13422,7 @@ public:
     float ShellThickness;
     TArray<EOmmoranStage> OmmoranStages;
     static constexpr const char* OmmoranStages__Replicated = ":";
+    static constexpr const char* EndExplosionDamage__UeSubobject = "ExplosionDamage /Script/FSD.DamageComponent";
     void Cheat_OverrideStages(TArray<EOmmoranStage> newStages);
     FVector GetClosestPointOnRadius(FVector CurrentLocation, int numberOfShellsCracked, FVector& dirFromCenter);
     UE_PURE int GetSecondsToDestroyObjective();
@@ -13226,6 +13468,13 @@ public:
     int FullCanisters;
     TArray<FEscortMuleExtractorSlot> ExtractorSlots;
     static constexpr const char* ExtractorSlots__Replicated = "OnRep_ExtractorSlots:";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent2 /Script/FSD.FriendlyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ObjectInfo__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
+    static constexpr const char* ResourceBank__UeSubobject = "RestrictedResourceBank /Script/FSD.RestrictedResourceBank";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ActivateMule();
     void ObjectiveStateChange(EEscortMissionState NewState);
     void OnExtractorDetached(class AExtractorItem* Item);
@@ -13264,6 +13513,8 @@ public:
     float ReturnDelay;
     class UCurveFloat* ReturnCurve;
     float TargetReturnTime;
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void LaunchBackToSpace();
 };
 
@@ -13281,6 +13532,8 @@ class AExplosiveBarrelEvent : public AGameEvent
 public:
     UE_CLASS("/Script/FSD", "ExplosiveBarrelEvent");
     class UDamageComponent* EndDamage;
+    static constexpr const char* EndDamage__UeSubobject = "EndDamage /Script/FSD.DamageComponent";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
 };
 
 class ABoil : public AActor
@@ -13316,6 +13569,8 @@ class AFSDPlayerCameraManager : public APlayerCameraManager
 {
 public:
     UE_CLASS("/Script/FSD", "FSDPlayerCameraManager");
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class AFacilityPowerStation : public AActor
@@ -13450,6 +13705,7 @@ public:
     bool IsEquipped;
     bool isUsing;
     static constexpr const char* isUsing__Replicated = "OnRep_IsUsing:";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_PURE static class AItem* GetItemDefaultObject(TSubclassOf<class AItem> itemClass);
     void AddedToInventory(class APlayerCharacter* ItemOwner);
     class USceneComponent* GetHeatingAudioSceneComponent();
@@ -13503,6 +13759,10 @@ public:
     class UAnimMontage* TP_IdleAnimation;
     float EquipDuration;
     class UItemCharacterAnimationSet* CharacterAnimationSet;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnReceiveEquippedFinished();
     UE_PURE class USkeletalMeshComponent* GetItemMesh() const;
     UE_PURE FTransform GetMuzzle() const;
@@ -13527,6 +13787,10 @@ public:
     static constexpr const char* CooldownLeft__Replicated = ":";
     TArray<class UItemUpgrade*> Upgrades;
     TSubclassOf<class AItem> LoadoutItem;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnThrownActorDestroyed(class AActor* Actor);
     void ReceiveItemSpawned(class AThrowableActor* thrownActor);
     void ReceiveItemThrown(class AThrowableActor* thrownActor);
@@ -13538,6 +13802,10 @@ class AHolidayThrowableItem : public AThrowableItem
 {
 public:
     UE_CLASS("/Script/FSD", "HolidayThrowableItem");
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CameraModeUpdated(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
 };
 
@@ -13551,6 +13819,7 @@ public:
     FGameplayTagContainer AttachToTags;
     bool IgnoreFellOutOfWorld;
     bool IgnoreOwnersCollision;
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
     void OnRep_IsMoving();
     void ReceiveHitObject();
     void ReceiveIgnoreCharacter(class APlayerCharacter* Character);
@@ -13563,6 +13832,8 @@ public:
     class USphereComponent* CollisionComponent;
     class UStickyFlameSpawner* StickyFlameSpawner;
     TSet<TSubclassOf<class AActor>> NonStoppingClasses;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void OnComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
     void OnDeactivate();
 };
@@ -13603,6 +13874,9 @@ public:
     static constexpr const char* VacuumSource__Replicated = ":";
     uint16 MaxSoapPiles;
     bool UsesLocalSpace;
+    static constexpr const char* NS_Foam__UeSubobject = "NS_Vacuum_FP /Script/Niagara.NiagaraComponent";
+    static constexpr const char* PuddleRoot__UeSubobject = "PuddleRoot /Script/Engine.SceneComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void OnHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
     void OnRep_State(EVacuumState prevState);
     void ScaleOutAndDestroy();
@@ -13615,6 +13889,9 @@ class AFoamPuddle_WalkingPlagueheart : public AFoamPuddle
 public:
     UE_CLASS("/Script/FSD", "FoamPuddle_WalkingPlagueheart");
     float FoamCleanRadius;
+    static constexpr const char* NS_Foam__UeSubobject = "NS_Vacuum_FP /Script/Niagara.NiagaraComponent";
+    static constexpr const char* PuddleRoot__UeSubobject = "PuddleRoot /Script/Engine.SceneComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
 };
 
 class UMissionDNA : public UObject
@@ -13649,6 +13926,15 @@ public:
     float SpinRange;
     class AFSDPawn* TargetEnemy;
     static constexpr const char* TargetEnemy__Replicated = ":";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Collision__UeSubobject = "Collision /Script/Engine.SphereComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* FindEnemyCollision__UeSubobject = "FindEnemyCollision /Script/Engine.SphereComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnEnemyCollisionEnter(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void SelectNewTarget(class UHealthComponentBase* Health);
 };
@@ -13661,6 +13947,12 @@ public:
     float SpinRange;
     class AActor* CurrentTarget;
     static constexpr const char* CurrentTarget__Replicated = ":";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UCharacterBreakOutState : public UCharacterStateComponent
@@ -13707,6 +13999,9 @@ public:
     TSubclassOf<class AFuelLineSegment> AllowedSegment;
     bool OpenForConnection;
     static constexpr const char* OpenForConnection__Replicated = ":";
+    static constexpr const char* ConnectPoint__UeSubobject = "ConnectPoint /Script/FSD.FuelLineConnectPoint";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
     void CallbackConnectedWithSegment(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
     void ReceivePing(bool InValidPlacement);
     UE_AUTHORITY_ONLY void SetOpenForConnection(bool Open);
@@ -13721,6 +14016,8 @@ public:
     FTrackBuilderPoint SegmentEndTransform;
     FTrackBuilderPoint ServerSegmentEndTransform;
     static constexpr const char* ServerSegmentEndTransform__Replicated = "OnRep_SegmentEndTransform:";
+    static constexpr const char* NextSegmentUsable__UeSubobject = "NextSegmentUsable /Script/FSD.TrackBuilderUsable";
+    static constexpr const char* RootComponent__UeSubobject = "DefaultSceneRoot /Script/Engine.SceneComponent";
     bool CanPlaceAt(FTransform InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint, class AItem* PlaceableItem);
     void OnRep_SegmentEndTransform();
     bool ReceiveCanPlaceAt(FTransform InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
@@ -13752,6 +14049,12 @@ public:
     float MaxLength;
     bool bHasMaxTurnAngle;
     float MaxTurnAngle;
+    static constexpr const char* DeconstructHealthComponent__UeSubobject = "DeconstructHealthComponent /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* FuelLineEndPostMesh__UeSubobject = "FuelLineEndPostMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* FuelLineSplineComponent__UeSubobject = "FuelLineSplineComponent /Script/Engine.SplineComponent";
+    static constexpr const char* FuelLineSplineMesh__UeSubobject = "FuelLineSplineMesh /Script/Engine.SplineMeshComponent";
+    static constexpr const char* NextSegmentUsable__UeSubobject = "NextSegmentUsable /Script/FSD.TrackBuilderUsable";
+    static constexpr const char* PreviewEndPostLocation__UeSubobject = "PreviewEndPostLocation /Script/Engine.SceneComponent";
     void CallbackCanStartNextSegmentChanged(bool InCanStart);
     void CallbackOnDeath(class UHealthComponentBase* InHealthComponent);
     void ChangeStartTransform(FTransform ChangedStartLocation);
@@ -13771,6 +14074,10 @@ public:
     class UFuelLineStartUsable* UsableStartFuelLine;
     bool bFuelLineConnected;
     static constexpr const char* bFuelLineConnected__Replicated = "OnRep_FuelLineConnected:";
+    static constexpr const char* ObjectInfoComponent__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
+    static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* UsableStartFuelLine__UeSubobject = "UsableStartFuelLine /Script/FSD.FuelLineStartUsable";
     void CallbackNextSegmentChanged(class UTrackBuilderUsable* InUsable, class ATrackBuilderSegment* InSegment);
     void OnRep_FuelLineConnected();
     void ReceiveFuelLineConnected();
@@ -13879,6 +14186,15 @@ public:
     bool CanCarryOverResources;
     TMulticastInlineDelegate<void(class APlayerState* PlayerState)> SessionLeaderChanged;
     class APlayerState* CurrentPlayerSessionLeader;
+    static constexpr const char* AttackerManager__UeSubobject = "AttackerManager /Script/FSD.AttackerManagerComponent";
+    static constexpr const char* DifficultyManagerComponent__UeSubobject = "DifficultyManager /Script/FSD.DifficultyManager";
+    static constexpr const char* GemProximityTracker__UeSubobject = "GemProximityTracker /Script/FSD.GemProximityTracker";
+    static constexpr const char* ProximityTracker__UeSubobject = "ProximityTracker /Script/FSD.PlayerProximityTracker";
+    static constexpr const char* SeasonReplicatorComponent__UeSubobject = "SeasonReplicator /Script/FSD.SeasonReplicatorComponent";
+    static constexpr const char* ShowroomManager__UeSubobject = "ShowroomManager /Script/FSD.ShowroomManager";
+    static constexpr const char* SoundMixManager__UeSubobject = "SoundMixManager /Script/FSD.SoundMixManagerComponent";
+    static constexpr const char* SpawnEffects__UeSubobject = "SpawnEffects /Script/FSD.SpawnEffectsComponent";
+    static constexpr const char* TeamResources__UeSubobject = "TeamResources /Script/FSD.TeamResourcesComponent";
     static void WaitForInitialGenerationDone(class AFSDGameState* GameState, FLatentActionInfo LatentInfo);
     static void WaitForInitialGenerationDone(class AFSDGameState* GameState);
     UE_MULTICAST UE_RELIABLE void All_ServerQuit();
@@ -14153,6 +14469,9 @@ public:
     TSoftObjectPtr<class ULevelSequence> DeepDiveLoaderSequence2;
     class USoundSubmix* ControllerVibrationSubmix;
     class USoundSubmix* ControllerSpeakerSubmix;
+    static constexpr const char* FSDCloudLoadSave__UeSubobject = "FSDCloudLoadSave /Script/FSD.FSDCloudLoadSave";
+    static constexpr const char* SendToURL__UeSubobject = "FSDSendToURL /Script/FSD.FSDSendToURL";
+    static constexpr const char* SessionUpdater__UeSubobject = "SessionUpdater /Script/FSD.FSDSessionUpdater";
     void AddStatCount(FString Key, int Count);
     void AddStatValue(FString Key, float Value);
     void AddToFriendSessions(FString friendSessionId, FString friendName);
@@ -14279,6 +14598,13 @@ public:
     bool UseStationaryEncounter;
     bool AllowSpecialEncounters;
     class UEnemyWaveManager* CachedWaveManager;
+    static constexpr const char* CritterManager__UeSubobject = "CritterManager /Script/FSD.CritterManager";
+    static constexpr const char* EnemySpawnManager__UeSubobject = "EnemySpawnManager /Script/FSD.EnemySpawnManager";
+    static constexpr const char* FormationsManager__UeSubobject = "FormationsManager /Script/FSD.FormationsManagerComponent";
+    static constexpr const char* KeepInsideWorld__UeSubobject = "KeepInsideWorld /Script/FSD.KeepInsideWorld";
+    static constexpr const char* MissionManager__UeSubobject = "MissionManager /Script/FSD.MissionManager";
+    static constexpr const char* ObjectivesManager__UeSubobject = "ObjectivesManager /Script/FSD.ObjectivesManager";
+    static constexpr const char* PheromoneComponent__UeSubobject = "PheromoneManager /Script/FSD.PheromoneSpawnerComponent";
     void AboutMission();
     void AddControllerForGracePeriod(class APlayerCharacter* APlayerCharacter);
     void Debug_ShowPlayerSpheres();
@@ -14365,6 +14691,8 @@ public:
     float MinEmissive;
     float EmissiveFadeInTime;
     float EmissiveFadeOutTime;
+    static constexpr const char* RootComponent__UeSubobject = "Mesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* TrunkMesh__UeSubobject = "Mesh /Script/Engine.StaticMeshComponent";
     UE_MULTICAST UE_RELIABLE void OnDamage(class UPrimitiveComponent* hitSphere);
     UE_MULTICAST UE_RELIABLE void OnDeath();
 };
@@ -14406,6 +14734,9 @@ public:
     bool IsOnFire;
     static constexpr const char* IsOnFire__Replicated = "OnRep_IsOnFire:";
     bool CollisionOnClients;
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SimpleHealth__UeSubobject = "SimpleHealth /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* SphereTrigger__UeSubobject = "SphereTrigger /Script/Engine.SphereComponent";
     void AddStatusEffect(TSubclassOf<class UStatusEffect> NewStatusEffect);
     UE_AUTHORITY_ONLY void IgniteGoo();
     void OnGooIgnited();
@@ -14438,6 +14769,11 @@ public:
     float SquaredMinImpactForce;
     float ImpactAudioResetTime;
     float SquaredMinThrowforce;
+    static constexpr const char* BoxComp__UeSubobject = "BoxCollision /Script/Engine.BoxComponent";
+    static constexpr const char* CarriableComp__UeSubobject = "Carriable /Script/FSD.CarriableComponent";
+    static constexpr const char* UsableComp__UeSubobject = "Usable /Script/FSD.InstantUsable";
+    static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
+    static constexpr const char* ViewMeshComp__UeSubobject = "FirstPersonMesh /Script/FSD.FirstPersonStaticMeshComponent";
     void OnComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
     void OnDropped();
     void OnPickedUp();
@@ -14452,6 +14788,11 @@ class ABasicDepositableItem : public ABasicThrowableItem
 public:
     UE_CLASS("/Script/FSD", "BasicDepositableItem");
     class UResourceData* DepositableResource;
+    static constexpr const char* BoxComp__UeSubobject = "BoxCollision /Script/Engine.BoxComponent";
+    static constexpr const char* CarriableComp__UeSubobject = "Carriable /Script/FSD.CarriableComponent";
+    static constexpr const char* UsableComp__UeSubobject = "Usable /Script/FSD.InstantUsable";
+    static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
+    static constexpr const char* ViewMeshComp__UeSubobject = "FirstPersonMesh /Script/FSD.FirstPersonStaticMeshComponent";
 };
 
 class AStickyFlame : public AActor
@@ -14469,6 +14810,10 @@ public:
     float AudioFadeOutTime;
     bool IsActive;
     static constexpr const char* IsActive__Replicated = "OnRep_IsActive:";
+    static constexpr const char* Audio__UeSubobject = "Audio /Script/Engine.AudioComponent";
+    static constexpr const char* FlameParticles__UeSubobject = "FlameParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* StatusTriggerComponent__UeSubobject = "StatusEffectTrigger /Script/FSD.StatusEffectTriggerComponent";
     void OnExtinguisFlame();
     void OnRep_IsActive();
 };
@@ -14502,6 +14847,11 @@ public:
     bool PlayAnimationOnReload;
     bool DrawDebugLines;
     float DebugLinesDuration;
+    static constexpr const char* HitscanComponent__UeSubobject = "HitscanComponent /Script/FSD.HitscanComponent";
+    static constexpr const char* MuzzleFlashLight__UeSubobject = "MuzzleFlash /Script/Engine.PointLightComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* SKMesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ShotOriginPivot__UeSubobject = "ShotOriginPivot /Script/Engine.SceneComponent";
     void OnHit(FHitResult Result, bool IsPenetrating);
     void OnSpinningChanged(bool isSpinning);
 };
@@ -14526,6 +14876,9 @@ public:
     static constexpr const char* Disabled__Replicated = "OnRep_Disabled:";
     bool IsShutDown;
     static constexpr const char* IsShutDown__Replicated = "OnRep_IsShutDown:";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* STMesh__UeSubobject = "STMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* Trigger__UeSubobject = "Trigger /Script/Engine.CapsuleComponent";
     void AssignModule(class AGuntowerModule* towerModule);
     void EndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void ModuleDestroyed(class UHealthComponentBase* Health);
@@ -14564,6 +14917,9 @@ public:
     TArray<class AGuntowerModule*> TowerModules;
     int ActiveHostileModules;
     static constexpr const char* ActiveHostileModules__Replicated = "OnRep_ModuleActive:";
+    static constexpr const char* BaseMesh__UeSubobject = "TowerBase /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     void OnModuleExploded(class AGuntowerModule* explodedModule);
     void OnModulesSpawned();
     void OnRep_ModuleActive();
@@ -14581,6 +14937,12 @@ public:
     class UDamageClass* DamageToParent;
     class UParticleSystem* deathParticles;
     class USoundCue* deathSound;
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitGlow__UeSubobject = "WeakpointGlow /Script/FSD.WeakpointGlowComponent";
+    static constexpr const char* Mesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void DamageParent(float ammount);
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void OnExposedChanged(bool isExposed);
@@ -14625,6 +14987,10 @@ public:
     static constexpr const char* IsArmorOff__Replicated = "OnRep_IsArmorOff:";
     bool Exploded;
     static constexpr const char* Exploded__Replicated = "OnRep_Exploded:";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ActivateTowerModule();
     UE_MULTICAST void All_PlayIntroductionAnim();
     void DeactivateTowerModule();
@@ -14654,6 +15020,13 @@ public:
     static constexpr const char* ModuleMaxHealth__Replicated = "OnRep_ModuleMaxHealth:";
     FRotator CurrentAimRotation;
     static constexpr const char* CurrentAimRotation__Replicated = ":";
+    static constexpr const char* DestroyedMesh__UeSubobject = "DestroyedMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DestroyedSmoke__UeSubobject = "DestroyedSmoke /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnModuleDied(class UHealthComponentBase* Health);
     void OnRep_ModuleMaxHealth();
     void OnWeakpointDied(class UHealthComponentBase* Health);
@@ -14671,6 +15044,13 @@ public:
     FName TargetingFromBone;
     float TimeUntilForgetTarget;
     bool AlwaysUpdateAimRotation;
+    static constexpr const char* DestroyedMesh__UeSubobject = "DestroyedMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DestroyedSmoke__UeSubobject = "DestroyedSmoke /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnPerceptionUpdated(class AActor* sensedActor, FAIStimulus Stimulus);
 };
 
@@ -14681,6 +15061,13 @@ public:
     FName ShootDroneSocket;
     TSubclassOf<class AProjectile> HomingProjectileClass;
     float TimeBetweenShots;
+    static constexpr const char* DestroyedMesh__UeSubobject = "DestroyedMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DestroyedSmoke__UeSubobject = "DestroyedSmoke /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class ALMGGuntoweModule : public AHostileTargetingGuntowerModule
@@ -14702,6 +15089,17 @@ public:
     float AimSpeed;
     bool IsFiresoundPlaying;
     static constexpr const char* IsFiresoundPlaying__Replicated = "OnRep_IsFiresoundPlaying:";
+    static constexpr const char* AimAtWhenNoTarget__UeSubobject = "AimAtWhenNoTarget /Script/Engine.SceneComponent";
+    static constexpr const char* DamageComp__UeSubobject = "DMGComponent /Script/FSD.DamageComponent";
+    static constexpr const char* DestroyedMesh__UeSubobject = "DestroyedMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DestroyedSmoke__UeSubobject = "DestroyedSmoke /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* FireAudio__UeSubobject = "FiringAudioComponent /Script/Engine.AudioComponent";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* HitScanComp__UeSubobject = "HitComponent /Script/FSD.HitscanComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_IsFiresoundPlaying();
     void ShowShot(FVector Location);
 };
@@ -14720,6 +15118,13 @@ public:
     FName RightFireSocket;
     FName FrontFireSocket;
     FName BackFireSocket;
+    static constexpr const char* DestroyedMesh__UeSubobject = "DestroyedMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DestroyedSmoke__UeSubobject = "DestroyedSmoke /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnFire();
 };
 
@@ -14753,6 +15158,19 @@ public:
     float PlatformDissolveSqueeze;
     bool IsAttacking;
     static constexpr const char* IsAttacking__Replicated = ":";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* DestroyedMesh__UeSubobject = "DestroyedMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DestroyedSmoke__UeSubobject = "DestroyedSmoke /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* GuntowerModuleHealth__UeSubobject = "ModuleHealthComponent /Script/FSD.GunTowerHealthComponent";
+    static constexpr const char* LaserBackBottom__UeSubobject = "LaserBackBottom /Script/Engine.StaticMeshComponent";
+    static constexpr const char* LaserBackTop__UeSubobject = "LaserBackTop /Script/Engine.StaticMeshComponent";
+    static constexpr const char* LaserFrontBottom__UeSubobject = "LaserFrontBottom /Script/Engine.StaticMeshComponent";
+    static constexpr const char* LaserFrontTop__UeSubobject = "LaserFrontTop /Script/Engine.StaticMeshComponent";
+    static constexpr const char* LaserSound__UeSubobject = "LaserSound /Script/Engine.AudioComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "ModuleMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class AFSDHUD : public AHUD
@@ -14798,6 +15216,8 @@ public:
     TMulticastInlineDelegate<void(EHackingPodState State)> OnHackingPodStateChanged;
     EHackingPodState PodState;
     static constexpr const char* PodState__Replicated = "OnRep_PodState:";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void OnEnterState(EHackingPodState NextState);
     void OnExitState(EHackingPodState oldState);
     void OnRep_PodState(EHackingPodState oldState);
@@ -14815,6 +15235,12 @@ public:
     float AlertedMovementScale;
     float AlertedMovementTimeScale;
     float JawMovementSpeed;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnAlert();
     void OnJawClosed();
 };
@@ -14937,6 +15363,7 @@ public:
     class UBeardColorVanityItem* HairColor;
     class UMaterialInterface* ArmorMaterial;
     TArray<class UIconSceneCaptureComponent*> CaptureComponents;
+    static constexpr const char* BodyMesh__UeSubobject = "BodyMesh /Script/Engine.SkeletalMeshComponent";
 };
 
 class UInfectedStateComponent : public UCharacterBreakOutState
@@ -15026,6 +15453,8 @@ public:
     UE_CLASS("/Script/FSD", "JetBootsBox");
     class UTerrainPlacementComponent* terrainPlacement;
     class USpecialEvent* SpecialEvent;
+    static constexpr const char* RootComponent__UeSubobject = "terrainPlacement /Script/FSD.TerrainPlacementComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "terrainPlacement /Script/FSD.TerrainPlacementComponent";
 };
 
 class UJetBootsMovementComponent : public UActorComponent
@@ -15105,6 +15534,7 @@ public:
     TArray<FJettyBootNPC> HighScoreNPCs;
     FJettyBootsSave JettyBootsSave;
     static constexpr const char* JettyBootsSave__Replicated = "OnRep_Save:";
+    static constexpr const char* StartGameUsable__UeSubobject = "StartGameUsable /Script/FSD.JettyBootUsableComponent";
     void AddHighScoreClient(FJettyBootsScore InScore);
     UE_AUTHORITY_ONLY void AddHighScoreServer(FJettyBootsScore InScore);
     UE_MULTICAST void All_ReplayPackage(FJettyBootsReplay InPackage);
@@ -15152,6 +15582,9 @@ public:
     static constexpr const char* IsOpenForUse__Replicated = "OnRep_OpenForUse:";
     bool IsEventActive;
     static constexpr const char* IsEventActive__Replicated = ":";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.SingleUsableComponent";
     UE_AUTHORITY_ONLY void BootUpEvent();
     void CloseForUse(class APlayerCharacter* User, EInputKeys Key);
     void OnBooted();
@@ -15188,6 +15621,12 @@ public:
     class UMaterialInterface* SeekerMaterial;
     float BeamThicknessScale;
     FBeamCollision Collision;
+    static constexpr const char* BeamMeshComponent01__UeSubobject = "BeamMeshComponent01 /Script/Engine.SplineMeshComponent";
+    static constexpr const char* BeamMeshComponent02__UeSubobject = "BeamMeshComponent02 /Script/Engine.SplineMeshComponent";
+    static constexpr const char* BeamMeshComponent03__UeSubobject = "BeamMeshComponent03 /Script/Engine.SplineMeshComponent";
+    static constexpr const char* BeamSpline__UeSubobject = "BeamSpline /Script/Engine.SplineComponent";
+    static constexpr const char* BlockedNodeComponent__UeSubobject = "BlockedNodeComponent /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     void ReceiveItemSet();
 };
 
@@ -15210,6 +15649,8 @@ public:
     TSubclassOf<class ATreasureContainer> TreasureClass;
     class ATreasureContainer* TreasureInstance;
     static constexpr const char* TreasureInstance__Replicated = ":";
+    static constexpr const char* RootComp__UeSubobject = "RootComp /Script/Engine.SceneComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "terrainPlacement /Script/FSD.TerrainPlacementComponent";
     UE_AUTHORITY_ONLY void ActivateTreasure();
     void SpawnDebreeParts() const;
 };
@@ -15228,6 +15669,9 @@ public:
     TArray<FTreasureWeight> PossibleRewarders;
     class UTreasureRewarder* TreasureRewarder;
     bool PreventLatejoiners;
+    static constexpr const char* CollectUsable__UeSubobject = "CollectUsable /Script/FSD.OncePerPlayerUsableComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void OnContainerActivated();
     void OnDisableChestLocally();
     void OnLocalPlayerCollectedTreasure(class APlayerCharacter* Player);
@@ -15255,6 +15699,10 @@ public:
     float SparkSpeed;
     float ExplodeRange;
     float ExplodeImpulse;
+    static constexpr const char* FuseSound__UeSubobject = "FuseSound /Script/FSD.FSDAudioComponent";
+    static constexpr const char* MovingSparks__UeSubobject = "MovingSparks /Script/Niagara.NiagaraComponent";
+    static constexpr const char* SKMesh__UeSubobject = "Root /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.InstantUsable";
     void StartFire();
 };
 
@@ -15313,6 +15761,8 @@ public:
     static constexpr const char* AreGeneratorsReady__Replicated = "OnRep_AreGeneratorsReady:";
     bool FacilityActive;
     static constexpr const char* FacilityActive__Replicated = "Onrep_FacilityActive:";
+    static constexpr const char* BaseMesh__UeSubobject = "BaseMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* SceneRoot__UeSubobject = "SceneRoot /Script/Engine.SceneComponent";
     UE_AUTHORITY_ONLY void ActivateFacility();
     void DisableShields();
     void OnActivated();
@@ -15344,6 +15794,8 @@ public:
     static constexpr const char* ReplicatedPath__Replicated = "OnRep_Path:";
     bool Connected;
     static constexpr const char* Connected__Replicated = "OnRep_Connected:";
+    static constexpr const char* SplineComponent__UeSubobject = "SplineComponent /Script/Engine.SplineComponent";
+    static constexpr const char* SplineDecorator__UeSubobject = "SplineDecorator /Script/FSD.SplineDecoratorComponent";
     void OnRep_Connected();
     void OnRep_Path();
     void ReceiveBeginPathFinding();
@@ -15388,6 +15840,9 @@ class AFSDMiningHead : public ADroppableOutpost
 public:
     UE_CLASS("/Script/FSD", "FSDMiningHead");
     class UResourceBank* ResourceBank;
+    static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
+    static constexpr const char* ResourceBank__UeSubobject = "ResourceBank /Script/FSD.ResourceBank";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
 };
 
 class ASentryGun : public AActor
@@ -15435,6 +15890,7 @@ public:
     static constexpr const char* TargetPitch__Replicated = ":";
     class UWeaponFireComponent* WeaponFire;
     class UAudioComponent* ShootingAudioComponent;
+    static constexpr const char* SentryGunMesh__UeSubobject = "SentryGunMesh /Script/Engine.SkeletalMeshComponent";
     void AmmoSpent();
     UE_SERVER UE_RELIABLE void Force_Fire(class AActor* Target);
     void OnNewTargetRequested(FLaserPointerTarget HitInfo);
@@ -15457,6 +15913,13 @@ class AMiniMule : public AMULE
 public:
     UE_CLASS("/Script/FSD", "MiniMule");
     TArray<class AGem*> LostLegs;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ObjectInfo__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_AUTHORITY_ONLY void CheatRepair();
     UE_AUTHORITY_ONLY void OnLegsSetVisible();
     UE_AUTHORITY_ONLY void SetLegsVisibleOnScanner();
@@ -15473,6 +15936,9 @@ public:
     ERefineryExtractorPodState ExtractorState;
     static constexpr const char* ExtractorState__Replicated = "OnRep_ExtractorState:";
     TArray<class URefineryExtractorPodAnimInstance*> AnimBlueprints;
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* ProgressWidget__UeSubobject = "ProgressWidget /Script/UMG.WidgetComponent";
+    static constexpr const char* SkeletalMesh_Base__UeSubobject = "SkeletalMesh_Base /Script/Engine.SkeletalMeshComponent";
     UE_AUTHORITY_ONLY void ChangeExtractorState(ERefineryExtractorPodState NewState);
     void OnExtractorStateChanged(ERefineryExtractorPodState NewState);
     void OnPipeLineCompleted();
@@ -15496,6 +15962,7 @@ public:
     class APipelineFinish* PipelineFinish;
     static constexpr const char* PipelineFinish__Replicated = ":";
     class AFSDRefinery* Refinery;
+    static constexpr const char* PipelineStartUsable__UeSubobject = "PipelineStartUsable /Script/FSD.TrackBuilderUsable";
     void OnNextSegmentChanged(class UTrackBuilderUsable* InUsable, class ATrackBuilderSegment* InSegment);
     void OnRep_BuildState();
     UE_AUTHORITY_ONLY void PipelineCompleted(class APipelineFinish* InPipelineFinish);
@@ -15527,6 +15994,8 @@ public:
     TSubclassOf<class AItem> itemClass;
     class UItemSkin* Framework;
     class UItemSkin* Paintjob;
+    static constexpr const char* BodyMesh__UeSubobject = "BodyMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ChildActorComponent__UeSubobject = "ItemInstance /Script/Engine.ChildActorComponent";
     void Clean();
     void DisplayVanity();
 };
@@ -15540,6 +16009,9 @@ public:
     bool bStartWithBlackScreen;
     class UWindowManager* WindowManager;
     TArray<FPlatformComponent> PlatformComponentClasses;
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* WindowManager__UeSubobject = "WindowManager /Script/FSD.WindowManager";
     UE_CLIENT UE_RELIABLE void Client_WasKicked(EDisconnectReason reason);
     bool IsHUDVisibleFlagSet(EHUDVisibilityReason reason);
     UE_PURE bool IsPlayerBlocked(FString UserId);
@@ -15588,6 +16060,12 @@ public:
     class UFSDWidgetEffectsComponent* WidgetEffects;
     ESpacerigStartType SpacerigSpawnType;
     bool bDetectGravityChanges;
+    static constexpr const char* LateJoinComponent__UeSubobject = "TerrainLateJoin /Script/FSD.TerrainLatejoinComponent";
+    static constexpr const char* PerkUsageComponent__UeSubobject = "PerkUsageCompent /Script/FSD.PerkUsageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* WidgetEffects__UeSubobject = "WidgetEffects /Script/FSD.FSDWidgetEffectsComponent";
+    static constexpr const char* WindowManager__UeSubobject = "WindowManager /Script/FSD.WindowManager";
     UE_CLIENT UE_RELIABLE void Client_CollectPickaxePart(class UTreasureRewarder* rewarder, class UPickaxePart* targetPart);
     UE_CLIENT UE_RELIABLE void Client_CollectTreasureSkin(class USkinTreasureRewarder* rewarder, class UItemSkin* targetSkin, class UItemID* targetItem);
     UE_CLIENT UE_RELIABLE void Client_CollectTreasureVictoryPose(class UTreasureRewarder* rewarder, class UVictoryPose* targetPose, class UPlayerCharacterID* targetCharacter);
@@ -15801,6 +16279,20 @@ public:
     float BlockedExtraRaytraces;
     float BlockedExtraRaytraceDist;
     float BlockedRayTraceSuccesses;
+    static constexpr const char* ActivateSegmentUsable__UeSubobject = "ActivateSegmentUsable /Script/FSD.SingleUsableComponent";
+    static constexpr const char* DroneUsable__UeSubobject = "DroneUseComponent /Script/FSD.DroneUseComponent";
+    static constexpr const char* EndPostMesh__UeSubobject = "EndPostMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* EndPostMeshStatic__UeSubobject = "EndPostMeshStatic /Script/Engine.StaticMeshComponent";
+    static constexpr const char* MovementSpline__UeSubobject = "MovementSpline /Script/Engine.SplineComponent";
+    static constexpr const char* MovementSplineLeft__UeSubobject = "MovementSplineLeft /Script/Engine.SplineComponent";
+    static constexpr const char* MovementSplineRight__UeSubobject = "MovementSplineRight /Script/Engine.SplineComponent";
+    static constexpr const char* NextSegmentUsable__UeSubobject = "NextSegmentUsable /Script/FSD.TrackBuilderUsable";
+    static constexpr const char* PathfinderComponent__UeSubobject = "PathfinderComponent /Script/FSD.PathfinderSplineSegmentCollisionComponent";
+    static constexpr const char* PipelineCapMesh__UeSubobject = "PipelineCapMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PipelineMesh__UeSubobject = "PipelineMesh /Script/Engine.SplineMeshComponent";
+    static constexpr const char* PipelineOuterMesh__UeSubobject = "PipelineOuterMesh /Script/Engine.SplineMeshComponent";
+    static constexpr const char* RepairSegmentUsable__UeSubobject = "RepairSegmentUsable /Script/FSD.SingleUsableComponent";
+    static constexpr const char* SegmentHealthComponent__UeSubobject = "SegmentHealthComponent /Script/FSD.SimpleHealthComponent";
     void CallbackDroneUsed(int TimesUsed);
     void CallbackNextSegmentChanged(class UTrackBuilderUsable* InUsable, class ATrackBuilderSegment* InSegment);
     void CallbackPipelineStateChanged(class APipelineStart* InPipelineStart, EPipelineBuildState InState);
@@ -15844,6 +16336,9 @@ public:
     float DebrisLightDistanceFromGround;
     float RemoveDebrisLightUpdateRate;
     bool DebugDrawDebrisLight;
+    static constexpr const char* CallWeaponPodUsable__UeSubobject = "Usable /Script/FSD.PlagueUsable";
+    static constexpr const char* DebrisLightSystem__UeSubobject = "DebrisLight /Script/Niagara.NiagaraComponent";
+    static constexpr const char* RootComponent__UeSubobject = "DebrisLight /Script/Niagara.NiagaraComponent";
     bool CanDropWeaponPod(float& TimeLeft);
     void EquipPlaguePod(class APlayerCharacter* Player);
     void PushDebrisLights();
@@ -15861,6 +16356,9 @@ public:
     FRuntimeFloatCurve OuterGrowthCurve;
     FRuntimeFloatCurve InnerGrowthCurve;
     float Radius;
+    static constexpr const char* InnerScaler__UeSubobject = "InnerScaler /Script/Engine.SceneComponent";
+    static constexpr const char* OuterScaler__UeSubobject = "OuterScaler /Script/Engine.SceneComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void SetRadius(float Radius_0);
 };
 
@@ -15895,6 +16393,10 @@ public:
     static constexpr const char* SpawnedPods__Replicated = ":";
     float SpawnedTime;
     static constexpr const char* SpawnedTime__Replicated = ":";
+    static constexpr const char* ImpactDamage__UeSubobject = "ImpactDamgage /Script/FSD.DamageComponent";
+    static constexpr const char* MeteorMesh__UeSubobject = "MeteorMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "terrainPlacement /Script/FSD.TerrainPlacementComponent";
     void AdvanceStage();
     void DestroyAndSpawnHearts_FailSafe();
     void DropRockCrackerPods(int amount, float MinRadius, float maRadius, class AProceduralSetup* Setup);
@@ -15942,6 +16444,10 @@ public:
     float ParentDeathDelay;
     float DeathDelayVariance;
     int WormCount;
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* PodMesh__UeSubobject = "PodMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* ScalePoint__UeSubobject = "ScalePoint /Script/Engine.SceneComponent";
     UE_MULTICAST void All_ShowDeath(bool success);
     void Kill();
     void OnAnimEnded(class UAnimMontage* Montage, bool bInterrupted);
@@ -15980,6 +16486,7 @@ public:
     float ActivationRange;
     bool HasCleanPodBeenSpawned;
     static constexpr const char* HasCleanPodBeenSpawned__Replicated = ":";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.SimpleHealthComponent";
     void CountNodePlague();
     void OnDeath(class UHealthComponentBase* Health);
     void OnPodDestroyed(class AActor* DestroyedActor);
@@ -16022,6 +16529,7 @@ public:
     TSubclassOf<class AActor> SplineMesh;
     class AActor* PlayerFollowed;
     class AActor* WeaponTrackActor;
+    static constexpr const char* Movement__UeSubobject = "Movement /Script/Engine.FloatingPawnMovement";
     UE_MULTICAST UE_RELIABLE void All_BeginCountdown();
     void ClearFocusPoint();
     void CreateHUD();
@@ -16091,6 +16599,9 @@ public:
     uint8 SupplyHealthStatus;
     static constexpr const char* SupplyHealthStatus__Replicated = "OnRep_SupplyHealthStatus:";
     FRewardTexts RewardTexts;
+    static constexpr const char* PlayerStatsComponent__UeSubobject = "PlayerStatsComponent /Script/FSD.PlayerStatsComponent";
+    static constexpr const char* RejoinState__UeSubobject = "RejoinState /Script/FSD.PlayerRejoinState";
+    static constexpr const char* SaveGameStateComponent__UeSubobject = "SaveGameStateComponent /Script/FSD.SaveGameStateComponent";
     void CharacterSelected();
     UE_PURE TArray<FCreditsReward> GetDeepDiveCreditsReward(int StagesCompleted, int goldCollected);
     UE_PURE FCharacterProgress GetSelectCharacterProgress();
@@ -16184,6 +16695,8 @@ public:
     class USceneComponent* ContentComponent;
     int Seed;
     static constexpr const char* Seed__Replicated = ":";
+    static constexpr const char* CapsuleComponent__UeSubobject = "CapsuleComponent /Script/Engine.CapsuleComponent";
+    static constexpr const char* ContentComponent__UeSubobject = "ContentComponent /Script/Engine.SceneComponent";
     void ReceiveRefresh(FRandomStream InRandom);
 };
 
@@ -16217,6 +16730,8 @@ public:
     UE_CLASS("/Script/FSD", "PipelineExtractorPod");
     float TargetRotation;
     static constexpr const char* TargetRotation__Replicated = ":";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void ExtractorPodOrderedEvent(class APlayerCharacter* InUser);
     void OnRep_ConnectedSegment();
     void ReceiveConnectedToSegment(class APipelineSegment* InConnectedSegment);
@@ -16234,6 +16749,8 @@ public:
     static constexpr const char* ExtractorPod__Replicated = "OnRep_ExtractorPod:";
     bool bPipelineCompleted;
     static constexpr const char* bPipelineCompleted__Replicated = "OnRep_PipelineCompleted:";
+    static constexpr const char* PipelineEndConnection__UeSubobject = "TrackEndConnection /Script/FSD.TrackBuilderConnectPoint";
+    static constexpr const char* UsableOrderExtractor__UeSubobject = "UsableOrderExtractor /Script/FSD.SingleUsableComponent";
     FVector GetLandingOffset();
     void OnConnectedSegmentActivated(class APipelineSegment* InSegment);
     void OnConnectedWithSegment(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
@@ -16270,6 +16787,10 @@ public:
     uint8 RefiningProgressReplicated;
     static constexpr const char* RefiningProgressReplicated__Replicated = ":";
     TArray<class APipelineStart*> PipelineStarts;
+    static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* UsableLaunchRocket__UeSubobject = "UsableLaunchRocket /Script/FSD.SingleUsableComponent";
+    static constexpr const char* UsableStartRefining__UeSubobject = "UsableStartRefining /Script/FSD.SingleUsableComponent";
     void OnLaunchRocketPressed(class APlayerCharacter* InCharacter, EInputKeys Key);
     void OnObjectivesChanged();
     void OnPipelineStateChanged(class APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState);
@@ -16296,6 +16817,8 @@ class AResonanceScannerPod : public ARessuplyPod
 {
 public:
     UE_CLASS("/Script/FSD", "ResonanceScannerPod");
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void OnConnectedToTarget();
 };
 
@@ -16304,6 +16827,10 @@ class ARockCrackerDrill : public AFuelLineEndPoint
 public:
     UE_CLASS("/Script/FSD", "RockCrackerDrill");
     class USingleUsableComponent* ConstructUsable;
+    static constexpr const char* ConnectPoint__UeSubobject = "ConnectPoint /Script/FSD.FuelLineConnectPoint";
+    static constexpr const char* ConstructUsable__UeSubobject = "ConstructUsable /Script/FSD.SingleUsableComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
     void SetIsDrilling(bool isDrilling);
     UE_PURE bool GetIsDrilling() const;
 };
@@ -16314,6 +16841,7 @@ public:
     UE_CLASS("/Script/FSD", "ResourcePouch");
     class UCarriableInstantUsable* Usable;
     class USoundCue* ImpactGroundSound;
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.CarriableInstantUsable";
     void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
     void SetResources(class UResourcesComponent* Resources);
 };
@@ -16356,6 +16884,7 @@ public:
     static constexpr const char* keyInserted__Replicated = ":";
     TArray<FString> EventPlayerIDs;
     static constexpr const char* EventPlayerIDs__Replicated = ":";
+    static constexpr const char* EventUsable__UeSubobject = "EventUsable /Script/FSD.SpecialEventUsableComponent";
     void RegisterDispenser(class AEventRewardDispenser* Dispenser);
     UE_AUTHORITY_ONLY void SetDispenseRewards(bool dispensRewards);
     void SetKeyInserted(bool keyInserted_0);
@@ -16489,6 +17018,14 @@ public:
     FRuntimeFloatCurve FallCurve;
     ERiftCrystalState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
+    static constexpr const char* CrystalMesh__UeSubobject = "SKMeshComponent /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* DebrisSpawner__UeSubobject = "DebrisSpawnerComponent /Script/FSD.SpawnActorWithDebrisPosComponent";
+    static constexpr const char* EscortBlocker__UeSubobject = "EscortblockerComponent /Script/FSD.PathfinderCollisionComponent";
+    static constexpr const char* Health__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* RiftSpawner__UeSubobject = "SpawnerComponent /Script/FSD.RiftSpawnerComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SpaceCarver__UeSubobject = "SpaceCarverComponent /Script/FSD.MeshCarverComponent";
+    static constexpr const char* enemy__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
     UE_MULTICAST void All_AddKnockback(FVector_NetQuantize Direction, float force);
     UE_MULTICAST void All_ShowRiftSpawnEffects(FVector_NetQuantize riftLocation);
     void CarvePillar(bool showEffects);
@@ -16531,6 +17068,7 @@ public:
     TSubclassOf<class ARivalBombNode> RivalBomb;
     class UDebrisPositioning* NodePositioning;
     class UCurveFloat* NodeCostCurve;
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     UE_AUTHORITY_ONLY void ActivateNewNode();
     UE_AUTHORITY_ONLY void DeactivateAllNodes(bool failed);
     void OnDataCellPickedUp(bool Attached, FVector PrevScale);
@@ -16559,6 +17097,8 @@ public:
     static constexpr const char* HackStartTime__Replicated = ":";
     int BombIndex;
     static constexpr const char* BombIndex__Replicated = ":";
+    static constexpr const char* HackingUsable__UeSubobject = "HackingUsable /Script/FSD.HackingUsableComponent";
+    static constexpr const char* RootComponent__UeSubobject = "DefaultRootComponent /Script/Engine.SceneComponent";
     void OnHackTimerTick();
     void OnNodeHackedByUser(class APlayerCharacter* Player);
     void OnRep_State();
@@ -16584,6 +17124,10 @@ public:
     float DrainImmunityTime;
     float YellowLightsThreshold;
     float HealPerTick;
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* Health__UeSubobject = "PodHealth /Script/FSD.FriendlyHealthComponent";
+    static constexpr const char* RepairUsable__UeSubobject = "RepairUsable /Script/FSD.ContinuousUsableComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     UE_MULTICAST UE_RELIABLE void All_SwitchYellowLights(bool isGreen);
     void OnEnterState(ERockCrackerstate PodState_0);
     void OnEventEnded(bool wasSuccess);
@@ -16614,6 +17158,8 @@ public:
     int GruntPointsAward;
     int TankPointsAward;
     class UEnemyGroupDescriptor* RockEnemies;
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     void EnemySpawnedAfterComplete(class APawn* spawnedEnemy);
     void OnShoot();
     void RockEnemyDied(class UHealthComponentBase* Health);
@@ -16634,6 +17180,9 @@ public:
     class UDroneUseComponent* DroneUsable;
     ERocketAttachmentState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
+    static constexpr const char* AttachUsable__UeSubobject = "AttachUsable /Script/FSD.CarryingItemUsable";
+    static constexpr const char* BuildUsable__UeSubobject = "BuildUsable /Script/FSD.SingleUsableComponent";
+    static constexpr const char* DroneUsable__UeSubobject = "DroneUsable /Script/FSD.DroneUseComponent";
     void OnEnterState(ERocketAttachmentState NewState);
     void OnRep_State();
     void ReceiveFreeAttachment();
@@ -16647,6 +17196,8 @@ class ASalvageFuelPod : public ARessuplyPod
 {
 public:
     UE_CLASS("/Script/FSD", "SalvageFuelPod");
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
 };
 
 class AScrabTank : public AActor
@@ -16665,6 +17216,10 @@ public:
     float VisualRotInterpSpeed;
     EScrabTankSlot InitialSlot;
     float CenterNormalized;
+    static constexpr const char* BeetleMount__UeSubobject = "BeetleMount /Script/Engine.SceneComponent";
+    static constexpr const char* BeetleVisual__UeSubobject = "BeetleVisual /Script/Engine.SceneComponent";
+    static constexpr const char* PathSpline__UeSubobject = "PathSpline /Script/Engine.SplineComponent";
+    static constexpr const char* SceneRoot__UeSubobject = "SceneRoot /Script/Engine.SceneComponent";
     void BP_OnArrived(EScrabTankSlot ArrivedAt);
     void BP_OnMoveStarted(EScrabTankSlot from, EScrabTankSlot to);
     void BP_OnScream();
@@ -16690,6 +17245,11 @@ public:
     static constexpr const char* State__Replicated = "OnRep_State:";
     bool RelocateLanding;
     bool bInitialized;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_AUTHORITY_ONLY void BeginMove();
     void OnMoveFinished(bool returnedHome);
     void OnMoveRequested();
@@ -16718,6 +17278,11 @@ public:
     TMulticastInlineDelegate<void(int Index_0)> OnSentryIndexChanged;
     int SentryIndex;
     static constexpr const char* SentryIndex__Replicated = "OnRep_SentryIndex:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_PURE class ASentryGun* GetSentryGun();
     void OnRep_SentryIndex();
     void ReceiveOnSentryReady(class ASentryGun* SentryGun, class APlayerCharacter* PlayerCharacter);
@@ -16745,6 +17310,9 @@ public:
     class AActor* ElectrocutionActor;
     TSubclassOf<class AActor> EMPDischargeActorClass;
     float EMPDiscargeCooldown;
+    static constexpr const char* ActorTrackingIcon__UeSubobject = "ActorTrackingIcon /Script/FSD.ActorTrackingComponent";
+    static constexpr const char* SentryGunMesh__UeSubobject = "SentryGunMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
     UE_AUTHORITY_ONLY void ActivateSpecialAttack();
     UE_AUTHORITY_ONLY void Deploy();
     UE_AUTHORITY_ONLY void DeployFinished();
@@ -16772,6 +17340,9 @@ class ASentryElectroBeam : public ARecalculatedElectroBeam
 public:
     UE_CLASS("/Script/FSD", "SentryElectroBeam");
     TArray<class ARedeployableSentryGun*> Sentries;
+    static constexpr const char* BeamEffect__UeSubobject = "BeamEffect /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* ZappSound__UeSubobject = "ZappSound /Script/Engine.AudioComponent";
+    static constexpr const char* collider__UeSubobject = "collider /Script/Engine.CapsuleComponent";
 };
 
 class UShieldLinkComponent : public UFloatPerkComponent
@@ -16796,6 +17367,7 @@ public:
     static constexpr const char* DeployDelay__Replicated = ":";
     bool bPushStatusEffectOnExit;
     float GeneratorLifetime;
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
 };
 
 class ASpaceRigBar : public AActor
@@ -16811,6 +17383,8 @@ public:
     class UDrinkableDataAsset* DrinkableSpecial;
     static constexpr const char* DrinkableSpecial__Replicated = "OnRep_DrinkableSpecial:";
     TMap<EHolidayType, FHolidayMeshItems> HolidayComponentMap;
+    static constexpr const char* BarUsable__UeSubobject = "BarUsable /Script/FSD.InstantUsable";
+    static constexpr const char* BarUsableCollider__UeSubobject = "BarUsableColiider /Script/Engine.BoxComponent";
     void OnRep_DrinkableSpecial();
     void PayTip(class APlayerCharacter* Character, int Credits);
     void PlayBartenderTip(class APlayerCharacter* User);
@@ -16830,6 +17404,13 @@ public:
     UE_CLASS("/Script/FSD", "FSDGameModeSpaceRig");
     uint8 AmountOfPlayersSpawnedInMedbay;
     bool StartedSession;
+    static constexpr const char* CritterManager__UeSubobject = "CritterManager /Script/FSD.CritterManager";
+    static constexpr const char* EnemySpawnManager__UeSubobject = "EnemySpawnManager /Script/FSD.EnemySpawnManager";
+    static constexpr const char* FormationsManager__UeSubobject = "FormationsManager /Script/FSD.FormationsManagerComponent";
+    static constexpr const char* KeepInsideWorld__UeSubobject = "KeepInsideWorld /Script/FSD.KeepInsideWorld";
+    static constexpr const char* MissionManager__UeSubobject = "MissionManager /Script/FSD.MissionManager";
+    static constexpr const char* ObjectivesManager__UeSubobject = "ObjectivesManager /Script/FSD.ObjectivesManager";
+    static constexpr const char* PheromoneComponent__UeSubobject = "PheromoneManager /Script/FSD.PheromoneSpawnerComponent";
     class AActor* GetFreeSpawnOfType(ESpacerigStartType aType, class AFSDPlayerController* AController);
 };
 
@@ -16853,6 +17434,8 @@ public:
     UE_CLASS("/Script/FSD", "SpawnActorGenerationItem");
     TSubclassOf<class AActor> ActorToSpawn;
     class UBoxComponent* Box;
+    static constexpr const char* Box__UeSubobject = "Root /Script/Engine.BoxComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.BoxComponent";
 };
 
 class ASpawnTrigger : public AActor
@@ -16875,6 +17458,12 @@ public:
     float IntegrityModifier;
     static constexpr const char* IntegrityModifier__Replicated = "OnRep_IntegrityModifier:";
     FTimerHandle Handle_Melting;
+    static constexpr const char* Audio__UeSubobject = "Audio /Script/Engine.AudioComponent";
+    static constexpr const char* FlameParticles__UeSubobject = "FlameParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* StatusTriggerComponent__UeSubobject = "StatusEffectTrigger /Script/FSD.StatusEffectTriggerComponent";
+    static constexpr const char* VisualRoot__UeSubobject = "VisualRoot /Script/Engine.SceneComponent";
     void AddToCurrentIntegrity(float Value, bool predictable);
     void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
     void OnIceExpire();
@@ -16894,6 +17483,8 @@ class ARessuplyPodSpawn : public ARessuplyPod
 {
 public:
     UE_CLASS("/Script/FSD", "RessuplyPodSpawn");
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     void SetCharacter(class APlayerCharacter* Character);
     void SetController(class AFSDPlayerController* Controller);
 };
@@ -16923,6 +17514,12 @@ class AHostileGuntowerModuleController : public AFSDAIController
 public:
     UE_CLASS("/Script/FSD", "HostileGuntowerModuleController");
     class UAIPerceptionComponent* Perception;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* Perception__UeSubobject = "Perception /Script/AIModule.AIPerceptionComponent";
+    static constexpr const char* PerceptionComponent__UeSubobject = "Perception /Script/AIModule.AIPerceptionComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnPerceptionUpdated(class AActor* sensedActor, FAIStimulus Stimulus);
 };
 
@@ -16989,6 +17586,12 @@ public:
     bool IsOnGround;
     static constexpr const char* IsOnGround__Replicated = ":";
     float KnockBackForce;
+    static constexpr const char* BaseMesh__UeSubobject = "BaseMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Carry__UeSubobject = "CarryComponent /Script/FSD.CarriableComponent";
+    static constexpr const char* ExplosionDamage__UeSubobject = "ExplosionDamage /Script/FSD.DamageComponent";
+    static constexpr const char* TetherBeam__UeSubobject = "TetherBeam /Script/Niagara.NiagaraComponent";
+    static constexpr const char* UsableComponent__UeSubobject = "Usable /Script/FSD.InstantUsable";
+    static constexpr const char* UseTrigger__UeSubobject = "UseTrigger /Script/Engine.SphereComponent";
     UE_MULTICAST void Explode();
     void OnClosed();
     void OnDroneDrop();
@@ -17017,6 +17620,14 @@ public:
     static constexpr const char* ItemsInserted__Replicated = ":";
     bool IsTreasureAvailable;
     static constexpr const char* IsTreasureAvailable__Replicated = ":";
+    static constexpr const char* BoxMesh__UeSubobject = "BoxMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* CollectUsable__UeSubobject = "CollectUsable /Script/FSD.OncePerPlayerUsableComponent";
+    static constexpr const char* HammeringUsable__UeSubobject = "HammeringUsable /Script/FSD.SingleUsableComponent";
+    static constexpr const char* MiddlePlane__UeSubobject = "MiddlePlane /Script/Engine.StaticMeshComponent";
+    static constexpr const char* RepairUsable__UeSubobject = "RepairUsable /Script/FSD.RepairableUsable";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* repairable__UeSubobject = "repairable /Script/FSD.RepairableComponent";
+    static constexpr const char* terrainPlacement__UeSubobject = "terrainPlacement /Script/FSD.TerrainPlacementComponent";
     void ActivateCollection();
     void AfterRepairDelay();
     void BP_OnCollectedTreasure(class APlayerCharacter* collector);
@@ -17044,6 +17655,12 @@ public:
     class USceneComponent* DebrisParent;
     class UBillboardComponent* EntranceIndicator;
     TArray<class AGem*> SpawnedGems;
+    static constexpr const char* Adders__UeSubobject = "Adders /Script/Engine.SceneComponent";
+    static constexpr const char* DebrisParent__UeSubobject = "DebrisParent /Script/Engine.SceneComponent";
+    static constexpr const char* EntranceIndicator__UeSubobject = "EntranceIndicator /Script/Engine.BillboardComponent";
+    static constexpr const char* Removers__UeSubobject = "Removers /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* TunnelEntranceCarvers__UeSubobject = "TunnelEntranceCarvers /Script/Engine.SceneComponent";
     void AddSpawnedGem(class AGem* Gem);
     void OnAllGemsReleased();
 };
@@ -17064,6 +17681,9 @@ public:
     float PowerCoefficient;
     TSoftClassPtr<class UClass> SelectedTunnelClass;
     class ATunnelEventBase* SpawnedtunnelInstance;
+    static constexpr const char* SpawnComponent__UeSubobject = "SpawnComponent /Script/FSD.SpawnActorWithDebrisPosComponent";
+    static constexpr const char* SpawnSphere__UeSubobject = "SpawnSphere /Script/Engine.SphereComponent";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     void OnSpawnSphereOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void StartTunnelSpawning();
     bool TrySpawnEnemy();
@@ -17134,6 +17754,7 @@ public:
     TMap<EPickaxePartLocation, FPickaxeMeshInstance> EquippedParts;
     class UItemID* ItemID;
     class UMaterialInterface* EquippedMaterial;
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     void EquipParts();
     void PreviewParts(EPickaxePartLocation PreviewLocation, class UPickaxePart* PreviewPart);
 };
@@ -17143,6 +17764,8 @@ class APlaguePuddle : public AAdicPuddle
 public:
     UE_CLASS("/Script/FSD", "PlaguePuddle");
     uint16 MaxPlaguePiles;
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SphereTrigger__UeSubobject = "SphereTrigger /Script/Engine.SphereComponent";
     void Receive_OnVacuumed();
 };
 
@@ -17439,6 +18062,7 @@ public:
     EDefendPointState DefendState;
     static constexpr const char* DefendState__Replicated = "OnRep_DefendState:";
     class USingleUsableComponent* DefendPointUsable;
+    static constexpr const char* DefendPointUsable__UeSubobject = "DefendPointUsable /Script/FSD.SingleUsableComponent";
     void DefenseComplete();
     void DefenseFail();
     void DefenseStart();
@@ -17459,6 +18083,13 @@ public:
     FQueuedMontage QueuedMontage;
     static constexpr const char* QueuedMontage__Replicated = "OnRep_QueuedMontage:";
     TArray<class UMaterialInterface*> CachedMaterials;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_QueuedMontage();
     class USkeletalMeshComponent* GetMesh() const;
     class UMeshComponent* Receive_GetMeshComponent() const;
@@ -17472,6 +18103,13 @@ public:
     static constexpr const char* IsVisible__Replicated = ":";
     class AActor* Target;
     static constexpr const char* Target__Replicated = "OnRep_Target:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_Target();
     void SetTarget(class AActor* Target_0);
 };
@@ -17502,6 +18140,22 @@ public:
     static constexpr const char* AttackStance__Replicated = "OnRep_AttackStance:";
     bool LookStraight;
     bool UseDefaultRagdoll;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Alert__UeSubobject = "Alert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* ExplosionSphere__UeSubobject = "ExplosionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* FrozenImpact__UeSubobject = "FrozenImpact /Script/FSD.FrozenPawnImpactComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Senses__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WingSoundComponent__UeSubobject = "WingSound /Script/Engine.AudioComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void AddImpulseAndRagdoll(class UHealthComponent* Health, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> damageTags);
     void AlertNearbyEnemies();
     UE_MULTICAST void All_Ragdoll(FVector_NetQuantize Location, FVector_NetQuantize Impulse, uint8 BoneIndex);
@@ -17551,6 +18205,21 @@ public:
     bool dropAcid;
     static constexpr const char* dropAcid__Replicated = "OnRep_DropAcid:";
     bool NoDeathSpiral;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Alert__UeSubobject = "Alert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* ExplosionSphere__UeSubobject = "ExplosionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* FrozenImpact__UeSubobject = "FrozenImpact /Script/FSD.FrozenPawnImpactComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Senses__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void HideMesh();
     void OnArmorDestroyed(FName Name_0);
     void OnBladderDamage(float amount);
@@ -17577,6 +18246,15 @@ public:
     float MaxRagdollSpeed;
     class AActor* LookAtTarget;
     static constexpr const char* LookAtTarget__Replicated = "OnRep_LookAtTarget:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void AlertNearbyEnemies();
     class UStaticMeshComponent* CreateHeadGore();
     void OnRep_LookAtTarget();
@@ -17591,6 +18269,13 @@ public:
     float SpawnHeightOffset;
     float AlertDistance;
     float respawnDelay;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnSwarmDestroyed(class AActor* DestroyedActor);
     void OnSwarmSpawned(class AInsectSwarmEnemy* Swarm);
     class UStaticMeshComponent* Receive_GetStaticMesh() const;
@@ -17601,6 +18286,12 @@ class AInsectSwarmEnemy : public AEnemyDeepPathfinderCharacter
 public:
     UE_CLASS("/Script/FSD", "InsectSwarmEnemy");
     class UParticleSystemComponent* SwarmParticles;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class ACaveLeech : public AEnemyPawn
@@ -17635,6 +18326,17 @@ public:
     static constexpr const char* TentacleVelocity__Replicated = ":";
     class UHealthComponent* HealthTarget;
     class USceneComponent* TentacleHead;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* GrabberComponent__UeSubobject = "Grabber /Script/FSD.GrabberComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HealthTarget__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* SkeletalMesh__UeSubobject = "NewMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* TentacleHead__UeSubobject = "TentacleHead /Script/Engine.SceneComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_OnBite(class UHealthComponent* TargetHealth);
     void BP_OnStateChanged(ECaveLeechState NewState);
     void Damaged(float amount);
@@ -17675,6 +18377,13 @@ public:
     int AoEStage;
     int8 OpenEye;
     static constexpr const char* OpenEye__Replicated = "OnRep_OpenEye:";
+    static constexpr const char* DamageTracker__UeSubobject = "DamageTracker /Script/FSD.HealthDamageTracker";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_AUTHORITY_ONLY void CloseAllEyes();
     void InitCaretakerActions(TArray<class UCaretakerActionComponent*> carettakeractions);
     UE_AUTHORITY_ONLY void InitiateNextStage();
@@ -17711,6 +18420,13 @@ public:
     float DurationTentacleFoldout;
     class USceneComponent* HeadRoot;
     class USceneComponent* HeadRotator;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     class USceneComponent* GetHeadRoot();
     class USceneComponent* GetHeadRotator();
     void MoveHydraHead(FTransform newDesiredTransform, float newCanSwayCooldown, float newHeadMovementDuration, bool UseSpring);
@@ -17731,6 +18447,13 @@ public:
     class USkeletalMeshComponent* HeadMesh;
     FTentacleTarget DesiredTarget;
     static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_AUTHORITY_ONLY bool FindBurrowLocation(class UDebrisPositioning* Debris, FVector Origin, float Radius, FVector& OutLocation);
     void OnRep_DesiredTarget();
     void OnRep_TentacleState();
@@ -17757,6 +18480,15 @@ public:
     bool TurretEngaged;
     static constexpr const char* TurretEngaged__Replicated = "OnRep_TurretEngaged:";
     bool AlwaysActive;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "TurretMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnAttack();
     void OnEngagedChanged(bool engaged);
     void OnProjectileSpawned();
@@ -17777,6 +18509,15 @@ public:
     float TurnTimer;
     float Acceptance;
     float TurnSpeed;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "TurretMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class AAimingFacilityTurret : public AFacilityTurret
@@ -17808,6 +18549,15 @@ public:
     EIndicatorMode IndicatorMode;
     static constexpr const char* IndicatorMode__Replicated = "OnRep_IndicatorMode:";
     FInt32Interval BurstCount;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "TurretMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnLockedOn(bool lockedOn);
     void OnRep_IndicatorMode();
     void OnRep_IsLockedOn();
@@ -17822,6 +18572,12 @@ public:
     class UPhysicsAsset* FrozenAsset;
     class USoundCue* FrozenDeathSound;
     class UParticleSystem* FrozenDeathParticles;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_FreezeImpact();
     void OnFreezeImpact(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
     void TriggerFrozenRagdoll();
@@ -17855,6 +18611,25 @@ public:
     bool ParalyzeOnGrab;
     float ExtraUpForce;
     float ScreamDistance;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Alert__UeSubobject = "Alert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* ExplosionSphere__UeSubobject = "ExplosionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* FrozenImpact__UeSubobject = "FrozenImpact /Script/FSD.FrozenPawnImpactComponent";
+    static constexpr const char* GrabCapsule__UeSubobject = "GrabCapsuleComponent /Script/Engine.CapsuleComponent";
+    static constexpr const char* GrabLight__UeSubobject = "GrabberLight /Script/Engine.PointLightComponent";
+    static constexpr const char* GrabberComp__UeSubobject = "GrabberComponent /Script/FSD.GrabberComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* InDanger__UeSubobject = "InDangerComponent /Script/FSD.InDangerComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Senses__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ChangeState(EGrabberState aGrabberState);
     UE_AUTHORITY_ONLY void DropTarget();
     void OnActorEnterGrabZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
@@ -17870,6 +18645,13 @@ class AHydraWeedCore : public AEnemyPawn
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedCore");
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnHealerKilled(class AHydraWeedHealer* healer);
     void OnShooterKilled(class AHydraWeedShooter* shooter);
     void WakupCore();
@@ -17974,6 +18756,30 @@ public:
     class UStaticMeshComponent* TurretRotation;
     class AActor* CurrentTarget;
     static constexpr const char* CurrentTarget__Replicated = "OnRep_Target:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Damage__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitScan__UeSubobject = "HitScan /Script/FSD.HitscanComponent";
+    static constexpr const char* InnerShield__UeSubobject = "InnerShield /Script/Engine.StaticMeshComponent";
+    static constexpr const char* LaserBeam__UeSubobject = "LaserBeam /Script/Engine.StaticMeshComponent";
+    static constexpr const char* LaserWarningSound__UeSubobject = "PulsatingSoundComponent /Script/Engine.AudioComponent";
+    static constexpr const char* LightCone__UeSubobject = "LightCone /Script/Engine.StaticMeshComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* MuzzleFlash__UeSubobject = "MuzzleFlash /Script/Engine.PointLightComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PulsatingSoundComp__UeSubobject = "PulsatingSoundComponent /Script/Engine.AudioComponent";
+    static constexpr const char* ShieldRoot__UeSubobject = "ShieldRoot /Script/Engine.SceneComponent";
+    static constexpr const char* ShootSoundInstance__UeSubobject = "PulsatingSoundComponent /Script/Engine.AudioComponent";
+    static constexpr const char* SpotLight__UeSubobject = "FloodLight /Script/Engine.SpotLightComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* TurretMesh__UeSubobject = "TurretMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TurretRoot__UeSubobject = "TurretRoot /Script/Engine.SceneComponent";
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.SingleUsableComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_OnInstroduce();
     void BP_OnShieldChanged(bool isGrowing);
     void BP_OnStateChanged(ERobotState TeamState_0);
@@ -18017,6 +18823,22 @@ public:
     float MultiplierOnHighPlayerCount;
     bool IsInBreedMode;
     static constexpr const char* IsInBreedMode__Replicated = "OnRep_BreedMode:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Alert__UeSubobject = "Alert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* ExplosionSphere__UeSubobject = "ExplosionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* FrozenImpact__UeSubobject = "FrozenImpact /Script/FSD.FrozenPawnImpactComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Senses__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WingSoundComponent__UeSubobject = "WingSound /Script/Engine.AudioComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BreedModeFlipped(bool aIsLayingEggs);
     void OnJellyDestroyed(class AActor* AActor);
     void OnRep_BreedMode();
@@ -18031,6 +18853,12 @@ public:
     class USimpleHealthComponent* Health;
     float SearchChunksRadius;
     float SearchChunksInterval;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     static class AResourceChunk* SpawnResource(class UObject* WorldContext, class UResourceData* Data, float Size, FTransform Transform, FVector Impulse, FVector DropOffset);
     static class AResourceChunk* SpawnResource(class UResourceData* Data, float Size, FTransform Transform, FVector Impulse, FVector DropOffset);
     void DropResource(class UResourceData* Data, float Size, FVector Impulse, FVector DropOffset);
@@ -18043,6 +18871,12 @@ class AMaggot : public ADeepPathfinderCharacter
 public:
     UE_CLASS("/Script/FSD", "Maggot");
     class USimpleHealthComponent* HealthComponent;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.SimpleHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class AScrab : public AEnemyDeepPathfinderCharacter
@@ -18061,6 +18895,24 @@ public:
     class UHitReactionComponent* HitReactions;
     class UIKComponent* IK;
     float TargetTrackingRotationSpeed;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Alert__UeSubobject = "Alert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* FrozenImpact__UeSubobject = "FrozenImpact /Script/FSD.FrozenPawnImpactComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* IK__UeSubobject = "IK /Script/FSD.IKComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PathfinderReactiveTerrainTracker__UeSubobject = "PathfinderReactiveTerrainTracker /Script/FSD.PathfinderReactiveTerrainTrackerComponent";
+    static constexpr const char* PawnSensing__UeSubobject = "PawnSensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WalkAndFly__UeSubobject = "WalkAndFly /Script/FSD.WalkAndFlyEnemyComponent";
+    static constexpr const char* WingAudio__UeSubobject = "WingAudio /Script/Engine.AudioComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void AddImpulseAndRagdoll(FDamageData DamageData);
     UE_MULTICAST void All_Ragdoll(FVector_NetQuantize Location, FVector_NetQuantize Impulse, uint8 BoneIndex);
     void OnBugDeath(class UHealthComponentBase* Health);
@@ -18082,6 +18934,18 @@ public:
     class UOutlineComponent* outline;
     class UParticleSystem* deathParticles;
     class USoundBase* deathSound;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* Tentacles1__UeSubobject = "Tentacles1 /Script/Engine.StaticMeshComponent";
+    static constexpr const char* Tentacles2__UeSubobject = "Tentacles2 /Script/Engine.StaticMeshComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnSelfDeath(class UHealthComponentBase* aHealthComponent);
 };
 
@@ -18156,6 +19020,25 @@ public:
     static constexpr const char* Alerted__Replicated = ":";
     class AActor* CurrentTarget;
     static constexpr const char* CurrentTarget__Replicated = ":";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Alert__UeSubobject = "Alert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* BumpDamage__UeSubobject = "BumpDamage /Script/FSD.DamageComponent";
+    static constexpr const char* CeilingAvoidance__UeSubobject = "CeilingAvoidance /Script/FSD.AvoidCeilingComponent";
+    static constexpr const char* CollisionSphere__UeSubobject = "CollisionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* FlyingRangedAttack__UeSubobject = "FlyingRangedAttack /Script/FSD.ProjectileAttackComponent";
+    static constexpr const char* HackingUsable__UeSubobject = "HackingUsable /Script/FSD.HackingUsableComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* ImpactCooldown__UeSubobject = "ImpactCooldown /Script/FSD.PlayerImpactCooldownComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* MissileAttack__UeSubobject = "MissileAttack /Script/FSD.ProjectileAttackComponent";
+    static constexpr const char* NearTargetSphere__UeSubobject = "CollisionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnSensing__UeSubobject = "PawnSensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* TearingGroundParticles__UeSubobject = "TearingGroundParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_MULTICAST UE_RELIABLE void All_SetLaserBeamActive(bool Active);
     UE_AUTHORITY_ONLY void DisableDrone();
     void EndFireRockets();
@@ -18229,6 +19112,21 @@ public:
     EPitJawState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     class UHealthComponent* HealthTarget;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Bite__UeSubobject = "Bite /Script/FSD.MeleeAttackComponent";
+    static constexpr const char* FirstBite__UeSubobject = "FirstBite /Script/FSD.MeleeAttackComponent";
+    static constexpr const char* GrabberComponent__UeSubobject = "Grabber /Script/FSD.GrabberComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HealthTarget__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* MajorCarve__UeSubobject = "MajorCarve /Script/FSD.MeshCarverComponent";
+    static constexpr const char* MinorCarve__UeSubobject = "MinorCarve /Script/FSD.MeshCarverComponent";
+    static constexpr const char* MouthCarve__UeSubobject = "MouthCarve /Script/FSD.MeshCarverComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* SkeletalMesh__UeSubobject = "SkeletalMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_FinishRelocation(FTransform relocationPoint);
     void BP_OnMajorCarve();
     void BP_OnMinorCarve();
@@ -18301,6 +19199,22 @@ public:
     class UParticleSystem* DiveParticles;
     ESharkEnemyState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* AirTrailParticles__UeSubobject = "AirTrailParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* BumpDamage__UeSubobject = "BumpDamage /Script/FSD.DamageComponent";
+    static constexpr const char* CollisionSphere__UeSubobject = "CollisionSphere /Script/Engine.SphereComponent";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* Danger__UeSubobject = "Danger /Script/FSD.InDangerComponent";
+    static constexpr const char* EnemyComponent__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* NearTargetSphere__UeSubobject = "NearTargetSphere /Script/Engine.SphereComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnSensing__UeSubobject = "PawnSensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* RestrictedGrabberComponent__UeSubobject = "RestrictedGrabberComponent /Script/FSD.FakePhysGrabberComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* TearingGroundParticles__UeSubobject = "TearingGroundParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ActivateDanger();
     UE_MULTICAST UE_RELIABLE void All_DoRagdollImpact(FVector_NetQuantize Direction);
     void DiveHide();
@@ -18338,6 +19252,12 @@ public:
     class UMaterialInstanceDynamic* EngineMaterial;
     EProspectorRobotState ProspectorState;
     static constexpr const char* ProspectorState__Replicated = "OnRep_ProspectorState:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_AUTHORITY_ONLY void ChangeState(EProspectorRobotState NewState);
     void OnRep_ProspectorState(EProspectorRobotState oldState);
     void OnStateBegin(EProspectorRobotState NewState);
@@ -18352,6 +19272,13 @@ class AHydraWeedShooter : public AShootingPlant
 public:
     UE_CLASS("/Script/FSD", "HydraWeedShooter");
     class AHydraWeedCore* Core;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class AHydraWeedHealer : public AEnemyPawn
@@ -18359,6 +19286,13 @@ class AHydraWeedHealer : public AEnemyPawn
 public:
     UE_CLASS("/Script/FSD", "HydraWeedHealer");
     class AHydraWeedCore* Core;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class AStabberVine : public ATentacleBase
@@ -18367,6 +19301,13 @@ public:
     UE_CLASS("/Script/FSD", "StabberVine");
     FTentacleTarget DesiredTarget;
     static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_DesiredTarget();
 };
 
@@ -18381,6 +19322,14 @@ public:
     static constexpr const char* TentaclePlant__Replicated = ":";
     int TentacleIndex;
     static constexpr const char* TentacleIndex__Replicated = ":";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnPathCompleted(bool WasCompleted);
 };
 
@@ -18396,6 +19345,13 @@ public:
     TSubclassOf<class AEnemyPawn> NodeType;
     class UDebrisPositioning* NodePositioning;
     TArray<class ATentaclePlantNode*> NodeInstances;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void DestroyNode(class ATentaclePlantNode* Node);
     void OnIsVulnerable();
     void OnNodeDamaged(class ATentaclePlantNode* InNode);
@@ -18420,6 +19376,14 @@ public:
     class UGrabberComponent* GrabberComponent;
     FTerminatorTarget DesiredTarget;
     static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* GrabberComponent__UeSubobject = "Grabber /Script/FSD.GrabberComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_MULTICAST void All_PlayFlairAnimation();
     UE_AUTHORITY_ONLY void ChangeTentacleState(ETerminatorTentacleState NewState);
     UE_AUTHORITY_ONLY void MoveToGrabTarget(class AActor* Target, float GrabDuration);
@@ -18442,6 +19406,13 @@ public:
     float MaxFlairAnimationCooldown;
     class UHitReactionComponent* HitReactions;
     TSet<class AActor*> CurrentTargets;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_MULTICAST void All_PlayFlairAnimation();
 };
 
@@ -18510,6 +19481,14 @@ public:
     bool IsShooting;
     static constexpr const char* IsShooting__Replicated = ":";
     bool CanStandOnAnySurface;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PawnSensing__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* RollingCenter__UeSubobject = "RollingCenter /Script/Engine.SceneComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BumpedTarget();
     void OnRep_LastHit();
     void OnRep_State();
@@ -18546,6 +19525,7 @@ public:
     float InitialProgress;
     class APlagueMeteor* meteor;
     static constexpr const char* meteor__Replicated = ":";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     UE_PURE class APlagueMeteor* GetMeteor();
     UE_AUTHORITY_ONLY void SetMeteor(class APlagueMeteor* meteor_0);
 };
@@ -18568,6 +19548,7 @@ public:
     UE_CLASS("/Script/FSD", "ActivationObject");
     class USingleUsableComponent* Usable;
     bool HasBeenUsed;
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.SingleUsableComponent";
     void OnUsedBy(class APlayerCharacter* User, EInputKeys Key);
 };
 
@@ -19005,6 +19986,11 @@ public:
     int MaxManualHeatReductionCharges;
     float ManualHeatReductionValue;
     EAmmoWeaponState WeaponState;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST void All_Gunsling(uint8 Index_0);
     UE_MULTICAST void All_PlayBurstFire(uint8 shotCount);
     UE_MULTICAST void All_StartReload(float CurrentReloadDuration);
@@ -19038,6 +20024,12 @@ public:
     UE_CLASS("/Script/FSD", "BurstWeapon");
     class UDamageComponent* Damage;
     class UDamageComponent* BurstFireBonusDamage;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnReadyToFire();
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
 };
@@ -19460,6 +20452,9 @@ class AHydraWeedSpawnProjectile : public AProjectile
 public:
     UE_CLASS("/Script/FSD", "HydraWeedSpawnProjectile");
     FVector TargetLocation;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
 };
 
 class UAfflictionFunctionLibrary : public UBlueprintFunctionLibrary
@@ -19926,6 +20921,10 @@ public:
     float CoolDown;
     bool Used;
     static constexpr const char* Used__Replicated = "OnRep_Used:";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnRep_Used();
     void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
     UE_SERVER UE_RELIABLE void Server_Call_Resupply(FVector Location);
@@ -19939,6 +20938,10 @@ class ACleanupPodItem : public ARessuplyPodItem
 public:
     UE_CLASS("/Script/FSD", "CleanupPodItem");
     TMulticastInlineDelegate<void()> OnCleaningPodLaunched;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CallUpdateWidget();
     UE_SERVER UE_RELIABLE void Server_Call_CleaningPod(FVector Location, class APlagueInfectionNode* plagueNode);
     void UpdateWidget(EPlaceableObstructionType reason, float TimeLeft);
@@ -19982,6 +20985,7 @@ class ADropPodCalldownLocationItem : public AGenerationItem
 public:
     UE_CLASS("/Script/FSD", "DropPodCalldownLocationItem");
     TSubclassOf<class AActor> CalldownClass;
+    static constexpr const char* RootComponent__UeSubobject = "collider /Script/Engine.SphereComponent";
 };
 
 class UAIFunctionLibrary : public UBlueprintFunctionLibrary
@@ -20046,6 +21050,7 @@ public:
     class UDialogDataAsset* GetOnShout;
     class UDialogDataAsset* LetGoShout;
     class UControlEnemyUsable* Usable;
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.ControlEnemyUsable";
 };
 
 class UAnimNotifyState_SpawnAndReleaseActor : public UAnimNotifyState
@@ -20074,7 +21079,7 @@ class IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "UpgradableGear");
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 class UBTTask_MessageAI : public UBTTaskNode
@@ -20235,8 +21240,8 @@ public:
     TArray<FMilestoneTier> Tiers;
     int LastTierReached;
     bool bPendingMilestoneReached;
-    static TArray<class UMilestoneAsset*> SortMilestonesByProgress(class UObject* WorldContext, TArray<class UMilestoneAsset*> Milestones);
-    static TArray<class UMilestoneAsset*> SortMilestonesByProgress(TArray<class UMilestoneAsset*> Milestones);
+    static TArray<class UMilestoneAsset*> SortMilestonesByProgress(class UObject* WorldContext, TArray<class UMilestoneAsset*>& Milestones);
+    static TArray<class UMilestoneAsset*> SortMilestonesByProgress(TArray<class UMilestoneAsset*>& Milestones);
     int ClaimNextTier(class UObject* WorldContext);
     int ClaimNextTier();
     void ClearPendingMilestoneReached();
@@ -20392,6 +21397,12 @@ public:
     bool Finished;
     static constexpr const char* Finished__Replicated = "OnRep_Finished:";
     float DecaySpeed;
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PushCollider1__UeSubobject = "PushCollider1 /Script/Engine.SphereComponent";
+    static constexpr const char* PushCollider2__UeSubobject = "PushCollider2 /Script/Engine.SphereComponent";
+    static constexpr const char* PushCollider3__UeSubobject = "PushCollider3 /Script/Engine.SphereComponent";
+    static constexpr const char* PushCollider4__UeSubobject = "PushCollider4 /Script/Engine.SphereComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void GeneratorSpunUp();
     void OnEnteredPushpoint(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void OnLeftPushpoint(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
@@ -20452,6 +21463,8 @@ public:
     float MaxConnectRadius;
     float ConnectDistance;
     FVector MaxAngles;
+    static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
+    static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
     UE_PURE bool CanConnectWith(class ACable* Cable, FTransform FromWorldTransform);
     UE_AUTHORITY_ONLY bool Connect(class ACable* Cable);
     UE_AUTHORITY_ONLY bool Disconnect(class ACable* Cable);
@@ -20478,6 +21491,7 @@ public:
     UE_CLASS("/Script/FSD", "SubRoomItem");
     class URoomGenerator* RoomGenerator;
     int Layer;
+    static constexpr const char* RootComponent__UeSubobject = "collider /Script/Engine.SphereComponent";
 };
 
 class USchematicAquisition : public UItemAquisitionBase
@@ -21153,6 +22167,9 @@ public:
     float KillTrailAfterTime;
     bool OnlyTrailShown;
     static constexpr const char* OnlyTrailShown__Replicated = "OnRep_OnlyTrailShown:";
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void ApplyDamageEffects(FHitResult HitResult, FVector RelativeLocation);
     void OnRep_BansheePulseActive();
     void OnRep_OnlyTrailShown();
@@ -21305,6 +22322,11 @@ public:
     TSubclassOf<class UStatusEffect> StatusAtFullROF;
     class UAnimMontage* WPN_Fire_2;
     float CurrentFireTime;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_SERVER UE_RELIABLE void Server_SetStatusActive(bool IsActive);
 };
 
@@ -21692,6 +22714,11 @@ public:
     bool TriggerClusterActive;
     float TriggerClusterHoldDuration;
     FText TriggerClusterHoldDescription;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST UE_RELIABLE void All_SetChargedMissile(bool isCharged);
     UE_PURE int GetChargeCurrentFireCount();
     UE_PURE bool IsNextShotBuckShot();
@@ -21733,6 +22760,8 @@ public:
     UE_CLASS("/Script/FSD", "InfluenceTester");
     class UCaveInfluencer* Influencer;
     class USphereComponent* Sphere;
+    static constexpr const char* RootComponent__UeSubobject = "Sphere /Script/Engine.SphereComponent";
+    static constexpr const char* Sphere__UeSubobject = "Sphere /Script/Engine.SphereComponent";
 };
 
 class UCSGTriangleMapper : public UDataAsset
@@ -21902,6 +22931,12 @@ public:
     static constexpr const char* Cable__Replicated = "OnRep_Cable:";
     bool bIsPlacingCable;
     static constexpr const char* bIsPlacingCable__Replicated = ":";
+    static constexpr const char* CablePlacer__UeSubobject = "CablePlacer /Script/FSD.ItemPlacerAggregator";
+    static constexpr const char* CrosshairAggregator__UeSubobject = "CrosshairAggregator /Script/FSD.CrosshairAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CancelPlacement();
     void FinishPlacement(FTransform FinalLocation, class ACableEnd* CableEnd);
     void OnRep_Cable();
@@ -22165,6 +23200,11 @@ public:
     float CurrentSpinRate;
     bool Simulate_SpinBarrel;
     static constexpr const char* Simulate_SpinBarrel__Replicated = ":";
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_SERVER UE_RELIABLE void Server_StartBarrel();
     UE_SERVER UE_RELIABLE void Server_StopBarrel();
 };
@@ -22199,6 +23239,12 @@ public:
     float HotShellsTemperatureRequired;
     class UDamageComponent* DamageComponent;
     class UDamageComponent* BarrelProximityDamageComponent;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_CLIENT UE_RELIABLE void Client_RemoveHeat();
     void OnEnemyKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysMat, bool wasDirectHit);
     void OnGatlingTemperatureChanged(float temperature, bool isOverheated);
@@ -22336,6 +23382,7 @@ public:
     int BackendDataValid;
     FDateTime BackendExpirationTime;
     int BackendSeed;
+    static constexpr const char* EventsHandler__UeSubobject = "EventsHandler /Script/FSD.FSDEventsHandler";
     bool CompleteCurrentSingleMission();
     class UDeepDive* GenerateDebugDeepDive(TArray<FDeepDiveTesterItem> stages, class UBiome* Biome, bool IsElite);
     void MarkGivenRewards();
@@ -22452,6 +23499,7 @@ public:
     TSubclassOf<class UWidget> DefendWidget;
     float Progress;
     static constexpr const char* Progress__Replicated = "OnRep_Progress:";
+    static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     void OnRep_Progress(float OldValue);
 };
 
@@ -22554,6 +23602,11 @@ public:
     float ChargeSpeedModifier;
     float SuccesfullHipFireStackDuration;
     float SuccesfullAimedStackDuration;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_CLIENT UE_RELIABLE void Client_OnTargetDamaged(float amount);
     UE_CLIENT UE_RELIABLE void Client_OnTargetKilled(bool BoostReloadTime);
     void OnMovementSlowed(bool isSlowed);
@@ -22975,6 +24028,8 @@ public:
     TMulticastInlineDelegate<void(TArray<FBlueprintSessionResult> Results)> OnRefresh;
     class UObject* WorldContextObject;
     class UFSDFindSessions* FSDFindSteamSessions;
+    static constexpr const char* FSDFindSteamSessions__UeSubobject = "FSDFindSteamSessions /Script/FSD.FSDFindSessions";
+    static constexpr const char* WorldContextObject__UeSubobject = "FSDFindSteamSessions /Script/FSD.FSDFindSessions";
     static class UFSDFindSessionsCallbackProxy* FSDFindFullSessions(class UObject* WorldContextObject_0, class APlayerController* PlayerController, int MaxResults);
     static class UFSDFindSessionsCallbackProxy* FSDFindFullSessions(class APlayerController* PlayerController, int MaxResults);
     static class UFSDFindSessionsCallbackProxy* FSDFindSessions(class UObject* WorldContextObject_0, class APlayerController* PlayerController, int MaxResults, bool bUseLAN);
@@ -23052,6 +24107,10 @@ public:
     class UItemPlacerAggregator* ItemPlacerInstance;
     float CoolDown;
     float CooldownRemaining;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_SERVER UE_RELIABLE void Server_Call_Resupply(FVector Location);
 };
 
@@ -23148,6 +24207,7 @@ public:
     class USoundCue* ImpactGroundSound;
     class UParticleSystem* ImpactGroundParticles;
     class UGrenadeAnimationSet* GrenadeAnimationSetOverride;
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
     UE_PURE static class AGrenade* GetGrenadeDefaultObject(TSubclassOf<class AGrenade> GrenadeClass);
     void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
     void OnExploded();
@@ -23164,6 +24224,8 @@ public:
     class UCaveEntranceComponent* CaveEntranceComponent;
     ECaveEntranceType EntranceType;
     bool HasBeenConverted;
+    static constexpr const char* CaveEntranceComponent__UeSubobject = "CaveEntrance /Script/FSD.CaveEntranceComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CaveEntrance /Script/FSD.CaveEntranceComponent";
 };
 
 class ABouncyBoomerang : public AGrenade
@@ -23211,6 +24273,11 @@ public:
     FBoomerangSyncer PosVel;
     static constexpr const char* PosVel__Replicated = "OnRep_PosVel:";
     FBoomerangMover Mover;
+    static constexpr const char* MeshPivot__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* YawPivot__UeSubobject = "Root /Script/Engine.SceneComponent";
     void CheckIfCollidingWithTerrain();
     void OnRep_PosVel();
     void OnRep_RandomSeed();
@@ -23264,6 +24331,8 @@ class ABoxGenerationItem : public AGenerationItem
 public:
     UE_CLASS("/Script/FSD", "BoxGenerationItem");
     class UBoxGenerationComponent* BoxComponent;
+    static constexpr const char* BoxComponent__UeSubobject = "BoxComponent /Script/FSD.BoxGenerationComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BoxComponent /Script/FSD.BoxGenerationComponent";
 };
 
 class USTLMeshCarver : public UObject
@@ -23685,6 +24754,10 @@ public:
     FCablePoint ServerCableEndTransform;
     static constexpr const char* ServerCableEndTransform__Replicated = "OnRep_CableEndTransform:";
     float MaxLength;
+    static constexpr const char* CableEndPostMesh__UeSubobject = "CableEndPostMesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* CableSplineComponent__UeSubobject = "CableSplineComponent /Script/Engine.SplineComponent";
+    static constexpr const char* CableSplineMesh__UeSubobject = "CableSplineMesh /Script/Engine.SplineMeshComponent";
+    static constexpr const char* PreviewEndPostLocation__UeSubobject = "PreviewEndPostLocation /Script/Engine.SceneComponent";
     bool CanPlaceAt(FTransform InCandidateTransform, class ACableEnd* InCableEnd, class AItem* PlaceableItem);
     void OnRep_CableEndTransform();
     bool ReceiveCanPlaceAt(FTransform InCandidateTransform, class ACableEnd* InCableEnd);
@@ -23715,6 +24788,9 @@ public:
     UE_CLASS("/Script/FSD", "CableEnd");
     class UCableEndPoint* EndPoint;
     class UStaticMeshComponent* StaticMesh;
+    static constexpr const char* EndPoint__UeSubobject = "EndPoint /Script/FSD.CableEndPoint";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
     void OnConnected(class UCableEndPoint* InEndPoint, class ACable* InCable);
     void ReceiveConnected();
     void ReceivePing(bool InValidPlacement);
@@ -23733,6 +24809,10 @@ public:
     class UCableUsable* CableStartUsable;
     bool bCableConnected;
     static constexpr const char* bCableConnected__Replicated = "OnRep_CableConnected:";
+    static constexpr const char* CableStartUsable__UeSubobject = "CableStartUsable /Script/FSD.CableUsable";
+    static constexpr const char* ObjectInfoComponent__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
+    static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
     void OnCableConnected(class UCableEndPoint* EndPoint, class ACable* Cable);
     void OnRep_CableConnected();
     void ReceiveCableConnected();
@@ -23969,6 +25049,8 @@ public:
     class UResourceData* Resource;
     float BaseAmount;
     class USphereComponent* Sphere;
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SphereComponent";
+    static constexpr const char* Sphere__UeSubobject = "Root /Script/Engine.SphereComponent";
 };
 
 class UDetPackUpgrade : public UStandardItemUpgrade
@@ -23994,6 +25076,7 @@ public:
     class URoomGeneratorGroup* RoomGroup;
     FGameplayTagQuery tagQuery;
     int Layer;
+    static constexpr const char* RootComponent__UeSubobject = "collider /Script/Engine.SphereComponent";
 };
 
 class ARoomBurner : public AActor
@@ -24241,8 +25324,8 @@ public:
     static TArray<class UVanityItem*> GetUnLockedVanityItems(EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
     static TArray<class UVanityItem*> GetVanityItems(class UObject* WorldContextObject, EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
     static TArray<class UVanityItem*> GetVanityItems(EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
-    static void SortVanityItems(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, TArray<class UVanityItem*> VanityItems);
-    static void SortVanityItems(class UPlayerCharacterID* characterID, TArray<class UVanityItem*> VanityItems);
+    static void SortVanityItems(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, TArray<class UVanityItem*>& VanityItems);
+    static void SortVanityItems(class UPlayerCharacterID* characterID, TArray<class UVanityItem*>& VanityItems);
     UE_PURE TArray<class UVanityItem*> GetItems(EVanitySlot Slot, bool onlyStoreItems) const;
     UE_PURE class UVanityItem* GetVanityItem(FGuid VanityID) const;
 };
@@ -24293,6 +25376,11 @@ public:
     float HeatPerSecondWhenCharged;
     float HeatPerNormalShot;
     float HeatPerChargedShot;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnRep_Charging();
     void ReceiveOverheatedChanged(bool isOverheated);
     void RecieveChargeProgressChanged(float NewChargeProgress);
@@ -24347,6 +25435,9 @@ public:
     bool PersistentExplosion;
     bool AoEDamageInFlight;
     float DirectDamageReduction;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void OnAoEDamageEnabled();
 };
 
@@ -24408,7 +25499,7 @@ public:
     UE_PURE static bool IsExplosiveDeath(class UObject* WorldContext, class UPawnStatsComponent* PawnStats, TArray<class UDamageTag*> Tags);
     UE_PURE static bool IsExplosiveDeath(class UPawnStatsComponent* PawnStats, TArray<class UDamageTag*> Tags);
     UE_PURE static bool IsGibbedDeath(TArray<class UDamageTag*> Tags);
-    static void SetPhysicalMaterialOnHit(class UFSDPhysicalMaterial* PhysMat, FHitResult Hit);
+    static void SetPhysicalMaterialOnHit(class UFSDPhysicalMaterial* PhysMat, FHitResult& Hit);
 };
 
 class UUnlockReward : public UReward
@@ -24522,6 +25613,14 @@ public:
     float TriBurstShotCarvingMultiplier;
     int FirstDynamicIndex;
     int LastDynamicIndex;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FP_OverchargeIndicatorParticles__UeSubobject = "FP_OverchargeIndicatorParticles /Script/Niagara.NiagaraComponent";
+    static constexpr const char* FullyChargedParticles__UeSubobject = "FullyChargedParticles /Script/Niagara.NiagaraComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TrailSpawner__UeSubobject = "TrailSpawner /Script/FSD.CoilgunTrailSpawner";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST UE_RELIABLE void All_AdjustTrail(class ACoilgunWeaponTrail* Trail, float Length);
     UE_MULTICAST UE_RELIABLE void All_ShieldBroken();
     UE_MULTICAST UE_RELIABLE void All_ShowHit(FVector_NetQuantize Location, FVector_NetQuantize Rotation);
@@ -24621,6 +25720,12 @@ public:
     bool Pass1Completed;
     bool UsePerLevelCritterSpawning;
     FString LastCompletedPLSPass;
+    static constexpr const char* Encounters__UeSubobject = "Encounters /Script/FSD.PLSEncounterComponent";
+    static constexpr const char* NoisyPathfinder__UeSubobject = "NoisyPathfinder /Script/FSD.NoisyPathfinderComponent";
+    static constexpr const char* ObjectColliders__UeSubobject = "ObjectColliders /Script/FSD.ProceduralObjectColliders";
+    static constexpr const char* ProceduralTunnel__UeSubobject = "ProceduralTunnel /Script/FSD.ProceduralTunnelComponent";
+    static constexpr const char* Resources__UeSubobject = "ProceduralResources /Script/FSD.ProceduralResources";
+    static constexpr const char* Veins__UeSubobject = "ProceduralVeins /Script/FSD.ProceduralVeinsComponent";
     static void FillTunnels_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo);
     static void FillTunnels_Async(class AProceduralSetup* Setup);
     static void GenerateRoomsFromGraph_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo, int CarvePass);
@@ -24644,7 +25749,7 @@ public:
     void CarveWithGeneratedInstantCarvers();
     void CommitCarving(bool finalCommit, bool generateMesh);
     int ConnectRoomIds(int fromID, int toID, bool hasDirt, class UTunnelParameters* tunnelParameterOverride);
-    int ConnectRooms(FRoomNode from, FRoomNode to, bool hasDirt, class UTunnelParameters* tunnelParameterOverride);
+    int ConnectRooms(FRoomNode& from, FRoomNode& to, bool hasDirt, class UTunnelParameters* tunnelParameterOverride);
     void CreateGeneratedInfluenceSet();
     int CreateItemDepths();
     void CreateTunnelPaths();
@@ -25129,6 +26234,11 @@ public:
     static constexpr const char* LastShotWasLockedOn__Replicated = ":";
     float LockOnRecoilMult;
     bool FireOnRelease;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void FireWeapon(bool ResetUsing, bool Fire);
     void MuzzleLerpToTarget(FVector TargetLocation);
     void OnAsyncFireComplete();
@@ -25361,6 +26471,23 @@ public:
     UE_CLASS("/Script/FSD", "CrawlerEnemy");
     class UMeleeAttackComponent* MeleeAttack;
     class UBallisticMovementComponent* BallisticMovement;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* BallisticMovement__UeSubobject = "BallisticMovement /Script/FSD.BallisticMovementComponent";
+    static constexpr const char* Death__UeSubobject = "Death /Script/FSD.DeathComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* HitReactions__UeSubobject = "HitReactions /Script/FSD.HitReactionComponent";
+    static constexpr const char* MeleeAttack__UeSubobject = "MeleeAttack /Script/FSD.MeleeAttackComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* PathfinderReactiveTerrainTracker__UeSubobject = "PathfinderReactiveTerrainTracker /Script/FSD.PathfinderReactiveTerrainTrackerComponent";
+    static constexpr const char* PawnAlert__UeSubobject = "PawnAlert /Script/FSD.PawnAlertComponent";
+    static constexpr const char* PawnSensing__UeSubobject = "PawnSensing /Script/AIModule.PawnSensingComponent";
+    static constexpr const char* PawnStats__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UCreditsResourceData : public UResourceData
@@ -25446,6 +26573,11 @@ public:
     class UAnimMontage* ReloadMontage_TP;
     class UAnimMontage* CharacterReloadMontage;
     TArray<class USoundCue*> ReloadSoundCues;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_CLIENT UE_RELIABLE void Client_CallAddDefaultAmmo(int amount);
     UE_CLIENT UE_RELIABLE void Client_CallAddSpecialAmmo(int amount);
     UE_CLIENT UE_RELIABLE void Client_RefillSpecialAmmo(float percentage);
@@ -25735,6 +26867,17 @@ public:
     bool LongReachEnabled;
     bool AoEColdEnabled;
     TSet<class AActor*> HitActorCache;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* ChargeUpAudioComponent__UeSubobject = "ChargeUpAudioComponent /Script/FSD.FSDAudioComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* StickyFlames__UeSubobject = "StickyFlames /Script/FSD.StickyFlameSpawner";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* VelocityAudio__UeSubobject = "MotionAudio /Script/FSD.MotionAudioController";
+    static constexpr const char* WeaponFire__UeSubobject = "WeaponFire /Script/FSD.BasicWeaponFireComponent";
+    static constexpr const char* projectileLauncher__UeSubobject = "projectileLauncher /Script/FSD.ProjectileLauncherComponent";
     UE_MULTICAST void All_PreLaunchProjectile();
     void OnPreProjectileLaunch();
     void OnPressurizedPartileShoot();
@@ -25929,7 +27072,7 @@ public:
     UE_PURE static TArray<class UItemUpgrade*> GetEquippedUpgrades(TSubclassOf<class AActor> itemClass, class AFSDPlayerState* Player);
     UE_PURE static FString GetGearSourceName(class UItemID* ItemID);
     static TArray<FGearStatEntry> GetGearStats(class AFSDPlayerState* PlayerState, TSubclassOf<class AActor> actorClass);
-    static FText GetGearStatValue(FGearStatEntry entry);
+    static FText GetGearStatValue(FGearStatEntry& entry);
     UE_PURE static bool GetIsItemUpgradeEquipped(class AFSDPlayerState* Player, TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
     static bool GetItemMasteryForLevel(class UItemID* ItemID, int Level, FMasteryItem& outLevel);
     UE_PURE static TSubclassOf<class AActor> GetItemPreviewClass(class UItemID* ItemID);
@@ -25954,12 +27097,12 @@ public:
     UE_PURE static bool IsTierUnLocked(class UObject* WorldContextObject, TSubclassOf<class AActor> itemClass, int tierIndex, class UPlayerCharacterID* characterID);
     UE_PURE static bool IsTierUnLocked(TSubclassOf<class AActor> itemClass, int tierIndex, class UPlayerCharacterID* characterID);
     UE_PURE static bool IsUpgradeEquipped(TSubclassOf<class AActor> itemClass, class UItemUpgrade* Upgrade, class AFSDPlayerState* Player);
-    static void MirrorUpgradePreviewStatus(FGearStatEntry from, FGearStatEntry to);
+    static void MirrorUpgradePreviewStatus(FGearStatEntry& from, FGearStatEntry& to);
     static bool PlayerOwnesUpgradeInAllTiers(TSubclassOf<class AActor> itemClass, class UObject* WorldContextObject);
     static bool PlayerOwnesUpgradeInAllTiers(TSubclassOf<class AActor> itemClass);
     static bool PurchaseItem(class UObject* WorldContextObject, class UItemID* ItemID);
     static bool PurchaseItem(class UItemID* ItemID);
-    static void SetGearStatText(FGearStatEntry entry, FText Text);
+    static void SetGearStatText(FGearStatEntry& entry, FText Text);
     UE_PURE class UTexture2D* GetIconBG();
     UE_PURE class UTexture2D* GetIconDetailed();
     bool PurchaseUpgrade(class UItemID* ItemID, class UItemUpgrade* Upgrade, class AFSDPlayerController* PlayerController, TSubclassOf<class APlayerCharacter> previewedCharacter);
@@ -26045,6 +27188,11 @@ public:
     class UAnimMontage* TP_EquipAnimation;
     float EquipDuration;
     class UItemCharacterAnimationSet* CharacterAnimationSet;
+    static constexpr const char* FPLMesh__UeSubobject = "FPLMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FPRMesh__UeSubobject = "FPRMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* TPLMesh__UeSubobject = "TPLMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TPRMesh__UeSubobject = "TPRMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_PURE class USkeletalMeshComponent* GetLItemMesh() const;
     UE_PURE class USkeletalMeshComponent* GetRItemMesh() const;
 };
@@ -26306,6 +27454,15 @@ public:
     float LifetimeMaxDamage;
     float EnabledDuration;
     float TraceStepTime;
+    static constexpr const char* Box__UeSubobject = "Box /Script/Engine.BoxComponent";
+    static constexpr const char* CapsuleHitscanComponent__UeSubobject = "CapsuleHitScan /Script/FSD.CapsuleHitscanComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "Health /Script/FSD.HealthComponent";
+    static constexpr const char* HitscanComponent__UeSubobject = "HitScan /Script/FSD.HitscanComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
+    static constexpr const char* ReflectionHitscanComponent__UeSubobject = "ReflectionHitScan /Script/FSD.ReflectionHitscanComponent";
+    static constexpr const char* Sphere__UeSubobject = "Sphere /Script/Engine.SphereComponent";
     UE_MULTICAST UE_RELIABLE void All_PasteDamageComponent(class UDamageComponent* Damage);
     UE_MULTICAST UE_RELIABLE void All_PasteHitScanComponent(class UHitscanBaseComponent* HitScan);
     void BeginOverlapVsProjectile(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
@@ -26533,16 +27690,17 @@ public:
     static bool CarveAroundSplineMesh(class USplineMeshComponent* InMesh, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
     static bool CarveAroundSplinePoints(class UObject* WorldContext, FVector InStartLocation, FVector InStartTangent, FVector InEndLocation, FVector InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
     static bool CarveAroundSplinePoints(FVector InStartLocation, FVector InStartTangent, FVector InEndLocation, FVector InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
+    static void ConvertSplineDistanceToInputKey(class USplineComponent*& SplineComponent, class USplineComponent* OptionalTargetSpline);
     static FInterpCurveVector2D CreateCurve2D(TArray<FVector2D> Positions, EInterpCurveMode Mode);
     static FInterpCurveVector2D CreateCurveWithTangents2D(TArray<FVector2D> Positions, FVector2D StartTangent, FVector2D EndTangent, EInterpCurveMode Mode);
-    static void DrawBezier2D(FPaintContext Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, float Opacity, bool InClampTangents);
-    static void DrawBezierScaled2D(FPaintContext Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, FVector2D ScaleBy, float Opacity, bool InClampTangents);
-    static void DrawCurve2D(FPaintContext Context, FInterpCurveVector2D Curve, FCurve2DAppearance Appearance, float Opacity);
-    static void DrawCurveScaled2D(FPaintContext Context, FInterpCurveVector2D Curve, FVector2D ScaleBy, FCurve2DAppearance Appearance, float Opacity);
+    static void DrawBezier2D(FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, float Opacity, bool InClampTangents);
+    static void DrawBezierScaled2D(FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, FVector2D ScaleBy, float Opacity, bool InClampTangents);
+    static void DrawCurve2D(FPaintContext& Context, FInterpCurveVector2D Curve, FCurve2DAppearance Appearance, float Opacity);
+    static void DrawCurveScaled2D(FPaintContext& Context, FInterpCurveVector2D Curve, FVector2D ScaleBy, FCurve2DAppearance Appearance, float Opacity);
     static void EvalCurve2D(FInterpCurveVector2D Curve, float Key, FVector2D& OutPosition, FVector2D& OutTangent);
     static void EvalCurveScaled2D(FInterpCurveVector2D Curve, float Key, FVector2D ScaleBy, FVector2D& OutPosition, FVector2D& OutTangent);
     static void GetLocationAndTangentsAtSplinePoint(class USplineComponent* Spline, int PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, ESplineCoordinateSpace CoordinateSpace);
-    static void SetStartAndEndTangentsCurve2D(FInterpCurveVector2D Curve, FVector2D StartTangent, FVector2D EndTangent);
+    static void SetStartAndEndTangentsCurve2D(FInterpCurveVector2D& Curve, FVector2D StartTangent, FVector2D EndTangent);
 };
 
 class UWalkAndFlyEnemyComponent : public UActorComponent
@@ -26748,6 +27906,7 @@ public:
     TSubclassOf<class UStatusEffect> OnUseStatusEffect;
     TSubclassOf<class UStatusEffect> OnReleaseStatusEffect;
     bool bRemoveDropEffectWhenGrounded;
+    static constexpr const char* Timeline__UeSubobject = "LightTimeLine /Script/Engine.TimelineComponent";
     void OnShoot(FVector Origin, FVector EndLocation);
     void OnTimelineTick(float NewValue);
 };
@@ -26937,8 +28096,8 @@ class UDetailedTagLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "DetailedTagLibrary");
-    static void AppendArray(FDetailedTagSet InSet, TArray<class UDetailedTag*> inArray);
-    static void AppendSet(FDetailedTagSet InSet1, FDetailedTagSet InSet2);
+    static void AppendArray(FDetailedTagSet& InSet, TArray<class UDetailedTag*> inArray);
+    static void AppendSet(FDetailedTagSet& InSet1, FDetailedTagSet InSet2);
     UE_PURE static bool Contains(FDetailedTagSet InSet, class UDetailedTag* InTag);
     static TArray<class UDetailedTag*> GetArray(FDetailedTagSet InSet);
     static TArray<class UDetailedTag*> GetArraySorted(FDetailedTagSet InSet, bool InSortByCategory);
@@ -26985,6 +28144,13 @@ public:
     static constexpr const char* IsDetonatorOut__Replicated = "OnRep_IsDetonatorOut:";
     bool HasThrownPack;
     static constexpr const char* HasThrownPack__Replicated = ":";
+    static constexpr const char* Capacity__UeSubobject = "Aggregator /Script/FSD.CapacityHoldingItemAggregator";
+    static constexpr const char* DetonatorFPMesh__UeSubobject = "DetonatorFPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* DetonatorTPMesh__UeSubobject = "DetonatorTPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnDetonatingFinished();
     void OnRep_IsDetonatorOut();
     void Receive_OnRep_IsDetonatorOut();
@@ -27150,6 +28316,17 @@ public:
     static constexpr const char* IsMining__Replicated = "OnRep_SimulatingMining:";
     bool IsGunslinging;
     static constexpr const char* IsGunslinging__Replicated = "OnRep_IsGunslinging:";
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.DoubleDrillAggregator";
+    static constexpr const char* AudioComponent__UeSubobject = "Audio /Script/FSD.FSDAudioComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* FPLMesh__UeSubobject = "FPLMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FPRMesh__UeSubobject = "FPRMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FP_Left_DrillParticles__UeSubobject = "FP_Left_DrillParticles /Script/FSD.FirstPersonParticleSystemComponent";
+    static constexpr const char* FP_Right_DrillParticles__UeSubobject = "FP_Right_DrillParticles /Script/FSD.FirstPersonParticleSystemComponent";
+    static constexpr const char* TPLMesh__UeSubobject = "TPLMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TPRMesh__UeSubobject = "TPRMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TemperatureAudioComponent__UeSubobject = "Audio /Script/FSD.FSDAudioComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST void All_SimulateDamage(TArray<FDoubleDrillDamageItem> Targets);
     UE_MULTICAST void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int Material);
     UE_MULTICAST void All_SimulateDigDebris(FVector_NetQuantize Position, int DebrisIndex);
@@ -27294,6 +28471,10 @@ public:
     static constexpr const char* DrinkableData__Replicated = "OnRep_DrinkableData:";
     int BarSlotIndex;
     static constexpr const char* BarSlotIndex__Replicated = ":";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_CLIENT UE_RELIABLE void ClientConsumed();
     void Consume();
     void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
@@ -27312,6 +28493,12 @@ public:
     TArray<class UDroneStateComponentBase*> DroneStates;
     EDroneState CurrentState;
     static constexpr const char* CurrentState__Replicated = "OnRep_CurrentState:";
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StateLight__UeSubobject = "StateLight /Script/Engine.PointLightComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_CurrentState(EDroneState Previous);
 };
 
@@ -27340,6 +28527,14 @@ public:
     class UHealthComponent* HealthComponent;
     class UOutlineComponent* OutlineComponent;
     class USimpleObjectInfoComponent* ObjectInfo;
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ObjectInfo__UeSubobject = "ObjectInfo /Script/FSD.SimpleObjectInfoComponent";
+    static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UFSDXboxUtils : public UBlueprintFunctionLibrary
@@ -27367,6 +28562,10 @@ class ADroneControllerBase : public AAIController
 {
 public:
     UE_CLASS("/Script/FSD", "DroneControllerBase");
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnPlayerJoin(class APlayerCharacter* Player);
     void OnPlayerLeave(class AFSDPlayerState* State);
     void OnPrimaryLaserpointer(FLaserPointerTarget HitInfo);
@@ -27379,6 +28578,10 @@ class AStateDrivenDroneController : public ADroneControllerBase
 {
 public:
     UE_CLASS("/Script/FSD", "StateDrivenDroneController");
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class UDroneDisplayActionComponent : public USceneComponent
@@ -27386,6 +28589,8 @@ class UDroneDisplayActionComponent : public USceneComponent
 public:
     UE_CLASS("/Script/FSD", "DroneDisplayActionComponent");
     class UTextRenderComponent* DisplayText;
+    static constexpr const char* AttachParent__UeSubobject = "Text /Script/Engine.TextRenderComponent";
+    static constexpr const char* DisplayText__UeSubobject = "Text /Script/Engine.TextRenderComponent";
     void SetMode(EDroneActions droneAction);
 };
 
@@ -27535,6 +28740,13 @@ public:
     class UAnimMontage* WPN_Left_TP_Reload;
     class UFXSystemAsset* CasingParticlesLeft;
     FName MuzzleLeft;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FPMeshLeft__UeSubobject = "FPMeshLeft /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TPMeshLeft__UeSubobject = "TPMeshLeft /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
 };
 
 class UDualWieldAnimInstance : public UAnimInstance
@@ -27548,6 +28760,13 @@ class ADualMachinePistols : public ADualWieldWeapon
 public:
     UE_CLASS("/Script/FSD", "DualMachinePistols");
     TSubclassOf<class UStatusEffect> EmptyClipStatusEffect;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FPMeshLeft__UeSubobject = "FPMeshLeft /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TPMeshLeft__UeSubobject = "TPMeshLeft /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_SERVER UE_RELIABLE void Server_TriggerStatusEffect();
 };
 
@@ -27593,6 +28812,10 @@ class ARecallableItem : public AAnimatedItem
 public:
     UE_CLASS("/Script/FSD", "RecallableItem");
     TSubclassOf<class ARecallableActor> ItemType;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     bool CanSpawnItem(FVector Location, FRotator Rotation);
     void ItemReturnFinished(class AActor* Item, bool success);
     void OnRep_ActiveItems();
@@ -27633,6 +28856,10 @@ class AHackingToolItem : public AAnimatedItem
 {
 public:
     UE_CLASS("/Script/FSD", "HackingToolItem");
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void HackingCompleted(bool InHackingSuccessful);
     void OnRep_HackingUsable();
     void ReceiveActionClick();
@@ -28426,6 +29653,15 @@ public:
     float SurfaceLightMaxIntensity;
     float CurrentLoad;
     static constexpr const char* CurrentLoad__Replicated = "OnRep_CurrentLoad:";
+    static constexpr const char* AudioComponent__UeSubobject = "Audio /Script/FSD.FSDAudioComponent";
+    static constexpr const char* DroppedCollider__UeSubobject = "Root /Script/Engine.BoxComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* InvalidSurfaceParticles__UeSubobject = "InvalidSurfaceParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* SurfaceLight__UeSubobject = "SurfaceLight /Script/Engine.PointLightComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TemperatureAudioComponent__UeSubobject = "Audio /Script/FSD.FSDAudioComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void AddResource(float amount);
     UE_MULTICAST void All_ChunkSplat(class AResourceChunk* chunk);
     UE_MULTICAST void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int Material);
@@ -28457,6 +29693,8 @@ public:
     class UAnimationAsset* ExtrudeAnimation;
     class UAnimationAsset* RetractAnimation;
     class UAudioComponent* Audio;
+    static constexpr const char* Audio__UeSubobject = "Audio /Script/Engine.AudioComponent";
+    static constexpr const char* SkeletalMesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
 };
 
 class UEyeBrowsVanityItem : public UVanityItem
@@ -28999,6 +30237,9 @@ public:
     class USkeletalMeshComponent* Mesh;
     class UHealthComponent* HealthComponent;
     float Speed;
+    static constexpr const char* HealthComponent__UeSubobject = "Health /Script/FSD.HealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
 };
 
 class UFakeMoverSettings : public UDataAsset
@@ -29028,6 +30269,8 @@ public:
     class UFakeMoverSettings* MoveSettings;
     static constexpr const char* MoveSettings__Replicated = "OnRep_MoveSettings:";
     float SyncTime;
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     UE_AUTHORITY_ONLY void ApplyImpulse(FVector Impulse);
     void OnRep_MoveSettings(class UFakeMoverSettings* MoveSettings_0);
     void OnRep_PosVel(FFakeMoveState PosVel_0);
@@ -29206,6 +30449,16 @@ public:
     TMulticastInlineDelegate<void()> OnFireProjectileChargeBegin;
     TMulticastInlineDelegate<void()> OnFireProjectileChargeEnd;
     TMap<class AActor*, float> ExplosionCandidates;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* MotionAudio__UeSubobject = "MotionAudio /Script/FSD.MotionAudioController";
+    static constexpr const char* ProjectileLancher__UeSubobject = "projectileLauncher /Script/FSD.ProjectileLauncherComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* StickyFlames__UeSubobject = "StickyFlames /Script/FSD.StickyFlameSpawner";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TemperatureAudioComponent__UeSubobject = "MotionAudio /Script/FSD.MotionAudioController";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* WeaponFire__UeSubobject = "WeaponFire /Script/FSD.BasicWeaponFireComponent";
     UE_MULTICAST void All_FlameFeedback(FVector_NetQuantize Location, FRotator Rotation);
     UE_MULTICAST void All_ShowTargetBurstIntoFire(FVector_NetQuantize Location, FRotator Rotation);
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
@@ -29232,6 +30485,9 @@ public:
     bool OnlyImpactActorOnce;
     class UStickyFlameSpawner* StickyFlameSpawner;
     TSet<class AActor*> ImpactedActors;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
 };
 
 class UVanityItemRewarder : public UTreasureRewarder
@@ -29528,6 +30784,10 @@ class ADashingFlyingBugController : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Script/FSD", "DashingFlyingBugController");
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class UForgingFunctionLibrary : public UBlueprintFunctionLibrary
@@ -29822,6 +31082,7 @@ public:
     TMulticastInlineDelegate<void()> OnCloudLoadFailed;
     TMulticastInlineDelegate<void()> OnCloudLoadFinished;
     class UFSDCloudSaveHandler* CloudSaveHandler;
+    static constexpr const char* CloudSaveHandler__UeSubobject = "CloudSaveHandler /Script/FSD.FSDCloudSaveHandler";
     void StartCloudLoadAll(class UObject* WorldContextObject, int Offset);
     void StartCloudLoadAll(int Offset);
     void StartCloudLoadForSlot(class UObject* WorldContextObject, int Slot, int Offset);
@@ -29872,7 +31133,7 @@ public:
     UE_CLASS("/Script/FSD", "ProceduralFunctionLibrary");
     UE_AUTHORITY_ONLY UE_PURE static bool AllControllersFinishedTransitionToPlay(class UObject* WorldContextObject);
     UE_AUTHORITY_ONLY UE_PURE static bool AllControllersFinishedTransitionToPlay();
-    static void CreateEntrances(class AProceduralSetup* pls, FRoomNode Room, int exitCount, int entranceCount, class UDebrisPositioning* exitPositioning, class UDebrisPositioning* entrancePositioning);
+    static void CreateEntrances(class AProceduralSetup* pls, FRoomNode& Room, int exitCount, int entranceCount, class UDebrisPositioning* exitPositioning, class UDebrisPositioning* entrancePositioning);
     UE_PURE static class UBiome* GetBiome(TSubclassOf<class AProceduralSetup> levelSetup);
     UE_PURE static int GetObjectiveCredits(TSubclassOf<class UObjective> objectiveClass, float missionLength);
     UE_PURE static int GetObjectiveXP(TSubclassOf<class UObjective> objectiveClass, float missionLength);
@@ -29987,6 +31248,8 @@ public:
     TMulticastInlineDelegate<void(class AFSDPlayerController* Controller)> OnPlayerLeave;
     class AFSDPlayerController* usedBy;
     ESpacerigStartType StartType;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
 };
 
 class UOptionalUICategory : public UDataAsset
@@ -30015,6 +31278,8 @@ public:
     TMulticastInlineDelegate<void(FString sessionId)> OnNewFSDSessionID;
     class UFSDSessionHandler* SessionHandler;
     class UFSDLobbyHandler* LobbyHandler;
+    static constexpr const char* LobbyHandler__UeSubobject = "LobbyHandler /Script/FSD.FSDLobbyHandler";
+    static constexpr const char* SessionHandler__UeSubobject = "SessionHandler /Script/FSD.FSDSessionHandler";
 };
 
 class UFSDSkeletalMeshComponent : public USkeletalMeshComponent
@@ -30112,7 +31377,7 @@ public:
     static class UWidget* AddChildToVerticalBoxEx(class UVerticalBox* VerticalBox, class UWidget* Widget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, float Size, FMargin Padding, class UVerticalBoxSlot*& OutSlot, class UVerticalBox*& OutVerticalBox);
     static class UWidget* AddWidgetToRow(class UVerticalBox* VerticalBox, class UWidget* Widget, int MaxWidgetsPerRow, float WidgetSpacing, float RowSpacing, class UHorizontalBoxSlot*& OutSlot, class UHorizontalBox*& OutRow);
     UE_PURE static bool AreWidgetsIntersecting(class UWidget* InWidget1, class UWidget* InWidget2);
-    static void Box(FPaintContext Context, FVector2D Position, FVector2D Size, FSlateBrush Brush, FLinearColor Tint);
+    static void Box(FPaintContext& Context, FVector2D Position, FVector2D Size, FSlateBrush Brush, FLinearColor Tint);
     UE_PURE static FText ClampTextLength(FText Text, int MaxLength, FText CutOffIndicator);
     static class UHorizontalBox* CreateHorizontalBox(class UObject* WorldContext);
     static class UHorizontalBox* CreateHorizontalBox();
@@ -30131,10 +31396,11 @@ public:
     static class UTextBlock* CreateTextBlock(FText Text, FSlateFontInfo Font, ETextJustify Justification, FLinearColor Color, bool WrapText);
     static class UVerticalBox* CreateVerticalBox(class UObject* WorldContext);
     static class UVerticalBox* CreateVerticalBox();
+    static class UWidget* FindChildWidget(class UPanelWidget*& ParentWidget, TSubclassOf<class UUserWidget> WidgetClass, bool SearchChildren);
     static void FixupRetainerWidgetUpdateInEditor(class URetainerBox* InWidget);
     UE_PURE static class UFSDCheatManager* GetCheatManager(class UObject* WorldContextObject);
     UE_PURE static class UFSDCheatManager* GetCheatManager();
-    static FVector2D GetDrawSize(FPaintContext InContext);
+    static FVector2D GetDrawSize(FPaintContext& InContext);
     UE_PURE static class UUserWidget* GetFocusableParentUserWidget(class UUserWidget* InWidget);
     UE_PURE static class UWidget* GetFocusedWidget(class UObject* WorldContextObject, class APlayerController* Controller);
     UE_PURE static class UWidget* GetFocusedWidget(class APlayerController* Controller);
@@ -30169,9 +31435,10 @@ public:
     static void SetMousePosition(class UObject* WorldContextObject, int X, int Y);
     static void SetMousePosition(int X, int Y);
     static void SetProgressBarType(class UProgressBar* InProgressBar, EProgressBarFillType InType);
+    static void SetSizeBoxSettings(class USizeBox*& InSizeBox, FSizeBoxSettings InSettings);
     static FTimerHandle SetTimerForNextTick(class UObject* WorldContext, TDelegate<void()> TimerDelegate);
     static FTimerHandle SetTimerForNextTick(TDelegate<void()> TimerDelegate);
-    static void SimpleBox(FPaintContext Context, FVector2D Position, FVector2D Size, FLinearColor Tint);
+    static void SimpleBox(FPaintContext& Context, FVector2D Position, FVector2D Size, FLinearColor Tint);
     static TArray<class UWidget*> SortWidgetArray(TArray<class UWidget*> InWidgets, TDelegate<void(class UWidget* InFirstWidget, class UWidget* InSecondWidget)> InCompareFunction);
     UE_PURE static bool TextGreaterThan(FText Text1, FText Text2);
     UE_PURE static bool TextSmallerThan(FText Text1, FText Text2);
@@ -30204,6 +31471,8 @@ public:
     static void PingWidget(class UWidget* Widget, float amount, float Duration, EPingType PingType, float StartDelay);
     static void StartCounter(class UObject* WorldContext, class UObject* Owner, float Start, float End, float Duration, TDelegate<void(float Value, float NormalizedTime)> OnCount, float StartDelay);
     static void StartCounter(class UObject* Owner, float Start, float End, float Duration, TDelegate<void(float Value, float NormalizedTime)> OnCount, float StartDelay);
+    static void StartTextCounter(class UObject* WorldContext, class UTextBlock*& Widget, float Start, float End, float Duration, int MaxDigits, float StartDelay);
+    static void StartTextCounter(class UTextBlock*& Widget, float Start, float End, float Duration, int MaxDigits, float StartDelay);
 };
 
 class AFSDWorldSettings : public AWorldSettings
@@ -30226,6 +31495,11 @@ public:
     static constexpr const char* NextSegment__Replicated = "OnRep_NextSegment:";
     bool bIsPlacingSegment;
     static constexpr const char* bIsPlacingSegment__Replicated = ":";
+    static constexpr const char* CrosshairAggregator__UeSubobject = "CrosshairAggregator /Script/FSD.CrosshairAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CancelPlacement();
     void FinishPlacement(FTransform FinalLocation, class UTrackBuilderConnectPoint* ConnectPoint);
     void OnRep_NextSegment();
@@ -30244,6 +31518,12 @@ class AFuelLineBuilderItem : public ATrackBuilderItem
 public:
     UE_CLASS("/Script/FSD", "FuelLineBuilderItem");
     class UItemPlacerAggregator* SegmentPlacer;
+    static constexpr const char* CrosshairAggregator__UeSubobject = "CrosshairAggregator /Script/FSD.CrosshairAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* SegmentPlacer__UeSubobject = "SegmentPlacer /Script/FSD.ItemPlacerAggregator";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void ReceivePlacementUpdated(bool InCanPlace, bool InConnecting, float InDistanceProgress);
 };
 
@@ -30256,6 +31536,8 @@ public:
     float MaxConnectRadius;
     float ConnectDistance;
     FVector MaxAngles;
+    static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
+    static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
     UE_PURE bool CanConnectWith(class ATrackBuilderSegment* InSegment, FTransform FromWorldTransform);
     UE_AUTHORITY_ONLY bool Connect(class ATrackBuilderSegment* InSegment);
     UE_AUTHORITY_ONLY bool Disconnect(class ATrackBuilderSegment* InSegment);
@@ -30342,6 +31624,8 @@ class UFuelLineConnectPoint : public UTrackBuilderConnectPoint
 {
 public:
     UE_CLASS("/Script/FSD", "FuelLineConnectPoint");
+    static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
+    static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
 };
 
 class UTrackBuilderUsable : public UInstantUsable
@@ -30501,6 +31785,8 @@ public:
     static void SetGlobalGravityZ(class UObject* WorldContextObject, float GravityZ);
     static void SetGlobalGravityZ(float GravityZ);
     static void SetUsePushToTalk(bool enable);
+    static void SpawnOrUpdateAudio2D(class UObject* WorldContext, class UAudioComponent*& AudioComponent, class USoundBase* Sound, float VolumeMultiplier, float PitchMultiplier, FName FloatParamName, float FloatParam);
+    static void SpawnOrUpdateAudio2D(class UAudioComponent*& AudioComponent, class USoundBase* Sound, float VolumeMultiplier, float PitchMultiplier, FName FloatParamName, float FloatParam);
 };
 
 class UGameModeFunctionLibrary : public UBlueprintFunctionLibrary
@@ -30617,6 +31903,11 @@ public:
     class UFXSystemComponent* ChargeupParticleInstance;
     class UAnimMontage* FP_ChargeupMontage;
     class UAnimMontage* TP_ChargeupMontage;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_PURE bool GetIsCharging();
     void OnPuddleSuckedIn();
     UE_PURE float GetChargeProgress() const;
@@ -30629,6 +31920,9 @@ public:
     UE_CLASS("/Script/FSD", "GooGunProjectile");
     float PuddleLifeTime;
     int FragmentCount;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void DealSocketArmorDamage(class AActor* Actor, class UPrimitiveComponent* Target);
     class AGooGunPuddle* SpawnPuddle(FTransform Transform, TSubclassOf<class AGooGunPuddle> PuddleClass);
 };
@@ -30668,6 +31962,11 @@ public:
     FGraplingGunState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     float GrapleStartTime;
+    static constexpr const char* CoolDownAggregator__UeSubobject = "CoolDownAggregator /Script/FSD.CoolDownItemAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_PURE static float GetCooldownDuration(TSubclassOf<class AGrapplingHookGun> GrapplingHookGun);
     void OnGrappleEnd();
     void OnGrappleFailed(bool TooFar);
@@ -30750,6 +32049,11 @@ public:
     bool ConstantRotation;
     EGuntowerModuleState State;
     static constexpr const char* State__Replicated = "OnRep_State:";
+    static constexpr const char* Health__UeSubobject = "Heath /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void DoAttack();
     void HideArmorPlates();
     void OnRep_State(EGuntowerModuleState prevState);
@@ -30767,6 +32071,11 @@ public:
     float BurstTime;
     float AttackTime;
     int BurstSize;
+    static constexpr const char* Health__UeSubobject = "Heath /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* ModuleMesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UFSDRichTextFunctionlibrary : public UBlueprintFunctionLibrary
@@ -30790,6 +32099,10 @@ public:
     FGameplayTagContainer GameplayTags;
     float HomingAccelerationMagnitude;
     static constexpr const char* HomingAccelerationMagnitude__Replicated = "OnRep_HomingAccelerationMagnitude:";
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void OnRep_HomingAccelerationMagnitude();
     void SearchForTarget();
     void UpdateHomingSpeed();
@@ -30875,6 +32188,18 @@ public:
     FVector2D BeamTesselationRange;
     bool bIsBeamActive;
     static constexpr const char* bIsBeamActive__Replicated = "OnRep_bIsBeamActive:";
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* FirstPersonBeam__UeSubobject = "FirstPersonBeam /Script/FSD.FirstPersonNiagaraComponent";
+    static constexpr const char* FirstPersonLaserSight__UeSubobject = "FirstPersonLaserSight /Script/FSD.FirstPersonNiagaraComponent";
+    static constexpr const char* HitscanComponent__UeSubobject = "ReflectionHitscanComponent /Script/FSD.ReflectionHitscanComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* StickyFlamesSpawner__UeSubobject = "StickyFlames /Script/FSD.StickyFlameSpawner";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* ThirdPersonBeam__UeSubobject = "ThirdPersonBeam /Script/Niagara.NiagaraComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* WeaponFire__UeSubobject = "ReflectionHitscanComponent /Script/FSD.ReflectionHitscanComponent";
     void ChargeChanged(bool isCharging);
     void ChargeUpComplete();
     UE_CLIENT UE_RELIABLE void Client_AddAmmoOnKill();
@@ -31147,6 +32472,11 @@ class AFlareGun : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Script/FSD", "FlareGun");
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
 };
 
 class UAnimNotifyState_FootStep : public UAnimNotifyState
@@ -31383,6 +32713,7 @@ public:
     int NumY;
     float DeltaX;
     float DeltaY;
+    static constexpr const char* RootComponent__UeSubobject = "DefaultSceneComponent /Script/Engine.SceneComponent";
 };
 
 class UInventoryComponent : public UInventoryBase
@@ -31852,6 +33183,11 @@ public:
     float CarveNormalOffsetCM;
     float CarveNormalSqueeze;
     UE_AUTHORITY_ONLY void CarveOnly(FVector Location, FVector ImpactNormal);
+    UE_AUTHORITY_ONLY void DamageAndCarve(FVector Location, FVector ImpactNormal, FName BoneName, class UPrimitiveComponent* Target, class UPhysicalMaterial* PhysicalMaterial, class UDamageComponent*& DamageComponent);
+    void DamageAndCarveFromHit(FHitResult HitResult, class UDamageComponent*& DamageComponent);
+    void DamageArmorClients(FHitResult HitResult, class UDamageComponent*& DamageComponent);
+    UE_AUTHORITY_ONLY void DamageOnly(FVector Location, FName BoneName, class UPrimitiveComponent* Target, class UPhysicalMaterial* PhysicalMaterial, class UDamageComponent*& DamageComponent);
+    void DamageOnlyFromHit(FHitResult HitResult, class UDamageComponent*& DamageComponent);
 };
 
 class UBeltDrivenWeaponUpgrade : public UStandardItemUpgrade
@@ -31877,6 +33213,9 @@ public:
     class UStaticMeshComponent* MeshComponent;
     class USceneComponent* Root;
     TArray<class UTerrainDetectComponent*> TerrainDetectors;
+    static constexpr const char* MeshComponent__UeSubobject = "Mesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.CarriableInstantUsable";
     void EnableTerrainDetection();
     void OnTerrainPointRemoved(class USceneComponent* Point);
     void PhysicalizeTreasure();
@@ -32503,6 +33842,10 @@ public:
     bool Active;
     static constexpr const char* Active__Replicated = "OnRep_Active:";
     class UPlayerMovementComponent* CharacterMovement;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnFuelChanged(float Value, float Delta);
     void OnRep_Active();
     void OnRep_Fuel(float OldFuel);
@@ -32539,7 +33882,7 @@ public:
     static void MakeGateSpriteRects(int CanvasHeight, int GateWidth, FVector OpeningPos, float OpeningHeight, FSpriteRect& OutTopRect, FSpriteRect& OutBottomRect);
     UE_PURE static FSpriteRect MakeSpriteRectFromCenter(FVector2D Center, FVector2D Size);
     UE_PURE static FSpriteRect MakeSpriteRectFromPoints(FVector2D Start, FVector2D End);
-    static void MoveSpriteRect(FSpriteRect Rect, FVector2D Offset);
+    static void MoveSpriteRect(FSpriteRect& Rect, FVector2D Offset);
     UE_PURE static bool SpriteRectIntersects(FSpriteRect A, FSpriteRect B);
     UE_PURE static bool SpriteRectIntersectsAny(FSpriteRect A, TArray<FSpriteRect> Others);
     UE_PURE static FSpriteRect TranslateSpriteRect(FSpriteRect Rect, FVector2D Offset);
@@ -32651,6 +33994,10 @@ public:
     class UDialogDataAsset* LookAtShout;
     class UDialogDataAsset* MissionControlLookAtShout;
     class AFSDGameState* GameState;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void GetPointTransform(FTransform& PointTransform);
     void OnPointOfInterest(class AActor* TargetActor, FVector TargetLocation, class UTexture2D* TargetIcon);
     UE_SERVER UE_RELIABLE void Server_SecondaryUse(FVector Location, FVector Normal, class AActor* Actor, class UPrimitiveComponent* Cmponent, class UTerrainMaterial* TerrainMaterial);
@@ -32702,6 +34049,9 @@ public:
     bool Revert;
     float TimeOnGround;
     float ExpensiveCarveNoise;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void BeginPlay();
     void Tick(float DeltaSeconds);
     UE_PURE float GetRadius() const;
@@ -32726,6 +34076,8 @@ class ALineSegmentCarver : public AGenerationItem
 public:
     UE_CLASS("/Script/FSD", "LineSegmentCarver");
     class ULineSegmentCarverComponent* LineComponent;
+    static constexpr const char* LineComponent__UeSubobject = "LineCarverSegmentComponent /Script/FSD.LineSegmentCarverComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LineCarverSegmentComponent /Script/FSD.LineSegmentCarverComponent";
 };
 
 class UPathfinderFunctionLibrary : public UBlueprintFunctionLibrary
@@ -32796,6 +34148,11 @@ public:
     int InitialHitDamageMultiplier;
     float InhibitImpactDecalsTime;
     float MinTimeBetweenImpactDecals;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* InitialDamageComponent__UeSubobject = "InitialDamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* LineRoot__UeSubobject = "LineRoot /Script/Engine.SceneComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
     void Fire(FVector Origin, FVector Direction, float Distance);
     void OnRep_LineRotation();
     UE_SERVER UE_RELIABLE void Server_RemoveDebris(int instance, int Component);
@@ -32819,6 +34176,13 @@ public:
     float PlatformDissolveSqueeze;
     class UParticleSystemComponent* HitParticles;
     float TimeBetweenLineChecks;
+    static constexpr const char* BeamParticles__UeSubobject = "BeamParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* HitParticles__UeSubobject = "BeamParticles /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* LeftLinePoint__UeSubobject = "LeftLinePoint /Script/Engine.SceneComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RightLinePoint__UeSubobject = "RightLinePoint /Script/Engine.SceneComponent";
     void Fire(FVector Origin, FVector Direction, float Distance);
     void TurnOffParticles();
 };
@@ -32828,6 +34192,8 @@ class ALineSegmentFiller : public AGenerationItem
 public:
     UE_CLASS("/Script/FSD", "LineSegmentFiller");
     class ULineSegmentFillerComponent* LineComponent;
+    static constexpr const char* LineComponent__UeSubobject = "LineFillerSegmentComponent /Script/FSD.LineSegmentFillerComponent";
+    static constexpr const char* RootComponent__UeSubobject = "LineFillerSegmentComponent /Script/FSD.LineSegmentFillerComponent";
 };
 
 class UWaitTask : public ULineSpikeTaskBase
@@ -32912,6 +34278,7 @@ public:
     UE_CLASS("/Script/FSD", "LoadoutItemProxy");
     class UItemCharacterAnimationSet* AnimationSet;
     FItemLoadoutAnimations LoadoutAnimations;
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     static TSubclassOf<class AItem> GetLoadoutItemFromClass(TSubclassOf<class AActor> actorClass);
 };
 
@@ -32996,6 +34363,11 @@ public:
     float MinAngle;
     float MaxAngle;
     FGameplayTagQuery ExcludeSurfaceTags;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     bool CanFireWeapon(FText& FailMsg, class UDialogDataAsset*& FailShout);
 };
 
@@ -33165,6 +34537,15 @@ public:
     float ColdTempAmpMultiplier;
     bool SlowOnHit;
     TSubclassOf<class AActor> HeatSink;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* CapsuleHitscanComp__UeSubobject = "CapsuleHitscanComponent /Script/FSD.CapsuleHitscanComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* RadiantSuperheaterFrostShock__UeSubobject = "RadiantSuperheaterFrostShock /Script/FSD.DamageComponent";
+    static constexpr const char* RadiantSuperheaterHeat__UeSubobject = "RadiantSuperheaterHeat /Script/FSD.DamageComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* WeaponFire__UeSubobject = "CapsuleHitscanComponent /Script/FSD.CapsuleHitscanComponent";
     UE_MULTICAST void All_ShowNeuroSpread(FVector Location);
     void EndCharacterOverheatAnim();
     void HeatUpdated(float SmoothedTemperature);
@@ -33676,7 +35057,7 @@ public:
     UE_CLASS("/Script/FSD", "MissionNameBank");
     TArray<FText> FirstNames;
     TArray<FText> LastNames;
-    TArray<FText> GetRandomGeneratedNames(FRandomStream Random, int Count) const;
+    TArray<FText> GetRandomGeneratedNames(FRandomStream& Random, int Count) const;
 };
 
 class UMissionWarning : public UDataAsset
@@ -33724,6 +35105,7 @@ public:
     class USkeletalMeshComponent* Mesh;
     class UWeaponFireComponent* WeaponFire;
     class UGunLogicComponent* GunLogic;
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
     UE_SERVER UE_RELIABLE void Server_Test();
 };
 
@@ -33840,6 +35222,7 @@ public:
     FVector Origin;
     bool ShowNoise;
     bool ShowTerrainNoise;
+    static constexpr const char* RootComponent__UeSubobject = "Sphere /Script/Engine.SphereComponent";
 };
 
 class UOxygenSourceComponent : public UActorComponent
@@ -34164,7 +35547,7 @@ public:
     UE_PURE static bool IsPerkTierUnLocked(int Tier);
     static void RandomizePerkLoadout(class UObject* WorldContext, class UPlayerCharacterID* characterID);
     static void RandomizePerkLoadout(class UPlayerCharacterID* characterID);
-    static TArray<class UPerkAsset*> SortPerksByUsage(TArray<class UPerkAsset*> perks);
+    static TArray<class UPerkAsset*> SortPerksByUsage(TArray<class UPerkAsset*>& perks);
     static void SplitPerksByUsage(TArray<class UPerkAsset*> perks, TArray<class UPerkAsset*>& OutPassivePerks, TArray<class UPerkAsset*>& OutActivePerks);
 };
 
@@ -34246,6 +35629,11 @@ public:
     bool PowerAttackEnabled;
     TMap<EPickaxePartLocation, FPickaxeMeshInstance> EquippedParts;
     class UMaterialInterface* EquippedMaterial;
+    static constexpr const char* FP_Root__UeSubobject = "FP_Root /Script/Engine.SceneComponent";
+    static constexpr const char* FP_Scale__UeSubobject = "FP_Scale /Script/Engine.SceneComponent";
+    static constexpr const char* TP_Root__UeSubobject = "TP_Root /Script/Engine.SceneComponent";
+    static constexpr const char* TP_Scale__UeSubobject = "TP_Scale /Script/Engine.SceneComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST void All_DoPowerAttack();
     UE_MULTICAST void All_SimulateDamageTarget(class UPrimitiveComponent* TargetComponent, bool isSpecial, FVector_NetQuantize ImpactPoint, FVector_NetQuantizeNormal ImpactNormal, class UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
     UE_MULTICAST void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int Material, float Density, bool isSpecial);
@@ -34335,6 +35723,8 @@ class APillarGenerationItem : public AGenerationItem
 public:
     UE_CLASS("/Script/FSD", "PillarGenerationItem");
     class UPillarGenerationComponent* PillarComponent;
+    static constexpr const char* PillarComponent__UeSubobject = "BoxComponent /Script/FSD.PillarGenerationComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BoxComponent /Script/FSD.PillarGenerationComponent";
 };
 
 class APipelineBuilderItem : public ATrackBuilderItem
@@ -34342,6 +35732,12 @@ class APipelineBuilderItem : public ATrackBuilderItem
 public:
     UE_CLASS("/Script/FSD", "PipelineBuilderItem");
     class UItemPlacerAggregator* SegmentPlacer;
+    static constexpr const char* CrosshairAggregator__UeSubobject = "CrosshairAggregator /Script/FSD.CrosshairAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* SegmentPlacer__UeSubobject = "SegmentPlacer /Script/FSD.ItemPlacerAggregator";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
 };
 
 class IPlaceableInterface
@@ -34357,6 +35753,12 @@ public:
     class UCapacityHoldingItemAggregator* Capacity;
     class UItemPlacerAggregator* ItemPlacer;
     TSubclassOf<class AActor> PlacableClass;
+    static constexpr const char* Capacity__UeSubobject = "Aggregater /Script/FSD.CapacityHoldingItemAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* ItemPlacer__UeSubobject = "ItemPlacer /Script/FSD.ItemPlacerAggregator";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnCarriedAmountChanged(int newAmount);
     void ReceiveItemSpawned(class AActor* SpawnedActor);
     UE_SERVER UE_RELIABLE void Server_SpawnItem(FVector Location);
@@ -34381,6 +35783,15 @@ public:
     class UKeepInsideWorld* KeepInsideWorld;
     class UAudioComponent* UsingSoundInstance;
     float FireRate;
+    static constexpr const char* CrosshairAggregator__UeSubobject = "Crosshair /Script/FSD.CrosshairAggregator";
+    static constexpr const char* DroppedCollider__UeSubobject = "Root /Script/Engine.BoxComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* KeepInsideWorld__UeSubobject = "KeepInWorld /Script/FSD.KeepInsideWorld";
+    static constexpr const char* PickupUsable__UeSubobject = "PickupUsable /Script/FSD.InstantUsable";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
     UE_MULTICAST UE_RELIABLE void All_EnablePhysics(FVector_NetQuantize Direction);
     UE_MULTICAST void All_Gunsling();
     void OnInRangeChanged(bool InRange);
@@ -34402,6 +35813,12 @@ class APlagueWorm : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "PlagueWorm");
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
+    static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UPlanetZoneSetup : public UDataAsset
@@ -34440,6 +35857,12 @@ public:
     float ArcSpeed;
     float HomingAcceleration;
     bool IsHoming;
+    static constexpr const char* Collision__UeSubobject = "Box /Script/Engine.BoxComponent";
+    static constexpr const char* DamageComponent__UeSubobject = "Damage /Script/FSD.DamageComponent";
+    static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.StaticMeshComponent";
+    static constexpr const char* MeshPivot__UeSubobject = "MeshPivot /Script/Engine.SceneComponent";
+    static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
+    static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void BeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
 };
 
@@ -34458,6 +35881,11 @@ public:
     class UAnimMontage* TP_CharacterReloadEndMontage;
     class UAnimMontage* WPN_ItemReloadEndMontage;
     TMulticastInlineDelegate<void()> OnReloadPressed;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_SERVER UE_RELIABLE void ApplyShieldDamage();
     UE_SERVER UE_RELIABLE void Server_ReloadPressed();
 };
@@ -34466,6 +35894,9 @@ class APlatformProjectile : public AProjectile
 {
 public:
     UE_CLASS("/Script/FSD", "PlatformProjectile");
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void MeltPlatformAroundPlayers(FVector platformLocation);
 };
 
@@ -34850,6 +36281,8 @@ public:
     float InitialSpeed;
     float DampOmega;
     float SyncTime;
+    static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
+    static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     void OnRep_PosVel(FFakeMoveState PosVel_0);
     void SphereBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
 };
@@ -34921,6 +36354,10 @@ class APropHuntHunterItem : public AThrowableItem
 {
 public:
     UE_CLASS("/Script/FSD", "PropHuntHunterItem");
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CameraModeUpdated(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
 };
 
@@ -34956,17 +36393,18 @@ public:
     UE_CLASS("/Script/FSD", "RandomSelectorItem");
     int Min;
     int Max;
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SphereComponent";
 };
 
 class URandRangeFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "RandRangeFunctionLibrary");
-    UE_PURE static float GetFloatFromStream(FRandRange RandRange, FRandomStream RandomStream);
+    static float GetFloatFromStream(FRandRange RandRange, FRandomStream& RandomStream);
     UE_PURE static float GetFloatValue(FRandRange RandRange);
-    UE_PURE static int GetValueFromStream(FIRandRange RandRange, FRandomStream RandomStream);
-    static FText PickRandomText(TArray<FText> TextArray, FRandomStream RandomStream);
-    static bool TryPickRandomText(TArray<FText> TextArray, FRandomStream RandomStream, FText& OutResult);
+    static int GetValueFromStream(FIRandRange RandRange, FRandomStream& RandomStream);
+    static FText PickRandomText(TArray<FText> TextArray, FRandomStream& RandomStream);
+    static bool TryPickRandomText(TArray<FText> TextArray, FRandomStream& RandomStream, FText& OutResult);
 };
 
 class URandIntervalFunctionLibrary : public UBlueprintFunctionLibrary
@@ -34981,6 +36419,11 @@ class ARDGLauncher : public AAmmoDrivenWeapon
 public:
     UE_CLASS("/Script/FSD", "RDGLauncher");
     TArray<class URDGComponent*> ActiveGrenades;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void RegisterGrenade(class URDGComponent* Grenade);
     UE_SERVER UE_RELIABLE void Server_DetonateAll();
 };
@@ -35322,6 +36765,11 @@ public:
     float KillsResetAccuracyDuration;
     bool KillsTriggersStatusEffect;
     TSubclassOf<class UStatusEffect> KillTriggeredStatusEffect;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_CLIENT UE_RELIABLE void Client_ResetAccuracy();
     void OnEnemyKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysMat, bool wasDirectHit);
     void OnTimerElapsed();
@@ -35493,8 +36941,8 @@ class URoomGeneratorGroup : public UDataAsset
 public:
     UE_CLASS("/Script/FSD", "RoomGeneratorGroup");
     TArray<class URoomGenerator*> Rooms;
-    static class URoomGenerator* GetRandomRoomWithTags(FRoomGeneratorGroupInstance groupInstance, FGameplayTagQuery queury, FRandomStream RandomStream);
-    class URoomGenerator* GetRandomRoom(FRandomStream RandomStream);
+    static class URoomGenerator* GetRandomRoomWithTags(FRoomGeneratorGroupInstance& groupInstance, FGameplayTagQuery queury, FRandomStream& RandomStream);
+    class URoomGenerator* GetRandomRoom(FRandomStream& RandomStream);
     FRoomGeneratorGroupInstance CreateGroupInstance() const;
 };
 
@@ -35838,6 +37286,12 @@ public:
     float BurstArmorDamageMultiplier;
     float ConsecutiveHitsDamageBonus;
     float ConsecutiveHitsMaxBonus;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnHit(FHitResult HitResult, bool isAlwaysPenetrated);
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
 };
@@ -35997,6 +37451,12 @@ class ASentryGunItem : public APlaceableItem
 public:
     UE_CLASS("/Script/FSD", "SentryGunItem");
     TArray<class UItemUpgrade*> Upgrades;
+    static constexpr const char* Capacity__UeSubobject = "Aggregater /Script/FSD.CapacityHoldingItemAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* ItemPlacer__UeSubobject = "ItemPlacer /Script/FSD.ItemPlacerAggregator";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
 };
 
 class ARecallableSentryGunItem : public ARecallableItem
@@ -36017,6 +37477,12 @@ public:
     float SupplyStatusWeight;
     float SentryAngleRestriction;
     bool bIsUpgraded;
+    static constexpr const char* AmmoCapacity__UeSubobject = "AmmoCapacity /Script/FSD.CapacityHoldingItemAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* ItemPlacer__UeSubobject = "ItemPlacer /Script/FSD.ItemPlacerAggregator";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_PURE TArray<class ARecallableSentryGun*> GetActiveSentryGuns();
     UE_PURE class ARecallableSentryGun* GetSelectedSentryGun();
     UE_PURE bool HasAmmoLeft();
@@ -36031,8 +37497,8 @@ public:
     UE_CLASS("/Script/FSD", "SessionHandling");
     UE_PURE static bool AllowLinkToExternalFeedback(class UObject* WorldContextObject);
     UE_PURE static bool AllowLinkToExternalFeedback();
-    static bool FindBestQuickJoinServer(class UObject* WorldContextObject, TArray<FBlueprintSessionResult> sessions, class UDifficultySetting* Difficulty, class UBiome* Biome, class UMissionTemplate* MissionTemplate, FBlueprintSessionResult& OutResult);
-    static bool FindBestQuickJoinServer(TArray<FBlueprintSessionResult> sessions, class UDifficultySetting* Difficulty, class UBiome* Biome, class UMissionTemplate* MissionTemplate, FBlueprintSessionResult& OutResult);
+    static bool FindBestQuickJoinServer(class UObject* WorldContextObject, TArray<FBlueprintSessionResult>& sessions, class UDifficultySetting* Difficulty, class UBiome* Biome, class UMissionTemplate* MissionTemplate, FBlueprintSessionResult& OutResult);
+    static bool FindBestQuickJoinServer(TArray<FBlueprintSessionResult>& sessions, class UDifficultySetting* Difficulty, class UBiome* Biome, class UMissionTemplate* MissionTemplate, FBlueprintSessionResult& OutResult);
     static bool FSDCancelFindSessions(class UObject* WorldContextObject);
     static bool FSDCancelFindSessions();
     UE_PURE static FString FSDGetBuildId(FBlueprintSessionResult Result);
@@ -36099,8 +37565,8 @@ public:
     static void ShowInviteUI();
     static void ShowStoreUI(class UObject* WorldContextObject);
     static void ShowStoreUI();
-    static void SortServerList(class UObject* WorldContextObject, EServerSortOrder order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult> servers);
-    static void SortServerList(EServerSortOrder order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult> servers);
+    static void SortServerList(class UObject* WorldContextObject, EServerSortOrder order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult>& servers);
+    static void SortServerList(EServerSortOrder order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult>& servers);
     static void StartCheckForInstalledDLC(class UObject* WorldContextObject);
     static void StartCheckForInstalledDLC();
     static bool StartSearchForBlockedUsers(int localUserNum);
@@ -36124,6 +37590,11 @@ public:
     float SupplyStatusWeight;
     class UDialogDataAsset* ShoutRecarged;
     FCoolDownProgressStyle RechargeProgressUI;
+    static constexpr const char* ChargeCapacity__UeSubobject = "ChargeCapacity /Script/FSD.CapacityHoldingItemAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void GeneratorReturned();
     void OnRep_UnchargedCount(int OldCount);
     void ReceiveGeneratorRecharged();
@@ -36287,6 +37758,16 @@ public:
     class UProjectileLauncherComponent* projectileLauncher;
     TSubclassOf<class AProjectileBase> ProjectileClass;
     TMulticastInlineDelegate<void(float currentResourceVolume)> OnAmmoChanged;
+    static constexpr const char* CrosshairAggregator__UeSubobject = "Crosshair /Script/FSD.CrosshairAggregator";
+    static constexpr const char* DroppedCollider__UeSubobject = "Root /Script/Engine.BoxComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* KeepInsideWorld__UeSubobject = "KeepInWorld /Script/FSD.KeepInsideWorld";
+    static constexpr const char* PickupUsable__UeSubobject = "PickupUsable /Script/FSD.InstantUsable";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
+    static constexpr const char* projectileLauncher__UeSubobject = "projectileLauncher /Script/FSD.ProjectileLauncherComponent";
     void OnWeaponFired(FVector Location);
 };
 
@@ -36502,6 +37983,13 @@ class AStabberVineRoot : public AEnemyPawn
 {
 public:
     UE_CLASS("/Script/FSD", "StabberVineRoot");
+    static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
+    static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* Stats__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void RemoveVine(class AStabberVine* vine);
 };
 
@@ -36597,6 +38085,7 @@ public:
     static constexpr const char* CooldownIsDone__Replicated = ":";
     bool HasRejoinedInitialized;
     static constexpr const char* HasRejoinedInitialized__Replicated = ":";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void GetPredictedLastPosAndVelocity(FVector& Pos, FVector& Velocity);
     void GrenadeThrowFinished();
     void OnRep_GrenadeClass();
@@ -36708,6 +38197,18 @@ public:
     float MaxVacuumEffectStrength;
     float VacuumEffectFoamSuckTime;
     float LastPuddleSuckTime;
+    static constexpr const char* CrosshairAggregator__UeSubobject = "Crosshair /Script/FSD.CrosshairAggregator";
+    static constexpr const char* DroppedCollider__UeSubobject = "Root /Script/Engine.BoxComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* KeepInsideWorld__UeSubobject = "KeepInWorld /Script/FSD.KeepInsideWorld";
+    static constexpr const char* NS_Vacuum_FP__UeSubobject = "NS_Vacuum_FP /Script/Niagara.NiagaraComponent";
+    static constexpr const char* NS_Vacuum_TP__UeSubobject = "NS_Vacuum_TP /Script/Niagara.NiagaraComponent";
+    static constexpr const char* PickupUsable__UeSubobject = "PickupUsable /Script/FSD.InstantUsable";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
+    static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
+    static constexpr const char* VacuumCapsule__UeSubobject = "VacuumCollision /Script/Engine.CapsuleComponent";
     UE_MULTICAST void All_Visual_PuddleStartCollect();
     void ItemEnterVacuum(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
     void OnFoamPuddleCollected_Unreliable();
@@ -36850,6 +38351,7 @@ class AMiningPodCalldownLocation : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "MiningPodCalldownLocation");
+    static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
 };
 
 class UTagVanityStyle : public UTagVanity
@@ -36889,6 +38391,7 @@ class ATentaclePlantCable : public ASplineCableActor
 {
 public:
     UE_CLASS("/Script/FSD", "TentaclePlantCable");
+    static constexpr const char* PathSplineComponent__UeSubobject = "PathSplineComponent /Script/Engine.SplineComponent";
 };
 
 class UVanitySchematicBank : public USchematicBankBase
@@ -36986,8 +38489,8 @@ public:
     TSoftObjectPtr<class UFXSystemAsset> PartialDigParticles;
     TSoftObjectPtr<class USoundCue> CrumbleSound;
     TSoftObjectPtr<class USoundCue> PartialMineSound;
-    static void TestDecals(class UTerrainMaterial* Material, TArray<FTestTerrainMaterialDecalItem> Items);
-    static void TestMaterialEffects(class UTerrainMaterial* Material, TArray<FTestTerrainMaterialItem> Items);
+    static void TestDecals(class UTerrainMaterial* Material, TArray<FTestTerrainMaterialDecalItem>& Items);
+    static void TestMaterialEffects(class UTerrainMaterial* Material, TArray<FTestTerrainMaterialItem>& Items);
     UE_PURE class USoundCue* GetCrumbleSound() const;
     UE_PURE class UMaterialInstance* GetDigParticlesMaterialOverride() const;
     UE_PURE FText GetInGameName() const;
@@ -37044,6 +38547,12 @@ public:
     class UAnimMontage* EndTP;
     class USceneComponent* TerrainScannerRoot;
     class USceneCaptureComponent2D* TerrainScannerCapture;
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* TerrainScannerCapture__UeSubobject = "TerrainScannerCapture /Script/Engine.SceneCaptureComponent2D";
+    static constexpr const char* TerrainScannerRoot__UeSubobject = "TerrainScannerRoot /Script/Engine.SceneComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnRep_IsLookingAtMap();
     UE_SERVER UE_RELIABLE void Server_SetIslookingAtMap(bool lookingAtMap);
 };
@@ -37078,6 +38587,14 @@ public:
     float ArmorPopForce;
     float ArmorShedDelay;
     TArray<class UStaticMeshComponent*> ArmorMeshes;
+    static constexpr const char* ArmorDamage__UeSubobject = "ArmorDamageComponent /Script/FSD.ArmorHealthDamageComponent";
+    static constexpr const char* Health__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "MeshComponent /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SmokeParticles__UeSubobject = "SmokeParticlesComponent /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WeakpointGlow__UeSubobject = "WeakpointGlowComponent /Script/FSD.WeakpointGlowComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void DestroyArmor();
     void HideArmorPlates();
     void OnAttack();
@@ -37089,6 +38606,14 @@ public:
     UE_CLASS("/Script/FSD", "AimingTowerEventModule");
     FRotator AimRotation;
     class AActor* CurrentTarget;
+    static constexpr const char* ArmorDamage__UeSubobject = "ArmorDamageComponent /Script/FSD.ArmorHealthDamageComponent";
+    static constexpr const char* Health__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
+    static constexpr const char* Mesh__UeSubobject = "MeshComponent /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SmokeParticles__UeSubobject = "SmokeParticlesComponent /Script/Engine.ParticleSystemComponent";
+    static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WeakpointGlow__UeSubobject = "WeakpointGlowComponent /Script/FSD.WeakpointGlowComponent";
+    static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
 };
 
 class UTreasureFunctionLibrary : public UBlueprintFunctionLibrary
@@ -37393,6 +38918,9 @@ public:
     bool ArmorCoversBeard;
     TMap<EVanitySlot, FVanityTestCharacterItem> VanityItems;
     class USkeletalMesh* WeaponMesh;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
+    static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
     void SetupVanity();
 };
 
@@ -37595,6 +39123,12 @@ public:
     float ShotgunJumpForce;
     bool ShockwaveEnabled;
     float ShockWaveDistance;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* DamageComponent__UeSubobject = "DamageComponent /Script/FSD.DamageComponent";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void SetShockWaveDamageComponent(class UDamageComponent* Component);
 };
 
@@ -37604,6 +39138,11 @@ public:
     UE_CLASS("/Script/FSD", "Revoler");
     float OnKillFearFactor;
     float OnKillFearRange;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnTargetKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysMat, bool wasDirectHit);
 };
 
@@ -37623,6 +39162,11 @@ public:
     bool ElectricfyPlatformsEnabled;
     TArray<class UFSDPhysicalMaterial*> PlatformMaterials;
     TSoftClassPtr<class UClass> ElectrifyPlatformsActorClass;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnStatusEffectPushed(class UHealthComponentBase* Health);
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
     void OnTerrainHit(FVector Location, FRotator Rotation, class UFSDPhysicalMaterial* PhysicalMaterial);
@@ -37634,6 +39178,11 @@ class AAutoShotgun : public AAmmoDrivenWeapon
 public:
     UE_CLASS("/Script/FSD", "AutoShotgun");
     TSubclassOf<class UStatusEffect> CQCKillBuff;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
     void OnTargetKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysicalMaterial, bool wasDirectHit);
 };
@@ -37647,6 +39196,11 @@ public:
     bool ExplodeLastProjectileOnNextFireAttempt;
     TArray<class UItemUpgrade*> Upgrades;
     float MinExplosiveGoodbyeActivationTimme;
+    static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
+    static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
+    static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
+    static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
+    static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnFireWhileLastProjectileAlive(class ALineCutterProjectile* Projectile);
     void OnProjectileLaunched(class AProjectileBase* Projectile);
     UE_SERVER void Server_DestroyOldProjectile();
@@ -37688,9 +39242,9 @@ class UWeightRoomSelectorLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "WeightRoomSelectorLibrary");
-    static class URoomGenerator* GetRandomRoom(TArray<class URoomGenerator*> Rooms, bool removeChosenRoom, FRandomStream RandomStream);
-    static class URoomGenerator* SelectRandomRoom(FWeightedRoomSelector Target, FRandomStream RandomStream);
-    static void SetupWeightedRoomSelector(FWeightedRoomSelector Target, TArray<class URoomGenerator*> Rooms);
+    static class URoomGenerator* GetRandomRoom(TArray<class URoomGenerator*>& Rooms, bool removeChosenRoom, FRandomStream& RandomStream);
+    static class URoomGenerator* SelectRandomRoom(FWeightedRoomSelector& Target, FRandomStream& RandomStream);
+    static void SetupWeightedRoomSelector(FWeightedRoomSelector& Target, TArray<class URoomGenerator*>& Rooms);
 };
 
 class UWidgetToRenderTargetComponent : public UActorComponent

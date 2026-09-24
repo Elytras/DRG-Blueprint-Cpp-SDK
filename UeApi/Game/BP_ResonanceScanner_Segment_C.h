@@ -13,6 +13,7 @@ class UAudioComponent;
 class UHealthComponentBase;
 class UMaterialInterface;
 class UMeshComponent;
+class UPrimitiveComponent;
 class USimpleObjectInfoComponent;
 class USphereComponent;
 class UTrackBuilderConnectPoint;
@@ -42,7 +43,8 @@ public:
     void UserConstructionScript();
     bool ReceiveCanPlaceAt(FTransform InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void UpdateVisualState();
-    void OverrideMaterialByName(class UMeshComponent* InMesh, TArray<class UMaterialInterface*> InDefaultMaterials, FName InMaterialSlotName, class UMaterialInterface* InMaterial);
+    void OverrideMaterialByName(class UMeshComponent* InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, FName InMaterialSlotName, class UMaterialInterface* InMaterial);
+    void OverrideMaterialByIndex(class UPrimitiveComponent*& InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, int InIndex, class UMaterialInterface* InMaterial);
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

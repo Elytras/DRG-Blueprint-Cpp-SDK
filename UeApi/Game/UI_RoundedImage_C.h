@@ -28,7 +28,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateMaterial();
     void SetImage(class UTexture2D* Texture_0);
-    UE_COSMETIC void OnPaint(FPaintContext Context) const;
+    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

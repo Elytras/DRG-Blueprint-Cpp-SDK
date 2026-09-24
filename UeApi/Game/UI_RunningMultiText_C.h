@@ -34,7 +34,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Completed_B06C42A944ABEA2C4BF8E7AF24421023(float DeltaTime, float NormalizedTime);
     void OnTick_B06C42A944ABEA2C4BF8E7AF24421023(float DeltaTime, float NormalizedTime);
-    void SetTexts(TArray<FText> InTexts);
+    void SetTexts(TArray<FText>& InTexts);
     void SetTextRunnerActive(bool Inactive);
     void SetRunnerProgress(float InProgress, bool& Finished);
     void SetNextLine();

@@ -29,7 +29,7 @@ public:
     void OnResourceAmountChanged(class UResourceData* Resource, float currentAmount);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime_0);
-    void SetResources(TArray<class UResourceData*> InResources);
+    void SetResources(TArray<class UResourceData*>& InResources);
     void AddResource(class UResourceData* InResource, bool InHideWhenZero, int Index_0);
 };
 

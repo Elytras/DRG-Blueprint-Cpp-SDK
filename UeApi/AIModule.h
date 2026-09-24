@@ -883,6 +883,10 @@ public:
     class UGameplayTasksComponent* CachedGameplayTasksComponent;
     TSubclassOf<class UNavigationQueryFilter> DefaultNavigationFilterClass;
     TMulticastInlineDelegate<void(FAIRequestID RequestID, EPathFollowingResult Result)> ReceiveMoveCompleted;
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void ClaimTaskResource(TSubclassOf<class UGameplayTaskResource> ResourceClass);
     UE_PURE class UAIPerceptionComponent* GetAIPerceptionComponent();
     void K2_ClearFocus();
@@ -2015,6 +2019,10 @@ class ADetourCrowdAIController : public AAIController
 {
 public:
     UE_CLASS("/Script/AIModule", "DetourCrowdAIController");
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.CrowdFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class UEnvQuery : public UDataAsset
@@ -2391,6 +2399,9 @@ public:
     bool bTickDuringGame;
     EEnvQueryRunMode QueryingMode;
     FNavAgentProperties NavAgentProperties;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
+    static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
 };
 
 class IGenericTeamAgentInterface
@@ -2403,6 +2414,10 @@ class AGridPathAIController : public AAIController
 {
 public:
     UE_CLASS("/Script/AIModule", "GridPathAIController");
+    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.GridPathFollowingComponent";
+    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
 
 class UGridPathFollowingComponent : public UPathFollowingComponent
@@ -2427,6 +2442,8 @@ public:
     class UNavLinkCustomComponent* SmartLinkComp;
     bool bSmartLinkIsRelevant;
     TMulticastInlineDelegate<void(class AActor* MovingActor, FVector DestinationPoint)> OnSmartLinkReached;
+    static constexpr const char* RootComponent__UeSubobject = "PositionComponent /Script/Engine.SceneComponent";
+    static constexpr const char* SmartLinkComp__UeSubobject = "SmartLinkComp /Script/NavigationSystem.NavLinkCustomComponent";
     void ReceiveSmartLinkReached(class AActor* Agent, FVector Destination);
     void ResumePathFollowing(class AActor* Agent);
     void SetSmartLinkEnabled(bool bEnabled);

@@ -78,6 +78,6 @@ public:
     UE_PURE bool IsLoadingAssets() const;
     bool K2_GetDependencies(FName PackageName, FAssetRegistryDependencyOptions DependencyOptions, TArray<FName>& OutDependencies) const;
     bool K2_GetReferencers(FName PackageName, FAssetRegistryDependencyOptions ReferenceOptions, TArray<FName>& OutReferencers) const;
-    void RunAssetsThroughFilter(TArray<FAssetData> AssetDataList, FARFilter Filter) const;
-    void UseFilterToExcludeAssets(TArray<FAssetData> AssetDataList, FARFilter Filter) const;
+    void RunAssetsThroughFilter(TArray<FAssetData>& AssetDataList, FARFilter Filter) const;
+    void UseFilterToExcludeAssets(TArray<FAssetData>& AssetDataList, FARFilter Filter) const;
 };

@@ -6,7 +6,6 @@ A member is here if and only if AssetGen can compile a use of it.
 */
 #include "../UeMeta.h"
 #include "../AIModule.h"
-#include "../CoreUObject.h"
 #include "../Engine.h"
 #include "../FSD.h"
 
@@ -28,7 +27,7 @@ public:
     float OffsetFromDistance;
     void ExecuteUbergraph_TSK_FindRandomPoint(int EntryPoint);
     void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector Location);
+    void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector& Location);
 };
 
 }}}   // namespace Game::AI::Tasks

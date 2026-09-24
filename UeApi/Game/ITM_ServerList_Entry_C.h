@@ -104,7 +104,7 @@ public:
     void SetBiomeIcon(class UBiome* Biome);
     void SetNoMission();
     void ToggleMissionDetails(bool Visible);
-    void SetColumnWidths(TArray<float> InWidths);
+    void SetColumnWidths(TArray<float>& InWidths);
     UE_PURE class UWidget* GetMissionToolTip();
     void SetVisibleElements(bool InShowComplexity, bool InShowDifficulty, bool InShowLength, bool InShowTime, bool InShowWarningsAndMutators);
     void SetMissionNameWidth(float Width);

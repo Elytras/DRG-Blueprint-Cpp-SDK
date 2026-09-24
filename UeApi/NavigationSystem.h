@@ -195,12 +195,14 @@ public:
     float ObservedPathsTickInterval;
     uint32 DataVersion;
     TArray<FSupportedAreaData> SupportedAreas;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class AAbstractNavData : public ANavigationData
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "AbstractNavData");
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class UNavArea : public UNavAreaBase
@@ -296,6 +298,7 @@ class ANavigationGraph : public ANavigationData
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "NavigationGraph");
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class ANavigationGraphNode : public AActor
@@ -351,6 +354,7 @@ public:
     class UNavigationSystemConfig* NavigationSystemConfig;
     ENavSystemOverridePolicy OverridePolicy;
     bool bLoadOnClient;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
 
 class UNavigationSystemV1 : public UNavigationSystemBase
@@ -473,6 +477,9 @@ public:
     TSubclassOf<class UNavigationQueryFilter> FilterClass;
     int ShowStepIndex;
     float OffsetFromCornersDistance;
+    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    static constexpr const char* InvokerComponent__UeSubobject = "InvokerComponent /Script/NavigationSystem.NavigationInvokerComponent";
+    static constexpr const char* RootComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
 };
 
 class UNavLinkComponent : public UPrimitiveComponent
@@ -520,6 +527,8 @@ public:
     UE_CLASS("/Script/NavigationSystem", "NavModifierVolume");
     TSubclassOf<class UNavArea> AreaClass;
     bool bMaskFillCollisionUnderneathForNavmesh;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     void SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass);
 };
 
@@ -546,6 +555,8 @@ class ANavMeshBoundsVolume : public AVolume
 public:
     UE_CLASS("/Script/NavigationSystem", "NavMeshBoundsVolume");
     FNavAgentSelector SupportedAgents;
+    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
 
 class UNavMeshRenderingComponent : public UPrimitiveComponent
@@ -645,6 +656,7 @@ public:
     float TileSetUpdateInterval;
     float HeuristicScale;
     float VerticalDeviationFromGroundCompensation;
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     bool K2_ReplaceAreaInTileBounds(FBox Bounds, TSubclassOf<class UNavArea> OldArea, TSubclassOf<class UNavArea> NewArea, bool ReplaceLinks);
 };
 

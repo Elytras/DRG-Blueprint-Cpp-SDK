@@ -82,7 +82,7 @@ public:
     void UserConstructionScript();
     void SetUpgradesAndOverclocks(class UItemUpgrade* ItemUpgrade);
     void GetAmmoWidget(WeaponDisplay_PlasmaCarbine_AmmoCounter_C*& AsWeapon_Display_Plasma_Carbine_Ammo_Counter);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

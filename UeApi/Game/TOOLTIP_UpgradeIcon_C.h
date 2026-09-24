@@ -44,7 +44,7 @@ public:
     void OnShowUpgradeExtraDetailsChanged(bool NewValue);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Update(class UItemUpgradeCategory* Category, FText InUpgradeName, FText InUpgradeDescription, EItemUpgradeStatus InStatus, TArray<FCraftingCost> InCost, bool InCanUnequip, bool ShowUpgradeStatus);
+    void Update(class UItemUpgradeCategory* Category, FText InUpgradeName, FText InUpgradeDescription, EItemUpgradeStatus InStatus, TArray<FCraftingCost>& InCost, bool InCanUnequip, bool ShowUpgradeStatus);
     void UpdateDetailVisibility();
     void SetAlignment(FVector2D InAlignment);
 };

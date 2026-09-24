@@ -194,6 +194,10 @@ public:
     class UObject* DefaultInstanceData;
     class ULevelSequenceBurnIn* BurnInInstance;
     bool bShowBurnin;
+    static constexpr const char* BindingOverrides__UeSubobject = "BindingOverrides /Script/MovieScene.MovieSceneBindingOverrides";
+    static constexpr const char* BurnInOptions__UeSubobject = "BurnInOptions /Script/LevelSequence.LevelSequenceBurnInOptions";
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/LevelSequence.LevelSequencePlayer";
     void AddBinding(FMovieSceneObjectBindingID Binding, class AActor* Actor, bool bAllowBindingsFromAsset);
     void AddBindingByTag(FName BindingTag, class AActor* Actor, bool bAllowBindingsFromAsset);
     void HideBurnin();
@@ -269,6 +273,7 @@ public:
     class UMediaComponent* MediaComponent;
     float ServerStartTimeSeconds;
     static constexpr const char* ServerStartTimeSeconds__Replicated = "OnRep_ServerStartTimeSeconds:";
+    static constexpr const char* MediaComponent__UeSubobject = "MediaComponent /Script/MediaAssets.MediaComponent";
     void OnRep_ServerStartTimeSeconds();
     void Play();
     void SynchronizeToServer(float DesyncThresholdSeconds);

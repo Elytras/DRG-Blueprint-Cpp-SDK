@@ -40,7 +40,7 @@ public:
     void BndEvt__ScrollArrow_Left_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdatePatchNotes();
-    UE_PURE TArray<FText> SelectByPlatform(TArray<FText> Default, TArray<FText> Xbox, TArray<FText> Sony);
+    TArray<FText> SelectByPlatform(TArray<FText>& Default, TArray<FText>& Xbox, TArray<FText>& Sony);
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

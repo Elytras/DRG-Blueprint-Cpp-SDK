@@ -42,7 +42,7 @@ public:
     class UOverlay* Overlay_Challenges;
     class USizeBox* SBOX_ButtonGFX;
     bool IsOpen;
-    TMulticastInlineDelegate<void(TArray<class UObject*> AssetReferences, bool InHovered, class USeasonChallenge* Challenge)> OnChallengeHovered;
+    TMulticastInlineDelegate<void(TArray<class UObject*>& AssetReferences, bool InHovered, class USeasonChallenge* Challenge)> OnChallengeHovered;
     void ExecuteUbergraph_ITM_Challenge_InfoBox(int EntryPoint);
     void Click();
     UE_COSMETIC void Construct();

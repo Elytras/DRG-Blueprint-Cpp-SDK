@@ -44,7 +44,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetMissionStat(class UMissionStat*& Mission_Stat_0);
-    void SetCategoryFilter(TArray<class UTexture2D*> Filter);
+    void SetCategoryFilter(TArray<class UTexture2D*>& Filter);
     UE_PURE class AFSDPlayerController* GetPlayer();
     UE_PURE bool OwnedByLocal();
 };

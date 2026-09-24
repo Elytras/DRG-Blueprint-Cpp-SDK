@@ -74,7 +74,7 @@ public:
     void RecieveEquipped();
     void UserConstructionScript();
     void SetTorchTimeoutHack();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry> Stats) const;
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
 };

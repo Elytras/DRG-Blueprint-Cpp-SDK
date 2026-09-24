@@ -159,7 +159,7 @@ public:
     void On_Fetched_Terms_and_Conditions(class UModioTermsWrapper* Terms);
     static constexpr const char* On_Fetched_Terms_and_Conditions__UeName = "On Fetched Terms and Conditions";
     void GetPendingModStatus(FText& ModStatus);
-    void JoinWithTitle(FText InTitle, TArray<FString> Install, FString& OutResult);
+    void JoinWithTitle(FText InTitle, TArray<FString>& Install, FString& OutResult);
     void OnDownloadExtractMods(FString Name_0, TArray<FString> ModsPendingDownload, bool Downloading, int Progress, int Total);
     void SetInteractability();
     void SetCompactMode(bool CompactView_0);

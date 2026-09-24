@@ -42,6 +42,8 @@ class AGeometryCacheActor : public AActor
 public:
     UE_CLASS("/Script/GeometryCache", "GeometryCacheActor");
     class UGeometryCacheComponent* GeometryCacheComponent;
+    static constexpr const char* GeometryCacheComponent__UeSubobject = "GeometryCacheComponent /Script/GeometryCache.GeometryCacheComponent";
+    static constexpr const char* RootComponent__UeSubobject = "GeometryCacheComponent /Script/GeometryCache.GeometryCacheComponent";
     UE_PURE class UGeometryCacheComponent* GetGeometryCacheComponent() const;
 };
 

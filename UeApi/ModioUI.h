@@ -1943,6 +1943,7 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioModBrowserParams");
     class UModioFeaturedCategoryParams* PrimaryCategoryParams;
     TArray<class UModioFeaturedCategoryParams*> AdditionalCategoryParams;
+    static constexpr const char* PrimaryCategoryParams__UeSubobject = "PrimaryCategoryParams /Script/ModioUICore.ModioFeaturedCategoryParams";
 };
 
 class UModioCarousel : public UWidget

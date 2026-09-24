@@ -139,6 +139,8 @@ public:
     FChaosDebugSubstepControl ChaosDebugSubstepControl;
     class UBillboardComponent* SpriteComponent;
     class UChaosGameplayEventDispatcher* GameplayEventDispatcherComponent;
+    static constexpr const char* GameplayEventDispatcherComponent__UeSubobject = "GameplayEventDispatcher /Script/ChaosSolverEngine.ChaosGameplayEventDispatcher";
+    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void SetAsCurrentWorldSolver();
     void SetSolverActive(bool bActive);
 };

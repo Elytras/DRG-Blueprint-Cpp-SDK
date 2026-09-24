@@ -77,7 +77,7 @@ public:
     void BndEvt__BTN_Back_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
     void CreateSaveList();
     void ClearList();
-    void CreateCloudSaveList(TArray<class UFSDSaveGame*> Array);
+    void CreateCloudSaveList(TArray<class UFSDSaveGame*>& Array);
     void UpdateCloudSaveUI();
     void LoadCloudSaves(int Offset);
 };

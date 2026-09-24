@@ -140,7 +140,7 @@ public:
     void GlowIntensity__FinishedFunc();
     void OnRep_IsOpen();
     void OnRep_IsDormant();
-    void LaunchSeed(FVector TargetLocation, class UClass* ProjectileClass);
+    void LaunchSeed(FVector& TargetLocation, class UClass* ProjectileClass);
     void SpawnGems();
     UE_PURE int ClampMaxShooters(int DesiredCount);
     int GetMaxAllowedHealersToSpawn();

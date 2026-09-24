@@ -181,7 +181,8 @@ template <class K, class V> struct TMap {
   /* A read is Find(), the value type's default for a missing key; `Map[Key] = V` is Add(). */
   V       &operator[](const K &Key);
   const V &operator[](const K &Key) const;
-  /* Range-for over Keys() with Find(): a non-const Value is written back with Add() after each iteration. */
+  /* Range-for over Keys() with Find(): `auto& [Key, Value]` writes Value back with Add() after each iteration when the
+     body writes it; a body that only reads it (`Value->X = 1` included) needs none. */
   TPair<const K, V>       *begin();
   TPair<const K, V>       *end();
   const TPair<const K, V> *begin() const;

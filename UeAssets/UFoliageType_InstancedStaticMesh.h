@@ -4,10 +4,14 @@ Every UFoliageType_InstancedStaticMesh asset in the game, 4 of them, generated b
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UFoliageType_InstancedStaticMesh::Game::Maps::UILevels::Assets::FOL_Grass01
 points at /Game/Maps/UILevels/Assets/FOL_Grass01.
+UeAssets::UFoliageType_InstancedStaticMesh::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/Foliage.h"
 
+namespace UeAssets::UFoliageType_InstancedStaticMesh {
+UE_ASSET_ALL(::UFoliageType_InstancedStaticMesh);
+}
 namespace UeAssets::UFoliageType_InstancedStaticMesh::Game::Maps::UILevels::Assets {
 UE_ASSET_AT(::UFoliageType_InstancedStaticMesh, FOL_Grass01, "/Game/Maps/UILevels/Assets/FOL_Grass01");
 UE_ASSET_AT(::UFoliageType_InstancedStaticMesh, FOL_Gravel01, "/Game/Maps/UILevels/Assets/FOL_Gravel01");

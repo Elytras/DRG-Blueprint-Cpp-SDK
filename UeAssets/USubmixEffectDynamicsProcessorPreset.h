@@ -4,10 +4,14 @@ Every USubmixEffectDynamicsProcessorPreset asset in the game, 1 of them, generat
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::USubmixEffectDynamicsProcessorPreset::Game::Audio::Controller::VibrationLimiter
 points at /Game/Audio/Controller/VibrationLimiter.
+UeAssets::USubmixEffectDynamicsProcessorPreset::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/AudioMixer.h"
 
+namespace UeAssets::USubmixEffectDynamicsProcessorPreset {
+UE_ASSET_ALL(::USubmixEffectDynamicsProcessorPreset);
+}
 namespace UeAssets::USubmixEffectDynamicsProcessorPreset::Game::Audio::Controller {
 UE_ASSET_AT(::USubmixEffectDynamicsProcessorPreset, VibrationLimiter, "/Game/Audio/Controller/VibrationLimiter");
 }

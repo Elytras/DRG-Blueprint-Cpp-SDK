@@ -4,10 +4,14 @@ Every UConditionalDamageModifierUpgrade asset in the game, 6 of them, generated 
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UConditionalDamageModifierUpgrade::Game::WeaponsNTools::Crossbow::Upgrades::UPG_EFFECT_ElectricConditionalDamageBonus_PrimaryDamageComponent
 points at /Game/WeaponsNTools/Crossbow/Upgrades/UPG_EFFECT_ElectricConditionalDamageBonus_PrimaryDamageComponent.
+UeAssets::UConditionalDamageModifierUpgrade::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UConditionalDamageModifierUpgrade {
+UE_ASSET_ALL(::UConditionalDamageModifierUpgrade);
+}
 namespace UeAssets::UConditionalDamageModifierUpgrade::Game::WeaponsNTools::Crossbow::Upgrades {
 UE_ASSET_AT(::UConditionalDamageModifierUpgrade, UPG_EFFECT_ElectricConditionalDamageBonus_PrimaryDamageComponent, "/Game/WeaponsNTools/Crossbow/Upgrades/UPG_EFFECT_ElectricConditionalDamageBonus_PrimaryDamageComponent");
 UE_ASSET_AT(::UConditionalDamageModifierUpgrade, UPG_EFFECT_ElectricConditionalDamageBonus_SecondaryDamageComponent, "/Game/WeaponsNTools/Crossbow/Upgrades/UPG_EFFECT_ElectricConditionalDamageBonus_SecondaryDamageComponent");

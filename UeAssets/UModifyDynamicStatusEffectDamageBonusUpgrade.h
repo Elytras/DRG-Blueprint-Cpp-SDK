@@ -4,10 +4,14 @@ Every UModifyDynamicStatusEffectDamageBonusUpgrade asset in the game, 2 of them,
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UModifyDynamicStatusEffectDamageBonusUpgrade::Game::WeaponsNTools::GooCannon::Overclocks::OC_BonusesAndPenalties::Penalty_STEDuration_GC
 points at /Game/WeaponsNTools/GooCannon/Overclocks/OC_BonusesAndPenalties/Penalty_STEDuration_GC.
+UeAssets::UModifyDynamicStatusEffectDamageBonusUpgrade::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UModifyDynamicStatusEffectDamageBonusUpgrade {
+UE_ASSET_ALL(::UModifyDynamicStatusEffectDamageBonusUpgrade);
+}
 namespace UeAssets::UModifyDynamicStatusEffectDamageBonusUpgrade::Game::WeaponsNTools::GooCannon::Overclocks::OC_BonusesAndPenalties {
 UE_ASSET_AT(::UModifyDynamicStatusEffectDamageBonusUpgrade, Penalty_STEDuration_GC, "/Game/WeaponsNTools/GooCannon/Overclocks/OC_BonusesAndPenalties/Penalty_STEDuration_GC");
 }

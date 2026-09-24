@@ -4,10 +4,14 @@ Every UBiomeDependentMaterialCollection asset in the game, 1 of them, generated 
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UBiomeDependentMaterialCollection::Game::GameElements::GameEvents::TunnelEvent::MonsterSpawnerMaterialCollection
 points at /Game/GameElements/GameEvents/TunnelEvent/MonsterSpawnerMaterialCollection.
+UeAssets::UBiomeDependentMaterialCollection::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UBiomeDependentMaterialCollection {
+UE_ASSET_ALL(::UBiomeDependentMaterialCollection);
+}
 namespace UeAssets::UBiomeDependentMaterialCollection::Game::GameElements::GameEvents::TunnelEvent {
 UE_ASSET_AT(::UBiomeDependentMaterialCollection, MonsterSpawnerMaterialCollection, "/Game/GameElements/GameEvents/TunnelEvent/MonsterSpawnerMaterialCollection");
 }

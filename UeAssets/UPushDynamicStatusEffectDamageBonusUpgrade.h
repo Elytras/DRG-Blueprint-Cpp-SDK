@@ -4,10 +4,14 @@ Every UPushDynamicStatusEffectDamageBonusUpgrade asset in the game, 5 of them, g
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UPushDynamicStatusEffectDamageBonusUpgrade::Game::WeaponsNTools::GooCannon::Overclocks::OC_BonusesAndPenalties::Bonus_PoisonDamageSmall_GooCannon
 points at /Game/WeaponsNTools/GooCannon/Overclocks/OC_BonusesAndPenalties/Bonus_PoisonDamageSmall_GooCannon.
+UeAssets::UPushDynamicStatusEffectDamageBonusUpgrade::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UPushDynamicStatusEffectDamageBonusUpgrade {
+UE_ASSET_ALL(::UPushDynamicStatusEffectDamageBonusUpgrade);
+}
 namespace UeAssets::UPushDynamicStatusEffectDamageBonusUpgrade::Game::WeaponsNTools::GooCannon::Overclocks::OC_BonusesAndPenalties {
 UE_ASSET_AT(::UPushDynamicStatusEffectDamageBonusUpgrade, Bonus_PoisonDamageSmall_GooCannon, "/Game/WeaponsNTools/GooCannon/Overclocks/OC_BonusesAndPenalties/Bonus_PoisonDamageSmall_GooCannon");
 UE_ASSET_AT(::UPushDynamicStatusEffectDamageBonusUpgrade, Bonus_SlowdownSmall_GooCannon, "/Game/WeaponsNTools/GooCannon/Overclocks/OC_BonusesAndPenalties/Bonus_SlowdownSmall_GooCannon");

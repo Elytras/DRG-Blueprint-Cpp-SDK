@@ -75,11 +75,13 @@ template <class T> struct TSubclassOf {
   operator UClass *() const { return Ptr; }
 };
 
+/* A soft pointer to a subclass passes where one to its parent is wanted, as UE's converts. */
 template <class T> struct TSoftObjectPtr {
   WChar *Path;
   TSoftObjectPtr() = default;
   TSoftObjectPtr(const char *) {}
   TSoftObjectPtr(const WChar *) {}
+  template <class U> TSoftObjectPtr(const TSoftObjectPtr<U> &) {}
 };
 
 template <class T> struct TSoftClassPtr {
@@ -87,6 +89,7 @@ template <class T> struct TSoftClassPtr {
   TSoftClassPtr() = default;
   TSoftClassPtr(const char *) {}
   TSoftClassPtr(const WChar *) {}
+  template <class U> TSoftClassPtr(const TSoftClassPtr<U> &) {}
 };
 
 template <class T, class U> T *Cast(U *) { return nullptr; }

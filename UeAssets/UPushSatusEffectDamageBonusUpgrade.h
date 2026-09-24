@@ -4,10 +4,14 @@ Every UPushSatusEffectDamageBonusUpgrade asset in the game, 18 of them, generate
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UPushSatusEffectDamageBonusUpgrade::Game::GameElements::Drone::Upgrades::UPG_Bosco_ElectricDamage
 points at /Game/GameElements/Drone/Upgrades/UPG_Bosco_ElectricDamage.
+UeAssets::UPushSatusEffectDamageBonusUpgrade::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UPushSatusEffectDamageBonusUpgrade {
+UE_ASSET_ALL(::UPushSatusEffectDamageBonusUpgrade);
+}
 namespace UeAssets::UPushSatusEffectDamageBonusUpgrade::Game::GameElements::Drone::Upgrades {
 UE_ASSET_AT(::UPushSatusEffectDamageBonusUpgrade, UPG_Bosco_ElectricDamage, "/Game/GameElements/Drone/Upgrades/UPG_Bosco_ElectricDamage");
 }

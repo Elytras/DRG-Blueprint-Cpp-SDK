@@ -4,10 +4,14 @@ Every UForceStationaryEncounterMutator asset in the game, 2 of them, generated b
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UForceStationaryEncounterMutator::Game::GameElements::Missions::Warnings::CaveLeechDen::MUT_CaveLeechStationaryEncounter
 points at /Game/GameElements/Missions/Warnings/CaveLeechDen/MUT_CaveLeechStationaryEncounter.
+UeAssets::UForceStationaryEncounterMutator::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UForceStationaryEncounterMutator {
+UE_ASSET_ALL(::UForceStationaryEncounterMutator);
+}
 namespace UeAssets::UForceStationaryEncounterMutator::Game::GameElements::Missions::Warnings::CaveLeechDen {
 UE_ASSET_AT(::UForceStationaryEncounterMutator, MUT_CaveLeechStationaryEncounter, "/Game/GameElements/Missions/Warnings/CaveLeechDen/MUT_CaveLeechStationaryEncounter");
 }

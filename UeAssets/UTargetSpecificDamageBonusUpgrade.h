@@ -4,10 +4,14 @@ Every UTargetSpecificDamageBonusUpgrade asset in the game, 2 of them, generated 
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UTargetSpecificDamageBonusUpgrade::Game::WeaponsNTools::Pistol::RFND_S03::UPG_Pistol_E_DamageVsMactera
 points at /Game/WeaponsNTools/Pistol/RFND_S03/UPG_Pistol_E_DamageVsMactera.
+UeAssets::UTargetSpecificDamageBonusUpgrade::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UTargetSpecificDamageBonusUpgrade {
+UE_ASSET_ALL(::UTargetSpecificDamageBonusUpgrade);
+}
 namespace UeAssets::UTargetSpecificDamageBonusUpgrade::Game::WeaponsNTools::Pistol::RFND_S03 {
 UE_ASSET_AT(::UTargetSpecificDamageBonusUpgrade, UPG_Pistol_E_DamageVsMactera, "/Game/WeaponsNTools/Pistol/RFND_S03/UPG_Pistol_E_DamageVsMactera");
 }

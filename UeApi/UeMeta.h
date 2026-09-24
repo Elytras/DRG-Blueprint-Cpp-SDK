@@ -60,6 +60,15 @@ variable with braces, `UMoodDef MD_Big = { .Health = 500 };`, and `&MD_Big` poin
   static constexpr const char *Name##__UeAsset = Path
 
 /*
+`All`: every UE_ASSET_AT in this namespace and the ones inside it whose class is Class or derives from it, as soft
+pointers, so nothing loads until asked. Each UeAssets/<Class>.h declares one, `UeAssets::USoundWave::All`. Like any
+namespace-scope variable a mod uses, it is kept in the default object of a class the compiler generates for it.
+*/
+#define UE_ASSET_ALL(Class)                                                                                            \
+  extern TArray<TSoftObjectPtr<Class>> All;                                                                            \
+  static constexpr bool                All__UeAssetAll = true
+
+/*
 An interface a mod declares, cooked as its own asset:
     class ITargetable {
       UE_INTERFACE;

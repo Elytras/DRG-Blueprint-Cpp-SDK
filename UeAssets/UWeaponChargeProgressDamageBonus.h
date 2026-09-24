@@ -4,10 +4,14 @@ Every UWeaponChargeProgressDamageBonus asset in the game, 1 of them, generated b
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UWeaponChargeProgressDamageBonus::Game::WeaponsNTools::MicroMissileLauncher::Overclocks::OCBonusesAndPenalties::Bonus_ChargeDamage_MML
 points at /Game/WeaponsNTools/MicroMissileLauncher/Overclocks/OCBonusesAndPenalties/Bonus_ChargeDamage_MML.
+UeAssets::UWeaponChargeProgressDamageBonus::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UWeaponChargeProgressDamageBonus {
+UE_ASSET_ALL(::UWeaponChargeProgressDamageBonus);
+}
 namespace UeAssets::UWeaponChargeProgressDamageBonus::Game::WeaponsNTools::MicroMissileLauncher::Overclocks::OCBonusesAndPenalties {
 UE_ASSET_AT(::UWeaponChargeProgressDamageBonus, Bonus_ChargeDamage_MML, "/Game/WeaponsNTools/MicroMissileLauncher/Overclocks/OCBonusesAndPenalties/Bonus_ChargeDamage_MML");
 }

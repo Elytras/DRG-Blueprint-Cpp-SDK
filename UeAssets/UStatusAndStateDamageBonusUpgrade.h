@@ -4,10 +4,14 @@ Every UStatusAndStateDamageBonusUpgrade asset in the game, 2 of them, generated 
 AssetRegistry.bin. Do not edit. Each is named by its content path:
     &UeAssets::UStatusAndStateDamageBonusUpgrade::Game::WeaponsNTools::AssaultRifle::Overclocks::OC_BonusesAndPenalties::OC_Bonus_DamageVsStatusAndState_GK2
 points at /Game/WeaponsNTools/AssaultRifle/Overclocks/OC_BonusesAndPenalties/OC_Bonus_DamageVsStatusAndState_GK2.
+UeAssets::UStatusAndStateDamageBonusUpgrade::All is every one of them, as soft pointers.
 */
 #include "../UeApi/UeMeta.h"
 #include "../UeApi/FSD.h"
 
+namespace UeAssets::UStatusAndStateDamageBonusUpgrade {
+UE_ASSET_ALL(::UStatusAndStateDamageBonusUpgrade);
+}
 namespace UeAssets::UStatusAndStateDamageBonusUpgrade::Game::WeaponsNTools::AssaultRifle::Overclocks::OC_BonusesAndPenalties {
 UE_ASSET_AT(::UStatusAndStateDamageBonusUpgrade, OC_Bonus_DamageVsStatusAndState_GK2, "/Game/WeaponsNTools/AssaultRifle/Overclocks/OC_BonusesAndPenalties/OC_Bonus_DamageVsStatusAndState_GK2");
 }

@@ -51,7 +51,8 @@ template <class E> __EnumMapInit__<E> __EnumMap__() { return {}; }
 /*
 An asset some other package holds, a game one or another mod's, named so `&ED_Spider_Grunt` can point at it:
 `UE_ASSET_AT(UEnemyDescriptor, ED_Spider_Grunt, "/Game/Enemies/Spider/Grunt/ED_Spider_Grunt");`. The asset's
-object name is the path's last segment. An asset this mod cooks needs none of this: it is a namespace-scope
+object name is the path's last segment, unless the path spells it: "/Game/Dir/Package.Object". It may sit in a
+namespace, as every one in UeAssets/ does. An asset this mod cooks needs none of this: it is a namespace-scope
 variable with braces, `UMoodDef MD_Big = { .Health = 500 };`, and `&MD_Big` points at it.
 */
 #define UE_ASSET_AT(Class, Name, Path)                                                                                 \

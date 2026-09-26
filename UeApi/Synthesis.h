@@ -844,7 +844,7 @@ public:
     UE_CLASS("/Script/Synthesis", "SourceEffectEnvelopeFollowerPreset");
     FSourceEffectEnvelopeFollowerSettings Settings;
     void RegisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* EnvelopeFollowerListener);
-    void SetSettings(FSourceEffectEnvelopeFollowerSettings InSettings);
+    void SetSettings(const FSourceEffectEnvelopeFollowerSettings& InSettings);
     void UnregisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* EnvelopeFollowerListener);
 };
 
@@ -852,7 +852,7 @@ class UModularSynthLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Synthesis", "ModularSynthLibrary");
-    static void AddModularSynthPresetToBankAsset(class UModularSynthPresetBank* InBank, FModularSynthPreset Preset, FString PresetName);
+    static void AddModularSynthPresetToBankAsset(class UModularSynthPresetBank* InBank, const FModularSynthPreset& Preset, FString PresetName);
 };
 
 class UModularSynthComponent : public USynthComponent
@@ -860,7 +860,7 @@ class UModularSynthComponent : public USynthComponent
 public:
     UE_CLASS("/Script/Synthesis", "ModularSynthComponent");
     int VoiceCount;
-    FPatchId CreatePatch(ESynth1PatchSource PatchSource, TArray<FSynth1PatchCable> PatchCables, bool bEnableByDefault);
+    FPatchId CreatePatch(ESynth1PatchSource PatchSource, const TArray<FSynth1PatchCable>& PatchCables, bool bEnableByDefault);
     void NoteOff(float Note, bool bAllNotesOff, bool bKillAllNotes);
     void NoteOn(float Note, int Velocity, float Duration);
     void SetAttackTime(float AttackTimeMsec);
@@ -918,7 +918,7 @@ public:
     void SetStereoDelayTime(float DelayTimeMsec);
     void SetStereoDelayWetlevel(float DelayWetlevel);
     void SetSustainGain(float SustainGain);
-    void SetSynthPreset(FModularSynthPreset SynthPreset);
+    void SetSynthPreset(const FModularSynthPreset& SynthPreset);
 };
 
 class USourceEffectBitCrusherPreset : public USoundEffectSourcePreset
@@ -928,10 +928,10 @@ public:
     FSourceEffectBitCrusherSettings Settings;
     void SetBitModulator(class USoundModulatorBase* Modulator);
     void SetBits(float Bits);
-    void SetModulationSettings(FSourceEffectBitCrusherSettings ModulationSettings);
+    void SetModulationSettings(const FSourceEffectBitCrusherSettings& ModulationSettings);
     void SetSampleRate(float SampleRate);
     void SetSampleRateModulator(class USoundModulatorBase* Modulator);
-    void SetSettings(FSourceEffectBitCrusherBaseSettings Settings_0);
+    void SetSettings(const FSourceEffectBitCrusherBaseSettings& Settings_0);
 };
 
 class USourceEffectChorusPreset : public USoundEffectSourcePreset
@@ -947,8 +947,8 @@ public:
     void SetFeedbackModulator(class USoundModulatorBase* Modulator);
     void SetFrequency(float Frequency);
     void SetFrequencyModulator(class USoundModulatorBase* Modulator);
-    void SetModulationSettings(FSourceEffectChorusSettings ModulationSettings);
-    void SetSettings(FSourceEffectChorusBaseSettings Settings_0);
+    void SetModulationSettings(const FSourceEffectChorusSettings& ModulationSettings);
+    void SetSettings(const FSourceEffectChorusBaseSettings& Settings_0);
     void SetSpread(float Spread);
     void SetSpreadModulator(class USoundModulatorBase* Modulator);
     void SetWet(float WetAmount);
@@ -960,7 +960,7 @@ class USourceEffectDynamicsProcessorPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectDynamicsProcessorPreset");
     FSourceEffectDynamicsProcessorSettings Settings;
-    void SetSettings(FSourceEffectDynamicsProcessorSettings InSettings);
+    void SetSettings(const FSourceEffectDynamicsProcessorSettings& InSettings);
 };
 
 class USourceEffectEQPreset : public USoundEffectSourcePreset
@@ -968,7 +968,7 @@ class USourceEffectEQPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectEQPreset");
     FSourceEffectEQSettings Settings;
-    void SetSettings(FSourceEffectEQSettings InSettings);
+    void SetSettings(const FSourceEffectEQSettings& InSettings);
 };
 
 class USourceEffectFilterPreset : public USoundEffectSourcePreset
@@ -976,7 +976,7 @@ class USourceEffectFilterPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectFilterPreset");
     FSourceEffectFilterSettings Settings;
-    void SetSettings(FSourceEffectFilterSettings InSettings);
+    void SetSettings(const FSourceEffectFilterSettings& InSettings);
 };
 
 class USourceEffectFoldbackDistortionPreset : public USoundEffectSourcePreset
@@ -984,7 +984,7 @@ class USourceEffectFoldbackDistortionPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectFoldbackDistortionPreset");
     FSourceEffectFoldbackDistortionSettings Settings;
-    void SetSettings(FSourceEffectFoldbackDistortionSettings InSettings);
+    void SetSettings(const FSourceEffectFoldbackDistortionSettings& InSettings);
 };
 
 class USourceEffectMidSideSpreaderPreset : public USoundEffectSourcePreset
@@ -992,7 +992,7 @@ class USourceEffectMidSideSpreaderPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectMidSideSpreaderPreset");
     FSourceEffectMidSideSpreaderSettings Settings;
-    void SetSettings(FSourceEffectMidSideSpreaderSettings InSettings);
+    void SetSettings(const FSourceEffectMidSideSpreaderSettings& InSettings);
 };
 
 class USourceEffectPannerPreset : public USoundEffectSourcePreset
@@ -1000,7 +1000,7 @@ class USourceEffectPannerPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectPannerPreset");
     FSourceEffectPannerSettings Settings;
-    void SetSettings(FSourceEffectPannerSettings InSettings);
+    void SetSettings(const FSourceEffectPannerSettings& InSettings);
 };
 
 class USourceEffectPhaserPreset : public USoundEffectSourcePreset
@@ -1008,7 +1008,7 @@ class USourceEffectPhaserPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectPhaserPreset");
     FSourceEffectPhaserSettings Settings;
-    void SetSettings(FSourceEffectPhaserSettings InSettings);
+    void SetSettings(const FSourceEffectPhaserSettings& InSettings);
 };
 
 class USourceEffectRingModulationPreset : public USoundEffectSourcePreset
@@ -1016,7 +1016,7 @@ class USourceEffectRingModulationPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectRingModulationPreset");
     FSourceEffectRingModulationSettings Settings;
-    void SetSettings(FSourceEffectRingModulationSettings InSettings);
+    void SetSettings(const FSourceEffectRingModulationSettings& InSettings);
 };
 
 class USourceEffectSimpleDelayPreset : public USoundEffectSourcePreset
@@ -1024,7 +1024,7 @@ class USourceEffectSimpleDelayPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectSimpleDelayPreset");
     FSourceEffectSimpleDelaySettings Settings;
-    void SetSettings(FSourceEffectSimpleDelaySettings InSettings);
+    void SetSettings(const FSourceEffectSimpleDelaySettings& InSettings);
 };
 
 class USourceEffectStereoDelayPreset : public USoundEffectSourcePreset
@@ -1032,7 +1032,7 @@ class USourceEffectStereoDelayPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectStereoDelayPreset");
     FSourceEffectStereoDelaySettings Settings;
-    void SetSettings(FSourceEffectStereoDelaySettings InSettings);
+    void SetSettings(const FSourceEffectStereoDelaySettings& InSettings);
 };
 
 class USourceEffectWaveShaperPreset : public USoundEffectSourcePreset
@@ -1040,7 +1040,7 @@ class USourceEffectWaveShaperPreset : public USoundEffectSourcePreset
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectWaveShaperPreset");
     FSourceEffectWaveShaperSettings Settings;
-    void SetSettings(FSourceEffectWaveShaperSettings InSettings);
+    void SetSettings(const FSourceEffectWaveShaperSettings& InSettings);
 };
 
 class UAudioImpulseResponse : public UObject
@@ -1064,7 +1064,7 @@ public:
     ESubmixEffectConvolutionReverbBlockSize BlockSize;
     bool bEnableHardwareAcceleration;
     void SetImpulseResponse(class UAudioImpulseResponse* InImpulseResponse);
-    void SetSettings(FSubmixEffectConvolutionReverbSettings InSettings);
+    void SetSettings(const FSubmixEffectConvolutionReverbSettings& InSettings);
 };
 
 class USubmixEffectDelayPreset : public USoundEffectSubmixPreset
@@ -1076,7 +1076,7 @@ public:
     float GetMaxDelayInMilliseconds();
     void SetDelay(float Length);
     void SetInterpolationTime(float Time);
-    void SetSettings(FSubmixEffectDelaySettings InSettings);
+    void SetSettings(const FSubmixEffectDelaySettings& InSettings);
 };
 
 class USubmixEffectFilterPreset : public USoundEffectSubmixPreset
@@ -1090,7 +1090,7 @@ public:
     void SetFilterQ(float InQ);
     void SetFilterQMod(float InQ);
     void SetFilterType(ESubmixFilterType InType);
-    void SetSettings(FSubmixEffectFilterSettings InSettings);
+    void SetSettings(const FSubmixEffectFilterSettings& InSettings);
 };
 
 class USubmixEffectFlexiverbPreset : public USoundEffectSubmixPreset
@@ -1098,7 +1098,7 @@ class USubmixEffectFlexiverbPreset : public USoundEffectSubmixPreset
 public:
     UE_CLASS("/Script/Synthesis", "SubmixEffectFlexiverbPreset");
     FSubmixEffectFlexiverbSettings Settings;
-    void SetSettings(FSubmixEffectFlexiverbSettings InSettings);
+    void SetSettings(const FSubmixEffectFlexiverbSettings& InSettings);
 };
 
 class USubmixEffectMultibandCompressorPreset : public USoundEffectSubmixPreset
@@ -1106,7 +1106,7 @@ class USubmixEffectMultibandCompressorPreset : public USoundEffectSubmixPreset
 public:
     UE_CLASS("/Script/Synthesis", "SubmixEffectMultibandCompressorPreset");
     FSubmixEffectMultibandCompressorSettings Settings;
-    void SetSettings(FSubmixEffectMultibandCompressorSettings InSettings);
+    void SetSettings(const FSubmixEffectMultibandCompressorSettings& InSettings);
 };
 
 class USubmixEffectStereoDelayPreset : public USoundEffectSubmixPreset
@@ -1114,7 +1114,7 @@ class USubmixEffectStereoDelayPreset : public USoundEffectSubmixPreset
 public:
     UE_CLASS("/Script/Synthesis", "SubmixEffectStereoDelayPreset");
     FSubmixEffectStereoDelaySettings Settings;
-    void SetSettings(FSubmixEffectStereoDelaySettings InSettings);
+    void SetSettings(const FSubmixEffectStereoDelaySettings& InSettings);
 };
 
 class USubmixEffectTapDelayPreset : public USoundEffectSubmixPreset
@@ -1128,8 +1128,8 @@ public:
     void GetTapIds(TArray<int>& TapIds);
     void RemoveTap(int TapId);
     void SetInterpolationTime(float Time);
-    void SetSettings(FSubmixEffectTapDelaySettings InSettings);
-    void SetTap(int TapId, FTapDelayInfo TapInfo);
+    void SetSettings(const FSubmixEffectTapDelaySettings& InSettings);
+    void SetTap(int TapId, const FTapDelayInfo& TapInfo);
 };
 
 class USynth2DSlider : public UWidget

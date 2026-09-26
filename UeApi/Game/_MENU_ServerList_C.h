@@ -226,7 +226,7 @@ public:
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetSelectedSearchDistance();
     void ShowNoServersFound(bool Visible);
-    void AddOrUpdateEntry(FBlueprintSessionResult Result, FString& OutServerID, ITM_ServerList_Entry_C*& OutWidget);
+    void AddOrUpdateEntry(const FBlueprintSessionResult& Result, FString& OutServerID, ITM_ServerList_Entry_C*& OutWidget);
     ITM_ServerList_Entry_C* GetCachedEntry();
     void CacheUnusedEntries();
     void SetSearchDistance(ESteamSearchRegion Distance);

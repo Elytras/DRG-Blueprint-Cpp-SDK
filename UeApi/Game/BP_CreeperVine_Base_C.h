@@ -64,11 +64,11 @@ public:
     void ReceivePrepareSpline(class USplineComponent* InSplineComponent, int InSeed);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void ReceiveBeginPlay();
     void OnRep_IsRetracted();
     void PrepareSpline(class USplineComponent* InSplineComponent, int InSeed);
-    void HandleActorHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
+    void HandleActorHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     void HandleActorOverlap(class AActor* OverlappedActor, class AActor* OtherActor);
 };
 

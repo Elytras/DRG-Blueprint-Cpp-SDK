@@ -46,7 +46,7 @@ public:
     float LastBiggestVelocityLength;
     bool CanPlay;
     void ExecuteUbergraph_BP_Xmas_CandyCane(int EntryPoint);
-    void BndEvt__BP_Xmas_CandyCane_SkeletalMesh_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_Xmas_CandyCane_SkeletalMesh_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveTick(float DeltaSeconds);
     void OnWiggle(float Strength);
     UE_MULTICAST void All_AddForce(FVector Position, float ForceScale);

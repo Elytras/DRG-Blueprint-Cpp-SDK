@@ -49,7 +49,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__BTN_No_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__BTN_Yes_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void OnShow(FText Title, FText Message);
+    void OnShow(const FText& Title, const FText& Message);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 

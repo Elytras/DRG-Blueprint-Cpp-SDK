@@ -61,11 +61,11 @@ public:
     TSet<class AActor*> SmallShitsHitArray;
     void ExecuteUbergraph_PRJ_GrenadeAxe(int EntryPoint);
     void OnInitialized();
-    void BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     static constexpr const char* BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature__UeName = "BndEvt__KillSmallShits Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature";
     void BluntDamage();
-    void Discharge(class AActor* hitActor_0, class UPrimitiveComponent* HitComponent_0, FVector HitLocation_0, class UFSDPhysicalMaterial* HitPhysMat_0);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void Discharge(class AActor* hitActor_0, class UPrimitiveComponent* HitComponent_0, const FVector& HitLocation_0, class UFSDPhysicalMaterial* HitPhysMat_0);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe

@@ -246,11 +246,11 @@ public:
     void RemoveChaosSolverActor(class AChaosSolverActor* ChaosSolverActor);
     void RemoveGeometryCollectionActor(class AGeometryCollectionActor* GeometryCollectionActor);
     void SetBreakingEventEnabled(bool bIsEnabled);
-    void SetBreakingEventRequestSettings(FChaosBreakingEventRequestSettings InSettings);
+    void SetBreakingEventRequestSettings(const FChaosBreakingEventRequestSettings& InSettings);
     void SetCollisionEventEnabled(bool bIsEnabled);
-    void SetCollisionEventRequestSettings(FChaosCollisionEventRequestSettings InSettings);
+    void SetCollisionEventRequestSettings(const FChaosCollisionEventRequestSettings& InSettings);
     void SetTrailingEventEnabled(bool bIsEnabled);
-    void SetTrailingEventRequestSettings(FChaosTrailingEventRequestSettings InSettings);
+    void SetTrailingEventRequestSettings(const FChaosTrailingEventRequestSettings& InSettings);
     void SortBreakingEvents(TArray<FChaosBreakingEventData>& BreakingEvents, EChaosBreakingSortMethod SortMethod);
     void SortCollisionEvents(TArray<FChaosCollisionEventData>& CollisionEvents, EChaosCollisionSortMethod SortMethod);
     void SortTrailingEvents(TArray<FChaosTrailingEventData>& TrailingEvents, EChaosTrailingSortMethod SortMethod);
@@ -318,8 +318,8 @@ public:
     void ApplyKinematicField(float Radius, FVector Position);
     void ApplyPhysicsField(bool Enabled, EGeometryCollectionPhysicsTypeEnum Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
     UE_MULTICAST UE_RELIABLE void NetAbandonCluster(int TransformIndex);
-    void OnRep_RepData(FGeometryCollectionRepData OldData);
-    void ReceivePhysicsCollision(FChaosPhysicsCollisionInfo CollisionInfo);
+    void OnRep_RepData(const FGeometryCollectionRepData& OldData);
+    void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
     void SetNotifyBreaks(bool bNewNotifyBreaks);
 };
 
@@ -467,7 +467,7 @@ public:
     FVector InitialLinearVelocity;
     FVector InitialAngularVelocity;
     TMulticastInlineDelegate<void(FChaosPhysicsCollisionInfo CollisionInfo)> OnChaosPhysicsCollision;
-    void ReceivePhysicsCollision(FChaosPhysicsCollisionInfo CollisionInfo);
+    void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
 };
 
 class UStaticMeshSimulationComponent : public UActorComponent
@@ -491,5 +491,5 @@ public:
     TMulticastInlineDelegate<void(FChaosPhysicsCollisionInfo CollisionInfo)> OnChaosPhysicsCollision;
     TArray<class UPrimitiveComponent*> SimulatedComponents;
     void ForceRecreatePhysicsState();
-    void ReceivePhysicsCollision(FChaosPhysicsCollisionInfo CollisionInfo);
+    void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
 };

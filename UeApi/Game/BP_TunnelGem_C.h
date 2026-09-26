@@ -31,7 +31,7 @@ public:
     FVector CachedScale;
     void ExecuteUbergraph_BP_TunnelGem(int EntryPoint);
     void OnAdjustDroppedScale();
-    void BndEvt__BP_TunnelGem_Box_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_TunnelGem_Box_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__BP_TunnelGem_Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void OnGemReleased();
     void OnAdjustRemoteCarryLocation();

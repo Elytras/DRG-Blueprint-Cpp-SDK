@@ -84,8 +84,8 @@ public:
     void OnHackingChanged(bool IsHacking_0);
     void OnHackingComplete();
     void Cheat_CallOverCharger();
-    void BndEvt__Tether_K2Node_ComponentBoundEvent_3_TeherMessage_Delegate__DelegateSignature(FName Message);
-    void BndEvt__DiscoverSphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__Tether_K2Node_ComponentBoundEvent_3_TeherMessage_Delegate__DelegateSignature(const FName& Message);
+    void BndEvt__DiscoverSphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
     void BndEvt__Tether_K2Node_ComponentBoundEvent_0_TetherPowerChanged_Delegate__DelegateSignature(bool hasPower);
     void ReceiveBeginPlay();

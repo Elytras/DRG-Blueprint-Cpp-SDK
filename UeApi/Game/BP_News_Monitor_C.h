@@ -28,7 +28,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     void ExecuteUbergraph_BP_News_Monitor(int EntryPoint);
-    void BndEvt__BP_News_Monitor_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_News_Monitor_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

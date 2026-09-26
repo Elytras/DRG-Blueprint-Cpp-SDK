@@ -23,9 +23,9 @@ public:
     void ExecuteUbergraph_ITM_DragRotateCharacterShowroom(int EntryPoint);
     void OnShowCharacterSelectorRotate(float Pitch, float Yaw);
     UE_COSMETIC void Construct();
-    UE_COSMETIC FEventReply OnMouseMove(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseMove(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

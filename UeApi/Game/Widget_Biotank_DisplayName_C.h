@@ -31,7 +31,7 @@ public:
     class UImage* Image_1;
     class ADisplayCase* DisplayCase;
     void ExecuteUbergraph_Widget_Biotank_DisplayName(int EntryPoint);
-    void ContentUpdated(FDisplayContent Content);
+    void ContentUpdated(const FDisplayContent& Content);
     void SetCase(class ADisplayCase* Case);
 };
 

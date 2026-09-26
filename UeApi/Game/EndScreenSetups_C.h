@@ -21,7 +21,7 @@ public:
     FRandomStream RandStream;
     void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
     void ResetMovesets(int NewSeed);
-    void SplitMoveSetAnims(TArray<TSoftObjectPtr<class UAnimSequence>> TargetArray, class UAnimSequence*& Selected1, TArray<TSoftObjectPtr<class UAnimSequence>>& Rest1);
+    void SplitMoveSetAnims(const TArray<TSoftObjectPtr<class UAnimSequence>>& TargetArray, class UAnimSequence*& Selected1, TArray<TSoftObjectPtr<class UAnimSequence>>& Rest1);
     void LoadAnimSeq(TSoftObjectPtr<class UAnimSequence> Soft, class UAnimSequence*& Hard);
     void LoadAnimSeqArray(TArray<TSoftObjectPtr<class UAnimSequence>>& Soft, TArray<class UAnimSequence*>& Hard);
     void LoadActorClass(TSoftClassPtr<class UClass> Soft, class UClass*& Hard);

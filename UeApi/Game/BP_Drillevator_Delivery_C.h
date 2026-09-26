@@ -129,7 +129,7 @@ public:
     TArray<class UParticleSystemComponent*> FoldParticles;
     TArray<class APlayerCharacter*> DeadPlayers;
     void ExecuteUbergraph_BP_Drillevator_Delivery(int EntryPoint);
-    void BndEvt__KillSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__KillSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void StopFoldParticles();
     void PlayShellFold();
     void OnDroppodImpact();

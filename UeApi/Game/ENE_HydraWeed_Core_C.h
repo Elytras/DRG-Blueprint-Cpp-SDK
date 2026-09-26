@@ -116,13 +116,13 @@ public:
     float StopFightingDistance;
     float ResumeFightingDistance;
     void ExecuteUbergraph_ENE_HydraWeed_Core(int EntryPoint);
-    void BndEvt__Health_K2Node_ComponentBoundEvent_4_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__Health_K2Node_ComponentBoundEvent_4_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_HealthSegmentChange__DelegateSignature(int currSegment, int prevSegment);
     void ResumeFight();
     void SetSightRangeOfAllShooters(bool BePassive);
     void CheckDistanceToPlayers();
     void WakeUp();
-    void BndEvt__WakeUpTrigger_K2Node_ComponentBoundEvent_3_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__WakeUpTrigger_K2Node_ComponentBoundEvent_3_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnLaunchHealerSeed();
     void AddHealerSeedToLaunch(FVector Location, class UClass* ProjectileClass);
     void CheckStayOpenDamage();

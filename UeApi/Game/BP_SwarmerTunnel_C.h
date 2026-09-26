@@ -141,7 +141,7 @@ public:
     TArray<class USceneComponent*> ExitCarvers;
     void ExecuteUbergraph_BP_SwarmerTunnel(int EntryPoint);
     UE_MULTICAST void PlayCreepySound();
-    void BndEvt__TriggerSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__TriggerSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ChainReaction();
     void TriggerNeighbours();
     void ReceiveBeginPlay();

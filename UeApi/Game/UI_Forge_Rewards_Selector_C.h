@@ -47,7 +47,7 @@ public:
     UE_COSMETIC void Construct();
     void Begin_Pick_Reward(int InLevel, int InSeed);
     static constexpr const char* Begin_Pick_Reward__UeName = "Begin Pick Reward";
-    void PopRandomReward(TMap<class UPlayerCharacterID*, class USchematic*> Rewards, FRandomStream Random, class UPlayerCharacterID*& OutCharacter, class USchematic*& OutReward);
+    void PopRandomReward(const TMap<class UPlayerCharacterID*, class USchematic*>& Rewards, FRandomStream Random, class UPlayerCharacterID*& OutCharacter, class USchematic*& OutReward);
     void EndPickReward(class USchematic* InReward);
     void Reset();
 };

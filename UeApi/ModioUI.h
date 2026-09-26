@@ -663,7 +663,7 @@ public:
     class UModioRichTextBlock* ModStatusLabel;
     FModioUIStyleRef EntryStyle;
     class UBorder* EntryBorder;
-    FEventReply OnEntryPressed(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    FEventReply OnEntryPressed(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OnUnsubClicked();
 };
 
@@ -726,7 +726,7 @@ class UModioNotificationWidgetBase : public UModioUserWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioNotificationWidgetBase");
     FModioUIStyleRef NotificationStyle;
-    static class UWidget* CreateFromParams(TSubclassOf<class UWidget> NotificationClass, FModioNotificationParams Params_0, class UWidget* Outer_0);
+    static class UWidget* CreateFromParams(TSubclassOf<class UWidget> NotificationClass, const FModioNotificationParams& Params_0, class UWidget* Outer_0);
 };
 
 class UModioNotificationErrorWidgetBase : public UModioNotificationWidgetBase
@@ -1054,7 +1054,7 @@ public:
     float TruncateDivider;
     void NativeMoreOptionsClicked();
     void NativeReportClicked();
-    FEventReply OnThumbnailMouseDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    FEventReply OnThumbnailMouseDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetSizeOverride(FVector2D NewSize);
     void SubmitModReport();
     void SubmitNegativeRating();
@@ -1288,12 +1288,12 @@ public:
     void HandleOnCursorVisibilityChanged(bool bNewVisibility);
     void HandleOnErrorCodeReceived(FModioErrorCode ec);
     void HandleOnMenuAction(EMenuAction Action, class UObject* OptionalData);
-    void HandleOnModIDReceived(FModioModID ID);
+    void HandleOnModIDReceived(const FModioModID& ID);
     bool HandleSearchResultParamsReceived(FModioFilterParams Params_0);
     void OnCursorVisibilityChanged(bool bNewVisibility);
     void OnErrorCodeReceived(FModioErrorCode ec);
     void OnMenuAction(EMenuAction Action, class UObject* OptionalData);
-    void OnModIDReceived(FModioModID ID);
+    void OnModIDReceived(const FModioModID& ID);
     bool OnSearchResultParamsReceived(FModioFilterParams Params_0);
 };
 
@@ -1390,7 +1390,7 @@ class IModioUIDialogButtonWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIDialogButtonWidget");
     void SetDialogController(class UModioDialogController* Controller);
-    void SetStyle(FModioDialogStyle Style);
+    void SetStyle(const FModioDialogStyle& Style);
 };
 
 class UModioOverlay : public UOverlay
@@ -1411,9 +1411,9 @@ class IModioUIErrorDisplayWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIErrorDisplayWidget");
-    void DisplayError(FModioErrorCode ec);
+    void DisplayError(const FModioErrorCode& ec);
     void SetErrorString(FString InErrorString);
-    void SetErrorText(FText InErrorText);
+    void SetErrorText(const FText& InErrorText);
     UE_PURE bool IsErrorSet() const;
 };
 
@@ -1421,7 +1421,7 @@ class IModioUIImageDisplay
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIImageDisplay");
-    void DisplayImage(FSlateBrush Image);
+    void DisplayImage(const FSlateBrush& Image);
 };
 
 class IModioUIInputDeviceChangedReceiver
@@ -1451,9 +1451,9 @@ class IModioUIModDetailsDisplay
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIModDetailsDisplay");
     void DisplayModDetails(TScriptInterface<class IModioModInfoUIDetails> details);
-    void DisplayModDetailsForID(FModioModID ModId);
+    void DisplayModDetailsForID(const FModioModID& ModId);
     void HandleDisplayModDetails(TScriptInterface<class IModioModInfoUIDetails>& details);
-    void HandleDisplayModDetailsForID(FModioModID ModId);
+    void HandleDisplayModDetailsForID(const FModioModID& ModId);
     void RegisterUserWidget(TScriptInterface<class IModioUIModDetailsDisplay> DisplayWidget);
 };
 
@@ -1461,9 +1461,9 @@ class IModioUIPopupMenuContentWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIPopupMenuContentWidget");
-    void SetDesiredSize(FVector2D DesiredSize);
-    void SetMenuEntries(FModioUIMenuCommandList Entries);
-    void SetStyle(FModioUIStyleRef StyleRef);
+    void SetDesiredSize(const FVector2D& DesiredSize);
+    void SetMenuEntries(const FModioUIMenuCommandList& Entries);
+    void SetStyle(const FModioUIStyleRef& StyleRef);
 };
 
 class IModioUIRefineSearchWidget
@@ -1472,7 +1472,7 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioUIRefineSearchWidget");
     FString GetSearchString();
     TArray<FString> GetSelectedTagValues();
-    void NotifySettingsChanged(FModioFilterParams SearchSettings);
+    void NotifySettingsChanged(const FModioFilterParams& SearchSettings);
     void RefreshTags();
 };
 
@@ -1481,7 +1481,7 @@ class IModioUIStringInputWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIStringInputWidget");
     FString GatherInput();
-    void SetHint(FText HintText);
+    void SetHint(const FText& HintText);
     void SetInput(FString Input);
 };
 
@@ -1495,14 +1495,14 @@ class UModioUIInputValidationLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIInputValidationLibrary");
-    static bool ValidateAllLetters(FText TextToValidate);
-    static bool ValidateAllNumeric(FText TextToValidate);
-    static bool ValidateAlphanumeric(FText TextToValidate);
-    static bool ValidateEmailAddress(FText TextToValidate);
-    static bool ValidateLength(FText TextToValidate, int DesiredMaximumLength, int DesiredMinimumLength);
-    static bool ValidateNotEmpty(FText TextToValidate);
-    static bool ValidateNoWhitespace(FText TextToValidate);
-    static bool ValidateUsingRule(FModioTextValidationRule Rule, FText TextToValidate, FText& ValidationMessageText);
+    static bool ValidateAllLetters(const FText& TextToValidate);
+    static bool ValidateAllNumeric(const FText& TextToValidate);
+    static bool ValidateAlphanumeric(const FText& TextToValidate);
+    static bool ValidateEmailAddress(const FText& TextToValidate);
+    static bool ValidateLength(const FText& TextToValidate, int DesiredMaximumLength, int DesiredMinimumLength);
+    static bool ValidateNotEmpty(const FText& TextToValidate);
+    static bool ValidateNoWhitespace(const FText& TextToValidate);
+    static bool ValidateUsingRule(const FModioTextValidationRule& Rule, const FText& TextToValidate, FText& ValidationMessageText);
 };
 
 class IModioUITextValidator
@@ -1511,7 +1511,7 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioUITextValidator");
     void GetTextValidationRules(TArray<FModioTextValidationRule>& Rules);
     void SetValidationError(FText& ErrorText);
-    bool ValidateText(FText InputText, FText& ValidationMessageText);
+    bool ValidateText(const FText& InputText, FText& ValidationMessageText);
 };
 
 class IModioUIUserStringListEntry
@@ -1752,7 +1752,7 @@ public:
     TSoftObjectPtr<class UModioDialogInfo> LogoutConfirmationDialog;
     TSubclassOf<class UWidget> LoadingOverlay;
     TArray<class UModioDialogInfo*> DialogStack;
-    FEventReply HandleBackgroundClick(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    FEventReply HandleBackgroundClick(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void ShowErrorDialog(FModioErrorCode ec, bool bCloseDialogsOnOK);
 };
 

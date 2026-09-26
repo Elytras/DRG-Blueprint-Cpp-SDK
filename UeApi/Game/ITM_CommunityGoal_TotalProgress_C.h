@@ -115,7 +115,7 @@ public:
     void BndEvt__BackgroundButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__BackgroundButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     void SetGoalsTier(float TierProgress);
-    void SetGoals(TArray<FString> GoalID, TArray<float> GoalValue, TArray<int> Members);
+    void SetGoals(const TArray<FString>& GoalID, const TArray<float>& GoalValue, const TArray<int>& Members);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void ResetAnim();

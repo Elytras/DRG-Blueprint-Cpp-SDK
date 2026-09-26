@@ -79,21 +79,21 @@ public:
     UE_CLASS("/Script/TimeManagement", "TimeManagementBlueprintLibrary");
     UE_PURE static FFrameNumber Add_FrameNumberFrameNumber(FFrameNumber A, FFrameNumber B);
     UE_PURE static FFrameNumber Add_FrameNumberInteger(FFrameNumber A, int B);
-    UE_PURE static int Conv_FrameNumberToInteger(FFrameNumber InFrameNumber);
-    UE_PURE static float Conv_FrameRateToSeconds(FFrameRate InFrameRate);
-    UE_PURE static float Conv_QualifiedFrameTimeToSeconds(FQualifiedFrameTime InFrameTime);
-    UE_PURE static FString Conv_TimecodeToString(FTimecode InTimecode, bool bForceSignDisplay);
+    UE_PURE static int Conv_FrameNumberToInteger(const FFrameNumber& InFrameNumber);
+    UE_PURE static float Conv_FrameRateToSeconds(const FFrameRate& InFrameRate);
+    UE_PURE static float Conv_QualifiedFrameTimeToSeconds(const FQualifiedFrameTime& InFrameTime);
+    UE_PURE static FString Conv_TimecodeToString(const FTimecode& InTimecode, bool bForceSignDisplay);
     UE_PURE static FFrameNumber Divide_FrameNumberInteger(FFrameNumber A, int B);
     UE_PURE static FTimecode GetTimecode();
     UE_PURE static FFrameRate GetTimecodeFrameRate();
-    UE_PURE static bool IsValid_Framerate(FFrameRate InFrameRate);
-    UE_PURE static bool IsValid_MultipleOf(FFrameRate InFrameRate, FFrameRate OtherFramerate);
+    UE_PURE static bool IsValid_Framerate(const FFrameRate& InFrameRate);
+    UE_PURE static bool IsValid_MultipleOf(const FFrameRate& InFrameRate, const FFrameRate& OtherFramerate);
     UE_PURE static FFrameNumber Multiply_FrameNumberInteger(FFrameNumber A, int B);
-    UE_PURE static FFrameTime Multiply_SecondsFrameRate(float TimeInSeconds, FFrameRate FrameRate);
-    UE_PURE static FFrameTime SnapFrameTimeToRate(FFrameTime SourceTime, FFrameRate SourceRate, FFrameRate SnapToRate);
+    UE_PURE static FFrameTime Multiply_SecondsFrameRate(float TimeInSeconds, const FFrameRate& FrameRate);
+    UE_PURE static FFrameTime SnapFrameTimeToRate(const FFrameTime& SourceTime, const FFrameRate& SourceRate, const FFrameRate& SnapToRate);
     UE_PURE static FFrameNumber Subtract_FrameNumberFrameNumber(FFrameNumber A, FFrameNumber B);
     UE_PURE static FFrameNumber Subtract_FrameNumberInteger(FFrameNumber A, int B);
-    UE_PURE static FFrameTime TransformTime(FFrameTime SourceTime, FFrameRate SourceRate, FFrameRate DestinationRate);
+    UE_PURE static FFrameTime TransformTime(const FFrameTime& SourceTime, const FFrameRate& SourceRate, const FFrameRate& DestinationRate);
 };
 
 class UTimeSynchronizationSource : public UObject

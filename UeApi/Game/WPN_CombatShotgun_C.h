@@ -43,7 +43,7 @@ public:
     void PumpAction();
     void RecieveUnequipped();
     void RecieveFiredWeapon();
-    void AddPoisonToPlatform(FHitResult Hit, bool alwaysPenetrate);
+    void AddPoisonToPlatform(const FHitResult& Hit, bool alwaysPenetrate);
     void CustomEvent1(class UItemUpgrade* Event);
     void ReceiveBeginPlay();
     void OnCompleted_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);

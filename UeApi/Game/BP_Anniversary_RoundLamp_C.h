@@ -33,7 +33,7 @@ public:
     static constexpr const char* UsedLampMesh__Replicated = "OnRep_UsedLampMesh:";
     void ExecuteUbergraph_BP_Anniversary_RoundLamp(int EntryPoint);
     void ReceiveBeginPlay();
-    void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnCollide();
     void OnRep_UsedLampMesh();
 };

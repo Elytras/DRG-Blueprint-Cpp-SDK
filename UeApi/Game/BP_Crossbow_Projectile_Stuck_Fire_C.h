@@ -31,7 +31,7 @@ public:
     TArray<class AFSDPawn*> Targets;
     bool IgnoreCollission;
     void ExecuteUbergraph_BP_Crossbow_Projectile_Stuck_Fire(int EntryPoint);
-    void BndEvt__PRJ_Crossbow_FireProjectile_FlammableCollision_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__PRJ_Crossbow_FireProjectile_FlammableCollision_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

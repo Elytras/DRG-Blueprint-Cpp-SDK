@@ -38,7 +38,7 @@ public:
     FTransform DorettaStart;
     FTransform DorettaEnd;
     void ExecuteUbergraph_BP_DropPod_Escape_Escort(int EntryPoint);
-    void BndEvt__DorettaHeadChecker_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__DorettaHeadChecker_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_SERVER UE_RELIABLE void ServerHandleDorettaHead(class ADorrettaHead* DorettaHead);
     UE_MULTICAST UE_RELIABLE void Transfer_Doretta(FTransform DorettaHeadTransform);
     static constexpr const char* Transfer_Doretta__UeName = "Transfer Doretta";

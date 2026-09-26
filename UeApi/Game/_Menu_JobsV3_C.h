@@ -50,7 +50,7 @@ public:
     WND_JobsEntryV2_C* WND_JobsEntryV2_519;
     WND_Jobs_Entry_Base_C* LastUnfolded;
     void ExecuteUbergraph__Menu_JobsV3(int EntryPoint);
-    void AddJobs(TArray<class UClass*> Array);
+    void AddJobs(const TArray<class UClass*>& Array);
     void BuildList();
     void OnCampaignCompleted_Event();
     UE_COSMETIC void Construct();

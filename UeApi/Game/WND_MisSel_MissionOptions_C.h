@@ -85,7 +85,7 @@ public:
     void SetMissionLocked(bool IsLocked, FText Explanation);
     void UpdateConfirmButton();
     UE_PURE FGameDifficulty GetSelectedDifficulty();
-    void HandleKeyUp(FKeyEvent KeyEvent, bool& OutHandled, FEventReply& OutReply);
+    void HandleKeyUp(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void UpdateHazPlusVisibility();
 };

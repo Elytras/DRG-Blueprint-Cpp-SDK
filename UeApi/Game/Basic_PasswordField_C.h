@@ -25,8 +25,8 @@ public:
     TMulticastInlineDelegate<void(FText Text)> OnTextChanged;
     TMulticastInlineDelegate<void(FText Text, uint8 CommitMethod)> OnTextCommitted;
     void ExecuteUbergraph_Basic_PasswordField(int EntryPoint);
-    void BndEvt__ServerPassword_K2Node_ComponentBoundEvent_11_OnEditableTextBoxCommittedEvent__DelegateSignature(FText Text, ETextCommit CommitMethod);
-    void BndEvt__ServerPassword_K2Node_ComponentBoundEvent_10_OnEditableTextBoxChangedEvent__DelegateSignature(FText Text);
+    void BndEvt__ServerPassword_K2Node_ComponentBoundEvent_11_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, ETextCommit CommitMethod);
+    void BndEvt__ServerPassword_K2Node_ComponentBoundEvent_10_OnEditableTextBoxChangedEvent__DelegateSignature(const FText& Text);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE FText GetPasswordHint();
     void GetPassword(FText& Password);

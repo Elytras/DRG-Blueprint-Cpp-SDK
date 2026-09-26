@@ -54,6 +54,9 @@ An asset some other package holds, a game one or another mod's, named so `&ED_Sp
 object name is the path's last segment, unless the path spells it: "/Game/Dir/Package.Object". It may sit in a
 namespace, as every one in UeAssets/ does. An asset this mod cooks needs none of this: it is a namespace-scope
 variable with braces, `UMoodDef MD_Big = { .Health = 500 };`, and `&MD_Big` points at it.
+Another mod's asset of a class declared in a shared header needs that class pinned to its owner with UE_CLASS;
+otherwise every mod including the header cooks its own copy of the class, and the reference would load as null
+(refused).
 */
 #define UE_ASSET_AT(Class, Name, Path)                                                                                 \
   extern Class                 Name;                                                                                   \
@@ -254,7 +257,13 @@ method but an override of a parent's event - and the variables that are not priv
 #define UE_CATEGORY__JOIN(A, B) UE_CATEGORY__JOIN2(A, B)
 #define UE_CATEGORY(Text) static constexpr const char *UE_CATEGORY__JOIN(UeCategory__, __COUNTER__) = Text
 
-/* The /Game package that the classes in a mod source are written into. */
+/*
+The /Game package that the classes in a mod source are written into. A namespace is a folder: a class, struct,
+interface, UE_ENUM or asset in `namespace Weapons::Rifles` goes to <Path>/Weapons/Rifles. A namespace that starts at
+Game is a /Game path of its own, `namespace Game::Weapons::Rifles { class X ... }` being /Game/Weapons/Rifles/X, the
+namespace UeApi gives a game Blueprint there, so a child can sit beside the class it extends. A path outside <Path>
+is written under the Content folder the output directory sits in, as bpbuild stages a mod.
+*/
 #define UE_MOD_PACKAGE(Path) static constexpr const char *UeModPackage = Path
 
 /*

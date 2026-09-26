@@ -223,8 +223,8 @@ public:
     void InpAxisKeyEvt_MouseY_K2Node_InputAxisKeyEvent_1(float AxisValue);
     void InpAxisKeyEvt_MouseX_K2Node_InputAxisKeyEvent_0(float AxisValue);
     void Receive_ShowFieldMedicInstantReviveEffects();
-    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
-    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
+    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void PrepareForEndScreen();
     void MixerSpawnConfetti(FVector Location, FRotator Rotation);
     UE_SERVER UE_RELIABLE void MixerServerSpawnConfettii(FVector Location, FRotator Rotation);

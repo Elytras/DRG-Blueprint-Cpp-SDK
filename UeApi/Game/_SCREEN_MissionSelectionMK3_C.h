@@ -174,9 +174,9 @@ public:
     void GetAvailableBiomes(TArray<ITM_MisSel_Biome_C*>& AvailableBiomes1);
     void CheckForNewZones();
     void UpdateMapPan(bool SnapToMouse);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void ClearServerListMissionRestrictions();
-    void HighlightChallenges(TArray<class UObject*> AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
+    void HighlightChallenges(const TArray<class UObject*>& AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
     UE_PURE TArray<class UGeneratedMission*> GetAvailableMissions();
     void SelectRandomMission();
 };

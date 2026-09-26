@@ -21,9 +21,9 @@ public:
     class UImage* Image_0;
     bool GrabMouse;
     CharacterSelectionSwitcher_C* switcher;
-    UE_COSMETIC FEventReply OnMouseMove(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseMove(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

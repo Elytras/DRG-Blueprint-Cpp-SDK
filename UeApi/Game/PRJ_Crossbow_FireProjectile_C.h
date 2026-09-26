@@ -23,7 +23,7 @@ public:
     class USphereComponent* FlammableCollision;
     static constexpr const char* FlammableCollision__UeScsNode = "108612d890138448b67958cb99bb37ae";
     void ExecuteUbergraph_PRJ_Crossbow_FireProjectile(int EntryPoint);
-    void BndEvt__PRJ_Crossbow_FireProjectile_FlammableCollision_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__PRJ_Crossbow_FireProjectile_FlammableCollision_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

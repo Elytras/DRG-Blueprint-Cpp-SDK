@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/TentaclePlant/AIC_TentaclePlant", "AIC_TentaclePlant_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_TentaclePlant(int EntryPoint);
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
     void StartBehaviour();
 };
 

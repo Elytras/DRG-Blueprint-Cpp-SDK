@@ -84,7 +84,7 @@ public:
     class UAudioComponent* HackableSoundInstance;
     void ExecuteUbergraph_ENE_PatrolBot(int EntryPoint);
     void BndEvt__ENE_PatrolBot_HackingUsable_K2Node_ComponentBoundEvent_1_ItemDelegate__DelegateSignature(class AItem* Item);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_PatrolBot_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_PatrolBot_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnDisabled();
     void OnProjectileSpawned();
     void OnRevived();
@@ -93,7 +93,7 @@ public:
     void OnJumpEvent();
     void WeakpointDeath_Flying();
     void OnMessageAI(FName TriggerName);
-    void BndEvt__CollisionSphere_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__CollisionSphere_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__HackingUsable_K2Node_ComponentBoundEvent_3_HackedDelegate__DelegateSignature(class APlayerCharacter* InHackedBy);
     void OnDroneHacked();
     void ReceiveBeginPlay();

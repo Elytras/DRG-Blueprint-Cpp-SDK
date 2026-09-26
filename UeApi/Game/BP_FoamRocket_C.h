@@ -19,7 +19,7 @@ public:
     int GlobCount;
     int spawned;
     void ExecuteUbergraph_BP_FoamRocket(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::GameElements::Drone

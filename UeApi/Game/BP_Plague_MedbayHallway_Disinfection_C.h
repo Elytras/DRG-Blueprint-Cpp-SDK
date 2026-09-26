@@ -59,7 +59,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "c7c82dc766409a428b1e37b869af90d2";
     float Delay_Time;
     void ExecuteUbergraph_BP_Plague_MedbayHallway_Disinfection(int EntryPoint);
-    void BndEvt__BP_SpaceRig_Cabin01_Capsule_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_SpaceRig_Cabin01_Capsule_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco

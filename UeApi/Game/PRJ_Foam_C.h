@@ -28,7 +28,7 @@ public:
     class UClass* puddle;
     class UClass* Puddle_WalkingPlagueheart;
     void ExecuteUbergraph_PRJ_Foam(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     class UInfectionPointCleaningComponent* GetCleaningPoints(FVector fromLocation);
 };
 

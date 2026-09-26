@@ -20,9 +20,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* Mutators_HBox;
     void ExecuteUbergraph_UI_HazPlus_Row(int EntryPoint);
-    void SetMutators(TArray<FDifficultyMutatorItem> Array);
+    void SetMutators(const TArray<FDifficultyMutatorItem>& Array);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnDifficultyChanged_Event_0(FGameDifficulty Setting);
+    void OnDifficultyChanged_Event_0(const FGameDifficulty& Setting);
     UE_COSMETIC void Construct();
 };
 

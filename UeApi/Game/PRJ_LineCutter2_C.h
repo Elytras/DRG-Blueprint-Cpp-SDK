@@ -73,12 +73,12 @@ public:
     FTimerHandle ReduceLineTimerHandle;
     class UClass* PersistantExplosion;
     void ExecuteUbergraph_PRJ_LineCutter2(int EntryPoint);
-    void OnPenetrated(bool PredictedPenetration, FHitResult HitResult);
+    void OnPenetrated(bool PredictedPenetration, const FHitResult& HitResult);
     void OnInitialized();
     void StartSpawningTrail();
     void LeaveTrail();
     void SetExtraBeamVisibility(bool IsVisible);
-    void OnLineDestroyed(FHitResult Result);
+    void OnLineDestroyed(const FHitResult& Result);
     void ThereCanBeOnlyOne();
     void LineReducing();
     UE_MULTICAST UE_RELIABLE void Explode();

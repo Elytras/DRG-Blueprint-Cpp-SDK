@@ -46,7 +46,7 @@ public:
     void OnMissionShoutEnd();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void OnMissionShout(FText Text_0, float Duration_0);
+    void OnMissionShout(const FText& Text_0, float Duration_0);
     void Start_Running_Text(FText Text_0, float Duration_0);
     static constexpr const char* Start_Running_Text__UeName = "Start Running Text";
     void SpeakManually(class UDialogDataAsset* MissionShout, float& Duration_0, class UAudioComponent*& AudioComponent);

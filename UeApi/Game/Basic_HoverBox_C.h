@@ -19,8 +19,8 @@ public:
     TMulticastInlineDelegate<void()> BeginHover;
     TMulticastInlineDelegate<void()> EndHover;
     void ExecuteUbergraph_Basic_HoverBox(int EntryPoint);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

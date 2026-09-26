@@ -91,7 +91,7 @@ public:
     static constexpr const char* InitialCracksdone__Replicated = "OnRep_InitialCracksdone:";
     void ExecuteUbergraph_BP_CoreRift(int EntryPoint);
     UE_MULTICAST void ALL_RemoveSpikes(FVector Location);
-    void BndEvt__BP_CoreRift_SimpleHealth_K2Node_ComponentBoundEvent_0_BodypartHitSig__DelegateSignature(float amount, float BaseAmount, FDamageData DamageData);
+    void BndEvt__BP_CoreRift_SimpleHealth_K2Node_ComponentBoundEvent_0_BodypartHitSig__DelegateSignature(float amount, float BaseAmount, const FDamageData& DamageData);
     UE_MULTICAST void ALL_CarveEffects(int Param_Index_0);
     void StartCrevasse();
     void MakeDormant();

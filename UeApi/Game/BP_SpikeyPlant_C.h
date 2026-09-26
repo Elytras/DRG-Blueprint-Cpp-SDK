@@ -84,14 +84,14 @@ public:
     FCSGRaycastHitInfo Hit;
     void ExecuteUbergraph_BP_SpikeyPlant(int EntryPoint);
     void PlayerNearby(class APlayerCharacter* Player, bool enteredTrigger);
-    void On_Spike_Capsule_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void On_Spike_Capsule_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     static constexpr const char* On_Spike_Capsule_Overlap__UeName = "On Spike Capsule Overlap";
     void Raytrace_for_terrain_placement();
     static constexpr const char* Raytrace_for_terrain_placement__UeName = "Raytrace for terrain placement";
     void Retract_Spike_event();
     static constexpr const char* Retract_Spike_event__UeName = "Retract Spike event";
     void ExtrudeSpikes();
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage_0, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_3_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void Spike_extrusion();

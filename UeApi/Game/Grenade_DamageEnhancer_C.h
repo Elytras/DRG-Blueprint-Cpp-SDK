@@ -53,7 +53,7 @@ public:
     void ExecuteUbergraph_Grenade_DamageEnhancer(int EntryPoint);
     void UpdateProgressBArHAck();
     void ReceiveBeginPlay();
-    void BndEvt__Grenade_DamageEnhancer_RootCollision_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__Grenade_DamageEnhancer_RootCollision_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void UserConstructionScript();
     void OnRep_Stick();
 };

@@ -115,7 +115,7 @@ public:
     void ShowDialog(class UObject* DialogDataSource);
     void ShowModUnsubscribeDialog(class UObject* DialogDataSource);
     void ShowReportMod(class UObject* DialogDataSource);
-    void ShowSearchResults(FModioModCategoryParams FilterParams);
+    void ShowSearchResults(const FModioModCategoryParams& FilterParams);
     void ShowUserAuth();
 };
 
@@ -194,24 +194,24 @@ class UModioNotificationParamsLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioNotificationParamsLibrary");
-    static FModioNotificationParams AddFormatText(FModioNotificationParams& NotificationParams, FName Name_0, FText Text);
+    static FModioNotificationParams AddFormatText(FModioNotificationParams& NotificationParams, const FName& Name_0, const FText& Text);
     static FModioNotificationParams CreateInstallationNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
-    static FModioNotificationParams CreateNotificationParams(FModioErrorCode StatusCode, FText TitleText, FText SuccessText, FText ErrorText);
+    static FModioNotificationParams CreateNotificationParams(FModioErrorCode StatusCode, const FText& TitleText, const FText& SuccessText, const FText& ErrorText);
     static FModioNotificationParams CreateRatingNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
     static FModioNotificationParams CreateSubscriptionNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
     static FModioNotificationParams CreateUninstallNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
     static FModioNotificationParams SetFloatArg(FModioNotificationParams& NotificationParams, FString Name_0, float Value);
     static FModioNotificationParams SetIntegerArg(FModioNotificationParams& NotificationParams, FString Name_0, int Value);
     static FModioNotificationParams SetStringArg(FModioNotificationParams& NotificationParams, FString Name_0, FString Value);
-    static FModioNotificationParams SetTextArg(FModioNotificationParams& NotificationParams, FString Name_0, FText Text);
+    static FModioNotificationParams SetTextArg(FModioNotificationParams& NotificationParams, FString Name_0, const FText& Text);
 };
 
 class IModioUINotification
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUINotification");
-    void Configure(FModioNotificationParams Params_0);
-    void ConfigureManual(FText Title, FText Message, bool bIsError);
+    void Configure(const FModioNotificationParams& Params_0);
+    void ConfigureManual(const FText& Title, const FText& Message, bool bIsError);
     void Display();
     class UWidget* GetAsWidget();
     void SetNotificationExpireHandler(TDelegate<void(class UWidget* NotificationWidget)> InDelegate);
@@ -222,10 +222,10 @@ class IModioUINotificationController
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUINotificationController");
     void DisplayNotification(TScriptInterface<class IModioUINotification> Notification);
-    void DisplayNotificationManual(FText Title, FText Message, bool bIsError);
-    void DisplayNotificationParams(FModioNotificationParams Params_0);
-    void HandleDisplayManual(FText Title, FText Message, bool bIsError);
-    void HandleDisplayNotificationParams(FModioNotificationParams Params_0);
+    void DisplayNotificationManual(const FText& Title, const FText& Message, bool bIsError);
+    void DisplayNotificationParams(const FModioNotificationParams& Params_0);
+    void HandleDisplayManual(const FText& Title, const FText& Message, bool bIsError);
+    void HandleDisplayNotificationParams(const FModioNotificationParams& Params_0);
     void HandleDisplayNotificationWidget(TScriptInterface<class IModioUINotification>& Notification);
     void RegisterUserWidget(TScriptInterface<class IModioUINotificationController> ControllerWidget);
 };
@@ -337,7 +337,7 @@ public:
     void DisplayErrorDialog(FModioErrorCode ErrorCode);
     void DisplayNotification(TScriptInterface<class IModioUINotification>& Notification);
     void DisplayNotificationManual(FText Title, FText Message, bool bIsError);
-    void DisplayNotificationParams(FModioNotificationParams Params_0);
+    void DisplayNotificationParams(const FModioNotificationParams& Params_0);
     FText FormatText(FText Input);
     float GetCurrentDPIScaleValue();
     bool GetIsCollectionModDisableUIEnabled();
@@ -356,7 +356,7 @@ public:
     void ShowDetailsForMod(FModioModID ID);
     void ShowDialog(class UObject* DialogDataSource);
     class UUserWidget* ShowModBrowserUIForPlayer(TSubclassOf<class UUserWidget> MenuClass, class APlayerController* Controller, TDelegate<void()> BrowserClosedDelegate);
-    bool ShowSearchResults(FModioModCategoryParams SearchParameters);
+    bool ShowSearchResults(const FModioModCategoryParams& SearchParameters);
     void SubscriptionHandler(FModioErrorCode ErrorCode, FModioModID ID);
     void UninstallHandler(FModioErrorCode ErrorCode, FModioModID ID);
     void UnsubscribeHandler(FModioErrorCode ErrorCode, FModioModID ID);

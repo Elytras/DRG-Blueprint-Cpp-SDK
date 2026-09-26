@@ -34,7 +34,7 @@ public:
     bool Is_In_Season_Event_Zone;
     static constexpr const char* Is_In_Season_Event_Zone__UeName = "Is In Season Event Zone";
     void ExecuteUbergraph_ITM_MisSel_FullBiome(int EntryPoint);
-    void SetData(TArray<class UGeneratedMission*> missions, class UBiome* Biome_0);
+    void SetData(const TArray<class UGeneratedMission*>& missions, class UBiome* Biome_0);
     UE_COSMETIC void Construct();
     void GetAllAllMissionSlots(TArray<ITM_MisSel_MissionMapIcon_C*>& Items1);
     void ClearMissions();

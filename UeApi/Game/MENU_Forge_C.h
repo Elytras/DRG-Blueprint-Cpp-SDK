@@ -110,7 +110,7 @@ public:
     void Forge_Schematic(UI_Forge_Schematic_C* InSchematic, bool& success);
     static constexpr const char* Forge_Schematic__UeName = "Forge Schematic";
     void ToggleMasteryBar(bool Visible, bool AllowClaimButton);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCursorVisible(bool IsVisible_0);
 };
 

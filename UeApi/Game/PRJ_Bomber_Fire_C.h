@@ -36,8 +36,8 @@ public:
     float TimeToExplode;
     void ExecuteUbergraph_PRJ_Bomber_Fire(int EntryPoint);
     void ReceiveBeginPlay();
-    void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(FHitResult ImpactResult, FVector ImpactVelocity);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_HasExploded();
 };
 

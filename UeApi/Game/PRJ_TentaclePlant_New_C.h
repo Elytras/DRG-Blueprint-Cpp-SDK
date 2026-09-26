@@ -48,7 +48,7 @@ public:
     void ReceiveBeginPlay();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void GoBoom();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::Enemies::TentaclePlant

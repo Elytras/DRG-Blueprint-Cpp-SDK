@@ -23,7 +23,7 @@ public:
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "bda817f204ff5a4aafd1e39315964826";
     void ExecuteUbergraph_BP_SphereTrigger(int EntryPoint);
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 }}}   // namespace Game::LevelElements::Triggers

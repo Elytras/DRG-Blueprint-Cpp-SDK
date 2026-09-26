@@ -58,7 +58,7 @@ public:
     void OnTemperatureChanged(float temperature, bool overheated_0);
     void ReceiveBeginPlay();
     void Receive_IsFiringChanged(bool NewValue);
-    void BndEvt__Hitscan_K2Node_ComponentBoundEvent_0_HitDelegate__DelegateSignature(FHitResult Hit, bool alwaysPenetrate);
+    void BndEvt__Hitscan_K2Node_ComponentBoundEvent_0_HitDelegate__DelegateSignature(const FHitResult& Hit, bool alwaysPenetrate);
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
     void UserConstructionScript();

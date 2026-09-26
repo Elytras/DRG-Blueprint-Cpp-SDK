@@ -59,8 +59,8 @@ public:
     void DoOnSpawn();
     void Trigger(FHitResult HitResult);
     void MakeBouncy();
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void UserConstructionScript();
     void OnRep_Lit();
     void LaunchPlayer(class APlayerCharacter* Player);

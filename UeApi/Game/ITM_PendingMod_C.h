@@ -36,7 +36,7 @@ public:
     UE_COSMETIC void Destruct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetColors();
-    void OnDownloadExtractProgress(FString Name_0, TArray<FString> ModsPendingDownload, bool Downloading, int Progress, int Total);
+    void OnDownloadExtractProgress(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading, int Progress, int Total);
 };
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding

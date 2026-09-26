@@ -87,8 +87,8 @@ public:
     void ExecuteUbergraph_ITM_Overclocks_Equip(int EntryPoint);
     void BndEvt__EquipButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     void CloseMenuNicely();
     void BndEvt__EquipButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__EquipButton_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();

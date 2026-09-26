@@ -108,7 +108,7 @@ public:
     void BndEvt__BP_Gem_HotCold_Target_CalldownScannerUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
     void ShowOnScanner();
     void ReceiveBeginPlay();
-    void SpawnerScannerPod(FVector Location);
+    void SpawnerScannerPod(const FVector& Location);
     void OnRep_DugFree();
     void OnRep_HasConnected();
     void OnRep_CarvedSurroundingTerrain();

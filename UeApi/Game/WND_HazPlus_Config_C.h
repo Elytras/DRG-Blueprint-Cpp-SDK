@@ -33,7 +33,7 @@ public:
     static constexpr const char* Index_0__UeName = "Index";
     TArray<class UDifficultyMutatorSetupItem*> SelectedMutators;
     void ExecuteUbergraph_WND_HazPlus_Config(int EntryPoint);
-    void SetData(int Param_Index_0, TArray<FDifficultyMutatorItem> ExistingMutators, FDifficultyMutatorItem CurrentMutator);
+    void SetData(int Param_Index_0, const TArray<FDifficultyMutatorItem>& ExistingMutators, const FDifficultyMutatorItem& CurrentMutator);
     void BndEvt__WND_HazPlus_Config_ComboBoxString_Mut_K2Node_ComponentBoundEvent_3_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
     void BndEvt__WND_HazPlus_Config_BTN_Cancel_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature(Basic_FlatButton_C* Button);
     void BndEvt__WND_HazPlus_Config_BTN_Select_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(Basic_FlatButton_C* Button);

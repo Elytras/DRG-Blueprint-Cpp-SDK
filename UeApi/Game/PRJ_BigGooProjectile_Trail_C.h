@@ -27,7 +27,7 @@ public:
     FTimerHandle SpawnTimer;
     void ExecuteUbergraph_PRJ_BigGooProjectile_Trail(int EntryPoint);
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void SpawnFragments();
     void OnInitialized();
     void OnRep_SpawnedFragments();

@@ -66,7 +66,7 @@ public:
     void SetSwitchButtonState();
     void GotoNext(bool Next, bool PlaySound_0);
     void CheckArmorUnlocks();
-    FEventReply Handle_Key_Input(FKeyEvent InKeyEvent, bool& Handled);
+    FEventReply Handle_Key_Input(const FKeyEvent& InKeyEvent, bool& Handled);
     static constexpr const char* Handle_Key_Input__UeName = "Handle Key Input";
 };
 

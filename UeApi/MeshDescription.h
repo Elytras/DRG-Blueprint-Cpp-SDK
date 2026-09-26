@@ -83,8 +83,8 @@ public:
     FPolygonGroupID CreatePolygonGroup();
     void CreatePolygonGroupWithID(FPolygonGroupID PolygonGroupID);
     void CreatePolygonWithID(FPolygonID PolygonID, FPolygonGroupID PolygonGroupID, TArray<FVertexInstanceID>& VertexInstanceIDs, TArray<FEdgeID>& NewEdgeIDs);
-    FTriangleID CreateTriangle(FPolygonGroupID PolygonGroupID, TArray<FVertexInstanceID> VertexInstanceIDs, TArray<FEdgeID>& NewEdgeIDs);
-    void CreateTriangleWithID(FTriangleID TriangleID, FPolygonGroupID PolygonGroupID, TArray<FVertexInstanceID> VertexInstanceIDs, TArray<FEdgeID>& NewEdgeIDs);
+    FTriangleID CreateTriangle(FPolygonGroupID PolygonGroupID, const TArray<FVertexInstanceID>& VertexInstanceIDs, TArray<FEdgeID>& NewEdgeIDs);
+    void CreateTriangleWithID(FTriangleID TriangleID, FPolygonGroupID PolygonGroupID, const TArray<FVertexInstanceID>& VertexInstanceIDs, TArray<FEdgeID>& NewEdgeIDs);
     FVertexID CreateVertex();
     FVertexInstanceID CreateVertexInstance(FVertexID VertexID);
     void CreateVertexInstanceWithID(FVertexInstanceID VertexInstanceID, FVertexID VertexID);
@@ -105,7 +105,7 @@ public:
     void ReversePolygonFacing(FPolygonID PolygonID);
     void SetPolygonPolygonGroup(FPolygonID PolygonID, FPolygonGroupID PolygonGroupID);
     void SetPolygonVertexInstance(FPolygonID PolygonID, int PerimeterIndex, FVertexInstanceID VertexInstanceID);
-    void SetVertexPosition(FVertexID VertexID, FVector Position);
+    void SetVertexPosition(FVertexID VertexID, const FVector& Position);
     void GetEdgeConnectedPolygons(FEdgeID EdgeID, TArray<FPolygonID>& OutConnectedPolygonIDs) const;
     void GetEdgeConnectedTriangles(FEdgeID EdgeID, TArray<FTriangleID>& OutConnectedTriangleIDs) const;
     UE_PURE FVertexID GetEdgeVertex(FEdgeID EdgeID, int VertexNumber) const;

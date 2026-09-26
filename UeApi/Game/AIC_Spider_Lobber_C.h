@@ -20,7 +20,7 @@ public:
     static constexpr const char* UberGraphFrame_AIC_Spider_Lobber_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Lobber(int EntryPoint);
     void ReceivePossess(class APawn* PossessedPawn);
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
     void ReceiveBeginPlay();
 };
 

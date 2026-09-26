@@ -26,7 +26,7 @@ public:
     class UStaticMeshComponent* SM_CactusSpikeProjectile;
     static constexpr const char* SM_CactusSpikeProjectile__UeScsNode = "5c93072d443afc4bacf6ca65260b077d";
     void ExecuteUbergraph_PRJ_LargeStabbyThorn(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches

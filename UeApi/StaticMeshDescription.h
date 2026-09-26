@@ -25,7 +25,7 @@ class UStaticMeshDescription : public UMeshDescriptionBase
 public:
     UE_CLASS("/Script/StaticMeshDescription", "StaticMeshDescription");
     void CreateCube(FVector Center, FVector HalfExtents, FPolygonGroupID PolygonGroup, FPolygonID& PolygonID_PlusX, FPolygonID& PolygonID_MinusX, FPolygonID& PolygonID_PlusY, FPolygonID& PolygonID_MinusY, FPolygonID& PolygonID_PlusZ, FPolygonID& PolygonID_MinusZ);
-    void SetPolygonGroupMaterialSlotName(FPolygonGroupID PolygonGroupID, FName slotName);
+    void SetPolygonGroupMaterialSlotName(FPolygonGroupID PolygonGroupID, const FName& slotName);
     void SetVertexInstanceUV(FVertexInstanceID VertexInstanceID, FVector2D UV, int UVIndex);
     UE_PURE FVector2D GetVertexInstanceUV(FVertexInstanceID VertexInstanceID, int UVIndex) const;
 };

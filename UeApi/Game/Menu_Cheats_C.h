@@ -213,7 +213,7 @@ public:
     void OnMarkerPlaced_Event_1(FVector vectorValue);
     void BndEvt__Menu_Cheats_DestroyEnemyArmor_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature();
     void UnbindLaserPointSpawnPos();
-    void OnMarkerPlaced_Event_0(FVector Location, FText Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
+    void OnMarkerPlaced_Event_0(FVector Location, const FText& Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
     void BindLaserPointerSpawnPos();
     void BndEvt__Menu_Cheats_ToggleVisibilitySpawnPos_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature();
     void CleanUpSpawnPos();

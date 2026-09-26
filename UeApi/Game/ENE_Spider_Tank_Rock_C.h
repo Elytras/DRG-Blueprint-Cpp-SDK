@@ -26,7 +26,7 @@ public:
     class UMeleeAttackComponent* StabAttack;
     static constexpr const char* StabAttack__UeScsNode = "1431f0f2a16b314db75afeb843ef6a77";
     void ExecuteUbergraph_ENE_Spider_Tank_Rock(int EntryPoint);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Tank_Rock_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Tank_Rock_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Play_Body_Death_Effects();
     static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
     UE_PURE bool GetIsTargetable() const;

@@ -82,7 +82,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetClassFromPlayerState(class UPlayerCharacterID*& SelectedCharacter);
-    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void CheckForNotification();
     void PlayIntroAnimations();

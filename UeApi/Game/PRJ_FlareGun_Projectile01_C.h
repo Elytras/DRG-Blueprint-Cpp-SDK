@@ -73,7 +73,7 @@ public:
     UE_MULTICAST void HideAll();
     void OnDroppodImpact(class ATeamTransport* DropPod);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Light_Anim__UpdateFunc();
     void Light_Anim__FinishedFunc();
     void FallToGround();

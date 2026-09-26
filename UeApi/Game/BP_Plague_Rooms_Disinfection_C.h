@@ -51,7 +51,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "933560abb0464549942ca1af08515331";
     void ExecuteUbergraph_BP_Plague_Rooms_Disinfection(int EntryPoint);
-    void BndEvt__BP_SpaceRig_Cabin01_Capsule_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_SpaceRig_Cabin01_Capsule_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco

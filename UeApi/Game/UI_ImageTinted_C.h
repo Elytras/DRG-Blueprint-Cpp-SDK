@@ -26,7 +26,7 @@ public:
     static constexpr const char* Tint_Opacity__UeName = "Tint Opacity";
     void ExecuteUbergraph_UI_ImageTinted(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetBrush(FSlateBrush InBrush);
+    void SetBrush(const FSlateBrush& InBrush);
     void SetBrushFromTexture(class UTexture2D* Texture, bool MatchSize);
     void GetBrush(FSlateBrush& Brush_0);
     void SetBrushSize(FVector2D Brush_Image_Size);

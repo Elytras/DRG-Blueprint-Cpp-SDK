@@ -31,7 +31,7 @@ public:
     class UParticleSystem* ImpactParticle;
     void ExecuteUbergraph_PRJ_TripleShooter(int EntryPoint);
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

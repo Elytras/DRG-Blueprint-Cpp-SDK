@@ -25,7 +25,7 @@ public:
     FVector SelectedSpawnLocation;
     class ADroppableOutpost* MineHead;
     void ExecuteUbergraph_GM_Motherlode(int EntryPoint);
-    void SpawnMissionCriticalItems(ECriticalItemPass pass);
+    void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void RocketLaunched();
     void OnCountdownFinished();
     void BndEvt__ObjectivesManager_K2Node_ComponentBoundEvent_0_DelegateEvent__DelegateSignature();

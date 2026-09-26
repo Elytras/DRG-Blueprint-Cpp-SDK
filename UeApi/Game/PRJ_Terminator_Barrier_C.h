@@ -22,7 +22,7 @@ public:
     static constexpr const char* Audio__UeScsNode = "139a8c73632e8d4090fa6ff73d4c01a3";
     void ExecuteUbergraph_PRJ_Terminator_Barrier(int EntryPoint);
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

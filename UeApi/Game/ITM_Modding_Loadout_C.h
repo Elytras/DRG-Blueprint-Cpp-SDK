@@ -57,8 +57,8 @@ public:
     void Update();
     void SetIcon(class UTexture2D* Texture);
     void SetIconFromIndex(int Index_0);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding

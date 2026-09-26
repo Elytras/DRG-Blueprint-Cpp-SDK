@@ -34,7 +34,7 @@ public:
     int NumLarva;
     FVector2D NumLarvaMinMax;
     void ExecuteUbergraph_PRJ_Rockpox_Breeder_WormVomit(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
     void DoOnSpawn();
 };

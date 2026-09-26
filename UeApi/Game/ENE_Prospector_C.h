@@ -138,7 +138,7 @@ public:
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_9_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__PawnSensing_K2Node_ComponentBoundEvent_8_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     void ToggleScanning(bool IsScanning);
-    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void GetAIController(AIC_Prospector_C*& AsAIC_Prospector);
     void OnRep_Target();
     void SpawnReinforcements(int PatrolBotAmount, int ShredderAmount);

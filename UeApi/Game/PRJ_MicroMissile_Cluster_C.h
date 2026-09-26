@@ -32,7 +32,7 @@ public:
     FVector HitLocation;
     void ExecuteUbergraph_PRJ_MicroMissile_Cluster(int EntryPoint);
     void Cleanup();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void CalculateIndicatorPos();
     void OnInitialized();
     UE_MULTICAST void SpawnClusters(FVector InVector, float ClusterDelay);

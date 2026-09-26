@@ -25,7 +25,7 @@ public:
     bool CanSpawnParticles;
     void ExecuteUbergraph_BP_Phys_Haybale(int EntryPoint);
     void BndEvt__BP_Phys_Haybale_InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     static constexpr const char* BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_Haybale_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
 };
 

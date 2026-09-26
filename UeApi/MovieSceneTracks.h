@@ -482,7 +482,7 @@ public:
     void AddBoolParameterKey(FName InParameterName, FFrameNumber InTime, bool InValue);
     void AddColorParameterKey(FName InParameterName, FFrameNumber InTime, FLinearColor InValue);
     void AddScalarParameterKey(FName InParameterName, FFrameNumber InTime, float InValue);
-    void AddTransformParameterKey(FName InParameterName, FFrameNumber InTime, FTransform InValue);
+    void AddTransformParameterKey(FName InParameterName, FFrameNumber InTime, const FTransform& InValue);
     void AddVector2DParameterKey(FName InParameterName, FFrameNumber InTime, FVector2D InValue);
     void AddVectorParameterKey(FName InParameterName, FFrameNumber InTime, FVector InValue);
     bool RemoveBoolParameter(FName InParameterName);
@@ -584,7 +584,7 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScene3DConstraintSection");
     FGuid ConstraintId;
     FMovieSceneObjectBindingID ConstraintBindingID;
-    void SetConstraintBindingID(FMovieSceneObjectBindingID InConstraintBindingID);
+    void SetConstraintBindingID(const FMovieSceneObjectBindingID& InConstraintBindingID);
     UE_PURE FMovieSceneObjectBindingID GetConstraintBindingID() const;
 };
 
@@ -766,7 +766,7 @@ public:
     FMovieSceneObjectBindingID CameraBindingID;
     FTransform InitialCameraCutTransform;
     bool bHasInitialCameraCutTransform;
-    void SetCameraBindingID(FMovieSceneObjectBindingID InCameraBindingID);
+    void SetCameraBindingID(const FMovieSceneObjectBindingID& InCameraBindingID);
     UE_PURE FMovieSceneObjectBindingID GetCameraBindingID() const;
 };
 
@@ -815,7 +815,7 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneLevelVisibilitySection");
     ELevelVisibility Visibility;
     TArray<FName> LevelNames;
-    void SetLevelNames(TArray<FName> InLevelNames);
+    void SetLevelNames(const TArray<FName>& InLevelNames);
     void SetVisibility(ELevelVisibility InVisibility);
     UE_PURE TArray<FName> GetLevelNames() const;
     UE_PURE ELevelVisibility GetVisibility() const;

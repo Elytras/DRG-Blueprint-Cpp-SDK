@@ -58,7 +58,7 @@ public:
     void OnClosed();
     void Scroll_with_controller(float Pitch, float Yaw);
     static constexpr const char* Scroll_with_controller__UeName = "Scroll with controller";
-    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_PURE int CaclFirstLevel();
     void ScrollRow(float Value, bool& didScroll);
 };

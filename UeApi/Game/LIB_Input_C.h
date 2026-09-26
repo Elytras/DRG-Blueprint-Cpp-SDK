@@ -19,13 +19,13 @@ public:
     UE_CLASS("/Game/UI/LIB_Input", "LIB_Input_C");
     static bool IsCloseOrBackMenu(FKeyEvent& Input, class UObject* __WorldContext);
     UE_PURE static bool IsCloseOrBackMenuKey(FKey InKey, class UObject* __WorldContext);
-    UE_PURE static bool IsOkMenu(FKeyEvent Input, class UObject* __WorldContext);
-    UE_PURE static bool IsUseButton(FKeyEvent Input, class UObject* __WorldContext);
+    UE_PURE static bool IsOkMenu(const FKeyEvent& Input, class UObject* __WorldContext);
+    UE_PURE static bool IsUseButton(const FKeyEvent& Input, class UObject* __WorldContext);
     UE_PURE static bool IsBackMenuMouse(FPointerEvent Pointer_Event, class UObject* __WorldContext);
-    UE_PURE static bool IsSelectPrevious(FKeyEvent KeyEvent, class UObject* __WorldContext);
-    UE_PURE static bool IsSelectNext(FKeyEvent KeyEvent, class UObject* __WorldContext);
-    UE_PURE static bool IsMenuAction1(FKeyEvent Input, class UObject* __WorldContext);
-    UE_PURE static bool IsMenuAction2(FKeyEvent Input, class UObject* __WorldContext);
+    UE_PURE static bool IsSelectPrevious(const FKeyEvent& KeyEvent, class UObject* __WorldContext);
+    UE_PURE static bool IsSelectNext(const FKeyEvent& KeyEvent, class UObject* __WorldContext);
+    UE_PURE static bool IsMenuAction1(const FKeyEvent& Input, class UObject* __WorldContext);
+    UE_PURE static bool IsMenuAction2(const FKeyEvent& Input, class UObject* __WorldContext);
 };
 
 }}   // namespace Game::UI

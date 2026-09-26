@@ -46,7 +46,7 @@ public:
     class UParticleSystemComponent* Dirt_particles;
     static constexpr const char* Dirt_particles__UeName = "Dirt particles";
     void ExecuteUbergraph_ENE_Shark(int EntryPoint);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnExitState(ESharkEnemyState State_0);
     void OnEnterState(ESharkEnemyState State_0);
     void OnLandedEvent();

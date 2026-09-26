@@ -39,7 +39,7 @@ public:
     static constexpr const char* RotationRate__Replicated = "OnRep_RotationRate:";
     void ExecuteUbergraph_PRJ_Spider_Boss_Heavy(int EntryPoint);
     void OnInitialized();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_GravityScale();
     void OnRep_RotationRate();
 };

@@ -36,7 +36,7 @@ public:
     TArray<class USkeletalMesh*> Lamp_Meshes;
     void ExecuteUbergraph_BP_LunarFestival_LampRandom(int EntryPoint);
     void OnCollide();
-    void BndEvt__BP_LunarFestival_Lamp01_SK_LunarFestival_Lamp_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_LunarFestival_Lamp01_SK_LunarFestival_Lamp_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
     void OnRep_Random_Seed();
 };

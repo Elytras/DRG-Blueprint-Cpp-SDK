@@ -29,7 +29,7 @@ public:
     class UAudioComponent* Audio;
     static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     void ExecuteUbergraph_PRJ_Spider_Shooter(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::Spider::Shooter

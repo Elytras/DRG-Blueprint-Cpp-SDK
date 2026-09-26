@@ -110,7 +110,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Add_Reward(class UReward* Reward);
     static constexpr const char* Add_Reward__UeName = "Add Reward";
-    void Add_Reward_List(TArray<class UReward*> List);
+    void Add_Reward_List(const TArray<class UReward*>& List);
     static constexpr const char* Add_Reward_List__UeName = "Add Reward List";
     void CreateRewardWidget(class UReward* Reward, class URewardWidget*& Widget);
     void GetMissionCompleteShout(class UDialogDataAsset*& MissionCompleteShout);

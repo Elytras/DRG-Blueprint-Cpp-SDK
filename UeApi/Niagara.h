@@ -2032,12 +2032,12 @@ public:
     void SetNiagaraVariableBool(FString InVariableName, bool InValue);
     void SetNiagaraVariableFloat(FString InVariableName, float InValue);
     void SetNiagaraVariableInt(FString InVariableName, int InValue);
-    void SetNiagaraVariableLinearColor(FString InVariableName, FLinearColor InValue);
+    void SetNiagaraVariableLinearColor(FString InVariableName, const FLinearColor& InValue);
     void SetNiagaraVariableObject(FString InVariableName, class UObject* Object);
-    void SetNiagaraVariableQuat(FString InVariableName, FQuat InValue);
+    void SetNiagaraVariableQuat(FString InVariableName, const FQuat& InValue);
     void SetNiagaraVariableVec2(FString InVariableName, FVector2D InValue);
     void SetNiagaraVariableVec3(FString InVariableName, FVector InValue);
-    void SetNiagaraVariableVec4(FString InVariableName, FVector4 InValue);
+    void SetNiagaraVariableVec4(FString InVariableName, const FVector4& InValue);
     void SetPaused(bool bInPaused);
     void SetPreviewLODDistance(bool bEnablePreviewLODDistance, float PreviewLODDistance);
     void SetRandomSeedOffset(int NewRandomSeedOffset);
@@ -2048,14 +2048,14 @@ public:
     void SetVariableBool(FName InVariableName, bool InValue);
     void SetVariableFloat(FName InVariableName, float InValue);
     void SetVariableInt(FName InVariableName, int InValue);
-    void SetVariableLinearColor(FName InVariableName, FLinearColor InValue);
+    void SetVariableLinearColor(FName InVariableName, const FLinearColor& InValue);
     void SetVariableMaterial(FName InVariableName, class UMaterialInterface* Object);
     void SetVariableObject(FName InVariableName, class UObject* Object);
-    void SetVariableQuat(FName InVariableName, FQuat InValue);
+    void SetVariableQuat(FName InVariableName, const FQuat& InValue);
     void SetVariableTextureRenderTarget(FName InVariableName, class UTextureRenderTarget* TextureRenderTarget);
     void SetVariableVec2(FName InVariableName, FVector2D InValue);
     void SetVariableVec3(FName InVariableName, FVector InValue);
-    void SetVariableVec4(FName InVariableName, FVector4 InValue);
+    void SetVariableVec4(FName InVariableName, const FVector4& InValue);
     UE_PURE ENiagaraAgeUpdateMode GetAgeUpdateMode() const;
     UE_PURE class UNiagaraSystem* GetAsset() const;
     UE_PURE float GetDesiredAge() const;
@@ -2314,22 +2314,22 @@ public:
     static TArray<FVector4> GetNiagaraArrayVector4(class UNiagaraComponent* NiagaraSystem, FName OverrideName);
     static FVector4 GetNiagaraArrayVector4Value(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0);
     static FVector GetNiagaraArrayVectorValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0);
-    static void SetNiagaraArrayBool(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<bool> ArrayData);
-    static void SetNiagaraArrayBoolValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, bool Value, bool bSizeToFit);
-    static void SetNiagaraArrayColor(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<FLinearColor> ArrayData);
-    static void SetNiagaraArrayColorValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, FLinearColor Value, bool bSizeToFit);
-    static void SetNiagaraArrayFloat(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<float> ArrayData);
+    static void SetNiagaraArrayBool(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<bool>& ArrayData);
+    static void SetNiagaraArrayBoolValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, const bool& Value, bool bSizeToFit);
+    static void SetNiagaraArrayColor(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<FLinearColor>& ArrayData);
+    static void SetNiagaraArrayColorValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, const FLinearColor& Value, bool bSizeToFit);
+    static void SetNiagaraArrayFloat(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<float>& ArrayData);
     static void SetNiagaraArrayFloatValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, float Value, bool bSizeToFit);
-    static void SetNiagaraArrayInt32(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<int> ArrayData);
+    static void SetNiagaraArrayInt32(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<int>& ArrayData);
     static void SetNiagaraArrayInt32Value(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, int Value, bool bSizeToFit);
-    static void SetNiagaraArrayQuat(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<FQuat> ArrayData);
-    static void SetNiagaraArrayQuatValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, FQuat Value, bool bSizeToFit);
-    static void SetNiagaraArrayVector(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<FVector> ArrayData);
-    static void SetNiagaraArrayVector2D(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<FVector2D> ArrayData);
-    static void SetNiagaraArrayVector2DValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, FVector2D Value, bool bSizeToFit);
-    static void SetNiagaraArrayVector4(class UNiagaraComponent* NiagaraSystem, FName OverrideName, TArray<FVector4> ArrayData);
-    static void SetNiagaraArrayVector4Value(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, FVector4 Value, bool bSizeToFit);
-    static void SetNiagaraArrayVectorValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, FVector Value, bool bSizeToFit);
+    static void SetNiagaraArrayQuat(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<FQuat>& ArrayData);
+    static void SetNiagaraArrayQuatValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, const FQuat& Value, bool bSizeToFit);
+    static void SetNiagaraArrayVector(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<FVector>& ArrayData);
+    static void SetNiagaraArrayVector2D(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<FVector2D>& ArrayData);
+    static void SetNiagaraArrayVector2DValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, const FVector2D& Value, bool bSizeToFit);
+    static void SetNiagaraArrayVector4(class UNiagaraComponent* NiagaraSystem, FName OverrideName, const TArray<FVector4>& ArrayData);
+    static void SetNiagaraArrayVector4Value(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, const FVector4& Value, bool bSizeToFit);
+    static void SetNiagaraArrayVectorValue(class UNiagaraComponent* NiagaraSystem, FName OverrideName, int Index_0, const FVector& Value, bool bSizeToFit);
 };
 
 class UNiagaraDataInterfaceArrayInt32 : public UNiagaraDataInterfaceArray
@@ -2455,7 +2455,7 @@ class INiagaraParticleCallbackHandler
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraParticleCallbackHandler");
-    void ReceiveParticleData(TArray<FBasicParticleData> Data, class UNiagaraSystem* NiagaraSystem);
+    void ReceiveParticleData(const TArray<FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem);
 };
 
 class UNiagaraDataInterfaceExport : public UNiagaraDataInterface
@@ -2813,7 +2813,7 @@ public:
     static void OverrideSystemUserVariableSkeletalMeshComponent(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class USkeletalMeshComponent* SkeletalMeshComponent);
     static void OverrideSystemUserVariableStaticMesh(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UStaticMesh* StaticMesh);
     static void OverrideSystemUserVariableStaticMeshComponent(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UStaticMeshComponent* StaticMeshComponent);
-    static void SetSkeletalMeshDataInterfaceSamplingRegions(class UNiagaraComponent* NiagaraSystem, FString OverrideName, TArray<FName> SamplingRegions);
+    static void SetSkeletalMeshDataInterfaceSamplingRegions(class UNiagaraComponent* NiagaraSystem, FString OverrideName, const TArray<FName>& SamplingRegions);
     static void SetTexture2DArrayObject(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UTexture2DArray* Texture);
     static void SetTextureObject(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UTexture* Texture);
     static void SetVolumeTextureObject(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UVolumeTexture* Texture);
@@ -2917,9 +2917,9 @@ public:
     void SetColorParameter(FString InVariableName, FLinearColor InValue);
     void SetFloatParameter(FString InVariableName, float InValue);
     void SetIntParameter(FString InVariableName, int InValue);
-    void SetQuatParameter(FString InVariableName, FQuat InValue);
+    void SetQuatParameter(FString InVariableName, const FQuat& InValue);
     void SetVector2DParameter(FString InVariableName, FVector2D InValue);
-    void SetVector4Parameter(FString InVariableName, FVector4 InValue);
+    void SetVector4Parameter(FString InVariableName, const FVector4& InValue);
     void SetVectorParameter(FString InVariableName, FVector InValue);
 };
 
@@ -2984,7 +2984,7 @@ class ANiagaraPreviewBase : public AActor
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraPreviewBase");
-    void SetLabelText(FText InXAxisText, FText InYAxisText);
+    void SetLabelText(const FText& InXAxisText, const FText& InYAxisText);
     void SetSystem(class UNiagaraSystem* InSystem);
 };
 

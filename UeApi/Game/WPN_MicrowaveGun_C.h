@@ -52,7 +52,7 @@ public:
     void ExecuteUbergraph_WPN_MicrowaveGun(int EntryPoint);
     void RecieveUnequipped();
     void OnStartCharacterOverheat_Event();
-    void BndEvt__WPN_MicrowaveGun_CapsuleHitscanComp_K2Node_ComponentBoundEvent_0_OnClosestHitDelegate__DelegateSignature(FVector Location, FVector Normal, bool bHitEnemy);
+    void BndEvt__WPN_MicrowaveGun_CapsuleHitscanComp_K2Node_ComponentBoundEvent_0_OnClosestHitDelegate__DelegateSignature(const FVector& Location, const FVector& Normal, bool bHitEnemy);
     void RecieveStopUsing();
     void HeatUpdated(float SmoothedTemperature);
     void Receive_IsFiringChanged(bool NewValue);

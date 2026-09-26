@@ -61,8 +61,8 @@ public:
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void Success_CE11BFAA4B508ADA67C83A882DA4680A(FString TitleText, FString ImageURL, FString OnClickURL, FString SteamName, int SteamID, FString LiveTimestamp);
-    void Failed_CE11BFAA4B508ADA67C83A882DA4680A(FString TitleText, FString ImageURL, FString OnClickURL, FString SteamName, int SteamID, FString LiveTimestamp);
+    void Success_CE11BFAA4B508ADA67C83A882DA4680A(FString TitleText, FString ImageURL, FString OnClickURL, FString SteamName, const int& SteamID, FString LiveTimestamp);
+    void Failed_CE11BFAA4B508ADA67C83A882DA4680A(FString TitleText, FString ImageURL, FString OnClickURL, FString SteamName, const int& SteamID, FString LiveTimestamp);
     void OnSuccess_3BC30184406EF3F09D3E01AAA4A8C949(class UTexture2DDynamic* Texture);
     void OnFail_3BC30184406EF3F09D3E01AAA4A8C949(class UTexture2DDynamic* Texture);
     void OpenDLCInSteamBrowser();

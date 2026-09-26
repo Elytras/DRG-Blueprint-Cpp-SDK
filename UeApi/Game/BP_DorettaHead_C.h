@@ -58,7 +58,7 @@ public:
     float MinTimeBetweenSounds;
     class USoundCue* ImpactSound;
     void ExecuteUbergraph_BP_DorettaHead(int EntryPoint);
-    void BndEvt__Box_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__Box_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void PlaySound();
     void ReceiveBeginPlay();
     void PlayDorettaSound(class USoundBase* Sound);

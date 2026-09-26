@@ -36,7 +36,7 @@ public:
     static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
     float LightIntensity;
     void ExecuteUbergraph_PRJ_Spider_Boss_Heavy_FireballBallistics(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy

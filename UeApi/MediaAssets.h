@@ -130,10 +130,10 @@ class UMediaSource : public UObject
 {
 public:
     UE_CLASS("/Script/MediaAssets", "MediaSource");
-    void SetMediaOptionBool(FName Key, bool Value);
-    void SetMediaOptionFloat(FName Key, float Value);
-    void SetMediaOptionInt64(FName Key, int64 Value);
-    void SetMediaOptionString(FName Key, FString Value);
+    void SetMediaOptionBool(const FName& Key, bool Value);
+    void SetMediaOptionFloat(const FName& Key, float Value);
+    void SetMediaOptionInt64(const FName& Key, int64 Value);
+    void SetMediaOptionString(const FName& Key, FString Value);
     UE_PURE FString GetUrl() const;
     UE_PURE bool Validate() const;
 };
@@ -215,11 +215,11 @@ public:
     bool OpenPlaylist(class UMediaPlaylist* InPlaylist);
     bool OpenPlaylistIndex(class UMediaPlaylist* InPlaylist, int Index_0);
     bool OpenSource(class UMediaSource* MediaSource);
-    void OpenSourceLatent(class UObject* WorldContextObject, FLatentActionInfo LatentInfo, class UMediaSource* MediaSource, FMediaPlayerOptions options, bool& bSuccess);
-    void OpenSourceLatent(FLatentActionInfo LatentInfo, class UMediaSource* MediaSource, FMediaPlayerOptions options, bool& bSuccess);
-    void OpenSourceLatent(class UObject* WorldContextObject, class UMediaSource* MediaSource, FMediaPlayerOptions options, bool& bSuccess);
-    void OpenSourceLatent(class UMediaSource* MediaSource, FMediaPlayerOptions options, bool& bSuccess);
-    bool OpenSourceWithOptions(class UMediaSource* MediaSource, FMediaPlayerOptions options);
+    void OpenSourceLatent(class UObject* WorldContextObject, FLatentActionInfo LatentInfo, class UMediaSource* MediaSource, const FMediaPlayerOptions& options, bool& bSuccess);
+    void OpenSourceLatent(FLatentActionInfo LatentInfo, class UMediaSource* MediaSource, const FMediaPlayerOptions& options, bool& bSuccess);
+    void OpenSourceLatent(class UObject* WorldContextObject, class UMediaSource* MediaSource, const FMediaPlayerOptions& options, bool& bSuccess);
+    void OpenSourceLatent(class UMediaSource* MediaSource, const FMediaPlayerOptions& options, bool& bSuccess);
+    bool OpenSourceWithOptions(class UMediaSource* MediaSource, const FMediaPlayerOptions& options);
     bool OpenUrl(FString URL);
     bool Pause();
     bool Play();
@@ -227,9 +227,9 @@ public:
     bool Previous();
     bool Reopen();
     bool Rewind();
-    bool Seek(FTimespan Time);
+    bool Seek(const FTimespan& Time);
     bool SelectTrack(EMediaPlayerTrack TrackType, int TrackIndex);
-    void SetBlockOnTime(FTimespan Time);
+    void SetBlockOnTime(const FTimespan& Time);
     void SetDesiredPlayerName(FName PlayerName);
     bool SetLooping(bool Looping);
     void SetMediaOptions(class UMediaSource* options);
@@ -239,7 +239,7 @@ public:
     bool SetTrackFormat(EMediaPlayerTrack TrackType, int TrackIndex, int FormatIndex);
     bool SetVideoTrackFrameRate(int TrackIndex, int FormatIndex, float FrameRate);
     bool SetViewField(float Horizontal, float Vertical, bool Absolute);
-    bool SetViewRotation(FRotator Rotation, bool Absolute);
+    bool SetViewRotation(const FRotator& Rotation, bool Absolute);
     UE_PURE bool CanPause() const;
     UE_PURE int GetAudioTrackChannels(int TrackIndex, int FormatIndex) const;
     UE_PURE int GetAudioTrackSampleRate(int TrackIndex, int FormatIndex) const;

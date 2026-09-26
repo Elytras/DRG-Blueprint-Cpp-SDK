@@ -42,7 +42,7 @@ public:
     void SetCountProgress(float InProgress);
     void BeginCount(UI_MissionComplete_RewardColumn_C* InColumn, float Duration);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetDescription(FText InText, bool InUpperCase);
+    void SetDescription(const FText& InText, bool InUpperCase);
     void SetAmount(int Value);
     void SetIcon(class UTexture2D* Texture, FLinearColor TextureTint);
     void GetAmount(int& amount_0);

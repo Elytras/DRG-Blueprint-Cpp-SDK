@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Pheromone/BP_PheromoneAttackerPositioning", "BP_PheromoneAttackerPositioning_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_PheromoneAttackerPositioning(int EntryPoint);
-    void OnHit_Event_0(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit_Event_0(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void ReceiveBeginPlay();
 };
 

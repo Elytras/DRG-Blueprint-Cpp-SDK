@@ -63,7 +63,7 @@ public:
     void OnChargeBegin();
     void CustomEvent1(class UItemUpgrade* Event);
     void ReceiveBeginPlay();
-    void BndEvt__WPN_FlameThrower_ProjectileLancher_K2Node_ComponentBoundEvent_0_WeaponFiredDelegate__DelegateSignature(FVector Location);
+    void BndEvt__WPN_FlameThrower_ProjectileLancher_K2Node_ComponentBoundEvent_0_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void OnSkinChanged(class USkinEffect* Skin);
     void BndEvt__WeaponImpact_K2Node_ComponentBoundEvent_1_HightAccelerationSignature__DelegateSignature();
     void AddedToInventory(class APlayerCharacter* ItemOwner);

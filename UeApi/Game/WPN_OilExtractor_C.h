@@ -51,7 +51,7 @@ public:
     class UMaterialInstanceDynamic* FuelbarMat;
     void ExecuteUbergraph_WPN_OilExtractor(int EntryPoint);
     void OnValidSurfaceChanged(bool IsValid);
-    void BndEvt__DroppedCollider_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__DroppedCollider_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveTick(float DeltaSeconds);
     void RecieveUnequipped();
     void RecieveEquipped();

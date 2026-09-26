@@ -367,10 +367,10 @@ public:
     TMulticastInlineDelegate<void(TArray<FBlueprintSessionResult> Results)> OnFailure;
     static class UFindSessionsCallbackProxy* FindSessions(class UObject* WorldContextObject, class APlayerController* PlayerController, int MaxResults, bool bUseLAN);
     static class UFindSessionsCallbackProxy* FindSessions(class APlayerController* PlayerController, int MaxResults, bool bUseLAN);
-    UE_PURE static int GetCurrentPlayers(FBlueprintSessionResult Result);
-    UE_PURE static int GetMaxPlayers(FBlueprintSessionResult Result);
-    UE_PURE static int GetPingInMs(FBlueprintSessionResult Result);
-    UE_PURE static FString GetServerName(FBlueprintSessionResult Result);
+    UE_PURE static int GetCurrentPlayers(const FBlueprintSessionResult& Result);
+    UE_PURE static int GetMaxPlayers(const FBlueprintSessionResult& Result);
+    UE_PURE static int GetPingInMs(const FBlueprintSessionResult& Result);
+    UE_PURE static FString GetServerName(const FBlueprintSessionResult& Result);
 };
 
 class UFindTurnBasedMatchCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -389,7 +389,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "InAppPurchaseCallbackProxy");
     TMulticastInlineDelegate<void(EInAppPurchaseState PurchaseStatus, FInAppPurchaseProductInfo InAppPurchaseReceipts)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseState PurchaseStatus, FInAppPurchaseProductInfo InAppPurchaseReceipts)> OnFailure;
-    static class UInAppPurchaseCallbackProxy* CreateProxyObjectForInAppPurchase(class APlayerController* PlayerController, FInAppPurchaseProductRequest ProductRequest);
+    static class UInAppPurchaseCallbackProxy* CreateProxyObjectForInAppPurchase(class APlayerController* PlayerController, const FInAppPurchaseProductRequest& ProductRequest);
 };
 
 class UInAppPurchaseCallbackProxy2 : public UObject
@@ -398,7 +398,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "InAppPurchaseCallbackProxy2");
     TMulticastInlineDelegate<void(EInAppPurchaseStatus PurchaseStatus, TArray<FInAppPurchaseReceiptInfo2> InAppPurchaseReceipts)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseStatus PurchaseStatus, TArray<FInAppPurchaseReceiptInfo2> InAppPurchaseReceipts)> OnFailure;
-    static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchase(class APlayerController* PlayerController, FInAppPurchaseProductRequest2 ProductRequest);
+    static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchase(class APlayerController* PlayerController, const FInAppPurchaseProductRequest2& ProductRequest);
     static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchaseQueryOwned(class APlayerController* PlayerController);
     static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchaseUnprocessedPurchases(class APlayerController* PlayerController);
 };
@@ -409,7 +409,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "InAppPurchaseQueryCallbackProxy");
     TMulticastInlineDelegate<void(TArray<FInAppPurchaseProductInfo> InAppPurchaseInformation)> OnSuccess;
     TMulticastInlineDelegate<void(TArray<FInAppPurchaseProductInfo> InAppPurchaseInformation)> OnFailure;
-    static class UInAppPurchaseQueryCallbackProxy* CreateProxyObjectForInAppPurchaseQuery(class APlayerController* PlayerController, TArray<FString> ProductIdentifiers);
+    static class UInAppPurchaseQueryCallbackProxy* CreateProxyObjectForInAppPurchaseQuery(class APlayerController* PlayerController, const TArray<FString>& ProductIdentifiers);
 };
 
 class UInAppPurchaseQueryCallbackProxy2 : public UObject
@@ -418,7 +418,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "InAppPurchaseQueryCallbackProxy2");
     TMulticastInlineDelegate<void(TArray<FOnlineProxyStoreOffer> InAppOfferInformation)> OnSuccess;
     TMulticastInlineDelegate<void(TArray<FOnlineProxyStoreOffer> InAppOfferInformation)> OnFailure;
-    static class UInAppPurchaseQueryCallbackProxy2* CreateProxyObjectForInAppPurchaseQuery(class APlayerController* PlayerController, TArray<FString> ProductIdentifiers);
+    static class UInAppPurchaseQueryCallbackProxy2* CreateProxyObjectForInAppPurchaseQuery(class APlayerController* PlayerController, const TArray<FString>& ProductIdentifiers);
 };
 
 class UInAppPurchaseRestoreCallbackProxy : public UObject
@@ -427,7 +427,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "InAppPurchaseRestoreCallbackProxy");
     TMulticastInlineDelegate<void(EInAppPurchaseState CompletionStatus, TArray<FInAppPurchaseRestoreInfo> InAppRestorePurchaseInformation)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseState CompletionStatus, TArray<FInAppPurchaseRestoreInfo> InAppRestorePurchaseInformation)> OnFailure;
-    static class UInAppPurchaseRestoreCallbackProxy* CreateProxyObjectForInAppPurchaseRestore(TArray<FInAppPurchaseProductRequest> ConsumableProductFlags, class APlayerController* PlayerController);
+    static class UInAppPurchaseRestoreCallbackProxy* CreateProxyObjectForInAppPurchaseRestore(const TArray<FInAppPurchaseProductRequest>& ConsumableProductFlags, class APlayerController* PlayerController);
 };
 
 class UInAppPurchaseRestoreCallbackProxy2 : public UObject
@@ -436,7 +436,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "InAppPurchaseRestoreCallbackProxy2");
     TMulticastInlineDelegate<void(EInAppPurchaseStatus PurchaseStatus, TArray<FInAppPurchaseRestoreInfo2> InAppPurchaseRestoreInfo)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseStatus PurchaseStatus, TArray<FInAppPurchaseRestoreInfo2> InAppPurchaseRestoreInfo)> OnFailure;
-    static class UInAppPurchaseRestoreCallbackProxy2* CreateProxyObjectForInAppPurchaseRestore(TArray<FInAppPurchaseProductRequest2> ConsumableProductFlags, class APlayerController* PlayerController);
+    static class UInAppPurchaseRestoreCallbackProxy2* CreateProxyObjectForInAppPurchaseRestore(const TArray<FInAppPurchaseProductRequest2>& ConsumableProductFlags, class APlayerController* PlayerController);
 };
 
 class UJoinSessionCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -445,8 +445,8 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "JoinSessionCallbackProxy");
     TMulticastInlineDelegate<void()> OnSuccess;
     TMulticastInlineDelegate<void()> OnFailure;
-    static class UJoinSessionCallbackProxy* JoinSession(class UObject* WorldContextObject, class APlayerController* PlayerController, FBlueprintSessionResult SearchResult);
-    static class UJoinSessionCallbackProxy* JoinSession(class APlayerController* PlayerController, FBlueprintSessionResult SearchResult);
+    static class UJoinSessionCallbackProxy* JoinSession(class UObject* WorldContextObject, class APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult);
+    static class UJoinSessionCallbackProxy* JoinSession(class APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult);
 };
 
 class ULeaderboardBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -550,11 +550,11 @@ public:
     UE_CLIENT UE_RELIABLE void ClientReservationResponse(EPartyReservationResult ReservationResponse);
     UE_CLIENT UE_RELIABLE void ClientSendReservationFull();
     UE_CLIENT UE_RELIABLE void ClientSendReservationUpdates(int NumRemainingReservations);
-    UE_SERVER UE_RELIABLE void ServerAddOrUpdateReservationRequest(FString sessionId, FPartyReservation Reservation);
-    UE_SERVER UE_RELIABLE void ServerCancelReservationRequest(FUniqueNetIdRepl PartyLeader);
-    UE_SERVER UE_RELIABLE void ServerRemoveMemberFromReservationRequest(FString sessionId, FPartyReservation ReservationUpdate);
-    UE_SERVER UE_RELIABLE void ServerReservationRequest(FString sessionId, FPartyReservation Reservation);
-    UE_SERVER UE_RELIABLE void ServerUpdateReservationRequest(FString sessionId, FPartyReservation ReservationUpdate);
+    UE_SERVER UE_RELIABLE void ServerAddOrUpdateReservationRequest(FString sessionId, const FPartyReservation& Reservation);
+    UE_SERVER UE_RELIABLE void ServerCancelReservationRequest(const FUniqueNetIdRepl& PartyLeader);
+    UE_SERVER UE_RELIABLE void ServerRemoveMemberFromReservationRequest(FString sessionId, const FPartyReservation& ReservationUpdate);
+    UE_SERVER UE_RELIABLE void ServerReservationRequest(FString sessionId, const FPartyReservation& Reservation);
+    UE_SERVER UE_RELIABLE void ServerUpdateReservationRequest(FString sessionId, const FPartyReservation& ReservationUpdate);
 };
 
 class APartyBeaconHost : public AOnlineBeaconHostObject
@@ -619,8 +619,8 @@ public:
     UE_CLIENT UE_RELIABLE void ClientReservationResponse(ESpectatorReservationResult ReservationResponse);
     UE_CLIENT UE_RELIABLE void ClientSendReservationFull();
     UE_CLIENT UE_RELIABLE void ClientSendReservationUpdates(int NumRemainingReservations);
-    UE_SERVER UE_RELIABLE void ServerCancelReservationRequest(FUniqueNetIdRepl Spectator);
-    UE_SERVER UE_RELIABLE void ServerReservationRequest(FString sessionId, FSpectatorReservation Reservation);
+    UE_SERVER UE_RELIABLE void ServerCancelReservationRequest(const FUniqueNetIdRepl& Spectator);
+    UE_SERVER UE_RELIABLE void ServerReservationRequest(FString sessionId, const FSpectatorReservation& Reservation);
 };
 
 class ASpectatorBeaconHost : public AOnlineBeaconHostObject

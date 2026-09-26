@@ -66,9 +66,9 @@ public:
     void BndEvt__PRJ_StaticBomber_SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     void RemoveInAirEffects();
-    void BndEvt__PRJ_StaticBomber_SimpleHealth_K2Node_ComponentBoundEvent_3_HitSig__DelegateSignature(float Damage_0, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__PRJ_StaticBomber_SimpleHealth_K2Node_ComponentBoundEvent_3_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
     void TriggerFuse();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Glow_Intensity__UpdateFunc();
     void Glow_Intensity__FinishedFunc();
     void OnRep_IsFuseTriggered();

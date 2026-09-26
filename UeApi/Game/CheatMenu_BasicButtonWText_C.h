@@ -30,7 +30,7 @@ public:
     void BndEvt__Button_Base_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
     void BndEvt__Button_Base_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetButtonText(FText InText);
+    void SetButtonText(const FText& InText);
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

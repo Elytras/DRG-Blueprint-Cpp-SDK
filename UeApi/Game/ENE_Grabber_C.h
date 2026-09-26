@@ -28,7 +28,7 @@ public:
     void DissolveMesh();
     void OnTriggerFadeRagdoll();
     void FadeMaterials();
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Grabber_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Grabber_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Death_Normal();
     void Death_Corrosive();
     void Death_Weakpoint();

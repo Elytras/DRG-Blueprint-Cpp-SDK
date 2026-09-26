@@ -92,7 +92,7 @@ public:
     void ExecuteUbergraph_BP_SentryGun_Redeployable(int EntryPoint);
     void SetArcIndicatorActive(bool Active);
     void ReceiveAmmoChanged(int Delta, int currentAmount);
-    void BndEvt__Hitscan_K2Node_ComponentBoundEvent_2_WeaponFiredDelegate__DelegateSignature(FVector Location);
+    void BndEvt__Hitscan_K2Node_ComponentBoundEvent_2_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void UpdateShadows();
     void Reset_Special_Attack();
     static constexpr const char* Reset_Special_Attack__UeName = "Reset Special Attack";

@@ -27,7 +27,7 @@ public:
     UE_COSMETIC void Construct();
     void OnCountdownFinished();
     void OnCountdownTimeChanged(int SecondsLeft);
-    void CountdownStarted(FText countdownText);
+    void CountdownStarted(const FText& countdownText);
     void FormatTime(int Time, FText& Text);
 };
 

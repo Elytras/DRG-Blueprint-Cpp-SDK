@@ -21,7 +21,7 @@ public:
     static constexpr const char* UberGraphFrame_PRJ_Spider_Lobber_Projectile_Fragment_C__UeName = "UberGraphFrame";
     class USoundBase* ImpactCue;
     void ExecuteUbergraph_PRJ_Spider_Lobber_Projectile_Fragment(int EntryPoint);
-    void SpawnEffects(FVector Location, FVector Normal);
+    void SpawnEffects(const FVector& Location, const FVector& Normal);
     void OnInitialized();
 };
 

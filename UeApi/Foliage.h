@@ -264,7 +264,7 @@ public:
     float Mass;
     static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
     static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Foliage.InteractiveFoliageComponent";
-    void CapsuleTouched(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult OverlapInfo);
+    void CapsuleTouched(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& OverlapInfo);
 };
 
 class AProceduralFoliageBlockingVolume : public AVolume

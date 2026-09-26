@@ -23,8 +23,8 @@ public:
     TMulticastInlineDelegate<void(class UWidget* Widget, bool IsFocused)> OnFocusChanged;
     TMulticastInlineDelegate<void(class UWidget* Widget, bool IsHovered_0)> OnHoverChanged;
     void ExecuteUbergraph_UI_FocusableCanvas(int EntryPoint);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnFocusLost(FFocusEvent InFocusEvent);
     UE_COSMETIC void Construct();
     UE_COSMETIC FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);

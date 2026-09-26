@@ -159,7 +159,7 @@ public:
     void StartEvent();
     void OnPodsLanded(class ARessuplyPod* InPod, ERessuplyPodState InState);
     void StartRepairPistons();
-    void CarveCrevasse(class UStaticMesh* StaticMesh, FTransform Transform);
+    void CarveCrevasse(class UStaticMesh* StaticMesh, const FTransform& Transform);
     void NearImpact();
     void OnHeartDeposited();
     void OnStageAdvanced(int Stage);

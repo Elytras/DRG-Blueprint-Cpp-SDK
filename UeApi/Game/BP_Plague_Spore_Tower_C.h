@@ -115,7 +115,7 @@ public:
     void BndEvt__BP_Plague_Spore_Tower_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__BP_Plague_Spore_Tower_HealthDamageTracker_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void BndEvt__BP_Plague_Spore_Tower_PlayerTrigger_DisplayBar_K2Node_ComponentBoundEvent_4_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
-    void BndEvt__BP_Plague_Spore_Tower_PlayerTrigger_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_Plague_Spore_Tower_PlayerTrigger_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Reset();
     void TestDestroy();
     void SetGemtrackerCustom();

@@ -9666,7 +9666,7 @@ public:
     void StartInspectWeapon();
     void StopInspectWeapon();
     bool StopUseMontage(bool stopImmediately);
-    UE_PURE float CalculateDirectionVertical(FVector TargetDirection, FRotator BaseRotation) const;
+    UE_PURE float CalculateDirectionVertical(const FVector& TargetDirection, const FRotator& BaseRotation) const;
     UE_PURE class UItemCharacterAnimationSet* GetAnimationSet() const;
     UE_PURE bool IsPlayingMontageInGroup(FName GroupName) const;
 };
@@ -10443,8 +10443,8 @@ public:
     static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnAttackingChanged(bool attacking);
     void PauseLogic();
-    void Recieve_BlackboardValueChanged(FName KeyName);
-    void RegisterBlackboardChanges(FName Key);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
+    void RegisterBlackboardChanges(const FName& Key);
     void ResumeLogic();
     UE_AUTHORITY_ONLY void SetAlerted(bool isAlerted);
     UE_AUTHORITY_ONLY UE_PURE bool GetIsAlerted() const;
@@ -10505,11 +10505,11 @@ public:
     void OnCarriedUsed(class APlayerCharacter* usedBy, EInputKeys Key);
     void OnEscortTargetDied(class UHealthComponentBase* Health);
     void OnJobFinished();
-    void OnLaserPointer(FLaserPointerTarget HitInfo);
+    void OnLaserPointer(const FLaserPointerTarget& HitInfo);
     void OnPlayerLeave(class AFSDPlayerState* APlayerState);
     void OnPlayerSalute(class APlayerCharacter* aCharacater);
     void OnPlayerShout(class APlayerCharacter* APlayerCharacter);
-    void OnSecondaryLaserPointer(FLaserPointerTarget HitInfo);
+    void OnSecondaryLaserPointer(const FLaserPointerTarget& HitInfo);
     void OnUseDone(int TimesUsed);
     void PickupItem();
     void RegisterPlayer(class APlayerCharacter* APlayerCharacter);
@@ -10675,7 +10675,7 @@ public:
     void BP_OnSubObjectiveActivated();
     void BP_OnSubObjectiveCompleted();
     void CompleteSubObjective(class APlayerCharacter* instigatingPlayer);
-    bool TryDebrisPositionPoint(FTransform& outTransform, class AProceduralSetup* pls, FVector fromLocation, float MinDistance, float desiredDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, float maxPathLength, bool bIgnoreTerrainPlacement);
+    bool TryDebrisPositionPoint(FTransform& outTransform, class AProceduralSetup* pls, const FVector& fromLocation, float MinDistance, float desiredDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, float maxPathLength, bool bIgnoreTerrainPlacement);
     UE_PURE bool GetIsActive() const;
 };
 
@@ -10745,7 +10745,7 @@ public:
     static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
     UE_AUTHORITY_ONLY void AddStageProgress(float progressToAdd);
     void BootUpEvent();
-    FTransform DebreePositionPoint(class AProceduralSetup* Setup, FVector fromLocation, float MinDistance, float desiredDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, float maxPathLength);
+    FTransform DebreePositionPoint(class AProceduralSetup* Setup, const FVector& fromLocation, float MinDistance, float desiredDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, float maxPathLength);
     void EndShout();
     void OnEventBooted();
     void OnEventFinished(bool eventSuccess);
@@ -10763,8 +10763,8 @@ public:
     UE_AUTHORITY_ONLY void SetObjectivesPerStage(int objectivesPerStage_0);
     void SetProgressBarPct(float InPct);
     UE_AUTHORITY_ONLY void SetStageProgress(float Progress);
-    UE_AUTHORITY_ONLY class AActor* SpawnEventActor(TSubclassOf<class AActor> eventActorClass, FTransform aSpawnLocation);
-    UE_AUTHORITY_ONLY class ARessuplyPod* SpawnEventPod(TSubclassOf<class ARessuplyPod> podClass, FVector aSpawnLocation, int Delay);
+    UE_AUTHORITY_ONLY class AActor* SpawnEventActor(TSubclassOf<class AActor> eventActorClass, const FTransform& aSpawnLocation);
+    UE_AUTHORITY_ONLY class ARessuplyPod* SpawnEventPod(TSubclassOf<class ARessuplyPod> podClass, const FVector& aSpawnLocation, int Delay);
     UE_AUTHORITY_ONLY void StageObjectiveCompleted();
     void StartShout();
     UE_AUTHORITY_ONLY void TriggerEvent();
@@ -10872,7 +10872,7 @@ public:
     TScriptInterface<class IWeaponFireOwner> Weapon;
     bool SetAsWeaponFireComponent;
     static constexpr const char* SetAsWeaponFireComponent__Replicated = ":";
-    void Fire(FVector Origin, FVector_NetQuantizeNormal Direction, bool playFireFX);
+    void Fire(const FVector& Origin, const FVector_NetQuantizeNormal& Direction, bool playFireFX);
     UE_SERVER UE_RELIABLE void Server_SetShotPower(float shotPower);
     void StopFire();
 };
@@ -11059,7 +11059,7 @@ public:
     class UResourceData* ResourceData;
     TArray<class APlayerCharacter*> OverlappingPlayers;
     static constexpr const char* InfoComponent__UeSubobject = "Info /Script/FSD.SimpleObjectInfoComponent";
-    void CalcMovement(float InProgress, FVector InVector, FVector& OutVelocity, FVector& OutAngularVelocity);
+    void CalcMovement(float InProgress, const FVector& InVector, FVector& OutVelocity, FVector& OutAngularVelocity);
     void OnRep_CollectedBy();
     void SetCollectOpen();
     UE_PURE float GetResourceAmount() const;
@@ -11084,7 +11084,7 @@ public:
     float HealthLossPerTick;
     float MinHealthAllowed;
     class UDamageClass* DamageClass;
-    void OnEnemyKilled(FGameplayTagContainer GameplayTags, class AActor* killedEnemy);
+    void OnEnemyKilled(const FGameplayTagContainer& GameplayTags, class AActor* killedEnemy);
     void Timer_Tick();
 };
 
@@ -11098,7 +11098,7 @@ public:
     float LifeTime;
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     static constexpr const char* SphereTrigger__UeSubobject = "SphereTrigger /Script/Engine.SphereComponent";
-    void OnPuddleBeginOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnPuddleBeginOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnPuddleEndOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void Receive_OnPlayerBeginOverlap(class APlayerCharacter* Player);
 };
@@ -11136,22 +11136,22 @@ public:
     void Activate(class AActor* owningActor, FVector Origin, FVector_NetQuantizeNormal Direction, FVector_NetQuantizeNormal initialBonusVelocity);
     UE_CLIENT UE_RELIABLE void Client_DrawServersDebugPath(FVector Location);
     void CustomEvent(class UItemUpgrade* Event);
-    class UFSDPhysicalMaterial* DamageArmor(class UDamageComponent* DamageComponent, FHitResult HitResult);
+    class UFSDPhysicalMaterial* DamageArmor(class UDamageComponent* DamageComponent, const FHitResult& HitResult);
     void DisableAndDestroy();
     void DoOnSpawn();
     class UDamageComponent* GetDamageComponent();
     UE_AUTHORITY_ONLY void IgnoreCollision(class UPrimitiveComponent* otherCollider);
     void InitComponents();
-    void InitState(FVector ShootDirection, FVector initialBonusVelocity);
+    void InitState(const FVector& ShootDirection, const FVector& initialBonusVelocity);
     void MakeBouncy();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
-    void OnPenetrated(bool PredictedPenetration, FHitResult HitResult);
+    void OnPenetrated(bool PredictedPenetration, const FHitResult& HitResult);
     void OnRep_IsDorment(bool wasDorment);
     void OnRep_ProjectileImpact();
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
-    UE_SERVER UE_RELIABLE void Server_Impacted(FProjectileImpact Impact);
-    UE_SERVER UE_RELIABLE void Server_Penetrated(FProjectileImpact Impact);
+    UE_SERVER UE_RELIABLE void Server_Impacted(const FProjectileImpact& Impact);
+    UE_SERVER UE_RELIABLE void Server_Penetrated(const FProjectileImpact& Impact);
     UE_SERVER UE_RELIABLE void Server_SetState(FVector_NetQuantize Position, FVector_NetQuantize Velocity);
     void StopMovement();
     UE_PURE int GetBoneIndex() const;
@@ -11177,15 +11177,15 @@ public:
     static class AProjectileBase* SpawnProjectile(class UObject* WorldContextObject, TSubclassOf<class AProjectileBase> ProjectileClass, class APawn* projectileOwner, FVector Origin, FRotator velocityDirection);
     static class AProjectileBase* SpawnProjectile(TSubclassOf<class AProjectileBase> ProjectileClass, class APawn* projectileOwner, FVector Origin, FRotator velocityDirection);
     void DisableHoming();
-    void OnBounce(FHitResult ImpactResult, FVector ImpactVelocity);
-    void OnImpact(FHitResult HitResult);
-    void OnPenetration(FHitResult HitResult);
-    void OnRep_State(FProjectileState oldState);
+    void OnBounce(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
+    void OnImpact(const FHitResult& HitResult);
+    void OnPenetration(const FHitResult& HitResult);
+    void OnRep_State(const FProjectileState& oldState);
     UE_SERVER UE_RELIABLE void Server_DisableHoming();
     void SetHomingTargetComponent(class USceneComponent* HomingTargetComponent, float Delay);
     class AProjectileBase* SpawnProjectileFromSelf(class UObject* WorldContextObject, TSubclassOf<class AProjectileBase> ProjectileClass, FVector Origin, FRotator velocityDirection);
     class AProjectileBase* SpawnProjectileFromSelf(TSubclassOf<class AProjectileBase> ProjectileClass, FVector Origin, FRotator velocityDirection);
-    class UFSDPhysicalMaterial* FindBoneIndexFromArmor(FHitResult HitResult, int& outBoneIndex) const;
+    class UFSDPhysicalMaterial* FindBoneIndexFromArmor(const FHitResult& HitResult, int& outBoneIndex) const;
 };
 
 class UTreasureRewarder : public UActorComponent
@@ -11213,7 +11213,7 @@ public:
     bool CheckEndOverlaps;
     static constexpr const char* Collision__UeSubobject = "Collision /Script/Engine.CapsuleComponent";
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
-    void OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void Receive_OnAbilityDataSet();
     UE_PURE class ABosco* GetBosco() const;
@@ -11470,11 +11470,11 @@ public:
     static constexpr const char* UsableComponent__UeSubobject = "UsableComponent /Script/FSD.SingleUsableComponent";
     static constexpr const char* UseComponentNew__UeSubobject = "UseComponentNew /Script/FSD.CharacterUseComponent";
     static constexpr const char* WidgetInteraction__UeSubobject = "WidgetInteraction /Script/UMG.WidgetInteractionComponent";
-    static void ShowSimpleHoldProgress(class APlayerController* PlayerController, FText InDescription, float InProgress);
+    static void ShowSimpleHoldProgress(class APlayerController* PlayerController, const FText& InDescription, float InProgress);
     void AcceptInvite();
     UE_SERVER UE_RELIABLE void AcknowledgeCharacterState(ECharacterState eState);
-    void AddImpulseFromDirectionAndForce(FVector Direction, float force);
-    void AddImpulseFromVector(FVector Vector);
+    void AddImpulseFromDirectionAndForce(const FVector& Direction, float force);
+    void AddImpulseFromVector(const FVector& Vector);
     void AddImpulseToActor(class AFSDPhysicsActor* Target, FVector_NetQuantize Impulse, FVector_NetQuantize Location, FVector_NetQuantize AngularImpulse);
     UE_MULTICAST UE_RELIABLE void All_CheatClearAllDecalsAll();
     UE_MULTICAST UE_RELIABLE void All_CheatDestroyAllVanityCharacters();
@@ -11493,7 +11493,7 @@ public:
     void Cheat_CreateCountdownHUD();
     UE_CLIENT UE_RELIABLE void CheckWithoutAPaddleAchievement();
     UE_CLIENT UE_RELIABLE void Client_ActivateTemporaryBuff(class UTemporaryBuff* buff);
-    UE_CLIENT UE_RELIABLE void Client_AddImpulse(FVector_NetQuantizeNormal Direction, float force);
+    UE_CLIENT UE_RELIABLE void Client_AddImpulse(const FVector_NetQuantizeNormal& Direction, float force);
     UE_CLIENT UE_RELIABLE void Client_OpenMinersManual();
     UE_CLIENT void Client_TargetDamaged(class UObject* Health, float Damage, float DamageModifier, bool IsWeakPoint, bool IsRadial);
     UE_CLIENT UE_RELIABLE void Client_UseDashCharge();
@@ -11538,7 +11538,7 @@ public:
     void ReviveProgress(float Progress);
     void SendLevelUpStatistics(int currentRank);
     UE_SERVER UE_RELIABLE void Server_ActivateTemporaryBuff(class UTemporaryBuff* buff);
-    UE_SERVER UE_RELIABLE void Server_AddImpulse(FVector_NetQuantizeNormal Direction, float force);
+    UE_SERVER UE_RELIABLE void Server_AddImpulse(const FVector_NetQuantizeNormal& Direction, float force);
     UE_SERVER UE_RELIABLE void Server_AddImpulseToActor(class AFSDPhysicsActor* Target, FVector_NetQuantize Impulse, FVector_NetQuantize Location, FVector_NetQuantize AngularImpulse);
     UE_SERVER UE_RELIABLE void Server_AddToTraceQueue(class ADamageEnhancer* Target, FEnhancedTrace Item);
     UE_SERVER UE_RELIABLE void Server_CallDonkey();
@@ -11607,7 +11607,7 @@ public:
     void ToggleHUDReleased();
     void ToggleScanTool(bool Visible);
     void Unparalyze();
-    void UseZipLine(class AZipLineProjectile* ZipLine, FVector Start, FVector End);
+    void UseZipLine(class AZipLineProjectile* ZipLine, const FVector& Start, const FVector& End);
     UE_MULTICAST void All_ShowImpactEffects(class UParticleSystem* Particles, FVector_NetQuantize Location, FVector_NetQuantizeNormal Orientation) const;
     UE_PURE bool CanEscapeFromGrabber() const;
     UE_PURE class UPlayerAnimInstance* GetActiveAnimInstance() const;
@@ -11676,13 +11676,13 @@ public:
     class UPawnStatsComponent* PawnStatsInstance;
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    void BackOffFromLocation(FVector fromLocation);
+    void BackOffFromLocation(const FVector& fromLocation);
     UE_AUTHORITY_ONLY void ExplodePawn();
     void Freeze(class AActor* Source);
     void MakeElite();
     void MakeRagdollMesh(class USkeletalMeshComponent* Mesh);
     void OnAlerted();
-    void OnArmorShattered(FVector Location);
+    void OnArmorShattered(const FVector& Location);
     void OnEnemyScaled(float NewScale);
     UE_AUTHORITY_ONLY void OnFirstHostileDamageTaken();
     void OnFrozen(class AActor* Source);
@@ -11693,7 +11693,7 @@ public:
     void OnUnFrozen();
     UE_AUTHORITY_ONLY void Receive_Alerted();
     UE_AUTHORITY_ONLY void SetAlerted(bool isAlerted);
-    void StartFleeing(FVector fromLocation);
+    void StartFleeing(const FVector& fromLocation);
     void StopFleeing();
     UE_MULTICAST UE_AUTHORITY_ONLY void TriggerFadeRagdoll();
     void UnFreeze();
@@ -11870,12 +11870,12 @@ public:
     class UUpgradableBoscoComponent* GetUpgradeComponent();
     UE_MULTICAST UE_RELIABLE void MineEffects(class UTerrainMaterial* aTerrainMaterial, FVector_NetQuantize aLocation, FRotator aRotation);
     void OnGrabbedGem();
-    void OnHit(float amount, float BaseAmount, FDamageData DamageData);
+    void OnHit(float amount, float BaseAmount, const FDamageData& DamageData);
     void OnNotReadyToShoot();
     void OnReadyToShoot();
     void OnRep_State(EDroneAIState prevState);
     void OnTargetBurrowChange(bool burrowed);
-    void OnWeaponFired(FVector Location);
+    void OnWeaponFired(const FVector& Location);
     UE_MULTICAST UE_RELIABLE void PlaySalute();
     void Respond();
     void ReviveCounterChanged(int remainingCharges);
@@ -11886,7 +11886,7 @@ public:
     void StateChanged(EDroneAIState aCurrentState);
     UE_MULTICAST UE_RELIABLE void StopShootingSound();
     void UseABillity();
-    void UsePlayerActivatedAbillity(EAbilityIndex Index_0, class AActor* aTarget, FVector aLocation);
+    void UsePlayerActivatedAbillity(EAbilityIndex Index_0, class AActor* aTarget, const FVector& aLocation);
     UE_PURE bool GetCarryInterrupted() const;
     UE_PURE EDroneAIState GetCurrentState() const;
     UE_PURE class UBoscoAbillityComponent* GetPlayerAbillity() const;
@@ -12036,7 +12036,7 @@ public:
     class USoundCue* ImpactGroundSound;
     UE_PURE static class AFlare* GetFlareDefaultObject(TSubclassOf<class AFlare> flareClass);
     void ActivateFlare();
-    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
+    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     float ImmidiateFadeLight();
     void Inhibit();
     void OnFlareExtinguish();
@@ -12071,7 +12071,7 @@ public:
     void SkipMainCampaign(class UObject* WorldContextObject);
     void SkipMainCampaign();
     void StartNewCampaign(TSubclassOf<class UCampaign> campaignClass, class UFSDSaveGame* SaveGame);
-    UE_PURE class UGeneratedMission* GetCampaingMission(TArray<class UGeneratedMission*> missions, FGlobalMissionSeed GlobalSeed) const;
+    UE_PURE class UGeneratedMission* GetCampaingMission(const TArray<class UGeneratedMission*>& missions, const FGlobalMissionSeed& GlobalSeed) const;
     UE_PURE TArray<TSubclassOf<class UCampaign>> GetCompletedSideCampaigns(class AFSDPlayerController* Player) const;
     UE_PURE TArray<TSubclassOf<class UCampaign>> GetUncompletedCampaigns(class AFSDPlayerController* Player) const;
     UE_PURE bool IsActiveCampaign(class UCampaign* Campaign) const;
@@ -12164,7 +12164,7 @@ public:
     class UWorld* BlockerWorld;
     bool RemoveBlockerOnBeingMatch;
     bool RemoveBlockerOnDeath;
-    void AddBlockers(class AProceduralSetup* ProceduralSetup, FTransform Transform);
+    void AddBlockers(class AProceduralSetup* ProceduralSetup, const FTransform& Transform);
     void MatchStarted();
     void OnActorDeath(class UHealthComponentBase* Health);
     void RemoveBlockers();
@@ -12229,8 +12229,8 @@ public:
     float CloseToImpactDistance;
     static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
     static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
-    UE_AUTHORITY_ONLY static class AActor* DropToTarget(class UObject* WorldContextObject, TSubclassOf<class ARessuplyPod> podClass, FVector Location, class AActor* requester);
-    UE_AUTHORITY_ONLY static class AActor* DropToTarget(TSubclassOf<class ARessuplyPod> podClass, FVector Location, class AActor* requester);
+    UE_AUTHORITY_ONLY static class AActor* DropToTarget(class UObject* WorldContextObject, TSubclassOf<class ARessuplyPod> podClass, const FVector& Location, class AActor* requester);
+    UE_AUTHORITY_ONLY static class AActor* DropToTarget(TSubclassOf<class ARessuplyPod> podClass, const FVector& Location, class AActor* requester);
     void OnDroppodCloseToImpact();
     void OnDroppodImpact();
     void OnDropStarted();
@@ -12270,7 +12270,7 @@ public:
     static constexpr const char* Collision__UeSubobject = "Collision /Script/Engine.CapsuleComponent";
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     static constexpr const char* Trail__UeSubobject = "TrailNiagara /Script/Niagara.NiagaraComponent";
-    void OnActorEnteredTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnActorEnteredTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnActorLeaveTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnInited_Callback();
     void OnRep_SpawnFireTrail();
@@ -12354,9 +12354,9 @@ public:
     static constexpr const char* enemy__UeSubobject = "EnemyComponent /Script/FSD.EnemyComponent";
     UE_MULTICAST void All_AddKnockback(FVector_NetQuantize Direction, float force);
     UE_MULTICAST void All_ShowPillarSpawnEffects(FVector_NetQuantize pillarStoneLocation);
-    void OnDamaged(float Damage, FDamageData DamageData, bool anyHealthLost);
-    void OnDeath(class UHealthComponent* HealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> damageTags);
-    void OnEnteredKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnDamaged(float Damage, const FDamageData& DamageData, bool anyHealthLost);
+    void OnDeath(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& damageTags);
+    void OnEnteredKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnExitedKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnNewHealthSegment(int currentSegment, int prevSegment);
     void OnPillarDestroyed(class ACoreCorruptionPillar* pillarDestroyed);
@@ -12525,8 +12525,8 @@ public:
     UE_CLASS("/Script/FSD", "WeaponHitEffectComponent");
     float EffectChance;
     TSubclassOf<class AActor> ActorToSpawn;
-    void OnHit(FHitResult HitResult, bool isAlwaysPenetrated);
-    UE_SERVER UE_RELIABLE void Server_SpawnEffect(FVector_NetQuantize Location, FRotator Rotation);
+    void OnHit(const FHitResult& HitResult, bool isAlwaysPenetrated);
+    UE_SERVER UE_RELIABLE void Server_SpawnEffect(const FVector_NetQuantize& Location, const FRotator& Rotation);
 };
 
 class ASplinePlant : public AActor
@@ -12814,60 +12814,60 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "FakeMoeventBase /Script/Engine.ArrowComponent";
     static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, FLatentActionInfo LatentInfo);
     static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale);
-    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious);
-    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, EPreciousMaterialOptions Precious);
+    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious);
+    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
     static void CarveWithSTLMesh_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
     static void CarveWithSTLMesh_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, EPreciousMaterialOptions Precious);
+    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
     UE_PURE static int GetShadowQuality();
-    void ApplyBaseDebrisCarvers(TArray<class UDebrisBase*> Carvers);
+    void ApplyBaseDebrisCarvers(const TArray<class UDebrisBase*>& Carvers);
     void AttachActorToTerrain(class AActor* Actor, FVector Pos);
     void BaseLayerCommit(bool blocking, bool scheduleTesselation);
     void BaseLayerCommitFinal(bool blocking);
     float CalcApproximateTerrainDensity(FVector Pos, float Radius);
-    void CarveWithCSGBuild(TSubclassOf<class ACSGBuilder> CSGModel, FTransform Transform);
+    void CarveWithCSGBuild(TSubclassOf<class ACSGBuilder> CSGModel, const FTransform& Transform);
     void CarveWithMesh(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    void CarveWithMeshUsingTransform(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, ECarveOptionsCellSize CarverSize);
-    void CarveWithSplineSegment(FVector SplineStart, FVector SplineStartTangent, FVector SplineEnd, FVector SplineEndTangent, float Radius, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, EPreciousMaterialOptions Precious);
-    void CarveWithSplineSegments(TArray<FCarveSplineSegment> Segments, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, EPreciousMaterialOptions Precious);
+    void CarveWithMeshUsingTransform(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, ECarveOptionsCellSize CarverSize);
+    void CarveWithSplineSegment(const FVector& SplineStart, const FVector& SplineStartTangent, const FVector& SplineEnd, const FVector& SplineEndTangent, float Radius, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, EPreciousMaterialOptions Precious);
+    void CarveWithSplineSegments(const TArray<FCarveSplineSegment>& Segments, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, EPreciousMaterialOptions Precious);
     void CarveWithStaticMesh(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    void CarveWithStaticMeshUsingTransform(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, EPreciousMaterialOptions Precious);
+    void CarveWithStaticMeshUsingTransform(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
     void CarveWithSTLMesh(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    void CarveWithSTLMeshUsingTransform(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FTransform Transform, EPreciousMaterialOptions Precious);
+    void CarveWithSTLMeshUsingTransform(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
     float FindTotalVolumeOfMaterialInWorld(class UTerrainMaterial* Material);
     void FinishGeneration_Blocking();
     void GenerateAllMeshes();
-    void GetAllTerrainActorsAroundPoint(FVector Center, FVector range, TArray<class AActor*>& TerrainActors);
+    void GetAllTerrainActorsAroundPoint(const FVector& Center, const FVector& range, TArray<class AActor*>& TerrainActors);
     UE_PURE int GetTerrainHash();
     UE_PURE bool IsComponentRegisteredWithScanner(class UPrimitiveComponent* Component);
     void RegisterScannerComponent(class UPrimitiveComponent* Component, bool useFogOfWar);
-    void RemoveDebrisInSphere(FVector Position, float Radius, bool onlyFragile, bool alsoDurable, ESpecialDebrisType onlyType);
+    void RemoveDebrisInSphere(const FVector& Position, float Radius, bool onlyFragile, bool alsoDurable, ESpecialDebrisType onlyType);
     UE_MULTICAST UE_RELIABLE void RemoveDebrisInstance_TerrainOp2(int instance, int Component);
     void ResetEntireWorld();
     void SelectDebrisSettings();
     void SetRockMaterialForTest(class UTerrainMaterial* Material);
-    void SetVisibleToScanner(FVector Center, FVector range);
-    void SpawnDebris(class UDebrisMesh* Debris, FVector Pos, float Radius);
+    void SetVisibleToScanner(const FVector& Center, const FVector& range);
+    void SpawnDebris(class UDebrisMesh* Debris, const FVector& Pos, float Radius);
     void TerrainMaterialDataLoaded();
-    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveCollider(FCarveWithColliderOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveCSG(FCSGBuildOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveSplineSegment(FSplineSegmentCarveOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveSTLMesh(FCarveWithSTLMeshOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_Drill(FDrillOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_Explode(FGrenadeExplodeOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_Melt(FMeltOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_PickAxe(FPickaxeDigOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_RemoveFloating(FRemoveFloatingIslandOperationData Data);
-    UE_MULTICAST UE_RELIABLE void TerrainOp_SpawnDebris(FTerrainSpawnDebrisOperationData Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveCollider(const FCarveWithColliderOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveCSG(const FCSGBuildOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveSplineSegment(const FSplineSegmentCarveOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_CarveSTLMesh(const FCarveWithSTLMeshOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_Drill(const FDrillOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_Explode(const FGrenadeExplodeOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_Melt(const FMeltOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_PickAxe(const FPickaxeDigOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_RemoveFloating(const FRemoveFloatingIslandOperationData& Data);
+    UE_MULTICAST UE_RELIABLE void TerrainOp_SpawnDebris(const FTerrainSpawnDebrisOperationData& Data);
     void UnRegisterScannerComponent(class UPrimitiveComponent* Component);
     UE_PURE class UTerrainMaterial* BPGetTerrainMaterial(int Handle) const;
     UE_PURE class ADebrisDataActor* GetDebrisDataActor() const;
     UE_PURE bool InitialGenerationDone() const;
-    UE_PURE bool IsPointInsideTerrain(FVector Pos) const;
-    UE_PURE bool IsPositionVisibleToScanner(FVector Pos) const;
+    UE_PURE bool IsPointInsideTerrain(const FVector& Pos) const;
+    UE_PURE bool IsPositionVisibleToScanner(const FVector& Pos) const;
     bool Linecast(FVector Start, FVector End, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
     bool Raycast(FVector Start, FVector Direction, float MaxDistance, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
 };
@@ -13009,7 +13009,7 @@ public:
     FText UseText;
     bool ResetOnFail;
     bool SwitchToUsingState;
-    void SetUseText(FText NewText);
+    void SetUseText(const FText& NewText);
     UE_PURE bool HasDuration() const;
 };
 
@@ -13080,7 +13080,7 @@ public:
     void EnableButton();
     void OnRep_CalledBy();
     UE_AUTHORITY_ONLY void SetCalledBy(class APlayerCharacter* InPlayer);
-    UE_AUTHORITY_ONLY void SetGotoDropShip(FVector Location);
+    UE_AUTHORITY_ONLY void SetGotoDropShip(const FVector& Location);
     void SetOpenForDeposit(bool Open);
     class UDialogDataAsset* GetCallingShout() const;
 };
@@ -13133,13 +13133,13 @@ public:
     float DamageRadius;
     float MaxDamageRadius;
     UE_PURE static class UDamageComponent* GetDamageComponentCDO(TSubclassOf<class UDamageComponent> DamageComponent);
-    UE_AUTHORITY_ONLY void DamageTarget_CDO(FVector Location, class AActor* Owner, class AActor* hitActor);
+    UE_AUTHORITY_ONLY void DamageTarget_CDO(const FVector& Location, class AActor* Owner, class AActor* hitActor);
     UE_AUTHORITY_ONLY void PreTestDamageConditions();
     UE_PURE bool ArmorSupportsLocalOnlyCall(class AActor* Target) const;
     void DamageArmor_All(class AActor* Target, class UPrimitiveComponent* collider, int BoneIndex) const;
-    void DamageArmor_Server(class AActor* Target, class UPrimitiveComponent* collider, int BoneIndex, FVector impactLocation) const;
-    UE_AUTHORITY_ONLY void DamageTarget(class AActor* Target, FVector Location, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysMat, int BoneIndex) const;
-    UE_AUTHORITY_ONLY void DamageTargetFromHit(FHitResult HitResult) const;
+    void DamageArmor_Server(class AActor* Target, class UPrimitiveComponent* collider, int BoneIndex, const FVector& impactLocation) const;
+    UE_AUTHORITY_ONLY void DamageTarget(class AActor* Target, const FVector& Location, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysMat, int BoneIndex) const;
+    UE_AUTHORITY_ONLY void DamageTargetFromHit(const FHitResult& HitResult) const;
     UE_PURE float GetDamage() const;
 };
 
@@ -13211,8 +13211,8 @@ public:
     float FreeFallSpeed;
     static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
-    static class ADroppableOutpost* DropOutpostToMission(class UObject* WorldContextObject, TSubclassOf<class ADroppableOutpost> podClass, FVector Location);
-    static class ADroppableOutpost* DropOutpostToMission(TSubclassOf<class ADroppableOutpost> podClass, FVector Location);
+    static class ADroppableOutpost* DropOutpostToMission(class UObject* WorldContextObject, TSubclassOf<class ADroppableOutpost> podClass, const FVector& Location);
+    static class ADroppableOutpost* DropOutpostToMission(TSubclassOf<class ADroppableOutpost> podClass, const FVector& Location);
     UE_AUTHORITY_ONLY void Depart();
     void OnDeparting();
     void OnDrillingStarted();
@@ -13257,14 +13257,14 @@ public:
     bool ShouldAttachPlayers;
     static constexpr const char* AutoCarver__UeSubobject = "AutoCarver /Script/FSD.AutoCarverComponent";
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
-    static FVector AdjustLandingLocationToGround(class UObject* WorldContextObjet, FVector initialLocation, float maxDownAdjustment);
-    static FVector AdjustLandingLocationToGround(FVector initialLocation, float maxDownAdjustment);
-    static class ATeamTransport* DropToMission(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, FVector Location);
-    static class ATeamTransport* DropToMission(TSubclassOf<class ATeamTransport> podClass, FVector Location);
-    static class ATeamTransport* DropToTarget(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, FTransform dropLocation, int DropDelay);
-    static class ATeamTransport* DropToTarget(TSubclassOf<class ATeamTransport> podClass, FTransform dropLocation, int DropDelay);
-    static class ATeamTransport* SpawnPodAtLocation(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, FTransform Transform);
-    static class ATeamTransport* SpawnPodAtLocation(TSubclassOf<class ATeamTransport> podClass, FTransform Transform);
+    static FVector AdjustLandingLocationToGround(class UObject* WorldContextObjet, const FVector& initialLocation, float maxDownAdjustment);
+    static FVector AdjustLandingLocationToGround(const FVector& initialLocation, float maxDownAdjustment);
+    static class ATeamTransport* DropToMission(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, const FVector& Location);
+    static class ATeamTransport* DropToMission(TSubclassOf<class ATeamTransport> podClass, const FVector& Location);
+    static class ATeamTransport* DropToTarget(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, const FTransform& dropLocation, int DropDelay);
+    static class ATeamTransport* DropToTarget(TSubclassOf<class ATeamTransport> podClass, const FTransform& dropLocation, int DropDelay);
+    static class ATeamTransport* SpawnPodAtLocation(class UObject* WorldContextObject, TSubclassOf<class ATeamTransport> podClass, const FTransform& Transform);
+    static class ATeamTransport* SpawnPodAtLocation(TSubclassOf<class ATeamTransport> podClass, const FTransform& Transform);
     void CorrectLocationsForSpawnedOnLocation();
     UE_AUTHORITY_ONLY void Depart();
     UE_AUTHORITY_ONLY void DepositAllPlayersMaterials();
@@ -13354,16 +13354,16 @@ public:
     static constexpr const char* Extend__Replicated = ":";
     class UCurveFloat* DipOffsetCurve;
     class UCurveFloat* LocationLerpCurve;
-    void MoreTick(FVector DipOffset, float aValue);
+    void MoreTick(const FVector& DipOffset, float aValue);
     void OnMatchStarted();
     void OnRep_Open();
     void OnRep_RelavtiveDestinationLocation();
-    void SetBaseTangentDirectionOffset(FVector aVector);
+    void SetBaseTangentDirectionOffset(const FVector& aVector);
     void SetBaseTangentLength(float Value);
     void SetIsExtended(bool aValue);
     void SetIsOpen(bool aValue);
-    void SetLeafLocationNoise(FVector aVector);
-    void SetLeafNoiseRotator(FRotator aRotator);
+    void SetLeafLocationNoise(const FVector& aVector);
+    void SetLeafNoiseRotator(const FRotator& aRotator);
     UE_PURE float GetInitialTangentLenth() const;
     UE_PURE bool GetIsExtended() const;
     UE_PURE bool GetIsMoving() const;
@@ -13392,7 +13392,7 @@ public:
     void OnControllingEnemyAttached();
     void OnEnemyCrashMontageEnded(class UAnimMontage* Montage, bool interrupted);
     void OnRep_ControlState(EEnemyControlState oldState);
-    void OnRep_StateData(FControlEnemyState oldState);
+    void OnRep_StateData(const FControlEnemyState& oldState);
     UE_SERVER UE_RELIABLE void ServerExit();
 };
 
@@ -13478,7 +13478,7 @@ public:
     void ActivateMule();
     void ObjectiveStateChange(EEscortMissionState NewState);
     void OnExtractorDetached(class AExtractorItem* Item);
-    void OnExtractorSlotChanged(FEscortMuleExtractorSlot Slot, int Index_0);
+    void OnExtractorSlotChanged(const FEscortMuleExtractorSlot& Slot, int Index_0);
     void OnObjectiveStateChanged(EEscortMissionState oldState);
     void OnRep_ExtractorSlots();
     void OnRep_IsCarvingTunnel();
@@ -13552,7 +13552,7 @@ public:
     UE_CLASS("/Script/FSD", "ExterminationReward");
     class UResourceData* Resource;
     float AwardSize;
-    void OnEnemyKilled(FGameplayTagContainer GameplayTags, class AActor* killedEnemy);
+    void OnEnemyKilled(const FGameplayTagContainer& GameplayTags, class AActor* killedEnemy);
 };
 
 class UEyeForEyePerkComponent : public UFloatPerkComponent
@@ -13562,7 +13562,7 @@ public:
     float CoolDown;
     TSoftClassPtr<class UClass> EyeForEyeSTE;
     TSubclassOf<class UStatusEffect> LoadedSTE;
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
 };
 
 class AFSDPlayerCameraManager : public APlayerCameraManager
@@ -13645,7 +13645,7 @@ public:
     float JumpBootsZVelocity;
     bool JumpBootsActive;
     UE_MULTICAST void All_ShowClimbLedge();
-    UE_MULTICAST void All_ShowFallImpact(class UFSDPhysicalMaterial* PhysMat, FVector_NetQuantize Location);
+    UE_MULTICAST void All_ShowFallImpact(class UFSDPhysicalMaterial* PhysMat, const FVector_NetQuantize& Location);
     UE_MULTICAST void All_ShowJumpBootsActivation();
     void HoverBootsPressed();
     void HoverBootsReleased();
@@ -13794,7 +13794,7 @@ public:
     void OnThrownActorDestroyed(class AActor* Actor);
     void ReceiveItemSpawned(class AThrowableActor* thrownActor);
     void ReceiveItemThrown(class AThrowableActor* thrownActor);
-    UE_SERVER UE_RELIABLE void Server_Throw(TSubclassOf<class AThrowableActor> actorClass, FVector Location);
+    UE_SERVER UE_RELIABLE void Server_Throw(TSubclassOf<class AThrowableActor> actorClass, const FVector& Location);
     UE_MULTICAST void Simulate_Throw(TSubclassOf<class AThrowableActor> actorClass);
 };
 
@@ -13834,7 +13834,7 @@ public:
     TSet<TSubclassOf<class AActor>> NonStoppingClasses;
     static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
-    void OnComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnDeactivate();
 };
 
@@ -13877,7 +13877,7 @@ public:
     static constexpr const char* NS_Foam__UeSubobject = "NS_Vacuum_FP /Script/Niagara.NiagaraComponent";
     static constexpr const char* PuddleRoot__UeSubobject = "PuddleRoot /Script/Engine.SceneComponent";
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
-    void OnHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_State(EVacuumState prevState);
     void ScaleOutAndDestroy();
     UE_AUTHORITY_ONLY void SetPuddleLifetime(float LifeTime);
@@ -13935,7 +13935,7 @@ public:
     static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    void OnEnemyCollisionEnter(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnEnemyCollisionEnter(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void SelectNewTarget(class UHealthComponentBase* Health);
 };
 
@@ -14018,14 +14018,14 @@ public:
     static constexpr const char* ServerSegmentEndTransform__Replicated = "OnRep_SegmentEndTransform:";
     static constexpr const char* NextSegmentUsable__UeSubobject = "NextSegmentUsable /Script/FSD.TrackBuilderUsable";
     static constexpr const char* RootComponent__UeSubobject = "DefaultSceneRoot /Script/Engine.SceneComponent";
-    bool CanPlaceAt(FTransform InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint, class AItem* PlaceableItem);
+    bool CanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint, class AItem* PlaceableItem);
     void OnRep_SegmentEndTransform();
-    bool ReceiveCanPlaceAt(FTransform InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
-    void ReceivePlacementChangedBegin(FTransform NewEndTransform, class UTrackBuilderConnectPoint* InConnectPoint);
-    void ReceivePlacementChangedEnd(FTransform NewEndTransform, class UTrackBuilderConnectPoint* InConnectPoint);
+    bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
+    void ReceivePlacementChangedBegin(const FTransform& NewEndTransform, class UTrackBuilderConnectPoint* InConnectPoint);
+    void ReceivePlacementChangedEnd(const FTransform& NewEndTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
     void ReceivPlacementValidChanged(bool InIsValid);
-    bool UpdatePlacement(FTransform InTransform, class UTrackBuilderConnectPoint* InConnectPoint, bool InPlacementValid, class AItem* PlaceableItem);
+    bool UpdatePlacement(const FTransform& InTransform, class UTrackBuilderConnectPoint* InConnectPoint, bool InPlacementValid, class AItem* PlaceableItem);
     UE_PURE class UTrackBuilderConnectPoint* GetConnectPoint() const;
     UE_PURE bool GetIsSegmentEndTransformValid() const;
     UE_PURE class ATrackBuilderSegment* GetNextSegment(bool bForward) const;
@@ -14057,8 +14057,8 @@ public:
     static constexpr const char* PreviewEndPostLocation__UeSubobject = "PreviewEndPostLocation /Script/Engine.SceneComponent";
     void CallbackCanStartNextSegmentChanged(bool InCanStart);
     void CallbackOnDeath(class UHealthComponentBase* InHealthComponent);
-    void ChangeStartTransform(FTransform ChangedStartLocation);
-    UE_CLIENT void ClientUpdateStartTransform(FVector NewStartLocation);
+    void ChangeStartTransform(const FTransform& ChangedStartLocation);
+    UE_CLIENT void ClientUpdateStartTransform(const FVector& NewStartLocation);
 };
 
 class AFuelLineStart : public AActor
@@ -14200,9 +14200,9 @@ public:
     UE_MULTICAST UE_RELIABLE void All_ServerQuit();
     UE_MULTICAST void All_SpawnScaledEffectAndCueAt(FScaledEffect Effect, class USoundCue* Audio, FVector_NetQuantize Location);
     UE_MULTICAST void All_SpawnScaledEffectAt(FScaledEffect Effect, FVector_NetQuantize Location);
-    UE_MULTICAST UE_RELIABLE void Client_NewLocalizedMessage(FFSDLocalizedChatMessage Msg);
+    UE_MULTICAST UE_RELIABLE void Client_NewLocalizedMessage(const FFSDLocalizedChatMessage& Msg);
     void Client_StartPressed();
-    UE_MULTICAST UE_RELIABLE void ClientNewMessage(FFSDChatMessage Msg);
+    UE_MULTICAST UE_RELIABLE void ClientNewMessage(const FFSDChatMessage& Msg);
     UE_PURE TArray<class AFSDPlayerState*> GetNetworkSortedPlayerArray();
     UE_PURE TArray<class UPlayerCharacterID*> GetPlayableCharacterIDs();
     UE_PURE class AProceduralSetup* GetProceduralSetup();
@@ -14225,14 +14225,14 @@ public:
     void OnRep_ObjectivesCompleted();
     void OnRep_StartPressed(bool oldStartPressed);
     void PostGameMessage(FString Msg);
-    void PostLocalizedGameMessage(FText Msg, TArray<FText> Arguments);
+    void PostLocalizedGameMessage(const FText& Msg, const TArray<FText>& Arguments);
     void ReceiveGeneratedMissionReplicated();
     void SetCompletionData(bool objectivesCompleted_0, int playersInPod);
     void SetCurrentDifficulty(class UDifficultySetting* Setting, bool updateSessionSettings);
     void SetGeneratedMissionParameters(class UGeneratedMission* mission);
     void SetPlayersHaveReachedDroppod(bool newHasPlayerReached);
     void SetPreventLatejoinCharacterDuplication(bool prevent);
-    void StartCountdown(int Duration, FText countdownName);
+    void StartCountdown(int Duration, const FText& countdownName);
     UE_PURE bool AllMissionEndResultsReceived() const;
     class UObjective* FindObjective(TSubclassOf<class UObjective> SubClass) const;
     UE_PURE TArray<class UFSDEvent*> GetActiveEventsFromMission() const;
@@ -14342,7 +14342,7 @@ public:
     UE_PURE FGDMilestones GetMileStonesData() const;
     UE_PURE FGDMissionStats GetMissionStats() const;
     UE_PURE FGDPerks GetPerkData() const;
-    UE_PURE class UPlayerCharacterID* GetPlayerCharacterID(FGuid ID) const;
+    UE_PURE class UPlayerCharacterID* GetPlayerCharacterID(const FGuid& ID) const;
     UE_PURE FText GetPlayerRankName(int Rank) const;
     UE_PURE TArray<class UPlayerCharacterID*> GetRankedHeroIDs() const;
     UE_PURE bool IsCheatConsolesEnabled() const;
@@ -14528,11 +14528,11 @@ public:
     void SetLoaderWorldVisible(bool V, bool resetHud);
     void SetMinersManualNotification(EMinersManualSection Section, class UObject* IdentifyingObject, FText Text);
     void SetOverrideMaxPlayerCount(int Count);
-    void SetPendingInviteJoinModding(FBlueprintSessionResult Result);
+    void SetPendingInviteJoinModding(const FBlueprintSessionResult& Result);
     void SetProceduralMap(TSubclassOf<class AProceduralSetup> procedural);
     void SetSelectedMission(class UGeneratedMission* mission, bool updateSessionSettings);
     void SetServerSearchActive(bool Active);
-    void SetServerSearchOptions(FFSDServerSearchOptions options);
+    void SetServerSearchOptions(const FFSDServerSearchOptions& options);
     void SetShouldAdvertiseInServerlist(bool bShouldAdvertise);
     void SetSteamSearchRegion(ESteamSearchRegion NewRegion);
     void SetSteamServerJoinStatus(ESteamServerJoinStatus NewStatus);
@@ -14612,7 +14612,7 @@ public:
     void DonkeyButtonPressed();
     void EndLevel();
     bool FSDClearPause(EPauseReason pauseReason);
-    bool FSDKickPlayer(class APlayerController* KickedPlayer, FText KickReason);
+    bool FSDKickPlayer(class APlayerController* KickedPlayer, const FText& KickReason);
     bool FSDSetPause(class APlayerController* PC, EPauseReason pauseReason);
     UE_PURE bool GetMissionWasAborted();
     class AActor* GetPlayerStart(class AFSDPlayerController* Controller);
@@ -14630,7 +14630,7 @@ public:
     void ResetDeaths();
     void SignalDonkeyPressed();
     void SignalEndLevelToClients();
-    void SpawnMissionCriticalItems(ECriticalItemPass pass);
+    void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void StartGame();
     UE_AUTHORITY_ONLY UE_PURE bool AllPlayersHaveGeneratedLevel() const;
     UE_AUTHORITY_ONLY UE_PURE bool AllPlayersHaveSelectedCharacter() const;
@@ -14714,7 +14714,7 @@ class AMagazine : public AActor
 public:
     UE_CLASS("/Script/FSD", "Magazine");
     class USoundCue* ImpactGroundSound;
-    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
+    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     void OnItemSkinned(class USkinEffect* Skin);
 };
 
@@ -14740,12 +14740,12 @@ public:
     void AddStatusEffect(TSubclassOf<class UStatusEffect> NewStatusEffect);
     UE_AUTHORITY_ONLY void IgniteGoo();
     void OnGooIgnited();
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
-    void OnPuddleBeginOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
+    void OnPuddleBeginOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnPuddleEndOverLap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnRep_ActiveStatusEffectTriggersMask(int PreviousMask);
     void OnRep_IsOnFire(bool Prev_IsOnFire);
-    void OnStatusEffectAdded(FGooPuddleStatusEffectTrigger Trigger);
+    void OnStatusEffectAdded(const FGooPuddleStatusEffectTrigger& Trigger);
     void SetStatusEffect(TSubclassOf<class UStatusEffect> NewStatusEffect);
 };
 
@@ -14774,13 +14774,13 @@ public:
     static constexpr const char* UsableComp__UeSubobject = "Usable /Script/FSD.InstantUsable";
     static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
     static constexpr const char* ViewMeshComp__UeSubobject = "FirstPersonMesh /Script/FSD.FirstPersonStaticMeshComponent";
-    void OnComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnComponentHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnDropped();
     void OnPickedUp();
     void OnUsableChanged(bool CanUse);
     void OnUsed(class APlayerCharacter* User, EInputKeys Key);
     void ResetImpactSound();
-    void ThrowItem(FVector throwForce);
+    void ThrowItem(const FVector& throwForce);
 };
 
 class ABasicDepositableItem : public ABasicThrowableItem
@@ -14852,7 +14852,7 @@ public:
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     static constexpr const char* SKMesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* ShotOriginPivot__UeSubobject = "ShotOriginPivot /Script/Engine.SceneComponent";
-    void OnHit(FHitResult Result, bool IsPenetrating);
+    void OnHit(const FHitResult& Result, bool IsPenetrating);
     void OnSpinningChanged(bool isSpinning);
 };
 
@@ -14884,7 +14884,7 @@ public:
     void ModuleDestroyed(class UHealthComponentBase* Health);
     void OnDisabledChanged(bool IsDisabled);
     void OnFinished();
-    void OnOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnPlayerLeave(class AFSDPlayerState* PlayerState);
     void OnPlayersInsideChanged(int playersInside_0);
     void OnRep_Disabled();
@@ -15101,7 +15101,7 @@ public:
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void OnRep_IsFiresoundPlaying();
-    void ShowShot(FVector Location);
+    void ShowShot(const FVector& Location);
 };
 
 class ARadialFireModule : public AHostileGuntowerModule
@@ -15500,7 +15500,7 @@ public:
     void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
     void OnJumpPressed();
     void OnJumpReleased();
-    void OnPlayerCharacterHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnPlayerCharacterHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_CurrentJetFuel();
     void OnRep_IsUsing(bool lastUsing);
     void OnRep_OverHeated(bool lastOverheated);
@@ -15535,20 +15535,20 @@ public:
     FJettyBootsSave JettyBootsSave;
     static constexpr const char* JettyBootsSave__Replicated = "OnRep_Save:";
     static constexpr const char* StartGameUsable__UeSubobject = "StartGameUsable /Script/FSD.JettyBootUsableComponent";
-    void AddHighScoreClient(FJettyBootsScore InScore);
-    UE_AUTHORITY_ONLY void AddHighScoreServer(FJettyBootsScore InScore);
-    UE_MULTICAST void All_ReplayPackage(FJettyBootsReplay InPackage);
+    void AddHighScoreClient(const FJettyBootsScore& InScore);
+    UE_AUTHORITY_ONLY void AddHighScoreServer(const FJettyBootsScore& InScore);
+    UE_MULTICAST void All_ReplayPackage(const FJettyBootsReplay& InPackage);
     UE_AUTHORITY_ONLY void ClearHighScores();
     UE_PURE bool IsPlayerWithinDistance();
     void OnCharacterMontageEnded(class UAnimMontage* InMontage, bool InInterrupted);
     void OnCharacterMoved(float DeltaSeconds, FVector OldLocation, FVector OldVelocity);
     void OnPlayerCharacterDestroyed(class AActor* InActor);
-    void OnRep_Player(FJettyBootsPlayer OldPlayer);
+    void OnRep_Player(const FJettyBootsPlayer& OldPlayer);
     void OnRep_Save();
     void ReceiveHighScoreChanged();
     void ReceivePlayerChanged();
-    void ReceiveReplayPackage(FJettyBootsReplay InPackage);
-    UE_SERVER void Server_ReplayPackage(FJettyBootsReplay InPackage);
+    void ReceiveReplayPackage(const FJettyBootsReplay& InPackage);
+    UE_SERVER void Server_ReplayPackage(const FJettyBootsReplay& InPackage);
     UE_AUTHORITY_ONLY void SetActivePlayer(class APlayerCharacter* InPlayer);
     UE_PURE class APlayerCharacter* GetActivePlayer() const;
     UE_PURE TArray<FJettyBootsScore> GetHighScores() const;
@@ -15770,7 +15770,7 @@ public:
     void OnRep_AreGeneratorsReady();
     void Onrep_FacilityActive();
     UE_AUTHORITY_ONLY void SetGeneratorsReady(bool ready);
-    UE_AUTHORITY_ONLY void SpawnGeneratorLines(FTransform startL, FTransform startR, TArray<FTransform> endL, TArray<FTransform> endR, class AFacilityGeneratorLine*& outLineL, class AFacilityGeneratorLine*& outLineR);
+    UE_AUTHORITY_ONLY void SpawnGeneratorLines(const FTransform& startL, const FTransform& startR, const TArray<FTransform>& endL, const TArray<FTransform>& endR, class AFacilityGeneratorLine*& outLineL, class AFacilityGeneratorLine*& outLineR);
 };
 
 class AFacilityGeneratorLine : public AActor
@@ -15893,8 +15893,8 @@ public:
     static constexpr const char* SentryGunMesh__UeSubobject = "SentryGunMesh /Script/Engine.SkeletalMeshComponent";
     void AmmoSpent();
     UE_SERVER UE_RELIABLE void Force_Fire(class AActor* Target);
-    void OnNewTargetRequested(FLaserPointerTarget HitInfo);
-    void OnProjectileFired(FVector Location);
+    void OnNewTargetRequested(const FLaserPointerTarget& HitInfo);
+    void OnProjectileFired(const FVector& Location);
     void OnRep_AmmoCount(int OldCount);
     void OnRep_LastTarget();
     void OnRep_MaxAmmoCount(int OldCount);
@@ -16015,7 +16015,7 @@ public:
     UE_CLIENT UE_RELIABLE void Client_WasKicked(EDisconnectReason reason);
     bool IsHUDVisibleFlagSet(EHUDVisibilityReason reason);
     UE_PURE bool IsPlayerBlocked(FString UserId);
-    void OpenStandaloneMinersManual(EMinersManualSection Section, FGuid ID);
+    void OpenStandaloneMinersManual(EMinersManualSection Section, const FGuid& ID);
     void OpenStandaloneMinersManualPage(EMinersManualSinglePage page);
     void RecieveHUDVisibilityChanged(bool IsVisible);
     void RecievePreClientTravel();
@@ -16109,7 +16109,7 @@ public:
     UE_SERVER UE_RELIABLE void ServerSetUserHoldToRun(bool Value);
     UE_CLIENT UE_RELIABLE void SetAchievementProgressFromServer(class UFSDAchievement* AchievementToSet, float Progress);
     void SetPlayerStart(class AActor* Start);
-    void ShowTutorialHint(FText Text, FText Title, FText TaskText, class UTexture2D* Image, float Duration);
+    void ShowTutorialHint(const FText& Text, const FText& Title, const FText& TaskText, class UTexture2D* Image, float Duration);
     void ShowTutorialWidget(TSubclassOf<class UTutorialContentWidget> TutorialWidget, bool ignoreQueue);
     void SpawnHUDAsync();
     void SpawnHUDLocal(TSubclassOf<class AHUD> hudClass);
@@ -16226,9 +16226,9 @@ public:
     FVector ZipLineDirection;
     FRotator RotationOffset;
     bool bSpeeding;
-    void ReceiveConnected(FVector WorldLocation, FVector Direction);
+    void ReceiveConnected(const FVector& WorldLocation, const FVector& Direction);
     void ReceiveDisconnected();
-    void ReceiveUpdateZipLinePoint(FVector WorldLocation, FVector Directioy, bool Speeding);
+    void ReceiveUpdateZipLinePoint(const FVector& WorldLocation, const FVector& Directioy, bool Speeding);
 };
 
 class UTrackBuilderMovement : public UActorComponent
@@ -16413,7 +16413,7 @@ public:
     void OnStageAdvanced(int Stage);
     void RegressStage();
     void ResetStage();
-    UE_AUTHORITY_ONLY void SetDropTarget(FVector Location);
+    UE_AUTHORITY_ONLY void SetDropTarget(const FVector& Location);
     void SetStage(int Stage);
     UE_AUTHORITY_ONLY void SignalEventEnded(bool wasSuccess);
     UE_AUTHORITY_ONLY void SignalEventStarted();
@@ -16536,7 +16536,7 @@ public:
     FVector GetBounceFlareLightSettings();
     FVector GetFlareLightSettings();
     void LoadLightConfig();
-    void OnFlareHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComponent, FVector NormalImpulse, FHitResult Hit);
+    void OnFlareHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
     void ResetAllLights();
     void ResetFollowVariables();
     void SaveLightConfig();
@@ -16669,14 +16669,14 @@ class UProceduralController : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "ProceduralController");
-    UE_CLIENT UE_RELIABLE void Client_ReceivePLSDebris(TArray<FGeneratedDebrisItem> levelDebris);
-    UE_CLIENT UE_RELIABLE void Client_ReceivePLSInfluencers(FGeneratedInfluenceSets influenceSet);
-    UE_CLIENT UE_RELIABLE void Client_ReceivePLSLevelCarver(int pass, FLevelGenerationCarverLists levelCarvers);
+    UE_CLIENT UE_RELIABLE void Client_ReceivePLSDebris(const TArray<FGeneratedDebrisItem>& levelDebris);
+    UE_CLIENT UE_RELIABLE void Client_ReceivePLSInfluencers(const FGeneratedInfluenceSets& influenceSet);
+    UE_CLIENT UE_RELIABLE void Client_ReceivePLSLevelCarver(int pass, const FLevelGenerationCarverLists& levelCarvers);
     UE_CLIENT UE_RELIABLE void Client_RecieveCarverSizes(int pass, int carverCount);
-    UE_CLIENT UE_RELIABLE void Client_SendRoomData(int Seed, TArray<FRoomNode> Rooms, TArray<FPathObstacle> Obstacles);
-    UE_CLIENT UE_RELIABLE void Client_SendTunnelData(TArray<FTunnelNode> tunnels);
-    void ReceivedRoomData(int Seed, TArray<FRoomNode> Rooms, TArray<FPathObstacle> Obstacles);
-    void ReceivedTunnelData(TArray<FTunnelNode> tunnels);
+    UE_CLIENT UE_RELIABLE void Client_SendRoomData(int Seed, const TArray<FRoomNode>& Rooms, const TArray<FPathObstacle>& Obstacles);
+    UE_CLIENT UE_RELIABLE void Client_SendTunnelData(const TArray<FTunnelNode>& tunnels);
+    void ReceivedRoomData(int Seed, const TArray<FRoomNode>& Rooms, const TArray<FPathObstacle>& Obstacles);
+    void ReceivedTunnelData(const TArray<FTunnelNode>& tunnels);
     void RequestCarverData(EDebrisItemPass pass);
     void RequestPLSData();
     void SendRequestedCarverData(EDebrisItemPass pass);
@@ -16721,7 +16721,7 @@ public:
     class UInterpolatedFirstPersonStaticMeshComponent* FPMeshComponent;
     bool IsRecallable;
     static constexpr const char* IsRecallable__Replicated = ":";
-    UE_SERVER UE_RELIABLE void Server_SetRecallTarget(class APlayerCharacter* Player, FTransform startTrans);
+    UE_SERVER UE_RELIABLE void Server_SetRecallTarget(class APlayerCharacter* Player, const FTransform& startTrans);
 };
 
 class APipelineExtractorPod : public ARessuplyPod
@@ -16842,7 +16842,7 @@ public:
     class UCarriableInstantUsable* Usable;
     class USoundCue* ImpactGroundSound;
     static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.CarriableInstantUsable";
-    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
+    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     void SetResources(class UResourcesComponent* Resources);
 };
 
@@ -16949,7 +16949,7 @@ public:
     int RicochetMax;
     float RicochetRange;
     class ACrossbowProjectileBase* CastedOwner;
-    void Ricochet(FHitResult HitResult, FVector RelativeLocation);
+    void Ricochet(const FHitResult& HitResult, const FVector& RelativeLocation);
 };
 
 class ARiftCrystal : public APawn
@@ -17033,9 +17033,9 @@ public:
     void DisableTerrainDetection();
     void EnableTerrainDetection();
     void OnAllRiftsOpened();
-    void OnDamaged(float Damage, FDamageData DamageData, bool anyHealthLost);
-    void OnDeath(class UHealthComponent* HealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> damageTags);
-    void OnEnteredKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnDamaged(float Damage, const FDamageData& DamageData, bool anyHealthLost);
+    void OnDeath(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& damageTags);
+    void OnEnteredKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnExitedKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnNewHealthSegment(int currentSegment, int prevSegment);
     void OnRep_State(ERiftCrystalState oldState);
@@ -17133,7 +17133,7 @@ public:
     void OnEventEnded(bool wasSuccess);
     void OnEventStarted();
     void OnExitState(ERockCrackerstate PodState_0);
-    void OnPodDamaged(float damageInfliced, FDamageData DamageData, bool anyHealthLost);
+    void OnPodDamaged(float damageInfliced, const FDamageData& DamageData, bool anyHealthLost);
     void OnRep_LightsAreGreen();
     void OnRep_PodState(ERockCrackerstate oldState);
     void OnRepairTick(class APlayerCharacter* User, EInputKeys Key);
@@ -17165,7 +17165,7 @@ public:
     void RockEnemyDied(class UHealthComponentBase* Health);
     void RockEnemySpawned(class APawn* spawnedEnemy);
     UE_MULTICAST void ShowFireEffects(int selectedBone);
-    void SpawnRockEnemies(float Difficulty, TArray<FVector> Locations);
+    void SpawnRockEnemies(float Difficulty, const TArray<FVector>& Locations);
     void StartPowerupGeneration();
     void StopPowerupGeneration();
 };
@@ -17465,7 +17465,7 @@ public:
     static constexpr const char* StatusTriggerComponent__UeSubobject = "StatusEffectTrigger /Script/FSD.StatusEffectTriggerComponent";
     static constexpr const char* VisualRoot__UeSubobject = "VisualRoot /Script/Engine.SceneComponent";
     void AddToCurrentIntegrity(float Value, bool predictable);
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void OnIceExpire();
     void OnRep_IntegrityModifier();
     void OnSTETriggered(class AActor* target_actor, bool entered);
@@ -17506,7 +17506,7 @@ public:
     class UDamageClass* DamageClass;
     float CoolDown;
     TSubclassOf<class UStatusEffect> ThornsSTE;
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
 };
 
 class AHostileGuntowerModuleController : public AFSDAIController
@@ -17531,7 +17531,7 @@ public:
     float WhizByStartDistance;
     float WhizByMaxDistanceFromTrajectory;
     float WhizBySpeed;
-    void AddTracer(FVector Origin, FVector Destination, float Speed, class UParticleSystem* particle, float MinDistance, float Offset, class UParticleSystem* Trail);
+    void AddTracer(FVector Origin, const FVector& Destination, float Speed, class UParticleSystem* particle, float MinDistance, float Offset, class UParticleSystem* Trail);
 };
 
 class UTrackMovementStateComponent : public UCharacterStateComponent
@@ -17637,7 +17637,7 @@ public:
     void OnHammerProgress(float Progress);
     void OnRepairedEvent(class URepairableComponent* repaired);
     void OnUsedEvent(class APlayerCharacter* User, EInputKeys Key);
-    void PlaceResources(class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, TArray<FVector> locationsToAvoid, class UCurveFloat* AvoidCostCurve);
+    void PlaceResources(class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, class UCurveFloat* AvoidCostCurve);
 };
 
 class ATunnelEventBase : public AActor
@@ -17684,7 +17684,7 @@ public:
     static constexpr const char* SpawnComponent__UeSubobject = "SpawnComponent /Script/FSD.SpawnActorWithDebrisPosComponent";
     static constexpr const char* SpawnSphere__UeSubobject = "SpawnSphere /Script/Engine.SphereComponent";
     static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
-    void OnSpawnSphereOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnSpawnSphereOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void StartTunnelSpawning();
     bool TrySpawnEnemy();
 };
@@ -17733,7 +17733,7 @@ class UTutorialHintComponent : public UTutorialComponent
 public:
     UE_CLASS("/Script/FSD", "TutorialHintComponent");
     FTutorialHint Hint;
-    void ChangeHint(FTutorialHint NewHint);
+    void ChangeHint(const FTutorialHint& NewHint);
     void SetRemainingVisibleTime(float remainingTime);
     UE_PURE bool IsSingleplayer(class UObject* WorldContext) const;
     UE_PURE bool IsSingleplayer() const;
@@ -17802,12 +17802,12 @@ public:
     static constexpr const char* PosVel__Replicated = "OnRep_PosVel:";
     float PopWeakpointRadius;
     float PlayerHitRangeFromCenter;
-    UE_MULTICAST UE_RELIABLE void All_Initialize(FTransform Transform, FVector Direction);
+    UE_MULTICAST UE_RELIABLE void All_Initialize(const FTransform& Transform, const FVector& Direction);
     void GrazeOverlapCallback(class AActor* Actor, class UPrimitiveComponent* prim);
     bool HasJustHit(class AActor* enemy);
     void Initialize(FVector Direction);
     void OnDurationEnd();
-    void OnRep_PosVel(FSawFakeMoveState PosVel_0);
+    void OnRep_PosVel(const FSawFakeMoveState& PosVel_0);
     void PushEnemyAndCheckForWeakpoint(class AActor* Actor);
     void SetMovementDirection(FVector Direction);
     void UpdateCheckForWeakpoints();
@@ -17859,7 +17859,7 @@ public:
     class UAudioComponent* AudioComponent;
     UE_MULTICAST void All_SpeedBoostChanged(bool bActive);
     FVector GetJumpVector(FVector LookVector, FVector CurrentVelocity);
-    void OnPlayerHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnPlayerHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void OnRep_ZipLine();
     void OnStatusCharacterStateChanged(float DeltaSeconds, FVector OldLocation, FVector OldVelocity);
     void ReceiveSpeedBoostActivated();
@@ -17884,7 +17884,7 @@ public:
     class UImage* CreateImageSized(class UTexture2D* Texture, int Width, int Height);
     class UTextBlock* CreateTextBlock(FString Text, FSlateFontInfo InFontInfo, FLinearColor Color);
     UE_PURE FText GetText();
-    void OnAddIcon(FString Name_0, FActionIconMapping Icon);
+    void OnAddIcon(FString Name_0, const FActionIconMapping& Icon);
     void OnAddKeyName(FString Name_0);
     void OnAddString(FString Value);
     void OnInputSourceChanged(EFSDInputSource Source);
@@ -17908,8 +17908,8 @@ public:
     bool bIsClosable;
     void Clicked(bool YesClicked);
     void OnClicked(bool Yes);
-    void OnShow(FText Title, FText Message);
-    void SetMappedResources(TMap<class UResourceData*, int> Resources);
+    void OnShow(const FText& Title, const FText& Message);
+    void SetMappedResources(const TMap<class UResourceData*, int>& Resources);
     void Show(FText Title, FText Message, TDelegate<void(bool Yes)> OnYesNoClicked, bool IsClosable);
 };
 
@@ -18156,9 +18156,9 @@ public:
     static constexpr const char* WingSoundComponent__UeSubobject = "WingSound /Script/Engine.AudioComponent";
     static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    void AddImpulseAndRagdoll(class UHealthComponent* Health, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> damageTags);
+    void AddImpulseAndRagdoll(class UHealthComponent* Health, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& damageTags);
     void AlertNearbyEnemies();
-    UE_MULTICAST void All_Ragdoll(FVector_NetQuantize Location, FVector_NetQuantize Impulse, uint8 BoneIndex);
+    UE_MULTICAST void All_Ragdoll(const FVector_NetQuantize& Location, const FVector_NetQuantize& Impulse, uint8 BoneIndex);
     void OnBugDeath(class UHealthComponentBase* Health);
     void OnFreezeImpact();
     void OnRagdoll();
@@ -18223,7 +18223,7 @@ public:
     void HideMesh();
     void OnArmorDestroyed(FName Name_0);
     void OnBladderDamage(float amount);
-    void OnRagdollHitGround(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnRagdollHitGround(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_Death();
     void OnRep_DropAcid();
     void OnStartDeathPanic();
@@ -18431,7 +18431,7 @@ public:
     class USceneComponent* GetHeadRotator();
     void MoveHydraHead(FTransform newDesiredTransform, float newCanSwayCooldown, float newHeadMovementDuration, bool UseSpring);
     void Recieve_OnRep_Owner();
-    void SetRestingTransform(FTransform restingTransform, bool startAtRest);
+    void SetRestingTransform(const FTransform& restingTransform, bool startAtRest);
     UE_PURE class AStabberVineRoot* GetStabberVineRoot() const;
 };
 
@@ -18454,7 +18454,7 @@ public:
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    UE_AUTHORITY_ONLY bool FindBurrowLocation(class UDebrisPositioning* Debris, FVector Origin, float Radius, FVector& OutLocation);
+    UE_AUTHORITY_ONLY bool FindBurrowLocation(class UDebrisPositioning* Debris, const FVector& Origin, float Radius, FVector& OutLocation);
     void OnRep_DesiredTarget();
     void OnRep_TentacleState();
     void OnStateChanged(EFacilityTentacleState NewState);
@@ -18579,7 +18579,7 @@ public:
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_FreezeImpact();
-    void OnFreezeImpact(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnFreezeImpact(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void TriggerFrozenRagdoll();
 };
 
@@ -18632,7 +18632,7 @@ public:
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ChangeState(EGrabberState aGrabberState);
     UE_AUTHORITY_ONLY void DropTarget();
-    void OnActorEnterGrabZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnActorEnterGrabZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnActorLeftGrabZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnInDanger();
     void OnRep_State(EGrabberState oldState);
@@ -18794,7 +18794,7 @@ public:
     void OnRep_TeamState();
     void OnSeePawn(class APawn* APawn);
     void OnUsed(class APlayerCharacter* aUser, EInputKeys Key);
-    void OnWeaponsFired(FVector aHitResult);
+    void OnWeaponsFired(const FVector& aHitResult);
     void ParasiteDamaged(float aDamage);
     void StartBossFight();
     void UpdateGunsInsideTerrain();
@@ -18913,8 +18913,8 @@ public:
     static constexpr const char* WingAudio__UeSubobject = "WingAudio /Script/Engine.AudioComponent";
     static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    void AddImpulseAndRagdoll(FDamageData DamageData);
-    UE_MULTICAST void All_Ragdoll(FVector_NetQuantize Location, FVector_NetQuantize Impulse, uint8 BoneIndex);
+    void AddImpulseAndRagdoll(const FDamageData& DamageData);
+    UE_MULTICAST void All_Ragdoll(const FVector_NetQuantize& Location, const FVector_NetQuantize& Impulse, uint8 BoneIndex);
     void OnBugDeath(class UHealthComponentBase* Health);
     void OnDamageTaken(float amount);
     void OnFreezeImpact();
@@ -19044,7 +19044,7 @@ public:
     void EndFireRockets();
     UE_MULTICAST void ImpactSound();
     UE_MULTICAST void Jumped();
-    void OnCollided(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnCollided(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnControlStateChanged(EPatrolBotControlState ControlState_0);
     void OnDeath(class UHealthComponentBase* aHealthComponent);
     void OnDisabled();
@@ -19140,7 +19140,7 @@ public:
     void OnDied(class UHealthComponentBase* HealthComponent);
     void OnDugOut();
     void OnEscapeComplete();
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void OnPostAmbush();
     void OnRelocationComplete();
     void OnRep_State();
@@ -19216,20 +19216,20 @@ public:
     static constexpr const char* TearingGroundParticles__UeSubobject = "TearingGroundParticles /Script/Engine.ParticleSystemComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ActivateDanger();
-    UE_MULTICAST UE_RELIABLE void All_DoRagdollImpact(FVector_NetQuantize Direction);
+    UE_MULTICAST UE_RELIABLE void All_DoRagdollImpact(const FVector_NetQuantize& Direction);
     void DiveHide();
     void DiveShow();
     UE_MULTICAST void ImpactSound();
     UE_MULTICAST void Jumped();
-    void OnCollided(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnCollided(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnDeath(class UHealthComponentBase* aHealthComponent);
-    void OnDeathDetailed(class UHealthComponent* aHealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> dTags);
+    void OnDeathDetailed(class UHealthComponent* aHealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& dTags);
     void OnEnterState(ESharkEnemyState State_0);
     void OnExitState(ESharkEnemyState State_0);
-    void OnHit(float HitDamage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float HitDamage, const FDamageData& DamageData, bool anyHealthLost);
     void OnJumpEvent();
     void OnLandedEvent();
-    void OnNearTarget(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnNearTarget(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnRep_DiveTime();
     void OnRep_State(ESharkEnemyState oldState);
     void OnSeePawn(class APawn* APawn);
@@ -19568,8 +19568,8 @@ class UMessagingSubSystem : public UGameInstanceSubsystem
 public:
     UE_CLASS("/Script/FSD", "MessagingSubSystem");
     TMulticastInlineDelegate<void(FFSDChatMessage Message)> OnNewMessage;
-    static float MessageAge(FFSDChatMessage Msg);
-    UE_PURE static FString MessageSenderIdAsString(FFSDChatMessage Msg);
+    static float MessageAge(const FFSDChatMessage& Msg);
+    UE_PURE static FString MessageSenderIdAsString(const FFSDChatMessage& Msg);
     void ClearMessages();
     void LatestMessages(int Num, bool resetAge, TArray<FFSDChatMessage>& OutMessages);
 };
@@ -20000,8 +20000,8 @@ public:
     void EjectCasing();
     void InstantlyReload();
     void OnRep_IsFiring();
-    void OnRicochet(FVector Origin, FVector Location, FVector Normal);
-    void OnWeaponFired(FVector Location);
+    void OnRicochet(const FVector& Origin, const FVector& Location, const FVector& Normal);
+    void OnWeaponFired(const FVector& Location);
     void OnWeaponFireEnded();
     void Receive_IsFiringChanged(bool NewValue);
     void Receive_ReloadBegin();
@@ -20013,7 +20013,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_ReloadWeapon(float CurrentReloadDuration);
     UE_SERVER UE_RELIABLE void Server_StopReload(float BlendOutTime);
     void UpdateHoldToFire();
-    void Upgraded_Blueprint_Implementation(TArray<class UItemUpgrade*> Upgrades);
+    void Upgraded_Blueprint_Implementation(const TArray<class UItemUpgrade*>& Upgrades);
     UE_PURE bool IsClipFull() const;
     void OnRep_ManualHeatReductionAmmo() const;
 };
@@ -20168,19 +20168,19 @@ class UActorFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "ActorFunctionLibrary");
-    UE_PURE static bool ActorMatchesTagQuery(FGameplayTagQuery Query, class AActor* InActor);
+    UE_PURE static bool ActorMatchesTagQuery(const FGameplayTagQuery& Query, class AActor* InActor);
     static void AddEnemyKill(class APlayerCharacter* Instigator, class UEnemyComponent* EnemyComponent, class AFSDGameState* GameState);
     static float AddHeroXP(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, float amount);
     static float AddHeroXP(class UPlayerCharacterID* characterID, float amount);
     static TArray<class UMaterialInstanceDynamic*> CreateDynamicMaterialInstances(class UMeshComponent* Mesh);
-    UE_PURE static float EvaluateRuntimeCurve(class UObject* WorldContextObject, FRuntimeFloatCurve Curve, float Time);
-    UE_PURE static float EvaluateRuntimeCurve(FRuntimeFloatCurve Curve, float Time);
-    UE_AUTHORITY_ONLY static FVector FindCharacterTeleportLocation(class UObject* WorldContextObject, FVector closeToLocation, float desiredDistance);
-    UE_AUTHORITY_ONLY static FVector FindCharacterTeleportLocation(FVector closeToLocation, float desiredDistance);
-    static class AActor* FindClosestEnemyFromActor(class AActor* FromActor, float range, bool LineOfSightCheck, FGameplayTagQuery tagQuery, FVector Offset);
-    static class AActor* FindClosestEnemyFromActorWithSkipChance(class AActor* FromActor, float range, float SkipChance, bool LineOfSightCheck, FGameplayTagQuery tagQuery, FVector Offset);
-    static class AActor* FindClosestEnemyFromLocation(FVector fromLocation, float range, bool LineOfSightCheck, class UObject* WorldContextObject, TArray<class AActor*> IgnoredActors, FVector Offset, bool onlyTargetable);
-    static class AActor* FindClosestEnemyFromLocation(FVector fromLocation, float range, bool LineOfSightCheck, TArray<class AActor*> IgnoredActors, FVector Offset, bool onlyTargetable);
+    UE_PURE static float EvaluateRuntimeCurve(class UObject* WorldContextObject, const FRuntimeFloatCurve& Curve, float Time);
+    UE_PURE static float EvaluateRuntimeCurve(const FRuntimeFloatCurve& Curve, float Time);
+    UE_AUTHORITY_ONLY static FVector FindCharacterTeleportLocation(class UObject* WorldContextObject, const FVector& closeToLocation, float desiredDistance);
+    UE_AUTHORITY_ONLY static FVector FindCharacterTeleportLocation(const FVector& closeToLocation, float desiredDistance);
+    static class AActor* FindClosestEnemyFromActor(class AActor* FromActor, float range, bool LineOfSightCheck, const FGameplayTagQuery& tagQuery, const FVector& Offset);
+    static class AActor* FindClosestEnemyFromActorWithSkipChance(class AActor* FromActor, float range, float SkipChance, bool LineOfSightCheck, const FGameplayTagQuery& tagQuery, FVector Offset);
+    static class AActor* FindClosestEnemyFromLocation(const FVector& fromLocation, float range, bool LineOfSightCheck, class UObject* WorldContextObject, const TArray<class AActor*>& IgnoredActors, const FVector& Offset, bool onlyTargetable);
+    static class AActor* FindClosestEnemyFromLocation(const FVector& fromLocation, float range, bool LineOfSightCheck, const TArray<class AActor*>& IgnoredActors, const FVector& Offset, bool onlyTargetable);
     UE_AUTHORITY_ONLY static FVector FindLatejoinDroppodLocation(class AFSDGameMode* GameMode);
     UE_PURE static class APlayerCharacter* FindNearestPlayerCharacter(class UObject* WorldContextObject, FVector fromLocation, float MaxRadius, bool MustBeAlive, bool MustBeUnparalyzed, bool MustHaveLineOfSight);
     UE_PURE static class APlayerCharacter* FindNearestPlayerCharacter(FVector fromLocation, float MaxRadius, bool MustBeAlive, bool MustBeUnparalyzed, bool MustHaveLineOfSight);
@@ -20211,8 +20211,8 @@ public:
     UE_PURE static float GetHeroXP(class UObject* WorldContextObject, class UPlayerCharacterID* characterID);
     UE_PURE static float GetHeroXP(class UPlayerCharacterID* characterID);
     UE_PURE static class UItemID* GetItemID(TSubclassOf<class AActor> itemClass);
-    UE_AUTHORITY_ONLY static TArray<class APlayerCharacter*> GetPlayersInRange(class UObject* WorldContextObject, FVector Origin, float Radius, bool MustBeAlive);
-    UE_AUTHORITY_ONLY static TArray<class APlayerCharacter*> GetPlayersInRange(FVector Origin, float Radius, bool MustBeAlive);
+    UE_AUTHORITY_ONLY static TArray<class APlayerCharacter*> GetPlayersInRange(class UObject* WorldContextObject, const FVector& Origin, float Radius, bool MustBeAlive);
+    UE_AUTHORITY_ONLY static TArray<class APlayerCharacter*> GetPlayersInRange(const FVector& Origin, float Radius, bool MustBeAlive);
     UE_PURE static FGuid GetSavegameID(TSubclassOf<class UObject> objectClass);
     UE_PURE static FGuid GetSaveGameIDFromCharacterID(class UPlayerCharacterID* characterID);
     UE_PURE static int GetTotalHeroLevels(class UObject* WorldContextObject, class UPlayerCharacterID* characterID);
@@ -20237,7 +20237,7 @@ public:
     UE_AUTHORITY_ONLY static void PlayCueOnAll(class UObject* WorldContextObject, class USoundCue* cue);
     UE_AUTHORITY_ONLY static void PlayCueOnAll(class USoundCue* cue);
     UE_AUTHORITY_ONLY static void PlayCueOnClient(class APlayerController* Target, class USoundCue* cue);
-    static void SetScalarParameters(FName ParameterName, float Value, TArray<class UMaterialInstanceDynamic*> Materials);
+    static void SetScalarParameters(FName ParameterName, float Value, const TArray<class UMaterialInstanceDynamic*>& Materials);
     UE_PURE static float TimeSince(class UObject* WorldContextObject, float Time);
     UE_PURE static float TimeSince(float Time);
     static void UnlockCharacters(class UObject* WorldContextObject);
@@ -20680,8 +20680,8 @@ public:
     TArray<class AActor*> DamagedActorCache;
     FMultiHitScanHits Hits;
     TArray<class AActor*> ActorsHit;
-    UE_MULTICAST void All_ShowHit(FMultiHitScanHits hitResults);
-    UE_SERVER UE_RELIABLE void Server_RegisterHit(FMultiHitScanHits hitResults);
+    UE_MULTICAST void All_ShowHit(const FMultiHitScanHits& hitResults);
+    UE_SERVER UE_RELIABLE void Server_RegisterHit(const FMultiHitScanHits& hitResults);
 };
 
 class UItemTemperatureDamageCondition : public UDamageCondition
@@ -20789,12 +20789,12 @@ public:
     bool AffectedByGlobalWeakpointDamageMultiplier;
     bool UseDormancy;
     class UPawnStatsComponent* PawnStats;
-    UE_CLIENT void Client_ReceivedHit(float amount, FDamageData DamageData, bool anyHealthLost);
+    UE_CLIENT void Client_ReceivedHit(float amount, const FDamageData& DamageData, bool anyHealthLost);
     void GetCurrentHealthSegment(int& Segment, float& segmentHealth, float& segmentHealthPercent);
     UE_AUTHORITY_ONLY void HealArmor(float amount);
     void OnRep_Damage(float oldDamage);
     UE_AUTHORITY_ONLY void Resupply(float percentage);
-    float TakePercentDamage(float PercentOfMax, FDamageData DamageData);
+    float TakePercentDamage(float PercentOfMax, const FDamageData& DamageData);
     UE_SERVER UE_RELIABLE void ToggleCanTakeDamage();
     UE_PURE float GetArmor() const;
     UE_PURE float GetArmorPct() const;
@@ -20927,7 +20927,7 @@ public:
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnRep_Used();
     void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
-    UE_SERVER UE_RELIABLE void Server_Call_Resupply(FVector Location);
+    UE_SERVER UE_RELIABLE void Server_Call_Resupply(const FVector& Location);
     UE_PURE class UItemPlacerAggregator* GetActiveAggregator() const;
     UE_PURE int GetResourceCost(class UObject* WorldContextObject) const;
     UE_PURE int GetResourceCost() const;
@@ -20943,7 +20943,7 @@ public:
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CallUpdateWidget();
-    UE_SERVER UE_RELIABLE void Server_Call_CleaningPod(FVector Location, class APlagueInfectionNode* plagueNode);
+    UE_SERVER UE_RELIABLE void Server_Call_CleaningPod(const FVector& Location, class APlagueInfectionNode* plagueNode);
     void UpdateWidget(EPlaceableObstructionType reason, float TimeLeft);
 };
 
@@ -20965,7 +20965,7 @@ public:
     TSoftClassPtr<class UClass> HackingWidgetType;
     FHackingUsableState HackingState;
     static constexpr const char* HackingState__Replicated = "OnRep_HackingState:";
-    void OnRep_HackingState(FHackingUsableState oldState);
+    void OnRep_HackingState(const FHackingUsableState& oldState);
     UE_PURE class APlayerCharacter* GetHackedBy() const;
     UE_PURE TSoftClassPtr<class UClass> GetHackingWidgetType() const;
     UE_PURE bool GetIsBeingHacked() const;
@@ -21001,10 +21001,10 @@ public:
     static bool GetAttackableTargetsInRange(class AActor* from, TArray<class UAttackerPositioningComponent*>& outArray, float MaxDistance, bool MustBeAlive, bool MustBeUnparalyzed, bool accountForAttackers, class AActor* ignoreTarget, bool IsFlying);
     UE_PURE static class APlayerCharacter* GetPlayerTarget(class AActor* from, float MaxDistance, bool MustBeAlive, bool MustBeUnparalyzed, bool accountForAttackers, class AActor* ignoreTarget, bool IsFlying);
     UE_PURE static bool IsEnemyAlertet(class APawn* enemy);
-    static void MakeEnemiesBackOutOfArea(class UObject* WorldContextObject, FVector Center, float Radius);
-    static void MakeEnemiesBackOutOfArea(FVector Center, float Radius);
-    static int MakeEnemiesFleeFromArea(class UObject* WorldContextObject, FVector Center, float Radius, int maxEnemiesAffected);
-    static int MakeEnemiesFleeFromArea(FVector Center, float Radius, int maxEnemiesAffected);
+    static void MakeEnemiesBackOutOfArea(class UObject* WorldContextObject, const FVector& Center, float Radius);
+    static void MakeEnemiesBackOutOfArea(const FVector& Center, float Radius);
+    static int MakeEnemiesFleeFromArea(class UObject* WorldContextObject, const FVector& Center, float Radius, int maxEnemiesAffected);
+    static int MakeEnemiesFleeFromArea(const FVector& Center, float Radius, int maxEnemiesAffected);
     UE_AUTHORITY_ONLY static void SetAICanSense(bool canSense);
 };
 
@@ -21296,7 +21296,7 @@ public:
     TMap<class UPlayerCharacterID*, class UPlayerCharacterData*> CharacterData;
     void PreloadAllInventories(class UAsyncManager* AsyncManager);
     UE_PURE class UInventoryList* GetInventoryList(class UPlayerCharacterID* characterID) const;
-    UE_PURE class UPlayerCharacterID* GetPlayerCharacterID(FGuid ID) const;
+    UE_PURE class UPlayerCharacterID* GetPlayerCharacterID(const FGuid& ID) const;
 };
 
 class UClipBasedItemAggregator : public UItemAggregator
@@ -21404,7 +21404,7 @@ public:
     static constexpr const char* PushCollider4__UeSubobject = "PushCollider4 /Script/Engine.SphereComponent";
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void GeneratorSpunUp();
-    void OnEnteredPushpoint(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnEnteredPushpoint(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnLeftPushpoint(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnRep_Finished();
 };
@@ -21465,10 +21465,10 @@ public:
     FVector MaxAngles;
     static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
     static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
-    UE_PURE bool CanConnectWith(class ACable* Cable, FTransform FromWorldTransform);
+    UE_PURE bool CanConnectWith(class ACable* Cable, const FTransform& FromWorldTransform);
     UE_AUTHORITY_ONLY bool Connect(class ACable* Cable);
     UE_AUTHORITY_ONLY bool Disconnect(class ACable* Cable);
-    UE_PURE FTransform GetConnectTransform(FTransform FromWorldTransform);
+    UE_PURE FTransform GetConnectTransform(const FTransform& FromWorldTransform);
     void OnRep_ConnectedCable();
 };
 
@@ -21623,7 +21623,7 @@ public:
     static void Cheat_UnlockWeapon(class UItemID* ItemID);
     static bool GetSavedCheatValue(FName CheatName, int& ValueToGet);
     UE_PURE static bool IsFlareGunProjectilesInfinite();
-    static bool SetSavedCheatValue(FName CheatName, int ValueToSet);
+    static bool SetSavedCheatValue(FName CheatName, const int& ValueToSet);
     void AddResourceToTeamDeposit(class UResourceData* Resource, float amount);
     void C_AddAllResourcesToInventory(float amount);
     void C_AddForgingXP(int Number);
@@ -22026,12 +22026,12 @@ class UAsyncManager : public UGameInstanceSubsystem
 public:
     UE_CLASS("/Script/FSD", "AsyncManager");
     TArray<class UObject*> PermanentReferences;
-    void AsyncLoadAsset(FSoftObjectPath Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadAssets(TArray<FSoftObjectPath> Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
+    void AsyncLoadAsset(const FSoftObjectPath& Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
+    void AsyncLoadAssets(const TArray<FSoftObjectPath>& Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
     void AsyncLoadSoftClass(TSoftClassPtr<class UClass> Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
     void AsyncLoadSoftClasses(TArray<TSoftClassPtr<class UClass>> Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
     void AsyncLoadSoftObject(TSoftObjectPtr<class UObject> Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadSoftObjects(TArray<TSoftObjectPtr<class UObject>> Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
+    void AsyncLoadSoftObjects(const TArray<TSoftObjectPtr<class UObject>>& Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
     TSubclassOf<class UObject> Receive_SyncLoadClass(TSoftClassPtr<class UClass> Asset);
     TArray<TSubclassOf<class UObject>> Receive_SyncLoadClasses(TArray<TSoftClassPtr<class UClass>> assets);
     void ReleaseAllHandles();
@@ -22081,10 +22081,10 @@ class UAttackCooldownComponent : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "AttackCooldownComponent");
     TArray<FAttackCooldown> AttackCooldowns;
-    void AttackUsed(FName Name_0);
-    void SetCooldown(FName AttackName, float cooldownSeconds);
+    void AttackUsed(const FName& Name_0);
+    void SetCooldown(const FName& AttackName, float cooldownSeconds);
     UE_PURE bool IsAnyAttackOffCooldown() const;
-    UE_PURE bool IsAttackOffCooldown(FName AttackName) const;
+    UE_PURE bool IsAttackOffCooldown(const FName& AttackName) const;
 };
 
 class UAttackerManagerComponent : public UActorComponent
@@ -22170,10 +22170,10 @@ public:
     static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
     static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
-    void ApplyDamageEffects(FHitResult HitResult, FVector RelativeLocation);
+    void ApplyDamageEffects(const FHitResult& HitResult, const FVector& RelativeLocation);
     void OnRep_BansheePulseActive();
     void OnRep_OnlyTrailShown();
-    UE_SERVER UE_RELIABLE void Server_HandleImpact(FHitResult HitResult, FVector RelativeLocation);
+    UE_SERVER UE_RELIABLE void Server_HandleImpact(const FHitResult& HitResult, const FVector& RelativeLocation);
     void SetMainDamageComponent(class UDamageComponent* Component);
     void SetMainDamageComponentFromBP();
     void SetSimpleDamageComponent(class UDamageComponent* Component);
@@ -22745,7 +22745,7 @@ class UFSDKismetArrayExtensionFunctions : public UKismetArrayLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "FSDKismetArrayExtensionFunctions");
-    static void Array_GetRandom(TArray<int> TargetArray, int& Item);
+    static void Array_GetRandom(const TArray<int>& TargetArray, int& Item);
 };
 
 class ABarrierProjectile : public AActor
@@ -22857,8 +22857,8 @@ public:
     TMulticastInlineDelegate<void()> OnSuccess;
     TMulticastInlineDelegate<void()> OnFailure;
     class UObject* WorldContextObject;
-    static class UFSDJoinSessionCallbackProxy* FSDJoinSession(class UObject* WorldContextObject_0, class APlayerController* PlayerController, FBlueprintSessionResult SearchResult, FString FSDPassword, bool fromInvite);
-    static class UFSDJoinSessionCallbackProxy* FSDJoinSession(class APlayerController* PlayerController, FBlueprintSessionResult SearchResult, FString FSDPassword, bool fromInvite);
+    static class UFSDJoinSessionCallbackProxy* FSDJoinSession(class UObject* WorldContextObject_0, class APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult, FString FSDPassword, bool fromInvite);
+    static class UFSDJoinSessionCallbackProxy* FSDJoinSession(class APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult, FString FSDPassword, bool fromInvite);
 };
 
 class UCapsuleHitscanComponent : public UHitscanBaseComponent
@@ -22877,8 +22877,8 @@ public:
     TArray<class AActor*> DamagedActorCache;
     TArray<class AActor*> ActorsHit;
     FMultiHitScanHits Hits;
-    UE_MULTICAST void All_ShowHit(FMultiHitScanHits hitResults);
-    UE_SERVER UE_RELIABLE void Server_RegisterHit(FMultiHitScanHits hitResults);
+    UE_MULTICAST void All_ShowHit(const FMultiHitScanHits& hitResults);
+    UE_SERVER UE_RELIABLE void Server_RegisterHit(const FMultiHitScanHits& hitResults);
 };
 
 class UMinersManual : public UDataAsset
@@ -22938,15 +22938,15 @@ public:
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CancelPlacement();
-    void FinishPlacement(FTransform FinalLocation, class ACableEnd* CableEnd);
+    void FinishPlacement(const FTransform& FinalLocation, class ACableEnd* CableEnd);
     void OnRep_Cable();
     void ReceiveBeginPlaceCable();
     void ReceivePlacementUpdated(bool InCanPlace, bool InConnecting, float InDistanceProgress);
     UE_SERVER UE_RELIABLE void ServerBeginPlaceCable(class UCableUsable* InUsable);
     UE_SERVER UE_RELIABLE void ServerCancelPlacement();
-    UE_SERVER UE_RELIABLE void ServerFinishPlacement(FTransform FinalLocation, class ACableEnd* CableEnd);
-    UE_SERVER void ServerUpdatePlacement(FTransform InTransform, bool bPlacementValid, class ACableEnd* InCableEnd);
-    void UpdatePlacement(FTransform InTransform, class ACableEnd* InCableEnd, bool bPlacementValid, bool InUpdateServer);
+    UE_SERVER UE_RELIABLE void ServerFinishPlacement(const FTransform& FinalLocation, class ACableEnd* CableEnd);
+    UE_SERVER void ServerUpdatePlacement(const FTransform& InTransform, bool bPlacementValid, class ACableEnd* InCableEnd);
+    void UpdatePlacement(const FTransform& InTransform, class ACableEnd* InCableEnd, bool bPlacementValid, bool InUpdateServer);
 };
 
 class UBasicWeaponFireComponent : public UWeaponFireComponent
@@ -22993,8 +22993,8 @@ public:
     bool alwaysPenetrate;
     TSubclassOf<class UReactiveTerrain> ReactiveTerrain;
     UE_PURE static class UFSDPhysicalMaterial* GetPhysicalMaterialFromPrimitive(class UPrimitiveComponent* Component);
-    static class UFXSystemComponent* SpawnImpactParticlesFromHit(class UObject* WorldContextObject, FHitResult HitResult);
-    static class UFXSystemComponent* SpawnImpactParticlesFromHit(FHitResult HitResult);
+    static class UFXSystemComponent* SpawnImpactParticlesFromHit(class UObject* WorldContextObject, const FHitResult& HitResult);
+    static class UFXSystemComponent* SpawnImpactParticlesFromHit(const FHitResult& HitResult);
     class UFXSystemComponent* SpawnImpactParticles(class UObject* WorldContextObject, FVector Location, FVector Normal) const;
     class UFXSystemComponent* SpawnImpactParticles(FVector Location, FVector Normal) const;
 };
@@ -23412,7 +23412,7 @@ public:
     UE_CLASS("/Script/FSD", "CoolDownProgressWidget");
     FCoolDownProgressStyle Style;
     bool bIsFinished;
-    void Init(class UObject* InCoolDownObject, FCoolDownProgressStyle InStyle);
+    void Init(class UObject* InCoolDownObject, const FCoolDownProgressStyle& InStyle);
     void ReceiveInitWidget();
     void ReceiveUpdateProgress(float InProgress);
     void UpdateProgress(float Progress);
@@ -23509,7 +23509,7 @@ public:
     UE_CLASS("/Script/FSD", "BodyRotationManagerComponent");
     FRuntimeFloatCurve KnockBackCurve;
     float LerpSpeed;
-    void ApplyKnockBack(float force, float Duration, FVector Direction);
+    void ApplyKnockBack(float force, float Duration, const FVector& Direction);
 };
 
 class UMutator : public UDataAsset
@@ -23858,11 +23858,11 @@ public:
     void SetSonyInputSettingMotionXMapping(ESonyControllerMotionMapping NewValue);
     bool TryBuyResource(class UResourceData* Resource, int amount, int& Price);
     bool TryDeductCredits(int amount);
-    bool TryDeductResources(TMap<class UResourceData*, int> Resources_0);
+    bool TryDeductResources(const TMap<class UResourceData*, int>& Resources_0);
     bool TrySellResource(class UResourceData* Resource, int amount, int& Price);
-    UE_PURE bool CanAfford(TMap<class UResourceData*, int> Resources_0) const;
+    UE_PURE bool CanAfford(const TMap<class UResourceData*, int>& Resources_0) const;
     UE_PURE bool GetBoscoAllowed() const;
-    UE_PURE int GetCharacterRetirementCount(FGuid PlayerId) const;
+    UE_PURE int GetCharacterRetirementCount(const FGuid& PlayerId) const;
     UE_PURE int GetClassLevel(class UPlayerCharacterID* characterID) const;
     UE_PURE int GetClassXP(class UPlayerCharacterID* characterID) const;
     UE_PURE int GetCredits() const;
@@ -24035,7 +24035,7 @@ public:
     static class UFSDFindSessionsCallbackProxy* FSDFindSessions(class UObject* WorldContextObject_0, class APlayerController* PlayerController, int MaxResults, bool bUseLAN);
     static class UFSDFindSessionsCallbackProxy* FSDFindSessions(class APlayerController* PlayerController, int MaxResults, bool bUseLAN);
     static void ManualRefreshServerList();
-    void OnFSDCompleted(bool bSuccess, TArray<FBlueprintSessionResult> Results);
+    void OnFSDCompleted(bool bSuccess, const TArray<FBlueprintSessionResult>& Results);
 };
 
 class UBoscoAbillityComponent : public UActorComponent
@@ -24111,7 +24111,7 @@ public:
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    UE_SERVER UE_RELIABLE void Server_Call_Resupply(FVector Location);
+    UE_SERVER UE_RELIABLE void Server_Call_Resupply(const FVector& Location);
 };
 
 class USimpleBossFight : public UObject
@@ -24127,16 +24127,16 @@ public:
     UE_CLASS("/Script/FSD", "FSDJsonObject");
     static class UFSDJsonObject* CreateJSONObject(class UObject* WorldContextObject);
     static class UFSDJsonObject* CreateJSONObject();
-    bool AddBooleanArrayField(FString Key, TArray<bool> Value);
+    bool AddBooleanArrayField(FString Key, const TArray<bool>& Value);
     bool AddBooleanField(FString Key, bool Value);
     bool AddEmptyField(FString Key);
-    bool AddFloatArrayField(FString Key, TArray<float> Value);
+    bool AddFloatArrayField(FString Key, const TArray<float>& Value);
     bool AddFloatField(FString Key, float Value);
-    bool AddIntegerArrayField(FString Key, TArray<int> Value);
+    bool AddIntegerArrayField(FString Key, const TArray<int>& Value);
     bool AddIntegerField(FString Key, int Value);
     bool AddJSONArrayField(FString Key, class UFSDJsonArray* Value);
     bool AddJSONObjectField(FString Key, class UFSDJsonObject* Value);
-    bool AddStringArrayField(FString Key, TArray<FString> Value);
+    bool AddStringArrayField(FString Key, const TArray<FString>& Value);
     bool AddStringField(FString Key, FString Value);
     bool Clear();
     UE_PURE FString AsString() const;
@@ -24209,7 +24209,7 @@ public:
     class UGrenadeAnimationSet* GrenadeAnimationSetOverride;
     static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
     UE_PURE static class AGrenade* GetGrenadeDefaultObject(TSubclassOf<class AGrenade> GrenadeClass);
-    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, FHitResult Hit);
+    void ActorWasHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     void OnExploded();
     void OnRep_HasExploded();
     UE_PURE TSubclassOf<class AActor> GetWeaponViewClass() const;
@@ -24304,7 +24304,7 @@ public:
     UE_PURE static FVector BoxCenter(FBox Box);
     UE_PURE static FVector BoxExtends(FBox Box);
     UE_PURE static float BoxSize(FBox Box);
-    static FVector ClosestPointToBox(FVector Pos, FBox Box);
+    static FVector ClosestPointToBox(FVector Pos, const FBox& Box);
     static FBox CreateBoxAt(FVector Location, FVector Size);
 };
 
@@ -24561,8 +24561,8 @@ public:
     UE_AUTHORITY_ONLY static TArray<FVector> FindPath(FVector Origin, FVector Destination, EDeepPathFinderSize pfSize, EDeepPathFinderType pfType);
     UE_AUTHORITY_ONLY static TArray<FVector> GetAllNavPointsInSphere(class UObject* WorldContextObject, FVector Origin, float Radius, EDeepPathFinderSize pfSize, FVector searchNormal, float maxDegreesToSearchNormal);
     UE_AUTHORITY_ONLY static TArray<FVector> GetAllNavPointsInSphere(FVector Origin, float Radius, EDeepPathFinderSize pfSize, FVector searchNormal, float maxDegreesToSearchNormal);
-    UE_AUTHORITY_ONLY static bool GetDebrisTransformsInSphere(class UObject* WorldContextObject, TArray<FMatrix>& outPositions, FVector Location, float Radius, ESpecialDebrisType debrisType, float minDistToOther, bool calcPriority);
-    UE_AUTHORITY_ONLY static bool GetDebrisTransformsInSphere(TArray<FMatrix>& outPositions, FVector Location, float Radius, ESpecialDebrisType debrisType, float minDistToOther, bool calcPriority);
+    UE_AUTHORITY_ONLY static bool GetDebrisTransformsInSphere(class UObject* WorldContextObject, TArray<FMatrix>& outPositions, const FVector& Location, const float& Radius, const ESpecialDebrisType& debrisType, float minDistToOther, bool calcPriority);
+    UE_AUTHORITY_ONLY static bool GetDebrisTransformsInSphere(TArray<FMatrix>& outPositions, const FVector& Location, const float& Radius, const ESpecialDebrisType& debrisType, float minDistToOther, bool calcPriority);
 };
 
 class UBTService_UpdateMoveToTarget : public UBTService
@@ -24590,7 +24590,7 @@ public:
     UE_CLASS("/Script/FSD", "BTTask_Attack");
     FBlackboardKeySelector TargetKey;
     FName AttackName;
-    void OnAttackCompleted(class UBehaviorTreeComponent* btComponent, bool wasSuccess);
+    void OnAttackCompleted(class UBehaviorTreeComponent* btComponent, const bool& wasSuccess);
 };
 
 class UTerrainDetectBoxComponent : public UBoxComponent
@@ -24734,7 +24734,7 @@ public:
     void ReceivedHovered();
     void ReceivedSelectedChanged();
     void ReceivedUnhovered();
-    void SetButtonData(FButtonData InData);
+    void SetButtonData(const FButtonData& InData);
     void SetButtonEnabled(bool InEnabled);
     void SetButtonSelected(bool InSelected);
     bool ToggleButtonSelected();
@@ -24758,14 +24758,14 @@ public:
     static constexpr const char* CableSplineComponent__UeSubobject = "CableSplineComponent /Script/Engine.SplineComponent";
     static constexpr const char* CableSplineMesh__UeSubobject = "CableSplineMesh /Script/Engine.SplineMeshComponent";
     static constexpr const char* PreviewEndPostLocation__UeSubobject = "PreviewEndPostLocation /Script/Engine.SceneComponent";
-    bool CanPlaceAt(FTransform InCandidateTransform, class ACableEnd* InCableEnd, class AItem* PlaceableItem);
+    bool CanPlaceAt(const FTransform& InCandidateTransform, class ACableEnd* InCableEnd, class AItem* PlaceableItem);
     void OnRep_CableEndTransform();
-    bool ReceiveCanPlaceAt(FTransform InCandidateTransform, class ACableEnd* InCableEnd);
-    void ReceivePlacementChangedBegin(FTransform NewEndTransform, class ACableEnd* InCableEnd);
-    void ReceivePlacementChangedEnd(FTransform NewEndTransform, class ACableEnd* InCableEnd);
+    bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class ACableEnd* InCableEnd);
+    void ReceivePlacementChangedBegin(const FTransform& NewEndTransform, class ACableEnd* InCableEnd);
+    void ReceivePlacementChangedEnd(const FTransform& NewEndTransform, class ACableEnd* InCableEnd);
     void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
     void ReceivePlacementValidChanged(bool InIsValid);
-    bool UpdatePlacement(FTransform InTransform, class ACableEnd* InCableEnd, class AItem* PlaceableItem);
+    bool UpdatePlacement(const FTransform& InTransform, class ACableEnd* InCableEnd, class AItem* PlaceableItem);
     UE_PURE FTransform GetCableEndTransform() const;
     UE_PURE bool GetIsCableEndTransformValid() const;
     UE_PURE ETrackBuildPlacementState GetPlacementState() const;
@@ -25029,9 +25029,9 @@ public:
     bool AvoidImportantLocations;
     float MinDistanceToImportantLocations;
     void AddTerrainPlacement(class AActor* Actor, class AProceduralSetup* Setup);
-    bool GetLocations(int NumToSpawn, int NumToSpawnMin, int NumAllowedChecks, TSubclassOf<class AActor> SpawnedActorClass, class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, TArray<FVector> locationsToAvoid, class UCurveFloat* AvoidCostCurve, TArray<FTransform>& OutLocations, FVector CustomLocation);
-    bool PlaceActors(int NumToSpawn, int NumToSpawnMin, int NumAllowedChecks, TSubclassOf<class AActor> SpawnedActorClass, class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, TArray<FVector> locationsToAvoid, class UCurveFloat* AvoidCostCurve, TArray<class AActor*>& OutSpawnedActors, FVector CustomLocation);
-    bool PlaceActorsWithCallback(int NumToSpawn, int NumToSpawnMin, int NumAllowedChecks, TSubclassOf<class AActor> SpawnedActorClass, class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, TArray<FVector> locationsToAvoid, class UCurveFloat* AvoidCostCurve, TDelegate<void(TSubclassOf<class AActor> Actor, FTransform Transform)> OnSpawned, FVector CustomLocation);
+    bool GetLocations(int NumToSpawn, int NumToSpawnMin, int NumAllowedChecks, TSubclassOf<class AActor> SpawnedActorClass, class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, class UCurveFloat* AvoidCostCurve, TArray<FTransform>& OutLocations, FVector CustomLocation);
+    bool PlaceActors(int NumToSpawn, int NumToSpawnMin, int NumAllowedChecks, TSubclassOf<class AActor> SpawnedActorClass, class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, class UCurveFloat* AvoidCostCurve, TArray<class AActor*>& OutSpawnedActors, FVector CustomLocation);
+    bool PlaceActorsWithCallback(int NumToSpawn, int NumToSpawnMin, int NumAllowedChecks, TSubclassOf<class AActor> SpawnedActorClass, class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, class UCurveFloat* AvoidCostCurve, TDelegate<void(TSubclassOf<class AActor> Actor, FTransform Transform)> OnSpawned, FVector CustomLocation);
 };
 
 class UCaveEntranceComponent : public UPrimitiveComponent
@@ -25245,12 +25245,12 @@ public:
     TArray<class UUsableComponentBase*> UsableComponentsCache;
     class UUsableComponentBase* HoveringUsable;
     void AddCustomUsableComponent(class UUsableComponentBase* Usable, ECustomUsableType eType);
-    UE_MULTICAST void All_UseEnded(FCharacterUseState oldState);
+    UE_MULTICAST void All_UseEnded(const FCharacterUseState& oldState);
     UE_PURE bool GetIsDepositing();
     UE_PURE bool GetIsUsing();
-    void OnRep_State(FCharacterUseState oldState);
+    void OnRep_State(const FCharacterUseState& oldState);
     void RemoveCustomUsableComponent(class UUsableComponentBase* Usable);
-    UE_SERVER UE_RELIABLE void Server_SetState(FCharacterUseState NewState);
+    UE_SERVER UE_RELIABLE void Server_SetState(const FCharacterUseState& NewState);
     UE_PURE class UUsableComponentBase* GetActiveUsable() const;
     UE_PURE class UUsableComponentBase* GetHoveringUsable() const;
     UE_PURE class AActor* GetLookingAtActor() const;
@@ -25299,8 +25299,8 @@ public:
     UE_AUTHORITY_ONLY void EquipMedicalGown();
     void OnRep_EquippedVanity();
     UE_AUTHORITY_ONLY void RemoveMedicalGown();
-    UE_SERVER UE_RELIABLE void Server_SetEquippedVanity(FEquippedVanity equippedItems);
-    void SetEquippedVanityInViewer(FEquippedVanity equippedVanityItems);
+    UE_SERVER UE_RELIABLE void Server_SetEquippedVanity(const FEquippedVanity& equippedItems);
+    void SetEquippedVanityInViewer(const FEquippedVanity& equippedVanityItems);
     void UpdateEquippedVanity(bool applyItems);
     void UpdateMeshes();
     UE_PURE class UCharacterVanityItems* GetAvailableVanityItems() const;
@@ -25327,7 +25327,7 @@ public:
     static void SortVanityItems(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, TArray<class UVanityItem*>& VanityItems);
     static void SortVanityItems(class UPlayerCharacterID* characterID, TArray<class UVanityItem*>& VanityItems);
     UE_PURE TArray<class UVanityItem*> GetItems(EVanitySlot Slot, bool onlyStoreItems) const;
-    UE_PURE class UVanityItem* GetVanityItem(FGuid VanityID) const;
+    UE_PURE class UVanityItem* GetVanityItem(const FGuid& VanityID) const;
 };
 
 class UImpactComponent : public UActorComponent
@@ -25400,10 +25400,10 @@ public:
     TArray<FPlayerSphere> PlayerSpheres;
     TArray<FProximityTriggerItem> LocalPlayerProximityTriggers;
     TArray<FProximityTriggerItem> AnyPlayerProximityTriggers;
-    UE_AUTHORITY_ONLY static void Receive_RegisterForAnyPlayerProximity(class UObject* WorldContextObject, FVector Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
-    UE_AUTHORITY_ONLY static void Receive_RegisterForAnyPlayerProximity(FVector Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
-    static void Receive_RegisterForLocalPlayerProximity(class UObject* WorldContextObject, FVector Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
-    static void Receive_RegisterForLocalPlayerProximity(FVector Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
+    UE_AUTHORITY_ONLY static void Receive_RegisterForAnyPlayerProximity(class UObject* WorldContextObject, const FVector& Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
+    UE_AUTHORITY_ONLY static void Receive_RegisterForAnyPlayerProximity(const FVector& Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
+    static void Receive_RegisterForLocalPlayerProximity(class UObject* WorldContextObject, const FVector& Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
+    static void Receive_RegisterForLocalPlayerProximity(const FVector& Location, float Distance, TDelegate<void(class APlayerCharacter* Player, bool enteredTrigger)> proximityCallback, bool triggerOnlyOnce);
     UE_PURE TArray<FPlayerSphere> GetPlayerSpheres() const;
     UE_PURE FPlayerSphere GetPrimarySphere() const;
 };
@@ -25492,13 +25492,13 @@ class UDamageFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "DamageFunctionLibrary");
-    static class UDamageImpulse* GetDamageImpulse(FDamageData DamageData);
-    UE_PURE static bool IsBurnDeath(class UDamageClass* DamageClass, TArray<class UDamageTag*> Tags);
-    UE_PURE static bool IsCookedDeath(TArray<class UDamageTag*> Tags);
-    UE_PURE static bool IsCorrosiveDeath(class UDamageClass* DamageClass, TArray<class UDamageTag*> Tags);
-    UE_PURE static bool IsExplosiveDeath(class UObject* WorldContext, class UPawnStatsComponent* PawnStats, TArray<class UDamageTag*> Tags);
-    UE_PURE static bool IsExplosiveDeath(class UPawnStatsComponent* PawnStats, TArray<class UDamageTag*> Tags);
-    UE_PURE static bool IsGibbedDeath(TArray<class UDamageTag*> Tags);
+    static class UDamageImpulse* GetDamageImpulse(const FDamageData& DamageData);
+    UE_PURE static bool IsBurnDeath(class UDamageClass* DamageClass, const TArray<class UDamageTag*>& Tags);
+    UE_PURE static bool IsCookedDeath(const TArray<class UDamageTag*>& Tags);
+    UE_PURE static bool IsCorrosiveDeath(class UDamageClass* DamageClass, const TArray<class UDamageTag*>& Tags);
+    UE_PURE static bool IsExplosiveDeath(class UObject* WorldContext, class UPawnStatsComponent* PawnStats, const TArray<class UDamageTag*>& Tags);
+    UE_PURE static bool IsExplosiveDeath(class UPawnStatsComponent* PawnStats, const TArray<class UDamageTag*>& Tags);
+    UE_PURE static bool IsGibbedDeath(const TArray<class UDamageTag*>& Tags);
     static void SetPhysicalMaterialOnHit(class UFSDPhysicalMaterial* PhysMat, FHitResult& Hit);
 };
 
@@ -25623,8 +25623,8 @@ public:
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST UE_RELIABLE void All_AdjustTrail(class ACoilgunWeaponTrail* Trail, float Length);
     UE_MULTICAST UE_RELIABLE void All_ShieldBroken();
-    UE_MULTICAST UE_RELIABLE void All_ShowHit(FVector_NetQuantize Location, FVector_NetQuantize Rotation);
-    void OnBulletPathComplete(TArray<FBulletPathSegment> Path);
+    UE_MULTICAST UE_RELIABLE void All_ShowHit(const FVector_NetQuantize& Location, const FVector_NetQuantize& Rotation);
+    void OnBulletPathComplete(const TArray<FBulletPathSegment>& Path);
     void OnCharacterShieldBroke(class AActor* brokeChar);
     void OnDamageTarget(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* Component, class UFSDPhysicalMaterial* PhysicalMaterial);
     void OnEnemyKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysicalMaterial, bool wasDirectHit);
@@ -25635,13 +25635,13 @@ public:
     void OnTriBurstCancled();
     UE_SERVER UE_RELIABLE void Server_ClearAilments();
     UE_SERVER UE_RELIABLE void Server_FearTarget(class AActor* Target);
-    UE_SERVER UE_RELIABLE void Server_HitTerrain(FVector_NetQuantize Location, FVector_NetQuantize End, float maxCarveDepth);
-    UE_SERVER UE_RELIABLE void Server_RegisterBlastHit(class AActor* Target, FVector_NetQuantize Location, class UPrimitiveComponent* comp);
+    UE_SERVER UE_RELIABLE void Server_HitTerrain(const FVector_NetQuantize& Location, const FVector_NetQuantize& End, float maxCarveDepth);
+    UE_SERVER UE_RELIABLE void Server_RegisterBlastHit(class AActor* Target, const FVector_NetQuantize& Location, class UPrimitiveComponent* comp);
     UE_SERVER UE_RELIABLE void Server_RegisterBonusHit(class AActor* Target);
-    UE_SERVER UE_RELIABLE void Server_RegisterPrimaryHit(class UPrimitiveComponent* Target, class UFSDPhysicalMaterial* PhysMaterial, FVector_NetQuantize Origin, FVector_NetQuantize Location, int BoneIndex, FShotMultiplier Multiplier, int mole);
-    UE_SERVER UE_RELIABLE void Server_SetShotPower(float Power);
-    UE_SERVER UE_RELIABLE void Server_SpawnGroundTrail(FVector_NetQuantize Location, FVector Direction, float chargeMultiplier);
-    UE_SERVER UE_RELIABLE void Server_SpawnTrail(FVector_NetQuantize Location, FRotator Rotation, float HalfHeight, bool fireTrailEnabled);
+    UE_SERVER UE_RELIABLE void Server_RegisterPrimaryHit(class UPrimitiveComponent* Target, class UFSDPhysicalMaterial* PhysMaterial, const FVector_NetQuantize& Origin, const FVector_NetQuantize& Location, int BoneIndex, FShotMultiplier Multiplier, int mole);
+    UE_SERVER UE_RELIABLE void Server_SetShotPower(const float& Power);
+    UE_SERVER UE_RELIABLE void Server_SpawnGroundTrail(const FVector_NetQuantize& Location, const FVector& Direction, float chargeMultiplier);
+    UE_SERVER UE_RELIABLE void Server_SpawnTrail(const FVector_NetQuantize& Location, const FRotator& Rotation, float HalfHeight, bool fireTrailEnabled);
     UE_SERVER UE_RELIABLE void Server_ToggleCharingBonuses(bool Enabled);
     void SetDynamicMaterials();
     void UpdateAfflictions();
@@ -25734,15 +25734,15 @@ public:
     static void SpawnDebrisItems_Async(class AProceduralSetup* Setup, EDebrisItemPass pass, int Depth);
     static void SpawnItems_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo);
     static void SpawnItems_Async(class AProceduralSetup* Setup);
-    int AddAirParticlesCollider(FDebrisCapsule Capsule);
-    void AddCaveInfluence(class UCaveInfluencer* Influencer, FVector Location, float range);
-    int AddDebrisCollider(FDebrisCapsule Capsule);
+    int AddAirParticlesCollider(const FDebrisCapsule& Capsule);
+    void AddCaveInfluence(class UCaveInfluencer* Influencer, const FVector& Location, float range);
+    int AddDebrisCollider(const FDebrisCapsule& Capsule);
     UE_AUTHORITY_ONLY void AddEnemyDebris();
-    void AddImportantLocation(FVector Location, float Radius);
-    void AddImportantLocationWithVerticalCheck(FVector Location, float Radius, EImportantLocationVerticalCheck verticalCheck);
+    void AddImportantLocation(const FVector& Location, float Radius);
+    void AddImportantLocationWithVerticalCheck(const FVector& Location, float Radius, EImportantLocationVerticalCheck verticalCheck);
     void AddInfluenceToTunnelEntrances(class UCaveInfluencer* Influencer, float range);
     int AddRoom(FVector Location, bool CanHaveEnemies, class URoomGeneratorBase* RoomGenerator, bool canBeRotated, FVector& outCenter, FRoomNode& outRoom, float ResourceMultiplier);
-    void AddRoomToInitialState(FRoomNode RoomNode);
+    void AddRoomToInitialState(const FRoomNode& RoomNode);
     void BeginGenerating();
     void BeginLiveGeneration();
     void CarveTunnels();
@@ -25758,7 +25758,7 @@ public:
     void FindEntrancesForAllConnections();
     FVector FindLocationInDirection(FVector Origin, FVector Direction, float horizontalDeviation, float verticalDeviation, FRandRange Distance, float additionalDistance);
     void GenerateLandscape();
-    void GenerateLandscapeFromData(int Seed_0, TArray<FRoomNode> Rooms_0, TArray<FPathObstacle> Obstacles);
+    void GenerateLandscapeFromData(int Seed_0, const TArray<FRoomNode>& Rooms_0, const TArray<FPathObstacle>& Obstacles);
     void GenerateRoomsFromGraph(int CarvePass);
     void InitializeObjectives();
     void OnCarverDataRecieved(EDebrisItemPass pass);
@@ -25770,7 +25770,7 @@ public:
     void SpawnDebrisItems(EDebrisItemPass pass);
     UE_AUTHORITY_ONLY void SpawnEncounters();
     void SpawnItems();
-    UE_AUTHORITY_ONLY void SpawnObjectiveCriticalItems(ECriticalItemPass pass);
+    UE_AUTHORITY_ONLY void SpawnObjectiveCriticalItems(const ECriticalItemPass& pass);
     UE_AUTHORITY_ONLY void SpawnObjectiveEncounter();
     void SpawnSpecialEvents();
     void StartGenerationOnClient(class AFSDPlayerController* client);
@@ -26165,7 +26165,7 @@ public:
     float AlertRadius;
     UE_AUTHORITY_ONLY void AleartNearby();
     void OnAlerted();
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void OnPawnSeen(class APawn* Pawn);
     void StopAutoAlerting();
 };
@@ -26242,7 +26242,7 @@ public:
     void FireWeapon(bool ResetUsing, bool Fire);
     void MuzzleLerpToTarget(FVector TargetLocation);
     void OnAsyncFireComplete();
-    void OnHit(FHitResult Hit, bool alwaysPenetrate);
+    void OnHit(const FHitResult& Hit, bool alwaysPenetrate);
     void OnHitDeadTarget();
     void OnMovementSlowed(bool isSlowed);
     void OnRep_AimTarget();
@@ -26253,7 +26253,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_SetIsChargingShot(bool bisCharging);
     UE_SERVER UE_RELIABLE void Server_SetIsLatestShotLockedOn(bool bisShotLockedOn);
     UE_SERVER UE_RELIABLE void Server_SetIsMovementSlowed(bool bisMovementSlowed);
-    UE_SERVER UE_RELIABLE void Server_SetLockCount(FLockCounter LockCounter);
+    UE_SERVER UE_RELIABLE void Server_SetLockCount(const FLockCounter& LockCounter);
     UE_SERVER UE_RELIABLE void Server_SetTotalLockCount(int totalLockCount);
     UE_SERVER UE_RELIABLE void Server_TriggerAoe(FVector Location);
     void SetMuzzleDirection(FVector TargetLocation);
@@ -26342,10 +26342,10 @@ public:
     int AmountToSpawn;
     bool SpawnOneAtATime;
     bool DisallowSpawning;
-    UE_AUTHORITY_ONLY bool CollectSpawnLocations(FVector Origin, TArray<FTransform> fallbackTransforms);
+    UE_AUTHORITY_ONLY bool CollectSpawnLocations(const FVector& Origin, TArray<FTransform> fallbackTransforms);
     void OnPillarDestroyed(class ACoreCorruptionPillar* Pillar);
     void OnRep_Spawned();
-    UE_AUTHORITY_ONLY void PreFetchSpawnLocations(FVector Origin);
+    UE_AUTHORITY_ONLY void PreFetchSpawnLocations(const FVector& Origin);
     void SpawnPillar();
     UE_AUTHORITY_ONLY void StartSpawning();
     UE_AUTHORITY_ONLY void StopSpawning();
@@ -26439,7 +26439,7 @@ class UDecalManager : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "DecalManager");
-    void SpawnDecal(FVector Location, FVector Normal, class UFSDPhysicalMaterial* PhysMat);
+    void SpawnDecal(const FVector& Location, const FVector& Normal, class UFSDPhysicalMaterial* PhysMat);
 };
 
 class UResourcesComponent : public UActorComponent
@@ -26453,8 +26453,8 @@ public:
     TArray<class UCappedResource*> Resources;
     static constexpr const char* Resources__Replicated = "OnRep_Resources:";
     float ResourceCap;
-    static TMap<class UResourceData*, float> GetSeparateResourcesFromMap(TMap<class UResourceData*, float> Resources_0);
-    UE_PURE static int GetXPFromResourceMap(TMap<class UResourceData*, float> Resources_0);
+    static TMap<class UResourceData*, float> GetSeparateResourcesFromMap(const TMap<class UResourceData*, float>& Resources_0);
+    UE_PURE static int GetXPFromResourceMap(const TMap<class UResourceData*, float>& Resources_0);
     UE_PURE TArray<class UCappedResource*> GetAllResources();
     UE_PURE class UCappedResource* GetResource(class UResourceData* Data, bool createIfAmountIsZero);
     void OnRep_Resources();
@@ -26578,8 +26578,8 @@ public:
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    UE_CLIENT UE_RELIABLE void Client_CallAddDefaultAmmo(int amount);
-    UE_CLIENT UE_RELIABLE void Client_CallAddSpecialAmmo(int amount);
+    UE_CLIENT UE_RELIABLE void Client_CallAddDefaultAmmo(const int& amount);
+    UE_CLIENT UE_RELIABLE void Client_CallAddSpecialAmmo(const int& amount);
     UE_CLIENT UE_RELIABLE void Client_RefillSpecialAmmo(float percentage);
     void DestroyActor(class AActor* Actor);
     void OnProjectileFired(class AProjectileBase* Projectile);
@@ -26587,7 +26587,7 @@ public:
     void OnRep_SwitchIsQueued();
     UE_SERVER UE_RELIABLE void Server_SetSwitchIsQueued(bool IsQueued);
     UE_SERVER UE_RELIABLE void Server_SwitchAmmoType(class UProjectileLauncherBaseComponent* projectileLauncher, ECrossbowSwitchState State);
-    UE_SERVER UE_RELIABLE void Server_UpdateRetrievableArrows(int defaultAmmo, int specialAmmo);
+    UE_SERVER UE_RELIABLE void Server_UpdateRetrievableArrows(const int& defaultAmmo, const int& specialAmmo);
     void SetAnimatedFPMeshComponent(class UStaticMeshComponent* Component);
     void SetAnimatedFPMeshComponentFromBP(class AActor* animatedArrow);
     void SetAnimatedTPMeshComponent(class UStaticMeshComponent* Component);
@@ -26605,9 +26605,9 @@ public:
     UE_CLASS("/Script/FSD", "CrossbowProjectileControlled");
     class USceneComponent* HomingTarget;
     class ACrossbowProjectileBase* CastedOwner;
-    UE_MULTICAST UE_RELIABLE void All_UpdateHomingTarget(FVector Target);
+    UE_MULTICAST UE_RELIABLE void All_UpdateHomingTarget(const FVector& Target);
     void CancelControl();
-    UE_SERVER UE_RELIABLE void Server_UpdateHomingTarget(FVector Target);
+    UE_SERVER UE_RELIABLE void Server_UpdateHomingTarget(const FVector& Target);
     void UpdateHomingTarget();
 };
 
@@ -26881,7 +26881,7 @@ public:
     UE_MULTICAST void All_PreLaunchProjectile();
     void OnPreProjectileLaunch();
     void OnPressurizedPartileShoot();
-    void OnProjectileLaunched(FVector Location);
+    void OnProjectileLaunched(const FVector& Location);
     void OnProjectileSpawned(class AProjectileBase* Projectile);
     void OnRep_IsCharging(bool OldValue);
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
@@ -27081,7 +27081,7 @@ public:
     UE_PURE static EItemUpgradeStatus GetItemUpgradeStatus(class UObject* WorldContextObject, TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
     UE_PURE static EItemUpgradeStatus GetItemUpgradeStatus(TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
     UE_PURE static TArray<FUpgradeTier> GetItemUpgradeTiers(TSubclassOf<class AActor> itemClass);
-    static bool GetMasteryForLevel(TArray<FMasteryItem> masteryLevels_0, int Level, FMasteryItem& outLevel);
+    static bool GetMasteryForLevel(const TArray<FMasteryItem>& masteryLevels_0, int Level, FMasteryItem& outLevel);
     static TArray<FMasteryItem> GetMasteryLevels(class UItemID* ItemID);
     static int GetMasteryProgress(class UObject* WorldContextObject, class UItemID* ItemID, int& maxMastery);
     static int GetMasteryProgress(class UItemID* ItemID, int& maxMastery);
@@ -27150,8 +27150,8 @@ public:
     UE_PURE static bool HasPendingReward();
     UE_AUTHORITY_ONLY static void SpawnEventRewardFrame(class UObject* WorldContextObject, FVector Location);
     UE_AUTHORITY_ONLY static void SpawnEventRewardFrame(FVector Location);
-    static void StorePendingReward(class UObject* WorldContextObject, TArray<class USchematic*> schematicsToChooseFrom);
-    static void StorePendingReward(TArray<class USchematic*> schematicsToChooseFrom);
+    static void StorePendingReward(class UObject* WorldContextObject, const TArray<class USchematic*>& schematicsToChooseFrom);
+    static void StorePendingReward(const TArray<class USchematic*>& schematicsToChooseFrom);
     static class USchematic* TryGivePendingReward(class UObject* WorldContextObject);
     static class USchematic* TryGivePendingReward();
 };
@@ -27465,9 +27465,9 @@ public:
     static constexpr const char* Sphere__UeSubobject = "Sphere /Script/Engine.SphereComponent";
     UE_MULTICAST UE_RELIABLE void All_PasteDamageComponent(class UDamageComponent* Damage);
     UE_MULTICAST UE_RELIABLE void All_PasteHitScanComponent(class UHitscanBaseComponent* HitScan);
-    void BeginOverlapVsProjectile(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
-    UE_CLIENT UE_RELIABLE void Client_CompleteTrace(FEnhancedTrace trace);
-    void HitByHitScan(class UHitscanBaseComponent* Component, FVector HitPoint, FVector Origin);
+    void BeginOverlapVsProjectile(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    UE_CLIENT UE_RELIABLE void Client_CompleteTrace(const FEnhancedTrace& trace);
+    void HitByHitScan(class UHitscanBaseComponent* Component, const FVector& HitPoint, const FVector& Origin);
 };
 
 class AGameStats : public AInfo
@@ -27654,7 +27654,7 @@ public:
     class USpiderAnimInstance* AnimInstance;
     UE_MULTICAST UE_RELIABLE void AllRagdoll(FVector Impulse, FVector Location, int BoneIndex);
     class UStaticMeshComponent* CreateHeadGore();
-    void OnDeathDetailed(class UHealthComponent* HealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags);
+    void OnDeathDetailed(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags);
     void OnRep_DeathType();
 };
 
@@ -27686,19 +27686,19 @@ class UFSDSplineLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "FSDSplineLibrary");
-    static float ApproximateSplineDistanceAtWorldLocation(class USplineComponent* Spline, FVector WorldLocation);
+    static float ApproximateSplineDistanceAtWorldLocation(class USplineComponent* Spline, const FVector& WorldLocation);
     static bool CarveAroundSplineMesh(class USplineMeshComponent* InMesh, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
-    static bool CarveAroundSplinePoints(class UObject* WorldContext, FVector InStartLocation, FVector InStartTangent, FVector InEndLocation, FVector InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
-    static bool CarveAroundSplinePoints(FVector InStartLocation, FVector InStartTangent, FVector InEndLocation, FVector InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
+    static bool CarveAroundSplinePoints(class UObject* WorldContext, const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
+    static bool CarveAroundSplinePoints(const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
     static void ConvertSplineDistanceToInputKey(class USplineComponent*& SplineComponent, class USplineComponent* OptionalTargetSpline);
-    static FInterpCurveVector2D CreateCurve2D(TArray<FVector2D> Positions, EInterpCurveMode Mode);
-    static FInterpCurveVector2D CreateCurveWithTangents2D(TArray<FVector2D> Positions, FVector2D StartTangent, FVector2D EndTangent, EInterpCurveMode Mode);
+    static FInterpCurveVector2D CreateCurve2D(const TArray<FVector2D>& Positions, EInterpCurveMode Mode);
+    static FInterpCurveVector2D CreateCurveWithTangents2D(const TArray<FVector2D>& Positions, FVector2D StartTangent, FVector2D EndTangent, EInterpCurveMode Mode);
     static void DrawBezier2D(FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, float Opacity, bool InClampTangents);
     static void DrawBezierScaled2D(FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, FVector2D ScaleBy, float Opacity, bool InClampTangents);
-    static void DrawCurve2D(FPaintContext& Context, FInterpCurveVector2D Curve, FCurve2DAppearance Appearance, float Opacity);
-    static void DrawCurveScaled2D(FPaintContext& Context, FInterpCurveVector2D Curve, FVector2D ScaleBy, FCurve2DAppearance Appearance, float Opacity);
-    static void EvalCurve2D(FInterpCurveVector2D Curve, float Key, FVector2D& OutPosition, FVector2D& OutTangent);
-    static void EvalCurveScaled2D(FInterpCurveVector2D Curve, float Key, FVector2D ScaleBy, FVector2D& OutPosition, FVector2D& OutTangent);
+    static void DrawCurve2D(FPaintContext& Context, const FInterpCurveVector2D& Curve, FCurve2DAppearance Appearance, float Opacity);
+    static void DrawCurveScaled2D(FPaintContext& Context, const FInterpCurveVector2D& Curve, FVector2D ScaleBy, FCurve2DAppearance Appearance, float Opacity);
+    static void EvalCurve2D(const FInterpCurveVector2D& Curve, float Key, FVector2D& OutPosition, FVector2D& OutTangent);
+    static void EvalCurveScaled2D(const FInterpCurveVector2D& Curve, float Key, FVector2D ScaleBy, FVector2D& OutPosition, FVector2D& OutTangent);
     static void GetLocationAndTangentsAtSplinePoint(class USplineComponent* Spline, int PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, ESplineCoordinateSpace CoordinateSpace);
     static void SetStartAndEndTangentsCurve2D(FInterpCurveVector2D& Curve, FVector2D StartTangent, FVector2D EndTangent);
 };
@@ -27887,7 +27887,7 @@ public:
     class UPhysicsAsset* FrozenAsset;
     class USoundCue* FrozenDeathSound;
     class UParticleSystem* FrozenDeathParticles;
-    void OnFreezeImpact(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void OnFreezeImpact(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnFrozen(bool frozen);
     void TriggerFrozenRagdoll();
 };
@@ -27982,33 +27982,33 @@ public:
     bool DisablePathfinderErrors;
     FFakeMoverState FakePhysicsMove;
     float FakeSyncTime;
-    void AddFakeMoverImpulse(FVector Impulse);
-    bool BackOffFrom(FVector dangerPos, float Distance);
-    FQuat CalcPathfinderOrientation(FVector Pos, FVector forwardDir);
-    FVector FindNearestConnectedPathfinderPoint(FVector Pos, float MaxDistance);
-    void FindNearestPathfinderPoint_Async(FVector Pos, float MaxDistance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
-    void FindNearestPathfinderPoint_Async(FVector Pos, float MaxDistance, bool& success, FVector& outPos);
-    FVector FindNearestPathfinderPointOverrideType(FVector Pos, EDeepPathFinderType overrideType, float MaxDistance);
-    FVector FindPathfinderOffsetPoint(FVector Pos, EOffsetFrom offsetFrom, float HeightOffset);
-    FVector FindPathfinderPointAbove(FVector Pos, float HeightOffset);
-    FVector FindPathfinderPointBelow(FVector Pos, float HeightOffset);
-    bool FindPointDiagonalTowardsTarget(FVector Origin, FVector Target, float dodgeAngle, float maxSampleDistance, float moveDistance, float RandomDeviation, FVector& outPos);
-    bool FindPointKeepingDistance(FVector Origin, float MinDistance, float MaxDistance, FVector Target, float idealTargetDistance, FVector& outPos);
-    bool FlyToConnectedPosition(FVector destPos);
+    void AddFakeMoverImpulse(const FVector& Impulse);
+    bool BackOffFrom(const FVector& dangerPos, float Distance);
+    FQuat CalcPathfinderOrientation(const FVector& Pos, const FVector& forwardDir);
+    FVector FindNearestConnectedPathfinderPoint(const FVector& Pos, float MaxDistance);
+    void FindNearestPathfinderPoint_Async(const FVector& Pos, float MaxDistance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
+    void FindNearestPathfinderPoint_Async(const FVector& Pos, float MaxDistance, bool& success, FVector& outPos);
+    FVector FindNearestPathfinderPointOverrideType(const FVector& Pos, EDeepPathFinderType overrideType, float MaxDistance);
+    FVector FindPathfinderOffsetPoint(const FVector& Pos, EOffsetFrom offsetFrom, float HeightOffset);
+    FVector FindPathfinderPointAbove(const FVector& Pos, float HeightOffset);
+    FVector FindPathfinderPointBelow(const FVector& Pos, float HeightOffset);
+    bool FindPointDiagonalTowardsTarget(const FVector& Origin, const FVector& Target, float dodgeAngle, float maxSampleDistance, float moveDistance, float RandomDeviation, FVector& outPos);
+    bool FindPointKeepingDistance(const FVector& Origin, float MinDistance, float MaxDistance, const FVector& Target, float idealTargetDistance, FVector& outPos);
+    bool FlyToConnectedPosition(const FVector& destPos);
     class UFakeMoverSettings* GetCurrentFakePhysicsMoveSet();
     float GetHorizontalAngleSpeed();
     bool GetIsStrafing();
     FVector GetPathForwardDirection();
-    bool GetRandomReachablePointAtApproximateDistance(FVector Origin, float Distance, FVector& outPos);
-    void GetRandomReachablePointAtApproximateDistance_Async(FVector Origin, float Distance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
-    void GetRandomReachablePointAtApproximateDistance_Async(FVector Origin, float Distance, bool& success, FVector& outPos);
-    void GetRandomSpawnPointAtApproximateDistance_Async(FVector Origin, float Distance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
-    void GetRandomSpawnPointAtApproximateDistance_Async(FVector Origin, float Distance, bool& success, FVector& outPos);
+    bool GetRandomReachablePointAtApproximateDistance(const FVector& Origin, float Distance, FVector& outPos);
+    void GetRandomReachablePointAtApproximateDistance_Async(const FVector& Origin, float Distance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
+    void GetRandomReachablePointAtApproximateDistance_Async(const FVector& Origin, float Distance, bool& success, FVector& outPos);
+    void GetRandomSpawnPointAtApproximateDistance_Async(const FVector& Origin, float Distance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
+    void GetRandomSpawnPointAtApproximateDistance_Async(const FVector& Origin, float Distance, bool& success, FVector& outPos);
     float GetVerticalAngleSpeed();
     void OnRep_MoveSettings(class UFakeMoverSettings* MoveSettings_0);
-    void OnRep_Path(FDeepRepPath oldPath);
-    bool PathExistsBetween(FVector from, FVector to);
-    bool PathExistTo(FVector Dest);
+    void OnRep_Path(const FDeepRepPath& oldPath);
+    bool PathExistsBetween(const FVector& from, const FVector& to);
+    bool PathExistTo(const FVector& Dest);
     void PauseMovement(float Time);
     void SetControlledExternally(bool controlled);
     void SetFreezeAlignment(bool Freeze);
@@ -28017,19 +28017,19 @@ public:
     void SetMaxSpeed(float Speed);
     void SetSlowDownAngles(float Min, float Max);
     void SnapToPathfinder();
-    void StartAttackStance(FVector stancePos);
-    void StartFakePhysics(FVector Vel);
+    void StartAttackStance(const FVector& stancePos);
+    void StartFakePhysics(const FVector& Vel);
     void StartFakePhysicsMoveSet(class UFakeMoverSettings* MoveSettings_0);
-    bool StartFleeFrom(FVector dangerPos, float Distance);
-    bool StartMoveTo(FVector Dest, float AcceptanceRadius_0);
+    bool StartFleeFrom(const FVector& dangerPos, float Distance);
+    bool StartMoveTo(const FVector& Dest, float AcceptanceRadius_0);
     bool StartMoveToActor(class AActor* Dest, float AcceptanceRadius_0, bool ToCenterOfMass);
     void StopAttackStance();
     void StopMove();
-    void TeleportTo(FVector destLoc, FRotator destRot);
+    void TeleportTo(const FVector& destLoc, const FRotator& destRot);
     void UnPauseMovement();
-    void UpdateDestination(FVector Dest);
+    void UpdateDestination(const FVector& Dest);
     void UpdateTargetActor(class AActor* NewTarget);
-    UE_PURE FVector FindNearestPathfinderPoint(FVector Pos, float MaxDistance) const;
+    UE_PURE FVector FindNearestPathfinderPoint(const FVector& Pos, float MaxDistance) const;
     UE_PURE float GetApproximatePathLength(FVector Start, FVector End) const;
     UE_PURE FVector GetCurrentMovePos() const;
     UE_PURE float GetMaxAcceleration() const;
@@ -28096,19 +28096,19 @@ class UDetailedTagLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "DetailedTagLibrary");
-    static void AppendArray(FDetailedTagSet& InSet, TArray<class UDetailedTag*> inArray);
-    static void AppendSet(FDetailedTagSet& InSet1, FDetailedTagSet InSet2);
-    UE_PURE static bool Contains(FDetailedTagSet InSet, class UDetailedTag* InTag);
-    static TArray<class UDetailedTag*> GetArray(FDetailedTagSet InSet);
-    static TArray<class UDetailedTag*> GetArraySorted(FDetailedTagSet InSet, bool InSortByCategory);
-    UE_PURE static TMap<class UDetailedTagCategory*, FDetailedTagSet> GetCategoryMap(FDetailedTagSet InSet);
-    UE_PURE static bool IsSetEmpty(FDetailedTagSet InSet);
-    UE_PURE static FDetailedTagSet MakeDetailedTagSet(TArray<class UDetailedTag*> InTags);
-    UE_PURE static FText TagSetToText(FDetailedTagSet InSet);
-    UE_PURE static bool TagsMatch(TMap<class UDetailedTagCategory*, FDetailedTagSet> SearchExpr, FDetailedTagSet Tags);
-    UE_PURE FDetailedTagQuery MakeTagQuery(FDetailedTagSet InTags);
-    UE_PURE FDetailedTagQuery MakeTagQueryFromArray(TArray<class UDetailedTag*> InTags);
-    UE_PURE bool TagQueryMatches(FDetailedTagQuery InQuery, FDetailedTagSet InTags);
+    static void AppendArray(FDetailedTagSet& InSet, const TArray<class UDetailedTag*>& inArray);
+    static void AppendSet(FDetailedTagSet& InSet1, const FDetailedTagSet& InSet2);
+    UE_PURE static bool Contains(const FDetailedTagSet& InSet, class UDetailedTag* InTag);
+    static TArray<class UDetailedTag*> GetArray(const FDetailedTagSet& InSet);
+    static TArray<class UDetailedTag*> GetArraySorted(const FDetailedTagSet& InSet, bool InSortByCategory);
+    UE_PURE static TMap<class UDetailedTagCategory*, FDetailedTagSet> GetCategoryMap(const FDetailedTagSet& InSet);
+    UE_PURE static bool IsSetEmpty(const FDetailedTagSet& InSet);
+    UE_PURE static FDetailedTagSet MakeDetailedTagSet(const TArray<class UDetailedTag*>& InTags);
+    UE_PURE static FText TagSetToText(const FDetailedTagSet& InSet);
+    UE_PURE static bool TagsMatch(const TMap<class UDetailedTagCategory*, FDetailedTagSet>& SearchExpr, const FDetailedTagSet& Tags);
+    UE_PURE FDetailedTagQuery MakeTagQuery(const FDetailedTagSet& InTags);
+    UE_PURE FDetailedTagQuery MakeTagQueryFromArray(const TArray<class UDetailedTag*>& InTags);
+    UE_PURE bool TagQueryMatches(const FDetailedTagQuery& InQuery, const FDetailedTagSet& InTags);
 };
 
 class ADetPackItem : public AAnimatedItem
@@ -28327,7 +28327,7 @@ public:
     static constexpr const char* TPRMesh__UeSubobject = "TPRMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* TemperatureAudioComponent__UeSubobject = "Audio /Script/FSD.FSDAudioComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    UE_MULTICAST void All_SimulateDamage(TArray<FDoubleDrillDamageItem> Targets);
+    UE_MULTICAST void All_SimulateDamage(const TArray<FDoubleDrillDamageItem>& Targets);
     UE_MULTICAST void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int Material);
     UE_MULTICAST void All_SimulateDigDebris(FVector_NetQuantize Position, int DebrisIndex);
     void BP_OnDrillDamage();
@@ -28339,7 +28339,7 @@ public:
     void OnStopDrilling();
     void OnTargetKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysMat, bool wasDirectHit);
     UE_SERVER UE_RELIABLE void Server_DigBlock(FVector_NetQuantize Start, FVector_NetQuantize End);
-    UE_SERVER UE_RELIABLE void Server_DoDamage(TArray<FDoubleDrillDamageItem> Targets);
+    UE_SERVER UE_RELIABLE void Server_DoDamage(const TArray<FDoubleDrillDamageItem>& Targets);
     UE_SERVER UE_RELIABLE void Server_StartMining();
     UE_SERVER UE_RELIABLE void Server_StopMining();
 };
@@ -28568,9 +28568,9 @@ public:
     static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void OnPlayerJoin(class APlayerCharacter* Player);
     void OnPlayerLeave(class AFSDPlayerState* State);
-    void OnPrimaryLaserpointer(FLaserPointerTarget HitInfo);
+    void OnPrimaryLaserpointer(const FLaserPointerTarget& HitInfo);
     void OnSalute(class APlayerCharacter* Player);
-    void OnSecondaryLaserPointer(FLaserPointerTarget HitInfo);
+    void OnSecondaryLaserPointer(const FLaserPointerTarget& HitInfo);
     void OnShout(class APlayerCharacter* Player);
 };
 
@@ -28816,12 +28816,12 @@ public:
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    bool CanSpawnItem(FVector Location, FRotator Rotation);
+    bool CanSpawnItem(const FVector& Location, const FRotator& Rotation);
     void ItemReturnFinished(class AActor* Item, bool success);
     void OnRep_ActiveItems();
     void ReceiveOnItemSpawned(class ARecallableActor* Item);
-    UE_SERVER UE_RELIABLE void ServerSpawnItem(FVector WorldLocation, FRotator WorldRotation);
-    UE_SERVER UE_RELIABLE void ServerSpawnItemAttached(class AActor* InAttachActor, class UPrimitiveComponent* InAttachComponent, FName InAttachBoneName, FVector LocalLocation, FRotator LocalRotation);
+    UE_SERVER UE_RELIABLE void ServerSpawnItem(const FVector& WorldLocation, const FRotator& WorldRotation);
+    UE_SERVER UE_RELIABLE void ServerSpawnItemAttached(class AActor* InAttachActor, class UPrimitiveComponent* InAttachComponent, FName InAttachBoneName, const FVector& LocalLocation, const FRotator& LocalRotation);
 };
 
 class UTextureDynamicIcon : public UDynamicIcon
@@ -28908,7 +28908,7 @@ public:
     void OnTargetKilled(class UHealthComponentBase* Health);
     void ReceiveTargetKilled();
     void ReceiveTargetSpawned();
-    UE_AUTHORITY_ONLY void RegisterEliminationTargets(TArray<class AFSDPawn*> Targets);
+    UE_AUTHORITY_ONLY void RegisterEliminationTargets(const TArray<class AFSDPawn*>& Targets);
 };
 
 class AEncounterActor : public AActor
@@ -29025,7 +29025,7 @@ public:
     bool bIsPingableByLaserpointer;
     TSubclassOf<class UActorContextWidget> ContextWidgetClass;
     class UActorContextWidget* ContextWidget;
-    void AddComponentObjectInfo(class USceneComponent* TargetComponent, FSimpleObjectInfoData Data);
+    void AddComponentObjectInfo(class USceneComponent* TargetComponent, const FSimpleObjectInfoData& Data);
     void ClearLookAtShoutOverride();
     void OverrideIcon(class UTexture2D* InTexture);
     void OverrideLookAtShout(class UDialogDataAsset* InShout);
@@ -29148,16 +29148,16 @@ class UFSDMath : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "FSDMath");
-    static float AngleBetweenVectors(FVector v1, FVector v2);
+    static float AngleBetweenVectors(const FVector& v1, const FVector& v2);
     static void CartesianToSpherical(FVector Location, float& outAzimuth, float& outElevation, float& OutRadius);
     UE_PURE static FVector ClampVectorToCone(FVector ToConstrain, FVector ConeDirection, float ConeAngle);
     static FVector CubicInterpBlueprint(FVector p0, FVector tangent1, FVector p1, FVector tangent2, float alpha);
     static float CubicSegmentLength(FVector p0, FVector tangent1, FVector p1, FVector tangent2);
-    static void GetAzimuthAndElevation(FVector Direction, FTransform coordinateSystem, float& azimuth, float& elevation);
+    static void GetAzimuthAndElevation(const FVector& Direction, const FTransform& coordinateSystem, float& azimuth, float& elevation);
     UE_PURE static bool PercentageCheck(float percentage);
     static void RotateActorAroundOffset(class AActor* Actor, FVector localSpaceOffset, FRotator Rotator);
     UE_PURE static float RoundToDecimalPlace(float Number, int decimalPlaces);
-    static float SignedAngleBetweenVectorsZUp(FVector v1, FVector v2);
+    static float SignedAngleBetweenVectorsZUp(const FVector& v1, const FVector& v2);
     UE_PURE static FVector SphericalToCartesian(float Radius, float azimuth, float elecation);
 };
 
@@ -29274,7 +29274,7 @@ public:
     UE_AUTHORITY_ONLY void RegisterSpawner(class APawn* Actor);
     void RemoveGlobalStatusEffect(TSubclassOf<class UStatusEffect> StatusEffect);
     void SetSpawningEnabled(bool newSpawningEnabled);
-    UE_AUTHORITY_ONLY bool SpawnEnemy(class UEnemyDescriptor* descriptor, FTransform Transform, TDelegate<void(class APawn* enemy)> Callback, bool useSpawnFX, bool Alert);
+    UE_AUTHORITY_ONLY bool SpawnEnemy(class UEnemyDescriptor* descriptor, const FTransform& Transform, TDelegate<void(class APawn* enemy)> Callback, bool useSpawnFX, bool Alert);
     UE_AUTHORITY_ONLY void SpawnerDestroyed(class APawn* Actor);
     UE_AUTHORITY_ONLY bool CanSpawn(class UEnemyDescriptor* EnemyDescriptor) const;
     UE_AUTHORITY_ONLY UE_PURE TArray<class APawn*> FindEnemiesByClass(TSubclassOf<class APawn> PawnClass, bool isSwarmerEnemy) const;
@@ -29368,7 +29368,7 @@ public:
     UE_MULTICAST UE_RELIABLE void All_FireDetonation();
     UE_MULTICAST UE_RELIABLE void All_IceDetonation();
     void DoTemperatureShock(class UStatusEffectsComponent* Status, class AActor* Source);
-    void OnDeath(class UHealthComponent* HealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags);
+    void OnDeath(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags);
     void TimerCallback();
 };
 
@@ -29453,7 +29453,7 @@ class UEscapeMenuWindow : public UWindowWidget
 {
 public:
     UE_CLASS("/Script/FSD", "EscapeMenuWindow");
-    void OpenMinersManualFromID(EMinersManualSection Section, FGuid ID);
+    void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
 };
 
 class UGrenadeAnimationSet : public UDataAsset
@@ -29783,25 +29783,25 @@ public:
     static constexpr const char* GeneratorsActivated__Replicated = "OnRep_GeneratorsActivated:";
     UE_AUTHORITY_ONLY void AddShieldGenerator(class AActor* charger, int roomIndex);
     void ChangeObjective();
-    void DropOverCharger(class AProceduralSetup* Setup, int roomIndex, FVector facilityLocation, float idealRange, float idealZDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class ARessuplyPod> generatorClass_0, bool AddImportantLocation);
+    void DropOverCharger(class AProceduralSetup* Setup, int roomIndex, const FVector& facilityLocation, float idealRange, float idealZDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class ARessuplyPod> generatorClass_0, bool AddImportantLocation);
     void FirstGeneratorEncounterSpawn(class APawn* spawned);
     UE_AUTHORITY_ONLY void GeneratorActivated();
-    void GetObjectTransformInRoom(FTransform& Transform, class AProceduralSetup* Setup, FRoomNode RoomNode, class UDebrisPositioning* Positioning, TSubclassOf<class AActor> placementActor, FRandomStream RandomStream, bool checkImportantLocations);
+    void GetObjectTransformInRoom(FTransform& Transform, class AProceduralSetup* Setup, const FRoomNode& RoomNode, class UDebrisPositioning* Positioning, TSubclassOf<class AActor> placementActor, FRandomStream RandomStream, bool checkImportantLocations);
     TArray<class AActor*> GetShieldGenerators();
-    FTransform GetTurretGoal(class AProceduralSetup* Setup, FVector Origin, float idealRange, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, bool& success);
+    FTransform GetTurretGoal(class AProceduralSetup* Setup, const FVector& Origin, float idealRange, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, bool& success);
     void InitGeneratorCount(int generators);
     void OnCoreDeposited();
     void OnRep_AmountCollected();
     void OnRep_GeneratorsActivated();
     void OnRep_ObjectivesStage();
     void OnResourceChanged(class UCappedResource* Resource, float amount);
-    class AActor* PlaceObjectInRoom(class AProceduralSetup* Setup, FRoomNode RoomNode, class UDebrisPositioning* Positioning, TSubclassOf<class AActor> placementActor, FRandomStream RandomStream, bool checkImportantLocations);
+    class AActor* PlaceObjectInRoom(class AProceduralSetup* Setup, const FRoomNode& RoomNode, class UDebrisPositioning* Positioning, TSubclassOf<class AActor> placementActor, FRandomStream RandomStream, bool checkImportantLocations);
     UE_AUTHORITY_ONLY void ProgressCurrentObjective();
     void Receive_AddEnemies(class AProceduralSetup* Setup);
     void SecondGeneratorEncounterSpawn(class APawn* spawned);
     void SetGeneratorRooms(TArray<int>& generatorRoomsIndicies);
     void SetMainFacility(class ATetherStation* mainFacility_0);
-    TArray<FTransform> SpawnEndBattleTurrets(int amountOfTurrets, class AProceduralSetup* Setup, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, TArray<class AActor*> existingTurrets, bool& success);
+    TArray<FTransform> SpawnEndBattleTurrets(int amountOfTurrets, class AProceduralSetup* Setup, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, const TArray<class AActor*>& existingTurrets, bool& success);
     void SpawnFacilityEncounters(class AProceduralSetup* Setup, class UEncounterManager* Encounters, class UDebrisPositioning* Positioning);
     UE_PURE FSubObjective GetCurrentObjective() const;
     UE_PURE FVector GetFacilityLocation() const;
@@ -29830,7 +29830,7 @@ class UHackableBuildingObjective : public UObjective
 {
 public:
     UE_CLASS("/Script/FSD", "HackableBuildingObjective");
-    static void DropOverCharger(class AProceduralSetup* Setup, FVector buildingLocation, float idealRange, float idealZDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class ARessuplyPod> generatorClass, bool AddImportantLocation);
+    static void DropOverCharger(class AProceduralSetup* Setup, const FVector& buildingLocation, float idealRange, float idealZDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class ARessuplyPod> generatorClass, bool AddImportantLocation);
 };
 
 class AFacilityShieldGenerator : public AActor
@@ -29848,11 +29848,11 @@ public:
     static void SetControllerSpeakerSubmixSend(class UAudioComponent* AudioComponent, float SendLevel);
     static void SetControllerVibrationSubmixSend(class UObject* WorldContextObject, class UAudioComponent* AudioComponent, float SendLevel);
     static void SetControllerVibrationSubmixSend(class UAudioComponent* AudioComponent, float SendLevel);
-    static class UDecalComponent* SpawnDecal(class UObject* WorldContextObject, class UMaterialInterface* DecalMaterial, FVector Location, FVector UpVector, float Size, float Duration, float FadeDuration);
-    static class UDecalComponent* SpawnDecal(class UMaterialInterface* DecalMaterial, FVector Location, FVector UpVector, float Size, float Duration, float FadeDuration);
+    static class UDecalComponent* SpawnDecal(class UObject* WorldContextObject, class UMaterialInterface* DecalMaterial, const FVector& Location, const FVector& UpVector, float Size, float Duration, float FadeDuration);
+    static class UDecalComponent* SpawnDecal(class UMaterialInterface* DecalMaterial, const FVector& Location, const FVector& UpVector, float Size, float Duration, float FadeDuration);
     static class UDecalComponent* SpawnDecalAtActor(class AActor* Actor, class UMaterialInterface* DecalMaterial, float Size, float Duration, float FadeDuration);
-    static class UDecalComponent* SpawnDecalData(class UObject* WorldContextObject, FVector Location, FVector UpVector, FDecalData DecalData, bool randomRollRotation);
-    static class UDecalComponent* SpawnDecalData(FVector Location, FVector UpVector, FDecalData DecalData, bool randomRollRotation);
+    static class UDecalComponent* SpawnDecalData(class UObject* WorldContextObject, const FVector& Location, const FVector& UpVector, const FDecalData& DecalData, bool randomRollRotation);
+    static class UDecalComponent* SpawnDecalData(const FVector& Location, const FVector& UpVector, const FDecalData& DecalData, bool randomRollRotation);
     static class UFXSystemComponent* SpawnScaledEmitterAtLocation(class UObject* WorldContextObject, FScaledEffect ScaledEffect, FVector Location, FRotator Rotation, bool bAutoDestroy);
     static class UFXSystemComponent* SpawnScaledEmitterAtLocation(FScaledEffect ScaledEffect, FVector Location, FRotator Rotation, bool bAutoDestroy);
 };
@@ -30271,10 +30271,10 @@ public:
     float SyncTime;
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
-    UE_AUTHORITY_ONLY void ApplyImpulse(FVector Impulse);
+    UE_AUTHORITY_ONLY void ApplyImpulse(const FVector& Impulse);
     void OnRep_MoveSettings(class UFakeMoverSettings* MoveSettings_0);
-    void OnRep_PosVel(FFakeMoveState PosVel_0);
-    UE_AUTHORITY_ONLY void Teleport(FVector Pos, FVector Vel);
+    void OnRep_PosVel(const FFakeMoveState& PosVel_0);
+    UE_AUTHORITY_ONLY void Teleport(const FVector& Pos, const FVector& Vel);
 };
 
 class UPathfinderSplineSegmentCollisionComponent : public UActorComponent
@@ -30284,7 +30284,7 @@ public:
     float Radius;
     EPFCollisionType CollisionType;
     void Clear();
-    void Update(FVector SplineStart, FVector SplineStartTangent, FVector SplineEnd, FVector SplineEndTangent);
+    void Update(const FVector& SplineStart, const FVector& SplineStartTangent, const FVector& SplineEnd, const FVector& SplineEndTangent);
     void UpdateFromSpline(class USplineComponent* SplineComponent, int StartIndex);
 };
 
@@ -30319,7 +30319,7 @@ class UFirstPersonSkeletalMeshComponent : public USkeletalMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "FirstPersonSkeletalMeshComponent");
-    static FVector CalcFirstPersonFOVPositionCorrection(class APlayerController* PlayerController, FVector origPos);
+    static FVector CalcFirstPersonFOVPositionCorrection(class APlayerController* PlayerController, const FVector& origPos);
     UE_PURE static bool GetSetFirstPersonFOVEnabled();
     static void SetFirstPersonFOVEnabled(bool bEnabled);
 };
@@ -30464,7 +30464,7 @@ public:
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
     void OnTargetKilled(class UHealthComponentBase* Health);
     UE_SERVER UE_RELIABLE void ServerDoDamage(FVector_NetQuantize Start, FVector_NetQuantize End);
-    UE_SERVER UE_RELIABLE void ServerMeltIce(TArray<FVector> meltPoints);
+    UE_SERVER UE_RELIABLE void ServerMeltIce(const TArray<FVector>& meltPoints);
     UE_SERVER UE_RELIABLE void SetIsChargingForProjectile(bool isCharging);
     void TriggerAoEHeat();
 };
@@ -30533,8 +30533,8 @@ public:
     int MaxUseCharges;
     float CoolDownBetweenUse;
     bool bIsHighlighted;
-    static void SetCharacterPerks(class UObject* WorldContext, class UPlayerCharacterID* characterID, TArray<class UPerkAsset*> perks);
-    static void SetCharacterPerks(class UPlayerCharacterID* characterID, TArray<class UPerkAsset*> perks);
+    static void SetCharacterPerks(class UObject* WorldContext, class UPlayerCharacterID* characterID, const TArray<class UPerkAsset*>& perks);
+    static void SetCharacterPerks(class UPlayerCharacterID* characterID, const TArray<class UPerkAsset*>& perks);
     bool BuyPerkAtTier(class UObject* WorldContext, int Tier);
     bool BuyPerkAtTier(int Tier);
     void CheatSetCurrentRank(class UObject* WorldContext, int InRank);
@@ -30748,7 +30748,7 @@ public:
     TArray<FProjectileSpawnData> ProjectileData;
     bool ProjectilesIgnoreEachOther;
     static class UMultiprojectileSpawner* FindMultiProjectileSpawner(class AActor* Actor, class UDataAsset* RangedAttack);
-    UE_AUTHORITY_ONLY void Fire(FVector Velocity, FVector Origin);
+    UE_AUTHORITY_ONLY void Fire(const FVector& Velocity, const FVector& Origin);
     UE_PURE bool GetIsFiring() const;
 };
 
@@ -30950,7 +30950,7 @@ public:
     class UPrimitiveComponent* collider;
     bool RemoveStatusEffectOnEndOverlap;
     void AddActorToIgnoreList(class AActor* Actor);
-    void OnComponentOverlapBegin(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnComponentOverlapBegin(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnComponentOverlapEnd(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnOverlapBegin(class AActor* MyActor, class AActor* OtherActor);
     void OnOverlapEnd(class AActor* MyActor, class AActor* OtherActor);
@@ -31095,8 +31095,8 @@ public:
     UE_CLASS("/Script/FSD", "FSDEventCollection");
     TSet<class UFSDEvent*> Events;
     TMulticastInlineDelegate<void(class UFSDEvent* InFsdEvent, bool InIsActive)> OnEventActiveChanged;
-    UE_PURE TArray<class UFSDEvent*> FindAllEventHandlers(FName EventName) const;
-    UE_PURE class UFSDEvent* FindEventHandler(FName EventName) const;
+    UE_PURE TArray<class UFSDEvent*> FindAllEventHandlers(const FName& EventName) const;
+    UE_PURE class UFSDEvent* FindEventHandler(const FName& EventName) const;
     UE_PURE TArray<class UFSDEvent*> GetEventsSorted() const;
 };
 
@@ -31139,8 +31139,8 @@ public:
     UE_PURE static int GetObjectiveXP(TSubclassOf<class UObjective> objectiveClass, float missionLength);
     UE_PURE static class AProceduralSetup* GetProceduralSetup(class UObject* WorldContextObject);
     UE_PURE static class AProceduralSetup* GetProceduralSetup();
-    static void SpawnTerrainImpact(class UObject* WorldContextObject, class UFXSystemAsset* particle, FVector Location, FRotator Rotation);
-    static void SpawnTerrainImpact(class UFXSystemAsset* particle, FVector Location, FRotator Rotation);
+    static void SpawnTerrainImpact(class UObject* WorldContextObject, class UFXSystemAsset* particle, const FVector& Location, FRotator Rotation);
+    static void SpawnTerrainImpact(class UFXSystemAsset* particle, const FVector& Location, FRotator Rotation);
 };
 
 class UFSDFindSessions : public UObject
@@ -31189,11 +31189,11 @@ public:
     bool AddBooleanItem(bool Item);
     bool AddEmptyItem();
     bool AddFloatItem(float Item);
-    bool AddIntegerArrayItem(TArray<int> Item);
+    bool AddIntegerArrayItem(const TArray<int>& Item);
     bool AddIntegerItem(int Item);
     bool AddJSONArrayItem(class UFSDJsonArray* Item);
     bool AddJSONObjectItem(class UFSDJsonObject* Item);
-    bool AddStringArrayItem(TArray<FString> Item);
+    bool AddStringArrayItem(const TArray<FString>& Item);
     bool AddStringItem(FString Item);
     bool Clear();
     UE_PURE FString AsString() const;
@@ -31377,8 +31377,8 @@ public:
     static class UWidget* AddChildToVerticalBoxEx(class UVerticalBox* VerticalBox, class UWidget* Widget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, float Size, FMargin Padding, class UVerticalBoxSlot*& OutSlot, class UVerticalBox*& OutVerticalBox);
     static class UWidget* AddWidgetToRow(class UVerticalBox* VerticalBox, class UWidget* Widget, int MaxWidgetsPerRow, float WidgetSpacing, float RowSpacing, class UHorizontalBoxSlot*& OutSlot, class UHorizontalBox*& OutRow);
     UE_PURE static bool AreWidgetsIntersecting(class UWidget* InWidget1, class UWidget* InWidget2);
-    static void Box(FPaintContext& Context, FVector2D Position, FVector2D Size, FSlateBrush Brush, FLinearColor Tint);
-    UE_PURE static FText ClampTextLength(FText Text, int MaxLength, FText CutOffIndicator);
+    static void Box(FPaintContext& Context, FVector2D Position, FVector2D Size, const FSlateBrush& Brush, FLinearColor Tint);
+    UE_PURE static FText ClampTextLength(const FText& Text, int MaxLength, const FText& CutOffIndicator);
     static class UHorizontalBox* CreateHorizontalBox(class UObject* WorldContext);
     static class UHorizontalBox* CreateHorizontalBox();
     static class UImage* CreateImage(class UObject* WorldContext, class UTexture2D* Texture, FLinearColor Tint, bool AutoSize);
@@ -31404,9 +31404,9 @@ public:
     UE_PURE static class UUserWidget* GetFocusableParentUserWidget(class UUserWidget* InWidget);
     UE_PURE static class UWidget* GetFocusedWidget(class UObject* WorldContextObject, class APlayerController* Controller);
     UE_PURE static class UWidget* GetFocusedWidget(class APlayerController* Controller);
-    UE_PURE static float GetFontBaseline(FSlateFontInfo Font);
-    UE_PURE static float GetFontMaxHeight(FSlateFontInfo Font);
-    UE_PURE static FText GetKeyName(FKey Key);
+    UE_PURE static float GetFontBaseline(const FSlateFontInfo& Font);
+    UE_PURE static float GetFontMaxHeight(const FSlateFontInfo& Font);
+    UE_PURE static FText GetKeyName(const FKey& Key);
     UE_PURE static class AFSDPlayerState* GetOwningFSDPlayerState(class UWidget* Target);
     UE_PURE static class UUserWidget* GetParentUserWidget(class UUserWidget* InWidget);
     UE_PURE static class UWindowWidget* GetParentWindowWidget(class UUserWidget* InWidget);
@@ -31420,13 +31420,13 @@ public:
     UE_PURE static bool IsWindowsPlatform(class UObject* WorldContextObject);
     UE_PURE static bool IsWindowsPlatform();
     UE_PURE static int LengthIgnoringWhitespace(FString Source);
-    UE_PURE static FLinearColor LerpColors(TArray<FLinearColor> Colors, bool Interpolate, float Progress01);
+    UE_PURE static FLinearColor LerpColors(const TArray<FLinearColor>& Colors, bool Interpolate, float Progress01);
     static void Line(FPaintContext& Context, FVector2D Pos1, FVector2D Pos2, FLinearColor Tint);
     UE_PURE static FVector2D MeasureTextBlockSize(class UTextBlock* TextBlock);
-    UE_PURE static FVector2D MeasureTextSize(FText Text, FSlateFontInfo Font);
+    UE_PURE static FVector2D MeasureTextSize(const FText& Text, const FSlateFontInfo& Font);
     UE_PURE static FString MidIgnoringWhiteSpace(FString Source, int Index_0, int Count);
-    static void PrintStrings(class UObject* WorldContextObject, TArray<FString> InStrings, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
-    static void PrintStrings(TArray<FString> InStrings, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
+    static void PrintStrings(class UObject* WorldContextObject, const TArray<FString>& InStrings, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
+    static void PrintStrings(const TArray<FString>& InStrings, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
     static void ScaleImageToHeight(class UImage* Image, float TargetHeight);
     static void ScaleTextBlockToHeight(class UTextBlock* TextBlock, float TargetHeight, bool SetMinimimumWidth);
     static void ScrubAnimation(class UObject* WorldContext, class UWidgetAnimation* InAnimation, float Progress01);
@@ -31435,13 +31435,13 @@ public:
     static void SetMousePosition(class UObject* WorldContextObject, int X, int Y);
     static void SetMousePosition(int X, int Y);
     static void SetProgressBarType(class UProgressBar* InProgressBar, EProgressBarFillType InType);
-    static void SetSizeBoxSettings(class USizeBox*& InSizeBox, FSizeBoxSettings InSettings);
+    static void SetSizeBoxSettings(class USizeBox*& InSizeBox, const FSizeBoxSettings& InSettings);
     static FTimerHandle SetTimerForNextTick(class UObject* WorldContext, TDelegate<void()> TimerDelegate);
     static FTimerHandle SetTimerForNextTick(TDelegate<void()> TimerDelegate);
     static void SimpleBox(FPaintContext& Context, FVector2D Position, FVector2D Size, FLinearColor Tint);
-    static TArray<class UWidget*> SortWidgetArray(TArray<class UWidget*> InWidgets, TDelegate<void(class UWidget* InFirstWidget, class UWidget* InSecondWidget)> InCompareFunction);
-    UE_PURE static bool TextGreaterThan(FText Text1, FText Text2);
-    UE_PURE static bool TextSmallerThan(FText Text1, FText Text2);
+    static TArray<class UWidget*> SortWidgetArray(const TArray<class UWidget*>& InWidgets, TDelegate<void(class UWidget* InFirstWidget, class UWidget* InSecondWidget)> InCompareFunction);
+    UE_PURE static bool TextGreaterThan(const FText& Text1, const FText& Text2);
+    UE_PURE static bool TextSmallerThan(const FText& Text1, const FText& Text2);
     static void ToggleAnimationLooping(class UObject* WorldContext, class UWidgetAnimation* InAnimation, FWidgetAnimationSettings InSettings, bool InLoop, bool& OutPlayingChanged, bool& OutIsPlaying);
     static void ToggleAnimationLooping(class UWidgetAnimation* InAnimation, FWidgetAnimationSettings InSettings, bool InLoop, bool& OutPlayingChanged, bool& OutIsPlaying);
 };
@@ -31501,15 +31501,15 @@ public:
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CancelPlacement();
-    void FinishPlacement(FTransform FinalLocation, class UTrackBuilderConnectPoint* ConnectPoint);
+    void FinishPlacement(const FTransform& FinalLocation, class UTrackBuilderConnectPoint* ConnectPoint);
     void OnRep_NextSegment();
     void ReceiveBeginPlaceSegment();
     UE_SERVER UE_RELIABLE void ServerBeginPlaceSegment(class UTrackBuilderUsable* InUsable);
     UE_SERVER UE_RELIABLE void ServerCancelPlacement();
-    UE_SERVER UE_RELIABLE void ServerFinishPlacement(FTransform FinalLocation, class UTrackBuilderConnectPoint* ConnectPoint);
-    UE_SERVER void ServerUpdatePlacement(FTransform InTransform, bool bPlacementValid, class UTrackBuilderConnectPoint* InConnectPoint);
-    void UpdatePlacement(FTransform InTransform, class UTrackBuilderConnectPoint* InConnectPoint, bool bPlacementValid, bool InUpdateServer);
-    UE_PURE FVector AdjustInitialLocation(FVector Location) const;
+    UE_SERVER UE_RELIABLE void ServerFinishPlacement(const FTransform& FinalLocation, class UTrackBuilderConnectPoint* ConnectPoint);
+    UE_SERVER void ServerUpdatePlacement(const FTransform& InTransform, bool bPlacementValid, class UTrackBuilderConnectPoint* InConnectPoint);
+    void UpdatePlacement(const FTransform& InTransform, class UTrackBuilderConnectPoint* InConnectPoint, bool bPlacementValid, bool InUpdateServer);
+    UE_PURE FVector AdjustInitialLocation(const FVector& Location) const;
     UE_PURE TSubclassOf<class ATrackBuilderSegment> GetSegmentType() const;
 };
 
@@ -31538,10 +31538,10 @@ public:
     FVector MaxAngles;
     static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
     static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
-    UE_PURE bool CanConnectWith(class ATrackBuilderSegment* InSegment, FTransform FromWorldTransform);
+    UE_PURE bool CanConnectWith(class ATrackBuilderSegment* InSegment, const FTransform& FromWorldTransform);
     UE_AUTHORITY_ONLY bool Connect(class ATrackBuilderSegment* InSegment);
     UE_AUTHORITY_ONLY bool Disconnect(class ATrackBuilderSegment* InSegment);
-    UE_PURE FTransform GetConnectTransform(FTransform FromWorldTransform);
+    UE_PURE FTransform GetConnectTransform(const FTransform& FromWorldTransform);
     void OnRep_ConnectedSegment();
 };
 
@@ -31797,7 +31797,7 @@ public:
     static void AddSeamlessTravelEventKey(class USeamlessTravelEventKey* Key);
     UE_PURE static FTransform FindEscapePodLocationAtDistance(class UObject* WorldContextObject, float Distance, float aboveDistanceBias, class AActor* optionalFrom);
     UE_PURE static FTransform FindEscapePodLocationAtDistance(float Distance, float aboveDistanceBias, class AActor* optionalFrom);
-    static bool IsCloseToImportantLocation(class AFSDGameState* GameState, FVector Location);
+    static bool IsCloseToImportantLocation(class AFSDGameState* GameState, const FVector& Location);
 };
 
 class UUnlockComplexityReward : public UUnlockReward
@@ -31973,8 +31973,8 @@ public:
     void OnGrappleStart();
     void OnGrappleUpdate(float DeltaSeconds);
     void OnReleaseHook();
-    void OnRep_State(FGraplingGunState prevState);
-    UE_SERVER UE_RELIABLE void Server_SetState(FGraplingGunState NewState);
+    void OnRep_State(const FGraplingGunState& prevState);
+    UE_SERVER UE_RELIABLE void Server_SetState(const FGraplingGunState& NewState);
     bool StartGrapple();
     void StopGrapple();
     UE_PURE float GetWindUpProgress() const;
@@ -31987,7 +31987,7 @@ public:
     TSubclassOf<class AActor> ActorToSpawn;
     EDeepPathFinderSize PathfinderSize;
     float ChanceToSpawn;
-    UE_AUTHORITY_ONLY void SpawnInArea(FVector Origin, float Radius, float maxVerticalDistance, class APawn* Instigator);
+    UE_AUTHORITY_ONLY void SpawnInArea(const FVector& Origin, float Radius, float maxVerticalDistance, class APawn* Instigator);
 };
 
 class UTimedSpecialEventSpawner : public USpecialEventSpawner
@@ -32082,9 +32082,9 @@ class UFSDRichTextFunctionlibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "FSDRichTextFunctionlibrary");
-    UE_PURE static FText MidRichText(FRichTextParseResult Parser, int StartIndex, int Count, bool bKeepFormatting);
-    static FRichTextParseResult ParseRichText(FText InText);
-    static void SplitRichText(FRichTextParseResult Parser, int SplitIndex, bool bKeepLeftFormatting, bool bKeepRightFormatting, FText& OutLeftText, FText& OutRightText);
+    UE_PURE static FText MidRichText(const FRichTextParseResult& Parser, int StartIndex, int Count, bool bKeepFormatting);
+    static FRichTextParseResult ParseRichText(const FText& InText);
+    static void SplitRichText(const FRichTextParseResult& Parser, int SplitIndex, bool bKeepLeftFormatting, bool bKeepRightFormatting, FText& OutLeftText, FText& OutRightText);
 };
 
 class AHomingDroneBomb : public AProjectile
@@ -32210,7 +32210,7 @@ public:
     void Server_ExplodePlatform(FVector Location);
     UE_SERVER UE_RELIABLE void Server_SetBeamActive(bool inIsBeamActive);
     UE_SERVER UE_RELIABLE void ServerSetBoostActive(bool newActive);
-    void UpdateBeam(FReflectionTraceResult Path);
+    void UpdateBeam(const FReflectionTraceResult& Path);
     void UpdateBeamsVisibility(bool isBeamVisible);
 };
 
@@ -32504,7 +32504,7 @@ class IMinersManualHandler
 {
 public:
     UE_CLASS("/Script/FSD", "MinersManualHandler");
-    void OpenMinersManualFromID(EMinersManualSection Section, FGuid ID);
+    void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
     void OpenMinersManualPage(EMinersManualSinglePage page);
 };
 
@@ -32574,7 +32574,7 @@ public:
     TArray<class UStaticMeshComponent*> MeshComponents;
     uint32 RandomSeed;
     static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
-    void DealWeakpointDamage(FName SocketName);
+    void DealWeakpointDamage(const FName& SocketName);
     void InfectionPointDestroyed(FName Name_0);
     void OnDeath(class UHealthComponentBase* enemy);
     void OnRep_RandomSeed();
@@ -32588,13 +32588,13 @@ public:
     EKeyBindingSlot InputSlot;
     bool bIsGamepadKey;
     bool bCapturing;
-    void BindActionToKey(FCustomKeySetting InAction, FKey InKey, EKeyBindingSlot InSlot, bool SaveToDisk);
+    void BindActionToKey(const FCustomKeySetting& InAction, const FKey& InKey, EKeyBindingSlot InSlot, bool SaveToDisk);
     void ClearCurrentBinding();
-    bool FindCurrentSettingsForKey(FKey InKey, FCustomKeySetting& OutSettings);
+    bool FindCurrentSettingsForKey(const FKey& InKey, FCustomKeySetting& OutSettings);
     void ReceiveCapturingChanged(bool InCapturing);
     void ReceiveKeyCaptured(FKey InKey);
     void ReceiveKeyChanged(FKey InKey);
-    void SetCurrentBinding(FKey InKey);
+    void SetCurrentBinding(const FKey& InKey);
     void SetData(FCustomKeySetting InSettings, EKeyBindingSlot InInputSlot, bool InIsGamepadKey);
     UE_PURE FKey GetCurrentBinding() const;
 };
@@ -32604,7 +32604,7 @@ class URagdollManager : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "RagdollManager");
     TArray<FRagdollItem> Items;
-    void StartRagdoll(class AActor* Actor, TArray<class UMaterialInstanceDynamic*> Materials, float desiredDuration);
+    void StartRagdoll(class AActor* Actor, const TArray<class UMaterialInstanceDynamic*>& Materials, float desiredDuration);
 };
 
 class UInputFunctionLibrary : public UBlueprintFunctionLibrary
@@ -32616,12 +32616,12 @@ public:
     static bool GetActionMapping(FName InActionName, bool InGamepadKeys, FInputActionKeyMapping& OutResult);
     static bool GetAxisMapping(FName InActionName, int Axis, bool InGamepadKeys, FInputAxisKeyMapping& OutResult);
     UE_PURE static bool IsActionMappedTo(FName InActionName, FKey Key, bool IgnoreCustomBindings);
-    UE_PURE static bool IsAnyInputActionDown(class APlayerController* InPlayerController, TArray<FName> InActionNames);
+    UE_PURE static bool IsAnyInputActionDown(class APlayerController* InPlayerController, const TArray<FName>& InActionNames);
     UE_PURE static bool IsAxisMappedToDirectional(FName InActionName, FKey Key, int Direction, bool IgnoreCustomBindings);
     UE_PURE static bool IsInputActionDown(class APlayerController* InPlayerController, FName InActionName);
-    UE_PURE static bool IsKeyEventAction(FKeyEvent KeyEvent, FName ActionName, bool IgnoreCustomBindings);
-    UE_PURE static bool IsKeyEventActionAny(FKeyEvent KeyEvent, TArray<FName> ActionNames, bool IgnoreCustomBindings);
-    UE_PURE static bool IsMouseEventAction(FPointerEvent MouseEvent, FName ActionName, bool IgnoreCustomBindings);
+    UE_PURE static bool IsKeyEventAction(const FKeyEvent& KeyEvent, FName ActionName, bool IgnoreCustomBindings);
+    UE_PURE static bool IsKeyEventActionAny(const FKeyEvent& KeyEvent, TArray<FName> ActionNames, bool IgnoreCustomBindings);
+    UE_PURE static bool IsMouseEventAction(const FPointerEvent& MouseEvent, const FName& ActionName, bool IgnoreCustomBindings);
     UE_PURE static bool IsMouseSmoothingOn();
     static void SetMouseSmoothingOn(bool smoothingOn);
 };
@@ -32667,8 +32667,8 @@ public:
     TArray<FEmitterConnection> EmitterParameterConnections;
     class UNiagaraSystem* NiagaraSystem;
     class UNiagaraComponent* NiagaraComponent;
-    void SpawnEmittersAtLocation(FVector InLocation, TArray<int> emitterIndices);
-    void SpawnSystemAtLocation(FVector InLocation);
+    void SpawnEmittersAtLocation(const FVector& InLocation, TArray<int> emitterIndices);
+    void SpawnSystemAtLocation(const FVector& InLocation);
 };
 
 class UInstancedNiagaraSettings : public UDataAsset
@@ -32699,7 +32699,7 @@ public:
     void OnRep_ActorsSelectable();
     void OnRep_EquippedActor(FEquippedActorData& OldActor);
     UE_SERVER UE_RELIABLE void Server_EquipExternalActor(class AActor* Actor);
-    UE_SERVER UE_RELIABLE void Server_SetEquippedActor(FEquippedActorData Actor, bool CallClientDelayed);
+    UE_SERVER UE_RELIABLE void Server_SetEquippedActor(const FEquippedActorData& Actor, bool CallClientDelayed);
     UE_PURE TArray<class AActor*> GetAllItems() const;
     UE_PURE TArray<class AActor*> GetSelectableActors() const;
 };
@@ -33085,9 +33085,9 @@ public:
     bool bDamageOnReflections;
     float StraightenReflectionFactor;
     int ReflectionCount;
-    UE_MULTICAST void All_ShowHit(FReflectiveHitscanHit Hit);
-    UE_SERVER UE_RELIABLE void Server_RegisterHit(FReflectiveHitscanHit Hit);
-    UE_SERVER UE_RELIABLE void Server_RegisterHit_Reflection(FReflectiveHitscanHit Hit);
+    UE_MULTICAST void All_ShowHit(const FReflectiveHitscanHit& Hit);
+    UE_SERVER UE_RELIABLE void Server_RegisterHit(const FReflectiveHitscanHit& Hit);
+    UE_SERVER UE_RELIABLE void Server_RegisterHit_Reflection(const FReflectiveHitscanHit& Hit);
 };
 
 class UPlayerShieldsItemUpgradeCondition : public UItemUpgradeCondition
@@ -33184,10 +33184,10 @@ public:
     float CarveNormalSqueeze;
     UE_AUTHORITY_ONLY void CarveOnly(FVector Location, FVector ImpactNormal);
     UE_AUTHORITY_ONLY void DamageAndCarve(FVector Location, FVector ImpactNormal, FName BoneName, class UPrimitiveComponent* Target, class UPhysicalMaterial* PhysicalMaterial, class UDamageComponent*& DamageComponent);
-    void DamageAndCarveFromHit(FHitResult HitResult, class UDamageComponent*& DamageComponent);
-    void DamageArmorClients(FHitResult HitResult, class UDamageComponent*& DamageComponent);
+    void DamageAndCarveFromHit(const FHitResult& HitResult, class UDamageComponent*& DamageComponent);
+    void DamageArmorClients(const FHitResult& HitResult, class UDamageComponent*& DamageComponent);
     UE_AUTHORITY_ONLY void DamageOnly(FVector Location, FName BoneName, class UPrimitiveComponent* Target, class UPhysicalMaterial* PhysicalMaterial, class UDamageComponent*& DamageComponent);
-    void DamageOnlyFromHit(FHitResult HitResult, class UDamageComponent*& DamageComponent);
+    void DamageOnlyFromHit(const FHitResult& HitResult, class UDamageComponent*& DamageComponent);
 };
 
 class UBeltDrivenWeaponUpgrade : public UStandardItemUpgrade
@@ -33539,9 +33539,9 @@ public:
     FSoftObjectPath DefaultRoomGenerator;
     TMap<int, FMissionHazardSetting> MissionComplexitySettings;
     TMap<int, FMissionHazardSetting> MissionDurationSettings;
-    UE_PURE static float GetTotalHazardBonus(class UObject* WorldContextObject, class UGeneratedMission* mission, FGameDifficulty Difficulty);
-    UE_PURE static float GetTotalHazardBonus(class UGeneratedMission* mission, FGameDifficulty Difficulty);
-    UE_PURE static float GetTotalHazPlusBonus(FGameDifficulty Difficulty);
+    UE_PURE static float GetTotalHazardBonus(class UObject* WorldContextObject, class UGeneratedMission* mission, const FGameDifficulty& Difficulty);
+    UE_PURE static float GetTotalHazardBonus(class UGeneratedMission* mission, const FGameDifficulty& Difficulty);
+    UE_PURE static float GetTotalHazPlusBonus(const FGameDifficulty& Difficulty);
 };
 
 class ULineCutterProjectileUpgrade : public UStandardItemUpgrade
@@ -33813,7 +33813,7 @@ class IUpgradable
 {
 public:
     UE_CLASS("/Script/FSD", "Upgradable");
-    void Upgraded(TArray<class UItemUpgrade*> Upgrades);
+    void Upgraded(const TArray<class UItemUpgrade*>& Upgrades);
 };
 
 class UJetBootsFuelWidget : public UFSDUserWidget
@@ -33933,14 +33933,14 @@ public:
     TArray<class UTetherComponent*> GetConnectionHistory();
     class UTetherComponent* GetForwardConnection();
     class UTetherComponent* GetTetherlineEnd(bool front);
-    void MessageBody(FTetherMessageSettings Message);
-    void MessageTetherLine(FName Message, float Delay, ETetherMessageDirection messageDirection);
+    void MessageBody(const FTetherMessageSettings& Message);
+    void MessageTetherLine(const FName& Message, float Delay, ETetherMessageDirection messageDirection);
     void OnRep_BackConnection();
     void OnRep_ForwardConnection();
     void OnRep_HasPower();
     void ResetConnectionHistory();
     void SetConnectionRange(float range);
-    void SetupConnectionpoint(class UMeshComponent* Mesh, FName SocketName);
+    void SetupConnectionpoint(class UMeshComponent* Mesh, const FName& SocketName);
     void StartLoSTimer();
     void StopLoSTimer();
     void ToggleConnectionValidation(bool Enabled, bool reactivate);
@@ -34084,16 +34084,16 @@ class UPathfinderFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "PathfinderFunctionLibrary");
-    UE_AUTHORITY_ONLY UE_PURE static FVector FindPointAlongPathTo(class UObject* WorldContextObject, FVector Origin, FVector Destination, float atDistance);
-    UE_AUTHORITY_ONLY UE_PURE static FVector FindPointAlongPathTo(FVector Origin, FVector Destination, float atDistance);
-    UE_AUTHORITY_ONLY static FVector FindRandomNearbyPositionOnNavmesh(class UObject* WorldContextObject, FVector Origin, float Radius);
-    UE_AUTHORITY_ONLY static FVector FindRandomNearbyPositionOnNavmesh(FVector Origin, float Radius);
-    UE_AUTHORITY_ONLY static FVector FindRandomPositionOnNavmeshAtDistance(class UObject* WorldContextObject, FVector Origin, float atDistance);
-    UE_AUTHORITY_ONLY static FVector FindRandomPositionOnNavmeshAtDistance(FVector Origin, float atDistance);
+    UE_AUTHORITY_ONLY UE_PURE static FVector FindPointAlongPathTo(class UObject* WorldContextObject, const FVector& Origin, const FVector& Destination, float atDistance);
+    UE_AUTHORITY_ONLY UE_PURE static FVector FindPointAlongPathTo(const FVector& Origin, const FVector& Destination, float atDistance);
+    UE_AUTHORITY_ONLY static FVector FindRandomNearbyPositionOnNavmesh(class UObject* WorldContextObject, const FVector& Origin, float Radius);
+    UE_AUTHORITY_ONLY static FVector FindRandomNearbyPositionOnNavmesh(const FVector& Origin, float Radius);
+    UE_AUTHORITY_ONLY static FVector FindRandomPositionOnNavmeshAtDistance(class UObject* WorldContextObject, const FVector& Origin, float atDistance);
+    UE_AUTHORITY_ONLY static FVector FindRandomPositionOnNavmeshAtDistance(const FVector& Origin, float atDistance);
     UE_AUTHORITY_ONLY UE_PURE static bool IsPathfinderReady(class UObject* WorldContextObject);
     UE_AUTHORITY_ONLY UE_PURE static bool IsPathfinderReady();
-    UE_AUTHORITY_ONLY static FVector SnapToGrid(class UObject* WorldContextObject, FVector Origin, EDeepPathFinderType PathType, EDeepPathFinderSize PathSize, bool& success, float maxSnapDistance);
-    UE_AUTHORITY_ONLY static FVector SnapToGrid(FVector Origin, EDeepPathFinderType PathType, EDeepPathFinderSize PathSize, bool& success, float maxSnapDistance);
+    UE_AUTHORITY_ONLY static FVector SnapToGrid(class UObject* WorldContextObject, const FVector& Origin, EDeepPathFinderType PathType, EDeepPathFinderSize PathSize, bool& success, float maxSnapDistance);
+    UE_AUTHORITY_ONLY static FVector SnapToGrid(const FVector& Origin, EDeepPathFinderType PathType, EDeepPathFinderSize PathSize, bool& success, float maxSnapDistance);
 };
 
 class ALineCutterProjectile : public AProjectile
@@ -34153,13 +34153,13 @@ public:
     static constexpr const char* InitialDamageComponent__UeSubobject = "InitialDamageComponent /Script/FSD.DamageComponent";
     static constexpr const char* LineRoot__UeSubobject = "LineRoot /Script/Engine.SceneComponent";
     static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
-    void Fire(FVector Origin, FVector Direction, float Distance);
+    void Fire(const FVector& Origin, const FVector& Direction, float Distance);
     void OnRep_LineRotation();
     UE_SERVER UE_RELIABLE void Server_RemoveDebris(int instance, int Component);
     void SetExtraBeamVisibility(bool IsVisible);
     void SpawnDecal(FHitResult& Result);
     void StartSpawningTrail();
-    void TerrainSweep(FVector Left, FVector Right);
+    void TerrainSweep(const FVector& Left, const FVector& Right);
     void UpdateBeamLocations();
 };
 
@@ -34183,7 +34183,7 @@ public:
     static constexpr const char* LeftLinePoint__UeSubobject = "LeftLinePoint /Script/Engine.SceneComponent";
     static constexpr const char* MovementComponent__UeSubobject = "ProjectileComponent /Script/FSD.FSDProjectileMovementComponent";
     static constexpr const char* RightLinePoint__UeSubobject = "RightLinePoint /Script/Engine.SceneComponent";
-    void Fire(FVector Origin, FVector Direction, float Distance);
+    void Fire(const FVector& Origin, const FVector& Direction, float Distance);
     void TurnOffParticles();
 };
 
@@ -34546,18 +34546,18 @@ public:
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     static constexpr const char* WeaponFire__UeSubobject = "CapsuleHitscanComponent /Script/FSD.CapsuleHitscanComponent";
-    UE_MULTICAST void All_ShowNeuroSpread(FVector Location);
+    UE_MULTICAST void All_ShowNeuroSpread(const FVector& Location);
     void EndCharacterOverheatAnim();
     void HeatUpdated(float SmoothedTemperature);
     void OnPushedDamageEffect(class UHealthComponentBase* healthComp);
     void OnRadiantSuperHeaterAoe();
-    void OnServerHitscanHit(FMultiHitScanHits Hits);
-    void OnShowHitEffect(FVector ImpactPoint, FVector ImpactNormal, bool hitEnemy);
+    void OnServerHitscanHit(const FMultiHitScanHits& Hits);
+    void OnShowHitEffect(const FVector& ImpactPoint, const FVector& ImpactNormal, bool hitEnemy);
     void OnTargetKilled(class AActor* Target, class UFSDPhysicalMaterial* PhysMat, bool wasDirectHit);
     UE_SERVER UE_RELIABLE void Server_SetLensePower(float lensepower);
     UE_MULTICAST void ShowBoilerRayExplosion(FVector_NetQuantize Location, FRotator Rotation);
     UE_SERVER void ShowBoilerRayExplosion_Server(FVector_NetQuantize Location, FRotator Rotation);
-    void SpawnExplosiveBoil(class UPrimitiveComponent* Target, FMultiHitscanHit Hit);
+    void SpawnExplosiveBoil(class UPrimitiveComponent* Target, const FMultiHitscanHit& Hit);
     void UpdateMuzzleAnim(bool InIsFiring);
 };
 
@@ -34639,8 +34639,8 @@ public:
     void ChangeHintDuration(float NewDuration);
     void Hide(bool watched);
     void OnHide(bool watched);
-    void OnShow(FText Text, FText Title, FText TaskText, class UTexture2D* Image);
-    void Show(FText Text, FText Title, FText TaskText, class UTexture2D* Image, float Duration);
+    void OnShow(const FText& Text, const FText& Title, const FText& TaskText, class UTexture2D* Image);
+    void Show(const FText& Text, const FText& Title, const FText& TaskText, class UTexture2D* Image, float Duration);
 };
 
 class UMissionDuration : public UDataAsset
@@ -34677,8 +34677,8 @@ public:
     UE_CLASS("/Script/FSD", "MissionGenerationManager");
     TMap<FMissionSetKey, FGeneratedMissionGroup> AllMissionGroups;
     UE_PURE TArray<class UGeneratedMission*> GetAvailableMissions();
-    class UGeneratedMission* GetMissionFromSeeds(FGlobalMissionSeed GlobalSeed, int MissionSeed);
-    UE_PURE TArray<class UGeneratedMission*> GetMissions(FGlobalMissionSeed Seed);
+    class UGeneratedMission* GetMissionFromSeeds(const FGlobalMissionSeed& GlobalSeed, int MissionSeed);
+    UE_PURE TArray<class UGeneratedMission*> GetMissions(const FGlobalMissionSeed& Seed);
 };
 
 class UObjectTemperatureComponent : public UTemperatureComponent
@@ -35036,8 +35036,8 @@ public:
     float StationaryEnemyScale;
     TArray<TSoftClassPtr<class UClass>> Tutorials;
     UE_PURE static FObjectiveMissionIcon GetPrimaryObjectiveIconFromAsset(class UMissionTemplate* mission, bool getSmallVersion);
-    class UGeneratedMission* GenerateMission(class UObject* WorldContextObject, class UBiome* Biome, int Seed, FGlobalMissionSeed GlobalSeed, class UMissionComplexity* limitComplexity, class UMissionDuration* limitDuration, class UMissionMutator* Mutator, TArray<class UMissionWarning*> Warnings, class UMissionChallenge* Challenge, TArray<TSubclassOf<class UObjective>> forceSecondary, class UGemResourceData* forcedGem);
-    class UGeneratedMission* GenerateMission(class UBiome* Biome, int Seed, FGlobalMissionSeed GlobalSeed, class UMissionComplexity* limitComplexity, class UMissionDuration* limitDuration, class UMissionMutator* Mutator, TArray<class UMissionWarning*> Warnings, class UMissionChallenge* Challenge, TArray<TSubclassOf<class UObjective>> forceSecondary, class UGemResourceData* forcedGem);
+    class UGeneratedMission* GenerateMission(class UObject* WorldContextObject, class UBiome* Biome, int Seed, const FGlobalMissionSeed& GlobalSeed, class UMissionComplexity* limitComplexity, class UMissionDuration* limitDuration, class UMissionMutator* Mutator, TArray<class UMissionWarning*> Warnings, class UMissionChallenge* Challenge, TArray<TSubclassOf<class UObjective>> forceSecondary, class UGemResourceData* forcedGem);
+    class UGeneratedMission* GenerateMission(class UBiome* Biome, int Seed, const FGlobalMissionSeed& GlobalSeed, class UMissionComplexity* limitComplexity, class UMissionDuration* limitDuration, class UMissionMutator* Mutator, TArray<class UMissionWarning*> Warnings, class UMissionChallenge* Challenge, TArray<TSubclassOf<class UObjective>> forceSecondary, class UGemResourceData* forcedGem);
     TSubclassOf<class UObjective> GetObjectiveClass();
     UE_PURE TSoftClassPtr<class UClass> GetSoftReferenceToPLS();
     void Receive_SetMissionParameters(class UGeneratedMission* mission, FRandomStream& Random);
@@ -35121,7 +35121,7 @@ public:
     class USoundCue* FireSound;
     float MinTracerDistance;
     float TracerSpeed;
-    void OnWeaponFired(FVector Location);
+    void OnWeaponFired(const FVector& Location);
     void OnWeaponFireEnded();
     void SetMesh(class UMeshComponent* Mesh_0);
 };
@@ -35343,8 +35343,8 @@ public:
     void ReceiveObjectiveInitialized();
     void ReceiveObjectiveUpdated();
     void SetObjective(class UObjective* InObjective, bool InIsPrimaryObjective);
-    void SetSimpleText(FText InText, bool InObjectiveCompleted);
-    void SetText(FText InText, FText InCounterText, class UTexture2D* InCounterIcon, bool InObjectiveCompleted);
+    void SetSimpleText(const FText& InText, bool InObjectiveCompleted);
+    void SetText(const FText& InText, const FText& InCounterText, class UTexture2D* InCounterIcon, bool InObjectiveCompleted);
 };
 
 class UOptionalObjectiveWidget : public UUserWidget
@@ -35523,7 +35523,7 @@ public:
     UE_CLASS("/Script/FSD", "PerkFunctionLibrary");
     UE_PURE static int CalculateClaimablePerkPoints(class UObject* WorldContext);
     UE_PURE static int CalculateClaimablePerkPoints();
-    UE_PURE static FText FormatRichText(FText SourceText, bool UpperCase, TMap<FString, FString> CharTagMap);
+    UE_PURE static FText FormatRichText(const FText& SourceText, bool UpperCase, TMap<FString, FString> CharTagMap);
     UE_PURE static int GetAmountOfPurchasedPerks(class UObject* WorldContext);
     UE_PURE static int GetAmountOfPurchasedPerks();
     UE_PURE static TArray<class UPerkAsset*> GetAvailablePerks();
@@ -35548,7 +35548,7 @@ public:
     static void RandomizePerkLoadout(class UObject* WorldContext, class UPlayerCharacterID* characterID);
     static void RandomizePerkLoadout(class UPlayerCharacterID* characterID);
     static TArray<class UPerkAsset*> SortPerksByUsage(TArray<class UPerkAsset*>& perks);
-    static void SplitPerksByUsage(TArray<class UPerkAsset*> perks, TArray<class UPerkAsset*>& OutPassivePerks, TArray<class UPerkAsset*>& OutActivePerks);
+    static void SplitPerksByUsage(const TArray<class UPerkAsset*>& perks, TArray<class UPerkAsset*>& OutPassivePerks, TArray<class UPerkAsset*>& OutActivePerks);
 };
 
 class UPickaxeFunctionLibrary : public UBlueprintFunctionLibrary
@@ -35635,14 +35635,14 @@ public:
     static constexpr const char* TP_Scale__UeSubobject = "TP_Scale /Script/Engine.SceneComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_MULTICAST void All_DoPowerAttack();
-    UE_MULTICAST void All_SimulateDamageTarget(class UPrimitiveComponent* TargetComponent, bool isSpecial, FVector_NetQuantize ImpactPoint, FVector_NetQuantizeNormal ImpactNormal, class UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
+    UE_MULTICAST void All_SimulateDamageTarget(class UPrimitiveComponent* TargetComponent, bool isSpecial, const FVector_NetQuantize& ImpactPoint, const FVector_NetQuantizeNormal& ImpactNormal, class UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
     UE_MULTICAST void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int Material, float Density, bool isSpecial);
     UE_MULTICAST void All_SimulateDigDebris(FVector_NetQuantize Position, class UFXSystemAsset* Particles, class USoundCue* cue);
     UE_MULTICAST void All_SimulateHitBlock(FVector_NetQuantize Position, int materia, bool removeDebris, bool isSpecial);
     void OnLoadoutChanged();
     void OnRep_State(EPickaxeState oldState);
     void RefreshSpecialCooldown();
-    UE_SERVER UE_RELIABLE void Server_DamageTarget(class UPrimitiveComponent* TargetComponent, bool isSpecial, FVector_NetQuantize ImpactPoint, FVector_NetQuantizeNormal ImpactNormal, class UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
+    UE_SERVER UE_RELIABLE void Server_DamageTarget(class UPrimitiveComponent* TargetComponent, bool isSpecial, const FVector_NetQuantize& ImpactPoint, const FVector_NetQuantizeNormal& ImpactNormal, class UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
     UE_SERVER UE_RELIABLE void Server_DigBlock(FVector carvePos, FVector carveDirection, int TerrainMaterial, bool isSpecial);
     UE_SERVER UE_RELIABLE void Server_DoPowerAttack();
     UE_SERVER void Server_HitBlock(FVector_NetQuantize Position, int Material, bool removeDebris, bool isSpecial);
@@ -35650,7 +35650,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_SetState(EPickaxeState NewState);
     UE_SERVER UE_RELIABLE void Server_TriggerBezerk();
     void SetSpecialCoolDownDuration(float newCooldownDuration);
-    void SpecialTargetDamageEffects(FVector ImpactPoint, FVector ImpactNormal);
+    void SpecialTargetDamageEffects(const FVector& ImpactPoint, const FVector& ImpactNormal);
     UE_PURE float GetSpecialCooldownProgress() const;
 };
 
@@ -35792,12 +35792,12 @@ public:
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
-    UE_MULTICAST UE_RELIABLE void All_EnablePhysics(FVector_NetQuantize Direction);
+    UE_MULTICAST UE_RELIABLE void All_EnablePhysics(const FVector_NetQuantize& Direction);
     UE_MULTICAST void All_Gunsling();
     void OnInRangeChanged(bool InRange);
     void OnObjectiveChanged(class UObjective* Objective);
     void OnPickupUsed(class APlayerCharacter* User, EInputKeys Key);
-    UE_SERVER UE_RELIABLE void Server_EnablePhysics(FVector_NetQuantize Direction);
+    UE_SERVER UE_RELIABLE void Server_EnablePhysics(const FVector_NetQuantize& Direction);
     UE_SERVER void Server_Gunsling();
 };
 
@@ -35863,7 +35863,7 @@ public:
     static constexpr const char* MeshPivot__UeSubobject = "MeshPivot /Script/Engine.SceneComponent";
     static constexpr const char* Movement__UeSubobject = "ProjectileMovement /Script/Engine.ProjectileMovementComponent";
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
-    void BeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 class APlasmaCarbine : public AAmmoDrivenWeapon
@@ -36059,9 +36059,9 @@ class UPlayerRejoinState : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "PlayerRejoinState");
-    UE_CLIENT UE_RELIABLE void Client_SetValues(TArray<FRejoinFloat> floatValues, TArray<FRejoinInt> intValues);
-    UE_SERVER UE_RELIABLE void Server_AddFloatValue_Internal(FGuid ItemKey, FName ValueKey, float Value);
-    UE_SERVER UE_RELIABLE void Server_AddIntValue_Internal(FGuid ItemKey, FName ValueKey, int Value);
+    UE_CLIENT UE_RELIABLE void Client_SetValues(const TArray<FRejoinFloat>& floatValues, const TArray<FRejoinInt>& intValues);
+    UE_SERVER UE_RELIABLE void Server_AddFloatValue_Internal(const FGuid& ItemKey, const FName& ValueKey, float Value);
+    UE_SERVER UE_RELIABLE void Server_AddIntValue_Internal(const FGuid& ItemKey, const FName& ValueKey, int Value);
     UE_SERVER UE_RELIABLE void Server_Reset();
 };
 
@@ -36102,7 +36102,7 @@ public:
     TMulticastInlineDelegate<void(FEndMissionResult Result)> OnEndMissionResultReady;
     void OnRep_EndMissionResult();
     void OnResourceMined(class UCappedResource* Resource, float amount);
-    UE_SERVER UE_RELIABLE void SendEndMissionResult(FEndMissionResult Result);
+    UE_SERVER UE_RELIABLE void SendEndMissionResult(const FEndMissionResult& Result);
     void SendMissionAnalytics(bool trackMorkite);
     UE_PURE bool GetSurvivedInPod() const;
     UE_PURE bool IsEndMissionResultReady() const;
@@ -36283,8 +36283,8 @@ public:
     float SyncTime;
     static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
-    void OnRep_PosVel(FFakeMoveState PosVel_0);
-    void SphereBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnRep_PosVel(const FFakeMoveState& PosVel_0);
+    void SphereBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
 
 class UNormalProjectileAttack : public UProjectileAttack
@@ -36310,7 +36310,7 @@ public:
     class UForceFeedbackEffect* ForceFeedbackEffect;
     class UForceFeedbackAttenuation* ForceFeedbackAttanuation;
     void SpawnEffects(FVector Location, FVector Normal);
-    void SpawnEffectsFromHit(FHitResult Hit);
+    void SpawnEffectsFromHit(const FHitResult& Hit);
 };
 
 class UPropHuntContestant : public UActorComponent
@@ -36384,7 +36384,7 @@ public:
     UE_CLASS("/Script/FSD", "RagdollEliminationComponent");
     float Radius;
     TArray<class AEnemyDeepPathfinderCharacter*> EnemiesTracked;
-    void OnEnemyKilled(FGameplayTagContainer GameplayTags, class AActor* killedEnemy);
+    void OnEnemyKilled(const FGameplayTagContainer& GameplayTags, class AActor* killedEnemy);
 };
 
 class ARandomSelectorItem : public AGenerationItem
@@ -36403,15 +36403,15 @@ public:
     static float GetFloatFromStream(FRandRange RandRange, FRandomStream& RandomStream);
     UE_PURE static float GetFloatValue(FRandRange RandRange);
     static int GetValueFromStream(FIRandRange RandRange, FRandomStream& RandomStream);
-    static FText PickRandomText(TArray<FText> TextArray, FRandomStream& RandomStream);
-    static bool TryPickRandomText(TArray<FText> TextArray, FRandomStream& RandomStream, FText& OutResult);
+    static FText PickRandomText(const TArray<FText>& TextArray, FRandomStream& RandomStream);
+    static bool TryPickRandomText(const TArray<FText>& TextArray, FRandomStream& RandomStream, FText& OutResult);
 };
 
 class URandIntervalFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "RandIntervalFunctionLibrary");
-    UE_PURE static float GetFloatValue(FRandInterval RandInterval);
+    UE_PURE static float GetFloatValue(const FRandInterval& RandInterval);
 };
 
 class ARDGLauncher : public AAmmoDrivenWeapon
@@ -36479,7 +36479,7 @@ public:
     void OnRefineryStateChanged(ERefineryState InRefineryState);
     void OnRep_Refinery();
     void ReceiveRefinerySpawned(class AFSDRefinery* InRefinery);
-    void SpawnWells(class AProceduralSetup* Setup, FVector rigLocation, float minDistanceBetween, TArray<FVector2D> minMaxDistancesToRig);
+    void SpawnWells(class AProceduralSetup* Setup, const FVector& rigLocation, float minDistanceBetween, const TArray<FVector2D>& minMaxDistancesToRig);
 };
 
 class URefinerySecondaryObjective : public UObjective
@@ -36748,14 +36748,14 @@ public:
     FTextBlockStyle TextStyle;
     EFSDInputSource InputSource;
     class URichTextBlock* RichTextBlock;
-    void ApplyTextStyle(class UTextBlock* InTextBlock, FTextBlockStyle InTextStyle);
+    void ApplyTextStyle(class UTextBlock* InTextBlock, const FTextBlockStyle& InTextStyle);
     void OnCustomKeyBindsChanged();
     void OnInputSourceChanged(EFSDInputSource InSource);
-    void ReceiveInputDetails(FInputDisplay InDisplay);
+    void ReceiveInputDetails(const FInputDisplay& InDisplay);
     void ReceiveInputUnknown();
     void ScaleTextBlockToHeight(class UTextBlock* InTextBlock, float LineHeight);
     UE_PURE float GetLineHeight() const;
-    UE_PURE FVector2D MeasureTextSize(FText Text, float Scale) const;
+    UE_PURE FVector2D MeasureTextSize(const FText& Text, float Scale) const;
 };
 
 class AAssaultRifle : public AAmmoDrivenWeapon
@@ -36792,7 +36792,7 @@ public:
     int OverrideDefaultFontSize;
     bool bOverrideDefaultColor;
     FSlateColor OverrideDefaultFontColor;
-    void SetDefaultFontColor(FLinearColor InColor);
+    void SetDefaultFontColor(const FLinearColor& InColor);
     void SetDefaultFontSize(int inFontSize);
 };
 
@@ -36822,10 +36822,10 @@ public:
     int AmountToSpawn;
     bool SpawnOneAtATime;
     bool DisallowSpawning;
-    UE_AUTHORITY_ONLY bool CollectSpawnLocations(FVector Origin);
+    UE_AUTHORITY_ONLY bool CollectSpawnLocations(const FVector& Origin);
     TArray<class AActor*> GetRifts();
     void OnRep_Spawned();
-    UE_AUTHORITY_ONLY void PreFetchSpawnLocations(FVector Origin);
+    UE_AUTHORITY_ONLY void PreFetchSpawnLocations(const FVector& Origin);
     UE_AUTHORITY_ONLY void ReportRiftOpened(class AActor* Rift);
     void SpawnRift();
     UE_AUTHORITY_ONLY void StartSpawning();
@@ -36941,7 +36941,7 @@ class URoomGeneratorGroup : public UDataAsset
 public:
     UE_CLASS("/Script/FSD", "RoomGeneratorGroup");
     TArray<class URoomGenerator*> Rooms;
-    static class URoomGenerator* GetRandomRoomWithTags(FRoomGeneratorGroupInstance& groupInstance, FGameplayTagQuery queury, FRandomStream& RandomStream);
+    static class URoomGenerator* GetRandomRoomWithTags(FRoomGeneratorGroupInstance& groupInstance, const FGameplayTagQuery& queury, FRandomStream& RandomStream);
     class URoomGenerator* GetRandomRoom(FRandomStream& RandomStream);
     FRoomGeneratorGroupInstance CreateGroupInstance() const;
 };
@@ -36984,7 +36984,7 @@ public:
     bool HasMuleReturnedToPod;
     TArray<class AMiniMule*> AllSalvageActors;
     TArray<class AMiniMule*> SalvagedActors;
-    static FTransform FindRepairPointLocation(class AProceduralSetup* Setup, FVector podLocation, float Radius, float maxVerticalDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, TArray<FVector> locationsToAvoid, class UCurveFloat* AvoidCostCurve);
+    static FTransform FindRepairPointLocation(class AProceduralSetup* Setup, const FVector& podLocation, float Radius, float maxVerticalDistance, class UDebrisPositioning* DebrisPositioning, TSubclassOf<class AActor> terrainPlacement, const TArray<FVector>& locationsToAvoid, class UCurveFloat* AvoidCostCurve);
     void AllActorsSalvaged();
     void OnActorRepaired(class URepairableComponent* repairable);
     void OnRep_ActorsSalvaged(int prevAmount);
@@ -37052,11 +37052,11 @@ public:
     void OnRep_PlayerProgress();
     void RefreshLoadoutFromSave(class UPlayerCharacterID* characterID);
     UE_SERVER UE_RELIABLE void Server_SetActiveCampaignMission(FActiveCampaingMission Data);
-    UE_SERVER UE_RELIABLE void Server_SetCharacterStats(TArray<FCharacterProgress> Stats);
+    UE_SERVER UE_RELIABLE void Server_SetCharacterStats(const TArray<FCharacterProgress>& Stats);
     UE_SERVER UE_RELIABLE void Server_SetCredits(int amount);
-    UE_SERVER UE_RELIABLE void Server_SetEquippedPerks(TArray<FSaveGameStatePerkItem> perks);
-    UE_SERVER UE_RELIABLE void Server_SetLoadout(FItemLoadout Loadout, TArray<FItemUpgradeSelection> weaponLoadouts);
-    UE_SERVER UE_RELIABLE void Server_SetPlayerProgress(FPlayerProgress Progress);
+    UE_SERVER UE_RELIABLE void Server_SetEquippedPerks(const TArray<FSaveGameStatePerkItem>& perks);
+    UE_SERVER UE_RELIABLE void Server_SetLoadout(const FItemLoadout& Loadout, const TArray<FItemUpgradeSelection>& weaponLoadouts);
+    UE_SERVER UE_RELIABLE void Server_SetPlayerProgress(const FPlayerProgress& Progress);
     UE_SERVER UE_RELIABLE void Server_SetVictoryPose(class UVictoryPose* pose);
     void SetCampaign();
     UE_PURE bool IsActiveCampaignMission(class UGeneratedMission* mission) const;
@@ -37150,9 +37150,9 @@ public:
     static class USchematicCategory* FindItemUpgradeSchematicCategory(class UItemUpgrade* Upgrade);
     static bool HasAnyUnlockableSchematics(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, TSet<class USchematicCategory*>& Categories);
     static bool HasAnyUnlockableSchematics(class UPlayerCharacterID* characterID, TSet<class USchematicCategory*>& Categories);
-    static void LockSchematics(TSet<class USchematic*> Schematics);
+    static void LockSchematics(const TSet<class USchematic*>& Schematics);
     static void PriceAllSchematics(bool lockPrices);
-    static void PriceSchematics(TSet<class USchematic*> Schematics);
+    static void PriceSchematics(const TSet<class USchematic*>& Schematics);
 };
 
 class UVanitySchematicItem : public USchematicItem
@@ -37292,7 +37292,7 @@ public:
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    void OnHit(FHitResult HitResult, bool isAlwaysPenetrated);
+    void OnHit(const FHitResult& HitResult, bool isAlwaysPenetrated);
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
 };
 
@@ -37501,41 +37501,41 @@ public:
     static bool FindBestQuickJoinServer(TArray<FBlueprintSessionResult>& sessions, class UDifficultySetting* Difficulty, class UBiome* Biome, class UMissionTemplate* MissionTemplate, FBlueprintSessionResult& OutResult);
     static bool FSDCancelFindSessions(class UObject* WorldContextObject);
     static bool FSDCancelFindSessions();
-    UE_PURE static FString FSDGetBuildId(FBlueprintSessionResult Result);
-    UE_PURE static class UDifficultySetting* FSDGetDifficulty(FBlueprintSessionResult Result);
-    UE_PURE static TArray<FDifficultyMutatorItem> FSDGetDifficultyModifiers(FBlueprintSessionResult Result);
-    UE_PURE static EServerDistance FSDGetDistance(FBlueprintSessionResult Result);
-    UE_PURE static float FSDGetDistanceFloat(FBlueprintSessionResult Result);
-    static FGlobalMissionSeed FSDGetGlobalMissionSeed(FBlueprintSessionResult Result);
-    UE_PURE static FString FSDGetHostUserID(FBlueprintSessionResult Result);
-    UE_PURE static FString FSDGetMapName(FBlueprintSessionResult Result);
-    static int FSDGetMissionSeed(FBlueprintSessionResult Result);
-    UE_PURE static TArray<FString> FSDGetModsInstalled(FBlueprintSessionResult Result, bool ExcludeVerifiedMods);
-    UE_PURE static int FSDGetNumPlayers(FBlueprintSessionResult Result);
-    UE_PURE static TArray<FString> FSDGetOptionalModsInstalled(FBlueprintSessionResult Result, bool ExcludeVerifiedMods);
-    UE_PURE static TArray<TSubclassOf<class APlayerCharacter>> FSDGetPlayerClasses(FBlueprintSessionResult Result);
-    UE_PURE static TArray<class UPlayerCharacterID*> FSDGetPlayerClassIDs(FBlueprintSessionResult Result);
-    UE_PURE static FString FSDGetRegion(FBlueprintSessionResult Result);
-    UE_PURE static TArray<FString> FSDGetRequiredModsToDownload(FBlueprintSessionResult Result);
-    UE_PURE static int FSDGetSeason(FBlueprintSessionResult Result);
-    UE_PURE static FString FSDGetServerID(FBlueprintSessionResult Result);
-    UE_PURE static FString FSDGetServerName(FBlueprintSessionResult Result);
-    UE_PURE static FString FSDGetServerNameSanitized(FBlueprintSessionResult Result);
-    static bool FSDGetServerStartTime(FBlueprintSessionResult Result, FDateTime& StartTime);
-    UE_PURE static bool FSDHasGameStarted(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDHasHiddenModsNotInstalledOnClient(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsClassLocked(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsCrossplayEnabledServer(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsEliteDeepDive(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsFullServer(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsModdedSandboxServer(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsModdedServer(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsPasswordRequired(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsPrivateServer(FBlueprintSessionResult Result);
-    UE_PURE static bool FSDIsSessionValid(FBlueprintSessionResult Result);
+    UE_PURE static FString FSDGetBuildId(const FBlueprintSessionResult& Result);
+    UE_PURE static class UDifficultySetting* FSDGetDifficulty(const FBlueprintSessionResult& Result);
+    UE_PURE static TArray<FDifficultyMutatorItem> FSDGetDifficultyModifiers(const FBlueprintSessionResult& Result);
+    UE_PURE static EServerDistance FSDGetDistance(const FBlueprintSessionResult& Result);
+    UE_PURE static float FSDGetDistanceFloat(const FBlueprintSessionResult& Result);
+    static FGlobalMissionSeed FSDGetGlobalMissionSeed(const FBlueprintSessionResult& Result);
+    UE_PURE static FString FSDGetHostUserID(const FBlueprintSessionResult& Result);
+    UE_PURE static FString FSDGetMapName(const FBlueprintSessionResult& Result);
+    static int FSDGetMissionSeed(const FBlueprintSessionResult& Result);
+    UE_PURE static TArray<FString> FSDGetModsInstalled(const FBlueprintSessionResult& Result, bool ExcludeVerifiedMods);
+    UE_PURE static int FSDGetNumPlayers(const FBlueprintSessionResult& Result);
+    UE_PURE static TArray<FString> FSDGetOptionalModsInstalled(const FBlueprintSessionResult& Result, bool ExcludeVerifiedMods);
+    UE_PURE static TArray<TSubclassOf<class APlayerCharacter>> FSDGetPlayerClasses(const FBlueprintSessionResult& Result);
+    UE_PURE static TArray<class UPlayerCharacterID*> FSDGetPlayerClassIDs(const FBlueprintSessionResult& Result);
+    UE_PURE static FString FSDGetRegion(const FBlueprintSessionResult& Result);
+    UE_PURE static TArray<FString> FSDGetRequiredModsToDownload(const FBlueprintSessionResult& Result);
+    UE_PURE static int FSDGetSeason(const FBlueprintSessionResult& Result);
+    UE_PURE static FString FSDGetServerID(const FBlueprintSessionResult& Result);
+    UE_PURE static FString FSDGetServerName(const FBlueprintSessionResult& Result);
+    UE_PURE static FString FSDGetServerNameSanitized(const FBlueprintSessionResult& Result);
+    static bool FSDGetServerStartTime(const FBlueprintSessionResult& Result, FDateTime& StartTime);
+    UE_PURE static bool FSDHasGameStarted(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDHasHiddenModsNotInstalledOnClient(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsClassLocked(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsCrossplayEnabledServer(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsEliteDeepDive(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsFullServer(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsModdedSandboxServer(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsModdedServer(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsPasswordRequired(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsPrivateServer(const FBlueprintSessionResult& Result);
+    UE_PURE static bool FSDIsSessionValid(const FBlueprintSessionResult& Result);
     static void FSDListen(class UObject* WorldContextObject);
     static void FSDListen();
-    UE_PURE static EFSDMissionStatus FSDMissionStatus(FBlueprintSessionResult Result);
+    UE_PURE static EFSDMissionStatus FSDMissionStatus(const FBlueprintSessionResult& Result);
     static bool FSDUpdateSessionInfo(class UObject* WorldContextObject);
     static bool FSDUpdateSessionInfo();
     static bool GetCurrentSessionState(FString& sessionState, FString& ID);
@@ -37549,7 +37549,7 @@ public:
     UE_PURE static FString GetHostUsername(class UObject* WorldContextObject);
     UE_PURE static FString GetHostUsername();
     static FString GetLoginStatus(int localUserNum);
-    UE_PURE static EMissionStructure GetMissionStructure(FBlueprintSessionResult Result);
+    UE_PURE static EMissionStructure GetMissionStructure(const FBlueprintSessionResult& Result);
     static EFSDNATType GetNATType(class UObject* WorldContextObject);
     static EFSDNATType GetNATType();
     static bool GetOnlinePlayerName(int localUserNum, FString& Name_0);
@@ -37768,7 +37768,7 @@ public:
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
     static constexpr const char* projectileLauncher__UeSubobject = "projectileLauncher /Script/FSD.ProjectileLauncherComponent";
-    void OnWeaponFired(FVector Location);
+    void OnWeaponFired(const FVector& Location);
 };
 
 class USocketAttacherComponent : public UActorComponent
@@ -37834,12 +37834,12 @@ public:
     UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocation(class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
     UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocationWithCallback(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, TDelegate<void(class APawn* enemy)> Callback, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
     UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocationWithCallback(class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, TDelegate<void(class APawn* enemy)> Callback, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesFromPool(class UObject* WorldContextObject, float Difficulty, TArray<FVector> Locations, TArray<class UEnemyDescriptor*> BannedEnemies, bool Alert, bool isConstantPreassure);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesFromPool(float Difficulty, TArray<FVector> Locations, TArray<class UEnemyDescriptor*> BannedEnemies, bool Alert, bool isConstantPreassure);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesFromPool(class UObject* WorldContextObject, float Difficulty, const TArray<FVector>& Locations, TArray<class UEnemyDescriptor*> BannedEnemies, bool Alert, bool isConstantPreassure);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesFromPool(float Difficulty, const TArray<FVector>& Locations, TArray<class UEnemyDescriptor*> BannedEnemies, bool Alert, bool isConstantPreassure);
     UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptor(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, EDeepPathFinderSize pfSize);
     UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptor(class UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, EDeepPathFinderSize pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, EDeepPathFinderSize pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, EDeepPathFinderSize pfSize);
     UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorWithCallbackSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, EDeepPathFinderSize pfSize, TDelegate<void(class APawn* enemy)> Callback);
     UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorWithCallbackSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, EDeepPathFinderSize pfSize, TDelegate<void(class APawn* enemy)> Callback);
 };
@@ -37894,7 +37894,7 @@ class UUIHoopHistory : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "UIHoopHistory");
-    void UpdateScores(TArray<int> Scores);
+    void UpdateScores(const TArray<int>& Scores);
     UE_PURE int GetHistoryCount() const;
 };
 
@@ -38093,10 +38093,10 @@ public:
     void OnRep_State();
     TArray<FVector> PredictGrenadePath();
     void ResupplyGrenades(float percentage);
-    void ResupplyGrenadesAmount(int amount);
+    void ResupplyGrenadesAmount(const int& amount);
     UE_SERVER UE_RELIABLE void Server_Resupply(float percentage);
     UE_SERVER UE_RELIABLE void Server_SetState(EThrownGrenadeItemState itemState);
-    UE_SERVER UE_RELIABLE void Server_ThrowGrenade(FVector StartLocation, float cookTime);
+    UE_SERVER UE_RELIABLE void Server_ThrowGrenade(const FVector& StartLocation, const float& cookTime);
     void SetRemainingCooldown(float CoolDown);
     void UpdateCookTime(float Time);
     UE_PURE float GetGrenadeDuration() const;
@@ -38210,7 +38210,7 @@ public:
     static constexpr const char* UseSphere__UeSubobject = "UseSphere /Script/Engine.SphereComponent";
     static constexpr const char* VacuumCapsule__UeSubobject = "VacuumCollision /Script/Engine.CapsuleComponent";
     UE_MULTICAST void All_Visual_PuddleStartCollect();
-    void ItemEnterVacuum(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void ItemEnterVacuum(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnFoamPuddleCollected_Unreliable();
     UE_SERVER UE_RELIABLE void Server_StartVacuumingPuddle(class AActor* Target);
     class USceneComponent* GetVacuumSource() const;
@@ -38267,7 +38267,7 @@ public:
     FVector StickyFlameLastLocation;
     UE_SERVER UE_RELIABLE void ServerSpawnStickyFlame(FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal);
     bool TrySpawnStickyFlame(FVector Location, FVector Normal);
-    bool TrySpawnStickyFlameHit(FHitResult Hit);
+    bool TrySpawnStickyFlameHit(const FHitResult& Hit);
 };
 
 class UYesNoPromptAction : public UBlueprintAsyncActionBase
@@ -38277,8 +38277,8 @@ public:
     TMulticastInlineDelegate<void()> Yes;
     TMulticastInlineDelegate<void()> No;
     TDelegate<void(bool Yes)> YesNoDelegate;
-    static class UYesNoPromptAction* PromptPurchase(class UObject* WorldContext, FYesNoPromptSettings Prompt, TMap<class UResourceData*, int> Resources);
-    static class UYesNoPromptAction* PromptPurchase(FYesNoPromptSettings Prompt, TMap<class UResourceData*, int> Resources);
+    static class UYesNoPromptAction* PromptPurchase(class UObject* WorldContext, FYesNoPromptSettings Prompt, const TMap<class UResourceData*, int>& Resources);
+    static class UYesNoPromptAction* PromptPurchase(FYesNoPromptSettings Prompt, const TMap<class UResourceData*, int>& Resources);
     static class UYesNoPromptAction* PromptYesNo(class UObject* WorldContext, FYesNoPromptSettings Prompt);
     static class UYesNoPromptAction* PromptYesNo(FYesNoPromptSettings Prompt);
     static class UYesNoPromptAction* PromptYesNoWidget(class UObject* WorldContext, class UYesNoPromptWidget* InPromptWidget, FText InTitle, FText InMessage);
@@ -38443,10 +38443,10 @@ class UTerrainLatejoinComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "TerrainLatejoinComponent");
-    UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinDebris(TArray<int> instanceComponentPairs);
+    UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinDebris(const TArray<int>& instanceComponentPairs);
     UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinDone();
-    UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinPart(TArray<FGrenadeExplodeOperationData> Explosions, TArray<FCarveWithColliderOperationData> ColliderCarves, TArray<FCarveWithSTLMeshOperationData> MeshCarves, TArray<FPickaxeDigOperationData> PickAxe, TArray<FRemoveFloatingIslandOperationData> floating, TArray<FDrillOperationData> Drills, TArray<FMeltOperationData> Melts, TArray<FSplineSegmentCarveOperationData> Splines, TArray<FCSGBuildOperationData> CSGBuilds, TArray<FTerrainSpawnDebrisOperationData> SpawnDebris);
-    UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinVisibleChunks(TArray<uint32> VisibleChunks);
+    UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinPart(const TArray<FGrenadeExplodeOperationData>& Explosions, const TArray<FCarveWithColliderOperationData>& ColliderCarves, const TArray<FCarveWithSTLMeshOperationData>& MeshCarves, const TArray<FPickaxeDigOperationData>& PickAxe, const TArray<FRemoveFloatingIslandOperationData>& floating, const TArray<FDrillOperationData>& Drills, const TArray<FMeltOperationData>& Melts, const TArray<FSplineSegmentCarveOperationData>& Splines, const TArray<FCSGBuildOperationData>& CSGBuilds, const TArray<FTerrainSpawnDebrisOperationData>& SpawnDebris);
+    UE_CLIENT UE_RELIABLE void Client_TerrainLateJoinVisibleChunks(const TArray<uint32>& VisibleChunks);
     UE_SERVER UE_RELIABLE void Server_TerrainLateJoinPartReceived();
 };
 
@@ -38645,7 +38645,7 @@ public:
     float Duration;
     void InitTremorAttack(class UBoxComponent* Box, class UParticleSystemComponent* Particles);
     void OnRep_IsAttackActive();
-    void OnTargetEnteredTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void OnTargetEnteredTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnTargetExitedTrigger(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void StartParticles();
     void StopParticles();
@@ -38743,7 +38743,7 @@ public:
     static constexpr const char* InfectionPoints__Replicated = "OnRep_InfectionPoints:";
     TArray<class UMeshComponent*> OuterLayerMeshes;
     TArray<class UMeshComponent*> InnerLayerMeshes;
-    void InitInfectionPoints(TArray<class UMeshComponent*> outerMeshes, TArray<class UMeshComponent*> innerMeshes);
+    void InitInfectionPoints(const TArray<class UMeshComponent*>& outerMeshes, const TArray<class UMeshComponent*>& innerMeshes);
     void OnRep_InfectionPoints(TArray<ECleanedStatus> oldInfectionPoints);
     UE_AUTHORITY_ONLY void Reset();
     UE_PURE int GetNumberOfInfectedPoints() const;
@@ -38826,7 +38826,7 @@ public:
     TArray<FUniqueNetIdRepl> Users;
     static constexpr const char* Users__Replicated = "OnRep_Users:";
     void OnRep_Users();
-    void OnUsersChanged(TArray<FUniqueNetIdRepl> userList);
+    void OnUsersChanged(const TArray<FUniqueNetIdRepl>& userList);
 };
 
 class USpecialEventUsableComponent : public USingleUsableComponent
@@ -39100,7 +39100,7 @@ public:
     UE_AUTHORITY_ONLY void EnableWeakpointRegistration(bool Enabled);
     void SetChannelEnabled(bool Enabled, int Channel);
     int SetUpWeakPointGlowOnMesh(class UMeshComponent* Mesh, int MaterialIndex, class UFSDPhysicalMaterial* PhysicalMaterial, class UHealthComponentBase* HealthComponent);
-    void ShowBodypartHit(float amount, float BaseAmount, FDamageData DamageData);
+    void ShowBodypartHit(float amount, float BaseAmount, const FDamageData& DamageData);
     bool StopLoopingGlow(int aGlowID, bool aFade);
 };
 
@@ -39169,8 +39169,8 @@ public:
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void OnStatusEffectPushed(class UHealthComponentBase* Health);
     void OnTargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysicalMaterial);
-    void OnTerrainHit(FVector Location, FRotator Rotation, class UFSDPhysicalMaterial* PhysicalMaterial);
-    UE_MULTICAST void All_OnAoETriggered(FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal) const;
+    void OnTerrainHit(const FVector& Location, const FRotator& Rotation, class UFSDPhysicalMaterial* PhysicalMaterial);
+    UE_MULTICAST void All_OnAoETriggered(const FVector_NetQuantize& Location, const FVector_NetQuantizeNormal& Normal) const;
 };
 
 class AAutoShotgun : public AAmmoDrivenWeapon

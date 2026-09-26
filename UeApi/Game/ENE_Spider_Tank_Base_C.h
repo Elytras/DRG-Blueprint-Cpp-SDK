@@ -44,7 +44,7 @@ public:
     FLinearColor ButtFinalColor;
     int SelectedSpecialAttack;
     void ExecuteUbergraph_ENE_Spider_Tank_Base(int EntryPoint);
-    void DeathDetailedBase(float amount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void StartFadeBody();
     void OnDeathBase();
     void OnRagdoll();

@@ -18,7 +18,7 @@ public:
     float FirstTimeDelay;
     FTutorialHint ReminderHint;
     void ExecuteUbergraph_Tutorial_Hint_BoscoFirstSoloMission(int EntryPoint);
-    void OnLaserPointerEvent(FLaserPointerTarget HitInfo);
+    void OnLaserPointerEvent(const FLaserPointerTarget& HitInfo);
     void ReceiveOnInitialized();
 };
 

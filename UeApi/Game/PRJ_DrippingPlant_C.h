@@ -23,7 +23,7 @@ public:
     class UParticleSystemComponent* ParticleComponent;
     static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     void ExecuteUbergraph_PRJ_DrippingPlant(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DrippingPlant

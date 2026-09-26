@@ -26,7 +26,7 @@ public:
     class UFirstPersonStaticMeshComponent* ProjectileMesh;
     static constexpr const char* ProjectileMesh__UeScsNode = "562567aa41b6364c929d2fc33253f7cb";
     void ExecuteUbergraph_PRJ_BomberGoo(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Turret_Barrier_C;
     static constexpr const char* UberGraphFrame_PRJ_Turret_Barrier_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_PRJ_Turret_Barrier(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

@@ -28,7 +28,7 @@ public:
     float ClusterEjectionForce;
     class UClass* FragmentClass;
     void ExecuteUbergraph_PRJ_BigGooProjectile(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
     void SpawnSmallGooBalls(FVector ImpactNormal);

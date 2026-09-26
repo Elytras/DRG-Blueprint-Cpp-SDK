@@ -28,9 +28,9 @@ public:
     HUD_CooldownWidget_C* CooldownWidget_C_5;
     class UVerticalBox* IconBox;
     void ExecuteUbergraph_HUD_CoolDownManager(int EntryPoint);
-    void OnCoolDownProgress_Event(class UObject* CoolDownObject, FCoolDownProgressStyle Style, float Progress);
+    void OnCoolDownProgress_Event(class UObject* CoolDownObject, const FCoolDownProgressStyle& Style, float Progress);
     UE_COSMETIC void Construct();
-    void GetOrCreateWidget(class UObject* CoolDownOwner, FCoolDownProgressStyle CoolDownStyle, class UCoolDownProgressWidget*& Widget);
+    void GetOrCreateWidget(class UObject* CoolDownOwner, const FCoolDownProgressStyle& CoolDownStyle, class UCoolDownProgressWidget*& Widget);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::CooldownDisplay

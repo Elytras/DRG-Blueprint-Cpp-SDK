@@ -37,7 +37,7 @@ public:
     float ZSpawnOffset;
     bool UseSpawnAnimation;
     void ExecuteUbergraph_ENE_Spider_Spawn(int EntryPoint);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Spawn_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Spawn_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Play_Spawn();
     static constexpr const char* Play_Spawn__UeName = "Play Spawn";
     void Spawn_Behavior();

@@ -63,9 +63,9 @@ public:
     int NitroglycerinMaxIncreaseTicks;
     void ExecuteUbergraph_PRJ_MicroMissile(int EntryPoint);
     void KillMissile();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
-    void Impact(FHitResult HitResult);
-    void Explode(FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+    void Impact(const FHitResult& HitResult);
+    void Explode(const FHitResult& HitResult);
     void CountSeconds();
     void OnInitialized();
     void TurnUpLightIndicator();

@@ -53,15 +53,15 @@ public:
     bool IsBouncy;
     bool IsHot;
     void ExecuteUbergraph_PRJ_PlasmaCarbineShot(int EntryPoint);
-    void BndEvt__CollisionComponent_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__CollisionComponent_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void CustomEvent(class UItemUpgrade* Event);
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
     void OnInitialized();
     void DoOnSpawn();
     UE_MULTICAST void DoEffects(FVector Location, FVector Normal);
-    void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(FHitResult ImpactResult, FVector ImpactVelocity);
+    void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void MakeBouncy();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void BounceFeedback();
     void HandleImpact(FHitResult& HitResult);
     bool ShouldBreakArmorBeforeDamage(class AActor* Target);

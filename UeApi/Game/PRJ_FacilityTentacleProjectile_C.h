@@ -28,7 +28,7 @@ public:
     class USoundCue* ImpactSound;
     class UParticleSystem* ImpactParticles;
     void ExecuteUbergraph_PRJ_FacilityTentacleProjectile(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void ReceiveBeginPlay();
 };
 

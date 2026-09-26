@@ -68,7 +68,7 @@ public:
     void RefreshSpeakVisibility();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetToggles(bool PlayerName, bool PlayerRank, bool CharacterName, bool CharacterLevel, bool XPcounter, bool XPbar, bool Supplies);
-    void SetData(FString PlayerName, FText HeroName, int PlayerRank, int CharacterLevel, float LevelProgress, int CurrentXP, int RequiredXP, class AFSDPlayerState* PlayerState);
+    void SetData(FString PlayerName, const FText& HeroName, int PlayerRank, int CharacterLevel, float LevelProgress, int CurrentXP, int RequiredXP, class AFSDPlayerState* PlayerState);
     void FromPlayerCharacter(class APlayerCharacter* SetCharacter);
     void FromPlayerState(class AFSDPlayerState* InPlayerState, class UPlayerCharacterID* OptionalCharacterClass);
 };

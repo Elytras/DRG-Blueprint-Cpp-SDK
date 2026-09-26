@@ -48,7 +48,7 @@ public:
     void ExecuteUbergraph_PRJ_Spider_Boss_Twin_Mine(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_Impact(FVector_NetQuantize Location);
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_HasExploded();
 };
 

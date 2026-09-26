@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_PRJ_AcidDrop_Ice_C;
     static constexpr const char* UberGraphFrame_PRJ_AcidDrop_Ice_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_PRJ_AcidDrop_Ice(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

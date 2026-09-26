@@ -76,7 +76,7 @@ public:
     void ExecuteUbergraph_BP_Lunar2023_RabbitStatue_InCave(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void TalkToSelf();
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
-    void BndEvt__BP_InCaveOktoberfestMug_Box_K2Node_ComponentBoundEvent_6_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_InCaveOktoberfestMug_Box_K2Node_ComponentBoundEvent_6_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void SetMeshVisibility(bool IsAttached);
     void CheckForPlayersNearby();
     void Throw(FVector force);

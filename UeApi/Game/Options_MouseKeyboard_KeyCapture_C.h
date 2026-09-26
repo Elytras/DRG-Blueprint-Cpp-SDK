@@ -39,12 +39,12 @@ public:
     UE_COSMETIC void Construct();
     void OnCustomKeyBindingsChanged();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void BndEvt__ClearButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Yes_8623E71E42D4951E6FF011979EF3C667();
     void No_8623E71E42D4951E6FF011979EF3C667();
-    void UpdateKeyInfo(FKey Key);
+    void UpdateKeyInfo(const FKey& Key);
     void UpdateClearButton();
 };
 

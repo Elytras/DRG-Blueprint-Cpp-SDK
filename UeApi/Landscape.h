@@ -545,8 +545,8 @@ class ALandscapeBlueprintBrushBase : public AActor
 public:
     UE_CLASS("/Script/Landscape", "LandscapeBlueprintBrushBase");
     void GetBlueprintRenderDependencies(TArray<class UObject*>& OutStreamableAssets);
-    void Initialize(FTransform InLandscapeTransform, FIntPoint InLandscapeSize, FIntPoint InLandscapeRenderTargetSize);
-    class UTextureRenderTarget2D* Render(bool InIsHeightmap, class UTextureRenderTarget2D* InCombinedResult, FName InWeightmapLayerName);
+    void Initialize(const FTransform& InLandscapeTransform, const FIntPoint& InLandscapeSize, const FIntPoint& InLandscapeRenderTargetSize);
+    class UTextureRenderTarget2D* Render(bool InIsHeightmap, class UTextureRenderTarget2D* InCombinedResult, const FName& InWeightmapLayerName);
     void RequestLandscapeUpdate();
 };
 
@@ -598,8 +598,8 @@ public:
     TArray<class UMaterialInterface*> MobileMaterialInterfaces;
     TArray<class UTexture2D*> MobileWeightmapTextures;
     static constexpr const char* LODStreamingProxy__UeSubobject = "LandscapeLODStreamingProxy /Script/Landscape.LandscapeLODStreamingProxy";
-    float EditorGetPaintLayerWeightAtLocation(FVector InLocation, class ULandscapeLayerInfoObject* PaintLayer);
-    float EditorGetPaintLayerWeightByNameAtLocation(FVector InLocation, FName InPaintLayerName);
+    float EditorGetPaintLayerWeightAtLocation(const FVector& InLocation, class ULandscapeLayerInfoObject* PaintLayer);
+    float EditorGetPaintLayerWeightByNameAtLocation(const FVector& InLocation, FName InPaintLayerName);
     UE_PURE class UMaterialInstanceDynamic* GetMaterialInstanceDynamic(int InIndex) const;
 };
 

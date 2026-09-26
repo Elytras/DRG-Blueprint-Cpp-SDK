@@ -31,7 +31,7 @@ public:
     void OnObjectiveUpdated(class UObjective* Objective_0);
     void Set_Objective(class UObjective* Objective_0, bool IsPrimary);
     static constexpr const char* Set_Objective__UeName = "Set Objective";
-    void UpdateText(FText InText, FText InCounterText, class UTexture2D* InCounterIcon, bool Completed);
+    void UpdateText(const FText& InText, FText InCounterText, class UTexture2D* InCounterIcon, bool Completed);
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

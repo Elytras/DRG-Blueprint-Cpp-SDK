@@ -55,7 +55,7 @@ public:
     UE_PURE class URoomGenerator* SelectRoomMainStation();
     void SetFacilityRoom(int FacilityRoom);
     UE_PURE class URoomGenerator* SelectTraversalChallenge();
-    void AddRoomLinear(FRoomNode PreviousRoom, FVector Direction, float DistanceRadiusMultiplier, bool PlaceDirt, class URoomGeneratorBase*& RoomGenerator, FRoomNode& NewRoom);
+    void AddRoomLinear(const FRoomNode& PreviousRoom, FVector Direction, float DistanceRadiusMultiplier, bool PlaceDirt, class URoomGeneratorBase*& RoomGenerator, FRoomNode& NewRoom);
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

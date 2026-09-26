@@ -22,8 +22,8 @@ class ULayersBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ActorLayerUtilities", "LayersBlueprintLibrary");
-    static void AddActorToLayer(class AActor* InActor, FActorLayer Layer);
-    static TArray<class AActor*> GetActors(class UObject* WorldContextObject, FActorLayer ActorLayer);
-    static TArray<class AActor*> GetActors(FActorLayer ActorLayer);
-    static void RemoveActorFromLayer(class AActor* InActor, FActorLayer Layer);
+    static void AddActorToLayer(class AActor* InActor, const FActorLayer& Layer);
+    static TArray<class AActor*> GetActors(class UObject* WorldContextObject, const FActorLayer& ActorLayer);
+    static TArray<class AActor*> GetActors(const FActorLayer& ActorLayer);
+    static void RemoveActorFromLayer(class AActor* InActor, const FActorLayer& Layer);
 };

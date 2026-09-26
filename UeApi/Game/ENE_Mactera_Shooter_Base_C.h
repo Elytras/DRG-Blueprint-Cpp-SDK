@@ -37,7 +37,7 @@ public:
     void OnTriggerFadeRagdoll();
     void DissolveMesh();
     void Death_ChemicalExplosion();
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Mactera_Shooter_Base_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Mactera_Shooter_Base_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void ReceiveBeginPlay();
     void Cooked_Death();
     static constexpr const char* Cooked_Death__UeName = "Cooked Death";

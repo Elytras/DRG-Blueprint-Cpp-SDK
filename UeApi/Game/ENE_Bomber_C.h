@@ -37,7 +37,7 @@ public:
     void DissolveMesh();
     void OnTriggerFadeRagdoll();
     void BndEvt__ENE_Bomber_HealthComponent_K2Node_ComponentBoundEvent_3_DamageSig__DelegateSignature(float amount);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Bomber_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Bomber_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnFrozen(class AActor* Source);
     void OnStartDeathPanic();

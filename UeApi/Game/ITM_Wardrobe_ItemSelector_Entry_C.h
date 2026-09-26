@@ -57,7 +57,7 @@ public:
     void SetHovered(bool InHovered);
     void GetTags(FDetailedTagSet& OutTags);
     UE_PURE class UWidget* Get_EntryButton_ToolTipWidget();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

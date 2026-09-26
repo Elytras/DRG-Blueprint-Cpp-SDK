@@ -30,7 +30,7 @@ public:
     void BndEvt__CheckBox_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Reset(bool InSandbox);
-    void Verify(TArray<EGameType> InSelectedGameTypes);
+    void Verify(const TArray<EGameType>& InSelectedGameTypes);
     void GetIsChecked(bool& Checked) const;
     UE_COSMETIC bool IsInteractable() const;
 };

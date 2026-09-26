@@ -23,7 +23,7 @@ public:
     class USphereComponent* ApplyGooTrigger;
     static constexpr const char* ApplyGooTrigger__UeScsNode = "4cea4f54daad964cb9be0b59c2dcefcc";
     void ExecuteUbergraph_PRJ_GooProjectile_Fragment_GooBomoberSpecial(int EntryPoint);
-    void BndEvt__ApplyGooTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__ApplyGooTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnInitialized();
 };
 

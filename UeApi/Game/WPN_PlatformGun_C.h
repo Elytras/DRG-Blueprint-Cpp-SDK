@@ -39,8 +39,8 @@ public:
     bool UsingCubePlatform;
     void ExecuteUbergraph_WPN_PlatformGun(int EntryPoint);
     void BndEvt__ProjectileLauncher_K2Node_ComponentBoundEvent_0_ProjectileSpawned__DelegateSignature(class AProjectileBase* Projectile);
-    void Upgraded_Blueprint_Implementation(TArray<class UItemUpgrade*> Upgrades);
-    void BndEvt__ProjectileLauncher_K2Node_ComponentBoundEvent_4_WeaponFiredDelegate__DelegateSignature(FVector Location);
+    void Upgraded_Blueprint_Implementation(const TArray<class UItemUpgrade*>& Upgrades);
+    void BndEvt__ProjectileLauncher_K2Node_ComponentBoundEvent_4_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void ReceiveBeginPlay();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };

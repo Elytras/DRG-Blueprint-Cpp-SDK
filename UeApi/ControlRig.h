@@ -4831,9 +4831,9 @@ public:
     void OnHoveredChanged(bool bIsSelected);
     void OnManipulatingChanged(bool bIsManipulating);
     void OnSelectionChanged(bool bIsSelected);
-    void OnTransformChanged(FTransform NewTransform);
+    void OnTransformChanged(const FTransform& NewTransform);
     void SetEnabled(bool bInEnabled);
-    void SetGlobalTransform(FTransform InTransform);
+    void SetGlobalTransform(const FTransform& InTransform);
     void SetHovered(bool bInHovered);
     void SetSelectable(bool bInSelectable);
     void SetSelected(bool bInSelected);

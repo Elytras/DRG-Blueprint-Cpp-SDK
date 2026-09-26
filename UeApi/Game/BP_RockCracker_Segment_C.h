@@ -41,7 +41,7 @@ public:
     void BndEvt__NextSegmentUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
     void UserConstructionScript();
-    bool ReceiveCanPlaceAt(FTransform InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
+    bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void UpdateVisualState();
     void OverrideMaterialByName(class UMeshComponent* InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, FName InMaterialSlotName, class UMaterialInterface* InMaterial);
     void OverrideMaterialByIndex(class UPrimitiveComponent*& InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, int InIndex, class UMaterialInterface* InMaterial);

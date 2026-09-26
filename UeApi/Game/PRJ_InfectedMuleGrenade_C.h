@@ -42,8 +42,8 @@ public:
     class UParticleSystem* ExplosionParticles;
     class USoundBase* ExplosionSound;
     void ExecuteUbergraph_PRJ_InfectedMuleGrenade(int EntryPoint);
-    void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(FHitResult ImpactResult, FVector ImpactVelocity);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Delayed_Sine();
     static constexpr const char* Delayed_Sine__UeName = "Delayed Sine";
     void ReceiveBeginPlay();

@@ -86,7 +86,7 @@ public:
     void CheckArmorMasteryUnlocks();
     void PlayIntroAnimations();
     void EquipRandomItems();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

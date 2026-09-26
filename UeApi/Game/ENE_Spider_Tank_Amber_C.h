@@ -42,7 +42,7 @@ public:
     static constexpr const char* PointLight1__UeScsNode = "b76525819189dc4cbc0676acedad3bda";
     class AGameEvent* Event;
     void ExecuteUbergraph_ENE_Spider_Tank_Amber(int EntryPoint);
-    void DeathDetailedBase(float amount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnEventFinished(bool eventSuccess);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnEventTriggered();

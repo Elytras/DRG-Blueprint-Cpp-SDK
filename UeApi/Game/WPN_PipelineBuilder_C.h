@@ -38,7 +38,7 @@ public:
     void RecieveUnequipped();
     void RecieveEquipped();
     void ReceiveBeginPlaceSegment();
-    void BndEvt__SegmentPlacer_K2Node_ComponentBoundEvent_0_PlacementUpdatedDelegate__DelegateSignature(bool InPlacementValid, FTransform InPlacement);
+    void BndEvt__SegmentPlacer_K2Node_ComponentBoundEvent_0_PlacementUpdatedDelegate__DelegateSignature(bool InPlacementValid, const FTransform& InPlacement);
     void RecieveStartUsing();
     void Update_Placement_Transform(bool& OutSuccess, FTransform& outTransform);
     static constexpr const char* Update_Placement_Transform__UeName = "Update Placement Transform";

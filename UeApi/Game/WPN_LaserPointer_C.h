@@ -59,7 +59,7 @@ public:
     void OnPOIDestroyed(class AActor* DestroyedActor);
     void RecieveEquipped();
     void ToggleLaserVisible(bool aVisible);
-    void OnMarkerPlaced_Event(FVector Location, FText Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
+    void OnMarkerPlaced_Event(FVector Location, const FText& Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
     void OnScanComplete();
     void AddedToInventory(class APlayerCharacter* ItemOwner);
     void ReceiveBeginPlay();

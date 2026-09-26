@@ -37,7 +37,7 @@ public:
     void ExecuteUbergraph_PLS_DeepScan_TunnelWeb(int EntryPoint);
     void CreateCaveGraph();
     UE_PURE class URoomGenerator* SelectRoom();
-    void DebugRoomLocationAndRadius(FRoomNode RoomNode, class URoomGenerator* RoomGenerator, FLinearColor Color);
+    void DebugRoomLocationAndRadius(const FRoomNode& RoomNode, class URoomGenerator* RoomGenerator, FLinearColor Color);
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

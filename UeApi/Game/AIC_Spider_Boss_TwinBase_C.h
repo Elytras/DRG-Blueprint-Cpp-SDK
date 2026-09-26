@@ -18,7 +18,7 @@ public:
     static constexpr const char* UberGraphFrame_AIC_Spider_Boss_TwinBase_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Boss_TwinBase(int EntryPoint);
     void ReceiveBeginPlay();
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
     void StartSpeedModifier();
 };
 

@@ -66,9 +66,9 @@ public:
     void SetMissionNameWidth(float Width);
     void SetServername();
     void OpenProfile();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_DeepDives

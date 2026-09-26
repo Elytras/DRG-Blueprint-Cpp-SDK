@@ -170,12 +170,12 @@ public:
     void BndEvt__Tether_K2Node_ComponentBoundEvent_12_TetherConnectionChanged_Deletage__DelegateSignature(class UTetherComponent* frontConnection, class UTetherComponent* backConnection);
     UE_MULTICAST void All_PlaySalute(class AActor* Saluter);
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
-    void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnExitState(EHackingPodState oldState);
     void OnEnterState(EHackingPodState NextState);
     UE_MULTICAST void All_Pet();
     void OnBoscoSalute_Event_0(class APlayerCharacter* ShoutingPlayer);
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void TakeOff();
     void BndEvt__ActivateUsable_K2Node_ComponentBoundEvent_9_UsableChangedSignature__DelegateSignature(bool CanUse);
     void StartFanColoring();
@@ -192,7 +192,7 @@ public:
     void BndEvt__FriendlyHealth_K2Node_ComponentBoundEvent_3_DamageSig__DelegateSignature(float amount);
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
     void BndEvt__FriendlyHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void BndEvt__Tether_K2Node_ComponentBoundEvent_0_TeherMessage_Delegate__DelegateSignature(FName Message);
+    void BndEvt__Tether_K2Node_ComponentBoundEvent_0_TeherMessage_Delegate__DelegateSignature(const FName& Message);
     void OnDroppodImpact();
     void ReceiveBeginPlay();
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);

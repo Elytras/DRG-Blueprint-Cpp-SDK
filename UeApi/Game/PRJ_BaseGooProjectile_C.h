@@ -49,7 +49,7 @@ public:
     void ExecuteUbergraph_PRJ_BaseGooProjectile(int EntryPoint);
     void DestroyProjectile();
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void InitPuddle(class AGooGunPuddle* puddle_0);
 };
 

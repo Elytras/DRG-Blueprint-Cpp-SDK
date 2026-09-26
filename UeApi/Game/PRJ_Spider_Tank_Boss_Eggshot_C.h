@@ -44,7 +44,7 @@ public:
     class UEnemyDescriptor* EnemyToSpawn;
     int SpawnAmount;
     void ExecuteUbergraph_PRJ_Spider_Tank_Boss_Eggshot(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::EggShot

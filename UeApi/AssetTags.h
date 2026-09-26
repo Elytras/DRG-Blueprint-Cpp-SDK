@@ -26,6 +26,6 @@ public:
     TArray<FAssetData> GetAssetsInCollection(FName Name_0);
     TArray<FName> GetCollections();
     TArray<FName> GetCollectionsContainingAsset(FName AssetPathName);
-    TArray<FName> GetCollectionsContainingAssetData(FAssetData AssetData);
+    TArray<FName> GetCollectionsContainingAssetData(const FAssetData& AssetData);
     TArray<FName> GetCollectionsContainingAssetPtr(class UObject* AssetPtr);
 };

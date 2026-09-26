@@ -30,7 +30,7 @@ public:
     void OnInputSuccess();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void SetupSequence(TArray<EThawInputDirection> Sequence_0, bool First);
+    void SetupSequence(const TArray<EThawInputDirection>& Sequence_0, bool First);
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

@@ -71,7 +71,7 @@ public:
     void ExecuteUbergraph_BP_GlowingPlant(int EntryPoint);
     UE_MULTICAST void OnTerrainPointRemoved();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_BodypartHitSig__DelegateSignature(float amount, float BaseAmount, FDamageData DamageData);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_BodypartHitSig__DelegateSignature(float amount, float BaseAmount, const FDamageData& DamageData);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void UserConstructionScript();
 };

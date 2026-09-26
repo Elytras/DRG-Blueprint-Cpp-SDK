@@ -57,7 +57,7 @@ public:
     void SetBlockSolution(EBlueprintablePrivilegeResults priviligeResults);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetFontSize(int inFontSize);
-    void Handle_Key_Down(FKeyEvent KeyEvent, bool& OutHandled, FEventReply& OutReply);
+    void Handle_Key_Down(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
     static constexpr const char* Handle_Key_Down__UeName = "Handle Key Down";
 };
 

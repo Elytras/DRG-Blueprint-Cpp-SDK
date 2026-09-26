@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_PRJ_Rockpox_Breede_VomitedLarva(int EntryPoint);
     void OnInitialized();
     void DoOnSpawn();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder

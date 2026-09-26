@@ -38,7 +38,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetBrush(FSlateBrush& Brush_0);
-    void SetBrush(FSlateBrush InBrush);
+    void SetBrush(const FSlateBrush& InBrush);
     void SetBrushFromTexture(class UTexture2D* Texture, bool bMatchSize);
     void SetTintOpacity(float InOpacity);
     UE_PURE class UMaterialInstanceDynamic* GetDynamicMaterial();

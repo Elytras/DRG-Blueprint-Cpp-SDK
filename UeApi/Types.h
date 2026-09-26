@@ -181,11 +181,12 @@ template <class K, class V> struct TMap {
   TMap() = default;
   TMap(std::initializer_list<TPair<K, V>>) {}
   UE_CONTAINER_TMap int32 Num() const;
-  /* A read is Find(), the value type's default for a missing key; `Map[Key] = V` is Add(). */
+  /* A read is Find(), the value type's default for a missing key; `Map[Key] = V` is Add(). A container method on
+     `Map[Key]` runs on a copy, stored back when it writes. */
   V       &operator[](const K &Key);
   const V &operator[](const K &Key) const;
-  /* Range-for over Keys() with Find(): `auto& [Key, Value]` writes Value back with Add() after each iteration when the
-     body writes it; a body that only reads it (`Value->X = 1` included) needs none. */
+  /* Range-for: `auto& [Key, Value]` walks the map's own slots, so Value is the value where it lives. A body that adds
+     to, removes from or sorts a map of this type, or a by-value `auto [Key, Value]`, walks a copy of Keys() instead. */
   TPair<const K, V>       *begin();
   TPair<const K, V>       *end();
   const TPair<const K, V> *begin() const;

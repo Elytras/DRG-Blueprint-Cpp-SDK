@@ -41,7 +41,7 @@ public:
     void Set_Carver_mesh(class UStaticMesh* Mesh_to_use);
     static constexpr const char* Set_Carver_mesh__UeName = "Set Carver mesh";
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 };

@@ -48,7 +48,7 @@ public:
     class UFXSystemAsset* deathParticles;
     void ExecuteUbergraph_ENE_JellyBreeder_Base(int EntryPoint);
     void BndEvt__ENE_JellyBreeder_Base_FrozenImpact_K2Node_ComponentBoundEvent_1_Delegate__DelegateSignature();
-    UE_AUTHORITY_ONLY void BndEvt__ENE_JellyBreeder_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_JellyBreeder_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void BreedModeFlipped(bool aIsLayingEggs);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnMessageAI(FName TriggerName);

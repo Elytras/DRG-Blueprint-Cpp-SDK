@@ -38,7 +38,7 @@ public:
     void ApplyForceSM(class UStaticMeshComponent* Component, FVector Position);
     void ApplyForceSK(class USkeletalMeshComponent* Component, FVector Position);
     void ReceiveIgnoreCharacter(class APlayerCharacter* Character);
-    void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, FHitResult Hit);
+    void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
     void ReceiveBeginPlay();
 };

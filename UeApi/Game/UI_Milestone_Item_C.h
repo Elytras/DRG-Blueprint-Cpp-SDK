@@ -69,8 +69,8 @@ public:
     void CreateRewardStars(int StarCount);
     void Claim_KPI();
     static constexpr const char* Claim_KPI__UeName = "Claim KPI";
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OnCountChanged_Event(class UObject* WorldContext, class UMissionStat* MissionStat, float Value);
     void OnCountChanged_Event(class UMissionStat* MissionStat, float Value);
     void UpdateItem();
@@ -78,8 +78,8 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetProgress(int Tier, float Progress, float CurrentCount, float TargetCount, bool IsClaimable);
     void SetHovered(bool Hovered);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCategoryFilter(TArray<class UTexture2D*>& Filter);
     void GetIcon(class UTexture2D*& Icon);
     void GetIsClaimable(bool& ItemClaimable_0);

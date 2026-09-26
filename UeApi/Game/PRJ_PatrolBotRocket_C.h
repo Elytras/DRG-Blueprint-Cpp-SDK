@@ -53,7 +53,7 @@ public:
     static constexpr const char* Explode__Replicated = "OnRep_Explode:";
     class AActor* Target;
     void ExecuteUbergraph_PRJ_PatrolBotRocket(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void ReceiveBeginPlay();
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnRep_Explode();

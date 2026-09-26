@@ -47,7 +47,7 @@ public:
     class UClass* MainHUDType;
     void ExecuteUbergraph_BP_UITesting(int EntryPoint);
     void OnShowMainMenu();
-    void OnHit_Event(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit_Event(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void OnItemEquipped(class AItem* Item);
     void OnToggleMapTool(bool Visible);
     void Spin_Crosshair();

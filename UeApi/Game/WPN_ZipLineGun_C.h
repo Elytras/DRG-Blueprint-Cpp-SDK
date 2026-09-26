@@ -55,7 +55,7 @@ public:
     bool TooClose;
     bool WeaponFired;
     void ExecuteUbergraph_WPN_ZipLineGun(int EntryPoint);
-    void BndEvt__ZiplineLauncher_K2Node_ComponentBoundEvent_2_WeaponFiredDelegate__DelegateSignature(FVector Location);
+    void BndEvt__ZiplineLauncher_K2Node_ComponentBoundEvent_2_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void RecieveUnequipped();
     void BndEvt__CrosshairAggregator_K2Node_ComponentBoundEvent_0_CrosshairCreated__DelegateSignature(class UUserWidget* Crosshair_0);
     void ReceiveBeginPlay();

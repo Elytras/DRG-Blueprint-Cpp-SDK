@@ -67,7 +67,7 @@ public:
     class UNiagaraComponent* WhirlwindParticles;
     void ExecuteUbergraph_ENE_Spider_Boss_Heavy(int EntryPoint);
     void SetPhysicsAsset(class UPhysicsAsset* NewPhysicsAsset);
-    void SpawnProjectile(TSubclassOf<class AActor> Actor, FTransform Transform);
+    void SpawnProjectile(TSubclassOf<class AActor> Actor, const FTransform& Transform);
     void OnDeathBase();
     void ForceEnraged();
     void PlayAnimatedDeath(int AnimationIndex);

@@ -66,7 +66,7 @@ public:
     static constexpr const char* IsDeployed__Replicated = "OnRep_IsDeployed:";
     float DeployProgress;
     void ExecuteUbergraph_BP_Minehead_Sentry(int EntryPoint);
-    void BndEvt__Hitscan_K2Node_ComponentBoundEvent_0_WeaponFiredDelegate__DelegateSignature(FVector Location);
+    void BndEvt__Hitscan_K2Node_ComponentBoundEvent_0_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void UpdateShadows();
     void Deploy();
     void Sentry_Gun_Ready();

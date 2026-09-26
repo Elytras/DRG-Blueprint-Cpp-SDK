@@ -44,7 +44,7 @@ public:
     void ExecuteUbergraph_BP_Kickable_Base(int EntryPoint);
     void Set_Is_Interactable(bool Can_interact);
     static constexpr const char* Set_Is_Interactable__UeName = "Set Is Interactable";
-    void BndEvt__Kickable_Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__Kickable_Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     static constexpr const char* BndEvt__Kickable_Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__Kickable Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature";
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void destroy();

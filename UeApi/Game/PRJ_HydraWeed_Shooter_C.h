@@ -47,7 +47,7 @@ public:
     void ExecuteUbergraph_PRJ_HydraWeed_Shooter(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void GoBoom();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

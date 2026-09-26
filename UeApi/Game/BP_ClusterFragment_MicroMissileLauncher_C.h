@@ -27,7 +27,7 @@ public:
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds_0);
     void OnInitialized();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

@@ -55,7 +55,7 @@ public:
     void OnOverChargerCalled(FVector Location, int roomIndex);
     void GeneratorCharged(BP_Facility_PowerStation_GeneratorBase_C* Generator);
     void ReceiveBeginPlay();
-    void SpawnMissionCriticalItems(ECriticalItemPass pass);
+    void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void Damaged();
     void OnFacilityDestroyed();
     void FacilityActivated();

@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Shooter_Ground_C;
     static constexpr const char* UberGraphFrame_AIC_Spider_Shooter_Ground_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Shooter_Ground(int EntryPoint);
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
     void ReceiveBeginPlay();
 };
 

@@ -104,7 +104,7 @@ public:
     void ReceiveBeginPlay();
     void KillTentacle();
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void BndEvt__DamageSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__DamageSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void DoMeleeAttack(class AActor* AttackTarget);
     void OnCompleted_8602CF374E202C1C0971AB8E6016E177(FName NotifyName);
     void OnBlendOut_8602CF374E202C1C0971AB8E6016E177(FName NotifyName);

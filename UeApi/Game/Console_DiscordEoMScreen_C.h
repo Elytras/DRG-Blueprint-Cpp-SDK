@@ -54,7 +54,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Do_Running_Text(FText Text, int Index_0, class UTextBlock* Target);
     static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
-    void UpdateUI(FDiscordServerData discordServerCount);
+    void UpdateUI(const FDiscordServerData& discordServerCount);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
     void OnSuccess_D5557812434CB42B270037821C78EAB5(class UTexture2DDynamic* Texture);

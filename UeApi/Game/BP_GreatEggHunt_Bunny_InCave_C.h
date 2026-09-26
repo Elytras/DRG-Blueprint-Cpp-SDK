@@ -65,8 +65,8 @@ public:
     void ExecuteUbergraph_BP_GreatEggHunt_Bunny_InCave(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_3_DamageSig__DelegateSignature(float amount);
-    UE_AUTHORITY_ONLY void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
-    void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_2_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    UE_AUTHORITY_ONLY void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
+    void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_2_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void TimerElapsed();
     void ResetRunTimer();
     void BndEvt__BP_Nisse_PawnSensing_K2Node_ComponentBoundEvent_1_SeePawnDelegate__DelegateSignature(class APawn* Pawn);

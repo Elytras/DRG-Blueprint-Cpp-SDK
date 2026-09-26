@@ -70,7 +70,7 @@ public:
     void ToggleStatPreview(bool Preview);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE class UWidget* Get_UpgradeIcon_ToolTip();
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC bool IsInteractable() const;
 };
 

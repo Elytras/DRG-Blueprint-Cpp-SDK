@@ -32,7 +32,7 @@ public:
     void CheckForNewText();
     UE_COSMETIC void Construct();
     void GenerateTickerText();
-    UE_PURE FString GenerateFluffStock(FRandomStream RandomStream);
+    UE_PURE FString GenerateFluffStock(const FRandomStream& RandomStream);
 };
 
 }}}   // namespace Game::UI::Menu_Trading

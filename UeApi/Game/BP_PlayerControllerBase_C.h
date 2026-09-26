@@ -40,7 +40,7 @@ public:
     void ExecuteUbergraph_BP_PlayerControllerBase(int EntryPoint);
     void Event_On_Join_Request_Reply(int Reply);
     static constexpr const char* Event_On_Join_Request_Reply__UeName = "Event On Join Request Reply";
-    void OnJoinRequest(FDiscordUserDataSDK joinRequest);
+    void OnJoinRequest(const FDiscordUserDataSDK& joinRequest);
     void SpawnHUDAsync();
     void CustomEvent_1();
     UE_SERVER void Reset_Player_Location();

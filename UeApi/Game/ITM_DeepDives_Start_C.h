@@ -61,7 +61,7 @@ public:
     void OnFailure_00D4455F48B21EAE6492C6AB27B0D8F5();
     void UpdateOptions();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void HandleKeyDown(FKeyEvent KeyEvent, bool& OutHandled, FEventReply& OutReply);
+    void HandleKeyDown(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
 };
 
 }}}   // namespace Game::UI::Menu_DeepDives

@@ -29,7 +29,7 @@ public:
     static constexpr const char* Scene__UeScsNode = "1de8922689eb334cb6e35a73a8758c10";
     bool CanTriggerSound;
     void ExecuteUbergraph_BP_JetBootsBoxLid(int EntryPoint);
-    void BndEvt__BP_JetBootsBoxLid_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_JetBootsBoxLid_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
 };
 

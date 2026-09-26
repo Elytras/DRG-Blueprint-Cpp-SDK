@@ -60,8 +60,8 @@ public:
     static constexpr const char* Cooked_Death__UeName = "Cooked Death";
     void ChemicalExplosionDeath();
     void NormalDeath();
-    void DeathDetailedBase(FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_SpiderBase_Large_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void DeathDetailedBase(const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_SpiderBase_Large_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void IncrementCommunityGoal();
     void ChangePhysicsAsset();
     void BumpedTarget();

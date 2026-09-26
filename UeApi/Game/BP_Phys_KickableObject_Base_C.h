@@ -53,14 +53,14 @@ public:
     void ExecuteUbergraph_BP_Phys_KickableObject_Base(int EntryPoint);
     UE_MULTICAST void SpawnKickSound();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_8_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_7_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_7_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     UE_MULTICAST void Spawn_Bronzehead_Effects();
     static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void destroy();
     void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects

@@ -34,10 +34,10 @@ public:
     void ExecuteUbergraph_Prompt_SeasonSelection_Confirmation(int EntryPoint);
     void BndEvt__WND_SeasonSelection_Popup_NoBtn_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__WND_SeasonSelection_Popup_YesBtn_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void OnShow(FText Title, FText Message);
+    void OnShow(const FText& Title, const FText& Message);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetSeason(class USeason* InSeason);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}}   // namespace Game::UI::Menu_Seasons::SeasonSelector

@@ -53,7 +53,7 @@ public:
     void ExecuteUbergraph_SLVL_SpaceRig_Season03(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_SpawnSeed();
-    void Unhide(FRandomStream& RandomStream, TArray<class AStaticMeshActor*> Meshes, int Number_To_Unhide);
+    void Unhide(FRandomStream& RandomStream, const TArray<class AStaticMeshActor*>& Meshes, int Number_To_Unhide);
 };
 
 }}}   // namespace Game::Maps::SpaceRig

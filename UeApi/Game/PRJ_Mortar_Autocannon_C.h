@@ -32,7 +32,7 @@ public:
     class UStaticMeshComponent* mesh_front;
     static constexpr const char* mesh_front__UeScsNode = "9f90a2f6e5d66a4ab4def462bf7b3f9b";
     void ExecuteUbergraph_PRJ_Mortar_Autocannon(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     class UDamageComponent* GetDamageComponent();
 };
 

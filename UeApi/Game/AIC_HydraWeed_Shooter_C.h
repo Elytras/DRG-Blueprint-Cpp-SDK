@@ -22,7 +22,7 @@ public:
     void StartBehavior();
     void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

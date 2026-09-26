@@ -102,7 +102,7 @@ public:
     void OnGoalInitialized();
     void OnCheckUI();
     void OnCGSData(bool stateReceived);
-    void OnFactionsDataRecievedEvent(TArray<FString> Goals, TArray<float> Values, TArray<int> Members);
+    void OnFactionsDataRecievedEvent(const TArray<FString>& Goals, const TArray<float>& Values, const TArray<int>& Members);
     void RequestUserInByTime();
     void TimedUserRequest(float Time);
     void Stop();
@@ -111,7 +111,7 @@ public:
     void Do_Running_Text(FText Text, int Index_0, class UTextBlock* Target);
     static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
     void UserInServer(bool isInServer);
-    void UpdateUI(FDiscordServerData discordServerCount);
+    void UpdateUI(const FDiscordServerData& discordServerCount);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
     void RefreshUI();

@@ -106,7 +106,7 @@ class UChaosSolverEngineBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ChaosSolverEngine", "ChaosSolverEngineBlueprintLibrary");
-    UE_PURE static FHitResult ConvertPhysicsCollisionToHitResult(FChaosPhysicsCollisionInfo PhysicsCollision);
+    UE_PURE static FHitResult ConvertPhysicsCollisionToHitResult(const FChaosPhysicsCollisionInfo& PhysicsCollision);
 };
 
 class UChaosSolver : public UObject

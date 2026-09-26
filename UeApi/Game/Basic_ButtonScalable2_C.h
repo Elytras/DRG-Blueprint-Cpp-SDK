@@ -83,7 +83,7 @@ public:
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnAddKeyName(FString Name_0);
-    void OnAddIcon(FString Name_0, FActionIconMapping Icon);
+    void OnAddIcon(FString Name_0, const FActionIconMapping& Icon);
     void OnNewLine(int Index_0);
     void SetIconTint(FLinearColor PC__Icon_Tint, FLinearColor Controller_Icon_Tint);
     void SetTints(FLinearColor PC__Icon_Tint, FLinearColor Controller_Icon_Tint);

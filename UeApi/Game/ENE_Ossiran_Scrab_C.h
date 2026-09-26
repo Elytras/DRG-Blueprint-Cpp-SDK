@@ -71,7 +71,7 @@ public:
     void DeathWeakpoint();
     void StartDissolve();
     void DissolveAfterRagdoll();
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Ossiran_Scrab_HealthComponent_K2Node_ComponentBoundEvent_1_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Ossiran_Scrab_HealthComponent_K2Node_ComponentBoundEvent_1_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void ReceiveStopFly();
     void ReceiveBeginFly();
     void OnStartedFleeing();

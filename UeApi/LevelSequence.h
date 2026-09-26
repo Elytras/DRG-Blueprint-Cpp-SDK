@@ -205,8 +205,8 @@ public:
     void RemoveBindingByTag(FName Tag, class AActor* Actor);
     void ResetBinding(FMovieSceneObjectBindingID Binding);
     void ResetBindings();
-    void SetBinding(FMovieSceneObjectBindingID Binding, TArray<class AActor*> Actors, bool bAllowBindingsFromAsset);
-    void SetBindingByTag(FName BindingTag, TArray<class AActor*> Actors, bool bAllowBindingsFromAsset);
+    void SetBinding(FMovieSceneObjectBindingID Binding, const TArray<class AActor*>& Actors, bool bAllowBindingsFromAsset);
+    void SetBindingByTag(FName BindingTag, const TArray<class AActor*>& Actors, bool bAllowBindingsFromAsset);
     void SetReplicatePlayback(bool ReplicatePlayback);
     void SetSequence(class ULevelSequence* InSequence);
     void ShowBurnin();

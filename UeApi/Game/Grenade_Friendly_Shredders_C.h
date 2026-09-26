@@ -38,7 +38,7 @@ public:
     void KillOtherGrenades();
     void OnDeathShredder(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
-    void ReceiveParticleData(TArray<FBasicParticleData> Data, class UNiagaraSystem* NiagaraSystem);
+    void ReceiveParticleData(const TArray<FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem);
     void OnExploded();
     void UserConstructionScript();
     void OnRep_ParticleRandomSeed();

@@ -27,7 +27,7 @@ public:
     static constexpr const char* Damage__UeScsNode = "c7c94760dd16af49a8973689c31fea12";
     float Offset;
     void ExecuteUbergraph_PRJ_FlameWall(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
 };
 

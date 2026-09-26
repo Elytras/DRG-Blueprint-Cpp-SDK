@@ -36,12 +36,12 @@ public:
     float LastHitTime;
     void ExecuteUbergraph_PRJ_MicroMissile_PlasmaBurster(int EntryPoint);
     void ReceiveTick(float DeltaSeconds_0);
-    void TryDoDamage(class AActor* Target, FVector Location, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysMat);
-    UE_SERVER UE_RELIABLE void Server_DamageTarget(class AActor* Target, FVector Location, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysMat);
-    void BndEvt__PRJ_MicroMissile_PlasmaBurster_MovementComponent_K2Node_ComponentBoundEvent_1_OnProjectileStopDelegate__DelegateSignature(FHitResult ImpactResult);
-    void BndEvt__PRJ_MicroMissile_PlasmaBurster_MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(FHitResult ImpactResult, FVector ImpactVelocity);
+    void TryDoDamage(class AActor* Target, const FVector& Location, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysMat);
+    UE_SERVER UE_RELIABLE void Server_DamageTarget(class AActor* Target, const FVector& Location, class UPrimitiveComponent* HitComponent, class UFSDPhysicalMaterial* PhysMat);
+    void BndEvt__PRJ_MicroMissile_PlasmaBurster_MovementComponent_K2Node_ComponentBoundEvent_1_OnProjectileStopDelegate__DelegateSignature(const FHitResult& ImpactResult);
+    void BndEvt__PRJ_MicroMissile_PlasmaBurster_MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void OnInitialized();
-    void OnPenetrated(bool PredictedPenetration, FHitResult HitResult);
+    void OnPenetrated(bool PredictedPenetration, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

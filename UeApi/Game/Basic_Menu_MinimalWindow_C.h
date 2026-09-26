@@ -51,8 +51,8 @@ public:
     float WindowOpacity;
     float BlurStrength;
     void ExecuteUbergraph_Basic_Menu_MinimalWindow(int EntryPoint);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnFocusLost(FFocusEvent InFocusEvent);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);

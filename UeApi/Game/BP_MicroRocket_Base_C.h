@@ -37,7 +37,7 @@ public:
     static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
     void ExecuteUbergraph_BP_MicroRocket_Base(int EntryPoint);
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::WeaponsNTools::RocketRifle

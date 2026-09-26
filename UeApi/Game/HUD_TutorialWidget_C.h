@@ -31,7 +31,7 @@ public:
     void BndEvt__ITM_BasicTutorialWindow_K2Node_ComponentBoundEvent_0_RemoveAnimationFinished__DelegateSignature();
     void OnHide(bool watched);
     UE_COSMETIC void Construct();
-    void OnShow(FText Text, FText Title, FText TaskText, class UTexture2D* Image);
+    void OnShow(const FText& Text, const FText& Title, const FText& TaskText, class UTexture2D* Image);
 };
 
 }}}   // namespace Game::UI::Tutorial

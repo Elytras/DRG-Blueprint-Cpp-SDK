@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Menace_C;
     static constexpr const char* UberGraphFrame_AIC_Spider_Menace_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Menace(int EntryPoint);
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
     void ReceivePossess(class APawn* PossessedPawn);
     void ReceiveBeginPlay();
 };

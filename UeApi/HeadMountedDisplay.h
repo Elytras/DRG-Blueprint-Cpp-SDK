@@ -199,9 +199,9 @@ class UHeadMountedDisplayFunctionLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/HeadMountedDisplay", "HeadMountedDisplayFunctionLibrary");
     static void BreakKey(FKey InKey, FString& InteractionProfile, EControllerHand& hand, FName& MotionSource, FString& Indentifier, FString& Component);
-    static void CalibrateExternalTrackingToHMD(FTransform ExternalTrackingTransform);
-    static void ClearXRTimedInputActionDelegate(FName ActionPath);
-    static bool ConfigureGestures(FXRGestureConfig GestureConfig);
+    static void CalibrateExternalTrackingToHMD(const FTransform& ExternalTrackingTransform);
+    static void ClearXRTimedInputActionDelegate(const FName& ActionPath);
+    static bool ConfigureGestures(const FXRGestureConfig& GestureConfig);
     static EXRDeviceConnectionResult ConnectRemoteXRDevice(FString IpAddress, int BitRate);
     static void DisconnectRemoteXRDevice();
     static bool EnableHMD(bool bEnable);
@@ -209,9 +209,9 @@ public:
     static TArray<FXRDeviceId> EnumerateTrackedDevices(FName SystemId, EXRTrackedDeviceType DeviceType);
     static bool GetControllerTransformForTime(class UObject* WorldContext, int ControllerIndex, FName MotionSource, FTimespan Time, bool& bTimeWasUsed, FRotator& Orientation, FVector& Position, bool& bProvidedLinearVelocity, FVector& LinearVelocity, bool& bProvidedAngularVelocity, FVector& AngularVelocityRadPerSec);
     static bool GetControllerTransformForTime(int ControllerIndex, FName MotionSource, FTimespan Time, bool& bTimeWasUsed, FRotator& Orientation, FVector& Position, bool& bProvidedLinearVelocity, FVector& LinearVelocity, bool& bProvidedAngularVelocity, FVector& AngularVelocityRadPerSec);
-    static void GetDevicePose(FXRDeviceId XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
-    static void GetDeviceWorldPose(class UObject* WorldContext, FXRDeviceId XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
-    static void GetDeviceWorldPose(FXRDeviceId XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
+    static void GetDevicePose(const FXRDeviceId& XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
+    static void GetDeviceWorldPose(class UObject* WorldContext, const FXRDeviceId& XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
+    static void GetDeviceWorldPose(const FXRDeviceId& XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
     static void GetHMDData(class UObject* WorldContext, FXRHMDData& HMDData);
     static void GetHMDData(FXRHMDData& HMDData);
     UE_PURE static FName GetHMDDeviceName();
@@ -234,7 +234,7 @@ public:
     UE_PURE static float GetWorldToMetersScale();
     UE_PURE static int GetXRSystemFlags();
     UE_PURE static bool HasValidTrackingPosition();
-    static bool IsDeviceTracking(FXRDeviceId XRDeviceId);
+    static bool IsDeviceTracking(const FXRDeviceId& XRDeviceId);
     UE_PURE static bool IsHeadMountedDisplayConnected();
     UE_PURE static bool IsHeadMountedDisplayEnabled();
     UE_PURE static bool IsInLowPersistenceMode();
@@ -248,8 +248,8 @@ public:
     static void SetWorldToMetersScale(class UObject* WorldContext, float NewScale);
     static void SetWorldToMetersScale(float NewScale);
     static void SetXRDisconnectDelegate(TDelegate<void(FString OutReason)> InDisconnectedDelegate);
-    static void SetXRTimedInputActionDelegate(FName ActionName, TDelegate<void(float Value, FTimespan Time)> InDelegate);
-    static void UpdateExternalTrackingHMDPosition(FTransform ExternalTrackingTransform);
+    static void SetXRTimedInputActionDelegate(const FName& ActionName, TDelegate<void(float Value, FTimespan Time)> InDelegate);
+    static void UpdateExternalTrackingHMDPosition(const FTransform& ExternalTrackingTransform);
 };
 
 class UHandKeypointConversion : public UBlueprintFunctionLibrary
@@ -329,8 +329,8 @@ class UXRAssetFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/HeadMountedDisplay", "XRAssetFunctionLibrary");
-    static class UPrimitiveComponent* AddDeviceVisualizationComponentBlocking(class AActor* Target, FXRDeviceId XRDeviceId, bool bManualAttachment, FTransform RelativeTransform);
-    static class UPrimitiveComponent* AddNamedDeviceVisualizationComponentBlocking(class AActor* Target, FName SystemName, FName DeviceName, bool bManualAttachment, FTransform RelativeTransform, FXRDeviceId& XRDeviceId);
+    static class UPrimitiveComponent* AddDeviceVisualizationComponentBlocking(class AActor* Target, const FXRDeviceId& XRDeviceId, bool bManualAttachment, const FTransform& RelativeTransform);
+    static class UPrimitiveComponent* AddNamedDeviceVisualizationComponentBlocking(class AActor* Target, FName SystemName, FName DeviceName, bool bManualAttachment, const FTransform& RelativeTransform, FXRDeviceId& XRDeviceId);
 };
 
 class UAsyncTask_LoadXRDeviceVisComponent : public UBlueprintAsyncActionBase
@@ -340,8 +340,8 @@ public:
     TMulticastInlineDelegate<void(class UPrimitiveComponent* LoadedComponent)> OnModelLoaded;
     TMulticastInlineDelegate<void(class UPrimitiveComponent* LoadedComponent)> OnLoadFailure;
     class UPrimitiveComponent* SpawnedComponent;
-    static class UAsyncTask_LoadXRDeviceVisComponent* AddDeviceVisualizationComponentAsync(class AActor* Target, FXRDeviceId XRDeviceId, bool bManualAttachment, FTransform RelativeTransform, class UPrimitiveComponent*& NewComponent);
-    static class UAsyncTask_LoadXRDeviceVisComponent* AddNamedDeviceVisualizationComponentAsync(class AActor* Target, FName SystemName, FName DeviceName, bool bManualAttachment, FTransform RelativeTransform, FXRDeviceId& XRDeviceId, class UPrimitiveComponent*& NewComponent);
+    static class UAsyncTask_LoadXRDeviceVisComponent* AddDeviceVisualizationComponentAsync(class AActor* Target, const FXRDeviceId& XRDeviceId, bool bManualAttachment, const FTransform& RelativeTransform, class UPrimitiveComponent*& NewComponent);
+    static class UAsyncTask_LoadXRDeviceVisComponent* AddNamedDeviceVisualizationComponentAsync(class AActor* Target, FName SystemName, FName DeviceName, bool bManualAttachment, const FTransform& RelativeTransform, FXRDeviceId& XRDeviceId, class UPrimitiveComponent*& NewComponent);
 };
 
 class UXRLoadingScreenFunctionLibrary : public UBlueprintFunctionLibrary

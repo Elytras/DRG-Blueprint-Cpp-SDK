@@ -42,18 +42,18 @@ class UAssetRegistryHelpers : public UObject
 public:
     UE_CLASS("/Script/AssetRegistry", "AssetRegistryHelpers");
     static FAssetData CreateAssetData(class UObject* InAsset, bool bAllowBlueprintClass);
-    UE_PURE static class UObject* GetAsset(FAssetData InAssetData);
+    UE_PURE static class UObject* GetAsset(const FAssetData& InAssetData);
     UE_PURE static TScriptInterface<class IAssetRegistry> GetAssetRegistry();
-    UE_PURE static class UClass* GetClass(FAssetData InAssetData);
-    UE_PURE static FString GetExportTextName(FAssetData InAssetData);
-    UE_PURE static FString GetFullName(FAssetData InAssetData);
-    static bool GetTagValue(FAssetData InAssetData, FName InTagName, FString& OutTagValue);
-    UE_PURE static bool IsAssetLoaded(FAssetData InAssetData);
-    UE_PURE static bool IsRedirector(FAssetData InAssetData);
-    UE_PURE static bool IsUAsset(FAssetData InAssetData);
-    UE_PURE static bool IsValid(FAssetData InAssetData);
-    UE_PURE static FARFilter SetFilterTagsAndValues(FARFilter InFilter, TArray<FTagAndValue> InTagsAndValues);
-    UE_PURE static FSoftObjectPath ToSoftObjectPath(FAssetData InAssetData);
+    UE_PURE static class UClass* GetClass(const FAssetData& InAssetData);
+    UE_PURE static FString GetExportTextName(const FAssetData& InAssetData);
+    UE_PURE static FString GetFullName(const FAssetData& InAssetData);
+    static bool GetTagValue(const FAssetData& InAssetData, const FName& InTagName, FString& OutTagValue);
+    UE_PURE static bool IsAssetLoaded(const FAssetData& InAssetData);
+    UE_PURE static bool IsRedirector(const FAssetData& InAssetData);
+    UE_PURE static bool IsUAsset(const FAssetData& InAssetData);
+    UE_PURE static bool IsValid(const FAssetData& InAssetData);
+    UE_PURE static FARFilter SetFilterTagsAndValues(const FARFilter& InFilter, const TArray<FTagAndValue>& InTagsAndValues);
+    UE_PURE static FSoftObjectPath ToSoftObjectPath(const FAssetData& InAssetData);
 };
 
 class IAssetRegistry
@@ -61,23 +61,23 @@ class IAssetRegistry
 public:
     UE_CLASS("/Script/AssetRegistry", "AssetRegistry");
     void PrioritizeSearchPath(FString PathToPrioritize);
-    void ScanFilesSynchronous(TArray<FString> InFilePaths, bool bForceRescan);
-    void ScanModifiedAssetFiles(TArray<FString> InFilePaths);
-    void ScanPathsSynchronous(TArray<FString> InPaths, bool bForceRescan);
+    void ScanFilesSynchronous(const TArray<FString>& InFilePaths, bool bForceRescan);
+    void ScanModifiedAssetFiles(const TArray<FString>& InFilePaths);
+    void ScanPathsSynchronous(const TArray<FString>& InPaths, bool bForceRescan);
     void SearchAllAssets(bool bSynchronousSearch);
     void WaitForCompletion();
     bool GetAllAssets(TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const;
     void GetAllCachedPaths(TArray<FString>& OutPathList) const;
     FAssetData GetAssetByObjectPath(FName ObjectPath, bool bIncludeOnlyOnDiskAssets) const;
-    bool GetAssets(FARFilter Filter, TArray<FAssetData>& OutAssetData) const;
+    bool GetAssets(const FARFilter& Filter, TArray<FAssetData>& OutAssetData) const;
     bool GetAssetsByClass(FName ClassName, TArray<FAssetData>& OutAssetData, bool bSearchSubClasses) const;
     bool GetAssetsByPackageName(FName PackageName, TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const;
     bool GetAssetsByPath(FName PackagePath, TArray<FAssetData>& OutAssetData, bool bRecursive, bool bIncludeOnlyOnDiskAssets) const;
     void GetSubPaths(FString InBasePath, TArray<FString>& OutPathList, bool bInRecurse) const;
     bool HasAssets(FName PackagePath, bool bRecursive) const;
     UE_PURE bool IsLoadingAssets() const;
-    bool K2_GetDependencies(FName PackageName, FAssetRegistryDependencyOptions DependencyOptions, TArray<FName>& OutDependencies) const;
-    bool K2_GetReferencers(FName PackageName, FAssetRegistryDependencyOptions ReferenceOptions, TArray<FName>& OutReferencers) const;
-    void RunAssetsThroughFilter(TArray<FAssetData>& AssetDataList, FARFilter Filter) const;
-    void UseFilterToExcludeAssets(TArray<FAssetData>& AssetDataList, FARFilter Filter) const;
+    bool K2_GetDependencies(FName PackageName, const FAssetRegistryDependencyOptions& DependencyOptions, TArray<FName>& OutDependencies) const;
+    bool K2_GetReferencers(FName PackageName, const FAssetRegistryDependencyOptions& ReferenceOptions, TArray<FName>& OutReferencers) const;
+    void RunAssetsThroughFilter(TArray<FAssetData>& AssetDataList, const FARFilter& Filter) const;
+    void UseFilterToExcludeAssets(TArray<FAssetData>& AssetDataList, const FARFilter& Filter) const;
 };

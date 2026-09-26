@@ -21,7 +21,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Grunt_Rock_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Rock_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_ENE_Spider_Grunt_Rock(int EntryPoint);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Grunt_Rock_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Grunt_Rock_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Play_Body_Death_Effects();
     static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
     UE_PURE bool GetIsTargetable() const;

@@ -72,14 +72,14 @@ public:
     UE_SERVER void KillCollector();
     void ConditionallyToggleFleeLoop();
     void BndEvt__ENE_BoneCollector_PlayerFleeTrigger_K2Node_ComponentBoundEvent_2_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
-    void BndEvt__ENE_BoneCollector_PlayerFleeTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__ENE_BoneCollector_PlayerFleeTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void CheckCurrentVelocity();
     UE_MULTICAST void UnlockMinersManualEntry();
     void CheckIfStuck();
     void ReceiveDestroyed();
     void BndEvt__ENE_TunnelEvent_Spider_BP_BurrowComponent_K2Node_ComponentBoundEvent_3_OnBurrow__DelegateSignature();
     void BndEvt__ENE_TunnelEvent_Spider_BP_BurrowComponent_K2Node_ComponentBoundEvent_5_OnBurrowComplete__DelegateSignature(bool IsEmerging);
-    void BndEvt__ENE_TunnelEvent_Spider_HealthComponent_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__ENE_TunnelEvent_Spider_HealthComponent_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void ReceiveBeginPlay();
     void GetEnemySpawnedCount(int& SpawnCount);
     void QuerySpawnDebrisPool();

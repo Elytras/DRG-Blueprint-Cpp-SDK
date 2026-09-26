@@ -24,7 +24,7 @@ public:
     float NextHitTime;
     void ExecuteUbergraph_WPN_Pickaxe(int EntryPoint);
     void ReceiveBeginPlay();
-    void SpecialTargetDamageEffects(FVector ImpactPoint, FVector ImpactNormal);
+    void SpecialTargetDamageEffects(const FVector& ImpactPoint, const FVector& ImpactNormal);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 };
 

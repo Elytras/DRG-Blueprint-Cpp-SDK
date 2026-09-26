@@ -32,7 +32,7 @@ public:
     class USizeBox* PlayerRankToolTip;
     UI_Bar_DrinkCost_C* UI_Bar_DrinkCost;
     void ExecuteUbergraph_UI_Bar_LockWarning(int EntryPoint);
-    void SetFixedPrice(TMap<class UResourceData*, int> Cost);
+    void SetFixedPrice(const TMap<class UResourceData*, int>& Cost);
     void SetPrice(class UDrinkableDataAsset* Drinkable);
     UE_COSMETIC void Construct();
     void AnimPlay();

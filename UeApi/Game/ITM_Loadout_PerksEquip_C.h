@@ -38,7 +38,7 @@ public:
     void Set_Character_Class(class UPlayerCharacterID* characterID);
     static constexpr const char* Set_Character_Class__UeName = "Set Character Class";
     void UpdateEquippedPerks();
-    void GetEquippedPerkAt(int Index_0, TArray<class UPerkAsset*> TargetArray, class UPerkAsset*& Perk);
+    void GetEquippedPerkAt(int Index_0, const TArray<class UPerkAsset*>& TargetArray, class UPerkAsset*& Perk);
     UE_PURE class UWidget* Get_PerkStar_ToolTipWidget_0();
     void UpdateSlots();
     void CreateSlots(class UVerticalBox* InSlotsBox, class UPlayerCharacterID* InCharacter, EPerkUsageType InType);

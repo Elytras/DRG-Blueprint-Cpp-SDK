@@ -21,7 +21,7 @@ public:
     class UProjectileExplosion* ProjectileExplosion;
     static constexpr const char* ProjectileExplosion__UeScsNode = "174ed3749f8a43408bd2806de739cd8e";
     void ExecuteUbergraph_PRJ_FacilityTurretLaser_Sniper(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

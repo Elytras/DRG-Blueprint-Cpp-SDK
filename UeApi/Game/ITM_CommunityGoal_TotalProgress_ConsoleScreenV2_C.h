@@ -68,7 +68,7 @@ public:
     FLinearColor BarColor;
     void ExecuteUbergraph_ITM_CommunityGoal_TotalProgress_ConsoleScreenV2(int EntryPoint);
     void SetGoalsTier(float TierProgress);
-    void SetGoals(TArray<FString> GoalID, TArray<float> GoalValue, TArray<int> Members);
+    void SetGoals(const TArray<FString>& GoalID, const TArray<float>& GoalValue, const TArray<int>& Members);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void ResetAnim();

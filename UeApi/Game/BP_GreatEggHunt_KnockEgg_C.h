@@ -49,7 +49,7 @@ public:
     TArray<class UAnimSequence*> Animations;
     bool CanPlay;
     void ExecuteUbergraph_BP_GreatEggHunt_KnockEgg(int EntryPoint);
-    void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, FHitResult Hit);
+    void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player, bool ShouldReact, int AnimationIndex_0);
     void ReceiveTick(float DeltaSeconds);

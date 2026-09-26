@@ -45,7 +45,7 @@ public:
     float WeakpointMulitplier;
     float Damage_0;
     void ExecuteUbergraph_BP_ExplosiveBoil(int EntryPoint);
-    void BndEvt__BP_ExplosiveBoil_EnemyHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__BP_ExplosiveBoil_EnemyHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
     void BndEvt__BP_ExplosiveBoil_EnemyHealth_K2Node_ComponentBoundEvent_4_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnDeath_Event(class UHealthComponentBase* HealthComponent);
     void OnDestroyed_Event(class AActor* DestroyedActor);

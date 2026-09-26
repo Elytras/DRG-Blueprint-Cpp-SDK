@@ -97,13 +97,13 @@ public:
     void SelectedCharacterChanged(TSubclassOf<class APlayerCharacter> NewCharacter);
     void On_Click();
     static constexpr const char* On_Click__UeName = "On Click";
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCharacterClass(class UPlayerCharacterID* Class_0);
     void IsSelected(bool& IsSelected_0);
     void UpdateSelected();
     void SetScale(float Scale);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void GetSelectedClass(class UPlayerCharacterID*& DesiredCharacterClass);
     UE_PURE bool IsEligibleForPromotion();
     void InternalUpdateHovered();

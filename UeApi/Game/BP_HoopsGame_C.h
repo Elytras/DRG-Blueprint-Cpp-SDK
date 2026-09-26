@@ -104,7 +104,7 @@ public:
     void ExecuteUbergraph_BP_HoopsGame(int EntryPoint);
     void UpdateScoreAchievementProgress();
     void MoveDirectionChanged();
-    void BndEvt__BP_HoopsGame_Box2_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_HoopsGame_Box2_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_MULTICAST UE_RELIABLE void All_PlayComboLostSFX();
     void ReceiveTick(float DeltaSeconds);
     void Event_Player_In_Hoop(class APlayerCharacter* Player);
@@ -112,9 +112,9 @@ public:
     void Set_Latest_Barrel_kicker(class APlayerCharacter* Kicked_by);
     static constexpr const char* Set_Latest_Barrel_kicker__UeName = "Set Latest Barrel kicker";
     void Cheat_ToggleHoopGameMovement();
-    void BndEvt__FailCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__FailCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
     int GetBarrelScoreData(class APhysicsBarrel* Barrel, class APhysicsBarrel*& OutBarrel);
     FVector CalculateMovementVector(float nextFlipTime, float DeltaTime, bool bIsMovingRight);

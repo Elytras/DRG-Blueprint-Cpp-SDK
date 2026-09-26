@@ -36,7 +36,7 @@ public:
     static constexpr const char* On_Category_Clicked__UeName = "On Category Clicked";
     void Setup_Widget_Events(UI_MissionStats_Category_C* Widget);
     static constexpr const char* Setup_Widget_Events__UeName = "Setup Widget Events";
-    void Set_Categories(TArray<class UTexture2D*> CategoryIcons_0);
+    void Set_Categories(const TArray<class UTexture2D*>& CategoryIcons_0);
     static constexpr const char* Set_Categories__UeName = "Set Categories";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetCategorySelection(TArray<class UTexture2D*>& Selection);

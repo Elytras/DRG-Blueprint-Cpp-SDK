@@ -61,7 +61,7 @@ public:
     int CloudSaveOffset;
     FTimerHandle TimeoutTimerHandle;
     void ExecuteUbergraph_Menu_RestoreSaves(int EntryPoint);
-    void SlotLoadComplete(TArray<class UFSDSaveGame*> savegames);
+    void SlotLoadComplete(const TArray<class UFSDSaveGame*>& savegames);
     void CloudLoadFinished();
     void Timeout();
     void ReenableLoadmoreButton();

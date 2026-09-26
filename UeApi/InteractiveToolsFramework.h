@@ -483,7 +483,7 @@ class IGizmoTransformSource
 {
 public:
     UE_CLASS("/Script/InteractiveToolsFramework", "GizmoTransformSource");
-    void SetTransform(FTransform NewTransform);
+    void SetTransform(const FTransform& NewTransform);
     FTransform GetTransform() const;
 };
 
@@ -528,7 +528,7 @@ public:
     UE_CLASS("/Script/InteractiveToolsFramework", "GizmoVec2ParameterSource");
     void BeginModify();
     void EndModify();
-    void SetParameter(FVector2D NewValue);
+    void SetParameter(const FVector2D& NewValue);
     FVector2D GetParameter() const;
 };
 

@@ -54,7 +54,7 @@ public:
     void CustomEvent1(class UItemUpgrade* Event);
     void OnPreProjectileLaunch();
     void ReceiveBeginPlay();
-    void OnProjectileLaunched(FVector Location);
+    void OnProjectileLaunched(const FVector& Location);
     void Toggle_RepressurerisingFX(bool On);
     static constexpr const char* Toggle_RepressurerisingFX__UeName = "Toggle RepressurerisingFX";
     void RecieveUnequipped();

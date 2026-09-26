@@ -60,7 +60,7 @@ public:
     void BndEvt__FactionIconToolTip_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__FactionIconToolTip_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     void CheckFaction();
-    void SetResult(int Score, int Tier, FText GoalName);
+    void SetResult(int Score, int Tier, const FText& GoalName);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetFaction(class UCommunityGoalFaction* Faction_0);
     void UpdateIcon();

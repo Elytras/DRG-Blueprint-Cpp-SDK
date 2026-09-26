@@ -1291,9 +1291,9 @@ class IMovieSceneCustomClockSource
 {
 public:
     UE_CLASS("/Script/MovieScene", "MovieSceneCustomClockSource");
-    FFrameTime OnRequestCurrentTime(FQualifiedFrameTime InCurrentTime, float InPlayRate);
-    void OnStartPlaying(FQualifiedFrameTime InStartTime);
-    void OnStopPlaying(FQualifiedFrameTime InStopTime);
+    FFrameTime OnRequestCurrentTime(const FQualifiedFrameTime& InCurrentTime, float InPlayRate);
+    void OnStartPlaying(const FQualifiedFrameTime& InStartTime);
+    void OnStopPlaying(const FQualifiedFrameTime& InStopTime);
     void OnTick(float DeltaSeconds, float InPlayRate);
 };
 

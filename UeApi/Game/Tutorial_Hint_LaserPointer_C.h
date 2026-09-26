@@ -22,7 +22,7 @@ public:
     float AfterUseDelay;
     FTutorialHint ReminderHint;
     void ExecuteUbergraph_Tutorial_Hint_LaserPointer(int EntryPoint);
-    void OnMarkerPlaced_Event(FVector Location, FText Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
+    void OnMarkerPlaced_Event(FVector Location, const FText& Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
     void ReceiveOnInitialized();
 };
 

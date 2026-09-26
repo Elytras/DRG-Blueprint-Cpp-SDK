@@ -75,9 +75,9 @@ public:
     void RequestTermsOfUse();
     void ModdedSaveChosen();
     void OnSwitchedDownloadStatus(bool ShouldDownload, FString ModId);
-    void SetupOptionalMods(TArray<FString> OptionalModsToSetup, TArray<FString> OptionalModsToEnable);
-    void OnOptionalModsFetched(TArray<FString> ModsToEnable_0, TArray<FString> ModsToInstall_0);
-    void OnRequiredModsFetched(TArray<FString> ModsToEnable_0, TArray<FString> ModsToInstall_0);
+    void SetupOptionalMods(const TArray<FString>& OptionalModsToSetup, const TArray<FString>& OptionalModsToEnable);
+    void OnOptionalModsFetched(const TArray<FString>& ModsToEnable_0, const TArray<FString>& ModsToInstall_0);
+    void OnRequiredModsFetched(const TArray<FString>& ModsToEnable_0, const TArray<FString>& ModsToInstall_0);
     void SetHasHiddenMods();
     void OnErrorInstallingMod(FString ModName, EUGCPackageError ErrorType);
     void RequestDependenciesOfDependencies();
@@ -100,7 +100,7 @@ public:
     void StartJoinSession();
     void OnFetchedTermsOfUse(class UModioTermsWrapper* Terms);
     void UnbindEvents();
-    void OnGottonModDependencies(TArray<FString> ModIds, FString ParentMod);
+    void OnGottonModDependencies(const TArray<FString>& ModIds, FString ParentMod);
     void UpdateHasModsInstalled();
     UE_PURE class UWidget* GetJoinButtonTooltip();
 };

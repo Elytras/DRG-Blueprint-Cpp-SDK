@@ -29,7 +29,7 @@ public:
     class UParticleSystemComponent* ParticleSystem;
     static constexpr const char* ParticleSystem__UeScsNode = "444be9a852389745acd2bbb1b35aed8a";
     void ExecuteUbergraph_PRJ_Crye_SnowBall(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

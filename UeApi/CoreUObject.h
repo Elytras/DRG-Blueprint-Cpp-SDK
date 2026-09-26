@@ -434,7 +434,7 @@ struct FColor
     uint8 A;
 
     FColor() = default;
-    FColor(uint8 B, uint8 G, uint8 R, uint8 A) {}
+    FColor(uint8 R, uint8 G, uint8 B, uint8 A = 255) {}
 };
 
 struct FFallbackStruct

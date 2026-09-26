@@ -26,7 +26,7 @@ public:
     void ReceiveAbortAttack();
     void OnFrozen(bool IsFrozen);
     void Cone_End_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
-    void Cone_Begin_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void Cone_Begin_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void SetConeCollider(class UPrimitiveComponent* ConeCollider_0);
     void OnAttackActionNotify_Event(FName nameValue);
     void ReceiveBeginPlay();

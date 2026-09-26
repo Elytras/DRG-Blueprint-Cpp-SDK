@@ -214,7 +214,7 @@ class USubmixEffectReverbPreset : public USoundEffectSubmixPreset
 public:
     UE_CLASS("/Script/AudioMixer", "SubmixEffectReverbPreset");
     FSubmixEffectReverbSettings Settings;
-    void SetSettings(FSubmixEffectReverbSettings InSettings);
+    void SetSettings(const FSubmixEffectReverbSettings& InSettings);
     void SetSettingsWithReverbEffect(class UReverbEffect* InReverbEffect, float WetLevel, float DryLevel);
 };
 
@@ -226,7 +226,7 @@ public:
     void ResetKey();
     void SetAudioBus(class UAudioBus* AudioBus);
     void SetExternalSubmix(class USoundSubmix* Submix);
-    void SetSettings(FSubmixEffectDynamicsProcessorSettings Settings_0);
+    void SetSettings(const FSubmixEffectDynamicsProcessorSettings& Settings_0);
 };
 
 class UAudioMixerBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -245,12 +245,12 @@ public:
     static void ClearSubmixEffectChainOverride(class USoundSubmix* SoundSubmix, float FadeTimeSec);
     static void ClearSubmixEffects(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix);
     static void ClearSubmixEffects(class USoundSubmix* SoundSubmix);
-    static void GetMagnitudeForFrequencies(class UObject* WorldContextObject, TArray<float> Frequencies, TArray<float>& Magnitudes, class USoundSubmix* SubmixToAnalyze);
-    static void GetMagnitudeForFrequencies(TArray<float> Frequencies, TArray<float>& Magnitudes, class USoundSubmix* SubmixToAnalyze);
+    static void GetMagnitudeForFrequencies(class UObject* WorldContextObject, const TArray<float>& Frequencies, TArray<float>& Magnitudes, class USoundSubmix* SubmixToAnalyze);
+    static void GetMagnitudeForFrequencies(const TArray<float>& Frequencies, TArray<float>& Magnitudes, class USoundSubmix* SubmixToAnalyze);
     static int GetNumberOfEntriesInSourceEffectChain(class UObject* WorldContextObject, class USoundEffectSourcePresetChain* PresetChain);
     static int GetNumberOfEntriesInSourceEffectChain(class USoundEffectSourcePresetChain* PresetChain);
-    static void GetPhaseForFrequencies(class UObject* WorldContextObject, TArray<float> Frequencies, TArray<float>& Phases, class USoundSubmix* SubmixToAnalyze);
-    static void GetPhaseForFrequencies(TArray<float> Frequencies, TArray<float>& Phases, class USoundSubmix* SubmixToAnalyze);
+    static void GetPhaseForFrequencies(class UObject* WorldContextObject, const TArray<float>& Frequencies, TArray<float>& Phases, class USoundSubmix* SubmixToAnalyze);
+    static void GetPhaseForFrequencies(const TArray<float>& Frequencies, TArray<float>& Phases, class USoundSubmix* SubmixToAnalyze);
     static bool IsAudioBusActive(class UObject* WorldContextObject, class UAudioBus* AudioBus);
     static bool IsAudioBusActive(class UAudioBus* AudioBus);
     UE_PURE static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakeFullSpectrumSpectralAnalysisBandSettings(int InNumBands, float InMinimumFrequency, float InMaximumFrequency, int InAttackTimeMsec, int InReleaseTimeMsec);
@@ -305,8 +305,8 @@ public:
     class UWorld* WorldPtr;
     FQuartzTransportTimeStamp GetCurrentTimestamp(class UObject* WorldContextObject);
     FQuartzTransportTimeStamp GetCurrentTimestamp();
-    float GetDurationOfQuantizationTypeInSeconds(class UObject* WorldContextObject, EQuartzCommandQuantization QuantizationType, float Multiplier);
-    float GetDurationOfQuantizationTypeInSeconds(EQuartzCommandQuantization QuantizationType, float Multiplier);
+    float GetDurationOfQuantizationTypeInSeconds(class UObject* WorldContextObject, const EQuartzCommandQuantization& QuantizationType, float Multiplier);
+    float GetDurationOfQuantizationTypeInSeconds(const EQuartzCommandQuantization& QuantizationType, float Multiplier);
     float GetEstimatedRunTime(class UObject* WorldContextObject);
     float GetEstimatedRunTime();
     bool IsClockRunning(class UObject* WorldContextObject);
@@ -319,16 +319,16 @@ public:
     void ResetTransportQuantized(FQuartzQuantizationBoundary InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, class UQuartzClockHandle*& ClockHandle);
     void ResumeClock(class UObject* WorldContextObject, class UQuartzClockHandle*& ClockHandle);
     void ResumeClock(class UQuartzClockHandle*& ClockHandle);
-    void SetBeatsPerMinute(class UObject* WorldContextObject, FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float BeatsPerMinute);
-    void SetBeatsPerMinute(FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float BeatsPerMinute);
-    void SetMillisecondsPerTick(class UObject* WorldContextObject, FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float MillisecondsPerTick);
-    void SetMillisecondsPerTick(FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float MillisecondsPerTick);
-    void SetSecondsPerTick(class UObject* WorldContextObject, FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float SecondsPerTick);
-    void SetSecondsPerTick(FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float SecondsPerTick);
-    void SetThirtySecondNotesPerMinute(class UObject* WorldContextObject, FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float ThirtySecondsNotesPerMinute);
-    void SetThirtySecondNotesPerMinute(FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float ThirtySecondsNotesPerMinute);
-    void SetTicksPerSecond(class UObject* WorldContextObject, FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float TicksPerSecond);
-    void SetTicksPerSecond(FQuartzQuantizationBoundary QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float TicksPerSecond);
+    void SetBeatsPerMinute(class UObject* WorldContextObject, const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float BeatsPerMinute);
+    void SetBeatsPerMinute(const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float BeatsPerMinute);
+    void SetMillisecondsPerTick(class UObject* WorldContextObject, const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float MillisecondsPerTick);
+    void SetMillisecondsPerTick(const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float MillisecondsPerTick);
+    void SetSecondsPerTick(class UObject* WorldContextObject, const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float SecondsPerTick);
+    void SetSecondsPerTick(const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float SecondsPerTick);
+    void SetThirtySecondNotesPerMinute(class UObject* WorldContextObject, const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float ThirtySecondsNotesPerMinute);
+    void SetThirtySecondNotesPerMinute(const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float ThirtySecondsNotesPerMinute);
+    void SetTicksPerSecond(class UObject* WorldContextObject, const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float TicksPerSecond);
+    void SetTicksPerSecond(const FQuartzQuantizationBoundary& QuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> Delegate, class UQuartzClockHandle*& ClockHandle, float TicksPerSecond);
     void StartClock(class UObject* WorldContextObject, class UQuartzClockHandle*& ClockHandle);
     void StartClock(class UQuartzClockHandle*& ClockHandle);
     void StartOtherClock(class UObject* WorldContextObject, FName OtherClockName, FQuartzQuantizationBoundary InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate);
@@ -360,7 +360,7 @@ class USubmixEffectSubmixEQPreset : public USoundEffectSubmixPreset
 public:
     UE_CLASS("/Script/AudioMixer", "SubmixEffectSubmixEQPreset");
     FSubmixEffectSubmixEQSettings Settings;
-    void SetSettings(FSubmixEffectSubmixEQSettings InSettings);
+    void SetSettings(const FSubmixEffectSubmixEQSettings& InSettings);
 };
 
 class UQuartzSubsystem : public UTickableWorldSubsystem
@@ -378,12 +378,12 @@ public:
     float GetAudioRenderThreadToGameThreadAverageLatency();
     float GetAudioRenderThreadToGameThreadMaxLatency();
     float GetAudioRenderThreadToGameThreadMinLatency();
-    FQuartzTransportTimeStamp GetCurrentClockTimestamp(class UObject* WorldContextObject, FName InClockName);
-    FQuartzTransportTimeStamp GetCurrentClockTimestamp(FName InClockName);
-    float GetDurationOfQuantizationTypeInSeconds(class UObject* WorldContextObject, FName ClockName, EQuartzCommandQuantization QuantizationType, float Multiplier);
-    float GetDurationOfQuantizationTypeInSeconds(FName ClockName, EQuartzCommandQuantization QuantizationType, float Multiplier);
-    float GetEstimatedClockRunTime(class UObject* WorldContextObject, FName InClockName);
-    float GetEstimatedClockRunTime(FName InClockName);
+    FQuartzTransportTimeStamp GetCurrentClockTimestamp(class UObject* WorldContextObject, const FName& InClockName);
+    FQuartzTransportTimeStamp GetCurrentClockTimestamp(const FName& InClockName);
+    float GetDurationOfQuantizationTypeInSeconds(class UObject* WorldContextObject, FName ClockName, const EQuartzCommandQuantization& QuantizationType, float Multiplier);
+    float GetDurationOfQuantizationTypeInSeconds(FName ClockName, const EQuartzCommandQuantization& QuantizationType, float Multiplier);
+    float GetEstimatedClockRunTime(class UObject* WorldContextObject, const FName& InClockName);
+    float GetEstimatedClockRunTime(const FName& InClockName);
     float GetGameThreadToAudioRenderThreadAverageLatency(class UObject* WorldContextObject);
     float GetGameThreadToAudioRenderThreadAverageLatency();
     float GetGameThreadToAudioRenderThreadMaxLatency(class UObject* WorldContextObject);

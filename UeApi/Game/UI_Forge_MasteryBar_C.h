@@ -52,8 +52,8 @@ public:
     bool ClaimButtonEnabled;
     bool MouseHovering;
     void ExecuteUbergraph_UI_Forge_MasteryBar(int EntryPoint);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void BndEvt__UI_Forge_MasteryBar_ClaimButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void StartedCounting();
     void ResetReward();

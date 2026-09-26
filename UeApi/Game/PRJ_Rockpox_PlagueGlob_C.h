@@ -31,7 +31,7 @@ public:
     void ExecuteUbergraph_PRJ_Rockpox_PlagueGlob(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::Enemies::Plague

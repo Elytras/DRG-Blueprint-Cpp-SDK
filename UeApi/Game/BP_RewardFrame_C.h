@@ -101,7 +101,7 @@ public:
     void ExecuteUbergraph_BP_RewardFrame(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void Cheat_FinishEvent();
     void EnableGravity();
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Recall_Key();
     static constexpr const char* Recall_Key__UeName = "Recall Key";
     void Toggle_Attention_Light(bool InVisible);

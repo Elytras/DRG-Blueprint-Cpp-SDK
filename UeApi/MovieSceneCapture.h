@@ -246,16 +246,16 @@ public:
     void OnCaptureFrame();
     void OnFinalize();
     void OnPauseCapture();
-    void OnPixelsReceived(FCapturedPixels Pixels, FCapturedPixelsID ID, FFrameMetrics FrameMetrics);
+    void OnPixelsReceived(const FCapturedPixels& Pixels, const FCapturedPixelsID& ID, FFrameMetrics FrameMetrics);
     void OnPreTick();
     bool OnSetup();
     void OnStartCapture();
     void OnTick();
     void OnWarmUp();
-    void ResolveBuffer(class UTexture* Buffer, FCapturedPixelsID BufferID);
-    void StartCapturingFinalPixels(FCapturedPixelsID StreamID);
+    void ResolveBuffer(class UTexture* Buffer, const FCapturedPixelsID& BufferID);
+    void StartCapturingFinalPixels(const FCapturedPixelsID& StreamID);
     void StopCapturingFinalPixels();
-    UE_PURE FString GenerateFilename(FFrameMetrics InFrameMetrics) const;
+    UE_PURE FString GenerateFilename(const FFrameMetrics& InFrameMetrics) const;
     UE_PURE FFrameMetrics GetCurrentFrameMetrics() const;
     bool OnCanFinalize() const;
 };
@@ -267,9 +267,9 @@ public:
     EDesiredImageFormat Format;
     bool bEnableCompression;
     int CompressionQuality;
-    FString GenerateFilenameForBuffer(class UTexture* Buffer, FCapturedPixelsID StreamID);
+    FString GenerateFilenameForBuffer(class UTexture* Buffer, const FCapturedPixelsID& StreamID);
     FString GenerateFilenameForCurrentFrame();
-    void WriteImageToDisk(FCapturedPixels PixelData, FCapturedPixelsID StreamID, FFrameMetrics FrameMetrics, bool bCopyImageData);
+    void WriteImageToDisk(const FCapturedPixels& PixelData, const FCapturedPixelsID& StreamID, const FFrameMetrics& FrameMetrics, bool bCopyImageData);
 };
 
 class UVideoCaptureProtocol : public UFrameGrabberProtocol

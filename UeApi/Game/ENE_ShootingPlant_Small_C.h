@@ -67,7 +67,7 @@ public:
     float PassiveSightRadius;
     bool IsPassive;
     void ExecuteUbergraph_ENE_ShootingPlant_Small(int EntryPoint);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_ShootingPlant_Small_Health_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_ShootingPlant_Small_Health_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void ToggleAggressionLevel(bool BePassive);
     void OnRep_Target();
     void WeakpointDeath();

@@ -120,7 +120,7 @@ public:
     void OnCreditsClicked();
     void OnMinersManualClosed(class UWindowWidget* Window);
     void BndEvt__MENU_EscapeMenu_BTN_Merch_K2Node_ComponentBoundEvent_10_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
-    void OpenMinersManualFromID(EMinersManualSection Section, FGuid ID);
+    void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
     void BndEvt__BTN_DummyModding_K2Node_ComponentBoundEvent_9_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__BTN_DLC_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__ITM_RestoreSave_K2Node_ComponentBoundEvent_6_OnShowRestoreSaveClicked__DelegateSignature();
@@ -159,7 +159,7 @@ public:
     void UpdateDebugTerrainHash();
     bool NotInParty();
     void SetHUDVisible(bool Visible);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OpenSection(class UWindowWidget* InSection);
     void ToggleButton(Header_ButtonCutCorner_C* InButton);
     void OnMinersManualNotification(EMinersManualSection PendingSection, FGuid Pending_ID, FText Text);

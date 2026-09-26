@@ -56,7 +56,7 @@ public:
     void ShowCurentFireTime();
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    UE_PURE FText RoundStatValue(FText InText, FString Suffix, bool KeepSign) const;
+    UE_PURE FText RoundStatValue(const FText& InText, FString Suffix, bool KeepSign) const;
 };
 
 }}}   // namespace Game::WeaponsNTools::Autocannon

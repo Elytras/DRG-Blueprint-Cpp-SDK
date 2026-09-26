@@ -42,7 +42,7 @@ public:
     void SetIsRefueled();
     void Cheat_JumpToNextPhase();
     void Cheat_SetMuleSpeed(float FloatValue);
-    void OnExitGaragePathSet(TArray<FVector> Path);
+    void OnExitGaragePathSet(const TArray<FVector>& Path);
     void MoveToEndOfPath();
     void CompleteRefuel();
     void Cheat_IncreaseSpeed();

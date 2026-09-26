@@ -65,7 +65,7 @@ public:
     void StartFadeBody();
     void OnRangedAttackNotify_Event_0();
     void ReceiveBeginPlay();
-    void DeathDetailedBase(float amount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();

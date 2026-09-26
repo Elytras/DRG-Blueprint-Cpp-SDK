@@ -76,7 +76,7 @@ public:
     UE_COSMETIC void Destruct();
     void RequestData();
     void OnCGSDataReceivedEvent(bool stateReceived);
-    void OnFactionsDataRecievedEvent(TArray<FString> Goals, TArray<float> Values, TArray<int> Members);
+    void OnFactionsDataRecievedEvent(const TArray<FString>& Goals, const TArray<float>& Values, const TArray<int>& Members);
     void RegisterEvents();
     void CheckState();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

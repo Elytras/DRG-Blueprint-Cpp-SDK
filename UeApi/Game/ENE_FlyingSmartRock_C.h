@@ -78,7 +78,7 @@ public:
     void SpawnConnectionParticles();
     void ReceiveTick(float DeltaSeconds);
     void ScaleCore();
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void StopTell();
     UE_MULTICAST UE_RELIABLE void AttackTargetEffects(FVector TargetLocation);
     void CheckTargetLOS();

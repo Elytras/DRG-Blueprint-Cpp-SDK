@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_OBJ_DD_AlienEggs(int EntryPoint);
     void Receive_StartTracking();
     void TurnOnSpecialEggs();
-    void GetNumberOfSpeicalEggs(TArray<class AActor*> TargetArray, int& Count);
+    void GetNumberOfSpeicalEggs(const TArray<class AActor*>& TargetArray, int& Count);
     FObjectiveMissionIcon GetMissionIcon() const;
 };
 

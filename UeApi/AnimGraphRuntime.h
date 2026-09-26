@@ -1107,15 +1107,15 @@ class UKismetAnimationLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "KismetAnimationLibrary");
     static float K2_CalculateVelocityFromPositionHistory(float DeltaSeconds, FVector Position, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax);
-    static float K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, FName SocketOrBoneName, FName ReferenceSocketOrBone, ERelativeTransformSpace SocketSpace, FVector OffsetInBoneSpace, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax, EEasingFuncType EasingType, FRuntimeFloatCurve CustomCurve);
+    static float K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, FName SocketOrBoneName, FName ReferenceSocketOrBone, ERelativeTransformSpace SocketSpace, FVector OffsetInBoneSpace, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax, EEasingFuncType EasingType, const FRuntimeFloatCurve& CustomCurve);
     UE_PURE static FVector K2_DirectionBetweenSockets(class USkeletalMeshComponent* Component, FName SocketOrBoneNameFrom, FName SocketOrBoneNameTo);
     UE_PURE static float K2_DistanceBetweenTwoSocketsAndMapRange(class USkeletalMeshComponent* Component, FName SocketOrBoneNameA, ERelativeTransformSpace SocketSpaceA, FName SocketOrBoneNameB, ERelativeTransformSpace SocketSpaceB, bool bRemapRange, float InRangeMin, float InRangeMax, float OutRangeMin, float OutRangeMax);
     static float K2_EndProfilingTimer(bool bLog, FString LogPrefix);
-    UE_PURE static FTransform K2_LookAt(FTransform CurrentTransform, FVector TargetPosition, FVector LookAtVector, bool bUseUpVector, FVector UpVector, float ClampConeInDegree);
+    UE_PURE static FTransform K2_LookAt(const FTransform& CurrentTransform, const FVector& TargetPosition, FVector LookAtVector, bool bUseUpVector, FVector UpVector, float ClampConeInDegree);
     UE_PURE static float K2_MakePerlinNoiseAndRemap(float Value, float RangeOutMin, float RangeOutMax);
     UE_PURE static FVector K2_MakePerlinNoiseVectorAndRemap(float X, float Y, float Z, float RangeOutMinX, float RangeOutMaxX, float RangeOutMinY, float RangeOutMaxY, float RangeOutMinZ, float RangeOutMaxZ);
     static void K2_StartProfilingTimer();
-    static void K2_TwoBoneIK(FVector RootPos, FVector JointPos, FVector EndPos, FVector JointTarget, FVector Effector, FVector& OutJointPos, FVector& OutEndPos, bool bAllowStretching, float StartStretchRatio, float MaxStretchScale);
+    static void K2_TwoBoneIK(const FVector& RootPos, const FVector& JointPos, const FVector& EndPos, const FVector& JointTarget, const FVector& Effector, FVector& OutJointPos, FVector& OutEndPos, bool bAllowStretching, float StartStretchRatio, float MaxStretchScale);
 };
 
 class UAnimSequencerInstance : public UAnimInstance
@@ -1150,8 +1150,8 @@ public:
     static class UPlayMontageCallbackProxy* CreateProxyObjectForPlayMontage(class USkeletalMeshComponent* InSkeletalMeshComponent, class UAnimMontage* MontageToPlay, float PlayRate, float StartingPosition, FName StartingSection);
     void OnMontageBlendingOut(class UAnimMontage* Montage, bool bInterrupted);
     void OnMontageEnded(class UAnimMontage* Montage, bool bInterrupted);
-    void OnNotifyBeginReceived(FName NotifyName, FBranchingPointNotifyPayload BranchingPointNotifyPayload);
-    void OnNotifyEndReceived(FName NotifyName, FBranchingPointNotifyPayload BranchingPointNotifyPayload);
+    void OnNotifyBeginReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
+    void OnNotifyEndReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
 };
 
 class ISequencerAnimationSupport

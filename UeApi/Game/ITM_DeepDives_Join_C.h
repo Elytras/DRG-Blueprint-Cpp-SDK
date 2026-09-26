@@ -55,7 +55,7 @@ public:
     void ModdedSaveLoaded();
     void BndEvt__WND_JoiningModded_K2Node_ComponentBoundEvent_5_JoinModdedServer__DelegateSignature(FBlueprintSessionResult Session, FString Password);
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature();
-    void Join_Server(FBlueprintSessionResult Session, FString Password);
+    void Join_Server(const FBlueprintSessionResult& Session, FString Password);
     static constexpr const char* Join_Server__UeName = "Join Server";
     void Close_Waiting_Window();
     static constexpr const char* Close_Waiting_Window__UeName = "Close Waiting Window";
@@ -77,7 +77,7 @@ public:
     void UpdateTextSearchAndGametypeFilter();
     void DisableProgressionModsandJoin(FBlueprintSessionResult Session);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void HandleKeyDown(FKeyEvent KeyEvent, bool& OutHandled, FEventReply& OutReply);
+    void HandleKeyDown(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
 };
 
 }}}   // namespace Game::UI::Menu_DeepDives

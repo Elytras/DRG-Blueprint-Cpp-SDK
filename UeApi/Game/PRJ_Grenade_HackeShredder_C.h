@@ -74,13 +74,13 @@ public:
     class AFSDPawn* Target;
     void ExecuteUbergraph_PRJ_Grenade_HackeShredder(int EntryPoint);
     void TargetDied(class UHealthComponentBase* HealthComponent);
-    void BndEvt__PRJ_Grenade_HackeShredder_DamageTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__PRJ_Grenade_HackeShredder_DamageTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void FindTarget();
-    void Impact(FHitResult HitResult);
-    void Explode(FHitResult HitResult);
+    void Impact(const FHitResult& HitResult);
+    void Explode(const FHitResult& HitResult);
     void CountSeconds();
     void TurnUpLightIndicator();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
     void StartBlink();

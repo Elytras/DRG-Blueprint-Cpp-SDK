@@ -34,8 +34,8 @@ public:
     TMulticastInlineDelegate<void(UI_MissionStats_Item_C* Sender)> OnHoverEnd;
     class UTexture2D* CategoryIcon;
     void ExecuteUbergraph_UI_MissionStats_Item(int EntryPoint);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void Set_Selected(bool Selected);
     static constexpr const char* Set_Selected__UeName = "Set Selected";
     void OnCountChanged_Event(class UObject* WorldContext, class UMissionStat* MissionStat, float Value);

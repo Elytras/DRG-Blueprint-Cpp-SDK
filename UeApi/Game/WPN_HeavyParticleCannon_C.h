@@ -70,7 +70,7 @@ public:
     void ChargeChanged(bool isCharging);
     void IsHittngEnemyChanged(bool isHittingEnemy);
     void UpdateReload(float alpha);
-    void Upgraded(TArray<class UItemUpgrade*> Upgrades);
+    void Upgraded(const TArray<class UItemUpgrade*>& Upgrades);
     void UpdateBeamsVisibility(bool isBeamVisible);
     void BndEvt__WeaponImpact_K2Node_ComponentBoundEvent_1_HightAccelerationSignature__DelegateSignature();
     void RecieveUnequipped();

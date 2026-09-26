@@ -51,7 +51,7 @@ public:
     FName Impact_Sound_Parameter;
     static constexpr const char* Impact_Sound_Parameter__UeName = "Impact Sound Parameter";
     void ExecuteUbergraph_BP_MorkiteSeed_New(int EntryPoint);
-    void BndEvt__BP_MorkiteSeed_New_Box_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_MorkiteSeed_New_Box_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__BP_MorkiteSeed_New_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
     UE_MULTICAST UE_RELIABLE void PickedUp_All();
     void OnCrackedOpen();

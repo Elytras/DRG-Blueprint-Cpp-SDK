@@ -27,10 +27,10 @@ public:
     TMulticastInlineDelegate<void(class UItemUpgrade* Upgrade_0)> OnHoverStart;
     TMulticastInlineDelegate<void(class UItemUpgrade* Upgrade_0)> OnHoverEnd;
     void ExecuteUbergraph_ITEM_UpgradesSmall_SingleIcon(int EntryPoint);
-    UE_COSMETIC void OnMouseLeave(FPointerEvent MouseEvent);
-    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
+    UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void Show(class UItemUpgrade* Upgrade_0, class UClass* Item);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

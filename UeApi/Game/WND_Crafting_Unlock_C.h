@@ -74,7 +74,7 @@ public:
     void BuyWithResources();
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void CreateResources();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     bool ReceiveCanCloseWindow(FName InActionName, FKey InKey, bool InIsMouseEvent);
 };
 

@@ -36,8 +36,8 @@ public:
     void ExecuteUbergraph_PRJ_SentryOvercharge_Projectile(int EntryPoint);
     void MakeBouncy();
     void ReceiveBeginPlay();
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void UserConstructionScript();
 };
 

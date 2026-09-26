@@ -30,7 +30,7 @@ public:
     void Rocket_Launched();
     static constexpr const char* Rocket_Launched__UeName = "Rocket Launched";
     void DropPodSpawned(class ADroppableOutpost* InDroppableOutpost);
-    void SpawnMissionCriticalItems(ECriticalItemPass pass);
+    void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void OnMatchStarted_Event_0();
     void ReceiveBeginPlay();
     void Spawn_Refinery_And_Wells(class URefineryObjective* Refinery);

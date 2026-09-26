@@ -45,7 +45,7 @@ public:
     void UpdateTextFromXP(int XP);
     void UpdateText(int CurrentLevel, float Percent);
     void AnimateXP(int FromLevel, int ToLevel, float FromPercent, float ToPercent, int FromXP, int ToXP);
-    void AnimateCount(int SeasonXP, int AddedXP, TArray<FSeasonEvent> SeasonEvents);
+    void AnimateCount(int SeasonXP, int AddedXP, const TArray<FSeasonEvent>& SeasonEvents);
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

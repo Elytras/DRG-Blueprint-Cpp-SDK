@@ -31,7 +31,7 @@ public:
     class UVerticalBox* VBOX_AssignmentMembers;
     bool PlayGlowAnim;
     void ExecuteUbergraph_ITM_Campaign_Icon(int EntryPoint);
-    void SetCampaignIconData(TArray<class UGeneratedMission*> missions);
+    void SetCampaignIconData(const TArray<class UGeneratedMission*>& missions);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void IsAnyMissionCampaign(TArray<class UGeneratedMission*>& missions, class AFSDPlayerState* Player, bool& IsOnMission);
 };

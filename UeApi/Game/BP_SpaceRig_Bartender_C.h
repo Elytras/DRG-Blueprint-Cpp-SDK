@@ -118,7 +118,7 @@ public:
     static constexpr const char* Init_Background_Menu__UeName = "Init Background Menu";
     void Look_Towards(class AActor* Actor, float Duration);
     static constexpr const char* Look_Towards__UeName = "Look Towards";
-    void BndEvt__GreetColliderBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__GreetColliderBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Client_Spawn_Next_Drink(BP_DrinksBox_C* DrinkBox);
     static constexpr const char* Client_Spawn_Next_Drink__UeName = "Client Spawn Next Drink";
     UE_MULTICAST UE_RELIABLE void All_BeginSpawnDrinks(bool PlayFireworks);

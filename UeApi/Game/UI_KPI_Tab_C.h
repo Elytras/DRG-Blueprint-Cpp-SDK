@@ -15,7 +15,7 @@ class UI_KPI_Tab_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_KPI_Tab", "UI_KPI_Tab_C");
     void HandleKeyEvent(FKeyEvent InKeyEvent, bool InUp, bool& OutHandled);
-    void HandleMouseEvent(FPointerEvent InMouseEvent, bool InUp, bool& OutHandled);
+    void HandleMouseEvent(const FPointerEvent& InMouseEvent, bool InUp, bool& OutHandled);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

@@ -113,7 +113,7 @@ public:
     static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.MatineeCameraShakePattern";
     static class UMatineeCameraShake* StartMatineeCameraShake(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class UMatineeCameraShake> ShakeClass, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
     static class UMatineeCameraShake* StartMatineeCameraShakeFromSource(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class UMatineeCameraShake> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
-    void BlueprintUpdateCameraShake(float DeltaTime, float alpha, FMinimalViewInfo POV, FMinimalViewInfo& ModifiedPOV);
+    void BlueprintUpdateCameraShake(float DeltaTime, float alpha, const FMinimalViewInfo& POV, FMinimalViewInfo& ModifiedPOV);
     void ReceivePlayShake(float Scale);
     void ReceiveStopShake(bool bImmediately);
     bool ReceiveIsFinished() const;

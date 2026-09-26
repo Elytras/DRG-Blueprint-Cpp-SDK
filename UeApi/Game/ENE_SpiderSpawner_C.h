@@ -93,7 +93,7 @@ public:
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_HealthChangedSig__DelegateSignature(float Health_0);
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);
-    void OnBodypartHit(float amount, float BaseAmount, FDamageData DamageData);
+    void OnBodypartHit(float amount, float BaseAmount, const FDamageData& DamageData);
     void BndEvt__PawnSensing_K2Node_ComponentBoundEvent_0_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     void ReceiveBeginPlay();
     void Spawn_Sound(class USoundCue* Sound, float Volume);

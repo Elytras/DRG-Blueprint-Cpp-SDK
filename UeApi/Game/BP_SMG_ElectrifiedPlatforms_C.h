@@ -28,7 +28,7 @@ public:
     static constexpr const char* StatusEffectTrigger__UeScsNode = "3e14e554f8ae7d4aa6ee75206f1b91b9";
     float LifeTime;
     void ExecuteUbergraph_BP_SMG_ElectrifiedPlatforms(int EntryPoint);
-    void BndEvt__BP_SMG_ElectrifiedPlatforms_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_SMG_ElectrifiedPlatforms_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
 };
 

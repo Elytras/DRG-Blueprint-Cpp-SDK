@@ -101,7 +101,7 @@ public:
     void Setup_Jukebox_Sound_Mix();
     static constexpr const char* Setup_Jukebox_Sound_Mix__UeName = "Setup Jukebox Sound Mix";
     void OpenStandaloneMinersManualPage(EMinersManualSinglePage page);
-    void OpenStandaloneMinersManual(EMinersManualSection Section, FGuid ID);
+    void OpenStandaloneMinersManual(EMinersManualSection Section, const FGuid& ID);
     void ShowEscapeMenu();
     void OnPackageMounted(bool Sandbox);
     void OnRestartSpacerig(bool Yes, bool CreateModdedSave);

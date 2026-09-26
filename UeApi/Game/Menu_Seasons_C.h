@@ -116,11 +116,11 @@ public:
     void OnXPChanged();
     void Toggle_Button_On(Header_ButtonCutCorner_C* Button);
     static constexpr const char* Toggle_Button_On__UeName = "Toggle Button On";
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void Start_End_Flow(int numberOfChallenges, bool hasEvent, int ExtrsXP);
     static constexpr const char* Start_End_Flow__UeName = "Start End Flow";
-    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SelectSection(class UWindowWidget* InSection, Header_ButtonCutCorner_C* InButton);
     void NavigateTabs(bool InRight);
 };

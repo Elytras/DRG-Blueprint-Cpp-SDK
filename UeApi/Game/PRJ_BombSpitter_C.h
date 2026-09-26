@@ -33,8 +33,8 @@ public:
     static constexpr const char* Projectile__UeScsNode = "0b08041ec1e98941a249f9e831d40f52";
     void ExecuteUbergraph_PRJ_BombSpitter(int EntryPoint);
     UE_MULTICAST void GoBoom();
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, FDamageData DamageData, bool anyHealthLost);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::BombSpitter

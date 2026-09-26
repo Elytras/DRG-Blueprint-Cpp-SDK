@@ -30,5 +30,5 @@ class UImageWriteBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ImageWriteQueue", "ImageWriteBlueprintLibrary");
-    static void ExportToDisk(class UTexture* Texture, FString Filename, FImageWriteOptions options);
+    static void ExportToDisk(class UTexture* Texture, FString Filename, const FImageWriteOptions& options);
 };

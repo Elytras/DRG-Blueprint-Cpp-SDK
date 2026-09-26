@@ -52,7 +52,7 @@ public:
     int missionLength;
     int MissionComplexity;
     void ExecuteUbergraph_Widget_DropPod_MissionType(int EntryPoint);
-    void OnDifficultyChanged_Event_0(FGameDifficulty Setting);
+    void OnDifficultyChanged_Event_0(const FGameDifficulty& Setting);
     void OnGeneratedMissionChanged(class UGeneratedMission* OutGeneratedMission);
     UE_COSMETIC void Construct();
     void SetGeneratedMission(class UGeneratedMission* In_Mission);

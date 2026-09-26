@@ -69,7 +69,7 @@ public:
     void ForceNavMeshUpdate();
     void SetEnableMeshOcclusion(bool bEnable);
     void SetUseWireframe(bool bUseWireframe);
-    void SetWireframeColor(FLinearColor InColor);
+    void SetWireframeColor(const FLinearColor& InColor);
     void SetWireframeMaterial(class UMaterialInterface* InMaterial);
     UE_PURE bool GetEnableMeshOcclusion() const;
     UE_PURE bool GetUseWireframe() const;

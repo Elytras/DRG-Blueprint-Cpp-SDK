@@ -56,7 +56,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SelectPerkWidget(UI_Perks_Item_C* PerkWidget);
     void HandleKeyEvent(FKeyEvent InKeyEvent, bool InUp, bool& OutHandled);
-    void HandleMouseEvent(FPointerEvent InMouseEvent, bool InUp, bool& OutHandled);
+    void HandleMouseEvent(const FPointerEvent& InMouseEvent, bool InUp, bool& OutHandled);
     void SetColors();
 };
 

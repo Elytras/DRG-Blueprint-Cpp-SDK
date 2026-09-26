@@ -172,9 +172,9 @@ public:
     class UTexture2D* GetThumbnail();
     bool IsActive();
     void SetDependency(int Index_0, FVariantDependency& Dependency);
-    void SetDisplayText(FText NewDisplayText);
-    void SetThumbnailFromCamera(class UObject* WorldContextObject, FTransform CameraTransform, float FOVDegrees, float MinZ, float Gamma);
-    void SetThumbnailFromCamera(FTransform CameraTransform, float FOVDegrees, float MinZ, float Gamma);
+    void SetDisplayText(const FText& NewDisplayText);
+    void SetThumbnailFromCamera(class UObject* WorldContextObject, const FTransform& CameraTransform, float FOVDegrees, float MinZ, float Gamma);
+    void SetThumbnailFromCamera(const FTransform& CameraTransform, float FOVDegrees, float MinZ, float Gamma);
     void SetThumbnailFromEditorViewport();
     void SetThumbnailFromFile(FString FilePath);
     void SetThumbnailFromTexture(class UTexture2D* NewThumbnail);
@@ -204,9 +204,9 @@ public:
     class UTexture2D* GetThumbnail();
     UE_PURE class UVariant* GetVariant(int VariantIndex);
     UE_PURE class UVariant* GetVariantByName(FString VariantName);
-    void SetDisplayText(FText NewDisplayText);
-    void SetThumbnailFromCamera(class UObject* WorldContextObject, FTransform CameraTransform, float FOVDegrees, float MinZ, float Gamma);
-    void SetThumbnailFromCamera(FTransform CameraTransform, float FOVDegrees, float MinZ, float Gamma);
+    void SetDisplayText(const FText& NewDisplayText);
+    void SetThumbnailFromCamera(class UObject* WorldContextObject, const FTransform& CameraTransform, float FOVDegrees, float MinZ, float Gamma);
+    void SetThumbnailFromCamera(const FTransform& CameraTransform, float FOVDegrees, float MinZ, float Gamma);
     void SetThumbnailFromEditorViewport();
     void SetThumbnailFromFile(FString FilePath);
     void SetThumbnailFromTexture(class UTexture2D* NewThumbnail);

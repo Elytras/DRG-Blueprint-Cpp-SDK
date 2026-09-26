@@ -56,7 +56,7 @@ public:
     static constexpr const char* Explode__Replicated = "OnRep_Explode:";
     void ExecuteUbergraph_PRJ_HomingDrone(int EntryPoint);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_Explode();
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation) const;
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;

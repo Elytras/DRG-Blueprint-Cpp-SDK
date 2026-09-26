@@ -87,7 +87,7 @@ public:
     void LoadSinglePage(TSoftClassPtr<class UClass> PageRef);
     void SelectOverview();
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OpenPageInternal(EMinersManualSection Section, TSoftClassPtr<class UClass> page);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void IsCreatureUnlocked(class UEnemyMinersManualData* enemy, bool& IsUnlocked);

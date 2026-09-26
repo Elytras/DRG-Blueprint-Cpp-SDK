@@ -32,9 +32,9 @@ public:
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_PRJ_Spider_Lobber_Projectile(int EntryPoint);
     void BndEvt__PRJ_Spider_Lobber_Projectile_SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void SpawnEffects(FVector Location, FVector Normal);
+    void SpawnEffects(const FVector& Location, const FVector& Normal);
     UE_MULTICAST void All_SpawnEffects(FVector_NetQuantize Location, FVector_NetQuantizeNormal Normal);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();

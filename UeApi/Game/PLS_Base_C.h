@@ -39,11 +39,11 @@ public:
     void Generate_Pass_0_Client();
     void Generate_Pass_0();
     void CarveTunnels();
-    void GenerateLandscapeFromData(int Seed_0, TArray<FRoomNode> Rooms_0, TArray<FPathObstacle> Obstacles);
+    void GenerateLandscapeFromData(int Seed_0, const TArray<FRoomNode>& Rooms_0, const TArray<FPathObstacle>& Obstacles);
     void StartGenerationOnClient(class AFSDPlayerController* client);
     void Generate_Tunnels();
     void CreateGraphSecondPass();
-    void AddRoomToInitialState(FRoomNode RoomNode);
+    void AddRoomToInitialState(const FRoomNode& RoomNode);
     void OnPLSDataRecieved();
     void BeginLiveGeneration();
     void Generate_Pass_7();

@@ -34,7 +34,7 @@ public:
     static constexpr const char* Index_0__UeName = "Index";
     TArray<int> Scores;
     void ExecuteUbergraph_UI_Hoop_History(int EntryPoint);
-    void UpdateScores(TArray<int> Scores_0);
+    void UpdateScores(const TArray<int>& Scores_0);
     UE_COSMETIC void Construct();
     void OnRep_Scores_OLD();
     UE_PURE int GetHistoryCount() const;

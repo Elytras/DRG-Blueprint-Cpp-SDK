@@ -42,7 +42,7 @@ public:
     bool KickedIntoHoop;
     class UFSDAchievement* BarrelRiderAchievement;
     void ExecuteUbergraph_BP_Phys_PatrollBot_Ball(int EntryPoint);
-    void BndEvt__BP_Phys_PatrollBot_Ball_SM_PatrollBotParts_Ball_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_Phys_PatrollBot_Ball_SM_PatrollBotParts_Ball_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void Spawn_Bronzehead_Effects();
     static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);

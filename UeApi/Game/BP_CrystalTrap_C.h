@@ -94,8 +94,8 @@ public:
     void ExecuteUbergraph_BP_CrystalTrap(int EntryPoint);
     void StartScaleDown();
     UE_MULTICAST UE_RELIABLE void OnPlayerTrapped(bool isInside);
-    void BndEvt__BP_CrystalTrap_DamageTrigger_K2Node_ComponentBoundEvent_4_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
-    void BndEvt__BP_CrystalTrap_SK_heartStoneTrap_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_CrystalTrap_DamageTrigger_K2Node_ComponentBoundEvent_4_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    void BndEvt__BP_CrystalTrap_SK_heartStoneTrap_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST UE_RELIABLE void All_CarvingDone();
     void On_Fully_Grown();
     static constexpr const char* On_Fully_Grown__UeName = "On Fully Grown";

@@ -52,7 +52,7 @@ public:
     void Beep();
     UE_MULTICAST void Boom();
     void ReceiveBeginPlay();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_Stick();
 };
 

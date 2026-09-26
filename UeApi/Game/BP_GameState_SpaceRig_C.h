@@ -51,9 +51,9 @@ public:
     void StopMissionTimer();
     void StartMissionTimer();
     void ReceiveTick(float DeltaSeconds);
-    void OnSuccess_3EF307534AC5AC56C0D60384C554CF10(TArray<FBlueprintSessionResult> Results);
-    void OnFailure_3EF307534AC5AC56C0D60384C554CF10(TArray<FBlueprintSessionResult> Results);
-    void OnRefresh_3EF307534AC5AC56C0D60384C554CF10(TArray<FBlueprintSessionResult> Results);
+    void OnSuccess_3EF307534AC5AC56C0D60384C554CF10(const TArray<FBlueprintSessionResult>& Results);
+    void OnFailure_3EF307534AC5AC56C0D60384C554CF10(const TArray<FBlueprintSessionResult>& Results);
+    void OnRefresh_3EF307534AC5AC56C0D60384C554CF10(const TArray<FBlueprintSessionResult>& Results);
     void OnRep_MissionCountdown();
     void OnRep_MissionTimerActive();
     void OnRep_HostCountdownActive();

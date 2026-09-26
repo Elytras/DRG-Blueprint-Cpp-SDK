@@ -35,7 +35,7 @@ public:
     FText ObjectiveDescription;
     void ExecuteUbergraph_OBJ_1st_DeepScan(int EntryPoint);
     void OnAllRequiredReturnObjectivesCompleted_Event_0();
-    void SetDrillevatorLanded(FTransform SpawnTransform);
+    void SetDrillevatorLanded(const FTransform& SpawnTransform);
     void DisableScannerUI();
     void OnTriangulatorDone();
     void CreateUndergroundCave();

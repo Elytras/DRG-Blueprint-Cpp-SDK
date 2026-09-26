@@ -658,7 +658,7 @@ class AARActor : public AActor
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARActor");
-    class UARComponent* AddARComponent(TSubclassOf<class UARComponent> InComponentClass, FGuid NativeID);
+    class UARComponent* AddARComponent(TSubclassOf<class UARComponent> InComponentClass, const FGuid& NativeID);
 };
 
 class UARBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -667,9 +667,9 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARBlueprintLibrary");
     static bool AddManualEnvironmentCaptureProbe(FVector Location, FVector Extent);
     static class UARCandidateImage* AddRuntimeCandidateImage(class UARSessionConfig* SessionConfig, class UTexture2D* CandidateTexture, FString FriendlyName, float PhysicalWidth);
-    static bool AddTrackedPointWithName(FTransform WorldTransform, FString PointName, bool bDeletePointsWithSameName);
-    static void CalculateAlignmentTransform(FTransform TransformInFirstCoordinateSystem, FTransform TransformInSecondCoordinateSystem, FTransform& AlignmentTransform);
-    static void CalculateClosestIntersection(TArray<FVector> StartPoints, TArray<FVector> EndPoints, FVector& ClosestIntersection);
+    static bool AddTrackedPointWithName(const FTransform& WorldTransform, FString PointName, bool bDeletePointsWithSameName);
+    static void CalculateAlignmentTransform(const FTransform& TransformInFirstCoordinateSystem, const FTransform& TransformInSecondCoordinateSystem, FTransform& AlignmentTransform);
+    static void CalculateClosestIntersection(const TArray<FVector>& StartPoints, const TArray<FVector>& EndPoints, FVector& ClosestIntersection);
     static void DebugDrawPin(class UARPin* ARPin, class UObject* WorldContextObject, FLinearColor Color, float Scale, float PersistForSeconds);
     static void DebugDrawPin(class UARPin* ARPin, FLinearColor Color, float Scale, float PersistForSeconds);
     static void DebugDrawTrackedGeometry(class UARTrackedGeometry* TrackedGeometry, class UObject* WorldContextObject, FLinearColor Color, float OutlineThickness, float PersistForSeconds);
@@ -693,7 +693,7 @@ public:
     static bool GetCameraIntrinsics(FARCameraIntrinsics& OutCameraIntrinsics);
     UE_PURE static class UARLightEstimate* GetCurrentLightEstimate();
     static int GetNumberOfTrackedFacesSupported();
-    static bool GetObjectClassificationAtLocation(FVector InWorldLocation, EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff);
+    static bool GetObjectClassificationAtLocation(const FVector& InWorldLocation, EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff);
     static class UARTexture* GetPersonSegmentationDepthImage();
     static class UARTexture* GetPersonSegmentationImage();
     UE_PURE static TArray<FVector> GetPointCloud();
@@ -712,15 +712,15 @@ public:
     static TArray<FARTraceResult> LineTraceTrackedObjects3D(FVector Start, FVector End, bool bTestFeaturePoints, bool bTestGroundPlane, bool bTestPlaneExtents, bool bTestPlaneBoundaryPolygon);
     static TMap<FName, class UARPin*> LoadARPinsFromLocalStore();
     static void PauseARSession();
-    static class UARPin* PinComponent(class USceneComponent* ComponentToPin, FTransform PinToWorldTransform, class UARTrackedGeometry* TrackedGeometry, FName DebugName);
+    static class UARPin* PinComponent(class USceneComponent* ComponentToPin, const FTransform& PinToWorldTransform, class UARTrackedGeometry* TrackedGeometry, FName DebugName);
     static bool PinComponentToARPin(class USceneComponent* ComponentToPin, class UARPin* Pin);
-    static class UARPin* PinComponentToTraceResult(class USceneComponent* ComponentToPin, FARTraceResult TraceResult, FName DebugName);
+    static class UARPin* PinComponentToTraceResult(class USceneComponent* ComponentToPin, const FARTraceResult& TraceResult, FName DebugName);
     static void RemoveAllARPinsFromLocalStore();
     static void RemoveARPinFromLocalStore(FName InSaveName);
     static void RemovePin(class UARPin* PinToRemove);
-    static FIntPoint ResizeXRCamera(FIntPoint InSize);
+    static FIntPoint ResizeXRCamera(const FIntPoint& InSize);
     static bool SaveARPinToLocalStore(FName InSaveName, class UARPin* InPin);
-    static void SetAlignmentTransform(FTransform InAlignmentTransform);
+    static void SetAlignmentTransform(const FTransform& InAlignmentTransform);
     static void SetARWorldOriginLocationAndRotation(FVector OriginLocation, FRotator OriginRotation, bool bIsTransformInWorldSpace, bool bMaintainUpDirection);
     static void SetARWorldScale(float InWorldScale);
     static void SetEnabledXRCamera(bool bOnOff);
@@ -734,12 +734,12 @@ class UARTraceResultLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARTraceResultLibrary");
-    UE_PURE static float GetDistanceFromCamera(FARTraceResult TraceResult);
-    UE_PURE static FTransform GetLocalToTrackingTransform(FARTraceResult TraceResult);
-    UE_PURE static FTransform GetLocalToWorldTransform(FARTraceResult TraceResult);
-    UE_PURE static FTransform GetLocalTransform(FARTraceResult TraceResult);
-    UE_PURE static EARLineTraceChannels GetTraceChannel(FARTraceResult TraceResult);
-    UE_PURE static class UARTrackedGeometry* GetTrackedGeometry(FARTraceResult TraceResult);
+    UE_PURE static float GetDistanceFromCamera(const FARTraceResult& TraceResult);
+    UE_PURE static FTransform GetLocalToTrackingTransform(const FARTraceResult& TraceResult);
+    UE_PURE static FTransform GetLocalToWorldTransform(const FARTraceResult& TraceResult);
+    UE_PURE static FTransform GetLocalTransform(const FARTraceResult& TraceResult);
+    UE_PURE static EARLineTraceChannels GetTraceChannel(const FARTraceResult& TraceResult);
+    UE_PURE static class UARTrackedGeometry* GetTrackedGeometry(const FARTraceResult& TraceResult);
 };
 
 class UARBaseAsyncTaskBlueprintProxy : public UBlueprintAsyncActionBase
@@ -793,11 +793,11 @@ public:
     FARPlaneUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     UE_PURE static TMap<EARObjectClassification, FLinearColor> GetObjectClassificationDebugColors();
-    static void SetObjectClassificationDebugColors(TMap<EARObjectClassification, FLinearColor> InColors);
+    static void SetObjectClassificationDebugColors(const TMap<EARObjectClassification, FLinearColor>& InColors);
     static void SetPlaneComponentDebugMode(EPlaneComponentDebugMode NewDebugMode);
-    void ReceiveAdd(FARPlaneUpdatePayload Payload);
-    void ReceiveUpdate(FARPlaneUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARPlaneUpdatePayload NewPayload);
+    void ReceiveAdd(const FARPlaneUpdatePayload& Payload);
+    void ReceiveUpdate(const FARPlaneUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARPlaneUpdatePayload& NewPayload);
 };
 
 class UARPointComponent : public UARComponent
@@ -806,9 +806,9 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARPointComponent");
     FARPointUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    void ReceiveAdd(FARPointUpdatePayload Payload);
-    void ReceiveUpdate(FARPointUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARPointUpdatePayload NewPayload);
+    void ReceiveAdd(const FARPointUpdatePayload& Payload);
+    void ReceiveUpdate(const FARPointUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARPointUpdatePayload& NewPayload);
 };
 
 class UARFaceComponent : public UARComponent
@@ -821,9 +821,9 @@ public:
     FARFaceUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     static void SetFaceComponentDebugMode(EFaceComponentDebugMode NewDebugMode);
-    void ReceiveAdd(FARFaceUpdatePayload Payload);
-    void ReceiveUpdate(FARFaceUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARFaceUpdatePayload NewPayload);
+    void ReceiveAdd(const FARFaceUpdatePayload& Payload);
+    void ReceiveUpdate(const FARFaceUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARFaceUpdatePayload& NewPayload);
 };
 
 class UARImageComponent : public UARComponent
@@ -833,9 +833,9 @@ public:
     FARImageUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     static void SetImageComponentDebugMode(EImageComponentDebugMode NewDebugMode);
-    void ReceiveAdd(FARImageUpdatePayload Payload);
-    void ReceiveUpdate(FARImageUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARImageUpdatePayload NewPayload);
+    void ReceiveAdd(const FARImageUpdatePayload& Payload);
+    void ReceiveUpdate(const FARImageUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARImageUpdatePayload& NewPayload);
 };
 
 class UARQRCodeComponent : public UARComponent
@@ -845,9 +845,9 @@ public:
     FARQRCodeUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     static void SetQRCodeComponentDebugMode(EQRCodeComponentDebugMode NewDebugMode);
-    void ReceiveAdd(FARQRCodeUpdatePayload Payload);
-    void ReceiveUpdate(FARQRCodeUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARQRCodeUpdatePayload NewPayload);
+    void ReceiveAdd(const FARQRCodeUpdatePayload& Payload);
+    void ReceiveUpdate(const FARQRCodeUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARQRCodeUpdatePayload& NewPayload);
 };
 
 class UARPoseComponent : public UARComponent
@@ -857,9 +857,9 @@ public:
     FARPoseUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     static void SetPoseComponentDebugMode(EPoseComponentDebugMode NewDebugMode);
-    void ReceiveAdd(FARPoseUpdatePayload Payload);
-    void ReceiveUpdate(FARPoseUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARPoseUpdatePayload NewPayload);
+    void ReceiveAdd(const FARPoseUpdatePayload& Payload);
+    void ReceiveUpdate(const FARPoseUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARPoseUpdatePayload& NewPayload);
 };
 
 class UAREnvironmentProbeComponent : public UARComponent
@@ -868,9 +868,9 @@ public:
     UE_CLASS("/Script/AugmentedReality", "AREnvironmentProbeComponent");
     FAREnvironmentProbeUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    void ReceiveAdd(FAREnvironmentProbeUpdatePayload Payload);
-    void ReceiveUpdate(FAREnvironmentProbeUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FAREnvironmentProbeUpdatePayload NewPayload);
+    void ReceiveAdd(const FAREnvironmentProbeUpdatePayload& Payload);
+    void ReceiveUpdate(const FAREnvironmentProbeUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FAREnvironmentProbeUpdatePayload& NewPayload);
 };
 
 class UARObjectComponent : public UARComponent
@@ -879,9 +879,9 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARObjectComponent");
     FARObjectUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    void ReceiveAdd(FARObjectUpdatePayload Payload);
-    void ReceiveUpdate(FARObjectUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARObjectUpdatePayload NewPayload);
+    void ReceiveAdd(const FARObjectUpdatePayload& Payload);
+    void ReceiveUpdate(const FARObjectUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARObjectUpdatePayload& NewPayload);
 };
 
 class UARMeshComponent : public UARComponent
@@ -890,9 +890,9 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARMeshComponent");
     FARMeshUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    void ReceiveAdd(FARMeshUpdatePayload Payload);
-    void ReceiveUpdate(FARMeshUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARMeshUpdatePayload NewPayload);
+    void ReceiveAdd(const FARMeshUpdatePayload& Payload);
+    void ReceiveUpdate(const FARMeshUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARMeshUpdatePayload& NewPayload);
 };
 
 class UARGeoAnchorComponent : public UARComponent
@@ -902,9 +902,9 @@ public:
     FARGeoAnchorUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     static void SetGeoAnchorComponentDebugMode(EGeoAnchorComponentDebugMode NewDebugMode);
-    void ReceiveAdd(FARGeoAnchorUpdatePayload Payload);
-    void ReceiveUpdate(FARGeoAnchorUpdatePayload Payload);
-    UE_SERVER UE_RELIABLE void ServerUpdatePayload(FARGeoAnchorUpdatePayload NewPayload);
+    void ReceiveAdd(const FARGeoAnchorUpdatePayload& Payload);
+    void ReceiveUpdate(const FARGeoAnchorUpdatePayload& Payload);
+    UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARGeoAnchorUpdatePayload& NewPayload);
 };
 
 class UARDependencyHandler : public UObject
@@ -960,8 +960,8 @@ public:
     UE_CLASS("/Script/AugmentedReality", "GetGeoLocationAsyncTaskBlueprintProxy");
     TMulticastInlineDelegate<void(float Longitude, float Latitude, float Altitude, FString Error)> OnSuccess;
     TMulticastInlineDelegate<void(float Longitude, float Latitude, float Altitude, FString Error)> OnFailed;
-    static class UGetGeoLocationAsyncTaskBlueprintProxy* GetGeoLocationAtWorldPosition(class UObject* WorldContextObject, FVector WorldPosition);
-    static class UGetGeoLocationAsyncTaskBlueprintProxy* GetGeoLocationAtWorldPosition(FVector WorldPosition);
+    static class UGetGeoLocationAsyncTaskBlueprintProxy* GetGeoLocationAtWorldPosition(class UObject* WorldContextObject, const FVector& WorldPosition);
+    static class UGetGeoLocationAsyncTaskBlueprintProxy* GetGeoLocationAtWorldPosition(const FVector& WorldPosition);
 };
 
 class UARLifeCycleComponent : public USceneComponent
@@ -1009,7 +1009,7 @@ public:
     EARTrackingState TrackingState;
     TMulticastInlineDelegate<void(EARTrackingState NewTrackingState)> OnARTrackingStateChanged;
     TMulticastInlineDelegate<void(FTransform OldToNewTransform)> OnARTransformUpdated;
-    void DebugDraw(class UWorld* World, FLinearColor Color, float Scale, float PersistForSeconds) const;
+    void DebugDraw(class UWorld* World, const FLinearColor& Color, float Scale, float PersistForSeconds) const;
     UE_PURE FName GetDebugName() const;
     UE_PURE FTransform GetLocalToTrackingTransform() const;
     UE_PURE FTransform GetLocalToWorldTransform() const;
@@ -1071,7 +1071,7 @@ public:
     class UMaterialInterface* DefaultWireframeMeshMaterial;
     void AddCandidateImage(class UARCandidateImage* NewCandidateImage);
     void AddCandidateObject(class UARCandidateObject* CandidateObject);
-    void SetCandidateObjectList(TArray<class UARCandidateObject*> InCandidateObjects);
+    void SetCandidateObjectList(const TArray<class UARCandidateObject*>& InCandidateObjects);
     void SetDesiredVideoFormat(FARVideoFormat NewFormat);
     void SetEnableAutoFocus(bool bNewValue);
     void SetFaceTrackingDirection(EARFaceTrackingDirection InDirection);
@@ -1134,8 +1134,8 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     UE_CLIENT UE_RELIABLE void ClientInitSharedWorld(int PreviewImageSize, int ARWorldDataSize);
-    UE_CLIENT UE_RELIABLE void ClientUpdateARWorldData(int Offset, TArray<uint8> Buffer);
-    UE_CLIENT UE_RELIABLE void ClientUpdatePreviewImageData(int Offset, TArray<uint8> Buffer);
+    UE_CLIENT UE_RELIABLE void ClientUpdateARWorldData(int Offset, const TArray<uint8>& Buffer);
+    UE_CLIENT UE_RELIABLE void ClientUpdatePreviewImageData(int Offset, const TArray<uint8>& Buffer);
     UE_SERVER UE_RELIABLE void ServerMarkReadyForReceiving();
 };
 
@@ -1301,7 +1301,7 @@ class UARMeshGeometry : public UARTrackedGeometry
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARMeshGeometry");
-    bool GetObjectClassificationAtLocation(FVector InWorldLocation, EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff);
+    bool GetObjectClassificationAtLocation(const FVector& InWorldLocation, EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff);
 };
 
 class UARGeoAnchor : public UARTrackedGeometry
@@ -1370,8 +1370,8 @@ public:
     TArray<uint8> CandidateObjectData;
     FString FriendlyName;
     FBox BoundingBox;
-    void SetBoundingBox(FBox InBoundingBox);
-    void SetCandidateObjectData(TArray<uint8> InCandidateObject);
+    void SetBoundingBox(const FBox& InBoundingBox);
+    void SetCandidateObjectData(const TArray<uint8>& InCandidateObject);
     void SetFriendlyName(FString NewName);
     UE_PURE FBox GetBoundingBox() const;
     UE_PURE TArray<uint8> GetCandidateObjectData() const;

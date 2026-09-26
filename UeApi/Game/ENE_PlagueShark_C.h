@@ -61,7 +61,7 @@ public:
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__ENE_PlagueShark_RestrictedGrabberComponent_K2Node_ComponentBoundEvent_3_ReleasedActorSig__DelegateSignature(class AActor* aGrabbedActor, bool fullGrabElapsed);
     void BndEvt__ENE_PlagueShark_RestrictedGrabberComponent_K2Node_ComponentBoundEvent_1_GrabbedActorSig__DelegateSignature(class AActor* aGrabbedActor);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnExitState(ESharkEnemyState State_0);
     void OnEnterState(ESharkEnemyState State_0);
     void OnLandedEvent();

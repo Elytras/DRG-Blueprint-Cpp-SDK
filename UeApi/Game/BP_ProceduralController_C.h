@@ -17,8 +17,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void SendRoomData();
     void SendTunnelData();
-    void ReceivedRoomData(int Seed_ReceivedRoomData, TArray<FRoomNode> Rooms_ReceivedRoomData, TArray<FPathObstacle> Obstacles_ReceivedRoomData);
-    void ReceivedTunnelData(TArray<FTunnelNode> tunnels_ReceivedTunnelData);
+    void ReceivedRoomData(int Seed_ReceivedRoomData, const TArray<FRoomNode>& Rooms_ReceivedRoomData, const TArray<FPathObstacle>& Obstacles_ReceivedRoomData);
+    void ReceivedTunnelData(const TArray<FTunnelNode>& tunnels_ReceivedTunnelData);
     UE_SERVER UE_RELIABLE void Server_RequestPLSData();
     UE_SERVER UE_RELIABLE void Server_RequestCarverData(EDebrisItemPass pass);
     void RequestPLSData();

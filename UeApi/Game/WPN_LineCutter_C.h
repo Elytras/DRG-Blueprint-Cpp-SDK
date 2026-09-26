@@ -67,7 +67,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_StopHoming(class AProjectile* InProjectile);
     void ReceiveBeginPlay();
     void RecieveStopUsing();
-    void OnHomingHit(FHitResult Result);
+    void OnHomingHit(const FHitResult& Result);
     UE_SERVER void Server_SetHomingLocation(FVector_NetQuantize HomingLocation);
     void StopHoming();
     void UpdateHomingTarget();

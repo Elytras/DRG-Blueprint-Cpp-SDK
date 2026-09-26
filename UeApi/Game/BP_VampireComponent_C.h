@@ -25,7 +25,7 @@ public:
     void ExecuteUbergraph_BP_VampireComponent(int EntryPoint);
     UE_CLIENT void Client_VampireTriggered();
     void Receive_OnInitialized();
-    void OnEnemyKilled(FGameplayTagContainer enemyTags, class AActor* enemy, class UDamageClass* DamageClass);
+    void OnEnemyKilled(const FGameplayTagContainer& enemyTags, class AActor* enemy, class UDamageClass* DamageClass);
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

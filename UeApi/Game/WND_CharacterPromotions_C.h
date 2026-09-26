@@ -74,7 +74,7 @@ public:
     void Set_Retirement_Info(class UPlayerCharacterID* Character);
     static constexpr const char* Set_Retirement_Info__UeName = "Set Retirement Info";
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::MENU_Promotion

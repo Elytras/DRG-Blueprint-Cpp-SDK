@@ -82,7 +82,7 @@ public:
     void BndEvt__MENU_MissionCheat_BTN_DeepDives_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__MENU_MissionCheat_Button_177_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature();
     void Reset();
-    void BndEvt__TB_GlobalSeed_K2Node_ComponentBoundEvent_4_OnEditableTextBoxCommittedEvent__DelegateSignature(FText Text, ETextCommit CommitMethod);
+    void BndEvt__TB_GlobalSeed_K2Node_ComponentBoundEvent_4_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, ETextCommit CommitMethod);
     void SetGeneratedMission(class UGeneratedMission* mission, int PLS_Seed);
     void BndEvt__BTN_MissionFromMap_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__MissionType_K2Node_ComponentBoundEvent_2_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);

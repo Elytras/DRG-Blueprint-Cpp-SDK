@@ -26,7 +26,7 @@ public:
     void ExecuteUbergraph_AIC_TerminatorTentacle(int EntryPoint);
     void SetPaused(bool IsPaused);
     void ReceivePossess(class APawn* PossessedPawn);
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

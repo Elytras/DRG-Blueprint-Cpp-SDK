@@ -37,9 +37,9 @@ public:
     bool ExplosivePuddles;
     class USoundBase* CreatureImpactSound;
     void ExecuteUbergraph_PRJ_Base_Spider_Lobber_Projectile(int EntryPoint);
-    void SpawnEffects(FVector Location, FVector Normal);
+    void SpawnEffects(const FVector& Location, const FVector& Normal);
     void DestroyProjectile();
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber

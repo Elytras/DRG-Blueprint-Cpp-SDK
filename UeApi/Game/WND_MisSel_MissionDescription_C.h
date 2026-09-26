@@ -69,7 +69,7 @@ public:
     void BndEvt__WND_MisSel_MissionDescription_Button_MissionInfo_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_MissionInfo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UGeneratedMission* mission, FGameDifficulty Difficulty);
+    void SetData(class UGeneratedMission* mission, const FGameDifficulty& Difficulty);
     void HandleAssignments(class UGeneratedMission* mission, FGameDifficulty& optionalDifficulty);
 };
 

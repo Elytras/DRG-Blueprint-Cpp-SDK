@@ -43,7 +43,7 @@ public:
     void OnReset();
     void OnAddString(FString Value);
     void OnAddKeyName(FString Name_0);
-    void OnAddIcon(FString Name_0, FActionIconMapping Icon);
+    void OnAddIcon(FString Name_0, const FActionIconMapping& Icon);
     void OnNewLine(int Index_0);
     void SetTextTint(FLinearColor Text_Tint_0);
     void SetIconTint(FLinearColor PC__Icon_Tint_0, FLinearColor Controller_Icon_Tint_0);

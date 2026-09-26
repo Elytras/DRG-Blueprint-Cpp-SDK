@@ -32,12 +32,12 @@ public:
     class UWidgetSwitcher* switcher;
     void ExecuteUbergraph_UI_RichTextInput(int EntryPoint);
     void ReceiveInputUnknown();
-    void ReceiveInputDetails(FInputDisplay InDisplay);
+    void ReceiveInputDetails(const FInputDisplay& InDisplay);
     void ShowAsIcon(class UTexture2D* InTexture, FLinearColor InTint);
     void SetSize(float InHeightOverride, float InWidthOverride, float InMinDesiredWidth);
     void ShowAsText(FText InText, FLinearColor InTint);
     void SetInteraction(EInputInteraction InInteraction);
-    void ShowFromDisplayDetails(FInputDisplay details);
+    void ShowFromDisplayDetails(const FInputDisplay& details);
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::CustomRichText

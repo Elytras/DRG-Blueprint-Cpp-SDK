@@ -51,7 +51,7 @@ public:
     class UParticleSystem* DeathParticle_1;
     class UParticleSystem* DeathParticle_2;
     void ExecuteUbergraph_ENE_BoughWasp_Nest_Small(int EntryPoint);
-    UE_AUTHORITY_ONLY void BndEvt__ENE_BoughWasp_Nest_Small_Health_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    UE_AUTHORITY_ONLY void BndEvt__ENE_BoughWasp_Nest_Small_Health_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnNestDeath();
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);

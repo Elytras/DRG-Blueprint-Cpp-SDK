@@ -61,7 +61,7 @@ class UKismetProceduralMeshLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ProceduralMeshComponent", "KismetProceduralMeshLibrary");
-    static void CalculateTangentsForMesh(TArray<FVector> Vertices, TArray<int> Triangles, TArray<FVector2D> UVs, TArray<FVector>& Normals, TArray<FProcMeshTangent>& Tangents);
+    static void CalculateTangentsForMesh(const TArray<FVector>& Vertices, const TArray<int>& Triangles, const TArray<FVector2D>& UVs, TArray<FVector>& Normals, TArray<FProcMeshTangent>& Tangents);
     static void ConvertQuadToTriangles(TArray<int>& Triangles, int Vert0, int Vert1, int Vert2, int Vert3);
     static void CopyProceduralMeshFromStaticMeshComponent(class UStaticMeshComponent* StaticMeshComponent, int LODIndex, class UProceduralMeshComponent* ProcMeshComponent, bool bCreateCollision);
     static void CreateGridMeshSplit(int NumX, int NumY, TArray<int>& Triangles, TArray<FVector>& Vertices, TArray<FVector2D>& UVs, TArray<FVector2D>& UV1s, float GridSpacing);
@@ -88,11 +88,11 @@ public:
     void ClearAllMeshSections();
     void ClearCollisionConvexMeshes();
     void ClearMeshSection(int SectionIndex);
-    void CreateMeshSection(int SectionIndex, TArray<FVector> Vertices, TArray<int> Triangles, TArray<FVector> Normals, TArray<FVector2D> UV0, TArray<FColor> VertexColors, TArray<FProcMeshTangent> Tangents, bool bCreateCollision);
-    void CreateMeshSection_LinearColor(int SectionIndex, TArray<FVector> Vertices, TArray<int> Triangles, TArray<FVector> Normals, TArray<FVector2D> UV0, TArray<FVector2D> UV1, TArray<FVector2D> UV2, TArray<FVector2D> UV3, TArray<FLinearColor> VertexColors, TArray<FProcMeshTangent> Tangents, bool bCreateCollision);
+    void CreateMeshSection(int SectionIndex, const TArray<FVector>& Vertices, const TArray<int>& Triangles, const TArray<FVector>& Normals, const TArray<FVector2D>& UV0, const TArray<FColor>& VertexColors, const TArray<FProcMeshTangent>& Tangents, bool bCreateCollision);
+    void CreateMeshSection_LinearColor(int SectionIndex, const TArray<FVector>& Vertices, const TArray<int>& Triangles, const TArray<FVector>& Normals, const TArray<FVector2D>& UV0, const TArray<FVector2D>& UV1, const TArray<FVector2D>& UV2, const TArray<FVector2D>& UV3, const TArray<FLinearColor>& VertexColors, const TArray<FProcMeshTangent>& Tangents, bool bCreateCollision);
     void SetMeshSectionVisible(int SectionIndex, bool bNewVisibility);
-    void UpdateMeshSection(int SectionIndex, TArray<FVector> Vertices, TArray<FVector> Normals, TArray<FVector2D> UV0, TArray<FColor> VertexColors, TArray<FProcMeshTangent> Tangents);
-    void UpdateMeshSection_LinearColor(int SectionIndex, TArray<FVector> Vertices, TArray<FVector> Normals, TArray<FVector2D> UV0, TArray<FVector2D> UV1, TArray<FVector2D> UV2, TArray<FVector2D> UV3, TArray<FLinearColor> VertexColors, TArray<FProcMeshTangent> Tangents);
+    void UpdateMeshSection(int SectionIndex, const TArray<FVector>& Vertices, const TArray<FVector>& Normals, const TArray<FVector2D>& UV0, const TArray<FColor>& VertexColors, const TArray<FProcMeshTangent>& Tangents);
+    void UpdateMeshSection_LinearColor(int SectionIndex, const TArray<FVector>& Vertices, const TArray<FVector>& Normals, const TArray<FVector2D>& UV0, const TArray<FVector2D>& UV1, const TArray<FVector2D>& UV2, const TArray<FVector2D>& UV3, const TArray<FLinearColor>& VertexColors, const TArray<FProcMeshTangent>& Tangents);
     UE_PURE int GetNumSections() const;
     UE_PURE bool IsMeshSectionVisible(int SectionIndex) const;
 };

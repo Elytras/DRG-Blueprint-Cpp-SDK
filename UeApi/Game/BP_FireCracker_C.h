@@ -48,15 +48,15 @@ public:
     FVector LocalExplosionDirection;
     bool CanPlayImpactSound;
     void ExecuteUbergraph_BP_FireCracker(int EntryPoint);
-    void BndEvt__BP_FireCracker_StaticMesh_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
-    void BndEvt__BP_FireCracker_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_FireCracker_StaticMesh_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    void BndEvt__BP_FireCracker_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveTick(float DeltaSeconds);
     void ApplyForces();
     UE_MULTICAST void TimerExpired();
     void ApplyForceSM(class UStaticMeshComponent* Component, FVector Position);
     void ApplyForceSK(class USkeletalMeshComponent* Component, FVector Position);
     void ReceiveIgnoreCharacter(class APlayerCharacter* Character);
-    void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, FHitResult Hit);
+    void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
     void ReceiveBeginPlay();
     void UserConstructionScript();

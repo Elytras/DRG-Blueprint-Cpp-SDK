@@ -71,7 +71,7 @@ public:
     void GetPickaxeID(class UItemID*& Output);
     void InitSlots();
     void PlayIntroAnimations();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, FPointerEvent MouseEvent);
+    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Pickaxe

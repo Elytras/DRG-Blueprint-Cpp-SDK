@@ -57,7 +57,7 @@ public:
     bool CanTriggerSound;
     FName ImpactSoundParam;
     void ExecuteUbergraph_BP_CoreRift_Carriable(int EntryPoint);
-    void BndEvt__BP_CoreRift_Carriable_Box_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__BP_CoreRift_Carriable_Box_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST UE_RELIABLE void ALL_CoreStoneCollected();
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
     void Throw(FVector force);

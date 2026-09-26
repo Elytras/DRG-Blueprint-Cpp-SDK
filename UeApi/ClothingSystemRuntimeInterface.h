@@ -109,7 +109,7 @@ public:
     TMap<FName, class UClothingInteractor*> ClothingInteractors;
     void ClothConfigUpdated();
     void DisableGravityOverride();
-    void EnableGravityOverride(FVector InVector);
+    void EnableGravityOverride(const FVector& InVector);
     void PhysicsAssetUpdated();
     void SetAnimDriveSpringStiffness(float InStiffness);
     void SetNumIterations(int NumIterations);

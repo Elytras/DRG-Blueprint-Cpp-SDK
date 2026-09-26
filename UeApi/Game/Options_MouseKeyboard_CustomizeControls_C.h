@@ -37,7 +37,7 @@ public:
     void CreateBindingWidgets();
     void SetOpen(bool Index_0);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void ContainsAnyName(FCustomKeySetting Button, TArray<FName> ActionNames, bool& Result);
+    void ContainsAnyName(FCustomKeySetting Button, const TArray<FName>& ActionNames, bool& Result);
 };
 
 }}}   // namespace Game::UI::Keybindings

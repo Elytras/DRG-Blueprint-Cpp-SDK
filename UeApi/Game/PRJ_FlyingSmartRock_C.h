@@ -51,8 +51,8 @@ public:
     class UMaterialInstanceDynamic* DynamicMaterial_Core;
     void ExecuteUbergraph_PRJ_FlyingSmartRock(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void GoBoom();
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, FDamageData DamageData, bool anyHealthLost);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::FlyingSmartRocks

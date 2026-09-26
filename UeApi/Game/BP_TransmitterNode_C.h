@@ -67,12 +67,12 @@ public:
     void OnDronePickup();
     void OnDroneDrop();
     void destroy();
-    void BndEvt__Tether_K2Node_ComponentBoundEvent_7_TeherMessage_Delegate__DelegateSignature(FName Message);
+    void BndEvt__Tether_K2Node_ComponentBoundEvent_7_TeherMessage_Delegate__DelegateSignature(const FName& Message);
     void BndEvt__Tether_K2Node_ComponentBoundEvent_6_TetherConnectionChanged_Deletage__DelegateSignature(class UTetherComponent* frontConnection, class UTetherComponent* backConnection);
     void BndEvt__Tether_K2Node_ComponentBoundEvent_5_TetherPowerChanged_Delegate__DelegateSignature(bool hasPower);
     void TryConnecting();
     void Throw(FVector force);
-    void BndEvt__PysicalCollision_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, FHitResult Hit);
+    void BndEvt__PysicalCollision_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__Carry_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void BndEvt__Carry_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
     void BndEvt__UsableComponent_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);

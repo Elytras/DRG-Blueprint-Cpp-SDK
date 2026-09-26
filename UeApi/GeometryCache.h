@@ -120,7 +120,7 @@ class UGeometryCacheTrack_FlipbookAnimation : public UGeometryCacheTrack
 public:
     UE_CLASS("/Script/GeometryCache", "GeometryCacheTrack_FlipbookAnimation");
     uint32 NumMeshSamples;
-    void AddMeshSample(FGeometryCacheMeshData MeshData, float SampleTime);
+    void AddMeshSample(const FGeometryCacheMeshData& MeshData, float SampleTime);
 };
 
 class UGeometryCacheTrackStreamable : public UGeometryCacheTrack
@@ -135,12 +135,12 @@ class UGeometryCacheTrack_TransformAnimation : public UGeometryCacheTrack
 {
 public:
     UE_CLASS("/Script/GeometryCache", "GeometryCacheTrack_TransformAnimation");
-    void SetMesh(FGeometryCacheMeshData NewMeshData);
+    void SetMesh(const FGeometryCacheMeshData& NewMeshData);
 };
 
 class UGeometryCacheTrack_TransformGroupAnimation : public UGeometryCacheTrack
 {
 public:
     UE_CLASS("/Script/GeometryCache", "GeometryCacheTrack_TransformGroupAnimation");
-    void SetMesh(FGeometryCacheMeshData NewMeshData);
+    void SetMesh(const FGeometryCacheMeshData& NewMeshData);
 };

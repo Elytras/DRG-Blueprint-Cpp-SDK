@@ -38,9 +38,9 @@ public:
     void ExecuteUbergraph_BP_PipeGrindingConnector(int EntryPoint);
     void ReceiveBeginPlay();
     void UpdateLocation(FVector Location, FVector Direction);
-    void ReceiveUpdateZipLinePoint(FVector WorldLocation, FVector Directioy, bool Speeding);
+    void ReceiveUpdateZipLinePoint(const FVector& WorldLocation, const FVector& Directioy, bool Speeding);
     void ReceiveDisconnected();
-    void ReceiveConnected(FVector WorldLocation, FVector Direction);
+    void ReceiveConnected(const FVector& WorldLocation, const FVector& Direction);
     void SetConnectorVisible(bool InVisible);
 };
 

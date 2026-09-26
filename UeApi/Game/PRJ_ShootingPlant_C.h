@@ -45,8 +45,8 @@ public:
     static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
     void ExecuteUbergraph_PRJ_ShootingPlant(int EntryPoint);
     UE_MULTICAST void GoBoom();
-    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, FDamageData DamageData, bool anyHealthLost);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}   // namespace Game::Enemies::ShootingPlant

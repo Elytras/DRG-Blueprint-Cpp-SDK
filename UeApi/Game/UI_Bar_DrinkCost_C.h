@@ -26,11 +26,11 @@ public:
     bool ShowUnlockCost;
     float Height;
     void ExecuteUbergraph_UI_Bar_DrinkCost(int EntryPoint);
-    void ShowFixedCost(TMap<class UResourceData*, int> Cost);
+    void ShowFixedCost(const TMap<class UResourceData*, int>& Cost);
     void OnFreeBeerRewardChanged(bool IsBeersFree);
     UE_COSMETIC void Construct();
     void ShowCost(class UDrinkableDataAsset* Drinkable_0, bool ShowUnlockPrice);
-    void SetCostWidgets(TMap<class UResourceData*, int> TargetMap);
+    void SetCostWidgets(const TMap<class UResourceData*, int>& TargetMap);
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

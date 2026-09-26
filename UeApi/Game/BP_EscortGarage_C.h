@@ -134,7 +134,7 @@ public:
     class UStaticMeshComponent* NewVar_0;
     class UAudioComponent* DrillingCue;
     void ExecuteUbergraph_BP_EscortGarage(int EntryPoint);
-    void BndEvt__BP_EscortGarage_KillEnemiesSphere_K2Node_ComponentBoundEvent_4_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__BP_EscortGarage_KillEnemiesSphere_K2Node_ComponentBoundEvent_4_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_AUTHORITY_ONLY void BndEvt__Damage_K2Node_ComponentBoundEvent_1_OnEnemyKilledDelegate__DelegateSignature(class AActor* Target, class UFSDPhysicalMaterial* PhysicalMaterial, bool bWasDirectHit);
     void ReceiveTick(float DeltaSeconds);
     void OnDropStarted();

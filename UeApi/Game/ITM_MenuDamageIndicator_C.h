@@ -26,7 +26,7 @@ public:
     void ExecuteUbergraph_ITM_MenuDamageIndicator(int EntryPoint);
     void SetMenu(class UUserWidget* EscapeMenu);
     void OnAnimFinished();
-    void OnHit(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

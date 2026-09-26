@@ -61,7 +61,7 @@ public:
     void AnimCountDownFinished();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetActionHeader(FText InText);
+    void SetActionHeader(const FText& InText);
     void SetInputText(FText InInputText, FText InInputTextController);
     void SetCountDown(float InTime, float InTotalDuration, bool& Finished);
     void BeginCountDown(float InDuration);

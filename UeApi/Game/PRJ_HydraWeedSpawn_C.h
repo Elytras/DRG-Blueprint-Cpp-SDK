@@ -27,7 +27,7 @@ public:
     class UParticleSystem* SeedImpactParticles;
     class USoundBase* SeedImpactSound;
     void ExecuteUbergraph_PRJ_HydraWeedSpawn(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void ReceiveBeginPlay();
     bool NewFunction_0();
 };

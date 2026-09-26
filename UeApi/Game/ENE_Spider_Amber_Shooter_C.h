@@ -40,7 +40,7 @@ public:
     static constexpr const char* Mesh_Infestation01__UeScsNode = "4c7720cf59fb7349b4732df87cf2da06";
     class AGameEvent* Event;
     void ExecuteUbergraph_ENE_Spider_Amber_Shooter(int EntryPoint);
-    void DeathDetailedBase(float amount, FDamageData DamageData, TArray<class UDamageTag*> Tags_0);
+    void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnEventFinished(bool eventSuccess);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnEventTriggered();

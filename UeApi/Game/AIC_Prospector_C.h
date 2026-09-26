@@ -40,7 +40,7 @@ public:
     void FirstWeakpointDestroyed();
     void OnRunning();
     void StartFleeing();
-    void Recieve_BlackboardValueChanged(FName KeyName);
+    void Recieve_BlackboardValueChanged(const FName& KeyName);
     void SetHackable();
     void OnMessageBehaviorTreeEvent_Event_0(FName Message);
     void OnDamageTaken();

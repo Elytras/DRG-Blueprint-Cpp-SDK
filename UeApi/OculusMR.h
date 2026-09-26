@@ -109,9 +109,9 @@ class UOculusMR_PlaneMeshComponent : public UMeshComponent
 {
 public:
     UE_CLASS("/Script/OculusMR", "OculusMR_PlaneMeshComponent");
-    void AddCustomMeshTriangles(TArray<FOculusMR_PlaneMeshTriangle> Triangles);
+    void AddCustomMeshTriangles(const TArray<FOculusMR_PlaneMeshTriangle>& Triangles);
     void ClearCustomMeshTriangles();
-    bool SetCustomMeshTriangles(TArray<FOculusMR_PlaneMeshTriangle> Triangles);
+    bool SetCustomMeshTriangles(const TArray<FOculusMR_PlaneMeshTriangle>& Triangles);
 };
 
 class UOculusMR_Settings : public UObject

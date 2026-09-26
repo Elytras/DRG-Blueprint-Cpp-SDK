@@ -71,7 +71,7 @@ public:
     class UVerticalBox* VBox_Mutators;
     class UVerticalBox* VBox_Warnings;
     void ExecuteUbergraph_WND_MissionBar_Normal(int EntryPoint);
-    void OnDifficultyChanged_Event_0(FGameDifficulty Setting);
+    void OnDifficultyChanged_Event_0(const FGameDifficulty& Setting);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetGeneratedMission(class UGeneratedMission* InMission);

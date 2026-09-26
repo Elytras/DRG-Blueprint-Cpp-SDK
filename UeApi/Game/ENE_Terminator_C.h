@@ -111,7 +111,7 @@ public:
     void BndEvt__ENE_Terminator_TerminatorShout_K2Node_ComponentBoundEvent_4_Delegate__DelegateSignature();
     UE_MULTICAST void Explode();
     void BndEvt__ENE_Terminator_Sphere_K2Node_ComponentBoundEvent_6_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
-    void BndEvt__ENE_Terminator_Sphere_K2Node_ComponentBoundEvent_4_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, FHitResult SweepResult);
+    void BndEvt__ENE_Terminator_Sphere_K2Node_ComponentBoundEvent_4_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void End();
     void Start();
     void BndEvt__ENE_Terminator_PawnSensing_K2Node_ComponentBoundEvent_5_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
@@ -124,7 +124,7 @@ public:
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     UE_MULTICAST void All_ShowCarve();
     void BndEvt__CarveAttack_K2Node_ComponentBoundEvent_1_MeleeAttackDelegate__DelegateSignature();
-    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_3_HitSig__DelegateSignature(float Damage, FDamageData DamageData, bool anyHealthLost);
+    void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_3_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void ReceiveBeginPlay();
     void OnCompleted_90FF725A419E06548840228AD88DAC76(FName NotifyName);
     void OnBlendOut_90FF725A419E06548840228AD88DAC76(FName NotifyName);

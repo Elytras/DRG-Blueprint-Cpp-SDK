@@ -60,7 +60,7 @@ public:
     static constexpr const char* Setup_Replay__UeName = "Setup Replay";
     void Setup_Game_Ended();
     static constexpr const char* Setup_Game_Ended__UeName = "Setup Game Ended";
-    void ReceiveReplayPackage(FJettyBootsReplay InPackage);
+    void ReceiveReplayPackage(const FJettyBootsReplay& InPackage);
     void RefreshHighScores();
     void ReceiveHighScoreChanged();
     UE_SERVER UE_RELIABLE void Server_GameEnded(FJettyBootsScore OutScore);

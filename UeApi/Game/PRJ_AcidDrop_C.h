@@ -20,7 +20,7 @@ public:
     class UParticleSystem* Impact_particles;
     static constexpr const char* Impact_particles__UeName = "Impact particles";
     void ExecuteUbergraph_PRJ_AcidDrop(int EntryPoint);
-    void OnImpacted(bool PredictedImpact, FHitResult HitResult);
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

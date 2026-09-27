@@ -141,8 +141,9 @@ template <class Sig> using TMulticastSparseDelegate = TMulticastInlineDelegate<S
    Length(). `A[i]` is EX_ArrayGetByRef. */
 #include "Containers.h"
 
-/* A container's braced member default, which AssetGen writes into the CDO / asset:
-   `TArray<int32> Primes = { 2, 3, 5 };`, `TMap<FName, int32> Cost = { { "Gold", 5 } };`. */
+/* A container's braced list. As a member default AssetGen writes it into the CDO / asset:
+   `TArray<int32> Primes = { 2, 3, 5 };`, `TMap<FName, int32> Cost = { { "Gold", 5 } };`. In a function, or as
+   the value of a `static inline const` class variable (UeMeta.h), it is a Make Array / Set / Map where it is used. */
 #include <initializer_list>
 
 template <class T> struct TArray {

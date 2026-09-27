@@ -242,6 +242,19 @@ initializer being the default - the editor offers a Get node and no Set. The VM 
 */
 
 /*
+An inline class variable needs no macro: C++'s own `static inline const` (or `static constexpr`) member
+
+    static inline const float HoldTime = 0.5f;
+    static inline const TArray<TSoftClassPtr<AItem>> Chargeable = {"/Game/A.A_C", "/Game/B.B_C"};
+
+is no Blueprint variable. Nothing is cooked for it, no property and no default: each use is its initializer, lowered
+where it is used (a number folded to its literal), a braced list a Make Array / Set / Map there. A range-for over an
+inline array of constants makes no array; each pass picks its element with a switch on the index. Contains on one
+makes none either: it compares the item with each element (not for text or structs, whose == differs from Contains').
+A class has no static storage, so a static that is not const is refused where it is used.
+*/
+
+/*
 The editor category of what follows it in a class, as an access specifier is the access of what follows it:
 
     UE_CATEGORY("Teleporter|Setup");

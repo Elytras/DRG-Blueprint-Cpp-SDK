@@ -42,7 +42,7 @@ public:
     void UpdateBarState(EHackingPodState State);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnProgress(float hackProgress);
-    void OnFightRemoved(TScriptInterface<class IBossFightInterface> BossFight_0);
+    void OnFightRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     void OnRemoveBossFight();
     UE_COSMETIC void Construct();
 };

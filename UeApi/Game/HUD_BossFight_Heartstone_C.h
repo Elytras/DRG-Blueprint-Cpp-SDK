@@ -40,7 +40,7 @@ public:
     void ExecuteUbergraph_HUD_BossFight_Heartstone(int EntryPoint);
     void OnShellCracked(int numberOfShellsCracked);
     void DeathFinished();
-    void OnBossRemoved(TScriptInterface<class IBossFightInterface> BossFight_0);
+    void OnBossRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     void OnProgressUpdated(float Progress);
     UE_COSMETIC void Construct();
     float CalcPercentage(float Progress, int& CurrStage);

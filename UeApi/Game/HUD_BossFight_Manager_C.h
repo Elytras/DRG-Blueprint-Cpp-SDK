@@ -34,10 +34,10 @@ public:
     void Setup_BossFights();
     static constexpr const char* Setup_BossFights__UeName = "Setup BossFights";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnNewBossFight(TScriptInterface<class IBossFightInterface> BossFight);
+    void OnNewBossFight(const TScriptInterface<class IBossFightInterface>& BossFight);
     UE_COSMETIC void Construct();
     void OnLoaded_7CEF0B6F41A50A9529F16780A3E45EE9(TSubclassOf<class UObject> Loaded);
-    void AddBossFight(TScriptInterface<class IBossFightInterface> BossFight);
+    void AddBossFight(const TScriptInterface<class IBossFightInterface>& BossFight);
     void AddCustomWidget(class UUserWidget* InWidget);
     void RemoveCustomWidget(class UUserWidget* InWidget);
 };

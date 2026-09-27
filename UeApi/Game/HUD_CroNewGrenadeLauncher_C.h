@@ -51,7 +51,7 @@ public:
     UE_COSMETIC void Construct();
     void SetData(class AItem* Item);
     void SwitchToHP();
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

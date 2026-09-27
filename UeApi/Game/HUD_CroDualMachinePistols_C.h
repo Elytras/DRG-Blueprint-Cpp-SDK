@@ -32,7 +32,7 @@ public:
     class APlayerCharacter* Character;
     class UHitscanBaseComponent* HitscanComponent;
     void ExecuteUbergraph_HUD_CroDualMachinePistols(int EntryPoint);
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);

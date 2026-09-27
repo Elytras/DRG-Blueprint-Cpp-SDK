@@ -33,7 +33,7 @@ public:
     UI_ProgressBar_C* UI_ProgressBar;
     void ExecuteUbergraph_HUD_CrossHair_Crossbow(int EntryPoint);
     void UpdateRecallProgress(float Progress);
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

@@ -32,7 +32,7 @@ public:
     float Opacity_Low;
     static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     void ExecuteUbergraph_HUD_CrosNewMinigun(int EntryPoint);
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);

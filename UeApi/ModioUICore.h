@@ -131,7 +131,7 @@ class IModioUIAsyncHandlerWidget
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUIAsyncHandlerWidget");
-    void LinkAsyncOperationWidget(TScriptInterface<class IModioUIAsyncOperationWidget> Widget);
+    void LinkAsyncOperationWidget(const TScriptInterface<class IModioUIAsyncOperationWidget>& Widget);
     UE_PURE EModioUIAsyncOperationWidgetState GetAsyncOperationState() const;
 };
 
@@ -195,11 +195,11 @@ class UModioNotificationParamsLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/ModioUICore", "ModioNotificationParamsLibrary");
     static FModioNotificationParams AddFormatText(FModioNotificationParams& NotificationParams, const FName& Name_0, const FText& Text);
-    static FModioNotificationParams CreateInstallationNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
+    static FModioNotificationParams CreateInstallationNotification(FModioErrorCode StatusCode, const TScriptInterface<class IModioModInfoUIDetails>& ModInfo);
     static FModioNotificationParams CreateNotificationParams(FModioErrorCode StatusCode, const FText& TitleText, const FText& SuccessText, const FText& ErrorText);
-    static FModioNotificationParams CreateRatingNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
-    static FModioNotificationParams CreateSubscriptionNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
-    static FModioNotificationParams CreateUninstallNotification(FModioErrorCode StatusCode, TScriptInterface<class IModioModInfoUIDetails> ModInfo);
+    static FModioNotificationParams CreateRatingNotification(FModioErrorCode StatusCode, const TScriptInterface<class IModioModInfoUIDetails>& ModInfo);
+    static FModioNotificationParams CreateSubscriptionNotification(FModioErrorCode StatusCode, const TScriptInterface<class IModioModInfoUIDetails>& ModInfo);
+    static FModioNotificationParams CreateUninstallNotification(FModioErrorCode StatusCode, const TScriptInterface<class IModioModInfoUIDetails>& ModInfo);
     static FModioNotificationParams SetFloatArg(FModioNotificationParams& NotificationParams, FString Name_0, float Value);
     static FModioNotificationParams SetIntegerArg(FModioNotificationParams& NotificationParams, FString Name_0, int Value);
     static FModioNotificationParams SetStringArg(FModioNotificationParams& NotificationParams, FString Name_0, FString Value);
@@ -221,13 +221,13 @@ class IModioUINotificationController
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUINotificationController");
-    void DisplayNotification(TScriptInterface<class IModioUINotification> Notification);
+    void DisplayNotification(const TScriptInterface<class IModioUINotification>& Notification);
     void DisplayNotificationManual(const FText& Title, const FText& Message, bool bIsError);
     void DisplayNotificationParams(const FModioNotificationParams& Params_0);
     void HandleDisplayManual(const FText& Title, const FText& Message, bool bIsError);
     void HandleDisplayNotificationParams(const FModioNotificationParams& Params_0);
     void HandleDisplayNotificationWidget(TScriptInterface<class IModioUINotification>& Notification);
-    void RegisterUserWidget(TScriptInterface<class IModioUINotificationController> ControllerWidget);
+    void RegisterUserWidget(const TScriptInterface<class IModioUINotificationController>& ControllerWidget);
 };
 
 class IModioUISubscriptionsChangedReceiver

@@ -29,7 +29,7 @@ public:
     void OnHitAnimFinished();
     void OnHitAnimStarted();
     UE_COSMETIC void Construct();
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     void StartAnimation(int Priority_0, float Scale, FLinearColor Color, bool ShowKillImage);
 };
 

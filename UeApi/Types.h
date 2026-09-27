@@ -75,13 +75,16 @@ template <class T> struct TSubclassOf {
   operator UClass *() const { return Ptr; }
 };
 
-/* A soft pointer to a subclass passes where one to its parent is wanted, as UE's converts. */
+/* A soft pointer to a subclass passes where one to its parent is wanted, as UE's converts. Conv.h
+   adds Kismet's conversions: from the object (the class) it names and from a soft path, to its path
+   as a string, and back with an explicit operator, `(AItem *)Soft`, null unless it is loaded. */
 template <class T> struct TSoftObjectPtr {
   WChar *Path;
   TSoftObjectPtr() = default;
   TSoftObjectPtr(const char *) {}
   TSoftObjectPtr(const WChar *) {}
   template <class U> TSoftObjectPtr(const TSoftObjectPtr<U> &) {}
+  UE_CONV_TSoftObjectPtr
 };
 
 template <class T> struct TSoftClassPtr {
@@ -90,6 +93,7 @@ template <class T> struct TSoftClassPtr {
   TSoftClassPtr(const char *) {}
   TSoftClassPtr(const WChar *) {}
   template <class U> TSoftClassPtr(const TSoftClassPtr<U> &) {}
+  UE_CONV_TSoftClassPtr
 };
 
 template <class T, class U> T *Cast(U *) { return nullptr; }

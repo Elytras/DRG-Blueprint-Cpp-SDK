@@ -26595,7 +26595,7 @@ public:
     void StartAmmoSwitch();
     void UpdateRecallProgress();
     UE_PURE bool GetIsDefaultArrowEquipped() const;
-    UE_PURE float GetSpecialArrowEffectDuration(TSubclassOf<class UStatusEffect> Effect) const;
+    UE_PURE float GetSpecialArrowEffectDuration(const TSubclassOf<class UStatusEffect>& Effect) const;
     UE_PURE int GetTotalArrowCount(bool InDefaultArrowCount) const;
 };
 
@@ -32363,7 +32363,7 @@ public:
     TScriptInterface<class IHealth> TargetHealth;
     float AnimatedHealth;
     float MaxHealth;
-    void SetHealthComponent(TScriptInterface<class IHealth> Health, float Damage);
+    void SetHealthComponent(const TScriptInterface<class IHealth>& Health, float Damage);
     UE_PURE float GetCurrentHealth() const;
 };
 
@@ -34331,12 +34331,12 @@ public:
     void ReceiveTargetLost();
     void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
     void ResetCurrentTarget();
-    void SetCurrentTarget(class AActor* NewActor, TScriptInterface<class IHealth> HealthComponent, float OverrideTargetLostTime);
+    void SetCurrentTarget(class AActor* NewActor, const TScriptInterface<class IHealth>& HealthComponent, float OverrideTargetLostTime);
     bool GetCharacterTemperatureEffect(float& TemperatureEffect) const;
     UE_PURE class AActor* GetLookingAtActor() const;
     UE_PURE class UHealthComponentBase* GetLookingAtHealth() const;
-    UE_PURE bool IsBossFight(TScriptInterface<class IHealth> Health) const;
-    UE_PURE bool IsValidTarget(class AActor* TargetActor, TScriptInterface<class IHealth> TargetHealth) const;
+    UE_PURE bool IsBossFight(const TScriptInterface<class IHealth>& Health) const;
+    UE_PURE bool IsValidTarget(class AActor* TargetActor, const TScriptInterface<class IHealth>& TargetHealth) const;
 };
 
 class ULookingAtContentWidget : public UUserWidget
@@ -34348,7 +34348,7 @@ public:
     void ReceiveNewTarget(class AActor* InCurrentTarget);
     void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
     void RegisterWeakPointHit();
-    void UpdateCurrentTarget(float DeltaSeconds, class AActor* InTargetActor, TScriptInterface<class IHealth> InTargetHealthComponent);
+    void UpdateCurrentTarget(float DeltaSeconds, class AActor* InTargetActor, const TScriptInterface<class IHealth>& InTargetHealthComponent);
     UE_PURE float GetTargetHealthPct() const;
     UE_PURE FText GetTargetName() const;
     UE_PURE FText GetTargetOwnerName() const;

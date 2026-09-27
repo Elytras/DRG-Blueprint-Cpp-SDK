@@ -44,7 +44,7 @@ public:
     bool HealthBarVisible;
     void ExecuteUbergraph_HUD_EnemyTargeting(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnDamagedEnemy(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void Construct();
     void ReceiveNewTarget(class AActor* InCurrentTarget);
     void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);

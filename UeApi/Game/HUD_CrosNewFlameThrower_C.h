@@ -37,7 +37,7 @@ public:
     static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     void ExecuteUbergraph_HUD_CrosNewFlameThrower(int EntryPoint);
     void ShowRangeMarker();
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     UE_COSMETIC void Construct();

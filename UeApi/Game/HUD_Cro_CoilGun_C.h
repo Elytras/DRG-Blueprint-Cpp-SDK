@@ -35,7 +35,7 @@ public:
     static constexpr const char* CH_Full_Inner_0__UeName = "CH Full Inner";
     void ExecuteUbergraph_HUD_Cro_CoilGun(int EntryPoint);
     void OnChargeChanged(float charge);
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void SetData(class AItem* Item);

@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_HUD_BossFight_BaseEntry(int EntryPoint);
     void Setup_Invulnerability();
     static constexpr const char* Setup_Invulnerability__UeName = "Setup Invulnerability";
-    void OnFightRemoved(TScriptInterface<class IBossFightInterface> BossFight_0);
+    void OnFightRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     UE_COSMETIC void Construct();
     void OnHealthChanged(float Health);
     void OnDisengaged();

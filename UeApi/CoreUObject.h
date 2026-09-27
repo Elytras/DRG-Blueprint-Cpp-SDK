@@ -435,6 +435,7 @@ struct FColor
 
     FColor() = default;
     FColor(uint8 R, uint8 G, uint8 B, uint8 A = 255) {}
+    UE_CONV_FColor
 };
 
 struct FFallbackStruct

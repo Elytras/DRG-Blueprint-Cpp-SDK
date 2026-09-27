@@ -308,7 +308,7 @@ public:
     void TestDorettaHead();
     UE_MULTICAST void All_PlayPetAnimation();
     void BndEvt__PetDorettaUsable_K2Node_ComponentBoundEvent_15_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void On_Damage_Enemy_While_Riding(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void On_Damage_Enemy_While_Riding(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     static constexpr const char* On_Damage_Enemy_While_Riding__UeName = "On Damage Enemy While Riding";
     void BndEvt__Achievement_Collider_K2Node_ComponentBoundEvent_14_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__Achievement_Collider_K2Node_ComponentBoundEvent_13_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);

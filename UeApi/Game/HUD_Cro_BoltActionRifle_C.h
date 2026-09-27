@@ -58,7 +58,7 @@ public:
     float Opacity_Medium;
     static constexpr const char* Opacity_Medium__UeName = "Opacity Medium";
     void ExecuteUbergraph_HUD_Cro_BoltActionRifle(int EntryPoint);
-    void OnDamagedEnemy_Event(TScriptInterface<class IHealth> EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetData(class AItem* Item);
     UE_COSMETIC void Construct();

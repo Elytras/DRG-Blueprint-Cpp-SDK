@@ -22329,16 +22329,16 @@ public:
     static bool ComponentOverlapActors(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
     static bool ComponentOverlapComponents(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
     static void ControlScreensaver(bool bAllowScreenSaver);
-    UE_PURE static TSoftClassPtr<class UClass> Conv_ClassToSoftClassReference(TSubclassOf<class UObject> Class_0);
-    UE_PURE static class UObject* Conv_InterfaceToObject(TScriptInterface<class IInterface> Interface);
+    UE_PURE static TSoftClassPtr<class UClass> Conv_ClassToSoftClassReference(const TSubclassOf<class UObject>& Class_0);
+    UE_PURE static class UObject* Conv_InterfaceToObject(const TScriptInterface<class IInterface>& Interface);
     UE_PURE static TSoftObjectPtr<class UObject> Conv_ObjectToSoftObjectReference(class UObject* Object);
     UE_PURE static FString Conv_PrimaryAssetIdToString(FPrimaryAssetId PrimaryAssetId);
     UE_PURE static FString Conv_PrimaryAssetTypeToString(FPrimaryAssetType PrimaryAssetType);
     UE_PURE static TSoftClassPtr<class UClass> Conv_SoftClassPathToSoftClassRef(const FSoftClassPath& SoftClassPath);
-    UE_PURE static TSubclassOf<class UObject> Conv_SoftClassReferenceToClass(TSoftClassPtr<class UClass> SoftClass);
-    UE_PURE static FString Conv_SoftClassReferenceToString(TSoftClassPtr<class UClass> SoftClassReference);
-    UE_PURE static class UObject* Conv_SoftObjectReferenceToObject(TSoftObjectPtr<class UObject> SoftObject);
-    UE_PURE static FString Conv_SoftObjectReferenceToString(TSoftObjectPtr<class UObject> SoftObjectReference);
+    UE_PURE static TSubclassOf<class UObject> Conv_SoftClassReferenceToClass(const TSoftClassPtr<class UClass>& SoftClass);
+    UE_PURE static FString Conv_SoftClassReferenceToString(const TSoftClassPtr<class UClass>& SoftClassReference);
+    UE_PURE static class UObject* Conv_SoftObjectReferenceToObject(const TSoftObjectPtr<class UObject>& SoftObject);
+    UE_PURE static FString Conv_SoftObjectReferenceToString(const TSoftObjectPtr<class UObject>& SoftObjectReference);
     UE_PURE static TSoftObjectPtr<class UObject> Conv_SoftObjPathToSoftObjRef(const FSoftObjectPath& SoftObjectPath);
     UE_PURE static FString ConvertToAbsolutePath(FString Filename);
     UE_PURE static FString ConvertToRelativePath(FString Filename);
@@ -22384,8 +22384,8 @@ public:
     static int EndTransaction();
     UE_PURE static bool EqualEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
     UE_PURE static bool EqualEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
-    UE_PURE static bool EqualEqual_SoftClassReference(TSoftClassPtr<class UClass> A, TSoftClassPtr<class UClass> B);
-    UE_PURE static bool EqualEqual_SoftObjectReference(TSoftObjectPtr<class UObject> A, TSoftObjectPtr<class UObject> B);
+    UE_PURE static bool EqualEqual_SoftClassReference(const TSoftClassPtr<class UClass>& A, const TSoftClassPtr<class UClass>& B);
+    UE_PURE static bool EqualEqual_SoftObjectReference(const TSoftObjectPtr<class UObject>& A, const TSoftObjectPtr<class UObject>& B);
     static void ExecuteConsoleCommand(class UObject* WorldContextObject, FString Command, class APlayerController* SpecificPlayer);
     static void ExecuteConsoleCommand(FString Command, class APlayerController* SpecificPlayer);
     static void FlushDebugStrings(class UObject* WorldContextObject);
@@ -22465,8 +22465,8 @@ public:
     UE_PURE static bool IsValidClass(class UClass* Class_0);
     UE_PURE static bool IsValidPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
     UE_PURE static bool IsValidPrimaryAssetType(FPrimaryAssetType PrimaryAssetType);
-    UE_PURE static bool IsValidSoftClassReference(TSoftClassPtr<class UClass> SoftClassReference);
-    UE_PURE static bool IsValidSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference);
+    UE_PURE static bool IsValidSoftClassReference(const TSoftClassPtr<class UClass>& SoftClassReference);
+    UE_PURE static bool IsValidSoftObjectReference(const TSoftObjectPtr<class UObject>& SoftObjectReference);
     static void K2_ClearAndInvalidateTimerHandle(class UObject* WorldContextObject, FTimerHandle& Handle);
     static void K2_ClearAndInvalidateTimerHandle(FTimerHandle& Handle);
     static void K2_ClearTimer(class UObject* Object, FString FunctionName);
@@ -22547,8 +22547,8 @@ public:
     UE_PURE static FString NormalizeFilename(FString InFilename);
     UE_PURE static bool NotEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
     UE_PURE static bool NotEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
-    UE_PURE static bool NotEqual_SoftClassReference(TSoftClassPtr<class UClass> A, TSoftClassPtr<class UClass> B);
-    UE_PURE static bool NotEqual_SoftObjectReference(TSoftObjectPtr<class UObject> A, TSoftObjectPtr<class UObject> B);
+    UE_PURE static bool NotEqual_SoftClassReference(const TSoftClassPtr<class UClass>& A, const TSoftClassPtr<class UClass>& B);
+    UE_PURE static bool NotEqual_SoftObjectReference(const TSoftObjectPtr<class UObject>& A, const TSoftObjectPtr<class UObject>& B);
     static void ParseCommandLine(FString InCmdLine, TArray<FString>& OutTokens, TArray<FString>& OutSwitches, TMap<FString, FString>& OutParams);
     UE_PURE static bool ParseParam(FString inString, FString InParam);
     static bool ParseParamValue(FString inString, FString InParam, FString& OutValue);
@@ -22574,14 +22574,14 @@ public:
     static void SetFloatPropertyByName(class UObject* Object, FName PropertyName, float Value);
     static void SetGamepadsBlockDeviceFeedback(bool bBlock);
     static void SetInt64PropertyByName(class UObject* Object, FName PropertyName, int64 Value);
-    static void SetInterfacePropertyByName(class UObject* Object, FName PropertyName, TScriptInterface<class IInterface> Value);
+    static void SetInterfacePropertyByName(class UObject* Object, FName PropertyName, const TScriptInterface<class IInterface>& Value);
     static void SetIntPropertyByName(class UObject* Object, FName PropertyName, int Value);
     static void SetLinearColorPropertyByName(class UObject* Object, FName PropertyName, const FLinearColor& Value);
     static void SetNamePropertyByName(class UObject* Object, FName PropertyName, const FName& Value);
     static void SetObjectPropertyByName(class UObject* Object, FName PropertyName, class UObject* Value);
     static void SetRotatorPropertyByName(class UObject* Object, FName PropertyName, const FRotator& Value);
-    static void SetSoftClassPropertyByName(class UObject* Object, FName PropertyName, TSoftClassPtr<class UClass> Value);
-    static void SetSoftObjectPropertyByName(class UObject* Object, FName PropertyName, TSoftObjectPtr<class UObject> Value);
+    static void SetSoftClassPropertyByName(class UObject* Object, FName PropertyName, const TSoftClassPtr<class UClass>& Value);
+    static void SetSoftObjectPropertyByName(class UObject* Object, FName PropertyName, const TSoftObjectPtr<class UObject>& Value);
     static void SetStringPropertyByName(class UObject* Object, FName PropertyName, FString Value);
     static void SetStructurePropertyByName(class UObject* Object, FName PropertyName, const FGenericStruct& Value);
     static void SetSuppressViewportTransitionMessage(class UObject* WorldContextObject, bool bState);
@@ -26874,7 +26874,11 @@ inline bool operator==(const FString&, const FString&) { return {}; }
 inline bool operator!=(const FString&, const FString&) { return {}; }
 inline bool operator==(const FPrimaryAssetId&, const FPrimaryAssetId&) { return {}; }
 inline bool operator==(const FPrimaryAssetType&, const FPrimaryAssetType&) { return {}; }
+template <class A, class B> inline bool operator==(const TSoftClassPtr<A>&, const TSoftClassPtr<B>&) { return {}; }
+template <class A, class B> inline bool operator==(const TSoftObjectPtr<A>&, const TSoftObjectPtr<B>&) { return {}; }
 inline bool operator!=(const FPrimaryAssetId&, const FPrimaryAssetId&) { return {}; }
 inline bool operator!=(const FPrimaryAssetType&, const FPrimaryAssetType&) { return {}; }
+template <class A, class B> inline bool operator!=(const TSoftClassPtr<A>&, const TSoftClassPtr<B>&) { return {}; }
+template <class A, class B> inline bool operator!=(const TSoftObjectPtr<A>&, const TSoftObjectPtr<B>&) { return {}; }
 inline bool operator==(const FText&, const FText&) { return {}; }
 inline bool operator!=(const FText&, const FText&) { return {}; }

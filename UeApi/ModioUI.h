@@ -1450,11 +1450,11 @@ class IModioUIModDetailsDisplay
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIModDetailsDisplay");
-    void DisplayModDetails(TScriptInterface<class IModioModInfoUIDetails> details);
+    void DisplayModDetails(const TScriptInterface<class IModioModInfoUIDetails>& details);
     void DisplayModDetailsForID(const FModioModID& ModId);
     void HandleDisplayModDetails(TScriptInterface<class IModioModInfoUIDetails>& details);
     void HandleDisplayModDetailsForID(const FModioModID& ModId);
-    void RegisterUserWidget(TScriptInterface<class IModioUIModDetailsDisplay> DisplayWidget);
+    void RegisterUserWidget(const TScriptInterface<class IModioUIModDetailsDisplay>& DisplayWidget);
 };
 
 class IModioUIPopupMenuContentWidget
@@ -1526,7 +1526,7 @@ class UModioAsyncOpWrapperWidget : public UBorder
 public:
     UE_CLASS("/Script/ModioUI", "ModioAsyncOpWrapperWidget");
     TScriptInterface<class IModioUIAsyncOperationWidget> ActualWidget;
-    void SetActualAsyncOperationWidget(TScriptInterface<class IModioUIAsyncOperationWidget> Widget);
+    void SetActualAsyncOperationWidget(const TScriptInterface<class IModioUIAsyncOperationWidget>& Widget);
 };
 
 class UModioAuthenticationContextUI : public UObject

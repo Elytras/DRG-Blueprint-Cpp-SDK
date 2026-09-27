@@ -32,7 +32,7 @@ public:
     void ExecuteUbergraph_HUD_BossFight_PlagueMeteor(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void DeathFinished();
-    void OnBossRemoved(TScriptInterface<class IBossFightInterface> BossFight_0);
+    void OnBossRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     void MeteorHealthChanged(float CurrentProgress);
     UE_COSMETIC void Construct();
 };

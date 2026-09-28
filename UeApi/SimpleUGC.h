@@ -326,6 +326,7 @@ public:
     void SetModsAsRecentlyInstalled(TArray<FString> RecentMods);
     void SetPackagesAsRecentlyInstalled(TArray<class UUGCPackage*> RecentMods);
     UE_PURE bool IsModPendingUninstall(class UUGCPackage* InMod) const;
+    static UUGCSubsystem* Get();
 };
 
 class UModioModInfoWrapper_Windows : public UModioModInfoWrapper
@@ -358,4 +359,9 @@ class UUGCSubsystem_Windows : public UUGCSubsystem
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "UGCSubsystem_Windows");
+    static UUGCSubsystem_Windows* Get();
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UUGCSubsystem* UUGCSubsystem::Get() { return (UUGCSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UUGCSubsystem::StaticClass()); }
+inline UUGCSubsystem_Windows* UUGCSubsystem_Windows::Get() { return (UUGCSubsystem_Windows*)USubsystemBlueprintLibrary::GetEngineSubsystem(UUGCSubsystem_Windows::StaticClass()); }

@@ -28,4 +28,8 @@ public:
     TArray<FName> GetCollectionsContainingAsset(FName AssetPathName);
     TArray<FName> GetCollectionsContainingAssetData(const FAssetData& AssetData);
     TArray<FName> GetCollectionsContainingAssetPtr(class UObject* AssetPtr);
+    static UAssetTagsSubsystem* Get();
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UAssetTagsSubsystem* UAssetTagsSubsystem::Get() { return (UAssetTagsSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UAssetTagsSubsystem::StaticClass()); }

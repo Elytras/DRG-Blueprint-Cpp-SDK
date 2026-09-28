@@ -776,6 +776,7 @@ class ULandscapeSubsystem : public UTickableWorldSubsystem
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeSubsystem");
+    static ULandscapeSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class ULandscapeWeightmapUsage : public UObject
@@ -857,3 +858,6 @@ public:
     UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeVisibilityMask");
     FGuid ExpressionGUID;
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline ULandscapeSubsystem* ULandscapeSubsystem::Get(class UObject* WorldContextObject) { return (ULandscapeSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, ULandscapeSubsystem::StaticClass()); }

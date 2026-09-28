@@ -223,6 +223,14 @@ is the list; a target with `::` is a library static, without it a free inline fu
 */
 
 /*
+A subsystem: `UUGCSubsystem::Get()`, or `GetSubsystem<UUGCSubsystem>()`. genueapi gives every class under a subsystem
+kind (engine, game instance, world, local player) a static Get calling USubsystemBlueprintLibrary's getter for that
+kind, as the editor's Get node does. A world context left out is this, the node's hidden pin; `Get(Other)` asks
+Other's world, and a local player subsystem also takes a player controller.
+*/
+template <class T> inline T *GetSubsystem() { return T::Get(); }
+
+/*
 Calling the parent's implementation needs no macro either: inside an override, `Base::Method(args)` runs the
 parent's Method on this object and comes back - the editor's "Add call to parent function". It works for a mod
 parent and for a game or engine one (`AActor::ReceiveBeginPlay()` is a no-op there unless the parent is a

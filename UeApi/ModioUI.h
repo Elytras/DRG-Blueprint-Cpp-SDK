@@ -2427,6 +2427,7 @@ public:
     void HandleInputModeChanged(EModioUIInputMode NewDevice);
     void HandleOnGlobalMouseClick();
     void SetCurrentFocusTarget(class UWidget* CurrentTarget);
+    static UModioUI4Subsystem* Get();
 };
 
 class UModioUIDefaultAuthProvider : public UObject
@@ -2494,3 +2495,6 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioWidgetSwitcher");
     TMulticastInlineDelegate<void(int Index_0)> OnActiveWidgetChanged;
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UModioUI4Subsystem* UModioUI4Subsystem::Get() { return (UModioUI4Subsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UModioUI4Subsystem::StaticClass()); }

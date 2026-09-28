@@ -360,4 +360,8 @@ public:
     void SubscriptionHandler(FModioErrorCode ErrorCode, FModioModID ID);
     void UninstallHandler(FModioErrorCode ErrorCode, FModioModID ID);
     void UnsubscribeHandler(FModioErrorCode ErrorCode, FModioModID ID);
+    static UModioUISubsystem* Get();
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UModioUISubsystem* UModioUISubsystem::Get() { return (UModioUISubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UModioUISubsystem::StaticClass()); }

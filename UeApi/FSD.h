@@ -13614,6 +13614,7 @@ public:
     UE_PURE static bool IsScreenFadingToBlack(class UObject* WorldContext);
     UE_PURE static bool IsScreenFadingToBlack();
     UE_PURE float GetCurrentFadeAmount() const;
+    static UFadeScreenSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UFallingStateComponent : public UCharacterStateComponent
@@ -17532,6 +17533,7 @@ public:
     float WhizByMaxDistanceFromTrajectory;
     float WhizBySpeed;
     void AddTracer(FVector Origin, const FVector& Destination, float Speed, class UParticleSystem* particle, float MinDistance, float Offset, class UParticleSystem* Trail);
+    static UTracerManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UTrackMovementStateComponent : public UCharacterStateComponent
@@ -19572,6 +19574,7 @@ public:
     UE_PURE static FString MessageSenderIdAsString(const FFSDChatMessage& Msg);
     void ClearMessages();
     void LatestMessages(int Num, bool resetAge, TArray<FFSDChatMessage>& OutMessages);
+    static UMessagingSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USavableDataAsset : public UDataAsset
@@ -19849,6 +19852,7 @@ public:
     UE_CLASS("/Script/FSD", "HUDActorTrackingSubsystem");
     TMulticastInlineDelegate<void(bool boolValue)> OnToggleTrackingEvent;
     TMulticastInlineDelegate<void(bool boolValue)> OnShowAlwaysTrackedEvent;
+    static UHUDActorTrackingSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UFlatDamageBonus : public UDamageBonusBase
@@ -20132,6 +20136,7 @@ public:
     bool PlayerReviewUIAvailable(bool ReviewActiveMatch);
     void ShowPlayerReviewUI(bool ReviewActiveMatch);
     void StartActivity(class APlayerState* PlayerState, class UGameActivityType* Activity);
+    static UActivitySubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UGameActivitySettings : public UDataAsset
@@ -20266,6 +20271,7 @@ class UDynamicMeshScaler : public UWorldSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "DynamicMeshScaler");
+    static UDynamicMeshScaler* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UBTService_UpdateFlyingMoveToTarget : public UBTService
@@ -20307,6 +20313,7 @@ class UActorTrackingSubsystem : public UWorldSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "ActorTrackingSubsystem");
+    static UActorTrackingSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UDropSpikeTrackingSubsystem : public UWorldSubsystem
@@ -20315,6 +20322,7 @@ public:
     UE_CLASS("/Script/FSD", "DropSpikeTrackingSubsystem");
     void IncrementSpikeCount();
     UE_PURE int GetSpikeCount() const;
+    static UDropSpikeTrackingSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UAnimNotifyState_ConstrainItem : public UAnimNotifyState
@@ -20428,6 +20436,7 @@ class UOverlapTrackingSubsystem : public UWorldSubsystem
 public:
     UE_CLASS("/Script/FSD", "OverlapTrackingSubsystem");
     TArray<FOverlapPair> Overlaps;
+    static UOverlapTrackingSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class AExampleActor : public AActor
@@ -21982,6 +21991,7 @@ class UAssetLoader : public UGameInstanceSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "AssetLoader");
+    static UAssetLoader* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class AAsyncLevelPersistanceActor : public AActor
@@ -22037,6 +22047,7 @@ public:
     void ReleaseAllHandles();
     class UObject* SyncLoadAsset(TSoftObjectPtr<class UObject> Asset);
     TSubclassOf<class UObject> SyncLoadClass(TSoftClassPtr<class UClass> Asset);
+    static UAsyncManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UMolotovComponent : public UActorComponent
@@ -23466,6 +23477,7 @@ class UGDKRateLimiter : public UGameInstanceSubsystem
 public:
     UE_CLASS("/Script/FSD", "GDKRateLimiter");
     class UFSDRateLimiter* Handler;
+    static UGDKRateLimiter* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UEntranceFeature : public URoomFeature
@@ -24155,6 +24167,7 @@ public:
     void DeregisterBossFight(class AActor* boss);
     void RegisterBossFight(TScriptInterface<class IBossFightInterface> BossFight);
     void RemoveCustomBossFightWidget(class UUserWidget* InWidget);
+    static UBossFightSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class IBossFightInterface
@@ -24886,6 +24899,7 @@ class UInstancedNiagaraSubsystem : public UWorldSubsystem
 public:
     UE_CLASS("/Script/FSD", "InstancedNiagaraSubsystem");
     TMap<class UNiagaraSystem*, class UInstancedNiagaraComponent*> SystemToComponent;
+    static UInstancedNiagaraSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UCamapaignCompletedRequirement : public UCampaignRequirement
@@ -25561,6 +25575,7 @@ class UDamageSubsystem : public UGameInstanceSubsystem
 public:
     UE_CLASS("/Script/FSD", "DamageSubsystem");
     TArray<FDamageSubsystemItem> Items;
+    static UDamageSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UClusterbombSpawner : public UActorComponent
@@ -28728,6 +28743,7 @@ public:
     void RecordSeasonXpGained(int Gained, int LastLevel, bool Positive);
     void RecordSpecialEventHappening(FString EventName, bool SuccessfullySpawned);
     void RecordTreeOfVanityClaim(int NodeID);
+    static UDSTelemetryWrapper* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class ADualWieldWeapon : public AAmmoDrivenWeapon
@@ -29288,6 +29304,7 @@ public:
     UE_CLASS("/Script/FSD", "PerkSubsystem");
     TMap<class UPerkAsset*, class UPerkDelegateItem*> PerkDelegates;
     UE_PURE class UPerkDelegateItem* GetPerkDelegates(class UPerkAsset* Perk);
+    static UPerkSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USpawnEffectsComponent : public UActorComponent
@@ -30219,6 +30236,7 @@ class UFadeVisibilitySubSystem : public UWorldSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "FadeVisibilitySubSystem");
+    static UFadeVisibilitySubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UFakeFallComponent : public UActorComponent
@@ -30516,6 +30534,7 @@ public:
     static void RegisterFlareGunProjectile(class AFlareGunProjectile* flareprj);
     static void UnregisterFlare(class AFlare* Flare);
     static void UnregisterFlareGunProjectile(class AFlareGunProjectile* flareprj);
+    static UFlareController* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UPerkAsset : public UDataAsset
@@ -31125,6 +31144,7 @@ public:
     UE_PURE EHolidayType GetHolidayType() const;
     UE_PURE bool IsEventActive(class UFSDEvent* FSDEvent) const;
     UE_PURE bool IsEventTypeActive(EHolidayType FSDEvent) const;
+    static UFSDEventManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UProceduralFunctionLibrary : public UBlueprintFunctionLibrary
@@ -31618,6 +31638,7 @@ public:
     UE_PURE class UReward* GetTreeOfVanityReward(class UReward* currentReward) const;
     UE_PURE bool HasClaimedAllRewards() const;
     void SetSeasonCompletedAnnounced(bool IsAnnounced) const;
+    static USeasonsSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UFuelLineConnectPoint : public UTrackBuilderConnectPoint
@@ -32401,6 +32422,7 @@ public:
     UE_CLASS("/Script/FSD", "PresenceSubSystem");
     class UDiscordWrapper* DiscordWI;
     class UCommunityGoalWrapper* CommunityWI;
+    static UPresenceSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class ITriggerAI
@@ -34591,6 +34613,7 @@ public:
     void SetIsPaused(bool IsPaused);
     UE_AUTHORITY_ONLY void StopCategory(class UMusicCategory* Category);
     UE_AUTHORITY_ONLY void StopHandle(FMusicHandle Handle);
+    static UMusicManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UMinersManualData : public UDataAsset
@@ -34679,6 +34702,7 @@ public:
     UE_PURE TArray<class UGeneratedMission*> GetAvailableMissions();
     class UGeneratedMission* GetMissionFromSeeds(const FGlobalMissionSeed& GlobalSeed, int MissionSeed);
     UE_PURE TArray<class UGeneratedMission*> GetMissions(const FGlobalMissionSeed& Seed);
+    static UMissionGenerationManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UObjectTemperatureComponent : public UTemperatureComponent
@@ -35258,6 +35282,7 @@ public:
     void AddSpaceRigNotification(FSpaceRigNotification NewNotification, FString ID, bool TriggerEvent);
     void ClearCampaignNotifications();
     bool GetNextSpaceRigNotification(FSpaceRigNotification& NextNotification);
+    static UNotificationSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UItemID : public USavableDataAsset
@@ -36268,6 +36293,7 @@ public:
     UE_PURE TArray<FProfileCategoryTiming> GetCategoryTimings() const;
     UE_PURE TArray<FProfileEntry> GetEntries() const;
     UE_PURE float GetTotalTime() const;
+    static UProfilingSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class AFakePhysicsProjectile : public AProjectileBase
@@ -36728,6 +36754,7 @@ public:
     bool Receive_GetPendingRewards(FPendingRewardsStats& OutStats, FPendingRewards& OutRewards) const;
     UE_PURE bool ShouldPendingRewardsBeGiven() const;
     UE_PURE bool ShouldPendingRewardsBeShown() const;
+    static URewardsSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class URewardWidget : public UUserWidget
@@ -37220,6 +37247,7 @@ public:
     TMap<FName, int> StoredIntValues;
     TSet<class USeamlessTravelEventKey*> EventKeys;
     void ClearGameStateSeamlessTravelStorage();
+    static USeamlessTravelStorage* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USeason : public USavableDataAsset
@@ -37784,6 +37812,7 @@ class USoundClassManager : public UGameInstanceSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "SoundClassManager");
+    static USoundClassManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USoundMixManagerComponent : public UActorComponent
@@ -37999,6 +38028,7 @@ public:
     UE_CLASS("/Script/FSD", "StatHat");
     void AddStatCount(FString Key, int Count);
     void AddStatValue(FString Key, float Value);
+    static UStatHat* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class IStatusAddedComponent
@@ -39109,6 +39139,7 @@ class UWeaponEffectSubsystem : public UWorldSubsystem
 public:
     UE_CLASS("/Script/FSD", "WeaponEffectSubsystem");
     TSubclassOf<class AActor> ElectrifyPlatformsActorClass;
+    static UWeaponEffectSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class ASawedOffShotgun : public AAmmoDrivenWeapon
@@ -39287,3 +39318,36 @@ class UZipLineUsable : public UInstantUsable
 public:
     UE_CLASS("/Script/FSD", "ZipLineUsable");
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UFadeScreenSubSystem* UFadeScreenSubSystem::Get(class UObject* WorldContextObject) { return (UFadeScreenSubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UFadeScreenSubSystem::StaticClass()); }
+inline UTracerManager* UTracerManager::Get(class UObject* WorldContextObject) { return (UTracerManager*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UTracerManager::StaticClass()); }
+inline UMessagingSubSystem* UMessagingSubSystem::Get(class UObject* WorldContextObject) { return (UMessagingSubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UMessagingSubSystem::StaticClass()); }
+inline UHUDActorTrackingSubsystem* UHUDActorTrackingSubsystem::Get(class UObject* WorldContextObject) { return (UHUDActorTrackingSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UHUDActorTrackingSubsystem::StaticClass()); }
+inline UActivitySubSystem* UActivitySubSystem::Get(class UObject* WorldContextObject) { return (UActivitySubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UActivitySubSystem::StaticClass()); }
+inline UDynamicMeshScaler* UDynamicMeshScaler::Get(class UObject* WorldContextObject) { return (UDynamicMeshScaler*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UDynamicMeshScaler::StaticClass()); }
+inline UActorTrackingSubsystem* UActorTrackingSubsystem::Get(class UObject* WorldContextObject) { return (UActorTrackingSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UActorTrackingSubsystem::StaticClass()); }
+inline UDropSpikeTrackingSubsystem* UDropSpikeTrackingSubsystem::Get(class UObject* WorldContextObject) { return (UDropSpikeTrackingSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UDropSpikeTrackingSubsystem::StaticClass()); }
+inline UOverlapTrackingSubsystem* UOverlapTrackingSubsystem::Get(class UObject* WorldContextObject) { return (UOverlapTrackingSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UOverlapTrackingSubsystem::StaticClass()); }
+inline UAssetLoader* UAssetLoader::Get(class UObject* WorldContextObject) { return (UAssetLoader*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UAssetLoader::StaticClass()); }
+inline UAsyncManager* UAsyncManager::Get(class UObject* WorldContextObject) { return (UAsyncManager*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UAsyncManager::StaticClass()); }
+inline UGDKRateLimiter* UGDKRateLimiter::Get(class UObject* WorldContextObject) { return (UGDKRateLimiter*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UGDKRateLimiter::StaticClass()); }
+inline UBossFightSubSystem* UBossFightSubSystem::Get(class UObject* WorldContextObject) { return (UBossFightSubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UBossFightSubSystem::StaticClass()); }
+inline UInstancedNiagaraSubsystem* UInstancedNiagaraSubsystem::Get(class UObject* WorldContextObject) { return (UInstancedNiagaraSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UInstancedNiagaraSubsystem::StaticClass()); }
+inline UDamageSubsystem* UDamageSubsystem::Get(class UObject* WorldContextObject) { return (UDamageSubsystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UDamageSubsystem::StaticClass()); }
+inline UDSTelemetryWrapper* UDSTelemetryWrapper::Get(class UObject* WorldContextObject) { return (UDSTelemetryWrapper*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UDSTelemetryWrapper::StaticClass()); }
+inline UPerkSubsystem* UPerkSubsystem::Get(class UObject* WorldContextObject) { return (UPerkSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UPerkSubsystem::StaticClass()); }
+inline UFadeVisibilitySubSystem* UFadeVisibilitySubSystem::Get(class UObject* WorldContextObject) { return (UFadeVisibilitySubSystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UFadeVisibilitySubSystem::StaticClass()); }
+inline UFlareController* UFlareController::Get(class UObject* WorldContextObject) { return (UFlareController*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UFlareController::StaticClass()); }
+inline UFSDEventManager* UFSDEventManager::Get(class UObject* WorldContextObject) { return (UFSDEventManager*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UFSDEventManager::StaticClass()); }
+inline USeasonsSubsystem* USeasonsSubsystem::Get(class UObject* WorldContextObject) { return (USeasonsSubsystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, USeasonsSubsystem::StaticClass()); }
+inline UPresenceSubSystem* UPresenceSubSystem::Get(class UObject* WorldContextObject) { return (UPresenceSubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UPresenceSubSystem::StaticClass()); }
+inline UMusicManager* UMusicManager::Get(class UObject* WorldContextObject) { return (UMusicManager*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UMusicManager::StaticClass()); }
+inline UMissionGenerationManager* UMissionGenerationManager::Get(class UObject* WorldContextObject) { return (UMissionGenerationManager*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UMissionGenerationManager::StaticClass()); }
+inline UNotificationSubSystem* UNotificationSubSystem::Get(class UObject* WorldContextObject) { return (UNotificationSubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UNotificationSubSystem::StaticClass()); }
+inline UProfilingSubSystem* UProfilingSubSystem::Get(class UObject* WorldContextObject) { return (UProfilingSubSystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UProfilingSubSystem::StaticClass()); }
+inline URewardsSubSystem* URewardsSubSystem::Get(class UObject* WorldContextObject) { return (URewardsSubSystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, URewardsSubSystem::StaticClass()); }
+inline USeamlessTravelStorage* USeamlessTravelStorage::Get(class UObject* WorldContextObject) { return (USeamlessTravelStorage*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, USeamlessTravelStorage::StaticClass()); }
+inline USoundClassManager* USoundClassManager::Get(class UObject* WorldContextObject) { return (USoundClassManager*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, USoundClassManager::StaticClass()); }
+inline UStatHat* UStatHat::Get(class UObject* WorldContextObject) { return (UStatHat*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UStatHat::StaticClass()); }
+inline UWeaponEffectSubsystem* UWeaponEffectSubsystem::Get(class UObject* WorldContextObject) { return (UWeaponEffectSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UWeaponEffectSubsystem::StaticClass()); }

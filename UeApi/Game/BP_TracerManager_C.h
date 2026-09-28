@@ -13,8 +13,12 @@ class BP_TracerManager_C : public UTracerManager
 {
 public:
     UE_CLASS("/Game/Game/SubSystems/BP_TracerManager", "BP_TracerManager_C");
+    static BP_TracerManager_C* Get(class UObject* WorldContextObject = nullptr);
 };
 
 }}}   // namespace Game::Game::SubSystems
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline Game::Game::SubSystems::BP_TracerManager_C* Game::Game::SubSystems::BP_TracerManager_C::Get(class UObject* WorldContextObject) { return (BP_TracerManager_C*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, BP_TracerManager_C::StaticClass()); }
 
 using BP_TracerManager_C = Game::Game::SubSystems::BP_TracerManager_C;

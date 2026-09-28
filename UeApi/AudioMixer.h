@@ -401,6 +401,7 @@ public:
     bool IsClockRunning(class UObject* WorldContextObject, FName ClockName);
     bool IsClockRunning(FName ClockName);
     bool IsQuartzEnabled();
+    static UQuartzSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USynthSound : public USoundWaveProcedural
@@ -409,3 +410,6 @@ public:
     UE_CLASS("/Script/AudioMixer", "SynthSound");
     class USynthComponent* OwningSynthComponent;
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UQuartzSubsystem* UQuartzSubsystem::Get(class UObject* WorldContextObject) { return (UQuartzSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UQuartzSubsystem::StaticClass()); }

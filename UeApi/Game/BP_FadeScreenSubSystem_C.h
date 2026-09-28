@@ -13,8 +13,12 @@ class BP_FadeScreenSubSystem_C : public UFadeScreenSubSystem
 {
 public:
     UE_CLASS("/Game/Game/SubSystems/BP_FadeScreenSubSystem", "BP_FadeScreenSubSystem_C");
+    static BP_FadeScreenSubSystem_C* Get(class UObject* WorldContextObject = nullptr);
 };
 
 }}}   // namespace Game::Game::SubSystems
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline Game::Game::SubSystems::BP_FadeScreenSubSystem_C* Game::Game::SubSystems::BP_FadeScreenSubSystem_C::Get(class UObject* WorldContextObject) { return (BP_FadeScreenSubSystem_C*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, BP_FadeScreenSubSystem_C::StaticClass()); }
 
 using BP_FadeScreenSubSystem_C = Game::Game::SubSystems::BP_FadeScreenSubSystem_C;

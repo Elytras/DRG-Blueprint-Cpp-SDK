@@ -1120,6 +1120,7 @@ public:
     UE_PURE TMap<FModioModID, FModioModCollectionEntry> QueryUserSubscriptions();
     void RunPendingHandlers();
     void SetLogLevel(EModioLogLevel UnrealLogLevel);
+    static UModioSubsystem* Get();
 };
 
 class UModioUnsigned64Library : public UBlueprintFunctionLibrary
@@ -1140,3 +1141,6 @@ public:
     UE_PURE static float Percentage_Unsigned64(const FModioUnsigned64& LHS, const FModioUnsigned64& RHS);
     UE_PURE static FModioUnsigned64 Subtract(const FModioUnsigned64& LHS, const FModioUnsigned64& RHS);
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UModioSubsystem* UModioSubsystem::Get() { return (UModioSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UModioSubsystem::StaticClass()); }

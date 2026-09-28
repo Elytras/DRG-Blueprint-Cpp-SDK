@@ -12951,6 +12951,7 @@ class UTickableWorldSubsystem : public UWorldSubsystem
 {
 public:
     UE_CLASS("/Script/Engine", "TickableWorldSubsystem");
+    static UTickableWorldSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USoundBase : public UObject
@@ -15170,6 +15171,7 @@ class UDataDrivenCVarEngineSubsystem : public UEngineSubsystem
 public:
     UE_CLASS("/Script/Engine", "DataDrivenCVarEngineSubsystem");
     TMulticastInlineDelegate<void(FString CVarName)> OnDataDrivenCVarDelegate;
+    static UDataDrivenCVarEngineSubsystem* Get();
 };
 
 class USoundNode : public UObject
@@ -15604,6 +15606,7 @@ class UHLODEngineSubsystem : public UEngineSubsystem
 {
 public:
     UE_CLASS("/Script/Engine", "HLODEngineSubsystem");
+    static UHLODEngineSubsystem* Get();
 };
 
 class UMaterialExpressionAtmosphericLightVector : public UMaterialExpression
@@ -18270,6 +18273,7 @@ public:
     UE_CLASS("/Script/Engine", "AutoDestroySubsystem");
     TArray<class AActor*> ActorsToPoll;
     void OnActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
+    static UAutoDestroySubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class USoundSubmixBase : public UObject
@@ -23754,6 +23758,7 @@ public:
     int AddDisplayDelegate(TDelegate<void(FText& OutText, FLinearColor& OutColor)> Delegate);
     void AddTimedDisplay(FText Text, FLinearColor Color, float Duration);
     void RemoveDisplayDelegate(int IndexToRemove);
+    static UViewportStatsSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UMaterialExpressionTime : public UMaterialExpression
@@ -24288,6 +24293,7 @@ class UObjectTraceWorldSubsystem : public UWorldSubsystem
 {
 public:
     UE_CLASS("/Script/Engine", "ObjectTraceWorldSubsystem");
+    static UObjectTraceWorldSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UPackageMapClient : public UPackageMap
@@ -26201,6 +26207,7 @@ class UReplaySubsystem : public UGameInstanceSubsystem
 public:
     UE_CLASS("/Script/Engine", "ReplaySubsystem");
     bool bLoadDefaultMapOnStop;
+    static UReplaySubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UReplicationDriver : public UObject
@@ -26782,6 +26789,15 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
     static constexpr const char* VolumetricCloudComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
 };
+
+/* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
+inline UTickableWorldSubsystem* UTickableWorldSubsystem::Get(class UObject* WorldContextObject) { return (UTickableWorldSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UTickableWorldSubsystem::StaticClass()); }
+inline UDataDrivenCVarEngineSubsystem* UDataDrivenCVarEngineSubsystem::Get() { return (UDataDrivenCVarEngineSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UDataDrivenCVarEngineSubsystem::StaticClass()); }
+inline UHLODEngineSubsystem* UHLODEngineSubsystem::Get() { return (UHLODEngineSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UHLODEngineSubsystem::StaticClass()); }
+inline UAutoDestroySubsystem* UAutoDestroySubsystem::Get(class UObject* WorldContextObject) { return (UAutoDestroySubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UAutoDestroySubsystem::StaticClass()); }
+inline UViewportStatsSubsystem* UViewportStatsSubsystem::Get(class UObject* WorldContextObject) { return (UViewportStatsSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UViewportStatsSubsystem::StaticClass()); }
+inline UObjectTraceWorldSubsystem* UObjectTraceWorldSubsystem::Get(class UObject* WorldContextObject) { return (UObjectTraceWorldSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UObjectTraceWorldSubsystem::StaticClass()); }
+inline UReplaySubsystem* UReplaySubsystem::Get(class UObject* WorldContextObject) { return (UReplaySubsystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UReplaySubsystem::StaticClass()); }
 
 inline bool operator==(const FGuid&, const FGuid&) { return {}; }
 inline bool operator!=(const FGuid&, const FGuid&) { return {}; }

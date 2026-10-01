@@ -34,7 +34,7 @@ public:
     void ExecuteUbergraph_Filter_ServerGameType(int EntryPoint);
     void BndEvt__Basic_BoolUserSetting_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     UE_COSMETIC void Construct();
-    void OnGameTypeChanged(bool IsChecked, EGameType Gametype);
+    void OnGameTypeChanged(bool IsChecked, TEnum<EGameType> Gametype);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateSubheader();
     void OpenMenu(bool Open);
@@ -43,7 +43,7 @@ public:
     void CreateEntries();
     void IsSandBoxMode(bool& SandboxMode);
     void VerifyRules();
-    void VerifyOnlyModded(EGameType LastClicked);
+    void VerifyOnlyModded(TEnum<EGameType> LastClicked);
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

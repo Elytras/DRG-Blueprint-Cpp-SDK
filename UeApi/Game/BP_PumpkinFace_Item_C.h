@@ -27,7 +27,7 @@ public:
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "120b7340982b34438b3eac4f96c09037";
     float Timeline_0_LightIntensity_7354DC9243CD117360DDC3823BE25B3E;
-    ETimelineDirection Timeline_0__Direction_7354DC9243CD117360DDC3823BE25B3E;
+    TEnum<ETimelineDirection> Timeline_0__Direction_7354DC9243CD117360DDC3823BE25B3E;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_BP_PumpkinFace_Item(int EntryPoint);
     void BndEvt__ProximityTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);

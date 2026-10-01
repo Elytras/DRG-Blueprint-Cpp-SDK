@@ -81,7 +81,7 @@ public:
     void BndEvt__Filter_TextSearch_K2Node_ComponentBoundEvent_1_OnTextChanged__DelegateSignature(FText Text);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE FText GetTextFilter();
-    void UpdateSearchDistance(ESteamSearchRegion SearchRegion);
+    void UpdateSearchDistance(TEnum<ESteamSearchRegion> SearchRegion);
     void IsDifficultySelected(class UDifficultySetting* InDifficulty, bool& Selected);
     void FilterSession(FBlueprintSessionResult InSession, bool& Should_Filter);
     void GetAutoRefresh(bool& AutoRefresh_0);

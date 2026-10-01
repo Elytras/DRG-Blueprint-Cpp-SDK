@@ -43,7 +43,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "d027f1a2b88637498e8ed696dbf9cb99";
     float SpikeDurationFade_NewTrack;
     static constexpr const char* SpikeDurationFade_NewTrack__UeName = "SpikeDurationFade_NewTrack_0_598055184F53D08F9DFFFC9BD3409EFF";
-    ETimelineDirection SpikeDurationFade__Direction_598055184F53D08F9DFFFC9BD3409EFF;
+    TEnum<ETimelineDirection> SpikeDurationFade__Direction_598055184F53D08F9DFFFC9BD3409EFF;
     class UTimelineComponent* SpikeDurationFade;
     float Rotation;
     float Height;

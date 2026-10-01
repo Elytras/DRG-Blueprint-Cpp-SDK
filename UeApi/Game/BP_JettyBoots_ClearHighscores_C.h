@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_BP_JettyBoots_ClearHighscores(int EntryPoint);
     void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_2_GenericUsableDelegate__DelegateSignature();
     void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_1_ProgressSignature__DelegateSignature(float Progress);
-    void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UserConstructionScript();
 };

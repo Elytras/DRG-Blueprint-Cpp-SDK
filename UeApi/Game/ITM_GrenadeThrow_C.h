@@ -21,6 +21,7 @@ class ITM_GrenadeThrow_C : public AThrownGrenadeItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_GrenadeThrow", "ITM_GrenadeThrow_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* CookTicking;
     static constexpr const char* CookTicking__UeScsNode = "01ed71fecbec424a93c62445191fe371";

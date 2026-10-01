@@ -36,6 +36,7 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/BP_RivalBombEvent", "BP_RivalBombEvent_C");
     using ABP_RivalBomb_C = Game::GameElements::GameEvents::RivalBombEvent::ABP_RivalBomb_C;
     using EWC_BombEvent_C = Game::GameElements::GameEvents::RivalBombEvent::EWC_BombEvent_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
     static constexpr const char* terrainPlacement__UeScsNode = "dad4f2e99862dd4bae20139d9b852613";
@@ -114,7 +115,7 @@ public:
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "116195fadde0b84cbba6ae46e36645a9";
     float AnimDamageZone_Range01_A8D794FC49AE559A25D7C090C7F900D4;
-    ETimelineDirection AnimDamageZone__Direction_A8D794FC49AE559A25D7C090C7F900D4;
+    TEnum<ETimelineDirection> AnimDamageZone__Direction_A8D794FC49AE559A25D7C090C7F900D4;
     class UTimelineComponent* AnimDamageZone;
     float CustomEventTime;
     static constexpr const char* CustomEventTime__Replicated = "OnRep_CustomEventTime:";
@@ -142,9 +143,9 @@ public:
     void TimeProgressChanged_Event(float CurrentProgress);
     UE_MULTICAST void All_Weakpoints_Broken();
     static constexpr const char* All_Weakpoints_Broken__UeName = "All Weakpoints Broken";
-    void BndEvt__BP_RivalBombEvent_StartEventUsable_03_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__BP_RivalBombEvent_StartEventUsable_02_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__BP_RivalBombEvent_StartEventUsable_01_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_RivalBombEvent_StartEventUsable_03_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__BP_RivalBombEvent_StartEventUsable_02_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__BP_RivalBombEvent_StartEventUsable_01_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ChangeLightMaterial(class UMaterialInterface* Material);
     void FinishEventUI();
     void OnEventFinished(bool eventSuccess);

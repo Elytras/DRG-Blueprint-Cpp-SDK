@@ -25,6 +25,7 @@ class BP_GameMode_C : public AFSDGameMode
 {
 public:
     UE_CLASS("/Game/Game/BP_GameMode", "BP_GameMode_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyWaveManager* EnemyWaveManager;
     static constexpr const char* EnemyWaveManager__UeScsNode = "92a9f5393680e9498effd45d6f165c64";

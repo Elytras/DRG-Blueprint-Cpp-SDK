@@ -20,13 +20,13 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     float Timeline_2_Opacity_A96C1B0F4F3E46C60F6E12BA791E76C0;
     float Timeline_2_Uncloak_A96C1B0F4F3E46C60F6E12BA791E76C0;
-    ETimelineDirection Timeline_2__Direction_A96C1B0F4F3E46C60F6E12BA791E76C0;
+    TEnum<ETimelineDirection> Timeline_2__Direction_A96C1B0F4F3E46C60F6E12BA791E76C0;
     class UTimelineComponent* Timeline_2;
     float Timeline_1_Uncloak_992B00094A25A346F930EB8CA0AD6D6D;
-    ETimelineDirection Timeline_1__Direction_992B00094A25A346F930EB8CA0AD6D6D;
+    TEnum<ETimelineDirection> Timeline_1__Direction_992B00094A25A346F930EB8CA0AD6D6D;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_Uncloak_C8A86CB14195B5DE9280D780DD7C279F;
-    ETimelineDirection Timeline_0__Direction_C8A86CB14195B5DE9280D780DD7C279F;
+    TEnum<ETimelineDirection> Timeline_0__Direction_C8A86CB14195B5DE9280D780DD7C279F;
     class UTimelineComponent* Timeline_0;
     class UMaterialInterface* CamouflageMaterial;
     class UMaterialInterface* BodyMaterial;

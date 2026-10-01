@@ -27,7 +27,7 @@ public:
     Basic_Label_C* UI_GenericLabel;
     class UOverlay* ValidBox;
     void ExecuteUbergraph_UI_PipelineBuilder_Widget_Small(int EntryPoint);
-    void SetState(EPlaceableObstructionType BuildingState);
+    void SetState(TEnum<EPlaceableObstructionType> BuildingState);
     void SetStats(float Length, class UFSDLabelWidget* DistTextBox, class UFSDLabelWidget* VolumnTextBox);
 };
 

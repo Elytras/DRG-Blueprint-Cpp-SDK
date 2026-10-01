@@ -47,7 +47,7 @@ public:
     FText HeaderText;
     class UPlayerCharacterID* currentCharacter;
     TMulticastInlineDelegate<void(class UClass* Character)> OnCharacterChanged;
-    ECharselectionCameraLocation SelectionType;
+    TEnum<ECharselectionCameraLocation> SelectionType;
     void ExecuteUbergraph_ITM_CharacterSwitcherBar(int EntryPoint);
     void UpdateNotification();
     void BndEvt__BTN_Switch_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();

@@ -46,10 +46,10 @@ public:
     TArray<TSoftObjectPtr<class AChaosSolverActor>> SupportedSolvers;
     FFieldObjectCommands ConstructionCommands;
     FFieldObjectCommands BufferCommands;
-    void AddFieldCommand(bool Enabled, EFieldPhysicsType Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
-    void AddPersistentField(bool Enabled, EFieldPhysicsType Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
+    void AddFieldCommand(bool Enabled, TEnum<EFieldPhysicsType> Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
+    void AddPersistentField(bool Enabled, TEnum<EFieldPhysicsType> Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
     void ApplyLinearForce(bool Enabled, FVector Direction, float Magnitude);
-    void ApplyPhysicsField(bool Enabled, EFieldPhysicsType Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
+    void ApplyPhysicsField(bool Enabled, TEnum<EFieldPhysicsType> Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
     void ApplyRadialForce(bool Enabled, FVector Position, float Magnitude);
     void ApplyRadialVectorFalloffForce(bool Enabled, FVector Position, float Radius, float Magnitude);
     void ApplyStayDynamicField(bool Enabled, FVector Position, float Radius);
@@ -77,16 +77,16 @@ class UFieldSystemMetaDataProcessingResolution : public UFieldSystemMetaData
 {
 public:
     UE_CLASS("/Script/FieldSystemEngine", "FieldSystemMetaDataProcessingResolution");
-    EFieldResolutionType ResolutionType;
-    UE_PURE class UFieldSystemMetaDataProcessingResolution* SetMetaDataaProcessingResolutionType(EFieldResolutionType ResolutionType_0);
+    TEnum<EFieldResolutionType> ResolutionType;
+    UE_PURE class UFieldSystemMetaDataProcessingResolution* SetMetaDataaProcessingResolutionType(TEnum<EFieldResolutionType> ResolutionType_0);
 };
 
 class UFieldSystemMetaDataFilter : public UFieldSystemMetaData
 {
 public:
     UE_CLASS("/Script/FieldSystemEngine", "FieldSystemMetaDataFilter");
-    EFieldFilterType FilterType;
-    UE_PURE class UFieldSystemMetaDataFilter* SetMetaDataFilterType(EFieldFilterType FilterType_0);
+    TEnum<EFieldFilterType> FilterType;
+    UE_PURE class UFieldSystemMetaDataFilter* SetMetaDataFilterType(TEnum<EFieldFilterType> FilterType_0);
 };
 
 class UFieldNodeBase : public UActorComponent
@@ -129,8 +129,8 @@ public:
     FVector Position;
     int InteriorValue;
     int ExteriorValue;
-    ESetMaskConditionType SetMaskCondition;
-    UE_PURE class URadialIntMask* SetRadialIntMask(float Radius_0, FVector Position_0, int InteriorValue_0, int ExteriorValue_0, ESetMaskConditionType SetMaskConditionIn);
+    TEnum<ESetMaskConditionType> SetMaskCondition;
+    UE_PURE class URadialIntMask* SetRadialIntMask(float Radius_0, FVector Position_0, int InteriorValue_0, int ExteriorValue_0, TEnum<ESetMaskConditionType> SetMaskConditionIn);
 };
 
 class UUniformScalar : public UFieldNodeFloat
@@ -149,9 +149,9 @@ public:
     FVector Position;
     float Wavelength;
     float Period;
-    EWaveFunctionType Function;
-    EFieldFalloffType Falloff;
-    UE_PURE class UWaveScalar* SetWaveScalar(float Magnitude_0, FVector Position_0, float Wavelength_0, float Period_0, float Time, EWaveFunctionType Function_0, EFieldFalloffType Falloff_0);
+    TEnum<EWaveFunctionType> Function;
+    TEnum<EFieldFalloffType> Falloff;
+    UE_PURE class UWaveScalar* SetWaveScalar(float Magnitude_0, FVector Position_0, float Wavelength_0, float Period_0, float Time, TEnum<EWaveFunctionType> Function_0, TEnum<EFieldFalloffType> Falloff_0);
 };
 
 class URadialFalloff : public UFieldNodeFloat
@@ -164,8 +164,8 @@ public:
     float Default;
     float Radius;
     FVector Position;
-    EFieldFalloffType Falloff;
-    UE_PURE class URadialFalloff* SetRadialFalloff(float Magnitude_0, float MinRange_0, float MaxRange_0, float Default_0, float Radius_0, FVector Position_0, EFieldFalloffType Falloff_0);
+    TEnum<EFieldFalloffType> Falloff;
+    UE_PURE class URadialFalloff* SetRadialFalloff(float Magnitude_0, float MinRange_0, float MaxRange_0, float Default_0, float Radius_0, FVector Position_0, TEnum<EFieldFalloffType> Falloff_0);
 };
 
 class UPlaneFalloff : public UFieldNodeFloat
@@ -179,8 +179,8 @@ public:
     float Distance;
     FVector Position;
     FVector Normal;
-    EFieldFalloffType Falloff;
-    UE_PURE class UPlaneFalloff* SetPlaneFalloff(float Magnitude_0, float MinRange_0, float MaxRange_0, float Default_0, float Distance_0, FVector Position_0, FVector Normal_0, EFieldFalloffType Falloff_0);
+    TEnum<EFieldFalloffType> Falloff;
+    UE_PURE class UPlaneFalloff* SetPlaneFalloff(float Magnitude_0, float MinRange_0, float MaxRange_0, float Default_0, float Distance_0, FVector Position_0, FVector Normal_0, TEnum<EFieldFalloffType> Falloff_0);
 };
 
 class UBoxFalloff : public UFieldNodeFloat
@@ -192,8 +192,8 @@ public:
     float MaxRange;
     float Default;
     FTransform Transform;
-    EFieldFalloffType Falloff;
-    UE_PURE class UBoxFalloff* SetBoxFalloff(float Magnitude_0, float MinRange_0, float MaxRange_0, float Default_0, FTransform Transform_0, EFieldFalloffType Falloff_0);
+    TEnum<EFieldFalloffType> Falloff;
+    UE_PURE class UBoxFalloff* SetBoxFalloff(float Magnitude_0, float MinRange_0, float MaxRange_0, float Default_0, FTransform Transform_0, TEnum<EFieldFalloffType> Falloff_0);
 };
 
 class UNoiseField : public UFieldNodeFloat
@@ -239,8 +239,8 @@ public:
     float Magnitude;
     class UFieldNodeBase* RightField;
     class UFieldNodeBase* LeftField;
-    EFieldOperationType Operation;
-    UE_PURE class UOperatorField* SetOperatorField(float Magnitude_0, class UFieldNodeBase* LeftField_0, class UFieldNodeBase* RightField_0, EFieldOperationType Operation_0);
+    TEnum<EFieldOperationType> Operation;
+    UE_PURE class UOperatorField* SetOperatorField(float Magnitude_0, class UFieldNodeBase* LeftField_0, class UFieldNodeBase* RightField_0, TEnum<EFieldOperationType> Operation_0);
 };
 
 class UToIntegerField : public UFieldNodeInt
@@ -265,8 +265,8 @@ public:
     UE_CLASS("/Script/FieldSystemEngine", "CullingField");
     class UFieldNodeBase* Culling;
     class UFieldNodeBase* Field;
-    EFieldCullingOperationType Operation;
-    UE_PURE class UCullingField* SetCullingField(class UFieldNodeBase* Culling_0, class UFieldNodeBase* Field_0, EFieldCullingOperationType Operation_0);
+    TEnum<EFieldCullingOperationType> Operation;
+    UE_PURE class UCullingField* SetCullingField(class UFieldNodeBase* Culling_0, class UFieldNodeBase* Field_0, TEnum<EFieldCullingOperationType> Operation_0);
 };
 
 class UReturnResultsTerminal : public UFieldNodeBase

@@ -29,7 +29,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "da8e2da9f6b21d4e9450b315f3fb1b9b";
     float Timeline_0_LightIntensity_CD888BD245F644A958710A8BA8A62D72;
-    ETimelineDirection Timeline_0__Direction_CD888BD245F644A958710A8BA8A62D72;
+    TEnum<ETimelineDirection> Timeline_0__Direction_CD888BD245F644A958710A8BA8A62D72;
     class UTimelineComponent* Timeline_0;
     float InitialIntensity;
     void ExecuteUbergraph_BP_SpecialTutorialCrystal(int EntryPoint);

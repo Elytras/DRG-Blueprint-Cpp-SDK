@@ -19,6 +19,7 @@ class BP_UnknownArtifact_C : public Game::GameElements::Resources::Embedded::Gem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/UnknownArtifact/BP_UnknownArtifact", "BP_UnknownArtifact_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_UnknownArtifact_C;
     static constexpr const char* UberGraphFrame_BP_UnknownArtifact_C__UeName = "UberGraphFrame";
     class UOutlineComponent* outline;
@@ -39,7 +40,7 @@ public:
     static constexpr const char* light_center__UeScsNode = "e4241d3b636bd64f9059fa35082ce0ea";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_26F6B6C743C5284D0A49D79127722B1A";
-    ETimelineDirection Timeline_0__Direction_26F6B6C743C5284D0A49D79127722B1A;
+    TEnum<ETimelineDirection> Timeline_0__Direction_26F6B6C743C5284D0A49D79127722B1A;
     class UTimelineComponent* Timeline_0;
     float LightIntensity;
     FLinearColor LightColor;

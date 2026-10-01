@@ -15,6 +15,7 @@ class BP_GreatEggHunt_Cuties_C : public AStaticMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_Cuties", "BP_GreatEggHunt_Cuties_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<class UStaticMesh*> Meshes;
     class UStaticMesh* UsedMesh;

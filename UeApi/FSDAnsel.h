@@ -36,8 +36,8 @@ public:
     static void SetCameraMovementSpeed(float TranslationSpeed);
     static void SetIsPhotographyAllowed(bool bIsPhotographyAllowed);
     static void SetSettleFrames(int NumSettleFrames);
-    static void SetUIControlVisibility(class UObject* WorldContextObject, EUIControlEffectTarget UIControlTarget, bool bIsVisible);
-    static void SetUIControlVisibility(EUIControlEffectTarget UIControlTarget, bool bIsVisible);
+    static void SetUIControlVisibility(class UObject* WorldContextObject, TEnum<EUIControlEffectTarget> UIControlTarget, bool bIsVisible);
+    static void SetUIControlVisibility(TEnum<EUIControlEffectTarget> UIControlTarget, bool bIsVisible);
     static void StartPhotographySession(class UObject* WorldContextObject);
     static void StartPhotographySession();
     static void StopPhotographySession(class UObject* WorldContextObject);

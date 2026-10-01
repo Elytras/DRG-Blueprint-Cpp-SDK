@@ -22,7 +22,7 @@ public:
     class UVerticalBox* VerticalBox_NotificationHolder;
     float NotificationScreenTime;
     void ExecuteUbergraph_HUD_MinersManualNotification_Manager(int EntryPoint);
-    void OnMinersManualNotification(EMinersManualSection Section, FGuid ObjectID, FText Text);
+    void OnMinersManualNotification(TEnum<EMinersManualSection> Section, FGuid ObjectID, FText Text);
     UE_COSMETIC void Construct();
 };
 

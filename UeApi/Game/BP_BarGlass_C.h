@@ -31,7 +31,7 @@ public:
     void ExecuteUbergraph_BP_BarGlass(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_DrinkableData();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}   // namespace Game::GameElements::Bar

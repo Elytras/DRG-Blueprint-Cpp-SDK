@@ -39,7 +39,7 @@ public:
     class UPlayerCharacterID* PlayerId;
     class UItemID* itemClass;
     TMulticastInlineDelegate<void(class UItemID* itemClass_0)> ItemEquipped;
-    EItemUpgradeStatus PreviewItemStatus;
+    TEnum<EItemUpgradeStatus> PreviewItemStatus;
     bool Hovered;
     TOOLTIP_UpgradeIcon_C* IconToolTip;
     TMulticastInlineDelegate<void(ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C* Widget, bool IsUnlocked)> ItemHovered;
@@ -54,7 +54,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetItem(class UItemID* GrenadeClass, class UPlayerCharacterID* characterID, EItemUpgradeStatus& OutState);
     void Refresh(EItemUpgradeStatus& OutState);
-    void SetState(EItemUpgradeStatus InItemStatus, int InRequiredCharacterLevel);
+    void SetState(TEnum<EItemUpgradeStatus> InItemStatus, int InRequiredCharacterLevel);
     void GetCurrentState(EItemUpgradeStatus& Item_State);
     void UpdateToolTip();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);

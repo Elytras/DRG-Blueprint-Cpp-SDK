@@ -971,7 +971,7 @@ public:
     FRotator ExplicitRotationGridSize;
     bool bSnapToWorldRotGrid;
     bool bUseContextCoordinateSystem;
-    EToolContextCoordinateSystem CurrentCoordinateSystem;
+    TEnum<EToolContextCoordinateSystem> CurrentCoordinateSystem;
     TArray<class UPrimitiveComponent*> ActiveComponents;
     TArray<class UPrimitiveComponent*> NonuniformScaleComponents;
     TArray<class UInteractiveGizmo*> ActiveGizmos;

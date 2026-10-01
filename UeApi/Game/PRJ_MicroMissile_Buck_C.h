@@ -13,6 +13,7 @@ class PRJ_MicroMissile_Buck_C : public Game::WeaponsNTools::MicroMissileLauncher
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Buck", "PRJ_MicroMissile_Buck_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

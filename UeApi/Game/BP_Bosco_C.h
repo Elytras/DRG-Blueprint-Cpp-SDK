@@ -28,6 +28,7 @@ class BP_Bosco_C : public ABosco
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_Bosco", "BP_Bosco_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent MomentumAudio;/Script/FSD.BobbingComponent BobbingComponent;/Script/FSD.BoscoAbillityComponent PrimaryAbility;/Script/FSD.BoscoAbillityComponent SecondaryAbility;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.DroneMeleeTool MeleeTool;/Script/FSD.DroneMiningToolBase MiningTool;/Script/FSD.DroneSkinnableComponent Skinnable;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.HitscanComponent BoscoHitscan;/Script/Engine.ParticleSystemComponent LTrail;/Script/Engine.ParticleSystemComponent RTrail;/Script/AIModule.PawnSensingComponent Senses;/Script/Engine.PointLightComponent PointlightComponent;/Script/Engine.SkeletalMeshComponent BoscoMesh;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SpotLightComponent SpotlightComponent;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.UpgradableBoscoComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnStatsComponent* PawnStats;
     static constexpr const char* PawnStats__UeScsNode = "4d6c5dd082e8a746a580aff3166403a5";
@@ -57,14 +58,14 @@ public:
     float ScareDuration;
     void ExecuteUbergraph_BP_Bosco(int EntryPoint);
     void ReceivePossessed(class AController* NewController);
-    void StateChanged(EDroneAIState aCurrentState);
+    void StateChanged(TEnum<EDroneAIState> aCurrentState);
     void SelfDestruct();
     void OnMessageAI(FName TriggerName);
     void ReceiveBeginPlay();
     bool OnTriggerAI(FName TriggerName);
     void ScareEffect();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState_0, TArray<FGearStatEntry>& Stats) const;
-    void Handle_Projectile_diffs(FGearStatEntry Gear_stat, EItemPreviewStatus Cryo_upgrade_preview_status, EDamageUpgrade damage_upgrade_type, class AFSDPlayerState* FSD_player_state, FGearStatEntry& gear_stat_out) const;
+    void Handle_Projectile_diffs(FGearStatEntry Gear_stat, TEnum<EItemPreviewStatus> Cryo_upgrade_preview_status, TEnum<EDamageUpgrade> damage_upgrade_type, class AFSDPlayerState* FSD_player_state, FGearStatEntry& gear_stat_out) const;
     static constexpr const char* Handle_Projectile_diffs__UeName = "Handle Projectile diffs";
 };
 

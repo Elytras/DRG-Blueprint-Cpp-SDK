@@ -51,7 +51,7 @@ public:
     void SetMaxWidth(float MaxWidth);
     void SetWidth(float InWidthOverride);
     void FadeIn(float Duration);
-    void SetTextJustification(ETextJustify Justification);
+    void SetTextJustification(TEnum<ETextJustify> Justification);
     void SetInput(FKey InDefaultKey, FKey InConsoleOverride);
 };
 

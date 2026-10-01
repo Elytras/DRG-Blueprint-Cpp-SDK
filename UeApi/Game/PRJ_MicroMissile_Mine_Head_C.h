@@ -22,6 +22,7 @@ class PRJ_MicroMissile_Mine_Head_C : public Game::WeaponsNTools::MicroMissileLau
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Mine_Head", "PRJ_MicroMissile_Mine_Head_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_MicroMissile_Mine_Head_C;
     static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Mine_Head_C__UeName = "UberGraphFrame";
     class UBoxComponent* HitCollider;

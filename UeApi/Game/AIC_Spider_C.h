@@ -19,6 +19,7 @@ class AIC_Spider_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/AIC_Spider", "AIC_Spider_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviorTree;
     class UEnemyHealthComponent* EnemyHealthComponent;

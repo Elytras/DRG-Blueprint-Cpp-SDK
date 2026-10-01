@@ -40,7 +40,7 @@ public:
     class USceneComponent* SharedRoot;
     static constexpr const char* SharedRoot__UeScsNode = "6c904c8cda6cda4d9d020202a54b6c2d";
     float Driver_Movement_137D39154F4F54A9387D6EB46EC05709;
-    ETimelineDirection Driver__Direction_137D39154F4F54A9387D6EB46EC05709;
+    TEnum<ETimelineDirection> Driver__Direction_137D39154F4F54A9387D6EB46EC05709;
     class UTimelineComponent* Driver;
     float Open_Time;
     TArray<class APlayerCharacter*> Players;

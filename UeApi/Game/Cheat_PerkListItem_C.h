@@ -24,7 +24,7 @@ public:
     class UTextBlock* TextBlock_Desc;
     TMulticastInlineDelegate<void(bool Is_Checked, class UItemUpgrade* Item, EItemCategory Item_Category)> OnCheckStateChanged;
     class UItemUpgrade* myItemUpgrade;
-    EItemCategory myItemCategory;
+    TEnum<EItemCategory> myItemCategory;
     bool IsEquipped;
     int Original_name_Size;
     static constexpr const char* Original_name_Size__UeName = "Original name Size";

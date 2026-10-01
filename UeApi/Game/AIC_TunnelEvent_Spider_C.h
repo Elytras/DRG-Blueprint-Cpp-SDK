@@ -13,6 +13,7 @@ class AIC_TunnelEvent_Spider_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/Enemies/AIC_TunnelEvent_Spider", "AIC_TunnelEvent_Spider_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::TunnelEvent::Enemies

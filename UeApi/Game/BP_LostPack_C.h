@@ -35,6 +35,7 @@ class BP_LostPack_C : public ATreasureContainer
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/LostPack/BP_LostPack", "BP_LostPack_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.OncePerPlayerUsableComponent CollectUsable;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
     static constexpr const char* TerrainDetect3__UeScsNode = "7ddc33b4975e5a41a003a547dc75b0f0";
@@ -143,7 +144,7 @@ public:
     UE_MULTICAST void All_PlayMusic();
     void BndEvt__Sphere2_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveTick(float DeltaSeconds);
-    void BndEvt__CollectUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__CollectUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SpawnChunks();
     void SetupChunkSpawn();
     void OnLocalPlayerCollectedTreasure(class APlayerCharacter* Player);

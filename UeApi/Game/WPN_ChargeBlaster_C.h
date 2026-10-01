@@ -32,6 +32,7 @@ public:
     using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
     using WeaponDisplay_ChargeBlaster_Charge_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Charge_C;
     using WeaponDisplay_ChargeBlaster_Heat_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* ChargeBlaster_Overheat_Cue;
     static constexpr const char* ChargeBlaster_Overheat_Cue__UeScsNode = "e64f75900dc4de4696bb2f48fda40cea";

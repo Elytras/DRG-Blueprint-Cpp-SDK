@@ -23,6 +23,7 @@ class PRJ_MicroMissile_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile", "PRJ_MicroMissile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* Particle_Exhaust;
     static constexpr const char* Particle_Exhaust__UeScsNode = "560f1a111de1c34fb3deec9bf60fdc51";
@@ -46,7 +47,7 @@ public:
     static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
     float Timeline_0_Brightness_243709694A5DDD44F4F9208FBF929C26;
     float Timeline_0_Height_243709694A5DDD44F4F9208FBF929C26;
-    ETimelineDirection Timeline_0__Direction_243709694A5DDD44F4F9208FBF929C26;
+    TEnum<ETimelineDirection> Timeline_0__Direction_243709694A5DDD44F4F9208FBF929C26;
     class UTimelineComponent* Timeline_0;
     float TimeToTarget;
     bool HasNitroglycerinCompound;

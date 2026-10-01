@@ -71,7 +71,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "19a7bd101f49d845b9560602b8bf016b";
     float ScaleDown_Scale_BE2664704A8053AD17E5558489DE9A1D;
-    ETimelineDirection ScaleDown__Direction_BE2664704A8053AD17E5558489DE9A1D;
+    TEnum<ETimelineDirection> ScaleDown__Direction_BE2664704A8053AD17E5558489DE9A1D;
     class UTimelineComponent* ScaleDown;
     FTimerHandle Handle_LifeTime;
     bool IsDeactivated;

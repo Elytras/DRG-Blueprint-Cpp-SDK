@@ -17,6 +17,7 @@ class WPN_DetPack_Detonator_C : public ADetPackItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/WPN_DetPack_Detonator", "WPN_DetPack_Detonator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent DetonatorFPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent DetonatorTPMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMaterialInstanceDynamic* StatusMaterial;
     void ExecuteUbergraph_WPN_DetPack_Detonator(int EntryPoint);

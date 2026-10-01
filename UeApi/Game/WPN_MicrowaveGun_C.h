@@ -29,6 +29,7 @@ class WPN_MicrowaveGun_C : public AMicrowaveWeapon
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/WPN_MicrowaveGun", "WPN_MicrowaveGun_C");
     using WeaponDisplay_MicrowaveGun_Heat_C = Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_Heat_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.CapsuleHitscanComponent CapsuleHitscanComponent;/Script/FSD.DamageComponent ExplodingTargetsDamage;/Script/FSD.DamageComponent MicrowaveDamage;/Script/FSD.DamageComponent RadiantSuperheaterFrostShock;/Script/FSD.DamageComponent RadiantSuperheaterHeat;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonNiagaraComponent* HeatSmoke;
     static constexpr const char* HeatSmoke__UeScsNode = "85caf5da71e6624fb9d3bc95d1317795";

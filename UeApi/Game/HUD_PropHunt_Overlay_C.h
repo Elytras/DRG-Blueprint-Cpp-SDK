@@ -39,7 +39,7 @@ public:
     void OnGameStateChanged();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetPlayerState(EPropHuntRole InRole, int InRemainingLives, int InMaxLives);
+    void SetPlayerState(TEnum<EPropHuntRole> InRole, int InRemainingLives, int InMaxLives);
     void SetHunterAmmo(int InCurrent);
 };
 

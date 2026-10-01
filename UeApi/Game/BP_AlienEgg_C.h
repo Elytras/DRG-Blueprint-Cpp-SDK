@@ -21,6 +21,7 @@ class BP_AlienEgg_C : public Game::GameElements::Resources::Embedded::Gems::BP_G
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/AlienEgg/BP_AlienEgg", "BP_AlienEgg_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_AlienEgg_C;
     static constexpr const char* UberGraphFrame_BP_AlienEgg_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SurroundingTerrainCarver;
@@ -43,7 +44,7 @@ public:
     static constexpr const char* light_center__UeScsNode = "e4241d3b636bd64f9059fa35082ce0ea";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_824C546F43F8F98270303087668A3695";
-    ETimelineDirection Timeline_0__Direction_824C546F43F8F98270303087668A3695;
+    TEnum<ETimelineDirection> Timeline_0__Direction_824C546F43F8F98270303087668A3695;
     class UTimelineComponent* Timeline_0;
     float LightIntensity;
     FLinearColor LightColor;

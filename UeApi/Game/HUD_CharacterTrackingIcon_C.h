@@ -45,7 +45,7 @@ public:
     void ExecuteUbergraph_HUD_CharacterTrackingIcon(int EntryPoint);
     void UpdateClassIcon();
     UE_COSMETIC void Construct();
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void OnCharacterChanged(class APlayerCharacter* PlayerCharacter);
     void OnUpdateName(FString NewName);
     void OnTargetDistanceChanged(float Distance_0);

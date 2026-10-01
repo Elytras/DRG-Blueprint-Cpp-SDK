@@ -23,6 +23,7 @@ class WPN_CombatShotgun_C : public AAutoShotgun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CombatShotgun/WPN_CombatShotgun", "WPN_CombatShotgun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
     static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b18b4327d171804a8ca37713ce12880b";

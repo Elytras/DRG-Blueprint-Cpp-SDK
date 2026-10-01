@@ -53,7 +53,7 @@ public:
     void ReceiveBeginPlay();
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player, bool ShouldReact, int AnimationIndex_0);
     void ReceiveTick(float DeltaSeconds);
-    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnKnock(class APlayerCharacter* Player);
     void OnRep_MaterialUsed();
 };

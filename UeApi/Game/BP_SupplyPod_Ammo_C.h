@@ -38,6 +38,7 @@ class BP_SupplyPod_Ammo_C : public ARessuplyPod
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_SupplyPod_Ammo", "BP_SupplyPod_Ammo_C");
     using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     BP_SupplyDropToTerrainLogic_C* BP_SupplyDropToTerrainLogic;
     static constexpr const char* BP_SupplyDropToTerrainLogic__UeScsNode = "91514ebb27a6ec47afd47720d5b1abd0";
@@ -120,10 +121,10 @@ public:
     void UsableChanged(bool CanUse, class UPrimitiveComponent* useCollider, class USkeletalMeshComponent* DoorMesh);
     void SupplyUsed(class APlayerCharacter* User, class USingleUsableComponent* Target);
     void OnTunnelBLocked();
-    void BndEvt__SingleUsable4_K2Node_ComponentBoundEvent_8_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__SingleUsable3_K2Node_ComponentBoundEvent_7_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__SingleUsable2_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__SingleUsable1_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable4_K2Node_ComponentBoundEvent_8_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__SingleUsable3_K2Node_ComponentBoundEvent_7_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__SingleUsable2_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__SingleUsable1_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__SingleUsable4_K2Node_ComponentBoundEvent_4_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__SingleUsable2_K2Node_ComponentBoundEvent_3_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__SingleUsable3_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);

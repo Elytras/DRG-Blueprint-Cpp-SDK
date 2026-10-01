@@ -17,6 +17,7 @@ class BP_PropHunt_Dice_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season05/BP_PropHunt_Dice", "BP_PropHunt_Dice_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh1;
     static constexpr const char* StaticMesh1__UeScsNode = "48e5e124a85f6144a21dde96383afa72";

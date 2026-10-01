@@ -21,6 +21,7 @@ class Grenade_IFG_C : public Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/Grenade_IFG", "Grenade_IFG_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_IFG_C;
     static constexpr const char* UberGraphFrame_Grenade_IFG_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;

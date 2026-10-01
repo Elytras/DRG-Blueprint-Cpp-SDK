@@ -45,7 +45,7 @@ public:
     class USphereComponent* Collision;
     static constexpr const char* Collision__UeScsNode = "2809638458bae842a36b1fdb575c9e21";
     float Timeline_0_Brightness_5A2B78D649E3C1F0338A2C84B8669952;
-    ETimelineDirection Timeline_0__Direction_5A2B78D649E3C1F0338A2C84B8669952;
+    TEnum<ETimelineDirection> Timeline_0__Direction_5A2B78D649E3C1F0338A2C84B8669952;
     class UTimelineComponent* Timeline_0;
     float TimeoutTime;
     class UMaterialInstanceDynamic* DynamicMaterial;

@@ -123,7 +123,7 @@ public:
     FString ModAuthor;
     FString ModVersion;
     FString ModDescription;
-    EUGCApprovalStatus Status;
+    TEnum<EUGCApprovalStatus> Status;
     UE_PURE int64 GetModIdAsInt();
     UE_PURE FString GetModIdAsString();
     UE_PURE bool IsModIdInvalid();
@@ -172,8 +172,8 @@ public:
     FString Author;
     FString AuthorURL;
     FString Description;
-    EUGCApprovalStatus Status;
-    EUGCDownloadVersion DownloadVersion;
+    TEnum<EUGCApprovalStatus> Status;
+    TEnum<EUGCDownloadVersion> DownloadVersion;
     bool ShowStatusForAudioCosmetic;
     bool DependencyRemoved;
     bool PackagedForLatestVersion;
@@ -196,14 +196,14 @@ public:
     TArray<class UUGCPackage*> UGCPackagesInstalledDuringJoin;
     TArray<class UUGCPackage*> UGCPackagesUnmountedDuringJoin;
     UE_PURE bool AreDeprecatedModsInstalled();
-    UE_PURE bool AreModsInstalled(EUGCApprovalStatus ApprovalStatus);
+    UE_PURE bool AreModsInstalled(TEnum<EUGCApprovalStatus> ApprovalStatus);
     bool ForceApplyModsFromDeprecatedLocation();
     bool GetAllClassesInPackage(class UUGCPackage* Package, TArray<class UClass*>& Classes);
     UE_PURE TArray<class UUGCPackage*> GetEnabledMods(bool IncludeModsToBeEnabled);
     bool GetMapsInPackage(class UUGCPackage* Package, TArray<FName>& Maps);
     UE_PURE TArray<class UUGCPackage*> GetPackagesWhichDependsOnPackage(class UUGCPackage* Package);
     bool MountUGCPackage(class UUGCPackage* Package, bool FromJoining);
-    UE_PURE int NumberOfModsInstalled(EUGCApprovalStatus ApprovalStatus);
+    UE_PURE int NumberOfModsInstalled(TEnum<EUGCApprovalStatus> ApprovalStatus);
     UE_PURE int NumberOfModsOnSystem();
     void RegisterAssetFromPackage(class UUGCPackage* Package);
     void ResetUGCPackagesManipulatedDuringJoin();
@@ -212,7 +212,7 @@ public:
     void UnmountSandboxUGCPackages();
     bool UnmountUGCPackage(class UUGCPackage* Package, bool RemoveFromUserSettings, bool RemoveFromDisk);
     void UnmountUGCPackages(TArray<FString> ExcludingModIds);
-    UE_PURE TArray<class UUGCPackage*> GetPackagesSorted(EPackageSortField ByField, bool Ascending) const;
+    UE_PURE TArray<class UUGCPackage*> GetPackagesSorted(TEnum<EPackageSortField> ByField, bool Ascending) const;
     UE_PURE bool IsModEnabled(FString ModId) const;
     UE_PURE bool IsModInstalled(FString ModId) const;
     UE_PURE bool IsModInstalledByIdOrName(FString ModIdOrName, bool IncludeDeprecatedLocation) const;
@@ -294,7 +294,7 @@ public:
     UE_PURE TArray<FString> GetNamesOfModsPendingUninstall();
     UE_PURE TArray<FString> GetNamesOfModsPendingUpdate();
     UE_PURE TArray<EModioRequestType> GetQueuedModioRequests();
-    UE_PURE bool HasOutstadingRequestOfType(EModioRequestType requestType);
+    UE_PURE bool HasOutstadingRequestOfType(TEnum<EModioRequestType> requestType);
     void K2_RequestAuthentication();
     void K2_RequestFetchModUpdates();
     void K2_RequestModDependencyList(class UObject* WorldContext, FLatentActionInfo LatentInfo, FString ModId, FString& outParentId, TArray<FString>& outModIds);
@@ -319,7 +319,7 @@ public:
     void K2_RequestTermsOfUse(class UObject* WorldContext);
     void K2_RequestTermsOfUse();
     void MarkRecentlyInstalledModsSuccesful();
-    void RemoveRequestOfType(EModioRequestType requestType);
+    void RemoveRequestOfType(TEnum<EModioRequestType> requestType);
     void ResetModioError();
     void SetCheckGameVersion(bool ShouldCheck);
     void SetModidngSettingsMenuEnabled(bool bEnabled);

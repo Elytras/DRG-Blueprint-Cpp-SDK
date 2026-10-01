@@ -18,6 +18,7 @@ class PRJ_LargeStabbyThorn_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/ThornBranches/PRJ_LargeStabbyThorn", "PRJ_LargeStabbyThorn_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "8b5ae0b078ea5e4fb74c0beddedb4272";

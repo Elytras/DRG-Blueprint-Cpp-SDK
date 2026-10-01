@@ -78,14 +78,14 @@ public:
     void Update_Haz();
     static constexpr const char* Update_Haz__UeName = "Update Haz";
     void MutatorChanged_Event_0();
-    void BndEvt__MENU_MissionCheat_Difficulty_K2Node_ComponentBoundEvent_7_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__MENU_MissionCheat_Difficulty_K2Node_ComponentBoundEvent_7_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__MENU_MissionCheat_BTN_DeepDives_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__MENU_MissionCheat_Button_177_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature();
     void Reset();
-    void BndEvt__TB_GlobalSeed_K2Node_ComponentBoundEvent_4_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, ETextCommit CommitMethod);
+    void BndEvt__TB_GlobalSeed_K2Node_ComponentBoundEvent_4_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, TEnum<ETextCommit> CommitMethod);
     void SetGeneratedMission(class UGeneratedMission* mission, int PLS_Seed);
     void BndEvt__BTN_MissionFromMap_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
-    void BndEvt__MissionType_K2Node_ComponentBoundEvent_2_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__MissionType_K2Node_ComponentBoundEvent_2_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__BTN_StartMission_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();

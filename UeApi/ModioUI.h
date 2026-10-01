@@ -526,6 +526,7 @@ class UModioUserWidgetBase : public UUserWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUserWidgetBase");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     bool bRoutedSetDataSource;
     bool bRoutedLoadExternalData;
     bool bRoutedFinishLoadExternalData;
@@ -558,7 +559,7 @@ public:
     FText UnsubscribeLabel;
     TMulticastInlineDelegate<void(class UModioModInfoUI* ModInfo)> OnSubscribeClicked;
     void EnableSubscribeButton();
-    void HandleModLogoOperationStateChanged(EModioUIAsyncOperationWidgetState NewState);
+    void HandleModLogoOperationStateChanged(TEnum<EModioUIAsyncOperationWidgetState> NewState);
     void NativeSubscribeClicked();
     void OnModSubscriptionStatusChanged(FModioModID ID, bool Subscribed);
     void OnSetExpandedState(bool bExpanded);
@@ -636,7 +637,7 @@ public:
     FText NoSubscribedModsText;
     FText NoModsFoundText;
     void OnFetchUpdatesClicked();
-    void OnModGroupChanged(FText SelectedItem, ESelectInfo SelectionType);
+    void OnModGroupChanged(FText SelectedItem, TEnum<ESelectInfo> SelectionType);
     void SortAToZ();
     void SortRecentlyUpdatedDelegate();
     void SortSizeOnDisk();
@@ -894,7 +895,7 @@ public:
     void NativeMoreOptionsClicked();
     void OnEnabledStateChanged(FModioModID ModId, bool bNewSubscriptionState);
     void OnModEnableButtonPressed();
-    void OnRatingSubmissionComplete(FModioErrorCode ec, EModioRating Rating);
+    void OnRatingSubmissionComplete(FModioErrorCode ec, TEnum<EModioRating> Rating);
     void ShowModDetails();
     void SubmitModReport();
     void SubmitNegativeRating();
@@ -1013,7 +1014,7 @@ public:
     void OnModSubscribeFailed(FModioModID ID);
     void OnModSubscriptionStatusChanged(FModioModID ID, bool Subscribed);
     void OnModUnsubscribeFailed(FModioModID ID);
-    void OnRatingSubmissionComplete(FModioErrorCode ec, EModioRating SubmittedRating);
+    void OnRatingSubmissionComplete(FModioErrorCode ec, TEnum<EModioRating> SubmittedRating);
     void RateDownClicked();
     void RateUpClicked();
     void ReportClicked();
@@ -1223,18 +1224,18 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioDialogInfo");
     FText TitleText;
     TSubclassOf<class UWidget> SubHeaderWidget;
-    EHorizontalAlignment SubHeaderWidgetHAlign;
-    EVerticalAlignment SubHeaderWidgetVAlign;
+    TEnum<EHorizontalAlignment> SubHeaderWidgetHAlign;
+    TEnum<EVerticalAlignment> SubHeaderWidgetVAlign;
     FText DialogText;
     TSubclassOf<class UWidget> InputWidget;
-    EHorizontalAlignment InputWidgetHAlign;
-    EVerticalAlignment InputWidgetVAlign;
-    EStretchDirection InputWidgetScalingType;
+    TEnum<EHorizontalAlignment> InputWidgetHAlign;
+    TEnum<EVerticalAlignment> InputWidgetVAlign;
+    TEnum<EStretchDirection> InputWidgetScalingType;
     float InputWidgetHeightOverride;
     FText InputWidgetHintText;
     TSubclassOf<class UWidget> ButtonAreaWidget;
-    EHorizontalAlignment ButtonAreaWidgetHAlign;
-    EVerticalAlignment ButtonAreaWidgetVAlign;
+    TEnum<EHorizontalAlignment> ButtonAreaWidgetHAlign;
+    TEnum<EVerticalAlignment> ButtonAreaWidgetVAlign;
     TArray<FModioDialogButtonInfo> Buttons;
 };
 
@@ -1287,12 +1288,12 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioUIActionHandler");
     void HandleOnCursorVisibilityChanged(bool bNewVisibility);
     void HandleOnErrorCodeReceived(FModioErrorCode ec);
-    void HandleOnMenuAction(EMenuAction Action, class UObject* OptionalData);
+    void HandleOnMenuAction(TEnum<EMenuAction> Action, class UObject* OptionalData);
     void HandleOnModIDReceived(const FModioModID& ID);
     bool HandleSearchResultParamsReceived(FModioFilterParams Params_0);
     void OnCursorVisibilityChanged(bool bNewVisibility);
     void OnErrorCodeReceived(FModioErrorCode ec);
-    void OnMenuAction(EMenuAction Action, class UObject* OptionalData);
+    void OnMenuAction(TEnum<EMenuAction> Action, class UObject* OptionalData);
     void OnModIDReceived(const FModioModID& ID);
     bool OnSearchResultParamsReceived(FModioFilterParams Params_0);
 };
@@ -1301,7 +1302,7 @@ class IModioUIAuthenticationDataProvider
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIAuthenticationDataProvider");
-    FModioAuthenticationParams GetAuthenticationParams(EModioAuthenticationProvider Provider);
+    FModioAuthenticationParams GetAuthenticationParams(TEnum<EModioAuthenticationProvider> Provider);
     TArray<FModioUIAuthenticationProviderInfo> GetAuthenticationTypes();
     bool ShouldOfferEmailAuthentication();
 };
@@ -1349,14 +1350,14 @@ public:
     float ContentFillOverride;
     float FooterFillOverride;
     FMargin HeaderPadding;
-    EHorizontalAlignment HeaderHorizontalAlignment;
-    EVerticalAlignment HeaderVerticalAlignment;
+    TEnum<EHorizontalAlignment> HeaderHorizontalAlignment;
+    TEnum<EVerticalAlignment> HeaderVerticalAlignment;
     FMargin ContentPadding;
-    EHorizontalAlignment ContentHorizontalAlignment;
-    EVerticalAlignment ContentVerticalAlignment;
+    TEnum<EHorizontalAlignment> ContentHorizontalAlignment;
+    TEnum<EVerticalAlignment> ContentVerticalAlignment;
     FMargin FooterPadding;
-    EHorizontalAlignment FooterHorizontalAlignment;
-    EVerticalAlignment FooterVerticalAlignment;
+    TEnum<EHorizontalAlignment> FooterHorizontalAlignment;
+    TEnum<EVerticalAlignment> FooterVerticalAlignment;
     int MinWidth;
 };
 
@@ -1428,7 +1429,7 @@ class IModioUIInputDeviceChangedReceiver
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIInputDeviceChangedReceiver");
-    void OnInputDeviceChanged(EModioUIInputMode InputDevice);
+    void OnInputDeviceChanged(TEnum<EModioUIInputMode> InputDevice);
 };
 
 class IModioUIInputHintDisplayWidget
@@ -1442,8 +1443,8 @@ class IModioUIInputHintGlyphProvider
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIInputHintGlyphProvider");
-    class UMaterialInterface* GetInputGlyphMaterialForInputType(FKey VirtualInput, EModioUIInputMode InputType);
-    class UTexture2D* GetInputGlyphTextureForInputType(FKey VirtualInput, EModioUIInputMode InputType);
+    class UMaterialInterface* GetInputGlyphMaterialForInputType(FKey VirtualInput, TEnum<EModioUIInputMode> InputType);
+    class UTexture2D* GetInputGlyphTextureForInputType(FKey VirtualInput, TEnum<EModioUIInputMode> InputType);
 };
 
 class IModioUIModDetailsDisplay
@@ -1643,14 +1644,14 @@ class UModioComboBox : public UComboBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioComboBox");
-    EMenuPlacement MenuPlacement;
+    TEnum<EMenuPlacement> MenuPlacement;
 };
 
 class UModioComboBoxString : public UComboBoxString
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioComboBoxString");
-    EMenuPlacement Placement;
+    TEnum<EMenuPlacement> Placement;
     bool bCreateNewWindow;
     bool bWrapMenuContent;
     TSoftObjectPtr<class UMaterialInterface> ContentWrapMaterial;
@@ -1696,6 +1697,7 @@ class UModioDefaultPopupMenuContent : public UUserWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDefaultPopupMenuContent");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     FModioUIStyleRef TextStyle;
     FModioUIStyleRef BorderStyle;
     FModioUIMaterialRef RetainerMaterial;
@@ -1772,9 +1774,9 @@ class UModioDrawerControllerSlot : public UOverlaySlot
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDrawerControllerSlot");
-    EModioDrawerControllerSlotEdge Edge;
-    EHorizontalAlignment DrawerHorizontalAlignment;
-    EVerticalAlignment DrawerVerticalAlignment;
+    TEnum<EModioDrawerControllerSlotEdge> Edge;
+    TEnum<EHorizontalAlignment> DrawerHorizontalAlignment;
+    TEnum<EVerticalAlignment> DrawerVerticalAlignment;
     bool bExpanded;
     float AnimationTime;
     float CurrentAnimationProgress;
@@ -1837,7 +1839,7 @@ public:
     TDelegate<void()> OnConstructWidget;
     TDelegate<void()> OnGetItemCount;
     TSubclassOf<class UUserWidget> ImageWidgetClass;
-    void DisplayGalleryImageAtIndex(EModioUIDirection Direction, int DirectIndex);
+    void DisplayGalleryImageAtIndex(TEnum<EModioUIDirection> Direction, int DirectIndex);
     void RefreshCurrentImage();
     void ResetGallery();
 };
@@ -1862,7 +1864,7 @@ class UModioInputMappingGlyphLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioInputMappingGlyphLibrary");
-    static class UTexture2D* GetInputGlyph(FModioInputMappingGlyph& MappingGlyph, EModioUIInputMode InputMode);
+    static class UTexture2D* GetInputGlyph(FModioInputMappingGlyph& MappingGlyph, TEnum<EModioUIInputMode> InputMode);
 };
 
 class UModioListView : public UListView
@@ -1875,8 +1877,8 @@ class UModioListViewInteger : public UListViewBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioListViewInteger");
-    EOrientation Orientation;
-    ESlateVisibility ScrollbarVisibility;
+    TEnum<EOrientation> Orientation;
+    TEnum<ESlateVisibility> ScrollbarVisibility;
     float EntrySpacing;
     bool bOverrideItemSize;
     FVector2D ItemSize;
@@ -1886,8 +1888,8 @@ class UModioListViewString : public UListViewBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioListViewString");
-    EOrientation Orientation;
-    ESlateVisibility ScrollbarVisibility;
+    TEnum<EOrientation> Orientation;
+    TEnum<ESlateVisibility> ScrollbarVisibility;
     float EntrySpacing;
     bool bOverrideItemSize;
     FVector2D ItemSize;
@@ -1899,8 +1901,8 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioLoadingSpinner");
     FModioUIMaterialRef LoadingImage;
     FVector2D ImageBrushSize;
-    EStretch Stretch;
-    EStretchDirection StretchDirection;
+    TEnum<EStretch> Stretch;
+    TEnum<EStretchDirection> StretchDirection;
     class UMaterialInterface* CachedReferencedMaterial;
 };
 
@@ -1997,8 +1999,8 @@ public:
     class UModioWidgetCarouselEntryWrapper* RightCarouselWidget;
     class UModioWidgetCarouselEntryWrapper* IncomingWidget;
     float RelativeWidgetSpacing;
-    EWidgetClipping EntryWidgetClipping;
-    EModioWidgetCarouselSizeOverrideType EntryWidgetSizeOverride;
+    TEnum<EWidgetClipping> EntryWidgetClipping;
+    TEnum<EModioWidgetCarouselSizeOverrideType> EntryWidgetSizeOverride;
     bool bOverrideAbsoluteWidth;
     float EntryWidgetWidthOverride;
     bool bOverrideAbsoluteHeight;
@@ -2079,9 +2081,9 @@ class UModioNotificationControllerSlot : public UOverlaySlot
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioNotificationControllerSlot");
-    EModioNotificationControllerSlotEdge Edge;
-    EHorizontalAlignment NotificationHorizontalAlignment;
-    EVerticalAlignment NotificationVerticalAlignment;
+    TEnum<EModioNotificationControllerSlotEdge> Edge;
+    TEnum<EHorizontalAlignment> NotificationHorizontalAlignment;
+    TEnum<EVerticalAlignment> NotificationVerticalAlignment;
     float VisibleDuration;
     bool bExpanded;
     float AnimationTime;
@@ -2110,7 +2112,7 @@ public:
     FMargin ContentPadding;
     bool bPreviewOpen;
     TArray<FText> OptionValues;
-    EModioPopupPlacement PopupPlacement;
+    TEnum<EModioPopupPlacement> PopupPlacement;
 };
 
 class UModioPopupMenu : public UMenuAnchor
@@ -2118,7 +2120,7 @@ class UModioPopupMenu : public UMenuAnchor
 public:
     UE_CLASS("/Script/ModioUI", "ModioPopupMenu");
     FText ButtonLabel;
-    ETextJustify ButtonLabelJustification;
+    TEnum<ETextJustify> ButtonLabelJustification;
     class UUserWidget* CurrentContent;
     class UModioRichTextButton* MenuButton;
     FModioUIStyleRef ButtonStyle;
@@ -2214,9 +2216,9 @@ public:
     class UModioInputBindingImage* InputHintImage;
     FText ButtonLabel;
     FName DefaultStyleName;
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     FKey KeyForInputHint;
-    ESlateVisibility GetInputHintVisibility(EModioUIInputMode InputMode);
+    TEnum<ESlateVisibility> GetInputHintVisibility(TEnum<EModioUIInputMode> InputMode);
     FModioRichTextStyle GetRichTextStyle() const;
     TArray<FString> GetStyleNames() const;
 };
@@ -2268,7 +2270,7 @@ class UModioScrollBox : public UScrollBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioScrollBox");
-    EModioScrollBoxBarAlignment ScrollBarAlignment;
+    TEnum<EModioScrollBoxBarAlignment> ScrollBarAlignment;
     float AdditionalPadding;
 };
 
@@ -2286,8 +2288,8 @@ class UModioSizeBox : public USizeBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioSizeBox");
-    EHorizontalAlignment HAlign;
-    EVerticalAlignment VAlign;
+    TEnum<EHorizontalAlignment> HAlign;
+    TEnum<EVerticalAlignment> VAlign;
 };
 
 class UModioSpecifiedMaterialParams : public UModioProceduralBrushParams
@@ -2333,7 +2335,7 @@ public:
     class UModioTileView* TabButtons;
     class UModioInputBindingImage* NavigateNextHint;
     TMulticastInlineDelegate<void(int64 TabIndex, class UObject* AssociatedItem)> OnCurrentTabChanged;
-    ESlateVisibility GetInputHintVisibility(EModioUIInputMode InputMode);
+    TEnum<ESlateVisibility> GetInputHintVisibility(TEnum<EModioUIInputMode> InputMode);
     void NextTab();
     void PrevTab();
     void SetCurrentTab(int64 TabIndex);
@@ -2401,7 +2403,7 @@ public:
     bool AllowPartialItems;
     bool CenterPanelItems;
     bool bZoomSelectedEntryWidget;
-    ESlateVisibility ScrollbarVisibility;
+    TEnum<ESlateVisibility> ScrollbarVisibility;
     void SetAllowPartialItems(bool bAllowPartialItems);
     void SetCenterPanelItems(bool bCenterPanelItems);
 };
@@ -2421,10 +2423,10 @@ public:
     TArray<FName> GetAllNamedStyleNames();
     class UWidget* GetCurrentFocusTarget();
     class UModioUIStyleSet* GetDefaultStyleSet();
-    class UMaterialInterface* GetInputGlyphMaterialForInputType(FKey VirtualInput, EModioUIInputMode InputType);
-    class UTexture2D* GetInputGlyphTextureForInputType(FKey VirtualInput, EModioUIInputMode InputType);
+    class UMaterialInterface* GetInputGlyphMaterialForInputType(FKey VirtualInput, TEnum<EModioUIInputMode> InputType);
+    class UTexture2D* GetInputGlyphTextureForInputType(FKey VirtualInput, TEnum<EModioUIInputMode> InputType);
     FText GetLocalizedTag(FString InTag);
-    void HandleInputModeChanged(EModioUIInputMode NewDevice);
+    void HandleInputModeChanged(TEnum<EModioUIInputMode> NewDevice);
     void HandleOnGlobalMouseClick();
     void SetCurrentFocusTarget(class UWidget* CurrentTarget);
     static UModioUI4Subsystem* Get();
@@ -2446,7 +2448,7 @@ public:
     TSubclassOf<class UObject> AuthenticationDataProvider;
     TSubclassOf<class UObject> InputHintGlyphProvider;
     TSoftObjectPtr<class UModioModBrowserParams> BrowserCategoryConfiguration;
-    EModioUIInputMode InputDevicesForTesting;
+    TEnum<EModioUIInputMode> InputDevicesForTesting;
     bool bOverridePlatformMaterials;
     bool bEnableCollectionModDisableUI;
     bool bEnableCenteredUI;

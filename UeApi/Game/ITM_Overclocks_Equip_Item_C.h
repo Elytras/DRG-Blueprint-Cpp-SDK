@@ -39,7 +39,7 @@ public:
     TMulticastInlineDelegate<void(ITM_Overclocks_Equip_Item_C* Item)> OnUnhovered;
     TMulticastInlineDelegate<void(ITM_Overclocks_Equip_Item_C* Item)> OnClicked;
     class UItemUpgrade* Overclock;
-    EItemUpgradeStatus State;
+    TEnum<EItemUpgradeStatus> State;
     void ExecuteUbergraph_ITM_Overclocks_Equip_Item(int EntryPoint);
     void BndEvt__ClickButton_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__ClickButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
@@ -48,7 +48,7 @@ public:
     void SetIconSize(int NewSize);
     void SetOverclock(class UItemUpgrade* InOverclock);
     void GetOverClock(class UItemUpgrade*& Overclock_0);
-    void SetState(EItemUpgradeStatus InState);
+    void SetState(TEnum<EItemUpgradeStatus> InState);
     UE_PURE class UWidget* GetToolTipWidget();
 };
 

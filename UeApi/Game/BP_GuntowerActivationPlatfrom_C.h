@@ -23,6 +23,7 @@ class BP_GuntowerActivationPlatfrom_C : public AGuntowerActivationPlatform
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/BP_GuntowerActivationPlatfrom", "BP_GuntowerActivationPlatfrom_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Trigger;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent STMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PathfinderCollision;
     static constexpr const char* PathfinderCollision__UeScsNode = "f09d586443a56b4db51c996343fc5cf8";

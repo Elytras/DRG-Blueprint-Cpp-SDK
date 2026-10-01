@@ -20,6 +20,7 @@ class BP_FuelLine_StartPoint_C : public AFuelLineStart
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_StartPoint", "BP_FuelLine_StartPoint_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineStartUsable UsableStartFuelLine;/Script/FSD.OutlineComponent OutlineComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* WidgetStartFuelLine;
     static constexpr const char* WidgetStartFuelLine__UeScsNode = "2c5c0ce09877cf4b8677114be090f924";

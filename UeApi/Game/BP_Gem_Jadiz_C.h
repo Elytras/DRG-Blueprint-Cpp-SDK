@@ -18,6 +18,7 @@ class BP_Gem_Jadiz_C : public Game::GameElements::Resources::Embedded::Gems::BP_
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_Gem_Jadiz", "BP_Gem_Jadiz_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_Gem_Jadiz_C;
     static constexpr const char* UberGraphFrame_BP_Gem_Jadiz_C__UeName = "UberGraphFrame";
     class UAudioComponent* GemJadizIdle_Cue;

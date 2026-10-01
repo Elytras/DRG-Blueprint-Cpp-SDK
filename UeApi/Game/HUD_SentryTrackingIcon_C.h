@@ -47,9 +47,9 @@ public:
     class ARedeployableSentryGun* SentryGun;
     class ARecallableSentryGunItem* Item;
     void ExecuteUbergraph_HUD_SentryTrackingIcon(int EntryPoint);
-    void OnRecallableStateChanged(class ARecallableActor* Sender, ERecallableActorState State);
+    void OnRecallableStateChanged(class ARecallableActor* Sender, TEnum<ERecallableActorState> State);
     void OnTargetDistanceChanged(float Distance_0);
-    void OnSentryGunStateChanged(class ARedeployableSentryGun* Sender, ERedeployableSentryGunState NewState);
+    void OnSentryGunStateChanged(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void OnDeployProgress_Event(float Progress);
     void OnSelectedItemChanged_Event(class ARecallableSentryGun* SentryGun_0);
     void OnTargetSet(class AActor* NewTarget);

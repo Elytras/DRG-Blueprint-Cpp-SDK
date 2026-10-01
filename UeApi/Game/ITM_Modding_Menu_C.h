@@ -93,7 +93,7 @@ public:
     TMap<FString, ITM_PendingMod_C*> WidgetsPendingInstall;
     FTimerHandle RefreshWaitHandle;
     bool CompactView;
-    EPackageSortField SortField;
+    TEnum<EPackageSortField> SortField;
     bool SortAscending;
     TArray<ITM_Mod_C*> ModWidgetsDueForUpdate;
     ITM_Mod_C* ModWidgetDueForUpdate;
@@ -127,13 +127,13 @@ public:
     void On_Mod_Browser_Closed();
     static constexpr const char* On_Mod_Browser_Closed__UeName = "On Mod Browser Closed";
     void OnShouldRemoveDependencyProgress();
-    void OnModioRequestHandled(EModioRequestType requestType);
+    void OnModioRequestHandled(TEnum<EModioRequestType> requestType);
     void BndEvt__ITM_Tab_Modding_ITM_Modding_LoadoutSelection_K2Node_ComponentBoundEvent_8_OnSlotLoaded__DelegateSignature();
     void OnModActivationChanged(ITM_Mod_C* ManipulatedModItem);
     void UpdateButtonsAndCounter();
     void BndEvt__CancelButton_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature();
     void BndEvt__SortByBox_K2Node_ComponentBoundEvent_6_OnEnableDisableAll__DelegateSignature(bool InEnableAll);
-    void BndEvt__SortByBox_K2Node_ComponentBoundEvent_4_OnSortByChanged__DelegateSignature(EPackageSortField InField, bool InAscending);
+    void BndEvt__SortByBox_K2Node_ComponentBoundEvent_4_OnSortByChanged__DelegateSignature(TEnum<EPackageSortField> InField, bool InAscending);
     void BndEvt__UserSetting_CompactView_K2Node_ComponentBoundEvent_5_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void RefreshModUI();
     void RefreshInstallModsButton();
@@ -166,7 +166,7 @@ public:
     void UpdateModCounter();
     void Hide_Mod_Browser();
     static constexpr const char* Hide_Mod_Browser__UeName = "Hide Mod Browser";
-    void ReorderInstalledMods(EPackageSortField InField, bool InAscending);
+    void ReorderInstalledMods(TEnum<EPackageSortField> InField, bool InAscending);
     void RemovePendingRequests();
     void RefreshApplyCancelButtons();
     void IsUGCSubsystemAndRegistryValid(bool& IsValid);

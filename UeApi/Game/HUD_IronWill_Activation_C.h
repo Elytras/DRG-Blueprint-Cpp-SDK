@@ -28,7 +28,7 @@ public:
     void UnbindEvents();
     void BndEvt__HUD_Hold_Activation_K2Node_ComponentBoundEvent_1_OnHoldingFinished__DelegateSignature();
     void BndEvt__HUD_Hold_Activation_K2Node_ComponentBoundEvent_0_OnCountDownFinished__DelegateSignature();
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void StartHolding();
     void EndHolding();
 };

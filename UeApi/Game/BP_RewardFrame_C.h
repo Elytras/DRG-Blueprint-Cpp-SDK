@@ -37,6 +37,7 @@ class BP_RewardFrame_C : public AEventRewardFrame
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame", "BP_RewardFrame_C");
     using BP_ReturningPromotionKey_C = Game::GameElements::GameEvents::RewardDispenser::PromotionKey::BP_ReturningPromotionKey_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SpecialEventUsableComponent EventUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
     static constexpr const char* MeshCarver__UeScsNode = "55165304b65e114aa722290c4e639713";
@@ -87,7 +88,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "52b84996680fbf4d80d4c457d38a5479";
     float AttentionLightTimeLine_Progress01_7D9ABF3443AD60E5960D44ADCB060072;
-    ETimelineDirection AttentionLightTimeLine__Direction_7D9ABF3443AD60E5960D44ADCB060072;
+    TEnum<ETimelineDirection> AttentionLightTimeLine__Direction_7D9ABF3443AD60E5960D44ADCB060072;
     class UTimelineComponent* AttentionLightTimeLine;
     class AGameEvent* OwningEvent;
     bool EventFinished;
@@ -109,7 +110,7 @@ public:
     void BndEvt__EventUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
     void OnEventTriggered();
     void OnEventFinished(bool eventSuccess);
-    void BndEvt__EventUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key_0);
+    void BndEvt__EventUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key_0);
     void ReceiveBeginPlay();
     void OnEventProgress(float Progress);
     void OnEventOpened();

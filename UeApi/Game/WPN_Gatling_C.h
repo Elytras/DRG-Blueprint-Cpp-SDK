@@ -27,6 +27,7 @@ class WPN_Gatling_C : public AGatlingGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GatlingGun/WPN_Gatling", "WPN_Gatling_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BarrelProximityDamage;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* ParticleSystem;
     static constexpr const char* ParticleSystem__UeScsNode = "33e5fa0ceb39af47b8fe33fe95ff83dd";

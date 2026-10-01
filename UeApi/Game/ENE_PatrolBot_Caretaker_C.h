@@ -13,6 +13,7 @@ class ENE_PatrolBot_Caretaker_C : public Game::Enemies::RivalTech::PatrolBot::EN
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/ENE_PatrolBot_Caretaker", "ENE_PatrolBot_Caretaker_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FlyingAudioComponent;/Script/Engine.AudioComponent RollingAudioComponent;/Script/FSD.AvoidCeilingComponent CeilingAvoidance;/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.ParticleSystemComponent LaserBeamIndicator;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PlayerImpactCooldownComponent ImpactCooldown;/Script/FSD.ProjectileAttackComponent FlyingRangedAttack;/Script/FSD.ProjectileAttackComponent MissileAttack;/Script/FSD.ProjectileAttackComponent RangedAttack;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot

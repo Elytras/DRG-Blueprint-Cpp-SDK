@@ -17,6 +17,7 @@ class BP_PropHunt_AnniversaryBallons_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Anniversary/BP_PropHunt_AnniversaryBallons", "BP_PropHunt_AnniversaryBallons_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
     static constexpr const char* SkeletalMesh__UeScsNode = "318668dfbcc84b4e88dbb9cfa9fa3b37";

@@ -20,7 +20,7 @@ public:
     class ACameraActor* Camera;
     float FOV;
     float EaseMultiplier;
-    EEasingFunc EaseFunction;
+    TEnum<EEasingFunc> EaseFunction;
     float BlendExp;
     int Steps;
     bool LookAtPlayerOffset;

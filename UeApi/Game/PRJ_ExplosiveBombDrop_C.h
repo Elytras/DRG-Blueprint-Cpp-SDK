@@ -20,6 +20,7 @@ class PRJ_ExplosiveBombDrop_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_ExplosiveBombDrop", "PRJ_ExplosiveBombDrop_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UExplosionComponent* Explosion;
     static constexpr const char* Explosion__UeScsNode = "a7745ffaa6c9fd488f3de0617b07d2b7";

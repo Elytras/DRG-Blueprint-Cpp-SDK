@@ -17,8 +17,8 @@ class LIB_Intoxication_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/LIB_Intoxication", "LIB_Intoxication_C");
-    static void GetAlcoholStrengthName(EDrinkableAlcoholStrength Strength, bool UpperCase, class UObject* __WorldContext, FText& Name_0);
-    static void GetAlcoholStrengthPct(EDrinkableAlcoholStrength Strength, class APlayerCharacter* Character, class UObject* __WorldContext, int& Percent);
+    static void GetAlcoholStrengthName(TEnum<EDrinkableAlcoholStrength> Strength, bool UpperCase, class UObject* __WorldContext, FText& Name_0);
+    static void GetAlcoholStrengthPct(TEnum<EDrinkableAlcoholStrength> Strength, class APlayerCharacter* Character, class UObject* __WorldContext, int& Percent);
 };
 
 }}}   // namespace Game::GameElements::Bar

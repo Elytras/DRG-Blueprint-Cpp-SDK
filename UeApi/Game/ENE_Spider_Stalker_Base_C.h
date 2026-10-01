@@ -24,6 +24,7 @@ class ENE_Spider_Stalker_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_L
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/ENE_Spider_Stalker_Base", "ENE_Spider_Stalker_Base_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Stalker_Base_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_Base_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
@@ -36,11 +37,11 @@ public:
     static constexpr const char* SimpleArmorDamage__UeScsNode = "8e7de4d6e5791542baab0c6b68920ce0";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_2C60D7CD445CA4535E3E019343B0C2EC";
-    ETimelineDirection Timeline_0__Direction_2C60D7CD445CA4535E3E019343B0C2EC;
+    TEnum<ETimelineDirection> Timeline_0__Direction_2C60D7CD445CA4535E3E019343B0C2EC;
     class UTimelineComponent* Timeline_0;
     float FadeValue_NewTrack;
     static constexpr const char* FadeValue_NewTrack__UeName = "FadeValue_NewTrack_0_DEFB47934D93CD140BBC56A84DE5E335";
-    ETimelineDirection FadeValue__Direction_DEFB47934D93CD140BBC56A84DE5E335;
+    TEnum<ETimelineDirection> FadeValue__Direction_DEFB47934D93CD140BBC56A84DE5E335;
     class UTimelineComponent* FadeValue;
     class UMaterialInterface* CamouflageMaterial;
     class UMaterialInterface* BodyMaterial;
@@ -60,7 +61,7 @@ public:
     void BndEvt__ENE_Spider_Stalker_Base_BP_BurrowComponent_K2Node_ComponentBoundEvent_7_OnBurrow__DelegateSignature();
     void BndEvt__ENE_Spider_Stalker_Base_BP_BurrowComponent_K2Node_ComponentBoundEvent_6_OnUnBurrow__DelegateSignature();
     void BndEvt__ENE_Spider_Stalker_Base_InDanger_K2Node_ComponentBoundEvent_4_IsInDangerSig__DelegateSignature();
-    void BndEvt__ENE_Spider_Stalker_Base_Outline_K2Node_ComponentBoundEvent_1_OutlineChanged__DelegateSignature(EOutline InOutline);
+    void BndEvt__ENE_Spider_Stalker_Base_Outline_K2Node_ComponentBoundEvent_1_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     void BndEvt__ENE_Spider_Stalker_Base_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__ENE_Spider_Stalker_Base_HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void Uncloak();

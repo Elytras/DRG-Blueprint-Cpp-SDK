@@ -27,6 +27,7 @@ class BP_TransmitterNode_C : public ATether
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_TransmitterNode", "BP_TransmitterNode_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarryComponent;/Script/FSD.DamageComponent ExplosionDamage;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent Tetherbeam;/Script/Engine.SkeletalMeshComponent BaseMesh;/Script/Engine.SphereComponent PhysCollision;/Script/Engine.SphereComponent UseTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* TetherConnectionCollider;
     static constexpr const char* TetherConnectionCollider__UeScsNode = "5a030017aac6794198be50e19ac0b9d8";
@@ -75,7 +76,7 @@ public:
     void BndEvt__PysicalCollision_K2Node_ComponentBoundEvent_4_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__Carry_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void BndEvt__Carry_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
-    void BndEvt__UsableComponent_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__UsableComponent_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void DropAndThrowForce(FVector throwForce_0);
     void OnRep_HackingPower();

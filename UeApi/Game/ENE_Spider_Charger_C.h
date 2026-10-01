@@ -21,6 +21,7 @@ class ENE_Spider_Charger_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Charger/ENE_Spider_Charger", "ENE_Spider_Charger_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Charger_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Charger_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* Capsule1;
@@ -31,7 +32,7 @@ public:
     static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
     float Timeline_1_0_NewTrack;
     static constexpr const char* Timeline_1_0_NewTrack__UeName = "Timeline_1_0_NewTrack_3_58C49B7C4DBC0550846DEABB8A2FF230";
-    ETimelineDirection Timeline_1_0__Direction_58C49B7C4DBC0550846DEABB8A2FF230;
+    TEnum<ETimelineDirection> Timeline_1_0__Direction_58C49B7C4DBC0550846DEABB8A2FF230;
     class UTimelineComponent* Timeline_1_0;
     class UClass* AcidCloudClass;
     float LightIntensityCache;

@@ -28,6 +28,7 @@ class BP_RockEnemiesEvent_C : public ARockEnemiesEvent
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RockEnemies/BP_RockEnemiesEvent", "BP_RockEnemiesEvent_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* SprinklerMiscG_1_Cue;
     static constexpr const char* SprinklerMiscG_1_Cue__UeScsNode = "57629b4973697b4ca5fc6491c0a5dda1";

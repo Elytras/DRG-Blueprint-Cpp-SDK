@@ -26,6 +26,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/EVENT_DropPodDefense_Base", "EVENT_DropPodDefense_Base_C");
     using EWC_Salvage_Defend_C = Game::Enemies::Waves::WaveControllers::EWC_Salvage_Defend_C;
     using HUD_Salvage_Defend_C = Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
     static constexpr const char* Audio__UeScsNode = "bc06ffc6444e5443869cc339e6356bd3";

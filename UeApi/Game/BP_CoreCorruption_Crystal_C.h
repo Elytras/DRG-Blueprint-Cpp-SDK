@@ -29,6 +29,7 @@ class BP_CoreCorruption_Crystal_C : public ACoreCorruptionCrystal
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/BP_CoreCorruption_Crystal", "BP_CoreCorruption_Crystal_C");
     using EWC_CoreCorruption_C = Game::GameElements::Missions::Warnings::CoreCorruption::EWC_CoreCorruption_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AliveSound;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.CoreCorruptionPillarSpawnerComponent SpawnerComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent ShieldCollision;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/Engine.SphereComponent KnockbackTriggerComponent;/Script/Engine.StaticMeshComponent ShieldMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_CoreCorruption_Trail;
     static constexpr const char* NS_CoreCorruption_Trail__UeScsNode = "c17538fe17a03748ac17c640d649fbd4";
@@ -43,7 +44,7 @@ public:
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "e7714b833abd674289114a27f63cfd95";
     float ShieldFade_Value_3459267E4E749D90A2DDB6AC33ECEC45;
-    ETimelineDirection ShieldFade__Direction_3459267E4E749D90A2DDB6AC33ECEC45;
+    TEnum<ETimelineDirection> ShieldFade__Direction_3459267E4E749D90A2DDB6AC33ECEC45;
     class UTimelineComponent* ShieldFade;
     EWC_CoreCorruption_C* RiftWave;
     class UMaterialInstanceDynamic* DynamicShieldMaterial;
@@ -53,8 +54,8 @@ public:
     void OnRememberEnemiesToKill(class APawn* enemy_0);
     void SpawnIdleWave();
     void IdleEnemySpawn();
-    void Receive_ExitedState(ECoreCorruptionCrystalState State_0);
-    void Receive_EnteredState(ECoreCorruptionCrystalState State_0);
+    void Receive_ExitedState(TEnum<ECoreCorruptionCrystalState> State_0);
+    void Receive_EnteredState(TEnum<ECoreCorruptionCrystalState> State_0);
     void StopWave();
     void StartWave();
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);

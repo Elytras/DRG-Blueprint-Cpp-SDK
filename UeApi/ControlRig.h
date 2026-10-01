@@ -4792,7 +4792,7 @@ class UControlRig : public UObject
 {
 public:
     UE_CLASS("/Script/ControlRig", "ControlRig");
-    ERigExecutionType ExecutionType;
+    TEnum<ERigExecutionType> ExecutionType;
     class URigVM* VM;
     FRigHierarchyContainer Hierarchy;
     TSoftObjectPtr<class UControlRigGizmoLibrary> GizmoLibrary;
@@ -4855,6 +4855,7 @@ class UControlRigAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/ControlRig", "ControlRigAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class UControlRigBlueprintGeneratedClass : public UBlueprintGeneratedClass
@@ -4886,22 +4887,22 @@ public:
     void AddMappedElements(TArray<FControlRigComponentMappedElement> NewMappedElements);
     void AddMappedSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent, TArray<FControlRigComponentMappedBone> Bones, TArray<FControlRigComponentMappedCurve> Curves);
     void ClearMappedElements();
-    UE_PURE bool DoesElementExist(FName Name_0, ERigElementType ElementType);
-    UE_PURE FTransform GetBoneTransform(FName BoneName, EControlRigComponentSpace Space);
+    UE_PURE bool DoesElementExist(FName Name_0, TEnum<ERigElementType> ElementType);
+    UE_PURE FTransform GetBoneTransform(FName BoneName, TEnum<EControlRigComponentSpace> Space);
     UE_PURE bool GetControlBool(FName ControlName);
     UE_PURE float GetControlFloat(FName ControlName);
     UE_PURE int GetControlInt(FName ControlName);
-    FTransform GetControlOffset(FName ControlName, EControlRigComponentSpace Space);
-    UE_PURE FVector GetControlPosition(FName ControlName, EControlRigComponentSpace Space);
+    FTransform GetControlOffset(FName ControlName, TEnum<EControlRigComponentSpace> Space);
+    UE_PURE FVector GetControlPosition(FName ControlName, TEnum<EControlRigComponentSpace> Space);
     UE_PURE class UControlRig* GetControlRig();
-    UE_PURE FRotator GetControlRotator(FName ControlName, EControlRigComponentSpace Space);
-    UE_PURE FVector GetControlScale(FName ControlName, EControlRigComponentSpace Space);
-    UE_PURE FTransform GetControlTransform(FName ControlName, EControlRigComponentSpace Space);
+    UE_PURE FRotator GetControlRotator(FName ControlName, TEnum<EControlRigComponentSpace> Space);
+    UE_PURE FVector GetControlScale(FName ControlName, TEnum<EControlRigComponentSpace> Space);
+    UE_PURE FTransform GetControlTransform(FName ControlName, TEnum<EControlRigComponentSpace> Space);
     UE_PURE FVector2D GetControlVector2D(FName ControlName);
-    UE_PURE TArray<FName> GetElementNames(ERigElementType ElementType);
-    UE_PURE FTransform GetInitialBoneTransform(FName BoneName, EControlRigComponentSpace Space);
-    UE_PURE FTransform GetInitialSpaceTransform(FName SpaceName, EControlRigComponentSpace Space);
-    UE_PURE FTransform GetSpaceTransform(FName SpaceName, EControlRigComponentSpace Space);
+    UE_PURE TArray<FName> GetElementNames(TEnum<ERigElementType> ElementType);
+    UE_PURE FTransform GetInitialBoneTransform(FName BoneName, TEnum<EControlRigComponentSpace> Space);
+    UE_PURE FTransform GetInitialSpaceTransform(FName SpaceName, TEnum<EControlRigComponentSpace> Space);
+    UE_PURE FTransform GetSpaceTransform(FName SpaceName, TEnum<EControlRigComponentSpace> Space);
     void Initialize();
     void OnPostInitialize(class UControlRigComponent* Component);
     void OnPostSetup(class UControlRigComponent* Component);
@@ -4909,18 +4910,18 @@ public:
     void OnPreSetup(class UControlRigComponent* Component);
     void OnPreUpdate(class UControlRigComponent* Component);
     void SetBoneInitialTransformsFromSkeletalMesh(class USkeletalMesh* InSkeletalMesh);
-    void SetBoneTransform(FName BoneName, FTransform Transform, EControlRigComponentSpace Space, float Weight, bool bPropagateToChildren);
+    void SetBoneTransform(FName BoneName, FTransform Transform, TEnum<EControlRigComponentSpace> Space, float Weight, bool bPropagateToChildren);
     void SetControlBool(FName ControlName, bool Value);
     void SetControlFloat(FName ControlName, float Value);
     void SetControlInt(FName ControlName, int Value);
-    void SetControlOffset(FName ControlName, FTransform OffsetTransform, EControlRigComponentSpace Space);
-    void SetControlPosition(FName ControlName, FVector Value, EControlRigComponentSpace Space);
-    void SetControlRotator(FName ControlName, FRotator Value, EControlRigComponentSpace Space);
-    void SetControlScale(FName ControlName, FVector Value, EControlRigComponentSpace Space);
-    void SetControlTransform(FName ControlName, FTransform Value, EControlRigComponentSpace Space);
+    void SetControlOffset(FName ControlName, FTransform OffsetTransform, TEnum<EControlRigComponentSpace> Space);
+    void SetControlPosition(FName ControlName, FVector Value, TEnum<EControlRigComponentSpace> Space);
+    void SetControlRotator(FName ControlName, FRotator Value, TEnum<EControlRigComponentSpace> Space);
+    void SetControlScale(FName ControlName, FVector Value, TEnum<EControlRigComponentSpace> Space);
+    void SetControlTransform(FName ControlName, FTransform Value, TEnum<EControlRigComponentSpace> Space);
     void SetControlVector2D(FName ControlName, FVector2D Value);
-    void SetInitialBoneTransform(FName BoneName, FTransform InitialTransform, EControlRigComponentSpace Space, bool bPropagateToChildren);
-    void SetInitialSpaceTransform(FName SpaceName, FTransform InitialTransform, EControlRigComponentSpace Space);
+    void SetInitialBoneTransform(FName BoneName, FTransform InitialTransform, TEnum<EControlRigComponentSpace> Space, bool bPropagateToChildren);
+    void SetInitialSpaceTransform(FName SpaceName, FTransform InitialTransform, TEnum<EControlRigComponentSpace> Space);
     void SetMappedElements(TArray<FControlRigComponentMappedElement> NewMappedElements);
     void Update(float DeltaTime);
     UE_PURE float GetAbsoluteTime() const;
@@ -4940,6 +4941,7 @@ class UControlRigLayerInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/ControlRig", "ControlRigLayerInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class UControlRigValidationPass : public UObject
@@ -5004,7 +5006,7 @@ class UFKControlRig : public UControlRig
 public:
     UE_CLASS("/Script/ControlRig", "FKControlRig");
     TArray<bool> IsControlActive;
-    EControlRigFKRigExecuteMode ApplyMode;
+    TEnum<EControlRigFKRigExecuteMode> ApplyMode;
     static constexpr const char* DataSourceRegistry__UeSubobject = "DataSourceRegistry /Script/AnimationCore.AnimationDataSourceRegistry";
     static constexpr const char* VM__UeSubobject = "VM /Script/RigVM.RigVM";
 };

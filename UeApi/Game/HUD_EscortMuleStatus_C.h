@@ -53,7 +53,7 @@ public:
     class UWidgetSwitcher* WidgetSwitcher_IsAlive;
     class UEscortObjective* EscortObj;
     float PrevHealth;
-    EEscortMissionState prevState;
+    TEnum<EEscortMissionState> prevState;
     TArray<float> SpeedThresholds;
     FTimerHandle UpdateFuelDisplayTimer;
     FVector StartPos;

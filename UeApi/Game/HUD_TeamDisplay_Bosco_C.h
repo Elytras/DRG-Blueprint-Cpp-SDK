@@ -46,19 +46,19 @@ public:
     class AActor* BoscoFollowTarget;
     void ExecuteUbergraph_HUD_TeamDisplay_Bosco(int EntryPoint);
     void FollowTargetChanged(class AActor* FollowTarget);
-    void BndEvt__VisibilityGroup_K2Node_ComponentBoundEvent_0_ModeDelegate__DelegateSignature(class UHUDVisibilityGroup* Group, EHUDVisibilityMode Mode);
+    void BndEvt__VisibilityGroup_K2Node_ComponentBoundEvent_0_ModeDelegate__DelegateSignature(class UHUDVisibilityGroup* Group, TEnum<EHUDVisibilityMode> Mode);
     void OnLaserPointerReleased();
     void OnLaserPointerPressed();
     void UpdateHUDVisibility();
     void OnReviveused(int ReviveCount);
     void Update_State_Icon(class UTexture2D* Texture, FLinearColor InColorAndOpacity);
     static constexpr const char* Update_State_Icon__UeName = "Update State Icon";
-    void OnStateChanged(EDroneAIState aCurrentState);
+    void OnStateChanged(TEnum<EDroneAIState> aCurrentState);
     void OnBoscoChanged(class ABosco* Bosco_0);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateReviveCharges(int CurrentCharges, int MaxCharges);
-    void SetVisibilityIfVisibleMode(ESlateVisibility InVisibility);
+    void SetVisibilityIfVisibleMode(TEnum<ESlateVisibility> InVisibility);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display

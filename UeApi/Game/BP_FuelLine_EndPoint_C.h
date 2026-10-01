@@ -20,6 +20,7 @@ class BP_FuelLine_EndPoint_C : public AFuelLineEndPoint
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_EndPoint", "BP_FuelLine_EndPoint_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "e583f9ab5379de4480e6ef1740ff7b93";

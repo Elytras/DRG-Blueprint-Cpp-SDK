@@ -17,6 +17,7 @@ class Grenade_Neurotoxin_C : public Game::WeaponsNTools::Grenades::ITM_AOE_Grena
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/Grenade_Neurotoxin", "Grenade_Neurotoxin_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Neurotoxin_C;
     static constexpr const char* UberGraphFrame_Grenade_Neurotoxin_C__UeName = "UberGraphFrame";
     class UParticleSystemComponent* P_Grenade_Neurotoxin_NozzleCone1;

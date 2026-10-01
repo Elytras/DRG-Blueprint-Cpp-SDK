@@ -20,6 +20,7 @@ class BP_Character_ShowroomStage_C : public AShowroomStage
 {
 public:
     UE_CLASS("/Game/UI/Showroom/BP_Character_ShowroomStage", "BP_Character_ShowroomStage_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D SceneCapture;/Script/Engine.SceneComponent CameraFocusPoint;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UShowroomSceneCaptureComponent* Capture_SeasonsMenu;
     static constexpr const char* Capture_SeasonsMenu__UeScsNode = "26eb29b04bbb6c4195b859e83ad4097c";

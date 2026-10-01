@@ -31,6 +31,7 @@ class BP_Nisse_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Xmas/Nisse/BP_Nisse", "BP_Nisse_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SK_Sideburns_Rig_A_Braided;
     static constexpr const char* SK_Sideburns_Rig_A_Braided__UeScsNode = "2cc37a053e555c47965915131872f0dd";

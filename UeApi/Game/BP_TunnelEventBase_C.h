@@ -25,6 +25,7 @@ class BP_TunnelEventBase_C : public ATunnelEventBase
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEventBase", "BP_TunnelEventBase_C");
     using BP_Gem_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BillboardComponent EntranceIndicator;/Script/Engine.SceneComponent Adders;/Script/Engine.SceneComponent DebrisParent;/Script/Engine.SceneComponent Removers;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TunnelEntranceCarvers";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TerrainScannerMesh;
     static constexpr const char* TerrainScannerMesh__UeScsNode = "d9a704583bc3834eaddd2b467066360f";

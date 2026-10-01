@@ -18,6 +18,7 @@ class AIC_Harvester_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Critters/Harvester/AIC_Harvester", "AIC_Harvester_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviorTree;
     class UHealthComponentBase* HealthComponent;

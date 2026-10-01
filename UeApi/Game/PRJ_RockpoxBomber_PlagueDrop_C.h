@@ -16,6 +16,7 @@ class PRJ_RockpoxBomber_PlagueDrop_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PRJ_RockpoxBomber_PlagueDrop", "PRJ_RockpoxBomber_PlagueDrop_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystem* Impact_particles;
     static constexpr const char* Impact_particles__UeName = "Impact particles";

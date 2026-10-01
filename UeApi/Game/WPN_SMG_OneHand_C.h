@@ -29,6 +29,7 @@ class WPN_SMG_OneHand_C : public AElectricalSMG
 public:
     UE_CLASS("/Game/WeaponsNTools/SMG/WPN_SMG_OneHand", "WPN_SMG_OneHand_C");
     using BP_TurretEMPDischarge_Indicator_C = Game::WeaponsNTools::SentryGun::BP_TurretEMPDischarge_Indicator_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FP_AnimationMag;
     static constexpr const char* FP_AnimationMag__UeScsNode = "e68f669cbb5db5498bd8c25aac17b506";

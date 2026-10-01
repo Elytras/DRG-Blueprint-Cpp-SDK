@@ -44,7 +44,7 @@ public:
     bool ScanWorld;
     bool RequestNormals;
     bool RequestVertexConfidence;
-    EMeshTrackerVertexColorMode VertexColorMode;
+    TEnum<EMeshTrackerVertexColorMode> VertexColorMode;
     TArray<FColor> BlockVertexColors;
     FLinearColor VertexColorFromConfidenceZero;
     FLinearColor VertexColorFromConfidenceOne;

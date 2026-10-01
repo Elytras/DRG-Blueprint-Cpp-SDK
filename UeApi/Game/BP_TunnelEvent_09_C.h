@@ -27,6 +27,7 @@ class BP_TunnelEvent_09_C : public Game::GameElements::GameEvents::TunnelEvent::
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEvent_09", "BP_TunnelEvent_09_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BillboardComponent EntranceIndicator;/Script/Engine.SceneComponent Adders;/Script/Engine.SceneComponent DebrisParent;/Script/Engine.SceneComponent Removers;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TunnelEntranceCarvers";
     FPointerToUberGraphFrame UberGraphFrame_BP_TunnelEvent_09_C;
     static constexpr const char* UberGraphFrame_BP_TunnelEvent_09_C__UeName = "UberGraphFrame";
     class UTunnelEventActorSpawner* Spiderweb22;

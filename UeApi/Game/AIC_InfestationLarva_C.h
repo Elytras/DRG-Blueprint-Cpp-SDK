@@ -14,6 +14,7 @@ class AIC_InfestationLarva_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/InfestationLarva/AIC_InfestationLarva", "AIC_InfestationLarva_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_InfestationLarva(int EntryPoint);
     void ReceiveBeginPlay();

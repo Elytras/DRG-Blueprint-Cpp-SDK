@@ -25,6 +25,7 @@ class BP_Plague_BioTank_Big_C : public ADisplayCase
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/BP_Plague_BioTank_Big", "BP_Plague_BioTank_Big_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_Bars2;
     static constexpr const char* Widget_Bars2__UeScsNode = "a6de77fd76e55e479f8670cc8829db98";
@@ -57,7 +58,7 @@ public:
     void ExecuteUbergraph_BP_Plague_BioTank_Big(int EntryPoint);
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player, bool ShouldReact, bool ShouldStartMC);
     void OnKnock(class APlayerCharacter* Player);
-    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UpdateMeshesForHolidays();
     void GetSeasonBarrelSpawnChance(float& Out);

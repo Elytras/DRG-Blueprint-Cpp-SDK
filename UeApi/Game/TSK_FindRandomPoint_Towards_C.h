@@ -24,7 +24,7 @@ public:
     FBlackboardKeySelector LocationKey;
     float Distance;
     bool SnapToCeiling;
-    EOffsetFrom offsetFrom;
+    TEnum<EOffsetFrom> offsetFrom;
     float OffsetFromDistance;
     FBlackboardKeySelector TowardsLocationKey;
     FVector ToTarget;

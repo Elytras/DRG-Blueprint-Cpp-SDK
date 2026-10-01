@@ -23,11 +23,11 @@ public:
     static void CrossplayOptionSelected();
     static void DisableCrossplayOptionSelected();
     static void EpicAccountServicesSelected();
-    UE_PURE static ECrossplayState GetCurrentCrossplayState();
+    UE_PURE static TEnum<ECrossplayState> GetCurrentCrossplayState();
     UE_PURE static FText GetPlatformCrossplayDescription();
     UE_PURE static FText GetPlatformCrossplayDescriptionTitle();
-    UE_PURE static FText GetPlatformDescriptionForState(ECrossplayState InState);
-    UE_PURE static FText GetPlatformTitleForState(ECrossplayState InState);
+    UE_PURE static FText GetPlatformDescriptionForState(TEnum<ECrossplayState> InState);
+    UE_PURE static FText GetPlatformTitleForState(TEnum<ECrossplayState> InState);
     UE_PURE static bool IsCrossplayEnabled();
     UE_PURE static bool IsCrossplayOptionalPlatform();
     UE_PURE static bool IsCrossplayOptionsRequired();

@@ -50,7 +50,7 @@ public:
     Console_DiscordScreen_C* DiscordConsole;
     BP_PlayerController_SpaceRig_C* Player;
     void ExecuteUbergraph_BP_DiscordConsole(int EntryPoint);
-    void BndEvt__BP_DiscordInstantUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_DiscordInstantUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void callRefreshUsable();
     void OnUsedClient(BP_PlayerControllerBase_C* User);
     void RefreshUsable();

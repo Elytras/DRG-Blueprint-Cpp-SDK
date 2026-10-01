@@ -26,6 +26,7 @@ public:
     UE_CLASS("/Game/Game/BP_PlayerControllerBase", "BP_PlayerControllerBase_C");
     using BP_FSDCameraManager_C = Game::Character::Camera::BP_FSDCameraManager_C;
     using BP_Invitation_C = Game::UI::Menu_Invitation::BP_Invitation_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void(int Reply)> ReplyToInviteRequest;
     BP_Invitation_C* InviteRequest;
@@ -68,7 +69,7 @@ public:
     void StopAnsel();
     void StartAnsel();
     void ReStartAnsel();
-    void GetUnlockedItems(EItemCategory Category, TArray<class UClass*>& Unlocked_Items);
+    void GetUnlockedItems(TEnum<EItemCategory> Category, TArray<class UClass*>& Unlocked_Items);
     void SetUnlockAnalytics(TArray<class UClass*>& Primary, TArray<class UClass*>& Secundary);
     void SetClassAnalytics();
     void ItemFilter(class UClass* itemClass, bool& Result);

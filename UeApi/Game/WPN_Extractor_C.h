@@ -21,6 +21,7 @@ class WPN_Extractor_C : public AExtractorItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Extractor/WPN_Extractor", "WPN_Extractor_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.ParticleSystemComponent InvalidSurfaceParticles;/Script/Engine.ParticleSystemComponent MeltingEffect;/Script/Engine.ParticleSystemComponent MuzzleEffect;/Script/Engine.ParticleSystemComponent MuzzleEInvalidffect;/Script/Engine.ParticleSystemComponent TPMuzzleEffect;/Script/Engine.ParticleSystemComponent TPMuzzleInvalidEffect;/Script/Engine.PointLightComponent SurfaceLight;/Script/Engine.SkeletalMeshComponent DropppedMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "7222c572553fa34bb6753591b663c439";
@@ -39,7 +40,7 @@ public:
     void RecieveEquipped();
     void OnThrown(FVector Direction);
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UserConstructionScript();
 };

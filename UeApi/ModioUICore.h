@@ -110,7 +110,7 @@ public:
     bool GetIsCollectionModDisableUIEnabled();
     bool IsDownloadDrawerOpen();
     void LogOut();
-    void RequestExternalAuthentication(EModioAuthenticationProvider Provider);
+    void RequestExternalAuthentication(TEnum<EModioAuthenticationProvider> Provider);
     void ShowDetailsForMod(FModioModID ID);
     void ShowDialog(class UObject* DialogDataSource);
     void ShowModUnsubscribeDialog(class UObject* DialogDataSource);
@@ -132,14 +132,14 @@ class IModioUIAsyncHandlerWidget
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUIAsyncHandlerWidget");
     void LinkAsyncOperationWidget(const TScriptInterface<class IModioUIAsyncOperationWidget>& Widget);
-    UE_PURE EModioUIAsyncOperationWidgetState GetAsyncOperationState() const;
+    UE_PURE TEnum<EModioUIAsyncOperationWidgetState> GetAsyncOperationState() const;
 };
 
 class IModioUIAsyncOperationWidget
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUIAsyncOperationWidget");
-    void NotifyOperationState(EModioUIAsyncOperationWidgetState NewState);
+    void NotifyOperationState(TEnum<EModioUIAsyncOperationWidgetState> NewState);
     void RequestOperationRetry();
     void SetOperationStateDelegate(TDelegate<void(EModioUIAsyncOperationWidgetState NewState)> Delegate);
 };
@@ -164,7 +164,7 @@ public:
     UE_CLASS("/Script/ModioUICore", "ModioUIMediaDownloadCompletedReceiver");
     void OnModCreatorAvatarDownloadCompleted(FModioModID ModId, FModioErrorCode ec, FModioOptionalImage Image);
     void OnModGalleryImageDownloadCompleted(FModioModID ModId, FModioErrorCode ec, int ImageIndex, FModioOptionalImage Image);
-    void OnModLogoDownloadCompleted(FModioModID ModId, FModioErrorCode ec, FModioOptionalImage Image, EModioLogoSize LogoSize);
+    void OnModLogoDownloadCompleted(FModioModID ModId, FModioErrorCode ec, FModioOptionalImage Image, TEnum<EModioLogoSize> LogoSize);
 };
 
 class IModioUIModEnableWidget
@@ -258,8 +258,8 @@ public:
     FText CategoryName;
     TArray<FString> Tags;
     TArray<FString> ExcludedTags;
-    EModioSortDirection Direction;
-    EModioSortFieldType SortField;
+    TEnum<EModioSortDirection> Direction;
+    TEnum<EModioSortFieldType> SortField;
     int64 Count;
 };
 
@@ -319,9 +319,9 @@ class UModioUIAsyncLoader : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUIAsyncLoader");
-    EModioUIAsyncOperationWidgetState CurrentState;
+    TEnum<EModioUIAsyncOperationWidgetState> CurrentState;
     TMap<FName, class UWidget*> NamedWidgets;
-    void NativeHandleAsyncOperationStateChange(EModioUIAsyncOperationWidgetState NewState);
+    void NativeHandleAsyncOperationStateChange(TEnum<EModioUIAsyncOperationWidgetState> NewState);
     void OnRetryRequested();
     void Retry();
 };
@@ -344,10 +344,10 @@ public:
     void HideModBrowserUI();
     bool QueryIsModEnabled(FModioModID ID);
     void RequestEmailAuthentication(FModioEmailAuthCode code);
-    void RequestExternalAuthentication(EModioAuthenticationProvider Provider);
-    void RequestGalleryImageDownloadForModID(FModioModID ID, int Index_0, EModioGallerySize ImageSize);
+    void RequestExternalAuthentication(TEnum<EModioAuthenticationProvider> Provider);
+    void RequestGalleryImageDownloadForModID(FModioModID ID, int Index_0, TEnum<EModioGallerySize> ImageSize);
     void RequestListAllMods(FModioFilterParams Params_0, FString RequestIdentifier);
-    void RequestLogoDownloadForModID(FModioModID ID, EModioLogoSize LogoSize);
+    void RequestLogoDownloadForModID(FModioModID ID, TEnum<EModioLogoSize> LogoSize);
     bool RequestModEnabledState(FModioModID ID, bool bNewEnabledState);
     void RequestModInfoForModIDs(TArray<FModioModID> IDs);
     void RequestRemoveSubscriptionForModID(FModioModID ID);

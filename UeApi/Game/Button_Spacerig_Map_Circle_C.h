@@ -29,8 +29,8 @@ public:
     class UImage* Image_Dots;
     class UOverlay* ImageS;
     class UMinersManualData* Data;
-    EHorizontalAlignment DotHorizontalAlignment;
-    EVerticalAlignment DotVerticalAlignment;
+    TEnum<EHorizontalAlignment> DotHorizontalAlignment;
+    TEnum<EVerticalAlignment> DotVerticalAlignment;
     TMulticastInlineDelegate<void(Button_Spacerig_Map_Circle_C* Button, class UMinersManualData* Data_0)> OnHovered;
     TMulticastInlineDelegate<void(Button_Spacerig_Map_Circle_C* Button)> OnUnhovered;
     bool IsActive;

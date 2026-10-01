@@ -9258,7 +9258,7 @@ class UVanityAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "VanityAnimInstance");
-    EVanitySlot VanitySlot;
+    TEnum<EVanitySlot> VanitySlot;
     bool ArmorCoversBeard;
     FVector ArmorChestThickness;
     FRotator ArmorChestRotation;
@@ -9301,6 +9301,7 @@ class UStationaryEnemyAnimInstance : public UEnemyAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "StationaryEnemyAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
     class AActor* Target;
     float Yaw;
     float MappedYaw;
@@ -9318,6 +9319,7 @@ class UShootingPlantAnimInstance : public UStationaryEnemyAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "ShootingPlantAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800008 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class UItemDispenserAnimInstance : public UAnimInstance
@@ -9351,8 +9353,8 @@ public:
     UE_CLASS("/Script/FSD", "FlyingBugAnimInstance");
     bool IsInAttackMode;
     bool IsStaggered;
-    EFlyingBugDeathAnimationCategory DeathAnimationCategory;
-    void SetDeathAnimation(EFlyingBugDeathAnimationCategory deathAnim);
+    TEnum<EFlyingBugDeathAnimationCategory> DeathAnimationCategory;
+    void SetDeathAnimation(TEnum<EFlyingBugDeathAnimationCategory> deathAnim);
     UE_PURE bool IsNotInAttackMode() const;
     UE_PURE bool IsNotStaggered() const;
 };
@@ -9386,7 +9388,7 @@ public:
     float HorizontalAngularSpeed;
     float HorizontalAngularSpeed_Abs;
     float VerticalAngularSpeed;
-    EMoveDirection MoveDirection;
+    TEnum<EMoveDirection> MoveDirection;
     bool IsMoving;
     bool IsStrafing;
     bool IsMovingAndStrafing;
@@ -9411,10 +9413,10 @@ public:
     bool WalkToTurnLeft;
     bool ExclusiveTurnStateMode;
     bool IsInFakePhysics;
-    ESpiderDeathAnimationCategory DeathAnimationCategory;
+    TEnum<ESpiderDeathAnimationCategory> DeathAnimationCategory;
     void PlayForcedCycle(float Duration);
     void SetDeathAnimation(class UAnimSequenceBase* Animation);
-    void SetDeathAnimationCategory(ESpiderDeathAnimationCategory Category);
+    void SetDeathAnimationCategory(TEnum<ESpiderDeathAnimationCategory> Category);
     void SetMeshScale(float NewScale);
     UE_PURE bool IsNotAirborne() const;
     UE_PURE bool IsNotFrozen() const;
@@ -9430,7 +9432,7 @@ public:
     TMulticastInlineDelegate<void()> OnWeaponsReady;
     TMulticastInlineDelegate<void()> OnWeaponsNotReady;
     float DigAnimPlayRate;
-    EDroneAIState CurrentState;
+    TEnum<EDroneAIState> CurrentState;
     bool IsReadyToMine;
     bool IsMining;
     bool IsMelee;
@@ -9488,7 +9490,7 @@ class USharkAnimInstance : public USpiderAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "SharkAnimInstance");
-    ESharkEnemyState SharkState;
+    TEnum<ESharkEnemyState> SharkState;
     bool IsCloseToGround;
     bool AttackConnected;
     bool IsAttackingAndAttackNotConnected;
@@ -9578,8 +9580,8 @@ class UMiningPodAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "MiningPodAnimInstance");
-    EMiningPodRampState rampState;
-    EMiningPodState PodState;
+    TEnum<EMiningPodRampState> rampState;
+    TEnum<EMiningPodState> PodState;
 };
 
 class UCoreInfuserPlatformAnimInstance : public UAnimInstance
@@ -9604,6 +9606,7 @@ class UPlayerAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "PlayerAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
     bool IsFirstPerson;
     float WalkTreshhold;
     class APlayerCharacter* Character;
@@ -9612,7 +9615,7 @@ public:
     class UItemCharacterAnimationSet* AnimationSetA;
     class UItemCharacterAnimationSet* AnimationSetB;
     bool AnimationSetAIsPrimary;
-    ECharacterState CharacterState;
+    TEnum<ECharacterState> CharacterState;
     float Speed;
     float WalkAnimationSpeed;
     float RunAnimationSpeed;
@@ -9657,7 +9660,7 @@ public:
     float ReviveExplicitTime;
     float IdleTimeForInspect;
     float RepeatDealayForInspect;
-    ECharacterMoveDirection CharacterMoveDirection;
+    TEnum<ECharacterMoveDirection> CharacterMoveDirection;
     float MoveAdjustmentAngle;
     class UItemCharacterAnimationSet* CarryAnimationSet;
     class UItemCharacterAnimationSet* DefaultAnimationSet;
@@ -9675,6 +9678,7 @@ class UPlayerFPAnimInstance : public UPlayerAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "PlayerFPAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800008 /Script/Engine.SkeletalMeshComponent Engine";
     FRotator WeaponRecoil;
     float HeadBobScale;
     float WeaponSwayRecoverySpeed;
@@ -9785,7 +9789,7 @@ public:
     bool ToChaseLock;
     bool ChaseToWanderLock;
     bool ToCarryLock;
-    EGrabberState GrabberState;
+    TEnum<EGrabberState> GrabberState;
 };
 
 class UFacilityHackingPodAnimInstance : public UAnimInstance
@@ -9796,7 +9800,7 @@ public:
     FRotator LookingDirection;
     FRotator TargetRotation;
     bool IsHacking;
-    EHackingPodState PodState;
+    TEnum<EHackingPodState> PodState;
     float RadarDishAngle;
     void ResetSaluteTarget();
     void SetSaluter(class AActor* salutingTarget);
@@ -9914,8 +9918,8 @@ public:
     bool bIsFlying;
     bool bIsFlyingAndMoving;
     bool bIsFlyingAndNotMoving;
-    EScrabDeathAnimationCategory ScrabDeathAnimationCategory;
-    void SetScrabDeathAnimationCategory(EScrabDeathAnimationCategory Category);
+    TEnum<EScrabDeathAnimationCategory> ScrabDeathAnimationCategory;
+    void SetScrabDeathAnimationCategory(TEnum<EScrabDeathAnimationCategory> Category);
 };
 
 class UPatrolBotAnimInstance : public USpiderAnimInstance
@@ -9953,7 +9957,7 @@ public:
     UE_CLASS("/Script/FSD", "ProspectorAnimInstance");
     FVector2D TiltResult;
     FVector2D LookingResult;
-    EProspectorRobotState ProspectorState;
+    TEnum<EProspectorRobotState> ProspectorState;
     float ArmBusyness;
 };
 
@@ -9969,10 +9973,10 @@ class UPipelineExtractorPodAnimInstance : public UAnimInstance
 public:
     UE_CLASS("/Script/FSD", "PipelineExtractorPodAnimInstance");
     float ConnectionRotation;
-    EPipelineExtractorPodAnimState AnimState;
-    ERessuplyPodState PodState;
-    EPipelineBuildState PipelineState;
-    ERefineryState RefineryState;
+    TEnum<EPipelineExtractorPodAnimState> AnimState;
+    TEnum<ERessuplyPodState> PodState;
+    TEnum<EPipelineBuildState> PipelineState;
+    TEnum<ERefineryState> RefineryState;
     float RotationSpeed;
 };
 
@@ -9980,7 +9984,7 @@ class UFSDRefineryAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "FSDRefineryAnimInstance");
-    ERefineryState RefineryState;
+    TEnum<ERefineryState> RefineryState;
 };
 
 class UCoreInfuserAnimInstance : public UAnimInstance
@@ -10002,7 +10006,7 @@ public:
     bool isDone;
     FRotator Rotation;
     float StartOffset;
-    void SetRivalBombNodeState(ERivalBombNodeState NewState);
+    void SetRivalBombNodeState(TEnum<ERivalBombNodeState> NewState);
 };
 
 class UDrillAnimInstance : public UAnimInstance
@@ -10019,7 +10023,7 @@ class URockCrackedAnimInstance : public UAnimInstance
 public:
     UE_CLASS("/Script/FSD", "RockCrackedAnimInstance");
     class ARockCrackerPod* pod;
-    ERockCrackerstate PodState;
+    TEnum<ERockCrackerstate> PodState;
     bool IsActive;
     bool IsBroken;
 };
@@ -10070,6 +10074,7 @@ class UPlayerTPAnimInstance : public UPlayerAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "PlayerTPAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800008 /Script/Engine.SkeletalMeshComponent Engine";
     float RigidBodyBlend;
     bool RigidBodyOn;
     float UpperBodyBlend;
@@ -10185,7 +10190,7 @@ class UFacilityTetherDispenserAnimInstnace : public UItemDispenserAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "FacilityTetherDispenserAnimInstnace");
-    EHackingPodState PodState;
+    TEnum<EHackingPodState> PodState;
     bool ShouldShowDispenser;
     bool ShouldCloseFromDispenser;
     bool ShouldShowButton;
@@ -10223,7 +10228,7 @@ public:
     FVector2D AngleToTarget;
     float InterpSpeed;
     float BreakRollingWhenTimeLeft;
-    EWoodLouseState RollerState;
+    TEnum<EWoodLouseState> RollerState;
     bool IsWalking;
     bool IsUpRight;
     bool IsDoingSpecialAttack;
@@ -10243,7 +10248,7 @@ class UNisseAnimInstance : public USimpleMovingEnemyAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "NisseAnimInstance");
-    ENisseState State;
+    TEnum<ENisseState> State;
     UE_PURE bool IsFrozen() const;
     UE_PURE bool IsIdle() const;
     UE_PURE bool IsNotFrozen() const;
@@ -10277,7 +10282,7 @@ public:
     UE_CLASS("/Script/FSD", "AttachedParticlesAfflictionEffect");
     class UFXSystemAsset* ParticleEffect;
     TArray<class UFXSystemAsset*> ParticleEffects;
-    EAfflictionSocket Socket;
+    TEnum<EAfflictionSocket> Socket;
     bool ScaleToActor;
     bool UseVisibilityHack;
     bool UseBoneFilter;
@@ -10372,7 +10377,7 @@ class UScalingMeshAfflictionEffect : public UAfflictionEffect
 {
 public:
     UE_CLASS("/Script/FSD", "ScalingMeshAfflictionEffect");
-    EFrozenAfflictionType AfflictionType;
+    TEnum<EFrozenAfflictionType> AfflictionType;
     TArray<FScalingMeshAfflictionItem> IceParts;
     class UMaterialInterface* MaterialOverride;
     FName ParticleBone;
@@ -10383,7 +10388,7 @@ class UBurningAfflictionEffect : public UAfflictionEffect
 {
 public:
     UE_CLASS("/Script/FSD", "BurningAfflictionEffect");
-    EFrozenBitsSize FireParticleSize;
+    TEnum<EFrozenBitsSize> FireParticleSize;
 };
 
 class UItemAggregator : public UActorComponent
@@ -10434,9 +10439,10 @@ class AFSDAIController : public AAIController
 {
 public:
     UE_CLASS("/Script/FSD", "FSDAIController");
+    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Engine";
     TMulticastInlineDelegate<void(FName Message)> OnMessageBehaviorTreeEvent;
     TMulticastInlineDelegate<void()> OnAlertedEvent;
-    ECollisionChannel LOSTraceChannel;
+    TEnum<ECollisionChannel> LOSTraceChannel;
     static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
     static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
     static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
@@ -10502,7 +10508,7 @@ public:
     void ConfirmPickup();
     void GenerateRelativeLocation(class AActor* aTarget, float aRange, float aHeightRestriction, float aMinRange, bool aTryToStayOutOfTheWay, bool aStayBehind);
     class AActor* GetFollowTarget();
-    void OnCarriedUsed(class APlayerCharacter* usedBy, EInputKeys Key);
+    void OnCarriedUsed(class APlayerCharacter* usedBy, TEnum<EInputKeys> Key);
     void OnEscortTargetDied(class UHealthComponentBase* Health);
     void OnJobFinished();
     void OnLaserPointer(const FLaserPointerTarget& HitInfo);
@@ -10689,11 +10695,11 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     static constexpr const char* StaticMesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
     UE_AUTHORITY_ONLY void OnExcavationPhaseFinished();
-    void OnRocketAttachmentStateChanged(ERocketAttachmentState NewState);
+    void OnRocketAttachmentStateChanged(TEnum<ERocketAttachmentState> NewState);
     void ReceiveAttachmentPhaseComplete();
     void ReceiveExcavationPhaseComplete();
     void SetRocketAttachments(TArray<class ARocketAttachment*> InRocketAttachments);
-    UE_PURE EAmberDepositPhase GetCurrentPhase() const;
+    UE_PURE TEnum<EAmberDepositPhase> GetCurrentPhase() const;
     TArray<FVector> GetExcavationPoints() const;
     TArray<class ARocketAttachment*> GetRocketAttachments() const;
 };
@@ -10808,7 +10814,7 @@ public:
     static constexpr const char* Leader__Replicated = ":";
     void OnRep_PitchedUsers();
     void OnShoutStarted(class APlayerCharacter* Player, class UAudioComponent* Audio);
-    void OnUsedBy(class APlayerCharacter* User, EInputKeys Key);
+    void OnUsedBy(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 class AArmorPiece : public AActor
@@ -10859,6 +10865,7 @@ class ATargetDummyPawn : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "TargetDummyPawn");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     FGameplayTagContainer GameplayTags;
 };
 
@@ -10908,6 +10915,7 @@ class UFloatPerkActivation : public UDataAsset
 {
 public:
     UE_CLASS("/Script/FSD", "FloatPerkActivation");
+    static constexpr const char* UeClassTail = "0x00001000 /Script/CoreUObject.Object Engine";
     void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
 };
 
@@ -10965,7 +10973,7 @@ public:
     void OnPickedUpItem(class AActor* Item);
     void OnRep_IsOpen();
     void OnRep_SpawnedItem(class AActor* oldItem);
-    void OnUsed(class APlayerCharacter* User, EInputKeys Key);
+    void OnUsed(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_AUTHORITY_ONLY void Open();
     void SpawnItem();
     UE_PURE class AActor* GetItem() const;
@@ -11129,7 +11137,7 @@ public:
     class USoundCue* WhizbySound;
     float WhizByCooldown;
     float WhizByStartDistance;
-    EOnProjectileImpactBehaviourEnum EOnImpactBehaviour;
+    TEnum<EOnProjectileImpactBehaviourEnum> EOnImpactBehaviour;
     static constexpr const char* CollisionComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static constexpr const char* RootComponent__UeSubobject = "SphereComponent /Script/Engine.SphereComponent";
     static void DisableProjectileCollision(class AProjectileBase* projectileA, class AProjectileBase* projectileB);
@@ -11415,7 +11423,7 @@ public:
     class UFSDAchievement* HappyFeetAchievement;
     int danceMove;
     static constexpr const char* danceMove__Replicated = "OnRep_DanceMove:";
-    ECharacterCameraMode CameraMode;
+    TEnum<ECharacterCameraMode> CameraMode;
     bool IsInCharacterSelectionWorld;
     bool bShouldSpawnAnimEffects;
     float IdleTime;
@@ -11453,6 +11461,7 @@ public:
     static constexpr const char* HealthComponent__UeSubobject = "Health /Script/FSD.PlayerHealthComponent";
     static constexpr const char* InfectionComponent__UeSubobject = "InfectionComponent /Script/FSD.PlayerInfectionComponent";
     static constexpr const char* InventoryComponent__UeSubobject = "Inventory /Script/FSD.InventoryComponent";
+    static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* MissionStatsCollector__UeSubobject = "MissionStatsCollector /Script/FSD.MissionStatsCollector";
     static constexpr const char* OutlineComponent__UeSubobject = "OutlineComponent /Script/FSD.OutlineComponent";
     static constexpr const char* PawnAfflictionComponent__UeSubobject = "PawnAfflictions /Script/FSD.PlayerAfflictionComponent";
@@ -11472,7 +11481,7 @@ public:
     static constexpr const char* WidgetInteraction__UeSubobject = "WidgetInteraction /Script/UMG.WidgetInteractionComponent";
     static void ShowSimpleHoldProgress(class APlayerController* PlayerController, const FText& InDescription, float InProgress);
     void AcceptInvite();
-    UE_SERVER UE_RELIABLE void AcknowledgeCharacterState(ECharacterState eState);
+    UE_SERVER UE_RELIABLE void AcknowledgeCharacterState(TEnum<ECharacterState> eState);
     void AddImpulseFromDirectionAndForce(const FVector& Direction, float force);
     void AddImpulseFromVector(const FVector& Vector);
     void AddImpulseToActor(class AFSDPhysicsActor* Target, FVector_NetQuantize Impulse, FVector_NetQuantize Location, FVector_NetQuantize AngularImpulse);
@@ -11488,8 +11497,8 @@ public:
     void BP_OnUpdateMeshes();
     void CallDonkeyPressed();
     void CallDonkeyReleased();
-    UE_AUTHORITY_ONLY void ChangeIfDifferentState(ECharacterState NewState);
-    UE_AUTHORITY_ONLY void ChangeState(ECharacterState NewState);
+    UE_AUTHORITY_ONLY void ChangeIfDifferentState(TEnum<ECharacterState> NewState);
+    UE_AUTHORITY_ONLY void ChangeState(TEnum<ECharacterState> NewState);
     void Cheat_CreateCountdownHUD();
     UE_CLIENT UE_RELIABLE void CheckWithoutAPaddleAchievement();
     UE_CLIENT UE_RELIABLE void Client_ActivateTemporaryBuff(class UTemporaryBuff* buff);
@@ -11509,15 +11518,15 @@ public:
     class USceneComponent* GetDownCameraAttachPoint();
     class USceneComponent* GetDownCameraRotationPoint();
     void IgnoreInvite();
-    void InstantRevive(class APlayerCharacter* ReviveTarget, EInputKeys Key);
+    void InstantRevive(class APlayerCharacter* ReviveTarget, TEnum<EInputKeys> Key);
     bool IsMovementInputPressed();
     void JumpPress();
     void JumpRelease();
-    bool LockIfState(ECharacterState LockIf, ECharacterState LockTo, bool canMoveAndAim);
+    bool LockIfState(TEnum<ECharacterState> LockIf, TEnum<ECharacterState> LockTo, bool canMoveAndAim);
     void MouseWheelDown();
     void MouseWheelUp();
-    void OnCharacterBeginUse(class APlayerCharacter* User, EInputKeys Key);
-    void OnCharacterUsed(class APlayerCharacter* User, EInputKeys Key);
+    void OnCharacterBeginUse(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void OnCharacterUsed(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnItemEquipped(class AItem* Item);
     void OnPerkActivationFinished();
     void OnRep_CharacterState(class UCharacterStateComponent* oldState);
@@ -11563,7 +11572,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_CheatStartCountDown();
     UE_SERVER UE_RELIABLE void Server_ClearBiomeEffects();
     UE_SERVER UE_RELIABLE void Server_EscapeFromGrabber();
-    UE_SERVER UE_RELIABLE void Server_InstantRevive(class APlayerCharacter* ReviveTarget, EInputKeys Key);
+    UE_SERVER UE_RELIABLE void Server_InstantRevive(class APlayerCharacter* ReviveTarget, TEnum<EInputKeys> Key);
     UE_SERVER UE_RELIABLE void Server_SetClientReady();
     UE_SERVER UE_RELIABLE void Server_SetDispenserReward(class AEventRewardDispenser* Dispenser, class USchematic* Reward);
     UE_SERVER UE_RELIABLE void Server_SetHeadLight(bool On);
@@ -11583,7 +11592,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_TeleportToPlayer(class APlayerCharacter* InPlayerToTeleport, int InTarget);
     UE_SERVER UE_RELIABLE void Server_TriggerDash();
     void SetAttached(class USceneComponent* AttachTo, bool DelayUntilLanded);
-    void SetCameraMode(ECharacterCameraMode NewCameraMode);
+    void SetCameraMode(TEnum<ECharacterCameraMode> NewCameraMode);
     void SetFallbackPhysicalMaterial(class UFSDPhysicalMaterial* PhysMat);
     void SetHeadLight(bool On);
     UE_AUTHORITY_ONLY void SetInCharacterSelectionWorld();
@@ -11595,7 +11604,7 @@ public:
     void SetStandingDown(bool standingDown);
     class UAudioComponent* SpawnSound2D(class USoundBase* Sound, float PriorityOverride, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundConcurrency* ConcurrencySettings, bool bPersistAcrossLevelTransition, bool bAutoDestroy, bool SendVibration);
     class UAudioComponent* SpawnSoundAtLocation(class USoundBase* Sound, FVector Location, FRotator Rotation, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
-    class UAudioComponent* SpawnSoundAttached(class USoundBase* Sound, class USceneComponent* AttachToComponent, float PriorityOverride, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
+    class UAudioComponent* SpawnSoundAttached(class USoundBase* Sound, class USceneComponent* AttachToComponent, float PriorityOverride, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
     void StartPerkActivation(class UPerkHUDActivationWidget* PerkActivationWidget, float HoldTime);
     void StartTutorials(bool ResetTutorials);
     void StopUsingItem();
@@ -11616,10 +11625,10 @@ public:
     UE_PURE FString GetAnalyticsClass() const;
     UE_PURE class UUsableComponent* GetBeastMasterUsableComponent() const;
     UE_PURE float GetBeginRevivedProgress() const;
-    UE_PURE class UCharacterStateComponent* GetCharacterStateComponent(ECharacterState State) const;
+    UE_PURE class UCharacterStateComponent* GetCharacterStateComponent(TEnum<ECharacterState> State) const;
     UE_PURE class UCharacterVanityComponent* GetCharacterVanity() const;
     UE_PURE class UCommunicationComponent* GetCommunicationComponent() const;
-    UE_PURE ECharacterState GetCurrentState() const;
+    UE_PURE TEnum<ECharacterState> GetCurrentState() const;
     UE_PURE class ULightComponent* GetDebugPointLightComponent() const;
     UE_PURE class APlayerCharacter* GetDownCameraTarget() const;
     UE_PURE float GetDownTime() const;
@@ -11634,7 +11643,7 @@ public:
     UE_PURE class AFSDPlayerController* GetPlayerController() const;
     UE_PURE FString GetPlayerName() const;
     UE_PURE class AFSDPlayerState* GetPlayerState() const;
-    UE_PURE ECharacterState GetPreviousState() const;
+    UE_PURE TEnum<ECharacterState> GetPreviousState() const;
     UE_PURE bool GetSuperRapidFireActive() const;
     UE_PURE float GetTimeSinceLastRevival() const;
     UE_PURE class UPlayerTPAnimInstance* GetTPAnimInstance() const;
@@ -11645,13 +11654,13 @@ public:
     UE_PURE bool IsEquipepdActor(class AActor* Actor) const;
     UE_PURE bool IsFirstPerson() const;
     UE_PURE bool IsFrozen() const;
-    UE_PURE bool IsInState(ECharacterState aState) const;
+    UE_PURE bool IsInState(TEnum<ECharacterState> aState) const;
     UE_PURE bool IsJumpPressed() const;
     UE_PURE bool IsLyingDown() const;
     UE_PURE bool IsMining() const;
     UE_PURE bool IsParalyzed() const;
     UE_PURE bool IsSaluting() const;
-    UE_PURE bool IsStateActive(ECharacterState State) const;
+    UE_PURE bool IsStateActive(TEnum<ECharacterState> State) const;
     UE_PURE bool IsUsingItemPressed() const;
     UE_PURE bool IsUsingPressed() const;
     UE_PURE bool IsWalking() const;
@@ -11697,7 +11706,7 @@ public:
     void StopFleeing();
     UE_MULTICAST UE_AUTHORITY_ONLY void TriggerFadeRagdoll();
     void UnFreeze();
-    UE_PURE EPawnAttitude GetAttitude() const;
+    UE_PURE TEnum<EPawnAttitude> GetAttitude() const;
     UE_PURE class AFSDAIController* GetFSDAIController() const;
     UE_PURE class UHealthComponentBase* GetHealthComponent() const;
     UE_AUTHORITY_ONLY UE_PURE bool GetIsAlerted() const;
@@ -11741,6 +11750,7 @@ class ABosco : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "Bosco");
+    static constexpr const char* UeNativeInterfaces = "ITriggerAI IUpgradableGear";
     class UHealthComponent* HealthComponent;
     class UBoscoAbillityComponent* PrimaryAbility;
     class UBoscoAbillityComponent* SecondaryAbility;
@@ -11840,7 +11850,7 @@ public:
     bool IsRotateMode;
     static constexpr const char* IsRotateMode__Replicated = ":";
     class ABoscoController* DroneController;
-    EDroneAIState CurrentState;
+    TEnum<EDroneAIState> CurrentState;
     static constexpr const char* CurrentState__Replicated = "OnRep_State:";
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
     static constexpr const char* BobbingComponent__UeSubobject = "BobbingComponent /Script/FSD.BobbingComponent";
@@ -11873,7 +11883,7 @@ public:
     void OnHit(float amount, float BaseAmount, const FDamageData& DamageData);
     void OnNotReadyToShoot();
     void OnReadyToShoot();
-    void OnRep_State(EDroneAIState prevState);
+    void OnRep_State(TEnum<EDroneAIState> prevState);
     void OnTargetBurrowChange(bool burrowed);
     void OnWeaponFired(const FVector& Location);
     UE_MULTICAST UE_RELIABLE void PlaySalute();
@@ -11883,12 +11893,12 @@ public:
     void SetIsRepairing(bool isRepairing);
     void SetIsReviving(bool aIsReviving);
     void StartSelfDestruct();
-    void StateChanged(EDroneAIState aCurrentState);
+    void StateChanged(TEnum<EDroneAIState> aCurrentState);
     UE_MULTICAST UE_RELIABLE void StopShootingSound();
     void UseABillity();
-    void UsePlayerActivatedAbillity(EAbilityIndex Index_0, class AActor* aTarget, const FVector& aLocation);
+    void UsePlayerActivatedAbillity(TEnum<EAbilityIndex> Index_0, class AActor* aTarget, const FVector& aLocation);
     UE_PURE bool GetCarryInterrupted() const;
-    UE_PURE EDroneAIState GetCurrentState() const;
+    UE_PURE TEnum<EDroneAIState> GetCurrentState() const;
     UE_PURE class UBoscoAbillityComponent* GetPlayerAbillity() const;
     UE_PURE int GetReviveCharges() const;
 };
@@ -11942,7 +11952,7 @@ public:
     class USplineComponent* PathSplineComponent;
     FCablePathSettings PathSettings;
     TSoftObjectPtr<class UStaticMesh> CableMesh;
-    ESplineMeshAxis MeshForwardAxis;
+    TEnum<ESplineMeshAxis> MeshForwardAxis;
     float CableThickness;
     int CarveRadius;
     float CarveSurfaceOffset;
@@ -12017,6 +12027,7 @@ class AFlare : public AFSDPhysicsActor
 {
 public:
     UE_CLASS("/Script/FSD", "Flare");
+    static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
     float InitialSpeed;
     float InitialAngularImpulse;
     float InitialAngularImpulseRandomScale;
@@ -12052,6 +12063,7 @@ class UCampaignManager : public UObject
 {
 public:
     UE_CLASS("/Script/FSD", "CampaignManager");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     TMulticastInlineDelegate<void()> OnCampaignCompleted;
     TMulticastInlineDelegate<void()> OnCampaignChanged;
     TSubclassOf<class UCampaign> MainCampaign;
@@ -12080,8 +12092,8 @@ public:
     UE_PURE bool IsCampaignRestrictionsMet(class UObject* WorldContextObject, class UGeneratedMission* mission, class UDifficultySetting* optionalDifficulty) const;
     UE_PURE bool IsCampaignRestrictionsMet(class UGeneratedMission* mission, class UDifficultySetting* optionalDifficulty) const;
     UE_PURE bool IsInCampaignMission(class AFSDPlayerController* Player) const;
-    UE_PURE bool IsWeeklyCampaignCompleted(class UObject* WorldContext, ECampaignType campaigntype) const;
-    UE_PURE bool IsWeeklyCampaignCompleted(ECampaignType campaigntype) const;
+    UE_PURE bool IsWeeklyCampaignCompleted(class UObject* WorldContext, TEnum<ECampaignType> campaigntype) const;
+    UE_PURE bool IsWeeklyCampaignCompleted(TEnum<ECampaignType> campaigntype) const;
 };
 
 class UCaretakerActionComponent : public UActorComponent
@@ -12113,7 +12125,7 @@ class ACaveVine : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "CaveVine");
-    ECollisionChannel GroundCollisionChannel;
+    TEnum<ECollisionChannel> GroundCollisionChannel;
     float IdleSwingSpeed;
     float ChaseSpeed;
     float MaxReach;
@@ -12149,7 +12161,7 @@ public:
     class APlayerCharacter* CharacterInstance;
     static class UCharacterShowroomController* DisplayCharacter(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, class UShowroomCameraKey* Key);
     static class UCharacterShowroomController* DisplayCharacter(class UPlayerCharacterID* characterID, class UShowroomCameraKey* Key);
-    void EquipWeapon(EItemCategory Category);
+    void EquipWeapon(TEnum<EItemCategory> Category);
     void Receive_CharacterShown();
 };
 
@@ -12158,7 +12170,7 @@ class UTerrainPlacementComponent : public USceneComponent
 public:
     UE_CLASS("/Script/FSD", "TerrainPlacementComponent");
     TArray<FTerrainPlacementBox> TerrainCheckers;
-    EDebrisColliderType CapsuleType;
+    TEnum<EDebrisColliderType> CapsuleType;
     FDebrisCapsule Capsule;
     int BlockerIDHack;
     class UWorld* BlockerWorld;
@@ -12219,7 +12231,7 @@ public:
     FVector StartLocation;
     FVector TargetLocation;
     static constexpr const char* TargetLocation__Replicated = "OnRep_TargetLocation:";
-    ERessuplyPodState State;
+    TEnum<ERessuplyPodState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     float TargetDropTime;
     float ServerDropProgress;
@@ -12234,7 +12246,7 @@ public:
     void OnDroppodCloseToImpact();
     void OnDroppodImpact();
     void OnDropStarted();
-    void OnRep_State(ERessuplyPodState oldState);
+    void OnRep_State(TEnum<ERessuplyPodState> oldState);
     void OnRep_TargetLocation();
     void OnTunnelBLocked();
     UE_AUTHORITY_ONLY void SetIdling();
@@ -12247,7 +12259,7 @@ public:
     class USphereComponent* RemovePlagueCollision;
     static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
     static constexpr const char* RemovePlagueCollision__UeSubobject = "RemovePlague /Script/Engine.SphereComponent";
-    void ChangedState(class ARessuplyPod* InPod, ERessuplyPodState InState);
+    void ChangedState(class ARessuplyPod* InPod, TEnum<ERessuplyPodState> InState);
     void OnObjectiveChanged(class UObjective* Objective);
 };
 
@@ -12293,6 +12305,7 @@ class ACoreCorruptionCrystal : public APawn
 {
 public:
     UE_CLASS("/Script/FSD", "CoreCorruptionCrystal");
+    static constexpr const char* UeNativeInterfaces = "IBossFightInterface";
     class USceneComponent* Root;
     class URotatingSceneComponent* Bobber;
     class URotatingSceneComponent* Rotator;
@@ -12340,7 +12353,7 @@ public:
     float DeathIntoRiftTime;
     float KnockBackInterval;
     float BossHealthBarDelay;
-    ECoreCorruptionCrystalState State;
+    TEnum<ECoreCorruptionCrystalState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     static constexpr const char* AliveSound__UeSubobject = "AliveSound /Script/Engine.AudioComponent";
     static constexpr const char* CrystalMesh__UeSubobject = "SKMeshComponent /Script/Engine.SkeletalMeshComponent";
@@ -12362,10 +12375,10 @@ public:
     void OnPillarDestroyed(class ACoreCorruptionPillar* pillarDestroyed);
     void OnPillarSpawned(class AActor* pillarSpawned);
     void OnRep_Pillar();
-    void OnRep_State(ECoreCorruptionCrystalState oldState);
-    void Receive_EnteredState(ECoreCorruptionCrystalState State_0);
-    void Receive_ExitedState(ECoreCorruptionCrystalState State_0);
-    UE_AUTHORITY_ONLY void SetState(ECoreCorruptionCrystalState State_0);
+    void OnRep_State(TEnum<ECoreCorruptionCrystalState> oldState);
+    void Receive_EnteredState(TEnum<ECoreCorruptionCrystalState> State_0);
+    void Receive_ExitedState(TEnum<ECoreCorruptionCrystalState> State_0);
+    UE_AUTHORITY_ONLY void SetState(TEnum<ECoreCorruptionCrystalState> State_0);
     void ShowHealthBar();
     void StartWave();
     void StopWave();
@@ -12477,6 +12490,7 @@ class AEnemyDeepPathfinderCharacter : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "EnemyDeepPathfinderCharacter");
+    static constexpr const char* UeNativeInterfaces = "ITriggerAI";
     class UEnemyHealthComponent* HealthComponent;
     FQueuedMontage QueuedMontage;
     static constexpr const char* QueuedMontage__Replicated = "OnRep_QueuedMontage:";
@@ -12543,7 +12557,7 @@ public:
     bool bEnabledSegmentCollision;
     float CarveRadius;
     TSoftObjectPtr<class UStaticMesh> SegmentMeshPtr;
-    ESplineMeshAxis SegmentForwardAxis;
+    TEnum<ESplineMeshAxis> SegmentForwardAxis;
     float SegmentLength;
     FRuntimeFloatCurve SegmentWidthCurve;
     float SegmentWidthScale;
@@ -12624,7 +12638,7 @@ public:
     UE_CLASS("/Script/FSD", "RecalculatedElectroBeam");
     float MaxBeamRange;
     float UpdateRateSeconds;
-    EElectroBeamState BeamState;
+    TEnum<EElectroBeamState> BeamState;
     static constexpr const char* BeamState__Replicated = "OnRep_BeamState:";
     static constexpr const char* BeamEffect__UeSubobject = "BeamEffect /Script/Engine.ParticleSystemComponent";
     static constexpr const char* ZappSound__UeSubobject = "ZappSound /Script/Engine.AudioComponent";
@@ -12675,7 +12689,7 @@ class ACrossbowProjectileStuck : public AFSDPhysicsActor
 {
 public:
     UE_CLASS("/Script/FSD", "CrossbowProjectileStuck");
-    ECrossbowStuckType StuckProjectileEffect;
+    TEnum<ECrossbowStuckType> StuckProjectileEffect;
     bool BansheePulseEnabled;
     static constexpr const char* BansheePulseEnabled__Replicated = "OnRep_BansheePulseEnabled:";
     bool IsPlayingElectricRangeEffect;
@@ -12695,7 +12709,7 @@ public:
     UE_MULTICAST UE_RELIABLE void All_OnCavePointRemoved(class USceneComponent* Point);
     void MatchParentDestroy(class UHealthComponentBase* destroyed);
     void OnRep_BansheePulseEnabled();
-    void OnUsedBy(class APlayerCharacter* Player, EInputKeys Key);
+    void OnUsedBy(class APlayerCharacter* Player, TEnum<EInputKeys> Key);
     void UsableChanged(bool CanUse);
     UE_PURE bool GetSpecialArrowEquipped() const;
     UE_PURE bool IsLocallyControlled() const;
@@ -12722,7 +12736,7 @@ public:
     UE_CLASS("/Script/FSD", "DebrisItemComponent");
     class UDebrisPositioning* Debris;
     TArray<FDebrisItemActorItem> Actors;
-    EDebrisItemPass ItemPass;
+    TEnum<EDebrisItemPass> ItemPass;
     float InfluenceRange;
     float MinDistanceToImportantLocations;
     bool UseAmount;
@@ -12812,16 +12826,16 @@ public:
     TArray<FEncodedChunkId> VisibleChunks;
     static constexpr const char* AsyncPathRequests__UeSubobject = "AsyncPathRequests /Script/FSD.AsyncPathRequests";
     static constexpr const char* RootComponent__UeSubobject = "FakeMoeventBase /Script/Engine.ArrowComponent";
-    static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, FLatentActionInfo LatentInfo);
-    static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale);
-    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious);
-    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
-    static void CarveWithSTLMesh_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithSTLMesh_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious, FLatentActionInfo LatentInfo);
-    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
+    static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, FLatentActionInfo LatentInfo);
+    static void CarveWithMesh_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale);
+    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, float ExpensiveNoise, TEnum<EPreciousMaterialOptions> Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, float ExpensiveNoise, TEnum<EPreciousMaterialOptions> Precious);
+    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, TEnum<EPreciousMaterialOptions> Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithStaticMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, TEnum<EPreciousMaterialOptions> Precious);
+    static void CarveWithSTLMesh_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, TEnum<EPreciousMaterialOptions> Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithSTLMesh_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, TEnum<EPreciousMaterialOptions> Precious);
+    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, TEnum<EPreciousMaterialOptions> Precious, FLatentActionInfo LatentInfo);
+    static void CarveWithSTLMeshUsingTransform_Wait(class ADeepCSGWorld* CSGWorld, class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, TEnum<EPreciousMaterialOptions> Precious);
     UE_PURE static int GetShadowQuality();
     void ApplyBaseDebrisCarvers(const TArray<class UDebrisBase*>& Carvers);
     void AttachActorToTerrain(class AActor* Actor, FVector Pos);
@@ -12829,14 +12843,14 @@ public:
     void BaseLayerCommitFinal(bool blocking);
     float CalcApproximateTerrainDensity(FVector Pos, float Radius);
     void CarveWithCSGBuild(TSubclassOf<class ACSGBuilder> CSGModel, const FTransform& Transform);
-    void CarveWithMesh(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    void CarveWithMeshUsingTransform(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, float ExpensiveNoise, EPreciousMaterialOptions Precious, ECarveOptionsCellSize CarverSize);
-    void CarveWithSplineSegment(const FVector& SplineStart, const FVector& SplineStartTangent, const FVector& SplineEnd, const FVector& SplineEndTangent, float Radius, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, EPreciousMaterialOptions Precious);
-    void CarveWithSplineSegments(const TArray<FCarveSplineSegment>& Segments, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, EPreciousMaterialOptions Precious);
-    void CarveWithStaticMesh(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    void CarveWithStaticMeshUsingTransform(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
-    void CarveWithSTLMesh(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, EPreciousMaterialOptions Precious);
-    void CarveWithSTLMeshUsingTransform(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, ECarveFilterType CarveFilter, const FTransform& Transform, EPreciousMaterialOptions Precious);
+    void CarveWithMesh(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, TEnum<EPreciousMaterialOptions> Precious);
+    void CarveWithMeshUsingTransform(class UStaticMesh* StaticMesh, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, float ExpensiveNoise, TEnum<EPreciousMaterialOptions> Precious, TEnum<ECarveOptionsCellSize> CarverSize);
+    void CarveWithSplineSegment(const FVector& SplineStart, const FVector& SplineStartTangent, const FVector& SplineEnd, const FVector& SplineEndTangent, float Radius, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, TEnum<EPreciousMaterialOptions> Precious);
+    void CarveWithSplineSegments(const TArray<FCarveSplineSegment>& Segments, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, TEnum<EPreciousMaterialOptions> Precious);
+    void CarveWithStaticMesh(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, TEnum<EPreciousMaterialOptions> Precious);
+    void CarveWithStaticMeshUsingTransform(class UStaticMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, TEnum<EPreciousMaterialOptions> Precious);
+    void CarveWithSTLMesh(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, FVector Pos, FQuat Orientation, FVector Scale, TEnum<EPreciousMaterialOptions> Precious);
+    void CarveWithSTLMeshUsingTransform(class USTLMeshCarver* MeshCarver, class UTerrainMaterial* Material, TEnum<ECarveFilterType> CarveFilter, const FTransform& Transform, TEnum<EPreciousMaterialOptions> Precious);
     float FindTotalVolumeOfMaterialInWorld(class UTerrainMaterial* Material);
     void FinishGeneration_Blocking();
     void GenerateAllMeshes();
@@ -12844,7 +12858,7 @@ public:
     UE_PURE int GetTerrainHash();
     UE_PURE bool IsComponentRegisteredWithScanner(class UPrimitiveComponent* Component);
     void RegisterScannerComponent(class UPrimitiveComponent* Component, bool useFogOfWar);
-    void RemoveDebrisInSphere(const FVector& Position, float Radius, bool onlyFragile, bool alsoDurable, ESpecialDebrisType onlyType);
+    void RemoveDebrisInSphere(const FVector& Position, float Radius, bool onlyFragile, bool alsoDurable, TEnum<ESpecialDebrisType> onlyType);
     UE_MULTICAST UE_RELIABLE void RemoveDebrisInstance_TerrainOp2(int instance, int Component);
     void ResetEntireWorld();
     void SelectDebrisSettings();
@@ -12868,15 +12882,15 @@ public:
     UE_PURE bool InitialGenerationDone() const;
     UE_PURE bool IsPointInsideTerrain(const FVector& Pos) const;
     UE_PURE bool IsPositionVisibleToScanner(const FVector& Pos) const;
-    bool Linecast(FVector Start, FVector End, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
-    bool Raycast(FVector Start, FVector Direction, float MaxDistance, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
+    bool Linecast(FVector Start, FVector End, FCSGRaycastHitInfo& HitInfo, TEnum<ELandscapeCellFilter> Filter) const;
+    bool Raycast(FVector Start, FVector Direction, float MaxDistance, FCSGRaycastHitInfo& HitInfo, TEnum<ELandscapeCellFilter> Filter) const;
 };
 
 class ADrillevator : public ATaggedActor
 {
 public:
     UE_CLASS("/Script/FSD", "Drillevator");
-    EDrillevatorState State;
+    TEnum<EDrillevatorState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     bool MovementEnabled;
     static constexpr const char* MovementEnabled__Replicated = "OnRep_MovementEnabled:";
@@ -12893,15 +12907,15 @@ public:
     float CenterEngineMaxHeat;
     class UMaterialInstanceDynamic* DynMatCenterEngineHeat;
     void OnCloseToTargetDepth();
-    void OnEnterState(EDrillevatorState NewState);
-    void OnExitState(EDrillevatorState oldState);
+    void OnEnterState(TEnum<EDrillevatorState> NewState);
+    void OnExitState(TEnum<EDrillevatorState> oldState);
     void OnMovingChanged(bool IsMoving);
     void OnRep_MovementEnabled(bool OldMovementEnabled);
     void OnRep_ServerDepth();
-    void OnRep_State(EDrillevatorState oldState);
+    void OnRep_State(TEnum<EDrillevatorState> oldState);
     UE_AUTHORITY_ONLY void SetMovementEnabled(bool Enabled);
     UE_AUTHORITY_ONLY void SetMovementSpeed(float NewSpeed);
-    UE_AUTHORITY_ONLY void SetState(EDrillevatorState NewState);
+    UE_AUTHORITY_ONLY void SetState(TEnum<EDrillevatorState> NewState);
     UE_AUTHORITY_ONLY void SetTargetDepth(float Depth);
     class USkeletalMeshComponent* GetCenterEngineComponent() const;
     UE_PURE bool IsAtTargetDepth() const;
@@ -12963,7 +12977,7 @@ public:
     static constexpr const char* SimpleHealth__UeSubobject = "SimpleHealth /Script/FSD.SimpleHealthComponent";
     static constexpr const char* UseComp__UeSubobject = "UseComp /Script/FSD.SingleUsableComponent";
     void OnDetPackDeath(class UHealthComponentBase* HealthComponent);
-    void OnDetPackPickedUp(class APlayerCharacter* User, EInputKeys Key);
+    void OnDetPackPickedUp(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnExploded();
     void OnRep_HasExploded();
     void OnRep_IsMoving();
@@ -12987,7 +13001,7 @@ public:
     class UUseConditionSet* UseConditions;
     bool IsClientPredictive;
     bool ThirdPersonWhileUsing;
-    void BeginUse(class APlayerCharacter* User, EInputKeys Key);
+    void BeginUse(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void EndUse(class APlayerCharacter* User);
     UE_PURE FText GetUseText(class APlayerCharacter* User);
     void SetAnimationSettings(class UUseAnimationSetting* Settings);
@@ -13099,19 +13113,20 @@ class UDamageComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "DamageComponent");
+    static constexpr const char* UeClassTail = "0x00a01004 /Script/CoreUObject.Object Engine";
     TMulticastInlineDelegate<void(class AActor* Target, class UFSDPhysicalMaterial* PhysicalMaterial, bool bWasDirectHit)> OnTargetKilledEvent;
     TMulticastInlineDelegate<void(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* Component, class UFSDPhysicalMaterial* PhysicalMaterial)> OnTargetDamagedEvent;
     TMulticastInlineDelegate<void()> OnNoTargetHitEvent;
     TMulticastInlineDelegate<void()> OnHitDeadTarget;
     TMulticastInlineDelegate<void()> OnAsyncAoE_Complete;
-    EDamageComponentType DamageComponentType;
+    TEnum<EDamageComponentType> DamageComponentType;
     class UDamageImpulse* DamageImpulse;
     float Damage;
     float armorDamageMultiplier;
     float ArmorPenetration;
     bool ShattersArmor;
     class UDamageClass* DamageClass;
-    EArmorDamageType ArmorDamageType;
+    TEnum<EArmorDamageType> ArmorDamageType;
     float WeakpointDamageMultiplier;
     float FrozenDamageBonusScale;
     float FriendlyFireModifier;
@@ -13163,7 +13178,7 @@ class ADrillevatorEngine : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "DrillevatorEngine");
-    EDrillevatorEngineState State;
+    TEnum<EDrillevatorEngineState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     float Health;
     static constexpr const char* Health__Replicated = "OnRep_Health:";
@@ -13185,10 +13200,10 @@ public:
     void OnRep_DamageLevel();
     void OnRep_Health();
     void OnRep_LastRepairProgress();
-    void OnRep_State(EDrillevatorEngineState oldState);
+    void OnRep_State(TEnum<EDrillevatorEngineState> oldState);
     UE_AUTHORITY_ONLY void SetHealth(float InHealth);
     UE_AUTHORITY_ONLY void SetLastRepairProgress(float InProgress);
-    UE_AUTHORITY_ONLY void SetState(EDrillevatorEngineState NewState);
+    UE_AUTHORITY_ONLY void SetState(TEnum<EDrillevatorEngineState> NewState);
 };
 
 class ADroppableOutpost : public ATaggedActor
@@ -13204,7 +13219,7 @@ public:
     FVector CarverScale;
     float DepartureTime;
     FVector StartLocation;
-    EDroppableOutpostState State;
+    TEnum<EDroppableOutpostState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     float DrillSpeed;
     float FreeFallAcceleration;
@@ -13240,15 +13255,15 @@ public:
     class UBoxComponent* DwarfCheckerBox;
     float DepartureTime;
     FText DepartueCountdownName;
-    EMiningPodMission MissionType;
+    TEnum<EMiningPodMission> MissionType;
     bool WaitForPlayerSpawns;
     bool HasLanded;
     class UOutlineComponent* PodOutline;
     FVector StartLocation;
     static constexpr const char* StartLocation__Replicated = ":";
-    EMiningPodState TransportState;
+    TEnum<EMiningPodState> TransportState;
     static constexpr const char* TransportState__Replicated = "OnRep_State:";
-    EMiningPodRampState rampState;
+    TEnum<EMiningPodRampState> rampState;
     static constexpr const char* rampState__Replicated = "OnRep_RampState:";
     float TargetDropTime;
     float TargetDepartureTime;
@@ -13289,7 +13304,7 @@ public:
     UE_AUTHORITY_ONLY void RecieveReturnTimerExpired();
     UE_AUTHORITY_ONLY void RecieveReturnTimerFifteenSecondWarning();
     void SetMuleInstance(class AMolly* Donkey);
-    UE_AUTHORITY_ONLY void SetRampState(EMiningPodRampState rampState_0);
+    UE_AUTHORITY_ONLY void SetRampState(TEnum<EMiningPodRampState> rampState_0);
     UE_PURE bool GetHasLanded() const;
     UE_PURE int GetTimeToDeparture() const;
 };
@@ -13380,7 +13395,7 @@ public:
     bool UseThirdPersonCam;
     FControlEnemyState StateData;
     static constexpr const char* StateData__Replicated = "OnRep_StateData:";
-    EEnemyControlState ControlState;
+    TEnum<EEnemyControlState> ControlState;
     static constexpr const char* ControlState__Replicated = "OnRep_ControlState:";
     FQuat AngularVelocity;
     static constexpr const char* AngularVelocity__Replicated = ":";
@@ -13391,7 +13406,7 @@ public:
     void OnControllingEnemy(bool IsControlling);
     void OnControllingEnemyAttached();
     void OnEnemyCrashMontageEnded(class UAnimMontage* Montage, bool interrupted);
-    void OnRep_ControlState(EEnemyControlState oldState);
+    void OnRep_ControlState(TEnum<EEnemyControlState> oldState);
     void OnRep_StateData(const FControlEnemyState& oldState);
     UE_SERVER UE_RELIABLE void ServerExit();
 };
@@ -13434,6 +13449,7 @@ class AEscortMule : public AFSDPawn
 {
 public:
     UE_CLASS("/Script/FSD", "EscortMule");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     TMulticastInlineDelegate<void()> OnMuleActivated;
     TMulticastInlineDelegate<void(float newSpeedModifier)> OnSpeedChanged;
     TMulticastInlineDelegate<void(int IntValue)> OnFullCanistersChanged;
@@ -13446,7 +13462,7 @@ public:
     FTransform TargetTransform;
     FTransform PreviousTransform;
     bool IsPathReady;
-    EEscortMissionState State;
+    TEnum<EEscortMissionState> State;
     static constexpr const char* State__Replicated = "OnObjectiveStateChanged:";
     class UEscortObjective* EscortObjective;
     FEscortMuleMovementState MovementState;
@@ -13476,10 +13492,10 @@ public:
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void ActivateMule();
-    void ObjectiveStateChange(EEscortMissionState NewState);
+    void ObjectiveStateChange(TEnum<EEscortMissionState> NewState);
     void OnExtractorDetached(class AExtractorItem* Item);
     void OnExtractorSlotChanged(const FEscortMuleExtractorSlot& Slot, int Index_0);
-    void OnObjectiveStateChanged(EEscortMissionState oldState);
+    void OnObjectiveStateChanged(TEnum<EEscortMissionState> oldState);
     void OnRep_ExtractorSlots();
     void OnRep_IsCarvingTunnel();
     void OnRep_MovementState();
@@ -13493,7 +13509,7 @@ public:
     UE_AUTHORITY_ONLY void SetTargetTransform(FTransform InTransform);
     bool TryHeal(class APlayerCharacter* User, float amount);
     UE_PURE float GetDistanceToDoretta(FVector Location) const;
-    UE_PURE EEscortExtractorState GetExtractorState(class UInstantUsable* Usable) const;
+    UE_PURE TEnum<EEscortExtractorState> GetExtractorState(class UInstantUsable* Usable) const;
     UE_PURE bool GetIsPathReady() const;
 };
 
@@ -13569,6 +13585,7 @@ class AFSDPlayerCameraManager : public APlayerCameraManager
 {
 public:
     UE_CLASS("/Script/FSD", "FSDPlayerCameraManager");
+    static constexpr const char* UeClassTail = "0x0080020c /Script/CoreUObject.Object Engine";
     static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
 };
@@ -13599,6 +13616,7 @@ class UFadeScreenSubSystem : public UGameInstanceSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "FadeScreenSubSystem");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.GameInstance Engine";
     TMulticastInlineDelegate<void()> OnFadeInComplete;
     FFadeData Fading;
     static void BlackoutScreen(class UObject* WorldContext, bool FadeWorldOnly);
@@ -13727,7 +13745,7 @@ public:
     UE_SERVER UE_RELIABLE void Server_StartUsing(bool isUsing_0);
     class UAudioComponent* SpawnSound2D(class USoundBase* Sound, float PriorityOverride, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundConcurrency* ConcurrencySettings, bool bPersistAcrossLevelTransition, bool bAutoDestroy, bool SendVibration);
     class UAudioComponent* SpawnSoundAtLocation(class USoundBase* Sound, FVector Location, FRotator Rotation, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
-    class UAudioComponent* SpawnSoundAttached(class USoundBase* Sound, class USceneComponent* AttachToComponent, float PriorityOverride, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
+    class UAudioComponent* SpawnSoundAttached(class USoundBase* Sound, class USceneComponent* AttachToComponent, float PriorityOverride, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
     void StopUsing(bool Cancelled);
     void UpdateSkin();
     UE_PURE FString GetAnalyticsItemCategory() const;
@@ -13807,7 +13825,7 @@ public:
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    void CameraModeUpdated(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void CameraModeUpdated(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
 };
 
 class AThrowableActor : public AActor
@@ -13869,7 +13887,7 @@ public:
     float AttractorPowerWhenVacuuming;
     float ScaleTimeVacuuming;
     float Speed;
-    EVacuumState State;
+    TEnum<EVacuumState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     class USceneComponent* VacuumSource;
     static constexpr const char* VacuumSource__Replicated = ":";
@@ -13879,10 +13897,10 @@ public:
     static constexpr const char* PuddleRoot__UeSubobject = "PuddleRoot /Script/Engine.SceneComponent";
     static constexpr const char* Root__UeSubobject = "Root /Script/Engine.SceneComponent";
     void OnHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void OnRep_State(EVacuumState prevState);
+    void OnRep_State(TEnum<EVacuumState> prevState);
     void ScaleOutAndDestroy();
     UE_AUTHORITY_ONLY void SetPuddleLifetime(float LifeTime);
-    void SetState(EVacuumState State_0);
+    void SetState(TEnum<EVacuumState> State_0);
 };
 
 class AFoamPuddle_WalkingPlagueheart : public AFoamPuddle
@@ -14024,13 +14042,13 @@ public:
     bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void ReceivePlacementChangedBegin(const FTransform& NewEndTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void ReceivePlacementChangedEnd(const FTransform& NewEndTransform, class UTrackBuilderConnectPoint* InConnectPoint);
-    void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
+    void ReceivePlacementStateChanged(TEnum<ETrackBuildPlacementState> NewState);
     void ReceivPlacementValidChanged(bool InIsValid);
     bool UpdatePlacement(const FTransform& InTransform, class UTrackBuilderConnectPoint* InConnectPoint, bool InPlacementValid, class AItem* PlaceableItem);
     UE_PURE class UTrackBuilderConnectPoint* GetConnectPoint() const;
     UE_PURE bool GetIsSegmentEndTransformValid() const;
     UE_PURE class ATrackBuilderSegment* GetNextSegment(bool bForward) const;
-    UE_PURE ETrackBuildPlacementState GetPlacementState() const;
+    UE_PURE TEnum<ETrackBuildPlacementState> GetPlacementState() const;
     UE_PURE FTransform GetSegmentEndTransform() const;
     UE_PURE FTransform GetStartTransform() const;
     UE_PURE class AActor* GetTrackStartActor() const;
@@ -14088,6 +14106,7 @@ class AFSDGameState : public AGameState
 {
 public:
     UE_CLASS("/Script/FSD", "FSDGameState");
+    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Game";
     TMulticastInlineDelegate<void(int Value)> OnMissionTimeUpdated;
     TMulticastInlineDelegate<void()> OnTerrainGenerated;
     TMulticastInlineDelegate<void()> OnTerrainGenerationStarting;
@@ -14439,7 +14458,7 @@ public:
     class UGeneratedMission* GeneratedMission;
     class UDifficultySetting* DesiredDifficulty;
     class UFSDSaveGame* SaveGame;
-    EDisconnectReason DisconnectReason;
+    TEnum<EDisconnectReason> DisconnectReason;
     FString DisconnectErrorCode;
     TArray<class UWorld*> AlwaysLoadedWorlds;
     bool ShowCharacterSelectionWorld;
@@ -14465,7 +14484,7 @@ public:
     bool PreSpawnNigaraParticles;
     TArray<class UTemporaryBuff*> TemporaryBuffs;
     TSoftObjectPtr<class ULevelSequence> NextLoaderSequence;
-    EAlwaysLoadedWorlds NextLoaderLevel;
+    TEnum<EAlwaysLoadedWorlds> NextLoaderLevel;
     TSoftObjectPtr<class ULevelSequence> DeepDiveLoaderSequence;
     TSoftObjectPtr<class ULevelSequence> DeepDiveLoaderSequence2;
     class USoundSubmix* ControllerVibrationSubmix;
@@ -14501,7 +14520,7 @@ public:
     UE_PURE bool IsPendingInvitePasswordProtected();
     void LoadSaveGame(class UFSDSaveGame* toLoad);
     void OnLoadComplete(FString MapName);
-    void OnNetworkFailure(class UWorld* World, class UNetDriver* NetDriver, ENetworkFailure failType, FString errorMessage);
+    void OnNetworkFailure(class UWorld* World, class UNetDriver* NetDriver, TEnum<ENetworkFailure> failType, FString errorMessage);
     void OnNewFSDSessionID(FString sessionId);
     void PairingUseNewProfile();
     void PairingUsePreviousProfile();
@@ -14518,7 +14537,7 @@ public:
     void ScheduleResetOfWorldsAndGameDataThenOpenLevel(FName LevelName);
     void SendSteamInfo();
     void SetCharacterSelectionSwitcher(class ACharacterSelectionSwitcher* switcher);
-    void SetCharacterSelectionWorldVisible(bool V, ECharselectionCameraLocation cameraLocation, bool resetHud, ECharacterSelectorItemStatus itemStatus);
+    void SetCharacterSelectionWorldVisible(bool V, TEnum<ECharselectionCameraLocation> cameraLocation, bool resetHud, TEnum<ECharacterSelectorItemStatus> itemStatus);
     void SetDebugSeed(int Seed);
     void SetEligableForRetirementAssignment(bool eligable);
     void SetForceInfoScreen();
@@ -14527,7 +14546,7 @@ public:
     void SetHasSeenInfoScreen();
     void SetIsUsingOnlineFeatures(bool bIsOnlineFeatureUsed);
     void SetLoaderWorldVisible(bool V, bool resetHud);
-    void SetMinersManualNotification(EMinersManualSection Section, class UObject* IdentifyingObject, FText Text);
+    void SetMinersManualNotification(TEnum<EMinersManualSection> Section, class UObject* IdentifyingObject, FText Text);
     void SetOverrideMaxPlayerCount(int Count);
     void SetPendingInviteJoinModding(const FBlueprintSessionResult& Result);
     void SetProceduralMap(TSubclassOf<class AProceduralSetup> procedural);
@@ -14535,9 +14554,9 @@ public:
     void SetServerSearchActive(bool Active);
     void SetServerSearchOptions(const FFSDServerSearchOptions& options);
     void SetShouldAdvertiseInServerlist(bool bShouldAdvertise);
-    void SetSteamSearchRegion(ESteamSearchRegion NewRegion);
-    void SetSteamServerJoinStatus(ESteamServerJoinStatus NewStatus);
-    void SetViewer3DClass(TSubclassOf<class AActor> NewClass, ECharselectionCameraLocation Location);
+    void SetSteamSearchRegion(TEnum<ESteamSearchRegion> NewRegion);
+    void SetSteamServerJoinStatus(TEnum<ESteamServerJoinStatus> NewStatus);
+    void SetViewer3DClass(TSubclassOf<class AActor> NewClass, TEnum<ECharselectionCameraLocation> Location);
     class AProceduralSetup* SpawnProcedural();
     void StartPersonalAnalytics();
     void StartPhotographyInputProcessor();
@@ -14612,9 +14631,9 @@ public:
     void DestroyNonLocalPlayers();
     void DonkeyButtonPressed();
     void EndLevel();
-    bool FSDClearPause(EPauseReason pauseReason);
+    bool FSDClearPause(TEnum<EPauseReason> pauseReason);
     bool FSDKickPlayer(class APlayerController* KickedPlayer, const FText& KickReason);
-    bool FSDSetPause(class APlayerController* PC, EPauseReason pauseReason);
+    bool FSDSetPause(class APlayerController* PC, TEnum<EPauseReason> pauseReason);
     UE_PURE bool GetMissionWasAborted();
     class AActor* GetPlayerStart(class AFSDPlayerController* Controller);
     void HandlePlayerBanning(class AFSDPlayerController* FSDPlayerController);
@@ -14779,7 +14798,7 @@ public:
     void OnDropped();
     void OnPickedUp();
     void OnUsableChanged(bool CanUse);
-    void OnUsed(class APlayerCharacter* User, EInputKeys Key);
+    void OnUsed(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ResetImpactSound();
     void ThrowItem(const FVector& throwForce);
 };
@@ -14931,6 +14950,7 @@ class AGuntowerWeakPoint : public AFSDPawn
 {
 public:
     UE_CLASS("/Script/FSD", "GuntowerWeakPoint");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class USceneComponent* Root;
     class UEnemyHealthComponent* Health;
     class UStaticMeshComponent* Mesh;
@@ -15187,12 +15207,12 @@ public:
     void OnVisibilityChanged();
     void PlayerSpawned(class APlayerCharacter* Player);
     void RadarPointAdded(class URadarPointComponent* radarPoint);
-    void SetHUDVisible(bool IsVisible, EHUDVisibilityReason reason);
+    void SetHUDVisible(bool IsVisible, TEnum<EHUDVisibilityReason> reason);
     void ShowObjectives(bool InVisibility);
-    bool ToggleHUDVisibility(EHUDVisibilityReason reason);
+    bool ToggleHUDVisibility(TEnum<EHUDVisibilityReason> reason);
     UE_PURE bool GetHUDVisible() const;
     UE_PURE class UFSDMainHUDWidget* GetHUDWidget() const;
-    UE_PURE bool IsHUDVisibleFlagSet(EHUDVisibilityReason reason) const;
+    UE_PURE bool IsHUDVisibleFlagSet(TEnum<EHUDVisibilityReason> reason) const;
 };
 
 class ASpaceRigHUD : public AFSDHUD
@@ -15215,15 +15235,15 @@ class AFacilityHackingPod : public ARessuplyPod
 public:
     UE_CLASS("/Script/FSD", "FacilityHackingPod");
     TMulticastInlineDelegate<void(EHackingPodState State)> OnHackingPodStateChanged;
-    EHackingPodState PodState;
+    TEnum<EHackingPodState> PodState;
     static constexpr const char* PodState__Replicated = "OnRep_PodState:";
     static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
     static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
-    void OnEnterState(EHackingPodState NextState);
-    void OnExitState(EHackingPodState oldState);
-    void OnRep_PodState(EHackingPodState oldState);
-    UE_AUTHORITY_ONLY void SetState(EHackingPodState aState);
-    UE_PURE EHackingPodState GetState() const;
+    void OnEnterState(TEnum<EHackingPodState> NextState);
+    void OnExitState(TEnum<EHackingPodState> oldState);
+    void OnRep_PodState(TEnum<EHackingPodState> oldState);
+    UE_AUTHORITY_ONLY void SetState(TEnum<EHackingPodState> aState);
+    UE_PURE TEnum<EHackingPodState> GetState() const;
 };
 
 class AHalloweenSkull : public AEnemyDeepPathfinderCharacter
@@ -15327,10 +15347,10 @@ public:
     TSoftClassPtr<class UClass> IconWeapon;
     class UTextureRenderTarget2D* LatestGeneratedTexture;
     class AIconGenerationBase* ActiveIconGenerator;
-    static class UTextureRenderTarget2D* GeneratePickaxePartIcon(class UObject* WorldContextObject, class UPickaxePart* part, EPickaxePartLocation PickaxePartLocation, class UPlayerCharacterID* Character, FTransform Offset, FVector2D Size);
-    static class UTextureRenderTarget2D* GeneratePickaxePartIcon(class UPickaxePart* part, EPickaxePartLocation PickaxePartLocation, class UPlayerCharacterID* Character, FTransform Offset, FVector2D Size);
-    static void GeneratePickaxePartIcon_Async(class UIconGenerationManager* Manager, class UPickaxePart* part, EPickaxePartLocation PickaxePartLocation, class UPlayerCharacterID* Character, class UTextureRenderTarget2D*& Icon, FLatentActionInfo LatentInfo);
-    static void GeneratePickaxePartIcon_Async(class UIconGenerationManager* Manager, class UPickaxePart* part, EPickaxePartLocation PickaxePartLocation, class UPlayerCharacterID* Character, class UTextureRenderTarget2D*& Icon);
+    static class UTextureRenderTarget2D* GeneratePickaxePartIcon(class UObject* WorldContextObject, class UPickaxePart* part, TEnum<EPickaxePartLocation> PickaxePartLocation, class UPlayerCharacterID* Character, FTransform Offset, FVector2D Size);
+    static class UTextureRenderTarget2D* GeneratePickaxePartIcon(class UPickaxePart* part, TEnum<EPickaxePartLocation> PickaxePartLocation, class UPlayerCharacterID* Character, FTransform Offset, FVector2D Size);
+    static void GeneratePickaxePartIcon_Async(class UIconGenerationManager* Manager, class UPickaxePart* part, TEnum<EPickaxePartLocation> PickaxePartLocation, class UPlayerCharacterID* Character, class UTextureRenderTarget2D*& Icon, FLatentActionInfo LatentInfo);
+    static void GeneratePickaxePartIcon_Async(class UIconGenerationManager* Manager, class UPickaxePart* part, TEnum<EPickaxePartLocation> PickaxePartLocation, class UPlayerCharacterID* Character, class UTextureRenderTarget2D*& Icon);
     static class UTextureRenderTarget2D* GeneratePickaxeSetIcon(class UObject* WorldContextObject, FPickaxeSet PickaxeSet, class UPlayerCharacterID* Character, FTransform Offset, FVector2D Size);
     static class UTextureRenderTarget2D* GeneratePickaxeSetIcon(FPickaxeSet PickaxeSet, class UPlayerCharacterID* Character, FTransform Offset, FVector2D Size);
     static void GeneratePickaxeSetIcon_Async(class UIconGenerationManager* Manager, FPickaxeSet PickaxeSet, class UPlayerCharacterID* Character, class UTextureRenderTarget2D*& Icon, FLatentActionInfo LatentInfo);
@@ -15390,7 +15410,7 @@ public:
     TMulticastInlineDelegate<void(class APlayerCharacter* Player, float Progress)> OnIntoxicationChanged;
     TMulticastInlineDelegate<void(class APlayerCharacter* Player)> OnPassOutDrunk;
     class APlayerCharacter* Character;
-    EIntoxicationState CurrentState;
+    TEnum<EIntoxicationState> CurrentState;
     FLerpingPercent IntoxicationPercent;
     static constexpr const char* IntoxicationPercent__Replicated = ":";
     float IntoxicationLerpSpeed;
@@ -15403,8 +15423,8 @@ public:
     void ReceiveDrunkEnd();
     void ReceiveDrunkTick(float DeltaTime, float DrunkTime);
     void ReceivePassOutDrunk();
-    void ReceiveStateChange(EIntoxicationState NewState);
-    int GetAlcoholPct(EDrinkableAlcoholStrength Strength) const;
+    void ReceiveStateChange(TEnum<EIntoxicationState> NewState);
+    int GetAlcoholPct(TEnum<EDrinkableAlcoholStrength> Strength) const;
     UE_PURE float GetIntoxicationProgress() const;
     UE_PURE float GetIntoxicationProgressMapped(class UCurveFloat* Curve) const;
     UE_PURE float GetSoberingUpCoolDown() const;
@@ -15498,14 +15518,14 @@ public:
     bool overheated;
     static constexpr const char* overheated__Replicated = "OnRep_OverHeated:";
     UE_CLIENT UE_RELIABLE void Client_SetIsUsing(bool isUsing_0);
-    void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void OnJumpPressed();
     void OnJumpReleased();
     void OnPlayerCharacterHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_CurrentJetFuel();
     void OnRep_IsUsing(bool lastUsing);
     void OnRep_OverHeated(bool lastOverheated);
-    void OnStateChanged(ECharacterState State);
+    void OnStateChanged(TEnum<ECharacterState> State);
     void Receive_OnActiveChangedLocal(bool IsActive_0, bool fromTakeOff);
     void Receive_OnActiveChangedNonLocal(bool IsActive_0, bool fromTakeOff);
     void Receive_OnActiveChangedServer(bool IsActive_0, bool fromTakeOff);
@@ -15587,7 +15607,7 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.SingleUsableComponent";
     UE_AUTHORITY_ONLY void BootUpEvent();
-    void CloseForUse(class APlayerCharacter* User, EInputKeys Key);
+    void CloseForUse(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnBooted();
     void OnOpenedForUse(bool wasOpened);
     void OnRep_Booted();
@@ -15676,7 +15696,7 @@ public:
     void OnContainerActivated();
     void OnDisableChestLocally();
     void OnLocalPlayerCollectedTreasure(class APlayerCharacter* Player);
-    void OnPlayerCollectedTreasure(class APlayerCharacter* collector, EInputKeys Key);
+    void OnPlayerCollectedTreasure(class APlayerCharacter* collector, TEnum<EInputKeys> Key);
     void OnPlayerLatejoined(class APlayerCharacter* joiner);
     void OnRep_Collectors();
     void OnRep_LastJoiner();
@@ -15720,7 +15740,7 @@ public:
     TArray<class UProjectileAttack*> Projectiles;
     TArray<class UAnimMontage*> Montages;
     FName SocketName;
-    EProjectileAttackRotationType RotationHandling;
+    TEnum<EProjectileAttackRotationType> RotationHandling;
     class UTargetValidator* FinalValidationCheck;
     bool ProjectilesIgnoreEachOther;
     TMulticastInlineDelegate<void()> OnAttackStartedEvent;
@@ -15913,6 +15933,7 @@ class AMiniMule : public AMULE
 {
 public:
     UE_CLASS("/Script/FSD", "MiniMule");
+    static constexpr const char* UeNativeInterfaces = "ITriggerAI";
     TArray<class AGem*> LostLegs;
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
     static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
@@ -15934,14 +15955,14 @@ public:
     class UWidgetComponent* ProgressWidget;
     class USkeletalMeshComponent* SkeletalMesh_Base;
     FName ScreenSocketName;
-    ERefineryExtractorPodState ExtractorState;
+    TEnum<ERefineryExtractorPodState> ExtractorState;
     static constexpr const char* ExtractorState__Replicated = "OnRep_ExtractorState:";
     TArray<class URefineryExtractorPodAnimInstance*> AnimBlueprints;
     static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
     static constexpr const char* ProgressWidget__UeSubobject = "ProgressWidget /Script/UMG.WidgetComponent";
     static constexpr const char* SkeletalMesh_Base__UeSubobject = "SkeletalMesh_Base /Script/Engine.SkeletalMeshComponent";
-    UE_AUTHORITY_ONLY void ChangeExtractorState(ERefineryExtractorPodState NewState);
-    void OnExtractorStateChanged(ERefineryExtractorPodState NewState);
+    UE_AUTHORITY_ONLY void ChangeExtractorState(TEnum<ERefineryExtractorPodState> NewState);
+    void OnExtractorStateChanged(TEnum<ERefineryExtractorPodState> NewState);
     void OnPipeLineCompleted();
     void OnRep_ExtractorState();
     void SetIsOpen(bool InIsOpen);
@@ -15958,7 +15979,7 @@ public:
     TMulticastInlineDelegate<void(class APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState)> OnBuildStateChanged;
     int PipelineID;
     class UTrackBuilderUsable* PipelineStartUsable;
-    EPipelineBuildState BuildState;
+    TEnum<EPipelineBuildState> BuildState;
     static constexpr const char* BuildState__Replicated = "OnRep_BuildState:";
     class APipelineFinish* PipelineFinish;
     static constexpr const char* PipelineFinish__Replicated = ":";
@@ -15967,7 +15988,7 @@ public:
     void OnNextSegmentChanged(class UTrackBuilderUsable* InUsable, class ATrackBuilderSegment* InSegment);
     void OnRep_BuildState();
     UE_AUTHORITY_ONLY void PipelineCompleted(class APipelineFinish* InPipelineFinish);
-    void ReceiveBuildStateChanged(EPipelineBuildState InBuildState);
+    void ReceiveBuildStateChanged(TEnum<EPipelineBuildState> InBuildState);
     UE_PURE TArray<class APipelineSegment*> GetAllPipelineSegments() const;
 };
 
@@ -15986,7 +16007,7 @@ public:
     class UMoustacheVanityItem* Moustache;
     class UBeardVanityItem* Beard;
     class UArmorVanityItem* Armor;
-    EArmorMeshType ArmorMeshType;
+    TEnum<EArmorMeshType> ArmorMeshType;
     class UArmorMaterialVanityItem* ArmorColor;
     class USkeletalMeshComponent* Mesh;
     class USkeletalMeshComponent* BodyMesh;
@@ -16013,15 +16034,15 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     static constexpr const char* WindowManager__UeSubobject = "WindowManager /Script/FSD.WindowManager";
-    UE_CLIENT UE_RELIABLE void Client_WasKicked(EDisconnectReason reason);
-    bool IsHUDVisibleFlagSet(EHUDVisibilityReason reason);
+    UE_CLIENT UE_RELIABLE void Client_WasKicked(TEnum<EDisconnectReason> reason);
+    bool IsHUDVisibleFlagSet(TEnum<EHUDVisibilityReason> reason);
     UE_PURE bool IsPlayerBlocked(FString UserId);
-    void OpenStandaloneMinersManual(EMinersManualSection Section, const FGuid& ID);
-    void OpenStandaloneMinersManualPage(EMinersManualSinglePage page);
+    void OpenStandaloneMinersManual(TEnum<EMinersManualSection> Section, const FGuid& ID);
+    void OpenStandaloneMinersManualPage(TEnum<EMinersManualSinglePage> page);
     void RecieveHUDVisibilityChanged(bool IsVisible);
     void RecievePreClientTravel();
     UE_SERVER UE_RELIABLE void Server_Cheat_SwitchCharacter(class UPlayerCharacterID* NewCharacter);
-    void SetHUDVisible(bool IsVisible, EHUDVisibilityReason reason);
+    void SetHUDVisible(bool IsVisible, TEnum<EHUDVisibilityReason> reason);
     void ShowEscapeMenu();
     void StartAspectRatioAxisConstraint();
     void StopAspectRatioAxisConstraint();
@@ -16059,7 +16080,7 @@ public:
     TArray<class USoundMix*> InitialSoundMixes;
     bool ServerTravelDone;
     class UFSDWidgetEffectsComponent* WidgetEffects;
-    ESpacerigStartType SpacerigSpawnType;
+    TEnum<ESpacerigStartType> SpacerigSpawnType;
     bool bDetectGravityChanges;
     static constexpr const char* LateJoinComponent__UeSubobject = "TerrainLateJoin /Script/FSD.TerrainLatejoinComponent";
     static constexpr const char* PerkUsageComponent__UeSubobject = "PerkUsageCompent /Script/FSD.PerkUsageComponent";
@@ -16095,8 +16116,8 @@ public:
     void RecievePawnDestroyed();
     void SendLevelUpStatistics(int currentRank);
     UE_SERVER UE_RELIABLE void Server_DrawProjectileDebugPath(bool bDraw);
-    UE_SERVER UE_RELIABLE void Server_NewMessage(FString Sender, FString Text, EChatSenderType SenderType);
-    UE_SERVER UE_RELIABLE void Server_Relay_SetArmorIndexDestroyed(class USimpleArmorDamageComponent* ArmorComponent, int Index_0, EArmorDamageType DamageType);
+    UE_SERVER UE_RELIABLE void Server_NewMessage(FString Sender, FString Text, TEnum<EChatSenderType> SenderType);
+    UE_SERVER UE_RELIABLE void Server_Relay_SetArmorIndexDestroyed(class USimpleArmorDamageComponent* ArmorComponent, int Index_0, TEnum<EArmorDamageType> DamageType);
     UE_SERVER UE_RELIABLE void Server_ResetHUD();
     UE_SERVER UE_RELIABLE void Server_SetControllerReady();
     UE_SERVER UE_RELIABLE void Server_SetDebugEnemy(class ADeepPathfinderCharacter* NewDebugEnemy);
@@ -16179,6 +16200,7 @@ class UBeastMasterUseSphere : public USphereComponent
 {
 public:
     UE_CLASS("/Script/FSD", "BeastMasterUseSphere");
+    static constexpr const char* UeClassTail = "0x00a01004 /Script/CoreUObject.Object Engine";
 };
 
 class UPhotographyStateComponent : public UCharacterStateComponent
@@ -16251,7 +16273,7 @@ public:
     class UStaticMesh* StaticMeshAssembled;
     class UStaticMesh* StaticMeshFinal;
     FVector EditorEndLocation;
-    ETraceTypeQuery CarvingTraceType;
+    TEnum<ETraceTypeQuery> CarvingTraceType;
     class UMaterialInterface* NumberMaterial;
     class USingleUsableComponent* RepairSegmentUsable;
     class USingleUsableComponent* ActivateSegmentUsable;
@@ -16270,7 +16292,7 @@ public:
     static constexpr const char* bSegmentBroken__Replicated = "OnRep_SegmentBroken:";
     float SegmentActivatedProgress;
     static constexpr const char* SegmentActivatedProgress__Replicated = "OnRep_SegmentActivatedProgress:";
-    EPipelineBuildState PipelineState;
+    TEnum<EPipelineBuildState> PipelineState;
     float MinValidLength;
     float MaxValidLength;
     float TooSharpExtraLength;
@@ -16296,11 +16318,11 @@ public:
     static constexpr const char* SegmentHealthComponent__UeSubobject = "SegmentHealthComponent /Script/FSD.SimpleHealthComponent";
     void CallbackDroneUsed(int TimesUsed);
     void CallbackNextSegmentChanged(class UTrackBuilderUsable* InUsable, class ATrackBuilderSegment* InSegment);
-    void CallbackPipelineStateChanged(class APipelineStart* InPipelineStart, EPipelineBuildState InState);
-    void CallbackSegmentActivated(class APlayerCharacter* InUser, EInputKeys Key);
+    void CallbackPipelineStateChanged(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InState);
+    void CallbackSegmentActivated(class APlayerCharacter* InUser, TEnum<EInputKeys> Key);
     void CallbackSegmentActivatedProgress(float InProgress);
     void CallbackSegmentDestroyed(class UHealthComponentBase* InHealth);
-    void CallbackSegmentRepaired(class APlayerCharacter* InUser, EInputKeys Key);
+    void CallbackSegmentRepaired(class APlayerCharacter* InUser, TEnum<EInputKeys> Key);
     void OnRep_SegmentActivatedProgress();
     void OnRep_SegmentBroken();
     void OnRepaired(class APlayerCharacter* InUser);
@@ -16560,6 +16582,7 @@ class AFSDPlayerState : public APlayerState
 {
 public:
     UE_CLASS("/Script/FSD", "FSDPlayerState");
+    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Engine";
     TMulticastInlineDelegate<void(class APlayerCharacter* PlayerCharacter)> OnPlayerCharacterSpawned;
     TMulticastInlineDelegate<void(bool IsTalking)> OnPlayerTalkingChanged;
     TMulticastInlineDelegate<void(TSubclassOf<class APlayerCharacter> NewCharacter)> OnSelectedCharacterChanged;
@@ -16627,8 +16650,8 @@ public:
     void SetSelectedCharacterID(class UPlayerCharacterID* characterID);
     UE_PURE int GetCharacterLevel(class UPlayerCharacterID* characterID) const;
     UE_PURE FCharacterProgress GetCharacterProgress(class UPlayerCharacterID* characterID) const;
-    UE_PURE EChatSenderType GetChatSenderType() const;
-    UE_PURE bool GetGameOwnerStatus(EGameOwnerStatus Status) const;
+    UE_PURE TEnum<EChatSenderType> GetChatSenderType() const;
+    UE_PURE bool GetGameOwnerStatus(TEnum<EGameOwnerStatus> Status) const;
     UE_PURE bool GetHasGeneratedLevel() const;
     UE_PURE class AFSDPlayerController* GetPlayerController() const;
     UE_PURE int GetPlayerRank() const;
@@ -16645,23 +16668,23 @@ class AFSDPostProcessingActor : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "FSDPostProcessingActor");
-    EPostProcessingType PostProcessingType;
+    TEnum<EPostProcessingType> PostProcessingType;
     class UPostProcessComponent* PostProcessComponent;
     FWeightedBlendables InitialBlendables;
-    static void ApplyPostProcessingBlendable(class UObject* WorldContext, EPostProcessingType Type, TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight, FName InID);
-    static void ApplyPostProcessingBlendable(EPostProcessingType Type, TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight, FName InID);
-    static class UMaterialInstanceDynamic* ApplyPostProcessingMaterial(class UObject* WorldContext, EPostProcessingType Type, class UMaterialInterface* Material, float InWeight, FName InID);
-    static class UMaterialInstanceDynamic* ApplyPostProcessingMaterial(EPostProcessingType Type, class UMaterialInterface* Material, float InWeight, FName InID);
+    static void ApplyPostProcessingBlendable(class UObject* WorldContext, TEnum<EPostProcessingType> Type, TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight, FName InID);
+    static void ApplyPostProcessingBlendable(TEnum<EPostProcessingType> Type, TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight, FName InID);
+    static class UMaterialInstanceDynamic* ApplyPostProcessingMaterial(class UObject* WorldContext, TEnum<EPostProcessingType> Type, class UMaterialInterface* Material, float InWeight, FName InID);
+    static class UMaterialInstanceDynamic* ApplyPostProcessingMaterial(TEnum<EPostProcessingType> Type, class UMaterialInterface* Material, float InWeight, FName InID);
     UE_PURE static class UMaterialInstanceDynamic* GetPostProcessingMaterialInstance(class UObject* WorldContext, class UMaterialInterface* Material);
     UE_PURE static class UMaterialInstanceDynamic* GetPostProcessingMaterialInstance(class UMaterialInterface* Material);
     static void UnapplyAllPostProcessingBlendables(class UObject* WorldContext);
     static void UnapplyAllPostProcessingBlendables();
-    static void UnapplyPostProcessingBlendable(class UObject* WorldContext, EPostProcessingType Type, TScriptInterface<class IBlendableInterface> InBlendableObject);
-    static void UnapplyPostProcessingBlendable(EPostProcessingType Type, TScriptInterface<class IBlendableInterface> InBlendableObject);
+    static void UnapplyPostProcessingBlendable(class UObject* WorldContext, TEnum<EPostProcessingType> Type, TScriptInterface<class IBlendableInterface> InBlendableObject);
+    static void UnapplyPostProcessingBlendable(TEnum<EPostProcessingType> Type, TScriptInterface<class IBlendableInterface> InBlendableObject);
     static void UnapplyPostProcessingBlendablesByID(class UObject* WorldContext, FName InID);
     static void UnapplyPostProcessingBlendablesByID(FName InID);
-    static void UnapplyPostProcessingBlendablesByType(class UObject* WorldContext, EPostProcessingType Type);
-    static void UnapplyPostProcessingBlendablesByType(EPostProcessingType Type);
+    static void UnapplyPostProcessingBlendablesByType(class UObject* WorldContext, TEnum<EPostProcessingType> Type);
+    static void UnapplyPostProcessingBlendablesByType(TEnum<EPostProcessingType> Type);
     void SetPostProcessManager(class APostProcessingManager* InManager);
     void SetupHDRColorGamma();
 };
@@ -16678,9 +16701,9 @@ public:
     UE_CLIENT UE_RELIABLE void Client_SendTunnelData(const TArray<FTunnelNode>& tunnels);
     void ReceivedRoomData(int Seed, const TArray<FRoomNode>& Rooms, const TArray<FPathObstacle>& Obstacles);
     void ReceivedTunnelData(const TArray<FTunnelNode>& tunnels);
-    void RequestCarverData(EDebrisItemPass pass);
+    void RequestCarverData(TEnum<EDebrisItemPass> pass);
     void RequestPLSData();
-    void SendRequestedCarverData(EDebrisItemPass pass);
+    void SendRequestedCarverData(TEnum<EDebrisItemPass> pass);
     void SendRequestedPLSData();
     void SendRoomData();
     void SendTunnelData();
@@ -16755,8 +16778,8 @@ public:
     FVector GetLandingOffset();
     void OnConnectedSegmentActivated(class APipelineSegment* InSegment);
     void OnConnectedWithSegment(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
-    void OnExtractorPodOrdered(class APlayerCharacter* InUser, EInputKeys Key);
-    void OnExtractorPodStateChanged(class ARessuplyPod* InExtractorPod, ERessuplyPodState InState);
+    void OnExtractorPodOrdered(class APlayerCharacter* InUser, TEnum<EInputKeys> Key);
+    void OnExtractorPodStateChanged(class ARessuplyPod* InExtractorPod, TEnum<ERessuplyPodState> InState);
     void OnRep_ExtractorPod();
     void OnRep_PipelineCompleted();
     void ReceiveExtractorPodSpawned(class APipelineExtractorPod* InExtractorPod);
@@ -16782,9 +16805,9 @@ public:
     float PipelineBreakTimePenaltyPerAdditionalPlayers;
     FInt32Range MaxSegmentBreakDowns;
     int SegmentBreakDownPenaltyPerAdditionalPlayers;
-    ERefineryState RefineryState;
+    TEnum<ERefineryState> RefineryState;
     static constexpr const char* RefineryState__Replicated = "OnRep_RefineryState:";
-    ERefineryState PreviousRefineryState;
+    TEnum<ERefineryState> PreviousRefineryState;
     uint8 RefiningProgressReplicated;
     static constexpr const char* RefiningProgressReplicated__Replicated = ":";
     TArray<class APipelineStart*> PipelineStarts;
@@ -16792,16 +16815,16 @@ public:
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     static constexpr const char* UsableLaunchRocket__UeSubobject = "UsableLaunchRocket /Script/FSD.SingleUsableComponent";
     static constexpr const char* UsableStartRefining__UeSubobject = "UsableStartRefining /Script/FSD.SingleUsableComponent";
-    void OnLaunchRocketPressed(class APlayerCharacter* InCharacter, EInputKeys Key);
+    void OnLaunchRocketPressed(class APlayerCharacter* InCharacter, TEnum<EInputKeys> Key);
     void OnObjectivesChanged();
-    void OnPipelineStateChanged(class APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState);
+    void OnPipelineStateChanged(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
     void OnPlayerCharacterRegistered(class APlayerCharacter* InCharacter);
-    void OnRep_RefineryState(ERefineryState InOldState);
-    void OnStartRefiningPressed(class APlayerCharacter* InCharacter, EInputKeys Key);
+    void OnRep_RefineryState(TEnum<ERefineryState> InOldState);
+    void OnStartRefiningPressed(class APlayerCharacter* InCharacter, TEnum<EInputKeys> Key);
     void ReceivePipelineStartReady(class APipelineStart* InPipelineStart);
-    void ReceivePipelineStateChanged(class APipelineStart* InPipeline, EPipelineBuildState InState);
-    void ReceiveRefineryStateChanged(ERefineryState InState);
-    void SetRefineryState(ERefineryState InState);
+    void ReceivePipelineStateChanged(class APipelineStart* InPipeline, TEnum<EPipelineBuildState> InState);
+    void ReceiveRefineryStateChanged(TEnum<ERefineryState> InState);
+    void SetRefineryState(TEnum<ERefineryState> InState);
     UE_PURE float GetRefiningProgress() const;
 };
 
@@ -16925,13 +16948,13 @@ public:
     static constexpr const char* userCount__Replicated = "OnRep_UserCount:";
     class UAudioComponent* AudioBeginUseInstance;
     UE_MULTICAST void All_PlayFailedAudio();
-    void Cheat_Use(class APlayerCharacter* User, EInputKeys Key);
+    void Cheat_Use(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_DesiredProgress();
     void OnRep_Usable();
     void OnRep_UserCount();
     void SetCanUse(bool CanUse);
     void SetProgress(float Value);
-    void Use(class APlayerCharacter* User, EInputKeys Key, float DeltaTime);
+    void Use(class APlayerCharacter* User, TEnum<EInputKeys> Key, float DeltaTime);
 };
 
 class UEventRewarderUsableComponent : public USingleUsableComponent
@@ -16957,6 +16980,7 @@ class ARiftCrystal : public APawn
 {
 public:
     UE_CLASS("/Script/FSD", "RiftCrystal");
+    static constexpr const char* UeNativeInterfaces = "IBossFightInterface";
     class USceneComponent* Root;
     class USceneComponent* FlightRoot;
     class URotatingSceneComponent* Bobber;
@@ -17017,7 +17041,7 @@ public:
     bool RotateBeamComponents;
     FRuntimeFloatCurve FlightCurve;
     FRuntimeFloatCurve FallCurve;
-    ERiftCrystalState State;
+    TEnum<ERiftCrystalState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     static constexpr const char* CrystalMesh__UeSubobject = "SKMeshComponent /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* DebrisSpawner__UeSubobject = "DebrisSpawnerComponent /Script/FSD.SpawnActorWithDebrisPosComponent";
@@ -17039,13 +17063,13 @@ public:
     void OnEnteredKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnExitedKnockbackZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnNewHealthSegment(int currentSegment, int prevSegment);
-    void OnRep_State(ERiftCrystalState oldState);
+    void OnRep_State(TEnum<ERiftCrystalState> oldState);
     void OnRiftSpawned(class AActor* Rift);
     void OnTerrainPointRemoved(class USceneComponent* Point);
-    void Receive_EnteredState(ERiftCrystalState State_0);
-    void Receive_ExitedState(ERiftCrystalState State_0);
+    void Receive_EnteredState(TEnum<ERiftCrystalState> State_0);
+    void Receive_ExitedState(TEnum<ERiftCrystalState> State_0);
     void ReplaceCrystal(FTransform SpawnTransform);
-    UE_AUTHORITY_ONLY void SetState(ERiftCrystalState State_0);
+    UE_AUTHORITY_ONLY void SetState(TEnum<ERiftCrystalState> State_0);
     void ShowHeathBar();
     void SpawnExtractionPod(FVector locaiton);
     void SpawnReinforcements();
@@ -17087,7 +17111,7 @@ public:
     TMulticastInlineDelegate<void(class ARivalBombNode* InBombNode, ERivalBombNodeState InState)> OnStateChanged;
     TSubclassOf<class ASplineCableActor> RivalBombCable;
     class UHackingUsableComponent* HackingUsable;
-    ERivalBombNodeState State;
+    TEnum<ERivalBombNodeState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     class ASplineCableActor* BombCable;
     class ARivalBomb* RivalBomb;
@@ -17116,7 +17140,7 @@ public:
     class UContinuousUsableComponent* RepairUsable;
     TMulticastInlineDelegate<void(ERockCrackerstate CurrentState, ERockCrackerstate previousState)> OnRockCrackerStateChanged;
     float DrainPerSecond;
-    ERockCrackerstate PodState;
+    TEnum<ERockCrackerstate> PodState;
     static constexpr const char* PodState__Replicated = "OnRep_PodState:";
     class ARockCrackerPod* EndPointDrill;
     class UDialogDataAsset* InDangerDialogue;
@@ -17130,17 +17154,17 @@ public:
     static constexpr const char* RepairUsable__UeSubobject = "RepairUsable /Script/FSD.ContinuousUsableComponent";
     static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
     UE_MULTICAST UE_RELIABLE void All_SwitchYellowLights(bool isGreen);
-    void OnEnterState(ERockCrackerstate PodState_0);
+    void OnEnterState(TEnum<ERockCrackerstate> PodState_0);
     void OnEventEnded(bool wasSuccess);
     void OnEventStarted();
-    void OnExitState(ERockCrackerstate PodState_0);
+    void OnExitState(TEnum<ERockCrackerstate> PodState_0);
     void OnPodDamaged(float damageInfliced, const FDamageData& DamageData, bool anyHealthLost);
     void OnRep_LightsAreGreen();
-    void OnRep_PodState(ERockCrackerstate oldState);
-    void OnRepairTick(class APlayerCharacter* User, EInputKeys Key);
-    UE_AUTHORITY_ONLY void SetPodState(ERockCrackerstate PodState_0);
+    void OnRep_PodState(TEnum<ERockCrackerstate> oldState);
+    void OnRepairTick(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    UE_AUTHORITY_ONLY void SetPodState(TEnum<ERockCrackerstate> PodState_0);
     void SwitchYellowLights(bool isGreen);
-    UE_PURE ERockCrackerstate GetPodState() const;
+    UE_PURE TEnum<ERockCrackerstate> GetPodState() const;
     UE_PURE bool IsBroken() const;
 };
 
@@ -17179,18 +17203,18 @@ public:
     class UCarryingItemUsable* AttachUsable;
     class USingleUsableComponent* BuildUsable;
     class UDroneUseComponent* DroneUsable;
-    ERocketAttachmentState State;
+    TEnum<ERocketAttachmentState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     static constexpr const char* AttachUsable__UeSubobject = "AttachUsable /Script/FSD.CarryingItemUsable";
     static constexpr const char* BuildUsable__UeSubobject = "BuildUsable /Script/FSD.SingleUsableComponent";
     static constexpr const char* DroneUsable__UeSubobject = "DroneUsable /Script/FSD.DroneUseComponent";
-    void OnEnterState(ERocketAttachmentState NewState);
+    void OnEnterState(TEnum<ERocketAttachmentState> NewState);
     void OnRep_State();
     void ReceiveFreeAttachment();
     UE_AUTHORITY_ONLY void SetDroneCanUse(bool bCanUse);
-    UE_AUTHORITY_ONLY void SetState(ERocketAttachmentState NewState);
+    UE_AUTHORITY_ONLY void SetState(TEnum<ERocketAttachmentState> NewState);
     FVector GetDroneUseLocation() const;
-    UE_PURE ERocketAttachmentState GetState() const;
+    UE_PURE TEnum<ERocketAttachmentState> GetState() const;
 };
 
 class ASalvageFuelPod : public ARessuplyPod
@@ -17215,14 +17239,14 @@ public:
     bool bYawOnly;
     float FacingYawOffsetDeg;
     float VisualRotInterpSpeed;
-    EScrabTankSlot InitialSlot;
+    TEnum<EScrabTankSlot> InitialSlot;
     float CenterNormalized;
     static constexpr const char* BeetleMount__UeSubobject = "BeetleMount /Script/Engine.SceneComponent";
     static constexpr const char* BeetleVisual__UeSubobject = "BeetleVisual /Script/Engine.SceneComponent";
     static constexpr const char* PathSpline__UeSubobject = "PathSpline /Script/Engine.SplineComponent";
     static constexpr const char* SceneRoot__UeSubobject = "SceneRoot /Script/Engine.SceneComponent";
-    void BP_OnArrived(EScrabTankSlot ArrivedAt);
-    void BP_OnMoveStarted(EScrabTankSlot from, EScrabTankSlot to);
+    void BP_OnArrived(TEnum<EScrabTankSlot> ArrivedAt);
+    void BP_OnMoveStarted(TEnum<EScrabTankSlot> from, TEnum<EScrabTankSlot> to);
     void BP_OnScream();
     void Feed();
     void TabLeft();
@@ -17242,7 +17266,7 @@ public:
     float AutoRecallDistance;
     float RelocateLandingHeight;
     TSubclassOf<class AActor> RelocationMarkerType;
-    ERecallableActorState State;
+    TEnum<ERecallableActorState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     bool RelocateLanding;
     bool bInitialized;
@@ -17259,7 +17283,7 @@ public:
     void OnRecallTargetChanged(class AActor* NewTarget);
     void OnRelocated();
     void OnRep_RecallTarget();
-    void OnRep_State(ERecallableActorState oldState);
+    void OnRep_State(TEnum<ERecallableActorState> oldState);
     void OnReturnFailed();
     void OnReturnSucceeded();
     UE_SERVER UE_RELIABLE void Recall();
@@ -17302,7 +17326,7 @@ public:
     class UActorTrackingComponent* ActorTrackingIcon;
     class UOutlineComponent* outline;
     bool bOutlineAndIconVisible;
-    ERedeployableSentryGunState State;
+    TEnum<ERedeployableSentryGunState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     float PlasmaLineMaxRange;
     TArray<class ASentryElectroBeam*> PlasmaLines;
@@ -17322,7 +17346,7 @@ public:
     UE_PURE float GetAnimDuration(class USkeletalMeshComponent* Mesh);
     void OnElectrocutionActorDestroyed(class AActor* Actor);
     void OnRep_SentryGunOwner();
-    void OnRep_State(ERedeployableSentryGunState oldState);
+    void OnRep_State(TEnum<ERedeployableSentryGunState> oldState);
     void ReceiveOnDeploy();
     void ReceiveOnDeployed();
     void ReceiveOnDismantle();
@@ -17412,7 +17436,7 @@ public:
     static constexpr const char* MissionManager__UeSubobject = "MissionManager /Script/FSD.MissionManager";
     static constexpr const char* ObjectivesManager__UeSubobject = "ObjectivesManager /Script/FSD.ObjectivesManager";
     static constexpr const char* PheromoneComponent__UeSubobject = "PheromoneManager /Script/FSD.PheromoneSpawnerComponent";
-    class AActor* GetFreeSpawnOfType(ESpacerigStartType aType, class AFSDPlayerController* AController);
+    class AActor* GetFreeSpawnOfType(TEnum<ESpacerigStartType> aType, class AFSDPlayerController* AController);
 };
 
 class ASpaceBall : public ACarriableItem
@@ -17563,13 +17587,13 @@ public:
     float StoppingDistance;
     TSoftClassPtr<class UClass> ConnectorClass;
     class AZipLineConnector* Connector;
-    EExitTrackMode ExitMode;
+    TEnum<EExitTrackMode> ExitMode;
     FPipelineMovementData TrackMovementData;
     static constexpr const char* TrackMovementData__Replicated = "OnRep_TrackMovementdata:";
     void JumpPressed();
     void OnRep_TrackMovementdata(FPipelineMovementData& oldState);
     UE_SERVER UE_RELIABLE void ServerAddTemporaryAcceration(float Acceleration, float Duration);
-    UE_SERVER UE_RELIABLE void ServerExitMode(EExitTrackMode eMode);
+    UE_SERVER UE_RELIABLE void ServerExitMode(TEnum<EExitTrackMode> eMode);
 };
 
 class ATether : public ACarriableItem
@@ -17635,10 +17659,10 @@ public:
     void BP_OnCollectedTreasure(class APlayerCharacter* collector);
     void OnAllResourcesCollectedEvent(class URepairableComponent* repaired);
     void OnFullyRepairedEvent(class URepairableComponent* repaired);
-    void OnHammered(class APlayerCharacter* User, EInputKeys Key);
+    void OnHammered(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnHammerProgress(float Progress);
     void OnRepairedEvent(class URepairableComponent* repaired);
-    void OnUsedEvent(class APlayerCharacter* User, EInputKeys Key);
+    void OnUsedEvent(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PlaceResources(class AProceduralSetup* Setup, float Radius, class UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, class UCurveFloat* AvoidCostCurve);
 };
 
@@ -17758,7 +17782,7 @@ public:
     class UMaterialInterface* EquippedMaterial;
     static constexpr const char* RootComponent__UeSubobject = "RootComponent /Script/Engine.SceneComponent";
     void EquipParts();
-    void PreviewParts(EPickaxePartLocation PreviewLocation, class UPickaxePart* PreviewPart);
+    void PreviewParts(TEnum<EPickaxePartLocation> PreviewLocation, class UPickaxePart* PreviewPart);
 };
 
 class APlaguePuddle : public AAdicPuddle
@@ -17788,7 +17812,7 @@ public:
     void JumpPress();
     UE_SERVER UE_RELIABLE void Server_SetIsSliding(bool isSliding);
     UE_SERVER UE_RELIABLE void Server_StartTrackMovement(class UTrackBuilderMovement* InMovement);
-    void TrackGrindCallback(class APlayerCharacter* User, EInputKeys Key);
+    void TrackGrindCallback(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 class AWallSaw : public AActor
@@ -17880,7 +17904,7 @@ public:
     FText FormattedText;
     FText ControllerOverrideText;
     bool UpperCase;
-    EFSDInputSource PreviewAs;
+    TEnum<EFSDInputSource> PreviewAs;
     class UHorizontalBox* CreateHorizontalBox();
     class UImage* CreateImage(class UTexture2D* Texture, bool MatchSize);
     class UImage* CreateImageSized(class UTexture2D* Texture, int Width, int Height);
@@ -17889,14 +17913,14 @@ public:
     void OnAddIcon(FString Name_0, const FActionIconMapping& Icon);
     void OnAddKeyName(FString Name_0);
     void OnAddString(FString Value);
-    void OnInputSourceChanged(EFSDInputSource Source);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> Source);
     void OnLanguageChanged(FString NewCulture);
     void OnNewLine(int Index_0);
     void OnReset();
     void Refresh();
-    void SetAlwaysShowAs(EFSDInputSource InPreferredSource);
+    void SetAlwaysShowAs(TEnum<EFSDInputSource> InPreferredSource);
     void SetText(FText NewText, FText OverrideControllerText);
-    UE_PURE EFSDInputSource GetCurrentInputSource() const;
+    UE_PURE TEnum<EFSDInputSource> GetCurrentInputSource() const;
     UE_PURE bool GetIsDesignTime() const;
 };
 
@@ -17919,6 +17943,7 @@ class UCampaign : public UObject
 {
 public:
     UE_CLASS("/Script/FSD", "Campaign");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     bool HasMissions;
     TArray<class UCampaignMission*> missions;
     TArray<class UReward*> RewardsOnCampaignStart;
@@ -17940,11 +17965,11 @@ public:
     FText RewardText;
     FText RewardFlavorText;
     TSoftObjectPtr<class UTexture2D> Picture;
-    ECampaignType campaigntype;
+    TEnum<ECampaignType> campaigntype;
     class UMissionStat* CampaignCompletedMissionStat;
     class UGameActivityAssignmentType* CampaignActivity;
     TSubclassOf<class UCampaign> ReplacesOldCampaignCampaign;
-    ECampaignMutators Mutators;
+    TEnum<ECampaignMutators> Mutators;
     TArray<class UMissionWarning*> BannedWarnings;
     UE_PURE static FText GetCampaignTitle(TSubclassOf<class UCampaign> Campaign);
     UE_PURE static class UCampaign* GetReference(TSubclassOf<class UCampaign> Campaign);
@@ -17980,7 +18005,7 @@ class ACharacterSelectionSwitcher : public AActor
 public:
     UE_CLASS("/Script/FSD", "CharacterSelectionSwitcher");
     void Hide();
-    void OnVanityItemEquipped(EVanitySlot Slot);
+    void OnVanityItemEquipped(TEnum<EVanitySlot> Slot);
     void OnVictoryPoseChanged(class UVictoryPose* VictoryPose);
     UE_PURE class APlayerCharacter* GetActiveCharacter() const;
     UE_PURE class AActor* GetViewerActor() const;
@@ -17997,7 +18022,7 @@ public:
     bool HasCharacter();
     void OnCloseMenuPressed(bool& Handled);
     void OnCloseMenuReleased(bool& Handled);
-    void ReceiveNewVisibility(ESlateVisibility NewVisibility);
+    void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
     void Refresh();
     void ScaleByBaseResolution();
     void SetOpacity(float alpha);
@@ -18023,6 +18048,7 @@ class URichTextInputDecorator : public UCustomRichTextDecorator
 {
 public:
     UE_CLASS("/Script/FSD", "RichTextInputDecorator");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     TSubclassOf<class URichTextInputWidget> DecoratorWidgetClass;
 };
 
@@ -18061,16 +18087,16 @@ public:
     UE_CLASS("/Script/FSD", "DefensePointActor");
     TSubclassOf<class AGameEvent> DefenseEvent;
     class AGameEvent* ActiveDefenceEvent;
-    EDefendPointState DefendState;
+    TEnum<EDefendPointState> DefendState;
     static constexpr const char* DefendState__Replicated = "OnRep_DefendState:";
     class USingleUsableComponent* DefendPointUsable;
     static constexpr const char* DefendPointUsable__UeSubobject = "DefendPointUsable /Script/FSD.SingleUsableComponent";
     void DefenseComplete();
     void DefenseFail();
     void DefenseStart();
-    void OnDefensePointActivated(class APlayerCharacter* Player, EInputKeys Key);
+    void OnDefensePointActivated(class APlayerCharacter* Player, TEnum<EInputKeys> Key);
     void OnRep_DefendState();
-    void SetState(EDefendPointState State);
+    void SetState(TEnum<EDefendPointState> State);
 };
 
 class AEnemyPawn : public AFSDPawn
@@ -18220,6 +18246,7 @@ public:
     static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
     static constexpr const char* Senses__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WingSoundComponent__UeSubobject = "WingSound /Script/Engine.AudioComponent";
     static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void HideMesh();
@@ -18239,6 +18266,7 @@ class ASpiderEnemy : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "SpiderEnemy");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class UPawnStatsComponent* PawnStats;
     class UHitReactionComponent* HitReactions;
     class UStaticMesh* GoreMesh;
@@ -18287,6 +18315,7 @@ class AInsectSwarmEnemy : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "InsectSwarmEnemy");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class UParticleSystemComponent* SwarmParticles;
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
     static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
@@ -18320,7 +18349,7 @@ public:
     float RevivedGracePeriod;
     class UPawnAffliction* CaveLeechSenseAffliction;
     float StateTime;
-    ECaveLeechState State;
+    TEnum<ECaveLeechState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     FVector_NetQuantize TentacleLocation;
     static constexpr const char* TentacleLocation__Replicated = ":";
@@ -18340,7 +18369,7 @@ public:
     static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_OnBite(class UHealthComponent* TargetHealth);
-    void BP_OnStateChanged(ECaveLeechState NewState);
+    void BP_OnStateChanged(TEnum<ECaveLeechState> NewState);
     void Damaged(float amount);
     void Died(class UHealthComponentBase* HealthComponent);
     class AActor* GetCurrentTarget();
@@ -18375,7 +18404,7 @@ public:
     bool IsWeakpointBVisible;
     bool IsWeakpointCVisible;
     bool IsWeakpointDVisible;
-    ECaretakerSpawnType ActiveSpawnType;
+    TEnum<ECaretakerSpawnType> ActiveSpawnType;
     int AoEStage;
     int8 OpenEye;
     static constexpr const char* OpenEye__Replicated = "OnRep_OpenEye:";
@@ -18441,10 +18470,11 @@ class AFacilityTentacle : public ATentacleBase
 {
 public:
     UE_CLASS("/Script/FSD", "FacilityTentacle");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     float SwaySpeed;
     bool Extended;
     TArray<class UAnimMontage*> HitReactions;
-    EFacilityTentacleState TentacleState;
+    TEnum<EFacilityTentacleState> TentacleState;
     static constexpr const char* TentacleState__Replicated = "OnRep_TentacleState:";
     class USkeletalMeshComponent* HeadMesh;
     FTentacleTarget DesiredTarget;
@@ -18459,7 +18489,7 @@ public:
     UE_AUTHORITY_ONLY bool FindBurrowLocation(class UDebrisPositioning* Debris, const FVector& Origin, float Radius, FVector& OutLocation);
     void OnRep_DesiredTarget();
     void OnRep_TentacleState();
-    void OnStateChanged(EFacilityTentacleState NewState);
+    void OnStateChanged(TEnum<EFacilityTentacleState> NewState);
     void PlayHitReaction(float amount);
 };
 
@@ -18504,6 +18534,7 @@ class ASpinningFacilityturret : public AFacilityTurret
 {
 public:
     UE_CLASS("/Script/FSD", "SpinningFacilityturret");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     FRotator TargetRotation;
     static constexpr const char* TargetRotation__Replicated = ":";
     FRandRange AimAtTargetEveryTurn;
@@ -18526,6 +18557,7 @@ class AAimingFacilityTurret : public AFacilityTurret
 {
 public:
     UE_CLASS("/Script/FSD", "AimingFacilityTurret");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     bool IsLockedOn;
     static constexpr const char* IsLockedOn__Replicated = "OnRep_IsLockedOn:";
     class UParticleSystemComponent* aimIndicator;
@@ -18548,7 +18580,7 @@ public:
     bool TrackTargetAfterLockon;
     bool ConstantAimAfterLock;
     bool UseTraceForLockOn;
-    EIndicatorMode IndicatorMode;
+    TEnum<EIndicatorMode> IndicatorMode;
     static constexpr const char* IndicatorMode__Replicated = "OnRep_IndicatorMode:";
     FInt32Interval BurstCount;
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
@@ -18597,7 +18629,7 @@ public:
     class UAudioComponent* ScreamComponent;
     TMulticastInlineDelegate<void()> OnGrabSuccess;
     float PreventGrabAfterSpawn;
-    EGrabberState GrabberState;
+    TEnum<EGrabberState> GrabberState;
     static constexpr const char* GrabberState__Replicated = "OnRep_State:";
     float WanderingSpeed;
     float WanderingAcceleration;
@@ -18630,14 +18662,15 @@ public:
     static constexpr const char* PawnStatsInstance__UeSubobject = "PawnStats /Script/FSD.PawnStatsComponent";
     static constexpr const char* Senses__UeSubobject = "Sensing /Script/AIModule.PawnSensingComponent";
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
+    static constexpr const char* WingSoundComponent__UeSubobject = "WingSound /Script/Engine.AudioComponent";
     static constexpr const char* outline__UeSubobject = "outline /Script/FSD.OutlineComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    void ChangeState(EGrabberState aGrabberState);
+    void ChangeState(TEnum<EGrabberState> aGrabberState);
     UE_AUTHORITY_ONLY void DropTarget();
     void OnActorEnterGrabZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnActorLeftGrabZone(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnInDanger();
-    void OnRep_State(EGrabberState oldState);
+    void OnRep_State(TEnum<EGrabberState> oldState);
     void OnStateBroke(class AActor* aReleasedPlayer, bool fullGrabElapsed);
     UE_AUTHORITY_ONLY bool SelectAnotherTarget();
     UE_PURE bool GetJustGrabbed() const;
@@ -18647,6 +18680,7 @@ class AHydraWeedCore : public AEnemyPawn
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedCore");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
     static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
     static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
@@ -18749,7 +18783,7 @@ public:
     float FriendlyFriendlyFireMultiplier;
     bool StartedSpecialAttack;
     static constexpr const char* StartedSpecialAttack__Replicated = ":";
-    ERobotState TeamState;
+    TEnum<ERobotState> TeamState;
     static constexpr const char* TeamState__Replicated = "OnRep_TeamState:";
     bool IsWalking;
     static constexpr const char* IsWalking__Replicated = ":";
@@ -18784,7 +18818,7 @@ public:
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void BP_OnInstroduce();
     void BP_OnShieldChanged(bool isGrowing);
-    void BP_OnStateChanged(ERobotState TeamState_0);
+    void BP_OnStateChanged(TEnum<ERobotState> TeamState_0);
     UE_MULTICAST UE_RELIABLE void CannonEffects();
     UE_MULTICAST UE_RELIABLE void DestroyAttatchPoint(class USceneComponent* aComponent);
     void OnParasiteDeath(class AActor* AParasiteEnemy);
@@ -18795,7 +18829,7 @@ public:
     void OnRep_Target();
     void OnRep_TeamState();
     void OnSeePawn(class APawn* APawn);
-    void OnUsed(class APlayerCharacter* aUser, EInputKeys Key);
+    void OnUsed(class APlayerCharacter* aUser, TEnum<EInputKeys> Key);
     void OnWeaponsFired(const FVector& aHitResult);
     void ParasiteDamaged(float aDamage);
     void StartBossFight();
@@ -18803,7 +18837,7 @@ public:
     UE_PURE bool GetHasPoweredDown() const;
     UE_PURE TArray<class AActor*> GetParasites() const;
     UE_PURE FVector GetPlayerMediumPoint() const;
-    UE_PURE ERobotState GetTeamState() const;
+    UE_PURE TEnum<ERobotState> GetTeamState() const;
 };
 
 class AJellyBreeder : public AAFlyingBug
@@ -18852,6 +18886,7 @@ class ACaveWorm : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "CaveWorm");
+    static constexpr const char* UeNativeInterfaces = "ITriggerAI";
     class USimpleHealthComponent* Health;
     float SearchChunksRadius;
     float SearchChunksInterval;
@@ -18929,6 +18964,7 @@ class AParasiteEnemy : public AEnemyPawn
 {
 public:
     UE_CLASS("/Script/FSD", "ParasiteEnemy");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class USceneComponent* Root;
     class USkeletalMeshComponent* Mesh;
     class UStaticMeshComponent* Tentacles1;
@@ -18985,9 +19021,9 @@ public:
     class USoundCue* StartupAccelerationSound;
     float LaunchPower;
     float SpawnRocketsTime;
-    EPatrolBotState State;
+    TEnum<EPatrolBotState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
-    EPatrolBotControlState ControlState;
+    TEnum<EPatrolBotControlState> ControlState;
     static constexpr const char* ControlState__Replicated = "OnRep_ControlState:";
     float HackedAttackSpeedMultiplier;
     float LaserPenetrationDistance;
@@ -19047,7 +19083,7 @@ public:
     UE_MULTICAST void ImpactSound();
     UE_MULTICAST void Jumped();
     void OnCollided(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void OnControlStateChanged(EPatrolBotControlState ControlState_0);
+    void OnControlStateChanged(TEnum<EPatrolBotControlState> ControlState_0);
     void OnDeath(class UHealthComponentBase* aHealthComponent);
     void OnDisabled();
     void OnDroneAlerted();
@@ -19056,16 +19092,16 @@ public:
     void OnJumpEvent();
     void OnLandedEvent();
     void OnLockedOn();
-    void OnMovementStateChanged(EDeepMovementState State_0);
+    void OnMovementStateChanged(TEnum<EDeepMovementState> State_0);
     void OnProjectileSpawned();
-    void OnRep_ControlState(EPatrolBotControlState oldState);
+    void OnRep_ControlState(TEnum<EPatrolBotControlState> oldState);
     void OnRep_FiringRockets();
     void OnRep_IsLockedOn();
     void OnRep_State();
     void OnRevived();
     void OnRocketsEnded();
     void OnSpawnRocketsEvent();
-    void OnStateChangedEvent(EPatrolBotState CurrentState);
+    void OnStateChangedEvent(TEnum<EPatrolBotState> CurrentState);
     UE_AUTHORITY_ONLY void ReviveDrone();
     UE_AUTHORITY_ONLY void SetFiringRockets(bool firing);
     UE_AUTHORITY_ONLY void SetHacked();
@@ -19077,6 +19113,7 @@ class APitJaw : public AEnemyPawn
 {
 public:
     UE_CLASS("/Script/FSD", "PitJaw");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class USkeletalMeshComponent* SkeletalMesh;
     class UGrabberComponent* GrabberComponent;
     class UMeleeAttackComponent* FirstBite;
@@ -19111,7 +19148,7 @@ public:
     bool bDidMinorCarve;
     bool bDidMajorCarve;
     float StateTime;
-    EPitJawState State;
+    TEnum<EPitJawState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     class UHealthComponent* HealthTarget;
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
@@ -19133,7 +19170,7 @@ public:
     void BP_OnMajorCarve();
     void BP_OnMinorCarve();
     void BP_OnMouthCarve();
-    void BP_OnStateChanged(EPitJawState NewState);
+    void BP_OnStateChanged(TEnum<EPitJawState> NewState);
     void DoMajorCarve();
     void DoMinorCarve();
     void DoMouthCarve();
@@ -19150,7 +19187,7 @@ public:
     bool TryGetSafestRelocationPoint(FTransform& outSafestRelocationPoint);
     UE_PURE FVector GetMouthDirection() const;
     UE_PURE FVector GetMouthLocation() const;
-    UE_PURE EPitJawState GetState() const;
+    UE_PURE TEnum<EPitJawState> GetState() const;
 };
 
 class ASharkEnemy : public AEnemyDeepPathfinderCharacter
@@ -19199,7 +19236,7 @@ public:
     float StartParticleTime;
     float EndParticleTime;
     class UParticleSystem* DiveParticles;
-    ESharkEnemyState State;
+    TEnum<ESharkEnemyState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
     static constexpr const char* AirTrailParticles__UeSubobject = "AirTrailParticles /Script/Engine.ParticleSystemComponent";
@@ -19226,16 +19263,16 @@ public:
     void OnCollided(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnDeath(class UHealthComponentBase* aHealthComponent);
     void OnDeathDetailed(class UHealthComponent* aHealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& dTags);
-    void OnEnterState(ESharkEnemyState State_0);
-    void OnExitState(ESharkEnemyState State_0);
+    void OnEnterState(TEnum<ESharkEnemyState> State_0);
+    void OnExitState(TEnum<ESharkEnemyState> State_0);
     void OnHit(float HitDamage, const FDamageData& DamageData, bool anyHealthLost);
     void OnJumpEvent();
     void OnLandedEvent();
     void OnNearTarget(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnRep_DiveTime();
-    void OnRep_State(ESharkEnemyState oldState);
+    void OnRep_State(TEnum<ESharkEnemyState> oldState);
     void OnSeePawn(class APawn* APawn);
-    void OnStateChangedEvent(ESharkEnemyState CurrentState);
+    void OnStateChangedEvent(TEnum<ESharkEnemyState> CurrentState);
     void PopRecentlyBumpedPlayer();
     void ReleasePlayer(class AActor* playerchar, bool fullGrabElapsed);
     void SetVulnerable();
@@ -19245,6 +19282,7 @@ class AProspectorRobot : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Script/FSD", "ProspectorRobot");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     float WorkingArmSpeed;
     float EnginePowerMultiplier;
     class AActor* Target;
@@ -19252,7 +19290,7 @@ public:
     float HeadSearchSpeed;
     float HeadSearchMaxAngle;
     class UMaterialInstanceDynamic* EngineMaterial;
-    EProspectorRobotState ProspectorState;
+    TEnum<EProspectorRobotState> ProspectorState;
     static constexpr const char* ProspectorState__Replicated = "OnRep_ProspectorState:";
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
     static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
@@ -19260,19 +19298,20 @@ public:
     static constexpr const char* PathfinderMovement__UeSubobject = "PathfinderMovement /Script/FSD.DeepPathfinderMovement";
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    UE_AUTHORITY_ONLY void ChangeState(EProspectorRobotState NewState);
-    void OnRep_ProspectorState(EProspectorRobotState oldState);
-    void OnStateBegin(EProspectorRobotState NewState);
-    void OnStateEnd(EProspectorRobotState oldState);
+    UE_AUTHORITY_ONLY void ChangeState(TEnum<EProspectorRobotState> NewState);
+    void OnRep_ProspectorState(TEnum<EProspectorRobotState> oldState);
+    void OnStateBegin(TEnum<EProspectorRobotState> NewState);
+    void OnStateEnd(TEnum<EProspectorRobotState> oldState);
     void SetArmSpeed(float Speed);
     void SetTarget(class AActor* Target_0);
-    UE_PURE bool IsStateActive(EProspectorRobotState State) const;
+    UE_PURE bool IsStateActive(TEnum<EProspectorRobotState> State) const;
 };
 
 class AHydraWeedShooter : public AShootingPlant
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedShooter");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class AHydraWeedCore* Core;
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
     static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
@@ -19287,6 +19326,7 @@ class AHydraWeedHealer : public AEnemyPawn
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedHealer");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     class AHydraWeedCore* Core;
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
     static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
@@ -19301,6 +19341,7 @@ class AStabberVine : public ATentacleBase
 {
 public:
     UE_CLASS("/Script/FSD", "StabberVine");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     FTentacleTarget DesiredTarget;
     static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
@@ -19339,6 +19380,7 @@ class ATentaclePlant : public AShootingPlant
 {
 public:
     UE_CLASS("/Script/FSD", "TentaclePlant");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     bool IsVulnerable;
     static constexpr const char* IsVulnerable__Replicated = "OnRep_IsVulnerable:";
     int AmountOfNodes;
@@ -19365,6 +19407,7 @@ class ATerminatorTentacle : public ATentacleBase
 {
 public:
     UE_CLASS("/Script/FSD", "TerminatorTentacle");
+    static constexpr const char* UeNativeInterfaces = "ITargetable";
     TMulticastInlineDelegate<void()> OnTentacleStateChangedEvent;
     class UAnimSequenceBase* FlairAnimation;
     float MinFlairAnimCooldown;
@@ -19372,7 +19415,7 @@ public:
     float SwaySpeed;
     bool Extended;
     TArray<class UAnimMontage*> HitReactions;
-    ETerminatorTentacleState TentacleState;
+    TEnum<ETerminatorTentacleState> TentacleState;
     static constexpr const char* TentacleState__Replicated = "OnRep_TentacleState:";
     class USkeletalMeshComponent* HeadMesh;
     class UGrabberComponent* GrabberComponent;
@@ -19387,7 +19430,7 @@ public:
     static constexpr const char* enemy__UeSubobject = "enemy /Script/FSD.EnemyComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     UE_MULTICAST void All_PlayFlairAnimation();
-    UE_AUTHORITY_ONLY void ChangeTentacleState(ETerminatorTentacleState NewState);
+    UE_AUTHORITY_ONLY void ChangeTentacleState(TEnum<ETerminatorTentacleState> NewState);
     UE_AUTHORITY_ONLY void MoveToGrabTarget(class AActor* Target, float GrabDuration);
     void OnDeathEvent(class UHealthComponentBase* EnemyHealth);
     void OnGrabbedActorReleased(class AActor* Actor, bool fullGrabElapsed);
@@ -19395,7 +19438,7 @@ public:
     void OnHeadExitedTerrain();
     void OnRep_DesiredTarget();
     void OnRep_TentacleState();
-    void OnStateChanged(ETerminatorTentacleState NewState);
+    void OnStateChanged(TEnum<ETerminatorTentacleState> NewState);
     void PlayHitReaction(float amount);
 };
 
@@ -19424,7 +19467,7 @@ public:
     UE_CLASS("/Script/FSD", "WoodLouse");
     class USceneComponent* RollingCenter;
     class UPawnSensingComponent* PawnSensing;
-    EWoodLouseState forceState;
+    TEnum<EWoodLouseState> forceState;
     float RollingCenterOffsetOnStanding;
     float RollingCenterOffsetOnFold;
     float ChanceToWalk;
@@ -19450,7 +19493,7 @@ public:
     float RefreshTimeMin;
     float BumpPower;
     float DirectionalBumpPower;
-    EWoodLouseState CurrentState;
+    TEnum<EWoodLouseState> CurrentState;
     static constexpr const char* CurrentState__Replicated = "OnRep_State:";
     class AActor* CurrentTarget;
     static constexpr const char* CurrentTarget__Replicated = ":";
@@ -19496,12 +19539,12 @@ public:
     void OnRep_State();
     void SeePawn(class APawn* aSenPawn);
     void SetRotateToTarget(bool aRotateToTarget);
-    void SetState(EWoodLouseState aState);
+    void SetState(TEnum<EWoodLouseState> aState);
     void SetWantsToStandUp(bool aWantsToStandUp);
     void StartSpecial();
     void StopSpecial();
-    void SwitchedState(EWoodLouseState CurrentState_0);
-    UE_PURE EWoodLouseState GetRollerState() const;
+    void SwitchedState(TEnum<EWoodLouseState> CurrentState_0);
+    UE_PURE TEnum<EWoodLouseState> GetRollerState() const;
 };
 
 class AShowroomItem : public AActor
@@ -19515,7 +19558,7 @@ class AEnemyShowroomItem : public AShowroomItem
 {
 public:
     UE_CLASS("/Script/FSD", "EnemyShowroomItem");
-    EShowroomScaling Scaling;
+    TEnum<EShowroomScaling> Scaling;
 };
 
 class AMeteorDefenseEvent : public AGameEvent
@@ -19551,7 +19594,7 @@ public:
     class USingleUsableComponent* Usable;
     bool HasBeenUsed;
     static constexpr const char* Usable__UeSubobject = "Usable /Script/FSD.SingleUsableComponent";
-    void OnUsedBy(class APlayerCharacter* User, EInputKeys Key);
+    void OnUsedBy(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 class UAcceptInviteBlueprintCallProxy : public UOnlineBlueprintCallProxyBase
@@ -19599,8 +19642,8 @@ public:
     FText Description;
     int Cost;
     bool UseOldCost;
-    EUpgradeTiers UpgradeTier;
-    EUpgradeClass upgradeClass;
+    TEnum<EUpgradeTiers> UpgradeTier;
+    TEnum<EUpgradeClass> upgradeClass;
     class UItemUpgradeCategory* Category;
     TMap<class UResourceData*, float> UpgradeCraftingCost;
     TArray<class UResourceData*> ResourceCost;
@@ -19628,8 +19671,8 @@ class UCapsuleHitscanUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "CapsuleHitscanUpgrade");
-    ECapsuleHitscanUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ECapsuleHitscanUpgradeType upgradeType_0);
+    TEnum<ECapsuleHitscanUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ECapsuleHitscanUpgradeType> upgradeType_0);
 };
 
 class UBTTask_MoveToTarget : public UBTTask_BlackboardBase
@@ -19662,8 +19705,8 @@ class UMicrowavegunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "MicrowavegunUpgrade");
-    EMicrowaveGunUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EMicrowaveGunUpgrade upgradeType_0);
+    TEnum<EMicrowaveGunUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EMicrowaveGunUpgrade> upgradeType_0);
 };
 
 class UDamageBonusBase : public UDataAsset
@@ -19715,7 +19758,7 @@ public:
     UE_PURE int GetRequiredPlayerRank() const;
     UE_PURE TArray<FCraftingCost> GetResourceCost() const;
     UE_PURE TSet<class UPlayerCharacterID*> GetRestrictedCharacters() const;
-    UE_PURE EVanitySlot GetVanitySlot() const;
+    UE_PURE TEnum<EVanitySlot> GetVanitySlot() const;
     UE_PURE FDetailedTagSet GetVanityTags() const;
     UE_PURE bool HasEventSource() const;
     UE_PURE bool IsEquipped(class UObject* WorldContextObject, class UPlayerCharacterID* characterID) const;
@@ -19760,7 +19803,7 @@ public:
     UE_CLASS("/Script/FSD", "HeadVanityItem");
     TSoftObjectPtr<class USkeletalMesh> Mesh;
     TSoftClassPtr<class UClass> AnimInstance;
-    EHeadVanityType HeadVanityType;
+    TEnum<EHeadVanityType> HeadVanityType;
     bool HideEyebrows;
     bool HideSideburns;
     bool HideMoustache;
@@ -19769,7 +19812,7 @@ public:
     bool RequiresSlimArmor;
     TArray<class UArmorVanityItem*> ForceThickAmorsHack;
     bool HideHead;
-    ECharacterHeadMesh HeadMesh;
+    TEnum<ECharacterHeadMesh> HeadMesh;
     TSoftObjectPtr<class UMaterialInterface> MaterialOverride;
     TMap<class UPlayerCharacterID*, TSoftObjectPtr<class UMaterialInterface>> ClassMaterials;
     TSet<class UTagVanityHeadwear*> VanityTags;
@@ -19785,7 +19828,7 @@ class UDirectDamageCondition : public UDamageCondition
 {
 public:
     UE_CLASS("/Script/FSD", "DirectDamageCondition");
-    EDirectDamageConditionEnum Type;
+    TEnum<EDirectDamageConditionEnum> Type;
 };
 
 class UAccessoryHeadVanityItem : public UHeadVanityItem
@@ -19900,6 +19943,7 @@ class UJellyEggAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "JellyEggAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
     FVector force;
 };
 
@@ -19907,6 +19951,7 @@ class AAmmoDrivenWeapon : public AAnimatedItem
 {
 public:
     UE_CLASS("/Script/FSD", "AmmoDrivenWeapon");
+    static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
     TMulticastInlineDelegate<void(int amount)> OnClipCountChanged;
     TMulticastInlineDelegate<void()> OnTryReloadEvent;
     TMulticastInlineDelegate<void()> OnReloadingEvent;
@@ -19989,7 +20034,7 @@ public:
     bool ManualHeatReductionOnReload;
     int MaxManualHeatReductionCharges;
     float ManualHeatReductionValue;
-    EAmmoWeaponState WeaponState;
+    TEnum<EAmmoWeaponState> WeaponState;
     static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
     static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
@@ -20049,7 +20094,7 @@ class UDroneStateComponentBase : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "DroneStateComponentBase");
-    EDroneState SubsequentState;
+    TEnum<EDroneState> SubsequentState;
 };
 
 class UDroneMiningState : public UDroneStateComponentBase
@@ -20081,7 +20126,7 @@ class UGameActivityType : public UDataAsset
 public:
     UE_CLASS("/Script/FSD", "GameActivityType");
     FString ActivityId;
-    EActivityType ActivityType;
+    TEnum<EActivityType> ActivityType;
     TArray<FGameActivitySubTask> SubTasks;
 };
 
@@ -20162,7 +20207,7 @@ class UAnimNotifyState_SpawnSkinnedMesh : public UAnimNotifyState
 {
 public:
     UE_CLASS("/Script/FSD", "AnimNotifyState_SpawnSkinnedMesh");
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     bool UseFirstPersonComponent;
     FName SocketName;
     FVector LocationOffset;
@@ -20234,9 +20279,9 @@ public:
     UE_PURE static TSubclassOf<class UWindowWidget> LoadWindowWidgetClass(TSoftClassPtr<class UClass> WidgetClass);
     UE_AUTHORITY_ONLY static void LockCharacters(class UObject* WorldContextObject);
     UE_AUTHORITY_ONLY static void LockCharacters();
-    UE_AUTHORITY_ONLY static bool LockSpecificCharacterIfState(class APlayerCharacter* Character, ECharacterState LockIf, ECharacterState LockTo);
+    UE_AUTHORITY_ONLY static bool LockSpecificCharacterIfState(class APlayerCharacter* Character, TEnum<ECharacterState> LockIf, TEnum<ECharacterState> LockTo);
     UE_AUTHORITY_ONLY static void LockSpecificCharacters(TArray<class APlayerCharacter*> Characters);
-    UE_AUTHORITY_ONLY static void LockSpecificCharactersIfState(TArray<class APlayerCharacter*> Characters, ECharacterState stateToLock);
+    UE_AUTHORITY_ONLY static void LockSpecificCharactersIfState(TArray<class APlayerCharacter*> Characters, TEnum<ECharacterState> stateToLock);
     UE_PURE static float MoveTowards(float Current, float End, float step);
     UE_PURE static float PingPong(float Time, float Length, bool normalize);
     UE_AUTHORITY_ONLY static void PlayCueOnAll(class UObject* WorldContextObject, class USoundCue* cue);
@@ -20247,7 +20292,7 @@ public:
     UE_PURE static float TimeSince(float Time);
     static void UnlockCharacters(class UObject* WorldContextObject);
     static void UnlockCharacters();
-    UE_AUTHORITY_ONLY static void UnlockSpecificCharacters(TArray<class APlayerCharacter*> Characters, ECharacterState UnlockIf, ECharacterState UnlockTo);
+    UE_AUTHORITY_ONLY static void UnlockSpecificCharacters(TArray<class APlayerCharacter*> Characters, TEnum<ECharacterState> UnlockIf, TEnum<ECharacterState> UnlockTo);
 };
 
 class UActorStateComponent : public UActorComponent
@@ -20416,7 +20461,7 @@ public:
     void RecordExtraFailInfo(FString MissionName, FString Stage, FString ExtraText);
     void RecordGaChallengeReroll(int ChallengeIndex, class USeasonChallenge* Challenge);
     void RecordGADeepDiveStageHit(FString Key, bool Rank, int StageTime, int TimeSinceStartOfDive, int TotalTime, int NitraLeft);
-    void RecordGAEvent(FString EventCategory, FString EventAction, FString EventLabel, int EventValue, EFSDGoogleAnalyticsProperties Property);
+    void RecordGAEvent(FString EventCategory, FString EventAction, FString EventLabel, int EventValue, TEnum<EFSDGoogleAnalyticsProperties> Property);
     void RecordGAMissionTimeEvent(int Time);
     void RecordGAMissionTotalTimeHit(FString Key, FString Campaign, bool Rank, int TotalTime, int Progress, int XP, int Credits);
     void RecordGASeasonLevelUp();
@@ -20562,8 +20607,8 @@ public:
     float GrabTime;
     float CarryCooldown;
     float RevivedGravePeriod;
-    EOutline PlayerOutlineOnGrab;
-    EGrabbedStateCameraMode CameraMode;
+    TEnum<EOutline> PlayerOutlineOnGrab;
+    TEnum<EGrabbedStateCameraMode> CameraMode;
     bool TrackPlayerCollision;
     bool ManualGrabTime;
     bool CanPlayerShoot;
@@ -20654,7 +20699,7 @@ public:
     class UDamageClass* DamageClass;
     float WeakpointDamageMultiplier;
     int MaxPenetrations;
-    EImpactDecalSize ImpactDecalSize;
+    TEnum<EImpactDecalSize> ImpactDecalSize;
     float FriendlyFireModifier;
     bool UseDynamicSpread;
     TArray<class AActor*> IgnoredActorsInTrace;
@@ -20668,7 +20713,7 @@ public:
     float HorizontalSpredMultiplier;
     float MaxVerticalSpread;
     float MaxHorizontalSpread;
-    ERicochetBehavior RicochetBehavior;
+    TEnum<ERicochetBehavior> RicochetBehavior;
     float RicochetChance;
     bool RicochetOnWeakspotOnly;
     float RicochetMaxRange;
@@ -20736,7 +20781,7 @@ class UAnimatedItemParticleAfflictionEffect : public UAfflictionEffect
 {
 public:
     UE_CLASS("/Script/FSD", "AnimatedItemParticleAfflictionEffect");
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     class UParticleSystem* ParticleEffect;
     FName Socket;
 };
@@ -20807,7 +20852,7 @@ public:
     UE_SERVER UE_RELIABLE void ToggleCanTakeDamage();
     UE_PURE float GetArmor() const;
     UE_PURE float GetArmorPct() const;
-    UE_PURE EHealthbarType GetHealthbarType() const;
+    UE_PURE TEnum<EHealthbarType> GetHealthbarType() const;
     UE_PURE float GetMaxArmor() const;
     UE_PURE bool HasArmor() const;
 };
@@ -20816,7 +20861,7 @@ class UEnemyHealthComponent : public UHealthComponent
 {
 public:
     UE_CLASS("/Script/FSD", "EnemyHealthComponent");
-    EEnemyHealthScaling EnemyHealthScaling;
+    TEnum<EEnemyHealthScaling> EnemyHealthScaling;
     float Courage;
     float MaxHealth;
     bool bShowHealthBar;
@@ -20953,15 +20998,15 @@ public:
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     void CallUpdateWidget();
     UE_SERVER UE_RELIABLE void Server_Call_CleaningPod(const FVector& Location, class APlagueInfectionNode* plagueNode);
-    void UpdateWidget(EPlaceableObstructionType reason, float TimeLeft);
+    void UpdateWidget(TEnum<EPlaceableObstructionType> reason, float TimeLeft);
 };
 
 class UAutoShotgunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "AutoShotgunUpgrade");
-    EAutoShotgunUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EAutoShotgunUpgrades upgradeType_0);
+    TEnum<EAutoShotgunUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EAutoShotgunUpgrades> upgradeType_0);
 };
 
 class UHackingUsableComponent : public UInstantUsable
@@ -21032,7 +21077,7 @@ public:
     UE_CLASS("/Script/FSD", "BTDecorator_InRangeEx");
     float MinRange;
     float MaxRange;
-    EFAIDistanceType GeometricDistanceType;
+    TEnum<EFAIDistanceType> GeometricDistanceType;
 };
 
 class UAIPlayerControlComponent : public UActorComponent
@@ -21359,8 +21404,8 @@ public:
     TSubclassOf<class AActor> SpawnAttachClass;
     float AttachSpawnOffsetDistance;
     class UTerrainMaterial* TerrainMaterial;
-    ECarveFilterType Filter;
-    ECarveOptionsCellSize CarveCellSize;
+    TEnum<ECarveFilterType> Filter;
+    TEnum<ECarveOptionsCellSize> CarveCellSize;
     TArray<FUDebrisCarveMesh> Meshes;
     TArray<FResourceDebris> Debris;
 };
@@ -21428,6 +21473,7 @@ class UButtonUserWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "ButtonUserWidget");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     void InnerButtonClicked();
     class UWidget* InnerButtonGetToolTip();
     void InnerButtonHovered();
@@ -21537,7 +21583,7 @@ class UConditionalDamageModifierUpgrade : public UItemUpgrade
 public:
     UE_CLASS("/Script/FSD", "ConditionalDamageModifierUpgrade");
     class UDamageCondition* Condition;
-    EDamageComponentType DamageComponentType;
+    TEnum<EDamageComponentType> DamageComponentType;
     TArray<FDamageModifierItem> Modifiers;
     UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player);
 };
@@ -21548,7 +21594,7 @@ public:
     UE_CLASS("/Script/FSD", "BTDecorator_InRange");
     float MinRange;
     float MaxRange;
-    EFAIDistanceType GeometricDistanceType;
+    TEnum<EFAIDistanceType> GeometricDistanceType;
 };
 
 class UBaseArmorDamageComponent : public UActorComponent
@@ -21899,7 +21945,7 @@ public:
     static constexpr const char* ArmorDamageInfo__Replicated = "OnRep_ArmorDamageInfo:";
     float RadialSocketDamageMultiplier;
     bool AffectedByAmorBreak;
-    void DealSocketArmorDamage(float Damage, float armorDamageMultiplier, class UPrimitiveComponent* collider, bool shatter, EArmorDamageType DamageType);
+    void DealSocketArmorDamage(float Damage, float armorDamageMultiplier, class UPrimitiveComponent* collider, bool shatter, TEnum<EArmorDamageType> DamageType);
     void OnRep_ArmorDamageInfo(FArmorDamageInfo OldValue);
     void PopAllWeakPoints();
     UE_AUTHORITY_ONLY void RegrowAllArmor(float baseHealth);
@@ -22036,12 +22082,12 @@ class UAsyncManager : public UGameInstanceSubsystem
 public:
     UE_CLASS("/Script/FSD", "AsyncManager");
     TArray<class UObject*> PermanentReferences;
-    void AsyncLoadAsset(const FSoftObjectPath& Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadAssets(const TArray<FSoftObjectPath>& Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadSoftClass(TSoftClassPtr<class UClass> Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadSoftClasses(TArray<TSoftClassPtr<class UClass>> Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadSoftObject(TSoftObjectPtr<class UObject> Item, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
-    void AsyncLoadSoftObjects(const TArray<TSoftObjectPtr<class UObject>>& Items, EAsyncPersistence persistence, TDelegate<void()> OnLoadComplete, EAsyncLoadPriority Priority);
+    void AsyncLoadAsset(const FSoftObjectPath& Item, TEnum<EAsyncPersistence> persistence, TDelegate<void()> OnLoadComplete, TEnum<EAsyncLoadPriority> Priority);
+    void AsyncLoadAssets(const TArray<FSoftObjectPath>& Items, TEnum<EAsyncPersistence> persistence, TDelegate<void()> OnLoadComplete, TEnum<EAsyncLoadPriority> Priority);
+    void AsyncLoadSoftClass(TSoftClassPtr<class UClass> Item, TEnum<EAsyncPersistence> persistence, TDelegate<void()> OnLoadComplete, TEnum<EAsyncLoadPriority> Priority);
+    void AsyncLoadSoftClasses(TArray<TSoftClassPtr<class UClass>> Items, TEnum<EAsyncPersistence> persistence, TDelegate<void()> OnLoadComplete, TEnum<EAsyncLoadPriority> Priority);
+    void AsyncLoadSoftObject(TSoftObjectPtr<class UObject> Item, TEnum<EAsyncPersistence> persistence, TDelegate<void()> OnLoadComplete, TEnum<EAsyncLoadPriority> Priority);
+    void AsyncLoadSoftObjects(const TArray<TSoftObjectPtr<class UObject>>& Items, TEnum<EAsyncPersistence> persistence, TDelegate<void()> OnLoadComplete, TEnum<EAsyncLoadPriority> Priority);
     TSubclassOf<class UObject> Receive_SyncLoadClass(TSoftClassPtr<class UClass> Asset);
     TArray<TSubclassOf<class UObject>> Receive_SyncLoadClasses(TArray<TSoftClassPtr<class UClass>> assets);
     void ReleaseAllHandles();
@@ -22076,8 +22122,8 @@ class UGrenadeUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "GrenadeUpgrade");
-    EGrenadeUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AGrenade> flareClass, EGrenadeUpgradeType upgradeType_0);
+    TEnum<EGrenadeUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AGrenade> flareClass, TEnum<EGrenadeUpgradeType> upgradeType_0);
 };
 
 class UBTDecorator_IsFacing : public UBTDecorator_BlackboardBase
@@ -22127,7 +22173,7 @@ class UTargetStateDamageBonus : public UDamageBonusBase
 {
 public:
     UE_CLASS("/Script/FSD", "TargetStateDamageBonus");
-    ETargetStateDamageBonusType TargetState;
+    TEnum<ETargetStateDamageBonusType> TargetState;
     float Bonus;
     class UDamageClass* DamageClass;
 };
@@ -22166,7 +22212,7 @@ public:
     TSoftObjectPtr<class UTexture2D> TriforkIcon;
     TSubclassOf<class ACrossbowProjectileStuck> SpawnableStuckProjectile;
     TSubclassOf<class UStatusEffect> OnDamageEffect;
-    ECrossbowEffectApplication EffectApplication;
+    TEnum<ECrossbowEffectApplication> EffectApplication;
     uint8 SelectionPriority;
     bool CanEverBePickedUp;
     bool Penetrates;
@@ -22232,8 +22278,8 @@ class UElectricalSMGUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ElectricalSMGUpgrade");
-    EElectricalSMGUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, EElectricalSMGUpgrades upgradeType_0);
+    TEnum<EElectricalSMGUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<EElectricalSMGUpgrades> upgradeType_0);
 };
 
 class UBTDecorator_RandomLoop : public UBTDecorator
@@ -22353,25 +22399,27 @@ class UGatlingGunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "GatlingGunUpgrade");
-    EGatlingGunUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EGatlingGunUpgrade upgradeType_0);
+    TEnum<EGatlingGunUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EGatlingGunUpgrade> upgradeType_0);
 };
 
 class UAutoCannonAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "AutoCannonAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class UAutoCarverComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "AutoCarverComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     class UTerrainMaterialBase* TerrainMaterial;
     float Frequency;
     float ExpensiveNoise;
     float MinDistanceMoved;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     TMulticastInlineDelegate<void()> OnCarveDoneEvent;
     void ForceCarve();
 };
@@ -22382,7 +22430,7 @@ public:
     UE_CLASS("/Script/FSD", "STLMeshCarverComponent");
     class UTerrainMaterialBase* TerrainMaterial;
     class USTLMeshCarver* MeshCarver;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     bool PreviewEnabled;
 };
 
@@ -22390,8 +22438,8 @@ class UArmorUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ArmorUpgrade");
-    EArmorUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> armorClass, EArmorUpgradeType aUpgradeType);
+    TEnum<EArmorUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> armorClass, TEnum<EArmorUpgradeType> aUpgradeType);
 };
 
 class UResourceData : public UDataAsset
@@ -22440,10 +22488,11 @@ class UMeshCarverComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "MeshCarverComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     class UTerrainMaterialBase* TerrainMaterial;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     float ExpensiveNoise;
-    ECarveOptionsCellSize CarverSize;
+    TEnum<ECarveOptionsCellSize> CarverSize;
     void Carve();
 };
 
@@ -22489,9 +22538,9 @@ public:
     class UStaticMesh* ConvexCarver;
     class UStaticMeshCarver* StaticMeshCarver;
     class UTerrainMaterialBase* TerrainMaterial;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     float ConvexExpensiveNoise;
-    ECarveOptionsCellSize CarveCellSize;
+    TEnum<ECarveOptionsCellSize> CarveCellSize;
     bool PreviewEnabled;
     bool CarvingDisabled;
     bool DestroyOwnerOnCarve;
@@ -22518,8 +22567,8 @@ class UPlasmaCarbineUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "PlasmaCarbineUpgrade");
-    EPlasmaCarbineUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EPlasmaCarbineUpgrades upgradeType_0);
+    TEnum<EPlasmaCarbineUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EPlasmaCarbineUpgrades> upgradeType_0);
 };
 
 class UBTTask_FaceTarget : public UBTTaskNode
@@ -22541,8 +22590,8 @@ class UCrossbowUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "CrossbowUpgrade");
-    ECrossbowUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, TSubclassOf<class ACrossbowProjectileBase> Projectile, class AFSDPlayerState* Player, ECrossbowUpgrades upgradeType_0);
+    TEnum<ECrossbowUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, TSubclassOf<class ACrossbowProjectileBase> Projectile, class AFSDPlayerState* Player, TEnum<ECrossbowUpgrades> upgradeType_0);
 };
 
 class UKeyBindingSettings : public UDataAsset
@@ -22562,7 +22611,7 @@ public:
     TArray<class UStaticMeshCarver*> StaticMeshCarvers;
     FRandRange RandomScale;
     class UTerrainMaterialBase* TerrainMaterial;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
 };
 
 class ULevelGenerationCarverComponent2 : public UPrimitiveComponent
@@ -22618,9 +22667,10 @@ class UStaticMeshCarverComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "StaticMeshCarverComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     class UStaticMeshCarver* StaticMeshCarver;
     class UTerrainMaterial* TerrainMaterial;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     void Carve();
 };
 
@@ -22711,7 +22761,7 @@ public:
     float BuckShotDelay;
     float ShotDirectionHorizontalDegreeOffset;
     float ShotDirectionVerticleDegreeOffset;
-    EMicroMissileLauncherFireMode FireMode;
+    TEnum<EMicroMissileLauncherFireMode> FireMode;
     bool DisableHomingOnRelease;
     float MaxHomingProjectiles;
     class UAnimMontage* WPN_Fire_Empty_Mag;
@@ -22817,11 +22867,11 @@ class UDebrisStaticCarved : public UDebrisBase
 {
 public:
     UE_CLASS("/Script/FSD", "DebrisStaticCarved");
-    EDebrisCarvedType CarverType;
+    TEnum<EDebrisCarvedType> CarverType;
     TArray<FUDebrisStaticCarveMesh> Meshes;
     class UTerrainMaterial* TerrainMaterial;
     FDebrisInfluence CaveInfluenceToAdd;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     float CarveOffsetRadius;
     TSubclassOf<class AActor> SpawnAttachClass;
     float AttachSpawnOffsetDistance;
@@ -22849,7 +22899,7 @@ public:
     float HazardBonus;
     FRandInterval MutatorCount;
     FRandInterval WarningCount;
-    UE_PURE ESchematicType GetStageRewardType(int stageIndex) const;
+    UE_PURE TEnum<ESchematicType> GetStageRewardType(int stageIndex) const;
     UE_PURE bool IsComplexityAllowed(class UMissionTemplate* mission, class UMissionComplexity* Complexity) const;
     UE_PURE bool IsDurationAllowed(class UMissionTemplate* mission, class UMissionDuration* Duration) const;
 };
@@ -22909,7 +22959,7 @@ public:
     TMap<int, FBiomeFeatures> BiomeFeatureDescriptions;
     UE_PURE TArray<FDamageTypeDescription> GetAllDamageTypeDescriptions();
     UE_PURE TArray<class UMinersManualData*> GetBiomeFeatures(int BiomeIndex);
-    void GetDamageTypeDescription(EDamageType damageTypes, FDamageTypeDescription& Icon);
+    void GetDamageTypeDescription(TEnum<EDamageType> damageTypes, FDamageTypeDescription& Icon);
     void GetDamageTypeDescriptions(TArray<EDamageType> damageTypes, TArray<FDamageTypeDescription>& Icon);
     UE_PURE TArray<class UEnemyMinersManualData*> GetEnemies();
     UE_PURE TArray<class UEnemyMinersManualData*> GetEnemiesSorted();
@@ -22934,7 +22984,7 @@ public:
     UE_CLASS("/Script/FSD", "CableBuilderItem");
     class UCrosshairAggregator* CrosshairAggregator;
     class UItemPlacerAggregator* CablePlacer;
-    EPlaceableObstructionType ObstructionType;
+    TEnum<EPlaceableObstructionType> ObstructionType;
     FVector ObstructionLocation;
     FVector GroundNormal;
     TSubclassOf<class ACable> DefaultCableType;
@@ -23077,7 +23127,7 @@ public:
     TSoftObjectPtr<class USkeletalMesh> Mesh;
     float BeardThickness;
     bool RequiresSlimArmor;
-    EMaterialChoice MaterialType;
+    TEnum<EMaterialChoice> MaterialType;
     bool HideEyebrows;
     bool HideSideburns;
     bool HideMoustache;
@@ -23094,7 +23144,7 @@ public:
     TSoftClassPtr<class UClass> CritterClass;
     TMap<class UBiome*, TSoftClassPtr<class UClass>> BiomeClassOverrides;
     class UDebrisPositioning* Positioning;
-    EDeepPathFinderType PathfinderType;
+    TEnum<EDeepPathFinderType> PathfinderType;
 };
 
 class URareCritterDescriptor : public UBaseCritterDescriptor
@@ -23276,7 +23326,7 @@ class UPlatformExclusiveDLC : public UDLCBase
 {
 public:
     UE_CLASS("/Script/FSD", "PlatformExclusiveDLC");
-    EFSDTargetPlatform Platform;
+    TEnum<EFSDTargetPlatform> Platform;
 };
 
 class UBhaBarnableAnimationSharingStateProcessor : public UAnimationSharingStateProcessor
@@ -23486,8 +23536,8 @@ public:
     UE_CLASS("/Script/FSD", "EntranceFeature");
     FVector Location;
     FRotator Direction;
-    ECaveEntranceType EntranceType;
-    ECaveEntrancePriority Priority;
+    TEnum<ECaveEntranceType> EntranceType;
+    TEnum<ECaveEntrancePriority> Priority;
 };
 
 class UBobbingComponent : public USceneComponent
@@ -23636,6 +23686,7 @@ class UBoltActionWeaponAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "BoltActionWeaponAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class UWeaponFireComponentUpgrade : public UItemUpgrade
@@ -23740,7 +23791,7 @@ public:
     FString AnonymousID;
     int PerkPoints;
     bool HasRecievedDiscordReward;
-    EFSDFaction Faction;
+    TEnum<EFSDFaction> Faction;
     TArray<FGuid> UnLockedMissions;
     TMap<FGuid, FUnLockedMissionParameters> UnLockedMissionParameters;
     TArray<FGuid> UnLockedPlanetZones;
@@ -23825,7 +23876,7 @@ public:
     void CheckPromotionAchievementProgress(bool IsRetroactive);
     bool DeductPerkPoints(int amount);
     void ForceSetIsModded(bool modded);
-    UE_PURE EFSDFaction GetFaction();
+    UE_PURE TEnum<EFSDFaction> GetFaction();
     bool GetHasClaimedSteamGroupLoot();
     bool GetHasSentSteamInfo();
     UE_PURE int GetIndex();
@@ -23853,9 +23904,9 @@ public:
     void SetBoscoAllowed(bool aIsBoscoAllowed);
     void SetCharacterLoadout(class UPlayerCharacterID* characterID, int loadoutNumber);
     void SetDiscordReward(bool State);
-    void SetEquippedItem(EItemCategory Category, class UPlayerCharacterID* PlayerId, TSubclassOf<class AActor> Item);
-    void SetEquippedItemID(EItemCategory Category, class UPlayerCharacterID* PlayerId, class UItemID* Item);
-    void SetFaction(EFSDFaction newFaction, bool Reasign);
+    void SetEquippedItem(TEnum<EItemCategory> Category, class UPlayerCharacterID* PlayerId, TSubclassOf<class AActor> Item);
+    void SetEquippedItemID(TEnum<EItemCategory> Category, class UPlayerCharacterID* PlayerId, class UItemID* Item);
+    void SetFaction(TEnum<EFSDFaction> newFaction, bool Reasign);
     void SetHasClaimSteamGroupLoot();
     void SetHasJoinedXboxClub();
     void SetHasSentSteamInfo();
@@ -23863,11 +23914,11 @@ public:
     void SetIndexAndName(int Param_Index_0, FString Param_Name_0);
     void SetIsModded(bool modded);
     bool SetPersonalAnalytics(bool State);
-    void SetSonyInputSettingBool(ESonyInputSettingsBools Setting, bool NewValue);
-    void SetSonyInputSettingFloat(class UObject* WorldContext, ESonyInputSettingsFloats Setting, float NewValue);
-    void SetSonyInputSettingFloat(ESonyInputSettingsFloats Setting, float NewValue);
-    void SetSonyInputSettingLightMode(ESonyControllerLightMode NewValue);
-    void SetSonyInputSettingMotionXMapping(ESonyControllerMotionMapping NewValue);
+    void SetSonyInputSettingBool(TEnum<ESonyInputSettingsBools> Setting, bool NewValue);
+    void SetSonyInputSettingFloat(class UObject* WorldContext, TEnum<ESonyInputSettingsFloats> Setting, float NewValue);
+    void SetSonyInputSettingFloat(TEnum<ESonyInputSettingsFloats> Setting, float NewValue);
+    void SetSonyInputSettingLightMode(TEnum<ESonyControllerLightMode> NewValue);
+    void SetSonyInputSettingMotionXMapping(TEnum<ESonyControllerMotionMapping> NewValue);
     bool TryBuyResource(class UResourceData* Resource, int amount, int& Price);
     bool TryDeductCredits(int amount);
     bool TryDeductResources(const TMap<class UResourceData*, int>& Resources_0);
@@ -23878,8 +23929,8 @@ public:
     UE_PURE int GetClassLevel(class UPlayerCharacterID* characterID) const;
     UE_PURE int GetClassXP(class UPlayerCharacterID* characterID) const;
     UE_PURE int GetCredits() const;
-    UE_PURE TSubclassOf<class AActor> GetEquippedItem(EItemCategory Category, class UPlayerCharacterID* PlayerId) const;
-    UE_PURE class UItemID* GetEquippedItemID(EItemCategory Category, class UPlayerCharacterID* PlayerId) const;
+    UE_PURE TSubclassOf<class AActor> GetEquippedItem(TEnum<EItemCategory> Category, class UPlayerCharacterID* PlayerId) const;
+    UE_PURE class UItemID* GetEquippedItemID(TEnum<EItemCategory> Category, class UPlayerCharacterID* PlayerId) const;
     UE_PURE int GetPerkPoints() const;
     UE_PURE int GetPlayerRank() const;
     UE_PURE int GetPlayerRetirementRank() const;
@@ -23891,10 +23942,10 @@ public:
     UE_PURE int GetSelectedLoadoutIndex(class UPlayerCharacterID* characterID) const;
     UE_PURE FString GetSlotLoadedFrom() const;
     UE_PURE FDateTime GetSlotTimeStamp() const;
-    UE_PURE bool GetSonyInputSettingBool(ESonyInputSettingsBools Setting) const;
-    UE_PURE float GetSonyInputSettingFloat(ESonyInputSettingsFloats Setting) const;
-    UE_PURE ESonyControllerLightMode GetSonyInputSettingLightMode() const;
-    UE_PURE ESonyControllerMotionMapping GetSonyInputSettingMotionXMapping() const;
+    UE_PURE bool GetSonyInputSettingBool(TEnum<ESonyInputSettingsBools> Setting) const;
+    UE_PURE float GetSonyInputSettingFloat(TEnum<ESonyInputSettingsFloats> Setting) const;
+    UE_PURE TEnum<ESonyControllerLightMode> GetSonyInputSettingLightMode() const;
+    UE_PURE TEnum<ESonyControllerMotionMapping> GetSonyInputSettingMotionXMapping() const;
     UE_PURE int GetTotalCharacterXP() const;
     UE_PURE bool HasAnyCharacterRetired() const;
     UE_PURE bool HasCharacterCompletedRetirementCampaign(class UPlayerCharacterID* characterID) const;
@@ -23993,7 +24044,7 @@ public:
     FName AbillityName;
     class UAnimSequenceBase* AbillityAnimation;
     class UDialogDataAsset* VoiceOnUse;
-    EBoscoAbillityTargetPreference TargetType;
+    TEnum<EBoscoAbillityTargetPreference> TargetType;
     class UAbilityExitStrategy* ExitStrategy;
     float CoolDown;
     float WindUp;
@@ -24235,7 +24286,7 @@ class ACaveEntrance : public AGenerationItem
 public:
     UE_CLASS("/Script/FSD", "CaveEntrance");
     class UCaveEntranceComponent* CaveEntranceComponent;
-    ECaveEntranceType EntranceType;
+    TEnum<ECaveEntranceType> EntranceType;
     bool HasBeenConverted;
     static constexpr const char* CaveEntranceComponent__UeSubobject = "CaveEntrance /Script/FSD.CaveEntranceComponent";
     static constexpr const char* RootComponent__UeSubobject = "CaveEntrance /Script/FSD.CaveEntranceComponent";
@@ -24281,7 +24332,7 @@ public:
     static constexpr const char* PredictedNextEnemy__Replicated = ":";
     uint32 RandomSeed;
     static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
-    EBoomerangState State;
+    TEnum<EBoomerangState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     FBoomerangSyncer PosVel;
     static constexpr const char* PosVel__Replicated = "OnRep_PosVel:";
@@ -24368,7 +24419,7 @@ public:
     FVector EyeLocationOffset;
     FName EyeSocketName;
     FBlackboardKeySelector TargetKey;
-    ECollisionChannel TraceChannel;
+    TEnum<ECollisionChannel> TraceChannel;
     bool UseTargetable;
 };
 
@@ -24401,7 +24452,7 @@ class USkinEffect : public UObject
 {
 public:
     UE_CLASS("/Script/FSD", "SkinEffect");
-    UE_PURE EItemSkinType GetSkinType() const;
+    UE_PURE TEnum<EItemSkinType> GetSkinType() const;
     void Receive_AddToItem(class UMeshComponent* Mesh, class AActor* Skinnable, bool IsFirstPerson) const;
 };
 
@@ -24418,7 +24469,7 @@ public:
     UE_CLASS("/Script/FSD", "BTDecorator_InRangeBB");
     FBlackboardKeySelector MinRangeKey;
     FBlackboardKeySelector MaxRangeKey;
-    EFAIDistanceType GeometricDistanceType;
+    TEnum<EFAIDistanceType> GeometricDistanceType;
 };
 
 class UBTDecorator_InRangeOfTarget : public UBTDecorator_BlackboardBase
@@ -24558,22 +24609,22 @@ class UTerrainFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "TerrainFunctionLibrary");
-    UE_AUTHORITY_ONLY static int CountDebrisInSphere(class UObject* WorldContextObject, FVector Location, float Radius, ESpecialDebrisType debrisType);
-    UE_AUTHORITY_ONLY static int CountDebrisInSphere(FVector Location, float Radius, ESpecialDebrisType debrisType);
-    UE_AUTHORITY_ONLY static int CountDebrisOfType(class UObject* WorldContextObject, ESpecialDebrisType debrisType);
-    UE_AUTHORITY_ONLY static int CountDebrisOfType(ESpecialDebrisType debrisType);
+    UE_AUTHORITY_ONLY static int CountDebrisInSphere(class UObject* WorldContextObject, FVector Location, float Radius, TEnum<ESpecialDebrisType> debrisType);
+    UE_AUTHORITY_ONLY static int CountDebrisInSphere(FVector Location, float Radius, TEnum<ESpecialDebrisType> debrisType);
+    UE_AUTHORITY_ONLY static int CountDebrisOfType(class UObject* WorldContextObject, TEnum<ESpecialDebrisType> debrisType);
+    UE_AUTHORITY_ONLY static int CountDebrisOfType(TEnum<ESpecialDebrisType> debrisType);
     UE_AUTHORITY_ONLY static void CreateExplosionCrater(class UObject* WorldContextObject, FVector Location, float CarveDiameter, float carveNoiseSize, float carveBurnThickness, bool allowCustomBurntMaterial, class UTerrainMaterial* overrideBurnedMaterial);
     UE_AUTHORITY_ONLY static void CreateExplosionCrater(FVector Location, float CarveDiameter, float carveNoiseSize, float carveBurnThickness, bool allowCustomBurntMaterial, class UTerrainMaterial* overrideBurnedMaterial);
     UE_AUTHORITY_ONLY static void CreateExplosionCrater2(class UObject* WorldContextObject, FVector Location, float CarveDiameter, float carveNoiseSize, float carveBurnThickness, FVector Normal, float NormalOffset, float NormalSqueeze, bool allowCustomBurntMaterial, bool DissolvePlatforms, class UTerrainMaterial* overrideBurnedMaterial);
     UE_AUTHORITY_ONLY static void CreateExplosionCrater2(FVector Location, float CarveDiameter, float carveNoiseSize, float carveBurnThickness, FVector Normal, float NormalOffset, float NormalSqueeze, bool allowCustomBurntMaterial, bool DissolvePlatforms, class UTerrainMaterial* overrideBurnedMaterial);
-    UE_AUTHORITY_ONLY static bool DoesPathExist(class UObject* WorldContextObject, FVector Origin, FVector Destination, EDeepPathFinderSize pfSize, EDeepPathFinderType pfType);
-    UE_AUTHORITY_ONLY static bool DoesPathExist(FVector Origin, FVector Destination, EDeepPathFinderSize pfSize, EDeepPathFinderType pfType);
+    UE_AUTHORITY_ONLY static bool DoesPathExist(class UObject* WorldContextObject, FVector Origin, FVector Destination, TEnum<EDeepPathFinderSize> pfSize, TEnum<EDeepPathFinderType> pfType);
+    UE_AUTHORITY_ONLY static bool DoesPathExist(FVector Origin, FVector Destination, TEnum<EDeepPathFinderSize> pfSize, TEnum<EDeepPathFinderType> pfType);
     UE_AUTHORITY_ONLY static void FindNearestSurfacePoint(class UObject* WorldContextObject, FVector inPoint, FVector& outPoint, FVector& Normal, bool& IsBLocked);
     UE_AUTHORITY_ONLY static void FindNearestSurfacePoint(FVector inPoint, FVector& outPoint, FVector& Normal, bool& IsBLocked);
-    UE_AUTHORITY_ONLY static TArray<FVector> FindPath(class UObject* WorldContextObject, FVector Origin, FVector Destination, EDeepPathFinderSize pfSize, EDeepPathFinderType pfType);
-    UE_AUTHORITY_ONLY static TArray<FVector> FindPath(FVector Origin, FVector Destination, EDeepPathFinderSize pfSize, EDeepPathFinderType pfType);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetAllNavPointsInSphere(class UObject* WorldContextObject, FVector Origin, float Radius, EDeepPathFinderSize pfSize, FVector searchNormal, float maxDegreesToSearchNormal);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetAllNavPointsInSphere(FVector Origin, float Radius, EDeepPathFinderSize pfSize, FVector searchNormal, float maxDegreesToSearchNormal);
+    UE_AUTHORITY_ONLY static TArray<FVector> FindPath(class UObject* WorldContextObject, FVector Origin, FVector Destination, TEnum<EDeepPathFinderSize> pfSize, TEnum<EDeepPathFinderType> pfType);
+    UE_AUTHORITY_ONLY static TArray<FVector> FindPath(FVector Origin, FVector Destination, TEnum<EDeepPathFinderSize> pfSize, TEnum<EDeepPathFinderType> pfType);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetAllNavPointsInSphere(class UObject* WorldContextObject, FVector Origin, float Radius, TEnum<EDeepPathFinderSize> pfSize, FVector searchNormal, float maxDegreesToSearchNormal);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetAllNavPointsInSphere(FVector Origin, float Radius, TEnum<EDeepPathFinderSize> pfSize, FVector searchNormal, float maxDegreesToSearchNormal);
     UE_AUTHORITY_ONLY static bool GetDebrisTransformsInSphere(class UObject* WorldContextObject, TArray<FMatrix>& outPositions, const FVector& Location, const float& Radius, const ESpecialDebrisType& debrisType, float minDistToOther, bool calcPriority);
     UE_AUTHORITY_ONLY static bool GetDebrisTransformsInSphere(TArray<FMatrix>& outPositions, const FVector& Location, const float& Radius, const ESpecialDebrisType& debrisType, float minDistToOther, bool calcPriority);
 };
@@ -24726,6 +24777,7 @@ class UButtonWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "ButtonWidget");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     TMulticastInlineDelegate<void(class UButtonWidget* InButton)> OnClicked;
     TMulticastInlineDelegate<void(class UButtonWidget* InButton)> OnHovered;
     TMulticastInlineDelegate<void(class UButtonWidget* InButton)> OnUnhovered;
@@ -24776,12 +24828,12 @@ public:
     bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class ACableEnd* InCableEnd);
     void ReceivePlacementChangedBegin(const FTransform& NewEndTransform, class ACableEnd* InCableEnd);
     void ReceivePlacementChangedEnd(const FTransform& NewEndTransform, class ACableEnd* InCableEnd);
-    void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
+    void ReceivePlacementStateChanged(TEnum<ETrackBuildPlacementState> NewState);
     void ReceivePlacementValidChanged(bool InIsValid);
     bool UpdatePlacement(const FTransform& InTransform, class ACableEnd* InCableEnd, class AItem* PlaceableItem);
     UE_PURE FTransform GetCableEndTransform() const;
     UE_PURE bool GetIsCableEndTransformValid() const;
-    UE_PURE ETrackBuildPlacementState GetPlacementState() const;
+    UE_PURE TEnum<ETrackBuildPlacementState> GetPlacementState() const;
 };
 
 class UTerrainType : public UDataAsset
@@ -24858,7 +24910,7 @@ public:
     TArray<class UReward*> Rewards;
     class UDialogDataAsset* MissionCompleteShout;
     bool OverrideMutators;
-    ECampaignMutators MutatorOverride;
+    TEnum<ECampaignMutators> MutatorOverride;
     TArray<class UMissionWarning*> AllowedWarnings;
     UE_PURE class UMissionTemplate* GetMissionTemplate() const;
 };
@@ -25052,8 +25104,8 @@ class UCaveEntranceComponent : public UPrimitiveComponent
 {
 public:
     UE_CLASS("/Script/FSD", "CaveEntranceComponent");
-    ECaveEntranceType Direction;
-    ECaveEntrancePriority Priority;
+    TEnum<ECaveEntranceType> Direction;
+    TEnum<ECaveEntrancePriority> Priority;
 };
 
 class ASpawnResourceGenerationItem : public AGenerationItem
@@ -25071,8 +25123,8 @@ class UDetPackUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "DetPackUpgrade");
-    EDetPackUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player, EDetPackUpgrades upgradeType_0);
+    TEnum<EDetPackUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player, TEnum<EDetPackUpgrades> upgradeType_0);
 };
 
 class ASpawnTriggerItem : public AGenerationItem
@@ -25098,10 +25150,10 @@ class ARoomBurner : public AActor
 public:
     UE_CLASS("/Script/FSD", "RoomBurner");
     bool LiveUpdateEditor;
-    ERoomMirror MirrorTest;
+    TEnum<ERoomMirror> MirrorTest;
     class URoomGenerator* RoomGenerator;
     float RoomRadius;
-    ERoomMirroringSupport MirrorSupport;
+    TEnum<ERoomMirroringSupport> MirrorSupport;
     bool ShowRoomCollider;
     FGameplayTagContainer RoomTags;
     int Seed;
@@ -25145,9 +25197,9 @@ public:
     class UAudioComponent* ShoutInstance;
     UE_MULTICAST void All_PlayShout(class USoundCue* Shout);
     void OnShoutEnd();
-    void OnShoutInstancePlayStateChanged(EAudioComponentPlayState PlayState);
+    void OnShoutInstancePlayStateChanged(TEnum<EAudioComponentPlayState> PlayState);
     void OnShoutStart();
-    UE_AUTHORITY_ONLY void SetShoutState(ETerminatorShoutState State, float delayShout);
+    UE_AUTHORITY_ONLY void SetShoutState(TEnum<ETerminatorShoutState> State, float delayShout);
 };
 
 class UCharacterCameraController : public UActorComponent
@@ -25180,7 +25232,7 @@ public:
     UE_CLASS("/Script/FSD", "CharacterSightComponent");
     TMulticastInlineDelegate<void(class AActor* NewTarget, class UPrimitiveComponent* NewPrimitive)> OnTargetChanged;
     float TargetMaxDistance;
-    ECollisionChannel TraceChannel;
+    TEnum<ECollisionChannel> TraceChannel;
     class APlayerCharacter* Character;
     TScriptInterface<class IHealth> TargetHealth;
     TScriptInterface<class ITargetable> TargetTargetable;
@@ -25227,16 +25279,16 @@ public:
     int CollectResourceTarget;
     int CollectResourceCurrent;
     static constexpr const char* CollectResourceCurrent__Replicated = "OnRep_CollectResourceCurrent:";
-    EDeepScanState State;
+    TEnum<EDeepScanState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     TSoftClassPtr<class UClass> GemRoomDBA;
     FVector GeodeLocation;
-    UE_AUTHORITY_ONLY void ChangeState(EDeepScanState NewState);
+    UE_AUTHORITY_ONLY void ChangeState(TEnum<EDeepScanState> NewState);
     void CreateUndergroundCave();
     void OnCrystalScanned();
     void OnRep_CollectResourceCurrent(int prevAmount);
     void OnRep_ItemsCollected(int prevAmount);
-    void OnRep_State(EDeepScanState oldState);
+    void OnRep_State(TEnum<EDeepScanState> oldState);
     void OnResourceChanged(class UCappedResource* CappedResource, float amount);
 };
 
@@ -25258,7 +25310,7 @@ public:
     class UUsableComponentBase* LastBeginUseUsable;
     TArray<class UUsableComponentBase*> UsableComponentsCache;
     class UUsableComponentBase* HoveringUsable;
-    void AddCustomUsableComponent(class UUsableComponentBase* Usable, ECustomUsableType eType);
+    void AddCustomUsableComponent(class UUsableComponentBase* Usable, TEnum<ECustomUsableType> eType);
     UE_MULTICAST void All_UseEnded(const FCharacterUseState& oldState);
     UE_PURE bool GetIsDepositing();
     UE_PURE bool GetIsUsing();
@@ -25291,7 +25343,7 @@ public:
     class UMaterialInterface* ArmorMaterial;
     class UMaterialInterface* ArmorClothMaterial;
     class UMaterialInstanceDynamic* DynamicSkinMaterial;
-    EHeadVanityType HeadVanityType;
+    TEnum<EHeadVanityType> HeadVanityType;
     FEquippedVanity EquippedVanity;
     static constexpr const char* EquippedVanity__Replicated = "OnRep_EquippedVanity:";
     class UVanityItem* PreviewedItem;
@@ -25302,8 +25354,8 @@ public:
     TMap<EVanitySlot, class USkeletalMeshComponent*> VanityMeshes;
     UE_PURE static bool Receive_GetDesireSleevelessArmor(class UObject* WorldContextObject, class UPlayerCharacterID* Character);
     UE_PURE static bool Receive_GetDesireSleevelessArmor(class UPlayerCharacterID* Character);
-    UE_PURE static class UVanityItem* Receive_GetEquippedVanityItem(class UObject* WorldContextObject, class UPlayerCharacterID* Character, EVanitySlot Slot);
-    UE_PURE static class UVanityItem* Receive_GetEquippedVanityItem(class UPlayerCharacterID* Character, EVanitySlot Slot);
+    UE_PURE static class UVanityItem* Receive_GetEquippedVanityItem(class UObject* WorldContextObject, class UPlayerCharacterID* Character, TEnum<EVanitySlot> Slot);
+    UE_PURE static class UVanityItem* Receive_GetEquippedVanityItem(class UPlayerCharacterID* Character, TEnum<EVanitySlot> Slot);
     static void SetDesireSleevelessArmor(class UObject* WorldContextObject, class UPlayerCharacterID* Character, bool inDesireSleeveless);
     static void SetDesireSleevelessArmor(class UPlayerCharacterID* Character, bool inDesireSleeveless);
     UE_CLIENT UE_RELIABLE void Client_EquipMedicalGown();
@@ -25319,7 +25371,7 @@ public:
     void UpdateMeshes();
     UE_PURE class UCharacterVanityItems* GetAvailableVanityItems() const;
     UE_PURE bool GetDesireSleevelessArmor() const;
-    UE_PURE class UVanityItem* GetEquippedVanityItem(EVanitySlot Slot, bool ignorePreviewItems) const;
+    UE_PURE class UVanityItem* GetEquippedVanityItem(TEnum<EVanitySlot> Slot, bool ignorePreviewItems) const;
     UE_AUTHORITY_ONLY bool HasSpawnedInMedbay() const;
 };
 
@@ -25329,18 +25381,18 @@ public:
     UE_CLASS("/Script/FSD", "CharacterVanityItems");
     TMap<EVanitySlot, class UVanityItem*> DefaultItems;
     class UPlayerCharacterID* OwningCharacter;
-    UE_PURE static bool DoesVanitySlotAllowStyleTags(EVanitySlot Slot);
-    UE_PURE static class UVanityItem* GetDefaultVanityItem(class UObject* WorldContext, EVanitySlot Slot, class UPlayerCharacterID* characterID);
-    UE_PURE static class UVanityItem* GetDefaultVanityItem(EVanitySlot Slot, class UPlayerCharacterID* characterID);
-    static TArray<class UVanityItem*> GetLockedVanityItems(class UObject* WorldContextObject, EVanitySlot Slot, class UPlayerCharacterID* characterID);
-    static TArray<class UVanityItem*> GetLockedVanityItems(EVanitySlot Slot, class UPlayerCharacterID* characterID);
-    static TArray<class UVanityItem*> GetUnLockedVanityItems(class UObject* WorldContextObject, EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
-    static TArray<class UVanityItem*> GetUnLockedVanityItems(EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
-    static TArray<class UVanityItem*> GetVanityItems(class UObject* WorldContextObject, EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
-    static TArray<class UVanityItem*> GetVanityItems(EVanitySlot Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
+    UE_PURE static bool DoesVanitySlotAllowStyleTags(TEnum<EVanitySlot> Slot);
+    UE_PURE static class UVanityItem* GetDefaultVanityItem(class UObject* WorldContext, TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID);
+    UE_PURE static class UVanityItem* GetDefaultVanityItem(TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID);
+    static TArray<class UVanityItem*> GetLockedVanityItems(class UObject* WorldContextObject, TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID);
+    static TArray<class UVanityItem*> GetLockedVanityItems(TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID);
+    static TArray<class UVanityItem*> GetUnLockedVanityItems(class UObject* WorldContextObject, TEnum<EVanitySlot> Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
+    static TArray<class UVanityItem*> GetUnLockedVanityItems(TEnum<EVanitySlot> Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
+    static TArray<class UVanityItem*> GetVanityItems(class UObject* WorldContextObject, TEnum<EVanitySlot> Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
+    static TArray<class UVanityItem*> GetVanityItems(TEnum<EVanitySlot> Slot, bool onlyStoreItems, class UPlayerCharacterID* characterID);
     static void SortVanityItems(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, TArray<class UVanityItem*>& VanityItems);
     static void SortVanityItems(class UPlayerCharacterID* characterID, TArray<class UVanityItem*>& VanityItems);
-    UE_PURE TArray<class UVanityItem*> GetItems(EVanitySlot Slot, bool onlyStoreItems) const;
+    UE_PURE TArray<class UVanityItem*> GetItems(TEnum<EVanitySlot> Slot, bool onlyStoreItems) const;
     UE_PURE class UVanityItem* GetVanityItem(const FGuid& VanityID) const;
 };
 
@@ -25555,7 +25607,7 @@ class UBoltActionWeaponDamageCondition : public UDamageCondition
 {
 public:
     UE_CLASS("/Script/FSD", "BoltActionWeaponDamageCondition");
-    EBoltActionWeaponConditions WeaponCondition;
+    TEnum<EBoltActionWeaponConditions> WeaponCondition;
 };
 
 class UPropHuntManager : public UActorComponent
@@ -25712,7 +25764,7 @@ public:
     TSubclassOf<class UMissionDNA> MissionDNA;
     TArray<FGemResourceAmount> GemResourcesToGenerate;
     TArray<FCollectableSpawnableItem> CollectablesToGenerate;
-    ESpawnSettings SpawnSettings;
+    TEnum<ESpawnSettings> SpawnSettings;
     bool CanSpawnSpecialEvents;
     bool ShouldCarveTunnels;
     TArray<FRoomNode> Rooms;
@@ -25745,8 +25797,8 @@ public:
     static void FillTunnels_Async(class AProceduralSetup* Setup);
     static void GenerateRoomsFromGraph_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo, int CarvePass);
     static void GenerateRoomsFromGraph_Async(class AProceduralSetup* Setup, int CarvePass);
-    static void SpawnDebrisItems_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo, EDebrisItemPass pass, int Depth);
-    static void SpawnDebrisItems_Async(class AProceduralSetup* Setup, EDebrisItemPass pass, int Depth);
+    static void SpawnDebrisItems_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo, TEnum<EDebrisItemPass> pass, int Depth);
+    static void SpawnDebrisItems_Async(class AProceduralSetup* Setup, TEnum<EDebrisItemPass> pass, int Depth);
     static void SpawnItems_Async(class AProceduralSetup* Setup, FLatentActionInfo LatentInfo);
     static void SpawnItems_Async(class AProceduralSetup* Setup);
     int AddAirParticlesCollider(const FDebrisCapsule& Capsule);
@@ -25754,7 +25806,7 @@ public:
     int AddDebrisCollider(const FDebrisCapsule& Capsule);
     UE_AUTHORITY_ONLY void AddEnemyDebris();
     void AddImportantLocation(const FVector& Location, float Radius);
-    void AddImportantLocationWithVerticalCheck(const FVector& Location, float Radius, EImportantLocationVerticalCheck verticalCheck);
+    void AddImportantLocationWithVerticalCheck(const FVector& Location, float Radius, TEnum<EImportantLocationVerticalCheck> verticalCheck);
     void AddInfluenceToTunnelEntrances(class UCaveInfluencer* Influencer, float range);
     int AddRoom(FVector Location, bool CanHaveEnemies, class URoomGeneratorBase* RoomGenerator, bool canBeRotated, FVector& outCenter, FRoomNode& outRoom, float ResourceMultiplier);
     void AddRoomToInitialState(const FRoomNode& RoomNode);
@@ -25776,13 +25828,13 @@ public:
     void GenerateLandscapeFromData(int Seed_0, const TArray<FRoomNode>& Rooms_0, const TArray<FPathObstacle>& Obstacles);
     void GenerateRoomsFromGraph(int CarvePass);
     void InitializeObjectives();
-    void OnCarverDataRecieved(EDebrisItemPass pass);
+    void OnCarverDataRecieved(TEnum<EDebrisItemPass> pass);
     void OnObjectivesCompleted();
     void OnPLSDataRecieved();
     void RemoveBLockedEntrances();
     void ResetData();
     void SetSeed(int Seed_0);
-    void SpawnDebrisItems(EDebrisItemPass pass);
+    void SpawnDebrisItems(TEnum<EDebrisItemPass> pass);
     UE_AUTHORITY_ONLY void SpawnEncounters();
     void SpawnItems();
     UE_AUTHORITY_ONLY void SpawnObjectiveCriticalItems(const ECriticalItemPass& pass);
@@ -25795,7 +25847,7 @@ public:
     UE_PURE class ADeepCSGWorld* GetCSGWorld() const;
     UE_PURE TMap<FString, float> GetGemsResourceAmounts() const;
     UE_PURE class UMissionDNA* GetMissionDNA() const;
-    UE_PURE bool IsCarverDataReady(EDebrisItemPass pass) const;
+    UE_PURE bool IsCarverDataReady(TEnum<EDebrisItemPass> pass) const;
     UE_PURE bool IsGeneratedDataReady() const;
 };
 
@@ -25829,8 +25881,8 @@ class UDoubleDrillUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "DoubleDrillUpgrade");
-    EDoubleDrillUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EDoubleDrillUpgradeType upgradeType_0);
+    TEnum<EDoubleDrillUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EDoubleDrillUpgradeType> upgradeType_0);
 };
 
 class UPlagueObjective : public UObjective
@@ -25930,23 +25982,23 @@ public:
     static void MissionShout(class UDialogDataAsset* Shout_0, bool bPriority);
     static int MissionShoutLocally(class UObject* WorldContext, class UDialogDataAsset* Shout_0);
     static int MissionShoutLocally(class UDialogDataAsset* Shout_0);
-    static class UAudioComponent* PlayPitchedByClass(class UObject* WorldContextObject, TSubclassOf<class APlayerCharacter> CharacterClass, class USoundBase* Sound, class UDialogDataAsset* Shout_0, EShoutType ShoutType, class UAudioComponent* AudioComponent);
-    static class UAudioComponent* PlayPitchedByClass(TSubclassOf<class APlayerCharacter> CharacterClass, class USoundBase* Sound, class UDialogDataAsset* Shout_0, EShoutType ShoutType, class UAudioComponent* AudioComponent);
+    static class UAudioComponent* PlayPitchedByClass(class UObject* WorldContextObject, TSubclassOf<class APlayerCharacter> CharacterClass, class USoundBase* Sound, class UDialogDataAsset* Shout_0, TEnum<EShoutType> ShoutType, class UAudioComponent* AudioComponent);
+    static class UAudioComponent* PlayPitchedByClass(TSubclassOf<class APlayerCharacter> CharacterClass, class USoundBase* Sound, class UDialogDataAsset* Shout_0, TEnum<EShoutType> ShoutType, class UAudioComponent* AudioComponent);
     static void ShoutCustomClosestDwarf(class UObject* WorldContext, class UDialogDataAsset* Shout, FVector TargetLocation);
     static void ShoutCustomClosestDwarf(class UDialogDataAsset* Shout, FVector TargetLocation);
     UE_CLIENT UE_RELIABLE void ClientMissionShout(class UDialogDataAsset* Shout_0, int Index_0, bool bPriority);
     UE_CLIENT void ClientShout(class APlayerCharacter* Sender, class UDialogDataAsset* Shout_0, int Index_0);
-    class UAudioComponent* PlayPitched(class USoundBase* Sound, class UDialogDataAsset* Shout_0, EShoutType ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent, class UObject* WorldContextObject);
-    class UAudioComponent* PlayPitched(class USoundBase* Sound, class UDialogDataAsset* Shout_0, EShoutType ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent);
-    void PlayPitchedAsync(class UDialogDataAsset* Shout_0, EShoutType ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent, class UObject* WorldContextObject, float shoutVolumeMultiplier, EAsyncLoadPriority Priority);
-    void PlayPitchedAsync(class UDialogDataAsset* Shout_0, EShoutType ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent, float shoutVolumeMultiplier, EAsyncLoadPriority Priority);
+    class UAudioComponent* PlayPitched(class USoundBase* Sound, class UDialogDataAsset* Shout_0, TEnum<EShoutType> ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent, class UObject* WorldContextObject);
+    class UAudioComponent* PlayPitched(class USoundBase* Sound, class UDialogDataAsset* Shout_0, TEnum<EShoutType> ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent);
+    void PlayPitchedAsync(class UDialogDataAsset* Shout_0, TEnum<EShoutType> ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent, class UObject* WorldContextObject, float shoutVolumeMultiplier, TEnum<EAsyncLoadPriority> Priority);
+    void PlayPitchedAsync(class UDialogDataAsset* Shout_0, TEnum<EShoutType> ShoutType, bool IgnoreCoolDown, class UAudioComponent* AudioComponent, float shoutVolumeMultiplier, TEnum<EAsyncLoadPriority> Priority);
     UE_SERVER UE_RELIABLE void ServerMissionShout(class UDialogDataAsset* Shout_0, int Index_0, bool bPriority);
     UE_SERVER void ServerShout(class UDialogDataAsset* Shout_0);
     void SetMissionControlPaused(bool IsPaused);
-    void Shout(EShoutType Shout_0);
+    void Shout(TEnum<EShoutType> Shout_0);
     void ShoutCustom(class UDialogDataAsset* Shout);
     void ShoutCustomLocalOnly(class UDialogDataAsset* Shout);
-    void ShoutCustomOrDefault(class UDialogDataAsset* CustomShout, EShoutType DefaultShout);
+    void ShoutCustomOrDefault(class UDialogDataAsset* CustomShout, TEnum<EShoutType> DefaultShout);
     UE_PURE bool IsMissionControlSpeaking() const;
 };
 
@@ -25954,14 +26006,15 @@ class UMultiHitscanUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "MultiHitscanUpgrade");
-    EMultiHitscanUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EMultiHitscanUpgradeType upgradeType_0);
+    TEnum<EMultiHitscanUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EMultiHitscanUpgradeType> upgradeType_0);
 };
 
 class USeasonEditorRewardWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "SeasonEditorRewardWidget");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     class UReward* Reward;
 };
 
@@ -26011,7 +26064,7 @@ public:
     class UTexture2D* Icon;
     class UTexture2D* Frame;
     FSlateColor Color;
-    EFSDFaction FactionID;
+    TEnum<EFSDFaction> FactionID;
 };
 
 class UItemCharacterAnimationSet : public UDataAsset
@@ -26109,16 +26162,16 @@ public:
     FText Title;
     FText MetaDescription;
     class UCommunityGoalCategory* Category;
-    ECommunityGoalType CommunityGoalType;
+    TEnum<ECommunityGoalType> CommunityGoalType;
     float GoalPerMemberTier1;
     float GoalPerMemberTier2;
     float GoalPerMemberTier3;
     class UCommnuityRewardSetup* RewardSetup;
-    UE_PURE static FText GoalToText(ECommunityGoalType StatType, float Value);
+    UE_PURE static FText GoalToText(TEnum<ECommunityGoalType> StatType, float Value);
     UE_PURE int RewardTier(float Value, int Members);
-    UE_PURE float TierGoal(ECommunityGoalTier Tier, int Members);
-    UE_PURE float TierProgress(ECommunityGoalTier Tier, float Value, int Members);
-    UE_PURE float TierValue(ECommunityGoalTier Tier, float Value, int Members);
+    UE_PURE float TierGoal(TEnum<ECommunityGoalTier> Tier, int Members);
+    UE_PURE float TierProgress(TEnum<ECommunityGoalTier> Tier, float Value, int Members);
+    UE_PURE float TierValue(TEnum<ECommunityGoalTier> Tier, float Value, int Members);
     UE_PURE float TotalTierProgress(float Value, int Members);
     UE_PURE bool AreTiersInitialized() const;
     UE_PURE FText GetCategoryTitle() const;
@@ -26147,7 +26200,7 @@ public:
     TArray<class UCommunityGoal*> ActiveCommunityGoals;
     class UCommunityGoal* DSMUGoal;
     UE_PURE class UCommunityGoal* FindGoal(FString Goal) const;
-    UE_PURE class UCommunityGoal* GetGoal(ECommunityGoalIndex Goal) const;
+    UE_PURE class UCommunityGoal* GetGoal(TEnum<ECommunityGoalIndex> Goal) const;
 };
 
 class UControllerIconSettings : public UDeveloperSettings
@@ -26373,26 +26426,26 @@ public:
     UE_CLASS("/Script/FSD", "HUDVisibilityGroup");
     TMulticastInlineDelegate<void(class UHUDVisibilityGroup* Group, EHUDVisibilityMode Mode)> OnModeChanged;
     TMulticastInlineDelegate<void(class UHUDVisibilityGroup* Group, bool IsVisible)> OnVisibilityChanged;
-    EHUDVisibilityGroups GroupID;
+    TEnum<EHUDVisibilityGroups> GroupID;
     FText Title;
     bool AllowDynamicMode;
     bool AllowHiddenMode;
     bool bDynamicallyVisible;
     TArray<FHUDVisibilityRegisteredWidget> RegisteredWidgets;
-    EHUDVisibilityMode RecommendedMode;
-    EHUDVisibilityMode MinimalMode;
+    TEnum<EHUDVisibilityMode> RecommendedMode;
+    TEnum<EHUDVisibilityMode> MinimalMode;
     UE_PURE static bool IsHudGroupVisible(class UHUDVisibilityGroup* Group);
-    static void RegisterMultipleWidgetsWithVisibilityGroup(TArray<class UWidget*> Widgets, class UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode);
-    static void RegisterWidgetWithVisibilityGroup(class UWidget* Widget, class UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode);
+    static void RegisterMultipleWidgetsWithVisibilityGroup(TArray<class UWidget*> Widgets, class UHUDVisibilityGroup* Group, TEnum<ESlateVisibility> VisibleMode, TEnum<ESlateVisibility> HiddenMode);
+    static void RegisterWidgetWithVisibilityGroup(class UWidget* Widget, class UHUDVisibilityGroup* Group, TEnum<ESlateVisibility> VisibleMode, TEnum<ESlateVisibility> HiddenMode);
     static void SetHudGroupDynamicallyVisible(class UHUDVisibilityGroup* Group, bool IsVisible);
     void SetGroupDynamicallyVisible(bool IsVisible);
-    void SetMode(EHUDVisibilityMode InMode);
-    void SetModeFromPreset(EHUDVisibilityPresets Preset);
+    void SetMode(TEnum<EHUDVisibilityMode> InMode);
+    void SetModeFromPreset(TEnum<EHUDVisibilityPresets> Preset);
     UE_PURE TArray<EHUDVisibilityMode> GetAllowedModes() const;
-    UE_PURE EHUDVisibilityMode GetMode() const;
+    UE_PURE TEnum<EHUDVisibilityMode> GetMode() const;
     UE_PURE bool IsGroupVisible() const;
     UE_PURE bool IsInDynamicMode() const;
-    UE_PURE bool IsModeAllowed(EHUDVisibilityMode InMode) const;
+    UE_PURE bool IsModeAllowed(TEnum<EHUDVisibilityMode> InMode) const;
 };
 
 class URefineryExtractorPodWidget : public UUserWidget
@@ -26571,7 +26624,7 @@ public:
     class UStaticMeshComponent* AnimatedTPMesh;
     bool SwitchIsQueued;
     static constexpr const char* SwitchIsQueued__Replicated = "OnRep_SwitchIsQueued:";
-    ECrossbowSwitchState SwitchState;
+    TEnum<ECrossbowSwitchState> SwitchState;
     static constexpr const char* SwitchState__Replicated = ":";
     float OutOfAmmoSwapDelay;
     TSubclassOf<class AActor> AnimatedArrowSpawnable;
@@ -26601,7 +26654,7 @@ public:
     void OnRep_IsDefaultArrowEquipped();
     void OnRep_SwitchIsQueued();
     UE_SERVER UE_RELIABLE void Server_SetSwitchIsQueued(bool IsQueued);
-    UE_SERVER UE_RELIABLE void Server_SwitchAmmoType(class UProjectileLauncherBaseComponent* projectileLauncher, ECrossbowSwitchState State);
+    UE_SERVER UE_RELIABLE void Server_SwitchAmmoType(class UProjectileLauncherBaseComponent* projectileLauncher, TEnum<ECrossbowSwitchState> State);
     UE_SERVER UE_RELIABLE void Server_UpdateRetrievableArrows(const int& defaultAmmo, const int& specialAmmo);
     void SetAnimatedFPMeshComponent(class UStaticMeshComponent* Component);
     void SetAnimatedFPMeshComponentFromBP(class AActor* animatedArrow);
@@ -26630,8 +26683,8 @@ class UAmmoDrivenWeaponUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "AmmoDrivenWeaponUpgrade");
-    EAmmoDrivenWeapnUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EAmmoDrivenWeapnUpgradeType upgradeType_0);
+    TEnum<EAmmoDrivenWeapnUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EAmmoDrivenWeapnUpgradeType> upgradeType_0);
 };
 
 class UDropPodCalldownLocationFeature : public URoomFeature
@@ -26657,8 +26710,8 @@ class UAssaultRifleUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "AssaultRifleUpgrade");
-    EAssaultRifleUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EAssaultRifleUpgrade upgradeType_0);
+    TEnum<EAssaultRifleUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EAssaultRifleUpgrade> upgradeType_0);
 };
 
 class UResourceFilter : public UDataAsset
@@ -26666,7 +26719,7 @@ class UResourceFilter : public UDataAsset
 public:
     UE_CLASS("/Script/FSD", "ResourceFilter");
     TArray<class UResourceData*> Resources;
-    EResourceFilterType FilterType;
+    TEnum<EResourceFilterType> FilterType;
 };
 
 class UDetailedTagCategory : public USavableDataAsset
@@ -26738,7 +26791,7 @@ public:
     TSet<FGuid> VanitySchematicIDsFromOldSeasons;
     TMap<FGuid, class USchematic*> AllSchematicsMap;
     TSet<class USchematic*> AllSchematics;
-    UE_PURE FSchematicType GetSchematicTypeData(ESchematicType InType);
+    UE_PURE FSchematicType GetSchematicTypeData(TEnum<ESchematicType> InType);
     UE_PURE class UOverclockBank* GetOverclocksForItem(class UItemID* Item) const;
     TSet<class USchematic*> GetSchematics() const;
     UE_PURE bool ValidateVanitySchematics() const;
@@ -26795,8 +26848,8 @@ class UCoilgunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "CoilgunUpgrade");
-    ECoilgunUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ECoilgunUpgrades upgradeType_0);
+    TEnum<ECoilgunUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ECoilgunUpgrades> upgradeType_0);
 };
 
 class UDialogDataAsset : public UDataAsset
@@ -27093,8 +27146,8 @@ public:
     UE_PURE static TSubclassOf<class AActor> GetItemPreviewClass(class UItemID* ItemID);
     UE_PURE static TSubclassOf<class AActor> GetItemPreviewClassFromActor(TSubclassOf<class AActor> Actor);
     UE_PURE static TArray<class UItemUpgrade*> GetItemUpgradesFromSave(TSubclassOf<class AActor> itemClass, TSubclassOf<class UItemUpgrade> upgradeClass, class AFSDPlayerState* Player, uint8 upgradeIndex);
-    UE_PURE static EItemUpgradeStatus GetItemUpgradeStatus(class UObject* WorldContextObject, TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
-    UE_PURE static EItemUpgradeStatus GetItemUpgradeStatus(TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
+    UE_PURE static TEnum<EItemUpgradeStatus> GetItemUpgradeStatus(class UObject* WorldContextObject, TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
+    UE_PURE static TEnum<EItemUpgradeStatus> GetItemUpgradeStatus(TSubclassOf<class AActor> itemClass, class UItemUpgrade* ItemUpgrade, class UPlayerCharacterID* characterID);
     UE_PURE static TArray<FUpgradeTier> GetItemUpgradeTiers(TSubclassOf<class AActor> itemClass);
     static bool GetMasteryForLevel(const TArray<FMasteryItem>& masteryLevels_0, int Level, FMasteryItem& outLevel);
     static TArray<FMasteryItem> GetMasteryLevels(class UItemID* ItemID);
@@ -27157,8 +27210,8 @@ public:
     UE_CLASS("/Script/FSD", "SpecialEventBlueprintLibrary");
     static void ClearPendingReward(class UObject* WorldContextObject);
     static void ClearPendingReward();
-    static class USchematic* FindRandomSchematicForCharacter(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, ESchematicType SchematicType);
-    static class USchematic* FindRandomSchematicForCharacter(class UPlayerCharacterID* characterID, ESchematicType SchematicType);
+    static class USchematic* FindRandomSchematicForCharacter(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, TEnum<ESchematicType> SchematicType);
+    static class USchematic* FindRandomSchematicForCharacter(class UPlayerCharacterID* characterID, TEnum<ESchematicType> SchematicType);
     static TArray<class USchematic*> GetSpecialEventsRewardSchematics(class UObject* WorldContextObject);
     static TArray<class USchematic*> GetSpecialEventsRewardSchematics();
     UE_PURE static bool HasPendingReward(class UObject* WorldContextObject);
@@ -27384,7 +27437,7 @@ class UTargetStateDamageCondition : public UDamageCondition
 {
 public:
     UE_CLASS("/Script/FSD", "TargetStateDamageCondition");
-    ETargetStateDamageBonusType TargetState;
+    TEnum<ETargetStateDamageBonusType> TargetState;
 };
 
 class UTargetSTEDamageCondition : public UDamageCondition
@@ -27441,7 +27494,7 @@ class UPlasmaCarbineDamageCondition : public UDamageCondition
 {
 public:
     UE_CLASS("/Script/FSD", "PlasmaCarbineDamageCondition");
-    EPlasmaCarbineConditions WeaponCondition;
+    TEnum<EPlasmaCarbineConditions> WeaponCondition;
     int Condition;
 };
 
@@ -27508,7 +27561,7 @@ public:
     UE_CLASS("/Script/FSD", "DamageImpulse");
     float ImpactForce;
     float UpwardForceScale;
-    EImpulseDirectionSource ImpulseSource;
+    TEnum<EImpulseDirectionSource> ImpulseSource;
     bool ApplyImpulseToWholeBody;
 };
 
@@ -27593,7 +27646,7 @@ public:
     float DashSpeed;
     float SlowdownRadius;
     int IgnoreTheClosestPoints;
-    EDashPointsGenerationMode GenerationMode;
+    TEnum<EDashPointsGenerationMode> GenerationMode;
     bool IsDashing;
     static constexpr const char* IsDashing__Replicated = "OnRep_Dashing:";
     bool IgnoreRules;
@@ -27661,7 +27714,7 @@ public:
     bool RagdollEnabled;
     TSubclassOf<class UCameraShakeBase> CameraShake;
     float DeathDuration;
-    EDeathType DeathType;
+    TEnum<EDeathType> DeathType;
     static constexpr const char* DeathType__Replicated = "OnRep_DeathType:";
     class UStaticMeshComponent* HeadGoreMesh;
     class USkeletalMeshComponent* SkeletalMesh;
@@ -27683,13 +27736,13 @@ class UDebrisCarved : public UDebrisBase
 {
 public:
     UE_CLASS("/Script/FSD", "DebrisCarved");
-    EDebrisCarvedType CarverType;
+    TEnum<EDebrisCarvedType> CarverType;
     TArray<FUDebrisCarveMesh> Meshes;
     class UTerrainMaterial* TerrainMaterial;
     FDebrisInfluence CaveInfluenceToAdd;
-    ECarveFilterType Filter;
+    TEnum<ECarveFilterType> Filter;
     float ExpensiveNoise;
-    ECarveOptionsCellSize CarveCellSize;
+    TEnum<ECarveOptionsCellSize> CarveCellSize;
     int MinNumCarves;
     int MaxNumCarves;
     float CarveOffsetRadius;
@@ -27702,19 +27755,19 @@ class UFSDSplineLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/FSD", "FSDSplineLibrary");
     static float ApproximateSplineDistanceAtWorldLocation(class USplineComponent* Spline, const FVector& WorldLocation);
-    static bool CarveAroundSplineMesh(class USplineMeshComponent* InMesh, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
-    static bool CarveAroundSplinePoints(class UObject* WorldContext, const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
-    static bool CarveAroundSplinePoints(const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
+    static bool CarveAroundSplineMesh(class USplineMeshComponent* InMesh, float InRadius, class UTerrainMaterial* InTerrainMaterial, TEnum<ECarveFilterType> InCarveFilter, TEnum<EPreciousMaterialOptions> InPrecious);
+    static bool CarveAroundSplinePoints(class UObject* WorldContext, const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, TEnum<ECarveFilterType> InCarveFilter, TEnum<EPreciousMaterialOptions> InPrecious);
+    static bool CarveAroundSplinePoints(const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, class UTerrainMaterial* InTerrainMaterial, TEnum<ECarveFilterType> InCarveFilter, TEnum<EPreciousMaterialOptions> InPrecious);
     static void ConvertSplineDistanceToInputKey(class USplineComponent*& SplineComponent, class USplineComponent* OptionalTargetSpline);
-    static FInterpCurveVector2D CreateCurve2D(const TArray<FVector2D>& Positions, EInterpCurveMode Mode);
-    static FInterpCurveVector2D CreateCurveWithTangents2D(const TArray<FVector2D>& Positions, FVector2D StartTangent, FVector2D EndTangent, EInterpCurveMode Mode);
+    static FInterpCurveVector2D CreateCurve2D(const TArray<FVector2D>& Positions, TEnum<EInterpCurveMode> Mode);
+    static FInterpCurveVector2D CreateCurveWithTangents2D(const TArray<FVector2D>& Positions, FVector2D StartTangent, FVector2D EndTangent, TEnum<EInterpCurveMode> Mode);
     static void DrawBezier2D(FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, float Opacity, bool InClampTangents);
     static void DrawBezierScaled2D(FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, FVector2D ScaleBy, float Opacity, bool InClampTangents);
     static void DrawCurve2D(FPaintContext& Context, const FInterpCurveVector2D& Curve, FCurve2DAppearance Appearance, float Opacity);
     static void DrawCurveScaled2D(FPaintContext& Context, const FInterpCurveVector2D& Curve, FVector2D ScaleBy, FCurve2DAppearance Appearance, float Opacity);
     static void EvalCurve2D(const FInterpCurveVector2D& Curve, float Key, FVector2D& OutPosition, FVector2D& OutTangent);
     static void EvalCurveScaled2D(const FInterpCurveVector2D& Curve, float Key, FVector2D ScaleBy, FVector2D& OutPosition, FVector2D& OutTangent);
-    static void GetLocationAndTangentsAtSplinePoint(class USplineComponent* Spline, int PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, ESplineCoordinateSpace CoordinateSpace);
+    static void GetLocationAndTangentsAtSplinePoint(class USplineComponent* Spline, int PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace);
     static void SetStartAndEndTangentsCurve2D(FInterpCurveVector2D& Curve, FVector2D StartTangent, FVector2D EndTangent);
 };
 
@@ -27750,7 +27803,7 @@ class UDebrisVeinComponent : public UDebrisActorComponent
 public:
     UE_CLASS("/Script/FSD", "DebrisVeinComponent");
     class UTerrainMaterial* Material;
-    EDebrisCarvedType CarverType;
+    TEnum<EDebrisCarvedType> CarverType;
     class UVeinResourceCreator* VeinCreator;
 };
 
@@ -27942,10 +27995,10 @@ public:
     float MaxBrakingDeceleration;
     float AngleSpeedFilterFactor;
     uint32 AIAvoidanceWeight;
-    EDeepPathFinderType PathfinderType;
-    EDeepPathFinderSize PathfinderSize;
-    ETeleportType MovementPhysicsType;
-    EDeepPathFinderPreference PathfinderPreference;
+    TEnum<EDeepPathFinderType> PathfinderType;
+    TEnum<EDeepPathFinderSize> PathfinderSize;
+    TEnum<ETeleportType> MovementPhysicsType;
+    TEnum<EDeepPathFinderPreference> PathfinderPreference;
     bool AlignTowardsTargetIfStationary;
     float AlignToTargetMinRequiredAngle;
     FVector AlignTowardsLocation;
@@ -27975,7 +28028,7 @@ public:
     float AcceptanceRadius;
     bool OnlyPartPath;
     float PauseMovementTime;
-    EDeepMovementMode MoveMode;
+    TEnum<EDeepMovementMode> MoveMode;
     static constexpr const char* MoveMode__Replicated = ":";
     class UPawnStatsComponent* PawnStats;
     FVector LastForwardDir;
@@ -28003,8 +28056,8 @@ public:
     FVector FindNearestConnectedPathfinderPoint(const FVector& Pos, float MaxDistance);
     void FindNearestPathfinderPoint_Async(const FVector& Pos, float MaxDistance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
     void FindNearestPathfinderPoint_Async(const FVector& Pos, float MaxDistance, bool& success, FVector& outPos);
-    FVector FindNearestPathfinderPointOverrideType(const FVector& Pos, EDeepPathFinderType overrideType, float MaxDistance);
-    FVector FindPathfinderOffsetPoint(const FVector& Pos, EOffsetFrom offsetFrom, float HeightOffset);
+    FVector FindNearestPathfinderPointOverrideType(const FVector& Pos, TEnum<EDeepPathFinderType> overrideType, float MaxDistance);
+    FVector FindPathfinderOffsetPoint(const FVector& Pos, TEnum<EOffsetFrom> offsetFrom, float HeightOffset);
     FVector FindPathfinderPointAbove(const FVector& Pos, float HeightOffset);
     FVector FindPathfinderPointBelow(const FVector& Pos, float HeightOffset);
     bool FindPointDiagonalTowardsTarget(const FVector& Origin, const FVector& Target, float dodgeAngle, float maxSampleDistance, float moveDistance, float RandomDeviation, FVector& outPos);
@@ -28048,9 +28101,9 @@ public:
     UE_PURE float GetApproximatePathLength(FVector Start, FVector End) const;
     UE_PURE FVector GetCurrentMovePos() const;
     UE_PURE float GetMaxAcceleration() const;
-    UE_PURE EDeepMovementState GetMovementState() const;
-    UE_PURE EDeepPathFinderSize GetPathfinderSize() const;
-    UE_PURE EDeepPathFinderType GetPathfinderType() const;
+    UE_PURE TEnum<EDeepMovementState> GetMovementState() const;
+    UE_PURE TEnum<EDeepPathFinderSize> GetPathfinderSize() const;
+    UE_PURE TEnum<EDeepPathFinderType> GetPathfinderType() const;
     UE_PURE bool IsFreezeAlignmentSet() const;
 };
 
@@ -28130,6 +28183,7 @@ class ADetPackItem : public AAnimatedItem
 {
 public:
     UE_CLASS("/Script/FSD", "DetPackItem");
+    static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
     TSubclassOf<class ADetPack> DetPackClass;
     TSubclassOf<class AItem> LoadoutProxy;
     class UAnimMontage* FPThrowMontage;
@@ -28284,6 +28338,7 @@ class ADoubleDrillItem : public ADualAnimatedItem
 {
 public:
     UE_CLASS("/Script/FSD", "DoubleDrillItem");
+    static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
     class UFirstPersonParticleSystemComponent* FP_Left_DrillParticles;
     class UFirstPersonParticleSystemComponent* FP_Right_DrillParticles;
     class UDamageComponent* DamageComponent;
@@ -28300,7 +28355,7 @@ public:
     class UForceFeedbackEffect* DrillRumble;
     float BlockParticlesScaleFP;
     float BlockParticlesScaleTP;
-    EDoubleDrillState State;
+    TEnum<EDoubleDrillState> State;
     float MovementPenalty;
     float MiningRate;
     float HeatReductionPerKill;
@@ -28377,7 +28432,7 @@ public:
     class UMissionComplexity* ComplexityLimit;
     class UMissionDuration* DurationLimit;
     TSubclassOf<class UMissionDNA> MissionDNA;
-    EMissionStructure MissionStructure;
+    TEnum<EMissionStructure> MissionStructure;
     bool IsInSeasonEventZone;
     bool WouldBeInSeasonEventZone;
     bool CanHaveMutators;
@@ -28431,7 +28486,7 @@ public:
     TSoftObjectPtr<class UTexture2D> DrinkableIcon;
     int RequiredPlayerRank;
     bool ParticipatesInFreeBeerEvent;
-    EDrinkableAlcoholStrength AlcoholStrength;
+    TEnum<EDrinkableAlcoholStrength> AlcoholStrength;
     class UDrinkableDataAsset* SpecialEdition;
     class UDLCBase* RequiredDLC;
     bool bPlayFireworks;
@@ -28492,7 +28547,7 @@ public:
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
     UE_CLIENT UE_RELIABLE void ClientConsumed();
     void Consume();
-    void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void OnRep_DrinkableData();
     void ReceiveConsumed();
     void ThrowDrink();
@@ -28504,9 +28559,9 @@ class ADroneBase : public ADeepPathfinderCharacter
 public:
     UE_CLASS("/Script/FSD", "DroneBase");
     class UPointLightComponent* StateLight;
-    EDroneState DefaultState;
+    TEnum<EDroneState> DefaultState;
     TArray<class UDroneStateComponentBase*> DroneStates;
-    EDroneState CurrentState;
+    TEnum<EDroneState> CurrentState;
     static constexpr const char* CurrentState__Replicated = "OnRep_CurrentState:";
     static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
     static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -28514,7 +28569,7 @@ public:
     static constexpr const char* StateLight__UeSubobject = "StateLight /Script/Engine.PointLightComponent";
     static constexpr const char* StatusEffects__UeSubobject = "StatusEffects /Script/FSD.StatusEffectsComponent";
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
-    void OnRep_CurrentState(EDroneState Previous);
+    void OnRep_CurrentState(TEnum<EDroneState> Previous);
 };
 
 class UDroneTargetSensingComponent : public UActorComponent
@@ -28606,7 +28661,7 @@ public:
     class UTextRenderComponent* DisplayText;
     static constexpr const char* AttachParent__UeSubobject = "Text /Script/Engine.TextRenderComponent";
     static constexpr const char* DisplayText__UeSubobject = "Text /Script/Engine.TextRenderComponent";
-    void SetMode(EDroneActions droneAction);
+    void SetMode(TEnum<EDroneActions> droneAction);
 };
 
 class UDroneMeleeTool : public UActorComponent
@@ -28641,7 +28696,7 @@ public:
     static constexpr const char* NetworkedAfflictions__Replicated = ":";
     TSubclassOf<class UScalingMeshAfflictionEffect> FrozenEffect;
     TSubclassOf<class UBurningAfflictionEffect> BurningEffect;
-    EFrozenBitsSize EffectSize;
+    TEnum<EFrozenBitsSize> EffectSize;
     float BaseEffectScale;
     bool UseDormancy;
     void OnDeath(class UHealthComponentBase* HealthComponent);
@@ -28687,8 +28742,8 @@ public:
     void EndUse();
     void SetCanUse(bool CanUse_0);
     UE_AUTHORITY_ONLY void SetUseDuration(float useDuration_0);
-    void SyncedUsableBeginUseResponse(class APlayerCharacter* User, EInputKeys Key);
-    void SyncedUsableUsedResponse(class APlayerCharacter* User, EInputKeys Key);
+    void SyncedUsableBeginUseResponse(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void SyncedUsableUsedResponse(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SyncedUsableUserCountChangedResponse(int userCount);
     UE_PURE float GetProgress() const;
 };
@@ -28769,6 +28824,7 @@ class UDualWieldAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "DualWieldAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class ADualMachinePistols : public ADualWieldWeapon
@@ -28990,7 +29046,7 @@ class UEndStatusEffectOnLanding : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "EndStatusEffectOnLanding");
-    void OnOwnerStateChanged(ECharacterState State);
+    void OnOwnerStateChanged(TEnum<ECharacterState> State);
 };
 
 class UEnemyFamily : public UDataAsset
@@ -29125,21 +29181,21 @@ public:
     UE_CLASS("/Script/FSD", "EnemyDescriptor");
     class UEnemyID* EnemyID;
     TSoftClassPtr<class UClass> EnemyClass;
-    EVeteranScaling VeteranScaling;
+    TEnum<EVeteranScaling> VeteranScaling;
     TArray<class UEnemyDescriptor*> VeteranClasses;
     TMap<class UBiome*, TSoftClassPtr<class UClass>> BiomeEnemyClassOverrides;
     TSoftClassPtr<class UClass> EliteEnemyClass;
     TSet<class UMissionTemplate*> BannedMissionTypes;
-    EEnemySignificance EnemySignificance;
+    TEnum<EEnemySignificance> EnemySignificance;
     FVector SpawnOffset;
     bool UsesSpawnEffects;
-    ECreatureSize CreatureSize;
+    TEnum<ECreatureSize> CreatureSize;
     class UDebrisPositioning* Positioning;
     class UCaveInfluencer* CaveInfluencer;
     TArray<FEnemyDebris> Debris;
     float InfluencerRange;
     TSubclassOf<class AActor> PlacementCarver;
-    EDeepPathFinderType PathfinderType;
+    TEnum<EDeepPathFinderType> PathfinderType;
     FGameplayTagQuery PlacementRoomQuery;
     FEnemyRelocationParams EnemyRelocation;
     float SpawnSpread;
@@ -29154,9 +29210,9 @@ public:
     int RequiredMainCampaignProgress;
     bool UsesSpawnRarityModifiers;
     TArray<FSpawnRarityItem> SpawnRarityModifiers;
-    EEnemyDescriptorCheatClass CheatClass;
+    TEnum<EEnemyDescriptorCheatClass> CheatClass;
     static TArray<class UEnemyDescriptor*> FindAllDescriptorsForCheatMenu();
-    static TArray<class UEnemyDescriptor*> FindDescriptorsForCheatMenu(EEnemyDescriptorCheatClass CheatClass_0);
+    static TArray<class UEnemyDescriptor*> FindDescriptorsForCheatMenu(TEnum<EEnemyDescriptorCheatClass> CheatClass_0);
     UE_PURE TSubclassOf<class APawn> GetEnemyClass(class UBiome* Biome, bool IsElite) const;
 };
 
@@ -29209,12 +29265,12 @@ public:
     static constexpr const char* Name_0__UeName = "Name";
     FText RichDescription;
     TArray<FText> GameplayTips;
-    EEnemyFamily Family;
-    EEnemyType EnemyType;
+    TEnum<EEnemyFamily> Family;
+    TEnum<EEnemyType> EnemyType;
     TArray<FEnemyAttackDescription> AttackType;
     TArray<FEnemyAttackDescription> SpecialAttacks;
     TArray<class UAnimSequenceBase*> AttackAnimations;
-    EArmorType ArmorType;
+    TEnum<EArmorType> ArmorType;
     FText Armor;
     FText Weakpoint;
     FEnemyMinersManualStats EnemyStats;
@@ -29344,8 +29400,8 @@ public:
     UE_CLASS("/Script/FSD", "TemperatureComponent");
     TMulticastInlineDelegate<void()> OnTemperatureStatusChanged;
     float FrozenDamageBonusScale;
-    UE_AUTHORITY_ONLY static bool TryPopHeatSource(class AActor* Target, float temperature, ETemperatureIntensity Intensity);
-    UE_AUTHORITY_ONLY static bool TryPushHeatSource(class AActor* Target, float temperature, ETemperatureIntensity Intensity);
+    UE_AUTHORITY_ONLY static bool TryPopHeatSource(class AActor* Target, float temperature, TEnum<ETemperatureIntensity> Intensity);
+    UE_AUTHORITY_ONLY static bool TryPushHeatSource(class AActor* Target, float temperature, TEnum<ETemperatureIntensity> Intensity);
     UE_AUTHORITY_ONLY void ChangeTemperature(float Degrees, class AActor* Source);
     UE_AUTHORITY_ONLY void ResetTemperature();
     UE_AUTHORITY_ONLY UE_PURE float GetCurrentTemperature() const;
@@ -29470,7 +29526,7 @@ class UEscapeMenuWindow : public UWindowWidget
 {
 public:
     UE_CLASS("/Script/FSD", "EscapeMenuWindow");
-    void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
+    void OpenMinersManualFromID(TEnum<EMinersManualSection> Section, const FGuid& ID);
 };
 
 class UGrenadeAnimationSet : public UDataAsset
@@ -29497,6 +29553,7 @@ class UFuelCannisterAttachedAnimInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/FSD", "FuelCannisterAttachedAnimInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
     bool CanBeTaken;
     void SetCanBeTaken(bool canBeTakenValue);
 };
@@ -29567,7 +29624,7 @@ public:
     TSoftClassPtr<class UClass> DestinationClass;
     int AreasScanned;
     static constexpr const char* AreasScanned__Replicated = "OnRep_AreasScanned:";
-    EEscortMissionState State;
+    TEnum<EEscortMissionState> State;
     static constexpr const char* State__Replicated = "OnRep_EscortState:";
     bool FinalBattle;
     class UCarvedResourceData* FuelResource;
@@ -29604,7 +29661,7 @@ public:
     void RegisterFuelCannister(class AExtractorItem* extractor);
     UE_AUTHORITY_ONLY void SetEscortMule(class AEscortMule* MULE);
     void SetShellBreakPaused(bool newPaused);
-    UE_AUTHORITY_ONLY void SetState(EEscortMissionState State_0);
+    UE_AUTHORITY_ONLY void SetState(TEnum<EEscortMissionState> State_0);
     void SpawnGarage();
     UE_MULTICAST UE_RELIABLE void StartShellBreak();
     void SyncProgressTimer();
@@ -29636,7 +29693,7 @@ public:
     class UForceFeedbackEffect* DrillRumble;
     float BlockParticlesScaleFP;
     float BlockParticlesScaleTP;
-    EExtractorState State;
+    TEnum<EExtractorState> State;
     float MovementPenalty;
     float CarverRayCastLength;
     float CarveTerrainDistanceCheck;
@@ -29928,13 +29985,13 @@ public:
     int AmdFsr2Mode;
     float AmdFsrSharpness;
     float AmdFsr2Sharpness;
-    EUDLSSMode NvidiaDlssMode;
+    TEnum<EUDLSSMode> NvidiaDlssMode;
     float NvidiaDlssSharpness;
     float FSDResolutionScale;
-    ENVidiaReflexMode ReflexMode;
+    TEnum<ENVidiaReflexMode> ReflexMode;
     float WeaponSpwayScale;
     int RagdollQuality;
-    EUFSDStreamlineDLSSGMode FrameGenerationMode;
+    TEnum<EUFSDStreamlineDLSSGMode> FrameGenerationMode;
     class USoundClass* soundClassCharacterVoices;
     class USoundClass* soundClassMissionControl;
     class USoundClass* soundClassMaster;
@@ -29971,7 +30028,7 @@ public:
     bool InvertFlightControls;
     bool EnableDx12ByDefault;
     float HDRColorGamma;
-    EConsoleGraphicsMode ConsoleGraphicsMode;
+    TEnum<EConsoleGraphicsMode> ConsoleGraphicsMode;
     float StaticResoultionScale;
     bool UseManuelGrahpicsMode;
     FHUDElements HUDElements;
@@ -29989,7 +30046,7 @@ public:
     FIntPoint ResolutionToBeApplied;
     bool VSyncToBeApplied;
     bool Dx12ToBeApplied;
-    EWindowMode InFullscreenModeToBeApplied;
+    TEnum<EWindowMode> InFullscreenModeToBeApplied;
     bool InFullscreenModeToBeAppliedValid;
     bool VSyncToBeAppliedValid;
     bool Dx12ToBeAppliedValid;
@@ -30000,8 +30057,8 @@ public:
     TMulticastInlineDelegate<void()> OnCustomKeyBindingsChanged;
     int LastNiagaraShaderVerions;
     bool HasKeyboardBeenConnected;
-    EFSDInputSource CurrentInputSource;
-    EFSDInputSource RequestedInputSource;
+    TEnum<EFSDInputSource> CurrentInputSource;
+    TEnum<EFSDInputSource> RequestedInputSource;
     TArray<FCustomKeyBinding> CustomKeyBindings;
     TArray<FCustomKeyBinding> CustomControllerBindings;
     bool SwapControllerThumbsticks;
@@ -30020,13 +30077,13 @@ public:
     static bool FSDSetCurrentLanguage(class UObject* WorldContextObject, FString Culture);
     static bool FSDSetCurrentLanguage(FString Culture);
     UE_PURE static class UFSDGameUserSettings* GetFSDGameUserSettings();
-    UE_PURE static EFSDInputSource GetInputSource();
-    UE_PURE static bool IsCurrentInputSource(EFSDInputSource InputSource);
+    UE_PURE static TEnum<EFSDInputSource> GetInputSource();
+    UE_PURE static bool IsCurrentInputSource(TEnum<EFSDInputSource> InputSource);
     UE_PURE static bool IsNvReflexAvailable();
     void ApplyConsoleGraphicsMode();
     void ApplyGraphicsChanges();
     void ClearCustomKeyBindings(bool InGamepadKeys);
-    UE_PURE bool ConsoleGraphicsModeAvailable(EConsoleGraphicsMode Mode);
+    UE_PURE bool ConsoleGraphicsModeAvailable(TEnum<EConsoleGraphicsMode> Mode);
     void FSDSetResolutionScale(float NewScaleNormalized);
     UE_PURE bool GetAppearOffline();
     UE_PURE FString GetAudioOutputDeviceName(class UObject* WorldContextObject, FString DeviceID);
@@ -30036,23 +30093,23 @@ public:
     bool GetAvaliableAudioOutputDevices(class UObject* WorldContextObject, TArray<FString>& AudioDevices);
     bool GetAvaliableAudioOutputDevices(TArray<FString>& AudioDevices);
     UE_PURE bool GetCheckForOutOfBounds();
-    UE_PURE EConsoleGraphicsMode GetConsoleGraphicsMode();
+    UE_PURE TEnum<EConsoleGraphicsMode> GetConsoleGraphicsMode();
     UE_PURE float GetCurrentAudioInputDeviceAmplitude(int localUserId);
     UE_PURE FString GetCurrentAudioInputDeviceName();
     bool GetCurrentAudioOutputDevice(class UObject* WorldContextObject, FString& AudioDevice);
     bool GetCurrentAudioOutputDevice(FString& AudioDevice);
-    UE_PURE EFSDInputSource GetCurrentInputSource();
+    UE_PURE TEnum<EFSDInputSource> GetCurrentInputSource();
     UE_PURE FString GetCurrentUserSaveSlotName();
     UE_PURE bool GetDisableMasterEQ();
     UE_PURE bool GetDx12EnabledToBeApplied();
-    UE_PURE EWindowMode GetFullscreenModeToBeApplied();
+    UE_PURE TEnum<EWindowMode> GetFullscreenModeToBeApplied();
     UE_PURE float GetHDRColorGamma();
     UE_PURE bool GetModdingServerFilterEnabled(uint8 ServerFilter);
     UE_PURE FIntPoint GetScreenResolutionToBeApplied();
     UE_PURE float GetStaticResolutionScale();
     UE_PURE bool GetUseCustomUIScale();
     UE_PURE bool GetUseManualGraphicsMode();
-    UE_PURE float GetVolume(EVolumeType volumeType);
+    UE_PURE float GetVolume(TEnum<EVolumeType> volumeType);
     UE_PURE bool GetVSyncEnabledToBeApplied();
     bool HasAudioOutputDeviceChanged(FString& AudioDeviceChangedTo);
     void InitializeDifficultySelection(class UObject* WorldContext, TArray<class UDifficultySetting*> StartSelection);
@@ -30083,19 +30140,19 @@ public:
     void SetChatFadeTime(float FadeTime);
     void SetChatFontSize(int inFontSize);
     void SetCheckForOutOfBoundsEnabled(bool Enabled);
-    void SetColorVisionDeficiency(EColorVisionDeficiency InType, float InSeverity);
-    void SetConsoleGraphicsMode(EConsoleGraphicsMode Mode);
-    void SetCurrentUserSaveSlotName(class UObject* WorldContextObject, FString saveSlotName, ESaveSlotChangeProcedure changeProcedure);
-    void SetCurrentUserSaveSlotName(FString saveSlotName, ESaveSlotChangeProcedure changeProcedure);
+    void SetColorVisionDeficiency(TEnum<EColorVisionDeficiency> InType, float InSeverity);
+    void SetConsoleGraphicsMode(TEnum<EConsoleGraphicsMode> Mode);
+    void SetCurrentUserSaveSlotName(class UObject* WorldContextObject, FString saveSlotName, TEnum<ESaveSlotChangeProcedure> changeProcedure);
+    void SetCurrentUserSaveSlotName(FString saveSlotName, TEnum<ESaveSlotChangeProcedure> changeProcedure);
     void SetDebugLocalizerMode(bool bEnable);
     void SetDifficultySelected(class UDifficultySetting* Difficulty, bool IsSelected);
     void SetDisableMasterEQ(bool B);
-    void SetDownCameraTurnDirection(EFSDInputSource InputSource, float InDirection);
+    void SetDownCameraTurnDirection(TEnum<EFSDInputSource> InputSource, float InDirection);
     void SetDx12EnabledToBeApplied(bool bEnable);
     void SetForceFeedbackScale(float Scale);
     void SetFOV(float FOV_0);
-    void SetFrameGenerationMode(EUFSDStreamlineDLSSGMode NewMode);
-    void SetFullscreenModeToBeApplied(EWindowMode InFullscreenMode);
+    void SetFrameGenerationMode(TEnum<EUFSDStreamlineDLSSGMode> NewMode);
+    void SetFullscreenModeToBeApplied(TEnum<EWindowMode> InFullscreenMode);
     void SetGameServerName(int localUserNum, FString Name_0);
     void SetGamma(float gamme);
     void SetGrapplingHookAutoSwitch(bool shouldAutoSwitch);
@@ -30103,7 +30160,7 @@ public:
     void SetHeadBobbingScale(float HeadbobbingScale_0);
     void SetHoldToBreakImmobilization(bool holdToBreak);
     void SetHoldToFire(bool HoldToFire);
-    void SetInputSource(EFSDInputSource NewSource);
+    void SetInputSource(TEnum<EFSDInputSource> NewSource);
     void SetInvertFlightControls(bool Invert);
     void SetInvertMouse(bool InvertMouse_0);
     void SetInvertMouseWheel(bool invertMouseWheel);
@@ -30112,7 +30169,7 @@ public:
     void SetModdingSortBy(uint8 SortField, bool SortAscending);
     void SetMouseXSensitivity(float newSensitivity);
     void SetMouseYSensitivity(float newSensitivity);
-    void SetNvidiaDlssMode(EUDLSSMode Mode);
+    void SetNvidiaDlssMode(TEnum<EUDLSSMode> Mode);
     void SetNvidiaDlssSharpness(float Sharpness);
     void SetOverlayIntensityScale(float Scale);
     void SetPhotosensitiveMode(bool modeOn);
@@ -30121,7 +30178,7 @@ public:
     void SetPreviousItemEnabledOnController(bool InEnabled);
     void SetPushToTalk(bool bEnable);
     void SetRagdollQuality(int Value);
-    void SetReflexMode(ENVidiaReflexMode ReflexMode_0);
+    void SetReflexMode(TEnum<ENVidiaReflexMode> ReflexMode_0);
     void SetScreenResolutionToBeApplied(FIntPoint Resolution);
     void SetServerSearchPasswordRequired(bool InPasswordRequired);
     void SetSharpening(float Sharpening_0);
@@ -30131,11 +30188,11 @@ public:
     void SetShowSubtitles(bool Show);
     void SetShowUIAnimations(bool shouldShow);
     void SetStaticResolutionScale(float percentage);
-    void SetSteamSearchRegion(ESteamSearchRegion InRegion);
+    void SetSteamSearchRegion(TEnum<ESteamSearchRegion> InRegion);
     void SetSwapControllerThumbsticks(bool InSwapThumbsticks);
     void SetTemporalAAUpscalingEnabled(bool bEnable);
     void SetTinnitusProtection(bool enable);
-    void SetTurn180Mode(ETurn180Mode InMode);
+    void SetTurn180Mode(TEnum<ETurn180Mode> InMode);
     void SetTutorialHintsEnabled(bool Enabled);
     void SetUIDPIScale(float uiscale);
     void SetUpscalingType(int Type);
@@ -30150,7 +30207,7 @@ public:
     void SetUseToggleLaserpointer(bool UseToggleLaserpointer_0);
     void SetUseToggleTerrainScanner(bool useToggleTerrainScanner);
     void SetVoiceChatEnabled(bool bEnable);
-    void SetVolume(EVolumeType volumeType, float Volume);
+    void SetVolume(TEnum<EVolumeType> volumeType, float Volume);
     void SetVSyncEnabledToBeApplied(bool bEnable);
     void SetWeaponSwayScale(float Scale);
     void SetZiplineGunAutoSwitch(bool shouldAutoSwitch);
@@ -30176,10 +30233,10 @@ public:
     UE_PURE bool GetChatEnabledOnController() const;
     UE_PURE float GetChatFadeTime() const;
     UE_PURE int GetChatFontSize() const;
-    UE_PURE float GetDownCameraTurnDirection(EFSDInputSource InputSource) const;
+    UE_PURE float GetDownCameraTurnDirection(TEnum<EFSDInputSource> InputSource) const;
     UE_PURE float GetForceFeedbackScale() const;
     UE_PURE float GetFOV() const;
-    UE_PURE EUFSDStreamlineDLSSGMode GetFrameGenerationMode() const;
+    UE_PURE TEnum<EUFSDStreamlineDLSSGMode> GetFrameGenerationMode() const;
     UE_PURE float GetGamma() const;
     UE_PURE bool GetGrapplingHookAutoSwitch() const;
     UE_PURE float GetHeadBobbingScale() const;
@@ -30192,7 +30249,7 @@ public:
     UE_PURE bool GetLensFlaresEnabled() const;
     UE_PURE float GetMouseXSensitivity() const;
     UE_PURE float GetMouseYSensitivity() const;
-    UE_PURE EUDLSSMode GetNvidiaDlssMode() const;
+    UE_PURE TEnum<EUDLSSMode> GetNvidiaDlssMode() const;
     UE_PURE float GetNvidiaDlssSharpness() const;
     UE_PURE float GetOverlayIntensityScale() const;
     UE_PURE bool GetPhotosensitiveMode() const;
@@ -30202,17 +30259,17 @@ public:
     UE_PURE bool GetPushToTalk() const;
     UE_PURE int GetRagdollQuality() const;
     UE_PURE float GetRagdollQualityDurationFactor() const;
-    UE_PURE ENVidiaReflexMode GetReflexMode() const;
+    UE_PURE TEnum<ENVidiaReflexMode> GetReflexMode() const;
     UE_PURE float GetSharpening() const;
     UE_PURE bool GetShowFPS() const;
     UE_PURE int GetShowNetInfoLevel() const;
     UE_PURE bool GetShowSandboxLabel() const;
     UE_PURE bool GetShowSubtitles() const;
     UE_PURE bool GetShowUIAnimations() const;
-    UE_PURE ESteamSearchRegion GetSteamSearchRegion() const;
+    UE_PURE TEnum<ESteamSearchRegion> GetSteamSearchRegion() const;
     UE_PURE bool GetTemporalAAUpscalingEnabled() const;
     UE_PURE bool GetTinnitusProtection() const;
-    UE_PURE ETurn180Mode GetTurn180Mode() const;
+    UE_PURE TEnum<ETurn180Mode> GetTurn180Mode() const;
     UE_PURE bool GetTutorialHintsEnabled() const;
     UE_PURE float GetUIDPIScale() const;
     UE_PURE int GetUpscalingType() const;
@@ -30264,7 +30321,7 @@ class UFakeMoverSettings : public UDataAsset
 {
 public:
     UE_CLASS("/Script/FSD", "FakeMoverSettings");
-    EDeepPathFinderSize PathfinderColiSize;
+    TEnum<EDeepPathFinderSize> PathfinderColiSize;
     bool StickToSurface;
     bool AlignRotationToSurface;
     float AirFriction;
@@ -30300,7 +30357,7 @@ class UPathfinderSplineSegmentCollisionComponent : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "PathfinderSplineSegmentCollisionComponent");
     float Radius;
-    EPFCollisionType CollisionType;
+    TEnum<EPFCollisionType> CollisionType;
     void Clear();
     void Update(const FVector& SplineStart, const FVector& SplineStartTangent, const FVector& SplineEnd, const FVector& SplineEndTangent);
     void UpdateFromSpline(class USplineComponent* SplineComponent, int StartIndex);
@@ -30346,6 +30403,7 @@ class UFirstPersonStaticMeshComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "FirstPersonStaticMeshComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     bool EnabledFPFOV;
 };
 
@@ -30392,14 +30450,14 @@ class UFirstPersonParticleSystemComponent : public UParticleSystemComponent
 {
 public:
     UE_CLASS("/Script/FSD", "FirstPersonParticleSystemComponent");
-    static class UParticleSystemComponent* SpawnFirstPersonEmitterAttached(class UParticleSystem* EmitterTemplate, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, EAttachLocation LocationType, bool bAutoDestroy);
+    static class UParticleSystemComponent* SpawnFirstPersonEmitterAttached(class UParticleSystem* EmitterTemplate, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, TEnum<EAttachLocation> LocationType, bool bAutoDestroy);
 };
 
 class UZiplineLauncherComponent : public UWeaponFireComponent
 {
 public:
     UE_CLASS("/Script/FSD", "ZiplineLauncherComponent");
-    ECollisionChannel HitCollisionChannel;
+    TEnum<ECollisionChannel> HitCollisionChannel;
     float ProjectileLocationOffset;
     TSubclassOf<class AZipLineProjectile> ProjectileClass;
     UE_MULTICAST void All_ShowHit();
@@ -30410,7 +30468,7 @@ class UFirstPersonNiagaraComponent : public UNiagaraComponent
 {
 public:
     UE_CLASS("/Script/FSD", "FirstPersonNiagaraComponent");
-    static class UNiagaraComponent* SpawnFirstPersonEmitterAttached(class UNiagaraSystem* inNiagaraSystem, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, EAttachLocation LocationType, bool inAutoDestroy);
+    static class UNiagaraComponent* SpawnFirstPersonEmitterAttached(class UNiagaraSystem* inNiagaraSystem, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, TEnum<EAttachLocation> LocationType, bool inAutoDestroy);
 };
 
 class UFirstPersonPointLightComponent : public UPointLightComponent
@@ -30572,7 +30630,7 @@ public:
     UE_PURE int GetCurrentRank() const;
     UE_PURE class UPerkDelegateItem* GetDelegates(class UObject* WorldContext) const;
     UE_PURE class UPerkDelegateItem* GetDelegates() const;
-    UE_PURE TArray<TSubclassOf<class UPerkHUDActivationWidget>> GetHudActivationWidgets(EPerkHUDActivationLocation Location) const;
+    UE_PURE TArray<TSubclassOf<class UPerkHUDActivationWidget>> GetHudActivationWidgets(TEnum<EPerkHUDActivationLocation> Location) const;
     UE_PURE TSubclassOf<class UPerkHUDIconWidget> GetHudIconWidgetClass() const;
     UE_PURE int GetMaxRank() const;
     UE_PURE int GetMaxUseCharges(class APlayerController* PlayerController) const;
@@ -30581,16 +30639,16 @@ public:
     UE_PURE FText GetRankDescription(int Rank) const;
     UE_PURE int GetRankTier(int Rank) const;
     UE_PURE int GetRemainingUseCharges(class APlayerController* PlayerController) const;
-    UE_PURE EPerkTierState GetStateAtTier(class UObject* WorldContext, int Tier) const;
-    UE_PURE EPerkTierState GetStateAtTier(int Tier) const;
-    UE_PURE EPerkUsageType GetUsageType() const;
+    UE_PURE TEnum<EPerkTierState> GetStateAtTier(class UObject* WorldContext, int Tier) const;
+    UE_PURE TEnum<EPerkTierState> GetStateAtTier(int Tier) const;
+    UE_PURE TEnum<EPerkUsageType> GetUsageType() const;
     UE_PURE float GetUseCoolDownDuration(class APlayerController* PlayerController) const;
     UE_PURE float GetUseCoolDownProgress(class APlayerController* PlayerController) const;
     UE_PURE float GetUseCoolDownTimeLeft(class APlayerController* PlayerController) const;
     UE_PURE bool IsEquippedBy(class UObject* WorldContext, class UPlayerCharacterID* characterID) const;
     UE_PURE bool IsEquippedBy(class UPlayerCharacterID* characterID) const;
     UE_PURE bool IsPerkAvailableInTier(int Tier) const;
-    UE_PURE bool IsUsageType(EPerkUsageType InType) const;
+    UE_PURE bool IsUsageType(TEnum<EPerkUsageType> InType) const;
 };
 
 class UFloatPerkAsset : public UPerkAsset
@@ -30623,14 +30681,16 @@ class UStatPerkActivation : public UFloatPerkActivation
 {
 public:
     UE_CLASS("/Script/FSD", "StatPerkActivation");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Engine";
     class UPawnStat* PawnStat;
-    EPawnStatType StatType;
+    TEnum<EPawnStatType> StatType;
 };
 
 class UCreateComponentPerkActivation : public UFloatPerkActivation
 {
 public:
     UE_CLASS("/Script/FSD", "CreateComponentPerkActivation");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Engine";
     TSoftClassPtr<class UClass> ComponentClass;
 };
 
@@ -30650,6 +30710,7 @@ class UEscapableGrabberEnemyActivation : public UFloatPerkActivation
 {
 public:
     UE_CLASS("/Script/FSD", "EscapableGrabberEnemyActivation");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Engine";
     TSoftClassPtr<class UClass> EnemyGrabberClass;
 };
 
@@ -30669,6 +30730,7 @@ class USetMaxUsesPerkActivation : public UFloatPerkActivation
 {
 public:
     UE_CLASS("/Script/FSD", "SetMaxUsesPerkActivation");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Engine";
 };
 
 class UPickaxePartItem : public UObject
@@ -30719,7 +30781,7 @@ public:
     FName EventName;
     FText EventDisplayText;
     class UTexture2D* EventThumbnail;
-    EHolidayType EventType;
+    TEnum<EHolidayType> EventType;
     bool bFreeBeerEvent;
     bool bFreeBeerConfettiVisible;
     class UDrinkableDataAsset* SpecialEventBeer;
@@ -30803,6 +30865,7 @@ class ADashingFlyingBugController : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Script/FSD", "DashingFlyingBugController");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Engine";
     static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
     static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
     static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
@@ -30823,17 +30886,17 @@ public:
     UE_PURE static int GetForgingLevel();
     UE_PURE static float GetForgingLevelProgress(class UObject* WorldContextObject);
     UE_PURE static float GetForgingLevelProgress();
-    UE_PURE static ESchematicType GetForgingMasteryRewardDefaultType(ESchematicType InType);
-    UE_PURE static ESchematicType GetForgingMasteryRewardType(class UObject* WorldContextObject, int Level, bool ReturnDefaultIfUnavailable);
-    UE_PURE static ESchematicType GetForgingMasteryRewardType(int Level, bool ReturnDefaultIfUnavailable);
+    UE_PURE static TEnum<ESchematicType> GetForgingMasteryRewardDefaultType(TEnum<ESchematicType> InType);
+    UE_PURE static TEnum<ESchematicType> GetForgingMasteryRewardType(class UObject* WorldContextObject, int Level, bool ReturnDefaultIfUnavailable);
+    UE_PURE static TEnum<ESchematicType> GetForgingMasteryRewardType(int Level, bool ReturnDefaultIfUnavailable);
     static void GetForgingPendingMasteryRewardNewest(class UObject* WorldContextObject, bool& OutSuccess, FForgingPendingReward& OutReward);
     static void GetForgingPendingMasteryRewardNewest(bool& OutSuccess, FForgingPendingReward& OutReward);
     UE_PURE static TArray<class USchematic*> GetOwnedSchematics(class UObject* WorldContextObject);
     UE_PURE static TArray<class USchematic*> GetOwnedSchematics();
     static FForgingResult GiveForgingXP(class UObject* WorldContextObject);
     static FForgingResult GiveForgingXP();
-    UE_PURE static class USchematic* PickForgingMasteryDefaultReward(class UObject* WorldContextObject, ESchematicType InType);
-    UE_PURE static class USchematic* PickForgingMasteryDefaultReward(ESchematicType InType);
+    UE_PURE static class USchematic* PickForgingMasteryDefaultReward(class UObject* WorldContextObject, TEnum<ESchematicType> InType);
+    UE_PURE static class USchematic* PickForgingMasteryDefaultReward(TEnum<ESchematicType> InType);
 };
 
 class AOldZiplineSalvage : public AActor
@@ -30899,7 +30962,7 @@ class UFrontendBlueprintLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/FSD", "FrontendBlueprintLibrary");
     static void CopyStringToClipboard(FString toClipboard);
-    UE_PURE static EFSDTargetPlatform FSDTargetPlatform();
+    UE_PURE static TEnum<EFSDTargetPlatform> FSDTargetPlatform();
     UE_PURE static bool FSDTargetPlatformIsXSX();
     static void GetStringFromClipboard(FString& fromClipboard);
     UE_PURE static bool IsShippingBuild();
@@ -30911,6 +30974,7 @@ class UStatusEffect : public UObject
 {
 public:
     UE_CLASS("/Script/FSD", "StatusEffect");
+    static constexpr const char* UeClassTail = "0x00801000 /Script/CoreUObject.Object Engine";
     class UPawnAffliction* PawnAffliction;
     TArray<class UStatusEffectItem*> StatusEffects;
     float MaxResistance;
@@ -30942,7 +31006,7 @@ public:
     FString SteamAPIStatName;
     FString XboxAchievementID;
     float AchievementTargetValue;
-    EFSDAchievementType AchievementType;
+    TEnum<EFSDAchievementType> AchievementType;
     static void QueryAchievements(class AFSDPlayerController* Player);
     static void ResetStatForAchievement(class UFSDAchievement* AchievementToReset, class AFSDPlayerController* Player);
     UE_PURE float GetAchievementTargetValue();
@@ -31141,9 +31205,9 @@ public:
     UE_PURE bool FSDEventsReady() const;
     UE_PURE TArray<class UFSDEvent*> GetActiveEventHandlers() const;
     UE_PURE class UFSDEvent* GetFirstActiveEventHandler() const;
-    UE_PURE EHolidayType GetHolidayType() const;
+    UE_PURE TEnum<EHolidayType> GetHolidayType() const;
     UE_PURE bool IsEventActive(class UFSDEvent* FSDEvent) const;
-    UE_PURE bool IsEventTypeActive(EHolidayType FSDEvent) const;
+    UE_PURE bool IsEventTypeActive(TEnum<EHolidayType> FSDEvent) const;
     static UFSDEventManager* Get(class UObject* WorldContextObject = nullptr);
 };
 
@@ -31235,14 +31299,14 @@ class UFSDOnlineSystemUtils : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "FSDOnlineSystemUtils");
-    UE_PURE static EInviteBlockReason CanPlayerInvite(class UObject* WorldContextObject);
-    UE_PURE static EInviteBlockReason CanPlayerInvite();
-    UE_PURE static FText GetInviteFeatureBlockReason(class UObject* WorldContextObject, EInviteBlockReason reason);
-    UE_PURE static FText GetInviteFeatureBlockReason(EInviteBlockReason reason);
-    static void GetIsPrivilegeAllowed(class APlayerState* PlayerState, EBlueprintableUserPrivileges Privilege, TDelegate<void(class APlayerState* CheckedPlayerState, EBlueprintableUserPrivileges CheckedPrivilege, EBlueprintablePrivilegeResults PrivilegeResult)> Delegate);
+    UE_PURE static TEnum<EInviteBlockReason> CanPlayerInvite(class UObject* WorldContextObject);
+    UE_PURE static TEnum<EInviteBlockReason> CanPlayerInvite();
+    UE_PURE static FText GetInviteFeatureBlockReason(class UObject* WorldContextObject, TEnum<EInviteBlockReason> reason);
+    UE_PURE static FText GetInviteFeatureBlockReason(TEnum<EInviteBlockReason> reason);
+    static void GetIsPrivilegeAllowed(class APlayerState* PlayerState, TEnum<EBlueprintableUserPrivileges> Privilege, TDelegate<void(class APlayerState* CheckedPlayerState, EBlueprintableUserPrivileges CheckedPrivilege, EBlueprintablePrivilegeResults PrivilegeResult)> Delegate);
     static void GetIsUpdatePending(TDelegate<void(bool bIsUpdatePending)> Delegate);
     static void GetOnlinePlayBlockReasons(TArray<EBlueprintablePrivilegeResults>& reasons);
-    UE_PURE static FText OnlinePlayBlockReasonToString(EBlueprintablePrivilegeResults reason);
+    UE_PURE static FText OnlinePlayBlockReasonToString(TEnum<EBlueprintablePrivilegeResults> reason);
     static void OpenProfile(class APlayerState* Requestor, class APlayerState* Requestee);
     static void OpenProfileByUserId(class APlayerState* Requestor, FString RequesteeUserID);
     static void OpenProfileWithEvent(class APlayerState* Requestor, class APlayerState* Requestee, TDelegate<void()> OnProfileWindowClosed);
@@ -31250,7 +31314,7 @@ public:
     static void OpenURLInOverlayWithUTM(FString URL, FString Location, FString trackingID, TDelegate<void(FString LastURL)> OnOverlayClosed);
     static void ShowAccountPicker(class UFSDGameInstance* gInstance, int GamePlayerID);
     static void ShowUpgradeAccountUI();
-    static void TryToResolvePrivilege(class APlayerState* PlayerState, EBlueprintableUserPrivileges Privilege, EBlueprintablePrivilegeResults reason);
+    static void TryToResolvePrivilege(class APlayerState* PlayerState, TEnum<EBlueprintableUserPrivileges> Privilege, TEnum<EBlueprintablePrivilegeResults> reason);
 };
 
 class UOptionalBloodPhysicalMaterial : public UFSDPhysicalMaterial
@@ -31267,7 +31331,7 @@ public:
     TMulticastInlineDelegate<void(class AFSDPlayerController* Controller)> OnPlayerSpawn;
     TMulticastInlineDelegate<void(class AFSDPlayerController* Controller)> OnPlayerLeave;
     class AFSDPlayerController* usedBy;
-    ESpacerigStartType StartType;
+    TEnum<ESpacerigStartType> StartType;
     static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
     static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
 };
@@ -31306,6 +31370,7 @@ class UFSDSkeletalMeshComponent : public USkeletalMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "FSDSkeletalMeshComponent");
+    static constexpr const char* UeClassTail = "0x00a01004 /Script/CoreUObject.Object Engine";
 };
 
 class UFSDSteamUserStats : public UActorComponent
@@ -31328,7 +31393,7 @@ public:
     UE_PURE static FString FilterProfanityText(FString inputMessage);
     static FString GetPlayerSteamID();
     static FString GetPlayerSteamName();
-    static ESteamBranch GetSteamBranch();
+    static TEnum<ESteamBranch> GetSteamBranch();
     static FString GetSteamBranchString();
     static FString GetSteamLanguage();
     static FString GetSteamRegion();
@@ -31379,7 +31444,7 @@ public:
     void SetFontSize(int Size);
     void SetLineHeightPercentage(float percentage);
     void SetMargin(FMargin NewMargin);
-    void SetWrappingPolicy(ETextWrappingPolicy Policy);
+    void SetWrappingPolicy(TEnum<ETextWrappingPolicy> Policy);
     void SetWrapTextAt(float WrapAt);
     UE_PURE int GetFontSize() const;
 };
@@ -31388,13 +31453,13 @@ class UFSDWidgetBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "FSDWidgetBlueprintLibrary");
-    static class UHorizontalBox* AddChildrenToHorizontalBox(class UObject* WorldContext, class UHorizontalBox* HorizontalBox, TArray<class UWidget*> Children, bool ClearHorizontalBox, FMargin Padding, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, float FillFirst, float FillMiddle, float FillLast);
-    static class UHorizontalBox* AddChildrenToHorizontalBox(class UHorizontalBox* HorizontalBox, TArray<class UWidget*> Children, bool ClearHorizontalBox, FMargin Padding, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, float FillFirst, float FillMiddle, float FillLast);
+    static class UHorizontalBox* AddChildrenToHorizontalBox(class UObject* WorldContext, class UHorizontalBox* HorizontalBox, TArray<class UWidget*> Children, bool ClearHorizontalBox, FMargin Padding, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, float FillFirst, float FillMiddle, float FillLast);
+    static class UHorizontalBox* AddChildrenToHorizontalBox(class UHorizontalBox* HorizontalBox, TArray<class UWidget*> Children, bool ClearHorizontalBox, FMargin Padding, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, float FillFirst, float FillMiddle, float FillLast);
     static class UWidget* AddChildToCanvasEx(class UCanvasPanel* CanvasPanel, class UWidget* Widget, FAnchors Anchors, FMargin Offsets, bool AutoSize, int Z_Order, class UCanvasPanelSlot*& OutSlot, class UCanvasPanel*& OutCanvasPanel);
-    static class UWidget* AddChildToHorizontalBoxEx(class UHorizontalBox* HorizontalBox, class UWidget* Widget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, float Size, FMargin Padding, class UHorizontalBoxSlot*& OutSlot, class UHorizontalBox*& OutHorizontalBox);
-    static class UWidget* AddChildToOverlayEx(class UOverlay* OverlayPanel, class UWidget* Widget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, FMargin Padding, class UOverlaySlot*& OutSlot, class UOverlay*& OutOverlayPanel);
-    static class UWidget* AddChildToUniformGridEx(class UUniformGridPanel* GridPanel, class UWidget* Widget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, int Column, int Row, class UUniformGridSlot*& OutSlot, class UUniformGridPanel*& OutGridPanel);
-    static class UWidget* AddChildToVerticalBoxEx(class UVerticalBox* VerticalBox, class UWidget* Widget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, float Size, FMargin Padding, class UVerticalBoxSlot*& OutSlot, class UVerticalBox*& OutVerticalBox);
+    static class UWidget* AddChildToHorizontalBoxEx(class UHorizontalBox* HorizontalBox, class UWidget* Widget, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, float Size, FMargin Padding, class UHorizontalBoxSlot*& OutSlot, class UHorizontalBox*& OutHorizontalBox);
+    static class UWidget* AddChildToOverlayEx(class UOverlay* OverlayPanel, class UWidget* Widget, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, FMargin Padding, class UOverlaySlot*& OutSlot, class UOverlay*& OutOverlayPanel);
+    static class UWidget* AddChildToUniformGridEx(class UUniformGridPanel* GridPanel, class UWidget* Widget, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, int Column, int Row, class UUniformGridSlot*& OutSlot, class UUniformGridPanel*& OutGridPanel);
+    static class UWidget* AddChildToVerticalBoxEx(class UVerticalBox* VerticalBox, class UWidget* Widget, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, float Size, FMargin Padding, class UVerticalBoxSlot*& OutSlot, class UVerticalBox*& OutVerticalBox);
     static class UWidget* AddWidgetToRow(class UVerticalBox* VerticalBox, class UWidget* Widget, int MaxWidgetsPerRow, float WidgetSpacing, float RowSpacing, class UHorizontalBoxSlot*& OutSlot, class UHorizontalBox*& OutRow);
     UE_PURE static bool AreWidgetsIntersecting(class UWidget* InWidget1, class UWidget* InWidget2);
     static void Box(FPaintContext& Context, FVector2D Position, FVector2D Size, const FSlateBrush& Brush, FLinearColor Tint);
@@ -31412,8 +31477,8 @@ public:
     static TArray<class UUserWidget*> CreateOrReuseChildrenWithCallbackEx(class UPanelWidget* Panel, int Count, TSubclassOf<class UUserWidget> WidgetClass, TDelegate<void(bool WasCreated, class UUserWidget* Widget, int ActiveIndex)> OnCreatedOrReused, TDelegate<void(class UUserWidget* Widget)> OnCollapsed);
     static class USpacer* CreateSpacer(class UObject* WorldContext, FVector2D Size);
     static class USpacer* CreateSpacer(FVector2D Size);
-    static class UTextBlock* CreateTextBlock(class UObject* WorldContext, FText Text, FSlateFontInfo Font, ETextJustify Justification, FLinearColor Color, bool WrapText);
-    static class UTextBlock* CreateTextBlock(FText Text, FSlateFontInfo Font, ETextJustify Justification, FLinearColor Color, bool WrapText);
+    static class UTextBlock* CreateTextBlock(class UObject* WorldContext, FText Text, FSlateFontInfo Font, TEnum<ETextJustify> Justification, FLinearColor Color, bool WrapText);
+    static class UTextBlock* CreateTextBlock(FText Text, FSlateFontInfo Font, TEnum<ETextJustify> Justification, FLinearColor Color, bool WrapText);
     static class UVerticalBox* CreateVerticalBox(class UObject* WorldContext);
     static class UVerticalBox* CreateVerticalBox();
     static class UWidget* FindChildWidget(class UPanelWidget*& ParentWidget, TSubclassOf<class UUserWidget> WidgetClass, bool SearchChildren);
@@ -31451,10 +31516,10 @@ public:
     static void ScaleTextBlockToHeight(class UTextBlock* TextBlock, float TargetHeight, bool SetMinimimumWidth);
     static void ScrubAnimation(class UObject* WorldContext, class UWidgetAnimation* InAnimation, float Progress01);
     static void ScrubAnimation(class UWidgetAnimation* InAnimation, float Progress01);
-    static void SetChildrenVisibility(class UPanelWidget* Panel, ESlateVisibility Visibility, int StartIndex, TSubclassOf<class UUserWidget> OptionalClassFilter);
+    static void SetChildrenVisibility(class UPanelWidget* Panel, TEnum<ESlateVisibility> Visibility, int StartIndex, TSubclassOf<class UUserWidget> OptionalClassFilter);
     static void SetMousePosition(class UObject* WorldContextObject, int X, int Y);
     static void SetMousePosition(int X, int Y);
-    static void SetProgressBarType(class UProgressBar* InProgressBar, EProgressBarFillType InType);
+    static void SetProgressBarType(class UProgressBar* InProgressBar, TEnum<EProgressBarFillType> InType);
     static void SetSizeBoxSettings(class USizeBox*& InSizeBox, const FSizeBoxSettings& InSettings);
     static FTimerHandle SetTimerForNextTick(class UObject* WorldContext, TDelegate<void()> TimerDelegate);
     static FTimerHandle SetTimerForNextTick(TDelegate<void()> TimerDelegate);
@@ -31485,10 +31550,10 @@ public:
     static void MoveInWidget(class UUserWidget* Widget, FVector2D MoveFromOffset, float Duration, float StartDelay);
     static void MoveOutWidget(class UObject* WorldContext, class UUserWidget* Widget, FVector2D MoveToOffset, float Duration, float StartDelay);
     static void MoveOutWidget(class UUserWidget* Widget, FVector2D MoveToOffset, float Duration, float StartDelay);
-    static void MoveWidget(class UObject* WorldContext, class UUserWidget* Widget, FVector2D Start, FVector2D End, float Duration, EMoveType MoveType, float StartDelay);
-    static void MoveWidget(class UUserWidget* Widget, FVector2D Start, FVector2D End, float Duration, EMoveType MoveType, float StartDelay);
-    static void PingWidget(class UObject* WorldContext, class UWidget* Widget, float amount, float Duration, EPingType PingType, float StartDelay);
-    static void PingWidget(class UWidget* Widget, float amount, float Duration, EPingType PingType, float StartDelay);
+    static void MoveWidget(class UObject* WorldContext, class UUserWidget* Widget, FVector2D Start, FVector2D End, float Duration, TEnum<EMoveType> MoveType, float StartDelay);
+    static void MoveWidget(class UUserWidget* Widget, FVector2D Start, FVector2D End, float Duration, TEnum<EMoveType> MoveType, float StartDelay);
+    static void PingWidget(class UObject* WorldContext, class UWidget* Widget, float amount, float Duration, TEnum<EPingType> PingType, float StartDelay);
+    static void PingWidget(class UWidget* Widget, float amount, float Duration, TEnum<EPingType> PingType, float StartDelay);
     static void StartCounter(class UObject* WorldContext, class UObject* Owner, float Start, float End, float Duration, TDelegate<void(float Value, float NormalizedTime)> OnCount, float StartDelay);
     static void StartCounter(class UObject* Owner, float Start, float End, float Duration, TDelegate<void(float Value, float NormalizedTime)> OnCount, float StartDelay);
     static void StartTextCounter(class UObject* WorldContext, class UTextBlock*& Widget, float Start, float End, float Duration, int MaxDigits, float StartDelay);
@@ -31507,7 +31572,7 @@ class ATrackBuilderItem : public AAnimatedItem
 public:
     UE_CLASS("/Script/FSD", "TrackBuilderItem");
     class UCrosshairAggregator* CrosshairAggregator;
-    EPlaceableObstructionType ObstructionType;
+    TEnum<EPlaceableObstructionType> ObstructionType;
     FVector ObstructionLocation;
     FVector GroundNormal;
     TSubclassOf<class ATrackBuilderSegment> DefaultSegmentType;
@@ -31708,9 +31773,9 @@ public:
     TMulticastInlineDelegate<void(float amount)> OnDamageTaken;
     TMulticastInlineDelegate<void(float Health)> OnHealthChanged;
     TMulticastInlineDelegate<void(class USubHealthComponent* subHealth)> OnCanTakeDamageChanged;
-    EHealthbarType HealthbarType;
+    TEnum<EHealthbarType> HealthbarType;
     bool PassthroughDamageWhenDisabled;
-    EEnemyHealthScaling EnemyHealthScaling;
+    TEnum<EEnemyHealthScaling> EnemyHealthScaling;
     void SetCanTakeDamage(bool canTakeDamage);
     UE_PURE bool GetCanTakeDamage() const;
     UE_PURE float GetHealth() const;
@@ -31913,7 +31978,7 @@ public:
     float ChargeThreshold;
     float AutoStopCharingAfterSeconds;
     int ShotCostCycle;
-    EGooGunFireMode FireMode;
+    TEnum<EGooGunFireMode> FireMode;
     class USoundCue* FullyChargedFireSound;
     int ChargedShotCount;
     float BuckShotSpreadV;
@@ -32006,7 +32071,7 @@ class UAreaSpawnerComponent : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "AreaSpawnerComponent");
     TSubclassOf<class AActor> ActorToSpawn;
-    EDeepPathFinderSize PathfinderSize;
+    TEnum<EDeepPathFinderSize> PathfinderSize;
     float ChanceToSpawn;
     UE_AUTHORITY_ONLY void SpawnInArea(const FVector& Origin, float Radius, float maxVerticalDistance, class APawn* Instigator);
 };
@@ -32068,7 +32133,7 @@ public:
     float HideArmorTime;
     float ModuleRotationSpeed;
     bool ConstantRotation;
-    EGuntowerModuleState State;
+    TEnum<EGuntowerModuleState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     static constexpr const char* Health__UeSubobject = "Heath /Script/FSD.EnemyHealthComponent";
     static constexpr const char* ModuleMesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -32077,8 +32142,8 @@ public:
     static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     void DoAttack();
     void HideArmorPlates();
-    void OnRep_State(EGuntowerModuleState prevState);
-    UE_AUTHORITY_ONLY void SetState(EGuntowerModuleState State_0);
+    void OnRep_State(TEnum<EGuntowerModuleState> prevState);
+    UE_AUTHORITY_ONLY void SetState(TEnum<EGuntowerModuleState> State_0);
 };
 
 class AAimingTowerModule : public ATowerModuleBase
@@ -32163,6 +32228,7 @@ class AHeavyParticleCannon : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Script/FSD", "HeavyParticleCannon");
+    static constexpr const char* UeNativeInterfaces = "IUpgradable";
     class UDamageComponent* Damage;
     class UReflectionHitscanComponent* HitscanComponent;
     class UStickyFlameSpawner* StickyFlamesSpawner;
@@ -32355,7 +32421,7 @@ public:
     float BobbingSize;
     bool Sweep;
     bool ForceParentUp;
-    ETeleportType TeleportMode;
+    TEnum<ETeleportType> TeleportMode;
     void Start();
     void Stop();
 };
@@ -32370,6 +32436,7 @@ class UHUDHealthBar : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "HUDHealthBar");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     TMulticastInlineDelegate<void(class UHUDHealthBar* HealthBar)> OnOwnerDead;
     FLinearColor BackgroundColor;
     FLinearColor HealthColor;
@@ -32483,7 +32550,7 @@ class IHealth
 public:
     UE_CLASS("/Script/FSD", "Health");
     UE_PURE float GetHealth() const;
-    UE_PURE EHealthbarType GetHealthbarType() const;
+    UE_PURE TEnum<EHealthbarType> GetHealthbarType() const;
     UE_PURE float GetMaxHealth() const;
     UE_PURE class AActor* GetOwner() const;
     UE_PURE bool IsAlive() const;
@@ -32526,8 +32593,8 @@ class IMinersManualHandler
 {
 public:
     UE_CLASS("/Script/FSD", "MinersManualHandler");
-    void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
-    void OpenMinersManualPage(EMinersManualSinglePage page);
+    void OpenMinersManualFromID(TEnum<EMinersManualSection> Section, const FGuid& ID);
+    void OpenMinersManualPage(TEnum<EMinersManualSinglePage> page);
 };
 
 class UWeaponImpactComponent : public UActorComponent
@@ -32607,17 +32674,17 @@ class UInputCaptureWidget : public UUserWidget
 public:
     UE_CLASS("/Script/FSD", "InputCaptureWidget");
     FCustomKeySetting Settings;
-    EKeyBindingSlot InputSlot;
+    TEnum<EKeyBindingSlot> InputSlot;
     bool bIsGamepadKey;
     bool bCapturing;
-    void BindActionToKey(const FCustomKeySetting& InAction, const FKey& InKey, EKeyBindingSlot InSlot, bool SaveToDisk);
+    void BindActionToKey(const FCustomKeySetting& InAction, const FKey& InKey, TEnum<EKeyBindingSlot> InSlot, bool SaveToDisk);
     void ClearCurrentBinding();
     bool FindCurrentSettingsForKey(const FKey& InKey, FCustomKeySetting& OutSettings);
     void ReceiveCapturingChanged(bool InCapturing);
     void ReceiveKeyCaptured(FKey InKey);
     void ReceiveKeyChanged(FKey InKey);
     void SetCurrentBinding(const FKey& InKey);
-    void SetData(FCustomKeySetting InSettings, EKeyBindingSlot InInputSlot, bool InIsGamepadKey);
+    void SetData(FCustomKeySetting InSettings, TEnum<EKeyBindingSlot> InInputSlot, bool InIsGamepadKey);
     UE_PURE FKey GetCurrentBinding() const;
 };
 
@@ -32634,7 +32701,7 @@ class UInputFunctionLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/FSD", "InputFunctionLibrary");
     UE_PURE static class UTexture2D* FindActionIcon(FName InActionName, bool InGamepadKeys);
-    static bool FindInputDisplay(class APlayerController* PlayerController, FName InputName, EFSDInputSource InputSource, int LayoutIndex, FInputDisplay& OutInputDisplay);
+    static bool FindInputDisplay(class APlayerController* PlayerController, FName InputName, TEnum<EFSDInputSource> InputSource, int LayoutIndex, FInputDisplay& OutInputDisplay);
     static bool GetActionMapping(FName InActionName, bool InGamepadKeys, FInputActionKeyMapping& OutResult);
     static bool GetAxisMapping(FName InActionName, int Axis, bool InGamepadKeys, FInputAxisKeyMapping& OutResult);
     UE_PURE static bool IsActionMappedTo(FName InActionName, FKey Key, bool IgnoreCustomBindings);
@@ -32783,7 +32850,7 @@ public:
     void DropPickedupItem();
     void EndGrenadeThrow();
     void Equip(class AItem* Item);
-    bool EquipCategory(EItemCategory Category);
+    bool EquipCategory(TEnum<EItemCategory> Category);
     class AItem* GetOrCreateUnlistedItem(TSubclassOf<class AItem> ItemType);
     void OnRep_FlareClass();
     class AItem* PickupItem(TSubclassOf<class AItem> itemClass);
@@ -32793,10 +32860,10 @@ public:
     UE_SERVER UE_RELIABLE void Server_ThrowFlare();
     UE_SERVER UE_RELIABLE void Server_ThrowItem(class AActor* Item, FVector force, bool PlayMontage);
     void StartGrenadeThrow();
-    UE_AUTHORITY_ONLY void UpdateFromSaveGameInSlot(EItemCategory Category);
+    UE_AUTHORITY_ONLY void UpdateFromSaveGameInSlot(TEnum<EItemCategory> Category);
     UE_PURE class AActor* GetCarriedItem() const;
     UE_PURE class AItem* GetEquippedItem() const;
-    UE_PURE class AItem* GetItem(EItemCategory Category) const;
+    UE_PURE class AItem* GetItem(TEnum<EItemCategory> Category) const;
     UE_PURE class ARecallableSentryGunItem* GetRecallableSentryGunItem() const;
     UE_PURE int GetTotalAmmoLeft() const;
     UE_PURE bool HasDrink() const;
@@ -32833,17 +32900,17 @@ public:
     void CheckForInventoryAchievements(class UObject* WorldContextObject);
     void CheckForInventoryAchievements();
     UE_PURE TArray<class UItemID*> GetAllItemsList() const;
-    UE_PURE int GetItemIndex(EItemCategory Category, class UItemID* Item) const;
-    UE_PURE TArray<class UItemID*> GetItemList(EItemCategory Category) const;
-    UE_PURE TArray<TSubclassOf<class AActor>> GetLoadedItemList(EItemCategory Category) const;
-    UE_PURE TArray<TSubclassOf<class AActor>> GetLoadedItemListFiltered(EItemCategory Category, TDelegate<void(TSubclassOf<class AActor> itemClass, bool& Result)> Filter) const;
-    UE_PURE class UItemID* GetNextItem(EItemCategory Category, class UItemID* currentItem) const;
-    UE_PURE class UItemID* GetNextUnlockedItem(class UObject* WorldContextObject, EItemCategory Category, class UItemID* currentItem) const;
-    UE_PURE class UItemID* GetNextUnlockedItem(EItemCategory Category, class UItemID* currentItem) const;
-    UE_PURE int GetNumberOfItems(EItemCategory Category) const;
-    UE_PURE class UItemID* GetPreviousItem(EItemCategory Category, class UItemID* currentItem) const;
-    UE_PURE class UItemID* GetPreviousUnlockedItem(class UObject* WorldContextObject, EItemCategory Category, class UItemID* currentItem) const;
-    UE_PURE class UItemID* GetPreviousUnlockedItem(EItemCategory Category, class UItemID* currentItem) const;
+    UE_PURE int GetItemIndex(TEnum<EItemCategory> Category, class UItemID* Item) const;
+    UE_PURE TArray<class UItemID*> GetItemList(TEnum<EItemCategory> Category) const;
+    UE_PURE TArray<TSubclassOf<class AActor>> GetLoadedItemList(TEnum<EItemCategory> Category) const;
+    UE_PURE TArray<TSubclassOf<class AActor>> GetLoadedItemListFiltered(TEnum<EItemCategory> Category, TDelegate<void(TSubclassOf<class AActor> itemClass, bool& Result)> Filter) const;
+    UE_PURE class UItemID* GetNextItem(TEnum<EItemCategory> Category, class UItemID* currentItem) const;
+    UE_PURE class UItemID* GetNextUnlockedItem(class UObject* WorldContextObject, TEnum<EItemCategory> Category, class UItemID* currentItem) const;
+    UE_PURE class UItemID* GetNextUnlockedItem(TEnum<EItemCategory> Category, class UItemID* currentItem) const;
+    UE_PURE int GetNumberOfItems(TEnum<EItemCategory> Category) const;
+    UE_PURE class UItemID* GetPreviousItem(TEnum<EItemCategory> Category, class UItemID* currentItem) const;
+    UE_PURE class UItemID* GetPreviousUnlockedItem(class UObject* WorldContextObject, TEnum<EItemCategory> Category, class UItemID* currentItem) const;
+    UE_PURE class UItemID* GetPreviousUnlockedItem(TEnum<EItemCategory> Category, class UItemID* currentItem) const;
 };
 
 class IProjectileSpawner
@@ -32936,7 +33003,7 @@ public:
     class UPlayerCharacterID* characterID;
     class UItemSkin* Reward;
     class UItemData* WeaponData;
-    EWeaponMaintenanceState MaintenanceState;
+    TEnum<EWeaponMaintenanceState> MaintenanceState;
     int MaintenanceLevel;
     int MaintenanceXP;
     int MaintenanceTargetXP;
@@ -33060,7 +33127,7 @@ public:
     UE_PURE class UPlayerCharacterID* GetOwningCharacter() const;
     UE_PURE class UItemID* GetOwningItem() const;
     UE_PURE FText GetSkinName() const;
-    UE_PURE EItemSkinType GetSkinType() const;
+    UE_PURE TEnum<EItemSkinType> GetSkinType() const;
     UE_PURE bool IsEquippedOnItem(class UItemID* ItemID, class AFSDPlayerState* PlayerState) const;
     UE_PURE bool IsLocked(class UObject* WorldContext, class UItemID* skinnableID) const;
     UE_PURE bool IsLocked(class UItemID* skinnableID) const;
@@ -33180,10 +33247,10 @@ class UMouseCursorWidget : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "MouseCursorWidget");
-    EFSDInputSource TargetInput;
+    TEnum<EFSDInputSource> TargetInput;
     bool bIsHovering;
     void OnHover();
-    void OnInputSourceChanged(EFSDInputSource Source);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> Source);
     void OnUnhover();
 };
 
@@ -33216,16 +33283,16 @@ class UBeltDrivenWeaponUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "BeltDrivenWeaponUpgrade");
-    EBeltDrivenWeaponUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EBeltDrivenWeaponUpgrade upgradeType_0);
+    TEnum<EBeltDrivenWeaponUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EBeltDrivenWeaponUpgrade> upgradeType_0);
 };
 
 class UBoltActionRifleUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "BoltActionRifleUpgrade");
-    EBoltActionRifleUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EBoltActionRifleUpgrades upgradeType_0);
+    TEnum<EBoltActionRifleUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EBoltActionRifleUpgrades> upgradeType_0);
 };
 
 class ATunnelEventTreasure : public AGem
@@ -33247,40 +33314,40 @@ class UDualMachinePistolsUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "DualMachinePistolsUpgrade");
-    EDualMachinePistolsUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EDualMachinePistolsUpgrades upgradeType_0);
+    TEnum<EDualMachinePistolsUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EDualMachinePistolsUpgrades> upgradeType_0);
 };
 
 class UChargedWeaponUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ChargedWeaponUpgrade");
-    EChargedWeaponUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EChargedWeaponUpgrades upgradeType_0);
+    TEnum<EChargedWeaponUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EChargedWeaponUpgrades> upgradeType_0);
 };
 
 class UAutoCannonUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "AutoCannonUpgrade");
-    EAutoCannonUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EAutoCannonUpgrades upgradeType_0);
+    TEnum<EAutoCannonUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EAutoCannonUpgrades> upgradeType_0);
 };
 
 class USawedOffShotgunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "SawedOffShotgunUpgrade");
-    ESawedOffShotgunUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ESawedOffShotgunUpgrades upgradeType_0);
+    TEnum<ESawedOffShotgunUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ESawedOffShotgunUpgrades> upgradeType_0);
 };
 
 class UBurstWeaponUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "BurstWeaponUpgrade");
-    EBurstWeaponUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EBurstWeaponUpgrades upgradeType_0);
+    TEnum<EBurstWeaponUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EBurstWeaponUpgrades> upgradeType_0);
 };
 
 class UBannerMetadata : public UBlueprintAsyncActionBase
@@ -33298,32 +33365,32 @@ class UBasicPistolUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "BasicPistolUpgrade");
-    EBasicPistol upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EBasicPistol upgradeType_0);
+    TEnum<EBasicPistol> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EBasicPistol> upgradeType_0);
 };
 
 class URevolverUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "RevolverUpgrade");
-    ERevolerUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ERevolerUpgrades upgradeType_0);
+    TEnum<ERevolerUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ERevolerUpgrades> upgradeType_0);
 };
 
 class UCryoSprayUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "CryoSprayUpgrade");
-    ECryoSprayUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ECryoSprayUpgrades upgradeType_0);
+    TEnum<ECryoSprayUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ECryoSprayUpgrades> upgradeType_0);
 };
 
 class UPickaxeUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "PickaxeUpgrade");
-    EPickaxeUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EPickaxeUpgradeType upgradeType_0);
+    TEnum<EPickaxeUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EPickaxeUpgradeType> upgradeType_0);
 };
 
 class UPlayerAfflictionOverlay : public UDataAsset
@@ -33341,8 +33408,8 @@ class UFlameThrowerUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "FlameThrowerUpgrade");
-    EFlameThrowerUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EFlameThrowerUpgradeType upgradeType_0);
+    TEnum<EFlameThrowerUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EFlameThrowerUpgradeType> upgradeType_0);
 };
 
 class UStickyFlameStatusEffectUpgrade : public UItemUpgrade
@@ -33358,8 +33425,8 @@ class UInventoryItemUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "InventoryItemUpgrade");
-    EInventoryItemUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EInventoryItemUpgradeType upgradeType_0);
+    TEnum<EInventoryItemUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EInventoryItemUpgradeType> upgradeType_0);
 };
 
 class UCapacityUpgrade : public UStandardItemUpgrade
@@ -33380,26 +33447,26 @@ class UReflectionHitscanUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ReflectionHitscanUpgrade");
-    EReflectionHitscanUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EReflectionHitscanUpgradeType upgradeType_0);
+    TEnum<EReflectionHitscanUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EReflectionHitscanUpgradeType> upgradeType_0);
 };
 
 class UHitscanBaseUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "HitscanBaseUpgrade");
-    EHitScanBaseUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EHitScanBaseUpgradeType upgradeType_0);
+    TEnum<EHitScanBaseUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EHitScanBaseUpgradeType> upgradeType_0);
 };
 
 class UDamageUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "DamageUpgrade");
-    EDamageUpgrade upgradeType;
-    EDamageComponentType DamageComponentType;
+    TEnum<EDamageUpgrade> upgradeType;
+    TEnum<EDamageComponentType> DamageComponentType;
     TSubclassOf<class AActor> RequiredClass;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, EDamageUpgrade upgradeType_0, EDamageComponentType DamageComponentType_0);
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, TEnum<EDamageUpgrade> upgradeType_0, TEnum<EDamageComponentType> DamageComponentType_0);
 };
 
 class UFlatDamageUpgrade : public UItemUpgrade
@@ -33462,10 +33529,10 @@ class UTargetStateDamageBonusUpgrade : public UItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "TargetStateDamageBonusUpgrade");
-    ETargetStateDamageBonusType TargetState;
+    TEnum<ETargetStateDamageBonusType> TargetState;
     float Bonus;
     class UDamageClass* DamageClass;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player, ETargetStateDamageBonusType TargetState_0);
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player, TEnum<ETargetStateDamageBonusType> TargetState_0);
 };
 
 class UStatusDamageBonusUpgrade : public UItemUpgrade
@@ -33502,8 +33569,8 @@ class UModifyDynamicStatusEffectDamageBonusUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ModifyDynamicStatusEffectDamageBonusUpgrade");
-    EModifyStatusEffectDamageUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, EModifyStatusEffectDamageUpgrade upgradeType_0);
+    TEnum<EModifyStatusEffectDamageUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, TEnum<EModifyStatusEffectDamageUpgrade> upgradeType_0);
 };
 
 class UDamageTagBonusUpgrade : public UItemUpgrade
@@ -33534,24 +33601,24 @@ class USingleUsableUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "SingleUsableUpgrade");
-    ESingleUsableUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> subItem, class AFSDPlayerState* Player, ESingleUsableUpgradeType upgradeType_0);
+    TEnum<ESingleUsableUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> subItem, class AFSDPlayerState* Player, TEnum<ESingleUsableUpgradeType> upgradeType_0);
 };
 
 class UFlareUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "FlareUpgrade");
-    EFlareUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> flareClass, EFlareUpgradeType upgradeType_0);
+    TEnum<EFlareUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> flareClass, TEnum<EFlareUpgradeType> upgradeType_0);
 };
 
 class ULineCutterUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "LineCutterUpgrade");
-    ELineCutterUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, ELineCutterUpgradeType upgradeType_0);
+    TEnum<ELineCutterUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<ELineCutterUpgradeType> upgradeType_0);
 };
 
 class UFSDMissionSettings : public UDeveloperSettings
@@ -33570,44 +33637,44 @@ class ULineCutterProjectileUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "LineCutterProjectileUpgrade");
-    ELineCutterProjectileUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, ELineCutterProjectileUpgradeType upgradeType_0);
+    TEnum<ELineCutterProjectileUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<ELineCutterProjectileUpgradeType> upgradeType_0);
 };
 
 class UProjectileUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ProjectileUpgrade");
-    EProjectileUpgrade upgradeType;
+    TEnum<EProjectileUpgrade> upgradeType;
     TSubclassOf<class AActor> ProjectileClass;
     class UItemUpgradeCondition* Condition;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, EProjectileUpgrade upgradeType_0);
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, TEnum<EProjectileUpgrade> upgradeType_0);
 };
 
 class UFlareGunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "FlareGunUpgrade");
-    EFlaregunUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player, EFlaregunUpgrades upgradeType_0);
+    TEnum<EFlaregunUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, class AFSDPlayerState* Player, TEnum<EFlaregunUpgrades> upgradeType_0);
 };
 
 class UFlaregunProjectileUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "FlaregunProjectileUpgrade");
-    EFlaregunProjectileUpgrades upgradeType;
+    TEnum<EFlaregunProjectileUpgrades> upgradeType;
     TSubclassOf<class AActor> ProjectileClass;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, EFlaregunProjectileUpgrades upgradeType_0);
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, class AFSDPlayerState* Player, TEnum<EFlaregunProjectileUpgrades> upgradeType_0);
 };
 
 class UChargedProjectileUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ChargedProjectileUpgrade");
-    EChargedProjectileUpgrades upgradeType;
+    TEnum<EChargedProjectileUpgrades> upgradeType;
     TSubclassOf<class AActor> ProjectileClass;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, TSubclassOf<class AActor> upgradedActor, class AFSDPlayerState* Player, EChargedProjectileUpgrades upgradeType_0);
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, TSubclassOf<class AActor> upgradedActor, class AFSDPlayerState* Player, TEnum<EChargedProjectileUpgrades> upgradeType_0);
 };
 
 class UMoveComponentToAction : public UTickableActionBase
@@ -33615,41 +33682,41 @@ class UMoveComponentToAction : public UTickableActionBase
 public:
     UE_CLASS("/Script/FSD", "MoveComponentToAction");
     TMulticastInlineDelegate<void(class USceneComponent* Component_0)> Completed;
-    static class UMoveComponentToAction* EaseComponentTo(class UObject* WorldContext, class USceneComponent* InComponent, FTransform InEndTransform, EEasingFunc InEasingMode, bool InWorldSpace, float InDuration);
-    static class UMoveComponentToAction* EaseComponentTo(class USceneComponent* InComponent, FTransform InEndTransform, EEasingFunc InEasingMode, bool InWorldSpace, float InDuration);
+    static class UMoveComponentToAction* EaseComponentTo(class UObject* WorldContext, class USceneComponent* InComponent, FTransform InEndTransform, TEnum<EEasingFunc> InEasingMode, bool InWorldSpace, float InDuration);
+    static class UMoveComponentToAction* EaseComponentTo(class USceneComponent* InComponent, FTransform InEndTransform, TEnum<EEasingFunc> InEasingMode, bool InWorldSpace, float InDuration);
 };
 
 class UZiplineGunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ZiplineGunUpgrade");
-    EZiplineGunUpgrades upgradeType;
+    TEnum<EZiplineGunUpgrades> upgradeType;
     TSubclassOf<class AZipLineProjectile> ProjectileClass;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, EZiplineGunUpgrades upgradeType_0);
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<EZiplineGunUpgrades> upgradeType_0);
 };
 
 class UGrapplingHookUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "GrapplingHookUpgrade");
-    EGrapplingHookUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, EGrapplingHookUpgrade upgradeType_0);
+    TEnum<EGrapplingHookUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<EGrapplingHookUpgrade> upgradeType_0);
 };
 
 class USentryGunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "SentryGunUpgrade");
-    ESentryGunUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ESentryGunUpgradeType upgradeType_0);
+    TEnum<ESentryGunUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ESentryGunUpgradeType> upgradeType_0);
 };
 
 class UShieldGeneratorUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ShieldGeneratorUpgrade");
-    EShieldGeneratorUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EShieldGeneratorUpgrades upgradeType_0);
+    TEnum<EShieldGeneratorUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EShieldGeneratorUpgrades> upgradeType_0);
 };
 
 class UAddComponentUpgrade : public UItemUpgrade
@@ -33666,10 +33733,10 @@ class UTriggeredStatusEffectUpgrade : public UItemUpgrade
 public:
     UE_CLASS("/Script/FSD", "TriggeredStatusEffectUpgrade");
     TSubclassOf<class UStatusEffect> StatusEffect;
-    ETriggeredStatusEffectType upgradeType;
+    TEnum<ETriggeredStatusEffectType> upgradeType;
     float AoERange;
     TSubclassOf<class UStatusEffect> OwnerEffect;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TSubclassOf<class UStatusEffect> StatusEffect_0, ETriggeredStatusEffectType aUpgradeType);
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TSubclassOf<class UStatusEffect> StatusEffect_0, TEnum<ETriggeredStatusEffectType> aUpgradeType);
     void OnEffectShouldTrigger(class AActor* PlayerCharacter);
 };
 
@@ -33696,16 +33763,16 @@ class UBoscoUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "BoscoUpgrade");
-    EBoscoUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, EBoscoUpgrades upgradeType_0);
+    TEnum<EBoscoUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<EBoscoUpgrades> upgradeType_0);
 };
 
 class UPlatformGunUpgrade : public UItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "PlatformGunUpgrade");
-    EPlatformGunUpgrades myUpgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, EPlatformGunUpgrades aUpgradeType);
+    TEnum<EPlatformGunUpgrades> myUpgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TEnum<EPlatformGunUpgrades> aUpgradeType);
 };
 
 class UBonusDamageUpgrade : public UItemUpgrade
@@ -33719,8 +33786,8 @@ class UProjectileLauncherBaseUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "ProjectileLauncherBaseUpgrade");
-    EProjectileLauncherBaseUpgradeType upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EProjectileLauncherBaseUpgradeType upgradeType_0);
+    TEnum<EProjectileLauncherBaseUpgradeType> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EProjectileLauncherBaseUpgradeType> upgradeType_0);
 };
 
 class UVanityFunctionLibrary : public UBlueprintFunctionLibrary
@@ -33738,8 +33805,8 @@ class UMicroMissileLauncherUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "MicroMissileLauncherUpgrade");
-    EMicroMissileLauncherUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EMicroMissileLauncherUpgrades upgradeType_0);
+    TEnum<EMicroMissileLauncherUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EMicroMissileLauncherUpgrades> upgradeType_0);
 };
 
 class UNotContainsNameStrategy : public USimpleNameStrategy
@@ -33752,24 +33819,24 @@ class UGooGunUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "GooGunUpgrade");
-    EGooGunUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EGooGunUpgrades upgradeType_0);
+    TEnum<EGooGunUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EGooGunUpgrades> upgradeType_0);
 };
 
 class UGooGunProjectileUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "GooGunProjectileUpgrade");
-    EGooGunProjectileUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, EGooGunProjectileUpgrades upgradeType_0);
+    TEnum<EGooGunProjectileUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(class AFSDPlayerState* Player, TSubclassOf<class AActor> Item, TSubclassOf<class AActor> upgradedItem, TEnum<EGooGunProjectileUpgrades> upgradeType_0);
 };
 
 class ULockOnWeaponUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "LockOnWeaponUpgrade");
-    ELockOnWeaponUpgrades upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, ELockOnWeaponUpgrades upgradeType_0);
+    TEnum<ELockOnWeaponUpgrades> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<ELockOnWeaponUpgrades> upgradeType_0);
 };
 
 class UWeaponChargeProgressDamageBonus : public UItemUpgrade
@@ -33785,8 +33852,8 @@ class UHeavyParticleCannonUpgrade : public UStandardItemUpgrade
 {
 public:
     UE_CLASS("/Script/FSD", "HeavyParticleCannonUpgrade");
-    EHeavyParticleCannonUpgrade upgradeType;
-    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, EHeavyParticleCannonUpgrade upgradeType_0);
+    TEnum<EHeavyParticleCannonUpgrade> upgradeType;
+    UE_PURE static FUpgradeValues GetUpgradedValue(TSubclassOf<class AItem> Item, class AFSDPlayerState* Player, TEnum<EHeavyParticleCannonUpgrade> upgradeType_0);
 };
 
 class UNoisyPathfinderComponent : public UActorComponent
@@ -33942,7 +34009,7 @@ public:
     class UTetherComponent* backConnection;
     static constexpr const char* backConnection__Replicated = "OnRep_BackConnection:";
     float ConnectionDistance;
-    ETetherConnectionMode ConnectionMode;
+    TEnum<ETetherConnectionMode> ConnectionMode;
     int ConnectionPriority;
     int ConnectionHistorySize;
     bool GeneratesPower;
@@ -33956,7 +34023,7 @@ public:
     class UTetherComponent* GetForwardConnection();
     class UTetherComponent* GetTetherlineEnd(bool front);
     void MessageBody(const FTetherMessageSettings& Message);
-    void MessageTetherLine(const FName& Message, float Delay, ETetherMessageDirection messageDirection);
+    void MessageTetherLine(const FName& Message, float Delay, TEnum<ETetherMessageDirection> messageDirection);
     void OnRep_BackConnection();
     void OnRep_ForwardConnection();
     void OnRep_HasPower();
@@ -34023,7 +34090,7 @@ public:
     void GetPointTransform(FTransform& PointTransform);
     void OnPointOfInterest(class AActor* TargetActor, FVector TargetLocation, class UTexture2D* TargetIcon);
     UE_SERVER UE_RELIABLE void Server_SecondaryUse(FVector Location, FVector Normal, class AActor* Actor, class UPrimitiveComponent* Cmponent, class UTerrainMaterial* TerrainMaterial);
-    UE_SERVER UE_RELIABLE void ServerPlaceMarker(FVector Location, FVector Normal, class AActor* Actor, class UPrimitiveComponent* Cmponent, class UTerrainMaterial* TerrainMaterial, ELaserPointerMarkerType eMarkerType);
+    UE_SERVER UE_RELIABLE void ServerPlaceMarker(FVector Location, FVector Normal, class AActor* Actor, class UPrimitiveComponent* Cmponent, class UTerrainMaterial* TerrainMaterial, TEnum<ELaserPointerMarkerType> eMarkerType);
     void ToggleLaserVisible(bool aVisible);
     void UnlockToMinersManual(class UObject* WorldContextObject, FGuid ObjectID);
     void UnlockToMinersManual(FGuid ObjectID);
@@ -34114,8 +34181,8 @@ public:
     UE_AUTHORITY_ONLY static FVector FindRandomPositionOnNavmeshAtDistance(const FVector& Origin, float atDistance);
     UE_AUTHORITY_ONLY UE_PURE static bool IsPathfinderReady(class UObject* WorldContextObject);
     UE_AUTHORITY_ONLY UE_PURE static bool IsPathfinderReady();
-    UE_AUTHORITY_ONLY static FVector SnapToGrid(class UObject* WorldContextObject, const FVector& Origin, EDeepPathFinderType PathType, EDeepPathFinderSize PathSize, bool& success, float maxSnapDistance);
-    UE_AUTHORITY_ONLY static FVector SnapToGrid(const FVector& Origin, EDeepPathFinderType PathType, EDeepPathFinderSize PathSize, bool& success, float maxSnapDistance);
+    UE_AUTHORITY_ONLY static FVector SnapToGrid(class UObject* WorldContextObject, const FVector& Origin, TEnum<EDeepPathFinderType> PathType, TEnum<EDeepPathFinderSize> PathSize, bool& success, float maxSnapDistance);
+    UE_AUTHORITY_ONLY static FVector SnapToGrid(const FVector& Origin, TEnum<EDeepPathFinderType> PathType, TEnum<EDeepPathFinderSize> PathSize, bool& success, float maxSnapDistance);
 };
 
 class ALineCutterProjectile : public AProjectile
@@ -34132,8 +34199,8 @@ public:
     bool bHasReversedDirection;
     bool bIsHoming;
     float FlyStraighTime;
-    EImpactDecalSize EletricDecalSize;
-    EImpactDecalSize ImpactDecalSize;
+    TEnum<EImpactDecalSize> EletricDecalSize;
+    TEnum<EImpactDecalSize> ImpactDecalSize;
     TMulticastInlineDelegate<void(FHitResult Result)> OnLineDestroy;
     TMulticastInlineDelegate<void()> OnLineLifespanEnd;
     TMulticastInlineDelegate<void(FHitResult Result)> OnPerformHit;
@@ -34155,7 +34222,7 @@ public:
     float RotationSpeed;
     FRotator LineRotation;
     static constexpr const char* LineRotation__Replicated = "OnRep_LineRotation:";
-    ELineRotation RotationMode;
+    TEnum<ELineRotation> RotationMode;
     static constexpr const char* RotationMode__Replicated = ":";
     bool ShouldExplode;
     bool OnlyOne;
@@ -34318,7 +34385,7 @@ public:
     TMulticastInlineDelegate<void(int IntValue)> OnInfectionLevelChangedEvent;
     TMulticastInlineDelegate<void(float FloatValue)> OnBreakoutPercentageChanged;
     TMulticastInlineDelegate<void(EInfectionState State)> OnInfectionStateChangedEvent;
-    EInfectionState InfectionState;
+    TEnum<EInfectionState> InfectionState;
     float ReductionCooldown;
     float InfectionImmunityAfterFullInfection;
     float InfectionLevel;
@@ -34426,7 +34493,7 @@ public:
     TSoftObjectPtr<class UMediaTexture> SoftMediaTexture;
     TSoftObjectPtr<class USoundClass> SoftMediaSoundClass;
     TSoftObjectPtr<class UFileMediaSource> SoftMediaSource;
-    EMediaPlayerState PlayerState;
+    TEnum<EMediaPlayerState> PlayerState;
     class UImage* OutputImage;
     void Callback_MediaClosed();
     void Callback_MediaEndReached();
@@ -34435,7 +34502,7 @@ public:
     void Play();
     void PlaySoftSource(TSoftObjectPtr<class UFileMediaSource> InSource);
     void PlaySource(class UFileMediaSource* InSource);
-    void ReceiveStateChanged(EMediaPlayerState InState);
+    void ReceiveStateChanged(TEnum<EMediaPlayerState> InState);
     void Stop();
 };
 
@@ -34984,13 +35051,13 @@ public:
     FText Title;
     class UMissionStatCategory* Category;
     class UFSDAchievement* StatAchievement;
-    EMissionStatType MissionStatType;
+    TEnum<EMissionStatType> MissionStatType;
     bool DoNotShowInMissionStatView;
     bool ShowAllValuesCombined;
     bool ShowHighestValue;
     static void Increment(class UObject* WorldContext, class UMissionStat* Stat, TSubclassOf<class APlayerCharacter> CharacterClass, float amount);
     static void Increment(class UMissionStat* Stat, TSubclassOf<class APlayerCharacter> CharacterClass, float amount);
-    UE_PURE static FText MissionStatToText(EMissionStatType StatType, float Value);
+    UE_PURE static FText MissionStatToText(TEnum<EMissionStatType> StatType, float Value);
     UE_PURE FText GetHighestStatCountAsText(class UObject* WorldContext);
     UE_PURE FText GetHighestStatCountAsText();
     UE_PURE FText GetLowestStatCountAsText(class UObject* WorldContext);
@@ -35291,12 +35358,12 @@ public:
     UE_CLASS("/Script/FSD", "ItemID");
     TSoftClassPtr<class UClass> Item;
     class UPlayerCharacterID* ItemOwner;
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     TArray<class UItemSkin*> GetAllSkins();
     UE_PURE class AActor* GetActor() const;
     UE_PURE TSubclassOf<class AActor> GetActorClass() const;
     UE_PURE class AItem* GetItem() const;
-    UE_PURE EItemCategory GetItemCategory() const;
+    UE_PURE TEnum<EItemCategory> GetItemCategory() const;
     UE_PURE TSubclassOf<class AItem> GetItemClass() const;
     UE_PURE class UItemData* GetItemData() const;
     UE_PURE bool IsItemClassChildOf(TSubclassOf<class AActor> InParentClass) const;
@@ -35385,9 +35452,10 @@ class UOptionalUIWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "OptionalUIWidget");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     class UOptionalUICategory* Category;
-    ESlateVisibility VisibleFlag;
-    ESlateVisibility HiddenFlag;
+    TEnum<ESlateVisibility> VisibleFlag;
+    TEnum<ESlateVisibility> HiddenFlag;
     void OnVisibilityChanged(class UOptionalUICategory* UICategory, bool IsVisible_0);
 };
 
@@ -35397,11 +35465,11 @@ public:
     UE_CLASS("/Script/FSD", "OutlineComponent");
     TMulticastInlineDelegate<void(EOutline InOutline)> OnOutlineChanged;
     TMulticastInlineDelegate<void()> OnPingedByLaserPointer;
-    EOutline DefaultOutline;
+    TEnum<EOutline> DefaultOutline;
     bool ActiveOnHoldTAB;
     float CustomLaserPointDuration;
     int LockCounter;
-    EOutline CurrentOutline;
+    TEnum<EOutline> CurrentOutline;
     TArray<class UPrimitiveComponent*> OutlinedComponents;
     TArray<class UPrimitiveComponent*> ExcludedComponents;
     void AddActorToOutline(class AActor* Actor);
@@ -35414,7 +35482,7 @@ public:
     void OnOwnerDeath(class UHealthComponentBase* HealthComponent);
     void OnToggleOutline(bool Visible);
     void RemoveFromOutline(class UPrimitiveComponent* Component);
-    void SetOutline(EOutline outline);
+    void SetOutline(TEnum<EOutline> outline);
     void ToggleDefaultOutline(bool Visible);
     void UnlockOutline();
 };
@@ -35454,8 +35522,9 @@ class UPathfinderCollisionComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "PathfinderCollisionComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     bool ActivatePFCollisionAtInit;
-    EPFCollisionType PFColiType;
+    TEnum<EPFCollisionType> PFColiType;
     UE_AUTHORITY_ONLY void ActivatePFCollision();
     UE_AUTHORITY_ONLY void DisablePFCollision();
 };
@@ -35489,8 +35558,8 @@ class UPawnStat : public UDataAsset
 public:
     UE_CLASS("/Script/FSD", "PawnStat");
     float StartingValue;
-    EPawnStatType PawnStatType;
-    EPawnStatType ValueModificationType;
+    TEnum<EPawnStatType> PawnStatType;
+    TEnum<EPawnStatType> ValueModificationType;
 };
 
 class UPawnStatsComponent : public UActorComponent
@@ -35521,6 +35590,7 @@ class UPerkHUDWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "PerkHUDWidget");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     class UPerkAsset* PerkAsset;
     void ReceivePerkAssetChanged();
     void SetPerkAsset(class UPerkAsset* InPerk);
@@ -35532,6 +35602,7 @@ class UPerkHUDIconWidget : public UPerkHUDWidget
 {
 public:
     UE_CLASS("/Script/FSD", "PerkHUDIconWidget");
+    static constexpr const char* UeClassTail = "0x00a01000 /Script/CoreUObject.Object Engine";
     float CoolDownProgress;
 };
 
@@ -35539,7 +35610,8 @@ class UPerkHUDActivationWidget : public UPerkHUDWidget
 {
 public:
     UE_CLASS("/Script/FSD", "PerkHUDActivationWidget");
-    EPerkHUDActivationLocation Location;
+    static constexpr const char* UeClassTail = "0x00a01000 /Script/CoreUObject.Object Engine";
+    TEnum<EPerkHUDActivationLocation> Location;
 };
 
 class UPerkFunctionLibrary : public UBlueprintFunctionLibrary
@@ -35559,12 +35631,12 @@ public:
     UE_PURE static int GetHighestPerkTier();
     UE_PURE static TArray<class UPerkAsset*> GetOwnedPerks(class UObject* WorldContext);
     UE_PURE static TArray<class UPerkAsset*> GetOwnedPerks();
-    UE_PURE static TArray<class UPerkAsset*> GetOwnedPerksByType(class UObject* WorldContext, EPerkUsageType InType);
-    UE_PURE static TArray<class UPerkAsset*> GetOwnedPerksByType(EPerkUsageType InType);
-    UE_PURE static TArray<EPerkSlotType> GetPerkEquipSlotLayout(class UObject* WorldContext, EPerkUsageType InType, TSubclassOf<class APlayerCharacter> InCharacterClass);
-    UE_PURE static TArray<EPerkSlotType> GetPerkEquipSlotLayout(EPerkUsageType InType, TSubclassOf<class APlayerCharacter> InCharacterClass);
-    static void GetPerkEquipSlots(class UObject* WorldContext, EPerkUsageType InType, TSubclassOf<class APlayerCharacter> InCharacterClass, int& OutAvailableSlots, int& OutUnavailableSlots, int& OutPromotionLockedSlots);
-    static void GetPerkEquipSlots(EPerkUsageType InType, TSubclassOf<class APlayerCharacter> InCharacterClass, int& OutAvailableSlots, int& OutUnavailableSlots, int& OutPromotionLockedSlots);
+    UE_PURE static TArray<class UPerkAsset*> GetOwnedPerksByType(class UObject* WorldContext, TEnum<EPerkUsageType> InType);
+    UE_PURE static TArray<class UPerkAsset*> GetOwnedPerksByType(TEnum<EPerkUsageType> InType);
+    UE_PURE static TArray<EPerkSlotType> GetPerkEquipSlotLayout(class UObject* WorldContext, TEnum<EPerkUsageType> InType, TSubclassOf<class APlayerCharacter> InCharacterClass);
+    UE_PURE static TArray<EPerkSlotType> GetPerkEquipSlotLayout(TEnum<EPerkUsageType> InType, TSubclassOf<class APlayerCharacter> InCharacterClass);
+    static void GetPerkEquipSlots(class UObject* WorldContext, TEnum<EPerkUsageType> InType, TSubclassOf<class APlayerCharacter> InCharacterClass, int& OutAvailableSlots, int& OutUnavailableSlots, int& OutPromotionLockedSlots);
+    static void GetPerkEquipSlots(TEnum<EPerkUsageType> InType, TSubclassOf<class APlayerCharacter> InCharacterClass, int& OutAvailableSlots, int& OutUnavailableSlots, int& OutPromotionLockedSlots);
     static void GetPerkTierState(class UObject* WorldContext, int Tier, bool& TierUnLocked, int& NextRequiredCount, int& NextProgressCount);
     static void GetPerkTierState(int Tier, bool& TierUnLocked, int& NextRequiredCount, int& NextProgressCount);
     UE_PURE static int GetRequiredPerkClaimsForTier(int Tier);
@@ -35582,22 +35654,22 @@ public:
     UE_CLASS("/Script/FSD", "PickaxeFunctionLibrary");
     static void CopyPastePickaxeLoadout(class UObject* WorldContextObject, class UPlayerCharacterID* PlayerId, int fromIndex, int toIndex);
     static void CopyPastePickaxeLoadout(class UPlayerCharacterID* PlayerId, int fromIndex, int toIndex);
-    static void EquipPickaxePart(class UObject* WorldContextObject, class UPickaxePart* part, EPickaxePartLocation partLocation, class UItemID* pickaxeID);
-    static void EquipPickaxePart(class UPickaxePart* part, EPickaxePartLocation partLocation, class UItemID* pickaxeID);
-    UE_PURE static class UPickaxePart* GetEquippedPickaxePart(class UObject* WorldContextObject, EPickaxePartLocation partLocation, class UItemID* pickaxeID);
-    UE_PURE static class UPickaxePart* GetEquippedPickaxePart(EPickaxePartLocation partLocation, class UItemID* pickaxeID);
+    static void EquipPickaxePart(class UObject* WorldContextObject, class UPickaxePart* part, TEnum<EPickaxePartLocation> partLocation, class UItemID* pickaxeID);
+    static void EquipPickaxePart(class UPickaxePart* part, TEnum<EPickaxePartLocation> partLocation, class UItemID* pickaxeID);
+    UE_PURE static class UPickaxePart* GetEquippedPickaxePart(class UObject* WorldContextObject, TEnum<EPickaxePartLocation> partLocation, class UItemID* pickaxeID);
+    UE_PURE static class UPickaxePart* GetEquippedPickaxePart(TEnum<EPickaxePartLocation> partLocation, class UItemID* pickaxeID);
     UE_PURE static FPickaxeSet GetEquippedPickaxeSet(class UObject* WorldContextObject, class UItemID* pickaxeID);
     UE_PURE static FPickaxeSet GetEquippedPickaxeSet(class UItemID* pickaxeID);
     UE_PURE static bool GetIsPickAxePartAcquired(class UObject* WorldContextObject, class UPickaxePart* InPickaxePart);
     UE_PURE static bool GetIsPickAxePartAcquired(class UPickaxePart* InPickaxePart);
-    static TArray<class UPickaxePart*> GetPickaxeParts(class UObject* WorldContextObject, EPickaxePartLocation Category);
-    static TArray<class UPickaxePart*> GetPickaxeParts(EPickaxePartLocation Category);
-    static TArray<class UPickaxePart*> GetUnlockedPickaxeParts(class UObject* WorldContextObject, EPickaxePartLocation Category);
-    static TArray<class UPickaxePart*> GetUnlockedPickaxeParts(EPickaxePartLocation Category);
+    static TArray<class UPickaxePart*> GetPickaxeParts(class UObject* WorldContextObject, TEnum<EPickaxePartLocation> Category);
+    static TArray<class UPickaxePart*> GetPickaxeParts(TEnum<EPickaxePartLocation> Category);
+    static TArray<class UPickaxePart*> GetUnlockedPickaxeParts(class UObject* WorldContextObject, TEnum<EPickaxePartLocation> Category);
+    static TArray<class UPickaxePart*> GetUnlockedPickaxeParts(TEnum<EPickaxePartLocation> Category);
     static void GivePickaxePart(class UObject* WorldContextObject, class UPickaxePart* part);
     static void GivePickaxePart(class UPickaxePart* part);
-    UE_PURE static bool IsPickaxePartEquipped(class UObject* WorldContextObject, EPickaxePartLocation Location, class UPickaxePart* part, class UItemID* pickaxeID);
-    UE_PURE static bool IsPickaxePartEquipped(EPickaxePartLocation Location, class UPickaxePart* part, class UItemID* pickaxeID);
+    UE_PURE static bool IsPickaxePartEquipped(class UObject* WorldContextObject, TEnum<EPickaxePartLocation> Location, class UPickaxePart* part, class UItemID* pickaxeID);
+    UE_PURE static bool IsPickaxePartEquipped(TEnum<EPickaxePartLocation> Location, class UPickaxePart* part, class UItemID* pickaxeID);
     static void RandomizePickaxe(class UObject* WorldContextObject, class UPlayerCharacterID* PlayerId);
     static void RandomizePickaxe(class UPlayerCharacterID* PlayerId);
     static bool RemovePickaxePartFromOwned(class UObject* WorldContextObject, class UPickaxePart* part);
@@ -35608,6 +35680,7 @@ class APickaxeItem : public AItem
 {
 public:
     UE_CLASS("/Script/FSD", "PickaxeItem");
+    static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
     bool QuadDamageCarving;
     class USceneComponent* FP_Root;
     class USceneComponent* TP_Root;
@@ -35641,7 +35714,7 @@ public:
     float DistanceConsideredSameHit;
     float BlockParticlesScaleFP;
     float BlockParticlesScaleTP;
-    EPickaxeState State;
+    TEnum<EPickaxeState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     class USoundCue* PowerAttackRefreshedSound;
     bool PreventQMining;
@@ -35665,14 +35738,14 @@ public:
     UE_MULTICAST void All_SimulateDigDebris(FVector_NetQuantize Position, class UFXSystemAsset* Particles, class USoundCue* cue);
     UE_MULTICAST void All_SimulateHitBlock(FVector_NetQuantize Position, int materia, bool removeDebris, bool isSpecial);
     void OnLoadoutChanged();
-    void OnRep_State(EPickaxeState oldState);
+    void OnRep_State(TEnum<EPickaxeState> oldState);
     void RefreshSpecialCooldown();
     UE_SERVER UE_RELIABLE void Server_DamageTarget(class UPrimitiveComponent* TargetComponent, bool isSpecial, const FVector_NetQuantize& ImpactPoint, const FVector_NetQuantizeNormal& ImpactNormal, class UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
     UE_SERVER UE_RELIABLE void Server_DigBlock(FVector carvePos, FVector carveDirection, int TerrainMaterial, bool isSpecial);
     UE_SERVER UE_RELIABLE void Server_DoPowerAttack();
     UE_SERVER void Server_HitBlock(FVector_NetQuantize Position, int Material, bool removeDebris, bool isSpecial);
     UE_SERVER UE_RELIABLE void Server_RemoveDebrisInstance(FVector_NetQuantize HitPos, int DebrisIndex, int remappedIndex);
-    UE_SERVER UE_RELIABLE void Server_SetState(EPickaxeState NewState);
+    UE_SERVER UE_RELIABLE void Server_SetState(TEnum<EPickaxeState> NewState);
     UE_SERVER UE_RELIABLE void Server_TriggerBezerk();
     void SetSpecialCoolDownDuration(float newCooldownDuration);
     void SpecialTargetDamageEffects(const FVector& ImpactPoint, const FVector& ImpactNormal);
@@ -35686,7 +35759,7 @@ public:
     FText Title;
     class UItemAquisitionBase* Aquisition;
     class UPickaxePartItem* Item;
-    UE_PURE EPickaxePartLocation GetPrefferedLocation() const;
+    UE_PURE TEnum<EPickaxePartLocation> GetPrefferedLocation() const;
     UE_PURE bool GetUnlockedFromStart() const;
 };
 
@@ -35821,7 +35894,7 @@ public:
     UE_MULTICAST void All_Gunsling();
     void OnInRangeChanged(bool InRange);
     void OnObjectiveChanged(class UObjective* Objective);
-    void OnPickupUsed(class APlayerCharacter* User, EInputKeys Key);
+    void OnPickupUsed(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_SERVER UE_RELIABLE void Server_EnablePhysics(const FVector_NetQuantize& Direction);
     UE_SERVER void Server_Gunsling();
 };
@@ -36161,14 +36234,14 @@ public:
     static constexpr const char* DefrostProgress__Replicated = "OnRep_DefrostProgress:";
     bool barVisible;
     class APlayerCharacter* Character;
-    EPlayerTemperatureState TemperatureState;
+    TEnum<EPlayerTemperatureState> TemperatureState;
     static constexpr const char* TemperatureState__Replicated = "OnRep_TemperatureState:";
     UE_AUTHORITY_ONLY void Defrost(float amount);
     void OnDeath(class UHealthComponentBase* Health);
     void OnRep_CurrentTemperature(float OldTemperature);
     void OnRep_DefrostProgress();
     void OnRep_TemperatureChangeSpeed(int8 OldSpeed);
-    void OnRep_TemperatureState(EPlayerTemperatureState oldState);
+    void OnRep_TemperatureState(TEnum<EPlayerTemperatureState> oldState);
     UE_AUTHORITY_ONLY void SetFrozenTemperature();
     UE_AUTHORITY_ONLY void SetNormalTemperature();
     UE_PURE float GetCurrentTemperatureNormalized() const;
@@ -36213,7 +36286,7 @@ public:
     UE_CLASS("/Script/FSD", "DeepDiveTester");
     class UBiome* Biome;
     int Seed;
-    EMissionStructure MissionStructure;
+    TEnum<EMissionStructure> MissionStructure;
     TArray<FDeepDiveTesterItem> stages;
 };
 
@@ -36280,7 +36353,7 @@ public:
     void CalculateResourceDistribution();
     void CountFinalGeneratedResourcesInVeins();
     void CountGeneratedResourcesInVeins();
-    void GenerateDebrisVeins(EDebrisCarvedType CarverType);
+    void GenerateDebrisVeins(TEnum<EDebrisCarvedType> CarverType);
     void GenerateMissingResourceVeins();
     void GenerateResourceVeins();
 };
@@ -36348,15 +36421,15 @@ public:
     static constexpr const char* State__Replicated = "OnRep_State:";
     FPropHuntContestantState previousState;
     FPropHuntContestantState CurrentState;
-    UE_CLIENT UE_RELIABLE void Client_ShowEndScreen(EPropHuntEndScreen EndScreenType, bool GameWon);
+    UE_CLIENT UE_RELIABLE void Client_ShowEndScreen(TEnum<EPropHuntEndScreen> EndScreenType, bool GameWon);
     void OnItemUnequipped(class AItem* InItem);
-    void OnPlayerCameraChanged(ECharacterCameraMode OldMode, ECharacterCameraMode NewMode);
+    void OnPlayerCameraChanged(TEnum<ECharacterCameraMode> OldMode, TEnum<ECharacterCameraMode> NewMode);
     void OnPlayerDestroyed(class AActor* InActor);
     void OnPlayerPassedOut(class APlayerCharacter* InPlayer);
-    void OnPlayerStateChanged(ECharacterState InState);
+    void OnPlayerStateChanged(TEnum<ECharacterState> InState);
     void OnRep_State();
     UE_PURE int GetMaxLives() const;
-    UE_PURE EPropHuntRole GetPropHuntRole() const;
+    UE_PURE TEnum<EPropHuntRole> GetPropHuntRole() const;
     UE_PURE int GetRemainingLives() const;
 };
 
@@ -36372,7 +36445,7 @@ class UPropHuntEndScreenWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "PropHuntEndScreenWidget");
-    EPropHuntEndScreen EndScreenType;
+    TEnum<EPropHuntEndScreen> EndScreenType;
     bool GameWon;
 };
 
@@ -36384,7 +36457,7 @@ public:
     static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
     static constexpr const char* TPMesh__UeSubobject = "TPMesh /Script/Engine.SkeletalMeshComponent";
     static constexpr const char* UpgradableItem__UeSubobject = "Upgradable /Script/FSD.UpgradableItemComponent";
-    void CameraModeUpdated(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void CameraModeUpdated(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
 };
 
 class UPropHuntInitializerComponent : public UActorComponent
@@ -36492,7 +36565,7 @@ public:
     UE_CLASS("/Script/FSD", "RefineryObjective");
     TMulticastInlineDelegate<void(class AFSDRefinery* InRefinery)> OnRefinerySpawned;
     TSoftClassPtr<class UClass> refineryClass;
-    ERefineryState RefineryState;
+    TEnum<ERefineryState> RefineryState;
     class UDebrisPositioning* RefineryPlacement;
     TSoftClassPtr<class UClass> RawMaterialClass;
     class UDebrisPositioning* RawMaterialPlacement;
@@ -36502,7 +36575,7 @@ public:
     int OptionalTunnelRoomID;
     void AddMissionCriticalItems(class AProceduralSetup* Setup);
     FVector GetRefinerySpawnLocation(TSubclassOf<class AFSDRefinery> refineryClass_0);
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     void OnRep_Refinery();
     void ReceiveRefinerySpawned(class AFSDRefinery* InRefinery);
     void SpawnWells(class AProceduralSetup* Setup, const FVector& rigLocation, float minDistanceBetween, const TArray<FVector2D>& minMaxDistancesToRig);
@@ -36520,7 +36593,7 @@ public:
     class UDebrisPositioning* ExtractorPositioning;
     float ExtractorLandingDistance;
     float ExtractMinZDistanceToRawMaterial;
-    ERefinerySecondaryState State;
+    TEnum<ERefinerySecondaryState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     int ExtractionProgress;
     static constexpr const char* ExtractionProgress__Replicated = "OnRep_ExtractionProgress:";
@@ -36531,7 +36604,7 @@ public:
     void OnRep_ExtractionProgress();
     void OnRep_ExtractorPodInstance();
     void OnRep_State();
-    void OnStateChanged(ERefinerySecondaryState NewState);
+    void OnStateChanged(TEnum<ERefinerySecondaryState> NewState);
     UE_AUTHORITY_ONLY void SetPipelineBuild();
     UE_AUTHORITY_ONLY void SetWellAndExtractorConnected();
     UE_AUTHORITY_ONLY void SetWellHasSpawned(class AActor* extractor);
@@ -36661,7 +36734,7 @@ class USchematicReward : public UUnlockReward
 {
 public:
     UE_CLASS("/Script/FSD", "SchematicReward");
-    ESchematicType SchematicType;
+    TEnum<ESchematicType> SchematicType;
     class USchematic* RewardedSchematic;
 };
 
@@ -36671,7 +36744,7 @@ public:
     UE_CLASS("/Script/FSD", "VeinResourceCreator");
     class UVeinResourceData* Resource;
     class UDebrisPositioning* Positioning;
-    ECarveFilterType CarveType;
+    TEnum<ECarveFilterType> CarveType;
     float SegmentMaxDot;
     float VeinWorldHorizontalMaxDot;
     float VeinWorldHorizontalMinDot;
@@ -36773,11 +36846,11 @@ public:
     TMap<FName, FString> MetaData;
     FText Content;
     FTextBlockStyle TextStyle;
-    EFSDInputSource InputSource;
+    TEnum<EFSDInputSource> InputSource;
     class URichTextBlock* RichTextBlock;
     void ApplyTextStyle(class UTextBlock* InTextBlock, const FTextBlockStyle& InTextStyle);
     void OnCustomKeyBindsChanged();
-    void OnInputSourceChanged(EFSDInputSource InSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InSource);
     void ReceiveInputDetails(const FInputDisplay& InDisplay);
     void ReceiveInputUnknown();
     void ScaleTextBlockToHeight(class UTextBlock* InTextBlock, float LineHeight);
@@ -36908,7 +36981,7 @@ public:
     void OpenWindow(class UWindowWidget* Window, bool PlayAudio, bool ShowCursor);
     class UWindowWidget* OpenWindowFromClass(TSubclassOf<class UWindowWidget> WindowClass, int ZOrder, bool ShowCursor);
     void ReplaceWindow(class UWindowWidget* Window);
-    void SetSingletonWidgetVisibility(TSubclassOf<class UUserWidget> WidgetClass, ESlateVisibility Visibility);
+    void SetSingletonWidgetVisibility(TSubclassOf<class UUserWidget> WidgetClass, TEnum<ESlateVisibility> Visibility);
     UE_PURE bool AnyWindowsOpen() const;
     UE_PURE class UWindowWidget* GetCurrentWindow() const;
     UE_PURE bool IsTopWindow(class UWindowWidget* Window) const;
@@ -36930,7 +37003,7 @@ public:
     FVector Location;
     TSubclassOf<class AActor> ActorToSpawn;
     FVector AdjustmentDirection;
-    EItemAdjustmentType Adjustment;
+    TEnum<EItemAdjustmentType> Adjustment;
     FVector ScaleMin;
     FVector ScaleMax;
     FRotator RotationDelta;
@@ -36951,7 +37024,7 @@ public:
     UE_CLASS("/Script/FSD", "RoomGeneratorBase");
     float Bounds;
     bool CanOnlyBeUsedOnce;
-    ERoomMirroringSupport MirrorSupport;
+    TEnum<ERoomMirroringSupport> MirrorSupport;
     FGameplayTagContainer RoomTags;
 };
 
@@ -37128,8 +37201,8 @@ public:
     UE_PURE FColor GetIconTint() const;
     UE_PURE TMap<class UResourceData*, int> GetResourceCost() const;
     UE_PURE class USchematicItem* GetSchematicItem() const;
-    UE_PURE ESchematicState GetSchematicState(class UObject* WorldContext) const;
-    UE_PURE ESchematicState GetSchematicState() const;
+    UE_PURE TEnum<ESchematicState> GetSchematicState(class UObject* WorldContext) const;
+    UE_PURE TEnum<ESchematicState> GetSchematicState() const;
     UE_PURE FText GetTitle() const;
 };
 
@@ -37155,7 +37228,7 @@ public:
     TSoftObjectPtr<class UTexture2D> FrameTexture;
     FLinearColor FrameTint;
     FLinearColor BackgroundTint;
-    ESchematicType SchematicType;
+    TEnum<ESchematicType> SchematicType;
     TSoftObjectPtr<class UDialogDataAsset> ShoutForging;
     class UEventRewardType* RewardType;
     int SortOrder;
@@ -37281,7 +37354,7 @@ public:
     TArray<FUnassignedReward> UnassignedRewards;
     class UTreeOfVanity* TreeOfVanity;
     class UGameDLC* SeasonDLC;
-    ESeasonMissionMapOverlayType MissionMapEventZoneType;
+    TEnum<ESeasonMissionMapOverlayType> MissionMapEventZoneType;
     FRuntimeFloatCurve SpawnChanceByMissionLength;
     FRuntimeFloatCurve MinorSpawnChanceByMissionLenght;
     TArray<FSeasonalEventEntry> SeasonalEvents;
@@ -37532,7 +37605,7 @@ public:
     UE_PURE static FString FSDGetBuildId(const FBlueprintSessionResult& Result);
     UE_PURE static class UDifficultySetting* FSDGetDifficulty(const FBlueprintSessionResult& Result);
     UE_PURE static TArray<FDifficultyMutatorItem> FSDGetDifficultyModifiers(const FBlueprintSessionResult& Result);
-    UE_PURE static EServerDistance FSDGetDistance(const FBlueprintSessionResult& Result);
+    UE_PURE static TEnum<EServerDistance> FSDGetDistance(const FBlueprintSessionResult& Result);
     UE_PURE static float FSDGetDistanceFloat(const FBlueprintSessionResult& Result);
     static FGlobalMissionSeed FSDGetGlobalMissionSeed(const FBlueprintSessionResult& Result);
     UE_PURE static FString FSDGetHostUserID(const FBlueprintSessionResult& Result);
@@ -37563,7 +37636,7 @@ public:
     UE_PURE static bool FSDIsSessionValid(const FBlueprintSessionResult& Result);
     static void FSDListen(class UObject* WorldContextObject);
     static void FSDListen();
-    UE_PURE static EFSDMissionStatus FSDMissionStatus(const FBlueprintSessionResult& Result);
+    UE_PURE static TEnum<EFSDMissionStatus> FSDMissionStatus(const FBlueprintSessionResult& Result);
     static bool FSDUpdateSessionInfo(class UObject* WorldContextObject);
     static bool FSDUpdateSessionInfo();
     static bool GetCurrentSessionState(FString& sessionState, FString& ID);
@@ -37577,14 +37650,14 @@ public:
     UE_PURE static FString GetHostUsername(class UObject* WorldContextObject);
     UE_PURE static FString GetHostUsername();
     static FString GetLoginStatus(int localUserNum);
-    UE_PURE static EMissionStructure GetMissionStructure(const FBlueprintSessionResult& Result);
-    static EFSDNATType GetNATType(class UObject* WorldContextObject);
-    static EFSDNATType GetNATType();
+    UE_PURE static TEnum<EMissionStructure> GetMissionStructure(const FBlueprintSessionResult& Result);
+    static TEnum<EFSDNATType> GetNATType(class UObject* WorldContextObject);
+    static TEnum<EFSDNATType> GetNATType();
     static bool GetOnlinePlayerName(int localUserNum, FString& Name_0);
     UE_PURE static FText GetSessionJoinError(class UObject* WorldContextObject);
     UE_PURE static FText GetSessionJoinError();
     static FString GetVoiceStatus();
-    UE_PURE static bool IsDisconnectReasonAKick(EDisconnectReason reason);
+    UE_PURE static bool IsDisconnectReasonAKick(TEnum<EDisconnectReason> reason);
     UE_PURE static bool IsInActiveSession();
     UE_PURE static bool IsVoiceChatting();
     static void JoinOfficialXboxClub(class UObject* WorldContextObject);
@@ -37593,8 +37666,8 @@ public:
     static void ShowInviteUI();
     static void ShowStoreUI(class UObject* WorldContextObject);
     static void ShowStoreUI();
-    static void SortServerList(class UObject* WorldContextObject, EServerSortOrder order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult>& servers);
-    static void SortServerList(EServerSortOrder order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult>& servers);
+    static void SortServerList(class UObject* WorldContextObject, TEnum<EServerSortOrder> order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult>& servers);
+    static void SortServerList(TEnum<EServerSortOrder> order, bool Reverse, bool sortByFriends, TArray<FBlueprintSessionResult>& servers);
     static void StartCheckForInstalledDLC(class UObject* WorldContextObject);
     static void StartCheckForInstalledDLC();
     static bool StartSearchForBlockedUsers(int localUserNum);
@@ -37609,6 +37682,7 @@ class AShieldGeneratorItem : public AThrowableItem
 {
 public:
     UE_CLASS("/Script/FSD", "ShieldGeneratorItem");
+    static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
     class UCapacityHoldingItemAggregator* ChargeCapacity;
     class UCapacityHoldingItemAggregator* CarryCapacity;
     float RechargeDuration;
@@ -37763,12 +37837,12 @@ public:
     class UItemSkin* EquippedSkinMesh;
     static void EquipSkin(class UItemSkin* Skin, class UItemID* ItemID, class AFSDPlayerState* Player);
     UE_PURE static class UItemSkin* GetBaseColorSkinForMeshSkin(class UItemID* ItemID, class UItemSkin* meshSkin);
-    UE_PURE static class UItemSkin* GetDefaultItemSkin(class UItemID* ItemID, EItemSkinType itemSkinType);
+    UE_PURE static class UItemSkin* GetDefaultItemSkin(class UItemID* ItemID, TEnum<EItemSkinType> itemSkinType);
     static TArray<class UItemSkin*> GetEquippableColorSkins(class UItemID* ItemID, class AFSDPlayerState* Player);
-    static class UItemSkin* GetEquippedSkin(class UItemID* ItemID, EItemSkinType skinType, class AFSDPlayerState* Player);
+    static class UItemSkin* GetEquippedSkin(class UItemID* ItemID, TEnum<EItemSkinType> skinType, class AFSDPlayerState* Player);
     static class UItemSkin* GetEquippedSkinColor(class UItemID* ItemID, class AFSDPlayerState* Player);
     static class UItemSkin* GetEquippedSkinMesh(class UItemID* ItemID, class AFSDPlayerState* Player);
-    static TArray<class UItemSkin*> GetSkinsForItem(class UItemID* ItemID, EItemSkinType skinType);
+    static TArray<class UItemSkin*> GetSkinsForItem(class UItemID* ItemID, TEnum<EItemSkinType> skinType);
     void OnLoadoutChanged();
     void UpdateSkin(class AFSDPlayerState* Player);
 };
@@ -37827,7 +37901,7 @@ class UPickaxeIconSceneCaptureComponent : public USceneCaptureComponent2D
 public:
     UE_CLASS("/Script/FSD", "PickaxeIconSceneCaptureComponent");
     bool bIsFullView;
-    EPickaxePartLocation CameraKey;
+    TEnum<EPickaxePartLocation> CameraKey;
 };
 
 class USpaceRigBarMenuItem : public UFSDUserWidget
@@ -37845,32 +37919,32 @@ class USpawningBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "SpawningBlueprintLibrary");
-    UE_AUTHORITY_ONLY static FVector GetSpawnPointFromLocation(class UObject* WorldContextObject, FVector Location, float Distance, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static FVector GetSpawnPointFromLocation(FVector Location, float Distance, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static FVector GetSpawnPointInRange(class UObject* WorldContextObject, float distanceToPlayers, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static FVector GetSpawnPointInRange(float distanceToPlayers, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsAroundLocation(class UObject* WorldContextObject, FVector Location, float Distance, int spawnPointCount, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsAroundLocation(FVector Location, float Distance, int spawnPointCount, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsFromLocation(class UObject* WorldContextObject, FVector Location, float Distance, int spawnPointCount, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsFromLocation(FVector Location, float Distance, int spawnPointCount, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInCircle(class UObject* WorldContextObject, FVector Location, float Radius, int Count, bool scaleToDificulty, float maxSpawnAngle, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInCircle(FVector Location, float Radius, int Count, bool scaleToDificulty, float maxSpawnAngle, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInRange(class UObject* WorldContextObject, float distanceToPlayers, int spawnPointCount, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInRange(float distanceToPlayers, int spawnPointCount, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesAtEachLocation(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, TArray<FVector> Locations, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesAtEachLocation(class UEnemyDescriptor* EnemyDescriptor, TArray<FVector> Locations, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocation(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocation(class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocationWithCallback(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, TDelegate<void(class APawn* enemy)> Callback, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocationWithCallback(class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, TDelegate<void(class APawn* enemy)> Callback, bool Alert, bool scaleToDifficulty, EDeepPathFinderSize pfSize);
+    UE_AUTHORITY_ONLY static FVector GetSpawnPointFromLocation(class UObject* WorldContextObject, FVector Location, float Distance, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static FVector GetSpawnPointFromLocation(FVector Location, float Distance, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static FVector GetSpawnPointInRange(class UObject* WorldContextObject, float distanceToPlayers, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static FVector GetSpawnPointInRange(float distanceToPlayers, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsAroundLocation(class UObject* WorldContextObject, FVector Location, float Distance, int spawnPointCount, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsAroundLocation(FVector Location, float Distance, int spawnPointCount, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsFromLocation(class UObject* WorldContextObject, FVector Location, float Distance, int spawnPointCount, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsFromLocation(FVector Location, float Distance, int spawnPointCount, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInCircle(class UObject* WorldContextObject, FVector Location, float Radius, int Count, bool scaleToDificulty, float maxSpawnAngle, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInCircle(FVector Location, float Radius, int Count, bool scaleToDificulty, float maxSpawnAngle, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInRange(class UObject* WorldContextObject, float distanceToPlayers, int spawnPointCount, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static TArray<FVector> GetSpawnPointsInRange(float distanceToPlayers, int spawnPointCount, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesAtEachLocation(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, TArray<FVector> Locations, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesAtEachLocation(class UEnemyDescriptor* EnemyDescriptor, TArray<FVector> Locations, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocation(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, bool Alert, bool scaleToDifficulty, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocation(class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, bool Alert, bool scaleToDifficulty, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocationWithCallback(class UObject* WorldContextObject, class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, TDelegate<void(class APawn* enemy)> Callback, bool Alert, bool scaleToDifficulty, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemiesAtLocationWithCallback(class UEnemyDescriptor* EnemyDescriptor, int Count, FVector Location, TDelegate<void(class APawn* enemy)> Callback, bool Alert, bool scaleToDifficulty, TEnum<EDeepPathFinderSize> pfSize);
     UE_AUTHORITY_ONLY static void SpawnEnemiesFromPool(class UObject* WorldContextObject, float Difficulty, const TArray<FVector>& Locations, TArray<class UEnemyDescriptor*> BannedEnemies, bool Alert, bool isConstantPreassure);
     UE_AUTHORITY_ONLY static void SpawnEnemiesFromPool(float Difficulty, const TArray<FVector>& Locations, TArray<class UEnemyDescriptor*> BannedEnemies, bool Alert, bool isConstantPreassure);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptor(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptor(class UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, EDeepPathFinderSize pfSize);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorWithCallbackSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, EDeepPathFinderSize pfSize, TDelegate<void(class APawn* enemy)> Callback);
-    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorWithCallbackSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, EDeepPathFinderSize pfSize, TDelegate<void(class APawn* enemy)> Callback);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptor(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptor(class UEnemyGroupDescriptor* descriptor, float Difficulty, FVector Location, bool Alert, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, TEnum<EDeepPathFinderSize> pfSize);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorWithCallbackSpreadOut(class UObject* WorldContextObject, class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, TEnum<EDeepPathFinderSize> pfSize, TDelegate<void(class APawn* enemy)> Callback);
+    UE_AUTHORITY_ONLY static void SpawnEnemyGroupDescriptorWithCallbackSpreadOut(class UEnemyGroupDescriptor* descriptor, float Difficulty, TArray<FVector> Locations, bool Alert, TEnum<EDeepPathFinderSize> pfSize, TDelegate<void(class APawn* enemy)> Callback);
 };
 
 class USpawnSettings : public UDataAsset
@@ -37981,7 +38055,7 @@ public:
     UE_CLASS("/Script/FSD", "SplineTrailComponent");
     TSoftObjectPtr<class UStaticMesh> StaticMesh;
     TArray<FSplineTrailMaterial> MaterialSettings;
-    ESplineMeshAxis ForwardAxis;
+    TEnum<ESplineMeshAxis> ForwardAxis;
     TSoftObjectPtr<class UFSDPhysicalMaterial> CollisionMaterial;
     float CollisionCapsuleRadius;
     float TrailLength;
@@ -38042,6 +38116,7 @@ class UTerrainScannerStaticMesh : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/FSD", "TerrainScannerStaticMesh");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     bool bVisibleAtBeginPlay;
     bool bHideOnDeath;
     bool bUseFogOfWar;
@@ -38104,7 +38179,7 @@ public:
     int Grenades;
     static constexpr const char* Grenades__Replicated = "OnRep_GrenadeCount:";
     float GrenadeCooldownRemaining;
-    EThrownGrenadeItemState State;
+    TEnum<EThrownGrenadeItemState> State;
     static constexpr const char* State__Replicated = "OnRep_State:";
     TSubclassOf<class AGrenade> GrenadeClass;
     static constexpr const char* GrenadeClass__Replicated = "OnRep_GrenadeClass:";
@@ -38125,7 +38200,7 @@ public:
     void ResupplyGrenades(float percentage);
     void ResupplyGrenadesAmount(const int& amount);
     UE_SERVER UE_RELIABLE void Server_Resupply(float percentage);
-    UE_SERVER UE_RELIABLE void Server_SetState(EThrownGrenadeItemState itemState);
+    UE_SERVER UE_RELIABLE void Server_SetState(TEnum<EThrownGrenadeItemState> itemState);
     UE_SERVER UE_RELIABLE void Server_ThrowGrenade(const FVector& StartLocation, const float& cookTime);
     void SetRemainingCooldown(float CoolDown);
     void UpdateCookTime(float Time);
@@ -38156,7 +38231,7 @@ class UHeatSourceStatusEffectItem : public UStatusEffectItem
 public:
     UE_CLASS("/Script/FSD", "HeatSourceStatusEffectItem");
     float temperature;
-    ETemperatureIntensity Intensity;
+    TEnum<ETemperatureIntensity> Intensity;
 };
 
 class UUseConditionCarriedActor : public UUseConditionBase
@@ -38832,7 +38907,7 @@ class UShieldBoostUsable : public UInstantUsable
 {
 public:
     UE_CLASS("/Script/FSD", "ShieldBoostUsable");
-    void OnCharacterBoosted(class APlayerCharacter* User, EInputKeys Key);
+    void OnCharacterBoosted(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 class UContinuousUsableComponent : public UUsableComponent
@@ -39035,11 +39110,11 @@ public:
     TMap<EVanitySlot, FVanitySlotCharacter> GlobalItems;
     TMap<EVanitySlot, FVanitySlotCharacter> StoreItems;
     TMap<EVanitySlot, FVanitySlotCharacter> TreassureItems;
-    static void GetUnlockedStoreVanityCount(class UObject* WorldContextObject, EVanitySlot Slot, class UPlayerCharacterID* characterID, int& owned, int& Total);
-    static void GetUnlockedStoreVanityCount(EVanitySlot Slot, class UPlayerCharacterID* characterID, int& owned, int& Total);
-    static bool HasNewVanityNotification(class UObject* WorldContextObject, EVanitySlot Slot, class UPlayerCharacterID* characterID);
-    static bool HasNewVanityNotification(EVanitySlot Slot, class UPlayerCharacterID* characterID);
-    UE_PURE class UTexture2D* GetVanityCategoryIcon(EVanitySlot Slot) const;
+    static void GetUnlockedStoreVanityCount(class UObject* WorldContextObject, TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID, int& owned, int& Total);
+    static void GetUnlockedStoreVanityCount(TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID, int& owned, int& Total);
+    static bool HasNewVanityNotification(class UObject* WorldContextObject, TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID);
+    static bool HasNewVanityNotification(TEnum<EVanitySlot> Slot, class UPlayerCharacterID* characterID);
+    UE_PURE class UTexture2D* GetVanityCategoryIcon(TEnum<EVanitySlot> Slot) const;
 };
 
 class UVanityTattoo : public UDataAsset
@@ -39121,7 +39196,7 @@ public:
     TArray<FWeakpointChannel> Channels;
     FRuntimeFloatCurve WeakpointHitCurve;
     float CurveMultiplier;
-    EWeakpointGlowMode Mode;
+    TEnum<EWeakpointGlowMode> Mode;
     class UFSDPhysicalMaterial* WeakPointMaterial;
     bool AddFirstChannelAutomatically;
     int ReplaceMatIndex;

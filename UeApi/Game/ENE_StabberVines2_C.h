@@ -13,6 +13,7 @@ class ENE_StabberVines2_C : public Game::Enemies::StabberVine::ENE_StabberVines_
 {
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVines2", "ENE_StabberVines2_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
 };
 
 }}}   // namespace Game::Enemies::StabberVine

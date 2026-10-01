@@ -23,6 +23,7 @@ class WPN_PlatformGun_C : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlatformGun/WPN_PlatformGun", "WPN_PlatformGun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonPointLightComponent* FirstPersonPointLight;
     static constexpr const char* FirstPersonPointLight__UeScsNode = "273d9da073b3b949b97b8a67efdbdb9e";

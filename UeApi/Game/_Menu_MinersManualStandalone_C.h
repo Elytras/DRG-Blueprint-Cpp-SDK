@@ -29,8 +29,8 @@ public:
     class UOverlay* Overlay_Holder;
     _MENU_MinersManual_C* Menu_MinersManual;
     void ExecuteUbergraph__Menu_MinersManualStandalone(int EntryPoint);
-    void OpenMinersManualPage(EMinersManualSinglePage page);
-    void OpenMinersManualFromID(EMinersManualSection Section, const FGuid& ID);
+    void OpenMinersManualPage(TEnum<EMinersManualSinglePage> page);
+    void OpenMinersManualFromID(TEnum<EMinersManualSection> Section, const FGuid& ID);
     void OnShown();
     void OnMinersManualClosed(class UWindowWidget* Window);
     UE_COSMETIC void Construct();

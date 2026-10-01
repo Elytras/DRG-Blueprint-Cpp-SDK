@@ -55,7 +55,7 @@ public:
     Basic_Option_C* PlaySoundOnChatMessage;
     TMulticastInlineDelegate<void()> SettingsChanged;
     void ExecuteUbergraph_Options_Tab_UI(int EntryPoint);
-    void OnIsUserGeneratedContentAllowed(class APlayerState* CheckedPlayerState, EBlueprintableUserPrivileges CheckedPrivilege, EBlueprintablePrivilegeResults PrivilegeResult);
+    void OnIsUserGeneratedContentAllowed(class APlayerState* CheckedPlayerState, TEnum<EBlueprintableUserPrivileges> CheckedPrivilege, TEnum<EBlueprintablePrivilegeResults> PrivilegeResult);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
 };

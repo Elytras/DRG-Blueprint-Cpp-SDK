@@ -13,6 +13,7 @@ class CameraShake_Item_Drill_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_Item_Drill", "CameraShake_Item_Drill_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

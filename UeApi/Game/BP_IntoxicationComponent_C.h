@@ -49,7 +49,7 @@ public:
     void SetPostProcessStrength(float NewStrength);
     void MyLerp(float Current_Value, float Target_Value, float Delta_Time, float& Result);
     void ToPercentStr(float Progress, FString& PercentString);
-    int GetAlcoholPct(EDrinkableAlcoholStrength Strength) const;
+    int GetAlcoholPct(TEnum<EDrinkableAlcoholStrength> Strength) const;
 };
 
 }}}   // namespace Game::GameElements::Bar

@@ -19,7 +19,7 @@ public:
     using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
-    EVolumeType volumeType;
+    TEnum<EVolumeType> volumeType;
     int Indent;
     int Min_Text_Width;
     static constexpr const char* Min_Text_Width__UeName = "Min Text Width";

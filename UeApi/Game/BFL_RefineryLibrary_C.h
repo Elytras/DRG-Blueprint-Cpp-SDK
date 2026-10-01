@@ -18,7 +18,7 @@ class BFL_RefineryLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BFL_RefineryLibrary", "BFL_RefineryLibrary_C");
-    UE_PURE static class UMaterialInterface* GetMaterialFromPipelineStatus(EPipelineBuildState InPipelineState, class UObject* __WorldContext);
+    UE_PURE static class UMaterialInterface* GetMaterialFromPipelineStatus(TEnum<EPipelineBuildState> InPipelineState, class UObject* __WorldContext);
     static void CreateLiquidMorkiteDecal(float Scale, FVector Location, FVector Normal, class UObject* __WorldContext);
 };
 

@@ -46,7 +46,7 @@ public:
     class UTextBlock* TXT_Author;
     class UTextBlock* TXT_Category;
     class UTextBlock* TXT_Name;
-    EPackageSortField Field;
+    TEnum<EPackageSortField> Field;
     bool Ascending;
     TMulticastInlineDelegate<void(EPackageSortField InField, bool InAscending)> OnSortByChanged;
     bool IsDesignTime;
@@ -69,9 +69,9 @@ public:
     void BndEvt__Button_Author_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Name_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Category_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature();
-    void SetSortBy(EPackageSortField InField, bool InAscending);
+    void SetSortBy(TEnum<EPackageSortField> InField, bool InAscending);
     void GetSortBy(EPackageSortField& Field_0, bool& Ascending_0);
-    void Click(EPackageSortField InField);
+    void Click(TEnum<EPackageSortField> InField);
     void UpdateHovered();
     void Refresh();
 };

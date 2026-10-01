@@ -36,7 +36,7 @@ public:
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "49d245c46a2a2542ad58aa9d553e3623";
     float DamageGlowPulse_LightIntensity_72DD5E2D4AA96604D90633953576BD0B;
-    ETimelineDirection DamageGlowPulse__Direction_72DD5E2D4AA96604D90633953576BD0B;
+    TEnum<ETimelineDirection> DamageGlowPulse__Direction_72DD5E2D4AA96604D90633953576BD0B;
     class UTimelineComponent* DamageGlowPulse;
     bool DoPulse;
     static constexpr const char* DoPulse__Replicated = "OnRep_DoPulse:";

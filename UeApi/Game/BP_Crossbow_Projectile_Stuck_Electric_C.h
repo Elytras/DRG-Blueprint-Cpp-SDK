@@ -20,19 +20,20 @@ class BP_Crossbow_Projectile_Stuck_Electric_C : public Game::WeaponsNTools::Cros
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Electric", "BP_Crossbow_Projectile_Stuck_Electric_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ArcAreaDisplay;
     static constexpr const char* ArcAreaDisplay__UeScsNode = "d34ef430a18a2b4983fb9c5c76475dfa";
     class UCrossbowStuckProjectileEffectElectric* EffectElectric;
     static constexpr const char* EffectElectric__UeScsNode = "a9e8a19a1210ac45b74ebe90eceda798";
     float FadeIn_Scale_643276574A22DD1BAF32FA8777128C4F;
-    ETimelineDirection FadeIn__Direction_643276574A22DD1BAF32FA8777128C4F;
+    TEnum<ETimelineDirection> FadeIn__Direction_643276574A22DD1BAF32FA8777128C4F;
     class UTimelineComponent* FadeIn;
     float FadeOut_Scale_0B2089634E6A5E37A98116BA23E26A4F;
-    ETimelineDirection FadeOut__Direction_0B2089634E6A5E37A98116BA23E26A4F;
+    TEnum<ETimelineDirection> FadeOut__Direction_0B2089634E6A5E37A98116BA23E26A4F;
     class UTimelineComponent* FadeOut;
     float RingPulse_Scale_60E9F5BE447AB5F280A154BA86AB1702;
-    ETimelineDirection RingPulse__Direction_60E9F5BE447AB5F280A154BA86AB1702;
+    TEnum<ETimelineDirection> RingPulse__Direction_60E9F5BE447AB5F280A154BA86AB1702;
     class UTimelineComponent* RingPulse;
     float DebugTimer;
     class UMaterialInstanceDynamic* ArcAreaDynamicMaterial;

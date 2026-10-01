@@ -21,7 +21,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* TextBlock_FPS;
     FSlateFontInfo Font;
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     float SmoothedDeltaT;
     void ExecuteUbergraph_UI_FPS(int EntryPoint);
     void OnShowFPSChanged(bool NewValue);

@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_DEC_ForceStrafe(int EntryPoint);
     void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, EBTNodeResult NodeResult);
+    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
     bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 

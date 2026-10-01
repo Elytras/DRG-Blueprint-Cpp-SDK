@@ -36,7 +36,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "0e962e40b6f1ee43a53736fb5d7e239e";
     void ExecuteUbergraph_BP_Lunar_HorseStatue(int EntryPoint);
     UE_MULTICAST void All_PlayParticles();
-    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void UserConstructionScript();
 };
 

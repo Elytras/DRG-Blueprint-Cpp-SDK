@@ -29,10 +29,10 @@ public:
     TMap<FString, EOmmoranStage> StageMap;
     TArray<class UComboBoxString*> DropDowns;
     void ExecuteUbergraph_UI_Escort_Cheat(int EntryPoint);
-    void BndEvt__UI_Escort_Cheat_DropDownStages_04_K2Node_ComponentBoundEvent_5_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
-    void BndEvt__UI_Escort_Cheat_DropDownStages_03_K2Node_ComponentBoundEvent_4_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
-    void BndEvt__UI_Escort_Cheat_DropDownStages_02_K2Node_ComponentBoundEvent_3_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
-    void BndEvt__UI_Escort_Cheat_DropDownStages_01_K2Node_ComponentBoundEvent_2_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__UI_Escort_Cheat_DropDownStages_04_K2Node_ComponentBoundEvent_5_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
+    void BndEvt__UI_Escort_Cheat_DropDownStages_03_K2Node_ComponentBoundEvent_4_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
+    void BndEvt__UI_Escort_Cheat_DropDownStages_02_K2Node_ComponentBoundEvent_3_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
+    void BndEvt__UI_Escort_Cheat_DropDownStages_01_K2Node_ComponentBoundEvent_2_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void Construct();
     void BndEvt__UI_Escort_Cheat_CheatMenu_AllTraps_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(CheatMenu_BasicButtonWText_C* Button);
     void BndEvt__CheatMenu_FillMorkite_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(CheatMenu_BasicButtonWText_C* Button);

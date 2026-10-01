@@ -14,6 +14,7 @@ class GM_Elimination_C : public Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Elimination", "GM_Elimination_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Elimination_C;
     static constexpr const char* UberGraphFrame_GM_Elimination_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_GM_Elimination(int EntryPoint);

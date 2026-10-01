@@ -22,6 +22,7 @@ class BP_EscortGem_Heartstone_C : public Game::GameElements::Resources::Embedded
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/EscortGem/BP_EscortGem_Heartstone", "BP_EscortGem_Heartstone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_EscortGem_Heartstone_C;
     static constexpr const char* UberGraphFrame_BP_EscortGem_Heartstone_C__UeName = "UberGraphFrame";
     class ULightStrobingComponent* LightStrobing;

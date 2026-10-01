@@ -17,6 +17,7 @@ class BP_PropHunt_EggHunt_Bunny_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/EggHunt/BP_PropHunt_EggHunt_Bunny", "BP_PropHunt_EggHunt_Bunny_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
     static constexpr const char* SkeletalMesh__UeScsNode = "e78f17083037cc4a8067b425fff43ddd";

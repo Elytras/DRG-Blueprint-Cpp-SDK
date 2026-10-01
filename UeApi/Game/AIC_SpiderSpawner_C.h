@@ -14,6 +14,7 @@ class AIC_SpiderSpawner_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/EnemySpawner/AIC_SpiderSpawner", "AIC_SpiderSpawner_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_SpiderSpawner(int EntryPoint);
     void ReceiveBeginPlay();

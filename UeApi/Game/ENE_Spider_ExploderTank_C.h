@@ -34,6 +34,7 @@ class ENE_Spider_ExploderTank_C : public Game::Enemies::Spider::ENE_SpiderBase_L
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/ENE_Spider_ExploderTank", "ENE_Spider_ExploderTank_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_ExploderTank_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_ExploderTank_C__UeName = "UberGraphFrame";
     class UFSDAudioComponent* Growl;

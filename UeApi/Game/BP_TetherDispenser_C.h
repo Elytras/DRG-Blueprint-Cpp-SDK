@@ -20,6 +20,7 @@ class BP_TetherDispenser_C : public Game::GameElements::ItemDispenser::BP_ItemDi
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_TetherDispenser", "BP_TetherDispenser_C");
     using BP_TransmitterNode_C = Game::GameElements::Objectives::Facility::Tethers::BP_TransmitterNode_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InstantUsable Usable;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "bbb4d6d3cd30e54eb583f23eba9bed35";

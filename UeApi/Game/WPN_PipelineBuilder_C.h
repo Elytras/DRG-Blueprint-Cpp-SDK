@@ -21,6 +21,7 @@ class WPN_PipelineBuilder_C : public APipelineBuilderItem
 public:
     UE_CLASS("/Game/WeaponsNTools/PipelineBuilder/WPN_PipelineBuilder", "WPN_PipelineBuilder_C");
     using UI_PipelineBuilder_Crosshair_C = Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Crosshair_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CrosshairAggregator CrosshairAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator SegmentPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* SmallScreenWidget;
     static constexpr const char* SmallScreenWidget__UeScsNode = "176e6d55a5b6d54c9ff69b70faa101f0";
@@ -32,7 +33,7 @@ public:
     UI_PipelineBuilder_Crosshair_C* Crosshair;
     bool PlacementValid;
     void ExecuteUbergraph_WPN_PipelineBuilder(int EntryPoint);
-    void OnCharacterStateChanged_Event(ECharacterState NewState);
+    void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
     void AddedToInventory(class APlayerCharacter* ItemOwner);
     void TraceForConnector();
     void RecieveUnequipped();

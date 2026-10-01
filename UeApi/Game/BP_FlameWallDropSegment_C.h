@@ -16,6 +16,7 @@ class BP_FlameWallDropSegment_C : public AFlameWallSegment
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/Projectile/BP_FlameWallDropSegment", "BP_FlameWallDropSegment_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Inferno_Projectile_Drop;
     static constexpr const char* NS_Inferno_Projectile_Drop__UeScsNode = "a963a7654197f24da482f4b02e2cde70";

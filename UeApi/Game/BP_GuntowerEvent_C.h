@@ -28,6 +28,7 @@ class BP_GuntowerEvent_C : public AGuntowerEvent
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/BP_GuntowerEvent", "BP_GuntowerEvent_C");
     using BP_GuntowerActivationPlatfrom_C = Game::GameElements::GameEvents::GuntowerEvent::BP_GuntowerActivationPlatfrom_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TowerBase";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* StarterButton4;
     static constexpr const char* StarterButton4__UeScsNode = "3c1869406319b04396c20e6e15d833b6";

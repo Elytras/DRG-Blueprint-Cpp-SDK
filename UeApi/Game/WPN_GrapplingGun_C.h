@@ -28,6 +28,7 @@ class WPN_GrapplingGun_C : public AGrapplingHookGun
 public:
     UE_CLASS("/Game/WeaponsNTools/GrapplingGun/WPN_GrapplingGun", "WPN_GrapplingGun_C");
     using HUD_CroNew_GrapplingGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNew_GrapplingGun_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CoolDownItemAggregator CoolDownAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* AudioMoving;
     static constexpr const char* AudioMoving__UeScsNode = "e52ea4e265161744adeea72d779cb8ed";
@@ -46,7 +47,7 @@ public:
     class UCableComponent* Cable;
     static constexpr const char* Cable__UeScsNode = "8c86cd991544b447bd974de062981bb9";
     float ProjectileMovement_Lerp_t_87ACE2EC4276B8AA3B88169B28949E3A;
-    ETimelineDirection ProjectileMovement__Direction_87ACE2EC4276B8AA3B88169B28949E3A;
+    TEnum<ETimelineDirection> ProjectileMovement__Direction_87ACE2EC4276B8AA3B88169B28949E3A;
     class UTimelineComponent* ProjectileMovement;
     FRotator PullRotation;
     HUD_CroNew_GrapplingGun_C* Crosshair;

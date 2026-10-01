@@ -68,7 +68,7 @@ public:
     void ExecuteUbergraph_BP_MinersManualConsole(int EntryPoint);
     void SwitchMesh();
     void ReceiveBeginPlay();
-    void BndEvt__BP_MinersManual_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_MinersManual_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveTick(float DeltaSeconds);
 };
 

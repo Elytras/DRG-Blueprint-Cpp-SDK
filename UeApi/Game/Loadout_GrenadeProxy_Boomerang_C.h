@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Boomerang_C : public Game::WeaponsNTools::Grenades::L
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BoomerangBouncy/Loadout_GrenadeProxy_Boomerang", "Loadout_GrenadeProxy_Boomerang_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy

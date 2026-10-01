@@ -55,7 +55,7 @@ public:
     class UReward* Reward;
     TMulticastInlineDelegate<void()> OnWindowClose;
     void ExecuteUbergraph_WND_Season_RewardClaimed(int EntryPoint);
-    void AddCustomOverlay(class UUserWidget* InCustomWidget, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment, FMargin Padding_0);
+    void AddCustomOverlay(class UUserWidget* InCustomWidget, TEnum<EHorizontalAlignment> HorizontalAlignment, TEnum<EVerticalAlignment> VerticalAlignment, FMargin Padding_0);
     void ClearCustomOverlays();
     void SetDataFromSkin(class UItemSkin* InSkin, class UItemID* InOptionalItem, class UPlayerCharacterID* InOptionalCharacter);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();

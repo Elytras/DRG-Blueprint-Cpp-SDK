@@ -18,6 +18,7 @@ class BP_AutoReloadPerkActivation_C : public UFloatPerkActivation
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_AutoReloadPerkActivation", "BP_AutoReloadPerkActivation_C");
+    static constexpr const char* UeClassTail = "0x00801000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame;
     class UInventoryComponent* Inventory;
     float Duration;

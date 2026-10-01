@@ -25,6 +25,7 @@ class BP_Spider_Lobber_Puddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/BP_Spider_Lobber_Puddle", "BP_Spider_Lobber_Puddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* BoxTrigger;
     static constexpr const char* BoxTrigger__UeScsNode = "5928edd0bfa4ce4186c8c35769486048";

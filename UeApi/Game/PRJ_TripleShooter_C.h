@@ -19,6 +19,7 @@ class PRJ_TripleShooter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/PRJ_TripleShooter", "PRJ_TripleShooter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SK_ShootingPlant_Projectile;
     static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "4cf43359845f58409f6ea51ee3c5a488";

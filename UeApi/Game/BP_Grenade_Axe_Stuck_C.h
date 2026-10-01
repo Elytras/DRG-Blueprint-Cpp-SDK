@@ -51,7 +51,7 @@ public:
     static constexpr const char* SimulateAxePhysics__Replicated = "OnRep_SimulateAxePhysics:";
     void ExecuteUbergraph_BP_Grenade_Axe_Stuck(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SetRetrieval(bool CanRetrieve);
     void MakeStandable(bool CanRetrieve);
     void GoPhysical(bool PassThrough, bool CanRetrieve);

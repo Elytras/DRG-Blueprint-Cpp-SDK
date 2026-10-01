@@ -13,6 +13,7 @@ class ENE_Spider_Shooter_Normal_Elite_C : public Game::Enemies::Spider::Shooter:
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ENE_Spider_Shooter_Normal_Elite", "ENE_Spider_Shooter_Normal_Elite_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
 };
 
 }}}}   // namespace Game::Enemies::Spider::Shooter

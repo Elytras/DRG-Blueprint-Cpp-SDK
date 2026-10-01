@@ -14,6 +14,7 @@ class BP_FoamRocket_C : public Game::GameElements::Drone::BP_BoscoAbillityProjec
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_FoamRocket", "BP_FoamRocket_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_FoamRocket_C;
     static constexpr const char* UberGraphFrame_BP_FoamRocket_C__UeName = "UberGraphFrame";
     int GlobCount;

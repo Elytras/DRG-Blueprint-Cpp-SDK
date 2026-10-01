@@ -18,6 +18,7 @@ class BP_PropHunt_Shredder_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season01/BP_PropHunt_Shredder", "BP_PropHunt_Shredder_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
     static constexpr const char* ParticleSystem__UeScsNode = "1f1a38efee51ef44b689b307979fc1d3";

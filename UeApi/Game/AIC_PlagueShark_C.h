@@ -16,6 +16,7 @@ class AIC_PlagueShark_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShark/AIC_PlagueShark", "AIC_PlagueShark_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_PlagueShark(int EntryPoint);
     void ReceivePossess(class APawn* PossessedPawn);

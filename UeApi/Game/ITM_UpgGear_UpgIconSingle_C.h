@@ -32,7 +32,7 @@ public:
     class UWidgetAnimation* OnPurchased;
     ITM_BaseUpgradeIcon_C* UpgradeIcon;
     class UItemUpgrade* Upgrade;
-    EItemUpgradeStatus Status;
+    TEnum<EItemUpgradeStatus> Status;
     class UClass* itemClass;
     class AFSDPlayerState* PlayerState;
     bool IsItemHovered;

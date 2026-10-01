@@ -51,7 +51,7 @@ public:
     class USceneComponent* Scene;
     static constexpr const char* Scene__UeScsNode = "3483f4406194db48b75a5c1716f008c1";
     float Light_Animation_0_1_Anim_6890D32F4D56C12E56512AB0CF2EC95B;
-    ETimelineDirection Light_Animation__Direction_6890D32F4D56C12E56512AB0CF2EC95B;
+    TEnum<ETimelineDirection> Light_Animation__Direction_6890D32F4D56C12E56512AB0CF2EC95B;
     class UTimelineComponent* Light_Animation;
     static constexpr const char* Light_Animation__UeName = "Light Animation";
     float LightIntensity;

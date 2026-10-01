@@ -13,6 +13,7 @@ class AIC_Bomber_C : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/AIC_Bomber", "AIC_Bomber_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

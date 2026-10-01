@@ -27,6 +27,7 @@ class Grenade_BouncyBoomerang_C : public ABouncyBoomerang
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BoomerangBouncy/Grenade_BouncyBoomerang", "Grenade_BouncyBoomerang_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Boomerang_Trail;
     static constexpr const char* NS_Boomerang_Trail__UeScsNode = "711995a233158e48b2dc95d850ba57f9";

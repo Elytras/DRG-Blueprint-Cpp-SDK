@@ -42,7 +42,7 @@ public:
     class UProgressBar* LevelProgressBar;
     UI_Forge_LevelIcon_C* PlayerForgeLevel;
     class URichTextBlock* RichTextBlock_30;
-    ESchematicType Reward;
+    TEnum<ESchematicType> Reward;
     float StartXP;
     float EndXP;
     float LerpProgress;

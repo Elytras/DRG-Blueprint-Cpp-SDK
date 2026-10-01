@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Pheromone_C : public Game::WeaponsNTools::Grenades::L
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Pheromone/Loadout_GrenadeProxy_Pheromone", "Loadout_GrenadeProxy_Pheromone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Pheromone

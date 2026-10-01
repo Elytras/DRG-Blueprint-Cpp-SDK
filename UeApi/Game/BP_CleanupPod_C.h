@@ -32,6 +32,7 @@ class BP_CleanupPod_C : public ACleanupPod
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_CleanupPod", "BP_CleanupPod_C");
     using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent RemovePlague";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
     static constexpr const char* Box__UeScsNode = "df7b3976503cc2419ba92f20027f51b2";

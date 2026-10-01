@@ -88,10 +88,10 @@ class UOculusHandComponent : public UPoseableMeshComponent
 {
 public:
     UE_CLASS("/Script/OculusInput", "OculusHandComponent");
-    EOculusHandType SkeletonType;
-    EOculusHandType MeshType;
-    EConfidenceBehavior ConfidenceBehavior;
-    ESystemGestureBehavior SystemGestureBehavior;
+    TEnum<EOculusHandType> SkeletonType;
+    TEnum<EOculusHandType> MeshType;
+    TEnum<EConfidenceBehavior> ConfidenceBehavior;
+    TEnum<ESystemGestureBehavior> SystemGestureBehavior;
     class UMaterialInterface* SystemGestureMaterial;
     bool bInitializePhysics;
     bool bUpdateHandScale;
@@ -105,14 +105,14 @@ class UOculusInputFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/OculusInput", "OculusInputFunctionLibrary");
-    UE_PURE static FString GetBoneName(EBone BoneId);
-    UE_PURE static FQuat GetBoneRotation(EOculusHandType DeviceHand, EBone BoneId, int ControllerIndex);
-    UE_PURE static EOculusHandType GetDominantHand(int ControllerIndex);
-    UE_PURE static float GetHandScale(EOculusHandType DeviceHand, int ControllerIndex);
-    static bool GetHandSkeletalMesh(class USkeletalMesh* HandSkeletalMesh, EOculusHandType SkeletonType, EOculusHandType MeshType, float WorldToMeters);
-    UE_PURE static FTransform GetPointerPose(EOculusHandType DeviceHand, int ControllerIndex);
-    UE_PURE static ETrackingConfidence GetTrackingConfidence(EOculusHandType DeviceHand, int ControllerIndex);
-    static TArray<FOculusCapsuleCollider> InitializeHandPhysics(EOculusHandType SkeletonType, class USkinnedMeshComponent* HandComponent, float WorldToMeters);
+    UE_PURE static FString GetBoneName(TEnum<EBone> BoneId);
+    UE_PURE static FQuat GetBoneRotation(TEnum<EOculusHandType> DeviceHand, TEnum<EBone> BoneId, int ControllerIndex);
+    UE_PURE static TEnum<EOculusHandType> GetDominantHand(int ControllerIndex);
+    UE_PURE static float GetHandScale(TEnum<EOculusHandType> DeviceHand, int ControllerIndex);
+    static bool GetHandSkeletalMesh(class USkeletalMesh* HandSkeletalMesh, TEnum<EOculusHandType> SkeletonType, TEnum<EOculusHandType> MeshType, float WorldToMeters);
+    UE_PURE static FTransform GetPointerPose(TEnum<EOculusHandType> DeviceHand, int ControllerIndex);
+    UE_PURE static TEnum<ETrackingConfidence> GetTrackingConfidence(TEnum<EOculusHandType> DeviceHand, int ControllerIndex);
+    static TArray<FOculusCapsuleCollider> InitializeHandPhysics(TEnum<EOculusHandType> SkeletonType, class USkinnedMeshComponent* HandComponent, float WorldToMeters);
     UE_PURE static bool IsHandTrackingEnabled();
-    UE_PURE static bool IsPointerPoseValid(EOculusHandType DeviceHand, int ControllerIndex);
+    UE_PURE static bool IsPointerPoseValid(TEnum<EOculusHandType> DeviceHand, int ControllerIndex);
 };

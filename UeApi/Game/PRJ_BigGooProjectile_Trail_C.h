@@ -17,6 +17,7 @@ class PRJ_BigGooProjectile_Trail_C : public Game::WeaponsNTools::GooCannon::PRJ_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BigGooProjectile_Trail", "PRJ_BigGooProjectile_Trail_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_BigGooProjectile_Trail_C;
     static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_Trail_C__UeName = "UberGraphFrame";
     float CurrentClusterPitch;

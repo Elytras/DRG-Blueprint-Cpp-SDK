@@ -17,6 +17,7 @@ class ENE_FacilityTentacle_End_C : public Game::GameElements::Objectives::Facili
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle_End", "ENE_FacilityTentacle_End_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTentacle_End_C;
     static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_End_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* Base;

@@ -35,7 +35,7 @@ public:
     class UButton* SlotButton;
     UI_PerkBackground_C* UI_PerkBackground;
     UI_PerkIcon_C* UI_PerkIcon;
-    EPerkUsageType SlotType;
+    TEnum<EPerkUsageType> SlotType;
     class UPerkAsset* PerkAsset;
     bool IsLocked;
     bool Hovered;

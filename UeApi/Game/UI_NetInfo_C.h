@@ -29,7 +29,7 @@ public:
     class UTextBlock* TextBlock_PktLossIn;
     class UTextBlock* TextBlock_PktLossOut;
     FSlateFontInfo Font;
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     int NetInfoLevel;
     void ExecuteUbergraph_UI_NetInfo(int EntryPoint);
     void OnNetInfoLevelChanged(int NewValue);

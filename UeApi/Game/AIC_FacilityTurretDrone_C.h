@@ -18,6 +18,7 @@ class AIC_FacilityTurretDrone_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/AIC_FacilityTurretDrone", "AIC_FacilityTurretDrone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UClass* TurretClass;
     int TurretVersion;

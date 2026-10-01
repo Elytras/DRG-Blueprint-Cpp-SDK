@@ -14,6 +14,7 @@ class AIC_FriendlyParasite_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/AIC_FriendlyParasite", "AIC_FriendlyParasite_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_FriendlyParasite(int EntryPoint);
     void ReceiveBeginPlay();

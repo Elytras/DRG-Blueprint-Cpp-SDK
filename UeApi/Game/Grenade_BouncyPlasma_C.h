@@ -21,6 +21,7 @@ class Grenade_BouncyPlasma_C : public Game::WeaponsNTools::Grenades::ITM_Grenade
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Bouncy/Grenade_BouncyPlasma", "Grenade_BouncyPlasma_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_BouncyPlasma_C;
     static constexpr const char* UberGraphFrame_Grenade_BouncyPlasma_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;

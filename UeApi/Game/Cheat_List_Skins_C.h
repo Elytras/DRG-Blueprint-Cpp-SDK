@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Skins", "Cheat_List_Skins_C");
     using Cheat_EquipList_Entry_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     TArray<EItemCategory> WeaponCategories;
-    EItemSkinType Skin_Type;
+    TEnum<EItemSkinType> Skin_Type;
     static constexpr const char* Skin_Type__UeName = "Skin Type";
     void GetCharacterID(class UPlayerCharacterID*& characterID);
     void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);

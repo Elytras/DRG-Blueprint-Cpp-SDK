@@ -33,6 +33,7 @@ class BP_Drillevator_Delivery_C : public ADroppableOutpost
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_Drillevator_Delivery", "BP_Drillevator_Delivery_C");
     using BP_Drillevator_LandingZone_C = Game::GameElements::Objectives::DeepScan::BP_Drillevator_LandingZone_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TerrainScannerMesh;
     static constexpr const char* TerrainScannerMesh__UeScsNode = "d23444303c34224dbc0680ba5696d209";

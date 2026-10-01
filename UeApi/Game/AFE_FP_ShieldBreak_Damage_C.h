@@ -13,6 +13,7 @@ class AFE_FP_ShieldBreak_Damage_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/AFE_FP_ShieldBreak_Damage", "AFE_FP_ShieldBreak_Damage_C");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
 };
 
 }}}   // namespace Game::WeaponsNTools::Armor

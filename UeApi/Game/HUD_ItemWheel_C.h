@@ -45,7 +45,7 @@ public:
     void OnSupplyItemAdded(class UItemsBarIcon* ItemIcon);
     void OnItemClicked();
     void Show();
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
     void OnClear();
     void AddIcon(class UItemsBarIcon* Icon, int Index_0);

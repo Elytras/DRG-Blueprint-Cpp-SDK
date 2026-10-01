@@ -56,7 +56,7 @@ class UGameplayTask : public UObject
 public:
     UE_CLASS("/Script/GameplayTasks", "GameplayTask");
     FName InstanceName;
-    ETaskResourceOverlapPolicy ResourceOverlapPolicy;
+    TEnum<ETaskResourceOverlapPolicy> ResourceOverlapPolicy;
     class UGameplayTask* ChildTask;
     void EndTask();
     void ReadyForActivation();
@@ -117,6 +117,6 @@ public:
     TArray<class UGameplayTask*> TickingTasks;
     TArray<class UGameplayTask*> KnownTasks;
     TMulticastInlineDelegate<void(FGameplayResourceSet NewlyClaimed, FGameplayResourceSet FreshlyReleased)> OnClaimedResourcesChange;
-    static EGameplayTaskRunResult K2_RunGameplayTask(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class UGameplayTask* Task, uint8 Priority, TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalRequiredResources, TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalClaimedResources);
+    static TEnum<EGameplayTaskRunResult> K2_RunGameplayTask(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class UGameplayTask* Task, uint8 Priority, TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalRequiredResources, TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalClaimedResources);
     void OnRep_SimulatedTasks();
 };

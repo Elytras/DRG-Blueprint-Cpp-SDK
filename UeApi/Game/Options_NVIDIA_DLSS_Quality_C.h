@@ -26,10 +26,10 @@ public:
     void ShowOptions();
     void UINeedsUpdate();
     UE_COSMETIC void Construct();
-    void GetDLSSModeName(EUDLSSMode Mode, FText& Name_0);
+    void GetDLSSModeName(TEnum<EUDLSSMode> Mode, FText& Name_0);
     void IndexToMode(int Index_0, EUDLSSMode& Mode);
-    void ModeToIndex(EUDLSSMode Mode, int& Index_0);
-    void Add_Index(EUDLSSMode Mode);
+    void ModeToIndex(TEnum<EUDLSSMode> Mode, int& Index_0);
+    void Add_Index(TEnum<EUDLSSMode> Mode);
     static constexpr const char* Add_Index__UeName = "Add Index";
 };
 

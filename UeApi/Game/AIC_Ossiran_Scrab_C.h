@@ -13,6 +13,7 @@ class AIC_Ossiran_Scrab_C : public AFSDGroundToAirEnemyController
 {
 public:
     UE_CLASS("/Game/Enemies/Ossiran/Scrab/AIC_Ossiran_Scrab", "AIC_Ossiran_Scrab_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab

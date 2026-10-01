@@ -17,6 +17,7 @@ class ITM_CleanupDrop_WalkingPlagueHeart_C : public Game::GameElements::Missions
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/WalkingPlagueHeart/ITM_CleanupDrop_WalkingPlagueHeart", "ITM_CleanupDrop_WalkingPlagueHeart_C");
     using OnScreenIndicator_CleanupDrop_Order_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     class AItemMarker* Marker_0;
     OnScreenIndicator_CleanupDrop_Order_C* Widget_0;
 };

@@ -52,7 +52,7 @@ public:
     UI_Crafting_MasteryBar_C* MasteryBar;
     MENU_SpaceRigTemplate_C* MENU_SpaceRigTemplate;
     class UVerticalBox* ScrollHolder;
-    EVanitySlot CurrentSlot;
+    TEnum<EVanitySlot> CurrentSlot;
     BTN_ItemCategory_C* ActiveButton;
     class UPlayerCharacterID* Character;
     void ExecuteUbergraph__MENU_Crafting(int EntryPoint);
@@ -75,7 +75,7 @@ public:
     void PreviewItem(TScriptInterface<class ICraftable> Item);
     void OnChanged(TSubclassOf<class APlayerCharacter> CharacterClass, int Level, float Progress);
     UE_COSMETIC void Construct();
-    void ShowItems(EVanitySlot Slot_0);
+    void ShowItems(TEnum<EVanitySlot> Slot_0);
     void ClearItems();
     void NextGroup();
     void PrevGroup();

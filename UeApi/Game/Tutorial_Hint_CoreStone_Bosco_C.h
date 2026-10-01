@@ -26,7 +26,7 @@ public:
     class UFriendlyHealthComponent* DrilldozerHealth;
     BP_CleanupPod_C* CleanupPod;
     void ExecuteUbergraph_Tutorial_Hint_CoreStone_Bosco(int EntryPoint);
-    void OnCorestoneTriggered(ERiftCrystalState State);
+    void OnCorestoneTriggered(TEnum<ERiftCrystalState> State);
     void ReceiveOnInitialized();
 };
 

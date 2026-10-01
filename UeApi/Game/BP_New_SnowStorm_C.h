@@ -19,10 +19,10 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_New_SnowStorm_C;
     static constexpr const char* UberGraphFrame_BP_New_SnowStorm_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_321EE05E466F9B8147EEF89FEA0B8335;
-    ETimelineDirection Fadeout__Direction_321EE05E466F9B8147EEF89FEA0B8335;
+    TEnum<ETimelineDirection> Fadeout__Direction_321EE05E466F9B8147EEF89FEA0B8335;
     class UTimelineComponent* FadeOut;
     float Fadein_ZeroToOne_A0FCF2DB48CDF89D5DB4DC99F95711E6;
-    ETimelineDirection Fadein__Direction_A0FCF2DB48CDF89D5DB4DC99F95711E6;
+    TEnum<ETimelineDirection> Fadein__Direction_A0FCF2DB48CDF89D5DB4DC99F95711E6;
     class UTimelineComponent* FadeIn;
     void ExecuteUbergraph_BP_New_SnowStorm(int EntryPoint);
     void EndEffect();

@@ -22,7 +22,7 @@ public:
     FText Text;
     int Font_Size;
     static constexpr const char* Font_Size__UeName = "Font Size";
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     float Min_Desired_Width;
     static constexpr const char* Min_Desired_Width__UeName = "Min Desired Width";
     bool UpperCase;
@@ -30,7 +30,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText NewText);
     void SetFontSize(int inFontSize);
-    void SetJustification(ETextJustify InJustification);
+    void SetJustification(TEnum<ETextJustify> InJustification);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

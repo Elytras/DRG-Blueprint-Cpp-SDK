@@ -22,6 +22,7 @@ class WPN_BurstPistol_C : public ABurstWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/WPN_BurstPistol", "WPN_BurstPistol_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BurstFireDamageBonus;/Script/FSD.DamageComponent Damage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
     static constexpr const char* FirstPersonStaticMesh__UeScsNode = "21f33a21fb7e324f859c63804fd56a9e";

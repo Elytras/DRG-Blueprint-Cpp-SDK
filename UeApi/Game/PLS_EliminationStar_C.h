@@ -18,6 +18,7 @@ class PLS_EliminationStar_C : public Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_EliminationStar", "PLS_EliminationStar_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_EliminationStar_C;
     static constexpr const char* UberGraphFrame_PLS_EliminationStar_C__UeName = "UberGraphFrame";
     TArray<class URoomGenerator*> RandomRooms;

@@ -26,6 +26,7 @@ class BP_FriendlyShredder_C : public Game::Enemies::RivalTech::Shredder::ENE_Shr
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/BP_FriendlyShredder", "BP_FriendlyShredder_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_BP_FriendlyShredder_C;
     static constexpr const char* UberGraphFrame_BP_FriendlyShredder_C__UeName = "UberGraphFrame";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
@@ -71,7 +72,7 @@ public:
     UE_MULTICAST void RemoveSpeedBoost();
     UE_MULTICAST void GiveSpeedBoost();
     void BndEvt__BP_FriendlyShredder_MeleeAttack_K2Node_ComponentBoundEvent_1_MeleeAttackDelegate__DelegateSignature();
-    void BndEvt__BP_FriendlyShredder_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_FriendlyShredder_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

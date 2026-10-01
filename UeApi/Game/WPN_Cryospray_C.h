@@ -29,6 +29,7 @@ class WPN_Cryospray_C : public ACryosprayItem
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/WPN_Cryospray", "WPN_Cryospray_C");
     using WeaponDisplay_CryoSpray_Ammo_C = Game::WeaponsNTools::Cryospray::WeaponDisplay_CryoSpray_Ammo_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.BasicWeaponFireComponent WeaponFire;/Script/FSD.DamageComponent AoEDamageComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent ChargeUpAudioComponent;/Script/FSD.MotionAudioController MotionAudio;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* AudioPressurerising;
     static constexpr const char* AudioPressurerising__UeScsNode = "dbf7cd7591c3f04eb81166c76967ee3a";

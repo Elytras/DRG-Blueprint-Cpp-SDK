@@ -41,7 +41,7 @@ public:
     class UTextBlock* TXT_ReasonNotResponding;
     class UTextBlock* TXT_ReasonOther;
     class UTextBlock* TXT_ReasonPrivate;
-    EDisconnectReason KickReason;
+    TEnum<EDisconnectReason> KickReason;
     class APlayerController* PlayerToKick;
     class UWidget* Tooltip_Ban;
     void ExecuteUbergraph_POPUP_KickPlayerConfirm(int EntryPoint);

@@ -41,7 +41,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "4680478a94736841aa2c2636735208f2";
     float Timeline_0_SpinRate_1825F49740C5EB02FEA5878F2184A8B0;
-    ETimelineDirection Timeline_0__Direction_1825F49740C5EB02FEA5878F2184A8B0;
+    TEnum<ETimelineDirection> Timeline_0__Direction_1825F49740C5EB02FEA5878F2184A8B0;
     class UTimelineComponent* Timeline_0;
     float ExplosionDelay;
     float SpinDelay;

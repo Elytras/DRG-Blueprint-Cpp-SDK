@@ -20,6 +20,7 @@ class BP_RepairTreasureboxItem_C : public Game::GameElements::Resources::Embedde
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/BP_RepairTreasureboxItem", "BP_RepairTreasureboxItem_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_RepairTreasureboxItem_C;
     static constexpr const char* UberGraphFrame_BP_RepairTreasureboxItem_C__UeName = "UberGraphFrame";
     class UDestinationActorComponent* DestinationActor;

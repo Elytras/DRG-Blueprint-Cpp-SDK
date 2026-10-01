@@ -21,6 +21,7 @@ class BP_Grenade_NeedleSprayer_C : public ANeedleSprayer
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/BP_Grenade_NeedleSprayer", "BP_Grenade_NeedleSprayer_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HitscanComponent HitscanComponent;/Script/FSD.HitscanComponent OnSpawnedEffect;/Script/Niagara.NiagaraComponent ImpactNiagara;/Script/Niagara.NiagaraComponent MuzzleFlashNiagara;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ShotOriginPivot;/Script/Engine.SkeletalMeshComponent Mesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class USpotLightComponent* SpotLightCloseShadowCast;
     static constexpr const char* SpotLightCloseShadowCast__UeScsNode = "f91e603c949735449090b8815ce262fc";

@@ -25,7 +25,7 @@ public:
     class UTextBlock* TextBlock_3;
     FSoftClassPath NewVar_0;
     TSoftClassPtr<class UClass> NewVar_1;
-    ESteamBranch SelectedBranch;
+    TEnum<ESteamBranch> SelectedBranch;
     TArray<ESteamBranch> Branches;
     void ExecuteUbergraph_Cheat_MakeMainSave(int EntryPoint);
     void BndEvt__MainButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();

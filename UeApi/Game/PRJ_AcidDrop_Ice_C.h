@@ -14,6 +14,7 @@ class PRJ_AcidDrop_Ice_C : public Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_AcidDrop_Ice", "PRJ_AcidDrop_Ice_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_AcidDrop_Ice_C;
     static constexpr const char* UberGraphFrame_PRJ_AcidDrop_Ice_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_PRJ_AcidDrop_Ice(int EntryPoint);

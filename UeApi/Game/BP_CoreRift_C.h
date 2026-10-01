@@ -29,6 +29,7 @@ class BP_CoreRift_C : public ACoreRift
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_CoreRift", "BP_CoreRift_C");
     using EWC_CoreRift_C = Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent InitialRotationComponent;/Script/Engine.SceneComponent RootComp;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent placement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* BlockAll;
     static constexpr const char* BlockAll__UeScsNode = "e922f04e1d25c242b49b9bd202521232";

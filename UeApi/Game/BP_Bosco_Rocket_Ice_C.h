@@ -13,6 +13,7 @@ class BP_Bosco_Rocket_Ice_C : public Game::GameElements::Drone::BP_BoscoAbillity
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_Bosco_Rocket_Ice", "BP_Bosco_Rocket_Ice_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}   // namespace Game::GameElements::Drone

@@ -13,6 +13,7 @@ class BP_Actor_Macros_C : public AActor
 {
 public:
     UE_CLASS("/Game/Game/Macros/BP_Actor_Macros", "BP_Actor_Macros_C");
+    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Engine";
 };
 
 }}}   // namespace Game::Game::Macros

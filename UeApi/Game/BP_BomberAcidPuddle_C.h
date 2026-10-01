@@ -18,6 +18,7 @@ class BP_BomberAcidPuddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/BP_BomberAcidPuddle", "BP_BomberAcidPuddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     class UBoxComponent* BoxTrigger;
     static constexpr const char* BoxTrigger__UeScsNode = "8d662bc0b2cbc249bd3b01b16a1081a5";
     class USimpleObjectInfoComponent* SimpleObjectInfo;

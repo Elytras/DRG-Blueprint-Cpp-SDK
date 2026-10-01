@@ -37,7 +37,7 @@ public:
     UE_CLASS("/Script/MSDFSupport", "RenderMSDF");
     class UTexture* EffectiveTexture;
     FExpressionInput MSDFTexture;
-    EMaterialSamplerType SamplerType;
+    TEnum<EMaterialSamplerType> SamplerType;
     FExpressionInput Coordinates;
     uint8 ConstCoordinateIndex;
     class UTexture* Texture;

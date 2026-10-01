@@ -16,6 +16,7 @@ class Grenade_PlasmaBoomerang_C : public APlasmaBoomerang
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/PlasmaBoomerang/Grenade_PlasmaBoomerang", "Grenade_PlasmaBoomerang_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Box;/Script/FSD.DamageComponent Damage;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent MeshPivot;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent Mesh";
     class UUpgradableGearComponent* UpgradableGear;
     static constexpr const char* UpgradableGear__UeScsNode = "40e6c27bfc41224db0a577fa0720b8fa";
     class UParticleSystemComponent* P_GrenadeTrail;

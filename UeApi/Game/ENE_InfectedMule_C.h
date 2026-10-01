@@ -30,6 +30,7 @@ class ENE_InfectedMule_C : public AConvertedRobot
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/ENE_InfectedMule", "ENE_InfectedMule_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent PulsatingSoundComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitscanComponent Hitscan;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent ShieldRoot;/Script/Engine.SceneComponent TurretRoot;/Script/FSD.SingleUsableComponent Usable;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/Engine.SpotLightComponent FloodLight;/Script/Engine.StaticMeshComponent InnerShield;/Script/Engine.StaticMeshComponent LaserBeam;/Script/Engine.StaticMeshComponent LightCone;/Script/Engine.StaticMeshComponent OuterShieldLayer;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
     static constexpr const char* Widget__UeScsNode = "f8f510c69c4d7648a7de0359dffa835e";
@@ -77,7 +78,7 @@ public:
     static constexpr const char* ShowBossHealth__Replicated = "OnRep_ShowBossHealth:";
     bool ishealthbarshown;
     void ExecuteUbergraph_ENE_InfectedMule(int EntryPoint);
-    void BP_OnStateChanged(ERobotState TeamState_0);
+    void BP_OnStateChanged(TEnum<ERobotState> TeamState_0);
     void BP_OnShieldChanged(bool isGrowing);
     void BP_OnInstroduce();
     void BndEvt__OverlapsPlayerTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);

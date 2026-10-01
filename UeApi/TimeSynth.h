@@ -184,7 +184,7 @@ public:
     bool bApplyFadeOut;
     FTimeSynthTimeDef FadeOutTime;
     FTimeSynthTimeDef ClipDuration;
-    ETimeSynthEventClipQuantization ClipQuantization;
+    TEnum<ETimeSynthEventClipQuantization> ClipQuantization;
 };
 
 class UTimeSynthComponent : public USynthComponent
@@ -194,7 +194,7 @@ public:
     FTimeSynthQuantizationSettings QuantizationSettings;
     bool bEnableSpectralAnalysis;
     TArray<float> FrequenciesToAnalyze;
-    ETimeSynthFFTSize FFTSize;
+    TEnum<ETimeSynthFFTSize> FFTSize;
     TMulticastInlineDelegate<void(float SynthPlaybackTimeSeconds)> OnPlaybackTime;
     bool bIsFilterAEnabled;
     bool bIsFilterBEnabled;
@@ -203,23 +203,23 @@ public:
     bool bIsEnvelopeFollowerEnabled;
     FTimeSynthEnvelopeFollowerSettings EnvelopeFollowerSettings;
     int MaxPoolSize;
-    void AddQuantizationEventDelegate(ETimeSynthEventQuantization QuantizationType, TDelegate<void(ETimeSynthEventQuantization QuantizationType, int NumBars, float Beat)> OnQuantizationEvent);
+    void AddQuantizationEventDelegate(TEnum<ETimeSynthEventQuantization> QuantizationType, TDelegate<void(ETimeSynthEventQuantization QuantizationType, int NumBars, float Beat)> OnQuantizationEvent);
     bool HasActiveClips();
     FTimeSynthClipHandle PlayClip(class UTimeSynthClip* InClip, class UTimeSynthVolumeGroup* InVolumeGroup);
     void ResetSeed();
     void SetBPM(float BeatsPerMinute);
     void SetEnvelopeFollowerEnabled(bool bInIsEnabled);
     void SetEnvelopeFollowerSettings(const FTimeSynthEnvelopeFollowerSettings& InSettings);
-    void SetFFTSize(ETimeSynthFFTSize InFFTSize);
-    void SetFilterEnabled(ETimeSynthFilter Filter, bool bIsEnabled);
-    void SetFilterSettings(ETimeSynthFilter Filter, const FTimeSynthFilterSettings& InSettings);
+    void SetFFTSize(TEnum<ETimeSynthFFTSize> InFFTSize);
+    void SetFilterEnabled(TEnum<ETimeSynthFilter> Filter, bool bIsEnabled);
+    void SetFilterSettings(TEnum<ETimeSynthFilter> Filter, const FTimeSynthFilterSettings& InSettings);
     void SetQuantizationSettings(const FTimeSynthQuantizationSettings& InQuantizationSettings);
     void SetSeed(int InSeed);
     void SetVolumeGroup(class UTimeSynthVolumeGroup* InVolumeGroup, float VolumeDb, float FadeTimeSec);
-    void StopClip(FTimeSynthClipHandle InClipHandle, ETimeSynthEventClipQuantization EventQuantization);
-    void StopClipWithFadeOverride(FTimeSynthClipHandle InClipHandle, ETimeSynthEventClipQuantization EventQuantization, const FTimeSynthTimeDef& FadeTime);
-    void StopSoundsOnVolumeGroup(class UTimeSynthVolumeGroup* InVolumeGroup, ETimeSynthEventClipQuantization EventQuantization);
-    void StopSoundsOnVolumeGroupWithFadeOverride(class UTimeSynthVolumeGroup* InVolumeGroup, ETimeSynthEventClipQuantization EventQuantization, const FTimeSynthTimeDef& FadeTime);
+    void StopClip(FTimeSynthClipHandle InClipHandle, TEnum<ETimeSynthEventClipQuantization> EventQuantization);
+    void StopClipWithFadeOverride(FTimeSynthClipHandle InClipHandle, TEnum<ETimeSynthEventClipQuantization> EventQuantization, const FTimeSynthTimeDef& FadeTime);
+    void StopSoundsOnVolumeGroup(class UTimeSynthVolumeGroup* InVolumeGroup, TEnum<ETimeSynthEventClipQuantization> EventQuantization);
+    void StopSoundsOnVolumeGroupWithFadeOverride(class UTimeSynthVolumeGroup* InVolumeGroup, TEnum<ETimeSynthEventClipQuantization> EventQuantization, const FTimeSynthTimeDef& FadeTime);
     UE_PURE int GetBPM() const;
     UE_PURE float GetEnvelopeFollowerValue() const;
     UE_PURE int GetMaxActiveClipLimit() const;

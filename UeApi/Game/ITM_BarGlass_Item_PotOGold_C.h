@@ -13,6 +13,7 @@ class ITM_BarGlass_Item_PotOGold_C : public Game::GameElements::Bar::ITM_BarGlas
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/ITM_BarGlass_Item_PotOGold", "ITM_BarGlass_Item_PotOGold_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::GameElements::Bar::Drinkables

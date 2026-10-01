@@ -15,6 +15,7 @@ class ENE_Spider_ExploderTank_King_C : public Game::Enemies::Spider::ExploderTan
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/ENE_Spider_ExploderTank_King", "ENE_Spider_ExploderTank_King_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     class UPointLightComponent* Light_BackBody2;
     static constexpr const char* Light_BackBody2__UeScsNode = "08489ca5e9552747a46db7554cc5b68a";
     class UPointLightComponent* Light_BackBody1;

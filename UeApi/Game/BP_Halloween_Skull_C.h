@@ -29,6 +29,7 @@ class BP_Halloween_Skull_C : public AHalloweenSkull
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Halloween/BP_Halloween_Skull", "BP_Halloween_Skull_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "bf0d65afea3b4d41bc4a17dfbec37122";
@@ -61,10 +62,10 @@ public:
     class UStaticMeshComponent* Mesh_Flame01;
     static constexpr const char* Mesh_Flame01__UeScsNode = "6f212c9e22b559468fbbaa209a80c596";
     float Timeline_0_Scale_7E993DAF452B4981CFEA5EB3782B00C8;
-    ETimelineDirection Timeline_0__Direction_7E993DAF452B4981CFEA5EB3782B00C8;
+    TEnum<ETimelineDirection> Timeline_0__Direction_7E993DAF452B4981CFEA5EB3782B00C8;
     class UTimelineComponent* Timeline_0;
     float ScaleUpFlames_Scale_CB5B71854578ACB0C2D4FE8EA4D7C476;
-    ETimelineDirection ScaleUpFlames__Direction_CB5B71854578ACB0C2D4FE8EA4D7C476;
+    TEnum<ETimelineDirection> ScaleUpFlames__Direction_CB5B71854578ACB0C2D4FE8EA4D7C476;
     class UTimelineComponent* ScaleUpFlames;
     float RunSpeedMod;
     FTimerHandle RunTimer;

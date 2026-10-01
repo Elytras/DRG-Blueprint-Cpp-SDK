@@ -28,7 +28,7 @@ public:
     static constexpr const char* UberGraphFrame_ITM_Pickaxe_Slot_C__UeName = "UberGraphFrame";
     FText CategoryText;
     TArray<class UPickaxePart*> Items;
-    EPickaxePartLocation PickaxePartLocation;
+    TEnum<EPickaxePartLocation> PickaxePartLocation;
     class UItemID* PickAxe;
     ITM_GeneratedIcon_Item_C* EquippedWidget;
     void ExecuteUbergraph_ITM_Pickaxe_Slot(int EntryPoint);

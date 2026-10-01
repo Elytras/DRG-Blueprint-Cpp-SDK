@@ -13,6 +13,7 @@ class CameraShake_Item_Shotgun_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_Item_Shotgun", "CameraShake_Item_Shotgun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

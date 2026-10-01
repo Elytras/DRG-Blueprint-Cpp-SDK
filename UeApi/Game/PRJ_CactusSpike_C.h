@@ -18,6 +18,7 @@ class PRJ_CactusSpike_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/CactusShooter/PRJ_CactusSpike", "PRJ_CactusSpike_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "7904f3eb7b851c4884cec00f5a348366";

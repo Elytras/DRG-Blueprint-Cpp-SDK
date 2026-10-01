@@ -22,7 +22,7 @@ public:
     class UWidgetAnimation* AnimFadeIn;
     class UCanvasPanel* RootCanvas;
     void ExecuteUbergraph_MENU_Merch(int EntryPoint);
-    void OnVisibilityChanged_Event(ESlateVisibility InVisibility);
+    void OnVisibilityChanged_Event(TEnum<ESlateVisibility> InVisibility);
     UE_COSMETIC void Construct();
 };
 

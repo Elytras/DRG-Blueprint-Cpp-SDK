@@ -20,6 +20,7 @@ class BP_FriendlyParasite_Mechanical_C : public Game::WeaponsNTools::Grenades::F
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/BP_FriendlyParasite_Mechanical", "BP_FriendlyParasite_Mechanical_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_BP_FriendlyParasite_Mechanical_C;
     static constexpr const char* UberGraphFrame_BP_FriendlyParasite_Mechanical_C__UeName = "UberGraphFrame";
     class UParticleSystemComponent* Particle_Trail;

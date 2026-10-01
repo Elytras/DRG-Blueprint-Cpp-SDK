@@ -22,7 +22,7 @@ public:
     FVector DestinationLocation;
     void ExecuteUbergraph_EWC_Escort_EndDefense(int EntryPoint);
     void SpawnExtraEnemies(float Difficulty);
-    void StartStageEnemies(EOmmoranStage Stage, bool IsLastStage);
+    void StartStageEnemies(TEnum<EOmmoranStage> Stage, bool IsLastStage);
     void ExtraEnemiesWhileFightingLazerClaws();
     void ExtraEnemiesWhileFightingTraps();
     void SpawnStartWave();

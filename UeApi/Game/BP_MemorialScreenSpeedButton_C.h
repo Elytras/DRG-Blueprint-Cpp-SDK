@@ -41,7 +41,7 @@ public:
     bool IsFast;
     static constexpr const char* IsFast__Replicated = "OnRep_IsFast:";
     void ExecuteUbergraph_BP_MemorialScreenSpeedButton(int EntryPoint);
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnMatchStarted_Event_0();
     void ReceiveBeginPlay();
     void OnRep_IsFast();

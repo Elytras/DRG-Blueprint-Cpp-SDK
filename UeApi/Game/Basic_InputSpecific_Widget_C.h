@@ -19,10 +19,10 @@ public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_InputSpecific_Widget", "Basic_InputSpecific_Widget_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNamedSlot* Content;
-    ESlateVisibility ControllerVisibility;
-    ESlateVisibility OtherVisibility;
+    TEnum<ESlateVisibility> ControllerVisibility;
+    TEnum<ESlateVisibility> OtherVisibility;
     void ExecuteUbergraph_Basic_InputSpecific_Widget(int EntryPoint);
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
 };
 

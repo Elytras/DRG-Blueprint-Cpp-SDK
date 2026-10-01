@@ -60,14 +60,14 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "659f40a32a5b724e931df33309396fb8";
     float Pulsating_shell_Pulse_351B8E04438E55A34AD7599F13872713;
-    ETimelineDirection Pulsating_shell__Direction_351B8E04438E55A34AD7599F13872713;
+    TEnum<ETimelineDirection> Pulsating_shell__Direction_351B8E04438E55A34AD7599F13872713;
     class UTimelineComponent* Pulsating_shell;
     static constexpr const char* Pulsating_shell__UeName = "Pulsating shell";
-    ETimelineDirection Move_towards_target__Direction_3E7A86F94B91CDEC852EE0BAD9B36A13;
+    TEnum<ETimelineDirection> Move_towards_target__Direction_3E7A86F94B91CDEC852EE0BAD9B36A13;
     class UTimelineComponent* Move_towards_target;
     static constexpr const char* Move_towards_target__UeName = "Move towards target";
     float Sucking_Duration_Model_Emissive_intensity___7C306C17493093A48A5774B653EC9DCE;
-    ETimelineDirection Sucking_Duration__Direction_7C306C17493093A48A5774B653EC9DCE;
+    TEnum<ETimelineDirection> Sucking_Duration__Direction_7C306C17493093A48A5774B653EC9DCE;
     class UTimelineComponent* Sucking_Duration;
     static constexpr const char* Sucking_Duration__UeName = "Sucking Duration";
     FRotator Target_Look_At_Rotation;

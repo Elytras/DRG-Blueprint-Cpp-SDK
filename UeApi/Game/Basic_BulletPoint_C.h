@@ -40,13 +40,13 @@ public:
     int BulletSpacing;
     FMargin Bullet_Padding;
     static constexpr const char* Bullet_Padding__UeName = "Bullet Padding";
-    EHorizontalAlignment Bullet_Horizontal_Alignment;
+    TEnum<EHorizontalAlignment> Bullet_Horizontal_Alignment;
     static constexpr const char* Bullet_Horizontal_Alignment__UeName = "Bullet Horizontal Alignment";
-    EVerticalAlignment Bullet_Vertical_Alignment;
+    TEnum<EVerticalAlignment> Bullet_Vertical_Alignment;
     static constexpr const char* Bullet_Vertical_Alignment__UeName = "Bullet Vertical Alignment";
     void ExecuteUbergraph_Basic_BulletPoint(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetBulletLayout(EHorizontalAlignment InHorizontalAlignment, EVerticalAlignment InVerticalAlignment, FMargin InPadding);
+    void SetBulletLayout(TEnum<EHorizontalAlignment> InHorizontalAlignment, TEnum<EVerticalAlignment> InVerticalAlignment, FMargin InPadding);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard

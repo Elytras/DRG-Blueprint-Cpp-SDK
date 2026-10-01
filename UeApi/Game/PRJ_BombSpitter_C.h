@@ -20,6 +20,7 @@ class PRJ_BombSpitter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/BombSpitter/PRJ_BombSpitter", "PRJ_BombSpitter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "de2b151408492c4fbe7dcd2bfdb405ec";

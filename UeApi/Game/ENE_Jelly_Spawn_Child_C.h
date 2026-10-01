@@ -15,6 +15,7 @@ class ENE_Jelly_Spawn_Child_C : public Game::Enemies::Jellyfish::ENE_Jelly_Swarm
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/ENE_Jelly_Spawn_Child", "ENE_Jelly_Spawn_Child_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     class UMeleeAttackComponent* MeleeAttack;
     static constexpr const char* MeleeAttack__UeScsNode = "c0d02f9c72d6ca42b415db7daa6d5122";
 };

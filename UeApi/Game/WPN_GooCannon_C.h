@@ -28,6 +28,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/WPN_GooCannon", "WPN_GooCannon_C");
     using BP_GooCannon_GooPuddle_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C;
     using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GooCannon_FullyCharged_Cue;
     static constexpr const char* GooCannon_FullyCharged_Cue__UeScsNode = "6ace973a970d2d48b15fe8542dc8f67f";

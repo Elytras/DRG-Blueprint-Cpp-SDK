@@ -60,7 +60,7 @@ public:
     static constexpr const char* Stop_Movie__UeName = "Stop Movie";
     void Start_Movie();
     static constexpr const char* Start_Movie__UeName = "Start Movie";
-    void BndEvt__ITM_DLC_Entry_UI_MediaPlayer_K2Node_ComponentBoundEvent_3_StateChanged__DelegateSignature(class UMediaPlayerWidget* InPlayerWidget, EMediaPlayerState InState);
+    void BndEvt__ITM_DLC_Entry_UI_MediaPlayer_K2Node_ComponentBoundEvent_3_StateChanged__DelegateSignature(class UMediaPlayerWidget* InPlayerWidget, TEnum<EMediaPlayerState> InState);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();

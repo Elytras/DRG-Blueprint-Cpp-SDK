@@ -29,6 +29,7 @@ public:
     using ABP_OssiranScrab_ScrabTank_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::Animations::ABP_OssiranScrab_ScrabTank_C;
     using AC_ScrabTankButtonCooldown_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::AC_ScrabTankButtonCooldown_C;
     using BP_ScrabTankSkeletalMesh_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTankSkeletalMesh_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent BeetleMount;/Script/Engine.SceneComponent BeetleVisual;/Script/Engine.SceneComponent SceneRoot;/Script/Engine.SplineComponent PathSpline";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh6;
     static constexpr const char* StaticMesh6__UeScsNode = "6d314d5d46bb9342a1b8c83799a1a8f5";
@@ -86,13 +87,13 @@ public:
     void Reset_Do_Once();
     static constexpr const char* Reset_Do_Once__UeName = "Reset Do Once";
     void BP_OnScream();
-    void BP_OnArrived(EScrabTankSlot ArrivedAt);
-    void BP_OnMoveStarted(EScrabTankSlot from, EScrabTankSlot to);
-    void BndEvt__BP_ScrabTank_InstantUsableFeed_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BP_OnArrived(TEnum<EScrabTankSlot> ArrivedAt);
+    void BP_OnMoveStarted(TEnum<EScrabTankSlot> from, TEnum<EScrabTankSlot> to);
+    void BndEvt__BP_ScrabTank_InstantUsableFeed_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void Feed_Cosmetics();
     static constexpr const char* Feed_Cosmetics__UeName = "Feed Cosmetics";
-    void BndEvt__BP_ScrabTank2_InstantUsablePunish_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__BP_ScrabTank2_InstantUsableReward_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_ScrabTank2_InstantUsablePunish_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__BP_ScrabTank2_InstantUsableReward_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void ActivateAnnoy(bool Activate);
     void RandomPlayDwarfSpeak(float percentage, class UDialogDataAsset* Shout, class APlayerCharacter* PlayerCharacter, bool& Played);

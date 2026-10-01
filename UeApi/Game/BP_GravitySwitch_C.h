@@ -39,7 +39,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "78ec7b2fcc64164684eb7550d5225f4c";
     float Timeline_0_LightIntensity_2CB0110A43F837100C1A68A2642737BF;
-    ETimelineDirection Timeline_0__Direction_2CB0110A43F837100C1A68A2642737BF;
+    TEnum<ETimelineDirection> Timeline_0__Direction_2CB0110A43F837100C1A68A2642737BF;
     class UTimelineComponent* Timeline_0;
     int Normal_Gravity;
     static constexpr const char* Normal_Gravity__UeName = "Normal Gravity";
@@ -53,7 +53,7 @@ public:
     UE_MULTICAST void ResetSkyLight();
     UE_MULTICAST void ChangeSkyLight();
     void ReceiveBeginPlay();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User_0, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User_0, TEnum<EInputKeys> Key);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 };

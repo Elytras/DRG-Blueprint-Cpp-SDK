@@ -20,6 +20,7 @@ class PRJ_Rockpox_Breeder_WormVomit_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/PRJ_Rockpox_Breeder_WormVomit", "PRJ_Rockpox_Breeder_WormVomit_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Plague_Projectile_Trail;
     static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "08c769b83d64264d829b0daad785913d";

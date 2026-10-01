@@ -19,6 +19,7 @@ class ENE_Spider_Tank_Rock_C : public Game::Enemies::Spider::Tank::ENE_Spider_Ta
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/Rock/ENE_Spider_Tank_Rock", "ENE_Spider_Tank_Rock_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Rock_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Rock_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* BiteAttack;

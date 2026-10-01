@@ -13,6 +13,7 @@ class AIC_Spider_RapidShooter_Elite_C : public Game::Enemies::Spider::RapidShoot
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/RapidShooter/AIC_Spider_RapidShooter_Elite", "AIC_Spider_RapidShooter_Elite_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::Spider::RapidShooter

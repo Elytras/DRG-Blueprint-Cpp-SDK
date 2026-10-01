@@ -36,7 +36,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "042d37316a6a88429298c3bcae442246";
     float Scanner_Object_Timeline_Time_EC07CDDA40AC89EA6875FCB53F3F2A41;
-    ETimelineDirection Scanner_Object_Timeline__Direction_EC07CDDA40AC89EA6875FCB53F3F2A41;
+    TEnum<ETimelineDirection> Scanner_Object_Timeline__Direction_EC07CDDA40AC89EA6875FCB53F3F2A41;
     class UTimelineComponent* Scanner_Object_Timeline;
     static constexpr const char* Scanner_Object_Timeline__UeName = "Scanner Object Timeline";
     void ExecuteUbergraph_BP_LaserPointerWaypoint(int EntryPoint);

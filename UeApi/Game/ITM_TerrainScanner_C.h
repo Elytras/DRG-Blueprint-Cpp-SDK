@@ -21,6 +21,7 @@ class ITM_TerrainScanner_C : public ATerrainScannerItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/TerrainScanner/ITM_TerrainScanner", "ITM_TerrainScanner_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneCaptureComponent2D TerrainScannerCapture;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TerrainScannerRoot;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* Screen_Rays;
     static constexpr const char* Screen_Rays__UeScsNode = "4e6d1dd84777ec4e8d160115fd8d3c21";

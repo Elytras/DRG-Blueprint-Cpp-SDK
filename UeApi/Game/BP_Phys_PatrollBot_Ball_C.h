@@ -49,7 +49,7 @@ public:
     void DestroyOvertime();
     UE_MULTICAST void destroy();
     void ReceiveBeginPlay();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_KickSoundLocation();
 };
 

@@ -42,6 +42,7 @@ public:
     using Popup_GearUpgrade_Buy_C = Game::UI::CharacterSelectionMK2::Popup_GearUpgrade_Buy_C;
     using SCREEN_CharacterSelection_Clean_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Clean_C;
     using WND_AssignmentMissionComplete_C = Game::UI::HUD_SpaceRig::CampaignNotifications::WND_AssignmentMissionComplete_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerController_SpaceRig_C;
     static constexpr const char* UberGraphFrame_BP_PlayerController_SpaceRig_C__UeName = "UberGraphFrame";
     class UWindowWidget* ServerBrowser;
@@ -100,15 +101,15 @@ public:
     void Back_Event_0();
     void Setup_Jukebox_Sound_Mix();
     static constexpr const char* Setup_Jukebox_Sound_Mix__UeName = "Setup Jukebox Sound Mix";
-    void OpenStandaloneMinersManualPage(EMinersManualSinglePage page);
-    void OpenStandaloneMinersManual(EMinersManualSection Section, const FGuid& ID);
+    void OpenStandaloneMinersManualPage(TEnum<EMinersManualSinglePage> page);
+    void OpenStandaloneMinersManual(TEnum<EMinersManualSection> Section, const FGuid& ID);
     void ShowEscapeMenu();
     void OnPackageMounted(bool Sandbox);
     void OnRestartSpacerig(bool Yes, bool CreateModdedSave);
     void OnRestartGame(bool Yes, bool CreateModdedSave);
     void ReloadSpacerig();
     void ShowForgeWorkshop();
-    void ShowCharacterSelectionBackground(bool resetToDefaultWeapon, ECharselectionCameraLocation cameraLocation);
+    void ShowCharacterSelectionBackground(bool resetToDefaultWeapon, TEnum<ECharselectionCameraLocation> cameraLocation);
     void On_Prompt(bool Yes);
     static constexpr const char* On_Prompt__UeName = "On Prompt";
     void PromptLaunchTutorial();
@@ -130,7 +131,7 @@ public:
     void OnDroppodLeave();
     void OnPlayerSpawnBegin(int PlayerId);
     UE_CLIENT UE_RELIABLE void ShowBoscoUpgrades();
-    void ShowItemUpgradeScreen(class UClass* CharacterClass, class UClass* itemClass, EItemCategory ItemCategory);
+    void ShowItemUpgradeScreen(class UClass* CharacterClass, class UClass* itemClass, TEnum<EItemCategory> ItemCategory);
     UE_CLIENT UE_RELIABLE void ShowJobs();
     UE_CLIENT UE_RELIABLE void Deduct_Credits_On_Client(int amount);
     static constexpr const char* Deduct_Credits_On_Client__UeName = "Deduct Credits On Client";
@@ -185,9 +186,9 @@ public:
     void InpActEvt_PushToTalk_K2Node_InputActionEvent_5(FKey Key);
     void CreateUI();
     void ChangeCharacter(class UPlayerCharacterID* NewCharacter);
-    void AddWidget(class UUserWidget*& Widget, int ZOrder, ESlateVisibility InVisibility);
+    void AddWidget(class UUserWidget*& Widget, int ZOrder, TEnum<ESlateVisibility> InVisibility);
     void SelectLastPlayedCharacter();
-    void ChangeHUDVisible(bool IsHUDVisible_0, EHUDVisibilityReason reason);
+    void ChangeHUDVisible(bool IsHUDVisible_0, TEnum<EHUDVisibilityReason> reason);
     bool HUDVisible();
     void PreloadAssets();
     void GetCrafting(class UWindowWidget*& Widget);

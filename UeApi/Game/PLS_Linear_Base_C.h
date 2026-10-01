@@ -13,6 +13,7 @@ class PLS_Linear_Base_C : public Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/PLS_Linear_Base", "PLS_Linear_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
 };
 
 }}}   // namespace Game::Landscape::ProceduralLevelSetups

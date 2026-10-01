@@ -21,6 +21,7 @@ class BP_PropHunt_CorePod_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season05/BP_PropHunt_CorePod", "BP_PropHunt_CorePod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SK_S05_CrawlerArm;
     static constexpr const char* SK_S05_CrawlerArm__UeScsNode = "b7009cd9ca0ef14d8399294c82721215";

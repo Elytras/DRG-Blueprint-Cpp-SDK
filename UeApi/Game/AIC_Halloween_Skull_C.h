@@ -16,6 +16,7 @@ class AIC_Halloween_Skull_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Halloween/AIC_Halloween_Skull", "AIC_Halloween_Skull_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviorTree;
     void ExecuteUbergraph_AIC_Halloween_Skull(int EntryPoint);

@@ -43,6 +43,7 @@ public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/ENE_Terminator", "ENE_Terminator_C");
     using BP_TentacleGrab_C = Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
     using BP_Terminator_ElectricAttack_C = Game::Enemies::RivalTech::Terminator::BP_Terminator_ElectricAttack_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnAlertComponent* PawnAlert;
     static constexpr const char* PawnAlert__UeScsNode = "6f41a177a3541b42a4cedaa1e78540d8";
@@ -87,10 +88,10 @@ public:
     class UEnemyComponent* enemy;
     static constexpr const char* enemy__UeScsNode = "987fb7fe93975749ac21f24041039299";
     float Fade_Power_FDF03F13465CDEAA8A4FBFB39DB1FAEE;
-    ETimelineDirection Fade__Direction_FDF03F13465CDEAA8A4FBFB39DB1FAEE;
+    TEnum<ETimelineDirection> Fade__Direction_FDF03F13465CDEAA8A4FBFB39DB1FAEE;
     class UTimelineComponent* fade;
     float Flutter_Power_D066B1464FF406390DEE3DBAB48540DE;
-    ETimelineDirection Flutter__Direction_D066B1464FF406390DEE3DBAB48540DE;
+    TEnum<ETimelineDirection> Flutter__Direction_D066B1464FF406390DEE3DBAB48540DE;
     class UTimelineComponent* Flutter;
     float ArmorHP;
     int NumPhaseBombs;
@@ -117,7 +118,7 @@ public:
     void BndEvt__ENE_Terminator_PawnSensing_K2Node_ComponentBoundEvent_5_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     UE_MULTICAST void All_Detected();
     UE_AUTHORITY_ONLY void Receive_Alerted();
-    void TentacleOutlineChanged(EOutline InOutline);
+    void TentacleOutlineChanged(TEnum<EOutline> InOutline);
     void BndEvt__ENE_Terminator_ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void CallPhaseBombBarrage();
     void SpawnBarrier(class APlayerCharacter* Character);

@@ -27,6 +27,7 @@ class WPN_PlagueSoaper_C : public APlagueSoaperItem
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/WPN_PlagueSoaper", "WPN_PlagueSoaper_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoscoCarryingDetailComponent* BoscoCarryingDetail;
     static constexpr const char* BoscoCarryingDetail__UeScsNode = "d69400329046cb44a71b12b3ea760d0e";

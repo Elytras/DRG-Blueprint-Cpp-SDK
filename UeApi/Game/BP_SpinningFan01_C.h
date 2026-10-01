@@ -15,6 +15,7 @@ class BP_SpinningFan01_C : public AStaticMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Big_Structures/BP_SpinningFan01", "BP_SpinningFan01_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovement;
     static constexpr const char* RotatingMovement__UeScsNode = "43f0710d0c408642afdd497d91842ab8";

@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Lure_C : public Game::WeaponsNTools::Grenades::Loadou
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Lure/Loadout_GrenadeProxy_Lure", "Loadout_GrenadeProxy_Lure_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Lure

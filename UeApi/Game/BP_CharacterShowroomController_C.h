@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/UI/Showroom/BP_CharacterShowroomController", "BP_CharacterShowroomController_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_CharacterShowroomController(int EntryPoint);
-    void EquipWeapon(EItemCategory Category);
+    void EquipWeapon(TEnum<EItemCategory> Category);
     void Receive_CharacterShown();
 };
 

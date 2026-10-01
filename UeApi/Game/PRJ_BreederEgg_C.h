@@ -24,6 +24,7 @@ class PRJ_BreederEgg_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Jelly_Breeder/PRJ_BreederEgg", "PRJ_BreederEgg_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyHealthComponent* EnemyHealth;
     static constexpr const char* EnemyHealth__UeScsNode = "72a50c0a17d9b647a17be883a109671d";

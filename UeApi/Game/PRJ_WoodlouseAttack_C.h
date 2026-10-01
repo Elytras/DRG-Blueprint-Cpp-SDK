@@ -25,6 +25,7 @@ class PRJ_WoodlouseAttack_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/PRJ_WoodlouseAttack", "PRJ_WoodlouseAttack_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "730a9cbb0413294a90533e71298c4d14";

@@ -29,9 +29,9 @@ public:
     static constexpr const char* Lamp_Mesh__UeScsNode = "a936bf6c98a91642b2e02d7900840352";
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
-    ERefineryState State;
+    TEnum<ERefineryState> State;
     void ExecuteUbergraph_BP_Refinery_RocketLamp(int EntryPoint);
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     void ReceiveBeginPlay();
 };
 

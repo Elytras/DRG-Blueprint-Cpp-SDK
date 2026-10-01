@@ -35,6 +35,7 @@ class BP_ResonanceScannerPod_C : public AResonanceScannerPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_ResonanceScannerPod", "BP_ResonanceScannerPod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
     static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "bef1a87ac075194684e539ff1e1418a6";
@@ -97,7 +98,7 @@ public:
     void OnDropStarted();
     void OnDroppodImpact();
     void OnConnectedToTarget();
-    void OnNewState(class ARessuplyPod* pod, ERessuplyPodState NewParam);
+    void OnNewState(class ARessuplyPod* pod, TEnum<ERessuplyPodState> NewParam);
     void OnFirstFuelLineSegment(class AFuelLineSegment* InFirstSegment);
     void BndEvt__BP_RockCrackerPod_DropToTerrain_K2Node_ComponentBoundEvent_3_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
     void ReceiveBeginPlay();

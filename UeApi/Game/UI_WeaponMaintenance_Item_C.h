@@ -62,7 +62,7 @@ public:
     void Refresh();
     void SetHeight(int InHeight);
     UE_PURE class UWidget* GetToolTip();
-    void ShowState(EWeaponMaintenanceState InState, int InXP, int InTargetXP, int InLevel, int InMaxLevel);
+    void ShowState(TEnum<EWeaponMaintenanceState> InState, int InXP, int InTargetXP, int InLevel, int InMaxLevel);
     void GetPct(int Current, int Target, float& Pct);
 };
 

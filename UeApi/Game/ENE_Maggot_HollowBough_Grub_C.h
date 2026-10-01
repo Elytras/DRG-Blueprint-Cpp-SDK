@@ -15,6 +15,7 @@ class ENE_Maggot_HollowBough_Grub_C : public Game::Critters::Maggot::ENE_Maggot_
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_HollowBough_Grub", "ENE_Maggot_HollowBough_Grub_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "eeac83dbd3d680408596115e59b4652b";
 };

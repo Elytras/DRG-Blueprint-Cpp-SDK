@@ -40,6 +40,7 @@ class BP_MineHead_C : public AFSDMiningHead
 public:
     UE_CLASS("/Game/LevelElements/Minehead/BP_MineHead", "BP_MineHead_C");
     using BP_Minehead_LandingZone_C = Game::LevelElements::Minehead::BP_Minehead_LandingZone_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/FSD.ResourceBank ResourceBank;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* MineHead__TerrainScanner;
     static constexpr const char* MineHead__TerrainScanner__UeName = "MineHead_ TerrainScanner";
@@ -199,7 +200,7 @@ public:
     void BndEvt__KillSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__OpenDepositerBox_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__OpenDepositerBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void BndEvt__Usable_LaunchRocket_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Usable_LaunchRocket_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void objectivesCompleted();
     void OnLiftoff();
     void ReceiveBeginPlay();

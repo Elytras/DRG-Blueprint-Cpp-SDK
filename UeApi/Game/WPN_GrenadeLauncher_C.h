@@ -20,6 +20,7 @@ class WPN_GrenadeLauncher_C : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/WPN_GrenadeLauncher", "WPN_GrenadeLauncher_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
     static constexpr const char* FirstPersonWidget__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";

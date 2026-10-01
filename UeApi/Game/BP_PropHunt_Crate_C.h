@@ -17,6 +17,7 @@ class BP_PropHunt_Crate_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season06/BP_PropHunt_Crate", "BP_PropHunt_Crate_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Lantern_001;
     static constexpr const char* SM_Lantern_001__UeScsNode = "36efb121c72968479a5b71473af07fc6";

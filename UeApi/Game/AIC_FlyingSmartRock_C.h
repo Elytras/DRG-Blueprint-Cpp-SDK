@@ -19,6 +19,7 @@ class AIC_FlyingSmartRock_C : public AFSDAIController
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/FlyingSmartRocks/AIC_FlyingSmartRock", "AIC_FlyingSmartRock_C");
     using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     void ExecuteUbergraph_AIC_FlyingSmartRock(int EntryPoint);

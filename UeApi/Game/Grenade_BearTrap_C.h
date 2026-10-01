@@ -26,6 +26,7 @@ class Grenade_BearTrap_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Bas
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BearTrap/Grenade_BearTrap", "Grenade_BearTrap_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_BearTrap_C;
     static constexpr const char* UberGraphFrame_Grenade_BearTrap_C__UeName = "UberGraphFrame";
     class USphereComponent* UseSphere;
@@ -52,7 +53,7 @@ public:
     bool EverSnapped;
     void ExecuteUbergraph_Grenade_BearTrap(int EntryPoint);
     void BndEvt__Grenade_BearTrap_SingleUsable_K2Node_ComponentBoundEvent_3_ProgressSignature__DelegateSignature(float Progress);
-    void BndEvt__Grenade_BearTrap_SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Grenade_BearTrap_SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__Grenade_BearTrap_SnapCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);

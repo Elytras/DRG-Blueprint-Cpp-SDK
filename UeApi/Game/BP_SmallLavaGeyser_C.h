@@ -63,7 +63,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "2a00515222c1c048b72cb8a3dabce052";
     float LightIntensity_Intensity_6E1A640541026D247C6B3FA0FE340F1B;
-    ETimelineDirection LightIntensity__Direction_6E1A640541026D247C6B3FA0FE340F1B;
+    TEnum<ETimelineDirection> LightIntensity__Direction_6E1A640541026D247C6B3FA0FE340F1B;
     class UTimelineComponent* LightIntensity;
     FVector2D ErruptionDurrationMinMax;
     float LightIntensityErrupt;

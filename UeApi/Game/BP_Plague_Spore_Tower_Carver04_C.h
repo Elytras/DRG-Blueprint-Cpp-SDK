@@ -13,6 +13,7 @@ class BP_Plague_Spore_Tower_Carver04_C : public Game::GameElements::Plague::BP_P
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower_Carver04", "BP_Plague_Spore_Tower_Carver04_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
 };
 
 }}}   // namespace Game::GameElements::Plague

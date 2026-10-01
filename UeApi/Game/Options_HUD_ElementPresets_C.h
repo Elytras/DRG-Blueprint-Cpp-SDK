@@ -21,7 +21,7 @@ public:
     class UHorizontalBox* PresetBox;
     void ExecuteUbergraph_Options_HUD_ElementPresets(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void AddPreset(EHUDVisibilityPresets PresetID);
+    void AddPreset(TEnum<EHUDVisibilityPresets> PresetID);
 };
 
 }}}}   // namespace Game::UI::Menu_Options::HUD

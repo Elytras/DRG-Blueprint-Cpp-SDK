@@ -22,6 +22,7 @@ class ENE_PlagueLarva_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueLarva/ENE_PlagueLarva", "ENE_PlagueLarva_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeleeAttackComponent* MeleeAttack;
     static constexpr const char* MeleeAttack__UeScsNode = "d18b1d618f69f24298d38d18b8507d91";

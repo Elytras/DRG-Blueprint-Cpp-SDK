@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BeastMaster/BP_PetUsable", "BP_PetUsable_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_PetUsable(int EntryPoint);
-    void OnUsedBy_Event_0(class APlayerCharacter* User, EInputKeys Key);
+    void OnUsedBy_Event_0(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
 };

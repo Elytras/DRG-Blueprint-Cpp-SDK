@@ -17,6 +17,7 @@ class Loadout_GrenadeProxyBase_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Loadout_GrenadeProxyBase", "Loadout_GrenadeProxyBase_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
     static constexpr const char* StaticMesh__UeScsNode = "31dd546131ea6444a59823b549715494";

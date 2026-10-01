@@ -29,6 +29,7 @@ class WPN_ZipLineGun_C : public AZipLineItem
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/WPN_ZipLineGun", "WPN_ZipLineGun_C");
     using HUD_Crosshair_ZiplineGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_ZiplineGun_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "32c867e8084cb34dba8e403ed30d0d46";

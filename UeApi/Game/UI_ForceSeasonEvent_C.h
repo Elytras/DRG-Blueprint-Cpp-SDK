@@ -24,7 +24,7 @@ public:
     TArray<TSoftObjectPtr<class USpecialEvent>> Events;
     void ExecuteUbergraph_UI_ForceSeasonEvent(int EntryPoint);
     UE_COSMETIC void Construct();
-    void BndEvt__ComboBoxString_45_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_45_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::CheatConsole

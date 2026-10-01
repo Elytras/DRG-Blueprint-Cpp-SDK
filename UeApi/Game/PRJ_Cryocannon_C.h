@@ -23,6 +23,7 @@ class PRJ_Cryocannon_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/PRJ_Cryocannon", "PRJ_Cryocannon_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovement;
     static constexpr const char* RotatingMovement__UeScsNode = "7a1eb080444e2b419a4c1cfaf345affc";

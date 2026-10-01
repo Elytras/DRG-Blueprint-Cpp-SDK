@@ -25,6 +25,7 @@ class PRJ_GrenadeAxe_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/PRJ_GrenadeAxe", "PRJ_GrenadeAxe_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* SmallShitDamage;
     static constexpr const char* SmallShitDamage__UeScsNode = "427ff75ac1f9f34c9df7f5966cd4171d";

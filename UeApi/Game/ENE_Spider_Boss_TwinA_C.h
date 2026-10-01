@@ -17,6 +17,7 @@ class ENE_Spider_Boss_TwinA_C : public Game::Enemies::Spider::TankBoss::BossTwin
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ENE_Spider_Boss_TwinA", "ENE_Spider_Boss_TwinA_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_TwinA_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinA_C__UeName = "UberGraphFrame";
     class UProjectileAttackComponent* Projectile_MinesBarrage;

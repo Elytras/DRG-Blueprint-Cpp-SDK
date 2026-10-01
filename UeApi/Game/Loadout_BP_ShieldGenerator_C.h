@@ -17,6 +17,7 @@ class Loadout_BP_ShieldGenerator_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/Loadout_BP_ShieldGenerator", "Loadout_BP_ShieldGenerator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
     static constexpr const char* StaticMesh__UeScsNode = "e6f556e666a0ec4cb3cf5aa4d01ed87d";

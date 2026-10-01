@@ -16,6 +16,7 @@ class AIC_Spider_Lobber_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/AIC_Spider_Lobber", "AIC_Spider_Lobber_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Lobber_C;
     static constexpr const char* UberGraphFrame_AIC_Spider_Lobber_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Lobber(int EntryPoint);

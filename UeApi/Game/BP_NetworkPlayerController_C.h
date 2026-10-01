@@ -25,6 +25,7 @@ public:
     UE_CLASS("/Game/Game/BP_NetworkPlayerController", "BP_NetworkPlayerController_C");
     using SCREEN_CharacterSelection_Base_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C;
     using Screen_BaseLoadLevel_C = Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_NetworkPlayerController_C;
     static constexpr const char* UberGraphFrame_BP_NetworkPlayerController_C__UeName = "UberGraphFrame";
     SCREEN_CharacterSelection_Base_C* CharSelectScreen;

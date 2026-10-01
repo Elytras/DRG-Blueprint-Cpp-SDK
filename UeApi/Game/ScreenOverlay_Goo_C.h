@@ -31,7 +31,7 @@ public:
     UE_COSMETIC void Construct();
     void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     void OnAnimFadingFinished();
-    void Play_Fade(EUMGSequencePlayMode PlayMode);
+    void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
     static constexpr const char* Play_Fade__UeName = "Play Fade";
 };
 

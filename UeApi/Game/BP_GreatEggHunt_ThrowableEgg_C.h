@@ -26,6 +26,7 @@ class BP_GreatEggHunt_ThrowableEgg_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_ThrowableEgg", "BP_GreatEggHunt_ThrowableEgg_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
     static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";

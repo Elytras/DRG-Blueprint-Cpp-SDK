@@ -19,6 +19,7 @@ class PRJ_HydraWeedSpawn_C : public AHydraWeedSpawnProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/PRJ_HydraWeedSpawn", "PRJ_HydraWeedSpawn_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
     static constexpr const char* Audio__UeScsNode = "e6ee98d9a464584cb87b070acb619b99";

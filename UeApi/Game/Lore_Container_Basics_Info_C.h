@@ -39,8 +39,8 @@ public:
     class UMinersManualData* Data;
     bool MoveImageToRightSide;
     void ExecuteUbergraph_Lore_Container_Basics_Info(int EntryPoint);
-    void SetAlignment(ETextJustify Text, EHorizontalAlignment Image);
-    void AddItem(class UWidget* Content, EHorizontalAlignment InHorizontalAlignment, EVerticalAlignment InVerticalAlignment, FMargin InPadding, ESlateSizeRule Size_Rule);
+    void SetAlignment(TEnum<ETextJustify> Text, TEnum<EHorizontalAlignment> Image);
+    void AddItem(class UWidget* Content, TEnum<EHorizontalAlignment> InHorizontalAlignment, TEnum<EVerticalAlignment> InVerticalAlignment, FMargin InPadding, TEnum<ESlateSizeRule> Size_Rule);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

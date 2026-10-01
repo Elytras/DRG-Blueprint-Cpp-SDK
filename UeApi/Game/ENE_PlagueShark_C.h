@@ -27,6 +27,7 @@ class ENE_PlagueShark_C : public ASharkEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShark/ENE_PlagueShark", "ENE_PlagueShark_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* Trail;
     static constexpr const char* Trail__UeScsNode = "f91e87d19dd8464b8d1c90682d7bd18e";
@@ -62,8 +63,8 @@ public:
     void BndEvt__ENE_PlagueShark_RestrictedGrabberComponent_K2Node_ComponentBoundEvent_3_ReleasedActorSig__DelegateSignature(class AActor* aGrabbedActor, bool fullGrabElapsed);
     void BndEvt__ENE_PlagueShark_RestrictedGrabberComponent_K2Node_ComponentBoundEvent_1_GrabbedActorSig__DelegateSignature(class AActor* aGrabbedActor);
     UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
-    void OnExitState(ESharkEnemyState State_0);
-    void OnEnterState(ESharkEnemyState State_0);
+    void OnExitState(TEnum<ESharkEnemyState> State_0);
+    void OnEnterState(TEnum<ESharkEnemyState> State_0);
     void OnLandedEvent();
     void TryDamage(class AActor* self2);
     void OnRep_DiedbyCritical();

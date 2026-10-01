@@ -26,7 +26,7 @@ public:
     Basic_Label_C* Txt_Status;
     void ExecuteUbergraph_UI_PipelineBuilder_Crosshair(int EntryPoint);
     UE_COSMETIC void Construct();
-    void SetState(EPlaceableObstructionType State);
+    void SetState(TEnum<EPlaceableObstructionType> State);
 };
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder

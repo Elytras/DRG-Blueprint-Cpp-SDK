@@ -30,6 +30,7 @@ class BP_RocketAttachment_C : public ARocketAttachment
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachment", "BP_RocketAttachment_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarryingItemUsable AttachUsable;/Script/FSD.DroneUseComponent DroneUsable;/Script/FSD.SingleUsableComponent BuildUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* CollisionBox1;
     static constexpr const char* CollisionBox1__UeScsNode = "b2b2e3855079e7419d637ab3aae3ab4c";
@@ -72,15 +73,15 @@ public:
     void BndEvt__BP_RocketAttachment_ThrusterParticles_K2Node_ComponentBoundEvent_6_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset);
     void ReceiveBeginPlay();
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_5_GenericUsableDelegate__DelegateSignature();
-    void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SetThrusterAnimBP(class UClass* ThrusterAnimBP, FName BoneNameToFollow);
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_1_ProgressSignature__DelegateSignature(float Progress);
     UE_MULTICAST void CarveFree();
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__BP_RocketAttachment_AttachUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_RocketAttachment_AttachUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveFreeAttachment();
-    void OnEnterState(ERocketAttachmentState NewState);
-    void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_4_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void OnEnterState(TEnum<ERocketAttachmentState> NewState);
+    void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_4_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void UserConstructionScript();
     void OverrideMaterial(class UMaterialInterface* Material, class UMaterialInterface* LampOverrideMaterial);
     void OnHidden();

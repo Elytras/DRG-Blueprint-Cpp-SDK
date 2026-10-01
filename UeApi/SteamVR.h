@@ -30,9 +30,9 @@ class USteamVRFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/SteamVR", "SteamVRFunctionLibrary");
-    static bool GetHandPositionAndOrientation(int ControllerIndex, EControllerHand hand, FVector& OutPosition, FRotator& OutOrientation);
+    static bool GetHandPositionAndOrientation(int ControllerIndex, TEnum<EControllerHand> hand, FVector& OutPosition, FRotator& OutOrientation);
     static bool GetTrackedDevicePositionAndOrientation(int DeviceID, FVector& OutPosition, FRotator& OutOrientation);
-    static void GetValidTrackedDeviceIds(ESteamVRTrackedDeviceType DeviceType, TArray<int>& OutTrackedDeviceIds);
+    static void GetValidTrackedDeviceIds(TEnum<ESteamVRTrackedDeviceType> DeviceType, TArray<int>& OutTrackedDeviceIds);
 };
 
 class USteamVRHQStereoLayerShape : public UStereoLayerShapeQuad

@@ -105,8 +105,8 @@ class UMovieSceneCaptureProtocolBase : public UObject
 {
 public:
     UE_CLASS("/Script/MovieSceneCapture", "MovieSceneCaptureProtocolBase");
-    EMovieSceneCaptureProtocolState State;
-    UE_PURE EMovieSceneCaptureProtocolState GetState() const;
+    TEnum<EMovieSceneCaptureProtocolState> State;
+    UE_PURE TEnum<EMovieSceneCaptureProtocolState> GetState() const;
     UE_PURE bool IsCapturing() const;
 };
 
@@ -142,7 +142,7 @@ public:
     FCompositionGraphCapturePasses IncludeRenderPasses;
     bool bCaptureFramesInHDR;
     int HDRCompressionQuality;
-    EHDRCaptureGamut CaptureGamut;
+    TEnum<EHDRCaptureGamut> CaptureGamut;
     FSoftObjectPath PostProcessingMaterial;
     bool bDisableScreenPercentage;
     class UMaterialInterface* PostProcessingMaterialPtr;
@@ -190,7 +190,7 @@ class UImageSequenceProtocol_EXR : public UImageSequenceProtocol
 public:
     UE_CLASS("/Script/MovieSceneCapture", "ImageSequenceProtocol_EXR");
     bool bCompressed;
-    EHDRCaptureGamut CaptureGamut;
+    TEnum<EHDRCaptureGamut> CaptureGamut;
 };
 
 class IMovieSceneCaptureInterface
@@ -264,7 +264,7 @@ class UUserDefinedImageCaptureProtocol : public UUserDefinedCaptureProtocol
 {
 public:
     UE_CLASS("/Script/MovieSceneCapture", "UserDefinedImageCaptureProtocol");
-    EDesiredImageFormat Format;
+    TEnum<EDesiredImageFormat> Format;
     bool bEnableCompression;
     int CompressionQuality;
     FString GenerateFilenameForBuffer(class UTexture* Buffer, const FCapturedPixelsID& StreamID);

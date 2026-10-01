@@ -28,6 +28,7 @@ public:
     using BP_BansheeModule_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
     using BP_MagneticArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_MagneticArrow_Component_C;
     using BP_RicochetArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_RicochetArrow_Component_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* SimpleDamage;
     static constexpr const char* SimpleDamage__UeScsNode = "0b3d6a3c73e2f84485e0debabb5cf671";

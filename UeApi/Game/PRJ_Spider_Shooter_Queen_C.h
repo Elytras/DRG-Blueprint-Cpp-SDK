@@ -20,6 +20,7 @@ class PRJ_Spider_Shooter_Queen_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ShooterQueen/PRJ_Spider_Shooter_Queen", "PRJ_Spider_Shooter_Queen_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosion;
     static constexpr const char* ProjectileExplosion__UeScsNode = "d6dbceaca32b124ea9fe228f1b9efba6";

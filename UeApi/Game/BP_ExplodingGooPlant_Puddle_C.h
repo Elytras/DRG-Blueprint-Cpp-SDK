@@ -19,6 +19,7 @@ class BP_ExplodingGooPlant_Puddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ExplodingGooPlant/BP_ExplodingGooPlant_Puddle", "BP_ExplodingGooPlant_Puddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     class UBoxComponent* BoxTrigger;
     static constexpr const char* BoxTrigger__UeScsNode = "c99b98723a06bb469e51a636ae364085";
     class USimpleObjectInfoComponent* SimpleObjectInfo;

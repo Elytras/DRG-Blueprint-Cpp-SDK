@@ -33,7 +33,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "a9ef39db0fe6864dae14f772f567b825";
     void ExecuteUbergraph_BP_WaterballoonBucket(int EntryPoint);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

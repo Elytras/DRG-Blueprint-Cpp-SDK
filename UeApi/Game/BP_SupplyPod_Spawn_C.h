@@ -38,6 +38,7 @@ class BP_SupplyPod_Spawn_C : public ARessuplyPodSpawn
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_SupplyPod_Spawn", "BP_SupplyPod_Spawn_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect1;
     static constexpr const char* TerrainDetect1__UeScsNode = "71c1ca4d13f91e448c2caeac1ce5fb5e";
@@ -102,7 +103,7 @@ public:
     class URadarPointComponent* radarPoint;
     static constexpr const char* radarPoint__UeScsNode = "d4b4a2b22188e04cb9782944f303cd59";
     float Timeline_0_RedLightIntensity_B6127BD049EFB0C47436D5B0D49067CC;
-    ETimelineDirection Timeline_0__Direction_B6127BD049EFB0C47436D5B0D49067CC;
+    TEnum<ETimelineDirection> Timeline_0__Direction_B6127BD049EFB0C47436D5B0D49067CC;
     class UTimelineComponent* Timeline_0;
     class AFSDPlayerController* Player;
     class APlayerCharacter* Character;
@@ -122,7 +123,7 @@ public:
     void ExecuteUbergraph_BP_SupplyPod_Spawn(int EntryPoint);
     void SetCharacter(class APlayerCharacter* Character_0);
     void SetController(class AFSDPlayerController* Controller);
-    void CameraShake(class UClass* Shake, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
+    void CameraShake(class UClass* Shake, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     void BndEvt__Box_Left_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__Box_Back_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__Box_Front_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);

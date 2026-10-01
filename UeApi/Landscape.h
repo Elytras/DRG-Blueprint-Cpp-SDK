@@ -449,6 +449,7 @@ class UControlPointMeshComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Landscape", "ControlPointMeshComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     float VirtualTextureMainPassMaxDrawDistance;
 };
 
@@ -461,7 +462,7 @@ public:
     FIntPoint LandscapeSectionOffset;
     int MaxLODLevel;
     float LODDistanceFactor;
-    ELandscapeLODFalloff LODFalloff;
+    TEnum<ELandscapeLODFalloff> LODFalloff;
     float ComponentScreenSizeToUseSubSections;
     float LOD0ScreenSize;
     float LOD0DistributionSetting;
@@ -481,7 +482,7 @@ public:
     TArray<class URuntimeVirtualTexture*> RuntimeVirtualTextures;
     int VirtualTextureNumLods;
     int VirtualTextureLodBias;
-    ERuntimeVirtualTextureMainPassType VirtualTextureRenderPassType;
+    TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
     float NegativeZBoundsExtension;
     float PositiveZBoundsExtension;
     TArray<class ULandscapeComponent*> LandscapeComponents;
@@ -499,7 +500,7 @@ public:
     FLightingChannels LightingChannels;
     bool bUseMaterialPositionOffsetInStaticLighting;
     bool bRenderCustomDepth;
-    ERendererStencilMask CustomDepthStencilWriteMask;
+    TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
     int CustomDepthStencilValue;
     float LDMaxDrawDistance;
     FLightmassPrimitiveSettings LightmassSettings;
@@ -515,7 +516,7 @@ public:
     bool bUsedForNavigation;
     bool bFillCollisionUnderLandscapeForNavmesh;
     bool bUseDynamicMaterialInstance;
-    ENavDataGatheringMode NavigationGeometryGatheringMode;
+    TEnum<ENavDataGatheringMode> NavigationGeometryGatheringMode;
     bool bUseLandscapeForCullingInvisibleHLODVertices;
     bool bHasLayersContent;
     TMap<class UTexture2D*, class ULandscapeWeightmapUsage*> WeightmapUsageMap;
@@ -713,6 +714,7 @@ class ULandscapeMeshProxyComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeMeshProxyComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     FGuid LandscapeGuid;
     TArray<FIntPoint> ProxyComponentBases;
     int8 ProxyLOD;
@@ -805,8 +807,8 @@ class UMaterialExpressionLandscapeLayerCoords : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerCoords");
-    ETerrainCoordMappingType MappingType;
-    ELandscapeCustomizedCoordType CustomUVType;
+    TEnum<ETerrainCoordMappingType> MappingType;
+    TEnum<ELandscapeCustomizedCoordType> CustomUVType;
     float MappingScale;
     float MappingRotation;
     float MappingPanU;

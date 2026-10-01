@@ -29,6 +29,7 @@ class BP_CreeperVine_Base_C : public ASplinePlant
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/ThornBranches/BP_CreeperVine_Base", "BP_CreeperVine_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* HurtAudioComponent;
     static constexpr const char* HurtAudioComponent__UeScsNode = "9892f4ecef17764eac21d29f42a5291a";

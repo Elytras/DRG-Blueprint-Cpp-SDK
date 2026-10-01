@@ -49,7 +49,7 @@ public:
     void ExecuteUbergraph_Lore_Container_Text_W_Image(int EntryPoint);
     void Refresh();
     void SetData(class UMinersManualData* Data_0);
-    void AddItem(class UWidget* Content, EHorizontalAlignment InHorizontalAlignment, EVerticalAlignment InVerticalAlignment, FMargin InPadding, ESlateSizeRule Size_Rule);
+    void AddItem(class UWidget* Content, TEnum<EHorizontalAlignment> InHorizontalAlignment, TEnum<EVerticalAlignment> InVerticalAlignment, FMargin InPadding, TEnum<ESlateSizeRule> Size_Rule);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

@@ -83,36 +83,36 @@ class UStreamlineLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/StreamlineBlueprint", "StreamlineLibrary");
-    static void BreakStreamlineFeatureRequirements(EUStreamlineFeatureRequirementsFlags Requirements, bool& D3D11Supported, bool& D3D12Supported, bool& VulkanSupported, bool& VSyncOffRequired, bool& HardwareSchedulingRequired);
-    UE_PURE static FStreamlineFeatureRequirements GetStreamlineFeatureInformation(EUStreamlineFeature Feature);
-    UE_PURE static bool IsStreamlineFeatureSupported(EUStreamlineFeature Feature);
-    UE_PURE static EUStreamlineFeatureSupport QueryStreamlineFeatureSupport(EUStreamlineFeature Feature);
+    static void BreakStreamlineFeatureRequirements(TEnum<EUStreamlineFeatureRequirementsFlags> Requirements, bool& D3D11Supported, bool& D3D12Supported, bool& VulkanSupported, bool& VSyncOffRequired, bool& HardwareSchedulingRequired);
+    UE_PURE static FStreamlineFeatureRequirements GetStreamlineFeatureInformation(TEnum<EUStreamlineFeature> Feature);
+    UE_PURE static bool IsStreamlineFeatureSupported(TEnum<EUStreamlineFeature> Feature);
+    UE_PURE static TEnum<EUStreamlineFeatureSupport> QueryStreamlineFeatureSupport(TEnum<EUStreamlineFeature> Feature);
 };
 
 class UStreamlineLibraryDLSSG : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/StreamlineBlueprint", "StreamlineLibraryDLSSG");
-    UE_PURE static EUStreamlineDLSSGMode GetDefaultDLSSGMode();
+    UE_PURE static TEnum<EUStreamlineDLSSGMode> GetDefaultDLSSGMode();
     static void GetDLSSGFrameTiming(float& FrameRateInHertz, int& FramesPresented);
-    UE_PURE static EUStreamlineDLSSGMode GetDLSSGMode();
+    UE_PURE static TEnum<EUStreamlineDLSSGMode> GetDLSSGMode();
     UE_PURE static TArray<EUStreamlineDLSSGMode> GetSupportedDLSSGModes();
-    UE_PURE static bool IsDLSSGModeSupported(EUStreamlineDLSSGMode DLSSGMode);
+    UE_PURE static bool IsDLSSGModeSupported(TEnum<EUStreamlineDLSSGMode> DLSSGMode);
     UE_PURE static bool IsDLSSGSupported();
-    UE_PURE static EUStreamlineFeatureSupport QueryDLSSGSupport();
-    static void SetDLSSGMode(EUStreamlineDLSSGMode DLSSGMode);
+    UE_PURE static TEnum<EUStreamlineFeatureSupport> QueryDLSSGSupport();
+    static void SetDLSSGMode(TEnum<EUStreamlineDLSSGMode> DLSSGMode);
 };
 
 class UStreamlineLibraryReflex : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/StreamlineBlueprint", "StreamlineLibraryReflex");
-    UE_PURE static EUStreamlineReflexMode GetDefaultReflexMode();
+    UE_PURE static TEnum<EUStreamlineReflexMode> GetDefaultReflexMode();
     UE_PURE static float GetGameLatencyInMs();
     UE_PURE static float GetGameToRenderLatencyInMs();
-    UE_PURE static EUStreamlineReflexMode GetReflexMode();
+    UE_PURE static TEnum<EUStreamlineReflexMode> GetReflexMode();
     UE_PURE static float GetRenderLatencyInMs();
     UE_PURE static bool IsReflexSupported();
-    UE_PURE static EUStreamlineFeatureSupport QueryReflexSupport();
-    static void SetReflexMode(EUStreamlineReflexMode Mode);
+    UE_PURE static TEnum<EUStreamlineFeatureSupport> QueryReflexSupport();
+    static void SetReflexMode(TEnum<EUStreamlineReflexMode> Mode);
 };

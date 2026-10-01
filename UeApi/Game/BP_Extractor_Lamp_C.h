@@ -31,7 +31,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
     void ExecuteUbergraph_BP_Extractor_Lamp(int EntryPoint);
     void ReceiveBeginPlay();
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
 };
 
 }}}   // namespace Game::LevelElements::Refinery

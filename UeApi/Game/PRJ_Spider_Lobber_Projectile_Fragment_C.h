@@ -17,6 +17,7 @@ class PRJ_Spider_Lobber_Projectile_Fragment_C : public Game::Enemies::Spider::Lo
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/PRJ_Spider_Lobber_Projectile_Fragment", "PRJ_Spider_Lobber_Projectile_Fragment_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Spider_Lobber_Projectile_Fragment_C;
     static constexpr const char* UberGraphFrame_PRJ_Spider_Lobber_Projectile_Fragment_C__UeName = "UberGraphFrame";
     class USoundBase* ImpactCue;

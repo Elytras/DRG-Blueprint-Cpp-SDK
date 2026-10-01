@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Pineapple_C : public Game::WeaponsNTools::Grenades::L
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Loadout_GrenadeProxy_Pineapple", "Loadout_GrenadeProxy_Pineapple_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

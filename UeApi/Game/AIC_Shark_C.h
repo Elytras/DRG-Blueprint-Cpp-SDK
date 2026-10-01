@@ -16,6 +16,7 @@ class AIC_Shark_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Shark/AIC_Shark", "AIC_Shark_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Shark(int EntryPoint);
     void ReceivePossess(class APawn* PossessedPawn);

@@ -21,6 +21,7 @@ class PRJ_Facility_Laser_Base_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/PRJ_Facility_Laser_Base", "PRJ_Facility_Laser_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "3ed0cbad934120489e13924d5fc3452a";

@@ -25,6 +25,7 @@ class PRJ_PlasmaCarbineShot_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/PRJ_PlasmaCarbineShot", "PRJ_PlasmaCarbineShot_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_ElectricPlasma;
     static constexpr const char* P_ElectricPlasma__UeScsNode = "b5e4aab98d3a07449f693050f87a9679";

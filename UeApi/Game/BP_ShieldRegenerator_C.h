@@ -29,6 +29,7 @@ class BP_ShieldRegenerator_C : public AShieldGeneratorActor
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/BP_ShieldRegenerator", "BP_ShieldRegenerator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystemTopGlow;
     static constexpr const char* ParticleSystemTopGlow__UeScsNode = "108ec900e107444599db7cee9e83a416";
@@ -67,7 +68,7 @@ public:
     class USkeletalMeshComponent* GeneratorMesh;
     static constexpr const char* GeneratorMesh__UeScsNode = "eab0e3d45a5deb41aa6e4e58639936dc";
     float IntroAnim_Scale_C1CE1C6643D01DDA1DDE1CA672CE4AA9;
-    ETimelineDirection IntroAnim__Direction_C1CE1C6643D01DDA1DDE1CA672CE4AA9;
+    TEnum<ETimelineDirection> IntroAnim__Direction_C1CE1C6643D01DDA1DDE1CA672CE4AA9;
     class UTimelineComponent* IntroAnim;
     class UClass* StatusEffect;
     TArray<class APlayerCharacter*> ActiveCharacters;

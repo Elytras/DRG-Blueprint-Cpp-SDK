@@ -17,13 +17,14 @@ class BP_PlagueController_C : public APlagueControlActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Plague/BP_PlagueController", "BP_PlagueController_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Niagara.NiagaraComponent DebrisLight;/Script/FSD.PlagueUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "64b52eb99fa77043930c250ac6aa3276";
     void ExecuteUbergraph_BP_PlagueController(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__BP_PlagueController_CallWeaponPodUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__BP_PlagueController_CallWeaponPodUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_PlagueController_CallWeaponPodUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Plague

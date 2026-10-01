@@ -41,7 +41,7 @@ public:
     float ResourcesToAdd;
     float LifeSpanAfterPickedUp;
     void ExecuteUbergraph_BP_Collectible_Base(int EntryPoint);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PickedUp();
     void OnRep_IsActive();
 };

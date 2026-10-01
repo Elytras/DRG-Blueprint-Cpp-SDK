@@ -18,6 +18,7 @@ class BP_AmberChunk_C : public Game::GameElements::Resources::Embedded::Gems::BP
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_AmberChunk", "BP_AmberChunk_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_AmberChunk_C;
     static constexpr const char* UberGraphFrame_BP_AmberChunk_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;

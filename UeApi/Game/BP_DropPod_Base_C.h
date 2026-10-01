@@ -44,6 +44,7 @@ class BP_DropPod_Base_C : public ADropPod
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Base", "BP_DropPod_Base_C");
     using BP_Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::BP_Widget_DropPod_AltitudeMeter_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_SeatMonitorRight1;
     static constexpr const char* Widget_SeatMonitorRight1__UeScsNode = "1e7082c203e41843a891e4116bd853d5";
@@ -279,14 +280,14 @@ public:
     static constexpr const char* light_display1__UeScsNode = "04b3bdd147407247842f09858616ab82";
     float Timeline_1_LerpDelay_3C91DA044E3AE316CFE9988822F28BC8;
     float Timeline_1_Lerp_3C91DA044E3AE316CFE9988822F28BC8;
-    ETimelineDirection Timeline_1__Direction_3C91DA044E3AE316CFE9988822F28BC8;
+    TEnum<ETimelineDirection> Timeline_1__Direction_3C91DA044E3AE316CFE9988822F28BC8;
     class UTimelineComponent* Timeline_1;
     float Timeline_5_LerpDelay_BD4E08A7452DF28657A134A2565D0A25;
     float Timeline_5_Lerp_BD4E08A7452DF28657A134A2565D0A25;
-    ETimelineDirection Timeline_5__Direction_BD4E08A7452DF28657A134A2565D0A25;
+    TEnum<ETimelineDirection> Timeline_5__Direction_BD4E08A7452DF28657A134A2565D0A25;
     class UTimelineComponent* Timeline_5;
     float Timeline_0_RedLightIntensity_2F2B1CD4469260DD2E665FA77E175746;
-    ETimelineDirection Timeline_0__Direction_2F2B1CD4469260DD2E665FA77E175746;
+    TEnum<ETimelineDirection> Timeline_0__Direction_2F2B1CD4469260DD2E665FA77E175746;
     class UTimelineComponent* Timeline_0;
     float light_readysign_intensity;
     class UAudioComponent* DrillSound;

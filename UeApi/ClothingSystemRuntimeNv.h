@@ -31,7 +31,7 @@ class UClothConfigNv : public UClothConfigCommon
 {
 public:
     UE_CLASS("/Script/ClothingSystemRuntimeNv", "ClothConfigNv");
-    EClothingWindMethodNv ClothingWindMethod;
+    TEnum<EClothingWindMethodNv> ClothingWindMethod;
     FClothConstraintSetupNv VerticalConstraint;
     FClothConstraintSetupNv HorizontalConstraint;
     FClothConstraintSetupNv BendConstraint;
@@ -58,7 +58,7 @@ public:
     float CollisionThickness;
     float AnimDriveSpringStiffness;
     float AnimDriveDamperStiffness;
-    EClothingWindMethod_Legacy WindMethod;
+    TEnum<EClothingWindMethod_Legacy> WindMethod;
     FClothConstraintSetup_Legacy VerticalConstraintConfig;
     FClothConstraintSetup_Legacy HorizontalConstraintConfig;
     FClothConstraintSetup_Legacy BendConstraintConfig;

@@ -60,7 +60,7 @@ public:
     class USceneComponent* SharedRoot;
     static constexpr const char* SharedRoot__UeScsNode = "2d5b4759db48494e8016d686ee5d3aa4";
     float Shake_Scale_4B8AF2A244F1B3750EBFBBA5C371D0D3;
-    ETimelineDirection Shake__Direction_4B8AF2A244F1B3750EBFBBA5C371D0D3;
+    TEnum<ETimelineDirection> Shake__Direction_4B8AF2A244F1B3750EBFBBA5C371D0D3;
     class UTimelineComponent* Shake;
     FVector2D _Max;
     static constexpr const char* _Max__UeName = " Max";

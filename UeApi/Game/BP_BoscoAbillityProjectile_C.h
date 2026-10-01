@@ -20,6 +20,7 @@ class BP_BoscoAbillityProjectile_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_BoscoAbillityProjectile", "BP_BoscoAbillityProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* Light_Exhaust;
     static constexpr const char* Light_Exhaust__UeScsNode = "318b2a2e28543741bc3ffb80217d6629";

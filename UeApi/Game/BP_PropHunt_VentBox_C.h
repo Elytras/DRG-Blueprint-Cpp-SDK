@@ -17,6 +17,7 @@ class BP_PropHunt_VentBox_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_VentBox", "BP_PropHunt_VentBox_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
     static constexpr const char* StaticMesh__UeScsNode = "e7138e3fa73dd544954773b5a19d1942";

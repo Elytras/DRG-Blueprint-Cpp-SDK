@@ -23,6 +23,7 @@ class PRJ_Spider_Boss_Twin_Mine_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/PRJ_Spider_Boss_Twin_Mine", "PRJ_Spider_Boss_Twin_Mine_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Twins_Mine_Trail;
     static constexpr const char* P_Twins_Mine_Trail__UeScsNode = "7e985f3471d19c43a1bd4a68e8ca2bd3";

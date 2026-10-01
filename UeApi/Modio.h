@@ -840,9 +840,9 @@ public:
     UE_PURE static FModioAuthenticationParams MakeAuthParams(FString AuthToken, FString EmailAddress, bool bHasAcceptedTOS);
     UE_PURE static FModioEntitlementParams MakeEntitlementParams(const TMap<FString, FString>& ExtendedParameters);
     UE_PURE static FModioGameID MakeGameId(int64 GameId);
-    UE_PURE static FModioInitializeOptions MakeInitializeOptions(int64 GameId, FString ApiKey, EModioEnvironment GameEnvironment, EModioPortal PortalInUse);
+    UE_PURE static FModioInitializeOptions MakeInitializeOptions(int64 GameId, FString ApiKey, TEnum<EModioEnvironment> GameEnvironment, TEnum<EModioPortal> PortalInUse);
     UE_PURE static bool NotEqualTo(const FModioModID& A, const FModioModID& B);
-    UE_PURE static FModioInitializeOptions SetPortal(const FModioInitializeOptions& options, EModioPortal PortalToUse);
+    UE_PURE static FModioInitializeOptions SetPortal(const FModioInitializeOptions& options, TEnum<EModioPortal> PortalToUse);
     UE_PURE static FModioInitializeOptions SetSessionIdentifier(const FModioInitializeOptions& options, FString SessionIdentifier);
 };
 
@@ -853,7 +853,7 @@ public:
     static void SetChangelogString(FModioCreateModFileParams& In, FString Changelog);
     static void SetDescription(FModioCreateModParams& In, FString Description);
     static void SetHomepageURL(FModioCreateModParams& In, FString HomepageURL);
-    static void SetInitialVisibility(FModioCreateModParams& In, EModioObjectVisibilityFlags InitialVisibility);
+    static void SetInitialVisibility(FModioCreateModParams& In, TEnum<EModioObjectVisibilityFlags> InitialVisibility);
     static void SetInitialVisibility_DEPRECATED(FModioCreateModParams& In, bool InitialVisibility);
     static void SetMarkAsActiveRelease(FModioCreateModFileParams& In, bool bMarkAsActiveRelease);
     static void SetMetadataBlob(FModioCreateModParams& In, FString MetadataBlob);
@@ -870,13 +870,13 @@ public:
     static void SetDescription(FModioEditModParams& In, FString Description);
     static void SetHomepageURL(FModioEditModParams& In, FString HomepageURL);
     static void SetLogoPath(FModioEditModParams& In, FString LogoPath);
-    static void SetMaturityFlags(FModioEditModParams& In, EModioMaturityFlags MaturityFlags);
+    static void SetMaturityFlags(FModioEditModParams& In, TEnum<EModioMaturityFlags> MaturityFlags);
     static void SetMetadataBlob(FModioEditModParams& In, FString MetadataBlob);
     static void SetName(FModioEditModParams& In, FString Name_0);
     static void SetNamePath(FModioEditModParams& In, FString NamePath);
     static void SetSummary(FModioEditModParams& In, FString Summary);
     static void SetTags(FModioEditModParams& In, TArray<FString>& Tags);
-    static void SetVisibility(FModioEditModParams& In, EModioObjectVisibilityFlags Visibility);
+    static void SetVisibility(FModioEditModParams& In, TEnum<EModioObjectVisibilityFlags> Visibility);
     static void SetVisibility_DEPRECATED(FModioEditModParams& In, bool Visibility);
 };
 
@@ -893,16 +893,16 @@ class UModioErrorConditionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioErrorConditionLibrary");
-    static bool ErrorCodeMatches(FModioErrorCode ErrorCode, EModioErrorCondition Condition);
+    static bool ErrorCodeMatches(FModioErrorCode ErrorCode, TEnum<EModioErrorCondition> Condition);
 };
 
 class UModioExampleLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioExampleLibrary");
-    UE_PURE static EModioAvatarSize GetAvatarThumbnailSize();
-    UE_PURE static EModioLogoSize GetLogoFullSize();
-    UE_PURE static EModioLogoSize GetLogoThumbnailSize();
+    UE_PURE static TEnum<EModioAvatarSize> GetAvatarThumbnailSize();
+    UE_PURE static TEnum<EModioLogoSize> GetLogoFullSize();
+    UE_PURE static TEnum<EModioLogoSize> GetLogoThumbnailSize();
     static void ListUserSubscriptionAsync(const FModioFilterParams& FilterParams, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModInfoList Result)> Callback);
 };
 
@@ -919,7 +919,7 @@ public:
     static FModioFilterParams NameContains(FModioFilterParams& Filter, FString SearchString);
     static FModioFilterParams NameContainsStrings(FModioFilterParams& Filter, const TArray<FString>& SearchStrings);
     static FModioFilterParams PagedResults(FModioFilterParams& Filter, int64 PageNumber, int64 PageSize);
-    static FModioFilterParams SortBy(FModioFilterParams& Filter, EModioSortFieldType ByField, EModioSortDirection ByDirection);
+    static FModioFilterParams SortBy(FModioFilterParams& Filter, TEnum<EModioSortFieldType> ByField, TEnum<EModioSortDirection> ByDirection);
     static FModioFilterParams WithoutTag(FModioFilterParams& Filter, FString Tag);
     static FModioFilterParams WithoutTags(FModioFilterParams& Filter, const TArray<FString>& NewTags);
     static FModioFilterParams WithTag(FModioFilterParams& Filter, FString Tag);
@@ -930,10 +930,10 @@ class UModioImageLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioImageLibrary");
-    UE_PURE static FVector2D GetAvatarSize(class UTexture* avatar, EModioAvatarSize AvatarSize);
-    UE_PURE static FVector2D GetGallerySize(class UTexture* GalleryImage, EModioGallerySize GallerySize);
-    UE_PURE static FVector2D GetLogoSize(class UTexture* Logo, EModioLogoSize LogoSize);
-    UE_PURE static EModioImageState GetState(const FModioImageWrapper& Image);
+    UE_PURE static FVector2D GetAvatarSize(class UTexture* avatar, TEnum<EModioAvatarSize> AvatarSize);
+    UE_PURE static FVector2D GetGallerySize(class UTexture* GalleryImage, TEnum<EModioGallerySize> GallerySize);
+    UE_PURE static FVector2D GetLogoSize(class UTexture* Logo, TEnum<EModioLogoSize> LogoSize);
+    UE_PURE static TEnum<EModioImageState> GetState(const FModioImageWrapper& Image);
     UE_PURE static class UTexture2DDynamic* GetTexture(const FModioImageWrapper& Image);
     static void LoadAsync(const FModioImageWrapper& Image, TDelegate<void(class UTexture2DDynamic* Texture)> OnImageLoaded);
 };
@@ -944,7 +944,7 @@ public:
     UE_CLASS("/Script/Modio", "ModioModCollectionLibrary");
     UE_PURE static FModioModID GetID(const FModioModCollectionEntry& entry);
     UE_PURE static FModioModInfo GetModProfile(const FModioModCollectionEntry& entry);
-    UE_PURE static EModioModState GetModState(const FModioModCollectionEntry& entry);
+    UE_PURE static TEnum<EModioModState> GetModState(const FModioModCollectionEntry& entry);
     UE_PURE static FString GetPath(const FModioModCollectionEntry& entry);
 };
 
@@ -968,9 +968,9 @@ class UModioModProgressInfoLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioModProgressInfoLibrary");
-    UE_PURE static FModioUnsigned64 GetCurrentProgress(const FModioModProgressInfo& Info, EModioModProgressState State);
-    UE_PURE static EModioModProgressState GetCurrentState(const FModioModProgressInfo& Info);
-    UE_PURE static FModioUnsigned64 GetTotalProgress(const FModioModProgressInfo& Info, EModioModProgressState State);
+    UE_PURE static FModioUnsigned64 GetCurrentProgress(const FModioModProgressInfo& Info, TEnum<EModioModProgressState> State);
+    UE_PURE static TEnum<EModioModProgressState> GetCurrentState(const FModioModProgressInfo& Info);
+    UE_PURE static FModioUnsigned64 GetTotalProgress(const FModioModProgressInfo& Info, TEnum<EModioModProgressState> State);
 };
 
 class UModioModTagOptionsLibrary : public UBlueprintFunctionLibrary
@@ -1011,12 +1011,14 @@ class UModioPopupBase : public UUserWidget
 {
 public:
     UE_CLASS("/Script/Modio", "ModioPopupBase");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
 };
 
 class UModioPopupContainer : public UUserWidget
 {
 public:
     UE_CLASS("/Script/Modio", "ModioPopupContainer");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     TArray<class UModioPopupBase*> PopupStack;
     TArray<class UModioPopupBase*> PopupCache;
     class UModioPopupBase* PopPopup(TSubclassOf<class UModioPopupBase> PopupClass);
@@ -1027,9 +1029,9 @@ class UModioReportLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Modio", "ModioReportLibrary");
-    UE_PURE static FModioReportParams MakeReportForGame(FModioGameID Game, EModioReportType Type, FString ReportDescription, FString ReporterName, FString ReporterContact);
-    UE_PURE static FModioReportParams MakeReportForMod(FModioModID Mod, EModioReportType Type, FString ReportDescription, FString ReporterName, FString ReporterContact);
-    UE_PURE static FModioReportParams MakeReportForUser(FModioUserID User, EModioReportType Type, FString ReportDescription, FString ReporterName, FString ReporterContact);
+    UE_PURE static FModioReportParams MakeReportForGame(FModioGameID Game, TEnum<EModioReportType> Type, FString ReportDescription, FString ReporterName, FString ReporterContact);
+    UE_PURE static FModioReportParams MakeReportForMod(FModioModID Mod, TEnum<EModioReportType> Type, FString ReportDescription, FString ReporterName, FString ReporterContact);
+    UE_PURE static FModioReportParams MakeReportForUser(FModioUserID User, TEnum<EModioReportType> Type, FString ReportDescription, FString ReporterName, FString ReporterContact);
 };
 
 class UModioSDKLibrary : public UBlueprintFunctionLibrary
@@ -1038,11 +1040,11 @@ public:
     UE_CLASS("/Script/Modio", "ModioSDKLibrary");
     UE_PURE static FString Conv_Int64ToString(int64 inInt);
     UE_PURE static FText Conv_Int64ToText(int64 Value, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits);
-    UE_PURE static FText Filesize_ToString(int64 Filesize, int MinDecimals, int MaxDecimals, EFileSizeUnit Unit, bool bIncludeUnitName);
+    UE_PURE static FText Filesize_ToString(int64 Filesize, int MinDecimals, int MaxDecimals, TEnum<EFileSizeUnit> Unit, bool bIncludeUnitName);
     UE_PURE static FString GetDefaultSessionIdWindows();
-    UE_PURE static EFileSizeUnit GetDesiredFileSizeUnit(int64 Filesize);
+    UE_PURE static TEnum<EFileSizeUnit> GetDesiredFileSizeUnit(int64 Filesize);
     UE_PURE static FModioApiKey GetProjectApiKey();
-    UE_PURE static EModioEnvironment GetProjectEnvironment();
+    UE_PURE static TEnum<EModioEnvironment> GetProjectEnvironment();
     UE_PURE static FModioGameID GetProjectGameId();
     UE_PURE static FModioInitializeOptions GetProjectInitializeOptions();
     UE_PURE static FModioInitializeOptions GetProjectInitializeOptionsForSessionId(FString sessionId);
@@ -1060,9 +1062,9 @@ public:
     UE_CLASS("/Script/Modio", "ModioSettings");
     int64 GameId;
     FString ApiKey;
-    EModioEnvironment Environment;
-    EModioLogLevel LogLevel;
-    EModioPortal DefaultPortal;
+    TEnum<EModioEnvironment> Environment;
+    TEnum<EModioLogLevel> LogLevel;
+    TEnum<EModioPortal> DefaultPortal;
     bool bUseBackgroundThread;
 };
 
@@ -1078,7 +1080,7 @@ public:
     bool IsUsingBackgroundThread();
     void K2_ArchiveModAsync(FModioModID Mod, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
     void K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
-    void K2_AuthenticateUserExternalAsync(const FModioAuthenticationParams& User, EModioAuthenticationProvider Provider, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
+    void K2_AuthenticateUserExternalAsync(const FModioAuthenticationParams& User, TEnum<EModioAuthenticationProvider> Provider, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
     void K2_ClearUserDataAsync(TDelegate<void(FModioErrorCode ErrorCode)> Callback);
     FModioErrorCode K2_EnableModManagement(TDelegate<void(FModioModManagementEvent Event)> Callback);
     void K2_FetchExternalUpdatesAsync(TDelegate<void(FModioErrorCode ErrorCode)> OnFetchDone);
@@ -1087,14 +1089,14 @@ public:
     FModioModCreationHandle K2_GetModCreationHandle();
     void K2_GetModDependenciesAsync(FModioModID ModId, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModDependencyList Dependencies)> Callback);
     void K2_GetModInfoAsync(FModioModID ModId, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModInfo ModInfo)> Callback);
-    void K2_GetModMediaAvatarAsync(FModioModID ModId, EModioAvatarSize AvatarSize, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
-    void K2_GetModMediaGalleryImageAsync(FModioModID ModId, EModioGallerySize GallerySize, int Index_0, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
-    void K2_GetModMediaLogoAsync(FModioModID ModId, EModioLogoSize LogoSize, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
+    void K2_GetModMediaAvatarAsync(FModioModID ModId, TEnum<EModioAvatarSize> AvatarSize, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
+    void K2_GetModMediaGalleryImageAsync(FModioModID ModId, TEnum<EModioGallerySize> GallerySize, int Index_0, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
+    void K2_GetModMediaLogoAsync(FModioModID ModId, TEnum<EModioLogoSize> LogoSize, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
     void K2_GetModTagOptionsAsync(TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModTagOptions ModTagOptions)> Callback);
     void K2_GetMutedUsersAsync(TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalUserList NewUserList)> Callback);
-    void K2_GetTermsOfUseAsync(EModioLanguage Locale, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalTerms Terms)> Callback);
-    void K2_GetTermsOfUseAsync_DEPRECATED(EModioAuthenticationProvider Provider, EModioLanguage Locale, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalTerms Terms)> Callback);
-    void K2_GetUserMediaAvatarAsync(EModioAvatarSize AvatarSize, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
+    void K2_GetTermsOfUseAsync(TEnum<EModioLanguage> Locale, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalTerms Terms)> Callback);
+    void K2_GetTermsOfUseAsync_DEPRECATED(TEnum<EModioAuthenticationProvider> Provider, TEnum<EModioLanguage> Locale, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalTerms Terms)> Callback);
+    void K2_GetUserMediaAvatarAsync(TEnum<EModioAvatarSize> AvatarSize, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalImage Path)> Callback);
     void K2_InitializeAsync(const FModioInitializeOptions& InitializeOptions, TDelegate<void(FModioErrorCode ErrorCode)> OnInitComplete);
     void K2_ListAllModsAsync(const FModioFilterParams& Filter, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModInfoList Result)> Callback);
     void K2_ListUserCreatedModsAsync(const FModioFilterParams& Filter, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModInfoList Result)> Callback);
@@ -1106,7 +1108,7 @@ public:
     void K2_RequestEmailAuthCodeAsync(const FModioEmailAddress& EmailAddress, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
     void K2_ShutdownAsync(TDelegate<void(FModioErrorCode ErrorCode)> OnShutdownComplete);
     void K2_SubmitModChangesAsync(FModioModID Mod, FModioEditModParams Params_0, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModInfo ModInfo)> Callback);
-    void K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
+    void K2_SubmitModRatingAsync(FModioModID Mod, TEnum<EModioRating> Rating, TDelegate<void(FModioErrorCode ErrorCode)> Callback);
     void K2_SubmitNewModAsync(FModioModCreationHandle Handle, FModioCreateModParams Params_0, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModID NewModID)> Callback);
     void K2_SubmitNewModFileForMod(FModioModID Mod, FModioCreateModFileParams Params_0);
     void K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, TDelegate<void(FModioErrorCode ErrorCode)> OnSubscribeComplete);
@@ -1119,7 +1121,7 @@ public:
     UE_PURE TMap<FModioModID, FModioModCollectionEntry> QueryUserInstallations(bool bIncludeOutdatedMods);
     UE_PURE TMap<FModioModID, FModioModCollectionEntry> QueryUserSubscriptions();
     void RunPendingHandlers();
-    void SetLogLevel(EModioLogLevel UnrealLogLevel);
+    void SetLogLevel(TEnum<EModioLogLevel> UnrealLogLevel);
     static UModioSubsystem* Get();
 };
 

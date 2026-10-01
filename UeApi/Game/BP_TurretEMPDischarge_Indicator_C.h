@@ -27,13 +27,13 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "352fa26d5d32354e8e61f7b4b97878c0";
     float AnimIntro_Scale_57882F7043B8B09C3BF272B62C090308;
-    ETimelineDirection AnimIntro__Direction_57882F7043B8B09C3BF272B62C090308;
+    TEnum<ETimelineDirection> AnimIntro__Direction_57882F7043B8B09C3BF272B62C090308;
     class UTimelineComponent* AnimIntro;
     class APlayerCharacter* LocalPlayer;
     class ARedeployableSentryGun* Redeployable_Sentry_Gun;
     static constexpr const char* Redeployable_Sentry_Gun__UeName = "Redeployable Sentry Gun";
     void ExecuteUbergraph_BP_TurretEMPDischarge_Indicator(int EntryPoint);
-    void OnStateChanged_Event(class ARedeployableSentryGun* Sender, ERedeployableSentryGunState NewState);
+    void OnStateChanged_Event(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void OnItemUnequipped(class AItem* Item);
     void OnItemEquipped_Event(class AItem* Item);
     void ReceiveBeginPlay();

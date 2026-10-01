@@ -35,7 +35,7 @@ public:
     int HeaderImageWidth;
     class UTexture2D* HeaderImageTexture;
     FVector2D HeaderImageOffset;
-    EHorizontalAlignment HeaderImageAlignment;
+    TEnum<EHorizontalAlignment> HeaderImageAlignment;
     float SideBarsOpacity;
     void ExecuteUbergraph_UI_Season_Popup(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

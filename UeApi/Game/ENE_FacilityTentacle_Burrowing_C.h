@@ -21,6 +21,7 @@ class ENE_FacilityTentacle_Burrowing_C : public Game::GameElements::Objectives::
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle_Burrowing", "ENE_FacilityTentacle_Burrowing_C");
     using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTentacle_Burrowing_C;
     static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_Burrowing_C__UeName = "UberGraphFrame";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;

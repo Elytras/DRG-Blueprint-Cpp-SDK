@@ -13,6 +13,7 @@ class AIC_JellyBreeder_C : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Game/Enemies/Jelly_Breeder/AIC_JellyBreeder", "AIC_JellyBreeder_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}   // namespace Game::Enemies::Jelly_Breeder

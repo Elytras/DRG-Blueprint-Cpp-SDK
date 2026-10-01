@@ -26,20 +26,20 @@ public:
     class UTextBlock* TierText;
     class UVerticalBox* VerticalBox_113;
     FUpgradeTier myUpgradeTier;
-    EItemCategory myCategory;
+    TEnum<EItemCategory> myCategory;
     TMulticastInlineDelegate<void(bool Is_Checked, class UItemUpgrade* Upgrade_item, EItemCategory Category)> OnItemActivationStateChange;
     TArray<Cheat_PerkListItem_C*> my_PerkList_items;
     static constexpr const char* my_PerkList_items__UeName = "my PerkList items";
     int my_Tier_index;
     static constexpr const char* my_Tier_index__UeName = "my Tier index";
     void ExecuteUbergraph_Cheat_PerkListTier(int EntryPoint);
-    void On_bosco_state_change(bool Is_Checked, class UItemUpgrade* Item, EItemCategory Item_Category);
+    void On_bosco_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
     static constexpr const char* On_bosco_state_change__UeName = "On bosco state change";
     void Initiate_Bosco_tier(FUpgradeTier Upgrade_struct, int Tier_Index, class UClass* Item_Class);
     static constexpr const char* Initiate_Bosco_tier__UeName = "Initiate Bosco-tier";
-    void On_state_change(bool Is_Checked, class UItemUpgrade* Item, EItemCategory Item_Category);
+    void On_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
     static constexpr const char* On_state_change__UeName = "On state change";
-    void Initiate_Widget(EItemCategory input_category, FUpgradeTier Upgrade_struct, int Tier_Index, class UClass* itemClass);
+    void Initiate_Widget(TEnum<EItemCategory> input_category, FUpgradeTier Upgrade_struct, int Tier_Index, class UClass* itemClass);
     static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
 };
 

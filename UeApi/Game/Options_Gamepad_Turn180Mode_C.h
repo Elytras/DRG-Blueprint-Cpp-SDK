@@ -38,7 +38,7 @@ public:
     void BndEvt__Button_Left_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     void OnRefresh();
     UE_COSMETIC void Construct();
-    void SetMode(ETurn180Mode InMode);
+    void SetMode(TEnum<ETurn180Mode> InMode);
     void Next(bool Forward);
 };
 

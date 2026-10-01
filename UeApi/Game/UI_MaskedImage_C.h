@@ -31,7 +31,7 @@ public:
     class UTexture* Mask;
     bool Invert_Mask;
     static constexpr const char* Invert_Mask__UeName = "Invert Mask";
-    ESlateBrushDrawType DrawAs;
+    TEnum<ESlateBrushDrawType> DrawAs;
     class UMaterialInstanceDynamic* Material;
     bool Mask_Black;
     static constexpr const char* Mask_Black__UeName = "Mask Black";
@@ -43,7 +43,7 @@ public:
     void SetImageTint(FSlateColor TintColor);
     void SetMask(class UTexture* Value);
     void SetMaskInverted(bool Invert);
-    void SetDrawAs(ESlateBrushDrawType InBrush_DrawAs);
+    void SetDrawAs(TEnum<ESlateBrushDrawType> InBrush_DrawAs);
     void UpdateMaterial();
     void SetMaskBlack(bool Index_0);
 };

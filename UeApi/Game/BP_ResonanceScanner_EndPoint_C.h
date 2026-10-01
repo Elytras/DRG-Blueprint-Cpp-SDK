@@ -30,6 +30,7 @@ class BP_ResonanceScanner_EndPoint_C : public ARockCrackerDrill
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_ResonanceScanner_EndPoint", "BP_ResonanceScanner_EndPoint_C");
     using ABP_ScannerPodHead_C = Game::GameElements::Objectives::DeepScan::Assets::Scanner::ABP_ScannerPodHead_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent ConstructUsable;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* LHologram;
     static constexpr const char* LHologram__UeScsNode = "eb19b7cc266d1f47b4f3a5522cdc621a";
@@ -68,7 +69,7 @@ public:
     void BndEvt__BP_ResonanceScanner_EndPoint_ConstructUsable_K2Node_ComponentBoundEvent_1_ProgressSignature__DelegateSignature(float Progress);
     void StartDrill();
     void BndEvt__BP_RockCracker_EndPoint_ConstructUsable_K2Node_ComponentBoundEvent_3_GenericUsableDelegate__DelegateSignature();
-    void BndEvt__BP_RockCracker_EndPoint_ConstructUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_RockCracker_EndPoint_ConstructUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void EventStarted();
     void ShouldAnimate(bool ShouldAnimate_0);
     void HideEndpoint(bool shouldHide_0);

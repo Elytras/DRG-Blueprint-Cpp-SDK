@@ -14,6 +14,7 @@ class AIC_Jelly_Passive_Mother_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Critters/JellyPlatform/AIC_Jelly_Passive_Mother", "AIC_Jelly_Passive_Mother_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Jelly_Passive_Mother(int EntryPoint);
     void ReceiveBeginPlay();

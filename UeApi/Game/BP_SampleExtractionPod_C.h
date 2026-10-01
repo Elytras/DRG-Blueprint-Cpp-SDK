@@ -33,6 +33,7 @@ class BP_SampleExtractionPod_C : public AExpeniteSamplePod
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_ExpeniteSamplePod", "BP_SampleExtractionPod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class ULightStrobingComponent* LightStrobing;
     static constexpr const char* LightStrobing__UeScsNode = "be55bd4b0ab69b4f9bf9a37a6842029f";

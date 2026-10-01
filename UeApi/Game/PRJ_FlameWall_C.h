@@ -18,6 +18,7 @@ class PRJ_FlameWall_C : public AFlameWallProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/Projectile/PRJ_FlameWall", "PRJ_FlameWall_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
     static constexpr const char* StaticMesh__UeScsNode = "92d63ed8187fc446a18f307faf023546";

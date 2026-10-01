@@ -18,6 +18,7 @@ class BP_StickyFlame_C : public AStickyFlame
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/BP_StickyFlame", "BP_StickyFlame_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UObjectTemperatureComponent* ObjectTemperature;
     static constexpr const char* ObjectTemperature__UeScsNode = "ba22c37ba1418746a1dac21905463397";

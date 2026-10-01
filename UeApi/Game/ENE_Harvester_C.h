@@ -27,6 +27,7 @@ class ENE_Harvester_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/Harvester/ENE_Harvester", "ENE_Harvester_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
     static constexpr const char* enemy__UeScsNode = "177bc98042c3e443890b2ab5f2a1ec54";

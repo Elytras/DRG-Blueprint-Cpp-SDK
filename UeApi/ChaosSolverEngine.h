@@ -125,7 +125,7 @@ public:
     int PushOutIterations;
     int PushOutPairIterations;
     float ClusterConnectionFactor;
-    EClusterConnectionTypeEnum ClusterUnionConnectionType;
+    TEnum<EClusterConnectionTypeEnum> ClusterUnionConnectionType;
     bool DoGenerateCollisionData;
     FSolverCollisionFilterSettings CollisionFilterSettings;
     bool DoGenerateBreakingData;

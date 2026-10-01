@@ -28,6 +28,7 @@ class ENE_Woodlouse_C : public AWoodLouse
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/ENE_Woodlouse", "ENE_Woodlouse_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/AIModule.PawnSensingComponent Sensing;/Script/Engine.SceneComponent RollingCenter;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* ProjectileHit;
     static constexpr const char* ProjectileHit__UeScsNode = "be36128a6eb6ed4eba0e15b4dd344804";
@@ -65,7 +66,7 @@ public:
     void IncrementCommunityGoal();
     void ChangePhysicsAsset();
     void BumpedTarget();
-    void SwitchedState(EWoodLouseState CurrentState_0);
+    void SwitchedState(TEnum<EWoodLouseState> CurrentState_0);
     void Fizzle();
     void OnMessageAI(FName TriggerName);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);

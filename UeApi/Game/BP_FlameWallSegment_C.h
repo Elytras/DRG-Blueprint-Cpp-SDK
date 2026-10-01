@@ -17,6 +17,7 @@ class BP_FlameWallSegment_C : public AFlameWallSegment
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/Projectile/BP_FlameWallSegment", "BP_FlameWallSegment_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* FlameThrow_FireWall_ProjectileLoop_Cue;
     static constexpr const char* FlameThrow_FireWall_ProjectileLoop_Cue__UeScsNode = "dbba77b8100ad94f9df6aa1f134963ea";

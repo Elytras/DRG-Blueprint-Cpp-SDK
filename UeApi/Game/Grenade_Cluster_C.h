@@ -18,6 +18,7 @@ class Grenade_Cluster_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Cluster/Grenade_Cluster", "Grenade_Cluster_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Cluster_C;
     static constexpr const char* UberGraphFrame_Grenade_Cluster_C__UeName = "UberGraphFrame";
     int GrenadeFragments;

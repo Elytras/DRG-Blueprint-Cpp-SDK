@@ -17,6 +17,7 @@ class ENE_Shredder_C : public Game::Enemies::RivalTech::Shredder::ENE_Shredder_B
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Shredder/ENE_Shredder", "ENE_Shredder_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Shredder_C;
     static constexpr const char* UberGraphFrame_ENE_Shredder_C__UeName = "UberGraphFrame";
     class UEnemyComponent* enemy;

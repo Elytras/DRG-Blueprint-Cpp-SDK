@@ -27,6 +27,7 @@ class BP_GooCannon_GooPuddle_C : public AGooGunPuddle
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_GooPuddle", "BP_GooCannon_GooPuddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UObjectTemperatureComponent* ObjectTemperature;
     static constexpr const char* ObjectTemperature__UeScsNode = "7a437d7af84c674f94d7381c13b44200";
@@ -53,7 +54,7 @@ public:
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "e1031f314bc7a44fa3ea44bd961e3a11";
     float Timeline_0_Travel_B8070DF14C3D466D9EB0F2B093A50381;
-    ETimelineDirection Timeline_0__Direction_B8070DF14C3D466D9EB0F2B093A50381;
+    TEnum<ETimelineDirection> Timeline_0__Direction_B8070DF14C3D466D9EB0F2B093A50381;
     class UTimelineComponent* Timeline_0;
     class AGooGun* SuckToActor;
     static constexpr const char* SuckToActor__Replicated = "OnRep_SuckToActor:";

@@ -20,6 +20,7 @@ class PRJ_Foam_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/PRJ_Foam", "PRJ_Foam_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "3ca6d0c220800a4e812c1593d795ae5b";

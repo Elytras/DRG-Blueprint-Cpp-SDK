@@ -19,10 +19,10 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_New_HeavyRain_Crystal_C;
     static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Crystal_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_A3017D9546A53807B6D05BB6AE0CDCAB;
-    ETimelineDirection Fadeout__Direction_A3017D9546A53807B6D05BB6AE0CDCAB;
+    TEnum<ETimelineDirection> Fadeout__Direction_A3017D9546A53807B6D05BB6AE0CDCAB;
     class UTimelineComponent* FadeOut;
     float Fadein_ZeroToOne_292B154C4E05A9ACA12E6F98823124C0;
-    ETimelineDirection Fadein__Direction_292B154C4E05A9ACA12E6F98823124C0;
+    TEnum<ETimelineDirection> Fadein__Direction_292B154C4E05A9ACA12E6F98823124C0;
     class UTimelineComponent* FadeIn;
     void ExecuteUbergraph_BP_New_HeavyRain_Crystal(int EntryPoint);
     void EndEffect();

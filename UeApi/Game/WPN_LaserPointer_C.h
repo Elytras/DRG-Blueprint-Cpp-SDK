@@ -29,6 +29,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/WPN_LaserPointer", "WPN_LaserPointer_C");
     using BP_PointOfInterest_C = Game::WeaponsNTools::LaserPointer::BP_PointOfInterest_C;
     using HUD_LaserPointerDisplay_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerDisplay_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Pointer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
     static constexpr const char* FirstPersonWidget__UeScsNode = "a2ae0199ca35384aa2345b8d5d2b746a";
@@ -59,7 +60,7 @@ public:
     void OnPOIDestroyed(class AActor* DestroyedActor);
     void RecieveEquipped();
     void ToggleLaserVisible(bool aVisible);
-    void OnMarkerPlaced_Event(FVector Location, const FText& Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget);
+    void OnMarkerPlaced_Event(FVector Location, const FText& Name_0, FLinearColor Color, class AActor* Target, TEnum<ELaserPointerTargetType> TypeOfTarget);
     void OnScanComplete();
     void AddedToInventory(class APlayerCharacter* ItemOwner);
     void ReceiveBeginPlay();

@@ -14,6 +14,7 @@ class PLS_CaveGenerator_C : public Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/PLS_CaveGenerator", "PLS_CaveGenerator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_CaveGenerator_C;
     static constexpr const char* UberGraphFrame_PLS_CaveGenerator_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_PLS_CaveGenerator(int EntryPoint);

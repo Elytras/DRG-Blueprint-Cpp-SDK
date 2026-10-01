@@ -19,6 +19,7 @@ class BP_FSDCameraManager_C : public AFSDPlayerCameraManager
 {
 public:
     UE_CLASS("/Game/Character/Camera/BP_FSDCameraManager", "BP_FSDCameraManager_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* PhysicalSphere;
     static constexpr const char* PhysicalSphere__UeScsNode = "816d29c3731f214a87ddfc0deeebdc2c";
@@ -27,7 +28,7 @@ public:
     TMulticastInlineDelegate<void()> HideHUDForPhotography;
     TMulticastInlineDelegate<void()> ShowHUDForPhotography;
     bool UserVisibility;
-    ECharacterCameraMode PreviousCameraMode;
+    TEnum<ECharacterCameraMode> PreviousCameraMode;
     bool PauseGame;
     float SphereReturnVelocity;
     float MaxDistanceTolerance;
@@ -45,7 +46,7 @@ public:
     UE_COSMETIC void OnPhotographySessionEnd();
     void ReceiveDestroyed();
     UE_COSMETIC void PhotographyCameraModify(FVector NewCameraLocation, FVector PreviousCameraLocation, FVector OriginalCameraLocation, FVector& ResultCameraLocation);
-    void ReturnCameraMode(class APlayerCharacter* Target, ECharacterCameraMode NewCameraMode);
+    void ReturnCameraMode(class APlayerCharacter* Target, TEnum<ECharacterCameraMode> NewCameraMode);
     void SetToThirdPersonCamera(FVector& New_Camera_Position);
     void SphereDirectionToPlayer(FVector& Direction);
     UE_PURE float SmoothReturnVelocity(FVector New_Camera_Location);

@@ -52,7 +52,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
     float Glowtimeline_Glow_3F65C7DD4A6637F8B110998EAD89619E;
-    ETimelineDirection Glowtimeline__Direction_3F65C7DD4A6637F8B110998EAD89619E;
+    TEnum<ETimelineDirection> Glowtimeline__Direction_3F65C7DD4A6637F8B110998EAD89619E;
     class UTimelineComponent* Glowtimeline;
     class UMaterialInstanceDynamic* GlowMat;
     float BaseGlow;

@@ -19,10 +19,10 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_New_HeavyRain_Lush_C;
     static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Lush_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_6AF7D3FF4ECB419F4995D9B03104B55F;
-    ETimelineDirection Fadeout__Direction_6AF7D3FF4ECB419F4995D9B03104B55F;
+    TEnum<ETimelineDirection> Fadeout__Direction_6AF7D3FF4ECB419F4995D9B03104B55F;
     class UTimelineComponent* FadeOut;
     float Fadein_ZeroToOne_FE890FCF46CAF26A7BBFED9BDF736F8A;
-    ETimelineDirection Fadein__Direction_FE890FCF46CAF26A7BBFED9BDF736F8A;
+    TEnum<ETimelineDirection> Fadein__Direction_FE890FCF46CAF26A7BBFED9BDF736F8A;
     class UTimelineComponent* FadeIn;
     void ExecuteUbergraph_BP_New_HeavyRain_Lush(int EntryPoint);
     void EndEffect();

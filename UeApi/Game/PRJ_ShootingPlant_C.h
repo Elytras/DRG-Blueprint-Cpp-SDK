@@ -24,6 +24,7 @@ class PRJ_ShootingPlant_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/PRJ_ShootingPlant", "PRJ_ShootingPlant_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "730a9cbb0413294a90533e71298c4d14";

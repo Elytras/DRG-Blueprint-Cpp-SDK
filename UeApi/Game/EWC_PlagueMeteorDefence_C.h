@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_EWC_PlagueMeteorDefence(int EntryPoint);
     void SpawnEnemiesAtMilestone();
     void OnWaveCompleted();
-    void PodRevived(class APlayerCharacter* User, EInputKeys Key);
+    void PodRevived(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PodDied(class UHealthComponentBase* HealthComponent);
     void StartWave();
     void PodsAlive(bool& IsActive);

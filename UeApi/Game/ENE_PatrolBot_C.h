@@ -37,6 +37,7 @@ class ENE_PatrolBot_C : public APatrolBot
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/ENE_PatrolBot", "ENE_PatrolBot_C");
     using AIC_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::AIC_PatrolBot_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FlyingAudioComponent;/Script/Engine.AudioComponent RollingAudioComponent;/Script/FSD.AvoidCeilingComponent CeilingAvoidance;/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.ParticleSystemComponent LaserBeamIndicator;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PlayerImpactCooldownComponent ImpactCooldown;/Script/FSD.ProjectileAttackComponent FlyingRangedAttack;/Script/FSD.ProjectileAttackComponent MissileAttack;/Script/FSD.ProjectileAttackComponent RangedAttack;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* spawnParticles;
     static constexpr const char* spawnParticles__UeScsNode = "91de2e5539bfe7469bbb7738724143be";
@@ -101,7 +102,7 @@ public:
     void NormalDeath();
     void OnLockedOn();
     void OnLandedEvent();
-    void OnStateChangedEvent(EPatrolBotState CurrentState);
+    void OnStateChangedEvent(TEnum<EPatrolBotState> CurrentState);
     void SoundHandling(bool RollingSound, bool FlyingSound);
     void OnRep_DeathReason();
     void GetAIController(AIC_PatrolBot_C*& AsAIC_Facility_Drone);

@@ -21,6 +21,7 @@ class ENE_BoughWasp_Swarm_C : public AInsectSwarmEnemy
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Swarm", "ENE_BoughWasp_Swarm_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStatusEffectTriggerComponent* StatusEffectTrigger1;
     static constexpr const char* StatusEffectTrigger1__UeScsNode = "23a3d13c9ef6a244858aee2906f51602";

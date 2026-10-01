@@ -15,6 +15,7 @@ class BP_PreservationTank_01_C : public Game::GameElements::Plague::Spacerig_Dec
 {
 public:
     UE_CLASS("/Game/GameElements/Seasons/Season06/SpaceRig_Decor/BP_PreservationTank_01", "BP_PreservationTank_01_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
     class UPointLightComponent* PointLight1;
     static constexpr const char* PointLight1__UeScsNode = "6785ff02b87faf41a3c413560aded722";
 };

@@ -40,7 +40,7 @@ public:
     bool Faded;
     FLinearColor Tint_Overheated;
     void ExecuteUbergraph_HUD_PlayerTemperature(int EntryPoint);
-    void OnTemperatureStateChanged(EPlayerTemperatureState State);
+    void OnTemperatureStateChanged(TEnum<EPlayerTemperatureState> State);
     void OnBarVisibilityChanged(bool barVisible);
     void ShowTemperature();
     void OnTemperatureChangeRate_Event(int ChangeRate);

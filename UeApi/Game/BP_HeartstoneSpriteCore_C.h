@@ -18,6 +18,7 @@ class BP_HeartstoneSpriteCore_C : public AFSDPawn
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/EnergySpriteSwarm/BP_HeartstoneSpriteCore", "BP_HeartstoneSpriteCore_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
     static constexpr const char* enemy__UeScsNode = "32ed224404f11547af4cd0a4ffb18fc9";

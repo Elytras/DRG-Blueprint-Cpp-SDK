@@ -17,6 +17,7 @@ class WPN_RecallableSentryGun_C : public ARecallableSentryGunItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/WPN_RecallableSentryGun", "WPN_RecallableSentryGun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator AmmoCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator ItemPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     bool ArcIndicatorActive;
     void ExecuteUbergraph_WPN_RecallableSentryGun(int EntryPoint);

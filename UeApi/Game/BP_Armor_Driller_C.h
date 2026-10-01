@@ -16,6 +16,7 @@ class BP_Armor_Driller_C : public AArmorPiece
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/BP_Armor_Driller", "BP_Armor_Driller_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableGearComponent Upgradable";
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "f103e4f4c3dc254a999061aee7e2f285";
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;

@@ -17,6 +17,7 @@ class AIC_Flea_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/Critters/FesterFlea/Flea/AIC_Flea", "AIC_Flea_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviourTree;
     void ExecuteUbergraph_AIC_Flea(int EntryPoint);

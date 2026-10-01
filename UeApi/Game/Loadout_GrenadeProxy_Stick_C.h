@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Stick_C : public Game::WeaponsNTools::Grenades::Loado
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Loadout_GrenadeProxy_Stick", "Loadout_GrenadeProxy_Stick_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

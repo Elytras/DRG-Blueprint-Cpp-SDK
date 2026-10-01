@@ -26,7 +26,7 @@ public:
     float FadeDuration;
     void ExecuteUbergraph_ScreenOverlay_GenericAffliction(int EntryPoint);
     void OnAnimFadingFinished();
-    void Play_Fade(EUMGSequencePlayMode PlayMode);
+    void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
     static constexpr const char* Play_Fade__UeName = "Play Fade";
     void ReceiveEndOverlay();
     void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);

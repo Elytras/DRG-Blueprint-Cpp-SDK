@@ -1481,7 +1481,7 @@ class ASDFBuilder : public ACSGBuilderBase
 {
 public:
     UE_CLASS("/Script/FSDEngine", "SDFBuilder");
-    EPreviewCellSize PreviewSize;
+    TEnum<EPreviewCellSize> PreviewSize;
     class UTerrainMaterialCore* PreviewMaterial;
     class USDFUnionOpComponent* SDFRoot;
     static constexpr const char* RootComponent__UeSubobject = "SDFRoot /Script/FSDEngine.SDFUnionOpComponent";

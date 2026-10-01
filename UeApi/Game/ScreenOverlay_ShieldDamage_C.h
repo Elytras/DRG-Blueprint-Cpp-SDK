@@ -30,10 +30,10 @@ public:
     class APlayerCharacter* Player;
     void ExecuteUbergraph_ScreenOverlay_ShieldDamage(int EntryPoint);
     void StartTick();
-    void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void End_Splat();
     static constexpr const char* End_Splat__UeName = "End Splat";
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     UE_COSMETIC void Construct();
     void Begin_Splat(float Duration_0, FLinearColor Color_0);
     static constexpr const char* Begin_Splat__UeName = "Begin Splat";

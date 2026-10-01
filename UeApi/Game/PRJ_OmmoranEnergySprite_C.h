@@ -31,6 +31,7 @@ class PRJ_OmmoranEnergySprite_C : public AHomingDroneBomb
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/EnergySpriteSwarm/PRJ_OmmoranEnergySprite", "PRJ_OmmoranEnergySprite_C");
     using BP_EscortDestination_C = Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnStatsComponent* PawnStats;
     static constexpr const char* PawnStats__UeScsNode = "9e399ab9f0f61448a5fa06f00ba63fa8";

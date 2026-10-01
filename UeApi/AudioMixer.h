@@ -254,8 +254,8 @@ public:
     static bool IsAudioBusActive(class UObject* WorldContextObject, class UAudioBus* AudioBus);
     static bool IsAudioBusActive(class UAudioBus* AudioBus);
     UE_PURE static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakeFullSpectrumSpectralAnalysisBandSettings(int InNumBands, float InMinimumFrequency, float InMaximumFrequency, int InAttackTimeMsec, int InReleaseTimeMsec);
-    UE_PURE static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakeMusicalSpectralAnalysisBandSettings(int InNumSemitones, EMusicalNoteName InStartingMusicalNote, int InStartingOctave, int InAttackTimeMsec, int InReleaseTimeMsec);
-    UE_PURE static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakePresetSpectralAnalysisBandSettings(EAudioSpectrumBandPresetType InBandPresetType, int InNumBands, int InAttackTimeMsec, int InReleaseTimeMsec);
+    UE_PURE static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakeMusicalSpectralAnalysisBandSettings(int InNumSemitones, TEnum<EMusicalNoteName> InStartingMusicalNote, int InStartingOctave, int InAttackTimeMsec, int InReleaseTimeMsec);
+    UE_PURE static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakePresetSpectralAnalysisBandSettings(TEnum<EAudioSpectrumBandPresetType> InBandPresetType, int InNumBands, int InAttackTimeMsec, int InReleaseTimeMsec);
     static void PauseRecordingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToPause);
     static void PauseRecordingOutput(class USoundSubmix* SubmixToPause);
     static void PrimeSoundCueForPlayback(class USoundCue* SoundCue);
@@ -282,8 +282,8 @@ public:
     static void SetBypassSourceEffectChainEntry(class USoundEffectSourcePresetChain* PresetChain, int EntryIndex, bool bBypassed);
     static void SetSubmixEffectChainOverride(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, TArray<class USoundEffectSubmixPreset*> SubmixEffectPresetChain, float FadeTimeSec);
     static void SetSubmixEffectChainOverride(class USoundSubmix* SoundSubmix, TArray<class USoundEffectSubmixPreset*> SubmixEffectPresetChain, float FadeTimeSec);
-    static void StartAnalyzingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToAnalyze, EFFTSize FFTSize, EFFTPeakInterpolationMethod InterpolationMethod, EFFTWindowType WindowType, float HopSize, EAudioSpectrumType SpectrumType);
-    static void StartAnalyzingOutput(class USoundSubmix* SubmixToAnalyze, EFFTSize FFTSize, EFFTPeakInterpolationMethod InterpolationMethod, EFFTWindowType WindowType, float HopSize, EAudioSpectrumType SpectrumType);
+    static void StartAnalyzingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToAnalyze, TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
+    static void StartAnalyzingOutput(class USoundSubmix* SubmixToAnalyze, TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
     static void StartAudioBus(class UObject* WorldContextObject, class UAudioBus* AudioBus);
     static void StartAudioBus(class UAudioBus* AudioBus);
     static void StartRecordingOutput(class UObject* WorldContextObject, float ExpectedDuration, class USoundSubmix* SubmixToRecord);
@@ -292,8 +292,8 @@ public:
     static void StopAnalyzingOutput(class USoundSubmix* SubmixToStopAnalyzing);
     static void StopAudioBus(class UObject* WorldContextObject, class UAudioBus* AudioBus);
     static void StopAudioBus(class UAudioBus* AudioBus);
-    static class USoundWave* StopRecordingOutput(class UObject* WorldContextObject, EAudioRecordingExportType ExportType, FString Name_0, FString Path, class USoundSubmix* SubmixToRecord, class USoundWave* ExistingSoundWaveToOverwrite);
-    static class USoundWave* StopRecordingOutput(EAudioRecordingExportType ExportType, FString Name_0, FString Path, class USoundSubmix* SubmixToRecord, class USoundWave* ExistingSoundWaveToOverwrite);
+    static class USoundWave* StopRecordingOutput(class UObject* WorldContextObject, TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundSubmix* SubmixToRecord, class USoundWave* ExistingSoundWaveToOverwrite);
+    static class USoundWave* StopRecordingOutput(TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundSubmix* SubmixToRecord, class USoundWave* ExistingSoundWaveToOverwrite);
     static float TrimAudioCache(float InMegabytesToFree);
 };
 
@@ -337,12 +337,12 @@ public:
     void StopClock(bool CancelPendingEvents, class UQuartzClockHandle*& ClockHandle);
     void SubscribeToAllQuantizationEvents(class UObject* WorldContextObject, TDelegate<void(FName ClockName, EQuartzCommandQuantization QuantizationType, int NumBars, int Beat, float BeatFraction)> OnQuantizationEvent, class UQuartzClockHandle*& ClockHandle);
     void SubscribeToAllQuantizationEvents(TDelegate<void(FName ClockName, EQuartzCommandQuantization QuantizationType, int NumBars, int Beat, float BeatFraction)> OnQuantizationEvent, class UQuartzClockHandle*& ClockHandle);
-    void SubscribeToQuantizationEvent(class UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary, TDelegate<void(FName ClockName, EQuartzCommandQuantization QuantizationType, int NumBars, int Beat, float BeatFraction)> OnQuantizationEvent, class UQuartzClockHandle*& ClockHandle);
-    void SubscribeToQuantizationEvent(EQuartzCommandQuantization InQuantizationBoundary, TDelegate<void(FName ClockName, EQuartzCommandQuantization QuantizationType, int NumBars, int Beat, float BeatFraction)> OnQuantizationEvent, class UQuartzClockHandle*& ClockHandle);
+    void SubscribeToQuantizationEvent(class UObject* WorldContextObject, TEnum<EQuartzCommandQuantization> InQuantizationBoundary, TDelegate<void(FName ClockName, EQuartzCommandQuantization QuantizationType, int NumBars, int Beat, float BeatFraction)> OnQuantizationEvent, class UQuartzClockHandle*& ClockHandle);
+    void SubscribeToQuantizationEvent(TEnum<EQuartzCommandQuantization> InQuantizationBoundary, TDelegate<void(FName ClockName, EQuartzCommandQuantization QuantizationType, int NumBars, int Beat, float BeatFraction)> OnQuantizationEvent, class UQuartzClockHandle*& ClockHandle);
     void UnsubscribeFromAllTimeDivisions(class UObject* WorldContextObject, class UQuartzClockHandle*& ClockHandle);
     void UnsubscribeFromAllTimeDivisions(class UQuartzClockHandle*& ClockHandle);
-    void UnsubscribeFromTimeDivision(class UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary, class UQuartzClockHandle*& ClockHandle);
-    void UnsubscribeFromTimeDivision(EQuartzCommandQuantization InQuantizationBoundary, class UQuartzClockHandle*& ClockHandle);
+    void UnsubscribeFromTimeDivision(class UObject* WorldContextObject, TEnum<EQuartzCommandQuantization> InQuantizationBoundary, class UQuartzClockHandle*& ClockHandle);
+    void UnsubscribeFromTimeDivision(TEnum<EQuartzCommandQuantization> InQuantizationBoundary, class UQuartzClockHandle*& ClockHandle);
     UE_PURE float GetBeatsPerMinute(class UObject* WorldContextObject) const;
     UE_PURE float GetBeatsPerMinute() const;
     UE_PURE float GetMillisecondsPerTick(class UObject* WorldContextObject) const;

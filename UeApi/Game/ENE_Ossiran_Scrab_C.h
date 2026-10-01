@@ -31,6 +31,7 @@ class ENE_Ossiran_Scrab_C : public AScrab
 {
 public:
     UE_CLASS("/Game/Enemies/Ossiran/Scrab/ENE_Ossiran_Scrab", "ENE_Ossiran_Scrab_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingAudio;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.IKComponent IK;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WalkAndFlyEnemyComponent WalkAndFly";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "aaf5124d5dba2844a2023558ef3a7412";
@@ -41,7 +42,7 @@ public:
     class UMeleeAttackComponent* ChargeAttack;
     static constexpr const char* ChargeAttack__UeScsNode = "bdc25d67fe157649bd32c329a40b5ab6";
     float EmissiveDarken_EmissiveMultiplier_DC93D11547B4F33874A299B7924D16C5;
-    ETimelineDirection EmissiveDarken__Direction_DC93D11547B4F33874A299B7924D16C5;
+    TEnum<ETimelineDirection> EmissiveDarken__Direction_DC93D11547B4F33874A299B7924D16C5;
     class UTimelineComponent* EmissiveDarken;
     float DecalSize;
     class USoundBase* AlertedScream;

@@ -21,6 +21,7 @@ class ENE_GliderBeast_C : public AFlyingEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/GliderBeast/ENE_GliderBeast", "ENE_GliderBeast_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GliderBeastDeath_Cue;
     static constexpr const char* GliderBeastDeath_Cue__UeScsNode = "e6218f5e7375334498158a8dca3d3ac9";

@@ -50,7 +50,7 @@ public:
     class UClass* itemClass;
     class UUpgradableGearComponent* Upgradable;
     Basic_Popup_YesNoPrompt_C* YesNoPrompt;
-    EItemCategory Category;
+    TEnum<EItemCategory> Category;
     TMulticastInlineDelegate<void()> OnItemPurchased;
     class UDialogDataAsset* ShoutUpgradePurchased;
     float CompactModeProgress;

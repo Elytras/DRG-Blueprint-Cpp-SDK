@@ -25,6 +25,7 @@ class BP_JettyBoots_Arcade_C : public AJettyBootsArcadeActor
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/BP_JettyBoots_Arcade", "BP_JettyBoots_Arcade_C");
     using UI_JettyBoots_Arcade_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Arcade_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.JettyBootUsableComponent StartGameUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* IdleAudio;
     static constexpr const char* IdleAudio__UeScsNode = "77d06798b4b17a4ab8cc3d9307b36718";
@@ -48,11 +49,11 @@ public:
     void MissionShout_GameStart();
     void Shout_LevelCompleted(class APlayerCharacter* InPlayer);
     void Shout_RestartingLevel(class APlayerCharacter* InPlayer);
-    void Shout_OnStartGame(class APlayerCharacter* User, EInputKeys Key);
+    void Shout_OnStartGame(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void Shout_OnGameOver(FJettyBootsScore InScore, bool InOnHighScoreList, int InHighScoreIndex, class APlayerCharacter* InPlayer);
     void Setup_Shouts();
     static constexpr const char* Setup_Shouts__UeName = "Setup Shouts";
-    void BndEvt__BP_JettyBoots_Arcade_StartGameUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_JettyBoots_Arcade_StartGameUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void ReceivePlayerChanged();
     void OnReplayRecorded(FJettyBootsReplay InReplay);

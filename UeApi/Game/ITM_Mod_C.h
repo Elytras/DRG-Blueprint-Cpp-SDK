@@ -59,7 +59,7 @@ public:
     FString ModVersion;
     FString ModURL;
     FString ModCategory;
-    EUGCApprovalStatus ModStatus;
+    TEnum<EUGCApprovalStatus> ModStatus;
     FString ModDescription;
     FString ModAuthor;
     FString ModAuthorURL;
@@ -77,7 +77,7 @@ public:
     bool ShowStatus;
     bool WrongVersion;
     TArray<FString> NamesOfDependencies;
-    EUGCDownloadVersion ModDownloadVersion;
+    TEnum<EUGCDownloadVersion> ModDownloadVersion;
     ITM_Modding_Menu_C* Modding_Menu;
     static constexpr const char* Modding_Menu__UeName = "Modding Menu";
     void ExecuteUbergraph_ITM_Mod(int EntryPoint);
@@ -98,13 +98,13 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Basic_CheckBox_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
-    void SetData(FString InModName, FString InModVersion, FString InModURL, FString InModCategory, EUGCApprovalStatus InModStatus, EUGCDownloadVersion InModDownloadVersion, FString InModDescription, FString InModAuthor, FString InModAuthorURL, bool InModIsMounted, bool InModPendingMounted, bool InModIsDeprecated, bool InDependencyRemoved, bool InShowStatus, bool InCrashed, bool InWrongVersion);
+    void SetData(FString InModName, FString InModVersion, FString InModURL, FString InModCategory, TEnum<EUGCApprovalStatus> InModStatus, TEnum<EUGCDownloadVersion> InModDownloadVersion, FString InModDescription, FString InModAuthor, FString InModAuthorURL, bool InModIsMounted, bool InModPendingMounted, bool InModIsDeprecated, bool InDependencyRemoved, bool InShowStatus, bool InCrashed, bool InWrongVersion);
     void SetColors();
-    void GetStatusText(bool InShowStatus, EUGCApprovalStatus InStatus, FText& OutStatus);
+    void GetStatusText(bool InShowStatus, TEnum<EUGCApprovalStatus> InStatus, FText& OutStatus);
     void GetTruncatedString(FString inString, int InMaxLength, FString& OutResult);
     void GetStringOrDefault(FString inString, FText InDefault, FString& OutValue);
     void OnThumbnailFetched(class UTexture2DDynamic* ModioModThumbnail);
-    void GetStatusToolTip(bool InShowStatus, EUGCApprovalStatus InStatus, FText& OutStatus);
+    void GetStatusToolTip(bool InShowStatus, TEnum<EUGCApprovalStatus> InStatus, FText& OutStatus);
     void SetCompactMode(bool SimpleMode);
     void HasCrashed(bool& OutHasCrashed);
     void On_Overlay_Closed();
@@ -118,8 +118,8 @@ public:
     UE_PURE class UWidget* GetDependencyCheckboxTooltip();
     void SetFromPackage(class UUGCPackage* InPackage);
     void CheckIfSavedInSlot();
-    void GetDownloadVersionText(EUGCDownloadVersion InDownloadVersion, FText& OutStatus);
-    void GetDownloadVersionToolTip(EUGCDownloadVersion InStatus, FText& OutStatus);
+    void GetDownloadVersionText(TEnum<EUGCDownloadVersion> InDownloadVersion, FText& OutStatus);
+    void GetDownloadVersionToolTip(TEnum<EUGCDownloadVersion> InStatus, FText& OutStatus);
     void ITM_Mod_AutoGenFunc(FString LastURL);
 };
 

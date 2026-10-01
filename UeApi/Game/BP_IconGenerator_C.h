@@ -19,6 +19,7 @@ class BP_IconGenerator_C : public AIconGenerationCharacter
 {
 public:
     UE_CLASS("/Game/Character/Vanity2/BP_IconGenerator", "BP_IconGenerator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent MeshRoot;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent BodyMesh;/Script/Engine.SkeletalMeshComponent CharacterMesh0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UIconSceneCaptureComponent* IconSceneCapture_Eyebrows;
     static constexpr const char* IconSceneCapture_Eyebrows__UeScsNode = "9268cbbe40eb054c990286881d5c085d";
@@ -58,7 +59,7 @@ public:
     static constexpr const char* SpotLight1__UeScsNode = "7b1647e10efe3a48ba0cc6a700e5de5a";
     class USceneComponent* Lights;
     static constexpr const char* Lights__UeScsNode = "309dc4d94f3e6b4e9b3c28da527756aa";
-    EVanitySlot VanityCategory;
+    TEnum<EVanitySlot> VanityCategory;
     FString Path;
     void ExecuteUbergraph_BP_IconGenerator(int EntryPoint);
     void ReceiveBeginPlay();

@@ -30,6 +30,7 @@ class ENE_PitJaw_C : public APitJaw
 {
 public:
     UE_CLASS("/Game/Enemies/Ossiran/PitJaw/ENE_PitJaw", "ENE_PitJaw_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.MeleeAttackComponent Bite;/Script/FSD.MeleeAttackComponent FirstBite;/Script/FSD.MeshCarverComponent MajorCarve;/Script/FSD.MeshCarverComponent MinorCarve;/Script/FSD.MeshCarverComponent MouthCarve;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent CarverRoot;/Script/Engine.SkeletalMeshComponent SkeletalMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
     static constexpr const char* terrainPlacement__UeScsNode = "e9f824266f96874bb7f3a87b2961eecc";
@@ -113,7 +114,7 @@ public:
     void BP_FinishRelocation(FTransform relocationPoint);
     UE_SERVER void Relocate();
     void OnDeath();
-    void BP_OnStateChanged(EPitJawState NewState);
+    void BP_OnStateChanged(TEnum<EPitJawState> NewState);
     void ReceiveBeginPlay();
     void OnLoaded_149F93B84FAB27370D8A2EB353B4EE5D(TSubclassOf<class UObject> Loaded);
     void OnCompleted_7CB97CC14A63D2846FB740AFDA0FA1AD(FName NotifyName);

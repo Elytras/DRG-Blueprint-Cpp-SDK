@@ -35,6 +35,7 @@ class BP_SentryGun_Redeployable_C : public ARedeployableSentryGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Redeployable", "BP_SentryGun_Redeployable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* ArcIndicator;
     static constexpr const char* ArcIndicator__UeScsNode = "2d684a218e017143b15d8ec40fc96e56";
@@ -79,7 +80,7 @@ public:
     class UHitscanComponent* HitScan;
     static constexpr const char* HitScan__UeScsNode = "a2d2010edfc9e547b65418f23d1c8a2e";
     float Timeline_0_Translate_BarrelOverchargeShot_4853B22243389D0916A3E09304615D5D;
-    ETimelineDirection Timeline_0__Direction_4853B22243389D0916A3E09304615D5D;
+    TEnum<ETimelineDirection> Timeline_0__Direction_4853B22243389D0916A3E09304615D5D;
     class UTimelineComponent* Timeline_0;
     float DismantleDuration;
     bool Building;
@@ -102,7 +103,7 @@ public:
     void ReceiveOnSentryGunOwnerChanged();
     void ReceiveBeginPlay();
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_ProgressSignature__DelegateSignature(float Progress);
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveOnDeployed();
     void ReceiveOnDismantled();
     void ReceiveOnDismantle();

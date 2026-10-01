@@ -13,6 +13,7 @@ class BP_DropPod_Escape_NoMule_C : public Game::LevelElements::Droppod::BP_DropP
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Escape_NoMule", "BP_DropPod_Escape_NoMule_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
 };
 
 }}}   // namespace Game::LevelElements::Droppod

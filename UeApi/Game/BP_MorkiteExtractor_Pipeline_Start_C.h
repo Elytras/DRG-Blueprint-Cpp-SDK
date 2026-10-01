@@ -21,6 +21,7 @@ class BP_MorkiteExtractor_Pipeline_Start_C : public APipelineStart
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/BP_MorkiteExtractor_Pipeline_Start", "BP_MorkiteExtractor_Pipeline_Start_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TrackBuilderUsable PipelineStartUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* ColliderPipelineStart;
     static constexpr const char* ColliderPipelineStart__UeScsNode = "30387aaa8ae74143a4df5387be3eeed4";
@@ -36,7 +37,7 @@ public:
     static constexpr const char* outline__UeScsNode = "2d3c06dbca80f74c8c6c1a5f52ae3849";
     class UMaterialInterface* MarkerRingMaterial;
     void ExecuteUbergraph_BP_MorkiteExtractor_Pipeline_Start(int EntryPoint);
-    void ReceiveBuildStateChanged(EPipelineBuildState InBuildState);
+    void ReceiveBuildStateChanged(TEnum<EPipelineBuildState> InBuildState);
     void ReceiveBeginPlay();
     void BndEvt__PipelineStartUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void UserConstructionScript();

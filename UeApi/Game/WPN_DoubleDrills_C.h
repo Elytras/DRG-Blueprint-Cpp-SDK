@@ -26,6 +26,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Drills/WPN_DoubleDrills", "WPN_DoubleDrills_C");
     using WeaponDisplay_Drill_Heat_C = Game::WeaponsNTools::Drills::WeaponDisplay_Drill_Heat_C;
     using WeaponDisplay_Overheat_C = Game::UI::WeaponDisplays::WeaponDisplay_Overheat_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.DoubleDrillAggregator Aggregator;/Script/FSD.FirstPersonParticleSystemComponent FP_Left_DrillParticles;/Script/FSD.FirstPersonParticleSystemComponent FP_Right_DrillParticles;/Script/FSD.FirstPersonSkeletalMeshComponent FPLMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPRMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPLMesh;/Script/Engine.SkeletalMeshComponent TPRMesh;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* Widget_Heat;
     static constexpr const char* Widget_Heat__UeScsNode = "de62c620c9d56641a969852a49bf455d";

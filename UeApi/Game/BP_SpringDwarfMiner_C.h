@@ -48,7 +48,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "0cd8fb4969be484592df5a4018edcaa6";
     void ExecuteUbergraph_BP_SpringDwarfMiner(int EntryPoint);
     UE_MULTICAST void ImpulseSpringDwarf();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void GetSpringDwarf(class UStaticMeshComponent*& Dwarf);
 };
 

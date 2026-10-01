@@ -29,6 +29,7 @@ class PRJ_ChargedBlasterShot_C : public AChargedProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/PRJ_ChargedBlasterShot", "PRJ_ChargedBlasterShot_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* TCFDamage;
     static constexpr const char* TCFDamage__UeScsNode = "b1f4e55571f4ef4ab9ba556a68a490e8";
@@ -53,7 +54,7 @@ public:
     class UProjectileExplosion* ProjectileExplosion;
     static constexpr const char* ProjectileExplosion__UeScsNode = "d1a467784b06fa41a3eafa1e61ab4d12";
     float Grow_Time_Line_Scale_70B952944B635ADB4B7086A2A6BEB7D9;
-    ETimelineDirection Grow_Time_Line__Direction_70B952944B635ADB4B7086A2A6BEB7D9;
+    TEnum<ETimelineDirection> Grow_Time_Line__Direction_70B952944B635ADB4B7086A2A6BEB7D9;
     class UTimelineComponent* Grow_Time_Line;
     static constexpr const char* Grow_Time_Line__UeName = "Grow Time Line";
     float DamageRadiusAtOverCharge;

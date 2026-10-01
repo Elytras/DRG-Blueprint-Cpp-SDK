@@ -21,6 +21,7 @@ class BP_Crossbow_Projectile_Stuck_Fire_C : public Game::WeaponsNTools::Crossbow
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Fire", "BP_Crossbow_Projectile_Stuck_Fire_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* EffectParticle;
     static constexpr const char* EffectParticle__UeScsNode = "37c9c99ff69d1e4d9d31f00b95225f40";

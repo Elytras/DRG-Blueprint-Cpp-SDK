@@ -20,6 +20,7 @@ class BP_FoamPuddle_C : public AFoamPuddle
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/BP_FoamPuddle", "BP_FoamPuddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Engine.SceneComponent PuddleRoot;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "52857381bce39743ad61d71a9c34f2dd";
@@ -31,11 +32,11 @@ public:
     static constexpr const char* TerrainDetect__UeScsNode = "8618417eceebfd4fb21dcb6965ab09de";
     float Timeline_1_NewTrack;
     static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_FB8CEE454A0146654CCF979239EF7152";
-    ETimelineDirection Timeline_1__Direction_FB8CEE454A0146654CCF979239EF7152;
+    TEnum<ETimelineDirection> Timeline_1__Direction_FB8CEE454A0146654CCF979239EF7152;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_44A611F34AD5A6FAD05E20AB4D1BE0FB";
-    ETimelineDirection Timeline_0__Direction_44A611F34AD5A6FAD05E20AB4D1BE0FB;
+    TEnum<ETimelineDirection> Timeline_0__Direction_44A611F34AD5A6FAD05E20AB4D1BE0FB;
     class UTimelineComponent* Timeline_0;
     bool ShouldDestroy;
     static constexpr const char* ShouldDestroy__Replicated = "OnRep_ShouldDestory:";

@@ -18,6 +18,7 @@ class PRJ_Crossbow_FireProjectile_C : public Game::WeaponsNTools::Crossbow::Proj
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_FireProjectile", "PRJ_Crossbow_FireProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Crossbow_FireProjectile_C;
     static constexpr const char* UberGraphFrame_PRJ_Crossbow_FireProjectile_C__UeName = "UberGraphFrame";
     class USphereComponent* FlammableCollision;

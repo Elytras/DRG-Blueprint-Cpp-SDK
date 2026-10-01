@@ -45,7 +45,7 @@ public:
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player);
     void OnKnock(class APlayerCharacter* Player);
     void ReceiveTick(float DeltaSeconds);
-    void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_Burning();
 };
 

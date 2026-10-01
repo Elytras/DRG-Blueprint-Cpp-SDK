@@ -19,6 +19,7 @@ class PRJ_FacilityTentacleProjectile_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/PRJ_FacilityTentacleProjectile", "PRJ_FacilityTentacleProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "092623403d1fc947a29bf37c5e135d37";

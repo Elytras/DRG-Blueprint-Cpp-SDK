@@ -51,6 +51,7 @@ public:
     using BP_MainShieldActvator_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_MainShieldActvator_C;
     using ENE_FacilityCaretaker_C = Game::GameElements::Objectives::Facility::Caretaker::ENE_FacilityCaretaker_C;
     using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent SceneRoot;/Script/Engine.SkeletalMeshComponent BaseMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
     static constexpr const char* MeshCarver__UeScsNode = "511a5a09a29ff247ab815e03d7cef29a";
@@ -126,7 +127,7 @@ public:
     static constexpr const char* terrainPlacement__UeScsNode = "cd1e8f977086294f8b8713d369db0c7a";
     float FadeShield_NewTrack;
     static constexpr const char* FadeShield_NewTrack__UeName = "FadeShield_NewTrack_0_1149055647097FB37A48EA8DF4A2DB45";
-    ETimelineDirection FadeShield__Direction_1149055647097FB37A48EA8DF4A2DB45;
+    TEnum<ETimelineDirection> FadeShield__Direction_1149055647097FB37A48EA8DF4A2DB45;
     class UTimelineComponent* FadeShield;
     int NumberOfActivations;
     int ActivationsRequired;

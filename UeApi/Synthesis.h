@@ -860,7 +860,7 @@ class UModularSynthComponent : public USynthComponent
 public:
     UE_CLASS("/Script/Synthesis", "ModularSynthComponent");
     int VoiceCount;
-    FPatchId CreatePatch(ESynth1PatchSource PatchSource, const TArray<FSynth1PatchCable>& PatchCables, bool bEnableByDefault);
+    FPatchId CreatePatch(TEnum<ESynth1PatchSource> PatchSource, const TArray<FSynth1PatchCable>& PatchCables, bool bEnableByDefault);
     void NoteOff(float Note, bool bAllNotesOff, bool bKillAllNotes);
     void NoteOn(float Note, int Velocity, float Duration);
     void SetAttackTime(float AttackTimeMsec);
@@ -874,27 +874,27 @@ public:
     void SetEnablePolyphony(bool bEnablePolyphony);
     void SetEnableRetrigger(bool RetriggerEnabled);
     void SetEnableUnison(bool EnableUnison);
-    void SetFilterAlgorithm(ESynthFilterAlgorithm FilterAlgorithm);
+    void SetFilterAlgorithm(TEnum<ESynthFilterAlgorithm> FilterAlgorithm);
     void SetFilterFrequency(float FilterFrequencyHz);
     void SetFilterFrequencyMod(float FilterFrequencyHz);
     void SetFilterQ(float FilterQ);
     void SetFilterQMod(float FilterQ);
-    void SetFilterType(ESynthFilterType FilterType);
+    void SetFilterType(TEnum<ESynthFilterType> FilterType);
     void SetGainDb(float GainDb);
     void SetLFOFrequency(int LFOIndex, float FrequencyHz);
     void SetLFOFrequencyMod(int LFOIndex, float FrequencyModHz);
     void SetLFOGain(int LFOIndex, float Gain);
     void SetLFOGainMod(int LFOIndex, float GainMod);
-    void SetLFOMode(int LFOIndex, ESynthLFOMode LFOMode);
-    void SetLFOPatch(int LFOIndex, ESynthLFOPatchType LFOPatchType);
-    void SetLFOType(int LFOIndex, ESynthLFOType LFOType);
+    void SetLFOMode(int LFOIndex, TEnum<ESynthLFOMode> LFOMode);
+    void SetLFOPatch(int LFOIndex, TEnum<ESynthLFOPatchType> LFOPatchType);
+    void SetLFOType(int LFOIndex, TEnum<ESynthLFOType> LFOType);
     void SetModEnvAttackTime(float AttackTimeMsec);
     void SetModEnvBiasInvert(bool bInvert);
-    void SetModEnvBiasPatch(ESynthModEnvBiasPatch InPatchType);
+    void SetModEnvBiasPatch(TEnum<ESynthModEnvBiasPatch> InPatchType);
     void SetModEnvDecayTime(float DecayTimeMsec);
     void SetModEnvDepth(float Depth);
     void SetModEnvInvert(bool bInvert);
-    void SetModEnvPatch(ESynthModEnvPatch InPatchType);
+    void SetModEnvPatch(TEnum<ESynthModEnvPatch> InPatchType);
     void SetModEnvReleaseTime(float Release);
     void SetModEnvSustainGain(float SustainGain);
     void SetOscCents(int OscIndex, float Cents);
@@ -905,7 +905,7 @@ public:
     void SetOscPulsewidth(int OscIndex, float Pulsewidth);
     void SetOscSemitones(int OscIndex, float Semitones);
     void SetOscSync(bool bIsSynced);
-    void SetOscType(int OscIndex, ESynth1OscType OscType);
+    void SetOscType(int OscIndex, TEnum<ESynth1OscType> OscType);
     void SetPan(float Pan);
     void SetPitchBend(float PitchBend);
     void SetPortamento(float Portamento);
@@ -913,7 +913,7 @@ public:
     void SetSpread(float Spread);
     void SetStereoDelayFeedback(float DelayFeedback);
     void SetStereoDelayIsEnabled(bool StereoDelayEnabled);
-    void SetStereoDelayMode(ESynthStereoDelayMode StereoDelayMode);
+    void SetStereoDelayMode(TEnum<ESynthStereoDelayMode> StereoDelayMode);
     void SetStereoDelayRatio(float DelayRatio);
     void SetStereoDelayTime(float DelayTimeMsec);
     void SetStereoDelayWetlevel(float DelayWetlevel);
@@ -1061,7 +1061,7 @@ public:
     UE_CLASS("/Script/Synthesis", "SubmixEffectConvolutionReverbPreset");
     class UAudioImpulseResponse* ImpulseResponse;
     FSubmixEffectConvolutionReverbSettings Settings;
-    ESubmixEffectConvolutionReverbBlockSize BlockSize;
+    TEnum<ESubmixEffectConvolutionReverbBlockSize> BlockSize;
     bool bEnableHardwareAcceleration;
     void SetImpulseResponse(class UAudioImpulseResponse* InImpulseResponse);
     void SetSettings(const FSubmixEffectConvolutionReverbSettings& InSettings);
@@ -1084,12 +1084,12 @@ class USubmixEffectFilterPreset : public USoundEffectSubmixPreset
 public:
     UE_CLASS("/Script/Synthesis", "SubmixEffectFilterPreset");
     FSubmixEffectFilterSettings Settings;
-    void SetFilterAlgorithm(ESubmixFilterAlgorithm InAlgorithm);
+    void SetFilterAlgorithm(TEnum<ESubmixFilterAlgorithm> InAlgorithm);
     void SetFilterCutoffFrequency(float InFrequency);
     void SetFilterCutoffFrequencyMod(float InFrequency);
     void SetFilterQ(float InQ);
     void SetFilterQMod(float InQ);
-    void SetFilterType(ESubmixFilterType InType);
+    void SetFilterType(TEnum<ESubmixFilterType> InType);
     void SetSettings(const FSubmixEffectFilterSettings& InSettings);
 };
 
@@ -1170,14 +1170,14 @@ public:
     void SetAttackTime(float AttackTimeMsec);
     void SetDecayTime(float DecayTimeMsec);
     void SetGrainDuration(float BaseDurationMsec, FVector2D DurationRange);
-    void SetGrainEnvelopeType(EGranularSynthEnvelopeType EnvelopeType);
+    void SetGrainEnvelopeType(TEnum<EGranularSynthEnvelopeType> EnvelopeType);
     void SetGrainPan(float BasePan, FVector2D PanRange);
     void SetGrainPitch(float BasePitch, FVector2D PitchRange);
     void SetGrainProbability(float InGrainProbability);
     void SetGrainsPerSecond(float InGrainsPerSecond);
     void SetGrainVolume(float BaseVolume, FVector2D VolumeRange);
     void SetPlaybackSpeed(float InPlayheadRate);
-    void SetPlayheadTime(float InPositionSec, float LerpTimeSec, EGranularSynthSeekType SeekType);
+    void SetPlayheadTime(float InPositionSec, float LerpTimeSec, TEnum<EGranularSynthSeekType> SeekType);
     void SetReleaseTimeMsec(float ReleaseTimeMsec);
     void SetScrubMode(bool bScrubMode);
     void SetSoundWave(class USoundWave* InSoundWave);
@@ -1220,7 +1220,7 @@ public:
     void SetAmpEnvelopeInvert(bool bInInvert);
     void SetAmpEnvelopeReleaseTime(float InReleaseTimeMsec);
     void SetAmpEnvelopeSustainGain(float InSustainGain);
-    bool SetCurveInterpolationType(ECurveInterpolationType InterpolationType, int TableIndex);
+    bool SetCurveInterpolationType(TEnum<ECurveInterpolationType> InterpolationType, int TableIndex);
     bool SetCurveTangent(int TableIndex, float InNewTangent);
     bool SetCurveValue(int TableIndex, int KeyframeIndex, float NewValue);
     void SetFilterEnvelopeAttackTime(float InAttackTimeMsec);
@@ -1245,7 +1245,7 @@ public:
     void SetPositionEnvelopeSustainGain(float InSustainGain);
     void SetPosLfoDepth(float InLfoDepth);
     void SetPosLfoFrequency(float InLfoFrequency);
-    void SetPosLfoType(ESynthLFOType InLfoType);
+    void SetPosLfoType(TEnum<ESynthLFOType> InLfoType);
     void SetSustainPedalState(bool InSustainPedalState);
     void SetWaveTablePosition(float InPosition);
     UE_PURE TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
@@ -1269,7 +1269,7 @@ public:
     class USoundWave* SoundWave;
     TMulticastInlineDelegate<void()> OnSampleLoaded;
     TMulticastInlineDelegate<void(float ProgressPercent, float ProgressTimeSeconds)> OnSamplePlaybackProgress;
-    void SeekToTime(float TimeSec, ESamplePlayerSeekType SeekType, bool bWrap);
+    void SeekToTime(float TimeSec, TEnum<ESamplePlayerSeekType> SeekType, bool bWrap);
     void SetPitch(float InPitch, float TimeSec);
     void SetScrubMode(bool bScrubMode);
     void SetScrubTimeWidth(float InScrubTimeWidthSec);

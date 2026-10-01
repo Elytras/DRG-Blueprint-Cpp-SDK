@@ -25,6 +25,7 @@ class ENE_Jelly_Swarmer_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/ENE_Jelly_Swarmer", "ENE_Jelly_Swarmer_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnAlertComponent* PawnAlert;
     static constexpr const char* PawnAlert__UeScsNode = "4d7cf3d68af74d499d02d394ab7ef607";

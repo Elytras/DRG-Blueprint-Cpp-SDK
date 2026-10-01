@@ -30,6 +30,7 @@ class BP_LostPackStart_C : public ATreasureBeacon
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/LostPack/BP_LostPackStart", "BP_LostPackStart_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComp;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
     static constexpr const char* TerrainDetect3__UeScsNode = "2dd8e4a9ef44d249a317afddc1893c8f";
@@ -63,7 +64,7 @@ public:
     static constexpr const char* SingleUsable__UeScsNode = "de28e66af1f53c41a610ce7894d14a1f";
     float LightTimeline_NewTrack;
     static constexpr const char* LightTimeline_NewTrack__UeName = "LightTimeline_NewTrack_0_9C3586C54F34D331F1DA6DBB251F58D5";
-    ETimelineDirection LightTimeline__Direction_9C3586C54F34D331F1DA6DBB251F58D5;
+    TEnum<ETimelineDirection> LightTimeline__Direction_9C3586C54F34D331F1DA6DBB251F58D5;
     class UTimelineComponent* LightTimeLine;
     class UMaterialInstanceDynamic* DMI;
     class UDialogDataAsset* OnDataDownloadedShout;
@@ -77,8 +78,8 @@ public:
     UE_MULTICAST void All_playDownloadSound();
     void StartLightWave();
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_2_OnFailed__DelegateSignature();
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void LightTimeline__NewTrack_1__EventFunc();
     void LightTimeline__UpdateFunc();

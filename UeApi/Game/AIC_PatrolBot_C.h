@@ -17,6 +17,7 @@ class AIC_PatrolBot_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/AIC_PatrolBot", "AIC_PatrolBot_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_PatrolBot(int EntryPoint);
     void ActivateDrone();

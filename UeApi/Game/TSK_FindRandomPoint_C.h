@@ -23,7 +23,7 @@ public:
     FBlackboardKeySelector LocationKey;
     float Distance;
     bool SnapToCeiling;
-    EOffsetFrom offsetFrom;
+    TEnum<EOffsetFrom> offsetFrom;
     float OffsetFromDistance;
     void ExecuteUbergraph_TSK_FindRandomPoint(int EntryPoint);
     void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);

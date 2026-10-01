@@ -24,6 +24,7 @@ class WPN_Revolver_C : public ARevoler
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Revolver/WPN_Revolver", "WPN_Revolver_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FP_AnimationMag;
     static constexpr const char* FP_AnimationMag__UeScsNode = "147e719e60f31c409c25bcab8418b6b0";

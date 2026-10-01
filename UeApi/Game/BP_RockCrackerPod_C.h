@@ -39,6 +39,7 @@ class BP_RockCrackerPod_C : public ARockCrackerPod
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_RockCrackerPod", "BP_RockCrackerPod_C");
     using BP_RockCracker_EndPoint_C = Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ContinuousUsableComponent RepairUsable;/Script/FSD.DamageComponent Damage;/Script/FSD.FriendlyHealthComponent PodHealth;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* FuelLineStart;
     static constexpr const char* FuelLineStart__UeScsNode = "bf3b34c2e2b676409914948cf7e34a68";
@@ -99,8 +100,8 @@ public:
     void ExecuteUbergraph_BP_RockCrackerPod(int EntryPoint);
     void SwitchYellowLights(bool isGreen);
     void BndEvt__BP_RockCrackerPod_Health_K2Node_ComponentBoundEvent_7_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void OnExitState(ERockCrackerstate PodState_0);
-    void OnEnterState(ERockCrackerstate PodState_0);
+    void OnExitState(TEnum<ERockCrackerstate> PodState_0);
+    void OnEnterState(TEnum<ERockCrackerstate> PodState_0);
     void OnFirstFuelLineSegment(class AFuelLineSegment* InFirstSegment);
     void BndEvt__BP_RockCrackerPod_DropToTerrain_K2Node_ComponentBoundEvent_3_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
     void SetEndPoint(BP_RockCracker_EndPoint_C* EndPoint_0);
@@ -108,7 +109,7 @@ public:
     void OnDroppodImpact();
     void OnEventEnded(bool wasSuccess);
     void OnEventStarted();
-    void BndEvt__BP_RockCrackerPod_ReviveUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_RockCrackerPod_ReviveUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void UpdateLights(class UMaterialInterface* NewMaterial);

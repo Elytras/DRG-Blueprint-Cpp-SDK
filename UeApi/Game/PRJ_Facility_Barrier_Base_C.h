@@ -23,6 +23,7 @@ class PRJ_Facility_Barrier_Base_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/PRJ_Facility_Barrier_Base", "PRJ_Facility_Barrier_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPlayerImpactCooldownComponent* PlayerImpactCooldown;
     static constexpr const char* PlayerImpactCooldown__UeScsNode = "af0dea2ff7fef44ab75d613825782f16";
@@ -34,11 +35,11 @@ public:
     static constexpr const char* BounceBox__UeScsNode = "ce43b8a7e209e8419bb264f9ef534e66";
     float Timeline_1_NewTrack;
     static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_75981F9D4B9BA002AD172C81D5266F91";
-    ETimelineDirection Timeline_1__Direction_75981F9D4B9BA002AD172C81D5266F91;
+    TEnum<ETimelineDirection> Timeline_1__Direction_75981F9D4B9BA002AD172C81D5266F91;
     class UTimelineComponent* Timeline_1;
     float Growth_NewTrack;
     static constexpr const char* Growth_NewTrack__UeName = "Growth_NewTrack_0_7C9AAAD449A1B186F3E610A47128664F";
-    ETimelineDirection Growth__Direction_7C9AAAD449A1B186F3E610A47128664F;
+    TEnum<ETimelineDirection> Growth__Direction_7C9AAAD449A1B186F3E610A47128664F;
     class UTimelineComponent* Growth;
     float Life;
     FVector ShieldScale;

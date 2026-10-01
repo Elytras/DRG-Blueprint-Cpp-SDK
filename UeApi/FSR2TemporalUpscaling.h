@@ -34,8 +34,8 @@ public:
     bool UseSSRExperimentalDenoiser;
     bool UseNativeDX12;
     bool UseNativeVulkan;
-    EFSR2QualityMode QualityMode;
-    EFSR2HistoryFormat HistoryFormat;
+    TEnum<EFSR2QualityMode> QualityMode;
+    TEnum<EFSR2HistoryFormat> HistoryFormat;
     float Sharpness;
     bool AdjustMipBias;
     bool ReactiveMask;

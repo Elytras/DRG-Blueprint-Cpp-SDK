@@ -22,7 +22,7 @@ public:
     class UComboBoxString* ComboBoxString_70;
     FString ItemText;
     void ExecuteUbergraph_Basic_Dropdown(int EntryPoint);
-    void BndEvt__ComboBoxString_70_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_70_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     class UWidget* OnGenerateWidget_0(FString Item);
 };
 

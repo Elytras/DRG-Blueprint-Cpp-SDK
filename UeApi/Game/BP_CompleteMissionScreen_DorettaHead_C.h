@@ -28,7 +28,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "81d774dc59abf44d8053bd7f9b60cb5f";
     void ExecuteUbergraph_BP_CompleteMissionScreen_DorettaHead(int EntryPoint);
-    void StartPlay(ECharselectionCameraLocation selectionLocation);
+    void StartPlay(TEnum<ECharselectionCameraLocation> selectionLocation);
     void ReceiveBeginPlay();
 };
 

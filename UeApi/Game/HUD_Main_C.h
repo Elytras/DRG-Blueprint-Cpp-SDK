@@ -200,9 +200,9 @@ public:
     void PushEvent(class UWidget* eventWidget, bool Left);
     void Setup_HUD_Elements();
     static constexpr const char* Setup_HUD_Elements__UeName = "Setup HUD Elements";
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void UpdateCurrentCanvas();
-    void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void AllDwarvesDown();
     UE_COSMETIC void Destruct();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);

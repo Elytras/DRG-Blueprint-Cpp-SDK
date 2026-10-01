@@ -29,6 +29,7 @@ class WPN_LockOnRifle_C : public ALockOnWeapon
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/WPN_LockOnRifle", "WPN_LockOnRifle_C");
     using ABP_LockOnRifle_A_C = Game::WeaponsNTools::LockOnRifle::ABP_LockOnRifle_A_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* Mag_FP;
     static constexpr const char* Mag_FP__UeScsNode = "2f0566d464b3de4a94d62c2e8e5e95fc";

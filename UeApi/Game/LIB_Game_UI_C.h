@@ -22,13 +22,13 @@ class LIB_Game_UI_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/Game/LIB_Game_UI", "LIB_Game_UI_C");
-    static void GetVanitySlotTitle(EVanitySlot InVanitySlot, bool UpperCase, class UObject* __WorldContext, FText& OutTitle);
-    static void GetPickaxePartLocationTitle(EPickaxePartLocation InPartLocation, bool UpperCase, bool LongName, class UObject* __WorldContext, FText& OutTitle);
-    static void Get_Enemy_Family_Info(EEnemyFamily Family, class UObject* __WorldContext, FText& Name_0, class UTexture2D*& Icon, FLinearColor& Color);
+    static void GetVanitySlotTitle(TEnum<EVanitySlot> InVanitySlot, bool UpperCase, class UObject* __WorldContext, FText& OutTitle);
+    static void GetPickaxePartLocationTitle(TEnum<EPickaxePartLocation> InPartLocation, bool UpperCase, bool LongName, class UObject* __WorldContext, FText& OutTitle);
+    static void Get_Enemy_Family_Info(TEnum<EEnemyFamily> Family, class UObject* __WorldContext, FText& Name_0, class UTexture2D*& Icon, FLinearColor& Color);
     static constexpr const char* Get_Enemy_Family_Info__UeName = "Get Enemy Family Info";
-    static void GetEnemyTypeInfo(EEnemyType Type, class UObject* __WorldContext, FText& Display_Text, class UTexture2D*& Icon, FLinearColor& IconColor);
-    static void GetArmorTypeInfo(EArmorType Type, class UObject* __WorldContext, FText& Display_Text, class UTexture2D*& Icon, FLinearColor& Color);
-    static void GetEnemyFamilyName(EEnemyFamily Family, class UObject* __WorldContext, FText& Name_0);
+    static void GetEnemyTypeInfo(TEnum<EEnemyType> Type, class UObject* __WorldContext, FText& Display_Text, class UTexture2D*& Icon, FLinearColor& IconColor);
+    static void GetArmorTypeInfo(TEnum<EArmorType> Type, class UObject* __WorldContext, FText& Display_Text, class UTexture2D*& Icon, FLinearColor& Color);
+    static void GetEnemyFamilyName(TEnum<EEnemyFamily> Family, class UObject* __WorldContext, FText& Name_0);
     static void GetRewardText(class UReward* Reward, class UObject* __WorldContext, FText& Title, FText& Category, FText& Description, bool& HasOptionalCharacterID, class UPlayerCharacterID*& characterID);
     static void GetRewardIcon(class UReward* Reward, class UObject* __WorldContext, class UTexture*& Icon);
     static void GetSkinText(class UItemSkin* InSkin, class UItemID* InOptionalItem, class UPlayerCharacterID* InOptionalCharacter, class UObject* __WorldContext, FText& Title, FText& Category, FText& Description, bool& HasOptionalCharacterID, class UPlayerCharacterID*& characterID);

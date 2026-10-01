@@ -49,7 +49,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "7ad59c7b9fd27043a68016e8e870e9d1";
     float Grow_Scale_E6213CB8461859CFDD77B8B3B4302959;
-    ETimelineDirection Grow__Direction_E6213CB8461859CFDD77B8B3B4302959;
+    TEnum<ETimelineDirection> Grow__Direction_E6213CB8461859CFDD77B8B3B4302959;
     class UTimelineComponent* Grow;
     bool IsReady;
     static constexpr const char* IsReady__Replicated = "OnRep_IsReady:";

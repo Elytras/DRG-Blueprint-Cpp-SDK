@@ -14,6 +14,7 @@ class AIC_Woodlouse_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/AIC_Woodlouse", "AIC_Woodlouse_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Woodlouse(int EntryPoint);
     void ReceiveBeginPlay();

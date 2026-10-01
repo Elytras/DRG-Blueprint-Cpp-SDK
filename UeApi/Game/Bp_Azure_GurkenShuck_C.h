@@ -59,7 +59,7 @@ public:
     static constexpr const char* SimpleHealth__UeScsNode = "dd1b3eb08b5a4e4db33d39190df4d759";
     float Fade_up_NewTrack;
     static constexpr const char* Fade_up_NewTrack__UeName = "Fade_up_NewTrack_0_1973A28E419F187C363458893321988E";
-    ETimelineDirection Fade_up__Direction_1973A28E419F187C363458893321988E;
+    TEnum<ETimelineDirection> Fade_up__Direction_1973A28E419F187C363458893321988E;
     class UTimelineComponent* Fade_up;
     static constexpr const char* Fade_up__UeName = "Fade up";
     int LightIntensity;

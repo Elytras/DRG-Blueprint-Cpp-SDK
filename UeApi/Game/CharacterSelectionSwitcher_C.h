@@ -59,7 +59,7 @@ public:
     class AActor* CustomizationLocation;
     FTimerHandle IdleTimer;
     int EquippedIndex;
-    ECharselectionCameraLocation CurrentSelection;
+    TEnum<ECharselectionCameraLocation> CurrentSelection;
     class UClass* Viewer3DCharacterClass;
     class AActor* ViewerObject;
     class AActor* ViewWeaponCamLocation;
@@ -114,8 +114,8 @@ public:
     void ShowEndScreen(FCharacterViewScene viewScene);
     void ReceiveTick(float DeltaSeconds);
     void Equip(TSubclassOf<class AItem> itemClass, int EquipSlot_0);
-    void ShowViewer3D(TSubclassOf<class AActor> Actor, ECharselectionCameraLocation selectionLocation_0);
-    void OnVanityItemEquipped(EVanitySlot Slot);
+    void ShowViewer3D(TSubclassOf<class AActor> Actor, TEnum<ECharselectionCameraLocation> selectionLocation_0);
+    void OnVanityItemEquipped(TEnum<EVanitySlot> Slot);
     void StartVanityIdles();
     void DoStuff();
     void VanityLoop();
@@ -125,7 +125,7 @@ public:
     void StartIdles();
     void EquipSlot(int EquipSlot_0);
     void SwitchToWeapon(int WeaponIndex);
-    void OnShowCharacterSelector(TSubclassOf<class APlayerCharacter> NewCharacter, ECharselectionCameraLocation selectionLocation_0);
+    void OnShowCharacterSelector(TSubclassOf<class APlayerCharacter> NewCharacter, TEnum<ECharselectionCameraLocation> selectionLocation_0);
     void ReceiveBeginPlay();
     void OnCompleted_6DC7882842E914A95C4ACD9AF2E9C943(FName NotifyName);
     void OnBlendOut_6DC7882842E914A95C4ACD9AF2E9C943(FName NotifyName);
@@ -144,8 +144,8 @@ public:
     void OnNotifyEnd_B0CB40174FA1135597179392BE030FD1(FName NotifyName);
     void OnLoaded_516F3DE24C233C61C7A1519D1101C230(class UObject* Loaded);
     void OnLoaded_516F3DE24C233C61C7A1519D88D99E0F(class UObject* Loaded);
-    void RefreshCharacter(ECharselectionCameraLocation SelectionType);
-    void SelectCameraLocation(ECharselectionCameraLocation Selection);
+    void RefreshCharacter(TEnum<ECharselectionCameraLocation> SelectionType);
+    void SelectCameraLocation(TEnum<ECharselectionCameraLocation> Selection);
     void SetPreviewItem(class UItemID* Item);
     void Add_Yaw_World_Rotation(float Yaw);
     static constexpr const char* Add_Yaw_World_Rotation__UeName = "Add Yaw World Rotation";

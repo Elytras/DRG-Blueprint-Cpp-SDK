@@ -13,6 +13,7 @@ class AIC_Grabber_C : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Grabber/AIC_Grabber", "AIC_Grabber_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Grabber

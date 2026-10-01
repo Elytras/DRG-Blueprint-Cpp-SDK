@@ -13,6 +13,7 @@ class BP_Bosco_Rocket_Frag_C : public Game::GameElements::Drone::BP_BoscoAbillit
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_Bosco_Rocket_Frag", "BP_Bosco_Rocket_Frag_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}   // namespace Game::GameElements::Drone

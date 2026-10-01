@@ -33,6 +33,7 @@ class ENE_SpiderSpawner_C : public Game::Enemies::EnemySpawner::ENE_EnemySpawner
 public:
     UE_CLASS("/Game/Enemies/EnemySpawner/ENE_SpiderSpawner", "ENE_SpiderSpawner_C");
     using BP_SpawnerEyeComponent_C = Game::Enemies::EnemySpawner::BP_SpawnerEyeComponent_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_SpiderSpawner_C;
     static constexpr const char* UberGraphFrame_ENE_SpiderSpawner_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere_Eye4;

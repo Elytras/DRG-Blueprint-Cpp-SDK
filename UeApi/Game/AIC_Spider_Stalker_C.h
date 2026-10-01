@@ -13,6 +13,7 @@ class AIC_Spider_Stalker_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/AIC_Spider_Stalker", "AIC_Spider_Stalker_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

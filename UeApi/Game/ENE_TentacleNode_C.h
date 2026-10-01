@@ -21,6 +21,7 @@ class ENE_TentacleNode_C : public ATentaclePlantNode
 {
 public:
     UE_CLASS("/Game/Enemies/TentaclePlant/ENE_TentacleNode", "ENE_TentacleNode_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeakpointGlow;
     static constexpr const char* WeakpointGlow__UeScsNode = "cf23762e4bff8e4698f8ae300790416a";

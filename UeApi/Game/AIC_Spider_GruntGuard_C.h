@@ -13,6 +13,7 @@ class AIC_Spider_GruntGuard_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Guard/AIC_Spider_GruntGuard", "AIC_Spider_GruntGuard_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Guard

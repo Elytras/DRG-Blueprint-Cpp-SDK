@@ -31,6 +31,7 @@ class ENE_SmallShootingPlant_RegenPod_C : public AHydraWeedHealer
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/ENE_SmallShootingPlant_RegenPod", "ENE_SmallShootingPlant_RegenPod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Hydra_Healing_Seed;
     static constexpr const char* P_Hydra_Healing_Seed__UeScsNode = "8d6f932529f6404eadb2372844c3f160";
@@ -54,10 +55,10 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "47961f330ac1bc40a48b81a5479afc7a";
     float Timeline_1_NewTrack;
     static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_E713C7134F9737E0824F80801E2D3B4E";
-    ETimelineDirection Timeline_1__Direction_E713C7134F9737E0824F80801E2D3B4E;
+    TEnum<ETimelineDirection> Timeline_1__Direction_E713C7134F9737E0824F80801E2D3B4E;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_Size_74F2544C4A1361E2EE80E89D85FD7033;
-    ETimelineDirection Timeline_0__Direction_74F2544C4A1361E2EE80E89D85FD7033;
+    TEnum<ETimelineDirection> Timeline_0__Direction_74F2544C4A1361E2EE80E89D85FD7033;
     class UTimelineComponent* Timeline_0;
     bool IsPupating;
     float RegenPodLifetime;

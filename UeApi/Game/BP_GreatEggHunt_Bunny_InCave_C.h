@@ -31,6 +31,7 @@ class BP_GreatEggHunt_Bunny_InCave_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Easter/BP_GreatEggHunt_Bunny_InCave", "BP_GreatEggHunt_Bunny_InCave_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* BunnyAlarmedEnd;
     static constexpr const char* BunnyAlarmedEnd__UeScsNode = "0519dc79faf4f34d95059f8108175046";

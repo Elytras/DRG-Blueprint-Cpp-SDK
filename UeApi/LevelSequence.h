@@ -133,6 +133,7 @@ class ULevelSequenceBurnIn : public UUserWidget
 {
 public:
     UE_CLASS("/Script/LevelSequence", "LevelSequenceBurnIn");
+    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     FLevelSequencePlayerSnapshot FrameInformation;
     class ALevelSequenceActor* LevelSequenceActor;
     void SetSettings(class UObject* InSettings);
@@ -262,7 +263,7 @@ public:
     bool bDefaultLockEngineToDisplayRate;
     FString DefaultDisplayRate;
     FString DefaultTickResolution;
-    EUpdateClockSource DefaultClockSource;
+    TEnum<EUpdateClockSource> DefaultClockSource;
 };
 
 class ALevelSequenceMediaController : public AActor

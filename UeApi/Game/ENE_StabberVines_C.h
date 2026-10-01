@@ -27,6 +27,7 @@ class ENE_StabberVines_C : public AEnemyPawn
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVines", "ENE_StabberVines_C");
     using ENE_StabberVine_Tentacle_C = Game::Enemies::StabberVine::ENE_StabberVine_Tentacle_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "5e3bc5b4bcfde641b9d7136f165edc85";
@@ -62,7 +63,7 @@ public:
     float AttackDistance;
     FTimerHandle AttackTimerHandle;
     void ExecuteUbergraph_ENE_StabberVines(int EntryPoint);
-    void BndEvt__Outline_K2Node_ComponentBoundEvent_1_OutlineChanged__DelegateSignature(EOutline InOutline);
+    void BndEvt__Outline_K2Node_ComponentBoundEvent_1_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     void Kill_Root();
     static constexpr const char* Kill_Root__UeName = "Kill Root";
     void SetupTentacles();

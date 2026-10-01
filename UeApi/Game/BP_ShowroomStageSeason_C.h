@@ -18,6 +18,7 @@ class BP_ShowroomStageSeason_C : public AShowroomStage
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/BP_ShowroomStageSeason", "BP_ShowroomStageSeason_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D SceneCapture;/Script/Engine.SceneComponent CameraFocusPoint;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USpotLightComponent* SpotLight;
     static constexpr const char* SpotLight__UeScsNode = "e7b69e074fee4c44b838cb8f741fbfa3";

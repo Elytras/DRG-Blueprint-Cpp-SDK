@@ -22,12 +22,12 @@ public:
     class UNamedSlot* ControllerContent;
     class UWidgetSwitcher* InputSwitcher;
     class UNamedSlot* KeyboardMouseContent;
-    EFSDInputSource PreviewInput;
+    TEnum<EFSDInputSource> PreviewInput;
     TMulticastInlineDelegate<void(uint8 InputMode)> OnSwitched;
     void ExecuteUbergraph_Basic_InputSwitcher(int EntryPoint);
-    void SetInputMode(EFSDInputSource InputMode);
+    void SetInputMode(TEnum<EFSDInputSource> InputMode);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
 };
 

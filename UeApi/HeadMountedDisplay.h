@@ -202,11 +202,11 @@ public:
     static void CalibrateExternalTrackingToHMD(const FTransform& ExternalTrackingTransform);
     static void ClearXRTimedInputActionDelegate(const FName& ActionPath);
     static bool ConfigureGestures(const FXRGestureConfig& GestureConfig);
-    static EXRDeviceConnectionResult ConnectRemoteXRDevice(FString IpAddress, int BitRate);
+    static TEnum<EXRDeviceConnectionResult> ConnectRemoteXRDevice(FString IpAddress, int BitRate);
     static void DisconnectRemoteXRDevice();
     static bool EnableHMD(bool bEnable);
     static void EnableLowPersistenceMode(bool bEnable);
-    static TArray<FXRDeviceId> EnumerateTrackedDevices(FName SystemId, EXRTrackedDeviceType DeviceType);
+    static TArray<FXRDeviceId> EnumerateTrackedDevices(FName SystemId, TEnum<EXRTrackedDeviceType> DeviceType);
     static bool GetControllerTransformForTime(class UObject* WorldContext, int ControllerIndex, FName MotionSource, FTimespan Time, bool& bTimeWasUsed, FRotator& Orientation, FVector& Position, bool& bProvidedLinearVelocity, FVector& LinearVelocity, bool& bProvidedAngularVelocity, FVector& AngularVelocityRadPerSec);
     static bool GetControllerTransformForTime(int ControllerIndex, FName MotionSource, FTimespan Time, bool& bTimeWasUsed, FRotator& Orientation, FVector& Position, bool& bProvidedLinearVelocity, FVector& LinearVelocity, bool& bProvidedAngularVelocity, FVector& AngularVelocityRadPerSec);
     static void GetDevicePose(const FXRDeviceId& XRDeviceId, bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position);
@@ -215,16 +215,16 @@ public:
     static void GetHMDData(class UObject* WorldContext, FXRHMDData& HMDData);
     static void GetHMDData(FXRHMDData& HMDData);
     UE_PURE static FName GetHMDDeviceName();
-    UE_PURE static EHMDWornState GetHMDWornState();
-    static void GetMotionControllerData(class UObject* WorldContext, EControllerHand hand, FXRMotionControllerData& MotionControllerData);
-    static void GetMotionControllerData(EControllerHand hand, FXRMotionControllerData& MotionControllerData);
+    UE_PURE static TEnum<EHMDWornState> GetHMDWornState();
+    static void GetMotionControllerData(class UObject* WorldContext, TEnum<EControllerHand> hand, FXRMotionControllerData& MotionControllerData);
+    static void GetMotionControllerData(TEnum<EControllerHand> hand, FXRMotionControllerData& MotionControllerData);
     UE_PURE static int GetNumOfTrackingSensors();
     static void GetOrientationAndPosition(FRotator& DeviceRotation, FVector& DevicePosition);
     UE_PURE static float GetPixelDensity();
-    static FVector2D GetPlayAreaBounds(EHMDTrackingOrigin Origin);
+    static FVector2D GetPlayAreaBounds(TEnum<EHMDTrackingOrigin> Origin);
     static void GetPositionalTrackingCameraParameters(FVector& CameraOrigin, FRotator& CameraRotation, float& HFOV, float& VFOV, float& CameraDistance, float& NearPlane, float& FarPlane);
     UE_PURE static float GetScreenPercentage();
-    UE_PURE static EHMDTrackingOrigin GetTrackingOrigin();
+    UE_PURE static TEnum<EHMDTrackingOrigin> GetTrackingOrigin();
     static void GetTrackingSensorParameters(FVector& Origin, FRotator& Rotation, float& LeftFOV, float& RightFOV, float& TopFOV, float& BottomFOV, float& Distance, float& NearPlane, float& FarPlane, bool& IsActive, int Index_0);
     static FTransform GetTrackingToWorldTransform(class UObject* WorldContext);
     static FTransform GetTrackingToWorldTransform();
@@ -239,12 +239,12 @@ public:
     UE_PURE static bool IsHeadMountedDisplayEnabled();
     UE_PURE static bool IsInLowPersistenceMode();
     UE_PURE static bool IsSpectatorScreenModeControllable();
-    static void ResetOrientationAndPosition(float Yaw, EOrientPositionSelector options);
+    static void ResetOrientationAndPosition(float Yaw, TEnum<EOrientPositionSelector> options);
     static void SetClippingPlanes(float Near, float Far);
-    static void SetSpectatorScreenMode(ESpectatorScreenMode Mode);
+    static void SetSpectatorScreenMode(TEnum<ESpectatorScreenMode> Mode);
     static void SetSpectatorScreenModeTexturePlusEyeLayout(FVector2D EyeRectMin, FVector2D EyeRectMax, FVector2D TextureRectMin, FVector2D TextureRectMax, bool bDrawEyeFirst, bool bClearBlack, bool bUseAlpha);
     static void SetSpectatorScreenTexture(class UTexture* InTexture);
-    static void SetTrackingOrigin(EHMDTrackingOrigin Origin);
+    static void SetTrackingOrigin(TEnum<EHMDTrackingOrigin> Origin);
     static void SetWorldToMetersScale(class UObject* WorldContext, float NewScale);
     static void SetWorldToMetersScale(float NewScale);
     static void SetXRDisconnectDelegate(TDelegate<void(FString OutReason)> InDisconnectedDelegate);
@@ -256,7 +256,7 @@ class UHandKeypointConversion : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/HeadMountedDisplay", "HandKeypointConversion");
-    UE_PURE static int Conv_HandKeypointToInt32(EHandKeypoint Input);
+    UE_PURE static int Conv_HandKeypointToInt32(TEnum<EHandKeypoint> Input);
 };
 
 class UMotionControllerComponent : public UPrimitiveComponent
@@ -264,10 +264,10 @@ class UMotionControllerComponent : public UPrimitiveComponent
 public:
     UE_CLASS("/Script/HeadMountedDisplay", "MotionControllerComponent");
     int PlayerIndex;
-    EControllerHand hand;
+    TEnum<EControllerHand> hand;
     FName MotionSource;
     bool bDisableLowLatencyUpdate;
-    ETrackingStatus CurrentTrackingStatus;
+    TEnum<ETrackingStatus> CurrentTrackingStatus;
     bool bDisplayDeviceModel;
     FName DisplayModelSource;
     class UStaticMesh* CustomDisplayMesh;
@@ -281,8 +281,8 @@ public:
     void SetDisplayModelSource(FName NewDisplayModelSource);
     void SetShowDeviceModel(bool bShowControllerModel);
     void SetTrackingMotionSource(FName NewSource);
-    void SetTrackingSource(EControllerHand NewSource);
-    UE_PURE EControllerHand GetTrackingSource() const;
+    void SetTrackingSource(TEnum<EControllerHand> NewSource);
+    UE_PURE TEnum<EControllerHand> GetTrackingSource() const;
     UE_PURE bool IsTracked() const;
 };
 
@@ -293,10 +293,10 @@ public:
     static void DisableMotionTrackingForComponent(class UMotionControllerComponent* MotionControllerComponent);
     static void DisableMotionTrackingOfAllControllers();
     static void DisableMotionTrackingOfControllersForPlayer(int PlayerIndex);
-    static void DisableMotionTrackingOfDevice(int PlayerIndex, EControllerHand hand);
+    static void DisableMotionTrackingOfDevice(int PlayerIndex, TEnum<EControllerHand> hand);
     static void DisableMotionTrackingOfSource(int PlayerIndex, FName SourceName);
     static bool EnableMotionTrackingForComponent(class UMotionControllerComponent* MotionControllerComponent);
-    static bool EnableMotionTrackingOfDevice(int PlayerIndex, EControllerHand hand);
+    static bool EnableMotionTrackingOfDevice(int PlayerIndex, TEnum<EControllerHand> hand);
     static bool EnableMotionTrackingOfSource(int PlayerIndex, FName SourceName);
     static TArray<FName> EnumerateMotionSources();
     static FName GetActiveTrackingSystemName();
@@ -305,7 +305,7 @@ public:
     static bool IsMotionSourceTracking(int PlayerIndex, FName SourceName);
     UE_PURE static bool IsMotionTrackedDeviceCountManagementNecessary();
     UE_PURE static bool IsMotionTrackingEnabledForComponent(class UMotionControllerComponent* MotionControllerComponent);
-    UE_PURE static bool IsMotionTrackingEnabledForDevice(int PlayerIndex, EControllerHand hand);
+    UE_PURE static bool IsMotionTrackingEnabledForDevice(int PlayerIndex, TEnum<EControllerHand> hand);
     UE_PURE static bool IsMotionTrackingEnabledForSource(int PlayerIndex, FName SourceName);
     static void SetIsControllerMotionTrackingEnabledByDefault(bool enable);
 };

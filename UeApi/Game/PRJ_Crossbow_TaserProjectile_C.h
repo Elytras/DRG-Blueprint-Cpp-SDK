@@ -13,6 +13,7 @@ class PRJ_Crossbow_TaserProjectile_C : public Game::WeaponsNTools::Crossbow::Pro
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_TaserProjectile", "PRJ_Crossbow_TaserProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

@@ -39,7 +39,7 @@ public:
     UI_RunningText_C* UI_RunningText;
     FText Headline;
     FText TextBody;
-    EDamageType DamageType;
+    TEnum<EDamageType> DamageType;
     class UTexture2D* Icon;
     FLinearColor IconTint;
     float IconScale;

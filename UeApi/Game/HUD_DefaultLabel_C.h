@@ -23,7 +23,7 @@ public:
     FText Text;
     int Font_Size;
     static constexpr const char* Font_Size__UeName = "Font Size";
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     FFontOutlineSettings Outline_Settings;
     static constexpr const char* Outline_Settings__UeName = "Outline Settings";
     float Min_Desired_Width;
@@ -32,7 +32,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText NewText);
     void SetFontSize(int inFontSize);
-    void SetJustification(ETextJustify InJustification);
+    void SetJustification(TEnum<ETextJustify> InJustification);
     void SetOutlineSettings(FFontOutlineSettings InFontInfo_OutlineSettings);
 };
 

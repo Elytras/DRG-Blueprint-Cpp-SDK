@@ -16,6 +16,7 @@ class BP_RivalBomb_Cable_C : public ASplineCableActor
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/BP_RivalBomb_Cable", "BP_RivalBomb_Cable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SplineComponent PathSplineComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "b49d536473addc46a49fdb546b538059";

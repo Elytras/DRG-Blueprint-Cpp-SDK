@@ -24,10 +24,10 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
     float Timeline_0_Opacity_814ACDB147BE4FC050CAA2ADBE2674C9;
-    ETimelineDirection Timeline_0__Direction_814ACDB147BE4FC050CAA2ADBE2674C9;
+    TEnum<ETimelineDirection> Timeline_0__Direction_814ACDB147BE4FC050CAA2ADBE2674C9;
     class UTimelineComponent* Timeline_0;
     float Timeline_1_Opacity_9715CE204D350BB8464289A30A16CA29;
-    ETimelineDirection Timeline_1__Direction_9715CE204D350BB8464289A30A16CA29;
+    TEnum<ETimelineDirection> Timeline_1__Direction_9715CE204D350BB8464289A30A16CA29;
     class UTimelineComponent* Timeline_1;
     bool FadingOut;
     TArray<class UMaterialInstanceDynamic*> Materials;

@@ -45,8 +45,8 @@ public:
     void CustomEvent_0();
     void TrackingUpdate();
     void EndUse();
-    void BeginUse(class APlayerCharacter* User, EInputKeys Key);
-    void usedBy(class APlayerCharacter* User, EInputKeys Key);
+    void BeginUse(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void usedBy(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnFriendedEnemyDeath(class UHealthComponentBase* HealthComponent);
     void Setup_Shouts();
     static constexpr const char* Setup_Shouts__UeName = "Setup Shouts";

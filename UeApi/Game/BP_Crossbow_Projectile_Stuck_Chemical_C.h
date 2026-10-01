@@ -18,6 +18,7 @@ class BP_Crossbow_Projectile_Stuck_Chemical_C : public Game::WeaponsNTools::Cros
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Chemical", "BP_Crossbow_Projectile_Stuck_Chemical_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     class UNiagaraComponent* ChemicalParticles;
     static constexpr const char* ChemicalParticles__UeScsNode = "5a7f35666348f148babc4adff43148b5";
     class UCrossbowStuckProjectileEffectExploding* EffectExploding;

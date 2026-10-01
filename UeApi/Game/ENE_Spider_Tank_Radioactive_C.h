@@ -24,6 +24,7 @@ class ENE_Spider_Tank_Radioactive_C : public Game::Enemies::Spider::Tank::ENE_Sp
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ENE_Spider_Tank_Radioactive", "ENE_Spider_Tank_Radioactive_C");
     using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Radioactive_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Radioactive_C__UeName = "UberGraphFrame";
     BP_ConeAttackBase_C* RadiationAttack;
@@ -37,7 +38,7 @@ public:
     class UAudioComponent* RadiationSound;
     static constexpr const char* RadiationSound__UeScsNode = "e25b8861edfcdd48aa768711320c0144";
     float Radiation_Intensity_491FF937435DBE6C1B8926899616FADE;
-    ETimelineDirection Radiation__Direction_491FF937435DBE6C1B8926899616FADE;
+    TEnum<ETimelineDirection> Radiation__Direction_491FF937435DBE6C1B8926899616FADE;
     class UTimelineComponent* Radiation;
     float BaseLightIntensity;
     FName ScalarParam_Emissive;

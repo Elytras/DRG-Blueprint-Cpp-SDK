@@ -31,8 +31,8 @@ public:
     class USlider* SliderObstruction;
     class UImage* ValidBackground;
     void ExecuteUbergraph_UI_PipelineBuilder_Widget(int EntryPoint);
-    void SetState(EPlaceableObstructionType BuildingState, float Length, float LengthPercent, float ElevationChange, float SlopeAngle, float ObstructionPercent);
-    void SetUI(EPlaceableObstructionType BuildingState, float Length, float LengthPercent, float ElevationChange, float SlopeAngle, float ObstructionPercent);
+    void SetState(TEnum<EPlaceableObstructionType> BuildingState, float Length, float LengthPercent, float ElevationChange, float SlopeAngle, float ObstructionPercent);
+    void SetUI(TEnum<EPlaceableObstructionType> BuildingState, float Length, float LengthPercent, float ElevationChange, float SlopeAngle, float ObstructionPercent);
 };
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder

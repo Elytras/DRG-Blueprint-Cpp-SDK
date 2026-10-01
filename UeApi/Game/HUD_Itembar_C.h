@@ -30,7 +30,7 @@ public:
     void FadeOutFinished();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnItemClicked();
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     void Show();
     void OnItemEquipped(class UItemsBarIcon* ItemIcon);
     UE_COSMETIC void Construct();

@@ -18,6 +18,7 @@ class BP_Lunar_HangingFireCracker_C : public AHangingFireCracker
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_LunarFestival/Blueprints/BP_Lunar_HangingFireCracker", "BP_Lunar_HangingFireCracker_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDAudioComponent FuseSound;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent MovingSparks;/Script/Engine.SkeletalMeshComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
     static constexpr const char* Capsule__UeScsNode = "1ef2a0e58ece614f863a20ceef01a71b";
@@ -45,7 +46,7 @@ public:
     static constexpr const char* StartedFire__Replicated = "OnRep_StartedFire:";
     void ExecuteUbergraph_BP_Lunar_HangingFireCracker(int EntryPoint);
     UE_MULTICAST void All_AddImpulse(class APlayerCharacter* User);
-    void BndEvt__BP_Lunar_HangingFireCracker_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Lunar_HangingFireCracker_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_StartedFire();
 };
 

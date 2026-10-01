@@ -74,7 +74,7 @@ public:
     void PlayRevealAudio();
     void Refresh();
     void GetSchematic(class USchematic*& OutSchematic, ESchematicType& OutType);
-    void SetSchematic(class USchematic* InSchematic, ESchematicType InType);
+    void SetSchematic(class USchematic* InSchematic, TEnum<ESchematicType> InType);
     void SetDetails(FText WindowTitle, FText InTitle, FText InSubtitle, class UPlayerCharacterID* InUser, class UWidget* InIconContext);
     void SequenceEvent__ENTRYPOINTUI_ClaimableRewards_Entry_Overclock_0();
     void SequenceEvent__ENTRYPOINTUI_ClaimableRewards_Entry_Overclock_1();

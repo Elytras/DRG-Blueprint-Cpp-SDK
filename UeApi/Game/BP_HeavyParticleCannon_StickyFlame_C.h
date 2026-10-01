@@ -18,6 +18,7 @@ class BP_HeavyParticleCannon_StickyFlame_C : public AStickyFlame
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/BP_HeavyParticleCannon_StickyFlame", "BP_HeavyParticleCannon_StickyFlame_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NG_Magma;
     static constexpr const char* NG_Magma__UeScsNode = "a87597a6880aea439f0367e0f5afbd01";

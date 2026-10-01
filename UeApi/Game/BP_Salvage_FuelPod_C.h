@@ -37,6 +37,7 @@ class BP_Salvage_FuelPod_C : public ASalvageFuelPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_FuelPod", "BP_Salvage_FuelPod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
     static constexpr const char* TerrainDetect3__UeScsNode = "e2c6e361d749cc43bf248cbe5d17c169";
@@ -102,7 +103,7 @@ public:
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_ProgressSignature__DelegateSignature(float Progress);
     void OnDefenseComplete();
     void OnDefenseStart();
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveTick(float DeltaSeconds);
     void OnDropStarted();
     void OnDroppodImpact();

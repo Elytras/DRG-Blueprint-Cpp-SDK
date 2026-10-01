@@ -23,6 +23,7 @@ class WPN_Pistol_A_C : public ABasicPistol
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/WPN_Pistol_A", "WPN_Pistol_A_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TP_Animation_Mag;
     static constexpr const char* TP_Animation_Mag__UeScsNode = "cce5afd4f311754c89a2cc9691bea4c1";

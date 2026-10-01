@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FBlackboardKeySelector TargetKey;
     void ExecuteUbergraph_DEC_SetLookAtTarget(int EntryPoint);
-    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, EBTNodeResult NodeResult);
+    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
     void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };

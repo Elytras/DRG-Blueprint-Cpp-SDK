@@ -13,6 +13,7 @@ class AIC_BoscoController_C : public ABoscoController
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/AIC_BoscoController", "AIC_BoscoController_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}   // namespace Game::GameElements::Drone

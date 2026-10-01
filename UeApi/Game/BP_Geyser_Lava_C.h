@@ -87,10 +87,10 @@ public:
     class USceneComponent* SharedRoot;
     static constexpr const char* SharedRoot__UeScsNode = "2d5b4759db48494e8016d686ee5d3aa4";
     float TL_LightIdle_Animation_B5F889F4441C038D5B643AB1334A0B57;
-    ETimelineDirection TL_LightIdle__Direction_B5F889F4441C038D5B643AB1334A0B57;
+    TEnum<ETimelineDirection> TL_LightIdle__Direction_B5F889F4441C038D5B643AB1334A0B57;
     class UTimelineComponent* TL_LightIdle;
     float TL_LightErupt_Animation_7348656F4781FB277E0ACBB9184D718A;
-    ETimelineDirection TL_LightErupt__Direction_7348656F4781FB277E0ACBB9184D718A;
+    TEnum<ETimelineDirection> TL_LightErupt__Direction_7348656F4781FB277E0ACBB9184D718A;
     class UTimelineComponent* TL_LightErupt;
     FVector2D _Max;
     static constexpr const char* _Max__UeName = " Max";

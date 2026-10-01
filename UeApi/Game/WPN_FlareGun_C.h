@@ -20,6 +20,7 @@ class WPN_FlareGun_C : public AFlareGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/WPN_FlareGun", "WPN_FlareGun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
     static constexpr const char* FirstPersonWidget__UeScsNode = "0e5f08a8f579964e90950964c1898561";

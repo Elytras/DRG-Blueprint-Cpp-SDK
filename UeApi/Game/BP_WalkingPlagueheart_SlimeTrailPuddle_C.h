@@ -31,6 +31,7 @@ public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/SlimeTrail/BP_WalkingPlagueheart_SlimeTrailPuddle", "BP_WalkingPlagueheart_SlimeTrailPuddle_C");
     using BP_PlagueWormPod_C = Game::Enemies::Plague::BP_PlagueWormPod_C;
     using ENE_WalkingPlagueheart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* SphereTrigger2;
     static constexpr const char* SphereTrigger2__UeScsNode = "f53d79ad0061a549a7efa72ff4ac47f6";

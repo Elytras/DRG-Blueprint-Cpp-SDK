@@ -26,7 +26,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "d0469f3a49049044b4157737007c7235";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_E582EA524803E9C74EB2B5B181BF700F";
-    ETimelineDirection Timeline_0__Direction_E582EA524803E9C74EB2B5B181BF700F;
+    TEnum<ETimelineDirection> Timeline_0__Direction_E582EA524803E9C74EB2B5B181BF700F;
     class UTimelineComponent* Timeline_0;
     bool Active;
     static constexpr const char* Active__Replicated = "OnRep_Active:";

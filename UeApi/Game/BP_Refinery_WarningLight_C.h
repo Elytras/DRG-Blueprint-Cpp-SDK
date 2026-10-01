@@ -26,7 +26,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
     void ExecuteUbergraph_BP_Refinery_WarningLight(int EntryPoint);
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     void ReceiveBeginPlay();
 };
 

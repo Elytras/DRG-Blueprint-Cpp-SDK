@@ -29,6 +29,7 @@ class ENE_BoughWasp_Nest_Small_C : public AInsectSwarmSpawner
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Nest_Small", "ENE_BoughWasp_Nest_Small_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
@@ -46,7 +47,7 @@ public:
     static constexpr const char* outline__UeScsNode = "5bd57aced5abb149a705b417d1520ba5";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_8FDE92A940E0DE45F55F4885FCDF9646";
-    ETimelineDirection Timeline_0__Direction_8FDE92A940E0DE45F55F4885FCDF9646;
+    TEnum<ETimelineDirection> Timeline_0__Direction_8FDE92A940E0DE45F55F4885FCDF9646;
     class UTimelineComponent* Timeline_0;
     class UParticleSystem* DeathParticle_1;
     class UParticleSystem* DeathParticle_2;

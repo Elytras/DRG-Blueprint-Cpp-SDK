@@ -25,6 +25,7 @@ class WPN_LaserPistol_C : public ABurstWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPistol/WPN_LaserPistol", "WPN_LaserPistol_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BurstFireDamageBonus;/Script/FSD.DamageComponent Damage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* Widget_HeatNew;
     static constexpr const char* Widget_HeatNew__UeScsNode = "141e09a45e0d9241bcc378cca0e043f3";

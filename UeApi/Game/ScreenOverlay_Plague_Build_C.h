@@ -39,10 +39,10 @@ public:
     float Size;
     void ExecuteUbergraph_ScreenOverlay_Plague_Build(int EntryPoint);
     void OnInfectionLevelChangedEvent_Event(int IntValue);
-    void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void End_Splat();
     static constexpr const char* End_Splat__UeName = "End Splat";
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     UE_COSMETIC void Construct();
 };
 

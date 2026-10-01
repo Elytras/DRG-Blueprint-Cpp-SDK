@@ -20,6 +20,7 @@ class ENE_FacilityTurret_Sniper_C : public Game::GameElements::Objectives::Facil
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Sniper", "ENE_FacilityTurret_Sniper_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTurret_Sniper_C;
     static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Sniper_C__UeName = "UberGraphFrame";
     class UBoxComponent* AoECollision;

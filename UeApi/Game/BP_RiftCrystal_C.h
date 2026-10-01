@@ -33,6 +33,7 @@ class BP_RiftCrystal_C : public ARiftCrystal
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_RiftCrystal", "BP_RiftCrystal_C");
     using EWC_CoreRift_C = Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent CrystalIdleComponent;/Script/Engine.AudioComponent RockIdleComponent;/Script/Engine.CapsuleComponent KnockbackTriggerComponent;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.MeshCarverComponent SpaceCarverComponent;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent PillarParticlesComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent EscortblockerComponent;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RiftSpawnerComponent SpawnerComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent FlightRootComponent;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/FSD.SpawnActorWithDebrisPosComponent DebrisSpawnerComponent;/Script/FSD.TerrainDetectComponent TerrainDetect_1;/Script/FSD.TerrainDetectComponent TerrainDetect_2;/Script/FSD.TerrainDetectComponent TerrainDetect_3";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "5022dfb46e3b4b4f8b793a95789d1c0f";
@@ -66,8 +67,8 @@ public:
     void Cheat_Kill();
     void ReceiveBeginPlay();
     void SpawnReinforcements();
-    void Receive_EnteredState(ERiftCrystalState State_0);
-    void Receive_ExitedState(ERiftCrystalState State_0);
+    void Receive_EnteredState(TEnum<ERiftCrystalState> State_0);
+    void Receive_ExitedState(TEnum<ERiftCrystalState> State_0);
     void StopWave();
     void StartWave();
     void OnResourceDeposited_Event_0(class UResourceData* Resource, float amount);

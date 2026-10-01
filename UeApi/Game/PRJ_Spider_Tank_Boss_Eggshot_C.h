@@ -24,6 +24,7 @@ class PRJ_Spider_Tank_Boss_Eggshot_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/EggShot/PRJ_Spider_Tank_Boss_Eggshot", "PRJ_Spider_Tank_Boss_Eggshot_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "c8729631ffce5d4683be320a88635848";

@@ -19,8 +19,8 @@ class LIB_Text_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/Game/Text/LIB_Text", "LIB_Text_C");
-    static void GetDisconnectReasonText(EDisconnectReason DisconnectReason, class UObject* __WorldContext, FText& Text);
-    static void GetDisconnectReasonCaption(EDisconnectReason DisconnectReason, class UObject* __WorldContext, FText& Text);
+    static void GetDisconnectReasonText(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, FText& Text);
+    static void GetDisconnectReasonCaption(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, FText& Text);
     static void SetTextUpperCased(class UTextBlock* Target, FText InText, class UObject* __WorldContext);
     static void SetFontSize(class UTextBlock*& Label, int NewSize, class UObject* __WorldContext);
     static void GetFontSize(class UTextBlock*& Label, class UObject* __WorldContext, int& Size);

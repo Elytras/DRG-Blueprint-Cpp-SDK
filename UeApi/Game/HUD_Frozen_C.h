@@ -40,12 +40,12 @@ public:
     FString InputSequenceText;
     TArray<class UCharacterBreakOutState*> BreakoutStates;
     void ExecuteUbergraph_HUD_Frozen(int EntryPoint);
-    void CustomEvent_0(EThawInputDirection Direction);
-    void OnBreakOutInputSuccess_Event_0(EThawInputDirection Direction);
+    void CustomEvent_0(TEnum<EThawInputDirection> Direction);
+    void OnBreakOutInputSuccess_Event_0(TEnum<EThawInputDirection> Direction);
     void ThawInputUpdated(const TArray<EThawInputDirection>& Inputs, bool Initial);
     void SetProgress(float CurrentProgress_0);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
-    void OnCharacterStateChanged_Event(ECharacterState NewState);
+    void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

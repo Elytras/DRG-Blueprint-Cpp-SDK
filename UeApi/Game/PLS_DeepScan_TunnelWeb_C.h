@@ -21,6 +21,7 @@ class PLS_DeepScan_TunnelWeb_C : public Game::Landscape::PLS_Base_C
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_DeepScan_TunnelWeb", "PLS_DeepScan_TunnelWeb_C");
     using BP_DeepScanPLSComponent_C = Game::GameElements::Objectives::DeepScan::BP_DeepScanPLSComponent_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_DeepScan_TunnelWeb_C;
     static constexpr const char* UberGraphFrame_PLS_DeepScan_TunnelWeb_C__UeName = "UberGraphFrame";
     BP_DeepScanPLSComponent_C* BP_DeepScanPLSComponent;

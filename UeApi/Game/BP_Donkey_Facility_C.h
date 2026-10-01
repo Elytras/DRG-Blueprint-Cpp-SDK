@@ -18,6 +18,7 @@ class BP_Donkey_Facility_C : public Game::GameElements::Donkey::BP_Donkey_C
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/BP_Donkey_Facility", "BP_Donkey_Facility_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_BP_Donkey_Facility_C;
     static constexpr const char* UberGraphFrame_BP_Donkey_Facility_C__UeName = "UberGraphFrame";
     class UNiagaraComponent* Niagara;

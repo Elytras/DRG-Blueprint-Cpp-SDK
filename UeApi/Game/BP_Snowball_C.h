@@ -24,6 +24,7 @@ class BP_Snowball_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Throwable/Snowball/BP_Snowball", "BP_Snowball_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";

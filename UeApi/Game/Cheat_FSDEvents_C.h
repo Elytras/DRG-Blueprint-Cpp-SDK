@@ -27,7 +27,7 @@ public:
     void ExecuteUbergraph_Cheat_FSDEvents(int EntryPoint);
     void BndEvt__Cheat_FSDEvents_Button_Activate_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
-    void BndEvt__Cheat_FSDEvents_HolidayDropDown_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__Cheat_FSDEvents_HolidayDropDown_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetupHolidays();
     void GetEvent(FString InName, class UFSDEvent*& OutEvent);

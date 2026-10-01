@@ -30,7 +30,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "e6d88e5c0881d340b002022f52ab985e";
     float Crosshair_Spin_Scale_3C06262F40B28AFF76CC83AA5B6151F5;
-    ETimelineDirection Crosshair_Spin__Direction_3C06262F40B28AFF76CC83AA5B6151F5;
+    TEnum<ETimelineDirection> Crosshair_Spin__Direction_3C06262F40B28AFF76CC83AA5B6151F5;
     class UTimelineComponent* Crosshair_Spin;
     static constexpr const char* Crosshair_Spin__UeName = "Crosshair Spin";
     TArray<class UWidget*> Widgets;

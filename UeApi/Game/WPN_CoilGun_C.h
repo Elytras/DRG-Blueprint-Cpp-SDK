@@ -35,6 +35,7 @@ public:
     using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
     using WeaponDisplay_ChargeBlaster_Heat_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
     using WeaponDisplay_Coilgun_Charge_C = Game::WeaponsNTools::CoilGun::WeaponDisplay_Coilgun_Charge_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.CoilgunTrailSpawner TrailSpawner;/Script/FSD.DamageComponent BlastDamage;/Script/FSD.DamageComponent MoleDamage;/Script/FSD.DamageComponent NormalDamage;/Script/FSD.DamageComponent OverchargeDamage;/Script/FSD.DamageComponent ShotwaveDamage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent FP_OverchargeIndicatorParticles;/Script/Niagara.NiagaraComponent FullyChargedParticles;/Script/Niagara.NiagaraComponent TP_FullchargeParticles;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* CoilGunChargeGlow;
     static constexpr const char* CoilGunChargeGlow__UeScsNode = "f0e518855af1b241b0b7d6c4c6f7df07";
@@ -57,7 +58,7 @@ public:
     float FadeTimeline_ChargeFade_C49992004992D09AEFEFFF997C5FEA5C;
     float FadeTimeline_SoundFade_C49992004992D09AEFEFFF997C5FEA5C;
     float FadeTimeline_LightFade_C49992004992D09AEFEFFF997C5FEA5C;
-    ETimelineDirection FadeTimeline__Direction_C49992004992D09AEFEFFF997C5FEA5C;
+    TEnum<ETimelineDirection> FadeTimeline__Direction_C49992004992D09AEFEFFF997C5FEA5C;
     class UTimelineComponent* FadeTimeline;
     WeaponDisplay_Coilgun_Charge_C* ChargeUI;
     WeaponDisplay_ChargeBlaster_Heat_C* OverheatUI;

@@ -25,6 +25,7 @@ class BP_DetPack_Charge_C : public ADetPack
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/BP_DetPack_Charge", "BP_DetPack_Charge_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ExplosionComponent Explosion;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/FSD.SingleUsableComponent UseComp";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "2b68595ca8a55d4c83e161edd2212747";
@@ -44,7 +45,7 @@ public:
     static constexpr const char* Box__UeScsNode = "8e1b2820d099e748a07e95e3a4afaa6f";
     float SphereTimeline_Alpha_B734CAA34EA448BC3B483384E4E415D3;
     float SphereTimeline_Scale_B734CAA34EA448BC3B483384E4E415D3;
-    ETimelineDirection SphereTimeline__Direction_B734CAA34EA448BC3B483384E4E415D3;
+    TEnum<ETimelineDirection> SphereTimeline__Direction_B734CAA34EA448BC3B483384E4E415D3;
     class UTimelineComponent* SphereTimeline;
     class UMaterialInstanceDynamic* SphereMaterial;
     bool IsPlaced;

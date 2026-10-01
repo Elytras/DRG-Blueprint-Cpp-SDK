@@ -30,6 +30,7 @@ class ENE_FlyingSmartRock_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/FlyingSmartRocks/ENE_FlyingSmartRock", "ENE_FlyingSmartRock_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_FlyingRock_Birth;
     static constexpr const char* P_FlyingRock_Birth__UeScsNode = "3792c786982d764195623dba061a8ef3";
@@ -52,14 +53,14 @@ public:
     class UEnemyComponent* enemy;
     static constexpr const char* enemy__UeScsNode = "1dac1457f886d743ad1995f7ec0b00d5";
     float Timeline_1_ScaleMesh_EC054E764BE887708377689ABBE38A90;
-    ETimelineDirection Timeline_1__Direction_EC054E764BE887708377689ABBE38A90;
+    TEnum<ETimelineDirection> Timeline_1__Direction_EC054E764BE887708377689ABBE38A90;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_Size_3A168B64422F3454BD6578A9FC2C38D3;
-    ETimelineDirection Timeline_0__Direction_3A168B64422F3454BD6578A9FC2C38D3;
+    TEnum<ETimelineDirection> Timeline_0__Direction_3A168B64422F3454BD6578A9FC2C38D3;
     class UTimelineComponent* Timeline_0;
     float AttackTell_ParticleScale_AADFBFDA4F8A42D878B608A53FD58DB2;
     float AttackTell_Light_AADFBFDA4F8A42D878B608A53FD58DB2;
-    ETimelineDirection AttackTell__Direction_AADFBFDA4F8A42D878B608A53FD58DB2;
+    TEnum<ETimelineDirection> AttackTell__Direction_AADFBFDA4F8A42D878B608A53FD58DB2;
     class UTimelineComponent* AttackTell;
     FTimerHandle TimeLOS;
     float AttackDistance;

@@ -59,7 +59,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
     float CandleFlicker_LightIntensityMod_9FFB83D746EE53EE1A830883D2DC356F;
-    ETimelineDirection CandleFlicker__Direction_9FFB83D746EE53EE1A830883D2DC356F;
+    TEnum<ETimelineDirection> CandleFlicker__Direction_9FFB83D746EE53EE1A830883D2DC356F;
     class UTimelineComponent* CandleFlicker;
     class UParticleSystem* deathParticles;
     class USoundCue* deathSound;

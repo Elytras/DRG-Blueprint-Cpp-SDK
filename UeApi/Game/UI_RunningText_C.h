@@ -26,7 +26,7 @@ public:
     FText Text;
     bool UpperCase;
     FSlateFontInfo Font;
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     int CurrentPos;
     float CurrentProgress;
     float Start_Delay;
@@ -56,7 +56,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText InText);
-    void SetJustification(ETextJustify InJustification);
+    void SetJustification(TEnum<ETextJustify> InJustification);
     void step(float InDeltaTime, bool& Finished);
     void SetFont(FSlateFontInfo InFontInfo);
     UE_PURE FText GetCursorText(float Time_0, bool TextFinished);

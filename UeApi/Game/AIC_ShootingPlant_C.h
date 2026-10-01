@@ -17,6 +17,7 @@ class AIC_ShootingPlant_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/AIC_ShootingPlant", "AIC_ShootingPlant_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_ShootingPlant(int EntryPoint);
     void StartBehavior();

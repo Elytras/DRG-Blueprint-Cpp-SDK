@@ -686,7 +686,7 @@ public:
     static TArray<class UARTrackedPoint*> GetAllTrackedPoints();
     static TArray<class UARTrackedPose*> GetAllTrackedPoses();
     UE_PURE static FARSessionStatus GetARSessionStatus();
-    static class UARTexture* GetARTexture(EARTextureType TextureType);
+    static class UARTexture* GetARTexture(TEnum<EARTextureType> TextureType);
     UE_PURE static float GetARWorldScale();
     static class UARTextureCameraDepth* GetCameraDepth();
     static class UARTextureCameraImage* GetCameraImage();
@@ -698,16 +698,16 @@ public:
     static class UARTexture* GetPersonSegmentationImage();
     UE_PURE static TArray<FVector> GetPointCloud();
     UE_PURE static class UARSessionConfig* GetSessionConfig();
-    static TArray<FARVideoFormat> GetSupportedVideoFormats(EARSessionType SessionType);
-    UE_PURE static EARTrackingQuality GetTrackingQuality();
-    UE_PURE static EARTrackingQualityReason GetTrackingQualityReason();
-    UE_PURE static EARWorldMappingState GetWorldMappingStatus();
+    static TArray<FARVideoFormat> GetSupportedVideoFormats(TEnum<EARSessionType> SessionType);
+    UE_PURE static TEnum<EARTrackingQuality> GetTrackingQuality();
+    UE_PURE static TEnum<EARTrackingQualityReason> GetTrackingQualityReason();
+    UE_PURE static TEnum<EARWorldMappingState> GetWorldMappingStatus();
     UE_PURE static bool IsARPinLocalStoreReady();
     UE_PURE static bool IsARPinLocalStoreSupported();
     static bool IsARSupported();
-    UE_PURE static bool IsSceneReconstructionSupported(EARSessionType SessionType, EARSceneReconstruction SceneReconstructionMethod);
-    UE_PURE static bool IsSessionTrackingFeatureSupported(EARSessionType SessionType, EARSessionTrackingFeature SessionTrackingFeature);
-    UE_PURE static bool IsSessionTypeSupported(EARSessionType SessionType);
+    UE_PURE static bool IsSceneReconstructionSupported(TEnum<EARSessionType> SessionType, TEnum<EARSceneReconstruction> SceneReconstructionMethod);
+    UE_PURE static bool IsSessionTrackingFeatureSupported(TEnum<EARSessionType> SessionType, TEnum<EARSessionTrackingFeature> SessionTrackingFeature);
+    UE_PURE static bool IsSessionTypeSupported(TEnum<EARSessionType> SessionType);
     static TArray<FARTraceResult> LineTraceTrackedObjects(FVector2D ScreenCoord, bool bTestFeaturePoints, bool bTestGroundPlane, bool bTestPlaneExtents, bool bTestPlaneBoundaryPolygon);
     static TArray<FARTraceResult> LineTraceTrackedObjects3D(FVector Start, FVector End, bool bTestFeaturePoints, bool bTestGroundPlane, bool bTestPlaneExtents, bool bTestPlaneBoundaryPolygon);
     static TMap<FName, class UARPin*> LoadARPinsFromLocalStore();
@@ -726,7 +726,7 @@ public:
     static void SetEnabledXRCamera(bool bOnOff);
     static void StartARSession(class UARSessionConfig* SessionConfig);
     static void StopARSession();
-    static bool ToggleARCapture(bool bOnOff, EARCaptureType CaptureType);
+    static bool ToggleARCapture(bool bOnOff, TEnum<EARCaptureType> CaptureType);
     static void UnpinComponent(class USceneComponent* ComponentToUnpin);
 };
 
@@ -738,7 +738,7 @@ public:
     UE_PURE static FTransform GetLocalToTrackingTransform(const FARTraceResult& TraceResult);
     UE_PURE static FTransform GetLocalToWorldTransform(const FARTraceResult& TraceResult);
     UE_PURE static FTransform GetLocalTransform(const FARTraceResult& TraceResult);
-    UE_PURE static EARLineTraceChannels GetTraceChannel(const FARTraceResult& TraceResult);
+    UE_PURE static TEnum<EARLineTraceChannels> GetTraceChannel(const FARTraceResult& TraceResult);
     UE_PURE static class UARTrackedGeometry* GetTrackedGeometry(const FARTraceResult& TraceResult);
 };
 
@@ -794,7 +794,7 @@ public:
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
     UE_PURE static TMap<EARObjectClassification, FLinearColor> GetObjectClassificationDebugColors();
     static void SetObjectClassificationDebugColors(const TMap<EARObjectClassification, FLinearColor>& InColors);
-    static void SetPlaneComponentDebugMode(EPlaneComponentDebugMode NewDebugMode);
+    static void SetPlaneComponentDebugMode(TEnum<EPlaneComponentDebugMode> NewDebugMode);
     void ReceiveAdd(const FARPlaneUpdatePayload& Payload);
     void ReceiveUpdate(const FARPlaneUpdatePayload& Payload);
     UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARPlaneUpdatePayload& NewPayload);
@@ -815,12 +815,12 @@ class UARFaceComponent : public UARComponent
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARFaceComponent");
-    EARFaceTransformMixing TransformSetting;
+    TEnum<EARFaceTransformMixing> TransformSetting;
     bool bUpdateVertexNormal;
     bool bFaceOutOfScreen;
     FARFaceUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    static void SetFaceComponentDebugMode(EFaceComponentDebugMode NewDebugMode);
+    static void SetFaceComponentDebugMode(TEnum<EFaceComponentDebugMode> NewDebugMode);
     void ReceiveAdd(const FARFaceUpdatePayload& Payload);
     void ReceiveUpdate(const FARFaceUpdatePayload& Payload);
     UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARFaceUpdatePayload& NewPayload);
@@ -832,7 +832,7 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARImageComponent");
     FARImageUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    static void SetImageComponentDebugMode(EImageComponentDebugMode NewDebugMode);
+    static void SetImageComponentDebugMode(TEnum<EImageComponentDebugMode> NewDebugMode);
     void ReceiveAdd(const FARImageUpdatePayload& Payload);
     void ReceiveUpdate(const FARImageUpdatePayload& Payload);
     UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARImageUpdatePayload& NewPayload);
@@ -844,7 +844,7 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARQRCodeComponent");
     FARQRCodeUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    static void SetQRCodeComponentDebugMode(EQRCodeComponentDebugMode NewDebugMode);
+    static void SetQRCodeComponentDebugMode(TEnum<EQRCodeComponentDebugMode> NewDebugMode);
     void ReceiveAdd(const FARQRCodeUpdatePayload& Payload);
     void ReceiveUpdate(const FARQRCodeUpdatePayload& Payload);
     UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARQRCodeUpdatePayload& NewPayload);
@@ -856,7 +856,7 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARPoseComponent");
     FARPoseUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    static void SetPoseComponentDebugMode(EPoseComponentDebugMode NewDebugMode);
+    static void SetPoseComponentDebugMode(TEnum<EPoseComponentDebugMode> NewDebugMode);
     void ReceiveAdd(const FARPoseUpdatePayload& Payload);
     void ReceiveUpdate(const FARPoseUpdatePayload& Payload);
     UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARPoseUpdatePayload& NewPayload);
@@ -901,7 +901,7 @@ public:
     UE_CLASS("/Script/AugmentedReality", "ARGeoAnchorComponent");
     FARGeoAnchorUpdatePayload ReplicatedPayload;
     static constexpr const char* ReplicatedPayload__Replicated = "OnRep_Payload:";
-    static void SetGeoAnchorComponentDebugMode(EGeoAnchorComponentDebugMode NewDebugMode);
+    static void SetGeoAnchorComponentDebugMode(TEnum<EGeoAnchorComponentDebugMode> NewDebugMode);
     void ReceiveAdd(const FARGeoAnchorUpdatePayload& Payload);
     void ReceiveUpdate(const FARGeoAnchorUpdatePayload& Payload);
     UE_SERVER UE_RELIABLE void ServerUpdatePayload(const FARGeoAnchorUpdatePayload& NewPayload);
@@ -937,9 +937,9 @@ public:
     static class UARGeoTrackingSupport* GetGeoTrackingSupport();
     bool AddGeoAnchorAtLocation(float Longitude, float Latitude, FString OptionalAnchorName);
     bool AddGeoAnchorAtLocationWithAltitude(float Longitude, float Latitude, float AltitudeMeters, FString OptionalAnchorName);
-    UE_PURE EARGeoTrackingAccuracy GetGeoTrackingAccuracy() const;
-    UE_PURE EARGeoTrackingState GetGeoTrackingState() const;
-    UE_PURE EARGeoTrackingStateReason GetGeoTrackingStateReason() const;
+    UE_PURE TEnum<EARGeoTrackingAccuracy> GetGeoTrackingAccuracy() const;
+    UE_PURE TEnum<EARGeoTrackingState> GetGeoTrackingState() const;
+    UE_PURE TEnum<EARGeoTrackingStateReason> GetGeoTrackingStateReason() const;
 };
 
 class UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy
@@ -1006,7 +1006,7 @@ public:
     class USceneComponent* PinnedComponent;
     FTransform LocalToTrackingTransform;
     FTransform LocalToAlignedTrackingTransform;
-    EARTrackingState TrackingState;
+    TEnum<EARTrackingState> TrackingState;
     TMulticastInlineDelegate<void(EARTrackingState NewTrackingState)> OnARTrackingStateChanged;
     TMulticastInlineDelegate<void(FTransform OldToNewTransform)> OnARTransformUpdated;
     void DebugDraw(class UWorld* World, const FLinearColor& Color, float Scale, float PersistForSeconds) const;
@@ -1015,7 +1015,7 @@ public:
     UE_PURE FTransform GetLocalToWorldTransform() const;
     UE_PURE class USceneComponent* GetPinnedComponent() const;
     UE_PURE class UARTrackedGeometry* GetTrackedGeometry() const;
-    UE_PURE EARTrackingState GetTrackingState() const;
+    UE_PURE TEnum<EARTrackingState> GetTrackingState() const;
 };
 
 class UARSessionConfig : public UDataAsset
@@ -1032,31 +1032,31 @@ public:
     bool bUseSceneDepthForOcclusion;
     bool bUseAutomaticImageScaleEstimation;
     bool bUseStandardOnboardingUX;
-    EARWorldAlignment WorldAlignment;
-    EARSessionType SessionType;
-    EARPlaneDetectionMode PlaneDetectionMode;
+    TEnum<EARWorldAlignment> WorldAlignment;
+    TEnum<EARSessionType> SessionType;
+    TEnum<EARPlaneDetectionMode> PlaneDetectionMode;
     bool bHorizontalPlaneDetection;
     bool bVerticalPlaneDetection;
     bool bEnableAutoFocus;
-    EARLightEstimationMode LightEstimationMode;
-    EARFrameSyncMode FrameSyncMode;
+    TEnum<EARLightEstimationMode> LightEstimationMode;
+    TEnum<EARFrameSyncMode> FrameSyncMode;
     bool bEnableAutomaticCameraOverlay;
     bool bEnableAutomaticCameraTracking;
     bool bResetCameraTracking;
     bool bResetTrackedObjects;
     TArray<class UARCandidateImage*> CandidateImages;
     int MaxNumSimultaneousImagesTracked;
-    EAREnvironmentCaptureProbeType EnvironmentCaptureProbeType;
+    TEnum<EAREnvironmentCaptureProbeType> EnvironmentCaptureProbeType;
     TArray<uint8> WorldMapData;
     TArray<class UARCandidateObject*> CandidateObjects;
     FARVideoFormat DesiredVideoFormat;
     bool bUseOptimalVideoFormat;
-    EARFaceTrackingDirection FaceTrackingDirection;
-    EARFaceTrackingUpdate FaceTrackingUpdate;
+    TEnum<EARFaceTrackingDirection> FaceTrackingDirection;
+    TEnum<EARFaceTrackingUpdate> FaceTrackingUpdate;
     int MaxNumberOfTrackedFaces;
     TArray<uint8> SerializedARCandidateImageDatabase;
-    EARSessionTrackingFeature EnabledSessionTrackingFeature;
-    EARSceneReconstruction SceneReconstructionMethod;
+    TEnum<EARSessionTrackingFeature> EnabledSessionTrackingFeature;
+    TEnum<EARSceneReconstruction> SceneReconstructionMethod;
     TSubclassOf<class UARPlaneComponent> PlaneComponentClass;
     TSubclassOf<class UARPointComponent> PointComponentClass;
     TSubclassOf<class UARFaceComponent> FaceComponentClass;
@@ -1074,27 +1074,27 @@ public:
     void SetCandidateObjectList(const TArray<class UARCandidateObject*>& InCandidateObjects);
     void SetDesiredVideoFormat(FARVideoFormat NewFormat);
     void SetEnableAutoFocus(bool bNewValue);
-    void SetFaceTrackingDirection(EARFaceTrackingDirection InDirection);
-    void SetFaceTrackingUpdate(EARFaceTrackingUpdate InUpdate);
+    void SetFaceTrackingDirection(TEnum<EARFaceTrackingDirection> InDirection);
+    void SetFaceTrackingUpdate(TEnum<EARFaceTrackingUpdate> InUpdate);
     void SetResetCameraTracking(bool bNewValue);
     void SetResetTrackedObjects(bool bNewValue);
-    void SetSceneReconstructionMethod(EARSceneReconstruction InSceneReconstructionMethod);
-    void SetSessionTrackingFeatureToEnable(EARSessionTrackingFeature InSessionTrackingFeature);
+    void SetSceneReconstructionMethod(TEnum<EARSceneReconstruction> InSceneReconstructionMethod);
+    void SetSessionTrackingFeatureToEnable(TEnum<EARSessionTrackingFeature> InSessionTrackingFeature);
     void SetWorldMapData(TArray<uint8> WorldMapData_0);
     UE_PURE TArray<class UARCandidateImage*> GetCandidateImageList() const;
     UE_PURE TArray<class UARCandidateObject*> GetCandidateObjectList() const;
     UE_PURE FARVideoFormat GetDesiredVideoFormat() const;
-    UE_PURE EARSessionTrackingFeature GetEnabledSessionTrackingFeature() const;
-    UE_PURE EAREnvironmentCaptureProbeType GetEnvironmentCaptureProbeType() const;
-    UE_PURE EARFaceTrackingDirection GetFaceTrackingDirection() const;
-    UE_PURE EARFaceTrackingUpdate GetFaceTrackingUpdate() const;
-    UE_PURE EARFrameSyncMode GetFrameSyncMode() const;
-    UE_PURE EARLightEstimationMode GetLightEstimationMode() const;
+    UE_PURE TEnum<EARSessionTrackingFeature> GetEnabledSessionTrackingFeature() const;
+    UE_PURE TEnum<EAREnvironmentCaptureProbeType> GetEnvironmentCaptureProbeType() const;
+    UE_PURE TEnum<EARFaceTrackingDirection> GetFaceTrackingDirection() const;
+    UE_PURE TEnum<EARFaceTrackingUpdate> GetFaceTrackingUpdate() const;
+    UE_PURE TEnum<EARFrameSyncMode> GetFrameSyncMode() const;
+    UE_PURE TEnum<EARLightEstimationMode> GetLightEstimationMode() const;
     UE_PURE int GetMaxNumSimultaneousImagesTracked() const;
-    UE_PURE EARPlaneDetectionMode GetPlaneDetectionMode() const;
-    UE_PURE EARSceneReconstruction GetSceneReconstructionMethod() const;
-    UE_PURE EARSessionType GetSessionType() const;
-    UE_PURE EARWorldAlignment GetWorldAlignment() const;
+    UE_PURE TEnum<EARPlaneDetectionMode> GetPlaneDetectionMode() const;
+    UE_PURE TEnum<EARSceneReconstruction> GetSceneReconstructionMethod() const;
+    UE_PURE TEnum<EARSessionType> GetSessionType() const;
+    UE_PURE TEnum<EARWorldAlignment> GetWorldAlignment() const;
     UE_PURE TArray<uint8> GetWorldMapData() const;
     UE_PURE bool ShouldEnableAutoFocus() const;
     UE_PURE bool ShouldEnableCameraTracking() const;
@@ -1107,6 +1107,7 @@ class AARSharedWorldGameMode : public AGameMode
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARSharedWorldGameMode");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
     int BufferSizePerChunk;
     UE_AUTHORITY_ONLY class AARSharedWorldGameState* GetARSharedWorldGameState();
     UE_AUTHORITY_ONLY void SetARSharedWorldData(TArray<uint8> ARWorldData);
@@ -1131,6 +1132,7 @@ class AARSharedWorldPlayerController : public APlayerController
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARSharedWorldPlayerController");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
     static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     UE_CLIENT UE_RELIABLE void ClientInitSharedWorld(int PreviewImageSize, int ARWorldDataSize);
@@ -1153,7 +1155,7 @@ class UARTexture : public UTexture
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARTexture");
-    EARTextureType TextureType;
+    TEnum<EARTextureType> TextureType;
     float Timestamp;
     FGuid ExternalTextureGuid;
     FVector2D Size;
@@ -1169,8 +1171,8 @@ class UARTextureCameraDepth : public UARTexture
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARTextureCameraDepth");
-    EARDepthQuality DepthQuality;
-    EARDepthAccuracy DepthAccuracy;
+    TEnum<EARDepthQuality> DepthQuality;
+    TEnum<EARDepthAccuracy> DepthAccuracy;
     bool bIsTemporallySmoothed;
 };
 
@@ -1178,7 +1180,7 @@ class UAREnvironmentCaptureProbeTexture : public UTextureCube
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "AREnvironmentCaptureProbeTexture");
-    EARTextureType TextureType;
+    TEnum<EARTextureType> TextureType;
     float Timestamp;
     FGuid ExternalTextureGuid;
     FVector2D Size;
@@ -1197,10 +1199,10 @@ public:
     FGuid UniqueId;
     FTransform LocalToTrackingTransform;
     FTransform LocalToAlignedTrackingTransform;
-    EARTrackingState TrackingState;
+    TEnum<EARTrackingState> TrackingState;
     class UMRMeshComponent* UnderlyingMesh;
-    EARObjectClassification ObjectClassification;
-    EARSpatialMeshUsageFlags SpatialMeshUsageFlags;
+    TEnum<EARObjectClassification> ObjectClassification;
+    TEnum<EARSpatialMeshUsageFlags> SpatialMeshUsageFlags;
     int LastUpdateFrameNumber;
     FName DebugName;
     UE_PURE class UMRMeshComponent* GetUnderlyingMesh();
@@ -1210,9 +1212,9 @@ public:
     UE_PURE FTransform GetLocalToTrackingTransform() const;
     UE_PURE FTransform GetLocalToWorldTransform() const;
     UE_PURE FString GetName() const;
-    UE_PURE EARObjectClassification GetObjectClassification() const;
-    UE_PURE EARTrackingState GetTrackingState() const;
-    UE_PURE bool HasSpatialMeshUsageFlag(EARSpatialMeshUsageFlags InFlag) const;
+    UE_PURE TEnum<EARObjectClassification> GetObjectClassification() const;
+    UE_PURE TEnum<EARTrackingState> GetTrackingState() const;
+    UE_PURE bool HasSpatialMeshUsageFlag(TEnum<EARSpatialMeshUsageFlags> InFlag) const;
     UE_PURE bool IsTracked() const;
 };
 
@@ -1220,7 +1222,7 @@ class UARPlaneGeometry : public UARTrackedGeometry
 {
 public:
     UE_CLASS("/Script/AugmentedReality", "ARPlaneGeometry");
-    EARPlaneOrientation Orientation;
+    TEnum<EARPlaneOrientation> Orientation;
     FVector Center;
     FVector Extent;
     TArray<FVector> BoundaryPolygon;
@@ -1228,7 +1230,7 @@ public:
     UE_PURE TArray<FVector> GetBoundaryPolygonInLocalSpace() const;
     UE_PURE FVector GetCenter() const;
     UE_PURE FVector GetExtent() const;
-    UE_PURE EARPlaneOrientation GetOrientation() const;
+    UE_PURE TEnum<EARPlaneOrientation> GetOrientation() const;
     UE_PURE class UARPlaneGeometry* GetSubsumedBy() const;
 };
 
@@ -1266,9 +1268,9 @@ public:
     FTransform LeftEyeTransform;
     FTransform RightEyeTransform;
     UE_PURE TMap<EARFaceBlendShape, float> GetBlendShapes() const;
-    UE_PURE float GetBlendShapeValue(EARFaceBlendShape BlendShape) const;
-    UE_PURE FTransform GetLocalSpaceEyeTransform(EAREye eye) const;
-    UE_PURE FTransform GetWorldSpaceEyeTransform(EAREye eye) const;
+    UE_PURE float GetBlendShapeValue(TEnum<EARFaceBlendShape> BlendShape) const;
+    UE_PURE FTransform GetLocalSpaceEyeTransform(TEnum<EAREye> eye) const;
+    UE_PURE FTransform GetWorldSpaceEyeTransform(TEnum<EAREye> eye) const;
 };
 
 class UAREnvironmentCaptureProbe : public UARTrackedGeometry
@@ -1309,7 +1311,7 @@ class UARGeoAnchor : public UARTrackedGeometry
 public:
     UE_CLASS("/Script/AugmentedReality", "ARGeoAnchor");
     UE_PURE float GetAltitudeMeters() const;
-    UE_PURE EARAltitudeSource GetAltitudeSource() const;
+    UE_PURE TEnum<EARAltitudeSource> GetAltitudeSource() const;
     UE_PURE float GetLatitude() const;
     UE_PURE float GetLongitude() const;
 };
@@ -1355,10 +1357,10 @@ public:
     FString FriendlyName;
     float Width;
     float Height;
-    EARCandidateImageOrientation Orientation;
+    TEnum<EARCandidateImageOrientation> Orientation;
     UE_PURE class UTexture2D* GetCandidateTexture() const;
     UE_PURE FString GetFriendlyName() const;
-    UE_PURE EARCandidateImageOrientation GetOrientation() const;
+    UE_PURE TEnum<EARCandidateImageOrientation> GetOrientation() const;
     UE_PURE float GetPhysicalHeight() const;
     UE_PURE float GetPhysicalWidth() const;
 };

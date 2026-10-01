@@ -79,10 +79,10 @@ public:
     void OnLaserPointerPressed_Event();
     void OnLaserPointerReleased_Event();
     void OnDownCameraTargetChanged(class APlayerCharacter* Target);
-    void OnCharacterStateChanged_Event(ECharacterState NewState);
+    void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
     UE_COSMETIC void Construct();
     void OnOwningCharacterSpawned(class APlayerCharacter* PlayerCharacter_0);
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void PlayAnim(class UWidgetAnimation* Anim);
     void OnHealthChanged(float Health);
     void OnDamageTaken_Event(float amount);
@@ -92,7 +92,7 @@ public:
     void OnPlayerLeave_Event(class AFSDPlayerState* PlayerState_0);
     void OnPlayerNameChanged(FString NewName);
     void BndEvt__PlayerSpeaking_K2Node_ComponentBoundEvent_0_OnChanged__DelegateSignature(bool InTalking);
-    void OnVisibilityModeChanged(class UHUDVisibilityGroup* Group, EHUDVisibilityMode Mode);
+    void OnVisibilityModeChanged(class UHUDVisibilityGroup* Group, TEnum<EHUDVisibilityMode> Mode);
     void ShowDynamicHUD();
 };
 

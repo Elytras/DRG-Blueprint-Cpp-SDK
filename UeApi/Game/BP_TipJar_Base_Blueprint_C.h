@@ -41,7 +41,7 @@ public:
     int TipAmount;
     void ExecuteUbergraph_BP_TipJar_Base_Blueprint(int EntryPoint);
     void ReceiveBeginPlay();
-    void BndEvt__BP_TipJarUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_TipJarUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_MULTICAST UE_RELIABLE void All_PlayTip(class APlayerCharacter* User, int AnimIndex);
 };
 

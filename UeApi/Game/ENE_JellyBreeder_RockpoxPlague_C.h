@@ -24,6 +24,7 @@ class ENE_JellyBreeder_RockpoxPlague_C : public Game::Enemies::Jelly_Breeder::EN
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/ENE_JellyBreeder_RockpoxPlague", "ENE_JellyBreeder_RockpoxPlague_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_JellyBreeder_RockpoxPlague_C;
     static constexpr const char* UberGraphFrame_ENE_JellyBreeder_RockpoxPlague_C__UeName = "UberGraphFrame";
     class UProjectileThrowerAttack* ProjectileThrowerAttack;
@@ -55,7 +56,7 @@ public:
     class UStaticMeshComponent* InfectionPoint1;
     static constexpr const char* InfectionPoint1__UeScsNode = "7c789d0f93bf7f459865b8049a23e5d4";
     float Wobble_Intensity_760E92914F02A150ACB1698955C0C74C;
-    ETimelineDirection Wobble__Direction_760E92914F02A150ACB1698955C0C74C;
+    TEnum<ETimelineDirection> Wobble__Direction_760E92914F02A150ACB1698955C0C74C;
     class UTimelineComponent* Wobble;
     TSubclassOf<class UStatusEffect> InfectionSTE;
     int InfectionPointsDestroyed;

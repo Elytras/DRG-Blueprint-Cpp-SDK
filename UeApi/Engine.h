@@ -11970,8 +11970,9 @@ class UAnimInstance : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "AnimInstance");
+    static constexpr const char* UeClassTail = "0x00800008 /Script/Engine.SkeletalMeshComponent Engine";
     class USkeleton* CurrentSkeleton;
-    ERootMotionMode RootMotionMode;
+    TEnum<ERootMotionMode> RootMotionMode;
     bool bUseMultiThreadedAnimationUpdate;
     bool bUsingCopyPoseFromMesh;
     bool bReceiveNotifiesFromLinkedInstances;
@@ -12012,7 +12013,7 @@ public:
     void Montage_JumpToSection(FName SectionName, class UAnimMontage* Montage);
     void Montage_JumpToSectionsEnd(FName SectionName, class UAnimMontage* Montage);
     void Montage_Pause(class UAnimMontage* Montage);
-    float Montage_Play(class UAnimMontage* MontageToPlay, float InPlayRate, EMontagePlayReturnType ReturnValueType, float InTimeToStartMontageAt, bool bStopAllMontages);
+    float Montage_Play(class UAnimMontage* MontageToPlay, float InPlayRate, TEnum<EMontagePlayReturnType> ReturnValueType, float InTimeToStartMontageAt, bool bStopAllMontages);
     void Montage_Resume(class UAnimMontage* Montage);
     void Montage_SetNextSection(FName SectionNameToChange, FName NextSection, class UAnimMontage* Montage);
     void Montage_SetPlayRate(class UAnimMontage* Montage, float NewPlayRate);
@@ -12021,18 +12022,18 @@ public:
     void Montage_StopGroupByName(float InBlendOutTime, FName GroupName);
     float PlaySlotAnimation(class UAnimSequenceBase* Asset, FName SlotNodeName, float BlendInTime, float BlendOutTime, float InPlayRate, int LoopCount);
     class UAnimMontage* PlaySlotAnimationAsDynamicMontage(class UAnimSequenceBase* Asset, FName SlotNodeName, float BlendInTime, float BlendOutTime, float InPlayRate, int LoopCount, float BlendOutTriggerTime, float InTimeToStartMontageAt);
-    void ResetDynamics(ETeleportType InTeleportType);
+    void ResetDynamics(TEnum<ETeleportType> InTeleportType);
     void SavePoseSnapshot(FName SnapshotName);
     void SetMorphTarget(FName MorphTargetName, float Value);
     void SetPropagateNotifiesToLinkedInstances(bool bSet);
     void SetReceiveNotifiesFromLinkedInstances(bool bSet);
-    void SetRootMotionMode(ERootMotionMode Value);
+    void SetRootMotionMode(TEnum<ERootMotionMode> Value);
     void SnapshotPose(FPoseSnapshot& Snapshot);
     void StopSlotAnimation(float InBlendOutTime, FName SlotNodeName);
     void UnlinkAnimClassLayers(TSubclassOf<class UAnimInstance> InClass);
     UE_AUTHORITY_ONLY void UnlockAIResources(bool bUnlockMovement, bool UnlockAILogic);
     UE_PURE float CalculateDirection(const FVector& Velocity, const FRotator& BaseRotation) const;
-    void GetActiveCurveNames(EAnimCurveType CurveType, TArray<FName>& OutNames) const;
+    void GetActiveCurveNames(TEnum<EAnimCurveType> CurveType, TArray<FName>& OutNames) const;
     void GetAllCurveNames(TArray<FName>& OutNames) const;
     UE_PURE class UAnimMontage* GetCurrentActiveMontage() const;
     UE_PURE float GetCurveValue(FName CurveName) const;
@@ -12066,6 +12067,7 @@ class UActorComponent : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "ActorComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     FActorComponentTickFunction PrimaryComponentTick;
     TArray<FName> ComponentTags;
     TArray<class UAssetUserData*> AssetUserData;
@@ -12079,7 +12081,7 @@ public:
     bool bEditableWhenInherited;
     bool bCanEverAffectNavigation;
     bool bIsEditorOnly;
-    EComponentCreationMethod CreationMethod;
+    TEnum<EComponentCreationMethod> CreationMethod;
     TMulticastSparseDelegate<void(class UActorComponent* Component, bool bReset)> OnComponentActivated;
     TMulticastSparseDelegate<void(class UActorComponent* Component)> OnComponentDeactivated;
     TArray<FSimpleMemberReference> UCSModifiedProperties;
@@ -12090,7 +12092,7 @@ public:
     void K2_DestroyComponent(class UObject* Object);
     void OnRep_IsActive();
     void ReceiveBeginPlay();
-    void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+    void ReceiveEndPlay(TEnum<EEndPlayReason> EndPlayReason);
     void ReceiveTick(float DeltaSeconds);
     void RemoveTickPrerequisiteActor(class AActor* PrerequisiteActor);
     void RemoveTickPrerequisiteComponent(class UActorComponent* PrerequisiteComponent);
@@ -12101,7 +12103,7 @@ public:
     void SetComponentTickIntervalAndCooldown(float TickInterval);
     void SetIsReplicated(bool ShouldReplicate);
     void SetTickableWhenPaused(bool bTickableWhenPaused);
-    void SetTickGroup(ETickingGroup NewTickGroup);
+    void SetTickGroup(TEnum<ETickingGroup> NewTickGroup);
     void ToggleActive();
     UE_PURE bool ComponentHasTag(FName Tag) const;
     UE_PURE float GetComponentTickInterval() const;
@@ -12115,6 +12117,7 @@ class AActor : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "Actor");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Engine";
     FActorTickFunction PrimaryActorTick;
     bool bNetTemporary;
     bool bNetStartup;
@@ -12150,9 +12153,9 @@ public:
     bool bAllowReceiveTickEventOnDedicatedServer;
     bool bActorEnableCollision;
     bool bActorIsBeingDestroyed;
-    EActorUpdateOverlapsMethod UpdateOverlapsMethodDuringLevelStreaming;
-    EActorUpdateOverlapsMethod DefaultUpdateOverlapsMethodDuringLevelStreaming;
-    ENetRole RemoteRole;
+    TEnum<EActorUpdateOverlapsMethod> UpdateOverlapsMethodDuringLevelStreaming;
+    TEnum<EActorUpdateOverlapsMethod> DefaultUpdateOverlapsMethodDuringLevelStreaming;
+    TEnum<ENetRole> RemoteRole;
     static constexpr const char* RemoteRole__Replicated = ":";
     FRepMovement ReplicatedMovement;
     static constexpr const char* ReplicatedMovement__Replicated = "OnRep_ReplicatedMovement:";
@@ -12163,11 +12166,11 @@ public:
     class AActor* Owner;
     static constexpr const char* Owner__Replicated = "OnRep_Owner:";
     FName NetDriverName;
-    ENetRole Role;
+    TEnum<ENetRole> Role;
     static constexpr const char* Role__Replicated = ":";
-    ENetDormancy NetDormancy;
-    ESpawnActorCollisionHandlingMethod SpawnCollisionHandlingMethod;
-    EAutoReceiveInput AutoReceiveInput;
+    TEnum<ENetDormancy> NetDormancy;
+    TEnum<ESpawnActorCollisionHandlingMethod> SpawnCollisionHandlingMethod;
+    TEnum<EAutoReceiveInput> AutoReceiveInput;
     int InputPriority;
     class UInputComponent* InputComponent;
     float NetCullDistanceSquared;
@@ -12218,13 +12221,13 @@ public:
     void K2_AddActorWorldRotation(FRotator DeltaRotation, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
     void K2_AddActorWorldTransform(const FTransform& DeltaTransform, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
     void K2_AddActorWorldTransformKeepScale(const FTransform& DeltaTransform, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
-    void K2_AttachRootComponentTo(class USceneComponent* InParent, FName InSocketName, EAttachLocation AttachLocationType, bool bWeldSimulatedBodies);
-    void K2_AttachRootComponentToActor(class AActor* InParentActor, FName InSocketName, EAttachLocation AttachLocationType, bool bWeldSimulatedBodies);
-    void K2_AttachToActor(class AActor* ParentActor, FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies);
-    void K2_AttachToComponent(class USceneComponent* Parent, FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies);
+    void K2_AttachRootComponentTo(class USceneComponent* InParent, FName InSocketName, TEnum<EAttachLocation> AttachLocationType, bool bWeldSimulatedBodies);
+    void K2_AttachRootComponentToActor(class AActor* InParentActor, FName InSocketName, TEnum<EAttachLocation> AttachLocationType, bool bWeldSimulatedBodies);
+    void K2_AttachToActor(class AActor* ParentActor, FName SocketName, TEnum<EAttachmentRule> LocationRule, TEnum<EAttachmentRule> RotationRule, TEnum<EAttachmentRule> ScaleRule, bool bWeldSimulatedBodies);
+    void K2_AttachToComponent(class USceneComponent* Parent, FName SocketName, TEnum<EAttachmentRule> LocationRule, TEnum<EAttachmentRule> RotationRule, TEnum<EAttachmentRule> ScaleRule, bool bWeldSimulatedBodies);
     void K2_DestroyActor();
     void K2_DestroyComponent(class UActorComponent* Component);
-    void K2_DetachFromActor(EDetachmentRule LocationRule, EDetachmentRule RotationRule, EDetachmentRule ScaleRule);
+    void K2_DetachFromActor(TEnum<EDetachmentRule> LocationRule, TEnum<EDetachmentRule> RotationRule, TEnum<EDetachmentRule> ScaleRule);
     void K2_OnBecomeViewTarget(class APlayerController* PC);
     void K2_OnEndViewTarget(class APlayerController* PC);
     void K2_OnReset();
@@ -12249,15 +12252,15 @@ public:
     void ReceiveActorEndCursorOver();
     void ReceiveActorEndOverlap(class AActor* OtherActor);
     void ReceiveActorOnClicked(FKey ButtonPressed);
-    void ReceiveActorOnInputTouchBegin(ETouchIndex FingerIndex);
-    void ReceiveActorOnInputTouchEnd(ETouchIndex FingerIndex);
-    void ReceiveActorOnInputTouchEnter(ETouchIndex FingerIndex);
-    void ReceiveActorOnInputTouchLeave(ETouchIndex FingerIndex);
+    void ReceiveActorOnInputTouchBegin(TEnum<ETouchIndex> FingerIndex);
+    void ReceiveActorOnInputTouchEnd(TEnum<ETouchIndex> FingerIndex);
+    void ReceiveActorOnInputTouchEnter(TEnum<ETouchIndex> FingerIndex);
+    void ReceiveActorOnInputTouchLeave(TEnum<ETouchIndex> FingerIndex);
     void ReceiveActorOnReleased(FKey ButtonReleased);
     UE_AUTHORITY_ONLY void ReceiveAnyDamage(float Damage, class UDamageType* DamageType, class AController* InstigatedBy, class AActor* DamageCauser);
     void ReceiveBeginPlay();
     void ReceiveDestroyed();
-    void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+    void ReceiveEndPlay(TEnum<EEndPlayReason> EndPlayReason);
     void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
     UE_AUTHORITY_ONLY void ReceivePointDamage(float Damage, class UDamageType* DamageType, FVector HitLocation, FVector HitNormal, class UPrimitiveComponent* HitComponent, FName BoneName, FVector ShotFromDirection, class AController* InstigatedBy, class AActor* DamageCauser, const FHitResult& HitInfo);
     UE_AUTHORITY_ONLY void ReceiveRadialDamage(float DamageReceived, class UDamageType* DamageType, FVector Origin, const FHitResult& HitInfo, class AController* InstigatedBy, class AActor* DamageCauser);
@@ -12272,12 +12275,12 @@ public:
     void SetActorTickInterval(float TickInterval);
     void SetAutoDestroyWhenFinished(bool bVal);
     void SetLifeSpan(float InLifespan);
-    UE_AUTHORITY_ONLY void SetNetDormancy(ENetDormancy NewDormancy);
+    UE_AUTHORITY_ONLY void SetNetDormancy(TEnum<ENetDormancy> NewDormancy);
     void SetOwner(class AActor* NewOwner);
     void SetReplicateMovement(bool bInReplicateMovement);
     UE_AUTHORITY_ONLY void SetReplicates(bool bInReplicates);
     void SetTickableWhenPaused(bool bTickableWhenPaused);
-    void SetTickGroup(ETickingGroup NewTickGroup);
+    void SetTickGroup(TEnum<ETickingGroup> NewTickGroup);
     void SnapRootComponentTo(class AActor* InParentActor, FName InSocketName);
     void TearOff();
     void UserConstructionScript();
@@ -12310,13 +12313,13 @@ public:
     UE_PURE class APawn* GetInstigator() const;
     UE_PURE class AController* GetInstigatorController() const;
     UE_PURE float GetLifeSpan() const;
-    UE_PURE ENetRole GetLocalRole() const;
+    UE_PURE TEnum<ENetRole> GetLocalRole() const;
     void GetOverlappingActors(TArray<class AActor*>& OverlappingActors, TSubclassOf<class AActor> ClassFilter) const;
     void GetOverlappingComponents(TArray<class UPrimitiveComponent*>& OverlappingComponents) const;
     UE_PURE class AActor* GetOwner() const;
     UE_PURE class AActor* GetParentActor() const;
     UE_PURE class UChildActorComponent* GetParentComponent() const;
-    UE_PURE ENetRole GetRemoteRole() const;
+    UE_PURE TEnum<ENetRole> GetRemoteRole() const;
     UE_PURE float GetSquaredDistanceTo(class AActor* OtherActor) const;
     UE_PURE float GetSquaredHorizontalDistanceTo(class AActor* OtherActor) const;
     UE_PURE FTransform GetTransform() const;
@@ -12390,7 +12393,7 @@ class UUserDefinedStruct : public UScriptStruct
 {
 public:
     UE_CLASS("/Script/Engine", "UserDefinedStruct");
-    EUserDefinedStructureStatus Status;
+    TEnum<EUserDefinedStructureStatus> Status;
     FGuid Guid;
 };
 
@@ -12447,8 +12450,8 @@ public:
     bool bHiddenInGame;
     bool bBoundsChangeTriggersStreamingDataRebuild;
     bool bUseAttachParentBound;
-    EComponentMobility Mobility;
-    EDetailMode DetailMode;
+    TEnum<EComponentMobility> Mobility;
+    TEnum<EDetailMode> DetailMode;
     TMulticastSparseDelegate<void(class APhysicsVolume* NewVolume)> PhysicsVolumeChangedDelegate;
     void DetachFromParent(bool bMaintainWorldPosition, bool bCallModify);
     void K2_AddLocalOffset(FVector DeltaLocation, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
@@ -12460,9 +12463,9 @@ public:
     void K2_AddWorldRotation(FRotator DeltaRotation, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
     void K2_AddWorldTransform(const FTransform& DeltaTransform, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
     void K2_AddWorldTransformKeepScale(const FTransform& DeltaTransform, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
-    bool K2_AttachTo(class USceneComponent* InParent, FName InSocketName, EAttachLocation AttachType, bool bWeldSimulatedBodies);
-    bool K2_AttachToComponent(class USceneComponent* Parent, FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies);
-    void K2_DetachFromComponent(EDetachmentRule LocationRule, EDetachmentRule RotationRule, EDetachmentRule ScaleRule, bool bCallModify);
+    bool K2_AttachTo(class USceneComponent* InParent, FName InSocketName, TEnum<EAttachLocation> AttachType, bool bWeldSimulatedBodies);
+    bool K2_AttachToComponent(class USceneComponent* Parent, FName SocketName, TEnum<EAttachmentRule> LocationRule, TEnum<EAttachmentRule> RotationRule, TEnum<EAttachmentRule> ScaleRule, bool bWeldSimulatedBodies);
+    void K2_DetachFromComponent(TEnum<EDetachmentRule> LocationRule, TEnum<EDetachmentRule> RotationRule, TEnum<EDetachmentRule> ScaleRule, bool bCallModify);
     void K2_SetRelativeLocation(FVector NewLocation, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
     void K2_SetRelativeLocationAndRotation(FVector NewLocation, FRotator NewRotation, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
     void K2_SetRelativeRotation(FRotator NewRotation, bool bSweep, FHitResult& SweepHitResult, bool bTeleport);
@@ -12479,7 +12482,7 @@ public:
     void ResetRelativeTransform();
     void SetAbsolute(bool bNewAbsoluteLocation, bool bNewAbsoluteRotation, bool bNewAbsoluteScale);
     void SetHiddenInGame(bool NewHidden, bool bPropagateToChildren);
-    void SetMobility(EComponentMobility NewMobility);
+    void SetMobility(TEnum<EComponentMobility> NewMobility);
     void SetRelativeScale3D(FVector NewScale3D);
     void SetShouldUpdatePhysicsVolume(bool bInShouldUpdatePhysicsVolume);
     void SetVisibility(bool bNewVisibility, bool bPropagateToChildren);
@@ -12503,7 +12506,7 @@ public:
     UE_PURE FVector GetSocketLocation(FName InSocketName) const;
     UE_PURE FQuat GetSocketQuaternion(FName InSocketName) const;
     UE_PURE FRotator GetSocketRotation(FName InSocketName) const;
-    UE_PURE FTransform GetSocketTransform(FName InSocketName, ERelativeTransformSpace TransformSpace) const;
+    UE_PURE FTransform GetSocketTransform(FName InSocketName, TEnum<ERelativeTransformSpace> TransformSpace) const;
     UE_PURE FVector GetUpVector() const;
     UE_PURE bool IsAnySimulatingPhysics() const;
     UE_PURE bool IsSimulatingPhysics(FName BoneName) const;
@@ -12512,6 +12515,8 @@ public:
     UE_PURE FRotator K2_GetComponentRotation() const;
     UE_PURE FVector K2_GetComponentScale() const;
     UE_PURE FTransform K2_GetComponentToWorld() const;
+    void SetupAttachment(class USceneComponent* InParent, FName InSocketName = FName());
+    static constexpr const char* SetupAttachment__UeForward = "USceneComponent_SetupAttachment";
 };
 
 class UPrimitiveComponent : public USceneComponent
@@ -12521,10 +12526,10 @@ public:
     float MinDrawDistance;
     float LDMaxDrawDistance;
     float CachedMaxDrawDistance;
-    ESceneDepthPriorityGroup DepthPriorityGroup;
-    ESceneDepthPriorityGroup ViewOwnerDepthPriorityGroup;
-    EIndirectLightingCacheQuality IndirectLightingCacheQuality;
-    ELightmapType LightmapType;
+    TEnum<ESceneDepthPriorityGroup> DepthPriorityGroup;
+    TEnum<ESceneDepthPriorityGroup> ViewOwnerDepthPriorityGroup;
+    TEnum<EIndirectLightingCacheQuality> IndirectLightingCacheQuality;
+    TEnum<ELightmapType> LightmapType;
     bool bUseMaxLODAsImposter;
     bool bBatchImpostersAsInstances;
     bool bNeverDistanceCull;
@@ -12578,10 +12583,10 @@ public:
     bool bRenderCustomDepth;
     bool bVisibleInSceneCaptureOnly;
     bool bHiddenInSceneCapture;
-    EHasCustomNavigableGeometry bHasCustomNavigableGeometry;
-    ECanBeCharacterBase CanCharacterStepUpOn;
+    TEnum<EHasCustomNavigableGeometry> bHasCustomNavigableGeometry;
+    TEnum<ECanBeCharacterBase> CanCharacterStepUpOn;
     FLightingChannels LightingChannels;
-    ERendererStencilMask CustomDepthStencilWriteMask;
+    TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
     int CustomDepthStencilValue;
     FCustomPrimitiveData CustomPrimitiveData;
     FCustomPrimitiveData CustomPrimitiveDataInternal;
@@ -12592,7 +12597,7 @@ public:
     int8 VirtualTextureLodBias;
     int8 VirtualTextureCullMips;
     int8 VirtualTextureMinCoverage;
-    ERuntimeVirtualTextureMainPassType VirtualTextureRenderPassType;
+    TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
     float LpvBiasMultiplier;
     float BoundsScale;
     TArray<class AActor*> MoveIgnoreActors;
@@ -12620,8 +12625,8 @@ public:
     void AddForceAtLocationLocal(FVector force, FVector Location, FName BoneName);
     void AddImpulse(FVector Impulse, FName BoneName, bool bVelChange);
     void AddImpulseAtLocation(FVector Impulse, FVector Location, FName BoneName);
-    void AddRadialForce(FVector Origin, float Radius, float Strength, ERadialImpulseFalloff Falloff, bool bAccelChange);
-    void AddRadialImpulse(FVector Origin, float Radius, float Strength, ERadialImpulseFalloff Falloff, bool bVelChange);
+    void AddRadialForce(FVector Origin, float Radius, float Strength, TEnum<ERadialImpulseFalloff> Falloff, bool bAccelChange);
+    void AddRadialImpulse(FVector Origin, float Radius, float Strength, TEnum<ERadialImpulseFalloff> Falloff, bool bVelChange);
     void AddTorque(FVector Torque, FName BoneName, bool bAccelChange);
     void AddTorqueInDegrees(FVector Torque, FName BoneName, bool bAccelChange);
     void AddTorqueInRadians(FVector Torque, FName BoneName, bool bAccelChange);
@@ -12653,15 +12658,15 @@ public:
     void SetCastInsetShadow(bool bInCastInsetShadow);
     void SetCastShadow(bool NewCastShadow);
     void SetCenterOfMass(FVector CenterOfMassOffset, FName BoneName);
-    void SetCollisionEnabled(ECollisionEnabled NewType);
-    void SetCollisionObjectType(ECollisionChannel Channel);
+    void SetCollisionEnabled(TEnum<ECollisionEnabled> NewType);
+    void SetCollisionObjectType(TEnum<ECollisionChannel> Channel);
     void SetCollisionProfileName(FName InCollisionProfileName, bool bUpdateOverlaps);
-    void SetCollisionResponseToAllChannels(ECollisionResponse NewResponse);
-    void SetCollisionResponseToChannel(ECollisionChannel Channel, ECollisionResponse NewResponse);
-    void SetConstraintMode(EDOFMode ConstraintMode);
+    void SetCollisionResponseToAllChannels(TEnum<ECollisionResponse> NewResponse);
+    void SetCollisionResponseToChannel(TEnum<ECollisionChannel> Channel, TEnum<ECollisionResponse> NewResponse);
+    void SetConstraintMode(TEnum<EDOFMode> ConstraintMode);
     void SetCullDistance(float NewCullDistance);
     void SetCustomDepthStencilValue(int Value);
-    void SetCustomDepthStencilWriteMask(ERendererStencilMask WriteMaskBit);
+    void SetCustomDepthStencilWriteMask(TEnum<ERendererStencilMask> WriteMaskBit);
     void SetCustomPrimitiveDataFloat(int DataIndex, float Value);
     void SetCustomPrimitiveDataVector2(int DataIndex, FVector2D Value);
     void SetCustomPrimitiveDataVector3(int DataIndex, FVector Value);
@@ -12708,10 +12713,10 @@ public:
     UE_PURE float GetAngularDamping() const;
     UE_PURE FVector GetCenterOfMass(FName BoneName) const;
     float GetClosestPointOnCollision(const FVector& Point, FVector& OutPointOnBody, FName BoneName) const;
-    UE_PURE ECollisionEnabled GetCollisionEnabled() const;
-    UE_PURE ECollisionChannel GetCollisionObjectType() const;
+    UE_PURE TEnum<ECollisionEnabled> GetCollisionEnabled() const;
+    UE_PURE TEnum<ECollisionChannel> GetCollisionObjectType() const;
     UE_PURE FName GetCollisionProfileName() const;
-    UE_PURE ECollisionResponse GetCollisionResponseToChannel(ECollisionChannel Channel) const;
+    UE_PURE TEnum<ECollisionResponse> GetCollisionResponseToChannel(TEnum<ECollisionChannel> Channel) const;
     UE_PURE bool GetGenerateOverlapEvents() const;
     UE_PURE FVector GetInertiaTensor(FName BoneName) const;
     UE_PURE float GetLinearDamping() const;
@@ -12740,13 +12745,14 @@ class APawn : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "Pawn");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
     bool bUseControllerRotationPitch;
     bool bUseControllerRotationYaw;
     bool bUseControllerRotationRoll;
     bool bCanAffectNavigationGeneration;
     float BaseEyeHeight;
-    EAutoReceiveInput AutoPossessPlayer;
-    EAutoPossessAI AutoPossessAI;
+    TEnum<EAutoReceiveInput> AutoPossessPlayer;
+    TEnum<EAutoPossessAI> AutoPossessAI;
     uint8 RemoteViewPitch;
     static constexpr const char* RemoteViewPitch__Replicated = ":";
     TSubclassOf<class AController> AIControllerClass;
@@ -12856,7 +12862,7 @@ public:
     void Crouch(bool bClientSimulation);
     void Jump();
     void K2_OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
-    void K2_OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
+    void K2_OnMovementModeChanged(TEnum<EMovementMode> PrevMovementMode, TEnum<EMovementMode> NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
     void K2_OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
     void K2_UpdateCustomMovement(float DeltaTime);
     void LaunchCharacter(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
@@ -12967,7 +12973,7 @@ public:
     bool bHasDelayNode;
     bool bHasConcatenatorNode;
     bool bBypassVolumeScaleForPriority;
-    EVirtualizationMode VirtualizationMode;
+    TEnum<EVirtualizationMode> VirtualizationMode;
     TSet<class USoundConcurrency*> ConcurrencySet;
     FSoundConcurrencySettings ConcurrencyOverrides;
     float Duration;
@@ -12989,12 +12995,12 @@ public:
     UE_CLASS("/Script/Engine", "SoundWave");
     int CompressionQuality;
     int StreamingPriority;
-    ESoundwaveSampleRateSettings SampleRateQuality;
-    ESoundGroup SoundGroup;
+    TEnum<ESoundwaveSampleRateSettings> SampleRateQuality;
+    TEnum<ESoundGroup> SoundGroup;
     bool bLooping;
     bool bStreaming;
     bool bSeekableStreaming;
-    ESoundWaveLoadingBehavior LoadingBehavior;
+    TEnum<ESoundWaveLoadingBehavior> LoadingBehavior;
     bool bMature;
     bool bManualWordWrap;
     bool bSingleLine;
@@ -13038,6 +13044,7 @@ class AGameModeBase : public AInfo
 {
 public:
     UE_CLASS("/Script/Engine", "GameModeBase");
+    static constexpr const char* UeClassTail = "0x0080020c /Script/CoreUObject.Object Game";
     FString OptionsString;
     TSubclassOf<class AGameSession> GameSessionClass;
     TSubclassOf<class AGameStateBase> GameStateClass;
@@ -13160,6 +13167,7 @@ class APlayerController : public AController
 {
 public:
     UE_CLASS("/Script/Engine", "PlayerController");
+    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Game";
     class UPlayer* Player;
     class APawn* AcknowledgedPawn;
     class UInterpTrackInstDirector* ControllingDirTrackInst;
@@ -13194,10 +13202,10 @@ public:
     bool bForceFeedbackEnabled;
     float ForceFeedbackScale;
     TArray<FKey> ClickEventKeys;
-    EMouseCursor DefaultMouseCursor;
-    EMouseCursor CurrentMouseCursor;
-    ECollisionChannel DefaultClickTraceChannel;
-    ECollisionChannel CurrentClickTraceChannel;
+    TEnum<EMouseCursor> DefaultMouseCursor;
+    TEnum<EMouseCursor> CurrentMouseCursor;
+    TEnum<ECollisionChannel> DefaultClickTraceChannel;
+    TEnum<ECollisionChannel> CurrentClickTraceChannel;
     float HitResultTraceDistance;
     uint16 SeamlessTravelCount;
     uint16 LastCompletedSeamlessTravelCount;
@@ -13233,7 +13241,7 @@ public:
     UE_CLIENT UE_RELIABLE void ClientIgnoreMoveInput(bool bIgnore);
     UE_CLIENT UE_RELIABLE void ClientMessage(FString S, FName Type, float MsgLifeTime);
     UE_CLIENT UE_RELIABLE void ClientMutePlayer(FUniqueNetIdRepl PlayerId);
-    UE_CLIENT void ClientPlayCameraAnim(class UCameraAnim* AnimToPlay, float Scale, float Rate, float BlendInTime, float BlendOutTime, bool bLoop, bool bRandomStartTime, ECameraShakePlaySpace Space, FRotator CustomPlaySpace);
+    UE_CLIENT void ClientPlayCameraAnim(class UCameraAnim* AnimToPlay, float Scale, float Rate, float BlendInTime, float BlendOutTime, bool bLoop, bool bRandomStartTime, TEnum<ECameraShakePlaySpace> Space, FRotator CustomPlaySpace);
     UE_CLIENT void ClientPlayForceFeedback_Internal(class UForceFeedbackEffect* ForceFeedbackEffect, FForceFeedbackParameters Params_0);
     UE_CLIENT void ClientPlaySound(class USoundBase* Sound, float VolumeMultiplier, float PitchMultiplier);
     UE_CLIENT void ClientPlaySoundAtLocation(class USoundBase* Sound, FVector Location, float VolumeMultiplier, float PitchMultiplier);
@@ -13255,7 +13263,7 @@ public:
     UE_CLIENT UE_RELIABLE void ClientSetSpectatorWaiting(bool bWaiting);
     UE_CLIENT UE_RELIABLE void ClientSetViewTarget(class AActor* A, FViewTargetTransitionParams TransitionParams);
     UE_CLIENT void ClientSpawnCameraLensEffect(TSubclassOf<class AEmitterCameraLensEffectBase> LensEffectEmitterClass);
-    UE_CLIENT void ClientStartCameraShake(TSubclassOf<class UCameraShakeBase> Shake, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
+    UE_CLIENT void ClientStartCameraShake(TSubclassOf<class UCameraShakeBase> Shake, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     void ClientStartCameraShakeFromSource(TSubclassOf<class UCameraShakeBase> Shake, class UCameraShakeSourceComponent* SourceComponent);
     UE_CLIENT UE_RELIABLE void ClientStartOnlineSession();
     UE_CLIENT UE_RELIABLE void ClientStopCameraAnim(class UCameraAnim* AnimToStop);
@@ -13263,8 +13271,8 @@ public:
     void ClientStopCameraShakesFromSource(class UCameraShakeSourceComponent* SourceComponent, bool bImmediately);
     UE_CLIENT UE_RELIABLE void ClientStopForceFeedback(class UForceFeedbackEffect* ForceFeedbackEffect, FName Tag);
     UE_CLIENT UE_RELIABLE void ClientTeamMessage(class APlayerState* SenderPlayerState, FString S, FName Type, float MsgLifeTime);
-    void ClientTravel(FString URL, ETravelType TravelType, bool bSeamless, FGuid MapPackageGuid);
-    UE_CLIENT UE_RELIABLE void ClientTravelInternal(FString URL, ETravelType TravelType, bool bSeamless, FGuid MapPackageGuid);
+    void ClientTravel(FString URL, TEnum<ETravelType> TravelType, bool bSeamless, FGuid MapPackageGuid);
+    UE_CLIENT UE_RELIABLE void ClientTravelInternal(FString URL, TEnum<ETravelType> TravelType, bool bSeamless, FGuid MapPackageGuid);
     UE_CLIENT UE_RELIABLE void ClientUnmutePlayer(FUniqueNetIdRepl PlayerId);
     UE_CLIENT UE_RELIABLE void ClientUpdateLevelStreamingStatus(FName PackageName, bool bNewShouldBeLoaded, bool bNewShouldBeVisible, bool bNewShouldBlockOnLoad, int LODIndex);
     UE_CLIENT UE_RELIABLE void ClientUpdateMultipleLevelsStreamingStatus(const TArray<FUpdateLevelStreamingLevelStatus>& LevelStatuses);
@@ -13277,9 +13285,9 @@ public:
     void LocalTravel(FString URL);
     UE_CLIENT UE_RELIABLE void OnServerStartedVisualLogger(bool bIsLogging);
     void Pause();
-    void PlayDynamicForceFeedback(float Intensity, float Duration, bool bAffectsLeftLarge, bool bAffectsLeftSmall, bool bAffectsRightLarge, bool bAffectsRightSmall, EDynamicForceFeedbackAction Action, FLatentActionInfo LatentInfo);
-    void PlayDynamicForceFeedback(float Intensity, float Duration, bool bAffectsLeftLarge, bool bAffectsLeftSmall, bool bAffectsRightLarge, bool bAffectsRightSmall, EDynamicForceFeedbackAction Action);
-    void PlayHapticEffect(class UHapticFeedbackEffect_Base* HapticEffect, EControllerHand hand, float Scale, bool bLoop);
+    void PlayDynamicForceFeedback(float Intensity, float Duration, bool bAffectsLeftLarge, bool bAffectsLeftSmall, bool bAffectsRightLarge, bool bAffectsRightSmall, TEnum<EDynamicForceFeedbackAction> Action, FLatentActionInfo LatentInfo);
+    void PlayDynamicForceFeedback(float Intensity, float Duration, bool bAffectsLeftLarge, bool bAffectsLeftSmall, bool bAffectsRightLarge, bool bAffectsRightSmall, TEnum<EDynamicForceFeedbackAction> Action);
+    void PlayHapticEffect(class UHapticFeedbackEffect_Base* HapticEffect, TEnum<EControllerHand> hand, float Scale, bool bLoop);
     void ResetControllerLightColor();
     void RestartLevel();
     void SendToConsole(FString Command);
@@ -13311,33 +13319,33 @@ public:
     void SetCinematicMode(bool bInCinematicMode, bool bHidePlayer, bool bAffectsHUD, bool bAffectsMovement, bool bAffectsTurning);
     void SetControllerLightColor(FColor Color);
     void SetDisableHaptics(bool bNewDisabled);
-    void SetHapticsByValue(float Frequency, float Amplitude, EControllerHand hand);
-    void SetMouseCursorWidget(EMouseCursor Cursor, class UUserWidget* CursorWidget);
+    void SetHapticsByValue(float Frequency, float Amplitude, TEnum<EControllerHand> hand);
+    void SetMouseCursorWidget(TEnum<EMouseCursor> Cursor, class UUserWidget* CursorWidget);
     void SetMouseLocation(int X, int Y);
     void SetName(FString S);
-    void SetViewTargetWithBlend(class AActor* NewViewTarget, float BlendTime, EViewTargetBlendFunction BlendFunc, float BlendExp, bool bLockOutgoing);
+    void SetViewTargetWithBlend(class AActor* NewViewTarget, float BlendTime, TEnum<EViewTargetBlendFunction> BlendFunc, float BlendExp, bool bLockOutgoing);
     void SetVirtualJoystickVisibility(bool bVisible);
     void StartFire(uint8 FireModeNum);
-    void StopHapticEffect(EControllerHand hand);
+    void StopHapticEffect(TEnum<EControllerHand> hand);
     void SwitchLevel(FString URL);
     void TestServerLevelVisibilityChange(FName PackageName, FName Filename);
     void ToggleSpeaking(bool bInSpeaking);
     bool DeprojectMousePositionToWorld(FVector& WorldLocation, FVector& WorldDirection) const;
     bool DeprojectScreenPositionToWorld(float ScreenX, float ScreenY, FVector& WorldLocation, FVector& WorldDirection) const;
     UE_PURE FVector GetFocalLocation() const;
-    bool GetHitResultUnderCursor(ECollisionChannel TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
-    bool GetHitResultUnderCursorByChannel(ETraceTypeQuery TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
+    bool GetHitResultUnderCursor(TEnum<ECollisionChannel> TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
+    bool GetHitResultUnderCursorByChannel(TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
     bool GetHitResultUnderCursorForObjects(const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, FHitResult& HitResult) const;
-    bool GetHitResultUnderFinger(ETouchIndex FingerIndex, ECollisionChannel TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
-    bool GetHitResultUnderFingerByChannel(ETouchIndex FingerIndex, ETraceTypeQuery TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
-    bool GetHitResultUnderFingerForObjects(ETouchIndex FingerIndex, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, FHitResult& HitResult) const;
+    bool GetHitResultUnderFinger(TEnum<ETouchIndex> FingerIndex, TEnum<ECollisionChannel> TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
+    bool GetHitResultUnderFingerByChannel(TEnum<ETouchIndex> FingerIndex, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, FHitResult& HitResult) const;
+    bool GetHitResultUnderFingerForObjects(TEnum<ETouchIndex> FingerIndex, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, FHitResult& HitResult) const;
     UE_PURE class AHUD* GetHUD() const;
     UE_PURE float GetInputAnalogKeyState(FKey Key) const;
-    void GetInputAnalogStickState(EControllerAnalogStick WhichStick, float& StickX, float& StickY) const;
+    void GetInputAnalogStickState(TEnum<EControllerAnalogStick> WhichStick, float& StickX, float& StickY) const;
     UE_PURE float GetInputKeyTimeDown(FKey Key) const;
     void GetInputMotionState(FVector& Tilt, FVector& RotationRate, FVector& Gravity, FVector& Acceleration) const;
     void GetInputMouseDelta(float& DeltaX, float& DeltaY) const;
-    void GetInputTouchState(ETouchIndex FingerIndex, float& LocationX, float& LocationY, bool& bIsCurrentlyPressed) const;
+    void GetInputTouchState(TEnum<ETouchIndex> FingerIndex, float& LocationX, float& LocationY, bool& bIsCurrentlyPressed) const;
     UE_PURE FVector GetInputVectorKeyState(FKey Key) const;
     bool GetMousePosition(float& LocationX, float& LocationY) const;
     UE_PURE class ASpectatorPawn* GetSpectatorPawn() const;
@@ -13382,12 +13390,12 @@ public:
     UE_CLASS("/Script/Engine", "Texture");
     FGuid LightingGuid;
     int LODBias;
-    ETextureCompressionSettings CompressionSettings;
-    ETextureFilter Filter;
-    ETextureMipLoadOptions MipLoadOptions;
-    ETextureGroup LODGroup;
+    TEnum<ETextureCompressionSettings> CompressionSettings;
+    TEnum<ETextureFilter> Filter;
+    TEnum<ETextureMipLoadOptions> MipLoadOptions;
+    TEnum<ETextureGroup> LODGroup;
     FPerPlatformFloat Downscale;
-    ETextureDownscaleOptions DownscaleOptions;
+    TEnum<ETextureDownscaleOptions> DownscaleOptions;
     bool sRGB;
     bool bNoTiling;
     bool VirtualTextureStreaming;
@@ -13445,6 +13453,7 @@ class UStaticMeshComponent : public UMeshComponent
 {
 public:
     UE_CLASS("/Script/Engine", "StaticMeshComponent");
+    static constexpr const char* UeClassTail = "0x00a01004 /Script/CoreUObject.Object Engine";
     int ForcedLodModel;
     int PreviousLODLevel;
     int MinLOD;
@@ -13532,14 +13541,14 @@ public:
     UE_COSMETIC void OnPhotographySessionEnd();
     UE_COSMETIC void OnPhotographySessionStart();
     UE_COSMETIC void PhotographyCameraModify(FVector NewCameraLocation, FVector PreviousCameraLocation, FVector OriginalCameraLocation, FVector& ResultCameraLocation);
-    class UCameraAnimInst* PlayCameraAnim(class UCameraAnim* Anim, float Rate, float Scale, float BlendInTime, float BlendOutTime, bool bLoop, bool bRandomStartTime, float Duration, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
+    class UCameraAnimInst* PlayCameraAnim(class UCameraAnim* Anim, float Rate, float Scale, float BlendInTime, float BlendOutTime, bool bLoop, bool bRandomStartTime, float Duration, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     void RemoveCameraLensEffect(class AEmitterCameraLensEffectBase* Emitter);
     bool RemoveCameraModifier(class UCameraModifier* ModifierToRemove);
     void SetGameCameraCutThisFrame();
     void SetManualCameraFade(float InFadeAmount, FLinearColor Color, bool bInFadeAudio);
     void StartCameraFade(float FromAlpha, float ToAlpha, float Duration, FLinearColor Color, bool bShouldFadeAudio, bool bHoldWhenFinished);
-    class UCameraShakeBase* StartCameraShake(TSubclassOf<class UCameraShakeBase> ShakeClass, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
-    class UCameraShakeBase* StartCameraShakeFromSource(TSubclassOf<class UCameraShakeBase> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
+    class UCameraShakeBase* StartCameraShake(TSubclassOf<class UCameraShakeBase> ShakeClass, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
+    class UCameraShakeBase* StartCameraShakeFromSource(TSubclassOf<class UCameraShakeBase> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     void StopAllCameraAnims(bool bImmediate);
     void StopAllCameraShakes(bool bImmediately);
     void StopAllCameraShakesFromSource(class UCameraShakeSourceComponent* SourceComponent, bool bImmediately);
@@ -13566,14 +13575,15 @@ class UGameInstance : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "GameInstance");
+    static constexpr const char* UeClassTail = "0x00000008 /Script/CoreUObject.Object Game";
     TArray<class ULocalPlayer*> LocalPlayers;
     class UOnlineSession* OnlineSession;
     TArray<class UObject*> ReferencedObjects;
     TMulticastInlineDelegate<void(class APawn* Pawn, class AController* Controller)> OnPawnControllerChangedDelegates;
     void DebugCreatePlayer(int ControllerId);
     void DebugRemovePlayer(int ControllerId);
-    void HandleNetworkError(ENetworkFailure FailureType, bool bIsServer);
-    void HandleTravelError(ETravelFailure FailureType);
+    void HandleNetworkError(TEnum<ENetworkFailure> FailureType, bool bIsServer);
+    void HandleTravelError(TEnum<ETravelFailure> FailureType);
     void ReceiveInit();
     void ReceiveShutdown();
 };
@@ -13613,9 +13623,9 @@ public:
     FSoundAttenuationSettings AttenuationOverrides;
     class USoundConcurrency* ConcurrencySettings;
     TSet<class USoundConcurrency*> ConcurrencySet;
-    EAttachmentRule AutoAttachLocationRule;
-    EAttachmentRule AutoAttachRotationRule;
-    EAttachmentRule AutoAttachScaleRule;
+    TEnum<EAttachmentRule> AutoAttachLocationRule;
+    TEnum<EAttachmentRule> AutoAttachRotationRule;
+    TEnum<EAttachmentRule> AutoAttachScaleRule;
     FSoundModulationDefaultRoutingSettings ModulationRouting;
     TMulticastInlineDelegate<void(EAudioComponentPlayState PlayState)> OnAudioPlayStateChanged;
     TMulticastInlineDelegate<void(bool bIsVirtualized)> OnAudioVirtualizationChanged;
@@ -13626,17 +13636,17 @@ public:
     TDelegate<void(TArray<FSubtitleCue> Subtitles, float CueDuration)> OnQueueSubtitles;
     FName AutoAttachSocketName;
     void AdjustAttenuation(const FSoundAttenuationSettings& InAttenuationSettings);
-    void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel, EAudioFaderCurve FadeCurve);
+    void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel, TEnum<EAudioFaderCurve> FadeCurve);
     bool BP_GetAttenuationSettingsToApply(FSoundAttenuationSettings& OutAttenuationSettings);
-    void FadeIn(float FadeInDuration, float FadeVolumeLevel, float StartTime, EAudioFaderCurve FadeCurve);
-    void FadeOut(float FadeoutDuration, float FadeVolumeLevel, EAudioFaderCurve FadeCurve);
+    void FadeIn(float FadeInDuration, float FadeVolumeLevel, float StartTime, TEnum<EAudioFaderCurve> FadeCurve);
+    void FadeOut(float FadeoutDuration, float FadeVolumeLevel, TEnum<EAudioFaderCurve> FadeCurve);
     bool GetCookedEnvelopeData(float& OutEnvelopeData);
     bool GetCookedEnvelopeDataForAllPlayingSounds(TArray<FSoundWaveEnvelopeDataPerSound>& OutEnvelopeData);
     bool GetCookedFFTData(const TArray<float>& FrequenciesToGet, TArray<FSoundWaveSpectralData>& OutSoundWaveSpectralData);
     bool GetCookedFFTDataForAllPlayingSounds(TArray<FSoundWaveSpectralDataPerSound>& OutSoundWaveSpectralData);
     void Play(float StartTime);
-    void PlayQuantized(class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, FQuartzQuantizationBoundary& InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
-    void PlayQuantized(class UQuartzClockHandle*& InClockHandle, FQuartzQuantizationBoundary& InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
+    void PlayQuantized(class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, FQuartzQuantizationBoundary& InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, TEnum<EAudioFaderCurve> InFadeCurve);
+    void PlayQuantized(class UQuartzClockHandle*& InClockHandle, FQuartzQuantizationBoundary& InQuantizationBoundary, TDelegate<void(EQuartzCommandDelegateSubType EventType, FName Name_0)> InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, TEnum<EAudioFaderCurve> InFadeCurve);
     void SetAudioBusSendPostEffect(class UAudioBus* AudioBus, float AudioBusSendLevel);
     void SetAudioBusSendPreEffect(class UAudioBus* AudioBus, float AudioBusSendLevel);
     void SetBoolParameter(FName InName, bool InBool);
@@ -13656,7 +13666,7 @@ public:
     void SetWaveParameter(FName InName, class USoundWave* InWave);
     void Stop();
     void StopDelayed(float DelayTime);
-    UE_PURE EAudioComponentPlayState GetPlayState() const;
+    UE_PURE TEnum<EAudioComponentPlayState> GetPlayState() const;
     UE_PURE bool HasCookedAmplitudeEnvelopeData() const;
     UE_PURE bool HasCookedFFTData() const;
     UE_PURE bool IsPlaying() const;
@@ -13669,16 +13679,17 @@ public:
     UE_CLASS("/Script/Engine", "StaticMeshActor");
     class UStaticMeshComponent* StaticMeshComponent;
     bool bStaticMeshReplicateMovement;
-    ENavDataGatheringMode NavigationGeometryGatheringMode;
+    TEnum<ENavDataGatheringMode> NavigationGeometryGatheringMode;
     static constexpr const char* RootComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
     static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
-    void SetMobility(EComponentMobility InMobility);
+    void SetMobility(TEnum<EComponentMobility> InMobility);
 };
 
 class AHUD : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "HUD");
+    static constexpr const char* UeClassTail = "0x0080020c /Script/CoreUObject.Object Game";
     class APlayerController* PlayerOwner;
     bool bLostFocusPaused;
     bool bShowHUD;
@@ -13703,7 +13714,7 @@ public:
     void DrawMaterialTriangle(class UMaterialInterface* Material, FVector2D V0_Pos, FVector2D V1_Pos, FVector2D V2_Pos, FVector2D V0_UV, FVector2D V1_UV, FVector2D V2_UV, FLinearColor V0_Color, FLinearColor V1_Color, FLinearColor V2_Color);
     void DrawRect(FLinearColor RectColor, float ScreenX, float ScreenY, float ScreenW, float ScreenH);
     void DrawText(FString Text, FLinearColor TextColor, float ScreenX, float ScreenY, class UFont* Font, float Scale, bool bScalePosition);
-    void DrawTexture(class UTexture* Texture, float ScreenX, float ScreenY, float ScreenW, float ScreenH, float TextureU, float TextureV, float TextureUWidth, float TextureVHeight, FLinearColor TintColor, EBlendMode BlendMode, float Scale, bool bScalePosition, float Rotation, FVector2D RotPivot);
+    void DrawTexture(class UTexture* Texture, float ScreenX, float ScreenY, float ScreenW, float ScreenH, float TextureU, float TextureV, float TextureUWidth, float TextureVHeight, FLinearColor TintColor, TEnum<EBlendMode> BlendMode, float Scale, bool bScalePosition, float Rotation, FVector2D RotPivot);
     void DrawTextureSimple(class UTexture* Texture, float ScreenX, float ScreenY, float Scale, bool bScalePosition);
     void GetActorsInSelectionRectangle(TSubclassOf<class AActor> ClassFilter, const FVector2D& FirstPoint, const FVector2D& SecondPoint, TArray<class AActor*>& OutActors, bool bIncludeNonCollidingComponents, bool bActorMustBeFullyEnclosed);
     void NextDebugTarget();
@@ -13814,6 +13825,7 @@ class ASpectatorPawn : public ADefaultPawn
 {
 public:
     UE_CLASS("/Script/Engine", "SpectatorPawn");
+    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Game";
     static constexpr const char* CollisionComponent__UeSubobject = "CollisionComponent0 /Script/Engine.SphereComponent";
     static constexpr const char* MovementComponent__UeSubobject = "MovementComponent0 /Script/Engine.SpectatorPawnMovement";
     static constexpr const char* RootComponent__UeSubobject = "CollisionComponent0 /Script/Engine.SphereComponent";
@@ -13844,7 +13856,7 @@ public:
     bool bUseFieldOfViewForLOD;
     bool bLockToHmd;
     bool bUsePawnControlRotation;
-    ECameraProjectionMode ProjectionMode;
+    TEnum<ECameraProjectionMode> ProjectionMode;
     float PostProcessBlendWeight;
     FPostProcessSettings PostProcessSettings;
     void AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight);
@@ -13858,7 +13870,7 @@ public:
     void SetOrthoNearClipPlane(float InOrthoNearClipPlane);
     void SetOrthoWidth(float InOrthoWidth);
     void SetPostProcessBlendWeight(float InPostProcessBlendWeight);
-    void SetProjectionMode(ECameraProjectionMode InProjectionMode);
+    void SetProjectionMode(TEnum<ECameraProjectionMode> InProjectionMode);
     void SetUseFieldOfViewForLOD(bool bInUseFieldOfViewForLOD);
 };
 
@@ -13866,7 +13878,7 @@ class ACameraActor : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "CameraActor");
-    EAutoReceiveInput AutoActivateForPlayer;
+    TEnum<EAutoReceiveInput> AutoActivateForPlayer;
     class UCameraComponent* CameraComponent;
     class USceneComponent* SceneComponent;
     bool bConstrainAspectRatio;
@@ -13913,6 +13925,7 @@ class UDamageType : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "DamageType");
+    static constexpr const char* UeClassTail = "0x00010000 /Script/CoreUObject.Object Engine";
     bool bCausedByWorld;
     bool bScaleMomentumByMass;
     bool bRadialDamageVelChange;
@@ -13943,7 +13956,7 @@ class UBlueprint : public UBlueprintCore
 public:
     UE_CLASS("/Script/Engine", "Blueprint");
     TSubclassOf<class UObject> ParentClass;
-    EBlueprintType BlueprintType;
+    TEnum<EBlueprintType> BlueprintType;
     bool bRecompileOnLoad;
     bool bHasBeenRegenerated;
     bool bIsRegeneratingOnLoad;
@@ -14143,8 +14156,8 @@ public:
     TArray<FString> ExcludedAutocorrectOS;
     TArray<FString> ExcludedAutocorrectCultures;
     TArray<FString> ExcludedAutocorrectDeviceModels;
-    EMouseCaptureMode DefaultViewportMouseCaptureMode;
-    EMouseLockMode DefaultViewportMouseLockMode;
+    TEnum<EMouseCaptureMode> DefaultViewportMouseCaptureMode;
+    TEnum<EMouseLockMode> DefaultViewportMouseLockMode;
     float FOVScale;
     float DoubleClickTime;
     TArray<FInputActionKeyMapping> ActionMappings;
@@ -14304,7 +14317,7 @@ public:
     UE_PURE FTimecode GetDelayedTimecode() const;
     UE_PURE FFrameRate GetFrameRate() const;
     UE_PURE FQualifiedFrameTime GetQualifiedFrameTime() const;
-    UE_PURE ETimecodeProviderSynchronizationState GetSynchronizationState() const;
+    UE_PURE TEnum<ETimecodeProviderSynchronizationState> GetSynchronizationState() const;
     UE_PURE FTimecode GetTimecode() const;
 };
 
@@ -14342,8 +14355,8 @@ class UDialogueVoice : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "DialogueVoice");
-    EGrammaticalGender Gender;
-    EGrammaticalNumber Plurality;
+    TEnum<EGrammaticalGender> Gender;
+    TEnum<EGrammaticalNumber> Plurality;
     FGuid LocalizationGUID;
 };
 
@@ -14455,7 +14468,7 @@ public:
     UE_CLASS("/Script/Engine", "DistributionVectorConstant");
     FVector Constant;
     bool bLockAxes;
-    EDistributionVectorLockFlags LockedAxes;
+    TEnum<EDistributionVectorLockFlags> LockedAxes;
 };
 
 class UDistributionVectorParameterBase : public UDistributionVectorConstant
@@ -14532,7 +14545,7 @@ public:
     int MinLodModel;
     float StreamingDistanceMultiplier;
     TArray<FSkelMeshComponentLODInfo> LODInfo;
-    EVisibilityBasedAnimTickOption VisibilityBasedAnimTickOption;
+    TEnum<EVisibilityBasedAnimTickOption> VisibilityBasedAnimTickOption;
     bool bOverrideMinLod;
     bool bUseBoundsFromMasterPoseComponent;
     bool bForceWireframe;
@@ -14561,7 +14574,7 @@ public:
     void ClearSkinWeightProfile();
     void ClearVertexColorOverride(int LODIndex);
     FVector GetRefPosePosition(int BoneIndex);
-    void HideBoneByName(FName BoneName, EPhysBodyOp PhysBodyOption);
+    void HideBoneByName(FName BoneName, TEnum<EPhysBodyOp> PhysBodyOption);
     bool IsBoneHiddenByName(FName BoneName);
     bool IsMaterialSectionShown(int MaterialID, int LODIndex);
     void SetCapsuleIndirectShadowMinVisibility(float NewValue);
@@ -14605,7 +14618,7 @@ class UTexture2DDynamic : public UTexture
 {
 public:
     UE_CLASS("/Script/Engine", "Texture2DDynamic");
-    EPixelFormat Format;
+    TEnum<EPixelFormat> Format;
 };
 
 class UFXSystemComponent : public UPrimitiveComponent
@@ -14614,7 +14627,7 @@ public:
     UE_CLASS("/Script/Engine", "FXSystemComponent");
     void ReleaseToPool();
     void SetActorParameter(FName ParameterName, class AActor* Param);
-    void SetAutoAttachmentParameters(class USceneComponent* Parent, FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule);
+    void SetAutoAttachmentParameters(class USceneComponent* Parent, FName SocketName, TEnum<EAttachmentRule> LocationRule, TEnum<EAttachmentRule> RotationRule, TEnum<EAttachmentRule> ScaleRule);
     void SetBoolParameter(FName ParameterName, bool Param);
     void SetColorParameter(FName ParameterName, FLinearColor Param);
     void SetEmitterEnable(FName EmitterName, bool bNewEnableState);
@@ -14642,8 +14655,8 @@ class USceneCaptureComponent : public USceneComponent
 {
 public:
     UE_CLASS("/Script/Engine", "SceneCaptureComponent");
-    ESceneCapturePrimitiveRenderMode PrimitiveRenderMode;
-    ESceneCaptureSource CaptureSource;
+    TEnum<ESceneCapturePrimitiveRenderMode> PrimitiveRenderMode;
+    TEnum<ESceneCaptureSource> CaptureSource;
     bool bCaptureEveryFrame;
     bool bCaptureOnMovement;
     bool bAlwaysPersistRenderingState;
@@ -14681,6 +14694,7 @@ class UInstancedStaticMeshComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Engine", "InstancedStaticMeshComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     TArray<FInstancedStaticMeshInstanceData> PerInstanceSMData;
     int NumCustomDataFloats;
     TArray<float> PerInstanceSMCustomData;
@@ -14751,6 +14765,7 @@ class UGameUserSettings : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "GameUserSettings");
+    static constexpr const char* UeClassTail = "0x40000004 /Script/CoreUObject.Object GameUserSettings";
     bool bUseVSync;
     bool bUseDynamicResolution;
     uint32 ResolutionSizeX;
@@ -14782,7 +14797,7 @@ public:
     int HDRDisplayOutputNits;
     TMulticastInlineDelegate<void()> OnGameUserSettingsUINeedsUpdate;
     static FIntPoint GetDefaultResolution();
-    static EWindowMode GetDefaultWindowMode();
+    static TEnum<EWindowMode> GetDefaultWindowMode();
     static FIntPoint GetDefaultWindowPosition();
     UE_PURE static int GetFramePace();
     static class UGameUserSettings* GetGameUserSettings();
@@ -14806,7 +14821,7 @@ public:
     void SetDynamicResolutionEnabled(bool bEnable);
     void SetFoliageQuality(int Value);
     void SetFrameRateLimit(float NewLimit);
-    void SetFullscreenMode(EWindowMode InFullscreenMode);
+    void SetFullscreenMode(TEnum<EWindowMode> InFullscreenMode);
     void SetOverallScalabilityLevel(int Value);
     void SetPostProcessingQuality(int Value);
     void SetResolutionScaleNormalized(float NewScaleNormalized);
@@ -14827,12 +14842,12 @@ public:
     UE_PURE FIntPoint GetDesktopResolution() const;
     UE_PURE int GetFoliageQuality() const;
     UE_PURE float GetFrameRateLimit() const;
-    UE_PURE EWindowMode GetFullscreenMode() const;
-    UE_PURE EWindowMode GetLastConfirmedFullscreenMode() const;
+    UE_PURE TEnum<EWindowMode> GetFullscreenMode() const;
+    UE_PURE TEnum<EWindowMode> GetLastConfirmedFullscreenMode() const;
     UE_PURE FIntPoint GetLastConfirmedScreenResolution() const;
     UE_PURE int GetOverallScalabilityLevel() const;
     UE_PURE int GetPostProcessingQuality() const;
-    UE_PURE EWindowMode GetPreferredFullscreenMode() const;
+    UE_PURE TEnum<EWindowMode> GetPreferredFullscreenMode() const;
     void GetResolutionScaleInformation(float& CurrentScaleNormalized, int& CurrentScaleValue, int& MinScaleValue, int& MaxScaleValue) const;
     void GetResolutionScaleInformationEx(float& CurrentScaleNormalized, float& CurrentScaleValue, float& MinScaleValue, float& MaxScaleValue) const;
     UE_PURE float GetResolutionScaleNormalized() const;
@@ -14868,8 +14883,8 @@ public:
     int LevelIndex;
     int FirstResourceMemMip;
     bool bTemporarilyDisableStreaming;
-    ETextureAddress AddressX;
-    ETextureAddress AddressY;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
     FIntPoint ImportedSize;
     UE_PURE int Blueprint_GetSizeX() const;
     UE_PURE int Blueprint_GetSizeY() const;
@@ -14879,7 +14894,7 @@ class UShadowMapTexture2D : public UTexture2D
 {
 public:
     UE_CLASS("/Script/Engine", "ShadowMapTexture2D");
-    EShadowMapFlags ShadowmapFlags;
+    TEnum<EShadowMapFlags> ShadowmapFlags;
 };
 
 class UDataTable : public UObject
@@ -15060,7 +15075,7 @@ public:
     UE_CLASS("/Script/Engine", "InterpTrack");
     TArray<class UInterpTrack*> SubTracks;
     TSubclassOf<class UInterpTrackInst> TrackInstClass;
-    ETrackActiveCondition ActiveCondition;
+    TEnum<ETrackActiveCondition> ActiveCondition;
     FString TrackTitle;
     bool bOnePerGroup;
     bool bDirGroupOnly;
@@ -15106,13 +15121,13 @@ class ULocalLightComponent : public ULightComponent
 {
 public:
     UE_CLASS("/Script/Engine", "LocalLightComponent");
-    ELightUnits IntensityUnits;
+    TEnum<ELightUnits> IntensityUnits;
     float Radius;
     float AttenuationRadius;
     FLightmassPointLightSettings LightmassSettings;
-    UE_PURE static float GetUnitsConversionFactor(ELightUnits SrcUnits, ELightUnits TargetUnits, float CosHalfConeAngle);
+    UE_PURE static float GetUnitsConversionFactor(TEnum<ELightUnits> SrcUnits, TEnum<ELightUnits> TargetUnits, float CosHalfConeAngle);
     void SetAttenuationRadius(float NewRadius);
-    void SetIntensityUnits(ELightUnits NewIntensityUnits);
+    void SetIntensityUnits(TEnum<ELightUnits> NewIntensityUnits);
 };
 
 class UInterpTrackColorScale : public UInterpTrackVectorBase
@@ -15138,8 +15153,8 @@ class UReflectionCaptureComponent : public USceneComponent
 public:
     UE_CLASS("/Script/Engine", "ReflectionCaptureComponent");
     class UBillboardComponent* CaptureOffsetComponent;
-    EReflectionSourceType ReflectionSourceType;
-    EMobileReflectionCompression MobileReflectionCompression;
+    TEnum<EReflectionSourceType> ReflectionSourceType;
+    TEnum<EMobileReflectionCompression> MobileReflectionCompression;
     class UTextureCube* Cubemap;
     float SourceCubemapAngle;
     float Brightness;
@@ -15192,6 +15207,7 @@ class UPlayerInput : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "PlayerInput");
+    static constexpr const char* UeClassTail = "0x0000000c /Script/Engine.PlayerController Input";
     TArray<FKeyBind> DebugExecBindings;
     TArray<FName> InvertedAxis;
     void ClearSmoothing();
@@ -15218,10 +15234,10 @@ public:
     bool bSnapToPlaneAtStart;
     bool bAutoRegisterPhysicsVolumeUpdates;
     bool bComponentShouldUpdatePhysicsVolume;
-    EPlaneConstraintAxisSetting PlaneConstraintAxisSetting;
+    TEnum<EPlaneConstraintAxisSetting> PlaneConstraintAxisSetting;
     bool K2_MoveUpdatedComponent(FVector Delta, FRotator NewRotation, FHitResult& OutHit, bool bSweep, bool bTeleport);
     void PhysicsVolumeChanged(class APhysicsVolume* NewVolume);
-    void SetPlaneConstraintAxisSetting(EPlaneConstraintAxisSetting NewAxisSetting);
+    void SetPlaneConstraintAxisSetting(TEnum<EPlaneConstraintAxisSetting> NewAxisSetting);
     void SetPlaneConstraintEnabled(bool bEnabled);
     void SetPlaneConstraintFromVectors(FVector Forward, FVector Up);
     void SetPlaneConstraintNormal(FVector PlaneNormal);
@@ -15235,7 +15251,7 @@ public:
     UE_PURE float GetGravityZ() const;
     UE_PURE float GetMaxSpeed() const;
     UE_PURE class APhysicsVolume* GetPhysicsVolume() const;
-    UE_PURE EPlaneConstraintAxisSetting GetPlaneConstraintAxisSetting() const;
+    UE_PURE TEnum<EPlaneConstraintAxisSetting> GetPlaneConstraintAxisSetting() const;
     UE_PURE FVector GetPlaneConstraintNormal() const;
     UE_PURE FVector GetPlaneConstraintOrigin() const;
     UE_PURE bool IsExceedingMaxSpeed(float MaxSpeed) const;
@@ -15260,7 +15276,7 @@ class ABrush : public AActor
 {
 public:
     UE_CLASS("/Script/Engine", "Brush");
-    EBrushType BrushType;
+    TEnum<EBrushType> BrushType;
     FColor BrushColor;
     int PolyFlags;
     bool bColored;
@@ -15330,7 +15346,7 @@ public:
     bool bRotationBlendInMeshSpace;
     float AnimLength;
     float TargetWeightInterpolationSpeedPerSec;
-    ENotifyTriggerMode NotifyTriggerMode;
+    TEnum<ENotifyTriggerMode> NotifyTriggerMode;
     TArray<FPerBoneInterpolation> PerBoneBlend;
     int SampleIndexWithMarkers;
     TArray<FBlendSample> SampleData;
@@ -15341,7 +15357,7 @@ class UBlendSpace : public UBlendSpaceBase
 {
 public:
     UE_CLASS("/Script/Engine", "BlendSpace");
-    EBlendSpaceAxis AxisToScaleAnimation;
+    TEnum<EBlendSpaceAxis> AxisToScaleAnimation;
 };
 
 class ALevelBounds : public AActor
@@ -15364,7 +15380,7 @@ class UParticleModuleTypeDataBeam2 : public UParticleModuleTypeDataBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleTypeDataBeam2");
-    EBeam2Method BeamMethod;
+    TEnum<EBeam2Method> BeamMethod;
     int TextureTile;
     float TextureTileDistance;
     int Sheets;
@@ -15375,7 +15391,7 @@ public:
     int UpVectorStepSize;
     FName BranchParentName;
     FRawDistributionFloat Distance;
-    EBeamTaperMethod TaperMethod;
+    TEnum<EBeamTaperMethod> TaperMethod;
     FRawDistributionFloat TaperFactor;
     FRawDistributionFloat TaperScale;
     bool RenderGeometry;
@@ -15449,9 +15465,9 @@ public:
     TArray<FTransform> CachedBoneSpaceTransforms;
     TArray<FTransform> CachedComponentSpaceTransforms;
     float GlobalAnimRateScale;
-    EKinematicBonesUpdateToPhysics KinematicBonesUpdateType;
-    EPhysicsTransformUpdateMode PhysicsTransformUpdateMode;
-    EAnimationMode AnimationMode;
+    TEnum<EKinematicBonesUpdateToPhysics> KinematicBonesUpdateType;
+    TEnum<EPhysicsTransformUpdateMode> PhysicsTransformUpdateMode;
+    TEnum<EAnimationMode> AnimationMode;
     bool bDisablePostProcessBlueprint;
     bool bUpdateOverlapsOnAnimationFinalize;
     bool bHasValidBodies;
@@ -15508,12 +15524,12 @@ public:
     void ForceClothNextUpdateTeleportAndReset();
     class UClass* GetAnimClass();
     void GetCurrentJointAngles(FName InBoneName, float& Swing1Angle, float& TwistAngle, float& Swing2Angle);
-    bool GetFloatAttribute(const FName& BoneName, const FName& AttributeName, float DefaultValue, float& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetFloatAttribute_Ref(const FName& BoneName, const FName& AttributeName, float& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetIntegerAttribute(const FName& BoneName, const FName& AttributeName, int DefaultValue, int& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetIntegerAttribute_Ref(const FName& BoneName, const FName& AttributeName, int& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetStringAttribute(const FName& BoneName, const FName& AttributeName, FString DefaultValue, FString& OutValue, ECustomBoneAttributeLookup LookupType);
-    bool GetStringAttribute_Ref(const FName& BoneName, const FName& AttributeName, FString& OutValue, ECustomBoneAttributeLookup LookupType);
+    bool GetFloatAttribute(const FName& BoneName, const FName& AttributeName, float DefaultValue, float& OutValue, TEnum<ECustomBoneAttributeLookup> LookupType);
+    bool GetFloatAttribute_Ref(const FName& BoneName, const FName& AttributeName, float& OutValue, TEnum<ECustomBoneAttributeLookup> LookupType);
+    bool GetIntegerAttribute(const FName& BoneName, const FName& AttributeName, int DefaultValue, int& OutValue, TEnum<ECustomBoneAttributeLookup> LookupType);
+    bool GetIntegerAttribute_Ref(const FName& BoneName, const FName& AttributeName, int& OutValue, TEnum<ECustomBoneAttributeLookup> LookupType);
+    bool GetStringAttribute(const FName& BoneName, const FName& AttributeName, FString DefaultValue, FString& OutValue, TEnum<ECustomBoneAttributeLookup> LookupType);
+    bool GetStringAttribute_Ref(const FName& BoneName, const FName& AttributeName, FString& OutValue, TEnum<ECustomBoneAttributeLookup> LookupType);
     bool IsBodyGravityEnabled(FName BoneName);
     void LinkAnimClassLayers(TSubclassOf<class UAnimInstance> InClass);
     void LinkAnimGraphByTag(FName InTag, TSubclassOf<class UAnimInstance> InClass);
@@ -15522,7 +15538,7 @@ public:
     void PlayAnimation(class UAnimationAsset* NewAnimToPlay, bool bLooping);
     void ResetAllBodiesSimulatePhysics();
     void ResetAllowedAnimCurveEvaluation();
-    void ResetAnimInstanceDynamics(ETeleportType InTeleportType);
+    void ResetAnimInstanceDynamics(TEnum<ETeleportType> InTeleportType);
     void ResetClothTeleportMode();
     void ResumeClothingSimulation();
     void SetAllBodiesBelowPhysicsBlendWeight(const FName& InBoneName, float PhysicsBlendWeight, bool bSkipCustomPhysicsType, bool bIncludeSelf);
@@ -15537,7 +15553,7 @@ public:
     void SetAllowRigidBodyAnimNode(bool bInAllow, bool bReinitAnim);
     void SetAngularLimits(FName InBoneName, float Swing1LimitAngle, float TwistLimitAngle, float Swing2LimitAngle);
     void SetAnimation(class UAnimationAsset* NewAnimToPlay);
-    void SetAnimationMode(EAnimationMode InAnimationMode);
+    void SetAnimationMode(TEnum<EAnimationMode> InAnimationMode);
     void SetAnimClass(class UClass* NewClass);
     void SetBodyNotifyRigidBodyCollision(bool bNewNotifyRigidBodyCollision, FName BoneName);
     void SetClothMaxDistanceScale(float Scale);
@@ -15566,7 +15582,7 @@ public:
     void UnlinkAnimClassLayers(TSubclassOf<class UAnimInstance> InClass);
     UE_PURE bool GetAllowedAnimCurveEvaluate() const;
     UE_PURE bool GetAllowRigidBodyAnimNode() const;
-    UE_PURE EAnimationMode GetAnimationMode() const;
+    UE_PURE TEnum<EAnimationMode> GetAnimationMode() const;
     UE_PURE class UAnimInstance* GetAnimInstance() const;
     UE_PURE float GetBoneMass(FName BoneName, bool bScaleMass) const;
     UE_PURE class UClothingSimulationInteractor* GetClothingSimulationInteractor() const;
@@ -15706,15 +15722,15 @@ class UPoseableMeshComponent : public USkinnedMeshComponent
 public:
     UE_CLASS("/Script/Engine", "PoseableMeshComponent");
     void CopyPoseFromSkeletalComponent(class USkeletalMeshComponent* InComponentToCopy);
-    FVector GetBoneLocationByName(FName BoneName, EBoneSpaces BoneSpace);
-    FRotator GetBoneRotationByName(FName BoneName, EBoneSpaces BoneSpace);
-    FVector GetBoneScaleByName(FName BoneName, EBoneSpaces BoneSpace);
-    FTransform GetBoneTransformByName(FName BoneName, EBoneSpaces BoneSpace);
+    FVector GetBoneLocationByName(FName BoneName, TEnum<EBoneSpaces> BoneSpace);
+    FRotator GetBoneRotationByName(FName BoneName, TEnum<EBoneSpaces> BoneSpace);
+    FVector GetBoneScaleByName(FName BoneName, TEnum<EBoneSpaces> BoneSpace);
+    FTransform GetBoneTransformByName(FName BoneName, TEnum<EBoneSpaces> BoneSpace);
     void ResetBoneTransformByName(FName BoneName);
-    void SetBoneLocationByName(FName BoneName, FVector InLocation, EBoneSpaces BoneSpace);
-    void SetBoneRotationByName(FName BoneName, FRotator InRotation, EBoneSpaces BoneSpace);
-    void SetBoneScaleByName(FName BoneName, FVector InScale3D, EBoneSpaces BoneSpace);
-    void SetBoneTransformByName(FName BoneName, const FTransform& InTransform, EBoneSpaces BoneSpace);
+    void SetBoneLocationByName(FName BoneName, FVector InLocation, TEnum<EBoneSpaces> BoneSpace);
+    void SetBoneRotationByName(FName BoneName, FRotator InRotation, TEnum<EBoneSpaces> BoneSpace);
+    void SetBoneScaleByName(FName BoneName, FVector InScale3D, TEnum<EBoneSpaces> BoneSpace);
+    void SetBoneTransformByName(FName BoneName, const FTransform& InTransform, TEnum<EBoneSpaces> BoneSpace);
 };
 
 class UMaterialExpressionPreSkinnedLocalBounds : public UMaterialExpression
@@ -15811,7 +15827,7 @@ class UMaterialExpressionDepthOfFieldFunction : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionDepthOfFieldFunction");
-    EDepthOfFieldFunctionValue FunctionValue;
+    TEnum<EDepthOfFieldFunctionValue> FunctionValue;
     FExpressionInput Depth;
 };
 
@@ -15841,6 +15857,7 @@ class UAnimSingleNodeInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/Engine", "AnimSingleNodeInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
     class UAnimationAsset* CurrentAsset;
     TDelegate<void()> PostEvaluateAnimEvent;
     float GetLength();
@@ -15873,8 +15890,8 @@ public:
     bool bWarmingUp;
     bool bOverrideLODMethod;
     bool bSkipUpdateDynamicDataDuringTick;
-    EParticleSystemLODMethod LODMethod;
-    EParticleSignificanceLevel RequiredSignificance;
+    TEnum<EParticleSystemLODMethod> LODMethod;
+    TEnum<EParticleSignificanceLevel> RequiredSignificance;
     TArray<FParticleSysParam> InstanceParameters;
     TMulticastInlineDelegate<void(FName EventName, float EmitterTime, FVector Location, FVector Velocity)> OnParticleSpawn;
     TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleCount)> OnParticleBurst;
@@ -15890,15 +15907,15 @@ public:
     TArray<class UParticleSystemReplay*> ReplayClips;
     float CustomTimeDilation;
     FName AutoAttachSocketName;
-    EAttachmentRule AutoAttachLocationRule;
-    EAttachmentRule AutoAttachRotationRule;
-    EAttachmentRule AutoAttachScaleRule;
+    TEnum<EAttachmentRule> AutoAttachLocationRule;
+    TEnum<EAttachmentRule> AutoAttachRotationRule;
+    TEnum<EAttachmentRule> AutoAttachScaleRule;
     TMulticastInlineDelegate<void(class UParticleSystemComponent* PSystem)> OnSystemFinished;
-    void BeginTrails(FName InFirstSocketName, FName InSecondSocketName, ETrailWidthMode InWidthMode, float InWidth);
+    void BeginTrails(FName InFirstSocketName, FName InSecondSocketName, TEnum<ETrailWidthMode> InWidthMode, float InWidth);
     class UMaterialInstanceDynamic* CreateNamedDynamicMaterialInstance(FName InName, class UMaterialInterface* SourceMaterial);
     void EndTrails();
     void GenerateParticleEvent(FName InEventName, float InEmitterTime, FVector InLocation, FVector InDirection, FVector InVelocity);
-    void SetAutoAttachParams(class USceneComponent* Parent, FName SocketName, EAttachLocation LocationType);
+    void SetAutoAttachParams(class USceneComponent* Parent, FName SocketName, TEnum<EAttachLocation> LocationType);
     void SetBeamEndPoint(int EmitterIndex, FVector NewEndPoint);
     void SetBeamSourcePoint(int EmitterIndex, FVector NewSourcePoint, int SourceIndex);
     void SetBeamSourceStrength(int EmitterIndex, float NewSourceStrength, int SourceIndex);
@@ -15908,7 +15925,7 @@ public:
     void SetBeamTargetTangent(int EmitterIndex, FVector NewTangentPoint, int TargetIndex);
     void SetMaterialParameter(FName ParameterName, class UMaterialInterface* Param);
     void SetTemplate(class UParticleSystem* NewTemplate);
-    void SetTrailSourceData(FName InFirstSocketName, FName InSecondSocketName, ETrailWidthMode InWidthMode, float InWidth);
+    void SetTrailSourceData(FName InFirstSocketName, FName InSecondSocketName, TEnum<ETrailWidthMode> InWidthMode, float InWidth);
     bool GetBeamEndPoint(int EmitterIndex, FVector& OutEndPoint) const;
     bool GetBeamSourcePoint(int EmitterIndex, int SourceIndex, FVector& OutSourcePoint) const;
     bool GetBeamSourceStrength(int EmitterIndex, int SourceIndex, float& OutSourceStrength) const;
@@ -16024,6 +16041,7 @@ class UCheatManager : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "CheatManager");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/Engine.PlayerController Engine";
     class ADebugCameraController* DebugCameraControllerRef;
     TSubclassOf<class ADebugCameraController> DebugCameraControllerClass;
     TArray<class UCheatManagerExtension*> CheatManagerExtensions;
@@ -16035,7 +16053,7 @@ public:
     void DamageTarget(float damageAmount);
     void DebugCapsuleSweep();
     void DebugCapsuleSweepCapture();
-    void DebugCapsuleSweepChannel(ECollisionChannel Channel);
+    void DebugCapsuleSweepChannel(TEnum<ECollisionChannel> Channel);
     void DebugCapsuleSweepClear();
     void DebugCapsuleSweepComplex(bool bTraceComplex);
     void DebugCapsuleSweepPawn();
@@ -16288,7 +16306,7 @@ class UInterpTrackInstToggle : public UInterpTrackInst
 {
 public:
     UE_CLASS("/Script/Engine", "InterpTrackInstToggle");
-    ETrackToggleAction Action;
+    TEnum<ETrackToggleAction> Action;
     float LastUpdatePosition;
     bool bSavedActiveState;
 };
@@ -16343,7 +16361,7 @@ class UInterpTrackInstVisibility : public UInterpTrackInst
 {
 public:
     UE_CLASS("/Script/Engine", "InterpTrackInstVisibility");
-    EVisibilityTrackAction Action;
+    TEnum<EVisibilityTrackAction> Action;
     float LastUpdatePosition;
 };
 
@@ -16381,7 +16399,7 @@ class AWorldSettings : public AInfo
 public:
     UE_CLASS("/Script/Engine", "WorldSettings");
     int VisibilityCellSize;
-    EVisibilityAggressiveness VisibilityAggressiveness;
+    TEnum<EVisibilityAggressiveness> VisibilityAggressiveness;
     bool bPrecomputeVisibility;
     bool bPlaceCellsOnlyAlongCameraTracks;
     bool bEnableWorldBoundsChecks;
@@ -16492,9 +16510,9 @@ public:
     float JumpOffJumpZFactor;
     float WalkableFloorAngle;
     float WalkableFloorZ;
-    EMovementMode MovementMode;
+    TEnum<EMovementMode> MovementMode;
     uint8 CustomMovementMode;
-    ENetworkSmoothingMode NetworkSmoothingMode;
+    TEnum<ENetworkSmoothingMode> NetworkSmoothingMode;
     float GroundFriction;
     float MaxWalkSpeed;
     float MaxWalkSpeedCrouched;
@@ -16585,9 +16603,9 @@ public:
     float LedgeCheckThreshold;
     float JumpOutOfWaterPitch;
     FFindFloorResult CurrentFloor;
-    EMovementMode DefaultLandMovementMode;
-    EMovementMode DefaultWaterMovementMode;
-    EMovementMode GroundMovementMode;
+    TEnum<EMovementMode> DefaultLandMovementMode;
+    TEnum<EMovementMode> DefaultWaterMovementMode;
+    TEnum<EMovementMode> GroundMovementMode;
     bool bMaintainHorizontalGroundVelocity;
     bool bImpartBaseVelocityX;
     bool bImpartBaseVelocityY;
@@ -16650,7 +16668,7 @@ public:
     void SetGroupsToAvoidMask(const FNavAvoidanceMask& GroupMask);
     void SetGroupsToIgnore(int GroupFlags);
     void SetGroupsToIgnoreMask(const FNavAvoidanceMask& GroupMask);
-    void SetMovementMode(EMovementMode NewMovementMode, uint8 NewCustomMode);
+    void SetMovementMode(TEnum<EMovementMode> NewMovementMode, uint8 NewCustomMode);
     void SetWalkableFloorAngle(float InWalkableFloorAngle);
     void SetWalkableFloorZ(float InWalkableFloorZ);
     UE_PURE float GetAnalogInputModifier() const;
@@ -16693,18 +16711,18 @@ class UMaterialExpressionSamplePhysicsScalarField : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSamplePhysicsScalarField");
     FExpressionInput WorldPosition;
-    EFieldScalarType FieldTarget;
+    TEnum<EFieldScalarType> FieldTarget;
 };
 
 class USceneCaptureComponent2D : public USceneCaptureComponent
 {
 public:
     UE_CLASS("/Script/Engine", "SceneCaptureComponent2D");
-    ECameraProjectionMode ProjectionType;
+    TEnum<ECameraProjectionMode> ProjectionType;
     float FOVAngle;
     float OrthoWidth;
     class UTextureRenderTarget2D* TextureTarget;
-    ESceneCaptureCompositeMode CompositeMode;
+    TEnum<ESceneCaptureCompositeMode> CompositeMode;
     FPostProcessSettings PostProcessSettings;
     float PostProcessBlendWeight;
     bool bOverride_CustomNearClippingPlane;
@@ -16737,7 +16755,7 @@ class UMapBuildDataRegistry : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "MapBuildDataRegistry");
-    ELightingBuildQuality LevelLightingQuality;
+    TEnum<ELightingBuildQuality> LevelLightingQuality;
 };
 
 class UInheritableComponentHandler : public UObject
@@ -16797,6 +16815,7 @@ class USplineMeshComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Engine", "SplineMeshComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     FSplineMeshParams SplineParams;
     FVector SplineUpDir;
     float SplineBoundaryMin;
@@ -16806,7 +16825,7 @@ public:
     bool bAllowSplineEditingPerInstance;
     bool bSmoothInterpRollScale;
     bool bMeshDirty;
-    ESplineMeshAxis ForwardAxis;
+    TEnum<ESplineMeshAxis> ForwardAxis;
     float VirtualTextureMainPassMaxDrawDistance;
     void SetBoundaryMax(float InBoundaryMax, bool bUpdateMesh);
     void SetBoundaryMin(float InBoundaryMin, bool bUpdateMesh);
@@ -16815,7 +16834,7 @@ public:
     void SetEndRoll(float EndRoll, bool bUpdateMesh);
     void SetEndScale(FVector2D EndScale, bool bUpdateMesh);
     void SetEndTangent(FVector EndTangent, bool bUpdateMesh);
-    void SetForwardAxis(ESplineMeshAxis InForwardAxis, bool bUpdateMesh);
+    void SetForwardAxis(TEnum<ESplineMeshAxis> InForwardAxis, bool bUpdateMesh);
     void SetSplineUpDir(const FVector& InSplineUpDir, bool bUpdateMesh);
     void SetStartAndEnd(FVector StartPos, FVector StartTangent, FVector EndPos, FVector EndTangent, bool bUpdateMesh);
     void SetStartOffset(FVector2D StartOffset, bool bUpdateMesh);
@@ -16831,7 +16850,7 @@ public:
     UE_PURE float GetEndRoll() const;
     UE_PURE FVector2D GetEndScale() const;
     UE_PURE FVector GetEndTangent() const;
-    UE_PURE ESplineMeshAxis GetForwardAxis() const;
+    UE_PURE TEnum<ESplineMeshAxis> GetForwardAxis() const;
     UE_PURE FVector GetSplineUpDir() const;
     UE_PURE FVector2D GetStartOffset() const;
     UE_PURE FVector GetStartPosition() const;
@@ -16884,7 +16903,7 @@ public:
     TArray<class UAssetUserData*> AssetUserData;
     class UMaterial* GetBaseMaterial();
     void SetForceMipLevelsToBeResident(bool OverrideForceMiplevelsToBeResident, bool bForceMiplevelsToBeResidentValue, float ForceDuration, int CinematicTextureGroups, bool bFastResponse);
-    UE_PURE FMaterialParameterInfo GetParameterInfo(EMaterialParameterAssociation Association, FName ParameterName, class UMaterialFunctionInterface* LayerFunction) const;
+    UE_PURE FMaterialParameterInfo GetParameterInfo(TEnum<EMaterialParameterAssociation> Association, FName ParameterName, class UMaterialFunctionInterface* LayerFunction) const;
     UE_PURE class UPhysicalMaterial* GetPhysicalMaterial() const;
     UE_PURE class UPhysicalMaterial* GetPhysicalMaterialFromMap(int Index_0) const;
     UE_PURE class UPhysicalMaterialMask* GetPhysicalMaterialMask() const;
@@ -16914,7 +16933,7 @@ public:
     TArray<FCustomAttributeSetting> BoneCustomAttributesNames;
     TArray<FString> BoneNamesWithCustomAttributes;
     TMap<FName, ECustomAttributeBlendType> AttributeBlendModes;
-    ECustomAttributeBlendType DefaultAttributeBlendMode;
+    TEnum<ECustomAttributeBlendType> DefaultAttributeBlendMode;
 };
 
 class UMaterialInstance : public UMaterialInterface
@@ -16941,7 +16960,7 @@ class UMaterialExpressionSamplePhysicsVectorField : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSamplePhysicsVectorField");
     FExpressionInput WorldPosition;
-    EFieldVectorType FieldTarget;
+    TEnum<EFieldVectorType> FieldTarget;
 };
 
 class UMaterialInstanceConstant : public UMaterialInstance
@@ -16993,8 +17012,8 @@ public:
     float CylinderOverlayArc;
     int CylinderHeight;
     FEquirectProps EquirectProps;
-    EStereoLayerType StereoLayerType;
-    EStereoLayerShape StereoLayerShape;
+    TEnum<EStereoLayerType> StereoLayerType;
+    TEnum<EStereoLayerShape> StereoLayerShape;
     class UStereoLayerShape* Shape;
     int Priority;
     void MarkTextureForUpdate();
@@ -17041,9 +17060,9 @@ class UAnimCompress : public UAnimBoneCompressionCodec
 public:
     UE_CLASS("/Script/Engine", "AnimCompress");
     bool bNeedsSkeleton;
-    EAnimationCompressionFormat TranslationCompressionFormat;
-    EAnimationCompressionFormat RotationCompressionFormat;
-    EAnimationCompressionFormat ScaleCompressionFormat;
+    TEnum<EAnimationCompressionFormat> TranslationCompressionFormat;
+    TEnum<EAnimationCompressionFormat> RotationCompressionFormat;
+    TEnum<EAnimationCompressionFormat> ScaleCompressionFormat;
 };
 
 class UAnimCompress_BitwiseCompressOnly : public UAnimCompress
@@ -17311,7 +17330,7 @@ public:
     FColor C_BrushShape;
     float StreamingDistanceFactor;
     FDirectoryPath GameScreenshotSaveDirectory;
-    ETransitionType TransitionType;
+    TEnum<ETransitionType> TransitionType;
     FString TransitionDescription;
     FString TransitionGameMode;
     bool bAllowMatureLanguage;
@@ -17391,6 +17410,7 @@ class ADebugCameraController : public APlayerController
 {
 public:
     UE_CLASS("/Script/Engine", "DebugCameraController");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
     bool bShowSelectedInfo;
     bool bIsFrozenRendering;
     bool bIsOrbitingSelectedActor;
@@ -17692,7 +17712,7 @@ public:
     bool bEnableRootMotionTranslation;
     bool bEnableRootMotionRotation;
     bool bEnableAutoBlendOut;
-    ERootMotionRootLock RootMotionRootLock;
+    TEnum<ERootMotionRootLock> RootMotionRootLock;
     TArray<FBranchingPointMarker> BranchingPointMarkers;
     TArray<int> BranchingPointStateNotifyIndices;
     FTimeStretchCurve TimeStretchCurve;
@@ -17785,90 +17805,90 @@ public:
     void AddPoint(const FSplinePoint& Point, bool bUpdateSpline);
     void AddPoints(const TArray<FSplinePoint>& Points, bool bUpdateSpline);
     void AddSplineLocalPoint(const FVector& Position);
-    void AddSplinePoint(const FVector& Position, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
-    void AddSplinePointAtIndex(const FVector& Position, int Index_0, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
+    void AddSplinePoint(const FVector& Position, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void AddSplinePointAtIndex(const FVector& Position, int Index_0, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
     void AddSplineWorldPoint(const FVector& Position);
     void ClearSplinePoints(bool bUpdateSpline);
     void RemoveSplinePoint(int Index_0, bool bUpdateSpline);
     void SetClosedLoop(bool bInClosedLoop, bool bUpdateSpline);
     void SetClosedLoopAtPosition(bool bInClosedLoop, float Key, bool bUpdateSpline);
-    void SetDefaultUpVector(const FVector& UpVector, ESplineCoordinateSpace CoordinateSpace);
+    void SetDefaultUpVector(const FVector& UpVector, TEnum<ESplineCoordinateSpace> CoordinateSpace);
     void SetDrawDebug(bool bShow);
-    void SetLocationAtSplinePoint(int PointIndex, const FVector& InLocation, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
-    void SetRotationAtSplinePoint(int PointIndex, const FRotator& InRotation, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
+    void SetLocationAtSplinePoint(int PointIndex, const FVector& InLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetRotationAtSplinePoint(int PointIndex, const FRotator& InRotation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
     void SetScaleAtSplinePoint(int PointIndex, const FVector& InScaleVector, bool bUpdateSpline);
     void SetSelectedSplineSegmentColor(const FLinearColor& SegmentColor);
     void SetSplineLocalPoints(const TArray<FVector>& Points);
-    void SetSplinePoints(const TArray<FVector>& Points, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
-    void SetSplinePointType(int PointIndex, ESplinePointType Type, bool bUpdateSpline);
+    void SetSplinePoints(const TArray<FVector>& Points, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetSplinePointType(int PointIndex, TEnum<ESplinePointType> Type, bool bUpdateSpline);
     void SetSplineWorldPoints(const TArray<FVector>& Points);
-    void SetTangentAtSplinePoint(int PointIndex, const FVector& InTangent, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
+    void SetTangentAtSplinePoint(int PointIndex, const FVector& InTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
     void SetTangentColor(const FLinearColor& TangentColor);
-    void SetTangentsAtSplinePoint(int PointIndex, const FVector& InArriveTangent, const FVector& InLeaveTangent, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
+    void SetTangentsAtSplinePoint(int PointIndex, const FVector& InArriveTangent, const FVector& InLeaveTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
     void SetUnselectedSplineSegmentColor(const FLinearColor& SegmentColor);
-    void SetUpVectorAtSplinePoint(int PointIndex, const FVector& InUpVector, ESplineCoordinateSpace CoordinateSpace, bool bUpdateSpline);
+    void SetUpVectorAtSplinePoint(int PointIndex, const FVector& InUpVector, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
     void SetWorldLocationAtSplinePoint(int PointIndex, const FVector& InLocation);
     void UpdateSpline();
-    UE_PURE FVector FindDirectionClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
+    UE_PURE FVector FindDirectionClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
     UE_PURE float FindInputKeyClosestToWorldLocation(const FVector& WorldLocation) const;
-    UE_PURE FVector FindLocationClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector FindRightVectorClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE float FindRollClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FRotator FindRotationClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
+    UE_PURE FVector FindLocationClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector FindRightVectorClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float FindRollClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator FindRotationClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
     UE_PURE FVector FindScaleClosestToWorldLocation(const FVector& WorldLocation) const;
-    UE_PURE FVector FindTangentClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FTransform FindTransformClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace, bool bUseScale) const;
-    UE_PURE FVector FindUpVectorClosestToWorldLocation(const FVector& WorldLocation, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetArriveTangentAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetDefaultUpVector(ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FVector FindTangentClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FTransform FindTransformClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FVector FindUpVectorClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetArriveTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDefaultUpVector(TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
     UE_PURE float GetDistanceAlongSplineAtSplineInputKey(float InKey) const;
     UE_PURE float GetDistanceAlongSplineAtSplinePoint(int PointIndex) const;
     UE_PURE float GetFloatPropertyAtSplineInputKey(float InKey, FName PropertyName) const;
     UE_PURE float GetFloatPropertyAtSplinePoint(int Index_0, FName PropertyName) const;
     UE_PURE float GetInputKeyAtDistanceAlongSpline(float Distance) const;
-    UE_PURE FVector GetLeaveTangentAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
+    UE_PURE FVector GetLeaveTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
     void GetLocalLocationAndTangentAtSplinePoint(int PointIndex, FVector& LocalLocation, FVector& LocalTangent) const;
-    void GetLocationAndTangentAtSplinePoint(int PointIndex, FVector& Location, FVector& Tangent, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
+    void GetLocationAndTangentAtSplinePoint(int PointIndex, FVector& Location, FVector& Tangent, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
     UE_PURE int GetNumberOfSplinePoints() const;
     UE_PURE int GetNumberOfSplineSegments() const;
-    UE_PURE FVector GetRightVectorAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetRightVectorAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetRightVectorAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetRightVectorAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE float GetRollAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE float GetRollAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE float GetRollAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE float GetRollAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE FRotator GetRotationAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FRotator GetRotationAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FRotator GetRotationAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FRotator GetRotationAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FVector GetRightVectorAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetRightVectorAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetRightVectorAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetRightVectorAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE float GetRollAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float GetRollAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float GetRollAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float GetRollAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FRotator GetRotationAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator GetRotationAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator GetRotationAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator GetRotationAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
     UE_PURE FVector GetScaleAtDistanceAlongSpline(float Distance) const;
     UE_PURE FVector GetScaleAtSplineInputKey(float InKey) const;
     UE_PURE FVector GetScaleAtSplinePoint(int PointIndex) const;
     UE_PURE FVector GetScaleAtTime(float Time, bool bUseConstantVelocity) const;
     UE_PURE float GetSplineLength() const;
-    UE_PURE ESplinePointType GetSplinePointType(int PointIndex) const;
-    UE_PURE FVector GetTangentAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetTangentAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetTangentAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetTangentAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE FTransform GetTransformAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace, bool bUseScale) const;
-    UE_PURE FTransform GetTransformAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace, bool bUseScale) const;
-    UE_PURE FTransform GetTransformAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace, bool bUseScale) const;
-    UE_PURE FTransform GetTransformAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity, bool bUseScale) const;
-    UE_PURE FVector GetUpVectorAtDistanceAlongSpline(float Distance, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetUpVectorAtSplineInputKey(float InKey, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetUpVectorAtSplinePoint(int PointIndex, ESplineCoordinateSpace CoordinateSpace) const;
-    UE_PURE FVector GetUpVectorAtTime(float Time, ESplineCoordinateSpace CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE TEnum<ESplinePointType> GetSplinePointType(int PointIndex) const;
+    UE_PURE FVector GetTangentAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetTangentAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetTangentAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FTransform GetTransformAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FTransform GetTransformAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FTransform GetTransformAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FTransform GetTransformAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity, bool bUseScale) const;
+    UE_PURE FVector GetUpVectorAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetUpVectorAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetUpVectorAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetUpVectorAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
     UE_PURE FVector GetVectorPropertyAtSplineInputKey(float InKey, FName PropertyName) const;
     UE_PURE FVector GetVectorPropertyAtSplinePoint(int Index_0, FName PropertyName) const;
     UE_PURE FVector GetWorldDirectionAtDistanceAlongSpline(float Distance) const;
@@ -17889,7 +17909,7 @@ public:
     class UParticleSystem* PSTemplate;
     FName FirstSocketName;
     FName SecondSocketName;
-    ETrailWidthMode WidthScaleMode;
+    TEnum<ETrailWidthMode> WidthScaleMode;
     FName WidthScaleCurve;
     bool bRecycleSpawnedSystems;
     class UParticleSystem* OverridePSTemplate(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation) const;
@@ -17903,15 +17923,15 @@ public:
     TArray<FTrackToSkeletonMap> TrackToSkeletonMapTable;
     class UAnimBoneCompressionSettings* BoneCompressionSettings;
     class UAnimCurveCompressionSettings* CurveCompressionSettings;
-    EAdditiveAnimationType AdditiveAnimType;
-    EAdditiveBasePoseType RefPoseType;
+    TEnum<EAdditiveAnimationType> AdditiveAnimType;
+    TEnum<EAdditiveBasePoseType> RefPoseType;
     class UAnimSequence* RefPoseSeq;
     int RefFrameIndex;
     FName RetargetSource;
     TArray<FTransform> RetargetSourceAssetReferencePose;
-    EAnimInterpolationType Interpolation;
+    TEnum<EAnimInterpolationType> Interpolation;
     bool bEnableRootMotion;
-    ERootMotionRootLock RootMotionRootLock;
+    TEnum<ERootMotionRootLock> RootMotionRootLock;
     bool bForceRootLock;
     bool bUseNormalizedRootMotionScale;
     bool bRootMotionSettingsCopiedFromMontage;
@@ -17962,12 +17982,12 @@ class UAnimStreamable : public UAnimSequenceBase
 public:
     UE_CLASS("/Script/Engine", "AnimStreamable");
     int NumFrames;
-    EAnimInterpolationType Interpolation;
+    TEnum<EAnimInterpolationType> Interpolation;
     FName RetargetSource;
     class UAnimBoneCompressionSettings* BoneCompressionSettings;
     class UAnimCurveCompressionSettings* CurveCompressionSettings;
     bool bEnableRootMotion;
-    ERootMotionRootLock RootMotionRootLock;
+    TEnum<ERootMotionRootLock> RootMotionRootLock;
     bool bForceRootLock;
     bool bUseNormalizedRootMotionScale;
 };
@@ -18125,8 +18145,8 @@ public:
     FMaterialAttributesInput A;
     FMaterialAttributesInput B;
     FExpressionInput alpha;
-    EMaterialAttributeBlend PixelAttributeBlendType;
-    EMaterialAttributeBlend VertexAttributeBlendType;
+    TEnum<EMaterialAttributeBlend> PixelAttributeBlendType;
+    TEnum<EMaterialAttributeBlend> VertexAttributeBlendType;
 };
 
 class UAtmosphericFogComponent : public USceneComponent
@@ -18189,7 +18209,7 @@ class UAudioBus : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "AudioBus");
-    EAudioBusChannels AudioBusChannels;
+    TEnum<EAudioBusChannels> AudioBusChannels;
 };
 
 class UAudioSettings : public UDeveloperSettings
@@ -18205,7 +18225,7 @@ public:
     FSoftObjectPath BaseDefaultSubmix;
     FSoftObjectPath ReverbSubmix;
     FSoftObjectPath EQSubmix;
-    EVoiceSampleRate VoiPSampleRate;
+    TEnum<EVoiceSampleRate> VoiPSampleRate;
     float DefaultReverbSendLevel;
     int MaximumConcurrentStreams;
     float GlobalMinPitchScale;
@@ -18215,8 +18235,8 @@ public:
     bool bDisableMasterEQ;
     bool bAllowCenterChannel3DPanning;
     uint32 NumStoppingSources;
-    EPanningMethod PanningMethod;
-    EMonoChannelUpmixMethod MonoChannelUpmixMethod;
+    TEnum<EPanningMethod> PanningMethod;
+    TEnum<EMonoChannelUpmixMethod> MonoChannelUpmixMethod;
     FString DialogueFilenameFormat;
     TArray<FSoundDebugEntry> DebugSounds;
     TArray<FDefaultAudioBusSettings> DefaultAudioBuses;
@@ -18272,7 +18292,7 @@ class UAutoDestroySubsystem : public UTickableWorldSubsystem
 public:
     UE_CLASS("/Script/Engine", "AutoDestroySubsystem");
     TArray<class AActor*> ActorsToPoll;
-    void OnActorEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
+    void OnActorEndPlay(class AActor* Actor, TEnum<EEndPlayReason> EndPlayReason);
     static UAutoDestroySubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
@@ -18299,7 +18319,7 @@ public:
     class USoundfieldEncodingSettingsBase* AmbisonicsPluginSettings;
     int EnvelopeFollowerAttackTime;
     int EnvelopeFollowerReleaseTime;
-    EGainParamMode GainMode;
+    TEnum<EGainParamMode> GainMode;
     float OutputVolume;
     float WetLevel;
     float DryLevel;
@@ -18319,12 +18339,12 @@ public:
     void StartEnvelopeFollowing();
     void StartRecordingOutput(class UObject* WorldContextObject, float ExpectedDuration);
     void StartRecordingOutput(float ExpectedDuration);
-    void StartSpectralAnalysis(class UObject* WorldContextObject, EFFTSize FFTSize, EFFTPeakInterpolationMethod InterpolationMethod, EFFTWindowType WindowType, float HopSize, EAudioSpectrumType SpectrumType);
-    void StartSpectralAnalysis(EFFTSize FFTSize, EFFTPeakInterpolationMethod InterpolationMethod, EFFTWindowType WindowType, float HopSize, EAudioSpectrumType SpectrumType);
+    void StartSpectralAnalysis(class UObject* WorldContextObject, TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
+    void StartSpectralAnalysis(TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
     void StopEnvelopeFollowing(class UObject* WorldContextObject);
     void StopEnvelopeFollowing();
-    void StopRecordingOutput(class UObject* WorldContextObject, EAudioRecordingExportType ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
-    void StopRecordingOutput(EAudioRecordingExportType ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
+    void StopRecordingOutput(class UObject* WorldContextObject, TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
+    void StopRecordingOutput(TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
     void StopSpectralAnalysis(class UObject* WorldContextObject);
     void StopSpectralAnalysis();
 };
@@ -18537,6 +18557,7 @@ class UPlatformGameInstance : public UGameInstance
 {
 public:
     UE_CLASS("/Script/Engine", "PlatformGameInstance");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Game";
     TMulticastInlineDelegate<void()> ApplicationWillDeactivateDelegate;
     TMulticastInlineDelegate<void()> ApplicationHasReactivatedDelegate;
     TMulticastInlineDelegate<void()> ApplicationWillEnterBackgroundDelegate;
@@ -18559,7 +18580,7 @@ public:
     static void CancelLocalNotification(FString ActivationEvent);
     static void CancelLocalNotificationById(int NotificationId);
     static void ClearAllLocalNotifications();
-    UE_PURE static EScreenOrientation GetDeviceOrientation();
+    UE_PURE static TEnum<EScreenOrientation> GetDeviceOrientation();
     static void GetLaunchNotification(bool& NotificationLaunchedApp, FString& ActivationEvent, int& FireDate);
     static int ScheduleLocalNotificationAtTime(const FDateTime& FireDateTime, bool LocalTime, const FText& Title, const FText& Body, const FText& Action, FString ActivationEvent);
     static int ScheduleLocalNotificationBadgeAtTime(const FDateTime& FireDateTime, bool LocalTime, FString ActivationEvent);
@@ -18575,9 +18596,9 @@ public:
     FExpressionInput WindInput;
     FExpressionInput LODInput;
     FExpressionInput ExtraBendWS;
-    ESpeedTreeGeometryType GeometryType;
-    ESpeedTreeWindType WindType;
-    ESpeedTreeLODType LODType;
+    TEnum<ESpeedTreeGeometryType> GeometryType;
+    TEnum<ESpeedTreeWindType> WindType;
+    TEnum<ESpeedTreeLODType> LODType;
     float BillboardThreshold;
     bool bAccurateWindVelocities;
 };
@@ -18673,7 +18694,7 @@ class UVectorFieldAnimated : public UVectorField
 public:
     UE_CLASS("/Script/Engine", "VectorFieldAnimated");
     class UTexture2D* Texture;
-    EVectorFieldConstructionOp ConstructionOp;
+    TEnum<EVectorFieldConstructionOp> ConstructionOp;
     int VolumeSizeX;
     int VolumeSizeY;
     int VolumeSizeZ;
@@ -18730,7 +18751,7 @@ public:
     void SetPlaybackPosition(float NewPosition, bool bFireEvents, bool bFireUpdate);
     void SetPlayRate(float NewRate);
     void SetTimelineLength(float NewLength);
-    void SetTimelineLengthMode(ETimelineLengthMode NewLengthMode);
+    void SetTimelineLengthMode(TEnum<ETimelineLengthMode> NewLengthMode);
     void SetVectorCurve(class UCurveVector* NewVectorCurve, FName VectorTrackName);
     void Stop();
     UE_PURE bool GetIgnoreTimeDilation() const;
@@ -18892,7 +18913,7 @@ public:
     UE_PURE static float DynamicWeightedMovingAverage_Float(float CurrentSample, float PreviousSample, float MaxDistance, float MinWeight, float MaxWeight);
     UE_PURE static FRotator DynamicWeightedMovingAverage_FRotator(FRotator CurrentSample, FRotator PreviousSample, float MaxDistance, float MinWeight, float MaxWeight);
     UE_PURE static FVector DynamicWeightedMovingAverage_FVector(FVector CurrentSample, FVector PreviousSample, float MaxDistance, float MinWeight, float MaxWeight);
-    UE_PURE static float Ease(float A, float B, float alpha, EEasingFunc EasingFunc, float BlendExp, int Steps);
+    UE_PURE static float Ease(float A, float B, float alpha, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps);
     UE_PURE static bool Equal_IntPointIntPoint(FIntPoint A, FIntPoint B);
     UE_PURE static bool EqualEqual_BoolBool(bool A, bool B);
     UE_PURE static bool EqualEqual_ByteByte(uint8 A, uint8 B);
@@ -19101,7 +19122,7 @@ public:
     UE_PURE static FMatrix Matrix_ApplyScale(const FMatrix& M, float Scale);
     UE_PURE static FMatrix Matrix_ConcatenateTranslation(const FMatrix& M, FVector Translation);
     UE_PURE static bool Matrix_ContainsNaN(const FMatrix& M);
-    UE_PURE static FVector Matrix_GetColumn(const FMatrix& M, EMatrixColumns Column);
+    UE_PURE static FVector Matrix_GetColumn(const FMatrix& M, TEnum<EMatrixColumns> Column);
     UE_PURE static float Matrix_GetDeterminant(const FMatrix& M);
     static bool Matrix_GetFrustumBottomPlane(const FMatrix& M, FPlane& OutPlane);
     static bool Matrix_GetFrustumFarPlane(const FMatrix& M, FPlane& OutPlane);
@@ -19116,21 +19137,21 @@ public:
     UE_PURE static FRotator Matrix_GetRotator(const FMatrix& M);
     UE_PURE static float Matrix_GetRotDeterminant(const FMatrix& M);
     static void Matrix_GetScaledAxes(const FMatrix& M, FVector& X, FVector& Y, FVector& Z);
-    UE_PURE static FVector Matrix_GetScaledAxis(const FMatrix& M, EAxis Axis);
+    UE_PURE static FVector Matrix_GetScaledAxis(const FMatrix& M, TEnum<EAxis> Axis);
     UE_PURE static FVector Matrix_GetScaleVector(const FMatrix& M, float Tolerance);
     UE_PURE static FMatrix Matrix_GetTransposeAdjoint(const FMatrix& M);
     UE_PURE static FMatrix Matrix_GetTransposed(const FMatrix& M);
     static void Matrix_GetUnitAxes(const FMatrix& M, FVector& X, FVector& Y, FVector& Z);
-    UE_PURE static FVector Matrix_GetUnitAxis(const FMatrix& M, EAxis Axis);
+    UE_PURE static FVector Matrix_GetUnitAxis(const FMatrix& M, TEnum<EAxis> Axis);
     UE_PURE static FMatrix Matrix_Identity();
     UE_PURE static FVector Matrix_InverseTransformPosition(const FMatrix& M, FVector V);
     UE_PURE static FVector Matrix_InverseTransformVector(const FMatrix& M, FVector V);
-    UE_PURE static FMatrix Matrix_Mirror(const FMatrix& M, EAxis MirrorAxis, EAxis FlipAxis);
+    UE_PURE static FMatrix Matrix_Mirror(const FMatrix& M, TEnum<EAxis> MirrorAxis, TEnum<EAxis> FlipAxis);
     static void Matrix_RemoveScaling(FMatrix& M, float Tolerance);
     UE_PURE static FMatrix Matrix_RemoveTranslation(const FMatrix& M);
     UE_PURE static FMatrix Matrix_ScaleTranslation(const FMatrix& M, FVector Scale3D);
-    static void Matrix_SetAxis(FMatrix& M, EAxis Axis, FVector AxisVector);
-    static void Matrix_SetColumn(FMatrix& M, EMatrixColumns Column, FVector Value);
+    static void Matrix_SetAxis(FMatrix& M, TEnum<EAxis> Axis, FVector AxisVector);
+    static void Matrix_SetColumn(FMatrix& M, TEnum<EMatrixColumns> Column, FVector Value);
     static void Matrix_SetOrigin(FMatrix& M, FVector NewOrigin);
     UE_PURE static FQuat Matrix_ToQuat(const FMatrix& M);
     UE_PURE static FVector4 Matrix_TransformPosition(const FMatrix& M, FVector V);
@@ -19276,7 +19297,7 @@ public:
     static FVector RandomUnitVectorInEllipticalConeInDegreesFromStream(const FVector& ConeDir, float MaxYawInDegrees, float MaxPitchInDegrees, const FRandomStream& Stream);
     static FVector RandomUnitVectorInEllipticalConeInRadians(FVector ConeDir, float MaxYawInRadians, float MaxPitchInRadians);
     static FVector RandomUnitVectorInEllipticalConeInRadiansFromStream(const FVector& ConeDir, float MaxYawInRadians, float MaxPitchInRadians, const FRandomStream& Stream);
-    UE_PURE static FRotator REase(FRotator A, FRotator B, float alpha, bool bShortestPath, EEasingFunc EasingFunc, float BlendExp, int Steps);
+    UE_PURE static FRotator REase(FRotator A, FRotator B, float alpha, bool bShortestPath, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps);
     static void ResetFloatSpringState(FFloatSpringState& SpringState);
     static void ResetRandomStream(const FRandomStream& Stream);
     static void ResetVectorSpringState(FVectorSpringState& SpringState);
@@ -19328,14 +19349,14 @@ public:
     UE_PURE static FVector Subtract_VectorInt(FVector A, int B);
     UE_PURE static FVector Subtract_VectorVector(FVector A, FVector B);
     UE_PURE static float Tan(float A);
-    UE_PURE static FTransform TEase(const FTransform& A, const FTransform& B, float alpha, EEasingFunc EasingFunc, float BlendExp, int Steps);
+    UE_PURE static FTransform TEase(const FTransform& A, const FTransform& B, float alpha, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps);
     static bool TimespanFromString(FString TimespanString, FTimespan& Result);
     UE_PURE static FTimespan TimespanMaxValue();
     UE_PURE static FTimespan TimespanMinValue();
     UE_PURE static float TimespanRatio(FTimespan A, FTimespan B);
     UE_PURE static FTimespan TimespanZeroValue();
     UE_PURE static FTransform TInterpTo(const FTransform& Current, const FTransform& Target, float DeltaTime, float InterpSpeed);
-    UE_PURE static FTransform TLerp(const FTransform& A, const FTransform& B, float alpha, ELerpInterpolationMode InterpMode);
+    UE_PURE static FTransform TLerp(const FTransform& A, const FTransform& B, float alpha, TEnum<ELerpInterpolationMode> InterpMode);
     static FDateTime Today();
     static void ToDirectionAndLength2D(FVector2D A, FVector2D& OutDir, float& OutLength);
     UE_PURE static FVector2D ToRounded2D(FVector2D A);
@@ -19346,7 +19367,7 @@ public:
     UE_PURE static FRotator TransformRotation(const FTransform& T, FRotator Rotation);
     UE_PURE static FVector4 TransformVector4(const FMatrix& Matrix, const FVector4& Vec4);
     static FDateTime UtcNow();
-    UE_PURE static FVector VEase(FVector A, FVector B, float alpha, EEasingFunc EasingFunc, float BlendExp, int Steps);
+    UE_PURE static FVector VEase(FVector A, FVector B, float alpha, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps);
     UE_PURE static FVector2D Vector2D_One();
     UE_PURE static FVector2D Vector2D_Unit45Deg();
     UE_PURE static FVector2D Vector2D_Zero();
@@ -19496,13 +19517,13 @@ class UCameraShakeSourceComponent : public USceneComponent
 {
 public:
     UE_CLASS("/Script/Engine", "CameraShakeSourceComponent");
-    ECameraShakeAttenuation Attenuation;
+    TEnum<ECameraShakeAttenuation> Attenuation;
     float InnerAttenuationRadius;
     float OuterAttenuationRadius;
     TSubclassOf<class UCameraShakeBase> CameraShake;
     bool bAutoStart;
     void Start();
-    void StartCameraShake(TSubclassOf<class UCameraShakeBase> InCameraShake, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot);
+    void StartCameraShake(TSubclassOf<class UCameraShakeBase> InCameraShake, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     void StopAllCameraShakes(bool bImmediately);
     void StopAllCameraShakesOfType(TSubclassOf<class UCameraShakeBase> InCameraShake, bool bImmediately);
     UE_PURE float GetAttenuationFactor(const FVector& Location) const;
@@ -19551,7 +19572,7 @@ public:
     float PlayRate;
     class UInterpTrackMove* MoveTrack;
     class UInterpTrackInstMove* MoveInst;
-    ECameraShakePlaySpace PlaySpace;
+    TEnum<ECameraShakePlaySpace> PlaySpace;
     static constexpr const char* InterpGroupInst__UeSubobject = "InterpGroupInst0 /Script/Engine.InterpGroupInst";
     void SetDuration(float NewDuration);
     void SetScale(float NewDuration);
@@ -19590,7 +19611,7 @@ public:
     void K2_DrawMaterialTriangle(class UMaterialInterface* RenderMaterial, TArray<FCanvasUVTri> Triangles);
     void K2_DrawPolygon(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D Radius, int NumberOfSides, FLinearColor RenderColor);
     void K2_DrawText(class UFont* RenderFont, FString RenderText, FVector2D ScreenPosition, FVector2D Scale, FLinearColor RenderColor, float Kerning, FLinearColor ShadowColor, FVector2D ShadowOffset, bool bCentreX, bool bCentreY, bool bOutlined, FLinearColor OutlineColor);
-    void K2_DrawTexture(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, EBlendMode BlendMode, float Rotation, FVector2D PivotPoint);
+    void K2_DrawTexture(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, TEnum<EBlendMode> BlendMode, float Rotation, FVector2D PivotPoint);
     void K2_DrawTriangle(class UTexture* RenderTexture, TArray<FCanvasUVTri> Triangles);
     FVector K2_Project(FVector WorldLocation);
     FVector2D K2_StrLen(class UFont* RenderFont, FString RenderText);
@@ -19634,17 +19655,17 @@ public:
     int SizeX;
     int SizeY;
     FLinearColor ClearColor;
-    ETextureAddress AddressX;
-    ETextureAddress AddressY;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
     bool bForceLinearGamma;
     bool bHDR;
     bool bGPUSharedFlag;
-    ETextureRenderTargetFormat RenderTargetFormat;
+    TEnum<ETextureRenderTargetFormat> RenderTargetFormat;
     bool bAutoGenerateMips;
-    ETextureFilter MipsSamplerFilter;
-    ETextureAddress MipsAddressU;
-    ETextureAddress MipsAddressV;
-    EPixelFormat OverrideFormat;
+    TEnum<ETextureFilter> MipsSamplerFilter;
+    TEnum<ETextureAddress> MipsAddressU;
+    TEnum<ETextureAddress> MipsAddressV;
+    TEnum<EPixelFormat> OverrideFormat;
 };
 
 class UCanvasRenderTarget2D : public UTextureRenderTarget2D
@@ -19675,7 +19696,7 @@ public:
     void SetRadius(float InNewRadius);
     void SetSpeed(float InNewSpeed);
     void SetStrength(float InNewStrength);
-    void SetWindType(EWindSourceType InNewType);
+    void SetWindType(TEnum<EWindSourceType> InNewType);
 };
 
 class UCheatManagerExtension : public UObject
@@ -19727,7 +19748,7 @@ public:
     UE_CLASS("/Script/Engine", "TextureRenderTargetCube");
     int SizeX;
     FLinearColor ClearColor;
-    EPixelFormat OverrideFormat;
+    TEnum<EPixelFormat> OverrideFormat;
     bool bHDR;
     bool bForceLinearGamma;
 };
@@ -19945,7 +19966,7 @@ class USoundSourceBus : public USoundWave
 {
 public:
     UE_CLASS("/Script/Engine", "SoundSourceBus");
-    ESourceBusChannels SourceBusChannels;
+    TEnum<ESourceBusChannels> SourceBusChannels;
     float SourceBusDuration;
     class UAudioBus* AudioBus;
     bool bAutoDeactivateWhenSilent;
@@ -20020,6 +20041,7 @@ class ADebugCameraHUD : public AHUD
 {
 public:
     UE_CLASS("/Script/Engine", "DebugCameraHUD");
+    static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
 };
 
 class UDebugDrawService : public UBlueprintFunctionLibrary
@@ -20305,7 +20327,7 @@ public:
     FExpressionInput Input;
     FExpressionInput Min;
     FExpressionInput Max;
-    EClampMode ClampMode;
+    TEnum<EClampMode> ClampMode;
     float MinDefault;
     float MaxDefault;
 };
@@ -20337,9 +20359,9 @@ class UTexture2DArray : public UTexture
 {
 public:
     UE_CLASS("/Script/Engine", "Texture2DArray");
-    ETextureAddress AddressX;
-    ETextureAddress AddressY;
-    ETextureAddress AddressZ;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
+    TEnum<ETextureAddress> AddressZ;
 };
 
 class UDistributionFloatConstantCurve : public UDistributionFloat
@@ -20358,7 +20380,7 @@ public:
     float MaxInput;
     float MinOutput;
     float MaxOutput;
-    EDistributionParamMode ParamMode;
+    TEnum<EDistributionParamMode> ParamMode;
 };
 
 class UMaterialExpressionComment : public UMaterialExpression
@@ -20396,7 +20418,7 @@ public:
     UE_PURE static FString GetCurrentLanguage();
     UE_PURE static FString GetCurrentLocale();
     UE_PURE static TArray<FString> GetLocalizedCultures(bool IncludeGame, bool IncludeEngine, bool IncludeEditor, bool IncludeAdditional);
-    UE_PURE static FString GetNativeCulture(ELocalizedTextSourceCategory TextCategory);
+    UE_PURE static FString GetNativeCulture(TEnum<ELocalizedTextSourceCategory> TextCategory);
     UE_PURE static FString GetSuitableCulture(const TArray<FString>& AvailableCultures, FString CultureToMatch, FString FallbackCulture);
     static bool SetCurrentAssetGroupCulture(FName AssetGroup, FString Culture, bool SaveToConfig);
     static bool SetCurrentCulture(FString Culture, bool SaveToConfig);
@@ -20417,7 +20439,7 @@ class UInterpTrackMoveAxis : public UInterpTrackFloatBase
 {
 public:
     UE_CLASS("/Script/Engine", "InterpTrackMoveAxis");
-    EInterpMoveAxis MoveAxis;
+    TEnum<EInterpMoveAxis> MoveAxis;
     FInterpLookupTrack LookupTrack;
 };
 
@@ -20427,7 +20449,7 @@ public:
     UE_CLASS("/Script/Engine", "DistributionVectorConstantCurve");
     FInterpCurveVector ConstantCurve;
     bool bLockAxes;
-    EDistributionVectorLockFlags LockedAxes;
+    TEnum<EDistributionVectorLockFlags> LockedAxes;
 };
 
 class UDistributionVectorParticleParameter : public UDistributionVectorParameterBase
@@ -20499,7 +20521,7 @@ public:
     FVector Max;
     FVector Min;
     bool bLockAxes;
-    EDistributionVectorLockFlags LockedAxes;
+    TEnum<EDistributionVectorLockFlags> LockedAxes;
     bool bUseExtremes;
 };
 
@@ -20507,12 +20529,12 @@ class UKismetTextLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Engine", "KismetTextLibrary");
-    UE_PURE static FText AsCurrency_Float(float Value, ERoundingMode RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits, FString CurrencyCode);
-    UE_PURE static FText AsCurrency_Integer(int Value, ERoundingMode RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits, FString CurrencyCode);
+    UE_PURE static FText AsCurrency_Float(float Value, TEnum<ERoundingMode> RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits, FString CurrencyCode);
+    UE_PURE static FText AsCurrency_Integer(int Value, TEnum<ERoundingMode> RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits, FString CurrencyCode);
     UE_PURE static FText AsCurrencyBase(int BaseValue, FString CurrencyCode);
     UE_PURE static FText AsDate_DateTime(const FDateTime& InDateTime);
     UE_PURE static FText AsDateTime_DateTime(const FDateTime& In);
-    UE_PURE static FText AsPercent_Float(float Value, ERoundingMode RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits);
+    UE_PURE static FText AsPercent_Float(float Value, TEnum<ERoundingMode> RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits);
     UE_PURE static FText AsTime_DateTime(const FDateTime& In);
     UE_PURE static FText AsTimespan_Timespan(const FTimespan& InTimespan);
     UE_PURE static FText AsTimeZoneDate_DateTime(const FDateTime& InDateTime, FString InTimeZone);
@@ -20521,7 +20543,7 @@ public:
     UE_PURE static FText Conv_BoolToText(bool InBool);
     UE_PURE static FText Conv_ByteToText(uint8 Value);
     UE_PURE static FText Conv_ColorToText(FLinearColor InColor);
-    UE_PURE static FText Conv_FloatToText(float Value, ERoundingMode RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits);
+    UE_PURE static FText Conv_FloatToText(float Value, TEnum<ERoundingMode> RoundingMode, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits, int MinimumFractionalDigits, int MaximumFractionalDigits);
     UE_PURE static FText Conv_Int64ToText(int64 Value, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits);
     UE_PURE static FText Conv_IntToText(int Value, bool bAlwaysSign, bool bUseGrouping, int MinimumIntegralDigits, int MaximumIntegralDigits);
     UE_PURE static FText Conv_NameToText(FName InName);
@@ -20609,11 +20631,11 @@ public:
     FExpressionInput WorldPosition;
     FExpressionInput MipValue;
     class URuntimeVirtualTexture* VirtualTexture;
-    ERuntimeVirtualTextureMaterialType MaterialType;
+    TEnum<ERuntimeVirtualTextureMaterialType> MaterialType;
     bool bSinglePhysicalSpace;
     bool bAdaptive;
-    ERuntimeVirtualTextureMipValueMode MipValueMode;
-    ERuntimeVirtualTextureTextureAddressMode TextureAddressMode;
+    TEnum<ERuntimeVirtualTextureMipValueMode> MipValueMode;
+    TEnum<ERuntimeVirtualTextureTextureAddressMode> TextureAddressMode;
 };
 
 class UMaterialExpressionRuntimeVirtualTextureSampleParameter : public UMaterialExpressionRuntimeVirtualTextureSample
@@ -20650,8 +20672,8 @@ public:
     int NodePosY;
     int NodeWidth;
     int NodeHeight;
-    ENodeAdvancedPins AdvancedPinDisplay;
-    ENodeEnabledState EnabledState;
+    TEnum<ENodeAdvancedPins> AdvancedPinDisplay;
+    TEnum<ENodeEnabledState> EnabledState;
     bool bDisplayAsDisabled;
     bool bUserSetEnabledState;
     bool bIsNodeEnabled;
@@ -20734,7 +20756,7 @@ public:
     UE_CLASS("/Script/Engine", "EdGraphPin_Deprecated");
     FString PinName;
     FString PinToolTip;
-    EEdGraphPinDirection Direction;
+    TEnum<EEdGraphPinDirection> Direction;
     FEdGraphPinType PinType;
     FString DefaultValue;
     FString AutogeneratedDefaultValue;
@@ -20769,12 +20791,12 @@ public:
     static void ClearRenderTarget2D(class UTextureRenderTarget2D* TextureRenderTarget, FLinearColor ClearColor);
     static void ConvertRenderTargetToTexture2DEditorOnly(class UObject* WorldContextObject, class UTextureRenderTarget2D* RenderTarget, class UTexture2D* Texture);
     static void ConvertRenderTargetToTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, class UTexture2D* Texture);
-    static class UTextureRenderTarget2D* CreateRenderTarget2D(class UObject* WorldContextObject, int Width, int Height, ETextureRenderTargetFormat Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTarget2D* CreateRenderTarget2D(int Width, int Height, ETextureRenderTargetFormat Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(class UObject* WorldContextObject, int Width, int Height, int Slices, ETextureRenderTargetFormat Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(int Width, int Height, int Slices, ETextureRenderTargetFormat Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(class UObject* WorldContextObject, int Width, int Height, int Depth, ETextureRenderTargetFormat Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(int Width, int Height, int Depth, ETextureRenderTargetFormat Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2D* CreateRenderTarget2D(class UObject* WorldContextObject, int Width, int Height, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2D* CreateRenderTarget2D(int Width, int Height, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(class UObject* WorldContextObject, int Width, int Height, int Slices, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(int Width, int Height, int Slices, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(class UObject* WorldContextObject, int Width, int Height, int Depth, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(int Width, int Height, int Depth, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
     static void DrawMaterialToRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, class UMaterialInterface* Material);
     static void DrawMaterialToRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, class UMaterialInterface* Material);
     static void EndDrawCanvasToRenderTarget(class UObject* WorldContextObject, const FDrawToRenderTargetContext& Context);
@@ -20797,7 +20819,7 @@ public:
     static FColor ReadRenderTargetUV(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
     static FColor ReadRenderTargetUV(class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
     static void ReleaseRenderTarget2D(class UTextureRenderTarget2D* TextureRenderTarget);
-    static class UTexture2D* RenderTargetCreateStaticTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, FString Name_0, ETextureCompressionSettings CompressionSettings, ETextureMipGenSettings MipSettings);
+    static class UTexture2D* RenderTargetCreateStaticTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, FString Name_0, TEnum<ETextureCompressionSettings> CompressionSettings, TEnum<ETextureMipGenSettings> MipSettings);
     static void SetCastInsetShadowForAllAttachments(class UPrimitiveComponent* PrimitiveComponent, bool bCastInsetShadow, bool bLightAttachmentsAsGroup);
 };
 
@@ -20975,7 +20997,7 @@ class UFont : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "Font");
-    EFontCacheType FontCacheType;
+    TEnum<EFontCacheType> FontCacheType;
     TArray<FFontCharacter> Characters;
     TArray<class UTexture2D*> Textures;
     int IsRemapped;
@@ -21014,9 +21036,9 @@ class UFontFace : public UObject
 public:
     UE_CLASS("/Script/Engine", "FontFace");
     FString SourceFilename;
-    EFontHinting Hinting;
-    EFontLoadingPolicy LoadingPolicy;
-    EFontLayoutMethod LayoutMethod;
+    TEnum<EFontHinting> Hinting;
+    TEnum<EFontLoadingPolicy> LoadingPolicy;
+    TEnum<EFontLayoutMethod> LayoutMethod;
 };
 
 class ULocalPlayerSubsystem : public USubsystem
@@ -21169,27 +21191,27 @@ public:
     static void AnnounceAccessibleString(FString AnnouncementString);
     UE_AUTHORITY_ONLY static float ApplyDamage(class AActor* DamagedActor, float BaseDamage, class AController* EventInstigator, class AActor* DamageCauser, TSubclassOf<class UDamageType> DamageTypeClass);
     UE_AUTHORITY_ONLY static float ApplyPointDamage(class AActor* DamagedActor, float BaseDamage, const FVector& HitFromDirection, const FHitResult& HitInfo, class AController* EventInstigator, class AActor* DamageCauser, TSubclassOf<class UDamageType> DamageTypeClass);
-    UE_AUTHORITY_ONLY static bool ApplyRadialDamage(class UObject* WorldContextObject, float BaseDamage, const FVector& Origin, float DamageRadius, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, bool bDoFullDamage, ECollisionChannel DamagePreventionChannel);
-    UE_AUTHORITY_ONLY static bool ApplyRadialDamage(float BaseDamage, const FVector& Origin, float DamageRadius, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, bool bDoFullDamage, ECollisionChannel DamagePreventionChannel);
-    UE_AUTHORITY_ONLY static bool ApplyRadialDamageWithFalloff(class UObject* WorldContextObject, float BaseDamage, float MinimumDamage, const FVector& Origin, float DamageInnerRadius, float DamageOuterRadius, float DamageFalloff, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, ECollisionChannel DamagePreventionChannel);
-    UE_AUTHORITY_ONLY static bool ApplyRadialDamageWithFalloff(float BaseDamage, float MinimumDamage, const FVector& Origin, float DamageInnerRadius, float DamageOuterRadius, float DamageFalloff, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, ECollisionChannel DamagePreventionChannel);
+    UE_AUTHORITY_ONLY static bool ApplyRadialDamage(class UObject* WorldContextObject, float BaseDamage, const FVector& Origin, float DamageRadius, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, bool bDoFullDamage, TEnum<ECollisionChannel> DamagePreventionChannel);
+    UE_AUTHORITY_ONLY static bool ApplyRadialDamage(float BaseDamage, const FVector& Origin, float DamageRadius, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, bool bDoFullDamage, TEnum<ECollisionChannel> DamagePreventionChannel);
+    UE_AUTHORITY_ONLY static bool ApplyRadialDamageWithFalloff(class UObject* WorldContextObject, float BaseDamage, float MinimumDamage, const FVector& Origin, float DamageInnerRadius, float DamageOuterRadius, float DamageFalloff, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, TEnum<ECollisionChannel> DamagePreventionChannel);
+    UE_AUTHORITY_ONLY static bool ApplyRadialDamageWithFalloff(float BaseDamage, float MinimumDamage, const FVector& Origin, float DamageInnerRadius, float DamageOuterRadius, float DamageFalloff, TSubclassOf<class UDamageType> DamageTypeClass, const TArray<class AActor*>& IgnoreActors, class AActor* DamageCauser, class AController* InstigatedByController, TEnum<ECollisionChannel> DamagePreventionChannel);
     static bool AreAnyListenersWithinRange(class UObject* WorldContextObject, const FVector& Location, float MaximumRange);
     static bool AreAnyListenersWithinRange(const FVector& Location, float MaximumRange);
     UE_PURE static bool AreSubtitlesEnabled();
-    static class AActor* BeginDeferredActorSpawnFromClass(class UObject* WorldContextObject, TSubclassOf<class AActor> actorClass, const FTransform& SpawnTransform, ESpawnActorCollisionHandlingMethod CollisionHandlingOverride, class AActor* Owner);
-    static class AActor* BeginDeferredActorSpawnFromClass(TSubclassOf<class AActor> actorClass, const FTransform& SpawnTransform, ESpawnActorCollisionHandlingMethod CollisionHandlingOverride, class AActor* Owner);
+    static class AActor* BeginDeferredActorSpawnFromClass(class UObject* WorldContextObject, TSubclassOf<class AActor> actorClass, const FTransform& SpawnTransform, TEnum<ESpawnActorCollisionHandlingMethod> CollisionHandlingOverride, class AActor* Owner);
+    static class AActor* BeginDeferredActorSpawnFromClass(TSubclassOf<class AActor> actorClass, const FTransform& SpawnTransform, TEnum<ESpawnActorCollisionHandlingMethod> CollisionHandlingOverride, class AActor* Owner);
     static class AActor* BeginSpawningActorFromBlueprint(class UObject* WorldContextObject, class UBlueprint* Blueprint, const FTransform& SpawnTransform, bool bNoCollisionFail);
     static class AActor* BeginSpawningActorFromBlueprint(class UBlueprint* Blueprint, const FTransform& SpawnTransform, bool bNoCollisionFail);
     static class AActor* BeginSpawningActorFromClass(class UObject* WorldContextObject, TSubclassOf<class AActor> actorClass, const FTransform& SpawnTransform, bool bNoCollisionFail, class AActor* Owner);
     static class AActor* BeginSpawningActorFromClass(TSubclassOf<class AActor> actorClass, const FTransform& SpawnTransform, bool bNoCollisionFail, class AActor* Owner);
     static bool Blueprint_PredictProjectilePath_Advanced(class UObject* WorldContextObject, const FPredictProjectilePathParams& PredictParams, FPredictProjectilePathResult& PredictResult);
     static bool Blueprint_PredictProjectilePath_Advanced(const FPredictProjectilePathParams& PredictParams, FPredictProjectilePathResult& PredictResult);
-    static bool Blueprint_PredictProjectilePath_ByObjectType(class UObject* WorldContextObject, FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
-    static bool Blueprint_PredictProjectilePath_ByObjectType(FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
-    static bool Blueprint_PredictProjectilePath_ByTraceChannel(class UObject* WorldContextObject, FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, ECollisionChannel TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
-    static bool Blueprint_PredictProjectilePath_ByTraceChannel(FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, ECollisionChannel TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
-    static bool BlueprintSuggestProjectileVelocity(class UObject* WorldContextObject, FVector& TossVelocity, FVector StartLocation, FVector EndLocation, float LaunchSpeed, float OverrideGravityZ, ESuggestProjVelocityTraceOption TraceOption, float CollisionRadius, bool bFavorHighArc, bool bDrawDebug);
-    static bool BlueprintSuggestProjectileVelocity(FVector& TossVelocity, FVector StartLocation, FVector EndLocation, float LaunchSpeed, float OverrideGravityZ, ESuggestProjVelocityTraceOption TraceOption, float CollisionRadius, bool bFavorHighArc, bool bDrawDebug);
+    static bool Blueprint_PredictProjectilePath_ByObjectType(class UObject* WorldContextObject, FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
+    static bool Blueprint_PredictProjectilePath_ByObjectType(FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
+    static bool Blueprint_PredictProjectilePath_ByTraceChannel(class UObject* WorldContextObject, FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, TEnum<ECollisionChannel> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
+    static bool Blueprint_PredictProjectilePath_ByTraceChannel(FHitResult& OutHit, TArray<FVector>& OutPathPositions, FVector& OutLastTraceDestination, FVector StartPos, FVector LaunchVelocity, bool bTracePath, float ProjectileRadius, TEnum<ECollisionChannel> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, float DrawDebugTime, float SimFrequency, float MaxSimTime, float OverrideGravityZ);
+    static bool BlueprintSuggestProjectileVelocity(class UObject* WorldContextObject, FVector& TossVelocity, FVector StartLocation, FVector EndLocation, float LaunchSpeed, float OverrideGravityZ, TEnum<ESuggestProjVelocityTraceOption> TraceOption, float CollisionRadius, bool bFavorHighArc, bool bDrawDebug);
+    static bool BlueprintSuggestProjectileVelocity(FVector& TossVelocity, FVector StartLocation, FVector EndLocation, float LaunchSpeed, float OverrideGravityZ, TEnum<ESuggestProjVelocityTraceOption> TraceOption, float CollisionRadius, bool bFavorHighArc, bool bDrawDebug);
     static void BreakHitResult(const FHitResult& Hit, bool& bBlockingHit, bool& bInitialOverlap, float& Time, float& Distance, FVector& Location, FVector& ImpactPoint, FVector& Normal, FVector& ImpactNormal, class UPhysicalMaterial*& PhysMat, class AActor*& hitActor, class UPrimitiveComponent*& HitComponent, FName& HitBoneName, int& HitItem, int& ElementIndex, int& FaceIndex, FVector& TraceStart, FVector& TraceEnd);
     static void CancelAsyncLoading();
     static void ClearSoundMixClassOverride(class UObject* WorldContextObject, class USoundMix* InSoundMixModifier, class USoundClass* InSoundClass, float FadeOutTime);
@@ -21264,13 +21286,13 @@ public:
     UE_PURE static float GetRealTimeSeconds();
     UE_PURE static class ULevelStreaming* GetStreamingLevel(class UObject* WorldContextObject, FName PackageName);
     UE_PURE static class ULevelStreaming* GetStreamingLevel(FName PackageName);
-    UE_PURE static EPhysicalSurface GetSurfaceType(const FHitResult& Hit);
+    UE_PURE static TEnum<EPhysicalSurface> GetSurfaceType(const FHitResult& Hit);
     UE_PURE static float GetTimeSeconds(class UObject* WorldContextObject);
     UE_PURE static float GetTimeSeconds();
     UE_PURE static float GetUnpausedTimeSeconds(class UObject* WorldContextObject);
     UE_PURE static float GetUnpausedTimeSeconds();
-    UE_PURE static EMouseCaptureMode GetViewportMouseCaptureMode(class UObject* WorldContextObject);
-    UE_PURE static EMouseCaptureMode GetViewportMouseCaptureMode();
+    UE_PURE static TEnum<EMouseCaptureMode> GetViewportMouseCaptureMode(class UObject* WorldContextObject);
+    UE_PURE static TEnum<EMouseCaptureMode> GetViewportMouseCaptureMode();
     static void GetViewProjectionMatrix(FMinimalViewInfo DesiredView, FMatrix& ViewMatrix, FMatrix& ProjectionMatrix, FMatrix& ViewProjectionMatrix);
     UE_PURE static float GetWorldDeltaSeconds(class UObject* WorldContextObject);
     UE_PURE static float GetWorldDeltaSeconds();
@@ -21344,30 +21366,30 @@ public:
     static void SetSoundMixClassOverride(class UObject* WorldContextObject, class USoundMix* InSoundMixModifier, class USoundClass* InSoundClass, float Volume, float Pitch, float FadeInTime, bool bApplyToChildren);
     static void SetSoundMixClassOverride(class USoundMix* InSoundMixModifier, class USoundClass* InSoundClass, float Volume, float Pitch, float FadeInTime, bool bApplyToChildren);
     static void SetSubtitlesEnabled(bool bEnabled);
-    static void SetViewportMouseCaptureMode(class UObject* WorldContextObject, EMouseCaptureMode MouseCaptureMode);
-    static void SetViewportMouseCaptureMode(EMouseCaptureMode MouseCaptureMode);
+    static void SetViewportMouseCaptureMode(class UObject* WorldContextObject, TEnum<EMouseCaptureMode> MouseCaptureMode);
+    static void SetViewportMouseCaptureMode(TEnum<EMouseCaptureMode> MouseCaptureMode);
     static void SetWorldOriginLocation(class UObject* WorldContextObject, FIntVector NewLocation);
     static void SetWorldOriginLocation(FIntVector NewLocation);
     UE_COSMETIC static class UDecalComponent* SpawnDecalAtLocation(class UObject* WorldContextObject, class UMaterialInterface* DecalMaterial, FVector DecalSize, FVector Location, FRotator Rotation, float LifeSpan);
     UE_COSMETIC static class UDecalComponent* SpawnDecalAtLocation(class UMaterialInterface* DecalMaterial, FVector DecalSize, FVector Location, FRotator Rotation, float LifeSpan);
-    UE_COSMETIC static class UDecalComponent* SpawnDecalAttached(class UMaterialInterface* DecalMaterial, FVector DecalSize, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, float LifeSpan);
+    UE_COSMETIC static class UDecalComponent* SpawnDecalAttached(class UMaterialInterface* DecalMaterial, FVector DecalSize, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, float LifeSpan);
     UE_COSMETIC static class UAudioComponent* SpawnDialogue2D(class UObject* WorldContextObject, class UDialogueWave* Dialogue, const FDialogueContext& Context, float VolumeMultiplier, float PitchMultiplier, float StartTime, bool bAutoDestroy);
     UE_COSMETIC static class UAudioComponent* SpawnDialogue2D(class UDialogueWave* Dialogue, const FDialogueContext& Context, float VolumeMultiplier, float PitchMultiplier, float StartTime, bool bAutoDestroy);
     static class UAudioComponent* SpawnDialogueAtLocation(class UObject* WorldContextObject, class UDialogueWave* Dialogue, const FDialogueContext& Context, FVector Location, FRotator Rotation, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, bool bAutoDestroy);
     static class UAudioComponent* SpawnDialogueAtLocation(class UDialogueWave* Dialogue, const FDialogueContext& Context, FVector Location, FRotator Rotation, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, bool bAutoDestroy);
-    static class UAudioComponent* SpawnDialogueAttached(class UDialogueWave* Dialogue, const FDialogueContext& Context, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, bool bAutoDestroy);
-    static class UParticleSystemComponent* SpawnEmitterAtLocation(class UObject* WorldContextObject, class UParticleSystem* EmitterTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, EPSCPoolMethod PoolingMethod, bool bAutoActivateSystem);
-    static class UParticleSystemComponent* SpawnEmitterAtLocation(class UParticleSystem* EmitterTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, EPSCPoolMethod PoolingMethod, bool bAutoActivateSystem);
-    static class UParticleSystemComponent* SpawnEmitterAttached(class UParticleSystem* EmitterTemplate, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, EAttachLocation LocationType, bool bAutoDestroy, EPSCPoolMethod PoolingMethod, bool bAutoActivate);
+    static class UAudioComponent* SpawnDialogueAttached(class UDialogueWave* Dialogue, const FDialogueContext& Context, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, bool bAutoDestroy);
+    static class UParticleSystemComponent* SpawnEmitterAtLocation(class UObject* WorldContextObject, class UParticleSystem* EmitterTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, TEnum<EPSCPoolMethod> PoolingMethod, bool bAutoActivateSystem);
+    static class UParticleSystemComponent* SpawnEmitterAtLocation(class UParticleSystem* EmitterTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, TEnum<EPSCPoolMethod> PoolingMethod, bool bAutoActivateSystem);
+    static class UParticleSystemComponent* SpawnEmitterAttached(class UParticleSystem* EmitterTemplate, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, TEnum<EAttachLocation> LocationType, bool bAutoDestroy, TEnum<EPSCPoolMethod> PoolingMethod, bool bAutoActivate);
     static class UForceFeedbackComponent* SpawnForceFeedbackAtLocation(class UObject* WorldContextObject, class UForceFeedbackEffect* ForceFeedbackEffect, FVector Location, FRotator Rotation, bool bLooping, float IntensityMultiplier, float StartTime, class UForceFeedbackAttenuation* AttenuationSettings, bool bAutoDestroy);
     static class UForceFeedbackComponent* SpawnForceFeedbackAtLocation(class UForceFeedbackEffect* ForceFeedbackEffect, FVector Location, FRotator Rotation, bool bLooping, float IntensityMultiplier, float StartTime, class UForceFeedbackAttenuation* AttenuationSettings, bool bAutoDestroy);
-    static class UForceFeedbackComponent* SpawnForceFeedbackAttached(class UForceFeedbackEffect* ForceFeedbackEffect, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bStopWhenAttachedToDestroyed, bool bLooping, float IntensityMultiplier, float StartTime, class UForceFeedbackAttenuation* AttenuationSettings, bool bAutoDestroy);
+    static class UForceFeedbackComponent* SpawnForceFeedbackAttached(class UForceFeedbackEffect* ForceFeedbackEffect, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, bool bStopWhenAttachedToDestroyed, bool bLooping, float IntensityMultiplier, float StartTime, class UForceFeedbackAttenuation* AttenuationSettings, bool bAutoDestroy);
     static class UObject* SpawnObject(TSubclassOf<class UObject> objectClass, class UObject* Outer_0);
     UE_COSMETIC static class UAudioComponent* SpawnSound2D(class UObject* WorldContextObject, class USoundBase* Sound, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundConcurrency* ConcurrencySettings, bool bPersistAcrossLevelTransition, bool bAutoDestroy);
     UE_COSMETIC static class UAudioComponent* SpawnSound2D(class USoundBase* Sound, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundConcurrency* ConcurrencySettings, bool bPersistAcrossLevelTransition, bool bAutoDestroy);
     static class UAudioComponent* SpawnSoundAtLocation(class UObject* WorldContextObject, class USoundBase* Sound, FVector Location, FRotator Rotation, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy);
     static class UAudioComponent* SpawnSoundAtLocation(class USoundBase* Sound, FVector Location, FRotator Rotation, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy);
-    static class UAudioComponent* SpawnSoundAttached(class USoundBase* Sound, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy);
+    static class UAudioComponent* SpawnSoundAttached(class USoundBase* Sound, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, class USoundAttenuation* AttenuationSettings, class USoundConcurrency* ConcurrencySettings, bool bAutoDestroy);
     static bool SuggestProjectileVelocity_CustomArc(class UObject* WorldContextObject, FVector& OutLaunchVelocity, FVector StartPos, FVector EndPos, float OverrideGravityZ, float ArcParam);
     static bool SuggestProjectileVelocity_CustomArc(FVector& OutLaunchVelocity, FVector StartPos, FVector EndPos, float OverrideGravityZ, float ArcParam);
     static void UnloadStreamLevel(class UObject* WorldContextObject, FName LevelName, FLatentActionInfo LatentInfo, bool bShouldBlockOnUnload);
@@ -21429,7 +21451,7 @@ public:
     int SizeY;
     int Slices;
     FLinearColor ClearColor;
-    EPixelFormat OverrideFormat;
+    TEnum<EPixelFormat> OverrideFormat;
     bool bHDR;
     bool bForceLinearGamma;
 };
@@ -21539,7 +21561,7 @@ public:
     UE_CLASS("/Script/Engine", "ImportanceSamplingLibrary");
     static void BreakImportanceTexture(const FImportanceTexture& ImportanceTexture, class UTexture2D*& Texture, EImportanceWeight& WeightingFunc);
     static void ImportanceSample(const FImportanceTexture& Texture, const FVector2D& Rand, int Samples, float Intensity, FVector2D& SamplePosition, FLinearColor& SampleColor, float& SampleIntensity, float& SampleSize);
-    UE_PURE static FImportanceTexture MakeImportanceTexture(class UTexture2D* Texture, EImportanceWeight WeightingFunc);
+    UE_PURE static FImportanceTexture MakeImportanceTexture(class UTexture2D* Texture, TEnum<EImportanceWeight> WeightingFunc);
     UE_PURE static FVector2D NextSobolCell2D(int Index_0, int NumCells, FVector2D PreviousValue);
     UE_PURE static FVector NextSobolCell3D(int Index_0, int NumCells, FVector PreviousValue);
     UE_PURE static float NextSobolFloat(int Index_0, int Dimension, float PreviousValue);
@@ -21596,7 +21618,7 @@ public:
     UE_CLASS("/Script/Engine", "InputComponent");
     TArray<FCachedKeyToActionInfo> CachedKeyToActionInfo;
     UE_PURE float GetControllerAnalogKeyState(FKey Key) const;
-    void GetControllerAnalogStickState(EControllerAnalogStick WhichStick, float& StickX, float& StickY) const;
+    void GetControllerAnalogStickState(TEnum<EControllerAnalogStick> WhichStick, float& StickX, float& StickY) const;
     UE_PURE float GetControllerKeyTimeDown(FKey Key) const;
     void GetControllerMouseDelta(float& DeltaX, float& DeltaY) const;
     UE_PURE FVector GetControllerVectorKeyState(FKey Key) const;
@@ -21844,8 +21866,8 @@ public:
     float Duration;
     bool bPauseOnImpact;
     bool bSweep;
-    ETeleportType TeleportType;
-    EInterpToBehaviourType BehaviourType;
+    TEnum<ETeleportType> TeleportType;
+    TEnum<EInterpToBehaviourType> BehaviourType;
     bool bCheckIfStillInWorld;
     bool bForceSubStepping;
     TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnInterpToReverse;
@@ -21978,7 +22000,7 @@ class UMaterialExpressionAntialiasedTextureMask : public UMaterialExpressionText
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionAntialiasedTextureMask");
     float Threshold;
-    ETextureColorChannel Channel;
+    TEnum<ETextureColorChannel> Channel;
 };
 
 class USoundfieldEndpointSubmix : public USoundSubmixBase
@@ -22077,7 +22099,7 @@ public:
     bool bShowTranslationOnCurveEd;
     bool bShowRotationOnCurveEd;
     bool bHide3DTrack;
-    EInterpTrackMoveRotMode RotMode;
+    TEnum<EInterpTrackMoveRotMode> RotMode;
 };
 
 class UInterpTrackParticleReplay : public UInterpTrack
@@ -22150,10 +22172,10 @@ public:
     UE_PURE static bool InputEvent_IsRightShiftDown(const FInputEvent& Input);
     UE_PURE static bool InputEvent_IsShiftDown(const FInputEvent& Input);
     UE_PURE static FText Key_GetDisplayName(const FKey& Key);
-    UE_PURE static EUINavigationAction Key_GetNavigationAction(const FKey& InKey);
-    UE_PURE static EUINavigationAction Key_GetNavigationActionFromKey(const FKeyEvent& InKeyEvent);
-    UE_PURE static EUINavigation Key_GetNavigationDirectionFromAnalog(const FAnalogInputEvent& InAnalogEvent);
-    UE_PURE static EUINavigation Key_GetNavigationDirectionFromKey(const FKeyEvent& InKeyEvent);
+    UE_PURE static TEnum<EUINavigationAction> Key_GetNavigationAction(const FKey& InKey);
+    UE_PURE static TEnum<EUINavigationAction> Key_GetNavigationActionFromKey(const FKeyEvent& InKeyEvent);
+    UE_PURE static TEnum<EUINavigation> Key_GetNavigationDirectionFromAnalog(const FAnalogInputEvent& InAnalogEvent);
+    UE_PURE static TEnum<EUINavigation> Key_GetNavigationDirectionFromKey(const FKeyEvent& InKeyEvent);
     UE_PURE static bool Key_IsAnalog(const FKey& Key);
     UE_PURE static bool Key_IsAxis1D(const FKey& Key);
     UE_PURE static bool Key_IsAxis2D(const FKey& Key);
@@ -22169,7 +22191,7 @@ public:
     UE_PURE static FVector2D PointerEvent_GetCursorDelta(const FPointerEvent& Input);
     UE_PURE static FKey PointerEvent_GetEffectingButton(const FPointerEvent& Input);
     UE_PURE static FVector2D PointerEvent_GetGestureDelta(const FPointerEvent& Input);
-    UE_PURE static ESlateGesture PointerEvent_GetGestureType(const FPointerEvent& Input);
+    UE_PURE static TEnum<ESlateGesture> PointerEvent_GetGestureType(const FPointerEvent& Input);
     UE_PURE static FVector2D PointerEvent_GetLastScreenSpacePosition(const FPointerEvent& Input);
     UE_PURE static int PointerEvent_GetPointerIndex(const FPointerEvent& Input);
     UE_PURE static FVector2D PointerEvent_GetScreenSpacePosition(const FPointerEvent& Input);
@@ -22184,8 +22206,8 @@ class UKismetMaterialLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Engine", "KismetMaterialLibrary");
-    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UObject* WorldContextObject, class UMaterialInterface* Parent, FName OptionalName, EMIDCreationFlags CreationFlags);
-    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UMaterialInterface* Parent, FName OptionalName, EMIDCreationFlags CreationFlags);
+    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UObject* WorldContextObject, class UMaterialInterface* Parent, FName OptionalName, TEnum<EMIDCreationFlags> CreationFlags);
+    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UMaterialInterface* Parent, FName OptionalName, TEnum<EMIDCreationFlags> CreationFlags);
     static float GetScalarParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName);
     static float GetScalarParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName);
     static FLinearColor GetVectorParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName);
@@ -22253,7 +22275,7 @@ public:
     UE_PURE static FString Conv_Vector2dToString(FVector2D InVec);
     UE_PURE static FString Conv_VectorToString(FVector InVec);
     static int CullArray(FString SourceString, TArray<FString>& inArray);
-    UE_PURE static bool EndsWith(FString SourceString, FString InSuffix, ESearchCase SearchCase);
+    UE_PURE static bool EndsWith(FString SourceString, FString InSuffix, TEnum<ESearchCase> SearchCase);
     UE_PURE static bool EqualEqual_StriStri(FString A, FString B);
     UE_PURE static bool EqualEqual_StrStr(FString A, FString B);
     UE_PURE static int FindSubstring(FString SearchIn, FString Substring, bool bUseCase, bool bSearchFromEnd, int StartPosition);
@@ -22267,19 +22289,19 @@ public:
     UE_PURE static FString LeftChop(FString SourceString, int Count);
     UE_PURE static FString LeftPad(FString SourceString, int ChCount);
     UE_PURE static int Len(FString S);
-    UE_PURE static bool MatchesWildcard(FString SourceString, FString Wildcard, ESearchCase SearchCase);
+    UE_PURE static bool MatchesWildcard(FString SourceString, FString Wildcard, TEnum<ESearchCase> SearchCase);
     UE_PURE static FString Mid(FString SourceString, int Start, int Count);
     UE_PURE static bool NotEqual_StriStri(FString A, FString B);
     UE_PURE static bool NotEqual_StrStr(FString A, FString B);
     UE_PURE static TArray<FString> ParseIntoArray(FString SourceString, FString Delimiter, bool CullEmptyStrings);
-    UE_PURE static FString Replace(FString SourceString, FString from, FString to, ESearchCase SearchCase);
-    static int ReplaceInline(FString& SourceString, FString SearchText, FString ReplacementText, ESearchCase SearchCase);
+    UE_PURE static FString Replace(FString SourceString, FString from, FString to, TEnum<ESearchCase> SearchCase);
+    static int ReplaceInline(FString& SourceString, FString SearchText, FString ReplacementText, TEnum<ESearchCase> SearchCase);
     UE_PURE static FString Reverse(FString SourceString);
     UE_PURE static FString Right(FString SourceString, int Count);
     UE_PURE static FString RightChop(FString SourceString, int Count);
     UE_PURE static FString RightPad(FString SourceString, int ChCount);
-    static bool Split(FString SourceString, FString InStr, FString& LeftS, FString& RightS, ESearchCase SearchCase, ESearchDir SearchDir);
-    UE_PURE static bool StartsWith(FString SourceString, FString InPrefix, ESearchCase SearchCase);
+    static bool Split(FString SourceString, FString InStr, FString& LeftS, FString& RightS, TEnum<ESearchCase> SearchCase, TEnum<ESearchDir> SearchDir);
+    UE_PURE static bool StartsWith(FString SourceString, FString InPrefix, TEnum<ESearchCase> SearchCase);
     UE_PURE static FString TimeSecondsToString(float InSeconds);
     UE_PURE static FString ToLower(FString SourceString);
     UE_PURE static FString ToUpper(FString SourceString);
@@ -22297,18 +22319,18 @@ public:
     static bool BoxOverlapActors(FVector BoxPos, FVector BoxExtent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
     static bool BoxOverlapComponents(class UObject* WorldContextObject, FVector BoxPos, FVector Extent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
     static bool BoxOverlapComponents(FVector BoxPos, FVector Extent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool BoxTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMulti(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingle(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMulti(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingle(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
     static void BreakSoftClassPath(FSoftClassPath InSoftClassPath, FString& PathString);
     static void BreakSoftObjectPath(FSoftObjectPath InSoftObjectPath, FString& PathString);
     static void CancelTransaction(int Index_0);
@@ -22317,18 +22339,18 @@ public:
     static bool CapsuleOverlapActors(FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
     static bool CapsuleOverlapComponents(class UObject* WorldContextObject, FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
     static bool CapsuleOverlapComponents(FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool CapsuleTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMulti(FVector Start, FVector End, float Radius, float HalfHeight, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingle(FVector Start, FVector End, float Radius, float HalfHeight, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMulti(FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingle(FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
     static void CollectGarbage();
     static bool ComponentOverlapActors(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
     static bool ComponentOverlapComponents(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
@@ -22510,18 +22532,18 @@ public:
     static void K2_UnPauseTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
     static void K2_UnPauseTimerHandle(FTimerHandle Handle);
     static void LaunchURL(FString URL);
-    static bool LineTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMulti(FVector Start, FVector End, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingle(FVector Start, FVector End, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMulti(FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingle(FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
     static void LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
     static void LoadAsset(TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
     static void LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded);
@@ -22546,8 +22568,8 @@ public:
     UE_PURE static FText MakeLiteralText(FText Value);
     UE_PURE static FSoftClassPath MakeSoftClassPath(FString PathString);
     static FSoftObjectPath MakeSoftObjectPath(FString PathString);
-    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, EMoveComponentAction MoveAction, FLatentActionInfo LatentInfo);
-    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, EMoveComponentAction MoveAction);
+    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnum<EMoveComponentAction> MoveAction, FLatentActionInfo LatentInfo);
+    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnum<EMoveComponentAction> MoveAction);
     UE_PURE static FString NormalizeFilename(FString InFilename);
     UE_PURE static bool NotEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
     UE_PURE static bool NotEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
@@ -22561,8 +22583,8 @@ public:
     static void PrintText(class UObject* WorldContextObject, FText InText, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
     static void PrintText(FText InText, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
     static void PrintWarning(FString inString);
-    static void QuitGame(class UObject* WorldContextObject, class APlayerController* SpecificPlayer, EQuitPreference QuitPreference, bool bIgnorePlatformRestrictions);
-    static void QuitGame(class APlayerController* SpecificPlayer, EQuitPreference QuitPreference, bool bIgnorePlatformRestrictions);
+    static void QuitGame(class UObject* WorldContextObject, class APlayerController* SpecificPlayer, TEnum<EQuitPreference> QuitPreference, bool bIgnorePlatformRestrictions);
+    static void QuitGame(class APlayerController* SpecificPlayer, TEnum<EQuitPreference> QuitPreference, bool bIgnorePlatformRestrictions);
     static void RegisterForRemoteNotifications();
     static void ResetGamepadAssignments();
     static void ResetGamepadAssignmentToController(int ControllerId);
@@ -22605,18 +22627,18 @@ public:
     static bool SphereOverlapActors(FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
     static bool SphereOverlapComponents(class UObject* WorldContextObject, FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
     static bool SphereOverlapComponents(FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool SphereTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMulti(FVector Start, FVector End, float Radius, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingle(FVector Start, FVector End, float Radius, ETraceTypeQuery TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, EDrawDebugTrace DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMulti(FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingle(FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
     static void StackTrace();
     static void TransactObject(class UObject* Object);
     static void UnloadPrimaryAsset(FPrimaryAssetId PrimaryAssetId);
@@ -22652,7 +22674,7 @@ public:
     TArray<FName> StreamingLevelNames;
     bool bEditorPreVisOnly;
     bool bDisabled;
-    EStreamingVolumeUsage StreamingUsage;
+    TEnum<EStreamingVolumeUsage> StreamingUsage;
     static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
 };
@@ -22675,7 +22697,7 @@ class ULocalPlayer : public UPlayer
 public:
     UE_CLASS("/Script/Engine", "LocalPlayer");
     class UGameViewportClient* ViewportClient;
-    EAspectRatioAxisConstraint AspectRatioAxisConstraint;
+    TEnum<EAspectRatioAxisConstraint> AspectRatioAxisConstraint;
     TSubclassOf<class APlayerController> PendingLevelPlayerControllerClass;
     bool bSentSplitJoin;
     int ControllerId;
@@ -22715,11 +22737,11 @@ public:
     FVectorMaterialInput Normal;
     FVectorMaterialInput Tangent;
     FColorMaterialInput EmissiveColor;
-    EMaterialDomain MaterialDomain;
-    EBlendMode BlendMode;
-    EDecalBlendMode DecalBlendMode;
-    EMaterialDecalResponse MaterialDecalResponse;
-    EMaterialShadingModel ShadingModel;
+    TEnum<EMaterialDomain> MaterialDomain;
+    TEnum<EBlendMode> BlendMode;
+    TEnum<EDecalBlendMode> DecalBlendMode;
+    TEnum<EMaterialDecalResponse> MaterialDecalResponse;
+    TEnum<EMaterialShadingModel> ShadingModel;
     bool bCastDynamicShadowAsMasked;
     FMaterialShadingModelField ShadingModels;
     float OpacityMaskClipValue;
@@ -22736,7 +22758,7 @@ public:
     bool DitheredLODTransition;
     bool DitherOpacityMask;
     bool bAllowNegativeEmissiveColor;
-    ETranslucencyLightingMode TranslucencyLightingMode;
+    TEnum<ETranslucencyLightingMode> TranslucencyLightingMode;
     bool bEnableMobileSeparateTranslucency;
     int NumCustomizedUVs;
     float TranslucencyDirectionalLightingIntensity;
@@ -22785,13 +22807,13 @@ public:
     bool bForwardBlendsSkyLightCubemaps;
     bool bUsePlanarForwardReflections;
     bool bNormalCurvatureToRoughness;
-    EMaterialTessellationMode D3D11TessellationMode;
+    TEnum<EMaterialTessellationMode> D3D11TessellationMode;
     bool bEnableCrackFreeDisplacement;
     bool bEnableAdaptiveTessellation;
     bool AllowTranslucentCustomDepthWrites;
     bool Wireframe;
     bool WriteDepthToTranslucentMaterial;
-    EMaterialShadingRate ShadingRate;
+    TEnum<EMaterialShadingRate> ShadingRate;
     bool bCanMaskedBeAssumedOpaque;
     bool bIsMasked;
     bool bIsPreviewMaterial;
@@ -22805,12 +22827,12 @@ public:
     bool bOutputTranslucentVelocity;
     bool bAllowDevelopmentShaderCompile;
     bool bIsMaterialEditorStatsMaterial;
-    EBlendableLocation BlendableLocation;
+    TEnum<EBlendableLocation> BlendableLocation;
     bool BlendableOutputAlpha;
     bool bEnableStencilTest;
-    EMaterialStencilCompare StencilCompare;
+    TEnum<EMaterialStencilCompare> StencilCompare;
     uint8 StencilRefValue;
-    ERefractionMode RefractionMode;
+    TEnum<ERefractionMode> RefractionMode;
     int BlendablePriority;
     bool bIsBlendable;
     uint32 UsageFlagWarnings;
@@ -22882,7 +22904,7 @@ class UMaterialExpressionChannelMaskParameter : public UMaterialExpressionVector
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionChannelMaskParameter");
-    EChannelMaskParameterColor MaskChannel;
+    TEnum<EChannelMaskParameterColor> MaskChannel;
 };
 
 class UMaterialExpressionCollectionParameter : public UMaterialExpression
@@ -22925,7 +22947,7 @@ class UMaterialExpressionCustom : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionCustom");
     FString code;
-    ECustomMaterialOutputType OutputType;
+    TEnum<ECustomMaterialOutputType> OutputType;
     FString Description;
     TArray<FCustomInput> Inputs;
     TArray<FCustomOutput> AdditionalOutputs;
@@ -23028,7 +23050,7 @@ public:
     FName InputName;
     FString Description;
     FGuid ID;
-    EFunctionInputType InputType;
+    TEnum<EFunctionInputType> InputType;
     FVector4 PreviewValue;
     bool bUsePreviewValueAsDefault;
     int SortPriority;
@@ -23101,7 +23123,7 @@ class USkyLightComponent : public ULightComponentBase
 public:
     UE_CLASS("/Script/Engine", "SkyLightComponent");
     bool bRealTimeCapture;
-    ESkyLightSourceType SourceType;
+    TEnum<ESkyLightSourceType> SourceType;
     class UTextureCube* Cubemap;
     float SourceCubemapAngle;
     int CubemapResolution;
@@ -23119,7 +23141,7 @@ public:
     float CloudAmbientOcclusionExtent;
     float CloudAmbientOcclusionMapResolutionScale;
     float CloudAmbientOcclusionApertureScale;
-    EOcclusionCombineMode OcclusionCombineMode;
+    TEnum<EOcclusionCombineMode> OcclusionCombineMode;
     class UTextureCube* BlendDestinationCubemap;
     void RecaptureSky();
     void SetCubemap(class UTextureCube* NewCubemap);
@@ -23201,7 +23223,7 @@ public:
     FExpressionInput FilterWidth;
     float Scale;
     int Quality;
-    ENoiseFunction NoiseFunction;
+    TEnum<ENoiseFunction> NoiseFunction;
     bool bTurbulence;
     int Levels;
     float OutputMin;
@@ -23436,14 +23458,14 @@ class UMaterialExpressionSamplePhysicsIntegerField : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSamplePhysicsIntegerField");
     FExpressionInput WorldPosition;
-    EFieldIntegerType FieldTarget;
+    TEnum<EFieldIntegerType> FieldTarget;
 };
 
 class UMaterialExpressionSceneColor : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSceneColor");
-    EMaterialSceneAttributeInputMode InputMode;
+    TEnum<EMaterialSceneAttributeInputMode> InputMode;
     FExpressionInput Input;
     FExpressionInput OffsetFraction;
     FVector2D ConstInput;
@@ -23453,7 +23475,7 @@ class UMaterialExpressionSceneDepth : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSceneDepth");
-    EMaterialSceneAttributeInputMode InputMode;
+    TEnum<EMaterialSceneAttributeInputMode> InputMode;
     FExpressionInput Input;
     FExpressionInput Coordinates;
     FVector2D ConstInput;
@@ -23472,7 +23494,7 @@ class UMaterialExpressionSceneDepthWithoutWater : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSceneDepthWithoutWater");
-    EMaterialSceneAttributeInputMode InputMode;
+    TEnum<EMaterialSceneAttributeInputMode> InputMode;
     FExpressionInput Input;
     FVector2D ConstInput;
     float FallbackDepth;
@@ -23483,7 +23505,7 @@ class UMaterialExpressionSceneTexture : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSceneTexture");
     FExpressionInput Coordinates;
-    ESceneTextureId SceneTextureId;
+    TEnum<ESceneTextureId> SceneTextureId;
     bool bFiltered;
 };
 
@@ -23497,7 +23519,7 @@ class UMaterialExpressionShadingModel : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionShadingModel");
-    EMaterialShadingModel ShadingModel;
+    TEnum<EMaterialShadingModel> ShadingModel;
 };
 
 class UMaterialExpressionShadowReplace : public UMaterialExpression
@@ -23703,7 +23725,7 @@ class UMaterialExpressionTextureProperty : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionTextureProperty");
     FExpressionInput TextureObject;
-    EMaterialExposedTextureProperty Property;
+    TEnum<EMaterialExposedTextureProperty> Property;
 };
 
 class UMaterialExpressionTextureSampleParameter2DArray : public UMaterialExpressionTextureSampleParameter
@@ -23775,8 +23797,8 @@ class UMaterialExpressionTransform : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionTransform");
     FExpressionInput Input;
-    EMaterialVectorCoordTransformSource TransformSourceType;
-    EMaterialVectorCoordTransform TransformType;
+    TEnum<EMaterialVectorCoordTransformSource> TransformSourceType;
+    TEnum<EMaterialVectorCoordTransform> TransformType;
 };
 
 class UMaterialExpressionTransformPosition : public UMaterialExpression
@@ -23784,8 +23806,8 @@ class UMaterialExpressionTransformPosition : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionTransformPosition");
     FExpressionInput Input;
-    EMaterialPositionTransformSource TransformSourceType;
-    EMaterialPositionTransformSource TransformType;
+    TEnum<EMaterialPositionTransformSource> TransformSourceType;
+    TEnum<EMaterialPositionTransformSource> TransformType;
 };
 
 class USoundMix : public UObject
@@ -23817,7 +23839,7 @@ public:
     int SizeY;
     int SizeZ;
     FLinearColor ClearColor;
-    EPixelFormat OverrideFormat;
+    TEnum<EPixelFormat> OverrideFormat;
     bool bHDR;
     bool bForceLinearGamma;
 };
@@ -23833,7 +23855,7 @@ class UMaterialExpressionVectorNoise : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionVectorNoise");
     FExpressionInput Position;
-    EVectorNoiseFunction NoiseFunction;
+    TEnum<EVectorNoiseFunction> NoiseFunction;
     int Quality;
     bool bTiling;
     uint32 TileSize;
@@ -23868,7 +23890,7 @@ class UMaterialExpressionViewProperty : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionViewProperty");
-    EMaterialExposedViewProperty Property;
+    TEnum<EMaterialExposedViewProperty> Property;
 };
 
 class UMaterialExpressionViewSize : public UMaterialExpression
@@ -23902,7 +23924,7 @@ class UMaterialExpressionWorldPosition : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionWorldPosition");
-    EWorldPositionIncludedOffsets WorldPositionShaderOffset;
+    TEnum<EWorldPositionIncludedOffsets> WorldPositionShaderOffset;
 };
 
 class UMaterialFunctionInterface : public UObject
@@ -23910,7 +23932,7 @@ class UMaterialFunctionInterface : public UObject
 public:
     UE_CLASS("/Script/Engine", "MaterialFunctionInterface");
     FGuid StateId;
-    EMaterialFunctionUsage MaterialFunctionUsage;
+    TEnum<EMaterialFunctionUsage> MaterialFunctionUsage;
 };
 
 class UMaterialFunction : public UMaterialFunctionInterface
@@ -24117,7 +24139,7 @@ class UMeshVertexPainterKismetLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/Engine", "MeshVertexPainterKismetLibrary");
-    static void PaintVerticesLerpAlongAxis(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& StartColor, const FLinearColor& EndColor, EVertexPaintAxis Axis, bool bConvertToSRGB);
+    static void PaintVerticesLerpAlongAxis(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& StartColor, const FLinearColor& EndColor, TEnum<EVertexPaintAxis> Axis, bool bConvertToSRGB);
     static void PaintVerticesSingleColor(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& FillColor, bool bConvertToSRGB);
     static void RemovePaintedVertices(class UStaticMeshComponent* StaticMeshComponent);
 };
@@ -24323,8 +24345,8 @@ public:
     UE_CLASS("/Script/Engine", "ParticleEmitter");
     FName EmitterName;
     int SubUVDataOffset;
-    EEmitterRenderMode EmitterRenderMode;
-    EParticleSignificanceLevel SignificanceLevel;
+    TEnum<EEmitterRenderMode> EmitterRenderMode;
+    TEnum<EParticleSignificanceLevel> SignificanceLevel;
     bool bUseLegacySpawningBehavior;
     bool ConvertedModules;
     bool bIsSoloing;
@@ -24393,11 +24415,11 @@ public:
     bool bAllowManagedTicking;
     bool bAutoDeactivate;
     bool bRegenerateLODDuplicate;
-    EParticleSystemUpdateMode SystemUpdateMode;
-    EParticleSystemLODMethod LODMethod;
-    EParticleSystemInsignificanceReaction InsignificantReaction;
-    EParticleSystemOcclusionBoundsMethod OcclusionBoundsMethod;
-    EParticleSignificanceLevel MaxSignificanceLevel;
+    TEnum<EParticleSystemUpdateMode> SystemUpdateMode;
+    TEnum<EParticleSystemLODMethod> LODMethod;
+    TEnum<EParticleSystemInsignificanceReaction> InsignificantReaction;
+    TEnum<EParticleSystemOcclusionBoundsMethod> OcclusionBoundsMethod;
+    TEnum<EParticleSignificanceLevel> MaxSignificanceLevel;
     uint32 MinTimeBetweenTicks;
     float InsignificanceDelay;
     FVector MacroUVPosition;
@@ -24454,7 +24476,7 @@ public:
     bool bStrengthByDistance;
     FRawDistributionFloat Strength;
     bool bAffectBaseVelocity;
-    EAttractorParticleSelectionMethod SelectionMethod;
+    TEnum<EAttractorParticleSelectionMethod> SelectionMethod;
     bool bRenewSource;
     bool bInheritSourceVel;
     int LastSelIndex;
@@ -24514,7 +24536,7 @@ class UParticleModuleBeamModifier : public UParticleModuleBeamBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleBeamModifier");
-    EBeamModifierType ModifierType;
+    TEnum<EBeamModifierType> ModifierType;
     FBeamModifierOptions PositionOptions;
     FRawDistributionVector Position;
     FBeamModifierOptions TangentOptions;
@@ -24554,12 +24576,12 @@ class UParticleModuleBeamSource : public UParticleModuleBeamBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleBeamSource");
-    EBeam2SourceTargetMethod SourceMethod;
+    TEnum<EBeam2SourceTargetMethod> SourceMethod;
     FName SourceName;
     bool bSourceAbsolute;
     FRawDistributionVector Source;
     bool bLockSource;
-    EBeam2SourceTargetTangentMethod SourceTangentMethod;
+    TEnum<EBeam2SourceTargetTangentMethod> SourceTangentMethod;
     FRawDistributionVector SourceTangent;
     bool bLockSourceTangent;
     FRawDistributionFloat SourceStrength;
@@ -24570,12 +24592,12 @@ class UParticleModuleBeamTarget : public UParticleModuleBeamBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleBeamTarget");
-    EBeam2SourceTargetMethod TargetMethod;
+    TEnum<EBeam2SourceTargetMethod> TargetMethod;
     FName TargetName;
     FRawDistributionVector Target;
     bool bTargetAbsolute;
     bool bLockTarget;
-    EBeam2SourceTargetTangentMethod TargetTangentMethod;
+    TEnum<EBeam2SourceTargetTangentMethod> TargetTangentMethod;
     FRawDistributionVector TargetTangent;
     bool bLockTargetTangent;
     FRawDistributionFloat TargetStrength;
@@ -24595,7 +24617,7 @@ public:
     UE_CLASS("/Script/Engine", "ParticleModuleCameraOffset");
     FRawDistributionFloat CameraOffset;
     bool bSpawnTimeOnly;
-    EParticleCameraOffsetUpdateMethod UpdateMethod;
+    TEnum<EParticleCameraOffsetUpdateMethod> UpdateMethod;
 };
 
 class UParticleModuleCollisionBase : public UParticleModule
@@ -24611,7 +24633,7 @@ public:
     FRawDistributionVector DampingFactor;
     FRawDistributionVector DampingFactorRotation;
     FRawDistributionFloat MaxCollisions;
-    EParticleCollisionComplete CollisionCompletionOption;
+    TEnum<EParticleCollisionComplete> CollisionCompletionOption;
     TArray<EObjectTypeQuery> CollisionTypes;
     bool bApplyPhysics;
     bool bIgnoreTriggerVolumes;
@@ -24638,8 +24660,8 @@ public:
     float RandomDistribution;
     float RadiusScale;
     float RadiusBias;
-    EParticleCollisionResponse Response;
-    EParticleCollisionMode CollisionMode;
+    TEnum<EParticleCollisionResponse> Response;
+    TEnum<EParticleCollisionMode> CollisionMode;
 };
 
 class UParticleModuleColorBase : public UParticleModule
@@ -24699,7 +24721,7 @@ class UParticleModuleEventReceiverBase : public UParticleModuleEventBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleEventReceiverBase");
-    EParticleEventType EventGeneratorType;
+    TEnum<EParticleEventType> EventGeneratorType;
     FName EventName;
 };
 
@@ -24707,7 +24729,7 @@ class USkyAtmosphereComponent : public USceneComponent
 {
 public:
     UE_CLASS("/Script/Engine", "SkyAtmosphereComponent");
-    ESkyAtmosphereTransformMode TransformMode;
+    TEnum<ESkyAtmosphereTransformMode> TransformMode;
     float BottomRadius;
     FColor GroundAlbedo;
     float AtmosphereHeight;
@@ -24765,8 +24787,8 @@ public:
     class UTexture2D* SubUVTexture;
     int SubImages_Horizontal;
     int SubImages_Vertical;
-    ESubUVBoundingVertexCount BoundingMode;
-    EOpacitySourceMode OpacitySourceMode;
+    TEnum<ESubUVBoundingVertexCount> BoundingMode;
+    TEnum<EOpacitySourceMode> OpacitySourceMode;
     float AlphaThreshold;
 };
 
@@ -24902,10 +24924,10 @@ class UParticleModuleLocationBoneSocket : public UParticleModuleLocationBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleLocationBoneSocket");
-    ELocationBoneSocketSource SourceType;
+    TEnum<ELocationBoneSocketSource> SourceType;
     FVector UniversalOffset;
     TArray<FLocationBoneSocketInfo> SourceLocations;
-    ELocationBoneSocketSelectionMethod SelectionMethod;
+    TEnum<ELocationBoneSocketSelectionMethod> SelectionMethod;
     bool bUpdatePositionEachFrame;
     bool bOrientMeshEmitters;
     bool bInheritBoneVelocity;
@@ -24929,7 +24951,7 @@ class UParticleModuleLocationEmitter : public UParticleModuleLocationBase
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleLocationEmitter");
     FName EmitterName;
-    ELocationEmitterSelectionMethod SelectionMethod;
+    TEnum<ELocationEmitterSelectionMethod> SelectionMethod;
     bool InheritSourceVelocity;
     float InheritSourceVelocityScale;
     bool bInheritSourceRotation;
@@ -24966,7 +24988,7 @@ public:
     bool RadialVelocity;
     FRawDistributionFloat StartRadius;
     FRawDistributionFloat StartHeight;
-    ECylinderHeightAxis HeightAxis;
+    TEnum<ECylinderHeightAxis> HeightAxis;
 };
 
 class UParticleModuleLocationPrimitiveCylinder_Seeded : public UParticleModuleLocationPrimitiveCylinder
@@ -25004,7 +25026,7 @@ class UParticleModuleLocationSkelVertSurface : public UParticleModuleLocationBas
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleLocationSkelVertSurface");
-    ELocationSkelVertSurfaceSource SourceType;
+    TEnum<ELocationSkelVertSurfaceSource> SourceType;
     FVector UniversalOffset;
     bool bUpdatePositionEachFrame;
     bool bOrientMeshEmitters;
@@ -25075,7 +25097,7 @@ class UParticleModuleOrbit : public UParticleModuleOrbitBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleOrbit");
-    EOrbitChainMode ChainMode;
+    TEnum<EOrbitChainMode> ChainMode;
     FRawDistributionVector OffsetAmount;
     FOrbitOptions OffsetOptions;
     FRawDistributionVector RotationAmount;
@@ -25102,7 +25124,7 @@ class UParticleModuleOrientationAxisLock : public UParticleModuleOrientationBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleOrientationAxisLock");
-    EParticleAxisLock LockAxisFlags;
+    TEnum<EParticleAxisLock> LockAxisFlags;
 };
 
 class UParticleModuleParameterBase : public UParticleModule
@@ -25127,8 +25149,8 @@ public:
     FText Text;
     class UMaterialInterface* TextMaterial;
     class UFont* Font;
-    EHorizTextAligment HorizontalAlignment;
-    EVerticalTextAligment VerticalAlignment;
+    TEnum<EHorizTextAligment> HorizontalAlignment;
+    TEnum<EVerticalTextAligment> VerticalAlignment;
     FColor TextRenderColor;
     float XScale;
     float YScale;
@@ -25139,12 +25161,12 @@ public:
     bool bAlwaysRenderAsText;
     void K2_SetText(const FText& Value);
     void SetFont(class UFont* Value);
-    void SetHorizontalAlignment(EHorizTextAligment Value);
+    void SetHorizontalAlignment(TEnum<EHorizTextAligment> Value);
     void SetHorizSpacingAdjust(float Value);
     void SetText(FString Value);
     void SetTextMaterial(class UMaterialInterface* Material);
     void SetTextRenderColor(FColor Value);
-    void SetVerticalAlignment(EVerticalTextAligment Value);
+    void SetVerticalAlignment(TEnum<EVerticalTextAligment> Value);
     void SetVertSpacingAdjust(float Value);
     void SetWorldSize(float Value);
     void SetXScale(float Value);
@@ -25176,11 +25198,11 @@ public:
     float MaxFacingCameraBlendDistance;
     FVector EmitterOrigin;
     FRotator EmitterRotation;
-    EParticleScreenAlignment ScreenAlignment;
+    TEnum<EParticleScreenAlignment> ScreenAlignment;
     bool bUseLocalSpace;
     bool bKillOnDeactivate;
     bool bKillOnCompleted;
-    EParticleSortMode SortMode;
+    TEnum<EParticleSortMode> SortMode;
     bool bUseLegacyEmitterTime;
     bool bRemoveHMDRoll;
     bool bEmitterDurationUseRange;
@@ -25190,14 +25212,14 @@ public:
     float EmitterDelay;
     float EmitterDelayLow;
     bool bDelayFirstLoopOnly;
-    EParticleSubUVInterpMethod InterpolationMethod;
+    TEnum<EParticleSubUVInterpMethod> InterpolationMethod;
     bool bScaleUV;
     bool bEmitterDelayUseRange;
-    EParticleBurstMethod ParticleBurstMethod;
+    TEnum<EParticleBurstMethod> ParticleBurstMethod;
     bool bOverrideSystemMacroUV;
     bool bUseMaxDrawCount;
-    EOpacitySourceMode OpacitySourceMode;
-    EEmitterNormalsMode EmitterNormalsMode;
+    TEnum<EOpacitySourceMode> OpacitySourceMode;
+    TEnum<EEmitterNormalsMode> EmitterNormalsMode;
     bool bOrbitModuleAffectsVelocityAlignment;
     int SubImages_Horizontal;
     int SubImages_Vertical;
@@ -25205,8 +25227,8 @@ public:
     int RandomImageChanges;
     FVector MacroUVPosition;
     float MacroUVRadius;
-    EParticleUVFlipMode UVFlippingMode;
-    ESubUVBoundingVertexCount BoundingMode;
+    TEnum<EParticleUVFlipMode> UVFlippingMode;
+    TEnum<ESubUVBoundingVertexCount> BoundingMode;
     bool bDurationRecalcEachLoop;
     FVector NormalsSphereCenter;
     float AlphaThreshold;
@@ -25323,7 +25345,7 @@ public:
     UE_CLASS("/Script/Engine", "ParticleModuleSpawn");
     FRawDistributionFloat Rate;
     FRawDistributionFloat RateScale;
-    EParticleBurstMethod ParticleBurstMethod;
+    TEnum<EParticleBurstMethod> ParticleBurstMethod;
     TArray<FParticleBurst> BurstList;
     FRawDistributionFloat BurstScale;
     bool bApplyGlobalSpawnRateScale;
@@ -25362,13 +25384,13 @@ class UParticleModuleTrailSource : public UParticleModuleTrailBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleTrailSource");
-    ETrail2SourceMethod SourceMethod;
+    TEnum<ETrail2SourceMethod> SourceMethod;
     FName SourceName;
     FRawDistributionFloat SourceStrength;
     bool bLockSourceStength;
     int SourceOffsetCount;
     TArray<FVector> SourceOffsetDefaults;
-    EParticleSourceSelectionMethod SelectionMethod;
+    TEnum<EParticleSourceSelectionMethod> SelectionMethod;
     bool bInheritRotation;
 };
 
@@ -25391,15 +25413,15 @@ public:
     bool bUseStaticMeshLODs;
     bool CastShadows;
     bool DoCollisions;
-    EMeshScreenAlignment MeshAlignment;
+    TEnum<EMeshScreenAlignment> MeshAlignment;
     bool bOverrideMaterial;
     bool bOverrideDefaultMotionBlurSettings;
     bool bEnableMotionBlur;
     FRawDistributionVector RollPitchYawRange;
-    EParticleAxisLock AxisLockOption;
+    TEnum<EParticleAxisLock> AxisLockOption;
     bool bCameraFacing;
-    EMeshCameraFacingUpAxis CameraFacingUpAxisOption;
-    EMeshCameraFacingOptions CameraFacingOption;
+    TEnum<EMeshCameraFacingUpAxis> CameraFacingUpAxisOption;
+    TEnum<EMeshCameraFacingOptions> CameraFacingOption;
     bool bApplyParticleRotationAsSpin;
     bool bFaceCameraDirectionRatherThanPosition;
     bool bCollisionsConsiderPartilceSize;
@@ -25425,7 +25447,7 @@ public:
     bool bEnablePreviousTangentRecalculation;
     bool bTangentRecalculationEveryFrame;
     bool bSpawnInitialParticle;
-    ETrailsRenderAxisOption RenderAxis;
+    TEnum<ETrailsRenderAxisOption> RenderAxis;
     float TangentSpawningScalar;
     bool bRenderGeometry;
     bool bRenderSpawnPoints;
@@ -25613,8 +25635,8 @@ class UPhysicalMaterialMask : public UObject
 public:
     UE_CLASS("/Script/Engine", "PhysicalMaterialMask");
     int UVChannelIndex;
-    ETextureAddress AddressX;
-    ETextureAddress AddressY;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
 };
 
 class UPhysicsAsset : public UObject
@@ -25625,7 +25647,7 @@ public:
     TArray<class USkeletalBodySetup*> SkeletalBodySetups;
     TArray<class UPhysicsConstraintTemplate*> ConstraintSetup;
     FSolverIterations SolverIterations;
-    EPhysicsAssetSolverType SolverType;
+    TEnum<EPhysicsAssetSolverType> SolverType;
     bool bNotForDedicatedServer;
     class UThumbnailInfo* ThumbnailInfo;
     TArray<class UBodySetup*> BodySetup;
@@ -25676,22 +25698,22 @@ public:
     void GetConstraintForce(FVector& OutLinearForce, FVector& OutAngularForce);
     bool IsBroken();
     void SetAngularBreakable(bool bAngularBreakable, float AngularBreakThreshold);
-    void SetAngularDriveMode(EAngularDriveMode DriveMode);
+    void SetAngularDriveMode(TEnum<EAngularDriveMode> DriveMode);
     void SetAngularDriveParams(float PositionStrength, float VelocityStrength, float InForceLimit);
     void SetAngularOrientationDrive(bool bEnableSwingDrive, bool bEnableTwistDrive);
     void SetAngularOrientationTarget(const FRotator& InPosTarget);
     void SetAngularPlasticity(bool bAngularPlasticity, float AngularPlasticityThreshold);
-    void SetAngularSwing1Limit(EAngularConstraintMotion MotionType, float Swing1LimitAngle);
-    void SetAngularSwing2Limit(EAngularConstraintMotion MotionType, float Swing2LimitAngle);
-    void SetAngularTwistLimit(EAngularConstraintMotion ConstraintType, float TwistLimitAngle);
+    void SetAngularSwing1Limit(TEnum<EAngularConstraintMotion> MotionType, float Swing1LimitAngle);
+    void SetAngularSwing2Limit(TEnum<EAngularConstraintMotion> MotionType, float Swing2LimitAngle);
+    void SetAngularTwistLimit(TEnum<EAngularConstraintMotion> ConstraintType, float TwistLimitAngle);
     void SetAngularVelocityDrive(bool bEnableSwingDrive, bool bEnableTwistDrive);
     void SetAngularVelocityDriveSLERP(bool bEnableSLERP);
     void SetAngularVelocityDriveTwistAndSwing(bool bEnableTwistDrive, bool bEnableSwingDrive);
     void SetAngularVelocityTarget(const FVector& InVelTarget);
     void SetConstrainedComponents(class UPrimitiveComponent* Component1, FName BoneName1, class UPrimitiveComponent* Component2, FName BoneName2);
-    void SetConstraintReferenceFrame(EConstraintFrame Frame, const FTransform& RefFrame);
-    void SetConstraintReferenceOrientation(EConstraintFrame Frame, const FVector& PriAxis, const FVector& SecAxis);
-    void SetConstraintReferencePosition(EConstraintFrame Frame, const FVector& RefPosition);
+    void SetConstraintReferenceFrame(TEnum<EConstraintFrame> Frame, const FTransform& RefFrame);
+    void SetConstraintReferenceOrientation(TEnum<EConstraintFrame> Frame, const FVector& PriAxis, const FVector& SecAxis);
+    void SetConstraintReferencePosition(TEnum<EConstraintFrame> Frame, const FVector& RefPosition);
     void SetDisableCollision(bool bDisableCollision);
     void SetLinearBreakable(bool bLinearBreakable, float LinearBreakThreshold);
     void SetLinearDriveParams(float PositionStrength, float VelocityStrength, float InForceLimit);
@@ -25700,9 +25722,9 @@ public:
     void SetLinearPositionTarget(const FVector& InPosTarget);
     void SetLinearVelocityDrive(bool bEnableDriveX, bool bEnableDriveY, bool bEnableDriveZ);
     void SetLinearVelocityTarget(const FVector& InVelTarget);
-    void SetLinearXLimit(ELinearConstraintMotion ConstraintType, float LimitSize);
-    void SetLinearYLimit(ELinearConstraintMotion ConstraintType, float LimitSize);
-    void SetLinearZLimit(ELinearConstraintMotion ConstraintType, float LimitSize);
+    void SetLinearXLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
+    void SetLinearYLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
+    void SetLinearZLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
     void SetOrientationDriveSLERP(bool bEnableSLERP);
     void SetOrientationDriveTwistAndSwing(bool bEnableTwistDrive, bool bEnableSwingDrive);
     UE_PURE float GetCurrentSwing1() const;
@@ -25759,8 +25781,8 @@ class UPhysicsSettings : public UPhysicsSettingsCore
 public:
     UE_CLASS("/Script/Engine", "PhysicsSettings");
     FRigidBodyErrorCorrection PhysicErrorCorrection;
-    ESettingsLockedAxis LockedAxis;
-    ESettingsDOF DefaultDegreesOfFreedom;
+    TEnum<ESettingsLockedAxis> LockedAxis;
+    TEnum<ESettingsDOF> DefaultDegreesOfFreedom;
     bool bSuppressFaceRemapTable;
     bool bSupportUVFromHitResults;
     bool bDisableActiveActors;
@@ -25792,7 +25814,7 @@ public:
     float SpringDamping;
     float SpringLengthAtRest;
     float SpringRadius;
-    ECollisionChannel SpringChannel;
+    TEnum<ECollisionChannel> SpringChannel;
     bool bIgnoreSelf;
     float SpringCompression;
     UE_PURE float GetNormalizedCompressionScalar() const;
@@ -26027,16 +26049,16 @@ class URadialForceComponent : public USceneComponent
 public:
     UE_CLASS("/Script/Engine", "RadialForceComponent");
     float Radius;
-    ERadialImpulseFalloff Falloff;
+    TEnum<ERadialImpulseFalloff> Falloff;
     float ImpulseStrength;
     bool bImpulseVelChange;
     bool bIgnoreOwningActor;
     float ForceStrength;
     float DestructibleDamage;
     TArray<EObjectTypeQuery> ObjectTypesToAffect;
-    void AddObjectTypeToAffect(EObjectTypeQuery ObjectType);
+    void AddObjectTypeToAffect(TEnum<EObjectTypeQuery> ObjectType);
     void FireImpulse();
-    void RemoveObjectTypeToAffect(EObjectTypeQuery ObjectType);
+    void RemoveObjectTypeToAffect(TEnum<EObjectTypeQuery> ObjectType);
 };
 
 class ARectLight : public ALight
@@ -26071,7 +26093,7 @@ public:
     UE_CLASS("/Script/Engine", "RendererSettings");
     bool bMobileDisableVertexFog;
     int MaxMobileCascades;
-    EMobileMSAASampleCount MobileMSAASampleCount;
+    TEnum<EMobileMSAASampleCount> MobileMSAASampleCount;
     bool bMobileAllowDitheredLODTransition;
     bool bMobileAllowSoftwareOcclusionCulling;
     bool bMobileVirtualTextures;
@@ -26105,17 +26127,17 @@ public:
     bool bCompressMeshDistanceFields;
     float TessellationAdaptivePixelsPerTriangle;
     bool bSeparateTranslucency;
-    ETranslucentSortPolicy TranslucentSortPolicy;
+    TEnum<ETranslucentSortPolicy> TranslucentSortPolicy;
     FVector TranslucentSortAxis;
-    EFixedFoveationLevels HMDFixedFoveationLevel;
-    ECustomDepthStencil CustomDepthStencil;
+    TEnum<EFixedFoveationLevels> HMDFixedFoveationLevel;
+    TEnum<ECustomDepthStencil> CustomDepthStencil;
     bool bCustomDepthTaaJitter;
-    EAlphaChannelMode bEnableAlphaChannelInPostProcessing;
+    TEnum<EAlphaChannelMode> bEnableAlphaChannelInPostProcessing;
     bool bDefaultFeatureBloom;
     bool bDefaultFeatureAmbientOcclusion;
     bool bDefaultFeatureAmbientOcclusionStaticFraction;
     bool bDefaultFeatureAutoExposure;
-    EAutoExposureMethodUI DefaultFeatureAutoExposure;
+    TEnum<EAutoExposureMethodUI> DefaultFeatureAutoExposure;
     float DefaultFeatureAutoExposureBias;
     bool bExtendDefaultLuminanceRangeInAutoExposureSettings;
     bool bUsePreExposure;
@@ -26124,15 +26146,15 @@ public:
     bool bDefaultFeatureLensFlare;
     bool bTemporalUpsampling;
     bool bSSGI;
-    EAntiAliasingMethod DefaultFeatureAntiAliasing;
-    ELightUnits DefaultLightUnits;
-    EDefaultBackBufferPixelFormat DefaultBackBufferPixelFormat;
+    TEnum<EAntiAliasingMethod> DefaultFeatureAntiAliasing;
+    TEnum<ELightUnits> DefaultLightUnits;
+    TEnum<EDefaultBackBufferPixelFormat> DefaultBackBufferPixelFormat;
     bool bRenderUnbuiltPreviewShadowsInGame;
     bool bStencilForLODDither;
-    EEarlyZPass EarlyZPass;
+    TEnum<EEarlyZPass> EarlyZPass;
     bool bEarlyZPassOnlyMaterialMasking;
     bool bDBuffer;
-    EClearSceneOptions ClearSceneMethod;
+    TEnum<EClearSceneOptions> ClearSceneMethod;
     bool bBasePassOutputsVelocity;
     bool bVertexDeformationOutputsVelocity;
     bool bSelectiveBasePassOutputs;
@@ -26140,7 +26162,7 @@ public:
     int GPUSimulationTextureSizeX;
     int GPUSimulationTextureSizeY;
     bool bGlobalClipPlane;
-    EGBufferFormat GBufferFormat;
+    TEnum<EGBufferFormat> GBufferFormat;
     bool bUseGPUMorphTargets;
     bool bNvidiaAftermathEnabled;
     bool bMultiView;
@@ -26160,7 +26182,7 @@ public:
     bool bSupportSkyAtmosphere;
     bool bSupportSkyAtmosphereAffectsHeightFog;
     bool bSupportSkinCacheShaders;
-    ESkinCacheDefaultBehavior DefaultSkinCacheBehavior;
+    TEnum<ESkinCacheDefaultBehavior> DefaultSkinCacheBehavior;
     float SkinCacheSceneMemoryLimitInMB;
     bool bMobileEnableStaticAndCSMShadowReceivers;
     bool bMobileEnableMovableLightCSMShaderCulling;
@@ -26179,7 +26201,7 @@ public:
     bool bUseUnlimitedBoneInfluences;
     int UnlimitedBonInfluencesThreshold;
     FPerPlatformInt MaxSkinBones;
-    EMobilePlanarReflectionMode MobilePlanarReflectionMode;
+    TEnum<EMobilePlanarReflectionMode> MobilePlanarReflectionMode;
     bool bMobileSupportsGen4TAA;
     FPerPlatformBool bStreamSkeletalMeshLODs;
     FPerPlatformBool bDiscardSkeletalMeshOptionalLODs;
@@ -26278,7 +26300,7 @@ public:
     int TileCount;
     int TileSize;
     int TileBorderSize;
-    ERuntimeVirtualTextureMaterialType MaterialType;
+    TEnum<ERuntimeVirtualTextureMaterialType> MaterialType;
     bool bCompressTextures;
     bool bClearTextures;
     bool bSinglePhysicalSpace;
@@ -26286,7 +26308,7 @@ public:
     bool bAdaptive;
     bool bContinuousUpdate;
     int RemoveLowMips;
-    ETextureGroup LODGroup;
+    TEnum<ETextureGroup> LODGroup;
     int Size;
     class URuntimeVirtualTextureStreamingProxy* StreamingTexture;
     UE_PURE int GetPageTableSize() const;
@@ -26525,8 +26547,8 @@ public:
     TArray<FSkeletalMeshLODInfo> LODInfo;
     FPerPlatformInt MinLOD;
     FPerPlatformBool DisableBelowMinLodStripping;
-    EAxis SkelMirrorAxis;
-    EAxis SkelMirrorFlipAxis;
+    TEnum<EAxis> SkelMirrorAxis;
+    TEnum<EAxis> SkelMirrorFlipAxis;
     bool bUseFullPrecisionUVs;
     bool bUseHighPrecisionTangentBasis;
     bool bHasBeenSimplified;
@@ -26610,7 +26632,7 @@ public:
     FVector SocketOffset;
     FVector TargetOffset;
     float ProbeSize;
-    ECollisionChannel ProbeChannel;
+    TEnum<ECollisionChannel> ProbeChannel;
     bool bDoCollisionTest;
     bool bUsePawnControlRotation;
     bool bInheritPitch;
@@ -26710,7 +26732,7 @@ class UTimelineTemplate : public UObject
 public:
     UE_CLASS("/Script/Engine", "TimelineTemplate");
     float TimelineLength;
-    ETimelineLengthMode LengthMode;
+    TEnum<ETimelineLengthMode> LengthMode;
     bool bAutoPlay;
     bool bLoop;
     bool bReplicated;
@@ -26721,7 +26743,7 @@ public:
     TArray<FTTLinearColorTrack> LinearColorTracks;
     TArray<FBPVariableMetaDataEntry> MetaDataArray;
     FGuid TimelineGuid;
-    ETickingGroup TimelineTickGroup;
+    TEnum<ETickingGroup> TimelineTickGroup;
     FName VariableName;
     FName DirectionPropertyName;
     FName UpdateFunctionName;
@@ -26746,14 +26768,14 @@ public:
     int GetNumAccounts();
     void Init();
     bool ShowTweetUI(FString InitialMessage, FString URL, FString Picture);
-    bool TwitterRequest(FString URL, const TArray<FString>& ParamKeysAndValues, ETwitterRequestMethod RequestMethod, int AccountIndex);
+    bool TwitterRequest(FString URL, const TArray<FString>& ParamKeysAndValues, TEnum<ETwitterRequestMethod> RequestMethod, int AccountIndex);
 };
 
 class UUserInterfaceSettings : public UDeveloperSettings
 {
 public:
     UE_CLASS("/Script/Engine", "UserInterfaceSettings");
-    ERenderFocusRule RenderFocusRule;
+    TEnum<ERenderFocusRule> RenderFocusRule;
     TMap<EMouseCursor, FHardwareCursorReference> HardwareCursors;
     TMap<EMouseCursor, FSoftClassPath> SoftwareCursors;
     FSoftClassPath DefaultCursor;
@@ -26764,7 +26786,7 @@ public:
     FSoftClassPath GrabHandClosedCursor;
     FSoftClassPath SlashedCircleCursor;
     float ApplicationScale;
-    EUIScalingRule UIScaleRule;
+    TEnum<EUIScalingRule> UIScaleRule;
     FSoftClassPath CustomScalingRuleClass;
     FRuntimeFloatCurve UIScaleCurve;
     bool bAllowHighDPIInGameMode;
@@ -26798,6 +26820,14 @@ inline UAutoDestroySubsystem* UAutoDestroySubsystem::Get(class UObject* WorldCon
 inline UViewportStatsSubsystem* UViewportStatsSubsystem::Get(class UObject* WorldContextObject) { return (UViewportStatsSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UViewportStatsSubsystem::StaticClass()); }
 inline UObjectTraceWorldSubsystem* UObjectTraceWorldSubsystem::Get(class UObject* WorldContextObject) { return (UObjectTraceWorldSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UObjectTraceWorldSubsystem::StaticClass()); }
 inline UReplaySubsystem* UReplaySubsystem::Get(class UObject* WorldContextObject) { return (UReplaySubsystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UReplaySubsystem::StaticClass()); }
+
+/* What a method above forwards to (its __UeForward), the object first. */
+inline void USceneComponent_SetupAttachment(class USceneComponent* Child, class USceneComponent* InParent,
+                                            FName InSocketName = FName())
+{
+    Child->K2_AttachToComponent(InParent, InSocketName, EAttachmentRule::KeepRelative, EAttachmentRule::KeepRelative,
+                                EAttachmentRule::KeepRelative, false);
+}
 
 inline bool operator==(const FGuid&, const FGuid&) { return {}; }
 inline bool operator!=(const FGuid&, const FGuid&) { return {}; }

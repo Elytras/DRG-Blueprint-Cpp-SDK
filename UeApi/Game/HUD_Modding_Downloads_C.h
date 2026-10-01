@@ -44,7 +44,7 @@ public:
     void OnAnimFinished();
     void OnDownloadProgress(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading_0, int Progress, int Total);
     UE_COSMETIC void PreConstruct(bool IsDesignTime_0);
-    void OnErrorInstalling(FString ModName, EUGCPackageError ErrorType);
+    void OnErrorInstalling(FString ModName, TEnum<EUGCPackageError> ErrorType);
     UE_COSMETIC void Construct();
     void SetDownloadProgress(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading_0, int Progress, int Total);
     void GetEntry(FString InModName, HUD_Modding_Downloads_Entry_C*& OutEntry, FString& OutName);

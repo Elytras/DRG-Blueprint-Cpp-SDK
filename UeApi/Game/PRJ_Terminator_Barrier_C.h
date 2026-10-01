@@ -16,6 +16,7 @@ class PRJ_Terminator_Barrier_C : public Game::GameElements::Objectives::Facility
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/PRJ_Terminator_Barrier", "PRJ_Terminator_Barrier_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Terminator_Barrier_C;
     static constexpr const char* UberGraphFrame_PRJ_Terminator_Barrier_C__UeName = "UberGraphFrame";
     class UAudioComponent* Audio;

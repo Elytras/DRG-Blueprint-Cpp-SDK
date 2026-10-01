@@ -28,6 +28,7 @@ class ENE_BarrageInfector_C : public AShootingPlant
 {
 public:
     UE_CLASS("/Game/Enemies/BarrageInfector/ENE_BarrageInfector", "ENE_BarrageInfector_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyLineOfSightComponent* EnemyLineOfSight;
     static constexpr const char* EnemyLineOfSight__UeScsNode = "e86e24d3cbcfb64586750ceb26e41137";

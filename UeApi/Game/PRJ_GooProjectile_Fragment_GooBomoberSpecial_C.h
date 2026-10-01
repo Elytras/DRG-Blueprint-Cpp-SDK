@@ -18,6 +18,7 @@ class PRJ_GooProjectile_Fragment_GooBomoberSpecial_C : public Game::WeaponsNTool
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_GooProjectile_Fragment_GooBomoberSpecial", "PRJ_GooProjectile_Fragment_GooBomoberSpecial_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_GooProjectile_Fragment_GooBomoberSpecial_C;
     static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_GooBomoberSpecial_C__UeName = "UberGraphFrame";
     class USphereComponent* ApplyGooTrigger;

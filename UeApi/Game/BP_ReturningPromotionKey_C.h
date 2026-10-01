@@ -20,6 +20,7 @@ class BP_ReturningPromotionKey_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/PromotionKey/BP_ReturningPromotionKey", "BP_ReturningPromotionKey_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* MovingAudioComponent;
     static constexpr const char* MovingAudioComponent__UeScsNode = "03e6f60dae35c2419681fb1edb878db8";

@@ -55,11 +55,11 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "40690dd2dfebe343b006268c1af91910";
     float Retract_spikes_extract_12C035484D9FA60A9729318F1FE2B43F;
-    ETimelineDirection Retract_spikes__Direction_12C035484D9FA60A9729318F1FE2B43F;
+    TEnum<ETimelineDirection> Retract_spikes__Direction_12C035484D9FA60A9729318F1FE2B43F;
     class UTimelineComponent* Retract_Spikes;
     static constexpr const char* Retract_Spikes__UeName = "Retract Spikes";
     float Extrude_spikes_extract_506BA7914733C21AE25E36ACEB72E417;
-    ETimelineDirection Extrude_spikes__Direction_506BA7914733C21AE25E36ACEB72E417;
+    TEnum<ETimelineDirection> Extrude_spikes__Direction_506BA7914733C21AE25E36ACEB72E417;
     class UTimelineComponent* Extrude_spikes;
     static constexpr const char* Extrude_spikes__UeName = "Extrude spikes";
     int Max_Amount_Of_Spikes;

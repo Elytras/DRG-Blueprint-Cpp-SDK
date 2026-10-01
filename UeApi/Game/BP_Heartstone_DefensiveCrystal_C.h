@@ -67,7 +67,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "e023c2fda9e6654980eee901d5baa2e1";
     float GrowLight_SoundVolume_AB5D1D304F66D83F8F0760B4A43F79FC;
     float GrowLight_LightIntensity_AB5D1D304F66D83F8F0760B4A43F79FC;
-    ETimelineDirection GrowLight__Direction_AB5D1D304F66D83F8F0760B4A43F79FC;
+    TEnum<ETimelineDirection> GrowLight__Direction_AB5D1D304F66D83F8F0760B4A43F79FC;
     class UTimelineComponent* GrowLight;
     class AActor* JEB;
     FTimerHandle DamageTimer;

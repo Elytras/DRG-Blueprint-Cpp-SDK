@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Proximity_C : public Game::WeaponsNTools::Grenades::L
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickyMine/Loadout_GrenadeProxy_Proximity", "Loadout_GrenadeProxy_Proximity_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickyMine

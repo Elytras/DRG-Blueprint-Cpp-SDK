@@ -25,6 +25,7 @@ class BP_FacilityTurretDrone_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/BP_FacilityTurretDrone", "BP_FacilityTurretDrone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
     static constexpr const char* Box__UeScsNode = "91f72479e4c3b54abad210db04777b43";

@@ -62,7 +62,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "af1528ba7b081e4ab5354e6a30a991f7";
     float Timeline_0_Scale_Transform_97D3E280454882350654EE88E83F3CA7;
-    ETimelineDirection Timeline_0__Direction_97D3E280454882350654EE88E83F3CA7;
+    TEnum<ETimelineDirection> Timeline_0__Direction_97D3E280454882350654EE88E83F3CA7;
     class UTimelineComponent* Timeline_0;
     float RotationSpeed;
     bool Can_use;
@@ -87,7 +87,7 @@ public:
     void BndEvt__DanceSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ToggleSpeakerRocking();
     void ReceiveBeginPlay();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnLoaded_C15A19DC4718016F57823CA232EE5860(class UObject* Loaded);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();

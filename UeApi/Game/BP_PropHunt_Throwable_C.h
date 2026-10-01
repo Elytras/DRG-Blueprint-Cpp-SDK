@@ -24,6 +24,7 @@ class BP_PropHunt_Throwable_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/BP_PropHunt_Throwable", "BP_PropHunt_Throwable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";

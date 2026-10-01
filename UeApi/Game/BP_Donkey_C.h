@@ -44,6 +44,7 @@ public:
     using BP_DonkeyDestinationMarker_C = Game::GameElements::Donkey::BP_DonkeyDestinationMarker_C;
     using BP_Mule_PowerAttackBooster_C = Game::GameElements::Missions::Warnings::RockInfestation::BP_Mule_PowerAttackBooster_C;
     using Donkey_BreadCrumb_C = Game::GameElements::Donkey::Donkey_BreadCrumb_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     BP_Mule_PowerAttackBooster_C* BP_Mule_PowerAttackBooster;
     static constexpr const char* BP_Mule_PowerAttackBooster__UeScsNode = "46229f2846f31f4cb1f7d76581ff153d";
@@ -138,7 +139,7 @@ public:
     void BndEvt__ResourceBank_K2Node_ComponentBoundEvent_0_ResourceBankEvent__DelegateSignature(class APlayerCharacter* User);
     void SpawnBreadCrumb();
     void BndEvt__ReturnToMissionUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__ReturnToMissionUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__ReturnToMissionUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__Box1_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__Box1_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void On_Goto_Dropship();

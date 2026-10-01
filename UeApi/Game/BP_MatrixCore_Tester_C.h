@@ -27,7 +27,7 @@ public:
     static constexpr const char* StaticMeshComponent0__UeScsNode = "cf5ece823fa72a4b8b4f8a10457ee19d";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_FDA54F6E407E95314A1E7D9167906039";
-    ETimelineDirection Timeline_0__Direction_FDA54F6E407E95314A1E7D9167906039;
+    TEnum<ETimelineDirection> Timeline_0__Direction_FDA54F6E407E95314A1E7D9167906039;
     class UTimelineComponent* Timeline_0;
     class UMaterialInstanceDynamic* BlinkMat;
     class USchematic* Schematic;

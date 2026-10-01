@@ -39,7 +39,7 @@ public:
     FText RebootText;
     void ExecuteUbergraph_HUD_Progressbar_Hacking_Base(int EntryPoint);
     void SetListenPod(class AFacilityHackingPod* pod);
-    void UpdateBarState(EHackingPodState State);
+    void UpdateBarState(TEnum<EHackingPodState> State);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnProgress(float hackProgress);
     void OnFightRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);

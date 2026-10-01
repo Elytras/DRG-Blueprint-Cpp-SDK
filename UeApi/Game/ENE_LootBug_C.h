@@ -32,6 +32,7 @@ class ENE_LootBug_C : public ACaveWorm
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/ENE_LootBug", "ENE_LootBug_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "b7d33d2648993f41acf77b1485e919c6";
@@ -47,7 +48,7 @@ public:
     static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_3777A85D4507AA016A87A299C2D01021";
-    ETimelineDirection Timeline_0__Direction_3777A85D4507AA016A87A299C2D01021;
+    TEnum<ETimelineDirection> Timeline_0__Direction_3777A85D4507AA016A87A299C2D01021;
     class UTimelineComponent* Timeline_0;
     TArray<class UResourceData*> Loot;
     FVector2D ChunkCountRange;
@@ -70,7 +71,7 @@ public:
     void OnLootBugDeath();
     void OnMessageAI(FName TriggerName);
     UE_MULTICAST void All_Pettet(bool LootDropped);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__Health_K2Node_ComponentBoundEvent_2_DamageSig__DelegateSignature(float amount);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnUnFrozen();

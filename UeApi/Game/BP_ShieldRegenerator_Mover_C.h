@@ -23,6 +23,7 @@ class BP_ShieldRegenerator_Mover_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/BP_ShieldRegenerator_Mover", "BP_ShieldRegenerator_Mover_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* MovingAudioComponent;
     static constexpr const char* MovingAudioComponent__UeScsNode = "9295b50df1af9345bec27315d1cedfe7";
@@ -31,7 +32,7 @@ public:
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "807cb99e3f19f74fa5b400b6c26afe58";
     float LiftOff_Progress_9B203DE44FAEAFAF13D1B3902168B574;
-    ETimelineDirection LiftOff__Direction_9B203DE44FAEAFAF13D1B3902168B574;
+    TEnum<ETimelineDirection> LiftOff__Direction_9B203DE44FAEAFAF13D1B3902168B574;
     class UTimelineComponent* LiftOff;
     class AActor* TargetActor;
     FVector HoverPoint;
@@ -45,7 +46,7 @@ public:
     static constexpr const char* Begin_Move_To_Actor__UeName = "Begin Move To Actor";
     void Begin_Lift_Off_Effects();
     static constexpr const char* Begin_Lift_Off_Effects__UeName = "Begin Lift Off Effects";
-    void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(EDeepMovementState State);
+    void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(TEnum<EDeepMovementState> State);
     UE_MULTICAST UE_RELIABLE void All_LiftOff(FVector InHoverPoint);
     void ReceiveBeginPlay();
     void LiftOff__UpdateFunc();

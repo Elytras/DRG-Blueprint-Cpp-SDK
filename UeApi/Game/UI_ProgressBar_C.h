@@ -25,7 +25,7 @@ public:
     float Percent;
     float AnimationProgress;
     float AnimationStart;
-    EEasingFunc EaseMethod;
+    TEnum<EEasingFunc> EaseMethod;
     float BlendExp;
     int Steps;
     FProgressBarStyle Style;

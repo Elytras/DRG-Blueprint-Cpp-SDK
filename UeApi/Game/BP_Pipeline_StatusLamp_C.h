@@ -24,9 +24,9 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "5e3633f4969bb448a5f43d473550a5d3";
     class APipelineStart* PipelineStart;
-    EPipelineBuildState PreviewState;
+    TEnum<EPipelineBuildState> PreviewState;
     void ExecuteUbergraph_BP_Pipeline_StatusLamp(int EntryPoint);
-    void OnBuildStateChanged_Event(class APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState);
+    void OnBuildStateChanged_Event(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
     void ListenToPipelineStart(class APipelineStart* InPipelineStart);
     void ReceiveBeginPlay();
     void UserConstructionScript();

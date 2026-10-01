@@ -21,6 +21,7 @@ class AIC_Prospector_C : public AFSDAIController
 public:
     UE_CLASS("/Game/Critters/Prospector/AIC_Prospector", "AIC_Prospector_C");
     using ENE_Prospector_C = Game::Critters::Prospector::ENE_Prospector_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     FName IsRunningKey;
     FTimerHandle Timer_Running;

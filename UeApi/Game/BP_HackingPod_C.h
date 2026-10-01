@@ -50,6 +50,7 @@ class BP_HackingPod_C : public AFacilityHackingPod
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_HackingPod", "BP_HackingPod_C");
     using BP_TetherDispenser_C = Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenser_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class URGBLightManagerComponent* RGBLightManager;
     static constexpr const char* RGBLightManager__UeScsNode = "43a8a1ce8bcd4d498178b8b897ba2b04";
@@ -163,7 +164,7 @@ public:
     bool ConnectedToGoal;
     TArray<FLinearColor> LightColors;
     void ExecuteUbergraph_BP_HackingPod(int EntryPoint);
-    void BndEvt__PettingUse_K2Node_ComponentBoundEvent_13_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__PettingUse_K2Node_ComponentBoundEvent_13_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnPlayerLeave_Event_0(class AFSDPlayerState* PlayerState);
     void OnPlayerJoined_Event_0(class AFSDPlayerState* PlayerState);
     void ItemTaken(class AActor* spawnedItem);
@@ -171,8 +172,8 @@ public:
     UE_MULTICAST void All_PlaySalute(class AActor* Saluter);
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void OnExitState(EHackingPodState oldState);
-    void OnEnterState(EHackingPodState NextState);
+    void OnExitState(TEnum<EHackingPodState> oldState);
+    void OnEnterState(TEnum<EHackingPodState> NextState);
     UE_MULTICAST void All_Pet();
     void OnBoscoSalute_Event_0(class APlayerCharacter* ShoutingPlayer);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_5_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -188,9 +189,9 @@ public:
     void ManageOutLines();
     void BndEvt__DropToTerrain_K2Node_ComponentBoundEvent_7_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
     void SetLightColor(int Index_0);
-    void BndEvt__ActivateUsable_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__ActivateUsable_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__FriendlyHealth_K2Node_ComponentBoundEvent_3_DamageSig__DelegateSignature(float amount);
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__FriendlyHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__Tether_K2Node_ComponentBoundEvent_0_TeherMessage_Delegate__DelegateSignature(const FName& Message);
     void OnDroppodImpact();

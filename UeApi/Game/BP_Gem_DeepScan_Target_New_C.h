@@ -102,10 +102,10 @@ public:
     void PlayDugFree();
     void BndEvt__BP_Gem_DeepScan_Target_New_TerrainDetect_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void OnConnected_Event_0(BP_ResonanceScanner_EndPoint_C* EndPoint);
-    void BndEvt__BP_Gem_DeepScan_Target_CalldownScannerUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Gem_DeepScan_Target_CalldownScannerUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_MULTICAST void PlayScanAudio_All();
-    void OnScannerAssembled(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__BP_Gem_HotCold_Target_CalldownScannerUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void OnScannerAssembled(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__BP_Gem_HotCold_Target_CalldownScannerUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ShowOnScanner();
     void ReceiveBeginPlay();
     void SpawnerScannerPod(const FVector& Location);

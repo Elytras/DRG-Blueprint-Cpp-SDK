@@ -22,6 +22,7 @@ class EWC_OverloadShieldGenerator_Facility_C : public Game::Enemies::Waves::Wave
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_OverloadShieldGenerator_Facility", "EWC_OverloadShieldGenerator_Facility_C");
     using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame_EWC_OverloadShieldGenerator_Facility_C;
     static constexpr const char* UberGraphFrame_EWC_OverloadShieldGenerator_Facility_C__UeName = "UberGraphFrame";
     BP_Facility_PowerStation_GeneratorBase_C* FromGenerator;

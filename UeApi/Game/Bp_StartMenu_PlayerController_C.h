@@ -30,6 +30,7 @@ public:
     using UI_StartScreen_C = Game::UI::Menu_StartScreen::UI_StartScreen_C;
     using UI_SteamLoading_C = Game::UI::System::UI_SteamLoading_C;
     using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame;
     UI_StartScreen_C* StartScreen;
     class UWidget* ActiveScreen;

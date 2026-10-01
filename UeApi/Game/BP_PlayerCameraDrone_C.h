@@ -23,6 +23,7 @@ class BP_PlayerCameraDrone_C : public APlayerCameraDrone
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_PlayerCameraDrone", "BP_PlayerCameraDrone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.FloatingPawnMovement Movement";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "81cfa9c7229df646984b403ac938c434";

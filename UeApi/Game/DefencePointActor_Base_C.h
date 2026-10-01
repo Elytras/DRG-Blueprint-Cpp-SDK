@@ -20,6 +20,7 @@ class DefencePointActor_Base_C : public ADefensePointActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/Defense/DefencePointActor_Base", "DefencePointActor_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SingleUsableComponent DefendPointUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "f12b7e8fd4d2a148abc6971ca18bbff2";

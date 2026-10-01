@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Refinery/OBJ_1st_Refinery", "OBJ_1st_Refinery_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_OBJ_1st_Refinery(int EntryPoint);
-    void OnRefineryStateChangedBP(ERefineryState InRefineryState);
+    void OnRefineryStateChangedBP(TEnum<ERefineryState> InRefineryState);
     void ReceiveRefinerySpawned(class AFSDRefinery* InRefinery);
     FText GetObjectiveDescription(float missionLength);
     class UTexture2D* GetObjectiveIcon() const;

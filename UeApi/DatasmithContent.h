@@ -329,12 +329,12 @@ class ADatasmithAreaLightActor : public AActor
 {
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithAreaLightActor");
-    EComponentMobility Mobility;
-    EDatasmithAreaLightActorType LightType;
-    EDatasmithAreaLightActorShape LightShape;
+    TEnum<EComponentMobility> Mobility;
+    TEnum<EDatasmithAreaLightActorType> LightType;
+    TEnum<EDatasmithAreaLightActorShape> LightShape;
     FVector2D Dimensions;
     float Intensity;
-    ELightUnits IntensityUnits;
+    TEnum<ELightUnits> IntensityUnits;
     FLinearColor Color;
     float temperature;
     class UTextureLightProfile* IESTexture;
@@ -352,12 +352,12 @@ class UDatasmithAreaLightActorTemplate : public UDatasmithObjectTemplate
 {
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithAreaLightActorTemplate");
-    EDatasmithAreaLightActorType LightType;
-    EDatasmithAreaLightActorShape LightShape;
+    TEnum<EDatasmithAreaLightActorType> LightType;
+    TEnum<EDatasmithAreaLightActorShape> LightShape;
     FVector2D Dimensions;
     FLinearColor Color;
     float Intensity;
-    ELightUnits IntensityUnits;
+    TEnum<ELightUnits> IntensityUnits;
     float temperature;
     TSoftObjectPtr<class UTextureLightProfile> IESTexture;
     bool bUseIESBrightness;
@@ -554,14 +554,14 @@ class UDatasmithImportOptions : public UDatasmithOptionsBase
 {
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithImportOptions");
-    EDatasmithImportSearchPackagePolicy SearchPackagePolicy;
-    EDatasmithImportAssetConflictPolicy MaterialConflictPolicy;
-    EDatasmithImportAssetConflictPolicy TextureConflictPolicy;
-    EDatasmithImportActorPolicy StaticMeshActorImportPolicy;
-    EDatasmithImportActorPolicy LightImportPolicy;
-    EDatasmithImportActorPolicy CameraImportPolicy;
-    EDatasmithImportActorPolicy OtherActorImportPolicy;
-    EDatasmithImportMaterialQuality MaterialQuality;
+    TEnum<EDatasmithImportSearchPackagePolicy> SearchPackagePolicy;
+    TEnum<EDatasmithImportAssetConflictPolicy> MaterialConflictPolicy;
+    TEnum<EDatasmithImportAssetConflictPolicy> TextureConflictPolicy;
+    TEnum<EDatasmithImportActorPolicy> StaticMeshActorImportPolicy;
+    TEnum<EDatasmithImportActorPolicy> LightImportPolicy;
+    TEnum<EDatasmithImportActorPolicy> CameraImportPolicy;
+    TEnum<EDatasmithImportActorPolicy> OtherActorImportPolicy;
+    TEnum<EDatasmithImportMaterialQuality> MaterialQuality;
     FDatasmithImportBaseOptions BaseOptions;
     FDatasmithReimportOptions ReimportOptions;
     FString Filename;
@@ -607,7 +607,7 @@ class UDatasmithPointLightComponentTemplate : public UDatasmithObjectTemplate
 {
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithPointLightComponentTemplate");
-    ELightUnits IntensityUnits;
+    TEnum<ELightUnits> IntensityUnits;
     float SourceRadius;
     float SourceLength;
     float AttenuationRadius;
@@ -641,7 +641,7 @@ class UDatasmithSceneComponentTemplate : public UDatasmithObjectTemplate
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithSceneComponentTemplate");
     FTransform RelativeTransform;
-    EComponentMobility Mobility;
+    TEnum<EComponentMobility> Mobility;
     TSoftObjectPtr<class USceneComponent> AttachParent;
     bool bVisible;
     TSet<FName> Tags;
@@ -651,7 +651,7 @@ class UDatasmithSkyLightComponentTemplate : public UDatasmithObjectTemplate
 {
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithSkyLightComponentTemplate");
-    ESkyLightSourceType SourceType;
+    TEnum<ESkyLightSourceType> SourceType;
     int CubemapResolution;
     class UTextureCube* Cubemap;
 };

@@ -59,7 +59,7 @@ public:
     void HideIcon(class UWidget* AndSwitchTo);
     void ShowAsMaterial(class UMaterialInterface* Material, FLinearColor Tint);
     void ShowAsTexture(class UTexture2D* Texture, FLinearColor Tint);
-    void ShowAsPickAxePart(class UPickaxePart* part, EPickaxePartLocation PickaxePartLocation, class UPlayerCharacterID* Character);
+    void ShowAsPickAxePart(class UPickaxePart* part, TEnum<EPickaxePartLocation> PickaxePartLocation, class UPlayerCharacterID* Character);
     void ShowAsItem(class UVanityItem* Item, class UPlayerCharacterID* Character, FName CancelGroup);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetShowPadlock(bool InVisible);

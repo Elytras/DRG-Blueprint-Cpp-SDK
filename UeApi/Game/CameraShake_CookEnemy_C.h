@@ -13,6 +13,7 @@ class CameraShake_CookEnemy_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_CookEnemy", "CameraShake_CookEnemy_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

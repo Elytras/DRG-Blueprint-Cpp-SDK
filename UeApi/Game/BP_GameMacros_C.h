@@ -13,6 +13,7 @@ class BP_GameMacros_C : public UObject
 {
 public:
     UE_CLASS("/Game/Game/Macros/BP_GameMacros", "BP_GameMacros_C");
+    static constexpr const char* UeClassTail = "0x00000200 /Script/CoreUObject.Object Engine";
 };
 
 }}}   // namespace Game::Game::Macros

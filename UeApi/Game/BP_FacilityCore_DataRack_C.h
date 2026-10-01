@@ -29,6 +29,7 @@ class BP_FacilityCore_DataRack_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_FacilityCore_DataRack", "BP_FacilityCore_DataRack_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* DataRackIdle_Cue;
     static constexpr const char* DataRackIdle_Cue__UeScsNode = "e123d8f22202d043a794393743151ad9";
@@ -59,7 +60,7 @@ public:
     void Throw(FVector force);
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_5_CarriableEvent__DelegateSignature();
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
-    void BndEvt__Usable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Usable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
 };
 

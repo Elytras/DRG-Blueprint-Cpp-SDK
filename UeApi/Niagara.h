@@ -1992,7 +1992,7 @@ class UNiagaraComponent : public UFXSystemComponent
 public:
     UE_CLASS("/Script/Niagara", "NiagaraComponent");
     class UNiagaraSystem* Asset;
-    ENiagaraTickBehavior TickBehavior;
+    TEnum<ENiagaraTickBehavior> TickBehavior;
     int RandomSeedOffset;
     FNiagaraUserRedirectionParameterStore OverrideParameters;
     bool bForceSolo;
@@ -2005,9 +2005,9 @@ public:
     TArray<FNiagaraMaterialOverride> EmitterMaterials;
     TMulticastInlineDelegate<void(class UNiagaraComponent* PSystem)> OnSystemFinished;
     FName AutoAttachSocketName;
-    EAttachmentRule AutoAttachLocationRule;
-    EAttachmentRule AutoAttachRotationRule;
-    EAttachmentRule AutoAttachScaleRule;
+    TEnum<EAttachmentRule> AutoAttachLocationRule;
+    TEnum<EAttachmentRule> AutoAttachRotationRule;
+    TEnum<EAttachmentRule> AutoAttachScaleRule;
     void AdvanceSimulation(int TickCount, float TickDeltaSeconds);
     void AdvanceSimulationByTime(float SimulateTime, float TickDeltaSeconds);
     class UNiagaraDataInterface* GetDataInterface(FString Name_0);
@@ -2018,7 +2018,7 @@ public:
     void ReinitializeSystem();
     void ResetSystem();
     void SeekToDesiredAge(float InDesiredAge);
-    void SetAgeUpdateMode(ENiagaraAgeUpdateMode InAgeUpdateMode);
+    void SetAgeUpdateMode(TEnum<ENiagaraAgeUpdateMode> InAgeUpdateMode);
     void SetAllowScalability(bool bAllow);
     void SetAsset(class UNiagaraSystem* InAsset, bool bResetExistingOverrideParameters);
     void SetAutoDestroy(bool bInAutoDestroy);
@@ -2043,7 +2043,7 @@ public:
     void SetRandomSeedOffset(int NewRandomSeedOffset);
     void SetRenderingEnabled(bool bInRenderingEnabled);
     void SetSeekDelta(float InSeekDelta);
-    void SetTickBehavior(ENiagaraTickBehavior NewTickBehavior);
+    void SetTickBehavior(TEnum<ENiagaraTickBehavior> NewTickBehavior);
     void SetVariableActor(FName InVariableName, class AActor* Actor);
     void SetVariableBool(FName InVariableName, bool InValue);
     void SetVariableFloat(FName InVariableName, float InValue);
@@ -2056,7 +2056,7 @@ public:
     void SetVariableVec2(FName InVariableName, FVector2D InValue);
     void SetVariableVec3(FName InVariableName, FVector InValue);
     void SetVariableVec4(FName InVariableName, const FVector4& InValue);
-    UE_PURE ENiagaraAgeUpdateMode GetAgeUpdateMode() const;
+    UE_PURE TEnum<ENiagaraAgeUpdateMode> GetAgeUpdateMode() const;
     UE_PURE class UNiagaraSystem* GetAsset() const;
     UE_PURE float GetDesiredAge() const;
     UE_PURE bool GetForceSolo() const;
@@ -2066,7 +2066,7 @@ public:
     UE_PURE bool GetPreviewLODDistanceEnabled() const;
     int GetRandomSeedOffset() const;
     UE_PURE float GetSeekDelta() const;
-    UE_PURE ENiagaraTickBehavior GetTickBehavior() const;
+    UE_PURE TEnum<ENiagaraTickBehavior> GetTickBehavior() const;
     UE_PURE bool IsPaused() const;
 };
 
@@ -2087,11 +2087,11 @@ class UNiagaraDataInterfaceSkeletalMesh : public UNiagaraDataInterface
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceSkeletalMesh");
-    ENDISkeletalMesh_SourceMode SourceMode;
+    TEnum<ENDISkeletalMesh_SourceMode> SourceMode;
     class AActor* Source;
     FNiagaraUserParameterBinding MeshUserParameter;
     class USkeletalMeshComponent* SourceComponent;
-    ENDISkeletalMesh_SkinningMode SkinningMode;
+    TEnum<ENDISkeletalMesh_SkinningMode> SkinningMode;
     TArray<FName> SamplingRegions;
     int WholeMeshLOD;
     TArray<FName> FilteredBones;
@@ -2121,7 +2121,7 @@ class UNiagaraDataInterfaceStaticMesh : public UNiagaraDataInterface
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceStaticMesh");
-    ENDIStaticMesh_SourceMode SourceMode;
+    TEnum<ENDIStaticMesh_SourceMode> SourceMode;
     class UStaticMesh* DefaultMesh;
     class AActor* Source;
     class UStaticMeshComponent* SourceComponent;
@@ -2158,10 +2158,10 @@ class UMovieSceneNiagaraSystemSpawnSection : public UMovieSceneSection
 {
 public:
     UE_CLASS("/Script/Niagara", "MovieSceneNiagaraSystemSpawnSection");
-    ENiagaraSystemSpawnSectionStartBehavior SectionStartBehavior;
-    ENiagaraSystemSpawnSectionEvaluateBehavior SectionEvaluateBehavior;
-    ENiagaraSystemSpawnSectionEndBehavior SectionEndBehavior;
-    ENiagaraAgeUpdateMode AgeUpdateMode;
+    TEnum<ENiagaraSystemSpawnSectionStartBehavior> SectionStartBehavior;
+    TEnum<ENiagaraSystemSpawnSectionEvaluateBehavior> SectionEvaluateBehavior;
+    TEnum<ENiagaraSystemSpawnSectionEndBehavior> SectionEndBehavior;
+    TEnum<ENiagaraAgeUpdateMode> AgeUpdateMode;
 };
 
 class UMovieSceneNiagaraVectorParameterTrack : public UMovieSceneNiagaraParameterTrack
@@ -2181,7 +2181,7 @@ public:
     bool bPreviewLooping;
     FIntPoint FramesPerDimension;
     TArray<FNiagaraBakerTextureSettings> OutputTextures;
-    ENiagaraBakerViewMode CameraViewportMode;
+    TEnum<ENiagaraBakerViewMode> CameraViewportMode;
     float CameraOrbitDistance;
     float CameraFOV;
     float CameraOrthoWidth;
@@ -2203,7 +2203,7 @@ public:
     UE_CLASS("/Script/Niagara", "NiagaraRendererProperties");
     FNiagaraPlatformSet Platforms;
     int SortOrderHint;
-    ENiagaraRendererMotionVectorSetting MotionVectorSetting;
+    TEnum<ENiagaraRendererMotionVectorSetting> MotionVectorSetting;
     bool bIsEnabled;
     bool bMotionBlurEnabled;
 };
@@ -2463,7 +2463,7 @@ class UNiagaraDataInterfaceExport : public UNiagaraDataInterface
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceExport");
     FNiagaraUserParameterBinding CallbackHandlerParameter;
-    ENDIExport_GPUAllocationMode GPUAllocationMode;
+    TEnum<ENDIExport_GPUAllocationMode> GPUAllocationMode;
     int GPUAllocationFixedSize;
     float GPUAllocationPerParticleSize;
 };
@@ -2499,7 +2499,7 @@ class UNiagaraDataInterfaceGrid2DCollection : public UNiagaraDataInterfaceGrid2D
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceGrid2DCollection");
     FNiagaraUserParameterBinding RenderTargetUserParameter;
-    ENiagaraGpuBufferFormat OverrideBufferFormat;
+    TEnum<ENiagaraGpuBufferFormat> OverrideBufferFormat;
     bool bOverrideFormat;
     TMap<uint64, class UTextureRenderTarget2DArray*> ManagedRenderTargets;
     bool FillRawTexture2D(class UNiagaraComponent* Component, class UTextureRenderTarget2D* Dest, int& TilesX, int& TilesY);
@@ -2523,7 +2523,7 @@ public:
     FIntVector NumCells;
     float CellSize;
     int NumCellsMaxAxis;
-    ESetResolutionMethod SetResolutionMethod;
+    TEnum<ESetResolutionMethod> SetResolutionMethod;
     FVector WorldBBoxSize;
 };
 
@@ -2533,7 +2533,7 @@ public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceGrid3DCollection");
     int NumAttributes;
     FNiagaraUserParameterBinding RenderTargetUserParameter;
-    ENiagaraGpuBufferFormat OverrideBufferFormat;
+    TEnum<ENiagaraGpuBufferFormat> OverrideBufferFormat;
     bool bOverrideFormat;
     bool FillRawVolumeTexture(class UNiagaraComponent* Component, class UVolumeTexture* Dest, int& TilesX, int& TilesY, int& TileZ);
     bool FillVolumeTexture(class UNiagaraComponent* Component, class UVolumeTexture* Dest, int AttributeIndex);
@@ -2555,7 +2555,7 @@ class UNiagaraDataInterfaceLandscape : public UNiagaraDataInterface
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceLandscape");
     class AActor* SourceLandscape;
-    ENDILandscape_SourceMode SourceMode;
+    TEnum<ENDILandscape_SourceMode> SourceMode;
     TArray<class UPhysicalMaterial*> PhysicalMaterials;
 };
 
@@ -2598,8 +2598,8 @@ class UNiagaraDataInterfaceRenderTarget2D : public UNiagaraDataInterfaceRWBase
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceRenderTarget2D");
     FIntPoint Size;
-    ENiagaraMipMapGeneration MipMapGeneration;
-    ETextureRenderTargetFormat OverrideRenderTargetFormat;
+    TEnum<ENiagaraMipMapGeneration> MipMapGeneration;
+    TEnum<ETextureRenderTargetFormat> OverrideRenderTargetFormat;
     bool bInheritUserParameterSettings;
     bool bOverrideFormat;
     FNiagaraUserParameterBinding RenderTargetUserParameter;
@@ -2611,7 +2611,7 @@ class UNiagaraDataInterfaceRenderTarget2DArray : public UNiagaraDataInterfaceRWB
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceRenderTarget2DArray");
     FIntVector Size;
-    ETextureRenderTargetFormat OverrideRenderTargetFormat;
+    TEnum<ETextureRenderTargetFormat> OverrideRenderTargetFormat;
     bool bInheritUserParameterSettings;
     bool bOverrideFormat;
     FNiagaraUserParameterBinding RenderTargetUserParameter;
@@ -2623,7 +2623,7 @@ class UNiagaraDataInterfaceRenderTargetCube : public UNiagaraDataInterfaceRWBase
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceRenderTargetCube");
     int Size;
-    ETextureRenderTargetFormat OverrideRenderTargetFormat;
+    TEnum<ETextureRenderTargetFormat> OverrideRenderTargetFormat;
     bool bInheritUserParameterSettings;
     bool bOverrideFormat;
     FNiagaraUserParameterBinding RenderTargetUserParameter;
@@ -2635,7 +2635,7 @@ class UNiagaraDataInterfaceRenderTargetVolume : public UNiagaraDataInterfaceRWBa
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceRenderTargetVolume");
     FIntVector Size;
-    ETextureRenderTargetFormat OverrideRenderTargetFormat;
+    TEnum<ETextureRenderTargetFormat> OverrideRenderTargetFormat;
     bool bInheritUserParameterSettings;
     bool bOverrideFormat;
     FNiagaraUserParameterBinding RenderTargetUserParameter;
@@ -2740,8 +2740,8 @@ class UNiagaraEffectType : public UObject
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraEffectType");
-    ENiagaraScalabilityUpdateFrequency UpdateFrequency;
-    ENiagaraCullReaction CullReaction;
+    TEnum<ENiagaraScalabilityUpdateFrequency> UpdateFrequency;
+    TEnum<ENiagaraCullReaction> CullReaction;
     class UNiagaraSignificanceHandler* SignificanceHandler;
     TArray<FNiagaraSystemScalabilitySettings> DetailLevelScalabilitySettings;
     FNiagaraSystemScalabilitySettingsArray SystemScalabilitySettings;
@@ -2758,11 +2758,11 @@ public:
     bool bLocalSpace;
     bool bDeterminism;
     int RandomSeed;
-    EParticleAllocationMode AllocationMode;
+    TEnum<EParticleAllocationMode> AllocationMode;
     int PreAllocationCount;
     FNiagaraEmitterScriptProperties UpdateScriptProps;
     FNiagaraEmitterScriptProperties SpawnScriptProps;
-    ENiagaraSimTarget SimTarget;
+    TEnum<ENiagaraSimTarget> SimTarget;
     FBox FixedBounds;
     int MinDetailLevel;
     int MaxDetailLevel;
@@ -2817,9 +2817,9 @@ public:
     static void SetTexture2DArrayObject(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UTexture2DArray* Texture);
     static void SetTextureObject(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UTexture* Texture);
     static void SetVolumeTextureObject(class UNiagaraComponent* NiagaraSystem, FString OverrideName, class UVolumeTexture* Texture);
-    static class UNiagaraComponent* SpawnSystemAtLocation(class UObject* WorldContextObject, class UNiagaraSystem* SystemTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
-    static class UNiagaraComponent* SpawnSystemAtLocation(class UNiagaraSystem* SystemTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
-    static class UNiagaraComponent* SpawnSystemAttached(class UNiagaraSystem* SystemTemplate, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck);
+    static class UNiagaraComponent* SpawnSystemAtLocation(class UObject* WorldContextObject, class UNiagaraSystem* SystemTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, bool bAutoActivate, TEnum<ENCPoolMethod> PoolingMethod, bool bPreCullCheck);
+    static class UNiagaraComponent* SpawnSystemAtLocation(class UNiagaraSystem* SystemTemplate, FVector Location, FRotator Rotation, FVector Scale, bool bAutoDestroy, bool bAutoActivate, TEnum<ENCPoolMethod> PoolingMethod, bool bPreCullCheck);
+    static class UNiagaraComponent* SpawnSystemAttached(class UNiagaraSystem* SystemTemplate, class USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnum<EAttachLocation> LocationType, bool bAutoDestroy, bool bAutoActivate, TEnum<ENCPoolMethod> PoolingMethod, bool bPreCullCheck);
 };
 
 class UNiagaraLightRendererProperties : public UNiagaraRendererProperties
@@ -2847,8 +2847,8 @@ class UNiagaraMeshRendererProperties : public UNiagaraRendererProperties
 public:
     UE_CLASS("/Script/Niagara", "NiagaraMeshRendererProperties");
     TArray<FNiagaraMeshRendererMeshProperties> Meshes;
-    ENiagaraRendererSourceDataMode SourceMode;
-    ENiagaraSortMode SortMode;
+    TEnum<ENiagaraRendererSourceDataMode> SourceMode;
+    TEnum<ENiagaraSortMode> SortMode;
     bool bOverrideMaterials;
     bool bSortOnlyWhenTranslucent;
     bool bGpuLowLatencyTranslucency;
@@ -2858,10 +2858,10 @@ public:
     bool bEnableMeshFlipbook;
     TArray<FNiagaraMeshMaterialOverride> OverrideMaterials;
     FVector2D SubImageSize;
-    ENiagaraMeshFacingMode FacingMode;
+    TEnum<ENiagaraMeshFacingMode> FacingMode;
     bool bLockedAxisEnable;
     FVector LockedAxis;
-    ENiagaraMeshLockedAxisSpace LockedAxisSpace;
+    TEnum<ENiagaraMeshLockedAxisSpace> LockedAxisSpace;
     float MinCameraDistance;
     float MaxCameraDistance;
     uint32 RendererVisibility;
@@ -2889,7 +2889,7 @@ public:
     FNiagaraVariableAttributeBinding PrevVelocityBinding;
     class UStaticMesh* ParticleMesh;
     FVector PivotOffset;
-    ENiagaraMeshPivotOffsetSpace PivotOffsetSpace;
+    TEnum<ENiagaraMeshPivotOffsetSpace> PivotOffsetSpace;
 };
 
 class UNiagaraMessageDataBase : public UObject
@@ -3057,7 +3057,7 @@ class ANiagaraPreviewGrid : public AActor
 public:
     UE_CLASS("/Script/Niagara", "NiagaraPreviewGrid");
     class UNiagaraSystem* System;
-    ENiagaraPreviewGridResetMode ResetMode;
+    TEnum<ENiagaraPreviewGridResetMode> ResetMode;
     class UNiagaraPreviewAxis* PreviewAxisX;
     class UNiagaraPreviewAxis* PreviewAxisY;
     TSubclassOf<class ANiagaraPreviewBase> PreviewClass;
@@ -3079,18 +3079,18 @@ public:
     UE_CLASS("/Script/Niagara", "NiagaraRibbonRendererProperties");
     class UMaterialInterface* Material;
     FNiagaraUserParameterBinding MaterialUserParamBinding;
-    ENiagaraRibbonFacingMode FacingMode;
+    TEnum<ENiagaraRibbonFacingMode> FacingMode;
     FNiagaraRibbonUVSettings UV0Settings;
     FNiagaraRibbonUVSettings UV1Settings;
-    ENiagaraRibbonDrawDirection DrawDirection;
-    ENiagaraRibbonShapeMode Shape;
+    TEnum<ENiagaraRibbonDrawDirection> DrawDirection;
+    TEnum<ENiagaraRibbonShapeMode> Shape;
     bool bEnableAccurateGeometry;
     int WidthSegmentationCount;
     int MultiPlaneCount;
     int TubeSubdivisions;
     TArray<FNiagaraRibbonShapeCustomVertex> CustomVertices;
     float CurveTension;
-    ENiagaraRibbonTessellationMode TessellationMode;
+    TEnum<ENiagaraRibbonTessellationMode> TessellationMode;
     int TessellationFactor;
     bool bUseConstantFactor;
     float TessellationAngle;
@@ -3121,7 +3121,7 @@ class UNiagaraScript : public UNiagaraScriptBase
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraScript");
-    ENiagaraScriptUsage Usage;
+    TEnum<ENiagaraScriptUsage> Usage;
     FGuid UsageId;
     FNiagaraParameterStore RapidIterationParameters;
     FNiagaraScriptExecutionParameterStore ScriptExecutionParamStore;
@@ -3146,12 +3146,12 @@ public:
     FSoftObjectPath DefaultEffectType;
     TArray<FText> QualityLevels;
     TMap<FString, FText> ComponentRendererWarningsPerClass;
-    ETextureRenderTargetFormat DefaultRenderTargetFormat;
-    ENiagaraGpuBufferFormat DefaultGridFormat;
-    ENiagaraDefaultRendererMotionVectorSetting DefaultRendererMotionVectorSetting;
-    ENDISkelMesh_GpuMaxInfluences NDISkelMesh_GpuMaxInfluences;
-    ENDISkelMesh_GpuUniformSamplingFormat NDISkelMesh_GpuUniformSamplingFormat;
-    ENDISkelMesh_AdjacencyTriangleIndexFormat NDISkelMesh_AdjacencyTriangleIndexFormat;
+    TEnum<ETextureRenderTargetFormat> DefaultRenderTargetFormat;
+    TEnum<ENiagaraGpuBufferFormat> DefaultGridFormat;
+    TEnum<ENiagaraDefaultRendererMotionVectorSetting> DefaultRendererMotionVectorSetting;
+    TEnum<ENDISkelMesh_GpuMaxInfluences> NDISkelMesh_GpuMaxInfluences;
+    TEnum<ENDISkelMesh_GpuUniformSamplingFormat> NDISkelMesh_GpuUniformSamplingFormat;
+    TEnum<ENDISkelMesh_AdjacencyTriangleIndexFormat> NDISkelMesh_AdjacencyTriangleIndexFormat;
     class UNiagaraEffectType* DefaultEffectTypePtr;
 };
 
@@ -3168,7 +3168,7 @@ class UNiagaraSimulationStageGeneric : public UNiagaraSimulationStageBase
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraSimulationStageGeneric");
-    ENiagaraIterationSource IterationSource;
+    TEnum<ENiagaraIterationSource> IterationSource;
     int Iterations;
     bool bSpawnOnly;
     bool bDisablePartialParticleUpdate;
@@ -3180,12 +3180,12 @@ class UNiagaraSpriteRendererProperties : public UNiagaraRendererProperties
 public:
     UE_CLASS("/Script/Niagara", "NiagaraSpriteRendererProperties");
     class UMaterialInterface* Material;
-    ENiagaraRendererSourceDataMode SourceMode;
+    TEnum<ENiagaraRendererSourceDataMode> SourceMode;
     FNiagaraUserParameterBinding MaterialUserParamBinding;
-    ENiagaraSpriteAlignment Alignment;
-    ENiagaraSpriteFacingMode FacingMode;
+    TEnum<ENiagaraSpriteAlignment> Alignment;
+    TEnum<ENiagaraSpriteFacingMode> FacingMode;
     FVector2D PivotInUVSpace;
-    ENiagaraSortMode SortMode;
+    TEnum<ENiagaraSortMode> SortMode;
     FVector2D SubImageSize;
     bool bSubImageBlend;
     bool bRemoveHMDRollInVR;

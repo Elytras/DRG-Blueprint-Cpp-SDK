@@ -23,24 +23,24 @@ public:
     FText Text;
     bool ToUpper;
     FSlateFontInfo Font;
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     float MinDesiredWidth;
     FMargin TextMargin;
     bool AutoTextWrap;
     float WrapTextAt;
-    ETextWrappingPolicy WrappingPolicy;
+    TEnum<ETextWrappingPolicy> WrappingPolicy;
     int MaxLength;
     FText MaxLengthIndicator;
     void ExecuteUbergraph_Basic_Label(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMargin(FMargin New_Margin);
     void SetText(FText Text_0);
-    void SetJustification(ETextJustify Justification_0);
+    void SetJustification(TEnum<ETextJustify> Justification_0);
     void SetMinDesiredWidth(float MinDesiredWidth_0);
     void SetFontSize(int inFontSize);
     void SetAutoWrapText(bool AutoTextWrap_0);
     void SetWrapTextAt(float WrapTextAt_0);
-    void SetWrappingPolicy(ETextWrappingPolicy WrappingPolicy_0);
+    void SetWrappingPolicy(TEnum<ETextWrappingPolicy> WrappingPolicy_0);
     void GetText(FText& Text_0);
 };
 

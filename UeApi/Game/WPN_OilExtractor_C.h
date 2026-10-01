@@ -25,6 +25,7 @@ class WPN_OilExtractor_C : public Game::WeaponsNTools::Extractor::WPN_Extractor_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Extractor/WPN_OilExtractor", "WPN_OilExtractor_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.ParticleSystemComponent InvalidSurfaceParticles;/Script/Engine.ParticleSystemComponent MeltingEffect;/Script/Engine.ParticleSystemComponent MuzzleEffect;/Script/Engine.ParticleSystemComponent MuzzleEInvalidffect;/Script/Engine.ParticleSystemComponent TPMuzzleEffect;/Script/Engine.ParticleSystemComponent TPMuzzleInvalidEffect;/Script/Engine.PointLightComponent SurfaceLight;/Script/Engine.SkeletalMeshComponent DropppedMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame_WPN_OilExtractor_C;
     static constexpr const char* UberGraphFrame_WPN_OilExtractor_C__UeName = "UberGraphFrame";
     class UAudioComponent* OilExtractorHitPositive;

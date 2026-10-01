@@ -18,6 +18,7 @@ class PRJ_MicroMissile_Cluster_C : public Game::WeaponsNTools::MicroMissileLaunc
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Cluster", "PRJ_MicroMissile_Cluster_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_MicroMissile_Cluster_C;
     static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Cluster_C__UeName = "UberGraphFrame";
     class UClusterbombSpawner* ClusterbombSpawner;

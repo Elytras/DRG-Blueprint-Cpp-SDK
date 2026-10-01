@@ -26,7 +26,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "0d1a08464b00cc4094a3af35e180f7b4";
     float FadeOut_Scale_7287E2514093D4CF47DDFC8BAD4637B9;
-    ETimelineDirection FadeOut__Direction_7287E2514093D4CF47DDFC8BAD4637B9;
+    TEnum<ETimelineDirection> FadeOut__Direction_7287E2514093D4CF47DDFC8BAD4637B9;
     class UTimelineComponent* FadeOut;
     TArray<FTransform> Instance_Transforms;
     static constexpr const char* Instance_Transforms__UeName = "Instance Transforms";

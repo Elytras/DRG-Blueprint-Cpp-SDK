@@ -30,11 +30,11 @@ public:
     class URichTextSizable* RichTextSizable_280;
     TOOLTIP_Season_Reward_C* TOOLTIP_Season_Reward;
     class UVerticalBox* VBox_ToV_Info;
-    ESeasonVisibilityState State;
+    TEnum<ESeasonVisibilityState> State;
     void ExecuteUbergraph_Tooltip_TreeOfVanityReward(int EntryPoint);
     void PlayNotEnoughTokens();
     void UpdateHoldTime(float InPercent);
-    void SetState(ESeasonVisibilityState State_0);
+    void SetState(TEnum<ESeasonVisibilityState> State_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

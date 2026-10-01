@@ -80,9 +80,9 @@ public:
     FString LocalMapOptions;
     FSoftObjectPath TransitionMap;
     bool bUseSplitscreen;
-    ETwoPlayerSplitScreenType TwoPlayerSplitscreenLayout;
-    EThreePlayerSplitScreenType ThreePlayerSplitscreenLayout;
-    EFourPlayerSplitScreenType FourPlayerSplitscreenLayout;
+    TEnum<ETwoPlayerSplitScreenType> TwoPlayerSplitscreenLayout;
+    TEnum<EThreePlayerSplitScreenType> ThreePlayerSplitscreenLayout;
+    TEnum<EFourPlayerSplitScreenType> FourPlayerSplitscreenLayout;
     bool bOffsetPlayerGamepadIds;
     FSoftClassPath GameInstanceClass;
     FSoftObjectPath GameDefaultMap;

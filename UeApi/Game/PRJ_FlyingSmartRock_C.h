@@ -27,6 +27,7 @@ class PRJ_FlyingSmartRock_C : public AProjectile
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/FlyingSmartRocks/PRJ_FlyingSmartRock", "PRJ_FlyingSmartRock_C");
     using SpikeSkeletalMesh_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::SpikeSkeletalMesh_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";

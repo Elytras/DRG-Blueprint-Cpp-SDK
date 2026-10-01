@@ -72,7 +72,7 @@ public:
     TMap<FString, ITM_PendingMod_C*> WidgetsPendingInstall;
     FTimerHandle RefreshWaitHandle;
     bool CompactView;
-    EPackageSortField SortField;
+    TEnum<EPackageSortField> SortField;
     bool SortAscending;
     TArray<ITM_Mod_C*> ModWidgetsDueForUpdate;
     ITM_Mod_C* ModWidgetDueForUpdate;
@@ -90,10 +90,10 @@ public:
     static constexpr const char* Start_Screen_Apply__UeName = "Start Screen Apply";
     void Reload_Tab();
     static constexpr const char* Reload_Tab__UeName = "Reload Tab";
-    void OnModioRequestHandled(EModioRequestType requestType);
+    void OnModioRequestHandled(TEnum<EModioRequestType> requestType);
     void OnModActivationChanged(ITM_Mod_C* ManipulatedModItem);
     void UpdateButtonsAndCounter();
-    void BndEvt__SortByBox_K2Node_ComponentBoundEvent_4_OnSortByChanged__DelegateSignature(EPackageSortField InField, bool InAscending);
+    void BndEvt__SortByBox_K2Node_ComponentBoundEvent_4_OnSortByChanged__DelegateSignature(TEnum<EPackageSortField> InField, bool InAscending);
     void BndEvt__UserSetting_CompactView_K2Node_ComponentBoundEvent_5_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void RefreshModUI();
     void RefreshInstallModsButton();
@@ -118,7 +118,7 @@ public:
     void SetInteractability();
     void SetCompactMode(bool CompactView_0);
     void UpdateModCounter();
-    void ReorderInstalledMods(EPackageSortField InField, bool InAscending);
+    void ReorderInstalledMods(TEnum<EPackageSortField> InField, bool InAscending);
     void RemovePendingRequests();
     void RefreshApplyCancelButtons();
     void IsUGCSubsystemAndRegistryValid(bool& IsValid);

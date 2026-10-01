@@ -20,6 +20,7 @@ class ITM_CleanupDrop_C : public ACleanupPodItem
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/ITM_CleanupDrop", "ITM_CleanupDrop_C");
     using OnScreenIndicator_CleanupDrop_Order_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     static constexpr const char* MonitorWidget__UeScsNode = "064f5d3f89be1a40b4b9e6a5e1022c02";
@@ -27,7 +28,7 @@ public:
     OnScreenIndicator_CleanupDrop_Order_C* Widget;
     void ExecuteUbergraph_ITM_CleanupDrop(int EntryPoint);
     void SetMarkerAndWidget(class AItemMarker* Marker_0);
-    void UpdateWidget(EPlaceableObstructionType reason, float TimeLeft);
+    void UpdateWidget(TEnum<EPlaceableObstructionType> reason, float TimeLeft);
     void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
     void OnMarkerSpawned_Event(class AItemMarker* Marker_0);
     void RecieveEquipped();

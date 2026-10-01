@@ -34,10 +34,10 @@ public:
     void OnUpdateHealthImage(float Health);
     UE_COSMETIC void Construct();
     void UpdateBloodColor(bool NewValue);
-    void OnCameraModeChanged(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void End_Splat();
     static constexpr const char* End_Splat__UeName = "End Splat";
-    void OnCharacterStateChanged(ECharacterState NewState);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void OnDamageTaken_Event(float amount);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Begin_Splat(float Duration, FLinearColor Color_0);

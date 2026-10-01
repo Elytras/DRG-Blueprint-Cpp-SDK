@@ -25,7 +25,7 @@ public:
     class UComboBoxString* ComboBoxString_0;
     class USpinBox* EnemyCountBox;
     TArray<class UEnemyDescriptor*> Enemies;
-    EEnemyDescriptorCheatClass Cheat_Class;
+    TEnum<EEnemyDescriptorCheatClass> Cheat_Class;
     static constexpr const char* Cheat_Class__UeName = "Cheat Class";
     void ExecuteUbergraph_Cheat_SpawnEnemy(int EntryPoint);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_23_OnButtonClickedEvent__DelegateSignature();

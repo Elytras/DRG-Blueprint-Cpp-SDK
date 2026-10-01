@@ -17,6 +17,7 @@ class BP_CleanupPod_WalkingPlagueHeart_C : public Game::GameElements::Missions::
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/WalkingPlagueHeart/BP_CleanupPod_WalkingPlagueHeart", "BP_CleanupPod_WalkingPlagueHeart_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent RemovePlague";
     class UParticleSystemComponent* ThrusterParticles_0;
     class UAudioComponent* ThrusterSound_0;
     FTimerHandle ResizeCarverTimer_0;

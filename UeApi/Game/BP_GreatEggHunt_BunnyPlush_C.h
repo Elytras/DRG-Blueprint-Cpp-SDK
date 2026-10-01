@@ -32,7 +32,7 @@ public:
     FRandRange RandomRange;
     void ExecuteUbergraph_BP_GreatEggHunt_BunnyPlush(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_PlayPet();
-    void BndEvt__BP_GreatEggHunt_BunnyPlush_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_GreatEggHunt_BunnyPlush_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

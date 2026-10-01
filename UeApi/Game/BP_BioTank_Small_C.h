@@ -19,6 +19,7 @@ class BP_BioTank_Small_C : public ADisplayCase
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/BP_BioTank_Small", "BP_BioTank_Small_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Biotank_Bubbles_Small;
     static constexpr const char* NS_Biotank_Bubbles_Small__UeScsNode = "ddaca1be556cc24db591508716f1dbeb";

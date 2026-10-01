@@ -18,6 +18,7 @@ class PRJ_GuntowerLineProjectile_C : public AGuntowerLineProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_RadialFire/PRJ_GuntowerLineProjectile", "PRJ_GuntowerLineProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.ParticleSystemComponent BeamParticles;/Script/Engine.SceneComponent LeftLinePoint;/Script/Engine.SceneComponent RightLinePoint;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GunTowerLineProjectile_Cue;
     static constexpr const char* GunTowerLineProjectile_Cue__UeScsNode = "adaddcf341aec9429ed881728db3fac8";

@@ -36,6 +36,7 @@ class BP_Refinery_Target_C : public APipelineFinish
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Target", "BP_Refinery_Target_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/FSD.SingleUsableComponent UsableOrderExtractor;/Script/FSD.TrackBuilderConnectPoint TrackEndConnection";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PathfinderCollision;
     static constexpr const char* PathfinderCollision__UeScsNode = "e6a1135533620b4882122718fbb5ef49";
@@ -89,19 +90,19 @@ public:
     bool PlayerLookingAtTarget;
     bool PlacementValid;
     class APipelineStart* PipelineStart;
-    ERefineryState RefineryState;
+    TEnum<ERefineryState> RefineryState;
     bool IsRefining;
     void ExecuteUbergraph_BP_Refinery_Target(int EntryPoint);
     void BndEvt__ParticleSystem_K2Node_ComponentBoundEvent_3_ParticleBurstSignature__DelegateSignature(FName EventName, float EmitterTime, int ParticleCount);
     void OnMatchStarted();
     void InitialCarve();
-    void BndEvt__Outline_K2Node_ComponentBoundEvent_2_OutlineChanged__DelegateSignature(EOutline InOutline);
-    void OnRefineryStateChanged_Event(ERefineryState InRefineryState);
-    void BndEvt__UsableOrderExtractor_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Outline_K2Node_ComponentBoundEvent_2_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
+    void OnRefineryStateChanged_Event(TEnum<ERefineryState> InRefineryState);
+    void BndEvt__UsableOrderExtractor_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__PipelineEndConnection_K2Node_ComponentBoundEvent_0_ConnectionDelegate__DelegateSignature(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
     void StartBlinking();
     void ReceiveExtractorPodSpawned(class APipelineExtractorPod* InExtractorPod);
-    void OnStateChanged_Event(class ARessuplyPod* InPod, ERessuplyPodState InState);
+    void OnStateChanged_Event(class ARessuplyPod* InPod, TEnum<ERessuplyPodState> InState);
     void StopBlinking();
     void Ping(bool InValidPlacement);
     void ReceiveBeginPlay();

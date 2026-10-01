@@ -19,6 +19,7 @@ class WPN_ShieldRegeneratorItem_C : public AShieldGeneratorItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/WPN_ShieldRegeneratorItem", "WPN_ShieldRegeneratorItem_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Capacity;/Script/FSD.CapacityHoldingItemAggregator ChargeCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* RechargeAudio;
     static constexpr const char* RechargeAudio__UeScsNode = "676d842f2be1184ea4c2457dbd4b218c";

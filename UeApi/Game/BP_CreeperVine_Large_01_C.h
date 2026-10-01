@@ -13,6 +13,7 @@ class BP_CreeperVine_Large_01_C : public Game::LevelElements::RoomObjects::Thorn
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/ThornBranches/BP_CreeperVine_Large_01", "BP_CreeperVine_Large_01_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::ThornBranches

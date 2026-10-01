@@ -37,6 +37,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/BP_MorkiteExtractorPod", "BP_MorkiteExtractorPod_C");
     using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
     using OBJ_DD_MorkiteWell_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::OBJ_DD_MorkiteWell_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent SkeletalMesh_Base;/Script/UMG.WidgetComponent ProgressWidget";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect;
     static constexpr const char* TerrainDetect__UeScsNode = "74f269c6311e1641bfe2766be4e6973b";
@@ -91,13 +92,13 @@ public:
     void ExecuteUbergraph_BP_MorkiteExtractorPod(int EntryPoint);
     void BndEvt__BP_MorkiteExtractorPod_SingleUsable_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ResizeCarver();
-    void OnExtractorStateChanged(ERefineryExtractorPodState NewState);
+    void OnExtractorStateChanged(TEnum<ERefineryExtractorPodState> NewState);
     void OnPipeLineCompleted();
-    void BndEvt__BP_MorkiteExtractorPod_SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_MorkiteExtractorPod_SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnDropStarted();
     void OnDroppodImpact();
     void TakeOff();
-    void OnBuildStateChanged_Event_0(class APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState);
+    void OnBuildStateChanged_Event_0(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
     void ReceiveBeginPlay();
     UE_PURE OBJ_DD_MorkiteWell_C* GetObjective();
 };

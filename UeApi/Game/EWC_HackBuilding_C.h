@@ -22,6 +22,7 @@ class EWC_HackBuilding_C : public Game::Enemies::Waves::WaveControllers::EWC_Bas
 public:
     UE_CLASS("/Game/GameElements/Objectives/HackBuilding/EWC_HackBuilding", "EWC_HackBuilding_C");
     using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame_EWC_HackBuilding_C;
     static constexpr const char* UberGraphFrame_EWC_HackBuilding_C__UeName = "UberGraphFrame";
     BP_Facility_PowerStation_GeneratorBase_C* FromGenerator;

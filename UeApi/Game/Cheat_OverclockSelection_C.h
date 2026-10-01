@@ -26,9 +26,9 @@ public:
     class UScrollBox* SB_OverclockList;
     TArray<Cheat_PerkListItem_C*> perklistItems;
     void ExecuteUbergraph_Cheat_OverclockSelection(int EntryPoint);
-    void On_state_change(bool Is_Checked, class UItemUpgrade* Item, EItemCategory Item_Category);
+    void On_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
     static constexpr const char* On_state_change__UeName = "On state change";
-    void Initiate_Widget(EItemCategory ItemCategory);
+    void Initiate_Widget(TEnum<EItemCategory> ItemCategory);
     static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
 };
 

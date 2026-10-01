@@ -24,6 +24,7 @@ class BP_CoreCorruption_Rift_C : public ACoreCorruptionRift
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/BP_CoreCorruption_Rift", "BP_CoreCorruption_Rift_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent CrystalDeathPosition;/Script/Engine.SceneComponent CrystalSpawnPosition;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent placement";
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelGenerationCarverComponent* LevelGenerationCorruptionCarver1;
     static constexpr const char* LevelGenerationCorruptionCarver1__UeScsNode = "b86640cc1e76d74f8bf742a435c43975";

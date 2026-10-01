@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_IFG_C : public Game::WeaponsNTools::Grenades::Loadout
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/Loadout_GrenadeProxy_IFG", "Loadout_GrenadeProxy_IFG_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG

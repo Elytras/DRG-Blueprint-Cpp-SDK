@@ -41,6 +41,7 @@ class ENE_Prospector_C : public AProspectorRobot
 public:
     UE_CLASS("/Game/Critters/Prospector/ENE_Prospector", "ENE_Prospector_C");
     using AIC_Prospector_C = Game::Critters::Prospector::AIC_Prospector_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* ShieldMesh;
     static constexpr const char* ShieldMesh__UeScsNode = "3a9d58a8936ebb45ab82992633368194";
@@ -130,8 +131,8 @@ public:
     void BndEvt__HealthDamageTracker_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void BndEvt__ArmorHealthDamage_K2Node_ComponentBoundEvent_1_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void ToggleSampling(bool Active);
-    void OnStateEnd(EProspectorRobotState oldState);
-    void OnStateBegin(EProspectorRobotState NewState);
+    void OnStateEnd(TEnum<EProspectorRobotState> oldState);
+    void OnStateBegin(TEnum<EProspectorRobotState> NewState);
     void EjectDataCore();
     void SetNewTaget(class AActor* Target_0);
     void ReceiveBeginPlay();

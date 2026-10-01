@@ -21,7 +21,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* CheckBox;
     TMulticastInlineDelegate<void(bool IsChecked, EGameType Gametype_0)> OnCheckedChanged;
-    EGameType Gametype;
+    TEnum<EGameType> Gametype;
     bool SandboxMode;
     FText Name_0;
     static constexpr const char* Name_0__UeName = "Name";

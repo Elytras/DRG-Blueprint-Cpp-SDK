@@ -27,6 +27,7 @@ class BP_ExplosiveBarrelDispenser_Platform_C : public ARessuplyPod
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_ExplosiveBarrelDispenser_Platform", "BP_ExplosiveBarrelDispenser_Platform_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
     static constexpr const char* TerrainDetect3__UeScsNode = "22771086baeb4247a2932e1749d800df";

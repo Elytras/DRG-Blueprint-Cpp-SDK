@@ -35,7 +35,7 @@ public:
     TMulticastInlineDelegate<void(UI_Perks_Item_C* Widget)> OnHoverEnter;
     TMulticastInlineDelegate<void(UI_Perks_Item_C* Widget)> OnHoverLeave;
     TMulticastInlineDelegate<void(UI_Perks_Item_C* Widget)> OnClick;
-    EPerkTierState PreviewState;
+    TEnum<EPerkTierState> PreviewState;
     bool PreviewHovered;
     bool PreviewSelected;
     bool ItemHovered;
@@ -58,7 +58,7 @@ public:
     void Refresh();
     void GetPerkAsset(class UPerkAsset*& PerkAsset_0, EPerkTierState& State, int& Tier_0);
     class UWidget* CreateToolTipWidget();
-    void ShowAs(class UPerkAsset* InPerkAsset, int InRank, EPerkTierState InState, bool InHovered, bool InPerkHighlighted, bool InSelected);
+    void ShowAs(class UPerkAsset* InPerkAsset, int InRank, TEnum<EPerkTierState> InState, bool InHovered, bool InPerkHighlighted, bool InSelected);
     void Set_Selected(bool InSelected);
     static constexpr const char* Set_Selected__UeName = "Set Selected";
     void SetIconSize(int InSize);

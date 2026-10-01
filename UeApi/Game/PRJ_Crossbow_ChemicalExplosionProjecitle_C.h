@@ -13,6 +13,7 @@ class PRJ_Crossbow_ChemicalExplosionProjecitle_C : public Game::WeaponsNTools::C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_ChemicalExplosionProjecitle", "PRJ_Crossbow_ChemicalExplosionProjecitle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

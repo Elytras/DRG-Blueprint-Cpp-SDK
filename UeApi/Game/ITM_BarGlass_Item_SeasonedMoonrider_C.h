@@ -13,6 +13,7 @@ class ITM_BarGlass_Item_SeasonedMoonrider_C : public Game::GameElements::Bar::IT
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/ITM_BarGlass_Item_SeasonedMoonrider", "ITM_BarGlass_Item_SeasonedMoonrider_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::GameElements::Bar::Drinkables

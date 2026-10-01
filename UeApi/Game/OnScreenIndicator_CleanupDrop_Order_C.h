@@ -28,7 +28,7 @@ public:
     class UTextBlock* Text_Name;
     void ExecuteUbergraph_OnScreenIndicator_CleanupDrop_Order(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetDetails(FText Name_0, EPlaceableObstructionType Obstruction, float TimeLeft);
+    void SetDetails(FText Name_0, TEnum<EPlaceableObstructionType> Obstruction, float TimeLeft);
 };
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod

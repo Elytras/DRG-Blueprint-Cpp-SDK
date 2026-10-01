@@ -28,6 +28,7 @@ class ENE_ShootingPlant_C : public AShootingPlant
 {
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/ENE_ShootingPlant", "ENE_ShootingPlant_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyLineOfSightComponent* EnemyLineOfSight;
     static constexpr const char* EnemyLineOfSight__UeScsNode = "896e1867b26c794e81219e528f096f9a";

@@ -23,6 +23,7 @@ class Grenade_DamageEnhancer_C : public ADamageEnhancer
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/DamageEnhancer/Grenade_DamageEnhancer", "Grenade_DamageEnhancer_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Box;/Script/Engine.BoxComponent Root;/Script/FSD.CapsuleHitscanComponent CapsuleHitScan;/Script/FSD.DamageComponent Damage;/Script/FSD.HealthComponent Health;/Script/FSD.HitscanComponent HitScan;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/FSD.ReflectionHitscanComponent ReflectionHitScan;/Script/Engine.SphereComponent Sphere;/Script/Engine.StaticMeshComponent Mesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Projector;
     static constexpr const char* Mesh_Projector__UeScsNode = "6e3f1fc4d4ef6c4fbe5573e1f8da1609";

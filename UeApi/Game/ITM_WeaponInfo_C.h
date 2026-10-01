@@ -43,7 +43,7 @@ public:
     UI_AdvancedLabel_C* UI_AdvancedLabel;
     class UBorder* Upgrades_BG;
     class UUpgradableGearComponent* Upgradable;
-    EItemCategory WeaponSlot;
+    TEnum<EItemCategory> WeaponSlot;
     FText IconName;
     class AFSDPlayerState* State;
     class UClass* Character;

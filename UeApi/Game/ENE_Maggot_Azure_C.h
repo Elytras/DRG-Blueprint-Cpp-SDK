@@ -13,6 +13,7 @@ class ENE_Maggot_Azure_C : public Game::Critters::Maggot::ENE_Maggot_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_Azure", "ENE_Maggot_Azure_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
 };
 
 }}}   // namespace Game::Critters::Maggot

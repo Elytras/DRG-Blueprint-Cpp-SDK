@@ -167,9 +167,9 @@ class UBodySetupCore : public UObject
 public:
     UE_CLASS("/Script/PhysicsCore", "BodySetupCore");
     FName BoneName;
-    EPhysicsType PhysicsType;
-    ECollisionTraceFlag CollisionTraceFlag;
-    EBodyCollisionResponse CollisionReponse;
+    TEnum<EPhysicsType> PhysicsType;
+    TEnum<ECollisionTraceFlag> CollisionTraceFlag;
+    TEnum<EBodyCollisionResponse> CollisionReponse;
 };
 
 class UPhysicsSettingsCore : public UDeveloperSettings
@@ -189,15 +189,15 @@ public:
     bool bEnable2DPhysics;
     bool bDefaultHasComplexCollision;
     float BounceThresholdVelocity;
-    EFrictionCombineMode FrictionCombineMode;
-    EFrictionCombineMode RestitutionCombineMode;
+    TEnum<EFrictionCombineMode> FrictionCombineMode;
+    TEnum<EFrictionCombineMode> RestitutionCombineMode;
     float MaxAngularVelocity;
     float MaxDepenetrationVelocity;
     float ContactOffsetMultiplier;
     float MinContactOffset;
     float MaxContactOffset;
     bool bSimulateSkeletalMeshOnDedicatedServer;
-    ECollisionTraceFlag DefaultShapeComplexity;
+    TEnum<ECollisionTraceFlag> DefaultShapeComplexity;
     FChaosSolverConfiguration SolverOptions;
 };
 
@@ -207,10 +207,10 @@ public:
     UE_CLASS("/Script/PhysicsCore", "PhysicalMaterial");
     float Friction;
     float StaticFriction;
-    EFrictionCombineMode FrictionCombineMode;
+    TEnum<EFrictionCombineMode> FrictionCombineMode;
     bool bOverrideFrictionCombineMode;
     float Restitution;
-    EFrictionCombineMode RestitutionCombineMode;
+    TEnum<EFrictionCombineMode> RestitutionCombineMode;
     bool bOverrideRestitutionCombineMode;
     float Density;
     float SleepLinearVelocityThreshold;
@@ -219,7 +219,7 @@ public:
     float RaiseMassToPower;
     float DestructibleDamageThresholdScale;
     class UPhysicalMaterialPropertyBase* PhysicalMaterialProperty;
-    EPhysicalSurface SurfaceType;
+    TEnum<EPhysicalSurface> SurfaceType;
 };
 
 class UPhysicalMaterialPropertyBase : public UObject

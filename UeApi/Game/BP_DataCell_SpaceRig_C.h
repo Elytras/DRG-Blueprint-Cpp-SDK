@@ -21,6 +21,7 @@ class BP_DataCell_SpaceRig_C : public Game::GameElements::Resources::Embedded::G
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/S01_SetDressing/BP_DataCell_SpaceRig", "BP_DataCell_SpaceRig_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_DataCell_SpaceRig_C;
     static constexpr const char* UberGraphFrame_BP_DataCell_SpaceRig_C__UeName = "UberGraphFrame";
     class UOutlineComponent* outline;

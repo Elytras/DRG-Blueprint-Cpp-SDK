@@ -118,7 +118,7 @@ class UOculusMR_Settings : public UObject
 {
 public:
     UE_CLASS("/Script/OculusMR", "OculusMR_Settings");
-    EOculusMR_ClippingReference ClippingReference;
+    TEnum<EOculusMR_ClippingReference> ClippingReference;
     bool bUseTrackedCameraResolution;
     int WidthPerView;
     int HeightPerView;
@@ -129,18 +129,18 @@ public:
     float ChromaKeySimilarity;
     float ChromaKeySmoothRange;
     float ChromaKeySpillRange;
-    EOculusMR_PostProcessEffects ExternalCompositionPostProcessEffects;
+    TEnum<EOculusMR_PostProcessEffects> ExternalCompositionPostProcessEffects;
     bool bIsCasting;
-    EOculusMR_CompositionMethod CompositionMethod;
-    EOculusMR_CameraDeviceEnum CapturingCamera;
+    TEnum<EOculusMR_CompositionMethod> CompositionMethod;
+    TEnum<EOculusMR_CameraDeviceEnum> CapturingCamera;
     void BindToTrackedCameraIndexIfAvailable(int InTrackedCameraIndex);
     int GetBindToTrackedCameraIndex();
-    EOculusMR_CameraDeviceEnum GetCapturingCamera();
-    EOculusMR_CompositionMethod GetCompositionMethod();
+    TEnum<EOculusMR_CameraDeviceEnum> GetCapturingCamera();
+    TEnum<EOculusMR_CompositionMethod> GetCompositionMethod();
     bool GetIsCasting();
     void LoadFromIni();
-    void SetCapturingCamera(EOculusMR_CameraDeviceEnum Val);
-    void SetCompositionMethod(EOculusMR_CompositionMethod Val);
+    void SetCapturingCamera(TEnum<EOculusMR_CameraDeviceEnum> Val);
+    void SetCompositionMethod(TEnum<EOculusMR_CompositionMethod> Val);
     void SetIsCasting(bool Val);
     void SaveToIni() const;
 };

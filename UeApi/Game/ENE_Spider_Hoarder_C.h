@@ -28,6 +28,7 @@ class ENE_Spider_Hoarder_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 public:
     UE_CLASS("/Game/Critters/LootBug/Hoarder/ENE_Spider_Hoarder", "ENE_Spider_Hoarder_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Hoarder_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Hoarder_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight3;
@@ -55,10 +56,10 @@ public:
     float Timeline_2_Light_IntensityB_BC447F934BD2DA41ABECE685727C08B5;
     float Timeline_2_Light_Intensity_G_BC447F934BD2DA41ABECE685727C08B5;
     float Timeline_2_Light_Intensity_R_BC447F934BD2DA41ABECE685727C08B5;
-    ETimelineDirection Timeline_2__Direction_BC447F934BD2DA41ABECE685727C08B5;
+    TEnum<ETimelineDirection> Timeline_2__Direction_BC447F934BD2DA41ABECE685727C08B5;
     class UTimelineComponent* Timeline_2;
     float Timeline_0_Light_Intensity_05D4ADFF47FD2761700DC0BF63BC24DC;
-    ETimelineDirection Timeline_0__Direction_05D4ADFF47FD2761700DC0BF63BC24DC;
+    TEnum<ETimelineDirection> Timeline_0__Direction_05D4ADFF47FD2761700DC0BF63BC24DC;
     class UTimelineComponent* Timeline_0;
     TArray<class UResourceData*> Loot;
     FVector2D ChunkCountRange;

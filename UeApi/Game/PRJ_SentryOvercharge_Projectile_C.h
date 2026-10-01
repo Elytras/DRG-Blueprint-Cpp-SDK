@@ -22,6 +22,7 @@ class PRJ_SentryOvercharge_Projectile_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/PRJ_SentryOvercharge_Projectile", "PRJ_SentryOvercharge_Projectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_GrenadeTrail;
     static constexpr const char* P_GrenadeTrail__UeScsNode = "653cddb62ed0d84fb7b65501ec27b6e8";

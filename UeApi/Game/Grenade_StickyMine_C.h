@@ -33,6 +33,7 @@ class Grenade_StickyMine_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_B
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickyMine/Grenade_StickyMine", "Grenade_StickyMine_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_StickyMine_C;
     static constexpr const char* UberGraphFrame_Grenade_StickyMine_C__UeName = "UberGraphFrame";
     class USphereComponent* UseSphere;
@@ -50,7 +51,7 @@ public:
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "088fd452fa780c498b27df7396e3e3a4";
     float RingPulse_Scale_1486413F4ABF9550B6797DBA3F0A55DB;
-    ETimelineDirection RingPulse__Direction_1486413F4ABF9550B6797DBA3F0A55DB;
+    TEnum<ETimelineDirection> RingPulse__Direction_1486413F4ABF9550B6797DBA3F0A55DB;
     class UTimelineComponent* RingPulse;
     bool Triggered;
     static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
@@ -79,7 +80,7 @@ public:
     void ExplodeLast();
     void KillMine();
     UE_MULTICAST UE_RELIABLE void DisarmMine(class AThrownGrenadeItem* ThrownGrenadeItem);
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void DoTriggerAreaPulse();
     void GetArmed();
     void TriggerExplosion();

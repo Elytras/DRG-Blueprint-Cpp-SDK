@@ -23,6 +23,7 @@ class ITM_HackingTool_C : public AHackingToolItem
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/ITM_HackingTool", "ITM_HackingTool_C");
     using HackingTool_Controller_C = Game::WeaponsNTools::HackingTool::UI::HackingTool_Controller_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
     static constexpr const char* Widget__UeScsNode = "7068dfcbdb86e44aae86a5eaf1d1a1e6";

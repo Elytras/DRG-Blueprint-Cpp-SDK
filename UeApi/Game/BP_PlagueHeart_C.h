@@ -22,6 +22,7 @@ class BP_PlagueHeart_C : public Game::GameElements::Resources::Embedded::Gems::B
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueHeart", "BP_PlagueHeart_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlagueHeart_C;
     static constexpr const char* UberGraphFrame_BP_PlagueHeart_C__UeName = "UberGraphFrame";
     class UNiagaraComponent* Niagara_Spores;

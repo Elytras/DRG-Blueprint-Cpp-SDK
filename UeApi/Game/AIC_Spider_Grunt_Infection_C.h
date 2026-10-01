@@ -13,6 +13,7 @@ class AIC_Spider_Grunt_Infection_C : public Game::Enemies::Spider::Grunt::AIC_Sp
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/AIC_Spider_Grunt_Infection", "AIC_Spider_Grunt_Infection_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::Spider::Grunt

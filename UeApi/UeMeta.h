@@ -63,6 +63,67 @@ otherwise every mod including the header cooks its own copy of the class, and th
   static constexpr const char *Name##__UeAsset = Path
 
 /*
+S38 - editing an asset the game holds, rather than cooking a new one:
+
+    UE_ASSET_EDIT(UeAssets::UEnemyDescriptor::Game::Enemies::Spider::Grunt::ED_Spider_Grunt) { .SpawnSpread = 800 };
+
+The target is a UE_ASSET_AT (every one in UeAssets/ is). The build reads the asset's package as the game cooked it
+(`assetgen compile --game <extracted pak>/FSD/Content`, `game_content` in mods.yaml), replaces or adds the tags the
+braces name and writes the package to the asset's own path, so the mod pak's copy is the one the game loads. A member
+the braces leave out keeps the asset's value, and every other byte stays the game's. A zero is written like any value.
+
+Part of a member's value - one struct member, one TArray element - is assigned by path, in a block of statements:
+
+    UE_ASSET_EDITS {
+      ED_Spider_Grunt.SpawnRarityModifiers[1].Rarity = 2.0f;    // the rest of the array, and of that element, stay
+      ED_Spider_Exploder.SpawnSpread = 100.0f;                  // a whole member, as UE_ASSET_EDIT's braces do
+    }
+
+A step is `.Member` or `[i]` (a TArray element, the index a constant), to any depth. An element past the array's end
+is refused. A member the asset has no value of (it takes its class's default) can take a path through structs
+written as tags - the new value holds only that path, and the engine fills in the rest - but not through a native
+struct (FVector, FRotator, ...) or an element, whose other parts are unknown here; assign the whole member then.
+
+A game Blueprint's class defaults are edited by a patch of the class:
+
+    class GruntTweaks : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Normal_C {
+      UE_PATCH;
+      UE_DEFAULTS {
+        SomeMember = 5;                     // a member of the class or of any class above it
+        HealthComponent->MaxHealth = 90;    // a component's: the export the engine builds the component from
+        PrimaryActorTick.bCanEverTick = true;               // part of a member's value, by path as above
+        MeleeAttack->Montages[0] = &SomeMontage;
+      }
+    };
+
+which edits the tags of that class's default object (Default__<Name>_C) in the class's own package, and of the
+component exports beside it: a native component's default subobject, the class's own SCS template, or the template of
+the override record a parent Blueprint's component has in this class. A parent's component the class does not override
+has no such export yet; patch the Blueprint that declares it.
+
+A method of the patch replaces the function of the same name that the Blueprint itself defines:
+
+      void GetEnemySpawnedCount(int32 &SpawnCount) { SpawnCount = 42; }
+
+Its parameters must be the game function's, in order, type, name and direction (a Blueprint output is a `T&`). The
+function keeps the game's flags and parameters, so every caller still fits, and takes the method's locals and code.
+`ENE_Spider_Grunt_Normal_C::GetEnemySpawnedCount(SpawnCount)` inside it runs the game's body, kept beside it as
+GetEnemySpawnedCount__Vanilla (an RPC's body runs there as a plain function, where the RPC already arrived). A method
+the Blueprint does not define is added to it: a helper the other methods call, or an override of a function it
+inherits (`void ReceiveTick(float DeltaSeconds)`), which changes this class and its children only, where patching the
+parent that defines it changes them all. A latent call in a patch's method is refused. A patch is not a class of its
+own and cooks nothing else: a member or an interface of its own is refused, not dropped.
+*/
+#define UE_ASSET_EDIT__CAT2(A, B) A##B
+#define UE_ASSET_EDIT__CAT(A, B) UE_ASSET_EDIT__CAT2(A, B)
+#define UE_ASSET_EDIT__(Asset, N)                                                                                      \
+  [[maybe_unused]] static constexpr auto *UE_ASSET_EDIT__CAT(UeEditOf__, N) = &Asset;                                \
+  [[maybe_unused]] static decltype(Asset) UE_ASSET_EDIT__CAT(UeEdit__, N)
+#define UE_ASSET_EDIT(Asset) UE_ASSET_EDIT__(Asset, __COUNTER__)
+#define UE_ASSET_EDITS [[maybe_unused]] static void UE_ASSET_EDIT__CAT(UeAssetEdits__, __COUNTER__)()
+#define UE_PATCH static constexpr bool UePatchMeta = true
+
+/*
 `All`: every UE_ASSET_AT in this namespace and the ones inside it whose class is Class or derives from it, as soft
 pointers, so nothing loads until asked. Each UeAssets/<Class>.h declares one, `UeAssets::USoundWave::All`. Like any
 namespace-scope variable a mod uses, it is kept in the default object of a class the compiler generates for it.
@@ -98,16 +159,19 @@ A component on a mod actor, the "Add Component" list in the editor:
     UE_COMPONENT(UStaticMeshComponent, Mesh);
 Declares Mesh as an ordinary class variable AND an SCS node that instantiates a
 Mesh_GEN_VARIABLE archetype into it at spawn. The first scene component declared becomes the
-actor's root; later ones attach to it. Set its defaults in the UE_DEFAULTS block, not with an
+actor's root; later ones attach to it, unless UE_DEFAULTS places one with SetupAttachment
+(below). Set its defaults in the UE_DEFAULTS block, not with an
 initializer - they live on the archetype, not on the actor CDO.
 
 Per-component and inherited-property defaults, the static-init block the editor's details panel
 writes for you:
     UE_DEFAULTS {
       Mesh->RelativeScale3D = FVector(2, 2, 2);      // a tag on Mesh_GEN_VARIABLE
+      Mesh->SetupAttachment(Lamp);                   // Mesh's SCS node under Lamp, own or inherited
     }
 It is not a constructor and never runs: AssetGen reads the assignments and writes them as
-defaults. A plain member of this class takes its default from its own initializer instead.
+defaults, and each SetupAttachment as where the component's node hangs. A plain member of this
+class takes its default from its own initializer instead.
 */
 #define UE_COMPONENT(Type, Name)                                                                                       \
   static constexpr const char *Name##__UeComponent = #Type;                                                            \
@@ -152,14 +216,15 @@ server and every client. An RPC returns void; a reference parameter arrives as a
 a warning. UE_AUTHORITY_ONLY (BlueprintAuthorityOnly) runs only with authority, UE_COSMETIC (BlueprintCosmetic)
 never on a dedicated server; the call is skipped otherwise. UeApi marks engine and game functions the same way. Like
 UE_PURE these are attribute kinds, the one thing the JSON dump keeps of an attribute; the GNU attributes chosen do
-nothing under -fsyntax-only.
+nothing under -fsyntax-only. `noinline` is not one of them: it keeps its own meaning, that a call to the function is
+never expanded in place.
 */
 #ifdef __clang__
 #define UE_SERVER [[gnu::hot]]
 #define UE_CLIENT [[gnu::cold]]
 #define UE_MULTICAST [[gnu::flatten]]
 #define UE_RELIABLE [[gnu::nodebug]]
-#define UE_AUTHORITY_ONLY [[gnu::noinline]]
+#define UE_AUTHORITY_ONLY [[gnu::no_stack_protector]]
 #define UE_COSMETIC [[gnu::no_instrument_function]]
 #else
 #define UE_SERVER
@@ -185,8 +250,8 @@ harmless `&&` / `||` keeps its branch. It is the real attribute, so `#pragma cla
 UE_AWAIT(Proxy->OnCompleted): the rest of the function runs when that dispatcher next fires, as the editor's
 async action node continues from its output pin. The value is the dispatcher's parameter when it has exactly one.
 A UBlueprintAsyncActionBase is activated after the bind. Like a latent call, the function moves into the
-ubergraph (Actor / ActorComponent, returns nothing, no reference parameters). The event stays bound: a
-dispatcher that fires again re-enters the code after the await.
+ubergraph (Actor / ActorComponent, returns nothing, no non-const reference parameters). The event stays
+bound: a dispatcher that fires again re-enters the code after the await.
 */
 template <class Sig> struct TMulticastInlineDelegate;
 template <class A> A       __Await__(TMulticastInlineDelegate<void(A)> &Dispatcher);

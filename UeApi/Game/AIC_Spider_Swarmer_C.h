@@ -13,6 +13,7 @@ class AIC_Spider_Swarmer_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/AIC_Spider_Swarmer", "AIC_Spider_Swarmer_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer

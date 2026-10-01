@@ -1054,10 +1054,10 @@ class UMovieSceneSequence : public UMovieSceneSignedObject
 public:
     UE_CLASS("/Script/MovieScene", "MovieSceneSequence");
     class UMovieSceneCompiledData* CompiledData;
-    EMovieSceneCompletionMode DefaultCompletionMode;
+    TEnum<EMovieSceneCompletionMode> DefaultCompletionMode;
     bool bParentContextsAreSignificant;
     bool bPlayableDirectly;
-    EMovieSceneSequenceFlags SequenceFlags;
+    TEnum<EMovieSceneSequenceFlags> SequenceFlags;
     UE_PURE FMovieSceneObjectBindingID FindBindingByTag(FName InBindingName) const;
     UE_PURE TArray<FMovieSceneObjectBindingID> FindBindingsByTag(FName InBindingName) const;
 };
@@ -1071,7 +1071,7 @@ public:
     TMulticastInlineDelegate<void()> OnStop;
     TMulticastInlineDelegate<void()> OnPause;
     TMulticastInlineDelegate<void()> OnFinished;
-    EMovieScenePlayerStatus Status;
+    TEnum<EMovieScenePlayerStatus> Status;
     bool bReversePlayback;
     static constexpr const char* bReversePlayback__Replicated = ":";
     class UMovieSceneSequence* Sequence;
@@ -1106,7 +1106,7 @@ public:
     bool PlayToMarkedFrame(FString InLabel);
     void PlayToSeconds(float TimeInSeconds);
     void RestoreState();
-    UE_MULTICAST UE_RELIABLE void RPC_ExplicitServerUpdateEvent(EUpdatePositionMethod Method, FFrameTime RelevantTime);
+    UE_MULTICAST UE_RELIABLE void RPC_ExplicitServerUpdateEvent(TEnum<EUpdatePositionMethod> Method, FFrameTime RelevantTime);
     UE_MULTICAST UE_RELIABLE void RPC_OnStopEvent(FFrameTime StoppedTime);
     void Scrub();
     void ScrubToFrame(FFrameTime NewPosition);
@@ -1153,8 +1153,8 @@ public:
     bool bIsInfinite;
     bool bSupportsInfiniteRange;
     FOptionalMovieSceneBlendType BlendType;
-    void SetBlendType(EMovieSceneBlendType InBlendType);
-    void SetCompletionMode(EMovieSceneCompletionMode InCompletionMode);
+    void SetBlendType(TEnum<EMovieSceneBlendType> InBlendType);
+    void SetCompletionMode(TEnum<EMovieSceneCompletionMode> InCompletionMode);
     void SetIsActive(bool bInIsActive);
     void SetIsLocked(bool bInIsLocked);
     void SetOverlapPriority(int NewPriority);
@@ -1162,7 +1162,7 @@ public:
     void SetPreRollFrames(int InPreRollFrames);
     void SetRowIndex(int NewRowIndex);
     UE_PURE FOptionalMovieSceneBlendType GetBlendType() const;
-    UE_PURE EMovieSceneCompletionMode GetCompletionMode() const;
+    UE_PURE TEnum<EMovieSceneCompletionMode> GetCompletionMode() const;
     UE_PURE int GetOverlapPriority() const;
     UE_PURE int GetPostRollFrames() const;
     UE_PURE int GetPreRollFrames() const;
@@ -1284,7 +1284,7 @@ class UMovieSceneBuiltInEasingFunction : public UObject
 {
 public:
     UE_CLASS("/Script/MovieScene", "MovieSceneBuiltInEasingFunction");
-    EMovieSceneBuiltInEasing Type;
+    TEnum<EMovieSceneBuiltInEasing> Type;
 };
 
 class IMovieSceneCustomClockSource
@@ -1359,8 +1359,8 @@ public:
     FMovieSceneFrameRange PlaybackRange;
     FFrameRate TickResolution;
     FFrameRate DisplayRate;
-    EMovieSceneEvaluationType EvaluationType;
-    EUpdateClockSource ClockSource;
+    TEnum<EMovieSceneEvaluationType> EvaluationType;
+    TEnum<EUpdateClockSource> ClockSource;
     FSoftObjectPath CustomClockSourcePath;
     TArray<FMovieSceneMarkedFrame> MarkedFrames;
 };
@@ -1410,7 +1410,7 @@ public:
     FGuid CompilerVersion;
     FMovieSceneSequenceCompilerMaskStruct AccumulatedMask;
     FMovieSceneSequenceCompilerMaskStruct AllocatedMask;
-    EMovieSceneSequenceFlags AccumulatedFlags;
+    TEnum<EMovieSceneSequenceFlags> AccumulatedFlags;
 };
 
 class IMovieSceneFloatDecomposer

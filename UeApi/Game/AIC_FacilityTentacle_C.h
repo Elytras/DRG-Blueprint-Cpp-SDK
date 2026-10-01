@@ -19,6 +19,7 @@ class AIC_FacilityTentacle_C : public AFSDAIController
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/AIC_FacilityTentacle", "AIC_FacilityTentacle_C");
     using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_FacilityTentacle_C* Tentacle;
     class UBehaviorTree* Behavior;

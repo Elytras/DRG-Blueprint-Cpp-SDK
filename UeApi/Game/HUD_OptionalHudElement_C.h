@@ -20,8 +20,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UNamedSlot* Content;
     class UHUDVisibilityGroup* VisibilityGroup;
-    ESlateVisibility VisibleMode;
-    ESlateVisibility HiddenMode;
+    TEnum<ESlateVisibility> VisibleMode;
+    TEnum<ESlateVisibility> HiddenMode;
     void ExecuteUbergraph_HUD_OptionalHudElement(int EntryPoint);
     UE_COSMETIC void Construct();
 };

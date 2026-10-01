@@ -34,6 +34,7 @@ class ENE_StabberVine_Tentacle_C : public AStabberVine
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVine_Tentacle", "ENE_StabberVine_Tentacle_C");
     using ENE_StabberVines_C = Game::Enemies::StabberVine::ENE_StabberVines_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* LaserPointer;
     static constexpr const char* LaserPointer__UeScsNode = "f34863a852fbc94d83085a001346ffee";
@@ -79,7 +80,7 @@ public:
     void ExecuteUbergraph_ENE_StabberVine_Tentacle(int EntryPoint);
     void PlayHitGround();
     UE_MULTICAST void All_PlayHitGround();
-    void BndEvt__Outline_K2Node_ComponentBoundEvent_0_OutlineChanged__DelegateSignature(EOutline InOutline);
+    void BndEvt__Outline_K2Node_ComponentBoundEvent_0_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     UE_MULTICAST UE_RELIABLE void PlayAttackCue();
     UE_MULTICAST UE_RELIABLE void PlayPreAttackSound();
     void Recieve_OnRep_Owner();

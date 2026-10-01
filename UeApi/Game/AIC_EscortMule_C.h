@@ -21,6 +21,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/AIC_EscortMule", "AIC_EscortMule_C");
     using EWC_Escort_DigPhase_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_DigPhase_C;
     using EWC_Escort_Refueling_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_Refueling_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class AEscortMule* EscortMule;
     bool DoDebugPath;

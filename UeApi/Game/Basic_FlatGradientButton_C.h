@@ -35,13 +35,13 @@ public:
     class USizeBox* Button_SizeBox;
     UI_AdvancedLabel_C* Button_Text;
     class UScaleBox* Button_TextScale;
-    EHorizontalAlignment ContentHorizontalAlignment;
+    TEnum<EHorizontalAlignment> ContentHorizontalAlignment;
     FText Text;
     FText TextControllerOverride;
     FSlateFontInfo TextFont;
     FSizeBoxSettings ButtonSize;
     FMargin TextPadding;
-    EStretch TextScale;
+    TEnum<EStretch> TextScale;
     TMulticastInlineDelegate<void()> OnClicked;
     void ExecuteUbergraph_Basic_FlatGradientButton(int EntryPoint);
     void BndEvt__Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();

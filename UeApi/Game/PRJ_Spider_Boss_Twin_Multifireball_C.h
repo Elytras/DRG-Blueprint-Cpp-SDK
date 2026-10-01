@@ -21,6 +21,7 @@ class PRJ_Spider_Boss_Twin_Multifireball_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/PRJ_Spider_Boss_Twin_Multifireball", "PRJ_Spider_Boss_Twin_Multifireball_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "4f5a8ab6d46c9049ae67117d61fa7daf";

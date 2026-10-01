@@ -18,6 +18,7 @@ class BP_Anniversary_BalloonCluster_C : public ASkeletalMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Anniversary/BP_Anniversary_BalloonCluster", "BP_Anniversary_BalloonCluster_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent SkeletalMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* SoundLocation;
     static constexpr const char* SoundLocation__UeScsNode = "08ea2a2cef5a3145946e9e8cb72c50ed";

@@ -28,7 +28,7 @@ public:
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "f7e730c8c23e914c81303660915f3cab";
     float Timeline_0_Brightness_3A67B370490B2F862C2D6E9E451100CB;
-    ETimelineDirection Timeline_0__Direction_3A67B370490B2F862C2D6E9E451100CB;
+    TEnum<ETimelineDirection> Timeline_0__Direction_3A67B370490B2F862C2D6E9E451100CB;
     class UTimelineComponent* Timeline_0;
     float BaseIntensity;
     void ExecuteUbergraph_BP_MiniNuke_RadiationCloud(int EntryPoint);

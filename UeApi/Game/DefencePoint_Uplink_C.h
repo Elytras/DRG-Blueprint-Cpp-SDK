@@ -24,6 +24,7 @@ class DefencePoint_Uplink_C : public Game::GameElements::Objectives::DeepDive::D
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/Defense/DefencePoint_Uplink", "DefencePoint_Uplink_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SingleUsableComponent DefendPointUsable";
     FPointerToUberGraphFrame UberGraphFrame_DefencePoint_Uplink_C;
     static constexpr const char* UberGraphFrame_DefencePoint_Uplink_C__UeName = "UberGraphFrame";
     class UTerrainDetectComponent* TerrainDetect3;
@@ -60,7 +61,7 @@ public:
     class USkeletalMeshComponent* UplinkMesh;
     static constexpr const char* UplinkMesh__UeScsNode = "13c7aa548b5fd44794ebf41c2aef9754";
     float Disassemble_uplink_dissassemble_8BB753934FA5061C0948A886CF6B0D73;
-    ETimelineDirection Disassemble_uplink__Direction_8BB753934FA5061C0948A886CF6B0D73;
+    TEnum<ETimelineDirection> Disassemble_uplink__Direction_8BB753934FA5061C0948A886CF6B0D73;
     class UTimelineComponent* Disassemble_uplink;
     static constexpr const char* Disassemble_uplink__UeName = "Disassemble uplink";
     void ExecuteUbergraph_DefencePoint_Uplink(int EntryPoint);

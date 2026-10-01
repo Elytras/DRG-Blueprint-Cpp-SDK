@@ -17,6 +17,7 @@ class AIC_FlyingCritterBase_C : public AEnemyAIController
 {
 public:
     UE_CLASS("/Game/Critters/FlyingCritterBase/AIC_FlyingCritterBase", "AIC_FlyingCritterBase_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviourTree;
     void ExecuteUbergraph_AIC_FlyingCritterBase(int EntryPoint);

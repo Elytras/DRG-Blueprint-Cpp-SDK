@@ -22,6 +22,7 @@ class Grenade_NeedleSprayer_C : public Game::WeaponsNTools::Grenades::ITM_Grenad
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/Grenade_NeedleSprayer", "Grenade_NeedleSprayer_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_NeedleSprayer_C;
     static constexpr const char* UberGraphFrame_Grenade_NeedleSprayer_C__UeName = "UberGraphFrame";
     class USphereComponent* BouncySphere;

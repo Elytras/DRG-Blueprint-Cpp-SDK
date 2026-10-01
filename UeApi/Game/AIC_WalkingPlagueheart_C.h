@@ -14,6 +14,7 @@ class AIC_WalkingPlagueheart_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/AIC_WalkingPlagueheart", "AIC_WalkingPlagueheart_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_WalkingPlagueheart_C;
     static constexpr const char* UberGraphFrame_AIC_WalkingPlagueheart_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_WalkingPlagueheart(int EntryPoint);

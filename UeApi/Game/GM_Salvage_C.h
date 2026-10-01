@@ -24,6 +24,7 @@ public:
     using BP_Salvage_Point_C = Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C;
     using EVENT_DropPodDefense_Base_C = Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C;
     using OBJ_1st_Salvage_C = Game::GameElements::Objectives::Salvage::OBJ_1st_Salvage_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Salvage_C;
     static constexpr const char* UberGraphFrame_GM_Salvage_C__UeName = "UberGraphFrame";
     class UAudioComponent* UplinkComplete_Cue;

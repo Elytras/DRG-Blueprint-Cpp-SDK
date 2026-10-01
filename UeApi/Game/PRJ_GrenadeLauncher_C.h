@@ -26,6 +26,7 @@ class PRJ_GrenadeLauncher_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/PRJ_GrenadeLauncher", "PRJ_GrenadeLauncher_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosionHyper;
     static constexpr const char* ProjectileExplosionHyper__UeScsNode = "bee1d748da1196488f72abf450401569";

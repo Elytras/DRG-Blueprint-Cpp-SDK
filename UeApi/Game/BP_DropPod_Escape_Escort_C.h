@@ -22,6 +22,7 @@ class BP_DropPod_Escape_Escort_C : public Game::LevelElements::Droppod::BP_DropP
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Escape_Escort", "BP_DropPod_Escape_Escort_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_DropPod_Escape_Escort_C;
     static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Escort_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_Doretta_Broken;
@@ -31,7 +32,7 @@ public:
     class UBoxComponent* DorettaHeadChecker;
     static constexpr const char* DorettaHeadChecker__UeScsNode = "e88c5e7a01fa734a905534e5a29a5b42";
     float DorettaHeadMove_Alpha_C2033C6740443751B5AF4294D2EFCD51;
-    ETimelineDirection DorettaHeadMove__Direction_C2033C6740443751B5AF4294D2EFCD51;
+    TEnum<ETimelineDirection> DorettaHeadMove__Direction_C2033C6740443751B5AF4294D2EFCD51;
     class UTimelineComponent* DorettaHeadMove;
     bool IsDorettaHeadInside;
     static constexpr const char* IsDorettaHeadInside__Replicated = ":";

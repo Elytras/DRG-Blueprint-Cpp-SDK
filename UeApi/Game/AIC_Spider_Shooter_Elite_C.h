@@ -13,6 +13,7 @@ class AIC_Spider_Shooter_Elite_C : public Game::Enemies::Spider::Shooter::AIC_Sp
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/AIC_Spider_Shooter_Elite", "AIC_Spider_Shooter_Elite_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::Spider::Shooter

@@ -16,6 +16,7 @@ class AIC_Spider_ExploderTank_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/AIC_Spider_ExploderTank", "AIC_Spider_ExploderTank_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_ExploderTank_C;
     static constexpr const char* UberGraphFrame_AIC_Spider_ExploderTank_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_ExploderTank(int EntryPoint);

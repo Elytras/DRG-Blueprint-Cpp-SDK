@@ -14,6 +14,7 @@ class AIC_Terminator_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/AIC_Terminator", "AIC_Terminator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Terminator(int EntryPoint);
     void ReceiveBeginPlay();

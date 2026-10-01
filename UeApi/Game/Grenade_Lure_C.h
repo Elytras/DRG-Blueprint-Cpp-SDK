@@ -19,6 +19,7 @@ class Grenade_Lure_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Lure/Grenade_Lure", "Grenade_Lure_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Lure_C;
     static constexpr const char* UberGraphFrame_Grenade_Lure_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_Grenade_Lure(int EntryPoint);

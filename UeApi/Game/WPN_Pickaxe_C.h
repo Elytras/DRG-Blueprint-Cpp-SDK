@@ -18,6 +18,7 @@ class WPN_Pickaxe_C : public APickaxeItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pickaxe/WPN_Pickaxe", "WPN_Pickaxe_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.DamageComponent SpecialDamage;/Script/Engine.SceneComponent FP_Root;/Script/Engine.SceneComponent FP_Scale;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TP_Root;/Script/Engine.SceneComponent TP_Scale;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCrosshairAggregator* CrosshairAggregator;
     static constexpr const char* CrosshairAggregator__UeScsNode = "2d244225be75ad4f8e985cb30bd6e76a";

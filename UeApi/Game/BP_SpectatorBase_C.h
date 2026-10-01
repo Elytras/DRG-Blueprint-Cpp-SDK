@@ -17,6 +17,7 @@ class BP_SpectatorBase_C : public ASpectatorPawn
 {
 public:
     UE_CLASS("/Game/Game/BP_SpectatorBase", "BP_SpectatorBase_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SpectatorPawnMovement MovementComponent0;/Script/Engine.SphereComponent CollisionComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Menu_Music;
     static constexpr const char* Menu_Music__UeName = "Menu Music";

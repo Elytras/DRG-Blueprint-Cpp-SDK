@@ -20,6 +20,7 @@ class BP_MicroRocket_Base_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RocketRifle/BP_MicroRocket_Base", "BP_MicroRocket_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_MicroRocket_Plume;
     static constexpr const char* P_MicroRocket_Plume__UeScsNode = "2d2f610ea459444ea39c63f05bc23724";

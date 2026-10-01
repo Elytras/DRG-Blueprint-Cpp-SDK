@@ -52,7 +52,7 @@ public:
     class UMaterialInstanceDynamic* Mid;
     float LightIntensity;
     void ExecuteUbergraph_BP_MainShieldActvator(int EntryPoint);
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void UserConstructionScript();
     void OnRep_SpawnedBattery();
     void Expose();

@@ -66,7 +66,7 @@ public:
     void OnLaserPointerReleased_Event();
     void OnLaserPointerPressed_Event();
     void OnHealthChanged_Event(float Health);
-    void OnCharacterStateChanged_Event(ECharacterState NewState);
+    void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
     void ShowDynamically();
     void SetElementVisibility(bool Name__Class___Icon, bool Health___Shield);
 };

@@ -15,6 +15,7 @@ class Loadout_Flare_Gunner_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Flares/Loadout_Flare_Gunner", "Loadout_Flare_Gunner_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "33b9c0ab3f2bc446a7e48b77b33f56be";
 };

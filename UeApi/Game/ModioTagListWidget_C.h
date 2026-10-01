@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Modio/UI/Browser/Components/ModioTagListWidget", "ModioTagListWidget_C");
     class UModioInputBindingImage* ModioInputBindingImage;
     class UModioInputBindingImage* ModioInputBindingImage_25;
-    UE_PURE ESlateVisibility GetVisibility_0();
+    UE_PURE TEnum<ESlateVisibility> GetVisibility_0();
 };
 
 }}}}   // namespace Modio::UI::Browser::Components

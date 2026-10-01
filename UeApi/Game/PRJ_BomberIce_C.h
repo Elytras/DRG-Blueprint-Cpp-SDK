@@ -13,6 +13,7 @@ class PRJ_BomberIce_C : public Game::Enemies::FlyingBug::Bomber::PRJ_BomberGoo_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_BomberIce", "PRJ_BomberIce_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

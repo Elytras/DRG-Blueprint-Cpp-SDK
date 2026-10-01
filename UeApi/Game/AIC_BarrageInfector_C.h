@@ -17,6 +17,7 @@ class AIC_BarrageInfector_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/BarrageInfector/AIC_BarrageInfector", "AIC_BarrageInfector_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_BarrageInfector(int EntryPoint);
     void StartBehavior();

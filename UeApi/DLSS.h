@@ -32,11 +32,11 @@ class UDLSSOverrideSettings : public UObject
 {
 public:
     UE_CLASS("/Script/DLSS", "DLSSOverrideSettings");
-    EDLSSSettingOverride EnableDLSSInEditorViewportsOverride;
-    EDLSSSettingOverride EnableScreenpercentageManipulationInDLSSEditorViewportsOverride;
-    EDLSSSettingOverride EnableDLSSInPlayInEditorViewportsOverride;
+    TEnum<EDLSSSettingOverride> EnableDLSSInEditorViewportsOverride;
+    TEnum<EDLSSSettingOverride> EnableScreenpercentageManipulationInDLSSEditorViewportsOverride;
+    TEnum<EDLSSSettingOverride> EnableDLSSInPlayInEditorViewportsOverride;
     bool bShowDLSSIncompatiblePluginsToolsWarnings;
-    EDLSSSettingOverride ShowDLSSSDebugOnScreenMessages;
+    TEnum<EDLSSSettingOverride> ShowDLSSSDebugOnScreenMessages;
 };
 
 class UDLSSSettings : public UObject
@@ -56,9 +56,9 @@ public:
     FString CustomDLSSBinaryPath;
     bool bCustomDLSSBinaryExists;
     bool bAllowOTAUpdate;
-    EDLSSPreset DLAAPreset;
-    EDLSSPreset DLSSQualityPreset;
-    EDLSSPreset DLSSBalancedPreset;
-    EDLSSPreset DLSSPerformancePreset;
-    EDLSSPreset DLSSUltraPerformancePreset;
+    TEnum<EDLSSPreset> DLAAPreset;
+    TEnum<EDLSSPreset> DLSSQualityPreset;
+    TEnum<EDLSSPreset> DLSSBalancedPreset;
+    TEnum<EDLSSPreset> DLSSPerformancePreset;
+    TEnum<EDLSSPreset> DLSSUltraPerformancePreset;
 };

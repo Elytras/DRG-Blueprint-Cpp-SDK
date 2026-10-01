@@ -42,6 +42,7 @@ class BP_Refinery_C : public AFSDRefinery
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery", "BP_Refinery_C");
     using BP_Refinery_LandingZone_C = Game::LevelElements::Refinery::BP_Refinery_LandingZone_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent UsableLaunchRocket;/Script/FSD.SingleUsableComponent UsableStartRefining";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PB_ButtonConsole;
     static constexpr const char* PB_ButtonConsole__UeScsNode = "6195ce6ff1ae8c439b99d2d2d3efd4f7";
@@ -209,17 +210,17 @@ public:
     void OnDropStartedGFX();
     void AudioOnStateChanged();
     void OnDrillingStarted();
-    void BndEvt__UsableStartRefining_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void ReceivePipelineStateChanged(class APipelineStart* InPipeline, EPipelineBuildState InState);
+    void BndEvt__UsableStartRefining_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void ReceivePipelineStateChanged(class APipelineStart* InPipeline, TEnum<EPipelineBuildState> InState);
     void Mission_Shouts_on_State_Changed();
     static constexpr const char* Mission_Shouts_on_State_Changed__UeName = "Mission Shouts on State Changed";
     void ReceiveBeginPlay();
     void EnemiesOnStateChanged();
-    void ReceiveRefineryStateChanged(ERefineryState InState);
+    void ReceiveRefineryStateChanged(TEnum<ERefineryState> InState);
     void OnDroppodImpact();
     void UserConstructionScript();
     void ActivatePathfinderBlockers();
-    void CheckPipelineMissionShout(class APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState);
+    void CheckPipelineMissionShout(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
     void Spawn_Landing_Zone();
     static constexpr const char* Spawn_Landing_Zone__UeName = "Spawn Landing Zone";
     UE_PURE bool HasRequiredSecondary();

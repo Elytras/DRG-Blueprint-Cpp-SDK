@@ -62,7 +62,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "fdce982e8883b345b74a5e2963142309";
     FVector Timeline_InflateAnim_InflateVector_21E5AF314623B026BED1ED9ADE4D198B;
-    ETimelineDirection Timeline_InflateAnim__Direction_21E5AF314623B026BED1ED9ADE4D198B;
+    TEnum<ETimelineDirection> Timeline_InflateAnim__Direction_21E5AF314623B026BED1ED9ADE4D198B;
     class UTimelineComponent* Timeline_InflateAnim;
     FScaledEffect ExplosionParticles;
     FVector ExplosionOffset;

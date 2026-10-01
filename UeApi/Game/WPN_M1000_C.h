@@ -25,6 +25,7 @@ class WPN_M1000_C : public ABoltActionWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BoltActionRifle/WPN_M1000", "WPN_M1000_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
     static constexpr const char* FirstPersonWidget__UeScsNode = "96426eb03537e94a9f6d2f79dd83a460";

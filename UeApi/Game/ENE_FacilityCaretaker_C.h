@@ -45,6 +45,7 @@ public:
     using BP_CaretakerTurretAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerTurretAction_C;
     using BP_Caretaker_AoE_Attack_C = Game::GameElements::Objectives::Facility::Caretaker::BP_Caretaker_AoE_Attack_C;
     using BP_MainFacility_DataVault_C = Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthDamageTracker DamageTracker;/Script/FSD.PassthroughSubHealthComponent SubHealth0;/Script/FSD.PassthroughSubHealthComponent SubHealth1;/Script/FSD.PassthroughSubHealthComponent SubHealth2;/Script/FSD.PassthroughSubHealthComponent SubHealth3;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent BodyMesh;/Script/Engine.SkeletalMeshComponent Eye0;/Script/Engine.SkeletalMeshComponent Eye1;/Script/Engine.SkeletalMeshComponent Eye2;/Script/Engine.SkeletalMeshComponent Eye3;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* EndKillAllEnemiesDamageNoKnockBack;
     static constexpr const char* EndKillAllEnemiesDamageNoKnockBack__UeScsNode = "cb9e48e8922c0548afb0cc5e32502f6a";
@@ -153,16 +154,16 @@ public:
     class UEnemyComponent* enemy;
     static constexpr const char* enemy__UeScsNode = "3b5b75121500d4419f28be7e0dda475b";
     float TopLight_Intensity_39A7A1AF482156613F7234B9DF15400A;
-    ETimelineDirection TopLight__Direction_39A7A1AF482156613F7234B9DF15400A;
+    TEnum<ETimelineDirection> TopLight__Direction_39A7A1AF482156613F7234B9DF15400A;
     class UTimelineComponent* TopLight;
     float HatchLights_Intensity_FCD392DB40C72D74165F7DA7BA20EA50;
-    ETimelineDirection HatchLights__Direction_FCD392DB40C72D74165F7DA7BA20EA50;
+    TEnum<ETimelineDirection> HatchLights__Direction_FCD392DB40C72D74165F7DA7BA20EA50;
     class UTimelineComponent* HatchLights;
     float Timeline_0_PointLight_1EE58BD34489027A6F9C488828BDFD2D;
-    ETimelineDirection Timeline_0__Direction_1EE58BD34489027A6F9C488828BDFD2D;
+    TEnum<ETimelineDirection> Timeline_0__Direction_1EE58BD34489027A6F9C488828BDFD2D;
     class UTimelineComponent* Timeline_0;
     float FadeEyeLights_PointLight_AE68C0994C370ED22D4F1E9A5F7F676B;
-    ETimelineDirection FadeEyeLights__Direction_AE68C0994C370ED22D4F1E9A5F7F676B;
+    TEnum<ETimelineDirection> FadeEyeLights__Direction_AE68C0994C370ED22D4F1E9A5F7F676B;
     class UTimelineComponent* FadeEyeLights;
     TMulticastInlineDelegate<void(int NewParam)> OnStageChangedEvent;
     bool Initialized;

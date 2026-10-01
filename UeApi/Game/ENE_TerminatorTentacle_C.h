@@ -33,6 +33,7 @@ class ENE_TerminatorTentacle_C : public ATerminatorTentacle
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/ENE_TerminatorTentacle", "ENE_TerminatorTentacle_C");
     using BP_TentacleGrab_C = Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTentacleBusyComponent* TentacleBusy;
     static constexpr const char* TentacleBusy__UeScsNode = "6507992d861f484f9a8cb2a31877ba3b";
@@ -77,7 +78,7 @@ public:
     void BndEvt__ENE_TerminatorTentacle_GrabAttack_K2Node_ComponentBoundEvent_0_Crush__DelegateSignature();
     void OnHeadExitedTerrain();
     void OnHeadEnteredTerrain();
-    void OwnerOutline(EOutline InOutline);
+    void OwnerOutline(TEnum<EOutline> InOutline);
     void SpawnTentacleParts();
     void HandleDeath();
     void OnRangedAttack();

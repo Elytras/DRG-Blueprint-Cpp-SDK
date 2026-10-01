@@ -21,6 +21,7 @@ class ENE_Parasite_C : public AParasiteEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/Parasite/ENE_Parasite", "ENE_Parasite_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.OutlineComponent OutLine;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.StaticMeshComponent Tentacles1;/Script/Engine.StaticMeshComponent Tentacles2;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeakpointGlow;
     static constexpr const char* WeakpointGlow__UeScsNode = "3da9c0fbc023df4984044fa705dc09ac";

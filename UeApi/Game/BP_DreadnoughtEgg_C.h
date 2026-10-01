@@ -55,7 +55,7 @@ public:
     static constexpr const char* EggWhole__UeScsNode = "fd4098c63b35dc46b1e38549127ba1a4";
     float LightIntensity_NewTrack;
     static constexpr const char* LightIntensity_NewTrack__UeName = "LightIntensity_NewTrack_0_9A4595314256D1AF580CF3A2C59CC406";
-    ETimelineDirection LightIntensity__Direction_9A4595314256D1AF580CF3A2C59CC406;
+    TEnum<ETimelineDirection> LightIntensity__Direction_9A4595314256D1AF580CF3A2C59CC406;
     class UTimelineComponent* LightIntensity;
     TArray<class AFSDPawn*> spawnedEnemies;
     void ExecuteUbergraph_BP_DreadnoughtEgg(int EntryPoint);

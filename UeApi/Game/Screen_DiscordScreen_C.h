@@ -61,8 +61,8 @@ public:
     int Faction;
     TArray<ITM_CommunityGoal_C*> GoalsArray;
     FTimerHandle GoalStateTimer;
-    ECommunityUIState CurrentState;
-    ECommunityUIState LastState;
+    TEnum<ECommunityUIState> CurrentState;
+    TEnum<ECommunityUIState> LastState;
     bool IsRecruitmentPeriod;
     TArray<class UCommunityGoalFaction*> FactionData;
     bool IsGoalPeriod;

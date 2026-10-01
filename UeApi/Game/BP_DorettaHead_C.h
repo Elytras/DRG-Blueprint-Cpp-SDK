@@ -28,6 +28,7 @@ class BP_DorettaHead_C : public ADorrettaHead
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_DorettaHead", "BP_DorettaHead_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarriableComponent;/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NiagaraNoBlinking;
     static constexpr const char* NiagaraNoBlinking__UeScsNode = "691a57c7b9da31419b0580a75e379264";
@@ -50,7 +51,7 @@ public:
     class USphereComponent* SphereUsable;
     static constexpr const char* SphereUsable__UeScsNode = "c2494a7e95a07b419ca471025f33097b";
     FVector JIggle_Jiggle_4D1EF936403F1B634C819C8AC37A7DE1;
-    ETimelineDirection JIggle__Direction_4D1EF936403F1B634C819C8AC37A7DE1;
+    TEnum<ETimelineDirection> JIggle__Direction_4D1EF936403F1B634C819C8AC37A7DE1;
     class UTimelineComponent* JIggle;
     FVector throwForce;
     bool IsPickedUp;
@@ -63,7 +64,7 @@ public:
     void ReceiveBeginPlay();
     void PlayDorettaSound(class USoundBase* Sound);
     void BndEvt__Usable_K2Node_ComponentBoundEvent_3_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__Usable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Usable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void Throw(FVector force);
     void BndEvt__CarriableComponent_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void BndEvt__CarriableComponent_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();

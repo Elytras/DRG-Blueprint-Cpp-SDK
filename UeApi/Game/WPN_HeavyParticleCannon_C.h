@@ -31,6 +31,7 @@ class WPN_HeavyParticleCannon_C : public AHeavyParticleCannon
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/WPN_HeavyParticleCannon", "WPN_HeavyParticleCannon_C");
     using WeaponDisplay_HeavyParticleCannon_AmmoCount_C = Game::WeaponsNTools::HeavyParticleCannon::WeaponDisplay_HeavyParticleCannon_AmmoCount_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent Damage;/Script/FSD.FirstPersonNiagaraComponent FirstPersonBeam;/Script/FSD.FirstPersonNiagaraComponent FirstPersonLaserSight;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent ThirdPersonBeam;/Script/FSD.ReflectionHitscanComponent ReflectionHitscanComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* ExplosionDamage;
     static constexpr const char* ExplosionDamage__UeScsNode = "4ef6180a401d124ca313a76a4f629ce4";

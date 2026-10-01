@@ -147,7 +147,7 @@ public:
     void MissionSelected(ITM_MisSel_MissionMapIcon_C* mission);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void OnShown();
-    void InputSourceChanged(EFSDInputSource InputSource);
+    void InputSourceChanged(TEnum<EFSDInputSource> InputSource);
     void BndEvt__BTN_Close_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__BTN_ServerList_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void ShowServerBrowser();

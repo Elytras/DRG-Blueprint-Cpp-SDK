@@ -34,7 +34,7 @@ public:
     class UImage* Image_466;
     class UTextBlock* TextBlock_ItemName;
     class UUpgradableGearComponent* Upgradable;
-    EItemCategory WeaponSlot;
+    TEnum<EItemCategory> WeaponSlot;
     class UPlayerCharacterID* Character;
     int PerkIndex;
     TArray<ITM_StatusScreen_PerkItem_C*> PerkItems;
@@ -42,8 +42,8 @@ public:
     void Update();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void GetEquippedPerksByType(class UPlayerCharacterID* InCharacter, EPerkUsageType InType, TArray<class UPerkAsset*>& perks);
-    void CreateSlots(class UPanelWidget* InSlotsBox, EPerkUsageType InType);
+    void GetEquippedPerksByType(class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& perks);
+    void CreateSlots(class UPanelWidget* InSlotsBox, TEnum<EPerkUsageType> InType);
     void GetEquippedPerkAt(int Idx, TArray<class UPerkAsset*>& perks, class UPerkAsset*& Perk);
 };
 

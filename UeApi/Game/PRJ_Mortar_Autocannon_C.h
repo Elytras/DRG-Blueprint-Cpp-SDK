@@ -20,6 +20,7 @@ class PRJ_Mortar_Autocannon_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/PRJ_Mortar_Autocannon", "PRJ_Mortar_Autocannon_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "c2746a0ad65a9b4db717765d87cc866f";

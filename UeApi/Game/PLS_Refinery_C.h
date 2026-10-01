@@ -18,6 +18,7 @@ class PLS_Refinery_C : public Game::Landscape::ProceduralLevelSetups::PLS_Fractu
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Refinery", "PLS_Refinery_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_Refinery_C;
     static constexpr const char* UberGraphFrame_PLS_Refinery_C__UeName = "UberGraphFrame";
     class URoomGeneratorGroup* Room_Group;

@@ -19,6 +19,7 @@ class BP_Grenade_Incendiary_Flame_C : public AStickyFlame
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Incendiary/BP_Grenade_Incendiary_Flame", "BP_Grenade_Incendiary_Flame_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UObjectTemperatureComponent* ObjectTemperature;
     static constexpr const char* ObjectTemperature__UeScsNode = "204f0a3f18e0c44f898056cce696ce79";

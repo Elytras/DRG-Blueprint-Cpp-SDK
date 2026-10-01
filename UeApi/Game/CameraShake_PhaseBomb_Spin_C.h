@@ -13,6 +13,7 @@ class CameraShake_PhaseBomb_Spin_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_PhaseBomb_Spin", "CameraShake_PhaseBomb_Spin_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

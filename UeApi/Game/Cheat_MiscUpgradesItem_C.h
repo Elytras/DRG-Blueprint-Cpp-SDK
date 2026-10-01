@@ -24,12 +24,12 @@ public:
     class UTextBlock* ItemName;
     class UComboBoxString* ItemSelect;
     class UScrollBox* SB_MiscUpgrades;
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     void ExecuteUbergraph_Cheat_MiscUpgradesItem(int EntryPoint);
     void Initialize_Current_Item();
     static constexpr const char* Initialize_Current_Item__UeName = "Initialize Current Item";
-    void BndEvt__ItemSelect_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
-    void Initiate_Widget(EItemCategory First_Upgrade_Item);
+    void BndEvt__ItemSelect_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
+    void Initiate_Widget(TEnum<EItemCategory> First_Upgrade_Item);
     static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
 };
 

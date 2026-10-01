@@ -38,6 +38,7 @@ class BP_Plague_Spore_Tower_C : public APlagueInfectionNode
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower", "BP_Plague_Spore_Tower_C");
     using HUD_ContagionSpike_Health_C = Game::UI::Art::MainOnScreenHUD::ContagionSpike::HUD_ContagionSpike_Health_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelGenerationCarverComponent* LevelGenerationCarver_ScabArea_All;
     static constexpr const char* LevelGenerationCarver_ScabArea_All__UeScsNode = "2a3fe86da7e34b4196b4a85e1af8d56e";
@@ -91,7 +92,7 @@ public:
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "a18cf9e4d0849049ab8317fcc25065ef";
     float RemoveScabs_Alpha_921F52C34A2398507EF37E968941AC3F;
-    ETimelineDirection RemoveScabs__Direction_921F52C34A2398507EF37E968941AC3F;
+    TEnum<ETimelineDirection> RemoveScabs__Direction_921F52C34A2398507EF37E968941AC3F;
     class UTimelineComponent* RemoveScabs;
     TArray<class UAudioComponent*> Sounds;
     float CleanPlagueTime;

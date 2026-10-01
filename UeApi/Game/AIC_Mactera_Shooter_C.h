@@ -13,6 +13,7 @@ class AIC_Mactera_Shooter_C : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/AIC_Mactera_Shooter", "AIC_Mactera_Shooter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

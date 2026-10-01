@@ -47,6 +47,7 @@ public:
     using BP_Heartstone_DefensiveCrystal_C = Game::GameElements::Objectives::Escort::BP_Heartstone_DefensiveCrystal_C;
     using BP_TargetBeam_C = Game::GameElements::Objectives::Escort::BP_TargetBeam_C;
     using EWC_Escort_EndDefense_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_EndDefense_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ExplosionDamage";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_TrapPhaseDamageGlow1;
     static constexpr const char* SM_TrapPhaseDamageGlow1__UeScsNode = "868e2f1a51ab61429f3d8045fae25609";
@@ -295,7 +296,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "7f410c1f6affea4cbeeb5ed36c818e7f";
     float ScaleTriggerUp_Scale_EDDF5DD2461B11CC6BD883931ED88733;
-    ETimelineDirection ScaleTriggerUp__Direction_EDDF5DD2461B11CC6BD883931ED88733;
+    TEnum<ETimelineDirection> ScaleTriggerUp__Direction_EDDF5DD2461B11CC6BD883931ED88733;
     class UTimelineComponent* ScaleTriggerUp;
     int Stage;
     static constexpr const char* Stage__Replicated = "OnRep_Stage:";
@@ -380,7 +381,7 @@ public:
     void OnCountdownTimeChanged(float Progress);
     void Setup_Stages();
     static constexpr const char* Setup_Stages__UeName = "Setup Stages";
-    void ActivateStage(EOmmoranStage InStage, bool IsActive, bool IsLastWave);
+    void ActivateStage(TEnum<EOmmoranStage> InStage, bool IsActive, bool IsLastWave);
     void OnRep_TrapTarget();
     void ClearCloseTraps(FTransform InLocation);
 };

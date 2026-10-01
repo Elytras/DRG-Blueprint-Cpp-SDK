@@ -16,6 +16,7 @@ class BP_PropHunt_Barrel_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_Barrel", "BP_PropHunt_Barrel_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UArrowComponent* Arrow;
     static constexpr const char* Arrow__UeScsNode = "3e2461410f8a8e4791d37abe8c597df5";
     class UStaticMeshComponent* StaticMesh;

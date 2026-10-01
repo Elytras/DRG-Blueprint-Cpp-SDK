@@ -18,6 +18,7 @@ class BP_GoldChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Veins/ResourceChunks/BP_GoldChunk", "BP_GoldChunk_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
     static constexpr const char* Mesh__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";

@@ -28,12 +28,12 @@ public:
     FText StatValue;
     FText StatBaseValue;
     FText StatUpgradeValue;
-    EItemPreviewStatus ItemPreviewStatus;
+    TEnum<EItemPreviewStatus> ItemPreviewStatus;
     FSlateFontInfo SpecialFont;
     FGearStatEntry GearStat;
     void ExecuteUbergraph_ITM_UpgGear_GearStat(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FText InStatName, FText InStatValue, FText InStatBaseValue, FText InStatUpgradeValue, EItemPreviewStatus InItemPreviewStatus);
+    void SetData(FText InStatName, FText InStatValue, FText InStatBaseValue, FText InStatUpgradeValue, TEnum<EItemPreviewStatus> InItemPreviewStatus);
     void SetGearStat(FGearStatEntry InStat);
 };
 

@@ -13,6 +13,7 @@ class AFE_Regenerating_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/GameElements/PawnAffliction/EnemyEffects/Regenerating/AFE_Regenerating", "AFE_Regenerating_C");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
 };
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::Regenerating

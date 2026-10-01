@@ -26,6 +26,7 @@ class ENE_Shredder_Base_C : public AShredder
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Shredder/ENE_Shredder_Base", "ENE_Shredder_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* FacilityShredderDeath2nd_Cue;
     static constexpr const char* FacilityShredderDeath2nd_Cue__UeScsNode = "1593cea7bb533b4d879305b4e3421af6";

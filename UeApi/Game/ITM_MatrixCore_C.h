@@ -39,7 +39,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetIconSize(float IconSize_0);
     void FromDeepDiveStage(int stageIndex);
-    void FromReward(class USchematic* InReward, ESchematicType InRewardType);
+    void FromReward(class USchematic* InReward, TEnum<ESchematicType> InRewardType);
     UE_PURE class UWidget* GetMatrixCoreToolTip();
 };
 

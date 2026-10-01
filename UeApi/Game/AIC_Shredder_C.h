@@ -19,6 +19,7 @@ class AIC_Shredder_C : public AFSDAIController
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Shredder/AIC_Shredder", "AIC_Shredder_C");
     using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     float SpeedModifier;

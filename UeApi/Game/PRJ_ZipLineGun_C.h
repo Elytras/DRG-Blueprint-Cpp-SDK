@@ -27,6 +27,7 @@ class PRJ_ZipLineGun_C : public AZipLineProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/PRJ_ZipLineGun", "PRJ_ZipLineGun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.TimelineComponent LightTimeLine";
     FPointerToUberGraphFrame UberGraphFrame;
     class UZipLineUsable* ZipLineUsable;
     static constexpr const char* ZipLineUsable__UeScsNode = "74943aa83d7ffc49b2035c6993805834";
@@ -69,7 +70,7 @@ public:
     FLinearColor LightColorEnd;
     FLinearColor LightColorStart;
     void ExecuteUbergraph_PRJ_ZipLineGun(int EntryPoint);
-    void BndEvt__PRJ_ZipLineGun_ZipLineUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__PRJ_ZipLineGun_ZipLineUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_MULTICAST void All_ConnectWithZipLine(FVector Location, float VerticalSpeed);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);

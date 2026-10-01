@@ -16,6 +16,7 @@ class PRJ_AcidDrop_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_AcidDrop", "PRJ_AcidDrop_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystem* Impact_particles;
     static constexpr const char* Impact_particles__UeName = "Impact particles";

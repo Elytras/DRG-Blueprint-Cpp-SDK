@@ -18,6 +18,7 @@ class PRJ_Spider_Spitter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Spitter/PRJ_Spider_Spitter", "PRJ_Spider_Spitter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "2f81d7141a3abe46837ba8cdf3c7752a";

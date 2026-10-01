@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Sticky_C : public Game::WeaponsNTools::Grenades::Load
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickySmall/Loadout_GrenadeProxy_Sticky", "Loadout_GrenadeProxy_Sticky_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickySmall

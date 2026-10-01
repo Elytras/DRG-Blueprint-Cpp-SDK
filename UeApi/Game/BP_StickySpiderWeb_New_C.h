@@ -43,7 +43,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "c88a32b8b9f01342a4469b13c400cb17";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_A1817B7349EE1CBF83D087BC6F7AC2B7";
-    ETimelineDirection Timeline_0__Direction_A1817B7349EE1CBF83D087BC6F7AC2B7;
+    TEnum<ETimelineDirection> Timeline_0__Direction_A1817B7349EE1CBF83D087BC6F7AC2B7;
     class UTimelineComponent* Timeline_0;
     class UMaterialInstanceDynamic* MaterialInstance;
     void ExecuteUbergraph_BP_StickySpiderWeb_New(int EntryPoint);

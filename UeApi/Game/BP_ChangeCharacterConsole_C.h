@@ -49,7 +49,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
     void ExecuteUbergraph_BP_ChangeCharacterConsole(int EntryPoint);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
 };
 

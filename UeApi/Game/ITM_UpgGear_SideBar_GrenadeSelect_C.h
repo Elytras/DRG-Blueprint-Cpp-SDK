@@ -33,7 +33,7 @@ public:
     class UClass* itemClass;
     class UUpgradableGearComponent* Upgradable;
     Basic_Popup_YesNoPrompt_C* YesNoPrompt;
-    EItemCategory Category;
+    TEnum<EItemCategory> Category;
     TArray<ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C*> Grenades;
     TMulticastInlineDelegate<void(class UClass* itemClass_0, bool Equip, bool IsUnlocked)> OnItemSelected;
     ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C* PurchaseWidget;

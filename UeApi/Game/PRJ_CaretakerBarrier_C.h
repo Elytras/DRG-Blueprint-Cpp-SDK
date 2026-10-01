@@ -15,6 +15,7 @@ class PRJ_CaretakerBarrier_C : public Game::GameElements::Objectives::Facility::
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/PRJ_CaretakerBarrier", "PRJ_CaretakerBarrier_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     class UAudioComponent* CareTakerBarrierProjectile_Cue;
     static constexpr const char* CareTakerBarrierProjectile_Cue__UeScsNode = "7c368acf7a62f14d899a16f8d5d7942d";
 };

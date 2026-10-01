@@ -27,6 +27,7 @@ class BP_GunkSeed_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/GunkSeed/BP_GunkSeed", "BP_GunkSeed_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "4262a70d4dac35428b6eaf8bfdb16a03";
@@ -53,7 +54,7 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void Throw(FVector force);
-    void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
 };
 

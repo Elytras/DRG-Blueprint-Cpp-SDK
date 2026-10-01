@@ -32,6 +32,7 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/Enemies/ENE_BoneCollector", "ENE_BoneCollector_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
     using BP_TunnelEventBase_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_BoneCollector_C;
     static constexpr const char* UberGraphFrame_ENE_BoneCollector_C__UeName = "UberGraphFrame";
     class USphereComponent* PlayerFleeTrigger;

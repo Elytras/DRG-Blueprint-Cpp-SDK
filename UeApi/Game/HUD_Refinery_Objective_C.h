@@ -44,7 +44,7 @@ public:
     void SetRefinery(class AFSDRefinery* InRefinery);
     void OnSetupPipeline(class APipelineStart* InPipelineStart);
     void OnProgressChanged(float InProgress01);
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery

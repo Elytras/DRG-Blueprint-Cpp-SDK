@@ -48,7 +48,7 @@ public:
     class UTexture2D* Texture;
     FText CategoryTitle;
     TMulticastInlineDelegate<void()> ButtonClicked;
-    EVanitySlot VanitySlot;
+    TEnum<EVanitySlot> VanitySlot;
     class UPlayerCharacterID* characterID;
     void ExecuteUbergraph_BTN_ItemCategory(int EntryPoint);
     void OnClosed();

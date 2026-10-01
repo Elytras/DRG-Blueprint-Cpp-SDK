@@ -201,7 +201,7 @@ public:
     static void FindSteamVR_OriginTrackedDeviceInfo(FName ActionName, bool& bResult, FSteamVRInputOriginInfo& InputOriginInfo, FName ActionSet);
     static void GetControllerFidelity(EControllerFidelity& LeftControllerFidelity, EControllerFidelity& RightControllerFidelity);
     static void GetCurlsAndSplaysState(bool& LeftHandState, bool& RightHandState);
-    static void GetFingerCurlsAndSplays(EHand hand, FSteamVRFingerCurls& FingerCurls, FSteamVRFingerSplays& FingerSplays, ESkeletalSummaryDataType SummaryDataType);
+    static void GetFingerCurlsAndSplays(TEnum<EHand> hand, FSteamVRFingerCurls& FingerCurls, FSteamVRFingerSplays& FingerSplays, TEnum<ESkeletalSummaryDataType> SummaryDataType);
     static void GetLeftHandPoseData(FVector& Position, FRotator& Orientation, FVector& AngularVelocity, FVector& Velocity);
     static void GetPoseSource(bool& bUsingSkeletonPose);
     static void GetRightHandPoseData(FVector& Position, FRotator& Orientation, FVector& AngularVelocity, FVector& Velocity);
@@ -210,12 +210,12 @@ public:
     static void GetSteamVR_ActionArray(TArray<FSteamVRAction>& SteamVRActions);
     static void GetSteamVR_ActionSetArray(TArray<FSteamVRActionSet>& SteamVRActionSets);
     static float GetSteamVR_GlobalPredictedSecondsFromNow();
-    static bool GetSteamVR_HandPoseRelativeToNow(FVector& Position, FRotator& Orientation, ESteamVRHand hand, float PredictedSecondsFromNow);
+    static bool GetSteamVR_HandPoseRelativeToNow(FVector& Position, FRotator& Orientation, TEnum<ESteamVRHand> hand, float PredictedSecondsFromNow);
     static TArray<FSteamVRInputBindingInfo> GetSteamVR_InputBindingInfo(FSteamVRAction SteamVRActionHandle);
     static void GetSteamVR_OriginLocalizedName(FSteamVRAction SteamVRAction, TArray<ESteamVRInputStringBits> LocalizedParts, FString& OriginLocalizedName);
     static bool GetSteamVR_OriginTrackedDeviceInfo(FSteamVRAction SteamVRAction, FSteamVRInputOriginInfo& InputOriginInfo);
     static float GetUserIPD();
-    static void PlaySteamVR_HapticFeedback(ESteamVRHand hand, float StartSecondsFromNow, float DurationSeconds, float Frequency, float Amplitude);
+    static void PlaySteamVR_HapticFeedback(TEnum<ESteamVRHand> hand, float StartSecondsFromNow, float DurationSeconds, float Frequency, float Amplitude);
     static bool ResetSeatedPosition();
     static void SetCurlsAndSplaysState(bool NewLeftHandState, bool NewRightHandState);
     static void SetPoseSource(bool bUseSkeletonPose);

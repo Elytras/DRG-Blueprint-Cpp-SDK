@@ -16,6 +16,7 @@ class BP_HydraWeedCoreFragment_C : public Game::GameElements::Resources::Embedde
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_HydraWeedCoreFragment", "BP_HydraWeedCoreFragment_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "2c8feb0788f6b94c87a0116d7ed2e32f";
     TArray<class UStaticMesh*> Meshes;

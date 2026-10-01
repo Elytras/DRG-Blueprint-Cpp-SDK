@@ -41,9 +41,9 @@ public:
     void GetEquippedPerkAt(int Index_0, const TArray<class UPerkAsset*>& TargetArray, class UPerkAsset*& Perk);
     UE_PURE class UWidget* Get_PerkStar_ToolTipWidget_0();
     void UpdateSlots();
-    void CreateSlots(class UVerticalBox* InSlotsBox, class UPlayerCharacterID* InCharacter, EPerkUsageType InType);
+    void CreateSlots(class UVerticalBox* InSlotsBox, class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType);
     void SelectSlot(ITM_LoadOut_PerksEquip_Slot_C* InSlot);
-    void GetEquippedPerksByType(class UPlayerCharacterID* InCharacterClass, EPerkUsageType InType, TArray<class UPerkAsset*>& OutPerks);
+    void GetEquippedPerksByType(class UPlayerCharacterID* InCharacterClass, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& OutPerks);
 };
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks

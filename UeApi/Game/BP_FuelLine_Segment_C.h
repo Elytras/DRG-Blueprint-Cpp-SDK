@@ -24,6 +24,7 @@ class BP_FuelLine_Segment_C : public AFuelLineSegment
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_Segment", "BP_FuelLine_Segment_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SceneComponent PreviewEndPostLocation;/Script/FSD.SimpleHealthComponent DeconstructHealthComponent;/Script/Engine.SplineComponent FuelLineSplineComponent;/Script/Engine.SplineMeshComponent FuelLineSplineMesh;/Script/Engine.StaticMeshComponent FuelLineEndPostMesh;/Script/FSD.TrackBuilderUsable NextSegmentUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "c3d9e3786228b74892f84ee0efe3f397";
@@ -39,7 +40,7 @@ public:
     void ReceivPlacementValidChanged(bool InIsValid);
     void ReceiveBeginPlay();
     void BndEvt__NextSegmentUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
+    void ReceivePlacementStateChanged(TEnum<ETrackBuildPlacementState> NewState);
     void UserConstructionScript();
     bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void UpdateVisualState();

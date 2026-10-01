@@ -16,6 +16,7 @@ class PRJ_FacilityTurretLaser_Sniper_C : public Game::GameElements::Objectives::
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/PRJ_FacilityTurretLaser_Sniper", "PRJ_FacilityTurretLaser_Sniper_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C;
     static constexpr const char* UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C__UeName = "UberGraphFrame";
     class UProjectileExplosion* ProjectileExplosion;

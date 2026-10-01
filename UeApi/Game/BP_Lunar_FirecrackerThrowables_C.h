@@ -54,7 +54,7 @@ public:
     static constexpr const char* AmountLit__Replicated = "OnRep_AmountLit:";
     class UNiagaraComponent* Selected;
     void ExecuteUbergraph_BP_Lunar_FirecrackerThrowables(int EntryPoint);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void OnRep_AmountLit();
 };

@@ -28,11 +28,11 @@ public:
     class UScrollBox* ScrollBox_Items;
     bool Always_Show_Scroll_Bars;
     static constexpr const char* Always_Show_Scroll_Bars__UeName = "Always Show Scroll Bars";
-    EOrientation Orientation;
+    TEnum<EOrientation> Orientation;
     FSizeBoxSettings SizeSettings;
     float ScrollbarThickness;
     void ExecuteUbergraph_Basic_ScrollBarBox(int EntryPoint);
-    void ScrollToChild(class UWidget* WidgetToFind, bool AnimateScroll, EDescendantScrollDestination ScrollDestination);
+    void ScrollToChild(class UWidget* WidgetToFind, bool AnimateScroll, TEnum<EDescendantScrollDestination> ScrollDestination);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

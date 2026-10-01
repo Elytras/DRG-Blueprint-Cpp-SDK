@@ -34,6 +34,7 @@ class BP_SpaceRig_Bartender_C : public ASpaceRigBar
 public:
     UE_CLASS("/Game/GameElements/Bar/BP_SpaceRig_Bartender", "BP_SpaceRig_Bartender_C");
     using BP_DrinksBox_C = Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BarUsableColiider;/Script/FSD.InstantUsable BarUsable;/Script/Engine.SceneComponent Root Component";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* Hat_Easter;
     static constexpr const char* Hat_Easter__UeScsNode = "764ed49fba092f4a9cf974a45dd7b500";
@@ -85,10 +86,10 @@ public:
     static constexpr const char* BartenderRotator__UeScsNode = "458cda77197e74428fd43968168d6828";
     float LerpTimeline_NewTrack;
     static constexpr const char* LerpTimeline_NewTrack__UeName = "LerpTimeline_NewTrack_0_6C29CBCD4E3E9F9E0BF33ABFD7C7E018";
-    ETimelineDirection LerpTimeline__Direction_6C29CBCD4E3E9F9E0BF33ABFD7C7E018;
+    TEnum<ETimelineDirection> LerpTimeline__Direction_6C29CBCD4E3E9F9E0BF33ABFD7C7E018;
     class UTimelineComponent* LerpTimeline;
     float FinishedTimeline_Time_B53F699A4A357873471E8CB3303A6A82;
-    ETimelineDirection FinishedTimeline__Direction_B53F699A4A357873471E8CB3303A6A82;
+    TEnum<ETimelineDirection> FinishedTimeline__Direction_B53F699A4A357873471E8CB3303A6A82;
     class UTimelineComponent* FinishedTimeline;
     class AFSDPlayerState* CurrentCustomerState;
     static constexpr const char* CurrentCustomerState__Replicated = "OnRep_CurrentCustomerState:";
@@ -137,7 +138,7 @@ public:
     UE_MULTICAST UE_RELIABLE void LookAtCustomer(class APlayerCharacter* Customer);
     void BndEvt__BarUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ReceiveBeginPlay();
-    void BndEvt__BarUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BarUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void FinishedTimeline__UpdateFunc();
     void FinishedTimeline__FinishedFunc();
     void LerpTimeline__UpdateFunc();

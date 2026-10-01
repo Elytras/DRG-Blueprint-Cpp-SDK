@@ -23,7 +23,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     FText CustomText;
-    EConsoleGraphicsMode NewVar_0;
+    TEnum<EConsoleGraphicsMode> NewVar_0;
     Basic_ToolTip_C* ToolTip;
     void ExecuteUbergraph_Options_Console_QualitySetting(int EntryPoint);
     void ShowOptions();

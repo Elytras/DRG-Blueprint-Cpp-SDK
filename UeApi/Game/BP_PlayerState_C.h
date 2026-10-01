@@ -21,6 +21,7 @@ class BP_PlayerState_C : public AFSDPlayerState
 {
 public:
     UE_CLASS("/Game/Game/BP_PlayerState", "BP_PlayerState_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPlayerResourceComponent* PlayerResource;
     static constexpr const char* PlayerResource__UeScsNode = "57359881ff221b42945b9df0fb186bdf";

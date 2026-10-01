@@ -33,7 +33,7 @@ public:
     FLinearColor Tint_Infection;
     bool Faded;
     void ExecuteUbergraph_HUD_PlayerInfection(int EntryPoint);
-    void OnInfectionStateChangedEvent_Event_0(EInfectionState State);
+    void OnInfectionStateChangedEvent_Event_0(TEnum<EInfectionState> State);
     void OnInfectionChanged(int IntValue);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();

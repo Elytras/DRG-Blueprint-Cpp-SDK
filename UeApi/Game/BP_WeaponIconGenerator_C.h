@@ -20,6 +20,7 @@ class BP_WeaponIconGenerator_C : public AIconGenerationWeapon
 {
 public:
     UE_CLASS("/Game/Character/Vanity2/BP_WeaponIconGenerator", "BP_WeaponIconGenerator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent MeshRoot;/Script/Engine.SceneComponent Root";
     class UCameraComponent* TestCamera;
     static constexpr const char* TestCamera__UeScsNode = "81bc461e0bd17649adea1cfa97698d43";
     class UWeaponIconSceneCaptureComponent* WeaponCapture_LargeCloseUp;

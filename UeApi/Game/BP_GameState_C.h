@@ -20,6 +20,7 @@ class BP_GameState_C : public AFSDGameState
 {
 public:
     UE_CLASS("/Game/Game/BP_GameState", "BP_GameState_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AttackerManagerComponent AttackerManager;/Script/FSD.DifficultyManager DifficultyManager;/Script/FSD.GemProximityTracker GemProximityTracker;/Script/FSD.PlayerProximityTracker ProximityTracker;/Script/FSD.SeasonReplicatorComponent SeasonReplicator;/Script/FSD.ShowroomManager ShowroomManager;/Script/FSD.SoundMixManagerComponent SoundMixManager;/Script/FSD.SpawnEffectsComponent SpawnEffects;/Script/FSD.TeamResourcesComponent TeamResources";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "61d40143a2a00844aad585f957eb4716";

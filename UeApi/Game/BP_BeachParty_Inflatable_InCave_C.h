@@ -31,6 +31,7 @@ class BP_BeachParty_Inflatable_InCave_C : public AGem
 {
 public:
     UE_CLASS("/Game/Game/Events/BeachParty/BP_BeachParty_Inflatable_InCave", "BP_BeachParty_Inflatable_InCave_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "4eb15219818afc489ff877b6b2e88ede";
@@ -78,7 +79,7 @@ public:
     void CheckForPlayersNearby();
     void Throw(FVector force);
     void OnAttachChanged(bool Attached);
-    void BndEvt__BP_InCaveOktoberfestMug_Usable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_InCaveOktoberfestMug_Usable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_InCaveOktoberfestMug_Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     void BndEvt__BP_InCaveOktoberfestMug_Carriable_K2Node_ComponentBoundEvent_3_CarriableEvent__DelegateSignature();
     void UpdateAttachState(bool Attached);

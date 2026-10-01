@@ -25,6 +25,7 @@ class BP_SentryGun_Moveable_C : public ARecallableSentryGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Moveable", "BP_SentryGun_Moveable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_SentryGunMovementTrail;
     static constexpr const char* P_SentryGunMovementTrail__UeScsNode = "415555813f21f14d91fda11c980d6c37";
@@ -39,7 +40,7 @@ public:
     void OnSelectedItemChanged(class ARecallableSentryGun* SentryGun);
     void OnItemEquipped_Event(class AItem* Item_0);
     void OnToggleNameplatesEvent_Event_0(bool boolValue);
-    void OnSentryStateChanged(class ARedeployableSentryGun* Sender, ERedeployableSentryGunState NewState);
+    void OnSentryStateChanged(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void Update_Outline_And_Icon();
     static constexpr const char* Update_Outline_And_Icon__UeName = "Update Outline And Icon";
     void ReceiveOnStateChanged();
@@ -51,7 +52,7 @@ public:
     void AudioReadyToBuild();
     void OnAmmoCountChanged_Event_0(int AmmoCount, int Change);
     void ReceiveOnSentryReady(class ASentryGun* SentryGun, class APlayerCharacter* PlayerCharacter);
-    void OnStateChanged_Event(class ARedeployableSentryGun* Sender, ERedeployableSentryGunState NewState);
+    void OnStateChanged_Event(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void OnMoveRequested();
     void ReceiveBeginPlay();
     UE_PURE class ASentryGun* GetSentryGun();

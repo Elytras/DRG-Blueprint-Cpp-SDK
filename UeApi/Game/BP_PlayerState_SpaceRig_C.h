@@ -18,6 +18,7 @@ class BP_PlayerState_SpaceRig_C : public Game::Game::BP_PlayerState_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_PlayerState_SpaceRig", "BP_PlayerState_SpaceRig_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerState_SpaceRig_C;
     static constexpr const char* UberGraphFrame_BP_PlayerState_SpaceRig_C__UeName = "UberGraphFrame";
     class UItemUpgradePreviewComponent* ItemUpgradePreview;

@@ -13,6 +13,7 @@ class AFE_FP_Burning_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/GameElements/PawnAffliction/FPEffects/AFE_FP_Burning", "AFE_FP_Burning_C");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
 };
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects

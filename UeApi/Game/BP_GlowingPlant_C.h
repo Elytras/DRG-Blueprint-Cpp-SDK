@@ -25,6 +25,7 @@ class BP_GlowingPlant_C : public AGlowPlant
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/GlowTrees/BP_GlowingPlant", "BP_GlowingPlant_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent Mesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* MainLightComponent;
     static constexpr const char* MainLightComponent__UeScsNode = "4ba65eb28d975746a45b1315b4d8e8a0";

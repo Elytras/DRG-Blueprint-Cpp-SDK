@@ -19,6 +19,7 @@ class BP_PropHunt_BioTank_Small_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_BioTank_Small", "BP_PropHunt_BioTank_Small_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UStaticMeshComponent* SM_Plague_Biotank_Stand;
     static constexpr const char* SM_Plague_Biotank_Stand__UeScsNode = "b96292b23f76394b80e6d95cc4019278";
     class UStaticMeshComponent* StaticMesh;

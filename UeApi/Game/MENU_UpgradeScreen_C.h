@@ -84,7 +84,7 @@ public:
     class UClass* CharacterClass;
     class UClass* itemClass;
     class UUpgradableGearComponent* Upgradable;
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     TMulticastInlineDelegate<void(class UClass* NewItemClass)> OnItemChanged;
     bool ItemDescClicked;
     bool ShowTabsBar;
@@ -120,11 +120,11 @@ public:
     void ReceiveSelectNextCommand();
     void BndEvt__MENU_SpaceRigTemplate_K2Node_ComponentBoundEvent_24_OnClosedClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Show(class UClass* InCharacterClass, class UClass* InItemClass, EItemCategory InItemCategory);
+    void Show(class UClass* InCharacterClass, class UClass* InItemClass, TEnum<EItemCategory> InItemCategory);
     void RefreshItemDetails();
     void ChangeItem(class UClass* InItemClass);
     void BuildGearTabs();
-    void GetTabItems(class UClass* InCharacterClass, EItemCategory InCategory, TArray<class UClass*>& Tab_Items);
+    void GetTabItems(class UClass* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UClass*>& Tab_Items);
     void RefreshGearStats(FString entry);
     void GetYesNoPrompt(Basic_Popup_YesNoPrompt_C*& YesNoPrompt);
     void SelectNextTab(int Direction);

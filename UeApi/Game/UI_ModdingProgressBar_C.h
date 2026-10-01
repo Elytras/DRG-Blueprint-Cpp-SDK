@@ -30,8 +30,8 @@ public:
     int PreviewProgress;
     int PreviewTotal;
     int Width;
-    EVerticalAlignment VerticalAlignment;
-    EHorizontalAlignment HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
     bool IsDownloading;
     int CurrentProgress;
     int CurrentTotal;
@@ -40,7 +40,7 @@ public:
     void SetProgress(bool Downloading, int Progress, int Total);
     UE_PURE FText Int2Text(int Value);
     void FinishExtracting();
-    void Error(EUGCPackageError InErrorType);
+    void Error(TEnum<EUGCPackageError> InErrorType);
     void GetTotal(int& Total);
     void SetProgressCustomText(FText Text, int Progress, int Total);
 };

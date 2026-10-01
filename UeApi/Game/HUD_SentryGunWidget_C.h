@@ -59,7 +59,7 @@ public:
     void OnDeployProgress_Event(float Progress);
     void Check_For_Ammo_Depletion();
     static constexpr const char* Check_For_Ammo_Depletion__UeName = "Check For Ammo Depletion";
-    void OnGunStateChanged(class ARedeployableSentryGun* Sender, ERedeployableSentryGunState NewState);
+    void OnGunStateChanged(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void OnItemEquipped(class AItem* Item_0);
     void Set_Selected(bool Is_Selected);
     static constexpr const char* Set_Selected__UeName = "Set Selected";
@@ -67,7 +67,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Update_State(FString reason);
     static constexpr const char* Update_State__UeName = "Update State";
-    void OnStateChanged(class ARecallableActor* Sender, ERecallableActorState State);
+    void OnStateChanged(class ARecallableActor* Sender, TEnum<ERecallableActorState> State);
     void OnActiveItemsChanged(class ARecallableSentryGunItem* Item_0);
     void Init(class UInventoryComponent* Inventory_0, class ARecallableSentryGunItem* Item_0, int Param_Index_0);
     void On_Ammo_Count_Changed(int AmmoCount, int Change);

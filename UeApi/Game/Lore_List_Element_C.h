@@ -55,7 +55,7 @@ public:
     void ExecuteUbergraph_Lore_List_Element(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void HideNavIcon();
-    void InputSourceChanged(EFSDInputSource InputSource);
+    void InputSourceChanged(TEnum<EFSDInputSource> InputSource);
     void PlayIntroAnim();
     void UpdateBorder();
     UE_COSMETIC void Construct();

@@ -20,7 +20,7 @@ public:
     using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonScalable2_C* Button;
-    EHUDVisibilityPresets PresetID;
+    TEnum<EHUDVisibilityPresets> PresetID;
     void ExecuteUbergraph_Options_HUD_ElementPresetItem(int EntryPoint);
     void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

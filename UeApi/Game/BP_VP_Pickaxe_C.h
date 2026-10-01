@@ -13,6 +13,7 @@ class BP_VP_Pickaxe_C : public APickaxePreviewActor
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pickaxe/BP_VP_Pickaxe", "BP_VP_Pickaxe_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TP_RootComponent";
 };
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe

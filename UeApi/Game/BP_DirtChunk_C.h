@@ -17,6 +17,7 @@ class BP_DirtChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/BP_DirtChunk", "BP_DirtChunk_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
     static constexpr const char* Mesh__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";

@@ -29,6 +29,7 @@ class WPN_PlasmaCarbine_C : public APlasmaCarbine
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/WPN_PlasmaCarbine", "WPN_PlasmaCarbine_C");
     using WeaponDisplay_PlasmaCarbine_AmmoCounter_C = Game::WeaponsNTools::PlasmaCarbine::UI::WeaponDisplay_PlasmaCarbine_AmmoCounter_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UHeatMaterialComponent* HeatMaterial;
     static constexpr const char* HeatMaterial__UeScsNode = "70a466791c9510419c80dd16bf982692";
@@ -43,7 +44,7 @@ public:
     class UProjectileLauncherComponent* projectileLauncher;
     static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     float Overheat_Ammo_Regen_Effect_6788C26846C5EA00DB58E08FBF311673;
-    ETimelineDirection Overheat_Ammo_Regen__Direction_6788C26846C5EA00DB58E08FBF311673;
+    TEnum<ETimelineDirection> Overheat_Ammo_Regen__Direction_6788C26846C5EA00DB58E08FBF311673;
     class UTimelineComponent* Overheat_Ammo_Regen;
     static constexpr const char* Overheat_Ammo_Regen__UeName = "Overheat Ammo Regen";
     float Overheat;

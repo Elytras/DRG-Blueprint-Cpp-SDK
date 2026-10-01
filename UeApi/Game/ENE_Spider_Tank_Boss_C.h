@@ -34,6 +34,7 @@ class ENE_Spider_Tank_Boss_C : public Game::Enemies::Spider::TankBoss::ENE_Spide
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTank/ENE_Spider_Tank_Boss", "ENE_Spider_Tank_Boss_C");
     using BP_Boss_AoEAttack_C = Game::Enemies::Spider::TankBoss::BossTank::BP_Boss_AoEAttack_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Boss_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Boss_C__UeName = "UberGraphFrame";
     class UWeakpointGlowComponent* WeakpointGlow;
@@ -63,12 +64,12 @@ public:
     class UPointLightComponent* Light_BackBody;
     static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
     float Butt_FadeOut_TurnOffTime_16A7165B4C57BBF766638A80F23B7D1F;
-    ETimelineDirection Butt_FadeOut__Direction_16A7165B4C57BBF766638A80F23B7D1F;
+    TEnum<ETimelineDirection> Butt_FadeOut__Direction_16A7165B4C57BBF766638A80F23B7D1F;
     class UTimelineComponent* Butt_FadeOut;
     static constexpr const char* Butt_FadeOut__UeName = "Butt FadeOut";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_9F9D27D54BACF70E8270CB9172CF71EF";
-    ETimelineDirection Timeline_0__Direction_9F9D27D54BACF70E8270CB9172CF71EF;
+    TEnum<ETimelineDirection> Timeline_0__Direction_9F9D27D54BACF70E8270CB9172CF71EF;
     class UTimelineComponent* Timeline_0;
     float LightIntensityCache;
     bool TankArmorIntact;

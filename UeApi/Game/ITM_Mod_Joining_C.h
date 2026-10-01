@@ -39,7 +39,7 @@ public:
     TMulticastInlineDelegate<void(FString ModId_0, EUGCApprovalStatus ModStatus, ITM_Mod_Joining_C* ModWidget)> OnMetaDataLoaded;
     FString ModName;
     FString ModURL;
-    EUGCApprovalStatus ApprovalStatus;
+    TEnum<EUGCApprovalStatus> ApprovalStatus;
     bool ModInstalled;
     class UModioModInfoWrapper* MetaData;
     bool DownloadRequired;

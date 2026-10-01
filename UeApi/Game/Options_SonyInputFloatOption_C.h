@@ -20,7 +20,7 @@ public:
     using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
-    ESonyInputSettingsFloats Option;
+    TEnum<ESonyInputSettingsFloats> Option;
     TMulticastInlineDelegate<void(float NewValue)> StateChanged;
     float MaxValue;
     void ExecuteUbergraph_Options_SonyInputFloatOption(int EntryPoint);

@@ -55,7 +55,7 @@ public:
     void BndEvt__BTN_Eyebrows_K2Node_ComponentBoundEvent_5_ButtonClicked__DelegateSignature();
     void BndEvt__BTN_Beard_K2Node_ComponentBoundEvent_4_ButtonClicked__DelegateSignature();
     void BndEvt__BTN_Armor_K2Node_ComponentBoundEvent_2_ButtonClicked__DelegateSignature();
-    void GetButton(EVanitySlot Slot_0, BTN_ItemCategory_C*& Button);
+    void GetButton(TEnum<EVanitySlot> Slot_0, BTN_ItemCategory_C*& Button);
 };
 
 }}}   // namespace Game::UI::Menu_Crafting

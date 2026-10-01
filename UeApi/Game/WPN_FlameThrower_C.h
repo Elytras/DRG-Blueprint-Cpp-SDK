@@ -29,6 +29,7 @@ class WPN_FlameThrower_C : public AFlameThrowerItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/WPN_FlameThrower", "WPN_FlameThrower_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.BasicWeaponFireComponent WeaponFire;/Script/FSD.DamageComponent AoEHeatDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DamageComponent ExplodingTargetsDamage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.MotionAudioController MotionAudio;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TP_Mag;
     static constexpr const char* TP_Mag__UeScsNode = "052effe1d251ff4baec9d63099174653";

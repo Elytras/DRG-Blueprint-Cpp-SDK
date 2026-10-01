@@ -30,9 +30,9 @@ public:
     void ReceiveDestroyed();
     void ReceiveBeginPlay();
     void StartLevelSeq(class ULevelSequence* CharacterLevelSequence);
-    void StartPlay(ECharselectionCameraLocation selectionLocation);
+    void StartPlay(TEnum<ECharselectionCameraLocation> selectionLocation);
     void StopPlay();
-    void StartPlayer(ECharselectionCameraLocation CamSetting);
+    void StartPlayer(TEnum<ECharselectionCameraLocation> CamSetting);
     void StopPlayer();
     void PlaySpecificSequence(class ULevelSequence* LevelSequence);
     void MakeVanity(bool UseSleves, FEquippedVanity& UseSleveless);

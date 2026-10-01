@@ -27,6 +27,7 @@ class ENE_FacilityTurret_Spinning_C : public ASpinningFacilityturret
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Spinning", "ENE_FacilityTurret_Spinning_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
     static constexpr const char* terrainPlacement__UeScsNode = "69f62019043beb4ab3f5b12f856957e1";
@@ -44,7 +45,7 @@ public:
     static constexpr const char* outline__UeScsNode = "d095c33df2cdb040b7103ba453834285";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_AC7B3F7C4EBC4266A6222DB9EEEB9907";
-    ETimelineDirection Timeline_0__Direction_AC7B3F7C4EBC4266A6222DB9EEEB9907;
+    TEnum<ETimelineDirection> Timeline_0__Direction_AC7B3F7C4EBC4266A6222DB9EEEB9907;
     class UTimelineComponent* Timeline_0;
     int Attacks;
     int AttackCounter;

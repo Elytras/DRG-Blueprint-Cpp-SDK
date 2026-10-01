@@ -32,6 +32,7 @@ class BP_DrillevatorEngine_C : public ADrillevatorEngine
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_DrillevatorEngine", "BP_DrillevatorEngine_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent UsableComponent;/Script/Engine.SkeletalMeshComponent EngineMeshComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAutoCarverComponent* Carver;
     static constexpr const char* Carver__UeScsNode = "048af9b41f643b43aa4e104db385e916";
@@ -116,24 +117,24 @@ public:
     TArray<class UNiagaraComponent*> DamagedParticles;
     void ExecuteUbergraph_BP_DrillevatorEngine(int EntryPoint);
     void Cheat_TurnOn();
-    void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_12_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_12_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_11_ProgressSignature__DelegateSignature(float Progress);
     void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_10_OnFailed__DelegateSignature();
-    void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_9_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_9_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_DamageLevel();
-    void OnRep_State(EDrillevatorEngineState oldState);
+    void OnRep_State(TEnum<EDrillevatorEngineState> oldState);
     void TurnOffLights();
     void StopActiveSound();
     void SetDrainRate();
-    void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_7_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_7_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void UpdateLastRepairProgress(float Progress);
     void BndEvt__BP_DrillevatorEngine_RepairUsable_K2Node_ComponentBoundEvent_5_ProgressSignature__DelegateSignature(float Progress);
     void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_4_ProgressSignature__DelegateSignature(float Progress);
     void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_3_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__BP_DrillevatorEngine_RepairUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_DrillevatorEngine_RepairUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SetColor(int Index_0);
-    void OnExitState(EDrillevatorEngineState oldState);
-    void OnEnterState(EDrillevatorEngineState State_0);
+    void OnExitState(TEnum<EDrillevatorEngineState> oldState);
+    void OnEnterState(TEnum<EDrillevatorEngineState> State_0);
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void EvaluateColor(int& DamageLevel_0);

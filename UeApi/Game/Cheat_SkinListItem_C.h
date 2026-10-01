@@ -25,7 +25,7 @@ public:
     class UImage* SkinImage;
     TMulticastInlineDelegate<void(EItemCategory Category)> OnSkinEquipped;
     class UItemSkin* ItemSkin;
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     bool IsEquipped;
     void ExecuteUbergraph_Cheat_SkinListItem(int EntryPoint);
     void Setup_Skin_Selection_Widget();

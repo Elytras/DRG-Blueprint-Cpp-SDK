@@ -13,6 +13,7 @@ class BP_FacilityTurretDrone_Sniper_C : public Game::GameElements::Objectives::F
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/BP_FacilityTurretDrone_Sniper", "BP_FacilityTurretDrone_Sniper_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

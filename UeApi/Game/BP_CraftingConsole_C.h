@@ -64,11 +64,11 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_26FA2F8A445C2278C5D1B8901F1A6686";
-    ETimelineDirection Timeline_0__Direction_26FA2F8A445C2278C5D1B8901F1A6686;
+    TEnum<ETimelineDirection> Timeline_0__Direction_26FA2F8A445C2278C5D1B8901F1A6686;
     class UTimelineComponent* Timeline_0;
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
     void ExecuteUbergraph_BP_CraftingConsole(int EntryPoint);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();

@@ -33,6 +33,7 @@ class BP_Refinery_Extractor_C : public APipelineExtractorPod
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Extractor", "BP_Refinery_Extractor_C");
     using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* BP_Extractor_Lamp02;
     static constexpr const char* BP_Extractor_Lamp02__UeScsNode = "99a2d546dadade45ad6a6b688e2b0a40";
@@ -85,7 +86,7 @@ public:
     bool DoorsPushedAway;
     bool ItemEquipped;
     void ExecuteUbergraph_BP_Refinery_Extractor(int EntryPoint);
-    void OnPipelineStateChanged(EPipelineBuildState InPipelineState);
+    void OnPipelineStateChanged(TEnum<EPipelineBuildState> InPipelineState);
     void OnDroppodImpact();
     void Setup_ItemEquipped();
     static constexpr const char* Setup_ItemEquipped__UeName = "Setup ItemEquipped";

@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UComboBoxString* ComboBoxString_159;
     void ExecuteUbergraph_Cheat_SimulatePlayerCount(int EntryPoint);
-    void BndEvt__ComboBoxString_159_K2Node_ComponentBoundEvent_70_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_159_K2Node_ComponentBoundEvent_70_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void Construct();
 };
 

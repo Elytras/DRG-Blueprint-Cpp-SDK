@@ -18,6 +18,7 @@ class BP_IronChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Veins/ResourceChunks/BP_IronChunk", "BP_IronChunk_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "645f65e003aace418a0c27fcde74f4b1";

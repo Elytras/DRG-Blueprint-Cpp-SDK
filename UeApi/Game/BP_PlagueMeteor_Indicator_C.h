@@ -16,6 +16,7 @@ class BP_PlagueMeteor_Indicator_C : public AImpactIndicator
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueMeteor_Indicator", "BP_PlagueMeteor_Indicator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent InnerScaler;/Script/Engine.SceneComponent OuterScaler;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* InnerIndicator1;
     static constexpr const char* InnerIndicator1__UeScsNode = "5ad876d189554a40a52681f7e8661405";

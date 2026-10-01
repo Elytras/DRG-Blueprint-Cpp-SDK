@@ -16,6 +16,7 @@ class BP_PropHunt_OktoberfestSunflower_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Oktoberfest/BP_PropHunt_OktoberfestSunflower", "BP_PropHunt_OktoberfestSunflower_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UArrowComponent* Arrow;
     static constexpr const char* Arrow__UeScsNode = "98f2aef858186f4698b96b4c7e96d334";
     class UStaticMeshComponent* StaticMesh;

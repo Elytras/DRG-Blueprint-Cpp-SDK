@@ -21,6 +21,7 @@ class PRJ_Bomber_Fire_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_Bomber_Fire", "PRJ_Bomber_Fire_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosion;
     static constexpr const char* ProjectileExplosion__UeScsNode = "506a4b430a2767448e28a2441e63ca61";

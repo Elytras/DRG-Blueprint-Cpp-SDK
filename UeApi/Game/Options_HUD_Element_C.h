@@ -28,7 +28,7 @@ public:
     TArray<EHUDVisibilityMode> AvailableModes;
     class UHUDVisibilityGroup* VisibilityGroup;
     void ExecuteUbergraph_Options_HUD_Element(int EntryPoint);
-    void OnModeChanged_Event(class UHUDVisibilityGroup* Group, EHUDVisibilityMode Mode);
+    void OnModeChanged_Event(class UHUDVisibilityGroup* Group, TEnum<EHUDVisibilityMode> Mode);
     UE_COSMETIC void Construct();
     void BndEvt__Basic_Option_K2Node_ComponentBoundEvent_2_OnHoveringEnd__DelegateSignature();
     void BndEvt__Basic_Option_K2Node_ComponentBoundEvent_1_OnHoveringBegin__DelegateSignature();

@@ -24,11 +24,11 @@ public:
     Options_Tab_GFX_Console_C* Options_Tab_GFX_Console;
     Options_Tab_GFX_Steam_C* Options_Tab_GFX_Steam;
     class UWidgetSwitcher* PlatformSwitcher;
-    EFSDTargetPlatform Platform;
+    TEnum<EFSDTargetPlatform> Platform;
     void ExecuteUbergraph_Options_Tab_GFX(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void SetPlatform(EFSDTargetPlatform Platform_0);
+    void SetPlatform(TEnum<EFSDTargetPlatform> Platform_0);
 };
 
 }}}   // namespace Game::UI::Menu_Options

@@ -13,6 +13,7 @@ class BML_InputHandling_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/BML_InputHandling", "BML_InputHandling_C");
+    static constexpr const char* UeClassTail = "0x00a01200 /Script/CoreUObject.Object Engine";
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

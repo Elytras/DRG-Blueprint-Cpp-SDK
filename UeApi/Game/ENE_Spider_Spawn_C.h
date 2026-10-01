@@ -22,13 +22,14 @@ class ENE_Spider_Spawn_C : public Game::Enemies::Spider::Swarmer::ENE_Spider_Swa
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/Spawn/ENE_Spider_Spawn", "ENE_Spider_Spawn_C");
     using BP_EnemySpawnerOwner_C = Game::Enemies::EnemySpawner::BP_EnemySpawnerOwner_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Spawn_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Spawn_C__UeName = "UberGraphFrame";
     BP_EnemySpawnerOwner_C* BP_EnemySpawnerOwner;
     static constexpr const char* BP_EnemySpawnerOwner__UeScsNode = "592aceac97e244428002ba429b7c0a00";
     float Spawn_Time_B1CBC18A4B11AF202D22269E86350761;
     float Spawn_Z_B1CBC18A4B11AF202D22269E86350761;
-    ETimelineDirection Spawn__Direction_B1CBC18A4B11AF202D22269E86350761;
+    TEnum<ETimelineDirection> Spawn__Direction_B1CBC18A4B11AF202D22269E86350761;
     class UTimelineComponent* Spawn_ENE_Spider_Spawn_C;
     static constexpr const char* Spawn_ENE_Spider_Spawn_C__UeName = "Spawn";
     FVector SpawnLocation;

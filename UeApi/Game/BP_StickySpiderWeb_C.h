@@ -44,7 +44,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "c88a32b8b9f01342a4469b13c400cb17";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_7FBFE0904ABD35FA5B540ABBA6E572D9";
-    ETimelineDirection Timeline_0__Direction_7FBFE0904ABD35FA5B540ABBA6E572D9;
+    TEnum<ETimelineDirection> Timeline_0__Direction_7FBFE0904ABD35FA5B540ABBA6E572D9;
     class UTimelineComponent* Timeline_0;
     class UMaterialInstanceDynamic* MaterialInstance;
     TArray<class UTexture*> WebTexture;

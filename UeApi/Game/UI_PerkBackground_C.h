@@ -30,16 +30,16 @@ public:
     class USizeBox* BackgroundSize;
     class UNamedSlot* IconContent;
     float Dimension;
-    EPerkUsageType PerkType;
+    TEnum<EPerkUsageType> PerkType;
     FLinearColor FillColor;
     FLinearColor BorderColor;
-    EPerkTierState PerkState;
+    TEnum<EPerkTierState> PerkState;
     void ExecuteUbergraph_UI_PerkBackground(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetDimensions(float InDimensions);
     void SetColors(FLinearColor InFillColor, FLinearColor InBorderColor);
-    void SetPerkType(EPerkUsageType InType, EPerkTierState InState);
-    void FromPerk(class UPerkAsset* InPerk, EPerkTierState InState);
+    void SetPerkType(TEnum<EPerkUsageType> InType, TEnum<EPerkTierState> InState);
+    void FromPerk(class UPerkAsset* InPerk, TEnum<EPerkTierState> InState);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

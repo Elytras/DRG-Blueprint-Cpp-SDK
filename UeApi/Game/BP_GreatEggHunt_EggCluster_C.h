@@ -17,6 +17,7 @@ class BP_GreatEggHunt_EggCluster_C : public AStaticMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_EggCluster", "BP_GreatEggHunt_EggCluster_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<class UTexture*> Textures_Eggs;
     TArray<class UStaticMesh*> Meshes;

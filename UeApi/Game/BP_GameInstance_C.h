@@ -23,6 +23,8 @@ public:
     using WND_JoiningModded_C = Game::UI::Menu_ServerList::WND_JoiningModded_C;
     using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
     using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+    static constexpr const char* UeClassTail = "0x00800008 /Script/CoreUObject.Object Game";
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDCloudLoadSave FSDCloudLoadSave;/Script/FSD.FSDSendToURL FSDSendToURL;/Script/FSD.FSDSessionUpdater SessionUpdater";
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void(TArray<TScriptInterface<class ICraftable>>& NewItems)> OnAvailableCraftingItems;
     bool EligibleForRetirementAssignment;

@@ -38,7 +38,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "213133b2b4071b4199601b58184ca0d4";
     void ExecuteUbergraph_BP_Anniversary_HeliumTank(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_PlayParticleFX();
-    void BndEvt__BP_HeliumTank_InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_HeliumTank_InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint

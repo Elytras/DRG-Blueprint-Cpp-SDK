@@ -21,6 +21,7 @@ class PRJ_Spider_Boss_Heavy_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/PRJ_Spider_Boss_Heavy", "PRJ_Spider_Boss_Heavy_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "b3d24dcc0e1e9f46bf46778673fbb9a0";

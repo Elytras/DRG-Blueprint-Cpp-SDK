@@ -40,7 +40,7 @@ public:
     class USizeBox* SizeBox_0;
     class UButton* WidgetButton;
     class UTexture2D* PreviewIcon;
-    EItemUpgradeStatus PreviewStatus;
+    TEnum<EItemUpgradeStatus> PreviewStatus;
     int PreviewLockRequirement;
     bool PreviewShowEquippedAsBorder;
     bool PreviewShowLockIcon;

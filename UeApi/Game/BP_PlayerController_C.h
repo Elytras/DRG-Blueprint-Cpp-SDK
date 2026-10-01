@@ -21,6 +21,7 @@ class BP_PlayerController_C : public Game::Game::BP_PlayerControllerBase_C
 public:
     UE_CLASS("/Game/Game/BP_PlayerController", "BP_PlayerController_C");
     using BP_ProceduralController_C = Game::Landscape::BP_ProceduralController_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerController_C;
     static constexpr const char* UberGraphFrame_BP_PlayerController_C__UeName = "UberGraphFrame";
     BP_ProceduralController_C* ProceduralController;

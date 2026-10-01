@@ -20,6 +20,7 @@ class PRJ_Rockpox_Breede_VomitedLarva_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/PRJ_Rockpox_Breede_VomitedLarva", "PRJ_Rockpox_Breede_VomitedLarva_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Spitballer_BlueGooSplat_Cue;
     static constexpr const char* Spitballer_BlueGooSplat_Cue__UeScsNode = "a388396eddd7dc4595107e4a3284481c";

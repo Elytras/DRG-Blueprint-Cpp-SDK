@@ -38,6 +38,7 @@ class BP_EscortGarage_C : public ARessuplyPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_EscortGarage", "BP_EscortGarage_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* KillWhileDropping;
     static constexpr const char* KillWhileDropping__UeScsNode = "eddeeb88d66d0d4494579394b17ea889";
@@ -139,7 +140,7 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void OnDropStarted();
     void OnDroppodImpact();
-    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void OnRep_HasBeenOpened();
 };

@@ -18,6 +18,7 @@ class WPN_ResonanceScanner_Builder_C : public AFuelLineBuilderItem
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/WPN_ResonanceScanner_Builder", "WPN_ResonanceScanner_Builder_C");
     using UI_RockCracker_Builder_C = Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CrosshairAggregator CrosshairAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator SegmentPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     static constexpr const char* MonitorWidget__UeScsNode = "b704e8ef4708f8448cffdec957c561b1";

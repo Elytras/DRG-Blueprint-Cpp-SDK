@@ -19,6 +19,7 @@ class ENE_Spider_Boss_HeavySpawn_C : public Game::Enemies::Spider::ENE_SpiderBas
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/ENE_Spider_Boss_HeavySpawn", "ENE_Spider_Boss_HeavySpawn_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_HeavySpawn_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Boss_HeavySpawn_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* CarveAttack;

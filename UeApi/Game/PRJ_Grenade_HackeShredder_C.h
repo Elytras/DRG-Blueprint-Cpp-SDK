@@ -29,6 +29,7 @@ class PRJ_Grenade_HackeShredder_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/PRJ_Grenade_HackeShredder", "PRJ_Grenade_HackeShredder_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* DamageTrigger;
     static constexpr const char* DamageTrigger__UeScsNode = "d60f7f9d9e43ce4993b354daac025e62";
@@ -56,7 +57,7 @@ public:
     static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
     float Timeline_0_Brightness_21DBF96B4E1C7EDB71BECA87BE4B155E;
     float Timeline_0_Height_21DBF96B4E1C7EDB71BECA87BE4B155E;
-    ETimelineDirection Timeline_0__Direction_21DBF96B4E1C7EDB71BECA87BE4B155E;
+    TEnum<ETimelineDirection> Timeline_0__Direction_21DBF96B4E1C7EDB71BECA87BE4B155E;
     class UTimelineComponent* Timeline_0;
     float TimeToTarget;
     bool HasNitroglycerinCompound;

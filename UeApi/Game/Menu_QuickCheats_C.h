@@ -90,7 +90,7 @@ public:
     void BndEvt__Button_EnemySpawning_K2Node_ComponentBoundEvent_19_OnButtonClickedEvent__DelegateSignature();
     void Close_Advanced_spawning();
     static constexpr const char* Close_Advanced_spawning__UeName = "Close Advanced spawning";
-    void BndEvt__ComboBoxString_138_K2Node_ComponentBoundEvent_18_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_138_K2Node_ComponentBoundEvent_18_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__Button_ToggleBosco_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_SpawnWaveFromPool_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_SpawnLootBugs_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature();
@@ -112,7 +112,7 @@ public:
     void BndEvt__HealthSlider_K2Node_ComponentBoundEvent_2_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void HotKey_Interaction_change_character();
     static constexpr const char* HotKey_Interaction_change_character__UeName = "HotKey Interaction change character";
-    void Swap_Weapon_to_next(EItemCategory Item_Category);
+    void Swap_Weapon_to_next(TEnum<EItemCategory> Item_Category);
     static constexpr const char* Swap_Weapon_to_next__UeName = "Swap Weapon to next";
     UE_COSMETIC void Construct();
     void BndEvt__Button_Scout_K2Node_ComponentBoundEvent_782_OnButtonClickedEvent__DelegateSignature();
@@ -124,7 +124,7 @@ public:
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE float Get_HealthSlider_Value_0();
-    UE_PURE ESlateVisibility Get_ActivateCommonCheatsButton_Visibility_0();
+    UE_PURE TEnum<ESlateVisibility> Get_ActivateCommonCheatsButton_Visibility_0();
     class UWidget* OnGetMenuContent_0();
     class UUpgradableBoscoComponent* GetBoscoUpgradeComponent(class ABosco*& Drone);
     UE_PURE FLinearColor GetColorAndOpacity_Godmode();

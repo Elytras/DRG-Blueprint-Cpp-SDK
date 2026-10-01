@@ -59,7 +59,7 @@ public:
     TMulticastInlineDelegate<void(ITM_Loadout_ItemWindow_C* Item)> On_Clicked;
     static constexpr const char* On_Clicked__UeName = "On Clicked";
     class UPlayerCharacterID* CharacterClass;
-    EItemCategory Item_Category;
+    TEnum<EItemCategory> Item_Category;
     static constexpr const char* Item_Category__UeName = "Item Category";
     bool ItemHovered;
     class UItemID* itemClass;
@@ -87,7 +87,7 @@ public:
     void SetHovered(bool InHovered);
     void SetCharacterClass(class UPlayerCharacterID* InCharacterClass);
     void GetSelectedItem(class UItemID*& itemClass_0, EItemCategory& Item_Category_0);
-    void GetOwnedItems(class UPlayerCharacterID* InCharacterClass, EItemCategory InCategory, TArray<class UItemID*>& Owned_Items, bool& NewWeaponNotification);
+    void GetOwnedItems(class UPlayerCharacterID* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UItemID*>& Owned_Items, bool& NewWeaponNotification);
     void GetNextItem(int Direction, class UItemID*& NextItem);
     void SetHideCounter(bool HideCounter_0);
 };

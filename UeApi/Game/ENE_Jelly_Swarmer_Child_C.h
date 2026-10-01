@@ -15,6 +15,7 @@ class ENE_Jelly_Swarmer_Child_C : public Game::Enemies::Jellyfish::ENE_Jelly_Swa
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/ENE_Jelly_Swarmer_Child", "ENE_Jelly_Swarmer_Child_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     class UMeleeAttackComponent* MeleeAttack;
     static constexpr const char* MeleeAttack__UeScsNode = "8c33a7220dd3df4e9e34c40921ec8a37";
 };

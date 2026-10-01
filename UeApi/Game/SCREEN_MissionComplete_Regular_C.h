@@ -135,7 +135,7 @@ public:
     void ShowCursor();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetAnsel(bool Active);
-    UE_PURE ESlateVisibility Get_Button_GiveAllocade_Visiblity();
+    UE_PURE TEnum<ESlateVisibility> Get_Button_GiveAllocade_Visiblity();
     void SendHostAnalytics();
     void GetIsTutorialBiome(bool& IsTutorialBiome);
 };

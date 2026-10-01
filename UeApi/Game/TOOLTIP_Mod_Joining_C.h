@@ -33,14 +33,14 @@ public:
     FString Version;
     FString Description;
     FString Author;
-    EUGCApprovalStatus ApprovalState;
+    TEnum<EUGCApprovalStatus> ApprovalState;
     class UModioModInfoWrapper* MetaData;
     FString ThumbnailID;
     void ExecuteUbergraph_TOOLTIP_Mod_Joining(int EntryPoint);
     void LoadThumbnail();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void FromMetaData(class UModioModInfoWrapper* InMetaData);
-    void SetData(FString InModID, FString InName, FString InVersion, FString InDescription, FString InAuthor, EUGCApprovalStatus InApprovalState, bool InFetchThumbnail);
+    void SetData(FString InModID, FString InName, FString InVersion, FString InDescription, FString InAuthor, TEnum<EUGCApprovalStatus> InApprovalState, bool InFetchThumbnail);
 };
 
 }}}   // namespace Game::UI::Modding

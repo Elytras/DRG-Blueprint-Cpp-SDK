@@ -40,7 +40,7 @@ public:
     bool IsChecked;
     FText Text;
     bool UpperCase;
-    ECheckBoxState State;
+    TEnum<ECheckBoxState> State;
     float TextWidth;
     void ExecuteUbergraph_Basic_CheckBox(int EntryPoint);
     void OnClicked(bool InChecked);
@@ -53,7 +53,7 @@ public:
     void SetIsChecked(bool InIsChecked);
     void SetText(FText InText, bool InUpperCase);
     void GetUpperCased(bool& UpperCase_0);
-    void SetState(ECheckBoxState InState);
+    void SetState(TEnum<ECheckBoxState> InState);
     void GetState(ECheckBoxState& State_0);
     void SetSize(float InSize);
     void SetHovered(bool InHovered);

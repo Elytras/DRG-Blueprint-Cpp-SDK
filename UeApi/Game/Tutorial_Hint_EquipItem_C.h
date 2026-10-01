@@ -20,7 +20,7 @@ public:
     float FirstTimeDelay;
     float AfterUseDelay;
     bool HasEquipped;
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     void ExecuteUbergraph_Tutorial_Hint_EquipItem(int EntryPoint);
     void ReceiveOnHidden();
     void ItemEquipped(class AItem* Item);

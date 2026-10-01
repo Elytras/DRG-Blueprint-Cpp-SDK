@@ -39,7 +39,7 @@ public:
     UI_DebugDeepDiveStage_C* UI_DebugDeepDiveStage3;
     int Seed;
     void ExecuteUbergraph_MENU_DeepDiveCheat(int EntryPoint);
-    void BndEvt__MENU_DeepDiveCheat_Difficulty_K2Node_ComponentBoundEvent_3_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__MENU_DeepDiveCheat_Difficulty_K2Node_ComponentBoundEvent_3_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__MENU_DeepDiveCheat_BTN_FindSeed_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__MENU_DeepDiveCheat_BTN_Close_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();

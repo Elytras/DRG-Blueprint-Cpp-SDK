@@ -28,6 +28,7 @@ class PRJ_FlareGun_Projectile01_C : public AFlareGunProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/PRJ_FlareGun_Projectile01", "PRJ_FlareGun_Projectile01_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Lit_Fuse_Cue;
     static constexpr const char* Lit_Fuse_Cue__UeScsNode = "45301ce91fc07441bfb26773731eee84";
@@ -56,7 +57,7 @@ public:
     float Light_Anim_ShadowMultiplier_7569FDBD44600A7270E9429A8EC6FB81;
     float Light_Anim_NewTrack;
     static constexpr const char* Light_Anim_NewTrack__UeName = "Light_Anim_NewTrack_0_7569FDBD44600A7270E9429A8EC6FB81";
-    ETimelineDirection Light_Anim__Direction_7569FDBD44600A7270E9429A8EC6FB81;
+    TEnum<ETimelineDirection> Light_Anim__Direction_7569FDBD44600A7270E9429A8EC6FB81;
     class UTimelineComponent* Light_Anim;
     float LightIntensity_Point;
     float Damage;

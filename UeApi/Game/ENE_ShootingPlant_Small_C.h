@@ -30,6 +30,7 @@ class ENE_ShootingPlant_Small_C : public AHydraWeedShooter
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/ENE_ShootingPlant_Small", "ENE_ShootingPlant_Small_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileAttackComponent* ProjectileAttack;
     static constexpr const char* ProjectileAttack__UeScsNode = "532826efb38ab4419956cc03c57b36b3";
@@ -50,11 +51,11 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
     float Growth_Size_F8D1ED0F47A0109E69BA949410BBFBDF;
-    ETimelineDirection Growth__Direction_F8D1ED0F47A0109E69BA949410BBFBDF;
+    TEnum<ETimelineDirection> Growth__Direction_F8D1ED0F47A0109E69BA949410BBFBDF;
     class UTimelineComponent* Growth;
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_B7C1F10347624A87CE535C859B0970CF";
-    ETimelineDirection Timeline_0__Direction_B7C1F10347624A87CE535C859B0970CF;
+    TEnum<ETimelineDirection> Timeline_0__Direction_B7C1F10347624A87CE535C859B0970CF;
     class UTimelineComponent* Timeline_0;
     int NumSpawned;
     int MaxSpawns;

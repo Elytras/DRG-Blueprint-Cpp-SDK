@@ -27,6 +27,7 @@ class WPN_SoapVacuum_C : public ASoapVacuumItem
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Vacuum/WPN_SoapVacuum", "WPN_SoapVacuum_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.CapsuleComponent VacuumCollision;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Niagara.NiagaraComponent NS_Vacuum_TP;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoscoCarryingDetailComponent* BoscoCarryingDetail;
     static constexpr const char* BoscoCarryingDetail__UeScsNode = "cb3c8b879577984f946ff524ced45753";

@@ -35,7 +35,7 @@ public:
     bool IsOn;
     TMap<class UPawnAffliction*, HUD_DamageClass_Item_C*> Indicators;
     void ExecuteUbergraph_HUD_DamageClass_Indicator(int EntryPoint);
-    void BndEvt__HUD_PlayerTemperature_K2Node_ComponentBoundEvent_0_VisibilityChangedDelegate__DelegateSignature(ESlateVisibility InVisibility);
+    void BndEvt__HUD_PlayerTemperature_K2Node_ComponentBoundEvent_0_VisibilityChangedDelegate__DelegateSignature(TEnum<ESlateVisibility> InVisibility);
     void Elapsed(HUD_DamageClass_Item_C* Item);
     void OnAfflictionDeactivated(class UPawnAffliction* Affliction);
     void OnAfflictionActivated(class UPawnAffliction* Affliction);

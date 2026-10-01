@@ -892,8 +892,8 @@ public:
     void K2_ClearFocus();
     void K2_SetFocalPoint(FVector FP);
     void K2_SetFocus(class AActor* NewFocus);
-    EPathFollowingRequestResult MoveToActor(class AActor* Goal, float AcceptanceRadius, bool bStopOnOverlap, bool bUsePathfinding, bool bCanStrafe, TSubclassOf<class UNavigationQueryFilter> FilterClass, bool bAllowPartialPath);
-    EPathFollowingRequestResult MoveToLocation(const FVector& Dest, float AcceptanceRadius, bool bStopOnOverlap, bool bUsePathfinding, bool bProjectDestinationToNavigation, bool bCanStrafe, TSubclassOf<class UNavigationQueryFilter> FilterClass, bool bAllowPartialPath);
+    TEnum<EPathFollowingRequestResult> MoveToActor(class AActor* Goal, float AcceptanceRadius, bool bStopOnOverlap, bool bUsePathfinding, bool bCanStrafe, TSubclassOf<class UNavigationQueryFilter> FilterClass, bool bAllowPartialPath);
+    TEnum<EPathFollowingRequestResult> MoveToLocation(const FVector& Dest, float AcceptanceRadius, bool bStopOnOverlap, bool bUsePathfinding, bool bProjectDestinationToNavigation, bool bCanStrafe, TSubclassOf<class UNavigationQueryFilter> FilterClass, bool bAllowPartialPath);
     void OnGameplayTaskResourcesClaimed(FGameplayResourceSet NewlyClaimed, FGameplayResourceSet FreshlyReleased);
     void OnUsingBlackBoard(class UBlackboardComponent* BlackboardComp, class UBlackboardData* BlackboardAsset);
     bool RunBehaviorTree(class UBehaviorTree* BTAsset);
@@ -905,7 +905,7 @@ public:
     UE_PURE FVector GetFocalPointOnActor(class AActor* Actor) const;
     UE_PURE class AActor* GetFocusActor() const;
     UE_PURE FVector GetImmediateMoveDestination() const;
-    UE_PURE EPathFollowingStatus GetMoveStatus() const;
+    UE_PURE TEnum<EPathFollowingStatus> GetMoveStatus() const;
     UE_PURE class UPathFollowingComponent* GetPathFollowingComponent() const;
     UE_PURE bool HasPartialPath() const;
 };
@@ -914,6 +914,7 @@ class UBTNode : public UObject
 {
 public:
     UE_CLASS("/Script/AIModule", "BTNode");
+    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Game";
     FString NodeName;
     class UBehaviorTree* TreeAsset;
     class UBTCompositeNode* ParentNode;
@@ -957,7 +958,7 @@ class UBTDecorator : public UBTAuxiliaryNode
 public:
     UE_CLASS("/Script/AIModule", "BTDecorator");
     bool bInverseCondition;
-    EBTFlowAbortMode FlowAbortMode;
+    TEnum<EBTFlowAbortMode> FlowAbortMode;
 };
 
 class IAIPerceptionListenerInterface
@@ -1033,7 +1034,7 @@ class UAISense : public UObject
 public:
     UE_CLASS("/Script/AIModule", "AISense");
     float DefaultExpirationAge;
-    EAISenseNotifyType NotifyType;
+    TEnum<EAISenseNotifyType> NotifyType;
     bool bWantsNewPawnNotification;
     bool bAutoRegisterAllPawnsAsSources;
     class UAIPerceptionSystem* PerceptionSystemInstance;
@@ -1093,8 +1094,8 @@ public:
     bool bTestQueriesUsingBreadth;
     int QueryCountWarningThreshold;
     double QueryCountWarningInterval;
-    static class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
-    static class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
+    static class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, TEnum<EEnvQueryRunMode> RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
+    static class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UEnvQuery* QueryTemplate, class UObject* Querier, TEnum<EEnvQueryRunMode> RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
 };
 
 class UBrainComponent : public UActorComponent
@@ -1127,7 +1128,7 @@ public:
     UE_CLASS("/Script/AIModule", "AIAsyncTaskBlueprintProxy");
     TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnSuccess;
     TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnFail;
-    void OnMoveCompleted(FAIRequestID RequestID, EPathFollowingResult MovementResult);
+    void OnMoveCompleted(FAIRequestID RequestID, TEnum<EPathFollowingResult> MovementResult);
 };
 
 class UAIBlueprintHelperLibrary : public UBlueprintFunctionLibrary
@@ -1175,7 +1176,7 @@ public:
     TMulticastInlineDelegate<void(FActorPerceptionUpdateInfo UpdateInfo)> OnTargetPerceptionInfoUpdated;
     void ForgetAll();
     bool GetActorsPerception(class AActor* Actor, FActorPerceptionBlueprintInfo& Info);
-    void OnOwnerEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
+    void OnOwnerEndPlay(class AActor* Actor, TEnum<EEndPlayReason> EndPlayReason);
     void RequestStimuliListenerUpdate();
     void SetSenseEnabled(TSubclassOf<class UAISense> SenseClass, bool bEnable);
     void GetCurrentlyPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>& OutActors) const;
@@ -1209,7 +1210,7 @@ public:
     static bool RegisterPerceptionStimuliSource(TSubclassOf<class UAISense> Sense, class AActor* Target);
     static void ReportPerceptionEvent(class UObject* WorldContextObject, class UAISenseEvent* PerceptionEvent);
     static void ReportPerceptionEvent(class UAISenseEvent* PerceptionEvent);
-    void OnPerceptionStimuliSourceEndPlay(class AActor* Actor, EEndPlayReason EndPlayReason);
+    void OnPerceptionStimuliSourceEndPlay(class AActor* Actor, TEnum<EEndPlayReason> EndPlayReason);
     void ReportEvent(class UAISenseEvent* PerceptionEvent);
 };
 
@@ -1391,7 +1392,7 @@ public:
     bool bEnableDebuggerPlugin;
     bool bForgetStaleActors;
     bool bAddBlackboardSelfKey;
-    ECollisionChannel DefaultSightCollisionChannel;
+    TEnum<ECollisionChannel> DefaultSightCollisionChannel;
     class UBehaviorTreeManager* BehaviorTreeManager;
     class UEnvQueryManager* EnvironmentQueryManager;
     class UAIPerceptionSystem* PerceptionSystem;
@@ -1422,7 +1423,7 @@ public:
     TMulticastInlineDelegate<void()> OnRequestFailed;
     TMulticastInlineDelegate<void(EPathFollowingResult Result, class AAIController* AIController)> OnMoveFinished;
     FAIMoveRequest MoveRequest;
-    static class UAITask_MoveTo* AIMoveTo(class AAIController* Controller, FVector GoalLocation, class AActor* GoalActor, float AcceptanceRadius, EAIOptionFlag StopOnOverlap, EAIOptionFlag AcceptPartialPath, bool bUsePathfinding, bool bLockAILogic, bool bUseContinuosGoalTracking, EAIOptionFlag ProjectGoalOnNavigation);
+    static class UAITask_MoveTo* AIMoveTo(class AAIController* Controller, FVector GoalLocation, class AActor* GoalActor, float AcceptanceRadius, TEnum<EAIOptionFlag> StopOnOverlap, TEnum<EAIOptionFlag> AcceptPartialPath, bool bUsePathfinding, bool bLockAILogic, bool bUseContinuosGoalTracking, TEnum<EAIOptionFlag> ProjectGoalOnNavigation);
 };
 
 class UAITask_RunEQS : public UAITask
@@ -1566,7 +1567,7 @@ class UBTComposite_SimpleParallel : public UBTCompositeNode
 {
 public:
     UE_CLASS("/Script/AIModule", "BTComposite_SimpleParallel");
-    EBTParallelMode FinishMode;
+    TEnum<EBTParallelMode> FinishMode;
 };
 
 class UBTDecorator_Blackboard : public UBTDecorator_BlackboardBase
@@ -1578,7 +1579,7 @@ public:
     FString StringValue;
     FString CachedDescription;
     uint8 OperationType;
-    EBTBlackboardRestart NotifyObserver;
+    TEnum<EBTBlackboardRestart> NotifyObserver;
 };
 
 class UBTDecorator_BlueprintBase : public UBTDecorator
@@ -1593,8 +1594,8 @@ public:
     bool bIsObservingBB;
     bool PerformConditionCheck(class AActor* OwnerActor);
     bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void ReceiveExecutionFinish(class AActor* OwnerActor, EBTNodeResult NodeResult);
-    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, EBTNodeResult NodeResult);
+    void ReceiveExecutionFinish(class AActor* OwnerActor, TEnum<EBTNodeResult> NodeResult);
+    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
     void ReceiveExecutionStart(class AActor* OwnerActor);
     void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void ReceiveObserverActivated(class AActor* OwnerActor);
@@ -1612,7 +1613,7 @@ class UBTDecorator_CheckGameplayTagsOnActor : public UBTDecorator
 public:
     UE_CLASS("/Script/AIModule", "BTDecorator_CheckGameplayTagsOnActor");
     FBlackboardKeySelector ActorToCheck;
-    EGameplayContainerMatchType TagsToMatch;
+    TEnum<EGameplayContainerMatchType> TagsToMatch;
     FGameplayTagContainer GameplayTags;
     FString CachedDescription;
 };
@@ -1621,7 +1622,7 @@ class UBTDecorator_CompareBBEntries : public UBTDecorator
 {
 public:
     UE_CLASS("/Script/AIModule", "BTDecorator_CompareBBEntries");
-    EBlackBoardEntryComparison Operator;
+    TEnum<EBlackBoardEntryComparison> Operator;
     FBlackboardKeySelector BlackboardKeyA;
     FBlackboardKeySelector BlackboardKeyB;
 };
@@ -1656,7 +1657,7 @@ public:
     FBlackboardKeySelector BlackboardKeyA;
     FBlackboardKeySelector BlackboardKeyB;
     bool bUseSelf;
-    EPathExistanceQueryType PathQueryType;
+    TEnum<EPathExistanceQueryType> PathQueryType;
     TSubclassOf<class UNavigationQueryFilter> FilterClass;
 };
 
@@ -1672,7 +1673,7 @@ public:
     UE_CLASS("/Script/AIModule", "BTDecorator_IsAtLocation");
     float AcceptableRadius;
     FAIDataProviderFloatValue ParametrizedAcceptableRadius;
-    EFAIDistanceType GeometricDistanceType;
+    TEnum<EFAIDistanceType> GeometricDistanceType;
     bool bUseParametrizedRadius;
     bool bUseNavAgentGoalLocation;
     bool bPathFindingBasedTest;
@@ -1836,7 +1837,7 @@ class UBTTask_FinishWithResult : public UBTTaskNode
 {
 public:
     UE_CLASS("/Script/AIModule", "BTTask_FinishWithResult");
-    EBTNodeResult Result;
+    TEnum<EBTNodeResult> Result;
 };
 
 class UBTTask_GameplayTaskBase : public UBTTaskNode
@@ -1941,7 +1942,7 @@ public:
     class UEnvQuery* QueryTemplate;
     TArray<FEnvNamedValue> QueryParams;
     TArray<FAIDynamicParam> QueryConfig;
-    EEnvQueryRunMode RunMode;
+    TEnum<EEnvQueryRunMode> RunMode;
     FBlackboardKeySelector EQSQueryBlackboardKey;
     bool bUseBBKey;
     FEQSParametrizedQueryExecutionRequest EQSRequest;
@@ -1985,7 +1986,7 @@ public:
     class ANavigationData* MyNavData;
     void OnActorBump(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     void OnNavDataRegistered(class ANavigationData* NavData);
-    UE_PURE EPathFollowingAction GetPathActionType() const;
+    UE_PURE TEnum<EPathFollowingAction> GetPathActionType() const;
     UE_PURE FVector GetPathDestination() const;
 };
 
@@ -2164,7 +2165,7 @@ public:
     FAIDataProviderFloatValue CircleRadius;
     FAIDataProviderFloatValue SpaceBetween;
     FAIDataProviderIntValue NumberOfPoints;
-    EPointOnCircleSpacingMethod PointOnCircleSpacingMethod;
+    TEnum<EPointOnCircleSpacingMethod> PointOnCircleSpacingMethod;
     FEnvDirection ArcDirection;
     FAIDataProviderFloatValue ArcAngle;
     float AngleRadians;
@@ -2258,18 +2259,18 @@ class UEnvQueryTest : public UEnvQueryNode
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryTest");
     int TestOrder;
-    EEnvTestPurpose TestPurpose;
+    TEnum<EEnvTestPurpose> TestPurpose;
     FString TestComment;
-    EEnvTestFilterOperator MultipleContextFilterOp;
-    EEnvTestScoreOperator MultipleContextScoreOp;
-    EEnvTestFilterType FilterType;
+    TEnum<EEnvTestFilterOperator> MultipleContextFilterOp;
+    TEnum<EEnvTestScoreOperator> MultipleContextScoreOp;
+    TEnum<EEnvTestFilterType> FilterType;
     FAIDataProviderBoolValue boolValue;
     FAIDataProviderFloatValue FloatValueMin;
     FAIDataProviderFloatValue FloatValueMax;
-    EEnvTestScoreEquation ScoringEquation;
-    EEnvQueryTestClamping ClampMinType;
-    EEnvQueryTestClamping ClampMaxType;
-    EEQSNormalizationType NormalizationType;
+    TEnum<EEnvTestScoreEquation> ScoringEquation;
+    TEnum<EEnvQueryTestClamping> ClampMinType;
+    TEnum<EEnvQueryTestClamping> ClampMaxType;
+    TEnum<EEQSNormalizationType> NormalizationType;
     FAIDataProviderFloatValue ScoreClampMin;
     FAIDataProviderFloatValue ScoreClampMax;
     FAIDataProviderFloatValue ScoringFactor;
@@ -2282,7 +2283,7 @@ class UEnvQueryTest_Distance : public UEnvQueryTest
 {
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryTest_Distance");
-    EEnvTestDistance TestMode;
+    TEnum<EEnvTestDistance> TestMode;
     TSubclassOf<class UEnvQueryContext> DistanceTo;
 };
 
@@ -2292,7 +2293,7 @@ public:
     UE_CLASS("/Script/AIModule", "EnvQueryTest_Dot");
     FEnvDirection LineA;
     FEnvDirection LineB;
-    EEnvTestDot TestMode;
+    TEnum<EEnvTestDot> TestMode;
     bool bAbsoluteValue;
 };
 
@@ -2302,7 +2303,7 @@ public:
     UE_CLASS("/Script/AIModule", "EnvQueryTest_GameplayTags");
     FGameplayTagQuery TagQueryToMatch;
     bool bUpdatedToUseQuery;
-    EGameplayContainerMatchType TagsToMatch;
+    TEnum<EGameplayContainerMatchType> TagsToMatch;
     FGameplayTagContainer GameplayTags;
 };
 
@@ -2317,7 +2318,7 @@ class UEnvQueryTest_Pathfinding : public UEnvQueryTest
 {
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryTest_Pathfinding");
-    EEnvTestPathfinding TestMode;
+    TEnum<EEnvTestPathfinding> TestMode;
     TSubclassOf<class UEnvQueryContext> Context;
     FAIDataProviderBoolValue PathFromContext;
     FAIDataProviderBoolValue SkipUnreachable;
@@ -2391,13 +2392,13 @@ public:
     TArray<FAIDynamicParam> QueryConfig;
     float TimeLimitPerStep;
     int StepToDebugDraw;
-    EEnvQueryHightlightMode HighlightMode;
+    TEnum<EEnvQueryHightlightMode> HighlightMode;
     bool bDrawLabels;
     bool bDrawFailedItems;
     bool bReRunQueryOnlyOnFinishedMove;
     bool bShouldBeVisibleInGame;
     bool bTickDuringGame;
-    EEnvQueryRunMode QueryingMode;
+    TEnum<EEnvQueryRunMode> QueryingMode;
     FNavAgentProperties NavAgentProperties;
     static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
     static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
@@ -2492,15 +2493,15 @@ public:
     bool bAlwaysNotifyOnFinished;
     static class UPawnAction* CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass);
     static class UPawnAction* CreateActionInstance(TSubclassOf<class UPawnAction> ActionClass);
-    void Finish(EPawnActionResult WithResult);
-    UE_PURE EAIRequestPriority GetActionPriority();
+    void Finish(TEnum<EPawnActionResult> WithResult);
+    UE_PURE TEnum<EAIRequestPriority> GetActionPriority();
 };
 
 class UPawnAction_BlueprintBase : public UPawnAction
 {
 public:
     UE_CLASS("/Script/AIModule", "PawnAction_BlueprintBase");
-    void ActionFinished(class APawn* ControlledPawn, EPawnActionResult WithResult);
+    void ActionFinished(class APawn* ControlledPawn, TEnum<EPawnActionResult> WithResult);
     void ActionPause(class APawn* ControlledPawn);
     void ActionResume(class APawn* ControlledPawn);
     void ActionStart(class APawn* ControlledPawn);
@@ -2530,7 +2531,7 @@ public:
     UE_CLASS("/Script/AIModule", "PawnAction_Repeat");
     class UPawnAction* ActionToRepeat;
     class UPawnAction* RecentActionCopy;
-    EPawnActionFailHandling ChildFailureHandlingMode;
+    TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
 };
 
 class UPawnAction_Sequence : public UPawnAction
@@ -2538,7 +2539,7 @@ class UPawnAction_Sequence : public UPawnAction
 public:
     UE_CLASS("/Script/AIModule", "PawnAction_Sequence");
     TArray<class UPawnAction*> ActionSequence;
-    EPawnActionFailHandling ChildFailureHandlingMode;
+    TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
     class UPawnAction* RecentActionCopy;
 };
 
@@ -2557,10 +2558,10 @@ public:
     TArray<FPawnActionStack> ActionStacks;
     TArray<FPawnActionEvent> ActionEvents;
     class UPawnAction* CurrentAction;
-    static bool K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, EAIRequestPriority Priority);
-    EPawnActionAbortState K2_AbortAction(class UPawnAction* ActionToAbort);
-    EPawnActionAbortState K2_ForceAbortAction(class UPawnAction* ActionToAbort);
-    bool K2_PushAction(class UPawnAction* NewAction, EAIRequestPriority Priority, class UObject* Instigator);
+    static bool K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, TEnum<EAIRequestPriority> Priority);
+    TEnum<EPawnActionAbortState> K2_AbortAction(class UPawnAction* ActionToAbort);
+    TEnum<EPawnActionAbortState> K2_ForceAbortAction(class UPawnAction* ActionToAbort);
+    bool K2_PushAction(class UPawnAction* NewAction, TEnum<EAIRequestPriority> Priority, class UObject* Instigator);
 };
 
 class UPawnSensingComponent : public UActorComponent

@@ -36,7 +36,7 @@ public:
     class UDeepDiveTemplate* Template;
     void ExecuteUbergraph_UI_DebugDeepDiveStage(int EntryPoint);
     void SetTemplate(class UDeepDiveTemplate* Template_0);
-    void BndEvt__UI_DebugDeepDiveStage_MissionType_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__UI_DebugDeepDiveStage_MissionType_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetSelectedMissionType(class UMissionTemplate*& Template_0);
     void GetComplexity(class UMissionComplexity*& Output);

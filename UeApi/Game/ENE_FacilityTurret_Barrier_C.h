@@ -19,6 +19,7 @@ class ENE_FacilityTurret_Barrier_C : public Game::GameElements::Objectives::Faci
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Barrier", "ENE_FacilityTurret_Barrier_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTurret_Barrier_C;
     static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Barrier_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* BlockPlayers;

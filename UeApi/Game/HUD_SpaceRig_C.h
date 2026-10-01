@@ -68,7 +68,7 @@ public:
     OnScreenIndicator_UsableItem_WithDescription_C* Usable;
     void ExecuteUbergraph_HUD_SpaceRig(int EntryPoint);
     void OnTemporaryBuffChanged(class UTemporaryBuff* buff, class APlayerCharacter* AffectedPlayer);
-    void OnCameraModeChanged_Event(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCameraModeChanged_Event(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void OnCountdownCompleted_Event_0();
     UE_COSMETIC void Construct();
 };

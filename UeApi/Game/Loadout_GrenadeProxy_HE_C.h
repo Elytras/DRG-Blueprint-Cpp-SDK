@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_HE_C : public Game::WeaponsNTools::Grenades::Loadout_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/HighExplosive/Loadout_GrenadeProxy_HE", "Loadout_GrenadeProxy_HE_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::HighExplosive

@@ -22,6 +22,7 @@ class PLS_Base_C : public AProceduralSetup
 {
 public:
     UE_CLASS("/Game/Landscape/PLS_Base", "PLS_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "f7d2c667a98d544cb52a4957f2a8ae1c";
@@ -35,7 +36,7 @@ public:
     void Generate_CriticalLargePass();
     void Generate_Pass_6();
     void Generate_Pass_2();
-    void OnCarverDataRecieved(EDebrisItemPass pass);
+    void OnCarverDataRecieved(TEnum<EDebrisItemPass> pass);
     void Generate_Pass_0_Client();
     void Generate_Pass_0();
     void CarveTunnels();
@@ -67,7 +68,7 @@ public:
     void SaveInitialState();
     void PlayMusicAndAmbient(int musicIndex);
     UE_PURE bool HasSelectedCharacter();
-    void SpawnCriticalItems(ECriticalItemPass pass);
+    void SpawnCriticalItems(TEnum<ECriticalItemPass> pass);
     UE_PURE class UProceduralController* GetProceduralController();
     void EnsureSafelandingsite();
     void PlayDefaultAmbient();

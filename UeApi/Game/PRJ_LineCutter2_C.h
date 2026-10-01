@@ -23,6 +23,7 @@ class PRJ_LineCutter2_C : public ALineCutterProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/PRJ_LineCutter2", "PRJ_LineCutter2_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent InitialDamageComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.ParticleSystemComponent LeftImpact;/Script/Engine.ParticleSystemComponent RightImpact;/Script/Engine.SceneComponent LineRoot;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Plasma_Projectile3;
     static constexpr const char* P_Plasma_Projectile3__UeScsNode = "afb2634c24cd0649b07c10185e1ddc1c";
@@ -61,7 +62,7 @@ public:
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Right;
     static constexpr const char* SM_Linecutter_Projectile_A_Right__UeScsNode = "82db208364fc7148bf989c218381c80d";
     float ProjectileSlowdown_Velocity_3314D5764A0652510BE0E38ABA90D3FC;
-    ETimelineDirection ProjectileSlowdown__Direction_3314D5764A0652510BE0E38ABA90D3FC;
+    TEnum<ETimelineDirection> ProjectileSlowdown__Direction_3314D5764A0652510BE0E38ABA90D3FC;
     class UTimelineComponent* ProjectileSlowdown;
     FTimerHandle ExpandLineTimerHandle;
     int TimerHandleExecutions;
@@ -86,7 +87,7 @@ public:
     void K2_OnReset();
     void CheckTerrainCall();
     void StartLineExpansion();
-    void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+    void ReceiveEndPlay(TEnum<EEndPlayReason> EndPlayReason);
     void DoDamage();
     void ExpandLine();
     UE_MULTICAST UE_RELIABLE void DisableProjectile();

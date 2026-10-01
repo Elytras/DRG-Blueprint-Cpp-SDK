@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/Character/Tutorials/Tutorial_Hint_Sabotage_BoscoDefendHackingPod", "Tutorial_Hint_Sabotage_BoscoDefendHackingPod_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_Tutorial_Hint_Sabotage_BoscoDefendHackingPod(int EntryPoint);
-    void TetherPickedup(class APlayerCharacter* User, EInputKeys Key);
+    void TetherPickedup(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnOverChargerCalled_Event_0(FVector Location, int roomIndex);
     void OnBoscoChanged(class ABosco* Bosco);
     void ReceiveOnInitialized();

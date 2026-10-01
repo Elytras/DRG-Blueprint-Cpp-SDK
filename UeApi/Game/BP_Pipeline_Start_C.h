@@ -22,6 +22,7 @@ class BP_Pipeline_Start_C : public APipelineStart
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/Pipeline/BP_Pipeline_Start", "BP_Pipeline_Start_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TrackBuilderUsable PipelineStartUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* NumberPlane;
     static constexpr const char* NumberPlane__UeScsNode = "8edd9336595b7b48b970c218da4172d9";
@@ -39,7 +40,7 @@ public:
     static constexpr const char* StaticMesh__UeScsNode = "3137be812366c148b2716f13afa56ccc";
     class UMaterialInterface* MarkerRingMaterial;
     void ExecuteUbergraph_BP_Pipeline_Start(int EntryPoint);
-    void ReceiveBuildStateChanged(EPipelineBuildState InBuildState);
+    void ReceiveBuildStateChanged(TEnum<EPipelineBuildState> InBuildState);
     void ReceiveBeginPlay();
     void BndEvt__PipelineStartUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void UserConstructionScript();

@@ -33,7 +33,7 @@ public:
     void OnFailed();
     void OnPressed();
     void SetActive(bool Active_0);
-    void SetDirection(EThawInputDirection Direction);
+    void SetDirection(TEnum<EThawInputDirection> Direction);
     void Finished_CD1267A8441EB6B05873859D8163D918();
 };
 

@@ -25,6 +25,7 @@ class ITM_Grenade_Base_C : public AGrenade
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_Grenade_Base", "ITM_Grenade_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_GrenadeTrail;
     static constexpr const char* P_GrenadeTrail__UeScsNode = "a864b1aef9b22e45a8b3ec9460ae44f8";

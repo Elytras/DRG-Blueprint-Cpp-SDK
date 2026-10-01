@@ -23,6 +23,7 @@ class PRJ_InfectedMuleGrenade_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/PRJ_InfectedMuleGrenade", "PRJ_InfectedMuleGrenade_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "9d20af35be822e44aadb74c657490d75";

@@ -98,6 +98,7 @@ class UAnimSharingAdditiveInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimationSharing", "AnimSharingAdditiveInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
     float alpha;
     bool bStateBool;
 };

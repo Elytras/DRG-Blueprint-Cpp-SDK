@@ -14,6 +14,7 @@ class AIC_Spider_Boss_TwinB_C : public Game::Enemies::Spider::TankBoss::BossTwin
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/AIC_Spider_Boss_TwinB", "AIC_Spider_Boss_TwinB_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Boss_TwinB_C;
     static constexpr const char* UberGraphFrame_AIC_Spider_Boss_TwinB_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Boss_TwinB(int EntryPoint);

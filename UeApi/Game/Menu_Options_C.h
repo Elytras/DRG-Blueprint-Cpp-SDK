@@ -71,7 +71,7 @@ public:
     void BndEvt__Menu_Options_BTN_Crossplay_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__Menu_Options_Basic_ButtonCutCorner_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void BndEvt__BTN_Saves_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
-    void UpdateTabs(EFSDInputSource InputSource);
+    void UpdateTabs(TEnum<EFSDInputSource> InputSource);
     void BndEvt__BTN_Layout_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void OnShown();
     void OnClosed();

@@ -30,6 +30,7 @@ class BP_ExplosiveBarrelsEvent_C : public AExplosiveBarrelEvent
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_ExplosiveBarrelsEvent", "BP_ExplosiveBarrelsEvent_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/FSD.DamageComponent EndDamage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
     static constexpr const char* MeshCarver__UeScsNode = "a0263cdd9565524aae1ddf86d35c0d12";

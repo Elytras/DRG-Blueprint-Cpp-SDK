@@ -28,6 +28,7 @@ class PRJ_PatrolBotRocket_C : public AHomingDroneBomb
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/Projectiles/PRJ_PatrolBotRocket", "PRJ_PatrolBotRocket_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "41bce277d0d6014ebff7ce2f1a84118e";

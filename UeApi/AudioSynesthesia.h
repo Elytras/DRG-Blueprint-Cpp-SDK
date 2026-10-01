@@ -70,11 +70,11 @@ public:
     float NumBandsPerOctave;
     float AnalysisPeriod;
     bool bDownmixToMono;
-    EConstantQFFTSizeEnum FFTSize;
-    EFFTWindowType WindowType;
-    EAudioSpectrumType SpectrumType;
+    TEnum<EConstantQFFTSizeEnum> FFTSize;
+    TEnum<EFFTWindowType> WindowType;
+    TEnum<EAudioSpectrumType> SpectrumType;
     float BandWidthStretch;
-    EConstantQNormalizationEnum CQTNormalization;
+    TEnum<EConstantQNormalizationEnum> CQTNormalization;
     float NoiseFloorDb;
 };
 
@@ -95,7 +95,7 @@ public:
     float AnalysisPeriod;
     float MinimumFrequency;
     float MaximumFrequency;
-    ELoudnessNRTCurveTypeEnum CurveType;
+    TEnum<ELoudnessNRTCurveTypeEnum> CurveType;
     float NoiseFloorDb;
 };
 

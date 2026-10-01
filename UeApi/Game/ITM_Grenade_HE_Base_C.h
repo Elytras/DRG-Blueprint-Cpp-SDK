@@ -20,6 +20,7 @@ class ITM_Grenade_HE_Base_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_Grenade_HE_Base", "ITM_Grenade_HE_Base_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_ITM_Grenade_HE_Base_C;
     static constexpr const char* UberGraphFrame_ITM_Grenade_HE_Base_C__UeName = "UberGraphFrame";
     class UDamageComponent* Damage;

@@ -53,7 +53,7 @@ public:
     void FadeIt(bool FadeIn_0, float& Duration);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void GetBaseFSPGameInstance(class UFSDGameInstance*& AsFSDGame_Instance);
-    void IsKickTheReason(EDisconnectReason reason, bool& Kicked);
+    void IsKickTheReason(TEnum<EDisconnectReason> reason, bool& Kicked);
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

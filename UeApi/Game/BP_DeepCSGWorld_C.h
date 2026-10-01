@@ -13,6 +13,7 @@ class BP_DeepCSGWorld_C : public ADeepCSGWorld
 {
 public:
     UE_CLASS("/Game/Landscape/BP_DeepCSGWorld", "BP_DeepCSGWorld_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ArrowComponent FakeMoeventBase;/Script/FSD.AsyncPathRequests AsyncPathRequests";
 };
 
 }}   // namespace Game::Landscape

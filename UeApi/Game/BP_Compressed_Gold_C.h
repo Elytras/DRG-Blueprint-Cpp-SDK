@@ -18,6 +18,7 @@ class BP_Compressed_Gold_C : public Game::GameElements::Resources::Embedded::Gem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/CompressedGold/BP_Compressed_Gold", "BP_Compressed_Gold_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_Compressed_Gold_C;
     static constexpr const char* UberGraphFrame_BP_Compressed_Gold_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight6;

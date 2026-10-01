@@ -17,6 +17,7 @@ class AIC_HydraWeed_Shooter_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/AIC_HydraWeed_Shooter", "AIC_HydraWeed_Shooter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_HydraWeed_Shooter(int EntryPoint);
     void StartBehavior();

@@ -19,8 +19,8 @@ class UStreamlineOverrideSettings : public UObject
 {
 public:
     UE_CLASS("/Script/StreamlineRHI", "StreamlineOverrideSettings");
-    EStreamlineSettingOverride EnableDLSSFGInPlayInEditorViewportsOverride;
-    EStreamlineSettingOverride LoadDebugOverlayOverride;
+    TEnum<EStreamlineSettingOverride> EnableDLSSFGInPlayInEditorViewportsOverride;
+    TEnum<EStreamlineSettingOverride> LoadDebugOverlayOverride;
 };
 
 class UStreamlineSettings : public UObject

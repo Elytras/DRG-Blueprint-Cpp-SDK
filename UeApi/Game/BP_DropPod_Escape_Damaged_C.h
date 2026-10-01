@@ -23,6 +23,7 @@ class BP_DropPod_Escape_Damaged_C : public Game::LevelElements::Droppod::BP_Drop
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Escape_Damaged", "BP_DropPod_Escape_Damaged_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_DropPod_Escape_Damaged_C;
     static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Damaged_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* DistressLamp1;
@@ -49,7 +50,7 @@ public:
     static constexpr const char* DistressLamp__UeScsNode = "560d19b10cf1134a92507b625bfeaad8";
     float DistressLightIntensity_NewTrack;
     static constexpr const char* DistressLightIntensity_NewTrack__UeName = "DistressLightIntensity_NewTrack_0_38EDB07D496907E74B940B9932C913EE";
-    ETimelineDirection DistressLightIntensity__Direction_38EDB07D496907E74B940B9932C913EE;
+    TEnum<ETimelineDirection> DistressLightIntensity__Direction_38EDB07D496907E74B940B9932C913EE;
     class UTimelineComponent* DistressLightIntensity;
     float DistressLightIntensity_;
     void ExecuteUbergraph_BP_DropPod_Escape_Damaged(int EntryPoint);

@@ -24,6 +24,7 @@ class ENE_Shark_C : public ASharkEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/Shark/ENE_Shark", "ENE_Shark_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* ProjectileCollision;
     static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
@@ -47,8 +48,8 @@ public:
     static constexpr const char* Dirt_particles__UeName = "Dirt particles";
     void ExecuteUbergraph_ENE_Shark(int EntryPoint);
     UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
-    void OnExitState(ESharkEnemyState State_0);
-    void OnEnterState(ESharkEnemyState State_0);
+    void OnExitState(TEnum<ESharkEnemyState> State_0);
+    void OnEnterState(TEnum<ESharkEnemyState> State_0);
     void OnLandedEvent();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void TryDamage(class AActor* self2);

@@ -19,6 +19,7 @@ class BP_PlagueWormPod_C : public AWormPod
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_PlagueWormPod", "BP_PlagueWormPod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ScalePoint;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent PodMesh";
     class UNiagaraComponent* NS_Spores;
     static constexpr const char* NS_Spores__UeScsNode = "b77e26839fef7e448b689b4a1f840cae";
     class UPointLightComponent* PointLight;

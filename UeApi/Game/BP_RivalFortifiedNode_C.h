@@ -60,10 +60,10 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "4ce2b97e2ea6e141b693a5f1312a3f22";
     float LightBreath_Intensity_C8E7BB414DC030500D504F9FD0708336;
-    ETimelineDirection LightBreath__Direction_C8E7BB414DC030500D504F9FD0708336;
+    TEnum<ETimelineDirection> LightBreath__Direction_C8E7BB414DC030500D504F9FD0708336;
     class UTimelineComponent* LightBreath;
     float TurnOffLight_LightIntensityMult_56347D1C418B8F24A060179F6398A561;
-    ETimelineDirection TurnOffLight__Direction_56347D1C418B8F24A060179F6398A561;
+    TEnum<ETimelineDirection> TurnOffLight__Direction_56347D1C418B8F24A060179F6398A561;
     class UTimelineComponent* TurnOffLight;
     TArray<class AActor*> SpawnedDefenses;
     float NumTurretsPerSpawnBase;

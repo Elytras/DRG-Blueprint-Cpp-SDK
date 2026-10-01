@@ -18,6 +18,7 @@ class PRJ_RedThorn_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/HollowBough/Assets/PRJ_RedThorn", "PRJ_RedThorn_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "866e33c44c7c2d4eb208c6c8ab13d45e";

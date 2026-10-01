@@ -17,6 +17,7 @@ class BP_PropHunt_HackingNode_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season01/BP_PropHunt_HackingNode", "BP_PropHunt_HackingNode_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
     static constexpr const char* SkeletalMesh__UeScsNode = "ec8f0dbb10d5114791fae672f3b7451e";

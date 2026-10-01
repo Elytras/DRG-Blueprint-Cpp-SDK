@@ -16,6 +16,7 @@ class AIC_InsectSwarm_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/AIC_InsectSwarm", "AIC_InsectSwarm_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     FName IsAlertedKey;
     void ExecuteUbergraph_AIC_InsectSwarm(int EntryPoint);

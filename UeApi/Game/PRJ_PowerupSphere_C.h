@@ -24,6 +24,7 @@ class PRJ_PowerupSphere_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RockEnemies/PRJ_PowerupSphere", "PRJ_PowerupSphere_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "0f5a3d65e3857e4d96817dbebe06947a";

@@ -32,6 +32,7 @@ class BP_Lunar2023_RabbitStatue_InCave_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Lunar_NewYear/BP_Lunar2023_RabbitStatue_InCave", "BP_Lunar2023_RabbitStatue_InCave_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "a5d94c5278a5b743aca843059a5fbc7b";
@@ -81,7 +82,7 @@ public:
     void CheckForPlayersNearby();
     void Throw(FVector force);
     void OnAttachChanged(bool Attached);
-    void BndEvt__BP_InCaveOktoberfestMug_Usable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_InCaveOktoberfestMug_Usable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_InCaveOktoberfestMug_Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     void BndEvt__BP_InCaveOktoberfestMug_Carriable_K2Node_ComponentBoundEvent_3_CarriableEvent__DelegateSignature();
     void UpdateAttachState(bool Attached);

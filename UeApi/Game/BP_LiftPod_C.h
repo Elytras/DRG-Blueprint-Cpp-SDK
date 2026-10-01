@@ -40,6 +40,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_LiftPod", "BP_LiftPod_C");
     using BP_LiftRocketCarriable_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftRocketCarriable_C;
     using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     BP_SupplyDropToTerrainLogic_C* BP_SupplyDropToTerrainLogic;
     static constexpr const char* BP_SupplyDropToTerrainLogic__UeScsNode = "c28470b3b1901f4e8fa5f3aaf8b89aea";
@@ -109,7 +110,7 @@ public:
     class UParticleSystemComponent* SmokeParticles;
     TArray<BP_LiftRocketCarriable_C*> CarriableRockets;
     void ExecuteUbergraph_BP_LiftPod(int EntryPoint);
-    void BndEvt__BP_LiftPod_LaunchUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_LiftPod_LaunchUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_SERVER void Server_ButtonPressedAnim();
     UE_MULTICAST void Multi_ButtonPressedAnim();
     void EnableLaunchButton();

@@ -24,6 +24,7 @@ class WPN_AssaultRifle_C : public AAssaultRifle
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/AssaultRifle/WPN_AssaultRifle", "WPN_AssaultRifle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TP_AnimationMag;
     static constexpr const char* TP_AnimationMag__UeScsNode = "350c580460ee2946b6b5430bb810ebcb";

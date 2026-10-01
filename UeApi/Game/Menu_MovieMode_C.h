@@ -88,9 +88,9 @@ public:
     FPostProcessSettings PostProcessingSettings;
     int PP_FilterComboIndex;
     void ExecuteUbergraph_Menu_MovieMode(int EntryPoint);
-    void BndEvt__ComboBoxString_K2Node_ComponentBoundEvent_29_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_K2Node_ComponentBoundEvent_29_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__ComboBoxString_K2Node_ComponentBoundEvent_12_OnOpeningEvent__DelegateSignature();
-    void BndEvt__ComboBoxString_220_K2Node_ComponentBoundEvent_27_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_220_K2Node_ComponentBoundEvent_27_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__Button_Actor_K2Node_ComponentBoundEvent_25_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__CameraShakeSlider_K2Node_ComponentBoundEvent_26_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void BndEvt__Button_Hotkeys_K2Node_ComponentBoundEvent_23_OnButtonClickedEvent__DelegateSignature();

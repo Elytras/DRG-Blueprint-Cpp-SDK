@@ -24,6 +24,7 @@ class BP_WaterBalloon_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_WaterBalloon", "BP_WaterBalloon_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* BalloonMesh;
     static constexpr const char* BalloonMesh__UeScsNode = "4e743e9341bc8746b097e7f9089e7333";

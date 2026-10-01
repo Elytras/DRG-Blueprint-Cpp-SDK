@@ -20,6 +20,7 @@ class BP_GreatEggHunt_ThrowableEggItem_C : public AHolidayThrowableItem
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_ThrowableEggItem", "BP_GreatEggHunt_ThrowableEggItem_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<class UMaterialInstance*> Materials;
     class UMaterialInstance* UsedMaterial;

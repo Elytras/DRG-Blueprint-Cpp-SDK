@@ -15,6 +15,7 @@ class BP_SmallMeteor_Indicator_C : public AImpactIndicator
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/MeteorShower/BP_SmallMeteor_Indicator", "BP_SmallMeteor_Indicator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent InnerScaler;/Script/Engine.SceneComponent OuterScaler;/Script/Engine.SceneComponent Root";
     class UStaticMeshComponent* OuterIndicator;
     static constexpr const char* OuterIndicator__UeScsNode = "be7c8a4a84c8d0458c428e9d69d8c140";
 };

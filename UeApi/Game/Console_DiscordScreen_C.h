@@ -97,7 +97,7 @@ public:
     bool State;
     TMulticastInlineDelegate<void()> ScreenChanged;
     TArray<class UCommunityGoalFaction*> FactionData;
-    ECommunityUIState CurrentState;
+    TEnum<ECommunityUIState> CurrentState;
     void ExecuteUbergraph_Console_DiscordScreen(int EntryPoint);
     void OnGoalInitialized();
     void OnCheckUI();

@@ -13,6 +13,7 @@ class AIC_Spider_Boss_TwinA_C : public Game::Enemies::Spider::TankBoss::BossTwin
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/AIC_Spider_Boss_TwinA", "AIC_Spider_Boss_TwinA_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

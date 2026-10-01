@@ -23,6 +23,7 @@ class BP_GuntowerWeakpoint_C : public AGuntowerWeakPoint
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Weakpoint/BP_GuntowerWeakpoint", "BP_GuntowerWeakpoint_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WeakpointGlowComponent WeakpointGlow";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnAfflictionComponent* PawnAffliction;
     static constexpr const char* PawnAffliction__UeScsNode = "02c43a48e5c3d84199d07ad4d6d47128";

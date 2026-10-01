@@ -19,6 +19,7 @@ class EWC_CoreRift_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/EWC_CoreRift", "EWC_CoreRift_C");
     using BP_CoreRift_C = Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame_EWC_CoreRift_C;
     static constexpr const char* UberGraphFrame_EWC_CoreRift_C__UeName = "UberGraphFrame";
     int InitalRiftWaves;

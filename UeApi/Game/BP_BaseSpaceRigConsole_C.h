@@ -55,7 +55,7 @@ public:
     class UWindowWidget* WindowInstance;
     void ExecuteUbergraph_BP_BaseSpaceRigConsole(int EntryPoint);
     void ReceiveBeginPlay();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PIE_QuickUse();
     void OnWindowCreated(class UWindowWidget* WindowWidget);
     void OnOpenConsole(BP_PlayerController_SpaceRig_C* InPlayerController);

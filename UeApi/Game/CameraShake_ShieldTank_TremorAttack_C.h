@@ -13,6 +13,7 @@ class CameraShake_ShieldTank_TremorAttack_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_ShieldTank_TremorAttack", "CameraShake_ShieldTank_TremorAttack_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

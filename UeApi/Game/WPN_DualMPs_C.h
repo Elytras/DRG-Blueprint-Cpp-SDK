@@ -22,6 +22,7 @@ class WPN_DualMPs_C : public ADualMachinePistols
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DualMachinePistols/WPN_DualMPs", "WPN_DualMPs_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMeshLeft;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/Engine.SkeletalMeshComponent TPMeshLeft;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidgetLeft;
     static constexpr const char* FirstPersonWidgetLeft__UeScsNode = "026022ec9b29d84abcd072c1ab563542";

@@ -345,8 +345,8 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "EndMatchCallbackProxy");
     TMulticastInlineDelegate<void()> OnSuccess;
     TMulticastInlineDelegate<void()> OnFailure;
-    static class UEndMatchCallbackProxy* EndMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, FString MatchID, EMPMatchOutcome LocalPlayerOutcome, EMPMatchOutcome OtherPlayersOutcome);
-    static class UEndMatchCallbackProxy* EndMatch(class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, FString MatchID, EMPMatchOutcome LocalPlayerOutcome, EMPMatchOutcome OtherPlayersOutcome);
+    static class UEndMatchCallbackProxy* EndMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, FString MatchID, TEnum<EMPMatchOutcome> LocalPlayerOutcome, TEnum<EMPMatchOutcome> OtherPlayersOutcome);
+    static class UEndMatchCallbackProxy* EndMatch(class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, FString MatchID, TEnum<EMPMatchOutcome> LocalPlayerOutcome, TEnum<EMPMatchOutcome> OtherPlayersOutcome);
 };
 
 class UEndTurnCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -499,7 +499,7 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "OnlineBeaconClient");
     class AOnlineBeaconHostObject* BeaconOwner;
     class UNetConnection* BeaconConnection;
-    EBeaconConnectionState ConnectionState;
+    TEnum<EBeaconConnectionState> ConnectionState;
     UE_CLIENT UE_RELIABLE void ClientOnConnected();
 };
 
@@ -543,11 +543,11 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "PartyBeaconClient");
     FString DestSessionId;
     FPartyReservation PendingReservation;
-    EClientRequestType requestType;
+    TEnum<EClientRequestType> requestType;
     bool bPendingReservationSent;
     bool bCancelReservation;
-    UE_CLIENT UE_RELIABLE void ClientCancelReservationResponse(EPartyReservationResult ReservationResponse);
-    UE_CLIENT UE_RELIABLE void ClientReservationResponse(EPartyReservationResult ReservationResponse);
+    UE_CLIENT UE_RELIABLE void ClientCancelReservationResponse(TEnum<EPartyReservationResult> ReservationResponse);
+    UE_CLIENT UE_RELIABLE void ClientReservationResponse(TEnum<EPartyReservationResult> ReservationResponse);
     UE_CLIENT UE_RELIABLE void ClientSendReservationFull();
     UE_CLIENT UE_RELIABLE void ClientSendReservationUpdates(int NumRemainingReservations);
     UE_SERVER UE_RELIABLE void ServerAddOrUpdateReservationRequest(FString sessionId, const FPartyReservation& Reservation);
@@ -592,8 +592,8 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "QuitMatchCallbackProxy");
     TMulticastInlineDelegate<void()> OnSuccess;
     TMulticastInlineDelegate<void()> OnFailure;
-    static class UQuitMatchCallbackProxy* QuitMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, FString MatchID, EMPMatchOutcome Outcome, int TurnTimeoutInSeconds);
-    static class UQuitMatchCallbackProxy* QuitMatch(class APlayerController* PlayerController, FString MatchID, EMPMatchOutcome Outcome, int TurnTimeoutInSeconds);
+    static class UQuitMatchCallbackProxy* QuitMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, FString MatchID, TEnum<EMPMatchOutcome> Outcome, int TurnTimeoutInSeconds);
+    static class UQuitMatchCallbackProxy* QuitMatch(class APlayerController* PlayerController, FString MatchID, TEnum<EMPMatchOutcome> Outcome, int TurnTimeoutInSeconds);
 };
 
 class UShowLoginUICallbackProxy : public UBlueprintAsyncActionBase
@@ -612,11 +612,11 @@ public:
     UE_CLASS("/Script/OnlineSubsystemUtils", "SpectatorBeaconClient");
     FString DestSessionId;
     FSpectatorReservation PendingReservation;
-    ESpectatorClientRequestType requestType;
+    TEnum<ESpectatorClientRequestType> requestType;
     bool bPendingReservationSent;
     bool bCancelReservation;
-    UE_CLIENT UE_RELIABLE void ClientCancelReservationResponse(ESpectatorReservationResult ReservationResponse);
-    UE_CLIENT UE_RELIABLE void ClientReservationResponse(ESpectatorReservationResult ReservationResponse);
+    UE_CLIENT UE_RELIABLE void ClientCancelReservationResponse(TEnum<ESpectatorReservationResult> ReservationResponse);
+    UE_CLIENT UE_RELIABLE void ClientReservationResponse(TEnum<ESpectatorReservationResult> ReservationResponse);
     UE_CLIENT UE_RELIABLE void ClientSendReservationFull();
     UE_CLIENT UE_RELIABLE void ClientSendReservationUpdates(int NumRemainingReservations);
     UE_SERVER UE_RELIABLE void ServerCancelReservationRequest(const FUniqueNetIdRepl& Spectator);

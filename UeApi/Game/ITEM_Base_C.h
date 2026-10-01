@@ -20,7 +20,7 @@ public:
     class UClass* itemClass;
     TMulticastInlineDelegate<void(class UClass* Item)> OnClicked;
     int ItemEquipIndex;
-    EItemCategory ItemCategory;
+    TEnum<EItemCategory> ItemCategory;
     class UClass* PlayerCharacter;
     void ExecuteUbergraph_ITEM_Base(int EntryPoint);
     void OnItemUpdated();

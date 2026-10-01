@@ -22,7 +22,7 @@ public:
     class UComboBoxString* ComboBoxString_45;
     TArray<TSoftObjectPtr<class USpecialEvent>> Events;
     void ExecuteUbergraph_UI_ForceMachineEvent(int EntryPoint);
-    void BndEvt__ComboBoxString_45_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__ComboBoxString_45_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

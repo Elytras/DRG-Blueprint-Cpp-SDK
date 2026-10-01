@@ -50,13 +50,13 @@ public:
     void ExecuteUbergraph_HUD_PlayerDown(int EntryPoint);
     void Start_Player_Down();
     static constexpr const char* Start_Player_Down__UeName = "Start Player Down";
-    void ReceiveNewVisibility(ESlateVisibility NewVisibility);
+    void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
     void End_Player_Down();
     static constexpr const char* End_Player_Down__UeName = "End Player Down";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnDownCameraTargetChanged(class APlayerCharacter* Target);
     UE_COSMETIC void Construct();
-    UE_PURE ESlateVisibility GetCycleCameraVisibility();
+    UE_PURE TEnum<ESlateVisibility> GetCycleCameraVisibility();
 };
 
 }}   // namespace Game::UI

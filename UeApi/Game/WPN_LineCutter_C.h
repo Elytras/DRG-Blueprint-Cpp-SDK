@@ -30,6 +30,7 @@ class WPN_LineCutter_C : public ALineCutter
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/WPN_LineCutter", "WPN_LineCutter_C");
     using PRJ_LineCutter2_C = Game::WeaponsNTools::LineCutter::PRJ_LineCutter2_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* HomingTarget;
     static constexpr const char* HomingTarget__UeScsNode = "d40d6ec011310946baa6d39b6b2997bd";
@@ -50,7 +51,7 @@ public:
     class UProjectileLauncherComponent* projectileLauncher;
     static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     float Flicker_Brightness_Intensity_E04C79F0493C5086E3B612961CA53D93;
-    ETimelineDirection Flicker_Brightness__Direction_E04C79F0493C5086E3B612961CA53D93;
+    TEnum<ETimelineDirection> Flicker_Brightness__Direction_E04C79F0493C5086E3B612961CA53D93;
     class UTimelineComponent* Flicker_Brightness;
     static constexpr const char* Flicker_Brightness__UeName = "Flicker Brightness";
     float DamageFrequency;

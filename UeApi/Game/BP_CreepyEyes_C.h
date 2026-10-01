@@ -55,7 +55,7 @@ public:
     float Scale_1_NewTrack;
     static constexpr const char* Scale_1_NewTrack__UeName = "Scale_1_NewTrack_3_BCD68ACC423F5ECA6576CB9BC05971B4";
     float Scale_1_Displacement_Offset_BCD68ACC423F5ECA6576CB9BC05971B4;
-    ETimelineDirection Scale_1__Direction_BCD68ACC423F5ECA6576CB9BC05971B4;
+    TEnum<ETimelineDirection> Scale_1__Direction_BCD68ACC423F5ECA6576CB9BC05971B4;
     class UTimelineComponent* Scale_1;
     static constexpr const char* Scale_1__UeName = "Scale 1";
     bool IsMoving;

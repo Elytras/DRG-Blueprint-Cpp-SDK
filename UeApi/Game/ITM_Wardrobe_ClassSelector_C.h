@@ -49,7 +49,7 @@ public:
     FText HeaderText;
     class UPlayerCharacterID* currentCharacter;
     TMulticastInlineDelegate<void(class UClass* Character)> OnCharacterChanged;
-    ECharselectionCameraLocation SelectionType;
+    TEnum<ECharselectionCameraLocation> SelectionType;
     class UObject* CategoryID;
     bool UpdatePreviewCharacter;
     bool ShowOtherClassesNotifications;

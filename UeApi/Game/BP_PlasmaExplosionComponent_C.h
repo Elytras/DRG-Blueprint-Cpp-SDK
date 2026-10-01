@@ -35,7 +35,7 @@ public:
     void CalculateDeadBugWalking(float Health);
     void TrackHealth(float Health);
     void ResetComponent();
-    void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+    void ReceiveEndPlay(TEnum<EEndPlayReason> EndPlayReason);
     UE_MULTICAST void ExplosionEffects(FVector Location, float ExplosionRadius, class AFSDPawn* TargetPawn);
     void ReloadEvent();
     void BindReload(class AActor* Effect_Owner);

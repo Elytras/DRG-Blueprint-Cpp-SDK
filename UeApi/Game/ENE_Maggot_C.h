@@ -22,6 +22,7 @@ class ENE_Maggot_C : public AMaggot
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot", "ENE_Maggot_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
     static constexpr const char* Capsule__UeScsNode = "c2eeddee5581174a88a9504c0d6f4f62";
@@ -38,7 +39,7 @@ public:
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(EDeepMovementState State);
+    void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(TEnum<EDeepMovementState> State);
     void OnRep_Moving();
 };
 

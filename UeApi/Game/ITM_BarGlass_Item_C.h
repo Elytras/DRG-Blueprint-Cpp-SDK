@@ -22,6 +22,7 @@ class ITM_BarGlass_Item_C : public ADrinkableItem
 public:
     UE_CLASS("/Game/GameElements/Bar/ITM_BarGlass_Item", "ITM_BarGlass_Item_C");
     using Bar_Glass_Physics_C = Game::GameElements::Bar::Bar_Glass_Physics_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* TPParticleSystem;
     static constexpr const char* TPParticleSystem__UeScsNode = "74d731d3cc1a2542b5de6cc34aa32363";

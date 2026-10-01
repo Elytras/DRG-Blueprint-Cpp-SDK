@@ -20,12 +20,13 @@ class PRJ_PlatformMaker_C : public APlatformProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlatformGun/PRJ_PlatformMaker", "PRJ_PlatformMaker_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Projectile;
     static constexpr const char* Projectile__UeScsNode = "606338a13cc77942a4e351f7fece69cb";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_1_6344ADF74893FE5BE85A6CA2C1A57EE3";
-    ETimelineDirection Timeline_0__Direction_6344ADF74893FE5BE85A6CA2C1A57EE3;
+    TEnum<ETimelineDirection> Timeline_0__Direction_6344ADF74893FE5BE85A6CA2C1A57EE3;
     class UTimelineComponent* Timeline_0;
     float Diameter;
     float PlatformCreationDelay__seconds_;

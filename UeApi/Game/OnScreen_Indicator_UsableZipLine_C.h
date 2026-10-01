@@ -43,8 +43,8 @@ public:
     class UZipLineStateComponent* ZiplineState;
     float Size;
     void ExecuteUbergraph_OnScreen_Indicator_UsableZipLine(int EntryPoint);
-    void OnInputSourceChanged_Event(EFSDInputSource InputSource);
-    void OnCharacterStateChanged_Event(ECharacterState NewState);
+    void OnInputSourceChanged_Event(TEnum<EFSDInputSource> InputSource);
+    void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();

@@ -25,6 +25,7 @@ class PRJ_Grenade_StickySmall_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickySmall/PRJ_Grenade_StickySmall", "PRJ_Grenade_StickySmall_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UExplosionComponent* Explosion;
     static constexpr const char* Explosion__UeScsNode = "fffc1d6989f45b478155512416476b25";

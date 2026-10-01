@@ -26,6 +26,7 @@ class ENE_InsectSwarm_Spawner_C : public AInsectSwarmSpawner
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/ENE_InsectSwarm_Spawner", "ENE_InsectSwarm_Spawner_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
@@ -41,7 +42,7 @@ public:
     static constexpr const char* outline__UeScsNode = "5bd57aced5abb149a705b417d1520ba5";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_24041E04487F50C14665D9A721366BB3";
-    ETimelineDirection Timeline_0__Direction_24041E04487F50C14665D9A721366BB3;
+    TEnum<ETimelineDirection> Timeline_0__Direction_24041E04487F50C14665D9A721366BB3;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_ENE_InsectSwarm_Spawner(int EntryPoint);
     void OnUnFrozen();

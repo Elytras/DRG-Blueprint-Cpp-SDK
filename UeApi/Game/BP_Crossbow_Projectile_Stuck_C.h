@@ -26,6 +26,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck", "BP_Crossbow_Projectile_Stuck_C");
     using BP_BansheeModule_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
     using BP_RecallableArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_RecallableArrow_Component_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     BP_RecallableArrow_Component_C* BP_RecallableArrow_Component;
     static constexpr const char* BP_RecallableArrow_Component__UeScsNode = "3219d3df4b36364bae8700a8509cb8ec";
     BP_BansheeModule_Component_C* BP_BansheeModule_Component;

@@ -29,7 +29,7 @@ public:
     TMulticastInlineDelegate<void()> MutatorChanged;
     class UDifficultyMutatorSetupItem* MutatorSetupItem;
     void ExecuteUbergraph_UI_Difficulty_Mutator_Cheat(int EntryPoint);
-    void BndEvt__UI_Difficulty_Mutator_Cheat_Combo_Applications_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, ESelectInfo SelectionType);
+    void BndEvt__UI_Difficulty_Mutator_Cheat_Combo_Applications_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

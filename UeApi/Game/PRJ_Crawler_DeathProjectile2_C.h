@@ -21,6 +21,7 @@ class PRJ_Crawler_DeathProjectile2_C : public AGooGunProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/PRJ_Crawler_DeathProjectile2", "PRJ_Crawler_DeathProjectile2_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* P_SpiderLobber_Projecitle_Trail_TEMP_Converted;
     static constexpr const char* P_SpiderLobber_Projecitle_Trail_TEMP_Converted__UeScsNode = "a4fba5ec3c1aca4b83b9c1dd244eb239";

@@ -17,6 +17,7 @@ class BP_EnorEmd_C : public Game::GameElements::Resources::Embedded::Gems::BP_Ge
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/EnorPearl/BP_EnorEmd", "BP_EnorEmd_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_EnorEmd_C;
     static constexpr const char* UberGraphFrame_BP_EnorEmd_C__UeName = "UberGraphFrame";
     class UGemTracker* GemTracker;

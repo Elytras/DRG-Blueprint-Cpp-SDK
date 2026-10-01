@@ -34,6 +34,7 @@ class BP_JetBootsBox_C : public AJetBootsBox
 {
 public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/BP_JetBootsBox", "BP_JetBootsBox_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TerrainPlacementComponent TerrainPlacement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_GunTower_Carver01;
     static constexpr const char* SM_GunTower_Carver01__UeScsNode = "f654b330946fd0419aac17065be78a1b";
@@ -84,7 +85,7 @@ public:
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "c45f3a938a24e44c9ce361510957d0ba";
     float Timeline_0_Intensity_356A073F4538622C1D3198B6E43B1175;
-    ETimelineDirection Timeline_0__Direction_356A073F4538622C1D3198B6E43B1175;
+    TEnum<ETimelineDirection> Timeline_0__Direction_356A073F4538622C1D3198B6E43B1175;
     class UTimelineComponent* Timeline_0;
     class UAudioComponent* IdleSound;
     bool Open;
@@ -110,7 +111,7 @@ public:
     void ReceiveOnRepEquipped();
     void PlayDistressCall();
     void AnimateLights();
-    void BndEvt__BP_JetBootsBox_EquipUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_JetBootsBox_EquipUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void BndEvt__BP_JetBootsBox_HackingUsable_K2Node_ComponentBoundEvent_0_HackedDelegate__DelegateSignature(class APlayerCharacter* InHackedBy);
     void SwitchNextMaterial();

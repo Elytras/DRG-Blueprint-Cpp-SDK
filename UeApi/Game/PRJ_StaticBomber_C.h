@@ -29,6 +29,7 @@ class PRJ_StaticBomber_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/BarrageInfector/PRJ_StaticBomber", "PRJ_StaticBomber_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "51549f3d0dfefc49a7e1124ff13e7bdc";
@@ -54,7 +55,7 @@ public:
     static constexpr const char* ProjectileLoop__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     float Glow_Intensity_NewTrack;
     static constexpr const char* Glow_Intensity_NewTrack__UeName = "Glow_Intensity_NewTrack_0_983682A94558969EB75E068C8411244B";
-    ETimelineDirection Glow_Intensity__Direction_983682A94558969EB75E068C8411244B;
+    TEnum<ETimelineDirection> Glow_Intensity__Direction_983682A94558969EB75E068C8411244B;
     class UTimelineComponent* glow_intensity;
     bool IsFuseTriggered;
     static constexpr const char* IsFuseTriggered__Replicated = "OnRep_IsFuseTriggered:";

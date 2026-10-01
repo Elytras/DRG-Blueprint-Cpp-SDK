@@ -21,6 +21,7 @@ class PRJ_Boss_Twin_Stomp_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/PRJ_Boss_Twin_Stomp", "PRJ_Boss_Twin_Stomp_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Twin_B_ProjectileBarrage_Cue;
     static constexpr const char* Twin_B_ProjectileBarrage_Cue__UeScsNode = "8a449cb7ee289941bf3254ec720845d0";

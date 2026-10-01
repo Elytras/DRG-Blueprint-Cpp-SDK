@@ -65,6 +65,7 @@ public:
     using BP_UsingState_C = Game::Character::States::BP_UsingState_C;
     using BP_WalkingState_C = Game::Character::States::BP_WalkingState_C;
     using BP_ZipLineState_C = Game::Character::States::BP_ZipLineState_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTracking;/Script/Engine.CameraComponent DownCamera;/Script/Engine.CameraComponent FirstPersonCamera;/Script/Engine.CameraComponent FollowCamera;/Script/Engine.CameraComponent ThirdPersonCamera;/Script/Engine.CapsuleComponent CollisionCylinder;/Script/FSD.CharacterCameraController CameraController;/Script/FSD.CharacterRecoilComponent RecoilComponent;/Script/FSD.CharacterSightComponent SightComponent;/Script/FSD.CharacterUseComponent UseComponentNew;/Script/FSD.CharacterVanityComponent CharacterVanity;/Script/FSD.CommunicationComponent Communication;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable TrackGrindUsable;/Script/FSD.InventoryComponent Inventory;/Script/FSD.MissionStatsCollector MissionStatsCollector;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.PawnStatsComponent PawnStats;/Script/FSD.PlayerAfflictionComponent PawnAfflictions;/Script/FSD.PlayerAttackPositionComponent AttackerPositioning;/Script/FSD.PlayerHealthComponent Health;/Script/FSD.PlayerInfectionComponent InfectionComponent;/Script/FSD.PlayerInfoComponent PlayerInfoComponent;/Script/FSD.PlayerMovementComponent CharMoveComp;/Script/FSD.PlayerReactiveTerrainTrackerComponent TerrainTracker;/Script/FSD.PlayerTemperatureComponent TemperatureComponent;/Script/Engine.PointLightComponent ThirdPersonLight;/Script/Engine.SceneComponent FPRoot;/Script/FSD.SingleUsableComponent UsableComponent;/Script/Engine.SkeletalMeshComponent CharacterMesh0;/Script/Engine.SpringArmComponent FollowSpringArm;/Script/Engine.SpringArmComponent ThirdPersonSpringArm;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/UMG.WidgetInteractionComponent WidgetInteraction";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Lamp;
     static constexpr const char* Mesh_Lamp__UeScsNode = "9fc2ac7b2fa79447b6e123d02048d66a";
@@ -187,12 +188,12 @@ public:
     class USphereComponent* UsableCollision;
     static constexpr const char* UsableCollision__UeScsNode = "54b2e8b5a0ca134aa6cfae387c6bd5cd";
     float Emergency_Timeline_Light_Intensity_49385F0B40EDFCE34D2340AC7114B889;
-    ETimelineDirection Emergency_Timeline__Direction_49385F0B40EDFCE34D2340AC7114B889;
+    TEnum<ETimelineDirection> Emergency_Timeline__Direction_49385F0B40EDFCE34D2340AC7114B889;
     class UTimelineComponent* Emergency_Timeline;
     static constexpr const char* Emergency_Timeline__UeName = "Emergency Timeline";
     float ShieldRegenTimeline_Volume_007E924B43B618D88D08859A06A1CF61;
     float ShieldRegenTimeline_Pitch_007E924B43B618D88D08859A06A1CF61;
-    ETimelineDirection ShieldRegenTimeline__Direction_007E924B43B618D88D08859A06A1CF61;
+    TEnum<ETimelineDirection> ShieldRegenTimeline__Direction_007E924B43B618D88D08859A06A1CF61;
     class UTimelineComponent* ShieldRegenTimeline;
     float ShieldRegenTime;
     float LastDamageTime;
@@ -238,7 +239,7 @@ public:
     static constexpr const char* Init_Selfie_Cam__UeName = "Init Selfie Cam";
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DamageSig__DelegateSignature(float amount);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
-    void CharacterState_Changed(ECharacterState NewState);
+    void CharacterState_Changed(TEnum<ECharacterState> NewState);
     static constexpr const char* CharacterState_Changed__UeName = "CharacterState Changed";
     void BP_OnUpdateMeshes();
     void StopRegenAudio();

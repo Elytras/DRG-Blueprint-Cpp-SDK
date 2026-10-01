@@ -25,6 +25,7 @@ class BP_FireCracker_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_LunarFestival/Blueprints/BP_FireCracker", "BP_FireCracker_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* FSDAudio1;
     static constexpr const char* FSDAudio1__UeScsNode = "ce5283ab07527646a81f078dcaf52b69";

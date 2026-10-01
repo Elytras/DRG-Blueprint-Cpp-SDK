@@ -33,7 +33,7 @@ public:
     static constexpr const char* SimpleObjectInfo__UeScsNode = "1332312d11de2d4a994f10867b45bec1";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_CCE667474C695780AD163197E2E87F35";
-    ETimelineDirection Timeline_0__Direction_CCE667474C695780AD163197E2E87F35;
+    TEnum<ETimelineDirection> Timeline_0__Direction_CCE667474C695780AD163197E2E87F35;
     class UTimelineComponent* Timeline_0;
     int LightIntensity;
     int LightAttenuation;

@@ -30,6 +30,7 @@ class BP_LaserEventStarter_C : public AEventStarterButton
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_LaserEventStarter", "BP_LaserEventStarter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
     static constexpr const char* MeshCarver__UeScsNode = "37880e2d877f54449c3feb99df9429d2";
@@ -72,7 +73,7 @@ public:
     float OriginalBatteryEmissive;
     float SoloActivationDuration;
     void ExecuteUbergraph_BP_LaserEventStarter(int EntryPoint);
-    void BndEvt__BP_LaserEventStarter_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_LaserEventStarter_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void OnEventFinished(bool eventSuccess);
     void OnOpenedForUse(bool wasOpened);

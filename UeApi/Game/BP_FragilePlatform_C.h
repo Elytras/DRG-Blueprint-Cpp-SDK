@@ -39,7 +39,7 @@ public:
     class USceneComponent* Default_root_component;
     static constexpr const char* Default_root_component__UeName = "Default root component";
     static constexpr const char* Default_root_component__UeScsNode = "57f74e28ca2cd24a91a14b9e6663dd5c";
-    ETimelineDirection Crack_Timer__Direction_1ABFCC984A9885503D55279811F213E0;
+    TEnum<ETimelineDirection> Crack_Timer__Direction_1ABFCC984A9885503D55279811F213E0;
     class UTimelineComponent* Crack_Timer;
     static constexpr const char* Crack_Timer__UeName = "Crack Timer";
     float Time_Between_Cracks;

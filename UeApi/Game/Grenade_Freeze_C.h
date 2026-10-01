@@ -22,6 +22,7 @@ class Grenade_Freeze_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Freeze/Grenade_Freeze", "Grenade_Freeze_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Freeze_C;
     static constexpr const char* UberGraphFrame_Grenade_Freeze_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;

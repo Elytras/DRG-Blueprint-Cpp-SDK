@@ -25,6 +25,7 @@ class PRJ_BaseGooProjectile_C : public AGooGunProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BaseGooProjectile", "PRJ_BaseGooProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage_PuddleSizeDisplayHack;
     static constexpr const char* Damage_PuddleSizeDisplayHack__UeScsNode = "54edcabbb9eea048afd1f39f3c258531";

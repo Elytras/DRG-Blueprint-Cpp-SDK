@@ -27,6 +27,7 @@ class BP_CaveVine_C : public ACaveVine
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/SmartCaveVine/BP_CaveVine", "BP_CaveVine_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent VineHead;/Script/Engine.SplineMeshComponent SplineMeshComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "9a23bf964385b747888ee318b5060536";

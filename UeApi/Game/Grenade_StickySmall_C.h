@@ -20,6 +20,7 @@ class Grenade_StickySmall_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickySmall/Grenade_StickySmall", "Grenade_StickySmall_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_StickySmall_C;
     static constexpr const char* UberGraphFrame_Grenade_StickySmall_C__UeName = "UberGraphFrame";
     class UDamageComponent* BluntDamage;

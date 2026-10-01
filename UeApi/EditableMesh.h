@@ -409,7 +409,7 @@ public:
     void GeneratePolygonTangentsAndNormals(const TArray<FPolygonID>& PolygonIDs);
     void InitializeAdapters();
     void InsertEdgeLoop(FEdgeID EdgeID, const TArray<float>& Splits, TArray<FEdgeID>& OutNewEdgeIDs);
-    void InsetPolygons(const TArray<FPolygonID>& PolygonIDs, float InsetFixedDistance, float InsetProgressTowardCenter, EInsetPolygonsMode Mode, TArray<FPolygonID>& OutNewCenterPolygonIDs, TArray<FPolygonID>& OutNewSidePolygonIDs);
+    void InsetPolygons(const TArray<FPolygonID>& PolygonIDs, float InsetFixedDistance, float InsetProgressTowardCenter, TEnum<EInsetPolygonsMode> Mode, TArray<FPolygonID>& OutNewCenterPolygonIDs, TArray<FPolygonID>& OutNewSidePolygonIDs);
     void MoveVertices(const TArray<FVertexToMove>& VerticesToMove);
     void PropagateInstanceChanges();
     void QuadrangulateMesh(TArray<FPolygonID>& OutNewPolygonIDs);
@@ -432,8 +432,8 @@ public:
     void SplitEdge(FEdgeID EdgeID, const TArray<float>& Splits, TArray<FVertexID>& OutNewVertexIDs);
     void SplitPolygonalMesh(const FPlane& InPlane, TArray<FPolygonID>& PolygonIDs1, TArray<FPolygonID>& PolygonIDs2, TArray<FEdgeID>& BoundaryIDs);
     void SplitPolygons(const TArray<FPolygonToSplit>& PolygonsToSplit, TArray<FEdgeID>& OutNewEdgeIDs);
-    void StartModification(EMeshModificationType MeshModificationType, EMeshTopologyChange MeshTopologyChange);
-    void TessellatePolygons(const TArray<FPolygonID>& PolygonIDs, ETriangleTessellationMode TriangleTessellationMode, TArray<FPolygonID>& OutNewPolygonIDs);
+    void StartModification(TEnum<EMeshModificationType> MeshModificationType, TEnum<EMeshTopologyChange> MeshTopologyChange);
+    void TessellatePolygons(const TArray<FPolygonID>& PolygonIDs, TEnum<ETriangleTessellationMode> TriangleTessellationMode, TArray<FPolygonID>& OutNewPolygonIDs);
     void TriangulatePolygons(const TArray<FPolygonID>& PolygonIDs, TArray<FPolygonID>& OutNewTrianglePolygons);
     void TryToRemovePolygonEdge(FEdgeID EdgeID, bool& bOutWasEdgeRemoved, FPolygonID& OutNewPolygonID);
     void TryToRemoveVertex(FVertexID VertexID, bool& bOutWasVertexRemoved, FEdgeID& OutNewEdgeID);

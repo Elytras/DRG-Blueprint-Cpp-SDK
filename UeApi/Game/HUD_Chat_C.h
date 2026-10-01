@@ -38,7 +38,7 @@ public:
     float FadeTime;
     int MaxLines;
     bool InLoadMenu;
-    EChatSenderType SenderType;
+    TEnum<EChatSenderType> SenderType;
     class UEditableTextBox* OutsiteChatbox;
     class UEditableTextBox* InputChatBox;
     float MinLinesConst;
@@ -55,10 +55,10 @@ public:
     UE_COSMETIC void Construct();
     void BndEvt__NewChatEdit_K2Node_ComponentBoundEvent_2_OnEditableTextBoxChangedEvent__DelegateSignature(const FText& Text);
     void NewMesssage(const FFSDChatMessage& Message);
-    void BndEvt__NewChatEdit_K2Node_ComponentBoundEvent_19_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, ETextCommit CommitMethod);
-    void SendChatMessage(const FText& InText, ETextCommit CommitMethod);
+    void BndEvt__NewChatEdit_K2Node_ComponentBoundEvent_19_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, TEnum<ETextCommit> CommitMethod);
+    void SendChatMessage(const FText& InText, TEnum<ETextCommit> CommitMethod);
     void BndEvt__OutsiteChatbox_K2Node_ComponentBoundEvent_1_OnEditableTextBoxChangedEvent__DelegateSignature(const FText& Text);
-    void BndEvt__OutsiteChatbox_K2Node_ComponentBoundEvent_0_OnEditableTextCommittedEvent__DelegateSignature(const FText& Text, ETextCommit CommitMethod);
+    void BndEvt__OutsiteChatbox_K2Node_ComponentBoundEvent_0_OnEditableTextCommittedEvent__DelegateSignature(const FText& Text, TEnum<ETextCommit> CommitMethod);
     void OnBackgroundFadeFinished();
     void CloseChat();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

@@ -20,9 +20,9 @@ public:
     void ReceivedRoomData(int Seed_ReceivedRoomData, const TArray<FRoomNode>& Rooms_ReceivedRoomData, const TArray<FPathObstacle>& Obstacles_ReceivedRoomData);
     void ReceivedTunnelData(const TArray<FTunnelNode>& tunnels_ReceivedTunnelData);
     UE_SERVER UE_RELIABLE void Server_RequestPLSData();
-    UE_SERVER UE_RELIABLE void Server_RequestCarverData(EDebrisItemPass pass);
+    UE_SERVER UE_RELIABLE void Server_RequestCarverData(TEnum<EDebrisItemPass> pass);
     void RequestPLSData();
-    void RequestCarverData(EDebrisItemPass pass_RequestCarverData);
+    void RequestCarverData(TEnum<EDebrisItemPass> pass_RequestCarverData);
     void ExecuteUbergraph_BP_ProceduralController(int EntryPoint);
 };
 

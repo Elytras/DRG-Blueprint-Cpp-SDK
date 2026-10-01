@@ -36,6 +36,7 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/Pipeline/BP_Pipeline_Segment", "BP_Pipeline_Segment_C");
     using BP_AttackablePiplinesegmentActor_C = Game::LevelElements::Refinery::Pipeline::BP_AttackablePiplinesegmentActor_C;
     using BP_Pipeline_Movement_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Movement_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DroneUseComponent DroneUseComponent;/Script/FSD.PathfinderSplineSegmentCollisionComponent PathfinderComponent;/Script/Engine.SceneComponent DefaultSceneRoot;/Script/FSD.SimpleHealthComponent SegmentHealthComponent;/Script/FSD.SingleUsableComponent ActivateSegmentUsable;/Script/FSD.SingleUsableComponent RepairSegmentUsable;/Script/Engine.SkeletalMeshComponent EndPostMesh;/Script/Engine.SkeletalMeshComponent PipelineCapMesh;/Script/Engine.SplineComponent MovementSpline;/Script/Engine.SplineComponent MovementSplineLeft;/Script/Engine.SplineComponent MovementSplineRight;/Script/Engine.SplineMeshComponent PipelineMesh;/Script/Engine.SplineMeshComponent PipelineOuterMesh;/Script/Engine.StaticMeshComponent EndPostMeshStatic;/Script/FSD.TrackBuilderUsable NextSegmentUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
     static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "759ff286ae926e4c80fe09bef82eda9d";
@@ -99,10 +100,10 @@ public:
     class UArrowComponent* Arrow;
     static constexpr const char* Arrow__UeScsNode = "7f90ef5a453c774cb225a2da857268de";
     float Timeline_0_Progress_DAE98DA44362821170C92FBA184208DB;
-    ETimelineDirection Timeline_0__Direction_DAE98DA44362821170C92FBA184208DB;
+    TEnum<ETimelineDirection> Timeline_0__Direction_DAE98DA44362821170C92FBA184208DB;
     class UTimelineComponent* Timeline_0;
     float BuildTimeline_Progress_6223F38446980B06F3713AAB20D1CEB4;
-    ETimelineDirection BuildTimeline__Direction_6223F38446980B06F3713AAB20D1CEB4;
+    TEnum<ETimelineDirection> BuildTimeline__Direction_6223F38446980B06F3713AAB20D1CEB4;
     class UTimelineComponent* BuildTimeline;
     TArray<class UMaterialInterface*> MaterialsEndPost;
     class UMaterialInterface* MaterialPipe;
@@ -114,7 +115,7 @@ public:
     float MaxValidDistance;
     float SplineMeshDistance;
     class UAudioComponent* BuildingAudioComponent;
-    ETrackBuildPlacementState LastState;
+    TEnum<ETrackBuildPlacementState> LastState;
     bool SegmentValid;
     BP_AttackablePiplinesegmentActor_C* AttackableActor;
     float MaxLightIntensity;
@@ -137,7 +138,7 @@ public:
     void ReceiveSegmentActivatedProgress(float InProgress);
     void CarveAroundSegment();
     void ScheduleUpdatePlacementState();
-    void BndEvt__ActivateSegmentUsable_K2Node_ComponentBoundEvent_4_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__ActivateSegmentUsable_K2Node_ComponentBoundEvent_4_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void UpdateCanActivateSegmentGFX();
     void BndEvt__ActivateSegmentUsable_K2Node_ComponentBoundEvent_5_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ReceivePlacementFinished();
@@ -148,7 +149,7 @@ public:
     void BndEvt__SegmentHealthComponent_K2Node_ComponentBoundEvent_2_DamageSig__DelegateSignature(float amount);
     void ReversePipelineAnim();
     void BndEvt__SegmentHealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
+    void ReceivePlacementStateChanged(TEnum<ETrackBuildPlacementState> NewState);
     void ReceivPlacementValidChanged(bool InIsValid);
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
@@ -156,7 +157,7 @@ public:
     void BuildTimeline__UpdateFunc();
     void BuildTimeline__FinishedFunc();
     void UserConstructionScript();
-    void UpdatePlacementState(ETrackBuildPlacementState InState);
+    void UpdatePlacementState(TEnum<ETrackBuildPlacementState> InState);
     void UpdateConnectableGFX();
     void OverrideEndPostMaterial(class UMaterialInterface* Material);
     void UpdatePipelineNumber();

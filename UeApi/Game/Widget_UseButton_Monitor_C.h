@@ -32,7 +32,7 @@ public:
     void OnCanStartRefineryChanged(bool CanUse);
     void OnRefineryProgressChanged(float InProgress01);
     UE_COSMETIC void Construct();
-    void OnStateChanged(ERefineryState InRefineryState);
+    void OnStateChanged(TEnum<ERefineryState> InRefineryState);
     UE_PURE bool IsDeepDive();
 };
 

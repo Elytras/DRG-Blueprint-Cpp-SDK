@@ -18,6 +18,7 @@ class BP_Guntower_Module_Homing_C : public AHomingFireModule
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_Homing/BP_Guntower_Module_Homing", "BP_Guntower_Module_Homing_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
     static constexpr const char* Capsule__UeScsNode = "cefe4b95cc8a6c49881556c2ccff3bb7";

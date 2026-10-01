@@ -20,7 +20,7 @@ public:
     using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
-    ESonyInputSettingsBools Option;
+    TEnum<ESonyInputSettingsBools> Option;
     TMulticastInlineDelegate<void(bool IsChecked)> StateChanged;
     void ExecuteUbergraph_Options_SonyInputBoolOption(int EntryPoint);
     void BndEvt__Basic_CheckBox_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);

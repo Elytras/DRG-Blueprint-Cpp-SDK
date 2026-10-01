@@ -61,7 +61,7 @@ public:
     bool IsPlaceholder;
     FText Title;
     class UPlayerCharacterID* OptionalCharacterID;
-    ESeasonVisibilityState NodeState;
+    TEnum<ESeasonVisibilityState> NodeState;
     float HoldTime;
     bool IsHolding;
     float TotalHoldDuration;

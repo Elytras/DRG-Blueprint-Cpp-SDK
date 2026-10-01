@@ -28,6 +28,7 @@ class BP_Minehead_Sentry_C : public ASentryGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_MineHead/BP_Minehead_Sentry", "BP_Minehead_Sentry_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PathfinderCollision;
     static constexpr const char* PathfinderCollision__UeScsNode = "494026207bf5414ca98af71654f9c8a3";
@@ -52,10 +53,10 @@ public:
     class UHitscanComponent* HitScan;
     static constexpr const char* HitScan__UeScsNode = "a2d2010edfc9e547b65418f23d1c8a2e";
     float Undeploy_Progress_02B4B0BE41996CA1C5785D8CDFE1AD49;
-    ETimelineDirection Undeploy__Direction_02B4B0BE41996CA1C5785D8CDFE1AD49;
+    TEnum<ETimelineDirection> Undeploy__Direction_02B4B0BE41996CA1C5785D8CDFE1AD49;
     class UTimelineComponent* Undeploy;
     float DeployTimeline_DeployProgress_4362678842D8358C48C38287DF4595DA;
-    ETimelineDirection DeployTimeline__Direction_4362678842D8358C48C38287DF4595DA;
+    TEnum<ETimelineDirection> DeployTimeline__Direction_4362678842D8358C48C38287DF4595DA;
     class UTimelineComponent* DeployTimeline;
     float FoldoutAnimDuration;
     float Old_Z_Angle;

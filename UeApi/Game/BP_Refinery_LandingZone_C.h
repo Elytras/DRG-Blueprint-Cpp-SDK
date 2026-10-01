@@ -24,10 +24,10 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
     float Timeline_1_Opacity_8C6DF8B84585B4B9E8DB819DF676DC1F;
-    ETimelineDirection Timeline_1__Direction_8C6DF8B84585B4B9E8DB819DF676DC1F;
+    TEnum<ETimelineDirection> Timeline_1__Direction_8C6DF8B84585B4B9E8DB819DF676DC1F;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_Opacity_C78A9FAB4BAA9C550373C2B47F9E0A4F;
-    ETimelineDirection Timeline_0__Direction_C78A9FAB4BAA9C550373C2B47F9E0A4F;
+    TEnum<ETimelineDirection> Timeline_0__Direction_C78A9FAB4BAA9C550373C2B47F9E0A4F;
     class UTimelineComponent* Timeline_0;
     TArray<class UMaterialInstanceDynamic*> Materials;
     void ExecuteUbergraph_BP_Refinery_LandingZone(int EntryPoint);

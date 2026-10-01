@@ -20,6 +20,7 @@ class Grenade_Axe_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/Grenade_Axe", "Grenade_Axe_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Axe_C;
     static constexpr const char* UberGraphFrame_Grenade_Axe_C__UeName = "UberGraphFrame";
     class UDamageComponent* BluntDamage;

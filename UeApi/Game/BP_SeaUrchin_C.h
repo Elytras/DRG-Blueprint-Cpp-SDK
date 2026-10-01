@@ -50,12 +50,12 @@ public:
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_3_92B13E094B2DF1BDD1B63E8B51041D1A";
     float Timeline_0_Displacement_Offset_92B13E094B2DF1BDD1B63E8B51041D1A;
-    ETimelineDirection Timeline_0__Direction_92B13E094B2DF1BDD1B63E8B51041D1A;
+    TEnum<ETimelineDirection> Timeline_0__Direction_92B13E094B2DF1BDD1B63E8B51041D1A;
     class UTimelineComponent* Timeline_0;
     float Reduce_Offset_NewTrack;
     static constexpr const char* Reduce_Offset_NewTrack__UeName = "Reduce_Offset_NewTrack_3_C5AFCD9F419B0285FA202B94564C9676";
     float Reduce_Offset_Displacement_Offset_C5AFCD9F419B0285FA202B94564C9676;
-    ETimelineDirection Reduce_Offset__Direction_C5AFCD9F419B0285FA202B94564C9676;
+    TEnum<ETimelineDirection> Reduce_Offset__Direction_C5AFCD9F419B0285FA202B94564C9676;
     class UTimelineComponent* Reduce_Offset;
     static constexpr const char* Reduce_Offset__UeName = "Reduce Offset";
     class UMaterialInstanceDynamic* Dynamic_Material;

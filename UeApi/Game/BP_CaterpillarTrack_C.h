@@ -43,7 +43,7 @@ public:
     float Speed;
     float JointSpeedFactor;
     void ExecuteUbergraph_BP_CaterpillarTrack(int EntryPoint);
-    void ParentOutlineChanged(EOutline InOutline);
+    void ParentOutlineChanged(TEnum<EOutline> InOutline);
     void UpdateTrackSpeed();
     void ReceiveBeginPlay();
     void UserConstructionScript();

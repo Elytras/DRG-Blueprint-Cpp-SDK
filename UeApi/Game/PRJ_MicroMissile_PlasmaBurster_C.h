@@ -22,6 +22,7 @@ class PRJ_MicroMissile_PlasmaBurster_C : public Game::WeaponsNTools::MicroMissil
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_PlasmaBurster", "PRJ_MicroMissile_PlasmaBurster_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_MicroMissile_PlasmaBurster_C;
     static constexpr const char* UberGraphFrame_PRJ_MicroMissile_PlasmaBurster_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_HandGrenade_I;

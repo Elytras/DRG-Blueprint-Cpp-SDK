@@ -25,6 +25,7 @@ class BP_DropPod_Landing_C : public Game::LevelElements::Droppod::BP_DropPod_Bas
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Landing", "BP_DropPod_Landing_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_DropPod_Landing_C;
     static constexpr const char* UberGraphFrame_BP_DropPod_Landing_C__UeName = "UberGraphFrame";
     class USceneComponent* BoscoSpawningPoint;

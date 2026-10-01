@@ -23,6 +23,7 @@ class PRJ_NormalBlasterShot_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/PRJ_NormalBlasterShot", "PRJ_NormalBlasterShot_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosionSplash;
     static constexpr const char* ProjectileExplosionSplash__UeScsNode = "ef6faab31b8fd34d8cdac75aeda4c2b5";

@@ -31,6 +31,7 @@ class ENE_TentaclePlant_C : public ATentaclePlant
 {
 public:
     UE_CLASS("/Game/Enemies/TentaclePlant/ENE_TentaclePlant", "ENE_TentaclePlant_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
     static constexpr const char* Capsule__UeScsNode = "29d10933ce7c7146835bb54965b84ac0";

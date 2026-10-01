@@ -52,11 +52,11 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "57e6d9b93e3b594f817f363ec12b8a51";
     float VariationLoop_Variation_1D8B412C4585AB2E56DAE8A298D8B484;
-    ETimelineDirection VariationLoop__Direction_1D8B412C4585AB2E56DAE8A298D8B484;
+    TEnum<ETimelineDirection> VariationLoop__Direction_1D8B412C4585AB2E56DAE8A298D8B484;
     class UTimelineComponent* VariationLoop;
     float FloaterValues_Brightness_D91E97D14BA4C776610A308453452A23;
     float FloaterValues_Height_D91E97D14BA4C776610A308453452A23;
-    ETimelineDirection FloaterValues__Direction_D91E97D14BA4C776610A308453452A23;
+    TEnum<ETimelineDirection> FloaterValues__Direction_D91E97D14BA4C776610A308453452A23;
     class UTimelineComponent* FloaterValues;
     float BaseFloaterHeight;
     static constexpr const char* BaseFloaterHeight__Replicated = ":";

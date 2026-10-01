@@ -35,6 +35,7 @@ class ENE_HydraWeed_Core_C : public AHydraWeedCore
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/ENE_HydraWeed_Core", "ENE_HydraWeed_Core_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Carving_Mesh;
     static constexpr const char* Carving_Mesh__UeName = "Carving Mesh";
@@ -76,7 +77,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "805e38d058aaf24784a5a780d3e104c4";
     float GlowIntensity_Glow_E20983104900FF1AA1B7E19B0232B66F;
-    ETimelineDirection GlowIntensity__Direction_E20983104900FF1AA1B7E19B0232B66F;
+    TEnum<ETimelineDirection> GlowIntensity__Direction_E20983104900FF1AA1B7E19B0232B66F;
     class UTimelineComponent* GlowIntensity;
     float SpawnRadius;
     int NumShootersKilledToOpen;

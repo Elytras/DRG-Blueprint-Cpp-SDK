@@ -39,9 +39,9 @@ public:
     static constexpr const char* Content_Size__UeName = "Content Size";
     float Content_Blur_Strength;
     static constexpr const char* Content_Blur_Strength__UeName = "Content Blur Strength";
-    EHorizontalAlignment Content_HAlign;
+    TEnum<EHorizontalAlignment> Content_HAlign;
     static constexpr const char* Content_HAlign__UeName = "Content HAlign";
-    EVerticalAlignment Content_VAlign;
+    TEnum<EVerticalAlignment> Content_VAlign;
     static constexpr const char* Content_VAlign__UeName = "Content VAlign";
     FMargin Content_Padding;
     static constexpr const char* Content_Padding__UeName = "Content Padding";

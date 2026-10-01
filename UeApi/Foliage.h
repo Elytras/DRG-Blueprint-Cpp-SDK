@@ -104,6 +104,7 @@ class UInteractiveFoliageComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Foliage", "InteractiveFoliageComponent");
+    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
 };
 
 class UFoliageInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent
@@ -135,11 +136,11 @@ public:
     float Radius;
     bool bSingleInstanceModeOverrideRadius;
     float SingleInstanceModeRadius;
-    EFoliageScaling Scaling;
+    TEnum<EFoliageScaling> Scaling;
     FFloatInterval ScaleX;
     FFloatInterval ScaleY;
     FFloatInterval ScaleZ;
-    EFoliageVertexColorMask VertexColorMask;
+    TEnum<EFoliageVertexColorMask> VertexColorMask;
     float VertexColorMaskThreshold;
     bool VertexColorMaskInvert;
     FFloatInterval ZOffset;
@@ -158,7 +159,7 @@ public:
     FVector CollisionScale;
     FBoxSphereBounds MeshBounds;
     FVector LowBoundOriginRadius;
-    EComponentMobility Mobility;
+    TEnum<EComponentMobility> Mobility;
     FInt32Interval CullDistance;
     bool bEnableStaticLighting;
     bool CastShadow;
@@ -170,15 +171,15 @@ public:
     bool bReceivesDecals;
     bool bOverrideLightMapRes;
     int OverriddenLightMapRes;
-    ELightmapType LightmapType;
+    TEnum<ELightmapType> LightmapType;
     bool bUseAsOccluder;
     bool bVisibleInRayTracing;
     bool bEvaluateWorldPositionOffset;
     FBodyInstance BodyInstance;
-    EHasCustomNavigableGeometry CustomNavigableGeometry;
+    TEnum<EHasCustomNavigableGeometry> CustomNavigableGeometry;
     FLightingChannels LightingChannels;
     bool bRenderCustomDepth;
-    ERendererStencilMask CustomDepthStencilWriteMask;
+    TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
     int CustomDepthStencilValue;
     int TranslucencySortPriority;
     float CollisionRadius;
@@ -217,7 +218,7 @@ public:
     bool bEnableDiscardOnLoad;
     TArray<class URuntimeVirtualTexture*> RuntimeVirtualTextures;
     int VirtualTextureCullMips;
-    ERuntimeVirtualTextureMainPassType VirtualTextureRenderPassType;
+    TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
 };
 
 class UFoliageType_Actor : public UFoliageType

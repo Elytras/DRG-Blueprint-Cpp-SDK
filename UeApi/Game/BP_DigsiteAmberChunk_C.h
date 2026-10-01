@@ -16,6 +16,7 @@ class BP_DigsiteAmberChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Carved/Amber/BP_DigsiteAmberChunk", "BP_DigsiteAmberChunk_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "e702c39b958a734ea44e46656126f300";

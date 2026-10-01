@@ -1107,9 +1107,9 @@ class UKismetAnimationLibrary : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "KismetAnimationLibrary");
     static float K2_CalculateVelocityFromPositionHistory(float DeltaSeconds, FVector Position, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax);
-    static float K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, FName SocketOrBoneName, FName ReferenceSocketOrBone, ERelativeTransformSpace SocketSpace, FVector OffsetInBoneSpace, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax, EEasingFuncType EasingType, const FRuntimeFloatCurve& CustomCurve);
+    static float K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, FName SocketOrBoneName, FName ReferenceSocketOrBone, TEnum<ERelativeTransformSpace> SocketSpace, FVector OffsetInBoneSpace, FPositionHistory& History, int NumberOfSamples, float VelocityMin, float VelocityMax, TEnum<EEasingFuncType> EasingType, const FRuntimeFloatCurve& CustomCurve);
     UE_PURE static FVector K2_DirectionBetweenSockets(class USkeletalMeshComponent* Component, FName SocketOrBoneNameFrom, FName SocketOrBoneNameTo);
-    UE_PURE static float K2_DistanceBetweenTwoSocketsAndMapRange(class USkeletalMeshComponent* Component, FName SocketOrBoneNameA, ERelativeTransformSpace SocketSpaceA, FName SocketOrBoneNameB, ERelativeTransformSpace SocketSpaceB, bool bRemapRange, float InRangeMin, float InRangeMax, float OutRangeMin, float OutRangeMax);
+    UE_PURE static float K2_DistanceBetweenTwoSocketsAndMapRange(class USkeletalMeshComponent* Component, FName SocketOrBoneNameA, TEnum<ERelativeTransformSpace> SocketSpaceA, FName SocketOrBoneNameB, TEnum<ERelativeTransformSpace> SocketSpaceB, bool bRemapRange, float InRangeMin, float InRangeMax, float OutRangeMin, float OutRangeMax);
     static float K2_EndProfilingTimer(bool bLog, FString LogPrefix);
     UE_PURE static FTransform K2_LookAt(const FTransform& CurrentTransform, const FVector& TargetPosition, FVector LookAtVector, bool bUseUpVector, FVector UpVector, float ClampConeInDegree);
     UE_PURE static float K2_MakePerlinNoiseAndRemap(float Value, float RangeOutMin, float RangeOutMax);
@@ -1122,6 +1122,7 @@ class UAnimSequencerInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "AnimSequencerInstance");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
 };
 
 class UAnimNotify_PlayMontageNotify : public UAnimNotify

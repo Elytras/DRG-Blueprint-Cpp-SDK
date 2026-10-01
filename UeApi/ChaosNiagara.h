@@ -99,7 +99,7 @@ class UNiagaraDataInterfaceChaosDestruction : public UNiagaraDataInterface
 public:
     UE_CLASS("/Script/ChaosNiagara", "NiagaraDataInterfaceChaosDestruction");
     TSet<class AChaosSolverActor*> ChaosSolverActorSet;
-    EDataSourceTypeEnum DataSourceType;
+    TEnum<EDataSourceTypeEnum> DataSourceType;
     int DataProcessFrequency;
     int MaxNumberOfDataEntriesToSpawn;
     bool DoSpawn;
@@ -113,14 +113,14 @@ public:
     FVector2D VolumeToSpawnMinMax;
     FVector2D SolverTimeToSpawnMinMax;
     int SurfaceTypeToSpawn;
-    ELocationFilteringModeEnum LocationFilteringMode;
-    ELocationXToSpawnEnum LocationXToSpawn;
+    TEnum<ELocationFilteringModeEnum> LocationFilteringMode;
+    TEnum<ELocationXToSpawnEnum> LocationXToSpawn;
     FVector2D LocationXToSpawnMinMax;
-    ELocationYToSpawnEnum LocationYToSpawn;
+    TEnum<ELocationYToSpawnEnum> LocationYToSpawn;
     FVector2D LocationYToSpawnMinMax;
-    ELocationZToSpawnEnum LocationZToSpawn;
+    TEnum<ELocationZToSpawnEnum> LocationZToSpawn;
     FVector2D LocationZToSpawnMinMax;
-    EDataSortTypeEnum DataSortingType;
+    TEnum<EDataSortTypeEnum> DataSortingType;
     bool bGetExternalCollisionData;
     bool DoSpatialHash;
     FVector SpatialHashVolumeMin;
@@ -133,14 +133,14 @@ public:
     bool bGetExternalTrailingData;
     FVector2D RandomPositionMagnitudeMinMax;
     float InheritedVelocityMultiplier;
-    ERandomVelocityGenerationTypeEnum RandomVelocityGenerationType;
+    TEnum<ERandomVelocityGenerationTypeEnum> RandomVelocityGenerationType;
     FVector2D RandomVelocityMagnitudeMinMax;
     float SpreadAngleMax;
     FVector VelocityOffsetMin;
     FVector VelocityOffsetMax;
     FVector2D FinalVelocityMagnitudeMinMax;
     float MaxLatency;
-    EDebugTypeEnum DebugType;
+    TEnum<EDebugTypeEnum> DebugType;
     int LastSpawnedPointID;
     float LastSpawnTime;
     float SolverTime;

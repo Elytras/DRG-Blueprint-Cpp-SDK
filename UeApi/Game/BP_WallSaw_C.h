@@ -54,7 +54,7 @@ public:
     static constexpr const char* DefaultSceneRoot__UeScsNode = "f22ff172edcea1458e47e515d50bbfba";
     float SpawnWobble_NewTrack;
     static constexpr const char* SpawnWobble_NewTrack__UeName = "SpawnWobble_NewTrack_0_8C6FC6E8454070F73FE4D1B7EC977E67";
-    ETimelineDirection SpawnWobble__Direction_8C6FC6E8454070F73FE4D1B7EC977E67;
+    TEnum<ETimelineDirection> SpawnWobble__Direction_8C6FC6E8454070F73FE4D1B7EC977E67;
     class UTimelineComponent* SpawnWobble;
     float MaxPotentialLifetimeDamage;
     float DurationBeforeExpiration;

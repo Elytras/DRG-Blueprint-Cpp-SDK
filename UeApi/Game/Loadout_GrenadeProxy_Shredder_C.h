@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Shredder_C : public Game::WeaponsNTools::Grenades::Lo
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/Loadout_GrenadeProxy_Shredder", "Loadout_GrenadeProxy_Shredder_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

@@ -22,6 +22,7 @@ class BP_GreatEggHunt_ThrowableBunny_C : public ABasicDepositableItem
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Easter/BP_GreatEggHunt_ThrowableBunny", "BP_GreatEggHunt_ThrowableBunny_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BoxCollision;/Script/FSD.CarriableComponent Carriable;/Script/FSD.FirstPersonStaticMeshComponent FirstPersonMesh;/Script/FSD.InstantUsable Usable;/Script/Engine.SphereComponent UseSphere;/Script/Engine.StaticMeshComponent ThirdpersonMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     static constexpr const char* outline__UeScsNode = "630dfdc601a2424eaf0755dde2cb2d84";

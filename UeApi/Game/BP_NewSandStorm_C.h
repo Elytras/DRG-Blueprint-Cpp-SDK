@@ -19,10 +19,10 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_NewSandStorm_C;
     static constexpr const char* UberGraphFrame_BP_NewSandStorm_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_1C9D7E9C43D38F352386738892203941;
-    ETimelineDirection Fadeout__Direction_1C9D7E9C43D38F352386738892203941;
+    TEnum<ETimelineDirection> Fadeout__Direction_1C9D7E9C43D38F352386738892203941;
     class UTimelineComponent* FadeOut;
     float Fadin_ZeroToOne_D260EBF6476C34297BC10A928022C9AF;
-    ETimelineDirection Fadin__Direction_D260EBF6476C34297BC10A928022C9AF;
+    TEnum<ETimelineDirection> Fadin__Direction_D260EBF6476C34297BC10A928022C9AF;
     class UTimelineComponent* Fadin;
     void ExecuteUbergraph_BP_NewSandStorm(int EntryPoint);
     void EndEffect();

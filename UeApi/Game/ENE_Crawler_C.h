@@ -28,6 +28,7 @@ class ENE_Crawler_C : public Game::Enemies::CoreSpawn::BP_CoreSpawnEnemy_C
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/ENE_Crawler", "ENE_Crawler_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeathComponent Death;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent PawnAlert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Crawler_C;
     static constexpr const char* UberGraphFrame_ENE_Crawler_C__UeName = "UberGraphFrame";
     class UArmorHealthDamageComponent* ArmorHealthDamage;

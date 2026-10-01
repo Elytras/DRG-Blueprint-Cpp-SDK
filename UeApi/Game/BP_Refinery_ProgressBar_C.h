@@ -31,9 +31,9 @@ public:
     class UMaterialInstanceDynamic* ProgressMaterial;
     float Progress;
     class AFSDRefinery* Refinery;
-    ERefineryState State;
+    TEnum<ERefineryState> State;
     void ExecuteUbergraph_BP_Refinery_ProgressBar(int EntryPoint);
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     void ReceiveBeginPlay();
     void Completed_321D738B4128D90EE5392DBACA2273B4(float DeltaTime, float NormalizedTime);
     void OnTick_321D738B4128D90EE5392DBACA2273B4(float DeltaTime, float NormalizedTime);

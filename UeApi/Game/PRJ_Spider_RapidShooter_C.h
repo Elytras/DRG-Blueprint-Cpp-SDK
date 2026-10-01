@@ -19,6 +19,7 @@ class PRJ_Spider_RapidShooter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/RapidShooter/PRJ_Spider_RapidShooter", "PRJ_Spider_RapidShooter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "7cdfce11aa2ff5439618ab6d963d8da5";

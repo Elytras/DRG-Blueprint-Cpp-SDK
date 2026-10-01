@@ -49,6 +49,7 @@ public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/ENE_WalkingPlagueheart", "ENE_WalkingPlagueheart_C");
     using BP_PlagueHeartShield_Base_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C;
     using BP_WalkingPlagueheart_SlimeTrailPuddle_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_WalkingPlagueheart_C;
     static constexpr const char* UberGraphFrame_ENE_WalkingPlagueheart_C__UeName = "UberGraphFrame";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos2;
@@ -196,14 +197,14 @@ public:
     void KillA();
     void OnHeartDeposited();
     void OnShieldLaserpointer();
-    void BndEvt__ENE_WalkingPlagueheart_Outline_K2Node_ComponentBoundEvent_1_OutlineChanged__DelegateSignature(EOutline InOutline);
+    void BndEvt__ENE_WalkingPlagueheart_Outline_K2Node_ComponentBoundEvent_1_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     void spawned(BP_WalkingPlagueheart_SlimeTrailPuddle_C* puddle);
     void UpdateDeadShield(class UMeshComponent* Head, FName BoneName);
     void BndEvt__ENE_WalkingPlagueheart_ArmorHealthDamage_K2Node_ComponentBoundEvent_4_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void OnPointVacuumed_Event();
     void OnItemUnequipped_Event(class AItem* Item);
     void OnCleaningPodLaunched();
-    void BndEvt__ENE_WalkingPlagueheart_SpawnCleaningPodUsable_K2Node_ComponentBoundEvent_9_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__ENE_WalkingPlagueheart_SpawnCleaningPodUsable_K2Node_ComponentBoundEvent_9_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void CheckDistanceToPlayers();
     void OnPointFoamed();
     UE_MULTICAST void UpdateHealth(bool Main, bool Sub1, bool Sub2, bool Sub3);

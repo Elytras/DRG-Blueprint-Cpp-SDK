@@ -32,6 +32,7 @@ class BP_Anniversary_Trophy8_InCave_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Anniversary/BP_Anniversary_Trophy8_InCave", "BP_Anniversary_Trophy8_InCave_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_LunarRabbit_Glitter;
     static constexpr const char* NS_LunarRabbit_Glitter__UeScsNode = "a93c1a35f59a4b4992e282b2a8272ce3";
@@ -81,7 +82,7 @@ public:
     void CheckForPlayersNearby();
     void Throw(FVector force);
     void OnAttachChanged(bool Attached);
-    void BndEvt__BP_InCaveOktoberfestMug_Usable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_InCaveOktoberfestMug_Usable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_InCaveOktoberfestMug_Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     void BndEvt__BP_InCaveOktoberfestMug_Carriable_K2Node_ComponentBoundEvent_3_CarriableEvent__DelegateSignature();
     void UpdateAttachState(bool Attached);

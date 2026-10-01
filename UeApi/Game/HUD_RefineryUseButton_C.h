@@ -28,7 +28,7 @@ public:
     void ExecuteUbergraph_HUD_RefineryUseButton(int EntryPoint);
     void OnCanStartRefineryChanged(bool CanUse);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnRefineryStateChanged(ERefineryState InRefineryState);
+    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     UE_COSMETIC void Construct();
     void SetRefinery(class AFSDRefinery* InRefinery);
     void UpdateState();

@@ -37,7 +37,7 @@ public:
     bool bStopServiceWhenAppDeactivates;
     FString UnicastEndpoint;
     FString MulticastEndpoint;
-    EUdpMessageFormat MessageFormat;
+    TEnum<EUdpMessageFormat> MessageFormat;
     uint8 MulticastTimeToLive;
     TArray<FString> StaticEndpoints;
     bool EnableTunnel;

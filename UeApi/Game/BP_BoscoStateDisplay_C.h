@@ -40,7 +40,7 @@ public:
     void SetupFollowtargetDelegate(class ABoscoController* NewParam);
     void FollowTargetChanged(class AActor* FollowTarget);
     void ReceiveBeginPlay();
-    void SetState(EDroneAIState State);
+    void SetState(TEnum<EDroneAIState> State);
     void SetMaterial(class UMaterialInstance* NewParam);
 };
 

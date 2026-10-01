@@ -17,6 +17,7 @@ class Loadout_Detpack_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/Loadout_Detpack", "Loadout_Detpack_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
     static constexpr const char* StaticMesh__UeScsNode = "174e65c0e952864c957c8db46d7f59b2";

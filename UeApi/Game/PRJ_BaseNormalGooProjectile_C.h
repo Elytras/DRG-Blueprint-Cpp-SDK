@@ -13,6 +13,7 @@ class PRJ_BaseNormalGooProjectile_C : public Game::WeaponsNTools::GooCannon::PRJ
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BaseNormalGooProjectile", "PRJ_BaseNormalGooProjectile_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

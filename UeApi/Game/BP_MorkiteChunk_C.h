@@ -18,6 +18,7 @@ class BP_MorkiteChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Veins/ResourceChunks/BP_MorkiteChunk", "BP_MorkiteChunk_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "d9c907ce8451714c80215fd416564f97";

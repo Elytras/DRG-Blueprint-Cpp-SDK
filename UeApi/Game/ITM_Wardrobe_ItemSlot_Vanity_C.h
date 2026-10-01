@@ -25,7 +25,7 @@ public:
     using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame_ITM_Wardrobe_ItemSlot_Vanity_C;
     static constexpr const char* UberGraphFrame_ITM_Wardrobe_ItemSlot_Vanity_C__UeName = "UberGraphFrame";
-    EVanitySlot VanitySlot;
+    TEnum<EVanitySlot> VanitySlot;
     TArray<class UVanityItem*> VanityItems;
     class UTexture2D* DefaultItemIcon;
     FText DefaultItemName;

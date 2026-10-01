@@ -36,7 +36,7 @@ public:
     int NumberOfMarkers;
     void ExecuteUbergraph_BP_Hologram(int EntryPoint);
     void ReceiveBeginPlay();
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}   // namespace Game::Art::Environments::ShipTesting

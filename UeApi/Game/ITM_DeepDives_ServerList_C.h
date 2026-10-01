@@ -42,7 +42,7 @@ public:
     int UpdateIndex;
     TMulticastInlineDelegate<void(FBlueprintSessionResult Session)> OnJoinServer;
     void ExecuteUbergraph_ITM_DeepDives_ServerList(int EntryPoint);
-    void OnIsUGCAllowed(class APlayerState* CheckedPlayerState, EBlueprintableUserPrivileges CheckedPrivilege, EBlueprintablePrivilegeResults PrivilegeResult);
+    void OnIsUGCAllowed(class APlayerState* CheckedPlayerState, TEnum<EBlueprintableUserPrivileges> CheckedPrivilege, TEnum<EBlueprintablePrivilegeResults> PrivilegeResult);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BeginUpdate();

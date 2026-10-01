@@ -36,7 +36,7 @@ public:
     class UScaleBox* informationscalebox;
     class UVerticalBox* OnlineRestrictedDescBox;
     class UButton* sneakyPSPlusButton;
-    EBlueprintablePrivilegeResults CurrentOnlineBlockingReason;
+    TEnum<EBlueprintablePrivilegeResults> CurrentOnlineBlockingReason;
     TArray<EBlueprintablePrivilegeResults> PreviewBlocks;
     int FontSize;
     FString ResolveInputName;
@@ -54,7 +54,7 @@ public:
     void Should_Show_Online_Restriction(bool& Should_Show);
     static constexpr const char* Should_Show_Online_Restriction__UeName = "Should Show Online Restriction";
     void SetBlockedReasonString(TArray<EBlueprintablePrivilegeResults>& InResults);
-    void SetBlockSolution(EBlueprintablePrivilegeResults priviligeResults);
+    void SetBlockSolution(TEnum<EBlueprintablePrivilegeResults> priviligeResults);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetFontSize(int inFontSize);
     void Handle_Key_Down(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);

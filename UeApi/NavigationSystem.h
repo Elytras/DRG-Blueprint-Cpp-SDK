@@ -191,7 +191,7 @@ public:
     bool bCanBeMainNavData;
     bool bCanSpawnOnRebuild;
     bool bRebuildAtRuntime;
-    ERuntimeGenerationType RuntimeGeneration;
+    TEnum<ERuntimeGenerationType> RuntimeGeneration;
     float ObservedPathsTickInterval;
     uint32 DataVersion;
     TArray<FSupportedAreaData> SupportedAreas;
@@ -330,9 +330,9 @@ public:
     UE_CLASS("/Script/NavigationSystem", "NavigationPath");
     TMulticastInlineDelegate<void(class UNavigationPath* AffectedPath, ENavPathEvent PathEvent)> PathUpdatedNotifier;
     TArray<FVector> PathPoints;
-    ENavigationOptionFlag RecalculateOnInvalidation;
+    TEnum<ENavigationOptionFlag> RecalculateOnInvalidation;
     void EnableDebugDrawing(bool bShouldDrawDebugData, FLinearColor PathColor);
-    void EnableRecalculationOnInvalidation(ENavigationOptionFlag DoRecalculation);
+    void EnableRecalculationOnInvalidation(TEnum<ENavigationOptionFlag> DoRecalculation);
     UE_PURE FString GetDebugString() const;
     UE_PURE float GetPathCost() const;
     UE_PURE float GetPathLength() const;
@@ -352,7 +352,7 @@ class ANavSystemConfigOverride : public AActor
 public:
     UE_CLASS("/Script/NavigationSystem", "NavSystemConfigOverride");
     class UNavigationSystemConfig* NavigationSystemConfig;
-    ENavSystemOverridePolicy OverridePolicy;
+    TEnum<ENavSystemOverridePolicy> OverridePolicy;
     bool bLoadOnClient;
     static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
 };
@@ -375,7 +375,7 @@ public:
     bool bSkipAgentHeightCheckWhenPickingNavData;
     bool bGenerateNavigationOnlyAroundNavigationInvokers;
     float ActiveTilesUpdateInterval;
-    ENavDataGatheringModeConfig DataGatheringMode;
+    TEnum<ENavDataGatheringModeConfig> DataGatheringMode;
     float DirtyAreaWarningSizeThreshold;
     TArray<FNavDataConfig> SupportedAgents;
     FNavAgentSelector SupportedAgentsMask;
@@ -383,7 +383,7 @@ public:
     TArray<class ANavigationData*> NavDataRegistrationQueue;
     TMulticastInlineDelegate<void(class ANavigationData* NavData)> OnNavDataRegisteredEvent;
     TMulticastInlineDelegate<void(class ANavigationData* NavData)> OnNavigationGenerationFinishedDelegate;
-    EFNavigationSystemRunMode OperationMode;
+    TEnum<EFNavigationSystemRunMode> OperationMode;
     float DirtyAreasUpdateFreq;
     static class UNavigationPath* FindPathToActorSynchronously(class UObject* WorldContextObject, const FVector& PathStart, class AActor* GoalActor, float TetherDistance, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass);
     static class UNavigationPath* FindPathToActorSynchronously(const FVector& PathStart, class AActor* GoalActor, float TetherDistance, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass);
@@ -391,10 +391,10 @@ public:
     static class UNavigationPath* FindPathToLocationSynchronously(const FVector& PathStart, const FVector& PathEnd, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass);
     UE_PURE static class UNavigationSystemV1* GetNavigationSystem(class UObject* WorldContextObject);
     UE_PURE static class UNavigationSystemV1* GetNavigationSystem();
-    static ENavigationQueryResult GetPathCost(class UObject* WorldContextObject, const FVector& PathStart, const FVector& PathEnd, float& PathCost, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
-    static ENavigationQueryResult GetPathCost(const FVector& PathStart, const FVector& PathEnd, float& PathCost, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
-    static ENavigationQueryResult GetPathLength(class UObject* WorldContextObject, const FVector& PathStart, const FVector& PathEnd, float& PathLength, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
-    static ENavigationQueryResult GetPathLength(const FVector& PathStart, const FVector& PathEnd, float& PathLength, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
+    static TEnum<ENavigationQueryResult> GetPathCost(class UObject* WorldContextObject, const FVector& PathStart, const FVector& PathEnd, float& PathCost, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
+    static TEnum<ENavigationQueryResult> GetPathCost(const FVector& PathStart, const FVector& PathEnd, float& PathCost, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
+    static TEnum<ENavigationQueryResult> GetPathLength(class UObject* WorldContextObject, const FVector& PathStart, const FVector& PathEnd, float& PathLength, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
+    static TEnum<ENavigationQueryResult> GetPathLength(const FVector& PathStart, const FVector& PathEnd, float& PathLength, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
     static FVector GetRandomPointInNavigableRadius(class UObject* WorldContextObject, const FVector& Origin, float Radius, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
     static FVector GetRandomPointInNavigableRadius(const FVector& Origin, float Radius, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
     static FVector GetRandomReachablePointInRadius(class UObject* WorldContextObject, const FVector& Origin, float Radius, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass);
@@ -421,7 +421,7 @@ public:
     void OnNavigationBoundsUpdated(class ANavMeshBoundsVolume* NavVolume);
     void RegisterNavigationInvoker(class AActor* Invoker, float TileGenerationRadius, float TileRemovalRadius);
     void ResetMaxSimultaneousTileGenerationJobsCount();
-    void SetGeometryGatheringMode(ENavDataGatheringModeConfig NewMode);
+    void SetGeometryGatheringMode(TEnum<ENavDataGatheringModeConfig> NewMode);
     void SetMaxSimultaneousTileGenerationJobsCount(int MaxNumberOfJobs);
     void UnregisterNavigationInvoker(class AActor* Invoker);
 };
@@ -465,7 +465,7 @@ public:
     bool bShowBestPath;
     bool bShowDiffWithPreviousStep;
     bool bShouldBeVisibleInGame;
-    ENavCostDisplay CostDisplayMode;
+    TEnum<ENavCostDisplay> CostDisplayMode;
     FVector2D TextCanvasOffset;
     bool bPathExist;
     bool bPathIsPartial;
@@ -508,7 +508,7 @@ public:
     FNavAgentSelector SupportedAgents;
     FVector LinkRelativeStart;
     FVector LinkRelativeEnd;
-    ENavLinkDirection LinkDirection;
+    TEnum<ENavLinkDirection> LinkDirection;
     bool bLinkEnabled;
     bool bNotifyWhenEnabled;
     bool bNotifyWhenDisabled;
@@ -518,7 +518,7 @@ public:
     TSubclassOf<class UNavArea> ObstacleAreaClass;
     float BroadcastRadius;
     float BroadcastInterval;
-    ECollisionChannel BroadcastChannel;
+    TEnum<ECollisionChannel> BroadcastChannel;
 };
 
 class ANavModifierVolume : public AVolume
@@ -637,8 +637,8 @@ public:
     float DefaultDrawDistance;
     float DefaultMaxSearchNodes;
     float DefaultMaxHierarchicalSearchNodes;
-    ERecastPartitioning RegionPartitioning;
-    ERecastPartitioning LayerPartitioning;
+    TEnum<ERecastPartitioning> RegionPartitioning;
+    TEnum<ERecastPartitioning> LayerPartitioning;
     int RegionChunkSplits;
     int LayerChunkSplits;
     bool bSortNavigationAreasByCost;

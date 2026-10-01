@@ -44,7 +44,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "5191e7d549b41641bba18c04feb742ff";
     float GrowInnerBoils_BoilScale_CC6321444C8D21F72E6A978121093A32;
-    ETimelineDirection GrowInnerBoils__Direction_CC6321444C8D21F72E6A978121093A32;
+    TEnum<ETimelineDirection> GrowInnerBoils__Direction_CC6321444C8D21F72E6A978121093A32;
     class UTimelineComponent* GrowInnerBoils;
     int Stage;
     static constexpr const char* Stage__Replicated = "OnRep_Stage:";

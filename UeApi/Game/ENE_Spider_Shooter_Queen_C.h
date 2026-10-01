@@ -20,6 +20,7 @@ class ENE_Spider_Shooter_Queen_C : public Game::Enemies::Spider::ENE_SpiderBase_
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ShooterQueen/ENE_Spider_Shooter_Queen", "ENE_Spider_Shooter_Queen_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Shooter_Queen_C;
     static constexpr const char* UberGraphFrame_ENE_Spider_Shooter_Queen_C__UeName = "UberGraphFrame";
     class UProjectileAttackComponent* ProjectileAttack;

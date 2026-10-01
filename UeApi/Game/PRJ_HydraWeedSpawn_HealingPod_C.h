@@ -13,6 +13,7 @@ class PRJ_HydraWeedSpawn_HealingPod_C : public Game::Enemies::HydraWeed::PRJ_Hyd
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/PRJ_HydraWeedSpawn_HealingPod", "PRJ_HydraWeedSpawn_HealingPod_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

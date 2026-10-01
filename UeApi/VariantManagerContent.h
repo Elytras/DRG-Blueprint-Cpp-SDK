@@ -98,7 +98,7 @@ public:
     bool bHasRecordedData;
     class UClass* LeafPropertyClass;
     TArray<uint8> ValueBytes;
-    EPropertyValueCategory PropCategory;
+    TEnum<EPropertyValueCategory> PropCategory;
     UE_PURE FString GetFullDisplayString() const;
     UE_PURE FText GetPropertyTooltip() const;
     UE_PURE bool HasRecordedData() const;

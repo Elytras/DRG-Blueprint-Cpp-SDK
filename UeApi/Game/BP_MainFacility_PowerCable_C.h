@@ -15,6 +15,7 @@ class BP_MainFacility_PowerCable_C : public AFacilityGeneratorLine
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/GeneratorLine/BP_MainFacility_PowerCable", "BP_MainFacility_PowerCable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SplineComponent SplineComponent;/Script/FSD.SplineDecoratorComponent SplineDecorator";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     static constexpr const char* SimpleObjectInfo__UeScsNode = "c5303849b0b9154f9050de2dea5532a0";
 };

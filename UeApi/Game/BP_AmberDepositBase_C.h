@@ -48,6 +48,7 @@ public:
     using BP_LiftPod_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftPod_C;
     using EWC_Excavation_ExcavationPhase_C = Game::Enemies::Waves::WaveControllers::EWC_Excavation_ExcavationPhase_C;
     using HUD_GameEvent_Excavation_C = Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Excavation_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBillboardComponent* LiftPodFallback;
     static constexpr const char* LiftPodFallback__UeScsNode = "8490df5fdc9beb4084cfbd27760c3355";
@@ -424,7 +425,7 @@ public:
     class UPointLightComponent* PointLight;
     static constexpr const char* PointLight__UeScsNode = "05fa00492e0b384386bdb2c6d3cbc93f";
     float LaunchRotation_Progress_22E18E2D4B75438E06CE05B2FCE1DB89;
-    ETimelineDirection LaunchRotation__Direction_22E18E2D4B75438E06CE05B2FCE1DB89;
+    TEnum<ETimelineDirection> LaunchRotation__Direction_22E18E2D4B75438E06CE05B2FCE1DB89;
     class UTimelineComponent* LaunchRotation;
     float LaunchDuration;
     FTransform PreLaunchTransform;

@@ -18,6 +18,7 @@ class BP_Plague_Spore_Tower_InfectionSource_C : public Game::GameElements::Plagu
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower_InfectionSource", "BP_Plague_Spore_Tower_InfectionSource_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_Plague_Spore_Tower_InfectionSource_C;
     static constexpr const char* UberGraphFrame_BP_Plague_Spore_Tower_InfectionSource_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* MeteoritePath4;

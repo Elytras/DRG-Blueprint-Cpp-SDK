@@ -24,6 +24,7 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/EVENT_MeteorDefence", "EVENT_MeteorDefence_C");
     using EWC_PlagueMeteorDefence_C = Game::Enemies::Waves::WaveControllers::EWC_PlagueMeteorDefence_C;
     using HUD_RockCracker_Event_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
     static constexpr const char* Audio__UeScsNode = "bc06ffc6444e5443869cc339e6356bd3";
@@ -46,7 +47,7 @@ public:
     int NumberToSpawn;
     void ExecuteUbergraph_EVENT_MeteorDefence(int EntryPoint);
     void OnEventFinished(bool eventSuccess);
-    void PodRevived(class APlayerCharacter* User, EInputKeys Key);
+    void PodRevived(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PodDied(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     void OnRep_Progress();

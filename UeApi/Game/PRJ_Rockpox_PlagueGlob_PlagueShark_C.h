@@ -13,6 +13,7 @@ class PRJ_Rockpox_PlagueGlob_PlagueShark_C : public Game::Enemies::Plague::PRJ_R
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShark/PRJ_Rockpox_PlagueGlob_PlagueShark", "PRJ_Rockpox_PlagueGlob_PlagueShark_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShark

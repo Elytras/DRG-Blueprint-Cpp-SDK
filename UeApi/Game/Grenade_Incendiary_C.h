@@ -24,6 +24,7 @@ class Grenade_Incendiary_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_B
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Incendiary/Grenade_Incendiary", "Grenade_Incendiary_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Incendiary_C;
     static constexpr const char* UberGraphFrame_Grenade_Incendiary_C__UeName = "UberGraphFrame";
     class UDamageComponent* Damage;

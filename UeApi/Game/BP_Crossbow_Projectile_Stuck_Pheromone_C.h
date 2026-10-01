@@ -13,6 +13,7 @@ class BP_Crossbow_Projectile_Stuck_Pheromone_C : public Game::WeaponsNTools::Cro
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Pheromone", "BP_Crossbow_Projectile_Stuck_Pheromone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

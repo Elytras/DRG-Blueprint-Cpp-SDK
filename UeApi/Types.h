@@ -75,6 +75,19 @@ template <class T> struct TSubclassOf {
   operator UClass *() const { return Ptr; }
 };
 
+/* An enum that knows its names: `TEnum<EMood> Mood = EMood::Calm;` compiles to a plain EMood - the same property,
+   the same bytes - and converts both ways, so it switches, compares and assigns like one. `Mood.Name()` is the
+   enumerator's name and `Mood.String()` its display name, read off the UEnum by the engine (KismetNodeHelperLibrary's
+   GetEnumeratorName / GetEnumeratorUserFriendlyName, what the editor's Enum to Name / Enum to String nodes call).
+   UeApi spells every enum field and return value this way. A uint8 enum only: those two take a uint8. */
+template <class E> struct TEnum {
+  TEnum() = default;
+  TEnum(E) {}
+  operator E() const { return E(); }
+  FName   Name() const;
+  FString String() const;
+};
+
 /* A soft pointer to a subclass passes where one to its parent is wanted, as UE's converts. Conv.h
    adds Kismet's conversions: from the object (the class) it names and from a soft path, to its path
    as a string, and back with an explicit operator, `(AItem *)Soft`, null unless it is loaded. */

@@ -17,6 +17,7 @@ class PRJ_DrippingPlant_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Landscape/CaveAssets/Foliage/DrippingPlant/PRJ_DrippingPlant", "PRJ_DrippingPlant_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "9813815aee9b9645aefbf86e4778d8b3";

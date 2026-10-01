@@ -24,6 +24,7 @@ class BP_S05_CoreSpawnTank_Big_C : public ADisplayCase
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/S05_SetDressing/BP_S05_CoreSpawnTank_Big", "BP_S05_CoreSpawnTank_Big_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_CoreSpawnTank_React;
     static constexpr const char* NS_CoreSpawnTank_React__UeScsNode = "770185e2943a3f4f865ac89f044a8e53";
@@ -57,7 +58,7 @@ public:
     void ExecuteUbergraph_BP_S05_CoreSpawnTank_Big(int EntryPoint);
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player, bool ShouldReact, bool ShouldStartMC);
     void OnKnock(class APlayerCharacter* Player);
-    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UpdateMeshesForHolidays();
     void GetSeasonBarrelSpawnChance(float& Out);

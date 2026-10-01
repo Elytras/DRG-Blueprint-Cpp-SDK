@@ -79,7 +79,7 @@ public:
     void OnOptionalModsFetched(const TArray<FString>& ModsToEnable_0, const TArray<FString>& ModsToInstall_0);
     void OnRequiredModsFetched(const TArray<FString>& ModsToEnable_0, const TArray<FString>& ModsToInstall_0);
     void SetHasHiddenMods();
-    void OnErrorInstallingMod(FString ModName, EUGCPackageError ErrorType);
+    void OnErrorInstallingMod(FString ModName, TEnum<EUGCPackageError> ErrorType);
     void RequestDependenciesOfDependencies();
     void Cancel();
     UE_COSMETIC void Construct();

@@ -19,6 +19,7 @@ class BP_LiftRocketCarriable_C : public Game::GameElements::Resources::Embedded:
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_LiftRocketCarriable", "BP_LiftRocketCarriable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_LiftRocketCarriable_C;
     static constexpr const char* UberGraphFrame_BP_LiftRocketCarriable_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;

@@ -19,6 +19,7 @@ class PRJ_Rockpox_PlagueGlob_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PRJ_Rockpox_PlagueGlob", "PRJ_Rockpox_PlagueGlob_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Plague_Projectile_Trail;
     static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "2fba38529e487f4da9e40d18d36ac90f";

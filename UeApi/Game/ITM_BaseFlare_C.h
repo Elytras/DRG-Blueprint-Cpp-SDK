@@ -44,7 +44,7 @@ public:
     static constexpr const char* Box__UeScsNode = "ba8f7160c9410649b911af46ee3b5a9b";
     float Timeline_0_BrightnessShadows_14DB2CD947ED9EE06017768CF842D625;
     float Timeline_0_Brightness_14DB2CD947ED9EE06017768CF842D625;
-    ETimelineDirection Timeline_0__Direction_14DB2CD947ED9EE06017768CF842D625;
+    TEnum<ETimelineDirection> Timeline_0__Direction_14DB2CD947ED9EE06017768CF842D625;
     class UTimelineComponent* Timeline_0;
     float BaseIntensity;
     void ExecuteUbergraph_ITM_BaseFlare(int EntryPoint);

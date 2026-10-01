@@ -594,12 +594,12 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScene3DAttachSection");
     FName AttachSocketName;
     FName AttachComponentName;
-    EAttachmentRule AttachmentLocationRule;
-    EAttachmentRule AttachmentRotationRule;
-    EAttachmentRule AttachmentScaleRule;
-    EDetachmentRule DetachmentLocationRule;
-    EDetachmentRule DetachmentRotationRule;
-    EDetachmentRule DetachmentScaleRule;
+    TEnum<EAttachmentRule> AttachmentLocationRule;
+    TEnum<EAttachmentRule> AttachmentRotationRule;
+    TEnum<EAttachmentRule> AttachmentScaleRule;
+    TEnum<EDetachmentRule> DetachmentLocationRule;
+    TEnum<EDetachmentRule> DetachmentRotationRule;
+    TEnum<EDetachmentRule> DetachmentScaleRule;
 };
 
 class UMovieScene3DConstraintTrack : public UMovieSceneTrack
@@ -620,8 +620,8 @@ class UMovieScene3DPathSection : public UMovieScene3DConstraintSection
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScene3DPathSection");
     FMovieSceneFloatChannel TimingCurve;
-    EMovieScene3DPathSection_Axis FrontAxisEnum;
-    EMovieScene3DPathSection_Axis UpAxisEnum;
+    TEnum<EMovieScene3DPathSection_Axis> FrontAxisEnum;
+    TEnum<EMovieScene3DPathSection_Axis> UpAxisEnum;
     bool bFollow;
     bool bReverse;
     bool bForceUpright;
@@ -639,7 +639,7 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventTrack");
     bool bFireEventsWhenForwards;
     bool bFireEventsWhenBackwards;
-    EFireEventsAtPosition EventPosition;
+    TEnum<EFireEventsAtPosition> EventPosition;
     TArray<class UMovieSceneSection*> Sections;
 };
 
@@ -798,7 +798,7 @@ public:
     FMovieSceneCameraShakeSectionData ShakeData;
     TSubclassOf<class UCameraShakeBase> ShakeClass;
     float PlayScale;
-    ECameraShakePlaySpace PlaySpace;
+    TEnum<ECameraShakePlaySpace> PlaySpace;
     FRotator UserDefinedPlaySpace;
 };
 
@@ -813,12 +813,12 @@ class UMovieSceneLevelVisibilitySection : public UMovieSceneSection
 {
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneLevelVisibilitySection");
-    ELevelVisibility Visibility;
+    TEnum<ELevelVisibility> Visibility;
     TArray<FName> LevelNames;
     void SetLevelNames(const TArray<FName>& InLevelNames);
-    void SetVisibility(ELevelVisibility InVisibility);
+    void SetVisibility(TEnum<ELevelVisibility> InVisibility);
     UE_PURE TArray<FName> GetLevelNames() const;
-    UE_PURE ELevelVisibility GetVisibility() const;
+    UE_PURE TEnum<ELevelVisibility> GetVisibility() const;
 };
 
 class UMovieSceneCameraShakeSourceShakeTrack : public UMovieSceneNameableTrack

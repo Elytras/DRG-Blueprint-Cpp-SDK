@@ -13,6 +13,7 @@ class ENE_Spider_Grunt_Guard_Ice_C : public Game::Enemies::Spider::Grunt::Guard:
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Guard/ENE_Spider_Grunt_Guard_Ice", "ENE_Spider_Grunt_Guard_Ice_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Guard

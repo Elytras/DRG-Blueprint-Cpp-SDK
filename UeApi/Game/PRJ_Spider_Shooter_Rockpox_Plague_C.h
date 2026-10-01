@@ -19,6 +19,7 @@ class PRJ_Spider_Shooter_Rockpox_Plague_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShooter/PRJ_Spider_Shooter_Rockpox_Plague", "PRJ_Spider_Shooter_Rockpox_Plague_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "3968100e7023c342984d9b1dcbca46bc";

@@ -32,7 +32,7 @@ public:
     float SlapStrength;
     void ExecuteUbergraph_BP_SummerEvent_PalmTree(int EntryPoint);
     UE_MULTICAST void ImpulseSlapTree(FVector_NetQuantize PlayerPosition);
-    void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

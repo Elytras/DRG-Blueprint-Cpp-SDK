@@ -14,6 +14,7 @@ class AIC_Donkey_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/AIC_Donkey", "AIC_Donkey_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Donkey(int EntryPoint);
     void OnOverlapsChanged(int OverlapCount);

@@ -17,6 +17,7 @@ class BP_PropHunt_PaperStack_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_PaperStack", "BP_PropHunt_PaperStack_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh4;
     static constexpr const char* StaticMesh4__UeScsNode = "02347198438bcd4aa049701c77e29e9d";

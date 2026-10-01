@@ -30,7 +30,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
     float TriggerGrowth_Size_1DEB14DB4E8233F87D25DBAB1B0C1325;
-    ETimelineDirection TriggerGrowth__Direction_1DEB14DB4E8233F87D25DBAB1B0C1325;
+    TEnum<ETimelineDirection> TriggerGrowth__Direction_1DEB14DB4E8233F87D25DBAB1B0C1325;
     class UTimelineComponent* TriggerGrowth;
     float LifeTime;
     float ParticleDeactivationAdvance;

@@ -19,6 +19,7 @@ class ITM_SupplyDrop_C : public ARessuplyPodItem
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/ITM_SupplyDrop", "ITM_SupplyDrop_C");
     using OnScreenIndicator_SupplyDrop_Order_C = Game::UI::OnScreenIndicators::OnScreenIndicator_SupplyDrop_Order_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class AItemMarker* Marker;
     OnScreenIndicator_SupplyDrop_Order_C* Widget;

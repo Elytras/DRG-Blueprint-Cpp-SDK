@@ -31,6 +31,7 @@ class BP_SmallMeteor_C : public APlagueMeteor
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/MeteorShower/BP_SmallMeteor", "BP_SmallMeteor_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ImpactDamgage;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent MeteorMesh;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ImpactCraterCarver1;
     static constexpr const char* ImpactCraterCarver1__UeScsNode = "2baf9e72dcb6754690c1bcb845ee06b7";

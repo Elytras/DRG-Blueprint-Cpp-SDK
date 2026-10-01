@@ -25,6 +25,7 @@ class WPN_Autocannon_C : public AAutoCannon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/WPN_Autocannon", "WPN_Autocannon_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* ParticleSystem;
     static constexpr const char* ParticleSystem__UeScsNode = "b7f52b0f81fee84ea887e2485547541d";

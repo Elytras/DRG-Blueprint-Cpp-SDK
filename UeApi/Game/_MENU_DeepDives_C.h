@@ -43,7 +43,7 @@ public:
     ITM_DeepDives_Join_C* TabPage_Join;
     ITM_DeepDives_Start_C* TabPage_Start;
     class UWidgetSwitcher* TabSwitcher;
-    ESteamServerJoinStatus ServerType;
+    TEnum<ESteamServerJoinStatus> ServerType;
     class UWidget* ActivePage;
     FTimerHandle UpdateTimeHandle;
     TSoftObjectPtr<class UDialogDataAsset> FirstTimeShout;

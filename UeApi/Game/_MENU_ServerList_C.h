@@ -148,12 +148,12 @@ public:
     TArray<ITM_ServerList_Entry_C*> ExistingEntries;
     int ActiveEntryIndex;
     TArray<float> ColumnWidths;
-    EServerSortOrder SortingMethod;
+    TEnum<EServerSortOrder> SortingMethod;
     bool SortingReversed;
     TArray<FFriendInfo> NewFriends;
     TArray<FFriendInfo> CurrentFriends;
     class UObject* CurrentFriendSession;
-    EBlueprintablePrivilegeResults CurrentOnliineBlockingReason;
+    TEnum<EBlueprintablePrivilegeResults> CurrentOnliineBlockingReason;
     TArray<FString> AllServernameWords;
     bool UGCDisallowed;
     bool isManuallySorted;
@@ -172,7 +172,7 @@ public:
     void BndEvt__Filter_ServerGameType_K2Node_ComponentBoundEvent_14_OnSelectionChanged__DelegateSignature();
     void OnJoiningFailed();
     void JoinModdedServer(FBlueprintSessionResult Session, FString Password);
-    void OnIsUGCAllowed(class APlayerState* CheckedPlayerState, EBlueprintableUserPrivileges CheckedPrivilege, EBlueprintablePrivilegeResults PrivilegeResult);
+    void OnIsUGCAllowed(class APlayerState* CheckedPlayerState, TEnum<EBlueprintableUserPrivileges> CheckedPrivilege, TEnum<EBlueprintablePrivilegeResults> PrivilegeResult);
     void CreateFriendslist();
     void FriendServerlistShouldBeUpdated();
     void FriendsListUpdated(bool bWasSuccessful, FString ErrorStr);
@@ -229,11 +229,11 @@ public:
     void AddOrUpdateEntry(const FBlueprintSessionResult& Result, FString& OutServerID, ITM_ServerList_Entry_C*& OutWidget);
     ITM_ServerList_Entry_C* GetCachedEntry();
     void CacheUnusedEntries();
-    void SetSearchDistance(ESteamSearchRegion Distance);
-    void SetServerType(ESteamServerJoinStatus ServerType);
+    void SetSearchDistance(TEnum<ESteamSearchRegion> Distance);
+    void SetServerType(TEnum<ESteamServerJoinStatus> ServerType);
     void SetSelectedServerType();
     void GetColumnWidths(TArray<float>& OutWidths);
-    void SetSortFunction(EServerSortOrder NewSortingMethod);
+    void SetSortFunction(TEnum<EServerSortOrder> NewSortingMethod);
     void GetActiveDifficulties(TArray<class UDifficultySetting*>& Array);
     void UpdateSearchOptionsFromRestrictedMission();
     void UpdateSearchOptionsFromSearchField();

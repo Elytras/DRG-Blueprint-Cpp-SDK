@@ -14,6 +14,7 @@ class AIC_Spider_Shooter_Ground_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/AIC_Spider_Shooter_Ground", "AIC_Spider_Shooter_Ground_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Shooter_Ground_C;
     static constexpr const char* UberGraphFrame_AIC_Spider_Shooter_Ground_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Shooter_Ground(int EntryPoint);

@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Modio/UI/Browser/ModioFeaturedViewWidget", "ModioFeaturedViewWidget_C");
     class UModioLoadingSpinner* ModioLoadingSpinner_101;
     class UModioRichTextBlock* ModioRichTextBlock_71;
-    class UWidget* DoCustomNavigation_0(EUINavigation Navigation_0);
+    class UWidget* DoCustomNavigation_0(TEnum<EUINavigation> Navigation_0);
 };
 
 }}}   // namespace Modio::UI::Browser

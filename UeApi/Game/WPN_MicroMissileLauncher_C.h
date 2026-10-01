@@ -26,6 +26,7 @@ class WPN_MicroMissileLauncher_C : public AMicroMissileLauncher
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/WPN_MicroMissileLauncher", "WPN_MicroMissileLauncher_C");
     using PRJ_MicroMissile_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChargedProjectileLauncherComponent* ChargedProjectileLauncher;
     static constexpr const char* ChargedProjectileLauncher__UeScsNode = "723c0da2ae451a44aa466c9619ea3f52";

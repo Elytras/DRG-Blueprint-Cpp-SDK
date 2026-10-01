@@ -25,6 +25,7 @@ class BP_MultiStageEventStarter_C : public AEventStarterButton
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter", "BP_MultiStageEventStarter_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     static constexpr const char* Sphere__UeScsNode = "2295b1c1485e5146beb7748d730bebf8";
@@ -46,7 +47,7 @@ public:
     float OriginalEmissive;
     float SoloActivationDuration;
     void ExecuteUbergraph_BP_MultiStageEventStarter(int EntryPoint);
-    void BndEvt__BP_MultiStageEventStarter_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_MultiStageEventStarter_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void OnOpenedForUse(bool wasOpened);
     void UserConstructionScript();

@@ -31,10 +31,10 @@ public:
     class UStaticMeshComponent* Stem1;
     static constexpr const char* Stem1__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
     float Timeline_1_NewCurveBase_3E1FA8E34B81F0D665577BA1BED94342;
-    ETimelineDirection Timeline_1__Direction_3E1FA8E34B81F0D665577BA1BED94342;
+    TEnum<ETimelineDirection> Timeline_1__Direction_3E1FA8E34B81F0D665577BA1BED94342;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_NewCurveBase_CE04641D46E6DB9696536A9342C5DBD1;
-    ETimelineDirection Timeline_0__Direction_CE04641D46E6DB9696536A9342C5DBD1;
+    TEnum<ETimelineDirection> Timeline_0__Direction_CE04641D46E6DB9696536A9342C5DBD1;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_BP_Collectible_Barley_B2(int EntryPoint);
     void PickedUp();

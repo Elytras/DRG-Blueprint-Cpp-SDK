@@ -31,6 +31,7 @@ class ENE_CaveLeech_C : public ACaveLeech
 {
 public:
     UE_CLASS("/Game/Enemies/CaveLeech/ENE_CaveLeech", "ENE_CaveLeech_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent TentacleHead;/Script/Engine.SkeletalMeshComponent NewMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* HeadAudio;
     static constexpr const char* HeadAudio__UeScsNode = "e91af60d73a63246b4dc25f5ccdbd4b6";
@@ -55,16 +56,16 @@ public:
     class USceneComponent* Mouth;
     static constexpr const char* Mouth__UeScsNode = "986abcf490bd354e96bee32a451e8345";
     float Light_on_Light_value_5D62893F4543BADC6EB650BB2288E402;
-    ETimelineDirection Light_on__Direction_5D62893F4543BADC6EB650BB2288E402;
+    TEnum<ETimelineDirection> Light_on__Direction_5D62893F4543BADC6EB650BB2288E402;
     class UTimelineComponent* Light_on;
     float Light_off_Light_value_FB1F6FB448F184C53818E18AA6CA6E7E;
-    ETimelineDirection Light_off__Direction_FB1F6FB448F184C53818E18AA6CA6E7E;
+    TEnum<ETimelineDirection> Light_off__Direction_FB1F6FB448F184C53818E18AA6CA6E7E;
     class UTimelineComponent* Light_off;
     float Emissive_on_Glow_value_8FD7DFD6484E2EAF8A2D1D97C4E37F6E;
-    ETimelineDirection Emissive_on__Direction_8FD7DFD6484E2EAF8A2D1D97C4E37F6E;
+    TEnum<ETimelineDirection> Emissive_on__Direction_8FD7DFD6484E2EAF8A2D1D97C4E37F6E;
     class UTimelineComponent* Emissive_on;
     float Emissive_off_Glow_value_E8DBA0094826FB48DB3D0A9B7129C074;
-    ETimelineDirection Emissive_off__Direction_E8DBA0094826FB48DB3D0A9B7129C074;
+    TEnum<ETimelineDirection> Emissive_off__Direction_E8DBA0094826FB48DB3D0A9B7129C074;
     class UTimelineComponent* Emissive_off;
     class UMaterialInstance* Emission_;
     static constexpr const char* Emission___UeName = "Emission ";
@@ -76,7 +77,7 @@ public:
     void OnFrozen(class AActor* Source);
     void OnDeath();
     void ShowHead(bool bNewVisibility);
-    void BP_OnStateChanged(ECaveLeechState NewState);
+    void BP_OnStateChanged(TEnum<ECaveLeechState> NewState);
     void ReceiveBeginPlay();
     void BP_OnBite(class UHealthComponent* TargetHealth);
     void Light_on__UpdateFunc();

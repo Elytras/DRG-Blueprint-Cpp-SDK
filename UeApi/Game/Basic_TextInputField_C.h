@@ -25,7 +25,7 @@ public:
     TMulticastInlineDelegate<void(FText Text)> OnTextChanged;
     TMulticastInlineDelegate<void(FText Text, uint8 CommitMethod)> OnTextCommitted;
     void ExecuteUbergraph_Basic_TextInputField(int EntryPoint);
-    void BndEvt__InputField_K2Node_ComponentBoundEvent_1_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, ETextCommit CommitMethod);
+    void BndEvt__InputField_K2Node_ComponentBoundEvent_1_OnEditableTextBoxCommittedEvent__DelegateSignature(const FText& Text, TEnum<ETextCommit> CommitMethod);
     void BndEvt__InputField_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature(const FText& Text);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE FText GetText();

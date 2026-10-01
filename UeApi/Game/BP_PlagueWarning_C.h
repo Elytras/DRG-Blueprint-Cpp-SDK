@@ -18,6 +18,7 @@ class BP_PlagueWarning_C : public URunningMissionBP
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/BP_PlagueWarning", "BP_PlagueWarning_C");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyGroupDescriptor* EnemyDescriptor;
     float MinSpawnTimerNoTurrets;

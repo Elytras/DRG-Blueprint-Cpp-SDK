@@ -13,6 +13,7 @@ class AFE_TP_ShieldDisruption_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/GameElements/PawnAffliction/TPEffects/AFE_TP_ShieldDisruption", "AFE_TP_ShieldDisruption_C");
+    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
 };
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects

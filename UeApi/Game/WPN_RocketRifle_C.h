@@ -20,6 +20,7 @@ class WPN_RocketRifle_C : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RocketRifle/WPN_RocketRifle", "WPN_RocketRifle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget_Ammo;
     static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";

@@ -22,6 +22,7 @@ class BP_Guntower_Module_LMG_C : public ALMGGuntoweModule
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_AimingLMG/BP_Guntower_Module_LMG", "BP_Guntower_Module_LMG_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FiringAudioComponent;/Script/FSD.DamageComponent DMGComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/FSD.HitscanComponent HitComponent;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.SceneComponent AimAtWhenNoTarget;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
     static constexpr const char* Capsule__UeScsNode = "60f4202485458f47986f8f4d1a7cd3ad";

@@ -13,6 +13,7 @@ class PRJ_FacilityturretLaser_Burst_C : public Game::GameElements::Objectives::F
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/PRJ_FacilityturretLaser_Burst", "PRJ_FacilityturretLaser_Burst_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

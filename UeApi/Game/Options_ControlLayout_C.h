@@ -23,7 +23,7 @@ public:
     class UImage* Image_Keyboard_QWERTY;
     class UWidgetSwitcher* WidgetSwitcher_Input;
     void ExecuteUbergraph_Options_ControlLayout(int EntryPoint);
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
 };
 

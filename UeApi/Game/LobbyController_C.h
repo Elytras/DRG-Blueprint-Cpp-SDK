@@ -13,6 +13,7 @@ class LobbyController_C : public APlayerController
 {
 public:
     UE_CLASS("/Game/UI/Menu_Lobby/LobbyController", "LobbyController_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0";
 };
 
 }}}   // namespace Game::UI::Menu_Lobby

@@ -17,6 +17,7 @@ class BP_ClusterFragment_MicroMissileLauncher_C : public Game::WeaponsNTools::Mi
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/BP_ClusterFragment_MicroMissileLauncher", "BP_ClusterFragment_MicroMissileLauncher_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C;
     static constexpr const char* UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C__UeName = "UberGraphFrame";
     class URotatingMovementComponent* RotatingMovement;

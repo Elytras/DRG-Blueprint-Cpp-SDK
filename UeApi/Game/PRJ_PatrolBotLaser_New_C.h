@@ -13,6 +13,7 @@ class PRJ_PatrolBotLaser_New_C : public Game::GameElements::Objectives::Facility
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/Projectiles/PRJ_PatrolBotLaser_New", "PRJ_PatrolBotLaser_New_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
 };
 
 }}}}}   // namespace Game::Enemies::RivalTech::PatrolBot::Projectiles

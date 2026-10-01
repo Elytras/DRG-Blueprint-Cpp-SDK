@@ -17,6 +17,7 @@ class Loadout_BP_Sentry_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/Loadout_BP_Sentry", "Loadout_BP_Sentry_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
     static constexpr const char* SkeletalMesh__UeScsNode = "6e9af15217564a4d936b226dc83af96d";

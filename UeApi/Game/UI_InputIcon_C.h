@@ -25,7 +25,7 @@ public:
     bool Is_Design_Time;
     static constexpr const char* Is_Design_Time__UeName = "Is Design Time";
     void ExecuteUbergraph_UI_InputIcon(int EntryPoint);
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     FName GetCurrentMenuAction(EFSDInputSource& OutSource);

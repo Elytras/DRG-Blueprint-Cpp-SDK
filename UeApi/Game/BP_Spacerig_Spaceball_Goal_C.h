@@ -26,6 +26,7 @@ class BP_Spacerig_Spaceball_Goal_C : public AGem
 {
 public:
     UE_CLASS("/Game/LevelElements/Spacerig/Spacerig_Fun/SpaceBall/BP_Spacerig_Spaceball_Goal", "BP_Spacerig_Spaceball_Goal_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget1;
     static constexpr const char* Widget1__UeScsNode = "d34e5e9872ab554ab2ca95bdfc73ea80";
@@ -74,7 +75,7 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void BndEvt__Usable_K2Node_ComponentBoundEvent_3_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_GoalsScored();
     void HandlePopUp(float DeltaTime);
     void OnRep_GoalClosedTimer();

@@ -19,6 +19,7 @@ class BP_RockpoxBomber_PlaguePuddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_RockpoxBomber_PlaguePuddle", "BP_RockpoxBomber_PlaguePuddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     class UBoxComponent* BoxTrigger;
     static constexpr const char* BoxTrigger__UeScsNode = "8411f9fbebf7264686817ed560d228f6";
     class UNiagaraComponent* NS_Plague_Goo_Puddle;

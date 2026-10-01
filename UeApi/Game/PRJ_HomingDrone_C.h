@@ -27,6 +27,7 @@ class PRJ_HomingDrone_C : public AHomingDroneBomb
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_Homing/PRJ_HomingDrone", "PRJ_HomingDrone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Homing_Drone_Jets2;
     static constexpr const char* P_Homing_Drone_Jets2__UeScsNode = "d9498dfb0d3268458258da6c1d7fd42c";

@@ -54,7 +54,7 @@ public:
     TMulticastInlineDelegate<void(class UItemSkin* Skin)> PingSkin;
     class UPlayerCharacterID* CharaterID;
     bool SkinHasNotification;
-    EItemSkinType skinType;
+    TEnum<EItemSkinType> skinType;
     TMulticastInlineDelegate<void()> OnOpened;
     bool HighlightFirstItem;
     class UItemSkin* DefaultSkin;

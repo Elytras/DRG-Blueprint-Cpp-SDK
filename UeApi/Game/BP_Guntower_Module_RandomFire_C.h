@@ -19,6 +19,7 @@ class BP_Guntower_Module_RandomFire_C : public ARandomFiringGuntowerModule
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_RandomFire/BP_Guntower_Module_RandomFire", "BP_Guntower_Module_RandomFire_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent LaserSound;/Script/FSD.DamageComponent Damage;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/Engine.ParticleSystemComponent BackBottimMuzzleEffect;/Script/Engine.ParticleSystemComponent BackMuzzleEffect;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.ParticleSystemComponent FrontBottomMuzzleEffect;/Script/Engine.ParticleSystemComponent FrontTopMuzzleEffect;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/Engine.StaticMeshComponent LaserBackBottom;/Script/Engine.StaticMeshComponent LaserBackTop;/Script/Engine.StaticMeshComponent LaserFrontBottom;/Script/Engine.StaticMeshComponent LaserFrontTop;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
     static constexpr const char* Capsule__UeScsNode = "991c6a564a70584ca5dcd91a4e3da7ff";

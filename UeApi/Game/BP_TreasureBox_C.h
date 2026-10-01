@@ -34,6 +34,7 @@ class BP_TreasureBox_C : public ATreasureBox
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/BP_TreasureBox", "BP_TreasureBox_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.OncePerPlayerUsableComponent CollectUsable;/Script/FSD.RepairableComponent Repairable;/Script/FSD.RepairableUsable RepairUsable;/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent HammeringUsable;/Script/Engine.SkeletalMeshComponent BoxMesh;/Script/Engine.StaticMeshComponent MiddlePlane;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
     static constexpr const char* TerrainDetect3__UeScsNode = "910657373c694445a9a5794b25cdef2b";
@@ -74,16 +75,16 @@ public:
     static constexpr const char* BackPlane__UeScsNode = "9569668a157ece48bc54745cf7aef228";
     float TurnDownLight_NewTrack;
     static constexpr const char* TurnDownLight_NewTrack__UeName = "TurnDownLight_NewTrack_0_1A0AF79145F35FAD9E2421B320EBDF90";
-    ETimelineDirection TurnDownLight__Direction_1A0AF79145F35FAD9E2421B320EBDF90;
+    TEnum<ETimelineDirection> TurnDownLight__Direction_1A0AF79145F35FAD9E2421B320EBDF90;
     class UTimelineComponent* TurnDownLight;
     float TurnUpLight_NewTrack;
     static constexpr const char* TurnUpLight_NewTrack__UeName = "TurnUpLight_NewTrack_0_7FB98785445BF3786932D7B67BEC0DF8";
-    ETimelineDirection TurnUpLight__Direction_7FB98785445BF3786932D7B67BEC0DF8;
+    TEnum<ETimelineDirection> TurnUpLight__Direction_7FB98785445BF3786932D7B67BEC0DF8;
     class UTimelineComponent* TurnUpLight;
     float Grow_Hologram_Y_9A21ED754CE563FC34120DB5BCEE177C;
     float Grow_Hologram_X_9A21ED754CE563FC34120DB5BCEE177C;
     float Grow_Hologram_Z_9A21ED754CE563FC34120DB5BCEE177C;
-    ETimelineDirection Grow_Hologram__Direction_9A21ED754CE563FC34120DB5BCEE177C;
+    TEnum<ETimelineDirection> Grow_Hologram__Direction_9A21ED754CE563FC34120DB5BCEE177C;
     class UTimelineComponent* Grow_Hologram;
     static constexpr const char* Grow_Hologram__UeName = "Grow Hologram";
     class UParticleSystem* ActivatedParticles;
@@ -107,9 +108,9 @@ public:
     UE_MULTICAST UE_RELIABLE void All_PlayMusic();
     void OnDisableChestLocally();
     void OnLocalPlayerCollectedTreasure(class APlayerCharacter* Player);
-    void BndEvt__RepairUsable_K2Node_ComponentBoundEvent_8_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__CollectUsable_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
-    void BndEvt__HammeringUsable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__RepairUsable_K2Node_ComponentBoundEvent_8_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__CollectUsable_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__HammeringUsable_K2Node_ComponentBoundEvent_5_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SetupLoop();
     void SpawnChunks();
     void BndEvt__Repairable_K2Node_ComponentBoundEvent_4_RepairedDelegate__DelegateSignature(class URepairableComponent* Component);

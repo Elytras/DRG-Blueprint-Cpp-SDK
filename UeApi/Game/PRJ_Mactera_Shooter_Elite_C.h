@@ -19,6 +19,7 @@ class PRJ_Mactera_Shooter_Elite_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/PRJ_Mactera_Shooter_Elite", "PRJ_Mactera_Shooter_Elite_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     static constexpr const char* Damage__UeScsNode = "5fe21bce9bd8a64bbdfbfcbe3587cbc6";

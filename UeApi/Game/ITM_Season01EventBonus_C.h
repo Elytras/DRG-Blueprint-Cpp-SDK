@@ -42,7 +42,7 @@ public:
     class UOverlay* Overlay_Outer;
     class USizeBox* SizeBox_Outer;
     class USeasonTokenReward* TokenReward;
-    ESeasonVisibilityState State;
+    TEnum<ESeasonVisibilityState> State;
     bool IsBackRow;
     TMulticastInlineDelegate<void()> OnBonusClaimed;
     void ExecuteUbergraph_ITM_Season01EventBonus(int EntryPoint);

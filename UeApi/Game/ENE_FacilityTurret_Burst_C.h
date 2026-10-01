@@ -22,6 +22,7 @@ class ENE_FacilityTurret_Burst_C : public Game::GameElements::Objectives::Facili
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Burst", "ENE_FacilityTurret_Burst_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTurret_Burst_C;
     static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Burst_C__UeName = "UberGraphFrame";
     class UBoxComponent* AoECollision;
@@ -38,7 +39,7 @@ public:
     static constexpr const char* FireWeaponGlow__UeScsNode = "70eaf57ad3e83a4c9524a83cd425216d";
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_41538838479907ABAF791C91C743C3FD";
-    ETimelineDirection Timeline_0__Direction_41538838479907ABAF791C91C743C3FD;
+    TEnum<ETimelineDirection> Timeline_0__Direction_41538838479907ABAF791C91C743C3FD;
     class UTimelineComponent* Timeline_0;
     bool UpperBarrel;
     void ExecuteUbergraph_ENE_FacilityTurret_Burst(int EntryPoint);

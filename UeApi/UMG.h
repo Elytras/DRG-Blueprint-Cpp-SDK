@@ -375,6 +375,7 @@ class UVisual : public UObject
 {
 public:
     UE_CLASS("/Script/UMG", "Visual");
+    static constexpr const char* UeClassTail = "0x00200000 /Script/CoreUObject.Object Engine";
 };
 
 class UWidget : public UVisual
@@ -396,29 +397,29 @@ public:
     bool bOverride_Cursor;
     class USlateAccessibleWidgetData* AccessibleWidgetData;
     bool bIsVolatile;
-    EMouseCursor Cursor;
-    EWidgetClipping Clipping;
-    ESlateVisibility Visibility;
+    TEnum<EMouseCursor> Cursor;
+    TEnum<EWidgetClipping> Clipping;
+    TEnum<ESlateVisibility> Visibility;
     float RenderOpacity;
     class UWidgetNavigation* Navigation;
-    EFlowDirectionPreference FlowDirectionPreference;
+    TEnum<EFlowDirectionPreference> FlowDirectionPreference;
     TArray<class UPropertyBinding*> NativeBindings;
     void ForceLayoutPrepass();
     void ForceVolatile(bool bForce);
     void InvalidateLayoutAndVolatility();
     void RemoveFromParent();
     void ResetCursor();
-    void SetAllNavigationRules(EUINavigationRule Rule, FName WidgetToFocus);
-    void SetClipping(EWidgetClipping InClipping);
-    void SetCursor(EMouseCursor InCursor);
+    void SetAllNavigationRules(TEnum<EUINavigationRule> Rule, FName WidgetToFocus);
+    void SetClipping(TEnum<EWidgetClipping> InClipping);
+    void SetCursor(TEnum<EMouseCursor> InCursor);
     void SetFocus();
     void SetIsEnabled(bool bInIsEnabled);
     void SetKeyboardFocus();
-    void SetNavigationRule(EUINavigation Direction, EUINavigationRule Rule, FName WidgetToFocus);
-    void SetNavigationRuleBase(EUINavigation Direction, EUINavigationRule Rule);
-    void SetNavigationRuleCustom(EUINavigation Direction, TDelegate<void(EUINavigation Navigation)> InCustomDelegate);
-    void SetNavigationRuleCustomBoundary(EUINavigation Direction, TDelegate<void(EUINavigation Navigation)> InCustomDelegate);
-    void SetNavigationRuleExplicit(EUINavigation Direction, class UWidget* InWidget);
+    void SetNavigationRule(TEnum<EUINavigation> Direction, TEnum<EUINavigationRule> Rule, FName WidgetToFocus);
+    void SetNavigationRuleBase(TEnum<EUINavigation> Direction, TEnum<EUINavigationRule> Rule);
+    void SetNavigationRuleCustom(TEnum<EUINavigation> Direction, TDelegate<void(EUINavigation Navigation)> InCustomDelegate);
+    void SetNavigationRuleCustomBoundary(TEnum<EUINavigation> Direction, TDelegate<void(EUINavigation Navigation)> InCustomDelegate);
+    void SetNavigationRuleExplicit(TEnum<EUINavigation> Direction, class UWidget* InWidget);
     void SetRenderOpacity(float InOpacity);
     void SetRenderScale(FVector2D Scale);
     void SetRenderShear(FVector2D Shear);
@@ -429,11 +430,11 @@ public:
     void SetToolTip(class UWidget* Widget);
     void SetToolTipText(const FText& InToolTipText);
     void SetUserFocus(class APlayerController* PlayerController);
-    void SetVisibility(ESlateVisibility InVisibility);
+    void SetVisibility(TEnum<ESlateVisibility> InVisibility);
     UE_PURE FText GetAccessibleSummaryText() const;
     UE_PURE FText GetAccessibleText() const;
     UE_PURE FGeometry GetCachedGeometry() const;
-    UE_PURE EWidgetClipping GetClipping() const;
+    UE_PURE TEnum<EWidgetClipping> GetClipping() const;
     UE_PURE FVector2D GetDesiredSize() const;
     UE_COSMETIC UE_PURE class UGameInstance* GetGameInstance() const;
     UE_PURE bool GetIsEnabled() const;
@@ -444,7 +445,7 @@ public:
     UE_PURE float GetRenderOpacity() const;
     UE_PURE float GetRenderTransformAngle() const;
     UE_PURE FGeometry GetTickSpaceGeometry() const;
-    UE_PURE ESlateVisibility GetVisibility() const;
+    UE_PURE TEnum<ESlateVisibility> GetVisibility() const;
     UE_PURE bool HasAnyUserFocus() const;
     UE_PURE bool HasFocusedDescendants() const;
     UE_PURE bool HasKeyboardFocus() const;
@@ -460,6 +461,7 @@ class UUserWidget : public UWidget
 {
 public:
     UE_CLASS("/Script/UMG", "UserWidget");
+    static constexpr const char* UeClassTail = "0x00a01000 /Script/CoreUObject.Object Engine";
     FLinearColor ColorAndOpacity;
     TDelegate<void()> ColorAndOpacityDelegate;
     FSlateColor ForegroundColor;
@@ -477,12 +479,12 @@ public:
     bool bStopAction;
     bool bHasScriptImplementedTick;
     bool bHasScriptImplementedPaint;
-    EWidgetTickFrequency TickFrequency;
+    TEnum<EWidgetTickFrequency> TickFrequency;
     class UInputComponent* InputComponent;
     TArray<FAnimationEventBinding> AnimationCallbacks;
     UE_COSMETIC bool AddToPlayerScreen(int ZOrder);
     UE_COSMETIC void AddToViewport(int ZOrder);
-    void BindToAnimationEvent(class UWidgetAnimation* Animation, TDelegate<void()> Delegate, EWidgetAnimationEvent AnimationEvent, FName UserTag);
+    void BindToAnimationEvent(class UWidgetAnimation* Animation, TDelegate<void()> Delegate, TEnum<EWidgetAnimationEvent> AnimationEvent, FName UserTag);
     void BindToAnimationFinished(class UWidgetAnimation* Animation, TDelegate<void()> Delegate);
     void BindToAnimationStarted(class UWidgetAnimation* Animation, TDelegate<void()> Delegate);
     void CancelLatentActions();
@@ -490,7 +492,7 @@ public:
     UE_COSMETIC void Destruct();
     UE_COSMETIC void FlushAnimations();
     UE_COSMETIC bool IsAnimationPlayingForward(class UWidgetAnimation* InAnimation);
-    void ListenForInputAction(FName ActionName, EInputEvent EventType, bool bConsume, TDelegate<void()> Callback);
+    void ListenForInputAction(FName ActionName, TEnum<EInputEvent> EventType, bool bConsume, TDelegate<void()> Callback);
     UE_COSMETIC void OnAddedToFocusPath(FFocusEvent InFocusEvent);
     FEventReply OnAnalogValueChanged(FGeometry MyGeometry, FAnalogInputEvent InAnalogInputEvent);
     UE_COSMETIC void OnAnimationFinished(class UWidgetAnimation* Animation);
@@ -525,10 +527,10 @@ public:
     UE_COSMETIC FEventReply OnTouchMoved(FGeometry MyGeometry, const FPointerEvent& InTouchEvent);
     UE_COSMETIC FEventReply OnTouchStarted(FGeometry MyGeometry, const FPointerEvent& InTouchEvent);
     UE_COSMETIC float PauseAnimation(class UWidgetAnimation* InAnimation);
-    UE_COSMETIC class UUMGSequencePlayer* PlayAnimation(class UWidgetAnimation* InAnimation, float StartAtTime, int NumLoopsToPlay, EUMGSequencePlayMode PlayMode, float PlaybackSpeed, bool bRestoreState);
+    UE_COSMETIC class UUMGSequencePlayer* PlayAnimation(class UWidgetAnimation* InAnimation, float StartAtTime, int NumLoopsToPlay, TEnum<EUMGSequencePlayMode> PlayMode, float PlaybackSpeed, bool bRestoreState);
     UE_COSMETIC class UUMGSequencePlayer* PlayAnimationForward(class UWidgetAnimation* InAnimation, float PlaybackSpeed, bool bRestoreState);
     UE_COSMETIC class UUMGSequencePlayer* PlayAnimationReverse(class UWidgetAnimation* InAnimation, float PlaybackSpeed, bool bRestoreState);
-    UE_COSMETIC class UUMGSequencePlayer* PlayAnimationTimeRange(class UWidgetAnimation* InAnimation, float StartAtTime, float EndAtTime, int NumLoopsToPlay, EUMGSequencePlayMode PlayMode, float PlaybackSpeed, bool bRestoreState);
+    UE_COSMETIC class UUMGSequencePlayer* PlayAnimationTimeRange(class UWidgetAnimation* InAnimation, float StartAtTime, float EndAtTime, int NumLoopsToPlay, TEnum<EUMGSequencePlayMode> PlayMode, float PlaybackSpeed, bool bRestoreState);
     UE_COSMETIC void PlaySound(class USoundBase* SoundToPlay);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void RegisterInputComponent();
@@ -551,7 +553,7 @@ public:
     void StopAnimation(class UWidgetAnimation* InAnimation);
     void StopAnimationsAndLatentActions();
     void StopListeningForAllInputActions();
-    void StopListeningForInputAction(FName ActionName, EInputEvent EventType);
+    void StopListeningForInputAction(FName ActionName, TEnum<EInputEvent> EventType);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void UnbindAllFromAnimationFinished(class UWidgetAnimation* Animation);
     void UnbindAllFromAnimationStarted(class UWidgetAnimation* Animation);
@@ -583,8 +585,8 @@ class UWidgetComponent : public UMeshComponent
 {
 public:
     UE_CLASS("/Script/UMG", "WidgetComponent");
-    EWidgetSpace Space;
-    EWidgetTimingPolicy TimingPolicy;
+    TEnum<EWidgetSpace> Space;
+    TEnum<EWidgetTimingPolicy> TimingPolicy;
     TSubclassOf<class UUserWidget> WidgetClass;
     FIntPoint DrawSize;
     bool bManuallyRedraw;
@@ -595,13 +597,13 @@ public:
     FVector2D Pivot;
     bool bReceiveHardwareInput;
     bool bWindowFocusable;
-    EWindowVisibility WindowVisibility;
+    TEnum<EWindowVisibility> WindowVisibility;
     bool bApplyGammaCorrection;
     class ULocalPlayer* OwnerPlayer;
     FLinearColor BackgroundColor;
     FLinearColor TintColorAndOpacity;
     float OpacityFromTexture;
-    EWidgetBlendMode BlendMode;
+    TEnum<EWidgetBlendMode> BlendMode;
     bool bIsTwoSided;
     bool TickWhenOffscreen;
     class UBodySetup* BodySetup;
@@ -617,9 +619,9 @@ public:
     bool bEditTimeUsable;
     FName SharedLayerName;
     int LayerZOrder;
-    EWidgetGeometryMode GeometryMode;
+    TEnum<EWidgetGeometryMode> GeometryMode;
     float CylinderArcAngle;
-    ETickMode TickMode;
+    TEnum<ETickMode> TickMode;
     class UUserWidget* Widget;
     void RequestRedraw();
     void RequestRenderUpdate();
@@ -627,24 +629,24 @@ public:
     void SetCylinderArcAngle(float InCylinderArcAngle);
     void SetDrawAtDesiredSize(bool bInDrawAtDesiredSize);
     void SetDrawSize(FVector2D Size);
-    void SetGeometryMode(EWidgetGeometryMode InGeometryMode);
+    void SetGeometryMode(TEnum<EWidgetGeometryMode> InGeometryMode);
     void SetManuallyRedraw(bool bUseManualRedraw);
     void SetOwnerPlayer(class ULocalPlayer* LocalPlayer);
     void SetPivot(const FVector2D& InPivot);
     void SetRedrawTime(float InRedrawTime);
-    void SetTickMode(ETickMode InTickMode);
+    void SetTickMode(TEnum<ETickMode> InTickMode);
     void SetTickWhenOffscreen(bool bWantTickWhenOffscreen);
     void SetTintColorAndOpacity(FLinearColor NewTintColorAndOpacity);
     void SetTwoSided(bool bWantTwoSided);
     void SetWidget(class UUserWidget* Widget_0);
-    void SetWidgetSpace(EWidgetSpace NewSpace);
+    void SetWidgetSpace(TEnum<EWidgetSpace> NewSpace);
     void SetWindowFocusable(bool bInWindowFocusable);
-    void SetWindowVisibility(EWindowVisibility InVisibility);
+    void SetWindowVisibility(TEnum<EWindowVisibility> InVisibility);
     UE_PURE FVector2D GetCurrentDrawSize() const;
     UE_PURE float GetCylinderArcAngle() const;
     UE_PURE bool GetDrawAtDesiredSize() const;
     UE_PURE FVector2D GetDrawSize() const;
-    UE_PURE EWidgetGeometryMode GetGeometryMode() const;
+    UE_PURE TEnum<EWidgetGeometryMode> GetGeometryMode() const;
     UE_PURE bool GetManuallyRedraw() const;
     UE_PURE class UMaterialInstanceDynamic* GetMaterialInstance() const;
     UE_PURE class ULocalPlayer* GetOwnerPlayer() const;
@@ -655,9 +657,9 @@ public:
     UE_PURE bool GetTwoSided() const;
     UE_PURE class UUserWidget* GetUserWidgetObject() const;
     UE_PURE class UUserWidget* GetWidget() const;
-    UE_PURE EWidgetSpace GetWidgetSpace() const;
+    UE_PURE TEnum<EWidgetSpace> GetWidgetSpace() const;
     UE_PURE bool GetWindowFocusable() const;
-    UE_PURE EWindowVisibility GetWindowVisiblility() const;
+    UE_PURE TEnum<EWindowVisibility> GetWindowVisiblility() const;
     UE_PURE bool IsWidgetVisible() const;
 };
 
@@ -666,13 +668,13 @@ class UTextLayoutWidget : public UWidget
 public:
     UE_CLASS("/Script/UMG", "TextLayoutWidget");
     FShapedTextOptions ShapedTextOptions;
-    ETextJustify Justification;
-    ETextWrappingPolicy WrappingPolicy;
+    TEnum<ETextJustify> Justification;
+    TEnum<ETextWrappingPolicy> WrappingPolicy;
     bool AutoWrapText;
     float WrapTextAt;
     FMargin Margin;
     float LineHeightPercentage;
-    void SetJustification(ETextJustify InJustification);
+    void SetJustification(TEnum<ETextJustify> InJustification);
 };
 
 class UTextBlock : public UTextLayoutWidget
@@ -691,7 +693,7 @@ public:
     float MinDesiredWidth;
     bool bWrapWithInvalidationPanel;
     bool bAutoWrapText;
-    ETextTransformPolicy TextTransformPolicy;
+    TEnum<ETextTransformPolicy> TextTransformPolicy;
     bool bSimpleTextMode;
     class UMaterialInstanceDynamic* GetDynamicFontMaterial();
     class UMaterialInstanceDynamic* GetDynamicOutlineMaterial();
@@ -704,7 +706,7 @@ public:
     void SetShadowOffset(FVector2D InShadowOffset);
     void SetStrikeBrush(FSlateBrush InStrikeBrush);
     void SetText(FText InText);
-    void SetTextTransformPolicy(ETextTransformPolicy InTransformPolicy);
+    void SetTextTransformPolicy(TEnum<ETextTransformPolicy> InTransformPolicy);
     UE_PURE FText GetText() const;
 };
 
@@ -718,7 +720,7 @@ public:
     bool bOverrideDefaultStyle;
     FTextBlockStyle DefaultTextStyleOverride;
     float MinDesiredWidth;
-    ETextTransformPolicy TextTransformPolicy;
+    TEnum<ETextTransformPolicy> TextTransformPolicy;
     FTextBlockStyle DefaultTextStyle;
     TArray<class URichTextBlockDecorator*> InstanceDecorators;
     void ClearAllDefaultStyleOverrides();
@@ -733,7 +735,7 @@ public:
     void SetMinDesiredWidth(float InMinDesiredWidth);
     void SetText(const FText& InText);
     void SetTextStyleSet(class UDataTable* NewTextStyleSet);
-    void SetTextTransformPolicy(ETextTransformPolicy InTransformPolicy);
+    void SetTextTransformPolicy(TEnum<ETextTransformPolicy> InTransformPolicy);
     UE_PURE FText GetText() const;
 };
 
@@ -761,11 +763,11 @@ public:
     bool ClearKeyboardFocusOnCommit;
     bool SelectAllTextOnCommit;
     bool AllowContextMenu;
-    EVirtualKeyboardType KeyboardType;
+    TEnum<EVirtualKeyboardType> KeyboardType;
     FVirtualKeyboardOptions VirtualKeyboardOptions;
-    EVirtualKeyboardTrigger VirtualKeyboardTrigger;
-    EVirtualKeyboardDismissAction VirtualKeyboardDismissAction;
-    ETextJustify Justification;
+    TEnum<EVirtualKeyboardTrigger> VirtualKeyboardTrigger;
+    TEnum<EVirtualKeyboardDismissAction> VirtualKeyboardDismissAction;
+    TEnum<ETextJustify> Justification;
     FShapedTextOptions ShapedTextOptions;
     TMulticastInlineDelegate<void(FText Text_0)> OnTextChanged;
     TMulticastInlineDelegate<void(FText Text_0, ETextCommit CommitMethod)> OnTextCommitted;
@@ -774,7 +776,7 @@ public:
     void SetHintText(FText InText);
     void SetIsPassword(bool bIsPassword);
     void SetIsReadOnly(bool bReadOnly);
-    void SetJustification(ETextJustify InJustification);
+    void SetJustification(TEnum<ETextJustify> InJustification);
     void SetText(FText InText);
     UE_PURE FText GetText() const;
     UE_PURE bool HasError() const;
@@ -792,7 +794,7 @@ public:
     bool bIsReadOnly;
     bool AllowContextMenu;
     FVirtualKeyboardOptions VirtualKeyboardOptions;
-    EVirtualKeyboardDismissAction VirtualKeyboardDismissAction;
+    TEnum<EVirtualKeyboardDismissAction> VirtualKeyboardDismissAction;
     class USlateWidgetStyleAsset* Style;
     FSlateFontInfo Font;
     FLinearColor ForegroundColor;
@@ -846,8 +848,8 @@ class UBorder : public UContentWidget
 {
 public:
     UE_CLASS("/Script/UMG", "Border");
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
     bool bShowEffectWhenDisabled;
     FLinearColor ContentColorAndOpacity;
     TDelegate<void()> ContentColorAndOpacityDelegate;
@@ -870,9 +872,9 @@ public:
     void SetBrushFromTexture(class UTexture2D* Texture);
     void SetContentColorAndOpacity(FLinearColor InContentColorAndOpacity);
     void SetDesiredSizeScale(FVector2D InScale);
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UButton : public UContentWidget
@@ -883,9 +885,9 @@ public:
     FButtonStyle WidgetStyle;
     FLinearColor ColorAndOpacity;
     FLinearColor BackgroundColor;
-    EButtonClickMethod ClickMethod;
-    EButtonTouchMethod TouchMethod;
-    EButtonPressMethod PressMethod;
+    TEnum<EButtonClickMethod> ClickMethod;
+    TEnum<EButtonTouchMethod> TouchMethod;
+    TEnum<EButtonPressMethod> PressMethod;
     bool IsFocusable;
     TMulticastInlineDelegate<void()> OnClicked;
     TMulticastInlineDelegate<void()> OnPressed;
@@ -893,11 +895,11 @@ public:
     TMulticastInlineDelegate<void()> OnHovered;
     TMulticastInlineDelegate<void()> OnUnhovered;
     void SetBackgroundColor(FLinearColor InBackgroundColor);
-    void SetClickMethod(EButtonClickMethod InClickMethod);
+    void SetClickMethod(TEnum<EButtonClickMethod> InClickMethod);
     void SetColorAndOpacity(FLinearColor InColorAndOpacity);
-    void SetPressMethod(EButtonPressMethod InPressMethod);
+    void SetPressMethod(TEnum<EButtonPressMethod> InPressMethod);
     void SetStyle(const FButtonStyle& InStyle);
-    void SetTouchMethod(EButtonTouchMethod InTouchMethod);
+    void SetTouchMethod(TEnum<EButtonTouchMethod> InTouchMethod);
     UE_PURE bool IsPressed() const;
 };
 
@@ -905,7 +907,7 @@ class UCheckBox : public UContentWidget
 {
 public:
     UE_CLASS("/Script/UMG", "CheckBox");
-    ECheckBoxState CheckedState;
+    TEnum<ECheckBoxState> CheckedState;
     TDelegate<void()> CheckedStateDelegate;
     FCheckBoxStyle WidgetStyle;
     class USlateWidgetStyleAsset* Style;
@@ -918,20 +920,20 @@ public:
     class USlateBrushAsset* UndeterminedImage;
     class USlateBrushAsset* UndeterminedHoveredImage;
     class USlateBrushAsset* UndeterminedPressedImage;
-    EHorizontalAlignment HorizontalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
     FMargin Padding;
     FSlateColor BorderBackgroundColor;
-    EButtonClickMethod ClickMethod;
-    EButtonTouchMethod TouchMethod;
-    EButtonPressMethod PressMethod;
+    TEnum<EButtonClickMethod> ClickMethod;
+    TEnum<EButtonTouchMethod> TouchMethod;
+    TEnum<EButtonPressMethod> PressMethod;
     bool IsFocusable;
     TMulticastInlineDelegate<void(bool bIsChecked)> OnCheckStateChanged;
-    void SetCheckedState(ECheckBoxState InCheckedState);
-    void SetClickMethod(EButtonClickMethod InClickMethod);
+    void SetCheckedState(TEnum<ECheckBoxState> InCheckedState);
+    void SetClickMethod(TEnum<EButtonClickMethod> InClickMethod);
     void SetIsChecked(bool InIsChecked);
-    void SetPressMethod(EButtonPressMethod InPressMethod);
-    void SetTouchMethod(EButtonTouchMethod InTouchMethod);
-    UE_PURE ECheckBoxState GetCheckedState() const;
+    void SetPressMethod(TEnum<EButtonPressMethod> InPressMethod);
+    void SetTouchMethod(TEnum<EButtonTouchMethod> InTouchMethod);
+    UE_PURE TEnum<ECheckBoxState> GetCheckedState() const;
     UE_PURE bool IsChecked() const;
     UE_PURE bool IsPressed() const;
 };
@@ -991,11 +993,11 @@ class UOverlaySlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "OverlaySlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UEditableText : public UWidget
@@ -1022,18 +1024,18 @@ public:
     bool ClearKeyboardFocusOnCommit;
     bool SelectAllTextOnCommit;
     bool AllowContextMenu;
-    EVirtualKeyboardType KeyboardType;
+    TEnum<EVirtualKeyboardType> KeyboardType;
     FVirtualKeyboardOptions VirtualKeyboardOptions;
-    EVirtualKeyboardTrigger VirtualKeyboardTrigger;
-    EVirtualKeyboardDismissAction VirtualKeyboardDismissAction;
-    ETextJustify Justification;
+    TEnum<EVirtualKeyboardTrigger> VirtualKeyboardTrigger;
+    TEnum<EVirtualKeyboardDismissAction> VirtualKeyboardDismissAction;
+    TEnum<ETextJustify> Justification;
     FShapedTextOptions ShapedTextOptions;
     TMulticastInlineDelegate<void(FText Text_0)> OnTextChanged;
     TMulticastInlineDelegate<void(FText Text_0, ETextCommit CommitMethod)> OnTextCommitted;
     void SetHintText(FText InHintText);
     void SetIsPassword(bool InbIsPassword);
     void SetIsReadOnly(bool InbIsReadyOnly);
-    void SetJustification(ETextJustify InJustification);
+    void SetJustification(TEnum<ETextJustify> InJustification);
     void SetText(FText InText);
     UE_PURE FText GetText() const;
 };
@@ -1091,7 +1093,7 @@ public:
     void RequestRefresh();
     void ScrollToBottom();
     void ScrollToTop();
-    void SetScrollbarVisibility(ESlateVisibility InVisibility);
+    void SetScrollbarVisibility(TEnum<ESlateVisibility> InVisibility);
     void SetScrollOffset(float InScrollOffset);
     void SetWheelScrollMultiplier(float NewWheelScrollMultiplier);
     UE_PURE TArray<class UUserWidget*> GetDisplayedEntryWidgets() const;
@@ -1101,9 +1103,9 @@ class UListView : public UListViewBase
 {
 public:
     UE_CLASS("/Script/UMG", "ListView");
-    EOrientation Orientation;
-    ESelectionMode SelectionMode;
-    EConsumeMouseWheel ConsumeMouseWheel;
+    TEnum<EOrientation> Orientation;
+    TEnum<ESelectionMode> SelectionMode;
+    TEnum<EConsumeMouseWheel> ConsumeMouseWheel;
     bool bClearSelectionOnClick;
     bool bIsFocusable;
     float EntrySpacing;
@@ -1128,7 +1130,7 @@ public:
     void RemoveItem(class UObject* Item);
     void ScrollIndexIntoView(int Index_0);
     void SetSelectedIndex(int Index_0);
-    void SetSelectionMode(ESelectionMode SelectionMode_0);
+    void SetSelectionMode(TEnum<ESelectionMode> SelectionMode_0);
     UE_PURE int BP_GetNumItemsSelected() const;
     UE_PURE class UObject* BP_GetSelectedItem() const;
     bool BP_GetSelectedItems(TArray<class UObject*>& Items) const;
@@ -1147,7 +1149,7 @@ public:
     TSubclassOf<class UUserWidget> MenuClass;
     TDelegate<void()> OnGetMenuContentEvent;
     TDelegate<void()> OnGetUserMenuContentEvent;
-    EMenuPlacement Placement;
+    TEnum<EMenuPlacement> Placement;
     bool bFitInWindow;
     bool ShouldDeferPaintingAfterWindowContent;
     bool UseApplicationMenuStack;
@@ -1155,7 +1157,7 @@ public:
     void Close();
     void FitInWindow(bool bFit);
     void Open(bool bFocusMenu);
-    void SetPlacement(EMenuPlacement InPlacement);
+    void SetPlacement(TEnum<EMenuPlacement> InPlacement);
     void ToggleOpen(bool bFocusOnOpen);
     UE_PURE FVector2D GetMenuPosition() const;
     UE_PURE bool HasOpenSubMenus() const;
@@ -1173,7 +1175,7 @@ public:
     class USlateBrushAsset* FillImage;
     class USlateBrushAsset* MarqueeImage;
     float Percent;
-    EProgressBarFillType BarFillType;
+    TEnum<EProgressBarFillType> BarFillType;
     bool bIsMarquee;
     FVector2D BorderPadding;
     TDelegate<void()> PercentDelegate;
@@ -1211,35 +1213,35 @@ public:
     FScrollBarStyle WidgetBarStyle;
     class USlateWidgetStyleAsset* Style;
     class USlateWidgetStyleAsset* BarStyle;
-    EOrientation Orientation;
-    ESlateVisibility ScrollbarVisibility;
-    EConsumeMouseWheel ConsumeMouseWheel;
+    TEnum<EOrientation> Orientation;
+    TEnum<ESlateVisibility> ScrollbarVisibility;
+    TEnum<EConsumeMouseWheel> ConsumeMouseWheel;
     FVector2D ScrollbarThickness;
     FMargin ScrollbarPadding;
     bool AlwaysShowScrollbar;
     bool AlwaysShowScrollbarTrack;
     bool AllowOverscroll;
     bool bAnimateWheelScrolling;
-    EDescendantScrollDestination NavigationDestination;
+    TEnum<EDescendantScrollDestination> NavigationDestination;
     float NavigationScrollPadding;
-    EScrollWhenFocusChanges ScrollWhenFocusChanges;
+    TEnum<EScrollWhenFocusChanges> ScrollWhenFocusChanges;
     bool bAllowRightClickDragScrolling;
     float WheelScrollMultiplier;
     TMulticastInlineDelegate<void(float CurrentOffset)> OnUserScrolled;
     void EndInertialScrolling();
     void ScrollToEnd();
     void ScrollToStart();
-    void ScrollWidgetIntoView(class UWidget* WidgetToFind, bool AnimateScroll, EDescendantScrollDestination ScrollDestination, float Padding);
+    void ScrollWidgetIntoView(class UWidget* WidgetToFind, bool AnimateScroll, TEnum<EDescendantScrollDestination> ScrollDestination, float Padding);
     void SetAllowOverscroll(bool NewAllowOverscroll);
     void SetAlwaysShowScrollbar(bool NewAlwaysShowScrollbar);
     void SetAnimateWheelScrolling(bool bShouldAnimateWheelScrolling);
-    void SetConsumeMouseWheel(EConsumeMouseWheel NewConsumeMouseWheel);
-    void SetOrientation(EOrientation NewOrientation);
+    void SetConsumeMouseWheel(TEnum<EConsumeMouseWheel> NewConsumeMouseWheel);
+    void SetOrientation(TEnum<EOrientation> NewOrientation);
     void SetScrollbarPadding(const FMargin& NewScrollbarPadding);
     void SetScrollbarThickness(const FVector2D& NewScrollbarThickness);
-    void SetScrollbarVisibility(ESlateVisibility NewScrollBarVisibility);
+    void SetScrollbarVisibility(TEnum<ESlateVisibility> NewScrollBarVisibility);
     void SetScrollOffset(float NewScrollOffset);
-    void SetScrollWhenFocusChanges(EScrollWhenFocusChanges NewScrollWhenFocusChanges);
+    void SetScrollWhenFocusChanges(TEnum<EScrollWhenFocusChanges> NewScrollWhenFocusChanges);
     void SetWheelScrollMultiplier(float NewWheelScrollMultiplier);
     UE_PURE float GetScrollOffset() const;
     UE_PURE float GetScrollOffsetOfEnd() const;
@@ -1293,7 +1295,7 @@ public:
     float WrapSize;
     bool bExplicitWrapWidth;
     bool bExplicitWrapSize;
-    EOrientation Orientation;
+    TEnum<EOrientation> Orientation;
     class UWrapBoxSlot* AddChildToWrapBox(class UWidget* Content);
     void SetInnerSlotPadding(FVector2D InPadding);
 };
@@ -1304,7 +1306,7 @@ public:
     UE_CLASS("/Script/UMG", "TileView");
     float EntryHeight;
     float EntryWidth;
-    EListItemAlignment TileAlignment;
+    TEnum<EListItemAlignment> TileAlignment;
     bool bWrapHorizontalNavigation;
     void SetEntryHeight(float NewHeight);
     void SetEntryWidth(float NewWidth);
@@ -1380,12 +1382,12 @@ public:
     UE_CLASS("/Script/UMG", "HorizontalBoxSlot");
     FMargin Padding;
     FSlateChildSize Size;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
     void SetSize(FSlateChildSize InSize);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UCanvasPanelSlot : public UPanelSlot
@@ -1461,7 +1463,7 @@ class UCheckedStateBinding : public UPropertyBinding
 {
 public:
     UE_CLASS("/Script/UMG", "CheckedStateBinding");
-    ECheckBoxState GetValue() const;
+    TEnum<ECheckBoxState> GetValue() const;
 };
 
 class UWidgetSwitcherSlot : public UPanelSlot
@@ -1469,11 +1471,11 @@ class UWidgetSwitcherSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "WidgetSwitcherSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UInvalidationBox : public UContentWidget
@@ -1496,7 +1498,7 @@ public:
     float MinValue;
     float MaxValue;
     FSliderStyle WidgetStyle;
-    EOrientation Orientation;
+    TEnum<EOrientation> Orientation;
     FLinearColor SliderBarColor;
     FLinearColor SliderHandleColor;
     bool IndentHandle;
@@ -1534,8 +1536,8 @@ class UBackgroundBlur : public UContentWidget
 public:
     UE_CLASS("/Script/UMG", "BackgroundBlur");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
     bool bApplyAlphaToBlur;
     float BlurStrength;
     bool bOverrideAutoRadiusCalculation;
@@ -1544,10 +1546,10 @@ public:
     void SetApplyAlphaToBlur(bool bInApplyAlphaToBlur);
     void SetBlurRadius(int InBlurRadius);
     void SetBlurStrength(float InStrength);
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetLowQualityFallbackBrush(const FSlateBrush& InBrush);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UBackgroundBlurSlot : public UPanelSlot
@@ -1555,11 +1557,11 @@ class UBackgroundBlurSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "BackgroundBlurSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UBoolBinding : public UPropertyBinding
@@ -1574,11 +1576,11 @@ class UBorderSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "BorderSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UBrushBinding : public UPropertyBinding
@@ -1593,11 +1595,11 @@ class UButtonSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "ButtonSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UCanvasPanel : public UPanelWidget
@@ -1637,7 +1639,7 @@ public:
     FString Tag;
     class UObject* Payload;
     class UWidget* DefaultDragVisual;
-    EDragPivot Pivot;
+    TEnum<EDragPivot> Pivot;
     FVector2D Offset;
     TMulticastInlineDelegate<void(class UDragDropOperation* Operation)> OnDrop;
     TMulticastInlineDelegate<void(class UDragDropOperation* Operation)> OnDragCancelled;
@@ -1651,12 +1653,12 @@ class UDynamicEntryBoxBase : public UWidget
 {
 public:
     UE_CLASS("/Script/UMG", "DynamicEntryBoxBase");
-    EDynamicBoxType EntryBoxType;
+    TEnum<EDynamicBoxType> EntryBoxType;
     FVector2D EntrySpacing;
     TArray<FVector2D> SpacingPattern;
     FSlateChildSize EntrySizeRule;
-    EHorizontalAlignment EntryHorizontalAlignment;
-    EVerticalAlignment EntryVerticalAlignment;
+    TEnum<EHorizontalAlignment> EntryHorizontalAlignment;
+    TEnum<EVerticalAlignment> EntryVerticalAlignment;
     int MaxElementSize;
     FRadialBoxSettings RadialBoxSettings;
     FUserWidgetPool EntryWidgetPool;
@@ -1689,8 +1691,8 @@ class UGridSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "GridSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
     int Row;
     int RowSpan;
     int Column;
@@ -1699,13 +1701,13 @@ public:
     FVector2D Nudge;
     void SetColumn(int InColumn);
     void SetColumnSpan(int InColumnSpan);
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetLayer(int InLayer);
     void SetNudge(FVector2D InNudge);
     void SetPadding(FMargin InPadding);
     void SetRow(int InRow);
     void SetRowSpan(int InRowSpan);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UHorizontalBox : public UPanelWidget
@@ -1738,7 +1740,7 @@ public:
     void SetKeySelectionText(FText InKeySelectionText);
     void SetNoKeySpecifiedText(FText InNoKeySpecifiedText);
     void SetSelectedKey(const FInputChord& InSelectedKey);
-    void SetTextBlockVisibility(ESlateVisibility InVisibility);
+    void SetTextBlockVisibility(TEnum<ESlateVisibility> InVisibility);
     UE_PURE bool GetIsSelectingKey() const;
 };
 
@@ -1766,7 +1768,7 @@ class UMouseCursorBinding : public UPropertyBinding
 {
 public:
     UE_CLASS("/Script/UMG", "MouseCursorBinding");
-    EMouseCursor GetValue() const;
+    TEnum<EMouseCursor> GetValue() const;
 };
 
 class UMovieScene2DTransformPropertySystem : public UMovieScenePropertySystem
@@ -1829,7 +1831,7 @@ public:
     bool ClearKeyboardFocusOnCommit;
     bool AllowContextMenu;
     FVirtualKeyboardOptions VirtualKeyboardOptions;
-    EVirtualKeyboardDismissAction VirtualKeyboardDismissAction;
+    TEnum<EVirtualKeyboardDismissAction> VirtualKeyboardDismissAction;
     TMulticastInlineDelegate<void(FText Text_0)> OnTextChanged;
     TMulticastInlineDelegate<void(FText Text_0, ETextCommit CommitMethod)> OnTextCommitted;
     void SetHintText(FText InHintText);
@@ -1875,8 +1877,8 @@ public:
     UE_CLASS("/Script/UMG", "SafeZoneSlot");
     bool bIsTitleSafe;
     FMargin SafeAreaScale;
-    EHorizontalAlignment HAlign;
-    EVerticalAlignment VAlign;
+    TEnum<EHorizontalAlignment> HAlign;
+    TEnum<EVerticalAlignment> VAlign;
     FMargin Padding;
 };
 
@@ -1884,13 +1886,13 @@ class UScaleBox : public UContentWidget
 {
 public:
     UE_CLASS("/Script/UMG", "ScaleBox");
-    EStretch Stretch;
-    EStretchDirection StretchDirection;
+    TEnum<EStretch> Stretch;
+    TEnum<EStretchDirection> StretchDirection;
     float UserSpecifiedScale;
     bool IgnoreInheritedScale;
     void SetIgnoreInheritedScale(bool bInIgnoreInheritedScale);
-    void SetStretch(EStretch InStretch);
-    void SetStretchDirection(EStretchDirection InStretchDirection);
+    void SetStretch(TEnum<EStretch> InStretch);
+    void SetStretchDirection(TEnum<EStretchDirection> InStretchDirection);
     void SetUserSpecifiedScale(float InUserSpecifiedScale);
 };
 
@@ -1899,11 +1901,11 @@ class UScaleBoxSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "ScaleBoxSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UScrollBar : public UWidget
@@ -1914,7 +1916,7 @@ public:
     class USlateWidgetStyleAsset* Style;
     bool bAlwaysShowScrollbar;
     bool bAlwaysShowScrollbarTrack;
-    EOrientation Orientation;
+    TEnum<EOrientation> Orientation;
     FVector2D Thickness;
     FMargin Padding;
     void SetState(float InOffsetFraction, float InThumbSizeFraction);
@@ -1925,11 +1927,11 @@ class UScrollBoxSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "ScrollBoxSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class USizeBoxSlot : public UPanelSlot
@@ -1937,11 +1939,11 @@ class USizeBoxSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "SizeBoxSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class USlateBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -1987,8 +1989,8 @@ class USlateAccessibleWidgetData : public UObject
 public:
     UE_CLASS("/Script/UMG", "SlateAccessibleWidgetData");
     bool bCanChildrenBeAccessible;
-    ESlateAccessibleBehavior AccessibleBehavior;
-    ESlateAccessibleBehavior AccessibleSummaryBehavior;
+    TEnum<ESlateAccessibleBehavior> AccessibleBehavior;
+    TEnum<ESlateAccessibleBehavior> AccessibleSummaryBehavior;
     FText AccessibleText;
     TDelegate<void()> AccessibleTextDelegate;
     FText AccessibleSummaryText;
@@ -2017,7 +2019,7 @@ public:
     float Delta;
     float SliderExponent;
     FSlateFontInfo Font;
-    ETextJustify Justification;
+    TEnum<ETextJustify> Justification;
     float MinDesiredWidth;
     bool ClearKeyboardFocusOnCommit;
     bool SelectAllTextOnCommit;
@@ -2104,14 +2106,14 @@ class UUniformGridSlot : public UPanelSlot
 {
 public:
     UE_CLASS("/Script/UMG", "UniformGridSlot");
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
     int Row;
     int Column;
     void SetColumn(int InColumn);
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetRow(int InRow);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UVerticalBox : public UPanelWidget
@@ -2127,12 +2129,12 @@ public:
     UE_CLASS("/Script/UMG", "VerticalBoxSlot");
     FSlateChildSize Size;
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
     void SetSize(FSlateChildSize InSize);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UViewport : public UContentWidget
@@ -2152,7 +2154,7 @@ class UVisibilityBinding : public UPropertyBinding
 {
 public:
     UE_CLASS("/Script/UMG", "VisibilityBinding");
-    ESlateVisibility GetValue() const;
+    TEnum<ESlateVisibility> GetValue() const;
 };
 
 class UWidgetAnimation : public UMovieSceneSequence
@@ -2185,8 +2187,8 @@ class UWidgetAnimationPlayCallbackProxy : public UObject
 public:
     UE_CLASS("/Script/UMG", "WidgetAnimationPlayCallbackProxy");
     TMulticastInlineDelegate<void()> Finished;
-    static class UWidgetAnimationPlayCallbackProxy* CreatePlayAnimationProxyObject(class UUMGSequencePlayer*& Result, class UUserWidget* Widget, class UWidgetAnimation* InAnimation, float StartAtTime, int NumLoopsToPlay, EUMGSequencePlayMode PlayMode, float PlaybackSpeed);
-    static class UWidgetAnimationPlayCallbackProxy* CreatePlayAnimationTimeRangeProxyObject(class UUMGSequencePlayer*& Result, class UUserWidget* Widget, class UWidgetAnimation* InAnimation, float StartAtTime, float EndAtTime, int NumLoopsToPlay, EUMGSequencePlayMode PlayMode, float PlaybackSpeed);
+    static class UWidgetAnimationPlayCallbackProxy* CreatePlayAnimationProxyObject(class UUMGSequencePlayer*& Result, class UUserWidget* Widget, class UWidgetAnimation* InAnimation, float StartAtTime, int NumLoopsToPlay, TEnum<EUMGSequencePlayMode> PlayMode, float PlaybackSpeed);
+    static class UWidgetAnimationPlayCallbackProxy* CreatePlayAnimationTimeRangeProxyObject(class UUMGSequencePlayer*& Result, class UUserWidget* Widget, class UWidgetAnimation* InAnimation, float StartAtTime, float EndAtTime, int NumLoopsToPlay, TEnum<EUMGSequencePlayMode> PlayMode, float PlaybackSpeed);
 };
 
 class UWidgetBinding : public UPropertyBinding
@@ -2255,20 +2257,20 @@ public:
     static void RestorePreviousWindowTitleBarState();
     static void SetBrushResourceToMaterial(FSlateBrush& Brush, class UMaterialInterface* Material);
     static void SetBrushResourceToTexture(FSlateBrush& Brush, class UTexture2D* Texture);
-    UE_COSMETIC static void SetColorVisionDeficiencyType(EColorVisionDeficiency Type, float Severity, bool CorrectDeficiency, bool ShowCorrectionWithDeficiency);
+    UE_COSMETIC static void SetColorVisionDeficiencyType(TEnum<EColorVisionDeficiency> Type, float Severity, bool CorrectDeficiency, bool ShowCorrectionWithDeficiency);
     UE_COSMETIC static void SetFocusToGameViewport();
-    static bool SetHardwareCursor(class UObject* WorldContextObject, EMouseCursor CursorShape, FName CursorName, FVector2D HotSpot);
-    static bool SetHardwareCursor(EMouseCursor CursorShape, FName CursorName, FVector2D HotSpot);
+    static bool SetHardwareCursor(class UObject* WorldContextObject, TEnum<EMouseCursor> CursorShape, FName CursorName, FVector2D HotSpot);
+    static bool SetHardwareCursor(TEnum<EMouseCursor> CursorShape, FName CursorName, FVector2D HotSpot);
     UE_COSMETIC static void SetInputMode_GameAndUI(class APlayerController* Target, class UWidget* InWidgetToFocus, bool bLockMouseToViewport, bool bHideCursorDuringCapture);
-    UE_COSMETIC static void SetInputMode_GameAndUIEx(class APlayerController* PlayerController, class UWidget* InWidgetToFocus, EMouseLockMode InMouseLockMode, bool bHideCursorDuringCapture);
+    UE_COSMETIC static void SetInputMode_GameAndUIEx(class APlayerController* PlayerController, class UWidget* InWidgetToFocus, TEnum<EMouseLockMode> InMouseLockMode, bool bHideCursorDuringCapture);
     UE_COSMETIC static void SetInputMode_GameOnly(class APlayerController* PlayerController);
     UE_COSMETIC static void SetInputMode_UIOnly(class APlayerController* Target, class UWidget* InWidgetToFocus, bool bLockMouseToViewport);
-    UE_COSMETIC static void SetInputMode_UIOnlyEx(class APlayerController* PlayerController, class UWidget* InWidgetToFocus, EMouseLockMode InMouseLockMode);
+    UE_COSMETIC static void SetInputMode_UIOnlyEx(class APlayerController* PlayerController, class UWidget* InWidgetToFocus, TEnum<EMouseLockMode> InMouseLockMode);
     static FEventReply SetMousePosition(FEventReply& Reply, FVector2D NewMousePosition);
     static FEventReply SetUserFocus(FEventReply& Reply, class UWidget* FocusWidget, bool bInAllUsers);
     static void SetWindowTitleBarCloseButtonActive(bool bActive);
     static void SetWindowTitleBarOnCloseClickedDelegate(TDelegate<void()> Delegate);
-    static void SetWindowTitleBarState(class UWidget* TitleBarContent, EWindowTitleBarMode Mode, bool bTitleBarDragEnabled, bool bWindowButtonsVisible, bool bTitleBarVisible);
+    static void SetWindowTitleBarState(class UWidget* TitleBarContent, TEnum<EWindowTitleBarMode> Mode, bool bTitleBarDragEnabled, bool bWindowButtonsVisible, bool bTitleBarVisible);
     UE_PURE static FEventReply Unhandled();
     static FEventReply UnlockMouse(FEventReply& Reply);
 };
@@ -2280,9 +2282,9 @@ public:
     TMulticastInlineDelegate<void(class UWidgetComponent* WidgetComponent, class UWidgetComponent* PreviousWidgetComponent)> OnHoveredWidgetChanged;
     int VirtualUserIndex;
     int PointerIndex;
-    ECollisionChannel TraceChannel;
+    TEnum<ECollisionChannel> TraceChannel;
     float InteractionDistance;
-    EWidgetInteractionSource InteractionSource;
+    TEnum<EWidgetInteractionSource> InteractionSource;
     bool bEnableHitTesting;
     bool bShowDebug;
     float DebugSphereLineThickness;
@@ -2371,9 +2373,9 @@ public:
     UE_CLASS("/Script/UMG", "WindowTitleBarArea");
     bool bWindowButtonsEnabled;
     bool bDoubleClickTogglesFullscreen;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UWindowTitleBarAreaSlot : public UPanelSlot
@@ -2381,11 +2383,11 @@ class UWindowTitleBarAreaSlot : public UPanelSlot
 public:
     UE_CLASS("/Script/UMG", "WindowTitleBarAreaSlot");
     FMargin Padding;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 class UWrapBoxSlot : public UPanelSlot
@@ -2395,13 +2397,13 @@ public:
     FMargin Padding;
     bool bFillEmptySpace;
     float FillSpanWhenLessThan;
-    EHorizontalAlignment HorizontalAlignment;
-    EVerticalAlignment VerticalAlignment;
+    TEnum<EHorizontalAlignment> HorizontalAlignment;
+    TEnum<EVerticalAlignment> VerticalAlignment;
     void SetFillEmptySpace(bool InbFillEmptySpace);
     void SetFillSpanWhenLessThan(float InFillSpanWhenLessThan);
-    void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+    void SetHorizontalAlignment(TEnum<EHorizontalAlignment> InHorizontalAlignment);
     void SetPadding(FMargin InPadding);
-    void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+    void SetVerticalAlignment(TEnum<EVerticalAlignment> InVerticalAlignment);
 };
 
 inline bool operator==(const FSlateBrush&, const FSlateBrush&) { return {}; }

@@ -40,7 +40,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "4a3c77fb88a3df4491ae765f6e6112f7";
     float Grow_Grow_4C7E7BAA4AB0276D4B443784735EAE30;
-    ETimelineDirection Grow__Direction_4C7E7BAA4AB0276D4B443784735EAE30;
+    TEnum<ETimelineDirection> Grow__Direction_4C7E7BAA4AB0276D4B443784735EAE30;
     class UTimelineComponent* Grow;
     float WeakpointMulitplier;
     float Damage_0;

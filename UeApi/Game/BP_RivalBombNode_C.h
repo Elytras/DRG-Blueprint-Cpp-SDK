@@ -32,6 +32,7 @@ class BP_RivalBombNode_C : public ARivalBombNode
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/BP_RivalBombNode", "BP_RivalBombNode_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.SceneComponent DefaultRootComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_RivalBombNode_Electricity;
     static constexpr const char* NS_RivalBombNode_Electricity__UeScsNode = "8778560fbc8a6e4da0529b502717d895";
@@ -62,7 +63,7 @@ public:
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "116195fadde0b84cbba6ae46e36645a9";
     float TurnOnLight_Intensity_6982697C46CE12F6891FD997002FC29A;
-    ETimelineDirection TurnOnLight__Direction_6982697C46CE12F6891FD997002FC29A;
+    TEnum<ETimelineDirection> TurnOnLight__Direction_6982697C46CE12F6891FD997002FC29A;
     class UTimelineComponent* TurnOnLight;
     float ActiveLightIntensity;
     class UMaterialInterface* M_Normal;

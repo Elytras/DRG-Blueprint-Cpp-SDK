@@ -63,7 +63,7 @@ public:
     static constexpr const char* BaseMesh__UeScsNode = "81dd1c3c31298543aa5c5fb355144465";
     float ScaleDown_NewTrack;
     static constexpr const char* ScaleDown_NewTrack__UeName = "ScaleDown_NewTrack_0_F8D011474F43755B827C2BB8FCF9590F";
-    ETimelineDirection ScaleDown__Direction_F8D011474F43755B827C2BB8FCF9590F;
+    TEnum<ETimelineDirection> ScaleDown__Direction_F8D011474F43755B827C2BB8FCF9590F;
     class UTimelineComponent* ScaleDown;
     float FirstThreshold;
     float SecondThreshold;

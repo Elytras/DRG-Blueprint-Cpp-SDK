@@ -21,7 +21,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Outline_Image;
     class UProgressBar* Progress_Bar;
-    EProgressBarFillType BarFillType;
+    TEnum<EProgressBarFillType> BarFillType;
     float Percent;
     void ExecuteUbergraph_Basic_ProgressBar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

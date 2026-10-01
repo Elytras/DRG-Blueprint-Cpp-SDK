@@ -17,6 +17,7 @@ class Grenade_Pheromone_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Ba
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Pheromone/Grenade_Pheromone", "Grenade_Pheromone_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Pheromone_C;
     static constexpr const char* UberGraphFrame_Grenade_Pheromone_C__UeName = "UberGraphFrame";
     TArray<class AFSDPawn*> PheromoneTargets;

@@ -55,11 +55,11 @@ public:
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "bda9252eeab02b40ac8bc3adfbb3bc7c";
     float Timeline_1_0_1_Anim_A1CDCF1443534FDED095F0B3C5DBCF10;
-    ETimelineDirection Timeline_1__Direction_A1CDCF1443534FDED095F0B3C5DBCF10;
+    TEnum<ETimelineDirection> Timeline_1__Direction_A1CDCF1443534FDED095F0B3C5DBCF10;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_NewTrack;
     static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_5573B4554C24184CF01708BDE578A95F";
-    ETimelineDirection Timeline_0__Direction_5573B4554C24184CF01708BDE578A95F;
+    TEnum<ETimelineDirection> Timeline_0__Direction_5573B4554C24184CF01708BDE578A95F;
     class UTimelineComponent* Timeline_0;
     float LightIntensity;
     void ExecuteUbergraph_BP_SpotLightInteractive(int EntryPoint);

@@ -30,6 +30,7 @@ class BP_CoreRift_Carriable_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_CoreRift_Carriable", "BP_CoreRift_Carriable_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "8e32103b669c894ca3b8a165afcc8401";
@@ -64,7 +65,7 @@ public:
     void OnAttachChanged(bool Attached);
     void BndEvt__BP_CoreRift_Carriable_Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void BndEvt__BP_CoreRift_Carriable_Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
-    void BndEvt__BP_CoreRift_Carriable_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__BP_CoreRift_Carriable_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
 };
 

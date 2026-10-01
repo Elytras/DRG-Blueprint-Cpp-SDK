@@ -22,6 +22,7 @@ class ENE_Jelly_Passive_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/JellyPlatform/ENE_Jelly_Passive", "ENE_Jelly_Passive_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
     static constexpr const char* enemy__UeScsNode = "8a527e710244b24dbbc5073bf3cf67e9";

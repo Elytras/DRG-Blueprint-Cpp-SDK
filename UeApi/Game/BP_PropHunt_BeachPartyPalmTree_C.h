@@ -16,6 +16,7 @@ class BP_PropHunt_BeachPartyPalmTree_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BeachParty/BP_PropHunt_BeachPartyPalmTree", "BP_PropHunt_BeachPartyPalmTree_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class USkeletalMeshComponent* SK_SummerEvent_palmTree;
     static constexpr const char* SK_SummerEvent_palmTree__UeScsNode = "1192474dca703d4398f4ea743dc85f16";
     class UArrowComponent* Arrow;

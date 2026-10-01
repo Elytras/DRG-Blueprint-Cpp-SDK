@@ -45,8 +45,8 @@ public:
     static constexpr const char* On_Inventory_Ready__UeName = "On Inventory Ready";
     UE_COSMETIC void Construct();
     UE_COSMETIC void Destruct();
-    void OnCharacterStateChanged(ECharacterState NewState);
-    void OnCameraModeChanged_Event(ECharacterCameraMode NewCameraMode, ECharacterCameraMode OldCameraMode);
+    void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
+    void OnCameraModeChanged_Event(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void OnDepositingBegin_Event(class UResourceBank* ResourceBank);
     void OnDepositingEnd_Event(class UResourceBank* ResourceBank);
     void OnToggleMapTool(bool Visible);

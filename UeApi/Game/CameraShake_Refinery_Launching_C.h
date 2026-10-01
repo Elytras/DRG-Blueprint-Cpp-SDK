@@ -13,6 +13,7 @@ class CameraShake_Refinery_Launching_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/CameraShake_Refinery_Launching", "CameraShake_Refinery_Launching_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}   // namespace Game::LevelElements::Refinery

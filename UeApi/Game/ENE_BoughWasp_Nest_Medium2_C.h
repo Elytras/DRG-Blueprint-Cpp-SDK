@@ -15,6 +15,7 @@ class ENE_BoughWasp_Nest_Medium2_C : public Game::LevelElements::RoomObjects::Ha
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Nest_Medium2", "ENE_BoughWasp_Nest_Medium2_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     class UPointLightComponent* PointLight1;
     static constexpr const char* PointLight1__UeScsNode = "54b10500895593479f95f7d3ce4deba4";
 };

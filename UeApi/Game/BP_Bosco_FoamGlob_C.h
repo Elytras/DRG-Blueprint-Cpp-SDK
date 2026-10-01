@@ -14,6 +14,7 @@ class BP_Bosco_FoamGlob_C : public Game::GameElements::Missions::Warnings::Plagu
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/BP_Bosco_FoamGlob", "BP_Bosco_FoamGlob_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_Bosco_FoamGlob_C;
     static constexpr const char* UberGraphFrame_BP_Bosco_FoamGlob_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_Bosco_FoamGlob(int EntryPoint);

@@ -30,6 +30,7 @@ class ENE_FlyingCritterBase_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/FlyingCritterBase/ENE_FlyingCritterBase", "ENE_FlyingCritterBase_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* Trail;
     static constexpr const char* Trail__UeScsNode = "6a15e95508def34299e0a35a89725b36";

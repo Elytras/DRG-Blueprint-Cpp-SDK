@@ -21,6 +21,7 @@ class Grenade_Friendly_Shredders_C : public Game::WeaponsNTools::Grenades::ITM_G
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/Grenade_Friendly_Shredders", "Grenade_Friendly_Shredders_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Friendly_Shredders_C;
     static constexpr const char* UberGraphFrame_Grenade_Friendly_Shredders_C__UeName = "UberGraphFrame";
     class UFSDAudioComponent* GrenadeParasiteSpawn;

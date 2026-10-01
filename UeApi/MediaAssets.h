@@ -109,7 +109,7 @@ class UMediaSoundComponent : public USynthComponent
 {
 public:
     UE_CLASS("/Script/MediaAssets", "MediaSoundComponent");
-    EMediaSoundChannels Channels;
+    TEnum<EMediaSoundChannels> Channels;
     bool DynamicRateAdjustment;
     float RateAdjustmentFactor;
     FFloatRange RateAdjustmentRange;
@@ -121,7 +121,7 @@ public:
     void SetEnableSpectralAnalysis(bool bInSpectralAnalysisEnabled);
     void SetEnvelopeFollowingsettings(int AttackTimeMsec, int ReleaseTimeMsec);
     void SetMediaPlayer(class UMediaPlayer* NewMediaPlayer);
-    void SetSpectralAnalysisSettings(TArray<float> InFrequenciesToAnalyze, EMediaSoundComponentFFTSize InFFTSize);
+    void SetSpectralAnalysisSettings(TArray<float> InFrequenciesToAnalyze, TEnum<EMediaSoundComponentFFTSize> InFFTSize);
     UE_PURE float GetEnvelopeValue() const;
     UE_PURE class UMediaPlayer* GetMediaPlayer() const;
 };
@@ -228,7 +228,7 @@ public:
     bool Reopen();
     bool Rewind();
     bool Seek(const FTimespan& Time);
-    bool SelectTrack(EMediaPlayerTrack TrackType, int TrackIndex);
+    bool SelectTrack(TEnum<EMediaPlayerTrack> TrackType, int TrackIndex);
     void SetBlockOnTime(const FTimespan& Time);
     void SetDesiredPlayerName(FName PlayerName);
     bool SetLooping(bool Looping);
@@ -236,7 +236,7 @@ public:
     bool SetNativeVolume(float Volume);
     bool SetRate(float Rate);
     void SetTimeDelay(FTimespan TimeDelay_0);
-    bool SetTrackFormat(EMediaPlayerTrack TrackType, int TrackIndex, int FormatIndex);
+    bool SetTrackFormat(TEnum<EMediaPlayerTrack> TrackType, int TrackIndex, int FormatIndex);
     bool SetVideoTrackFrameRate(int TrackIndex, int FormatIndex, float FrameRate);
     bool SetViewField(float Horizontal, float Vertical, bool Absolute);
     bool SetViewRotation(const FRotator& Rotation, bool Absolute);
@@ -248,20 +248,20 @@ public:
     UE_PURE FTimespan GetDuration() const;
     UE_PURE float GetHorizontalFieldOfView() const;
     UE_PURE FText GetMediaName() const;
-    UE_PURE int GetNumTrackFormats(EMediaPlayerTrack TrackType, int TrackIndex) const;
-    UE_PURE int GetNumTracks(EMediaPlayerTrack TrackType) const;
+    UE_PURE int GetNumTrackFormats(TEnum<EMediaPlayerTrack> TrackType, int TrackIndex) const;
+    UE_PURE int GetNumTracks(TEnum<EMediaPlayerTrack> TrackType) const;
     UE_PURE FName GetPlayerName() const;
     UE_PURE class UMediaPlaylist* GetPlaylist() const;
     UE_PURE int GetPlaylistIndex() const;
     UE_PURE float GetRate() const;
-    UE_PURE int GetSelectedTrack(EMediaPlayerTrack TrackType) const;
+    UE_PURE int GetSelectedTrack(TEnum<EMediaPlayerTrack> TrackType) const;
     void GetSupportedRates(TArray<FFloatRange>& OutRates, bool Unthinned) const;
     UE_PURE FTimespan GetTime() const;
     UE_PURE FTimespan GetTimeDelay() const;
     UE_PURE class UMediaTimeStampInfo* GetTimeStamp() const;
-    UE_PURE FText GetTrackDisplayName(EMediaPlayerTrack TrackType, int TrackIndex) const;
-    UE_PURE int GetTrackFormat(EMediaPlayerTrack TrackType, int TrackIndex) const;
-    UE_PURE FString GetTrackLanguage(EMediaPlayerTrack TrackType, int TrackIndex) const;
+    UE_PURE FText GetTrackDisplayName(TEnum<EMediaPlayerTrack> TrackType, int TrackIndex) const;
+    UE_PURE int GetTrackFormat(TEnum<EMediaPlayerTrack> TrackType, int TrackIndex) const;
+    UE_PURE FString GetTrackLanguage(TEnum<EMediaPlayerTrack> TrackType, int TrackIndex) const;
     UE_PURE FString GetUrl() const;
     UE_PURE float GetVerticalFieldOfView() const;
     UE_PURE float GetVideoTrackAspectRatio(int TrackIndex, int FormatIndex) const;
@@ -307,16 +307,16 @@ class UMediaTexture : public UTexture
 {
 public:
     UE_CLASS("/Script/MediaAssets", "MediaTexture");
-    ETextureAddress AddressX;
-    ETextureAddress AddressY;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
     bool AutoClear;
     FLinearColor ClearColor;
     bool EnableGenMips;
     uint8 NumMips;
     bool NewStyleOutput;
-    EMediaTextureOutputFormat OutputFormat;
+    TEnum<EMediaTextureOutputFormat> OutputFormat;
     float CurrentAspectRatio;
-    EMediaTextureOrientation CurrentOrientation;
+    TEnum<EMediaTextureOrientation> CurrentOrientation;
     class UMediaPlayer* MediaPlayer;
     void SetMediaPlayer(class UMediaPlayer* NewMediaPlayer);
     UE_PURE float GetAspectRatio() const;

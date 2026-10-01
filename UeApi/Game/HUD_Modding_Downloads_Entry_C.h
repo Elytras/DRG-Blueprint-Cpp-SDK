@@ -43,7 +43,7 @@ public:
     void GetModName(FString& ModName_0);
     void GetProgress(float& Progress_0);
     void Finish();
-    void Error(EUGCPackageError InErrorType);
+    void Error(TEnum<EUGCPackageError> InErrorType);
     void GetIsFinished(bool& IsFinished_0);
 };
 

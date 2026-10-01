@@ -21,6 +21,7 @@ class WPN_SawedOffShotgun_C : public ASawedOffShotgun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/WPN_SawedOffShotgun", "WPN_SawedOffShotgun_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent ShockwaveDamage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
     static constexpr const char* FirstPersonWidget__UeScsNode = "af4e4f75c8a4cd4597f195a3aae93234";

@@ -30,6 +30,7 @@ class BP_AmberEvent_C : public AAmberEvent
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/AmberEvent/BP_AmberEvent", "BP_AmberEvent_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/FSD.DamageComponent ExplosionDamage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule1;
     static constexpr const char* Capsule1__UeScsNode = "f76e66ddebcf07459bf7886cf4c232f9";

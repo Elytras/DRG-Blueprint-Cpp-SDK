@@ -13,6 +13,7 @@ class PRW_PickAxe_C : public APickaxePreviewActor
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pickaxe/PRW_PickAxe", "PRW_PickAxe_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TP_RootComponent";
 };
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe

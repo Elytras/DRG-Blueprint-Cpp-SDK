@@ -36,7 +36,7 @@ public:
     void ShowAsIcon(class UTexture2D* InTexture, FLinearColor InTint);
     void SetSize(float InHeightOverride, float InWidthOverride, float InMinDesiredWidth);
     void ShowAsText(FText InText, FLinearColor InTint);
-    void SetInteraction(EInputInteraction InInteraction);
+    void SetInteraction(TEnum<EInputInteraction> InInteraction);
     void ShowFromDisplayDetails(const FInputDisplay& details);
 };
 

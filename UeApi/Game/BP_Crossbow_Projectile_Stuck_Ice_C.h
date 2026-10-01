@@ -22,6 +22,7 @@ class BP_Crossbow_Projectile_Stuck_Ice_C : public Game::WeaponsNTools::Crossbow:
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Ice", "BP_Crossbow_Projectile_Stuck_Ice_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* FlammableCollision;
     static constexpr const char* FlammableCollision__UeScsNode = "130e778608b9834db52f52ab3242b3c2";

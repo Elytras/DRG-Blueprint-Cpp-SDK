@@ -25,6 +25,7 @@ class BP_ResourcePouch_C : public AResourcePouch
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/BP_ResourcePouch", "BP_ResourcePouch_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
     static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "1a2cb6add35b1145b9636a8365e263f9";
@@ -49,7 +50,7 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
     void Throw(FVector force);
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
-    void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, EInputKeys Key);
+    void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 };
 
 }}}   // namespace Game::GameElements::Resources

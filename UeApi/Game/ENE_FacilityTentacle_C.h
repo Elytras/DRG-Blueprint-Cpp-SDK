@@ -40,6 +40,7 @@ public:
     using BP_TentacleBurrowAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleBurrowAttack_C;
     using BP_TentacleMeleeAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleMeleeAttack_C;
     using BP_Tentacle_RangedAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Tentacle_RangedAttack_C;
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeaponFireGlow;
     static constexpr const char* WeaponFireGlow__UeScsNode = "8dfb9d2ec50ad44e89f5df29a9858abb";
@@ -98,7 +99,7 @@ public:
     UE_MULTICAST void PlayFinalAttackWarning();
     void PlayHitGround();
     UE_MULTICAST void All_PlayHitGround();
-    void BndEvt__Outline_K2Node_ComponentBoundEvent_0_OutlineChanged__DelegateSignature(EOutline InOutline);
+    void BndEvt__Outline_K2Node_ComponentBoundEvent_0_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     UE_MULTICAST UE_RELIABLE void PlayAttackCue();
     UE_MULTICAST UE_RELIABLE void PlayPreAttackSound();
     void ReceiveBeginPlay();

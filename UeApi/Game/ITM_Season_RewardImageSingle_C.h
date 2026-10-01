@@ -68,14 +68,14 @@ public:
     bool ShowClaimedEvent;
     bool ShowGlow;
     class UTextureRenderTarget2D* RenderTex;
-    ESeasonVisibilityState NodeState;
+    TEnum<ESeasonVisibilityState> NodeState;
     ITM_SkinIcon_C* SkinWidget;
     bool dimOutline;
     bool ShowCharacterIcon;
     void ExecuteUbergraph_ITM_Season_RewardImageSingle(int EntryPoint);
     void UpdateWidgetColor();
     void SetSkin(class UPlayerCharacterID* OptionalCharID, class UItemSkin* Item);
-    void SetActiveLook(ESeasonVisibilityState IsActiveLook);
+    void SetActiveLook(TEnum<ESeasonVisibilityState> IsActiveLook);
     void ChangeSize(FVector2D Size_0);
     void SetVanityIcon(class UVanityItem* Item);
     void SetDoHover(bool InDoHover);

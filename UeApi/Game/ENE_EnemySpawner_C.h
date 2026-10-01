@@ -21,6 +21,7 @@ class ENE_EnemySpawner_C : public AEnemyPawn
 {
 public:
     UE_CLASS("/Game/Enemies/EnemySpawner/ENE_EnemySpawner", "ENE_EnemySpawner_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     static constexpr const char* DefaultSceneRoot__UeScsNode = "61c6c6071f2d364aad6a74b9faf66653";

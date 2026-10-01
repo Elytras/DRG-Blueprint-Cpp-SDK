@@ -19,6 +19,7 @@ class BP_SentinelGoo_Puddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/BP_SentinelGoo_Puddle", "BP_SentinelGoo_Puddle_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     class UBoxComponent* BoxTrigger;
     static constexpr const char* BoxTrigger__UeScsNode = "da0e81a8dffbe645af59db8339077d88";
     class USimpleObjectInfoComponent* SimpleObjectInfo;

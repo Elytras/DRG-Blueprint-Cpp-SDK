@@ -13,6 +13,7 @@ class Loadout_GrenadeProxy_Neurotoxin_C : public Game::WeaponsNTools::Grenades::
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/Loadout_GrenadeProxy_Neurotoxin", "Loadout_GrenadeProxy_Neurotoxin_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin

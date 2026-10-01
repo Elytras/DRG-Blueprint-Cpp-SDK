@@ -20,6 +20,7 @@ class BP_PickaxeIconGenerator_C : public AIconGenerationPickaxe
 {
 public:
     UE_CLASS("/Game/Character/Vanity2/BP_PickaxeIconGenerator", "BP_PickaxeIconGenerator_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent MeshRoot;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCameraComponent* TestCamera;
     static constexpr const char* TestCamera__UeScsNode = "3b9733346d79aa48aa1841a3929b122f";
@@ -59,7 +60,7 @@ public:
     static constexpr const char* SpotLight1__UeScsNode = "7b1647e10efe3a48ba0cc6a700e5de5a";
     class USceneComponent* Lights;
     static constexpr const char* Lights__UeScsNode = "309dc4d94f3e6b4e9b3c28da527756aa";
-    EVanitySlot VanityCategory;
+    TEnum<EVanitySlot> VanityCategory;
     FString Path;
     void ExecuteUbergraph_BP_PickaxeIconGenerator(int EntryPoint);
     void ReceiveBeginPlay();

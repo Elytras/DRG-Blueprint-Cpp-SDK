@@ -13,6 +13,7 @@ class CameraShake_MeteorDigging_Small_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/MeteorShower/CameraShake_MeteorDigging_Small", "CameraShake_MeteorDigging_Small_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower

@@ -16,6 +16,7 @@ class BP_LockOnBeam_C : public ALockOnBeam
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/LockOnBeam/BP_LockOnBeam", "BP_LockOnBeam_C");
+    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent BlockedNodeComponent;/Script/Engine.SceneComponent PreviewEndLocation;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SplineComponent BeamSpline;/Script/Engine.SplineMeshComponent BeamMeshComponent01;/Script/Engine.SplineMeshComponent BeamMeshComponent02;/Script/Engine.SplineMeshComponent BeamMeshComponent03";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     static constexpr const char* Niagara__UeScsNode = "dd19a06b6ec80a4d99fb98024eeec104";

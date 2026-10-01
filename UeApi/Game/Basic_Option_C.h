@@ -41,13 +41,13 @@ public:
     TMulticastInlineDelegate<void()> OnHoveringBegin;
     TMulticastInlineDelegate<void()> OnHoveringEnd;
     int Indent;
-    EHorizontalAlignment ContentHAlignment;
+    TEnum<EHorizontalAlignment> ContentHAlignment;
     void ExecuteUbergraph_Basic_Option(int EntryPoint);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetOptionText(FText InText);
     void SetIndent(int InIndent);
-    void SetContentLayout(float InLeftPadding, EHorizontalAlignment InHorizontalAlignment);
+    void SetContentLayout(float InLeftPadding, TEnum<EHorizontalAlignment> InHorizontalAlignment);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

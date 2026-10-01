@@ -82,11 +82,11 @@ public:
     void CreateMovie();
     void OnClosed();
     void OnShown();
-    void ReceiveNewVisibility(ESlateVisibility NewVisibility);
+    void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
     void UpdateCharacterDescription(class UPlayerCharacterID* CharacterClass);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSelectedCharacterChanged_Event(TSubclassOf<class APlayerCharacter> NewCharacter);
-    void OnInputSourceChanged(EFSDInputSource InputSource);
+    void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     void BackPressed();
     UE_COSMETIC void Construct();
     void OnSuccess_0D1BB19C4CA8D7117BC6A688077A0BDE();

@@ -26,7 +26,7 @@ class ITM_Craft_ItemIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/ITM_Craft_ItemIcon", "ITM_Craft_ItemIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* IconReady;
+    UE_READONLY class UWidgetAnimation* IconReady;
     class UBorder* Border_Outside;
     class UBorder* BorderBG;
     class UImage* ICON_Item;

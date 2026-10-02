@@ -22,25 +22,15 @@ class ENE_Spider_Tank_Amber_C : public Game::Enemies::Spider::Tank::ENE_Spider_T
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/Amber/ENE_Spider_Tank_Amber", "ENE_Spider_Tank_Amber_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Amber_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Amber_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* BiteAttack;
-    static constexpr const char* BiteAttack__UeScsNode = "974e86c270ddf143b4861315cb954df4";
     class UMeleeAttackComponent* StabAttack;
-    static constexpr const char* StabAttack__UeScsNode = "f82d78273f8171419f07b91d1098c5b7";
     class UStaticMeshComponent* Mesh_Infestation03;
-    static constexpr const char* Mesh_Infestation03__UeScsNode = "2a4eb10bc1ce964484ad76e57ed3479a";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "479d6ab20189fc409c3f1ebd9c19c0dd";
     class UStaticMeshComponent* Mesh_Infestation02;
-    static constexpr const char* Mesh_Infestation02__UeScsNode = "772588d3fbde4a41a5b3c7c9670daabf";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "ecd245e6a424d1408666d9c204674a7a";
     class UStaticMeshComponent* Mesh_Infestation01;
-    static constexpr const char* Mesh_Infestation01__UeScsNode = "7e640206fb54184caa4e2513987a1fab";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "b76525819189dc4cbc0676acedad3bda";
     class AGameEvent* Event;
     void ExecuteUbergraph_ENE_Spider_Tank_Amber(int EntryPoint);
     void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
@@ -53,6 +43,20 @@ public:
     bool SetupEvent(class AGameEvent* GameEvent);
     bool AdvanceOneObjective();
     bool AddEventProgress(float Progress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Amber_C__UeName = "UberGraphFrame";
+        static constexpr const char* BiteAttack__UeScsNode = "974e86c270ddf143b4861315cb954df4";
+        static constexpr const char* StabAttack__UeScsNode = "f82d78273f8171419f07b91d1098c5b7";
+        static constexpr const char* Mesh_Infestation03__UeScsNode = "2a4eb10bc1ce964484ad76e57ed3479a";
+        static constexpr const char* PointLight4__UeScsNode = "479d6ab20189fc409c3f1ebd9c19c0dd";
+        static constexpr const char* Mesh_Infestation02__UeScsNode = "772588d3fbde4a41a5b3c7c9670daabf";
+        static constexpr const char* PointLight2__UeScsNode = "ecd245e6a424d1408666d9c204674a7a";
+        static constexpr const char* Mesh_Infestation01__UeScsNode = "7e640206fb54184caa4e2513987a1fab";
+        static constexpr const char* PointLight1__UeScsNode = "b76525819189dc4cbc0676acedad3bda";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Tank::Amber

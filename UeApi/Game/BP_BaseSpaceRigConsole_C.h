@@ -30,27 +30,19 @@ public:
     using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "c5e7ecfcde0b6d4ca91ae635e1acd05e";
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "7d0ad32bf43a474780cdcc6bce400711";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "0f50876679543749a60ac48024c5387c";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
-    FString StatCountKey;
-    FText ConsoleTitle;
-    FText NotificationText;
+    UE_READONLY FString StatCountKey;
+    UE_READONLY FText ConsoleTitle;
+    UE_READONLY FText NotificationText;
     class UTexture2D* NotificationIcon;
-    TSoftClassPtr<class UClass> ConsoleWindowClass;
-    int Window_Z_Order;
-    static constexpr const char* Window_Z_Order__UeName = "Window Z Order";
+    UE_READONLY TSoftClassPtr<class UClass> ConsoleWindowClass;
+    UE_READONLY int Window_Z_Order;
     bool CreateMenuOnStartup;
     class UWindowWidget* WindowInstance;
     void ExecuteUbergraph_BP_BaseSpaceRigConsole(int EntryPoint);
@@ -63,6 +55,18 @@ public:
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
     void SetCreateMenuOnStartUp(bool InCreateOnStartUp);
     void ShowNotification(bool IsVisible);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "c5e7ecfcde0b6d4ca91ae635e1acd05e";
+        static constexpr const char* TextRender__UeScsNode = "7d0ad32bf43a474780cdcc6bce400711";
+        static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
+        static constexpr const char* StaticMesh1__UeScsNode = "0f50876679543749a60ac48024c5387c";
+        static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
+        static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
+        static constexpr const char* Window_Z_Order__UeName = "Window Z Order";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

@@ -40,14 +40,18 @@ public:
     void Refresh();
     void OnItemClaimableChanged_Event(UI_Milestone_Item_C* Milestone_Item);
     void Init_Milestone_Widget(UI_Milestone_Item_C* Item);
-    static constexpr const char* Init_Milestone_Widget__UeName = "Init Milestone Widget";
     void BndEvt__UI_MissionStats_Categories_K2Node_ComponentBoundEvent_14_OnSelectedChanged__DelegateSignature();
     UE_COSMETIC void Construct();
     void Update_Has_Claimable_State();
-    static constexpr const char* Update_Has_Claimable_State__UeName = "Update Has Claimable State";
     void BuildList();
     void Clear();
     void AddMilestone(class UMilestoneAsset* InMilestone);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Init_Milestone_Widget__UeName = "Init Milestone Widget";
+        static constexpr const char* Update_Has_Claimable_State__UeName = "Update Has Claimable State";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

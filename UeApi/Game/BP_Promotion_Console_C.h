@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/UI/MENU_Promotion/BP_Promotion_Console", "BP_Promotion_Console_C");
     using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_Promotion_Console_C;
-    static constexpr const char* UberGraphFrame_BP_Promotion_Console_C__UeName = "UberGraphFrame";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "7642542eaa017747a0f7a95d163c1be9";
     void ExecuteUbergraph_BP_Promotion_Console(int EntryPoint);
     void OnOpenConsole(BP_PlayerController_SpaceRig_C* InPlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Promotion_Console_C__UeName = "UberGraphFrame";
+        static constexpr const char* Audio__UeScsNode = "7642542eaa017747a0f7a95d163c1be9";
+    };
 };
 
 }}}   // namespace Game::UI::MENU_Promotion

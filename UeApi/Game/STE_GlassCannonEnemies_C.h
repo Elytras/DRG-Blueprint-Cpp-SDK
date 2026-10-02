@@ -13,6 +13,11 @@ class STE_GlassCannonEnemies_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Challenges/GlassCannon/STE_GlassCannonEnemies", "STE_GlassCannonEnemies_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Challenges::GlassCannon

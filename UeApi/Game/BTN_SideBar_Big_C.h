@@ -19,8 +19,8 @@ class BTN_SideBar_Big_C : public UUserWidget
 public:
     UE_CLASS("/Game/Art/_TestingGrounds/UItesting/BTN_SideBar_Big", "BTN_SideBar_Big_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Button_Hover;
-    class UWidgetAnimation* Button_Click;
+    UE_READONLY class UWidgetAnimation* Button_Hover;
+    UE_READONLY class UWidgetAnimation* Button_Click;
     class UButton* MainButton;
     class UTextBlock* TEXT_InfoBox;
     class UTextBlock* TXT_MainButton;

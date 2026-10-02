@@ -26,22 +26,26 @@ public:
     using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ScreenMesh;
-    static constexpr const char* ScreenMesh__UeScsNode = "5c5ef159808a2b4fa3b80ae04ffefd70";
     class UTextRenderComponent* WorkName;
-    static constexpr const char* WorkName__UeScsNode = "7d0ad32bf43a474780cdcc6bce400711";
     class UWidgetComponent* ScreenWidget;
-    static constexpr const char* ScreenWidget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
     class UBoxComponent* InteractionCollider;
-    static constexpr const char* InteractionCollider__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
     void ExecuteUbergraph_BP_DeepDiveConsole(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ScreenMesh__UeScsNode = "5c5ef159808a2b4fa3b80ae04ffefd70";
+        static constexpr const char* WorkName__UeScsNode = "7d0ad32bf43a474780cdcc6bce400711";
+        static constexpr const char* ScreenWidget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
+        static constexpr const char* InteractionCollider__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
+        static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

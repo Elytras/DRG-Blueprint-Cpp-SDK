@@ -22,13 +22,17 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_News_Monitor", "BP_News_Monitor_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "b698ff893ab6284c839107b312b8f9d3";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     void ExecuteUbergraph_BP_News_Monitor(int EntryPoint);
     void BndEvt__BP_News_Monitor_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh__UeScsNode = "b698ff893ab6284c839107b312b8f9d3";
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

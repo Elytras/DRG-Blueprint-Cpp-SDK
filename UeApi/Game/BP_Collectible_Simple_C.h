@@ -20,19 +20,23 @@ class BP_Collectible_Simple_C : public Game::GameElements::Resources::Collectibl
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/BP_Collectible_Simple", "BP_Collectible_Simple_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Collectible_Simple_C;
-    static constexpr const char* UberGraphFrame_BP_Collectible_Simple_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "f2d51bd98b3dfc45b7aa8bfe02aa30e0";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "e506965752b8fe478f31307894a708ff";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "2cf6dc2ec306a54a90375614d18d2bd2";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "19b5c546d4756745b1efec238be3d772";
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "7b43ecf4faa0ae4baab5046db99f1682";
     void ExecuteUbergraph_BP_Collectible_Simple(int EntryPoint);
     void PickedUp();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Collectible_Simple_C__UeName = "UberGraphFrame";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "f2d51bd98b3dfc45b7aa8bfe02aa30e0";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "e506965752b8fe478f31307894a708ff";
+        static constexpr const char* terrainPlacement__UeScsNode = "2cf6dc2ec306a54a90375614d18d2bd2";
+        static constexpr const char* PointLight__UeScsNode = "19b5c546d4756745b1efec238be3d772";
+        static constexpr const char* Mesh__UeScsNode = "7b43ecf4faa0ae4baab5046db99f1682";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Resources::Collectibles

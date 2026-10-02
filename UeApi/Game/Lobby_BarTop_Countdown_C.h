@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Lobby_BarTop_Countdown", "Lobby_BarTop_Countdown_C");
     using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Pulse;
+    UE_READONLY class UWidgetAnimation* Pulse;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical_0;
     class UBorder* Border_28;

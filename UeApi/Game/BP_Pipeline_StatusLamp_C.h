@@ -20,9 +20,7 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Pipeline_StatusLamp", "BP_Pipeline_StatusLamp_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ST_Connector_StatusLamp;
-    static constexpr const char* ST_Connector_StatusLamp__UeScsNode = "447f962fd76a0d43bed8ce8979b55096";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "5e3633f4969bb448a5f43d473550a5d3";
     class APipelineStart* PipelineStart;
     TEnum<EPipelineBuildState> PreviewState;
     void ExecuteUbergraph_BP_Pipeline_StatusLamp(int EntryPoint);
@@ -31,6 +29,12 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void UpdateState();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ST_Connector_StatusLamp__UeScsNode = "447f962fd76a0d43bed8ce8979b55096";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "5e3633f4969bb448a5f43d473550a5d3";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

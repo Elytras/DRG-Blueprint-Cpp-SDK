@@ -17,14 +17,18 @@ class BP_CrystalTrapDorette_C : public Game::GameElements::Objectives::Escort::B
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_CrystalTrapDorette", "BP_CrystalTrapDorette_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_CrystalTrapDorette_C;
-    static constexpr const char* UberGraphFrame_BP_CrystalTrapDorette_C__UeName = "UberGraphFrame";
     class UDamageComponent* AoE_Push_Damage;
-    static constexpr const char* AoE_Push_Damage__UeScsNode = "d96f92c89312be45bc0cc4b107365863";
     void ExecuteUbergraph_BP_CrystalTrapDorette(int EntryPoint);
     void Explode();
     void GrowTrap();
     void On_Fully_Grown();
-    static constexpr const char* On_Fully_Grown__UeName = "On Fully Grown";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_CrystalTrapDorette_C__UeName = "UberGraphFrame";
+        static constexpr const char* AoE_Push_Damage__UeScsNode = "d96f92c89312be45bc0cc4b107365863";
+        static constexpr const char* On_Fully_Grown__UeName = "On Fully Grown";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_CombatTip", "Lore_Container_CombatTip_C");
     using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Window_CutCorner_C* Basic_Window;
     class UImage* Image_ExclamaitonMark;
     class URichTextBlock* RichTextBlock_Body;

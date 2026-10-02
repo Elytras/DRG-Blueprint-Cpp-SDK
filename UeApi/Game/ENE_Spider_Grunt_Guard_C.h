@@ -19,19 +19,23 @@ class ENE_Spider_Grunt_Guard_C : public Game::Enemies::Spider::Grunt::ENE_Spider
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Guard/ENE_Spider_Grunt_Guard", "ENE_Spider_Grunt_Guard_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Grunt_Guard_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Guard_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "e1ff9aae4c20d94399a02c97eda8878d";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "a96becb988de804e8d43a8007ecfd7d3";
     class UInDangerComponent* InDanger;
-    static constexpr const char* InDanger__UeScsNode = "23460cf1d60bfc4688a0564306f766ff";
     void ExecuteUbergraph_ENE_Spider_Grunt_Guard(int EntryPoint);
     void MakeElite();
     void BndEvt__InDanger_K2Node_ComponentBoundEvent_0_IsInDangerSig__DelegateSignature();
     void PlayGuardAnimation(class USpiderAnimInstance* AnimInstance, float Duration, float& outDuration);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Guard_C__UeName = "UberGraphFrame";
+        static constexpr const char* MeleeAttack__UeScsNode = "e1ff9aae4c20d94399a02c97eda8878d";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "a96becb988de804e8d43a8007ecfd7d3";
+        static constexpr const char* InDanger__UeScsNode = "23460cf1d60bfc4688a0564306f766ff";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Guard

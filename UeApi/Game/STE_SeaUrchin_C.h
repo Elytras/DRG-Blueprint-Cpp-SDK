@@ -13,6 +13,11 @@ class STE_SeaUrchin_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SeaUrchin/STE_SeaUrchin", "STE_SeaUrchin_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SeaUrchin

@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/UI_LockOn_TargetCounter", "UI_LockOn_TargetCounter_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimPing;
     UI_ImageTinted_C* Background;
     UI_ImageTinted_C* Foreground;
     bool IsOn;

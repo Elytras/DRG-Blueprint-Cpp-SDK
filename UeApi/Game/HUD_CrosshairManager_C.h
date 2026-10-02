@@ -29,7 +29,7 @@ public:
     using HUD_HitIndicator_C = Game::WeaponsNTools::_Crosshairs::HUD_HitIndicator_C;
     using OnScreen_Indicator_UsableZipLine_C = Game::UI::OnScreenIndicators::OnScreen_Indicator_UsableZipLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     class UWidgetSwitcher* CrosshairSwitcher;
     HUD_HitIndicator_C* HUD_HitIndicator;
     class UCanvasPanel* MainCanvas;
@@ -42,7 +42,6 @@ public:
     void ExecuteUbergraph_HUD_CrosshairManager(int EntryPoint);
     void OnItemsLoaded();
     void On_Inventory_Ready();
-    static constexpr const char* On_Inventory_Ready__UeName = "On Inventory Ready";
     UE_COSMETIC void Construct();
     UE_COSMETIC void Destruct();
     void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
@@ -53,6 +52,11 @@ public:
     void SetCrosshair(class AItem* InEquippedItem);
     void UpdateVisibility();
     void UnregisterEvents();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Inventory_Ready__UeName = "On Inventory Ready";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs

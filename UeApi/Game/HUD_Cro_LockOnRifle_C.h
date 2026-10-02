@@ -31,7 +31,7 @@ public:
     using UI_LockOn_Counter_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_C;
     using UI_LockOn_Scanning_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Scanning_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Bracket_Left;
     class UImage* Bracket_Right;
     class UImage* CH_Bottom;
@@ -46,9 +46,7 @@ public:
     class UNamedSlot* Focussed_Regular;
     class UNamedSlot* Focussed_Small;
     class UImage* GK2_markerL;
-    static constexpr const char* GK2_markerL__UeName = "GK2-markerL";
     class UImage* GK2_markerR;
-    static constexpr const char* GK2_markerR__UeName = "GK2-markerR";
     class UImage* Hair_Bottom;
     class UImage* Hair_Left;
     class UImage* Hair_Right;
@@ -67,10 +65,8 @@ public:
     class USizeBox* SizeBox_Small;
     class UWidgetSwitcher* WidgetSwitcher_Type;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     bool JustHit;
     float SpreadPositionMultiplier;
     float FocusSpreadPositionMultiplier;
@@ -86,6 +82,14 @@ public:
     void SetData(class AItem* Item);
     UE_COSMETIC void Construct();
     void OnSpreadChange(float HorizontalSpread, float VerticalSpread, bool isAtRest);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GK2_markerL__UeName = "GK2-markerL";
+        static constexpr const char* GK2_markerR__UeName = "GK2-markerR";
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI

@@ -6,6 +6,47 @@ A member is here if and only if AssetGen can compile a use of it.
 */
 #include "UeMeta.h"
 
+struct FARFilter;
+struct FARTraceResult;
+struct FBox;
+struct FBox2D;
+struct FColor;
+struct FDateTime;
+struct FFrameNumber;
+struct FFrameRate;
+struct FFrameTime;
+struct FGuardianTestResult;
+struct FIntPoint;
+struct FIntVector;
+struct FLinearColor;
+struct FMatrix;
+struct FPlane;
+struct FPrimaryAssetId;
+struct FProcMeshTangent;
+struct FQualifiedFrameTime;
+struct FQuat;
+struct FRandomStream;
+struct FRotator;
+struct FSoftObjectPath;
+struct FSpriteRect;
+struct FTagAndValue;
+struct FTimespan;
+struct FTransform;
+struct FVector;
+struct FVector2D;
+struct FVector4;
+struct FVectorSpringState;
+struct FVector_NetQuantize;
+struct FVector_NetQuantizeNormal;
+enum class EARObjectClassification : uint8;
+enum class EBoundaryType : uint8;
+enum class EEasingFunc : uint8;
+enum class ELerpInterpolationMode : uint8;
+enum class EMatrixColumns : uint8;
+enum class EOrientPositionSelector : uint8;
+
+class AActor;
+
 enum class EAppMsgType : uint8
 {
     Ok                     = 0,
@@ -298,6 +339,14 @@ struct FARFilter
 
     FARFilter() = default;
     FARFilter(TArray<FName> PackageNames, TArray<FName> PackagePaths, TArray<FName> ObjectPaths, TArray<FName> ClassNames, TSet<FName> RecursiveClassesExclusionSet, bool bRecursivePaths, bool bRecursiveClasses, bool bIncludeOnlyOnDiskAssets) {}
+
+    // UAssetRegistryHelpers::SetFilterTagsAndValues (AssetRegistry.h)
+    FARFilter SetFilterTagsAndValues(const TArray<FTagAndValue>& InTagsAndValues) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SetFilterTagsAndValues__UeForward = "UAssetRegistryHelpers::SetFilterTagsAndValues";
+    };
 };
 
 struct FSoftObjectPath
@@ -307,6 +356,17 @@ struct FSoftObjectPath
 
     FSoftObjectPath() = default;
     FSoftObjectPath(FName AssetPathName, FString SubPathString) {}
+
+    // UKismetSystemLibrary::BreakSoftObjectPath (Engine.h)
+    void BreakSoftObjectPath(FString& PathString) const;
+    // UKismetSystemLibrary::Conv_SoftObjPathToSoftObjRef (Engine.h)
+    TSoftObjectPtr<class UObject> ToSoftObjectPtr() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakSoftObjectPath__UeForward = "UKismetSystemLibrary::BreakSoftObjectPath";
+        static constexpr const char* ToSoftObjectPtr__UeForward = "UKismetSystemLibrary::Conv_SoftObjPathToSoftObjRef";
+    };
 };
 
 struct FAssetBundleEntry
@@ -336,6 +396,41 @@ struct FAssetData
 
     FAssetData() = default;
     FAssetData(FName ObjectPath, FName PackageName, FName PackagePath, FName AssetName, FName AssetClass) {}
+
+    // UAssetRegistryHelpers::GetAsset (AssetRegistry.h)
+    class UObject* GetAsset() const;
+    // UAssetRegistryHelpers::GetClass (AssetRegistry.h)
+    class UClass* GetClass() const;
+    // UAssetRegistryHelpers::GetExportTextName (AssetRegistry.h)
+    FString GetExportTextName() const;
+    // UAssetRegistryHelpers::GetFullName (AssetRegistry.h)
+    FString GetFullName() const;
+    // UAssetRegistryHelpers::GetTagValue (AssetRegistry.h)
+    bool GetTagValue(const FName& InTagName, FString& OutTagValue) const;
+    // UAssetRegistryHelpers::IsAssetLoaded (AssetRegistry.h)
+    bool IsAssetLoaded() const;
+    // UAssetRegistryHelpers::IsRedirector (AssetRegistry.h)
+    bool IsRedirector() const;
+    // UAssetRegistryHelpers::IsUAsset (AssetRegistry.h)
+    bool IsUAsset() const;
+    // UAssetRegistryHelpers::IsValid (AssetRegistry.h)
+    bool IsValid() const;
+    // UAssetRegistryHelpers::ToSoftObjectPath (AssetRegistry.h)
+    FSoftObjectPath ToSoftObjectPath() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetAsset__UeForward = "UAssetRegistryHelpers::GetAsset";
+        static constexpr const char* GetClass__UeForward = "UAssetRegistryHelpers::GetClass";
+        static constexpr const char* GetExportTextName__UeForward = "UAssetRegistryHelpers::GetExportTextName";
+        static constexpr const char* GetFullName__UeForward = "UAssetRegistryHelpers::GetFullName";
+        static constexpr const char* GetTagValue__UeForward = "UAssetRegistryHelpers::GetTagValue";
+        static constexpr const char* IsAssetLoaded__UeForward = "UAssetRegistryHelpers::IsAssetLoaded";
+        static constexpr const char* IsRedirector__UeForward = "UAssetRegistryHelpers::IsRedirector";
+        static constexpr const char* IsUAsset__UeForward = "UAssetRegistryHelpers::IsUAsset";
+        static constexpr const char* IsValid__UeForward = "UAssetRegistryHelpers::IsValid";
+        static constexpr const char* ToSoftObjectPath__UeForward = "UAssetRegistryHelpers::ToSoftObjectPath";
+    };
 };
 
 struct FGuid
@@ -347,6 +442,17 @@ struct FGuid
 
     FGuid() = default;
     FGuid(int A, int B, int C, int D) {}
+
+    // UKismetGuidLibrary::IsValid_Guid (Engine.h)
+    bool IsValid_Guid() const;
+    // UKismetGuidLibrary::Conv_GuidToString (Engine.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* IsValid_Guid__UeForward = "UKismetGuidLibrary::IsValid_Guid";
+        static constexpr const char* ToString__UeForward = "UKismetGuidLibrary::Conv_GuidToString";
+    };
 };
 
 struct FAutomationEvent
@@ -362,6 +468,77 @@ struct FAutomationEvent
 
 struct FDateTime
 {
+
+    // UKismetTextLibrary::AsDateTime_DateTime (Engine.h)
+    FText AsDateTime_DateTime() const;
+    // UKismetTextLibrary::AsDate_DateTime (Engine.h)
+    FText AsDate_DateTime() const;
+    // UKismetTextLibrary::AsTimeZoneDateTime_DateTime (Engine.h)
+    FText AsTimeZoneDateTime_DateTime(FString InTimeZone) const;
+    // UKismetTextLibrary::AsTimeZoneDate_DateTime (Engine.h)
+    FText AsTimeZoneDate_DateTime(FString InTimeZone) const;
+    // UKismetTextLibrary::AsTimeZoneTime_DateTime (Engine.h)
+    FText AsTimeZoneTime_DateTime(FString InTimeZone) const;
+    // UKismetTextLibrary::AsTime_DateTime (Engine.h)
+    FText AsTime_DateTime() const;
+    // UKismetMathLibrary::BreakDateTime (Engine.h)
+    void BreakDateTime(int& Year, int& Month, int& Day, int& Hour, int& Minute, int& Second, int& Millisecond) const;
+    // UKismetMathLibrary::GetDate (Engine.h)
+    FDateTime GetDate() const;
+    // UKismetMathLibrary::GetDay (Engine.h)
+    int GetDay() const;
+    // UKismetMathLibrary::GetDayOfYear (Engine.h)
+    int GetDayOfYear() const;
+    // UKismetMathLibrary::GetHour (Engine.h)
+    int GetHour() const;
+    // UKismetMathLibrary::GetHour12 (Engine.h)
+    int GetHour12() const;
+    // UKismetMathLibrary::GetMillisecond (Engine.h)
+    int GetMillisecond() const;
+    // UKismetMathLibrary::GetMinute (Engine.h)
+    int GetMinute() const;
+    // UKismetMathLibrary::GetMonth (Engine.h)
+    int GetMonth() const;
+    // UKismetMathLibrary::GetSecond (Engine.h)
+    int GetSecond() const;
+    // UKismetMathLibrary::GetTimeOfDay (Engine.h)
+    FTimespan GetTimeOfDay() const;
+    // UKismetMathLibrary::GetYear (Engine.h)
+    int GetYear() const;
+    // UKismetMathLibrary::IsAfternoon (Engine.h)
+    bool IsAfternoon() const;
+    // UKismetMathLibrary::IsMorning (Engine.h)
+    bool IsMorning() const;
+    // UBlueprintPlatformLibrary::ScheduleLocalNotificationAtTime (Engine.h)
+    int ScheduleLocalNotificationAtTime(bool LocalTime, const FText& Title, const FText& Body, const FText& Action, FString ActivationEvent) const;
+    // UBlueprintPlatformLibrary::ScheduleLocalNotificationBadgeAtTime (Engine.h)
+    int ScheduleLocalNotificationBadgeAtTime(bool LocalTime, FString ActivationEvent) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AsDateTime_DateTime__UeForward = "UKismetTextLibrary::AsDateTime_DateTime";
+        static constexpr const char* AsDate_DateTime__UeForward = "UKismetTextLibrary::AsDate_DateTime";
+        static constexpr const char* AsTimeZoneDateTime_DateTime__UeForward = "UKismetTextLibrary::AsTimeZoneDateTime_DateTime";
+        static constexpr const char* AsTimeZoneDate_DateTime__UeForward = "UKismetTextLibrary::AsTimeZoneDate_DateTime";
+        static constexpr const char* AsTimeZoneTime_DateTime__UeForward = "UKismetTextLibrary::AsTimeZoneTime_DateTime";
+        static constexpr const char* AsTime_DateTime__UeForward = "UKismetTextLibrary::AsTime_DateTime";
+        static constexpr const char* BreakDateTime__UeForward = "UKismetMathLibrary::BreakDateTime";
+        static constexpr const char* GetDate__UeForward = "UKismetMathLibrary::GetDate";
+        static constexpr const char* GetDay__UeForward = "UKismetMathLibrary::GetDay";
+        static constexpr const char* GetDayOfYear__UeForward = "UKismetMathLibrary::GetDayOfYear";
+        static constexpr const char* GetHour__UeForward = "UKismetMathLibrary::GetHour";
+        static constexpr const char* GetHour12__UeForward = "UKismetMathLibrary::GetHour12";
+        static constexpr const char* GetMillisecond__UeForward = "UKismetMathLibrary::GetMillisecond";
+        static constexpr const char* GetMinute__UeForward = "UKismetMathLibrary::GetMinute";
+        static constexpr const char* GetMonth__UeForward = "UKismetMathLibrary::GetMonth";
+        static constexpr const char* GetSecond__UeForward = "UKismetMathLibrary::GetSecond";
+        static constexpr const char* GetTimeOfDay__UeForward = "UKismetMathLibrary::GetTimeOfDay";
+        static constexpr const char* GetYear__UeForward = "UKismetMathLibrary::GetYear";
+        static constexpr const char* IsAfternoon__UeForward = "UKismetMathLibrary::IsAfternoon";
+        static constexpr const char* IsMorning__UeForward = "UKismetMathLibrary::IsMorning";
+        static constexpr const char* ScheduleLocalNotificationAtTime__UeForward = "UBlueprintPlatformLibrary::ScheduleLocalNotificationAtTime";
+        static constexpr const char* ScheduleLocalNotificationBadgeAtTime__UeForward = "UBlueprintPlatformLibrary::ScheduleLocalNotificationBadgeAtTime";
+    };
 };
 
 struct FAutomationExecutionEntry
@@ -384,6 +561,404 @@ struct FVector
     FVector() = default;
     FVector(float X, float Y, float Z) {}
     UE_CONV_FVector
+
+    // UARBlueprintLibrary::AddManualEnvironmentCaptureProbe (AugmentedReality.h)
+    bool AddManualEnvironmentCaptureProbe(FVector Extent) const;
+    // UFSDMath::AngleBetweenVectors (FSD.h)
+    float AngleBetweenVectors(const FVector& v2) const;
+    // UKismetMathLibrary::BreakVector (Engine.h)
+    void BreakVector(float& X, float& Y, float& Z) const;
+    // UFSDMath::CartesianToSpherical (FSD.h)
+    void CartesianToSpherical(float& outAzimuth, float& outElevation, float& OutRadius) const;
+    // UKismetMathLibrary::ClampVectorSize (Engine.h)
+    FVector ClampVectorSize(float Min_0, float Max_0) const;
+    // UFSDMath::ClampVectorToCone (FSD.h)
+    FVector ClampVectorToCone(FVector ConeDirection, float ConeAngle) const;
+    // UBoxFunctionLibrary::ClosestPointToBox (FSD.h)
+    FVector ClosestPointToBox(const FBox& Box) const;
+    // UBoxFunctionLibrary::CreateBoxAt (FSD.h)
+    FBox CreateBoxAt(FVector Size) const;
+    // UKismetMathLibrary::Cross_VectorVector (Engine.h)
+    FVector Cross_VectorVector(FVector B) const;
+    // UFSDMath::CubicInterpBlueprint (FSD.h)
+    FVector CubicInterpBlueprint(FVector tangent1, FVector p1, FVector tangent2, float alpha) const;
+    // UFSDMath::CubicSegmentLength (FSD.h)
+    float CubicSegmentLength(FVector tangent1, FVector p1, FVector tangent2) const;
+    // UKismetMathLibrary::Dot_VectorVector (Engine.h)
+    float Dot_VectorVector(FVector B) const;
+    // UKismetMathLibrary::DynamicWeightedMovingAverage_FVector (Engine.h)
+    FVector DynamicWeightedMovingAverage_FVector(FVector PreviousSample, float MaxDistance, float MinWeight, float MaxWeight) const;
+    // UKismetMathLibrary::EqualExactly_VectorVector (Engine.h)
+    bool EqualExactly_VectorVector(FVector B) const;
+    // UKismetMathLibrary::FTruncVector (Engine.h)
+    FIntVector FTruncVector() const;
+    // UKismetMathLibrary::FindClosestPointOnLine (Engine.h)
+    FVector FindClosestPointOnLine(FVector LineOrigin, FVector LineDirection) const;
+    // UKismetMathLibrary::FindClosestPointOnSegment (Engine.h)
+    FVector FindClosestPointOnSegment(FVector SegmentStart, FVector SegmentEnd) const;
+    // UKismetMathLibrary::FindLookAtRotation (Engine.h)
+    FRotator FindLookAtRotation(const FVector& Target) const;
+    // UGameplayStatics::FindNearestActor (Engine.h)
+    class AActor* FindNearestActor(const TArray<class AActor*>& ActorsToCheck, float& Distance) const;
+    // UKismetMathLibrary::FindNearestPointsOnLineSegments (Engine.h)
+    void FindNearestPointsOnLineSegments(FVector Segment1End, FVector Segment2Start, FVector Segment2End, FVector& Segment1Point, FVector& Segment2Point) const;
+    // UKismetProceduralMeshLibrary::GenerateBoxMesh (ProceduralMeshComponent.h)
+    void GenerateBoxMesh(TArray<FVector>& Vertices, TArray<int>& Triangles, TArray<FVector>& Normals, TArray<FVector2D>& UVs, TArray<FProcMeshTangent>& Tangents) const;
+    // UKismetMathLibrary::GetAzimuthAndElevation (Engine.h)
+    void GetAzimuthAndElevation(const FTransform& ReferenceFrame, float& azimuth, float& elevation) const;
+    // UKismetMathLibrary::GetDirectionUnitVector (Engine.h)
+    FVector GetDirectionUnitVector(FVector to) const;
+    // UKismetMathLibrary::GetMaxElement (Engine.h)
+    float GetMaxElement() const;
+    // UKismetMathLibrary::GetMinElement (Engine.h)
+    float GetMinElement() const;
+    // UARBlueprintLibrary::GetObjectClassificationAtLocation (AugmentedReality.h)
+    bool GetObjectClassificationAtLocation(EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff) const;
+    // UKismetMathLibrary::GetPointDistanceToLine (Engine.h)
+    float GetPointDistanceToLine(FVector LineOrigin, FVector LineDirection) const;
+    // UKismetMathLibrary::GetPointDistanceToSegment (Engine.h)
+    float GetPointDistanceToSegment(FVector SegmentStart, FVector SegmentEnd) const;
+    // UOculusFunctionLibrary::GetPointGuardianIntersection (OculusHMD.h)
+    FGuardianTestResult GetPointGuardianIntersection(TEnum<EBoundaryType> BoundaryType) const;
+    // UKismetMathLibrary::GetReflectionVector (Engine.h)
+    FVector GetReflectionVector(FVector SurfaceNormal) const;
+    // UKismetMathLibrary::GetSlopeDegreeAngles (Engine.h)
+    void GetSlopeDegreeAngles(const FVector& FloorNormal, const FVector& UpVector, float& OutSlopePitchDegreeAngle, float& OutSlopeRollDegreeAngle) const;
+    // UKismetMathLibrary::GetYawPitchFromVector (Engine.h)
+    void GetYawPitchFromVector(float& Yaw, float& Pitch) const;
+    // UKismetMathLibrary::GreaterGreater_VectorRotator (Engine.h)
+    FVector GreaterGreater_VectorRotator(FRotator B) const;
+    // UKismetMathLibrary::IsPointInBox (Engine.h)
+    bool IsPointInBox(FVector BoxOrigin, FVector BoxExtent) const;
+    // UKismetMathLibrary::IsPointInBoxWithTransform (Engine.h)
+    bool IsPointInBoxWithTransform(const FTransform& BoxWorldTransform, FVector BoxExtent) const;
+    // UAIBlueprintHelperLibrary::IsValidAIDirection (AIModule.h)
+    bool IsValidAIDirection() const;
+    // UAIBlueprintHelperLibrary::IsValidAILocation (AIModule.h)
+    bool IsValidAILocation() const;
+    // UKismetAnimationLibrary::K2_TwoBoneIK (AnimGraphRuntime.h)
+    void K2_TwoBoneIK(const FVector& JointPos, const FVector& EndPos, const FVector& JointTarget, const FVector& Effector, FVector& OutJointPos, FVector& OutEndPos, bool bAllowStretching, float StartStretchRatio, float MaxStretchScale) const;
+    // UKismetMathLibrary::LessLess_VectorRotator (Engine.h)
+    FVector LessLess_VectorRotator(FRotator B) const;
+    // UKismetMathLibrary::LinePlaneIntersection (Engine.h)
+    bool LinePlaneIntersection(const FVector& LineEnd, const FPlane& APlane, float& T, FVector& Intersection) const;
+    // UKismetMathLibrary::LinePlaneIntersection_OriginNormal (Engine.h)
+    bool LinePlaneIntersection_OriginNormal(const FVector& LineEnd, FVector PlaneOrigin, FVector PlaneNormal, float& T, FVector& Intersection) const;
+    // UARBlueprintLibrary::LineTraceTrackedObjects3D (AugmentedReality.h)
+    TArray<FARTraceResult> LineTraceTrackedObjects3D(FVector End, bool bTestFeaturePoints, bool bTestGroundPlane, bool bTestPlaneExtents, bool bTestPlaneBoundaryPolygon) const;
+    // UKismetMathLibrary::MakeBox (Engine.h)
+    FBox MakeBox(FVector Max_0) const;
+    // UKismetMathLibrary::MakePlaneFromPointAndNormal (Engine.h)
+    FPlane MakePlaneFromPointAndNormal(FVector Normal_0) const;
+    // UKismetMathLibrary::MakeRotFromX (Engine.h)
+    FRotator MakeRotFromX() const;
+    // UKismetMathLibrary::MakeRotFromXY (Engine.h)
+    FRotator MakeRotFromXY(const FVector& Y) const;
+    // UKismetMathLibrary::MakeRotFromXZ (Engine.h)
+    FRotator MakeRotFromXZ(const FVector& Z) const;
+    // UKismetMathLibrary::MakeRotFromY (Engine.h)
+    FRotator MakeRotFromY() const;
+    // UKismetMathLibrary::MakeRotFromYX (Engine.h)
+    FRotator MakeRotFromYX(const FVector& X) const;
+    // UKismetMathLibrary::MakeRotFromYZ (Engine.h)
+    FRotator MakeRotFromYZ(const FVector& Z) const;
+    // UKismetMathLibrary::MakeRotFromZ (Engine.h)
+    FRotator MakeRotFromZ() const;
+    // UKismetMathLibrary::MakeRotFromZX (Engine.h)
+    FRotator MakeRotFromZX(const FVector& X) const;
+    // UKismetMathLibrary::MakeRotFromZY (Engine.h)
+    FRotator MakeRotFromZY(const FVector& Y) const;
+    // UKismetMathLibrary::MakeRotationFromAxes (Engine.h)
+    FRotator MakeRotationFromAxes(FVector Right, FVector Up) const;
+    // UKismetMathLibrary::MakeTransform (Engine.h)
+    FTransform MakeTransform(FRotator Rotation, FVector Scale) const;
+    // URadarPointComponent::MapToRadarPosition (FSD.h)
+    void MapToRadarPosition(FVector playerForward, FVector Pos, bool snap, FVector& radarPos, float& alpha) const;
+    // UKismetMathLibrary::MirrorVectorByNormal (Engine.h)
+    FVector MirrorVectorByNormal(FVector InNormal) const;
+    // UKismetMathLibrary::NegateVector (Engine.h)
+    FVector NegateVector() const;
+    // UKismetMathLibrary::Normal (Engine.h)
+    FVector Normal(float Tolerance) const;
+    // UKismetMathLibrary::NotEqualExactly_VectorVector (Engine.h)
+    bool NotEqualExactly_VectorVector(FVector B) const;
+    // UKismetMathLibrary::ProjectPointOnToPlane (Engine.h)
+    FVector ProjectPointOnToPlane(FVector PlaneBase, FVector PlaneNormal) const;
+    // UKismetMathLibrary::ProjectVectorOnToPlane (Engine.h)
+    FVector ProjectVectorOnToPlane(FVector PlaneNormal) const;
+    // UKismetMathLibrary::ProjectVectorOnToVector (Engine.h)
+    FVector ProjectVectorOnToVector(FVector Target) const;
+    // UKismetMathLibrary::Quat_MakeFromEuler (Engine.h)
+    FQuat Quat_MakeFromEuler() const;
+    // UKismetMathLibrary::RandomPointInBoundingBox (Engine.h)
+    FVector RandomPointInBoundingBox(FVector BoxExtent) const;
+    // UKismetMathLibrary::RandomUnitVectorInConeInDegrees (Engine.h)
+    FVector RandomUnitVectorInConeInDegrees(float ConeHalfAngleInDegrees) const;
+    // UKismetMathLibrary::RandomUnitVectorInConeInDegreesFromStream (Engine.h)
+    FVector RandomUnitVectorInConeInDegreesFromStream(float ConeHalfAngleInDegrees, const FRandomStream& Stream) const;
+    // UKismetMathLibrary::RandomUnitVectorInConeInRadians (Engine.h)
+    FVector RandomUnitVectorInConeInRadians(float ConeHalfAngleInRadians) const;
+    // UKismetMathLibrary::RandomUnitVectorInConeInRadiansFromStream (Engine.h)
+    FVector RandomUnitVectorInConeInRadiansFromStream(float ConeHalfAngleInRadians, const FRandomStream& Stream) const;
+    // UKismetMathLibrary::RandomUnitVectorInEllipticalConeInDegrees (Engine.h)
+    FVector RandomUnitVectorInEllipticalConeInDegrees(float MaxYawInDegrees, float MaxPitchInDegrees) const;
+    // UKismetMathLibrary::RandomUnitVectorInEllipticalConeInDegreesFromStream (Engine.h)
+    FVector RandomUnitVectorInEllipticalConeInDegreesFromStream(float MaxYawInDegrees, float MaxPitchInDegrees, const FRandomStream& Stream) const;
+    // UKismetMathLibrary::RandomUnitVectorInEllipticalConeInRadians (Engine.h)
+    FVector RandomUnitVectorInEllipticalConeInRadians(float MaxYawInRadians, float MaxPitchInRadians) const;
+    // UKismetMathLibrary::RandomUnitVectorInEllipticalConeInRadiansFromStream (Engine.h)
+    FVector RandomUnitVectorInEllipticalConeInRadiansFromStream(float MaxYawInRadians, float MaxPitchInRadians, const FRandomStream& Stream) const;
+    // UKismetMathLibrary::RotateAngleAxis (Engine.h)
+    FVector RotateAngleAxis(float AngleDeg, FVector Axis) const;
+    // UKismetMathLibrary::RotatorFromAxisAndAngle (Engine.h)
+    FRotator RotatorFromAxisAndAngle(float Angle) const;
+    // UKismetMathLibrary::SelectVector (Engine.h)
+    FVector SelectVector(FVector B, bool bPickA) const;
+    // UARBlueprintLibrary::SetARWorldOriginLocationAndRotation (AugmentedReality.h)
+    void SetARWorldOriginLocationAndRotation(FRotator OriginRotation, bool bIsTransformInWorldSpace, bool bMaintainUpDirection) const;
+    // UOculusFunctionLibrary::SetPositionScale3D (OculusHMD.h)
+    void SetPositionScale3D() const;
+    // UFSDMath::SignedAngleBetweenVectorsZUp (FSD.h)
+    float SignedAngleBetweenVectorsZUp(const FVector& v2) const;
+    // UKismetMathLibrary::Conv_VectorToLinearColor (Engine.h)
+    FLinearColor ToLinearColor() const;
+    // UKismetMathLibrary::Conv_VectorToQuaternion (Engine.h)
+    FQuat ToQuat() const;
+    // UKismetMathLibrary::Conv_VectorToRotator (Engine.h)
+    FRotator ToRotator() const;
+    // UKismetStringLibrary::Conv_VectorToString (Engine.h)
+    FString ToString() const;
+    // UKismetTextLibrary::Conv_VectorToText (Engine.h)
+    FText ToText() const;
+    // UKismetMathLibrary::Conv_VectorToTransform (Engine.h)
+    FTransform ToTransform() const;
+    // UKismetMathLibrary::Conv_VectorToVector2D (Engine.h)
+    FVector2D ToVector2D() const;
+    // UKismetMathLibrary::VEase (Engine.h)
+    FVector VEase(FVector B, float alpha, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps) const;
+    // UKismetMathLibrary::VInterpTo (Engine.h)
+    FVector VInterpTo(FVector Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::VInterpTo_Constant (Engine.h)
+    FVector VInterpTo_Constant(FVector Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::VLerp (Engine.h)
+    FVector VLerp(FVector B, float alpha) const;
+    // UKismetMathLibrary::VSize (Engine.h)
+    float VSize() const;
+    // UKismetMathLibrary::VSizeSquared (Engine.h)
+    float VSizeSquared() const;
+    // UKismetMathLibrary::VSizeXY (Engine.h)
+    float VSizeXY() const;
+    // UKismetMathLibrary::VSizeXYSquared (Engine.h)
+    float VSizeXYSquared() const;
+    // UKismetMathLibrary::VectorSpringInterp (Engine.h)
+    FVector VectorSpringInterp(FVector Target, FVectorSpringState& SpringState, float Stiffness, float CriticalDampingFactor, float DeltaTime, float Mass) const;
+    // UFSDConversionLibrary::VectorToNetQuantize (FSD.h)
+    FVector_NetQuantize VectorToNetQuantize() const;
+    // UFSDConversionLibrary::VectorToNetQuantizeNormal (FSD.h)
+    FVector_NetQuantizeNormal VectorToNetQuantizeNormal() const;
+    // UKismetMathLibrary::Vector_BoundedToBox (Engine.h)
+    FVector Vector_BoundedToBox(FVector InBoxMin, FVector InBoxMax) const;
+    // UKismetMathLibrary::Vector_BoundedToCube (Engine.h)
+    FVector Vector_BoundedToCube(float InRadius) const;
+    // UKismetMathLibrary::Vector_ClampSize2D (Engine.h)
+    FVector Vector_ClampSize2D(float Min, float Max) const;
+    // UKismetMathLibrary::Vector_ClampSizeMax (Engine.h)
+    FVector Vector_ClampSizeMax(float Max) const;
+    // UKismetMathLibrary::Vector_ClampSizeMax2D (Engine.h)
+    FVector Vector_ClampSizeMax2D(float Max) const;
+    // UKismetMathLibrary::Vector_ComponentMax (Engine.h)
+    FVector Vector_ComponentMax(FVector B) const;
+    // UKismetMathLibrary::Vector_ComponentMin (Engine.h)
+    FVector Vector_ComponentMin(FVector B) const;
+    // UKismetMathLibrary::Vector_CosineAngle2D (Engine.h)
+    float Vector_CosineAngle2D(FVector B) const;
+    // UKismetMathLibrary::Vector_Distance (Engine.h)
+    float Vector_Distance(FVector v2) const;
+    // UKismetMathLibrary::Vector_Distance2D (Engine.h)
+    float Vector_Distance2D(FVector v2) const;
+    // UKismetMathLibrary::Vector_Distance2DSquared (Engine.h)
+    float Vector_Distance2DSquared(FVector v2) const;
+    // UKismetMathLibrary::Vector_DistanceSquared (Engine.h)
+    float Vector_DistanceSquared(FVector v2) const;
+    // UKismetMathLibrary::Vector_GetAbs (Engine.h)
+    FVector Vector_GetAbs() const;
+    // UKismetMathLibrary::Vector_GetAbsMax (Engine.h)
+    float Vector_GetAbsMax() const;
+    // UKismetMathLibrary::Vector_GetAbsMin (Engine.h)
+    float Vector_GetAbsMin() const;
+    // UKismetMathLibrary::Vector_GetProjection (Engine.h)
+    FVector Vector_GetProjection() const;
+    // UKismetMathLibrary::Vector_GetSignVector (Engine.h)
+    FVector Vector_GetSignVector() const;
+    // UKismetMathLibrary::Vector_HeadingAngle (Engine.h)
+    float Vector_HeadingAngle() const;
+    // UKismetMathLibrary::Vector_IsNAN (Engine.h)
+    bool Vector_IsNAN() const;
+    // UKismetMathLibrary::Vector_IsNearlyZero (Engine.h)
+    bool Vector_IsNearlyZero(float Tolerance) const;
+    // UKismetMathLibrary::Vector_IsNormal (Engine.h)
+    bool Vector_IsNormal() const;
+    // UKismetMathLibrary::Vector_IsUniform (Engine.h)
+    bool Vector_IsUniform(float Tolerance) const;
+    // UKismetMathLibrary::Vector_IsUnit (Engine.h)
+    bool Vector_IsUnit(float SquaredLenthTolerance) const;
+    // UKismetMathLibrary::Vector_IsZero (Engine.h)
+    bool Vector_IsZero() const;
+    // UKismetMathLibrary::Vector_MirrorByPlane (Engine.h)
+    FVector Vector_MirrorByPlane(const FPlane& InPlane) const;
+    // UKismetMathLibrary::Vector_Normal2D (Engine.h)
+    FVector Vector_Normal2D(float Tolerance) const;
+    // UKismetMathLibrary::Vector_NormalUnsafe (Engine.h)
+    FVector Vector_NormalUnsafe() const;
+    // UKismetMathLibrary::Vector_ProjectOnToNormal (Engine.h)
+    FVector Vector_ProjectOnToNormal(FVector InNormal) const;
+    // UKismetMathLibrary::Vector_Reciprocal (Engine.h)
+    FVector Vector_Reciprocal() const;
+    // UKismetMathLibrary::Vector_SnappedToGrid (Engine.h)
+    FVector Vector_SnappedToGrid(float InGridSize) const;
+    // UKismetMathLibrary::Vector_ToDegrees (Engine.h)
+    FVector Vector_ToDegrees() const;
+    // UKismetMathLibrary::Vector_ToRadians (Engine.h)
+    FVector Vector_ToRadians() const;
+    // UKismetMathLibrary::Vector_UnitCartesianToSpherical (Engine.h)
+    FVector2D Vector_UnitCartesianToSpherical() const;
+    // UKismetMathLibrary::WeightedMovingAverage_FVector (Engine.h)
+    FVector WeightedMovingAverage_FVector(FVector PreviousSample, float Weight) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AddManualEnvironmentCaptureProbe__UeForward = "UARBlueprintLibrary::AddManualEnvironmentCaptureProbe";
+        static constexpr const char* AngleBetweenVectors__UeForward = "UFSDMath::AngleBetweenVectors";
+        static constexpr const char* BreakVector__UeForward = "UKismetMathLibrary::BreakVector";
+        static constexpr const char* CartesianToSpherical__UeForward = "UFSDMath::CartesianToSpherical";
+        static constexpr const char* ClampVectorSize__UeForward = "UKismetMathLibrary::ClampVectorSize";
+        static constexpr const char* ClampVectorToCone__UeForward = "UFSDMath::ClampVectorToCone";
+        static constexpr const char* ClosestPointToBox__UeForward = "UBoxFunctionLibrary::ClosestPointToBox";
+        static constexpr const char* CreateBoxAt__UeForward = "UBoxFunctionLibrary::CreateBoxAt";
+        static constexpr const char* Cross_VectorVector__UeForward = "UKismetMathLibrary::Cross_VectorVector";
+        static constexpr const char* CubicInterpBlueprint__UeForward = "UFSDMath::CubicInterpBlueprint";
+        static constexpr const char* CubicSegmentLength__UeForward = "UFSDMath::CubicSegmentLength";
+        static constexpr const char* Dot_VectorVector__UeForward = "UKismetMathLibrary::Dot_VectorVector";
+        static constexpr const char* DynamicWeightedMovingAverage_FVector__UeForward = "UKismetMathLibrary::DynamicWeightedMovingAverage_FVector";
+        static constexpr const char* EqualExactly_VectorVector__UeForward = "UKismetMathLibrary::EqualExactly_VectorVector";
+        static constexpr const char* FTruncVector__UeForward = "UKismetMathLibrary::FTruncVector";
+        static constexpr const char* FindClosestPointOnLine__UeForward = "UKismetMathLibrary::FindClosestPointOnLine";
+        static constexpr const char* FindClosestPointOnSegment__UeForward = "UKismetMathLibrary::FindClosestPointOnSegment";
+        static constexpr const char* FindLookAtRotation__UeForward = "UKismetMathLibrary::FindLookAtRotation";
+        static constexpr const char* FindNearestActor__UeForward = "UGameplayStatics::FindNearestActor";
+        static constexpr const char* FindNearestPointsOnLineSegments__UeForward = "UKismetMathLibrary::FindNearestPointsOnLineSegments";
+        static constexpr const char* GenerateBoxMesh__UeForward = "UKismetProceduralMeshLibrary::GenerateBoxMesh";
+        static constexpr const char* GetAzimuthAndElevation__UeForward = "UKismetMathLibrary::GetAzimuthAndElevation";
+        static constexpr const char* GetDirectionUnitVector__UeForward = "UKismetMathLibrary::GetDirectionUnitVector";
+        static constexpr const char* GetMaxElement__UeForward = "UKismetMathLibrary::GetMaxElement";
+        static constexpr const char* GetMinElement__UeForward = "UKismetMathLibrary::GetMinElement";
+        static constexpr const char* GetObjectClassificationAtLocation__UeForward = "UARBlueprintLibrary::GetObjectClassificationAtLocation";
+        static constexpr const char* GetPointDistanceToLine__UeForward = "UKismetMathLibrary::GetPointDistanceToLine";
+        static constexpr const char* GetPointDistanceToSegment__UeForward = "UKismetMathLibrary::GetPointDistanceToSegment";
+        static constexpr const char* GetPointGuardianIntersection__UeForward = "UOculusFunctionLibrary::GetPointGuardianIntersection";
+        static constexpr const char* GetReflectionVector__UeForward = "UKismetMathLibrary::GetReflectionVector";
+        static constexpr const char* GetSlopeDegreeAngles__UeForward = "UKismetMathLibrary::GetSlopeDegreeAngles";
+        static constexpr const char* GetYawPitchFromVector__UeForward = "UKismetMathLibrary::GetYawPitchFromVector";
+        static constexpr const char* GreaterGreater_VectorRotator__UeForward = "UKismetMathLibrary::GreaterGreater_VectorRotator";
+        static constexpr const char* IsPointInBox__UeForward = "UKismetMathLibrary::IsPointInBox";
+        static constexpr const char* IsPointInBoxWithTransform__UeForward = "UKismetMathLibrary::IsPointInBoxWithTransform";
+        static constexpr const char* IsValidAIDirection__UeForward = "UAIBlueprintHelperLibrary::IsValidAIDirection";
+        static constexpr const char* IsValidAILocation__UeForward = "UAIBlueprintHelperLibrary::IsValidAILocation";
+        static constexpr const char* K2_TwoBoneIK__UeForward = "UKismetAnimationLibrary::K2_TwoBoneIK";
+        static constexpr const char* LessLess_VectorRotator__UeForward = "UKismetMathLibrary::LessLess_VectorRotator";
+        static constexpr const char* LinePlaneIntersection__UeForward = "UKismetMathLibrary::LinePlaneIntersection";
+        static constexpr const char* LinePlaneIntersection_OriginNormal__UeForward = "UKismetMathLibrary::LinePlaneIntersection_OriginNormal";
+        static constexpr const char* LineTraceTrackedObjects3D__UeForward = "UARBlueprintLibrary::LineTraceTrackedObjects3D";
+        static constexpr const char* MakeBox__UeForward = "UKismetMathLibrary::MakeBox";
+        static constexpr const char* MakePlaneFromPointAndNormal__UeForward = "UKismetMathLibrary::MakePlaneFromPointAndNormal";
+        static constexpr const char* MakeRotFromX__UeForward = "UKismetMathLibrary::MakeRotFromX";
+        static constexpr const char* MakeRotFromXY__UeForward = "UKismetMathLibrary::MakeRotFromXY";
+        static constexpr const char* MakeRotFromXZ__UeForward = "UKismetMathLibrary::MakeRotFromXZ";
+        static constexpr const char* MakeRotFromY__UeForward = "UKismetMathLibrary::MakeRotFromY";
+        static constexpr const char* MakeRotFromYX__UeForward = "UKismetMathLibrary::MakeRotFromYX";
+        static constexpr const char* MakeRotFromYZ__UeForward = "UKismetMathLibrary::MakeRotFromYZ";
+        static constexpr const char* MakeRotFromZ__UeForward = "UKismetMathLibrary::MakeRotFromZ";
+        static constexpr const char* MakeRotFromZX__UeForward = "UKismetMathLibrary::MakeRotFromZX";
+        static constexpr const char* MakeRotFromZY__UeForward = "UKismetMathLibrary::MakeRotFromZY";
+        static constexpr const char* MakeRotationFromAxes__UeForward = "UKismetMathLibrary::MakeRotationFromAxes";
+        static constexpr const char* MakeTransform__UeForward = "UKismetMathLibrary::MakeTransform";
+        static constexpr const char* MapToRadarPosition__UeForward = "URadarPointComponent::MapToRadarPosition";
+        static constexpr const char* MirrorVectorByNormal__UeForward = "UKismetMathLibrary::MirrorVectorByNormal";
+        static constexpr const char* NegateVector__UeForward = "UKismetMathLibrary::NegateVector";
+        static constexpr const char* Normal__UeForward = "UKismetMathLibrary::Normal";
+        static constexpr const char* NotEqualExactly_VectorVector__UeForward = "UKismetMathLibrary::NotEqualExactly_VectorVector";
+        static constexpr const char* ProjectPointOnToPlane__UeForward = "UKismetMathLibrary::ProjectPointOnToPlane";
+        static constexpr const char* ProjectVectorOnToPlane__UeForward = "UKismetMathLibrary::ProjectVectorOnToPlane";
+        static constexpr const char* ProjectVectorOnToVector__UeForward = "UKismetMathLibrary::ProjectVectorOnToVector";
+        static constexpr const char* Quat_MakeFromEuler__UeForward = "UKismetMathLibrary::Quat_MakeFromEuler";
+        static constexpr const char* RandomPointInBoundingBox__UeForward = "UKismetMathLibrary::RandomPointInBoundingBox";
+        static constexpr const char* RandomUnitVectorInConeInDegrees__UeForward = "UKismetMathLibrary::RandomUnitVectorInConeInDegrees";
+        static constexpr const char* RandomUnitVectorInConeInDegreesFromStream__UeForward = "UKismetMathLibrary::RandomUnitVectorInConeInDegreesFromStream";
+        static constexpr const char* RandomUnitVectorInConeInRadians__UeForward = "UKismetMathLibrary::RandomUnitVectorInConeInRadians";
+        static constexpr const char* RandomUnitVectorInConeInRadiansFromStream__UeForward = "UKismetMathLibrary::RandomUnitVectorInConeInRadiansFromStream";
+        static constexpr const char* RandomUnitVectorInEllipticalConeInDegrees__UeForward = "UKismetMathLibrary::RandomUnitVectorInEllipticalConeInDegrees";
+        static constexpr const char* RandomUnitVectorInEllipticalConeInDegreesFromStream__UeForward = "UKismetMathLibrary::RandomUnitVectorInEllipticalConeInDegreesFromStream";
+        static constexpr const char* RandomUnitVectorInEllipticalConeInRadians__UeForward = "UKismetMathLibrary::RandomUnitVectorInEllipticalConeInRadians";
+        static constexpr const char* RandomUnitVectorInEllipticalConeInRadiansFromStream__UeForward = "UKismetMathLibrary::RandomUnitVectorInEllipticalConeInRadiansFromStream";
+        static constexpr const char* RotateAngleAxis__UeForward = "UKismetMathLibrary::RotateAngleAxis";
+        static constexpr const char* RotatorFromAxisAndAngle__UeForward = "UKismetMathLibrary::RotatorFromAxisAndAngle";
+        static constexpr const char* SelectVector__UeForward = "UKismetMathLibrary::SelectVector";
+        static constexpr const char* SetARWorldOriginLocationAndRotation__UeForward = "UARBlueprintLibrary::SetARWorldOriginLocationAndRotation";
+        static constexpr const char* SetPositionScale3D__UeForward = "UOculusFunctionLibrary::SetPositionScale3D";
+        static constexpr const char* SignedAngleBetweenVectorsZUp__UeForward = "UFSDMath::SignedAngleBetweenVectorsZUp";
+        static constexpr const char* ToLinearColor__UeForward = "UKismetMathLibrary::Conv_VectorToLinearColor";
+        static constexpr const char* ToQuat__UeForward = "UKismetMathLibrary::Conv_VectorToQuaternion";
+        static constexpr const char* ToRotator__UeForward = "UKismetMathLibrary::Conv_VectorToRotator";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_VectorToString";
+        static constexpr const char* ToText__UeForward = "UKismetTextLibrary::Conv_VectorToText";
+        static constexpr const char* ToTransform__UeForward = "UKismetMathLibrary::Conv_VectorToTransform";
+        static constexpr const char* ToVector2D__UeForward = "UKismetMathLibrary::Conv_VectorToVector2D";
+        static constexpr const char* VEase__UeForward = "UKismetMathLibrary::VEase";
+        static constexpr const char* VInterpTo__UeForward = "UKismetMathLibrary::VInterpTo";
+        static constexpr const char* VInterpTo_Constant__UeForward = "UKismetMathLibrary::VInterpTo_Constant";
+        static constexpr const char* VLerp__UeForward = "UKismetMathLibrary::VLerp";
+        static constexpr const char* VSize__UeForward = "UKismetMathLibrary::VSize";
+        static constexpr const char* VSizeSquared__UeForward = "UKismetMathLibrary::VSizeSquared";
+        static constexpr const char* VSizeXY__UeForward = "UKismetMathLibrary::VSizeXY";
+        static constexpr const char* VSizeXYSquared__UeForward = "UKismetMathLibrary::VSizeXYSquared";
+        static constexpr const char* VectorSpringInterp__UeForward = "UKismetMathLibrary::VectorSpringInterp";
+        static constexpr const char* VectorToNetQuantize__UeForward = "UFSDConversionLibrary::VectorToNetQuantize";
+        static constexpr const char* VectorToNetQuantizeNormal__UeForward = "UFSDConversionLibrary::VectorToNetQuantizeNormal";
+        static constexpr const char* Vector_BoundedToBox__UeForward = "UKismetMathLibrary::Vector_BoundedToBox";
+        static constexpr const char* Vector_BoundedToCube__UeForward = "UKismetMathLibrary::Vector_BoundedToCube";
+        static constexpr const char* Vector_ClampSize2D__UeForward = "UKismetMathLibrary::Vector_ClampSize2D";
+        static constexpr const char* Vector_ClampSizeMax__UeForward = "UKismetMathLibrary::Vector_ClampSizeMax";
+        static constexpr const char* Vector_ClampSizeMax2D__UeForward = "UKismetMathLibrary::Vector_ClampSizeMax2D";
+        static constexpr const char* Vector_ComponentMax__UeForward = "UKismetMathLibrary::Vector_ComponentMax";
+        static constexpr const char* Vector_ComponentMin__UeForward = "UKismetMathLibrary::Vector_ComponentMin";
+        static constexpr const char* Vector_CosineAngle2D__UeForward = "UKismetMathLibrary::Vector_CosineAngle2D";
+        static constexpr const char* Vector_Distance__UeForward = "UKismetMathLibrary::Vector_Distance";
+        static constexpr const char* Vector_Distance2D__UeForward = "UKismetMathLibrary::Vector_Distance2D";
+        static constexpr const char* Vector_Distance2DSquared__UeForward = "UKismetMathLibrary::Vector_Distance2DSquared";
+        static constexpr const char* Vector_DistanceSquared__UeForward = "UKismetMathLibrary::Vector_DistanceSquared";
+        static constexpr const char* Vector_GetAbs__UeForward = "UKismetMathLibrary::Vector_GetAbs";
+        static constexpr const char* Vector_GetAbsMax__UeForward = "UKismetMathLibrary::Vector_GetAbsMax";
+        static constexpr const char* Vector_GetAbsMin__UeForward = "UKismetMathLibrary::Vector_GetAbsMin";
+        static constexpr const char* Vector_GetProjection__UeForward = "UKismetMathLibrary::Vector_GetProjection";
+        static constexpr const char* Vector_GetSignVector__UeForward = "UKismetMathLibrary::Vector_GetSignVector";
+        static constexpr const char* Vector_HeadingAngle__UeForward = "UKismetMathLibrary::Vector_HeadingAngle";
+        static constexpr const char* Vector_IsNAN__UeForward = "UKismetMathLibrary::Vector_IsNAN";
+        static constexpr const char* Vector_IsNearlyZero__UeForward = "UKismetMathLibrary::Vector_IsNearlyZero";
+        static constexpr const char* Vector_IsNormal__UeForward = "UKismetMathLibrary::Vector_IsNormal";
+        static constexpr const char* Vector_IsUniform__UeForward = "UKismetMathLibrary::Vector_IsUniform";
+        static constexpr const char* Vector_IsUnit__UeForward = "UKismetMathLibrary::Vector_IsUnit";
+        static constexpr const char* Vector_IsZero__UeForward = "UKismetMathLibrary::Vector_IsZero";
+        static constexpr const char* Vector_MirrorByPlane__UeForward = "UKismetMathLibrary::Vector_MirrorByPlane";
+        static constexpr const char* Vector_Normal2D__UeForward = "UKismetMathLibrary::Vector_Normal2D";
+        static constexpr const char* Vector_NormalUnsafe__UeForward = "UKismetMathLibrary::Vector_NormalUnsafe";
+        static constexpr const char* Vector_ProjectOnToNormal__UeForward = "UKismetMathLibrary::Vector_ProjectOnToNormal";
+        static constexpr const char* Vector_Reciprocal__UeForward = "UKismetMathLibrary::Vector_Reciprocal";
+        static constexpr const char* Vector_SnappedToGrid__UeForward = "UKismetMathLibrary::Vector_SnappedToGrid";
+        static constexpr const char* Vector_ToDegrees__UeForward = "UKismetMathLibrary::Vector_ToDegrees";
+        static constexpr const char* Vector_ToRadians__UeForward = "UKismetMathLibrary::Vector_ToRadians";
+        static constexpr const char* Vector_UnitCartesianToSpherical__UeForward = "UKismetMathLibrary::Vector_UnitCartesianToSpherical";
+        static constexpr const char* WeightedMovingAverage_FVector__UeForward = "UKismetMathLibrary::WeightedMovingAverage_FVector";
+    };
 };
 
 struct FBox
@@ -394,6 +969,20 @@ struct FBox
 
     FBox() = default;
     FBox(FVector Min, FVector Max, uint8 IsValid) {}
+
+    // UBoxFunctionLibrary::BoxCenter (FSD.h)
+    FVector BoxCenter() const;
+    // UBoxFunctionLibrary::BoxExtends (FSD.h)
+    FVector BoxExtends() const;
+    // UBoxFunctionLibrary::BoxSize (FSD.h)
+    float BoxSize() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BoxCenter__UeForward = "UBoxFunctionLibrary::BoxCenter";
+        static constexpr const char* BoxExtends__UeForward = "UBoxFunctionLibrary::BoxExtends";
+        static constexpr const char* BoxSize__UeForward = "UBoxFunctionLibrary::BoxSize";
+    };
 };
 
 struct FVector2D
@@ -404,6 +993,113 @@ struct FVector2D
     FVector2D() = default;
     FVector2D(float X, float Y) {}
     UE_CONV_FVector2D
+
+    // UKismetMathLibrary::BreakVector2D (Engine.h)
+    void BreakVector2D(float& X, float& Y) const;
+    // UKismetMathLibrary::ClampAxes2D (Engine.h)
+    FVector2D ClampAxes2D(float MinAxisVal, float MaxAxisVal) const;
+    // UKismetMathLibrary::CrossProduct2D (Engine.h)
+    float CrossProduct2D(FVector2D B) const;
+    // UKismetMathLibrary::Distance2D (Engine.h)
+    float Distance2D(FVector2D v2) const;
+    // UKismetMathLibrary::DistanceSquared2D (Engine.h)
+    float DistanceSquared2D(FVector2D v2) const;
+    // UKismetMathLibrary::DotProduct2D (Engine.h)
+    float DotProduct2D(FVector2D B) const;
+    // UKismetMathLibrary::EqualExactly_Vector2DVector2D (Engine.h)
+    bool EqualExactly_Vector2DVector2D(FVector2D B) const;
+    // UKismetMathLibrary::GetAbs2D (Engine.h)
+    FVector2D GetAbs2D() const;
+    // UKismetMathLibrary::GetAbsMax2D (Engine.h)
+    float GetAbsMax2D() const;
+    // UKismetMathLibrary::GetMax2D (Engine.h)
+    float GetMax2D() const;
+    // UKismetMathLibrary::GetMin2D (Engine.h)
+    float GetMin2D() const;
+    // UKismetMathLibrary::GetRotated2D (Engine.h)
+    FVector2D GetRotated2D(float AngleDeg) const;
+    // UKismetMathLibrary::IsNearlyZero2D (Engine.h)
+    bool IsNearlyZero2D(float Tolerance) const;
+    // UKismetMathLibrary::IsZero2D (Engine.h)
+    bool IsZero2D() const;
+    // UARBlueprintLibrary::LineTraceTrackedObjects (AugmentedReality.h)
+    TArray<FARTraceResult> LineTraceTrackedObjects(bool bTestFeaturePoints, bool bTestGroundPlane, bool bTestPlaneExtents, bool bTestPlaneBoundaryPolygon) const;
+    // UKismetMathLibrary::MakeBox2D (Engine.h)
+    FBox2D MakeBox2D(FVector2D Max_0) const;
+    // USpriteRectLibrary::MakeSpriteRectFromCenter (FSD.h)
+    FSpriteRect MakeSpriteRectFromCenter(FVector2D Size) const;
+    // USpriteRectLibrary::MakeSpriteRectFromPoints (FSD.h)
+    FSpriteRect MakeSpriteRectFromPoints(FVector2D End) const;
+    // UKismetMathLibrary::Negated2D (Engine.h)
+    FVector2D Negated2D() const;
+    // UKismetMathLibrary::Normal2D (Engine.h)
+    FVector2D Normal2D() const;
+    // UKismetMathLibrary::NormalSafe2D (Engine.h)
+    FVector2D NormalSafe2D(float Tolerance) const;
+    // UKismetMathLibrary::NotEqualExactly_Vector2DVector2D (Engine.h)
+    bool NotEqualExactly_Vector2DVector2D(FVector2D B) const;
+    // UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenModeTexturePlusEyeLayout (HeadMountedDisplay.h)
+    void SetSpectatorScreenModeTexturePlusEyeLayout(FVector2D EyeRectMax, FVector2D TextureRectMin, FVector2D TextureRectMax, bool bDrawEyeFirst, bool bClearBlack, bool bUseAlpha) const;
+    // UKismetMathLibrary::Spherical2DToUnitCartesian (Engine.h)
+    FVector Spherical2DToUnitCartesian() const;
+    // UKismetMathLibrary::ToDirectionAndLength2D (Engine.h)
+    void ToDirectionAndLength2D(FVector2D& OutDir, float& OutLength) const;
+    // UKismetMathLibrary::Conv_Vector2DToIntPoint (Engine.h)
+    FIntPoint ToIntPoint() const;
+    // UKismetMathLibrary::ToRounded2D (Engine.h)
+    FVector2D ToRounded2D() const;
+    // UKismetMathLibrary::ToSign2D (Engine.h)
+    FVector2D ToSign2D() const;
+    // UKismetStringLibrary::Conv_Vector2dToString (Engine.h)
+    FString ToString() const;
+    // UKismetTextLibrary::Conv_Vector2dToText (Engine.h)
+    FText ToText() const;
+    // UKismetMathLibrary::VSize2D (Engine.h)
+    float VSize2D() const;
+    // UKismetMathLibrary::VSize2DSquared (Engine.h)
+    float VSize2DSquared() const;
+    // UKismetMathLibrary::Vector2DInterpTo (Engine.h)
+    FVector2D Vector2DInterpTo(FVector2D Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::Vector2DInterpTo_Constant (Engine.h)
+    FVector2D Vector2DInterpTo_Constant(FVector2D Target, float DeltaTime, float InterpSpeed) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakVector2D__UeForward = "UKismetMathLibrary::BreakVector2D";
+        static constexpr const char* ClampAxes2D__UeForward = "UKismetMathLibrary::ClampAxes2D";
+        static constexpr const char* CrossProduct2D__UeForward = "UKismetMathLibrary::CrossProduct2D";
+        static constexpr const char* Distance2D__UeForward = "UKismetMathLibrary::Distance2D";
+        static constexpr const char* DistanceSquared2D__UeForward = "UKismetMathLibrary::DistanceSquared2D";
+        static constexpr const char* DotProduct2D__UeForward = "UKismetMathLibrary::DotProduct2D";
+        static constexpr const char* EqualExactly_Vector2DVector2D__UeForward = "UKismetMathLibrary::EqualExactly_Vector2DVector2D";
+        static constexpr const char* GetAbs2D__UeForward = "UKismetMathLibrary::GetAbs2D";
+        static constexpr const char* GetAbsMax2D__UeForward = "UKismetMathLibrary::GetAbsMax2D";
+        static constexpr const char* GetMax2D__UeForward = "UKismetMathLibrary::GetMax2D";
+        static constexpr const char* GetMin2D__UeForward = "UKismetMathLibrary::GetMin2D";
+        static constexpr const char* GetRotated2D__UeForward = "UKismetMathLibrary::GetRotated2D";
+        static constexpr const char* IsNearlyZero2D__UeForward = "UKismetMathLibrary::IsNearlyZero2D";
+        static constexpr const char* IsZero2D__UeForward = "UKismetMathLibrary::IsZero2D";
+        static constexpr const char* LineTraceTrackedObjects__UeForward = "UARBlueprintLibrary::LineTraceTrackedObjects";
+        static constexpr const char* MakeBox2D__UeForward = "UKismetMathLibrary::MakeBox2D";
+        static constexpr const char* MakeSpriteRectFromCenter__UeForward = "USpriteRectLibrary::MakeSpriteRectFromCenter";
+        static constexpr const char* MakeSpriteRectFromPoints__UeForward = "USpriteRectLibrary::MakeSpriteRectFromPoints";
+        static constexpr const char* Negated2D__UeForward = "UKismetMathLibrary::Negated2D";
+        static constexpr const char* Normal2D__UeForward = "UKismetMathLibrary::Normal2D";
+        static constexpr const char* NormalSafe2D__UeForward = "UKismetMathLibrary::NormalSafe2D";
+        static constexpr const char* NotEqualExactly_Vector2DVector2D__UeForward = "UKismetMathLibrary::NotEqualExactly_Vector2DVector2D";
+        static constexpr const char* SetSpectatorScreenModeTexturePlusEyeLayout__UeForward = "UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenModeTexturePlusEyeLayout";
+        static constexpr const char* Spherical2DToUnitCartesian__UeForward = "UKismetMathLibrary::Spherical2DToUnitCartesian";
+        static constexpr const char* ToDirectionAndLength2D__UeForward = "UKismetMathLibrary::ToDirectionAndLength2D";
+        static constexpr const char* ToIntPoint__UeForward = "UKismetMathLibrary::Conv_Vector2DToIntPoint";
+        static constexpr const char* ToRounded2D__UeForward = "UKismetMathLibrary::ToRounded2D";
+        static constexpr const char* ToSign2D__UeForward = "UKismetMathLibrary::ToSign2D";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_Vector2dToString";
+        static constexpr const char* ToText__UeForward = "UKismetTextLibrary::Conv_Vector2dToText";
+        static constexpr const char* VSize2D__UeForward = "UKismetMathLibrary::VSize2D";
+        static constexpr const char* VSize2DSquared__UeForward = "UKismetMathLibrary::VSize2DSquared";
+        static constexpr const char* Vector2DInterpTo__UeForward = "UKismetMathLibrary::Vector2DInterpTo";
+        static constexpr const char* Vector2DInterpTo_Constant__UeForward = "UKismetMathLibrary::Vector2DInterpTo_Constant";
+    };
 };
 
 struct FBox2D
@@ -436,6 +1132,14 @@ struct FColor
     FColor() = default;
     FColor(uint8 R, uint8 G, uint8 B, uint8 A = 255) {}
     UE_CONV_FColor
+
+    // UKismetMathLibrary::Conv_ColorToLinearColor (Engine.h)
+    FLinearColor ToLinearColor() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ToLinearColor__UeForward = "UKismetMathLibrary::Conv_ColorToLinearColor";
+    };
 };
 
 struct FFallbackStruct
@@ -475,6 +1179,17 @@ struct FFrameNumber
 
     FFrameNumber() = default;
     FFrameNumber(int Value) {}
+
+    // UKismetMathLibrary::MakeQualifiedFrameTime (Engine.h)
+    FQualifiedFrameTime MakeQualifiedFrameTime(FFrameRate FrameRate, float SubFrame) const;
+    // UTimeManagementBlueprintLibrary::Conv_FrameNumberToInteger (TimeManagement.h)
+    int ToInt() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* MakeQualifiedFrameTime__UeForward = "UKismetMathLibrary::MakeQualifiedFrameTime";
+        static constexpr const char* ToInt__UeForward = "UTimeManagementBlueprintLibrary::Conv_FrameNumberToInteger";
+    };
 };
 
 struct FFrameNumberRangeBound
@@ -502,6 +1217,23 @@ struct FFrameRate
 
     FFrameRate() = default;
     FFrameRate(int Numerator, int Denominator) {}
+
+    // UKismetMathLibrary::BreakFrameRate (Engine.h)
+    void BreakFrameRate(int& Numerator, int& Denominator) const;
+    // UTimeManagementBlueprintLibrary::IsValid_Framerate (TimeManagement.h)
+    bool IsValid_Framerate() const;
+    // UTimeManagementBlueprintLibrary::IsValid_MultipleOf (TimeManagement.h)
+    bool IsValid_MultipleOf(const FFrameRate& OtherFramerate) const;
+    // UTimeManagementBlueprintLibrary::Conv_FrameRateToSeconds (TimeManagement.h)
+    float ToFloat() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakFrameRate__UeForward = "UKismetMathLibrary::BreakFrameRate";
+        static constexpr const char* IsValid_Framerate__UeForward = "UTimeManagementBlueprintLibrary::IsValid_Framerate";
+        static constexpr const char* IsValid_MultipleOf__UeForward = "UTimeManagementBlueprintLibrary::IsValid_MultipleOf";
+        static constexpr const char* ToFloat__UeForward = "UTimeManagementBlueprintLibrary::Conv_FrameRateToSeconds";
+    };
 };
 
 struct FFrameTime
@@ -511,6 +1243,17 @@ struct FFrameTime
 
     FFrameTime() = default;
     FFrameTime(FFrameNumber FrameNumber, float SubFrame) {}
+
+    // UTimeManagementBlueprintLibrary::SnapFrameTimeToRate (TimeManagement.h)
+    FFrameTime SnapFrameTimeToRate(const FFrameRate& SourceRate, const FFrameRate& SnapToRate) const;
+    // UTimeManagementBlueprintLibrary::TransformTime (TimeManagement.h)
+    FFrameTime TransformTime(const FFrameRate& SourceRate, const FFrameRate& DestinationRate) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SnapFrameTimeToRate__UeForward = "UTimeManagementBlueprintLibrary::SnapFrameTimeToRate";
+        static constexpr const char* TransformTime__UeForward = "UTimeManagementBlueprintLibrary::TransformTime";
+    };
 };
 
 struct FInt32Interval
@@ -548,6 +1291,23 @@ struct FIntPoint
     FIntPoint() = default;
     FIntPoint(int X, int Y) {}
     UE_CONV_FIntPoint
+
+    // UKismetMathLibrary::Equal_IntPointIntPoint (Engine.h)
+    bool Equal_IntPointIntPoint(FIntPoint B) const;
+    // UARBlueprintLibrary::ResizeXRCamera (AugmentedReality.h)
+    FIntPoint ResizeXRCamera() const;
+    // UKismetStringLibrary::Conv_IntPointToString (Engine.h)
+    FString ToString() const;
+    // UKismetMathLibrary::Conv_IntPointToVector2D (Engine.h)
+    FVector2D ToVector2D() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Equal_IntPointIntPoint__UeForward = "UKismetMathLibrary::Equal_IntPointIntPoint";
+        static constexpr const char* ResizeXRCamera__UeForward = "UARBlueprintLibrary::ResizeXRCamera";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_IntPointToString";
+        static constexpr const char* ToVector2D__UeForward = "UKismetMathLibrary::Conv_IntPointToVector2D";
+    };
 };
 
 struct FIntVector
@@ -559,6 +1319,17 @@ struct FIntVector
     FIntVector() = default;
     FIntVector(int X, int Y, int Z) {}
     UE_CONV_FIntVector
+
+    // UKismetStringLibrary::Conv_IntVectorToString (Engine.h)
+    FString ToString() const;
+    // UKismetMathLibrary::Conv_IntVectorToVector (Engine.h)
+    FVector ToVector() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_IntVectorToString";
+        static constexpr const char* ToVector__UeForward = "UKismetMathLibrary::Conv_IntVectorToVector";
+    };
 };
 
 struct FInterpCurvePointFloat
@@ -593,6 +1364,83 @@ struct FLinearColor
     FLinearColor() = default;
     FLinearColor(float R, float G, float B, float A) {}
     UE_CONV_FLinearColor
+
+    // UKismetMathLibrary::BreakColor (Engine.h)
+    void BreakColor(float& R, float& G, float& B, float& A) const;
+    // UKismetMathLibrary::CInterpTo (Engine.h)
+    FLinearColor CInterpTo(FLinearColor Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::HSVToRGBLinear (Engine.h)
+    FLinearColor HSVToRGBLinear() const;
+    // UKismetMathLibrary::HSVToRGB_Vector (Engine.h)
+    void HSVToRGB_Vector(FLinearColor& RGB) const;
+    // UKismetMathLibrary::LinearColorLerp (Engine.h)
+    FLinearColor LinearColorLerp(FLinearColor B, float alpha) const;
+    // UKismetMathLibrary::LinearColorLerpUsingHSV (Engine.h)
+    FLinearColor LinearColorLerpUsingHSV(FLinearColor B, float alpha) const;
+    // UKismetMathLibrary::LinearColor_Desaturated (Engine.h)
+    FLinearColor LinearColor_Desaturated(float InDesaturation) const;
+    // UKismetMathLibrary::LinearColor_Distance (Engine.h)
+    float LinearColor_Distance(FLinearColor C2) const;
+    // UKismetMathLibrary::LinearColor_GetLuminance (Engine.h)
+    float LinearColor_GetLuminance() const;
+    // UKismetMathLibrary::LinearColor_GetMax (Engine.h)
+    float LinearColor_GetMax() const;
+    // UKismetMathLibrary::LinearColor_GetMin (Engine.h)
+    float LinearColor_GetMin() const;
+    // UKismetMathLibrary::LinearColor_IsNearEqual (Engine.h)
+    bool LinearColor_IsNearEqual(FLinearColor B, float Tolerance) const;
+    // UKismetMathLibrary::LinearColor_Quantize (Engine.h)
+    FColor LinearColor_Quantize() const;
+    // UKismetMathLibrary::LinearColor_QuantizeRound (Engine.h)
+    FColor LinearColor_QuantizeRound() const;
+    // UKismetMathLibrary::LinearColor_ToNewOpacity (Engine.h)
+    FLinearColor LinearColor_ToNewOpacity(float InOpacity) const;
+    // UKismetMathLibrary::LinearColor_ToRGBE (Engine.h)
+    FColor LinearColor_ToRGBE() const;
+    // UKismetMathLibrary::RGBLinearToHSV (Engine.h)
+    FLinearColor RGBLinearToHSV() const;
+    // UKismetMathLibrary::RGBToHSV (Engine.h)
+    void RGBToHSV(float& H, float& S, float& V, float& A) const;
+    // UKismetMathLibrary::RGBToHSV_Vector (Engine.h)
+    void RGBToHSV_Vector(FLinearColor& HSV) const;
+    // UKismetMathLibrary::SelectColor (Engine.h)
+    FLinearColor SelectColor(FLinearColor B, bool bPickA) const;
+    // UOculusFunctionLibrary::SetColorScaleAndOffset (OculusHMD.h)
+    void SetColorScaleAndOffset(FLinearColor ColorOffset, bool bApplyToAllLayers) const;
+    // UKismetStringLibrary::Conv_ColorToString (Engine.h)
+    FString ToString() const;
+    // UKismetTextLibrary::Conv_ColorToText (Engine.h)
+    FText ToText() const;
+    // UKismetMathLibrary::Conv_LinearColorToVector (Engine.h)
+    FVector ToVector() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakColor__UeForward = "UKismetMathLibrary::BreakColor";
+        static constexpr const char* CInterpTo__UeForward = "UKismetMathLibrary::CInterpTo";
+        static constexpr const char* HSVToRGBLinear__UeForward = "UKismetMathLibrary::HSVToRGBLinear";
+        static constexpr const char* HSVToRGB_Vector__UeForward = "UKismetMathLibrary::HSVToRGB_Vector";
+        static constexpr const char* LinearColorLerp__UeForward = "UKismetMathLibrary::LinearColorLerp";
+        static constexpr const char* LinearColorLerpUsingHSV__UeForward = "UKismetMathLibrary::LinearColorLerpUsingHSV";
+        static constexpr const char* LinearColor_Desaturated__UeForward = "UKismetMathLibrary::LinearColor_Desaturated";
+        static constexpr const char* LinearColor_Distance__UeForward = "UKismetMathLibrary::LinearColor_Distance";
+        static constexpr const char* LinearColor_GetLuminance__UeForward = "UKismetMathLibrary::LinearColor_GetLuminance";
+        static constexpr const char* LinearColor_GetMax__UeForward = "UKismetMathLibrary::LinearColor_GetMax";
+        static constexpr const char* LinearColor_GetMin__UeForward = "UKismetMathLibrary::LinearColor_GetMin";
+        static constexpr const char* LinearColor_IsNearEqual__UeForward = "UKismetMathLibrary::LinearColor_IsNearEqual";
+        static constexpr const char* LinearColor_Quantize__UeForward = "UKismetMathLibrary::LinearColor_Quantize";
+        static constexpr const char* LinearColor_QuantizeRound__UeForward = "UKismetMathLibrary::LinearColor_QuantizeRound";
+        static constexpr const char* LinearColor_ToNewOpacity__UeForward = "UKismetMathLibrary::LinearColor_ToNewOpacity";
+        static constexpr const char* LinearColor_ToRGBE__UeForward = "UKismetMathLibrary::LinearColor_ToRGBE";
+        static constexpr const char* RGBLinearToHSV__UeForward = "UKismetMathLibrary::RGBLinearToHSV";
+        static constexpr const char* RGBToHSV__UeForward = "UKismetMathLibrary::RGBToHSV";
+        static constexpr const char* RGBToHSV_Vector__UeForward = "UKismetMathLibrary::RGBToHSV_Vector";
+        static constexpr const char* SelectColor__UeForward = "UKismetMathLibrary::SelectColor";
+        static constexpr const char* SetColorScaleAndOffset__UeForward = "UOculusFunctionLibrary::SetColorScaleAndOffset";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_ColorToString";
+        static constexpr const char* ToText__UeForward = "UKismetTextLibrary::Conv_ColorToText";
+        static constexpr const char* ToVector__UeForward = "UKismetMathLibrary::Conv_LinearColorToVector";
+    };
 };
 
 struct FInterpCurvePointLinearColor
@@ -627,6 +1475,89 @@ struct FQuat
     FQuat() = default;
     FQuat(float X, float Y, float Z, float W) {}
     UE_CONV_FQuat
+
+    // UFSDConversionLibrary::QuadToNetQuantizeNormal (FSD.h)
+    FVector_NetQuantizeNormal QuadToNetQuantizeNormal() const;
+    // UFSDConversionLibrary::QuatToRotator (FSD.h)
+    FRotator QuatToRotator() const;
+    // UFSDConversionLibrary::QuatToVector (FSD.h)
+    FVector QuatToVector() const;
+    // UKismetMathLibrary::Quat_AngularDistance (Engine.h)
+    float Quat_AngularDistance(const FQuat& B) const;
+    // UKismetMathLibrary::Quat_Euler (Engine.h)
+    FVector Quat_Euler() const;
+    // UKismetMathLibrary::Quat_Exp (Engine.h)
+    FQuat Quat_Exp() const;
+    // UKismetMathLibrary::Quat_GetAngle (Engine.h)
+    float Quat_GetAngle() const;
+    // UKismetMathLibrary::Quat_GetAxisX (Engine.h)
+    FVector Quat_GetAxisX() const;
+    // UKismetMathLibrary::Quat_GetAxisY (Engine.h)
+    FVector Quat_GetAxisY() const;
+    // UKismetMathLibrary::Quat_GetAxisZ (Engine.h)
+    FVector Quat_GetAxisZ() const;
+    // UKismetMathLibrary::Quat_GetRotationAxis (Engine.h)
+    FVector Quat_GetRotationAxis() const;
+    // UKismetMathLibrary::Quat_Inversed (Engine.h)
+    FQuat Quat_Inversed() const;
+    // UKismetMathLibrary::Quat_IsFinite (Engine.h)
+    bool Quat_IsFinite() const;
+    // UKismetMathLibrary::Quat_IsIdentity (Engine.h)
+    bool Quat_IsIdentity(float Tolerance) const;
+    // UKismetMathLibrary::Quat_IsNonFinite (Engine.h)
+    bool Quat_IsNonFinite() const;
+    // UKismetMathLibrary::Quat_IsNormalized (Engine.h)
+    bool Quat_IsNormalized() const;
+    // UKismetMathLibrary::Quat_Log (Engine.h)
+    FQuat Quat_Log() const;
+    // UKismetMathLibrary::Quat_Normalized (Engine.h)
+    FQuat Quat_Normalized(float Tolerance) const;
+    // UKismetMathLibrary::Quat_RotateVector (Engine.h)
+    FVector Quat_RotateVector(const FVector& V) const;
+    // UKismetMathLibrary::Quat_Rotator (Engine.h)
+    FRotator Quat_Rotator() const;
+    // UKismetMathLibrary::Quat_Size (Engine.h)
+    float Quat_Size() const;
+    // UKismetMathLibrary::Quat_SizeSquared (Engine.h)
+    float Quat_SizeSquared() const;
+    // UKismetMathLibrary::Quat_UnrotateVector (Engine.h)
+    FVector Quat_UnrotateVector(const FVector& V) const;
+    // UKismetMathLibrary::Quat_VectorForward (Engine.h)
+    FVector Quat_VectorForward() const;
+    // UKismetMathLibrary::Quat_VectorRight (Engine.h)
+    FVector Quat_VectorRight() const;
+    // UKismetMathLibrary::Quat_VectorUp (Engine.h)
+    FVector Quat_VectorUp() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* QuadToNetQuantizeNormal__UeForward = "UFSDConversionLibrary::QuadToNetQuantizeNormal";
+        static constexpr const char* QuatToRotator__UeForward = "UFSDConversionLibrary::QuatToRotator";
+        static constexpr const char* QuatToVector__UeForward = "UFSDConversionLibrary::QuatToVector";
+        static constexpr const char* Quat_AngularDistance__UeForward = "UKismetMathLibrary::Quat_AngularDistance";
+        static constexpr const char* Quat_Euler__UeForward = "UKismetMathLibrary::Quat_Euler";
+        static constexpr const char* Quat_Exp__UeForward = "UKismetMathLibrary::Quat_Exp";
+        static constexpr const char* Quat_GetAngle__UeForward = "UKismetMathLibrary::Quat_GetAngle";
+        static constexpr const char* Quat_GetAxisX__UeForward = "UKismetMathLibrary::Quat_GetAxisX";
+        static constexpr const char* Quat_GetAxisY__UeForward = "UKismetMathLibrary::Quat_GetAxisY";
+        static constexpr const char* Quat_GetAxisZ__UeForward = "UKismetMathLibrary::Quat_GetAxisZ";
+        static constexpr const char* Quat_GetRotationAxis__UeForward = "UKismetMathLibrary::Quat_GetRotationAxis";
+        static constexpr const char* Quat_Inversed__UeForward = "UKismetMathLibrary::Quat_Inversed";
+        static constexpr const char* Quat_IsFinite__UeForward = "UKismetMathLibrary::Quat_IsFinite";
+        static constexpr const char* Quat_IsIdentity__UeForward = "UKismetMathLibrary::Quat_IsIdentity";
+        static constexpr const char* Quat_IsNonFinite__UeForward = "UKismetMathLibrary::Quat_IsNonFinite";
+        static constexpr const char* Quat_IsNormalized__UeForward = "UKismetMathLibrary::Quat_IsNormalized";
+        static constexpr const char* Quat_Log__UeForward = "UKismetMathLibrary::Quat_Log";
+        static constexpr const char* Quat_Normalized__UeForward = "UKismetMathLibrary::Quat_Normalized";
+        static constexpr const char* Quat_RotateVector__UeForward = "UKismetMathLibrary::Quat_RotateVector";
+        static constexpr const char* Quat_Rotator__UeForward = "UKismetMathLibrary::Quat_Rotator";
+        static constexpr const char* Quat_Size__UeForward = "UKismetMathLibrary::Quat_Size";
+        static constexpr const char* Quat_SizeSquared__UeForward = "UKismetMathLibrary::Quat_SizeSquared";
+        static constexpr const char* Quat_UnrotateVector__UeForward = "UKismetMathLibrary::Quat_UnrotateVector";
+        static constexpr const char* Quat_VectorForward__UeForward = "UKismetMathLibrary::Quat_VectorForward";
+        static constexpr const char* Quat_VectorRight__UeForward = "UKismetMathLibrary::Quat_VectorRight";
+        static constexpr const char* Quat_VectorUp__UeForward = "UKismetMathLibrary::Quat_VectorUp";
+    };
 };
 
 struct FInterpCurvePointQuat
@@ -724,6 +1655,17 @@ struct FInterpCurveVector2D
 
     FInterpCurveVector2D() = default;
     FInterpCurveVector2D(TArray<FInterpCurvePointVector2D> Points, bool bIsLooped, float LoopKeyOffset) {}
+
+    // UFSDSplineLibrary::EvalCurve2D (FSD.h)
+    void EvalCurve2D(float Key, FVector2D& OutPosition, FVector2D& OutTangent) const;
+    // UFSDSplineLibrary::EvalCurveScaled2D (FSD.h)
+    void EvalCurveScaled2D(float Key, FVector2D ScaleBy, FVector2D& OutPosition, FVector2D& OutTangent) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* EvalCurve2D__UeForward = "UFSDSplineLibrary::EvalCurve2D";
+        static constexpr const char* EvalCurveScaled2D__UeForward = "UFSDSplineLibrary::EvalCurveScaled2D";
+    };
 };
 
 struct FJoinabilitySettings
@@ -758,6 +1700,122 @@ struct FMatrix
     FMatrix() = default;
     FMatrix(FPlane XPlane, FPlane YPlane, FPlane ZPlane, FPlane WPlane) {}
     UE_CONV_FMatrix
+
+    // UKismetMathLibrary::Matrix_ApplyScale (Engine.h)
+    FMatrix Matrix_ApplyScale(float Scale) const;
+    // UKismetMathLibrary::Matrix_ConcatenateTranslation (Engine.h)
+    FMatrix Matrix_ConcatenateTranslation(FVector Translation) const;
+    // UKismetMathLibrary::Matrix_ContainsNaN (Engine.h)
+    bool Matrix_ContainsNaN() const;
+    // UKismetMathLibrary::Matrix_GetColumn (Engine.h)
+    FVector Matrix_GetColumn(TEnum<EMatrixColumns> Column) const;
+    // UKismetMathLibrary::Matrix_GetDeterminant (Engine.h)
+    float Matrix_GetDeterminant() const;
+    // UKismetMathLibrary::Matrix_GetFrustumBottomPlane (Engine.h)
+    bool Matrix_GetFrustumBottomPlane(FPlane& OutPlane) const;
+    // UKismetMathLibrary::Matrix_GetFrustumFarPlane (Engine.h)
+    bool Matrix_GetFrustumFarPlane(FPlane& OutPlane) const;
+    // UKismetMathLibrary::Matrix_GetFrustumLeftPlane (Engine.h)
+    bool Matrix_GetFrustumLeftPlane(FPlane& OutPlane) const;
+    // UKismetMathLibrary::Matrix_GetFrustumNearPlane (Engine.h)
+    bool Matrix_GetFrustumNearPlane(FPlane& OutPlane) const;
+    // UKismetMathLibrary::Matrix_GetFrustumRightPlane (Engine.h)
+    bool Matrix_GetFrustumRightPlane(FPlane& OutPlane) const;
+    // UKismetMathLibrary::Matrix_GetFrustumTopPlane (Engine.h)
+    bool Matrix_GetFrustumTopPlane(FPlane& OutPlane) const;
+    // UKismetMathLibrary::Matrix_GetInverse (Engine.h)
+    FMatrix Matrix_GetInverse() const;
+    // UKismetMathLibrary::Matrix_GetMatrixWithoutScale (Engine.h)
+    FMatrix Matrix_GetMatrixWithoutScale(float Tolerance) const;
+    // UKismetMathLibrary::Matrix_GetMaximumAxisScale (Engine.h)
+    float Matrix_GetMaximumAxisScale() const;
+    // UKismetMathLibrary::Matrix_GetOrigin (Engine.h)
+    FVector Matrix_GetOrigin() const;
+    // UKismetMathLibrary::Matrix_GetRotDeterminant (Engine.h)
+    float Matrix_GetRotDeterminant() const;
+    // UKismetMathLibrary::Matrix_GetRotator (Engine.h)
+    FRotator Matrix_GetRotator() const;
+    // UKismetMathLibrary::Matrix_GetScaleVector (Engine.h)
+    FVector Matrix_GetScaleVector(float Tolerance) const;
+    // UKismetMathLibrary::Matrix_GetScaledAxes (Engine.h)
+    void Matrix_GetScaledAxes(FVector& X, FVector& Y, FVector& Z) const;
+    // UKismetMathLibrary::Matrix_GetScaledAxis (Engine.h)
+    FVector Matrix_GetScaledAxis(TEnum<EAxis> Axis) const;
+    // UKismetMathLibrary::Matrix_GetTransposeAdjoint (Engine.h)
+    FMatrix Matrix_GetTransposeAdjoint() const;
+    // UKismetMathLibrary::Matrix_GetTransposed (Engine.h)
+    FMatrix Matrix_GetTransposed() const;
+    // UKismetMathLibrary::Matrix_GetUnitAxes (Engine.h)
+    void Matrix_GetUnitAxes(FVector& X, FVector& Y, FVector& Z) const;
+    // UKismetMathLibrary::Matrix_GetUnitAxis (Engine.h)
+    FVector Matrix_GetUnitAxis(TEnum<EAxis> Axis) const;
+    // UKismetMathLibrary::Matrix_InverseTransformPosition (Engine.h)
+    FVector Matrix_InverseTransformPosition(FVector V) const;
+    // UKismetMathLibrary::Matrix_InverseTransformVector (Engine.h)
+    FVector Matrix_InverseTransformVector(FVector V) const;
+    // UKismetMathLibrary::Matrix_Mirror (Engine.h)
+    FMatrix Matrix_Mirror(TEnum<EAxis> MirrorAxis, TEnum<EAxis> FlipAxis) const;
+    // UKismetMathLibrary::Matrix_RemoveTranslation (Engine.h)
+    FMatrix Matrix_RemoveTranslation() const;
+    // UKismetMathLibrary::Matrix_ScaleTranslation (Engine.h)
+    FMatrix Matrix_ScaleTranslation(FVector Scale3D) const;
+    // UKismetMathLibrary::Matrix_ToQuat (Engine.h)
+    FQuat Matrix_ToQuat() const;
+    // UKismetMathLibrary::Matrix_TransformPosition (Engine.h)
+    FVector4 Matrix_TransformPosition(FVector V) const;
+    // UKismetMathLibrary::Matrix_TransformVector (Engine.h)
+    FVector4 Matrix_TransformVector(FVector V) const;
+    // UKismetMathLibrary::Matrix_TransformVector4 (Engine.h)
+    FVector4 Matrix_TransformVector4(FVector4 V) const;
+    // UKismetMathLibrary::Conv_MatrixToRotator (Engine.h)
+    FRotator ToRotator() const;
+    // UKismetStringLibrary::Conv_MatrixToString (Engine.h)
+    FString ToString() const;
+    // UKismetMathLibrary::Conv_MatrixToTransform (Engine.h)
+    FTransform ToTransform() const;
+    // UKismetMathLibrary::TransformVector4 (Engine.h)
+    FVector4 TransformVector4(const FVector4& Vec4) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Matrix_ApplyScale__UeForward = "UKismetMathLibrary::Matrix_ApplyScale";
+        static constexpr const char* Matrix_ConcatenateTranslation__UeForward = "UKismetMathLibrary::Matrix_ConcatenateTranslation";
+        static constexpr const char* Matrix_ContainsNaN__UeForward = "UKismetMathLibrary::Matrix_ContainsNaN";
+        static constexpr const char* Matrix_GetColumn__UeForward = "UKismetMathLibrary::Matrix_GetColumn";
+        static constexpr const char* Matrix_GetDeterminant__UeForward = "UKismetMathLibrary::Matrix_GetDeterminant";
+        static constexpr const char* Matrix_GetFrustumBottomPlane__UeForward = "UKismetMathLibrary::Matrix_GetFrustumBottomPlane";
+        static constexpr const char* Matrix_GetFrustumFarPlane__UeForward = "UKismetMathLibrary::Matrix_GetFrustumFarPlane";
+        static constexpr const char* Matrix_GetFrustumLeftPlane__UeForward = "UKismetMathLibrary::Matrix_GetFrustumLeftPlane";
+        static constexpr const char* Matrix_GetFrustumNearPlane__UeForward = "UKismetMathLibrary::Matrix_GetFrustumNearPlane";
+        static constexpr const char* Matrix_GetFrustumRightPlane__UeForward = "UKismetMathLibrary::Matrix_GetFrustumRightPlane";
+        static constexpr const char* Matrix_GetFrustumTopPlane__UeForward = "UKismetMathLibrary::Matrix_GetFrustumTopPlane";
+        static constexpr const char* Matrix_GetInverse__UeForward = "UKismetMathLibrary::Matrix_GetInverse";
+        static constexpr const char* Matrix_GetMatrixWithoutScale__UeForward = "UKismetMathLibrary::Matrix_GetMatrixWithoutScale";
+        static constexpr const char* Matrix_GetMaximumAxisScale__UeForward = "UKismetMathLibrary::Matrix_GetMaximumAxisScale";
+        static constexpr const char* Matrix_GetOrigin__UeForward = "UKismetMathLibrary::Matrix_GetOrigin";
+        static constexpr const char* Matrix_GetRotDeterminant__UeForward = "UKismetMathLibrary::Matrix_GetRotDeterminant";
+        static constexpr const char* Matrix_GetRotator__UeForward = "UKismetMathLibrary::Matrix_GetRotator";
+        static constexpr const char* Matrix_GetScaleVector__UeForward = "UKismetMathLibrary::Matrix_GetScaleVector";
+        static constexpr const char* Matrix_GetScaledAxes__UeForward = "UKismetMathLibrary::Matrix_GetScaledAxes";
+        static constexpr const char* Matrix_GetScaledAxis__UeForward = "UKismetMathLibrary::Matrix_GetScaledAxis";
+        static constexpr const char* Matrix_GetTransposeAdjoint__UeForward = "UKismetMathLibrary::Matrix_GetTransposeAdjoint";
+        static constexpr const char* Matrix_GetTransposed__UeForward = "UKismetMathLibrary::Matrix_GetTransposed";
+        static constexpr const char* Matrix_GetUnitAxes__UeForward = "UKismetMathLibrary::Matrix_GetUnitAxes";
+        static constexpr const char* Matrix_GetUnitAxis__UeForward = "UKismetMathLibrary::Matrix_GetUnitAxis";
+        static constexpr const char* Matrix_InverseTransformPosition__UeForward = "UKismetMathLibrary::Matrix_InverseTransformPosition";
+        static constexpr const char* Matrix_InverseTransformVector__UeForward = "UKismetMathLibrary::Matrix_InverseTransformVector";
+        static constexpr const char* Matrix_Mirror__UeForward = "UKismetMathLibrary::Matrix_Mirror";
+        static constexpr const char* Matrix_RemoveTranslation__UeForward = "UKismetMathLibrary::Matrix_RemoveTranslation";
+        static constexpr const char* Matrix_ScaleTranslation__UeForward = "UKismetMathLibrary::Matrix_ScaleTranslation";
+        static constexpr const char* Matrix_ToQuat__UeForward = "UKismetMathLibrary::Matrix_ToQuat";
+        static constexpr const char* Matrix_TransformPosition__UeForward = "UKismetMathLibrary::Matrix_TransformPosition";
+        static constexpr const char* Matrix_TransformVector__UeForward = "UKismetMathLibrary::Matrix_TransformVector";
+        static constexpr const char* Matrix_TransformVector4__UeForward = "UKismetMathLibrary::Matrix_TransformVector4";
+        static constexpr const char* ToRotator__UeForward = "UKismetMathLibrary::Conv_MatrixToRotator";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_MatrixToString";
+        static constexpr const char* ToTransform__UeForward = "UKismetMathLibrary::Conv_MatrixToTransform";
+        static constexpr const char* TransformVector4__UeForward = "UKismetMathLibrary::TransformVector4";
+    };
 };
 
 struct FOrientedBox
@@ -815,6 +1873,17 @@ struct FPolyglotTextData
 
     FPolyglotTextData() = default;
     FPolyglotTextData(ELocalizedTextSourceCategory Category, FString NativeCulture, FString Namespace, FString Key, FString NativeString, TMap<FString, FString> LocalizedStrings, bool bIsMinimalPatch, FText CachedText) {}
+
+    // UKismetTextLibrary::IsPolyglotDataValid (Engine.h)
+    void IsPolyglotDataValid(bool& IsValid, FText& errorMessage) const;
+    // UKismetTextLibrary::PolyglotDataToText (Engine.h)
+    FText PolyglotDataToText() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* IsPolyglotDataValid__UeForward = "UKismetTextLibrary::IsPolyglotDataValid";
+        static constexpr const char* PolyglotDataToText__UeForward = "UKismetTextLibrary::PolyglotDataToText";
+    };
 };
 
 struct FPrimaryAssetType
@@ -823,6 +1892,20 @@ struct FPrimaryAssetType
 
     FPrimaryAssetType() = default;
     FPrimaryAssetType(FName Name) {}
+
+    // UKismetSystemLibrary::GetPrimaryAssetIdList (Engine.h)
+    void GetPrimaryAssetIdList(TArray<FPrimaryAssetId>& OutPrimaryAssetIdList) const;
+    // UKismetSystemLibrary::IsValidPrimaryAssetType (Engine.h)
+    bool IsValidPrimaryAssetType() const;
+    // UKismetSystemLibrary::Conv_PrimaryAssetTypeToString (Engine.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetPrimaryAssetIdList__UeForward = "UKismetSystemLibrary::GetPrimaryAssetIdList";
+        static constexpr const char* IsValidPrimaryAssetType__UeForward = "UKismetSystemLibrary::IsValidPrimaryAssetType";
+        static constexpr const char* ToString__UeForward = "UKismetSystemLibrary::Conv_PrimaryAssetTypeToString";
+    };
 };
 
 struct FPrimaryAssetId
@@ -832,6 +1915,35 @@ struct FPrimaryAssetId
 
     FPrimaryAssetId() = default;
     FPrimaryAssetId(FPrimaryAssetType PrimaryAssetType, FName PrimaryAssetName) {}
+
+    // UKismetSystemLibrary::GetClassFromPrimaryAssetId (Engine.h)
+    TSubclassOf<class UObject> GetClassFromPrimaryAssetId() const;
+    // UKismetSystemLibrary::GetCurrentBundleState (Engine.h)
+    bool GetCurrentBundleState(bool bForceCurrentState, TArray<FName>& OutBundles) const;
+    // UKismetSystemLibrary::GetObjectFromPrimaryAssetId (Engine.h)
+    class UObject* GetObjectFromPrimaryAssetId() const;
+    // UKismetSystemLibrary::GetSoftClassReferenceFromPrimaryAssetId (Engine.h)
+    TSoftClassPtr<class UClass> GetSoftClassReferenceFromPrimaryAssetId() const;
+    // UKismetSystemLibrary::GetSoftObjectReferenceFromPrimaryAssetId (Engine.h)
+    TSoftObjectPtr<class UObject> GetSoftObjectReferenceFromPrimaryAssetId() const;
+    // UKismetSystemLibrary::IsValidPrimaryAssetId (Engine.h)
+    bool IsValidPrimaryAssetId() const;
+    // UKismetSystemLibrary::Conv_PrimaryAssetIdToString (Engine.h)
+    FString ToString() const;
+    // UKismetSystemLibrary::UnloadPrimaryAsset (Engine.h)
+    void UnloadPrimaryAsset() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetClassFromPrimaryAssetId__UeForward = "UKismetSystemLibrary::GetClassFromPrimaryAssetId";
+        static constexpr const char* GetCurrentBundleState__UeForward = "UKismetSystemLibrary::GetCurrentBundleState";
+        static constexpr const char* GetObjectFromPrimaryAssetId__UeForward = "UKismetSystemLibrary::GetObjectFromPrimaryAssetId";
+        static constexpr const char* GetSoftClassReferenceFromPrimaryAssetId__UeForward = "UKismetSystemLibrary::GetSoftClassReferenceFromPrimaryAssetId";
+        static constexpr const char* GetSoftObjectReferenceFromPrimaryAssetId__UeForward = "UKismetSystemLibrary::GetSoftObjectReferenceFromPrimaryAssetId";
+        static constexpr const char* IsValidPrimaryAssetId__UeForward = "UKismetSystemLibrary::IsValidPrimaryAssetId";
+        static constexpr const char* ToString__UeForward = "UKismetSystemLibrary::Conv_PrimaryAssetIdToString";
+        static constexpr const char* UnloadPrimaryAsset__UeForward = "UKismetSystemLibrary::UnloadPrimaryAsset";
+    };
 };
 
 struct FQualifiedFrameTime
@@ -841,6 +1953,17 @@ struct FQualifiedFrameTime
 
     FQualifiedFrameTime() = default;
     FQualifiedFrameTime(FFrameTime Time, FFrameRate Rate) {}
+
+    // UKismetMathLibrary::BreakQualifiedFrameTime (Engine.h)
+    void BreakQualifiedFrameTime(FFrameNumber& Frame, FFrameRate& FrameRate, float& SubFrame) const;
+    // UTimeManagementBlueprintLibrary::Conv_QualifiedFrameTimeToSeconds (TimeManagement.h)
+    float ToFloat() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakQualifiedFrameTime__UeForward = "UKismetMathLibrary::BreakQualifiedFrameTime";
+        static constexpr const char* ToFloat__UeForward = "UTimeManagementBlueprintLibrary::Conv_QualifiedFrameTimeToSeconds";
+    };
 };
 
 struct FRandomStream
@@ -850,6 +1973,26 @@ struct FRandomStream
 
     FRandomStream() = default;
     FRandomStream(int InitialSeed, int Seed) {}
+
+    // UKismetMathLibrary::BreakRandomStream (Engine.h)
+    void BreakRandomStream(int& InitialSeed) const;
+    // UKismetMathLibrary::RandomBoolFromStream (Engine.h)
+    bool RandomBoolFromStream() const;
+    // UKismetMathLibrary::RandomFloatFromStream (Engine.h)
+    float RandomFloatFromStream() const;
+    // UKismetMathLibrary::RandomUnitVectorFromStream (Engine.h)
+    FVector RandomUnitVectorFromStream() const;
+    // UKismetMathLibrary::ResetRandomStream (Engine.h)
+    void ResetRandomStream() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakRandomStream__UeForward = "UKismetMathLibrary::BreakRandomStream";
+        static constexpr const char* RandomBoolFromStream__UeForward = "UKismetMathLibrary::RandomBoolFromStream";
+        static constexpr const char* RandomFloatFromStream__UeForward = "UKismetMathLibrary::RandomFloatFromStream";
+        static constexpr const char* RandomUnitVectorFromStream__UeForward = "UKismetMathLibrary::RandomUnitVectorFromStream";
+        static constexpr const char* ResetRandomStream__UeForward = "UKismetMathLibrary::ResetRandomStream";
+    };
 };
 
 struct FRotator
@@ -861,6 +2004,77 @@ struct FRotator
     FRotator() = default;
     FRotator(float Pitch, float Yaw, float Roll) {}
     UE_CONV_FRotator
+
+    // UKismetMathLibrary::BreakRotIntoAxes (Engine.h)
+    void BreakRotIntoAxes(FVector& X, FVector& Y, FVector& Z) const;
+    // UKismetMathLibrary::BreakRotator (Engine.h)
+    void BreakRotator(float& Roll, float& Pitch, float& Yaw) const;
+    // UKismetMathLibrary::ComposeRotators (Engine.h)
+    FRotator ComposeRotators(FRotator B) const;
+    // UKismetMathLibrary::DynamicWeightedMovingAverage_FRotator (Engine.h)
+    FRotator DynamicWeightedMovingAverage_FRotator(FRotator PreviousSample, float MaxDistance, float MinWeight, float MaxWeight) const;
+    // UKismetMathLibrary::GetAxes (Engine.h)
+    void GetAxes(FVector& X, FVector& Y, FVector& Z) const;
+    // UKismetMathLibrary::GetForwardVector (Engine.h)
+    FVector GetForwardVector() const;
+    // UKismetMathLibrary::GetRightVector (Engine.h)
+    FVector GetRightVector() const;
+    // UKismetMathLibrary::GetUpVector (Engine.h)
+    FVector GetUpVector() const;
+    // UAIBlueprintHelperLibrary::IsValidAIRotation (AIModule.h)
+    bool IsValidAIRotation() const;
+    // UKismetMathLibrary::NegateRotator (Engine.h)
+    FRotator NegateRotator() const;
+    // UKismetMathLibrary::NormalizedDeltaRotator (Engine.h)
+    FRotator NormalizedDeltaRotator(FRotator B) const;
+    // UKismetMathLibrary::REase (Engine.h)
+    FRotator REase(FRotator B, float alpha, bool bShortestPath, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps) const;
+    // UKismetMathLibrary::RInterpTo (Engine.h)
+    FRotator RInterpTo(FRotator Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::RInterpTo_Constant (Engine.h)
+    FRotator RInterpTo_Constant(FRotator Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::RLerp (Engine.h)
+    FRotator RLerp(FRotator B, float alpha, bool bShortestPath) const;
+    // UKismetMathLibrary::SelectRotator (Engine.h)
+    FRotator SelectRotator(FRotator B, bool bPickA) const;
+    // UOculusFunctionLibrary::SetBaseRotationAndBaseOffsetInMeters (OculusHMD.h)
+    void SetBaseRotationAndBaseOffsetInMeters(FVector BaseOffsetInMeters, TEnum<EOrientPositionSelector> options) const;
+    // UOculusFunctionLibrary::SetBaseRotationAndPositionOffset (OculusHMD.h)
+    void SetBaseRotationAndPositionOffset(FVector PosOffset, TEnum<EOrientPositionSelector> options) const;
+    // UKismetStringLibrary::Conv_RotatorToString (Engine.h)
+    FString ToString() const;
+    // UKismetTextLibrary::Conv_RotatorToText (Engine.h)
+    FText ToText() const;
+    // UKismetMathLibrary::Conv_RotatorToTransform (Engine.h)
+    FTransform ToTransform() const;
+    // UKismetMathLibrary::WeightedMovingAverage_FRotator (Engine.h)
+    FRotator WeightedMovingAverage_FRotator(FRotator PreviousSample, float Weight) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakRotIntoAxes__UeForward = "UKismetMathLibrary::BreakRotIntoAxes";
+        static constexpr const char* BreakRotator__UeForward = "UKismetMathLibrary::BreakRotator";
+        static constexpr const char* ComposeRotators__UeForward = "UKismetMathLibrary::ComposeRotators";
+        static constexpr const char* DynamicWeightedMovingAverage_FRotator__UeForward = "UKismetMathLibrary::DynamicWeightedMovingAverage_FRotator";
+        static constexpr const char* GetAxes__UeForward = "UKismetMathLibrary::GetAxes";
+        static constexpr const char* GetForwardVector__UeForward = "UKismetMathLibrary::GetForwardVector";
+        static constexpr const char* GetRightVector__UeForward = "UKismetMathLibrary::GetRightVector";
+        static constexpr const char* GetUpVector__UeForward = "UKismetMathLibrary::GetUpVector";
+        static constexpr const char* IsValidAIRotation__UeForward = "UAIBlueprintHelperLibrary::IsValidAIRotation";
+        static constexpr const char* NegateRotator__UeForward = "UKismetMathLibrary::NegateRotator";
+        static constexpr const char* NormalizedDeltaRotator__UeForward = "UKismetMathLibrary::NormalizedDeltaRotator";
+        static constexpr const char* REase__UeForward = "UKismetMathLibrary::REase";
+        static constexpr const char* RInterpTo__UeForward = "UKismetMathLibrary::RInterpTo";
+        static constexpr const char* RInterpTo_Constant__UeForward = "UKismetMathLibrary::RInterpTo_Constant";
+        static constexpr const char* RLerp__UeForward = "UKismetMathLibrary::RLerp";
+        static constexpr const char* SelectRotator__UeForward = "UKismetMathLibrary::SelectRotator";
+        static constexpr const char* SetBaseRotationAndBaseOffsetInMeters__UeForward = "UOculusFunctionLibrary::SetBaseRotationAndBaseOffsetInMeters";
+        static constexpr const char* SetBaseRotationAndPositionOffset__UeForward = "UOculusFunctionLibrary::SetBaseRotationAndPositionOffset";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_RotatorToString";
+        static constexpr const char* ToText__UeForward = "UKismetTextLibrary::Conv_RotatorToText";
+        static constexpr const char* ToTransform__UeForward = "UKismetMathLibrary::Conv_RotatorToTransform";
+        static constexpr const char* WeightedMovingAverage_FRotator__UeForward = "UKismetMathLibrary::WeightedMovingAverage_FRotator";
+    };
 };
 
 struct FSoftClassPath : public FSoftObjectPath
@@ -868,6 +2082,17 @@ struct FSoftClassPath : public FSoftObjectPath
 
     FSoftClassPath() = default;
     FSoftClassPath(FName AssetPathName, FString SubPathString) {}
+
+    // UKismetSystemLibrary::BreakSoftClassPath (Engine.h)
+    void BreakSoftClassPath(FString& PathString) const;
+    // UKismetSystemLibrary::Conv_SoftClassPathToSoftClassRef (Engine.h)
+    TSoftClassPtr<class UClass> ToSoftClassPtr() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakSoftClassPath__UeForward = "UKismetSystemLibrary::BreakSoftClassPath";
+        static constexpr const char* ToSoftClassPtr__UeForward = "UKismetSystemLibrary::Conv_SoftClassPathToSoftClassRef";
+    };
 };
 
 struct FTestUninitializedScriptStructMembersTest
@@ -894,6 +2119,56 @@ struct FTimecode
 
 struct FTimespan
 {
+
+    // UKismetTextLibrary::AsTimespan_Timespan (Engine.h)
+    FText AsTimespan_Timespan() const;
+    // UKismetMathLibrary::BreakTimespan (Engine.h)
+    void BreakTimespan(int& Days, int& Hours, int& Minutes, int& Seconds, int& Milliseconds) const;
+    // UKismetMathLibrary::BreakTimespan2 (Engine.h)
+    void BreakTimespan2(int& Days, int& Hours, int& Minutes, int& Seconds, int& FractionNano) const;
+    // UKismetMathLibrary::GetDays (Engine.h)
+    int GetDays() const;
+    // UKismetMathLibrary::GetDuration (Engine.h)
+    FTimespan GetDuration() const;
+    // UKismetMathLibrary::GetHours (Engine.h)
+    int GetHours() const;
+    // UKismetMathLibrary::GetMilliseconds (Engine.h)
+    int GetMilliseconds() const;
+    // UKismetMathLibrary::GetMinutes (Engine.h)
+    int GetMinutes() const;
+    // UKismetMathLibrary::GetSeconds (Engine.h)
+    int GetSeconds() const;
+    // UKismetMathLibrary::GetTotalDays (Engine.h)
+    float GetTotalDays() const;
+    // UKismetMathLibrary::GetTotalHours (Engine.h)
+    float GetTotalHours() const;
+    // UKismetMathLibrary::GetTotalMilliseconds (Engine.h)
+    float GetTotalMilliseconds() const;
+    // UKismetMathLibrary::GetTotalMinutes (Engine.h)
+    float GetTotalMinutes() const;
+    // UKismetMathLibrary::GetTotalSeconds (Engine.h)
+    float GetTotalSeconds() const;
+    // UKismetMathLibrary::TimespanRatio (Engine.h)
+    float TimespanRatio(FTimespan B) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AsTimespan_Timespan__UeForward = "UKismetTextLibrary::AsTimespan_Timespan";
+        static constexpr const char* BreakTimespan__UeForward = "UKismetMathLibrary::BreakTimespan";
+        static constexpr const char* BreakTimespan2__UeForward = "UKismetMathLibrary::BreakTimespan2";
+        static constexpr const char* GetDays__UeForward = "UKismetMathLibrary::GetDays";
+        static constexpr const char* GetDuration__UeForward = "UKismetMathLibrary::GetDuration";
+        static constexpr const char* GetHours__UeForward = "UKismetMathLibrary::GetHours";
+        static constexpr const char* GetMilliseconds__UeForward = "UKismetMathLibrary::GetMilliseconds";
+        static constexpr const char* GetMinutes__UeForward = "UKismetMathLibrary::GetMinutes";
+        static constexpr const char* GetSeconds__UeForward = "UKismetMathLibrary::GetSeconds";
+        static constexpr const char* GetTotalDays__UeForward = "UKismetMathLibrary::GetTotalDays";
+        static constexpr const char* GetTotalHours__UeForward = "UKismetMathLibrary::GetTotalHours";
+        static constexpr const char* GetTotalMilliseconds__UeForward = "UKismetMathLibrary::GetTotalMilliseconds";
+        static constexpr const char* GetTotalMinutes__UeForward = "UKismetMathLibrary::GetTotalMinutes";
+        static constexpr const char* GetTotalSeconds__UeForward = "UKismetMathLibrary::GetTotalSeconds";
+        static constexpr const char* TimespanRatio__UeForward = "UKismetMathLibrary::TimespanRatio";
+    };
 };
 
 struct FTransform
@@ -905,6 +2180,89 @@ struct FTransform
     FTransform() = default;
     FTransform(FQuat Rotation, FVector Translation, FVector Scale3D) {}
     UE_CONV_FTransform
+
+    // UARBlueprintLibrary::AddTrackedPointWithName (AugmentedReality.h)
+    bool AddTrackedPointWithName(FString PointName, bool bDeletePointsWithSameName) const;
+    // UKismetMathLibrary::BreakTransform (Engine.h)
+    void BreakTransform(FVector& Location, FRotator& Rotation, FVector& Scale) const;
+    // UARBlueprintLibrary::CalculateAlignmentTransform (AugmentedReality.h)
+    void CalculateAlignmentTransform(const FTransform& TransformInSecondCoordinateSystem, FTransform& AlignmentTransform) const;
+    // UHeadMountedDisplayFunctionLibrary::CalibrateExternalTrackingToHMD (HeadMountedDisplay.h)
+    void CalibrateExternalTrackingToHMD() const;
+    // UKismetMathLibrary::ComposeTransforms (Engine.h)
+    FTransform ComposeTransforms(const FTransform& B) const;
+    // UKismetMathLibrary::ConvertTransformToRelative (Engine.h)
+    FTransform ConvertTransformToRelative(const FTransform& ParentTransform) const;
+    // UKismetMathLibrary::InverseTransformDirection (Engine.h)
+    FVector InverseTransformDirection(FVector Direction) const;
+    // UKismetMathLibrary::InverseTransformLocation (Engine.h)
+    FVector InverseTransformLocation(FVector Location) const;
+    // UKismetMathLibrary::InverseTransformRotation (Engine.h)
+    FRotator InverseTransformRotation(FRotator Rotation) const;
+    // UKismetMathLibrary::InvertTransform (Engine.h)
+    FTransform InvertTransform() const;
+    // UKismetAnimationLibrary::K2_LookAt (AnimGraphRuntime.h)
+    FTransform K2_LookAt(const FVector& TargetPosition, FVector LookAtVector, bool bUseUpVector, FVector UpVector, float ClampConeInDegree) const;
+    // UKismetMathLibrary::MakeRelativeTransform (Engine.h)
+    FTransform MakeRelativeTransform(const FTransform& RelativeTo) const;
+    // UKismetMathLibrary::NearlyEqual_TransformTransform (Engine.h)
+    bool NearlyEqual_TransformTransform(const FTransform& B, float LocationTolerance, float RotationTolerance, float Scale3DTolerance) const;
+    // UKismetMathLibrary::SelectTransform (Engine.h)
+    FTransform SelectTransform(const FTransform& B, bool bPickA) const;
+    // UARBlueprintLibrary::SetAlignmentTransform (AugmentedReality.h)
+    void SetAlignmentTransform() const;
+    // UKismetMathLibrary::TEase (Engine.h)
+    FTransform TEase(const FTransform& B, float alpha, TEnum<EEasingFunc> EasingFunc, float BlendExp, int Steps) const;
+    // UKismetMathLibrary::TInterpTo (Engine.h)
+    FTransform TInterpTo(const FTransform& Target, float DeltaTime, float InterpSpeed) const;
+    // UKismetMathLibrary::TLerp (Engine.h)
+    FTransform TLerp(const FTransform& B, float alpha, TEnum<ELerpInterpolationMode> InterpMode) const;
+    // UKismetMathLibrary::Conv_TransformToMatrix (Engine.h)
+    FMatrix ToMatrix() const;
+    // UKismetStringLibrary::Conv_TransformToString (Engine.h)
+    FString ToString() const;
+    // UKismetTextLibrary::Conv_TransformToText (Engine.h)
+    FText ToText() const;
+    // UKismetMathLibrary::TransformDirection (Engine.h)
+    FVector TransformDirection(FVector Direction) const;
+    // UKismetMathLibrary::TransformLocation (Engine.h)
+    FVector TransformLocation(FVector Location) const;
+    // UKismetMathLibrary::TransformRotation (Engine.h)
+    FRotator TransformRotation(FRotator Rotation) const;
+    // UKismetMathLibrary::Transform_Determinant (Engine.h)
+    float Transform_Determinant() const;
+    // UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition (HeadMountedDisplay.h)
+    void UpdateExternalTrackingHMDPosition() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AddTrackedPointWithName__UeForward = "UARBlueprintLibrary::AddTrackedPointWithName";
+        static constexpr const char* BreakTransform__UeForward = "UKismetMathLibrary::BreakTransform";
+        static constexpr const char* CalculateAlignmentTransform__UeForward = "UARBlueprintLibrary::CalculateAlignmentTransform";
+        static constexpr const char* CalibrateExternalTrackingToHMD__UeForward = "UHeadMountedDisplayFunctionLibrary::CalibrateExternalTrackingToHMD";
+        static constexpr const char* ComposeTransforms__UeForward = "UKismetMathLibrary::ComposeTransforms";
+        static constexpr const char* ConvertTransformToRelative__UeForward = "UKismetMathLibrary::ConvertTransformToRelative";
+        static constexpr const char* InverseTransformDirection__UeForward = "UKismetMathLibrary::InverseTransformDirection";
+        static constexpr const char* InverseTransformLocation__UeForward = "UKismetMathLibrary::InverseTransformLocation";
+        static constexpr const char* InverseTransformRotation__UeForward = "UKismetMathLibrary::InverseTransformRotation";
+        static constexpr const char* InvertTransform__UeForward = "UKismetMathLibrary::InvertTransform";
+        static constexpr const char* K2_LookAt__UeForward = "UKismetAnimationLibrary::K2_LookAt";
+        static constexpr const char* MakeRelativeTransform__UeForward = "UKismetMathLibrary::MakeRelativeTransform";
+        static constexpr const char* NearlyEqual_TransformTransform__UeForward = "UKismetMathLibrary::NearlyEqual_TransformTransform";
+        static constexpr const char* SelectTransform__UeForward = "UKismetMathLibrary::SelectTransform";
+        static constexpr const char* SetAlignmentTransform__UeForward = "UARBlueprintLibrary::SetAlignmentTransform";
+        static constexpr const char* TEase__UeForward = "UKismetMathLibrary::TEase";
+        static constexpr const char* TInterpTo__UeForward = "UKismetMathLibrary::TInterpTo";
+        static constexpr const char* TLerp__UeForward = "UKismetMathLibrary::TLerp";
+        static constexpr const char* ToMatrix__UeForward = "UKismetMathLibrary::Conv_TransformToMatrix";
+        static constexpr const char* ToString__UeForward = "UKismetStringLibrary::Conv_TransformToString";
+        static constexpr const char* ToText__UeForward = "UKismetTextLibrary::Conv_TransformToText";
+        static constexpr const char* TransformDirection__UeForward = "UKismetMathLibrary::TransformDirection";
+        static constexpr const char* TransformLocation__UeForward = "UKismetMathLibrary::TransformLocation";
+        static constexpr const char* TransformRotation__UeForward = "UKismetMathLibrary::TransformRotation";
+        static constexpr const char* Transform_Determinant__UeForward = "UKismetMathLibrary::Transform_Determinant";
+        static constexpr const char* UpdateExternalTrackingHMDPosition__UeForward = "UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition";
+    };
 };
 
 struct FUniqueNetIdWrapper
@@ -920,6 +2278,77 @@ struct FVector4
 
     FVector4() = default;
     FVector4(float X, float Y, float Z, float W) {}
+
+    // UKismetMathLibrary::BreakVector4 (Engine.h)
+    void BreakVector4(float& X, float& Y, float& Z, float& W) const;
+    // UKismetMathLibrary::EqualExactly_Vector4Vector4 (Engine.h)
+    bool EqualExactly_Vector4Vector4(const FVector4& B) const;
+    // UKismetMathLibrary::NotEqualExactly_Vector4Vector4 (Engine.h)
+    bool NotEqualExactly_Vector4Vector4(const FVector4& B) const;
+    // UKismetMathLibrary::Conv_Vector4ToQuaternion (Engine.h)
+    FQuat ToQuat() const;
+    // UKismetMathLibrary::Conv_Vector4ToRotator (Engine.h)
+    FRotator ToRotator() const;
+    // UKismetMathLibrary::Conv_Vector4ToVector (Engine.h)
+    FVector ToVector() const;
+    // UKismetMathLibrary::Vector4_CrossProduct3 (Engine.h)
+    FVector4 Vector4_CrossProduct3(const FVector4& B) const;
+    // UKismetMathLibrary::Vector4_DotProduct (Engine.h)
+    float Vector4_DotProduct(const FVector4& B) const;
+    // UKismetMathLibrary::Vector4_DotProduct3 (Engine.h)
+    float Vector4_DotProduct3(const FVector4& B) const;
+    // UKismetMathLibrary::Vector4_IsNAN (Engine.h)
+    bool Vector4_IsNAN() const;
+    // UKismetMathLibrary::Vector4_IsNearlyZero3 (Engine.h)
+    bool Vector4_IsNearlyZero3(float Tolerance) const;
+    // UKismetMathLibrary::Vector4_IsNormal3 (Engine.h)
+    bool Vector4_IsNormal3() const;
+    // UKismetMathLibrary::Vector4_IsUnit3 (Engine.h)
+    bool Vector4_IsUnit3(float SquaredLenthTolerance) const;
+    // UKismetMathLibrary::Vector4_IsZero (Engine.h)
+    bool Vector4_IsZero() const;
+    // UKismetMathLibrary::Vector4_MirrorByVector3 (Engine.h)
+    FVector4 Vector4_MirrorByVector3(const FVector4& SurfaceNormal) const;
+    // UKismetMathLibrary::Vector4_Negated (Engine.h)
+    FVector4 Vector4_Negated() const;
+    // UKismetMathLibrary::Vector4_Normal3 (Engine.h)
+    FVector4 Vector4_Normal3(float Tolerance) const;
+    // UKismetMathLibrary::Vector4_NormalUnsafe3 (Engine.h)
+    FVector4 Vector4_NormalUnsafe3() const;
+    // UKismetMathLibrary::Vector4_Size (Engine.h)
+    float Vector4_Size() const;
+    // UKismetMathLibrary::Vector4_Size3 (Engine.h)
+    float Vector4_Size3() const;
+    // UKismetMathLibrary::Vector4_SizeSquared (Engine.h)
+    float Vector4_SizeSquared() const;
+    // UKismetMathLibrary::Vector4_SizeSquared3 (Engine.h)
+    float Vector4_SizeSquared3() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakVector4__UeForward = "UKismetMathLibrary::BreakVector4";
+        static constexpr const char* EqualExactly_Vector4Vector4__UeForward = "UKismetMathLibrary::EqualExactly_Vector4Vector4";
+        static constexpr const char* NotEqualExactly_Vector4Vector4__UeForward = "UKismetMathLibrary::NotEqualExactly_Vector4Vector4";
+        static constexpr const char* ToQuat__UeForward = "UKismetMathLibrary::Conv_Vector4ToQuaternion";
+        static constexpr const char* ToRotator__UeForward = "UKismetMathLibrary::Conv_Vector4ToRotator";
+        static constexpr const char* ToVector__UeForward = "UKismetMathLibrary::Conv_Vector4ToVector";
+        static constexpr const char* Vector4_CrossProduct3__UeForward = "UKismetMathLibrary::Vector4_CrossProduct3";
+        static constexpr const char* Vector4_DotProduct__UeForward = "UKismetMathLibrary::Vector4_DotProduct";
+        static constexpr const char* Vector4_DotProduct3__UeForward = "UKismetMathLibrary::Vector4_DotProduct3";
+        static constexpr const char* Vector4_IsNAN__UeForward = "UKismetMathLibrary::Vector4_IsNAN";
+        static constexpr const char* Vector4_IsNearlyZero3__UeForward = "UKismetMathLibrary::Vector4_IsNearlyZero3";
+        static constexpr const char* Vector4_IsNormal3__UeForward = "UKismetMathLibrary::Vector4_IsNormal3";
+        static constexpr const char* Vector4_IsUnit3__UeForward = "UKismetMathLibrary::Vector4_IsUnit3";
+        static constexpr const char* Vector4_IsZero__UeForward = "UKismetMathLibrary::Vector4_IsZero";
+        static constexpr const char* Vector4_MirrorByVector3__UeForward = "UKismetMathLibrary::Vector4_MirrorByVector3";
+        static constexpr const char* Vector4_Negated__UeForward = "UKismetMathLibrary::Vector4_Negated";
+        static constexpr const char* Vector4_Normal3__UeForward = "UKismetMathLibrary::Vector4_Normal3";
+        static constexpr const char* Vector4_NormalUnsafe3__UeForward = "UKismetMathLibrary::Vector4_NormalUnsafe3";
+        static constexpr const char* Vector4_Size__UeForward = "UKismetMathLibrary::Vector4_Size";
+        static constexpr const char* Vector4_Size3__UeForward = "UKismetMathLibrary::Vector4_Size3";
+        static constexpr const char* Vector4_SizeSquared__UeForward = "UKismetMathLibrary::Vector4_SizeSquared";
+        static constexpr const char* Vector4_SizeSquared3__UeForward = "UKismetMathLibrary::Vector4_SizeSquared3";
+    };
 };
 
 /* Obj->GetOuter() is OuterPrivate read straight off the object - UObject on UE 4.27 x64: vtable 0x0, ObjectFlags
@@ -939,11 +2368,17 @@ public:
     /* C++ has these, the reflection does not: each is what the marker names - a Kismet library static or
        a free inline function - with this object as the first argument. Any object, not only this. */
     class UObject* GetOuter();
-    static constexpr const char* GetOuter__UeForward = "UObject_GetOuter";
     class UClass* GetClass();
-    static constexpr const char* GetClass__UeForward = "UGameplayStatics::GetObjectClass";
     FString GetName();
-    static constexpr const char* GetName__UeForward = "UKismetSystemLibrary::GetObjectName";
+    bool IsA(class UClass* SomeBase);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetOuter__UeForward = "UObject_GetOuter";
+        static constexpr const char* GetClass__UeForward = "UGameplayStatics::GetObjectClass";
+        static constexpr const char* GetName__UeForward = "UKismetSystemLibrary::GetObjectName";
+        static constexpr const char* IsA__UeForward = "UObject_IsA";
+    };
 };
 
 class UField : public UObject
@@ -968,6 +2403,12 @@ class UClass : public UStruct
 {
 public:
     UE_CLASS("/Script/CoreUObject", "Class");
+    bool IsChildOf(class UClass* ParentClass);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* IsChildOf__UeForward = "UKismetMathLibrary::ClassIsChildOf";
+    };
 };
 
 class UTextBuffer : public UObject

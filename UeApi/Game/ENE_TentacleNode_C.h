@@ -21,19 +21,13 @@ class ENE_TentacleNode_C : public ATentaclePlantNode
 {
 public:
     UE_CLASS("/Game/Enemies/TentaclePlant/ENE_TentacleNode", "ENE_TentacleNode_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "cf23762e4bff8e4698f8ae300790416a";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "6d470e1d65d2624cb7e5139b862b36a6";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "2ed880a35f13874291d233d9059f2c0b";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "cb57b43578fd2c4586f159fa682b3263";
     float ParticleDistance;
     TArray<FVector> SplineLocations;
-    static constexpr const char* SplineLocations__Replicated = ":";
     void ExecuteUbergraph_ENE_TentacleNode(int EntryPoint);
     void ReceiveBeginPlay();
     void CacheSplineLocations();
@@ -44,6 +38,16 @@ public:
     void ReceiveDestroyed();
     void BndEvt__ENE_TentacleNode_Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void GetLocationsEqualDistanceAlongSpline(float Distance, TArray<FVector>& Locations);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* WeakpointGlow__UeScsNode = "cf23762e4bff8e4698f8ae300790416a";
+        static constexpr const char* PointLight__UeScsNode = "6d470e1d65d2624cb7e5139b862b36a6";
+        static constexpr const char* outline__UeScsNode = "2ed880a35f13874291d233d9059f2c0b";
+        static constexpr const char* terrainPlacement__UeScsNode = "cb57b43578fd2c4586f159fa682b3263";
+        static constexpr const char* SplineLocations__Replicated = ":";
+    };
 };
 
 }}}   // namespace Game::Enemies::TentaclePlant

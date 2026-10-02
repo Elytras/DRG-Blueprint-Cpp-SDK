@@ -19,16 +19,20 @@ class BP_GreatEggHunt_HiddenEgg_C : public AStaticMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_HiddenEgg", "BP_GreatEggHunt_HiddenEgg_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "cb7019832fc4f444ad98bef8cba85ec2";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "792d95cecb9ce547bb3f0eb823087b80";
     class UFXSystemAsset* ExplosionParticles;
     float ImpulseStrength;
     void ExecuteUbergraph_BP_GreatEggHunt_HiddenEgg(int EntryPoint);
     void BndEvt__BP_GreatEggHunt_HiddenEgg_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
+        static constexpr const char* InstantUsable__UeScsNode = "cb7019832fc4f444ad98bef8cba85ec2";
+        static constexpr const char* Sphere__UeScsNode = "792d95cecb9ce547bb3f0eb823087b80";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

@@ -23,7 +23,6 @@ public:
     class UImage* Icon;
     class UOverlay* RootOverlay;
     bool Is_Design_Time;
-    static constexpr const char* Is_Design_Time__UeName = "Is Design Time";
     void ExecuteUbergraph_UI_InputIcon(int EntryPoint);
     void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
@@ -32,6 +31,11 @@ public:
     void Refresh();
     void GetIconSize(class UTexture2D* InTexture, FVector2D& OutSize);
     void GetBrushTint(bool IsTintable, FLinearColor& OutputColor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Design_Time__UeName = "Is Design Time";
+    };
 };
 
 }}}   // namespace Game::UI::_GlobalAssets

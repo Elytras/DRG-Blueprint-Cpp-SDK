@@ -19,18 +19,22 @@ class PRJ_FacilityTentacleProjectile_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/PRJ_FacilityTentacleProjectile", "PRJ_FacilityTentacleProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "092623403d1fc947a29bf37c5e135d37";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2b169def46043c47ab9041aaa453d06e";
     class USoundCue* FireSound;
     class USoundCue* ImpactSound;
     class UParticleSystem* ImpactParticles;
     void ExecuteUbergraph_PRJ_FacilityTentacleProjectile(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Niagara__UeScsNode = "092623403d1fc947a29bf37c5e135d37";
+        static constexpr const char* Damage__UeScsNode = "2b169def46043c47ab9041aaa453d06e";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

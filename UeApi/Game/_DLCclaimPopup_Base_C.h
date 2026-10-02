@@ -29,8 +29,8 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
-    class UWidgetAnimation* GlowPulse;
+    UE_READONLY class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* GlowPulse;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_96;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;

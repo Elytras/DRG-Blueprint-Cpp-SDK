@@ -21,22 +21,26 @@ class PRJ_Facility_Laser_Base_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/PRJ_Facility_Laser_Base", "PRJ_Facility_Laser_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "3ed0cbad934120489e13924d5fc3452a";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "a44dabfaa9b4fa4a92f1a21513d8c63f";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2b169def46043c47ab9041aaa453d06e";
     class UStaticMeshComponent* Body;
-    static constexpr const char* Body__UeScsNode = "2a6e4dc07aa2134ebcf42681e321f39a";
     class USoundCue* FireSound;
     class USoundCue* ImpactSound;
     class UParticleSystem* ImpactParticles;
     void ExecuteUbergraph_PRJ_Facility_Laser_Base(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Niagara__UeScsNode = "3ed0cbad934120489e13924d5fc3452a";
+        static constexpr const char* Trail__UeScsNode = "a44dabfaa9b4fa4a92f1a21513d8c63f";
+        static constexpr const char* Damage__UeScsNode = "2b169def46043c47ab9041aaa453d06e";
+        static constexpr const char* Body__UeScsNode = "2a6e4dc07aa2134ebcf42681e321f39a";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

@@ -33,7 +33,7 @@ class Announcement_Controller_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Announcements/Announcement_Controller", "Announcement_Controller_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ResourceFull;
+    UE_READONLY class UWidgetAnimation* ResourceFull;
     class UTextBlock* ResourceFullLabel;
     class UCanvasPanel* RootPanel;
     class UObject* GoldFrenzyComponent;
@@ -51,7 +51,6 @@ public:
     void OnResourceFullStarted();
     void OnFullHealthCannotHeal();
     void Do_Resource_Full(FText Name_0);
-    static constexpr const char* Do_Resource_Full__UeName = "Do Resource Full";
     void OnResourceIncreased(class UCappedResource* Resource, float amount);
     void OnResourceFull(class UCappedResource* Resource);
     void OnHealed(float amount);
@@ -66,6 +65,11 @@ public:
     void CreatePickaxeAnnouncement(class UPickaxePart* PickaxePart);
     void CreateVanityAnnouncement(class UVanityItem* VanityItem, class UPlayerCharacterID* VanityOwner);
     void CreateEverythingCollectedAnnouncement(FText Message);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Do_Resource_Full__UeName = "Do Resource Full";
+    };
 };
 
 }}}   // namespace Game::UI::Announcements

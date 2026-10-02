@@ -27,10 +27,10 @@ public:
     ITEM_SpaceRig_ClassLevel_C* ITEM_SpaceRig_ClassLevel;
     class UImage* OuterBorder;
     ITM_RetirementBadge_C* RetirementBadge;
-    class UClass* CharacterClass;
-    int CharacterLevel;
-    int TimesRetired;
-    float Size;
+    UE_READONLY class UClass* CharacterClass;
+    UE_READONLY int CharacterLevel;
+    UE_READONLY int TimesRetired;
+    UE_READONLY float Size;
     void ExecuteUbergraph_UI_SaveGame_CharacterClass(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

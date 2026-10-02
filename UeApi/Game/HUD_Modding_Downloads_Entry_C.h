@@ -29,10 +29,10 @@ public:
     UI_ModdingProgressBar_C* ModdingProgressBar;
     FString ModName;
     float Progress;
-    FString PreviewName;
-    bool PreviewDownloading;
-    int PreviewDownloaded;
-    int PreviewTotal;
+    UE_READONLY FString PreviewName;
+    UE_READONLY bool PreviewDownloading;
+    UE_READONLY int PreviewDownloaded;
+    UE_READONLY int PreviewTotal;
     int Downloaded;
     int Total;
     bool Downloading;

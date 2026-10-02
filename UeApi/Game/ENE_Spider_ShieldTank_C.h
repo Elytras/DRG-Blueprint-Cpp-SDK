@@ -24,29 +24,33 @@ class ENE_Spider_ShieldTank_C : public Game::Enemies::Spider::Tank::ENE_Spider_T
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ShieldTank/ENE_Spider_ShieldTank", "ENE_Spider_ShieldTank_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_ShieldTank_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_ShieldTank_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* CarveAttack;
-    static constexpr const char* CarveAttack__UeScsNode = "ae870e558da8ed47877463ac9a9fd9c7";
     class UMeleeAttackComponent* GroundSlam;
-    static constexpr const char* GroundSlam__UeScsNode = "f2bdb61851fb5f4082d88311b4f67e73";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "fb08c20a9161c144ba0b8783eaa40de3";
     class UParticleSystemComponent* TremorParticles;
-    static constexpr const char* TremorParticles__UeScsNode = "0bf54657847a6c4999999db469267930";
     class UTremorAttackComponent* TremorAttack;
-    static constexpr const char* TremorAttack__UeScsNode = "7ebaba94d927f345afbd2b16cae3a8f6";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "4036cabcd4cf2b4dbfd966afdbbec5bd";
     class UAlignEnemyComponent* AlignEnemy;
-    static constexpr const char* AlignEnemy__UeScsNode = "661710c6418d894499a51cde0d00fa67";
     float MovementSpeedPenaltyReduction;
     void ExecuteUbergraph_ENE_Spider_ShieldTank(int EntryPoint);
     UE_AUTHORITY_ONLY void TargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* Component, class UFSDPhysicalMaterial* PhysicalMaterial);
     void ReceiveBeginPlay();
     UE_MULTICAST void All_PlayImpactSound(class AActor* Actor);
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_ShieldTank_C__UeName = "UberGraphFrame";
+        static constexpr const char* CarveAttack__UeScsNode = "ae870e558da8ed47877463ac9a9fd9c7";
+        static constexpr const char* GroundSlam__UeScsNode = "f2bdb61851fb5f4082d88311b4f67e73";
+        static constexpr const char* MeleeAttack__UeScsNode = "fb08c20a9161c144ba0b8783eaa40de3";
+        static constexpr const char* TremorParticles__UeScsNode = "0bf54657847a6c4999999db469267930";
+        static constexpr const char* TremorAttack__UeScsNode = "7ebaba94d927f345afbd2b16cae3a8f6";
+        static constexpr const char* Box__UeScsNode = "4036cabcd4cf2b4dbfd966afdbbec5bd";
+        static constexpr const char* AlignEnemy__UeScsNode = "661710c6418d894499a51cde0d00fa67";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Tank::ShieldTank

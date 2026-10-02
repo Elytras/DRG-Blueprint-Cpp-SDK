@@ -28,9 +28,7 @@ public:
     using EWC_Base_C = Game::Enemies::Waves::WaveControllers::EWC_Base_C;
     using EWC_OverloadShieldGenerator_Facility_C = Game::Enemies::Waves::WaveControllers::EWC_OverloadShieldGenerator_Facility_C;
     using OBJ_1st_Facility_C = Game::GameElements::Objectives::Facility::OBJ_1st_Facility_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Facility_C;
-    static constexpr const char* UberGraphFrame_GM_Facility_C__UeName = "UberGraphFrame";
     OBJ_1st_Facility_C* Objective;
     BP_MainFacility_DataVault_C* mainFacility;
     class UClass* ActivatorClass;
@@ -44,7 +42,6 @@ public:
     FMusicHandle MusicHandle;
     int GeneratorsCalled;
     class UClass* Facility_Generator_Class;
-    static constexpr const char* Facility_Generator_Class__UeName = "Facility Generator Class";
     void ExecuteUbergraph_GM_Facility(int EntryPoint);
     void StartOverChargerWave(BP_Facility_PowerStation_GeneratorBase_C* ShieldGenerator, class UTetherComponent* tetherlineStart);
     void DonkeyButtonPressed();
@@ -65,6 +62,13 @@ public:
     void GetTargetRooms();
     void GetGeneratorRooms(TArray<int>& Array);
     void StopOverChargerWave(BP_Facility_PowerStation_GeneratorBase_C* WaveOrigin);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_GM_Facility_C__UeName = "UberGraphFrame";
+        static constexpr const char* Facility_Generator_Class__UeName = "Facility Generator Class";
+    };
 };
 
 }}   // namespace Game::Game

@@ -31,13 +31,17 @@ public:
     UI_Hoop_HistoryLine_C* UI_Hoop_HistoryLine_2;
     TArray<UI_Hoop_HistoryLine_C*> Lines;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     TArray<int> Scores;
     void ExecuteUbergraph_UI_Hoop_History(int EntryPoint);
     void UpdateScores(const TArray<int>& Scores_0);
     UE_COSMETIC void Construct();
     void OnRep_Scores_OLD();
     UE_PURE int GetHistoryCount() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops

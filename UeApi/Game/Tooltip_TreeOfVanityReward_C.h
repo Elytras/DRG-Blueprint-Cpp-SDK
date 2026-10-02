@@ -24,7 +24,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/Tooltip_TreeOfVanityReward", "Tooltip_TreeOfVanityReward_C");
     using TOOLTIP_Season_Reward_C = Game::UI::Menu_Seasons::TOOLTIP_Season_Reward_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TurnRed;
+    UE_READONLY class UWidgetAnimation* TurnRed;
     class UProgressBar* Claim_Progress;
     class UImage* Image_NotEnoughTokens;
     class URichTextSizable* RichTextSizable_280;

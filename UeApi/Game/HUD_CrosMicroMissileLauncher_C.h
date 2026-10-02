@@ -21,7 +21,7 @@ class HUD_CrosMicroMissileLauncher_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CrosMicroMissileLauncher", "HUD_CrosMicroMissileLauncher_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Arrow_Bottom;
     class UImage* Arrow_Left;
     class UImage* Arrow_Right;
@@ -44,10 +44,8 @@ public:
     class UImage* M8;
     class UImage* M9;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     FTimerHandle BuckShotCheckTimer;
     TArray<class UImage*> MissileCounters;
     void ExecuteUbergraph_HUD_CrosMicroMissileLauncher(int EntryPoint);
@@ -60,6 +58,12 @@ public:
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     UE_COSMETIC void Construct();
     void SetData(class AItem* Item);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

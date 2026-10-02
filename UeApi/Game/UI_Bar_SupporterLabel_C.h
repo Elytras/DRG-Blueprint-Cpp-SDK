@@ -23,13 +23,17 @@ public:
     class UHorizontalBox* SupporterBox;
     class UTextBlock* SupporterHeader;
     class UImage* SupportIconLeft;
-    int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
-    float Icon_Size;
-    static constexpr const char* Icon_Size__UeName = "Icon Size";
+    UE_READONLY int Font_Size;
+    UE_READONLY float Icon_Size;
     void ExecuteUbergraph_UI_Bar_SupporterLabel(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetDrinkable(class UDrinkableDataAsset* Drinkable, bool& IsSpecialEdition, class UDrinkableDataAsset*& OutDrinkable);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Icon_Size__UeName = "Icon Size";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

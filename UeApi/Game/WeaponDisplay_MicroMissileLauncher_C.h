@@ -25,7 +25,6 @@ public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/UI/WeaponDisplay_MicroMissileLauncher", "WeaponDisplay_MicroMissileLauncher_C");
     using UI_MicroMissileLauncher_Charge_C = Game::WeaponsNTools::MicroMissileLauncher::UI::UI_MicroMissileLauncher_Charge_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_MicroMissileLauncher_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_MicroMissileLauncher_C__UeName = "UberGraphFrame";
     class UTextBlock* AmmoCount;
     class UHorizontalBox* ChargeBox;
     class UImage* Image_88;
@@ -59,6 +58,11 @@ public:
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
     void SetCurrentChargeWithAudio(int InCharge);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_MicroMissileLauncher_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::MicroMissileLauncher::UI

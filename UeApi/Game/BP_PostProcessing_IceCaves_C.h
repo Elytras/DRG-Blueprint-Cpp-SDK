@@ -18,11 +18,15 @@ class BP_PostProcessing_IceCaves_C : public AFSDPostProcessingActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/IceCaves/BP_PostProcessing_IceCaves", "BP_PostProcessing_IceCaves_C");
     class UPostProcessComponent* PostProcess;
-    static constexpr const char* PostProcess__UeScsNode = "94107e7457752640ac055b401b5f5f66";
     class UExponentialHeightFogComponent* ExponentialHeightFog;
-    static constexpr const char* ExponentialHeightFog__UeScsNode = "17be9bc46ac57344a8a242779f5ed281";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PostProcess__UeScsNode = "94107e7457752640ac055b401b5f5f66";
+        static constexpr const char* ExponentialHeightFog__UeScsNode = "17be9bc46ac57344a8a242779f5ed281";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves

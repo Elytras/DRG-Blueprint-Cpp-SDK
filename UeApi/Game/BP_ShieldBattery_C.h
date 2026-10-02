@@ -15,9 +15,13 @@ class BP_ShieldBattery_C : public Game::GameElements::GameEvents::ExplosiveBarre
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_ShieldBattery", "BP_ShieldBattery_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_ShieldBattery_C;
-    static constexpr const char* UberGraphFrame_BP_ShieldBattery_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_ShieldBattery(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_ShieldBattery_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

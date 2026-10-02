@@ -39,8 +39,8 @@ public:
     using ITM_MutatorIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MutatorIcon_C;
     using ITM_SeasonChallengeIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
     Basic_ButtonScalable2_C* BTN_HostPrivate;
     Basic_ButtonScalable2_C* BTN_HostPublic;
     Basic_ButtonScalable2_C* BTN_Join;

@@ -15,10 +15,14 @@ class BP_Grenade_Neurotoxin_Cloud_C : public Game::Enemies::BaseItems::BP_Damage
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/BP_Grenade_Neurotoxin_Cloud", "BP_Grenade_Neurotoxin_Cloud_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Grenade_Neurotoxin_Cloud_C;
-    static constexpr const char* UberGraphFrame_BP_Grenade_Neurotoxin_Cloud_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_Grenade_Neurotoxin_Cloud(int EntryPoint);
     void Freeze();
     void BndEvt__BP_Damage_Cloud_Flamable_Base_ObjectTemperature_K2Node_ComponentBoundEvent_2_Delegate__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Grenade_Neurotoxin_Cloud_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin

@@ -26,7 +26,7 @@ public:
     using AnimatedStaticOverlay_WithScanlines_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
     using UI_ConsoleMemorialLine_C = Game::UI::HUD_SpaceRig::UI_ConsoleMemorialLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     AnimatedStaticOverlay_WithScanlines_C* AnimatedStaticOverlay_WithScanlines;
     class UImage* Image_0;
     class UOverlay* Overlay_0;

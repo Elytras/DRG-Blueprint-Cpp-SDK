@@ -20,15 +20,19 @@ class BP_Azure_MagicCrystal_Base_C : public AActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicCrystals/BP_Azure_MagicCrystal_Base", "BP_Azure_MagicCrystal_Base_C");
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "267e38b4527de94a862e9c290c1ca174";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "b629a9bc5f0e9d4e983be5fb9407d17b";
     class UStaticMeshComponent* PreviewMesh;
-    static constexpr const char* PreviewMesh__UeScsNode = "8f89b7620d4893448d657aed08cd6894";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "8ab43b48e5c57841aecc136e3b84e861";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3c72f098b0e55e49b1ebf6bb0004e6a1";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "267e38b4527de94a862e9c290c1ca174";
+        static constexpr const char* PointLight__UeScsNode = "b629a9bc5f0e9d4e983be5fb9407d17b";
+        static constexpr const char* PreviewMesh__UeScsNode = "8f89b7620d4893448d657aed08cd6894";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "8ab43b48e5c57841aecc136e3b84e861";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3c72f098b0e55e49b1ebf6bb0004e6a1";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals

@@ -18,10 +18,14 @@ public:
     UE_CLASS("/Game/LevelElements/Triggers/BP_TriggerBase", "BP_TriggerBase_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "333f6de5c67e4a4783cb2c62f6a0db37";
     void ExecuteUbergraph_BP_TriggerBase(int EntryPoint);
     void ReceiveBeginPlay();
     void SendMessage();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "333f6de5c67e4a4783cb2c62f6a0db37";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Triggers

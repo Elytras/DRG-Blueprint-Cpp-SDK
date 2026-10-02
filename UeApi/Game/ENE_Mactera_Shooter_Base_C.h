@@ -24,12 +24,9 @@ class ENE_Mactera_Shooter_Base_C : public AAFlyingBug
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ENE_Mactera_Shooter_Base", "ENE_Mactera_Shooter_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDashPoints* DashPoints;
-    static constexpr const char* DashPoints__UeScsNode = "1e97e657249dd84691e573656d2a13e5";
     class UWeakpointGlowComponent* WeakpointGlowComponent;
-    static constexpr const char* WeakpointGlowComponent__UeScsNode = "40cdb4fb8695534cae321122acea5e41";
     class USoundCue* deathSound;
     class UParticleSystem* ChemExplosionParticles;
     class UAnimMontage* ChemExplosionAnim;
@@ -41,7 +38,6 @@ public:
     UE_AUTHORITY_ONLY void BndEvt__ENE_Mactera_Shooter_Base_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void ReceiveBeginPlay();
     void Cooked_Death();
-    static constexpr const char* Cooked_Death__UeName = "Cooked Death";
     void Death_Burned();
     UE_MULTICAST void All_BreakLimb(uint8 BoneIndex);
     void OnMessageAI(FName TriggerName);
@@ -55,12 +51,20 @@ public:
     void OnRep_DeathType();
     void Death_Weakpoint();
     void Death_Normal();
-    static constexpr const char* Death_Normal__UeName = "Death Normal";
     void Death_Explode();
     void SetBurnMaterialSettings();
     void SetCookMaterialSettings();
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemcialArrow);
     bool ShouldExplode(TArray<class UDamageTag*>& Tags_0) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* DashPoints__UeScsNode = "1e97e657249dd84691e573656d2a13e5";
+        static constexpr const char* WeakpointGlowComponent__UeScsNode = "40cdb4fb8695534cae321122acea5e41";
+        static constexpr const char* Cooked_Death__UeName = "Cooked Death";
+        static constexpr const char* Death_Normal__UeName = "Death Normal";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

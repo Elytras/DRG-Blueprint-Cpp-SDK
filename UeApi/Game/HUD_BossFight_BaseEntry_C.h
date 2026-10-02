@@ -20,7 +20,6 @@ public:
     FBossFight BossFightInfo;
     void ExecuteUbergraph_HUD_BossFight_BaseEntry(int EntryPoint);
     void Setup_Invulnerability();
-    static constexpr const char* Setup_Invulnerability__UeName = "Setup Invulnerability";
     void OnFightRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     UE_COSMETIC void Construct();
     void OnHealthChanged(float Health);
@@ -28,6 +27,11 @@ public:
     void OnDeath();
     void OnCanTakeDamageChanged(bool OutCanTakeDamage);
     void GetBossFight(FBossFight& BossFight_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Invulnerability__UeName = "Setup Invulnerability";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

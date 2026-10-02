@@ -22,8 +22,8 @@ class Basic_RadioButton_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_RadioButton", "Basic_RadioButton_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimTickShow;
-    class UWidgetAnimation* AnimClick;
+    UE_READONLY class UWidgetAnimation* AnimTickShow;
+    UE_READONLY class UWidgetAnimation* AnimClick;
     class UImage* BorderInner;
     class UImage* BorderOuter;
     class USizeBox* Button_SizeBox;
@@ -31,15 +31,13 @@ public:
     class UHorizontalBox* Horizontal;
     class UTextBlock* RadioText;
     class UImage* Tick_Basic_RadioButton_C;
-    static constexpr const char* Tick_Basic_RadioButton_C__UeName = "Tick";
     TMulticastInlineDelegate<void(bool IsChecked_0)> OnCheckStateChanged;
     float Size;
     bool IsChecked;
     bool CanUncheck;
     FText Text;
     bool UpperCase;
-    int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
+    UE_READONLY int Index_0;
     void ExecuteUbergraph_Basic_RadioButton(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -50,6 +48,12 @@ public:
     void SetIsChecked(bool InIsChecked);
     void SetText(FText InText, bool InUpperCase);
     void GetText(FText& Text_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Tick_Basic_RadioButton_C__UeName = "Tick";
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

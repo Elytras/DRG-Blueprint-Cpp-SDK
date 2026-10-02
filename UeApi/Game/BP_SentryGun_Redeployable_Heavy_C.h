@@ -13,7 +13,11 @@ class BP_SentryGun_Redeployable_Heavy_C : public Game::WeaponsNTools::SentryGun:
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Redeployable_Heavy", "BP_SentryGun_Redeployable_Heavy_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

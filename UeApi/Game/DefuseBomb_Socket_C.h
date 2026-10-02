@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Defuse/DefuseBomb_Socket", "DefuseBomb_Socket_C");
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIndicate;
+    UE_READONLY class UWidgetAnimation* AnimIndicate;
     Basic_Image_C* Socket_Image;
     Basic_Image_C* Socket_Indicator;
     int SocketIndex;

@@ -17,9 +17,13 @@ class ESI_Shark_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Shark/ESI_Shark", "ESI_Shark_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "822190bcd6780e43814c24179a901b88";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e52b744c20e6e240b7eb0fd0f9dfc85a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "822190bcd6780e43814c24179a901b88";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e52b744c20e6e240b7eb0fd0f9dfc85a";
+    };
 };
 
 }}}   // namespace Game::Enemies::Shark

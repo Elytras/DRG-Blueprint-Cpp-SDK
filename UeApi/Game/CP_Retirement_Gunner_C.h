@@ -13,6 +13,11 @@ class CP_Retirement_Gunner_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Retirement_Gunner", "CP_Retirement_Gunner_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_1;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CaracterLevelCampaignRequirement CaracterLevelCampaignRequirement_0;/Script/FSD.RetirementCampaignRequirement RetirementCampaignRequirement_0;/Script/FSD.RetirementReward CampaignMission_3:RetirementReward_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

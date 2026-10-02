@@ -29,31 +29,18 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/WallSaw/BP_WallSaw", "BP_WallSaw_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* WallSawDestroyed;
-    static constexpr const char* WallSawDestroyed__UeScsNode = "0b606d4cd6896142bd74ec327c746efc";
     class UFSDAudioComponent* WallSawActivated;
-    static constexpr const char* WallSawActivated__UeScsNode = "98b9277b26e9bd419272d3d2c251d17c";
     class UNiagaraComponent* NS_Grenade_WallSaw_Trail;
-    static constexpr const char* NS_Grenade_WallSaw_Trail__UeScsNode = "f70692880f84c84c8a01244267650c60";
     class UNiagaraComponent* NS_WallSaw_GroundSpark;
-    static constexpr const char* NS_WallSaw_GroundSpark__UeScsNode = "255dc37f40f92d43b0fa9c6a930efe1d";
     class UNiagaraComponent* NS_WallSaw_FallAppartParticles;
-    static constexpr const char* NS_WallSaw_FallAppartParticles__UeScsNode = "6877350c96c547498f1a6c819524c788";
     class UNiagaraComponent* NS_WallSaw_DeployParticles;
-    static constexpr const char* NS_WallSaw_DeployParticles__UeScsNode = "d8e897dae1d4cb45b7d78988069072c7";
     class UCapsuleComponent* GrazeCapsule;
-    static constexpr const char* GrazeCapsule__UeScsNode = "362bf6aaf2a06c4295bf02170129ef24";
     class USkeletalMeshComponent* SK_HandGrenade_R_FoldOut;
-    static constexpr const char* SK_HandGrenade_R_FoldOut__UeScsNode = "f79571d0e454c94c96d1cd3a715162d0";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "148005f41680b04d90e6450d299c0316";
     class USceneComponent* SawPivot;
-    static constexpr const char* SawPivot__UeScsNode = "8d35613ab9772a41a6207e96db5e7f13";
     class UDamageComponent* GlanceDamage;
-    static constexpr const char* GlanceDamage__UeScsNode = "92878f8621d3884787e97334eab83da3";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f22ff172edcea1458e47e515d50bbfba";
     float SpawnWobble_NewTrack;
-    static constexpr const char* SpawnWobble_NewTrack__UeName = "SpawnWobble_NewTrack_0_8C6FC6E8454070F73FE4D1B7EC977E67";
     TEnum<ETimelineDirection> SpawnWobble__Direction_8C6FC6E8454070F73FE4D1B7EC977E67;
     class UTimelineComponent* SpawnWobble;
     float MaxPotentialLifetimeDamage;
@@ -70,6 +57,23 @@ public:
     void ReceiveBeginPlay();
     void SpawnWobble__UpdateFunc();
     void SpawnWobble__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* WallSawDestroyed__UeScsNode = "0b606d4cd6896142bd74ec327c746efc";
+        static constexpr const char* WallSawActivated__UeScsNode = "98b9277b26e9bd419272d3d2c251d17c";
+        static constexpr const char* NS_Grenade_WallSaw_Trail__UeScsNode = "f70692880f84c84c8a01244267650c60";
+        static constexpr const char* NS_WallSaw_GroundSpark__UeScsNode = "255dc37f40f92d43b0fa9c6a930efe1d";
+        static constexpr const char* NS_WallSaw_FallAppartParticles__UeScsNode = "6877350c96c547498f1a6c819524c788";
+        static constexpr const char* NS_WallSaw_DeployParticles__UeScsNode = "d8e897dae1d4cb45b7d78988069072c7";
+        static constexpr const char* GrazeCapsule__UeScsNode = "362bf6aaf2a06c4295bf02170129ef24";
+        static constexpr const char* SK_HandGrenade_R_FoldOut__UeScsNode = "f79571d0e454c94c96d1cd3a715162d0";
+        static constexpr const char* PointLight__UeScsNode = "148005f41680b04d90e6450d299c0316";
+        static constexpr const char* SawPivot__UeScsNode = "8d35613ab9772a41a6207e96db5e7f13";
+        static constexpr const char* GlanceDamage__UeScsNode = "92878f8621d3884787e97334eab83da3";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f22ff172edcea1458e47e515d50bbfba";
+        static constexpr const char* SpawnWobble_NewTrack__UeName = "SpawnWobble_NewTrack_0_8C6FC6E8454070F73FE4D1B7EC977E67";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::WallSaw

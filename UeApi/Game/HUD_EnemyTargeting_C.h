@@ -30,8 +30,8 @@ public:
     using HUD_EnemyTargeting_HealthBar_Elite_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_Elite_C;
     using HUD_EnemyTargeting_Temperature_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DeadAnim;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* DeadAnim;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UWidgetSwitcher* ContentSwitcher;
     class UImage* DeadIcon;
     HUD_EnemyTargeting_HealthBar_C* HealthBar;

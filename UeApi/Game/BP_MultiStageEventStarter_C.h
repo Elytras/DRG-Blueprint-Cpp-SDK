@@ -25,24 +25,16 @@ class BP_MultiStageEventStarter_C : public AEventStarterButton
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter", "BP_MultiStageEventStarter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "2295b1c1485e5146beb7748d730bebf8";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "ed262b55781fb6449bd1e0310e4d7dfc";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "1b2957a825f37841ad94a572d1c9d519";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "e301832650b7e5489c0fc5fca0da9406";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "394248240a6ca649bfe122bea23fb718";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7f5fa485f2defb44978cff1278ee1a5d";
     class UParticleSystem* EjectParticles;
     class USoundCue* CrumbleSpire;
     bool EffectsShown;
-    static constexpr const char* EffectsShown__Replicated = "OnRep_EffectsShown:";
     class UMaterialInstanceDynamic* DynamicMaterial;
     float OriginalEmissive;
     float SoloActivationDuration;
@@ -54,6 +46,18 @@ public:
     void OnRep_EffectsShown();
     void ShowUsedEffects();
     void CheckTerrain(bool& ShouldCarve) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent Usable";
+        static constexpr const char* Sphere__UeScsNode = "2295b1c1485e5146beb7748d730bebf8";
+        static constexpr const char* Capsule__UeScsNode = "ed262b55781fb6449bd1e0310e4d7dfc";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "1b2957a825f37841ad94a572d1c9d519";
+        static constexpr const char* outline__UeScsNode = "e301832650b7e5489c0fc5fca0da9406";
+        static constexpr const char* StaticMesh__UeScsNode = "394248240a6ca649bfe122bea23fb718";
+        static constexpr const char* SkeletalMesh__UeScsNode = "7f5fa485f2defb44978cff1278ee1a5d";
+        static constexpr const char* EffectsShown__Replicated = "OnRep_EffectsShown:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::EventStart

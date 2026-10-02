@@ -19,23 +19,27 @@ public:
     UE_CLASS("/Game/Enemies/Plague/ESI_Bomber_Rockpox_Plague", "ESI_Bomber_Rockpox_Plague_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "1ec07038283165438d4418df2b15f0d6";
     class UParticleSystemComponent* ParticleSystem1;
-    static constexpr const char* ParticleSystem1__UeScsNode = "22b7843c05f17249a0b6b0331e96a326";
     class UStaticMeshComponent* InfectionPoint7;
-    static constexpr const char* InfectionPoint7__UeScsNode = "5aeac7cf5ca5ad4bae79e09651d304f8";
     class UStaticMeshComponent* InfectionPoint8;
-    static constexpr const char* InfectionPoint8__UeScsNode = "de45b5a9ce019a41ae4b46e15fc1ed12";
     class UStaticMeshComponent* InfectionPoint2;
-    static constexpr const char* InfectionPoint2__UeScsNode = "f5711cf92b8efa49a0f54869a0938fb6";
     class UStaticMeshComponent* InfectionPoint10;
-    static constexpr const char* InfectionPoint10__UeScsNode = "4f103abc4b0ecb45bf5c78a66c062312";
     class UStaticMeshComponent* InfectionPoint6;
-    static constexpr const char* InfectionPoint6__UeScsNode = "d81658d52659994b9bd0d340a45783a9";
     class UStaticMeshComponent* InfectionPoint9;
-    static constexpr const char* InfectionPoint9__UeScsNode = "6d9dc9107ae4094081172a53c86a4c33";
     void ExecuteUbergraph_ESI_Bomber_Rockpox_Plague(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ParticleSystem__UeScsNode = "1ec07038283165438d4418df2b15f0d6";
+        static constexpr const char* ParticleSystem1__UeScsNode = "22b7843c05f17249a0b6b0331e96a326";
+        static constexpr const char* InfectionPoint7__UeScsNode = "5aeac7cf5ca5ad4bae79e09651d304f8";
+        static constexpr const char* InfectionPoint8__UeScsNode = "de45b5a9ce019a41ae4b46e15fc1ed12";
+        static constexpr const char* InfectionPoint2__UeScsNode = "f5711cf92b8efa49a0f54869a0938fb6";
+        static constexpr const char* InfectionPoint10__UeScsNode = "4f103abc4b0ecb45bf5c78a66c062312";
+        static constexpr const char* InfectionPoint6__UeScsNode = "d81658d52659994b9bd0d340a45783a9";
+        static constexpr const char* InfectionPoint9__UeScsNode = "6d9dc9107ae4094081172a53c86a4c33";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

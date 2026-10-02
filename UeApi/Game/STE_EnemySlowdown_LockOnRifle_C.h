@@ -13,6 +13,11 @@ class STE_EnemySlowdown_LockOnRifle_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/STE_EnemySlowdown_LockOnRifle", "STE_EnemySlowdown_LockOnRifle_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle

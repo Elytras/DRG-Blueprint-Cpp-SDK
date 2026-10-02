@@ -17,9 +17,13 @@ class ESI_ShootingPlant_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/ESI_ShootingPlant", "ESI_ShootingPlant_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "12e157cd4d3e194a82851420f75cb83e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "12e157cd4d3e194a82851420f75cb83e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
+    };
 };
 
 }}}   // namespace Game::Enemies::ShootingPlant

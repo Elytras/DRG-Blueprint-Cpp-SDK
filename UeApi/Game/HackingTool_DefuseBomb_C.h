@@ -34,10 +34,10 @@ public:
     using UI_HackingTool_Header_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
     using UI_HackingTool_Progress_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimColorGrid;
-    class UWidgetAnimation* AnimShake;
-    class UWidgetAnimation* AnimDeviceEquipped;
-    class UWidgetAnimation* AnimHighlightSocket;
+    UE_READONLY class UWidgetAnimation* AnimColorGrid;
+    UE_READONLY class UWidgetAnimation* AnimShake;
+    UE_READONLY class UWidgetAnimation* AnimDeviceEquipped;
+    UE_READONLY class UWidgetAnimation* AnimHighlightSocket;
     Basic_Image_C* Chip_Background;
     Basic_Image_C* Chip_Cover;
     Basic_Image_C* Chip_Outline;
@@ -65,7 +65,6 @@ public:
     void ExecuteUbergraph_HackingTool_DefuseBomb(int EntryPoint);
     void ReceiveActionClick();
     void Setup_Bomb_Event();
-    static constexpr const char* Setup_Bomb_Event__UeName = "Setup Bomb Event";
     void ReceiveHackingToolUnequipped();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void ReceiveHackingStarted();
@@ -87,6 +86,11 @@ public:
     bool SortByDistance(class UWidget* InFirstWidget, class UWidget* InSecondWidget);
     void OnWireCut();
     void Shout(class UDialogDataAsset* InShout);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Bomb_Event__UeName = "Setup Bomb Event";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse

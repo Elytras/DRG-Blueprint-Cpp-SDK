@@ -13,6 +13,11 @@ class STE_InsideDropPod_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/STE_InsideDropPod", "STE_InsideDropPod_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

@@ -17,15 +17,19 @@ class ENE_BoughWasp_Nest_Medium_C : public Game::LevelElements::RoomObjects::Haz
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Nest_Medium", "ENE_BoughWasp_Nest_Medium_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_BoughWasp_Nest_Medium_C;
-    static constexpr const char* UberGraphFrame_ENE_BoughWasp_Nest_Medium_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_HollowboughWaspNest_03;
-    static constexpr const char* SM_HollowboughWaspNest_03__UeScsNode = "f0c9fbd79395104bba185fac770d4bde";
     void ExecuteUbergraph_ENE_BoughWasp_Nest_Medium(int EntryPoint);
     void OnNestDeath();
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_BoughWasp_Nest_Medium_C__UeName = "UberGraphFrame";
+        static constexpr const char* SM_HollowboughWaspNest_03__UeScsNode = "f0c9fbd79395104bba185fac770d4bde";
+    };
 };
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion

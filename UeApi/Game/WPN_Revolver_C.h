@@ -24,28 +24,17 @@ class WPN_Revolver_C : public ARevoler
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Revolver/WPN_Revolver", "WPN_Revolver_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FP_AnimationMag;
-    static constexpr const char* FP_AnimationMag__UeScsNode = "147e719e60f31c409c25bcab8418b6b0";
     class UStaticMeshComponent* TP_AnimationMag;
-    static constexpr const char* TP_AnimationMag__UeScsNode = "a06599c49202ab499bffdac39eea3c3a";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "54c2125feebe404598cf02cdf1c4930c";
     class UStaticMeshComponent* TP_Drum;
-    static constexpr const char* TP_Drum__UeScsNode = "533dd22af8b68a41b39c6fdf7d8e26f2";
     class UFirstPersonStaticMeshComponent* FP_Drum;
-    static constexpr const char* FP_Drum__UeScsNode = "3e30841e4d155b4b97ebe9980c536fa3";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "91e219430bc841458b09d9c77471b50b";
     class UPointLightComponent* MuzzlePointLight;
-    static constexpr const char* MuzzlePointLight__UeScsNode = "5e22c58f6dad2e4baa361f4f5785e2b0";
     class UFirstPersonStaticMeshComponent* Mesh_AmmoCounter;
-    static constexpr const char* Mesh_AmmoCounter__UeScsNode = "b07bb91c70c62049b1df8649f39243f9";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "8ce668383c741b4bbe70eda27ea2160f";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "4f53a1d135d1f04989acc5d610bcbc45";
     float LastSpread;
     void ExecuteUbergraph_WPN_Revolver(int EntryPoint);
     void OnSkinChanged(class USkinEffect* Skin);
@@ -57,6 +46,21 @@ public:
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FP_AnimationMag__UeScsNode = "147e719e60f31c409c25bcab8418b6b0";
+        static constexpr const char* TP_AnimationMag__UeScsNode = "a06599c49202ab499bffdac39eea3c3a";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "54c2125feebe404598cf02cdf1c4930c";
+        static constexpr const char* TP_Drum__UeScsNode = "533dd22af8b68a41b39c6fdf7d8e26f2";
+        static constexpr const char* FP_Drum__UeScsNode = "3e30841e4d155b4b97ebe9980c536fa3";
+        static constexpr const char* Damage__UeScsNode = "91e219430bc841458b09d9c77471b50b";
+        static constexpr const char* MuzzlePointLight__UeScsNode = "5e22c58f6dad2e4baa361f4f5785e2b0";
+        static constexpr const char* Mesh_AmmoCounter__UeScsNode = "b07bb91c70c62049b1df8649f39243f9";
+        static constexpr const char* HitScan__UeScsNode = "8ce668383c741b4bbe70eda27ea2160f";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "4f53a1d135d1f04989acc5d610bcbc45";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Revolver

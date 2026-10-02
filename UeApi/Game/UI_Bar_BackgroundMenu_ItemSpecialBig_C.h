@@ -23,13 +23,12 @@ public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_BackgroundMenu_ItemSpecialBig", "UI_Bar_BackgroundMenu_ItemSpecialBig_C");
     using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DrinkIconIdle;
+    UE_READONLY class UWidgetAnimation* DrinkIconIdle;
     class UImage* DrinkIcon;
     class UTextBlock* DrinkNameLabel;
     class UImage* Image_223;
     class UImage* Image_225;
     class UScaleBox* Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     class UTextBlock* TextBlock_0;
     UI_Bar_DrinkCost_C* UI_Bar_DrinkCost;
     class UDrinkableDataAsset* Drinkable;
@@ -38,7 +37,12 @@ public:
     UE_COSMETIC void Construct();
     void SetDrinkable(class UDrinkableDataAsset* InDrinkable);
     void Set_Drinkable_shown_price();
-    static constexpr const char* Set_Drinkable_shown_price__UeName = "Set Drinkable shown price";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+        static constexpr const char* Set_Drinkable_shown_price__UeName = "Set Drinkable shown price";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

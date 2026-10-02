@@ -21,20 +21,24 @@ public:
     UE_CLASS("/Game/GameElements/Bar/DrinkEffects/DE_BlacklockLager", "DE_BlacklockLager_C");
     FPointerToUberGraphFrame UberGraphFrame;
     FName Effect_ID;
-    static constexpr const char* Effect_ID__UeName = "Effect ID";
     class UMaterialInstanceDynamic* BlackLock_Effect;
-    static constexpr const char* BlackLock_Effect__UeName = "BlackLock Effect";
     class APlayerCharacter* Character;
     float Effect_Power;
-    static constexpr const char* Effect_Power__UeName = "Effect Power";
     class UParticleSystemComponent* FogParticles;
     class UAudioComponent* SoundEffect;
     void ExecuteUbergraph_DE_BlacklockLager(int EntryPoint);
     void OnStopEffect();
     UE_CLIENT void Activate_Effects();
-    static constexpr const char* Activate_Effects__UeName = "Activate Effects";
     void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Effect_ID__UeName = "Effect ID";
+        static constexpr const char* BlackLock_Effect__UeName = "BlackLock Effect";
+        static constexpr const char* Effect_Power__UeName = "Effect Power";
+        static constexpr const char* Activate_Effects__UeName = "Activate Effects";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

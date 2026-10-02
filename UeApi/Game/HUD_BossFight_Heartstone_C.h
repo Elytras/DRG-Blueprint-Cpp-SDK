@@ -24,7 +24,6 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_BossFight_Heartstone", "HUD_BossFight_Heartstone_C");
     using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_BossFight_Heartstone_C;
-    static constexpr const char* UberGraphFrame_HUD_BossFight_Heartstone_C__UeName = "UberGraphFrame";
     class UHorizontalBox* HorizontalBox_Healthbar;
     class UImage* Image_316;
     class UImage* Image_401;
@@ -44,6 +43,11 @@ public:
     void OnProgressUpdated(float Progress);
     UE_COSMETIC void Construct();
     float CalcPercentage(float Progress, int& CurrStage);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HUD_BossFight_Heartstone_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

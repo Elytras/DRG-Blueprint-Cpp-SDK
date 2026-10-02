@@ -21,7 +21,6 @@ public:
     UE_CLASS("/Game/WeaponsNTools/CombatShotgun/WeaponDisplay_CombatShotgun_AmmoCount", "WeaponDisplay_CombatShotgun_AmmoCount_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_CombatShotgun_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_CombatShotgun_AmmoCount_C__UeName = "UberGraphFrame";
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
@@ -34,6 +33,11 @@ public:
     void ExecuteUbergraph_WeaponDisplay_CombatShotgun_AmmoCount(int EntryPoint);
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_CombatShotgun_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun

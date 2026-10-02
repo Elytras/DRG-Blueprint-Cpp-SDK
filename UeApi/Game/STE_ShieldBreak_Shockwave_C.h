@@ -13,6 +13,11 @@ class STE_ShieldBreak_Shockwave_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/STE_ShieldBreak_Shockwave", "STE_ShieldBreak_Shockwave_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Armor

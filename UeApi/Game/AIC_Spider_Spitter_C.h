@@ -13,7 +13,11 @@ class AIC_Spider_Spitter_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Spitter/AIC_Spider_Spitter", "AIC_Spider_Spitter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Spitter

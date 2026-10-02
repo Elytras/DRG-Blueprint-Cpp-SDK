@@ -52,7 +52,11 @@ public:
     void GetBestFlatGround(FVector Location, FVector& Array_Element);
     void PassCeilingCheck(FVector Candidate, bool& pass);
     void Prune_Bad_Points(TArray<FVector>& InArr, TArray<FVector>& PrunedArr);
-    static constexpr const char* Prune_Bad_Points__UeName = "Prune Bad Points";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Prune_Bad_Points__UeName = "Prune Bad Points";
+    };
 };
 
 }}}   // namespace Game::AI::Tasks

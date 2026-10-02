@@ -29,7 +29,7 @@ public:
     using UI_Perks_Buy_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Buy_C;
     using UI_Perks_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimLoadoutHint;
+    UE_READONLY class UWidgetAnimation* AnimLoadoutHint;
     Basic_ButtonScalable2_C* ButtonOkHint;
     class UTextBlock* FirstPerkHeader;
     class UBackgroundBlur* HintBlur;
@@ -49,7 +49,6 @@ public:
     UE_COSMETIC void OnFocusLost(FFocusEvent InFocusEvent);
     UE_COSMETIC void Construct();
     void Toggle_Loadout_Hint(bool Visible);
-    static constexpr const char* Toggle_Loadout_Hint__UeName = "Toggle Loadout Hint";
     void BndEvt__ButtonOkHint_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__UI_Perks_Buy_K2Node_ComponentBoundEvent_0_OnPerkClaimed__DelegateSignature();
     void OnPerkClicked_Event(UI_Perks_Item_C* PerkWidget);
@@ -58,6 +57,11 @@ public:
     void HandleKeyEvent(FKeyEvent InKeyEvent, bool InUp, bool& OutHandled);
     void HandleMouseEvent(const FPointerEvent& InMouseEvent, bool InUp, bool& OutHandled);
     void SetColors();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Toggle_Loadout_Hint__UeName = "Toggle Loadout Hint";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

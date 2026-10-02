@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Items/HUD_Itembar_Icon", "HUD_Itembar_Icon_C");
     using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimSelected;
+    UE_READONLY class UWidgetAnimation* AnimSelected;
     Basic_HUD_BracketWindowBig_C* BasicWindow_Bracket;
     class UImage* BG_Icon;
     class UTextBlock* ButtonKey;

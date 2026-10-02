@@ -21,7 +21,6 @@ public:
     using BP_Xmas_CandyCane_C = Game::Art::Environments::Holiday_Xmas::BP_Xmas_CandyCane_C;
     FPointerToUberGraphFrame UberGraphFrame;
     int SpawnSeed;
-    static constexpr const char* SpawnSeed__Replicated = "OnRep_SpawnSeed:";
     FRandomStream RandomStream;
     int AmountToHide;
     TArray<BP_GiftBox_Weightless_C*> WeightlessBoxes;
@@ -65,6 +64,11 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
     void OnRep_SpawnSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpawnSeed__Replicated = "OnRep_SpawnSeed:";
+    };
 };
 
 }}}   // namespace Game::Maps::SpaceRig

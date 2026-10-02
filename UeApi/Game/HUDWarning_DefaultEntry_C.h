@@ -21,7 +21,7 @@ class HUDWarning_DefaultEntry_C : public UHUDWarningWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Warnings/HUDWarning_DefaultEntry", "HUDWarning_DefaultEntry_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* PingAnim;
+    UE_READONLY class UWidgetAnimation* PingAnim;
     class UImage* BG_Gradient;
     class UImage* IconLeft;
     class UImage* IconRight;

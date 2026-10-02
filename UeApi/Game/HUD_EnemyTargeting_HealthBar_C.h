@@ -25,8 +25,8 @@ class HUD_EnemyTargeting_HealthBar_C : public ULookingAtContentWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/EnemyHealthBar/HUD_EnemyTargeting_HealthBar", "HUD_EnemyTargeting_HealthBar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* WeakPointHit;
-    class UWidgetAnimation* NormalHit;
+    UE_READONLY class UWidgetAnimation* WeakPointHit;
+    UE_READONLY class UWidgetAnimation* NormalHit;
     class UProgressBar* GhostHealthBar;
     class UProgressBar* HealthBar;
     class UCanvasPanel* HealthBarCanvas;

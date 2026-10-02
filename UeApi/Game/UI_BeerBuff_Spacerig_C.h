@@ -24,10 +24,14 @@ public:
     class USizeBox* SizeBox_3;
     void ExecuteUbergraph_UI_BeerBuff_Spacerig(int EntryPoint);
     void On_Buff_Changed(class UTemporaryBuff* buff);
-    static constexpr const char* On_Buff_Changed__UeName = "On Buff Changed";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void OnLoaded_E76038A2482A1272456904B10D0684E1(class UObject* Loaded);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Buff_Changed__UeName = "On Buff Changed";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

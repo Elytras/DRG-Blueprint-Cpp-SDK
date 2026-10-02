@@ -45,9 +45,13 @@ public:
     void ExecuteUbergraph_ITM_WeeklyMissionOverlay(int EntryPoint);
     void SetInvalid(class UCampaign* Campaign_0);
     void Update_Time();
-    static constexpr const char* Update_Time__UeName = "Update Time";
     void SetData(class UCampaign* Campaign_0, FText Headline, bool ShowTimer, bool AllRequirementsMet);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Time__UeName = "Update Time";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign

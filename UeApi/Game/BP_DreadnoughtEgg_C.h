@@ -24,37 +24,21 @@ class BP_DreadnoughtEgg_C : public Game::LevelElements::RoomObjects::Hazards::Sp
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpiderEgg/BP_DreadnoughtEgg", "BP_DreadnoughtEgg_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_DreadnoughtEgg_C;
-    static constexpr const char* UberGraphFrame_BP_DreadnoughtEgg_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "2bacd0589ff7db48a0aecd0690810815";
     class UBillboardComponent* BranchCarver2;
-    static constexpr const char* BranchCarver2__UeScsNode = "2151bf056ad5b54da1375f697506a875";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "3090959ccf56d4459be0835bbe78a9f5";
     class UBillboardComponent* BranchCArver3;
-    static constexpr const char* BranchCArver3__UeScsNode = "b7364f4fb400d7439f97a4ddc77e65f1";
     class UStaticMeshComponent* OrganicMaterialExtra3;
-    static constexpr const char* OrganicMaterialExtra3__UeScsNode = "9eb9c28b56555a41b6f2ab85b62b69f2";
     class UStaticMeshComponent* OrganicMaterialExtra2;
-    static constexpr const char* OrganicMaterialExtra2__UeScsNode = "7b3e31cbae6bae41bc88c1eaa5998f75";
     class UStaticMeshComponent* OrganicMaterialExtra1;
-    static constexpr const char* OrganicMaterialExtra1__UeScsNode = "0d8d7cd0d39950498149ff38a6dff826";
     class UBillboardComponent* BranchCarver1;
-    static constexpr const char* BranchCarver1__UeScsNode = "b91a3ee1c070a04e92ce2a748969628d";
     class UStaticMeshComponent* OrganicMaterialCarver;
-    static constexpr const char* OrganicMaterialCarver__UeScsNode = "8a2214711eb0b44f84eee3cd063c2e3c";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "866f3f9919c97a46972d93accb2806d0";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "7d08c2d1d3f90d46af12f8aa091412e0";
     class UStaticMeshComponent* Carver;
-    static constexpr const char* Carver__UeScsNode = "f537a68207c80d4e839adfc8f8121c5a";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "2c777ddc3b379b4ea9457cf1642a631d";
     class UStaticMeshComponent* EggWhole;
-    static constexpr const char* EggWhole__UeScsNode = "fd4098c63b35dc46b1e38549127ba1a4";
     float LightIntensity_NewTrack;
-    static constexpr const char* LightIntensity_NewTrack__UeName = "LightIntensity_NewTrack_0_9A4595314256D1AF580CF3A2C59CC406";
     TEnum<ETimelineDirection> LightIntensity__Direction_9A4595314256D1AF580CF3A2C59CC406;
     class UTimelineComponent* LightIntensity;
     TArray<class AFSDPawn*> spawnedEnemies;
@@ -69,6 +53,26 @@ public:
     void LightIntensity__UpdateFunc();
     void LightIntensity__FinishedFunc();
     void Carve();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_DreadnoughtEgg_C__UeName = "UberGraphFrame";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "2bacd0589ff7db48a0aecd0690810815";
+        static constexpr const char* BranchCarver2__UeScsNode = "2151bf056ad5b54da1375f697506a875";
+        static constexpr const char* PathfinderCollision__UeScsNode = "3090959ccf56d4459be0835bbe78a9f5";
+        static constexpr const char* BranchCArver3__UeScsNode = "b7364f4fb400d7439f97a4ddc77e65f1";
+        static constexpr const char* OrganicMaterialExtra3__UeScsNode = "9eb9c28b56555a41b6f2ab85b62b69f2";
+        static constexpr const char* OrganicMaterialExtra2__UeScsNode = "7b3e31cbae6bae41bc88c1eaa5998f75";
+        static constexpr const char* OrganicMaterialExtra1__UeScsNode = "0d8d7cd0d39950498149ff38a6dff826";
+        static constexpr const char* BranchCarver1__UeScsNode = "b91a3ee1c070a04e92ce2a748969628d";
+        static constexpr const char* OrganicMaterialCarver__UeScsNode = "8a2214711eb0b44f84eee3cd063c2e3c";
+        static constexpr const char* Audio__UeScsNode = "866f3f9919c97a46972d93accb2806d0";
+        static constexpr const char* PointLight__UeScsNode = "7d08c2d1d3f90d46af12f8aa091412e0";
+        static constexpr const char* Carver__UeScsNode = "f537a68207c80d4e839adfc8f8121c5a";
+        static constexpr const char* StaticMesh__UeScsNode = "2c777ddc3b379b4ea9457cf1642a631d";
+        static constexpr const char* EggWhole__UeScsNode = "fd4098c63b35dc46b1e38549127ba1a4";
+        static constexpr const char* LightIntensity_NewTrack__UeName = "LightIntensity_NewTrack_0_9A4595314256D1AF580CF3A2C59CC406";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg

@@ -13,6 +13,11 @@ class CP_RogueCorePromotion_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_RogueCorePromotion", "CP_RogueCorePromotion_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_10;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CampaignMission CampaignMission_9;/Script/FSD.PickaxePartReward CampaignMission_0:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_10:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_1;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_2;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_6;/Script/FSD.PickaxePartReward CampaignMission_9:PickaxePartReward_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

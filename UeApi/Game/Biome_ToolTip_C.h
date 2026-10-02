@@ -24,7 +24,7 @@ public:
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     Basic_ResourceIcon_C* Basic_ResourceIconA;
     Basic_ResourceIcon_C* Basic_ResourceIconB;
@@ -35,11 +35,15 @@ public:
     class UWidget* Owner;
     void ExecuteUbergraph_Biome_ToolTip(int EntryPoint);
     void Set_Tool_Tip_Owner(class UWidget* Owner_0);
-    static constexpr const char* Set_Tool_Tip_Owner__UeName = "Set Tool Tip Owner";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTarget(class UWidget* Target_Widget);
     void SetPostionAndAlignment(FVector2D InPosition, FVector2D InAlignment);
     void SetData(class UResourceData* ResourceA, class UResourceData* ResourceB);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Tool_Tip_Owner__UeName = "Set Tool Tip Owner";
+    };
 };
 
 }}}   // namespace Game::UI::ToolTips

@@ -30,7 +30,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_Container_Text_W_Image_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_W_Image_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_BiomeSpecific_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_BiomeSpecific_C__UeName = "UberGraphFrame";
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar3;
     Lore_Container_Text_W_Image_C* Feature0;
     Lore_Container_Text_W_Image_C* Feature1;
@@ -47,6 +46,11 @@ public:
     void ExecuteUbergraph_LoreScreen_BiomeSpecific(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_BiomeSpecific_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

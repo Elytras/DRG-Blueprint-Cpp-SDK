@@ -16,7 +16,11 @@ class BP_HugeCrystalStar_1_Double_C : public Game::LevelElements::RoomObjects::H
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/LargeCrystalFormations/BP_HugeCrystalStar_1_Double", "BP_HugeCrystalStar_1_Double_C");
     class ULevelGenerationCarverComponent* LevelGenerationCarver1;
-    static constexpr const char* LevelGenerationCarver1__UeScsNode = "276c2dea6dc8b34f897f12a3515a36c6";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarver1__UeScsNode = "276c2dea6dc8b34f897f12a3515a36c6";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations

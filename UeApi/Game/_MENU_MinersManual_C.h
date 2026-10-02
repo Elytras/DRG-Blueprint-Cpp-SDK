@@ -33,8 +33,8 @@ public:
     using LoreScreen_MinersManual_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MinersManual_C;
     using ScrollLIst_Category_Window_C = Game::UI::Menu_MinersManual::ScrollLIst_Category_Window_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnMMLoaded;
-    class UWidgetAnimation* NewSection;
+    UE_READONLY class UWidgetAnimation* OnMMLoaded;
+    UE_READONLY class UWidgetAnimation* NewSection;
     LoreScreen_MinersManual_C* LoreScreen_MinersManual;
     ScrollLIst_Category_Window_C* LoreScrollList;
     Itm_MinersManual_TabsHeader_C* TabsMenu;

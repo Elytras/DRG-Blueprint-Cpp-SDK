@@ -26,7 +26,7 @@ public:
     using ITM_SaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
     using ITM_SaveSlot_Entry_Header_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FlashingText;
+    UE_READONLY class UWidgetAnimation* FlashingText;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UBorder* Border_0;
     class UTextBlock* Header;
@@ -41,13 +41,17 @@ public:
     void TransformSavenameByBranch(FString InSaveName, FString& Savename);
     void CreateMainSaveslots();
     void Reset_Color_on_Non_Selected_Save(class UFSDSaveGame* SaveSlot);
-    static constexpr const char* Reset_Color_on_Non_Selected_Save__UeName = "Reset Color on Non Selected Save";
     void BindSaveslotEvents(ITM_SaveSlot_Entry_C* SaveslotWidget);
     void SetColors();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void SaveDeleted(class UFSDSaveGame* save);
     void ExecuteUbergraph_Popup_MoreThanOneMainSave(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Reset_Color_on_Non_Selected_Save__UeName = "Reset Color on Non Selected Save";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_SaveSlots

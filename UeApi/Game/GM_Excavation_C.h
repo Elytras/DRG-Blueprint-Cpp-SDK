@@ -14,11 +14,15 @@ class GM_Excavation_C : public Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Excavation", "GM_Excavation_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Excavation_C;
-    static constexpr const char* UberGraphFrame_GM_Excavation_C__UeName = "UberGraphFrame";
     void BndEvt__GM_Excavation_ObjectivesManager_K2Node_ComponentBoundEvent_0_DelegateEvent__DelegateSignature();
     void ExecuteUbergraph_GM_Excavation(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_GM_Excavation_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}   // namespace Game::Game

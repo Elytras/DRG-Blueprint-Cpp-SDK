@@ -13,6 +13,11 @@ class STE_Spider_Lobber_Puddle_WithDuration_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/STE_Spider_Lobber_Puddle_WithDuration", "STE_Spider_Lobber_Puddle_WithDuration_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber

@@ -25,10 +25,9 @@ public:
     UE_CLASS("/Game/UI/MENU_Merch/_Common/UI_InfoScreen_MerchLink", "UI_InfoScreen_MerchLink_C");
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_InfoScreen_MerchLink_C;
-    static constexpr const char* UberGraphFrame_UI_InfoScreen_MerchLink_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     class USizeBox* Button_SizeBox;
     class UOverlay* GlowOverlay;
     class UButton* LinkButton;
@@ -44,6 +43,11 @@ public:
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_InfoScreen_MerchLink_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::MENU_Merch::_Common

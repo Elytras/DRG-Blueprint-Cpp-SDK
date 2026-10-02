@@ -13,6 +13,11 @@ class STE_BoomerangSnareLesser_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BoomerangBouncy/STE_BoomerangSnareLesser", "STE_BoomerangSnareLesser_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy

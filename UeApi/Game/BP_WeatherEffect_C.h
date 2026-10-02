@@ -22,11 +22,8 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/BP_WeatherEffect", "BP_WeatherEffect_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* ActiveSound;
-    static constexpr const char* ActiveSound__UeScsNode = "d738a095adf8fa468a4f53a12a0efed5";
     class UAudioComponent* FadingSound;
-    static constexpr const char* FadingSound__UeScsNode = "9b835eec3a258c4c868ae4971158d665";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "eebe24b55258d2499fb4f5a492f921a1";
     class UExponentialHeightFogComponent* Fog;
     float OriginalFogDensity;
     FLinearColor OriginalFogInscatteringColor;
@@ -56,6 +53,13 @@ public:
     void FadeFogAndAudio(float alpha);
     void StartGlobalStatusEffects();
     void EndGlobalStatusEffects();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ActiveSound__UeScsNode = "d738a095adf8fa468a4f53a12a0efed5";
+        static constexpr const char* FadingSound__UeScsNode = "9b835eec3a258c4c868ae4971158d665";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "eebe24b55258d2499fb4f5a492f921a1";
+    };
 };
 
 }}}   // namespace Game::Landscape::Biomes

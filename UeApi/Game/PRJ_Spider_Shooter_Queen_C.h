@@ -20,21 +20,25 @@ class PRJ_Spider_Shooter_Queen_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ShooterQueen/PRJ_Spider_Shooter_Queen", "PRJ_Spider_Shooter_Queen_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "d6dbceaca32b124ea9fe228f1b9efba6";
     class UDamageComponent* DamageComponent;
-    static constexpr const char* DamageComponent__UeScsNode = "e4e309c3da8bf545ba2e1ce7d77e80d9";
     class UStaticMeshComponent* ProjectileMesh;
-    static constexpr const char* ProjectileMesh__UeScsNode = "c2f15b3f511d3f4fb5c5ddef7916373b";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     float DamageAmmount;
     void ExecuteUbergraph_PRJ_Spider_Shooter_Queen(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "d6dbceaca32b124ea9fe228f1b9efba6";
+        static constexpr const char* DamageComponent__UeScsNode = "e4e309c3da8bf545ba2e1ce7d77e80d9";
+        static constexpr const char* ProjectileMesh__UeScsNode = "c2f15b3f511d3f4fb5c5ddef7916373b";
+        static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Shooter::ShooterQueen

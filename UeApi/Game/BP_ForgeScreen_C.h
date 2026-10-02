@@ -17,9 +17,13 @@ class BP_ForgeScreen_C : public AActor
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_ForgeScreen", "BP_ForgeScreen_C");
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "15c95c647a40b74b9d5ef18ea1fc2a2a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0c19804351faa84b9cdc7b35ab3e5c54";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "15c95c647a40b74b9d5ef18ea1fc2a2a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0c19804351faa84b9cdc7b35ab3e5c54";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

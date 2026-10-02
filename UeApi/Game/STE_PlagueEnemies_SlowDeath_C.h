@@ -13,6 +13,11 @@ class STE_PlagueEnemies_SlowDeath_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/STE_PlagueEnemies_SlowDeath", "STE_PlagueEnemies_SlowDeath_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

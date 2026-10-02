@@ -23,20 +23,13 @@ class PRJ_NormalBlasterShot_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/PRJ_NormalBlasterShot", "PRJ_NormalBlasterShot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosionSplash;
-    static constexpr const char* ProjectileExplosionSplash__UeScsNode = "ef6faab31b8fd34d8cdac75aeda4c2b5";
     class UProjectileExplosion* BurningPlasmaProjectileExplosion;
-    static constexpr const char* BurningPlasmaProjectileExplosion__UeScsNode = "419734e40e675d4b8c76bc1a14b62d46";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "898f6108c2a9144ea0eb3733d16dd302";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c87e3d363ceea447baae1298ac37533e";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "095a8d680385164bb94ab1da9593abdd";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
     int MaxBounces;
     bool HotPlasma;
     void ExecuteUbergraph_PRJ_NormalBlasterShot(int EntryPoint);
@@ -46,6 +39,17 @@ public:
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void MakeBouncy();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* ProjectileExplosionSplash__UeScsNode = "ef6faab31b8fd34d8cdac75aeda4c2b5";
+        static constexpr const char* BurningPlasmaProjectileExplosion__UeScsNode = "419734e40e675d4b8c76bc1a14b62d46";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "898f6108c2a9144ea0eb3733d16dd302";
+        static constexpr const char* Damage__UeScsNode = "c87e3d363ceea447baae1298ac37533e";
+        static constexpr const char* PointLight__UeScsNode = "095a8d680385164bb94ab1da9593abdd";
+        static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

@@ -19,13 +19,9 @@ class BP_Collectible_Barley_B1_C : public Game::GameElements::Resources::Collect
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Collectible_Barley_B1", "BP_Collectible_Barley_B1_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Collectible_Barley_B1_C;
-    static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B1_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "9447f226dcd1ad4382bd77bf43ff44a6";
     class UStaticMeshComponent* Fruit;
-    static constexpr const char* Fruit__UeScsNode = "a0263da95cb15b42ab54595e56850386";
     class UStaticMeshComponent* Stem;
-    static constexpr const char* Stem__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
     float Timeline_0_NewCurveBase_4943D24B4499D90872349BB26D0794FD;
     TEnum<ETimelineDirection> Timeline_0__Direction_4943D24B4499D90872349BB26D0794FD;
     class UTimelineComponent* Timeline_0;
@@ -34,6 +30,14 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B1_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "9447f226dcd1ad4382bd77bf43ff44a6";
+        static constexpr const char* Fruit__UeScsNode = "a0263da95cb15b42ab54595e56850386";
+        static constexpr const char* Stem__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Barley

@@ -13,6 +13,11 @@ class STE_TurretArc_PlayersAndFriends_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/STE_TurretArc_PlayersAndFriends", "STE_TurretArc_PlayersAndFriends_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SentryGun

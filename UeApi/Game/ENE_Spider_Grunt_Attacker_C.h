@@ -17,15 +17,19 @@ class ENE_Spider_Grunt_Attacker_C : public Game::Enemies::Spider::Grunt::ENE_Spi
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Attacker/ENE_Spider_Grunt_Attacker", "ENE_Spider_Grunt_Attacker_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Grunt_Attacker_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Attacker_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "89981e8acc005b428bd16c9d22ae76b3";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "24dd3dc95610b942b1673844c462eff4";
     void ExecuteUbergraph_ENE_Spider_Grunt_Attacker(int EntryPoint);
     void MakeElite();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Attacker_C__UeName = "UberGraphFrame";
+        static constexpr const char* MeleeAttack__UeScsNode = "89981e8acc005b428bd16c9d22ae76b3";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "24dd3dc95610b942b1673844c462eff4";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Attacker

@@ -25,8 +25,8 @@ public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_PlanetZone", "ITM_MisSel_PlanetZone_C");
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* LockBreak;
-    class UWidgetAnimation* Infobox_MouseOver;
+    UE_READONLY class UWidgetAnimation* LockBreak;
+    UE_READONLY class UWidgetAnimation* Infobox_MouseOver;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     class UImage* IMG_Padlock;
@@ -34,7 +34,6 @@ public:
     class UImage* IMG_TooltipArrow;
     class UButton* MainButton;
     class UVerticalBox* VertBox_Tooltip;
-    static constexpr const char* VertBox_Tooltip__UeName = "VertBox-Tooltip";
     class UPlanetZone* Zone;
     bool IsNewZone;
     class UImage* I_Outline;
@@ -48,6 +47,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Refresh();
     UE_PURE TArray<class UGeneratedMission*> GetAvailableMissions();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* VertBox_Tooltip__UeName = "VertBox-Tooltip";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

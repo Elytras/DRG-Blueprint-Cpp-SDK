@@ -20,7 +20,7 @@ class HUD_CroLineCutter_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CroLineCutter", "HUD_CroLineCutter_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Bracket_Left;
     class UImage* Bracket_Right;
     class UImage* Image_0;

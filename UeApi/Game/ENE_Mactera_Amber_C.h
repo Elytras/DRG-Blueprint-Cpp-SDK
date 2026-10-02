@@ -19,17 +19,11 @@ class ENE_Mactera_Amber_C : public Game::Enemies::FlyingBug::Shooter::ENE_Macter
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ENE_Mactera_Amber", "ENE_Mactera_Amber_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Mactera_Amber_C;
-    static constexpr const char* UberGraphFrame_ENE_Mactera_Amber_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* Mesh_Infestation02;
-    static constexpr const char* Mesh_Infestation02__UeScsNode = "3307f8da3ed15e47a38921068d9bbd31";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "87e045d91f2e5b4aa6e12b6df565034e";
     class UStaticMeshComponent* Mesh_Infestation01;
-    static constexpr const char* Mesh_Infestation01__UeScsNode = "f4a272775366b44aad3b57851d597611";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "546e528246fe83478adf16e8bc9d0de0";
     class AGameEvent* GameEvent;
     void ExecuteUbergraph_ENE_Mactera_Amber(int EntryPoint);
     void BndEvt__FrozenImpact_K2Node_ComponentBoundEvent_1_Delegate__DelegateSignature();
@@ -42,6 +36,16 @@ public:
     bool SetupEvent(class AGameEvent* GameEvent_0);
     bool AdvanceOneObjective();
     bool AddEventProgress(float Progress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Mactera_Amber_C__UeName = "UberGraphFrame";
+        static constexpr const char* Mesh_Infestation02__UeScsNode = "3307f8da3ed15e47a38921068d9bbd31";
+        static constexpr const char* PointLight2__UeScsNode = "87e045d91f2e5b4aa6e12b6df565034e";
+        static constexpr const char* Mesh_Infestation01__UeScsNode = "f4a272775366b44aad3b57851d597611";
+        static constexpr const char* PointLight1__UeScsNode = "546e528246fe83478adf16e8bc9d0de0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

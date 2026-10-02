@@ -26,7 +26,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Loadout/LoadoutSelection/Itm_LoadoutSelectButton", "ITM_LoadoutSelectButton_C");
     using Basic_ToolTip_HeadlineAndText_C = Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UBorder* Background;
     class UButton* Button_CopyPaste;
     class UButton* Button_Loadout;

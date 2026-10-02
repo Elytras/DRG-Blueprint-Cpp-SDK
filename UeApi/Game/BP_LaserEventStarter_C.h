@@ -30,41 +30,23 @@ class BP_LaserEventStarter_C : public AEventStarterButton
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_LaserEventStarter", "BP_LaserEventStarter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "37880e2d877f54449c3feb99df9429d2";
     class UStaticMeshComponent* Beam01_Detail03;
-    static constexpr const char* Beam01_Detail03__UeScsNode = "9ef34e5552e4724e918d6665c45a0550";
     class UStaticMeshComponent* Beam01;
-    static constexpr const char* Beam01__UeScsNode = "c05eb45d8acc434aa8ea71f6905ce786";
     class UStaticMeshComponent* Beam01_Detail04;
-    static constexpr const char* Beam01_Detail04__UeScsNode = "13beb64ceda92f4aad0920901fbe4b64";
     class USceneComponent* Beam1;
-    static constexpr const char* Beam1__UeScsNode = "da1d9ab4b5e9ac4bb126d1912b1ef1c5";
     class UPathfinderCollisionComponent* PathfinderCollision1;
-    static constexpr const char* PathfinderCollision1__UeScsNode = "0622c50774b3b34cb70898aac49efda6";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "532219018b43f24ba6a1523b8f6f69f1";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "bcf09b7e2631914bb1b20b71da854424";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "877a7b26e661f048b92f403fd3cc5ace";
     class UAudioComponent* LaserWarmUp;
-    static constexpr const char* LaserWarmUp__UeScsNode = "4f15df316988424ba6d06fefd382e23d";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "f613f41c8d475c4ea6053d77774de76b";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "3518dcd325fca942a18dac405237a907";
     class USkeletalMeshComponent* BatteryInserter;
-    static constexpr const char* BatteryInserter__UeScsNode = "f2b1bc74879311479a57dd5234378179";
     class UAudioComponent* LaserSound;
-    static constexpr const char* LaserSound__UeScsNode = "63d9698aa9b5af41a97e458520b235c2";
     class UStaticMeshComponent* StaticMesh_Laser_Beam;
-    static constexpr const char* StaticMesh_Laser_Beam__UeName = "StaticMesh Laser Beam";
-    static constexpr const char* StaticMesh_Laser_Beam__UeScsNode = "812274c81f8cd44c860b9d06a9ee6f78";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7a5cb9ff70eca749babd7e23521e1bdb";
     class UMaterialInstanceDynamic* LightMaterial;
     class AGameEvent* OwningEvent;
     class UParticleSystemComponent* LaserParticles;
@@ -85,6 +67,28 @@ public:
     bool SetupEvent(class AGameEvent* GameEvent);
     bool AdvanceOneObjective();
     bool AddEventProgress(float Progress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent Usable";
+        static constexpr const char* MeshCarver__UeScsNode = "37880e2d877f54449c3feb99df9429d2";
+        static constexpr const char* Beam01_Detail03__UeScsNode = "9ef34e5552e4724e918d6665c45a0550";
+        static constexpr const char* Beam01__UeScsNode = "c05eb45d8acc434aa8ea71f6905ce786";
+        static constexpr const char* Beam01_Detail04__UeScsNode = "13beb64ceda92f4aad0920901fbe4b64";
+        static constexpr const char* Beam1__UeScsNode = "da1d9ab4b5e9ac4bb126d1912b1ef1c5";
+        static constexpr const char* PathfinderCollision1__UeScsNode = "0622c50774b3b34cb70898aac49efda6";
+        static constexpr const char* PathfinderCollision__UeScsNode = "532219018b43f24ba6a1523b8f6f69f1";
+        static constexpr const char* outline__UeScsNode = "bcf09b7e2631914bb1b20b71da854424";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "877a7b26e661f048b92f403fd3cc5ace";
+        static constexpr const char* LaserWarmUp__UeScsNode = "4f15df316988424ba6d06fefd382e23d";
+        static constexpr const char* PointLight__UeScsNode = "f613f41c8d475c4ea6053d77774de76b";
+        static constexpr const char* Sphere__UeScsNode = "3518dcd325fca942a18dac405237a907";
+        static constexpr const char* BatteryInserter__UeScsNode = "f2b1bc74879311479a57dd5234378179";
+        static constexpr const char* LaserSound__UeScsNode = "63d9698aa9b5af41a97e458520b235c2";
+        static constexpr const char* StaticMesh_Laser_Beam__UeName = "StaticMesh Laser Beam";
+        static constexpr const char* StaticMesh_Laser_Beam__UeScsNode = "812274c81f8cd44c860b9d06a9ee6f78";
+        static constexpr const char* SkeletalMesh__UeScsNode = "7a5cb9ff70eca749babd7e23521e1bdb";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent

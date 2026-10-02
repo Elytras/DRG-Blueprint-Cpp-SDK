@@ -17,11 +17,8 @@ class ENE_Spider_Boss_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_Larg
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/ENE_Spider_Boss_Base", "ENE_Spider_Boss_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_Base_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Boss_Base_C__UeName = "UberGraphFrame";
     TMap<class APlayerCharacter*, float> Player_to_Damage_Map;
-    static constexpr const char* Player_to_Damage_Map__UeName = "Player to Damage Map";
     class UFSDAchievement* DesignatedDecoy;
     class UFSDAchievement* PestControl;
     class UFSDAchievement* JustAnotherBugHunt;
@@ -30,7 +27,6 @@ public:
     int PlayerKills;
     FName AnalyticsName;
     float Movement_Speed_Penalty_Reduction;
-    static constexpr const char* Movement_Speed_Penalty_Reduction__UeName = "Movement Speed Penalty Reduction";
     void ExecuteUbergraph_ENE_Spider_Boss_Base(int EntryPoint);
     void OnAllDwarvesDown();
     void OnDamagedPlayer(class APlayerCharacter* Player, float amount);
@@ -39,7 +35,15 @@ public:
     void OnBossFightCompleted();
     void DifficultyAsInt(int& Difficulty);
     void Check_Without_A_Paddle_Achievement();
-    static constexpr const char* Check_Without_A_Paddle_Achievement__UeName = "Check Without A Paddle Achievement";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Boss_Base_C__UeName = "UberGraphFrame";
+        static constexpr const char* Player_to_Damage_Map__UeName = "Player to Damage Map";
+        static constexpr const char* Movement_Speed_Penalty_Reduction__UeName = "Movement Speed Penalty Reduction";
+        static constexpr const char* Check_Without_A_Paddle_Achievement__UeName = "Check Without A Paddle Achievement";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::TankBoss

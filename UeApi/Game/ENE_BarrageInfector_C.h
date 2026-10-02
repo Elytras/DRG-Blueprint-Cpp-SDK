@@ -28,30 +28,18 @@ class ENE_BarrageInfector_C : public AShootingPlant
 {
 public:
     UE_CLASS("/Game/Enemies/BarrageInfector/ENE_BarrageInfector", "ENE_BarrageInfector_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyLineOfSightComponent* EnemyLineOfSight;
-    static constexpr const char* EnemyLineOfSight__UeScsNode = "e86e24d3cbcfb64586750ceb26e41137";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "03ef5d2ec413d8448c3df4fec4288c8d";
     class UPointLightComponent* PointLight_Mouth;
-    static constexpr const char* PointLight_Mouth__UeScsNode = "c832cb7aada2f948be421859cededd1c";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "6dbaafa4c3d05d48ae0c5dc04f82c5dd";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "7360a6f34f86b14aa9141b9f06dfbadf";
     class UTerrainPlacementComponent* TerrainPlacement_Barrage;
-    static constexpr const char* TerrainPlacement_Barrage__UeScsNode = "aebb5dfe7cbd8548906ed7258026c327";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "3bdb07d3324761478c75720aebf59e1f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
     void ExecuteUbergraph_ENE_BarrageInfector(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_Target();
@@ -61,6 +49,22 @@ public:
     void BndEvt__Health_K2Node_ComponentBoundEvent_31_HealthChangedSig__DelegateSignature(float Health_0);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     class USkeletalMeshComponent* GetMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* EnemyLineOfSight__UeScsNode = "e86e24d3cbcfb64586750ceb26e41137";
+        static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
+        static constexpr const char* WeakpointGlow__UeScsNode = "03ef5d2ec413d8448c3df4fec4288c8d";
+        static constexpr const char* PointLight_Mouth__UeScsNode = "c832cb7aada2f948be421859cededd1c";
+        static constexpr const char* PointLight__UeScsNode = "6dbaafa4c3d05d48ae0c5dc04f82c5dd";
+        static constexpr const char* ProjectileAttack__UeScsNode = "7360a6f34f86b14aa9141b9f06dfbadf";
+        static constexpr const char* TerrainPlacement_Barrage__UeScsNode = "aebb5dfe7cbd8548906ed7258026c327";
+        static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
+        static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
+        static constexpr const char* SkeletalMesh__UeScsNode = "3bdb07d3324761478c75720aebf59e1f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
+    };
 };
 
 }}}   // namespace Game::Enemies::BarrageInfector

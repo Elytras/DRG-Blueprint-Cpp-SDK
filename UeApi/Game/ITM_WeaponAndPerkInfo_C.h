@@ -24,7 +24,7 @@ public:
     using ITM_PerkInfoBox_C = Game::UI::Menu_EscapeMenu::ITM_PerkInfoBox_C;
     using ITM_WeaponInfo_C = Game::UI::Menu_EscapeMenu::ITM_WeaponInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Enter;
+    UE_READONLY class UWidgetAnimation* Enter;
     Basic_Window_CutCorner_Gradient_C* Basic_Window_CutCorner_Gradient;
     class UGridPanel* GridPanel_LoadoutsOuter;
     class UImage* Image_Randomizer;

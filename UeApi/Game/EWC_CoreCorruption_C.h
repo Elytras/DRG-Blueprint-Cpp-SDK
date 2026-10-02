@@ -21,9 +21,7 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/EWC_CoreCorruption", "EWC_CoreCorruption_C");
     using BP_CoreCorruption_Rift_C = Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Rift_C;
     using BP_CoreRift_C = Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame_EWC_CoreCorruption_C;
-    static constexpr const char* UberGraphFrame_EWC_CoreCorruption_C__UeName = "UberGraphFrame";
     int InitalRiftWaves;
     FTimerHandle Handle_Spawn;
     float Difficulty;
@@ -44,6 +42,12 @@ public:
     void SetRift(BP_CoreCorruption_Rift_C* Rift_0);
     void Spawn();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+        static constexpr const char* UberGraphFrame_EWC_CoreCorruption_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption

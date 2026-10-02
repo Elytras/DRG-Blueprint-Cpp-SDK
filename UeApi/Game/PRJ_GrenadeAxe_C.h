@@ -25,23 +25,14 @@ class PRJ_GrenadeAxe_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/PRJ_GrenadeAxe", "PRJ_GrenadeAxe_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* SmallShitDamage;
-    static constexpr const char* SmallShitDamage__UeScsNode = "427ff75ac1f9f34c9df7f5966cd4171d";
     class USphereComponent* KillSmallShits_Sphere;
-    static constexpr const char* KillSmallShits_Sphere__UeName = "KillSmallShits Sphere";
-    static constexpr const char* KillSmallShits_Sphere__UeScsNode = "0c3125456c58e64caef95a1765b896a7";
     class UDamageComponent* BounceDamage;
-    static constexpr const char* BounceDamage__UeScsNode = "d43c7dcebc68df439ceea962d374e826";
     class UDamageComponent* FullDamage;
-    static constexpr const char* FullDamage__UeScsNode = "56610d5d7573e34b950a4130ebae1f83";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "b045057a0815344e9889e88d7d7aa383";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "b7404f8875ec0148917917895b993c2a";
     class UStaticMeshComponent* mesh_front;
-    static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     FVector MyStartLocation;
     FVector MyImpactVelocity;
     FVector NewVar_0;
@@ -49,7 +40,6 @@ public:
     FVector HitNormal;
     FVector HitLocation;
     class AThrownGrenadeItem* AxeGrenadeItem;
-    static constexpr const char* AxeGrenadeItem__Replicated = ":";
     class AActor* hitActor;
     class UPrimitiveComponent* HitComponent;
     bool CanRetrieve;
@@ -63,10 +53,24 @@ public:
     void ExecuteUbergraph_PRJ_GrenadeAxe(int EntryPoint);
     void OnInitialized();
     void BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    static constexpr const char* BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature__UeName = "BndEvt__KillSmallShits Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature";
     void BluntDamage();
     void Discharge(class AActor* hitActor_0, class UPrimitiveComponent* HitComponent_0, const FVector& HitLocation_0, class UFSDPhysicalMaterial* HitPhysMat_0);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* SmallShitDamage__UeScsNode = "427ff75ac1f9f34c9df7f5966cd4171d";
+        static constexpr const char* KillSmallShits_Sphere__UeName = "KillSmallShits Sphere";
+        static constexpr const char* KillSmallShits_Sphere__UeScsNode = "0c3125456c58e64caef95a1765b896a7";
+        static constexpr const char* BounceDamage__UeScsNode = "d43c7dcebc68df439ceea962d374e826";
+        static constexpr const char* FullDamage__UeScsNode = "56610d5d7573e34b950a4130ebae1f83";
+        static constexpr const char* RotatingMovement__UeScsNode = "b045057a0815344e9889e88d7d7aa383";
+        static constexpr const char* Trail__UeScsNode = "b7404f8875ec0148917917895b993c2a";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* AxeGrenadeItem__Replicated = ":";
+        static constexpr const char* BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature__UeName = "BndEvt__KillSmallShits Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe

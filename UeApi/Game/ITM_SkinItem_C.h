@@ -24,9 +24,9 @@ public:
     using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
     using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIntro;
-    class UWidgetAnimation* AnimPing;
-    class UWidgetAnimation* AnimUnlocked;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimUnlocked;
     ITM_ItemUnlockedIcon_C* ITM_ItemUnlockedIcon;
     ITM_SkinIcon_C* ITM_SkinIcon;
     class UButton* SkinButton;
@@ -38,7 +38,6 @@ public:
     TMulticastInlineDelegate<void(ITM_SkinItem_C* SkinItem)> OnHovering;
     TMulticastInlineDelegate<void(ITM_SkinItem_C* SkinItem)> OnUnhovering;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     bool Hovered;
     bool PreviewLocked;
     bool PreviewHovered;
@@ -52,11 +51,9 @@ public:
     void OnAnimUnlockedFinished();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Ping_Skin();
-    static constexpr const char* Ping_Skin__UeName = "Ping Skin";
     void BndEvt__SkinButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature();
     void BndEvt__SkinButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     void Play_Intro(float Duration, int Max_Columns);
-    static constexpr const char* Play_Intro__UeName = "Play Intro";
     UE_COSMETIC void Construct();
     void BndEvt__SkinButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void Refresh();
@@ -64,6 +61,13 @@ public:
     void SetState(class UItemSkin* InSkin, bool InLocked, bool InHovered, bool InEquipped);
     void ClearEventHandlers();
     void SetIsDefaultItem(bool InDefault);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* Ping_Skin__UeName = "Ping Skin";
+        static constexpr const char* Play_Intro__UeName = "Play Intro";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

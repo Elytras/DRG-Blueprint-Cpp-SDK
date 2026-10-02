@@ -23,13 +23,9 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Anniversary/Blueprint/BP_Anniversary_Chandelier", "BP_Anniversary_Chandelier_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "3b8a8bff9cf16d4cad2e55b2c1128ea3";
     class UFSDAudioComponent* ImpactSound;
-    static constexpr const char* ImpactSound__UeScsNode = "f63e08c3c8fec8419306dee8101a7ac7";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d1453a199e52c34886afa7910344b3e4";
     class USkeletalMeshComponent* SK_Anniversary_Chandelier_01;
-    static constexpr const char* SK_Anniversary_Chandelier_01__UeScsNode = "a8a1995f09370b4d8f543be2a0ca0622";
     FTimerHandle Timer;
     float RotationSpeed;
     void ExecuteUbergraph_BP_Anniversary_Chandelier(int EntryPoint);
@@ -38,6 +34,14 @@ public:
     void BndEvt__BP_Anniversary_Chandelier_SK_Anniversary_Chandelier_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnCollide();
     void OnRep_Random_Seed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RotatingMovement__UeScsNode = "3b8a8bff9cf16d4cad2e55b2c1128ea3";
+        static constexpr const char* ImpactSound__UeScsNode = "f63e08c3c8fec8419306dee8101a7ac7";
+        static constexpr const char* PointLight__UeScsNode = "d1453a199e52c34886afa7910344b3e4";
+        static constexpr const char* SK_Anniversary_Chandelier_01__UeScsNode = "a8a1995f09370b4d8f543be2a0ca0622";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint

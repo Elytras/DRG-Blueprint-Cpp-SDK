@@ -19,7 +19,7 @@ class BP_DepthCountWidget_C : public UUserWidget
 public:
     UE_CLASS("/Game/Maps/UILevels/Assets/HUD/BP_DepthCountWidget", "BP_DepthCountWidget_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AlertBlink;
+    UE_READONLY class UWidgetAnimation* AlertBlink;
     class UImage* Image_50;
     class UTextBlock* TextBlock_4;
     class UTextBlock* TextBlock_5;

@@ -22,9 +22,9 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_LevelInfinity", "ITM_Season_LevelInfinity_C");
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ClaimSpecialGlow;
-    class UWidgetAnimation* ClaimNormalGlow;
-    class UWidgetAnimation* NextLevel;
+    UE_READONLY class UWidgetAnimation* ClaimSpecialGlow;
+    UE_READONLY class UWidgetAnimation* ClaimNormalGlow;
+    UE_READONLY class UWidgetAnimation* NextLevel;
     class UImage* BG_Color;
     class UImage* Image_NormalClaim;
     class UImage* Image_SelectedArrow;

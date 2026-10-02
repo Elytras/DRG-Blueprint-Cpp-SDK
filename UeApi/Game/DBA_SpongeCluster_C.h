@@ -17,14 +17,18 @@ class DBA_SpongeCluster_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Testing/SpongeCluster/DBA_SpongeCluster", "DBA_SpongeCluster_C");
     class UDebrisDataComponent* D_GrassSmall__2K_0_50_1;
-    static constexpr const char* D_GrassSmall__2K_0_50_1__UeName = "D_GrassSmall--2K(0-50)1";
-    static constexpr const char* D_GrassSmall__2K_0_50_1__UeScsNode = "7dcab4c15eca0342af7646b023622577";
     class UDebrisDataComponent* D_Rubble;
-    static constexpr const char* D_Rubble__UeScsNode = "94368dd9ac77364eb20cd19090055387";
     class USceneComponent* Debris;
-    static constexpr const char* Debris__UeScsNode = "0fa1f84f6fcdf2418156d8b5e5239a97";
     class USceneComponent* Root;
-    static constexpr const char* Root__UeScsNode = "06585f5c4e5c7f4395c6bc850a394b79";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* D_GrassSmall__2K_0_50_1__UeName = "D_GrassSmall--2K(0-50)1";
+        static constexpr const char* D_GrassSmall__2K_0_50_1__UeScsNode = "7dcab4c15eca0342af7646b023622577";
+        static constexpr const char* D_Rubble__UeScsNode = "94368dd9ac77364eb20cd19090055387";
+        static constexpr const char* Debris__UeScsNode = "0fa1f84f6fcdf2418156d8b5e5239a97";
+        static constexpr const char* Root__UeScsNode = "06585f5c4e5c7f4395c6bc850a394b79";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::SpongeCluster

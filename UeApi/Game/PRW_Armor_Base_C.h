@@ -17,9 +17,13 @@ class PRW_Armor_Base_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/PRW_Armor_Base", "PRW_Armor_Base_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "43e482db7891714588599d77208684eb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cc5226bfddc5634493d62516cca6c958";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "43e482db7891714588599d77208684eb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cc5226bfddc5634493d62516cca6c958";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Armor

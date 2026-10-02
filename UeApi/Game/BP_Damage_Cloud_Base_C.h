@@ -22,13 +22,9 @@ public:
     UE_CLASS("/Game/Enemies/BaseItems/BP_Damage_Cloud_Base", "BP_Damage_Cloud_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "1e9f8038eec9b144a6934098295ed338";
     class UParticleSystemComponent* AcidCloud;
-    static constexpr const char* AcidCloud__UeScsNode = "e37f1e600c336943986f3c3a0f8890ef";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "530acadf2247244f822b9cadf4bd5639";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
     float TriggerGrowth_Size_1DEB14DB4E8233F87D25DBAB1B0C1325;
     TEnum<ETimelineDirection> TriggerGrowth__Direction_1DEB14DB4E8233F87D25DBAB1B0C1325;
     class UTimelineComponent* TriggerGrowth;
@@ -41,6 +37,14 @@ public:
     void TriggerGrowth__FinishedFunc();
     void UserConstructionScript();
     void UpdateSphereRadius(float InSphereRadius);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "1e9f8038eec9b144a6934098295ed338";
+        static constexpr const char* AcidCloud__UeScsNode = "e37f1e600c336943986f3c3a0f8890ef";
+        static constexpr const char* Sphere__UeScsNode = "530acadf2247244f822b9cadf4bd5639";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
+    };
 };
 
 }}}   // namespace Game::Enemies::BaseItems

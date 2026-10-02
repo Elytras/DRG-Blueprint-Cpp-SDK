@@ -41,9 +41,9 @@ public:
     using ITM_FactionLogo_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionLogo_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Disappear;
-    class UWidgetAnimation* CreditsBlinkAnimation;
-    class UWidgetAnimation* LogoAnimation;
+    UE_READONLY class UWidgetAnimation* Disappear;
+    UE_READONLY class UWidgetAnimation* CreditsBlinkAnimation;
+    UE_READONLY class UWidgetAnimation* LogoAnimation;
     Basic_Menu_LargeWindowWithHeader_C* Basic_Menu_LargeWindowWithHeader;
     class UVerticalBox* ClaimReward;
     class UVerticalBox* COLLECT;
@@ -66,7 +66,6 @@ public:
     class UVerticalBox* Loading;
     class UWidgetSwitcher* MainWidgetSwitcher;
     class UTextBlock* Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     class UTextBlock* Online;
     class UVerticalBox* Progress;
     class UVerticalBox* RECRUITMENT;
@@ -109,7 +108,6 @@ public:
     void Init();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Do_Running_Text(FText Text, int Index_0, class UTextBlock* Target);
-    static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
     void UserInServer(bool isInServer);
     void UpdateUI(const FDiscordServerData& discordServerCount);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
@@ -124,12 +122,18 @@ public:
     void FactionLogosOn();
     void StopAllLogos();
     void Set_Goals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members);
-    static constexpr const char* Set_Goals__UeName = "Set Goals";
     void MinersUnionTier(float& DSMUTier);
     void Update_Content_Switcher_Content();
-    static constexpr const char* Update_Content_Switcher_Content__UeName = "Update Content Switcher Content";
     void Handle_Community_Goal_Content_state();
-    static constexpr const char* Handle_Community_Goal_Content_state__UeName = "Handle Community Goal Content state";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+        static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
+        static constexpr const char* Set_Goals__UeName = "Set Goals";
+        static constexpr const char* Update_Content_Switcher_Content__UeName = "Update Content Switcher Content";
+        static constexpr const char* Handle_Community_Goal_Content_state__UeName = "Handle Community Goal Content state";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

@@ -29,28 +29,17 @@ class BP_FacilityCore_DataRack_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_FacilityCore_DataRack", "BP_FacilityCore_DataRack_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* DataRackIdle_Cue;
-    static constexpr const char* DataRackIdle_Cue__UeScsNode = "e123d8f22202d043a794393743151ad9";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "977ed070088a494dbf50ab78181f54d2";
     class UPointLightComponent* PointLightshadow;
-    static constexpr const char* PointLightshadow__UeScsNode = "2699dcfe70e78041a3d1ff88cf2bbb8b";
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "706f820d36024346a70c7718db610bea";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "bf06183d21e1eb45978d19a96730e5ce";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "5bf69bcbbeaff044b463b1c8bd2eadb9";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "e32a9334fc177740a26d53d9682dfafc";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "0f6dd997015084428c0ebeaf527429d0";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "2cd9966b2030e64389ea1581f566732f";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "2477ccbce42c6c4ea26c07476e1256f8";
     FVector throwForce;
     class USoundCue* ImpactSound;
     bool CanTriggerSound;
@@ -62,6 +51,21 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     void BndEvt__Usable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* DataRackIdle_Cue__UeScsNode = "e123d8f22202d043a794393743151ad9";
+        static constexpr const char* Niagara__UeScsNode = "977ed070088a494dbf50ab78181f54d2";
+        static constexpr const char* PointLightshadow__UeScsNode = "2699dcfe70e78041a3d1ff88cf2bbb8b";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "706f820d36024346a70c7718db610bea";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "bf06183d21e1eb45978d19a96730e5ce";
+        static constexpr const char* PointLight__UeScsNode = "5bf69bcbbeaff044b463b1c8bd2eadb9";
+        static constexpr const char* Sphere__UeScsNode = "e32a9334fc177740a26d53d9682dfafc";
+        static constexpr const char* StaticMesh__UeScsNode = "0f6dd997015084428c0ebeaf527429d0";
+        static constexpr const char* Carriable__UeScsNode = "2cd9966b2030e64389ea1581f566732f";
+        static constexpr const char* Box__UeScsNode = "2477ccbce42c6c4ea26c07476e1256f8";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

@@ -23,26 +23,30 @@ class BP_GuntowerWeakpoint_C : public AGuntowerWeakPoint
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Weakpoint/BP_GuntowerWeakpoint", "BP_GuntowerWeakpoint_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WeakpointGlowComponent WeakpointGlow";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnAfflictionComponent* PawnAffliction;
-    static constexpr const char* PawnAffliction__UeScsNode = "02c43a48e5c3d84199d07ad4d6d47128";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "2a606d4c3891a24d9eefe064af8594f9";
     class UCapsuleComponent* ProjectileCollision_;
-    static constexpr const char* ProjectileCollision___UeName = "ProjectileCollision'";
-    static constexpr const char* ProjectileCollision___UeScsNode = "84c0c968dbd02b4284f3a9219842188c";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "bb75ad018b3c8e40b5cff882513e69d4";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "5cdf18638463554aaf899ce1b4f43d7c";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "9e1fadacdeed674a9d04ecf2cd35da0f";
     void ExecuteUbergraph_BP_GuntowerWeakpoint(int EntryPoint);
     void OnExposedChanged(bool isExposed);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     UE_PURE FVector GetTargetCenterMass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WeakpointGlowComponent WeakpointGlow";
+        static constexpr const char* PawnAffliction__UeScsNode = "02c43a48e5c3d84199d07ad4d6d47128";
+        static constexpr const char* PointLight__UeScsNode = "2a606d4c3891a24d9eefe064af8594f9";
+        static constexpr const char* ProjectileCollision___UeName = "ProjectileCollision'";
+        static constexpr const char* ProjectileCollision___UeScsNode = "84c0c968dbd02b4284f3a9219842188c";
+        static constexpr const char* outline__UeScsNode = "bb75ad018b3c8e40b5cff882513e69d4";
+        static constexpr const char* enemy__UeScsNode = "5cdf18638463554aaf899ce1b4f43d7c";
+        static constexpr const char* PawnStats__UeScsNode = "9e1fadacdeed674a9d04ecf2cd35da0f";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Weakpoint

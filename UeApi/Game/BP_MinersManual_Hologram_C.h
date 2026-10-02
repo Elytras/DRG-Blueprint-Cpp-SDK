@@ -19,32 +19,36 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_MinersManual_Hologram", "BP_MinersManual_Hologram_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Spider_Grunt_GuardA;
-    static constexpr const char* SM_Spider_Grunt_GuardA__UeScsNode = "8e13d5df91b9204885a074e17feac65d";
     class UStaticMeshComponent* SM_Spider_Grunt_A;
-    static constexpr const char* SM_Spider_Grunt_A__UeScsNode = "baebdb9f6492b44e9bac0f92298da11c";
     class USkeletalMeshComponent* SK_Flier_Grabber_A;
-    static constexpr const char* SK_Flier_Grabber_A__UeScsNode = "1e20462fb519814eb2129876086716ab";
     class USkeletalMeshComponent* SK_Flier_Heavy;
-    static constexpr const char* SK_Flier_Heavy__UeScsNode = "8f2bc8421544a24790acfe3bc982a9f1";
     class USkeletalMeshComponent* SK_Flier_Triple_Shooter;
-    static constexpr const char* SK_Flier_Triple_Shooter__UeScsNode = "2252cb7510a0bd46bef31e0b6b6fefb2";
     class USkeletalMeshComponent* SK_Flier_Shooter;
-    static constexpr const char* SK_Flier_Shooter__UeScsNode = "7e0f9feea321c8458bec0f9135300099";
     class USkeletalMeshComponent* SK_Spider_Tank_A;
-    static constexpr const char* SK_Spider_Tank_A__UeScsNode = "009afbd7136ebe44a92394aba83ab654";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "92385b0ed838374d9f3e2c2919aea67e";
     class UStaticMeshComponent* coneLight;
-    static constexpr const char* coneLight__UeScsNode = "9a41e8132d420a4e99244d08cffcce58";
     class UStaticMeshComponent* MinersManual;
-    static constexpr const char* MinersManual__UeScsNode = "ebef5471a0fe1a49a0fb62d4b6436a14";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c86287c3897f5a449def2df2d147b2da";
     float Rot_speed;
-    static constexpr const char* Rot_speed__UeName = "Rot speed";
     void ExecuteUbergraph_BP_MinersManual_Hologram(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Spider_Grunt_GuardA__UeScsNode = "8e13d5df91b9204885a074e17feac65d";
+        static constexpr const char* SM_Spider_Grunt_A__UeScsNode = "baebdb9f6492b44e9bac0f92298da11c";
+        static constexpr const char* SK_Flier_Grabber_A__UeScsNode = "1e20462fb519814eb2129876086716ab";
+        static constexpr const char* SK_Flier_Heavy__UeScsNode = "8f2bc8421544a24790acfe3bc982a9f1";
+        static constexpr const char* SK_Flier_Triple_Shooter__UeScsNode = "2252cb7510a0bd46bef31e0b6b6fefb2";
+        static constexpr const char* SK_Flier_Shooter__UeScsNode = "7e0f9feea321c8458bec0f9135300099";
+        static constexpr const char* SK_Spider_Tank_A__UeScsNode = "009afbd7136ebe44a92394aba83ab654";
+        static constexpr const char* Scene__UeScsNode = "92385b0ed838374d9f3e2c2919aea67e";
+        static constexpr const char* coneLight__UeScsNode = "9a41e8132d420a4e99244d08cffcce58";
+        static constexpr const char* MinersManual__UeScsNode = "ebef5471a0fe1a49a0fb62d4b6436a14";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c86287c3897f5a449def2df2d147b2da";
+        static constexpr const char* Rot_speed__UeName = "Rot speed";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

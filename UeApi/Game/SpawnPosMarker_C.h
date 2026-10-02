@@ -17,9 +17,13 @@ class SpawnPosMarker_C : public AActor
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/SpawnPosMarker", "SpawnPosMarker_C");
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "32d69d09e0a3464fa3a1e5023bae23b7";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "2517a536f1b204408f6e308c4fbc4c84";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "32d69d09e0a3464fa3a1e5023bae23b7";
+        static constexpr const char* Scene__UeScsNode = "2517a536f1b204408f6e308c4fbc4c84";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

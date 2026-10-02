@@ -19,9 +19,9 @@ class UI_PointOfInterest_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/UI_PointOfInterest", "UI_PointOfInterest_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Outro;
-    class UWidgetAnimation* Intro;
-    class UWidgetAnimation* Pulse;
+    UE_READONLY class UWidgetAnimation* Outro;
+    UE_READONLY class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Pulse;
     class UImage* Icon;
     class UImage* Ring;
     TMulticastInlineDelegate<void()> Finished;

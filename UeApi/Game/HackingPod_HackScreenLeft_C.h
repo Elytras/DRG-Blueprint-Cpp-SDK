@@ -18,8 +18,7 @@ class HackingPod_HackScreenLeft_C : public Game::GameElements::Objectives::Facil
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/Assets/HackingPod_HackScreenLeft", "HackingPod_HackScreenLeft_C");
     FPointerToUberGraphFrame UberGraphFrame_HackingPod_HackScreenLeft_C;
-    static constexpr const char* UberGraphFrame_HackingPod_HackScreenLeft_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* NewAnimation;
+    UE_READONLY class UWidgetAnimation* NewAnimation;
     class UImage* Image;
     class UImage* Image_1;
     class UImage* Image_105;
@@ -27,6 +26,11 @@ public:
     void ExecuteUbergraph_HackingPod_HackScreenLeft(int EntryPoint);
     void HackingStarted();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HackingPod_HackScreenLeft_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets

@@ -21,7 +21,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_Container_Basics_Info_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Basics_Info_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Perks_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Perks_C__UeName = "UberGraphFrame";
     Lore_Container_Basics_Info_C* Lore_Container3;
     Lore_Container_Basics_Info_C* Lore_Content1;
     Lore_Container_Basics_Info_C* Lore_Content2;
@@ -30,6 +29,11 @@ public:
     void ExecuteUbergraph_LoreScreen_Perks(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Perks_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Basics

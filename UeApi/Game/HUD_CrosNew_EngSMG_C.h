@@ -21,7 +21,7 @@ class HUD_CrosNew_EngSMG_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CrosNew_EngSMG", "HUD_CrosNew_EngSMG_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CH_Bottom;
     class UImage* CH_Left;
     class UImage* CH_Right;
@@ -30,7 +30,6 @@ public:
     float OpacityHigh;
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     float MagicSpreadMultiplier;
     void ExecuteUbergraph_HUD_CrosNew_EngSMG(int EntryPoint);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
@@ -38,6 +37,11 @@ public:
     UE_COSMETIC void Construct();
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void SetData(class AItem* Item);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

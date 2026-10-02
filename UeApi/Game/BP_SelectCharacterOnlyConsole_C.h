@@ -25,34 +25,38 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_SelectCharacterOnlyConsole", "BP_SelectCharacterOnlyConsole_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "7e3e357239ec34419bb6764b48ccb41e";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "bb0ef5ab4199f44899b46b41ee332798";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "451adfafbb7be741bbfb33cca2968bd1";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "684e6bf8c7dc2f4190d1ce37e477eda3";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "0cd9351359b098438503f9d949261304";
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "618178d31b01e64c8516a8879d888858";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
     class UStaticMeshComponent* Mesh_CPU;
-    static constexpr const char* Mesh_CPU__UeScsNode = "f78b2d19915fe34393c37769c828d55a";
     class UStaticMeshComponent* Mesh_Keyboard;
-    static constexpr const char* Mesh_Keyboard__UeScsNode = "011e7f578f2534419cb786bfef105ced";
     class UStaticMeshComponent* Mesh_Monitor;
-    static constexpr const char* Mesh_Monitor__UeScsNode = "0f50876679543749a60ac48024c5387c";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     void ExecuteUbergraph_BP_SelectCharacterOnlyConsole(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight4__UeScsNode = "7e3e357239ec34419bb6764b48ccb41e";
+        static constexpr const char* PointLight3__UeScsNode = "bb0ef5ab4199f44899b46b41ee332798";
+        static constexpr const char* PointLight2__UeScsNode = "451adfafbb7be741bbfb33cca2968bd1";
+        static constexpr const char* PointLight1__UeScsNode = "684e6bf8c7dc2f4190d1ce37e477eda3";
+        static constexpr const char* PointLight__UeScsNode = "0cd9351359b098438503f9d949261304";
+        static constexpr const char* TextRender__UeScsNode = "618178d31b01e64c8516a8879d888858";
+        static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
+        static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
+        static constexpr const char* Mesh_CPU__UeScsNode = "f78b2d19915fe34393c37769c828d55a";
+        static constexpr const char* Mesh_Keyboard__UeScsNode = "011e7f578f2534419cb786bfef105ced";
+        static constexpr const char* Mesh_Monitor__UeScsNode = "0f50876679543749a60ac48024c5387c";
+        static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

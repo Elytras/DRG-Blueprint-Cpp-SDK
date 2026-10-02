@@ -23,16 +23,11 @@ class WPN_PlatformGun_C : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlatformGun/WPN_PlatformGun", "WPN_PlatformGun_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonPointLightComponent* FirstPersonPointLight;
-    static constexpr const char* FirstPersonPointLight__UeScsNode = "273d9da073b3b949b97b8a67efdbdb9e";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "3d48f23ac665e54fa1d3d2b57c59ea99";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "0394082557903a42a9799d04966c713d";
     class UProjectileLauncherComponent* projectileLauncher;
-    static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     bool UsingBigPlatform;
     bool UsingLessFallDamage;
     bool UsingBugRepellant;
@@ -44,6 +39,15 @@ public:
     void BndEvt__ProjectileLauncher_K2Node_ComponentBoundEvent_4_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void ReceiveBeginPlay();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonPointLight__UeScsNode = "273d9da073b3b949b97b8a67efdbdb9e";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "3d48f23ac665e54fa1d3d2b57c59ea99";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "0394082557903a42a9799d04966c713d";
+        static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun

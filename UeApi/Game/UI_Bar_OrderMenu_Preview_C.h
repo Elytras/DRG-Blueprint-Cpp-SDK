@@ -27,8 +27,8 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Open;
-    class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* Open;
+    UE_READONLY class UWidgetAnimation* FadeOut;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_0;
     BlurBackground_C* BlurBackground;
@@ -44,16 +44,20 @@ public:
     class UTemporaryBuff* PreviewBuf;
     void ExecuteUbergraph_UI_Bar_OrderMenu_Preview(int EntryPoint);
     void Refresh_Visuals();
-    static constexpr const char* Refresh_Visuals__UeName = "Refresh Visuals";
     void FadeOutFinished();
     void Fade_Out();
-    static constexpr const char* Fade_Out__UeName = "Fade Out";
     void Fade_In();
-    static constexpr const char* Fade_In__UeName = "Fade In";
     UE_COSMETIC void Construct();
     void Set_Preview_Item(class USpaceRigBarMenuItem* currentItem);
-    static constexpr const char* Set_Preview_Item__UeName = "Set Preview Item";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Refresh_Visuals__UeName = "Refresh Visuals";
+        static constexpr const char* Fade_Out__UeName = "Fade Out";
+        static constexpr const char* Fade_In__UeName = "Fade In";
+        static constexpr const char* Set_Preview_Item__UeName = "Set Preview Item";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

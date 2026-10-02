@@ -13,6 +13,11 @@ class STE_ShieldRegeneration_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/STE_ShieldRegeneration", "STE_ShieldRegeneration_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerArmorStatusEffectItem PlayerArmorStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator

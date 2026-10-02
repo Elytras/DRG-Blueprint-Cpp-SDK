@@ -21,25 +21,29 @@ class BP_AnimatedArrow_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Animation/BP_AnimatedArrow", "BP_AnimatedArrow_C");
     class UAudioComponent* CrossBowProjectileVariant_Cue;
-    static constexpr const char* CrossBowProjectileVariant_Cue__UeScsNode = "b60d2081b59dfe4189022e2d89d6aa62";
     class UFirstPersonNiagaraComponent* CryoEffectParticleFP;
-    static constexpr const char* CryoEffectParticleFP__UeScsNode = "646e1c654ce2744ba662d39b6c0e4b48";
     class UFirstPersonNiagaraComponent* ElectricEffectParticleFP;
-    static constexpr const char* ElectricEffectParticleFP__UeScsNode = "d7ffdf852e62e94e9fc0fd390dbf7dee";
     class UNiagaraComponent* FireEffectParticleTP;
-    static constexpr const char* FireEffectParticleTP__UeScsNode = "096eb9c1ff55824e9c08b2cfdf85524f";
     class UNiagaraComponent* ElectricEffectParticleTP;
-    static constexpr const char* ElectricEffectParticleTP__UeScsNode = "98e5f134ca7fee47970ab24b694d4e34";
     class UNiagaraComponent* CryoEffectParticleTP;
-    static constexpr const char* CryoEffectParticleTP__UeScsNode = "cc64c6f6cf023449a9e85a1f9e1a842d";
     class UFirstPersonNiagaraComponent* FireEffectParticleFP;
-    static constexpr const char* FireEffectParticleFP__UeScsNode = "3e135062d69f7c46a519b65b3d48c843";
     class UStaticMeshComponent* TPMesh;
-    static constexpr const char* TPMesh__UeScsNode = "62b1f2df454a2044a8b42cd6744076e0";
     class UFirstPersonStaticMeshComponent* FPMesh;
-    static constexpr const char* FPMesh__UeScsNode = "de78ee5865e75b4a9daf655ca48f85d2";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "c77e8622cc483f429ec2efd0335f2b1a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CrossBowProjectileVariant_Cue__UeScsNode = "b60d2081b59dfe4189022e2d89d6aa62";
+        static constexpr const char* CryoEffectParticleFP__UeScsNode = "646e1c654ce2744ba662d39b6c0e4b48";
+        static constexpr const char* ElectricEffectParticleFP__UeScsNode = "d7ffdf852e62e94e9fc0fd390dbf7dee";
+        static constexpr const char* FireEffectParticleTP__UeScsNode = "096eb9c1ff55824e9c08b2cfdf85524f";
+        static constexpr const char* ElectricEffectParticleTP__UeScsNode = "98e5f134ca7fee47970ab24b694d4e34";
+        static constexpr const char* CryoEffectParticleTP__UeScsNode = "cc64c6f6cf023449a9e85a1f9e1a842d";
+        static constexpr const char* FireEffectParticleFP__UeScsNode = "3e135062d69f7c46a519b65b3d48c843";
+        static constexpr const char* TPMesh__UeScsNode = "62b1f2df454a2044a8b42cd6744076e0";
+        static constexpr const char* FPMesh__UeScsNode = "de78ee5865e75b4a9daf655ca48f85d2";
+        static constexpr const char* Scene__UeScsNode = "c77e8622cc483f429ec2efd0335f2b1a";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Animation

@@ -22,8 +22,8 @@ class WeaponDisplay_HeavyParticleCannon_AmmoCount_C : public UAmmoCountWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/WeaponDisplay_HeavyParticleCannon_AmmoCount", "WeaponDisplay_HeavyParticleCannon_AmmoCount_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Fire;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Fire;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UImage* Image;
     class UImage* Image_1;
     class UImage* Image_4;
@@ -47,7 +47,6 @@ public:
     class UAudioComponent* FullyChargedAudioComp;
     float MappedAlpha;
     class AItem* Particle_Weapon;
-    static constexpr const char* Particle_Weapon__UeName = "Particle Weapon";
     void ExecuteUbergraph_WeaponDisplay_HeavyParticleCannon_AmmoCount(int EntryPoint);
     void OnEquipped();
     void OnUnEquipped();
@@ -60,6 +59,11 @@ public:
     void OnReloadTimeChanged_Event(float amount);
     UE_COSMETIC void Construct();
     void SetData(int ClipSize_0, float ReloadDuration_0, int MaxAmmo_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Particle_Weapon__UeName = "Particle Weapon";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

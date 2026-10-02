@@ -16,7 +16,11 @@ class ESI_Stinger_C : public Game::Enemies::Spider::ESI_Spider_Base_C
 public:
     UE_CLASS("/Game/Enemies/Spider/Stinger/ESI_Stinger", "ESI_Stinger_C");
     class USkeletalMeshComponent* SkeletalMesh2;
-    static constexpr const char* SkeletalMesh2__UeScsNode = "0f20604575923d4597eec809c619f123";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh2__UeScsNode = "0f20604575923d4597eec809c619f123";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stinger

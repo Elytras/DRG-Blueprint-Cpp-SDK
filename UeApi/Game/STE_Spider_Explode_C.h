@@ -13,6 +13,11 @@ class STE_Spider_Explode_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Exploder/STE_Spider_Explode", "STE_Spider_Explode_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Exploder

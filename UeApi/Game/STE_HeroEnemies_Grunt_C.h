@@ -13,6 +13,11 @@ class STE_HeroEnemies_Grunt_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/HeroEnemies/STE_HeroEnemies_Grunt", "STE_HeroEnemies_Grunt_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureStatusEffectItem EnemyTemperatureStatusEffectItem_0;/Script/FSD.FSDPawnStatusEffectItem FSDPawnStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_2;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_3;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_4;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_5;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_6";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies

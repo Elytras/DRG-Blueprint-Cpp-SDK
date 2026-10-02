@@ -13,6 +13,11 @@ class STE_ConductiveTermals_PlasmaCarbine_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/STE_ConductiveTermals_PlasmaCarbine", "STE_ConductiveTermals_PlasmaCarbine_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStackedStatusEffectItem StatChangeStackedStatusEffectItem_0;/Script/FSD.StatChangeStackedStatusEffectItem StatChangeStackedStatusEffectItem_1;/Script/FSD.StatChangeStackedStatusEffectItem StatChangeStackedStatusEffectItem_2";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

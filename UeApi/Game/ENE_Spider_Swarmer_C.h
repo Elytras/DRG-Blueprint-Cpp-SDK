@@ -20,23 +20,27 @@ class ENE_Spider_Swarmer_C : public Game::Enemies::Spider::ENE_PF_SpiderBase_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/ENE_Spider_Swarmer", "ENE_Spider_Swarmer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Swarmer_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Swarmer_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* JumpAttack;
-    static constexpr const char* JumpAttack__UeScsNode = "d1aa16979e00e84ca39371002ad2871c";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "c2e15aac80621a44b78c4a2e2b9829db";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "4ebea96e6b8d574ebd432602b84e002e";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "45d758d754689340bf36b83f62378d7c";
     class UAudioComponent* SwarmerIdle_Cue;
-    static constexpr const char* SwarmerIdle_Cue__UeScsNode = "ee8f2a0006850243911f9a7cd9f544e9";
     void ExecuteUbergraph_ENE_Spider_Swarmer(int EntryPoint);
     void OnFrozen(class AActor* Source);
     void ChangeVisibility(bool bNewVisibility);
     void OnDeathBase();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Swarmer_C__UeName = "UberGraphFrame";
+        static constexpr const char* JumpAttack__UeScsNode = "d1aa16979e00e84ca39371002ad2871c";
+        static constexpr const char* MeleeAttack__UeScsNode = "c2e15aac80621a44b78c4a2e2b9829db";
+        static constexpr const char* DropShadow__UeScsNode = "4ebea96e6b8d574ebd432602b84e002e";
+        static constexpr const char* Sphere__UeScsNode = "45d758d754689340bf36b83f62378d7c";
+        static constexpr const char* SwarmerIdle_Cue__UeScsNode = "ee8f2a0006850243911f9a7cd9f544e9";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer

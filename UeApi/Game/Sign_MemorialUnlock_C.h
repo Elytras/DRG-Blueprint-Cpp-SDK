@@ -21,27 +21,31 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Sign_MemorialUnlock", "Sign_MemorialUnlock_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "af71c5483a8f20478b2fa63062f73267";
     class UTextRenderComponent* TEXT_Main;
-    static constexpr const char* TEXT_Main__UeScsNode = "75dcfc07bf5a6b45a2bf16d64a076f98";
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "55249a41e38fd44fa64207ef022d8e23";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "21875f33255b7a45aee748bda6d9ab69";
     FText Text;
     bool Single_Line;
-    static constexpr const char* Single_Line__UeName = "Single Line";
     FText Text2;
     float Text_Size;
-    static constexpr const char* Text_Size__UeName = "Text Size";
     FColor Text_Color;
-    static constexpr const char* Text_Color__UeName = "Text Color";
     bool Capitals;
     FVector2D BoxScale;
     bool Visible;
     void ExecuteUbergraph_Sign_MemorialUnlock(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "af71c5483a8f20478b2fa63062f73267";
+        static constexpr const char* TEXT_Main__UeScsNode = "75dcfc07bf5a6b45a2bf16d64a076f98";
+        static constexpr const char* Cube__UeScsNode = "55249a41e38fd44fa64207ef022d8e23";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "21875f33255b7a45aee748bda6d9ab69";
+        static constexpr const char* Single_Line__UeName = "Single Line";
+        static constexpr const char* Text_Size__UeName = "Text Size";
+        static constexpr const char* Text_Color__UeName = "Text Color";
+    };
 };
 
 }}}   // namespace Game::LevelElements::RoomObjects

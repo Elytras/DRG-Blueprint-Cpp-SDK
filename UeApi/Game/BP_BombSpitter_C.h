@@ -29,30 +29,19 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/BombSpitter/BP_BombSpitter", "BP_BombSpitter_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* BombSpitterMesh;
-    static constexpr const char* BombSpitterMesh__UeScsNode = "8498bea1d6b04f4faa1e1e0fc4a6b051";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "59a29e893e56f84ea09df4b442b1aeb1";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "1f7ea9adf5b7d04088df43541587a1ec";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "bae629693a0ee945b78dd6ca144cd3d2";
     class UStaticMeshComponent* ProjectileFake;
-    static constexpr const char* ProjectileFake__UeScsNode = "611e83ba9aebdb4c9388ea8152e02e08";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "c47d00d2fdcf0f418e82b110ce4ebe04";
     class USceneComponent* ProjectileSpawnLocation;
-    static constexpr const char* ProjectileSpawnLocation__UeScsNode = "f65820ceb0bc234aa7f64a45899d3d7a";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "9dc2b912340f6144ab3602de25207a70";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "bb55f3cb72a560429150186087e844ea";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7ad59c7b9fd27043a68016e8e870e9d1";
     float Grow_Scale_E6213CB8461859CFDD77B8B3B4302959;
     TEnum<ETimelineDirection> Grow__Direction_E6213CB8461859CFDD77B8B3B4302959;
     class UTimelineComponent* Grow;
     bool IsReady;
-    static constexpr const char* IsReady__Replicated = "OnRep_IsReady:";
     float ReloadTime;
     class UMaterialInstanceDynamic* DynamicMaterial;
     TMulticastInlineDelegate<void(bool Closed, bool Open)> OnChangeState;
@@ -66,6 +55,21 @@ public:
     void Grow__FinishedFunc();
     void UserConstructionScript();
     void OnRep_IsReady();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BombSpitterMesh__UeScsNode = "8498bea1d6b04f4faa1e1e0fc4a6b051";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "59a29e893e56f84ea09df4b442b1aeb1";
+        static constexpr const char* terrainPlacement__UeScsNode = "1f7ea9adf5b7d04088df43541587a1ec";
+        static constexpr const char* PathfinderCollision__UeScsNode = "bae629693a0ee945b78dd6ca144cd3d2";
+        static constexpr const char* ProjectileFake__UeScsNode = "611e83ba9aebdb4c9388ea8152e02e08";
+        static constexpr const char* TerrainDetect__UeScsNode = "c47d00d2fdcf0f418e82b110ce4ebe04";
+        static constexpr const char* ProjectileSpawnLocation__UeScsNode = "f65820ceb0bc234aa7f64a45899d3d7a";
+        static constexpr const char* Capsule__UeScsNode = "9dc2b912340f6144ab3602de25207a70";
+        static constexpr const char* SimpleHealth__UeScsNode = "bb55f3cb72a560429150186087e844ea";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7ad59c7b9fd27043a68016e8e870e9d1";
+        static constexpr const char* IsReady__Replicated = "OnRep_IsReady:";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::BombSpitter

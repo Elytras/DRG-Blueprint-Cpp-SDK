@@ -21,8 +21,7 @@ public:
     using ScrollingText01_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText01_C;
     using ScrollingText03_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText03_C;
     FPointerToUberGraphFrame UberGraphFrame_HackingPod_HackScreenTop_C;
-    static constexpr const char* UberGraphFrame_HackingPod_HackScreenTop_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* ButtonBlink;
+    UE_READONLY class UWidgetAnimation* ButtonBlink;
     class UImage* IMG_Caution;
     class UImage* IMG_Caution_2;
     class UImage* IMG_Caution_3;
@@ -31,6 +30,11 @@ public:
     ScrollingText03_C* ScrollingText_1;
     void ExecuteUbergraph_HackingPod_HackScreenTop(int EntryPoint);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HackingPod_HackScreenTop_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets

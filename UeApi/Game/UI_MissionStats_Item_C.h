@@ -28,7 +28,6 @@ public:
     class UTextBlock* TitleText;
     class UTextBlock* TotalText;
     class UMissionStat* Mission_Stat;
-    static constexpr const char* Mission_Stat__UeName = "Mission Stat";
     bool IsSelected;
     TMulticastInlineDelegate<void(UI_MissionStats_Item_C* Sender)> OnHoverBegin;
     TMulticastInlineDelegate<void(UI_MissionStats_Item_C* Sender)> OnHoverEnd;
@@ -37,7 +36,6 @@ public:
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void Set_Selected(bool Selected);
-    static constexpr const char* Set_Selected__UeName = "Set Selected";
     void OnCountChanged_Event(class UObject* WorldContext, class UMissionStat* MissionStat, float Value);
     void OnCountChanged_Event(class UMissionStat* MissionStat, float Value);
     UE_COSMETIC void Construct();
@@ -45,6 +43,12 @@ public:
     void GetMissionStat(class UMissionStat*& Mission_Stat_0);
     void SetCategoryFilter(TArray<class UTexture2D*>& Filter);
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mission_Stat__UeName = "Mission Stat";
+        static constexpr const char* Set_Selected__UeName = "Set Selected";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

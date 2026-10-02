@@ -13,9 +13,13 @@ class ITM_BarGlass_Item_GlyphidSlammer_Support_C : public Game::GameElements::Ba
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/ITM_BarGlass_Item_GlyphidSlammer_Support", "ITM_BarGlass_Item_GlyphidSlammer_Support_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     void UserConstructionScript();
     float PlayDrinkPlayer();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::Drinkables

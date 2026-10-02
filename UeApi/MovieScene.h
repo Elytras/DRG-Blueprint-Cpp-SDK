@@ -1073,20 +1073,14 @@ public:
     TMulticastInlineDelegate<void()> OnFinished;
     TEnum<EMovieScenePlayerStatus> Status;
     bool bReversePlayback;
-    static constexpr const char* bReversePlayback__Replicated = ":";
     class UMovieSceneSequence* Sequence;
     FFrameNumber StartTime;
-    static constexpr const char* StartTime__Replicated = ":";
     int DurationFrames;
-    static constexpr const char* DurationFrames__Replicated = ":";
     float DurationSubFrames;
-    static constexpr const char* DurationSubFrames__Replicated = ":";
     int CurrentNumLoops;
     FMovieSceneSequencePlaybackSettings PlaybackSettings;
-    static constexpr const char* PlaybackSettings__Replicated = ":";
     FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;
     FMovieSceneSequenceReplProperties NetSyncProps;
-    static constexpr const char* NetSyncProps__Replicated = ":";
     TScriptInterface<class IMovieScenePlaybackClient> PlaybackClient;
     class UMovieSceneSequenceTickManager* TickManager;
     void ChangePlaybackDirection();
@@ -1131,6 +1125,21 @@ public:
     UE_PURE bool IsPaused() const;
     UE_PURE bool IsPlaying() const;
     UE_PURE bool IsReversed() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnPlay__UeDispatcher = "Assignable";
+        static constexpr const char* OnPlayReverse__UeDispatcher = "Assignable";
+        static constexpr const char* OnStop__UeDispatcher = "Assignable";
+        static constexpr const char* OnPause__UeDispatcher = "Assignable";
+        static constexpr const char* OnFinished__UeDispatcher = "Assignable";
+        static constexpr const char* bReversePlayback__Replicated = ":";
+        static constexpr const char* StartTime__Replicated = ":";
+        static constexpr const char* DurationFrames__Replicated = ":";
+        static constexpr const char* DurationSubFrames__Replicated = ":";
+        static constexpr const char* PlaybackSettings__Replicated = ":";
+        static constexpr const char* NetSyncProps__Replicated = ":";
+    };
 };
 
 class UMovieSceneSection : public UMovieSceneSignedObject
@@ -1219,13 +1228,17 @@ public:
     float StartOffset;
     float TimeScale;
     float PrerollTime_MovieSceneSubSection;
-    static constexpr const char* PrerollTime_MovieSceneSubSection__UeName = "PrerollTime";
     uint8 NetworkMask;
     class UMovieSceneSequence* SubSequence;
     FString TargetSequenceName;
     FDirectoryPath TargetPathToRecordTo;
     void SetSequence(class UMovieSceneSequence* Sequence);
     UE_PURE class UMovieSceneSequence* GetSequence() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PrerollTime_MovieSceneSubSection__UeName = "PrerollTime";
+    };
 };
 
 class UMovieSceneSubTrack : public UMovieSceneNameableTrack

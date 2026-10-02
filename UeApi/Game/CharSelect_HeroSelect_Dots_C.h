@@ -30,10 +30,14 @@ public:
     void ExecuteUbergraph_CharSelect_HeroSelect_Dots(int EntryPoint);
     UE_COSMETIC void Construct();
     void Set_Character_Class(class UPlayerCharacterID* CharacterClass_0);
-    static constexpr const char* Set_Character_Class__UeName = "Set Character Class";
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateDots();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Character_Class__UeName = "Set Character Class";
+    };
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

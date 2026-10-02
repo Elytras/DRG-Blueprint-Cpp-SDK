@@ -20,7 +20,7 @@ class Widget_DropPod_SeatMonitor_C : public UUserWidget
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/Widget_DropPod_SeatMonitor", "Widget_DropPod_SeatMonitor_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* NewAnimation;
+    UE_READONLY class UWidgetAnimation* NewAnimation;
     class UImage* Image_41;
     class UImage* Image_155;
     class UTextBlock* TextBlock_39;

@@ -112,10 +112,14 @@ public:
     class USceneComponent* CraneYawControl;
     class USceneComponent* CranePitchControl;
     class USceneComponent* CraneCameraMount;
-    static constexpr const char* CraneCameraMount__UeSubobject = "CraneCameraMount /Script/Engine.SceneComponent";
-    static constexpr const char* CranePitchControl__UeSubobject = "CranePitchControl /Script/Engine.SceneComponent";
-    static constexpr const char* CraneYawControl__UeSubobject = "CraneYawControl /Script/Engine.SceneComponent";
-    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CraneCameraMount__UeSubobject = "CraneCameraMount /Script/Engine.SceneComponent";
+        static constexpr const char* CranePitchControl__UeSubobject = "CranePitchControl /Script/Engine.SceneComponent";
+        static constexpr const char* CraneYawControl__UeSubobject = "CraneYawControl /Script/Engine.SceneComponent";
+        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent /Script/Engine.SceneComponent";
+    };
 };
 
 class ACameraRig_Rail : public AActor
@@ -127,10 +131,14 @@ public:
     class USceneComponent* TransformComponent;
     class USplineComponent* RailSplineComponent;
     class USceneComponent* RailCameraMount;
-    static constexpr const char* RailCameraMount__UeSubobject = "RailCameraMount /Script/Engine.SceneComponent";
-    static constexpr const char* RailSplineComponent__UeSubobject = "RailSplineComponent /Script/Engine.SplineComponent";
-    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent /Script/Engine.SceneComponent";
     UE_PURE class USplineComponent* GetRailSplineComponent();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RailCameraMount__UeSubobject = "RailCameraMount /Script/Engine.SceneComponent";
+        static constexpr const char* RailSplineComponent__UeSubobject = "RailSplineComponent /Script/Engine.SplineComponent";
+        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent /Script/Engine.SceneComponent";
+    };
 };
 
 class UCineCameraComponent : public UCameraComponent
@@ -143,7 +151,7 @@ public:
     FCameraFocusSettings FocusSettings;
     float CurrentFocalLength;
     float CurrentAperture;
-    float CurrentFocusDistance;
+    UE_READONLY float CurrentFocusDistance;
     TArray<FNamedFilmbackPreset> FilmbackPresets;
     TArray<FNamedLensPreset> LensPresets;
     FString DefaultFilmbackPresetName;
@@ -168,7 +176,11 @@ class ACineCameraActor : public ACameraActor
 public:
     UE_CLASS("/Script/CinematicCamera", "CineCameraActor");
     FCameraLookatTrackingSettings LookatTrackingSettings;
-    static constexpr const char* CameraComponent__UeSubobject = "CameraComponent /Script/CinematicCamera.CineCameraComponent";
-    static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
     UE_PURE class UCineCameraComponent* GetCineCameraComponent() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CameraComponent__UeSubobject = "CameraComponent /Script/CinematicCamera.CineCameraComponent";
+        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+    };
 };

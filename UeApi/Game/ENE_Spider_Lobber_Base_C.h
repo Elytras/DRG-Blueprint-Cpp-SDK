@@ -24,27 +24,17 @@ class ENE_Spider_Lobber_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_La
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/ENE_Spider_Lobber_Base", "ENE_Spider_Lobber_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Lobber_Base_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Lobber_Base_C__UeName = "UberGraphFrame";
     class UPointLightComponent* ButtLight1;
-    static constexpr const char* ButtLight1__UeScsNode = "af0de01f4e78c4478df78dec36d8b1b9";
     class UPointLightComponent* HeadLight;
-    static constexpr const char* HeadLight__UeScsNode = "df7bb140d992254f865dcc5f293d5341";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "3c707a09dba15147bd11c4fef4b8a22a";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "f6a9d3e69e34fd4795cb388ea0b7263e";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "cdf3ae9b3ddfdf49b7dbd73b4ca1485b";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "e6ed058249cc274599b64c9fad1e9397";
     float Timeline_1_NewTrack;
-    static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_F9A07C5C4BD90F40E985E7ADEBA28A31";
     TEnum<ETimelineDirection> Timeline_1__Direction_F9A07C5C4BD90F40E985E7ADEBA28A31;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_25573A6F4B8E0DEA40A47FAC76CADD3B";
     TEnum<ETimelineDirection> Timeline_0__Direction_25573A6F4B8E0DEA40A47FAC76CADD3B;
     class UTimelineComponent* Timeline_0;
     float PlacementRadius;
@@ -58,7 +48,6 @@ public:
     float LastButtEmissive;
     float LastButtPointsEmissive;
     int AttackIndex;
-    static constexpr const char* AttackIndex__Replicated = "OnRep_AttackIndex:";
     void ExecuteUbergraph_ENE_Spider_Lobber_Base(int EntryPoint);
     void OnMessageAI(FName TriggerName);
     void OnRagdoll();
@@ -76,6 +65,21 @@ public:
     void InitDynamicMaterials();
     void IsFirstAttack(bool& IsFirst);
     void OnRep_AttackIndex();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Lobber_Base_C__UeName = "UberGraphFrame";
+        static constexpr const char* ButtLight1__UeScsNode = "af0de01f4e78c4478df78dec36d8b1b9";
+        static constexpr const char* HeadLight__UeScsNode = "df7bb140d992254f865dcc5f293d5341";
+        static constexpr const char* WeakpointGlow__UeScsNode = "3c707a09dba15147bd11c4fef4b8a22a";
+        static constexpr const char* Capsule__UeScsNode = "f6a9d3e69e34fd4795cb388ea0b7263e";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "cdf3ae9b3ddfdf49b7dbd73b4ca1485b";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "e6ed058249cc274599b64c9fad1e9397";
+        static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_F9A07C5C4BD90F40E985E7ADEBA28A31";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_25573A6F4B8E0DEA40A47FAC76CADD3B";
+        static constexpr const char* AttackIndex__Replicated = "OnRep_AttackIndex:";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber

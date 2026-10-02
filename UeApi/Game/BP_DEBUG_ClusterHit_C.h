@@ -17,9 +17,13 @@ class BP_DEBUG_ClusterHit_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/BP_DEBUG_ClusterHit", "BP_DEBUG_ClusterHit_C");
     class UStaticMeshComponent* Locationindicator;
-    static constexpr const char* Locationindicator__UeScsNode = "ec64fa0de4a54b44a557d49bfcb6a9e1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f95841c1a43406438b906af79a41dcfd";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Locationindicator__UeScsNode = "ec64fa0de4a54b44a557d49bfcb6a9e1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f95841c1a43406438b906af79a41dcfd";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

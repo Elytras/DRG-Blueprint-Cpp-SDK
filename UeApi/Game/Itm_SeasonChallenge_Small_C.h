@@ -26,7 +26,7 @@ class Itm_SeasonChallenge_Small_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Itm_SeasonChallenge_Small", "Itm_SeasonChallenge_Small_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ImageLoaded;
+    UE_READONLY class UWidgetAnimation* ImageLoaded;
     class UButton* Button_Outer;
     class UImage* I_Background;
     class UImage* I_ButtonStyle;

@@ -105,8 +105,8 @@ public:
     using UI_NetInfo_C = Game::UI::Global_UI_Elements::UI_NetInfo_C;
     using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeToBlack;
-    class UWidgetAnimation* MoveIn;
+    UE_READONLY class UWidgetAnimation* FadeToBlack;
+    UE_READONLY class UWidgetAnimation* MoveIn;
     class UCanvasPanel* AllCameraModes;
     Announcement_Controller_C* Announcement_Controller;
     class UCanvasPanel* BottomBar;
@@ -185,10 +185,10 @@ public:
     bool HUDVisible;
     float FPS;
     class UObjective* ObjDummy;
-    class UHUDVisibilityGroup* VG_Grenades;
-    class UHUDVisibilityGroup* VG_Flares;
-    class UHUDVisibilityGroup* VG_Flashlight;
-    class UHUDVisibilityGroup* VG_VersionNumber;
+    UE_READONLY class UHUDVisibilityGroup* VG_Grenades;
+    UE_READONLY class UHUDVisibilityGroup* VG_Flares;
+    UE_READONLY class UHUDVisibilityGroup* VG_Flashlight;
+    UE_READONLY class UHUDVisibilityGroup* VG_VersionNumber;
     void ExecuteUbergraph_HUD_Main(int EntryPoint);
     void RefreshHUDElements();
     void BndEvt__VG_Grenades_K2Node_ComponentBoundEvent_0_VisibilityDelegate__DelegateSignature(class UHUDVisibilityGroup* Group, bool IsVisible_0);
@@ -199,7 +199,6 @@ public:
     void PopEvent(class UWidget* eventWidget, bool Left);
     void PushEvent(class UWidget* eventWidget, bool Left);
     void Setup_HUD_Elements();
-    static constexpr const char* Setup_HUD_Elements__UeName = "Setup HUD Elements";
     void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void UpdateCurrentCanvas();
     void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
@@ -211,6 +210,11 @@ public:
     FText Get_TEMPtestSeedText_Text_0();
     void FixupRetainerWidgets();
     UE_PURE class UJetBootsFuelWidget* GetHudJetBootsFuelVertical() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_HUD_Elements__UeName = "Setup HUD Elements";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

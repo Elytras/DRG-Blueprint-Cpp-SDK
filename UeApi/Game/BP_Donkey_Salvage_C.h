@@ -13,7 +13,11 @@ class BP_Donkey_Salvage_C : public Game::GameElements::Donkey::BP_Donkey_C
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/BP_Donkey_Salvage", "BP_Donkey_Salvage_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+    };
 };
 
 }}}   // namespace Game::GameElements::Donkey

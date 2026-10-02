@@ -18,12 +18,12 @@ class ITM_SupplyBarItem_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_SupplyBarItem", "ITM_SupplyBarItem_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBlink;
+    UE_READONLY class UWidgetAnimation* AnimBlink;
     class UImage* IMG_Border;
     class UImage* IMG_Inner;
     bool IsActivated;
     bool IsBlinking;
-    float BlinkUnder;
+    UE_READONLY float BlinkUnder;
     void ExecuteUbergraph_ITM_SupplyBarItem(int EntryPoint);
     void OnBlinkingFinished();
     UE_COSMETIC void Construct();

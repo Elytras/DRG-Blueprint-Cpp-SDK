@@ -13,6 +13,11 @@ class CP_Xmas_2025_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Xmas_2025", "CP_Xmas_2025_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.CampaignMission CampaignMission_6;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_4;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_4;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_5;/Script/FSD.SchematicReward CampaignMission_6:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_6:SchematicReward_1;/Script/FSD.VanityReward CampaignMission_6:VanityReward_1";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

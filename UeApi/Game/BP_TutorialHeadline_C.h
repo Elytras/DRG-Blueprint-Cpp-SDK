@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/GameElements/Missions/BP_TutorialHeadline", "BP_TutorialHeadline_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "baca211687ef2d4986975a08a75b9b1d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "caccc20eabdc854b9f61f34107317e83";
     void ExecuteUbergraph_BP_TutorialHeadline(int EntryPoint);
     void ReceiveActorBeginOverlap(class AActor* OtherActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Box__UeScsNode = "baca211687ef2d4986975a08a75b9b1d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "caccc20eabdc854b9f61f34107317e83";
+    };
 };
 
 }}}   // namespace Game::GameElements::Missions

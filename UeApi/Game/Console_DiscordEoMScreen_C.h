@@ -42,24 +42,28 @@ public:
     FText PlayerNameText;
     FText FlavorText;
     TMulticastInlineDelegate<void()> ScreenChanged;
-    TArray<FText> FlavorTextOptions;
+    UE_READONLY TArray<FText> FlavorTextOptions;
     void ExecuteUbergraph_Console_DiscordEoMScreen(int EntryPoint);
     void Player_Flavor_Text_Running_Effect();
-    static constexpr const char* Player_Flavor_Text_Running_Effect__UeName = "Player Flavor Text Running Effect";
     void Player_Name_Running_Effect();
-    static constexpr const char* Player_Name_Running_Effect__UeName = "Player Name Running Effect";
     void OpenDescriptions();
     void On_EoM_Data_Received(bool HasEoM);
-    static constexpr const char* On_EoM_Data_Received__UeName = "On EoM Data Received";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Do_Running_Text(FText Text, int Index_0, class UTextBlock* Target);
-    static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
     void UpdateUI(const FDiscordServerData& discordServerCount);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
     void OnSuccess_D5557812434CB42B270037821C78EAB5(class UTexture2DDynamic* Texture);
     void OnFail_D5557812434CB42B270037821C78EAB5(class UTexture2DDynamic* Texture);
     void ClearText();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Player_Flavor_Text_Running_Effect__UeName = "Player Flavor Text Running Effect";
+        static constexpr const char* Player_Name_Running_Effect__UeName = "Player Name Running Effect";
+        static constexpr const char* On_EoM_Data_Received__UeName = "On EoM Data Received";
+        static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

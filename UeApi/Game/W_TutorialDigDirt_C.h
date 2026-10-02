@@ -18,15 +18,19 @@ public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialDigDirt", "W_TutorialDigDirt_C");
     using BP_TutorialTriggerManager_C = Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialDigDirt_C;
-    static constexpr const char* UberGraphFrame_W_TutorialDigDirt_C__UeName = "UberGraphFrame";
     float Gold_Mined;
-    static constexpr const char* Gold_Mined__UeName = "Gold Mined";
     float GoldToMine;
     BP_TutorialTriggerManager_C* Manager;
     void ExecuteUbergraph_W_TutorialDigDirt(int EntryPoint);
     void MessageReceived(FName TriggerName);
     void UpdateText();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_TutorialDigDirt_C__UeName = "UberGraphFrame";
+        static constexpr const char* Gold_Mined__UeName = "Gold Mined";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

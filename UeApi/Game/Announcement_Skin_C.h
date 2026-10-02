@@ -31,7 +31,7 @@ public:
     using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnnounceAnim;
+    UE_READONLY class UWidgetAnimation* AnnounceAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_83;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_85;

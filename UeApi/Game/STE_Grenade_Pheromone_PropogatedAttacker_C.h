@@ -13,6 +13,11 @@ class STE_Grenade_Pheromone_PropogatedAttacker_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Pheromone/STE_Grenade_Pheromone_PropogatedAttacker", "STE_Grenade_Pheromone_PropogatedAttacker_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.MakeAttackableStatusEffectItem MakeAttackableStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Pheromone

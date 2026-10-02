@@ -35,59 +35,34 @@ class BP_ResonanceScannerPod_C : public AResonanceScannerPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_ResonanceScannerPod", "BP_ResonanceScannerPod_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "bef1a87ac075194684e539ff1e1418a6";
     class UFSDAudioComponent* IdleSound_Cue;
-    static constexpr const char* IdleSound_Cue__UeScsNode = "5de8461f9eb0644bae86015ecbd682d6";
     class UStaticMeshComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "89cbe45a642bfa4fa34bd35dbc02044b";
     class UChildActorComponent* FuelLineStart;
-    static constexpr const char* FuelLineStart__UeScsNode = "bf3b34c2e2b676409914948cf7e34a68";
     class USkeletalMeshComponent* Door;
-    static constexpr const char* Door__UeScsNode = "4105735bf157f24faeba06d6dc0cc581";
     class USkeletalMeshComponent* Antenna;
-    static constexpr const char* Antenna__UeScsNode = "6841628b3c06174b90dbe2228a2df094";
     class UStaticMeshComponent* ScannerPod;
-    static constexpr const char* ScannerPod__UeScsNode = "37170209408c7044852435a62b09bc39";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "bd70e65348eca94a913d27207a9ef4ec";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "6af377cb7d4a2b4fb8d4106dfa48d3fe";
     class UTerrainDetectComponent* TerrainDetect3;
-    static constexpr const char* TerrainDetect3__UeScsNode = "744d6b9099373441b737fac5faaf9212";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "e8ef2f49663e4247879b85d219f9e3d7";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "309ebfbebdd84f4b8703deaa11c573bf";
     class UChildActorComponent* BP_OxygenTankSound;
-    static constexpr const char* BP_OxygenTankSound__UeScsNode = "9bcd85d28de41f49940928a4161f17f8";
     class UChildActorComponent* BP_OxygenTank1;
-    static constexpr const char* BP_OxygenTank1__UeScsNode = "948a8a62de098e4ca63de09f919e973c";
     class UChildActorComponent* BP_OxygenTank;
-    static constexpr const char* BP_OxygenTank__UeScsNode = "894b42e75289be4995fd77c62591d5c0";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "6d3838f936a854448138008261abb038";
     class UOxygenSourceComponent* OxygenSource;
-    static constexpr const char* OxygenSource__UeScsNode = "44787601355dce4cb4c56d585a12dd17";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "975695c8c302bd48b900beaf596cfbda";
     class UDropToTerrainComponent* DropToTerrain;
-    static constexpr const char* DropToTerrain__UeScsNode = "9aff6118faed1c48b3b09e78b5f197a1";
     class UAutoCarverComponent* AutoCarver;
-    static constexpr const char* AutoCarver__UeScsNode = "c9526073985df24287d82901bf9e2984";
     class UCapsuleComponent* RepairCollider;
-    static constexpr const char* RepairCollider__UeScsNode = "d4d0655b6e34ce4792ea42761e5e9995";
     class USkeletalMeshComponent* SK_DropPod_Drill;
-    static constexpr const char* SK_DropPod_Drill__UeScsNode = "ad46b02f3179764d8f0e2061d87258c9";
     FTimerHandle ResizeCarverTimer;
     class AFuelLineSegment* FirstFuelLineSegment;
-    static constexpr const char* FirstFuelLineSegment__Replicated = ":";
     class UAudioComponent* DrillingSound;
     class UParticleSystemComponent* DrillingParticles;
     FVector FuelLineStartLocation;
-    static constexpr const char* FuelLineStartLocation__Replicated = "OnRep_FuelLineStartLocation:";
     bool EndPoint;
     class UParticleSystemComponent* DropParticles2;
     class UParticleSystemComponent* DropParticles;
@@ -104,6 +79,35 @@ public:
     void ReceiveBeginPlay();
     void UpdateLights(class UMaterialInterface* NewMaterial);
     void OnRep_FuelLineStartLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "bef1a87ac075194684e539ff1e1418a6";
+        static constexpr const char* IdleSound_Cue__UeScsNode = "5de8461f9eb0644bae86015ecbd682d6";
+        static constexpr const char* MeshCarver__UeScsNode = "89cbe45a642bfa4fa34bd35dbc02044b";
+        static constexpr const char* FuelLineStart__UeScsNode = "bf3b34c2e2b676409914948cf7e34a68";
+        static constexpr const char* Door__UeScsNode = "4105735bf157f24faeba06d6dc0cc581";
+        static constexpr const char* Antenna__UeScsNode = "6841628b3c06174b90dbe2228a2df094";
+        static constexpr const char* ScannerPod__UeScsNode = "37170209408c7044852435a62b09bc39";
+        static constexpr const char* terrainPlacement__UeScsNode = "bd70e65348eca94a913d27207a9ef4ec";
+        static constexpr const char* PathfinderCollision__UeScsNode = "6af377cb7d4a2b4fb8d4106dfa48d3fe";
+        static constexpr const char* TerrainDetect3__UeScsNode = "744d6b9099373441b737fac5faaf9212";
+        static constexpr const char* TerrainDetect2__UeScsNode = "e8ef2f49663e4247879b85d219f9e3d7";
+        static constexpr const char* TerrainDetect1__UeScsNode = "309ebfbebdd84f4b8703deaa11c573bf";
+        static constexpr const char* BP_OxygenTankSound__UeScsNode = "9bcd85d28de41f49940928a4161f17f8";
+        static constexpr const char* BP_OxygenTank1__UeScsNode = "948a8a62de098e4ca63de09f919e973c";
+        static constexpr const char* BP_OxygenTank__UeScsNode = "894b42e75289be4995fd77c62591d5c0";
+        static constexpr const char* outline__UeScsNode = "6d3838f936a854448138008261abb038";
+        static constexpr const char* OxygenSource__UeScsNode = "44787601355dce4cb4c56d585a12dd17";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "975695c8c302bd48b900beaf596cfbda";
+        static constexpr const char* DropToTerrain__UeScsNode = "9aff6118faed1c48b3b09e78b5f197a1";
+        static constexpr const char* AutoCarver__UeScsNode = "c9526073985df24287d82901bf9e2984";
+        static constexpr const char* RepairCollider__UeScsNode = "d4d0655b6e34ce4792ea42761e5e9995";
+        static constexpr const char* SK_DropPod_Drill__UeScsNode = "ad46b02f3179764d8f0e2061d87258c9";
+        static constexpr const char* FirstFuelLineSegment__Replicated = ":";
+        static constexpr const char* FuelLineStartLocation__Replicated = "OnRep_FuelLineStartLocation:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

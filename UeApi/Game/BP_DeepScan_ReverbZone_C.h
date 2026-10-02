@@ -13,7 +13,11 @@ class BP_DeepScan_ReverbZone_C : public AFSDReverbVolume
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_DeepScan_ReverbZone", "BP_DeepScan_ReverbZone_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Collision";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Collision";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

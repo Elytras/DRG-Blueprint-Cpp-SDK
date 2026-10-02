@@ -149,8 +149,8 @@ class UMediaComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/MediaAssets", "MediaComponent");
-    class UMediaTexture* MediaTexture;
-    class UMediaPlayer* MediaPlayer;
+    UE_READONLY class UMediaTexture* MediaTexture;
+    UE_READONLY class UMediaPlayer* MediaPlayer;
     UE_PURE class UMediaPlayer* GetMediaPlayer() const;
     UE_PURE class UMediaTexture* GetMediaTexture() const;
 };
@@ -177,8 +177,8 @@ class UMediaTimeStampInfo : public UObject
 {
 public:
     UE_CLASS("/Script/MediaAssets", "MediaTimeStampInfo");
-    FTimespan Time;
-    int64 SequenceIndex;
+    UE_READONLY FTimespan Time;
+    UE_READONLY int64 SequenceIndex;
 };
 
 class UMediaPlayer : public UObject
@@ -199,10 +199,10 @@ public:
     bool NativeAudioOut;
     bool PlayOnOpen;
     bool Shuffle;
-    bool Loop;
-    class UMediaPlaylist* Playlist;
-    int PlaylistIndex;
-    FTimespan TimeDelay;
+    UE_READONLY bool Loop;
+    UE_READONLY class UMediaPlaylist* Playlist;
+    UE_READONLY int PlaylistIndex;
+    UE_READONLY FTimespan TimeDelay;
     float HorizontalFieldOfView;
     float VerticalFieldOfView;
     FRotator ViewRotation;
@@ -282,6 +282,18 @@ public:
     UE_PURE bool SupportsRate(float Rate, bool Unthinned) const;
     UE_PURE bool SupportsScrubbing() const;
     UE_PURE bool SupportsSeeking() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnEndReached__UeDispatcher = "Assignable";
+        static constexpr const char* OnMediaClosed__UeDispatcher = "Assignable";
+        static constexpr const char* OnMediaOpened__UeDispatcher = "Assignable";
+        static constexpr const char* OnMediaOpenFailed__UeDispatcher = "Assignable";
+        static constexpr const char* OnPlaybackResumed__UeDispatcher = "Assignable";
+        static constexpr const char* OnPlaybackSuspended__UeDispatcher = "Assignable";
+        static constexpr const char* OnSeekCompleted__UeDispatcher = "Assignable";
+        static constexpr const char* OnTracksChanged__UeDispatcher = "Assignable";
+    };
 };
 
 class UMediaPlaylist : public UObject
@@ -311,12 +323,12 @@ public:
     TEnum<ETextureAddress> AddressY;
     bool AutoClear;
     FLinearColor ClearColor;
-    bool EnableGenMips;
+    UE_READONLY bool EnableGenMips;
     uint8 NumMips;
-    bool NewStyleOutput;
+    UE_READONLY bool NewStyleOutput;
     TEnum<EMediaTextureOutputFormat> OutputFormat;
-    float CurrentAspectRatio;
-    TEnum<EMediaTextureOrientation> CurrentOrientation;
+    UE_READONLY float CurrentAspectRatio;
+    UE_READONLY TEnum<EMediaTextureOrientation> CurrentOrientation;
     class UMediaPlayer* MediaPlayer;
     void SetMediaPlayer(class UMediaPlayer* NewMediaPlayer);
     UE_PURE float GetAspectRatio() const;

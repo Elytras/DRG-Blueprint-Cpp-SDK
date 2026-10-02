@@ -30,41 +30,23 @@ public:
     using BP_ShieldBattery_C = Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "6286cbf13fc2a849984185fc4d2a3d14";
     class UChildActorComponent* RHologram;
-    static constexpr const char* RHologram__UeScsNode = "8efae0623688094ea46b10bd6f46e090";
     class UChildActorComponent* LHologram;
-    static constexpr const char* LHologram__UeScsNode = "67e617dc5dd5a844bd58a8adf33ed7a3";
     class UStaticMeshComponent* RShield;
-    static constexpr const char* RShield__UeScsNode = "57e6d182ce3463478970534c0fd35736";
     class UStaticMeshComponent* LShield;
-    static constexpr const char* LShield__UeScsNode = "c3dfb008bfa94444b6228b8001b111ef";
     class UArrowComponent* LLaunchDirection;
-    static constexpr const char* LLaunchDirection__UeScsNode = "b534cc79f0832941b76c6466d1939e0e";
     class UArrowComponent* RLaunchDirection;
-    static constexpr const char* RLaunchDirection__UeScsNode = "26d3b8f3ab74fb49a42405938051cba2";
     class UStaticMeshComponent* LBattery;
-    static constexpr const char* LBattery__UeScsNode = "1e14f53d2dbadc49bf03a2c9fc75cd42";
     class UStaticMeshComponent* RBattery;
-    static constexpr const char* RBattery__UeScsNode = "fcb64d0c4bb07d4a9f8aa93c79d5bd6b";
     class USingleUsableComponent* LUsable;
-    static constexpr const char* LUsable__UeScsNode = "2520254a463bbe4788db8acd318e7994";
     class USingleUsableComponent* RUsable;
-    static constexpr const char* RUsable__UeScsNode = "178202226642e84c8932d4e714c15375";
     class USphereComponent* LUseCollision;
-    static constexpr const char* LUseCollision__UeScsNode = "4963a16051103c488bc15a37508b85c0";
     class USphereComponent* RUseCollision;
-    static constexpr const char* RUseCollision__UeScsNode = "6c8321200299c847859161f614f72939";
     class USkeletalMeshComponent* Body;
-    static constexpr const char* Body__UeScsNode = "1281c7d263035b4cb81471dfca6637c8";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8aca7f5396940d4993f5fba00798b5d2";
     bool Open;
-    static constexpr const char* Open__Replicated = "OnRep_Open:";
     bool LUsed;
-    static constexpr const char* LUsed__Replicated = "OnRep_LUsed:";
     bool RUsed;
-    static constexpr const char* RUsed__Replicated = "OnRep_RUsed:";
     int Uses;
     float LaunchAnimTIme;
     TMulticastInlineDelegate<void()> ShieldDeactivated;
@@ -79,7 +61,6 @@ public:
     void BndEvt__RUsable_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
     void Cheat_Deactivate();
     void Launch_plates();
-    static constexpr const char* Launch_plates__UeName = "Launch plates";
     void RUsed_All();
     void LUse_All();
     void BndEvt__LUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
@@ -92,6 +73,29 @@ public:
     void GetConnectorPoints(FTransform& ConnectorL, FTransform& ConnectorR);
     void Expose();
     void OnRep_Open();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "6286cbf13fc2a849984185fc4d2a3d14";
+        static constexpr const char* RHologram__UeScsNode = "8efae0623688094ea46b10bd6f46e090";
+        static constexpr const char* LHologram__UeScsNode = "67e617dc5dd5a844bd58a8adf33ed7a3";
+        static constexpr const char* RShield__UeScsNode = "57e6d182ce3463478970534c0fd35736";
+        static constexpr const char* LShield__UeScsNode = "c3dfb008bfa94444b6228b8001b111ef";
+        static constexpr const char* LLaunchDirection__UeScsNode = "b534cc79f0832941b76c6466d1939e0e";
+        static constexpr const char* RLaunchDirection__UeScsNode = "26d3b8f3ab74fb49a42405938051cba2";
+        static constexpr const char* LBattery__UeScsNode = "1e14f53d2dbadc49bf03a2c9fc75cd42";
+        static constexpr const char* RBattery__UeScsNode = "fcb64d0c4bb07d4a9f8aa93c79d5bd6b";
+        static constexpr const char* LUsable__UeScsNode = "2520254a463bbe4788db8acd318e7994";
+        static constexpr const char* RUsable__UeScsNode = "178202226642e84c8932d4e714c15375";
+        static constexpr const char* LUseCollision__UeScsNode = "4963a16051103c488bc15a37508b85c0";
+        static constexpr const char* RUseCollision__UeScsNode = "6c8321200299c847859161f614f72939";
+        static constexpr const char* Body__UeScsNode = "1281c7d263035b4cb81471dfca6637c8";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8aca7f5396940d4993f5fba00798b5d2";
+        static constexpr const char* Open__Replicated = "OnRep_Open:";
+        static constexpr const char* LUsed__Replicated = "OnRep_LUsed:";
+        static constexpr const char* RUsed__Replicated = "OnRep_RUsed:";
+        static constexpr const char* Launch_plates__UeName = "Launch plates";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

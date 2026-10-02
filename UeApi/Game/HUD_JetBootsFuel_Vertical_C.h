@@ -21,8 +21,8 @@ class HUD_JetBootsFuel_Vertical_C : public UJetBootsFuelWidget
 public:
     UE_CLASS("/Game/GameElements/JetBoots/HUD_JetBootsFuel_Vertical", "HUD_JetBootsFuel_Vertical_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DangerAnim;
-    class UWidgetAnimation* Fueling;
+    UE_READONLY class UWidgetAnimation* DangerAnim;
+    UE_READONLY class UWidgetAnimation* Fueling;
     class UTextBlock* DangerText;
     class UImage* Image_Background;
     class UImage* Image_Background_Outline;

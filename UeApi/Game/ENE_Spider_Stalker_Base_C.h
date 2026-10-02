@@ -24,23 +24,15 @@ class ENE_Spider_Stalker_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_L
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/ENE_Spider_Stalker_Base", "ENE_Spider_Stalker_Base_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Stalker_Base_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_Base_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "56917c6939636d488e716e5c1af8d2bc";
     class UInDangerComponent* InDanger;
-    static constexpr const char* InDanger__UeScsNode = "ea8f6b77fd635442a9f5b827c224001c";
     BP_BurrowComponent_C* BP_BurrowComponent;
-    static constexpr const char* BP_BurrowComponent__UeScsNode = "774ae48c7d0ff342860d22fb32062706";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "8e7de4d6e5791542baab0c6b68920ce0";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_2C60D7CD445CA4535E3E019343B0C2EC";
     TEnum<ETimelineDirection> Timeline_0__Direction_2C60D7CD445CA4535E3E019343B0C2EC;
     class UTimelineComponent* Timeline_0;
     float FadeValue_NewTrack;
-    static constexpr const char* FadeValue_NewTrack__UeName = "FadeValue_NewTrack_0_DEFB47934D93CD140BBC56A84DE5E335";
     TEnum<ETimelineDirection> FadeValue__Direction_DEFB47934D93CD140BBC56A84DE5E335;
     class UTimelineComponent* FadeValue;
     class UMaterialInterface* CamouflageMaterial;
@@ -49,7 +41,6 @@ public:
     class UMaterialInterface* ClawMaterial;
     float CloakCooldown;
     bool IsCloaked;
-    static constexpr const char* IsCloaked__Replicated = "OnRep_IsCloaked:";
     float MovementBuff;
     float CloakTime;
     float UncloakPhaseDuration;
@@ -73,6 +64,19 @@ public:
     void OnRep_IsCloaked();
     void UpdateAIState();
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_Base_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "56917c6939636d488e716e5c1af8d2bc";
+        static constexpr const char* InDanger__UeScsNode = "ea8f6b77fd635442a9f5b827c224001c";
+        static constexpr const char* BP_BurrowComponent__UeScsNode = "774ae48c7d0ff342860d22fb32062706";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "8e7de4d6e5791542baab0c6b68920ce0";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_2C60D7CD445CA4535E3E019343B0C2EC";
+        static constexpr const char* FadeValue_NewTrack__UeName = "FadeValue_NewTrack_0_DEFB47934D93CD140BBC56A84DE5E335";
+        static constexpr const char* IsCloaked__Replicated = "OnRep_IsCloaked:";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

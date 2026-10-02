@@ -22,20 +22,24 @@ class BP_Crossbow_Projectile_Stuck_Ice_C : public Game::WeaponsNTools::Crossbow:
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Ice", "BP_Crossbow_Projectile_Stuck_Ice_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* FlammableCollision;
-    static constexpr const char* FlammableCollision__UeScsNode = "130e778608b9834db52f52ab3242b3c2";
     class UNiagaraComponent* EffectParticle;
-    static constexpr const char* EffectParticle__UeScsNode = "799a8bb1457f8441b66bc33196973ec2";
     class UPointLightComponent* PointLightFire;
-    static constexpr const char* PointLightFire__UeScsNode = "10e949972a6ed1478a8a16b0811d2846";
     class UCrossbowStuckProjectileEffectApplication* CrossbowStuckProjectileEffectApplication;
-    static constexpr const char* CrossbowStuckProjectileEffectApplication__UeScsNode = "f3242aca7bb1f840a51e48d86c7e7c66";
     TArray<class AFSDPawn*> Targets;
     bool IgnoreCollission;
     void ExecuteUbergraph_BP_Crossbow_Projectile_Stuck_Ice(int EntryPoint);
     void BndEvt__PRJ_Crossbow_IceProjectile_FlammableCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
+        static constexpr const char* FlammableCollision__UeScsNode = "130e778608b9834db52f52ab3242b3c2";
+        static constexpr const char* EffectParticle__UeScsNode = "799a8bb1457f8441b66bc33196973ec2";
+        static constexpr const char* PointLightFire__UeScsNode = "10e949972a6ed1478a8a16b0811d2846";
+        static constexpr const char* CrossbowStuckProjectileEffectApplication__UeScsNode = "f3242aca7bb1f840a51e48d86c7e7c66";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

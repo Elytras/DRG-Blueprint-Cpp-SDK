@@ -32,16 +32,20 @@ public:
     TArray<ITM_VanityTag_CheckBox_C*> CheckBoxes;
     TMulticastInlineDelegate<void()> OnSelectionChanged;
     FDetailedTagSet Tag_Set;
-    static constexpr const char* Tag_Set__UeName = "Tag Set";
     void ExecuteUbergraph_ITM_VanityTag_Category(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Category_and_Tags(class UDetailedTagCategory* InCategory, FDetailedTagSet InTagSet, FDetailedTagSet InSelectedTagSet);
-    static constexpr const char* Set_Category_and_Tags__UeName = "Set Category and Tags";
     void GetSelected(TArray<class UDetailedTag*>& OutSelected);
     void EntryClicked();
     void SetSelected(TArray<class UDetailedTag*>& InSelectedTags);
     void ClearSelected();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Tag_Set__UeName = "Tag Set";
+        static constexpr const char* Set_Category_and_Tags__UeName = "Set Category and Tags";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector

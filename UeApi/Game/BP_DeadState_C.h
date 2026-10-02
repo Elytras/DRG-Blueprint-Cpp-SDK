@@ -21,18 +21,22 @@ public:
     UE_CLASS("/Game/Character/States/BP_DeadState", "BP_DeadState_C");
     FPointerToUberGraphFrame UberGraphFrame;
     FTransform Start_Transform;
-    static constexpr const char* Start_Transform__UeName = "Start Transform";
     class UParticleSystem* deathEffect;
     class UAnimMontage* deathMontage;
     class UParticleSystemComponent* Active_DeathParticle_system;
-    static constexpr const char* Active_DeathParticle_system__UeName = "Active DeathParticle system";
     float Effect_start_delay;
-    static constexpr const char* Effect_start_delay__UeName = "Effect start delay";
     void ExecuteUbergraph_BP_DeadState(int EntryPoint);
     void SetDeathParameters(float respawnDelay_0, float effectDelay, class UAnimMontage* deathMontage_0, class UParticleSystem* deathEffect_0, bool useAnimationTimeAsRespawnTime);
     void ReceiveStateEnter();
     void ReceiveStateExit();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Transform__UeName = "Start Transform";
+        static constexpr const char* Active_DeathParticle_system__UeName = "Active DeathParticle system";
+        static constexpr const char* Effect_start_delay__UeName = "Effect start delay";
+    };
 };
 
 }}}   // namespace Game::Character::States

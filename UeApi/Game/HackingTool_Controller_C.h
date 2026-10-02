@@ -25,7 +25,7 @@ public:
     class UImage* Background;
     class UOverlay* ContentOverlay;
     class UHackingToolWidget* HackingWidget;
-    TSoftClassPtr<class UClass> PreviewWidget;
+    UE_READONLY TSoftClassPtr<class UClass> PreviewWidget;
     void ExecuteUbergraph_HackingTool_Controller(int EntryPoint);
     void ReceiveActionReleased();
     void ReceiveActionPressed();

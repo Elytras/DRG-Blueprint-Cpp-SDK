@@ -28,39 +28,43 @@ public:
     using BP_BansheeModule_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
     using BP_MagneticArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_MagneticArrow_Component_C;
     using BP_RicochetArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_RicochetArrow_Component_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* SimpleDamage;
-    static constexpr const char* SimpleDamage__UeScsNode = "0b3d6a3c73e2f84485e0debabb5cf671";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "b06060f02abbbf49a8da66bbf375ca69";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "92f775cb559b904e9a261f16cfe65f92";
     BP_BansheeModule_Component_C* BP_BansheeModule_Component;
-    static constexpr const char* BP_BansheeModule_Component__UeScsNode = "5d940e0ea4ce3a43b00907aa3ea8ab81";
     BP_RicochetArrow_Component_C* BP_RicochetArrow_Component;
-    static constexpr const char* BP_RicochetArrow_Component__UeScsNode = "dededd1c87e9aa42850777747b99beb9";
     BP_MagneticArrow_Component_C* BP_MagneticArrow_Component;
-    static constexpr const char* BP_MagneticArrow_Component__UeScsNode = "d4b56897b54a6b448caf8ef1a92f77d6";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "92794dde68859d4bbbc67c02c9554869";
     class USceneComponent* HomingTarget;
-    static constexpr const char* HomingTarget__UeScsNode = "a675a0a20720f64c83bab05a45ec5f74";
     class UNiagaraComponent* BansheePulse;
-    static constexpr const char* BansheePulse__UeScsNode = "28b1205c74275540a5c0b7607118e1ea";
     class UNiagaraComponent* NS_Trail;
-    static constexpr const char* NS_Trail__UeScsNode = "a8a9a0d664979742aaf9e2d4f942e5d2";
     class UParticleSystemComponent* P_Crossbow_Trail;
-    static constexpr const char* P_Crossbow_Trail__UeScsNode = "e2f3741434c31844892a570720473016";
     class UDamageComponent* MainDamage;
-    static constexpr const char* MainDamage__UeScsNode = "05ad9b72d163b9419d490a6a2c1dce30";
     class UStaticMeshComponent* mesh_front;
-    static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "1b099cac0cab274e9af4b5a9fe099f1a";
     void ExecuteUbergraph_PRJ_Crossbow_Projectile(int EntryPoint);
     void SetSimpleDamageComponentFromBP();
     void SetMainDamageComponentFromBP();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* SimpleDamage__UeScsNode = "0b3d6a3c73e2f84485e0debabb5cf671";
+        static constexpr const char* outline__UeScsNode = "b06060f02abbbf49a8da66bbf375ca69";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "92f775cb559b904e9a261f16cfe65f92";
+        static constexpr const char* BP_BansheeModule_Component__UeScsNode = "5d940e0ea4ce3a43b00907aa3ea8ab81";
+        static constexpr const char* BP_RicochetArrow_Component__UeScsNode = "dededd1c87e9aa42850777747b99beb9";
+        static constexpr const char* BP_MagneticArrow_Component__UeScsNode = "d4b56897b54a6b448caf8ef1a92f77d6";
+        static constexpr const char* PointLight__UeScsNode = "92794dde68859d4bbbc67c02c9554869";
+        static constexpr const char* HomingTarget__UeScsNode = "a675a0a20720f64c83bab05a45ec5f74";
+        static constexpr const char* BansheePulse__UeScsNode = "28b1205c74275540a5c0b7607118e1ea";
+        static constexpr const char* NS_Trail__UeScsNode = "a8a9a0d664979742aaf9e2d4f942e5d2";
+        static constexpr const char* P_Crossbow_Trail__UeScsNode = "e2f3741434c31844892a570720473016";
+        static constexpr const char* MainDamage__UeScsNode = "05ad9b72d163b9419d490a6a2c1dce30";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* Box__UeScsNode = "1b099cac0cab274e9af4b5a9fe099f1a";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

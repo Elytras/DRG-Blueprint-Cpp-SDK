@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/Art/_TestingGrounds/TextField/BP_TextField_Screen_SeeThrough", "BP_TextField_Screen_SeeThrough_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "c6e01c308c22fd459a7926c1be596dc3";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     bool ShowBG;
     void ExecuteUbergraph_BP_TextField_Screen_SeeThrough(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TextRender__UeScsNode = "c6e01c308c22fd459a7926c1be596dc3";
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+    };
 };
 
 }}}}   // namespace Game::Art::_TestingGrounds::TextField

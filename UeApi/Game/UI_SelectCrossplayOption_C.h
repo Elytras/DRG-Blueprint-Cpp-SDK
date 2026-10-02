@@ -28,12 +28,16 @@ public:
     FString DisabledOptionsText;
     TMulticastInlineDelegate<void()> OnCrossplaySettingSelected;
     void Set_Crossplay_Option_Text();
-    static constexpr const char* Set_Crossplay_Option_Text__UeName = "Set Crossplay Option Text";
     UE_COSMETIC void Construct();
     void ExecuteUbergraph_UI_SelectCrossplayOption(int EntryPoint);
     void BndEvt__UI_SelectCrossplayOption_Button_Crossplay_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void BndEvt__UI_SelectCrossplayOption_Button_No_Crossplay_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__UI_SelectCrossplayOption_Button_EAS_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Crossplay_Option_Text__UeName = "Set Crossplay Option Text";
+    };
 };
 
 }   // namespace CrossPlatform

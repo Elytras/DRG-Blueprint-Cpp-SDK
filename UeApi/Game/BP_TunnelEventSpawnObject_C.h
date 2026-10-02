@@ -15,8 +15,12 @@ class BP_TunnelEventSpawnObject_C : public ATunnelEventEnemySpawner
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEventSpawnObject", "BP_TunnelEventSpawnObject_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/FSD.SpawnActorWithDebrisPosComponent SpawnComponent;/Script/Engine.SphereComponent SpawnSphere";
     TArray<TSoftClassPtr<class UClass>> TunnelEvents;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/FSD.SpawnActorWithDebrisPosComponent SpawnComponent;/Script/Engine.SphereComponent SpawnSphere";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent

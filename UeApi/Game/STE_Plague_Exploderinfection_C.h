@@ -13,6 +13,11 @@ class STE_Plague_Exploderinfection_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueExploder/STE_Plague_Exploderinfection", "STE_Plague_Exploderinfection_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueExploder

@@ -18,11 +18,15 @@ class PRW_LineCutter_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/PRW_LineCutter", "PRW_LineCutter_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "b1b8eaacf7ef44428c3512901879ecad";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "b12ef5a70c29984699a261231d3d47af";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "12584743b0d0b240ac3b057d42c3b67b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "b1b8eaacf7ef44428c3512901879ecad";
+        static constexpr const char* SkeletalMesh__UeScsNode = "b12ef5a70c29984699a261231d3d47af";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "12584743b0d0b240ac3b057d42c3b67b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

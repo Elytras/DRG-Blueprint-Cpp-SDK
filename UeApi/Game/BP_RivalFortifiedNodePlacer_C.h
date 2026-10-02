@@ -18,12 +18,16 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalFortifiedCaveEvent/BP_RivalFortifiedNodePlacer", "BP_RivalFortifiedNodePlacer_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "d3c9e5847dd0fc458f50066366f7171d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ccb7c77cd1a6104bbc69aaf162fcfbee";
     void ExecuteUbergraph_BP_RivalFortifiedNodePlacer(int EntryPoint);
     void ReceiveBeginPlay();
     void GetRoomLocation(FVector& Position) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "d3c9e5847dd0fc458f50066366f7171d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ccb7c77cd1a6104bbc69aaf162fcfbee";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalFortifiedCaveEvent

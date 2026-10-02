@@ -23,22 +23,15 @@ class PRJ_Facility_Barrier_Base_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/PRJ_Facility_Barrier_Base", "PRJ_Facility_Barrier_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPlayerImpactCooldownComponent* PlayerImpactCooldown;
-    static constexpr const char* PlayerImpactCooldown__UeScsNode = "af0dea2ff7fef44ab75d613825782f16";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "24315a0048ecc54f8c1db7ce9f7b0df2";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "e17fb901337c4a42b16deda5f6afa13e";
     class UBoxComponent* BounceBox;
-    static constexpr const char* BounceBox__UeScsNode = "ce43b8a7e209e8419bb264f9ef534e66";
     float Timeline_1_NewTrack;
-    static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_75981F9D4B9BA002AD172C81D5266F91";
     TEnum<ETimelineDirection> Timeline_1__Direction_75981F9D4B9BA002AD172C81D5266F91;
     class UTimelineComponent* Timeline_1;
     float Growth_NewTrack;
-    static constexpr const char* Growth_NewTrack__UeName = "Growth_NewTrack_0_7C9AAAD449A1B186F3E610A47128664F";
     TEnum<ETimelineDirection> Growth__Direction_7C9AAAD449A1B186F3E610A47128664F;
     class UTimelineComponent* Growth;
     float Life;
@@ -51,6 +44,17 @@ public:
     void Timeline_1__FinishedFunc();
     void Growth__UpdateFunc();
     void Growth__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* PlayerImpactCooldown__UeScsNode = "af0dea2ff7fef44ab75d613825782f16";
+        static constexpr const char* Damage__UeScsNode = "24315a0048ecc54f8c1db7ce9f7b0df2";
+        static constexpr const char* StaticMesh__UeScsNode = "e17fb901337c4a42b16deda5f6afa13e";
+        static constexpr const char* BounceBox__UeScsNode = "ce43b8a7e209e8419bb264f9ef534e66";
+        static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_75981F9D4B9BA002AD172C81D5266F91";
+        static constexpr const char* Growth_NewTrack__UeName = "Growth_NewTrack_0_7C9AAAD449A1B186F3E610A47128664F";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

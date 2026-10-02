@@ -13,7 +13,11 @@ class BP_SpawnDroppodLocationItem_C : public ASpawnActorGenerationItem
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_SpawnDroppodLocationItem", "BP_SpawnDroppodLocationItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

@@ -19,14 +19,11 @@ class BP_CoreCorruption_Pillar_C : public ACoreCorruptionPillar
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/BP_CoreCorruption_Pillar", "BP_CoreCorruption_Pillar_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent RockIdleSound;/Script/FSD.MeshCarverComponent DestroyPillarCarver;/Script/FSD.MeshCarverComponent PillarCarver;/Script/FSD.MeshCarverComponent SpaceCarver;/Script/Niagara.NiagaraComponent PillarParticles;/Script/Niagara.NiagaraComponent ShieldBeam;/Script/Engine.PointLightComponent Light;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent StoneRoot;/Script/Engine.SplineComponent ShieldBeamSpline;/Script/Engine.StaticMeshComponent PillarMesh;/Script/Engine.StaticMeshComponent StoneMesh;/Script/FSD.TerrainDetectComponent TerrainDetector;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_RockCarvingTrail;
-    static constexpr const char* NS_RockCarvingTrail__UeScsNode = "e60f833c5ac18b49b1c33ad2f43d7123";
     float Increase_Stone_Glow_Value_2EFC99FF4DFE3149C1B52184D4819D3C;
     TEnum<ETimelineDirection> Increase_Stone_Glow__Direction_2EFC99FF4DFE3149C1B52184D4819D3C;
     class UTimelineComponent* Increase_Stone_Glow;
-    static constexpr const char* Increase_Stone_Glow__UeName = "Increase Stone Glow";
     float FadeParticles_Value_9CD9FC834AB0C32B2AA4B9B14BFB686F;
     TEnum<ETimelineDirection> FadeParticles__Direction_9CD9FC834AB0C32B2AA4B9B14BFB686F;
     class UTimelineComponent* FadeParticles;
@@ -39,11 +36,18 @@ public:
     UE_MULTICAST UE_RELIABLE void All_ActivatePillar();
     void CarvePillar();
     void Increase_Stone_Glow__UpdateFunc();
-    static constexpr const char* Increase_Stone_Glow__UpdateFunc__UeName = "Increase Stone Glow__UpdateFunc";
     void Increase_Stone_Glow__FinishedFunc();
-    static constexpr const char* Increase_Stone_Glow__FinishedFunc__UeName = "Increase Stone Glow__FinishedFunc";
     void FadeParticles__UpdateFunc();
     void FadeParticles__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent RockIdleSound;/Script/FSD.MeshCarverComponent DestroyPillarCarver;/Script/FSD.MeshCarverComponent PillarCarver;/Script/FSD.MeshCarverComponent SpaceCarver;/Script/Niagara.NiagaraComponent PillarParticles;/Script/Niagara.NiagaraComponent ShieldBeam;/Script/Engine.PointLightComponent Light;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent StoneRoot;/Script/Engine.SplineComponent ShieldBeamSpline;/Script/Engine.StaticMeshComponent PillarMesh;/Script/Engine.StaticMeshComponent StoneMesh;/Script/FSD.TerrainDetectComponent TerrainDetector;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* NS_RockCarvingTrail__UeScsNode = "e60f833c5ac18b49b1c33ad2f43d7123";
+        static constexpr const char* Increase_Stone_Glow__UeName = "Increase Stone Glow";
+        static constexpr const char* Increase_Stone_Glow__UpdateFunc__UeName = "Increase Stone Glow__UpdateFunc";
+        static constexpr const char* Increase_Stone_Glow__FinishedFunc__UeName = "Increase Stone Glow__FinishedFunc";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption

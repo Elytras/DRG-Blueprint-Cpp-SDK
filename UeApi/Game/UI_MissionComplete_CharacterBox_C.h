@@ -27,7 +27,7 @@ public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/UI_MissionComplete_CharacterBox", "UI_MissionComplete_CharacterBox_C");
     using UI_MissionComplete_RankLevel_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RankLevel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimMoveIn;
+    UE_READONLY class UWidgetAnimation* AnimMoveIn;
     class UBorder* Border_0;
     class UBorder* Border_1;
     class UButton* BTN_GamerCard;
@@ -57,8 +57,12 @@ public:
     void BndEvt__UI_MissionComplete_RankLevel_K2Node_ComponentBoundEvent_0_CounterAnimFinished__DelegateSignature();
     void BeginCounting();
     void Add_Stat(FText Description, int amount);
-    static constexpr const char* Add_Stat__UeName = "Add Stat";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Stat__UeName = "Add Stat";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

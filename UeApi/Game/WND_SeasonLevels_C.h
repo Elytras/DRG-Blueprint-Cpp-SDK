@@ -25,7 +25,7 @@ public:
     using ITM_TreeOfVanity_Node_C = Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;
     using Itm_LevelSelectIcon_C = Game::UI::Menu_Seasons::Itm_LevelSelectIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* NewRow;
+    UE_READONLY class UWidgetAnimation* NewRow;
     class UButton* Button_Back;
     class UButton* Button_Next;
     class UHorizontalBox* HBox_Levels1;

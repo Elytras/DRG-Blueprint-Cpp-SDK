@@ -13,6 +13,11 @@ class STE_DR_Test_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/STE_DR_Test", "STE_DR_Test_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

@@ -17,15 +17,19 @@ class W_TutorialDepositGold_C : public Game::UI::Tutorial::W_TutorialContent_Bas
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialDepositGold", "W_TutorialDepositGold_C");
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialDepositGold_C;
-    static constexpr const char* UberGraphFrame_W_TutorialDepositGold_C__UeName = "UberGraphFrame";
     float Gold_Mined;
-    static constexpr const char* Gold_Mined__UeName = "Gold Mined";
     float GoldToMine;
     float StartAmount;
     void ExecuteUbergraph_W_TutorialDepositGold(int EntryPoint);
     void FinishedDepositing(class UResourceBank* ResourceBank);
     void UpdateText();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_TutorialDepositGold_C__UeName = "UberGraphFrame";
+        static constexpr const char* Gold_Mined__UeName = "Gold Mined";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

@@ -13,6 +13,11 @@ class STE_MechanicalParasite_slowdown_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/STE_MechanicalParasite_slowdown", "STE_MechanicalParasite_slowdown_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

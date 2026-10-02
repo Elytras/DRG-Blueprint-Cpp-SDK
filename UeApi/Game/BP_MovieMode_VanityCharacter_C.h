@@ -13,8 +13,12 @@ class BP_MovieMode_VanityCharacter_C : public AVanityCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_MovieMode_VanityCharacter", "BP_MovieMode_VanityCharacter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent ItemInstance;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent BodyMesh;/Script/Engine.SkeletalMeshComponent CharacterMesh0";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent ItemInstance;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent BodyMesh;/Script/Engine.SkeletalMeshComponent CharacterMesh0";
+    };
 };
 
 }}}   // namespace Game::GameElements::MovieMode

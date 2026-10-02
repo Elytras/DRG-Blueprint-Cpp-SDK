@@ -26,9 +26,9 @@ public:
     using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
-    class UWidgetAnimation* Intro;
-    class UWidgetAnimation* Outro;
+    UE_READONLY class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Outro;
     class UBorder* BG;
     class UInvalidationBox* Invalidation;
     HUD_DefaultLabel_C* Item_Name;
@@ -40,7 +40,6 @@ public:
     TMulticastInlineDelegate<void(HUD_Resources_Player_Icon_C* ResourceIcon_0)> OnResourceChanged;
     void ExecuteUbergraph_HUD_Resources_Player_Icon(int EntryPoint);
     void Init_Resource();
-    static constexpr const char* Init_Resource__UeName = "Init Resource";
     void OnIncreased(class UCappedResource* Resource_0, float amount_0);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void OnOutroFinished();
@@ -51,6 +50,11 @@ public:
     void Refresh();
     void SetAmount(float amount_0, bool& ValueChanged);
     void UpdateIfChanged(bool Changed);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Init_Resource__UeName = "Init Resource";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources

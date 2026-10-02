@@ -20,7 +20,7 @@ class Widget_Jukebox02_C : public UUserWidget
 public:
     UE_CLASS("/Game/Art/Environments/ShipTesting/Widget_Jukebox02", "Widget_Jukebox02_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* PlayButton;
+    UE_READONLY class UWidgetAnimation* PlayButton;
     class UBorder* Edge;
     class UTextBlock* TextBlock_1;
     FSlateColor NewVar_0;

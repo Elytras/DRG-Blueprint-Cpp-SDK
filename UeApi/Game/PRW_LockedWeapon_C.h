@@ -19,19 +19,23 @@ public:
     UE_CLASS("/Game/UI/Menu_Loadout/PRW_LockedWeapon", "PRW_LockedWeapon_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Crate_B;
-    static constexpr const char* SM_Crate_B__UeScsNode = "b1620dd08ac43d4a901c9aeaafdc72c2";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "225b2520d69ce04c9263b2c657475bc1";
     class UStaticMeshComponent* Top;
-    static constexpr const char* Top__UeScsNode = "f420b85119a1784ca3020a761f43dd4f";
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "724558a2889039429ec405ac8697394b";
     class USceneComponent* Scaler;
-    static constexpr const char* Scaler__UeScsNode = "daa698f913837a4b8e69f9bdb600fa0e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "dd1bcd1bfa515c4fba8b20bae5b8eade";
     void ExecuteUbergraph_PRW_LockedWeapon(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Crate_B__UeScsNode = "b1620dd08ac43d4a901c9aeaafdc72c2";
+        static constexpr const char* Widget__UeScsNode = "225b2520d69ce04c9263b2c657475bc1";
+        static constexpr const char* Top__UeScsNode = "f420b85119a1784ca3020a761f43dd4f";
+        static constexpr const char* Cube__UeScsNode = "724558a2889039429ec405ac8697394b";
+        static constexpr const char* Scaler__UeScsNode = "daa698f913837a4b8e69f9bdb600fa0e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "dd1bcd1bfa515c4fba8b20bae5b8eade";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

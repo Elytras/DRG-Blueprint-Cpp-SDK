@@ -22,15 +22,19 @@ public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/BP_JetBootsBoxLid", "BP_JetBootsBoxLid_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* ExplosionSound;
-    static constexpr const char* ExplosionSound__UeScsNode = "3016bbe136c7e54c97a4f95c884b4c0b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "862cb4b4c8f79d49af0a434c34f2bdb9";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "1de8922689eb334cb6e35a73a8758c10";
     bool CanTriggerSound;
     void ExecuteUbergraph_BP_JetBootsBoxLid(int EntryPoint);
     void BndEvt__BP_JetBootsBoxLid_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ExplosionSound__UeScsNode = "3016bbe136c7e54c97a4f95c884b4c0b";
+        static constexpr const char* StaticMesh__UeScsNode = "862cb4b4c8f79d49af0a434c34f2bdb9";
+        static constexpr const char* Scene__UeScsNode = "1de8922689eb334cb6e35a73a8758c10";
+    };
 };
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint

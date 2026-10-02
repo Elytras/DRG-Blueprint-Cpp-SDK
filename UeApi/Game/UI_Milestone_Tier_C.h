@@ -29,8 +29,12 @@ public:
     void ExecuteUbergraph_UI_Milestone_Tier(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Tier(int Tier);
-    static constexpr const char* Set_Tier__UeName = "Set Tier";
     void InitTierImage(class UImage* Image);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Tier__UeName = "Set Tier";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

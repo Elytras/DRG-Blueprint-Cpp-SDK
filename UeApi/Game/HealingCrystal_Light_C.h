@@ -17,9 +17,13 @@ class HealingCrystal_Light_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/Crystals/HealingCrystal_Light", "HealingCrystal_Light_C");
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "f83faf34e4ff134ebe0e6823dae7d650";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c840af12024be046957cf77368b31d57";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "f83faf34e4ff134ebe0e6823dae7d650";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c840af12024be046957cf77368b31d57";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Crystals

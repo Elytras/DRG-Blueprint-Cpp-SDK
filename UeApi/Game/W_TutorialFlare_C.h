@@ -15,13 +15,17 @@ class W_TutorialFlare_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialFlare", "W_TutorialFlare_C");
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialFlare_C;
-    static constexpr const char* UberGraphFrame_W_TutorialFlare_C__UeName = "UberGraphFrame";
     int FlaresCast;
     int NumberToCast;
     void ExecuteUbergraph_W_TutorialFlare(int EntryPoint);
     void UpdateText();
     void OnFlareThrown();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_TutorialFlare_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

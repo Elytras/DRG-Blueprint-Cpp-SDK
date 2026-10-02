@@ -19,23 +19,27 @@ public:
     UE_CLASS("/Game/Art/BasicArtAssets/Tech/BP_RadarDish01", "BP_RadarDish01_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Light;
-    static constexpr const char* Mesh_Light__UeScsNode = "78baf25a37ae014eb0ca34746a53b86c";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "779cd68cd289fe40bc7200d369300dac";
     class UStaticMeshComponent* Mesh_Base;
-    static constexpr const char* Mesh_Base__UeScsNode = "51d71bf1dd5f15498a6005d0e36cc091";
     class UStaticMeshComponent* Mesh_Dish;
-    static constexpr const char* Mesh_Dish__UeScsNode = "38d87e0e7651b14f97d67fb3c5e649fa";
     class UStaticMeshComponent* Mesh_Arm;
-    static constexpr const char* Mesh_Arm__UeScsNode = "9668801148a49b4cb2fe7f74b612b7ad";
     class UStaticMeshComponent* Mesh_Foot;
-    static constexpr const char* Mesh_Foot__UeScsNode = "a4053a3597e5ef45978ccf67f25a4c8f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ed2023e3bad4cb4b81f22a5b4e442e6f";
     float RotationRate;
     void ExecuteUbergraph_BP_RadarDish01(int EntryPoint);
     void ReceiveBeginPlay();
     void SetRotationRate(class URotatingMovementComponent* self2, float RotationRate_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh_Light__UeScsNode = "78baf25a37ae014eb0ca34746a53b86c";
+        static constexpr const char* RotatingMovement__UeScsNode = "779cd68cd289fe40bc7200d369300dac";
+        static constexpr const char* Mesh_Base__UeScsNode = "51d71bf1dd5f15498a6005d0e36cc091";
+        static constexpr const char* Mesh_Dish__UeScsNode = "38d87e0e7651b14f97d67fb3c5e649fa";
+        static constexpr const char* Mesh_Arm__UeScsNode = "9668801148a49b4cb2fe7f74b612b7ad";
+        static constexpr const char* Mesh_Foot__UeScsNode = "a4053a3597e5ef45978ccf67f25a4c8f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ed2023e3bad4cb4b81f22a5b4e442e6f";
+    };
 };
 
 }}}}   // namespace Game::Art::BasicArtAssets::Tech

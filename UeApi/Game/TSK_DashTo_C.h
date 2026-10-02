@@ -18,13 +18,17 @@ class TSK_DashTo_C : public UBTTask_BlueprintBase
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/TSK_DashTo", "TSK_DashTo_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Game";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDashPoints* DashPoints;
     void ExecuteUbergraph_TSK_DashTo(int EntryPoint);
     void CustomEvent();
     void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Game";
+    };
 };
 
 }}}   // namespace Game::Enemies::FlyingBug

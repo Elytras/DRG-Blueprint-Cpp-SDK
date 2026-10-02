@@ -13,6 +13,11 @@ class STE_Geyser_Lava_Small_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/LavaGeyser/STE_Geyser_Lava_Small", "STE_Geyser_Lava_Small_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::LavaGeyser

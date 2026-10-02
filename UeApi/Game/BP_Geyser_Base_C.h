@@ -16,7 +16,11 @@ class BP_Geyser_Base_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/Geyser/BP_Geyser_Base", "BP_Geyser_Base_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "665dce9c7bc830448ece94ffcb29ede8";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "665dce9c7bc830448ece94ffcb29ede8";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::Geyser

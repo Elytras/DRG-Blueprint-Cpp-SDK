@@ -31,12 +31,9 @@ public:
     class UImage* Shell2A;
     class UImage* Shell2B;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     float Opacity_Very_Low;
-    static constexpr const char* Opacity_Very_Low__UeName = "Opacity Very Low";
     bool IsAccurate;
     void ExecuteUbergraph_HUD_CrossHair_NewSawedOffShotgunDynamic(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -45,6 +42,13 @@ public:
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+        static constexpr const char* Opacity_Very_Low__UeName = "Opacity Very Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

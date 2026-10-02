@@ -30,36 +30,23 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SeaUrchin/BP_SeaUrchin", "BP_SeaUrchin_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "32b7df8808f596478899676213bed94b";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "ec5a3f9f70d266438c84d4b0d3587b93";
     class UStatusEffectTriggerComponent* StatusEffectTrigger1;
-    static constexpr const char* StatusEffectTrigger1__UeScsNode = "e2786f5a68247148999ad9a2901191eb";
     class USphereComponent* BlockingSphere;
-    static constexpr const char* BlockingSphere__UeScsNode = "df12e72550dc2b4191fc992cd7c307fe";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "60419d067cb8a349bf5b4238eaf82187";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "72663b243287c449925f6b225384f814";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "985149fe2e37494e988f8c51e84b7cfb";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "1b908e2f6947c442af7c9b3a33798eb7";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "7fefb9b8ea6b2c4a96c5d36c77177f09";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_3_92B13E094B2DF1BDD1B63E8B51041D1A";
     float Timeline_0_Displacement_Offset_92B13E094B2DF1BDD1B63E8B51041D1A;
     TEnum<ETimelineDirection> Timeline_0__Direction_92B13E094B2DF1BDD1B63E8B51041D1A;
     class UTimelineComponent* Timeline_0;
     float Reduce_Offset_NewTrack;
-    static constexpr const char* Reduce_Offset_NewTrack__UeName = "Reduce_Offset_NewTrack_3_C5AFCD9F419B0285FA202B94564C9676";
     float Reduce_Offset_Displacement_Offset_C5AFCD9F419B0285FA202B94564C9676;
     TEnum<ETimelineDirection> Reduce_Offset__Direction_C5AFCD9F419B0285FA202B94564C9676;
     class UTimelineComponent* Reduce_Offset;
-    static constexpr const char* Reduce_Offset__UeName = "Reduce Offset";
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     float InitialDisplacementOffset;
     void ExecuteUbergraph_BP_SeaUrchin(int EntryPoint);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
@@ -69,10 +56,27 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void Reduce_Offset__UpdateFunc();
-    static constexpr const char* Reduce_Offset__UpdateFunc__UeName = "Reduce Offset__UpdateFunc";
     void Reduce_Offset__FinishedFunc();
-    static constexpr const char* Reduce_Offset__FinishedFunc__UeName = "Reduce Offset__FinishedFunc";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "32b7df8808f596478899676213bed94b";
+        static constexpr const char* TerrainDetect__UeScsNode = "ec5a3f9f70d266438c84d4b0d3587b93";
+        static constexpr const char* StatusEffectTrigger1__UeScsNode = "e2786f5a68247148999ad9a2901191eb";
+        static constexpr const char* BlockingSphere__UeScsNode = "df12e72550dc2b4191fc992cd7c307fe";
+        static constexpr const char* Sphere__UeScsNode = "60419d067cb8a349bf5b4238eaf82187";
+        static constexpr const char* PathfinderCollision__UeScsNode = "72663b243287c449925f6b225384f814";
+        static constexpr const char* SimpleHealth__UeScsNode = "985149fe2e37494e988f8c51e84b7cfb";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "1b908e2f6947c442af7c9b3a33798eb7";
+        static constexpr const char* StaticMesh__UeScsNode = "7fefb9b8ea6b2c4a96c5d36c77177f09";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_3_92B13E094B2DF1BDD1B63E8B51041D1A";
+        static constexpr const char* Reduce_Offset_NewTrack__UeName = "Reduce_Offset_NewTrack_3_C5AFCD9F419B0285FA202B94564C9676";
+        static constexpr const char* Reduce_Offset__UeName = "Reduce Offset";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+        static constexpr const char* Reduce_Offset__UpdateFunc__UeName = "Reduce Offset__UpdateFunc";
+        static constexpr const char* Reduce_Offset__FinishedFunc__UeName = "Reduce Offset__FinishedFunc";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SeaUrchin

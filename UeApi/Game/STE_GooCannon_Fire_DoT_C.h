@@ -13,6 +13,11 @@ class STE_GooCannon_Fire_DoT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/STEs/STE_GooCannon_Fire_DOT", "STE_GooCannon_Fire_DoT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::GooCannon::STEs

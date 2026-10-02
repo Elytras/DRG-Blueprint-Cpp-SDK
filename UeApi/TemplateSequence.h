@@ -93,8 +93,12 @@ public:
     bool bRandomSegment;
     class USequenceCameraShakeSequencePlayer* Player;
     class USequenceCameraShakeCameraStandIn* CameraStandIn;
-    static constexpr const char* CameraStandIn__UeSubobject = "CameraStandIn /Script/TemplateSequence.SequenceCameraShakeCameraStandIn";
-    static constexpr const char* Player__UeSubobject = "Player /Script/TemplateSequence.SequenceCameraShakeSequencePlayer";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CameraStandIn__UeSubobject = "CameraStandIn /Script/TemplateSequence.SequenceCameraShakeCameraStandIn";
+        static constexpr const char* Player__UeSubobject = "Player /Script/TemplateSequence.SequenceCameraShakeSequencePlayer";
+    };
 };
 
 class USequenceCameraShakeSequencePlayer : public UObject
@@ -110,18 +114,22 @@ class ATemplateSequenceActor : public AActor
 {
 public:
     UE_CLASS("/Script/TemplateSequence", "TemplateSequenceActor");
-    FMovieSceneSequencePlaybackSettings PlaybackSettings;
-    class UTemplateSequencePlayer* SequencePlayer;
-    static constexpr const char* SequencePlayer__Replicated = ":";
-    FSoftObjectPath TemplateSequence;
-    FTemplateSequenceBindingOverrideData BindingOverride;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
-    static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/TemplateSequence.TemplateSequencePlayer";
+    UE_READONLY FMovieSceneSequencePlaybackSettings PlaybackSettings;
+    UE_READONLY class UTemplateSequencePlayer* SequencePlayer;
+    UE_READONLY FSoftObjectPath TemplateSequence;
+    UE_READONLY FTemplateSequenceBindingOverrideData BindingOverride;
     void SetBinding(class AActor* Actor, bool bOverridesDefault);
     void SetSequence(class UTemplateSequence* InSequence);
     UE_PURE class UTemplateSequence* GetSequence() const;
     UE_PURE class UTemplateSequencePlayer* GetSequencePlayer() const;
     UE_PURE class UTemplateSequence* LoadSequence() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SequencePlayer__Replicated = ":";
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+        static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/TemplateSequence.TemplateSequencePlayer";
+    };
 };
 
 class UTemplateSequencePlayer : public UMovieSceneSequencePlayer

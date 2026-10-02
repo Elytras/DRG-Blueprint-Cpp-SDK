@@ -17,9 +17,13 @@ class BP_MissionStatScreen_C : public AActor
 public:
     UE_CLASS("/Game/UI/BP_MissionStatScreen", "BP_MissionStatScreen_C");
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+    };
 };
 
 }}   // namespace Game::UI

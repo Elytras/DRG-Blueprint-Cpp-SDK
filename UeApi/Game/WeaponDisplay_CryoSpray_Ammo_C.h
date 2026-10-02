@@ -31,7 +31,11 @@ public:
     void OnItemUnequipped();
     void Init(class AItem* Item_0);
     void Set_Progress(float Progress);
-    static constexpr const char* Set_Progress__UeName = "Set Progress";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Progress__UeName = "Set Progress";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

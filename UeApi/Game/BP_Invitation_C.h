@@ -29,8 +29,8 @@ public:
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Hide;
-    class UWidgetAnimation* Show;
+    UE_READONLY class UWidgetAnimation* Hide;
+    UE_READONLY class UWidgetAnimation* Show;
     class UImage* AvatarImage;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;

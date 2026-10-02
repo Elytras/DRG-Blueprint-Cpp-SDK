@@ -19,9 +19,13 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_1;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     void ExecuteUbergraph_HUD_CrossHair_Basic02(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs

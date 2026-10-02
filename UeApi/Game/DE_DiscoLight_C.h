@@ -32,13 +32,17 @@ public:
     bool EnabledEffect;
     void ExecuteUbergraph_DE_DiscoLight(int EntryPoint);
     void Set_Light();
-    static constexpr const char* Set_Light__UeName = "Set Light";
     void OnStopEffect();
     void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
     void OnLoaded_9A4F10A04AD1DAA8BA45FFA4A7DB3EEC(class UObject* Loaded);
     void OnRep_Light();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Light__UeName = "Set Light";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

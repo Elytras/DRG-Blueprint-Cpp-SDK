@@ -34,42 +34,26 @@ class ENE_Spider_ExploderTank_C : public Game::Enemies::Spider::ENE_SpiderBase_L
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/ENE_Spider_ExploderTank", "ENE_Spider_ExploderTank_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_ExploderTank_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_ExploderTank_C__UeName = "UberGraphFrame";
     class UFSDAudioComponent* Growl;
-    static constexpr const char* Growl__UeScsNode = "20a4ac6693107a4bbd04a3393dbf973a";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "161cd03723a53947af983704e305afe9";
     class UMeleeAttackComponent* CarveAttack;
-    static constexpr const char* CarveAttack__UeScsNode = "a6ce505f6d2a22438d1e13805b392b82";
     class UAlignEnemyComponent* AlignEnemy;
-    static constexpr const char* AlignEnemy__UeScsNode = "328df192c1e08347b0f35b48e421ec6d";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "482e757448829b4982344abe787906b8";
     class UParticleSystemComponent* P_ExploderTank_CollectingEmbers;
-    static constexpr const char* P_ExploderTank_CollectingEmbers__UeScsNode = "3737a14e800be34b86a79406e8600034";
     class UDamageComponent* DamageDeathExplosion;
-    static constexpr const char* DamageDeathExplosion__UeScsNode = "3bc049ee406e354c895e08174fdde302";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "1390adcab483f44bae4548614b3d95a2";
     class UBillboardComponent* ExplosionOrigin;
-    static constexpr const char* ExplosionOrigin__UeScsNode = "6148fd6ae6f26d4480c242aada15530a";
     class UBillboardComponent* ClusterOrigin;
-    static constexpr const char* ClusterOrigin__UeScsNode = "af637309e090c045b32b2c8d6a08675a";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "0d8fe0e47b059c4e8b7cfc7041bcab3c";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "e95463d1d24583489eac11e5ff8a7fe9";
     class UPointLightComponent* Light_BackBody;
-    static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
     class UParticleSystem* ExplosionParticles;
     float WeakspotDamageMult;
     int NumClusterBombs;
     int NumWeakspotsDestroyed;
     class UParticleSystem* AoeAttackParticles;
     bool IsSucking;
-    static constexpr const char* IsSucking__Replicated = "OnRep_IsSucking:";
     class UFSDAchievement* CyaDetonatorAchievement;
     float PushForce;
     class UClass* ClusterProjectileType;
@@ -79,23 +63,18 @@ public:
     void ExecuteUbergraph_ENE_Spider_ExploderTank(int EntryPoint);
     void ExplodedDeath();
     void Cooked_Death();
-    static constexpr const char* Cooked_Death__UeName = "Cooked Death";
     void ChemicalExplosionDeath();
     void CorrosiveDeath();
     void MakeElite();
     void Frozen_Explosion();
-    static constexpr const char* Frozen_Explosion__UeName = "Frozen Explosion";
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void ReceiveBeginPlay();
     void BndEvt__ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void Attack(FName nameValue);
     void Play_Burn_Death();
-    static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
     void Play_Body_Death_Effects();
-    static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
     void ShootClusterBombs();
     void Play_Frozen_Death();
-    static constexpr const char* Play_Frozen_Death__UeName = "Play Frozen Death";
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);
     void OnMessageAI(FName TriggerName);
@@ -107,11 +86,36 @@ public:
     bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void GetEnemySpawnedCount(int& SpawnCount);
     void Apply_Force_to_Players_in_Range(TArray<class APlayerCharacter*>& Array_of_Players, float Directional_Force_to_Apply);
-    static constexpr const char* Apply_Force_to_Players_in_Range__UeName = "Apply Force to Players in Range";
     void MakeCrater();
     void SetupWeakpointGlow();
     void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_ExploderTank_C__UeName = "UberGraphFrame";
+        static constexpr const char* Growl__UeScsNode = "20a4ac6693107a4bbd04a3393dbf973a";
+        static constexpr const char* WeakpointGlow__UeScsNode = "161cd03723a53947af983704e305afe9";
+        static constexpr const char* CarveAttack__UeScsNode = "a6ce505f6d2a22438d1e13805b392b82";
+        static constexpr const char* AlignEnemy__UeScsNode = "328df192c1e08347b0f35b48e421ec6d";
+        static constexpr const char* Capsule__UeScsNode = "482e757448829b4982344abe787906b8";
+        static constexpr const char* P_ExploderTank_CollectingEmbers__UeScsNode = "3737a14e800be34b86a79406e8600034";
+        static constexpr const char* DamageDeathExplosion__UeScsNode = "3bc049ee406e354c895e08174fdde302";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "1390adcab483f44bae4548614b3d95a2";
+        static constexpr const char* ExplosionOrigin__UeScsNode = "6148fd6ae6f26d4480c242aada15530a";
+        static constexpr const char* ClusterOrigin__UeScsNode = "af637309e090c045b32b2c8d6a08675a";
+        static constexpr const char* Damage__UeScsNode = "0d8fe0e47b059c4e8b7cfc7041bcab3c";
+        static constexpr const char* Sphere__UeScsNode = "e95463d1d24583489eac11e5ff8a7fe9";
+        static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
+        static constexpr const char* IsSucking__Replicated = "OnRep_IsSucking:";
+        static constexpr const char* Cooked_Death__UeName = "Cooked Death";
+        static constexpr const char* Frozen_Explosion__UeName = "Frozen Explosion";
+        static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
+        static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
+        static constexpr const char* Play_Frozen_Death__UeName = "Play Frozen Death";
+        static constexpr const char* Apply_Force_to_Players_in_Range__UeName = "Apply Force to Players in Range";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::ExploderTank

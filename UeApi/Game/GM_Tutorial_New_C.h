@@ -20,16 +20,20 @@ class GM_Tutorial_New_C : public Game::Game::GM_Mining_C
 public:
     UE_CLASS("/Game/Game/GM_Tutorial_New", "GM_Tutorial_New_C");
     using BP_TutorialComponent_C = Game::LevelElements::Tutorial::BP_TutorialComponent_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Tutorial_New_C;
-    static constexpr const char* UberGraphFrame_GM_Tutorial_New_C__UeName = "UberGraphFrame";
     BP_TutorialComponent_C* BP_TutorialComponent;
-    static constexpr const char* BP_TutorialComponent__UeScsNode = "401446bc58369a4aabd357723a3c5135";
     void ExecuteUbergraph_GM_Tutorial_New(int EntryPoint);
     void ReceiveBeginPlay();
     void SpawnBosco(FTransform Location);
     void GetEscapepodLocation(FTransform& Location);
     class UClass* GetDefaultPawnClassForController(class AController* InController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_GM_Tutorial_New_C__UeName = "UberGraphFrame";
+        static constexpr const char* BP_TutorialComponent__UeScsNode = "401446bc58369a4aabd357723a3c5135";
+    };
 };
 
 }}   // namespace Game::Game

@@ -13,6 +13,11 @@ class STE_FungusPoisonDOT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/PoisonGasFungus/STE_FungusPoisonDOT", "STE_FungusPoisonDOT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus

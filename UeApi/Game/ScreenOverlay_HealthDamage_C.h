@@ -36,13 +36,17 @@ public:
     void UpdateBloodColor(bool NewValue);
     void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void End_Splat();
-    static constexpr const char* End_Splat__UeName = "End Splat";
     void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void OnDamageTaken_Event(float amount);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Begin_Splat(float Duration, FLinearColor Color_0);
-    static constexpr const char* Begin_Splat__UeName = "Begin Splat";
     void CheckForLowHealth(float StartAnimTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* End_Splat__UeName = "End Splat";
+        static constexpr const char* Begin_Splat__UeName = "Begin Splat";
+    };
 };
 
 }}}   // namespace Game::UI::ScreenOverlays

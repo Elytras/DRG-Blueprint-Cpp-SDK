@@ -25,21 +25,14 @@ class ITM_Grenade_Base_C : public AGrenade
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_Grenade_Base", "ITM_Grenade_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_GrenadeTrail;
-    static constexpr const char* P_GrenadeTrail__UeScsNode = "a864b1aef9b22e45a8b3ec9460ae44f8";
     class UUpgradableGearComponent* UpgradableGear;
-    static constexpr const char* UpgradableGear__UeScsNode = "88568586fd829441abc8b3560764bf7b";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "5c1278cf1b18664facaf5239174e33af";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "c9eeb42350ce4345b03b408405d5cafa";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "2f0545896f505d46b7c3c979436f4ebc";
     class APlayerCharacter* Character;
     class UDialogDataAsset* Grenade_warning;
-    static constexpr const char* Grenade_warning__UeName = "Grenade warning";
     float GrenadeLifetimeAfterExplosion;
     float DebugRadius;
     class UParticleSystem* DelayedDestructionParticles;
@@ -57,6 +50,17 @@ public:
     float GetCooldownTime();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* P_GrenadeTrail__UeScsNode = "a864b1aef9b22e45a8b3ec9460ae44f8";
+        static constexpr const char* UpgradableGear__UeScsNode = "88568586fd829441abc8b3560764bf7b";
+        static constexpr const char* Widget__UeScsNode = "5c1278cf1b18664facaf5239174e33af";
+        static constexpr const char* StaticMesh__UeScsNode = "c9eeb42350ce4345b03b408405d5cafa";
+        static constexpr const char* Box__UeScsNode = "2f0545896f505d46b7c3c979436f4ebc";
+        static constexpr const char* Grenade_warning__UeName = "Grenade warning";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

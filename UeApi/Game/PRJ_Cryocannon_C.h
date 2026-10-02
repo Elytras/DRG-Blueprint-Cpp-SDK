@@ -23,28 +23,32 @@ class PRJ_Cryocannon_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/PRJ_Cryocannon", "PRJ_Cryocannon_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "7a1eb080444e2b419a4c1cfaf345affc";
     class UDamageComponent* DamageImpact;
-    static constexpr const char* DamageImpact__UeScsNode = "cb330d6042be0345adebc098758bae85";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "8ea8d502cc6f5e4284273cc3bfc721f5";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "028ca520dc8e994db813eac046e7b34a";
     class UDamageComponent* DamageGraze;
-    static constexpr const char* DamageGraze__UeScsNode = "bb2b1f0014dc9e49a3e150208e62078e";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "5cec1b2d7b2c664d9ac52df42d95bf1e";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "444be9a852389745acd2bbb1b35aed8a";
     void ExecuteUbergraph_PRJ_Cryocannon(int EntryPoint);
     void Die();
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* RotatingMovement__UeScsNode = "7a1eb080444e2b419a4c1cfaf345affc";
+        static constexpr const char* DamageImpact__UeScsNode = "cb330d6042be0345adebc098758bae85";
+        static constexpr const char* Sphere__UeScsNode = "8ea8d502cc6f5e4284273cc3bfc721f5";
+        static constexpr const char* StaticMesh__UeScsNode = "028ca520dc8e994db813eac046e7b34a";
+        static constexpr const char* DamageGraze__UeScsNode = "bb2b1f0014dc9e49a3e150208e62078e";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "5cec1b2d7b2c664d9ac52df42d95bf1e";
+        static constexpr const char* ParticleSystem__UeScsNode = "444be9a852389745acd2bbb1b35aed8a";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

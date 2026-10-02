@@ -22,12 +22,16 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UScrollBox* ScrollBox_79;
     TArray<Cheat_SetPerk_Row_C*> Perk_Rows;
-    static constexpr const char* Perk_Rows__UeName = "Perk Rows";
     TArray<class UPerkAsset*> EquippedPerks;
     void ExecuteUbergraph_Cheat_SetPerk(int EntryPoint);
     void Set_Perk_In_Row_State(Cheat_SetPerk_Row_C* Buff_row_to_skip);
-    static constexpr const char* Set_Perk_In_Row_State__UeName = "Set Perk In Row State";
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Perk_Rows__UeName = "Perk Rows";
+        static constexpr const char* Set_Perk_In_Row_State__UeName = "Set Perk In Row State";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

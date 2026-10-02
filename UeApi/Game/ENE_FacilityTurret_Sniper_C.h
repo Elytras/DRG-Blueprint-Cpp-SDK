@@ -20,25 +20,15 @@ class ENE_FacilityTurret_Sniper_C : public Game::GameElements::Objectives::Facil
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Sniper", "ENE_FacilityTurret_Sniper_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTurret_Sniper_C;
-    static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Sniper_C__UeName = "UberGraphFrame";
     class UBoxComponent* AoECollision;
-    static constexpr const char* AoECollision__UeScsNode = "427999ed0c1a2c499e58f2123bb10257";
     class UParticleSystemComponent* BeamLockOn;
-    static constexpr const char* BeamLockOn__UeScsNode = "e2f4b4ac16b02e44889545c81f1fde25";
     class UProjectileAttackComponent* SniperAttack;
-    static constexpr const char* SniperAttack__UeScsNode = "b7a3ce608a0c7043a5e5f467178bd711";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "fc00a11ed6b85248b9ccf630c32dcdd0";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "3ee89144221f124cbd28b642bdd6446e";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "6f6d8b44497e3b45ba837dbe183fcd14";
     class UNiagaraComponent* LockonParticles;
-    static constexpr const char* LockonParticles__UeScsNode = "17f548d7d27ea040bcd9c31d72b5a83f";
     class UParticleSystemComponent* Beam;
-    static constexpr const char* Beam__UeScsNode = "71d2e1408dfe3646a69248ca47f4f487";
     float Timer;
     void ExecuteUbergraph_ENE_FacilityTurret_Sniper(int EntryPoint);
     void BndEvt__ENE_FacilityTurret_Sniper_SniperAttack_K2Node_ComponentBoundEvent_2_ProjectileAttackDelegate__DelegateSignature();
@@ -47,6 +37,20 @@ public:
     void OnLockedOn(bool lockedOn);
     void ReceiveBeginPlay();
     void OnEngagedChanged(bool engaged);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Sniper_C__UeName = "UberGraphFrame";
+        static constexpr const char* AoECollision__UeScsNode = "427999ed0c1a2c499e58f2123bb10257";
+        static constexpr const char* BeamLockOn__UeScsNode = "e2f4b4ac16b02e44889545c81f1fde25";
+        static constexpr const char* SniperAttack__UeScsNode = "b7a3ce608a0c7043a5e5f467178bd711";
+        static constexpr const char* PointLight__UeScsNode = "fc00a11ed6b85248b9ccf630c32dcdd0";
+        static constexpr const char* PointLight2__UeScsNode = "3ee89144221f124cbd28b642bdd6446e";
+        static constexpr const char* PointLight1__UeScsNode = "6f6d8b44497e3b45ba837dbe183fcd14";
+        static constexpr const char* LockonParticles__UeScsNode = "17f548d7d27ea040bcd9c31d72b5a83f";
+        static constexpr const char* Beam__UeScsNode = "71d2e1408dfe3646a69248ca47f4f487";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

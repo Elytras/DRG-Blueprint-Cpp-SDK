@@ -13,6 +13,11 @@ class STE_Stalker_ShieldDebuff_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/STE_Stalker_ShieldDebuff", "STE_Stalker_ShieldDebuff_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerArmorStatusEffectItem PlayerArmorStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

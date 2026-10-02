@@ -17,15 +17,19 @@ class Loadout_BP_Sentry_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/Loadout_BP_Sentry", "Loadout_BP_Sentry_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "6e9af15217564a4d936b226dc83af96d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "754054aacaab834dbba3b7a1aafd722c";
     void ExecuteUbergraph_Loadout_BP_Sentry(int EntryPoint);
     void RecieveUnequipped();
     void RecieveEquipped();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* SkeletalMesh__UeScsNode = "6e9af15217564a4d936b226dc83af96d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "754054aacaab834dbba3b7a1aafd722c";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SentryGun

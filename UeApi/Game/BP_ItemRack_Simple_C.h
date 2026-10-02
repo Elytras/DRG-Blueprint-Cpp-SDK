@@ -24,20 +24,24 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_ItemRack_Simple", "BP_ItemRack_Simple_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "bcf32d3723a0654c914aec4bd92d1b28";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "f5717140db81e146a5efabbd20474d4b";
     class UBoxComponent* BoxCollider;
-    static constexpr const char* BoxCollider__UeScsNode = "41a4f39699b0054ea4df0361c87d0022";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "4b1525b0e8a571498b920d9ed35592aa";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cbd128fa273bca47b506587a8449756b";
     TSoftClassPtr<class UClass> itemClass;
     void ExecuteUbergraph_BP_ItemRack_Simple(int EntryPoint);
     void BndEvt__BP_ItemRack_Simple_InstantUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ReceiveBeginPlay();
     void BndEvt__BP_ItemRack_Simple_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "bcf32d3723a0654c914aec4bd92d1b28";
+        static constexpr const char* InstantUsable__UeScsNode = "f5717140db81e146a5efabbd20474d4b";
+        static constexpr const char* BoxCollider__UeScsNode = "41a4f39699b0054ea4df0361c87d0022";
+        static constexpr const char* Capsule__UeScsNode = "4b1525b0e8a571498b920d9ed35592aa";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cbd128fa273bca47b506587a8449756b";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod

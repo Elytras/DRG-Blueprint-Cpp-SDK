@@ -19,7 +19,6 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FTimerHandle Timer_Charge;
     int ChargeCount;
-    static constexpr const char* ChargeCount__Replicated = "OnRep_ChargeCount:";
     TMulticastInlineDelegate<void(int ChargeCount_0)> OnChargeCountChanged;
     float ChareUpStageTime;
     int AttackCountThisPhase;
@@ -34,6 +33,11 @@ public:
     void EnableAttack();
     void OnRep_ChargeCount();
     void SpawnBarriers(int amount, float AngleOffset);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ChargeCount__Replicated = "OnRep_ChargeCount:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker

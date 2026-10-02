@@ -29,30 +29,20 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_Phys_GreatEggHunt_PaintedEgg", "BP_Phys_GreatEggHunt_PaintedEgg_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "0a83cf9a8cdea14883cfabe6b8757e12";
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     class UCapsuleComponent* UseCapsule;
-    static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     int RandomPresentSound;
-    static constexpr const char* RandomPresentSound__Replicated = ":";
     TArray<class UTexture*> Textures_Eggs;
     int NumberOfImpacts;
     bool IsBroken;
-    static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
     TArray<class UMaterialInterface*> Mats_Wrapper;
     class UMaterialInterface* UsedMaterial;
-    static constexpr const char* UsedMaterial__Replicated = "OnRep_UsedMaterial:";
     class USoundCue* UsedSound;
-    static constexpr const char* UsedSound__Replicated = ":";
     void ExecuteUbergraph_BP_Phys_GreatEggHunt_PaintedEgg(int EntryPoint);
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void ReceiveBeginPlay();
@@ -63,6 +53,20 @@ public:
     void OnRep_NumberOfImpacts();
     void OnRep_RandomSeed();
     void OnRep_UsedMaterial();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Niagara__UeScsNode = "0a83cf9a8cdea14883cfabe6b8757e12";
+        static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
+        static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* RandomPresentSound__Replicated = ":";
+        static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
+        static constexpr const char* UsedMaterial__Replicated = "OnRep_UsedMaterial:";
+        static constexpr const char* UsedSound__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

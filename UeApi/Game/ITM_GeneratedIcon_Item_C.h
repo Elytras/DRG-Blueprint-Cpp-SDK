@@ -34,7 +34,7 @@ class ITM_GeneratedIcon_Item_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_GeneratedIcon_Item", "ITM_GeneratedIcon_Item_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIconReady;
+    UE_READONLY class UWidgetAnimation* AnimIconReady;
     class UBorder* Background;
     class UBorder* Border_Inside;
     class UBorder* Border_Outside;

@@ -22,7 +22,7 @@ public:
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Idle;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
     BlurBackground_C* BlurBackground;

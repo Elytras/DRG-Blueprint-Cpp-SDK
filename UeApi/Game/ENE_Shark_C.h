@@ -24,28 +24,18 @@ class ENE_Shark_C : public ASharkEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/Shark/ENE_Shark", "ENE_Shark_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* ProjectileCollision;
-    static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
     class UAudioComponent* VulnerableSound;
-    static constexpr const char* VulnerableSound__UeScsNode = "53623f6a6a9206479997c9b61d93f60c";
     class UParticleSystemComponent* VulnerableParticles;
-    static constexpr const char* VulnerableParticles__UeScsNode = "6e7b21adae061a44aec196c0f8dc6613";
     class UAudioComponent* AttackSound;
-    static constexpr const char* AttackSound__UeScsNode = "87b8d707113c3b4b8d9ee579023bda2c";
     class UAudioComponent* DiveSound;
-    static constexpr const char* DiveSound__UeScsNode = "9a2862b23bf2844ca47438076e8178f9";
     class UAudioComponent* CirclingSound;
-    static constexpr const char* CirclingSound__UeScsNode = "6821a5f0ae44514a9b284a392afdf5ec";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "0904c5337a1b354093581a6d930500ea";
     TMulticastInlineDelegate<void()> OnDamagedTarget;
     bool DiedbyCritical;
-    static constexpr const char* DiedbyCritical__Replicated = "OnRep_DiedbyCritical:";
     TArray<class UMaterialInstanceDynamic*> DynamicMaterials;
     class UParticleSystemComponent* Dirt_particles;
-    static constexpr const char* Dirt_particles__UeName = "Dirt particles";
     void ExecuteUbergraph_ENE_Shark(int EntryPoint);
     UE_AUTHORITY_ONLY void BndEvt__ENE_Shark_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnExitState(TEnum<ESharkEnemyState> State_0);
@@ -56,6 +46,20 @@ public:
     void OnRep_DiedbyCritical();
     void SoundHandling(bool IdleSound, bool CirclingSound_0, bool AttackSound_0, bool DiveSound_0, bool Vulnerable);
     void FadeOutIfPlaying(class UAudioComponent* Sound);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
+        static constexpr const char* VulnerableSound__UeScsNode = "53623f6a6a9206479997c9b61d93f60c";
+        static constexpr const char* VulnerableParticles__UeScsNode = "6e7b21adae061a44aec196c0f8dc6613";
+        static constexpr const char* AttackSound__UeScsNode = "87b8d707113c3b4b8d9ee579023bda2c";
+        static constexpr const char* DiveSound__UeScsNode = "9a2862b23bf2844ca47438076e8178f9";
+        static constexpr const char* CirclingSound__UeScsNode = "6821a5f0ae44514a9b284a392afdf5ec";
+        static constexpr const char* outline__UeScsNode = "0904c5337a1b354093581a6d930500ea";
+        static constexpr const char* DiedbyCritical__Replicated = "OnRep_DiedbyCritical:";
+        static constexpr const char* Dirt_particles__UeName = "Dirt particles";
+    };
 };
 
 }}}   // namespace Game::Enemies::Shark

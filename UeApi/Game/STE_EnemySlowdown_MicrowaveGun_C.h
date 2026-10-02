@@ -13,6 +13,11 @@ class STE_EnemySlowdown_MicrowaveGun_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/STE/STE_EnemySlowdown_MicrowaveGun", "STE_EnemySlowdown_MicrowaveGun_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE

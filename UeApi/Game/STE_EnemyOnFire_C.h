@@ -13,6 +13,11 @@ class STE_EnemyOnFire_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Temperature/STE_EnemyOnFire", "STE_EnemyOnFire_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Temperature

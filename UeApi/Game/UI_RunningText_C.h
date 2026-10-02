@@ -30,13 +30,10 @@ public:
     int CurrentPos;
     float CurrentProgress;
     float Start_Delay;
-    static constexpr const char* Start_Delay__UeName = "Start Delay";
     float Total_Duration;
-    static constexpr const char* Total_Duration__UeName = "Total Duration";
     float CharactersPerSecond;
     FString String;
     bool Auto_Play;
-    static constexpr const char* Auto_Play__UeName = "Auto Play";
     int LengthNoWhiteSpaces;
     class USoundCue* CharAudio;
     class UAudioComponent* CharAudioComponent;
@@ -50,7 +47,6 @@ public:
     void ExecuteUbergraph_UI_RunningText(int EntryPoint);
     UE_COSMETIC void Destruct();
     void Play_Timed(float Duration);
-    static constexpr const char* Play_Timed__UeName = "Play Timed";
     void Stop();
     void Play();
     UE_COSMETIC void Construct();
@@ -60,6 +56,14 @@ public:
     void step(float InDeltaTime, bool& Finished);
     void SetFont(FSlateFontInfo InFontInfo);
     UE_PURE FText GetCursorText(float Time_0, bool TextFinished);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Delay__UeName = "Start Delay";
+        static constexpr const char* Total_Duration__UeName = "Total Duration";
+        static constexpr const char* Auto_Play__UeName = "Auto Play";
+        static constexpr const char* Play_Timed__UeName = "Play Timed";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

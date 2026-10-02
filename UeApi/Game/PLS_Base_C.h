@@ -22,13 +22,10 @@ class PLS_Base_C : public AProceduralSetup
 {
 public:
     UE_CLASS("/Game/Landscape/PLS_Base", "PLS_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f7d2c667a98d544cb52a4957f2a8ae1c";
     class UMaterial* OutlineMaterial;
     TArray<class URoomGenerator*> Starting_Rooms;
-    static constexpr const char* Starting_Rooms__UeName = "Starting Rooms";
     class UMusicLibrary* MusicOverride;
     void ExecuteUbergraph_PLS_Base(int EntryPoint);
     void StartMusicAndAmbient(int Music);
@@ -53,7 +50,6 @@ public:
     void Generate_Pass_5_Clients();
     void Generate_Pass_5_Server();
     void Final_Pass();
-    static constexpr const char* Final_Pass__UeName = "Final Pass";
     void Generate_Pass_3();
     void Generate_Pass_1();
     void Generate_Graph();
@@ -72,6 +68,14 @@ public:
     UE_PURE class UProceduralController* GetProceduralController();
     void EnsureSafelandingsite();
     void PlayDefaultAmbient();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f7d2c667a98d544cb52a4957f2a8ae1c";
+        static constexpr const char* Starting_Rooms__UeName = "Starting Rooms";
+        static constexpr const char* Final_Pass__UeName = "Final Pass";
+    };
 };
 
 }}   // namespace Game::Landscape

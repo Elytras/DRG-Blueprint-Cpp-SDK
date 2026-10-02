@@ -20,9 +20,7 @@ public:
     UE_CLASS("/Game/LevelElements/Minehead/BP_Minehead_LandingZone", "BP_Minehead_LandingZone_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "0c35c1b774f33e4db5623487357c95a0";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
     float Timeline_0_Opacity_814ACDB147BE4FC050CAA2ADBE2674C9;
     TEnum<ETimelineDirection> Timeline_0__Direction_814ACDB147BE4FC050CAA2ADBE2674C9;
     class UTimelineComponent* Timeline_0;
@@ -37,6 +35,12 @@ public:
     void Timeline_0__FinishedFunc();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "0c35c1b774f33e4db5623487357c95a0";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Minehead

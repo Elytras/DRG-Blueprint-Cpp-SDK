@@ -17,9 +17,13 @@ class ESI_LootBug_Gold_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/LootBug/ESI_LootBug_Gold", "ESI_LootBug_Gold_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c3732a23d69b25498eba3a881ce99873";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "037afb1327b13b44a17bb899c42754e1";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "c3732a23d69b25498eba3a881ce99873";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "037afb1327b13b44a17bb899c42754e1";
+    };
 };
 
 }}}   // namespace Game::Critters::LootBug

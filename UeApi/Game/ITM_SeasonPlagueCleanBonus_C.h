@@ -22,8 +22,8 @@ class ITM_SeasonPlagueCleanBonus_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonPlagueCleanBonus", "ITM_SeasonPlagueCleanBonus_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* EnterCheckmark;
-    class UWidgetAnimation* Unlock;
+    UE_READONLY class UWidgetAnimation* EnterCheckmark;
+    UE_READONLY class UWidgetAnimation* Unlock;
     class UBorder* Border_Token;
     class UButton* Button_Outer;
     class UImage* Image_Checkmark;

@@ -27,7 +27,7 @@ public:
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFade;
+    UE_READONLY class UWidgetAnimation* AnimFade;
     Basic_Image_C* Arrow_Left;
     Basic_Image_C* Arrow_Right;
     Basic_Image_C* BG_Left_Image;
@@ -46,7 +46,6 @@ public:
     int amount;
     TMulticastInlineDelegate<void()> OnItemHoveredChanged;
     bool Is_Unlocked;
-    static constexpr const char* Is_Unlocked__UeName = "Is Unlocked";
     void ExecuteUbergraph_ITM_HazPlusItem(int EntryPoint);
     void BndEvt__ITM_HazPlusItem_Locked_Button_K2Node_ComponentBoundEvent_9_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ITM_HazPlusItem_Locked_Button_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
@@ -69,6 +68,11 @@ public:
     UE_PURE bool IsItemHovered();
     void SetData(FDifficultyMutatorItem InMutator, bool InIs_Unlocked);
     void GetAmountFromManager(int& OutAmount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Unlocked__UeName = "Is Unlocked";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

@@ -26,31 +26,35 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_Kickable_Base", "BP_Kickable_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "bee919731ce5bb40a984ddffdfcca2ea";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "c5ff63f674f4114d816bfcb20c189584";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "e97100fbb9835548940745c269f3063b";
     class UStaticMeshComponent* Kickable_Mesh;
-    static constexpr const char* Kickable_Mesh__UeName = "Kickable Mesh";
-    static constexpr const char* Kickable_Mesh__UeScsNode = "0332b80669845845ac02904a48f42ea3";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     class USoundBase* BounceSound;
     float ImpactSensitivity;
     float KickStrength;
     void ExecuteUbergraph_BP_Kickable_Base(int EntryPoint);
     void Set_Is_Interactable(bool Can_interact);
-    static constexpr const char* Set_Is_Interactable__UeName = "Set Is Interactable";
     void BndEvt__Kickable_Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    static constexpr const char* BndEvt__Kickable_Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__Kickable Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature";
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void destroy();
     void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_KickSoundLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GravityChanged__UeScsNode = "bee919731ce5bb40a984ddffdfcca2ea";
+        static constexpr const char* InstantUsable__UeScsNode = "c5ff63f674f4114d816bfcb20c189584";
+        static constexpr const char* Capsule__UeScsNode = "e97100fbb9835548940745c269f3063b";
+        static constexpr const char* Kickable_Mesh__UeName = "Kickable Mesh";
+        static constexpr const char* Kickable_Mesh__UeScsNode = "0332b80669845845ac02904a48f42ea3";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* Set_Is_Interactable__UeName = "Set Is Interactable";
+        static constexpr const char* BndEvt__Kickable_Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__Kickable Mesh_K2Node_ComponentBoundEvent_8_ComponentHitSignature__DelegateSignature";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

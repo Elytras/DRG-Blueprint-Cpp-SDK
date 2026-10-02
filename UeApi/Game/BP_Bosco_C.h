@@ -28,30 +28,18 @@ class BP_Bosco_C : public ABosco
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_Bosco", "BP_Bosco_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent MomentumAudio;/Script/FSD.BobbingComponent BobbingComponent;/Script/FSD.BoscoAbillityComponent PrimaryAbility;/Script/FSD.BoscoAbillityComponent SecondaryAbility;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.DroneMeleeTool MeleeTool;/Script/FSD.DroneMiningToolBase MiningTool;/Script/FSD.DroneSkinnableComponent Skinnable;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.HitscanComponent BoscoHitscan;/Script/Engine.ParticleSystemComponent LTrail;/Script/Engine.ParticleSystemComponent RTrail;/Script/AIModule.PawnSensingComponent Senses;/Script/Engine.PointLightComponent PointlightComponent;/Script/Engine.SkeletalMeshComponent BoscoMesh;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SpotLightComponent SpotlightComponent;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.UpgradableBoscoComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "4d6c5dd082e8a746a580aff3166403a5";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "beae4520e4c9654da60c6614a05cc869";
     class UChildActorComponent* StateDisplay;
-    static constexpr const char* StateDisplay__UeScsNode = "d3d36daa5d221741906b67a499f91ffe";
     class UActorTrackingComponent* ActorTracking;
-    static constexpr const char* ActorTracking__UeScsNode = "ab07049bd1bbeb4c8fbf2a7cf4d40138";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "ee19eaa1e252f347b8a62eb041831b2b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "7440d29858540b46bf846061afb8ca67";
     class UWidgetComponent* ReviveWidget;
-    static constexpr const char* ReviveWidget__UeScsNode = "a085fa269aaf4d48bd67e523d3b7dcca";
     class UStaticMeshComponent* LightConeMesh;
-    static constexpr const char* LightConeMesh__UeScsNode = "6a94f948ec08bc4297c116aab9b6aa3d";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "950e42f74b89e14fa977a2838a648fd5";
     class UPlayerResourceComponent* PlayerResource;
-    static constexpr const char* PlayerResource__UeScsNode = "98fde3482e9b0148b9588f911b88798c";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "8481fb62504de64894a213287b4d0b45";
     bool FoundEnemies;
     class UParticleSystem* ScareParicles;
     class USoundCue* ScareSound;
@@ -66,7 +54,23 @@ public:
     void ScareEffect();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState_0, TArray<FGearStatEntry>& Stats) const;
     void Handle_Projectile_diffs(FGearStatEntry Gear_stat, TEnum<EItemPreviewStatus> Cryo_upgrade_preview_status, TEnum<EDamageUpgrade> damage_upgrade_type, class AFSDPlayerState* FSD_player_state, FGearStatEntry& gear_stat_out) const;
-    static constexpr const char* Handle_Projectile_diffs__UeName = "Handle Projectile diffs";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent MomentumAudio;/Script/FSD.BobbingComponent BobbingComponent;/Script/FSD.BoscoAbillityComponent PrimaryAbility;/Script/FSD.BoscoAbillityComponent SecondaryAbility;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.DroneMeleeTool MeleeTool;/Script/FSD.DroneMiningToolBase MiningTool;/Script/FSD.DroneSkinnableComponent Skinnable;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.HitscanComponent BoscoHitscan;/Script/Engine.ParticleSystemComponent LTrail;/Script/Engine.ParticleSystemComponent RTrail;/Script/AIModule.PawnSensingComponent Senses;/Script/Engine.PointLightComponent PointlightComponent;/Script/Engine.SkeletalMeshComponent BoscoMesh;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_0;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_1;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_5;/Script/Engine.SpotLightComponent SpotlightComponent;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.UpgradableBoscoComponent Upgradable";
+        static constexpr const char* PawnStats__UeScsNode = "4d6c5dd082e8a746a580aff3166403a5";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "beae4520e4c9654da60c6614a05cc869";
+        static constexpr const char* StateDisplay__UeScsNode = "d3d36daa5d221741906b67a499f91ffe";
+        static constexpr const char* ActorTracking__UeScsNode = "ab07049bd1bbeb4c8fbf2a7cf4d40138";
+        static constexpr const char* Box__UeScsNode = "ee19eaa1e252f347b8a62eb041831b2b";
+        static constexpr const char* StaticMesh__UeScsNode = "7440d29858540b46bf846061afb8ca67";
+        static constexpr const char* ReviveWidget__UeScsNode = "a085fa269aaf4d48bd67e523d3b7dcca";
+        static constexpr const char* LightConeMesh__UeScsNode = "6a94f948ec08bc4297c116aab9b6aa3d";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "950e42f74b89e14fa977a2838a648fd5";
+        static constexpr const char* PlayerResource__UeScsNode = "98fde3482e9b0148b9588f911b88798c";
+        static constexpr const char* outline__UeScsNode = "8481fb62504de64894a213287b4d0b45";
+        static constexpr const char* Handle_Projectile_diffs__UeName = "Handle Projectile diffs";
+    };
 };
 
 }}}   // namespace Game::GameElements::Drone

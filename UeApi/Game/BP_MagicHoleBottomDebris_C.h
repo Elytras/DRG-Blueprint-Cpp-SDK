@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicHole/BP_MagicHoleBottomDebris", "BP_MagicHoleBottomDebris_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelGenerationDebris* LevelGenerationDebris;
-    static constexpr const char* LevelGenerationDebris__UeScsNode = "c72d75384ecfbb4cbafdc093a9c51326";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "761c20bdd776df46a2f616f0558f6628";
     void ExecuteUbergraph_BP_MagicHoleBottomDebris(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationDebris__UeScsNode = "c72d75384ecfbb4cbafdc093a9c51326";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "761c20bdd776df46a2f616f0558f6628";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole

@@ -78,18 +78,18 @@ class UAnimSharingTransitionInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimationSharing", "AnimSharingTransitionInstance");
-    float BlendTime;
-    bool bBlendBool;
+    UE_READONLY float BlendTime;
+    UE_READONLY bool bBlendBool;
 };
 
 class UAnimSharingStateInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimationSharing", "AnimSharingStateInstance");
-    class UAnimSequence* AnimationToPlay;
-    float PermutationTimeOffset;
-    float PlayRate;
-    bool bStateBool;
+    UE_READONLY class UAnimSequence* AnimationToPlay;
+    UE_READONLY float PermutationTimeOffset;
+    UE_READONLY float PlayRate;
+    UE_READONLY bool bStateBool;
     class UAnimSharingInstance* instance;
     void GetInstancedActors(TArray<class AActor*>& Actors);
 };
@@ -98,9 +98,13 @@ class UAnimSharingAdditiveInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimationSharing", "AnimSharingAdditiveInstance");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
-    float alpha;
-    bool bStateBool;
+    UE_READONLY float alpha;
+    UE_READONLY bool bStateBool;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
+    };
 };
 
 class UAnimSharingInstance : public UObject

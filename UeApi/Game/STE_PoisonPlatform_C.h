@@ -13,6 +13,11 @@ class STE_PoisonPlatform_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CombatShotgun/STE_PoisonPlatform", "STE_PoisonPlatform_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun

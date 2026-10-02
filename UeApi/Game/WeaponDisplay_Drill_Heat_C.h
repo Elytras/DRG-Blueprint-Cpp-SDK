@@ -20,7 +20,7 @@ class WeaponDisplay_Drill_Heat_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/Drills/WeaponDisplay_Drill_Heat", "WeaponDisplay_Drill_Heat_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Flash;
+    UE_READONLY class UWidgetAnimation* Flash;
     class UImage* Image_88;
     class UImage* Image_131;
     class UTextBlock* TextBlock_440;
@@ -29,10 +29,14 @@ public:
     void ExecuteUbergraph_WeaponDisplay_Drill_Heat(int EntryPoint);
     void OnEquipped();
     void On_UnEquipped();
-    static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
     void Init(class AItem* Item_0);
     UE_COSMETIC void Construct();
     void SetHeatValue(float HeatPercentage, bool overheated);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Drills

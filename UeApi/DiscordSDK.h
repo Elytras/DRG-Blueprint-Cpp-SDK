@@ -27,6 +27,11 @@ public:
     void AcceptInvite(FString UserId);
     void IgnoreInvite(FString UserId);
     void RejectInvite(FString UserId);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnJoinRequest__UeDispatcher = "Assignable";
+    };
 };
 
 class UDiscordSDKInterface_Win64 : public UDiscordSDKInterface

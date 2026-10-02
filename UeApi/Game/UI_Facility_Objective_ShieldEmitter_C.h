@@ -24,7 +24,7 @@ public:
     using BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C = Game::GameElements::Objectives::Facility::BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimArrows;
+    UE_READONLY class UWidgetAnimation* AnimArrows;
     UI_ImageTinted_C* Img_Arrow_Left;
     UI_ImageTinted_C* Img_Arrow_Right;
     UI_ImageTinted_C* Img_ShieldEmitter;

@@ -23,7 +23,7 @@ public:
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class URichTextSizable* BodyText;
     Basic_ButtonScalable2_C* ContinueBtn;
     ITM_MenuBackground_C* MenuBackground;

@@ -32,36 +32,21 @@ class BP_RivalBombNode_C : public ARivalBombNode
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/BP_RivalBombNode", "BP_RivalBombNode_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.SceneComponent DefaultRootComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_RivalBombNode_Electricity;
-    static constexpr const char* NS_RivalBombNode_Electricity__UeScsNode = "8778560fbc8a6e4da0529b502717d895";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "dad4f2e99862dd4bae20139d9b852613";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "3d46352626306646a9dc441e0afe968c";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "6830f06b5d1e2a489290d67dbe77c77a";
     class UFSDAudioComponent* RivalBombNodeHackable;
-    static constexpr const char* RivalBombNodeHackable__UeScsNode = "95dd1f48e2737b4e9481778709044fa3";
     class UAudioComponent* RivalBombNodeIdle_Cue;
-    static constexpr const char* RivalBombNodeIdle_Cue__UeScsNode = "47a1fce2ed6911469f2db1233a9f2278";
     class USkeletalMeshComponent* SK_RivalBombNode;
-    static constexpr const char* SK_RivalBombNode__UeScsNode = "35c04a3caf15c34c86794f8c874f74e3";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "45e75f7208fedb47bc319d8356cd4674";
     class UStaticMeshComponent* SM_LightCone003;
-    static constexpr const char* SM_LightCone003__UeScsNode = "00f23ecbe536294bb0f65a0f26f1030c";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "175674f7ab498445b135e4ce9f292dbe";
     class UDamageComponent* PushPlayerDamage;
-    static constexpr const char* PushPlayerDamage__UeScsNode = "45ac5e57707f964c9d24af0d8687202b";
     class USphereComponent* HackUse;
-    static constexpr const char* HackUse__UeScsNode = "40dbad9c959f794db9cf46627d2d9f9b";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "fbc0906df4f2f745bbcad0cf2c4b38dc";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "116195fadde0b84cbba6ae46e36645a9";
     float TurnOnLight_Intensity_6982697C46CE12F6891FD997002FC29A;
     TEnum<ETimelineDirection> TurnOnLight__Direction_6982697C46CE12F6891FD997002FC29A;
     class UTimelineComponent* TurnOnLight;
@@ -77,10 +62,8 @@ public:
     class URivalBombNodeAniminstance* AnimInstance;
     void ExecuteUbergraph_BP_RivalBombNode(int EntryPoint);
     void Turn_Off_Light_Cone();
-    static constexpr const char* Turn_Off_Light_Cone__UeName = "Turn Off Light Cone";
     void UpdateProgressBarAndTimer();
     void Turn_On_Light_Cone();
-    static constexpr const char* Turn_On_Light_Cone__UeName = "Turn On Light Cone";
     void UpdateState();
     void ReceiveStateUpdated();
     void SetAllLightsMaterial(class UMaterialInterface* Material);
@@ -93,6 +76,27 @@ public:
     void SetLightConeIntensity(float Intensity01);
     void ShoutNearest(class UDialogDataAsset* Shout);
     UE_PURE bool GetIsCompleted() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.SceneComponent DefaultRootComponent";
+        static constexpr const char* NS_RivalBombNode_Electricity__UeScsNode = "8778560fbc8a6e4da0529b502717d895";
+        static constexpr const char* terrainPlacement__UeScsNode = "dad4f2e99862dd4bae20139d9b852613";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "3d46352626306646a9dc441e0afe968c";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "6830f06b5d1e2a489290d67dbe77c77a";
+        static constexpr const char* RivalBombNodeHackable__UeScsNode = "95dd1f48e2737b4e9481778709044fa3";
+        static constexpr const char* RivalBombNodeIdle_Cue__UeScsNode = "47a1fce2ed6911469f2db1233a9f2278";
+        static constexpr const char* SK_RivalBombNode__UeScsNode = "35c04a3caf15c34c86794f8c874f74e3";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "45e75f7208fedb47bc319d8356cd4674";
+        static constexpr const char* SM_LightCone003__UeScsNode = "00f23ecbe536294bb0f65a0f26f1030c";
+        static constexpr const char* SpotLight__UeScsNode = "175674f7ab498445b135e4ce9f292dbe";
+        static constexpr const char* PushPlayerDamage__UeScsNode = "45ac5e57707f964c9d24af0d8687202b";
+        static constexpr const char* HackUse__UeScsNode = "40dbad9c959f794db9cf46627d2d9f9b";
+        static constexpr const char* PointLight__UeScsNode = "fbc0906df4f2f745bbcad0cf2c4b38dc";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "116195fadde0b84cbba6ae46e36645a9";
+        static constexpr const char* Turn_Off_Light_Cone__UeName = "Turn Off Light Cone";
+        static constexpr const char* Turn_On_Light_Cone__UeName = "Turn On Light Cone";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent

@@ -23,22 +23,14 @@ class PRJ_InfectedMuleGrenade_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/PRJ_InfectedMuleGrenade", "PRJ_InfectedMuleGrenade_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "9d20af35be822e44aadb74c657490d75";
     class UStaticMeshComponent* Mesh_Range;
-    static constexpr const char* Mesh_Range__UeScsNode = "a21ff5379c0f8a41a1411cf81487bfd0";
     class UAudioComponent* InfectedMuleGrenadeAlarm;
-    static constexpr const char* InfectedMuleGrenadeAlarm__UeScsNode = "bb2156040f47fc44b2587e5fd7575727";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "db7c0301b778b04d98b33601336c7bdf";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "55d2049aac0d83479c97b408aed21bac";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "d2a6e5453c1cb84a9cfa5b86b5fb1e9e";
     bool HasExploaded;
-    static constexpr const char* HasExploaded__Replicated = "OnRep_HasExploaded:";
     float TimeToExplode;
     class UParticleSystem* ExplosionParticles;
     class USoundBase* ExplosionSound;
@@ -46,9 +38,21 @@ public:
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Delayed_Sine();
-    static constexpr const char* Delayed_Sine__UeName = "Delayed Sine";
     void ReceiveBeginPlay();
     void OnRep_HasExploaded();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* PointLight__UeScsNode = "9d20af35be822e44aadb74c657490d75";
+        static constexpr const char* Mesh_Range__UeScsNode = "a21ff5379c0f8a41a1411cf81487bfd0";
+        static constexpr const char* InfectedMuleGrenadeAlarm__UeScsNode = "bb2156040f47fc44b2587e5fd7575727";
+        static constexpr const char* Damage__UeScsNode = "db7c0301b778b04d98b33601336c7bdf";
+        static constexpr const char* Explosion__UeScsNode = "55d2049aac0d83479c97b408aed21bac";
+        static constexpr const char* StaticMesh__UeScsNode = "d2a6e5453c1cb84a9cfa5b86b5fb1e9e";
+        static constexpr const char* HasExploaded__Replicated = "OnRep_HasExploaded:";
+        static constexpr const char* Delayed_Sine__UeName = "Delayed Sine";
+    };
 };
 
 }}}   // namespace Game::Enemies::MuleInfected

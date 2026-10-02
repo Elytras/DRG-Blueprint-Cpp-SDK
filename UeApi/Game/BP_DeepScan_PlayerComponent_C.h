@@ -27,14 +27,11 @@ public:
     float MaxPingDistance;
     class USoundBase* PingCue;
     float Min_Delay;
-    static constexpr const char* Min_Delay__UeName = "Min Delay";
     float Max_Delay;
-    static constexpr const char* Max_Delay__UeName = "Max Delay";
     float MinPingDist;
     FRuntimeFloatCurve DistanceCurve;
     int NumMeasurementSteps;
     float Distance_to_Closest;
-    static constexpr const char* Distance_to_Closest__UeName = "Distance to Closest";
     float PingDelay;
     float CloseRangeSwitchDistance;
     float LongRangeSwitchDistance;
@@ -51,7 +48,6 @@ public:
     float VerticalDistance;
     TArray<class ADeepScanHiddenCrystal*> TargetActors;
     int Target_Index;
-    static constexpr const char* Target_Index__UeName = "Target Index";
     float BasePingDuration;
     bool ShowContinuousDisplay;
     float ContinuousDisplayRefreshTime;
@@ -63,6 +59,14 @@ public:
     void GetPingDelay(float MinDist, float MaxDist, float MinDelay, float MaxDelay, float& Delay, float& DistanceToClosest, float& VerticalDistance_0, int& TargetIndex, bool& AllEquipmentCalled);
     void GetCharacter(class APlayerCharacter*& AsPlayer_Character);
     bool GetHiddenItems(TArray<class ADeepScanHiddenCrystal*>& Hidden_Item_Instances);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Min_Delay__UeName = "Min Delay";
+        static constexpr const char* Max_Delay__UeName = "Max Delay";
+        static constexpr const char* Distance_to_Closest__UeName = "Distance to Closest";
+        static constexpr const char* Target_Index__UeName = "Target Index";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

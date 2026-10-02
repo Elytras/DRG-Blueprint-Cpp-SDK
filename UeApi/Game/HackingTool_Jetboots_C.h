@@ -28,9 +28,9 @@ public:
     using UI_HackingTool_Progress_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
     using UI_JettyBoots_Game_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimEnableInterface;
-    class UWidgetAnimation* AnimFindChip;
-    class UWidgetAnimation* AnimZoom;
+    UE_READONLY class UWidgetAnimation* AnimEnableInterface;
+    UE_READONLY class UWidgetAnimation* AnimFindChip;
+    UE_READONLY class UWidgetAnimation* AnimZoom;
     UI_HackingTool_Chip_C* Chip;
     UI_HackingTool_Grid_C* Grid_Image;
     UI_HackingTool_Button_C* Interface_Button;

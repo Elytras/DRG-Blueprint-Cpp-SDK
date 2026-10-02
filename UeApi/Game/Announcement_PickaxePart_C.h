@@ -25,7 +25,7 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnnounceAnim;
+    UE_READONLY class UWidgetAnimation* AnnounceAnim;
     class UBorder* InnerBorder;
     ITM_GeneratedIcon_Item_C* ITM_GeneratedIcon_Item;
     Basic_Label_C* NameLabel;

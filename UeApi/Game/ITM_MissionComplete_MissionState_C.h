@@ -21,9 +21,9 @@ class ITM_MissionComplete_MissionState_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_MissionState", "ITM_MissionComplete_MissionState_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeInBackground;
-    class UWidgetAnimation* FadeoutBackground;
-    class UWidgetAnimation* FadeOutOverlay;
+    UE_READONLY class UWidgetAnimation* FadeInBackground;
+    UE_READONLY class UWidgetAnimation* FadeoutBackground;
+    UE_READONLY class UWidgetAnimation* FadeOutOverlay;
     class UImage* BlackBackground;
     class UCanvasPanel* OverlayRoot;
     TMulticastInlineDelegate<void()> OnFadeOutOverlayFinished;
@@ -31,19 +31,23 @@ public:
     TMulticastInlineDelegate<void()> OnFadeOutBackgroundFinished;
     void ExecuteUbergraph_ITM_MissionComplete_MissionState(int EntryPoint);
     void Fade_Out_Background(float Duration);
-    static constexpr const char* Fade_Out_Background__UeName = "Fade Out Background";
     void OnBackgroundFinished();
     void Failure(float StartDelay, FText StatusText);
     void success(float StartDelay, FText StatusText, class USchematic* Reward);
     void OnOverlayFinished();
     void Fade_Out_Overlay(float Duration);
-    static constexpr const char* Fade_Out_Overlay__UeName = "Fade Out Overlay";
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SignalAnimDone();
     void ShowCurrentMission(float StartDelay);
     void SetCanvasWidget(class UWidget* Content);
     void UpdateBackgroundImage();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Fade_Out_Background__UeName = "Fade Out Background";
+        static constexpr const char* Fade_Out_Overlay__UeName = "Fade Out Overlay";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

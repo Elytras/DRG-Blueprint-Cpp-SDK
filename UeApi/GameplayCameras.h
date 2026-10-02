@@ -93,7 +93,6 @@ class UMatineeCameraShake : public UCameraShakeBase
 {
 public:
     UE_CLASS("/Script/GameplayCameras", "MatineeCameraShake");
-    static constexpr const char* UeClassTail = "0x00801000 /Script/CoreUObject.Object Engine";
     float OscillationDuration;
     float OscillationBlendInTime;
     float OscillationBlendOutTime;
@@ -108,16 +107,21 @@ public:
     class UCameraAnim* Anim;
     class UCameraAnimationSequence* AnimSequence;
     bool bRandomAnimSegment;
-    float OscillatorTimeRemaining;
-    class UCameraAnimInst* AnimInst;
+    UE_READONLY float OscillatorTimeRemaining;
+    UE_READONLY class UCameraAnimInst* AnimInst;
     class USequenceCameraShakePattern* SequenceShakePattern;
-    static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.MatineeCameraShakePattern";
     static class UMatineeCameraShake* StartMatineeCameraShake(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class UMatineeCameraShake> ShakeClass, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     static class UMatineeCameraShake* StartMatineeCameraShakeFromSource(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class UMatineeCameraShake> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
     void BlueprintUpdateCameraShake(float DeltaTime, float alpha, const FMinimalViewInfo& POV, FMinimalViewInfo& ModifiedPOV);
     void ReceivePlayShake(float Scale);
     void ReceiveStopShake(bool bImmediately);
     bool ReceiveIsFinished() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00801000 /Script/CoreUObject.Object Engine";
+        static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.MatineeCameraShakePattern";
+    };
 };
 
 class UTestCameraShake : public UCameraShakeBase
@@ -154,7 +158,11 @@ class UDefaultCameraShakeBase : public UCameraShakeBase
 {
 public:
     UE_CLASS("/Script/GameplayCameras", "DefaultCameraShakeBase");
-    static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.PerlinNoiseCameraShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootShakePattern__UeSubobject = "RootShakePattern /Script/GameplayCameras.PerlinNoiseCameraShakePattern";
+    };
 };
 
 class UMatineeCameraShakePattern : public UCameraShakePattern

@@ -25,24 +25,15 @@ class BP_JettyBoots_Arcade_C : public AJettyBootsArcadeActor
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/BP_JettyBoots_Arcade", "BP_JettyBoots_Arcade_C");
     using UI_JettyBoots_Arcade_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Arcade_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.JettyBootUsableComponent StartGameUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* IdleAudio;
-    static constexpr const char* IdleAudio__UeScsNode = "77d06798b4b17a4ab8cc3d9307b36718";
     class UStaticMeshComponent* SM_Plug;
-    static constexpr const char* SM_Plug__UeScsNode = "140a847deb026944af06d0432c3a6cdf";
     class UBoxComponent* UsableCollider;
-    static constexpr const char* UsableCollider__UeScsNode = "da8813deec98cd4f9883f2945f81ca9b";
     class UChildActorComponent* ClearHighScores_Button;
-    static constexpr const char* ClearHighScores_Button__UeScsNode = "0ac0e4c38869044093fb6119b67b5d1e";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "bfa964ae591f9d49a6ad52b4a8ac5f81";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "77e6b0588701994da2b1ab12356be357";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "e8287e0f51e6b6469e8222c058252e31";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "5f7f5f9ffa117d42b8b3dc96c7bd33bc";
     int GameCost;
     TArray<class UMaterialInterface*> Materials;
     void ExecuteUbergraph_BP_JettyBoots_Arcade(int EntryPoint);
@@ -52,15 +43,12 @@ public:
     void Shout_OnStartGame(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void Shout_OnGameOver(FJettyBootsScore InScore, bool InOnHighScoreList, int InHighScoreIndex, class APlayerCharacter* InPlayer);
     void Setup_Shouts();
-    static constexpr const char* Setup_Shouts__UeName = "Setup Shouts";
     void BndEvt__BP_JettyBoots_Arcade_StartGameUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void ReceivePlayerChanged();
     void OnReplayRecorded(FJettyBootsReplay InReplay);
     void Setup_Replay();
-    static constexpr const char* Setup_Replay__UeName = "Setup Replay";
     void Setup_Game_Ended();
-    static constexpr const char* Setup_Game_Ended__UeName = "Setup Game Ended";
     void ReceiveReplayPackage(const FJettyBootsReplay& InPackage);
     void RefreshHighScores();
     void ReceiveHighScoreChanged();
@@ -71,6 +59,22 @@ public:
     void UpdateActivePlayer();
     void SetButtonLightsActive(bool InLightsActive);
     UE_PURE bool GetIsReplayUser();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.JettyBootUsableComponent StartGameUsable";
+        static constexpr const char* IdleAudio__UeScsNode = "77d06798b4b17a4ab8cc3d9307b36718";
+        static constexpr const char* SM_Plug__UeScsNode = "140a847deb026944af06d0432c3a6cdf";
+        static constexpr const char* UsableCollider__UeScsNode = "da8813deec98cd4f9883f2945f81ca9b";
+        static constexpr const char* ClearHighScores_Button__UeScsNode = "0ac0e4c38869044093fb6119b67b5d1e";
+        static constexpr const char* Widget__UeScsNode = "bfa964ae591f9d49a6ad52b4a8ac5f81";
+        static constexpr const char* Scene__UeScsNode = "77e6b0588701994da2b1ab12356be357";
+        static constexpr const char* StaticMesh__UeScsNode = "e8287e0f51e6b6469e8222c058252e31";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "5f7f5f9ffa117d42b8b3dc96c7bd33bc";
+        static constexpr const char* Setup_Shouts__UeName = "Setup Shouts";
+        static constexpr const char* Setup_Replay__UeName = "Setup Replay";
+        static constexpr const char* Setup_Game_Ended__UeName = "Setup Game Ended";
+    };
 };
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade

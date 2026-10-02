@@ -35,6 +35,11 @@ public:
     class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0;/Script/FSD.DebrisPositioning DebrisPositioning_1";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

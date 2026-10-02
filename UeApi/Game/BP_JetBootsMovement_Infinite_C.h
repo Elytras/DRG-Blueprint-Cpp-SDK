@@ -15,9 +15,13 @@ class BP_JetBootsMovement_Infinite_C : public Game::GameElements::JetBoots::Blue
 public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/BP_JetBootsMovement_Infinite", "BP_JetBootsMovement_Infinite_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_JetBootsMovement_Infinite_C;
-    static constexpr const char* UberGraphFrame_BP_JetBootsMovement_Infinite_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_JetBootsMovement_Infinite(int EntryPoint);
     void HUDWidgetActivated();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_JetBootsMovement_Infinite_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint

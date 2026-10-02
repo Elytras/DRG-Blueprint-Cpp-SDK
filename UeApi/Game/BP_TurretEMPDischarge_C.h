@@ -20,15 +20,19 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/BP_TurretEMPDischarge", "BP_TurretEMPDischarge_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "94d5480ac82dbd438e08557a5feb7ad3";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "fe752756b1615c4597e4136e217708a1";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "d56c37a0106c8a44b22a770b402c90a8";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8a58de7b924a8545b2428c7a3f7f9d51";
     void ExecuteUbergraph_BP_TurretEMPDischarge(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Audio__UeScsNode = "94d5480ac82dbd438e08557a5feb7ad3";
+        static constexpr const char* Damage__UeScsNode = "fe752756b1615c4597e4136e217708a1";
+        static constexpr const char* ParticleSystem__UeScsNode = "d56c37a0106c8a44b22a770b402c90a8";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8a58de7b924a8545b2428c7a3f7f9d51";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SentryGun

@@ -20,9 +20,7 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_LandingZone", "BP_Refinery_LandingZone_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "0c35c1b774f33e4db5623487357c95a0";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
     float Timeline_1_Opacity_8C6DF8B84585B4B9E8DB819DF676DC1F;
     TEnum<ETimelineDirection> Timeline_1__Direction_8C6DF8B84585B4B9E8DB819DF676DC1F;
     class UTimelineComponent* Timeline_1;
@@ -36,6 +34,12 @@ public:
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "0c35c1b774f33e4db5623487357c95a0";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

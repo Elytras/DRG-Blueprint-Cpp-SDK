@@ -13,6 +13,11 @@ class STE_Spider_Tank_FrostCloud_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/STE_Spider_Tank_FrostCloud", "STE_Spider_Tank_FrostCloud_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

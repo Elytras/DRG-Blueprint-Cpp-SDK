@@ -13,6 +13,11 @@ class STE_InsectDoT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/STE_InsectDoT", "STE_InsectDoT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm

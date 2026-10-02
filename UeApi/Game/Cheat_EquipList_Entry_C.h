@@ -30,7 +30,6 @@ public:
     class UButton* SchematicButton;
     Basic_Label_C* SchematicText;
     FText Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     FText Description;
     bool owned;
     bool Equipped;
@@ -39,7 +38,6 @@ public:
     TMulticastInlineDelegate<void(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped)> OnEquipClicked;
     TMulticastInlineDelegate<void(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned)> OnOwnedClicked;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     bool AlwaysOwned;
     TMulticastInlineDelegate<void(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned)> OnSchematicClicked;
     bool SchematicOwned;
@@ -61,6 +59,12 @@ public:
     void SetOwnedData(TArray<class UObject*>& InOwnedData);
     void SetSchematicOwned(bool SchematicOwned_0);
     void GetEquipped(bool& Equipped_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets

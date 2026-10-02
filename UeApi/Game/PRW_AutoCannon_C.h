@@ -18,11 +18,15 @@ class PRW_AutoCannon_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/PRW_AutoCannon", "PRW_AutoCannon_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "6c86e0d3d1915a4398128d14edd40aee";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "fdfa0b8b0bd38e44b6b76b2754400fba";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "62e833aebb765948a3a8b51490a63009";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "6c86e0d3d1915a4398128d14edd40aee";
+        static constexpr const char* SkeletalMesh__UeScsNode = "fdfa0b8b0bd38e44b6b76b2754400fba";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "62e833aebb765948a3a8b51490a63009";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Autocannon

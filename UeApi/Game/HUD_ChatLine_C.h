@@ -30,10 +30,10 @@ public:
     FFSDChatMessage Msg;
     FVector2D PrevSize;
     TMulticastInlineDelegate<void()> OnMessageHidden;
-    TEnum<EChatMessageType> PreviewMsgType;
-    FString PreviewSender;
-    TEnum<EChatSenderType> PreviewSenderType;
-    FString PreviewMsg;
+    UE_READONLY TEnum<EChatMessageType> PreviewMsgType;
+    UE_READONLY FString PreviewSender;
+    UE_READONLY TEnum<EChatSenderType> PreviewSenderType;
+    UE_READONLY FString PreviewMsg;
     int PreviewSize;
     void ExecuteUbergraph_HUD_ChatLine(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

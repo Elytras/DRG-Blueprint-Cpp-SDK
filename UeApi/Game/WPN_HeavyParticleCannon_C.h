@@ -31,34 +31,20 @@ class WPN_HeavyParticleCannon_C : public AHeavyParticleCannon
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/WPN_HeavyParticleCannon", "WPN_HeavyParticleCannon_C");
     using WeaponDisplay_HeavyParticleCannon_AmmoCount_C = Game::WeaponsNTools::HeavyParticleCannon::WeaponDisplay_HeavyParticleCannon_AmmoCount_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent Damage;/Script/FSD.FirstPersonNiagaraComponent FirstPersonBeam;/Script/FSD.FirstPersonNiagaraComponent FirstPersonLaserSight;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent ThirdPersonBeam;/Script/FSD.ReflectionHitscanComponent ReflectionHitscanComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* ExplosionDamage;
-    static constexpr const char* ExplosionDamage__UeScsNode = "4ef6180a401d124ca313a76a4f629ce4";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "b59d5e6ee2e76a41818e95ed8bf11abc";
     class UAudioComponent* WidgetChargeFinished_Cue;
-    static constexpr const char* WidgetChargeFinished_Cue__UeScsNode = "b0d6305cd0118a4dafa255917af0fc0e";
     class UAudioComponent* WidgetCharge_Cue;
-    static constexpr const char* WidgetCharge_Cue__UeScsNode = "b9b49502eaf02744bc36437bcfc464f1";
     class UFSDAudioComponent* FireStartAndLoop;
-    static constexpr const char* FireStartAndLoop__UeScsNode = "6d06d366fabc2b4697aedcc735ab8207";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "4f8d3e93783fec49ac1bb5a10c5818f7";
     class UFirstPersonPointLightComponent* MuzzleLight;
-    static constexpr const char* MuzzleLight__UeScsNode = "e374d22da952b64db7db13889a67d1f7";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "42802bec6d12f94199910ff21c7a9ff8";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "10a71c0b70a45c4fafb7f18568cf5096";
     class UAudioComponent* FireStop_Cue;
-    static constexpr const char* FireStop_Cue__UeScsNode = "a28a319fc1de67469a5b46a6659f44a7";
     class UFirstPersonWidgetComponent* FPwidget_Ammo;
-    static constexpr const char* FPwidget_Ammo__UeScsNode = "3f0c5cb72a2ed849b1948aa5c542bd1f";
     class UWeaponImpactComponent* WeaponImpact;
-    static constexpr const char* WeaponImpact__UeScsNode = "7cec97977bde9b4cbf16dd9700314d93";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "3d02558e84561942b5d50184e13a07b8";
     WeaponDisplay_HeavyParticleCannon_AmmoCount_C* AmmoWidget;
     TArray<class UParticleSystemComponent*> ReflectedBeams;
     FTimerHandle AudioFadeTimerHandle;
@@ -79,6 +65,24 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent Damage;/Script/FSD.DamageConversionBonus Damage:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus Damage:DamageConversionBonus_1;/Script/FSD.DirectDamageCondition Damage:DamageConversionBonus_0:DirectDamageCondition_0;/Script/FSD.FirstPersonNiagaraComponent FirstPersonBeam;/Script/FSD.FirstPersonNiagaraComponent FirstPersonLaserSight;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent ThirdPersonBeam;/Script/FSD.ReflectionHitscanComponent ReflectionHitscanComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* ExplosionDamage__UeScsNode = "4ef6180a401d124ca313a76a4f629ce4";
+        static constexpr const char* Explosion__UeScsNode = "b59d5e6ee2e76a41818e95ed8bf11abc";
+        static constexpr const char* WidgetChargeFinished_Cue__UeScsNode = "b0d6305cd0118a4dafa255917af0fc0e";
+        static constexpr const char* WidgetCharge_Cue__UeScsNode = "b9b49502eaf02744bc36437bcfc464f1";
+        static constexpr const char* FireStartAndLoop__UeScsNode = "6d06d366fabc2b4697aedcc735ab8207";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "4f8d3e93783fec49ac1bb5a10c5818f7";
+        static constexpr const char* MuzzleLight__UeScsNode = "e374d22da952b64db7db13889a67d1f7";
+        static constexpr const char* PointLight2__UeScsNode = "42802bec6d12f94199910ff21c7a9ff8";
+        static constexpr const char* PointLight1__UeScsNode = "10a71c0b70a45c4fafb7f18568cf5096";
+        static constexpr const char* FireStop_Cue__UeScsNode = "a28a319fc1de67469a5b46a6659f44a7";
+        static constexpr const char* FPwidget_Ammo__UeScsNode = "3f0c5cb72a2ed849b1948aa5c542bd1f";
+        static constexpr const char* WeaponImpact__UeScsNode = "7cec97977bde9b4cbf16dd9700314d93";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "3d02558e84561942b5d50184e13a07b8";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

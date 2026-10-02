@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_Trading_BasketItem", "ITM_Trading_BasketItem_C");
     using Basic_AnimatedNumber_C = Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UBorder* Border_ColorGradient;
     class UBorder* Border_Diff;
     class UBorder* Border_Outline;

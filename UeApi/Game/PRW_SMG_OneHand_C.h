@@ -18,13 +18,17 @@ class PRW_SMG_OneHand_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/SMG/PRW_SMG_OneHand", "PRW_SMG_OneHand_C");
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "9a846306e6316d449eceacf3af606d87";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "1143871fcd422d44be38cdc262a063e0";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "665b63072006514ea020302ea43de24d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6e33f07c4a3fbb4bb0e8878db6dea68b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh1__UeScsNode = "9a846306e6316d449eceacf3af606d87";
+        static constexpr const char* StaticMesh__UeScsNode = "1143871fcd422d44be38cdc262a063e0";
+        static constexpr const char* SkeletalMesh__UeScsNode = "665b63072006514ea020302ea43de24d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6e33f07c4a3fbb4bb0e8878db6dea68b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SMG

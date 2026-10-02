@@ -33,54 +33,30 @@ class BP_Refinery_Extractor_C : public APipelineExtractorPod
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Extractor", "BP_Refinery_Extractor_C");
     using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* BP_Extractor_Lamp02;
-    static constexpr const char* BP_Extractor_Lamp02__UeScsNode = "99a2d546dadade45ad6a6b688e2b0a40";
     class UChildActorComponent* BP_Extractor_Lamp01;
-    static constexpr const char* BP_Extractor_Lamp01__UeScsNode = "57d395e4d5d66f4495e3271b2ef3b1ea";
     class UStaticMeshComponent* SM_railconnector_02;
-    static constexpr const char* SM_railconnector_02__UeScsNode = "89d667248c328042b2ff043302e897d1";
     class UStaticMeshComponent* SM_railconnector_01;
-    static constexpr const char* SM_railconnector_01__UeScsNode = "1b2bfabef74f0f44a85d31f1a37a3820";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "3127e45037e0a842bfd898239a46af70";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "a54740272349ec4e86e3e8d277976c86";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "22b09b8cc9e7eb4a8ec307459b31a5b8";
     BP_Extractor_Shell_C* Door_Back;
-    static constexpr const char* Door_Back__UeScsNode = "26e02d5ddcecc94a85a66e3b1e5e02d3";
     BP_Extractor_Shell_C* Door_Front;
-    static constexpr const char* Door_Front__UeScsNode = "4fad114210b0c74782926a97018dac86";
     BP_Extractor_Shell_C* Door_Left;
-    static constexpr const char* Door_Left__UeScsNode = "c3095370a9c0d5459b632f6ed8ad7e28";
     BP_Extractor_Shell_C* Door_Right;
-    static constexpr const char* Door_Right__UeScsNode = "aaff0a22e59bfa42b21bde7fe67f94ec";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "27566d3df18b0c43b3208e8b3bad0c5b";
     class USceneComponent* Doors;
-    static constexpr const char* Doors__UeScsNode = "1ee01bae259f74479d2e7bf2e4a0151d";
     class UAudioComponent* AudioDropStarted;
-    static constexpr const char* AudioDropStarted__UeScsNode = "3fcb74ef5b5d6844938cffbdb87812d9";
     class USkeletalMeshComponent* Drill;
-    static constexpr const char* Drill__UeScsNode = "4563ef83fa40aa4890c00ba7c2533800";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "542b63ba51b1e1448db659377e2c21cb";
     class UAudioComponent* MineheadDrilling_Cue;
-    static constexpr const char* MineheadDrilling_Cue__UeScsNode = "68ce49b27796dd4eab07b86873e860c3";
     class UAutoCarverComponent* AutoCarver;
-    static constexpr const char* AutoCarver__UeScsNode = "46b9f662b8075249b220891de5aca560";
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "e94f8fe63bce6a4fbf755d9345d036b5";
     class USceneComponent* ConnectedIndicator;
-    static constexpr const char* ConnectedIndicator__UeScsNode = "4e4c8cee9001c54aaa5307d745c6b91f";
     class UActorTrackingComponent* ActorTrackingIcon;
-    static constexpr const char* ActorTrackingIcon__UeScsNode = "a04e1bc89fbf5849b3c65c1797cf3597";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "ea4b7d234550684badc5e10eaa094df1";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "079e65d3f3113b49ad9f2f0714cc178d";
     class UParticleSystemComponent* DrillParticles01;
     class UParticleSystemComponent* DrillParticles02;
     bool DoorsPushedAway;
@@ -89,7 +65,6 @@ public:
     void OnPipelineStateChanged(TEnum<EPipelineBuildState> InPipelineState);
     void OnDroppodImpact();
     void Setup_ItemEquipped();
-    static constexpr const char* Setup_ItemEquipped__UeName = "Setup ItemEquipped";
     void ReceiveConnectedToSegment(class APipelineSegment* InConnectedSegment);
     void SetPipelineBuilderEquipped(bool InEquipped);
     void OnItemEquipped_Event(class AItem* Item);
@@ -98,6 +73,35 @@ public:
     void ExtractorPodOrderedEvent(class APlayerCharacter* InUser);
     void UserConstructionScript();
     void UpdateState();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* BP_Extractor_Lamp02__UeScsNode = "99a2d546dadade45ad6a6b688e2b0a40";
+        static constexpr const char* BP_Extractor_Lamp01__UeScsNode = "57d395e4d5d66f4495e3271b2ef3b1ea";
+        static constexpr const char* SM_railconnector_02__UeScsNode = "89d667248c328042b2ff043302e897d1";
+        static constexpr const char* SM_railconnector_01__UeScsNode = "1b2bfabef74f0f44a85d31f1a37a3820";
+        static constexpr const char* PointLight1__UeScsNode = "3127e45037e0a842bfd898239a46af70";
+        static constexpr const char* PointLight__UeScsNode = "a54740272349ec4e86e3e8d277976c86";
+        static constexpr const char* outline__UeScsNode = "22b09b8cc9e7eb4a8ec307459b31a5b8";
+        static constexpr const char* Door_Back__UeScsNode = "26e02d5ddcecc94a85a66e3b1e5e02d3";
+        static constexpr const char* Door_Front__UeScsNode = "4fad114210b0c74782926a97018dac86";
+        static constexpr const char* Door_Left__UeScsNode = "c3095370a9c0d5459b632f6ed8ad7e28";
+        static constexpr const char* Door_Right__UeScsNode = "aaff0a22e59bfa42b21bde7fe67f94ec";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "27566d3df18b0c43b3208e8b3bad0c5b";
+        static constexpr const char* Doors__UeScsNode = "1ee01bae259f74479d2e7bf2e4a0151d";
+        static constexpr const char* AudioDropStarted__UeScsNode = "3fcb74ef5b5d6844938cffbdb87812d9";
+        static constexpr const char* Drill__UeScsNode = "4563ef83fa40aa4890c00ba7c2533800";
+        static constexpr const char* PathfinderCollision__UeScsNode = "542b63ba51b1e1448db659377e2c21cb";
+        static constexpr const char* MineheadDrilling_Cue__UeScsNode = "68ce49b27796dd4eab07b86873e860c3";
+        static constexpr const char* AutoCarver__UeScsNode = "46b9f662b8075249b220891de5aca560";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "e94f8fe63bce6a4fbf755d9345d036b5";
+        static constexpr const char* ConnectedIndicator__UeScsNode = "4e4c8cee9001c54aaa5307d745c6b91f";
+        static constexpr const char* ActorTrackingIcon__UeScsNode = "a04e1bc89fbf5849b3c65c1797cf3597";
+        static constexpr const char* SkeletalMesh__UeScsNode = "ea4b7d234550684badc5e10eaa094df1";
+        static constexpr const char* Scene__UeScsNode = "079e65d3f3113b49ad9f2f0714cc178d";
+        static constexpr const char* Setup_ItemEquipped__UeName = "Setup ItemEquipped";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

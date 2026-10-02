@@ -21,15 +21,19 @@ public:
     FBlackboardKeySelector TargetKey;
     FBlackboardKeySelector TargetLocationKey;
     float Dodge_Angle;
-    static constexpr const char* Dodge_Angle__UeName = "Dodge Angle";
     float Max_Sample_Distance;
-    static constexpr const char* Max_Sample_Distance__UeName = "Max Sample Distance";
     float Move_Distance;
-    static constexpr const char* Move_Distance__UeName = "Move Distance";
     float Random_Deviation;
-    static constexpr const char* Random_Deviation__UeName = "Random Deviation";
     void ExecuteUbergraph_TSK_FindDiagonalPointTowardsTarget(int EntryPoint);
     void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Dodge_Angle__UeName = "Dodge Angle";
+        static constexpr const char* Max_Sample_Distance__UeName = "Max Sample Distance";
+        static constexpr const char* Move_Distance__UeName = "Move Distance";
+        static constexpr const char* Random_Deviation__UeName = "Random Deviation";
+    };
 };
 
 }}}   // namespace Game::AI::Tasks

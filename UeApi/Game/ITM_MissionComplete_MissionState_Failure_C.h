@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_MissionState_Failure", "ITM_MissionComplete_MissionState_Failure_C");
     using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* StateTextAppear;
+    UE_READONLY class UWidgetAnimation* StateTextAppear;
     class UTextBlock* DATA_MissionState;
     class UTextBlock* DATA_MissionState_Shadow;
     class UImage* Image_0;
@@ -41,10 +41,10 @@ public:
     UI_RunningText_C* UI_RunningText;
     UI_RunningText_C* UI_RunningText_HostAbort;
     bool MissionFailed;
-    FText StatusText;
-    float StartDelay;
+    UE_READONLY FText StatusText;
+    UE_READONLY float StartDelay;
     TMulticastInlineDelegate<void()> OnAnnouncementFinished;
-    bool AbortByHost;
+    UE_READONLY bool AbortByHost;
     void ExecuteUbergraph_ITM_MissionComplete_MissionState_Failure(int EntryPoint);
     void BndEvt__UI_RunningText_HostAbort_K2Node_ComponentBoundEvent_1_OnFinished__DelegateSignature();
     void OnFinished();

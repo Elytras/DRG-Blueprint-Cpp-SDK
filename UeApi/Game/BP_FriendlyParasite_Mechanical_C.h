@@ -20,22 +20,26 @@ class BP_FriendlyParasite_Mechanical_C : public Game::WeaponsNTools::Grenades::F
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/BP_FriendlyParasite_Mechanical", "BP_FriendlyParasite_Mechanical_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_BP_FriendlyParasite_Mechanical_C;
-    static constexpr const char* UberGraphFrame_BP_FriendlyParasite_Mechanical_C__UeName = "UberGraphFrame";
     class UParticleSystemComponent* Particle_Trail;
-    static constexpr const char* Particle_Trail__UeScsNode = "e3d50a034afd6043ba390708ad591dbd";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "30fbbf986474e840a21fc7a8641a2cce";
     class UAudioComponent* ShredderIdle;
-    static constexpr const char* ShredderIdle__UeScsNode = "be22efa886c87744a09b9d7ae2228aac";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "5a9bc80a82d4b34bb3385d33b6283181";
     FVector LastLocation;
     FVector CurrentDireciton;
     void ExecuteUbergraph_BP_FriendlyParasite_Mechanical(int EntryPoint);
     void TurnTowardsMotion();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PushStatusEffectDamageBonus DamageComponent:PushStatusEffectDamageBonus_0;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_BP_FriendlyParasite_Mechanical_C__UeName = "UberGraphFrame";
+        static constexpr const char* Particle_Trail__UeScsNode = "e3d50a034afd6043ba390708ad591dbd";
+        static constexpr const char* StaticMesh__UeScsNode = "30fbbf986474e840a21fc7a8641a2cce";
+        static constexpr const char* ShredderIdle__UeScsNode = "be22efa886c87744a09b9d7ae2228aac";
+        static constexpr const char* PointLight__UeScsNode = "5a9bc80a82d4b34bb3385d33b6283181";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

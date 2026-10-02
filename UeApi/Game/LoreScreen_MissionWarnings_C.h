@@ -21,7 +21,6 @@ public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_MissionWarnings", "LoreScreen_MissionWarnings_C");
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_MissionWarnings_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_MissionWarnings_C__UeName = "UberGraphFrame";
     LoreScreen_Template_C* LoreScreen_Template;
     class UScrollBox* ScrollBox_List;
     class UUniformGridPanel* UniformGridPanel_ItemHolder;
@@ -29,6 +28,11 @@ public:
     void ExecuteUbergraph_LoreScreen_MissionWarnings(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_MissionWarnings_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

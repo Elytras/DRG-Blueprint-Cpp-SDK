@@ -30,7 +30,7 @@ public:
     using UI_ForceOtherSpecialEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;
     using UI_ForceSeasonEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* LookingForServers;
+    UE_READONLY class UWidgetAnimation* LookingForServers;
     Basic_ButtonScalable2_C* Basic_AddSeasonLevel;
     Basic_ButtonScalable2_C* Basic_AdvanceCampaign;
     Basic_ButtonScalable2_C* Basic_CompleteCampaign;
@@ -77,7 +77,6 @@ public:
     void BndEvt__Basic_ResetPickaxeVanity_K2Node_ComponentBoundEvent_9_OnClicked__DelegateSignature();
     void BndEvt__Basic_GivePickaxeVanity_K2Node_ComponentBoundEvent_8_OnClicked__DelegateSignature();
     void Back_Pressed();
-    static constexpr const char* Back_Pressed__UeName = "Back Pressed";
     void BndEvt__Basic_StartMission_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature();
     void BndEvt__Basic_ForceCrates_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature();
     void BndEvt__Basic_GiveRandomSchematic_K2Node_ComponentBoundEvent_5_OnClicked__DelegateSignature();
@@ -98,6 +97,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnLoaded_5087EABD4CB81111640A91B2888B99F6(TSubclassOf<class UObject> Loaded);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Back_Pressed__UeName = "Back Pressed";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::CheatConsole

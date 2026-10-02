@@ -37,7 +37,7 @@ public:
     using ITM_Craft_ResourceSmall_C = Game::UI::Menu_Crafting::ITM_Craft_ResourceSmall_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* SwitchToEquip;
+    UE_READONLY class UWidgetAnimation* SwitchToEquip;
     class UBorder* Border;
     class UBorder* Border_0;
     class UBorder* Border_1;

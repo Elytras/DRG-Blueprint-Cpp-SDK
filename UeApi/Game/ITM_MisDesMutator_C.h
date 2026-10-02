@@ -25,8 +25,8 @@ class ITM_MisDesMutator_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisDesMutator", "ITM_MisDesMutator_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BlinkMutator;
-    class UWidgetAnimation* BlinkWarning;
+    UE_READONLY class UWidgetAnimation* BlinkMutator;
+    UE_READONLY class UWidgetAnimation* BlinkWarning;
     class UImage* BlinkOverlay;
     class UButton* Button_Outer;
     class UTextBlock* DATA_Modifier;

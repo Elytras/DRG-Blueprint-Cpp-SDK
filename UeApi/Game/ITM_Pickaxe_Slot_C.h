@@ -25,10 +25,9 @@ public:
     UE_CLASS("/Game/UI/Menu_Pickaxe/ITM_Pickaxe_Slot", "ITM_Pickaxe_Slot_C");
     using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame_ITM_Pickaxe_Slot_C;
-    static constexpr const char* UberGraphFrame_ITM_Pickaxe_Slot_C__UeName = "UberGraphFrame";
     FText CategoryText;
     TArray<class UPickaxePart*> Items;
-    TEnum<EPickaxePartLocation> PickaxePartLocation;
+    UE_READONLY TEnum<EPickaxePartLocation> PickaxePartLocation;
     class UItemID* PickAxe;
     ITM_GeneratedIcon_Item_C* EquippedWidget;
     void ExecuteUbergraph_ITM_Pickaxe_Slot(int EntryPoint);
@@ -40,6 +39,11 @@ public:
     void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
     void ReceiveEquipItem(int InIndex, bool& OutSuccess);
     void GetItemDLC(class UPickaxePart* Target, class UDLCBase*& FromDLC);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_ITM_Pickaxe_Slot_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Pickaxe

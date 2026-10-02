@@ -18,7 +18,7 @@ class HUD_CroNew_GrapplingGun_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CroNew_GrapplingGun", "HUD_CroNew_GrapplingGun_C");
-    class UWidgetAnimation* AnimFail;
+    UE_READONLY class UWidgetAnimation* AnimFail;
     class UImage* Image_InnerCircle;
     class UTextBlock* Text_Distance;
     class UTextBlock* Text_FailMessage;

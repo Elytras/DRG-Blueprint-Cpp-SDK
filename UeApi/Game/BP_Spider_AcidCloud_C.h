@@ -16,7 +16,11 @@ class BP_Spider_AcidCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_F
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/BP_Spider_AcidCloud", "BP_Spider_AcidCloud_C");
     class UStatusEffectsComponent* StatusEffects;
-    static constexpr const char* StatusEffects__UeScsNode = "70bd4ed612ebf240a26d1d4ccd6454d6";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StatusEffects__UeScsNode = "70bd4ed612ebf240a26d1d4ccd6454d6";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

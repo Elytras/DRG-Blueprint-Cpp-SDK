@@ -26,15 +26,10 @@ class ENE_Spider_Tank_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_Larg
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ENE_Spider_Tank_Base", "ENE_Spider_Tank_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Base_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Base_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "ea2102983e2ba74bb8be9200fc3567ba";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "2db7b4026a894d4da651588223f2b013";
     class UPointLightComponent* Light_BackBody;
-    static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
     float ButtTurnOff_TurnOffTime_F69DC0FD4B3F86895DBCE39304B9A3BA;
     TEnum<ETimelineDirection> ButtTurnOff__Direction_F69DC0FD4B3F86895DBCE39304B9A3BA;
     class UTimelineComponent* ButtTurnOff;
@@ -55,6 +50,15 @@ public:
     void IsWeakPointDeath(class UFSDPhysicalMaterial* Material, bool& IsWeakPoint);
     void CreateButtDynamicMaterial();
     void GetFXMeshScale(float& Scale);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Base_C__UeName = "UberGraphFrame";
+        static constexpr const char* Capsule__UeScsNode = "ea2102983e2ba74bb8be9200fc3567ba";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "2db7b4026a894d4da651588223f2b013";
+        static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

@@ -19,15 +19,11 @@ public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/UI_JettyBoots_Gate", "UI_JettyBoots_Gate_C");
     using UI_JettyBoots_Column_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_JettyBoots_Gate_C;
-    static constexpr const char* UberGraphFrame_UI_JettyBoots_Gate_C__UeName = "UberGraphFrame";
     UI_JettyBoots_Column_C* BottomColumn;
     UI_JettyBoots_Column_C* TopColumn;
     int Gate_Width;
-    static constexpr const char* Gate_Width__UeName = "Gate Width";
     FSpriteRect Top_Rect;
-    static constexpr const char* Top_Rect__UeName = "Top Rect";
     FSpriteRect Bottom_Rect;
-    static constexpr const char* Bottom_Rect__UeName = "Bottom Rect";
     FJettyBootSetting PreviewLevelSettings;
     int PreviewCanvasHeight;
     bool PreviewFirstGate;
@@ -35,6 +31,14 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Intersects(FSpriteRect InRect, bool& OutIntersects);
     void OnInitialize(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutStartX, int& OutEndX);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_JettyBoots_Gate_C__UeName = "UberGraphFrame";
+        static constexpr const char* Gate_Width__UeName = "Gate Width";
+        static constexpr const char* Top_Rect__UeName = "Top Rect";
+        static constexpr const char* Bottom_Rect__UeName = "Bottom Rect";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots

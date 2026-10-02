@@ -37,7 +37,6 @@ public:
     FMargin Padding_Border;
     FMargin Padding_Node;
     bool Show_Icons;
-    static constexpr const char* Show_Icons__UeName = "Show Icons";
     TMulticastInlineDelegate<void(FMasteryItem Reward)> OnItemRewarded;
     void ExecuteUbergraph_ITM_MasteryBar(int EntryPoint);
     void ItemUpgradePurchased();
@@ -45,6 +44,11 @@ public:
     void CreateMasteryLevels(int maxMastery, int CurrentMastery, class UItemID* Item, TArray<FMasteryItem>& masteryLevels);
     void AddMasteryBox(class UWidget* Content);
     void SetMasteryData(class AFSDPlayerState* Player, class UItemID* Item, bool& HasMasteryLevels);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Icons__UeName = "Show Icons";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

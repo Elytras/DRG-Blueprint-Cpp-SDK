@@ -22,14 +22,18 @@ public:
     TEnum<EVolumeType> volumeType;
     int Indent;
     int Min_Text_Width;
-    static constexpr const char* Min_Text_Width__UeName = "Min Text Width";
     void ExecuteUbergraph_Options_VolumeSlider(int EntryPoint);
     void Update_Percentage_Text();
-    static constexpr const char* Update_Percentage_Text__UeName = "Update Percentage Text";
     void UINeedsUpdate();
     void BndEvt__Basic_Slider_K2Node_ComponentBoundEvent_3_OnValueChanged__DelegateSignature(float Value);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Min_Text_Width__UeName = "Min Text Width";
+        static constexpr const char* Update_Percentage_Text__UeName = "Update Percentage Text";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Options

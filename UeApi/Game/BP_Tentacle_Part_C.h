@@ -19,12 +19,16 @@ public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/BP_Tentacle_Part", "BP_Tentacle_Part_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "ffec9f657f0c3543ab525a1b8189138a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "60a06bffd2cfb542a9bb13f81c90e06e";
     TArray<class UStaticMesh*> Meshes;
     void ExecuteUbergraph_BP_Tentacle_Part(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh__UeScsNode = "ffec9f657f0c3543ab525a1b8189138a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "60a06bffd2cfb542a9bb13f81c90e06e";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

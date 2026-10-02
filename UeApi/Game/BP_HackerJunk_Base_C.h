@@ -20,15 +20,19 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_HackerJunk_Base", "BP_HackerJunk_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "ee0ee4a36ddc3d4ea648173c760cc98b";
     class UBoxComponent* BoxCollision;
-    static constexpr const char* BoxCollision__UeScsNode = "a2a38cfb24f5164884b54056e7ae59d4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9f5739c5a9de8246907a0bd0ef7da98b";
     TArray<class UStaticMesh*> Meshes;
     void ExecuteUbergraph_BP_HackerJunk_Base(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "ee0ee4a36ddc3d4ea648173c760cc98b";
+        static constexpr const char* BoxCollision__UeScsNode = "a2a38cfb24f5164884b54056e7ae59d4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9f5739c5a9de8246907a0bd0ef7da98b";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers

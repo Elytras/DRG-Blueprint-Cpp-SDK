@@ -13,7 +13,11 @@ class BP_Crossbow_Electrobeam_C : public ACrossbowElectroBeam
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Upgrades/BP_Crossbow_Electrobeam", "BP_Crossbow_Electrobeam_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Upgrades

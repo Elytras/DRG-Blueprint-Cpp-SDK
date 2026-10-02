@@ -26,33 +26,20 @@ class BP_Spacerig_Spaceball_Goal_C : public AGem
 {
 public:
     UE_CLASS("/Game/LevelElements/Spacerig/Spacerig_Fun/SpaceBall/BP_Spacerig_Spaceball_Goal", "BP_Spacerig_Spaceball_Goal_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "d34e5e9872ab554ab2ca95bdfc73ea80";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "21adfe4ba143b14f9e44a6721e57d701";
     class UBoxComponent* GoalBox;
-    static constexpr const char* GoalBox__UeScsNode = "64a32f324e37d04b9bebb339c6302a38";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "5a2a21a23b7bd64b8729d152662898b2";
     class UParticleSystemComponent* ParticleSystem2;
-    static constexpr const char* ParticleSystem2__UeScsNode = "116a5a9cb1e80c4a835ef377509c969f";
     class UParticleSystemComponent* ParticleSystem1;
-    static constexpr const char* ParticleSystem1__UeScsNode = "d9a7913a606ac24c829e353aea099033";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "8043ebb9866bfb40aa787705f5e12db2";
     class UStaticMeshComponent* Goal;
-    static constexpr const char* Goal__UeScsNode = "799dc230d5f03247a882578b17147794";
     class UStaticMeshComponent* SM_GoalEmitter_01;
-    static constexpr const char* SM_GoalEmitter_01__UeScsNode = "fd2b6ef28f25d845b23163458cb00f74";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "e3c5f0ec0159ce4ab7354b53630cb4e0";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "2cabb35692e80d429f015b29e85d307f";
     FVector throwForce;
     int GoalsScored;
-    static constexpr const char* GoalsScored__Replicated = "OnRep_GoalsScored:";
     float StartYaw;
     class USoundBase* GoalScoredSound;
     class USoundBase* ThrowSound;
@@ -62,10 +49,8 @@ public:
     bool BeginActive;
     bool HasBounced;
     float GoalClosedTimer;
-    static constexpr const char* GoalClosedTimer__Replicated = "OnRep_GoalClosedTimer:";
     void ExecuteUbergraph_BP_Spacerig_Spaceball_Goal(int EntryPoint);
     void Countdown_Completed();
-    static constexpr const char* Countdown_Completed__UeName = "Countdown Completed";
     void BndEvt__GoalBox_K2Node_ComponentBoundEvent_7_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Throw(FVector force);
     UE_MULTICAST void SetGoalVisible();
@@ -79,6 +64,25 @@ public:
     void OnRep_GoalsScored();
     void HandlePopUp(float DeltaTime);
     void OnRep_GoalClosedTimer();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* Widget1__UeScsNode = "d34e5e9872ab554ab2ca95bdfc73ea80";
+        static constexpr const char* Widget__UeScsNode = "21adfe4ba143b14f9e44a6721e57d701";
+        static constexpr const char* GoalBox__UeScsNode = "64a32f324e37d04b9bebb339c6302a38";
+        static constexpr const char* UseSphere__UeScsNode = "5a2a21a23b7bd64b8729d152662898b2";
+        static constexpr const char* ParticleSystem2__UeScsNode = "116a5a9cb1e80c4a835ef377509c969f";
+        static constexpr const char* ParticleSystem1__UeScsNode = "d9a7913a606ac24c829e353aea099033";
+        static constexpr const char* ParticleSystem__UeScsNode = "8043ebb9866bfb40aa787705f5e12db2";
+        static constexpr const char* Goal__UeScsNode = "799dc230d5f03247a882578b17147794";
+        static constexpr const char* SM_GoalEmitter_01__UeScsNode = "fd2b6ef28f25d845b23163458cb00f74";
+        static constexpr const char* Box__UeScsNode = "e3c5f0ec0159ce4ab7354b53630cb4e0";
+        static constexpr const char* Carriable__UeScsNode = "2cabb35692e80d429f015b29e85d307f";
+        static constexpr const char* GoalsScored__Replicated = "OnRep_GoalsScored:";
+        static constexpr const char* GoalClosedTimer__Replicated = "OnRep_GoalClosedTimer:";
+        static constexpr const char* Countdown_Completed__UeName = "Countdown Completed";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall

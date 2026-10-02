@@ -18,7 +18,7 @@ class ITM_ServerList_AttentionBox_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/ITM_ServerList_AttentionBox", "ITM_ServerList_AttentionBox_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Pulse;
+    UE_READONLY class UWidgetAnimation* Pulse;
     class UImage* Icon_Warning;
     void ExecuteUbergraph_ITM_ServerList_AttentionBox(int EntryPoint);
     UE_COSMETIC void Construct();

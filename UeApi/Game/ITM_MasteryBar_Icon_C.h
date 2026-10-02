@@ -24,7 +24,7 @@ class ITM_MasteryBar_Icon_C : public UMasteryIconWidget
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_MasteryBar_Icon", "ITM_MasteryBar_Icon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimUnlocked;
+    UE_READONLY class UWidgetAnimation* AnimUnlocked;
     class UProgressBar* BG;
     class UImage* ICON_Padlock;
     class UImage* Icon_Unlock;

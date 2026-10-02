@@ -13,6 +13,11 @@ class STE_HellfireTrail_CoilGun_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/STE_HellfireTrail_CoilGun", "STE_HellfireTrail_CoilGun_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

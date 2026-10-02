@@ -21,16 +21,20 @@ public:
     class UTextBlock* Label;
     FText Text;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     TEnum<ETextJustify> Justification;
     float Min_Desired_Width;
-    static constexpr const char* Min_Desired_Width__UeName = "Min Desired Width";
     bool UpperCase;
     void ExecuteUbergraph_Basic_MenuLabel(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText NewText);
     void SetFontSize(int inFontSize);
     void SetJustification(TEnum<ETextJustify> InJustification);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Min_Desired_Width__UeName = "Min Desired Width";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

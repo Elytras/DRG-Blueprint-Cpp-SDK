@@ -29,8 +29,12 @@ public:
     UI_DeathStats_View_C* UI_DeathStats_View;
     BP_PlayerController_SpaceRig_C* Player;
     class AFSDPlayerState* Owner_State;
-    static constexpr const char* Owner_State__UeName = "Owner State";
     void ExecuteUbergraph_ConsoleScreen_DeathStats(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Owner_State__UeName = "Owner State";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary

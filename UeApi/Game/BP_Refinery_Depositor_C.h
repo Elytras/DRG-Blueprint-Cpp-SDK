@@ -24,17 +24,11 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Depositor", "BP_Refinery_Depositor_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* AudioDepositing1;
-    static constexpr const char* AudioDepositing1__UeScsNode = "70c81506a151bd4a84aae37ac53729ca";
     class UCapsuleComponent* OpenTrigger;
-    static constexpr const char* OpenTrigger__UeScsNode = "ca828afa8e30974b823e662ec99129ed";
     class UResourceBank* ResourceBank;
-    static constexpr const char* ResourceBank__UeScsNode = "6c4942452c95bb46a4f58f92e19b03fb";
     class UCapsuleComponent* ResourceBankCollider;
-    static constexpr const char* ResourceBankCollider__UeScsNode = "946ba5825a89954d8efd1023ec076f53";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "52130ae4a88c7546acee36925695da0a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ff4142a513325a4db858f2939d62dcdb";
     TArray<class APlayerCharacter*> NearbyPlayers;
     bool DepositorOpen;
     TMulticastInlineDelegate<void(bool InOpen)> OnDepositorOpenChanged;
@@ -46,6 +40,16 @@ public:
     void BndEvt__OpenTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AudioDepositing1__UeScsNode = "70c81506a151bd4a84aae37ac53729ca";
+        static constexpr const char* OpenTrigger__UeScsNode = "ca828afa8e30974b823e662ec99129ed";
+        static constexpr const char* ResourceBank__UeScsNode = "6c4942452c95bb46a4f58f92e19b03fb";
+        static constexpr const char* ResourceBankCollider__UeScsNode = "946ba5825a89954d8efd1023ec076f53";
+        static constexpr const char* SkeletalMesh__UeScsNode = "52130ae4a88c7546acee36925695da0a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ff4142a513325a4db858f2939d62dcdb";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

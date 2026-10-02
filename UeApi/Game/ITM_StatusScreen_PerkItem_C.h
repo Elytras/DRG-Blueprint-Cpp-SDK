@@ -41,11 +41,15 @@ public:
     void BndEvt__ItemButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ItemButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Set_Selected(bool IsSelected);
-    static constexpr const char* Set_Selected__UeName = "Set Selected";
     void Set_Perk(class UPerkAsset* PerkAsset_0);
-    static constexpr const char* Set_Perk__UeName = "Set Perk";
     UE_PURE class UWidget* Get_ItemButton_ToolTipWidget();
     void GetPerkAsset(class UPerkAsset*& PerkAsset_0) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Selected__UeName = "Set Selected";
+        static constexpr const char* Set_Perk__UeName = "Set Perk";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

@@ -29,9 +29,9 @@ public:
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     using UI_CircularProgressBar_C = Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHolding;
-    class UWidgetAnimation* AnimCountDown;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimHolding;
+    UE_READONLY class UWidgetAnimation* AnimCountDown;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Label_C* ActionLabel;
     Basic_HUD_BracketWindowBig_C* Basic_HUD_BracketWindowBig;
     Basic_Label_C* CountDownLabel;
@@ -53,8 +53,7 @@ public:
     bool Holding;
     float HoldingProgress;
     TMulticastInlineDelegate<void()> OnHoldingFinished;
-    bool Hide_Timer;
-    static constexpr const char* Hide_Timer__UeName = "Hide Timer";
+    UE_READONLY bool Hide_Timer;
     void ExecuteUbergraph_HUD_Hold_Activation(int EntryPoint);
     void OnPerkActivationFinished();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
@@ -69,6 +68,11 @@ public:
     void CancelCountDown(bool HideCountDown);
     void SetHolding(bool IsHolding);
     void SetHoldingProgress(float InProgress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Hide_Timer__UeName = "Hide Timer";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

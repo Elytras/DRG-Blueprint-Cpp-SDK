@@ -17,9 +17,13 @@ class BP_RefineryLanding_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Objectives/Refinery/BP_RefineryLanding", "BP_RefineryLanding_C");
     class URoomCarverComponent* RoomCarver;
-    static constexpr const char* RoomCarver__UeScsNode = "615b56de87732e429d7459ba754e3363";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "257ae16327b3cd4a8022ee832f1b306f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RoomCarver__UeScsNode = "615b56de87732e429d7459ba754e3363";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "257ae16327b3cd4a8022ee832f1b306f";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery

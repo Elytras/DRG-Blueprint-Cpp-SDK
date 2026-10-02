@@ -52,7 +52,6 @@ public:
     class UVerticalBox* VerticalBox_MissionData;
     TArray<FText> Names;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     float TimePassed;
     int MissionComplexity;
     int missionLength;
@@ -62,6 +61,11 @@ public:
     void SetGeneratedMission(class UGeneratedMission* In_Mission);
     void AdjustBar(float InputPin);
     void AdjustCLBar(float InputPin);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts

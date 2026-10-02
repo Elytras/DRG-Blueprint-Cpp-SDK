@@ -13,6 +13,11 @@ class STE_Plague_HoldingHeart_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Character/Affliction/STE_Plague_HoldingHeart", "STE_Plague_HoldingHeart_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Character::Affliction

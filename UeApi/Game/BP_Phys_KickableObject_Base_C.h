@@ -31,15 +31,10 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/BP_Phys_KickableObject_Base", "BP_Phys_KickableObject_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "f0b3a1d98b373144b876b2b4856863e4";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "1ca3c3aafd75ec4f8b80d6ba765da971";
     class UCapsuleComponent* UseCapsule_ForKicking;
-    static constexpr const char* UseCapsule_ForKicking__UeScsNode = "88e4ec7732934140afec89ee07389a06";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     bool CanTriggerSound;
     class APlayerCharacter* KickedBy;
     float KickStrength;
@@ -55,12 +50,21 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_8_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_7_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     UE_MULTICAST void Spawn_Bronzehead_Effects();
-    static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void destroy();
     void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Scene__UeScsNode = "f0b3a1d98b373144b876b2b4856863e4";
+        static constexpr const char* StaticMesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* SimpleHealth__UeScsNode = "1ca3c3aafd75ec4f8b80d6ba765da971";
+        static constexpr const char* UseCapsule_ForKicking__UeScsNode = "88e4ec7732934140afec89ee07389a06";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects

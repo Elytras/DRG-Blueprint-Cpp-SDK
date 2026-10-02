@@ -18,9 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_Point", "BP_Salvage_Point_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "29cdd36fe3a07b41bb3827e51d56a9ab";
     uint8 SalvageState;
-    static constexpr const char* SalvageState__Replicated = "OnRep_State:";
     class ADropPod* DropPod;
     void ExecuteUbergraph_BP_Salvage_Point(int EntryPoint);
     void OnDefenseFail();
@@ -29,6 +27,12 @@ public:
     void OnDefenseComplete();
     void OnRep_State();
     void SetSalvagePointState(uint8 State);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "29cdd36fe3a07b41bb3827e51d56a9ab";
+        static constexpr const char* SalvageState__Replicated = "OnRep_State:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

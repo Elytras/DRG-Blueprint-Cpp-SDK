@@ -36,9 +36,13 @@ public:
     void Reset();
     void OnCheckedChanged(Check_ServerWorkEnvironment_C* CheckBox, class UDifficultySetting* Difficulty, bool IsChecked);
     void Add_Work_Environment(class UDifficultySetting* Difficulty, Check_ServerWorkEnvironment_C*& OutWidget, bool& OutIsChecked);
-    static constexpr const char* Add_Work_Environment__UeName = "Add Work Environment";
     void UpdateSubheader();
     void OpenMenu(bool Open);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Work_Environment__UeName = "Add Work Environment";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

@@ -32,43 +32,26 @@ class BP_Anniversary_Trophy8_InCave_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Anniversary/BP_Anniversary_Trophy8_InCave", "BP_Anniversary_Trophy8_InCave_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_LunarRabbit_Glitter;
-    static constexpr const char* NS_LunarRabbit_Glitter__UeScsNode = "a93c1a35f59a4b4992e282b2a8272ce3";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "4eb15219818afc489ff877b6b2e88ede";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "70fdbe592f149240a9fdd22adfe77ae6";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "f40c48756b9d674a94ab137f70916337";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "edeaca4c27cac34f8235b0b778e4539d";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "dae923f2080dd6439206ea51aa9c17d5";
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "7ec88a82187c124cb04b6bbcd8442ff9";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "f8f5ce99a3373640a5595bd73ea1dcc7";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "8d4a9a83b6255644ae7a09106c2b80ce";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "90a499a01492e04787aa4da64a10e4c6";
     class USceneComponent* MeshRoot;
-    static constexpr const char* MeshRoot__UeScsNode = "ba482cd1abbb884fbaa51668ad95b658";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "142d4d9222643a4fafc52c4938cb857a";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "9bca2b7e5f741e4ab7ee0ea8c75d8821";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "b5894d0d1be5cd4e9b1d1cfe28bded73";
     FVector throwForce;
     class USoundBase* PickupSound;
     bool ShowOnTerrainScanner;
-    static constexpr const char* ShowOnTerrainScanner__Replicated = "OnRep_ShowOnTerrainScanner:";
     float ActivateScannerDistance;
     float ThreeP_MugScale;
-    static constexpr const char* ThreeP_MugScale__UeName = "3P_MugScale";
     FVector MeshRootStartRelativeLocation;
     float StartWaveDistance;
     class USoundBase* ImpactSound;
@@ -93,6 +76,27 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void OnRep_ShowOnTerrainScanner();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* NS_LunarRabbit_Glitter__UeScsNode = "a93c1a35f59a4b4992e282b2a8272ce3";
+        static constexpr const char* Sphere__UeScsNode = "4eb15219818afc489ff877b6b2e88ede";
+        static constexpr const char* StaticMesh__UeScsNode = "70fdbe592f149240a9fdd22adfe77ae6";
+        static constexpr const char* outline__UeScsNode = "f40c48756b9d674a94ab137f70916337";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "edeaca4c27cac34f8235b0b778e4539d";
+        static constexpr const char* PointLight__UeScsNode = "dae923f2080dd6439206ea51aa9c17d5";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "7ec88a82187c124cb04b6bbcd8442ff9";
+        static constexpr const char* TerrainDetect__UeScsNode = "f8f5ce99a3373640a5595bd73ea1dcc7";
+        static constexpr const char* TerrainDetect2__UeScsNode = "8d4a9a83b6255644ae7a09106c2b80ce";
+        static constexpr const char* TerrainDetect1__UeScsNode = "90a499a01492e04787aa4da64a10e4c6";
+        static constexpr const char* MeshRoot__UeScsNode = "ba482cd1abbb884fbaa51668ad95b658";
+        static constexpr const char* Box__UeScsNode = "142d4d9222643a4fafc52c4938cb857a";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "9bca2b7e5f741e4ab7ee0ea8c75d8821";
+        static constexpr const char* Carriable__UeScsNode = "b5894d0d1be5cd4e9b1d1cfe28bded73";
+        static constexpr const char* ShowOnTerrainScanner__Replicated = "OnRep_ShowOnTerrainScanner:";
+        static constexpr const char* ThreeP_MugScale__UeName = "3P_MugScale";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Holidays::Anniversary

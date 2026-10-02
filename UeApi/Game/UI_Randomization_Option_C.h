@@ -33,7 +33,6 @@ public:
     class UOverlay* Root_Overlay;
     class UDetailedTag* FilterTag;
     bool Is_Checked;
-    static constexpr const char* Is_Checked__UeName = "Is Checked";
     TMulticastInlineDelegate<void(UI_Randomization_Option_C* InOption)> OnChanged;
     void ExecuteUbergraph_UI_Randomization_Option(int EntryPoint);
     void BndEvt__UI_Randomization_Option_Option_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
@@ -44,6 +43,11 @@ public:
     void SetChecked(bool InIsChecked);
     void GetIsChecked(bool& Is_Checked_0);
     void GetTagIfChecked(class UDetailedTag*& FilterTag_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Checked__UeName = "Is Checked";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

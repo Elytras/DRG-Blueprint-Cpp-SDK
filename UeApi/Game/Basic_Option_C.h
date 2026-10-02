@@ -33,7 +33,6 @@ public:
     class USizeBox* SizeBox;
     class USizeBox* SizeBox_Content;
     FText Option_Name;
-    static constexpr const char* Option_Name__UeName = "Option Name";
     float LeftPadding;
     int Slider;
     int switcher;
@@ -48,6 +47,11 @@ public:
     void SetOptionText(FText InText);
     void SetIndent(int InIndent);
     void SetContentLayout(float InLeftPadding, TEnum<EHorizontalAlignment> InHorizontalAlignment);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Option_Name__UeName = "Option Name";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

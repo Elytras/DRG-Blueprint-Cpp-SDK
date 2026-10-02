@@ -28,52 +28,29 @@ class BP_GuntowerEvent_C : public AGuntowerEvent
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/BP_GuntowerEvent", "BP_GuntowerEvent_C");
     using BP_GuntowerActivationPlatfrom_C = Game::GameElements::GameEvents::GuntowerEvent::BP_GuntowerActivationPlatfrom_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TowerBase";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* StarterButton4;
-    static constexpr const char* StarterButton4__UeScsNode = "3c1869406319b04396c20e6e15d833b6";
     class UChildActorComponent* StarterButton3;
-    static constexpr const char* StarterButton3__UeScsNode = "1b6611c55db864488e6b8ec8c659597e";
     class UChildActorComponent* StarterButton2;
-    static constexpr const char* StarterButton2__UeScsNode = "027ec8b887b4ce4c8348a06ad032a2b5";
     class UChildActorComponent* StarterButton1;
-    static constexpr const char* StarterButton1__UeScsNode = "16dedebd33ea8c4ba98057cea7398586";
     class UStaticMeshComponent* SM_Pillar_Machine_A2B;
-    static constexpr const char* SM_Pillar_Machine_A2B__UeScsNode = "c8573602e0d98d41b2c2ff89c3dd9ea1";
     class UStaticMeshComponent* SM_Pillar_Machine_A1B;
-    static constexpr const char* SM_Pillar_Machine_A1B__UeScsNode = "632b4bdd1655e746b2da5cba1e33187e";
     class UStaticMeshComponent* SM_Pillar_Machine_A0B;
-    static constexpr const char* SM_Pillar_Machine_A0B__UeScsNode = "19bf13871223ee44807205bf972236f7";
     class UStaticMeshComponent* SM_Pillar_Machine_A2;
-    static constexpr const char* SM_Pillar_Machine_A2__UeScsNode = "815993ac873e494abcdbb1d8769b33d6";
     class UStaticMeshComponent* SM_Pillar_Machine_A1;
-    static constexpr const char* SM_Pillar_Machine_A1__UeScsNode = "00f767a3f837b240a14c558f06a22f33";
     class UStaticMeshComponent* SM_Pillar_Machine_A0;
-    static constexpr const char* SM_Pillar_Machine_A0__UeScsNode = "d0bb9bac4fb62a4c83cb0d565679dc35";
     class UParticleSystemComponent* P_GunTower_Base_Smoke;
-    static constexpr const char* P_GunTower_Base_Smoke__UeScsNode = "bd7c3609abe5264eade8301f0c370c7e";
     class UChildActorComponent* ActivationPad3;
-    static constexpr const char* ActivationPad3__UeScsNode = "581a959940b74441a4844bc8f23fb127";
     class UChildActorComponent* ActivationPad2;
-    static constexpr const char* ActivationPad2__UeScsNode = "044537543a29fc4abcfd2881496c2c15";
     class UChildActorComponent* ActivationPad1;
-    static constexpr const char* ActivationPad1__UeScsNode = "56d18620a791994dbc95388a9dc56ccc";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "7fc00549833b5c49ab932ae74601c24b";
     class URoomCarverComponent* RoomCarver;
-    static constexpr const char* RoomCarver__UeScsNode = "596b24162a2eeb43a8097af87e0b4250";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "248550ae361f2741a8478e9c2f1f6394";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "d09c058decd2a14f91127d1a491223f0";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "b7f2c2a64acc0a4f83a62490d1619cf4";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "223f17fa580729409852539adefe85bd";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "75e5bc026116b344823c8970f3e9ddbd";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "170360dc0661af42b7e6d8e28eeb7739";
     TArray<BP_GuntowerActivationPlatfrom_C*> ActivationPlatforms;
     void ExecuteUbergraph_BP_GuntowerEvent(int EntryPoint);
     void OnEventBooted();
@@ -81,6 +58,33 @@ public:
     void OnModuleExploded(class AGuntowerModule* explodedModule);
     void OnEventFinished(bool eventSuccess);
     void OnEventTriggered();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame.BP_RewardFrame_C StartEventObject:StartEventObject_BP_RewardFrame_C_CAT;/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TowerBase;/Script/FSD.SpecialEventUsableComponent StartEventObject:StartEventObject_BP_RewardFrame_C_CAT:EventUsable";
+        static constexpr const char* StarterButton4__UeScsNode = "3c1869406319b04396c20e6e15d833b6";
+        static constexpr const char* StarterButton3__UeScsNode = "1b6611c55db864488e6b8ec8c659597e";
+        static constexpr const char* StarterButton2__UeScsNode = "027ec8b887b4ce4c8348a06ad032a2b5";
+        static constexpr const char* StarterButton1__UeScsNode = "16dedebd33ea8c4ba98057cea7398586";
+        static constexpr const char* SM_Pillar_Machine_A2B__UeScsNode = "c8573602e0d98d41b2c2ff89c3dd9ea1";
+        static constexpr const char* SM_Pillar_Machine_A1B__UeScsNode = "632b4bdd1655e746b2da5cba1e33187e";
+        static constexpr const char* SM_Pillar_Machine_A0B__UeScsNode = "19bf13871223ee44807205bf972236f7";
+        static constexpr const char* SM_Pillar_Machine_A2__UeScsNode = "815993ac873e494abcdbb1d8769b33d6";
+        static constexpr const char* SM_Pillar_Machine_A1__UeScsNode = "00f767a3f837b240a14c558f06a22f33";
+        static constexpr const char* SM_Pillar_Machine_A0__UeScsNode = "d0bb9bac4fb62a4c83cb0d565679dc35";
+        static constexpr const char* P_GunTower_Base_Smoke__UeScsNode = "bd7c3609abe5264eade8301f0c370c7e";
+        static constexpr const char* ActivationPad3__UeScsNode = "581a959940b74441a4844bc8f23fb127";
+        static constexpr const char* ActivationPad2__UeScsNode = "044537543a29fc4abcfd2881496c2c15";
+        static constexpr const char* ActivationPad1__UeScsNode = "56d18620a791994dbc95388a9dc56ccc";
+        static constexpr const char* PathfinderCollision__UeScsNode = "7fc00549833b5c49ab932ae74601c24b";
+        static constexpr const char* RoomCarver__UeScsNode = "596b24162a2eeb43a8097af87e0b4250";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "248550ae361f2741a8478e9c2f1f6394";
+        static constexpr const char* outline__UeScsNode = "d09c058decd2a14f91127d1a491223f0";
+        static constexpr const char* StaticMesh__UeScsNode = "b7f2c2a64acc0a4f83a62490d1619cf4";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "223f17fa580729409852539adefe85bd";
+        static constexpr const char* terrainPlacement__UeScsNode = "75e5bc026116b344823c8970f3e9ddbd";
+        static constexpr const char* TerrainDetect__UeScsNode = "170360dc0661af42b7e6d8e28eeb7739";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent

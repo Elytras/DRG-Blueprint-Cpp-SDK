@@ -33,14 +33,18 @@ public:
     class AFSDPlayerState* PlayerState;
     class APlayerCharacter* SelectedCharacter;
     bool TOGGLE__PlayerName;
-    static constexpr const char* TOGGLE__PlayerName__UeName = "TOGGLE: PlayerName";
     bool TOGGLE__XP_Display;
-    static constexpr const char* TOGGLE__XP_Display__UeName = "TOGGLE: XP Display";
     void ExecuteUbergraph_ITEM_SpaceRig_PersonalCharacterLevel(int EntryPoint);
     void OnCharacterStatsChanged_Event(class AFSDPlayerState* PlayerState_0);
     void OnPlayerCharacterSpawned(class APlayerCharacter* PlayerCharacter);
     void Update(class APlayerCharacter* Character);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TOGGLE__PlayerName__UeName = "TOGGLE: PlayerName";
+        static constexpr const char* TOGGLE__XP_Display__UeName = "TOGGLE: XP Display";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

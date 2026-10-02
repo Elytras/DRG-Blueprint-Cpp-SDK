@@ -15,10 +15,14 @@ class BP_PoisonGasFungus_PoisonGasCloud_C : public Game::Enemies::BaseItems::BP_
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/PoisonGasFungus/BP_PoisonGasFungus_PoisonGasCloud", "BP_PoisonGasFungus_PoisonGasCloud_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_PoisonGasFungus_PoisonGasCloud_C;
-    static constexpr const char* UberGraphFrame_BP_PoisonGasFungus_PoisonGasCloud_C__UeName = "UberGraphFrame";
     float InitialDamageDelay;
     void ExecuteUbergraph_BP_PoisonGasFungus_PoisonGasCloud(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_PoisonGasFungus_PoisonGasCloud_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus

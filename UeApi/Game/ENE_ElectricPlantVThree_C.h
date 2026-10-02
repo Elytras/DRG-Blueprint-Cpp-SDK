@@ -36,29 +36,17 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ElectricPlant/ENE_ElectricPlantVThree", "ENE_ElectricPlantVThree_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* RevengeDamage;
-    static constexpr const char* RevengeDamage__UeScsNode = "b714a12ac9314d4f999c48d377c7152b";
     class UCapsuleComponent* DamageCapsule;
-    static constexpr const char* DamageCapsule__UeScsNode = "b598be8f7d5d7649b3c190b2e3051623";
     class UAudioComponent* ElectricPlantIdle;
-    static constexpr const char* ElectricPlantIdle__UeScsNode = "4efc007ccb7e214c9973c4e764b2c3a2";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "16a95e8186734e4e8abff81865101402";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "2a3cbe32514ccd46af61668e3f83a22e";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "15189fb3b7d0464ab735158bbe7f2fa2";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "779677d92bb1dc4d8b03bb810133bac9";
     class USceneComponent* TargetPoint;
-    static constexpr const char* TargetPoint__UeScsNode = "8b529bce0ae5c04a94330bbce42e4742";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "2c6b90cc397a164e92f430883753435b";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "c64c81d19f98404c9577ae4bf81c9b7e";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "978f28edbc2ecb459fc6e4a24fa46334";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "67e17ca19237f0438a09fb399d7d7a5c";
     float Radius;
     TArray<class USceneComponent*> TargetList;
     class UParticleSystem* deathEffect;
@@ -67,7 +55,6 @@ public:
     TArray<class UStaticMesh*> Meshes;
     bool HasAtLeastOneConnection;
     bool PlayEffectsOnDeath;
-    static constexpr const char* PlayEffectsOnDeath__Replicated = ":";
     float MinAllowedDistanceToOtherElectricPlants;
     void ExecuteUbergraph_ENE_ElectricPlantVThree(int EntryPoint);
     void BndEvt__DamageCapsule_K2Node_ComponentBoundEvent_4_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
@@ -85,6 +72,23 @@ public:
     void RemoveBeams();
     void RemoveNeighbourBeams(class AActor* Neighbour);
     void InstaDie();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RevengeDamage__UeScsNode = "b714a12ac9314d4f999c48d377c7152b";
+        static constexpr const char* DamageCapsule__UeScsNode = "b598be8f7d5d7649b3c190b2e3051623";
+        static constexpr const char* ElectricPlantIdle__UeScsNode = "4efc007ccb7e214c9973c4e764b2c3a2";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "16a95e8186734e4e8abff81865101402";
+        static constexpr const char* SimpleHealth__UeScsNode = "2a3cbe32514ccd46af61668e3f83a22e";
+        static constexpr const char* PointLight__UeScsNode = "15189fb3b7d0464ab735158bbe7f2fa2";
+        static constexpr const char* TerrainDetect__UeScsNode = "779677d92bb1dc4d8b03bb810133bac9";
+        static constexpr const char* TargetPoint__UeScsNode = "8b529bce0ae5c04a94330bbce42e4742";
+        static constexpr const char* terrainPlacement__UeScsNode = "2c6b90cc397a164e92f430883753435b";
+        static constexpr const char* ParticleSystem__UeScsNode = "c64c81d19f98404c9577ae4bf81c9b7e";
+        static constexpr const char* StaticMesh__UeScsNode = "978f28edbc2ecb459fc6e4a24fa46334";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "67e17ca19237f0438a09fb399d7d7a5c";
+        static constexpr const char* PlayEffectsOnDeath__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ElectricPlant

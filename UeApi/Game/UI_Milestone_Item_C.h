@@ -32,11 +32,11 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using UI_Milestone_Tier_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ClaimIdle;
-    class UWidgetAnimation* AnimHover;
-    class UWidgetAnimation* ClaimableAnim;
-    class UWidgetAnimation* CompletedAnim;
-    class UWidgetAnimation* ClaimAnim;
+    UE_READONLY class UWidgetAnimation* ClaimIdle;
+    UE_READONLY class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* ClaimableAnim;
+    UE_READONLY class UWidgetAnimation* CompletedAnim;
+    UE_READONLY class UWidgetAnimation* ClaimAnim;
     class UImage* BGgradient;
     class UHorizontalBox* BigStarRewardBar;
     BlurBackground_C* BlurBackground;
@@ -53,7 +53,7 @@ public:
     class UTextBlock* PerkPointsReward;
     class UHorizontalBox* SmallStarRewardBar;
     UI_Milestone_Tier_C* UI_Milestone_Tier;
-    class UMilestoneAsset* Milestone;
+    UE_READONLY class UMilestoneAsset* Milestone;
     int TierPreview;
     bool ItemClaimable;
     bool ItemHovered;
@@ -68,7 +68,6 @@ public:
     void SetAnimClaimProgress(float Progress);
     void CreateRewardStars(int StarCount);
     void Claim_KPI();
-    static constexpr const char* Claim_KPI__UeName = "Claim KPI";
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OnCountChanged_Event(class UObject* WorldContext, class UMissionStat* MissionStat, float Value);
@@ -84,6 +83,11 @@ public:
     void GetIcon(class UTexture2D*& Icon);
     void GetIsClaimable(bool& ItemClaimable_0);
     void UpdateRewardStar(int Index_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Claim_KPI__UeName = "Claim KPI";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

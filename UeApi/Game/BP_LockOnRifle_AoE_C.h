@@ -21,17 +21,21 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/BP_LockOnRifle_AoE", "BP_LockOnRifle_AoE_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Grenade_Cluster_Fragment;
-    static constexpr const char* P_Grenade_Cluster_Fragment__UeScsNode = "62c831d320fdde43af9387da818439f7";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "764540de4f839b4680b0615cc6d43d96";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "d6581f728b3cc54180d04bc533816d93";
     class UNiagaraComponent* particle;
-    static constexpr const char* particle__UeScsNode = "21efba233bc11845bf1c8bca4e0410f4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f4c97876e7754947a4fc9e8b7a9fb159";
     void ExecuteUbergraph_BP_LockOnRifle_AoE(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* P_Grenade_Cluster_Fragment__UeScsNode = "62c831d320fdde43af9387da818439f7";
+        static constexpr const char* Damage__UeScsNode = "764540de4f839b4680b0615cc6d43d96";
+        static constexpr const char* Audio__UeScsNode = "d6581f728b3cc54180d04bc533816d93";
+        static constexpr const char* particle__UeScsNode = "21efba233bc11845bf1c8bca4e0410f4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f4c97876e7754947a4fc9e8b7a9fb159";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle

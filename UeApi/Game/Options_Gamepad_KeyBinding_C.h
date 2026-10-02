@@ -24,7 +24,7 @@ public:
     using Options_Gamepad_KeyCapture_C = Game::UI::Keybindings::Options_Gamepad_KeyCapture_C;
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Error;
+    UE_READONLY class UWidgetAnimation* Error;
     Basic_Option_C* Basic_Option;
     UI_AdvancedLabel_C* LabelInfo;
     Options_Gamepad_KeyCapture_C* UI_KeyCapture_Primary;

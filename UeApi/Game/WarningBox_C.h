@@ -19,7 +19,7 @@ class WarningBox_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/WarningBox", "WarningBox_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* NewAnimation_1;
+    UE_READONLY class UWidgetAnimation* NewAnimation_1;
     class UImage* Image_0;
     class USizeBox* SizeBox_2;
     float Size;

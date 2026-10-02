@@ -22,23 +22,14 @@ class ENE_FacilityTurret_Burst_C : public Game::GameElements::Objectives::Facili
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Burst", "ENE_FacilityTurret_Burst_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTurret_Burst_C;
-    static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Burst_C__UeName = "UberGraphFrame";
     class UBoxComponent* AoECollision;
-    static constexpr const char* AoECollision__UeScsNode = "d7ed6e88d3039d438eff9ba1e6113f9f";
     class UProjectileAttackComponent* ProjectileAttack1;
-    static constexpr const char* ProjectileAttack1__UeScsNode = "35c776f7c7298d4a875141bb49ff0087";
     class UStaticMeshComponent* Shield;
-    static constexpr const char* Shield__UeScsNode = "c027e9615166d94bb89c7ce9577e3233";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "5f7a40171158e0408a535ee9b3f68c29";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "106947420267ef4792709620d44a385d";
     class UWeakpointGlowComponent* FireWeaponGlow;
-    static constexpr const char* FireWeaponGlow__UeScsNode = "70eaf57ad3e83a4c9524a83cd425216d";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_41538838479907ABAF791C91C743C3FD";
     TEnum<ETimelineDirection> Timeline_0__Direction_41538838479907ABAF791C91C743C3FD;
     class UTimelineComponent* Timeline_0;
     bool UpperBarrel;
@@ -50,6 +41,19 @@ public:
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Burst_C__UeName = "UberGraphFrame";
+        static constexpr const char* AoECollision__UeScsNode = "d7ed6e88d3039d438eff9ba1e6113f9f";
+        static constexpr const char* ProjectileAttack1__UeScsNode = "35c776f7c7298d4a875141bb49ff0087";
+        static constexpr const char* Shield__UeScsNode = "c027e9615166d94bb89c7ce9577e3233";
+        static constexpr const char* PointLight1__UeScsNode = "5f7a40171158e0408a535ee9b3f68c29";
+        static constexpr const char* PointLight__UeScsNode = "106947420267ef4792709620d44a385d";
+        static constexpr const char* FireWeaponGlow__UeScsNode = "70eaf57ad3e83a4c9524a83cd425216d";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_41538838479907ABAF791C91C743C3FD";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

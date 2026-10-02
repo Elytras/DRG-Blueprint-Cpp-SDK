@@ -24,7 +24,6 @@ public:
     TEnum<EGameType> Gametype;
     bool SandboxMode;
     FText Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     void ExecuteUbergraph_Check_ServerGameType(int EntryPoint);
     UE_COSMETIC void Construct();
     void BndEvt__CheckBox_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
@@ -33,6 +32,11 @@ public:
     void Verify(const TArray<EGameType>& InSelectedGameTypes);
     void GetIsChecked(bool& Checked) const;
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

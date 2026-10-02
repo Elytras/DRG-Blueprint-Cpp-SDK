@@ -27,10 +27,9 @@ public:
     using ITM_SegmentedArmorBar_C = Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedArmorBar_C;
     using ITM_SegmentedHealthBar_C = Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedHealthBar_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_BossFight_NeutralEvent_C;
-    static constexpr const char* UberGraphFrame_HUD_BossFight_NeutralEvent_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* ArmorFullAnim;
-    class UWidgetAnimation* ArmorHitAnim;
-    class UWidgetAnimation* HitAnim;
+    UE_READONLY class UWidgetAnimation* ArmorFullAnim;
+    UE_READONLY class UWidgetAnimation* ArmorHitAnim;
+    UE_READONLY class UWidgetAnimation* HitAnim;
     HUD_EnemyTargeting_AfflictionBox_C* HUD_EnemyTargeting_AfflictionBox;
     HUD_EnemyTargeting_Temperature_C* HUD_EnemyTargeting_Temperature;
     ITM_BossFightContainer_C* ITM_BossFightContainer;
@@ -50,6 +49,11 @@ public:
     void OnDisengaged();
     void OnCanTakeDamageChanged(bool OutCanTakeDamage);
     void GetBossFight(FBossFight& BossFight_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HUD_BossFight_NeutralEvent_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

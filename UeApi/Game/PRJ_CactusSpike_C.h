@@ -18,16 +18,20 @@ class PRJ_CactusSpike_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/CactusShooter/PRJ_CactusSpike", "PRJ_CactusSpike_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "7904f3eb7b851c4884cec00f5a348366";
     class UParticleSystemComponent* P_CactusSpikeTrail1;
-    static constexpr const char* P_CactusSpikeTrail1__UeScsNode = "b8b226fbc64ec84ba6fa148844018844";
     class UStaticMeshComponent* SM_CactusSpikeProjectile;
-    static constexpr const char* SM_CactusSpikeProjectile__UeScsNode = "5c93072d443afc4bacf6ca65260b077d";
     void ExecuteUbergraph_PRJ_CactusSpike(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "7904f3eb7b851c4884cec00f5a348366";
+        static constexpr const char* P_CactusSpikeTrail1__UeScsNode = "b8b226fbc64ec84ba6fa148844018844";
+        static constexpr const char* SM_CactusSpikeProjectile__UeScsNode = "5c93072d443afc4bacf6ca65260b077d";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CactusShooter

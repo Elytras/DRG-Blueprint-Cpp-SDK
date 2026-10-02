@@ -20,15 +20,19 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Particles/BP_Spider_Leg_Base", "BP_Spider_Leg_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "aaa7f29bfc5bff40b1f7c7b9d4113397";
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "ae9ea43a5991204caaf4fa2784789ad7";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "35487364dfd81b41ada0dd8993189094";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8c3d486ef38c70408b732bcec3f173cb";
     void ExecuteUbergraph_BP_Spider_Leg_Base(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "aaa7f29bfc5bff40b1f7c7b9d4113397";
+        static constexpr const char* Mesh__UeScsNode = "ae9ea43a5991204caaf4fa2784789ad7";
+        static constexpr const char* Box__UeScsNode = "35487364dfd81b41ada0dd8993189094";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8c3d486ef38c70408b732bcec3f173cb";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Particles

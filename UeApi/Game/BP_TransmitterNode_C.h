@@ -27,38 +27,25 @@ class BP_TransmitterNode_C : public ATether
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_TransmitterNode", "BP_TransmitterNode_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarryComponent;/Script/FSD.DamageComponent ExplosionDamage;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent Tetherbeam;/Script/Engine.SkeletalMeshComponent BaseMesh;/Script/Engine.SphereComponent PhysCollision;/Script/Engine.SphereComponent UseTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* TetherConnectionCollider;
-    static constexpr const char* TetherConnectionCollider__UeScsNode = "5a030017aac6794198be50e19ac0b9d8";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "761b32f1968e3e4cbe6a9ea7df8196ac";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "fbba8a652f5b1a4bbf202fe5c6149881";
     class UAudioComponent* TetherCreateConnection_Cue;
-    static constexpr const char* TetherCreateConnection_Cue__UeScsNode = "0582efcd1bf65d4c847feaaaf281557c";
     class UAudioComponent* TetherIdle_Cue;
-    static constexpr const char* TetherIdle_Cue__UeScsNode = "32efb54b5dd18644958c73905f0138d5";
     class UTetherComponent* Tether;
-    static constexpr const char* Tether__UeScsNode = "e6a1dc7de45a1a42a68e7302289f71c5";
     class UStaticMeshComponent* RangeSphere;
-    static constexpr const char* RangeSphere__UeScsNode = "34a82ea1a1d32842aa4b57e77e6916a2";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "d1c282a074d1a843ab0cfb9483209cb5";
     FVector throwForce;
     float ConnectionDelay;
     bool Disabled;
-    static constexpr const char* Disabled__Replicated = ":";
     bool HasDeployed;
     float RangeScaleConversion;
     float HackingPower;
-    static constexpr const char* HackingPower__Replicated = "OnRep_HackingPower:";
     bool KillInitalized;
-    static constexpr const char* KillInitalized__Replicated = "OnRep_KillInitalized:";
     class APlayerCharacter* holder;
     FVector OldLocation;
     bool RangeIndicatorVisible;
-    static constexpr const char* RangeIndicatorVisible__Replicated = "OnRep_RangeIndicatorVisible:";
     void ExecuteUbergraph_BP_TransmitterNode(int EntryPoint);
     UE_MULTICAST void EnablePhys();
     void Cheat_Kill();
@@ -83,6 +70,23 @@ public:
     void OnRep_KillInitalized();
     void InitKill();
     void OnRep_RangeIndicatorVisible();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarryComponent;/Script/FSD.DamageComponent ExplosionDamage;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent Tetherbeam;/Script/Engine.SkeletalMeshComponent BaseMesh;/Script/Engine.SphereComponent PhysCollision;/Script/Engine.SphereComponent UseTrigger";
+        static constexpr const char* TetherConnectionCollider__UeScsNode = "5a030017aac6794198be50e19ac0b9d8";
+        static constexpr const char* outline__UeScsNode = "761b32f1968e3e4cbe6a9ea7df8196ac";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "fbba8a652f5b1a4bbf202fe5c6149881";
+        static constexpr const char* TetherCreateConnection_Cue__UeScsNode = "0582efcd1bf65d4c847feaaaf281557c";
+        static constexpr const char* TetherIdle_Cue__UeScsNode = "32efb54b5dd18644958c73905f0138d5";
+        static constexpr const char* Tether__UeScsNode = "e6a1dc7de45a1a42a68e7302289f71c5";
+        static constexpr const char* RangeSphere__UeScsNode = "34a82ea1a1d32842aa4b57e77e6916a2";
+        static constexpr const char* TerrainDetect__UeScsNode = "d1c282a074d1a843ab0cfb9483209cb5";
+        static constexpr const char* Disabled__Replicated = ":";
+        static constexpr const char* HackingPower__Replicated = "OnRep_HackingPower:";
+        static constexpr const char* KillInitalized__Replicated = "OnRep_KillInitalized:";
+        static constexpr const char* RangeIndicatorVisible__Replicated = "OnRep_RangeIndicatorVisible:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers

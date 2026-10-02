@@ -27,7 +27,6 @@ public:
     using ITM_WeeklyMissionOverlay_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_WeeklyMissionOverlay_C;
     using Weekly_Deadline_Timer_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Weekly_Deadline_Timer_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_JobsEntry_WeeklyV2_C;
-    static constexpr const char* UberGraphFrame_WND_JobsEntry_WeeklyV2_C__UeName = "UberGraphFrame";
     class UImage* Assignment_Image;
     class UHorizontalBox* Box_CampaignItems;
     class UButton* Button_Main;
@@ -52,6 +51,11 @@ public:
     void SetInfo();
     UE_PURE bool VisibleAndEnabled(class UWidget* Widget);
     void SetData(class UCampaign* Campaign_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WND_JobsEntry_WeeklyV2_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Jobs

@@ -13,7 +13,11 @@ class BP_Audio_Macros_C : public AActor
 {
 public:
     UE_CLASS("/Game/Game/Macros/BP_Audio_Macros", "BP_Audio_Macros_C");
-    static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800204 /Script/CoreUObject.Object Engine";
+    };
 };
 
 }}}   // namespace Game::Game::Macros

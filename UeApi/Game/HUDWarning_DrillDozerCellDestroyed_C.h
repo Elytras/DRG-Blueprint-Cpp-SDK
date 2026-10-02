@@ -21,8 +21,8 @@ class HUDWarning_DrillDozerCellDestroyed_C : public UHUDWarningWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Warnings/HUDWarning_DrillDozerCellDestroyed", "HUDWarning_DrillDozerCellDestroyed_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* RightCellDead;
-    class UWidgetAnimation* LeftCellDead;
+    UE_READONLY class UWidgetAnimation* RightCellDead;
+    UE_READONLY class UWidgetAnimation* LeftCellDead;
     class UImage* BG_Gradient;
     class UImage* DrillDozer_Background;
     class UImage* DrillDozer_Background_Caterpillar;

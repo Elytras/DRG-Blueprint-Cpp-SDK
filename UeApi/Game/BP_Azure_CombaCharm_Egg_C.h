@@ -17,11 +17,15 @@ class BP_Azure_CombaCharm_Egg_C : public Game::LevelElements::RoomObjects::Loose
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/CombaCharm/BP_Azure_CombaCharm_Egg", "BP_Azure_CombaCharm_Egg_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Azure_CombaCharm_Egg_C;
-    static constexpr const char* UberGraphFrame_BP_Azure_CombaCharm_Egg_C__UeName = "UberGraphFrame";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "a1e80a76a60ae145acda51f233a3da1e";
     void ExecuteUbergraph_BP_Azure_CombaCharm_Egg(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Azure_CombaCharm_Egg_C__UeName = "UberGraphFrame";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "a1e80a76a60ae145acda51f233a3da1e";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm

@@ -36,31 +36,18 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ExplodingPlant/BP_ExplodingPlant_Base", "BP_ExplodingPlant_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "97110ea3301da9428c8d7bdcc572569c";
     class UObjectTemperatureComponent* ObjectTemperature;
-    static constexpr const char* ObjectTemperature__UeScsNode = "977228a764b7124894257eff92b35895";
     class UStaticObjectAfflictionComponent* StaticObjectAffliction;
-    static constexpr const char* StaticObjectAffliction__UeScsNode = "46d9d13c44f0644a85430a2d9ee13537";
     class UStatusEffectsComponent* StatusEffects;
-    static constexpr const char* StatusEffects__UeScsNode = "4297acbc8cf49d48948829fbec19eac8";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "da16b3ea9b0e274c8bc0b4ec795a7713";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "f13ef2b6c21bd9488c4c3d835492feda";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "74aae8fe24523b4390e2e7641a7729b0";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "fa3bf033a22d4f40a359cdba44e86cf2";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "9c35fd0a0110ca40a69df74430f4c0f4";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "f73b05a74f7de84a9ea731facdfa9995";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "e8a3e0fb2dd27241b2fcae690ba9b951";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "c3deb25463a6d649b7600a93a3d2a9e1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "fdce982e8883b345b74a5e2963142309";
     FVector Timeline_InflateAnim_InflateVector_21E5AF314623B026BED1ED9ADE4D198B;
     TEnum<ETimelineDirection> Timeline_InflateAnim__Direction_21E5AF314623B026BED1ED9ADE4D198B;
     class UTimelineComponent* Timeline_InflateAnim;
@@ -69,7 +56,6 @@ public:
     class USoundCue* ExplosionAudio;
     float CarveDiamter;
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     float InitialHealth;
     FVector MeshScale;
     float InflationScale;
@@ -87,6 +73,24 @@ public:
     void Timeline_InflateAnim__FinishedFunc();
     void UserConstructionScript();
     UE_PURE float DistanceToLocalPlayer();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Damage__UeScsNode = "97110ea3301da9428c8d7bdcc572569c";
+        static constexpr const char* ObjectTemperature__UeScsNode = "977228a764b7124894257eff92b35895";
+        static constexpr const char* StaticObjectAffliction__UeScsNode = "46d9d13c44f0644a85430a2d9ee13537";
+        static constexpr const char* StatusEffects__UeScsNode = "4297acbc8cf49d48948829fbec19eac8";
+        static constexpr const char* TerrainDetect__UeScsNode = "da16b3ea9b0e274c8bc0b4ec795a7713";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "f13ef2b6c21bd9488c4c3d835492feda";
+        static constexpr const char* SimpleHealth__UeScsNode = "74aae8fe24523b4390e2e7641a7729b0";
+        static constexpr const char* terrainPlacement__UeScsNode = "fa3bf033a22d4f40a359cdba44e86cf2";
+        static constexpr const char* PointLight__UeScsNode = "9c35fd0a0110ca40a69df74430f4c0f4";
+        static constexpr const char* PathfinderCollision__UeScsNode = "f73b05a74f7de84a9ea731facdfa9995";
+        static constexpr const char* outline__UeScsNode = "e8a3e0fb2dd27241b2fcae690ba9b951";
+        static constexpr const char* StaticMesh__UeScsNode = "c3deb25463a6d649b7600a93a3d2a9e1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "fdce982e8883b345b74a5e2963142309";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingPlant

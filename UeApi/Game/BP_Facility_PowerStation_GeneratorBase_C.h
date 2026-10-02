@@ -35,49 +35,32 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/ShieldGenerator/BP_Facility_PowerStation_GeneratorBase", "BP_Facility_PowerStation_GeneratorBase_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* GunTower_Carver01;
-    static constexpr const char* GunTower_Carver01__UeScsNode = "f256deff873d2542b3dff0115bf6f2f3";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "bd2d37821dea634bbbe7077d19d6b3a8";
     class UNiagaraComponent* ConnectionBeam;
-    static constexpr const char* ConnectionBeam__UeScsNode = "56664e2eabe60940b49a5368e345bbfd";
     class USphereComponent* DiscoverSphere;
-    static constexpr const char* DiscoverSphere__UeScsNode = "f5cdad570e802d4c87e75a37954c5cf5";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "2b759fe58a7d1f41a75cc09dc019e0d6";
     class URoomCarverComponent* RoomCarver;
-    static constexpr const char* RoomCarver__UeScsNode = "0631707aa1fdfb4ca4bc91808907235d";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "1949cc6f1b2ed74086da4d329c6688b3";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "66aefc8f99b6384f91480da006510e0f";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "46ba9af05250204d8e61608e14c769ea";
     class USingleUsableComponent* ActivateUsable;
-    static constexpr const char* ActivateUsable__UeScsNode = "d773d6bead551a41ab8b630d66ec9ea2";
     class USphereComponent* Usable;
-    static constexpr const char* Usable__UeScsNode = "b0183d5abfa1ed49856d9c3c690af902";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "5c4c2017306e564ebd81932c79555c16";
     class UTetherComponent* Tether;
-    static constexpr const char* Tether__UeScsNode = "763d7610e4509c4b8021957acb64dac2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8cf521c3e80ed14096691b5e84c36ecb";
     TMulticastInlineDelegate<void(BP_Facility_PowerStation_GeneratorBase_C* Generator)> OnShieldGeneratorCharged;
     TMulticastInlineDelegate<void(FVector Location, int roomIndex_0)> OnOverChargerCalled;
     int roomIndex;
     float HackingPower;
-    static constexpr const char* HackingPower__Replicated = "OnRep_HackingPower:";
     TMulticastInlineDelegate<void(float Progress_0)> OnProgress;
     TMulticastInlineDelegate<void(BP_Facility_PowerStation_GeneratorBase_C* Generator, class UTetherComponent* tetherlineStart)> FirstConnect;
     bool HasHadPower;
     bool Discovered;
-    static constexpr const char* Discovered__Replicated = "OnRep_Discovered:";
     TMulticastInlineDelegate<void(bool hasPower)> PowerChanged;
     class UTetherComponent* NewVar_0;
     class UMaterialInstanceDynamic* LightMaterial;
     bool StartedHacking;
     class AFacilityHackingPod* ConnectedHackingPod;
-    static constexpr const char* ConnectedHackingPod__Replicated = "OnRep_ConnectedHackingPod:";
     TMulticastInlineDelegate<void(class AFacilityHackingPod* pod)> ConnectedPodChanged;
     void ExecuteUbergraph_BP_Facility_PowerStation_GeneratorBase(int EntryPoint);
     void BndEvt__Tether_K2Node_ComponentBoundEvent_4_TetherConnectionChanged_Deletage__DelegateSignature(class UTetherComponent* frontConnection, class UTetherComponent* backConnection);
@@ -99,6 +82,27 @@ public:
     bool IsStillValid();
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
     class AActor* GetBossActor();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GunTower_Carver01__UeScsNode = "f256deff873d2542b3dff0115bf6f2f3";
+        static constexpr const char* PathfinderCollision__UeScsNode = "bd2d37821dea634bbbe7077d19d6b3a8";
+        static constexpr const char* ConnectionBeam__UeScsNode = "56664e2eabe60940b49a5368e345bbfd";
+        static constexpr const char* DiscoverSphere__UeScsNode = "f5cdad570e802d4c87e75a37954c5cf5";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "2b759fe58a7d1f41a75cc09dc019e0d6";
+        static constexpr const char* RoomCarver__UeScsNode = "0631707aa1fdfb4ca4bc91808907235d";
+        static constexpr const char* outline__UeScsNode = "1949cc6f1b2ed74086da4d329c6688b3";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "66aefc8f99b6384f91480da006510e0f";
+        static constexpr const char* terrainPlacement__UeScsNode = "46ba9af05250204d8e61608e14c769ea";
+        static constexpr const char* ActivateUsable__UeScsNode = "d773d6bead551a41ab8b630d66ec9ea2";
+        static constexpr const char* Usable__UeScsNode = "b0183d5abfa1ed49856d9c3c690af902";
+        static constexpr const char* SkeletalMesh__UeScsNode = "5c4c2017306e564ebd81932c79555c16";
+        static constexpr const char* Tether__UeScsNode = "763d7610e4509c4b8021957acb64dac2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8cf521c3e80ed14096691b5e84c36ecb";
+        static constexpr const char* HackingPower__Replicated = "OnRep_HackingPower:";
+        static constexpr const char* Discovered__Replicated = "OnRep_Discovered:";
+        static constexpr const char* ConnectedHackingPod__Replicated = "OnRep_ConnectedHackingPod:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::ShieldGenerator

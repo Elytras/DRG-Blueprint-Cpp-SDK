@@ -22,8 +22,8 @@ public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_RandomizeIcon", "UI_RandomizeIcon_C");
     using ITM_VanityTag_CheckBox_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
-    class UWidgetAnimation* AnimActivate;
+    UE_READONLY class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimActivate;
     class UBorder* Background;
     ITM_VanityTag_CheckBox_C* CheckBox_Festive;
     ITM_VanityTag_CheckBox_C* CheckBox_Serious;
@@ -34,10 +34,10 @@ public:
     class UBorder* SelectionBorder;
     class UOverlay* ShuffleOverlay;
     class USizeBox* Sizer;
-    int Dimension;
+    UE_READONLY int Dimension;
     bool AllowOptions;
     bool OptionsAlignedRight;
-    int OptionsOffset;
+    UE_READONLY int OptionsOffset;
     void ExecuteUbergraph_UI_RandomizeIcon(int EntryPoint);
     void BndEvt__UI_RandomizeIcon_CheckBox_Festive_K2Node_ComponentBoundEvent_3_OnSelectedChanged__DelegateSignature();
     void BndEvt__UI_RandomizeIcon_CheckBox_Serious_K2Node_ComponentBoundEvent_2_OnSelectedChanged__DelegateSignature();

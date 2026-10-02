@@ -13,6 +13,11 @@ class STE_ExplosiveGoo_Component_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/STE_ExplosiveGoo_Component", "STE_ExplosiveGoo_Component_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AddComponentStatusEffectItem AddComponentStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

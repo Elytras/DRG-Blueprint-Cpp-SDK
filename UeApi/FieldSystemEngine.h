@@ -25,9 +25,13 @@ class AFieldSystemActor : public AActor
 {
 public:
     UE_CLASS("/Script/FieldSystemEngine", "FieldSystemActor");
-    class UFieldSystemComponent* FieldSystemComponent;
-    static constexpr const char* FieldSystemComponent__UeSubobject = "FieldSystemComponent /Script/FieldSystemEngine.FieldSystemComponent";
-    static constexpr const char* RootComponent__UeSubobject = "FieldSystemComponent /Script/FieldSystemEngine.FieldSystemComponent";
+    UE_READONLY class UFieldSystemComponent* FieldSystemComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FieldSystemComponent__UeSubobject = "FieldSystemComponent /Script/FieldSystemEngine.FieldSystemComponent";
+        static constexpr const char* RootComponent__UeSubobject = "FieldSystemComponent /Script/FieldSystemEngine.FieldSystemComponent";
+    };
 };
 
 class UFieldSystem : public UObject
@@ -40,7 +44,7 @@ class UFieldSystemComponent : public UPrimitiveComponent
 {
 public:
     UE_CLASS("/Script/FieldSystemEngine", "FieldSystemComponent");
-    class UFieldSystem* FieldSystem;
+    UE_READONLY class UFieldSystem* FieldSystem;
     bool bIsWorldField;
     bool bIsChaosField;
     TArray<TSoftObjectPtr<class AChaosSolverActor>> SupportedSolvers;

@@ -33,7 +33,7 @@ public:
     using UI_Season_Border_C = Game::UI::Menu_Seasons::UI_Season_Border_C;
     using WND_Season_RewardClaimed_C = Game::UI::Menu_Seasons::WND_Season_RewardClaimed_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UOverlay* BG_Glow_Overlay;
     class UBorder* ClaimBorder;
     class UButton* ClaimButton;

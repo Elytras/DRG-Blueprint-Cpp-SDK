@@ -195,14 +195,22 @@ public:
     float ObservedPathsTickInterval;
     uint32 DataVersion;
     TArray<FSupportedAreaData> SupportedAreas;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class AAbstractNavData : public ANavigationData
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "AbstractNavData");
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UNavArea : public UNavAreaBase
@@ -298,7 +306,11 @@ class ANavigationGraph : public ANavigationData
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "NavigationGraph");
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class ANavigationGraphNode : public AActor
@@ -329,8 +341,8 @@ class UNavigationPath : public UObject
 public:
     UE_CLASS("/Script/NavigationSystem", "NavigationPath");
     TMulticastInlineDelegate<void(class UNavigationPath* AffectedPath, ENavPathEvent PathEvent)> PathUpdatedNotifier;
-    TArray<FVector> PathPoints;
-    TEnum<ENavigationOptionFlag> RecalculateOnInvalidation;
+    UE_READONLY TArray<FVector> PathPoints;
+    UE_READONLY TEnum<ENavigationOptionFlag> RecalculateOnInvalidation;
     void EnableDebugDrawing(bool bShouldDrawDebugData, FLinearColor PathColor);
     void EnableRecalculationOnInvalidation(TEnum<ENavigationOptionFlag> DoRecalculation);
     UE_PURE FString GetDebugString() const;
@@ -339,6 +351,11 @@ public:
     UE_PURE bool IsPartial() const;
     UE_PURE bool IsStringPulled() const;
     UE_PURE bool IsValid() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PathUpdatedNotifier__UeDispatcher = "Assignable";
+    };
 };
 
 class INavigationPathGenerator
@@ -351,10 +368,14 @@ class ANavSystemConfigOverride : public AActor
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "NavSystemConfigOverride");
-    class UNavigationSystemConfig* NavigationSystemConfig;
-    TEnum<ENavSystemOverridePolicy> OverridePolicy;
+    UE_READONLY class UNavigationSystemConfig* NavigationSystemConfig;
+    UE_READONLY TEnum<ENavSystemOverridePolicy> OverridePolicy;
     bool bLoadOnClient;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UNavigationSystemV1 : public UNavigationSystemBase
@@ -363,8 +384,8 @@ public:
     UE_CLASS("/Script/NavigationSystem", "NavigationSystemV1");
     class ANavigationData* MainNavData;
     class ANavigationData* AbstractNavData;
-    FName DefaultAgentName;
-    TSoftClassPtr<class UClass> CrowdManagerClass;
+    UE_READONLY FName DefaultAgentName;
+    UE_READONLY TSoftClassPtr<class UClass> CrowdManagerClass;
     bool bAutoCreateNavigationData;
     bool bSpawnNavDataInNavBoundsLevel;
     bool bAllowClientSideNavigation;
@@ -424,6 +445,12 @@ public:
     void SetGeometryGatheringMode(TEnum<ENavDataGatheringModeConfig> NewMode);
     void SetMaxSimultaneousTileGenerationJobsCount(int MaxNumberOfJobs);
     void UnregisterNavigationInvoker(class AActor* Invoker);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnNavDataRegisteredEvent__UeDispatcher = "";
+        static constexpr const char* OnNavigationGenerationFinishedDelegate__UeDispatcher = "Assignable";
+    };
 };
 
 class UNavigationSystemModuleConfig : public UNavigationSystemConfig
@@ -452,8 +479,8 @@ public:
     FNavAgentProperties NavAgentProps;
     FVector QueryingExtent;
     class ANavigationData* MyNavData;
-    FVector ProjectedLocation;
-    bool bProjectedLocationValid;
+    UE_READONLY FVector ProjectedLocation;
+    UE_READONLY bool bProjectedLocationValid;
     bool bSearchStart;
     float CostLimitFactor;
     float MinimumCostLimit;
@@ -467,26 +494,30 @@ public:
     bool bShouldBeVisibleInGame;
     TEnum<ENavCostDisplay> CostDisplayMode;
     FVector2D TextCanvasOffset;
-    bool bPathExist;
-    bool bPathIsPartial;
-    bool bPathSearchOutOfNodes;
-    float PathfindingTime;
-    float PathCost;
-    int PathfindingSteps;
+    UE_READONLY bool bPathExist;
+    UE_READONLY bool bPathIsPartial;
+    UE_READONLY bool bPathSearchOutOfNodes;
+    UE_READONLY float PathfindingTime;
+    UE_READONLY float PathCost;
+    UE_READONLY int PathfindingSteps;
     class ANavigationTestingActor* OtherActor;
     TSubclassOf<class UNavigationQueryFilter> FilterClass;
     int ShowStepIndex;
     float OffsetFromCornersDistance;
-    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
-    static constexpr const char* InvokerComponent__UeSubobject = "InvokerComponent /Script/NavigationSystem.NavigationInvokerComponent";
-    static constexpr const char* RootComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+        static constexpr const char* InvokerComponent__UeSubobject = "InvokerComponent /Script/NavigationSystem.NavigationInvokerComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+    };
 };
 
 class UNavLinkComponent : public UPrimitiveComponent
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "NavLinkComponent");
-    TArray<FNavigationLink> Links;
+    UE_READONLY TArray<FNavigationLink> Links;
 };
 
 class UNavRelevantComponent : public UActorComponent
@@ -525,11 +556,15 @@ class ANavModifierVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "NavModifierVolume");
-    TSubclassOf<class UNavArea> AreaClass;
+    UE_READONLY TSubclassOf<class UNavArea> AreaClass;
     bool bMaskFillCollisionUnderneathForNavmesh;
-    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     void SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };
 
 class INavLinkCustomInterface
@@ -555,8 +590,12 @@ class ANavMeshBoundsVolume : public AVolume
 public:
     UE_CLASS("/Script/NavigationSystem", "NavMeshBoundsVolume");
     FNavAgentSelector SupportedAgents;
-    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };
 
 class UNavMeshRenderingComponent : public UPrimitiveComponent
@@ -569,7 +608,7 @@ class UNavModifierComponent : public UNavRelevantComponent
 {
 public:
     UE_CLASS("/Script/NavigationSystem", "NavModifierComponent");
-    TSubclassOf<class UNavArea> AreaClass;
+    UE_READONLY TSubclassOf<class UNavArea> AreaClass;
     FVector FailsafeExtent;
     bool bIncludeAgentHeight;
     void SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass);
@@ -656,8 +695,12 @@ public:
     float TileSetUpdateInterval;
     float HeuristicScale;
     float VerticalDeviationFromGroundCompensation;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     bool K2_ReplaceAreaInTileBounds(FBox Bounds, TSubclassOf<class UNavArea> OldArea, TSubclassOf<class UNavArea> NewArea, bool ReplaceLinks);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class URecastNavMeshDataChunk : public UNavigationDataChunk

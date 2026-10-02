@@ -26,7 +26,6 @@ public:
     class UImage* DataImage;
     HUD_DefaultLabel_C* Distance;
     HUD_DefaultLabel_C* Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     float ArrowRotation;
     float ArrowRadius;
     float ArrowAngle;
@@ -39,6 +38,11 @@ public:
     void OnTargetSet(class AActor* NewTarget);
     void OnTargetDistanceChanged(float Distance_0);
     void SetInfo(FText InText, class UTexture2D* Texture, FLinearColor InTint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

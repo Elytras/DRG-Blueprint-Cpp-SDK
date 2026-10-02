@@ -23,7 +23,7 @@ class ConsoleScreen_Notification_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Notification", "ConsoleScreen_Notification_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Ping;
     class UImage* LeftIcon;
     class UTextBlock* NotificationLabel;
     class UImage* RightIcon;

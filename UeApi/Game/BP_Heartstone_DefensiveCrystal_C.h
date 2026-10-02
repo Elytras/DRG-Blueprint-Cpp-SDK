@@ -32,39 +32,22 @@ public:
     using BP_EscortDestination_C = Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "f56a1108635c1e4ca59d9d68290c93fe";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "012f213a1479944191c073937b816982";
     class UPointLightComponent* FillLight;
-    static constexpr const char* FillLight__UeScsNode = "5e3921b60fde9f4c8eb66ff306e590fc";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "fef2872c267cd94dbb528ed559cd273b";
     class UTerrainDetectComponent* TerrainDetect3;
-    static constexpr const char* TerrainDetect3__UeScsNode = "56851adf15850d489ebf957aaff099bb";
     class UAudioComponent* AudioChargeUp;
-    static constexpr const char* AudioChargeUp__UeScsNode = "d60622a525d7e3428566009d0d1f80db";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "5a42a44b6bc73643b19fbf072bd93690";
     class UAudioComponent* AudioGrow;
-    static constexpr const char* AudioGrow__UeScsNode = "a1d9ceaa3cf98145a27b21c9a09867ba";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "51936f79c04f7a458c20c176f9e567cd";
     class UStaticMeshComponent* Spike_SM;
-    static constexpr const char* Spike_SM__UeScsNode = "837a516c4d3e944d8303207e4e740b40";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "fa9342520652fe4795a248d217b4a6c0";
     class UAudioComponent* AudioBeam;
-    static constexpr const char* AudioBeam__UeScsNode = "df9eec55c9f95240a6e7f979f1431f1e";
     class UStaticMeshComponent* Beam;
-    static constexpr const char* Beam__UeScsNode = "f6a0ce9bb03c04478edd38f037503bfd";
     class USceneComponent* BeamRoot;
-    static constexpr const char* BeamRoot__UeScsNode = "5b9428b13bc6bc408d39c8abf52f5161";
     class UBillboardComponent* AttackOrigin;
-    static constexpr const char* AttackOrigin__UeScsNode = "5c5ca245ae71374aa4722447b61a19ec";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "7901b4a151577a42ad12a3418f84166e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e023c2fda9e6654980eee901d5baa2e1";
     float GrowLight_SoundVolume_AB5D1D304F66D83F8F0760B4A43F79FC;
     float GrowLight_LightIntensity_AB5D1D304F66D83F8F0760B4A43F79FC;
     TEnum<ETimelineDirection> GrowLight__Direction_AB5D1D304F66D83F8F0760B4A43F79FC;
@@ -72,13 +55,10 @@ public:
     class AActor* JEB;
     FTimerHandle DamageTimer;
     bool IsAttackingJEB;
-    static constexpr const char* IsAttackingJEB__Replicated = "OnRep_IsAttackingJEB:";
     float LightIntensity;
     BP_EscortDestination_C* Heartstone;
     bool FinishedCarving;
-    static constexpr const char* FinishedCarving__Replicated = "OnRep_FinishedCarving:";
     bool DoGrow;
-    static constexpr const char* DoGrow__Replicated = "OnRep_DoGrow:";
     int NumPointsRemoved;
     float LightStartIntensity;
     FVector LaserImpactLocation;
@@ -104,6 +84,30 @@ public:
     void OnRep_DoGrow();
     void IsDestroyed(bool& isDestoyed);
     void OnRep_NumPointsRemoved();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ParticleSystem__UeScsNode = "f56a1108635c1e4ca59d9d68290c93fe";
+        static constexpr const char* terrainPlacement__UeScsNode = "012f213a1479944191c073937b816982";
+        static constexpr const char* FillLight__UeScsNode = "5e3921b60fde9f4c8eb66ff306e590fc";
+        static constexpr const char* PointLight__UeScsNode = "fef2872c267cd94dbb528ed559cd273b";
+        static constexpr const char* TerrainDetect3__UeScsNode = "56851adf15850d489ebf957aaff099bb";
+        static constexpr const char* AudioChargeUp__UeScsNode = "d60622a525d7e3428566009d0d1f80db";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "5a42a44b6bc73643b19fbf072bd93690";
+        static constexpr const char* AudioGrow__UeScsNode = "a1d9ceaa3cf98145a27b21c9a09867ba";
+        static constexpr const char* PathfinderCollision__UeScsNode = "51936f79c04f7a458c20c176f9e567cd";
+        static constexpr const char* Spike_SM__UeScsNode = "837a516c4d3e944d8303207e4e740b40";
+        static constexpr const char* TerrainDetect2__UeScsNode = "fa9342520652fe4795a248d217b4a6c0";
+        static constexpr const char* AudioBeam__UeScsNode = "df9eec55c9f95240a6e7f979f1431f1e";
+        static constexpr const char* Beam__UeScsNode = "f6a0ce9bb03c04478edd38f037503bfd";
+        static constexpr const char* BeamRoot__UeScsNode = "5b9428b13bc6bc408d39c8abf52f5161";
+        static constexpr const char* AttackOrigin__UeScsNode = "5c5ca245ae71374aa4722447b61a19ec";
+        static constexpr const char* Damage__UeScsNode = "7901b4a151577a42ad12a3418f84166e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e023c2fda9e6654980eee901d5baa2e1";
+        static constexpr const char* IsAttackingJEB__Replicated = "OnRep_IsAttackingJEB:";
+        static constexpr const char* FinishedCarving__Replicated = "OnRep_FinishedCarving:";
+        static constexpr const char* DoGrow__Replicated = "OnRep_DoGrow:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

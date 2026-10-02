@@ -32,25 +32,15 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/FloatingLightPlant/BP_FloatingLightPlant2", "BP_FloatingLightPlant2_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "54cf368cc2b1be4d9d748b2212de506d";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "eba1bcc1ff1a254ba884b80b8b3b2e61";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "e5ec5fea608ed7418d0b19b41092e6f2";
     class USkeletalMeshComponent* SK_FloatingLightPlant_A;
-    static constexpr const char* SK_FloatingLightPlant_A__UeScsNode = "641fd567c9030449945b4f2dda138c04";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "a0eb586678d3174ca6b9486b4ea6bdad";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "b023a9107fd82b4e906d579570f7330c";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "b9bd7d36e336094ba81775df3d378c45";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "77f431ce3faf8d438684600b67d71ad6";
     class USphereComponent* ProximityTrigger;
-    static constexpr const char* ProximityTrigger__UeScsNode = "d7675a2fef5c154ea63c66eb83a8d7b1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "57e6d9b93e3b594f817f363ec12b8a51";
     float VariationLoop_Variation_1D8B412C4585AB2E56DAE8A298D8B484;
     TEnum<ETimelineDirection> VariationLoop__Direction_1D8B412C4585AB2E56DAE8A298D8B484;
     class UTimelineComponent* VariationLoop;
@@ -59,9 +49,7 @@ public:
     TEnum<ETimelineDirection> FloaterValues__Direction_D91E97D14BA4C776610A308453452A23;
     class UTimelineComponent* FloaterValues;
     float BaseFloaterHeight;
-    static constexpr const char* BaseFloaterHeight__Replicated = ":";
     float FloaterHeightVariation;
-    static constexpr const char* FloaterHeightVariation__Replicated = ":";
     class UMaterialInstanceDynamic* DynamicMaterial;
     float BaseMaterialEmmisive;
     float TimelineBrightnessChangeOnHit;
@@ -71,7 +59,6 @@ public:
     float BaseIntensity;
     float BaseFloaterScale;
     bool HIdeFloater;
-    static constexpr const char* HIdeFloater__Replicated = "OnRep_HIdeFloater:";
     FName Param_EmmisiveMult;
     FName Param_DisplacementSpeed;
     FName Param_DisplacementIntensity;
@@ -91,6 +78,23 @@ public:
     void VariationLoop__UpdateFunc();
     void VariationLoop__FinishedFunc();
     void OnRep_HIdeFloater();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "54cf368cc2b1be4d9d748b2212de506d";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "eba1bcc1ff1a254ba884b80b8b3b2e61";
+        static constexpr const char* Capsule__UeScsNode = "e5ec5fea608ed7418d0b19b41092e6f2";
+        static constexpr const char* SK_FloatingLightPlant_A__UeScsNode = "641fd567c9030449945b4f2dda138c04";
+        static constexpr const char* PathfinderCollision__UeScsNode = "a0eb586678d3174ca6b9486b4ea6bdad";
+        static constexpr const char* terrainPlacement__UeScsNode = "b023a9107fd82b4e906d579570f7330c";
+        static constexpr const char* TerrainDetect__UeScsNode = "b9bd7d36e336094ba81775df3d378c45";
+        static constexpr const char* SimpleHealth__UeScsNode = "77f431ce3faf8d438684600b67d71ad6";
+        static constexpr const char* ProximityTrigger__UeScsNode = "d7675a2fef5c154ea63c66eb83a8d7b1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "57e6d9b93e3b594f817f363ec12b8a51";
+        static constexpr const char* BaseFloaterHeight__Replicated = ":";
+        static constexpr const char* FloaterHeightVariation__Replicated = ":";
+        static constexpr const char* HIdeFloater__Replicated = "OnRep_HIdeFloater:";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant

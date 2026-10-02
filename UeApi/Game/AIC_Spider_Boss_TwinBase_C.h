@@ -14,13 +14,17 @@ class AIC_Spider_Boss_TwinBase_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/AIC_Spider_Boss_TwinBase", "AIC_Spider_Boss_TwinBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Boss_TwinBase_C;
-    static constexpr const char* UberGraphFrame_AIC_Spider_Boss_TwinBase_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Boss_TwinBase(int EntryPoint);
     void ReceiveBeginPlay();
     void Recieve_BlackboardValueChanged(const FName& KeyName);
     void StartSpeedModifier();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* UberGraphFrame_AIC_Spider_Boss_TwinBase_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

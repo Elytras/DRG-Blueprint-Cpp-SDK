@@ -25,32 +25,18 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SwarmerTunnel/BP_SwarmerTunnelsBase", "BP_SwarmerTunnelsBase_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UBillboardComponent* SpiderSpawnpoinbt3;
-    static constexpr const char* SpiderSpawnpoinbt3__UeScsNode = "1e1b56d051eb314191ffeeab229a78f5";
     class UBillboardComponent* WarningPoint;
-    static constexpr const char* WarningPoint__UeScsNode = "f2d363d552d976449a30aa1248d11b9d";
     class UStaticMeshComponent* SM_Prim_Cylinder_08sides;
-    static constexpr const char* SM_Prim_Cylinder_08sides__UeScsNode = "c28b11994aa55b4ab5d51e1b0cce0cf6";
     class ULevelGenerationCarverComponent* FillerMaterial;
-    static constexpr const char* FillerMaterial__UeScsNode = "e574c89f0b0a2f4fb6590f221539ccaa";
     class UBillboardComponent* SpiderSpawnPoint2;
-    static constexpr const char* SpiderSpawnPoint2__UeScsNode = "299b0b7bfdcdda4f89ee3d6e7a23c698";
     class UStaticMeshComponent* StaticMesh5;
-    static constexpr const char* StaticMesh5__UeScsNode = "df1a90495ff4f64e8d8eb82c0ddc7365";
     class ULevelGenerationCarverComponent* BAckTunnel2;
-    static constexpr const char* BAckTunnel2__UeScsNode = "95f53a0ce6dbd64d859562eea52002c8";
     class USphereComponent* TriggerSphere;
-    static constexpr const char* TriggerSphere__UeScsNode = "f07a79a8e2111444a745b41febfab25b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "dcb19e7d1bb11346bedab1f7ad89958a";
     class ULevelGenerationCarverComponent* BackTunnel;
-    static constexpr const char* BackTunnel__UeScsNode = "65185f0645f1314683fa752d6730c143";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "4b38eada4b9f5b40ace97c99462a80cb";
     class UBillboardComponent* Spider_Spawn_Point1;
-    static constexpr const char* Spider_Spawn_Point1__UeName = "Spider Spawn Point1";
-    static constexpr const char* Spider_Spawn_Point1__UeScsNode = "875bb48520a9a549b7dda42d8bcd05d1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6935dfc1789c874ea29299228ccda153";
     class UEnemyDescriptor* EnemyToSpawn;
     bool CanSpawn;
     float ChainReactionDistance;
@@ -68,6 +54,24 @@ public:
     void ChainReaction();
     void TriggerNeighbours();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpiderSpawnpoinbt3__UeScsNode = "1e1b56d051eb314191ffeeab229a78f5";
+        static constexpr const char* WarningPoint__UeScsNode = "f2d363d552d976449a30aa1248d11b9d";
+        static constexpr const char* SM_Prim_Cylinder_08sides__UeScsNode = "c28b11994aa55b4ab5d51e1b0cce0cf6";
+        static constexpr const char* FillerMaterial__UeScsNode = "e574c89f0b0a2f4fb6590f221539ccaa";
+        static constexpr const char* SpiderSpawnPoint2__UeScsNode = "299b0b7bfdcdda4f89ee3d6e7a23c698";
+        static constexpr const char* StaticMesh5__UeScsNode = "df1a90495ff4f64e8d8eb82c0ddc7365";
+        static constexpr const char* BAckTunnel2__UeScsNode = "95f53a0ce6dbd64d859562eea52002c8";
+        static constexpr const char* TriggerSphere__UeScsNode = "f07a79a8e2111444a745b41febfab25b";
+        static constexpr const char* StaticMesh__UeScsNode = "dcb19e7d1bb11346bedab1f7ad89958a";
+        static constexpr const char* BackTunnel__UeScsNode = "65185f0645f1314683fa752d6730c143";
+        static constexpr const char* terrainPlacement__UeScsNode = "4b38eada4b9f5b40ace97c99462a80cb";
+        static constexpr const char* Spider_Spawn_Point1__UeName = "Spider Spawn Point1";
+        static constexpr const char* Spider_Spawn_Point1__UeScsNode = "875bb48520a9a549b7dda42d8bcd05d1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6935dfc1789c874ea29299228ccda153";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel

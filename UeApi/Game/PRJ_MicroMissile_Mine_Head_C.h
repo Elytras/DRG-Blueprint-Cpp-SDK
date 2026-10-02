@@ -22,17 +22,11 @@ class PRJ_MicroMissile_Mine_Head_C : public Game::WeaponsNTools::MicroMissileLau
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Mine_Head", "PRJ_MicroMissile_Mine_Head_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_MicroMissile_Mine_Head_C;
-    static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Mine_Head_C__UeName = "UberGraphFrame";
     class UBoxComponent* HitCollider;
-    static constexpr const char* HitCollider__UeScsNode = "1dfcd728c1ccaf46827beb852c479788";
     class UEnemyHealthComponent* HealthComponent;
-    static constexpr const char* HealthComponent__UeScsNode = "a6ebcd4d909c3c4c865dd2767bf1fcbd";
     class USphereComponent* Trigger_Sphere;
-    static constexpr const char* Trigger_Sphere__UeScsNode = "dc798e97e889904c9135c4aa85bceb44";
     bool Triggered;
-    static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
     FHitResult LastHitResult;
     float LifeTime;
     FGameplayTagContainer EnemyTag;
@@ -45,6 +39,16 @@ public:
     void BndEvt__Trigger_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void UserConstructionScript();
     void OnRep_Triggered();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Mine_Head_C__UeName = "UberGraphFrame";
+        static constexpr const char* HitCollider__UeScsNode = "1dfcd728c1ccaf46827beb852c479788";
+        static constexpr const char* HealthComponent__UeScsNode = "a6ebcd4d909c3c4c865dd2767bf1fcbd";
+        static constexpr const char* Trigger_Sphere__UeScsNode = "dc798e97e889904c9135c4aa85bceb44";
+        static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

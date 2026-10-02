@@ -24,20 +24,24 @@ public:
     UE_CLASS("/Game/GameElements/Plague/BP_MiniPlagueTower", "BP_MiniPlagueTower_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_TMP_MiniPlagueTowerl_DeathExplosion;
-    static constexpr const char* NS_TMP_MiniPlagueTowerl_DeathExplosion__UeScsNode = "0f5b08fb4e460c43afd400f184c650a4";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e3dcdcbd78622742b3575c8cd59f99e3";
     class UStaticMeshComponent* SM_Plague_Spore_Tower;
-    static constexpr const char* SM_Plague_Spore_Tower__UeScsNode = "483396b3f67daa4583ed95b8428e5301";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "86e2a6adfacf6f4784d73ecd6c4be26b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a46530c60e776044b8980b7cddd24df2";
     class UNiagaraSystem* deathParticles;
     class USoundBase* deathSound;
     void ExecuteUbergraph_BP_MiniPlagueTower(int EntryPoint);
     UE_MULTICAST void MainTowerDestroyed();
     void BndEvt__BP_MiniPlagueTower_SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_TMP_MiniPlagueTowerl_DeathExplosion__UeScsNode = "0f5b08fb4e460c43afd400f184c650a4";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e3dcdcbd78622742b3575c8cd59f99e3";
+        static constexpr const char* SM_Plague_Spore_Tower__UeScsNode = "483396b3f67daa4583ed95b8428e5301";
+        static constexpr const char* SimpleHealth__UeScsNode = "86e2a6adfacf6f4784d73ecd6c4be26b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a46530c60e776044b8980b7cddd24df2";
+    };
 };
 
 }}}   // namespace Game::GameElements::Plague

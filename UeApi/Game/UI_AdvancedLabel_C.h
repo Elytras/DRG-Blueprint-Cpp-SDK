@@ -24,21 +24,13 @@ public:
     FSlateFontInfo Font;
     class UHorizontalBox* CurrentLine;
     int Icon_Size;
-    static constexpr const char* Icon_Size__UeName = "Icon Size";
     FLinearColor Text_Tint;
-    static constexpr const char* Text_Tint__UeName = "Text Tint";
     FLinearColor Key_Name_Tint;
-    static constexpr const char* Key_Name_Tint__UeName = "Key Name Tint";
     FLinearColor PC__Icon_Tint;
-    static constexpr const char* PC__Icon_Tint__UeName = "PC  Icon Tint";
     FLinearColor Controller_Icon_Tint;
-    static constexpr const char* Controller_Icon_Tint__UeName = "Controller Icon Tint";
     int Icon_Size_ControllerOverride;
-    static constexpr const char* Icon_Size_ControllerOverride__UeName = "Icon Size_ControllerOverride";
     FLinearColor Shadow_Color;
-    static constexpr const char* Shadow_Color__UeName = "Shadow Color";
     FVector2D Shadow_Offset;
-    static constexpr const char* Shadow_Offset__UeName = "Shadow Offset";
     void ExecuteUbergraph_UI_AdvancedLabel(int EntryPoint);
     void OnReset();
     void OnAddString(FString Value);
@@ -53,6 +45,18 @@ public:
     void SetFontSize(int Font_Size);
     void SetIconSize(int Icon_Size_0, int Icon_Size_ControllerOverride_0);
     void SetFont(FSlateFontInfo InFont, bool InKeepFontSize);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Icon_Size__UeName = "Icon Size";
+        static constexpr const char* Text_Tint__UeName = "Text Tint";
+        static constexpr const char* Key_Name_Tint__UeName = "Key Name Tint";
+        static constexpr const char* PC__Icon_Tint__UeName = "PC  Icon Tint";
+        static constexpr const char* Controller_Icon_Tint__UeName = "Controller Icon Tint";
+        static constexpr const char* Icon_Size_ControllerOverride__UeName = "Icon Size_ControllerOverride";
+        static constexpr const char* Shadow_Color__UeName = "Shadow Color";
+        static constexpr const char* Shadow_Offset__UeName = "Shadow Offset";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

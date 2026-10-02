@@ -23,26 +23,16 @@ class WPN_Pistol_A_C : public ABasicPistol
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/WPN_Pistol_A", "WPN_Pistol_A_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TP_Animation_Mag;
-    static constexpr const char* TP_Animation_Mag__UeScsNode = "cce5afd4f311754c89a2cc9691bea4c1";
     class UFirstPersonStaticMeshComponent* FP_Animation_Mag;
-    static constexpr const char* FP_Animation_Mag__UeScsNode = "7b3536563438f34589ccfbb94a8ad755";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "1a8703c1ae7a4f43a4d01d28fe486346";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "f1bef49315c74a46af0683265d909c09";
     class UFirstPersonStaticMeshComponent* FP_Mag;
-    static constexpr const char* FP_Mag__UeScsNode = "544078af8a55fc4cb17e20d577de8da5";
     class UStaticMeshComponent* TP_Mag;
-    static constexpr const char* TP_Mag__UeScsNode = "e713e825b1b13b43ae0304cec1a54997";
     class UPointLightComponent* MuzzlePointLight;
-    static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "7191aaf8a6b6a1458efec313637c9a0a";
     void ExecuteUbergraph_WPN_Pistol_A(int EntryPoint);
     void OnSkinChanged(class USkinEffect* Skin);
     void Receive_ReloadEnd();
@@ -52,6 +42,20 @@ public:
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* TP_Animation_Mag__UeScsNode = "cce5afd4f311754c89a2cc9691bea4c1";
+        static constexpr const char* FP_Animation_Mag__UeScsNode = "7b3536563438f34589ccfbb94a8ad755";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "1a8703c1ae7a4f43a4d01d28fe486346";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "f1bef49315c74a46af0683265d909c09";
+        static constexpr const char* FP_Mag__UeScsNode = "544078af8a55fc4cb17e20d577de8da5";
+        static constexpr const char* TP_Mag__UeScsNode = "e713e825b1b13b43ae0304cec1a54997";
+        static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
+        static constexpr const char* HitScan__UeScsNode = "7191aaf8a6b6a1458efec313637c9a0a";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Pistol

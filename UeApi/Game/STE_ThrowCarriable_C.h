@@ -13,6 +13,11 @@ class STE_ThrowCarriable_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Character/Components/STE_ThrowCarriable", "STE_ThrowCarriable_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Character::Components

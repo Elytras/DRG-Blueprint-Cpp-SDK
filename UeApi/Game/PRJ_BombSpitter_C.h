@@ -20,22 +20,26 @@ class PRJ_BombSpitter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/BombSpitter/PRJ_BombSpitter", "PRJ_BombSpitter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "de2b151408492c4fbe7dcd2bfdb405ec";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "2a0ba2903406ec48bded4f6c719afe8c";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "0cda0c40a0506d46840c277a77b49b50";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "166a86ef795b2b4b9fbf7ca1b276ec4c";
     class UStaticMeshComponent* Projectile;
-    static constexpr const char* Projectile__UeScsNode = "0b08041ec1e98941a249f9e831d40f52";
     void ExecuteUbergraph_PRJ_BombSpitter(int EntryPoint);
     UE_MULTICAST void GoBoom();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "de2b151408492c4fbe7dcd2bfdb405ec";
+        static constexpr const char* Sphere__UeScsNode = "2a0ba2903406ec48bded4f6c719afe8c";
+        static constexpr const char* SimpleHealth__UeScsNode = "0cda0c40a0506d46840c277a77b49b50";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "166a86ef795b2b4b9fbf7ca1b276ec4c";
+        static constexpr const char* Projectile__UeScsNode = "0b08041ec1e98941a249f9e831d40f52";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::BombSpitter

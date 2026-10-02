@@ -17,13 +17,17 @@ class BP_CoreSpawnEnemy_C : public ACoreSpawnEnemyBase
 {
 public:
     UE_CLASS("/Game/Enemies/CoreSpawn/BP_CoreSpawnEnemy", "BP_CoreSpawnEnemy_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeathComponent Death;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent PawnAlert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_CoreSpawnEnemy(int EntryPoint);
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);
     void BndEvt__ENE_Crawler_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnRep_IsFrozen2();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeathComponent Death;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent PawnAlert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+    };
 };
 
 }}}   // namespace Game::Enemies::CoreSpawn

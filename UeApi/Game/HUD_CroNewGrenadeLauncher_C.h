@@ -22,7 +22,7 @@ class HUD_CroNewGrenadeLauncher_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CroNewGrenadeLauncher", "HUD_CroNewGrenadeLauncher_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Bracket_Right;
     class UImage* Dot;
     class UImage* FocusHair_Bottom;
@@ -37,9 +37,7 @@ public:
     class UImage* Line15;
     class UImage* Line20;
     class UImage* Line20_HV_L;
-    static constexpr const char* Line20_HV_L__UeName = "Line20-HV_L";
     class UImage* Line20_HV_R;
-    static constexpr const char* Line20_HV_R__UeName = "Line20-HV_R";
     class UImage* Line5;
     class UNamedSlot* PGLCrosshairs;
     float OpacityHigh;
@@ -53,6 +51,12 @@ public:
     void SwitchToHP();
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Line20_HV_L__UeName = "Line20-HV_L";
+        static constexpr const char* Line20_HV_R__UeName = "Line20-HV_R";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

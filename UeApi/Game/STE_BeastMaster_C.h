@@ -13,6 +13,11 @@ class STE_BeastMaster_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BeastMaster/STE_BeastMaster", "STE_BeastMaster_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.MakeAttackableStatusEffectItem MakeAttackableStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_2";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster

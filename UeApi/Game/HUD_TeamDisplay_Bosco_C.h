@@ -31,7 +31,7 @@ public:
     using HUD_BoscoAbillityCounter_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityCounter_C;
     using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* StateIconAnim;
+    UE_READONLY class UWidgetAnimation* StateIconAnim;
     class UBorder* Border_0;
     class UImage* BorderImage;
     UI_MaskedImage_C* CharacterIcon;
@@ -52,13 +52,17 @@ public:
     void UpdateHUDVisibility();
     void OnReviveused(int ReviveCount);
     void Update_State_Icon(class UTexture2D* Texture, FLinearColor InColorAndOpacity);
-    static constexpr const char* Update_State_Icon__UeName = "Update State Icon";
     void OnStateChanged(TEnum<EDroneAIState> aCurrentState);
     void OnBoscoChanged(class ABosco* Bosco_0);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateReviveCharges(int CurrentCharges, int MaxCharges);
     void SetVisibilityIfVisibleMode(TEnum<ESlateVisibility> InVisibility);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_State_Icon__UeName = "Update State Icon";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display

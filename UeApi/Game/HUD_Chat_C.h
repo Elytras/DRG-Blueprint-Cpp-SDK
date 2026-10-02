@@ -25,7 +25,7 @@ public:
     UE_CLASS("/Game/UI/Chat/HUD_Chat", "HUD_Chat_C");
     using HUD_ChatLine_C = Game::UI::Chat::HUD_ChatLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BackgroundFade;
+    UE_READONLY class UWidgetAnimation* BackgroundFade;
     class UBorder* Border_0;
     class UImage* ChatBackground;
     class UImage* ChatBar;
@@ -64,9 +64,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnMessageHidden_Event();
     void Add_Chat_Message(FFSDChatMessage Msg);
-    static constexpr const char* Add_Chat_Message__UeName = "Add Chat Message";
     void Update_Chat_Background();
-    static constexpr const char* Update_Chat_Background__UeName = "Update Chat Background";
     void OnOpenChat();
     void BeginChat();
     void OpenChat();
@@ -77,6 +75,12 @@ public:
     void FilterMessage(FFSDChatMessage InMessage, FFSDChatMessage& FilteredMessage);
     void FilterBlockedUserMessage(FFSDChatMessage InMessage, EChatMessageType& FilteredMessageType, FString& FilteredMessage);
     void IsStringNotEmpty(FString String, bool& isEmpty) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Chat_Message__UeName = "Add Chat Message";
+        static constexpr const char* Update_Chat_Background__UeName = "Update Chat Background";
+    };
 };
 
 }}}   // namespace Game::UI::Chat

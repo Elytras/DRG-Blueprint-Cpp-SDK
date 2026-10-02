@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_Ball_C : public Game::WeaponsNTools::Grenades::Loadou
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Loadout_GrenadeProxy_Ball", "Loadout_GrenadeProxy_Ball_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

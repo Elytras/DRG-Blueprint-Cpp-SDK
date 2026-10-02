@@ -13,6 +13,11 @@ class CP_WPN_PlasmaCarbineRifle_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_WPN_PlasmaCarbineRifle", "CP_WPN_PlasmaCarbineRifle_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_1;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CaracterLevelCampaignRequirement CaracterLevelCampaignRequirement_0;/Script/FSD.CaracterLevelCampaignRequirement CaracterLevelCampaignRequirement_2;/Script/FSD.ItemBlueprintReward CampaignMission_1:ItemBlueprintReward_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

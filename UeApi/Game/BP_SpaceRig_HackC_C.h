@@ -25,25 +25,15 @@ public:
     UE_CLASS("/Game/Game/SpaceRig/S01_SetDressing/BP_SpaceRig_HackC", "BP_SpaceRig_HackC_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* SaluteCollision;
-    static constexpr const char* SaluteCollision__UeScsNode = "1f91479911302f4298d47fa4e322fd04";
     class USkeletalMeshComponent* SK_Hacky_SpaceRig;
-    static constexpr const char* SK_Hacky_SpaceRig__UeScsNode = "8169b4ff936acb4ca7973b818a00e22d";
     class USpotLightComponent* SpotLightMain2;
-    static constexpr const char* SpotLightMain2__UeScsNode = "f0499543ed457946a40aa8b61d9f3e87";
     class USpotLightComponent* SpotLightMain1;
-    static constexpr const char* SpotLightMain1__UeScsNode = "bb5249629832cd4c97e9b834a92896e5";
     class USpotLightComponent* SpotLightMain;
-    static constexpr const char* SpotLightMain__UeScsNode = "ac0b9dc1e36eee4f9ca868b3d8236aa5";
     class URGBLightManagerComponent* RGBLightManager;
-    static constexpr const char* RGBLightManager__UeScsNode = "a0cda4b889095245bd86fb819d476960";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "8adeb22e8d3fa943a9bb19fba9189a5c";
     class UPointLightComponent* Light_FanRGB01;
-    static constexpr const char* Light_FanRGB01__UeScsNode = "84bc346efe794b43bc8c5faf902e74dc";
     class UPointLightComponent* Light_FanRGB03;
-    static constexpr const char* Light_FanRGB03__UeScsNode = "e6dd5484efa1e044b223c3ce0415b3c5";
     class UPointLightComponent* Light_FanRGB02;
-    static constexpr const char* Light_FanRGB02__UeScsNode = "afbc5073142f9a49b838671c4a9f60a6";
     TArray<class APlayerCharacter*> playersInside;
     void ExecuteUbergraph_BP_SpaceRig_HackC(int EntryPoint);
     void BndEvt__BP_SpaceRig_HackC_SaluteCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
@@ -51,6 +41,20 @@ public:
     UE_MULTICAST void All_PlaySalute();
     void BndEvt__BP_SpaceRig_Hacksy_erwwer_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SaluteCollision__UeScsNode = "1f91479911302f4298d47fa4e322fd04";
+        static constexpr const char* SK_Hacky_SpaceRig__UeScsNode = "8169b4ff936acb4ca7973b818a00e22d";
+        static constexpr const char* SpotLightMain2__UeScsNode = "f0499543ed457946a40aa8b61d9f3e87";
+        static constexpr const char* SpotLightMain1__UeScsNode = "bb5249629832cd4c97e9b834a92896e5";
+        static constexpr const char* SpotLightMain__UeScsNode = "ac0b9dc1e36eee4f9ca868b3d8236aa5";
+        static constexpr const char* RGBLightManager__UeScsNode = "a0cda4b889095245bd86fb819d476960";
+        static constexpr const char* Audio__UeScsNode = "8adeb22e8d3fa943a9bb19fba9189a5c";
+        static constexpr const char* Light_FanRGB01__UeScsNode = "84bc346efe794b43bc8c5faf902e74dc";
+        static constexpr const char* Light_FanRGB03__UeScsNode = "e6dd5484efa1e044b223c3ce0415b3c5";
+        static constexpr const char* Light_FanRGB02__UeScsNode = "afbc5073142f9a49b838671c4a9f60a6";
+    };
 };
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing

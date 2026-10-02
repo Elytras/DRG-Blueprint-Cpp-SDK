@@ -20,7 +20,6 @@ public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_DigPhase", "EWC_Escort_DigPhase_C");
     using AIC_EscortMule_C = Game::GameElements::Objectives::Escort::AIC_EscortMule_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_Escort_DigPhase_C;
-    static constexpr const char* UberGraphFrame_EWC_Escort_DigPhase_C__UeName = "UberGraphFrame";
     FVector FirstSpawnLocationOverride;
     float DelayBetweenWaves;
     int WaveCountConstantPressure;
@@ -32,6 +31,11 @@ public:
     void LoopSpawnWaves();
     void SpawnWaves();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Escort_DigPhase_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

@@ -22,17 +22,21 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_BunnyPlush", "BP_GreatEggHunt_BunnyPlush_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* ImpulseLocation;
-    static constexpr const char* ImpulseLocation__UeScsNode = "2a5189393ff38d4c8a64fd407b589710";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "e9315a15a3e92242a03cd74d81325ade";
     class USphereComponent* Usable;
-    static constexpr const char* Usable__UeScsNode = "55fc36d2a9db3c489455fdbcecf1f512";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "605f547baf380940b4d884a17c03f962";
     FRandRange RandomRange;
     void ExecuteUbergraph_BP_GreatEggHunt_BunnyPlush(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_PlayPet();
     void BndEvt__BP_GreatEggHunt_BunnyPlush_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ImpulseLocation__UeScsNode = "2a5189393ff38d4c8a64fd407b589710";
+        static constexpr const char* InstantUsable__UeScsNode = "e9315a15a3e92242a03cd74d81325ade";
+        static constexpr const char* Usable__UeScsNode = "55fc36d2a9db3c489455fdbcecf1f512";
+        static constexpr const char* SkeletalMesh__UeScsNode = "605f547baf380940b4d884a17c03f962";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

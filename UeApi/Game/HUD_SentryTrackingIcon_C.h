@@ -30,15 +30,13 @@ public:
     using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
     using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Shots_Fired;
-    static constexpr const char* Shots_Fired__UeName = "Shots Fired";
+    UE_READONLY class UWidgetAnimation* Shots_Fired;
     class UProgressBar* AmmoProgress;
     class UImage* Arrow;
     Basic_HUD_BracketWindowSmall_C* Basic_HUD_BracketWindowSmall;
     class UImage* DataImage;
     HUD_DefaultLabel_C* Distance;
     HUD_DefaultLabel_C* Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     HUD_DefaultLabel_C* StateLabel;
     float ArrowRotation;
     float ArrowRadius;
@@ -57,13 +55,19 @@ public:
     void OnInViewChanged(bool inView, float Angle);
     void OnSentryIndexChanged(int Index_0);
     void Update_State();
-    static constexpr const char* Update_State__UeName = "Update State";
     void OnItemEquipped(class AItem* Item_0);
     UE_COSMETIC void Construct();
     void OnShow();
     void UpdateArrow(bool inView, float Angle);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetInfo(FText InText, class UTexture2D* Texture);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Shots_Fired__UeName = "Shots Fired";
+        static constexpr const char* Name_0__UeName = "Name";
+        static constexpr const char* Update_State__UeName = "Update State";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

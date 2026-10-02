@@ -35,10 +35,14 @@ public:
     int SpacingLeft;
     void ExecuteUbergraph_Basic_HUD_BracketWindowBig_Single(int EntryPoint);
     void Set_Background_Opacity(float BG_Opacity_0);
-    static constexpr const char* Set_Background_Opacity__UeName = "Set Background Opacity";
     void Set_Edge_Color(FLinearColor Edge_Tint_0);
-    static constexpr const char* Set_Edge_Color__UeName = "Set Edge Color";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Background_Opacity__UeName = "Set Background Opacity";
+        static constexpr const char* Set_Edge_Color__UeName = "Set Edge Color";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

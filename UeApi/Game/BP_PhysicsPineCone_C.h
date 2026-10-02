@@ -16,7 +16,11 @@ class BP_PhysicsPineCone_C : public Game::LevelElements::RoomObjects::LoosePhysi
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalPinecones/BP_PhysicsPineCone", "BP_PhysicsPineCone_C");
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "11fcf435f0661c4c8cf91f4c9b9ae19a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "11fcf435f0661c4c8cf91f4c9b9ae19a";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones

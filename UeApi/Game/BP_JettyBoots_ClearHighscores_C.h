@@ -22,23 +22,27 @@ public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/BP_JettyBoots_ClearHighscores", "BP_JettyBoots_ClearHighscores_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ButtonMesh;
-    static constexpr const char* ButtonMesh__UeScsNode = "628d8de17c942149a1fdf2cb5f4294b0";
     class UStaticMeshComponent* PanelMesh;
-    static constexpr const char* PanelMesh__UeScsNode = "996365f711211e4b9f3bd198c3554b52";
     class UBoxComponent* UsableCollider;
-    static constexpr const char* UsableCollider__UeScsNode = "adc477f5099f154ca549b8718e92ae4e";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "2b510ac7cb498343b4f30f83c09fb252";
     class USingleUsableComponent* ClearHighScoresUsable;
-    static constexpr const char* ClearHighScoresUsable__UeScsNode = "b4893d31e0b68a449e979ec79138e2cc";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c1f84eb161a11446acf5647a5d8fbaee";
     void ExecuteUbergraph_BP_JettyBoots_ClearHighscores(int EntryPoint);
     void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_2_GenericUsableDelegate__DelegateSignature();
     void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_1_ProgressSignature__DelegateSignature(float Progress);
     void BndEvt__BP_JettyBoots_ClearHighscores_ClearHighScoresUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ButtonMesh__UeScsNode = "628d8de17c942149a1fdf2cb5f4294b0";
+        static constexpr const char* PanelMesh__UeScsNode = "996365f711211e4b9f3bd198c3554b52";
+        static constexpr const char* UsableCollider__UeScsNode = "adc477f5099f154ca549b8718e92ae4e";
+        static constexpr const char* Scene__UeScsNode = "2b510ac7cb498343b4f30f83c09fb252";
+        static constexpr const char* ClearHighScoresUsable__UeScsNode = "b4893d31e0b68a449e979ec79138e2cc";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c1f84eb161a11446acf5647a5d8fbaee";
+    };
 };
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade

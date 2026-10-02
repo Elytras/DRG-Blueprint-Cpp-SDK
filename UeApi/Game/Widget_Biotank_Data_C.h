@@ -18,13 +18,17 @@ class Widget_Biotank_Data_C : public Game::GameElements::Objectives::Facility::T
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/Widget_Biotank_Data", "Widget_Biotank_Data_C");
     FPointerToUberGraphFrame UberGraphFrame_Widget_Biotank_Data_C;
-    static constexpr const char* UberGraphFrame_Widget_Biotank_Data_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* NewAnimation;
+    UE_READONLY class UWidgetAnimation* NewAnimation;
     class UImage* Image;
     class UImage* IMG_Caution;
     void ExecuteUbergraph_Widget_Biotank_Data(int EntryPoint);
     void HackingStarted();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Widget_Biotank_Data_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco

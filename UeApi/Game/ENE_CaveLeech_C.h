@@ -31,30 +31,18 @@ class ENE_CaveLeech_C : public ACaveLeech
 {
 public:
     UE_CLASS("/Game/Enemies/CaveLeech/ENE_CaveLeech", "ENE_CaveLeech_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent TentacleHead;/Script/Engine.SkeletalMeshComponent NewMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* HeadAudio;
-    static constexpr const char* HeadAudio__UeScsNode = "e91af60d73a63246b4dc25f5ccdbd4b6";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "f731ed36b41e3e45a0c791e8cb7826d8";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "64cdcef37068d84d9f454f5bb6d9cf30";
     class USceneComponent* RetractSpot;
-    static constexpr const char* RetractSpot__UeScsNode = "90073a5ac626f74aa28e847450c94a6d";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "09bc456e3bfd3c4185440ea30bb6501e";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "a6e8d31600c0fa40b78c9d7f195365b2";
     class USphereComponent* HitCollider;
-    static constexpr const char* HitCollider__UeScsNode = "65f00c22f4c63c4fa6274f817447b93a";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "33604e1ed197404d862a2a3ed5c434a1";
     class USphereComponent* HeadCollision;
-    static constexpr const char* HeadCollision__UeScsNode = "99e2592ece2a8646b4a675bdc2fb06ef";
     class USkeletalMeshComponent* TopMesh;
-    static constexpr const char* TopMesh__UeScsNode = "25fb233c76aea44db5e5a80da2cf575a";
     class USceneComponent* Mouth;
-    static constexpr const char* Mouth__UeScsNode = "986abcf490bd354e96bee32a451e8345";
     float Light_on_Light_value_5D62893F4543BADC6EB650BB2288E402;
     TEnum<ETimelineDirection> Light_on__Direction_5D62893F4543BADC6EB650BB2288E402;
     class UTimelineComponent* Light_on;
@@ -68,7 +56,6 @@ public:
     TEnum<ETimelineDirection> Emissive_off__Direction_E8DBA0094826FB48DB3D0A9B7129C074;
     class UTimelineComponent* Emissive_off;
     class UMaterialInstance* Emission_;
-    static constexpr const char* Emission___UeName = "Emission ";
     TArray<class UMaterialInterface*> LeechMats;
     void ExecuteUbergraph_ENE_CaveLeech(int EntryPoint);
     void StopEmissiveOff();
@@ -92,6 +79,23 @@ public:
     void PlayAudioHead(class USoundBase* NewSound);
     void CreateDynamicMaterials();
     UE_PURE FVector GetMouthLocation() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent TentacleHead;/Script/Engine.SkeletalMeshComponent NewMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* HeadAudio__UeScsNode = "e91af60d73a63246b4dc25f5ccdbd4b6";
+        static constexpr const char* StaticMesh__UeScsNode = "f731ed36b41e3e45a0c791e8cb7826d8";
+        static constexpr const char* ParticleSystem__UeScsNode = "64cdcef37068d84d9f454f5bb6d9cf30";
+        static constexpr const char* RetractSpot__UeScsNode = "90073a5ac626f74aa28e847450c94a6d";
+        static constexpr const char* PointLight__UeScsNode = "09bc456e3bfd3c4185440ea30bb6501e";
+        static constexpr const char* outline__UeScsNode = "a6e8d31600c0fa40b78c9d7f195365b2";
+        static constexpr const char* HitCollider__UeScsNode = "65f00c22f4c63c4fa6274f817447b93a";
+        static constexpr const char* terrainPlacement__UeScsNode = "33604e1ed197404d862a2a3ed5c434a1";
+        static constexpr const char* HeadCollision__UeScsNode = "99e2592ece2a8646b4a675bdc2fb06ef";
+        static constexpr const char* TopMesh__UeScsNode = "25fb233c76aea44db5e5a80da2cf575a";
+        static constexpr const char* Mouth__UeScsNode = "986abcf490bd354e96bee32a451e8345";
+        static constexpr const char* Emission___UeName = "Emission ";
+    };
 };
 
 }}}   // namespace Game::Enemies::CaveLeech

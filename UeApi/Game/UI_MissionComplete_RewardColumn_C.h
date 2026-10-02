@@ -32,19 +32,15 @@ public:
     TArray<UI_MissionComplete_CombinedRewardLine_C*> Entries;
     float TotalAmount;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     UI_MissionComplete_CombinedRewardLine_C* CurrentEntry;
-    int Entry_Size;
-    static constexpr const char* Entry_Size__UeName = "Entry Size";
-    int Header_Size;
-    static constexpr const char* Header_Size__UeName = "Header Size";
-    int HeadIconSize;
+    UE_READONLY int Entry_Size;
+    UE_READONLY int Header_Size;
+    UE_READONLY int HeadIconSize;
     void ExecuteUbergraph_UI_MissionComplete_RewardColumn(int EntryPoint);
     void FillXPRewards();
     void FillCreditRewards();
     UE_COSMETIC void Construct();
     void Begin_Counting();
-    static constexpr const char* Begin_Counting__UeName = "Begin Counting";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetIcon(class UTexture2D* Texture, FLinearColor Tint);
     void AddEntry(FText Description, int amount, UI_MissionComplete_CombinedRewardLine_C*& OutEntry);
@@ -52,6 +48,14 @@ public:
     void SetTotal(float Value);
     void IncTotal(float Delta);
     UE_PURE int GetGoldCollected();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* Entry_Size__UeName = "Entry Size";
+        static constexpr const char* Header_Size__UeName = "Header Size";
+        static constexpr const char* Begin_Counting__UeName = "Begin Counting";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

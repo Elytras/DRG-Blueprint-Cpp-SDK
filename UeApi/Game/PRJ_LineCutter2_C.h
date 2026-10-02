@@ -23,44 +23,25 @@ class PRJ_LineCutter2_C : public ALineCutterProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/PRJ_LineCutter2", "PRJ_LineCutter2_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent InitialDamageComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.ParticleSystemComponent LeftImpact;/Script/Engine.ParticleSystemComponent RightImpact;/Script/Engine.SceneComponent LineRoot;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Plasma_Projectile3;
-    static constexpr const char* P_Plasma_Projectile3__UeScsNode = "afb2634c24cd0649b07c10185e1ddc1c";
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Right3;
-    static constexpr const char* SM_Linecutter_Projectile_A_Right3__UeScsNode = "54dd7e0ee6f5e14fb2688edc2b7ead6b";
     class USphereComponent* SphereRight3;
-    static constexpr const char* SphereRight3__UeScsNode = "19e7e08f0bdf174996057f2eedd327ab";
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Left3;
-    static constexpr const char* SM_Linecutter_Projectile_A_Left3__UeScsNode = "9f5a584fd82db243b3b54f67c1906414";
     class USphereComponent* SphereLeft3;
-    static constexpr const char* SphereLeft3__UeScsNode = "7d1467fa0d0fd8449f33a15ade623b6a";
     class USphereComponent* SphereRight;
-    static constexpr const char* SphereRight__UeScsNode = "8a7434e35dad6e4bba5ea02a5e8106a4";
     class USphereComponent* SphereLeft;
-    static constexpr const char* SphereLeft__UeScsNode = "f0d3907aa443184fbcda67e2090cce7f";
     class USphereComponent* SphereRight2;
-    static constexpr const char* SphereRight2__UeScsNode = "bf9c727a1aa3284e96d945f753abc35f";
     class USphereComponent* SphereLeft2;
-    static constexpr const char* SphereLeft2__UeScsNode = "a20c794e36e22d4b895eb41b670200ac";
     class UParticleSystemComponent* P_Plasma_Projectile2;
-    static constexpr const char* P_Plasma_Projectile2__UeScsNode = "8765bd11887942409b0373a4375e631b";
     class UParticleSystemComponent* P_Plasma_Projectile;
-    static constexpr const char* P_Plasma_Projectile__UeScsNode = "d05ca3edd11d6449bb6e1bdf62097053";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "9136451496ad3f4fa4dce30324acad5a";
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Right2;
-    static constexpr const char* SM_Linecutter_Projectile_A_Right2__UeScsNode = "48df5b584eb4384795acbb62d56236d5";
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Left2;
-    static constexpr const char* SM_Linecutter_Projectile_A_Left2__UeScsNode = "fd486672ff0a454ab9adc73fd0144bf1";
     class UDamageComponent* DamageExplosion;
-    static constexpr const char* DamageExplosion__UeScsNode = "85538fba0326cc4d84511f322c9a86d5";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "0858b6558c18ca44a04cc1681233fead";
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Left;
-    static constexpr const char* SM_Linecutter_Projectile_A_Left__UeScsNode = "919dae2895a91f469d810c0a1cdb089a";
     class UStaticMeshComponent* SM_Linecutter_Projectile_A_Right;
-    static constexpr const char* SM_Linecutter_Projectile_A_Right__UeScsNode = "82db208364fc7148bf989c218381c80d";
     float ProjectileSlowdown_Velocity_3314D5764A0652510BE0E38ABA90D3FC;
     TEnum<ETimelineDirection> ProjectileSlowdown__Direction_3314D5764A0652510BE0E38ABA90D3FC;
     class UTimelineComponent* ProjectileSlowdown;
@@ -95,6 +76,29 @@ public:
     void ProjectileSlowdown__FinishedFunc();
     void UserConstructionScript();
     void AdjustLineSize();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent InitialDamageComponent;/Script/FSD.DamageConversionBonus DamageComponent:DamageConversionBonus_0;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.ParticleSystemComponent LeftImpact;/Script/Engine.ParticleSystemComponent RightImpact;/Script/FSD.PushStatusEffectDamageBonus DamageComponent:PushStatusEffectDamageBonus_0;/Script/Engine.SceneComponent LineRoot;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* P_Plasma_Projectile3__UeScsNode = "afb2634c24cd0649b07c10185e1ddc1c";
+        static constexpr const char* SM_Linecutter_Projectile_A_Right3__UeScsNode = "54dd7e0ee6f5e14fb2688edc2b7ead6b";
+        static constexpr const char* SphereRight3__UeScsNode = "19e7e08f0bdf174996057f2eedd327ab";
+        static constexpr const char* SM_Linecutter_Projectile_A_Left3__UeScsNode = "9f5a584fd82db243b3b54f67c1906414";
+        static constexpr const char* SphereLeft3__UeScsNode = "7d1467fa0d0fd8449f33a15ade623b6a";
+        static constexpr const char* SphereRight__UeScsNode = "8a7434e35dad6e4bba5ea02a5e8106a4";
+        static constexpr const char* SphereLeft__UeScsNode = "f0d3907aa443184fbcda67e2090cce7f";
+        static constexpr const char* SphereRight2__UeScsNode = "bf9c727a1aa3284e96d945f753abc35f";
+        static constexpr const char* SphereLeft2__UeScsNode = "a20c794e36e22d4b895eb41b670200ac";
+        static constexpr const char* P_Plasma_Projectile2__UeScsNode = "8765bd11887942409b0373a4375e631b";
+        static constexpr const char* P_Plasma_Projectile__UeScsNode = "d05ca3edd11d6449bb6e1bdf62097053";
+        static constexpr const char* PointLight__UeScsNode = "9136451496ad3f4fa4dce30324acad5a";
+        static constexpr const char* SM_Linecutter_Projectile_A_Right2__UeScsNode = "48df5b584eb4384795acbb62d56236d5";
+        static constexpr const char* SM_Linecutter_Projectile_A_Left2__UeScsNode = "fd486672ff0a454ab9adc73fd0144bf1";
+        static constexpr const char* DamageExplosion__UeScsNode = "85538fba0326cc4d84511f322c9a86d5";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "0858b6558c18ca44a04cc1681233fead";
+        static constexpr const char* SM_Linecutter_Projectile_A_Left__UeScsNode = "919dae2895a91f469d810c0a1cdb089a";
+        static constexpr const char* SM_Linecutter_Projectile_A_Right__UeScsNode = "82db208364fc7148bf989c218381c80d";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

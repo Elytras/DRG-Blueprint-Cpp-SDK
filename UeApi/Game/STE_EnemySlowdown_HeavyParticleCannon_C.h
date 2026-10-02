@@ -13,6 +13,11 @@ class STE_EnemySlowdown_HeavyParticleCannon_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/STE_EnemySlowdown_HeavyParticleCannon", "STE_EnemySlowdown_HeavyParticleCannon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

@@ -29,36 +29,40 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelMonsterSpawner", "BP_TunnelMonsterSpawner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "d776e8043067234bb1e5e7b0c5de00cc";
     class UNiagaraComponent* P_Carve;
-    static constexpr const char* P_Carve__UeScsNode = "efdaad566afb164483f5362db290b41b";
     class USceneComponent* SpawnPoint;
-    static constexpr const char* SpawnPoint__UeScsNode = "f93b1acd5113844d8f6263edeadb7cca";
     class UMeshCarverComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "9638874a5c9c3b4397ab55ecc0096474";
     class USphereComponent* Trigger;
-    static constexpr const char* Trigger__UeScsNode = "94accd9205caba4399db0eba96a7c525";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "9a1c1e652ebcc344ac8a5cd0b8589be6";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "126d7d3e617b574e8d13cb9569a0336d";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "674c9783c535a54080de077abfa757ab";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a3f282dacb1eaf4f84cc26bde70c69d2";
     TSoftObjectPtr<class UBiomeDependentMaterialCollection> MaterialCollection;
     bool MonsterSpawnsDisabled;
     float DisableSpawningDamageThreshold;
     void ExecuteUbergraph_BP_TunnelMonsterSpawner(int EntryPoint);
     void BndEvt__BP_TunnelMonsterSpawner_SimpleHealth_K2Node_ComponentBoundEvent_4_DamageSig__DelegateSignature(float amount);
     UE_MULTICAST void Multi_Play_Scrab_Spawn_Sound();
-    static constexpr const char* Multi_Play_Scrab_Spawn_Sound__UeName = "Multi_Play Scrab Spawn Sound";
     void SpawnMonsters();
     void Carve();
     void BndEvt__BP_TunnelMonsterSpawner_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__BP_FleshWorm_Spawner_Base_SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     void OnLoaded_60341DEA4956809FFDEC0E9A1EC1648F(class UObject* Loaded);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "d776e8043067234bb1e5e7b0c5de00cc";
+        static constexpr const char* P_Carve__UeScsNode = "efdaad566afb164483f5362db290b41b";
+        static constexpr const char* SpawnPoint__UeScsNode = "f93b1acd5113844d8f6263edeadb7cca";
+        static constexpr const char* MeshCarver__UeScsNode = "9638874a5c9c3b4397ab55ecc0096474";
+        static constexpr const char* Trigger__UeScsNode = "94accd9205caba4399db0eba96a7c525";
+        static constexpr const char* terrainPlacement__UeScsNode = "9a1c1e652ebcc344ac8a5cd0b8589be6";
+        static constexpr const char* SimpleHealth__UeScsNode = "126d7d3e617b574e8d13cb9569a0336d";
+        static constexpr const char* StaticMesh__UeScsNode = "674c9783c535a54080de077abfa757ab";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a3f282dacb1eaf4f84cc26bde70c69d2";
+        static constexpr const char* Multi_Play_Scrab_Spawn_Sound__UeName = "Multi_Play Scrab Spawn Sound";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent

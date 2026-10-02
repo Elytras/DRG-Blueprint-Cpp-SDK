@@ -13,6 +13,11 @@ class STE_IronWill_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/STE_IronWill", "STE_IronWill_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_2;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_3;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_4";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

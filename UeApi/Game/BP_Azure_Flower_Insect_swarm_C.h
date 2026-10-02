@@ -22,17 +22,21 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/BP_Azure_Flower_Insect_swarm", "BP_Azure_Flower_Insect_swarm_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "5db0b41f709c9946b1be224d5247fabd";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "80e438f22f88ed4dbb4d69b974b3b50a";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "bf7f30842abea04b9eb4b0fc95a428fb";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "88effa977abcfe4298ef75acb15d9a33";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
     void ExecuteUbergraph_BP_Azure_Flower_Insect_swarm(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "5db0b41f709c9946b1be224d5247fabd";
+        static constexpr const char* ParticleSystem__UeScsNode = "80e438f22f88ed4dbb4d69b974b3b50a";
+        static constexpr const char* PointLight__UeScsNode = "bf7f30842abea04b9eb4b0fc95a428fb";
+        static constexpr const char* SimpleHealth__UeScsNode = "88effa977abcfe4298ef75acb15d9a33";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets

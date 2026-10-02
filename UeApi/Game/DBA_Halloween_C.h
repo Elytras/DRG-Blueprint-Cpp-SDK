@@ -17,11 +17,15 @@ class DBA_Halloween_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/Game/Events/Halloween/DBA_Halloween", "DBA_Halloween_C");
     class UDebrisItemComponent* I_MorePumpkins;
-    static constexpr const char* I_MorePumpkins__UeScsNode = "0650354bbaa9a348ad2e03eb1123c58e";
     class UDebrisItemComponent* I_Pumpkins;
-    static constexpr const char* I_Pumpkins__UeScsNode = "300527db9b3b1d459cb7f543a6fe4bdd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a9eb5e97dce05f4d846b20c7e932eecc";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* I_MorePumpkins__UeScsNode = "0650354bbaa9a348ad2e03eb1123c58e";
+        static constexpr const char* I_Pumpkins__UeScsNode = "300527db9b3b1d459cb7f543a6fe4bdd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a9eb5e97dce05f4d846b20c7e932eecc";
+    };
 };
 
 }}}}   // namespace Game::Game::Events::Halloween

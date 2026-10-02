@@ -13,7 +13,11 @@ class AIC_Spider_Tank_Rock_C : public Game::Enemies::Spider::Tank::AIC_Spider_Ta
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/Rock/AIC_Spider_Tank_Rock", "AIC_Spider_Tank_Rock_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Tank::Rock

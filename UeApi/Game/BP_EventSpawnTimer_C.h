@@ -21,7 +21,6 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_EventSpawnTimer", "BP_EventSpawnTimer_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0b14a1e5c187f049952f88522f30b411";
     float MaxTime;
     float MinTime;
     float ReAttemtTime;
@@ -39,7 +38,6 @@ public:
     TMulticastInlineDelegate<void()> SpawnSequenceFinished;
     float CandidateTime;
     TArray<BP_EventSpawnTimer_C*> Out_Actors;
-    static constexpr const char* Out_Actors__UeName = "Out Actors";
     bool FoundValidTime;
     class UDialogDataAsset* EventSpawnShout;
     float DebugStartTime;
@@ -54,11 +52,17 @@ public:
     void StartTimer();
     void SpawnImmediately();
     void Match_Started();
-    static constexpr const char* Match_Started__UeName = "Match Started";
     void SpawnEvent();
     void ReceiveBeginPlay();
     FTransform GetSpawnTransform();
     void CheckAllowedToSpawn(bool& Allowed);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0b14a1e5c187f049952f88522f30b411";
+        static constexpr const char* Out_Actors__UeName = "Out Actors";
+        static constexpr const char* Match_Started__UeName = "Match Started";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor

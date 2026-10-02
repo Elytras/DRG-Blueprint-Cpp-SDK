@@ -13,7 +13,11 @@ class AFE_FP_SandStorm_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/GameElements/PawnAffliction/FPEffects/AFE_FP_SandStorm", "AFE_FP_SandStorm_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects

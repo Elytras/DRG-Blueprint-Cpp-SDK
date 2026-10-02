@@ -24,14 +24,10 @@ class BP_Snowball_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Throwable/Snowball/BP_Snowball", "BP_Snowball_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "ade588786209204e902cfa8a0e91e313";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";
     float ImpulseStrength;
     FName ImpulseSocketName;
     class UDialogDataAsset* Shout_OnHit;
@@ -42,6 +38,14 @@ public:
     void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
+        static constexpr const char* Sphere__UeScsNode = "ade588786209204e902cfa8a0e91e313";
+        static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Throwable::Snowball

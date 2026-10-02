@@ -24,22 +24,15 @@ class BP_RadioactiveGlowinggGreenCrystal_Hazard_C : public Game::LevelElements::
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/GlowingLightCrystals/BP_RadioactiveGlowinggGreenCrystal_Hazard", "BP_RadioactiveGlowinggGreenCrystal_Hazard_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_RadioactiveGlowinggGreenCrystal_Hazard_C;
-    static constexpr const char* UberGraphFrame_BP_RadioactiveGlowinggGreenCrystal_Hazard_C__UeName = "UberGraphFrame";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "253f3ec416344a4cb4cb68a0ed977a49";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "90107f90259f2445a8c4c64c66d54404";
     class UParticleSystemComponent* Particles;
-    static constexpr const char* Particles__UeScsNode = "f9b5b67f8e4a534c898370b2325e7a5b";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "f08d4799b8e6a64bab596847935b97a2";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "49d245c46a2a2542ad58aa9d553e3623";
     float DamageGlowPulse_LightIntensity_72DD5E2D4AA96604D90633953576BD0B;
     TEnum<ETimelineDirection> DamageGlowPulse__Direction_72DD5E2D4AA96604D90633953576BD0B;
     class UTimelineComponent* DamageGlowPulse;
     bool DoPulse;
-    static constexpr const char* DoPulse__Replicated = "OnRep_DoPulse:";
     float LightIntensityBase;
     float LightIntensityIncrease;
     int ActorCount;
@@ -52,6 +45,17 @@ public:
     void UserConstructionScript();
     void CanApplyEffect(class UClass* Effect, bool& Result);
     void OnRep_DoPulse();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_RadioactiveGlowinggGreenCrystal_Hazard_C__UeName = "UberGraphFrame";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "253f3ec416344a4cb4cb68a0ed977a49";
+        static constexpr const char* Audio__UeScsNode = "90107f90259f2445a8c4c64c66d54404";
+        static constexpr const char* Particles__UeScsNode = "f9b5b67f8e4a534c898370b2325e7a5b";
+        static constexpr const char* PathfinderCollision__UeScsNode = "f08d4799b8e6a64bab596847935b97a2";
+        static constexpr const char* Sphere__UeScsNode = "49d245c46a2a2542ad58aa9d553e3623";
+        static constexpr const char* DoPulse__Replicated = "OnRep_DoPulse:";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals

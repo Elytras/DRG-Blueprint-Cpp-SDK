@@ -28,8 +28,8 @@ public:
     using CategoryImage_C = Game::UI::Menu_MinersManual::CategoryImage_C;
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeOutNavigationIcon;
-    class UWidgetAnimation* IntroAnim;
+    UE_READONLY class UWidgetAnimation* FadeOutNavigationIcon;
+    UE_READONLY class UWidgetAnimation* IntroAnim;
     class UButton* Button_Outer;
     CategoryImage_C* CategoryImage;
     class UImage* Image_Arrow;
@@ -48,7 +48,6 @@ public:
     class UTexture2D* FrontImage;
     FObjectiveMissionIcon MissionIcon;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     bool IsSelected;
     TMulticastInlineDelegate<void(int Param_Index_0)> OnClicked;
     bool ShowArrow;
@@ -63,6 +62,11 @@ public:
     void BndEvt__Button_Outer_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_Outer_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_Outer_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

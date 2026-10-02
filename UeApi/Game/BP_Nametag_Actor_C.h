@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/UI/BP_Nametag_Actor", "BP_Nametag_Actor_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "4213be994cde044ca1cde2adf004616f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "fcf36e6e3cad57419cec41750245b711";
     void ExecuteUbergraph_BP_Nametag_Actor(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "4213be994cde044ca1cde2adf004616f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "fcf36e6e3cad57419cec41750245b711";
+    };
 };
 
 }}   // namespace Game::UI

@@ -19,17 +19,11 @@ class BP_Collectible_Barley_B2_C : public Game::GameElements::Resources::Collect
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Collectible_Barley_B2", "BP_Collectible_Barley_B2_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Collectible_Barley_B2_C;
-    static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B2_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "305eb20818b52d4b851e14f35579ab7c";
     class UStaticMeshComponent* Fruit2;
-    static constexpr const char* Fruit2__UeScsNode = "0d52e0c6bbbb3044b889fcf06b7caad3";
     class UStaticMeshComponent* Stem2;
-    static constexpr const char* Stem2__UeScsNode = "85070eec17aafa4383683dbc725b701f";
     class UStaticMeshComponent* Fruit1;
-    static constexpr const char* Fruit1__UeScsNode = "a0263da95cb15b42ab54595e56850386";
     class UStaticMeshComponent* Stem1;
-    static constexpr const char* Stem1__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
     float Timeline_1_NewCurveBase_3E1FA8E34B81F0D665577BA1BED94342;
     TEnum<ETimelineDirection> Timeline_1__Direction_3E1FA8E34B81F0D665577BA1BED94342;
     class UTimelineComponent* Timeline_1;
@@ -43,6 +37,16 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B2_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "305eb20818b52d4b851e14f35579ab7c";
+        static constexpr const char* Fruit2__UeScsNode = "0d52e0c6bbbb3044b889fcf06b7caad3";
+        static constexpr const char* Stem2__UeScsNode = "85070eec17aafa4383683dbc725b701f";
+        static constexpr const char* Fruit1__UeScsNode = "a0263da95cb15b42ab54595e56850386";
+        static constexpr const char* Stem1__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Barley

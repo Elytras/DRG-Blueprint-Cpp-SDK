@@ -20,17 +20,21 @@ class Bp_Azure_CallowSeeder_C : public Game::LevelElements::RoomObjects::Passive
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/CallowSeeder/Bp_Azure_CallowSeeder", "Bp_Azure_CallowSeeder_C");
     FPointerToUberGraphFrame UberGraphFrame_Bp_Azure_CallowSeeder_C;
-    static constexpr const char* UberGraphFrame_Bp_Azure_CallowSeeder_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* Capsule1;
-    static constexpr const char* Capsule1__UeScsNode = "dca9a8d2cc37d846875bb7cbe1671456";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "88c656e3142bb54c90f871fd0fb0daf2";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "2c11d09cd7c3984fb42264a6a4eca1a6";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "1332312d11de2d4a994f10867b45bec1";
     void ExecuteUbergraph_Bp_Azure_CallowSeeder(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Bp_Azure_CallowSeeder_C__UeName = "UberGraphFrame";
+        static constexpr const char* Capsule1__UeScsNode = "dca9a8d2cc37d846875bb7cbe1671456";
+        static constexpr const char* Capsule__UeScsNode = "88c656e3142bb54c90f871fd0fb0daf2";
+        static constexpr const char* SimpleHealth__UeScsNode = "2c11d09cd7c3984fb42264a6a4eca1a6";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "1332312d11de2d4a994f10867b45bec1";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CallowSeeder

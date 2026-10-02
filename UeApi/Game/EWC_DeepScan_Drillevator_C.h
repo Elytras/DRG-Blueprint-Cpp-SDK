@@ -19,20 +19,24 @@ public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_DeepScan_Drillevator", "EWC_DeepScan_Drillevator_C");
     using BP_DeepScan_Drillevator_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_Drillevator_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_DeepScan_Drillevator_C;
-    static constexpr const char* UberGraphFrame_EWC_DeepScan_Drillevator_C__UeName = "UberGraphFrame";
     float DelayBetweenWaves;
     int WaveCountConstantPressure;
     BP_DeepScan_Drillevator_C* Drillevator;
     TArray<class UEnemyDescriptor*> Banned_Enemies;
-    static constexpr const char* Banned_Enemies__UeName = "Banned Enemies";
     TArray<class UEnemyDescriptor*> Banned_Enemies_Solo;
-    static constexpr const char* Banned_Enemies_Solo__UeName = "Banned Enemies_Solo";
     void ExecuteUbergraph_EWC_DeepScan_Drillevator(int EntryPoint);
     void ToggleNormalAndScriptedWaves(bool AllowWaves);
     void StartWave();
     void OnWaveCompleted();
     void LoopSpawnWaves();
     void SpawnWaves();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_DeepScan_Drillevator_C__UeName = "UberGraphFrame";
+        static constexpr const char* Banned_Enemies__UeName = "Banned Enemies";
+        static constexpr const char* Banned_Enemies_Solo__UeName = "Banned Enemies_Solo";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

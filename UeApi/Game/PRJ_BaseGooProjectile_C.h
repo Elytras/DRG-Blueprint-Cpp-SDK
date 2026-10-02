@@ -25,20 +25,13 @@ class PRJ_BaseGooProjectile_C : public AGooGunProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BaseGooProjectile", "PRJ_BaseGooProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage_PuddleSizeDisplayHack;
-    static constexpr const char* Damage_PuddleSizeDisplayHack__UeScsNode = "54edcabbb9eea048afd1f39f3c258531";
     class UAudioComponent* GooCannonProjectileIdle_Cue;
-    static constexpr const char* GooCannonProjectileIdle_Cue__UeScsNode = "9fb201542822e248b0a060da69d5095f";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "7f31ac0be7976a449c32aa8d03be2c35";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "898f6108c2a9144ea0eb3733d16dd302";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c87e3d363ceea447baae1298ac37533e";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
     int MaxBounces;
     class UClass* puddle;
     FVector PuddleSize;
@@ -52,6 +45,17 @@ public:
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void InitPuddle(class AGooGunPuddle* puddle_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage_PuddleSizeDisplayHack__UeScsNode = "54edcabbb9eea048afd1f39f3c258531";
+        static constexpr const char* GooCannonProjectileIdle_Cue__UeScsNode = "9fb201542822e248b0a060da69d5095f";
+        static constexpr const char* Niagara__UeScsNode = "7f31ac0be7976a449c32aa8d03be2c35";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "898f6108c2a9144ea0eb3733d16dd302";
+        static constexpr const char* Damage__UeScsNode = "c87e3d363ceea447baae1298ac37533e";
+        static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

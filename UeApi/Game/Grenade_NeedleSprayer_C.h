@@ -22,13 +22,9 @@ class Grenade_NeedleSprayer_C : public Game::WeaponsNTools::Grenades::ITM_Grenad
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/Grenade_NeedleSprayer", "Grenade_NeedleSprayer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_NeedleSprayer_C;
-    static constexpr const char* UberGraphFrame_Grenade_NeedleSprayer_C__UeName = "UberGraphFrame";
     class USphereComponent* BouncySphere;
-    static constexpr const char* BouncySphere__UeScsNode = "7e2795347a92b44493d4aae87d30dd90";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "0998978870ae034dacf79e680444d511";
     FVector StartRight;
     class UClass* NeedleSprayer;
     bool HasBounced;
@@ -37,6 +33,14 @@ public:
     void BndEvt__Grenade_NeedleSprayer_Box_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_NeedleSprayer_C__UeName = "UberGraphFrame";
+        static constexpr const char* BouncySphere__UeScsNode = "7e2795347a92b44493d4aae87d30dd90";
+        static constexpr const char* Arrow__UeScsNode = "0998978870ae034dacf79e680444d511";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer

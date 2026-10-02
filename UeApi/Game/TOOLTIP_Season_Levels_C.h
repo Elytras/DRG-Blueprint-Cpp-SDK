@@ -20,7 +20,7 @@ class TOOLTIP_Season_Levels_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/TOOLTIP_Season_Levels", "TOOLTIP_Season_Levels_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UImage* Image_Background;
     class UTextBlock* TextBlock_Status;
     class UTextBlock* TextBlock_Title;

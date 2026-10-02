@@ -18,7 +18,7 @@ class ScreenOverlay_Incapacitated_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/ScreenOverlays/ScreenOverlay_Incapacitated", "ScreenOverlay_Incapacitated_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeAnim;
+    UE_READONLY class UWidgetAnimation* FadeAnim;
     class UImage* Bottom;
     class UImage* Top;
     void ExecuteUbergraph_ScreenOverlay_Incapacitated(int EntryPoint);

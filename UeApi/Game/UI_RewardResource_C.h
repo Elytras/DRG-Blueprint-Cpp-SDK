@@ -23,12 +23,12 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardResource", "UI_RewardResource_C");
     using Basic_AnimatedNumber_C = Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CelebrateAnim;
+    UE_READONLY class UWidgetAnimation* CelebrateAnim;
     Basic_AnimatedNumber_C* Basic_AnimatedNumber;
     class UImage* ResourceIcon;
     class USizeBox* SizeBox_2;
-    class UResourceData* Resource;
-    int amount;
+    UE_READONLY class UResourceData* Resource;
+    UE_READONLY int amount;
     class UAudioComponent* AudioCounting;
     void ExecuteUbergraph_UI_RewardResource(int EntryPoint);
     void PlayReceiveAnim();

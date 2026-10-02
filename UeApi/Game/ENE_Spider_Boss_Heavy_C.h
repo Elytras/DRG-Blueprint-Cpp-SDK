@@ -30,41 +30,23 @@ class ENE_Spider_Boss_Heavy_C : public Game::Enemies::Spider::TankBoss::ENE_Spid
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/ENE_Spider_Boss_Heavy", "ENE_Spider_Boss_Heavy_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_Heavy_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Boss_Heavy_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "cda60d56979219409b5d8867da24166a";
     class UMeleeAttackComponent* CarveAttack;
-    static constexpr const char* CarveAttack__UeScsNode = "345b88158a76444bbc9a8830d06a8c50";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "be87380994559842a379a3ebeb95f7bf";
     class UCapsuleComponent* Weakspot_C;
-    static constexpr const char* Weakspot_C__UeScsNode = "b867cd2a06975b43945ce429f6e1ea6b";
     class UCapsuleComponent* Weakspot_L;
-    static constexpr const char* Weakspot_L__UeScsNode = "6e405775cf4f2545816873a579aaa070";
     class UCapsuleComponent* Weakspot_R;
-    static constexpr const char* Weakspot_R__UeScsNode = "a1e61dcb5308814599c414c8ae41c49b";
     class UProjectileAttackComponent* ProjectileFireball;
-    static constexpr const char* ProjectileFireball__UeScsNode = "14ef4102f1020a41951209f99a86127f";
     class UMeleeAttackComponent* MeleeAttack1;
-    static constexpr const char* MeleeAttack1__UeScsNode = "44a5a8f6db1cf542bbd3df1ee5c7b027";
     class UDamageComponent* SpecialAttackAoE;
-    static constexpr const char* SpecialAttackAoE__UeScsNode = "97f0b8c37ba48f42bbcfca9f034a2707";
     class UEnemyTemperatureReplicatorComponent* EnemyTemperatureReplicator;
-    static constexpr const char* EnemyTemperatureReplicator__UeScsNode = "fd50358fedeff04b9ad274283856642e";
     class UHealthDamageTracker* HealthDamageTracker;
-    static constexpr const char* HealthDamageTracker__UeScsNode = "d15754b7b65a4946936ffcf8c2e65e20";
     class UDestructibleSubHealthComponent* WeakspotHealth_L;
-    static constexpr const char* WeakspotHealth_L__UeScsNode = "e7db9d01c41533418c75617689c46dc1";
     class USpawnActorWithDebrisPosComponent* SpecialAttackSpawn;
-    static constexpr const char* SpecialAttackSpawn__UeScsNode = "35e6fea1ef186a4897e5d166b59d2ca0";
     class UDestructibleSubHealthComponent* WeakspotHealth_C;
-    static constexpr const char* WeakspotHealth_C__UeScsNode = "be4b8158925c0043aa3764403e445ad0";
     class UDestructibleSubHealthComponent* WeakspotHealth_R;
-    static constexpr const char* WeakspotHealth_R__UeScsNode = "9bd0c0bd73a771408b61ea32e2f68805";
     class UAlignEnemyComponent* AlignEnemy;
-    static constexpr const char* AlignEnemy__UeScsNode = "4a52eb35eb155e4abcc0a3f9441fd6e5";
     class UNiagaraComponent* WhirlwindParticles;
     void ExecuteUbergraph_ENE_Spider_Boss_Heavy(int EntryPoint);
     void SetPhysicsAsset(class UPhysicsAsset* NewPhysicsAsset);
@@ -90,6 +72,28 @@ public:
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void SetupWeakspotGlow();
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Boss_Heavy_C__UeName = "UberGraphFrame";
+        static constexpr const char* Capsule__UeScsNode = "cda60d56979219409b5d8867da24166a";
+        static constexpr const char* CarveAttack__UeScsNode = "345b88158a76444bbc9a8830d06a8c50";
+        static constexpr const char* WeakpointGlow__UeScsNode = "be87380994559842a379a3ebeb95f7bf";
+        static constexpr const char* Weakspot_C__UeScsNode = "b867cd2a06975b43945ce429f6e1ea6b";
+        static constexpr const char* Weakspot_L__UeScsNode = "6e405775cf4f2545816873a579aaa070";
+        static constexpr const char* Weakspot_R__UeScsNode = "a1e61dcb5308814599c414c8ae41c49b";
+        static constexpr const char* ProjectileFireball__UeScsNode = "14ef4102f1020a41951209f99a86127f";
+        static constexpr const char* MeleeAttack1__UeScsNode = "44a5a8f6db1cf542bbd3df1ee5c7b027";
+        static constexpr const char* SpecialAttackAoE__UeScsNode = "97f0b8c37ba48f42bbcfca9f034a2707";
+        static constexpr const char* EnemyTemperatureReplicator__UeScsNode = "fd50358fedeff04b9ad274283856642e";
+        static constexpr const char* HealthDamageTracker__UeScsNode = "d15754b7b65a4946936ffcf8c2e65e20";
+        static constexpr const char* WeakspotHealth_L__UeScsNode = "e7db9d01c41533418c75617689c46dc1";
+        static constexpr const char* SpecialAttackSpawn__UeScsNode = "35e6fea1ef186a4897e5d166b59d2ca0";
+        static constexpr const char* WeakspotHealth_C__UeScsNode = "be4b8158925c0043aa3764403e445ad0";
+        static constexpr const char* WeakspotHealth_R__UeScsNode = "9bd0c0bd73a771408b61ea32e2f68805";
+        static constexpr const char* AlignEnemy__UeScsNode = "4a52eb35eb155e4abcc0a3f9441fd6e5";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy

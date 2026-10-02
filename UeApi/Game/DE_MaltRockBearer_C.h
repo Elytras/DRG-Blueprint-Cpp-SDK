@@ -22,25 +22,29 @@ public:
     float TargetScale;
     float Progress;
     float Current_Scale;
-    static constexpr const char* Current_Scale__UeName = "Current Scale";
-    static constexpr const char* Current_Scale__Replicated = "OnRep_Current Scale:";
     float Previous_Progress;
-    static constexpr const char* Previous_Progress__UeName = "Previous Progress";
     bool IsScalingActive;
     float ScaleCheckCooldown;
     bool EffectEnabled;
     float OriginalPitchValue;
     void ExecuteUbergraph_DE_MaltRockBearer(int EntryPoint);
     void Reset_Voice();
-    static constexpr const char* Reset_Voice__UeName = "Reset Voice";
     void Handle_Scaling(float DeltaTime);
-    static constexpr const char* Handle_Scaling__UeName = "Handle Scaling";
     void OnStopEffect();
     void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void TraceForScaledCollision(bool& IsNextScaleColliding);
     void OnRep_Current_Scale();
-    static constexpr const char* OnRep_Current_Scale__UeName = "OnRep_Current Scale";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Current_Scale__UeName = "Current Scale";
+        static constexpr const char* Current_Scale__Replicated = "OnRep_Current Scale:";
+        static constexpr const char* Previous_Progress__UeName = "Previous Progress";
+        static constexpr const char* Reset_Voice__UeName = "Reset Voice";
+        static constexpr const char* Handle_Scaling__UeName = "Handle Scaling";
+        static constexpr const char* OnRep_Current_Scale__UeName = "OnRep_Current Scale";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

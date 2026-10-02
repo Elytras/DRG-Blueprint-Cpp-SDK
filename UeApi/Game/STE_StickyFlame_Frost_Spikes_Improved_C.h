@@ -13,6 +13,11 @@ class STE_StickyFlame_Frost_Spikes_Improved_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/STE_StickyFlame_Frost_Spikes_Improved", "STE_StickyFlame_Frost_Spikes_Improved_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

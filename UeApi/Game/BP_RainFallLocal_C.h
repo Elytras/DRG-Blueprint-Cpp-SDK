@@ -20,16 +20,20 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/BP_RainFallLocal", "BP_RainFallLocal_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "707c181cec72684a862fc337f1fc8c4d";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "c4f311fb95788247aeac9ba69ac31211";
     class UParticleSystemComponent* P_CaveFX_Rain01;
-    static constexpr const char* P_CaveFX_Rain01__UeScsNode = "3b4a252ea8637e4fa3a024fbfc26188b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
     bool PlayerInsideGas;
     void ExecuteUbergraph_BP_RainFallLocal(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "707c181cec72684a862fc337f1fc8c4d";
+        static constexpr const char* Audio__UeScsNode = "c4f311fb95788247aeac9ba69ac31211";
+        static constexpr const char* P_CaveFX_Rain01__UeScsNode = "3b4a252ea8637e4fa3a024fbfc26188b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards

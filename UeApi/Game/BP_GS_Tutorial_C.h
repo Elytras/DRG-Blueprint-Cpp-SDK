@@ -13,7 +13,11 @@ class BP_GS_Tutorial_C : public Game::Game::BP_GameState_C
 {
 public:
     UE_CLASS("/Game/Game/BP_GS_Tutorial", "BP_GS_Tutorial_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AttackerManagerComponent AttackerManager;/Script/FSD.DifficultyManager DifficultyManager;/Script/FSD.GemProximityTracker GemProximityTracker;/Script/FSD.PlayerProximityTracker ProximityTracker;/Script/FSD.SeasonReplicatorComponent SeasonReplicator;/Script/FSD.ShowroomManager ShowroomManager;/Script/FSD.SoundMixManagerComponent SoundMixManager;/Script/FSD.SpawnEffectsComponent SpawnEffects;/Script/FSD.TeamResourcesComponent TeamResources";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AttackerManagerComponent AttackerManager;/Script/FSD.DifficultyManager DifficultyManager;/Script/FSD.GemProximityTracker GemProximityTracker;/Script/FSD.PlayerProximityTracker ProximityTracker;/Script/FSD.SeasonReplicatorComponent SeasonReplicator;/Script/FSD.ShowroomManager ShowroomManager;/Script/FSD.SoundMixManagerComponent SoundMixManager;/Script/FSD.SpawnEffectsComponent SpawnEffects;/Script/FSD.TeamResourcesComponent TeamResources";
+    };
 };
 
 }}   // namespace Game::Game

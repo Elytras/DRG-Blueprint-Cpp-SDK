@@ -23,9 +23,13 @@ public:
     void OnLaserPointerEvent(const FLaserPointerTarget& HitInfo);
     void OnBoscoChanged(class ABosco* Bosco);
     void Mark_Ready_If(bool Condition);
-    static constexpr const char* Mark_Ready_If__UeName = "Mark Ready If";
     void ReceiveOnInitialized();
     void ReceiveOnHidden();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mark_Ready_If__UeName = "Mark Ready If";
+    };
 };
 
 }}}   // namespace Game::Character::Tutorials

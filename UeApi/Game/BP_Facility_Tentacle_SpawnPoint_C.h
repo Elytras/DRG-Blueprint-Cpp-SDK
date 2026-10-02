@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/BP_Facility_Tentacle_SpawnPoint", "BP_Facility_Tentacle_SpawnPoint_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "0a7e23e28fec81418a6f81fcf0176177";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3d1f656a6d09824d93383016e805a5c2";
     void ExecuteUbergraph_BP_Facility_Tentacle_SpawnPoint(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "0a7e23e28fec81418a6f81fcf0176177";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3d1f656a6d09824d93383016e805a5c2";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

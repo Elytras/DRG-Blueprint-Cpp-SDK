@@ -36,7 +36,7 @@ public:
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     using UI_RetirementInfo_C = Game::UI::CharacterSelectionMK2::Retirement::UI_RetirementInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimMoveIn;
+    UE_READONLY class UWidgetAnimation* AnimMoveIn;
     class UNamedSlot* ButtonsGoHere;
     CharSelect_HeroSelect_Clean_C* CharSelect_HeroSelect;
     Basic_ButtonScalable2_C* CloseButton;
@@ -72,9 +72,13 @@ public:
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void RetireCharacter(class UPlayerCharacterID* playerClass);
     void Set_Retirement_Info(class UPlayerCharacterID* Character);
-    static constexpr const char* Set_Retirement_Info__UeName = "Set Retirement Info";
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Retirement_Info__UeName = "Set Retirement Info";
+    };
 };
 
 }}}   // namespace Game::UI::MENU_Promotion

@@ -20,16 +20,20 @@ public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/BhaBarnacle/BP_BhaBarnacleWorm2", "BP_BhaBarnacleWorm2_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "796e74801679cc479d1325a2dfc29530";
     class UFSDAudioComponent* FallLoopCue;
-    static constexpr const char* FallLoopCue__UeScsNode = "b31118676980cd418fb11da05be03bb0";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "08b80abeff2b9b43ae642a0e5d667ab2";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "8c132cc9dd6794448ee981976a73347c";
     void ExecuteUbergraph_BP_BhaBarnacleWorm2(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "796e74801679cc479d1325a2dfc29530";
+        static constexpr const char* FallLoopCue__UeScsNode = "b31118676980cd418fb11da05be03bb0";
+        static constexpr const char* Scene__UeScsNode = "08b80abeff2b9b43ae642a0e5d667ab2";
+        static constexpr const char* SkeletalMesh__UeScsNode = "8c132cc9dd6794448ee981976a73347c";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::BhaBarnacle

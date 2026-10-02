@@ -18,9 +18,13 @@ public:
     UE_CLASS("/Game/Character/Tutorials/BP_TutorialManager_Spacerig", "BP_TutorialManager_Spacerig_C");
     using Tutorial_Hint_Spaceball_C = Game::Character::Tutorials::Tutorial_Hint_Spaceball_C;
     Tutorial_Hint_Spaceball_C* Tutorial_Hint_Spaceball;
-    static constexpr const char* Tutorial_Hint_Spaceball__UeScsNode = "e068126ce16fcb4e9738d9c975075e21";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f0b37025418e1a40a9c102540f2834ae";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Tutorial_Hint_Spaceball__UeScsNode = "e068126ce16fcb4e9738d9c975075e21";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f0b37025418e1a40a9c102540f2834ae";
+    };
 };
 
 }}}   // namespace Game::Character::Tutorials

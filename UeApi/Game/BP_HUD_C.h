@@ -30,7 +30,6 @@ public:
     using ScreenOverlay_Afflictions_C = Game::UI::ScreenOverlays::ScreenOverlay_Afflictions_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e6d88e5c0881d340b002022f52ab985e";
     TArray<class UWidget*> Widgets;
     class APlayerController* PlayerController;
     bool HudInitialized;
@@ -43,21 +42,15 @@ public:
     ScreenOverlay_Afflictions_C* AfflictionWidget;
     BP_Invitation_C* InviteRequest;
     class UWindowWidget* QuickCheatMenu;
-    TSoftClassPtr<class UClass> HUD_Class;
-    static constexpr const char* HUD_Class__UeName = "HUD Class";
-    TSoftClassPtr<class UClass> Escape_Menu_Class;
-    static constexpr const char* Escape_Menu_Class__UeName = "Escape Menu Class";
-    TSoftClassPtr<class UClass> Cheat_Menu_Class;
-    static constexpr const char* Cheat_Menu_Class__UeName = "Cheat Menu Class";
-    TSoftClassPtr<class UClass> Quick_Cheat_Menu_Class;
-    static constexpr const char* Quick_Cheat_Menu_Class__UeName = "Quick Cheat Menu Class";
-    TSoftClassPtr<class UClass> Affliction_Class;
-    static constexpr const char* Affliction_Class__UeName = "Affliction Class";
+    UE_READONLY TSoftClassPtr<class UClass> HUD_Class;
+    UE_READONLY TSoftClassPtr<class UClass> Escape_Menu_Class;
+    UE_READONLY TSoftClassPtr<class UClass> Cheat_Menu_Class;
+    UE_READONLY TSoftClassPtr<class UClass> Quick_Cheat_Menu_Class;
+    UE_READONLY TSoftClassPtr<class UClass> Affliction_Class;
     void ExecuteUbergraph_BP_HUD(int EntryPoint);
     void CheatMenuRequest();
     void QuickCheatMenuRequest();
     void On_HUD_Initialized();
-    static constexpr const char* On_HUD_Initialized__UeName = "On HUD Initialized";
     void MenuLoaded();
     void LoadEscapeMenu();
     void OnShowMainMenu();
@@ -69,7 +62,6 @@ public:
     void RadarPointAdded(class URadarPointComponent* radarPoint);
     void PlayerSpawned(class APlayerCharacter* Player);
     void Add_Widget_Class(class UClass* Class_0, class UWidget*& Widget);
-    static constexpr const char* Add_Widget_Class__UeName = "Add Widget Class";
     void AddAllWidgetToViewport();
     void RemoveAllWidgetsFromParents();
     void CreateCheatsIfNotCreated();
@@ -82,6 +74,18 @@ public:
     void GetCheatMenu(class UWindowWidget*& CheatMenu_0);
     void GetQuickCheatMenu(class UWindowWidget*& QuickCheatMenu_0);
     UE_PURE class UFSDMainHUDWidget* GetHUDWidget() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e6d88e5c0881d340b002022f52ab985e";
+        static constexpr const char* HUD_Class__UeName = "HUD Class";
+        static constexpr const char* Escape_Menu_Class__UeName = "Escape Menu Class";
+        static constexpr const char* Cheat_Menu_Class__UeName = "Cheat Menu Class";
+        static constexpr const char* Quick_Cheat_Menu_Class__UeName = "Quick Cheat Menu Class";
+        static constexpr const char* Affliction_Class__UeName = "Affliction Class";
+        static constexpr const char* On_HUD_Initialized__UeName = "On HUD Initialized";
+        static constexpr const char* Add_Widget_Class__UeName = "Add Widget Class";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

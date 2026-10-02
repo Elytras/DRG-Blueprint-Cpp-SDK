@@ -43,22 +43,26 @@ public:
     void ExecuteUbergraph_ITM_OnlineRestricted(int EntryPoint);
     void BndEvt__Button_57_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Show_external_resolve_UI_right_away();
-    static constexpr const char* Show_external_resolve_UI_right_away__UeName = "Show external resolve UI right away";
     void BndEvt__Basic_FlatGradientButton_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature();
     UE_COSMETIC void Construct();
     void Refresh_Block_Reasons();
-    static constexpr const char* Refresh_Block_Reasons__UeName = "Refresh Block Reasons";
     void Resolve_Issue();
-    static constexpr const char* Resolve_Issue__UeName = "Resolve Issue";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Should_Show_Online_Restriction(bool& Should_Show);
-    static constexpr const char* Should_Show_Online_Restriction__UeName = "Should Show Online Restriction";
     void SetBlockedReasonString(TArray<EBlueprintablePrivilegeResults>& InResults);
     void SetBlockSolution(TEnum<EBlueprintablePrivilegeResults> priviligeResults);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetFontSize(int inFontSize);
     void Handle_Key_Down(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
-    static constexpr const char* Handle_Key_Down__UeName = "Handle Key Down";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_external_resolve_UI_right_away__UeName = "Show external resolve UI right away";
+        static constexpr const char* Refresh_Block_Reasons__UeName = "Refresh Block Reasons";
+        static constexpr const char* Resolve_Issue__UeName = "Resolve Issue";
+        static constexpr const char* Should_Show_Online_Restriction__UeName = "Should Show Online Restriction";
+        static constexpr const char* Handle_Key_Down__UeName = "Handle Key Down";
+    };
 };
 
 }}}   // namespace Game::UI::System

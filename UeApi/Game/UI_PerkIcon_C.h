@@ -29,13 +29,17 @@ public:
     bool ShowPerkLevel;
     void ExecuteUbergraph_UI_PerkIcon(int EntryPoint);
     void Set_Perk_Asset_Last_Claimed(class UPerkAsset* PerkAsset);
-    static constexpr const char* Set_Perk_Asset_Last_Claimed__UeName = "Set Perk Asset Last Claimed";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetDimensions(float InDiminsions);
     void ShowAs(class UTexture2D* InIconTexture, FLinearColor InIconColor, int InRank);
     void ShowPerkByRank(class UPerkAsset* InPerk, int InRank);
     void ShowPerkAs(class UPerkAsset* InPerk, FLinearColor InIconColor, int InRank);
     void SetPerkLevelVisibility(bool InVisible);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Perk_Asset_Last_Claimed__UeName = "Set Perk Asset Last Claimed";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

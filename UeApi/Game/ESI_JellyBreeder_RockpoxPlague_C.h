@@ -18,23 +18,27 @@ class ESI_JellyBreeder_RockpoxPlague_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/ESI_JellyBreeder_RockpoxPlague", "ESI_JellyBreeder_RockpoxPlague_C");
     class UStaticMeshComponent* InfectionPoint2;
-    static constexpr const char* InfectionPoint2__UeScsNode = "dab3b634a3db9946bba04269db288cd7";
     class UStaticMeshComponent* InfectionPoint3;
-    static constexpr const char* InfectionPoint3__UeScsNode = "6ea7c1a27b07394e81ae742a6bbec201";
     class UStaticMeshComponent* InfectionPoint1;
-    static constexpr const char* InfectionPoint1__UeScsNode = "25d9f59950cc0d4d80e530b0ffcf4361";
     class UStaticMeshComponent* InfectionPoint8;
-    static constexpr const char* InfectionPoint8__UeScsNode = "a9a22d0e94007c43979d62bbe301045f";
     class UStaticMeshComponent* InfectionPoint7;
-    static constexpr const char* InfectionPoint7__UeScsNode = "a0fa5e177343e54b985447550676b793";
     class UStaticMeshComponent* InfectionPoint5;
-    static constexpr const char* InfectionPoint5__UeScsNode = "b01c6cc699ebd54d9f9fcaae84dc9d9b";
     class UStaticMeshComponent* InfectionPoint4;
-    static constexpr const char* InfectionPoint4__UeScsNode = "ccf8ebd58d51a144b945f10b6089d31d";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "1e53657765c41149834ba5925a4d2664";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "931ddd96673e0e428b27f690758eea20";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InfectionPoint2__UeScsNode = "dab3b634a3db9946bba04269db288cd7";
+        static constexpr const char* InfectionPoint3__UeScsNode = "6ea7c1a27b07394e81ae742a6bbec201";
+        static constexpr const char* InfectionPoint1__UeScsNode = "25d9f59950cc0d4d80e530b0ffcf4361";
+        static constexpr const char* InfectionPoint8__UeScsNode = "a9a22d0e94007c43979d62bbe301045f";
+        static constexpr const char* InfectionPoint7__UeScsNode = "a0fa5e177343e54b985447550676b793";
+        static constexpr const char* InfectionPoint5__UeScsNode = "b01c6cc699ebd54d9f9fcaae84dc9d9b";
+        static constexpr const char* InfectionPoint4__UeScsNode = "ccf8ebd58d51a144b945f10b6089d31d";
+        static constexpr const char* SkeletalMesh__UeScsNode = "1e53657765c41149834ba5925a4d2664";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "931ddd96673e0e428b27f690758eea20";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder

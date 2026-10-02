@@ -19,10 +19,9 @@ class WeaponDisplay_Autocannon_AmmoCount_C : public Game::UI::WeaponDisplays::We
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/WeaponDisplay_Autocannon_AmmoCount", "WeaponDisplay_Autocannon_AmmoCount_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_Autocannon_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_Autocannon_AmmoCount_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* ReloadStart;
-    class UWidgetAnimation* ReloadLoop;
-    class UWidgetAnimation* ReloadEnd;
+    UE_READONLY class UWidgetAnimation* ReloadStart;
+    UE_READONLY class UWidgetAnimation* ReloadLoop;
+    UE_READONLY class UWidgetAnimation* ReloadEnd;
     class UBorder* Border_3;
     class UTextBlock* DATA_AmmoCurrent;
     class UTextBlock* DATA_AmmoTotal;
@@ -33,6 +32,11 @@ public:
     void OnReloadComplete();
     void OnReloadStarted();
     void SetClipCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_Autocannon_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Autocannon

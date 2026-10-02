@@ -30,7 +30,11 @@ public:
     void IndexToMode(int Index_0, EUDLSSMode& Mode);
     void ModeToIndex(TEnum<EUDLSSMode> Mode, int& Index_0);
     void Add_Index(TEnum<EUDLSSMode> Mode);
-    static constexpr const char* Add_Index__UeName = "Add Index";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Index__UeName = "Add Index";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Options

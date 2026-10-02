@@ -11,11 +11,21 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "Engine.h"
 #include "OnlineSubsystem.h"
 
+struct FDateTime;
+struct FDifficultyMutatorItem;
+struct FGlobalMissionSeed;
+enum class EFSDMissionStatus : uint8;
+enum class EMissionStructure : uint8;
+enum class EServerDistance : uint8;
+
+class APlayerCharacter;
 class APlayerController;
 class ITurnBasedMatchInterface;
+class UDifficultySetting;
 class UNetConnection;
 class UNetDriver;
 class UObject;
+class UPlayerCharacterID;
 
 enum class EBeaconConnectionState : uint8
 {
@@ -114,6 +124,125 @@ enum class ESpectatorReservationResult : uint8
 
 struct FBlueprintSessionResult
 {
+
+    // USessionHandling::FSDGetBuildId (FSD.h)
+    FString FSDGetBuildId() const;
+    // USessionHandling::FSDGetDifficulty (FSD.h)
+    class UDifficultySetting* FSDGetDifficulty() const;
+    // USessionHandling::FSDGetDifficultyModifiers (FSD.h)
+    TArray<FDifficultyMutatorItem> FSDGetDifficultyModifiers() const;
+    // USessionHandling::FSDGetDistance (FSD.h)
+    TEnum<EServerDistance> FSDGetDistance() const;
+    // USessionHandling::FSDGetDistanceFloat (FSD.h)
+    float FSDGetDistanceFloat() const;
+    // USessionHandling::FSDGetGlobalMissionSeed (FSD.h)
+    FGlobalMissionSeed FSDGetGlobalMissionSeed() const;
+    // USessionHandling::FSDGetHostUserID (FSD.h)
+    FString FSDGetHostUserID() const;
+    // USessionHandling::FSDGetMapName (FSD.h)
+    FString FSDGetMapName() const;
+    // USessionHandling::FSDGetMissionSeed (FSD.h)
+    int FSDGetMissionSeed() const;
+    // USessionHandling::FSDGetModsInstalled (FSD.h)
+    TArray<FString> FSDGetModsInstalled(bool ExcludeVerifiedMods) const;
+    // USessionHandling::FSDGetNumPlayers (FSD.h)
+    int FSDGetNumPlayers() const;
+    // USessionHandling::FSDGetOptionalModsInstalled (FSD.h)
+    TArray<FString> FSDGetOptionalModsInstalled(bool ExcludeVerifiedMods) const;
+    // USessionHandling::FSDGetPlayerClassIDs (FSD.h)
+    TArray<class UPlayerCharacterID*> FSDGetPlayerClassIDs() const;
+    // USessionHandling::FSDGetPlayerClasses (FSD.h)
+    TArray<TSubclassOf<class APlayerCharacter>> FSDGetPlayerClasses() const;
+    // USessionHandling::FSDGetRegion (FSD.h)
+    FString FSDGetRegion() const;
+    // USessionHandling::FSDGetRequiredModsToDownload (FSD.h)
+    TArray<FString> FSDGetRequiredModsToDownload() const;
+    // USessionHandling::FSDGetSeason (FSD.h)
+    int FSDGetSeason() const;
+    // USessionHandling::FSDGetServerID (FSD.h)
+    FString FSDGetServerID() const;
+    // USessionHandling::FSDGetServerName (FSD.h)
+    FString FSDGetServerName() const;
+    // USessionHandling::FSDGetServerNameSanitized (FSD.h)
+    FString FSDGetServerNameSanitized() const;
+    // USessionHandling::FSDGetServerStartTime (FSD.h)
+    bool FSDGetServerStartTime(FDateTime& StartTime) const;
+    // USessionHandling::FSDHasGameStarted (FSD.h)
+    bool FSDHasGameStarted() const;
+    // USessionHandling::FSDHasHiddenModsNotInstalledOnClient (FSD.h)
+    bool FSDHasHiddenModsNotInstalledOnClient() const;
+    // USessionHandling::FSDIsClassLocked (FSD.h)
+    bool FSDIsClassLocked() const;
+    // USessionHandling::FSDIsCrossplayEnabledServer (FSD.h)
+    bool FSDIsCrossplayEnabledServer() const;
+    // USessionHandling::FSDIsEliteDeepDive (FSD.h)
+    bool FSDIsEliteDeepDive() const;
+    // USessionHandling::FSDIsFullServer (FSD.h)
+    bool FSDIsFullServer() const;
+    // USessionHandling::FSDIsModdedSandboxServer (FSD.h)
+    bool FSDIsModdedSandboxServer() const;
+    // USessionHandling::FSDIsModdedServer (FSD.h)
+    bool FSDIsModdedServer() const;
+    // USessionHandling::FSDIsPasswordRequired (FSD.h)
+    bool FSDIsPasswordRequired() const;
+    // USessionHandling::FSDIsPrivateServer (FSD.h)
+    bool FSDIsPrivateServer() const;
+    // USessionHandling::FSDIsSessionValid (FSD.h)
+    bool FSDIsSessionValid() const;
+    // USessionHandling::FSDMissionStatus (FSD.h)
+    TEnum<EFSDMissionStatus> FSDMissionStatus() const;
+    // UFindSessionsCallbackProxy::GetCurrentPlayers (OnlineSubsystemUtils.h)
+    int GetCurrentPlayers() const;
+    // UFindSessionsCallbackProxy::GetMaxPlayers (OnlineSubsystemUtils.h)
+    int GetMaxPlayers() const;
+    // USessionHandling::GetMissionStructure (FSD.h)
+    TEnum<EMissionStructure> GetMissionStructure() const;
+    // UFindSessionsCallbackProxy::GetPingInMs (OnlineSubsystemUtils.h)
+    int GetPingInMs() const;
+    // UFindSessionsCallbackProxy::GetServerName (OnlineSubsystemUtils.h)
+    FString GetServerName() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FSDGetBuildId__UeForward = "USessionHandling::FSDGetBuildId";
+        static constexpr const char* FSDGetDifficulty__UeForward = "USessionHandling::FSDGetDifficulty";
+        static constexpr const char* FSDGetDifficultyModifiers__UeForward = "USessionHandling::FSDGetDifficultyModifiers";
+        static constexpr const char* FSDGetDistance__UeForward = "USessionHandling::FSDGetDistance";
+        static constexpr const char* FSDGetDistanceFloat__UeForward = "USessionHandling::FSDGetDistanceFloat";
+        static constexpr const char* FSDGetGlobalMissionSeed__UeForward = "USessionHandling::FSDGetGlobalMissionSeed";
+        static constexpr const char* FSDGetHostUserID__UeForward = "USessionHandling::FSDGetHostUserID";
+        static constexpr const char* FSDGetMapName__UeForward = "USessionHandling::FSDGetMapName";
+        static constexpr const char* FSDGetMissionSeed__UeForward = "USessionHandling::FSDGetMissionSeed";
+        static constexpr const char* FSDGetModsInstalled__UeForward = "USessionHandling::FSDGetModsInstalled";
+        static constexpr const char* FSDGetNumPlayers__UeForward = "USessionHandling::FSDGetNumPlayers";
+        static constexpr const char* FSDGetOptionalModsInstalled__UeForward = "USessionHandling::FSDGetOptionalModsInstalled";
+        static constexpr const char* FSDGetPlayerClassIDs__UeForward = "USessionHandling::FSDGetPlayerClassIDs";
+        static constexpr const char* FSDGetPlayerClasses__UeForward = "USessionHandling::FSDGetPlayerClasses";
+        static constexpr const char* FSDGetRegion__UeForward = "USessionHandling::FSDGetRegion";
+        static constexpr const char* FSDGetRequiredModsToDownload__UeForward = "USessionHandling::FSDGetRequiredModsToDownload";
+        static constexpr const char* FSDGetSeason__UeForward = "USessionHandling::FSDGetSeason";
+        static constexpr const char* FSDGetServerID__UeForward = "USessionHandling::FSDGetServerID";
+        static constexpr const char* FSDGetServerName__UeForward = "USessionHandling::FSDGetServerName";
+        static constexpr const char* FSDGetServerNameSanitized__UeForward = "USessionHandling::FSDGetServerNameSanitized";
+        static constexpr const char* FSDGetServerStartTime__UeForward = "USessionHandling::FSDGetServerStartTime";
+        static constexpr const char* FSDHasGameStarted__UeForward = "USessionHandling::FSDHasGameStarted";
+        static constexpr const char* FSDHasHiddenModsNotInstalledOnClient__UeForward = "USessionHandling::FSDHasHiddenModsNotInstalledOnClient";
+        static constexpr const char* FSDIsClassLocked__UeForward = "USessionHandling::FSDIsClassLocked";
+        static constexpr const char* FSDIsCrossplayEnabledServer__UeForward = "USessionHandling::FSDIsCrossplayEnabledServer";
+        static constexpr const char* FSDIsEliteDeepDive__UeForward = "USessionHandling::FSDIsEliteDeepDive";
+        static constexpr const char* FSDIsFullServer__UeForward = "USessionHandling::FSDIsFullServer";
+        static constexpr const char* FSDIsModdedSandboxServer__UeForward = "USessionHandling::FSDIsModdedSandboxServer";
+        static constexpr const char* FSDIsModdedServer__UeForward = "USessionHandling::FSDIsModdedServer";
+        static constexpr const char* FSDIsPasswordRequired__UeForward = "USessionHandling::FSDIsPasswordRequired";
+        static constexpr const char* FSDIsPrivateServer__UeForward = "USessionHandling::FSDIsPrivateServer";
+        static constexpr const char* FSDIsSessionValid__UeForward = "USessionHandling::FSDIsSessionValid";
+        static constexpr const char* FSDMissionStatus__UeForward = "USessionHandling::FSDMissionStatus";
+        static constexpr const char* GetCurrentPlayers__UeForward = "UFindSessionsCallbackProxy::GetCurrentPlayers";
+        static constexpr const char* GetMaxPlayers__UeForward = "UFindSessionsCallbackProxy::GetMaxPlayers";
+        static constexpr const char* GetMissionStructure__UeForward = "USessionHandling::GetMissionStructure";
+        static constexpr const char* GetPingInMs__UeForward = "UFindSessionsCallbackProxy::GetPingInMs";
+        static constexpr const char* GetServerName__UeForward = "UFindSessionsCallbackProxy::GetServerName";
+    };
 };
 
 struct FInAppPurchaseProductInfo2
@@ -285,6 +414,12 @@ public:
     TMulticastInlineDelegate<void()> OnFailure;
     static class UDestroySessionCallbackProxy* DestroySession(class UObject* WorldContextObject, class APlayerController* PlayerController);
     static class UDestroySessionCallbackProxy* DestroySession(class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UAchievementBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -307,6 +442,12 @@ public:
     static class UAchievementQueryCallbackProxy* CacheAchievementDescriptions(class APlayerController* PlayerController);
     static class UAchievementQueryCallbackProxy* CacheAchievements(class UObject* WorldContextObject, class APlayerController* PlayerController);
     static class UAchievementQueryCallbackProxy* CacheAchievements(class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UAchievementWriteCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -317,6 +458,12 @@ public:
     TMulticastInlineDelegate<void(FName WrittenAchievementName, float WrittenProgress, int WrittenUserTag)> OnFailure;
     static class UAchievementWriteCallbackProxy* WriteAchievementProgress(class UObject* WorldContextObject, class APlayerController* PlayerController, FName AchievementName, float Progress, int UserTag);
     static class UAchievementWriteCallbackProxy* WriteAchievementProgress(class APlayerController* PlayerController, FName AchievementName, float Progress, int UserTag);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UConnectionCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -327,6 +474,12 @@ public:
     TMulticastInlineDelegate<void(int ErrorCode)> OnFailure;
     static class UConnectionCallbackProxy* ConnectToService(class UObject* WorldContextObject, class APlayerController* PlayerController);
     static class UConnectionCallbackProxy* ConnectToService(class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UCreateSessionCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -337,6 +490,12 @@ public:
     TMulticastInlineDelegate<void()> OnFailure;
     static class UCreateSessionCallbackProxy* CreateSession(class UObject* WorldContextObject, class APlayerController* PlayerController, int PublicConnections, bool bUseLAN);
     static class UCreateSessionCallbackProxy* CreateSession(class APlayerController* PlayerController, int PublicConnections, bool bUseLAN);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UEndMatchCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -347,6 +506,12 @@ public:
     TMulticastInlineDelegate<void()> OnFailure;
     static class UEndMatchCallbackProxy* EndMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, FString MatchID, TEnum<EMPMatchOutcome> LocalPlayerOutcome, TEnum<EMPMatchOutcome> OtherPlayersOutcome);
     static class UEndMatchCallbackProxy* EndMatch(class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, FString MatchID, TEnum<EMPMatchOutcome> LocalPlayerOutcome, TEnum<EMPMatchOutcome> OtherPlayersOutcome);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UEndTurnCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -357,6 +522,12 @@ public:
     TMulticastInlineDelegate<void()> OnFailure;
     static class UEndTurnCallbackProxy* EndTurn(class UObject* WorldContextObject, class APlayerController* PlayerController, FString MatchID, TScriptInterface<class ITurnBasedMatchInterface> TurnBasedMatchInterface);
     static class UEndTurnCallbackProxy* EndTurn(class APlayerController* PlayerController, FString MatchID, TScriptInterface<class ITurnBasedMatchInterface> TurnBasedMatchInterface);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UFindSessionsCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -371,6 +542,12 @@ public:
     UE_PURE static int GetMaxPlayers(const FBlueprintSessionResult& Result);
     UE_PURE static int GetPingInMs(const FBlueprintSessionResult& Result);
     UE_PURE static FString GetServerName(const FBlueprintSessionResult& Result);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UFindTurnBasedMatchCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -381,6 +558,12 @@ public:
     TMulticastInlineDelegate<void(FString MatchID)> OnFailure;
     static class UFindTurnBasedMatchCallbackProxy* FindTurnBasedMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, int MinPlayers, int MaxPlayers, int PlayerGroup, bool ShowExistingMatches);
     static class UFindTurnBasedMatchCallbackProxy* FindTurnBasedMatch(class APlayerController* PlayerController, TScriptInterface<class ITurnBasedMatchInterface> MatchActor, int MinPlayers, int MaxPlayers, int PlayerGroup, bool ShowExistingMatches);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UInAppPurchaseCallbackProxy : public UObject
@@ -390,6 +573,12 @@ public:
     TMulticastInlineDelegate<void(EInAppPurchaseState PurchaseStatus, FInAppPurchaseProductInfo InAppPurchaseReceipts)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseState PurchaseStatus, FInAppPurchaseProductInfo InAppPurchaseReceipts)> OnFailure;
     static class UInAppPurchaseCallbackProxy* CreateProxyObjectForInAppPurchase(class APlayerController* PlayerController, const FInAppPurchaseProductRequest& ProductRequest);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UInAppPurchaseCallbackProxy2 : public UObject
@@ -401,6 +590,12 @@ public:
     static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchase(class APlayerController* PlayerController, const FInAppPurchaseProductRequest2& ProductRequest);
     static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchaseQueryOwned(class APlayerController* PlayerController);
     static class UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchaseUnprocessedPurchases(class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UInAppPurchaseQueryCallbackProxy : public UObject
@@ -410,6 +605,12 @@ public:
     TMulticastInlineDelegate<void(TArray<FInAppPurchaseProductInfo> InAppPurchaseInformation)> OnSuccess;
     TMulticastInlineDelegate<void(TArray<FInAppPurchaseProductInfo> InAppPurchaseInformation)> OnFailure;
     static class UInAppPurchaseQueryCallbackProxy* CreateProxyObjectForInAppPurchaseQuery(class APlayerController* PlayerController, const TArray<FString>& ProductIdentifiers);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UInAppPurchaseQueryCallbackProxy2 : public UObject
@@ -419,6 +620,12 @@ public:
     TMulticastInlineDelegate<void(TArray<FOnlineProxyStoreOffer> InAppOfferInformation)> OnSuccess;
     TMulticastInlineDelegate<void(TArray<FOnlineProxyStoreOffer> InAppOfferInformation)> OnFailure;
     static class UInAppPurchaseQueryCallbackProxy2* CreateProxyObjectForInAppPurchaseQuery(class APlayerController* PlayerController, const TArray<FString>& ProductIdentifiers);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UInAppPurchaseRestoreCallbackProxy : public UObject
@@ -428,6 +635,12 @@ public:
     TMulticastInlineDelegate<void(EInAppPurchaseState CompletionStatus, TArray<FInAppPurchaseRestoreInfo> InAppRestorePurchaseInformation)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseState CompletionStatus, TArray<FInAppPurchaseRestoreInfo> InAppRestorePurchaseInformation)> OnFailure;
     static class UInAppPurchaseRestoreCallbackProxy* CreateProxyObjectForInAppPurchaseRestore(const TArray<FInAppPurchaseProductRequest>& ConsumableProductFlags, class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UInAppPurchaseRestoreCallbackProxy2 : public UObject
@@ -437,6 +650,12 @@ public:
     TMulticastInlineDelegate<void(EInAppPurchaseStatus PurchaseStatus, TArray<FInAppPurchaseRestoreInfo2> InAppPurchaseRestoreInfo)> OnSuccess;
     TMulticastInlineDelegate<void(EInAppPurchaseStatus PurchaseStatus, TArray<FInAppPurchaseRestoreInfo2> InAppPurchaseRestoreInfo)> OnFailure;
     static class UInAppPurchaseRestoreCallbackProxy2* CreateProxyObjectForInAppPurchaseRestore(const TArray<FInAppPurchaseProductRequest2>& ConsumableProductFlags, class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UJoinSessionCallbackProxy : public UOnlineBlueprintCallProxyBase
@@ -447,6 +666,12 @@ public:
     TMulticastInlineDelegate<void()> OnFailure;
     static class UJoinSessionCallbackProxy* JoinSession(class UObject* WorldContextObject, class APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult);
     static class UJoinSessionCallbackProxy* JoinSession(class APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class ULeaderboardBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -463,6 +688,12 @@ public:
     TMulticastInlineDelegate<void(FName SessionName)> OnSuccess;
     TMulticastInlineDelegate<void(FName SessionName)> OnFailure;
     static class ULeaderboardFlushCallbackProxy* CreateProxyObjectForFlush(class APlayerController* PlayerController, FName SessionName);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class ULeaderboardQueryCallbackProxy : public UObject
@@ -472,6 +703,12 @@ public:
     TMulticastInlineDelegate<void(int LeaderboardValue)> OnSuccess;
     TMulticastInlineDelegate<void(int LeaderboardValue)> OnFailure;
     static class ULeaderboardQueryCallbackProxy* CreateProxyObjectForIntQuery(class APlayerController* PlayerController, FName StatName);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class ULogoutCallbackProxy : public UBlueprintAsyncActionBase
@@ -482,6 +719,12 @@ public:
     TMulticastInlineDelegate<void(class APlayerController* PlayerController)> OnFailure;
     static class ULogoutCallbackProxy* LogOut(class UObject* WorldContextObject, class APlayerController* PlayerController);
     static class ULogoutCallbackProxy* LogOut(class APlayerController* PlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class AOnlineBeacon : public AActor
@@ -594,6 +837,12 @@ public:
     TMulticastInlineDelegate<void()> OnFailure;
     static class UQuitMatchCallbackProxy* QuitMatch(class UObject* WorldContextObject, class APlayerController* PlayerController, FString MatchID, TEnum<EMPMatchOutcome> Outcome, int TurnTimeoutInSeconds);
     static class UQuitMatchCallbackProxy* QuitMatch(class APlayerController* PlayerController, FString MatchID, TEnum<EMPMatchOutcome> Outcome, int TurnTimeoutInSeconds);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UShowLoginUICallbackProxy : public UBlueprintAsyncActionBase
@@ -604,6 +853,12 @@ public:
     TMulticastInlineDelegate<void(class APlayerController* PlayerController)> OnFailure;
     static class UShowLoginUICallbackProxy* ShowExternalLoginUI(class UObject* WorldContextObject, class APlayerController* InPlayerController);
     static class UShowLoginUICallbackProxy* ShowExternalLoginUI(class APlayerController* InPlayerController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class ASpectatorBeaconClient : public AOnlineBeaconClient

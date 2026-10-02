@@ -18,11 +18,15 @@ class BP_SmallLavaGeyserFiledOrigin_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/LavaGeyser/BP_SmallLavaGeyserFiledOrigin", "BP_SmallLavaGeyserFiledOrigin_C");
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d9b87d838570f34891745d6ea2778b9a";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "324b931833d6e44e9dc3f35b5937f10b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "74b12857e0172c4dbbf717643821b0fb";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "d9b87d838570f34891745d6ea2778b9a";
+        static constexpr const char* terrainPlacement__UeScsNode = "324b931833d6e44e9dc3f35b5937f10b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "74b12857e0172c4dbbf717643821b0fb";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::LavaGeyser

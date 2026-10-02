@@ -93,12 +93,16 @@ public:
     Options_MouseX_Sensitivity_C* UI_Sensitivity_172;
     TMulticastInlineDelegate<void()> SettingsChanged;
     bool In_Mouse_Keyboard_First;
-    static constexpr const char* In_Mouse_Keyboard_First__UeName = "In Mouse Keyboard First";
     void ExecuteUbergraph_Options_Tab_Controls(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__BTN_ResetToDefaults_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
     UE_COSMETIC void Construct();
     void SetMouseKeyboardFirst(bool InMouseKeyboardFirst);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* In_Mouse_Keyboard_First__UeName = "In Mouse Keyboard First";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Options

@@ -17,9 +17,13 @@ class ESI_GliderBeast_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/GliderBeast/ESI_GliderBeast", "ESI_GliderBeast_C");
     class USkeletalMeshComponent* SK_GliderBeast;
-    static constexpr const char* SK_GliderBeast__UeScsNode = "59aa5078293a7242be9d705b5e26dd0d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_GliderBeast__UeScsNode = "59aa5078293a7242be9d705b5e26dd0d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+    };
 };
 
 }}}   // namespace Game::Critters::GliderBeast

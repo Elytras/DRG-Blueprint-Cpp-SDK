@@ -17,11 +17,15 @@ class ESI_Spider_Exploding_Rockpox_Plague_C : public Game::Enemies::Spider::ESI_
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueExploder/ESI_Spider_Exploding_Rockpox_Plague", "ESI_Spider_Exploding_Rockpox_Plague_C");
     class UNiagaraComponent* SporeCloud;
-    static constexpr const char* SporeCloud__UeScsNode = "a07e49c010bc2d479c3013cfac77f8bf";
     class UStaticMeshComponent* InfectionPoint7;
-    static constexpr const char* InfectionPoint7__UeScsNode = "87b01c656988b84684c3cfb4c90e0595";
     class UStaticMeshComponent* InfectionPoint5;
-    static constexpr const char* InfectionPoint5__UeScsNode = "1d2f518f5ff5b640a813bdb3e473dcbe";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SporeCloud__UeScsNode = "a07e49c010bc2d479c3013cfac77f8bf";
+        static constexpr const char* InfectionPoint7__UeScsNode = "87b01c656988b84684c3cfb4c90e0595";
+        static constexpr const char* InfectionPoint5__UeScsNode = "1d2f518f5ff5b640a813bdb3e473dcbe";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueExploder

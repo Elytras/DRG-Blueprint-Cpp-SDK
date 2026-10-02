@@ -13,6 +13,11 @@ class STE_FastPowerAttacks_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RockEnemies/STE_FastPowerAttacks", "STE_FastPowerAttacks_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RockEnemies

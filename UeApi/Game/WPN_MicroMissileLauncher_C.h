@@ -26,16 +26,11 @@ class WPN_MicroMissileLauncher_C : public AMicroMissileLauncher
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/WPN_MicroMissileLauncher", "WPN_MicroMissileLauncher_C");
     using PRJ_MicroMissile_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChargedProjectileLauncherComponent* ChargedProjectileLauncher;
-    static constexpr const char* ChargedProjectileLauncher__UeScsNode = "723c0da2ae451a44aa466c9619ea3f52";
     class USceneComponent* HomingTarget;
-    static constexpr const char* HomingTarget__UeScsNode = "60d0b9645a94b246a3697c03a4abbb6a";
     class UFirstPersonWidgetComponent* FirstPersonWidget_Ammo;
-    static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
     TArray<EObjectTypeQuery> LineTraceTargets;
     float TraceDistance;
     FVector TargetLocation;
@@ -57,6 +52,15 @@ public:
     void ReceiveBeginPlay();
     void SetUpgradeModifiers(class UItemUpgrade* ItemUpgrade);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* ChargedProjectileLauncher__UeScsNode = "723c0da2ae451a44aa466c9619ea3f52";
+        static constexpr const char* HomingTarget__UeScsNode = "60d0b9645a94b246a3697c03a4abbb6a";
+        static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

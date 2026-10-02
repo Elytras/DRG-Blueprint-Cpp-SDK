@@ -20,14 +20,18 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Infirmary/BP_DeathStats", "BP_DeathStats_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "b698ff893ab6284c839107b312b8f9d3";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     void ExecuteUbergraph_BP_DeathStats(int EntryPoint);
     void Set_Stats_Owner(class AFSDPlayerState* Player_State);
-    static constexpr const char* Set_Stats_Owner__UeName = "Set Stats Owner";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Cube__UeScsNode = "b698ff893ab6284c839107b312b8f9d3";
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+        static constexpr const char* Set_Stats_Owner__UeName = "Set Stats Owner";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary

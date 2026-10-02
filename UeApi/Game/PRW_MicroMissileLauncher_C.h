@@ -18,11 +18,15 @@ class PRW_MicroMissileLauncher_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRW_MicroMissileLauncher", "PRW_MicroMissileLauncher_C");
     class UStaticMeshComponent* TemplateSphere;
-    static constexpr const char* TemplateSphere__UeScsNode = "c1fab59421649c4dacbfd136237feda6";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "87d8190378cd764bb179d4551bc90a56";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c7cd4483da4a6a42b73a7e497d418e3d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TemplateSphere__UeScsNode = "c1fab59421649c4dacbfd136237feda6";
+        static constexpr const char* SkeletalMesh__UeScsNode = "87d8190378cd764bb179d4551bc90a56";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c7cd4483da4a6a42b73a7e497d418e3d";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

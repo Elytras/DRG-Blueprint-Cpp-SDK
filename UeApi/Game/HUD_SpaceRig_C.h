@@ -47,7 +47,7 @@ public:
     using UI_FPS_C = Game::UI::Global_UI_Elements::UI_FPS_C;
     using UI_NetInfo_C = Game::UI::Global_UI_Elements::UI_NetInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BeerBuffAnimation;
+    UE_READONLY class UWidgetAnimation* BeerBuffAnimation;
     OnScreenIndicator_UsableItem_Simple_C* BS_UsableItem_384;
     HUD_ActionHoldProgress_C* HUD_ActionHoldProgress;
     HUD_CrossHair_BasicDot_C* HUD_CrossHair_BasicDot_C_0;

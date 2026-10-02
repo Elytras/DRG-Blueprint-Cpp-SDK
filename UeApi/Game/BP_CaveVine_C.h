@@ -27,39 +27,43 @@ class BP_CaveVine_C : public ACaveVine
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/SmartCaveVine/BP_CaveVine", "BP_CaveVine_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent VineHead;/Script/Engine.SplineMeshComponent SplineMeshComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "9a23bf964385b747888ee318b5060536";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "33031f666a4d0845b6403343e4ba0bfe";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "305756ed80dfbc49971113566b9ae189";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "469fa5491849534f92dfe859b71f9079";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "b4b5ac846a2ee944b80ffd9255e103bb";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "d1a366adfa35074db3ef227c7ef44cbf";
     class UMotionAudioController* MotionAudioController;
-    static constexpr const char* MotionAudioController__UeScsNode = "dba89d62390c9a48a100ba2003dddb68";
     class UAudioComponent* CaveVine_Tracking;
-    static constexpr const char* CaveVine_Tracking__UeScsNode = "3289a7e1ffd43a47a22a462e52198481";
     class UAudioComponent* CaveVine_Idle;
-    static constexpr const char* CaveVine_Idle__UeScsNode = "1a0463d88b4f7e44bc4fce16ad9b16bb";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "776221bfc36cd846a20a8512d885e627";
     class UStaticMeshComponent* HeadMesh;
-    static constexpr const char* HeadMesh__UeScsNode = "1fa3795f7d4ea04fb91511135fccea11";
     class UStaticMeshComponent* BaseMesh;
-    static constexpr const char* BaseMesh__UeScsNode = "ff808c5bbfbd93419ba670b89bfef9f2";
     class USphereComponent* SphereCollider;
-    static constexpr const char* SphereCollider__UeScsNode = "b50da6d2bbbb8749bad41da5a9e9e474";
     void ExecuteUbergraph_BP_CaveVine(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_3_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BP_OnTargetChanged(class UHealthComponent* NewTarget);
     void BP_OnInitialized();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent VineHead;/Script/Engine.SplineMeshComponent SplineMeshComponent";
+        static constexpr const char* Sphere__UeScsNode = "9a23bf964385b747888ee318b5060536";
+        static constexpr const char* InstantUsable__UeScsNode = "33031f666a4d0845b6403343e4ba0bfe";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "305756ed80dfbc49971113566b9ae189";
+        static constexpr const char* Box__UeScsNode = "469fa5491849534f92dfe859b71f9079";
+        static constexpr const char* terrainPlacement__UeScsNode = "b4b5ac846a2ee944b80ffd9255e103bb";
+        static constexpr const char* SimpleHealth__UeScsNode = "d1a366adfa35074db3ef227c7ef44cbf";
+        static constexpr const char* MotionAudioController__UeScsNode = "dba89d62390c9a48a100ba2003dddb68";
+        static constexpr const char* CaveVine_Tracking__UeScsNode = "3289a7e1ffd43a47a22a462e52198481";
+        static constexpr const char* CaveVine_Idle__UeScsNode = "1a0463d88b4f7e44bc4fce16ad9b16bb";
+        static constexpr const char* outline__UeScsNode = "776221bfc36cd846a20a8512d885e627";
+        static constexpr const char* HeadMesh__UeScsNode = "1fa3795f7d4ea04fb91511135fccea11";
+        static constexpr const char* BaseMesh__UeScsNode = "ff808c5bbfbd93419ba670b89bfef9f2";
+        static constexpr const char* SphereCollider__UeScsNode = "b50da6d2bbbb8749bad41da5a9e9e474";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::SmartCaveVine

@@ -29,24 +29,16 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_XmasBauble_Item", "BP_XmasBauble_Item_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "bd639c38e115ad43a5459afff39caa80";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
     class UParticleSystem* deathParticles;
     class USoundCue* deathSound;
     TArray<class UMaterialInterface*> Mats;
     class UMaterialInterface* CurrentMaterial;
-    static constexpr const char* CurrentMaterial__Replicated = "OnRep_CurrentMaterial:";
     FRotator RandomRotation;
-    static constexpr const char* RandomRotation__Replicated = "OnRep_RandomRotation:";
     void ExecuteUbergraph_BP_XmasBauble_Item(int EntryPoint);
     void BndEvt__StaticMesh_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void OnTerrainPointRemoved();
@@ -55,6 +47,18 @@ public:
     void ReceiveBeginPlay();
     void OnRep_CurrentMaterial();
     void OnRep_RandomRotation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "bd639c38e115ad43a5459afff39caa80";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
+        static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
+        static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
+        static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
+        static constexpr const char* CurrentMaterial__Replicated = "OnRep_CurrentMaterial:";
+        static constexpr const char* RandomRotation__Replicated = "OnRep_RandomRotation:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

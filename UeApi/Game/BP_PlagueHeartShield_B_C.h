@@ -16,9 +16,13 @@ class BP_PlagueHeartShield_B_C : public Game::Enemies::Plague::WalkingPlaguehear
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueHeartShield_B", "BP_PlagueHeartShield_B_C");
     class UPointLightComponent* PointLight5;
-    static constexpr const char* PointLight5__UeScsNode = "e03d0c281a30f3439735b839b7e0097a";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "4a82f2127a48404a85a1c47aa853ad1c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight5__UeScsNode = "e03d0c281a30f3439735b839b7e0097a";
+        static constexpr const char* PointLight4__UeScsNode = "4a82f2127a48404a85a1c47aa853ad1c";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/BP_PatrolBot_Wheel", "BP_PatrolBot_Wheel_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "df7a4938201e304c8b9f65419d43d349";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d6ba1e1918a4b94197cd88bb6c5c2635";
     void ExecuteUbergraph_BP_PatrolBot_Wheel(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "df7a4938201e304c8b9f65419d43d349";
+        static constexpr const char* Sphere__UeScsNode = "d6ba1e1918a4b94197cd88bb6c5c2635";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot

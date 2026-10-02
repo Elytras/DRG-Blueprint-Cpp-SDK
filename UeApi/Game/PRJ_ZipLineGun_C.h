@@ -27,40 +27,23 @@ class PRJ_ZipLineGun_C : public AZipLineProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/PRJ_ZipLineGun", "PRJ_ZipLineGun_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.TimelineComponent LightTimeLine";
     FPointerToUberGraphFrame UberGraphFrame;
     class UZipLineUsable* ZipLineUsable;
-    static constexpr const char* ZipLineUsable__UeScsNode = "74943aa83d7ffc49b2035c6993805834";
     class UStaticMeshComponent* Screw_A;
-    static constexpr const char* Screw_A__UeScsNode = "754229c6485ee34e90c8f90a1e7aed13";
     class UPointLightComponent* Light_Start;
-    static constexpr const char* Light_Start__UeScsNode = "b67aa3b8179a3346bf4609338bbd06ed";
     class USkeletalMeshComponent* SK_ZipPole_B;
-    static constexpr const char* SK_ZipPole_B__UeScsNode = "4c2d0873b40e8d4b86b494cdee7f7e60";
     class UStaticMeshComponent* SM_ZipPole_Projectile_A;
-    static constexpr const char* SM_ZipPole_Projectile_A__UeScsNode = "c7d30f3afc09b94eae9fcc583b942232";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "8d23a516dc2eef4e8727ba59408191df";
     class UParticleSystemComponent* Particle_Endpoint;
-    static constexpr const char* Particle_Endpoint__UeScsNode = "db4067bd2eb0f2419c956e07bf605b20";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "804167cb7e66a64ab1ef0edd3014b5ce";
     class UPointLightComponent* Light_End;
-    static constexpr const char* Light_End__UeScsNode = "c1c84181e049b141ba3227fadc47ce4f";
     class USceneComponent* EndPoint;
-    static constexpr const char* EndPoint__UeScsNode = "c54630181889ec449580fe54e5bbf821";
     class UCableComponent* Cable;
-    static constexpr const char* Cable__UeScsNode = "ef346263202d9246a1f26a3908cbf7b9";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "869eda99c61fc04abaf2cf8a3446f5a3";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ce589dd6de55724e8bd11830d667954d";
     FVector Start;
-    static constexpr const char* Start__Replicated = ":";
     FVector End;
-    static constexpr const char* End__Replicated = ":";
     bool IsSet;
-    static constexpr const char* IsSet__Replicated = ":";
     float Progress;
     float LifeTime;
     FLinearColor LineColor;
@@ -77,11 +60,32 @@ public:
     UE_MULTICAST UE_RELIABLE void SetCollider();
     void OnShoot(FVector Origin, FVector EndLocation);
     void On_Hit();
-    static constexpr const char* On_Hit__UeName = "On Hit";
     void UserConstructionScript();
     void Finish_Zip_Line();
-    static constexpr const char* Finish_Zip_Line__UeName = "Finish Zip Line";
     void GetNearestPointOnLine(FVector WorldPosition, FVector LineStart, FVector LineEnd, FVector& NearestLinePosition);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.TimelineComponent LightTimeLine";
+        static constexpr const char* ZipLineUsable__UeScsNode = "74943aa83d7ffc49b2035c6993805834";
+        static constexpr const char* Screw_A__UeScsNode = "754229c6485ee34e90c8f90a1e7aed13";
+        static constexpr const char* Light_Start__UeScsNode = "b67aa3b8179a3346bf4609338bbd06ed";
+        static constexpr const char* SK_ZipPole_B__UeScsNode = "4c2d0873b40e8d4b86b494cdee7f7e60";
+        static constexpr const char* SM_ZipPole_Projectile_A__UeScsNode = "c7d30f3afc09b94eae9fcc583b942232";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "8d23a516dc2eef4e8727ba59408191df";
+        static constexpr const char* Particle_Endpoint__UeScsNode = "db4067bd2eb0f2419c956e07bf605b20";
+        static constexpr const char* Trail__UeScsNode = "804167cb7e66a64ab1ef0edd3014b5ce";
+        static constexpr const char* Light_End__UeScsNode = "c1c84181e049b141ba3227fadc47ce4f";
+        static constexpr const char* EndPoint__UeScsNode = "c54630181889ec449580fe54e5bbf821";
+        static constexpr const char* Cable__UeScsNode = "ef346263202d9246a1f26a3908cbf7b9";
+        static constexpr const char* Capsule__UeScsNode = "869eda99c61fc04abaf2cf8a3446f5a3";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ce589dd6de55724e8bd11830d667954d";
+        static constexpr const char* Start__Replicated = ":";
+        static constexpr const char* End__Replicated = ":";
+        static constexpr const char* IsSet__Replicated = ":";
+        static constexpr const char* On_Hit__UeName = "On Hit";
+        static constexpr const char* Finish_Zip_Line__UeName = "Finish Zip Line";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

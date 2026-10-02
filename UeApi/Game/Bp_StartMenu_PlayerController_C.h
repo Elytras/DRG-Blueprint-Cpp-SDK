@@ -30,7 +30,6 @@ public:
     using UI_StartScreen_C = Game::UI::Menu_StartScreen::UI_StartScreen_C;
     using UI_SteamLoading_C = Game::UI::System::UI_SteamLoading_C;
     using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame;
     UI_StartScreen_C* StartScreen;
     class UWidget* ActiveScreen;
@@ -40,17 +39,13 @@ public:
     bool Joining;
     bool SignInGate;
     UI_SteamLoading_C* UI_Steam_Loading;
-    static constexpr const char* UI_Steam_Loading__UeName = "UI Steam Loading";
     bool SteamLoadingUI;
     bool ReloadOnlineSubsystem;
     TArray<class UNiagaraComponent*> SpawnedParticles;
     bool Force_Intro_Screen;
-    static constexpr const char* Force_Intro_Screen__UeName = "Force Intro Screen";
     FString Current_Id;
-    static constexpr const char* Current_Id__UeName = "Current Id";
     void ShouldPromptUserToDeleteMainSaves(bool& Should, TArray<class UFSDSaveGame*>& outMainSaves);
     void Prompt_Delete_Main_Save(TArray<class UFSDSaveGame*>& Saves);
-    static constexpr const char* Prompt_Delete_Main_Save__UeName = "Prompt Delete Main Save";
     void OnModdedSaveCancelled();
     void ModdingSavegameCheck(bool& WaitForCallback);
     UE_PURE bool ShouldSkipInfoScreen();
@@ -88,13 +83,22 @@ public:
     void NiagaraGenrationDone();
     void CheckSavegame();
     void Check_Info_Screen_Guid();
-    static constexpr const char* Check_Info_Screen_Guid__UeName = "Check Info Screen Guid";
     void InpAxisKeyEvt_Gamepad_LeftX_K2Node_InputAxisKeyEvent_17(float AxisValue);
     void InpAxisKeyEvt_Gamepad_LeftY_K2Node_InputAxisKeyEvent_63(float AxisValue);
     void Reset_Shown_Info_Screen();
-    static constexpr const char* Reset_Shown_Info_Screen__UeName = "Reset Shown Info Screen";
     void ExecuteUbergraph_Bp_StartMenu_PlayerController(int EntryPoint);
     void InpAxisKeyEvt_Gamepad_RightX_K2Node_InputAxisKeyEvent_71(float AxisValue);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* UI_Steam_Loading__UeName = "UI Steam Loading";
+        static constexpr const char* Force_Intro_Screen__UeName = "Force Intro Screen";
+        static constexpr const char* Current_Id__UeName = "Current Id";
+        static constexpr const char* Prompt_Delete_Main_Save__UeName = "Prompt Delete Main Save";
+        static constexpr const char* Check_Info_Screen_Guid__UeName = "Check Info Screen Guid";
+        static constexpr const char* Reset_Shown_Info_Screen__UeName = "Reset Shown Info Screen";
+    };
 };
 
 }}}   // namespace Game::Game::StartMenu

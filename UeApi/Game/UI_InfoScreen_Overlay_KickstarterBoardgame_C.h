@@ -21,9 +21,9 @@ class UI_InfoScreen_Overlay_KickstarterBoardgame_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay_KickstarterBoardgame", "UI_InfoScreen_Overlay_KickstarterBoardgame_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C;
     class UButton* Button_Outer;

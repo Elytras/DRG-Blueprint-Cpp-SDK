@@ -30,31 +30,20 @@ class ENE_ShootingPlant_Small_C : public AHydraWeedShooter
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/ENE_ShootingPlant_Small", "ENE_ShootingPlant_Small_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "532826efb38ab4419956cc03c57b36b3";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "9c97288d59deb348a11c9ae5bb2d1556";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "bf8881c13508df4481c5f7576580ee34";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "fa24683417f7c74ab8e7ed4b5206f557";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "3bdb07d3324761478c75720aebf59e1f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
     float Growth_Size_F8D1ED0F47A0109E69BA949410BBFBDF;
     TEnum<ETimelineDirection> Growth__Direction_F8D1ED0F47A0109E69BA949410BBFBDF;
     class UTimelineComponent* Growth;
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_B7C1F10347624A87CE535C859B0970CF";
     TEnum<ETimelineDirection> Timeline_0__Direction_B7C1F10347624A87CE535C859B0970CF;
     class UTimelineComponent* Timeline_0;
     int NumSpawned;
@@ -87,6 +76,21 @@ public:
     class USkeletalMeshComponent* GetMesh() const;
     class UMeshComponent* Receive_GetMeshComponent() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* ProjectileAttack__UeScsNode = "532826efb38ab4419956cc03c57b36b3";
+        static constexpr const char* PathfinderCollision__UeScsNode = "9c97288d59deb348a11c9ae5bb2d1556";
+        static constexpr const char* PointLight__UeScsNode = "bf8881c13508df4481c5f7576580ee34";
+        static constexpr const char* terrainPlacement__UeScsNode = "fa24683417f7c74ab8e7ed4b5206f557";
+        static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
+        static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
+        static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
+        static constexpr const char* SkeletalMesh__UeScsNode = "3bdb07d3324761478c75720aebf59e1f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_B7C1F10347624A87CE535C859B0970CF";
+    };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

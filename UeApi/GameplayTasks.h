@@ -46,7 +46,7 @@ class UGameplayTaskResource : public UObject
 {
 public:
     UE_CLASS("/Script/GameplayTasks", "GameplayTaskResource");
-    int ManualResourceID;
+    UE_READONLY int ManualResourceID;
     int8 AutoResourceID;
     bool bManuallySetID;
 };
@@ -82,6 +82,12 @@ public:
     bool BeginSpawningActor(class AActor*& SpawnedActor);
     void FinishSpawningActor(class UObject* WorldContextObject, class AActor* SpawnedActor);
     void FinishSpawningActor(class AActor* SpawnedActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* success__UeDispatcher = "Assignable";
+        static constexpr const char* DidNotSpawn__UeDispatcher = "Assignable";
+    };
 };
 
 class UGameplayTask_TimeLimitedExecution : public UGameplayTask
@@ -90,6 +96,12 @@ public:
     UE_CLASS("/Script/GameplayTasks", "GameplayTask_TimeLimitedExecution");
     TMulticastInlineDelegate<void()> OnFinished;
     TMulticastInlineDelegate<void()> OnTimeExpired;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnFinished__UeDispatcher = "Assignable";
+        static constexpr const char* OnTimeExpired__UeDispatcher = "Assignable";
+    };
 };
 
 class UGameplayTask_WaitDelay : public UGameplayTask
@@ -98,6 +110,11 @@ public:
     UE_CLASS("/Script/GameplayTasks", "GameplayTask_WaitDelay");
     TMulticastInlineDelegate<void()> OnFinish;
     static class UGameplayTask_WaitDelay* TaskWaitDelay(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, float Time, uint8 Priority);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnFinish__UeDispatcher = "Assignable";
+    };
 };
 
 class IGameplayTaskOwnerInterface
@@ -112,11 +129,16 @@ public:
     UE_CLASS("/Script/GameplayTasks", "GameplayTasksComponent");
     bool bIsNetDirty;
     TArray<class UGameplayTask*> SimulatedTasks;
-    static constexpr const char* SimulatedTasks__Replicated = "OnRep_SimulatedTasks:";
     TArray<class UGameplayTask*> TaskPriorityQueue;
     TArray<class UGameplayTask*> TickingTasks;
     TArray<class UGameplayTask*> KnownTasks;
     TMulticastInlineDelegate<void(FGameplayResourceSet NewlyClaimed, FGameplayResourceSet FreshlyReleased)> OnClaimedResourcesChange;
     static TEnum<EGameplayTaskRunResult> K2_RunGameplayTask(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class UGameplayTask* Task, uint8 Priority, TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalRequiredResources, TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalClaimedResources);
     void OnRep_SimulatedTasks();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimulatedTasks__Replicated = "OnRep_SimulatedTasks:";
+        static constexpr const char* OnClaimedResourcesChange__UeDispatcher = "";
+    };
 };

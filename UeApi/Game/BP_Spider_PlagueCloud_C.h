@@ -16,7 +16,11 @@ class BP_Spider_PlagueCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_Spider_PlagueCloud", "BP_Spider_PlagueCloud_C");
     class UNiagaraComponent* NS_Plague_Spider_Tank_DeathCloud;
-    static constexpr const char* NS_Plague_Spider_Tank_DeathCloud__UeScsNode = "c8e8865ba5be9f499bee188998393ca9";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_Plague_Spider_Tank_DeathCloud__UeScsNode = "c8e8865ba5be9f499bee188998393ca9";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

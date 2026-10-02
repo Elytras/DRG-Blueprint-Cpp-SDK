@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Content_Weaknesses", "Lore_Content_Weaknesses_C");
     using Lore_DamageTypeIcon_C = Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeIn;
     class UHorizontalBox* HorizontalBox_IconHolder;
     Lore_DamageTypeIcon_C* Lore_DamageTypeIcon;
     Lore_DamageTypeIcon_C* Lore_DamageTypeIcon_191;

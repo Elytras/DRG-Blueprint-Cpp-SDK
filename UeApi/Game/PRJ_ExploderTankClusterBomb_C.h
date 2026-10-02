@@ -21,16 +21,11 @@ class PRJ_ExploderTankClusterBomb_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/PRJ_ExploderTankClusterBomb", "PRJ_ExploderTankClusterBomb_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "730a9cbb0413294a90533e71298c4d14";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "3d8bfb9b1b7b1548b959050b9173bce2";
     class UStaticMeshComponent* SK_ShootingPlant_Projectile;
-    static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "78ddd0e59efa4941bb61d1ae2131537a";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
     float FuseTime;
     float BurnThickness;
     class UTerrainMaterial* OverrideMaterial;
@@ -41,6 +36,15 @@ public:
     UE_MULTICAST void GoBoom();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Explode(FVector Location);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "730a9cbb0413294a90533e71298c4d14";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "3d8bfb9b1b7b1548b959050b9173bce2";
+        static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "78ddd0e59efa4941bb61d1ae2131537a";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::ExploderTank

@@ -22,7 +22,7 @@ class HUD_GameEvent_Generic_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Events/HUD_GameEvent_Generic", "HUD_GameEvent_Generic_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimTimeLimit;
+    UE_READONLY class UWidgetAnimation* AnimTimeLimit;
     class UCanvasPanel* Canvas;
     class UTextBlock* DATA_Header;
     class UTextBlock* DATA_Objective;
@@ -42,15 +42,19 @@ public:
     void UpdateTime(float CurrentProgress);
     void ShutDown();
     void Setup_Score();
-    static constexpr const char* Setup_Score__UeName = "Setup Score";
     void Setup_Timer();
-    static constexpr const char* Setup_Timer__UeName = "Setup Timer";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void NumberObjectivesChanged(int stageCompleted);
     void ProgressChanged(float CurrentProgress);
     UE_COSMETIC void Construct();
     void RegisterGameEvent(class AGameEvent* GameEvent_0);
     void SetSecondsAsTime(float Seconds);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Score__UeName = "Setup Score";
+        static constexpr const char* Setup_Timer__UeName = "Setup Timer";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events

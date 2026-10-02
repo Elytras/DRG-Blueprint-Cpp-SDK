@@ -18,15 +18,19 @@ class BP_Screen_C : public AActor
 public:
     UE_CLASS("/Game/UI/BP_Screen", "BP_Screen_C");
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "baafa7b0cf63ba418e49c4f048809c4c";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "ecf5f9c95112cd4791c66983aa659a43";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "9d41283c8c952f4e9d67f3dc53259ebc";
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "6162bd3db7667247be0fb0908c998ae0";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d40bcad4a8cc634181df82b70ff48904";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "baafa7b0cf63ba418e49c4f048809c4c";
+        static constexpr const char* StaticMesh1__UeScsNode = "ecf5f9c95112cd4791c66983aa659a43";
+        static constexpr const char* StaticMesh__UeScsNode = "9d41283c8c952f4e9d67f3dc53259ebc";
+        static constexpr const char* Cube__UeScsNode = "6162bd3db7667247be0fb0908c998ae0";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d40bcad4a8cc634181df82b70ff48904";
+    };
 };
 
 }}   // namespace Game::UI

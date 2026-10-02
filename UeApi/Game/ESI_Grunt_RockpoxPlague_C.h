@@ -16,11 +16,15 @@ class ESI_Grunt_RockpoxPlague_C : public Game::Enemies::Spider::ESI_Spider_Base_
 public:
     UE_CLASS("/Game/Enemies/Plague/ESI_Grunt_RockpoxPlague", "ESI_Grunt_RockpoxPlague_C");
     class UStaticMeshComponent* InfectionPoint8;
-    static constexpr const char* InfectionPoint8__UeScsNode = "504c22296cb9ad4a80986a92823a3247";
     class UStaticMeshComponent* InfectionPoint2;
-    static constexpr const char* InfectionPoint2__UeScsNode = "4713e6be1fd8424c81bca4487836bd17";
     class UStaticMeshComponent* InfectionPoint3;
-    static constexpr const char* InfectionPoint3__UeScsNode = "fa8b485777346d40a175d719ed3dd96b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InfectionPoint8__UeScsNode = "504c22296cb9ad4a80986a92823a3247";
+        static constexpr const char* InfectionPoint2__UeScsNode = "4713e6be1fd8424c81bca4487836bd17";
+        static constexpr const char* InfectionPoint3__UeScsNode = "fa8b485777346d40a175d719ed3dd96b";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

@@ -27,8 +27,8 @@ public:
     using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     using UI_Perks_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIntro;
-    class UWidgetAnimation* FancyIntro;
+    UE_READONLY class UWidgetAnimation* FadeIntro;
+    UE_READONLY class UWidgetAnimation* FancyIntro;
     class UBorder* Border_BG;
     class UHorizontalBox* CostBox;
     class UTextBlock* CostText;
@@ -47,11 +47,15 @@ public:
     void AfterFancyDelay();
     void Reset_Animations();
     void Show_Rank(bool InShowRank);
-    static constexpr const char* Show_Rank__UeName = "Show Rank";
     void Equip_Intro();
     void KPI_Intro();
     void SetPerkAsset(class UPerkAsset* PerkAsset_0, int Rank_0, bool ShowRank);
     void OnPerkClaimed_Event(class UPerkAsset* Perk, int ClaimedTier);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Rank__UeName = "Show Rank";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

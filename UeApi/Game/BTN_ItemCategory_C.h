@@ -28,8 +28,8 @@ public:
     UE_CLASS("/Game/UI/Menu_Crafting/BTN_ItemCategory", "BTN_ItemCategory_C");
     using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Pressed;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Pressed;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UBorder* BorderOuter;
     class UBorder* Bracket;
     class UButton* Button_0;

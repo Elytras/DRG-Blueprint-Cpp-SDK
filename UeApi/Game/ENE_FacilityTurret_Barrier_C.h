@@ -19,21 +19,25 @@ class ENE_FacilityTurret_Barrier_C : public Game::GameElements::Objectives::Faci
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Barrier", "ENE_FacilityTurret_Barrier_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTurret_Barrier_C;
-    static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Barrier_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* BlockPlayers;
-    static constexpr const char* BlockPlayers__UeScsNode = "d7c6fb3548cd1741b5c63b369b004d04";
     class UStaticMeshComponent* Base;
-    static constexpr const char* Base__UeScsNode = "d06f18e8bd1f0c42b285e3f7142ff7a7";
     class UAudioComponent* BarrierTurretFire_Cue;
-    static constexpr const char* BarrierTurretFire_Cue__UeScsNode = "b3d3ecff9f864a48b9e50dc93800d00d";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "a625ddaebb1cec4888c9064564d7d621";
     TArray<FName> MuzzleSockets;
     void ExecuteUbergraph_ENE_FacilityTurret_Barrier(int EntryPoint);
     void BndEvt__ProjectileAttack_K2Node_ComponentBoundEvent_0_ProjectileAttackDelegate__DelegateSignature();
     void OnAttack();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Barrier_C__UeName = "UberGraphFrame";
+        static constexpr const char* BlockPlayers__UeScsNode = "d7c6fb3548cd1741b5c63b369b004d04";
+        static constexpr const char* Base__UeScsNode = "d06f18e8bd1f0c42b285e3f7142ff7a7";
+        static constexpr const char* BarrierTurretFire_Cue__UeScsNode = "b3d3ecff9f864a48b9e50dc93800d00d";
+        static constexpr const char* ProjectileAttack__UeScsNode = "a625ddaebb1cec4888c9064564d7d621";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

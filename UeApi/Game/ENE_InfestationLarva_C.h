@@ -22,23 +22,27 @@ class ENE_InfestationLarva_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Enemies/InfestationLarva/ENE_InfestationLarva", "ENE_InfestationLarva_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "d18b1d618f69f24298d38d18b8507d91";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "9caa5bb82d256e4e88a4eca6567833fb";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "8166a7712b4c254eb82fd299c4ce1a16";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "ecb0b1550747b3448d3d62a720b0faed";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "ffbe1e01aff8964d839f7bc42fd0e1e4";
     class UParticleSystemComponent* P_Larva_Move_Spray;
-    static constexpr const char* P_Larva_Move_Spray__UeScsNode = "d227908d09890e4aa3579c20e322b917";
     void ExecuteUbergraph_ENE_InfestationLarva(int EntryPoint);
     void OnMessageAI(FName TriggerName);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* MeleeAttack__UeScsNode = "d18b1d618f69f24298d38d18b8507d91";
+        static constexpr const char* enemy__UeScsNode = "9caa5bb82d256e4e88a4eca6567833fb";
+        static constexpr const char* Capsule__UeScsNode = "8166a7712b4c254eb82fd299c4ce1a16";
+        static constexpr const char* outline__UeScsNode = "ecb0b1550747b3448d3d62a720b0faed";
+        static constexpr const char* DropShadow__UeScsNode = "ffbe1e01aff8964d839f7bc42fd0e1e4";
+        static constexpr const char* P_Larva_Move_Spray__UeScsNode = "d227908d09890e4aa3579c20e322b917";
+    };
 };
 
 }}}   // namespace Game::Enemies::InfestationLarva

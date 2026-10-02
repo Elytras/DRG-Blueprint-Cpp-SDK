@@ -28,32 +28,36 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/BP_Foliage_OpenOnProximity", "BP_Foliage_OpenOnProximity_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "9bc9a08732be1a449518aaacb89c7703";
     class UCapsuleComponent* HitBox_Closed;
-    static constexpr const char* HitBox_Closed__UeScsNode = "17d0d48451a9304eafabc090464379d4";
     class UCapsuleComponent* HitBox_Open;
-    static constexpr const char* HitBox_Open__UeScsNode = "e53d1a5024e2df4cb73eca3d2ad6ec8f";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "8c4be2660c89cf479f49abd356b91aa2";
     class USphereComponent* WalkinTrigger;
-    static constexpr const char* WalkinTrigger__UeScsNode = "903e97777b7892429c7567c40c8449c8";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "66642c4310ddab499cafe56d12f99a5a";
     class UPathfinderCollisionComponent* PathfinderCollision1;
-    static constexpr const char* PathfinderCollision1__UeScsNode = "ac4649309bc86a4cb3bc3833c4793fad";
     class USkeletalMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "e531c4b330bd4d48b387b5e51c5a1dbf";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "00e7d5ad828e8d4296b9967823932077";
     class UAnimSequenceBase* ReactAnimation;
     class USoundCue* deathSound;
     float AnimationDuration;
     void ExecuteUbergraph_BP_Foliage_OpenOnProximity(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void PlayCloseSequence();
     void Close_Flower();
-    static constexpr const char* Close_Flower__UeName = "Close Flower";
     void BndEvt__WalkinTrigger_K2Node_ComponentBoundEvent_3_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TerrainDetect__UeScsNode = "9bc9a08732be1a449518aaacb89c7703";
+        static constexpr const char* HitBox_Closed__UeScsNode = "17d0d48451a9304eafabc090464379d4";
+        static constexpr const char* HitBox_Open__UeScsNode = "e53d1a5024e2df4cb73eca3d2ad6ec8f";
+        static constexpr const char* Box__UeScsNode = "8c4be2660c89cf479f49abd356b91aa2";
+        static constexpr const char* WalkinTrigger__UeScsNode = "903e97777b7892429c7567c40c8449c8";
+        static constexpr const char* terrainPlacement__UeScsNode = "66642c4310ddab499cafe56d12f99a5a";
+        static constexpr const char* PathfinderCollision1__UeScsNode = "ac4649309bc86a4cb3bc3833c4793fad";
+        static constexpr const char* Mesh__UeScsNode = "e531c4b330bd4d48b387b5e51c5a1dbf";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "00e7d5ad828e8d4296b9967823932077";
+        static constexpr const char* Close_Flower__UeName = "Close Flower";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage

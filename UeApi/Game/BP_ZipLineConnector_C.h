@@ -21,15 +21,10 @@ public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/BP_ZipLineConnector", "BP_ZipLineConnector_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_ZipLine_Connect;
-    static constexpr const char* P_ZipLine_Connect__UeScsNode = "85446345ed923446bcd272123779b07f";
     class UParticleSystemComponent* P_ZipLine_MagneticBeam;
-    static constexpr const char* P_ZipLine_MagneticBeam__UeScsNode = "27d7e642d5e4b0479161784d2934e29d";
     class UParticleSystemComponent* P_Zipline_Sparks;
-    static constexpr const char* P_Zipline_Sparks__UeScsNode = "7e7d593670ac524ba9bab6079ab81d93";
     class UStaticMeshComponent* ConnectorMesh;
-    static constexpr const char* ConnectorMesh__UeScsNode = "d48ed947f6b78c44a2abe7103b81c2de";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8d0d69c5957fa24a861516048b6b8845";
     void ExecuteUbergraph_BP_ZipLineConnector(int EntryPoint);
     void ReceiveBeginPlay();
     void UpdateLocation(FVector Location, FVector Direction);
@@ -37,6 +32,15 @@ public:
     void ReceiveDisconnected();
     void ReceiveConnected(const FVector& WorldLocation, const FVector& Direction);
     void SetConnectorVisible(bool InVisible);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* P_ZipLine_Connect__UeScsNode = "85446345ed923446bcd272123779b07f";
+        static constexpr const char* P_ZipLine_MagneticBeam__UeScsNode = "27d7e642d5e4b0479161784d2934e29d";
+        static constexpr const char* P_Zipline_Sparks__UeScsNode = "7e7d593670ac524ba9bab6079ab81d93";
+        static constexpr const char* ConnectorMesh__UeScsNode = "d48ed947f6b78c44a2abe7103b81c2de";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8d0d69c5957fa24a861516048b6b8845";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

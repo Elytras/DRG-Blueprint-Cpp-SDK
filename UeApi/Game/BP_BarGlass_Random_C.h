@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/GameElements/Bar/BP_BarGlass_Random", "BP_BarGlass_Random_C");
     using BP_BarGlass_Standard_C = Game::GameElements::Bar::BP_BarGlass_Standard_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_BarGlass_Random_C;
-    static constexpr const char* UberGraphFrame_BP_BarGlass_Random_C__UeName = "UberGraphFrame";
     TArray<class UDrinkableDataAsset*> BeerEffects;
     BP_BarGlass_Standard_C* RandomDrink;
-    static constexpr const char* RandomDrink__Replicated = "OnRep_RandomDrink:";
     class UDrinkableDataAsset* RandomDrinkData;
     void ExecuteUbergraph_BP_BarGlass_Random(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_RandomDrink();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_BarGlass_Random_C__UeName = "UberGraphFrame";
+        static constexpr const char* RandomDrink__Replicated = "OnRep_RandomDrink:";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

@@ -17,12 +17,16 @@ class EWC_Spiders_Motherlode_C : public Game::Enemies::Waves::WaveControllers::E
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Spiders_Motherlode", "EWC_Spiders_Motherlode_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Spiders_Motherlode_C;
-    static constexpr const char* UberGraphFrame_EWC_Spiders_Motherlode_C__UeName = "UberGraphFrame";
     int WaveCountConstantPressure;
     int WaveCountWaves;
     void ExecuteUbergraph_EWC_Spiders_Motherlode(int EntryPoint);
     void StartWave();
     UE_PURE class UEnemyWaveManager* GetWaveManager();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Spiders_Motherlode_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

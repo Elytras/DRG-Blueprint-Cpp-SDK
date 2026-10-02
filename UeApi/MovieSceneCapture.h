@@ -241,7 +241,7 @@ class UUserDefinedCaptureProtocol : public UMovieSceneImageCaptureProtocolBase
 {
 public:
     UE_CLASS("/Script/MovieSceneCapture", "UserDefinedCaptureProtocol");
-    class UWorld* World;
+    UE_READONLY class UWorld* World;
     void OnBeginFinalize();
     void OnCaptureFrame();
     void OnFinalize();

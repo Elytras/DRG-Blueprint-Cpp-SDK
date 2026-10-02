@@ -17,14 +17,11 @@ class PRJ_BigGooProjectile_Trail_C : public Game::WeaponsNTools::GooCannon::PRJ_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BigGooProjectile_Trail", "PRJ_BigGooProjectile_Trail_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_BigGooProjectile_Trail_C;
-    static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_Trail_C__UeName = "UberGraphFrame";
     float CurrentClusterPitch;
     float ClusterEjectionForce;
     class UClass* FragmentSize;
     int SpawnedFragments;
-    static constexpr const char* SpawnedFragments__Replicated = "OnRep_SpawnedFragments:";
     FTimerHandle SpawnTimer;
     void ExecuteUbergraph_PRJ_BigGooProjectile_Trail(int EntryPoint);
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
@@ -32,6 +29,13 @@ public:
     void SpawnFragments();
     void OnInitialized();
     void OnRep_SpawnedFragments();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_Trail_C__UeName = "UberGraphFrame";
+        static constexpr const char* SpawnedFragments__Replicated = "OnRep_SpawnedFragments:";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

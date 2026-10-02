@@ -24,37 +24,21 @@ class ENE_JellyBreeder_RockpoxPlague_C : public Game::Enemies::Jelly_Breeder::EN
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/ENE_JellyBreeder_RockpoxPlague", "ENE_JellyBreeder_RockpoxPlague_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_JellyBreeder_RockpoxPlague_C;
-    static constexpr const char* UberGraphFrame_ENE_JellyBreeder_RockpoxPlague_C__UeName = "UberGraphFrame";
     class UProjectileThrowerAttack* ProjectileThrowerAttack;
-    static constexpr const char* ProjectileThrowerAttack__UeScsNode = "dfaeb4a089cae5438b11a90c95028b34";
     class UStaticMeshComponent* InfectionPoint6;
-    static constexpr const char* InfectionPoint6__UeScsNode = "149f88d6c9334a48b8328fbb7fb2f0fe";
     class UStaticMeshComponent* InfectionPoint11;
-    static constexpr const char* InfectionPoint11__UeScsNode = "d3e90798377a0f408a19c14221c9b688";
     class UStaticMeshComponent* InfectionPoint10;
-    static constexpr const char* InfectionPoint10__UeScsNode = "f465c2d267ba6447b8dd2d14d8fb32ab";
     class UStaticMeshComponent* InfectionPoint9;
-    static constexpr const char* InfectionPoint9__UeScsNode = "6dfcf4948b872243b78893d8aca30752";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "0599b46d3b28304fa079666d46e6db47";
     class UInfectionMasterComponent* InfectionMaster;
-    static constexpr const char* InfectionMaster__UeScsNode = "02682c38850339489e25158cffdb06ee";
     class UStaticMeshComponent* InfectionPoint8;
-    static constexpr const char* InfectionPoint8__UeScsNode = "01d34d7f9df9794aa5c3f5cd173b2858";
     class UStaticMeshComponent* InfectionPoint7;
-    static constexpr const char* InfectionPoint7__UeScsNode = "9309fb39dda4fd408d8bd6fcfae33b5d";
     class UStaticMeshComponent* InfectionPoint5;
-    static constexpr const char* InfectionPoint5__UeScsNode = "7cfdf70c21c75b4784da0fa8966123cc";
     class UStaticMeshComponent* InfectionPoint4;
-    static constexpr const char* InfectionPoint4__UeScsNode = "1825a906ddc0e74b84a629c00987bc7c";
     class UStaticMeshComponent* InfectionPoint3;
-    static constexpr const char* InfectionPoint3__UeScsNode = "43a8c79632d240458a23a84d65c1f543";
     class UStaticMeshComponent* InfectionPoint2;
-    static constexpr const char* InfectionPoint2__UeScsNode = "3c414b66c15d9e499cff8a5f308471e4";
     class UStaticMeshComponent* InfectionPoint1;
-    static constexpr const char* InfectionPoint1__UeScsNode = "7c789d0f93bf7f459865b8049a23e5d4";
     float Wobble_Intensity_760E92914F02A150ACB1698955C0C74C;
     TEnum<ETimelineDirection> Wobble__Direction_760E92914F02A150ACB1698955C0C74C;
     class UTimelineComponent* Wobble;
@@ -72,6 +56,26 @@ public:
     void Wobble__UpdateFunc();
     void Wobble__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_JellyBreeder_RockpoxPlague_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProjectileThrowerAttack__UeScsNode = "dfaeb4a089cae5438b11a90c95028b34";
+        static constexpr const char* InfectionPoint6__UeScsNode = "149f88d6c9334a48b8328fbb7fb2f0fe";
+        static constexpr const char* InfectionPoint11__UeScsNode = "d3e90798377a0f408a19c14221c9b688";
+        static constexpr const char* InfectionPoint10__UeScsNode = "f465c2d267ba6447b8dd2d14d8fb32ab";
+        static constexpr const char* InfectionPoint9__UeScsNode = "6dfcf4948b872243b78893d8aca30752";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "0599b46d3b28304fa079666d46e6db47";
+        static constexpr const char* InfectionMaster__UeScsNode = "02682c38850339489e25158cffdb06ee";
+        static constexpr const char* InfectionPoint8__UeScsNode = "01d34d7f9df9794aa5c3f5cd173b2858";
+        static constexpr const char* InfectionPoint7__UeScsNode = "9309fb39dda4fd408d8bd6fcfae33b5d";
+        static constexpr const char* InfectionPoint5__UeScsNode = "7cfdf70c21c75b4784da0fa8966123cc";
+        static constexpr const char* InfectionPoint4__UeScsNode = "1825a906ddc0e74b84a629c00987bc7c";
+        static constexpr const char* InfectionPoint3__UeScsNode = "43a8c79632d240458a23a84d65c1f543";
+        static constexpr const char* InfectionPoint2__UeScsNode = "3c414b66c15d9e499cff8a5f308471e4";
+        static constexpr const char* InfectionPoint1__UeScsNode = "7c789d0f93bf7f459865b8049a23e5d4";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder

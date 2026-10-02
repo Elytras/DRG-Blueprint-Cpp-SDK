@@ -18,29 +18,33 @@ class BP_Gem_Jadiz_C : public Game::GameElements::Resources::Embedded::Gems::BP_
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_Gem_Jadiz", "BP_Gem_Jadiz_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_Gem_Jadiz_C;
-    static constexpr const char* UberGraphFrame_BP_Gem_Jadiz_C__UeName = "UberGraphFrame";
     class UAudioComponent* GemJadizIdle_Cue;
-    static constexpr const char* GemJadizIdle_Cue__UeScsNode = "79794585caf5b14880b68bad0372bf00";
     class UGemTracker* GemTracker;
-    static constexpr const char* GemTracker__UeScsNode = "ca5b204ffa64de4db535d6130e58ecd0";
     class UPointLightComponent* PointLight6;
-    static constexpr const char* PointLight6__UeScsNode = "8a6be903e223f64cae993353797d890c";
     class UPointLightComponent* PointLight5;
-    static constexpr const char* PointLight5__UeScsNode = "965cc5350e998e49ba0d5b75ccf92b67";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "bb81983455959848a5a3deecd0b340ff";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "25e11e646d0ace4295f9e55c02cf597b";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "013f6c23243d9749a3b7c75420ffa945";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "279057d33f2d274c86e9c312984e5a81";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "e4241d3b636bd64f9059fa35082ce0ea";
     void ExecuteUbergraph_BP_Gem_Jadiz(int EntryPoint);
     UE_MULTICAST void All_PlayDugFree();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_Gem_Jadiz_C__UeName = "UberGraphFrame";
+        static constexpr const char* GemJadizIdle_Cue__UeScsNode = "79794585caf5b14880b68bad0372bf00";
+        static constexpr const char* GemTracker__UeScsNode = "ca5b204ffa64de4db535d6130e58ecd0";
+        static constexpr const char* PointLight6__UeScsNode = "8a6be903e223f64cae993353797d890c";
+        static constexpr const char* PointLight5__UeScsNode = "965cc5350e998e49ba0d5b75ccf92b67";
+        static constexpr const char* PointLight4__UeScsNode = "bb81983455959848a5a3deecd0b340ff";
+        static constexpr const char* PointLight3__UeScsNode = "25e11e646d0ace4295f9e55c02cf597b";
+        static constexpr const char* PointLight2__UeScsNode = "013f6c23243d9749a3b7c75420ffa945";
+        static constexpr const char* PointLight1__UeScsNode = "279057d33f2d274c86e9c312984e5a81";
+        static constexpr const char* PointLight__UeScsNode = "e4241d3b636bd64f9059fa35082ce0ea";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems

@@ -13,6 +13,11 @@ class CP_Difficulty_Haz5plus_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Difficulty_Haz5plus", "CP_Difficulty_Haz5plus_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.PlayerRankCampaignRequirement PlayerRankCampaignRequirement_0;/Script/FSD.PureTextReward CampaignMission_2:PureTextReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_1";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

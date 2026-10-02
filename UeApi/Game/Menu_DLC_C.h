@@ -22,7 +22,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UUniformGridPanel* Entries_Panel;
     class UGameDLCSettings* Settings;
-    float EntryWidth;
+    UE_READONLY float EntryWidth;
     class UMediaPlayer* CurrentMediaPlayer;
     void ExecuteUbergraph_Menu_DLC(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

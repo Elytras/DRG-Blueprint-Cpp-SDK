@@ -26,13 +26,9 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_BaubleHanging", "BP_BaubleHanging_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "dff86e0b5843204fb11dad81a0e99ad2";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "5ab4b03d52df3744842e3f268a310f7a";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "09fa79414e4e5c4a9a4eb4f185cb0e96";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "9411d4feba4796458e7314f96ae28f90";
     float Speed;
     class USoundCue* ImpactSound;
     float ImpactVolume;
@@ -43,6 +39,14 @@ public:
     void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_BaubleHanging_SkeletalMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "dff86e0b5843204fb11dad81a0e99ad2";
+        static constexpr const char* InstantUsable__UeScsNode = "5ab4b03d52df3744842e3f268a310f7a";
+        static constexpr const char* RotatingMovement__UeScsNode = "09fa79414e4e5c4a9a4eb4f185cb0e96";
+        static constexpr const char* SkeletalMesh__UeScsNode = "9411d4feba4796458e7314f96ae28f90";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

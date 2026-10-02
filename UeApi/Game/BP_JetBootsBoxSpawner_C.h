@@ -16,7 +16,11 @@ class BP_JetBootsBoxSpawner_C : public AJetBootsBoxSpawner
 public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/BP_JetBootsBoxSpawner", "BP_JetBootsBoxSpawner_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a84576a8524de740aeeb8efd2ec2e63f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a84576a8524de740aeeb8efd2ec2e63f";
+    };
 };
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint

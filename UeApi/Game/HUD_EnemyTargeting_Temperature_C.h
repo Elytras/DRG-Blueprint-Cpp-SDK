@@ -22,14 +22,14 @@ class HUD_EnemyTargeting_Temperature_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/EnemyHealthBar/HUD_EnemyTargeting_Temperature", "HUD_EnemyTargeting_Temperature_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Ping;
     class USizeBox* BarSize;
     class UImage* BorderInner;
     class UImage* BorderOuter;
     class UImage* TemperatureIcon;
     class UProgressBar* TemperatureProgress;
-    float Size;
+    UE_READONLY float Size;
     float Effect;
     void ExecuteUbergraph_HUD_EnemyTargeting_Temperature(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

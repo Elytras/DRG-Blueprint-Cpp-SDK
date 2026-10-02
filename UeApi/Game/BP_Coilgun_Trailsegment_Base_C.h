@@ -16,7 +16,11 @@ class BP_Coilgun_Trailsegment_Base_C : public ACoilGunTrailSegment
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/BP_Coilgun_Trailsegment_Base", "BP_Coilgun_Trailsegment_Base_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "28e1f45c5c890d489ba54f9a84ccdd7b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "28e1f45c5c890d489ba54f9a84ccdd7b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

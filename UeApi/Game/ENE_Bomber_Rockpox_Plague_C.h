@@ -19,23 +19,14 @@ class ENE_Bomber_Rockpox_Plague_C : public Game::Enemies::FlyingBug::Bomber::ENE
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/ENE_Bomber_Rockpox_Plague", "ENE_Bomber_Rockpox_Plague_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GooAudioComponent;/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/Engine.ParticleSystemComponent GooEmitterLeft;/Script/Engine.ParticleSystemComponent GooEmitterRight;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Bomber_Rockpox_Plague_C;
-    static constexpr const char* UberGraphFrame_ENE_Bomber_Rockpox_Plague_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* InfectionPoint10;
-    static constexpr const char* InfectionPoint10__UeScsNode = "c52679fa3254664484491c2cb6a70b1e";
     class UInfectionMasterComponent* InfectionMaster;
-    static constexpr const char* InfectionMaster__UeScsNode = "961ae3f022ea294fae5dc4a9f574982d";
     class UStaticMeshComponent* InfectionPoint6;
-    static constexpr const char* InfectionPoint6__UeScsNode = "7728d0f388f43d4ea342d75a71d959e9";
     class UStaticMeshComponent* InfectionPoint9;
-    static constexpr const char* InfectionPoint9__UeScsNode = "81e25752fe5b014d8c11df7f846e7988";
     class UStaticMeshComponent* InfectionPoint8;
-    static constexpr const char* InfectionPoint8__UeScsNode = "b1ced6e5f0003744a9f5b43fe3dba1a5";
     class UStaticMeshComponent* InfectionPoint7;
-    static constexpr const char* InfectionPoint7__UeScsNode = "66524f6cf7d730449f93996bfd7386a0";
     class UStaticMeshComponent* InfectionPoint2;
-    static constexpr const char* InfectionPoint2__UeScsNode = "97d4a9c813a4554589c245202dcbb65c";
     int InfectionPoints;
     int InfectionPointsDestroyed;
     TSubclassOf<class UStatusEffect> InfectionSTE;
@@ -43,6 +34,19 @@ public:
     void PopAllWeakPoints(class UHealthComponentBase* HealthComponent_0);
     void ReceiveBeginPlay();
     void BndEvt__ENE_Spider_Grunt_TentacleInfection_ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GooAudioComponent;/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/Engine.ParticleSystemComponent GooEmitterLeft;/Script/Engine.ParticleSystemComponent GooEmitterRight;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Bomber_Rockpox_Plague_C__UeName = "UberGraphFrame";
+        static constexpr const char* InfectionPoint10__UeScsNode = "c52679fa3254664484491c2cb6a70b1e";
+        static constexpr const char* InfectionMaster__UeScsNode = "961ae3f022ea294fae5dc4a9f574982d";
+        static constexpr const char* InfectionPoint6__UeScsNode = "7728d0f388f43d4ea342d75a71d959e9";
+        static constexpr const char* InfectionPoint9__UeScsNode = "81e25752fe5b014d8c11df7f846e7988";
+        static constexpr const char* InfectionPoint8__UeScsNode = "b1ced6e5f0003744a9f5b43fe3dba1a5";
+        static constexpr const char* InfectionPoint7__UeScsNode = "66524f6cf7d730449f93996bfd7386a0";
+        static constexpr const char* InfectionPoint2__UeScsNode = "97d4a9c813a4554589c245202dcbb65c";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

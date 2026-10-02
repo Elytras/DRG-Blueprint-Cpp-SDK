@@ -26,9 +26,13 @@ public:
     void ExecuteUbergraph_Cheat_SimulateLateJoin(int EntryPoint);
     void BndEvt__CheatMenu_BasicButtonWText_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(CheatMenu_BasicButtonWText_C* Button);
     UE_SERVER void Spawn_pod_and_test(class APlayerCharacter* Character);
-    static constexpr const char* Spawn_pod_and_test__UeName = "Spawn pod and test";
     UE_COSMETIC void Construct();
     void OnLoaded_61EEE6104D62AB076A753A97DCFEB1FE(TSubclassOf<class UObject> Loaded);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Spawn_pod_and_test__UeName = "Spawn pod and test";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

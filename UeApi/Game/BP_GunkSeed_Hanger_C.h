@@ -34,38 +34,23 @@ public:
     using BP_GunkSeed_C = Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* AoeOverlapSphere;
-    static constexpr const char* AoeOverlapSphere__UeScsNode = "0e2bd0ef4fa0f24aa7eade6952208ccc";
     class UHealthDamageTracker* HealthDamageTracker;
-    static constexpr const char* HealthDamageTracker__UeScsNode = "b6bd47c683a88a498970fe94db846269";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "25113cba623ca946ac5db07fd2ad6dfd";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "6a5d0b8c85d8a44e9a8d3791cf3623e2";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "381bc65f0443bc4588f3578e48ade3e9";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "f55d4050fb059045ac754bd4613016fc";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "ea075dd8637f0f40b4a45235cb7012db";
     class USceneComponent* Root;
-    static constexpr const char* Root__UeScsNode = "dc2318a9c01ff64ba926c1300511f153";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "3db354edee353d42b817bb2c6d71afed";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "3b88bd75799bb54a817fe259b894ffc8";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "f2b5921ed965c2419f9ee2858e23deff";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "c593ca8e5e9d7d45b1ee52d3833b0489";
     float MinForce;
     float MaxForce;
     FVector EndPointOffset;
     bool HasSeed;
-    static constexpr const char* HasSeed__Replicated = "OnRep_HasSeed:";
     BP_GunkSeed_C* GunkSeed;
-    static constexpr const char* GunkSeed__Replicated = ":";
     FVector SlapForce;
-    static constexpr const char* SlapForce__Replicated = "OnRep_SlapForce:";
     void ExecuteUbergraph_BP_GunkSeed_Hanger(int EntryPoint);
     void BndEvt__HealthDamageTracker_K2Node_ComponentBoundEvent_5_DamageSig__DelegateSignature(float amount);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
@@ -80,6 +65,25 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AoeOverlapSphere__UeScsNode = "0e2bd0ef4fa0f24aa7eade6952208ccc";
+        static constexpr const char* HealthDamageTracker__UeScsNode = "b6bd47c683a88a498970fe94db846269";
+        static constexpr const char* TerrainDetect__UeScsNode = "25113cba623ca946ac5db07fd2ad6dfd";
+        static constexpr const char* terrainPlacement__UeScsNode = "6a5d0b8c85d8a44e9a8d3791cf3623e2";
+        static constexpr const char* PathfinderCollision__UeScsNode = "381bc65f0443bc4588f3578e48ade3e9";
+        static constexpr const char* PointLight__UeScsNode = "f55d4050fb059045ac754bd4613016fc";
+        static constexpr const char* SkeletalMesh__UeScsNode = "ea075dd8637f0f40b4a45235cb7012db";
+        static constexpr const char* Root__UeScsNode = "dc2318a9c01ff64ba926c1300511f153";
+        static constexpr const char* InstantUsable__UeScsNode = "3db354edee353d42b817bb2c6d71afed";
+        static constexpr const char* Sphere__UeScsNode = "3b88bd75799bb54a817fe259b894ffc8";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "f2b5921ed965c2419f9ee2858e23deff";
+        static constexpr const char* SimpleHealth__UeScsNode = "c593ca8e5e9d7d45b1ee52d3833b0489";
+        static constexpr const char* HasSeed__Replicated = "OnRep_HasSeed:";
+        static constexpr const char* GunkSeed__Replicated = ":";
+        static constexpr const char* SlapForce__Replicated = "OnRep_SlapForce:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::GunkSeed

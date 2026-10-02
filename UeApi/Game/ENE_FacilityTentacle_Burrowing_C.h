@@ -21,11 +21,8 @@ class ENE_FacilityTentacle_Burrowing_C : public Game::GameElements::Objectives::
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle_Burrowing", "ENE_FacilityTentacle_Burrowing_C");
     using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTentacle_Burrowing_C;
-    static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_Burrowing_C__UeName = "UberGraphFrame";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "58e77a61776bcd4486c4deabac2bcfef";
     ENE_FacilityTentacle_C* ChildTentacle;
     float BurrowDuration;
     FVector Target;
@@ -39,6 +36,13 @@ public:
     void FindGroundLocation(bool& success, FVector& Location);
     void PlaceEndTentacles(FVector PlayerLocation, bool& success, class AActor*& SpawnedTentacle);
     void GetTentacle(ENE_FacilityTentacle_C*& Tentacle);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_Burrowing_C__UeName = "UberGraphFrame";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "58e77a61776bcd4486c4deabac2bcfef";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

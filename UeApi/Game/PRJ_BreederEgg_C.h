@@ -24,20 +24,13 @@ class PRJ_BreederEgg_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Jelly_Breeder/PRJ_BreederEgg", "PRJ_BreederEgg_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyHealthComponent* EnemyHealth;
-    static constexpr const char* EnemyHealth__UeScsNode = "72a50c0a17d9b647a17be883a109671d";
     class UGrowthComponent* Growth;
-    static constexpr const char* Growth__UeScsNode = "d29f1eff1bbdc34fb79c10b83ac9c2a6";
     class UPhysicalAnimationComponent* PhysicalAnimation;
-    static constexpr const char* PhysicalAnimation__UeScsNode = "af0ad0172b9a864b940321b5fe27832b";
     class USkeletalMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "0a3fc908aaa76942b61e77f95903af09";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "ce1705cee497b34996da404ae2de925f";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "096980aab736ca4bbdca9c9370ac09c3";
     class UParticleSystem* BreakingParticles;
     int SpawnAmount;
     float WarningTime;
@@ -50,6 +43,17 @@ public:
     void BndEvt__EnemyHealth_K2Node_ComponentBoundEvent_3_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ESpawnJellies();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* EnemyHealth__UeScsNode = "72a50c0a17d9b647a17be883a109671d";
+        static constexpr const char* Growth__UeScsNode = "d29f1eff1bbdc34fb79c10b83ac9c2a6";
+        static constexpr const char* PhysicalAnimation__UeScsNode = "af0ad0172b9a864b940321b5fe27832b";
+        static constexpr const char* Mesh__UeScsNode = "0a3fc908aaa76942b61e77f95903af09";
+        static constexpr const char* outline__UeScsNode = "ce1705cee497b34996da404ae2de925f";
+        static constexpr const char* enemy__UeScsNode = "096980aab736ca4bbdca9c9370ac09c3";
+    };
 };
 
 }}}   // namespace Game::Enemies::Jelly_Breeder

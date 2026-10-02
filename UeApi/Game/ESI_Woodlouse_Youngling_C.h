@@ -17,9 +17,13 @@ class ESI_Woodlouse_Youngling_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/ESI_Woodlouse_Youngling", "ESI_Woodlouse_Youngling_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "5a8f4abae8462248bc12ce4627330edc";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "2891c542527ab34880fc3d87a39edb66";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "5a8f4abae8462248bc12ce4627330edc";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "2891c542527ab34880fc3d87a39edb66";
+    };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse

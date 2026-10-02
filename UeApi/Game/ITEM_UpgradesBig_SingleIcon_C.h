@@ -22,8 +22,8 @@ class ITEM_UpgradesBig_SingleIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/ITEM_UpgradesBig_SingleIcon", "ITEM_UpgradesBig_SingleIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Unhover;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Unhover;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UImage* BG;
     class UButton* Button_0;
     class UOverlay* GFXholder;

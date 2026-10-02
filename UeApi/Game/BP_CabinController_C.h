@@ -27,21 +27,25 @@ public:
     using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "414f9180f9da41428a5f2ae200bf79b8";
     BP_CabinOwnerSign_C* CabinSign;
     BP_PlayerController_SpaceRig_C* CabinOwner;
     class AFSDPlayerState* OwnerState;
-    static constexpr const char* OwnerState__Replicated = "OnRep_OwnerState:";
     class ASpacerigStart* StartSpot;
     BP_DeathStats_C* InfirmaryStats;
     void ExecuteUbergraph_BP_CabinController(int EntryPoint);
     void Controller_leave(class AActor* DestroyedActor);
-    static constexpr const char* Controller_leave__UeName = "Controller leave";
     void Set_Cabin_Owner(class AFSDPlayerController* Controller);
-    static constexpr const char* Set_Cabin_Owner__UeName = "Set Cabin Owner";
     void RemoveOwner();
     void ReceiveBeginPlay();
     void OnRep_OwnerState();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "414f9180f9da41428a5f2ae200bf79b8";
+        static constexpr const char* OwnerState__Replicated = "OnRep_OwnerState:";
+        static constexpr const char* Controller_leave__UeName = "Controller leave";
+        static constexpr const char* Set_Cabin_Owner__UeName = "Set Cabin Owner";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

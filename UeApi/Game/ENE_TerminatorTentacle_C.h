@@ -33,40 +33,23 @@ class ENE_TerminatorTentacle_C : public ATerminatorTentacle
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/ENE_TerminatorTentacle", "ENE_TerminatorTentacle_C");
     using BP_TentacleGrab_C = Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTentacleBusyComponent* TentacleBusy;
-    static constexpr const char* TentacleBusy__UeScsNode = "6507992d861f484f9a8cb2a31877ba3b";
     BP_TentacleGrab_C* GrabAttack;
-    static constexpr const char* GrabAttack__UeScsNode = "baa5dcb99a91af42a7f64f85bf89a734";
     class UWeakpointGlowComponent* WeaponFireGlow;
-    static constexpr const char* WeaponFireGlow__UeScsNode = "8dfb9d2ec50ad44e89f5df29a9858abb";
     class UNiagaraComponent* NS_Inner_Energy;
-    static constexpr const char* NS_Inner_Energy__UeScsNode = "28c77bd9ab1b8d4e88a1fb5ca1e3aecf";
     class USkeletalMeshComponent* Head_Mesh;
-    static constexpr const char* Head_Mesh__UeScsNode = "8b7866e9f73ae14090f858283bff72b1";
     class USceneComponent* Rotator2;
-    static constexpr const char* Rotator2__UeScsNode = "952ede7cd3d7ba4ab96e0bb3ba8823d9";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "99b8bcea4a86fd4bae19e2982fcc78d1";
     class UStaticMeshComponent* SM_LightCone001;
-    static constexpr const char* SM_LightCone001__UeScsNode = "8b25c376825ce741bfe17d365a651bad";
     class UBillboardComponent* MeleeAttackPosition;
-    static constexpr const char* MeleeAttackPosition__UeScsNode = "4f6ef3ba5e24464abf75eb594f6dd831";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "aad2154fa362a14180e9cd001273d1e4";
     class USceneComponent* Head;
-    static constexpr const char* Head__UeScsNode = "c1dd4acfe622f946963b6c99441653d1";
     class USkeletalMeshComponent* TentacleMesh;
-    static constexpr const char* TentacleMesh__UeScsNode = "f6db655dcbfa6748a973d7d079000595";
     class USplineComponent* Spline;
-    static constexpr const char* Spline__UeScsNode = "b45fc4c5389e014290a0b7a45748ca1c";
     class UDamageComponent* InitialDamage;
-    static constexpr const char* InitialDamage__UeScsNode = "cac0426465b84144adac94147f7136d2";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "b8c141ec48cc2b47a633f35b96b19a40";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "023b0b90ee256e46934f1cefc78caed6";
     class UMaterialInstanceDynamic* DynamicMaterial_Tell;
     FTransform AttackGoalTransform;
     class AActor* CurrentTarget;
@@ -96,10 +79,31 @@ public:
     class USceneComponent* GetHeadRoot();
     class USceneComponent* GetHeadRotator();
     void Spawn_Crush_Particles();
-    static constexpr const char* Spawn_Crush_Particles__UeName = "Spawn Crush Particles";
     UE_PURE FVector GetTargetCenterMass() const;
     class USkeletalMeshComponent* GetMesh() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* TentacleBusy__UeScsNode = "6507992d861f484f9a8cb2a31877ba3b";
+        static constexpr const char* GrabAttack__UeScsNode = "baa5dcb99a91af42a7f64f85bf89a734";
+        static constexpr const char* WeaponFireGlow__UeScsNode = "8dfb9d2ec50ad44e89f5df29a9858abb";
+        static constexpr const char* NS_Inner_Energy__UeScsNode = "28c77bd9ab1b8d4e88a1fb5ca1e3aecf";
+        static constexpr const char* Head_Mesh__UeScsNode = "8b7866e9f73ae14090f858283bff72b1";
+        static constexpr const char* Rotator2__UeScsNode = "952ede7cd3d7ba4ab96e0bb3ba8823d9";
+        static constexpr const char* SpotLight__UeScsNode = "99b8bcea4a86fd4bae19e2982fcc78d1";
+        static constexpr const char* SM_LightCone001__UeScsNode = "8b25c376825ce741bfe17d365a651bad";
+        static constexpr const char* MeleeAttackPosition__UeScsNode = "4f6ef3ba5e24464abf75eb594f6dd831";
+        static constexpr const char* outline__UeScsNode = "aad2154fa362a14180e9cd001273d1e4";
+        static constexpr const char* Head__UeScsNode = "c1dd4acfe622f946963b6c99441653d1";
+        static constexpr const char* TentacleMesh__UeScsNode = "f6db655dcbfa6748a973d7d079000595";
+        static constexpr const char* Spline__UeScsNode = "b45fc4c5389e014290a0b7a45748ca1c";
+        static constexpr const char* InitialDamage__UeScsNode = "cac0426465b84144adac94147f7136d2";
+        static constexpr const char* Explosion__UeScsNode = "b8c141ec48cc2b47a633f35b96b19a40";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "023b0b90ee256e46934f1cefc78caed6";
+        static constexpr const char* Spawn_Crush_Particles__UeName = "Spawn Crush Particles";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

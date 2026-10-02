@@ -25,7 +25,6 @@ public:
     TSoftClassPtr<class UClass> DrillElevatorPlacerClass;
     BP_TreasureRoom_DeepScan_Basier_C* TreasureRoom;
     FTransform Drillevator_Location;
-    static constexpr const char* Drillevator_Location__UeName = "Drillevator Location";
     TSoftClassPtr<class UClass> DrillElevatorClass;
     TArray<TSoftClassPtr<class UClass>> TreasureRooms;
     TSoftClassPtr<class UClass> DrillElevator;
@@ -42,7 +41,6 @@ public:
     void SelectDrillevatorLocation();
     void OnDrillevatorLocationSelected(FTransform Location);
     void Spawn_Treasure_Room();
-    static constexpr const char* Spawn_Treasure_Room__UeName = "Spawn Treasure Room";
     void SpawnDrillevator(bool PlayMCShout);
     void OnObjectiveStateChanged_Event_0();
     void ReceiveBeginPlay();
@@ -53,6 +51,12 @@ public:
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
     class UTexture2D* GetObjectiveIcon() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Drillevator_Location__UeName = "Drillevator Location";
+        static constexpr const char* Spawn_Treasure_Room__UeName = "Spawn Treasure Room";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

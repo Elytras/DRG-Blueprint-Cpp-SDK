@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/PartyStreamers/BP_ConfettiPlane", "BP_ConfettiPlane_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMeshComponent0;
-    static constexpr const char* StaticMeshComponent0__UeScsNode = "c671e258408cfe438768fd43ad4b3577";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "dee5f1d8df7bb047bb30c831479fda77";
     void ExecuteUbergraph_BP_ConfettiPlane(int EntryPoint);
     void SetMaterial(class UMaterialInterface* Material);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMeshComponent0__UeScsNode = "c671e258408cfe438768fd43ad4b3577";
+        static constexpr const char* Scene__UeScsNode = "dee5f1d8df7bb047bb30c831479fda77";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::PartyStreamers

@@ -20,9 +20,13 @@ public:
     UE_CLASS("/Game/Character/Rumble/LIB_RumbleFunctions", "LIB_RumbleFunctions_C");
     static void FSD_Rumble_At_Location(class UObject* WorldContextObject, class UForceFeedbackEffect* ForceFeedbackEffect, FVector Location, FRotator Rotation, bool bLooping, float IntensityMultiplier, float StartTime, bool bAutoDestroy, class UObject* __WorldContext);
     static void FSD_Rumble_At_Location(class UForceFeedbackEffect* ForceFeedbackEffect, FVector Location, FRotator Rotation, bool bLooping, float IntensityMultiplier, float StartTime, bool bAutoDestroy, class UObject* __WorldContext);
-    static constexpr const char* FSD_Rumble_At_Location__UeName = "FSD Rumble At Location";
     static void FSD_Rumble_At_Actor(class AActor* Actor, class UForceFeedbackEffect* ForceFeedbackEffect, bool bLooping, float IntensityMultiplier, float StartTime, bool bAutoDestroy, class UObject* __WorldContext);
-    static constexpr const char* FSD_Rumble_At_Actor__UeName = "FSD Rumble At Actor";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FSD_Rumble_At_Location__UeName = "FSD Rumble At Location";
+        static constexpr const char* FSD_Rumble_At_Actor__UeName = "FSD Rumble At Actor";
+    };
 };
 
 }}}   // namespace Game::Character::Rumble

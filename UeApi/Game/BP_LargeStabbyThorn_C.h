@@ -23,21 +23,13 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/ThornBranches/BP_LargeStabbyThorn", "BP_LargeStabbyThorn_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "6e80e828019283418b142a7cd97ea9fd";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "62bd66fe49a153438f4084a2afdb07ea";
     class UBillboardComponent* DamagePoint;
-    static constexpr const char* DamagePoint__UeScsNode = "c3fd6b16b24a9346bdeba5f2824db7e3";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "147292a5248aae4dabb49d9c30b475ae";
     class UStaticMeshComponent* SM_TreeBarnacle_01;
-    static constexpr const char* SM_TreeBarnacle_01__UeScsNode = "132c2e59cd8cbf4395bea205fcbbffcc";
     class UStaticMeshComponent* SM_StabbyThorn;
-    static constexpr const char* SM_StabbyThorn__UeScsNode = "7049b5054160af498a2f5285652587dd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d0cc1020d69eb1439c5b189b307cd1b7";
     bool Retracted;
-    static constexpr const char* Retracted__Replicated = "OnRep_Retracted:";
     void ExecuteUbergraph_BP_LargeStabbyThorn(int EntryPoint);
     UE_MULTICAST void OnTerrainPointRemoved();
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_1_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
@@ -47,6 +39,18 @@ public:
     void OnPlayerProximity(class APlayerCharacter* Player, bool enteredTrigger);
     void ReceiveBeginPlay();
     void OnRep_Retracted();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TerrainDetect__UeScsNode = "6e80e828019283418b142a7cd97ea9fd";
+        static constexpr const char* terrainPlacement__UeScsNode = "62bd66fe49a153438f4084a2afdb07ea";
+        static constexpr const char* DamagePoint__UeScsNode = "c3fd6b16b24a9346bdeba5f2824db7e3";
+        static constexpr const char* Damage__UeScsNode = "147292a5248aae4dabb49d9c30b475ae";
+        static constexpr const char* SM_TreeBarnacle_01__UeScsNode = "132c2e59cd8cbf4395bea205fcbbffcc";
+        static constexpr const char* SM_StabbyThorn__UeScsNode = "7049b5054160af498a2f5285652587dd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d0cc1020d69eb1439c5b189b307cd1b7";
+        static constexpr const char* Retracted__Replicated = "OnRep_Retracted:";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches

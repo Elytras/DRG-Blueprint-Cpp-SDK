@@ -26,7 +26,7 @@ public:
     class USizeBox* SizeBox_Height;
     class UResourceData* Resource;
     float amount;
-    float Height;
+    UE_READONLY float Height;
     void ExecuteUbergraph_UI_Bar_DrinkCostPrice(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

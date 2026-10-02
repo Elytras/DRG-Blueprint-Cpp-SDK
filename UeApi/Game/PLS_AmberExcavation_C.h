@@ -19,12 +19,9 @@ class PLS_AmberExcavation_C : public Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_AmberExcavation", "PLS_AmberExcavation_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_AmberExcavation_C;
-    static constexpr const char* UberGraphFrame_PLS_AmberExcavation_C__UeName = "UberGraphFrame";
     FRoomGeneratorGroupInstance RoomGroupInstance;
     class URoomGeneratorGroup* Room_Generators;
-    static constexpr const char* Room_Generators__UeName = "Room Generators";
     int StartRoomID;
     FVector CenterLocation;
     int OffshootsToAdd;
@@ -36,6 +33,13 @@ public:
     UE_PURE class URoomGenerator* SelectRoom(int RoomDepth);
     void AddPossibleOffshoot(int fromID, FVector Location);
     void GetCavernLocation(FVector BaseLocation, FVector& CavernLocation);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
+        static constexpr const char* UberGraphFrame_PLS_AmberExcavation_C__UeName = "UberGraphFrame";
+        static constexpr const char* Room_Generators__UeName = "Room Generators";
+    };
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

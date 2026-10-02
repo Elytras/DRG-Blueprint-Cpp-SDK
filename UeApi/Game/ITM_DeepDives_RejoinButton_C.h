@@ -21,10 +21,10 @@ class ITM_DeepDives_RejoinButton_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_RejoinButton", "ITM_DeepDives_RejoinButton_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* HoverEnd;
-    class UWidgetAnimation* HoverStart;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* HoverEnd;
+    UE_READONLY class UWidgetAnimation* HoverStart;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UImage* BGglow;
     class UBorder* Border_129;
     class UButton* Button_0;

@@ -21,22 +21,26 @@ class WPN_SawedOffShotgun_C : public ASawedOffShotgun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/WPN_SawedOffShotgun", "WPN_SawedOffShotgun_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent ShockwaveDamage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "af4e4f75c8a4cd4597f195a3aae93234";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "dd05b1a366b81b4889f736ba5e2c2f8f";
     class UPointLightComponent* MuzzleLight;
-    static constexpr const char* MuzzleLight__UeScsNode = "adee6edc6662134da0d0dfb22a45bc7c";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "4f53a1d135d1f04989acc5d610bcbc45";
     class UMultiHitscanComponent* MultiHitscan;
-    static constexpr const char* MultiHitscan__UeScsNode = "92e2f6d5c500ff4a8e5a52a1dcf3adae";
     void ExecuteUbergraph_WPN_SawedOffShotgun(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent ShockwaveDamage;/Script/FSD.DistanceToTargetDamageCondition DamageComponent:SetImpulseDamageBonus_0:MultiDamageCondition_0:DistanceToTargetDamageCondition_0;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.MultiDamageCondition DamageComponent:SetImpulseDamageBonus_0:MultiDamageCondition_0;/Script/FSD.MultiHitscanHitCountDamageCondition DamageComponent:SetImpulseDamageBonus_0:MultiDamageCondition_0:MultiHitscanHitCountDamageCondition_0;/Script/Engine.SceneComponent Root;/Script/FSD.SetImpulseDamageBonus DamageComponent:SetImpulseDamageBonus_0;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "af4e4f75c8a4cd4597f195a3aae93234";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "dd05b1a366b81b4889f736ba5e2c2f8f";
+        static constexpr const char* MuzzleLight__UeScsNode = "adee6edc6662134da0d0dfb22a45bc7c";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "4f53a1d135d1f04989acc5d610bcbc45";
+        static constexpr const char* MultiHitscan__UeScsNode = "92e2f6d5c500ff4a8e5a52a1dcf3adae";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun

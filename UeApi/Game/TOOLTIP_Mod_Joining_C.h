@@ -29,7 +29,6 @@ public:
     Basic_Label_C* Mod_Version_Text;
     FString ModId;
     FString Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     FString Version;
     FString Description;
     FString Author;
@@ -41,6 +40,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void FromMetaData(class UModioModInfoWrapper* InMetaData);
     void SetData(FString InModID, FString InName, FString InVersion, FString InDescription, FString InAuthor, TEnum<EUGCApprovalStatus> InApprovalState, bool InFetchThumbnail);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::Modding

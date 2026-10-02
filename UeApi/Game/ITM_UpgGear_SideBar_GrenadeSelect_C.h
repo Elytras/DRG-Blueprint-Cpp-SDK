@@ -47,12 +47,16 @@ public:
     void OnYesNo(bool Yes);
     void ItemEquipped_Event(class UItemID* itemClass_0);
     void Reset_Grenade_Preview();
-    static constexpr const char* Reset_Grenade_Preview__UeName = "Reset Grenade Preview";
     void RefreshItems();
     void SetYesNoPrompt(Basic_Popup_YesNoPrompt_C* YesNoPrompt_0);
     void OnWidgetCreated(ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C* Widget);
     void SetItem(class UPlayerCharacterID* characterID);
     void SetActiveGrenade(class UClass* NewClass, bool InEquip, bool IsUnlocked, class UClass*& itemClass_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Reset_Grenade_Preview__UeName = "Reset Grenade Preview";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

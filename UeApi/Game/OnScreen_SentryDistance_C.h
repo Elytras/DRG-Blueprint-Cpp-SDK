@@ -30,7 +30,11 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Set_End_Points(class AActor* Target_0, class AActor* Destination_0);
-    static constexpr const char* Set_End_Points__UeName = "Set End Points";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_End_Points__UeName = "Set End Points";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

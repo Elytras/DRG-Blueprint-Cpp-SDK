@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/HUD_Cookable_HighExplosive", "HUD_Cookable_HighExplosive_C");
     using UI_CircularProgressBar_C = Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_Cookable_HighExplosive_C;
-    static constexpr const char* UberGraphFrame_HUD_Cookable_HighExplosive_C__UeName = "UberGraphFrame";
     UI_CircularProgressBar_C* UI_CircularProgressBar;
     void ExecuteUbergraph_HUD_Cookable_HighExplosive(int EntryPoint);
     void UpdateCookTime(float Progress);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HUD_Cookable_HighExplosive_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

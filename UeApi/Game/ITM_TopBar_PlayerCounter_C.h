@@ -20,11 +20,15 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ClassIcon;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     void ExecuteUbergraph_ITM_TopBar_PlayerCounter(int EntryPoint);
     UE_COSMETIC void Construct();
     void Refresh();
     void GetPlayerClass(class UPlayerCharacterID*& OutPlayerCharacter);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_TopBar

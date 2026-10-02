@@ -21,20 +21,13 @@ class ITM_GrenadeThrow_C : public AThrownGrenadeItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_GrenadeThrow", "ITM_GrenadeThrow_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* CookTicking;
-    static constexpr const char* CookTicking__UeScsNode = "01ed71fecbec424a93c62445191fe371";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "7f4175e4140c344983e7205ec9b8f2eb";
     class UBillboardComponent* Billboard;
-    static constexpr const char* Billboard__UeScsNode = "d2efe926190602458403c56443664274";
     class USceneComponent* EndPoint;
-    static constexpr const char* EndPoint__UeScsNode = "6f70a978ddafba43b3be6f4e705107a4";
     class USplineMeshComponent* SplineMesh;
-    static constexpr const char* SplineMesh__UeScsNode = "8d1e2e48c02df241b64705d010de79cb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6b58a575b9314e478ca6fcf8f8df6db9";
     FVector StartTangent;
     FVector EndTangent;
     FVector EndLocation;
@@ -43,12 +36,23 @@ public:
     void UpdateCookTime(float Time);
     void GrenadeThrown();
     void Set_Is_Visible(bool Visible);
-    static constexpr const char* Set_Is_Visible__UeName = "Set Is Visible";
     void ReceiveBeginPlay();
     void RecieveUnequipped();
     void RecieveEquipped();
     void ReceiveTick(float DeltaSeconds);
     void UpdateSpline(TArray<FVector>& Array, float& DeltaTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* CookTicking__UeScsNode = "01ed71fecbec424a93c62445191fe371";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "7f4175e4140c344983e7205ec9b8f2eb";
+        static constexpr const char* Billboard__UeScsNode = "d2efe926190602458403c56443664274";
+        static constexpr const char* EndPoint__UeScsNode = "6f70a978ddafba43b3be6f4e705107a4";
+        static constexpr const char* SplineMesh__UeScsNode = "8d1e2e48c02df241b64705d010de79cb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6b58a575b9314e478ca6fcf8f8df6db9";
+        static constexpr const char* Set_Is_Visible__UeName = "Set Is Visible";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

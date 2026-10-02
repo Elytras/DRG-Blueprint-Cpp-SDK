@@ -36,11 +36,11 @@ public:
     using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
     using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimRewardMove;
-    class UWidgetAnimation* AnimMoveTick;
-    class UWidgetAnimation* OnHover;
-    class UWidgetAnimation* RewardGained;
-    class UWidgetAnimation* ImageReady;
+    UE_READONLY class UWidgetAnimation* AnimRewardMove;
+    UE_READONLY class UWidgetAnimation* AnimMoveTick;
+    UE_READONLY class UWidgetAnimation* OnHover;
+    UE_READONLY class UWidgetAnimation* RewardGained;
+    UE_READONLY class UWidgetAnimation* ImageReady;
     class UButton* Button_Outer;
     Basic_IconWithOutline_C* ClassIcon;
     class UImage* I_SkinType;

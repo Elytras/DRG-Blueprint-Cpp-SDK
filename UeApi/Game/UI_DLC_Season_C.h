@@ -21,9 +21,9 @@ class UI_DLC_Season_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/UI_DLC_Season", "UI_DLC_Season_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UButton* Button_Outer;
     class UCanvasPanel* CanvasPanel_Outer;
     class UImage* DLCImage;

@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_Axe_C : public Game::WeaponsNTools::Grenades::Loadout
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/Loadout_GrenadeProxy_Axe", "Loadout_GrenadeProxy_Axe_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe

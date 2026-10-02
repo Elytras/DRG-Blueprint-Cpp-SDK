@@ -19,9 +19,8 @@ class WeaponDisplay_MicrowaveGun_AmmoCounter_C : public Game::UI::WeaponDisplays
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/WeaponDisplay_MicrowaveGun_AmmoCounter", "WeaponDisplay_MicrowaveGun_AmmoCounter_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_MicrowaveGun_AmmoCounter_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_MicrowaveGun_AmmoCounter_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* firing;
-    class UWidgetAnimation* AmmoCritical;
+    UE_READONLY class UWidgetAnimation* firing;
+    UE_READONLY class UWidgetAnimation* AmmoCritical;
     class UTextBlock* DATA_AmmoCount;
     class UImage* Image_88;
     class UImage* Line1L;
@@ -36,12 +35,17 @@ public:
     void ExecuteUbergraph_WeaponDisplay_MicrowaveGun_AmmoCounter(int EntryPoint);
     void SetClipCount(int Value);
     void Total_Ammo_left_changed(int amount);
-    static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
     void Max_Ammo_Changed(int amount);
-    static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
     UE_COSMETIC void Construct();
     void SetTotalCount(int Value);
     void UpdateAmount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_MicrowaveGun_AmmoCounter_C__UeName = "UberGraphFrame";
+        static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
+        static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun

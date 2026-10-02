@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardSchematic", "UI_RewardSchematic_C");
     using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CelebrationAnim;
+    UE_READONLY class UWidgetAnimation* CelebrationAnim;
     UI_Forge_Schematic_C* UI_Forge_Schematic;
     class UTextBlock* UnlockedText;
     void ExecuteUbergraph_UI_RewardSchematic(int EntryPoint);

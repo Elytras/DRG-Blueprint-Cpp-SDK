@@ -19,7 +19,6 @@ public:
     UE_CLASS("/Game/UI/Tutorial/W_Tutorial_TerrainScanner", "W_Tutorial_TerrainScanner_C");
     using BP_TutorialTriggerManager_C = Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
     FPointerToUberGraphFrame UberGraphFrame_W_Tutorial_TerrainScanner_C;
-    static constexpr const char* UberGraphFrame_W_Tutorial_TerrainScanner_C__UeName = "UberGraphFrame";
     BP_TutorialTriggerManager_C* Manager;
     bool HasStartedScanning;
     float ScanStartTime;
@@ -27,6 +26,11 @@ public:
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void UpdateText();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_Tutorial_TerrainScanner_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

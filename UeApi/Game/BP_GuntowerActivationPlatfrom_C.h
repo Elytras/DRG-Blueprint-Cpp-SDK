@@ -23,20 +23,13 @@ class BP_GuntowerActivationPlatfrom_C : public AGuntowerActivationPlatform
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/BP_GuntowerActivationPlatfrom", "BP_GuntowerActivationPlatfrom_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Trigger;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent STMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "f09d586443a56b4db51c996343fc5cf8";
     class UAudioComponent* ProgressingSound;
-    static constexpr const char* ProgressingSound__UeScsNode = "99f56db5b4a6a9409db3127128086f54";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "2af908a4a8e8244e8bc0c64e6530950c";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "3a658ce462c9024da02f5da98afa51d3";
     class UWidgetComponent* ProgressScreen;
-    static constexpr const char* ProgressScreen__UeScsNode = "f8eec28461dd3f40be7366a8dfe5750e";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d39ad5e66883de4a8e2d587c9c687a9f";
     TArray<FColor> LightColors;
     class UMaterialInstanceDynamic* DynamicMaterial;
     int OldPlayerCount;
@@ -50,6 +43,17 @@ public:
     void UserConstructionScript();
     void DisableLight();
     void SetLightColor(FColor LightColor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Trigger;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent STMesh";
+        static constexpr const char* PathfinderCollision__UeScsNode = "f09d586443a56b4db51c996343fc5cf8";
+        static constexpr const char* ProgressingSound__UeScsNode = "99f56db5b4a6a9409db3127128086f54";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "2af908a4a8e8244e8bc0c64e6530950c";
+        static constexpr const char* outline__UeScsNode = "3a658ce462c9024da02f5da98afa51d3";
+        static constexpr const char* ProgressScreen__UeScsNode = "f8eec28461dd3f40be7366a8dfe5750e";
+        static constexpr const char* PointLight__UeScsNode = "d39ad5e66883de4a8e2d587c9c687a9f";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent

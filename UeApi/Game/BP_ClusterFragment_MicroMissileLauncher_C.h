@@ -17,18 +17,22 @@ class BP_ClusterFragment_MicroMissileLauncher_C : public Game::WeaponsNTools::Mi
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/BP_ClusterFragment_MicroMissileLauncher", "BP_ClusterFragment_MicroMissileLauncher_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C;
-    static constexpr const char* UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C__UeName = "UberGraphFrame";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "6d49dedb8218c64c9eff857af0b467d8";
     class UNiagaraComponent* NS_MicroMissile_Cluster_Trail;
-    static constexpr const char* NS_MicroMissile_Cluster_Trail__UeScsNode = "edd0bd4ba4354f43aba70c3f4132a34e";
     void ExecuteUbergraph_BP_ClusterFragment_MicroMissileLauncher(int EntryPoint);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds_0);
     void OnInitialized();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C__UeName = "UberGraphFrame";
+        static constexpr const char* RotatingMovement__UeScsNode = "6d49dedb8218c64c9eff857af0b467d8";
+        static constexpr const char* NS_MicroMissile_Cluster_Trail__UeScsNode = "edd0bd4ba4354f43aba70c3f4132a34e";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

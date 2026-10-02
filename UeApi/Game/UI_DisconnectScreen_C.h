@@ -30,10 +30,9 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using UI_PendingRewardScreen_C = Game::UI::Menu_StartScreen::UI_PendingRewardScreen_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_DisconnectScreen_C;
-    static constexpr const char* UberGraphFrame_UI_DisconnectScreen_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* BlinkText;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* BlinkText;
     Basic_ButtonScalable2_C* Basic_ButtonScalable2;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     BlurBackground_C* BlurBackground;
@@ -54,6 +53,11 @@ public:
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void GetBaseFSPGameInstance(class UFSDGameInstance*& AsFSDGame_Instance);
     void IsKickTheReason(TEnum<EDisconnectReason> reason, bool& Kicked);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_DisconnectScreen_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

@@ -19,7 +19,7 @@ class Itm_TreeOfVanity_NodeConnection_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Itm_TreeOfVanity_NodeConnection", "Itm_TreeOfVanity_NodeConnection_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TurnOpaque;
+    UE_READONLY class UWidgetAnimation* TurnOpaque;
     class UImage* Image_Line;
     class UTreeOfVanityItemWidget* Node1;
     class UTreeOfVanityItemWidget* Node2;

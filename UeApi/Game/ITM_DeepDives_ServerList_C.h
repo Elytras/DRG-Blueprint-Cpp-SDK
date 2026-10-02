@@ -38,7 +38,7 @@ public:
     class UTextBlock* TXT_Category_Distance;
     class UTextBlock* TXT_Category_MissionType;
     class UTextBlock* TXT_Category_Team;
-    bool ShowHardDeepDives;
+    UE_READONLY bool ShowHardDeepDives;
     int UpdateIndex;
     TMulticastInlineDelegate<void(FBlueprintSessionResult Session)> OnJoinServer;
     void ExecuteUbergraph_ITM_DeepDives_ServerList(int EntryPoint);

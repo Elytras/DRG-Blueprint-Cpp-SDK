@@ -25,21 +25,13 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/PhaseBomb/BP_PhaseBomb", "BP_PhaseBomb_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* TMP_Caretaker_Phasebomb_TeleportEnd;
-    static constexpr const char* TMP_Caretaker_Phasebomb_TeleportEnd__UeScsNode = "5973f775adb246418f6dfd2429aad72b";
     class UParticleSystemComponent* P_PhaseBomb_SpawnAtLocation;
-    static constexpr const char* P_PhaseBomb_SpawnAtLocation__UeScsNode = "c131560202f0e342b456f9627bacb311";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "e2b19e81112705478dee36bc68bf8cad";
     class UStaticMeshComponent* Mesh_Range;
-    static constexpr const char* Mesh_Range__UeScsNode = "c9601c4ed5d9dd48841bc17d0e6c866a";
     class USkeletalMeshComponent* SK_Phase_Bomb;
-    static constexpr const char* SK_Phase_Bomb__UeScsNode = "18e76ec43088df478a15dbf4d3eaa567";
     class UAudioComponent* BuildupSound;
-    static constexpr const char* BuildupSound__UeScsNode = "219b9eb5ad0a744fa069eef2ea5f2518";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "fa33f9c486b5544e91422e116213ce5d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4680478a94736841aa2c2636735208f2";
     float Timeline_0_SpinRate_1825F49740C5EB02FEA5878F2184A8B0;
     TEnum<ETimelineDirection> Timeline_0__Direction_1825F49740C5EB02FEA5878F2184A8B0;
     class UTimelineComponent* Timeline_0;
@@ -53,6 +45,18 @@ public:
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TMP_Caretaker_Phasebomb_TeleportEnd__UeScsNode = "5973f775adb246418f6dfd2429aad72b";
+        static constexpr const char* P_PhaseBomb_SpawnAtLocation__UeScsNode = "c131560202f0e342b456f9627bacb311";
+        static constexpr const char* PointLight__UeScsNode = "e2b19e81112705478dee36bc68bf8cad";
+        static constexpr const char* Mesh_Range__UeScsNode = "c9601c4ed5d9dd48841bc17d0e6c866a";
+        static constexpr const char* SK_Phase_Bomb__UeScsNode = "18e76ec43088df478a15dbf4d3eaa567";
+        static constexpr const char* BuildupSound__UeScsNode = "219b9eb5ad0a744fa069eef2ea5f2518";
+        static constexpr const char* Damage__UeScsNode = "fa33f9c486b5544e91422e116213ce5d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4680478a94736841aa2c2636735208f2";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::PhaseBomb

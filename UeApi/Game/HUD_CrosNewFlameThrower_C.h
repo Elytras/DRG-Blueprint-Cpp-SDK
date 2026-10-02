@@ -21,7 +21,7 @@ class HUD_CrosNewFlameThrower_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CrosNewFlameThrower", "HUD_CrosNewFlameThrower_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CH_ArrowLeft;
     class UImage* CH_ArrowRight;
     class UImage* CH_LeftBottom;
@@ -31,10 +31,8 @@ public:
     class UImage* Image_1;
     class UImage* RangeIndicator;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     void ExecuteUbergraph_HUD_CrosNewFlameThrower(int EntryPoint);
     void ShowRangeMarker();
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
@@ -42,6 +40,12 @@ public:
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     UE_COSMETIC void Construct();
     void SetData(class AItem* Item);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

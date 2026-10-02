@@ -19,19 +19,23 @@ class BP_PropHunt_BioTank_Small_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_BioTank_Small", "BP_PropHunt_BioTank_Small_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UStaticMeshComponent* SM_Plague_Biotank_Stand;
-    static constexpr const char* SM_Plague_Biotank_Stand__UeScsNode = "b96292b23f76394b80e6d95cc4019278";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "eaf8ab461306064e94113ca0f4a32da3";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "ccc8c81e6fb0cd4db82914c0b1d27840";
     class UNiagaraComponent* NS_Biotank_Bubbles_Small;
-    static constexpr const char* NS_Biotank_Bubbles_Small__UeScsNode = "ec253b9f64f9054e91778fc0a29f082c";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "e66e2c6dfa583f41aae1945764f62381";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* SM_Plague_Biotank_Stand__UeScsNode = "b96292b23f76394b80e6d95cc4019278";
+        static constexpr const char* StaticMesh__UeScsNode = "eaf8ab461306064e94113ca0f4a32da3";
+        static constexpr const char* SkeletalMesh__UeScsNode = "ccc8c81e6fb0cd4db82914c0b1d27840";
+        static constexpr const char* NS_Biotank_Bubbles_Small__UeScsNode = "ec253b9f64f9054e91778fc0a29f082c";
+        static constexpr const char* SpotLight__UeScsNode = "e66e2c6dfa583f41aae1945764f62381";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props

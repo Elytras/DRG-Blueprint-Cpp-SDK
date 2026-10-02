@@ -23,7 +23,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_Container_WindowTextAndIcon_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_MissionAnomalies_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_MissionAnomalies_C__UeName = "UberGraphFrame";
     Lore_Container_WindowTextAndIcon_C* Lore_Container_WindowTextAndIcon;
     Lore_Container_WindowTextAndIcon_C* Lore_Container_WindowTextAndIcon_C_0;
     Lore_Container_WindowTextAndIcon_C* Lore_Container_WindowTextAndIcon_C_1;
@@ -34,6 +33,11 @@ public:
     void ExecuteUbergraph_LoreScreen_MissionAnomalies(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_MissionAnomalies_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

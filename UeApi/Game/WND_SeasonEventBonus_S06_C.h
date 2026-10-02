@@ -25,8 +25,7 @@ public:
     using ITM_FragmentedBonusWidgetBase_C = Game::UI::Menu_Seasons::ITM_FragmentedBonusWidgetBase_C;
     using ITM_Season06EventBonus_C = Game::UI::Menu_Seasons::ITM_Season06EventBonus_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_SeasonEventBonus_S06_C;
-    static constexpr const char* UberGraphFrame_WND_SeasonEventBonus_S06_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* FlipRows;
+    UE_READONLY class UWidgetAnimation* FlipRows;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UCanvasPanel* Canvas_BackRow;
     class UCanvasPanel* Canvas_FrontRow;
@@ -50,7 +49,6 @@ public:
     int TempScrip;
     bool IsAnimating;
     float Percent_to_Next_Scrip;
-    static constexpr const char* Percent_to_Next_Scrip__UeName = "Percent to Next Scrip";
     TArray<ITM_FragmentedBonusWidgetBase_C*> BonusWidgets;
     class UMissionStat* MissionStat;
     int LastClaimedScripIndex;
@@ -63,6 +61,12 @@ public:
     void OnBonusClaimed();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WND_SeasonEventBonus_S06_C__UeName = "UberGraphFrame";
+        static constexpr const char* Percent_to_Next_Scrip__UeName = "Percent to Next Scrip";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

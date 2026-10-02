@@ -28,9 +28,9 @@ public:
     using TOOLTIP_Season_EventBonus_C = Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_C;
     using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ScaleDown;
-    class UWidgetAnimation* EnterCheckmark;
-    class UWidgetAnimation* Unlock;
+    UE_READONLY class UWidgetAnimation* ScaleDown;
+    UE_READONLY class UWidgetAnimation* EnterCheckmark;
+    UE_READONLY class UWidgetAnimation* Unlock;
     class UButton* Button_Selector;
     class UCanvasPanel* CanvasPanel_Outer;
     class UImage* Image_Background;

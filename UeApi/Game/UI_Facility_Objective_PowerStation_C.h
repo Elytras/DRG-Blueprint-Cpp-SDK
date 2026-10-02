@@ -25,8 +25,8 @@ public:
     using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimArrows;
-    class UWidgetAnimation* AnimHackingStopped;
+    UE_READONLY class UWidgetAnimation* AnimArrows;
+    UE_READONLY class UWidgetAnimation* AnimHackingStopped;
     class UCanvasPanel* Canvas_HackingPod;
     class UCanvasPanel* Canvas_Root;
     UI_ImageTinted_C* Img_Arrow_Left;
@@ -64,7 +64,11 @@ public:
     void Refresh();
     void TryGetGenerator();
     void Set_Data(bool InDestroyed, bool InConnected, bool InHasBeenConnected, bool InHackingPodCalled);
-    static constexpr const char* Set_Data__UeName = "Set Data";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Data__UeName = "Set Data";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::UI

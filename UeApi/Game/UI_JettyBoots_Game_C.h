@@ -52,7 +52,6 @@ public:
     class USoundCue* AudioPlayerDied;
     class USoundCue* AudioCompleted;
     class USceneComponent* Audio_Scene_Component;
-    static constexpr const char* Audio_Scene_Component__UeName = "Audio Scene Component";
     class APlayerCharacter* PlayerCharacter;
     int Seed;
     FJettyBootsReplay LastReplay;
@@ -95,6 +94,11 @@ public:
     void ReceiveReplay(FJettyBootsReplay InReplay);
     void UpdateReplaying();
     void InSafeZone(bool& OutValue);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Audio_Scene_Component__UeName = "Audio Scene Component";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots

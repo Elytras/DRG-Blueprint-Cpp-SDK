@@ -18,11 +18,15 @@ class BP_BonePile_02_C : public AActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_BonePile_02", "BP_BonePile_02_C");
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "9a23b4fa3f00c94cb83083c4d25d5493";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "e93360e48eb9354bbabb43dda8883d6d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4f86bd5b67049742a0c1e66bed337f6c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "9a23b4fa3f00c94cb83083c4d25d5493";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "e93360e48eb9354bbabb43dda8883d6d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4f86bd5b67049742a0c1e66bed337f6c";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers

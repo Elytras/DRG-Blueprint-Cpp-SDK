@@ -19,10 +19,8 @@ class BP_FSDCameraManager_C : public AFSDPlayerCameraManager
 {
 public:
     UE_CLASS("/Game/Character/Camera/BP_FSDCameraManager", "BP_FSDCameraManager_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* PhysicalSphere;
-    static constexpr const char* PhysicalSphere__UeScsNode = "816d29c3731f214a87ddfc0deeebdc2c";
     bool SessionStarted;
     float MaxDistance;
     TMulticastInlineDelegate<void()> HideHUDForPhotography;
@@ -38,7 +36,6 @@ public:
     void LoaderStop();
     void LoaderStart(class ULevelSequence* LoaderLevelSequence);
     void Return_Camera();
-    static constexpr const char* Return_Camera__UeName = "Return Camera";
     void TogglePhotographyMode(bool Active);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
@@ -52,6 +49,13 @@ public:
     UE_PURE float SmoothReturnVelocity(FVector New_Camera_Location);
     void ChangeSpeed(float MaxSpeed_0);
     void ChangeMaxDistance(float MaxDistance_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* PhysicalSphere__UeScsNode = "816d29c3731f214a87ddfc0deeebdc2c";
+        static constexpr const char* Return_Camera__UeName = "Return Camera";
+    };
 };
 
 }}}   // namespace Game::Character::Camera

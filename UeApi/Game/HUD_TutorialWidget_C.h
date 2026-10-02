@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/Tutorial/HUD_TutorialWidget", "HUD_TutorialWidget_C");
     using ITM_BasicTutorialWindow_C = Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Exit;
+    UE_READONLY class UWidgetAnimation* Exit;
     ITM_BasicTutorialWindow_C* ITM_BasicTutorialWindow;
     float AnimationSpeed;
     FText DefaultHeader;

@@ -18,18 +18,22 @@ class PRJ_FlameWall_C : public AFlameWallProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/Projectile/PRJ_FlameWall", "PRJ_FlameWall_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "92d63ed8187fc446a18f307faf023546";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "0294557f9e5fe34bad0173efd9739b22";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c7c94760dd16af49a8973689c31fea12";
     float Offset;
     void ExecuteUbergraph_PRJ_FlameWall(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* StaticMesh__UeScsNode = "92d63ed8187fc446a18f307faf023546";
+        static constexpr const char* ParticleComponent__UeScsNode = "0294557f9e5fe34bad0173efd9739b22";
+        static constexpr const char* Damage__UeScsNode = "c7c94760dd16af49a8973689c31fea12";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::FlameThrower::Projectile

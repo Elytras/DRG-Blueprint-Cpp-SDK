@@ -17,14 +17,18 @@ class BP_PropHunt_Lantern_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season06/BP_PropHunt_Lantern", "BP_PropHunt_Lantern_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "853ea79e67d0cf4b80a584850cbd3e80";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     void ExecuteUbergraph_BP_PropHunt_Lantern(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* StaticMesh__UeScsNode = "853ea79e67d0cf4b80a584850cbd3e80";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season06

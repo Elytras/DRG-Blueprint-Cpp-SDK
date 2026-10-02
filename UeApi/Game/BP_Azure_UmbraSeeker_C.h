@@ -30,39 +30,43 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/UmbraSeeker/BP_Azure_UmbraSeeker", "BP_Azure_UmbraSeeker_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule3;
-    static constexpr const char* Capsule3__UeScsNode = "b99c06bc7838264ca9f96d41e46ff84d";
     class UCapsuleComponent* Capsule2;
-    static constexpr const char* Capsule2__UeScsNode = "7b70686b4eb99346b44517b8fbc601c9";
     class UCapsuleComponent* Capsule1;
-    static constexpr const char* Capsule1__UeScsNode = "4731a43e515497468ce23addff51acb6";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "54d995db155d3846b0dbf4b156e1fec5";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "3548f09b5279b747a06007e6282e35c8";
     class USkeletalMeshComponent* SK_Biome_AzureWeald_Flower_Godetia;
-    static constexpr const char* SK_Biome_AzureWeald_Flower_Godetia__UeScsNode = "939c8a04a47211419f3bc31458b7fef6";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "034a097356a235418e7d46019953b71e";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "5436cca89f06d44fa4a4dccce5185002";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "4c7a8d3037455a4daa21c9982a601305";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "80e438f22f88ed4dbb4d69b974b3b50a";
     class UAudioComponent* AzureFlowerIdle_Cue;
-    static constexpr const char* AzureFlowerIdle_Cue__UeScsNode = "9d37d87f8882f348898a402adbe19ac8";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "bf7f30842abea04b9eb4b0fc95a428fb";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "88effa977abcfe4298ef75acb15d9a33";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "e47787b9f37185488b75db9ca4f8b31b";
     class UStaticMeshComponent* SM_Biome_AzureWeald_Flower_01;
-    static constexpr const char* SM_Biome_AzureWeald_Flower_01__UeScsNode = "3ba8c345ffd1cd41a6058d95b3d2b084";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
     void ExecuteUbergraph_BP_Azure_UmbraSeeker(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Capsule3__UeScsNode = "b99c06bc7838264ca9f96d41e46ff84d";
+        static constexpr const char* Capsule2__UeScsNode = "7b70686b4eb99346b44517b8fbc601c9";
+        static constexpr const char* Capsule1__UeScsNode = "4731a43e515497468ce23addff51acb6";
+        static constexpr const char* Sphere__UeScsNode = "54d995db155d3846b0dbf4b156e1fec5";
+        static constexpr const char* Capsule__UeScsNode = "3548f09b5279b747a06007e6282e35c8";
+        static constexpr const char* SK_Biome_AzureWeald_Flower_Godetia__UeScsNode = "939c8a04a47211419f3bc31458b7fef6";
+        static constexpr const char* TerrainDetect__UeScsNode = "034a097356a235418e7d46019953b71e";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "5436cca89f06d44fa4a4dccce5185002";
+        static constexpr const char* PathfinderCollision__UeScsNode = "4c7a8d3037455a4daa21c9982a601305";
+        static constexpr const char* ParticleSystem__UeScsNode = "80e438f22f88ed4dbb4d69b974b3b50a";
+        static constexpr const char* AzureFlowerIdle_Cue__UeScsNode = "9d37d87f8882f348898a402adbe19ac8";
+        static constexpr const char* PointLight__UeScsNode = "bf7f30842abea04b9eb4b0fc95a428fb";
+        static constexpr const char* SimpleHealth__UeScsNode = "88effa977abcfe4298ef75acb15d9a33";
+        static constexpr const char* terrainPlacement__UeScsNode = "e47787b9f37185488b75db9ca4f8b31b";
+        static constexpr const char* SM_Biome_AzureWeald_Flower_01__UeScsNode = "3ba8c345ffd1cd41a6058d95b3d2b084";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::UmbraSeeker

@@ -32,8 +32,8 @@ public:
     using UI_Bar_PlayerRankWarning_C = Game::GameElements::Bar::UI::UI_Bar_PlayerRankWarning_C;
     using UI_Bar_SupporterLabel_C = Game::GameElements::Bar::UI::UI_Bar_SupporterLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UBorder* Border_0;
     class UBorder* Border_101;
     class UButton* BuyButton;
@@ -59,7 +59,6 @@ public:
     TMulticastInlineDelegate<void()> OnDrinkableTypeChanged;
     void ExecuteUbergraph_UI_Bar_OrderMenu_Item(int EntryPoint);
     void Set_Drinkable_Visuals();
-    static constexpr const char* Set_Drinkable_Visuals__UeName = "Set Drinkable Visuals";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__UI_Bar_OrderMenu_Item_OrderSpecialEdition_K2Node_ComponentBoundEvent_1_OnCheckBoxComponentStateChanged__DelegateSignature(bool bIsChecked);
     UE_COSMETIC void Construct();
@@ -83,6 +82,11 @@ public:
     UE_PURE bool AreBeersFreee();
     UE_PURE class UDrinkableDataAsset* GetSelectedDrinkableType();
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Drinkable_Visuals__UeName = "Set Drinkable Visuals";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

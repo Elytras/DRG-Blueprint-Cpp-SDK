@@ -19,13 +19,17 @@ class BP_BoneyardLevelCarversBase_C : public Game::LevelElements::RoomObjects::H
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_BoneyardLevelCarversBase", "BP_BoneyardLevelCarversBase_C");
     class UStaticMeshComponent* PreviewMesh;
-    static constexpr const char* PreviewMesh__UeScsNode = "60b82a7882e88842a94178b9b2d35f23";
     bool DebugDrawRocks;
     TArray<class UTerrainMaterial*> EligibleMaterialsRockFormation;
     void UserConstructionScript();
     void AddRockFormation(FTransform RelativeTransform, float TraceDistance, float RotationRandomAngle, float OffsetAlongSurface);
     void RepositionToMiddle(TArray<class UStaticMesh*>& InStaticMeshes, TArray<float>& InHeights, TArray<float>& InTraceThresholds);
     int GetDistanceIndex(float InputValue, TArray<float>& ThresholdLevels, bool& InRange);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PreviewMesh__UeScsNode = "60b82a7882e88842a94178b9b2d35f23";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers

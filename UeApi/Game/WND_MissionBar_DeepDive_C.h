@@ -31,7 +31,7 @@ public:
     using ITM_Gear_Bar_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;
     using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;

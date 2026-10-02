@@ -13,6 +13,11 @@ class CP_Halloween_LastYearsHorrors_Oldhats_2025_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Halloween_LastYearsHorrors_Oldhats_2025", "CP_Halloween_LastYearsHorrors_Oldhats_2025_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_0;/Script/FSD.VanityReward CampaignMission_0:VanityReward_0;/Script/FSD.VanityReward CampaignMission_0:VanityReward_1;/Script/FSD.VanityReward CampaignMission_1:VanityReward_0;/Script/FSD.VanityReward CampaignMission_1:VanityReward_1;/Script/FSD.VanityReward CampaignMission_2:VanityReward_0;/Script/FSD.VanityReward CampaignMission_2:VanityReward_1;/Script/FSD.VanityReward CampaignMission_3:VanityReward_0;/Script/FSD.VanityReward CampaignMission_3:VanityReward_1;/Script/FSD.VanityReward CampaignMission_4:VanityReward_3";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

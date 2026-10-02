@@ -10,6 +10,8 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "DeveloperSettings.h"
 #include "Engine.h"
 
+struct FHitResult;
+
 class UBillboardComponent;
 class UPrimitiveComponent;
 
@@ -74,6 +76,14 @@ struct FChaosPhysicsCollisionInfo
 
     FChaosPhysicsCollisionInfo() = default;
     FChaosPhysicsCollisionInfo(class UPrimitiveComponent* Component, class UPrimitiveComponent* OtherComponent, FVector Location, FVector Normal, FVector AccumulatedImpulse, FVector Velocity, FVector OtherVelocity, FVector AngularVelocity, FVector OtherAngularVelocity, float Mass, float OtherMass) {}
+
+    // UChaosSolverEngineBlueprintLibrary::ConvertPhysicsCollisionToHitResult (ChaosSolverEngine.h)
+    FHitResult ConvertPhysicsCollisionToHitResult() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ConvertPhysicsCollisionToHitResult__UeForward = "UChaosSolverEngineBlueprintLibrary::ConvertPhysicsCollisionToHitResult";
+    };
 };
 
 class UChaosDebugDrawComponent : public UActorComponent
@@ -139,10 +149,14 @@ public:
     FChaosDebugSubstepControl ChaosDebugSubstepControl;
     class UBillboardComponent* SpriteComponent;
     class UChaosGameplayEventDispatcher* GameplayEventDispatcherComponent;
-    static constexpr const char* GameplayEventDispatcherComponent__UeSubobject = "GameplayEventDispatcher /Script/ChaosSolverEngine.ChaosGameplayEventDispatcher";
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void SetAsCurrentWorldSolver();
     void SetSolverActive(bool bActive);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GameplayEventDispatcherComponent__UeSubobject = "GameplayEventDispatcher /Script/ChaosSolverEngine.ChaosGameplayEventDispatcher";
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UChaosSolverSettings : public UDeveloperSettings

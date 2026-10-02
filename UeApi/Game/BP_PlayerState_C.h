@@ -21,12 +21,9 @@ class BP_PlayerState_C : public AFSDPlayerState
 {
 public:
     UE_CLASS("/Game/Game/BP_PlayerState", "BP_PlayerState_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPlayerResourceComponent* PlayerResource;
-    static constexpr const char* PlayerResource__UeScsNode = "57359881ff221b42945b9df0fb186bdf";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "feeab3fc5921184f8331f0780f276b9d";
     bool LateJoinFinished;
     bool TestDropThing;
     class UClass* PodSpawnClass;
@@ -46,6 +43,13 @@ public:
     void GetRessuplySpawnClass(class UClass*& PodSpawnClass_0);
     void GetRessupyBeaconClass(class UClass*& PodSpawnClass_0);
     UE_PURE TArray<FCreditsReward> GetDeepDiveCreditsReward(int StagesCompleted, int goldCollected);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
+        static constexpr const char* PlayerResource__UeScsNode = "57359881ff221b42945b9df0fb186bdf";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "feeab3fc5921184f8331f0780f276b9d";
+    };
 };
 
 }}   // namespace Game::Game

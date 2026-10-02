@@ -7,6 +7,18 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "UeMeta.h"
 #include "CoreUObject.h"
 
+struct FEventReply;
+struct FInputEvent;
+struct FKey;
+struct FKeyEvent;
+struct FVector2D;
+enum class ESlateGesture : uint8;
+
+class UMaterialInterface;
+class UObject;
+class UTexture2D;
+class UWidget;
+
 enum class EButtonClickMethod : uint8
 {
     DownAndUp              = 0,
@@ -354,14 +366,98 @@ enum class EWidgetClipping : uint8
 
 struct FInputEvent
 {
+
+    // UKismetInputLibrary::InputEvent_IsAltDown (Engine.h)
+    bool InputEvent_IsAltDown() const;
+    // UKismetInputLibrary::InputEvent_IsCommandDown (Engine.h)
+    bool InputEvent_IsCommandDown() const;
+    // UKismetInputLibrary::InputEvent_IsControlDown (Engine.h)
+    bool InputEvent_IsControlDown() const;
+    // UKismetInputLibrary::InputEvent_IsLeftAltDown (Engine.h)
+    bool InputEvent_IsLeftAltDown() const;
+    // UKismetInputLibrary::InputEvent_IsLeftCommandDown (Engine.h)
+    bool InputEvent_IsLeftCommandDown() const;
+    // UKismetInputLibrary::InputEvent_IsLeftControlDown (Engine.h)
+    bool InputEvent_IsLeftControlDown() const;
+    // UKismetInputLibrary::InputEvent_IsLeftShiftDown (Engine.h)
+    bool InputEvent_IsLeftShiftDown() const;
+    // UKismetInputLibrary::InputEvent_IsRepeat (Engine.h)
+    bool InputEvent_IsRepeat() const;
+    // UKismetInputLibrary::InputEvent_IsRightAltDown (Engine.h)
+    bool InputEvent_IsRightAltDown() const;
+    // UKismetInputLibrary::InputEvent_IsRightCommandDown (Engine.h)
+    bool InputEvent_IsRightCommandDown() const;
+    // UKismetInputLibrary::InputEvent_IsRightControlDown (Engine.h)
+    bool InputEvent_IsRightControlDown() const;
+    // UKismetInputLibrary::InputEvent_IsRightShiftDown (Engine.h)
+    bool InputEvent_IsRightShiftDown() const;
+    // UKismetInputLibrary::InputEvent_IsShiftDown (Engine.h)
+    bool InputEvent_IsShiftDown() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InputEvent_IsAltDown__UeForward = "UKismetInputLibrary::InputEvent_IsAltDown";
+        static constexpr const char* InputEvent_IsCommandDown__UeForward = "UKismetInputLibrary::InputEvent_IsCommandDown";
+        static constexpr const char* InputEvent_IsControlDown__UeForward = "UKismetInputLibrary::InputEvent_IsControlDown";
+        static constexpr const char* InputEvent_IsLeftAltDown__UeForward = "UKismetInputLibrary::InputEvent_IsLeftAltDown";
+        static constexpr const char* InputEvent_IsLeftCommandDown__UeForward = "UKismetInputLibrary::InputEvent_IsLeftCommandDown";
+        static constexpr const char* InputEvent_IsLeftControlDown__UeForward = "UKismetInputLibrary::InputEvent_IsLeftControlDown";
+        static constexpr const char* InputEvent_IsLeftShiftDown__UeForward = "UKismetInputLibrary::InputEvent_IsLeftShiftDown";
+        static constexpr const char* InputEvent_IsRepeat__UeForward = "UKismetInputLibrary::InputEvent_IsRepeat";
+        static constexpr const char* InputEvent_IsRightAltDown__UeForward = "UKismetInputLibrary::InputEvent_IsRightAltDown";
+        static constexpr const char* InputEvent_IsRightCommandDown__UeForward = "UKismetInputLibrary::InputEvent_IsRightCommandDown";
+        static constexpr const char* InputEvent_IsRightControlDown__UeForward = "UKismetInputLibrary::InputEvent_IsRightControlDown";
+        static constexpr const char* InputEvent_IsRightShiftDown__UeForward = "UKismetInputLibrary::InputEvent_IsRightShiftDown";
+        static constexpr const char* InputEvent_IsShiftDown__UeForward = "UKismetInputLibrary::InputEvent_IsShiftDown";
+    };
 };
 
 struct FKeyEvent : public FInputEvent
 {
+
+    // UWidgetBlueprintLibrary::GetInputEventFromKeyEvent (UMG.h)
+    FInputEvent GetInputEventFromKeyEvent() const;
+    // UKismetInputLibrary::GetKey (Engine.h)
+    FKey GetKey() const;
+    // UKismetInputLibrary::GetUserIndex (Engine.h)
+    int GetUserIndex() const;
+    // UInputFunctionLibrary::IsKeyEventAction (FSD.h)
+    bool IsKeyEventAction(FName ActionName, bool IgnoreCustomBindings) const;
+    // UInputFunctionLibrary::IsKeyEventActionAny (FSD.h)
+    bool IsKeyEventActionAny(TArray<FName> ActionNames, bool IgnoreCustomBindings) const;
+    // UKismetInputLibrary::Key_GetNavigationActionFromKey (Engine.h)
+    TEnum<EUINavigationAction> Key_GetNavigationActionFromKey() const;
+    // UKismetInputLibrary::Key_GetNavigationDirectionFromKey (Engine.h)
+    TEnum<EUINavigation> Key_GetNavigationDirectionFromKey() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetInputEventFromKeyEvent__UeForward = "UWidgetBlueprintLibrary::GetInputEventFromKeyEvent";
+        static constexpr const char* GetKey__UeForward = "UKismetInputLibrary::GetKey";
+        static constexpr const char* GetUserIndex__UeForward = "UKismetInputLibrary::GetUserIndex";
+        static constexpr const char* IsKeyEventAction__UeForward = "UInputFunctionLibrary::IsKeyEventAction";
+        static constexpr const char* IsKeyEventActionAny__UeForward = "UInputFunctionLibrary::IsKeyEventActionAny";
+        static constexpr const char* Key_GetNavigationActionFromKey__UeForward = "UKismetInputLibrary::Key_GetNavigationActionFromKey";
+        static constexpr const char* Key_GetNavigationDirectionFromKey__UeForward = "UKismetInputLibrary::Key_GetNavigationDirectionFromKey";
+    };
 };
 
 struct FAnalogInputEvent : public FKeyEvent
 {
+
+    // UKismetInputLibrary::GetAnalogValue (Engine.h)
+    float GetAnalogValue() const;
+    // UWidgetBlueprintLibrary::GetKeyEventFromAnalogInputEvent (UMG.h)
+    FKeyEvent GetKeyEventFromAnalogInputEvent() const;
+    // UKismetInputLibrary::Key_GetNavigationDirectionFromAnalog (Engine.h)
+    TEnum<EUINavigation> Key_GetNavigationDirectionFromAnalog() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetAnalogValue__UeForward = "UKismetInputLibrary::GetAnalogValue";
+        static constexpr const char* GetKeyEventFromAnalogInputEvent__UeForward = "UWidgetBlueprintLibrary::GetKeyEventFromAnalogInputEvent";
+        static constexpr const char* Key_GetNavigationDirectionFromAnalog__UeForward = "UKismetInputLibrary::Key_GetNavigationDirectionFromAnalog";
+    };
 };
 
 struct FSlateWidgetStyle
@@ -405,6 +501,20 @@ struct FSlateBrush
 
     FSlateBrush() = default;
     FSlateBrush(FVector2D ImageSize, FMargin Margin, FSlateColor TintColor, class UObject* ResourceObject, FName ResourceName, FBox2D UVRegion, ESlateBrushDrawType DrawAs, ESlateBrushTileType Tiling, ESlateBrushMirrorType Mirroring, ESlateBrushImageType ImageType, bool bIsDynamicallyLoaded, bool bHasUObject) {}
+
+    // UWidgetBlueprintLibrary::GetBrushResource (UMG.h)
+    class UObject* GetBrushResource() const;
+    // UWidgetBlueprintLibrary::GetBrushResourceAsMaterial (UMG.h)
+    class UMaterialInterface* GetBrushResourceAsMaterial() const;
+    // UWidgetBlueprintLibrary::GetBrushResourceAsTexture2D (UMG.h)
+    class UTexture2D* GetBrushResourceAsTexture2D() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetBrushResource__UeForward = "UWidgetBlueprintLibrary::GetBrushResource";
+        static constexpr const char* GetBrushResourceAsMaterial__UeForward = "UWidgetBlueprintLibrary::GetBrushResourceAsMaterial";
+        static constexpr const char* GetBrushResourceAsTexture2D__UeForward = "UWidgetBlueprintLibrary::GetBrushResourceAsTexture2D";
+    };
 };
 
 struct FSlateSound
@@ -433,6 +543,14 @@ struct FCaptureLostEvent
 
 struct FCharacterEvent : public FInputEvent
 {
+
+    // UWidgetBlueprintLibrary::GetInputEventFromCharacterEvent (UMG.h)
+    FInputEvent GetInputEventFromCharacterEvent() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetInputEventFromCharacterEvent__UeForward = "UWidgetBlueprintLibrary::GetInputEventFromCharacterEvent";
+    };
 };
 
 struct FCheckBoxStyle : public FSlateWidgetStyle
@@ -568,6 +686,17 @@ struct FSlateFontInfo
 
     FSlateFontInfo() = default;
     FSlateFontInfo(class UObject* FontObject, class UObject* FontMaterial, FFontOutlineSettings OutlineSettings, FName TypefaceFontName, int Size, int LetterSpacing) {}
+
+    // UFSDWidgetBlueprintLibrary::GetFontBaseline (FSD.h)
+    float GetFontBaseline() const;
+    // UFSDWidgetBlueprintLibrary::GetFontMaxHeight (FSD.h)
+    float GetFontMaxHeight() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetFontBaseline__UeForward = "UFSDWidgetBlueprintLibrary::GetFontBaseline";
+        static constexpr const char* GetFontMaxHeight__UeForward = "UFSDWidgetBlueprintLibrary::GetFontMaxHeight";
+    };
 };
 
 struct FScrollBarStyle : public FSlateWidgetStyle
@@ -621,6 +750,41 @@ struct FFocusEvent
 
 struct FGeometry
 {
+
+    // USlateBlueprintLibrary::AbsoluteToLocal (UMG.h)
+    FVector2D AbsoluteToLocal(FVector2D AbsoluteCoordinate) const;
+    // USlateBlueprintLibrary::GetAbsoluteSize (UMG.h)
+    FVector2D GetAbsoluteSize() const;
+    // USlateBlueprintLibrary::GetLocalSize (UMG.h)
+    FVector2D GetLocalSize() const;
+    // USlateBlueprintLibrary::GetLocalTopLeft (UMG.h)
+    FVector2D GetLocalTopLeft() const;
+    // USlateBlueprintLibrary::IsUnderLocation (UMG.h)
+    bool IsUnderLocation(const FVector2D& AbsoluteCoordinate) const;
+    // USlateBlueprintLibrary::LocalToAbsolute (UMG.h)
+    FVector2D LocalToAbsolute(FVector2D LocalCoordinate) const;
+    // USlateBlueprintLibrary::TransformScalarAbsoluteToLocal (UMG.h)
+    float TransformScalarAbsoluteToLocal(float AbsoluteScalar) const;
+    // USlateBlueprintLibrary::TransformScalarLocalToAbsolute (UMG.h)
+    float TransformScalarLocalToAbsolute(float LocalScalar) const;
+    // USlateBlueprintLibrary::TransformVectorAbsoluteToLocal (UMG.h)
+    FVector2D TransformVectorAbsoluteToLocal(FVector2D AbsoluteVector) const;
+    // USlateBlueprintLibrary::TransformVectorLocalToAbsolute (UMG.h)
+    FVector2D TransformVectorLocalToAbsolute(FVector2D LocalVector) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AbsoluteToLocal__UeForward = "USlateBlueprintLibrary::AbsoluteToLocal";
+        static constexpr const char* GetAbsoluteSize__UeForward = "USlateBlueprintLibrary::GetAbsoluteSize";
+        static constexpr const char* GetLocalSize__UeForward = "USlateBlueprintLibrary::GetLocalSize";
+        static constexpr const char* GetLocalTopLeft__UeForward = "USlateBlueprintLibrary::GetLocalTopLeft";
+        static constexpr const char* IsUnderLocation__UeForward = "USlateBlueprintLibrary::IsUnderLocation";
+        static constexpr const char* LocalToAbsolute__UeForward = "USlateBlueprintLibrary::LocalToAbsolute";
+        static constexpr const char* TransformScalarAbsoluteToLocal__UeForward = "USlateBlueprintLibrary::TransformScalarAbsoluteToLocal";
+        static constexpr const char* TransformScalarLocalToAbsolute__UeForward = "USlateBlueprintLibrary::TransformScalarLocalToAbsolute";
+        static constexpr const char* TransformVectorAbsoluteToLocal__UeForward = "USlateBlueprintLibrary::TransformVectorAbsoluteToLocal";
+        static constexpr const char* TransformVectorLocalToAbsolute__UeForward = "USlateBlueprintLibrary::TransformVectorLocalToAbsolute";
+    };
 };
 
 struct FTableColumnHeaderStyle : public FSlateWidgetStyle
@@ -689,10 +853,68 @@ struct FMotionEvent : public FInputEvent
 
 struct FNavigationEvent : public FInputEvent
 {
+
+    // UWidgetBlueprintLibrary::GetInputEventFromNavigationEvent (UMG.h)
+    FInputEvent GetInputEventFromNavigationEvent() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetInputEventFromNavigationEvent__UeForward = "UWidgetBlueprintLibrary::GetInputEventFromNavigationEvent";
+    };
 };
 
 struct FPointerEvent : public FInputEvent
 {
+
+    // UWidgetBlueprintLibrary::DetectDragIfPressed (UMG.h)
+    FEventReply DetectDragIfPressed(class UWidget* WidgetDetectingDrag, FKey DragKey) const;
+    // UWidgetBlueprintLibrary::GetInputEventFromPointerEvent (UMG.h)
+    FInputEvent GetInputEventFromPointerEvent() const;
+    // UInputFunctionLibrary::IsMouseEventAction (FSD.h)
+    bool IsMouseEventAction(const FName& ActionName, bool IgnoreCustomBindings) const;
+    // UKismetInputLibrary::PointerEvent_GetCursorDelta (Engine.h)
+    FVector2D PointerEvent_GetCursorDelta() const;
+    // UKismetInputLibrary::PointerEvent_GetEffectingButton (Engine.h)
+    FKey PointerEvent_GetEffectingButton() const;
+    // UKismetInputLibrary::PointerEvent_GetGestureDelta (Engine.h)
+    FVector2D PointerEvent_GetGestureDelta() const;
+    // UKismetInputLibrary::PointerEvent_GetGestureType (Engine.h)
+    TEnum<ESlateGesture> PointerEvent_GetGestureType() const;
+    // UKismetInputLibrary::PointerEvent_GetLastScreenSpacePosition (Engine.h)
+    FVector2D PointerEvent_GetLastScreenSpacePosition() const;
+    // UKismetInputLibrary::PointerEvent_GetPointerIndex (Engine.h)
+    int PointerEvent_GetPointerIndex() const;
+    // UKismetInputLibrary::PointerEvent_GetScreenSpacePosition (Engine.h)
+    FVector2D PointerEvent_GetScreenSpacePosition() const;
+    // UKismetInputLibrary::PointerEvent_GetTouchpadIndex (Engine.h)
+    int PointerEvent_GetTouchpadIndex() const;
+    // UKismetInputLibrary::PointerEvent_GetUserIndex (Engine.h)
+    int PointerEvent_GetUserIndex() const;
+    // UKismetInputLibrary::PointerEvent_GetWheelDelta (Engine.h)
+    float PointerEvent_GetWheelDelta() const;
+    // UKismetInputLibrary::PointerEvent_IsMouseButtonDown (Engine.h)
+    bool PointerEvent_IsMouseButtonDown(FKey MouseButton) const;
+    // UKismetInputLibrary::PointerEvent_IsTouchEvent (Engine.h)
+    bool PointerEvent_IsTouchEvent() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DetectDragIfPressed__UeForward = "UWidgetBlueprintLibrary::DetectDragIfPressed";
+        static constexpr const char* GetInputEventFromPointerEvent__UeForward = "UWidgetBlueprintLibrary::GetInputEventFromPointerEvent";
+        static constexpr const char* IsMouseEventAction__UeForward = "UInputFunctionLibrary::IsMouseEventAction";
+        static constexpr const char* PointerEvent_GetCursorDelta__UeForward = "UKismetInputLibrary::PointerEvent_GetCursorDelta";
+        static constexpr const char* PointerEvent_GetEffectingButton__UeForward = "UKismetInputLibrary::PointerEvent_GetEffectingButton";
+        static constexpr const char* PointerEvent_GetGestureDelta__UeForward = "UKismetInputLibrary::PointerEvent_GetGestureDelta";
+        static constexpr const char* PointerEvent_GetGestureType__UeForward = "UKismetInputLibrary::PointerEvent_GetGestureType";
+        static constexpr const char* PointerEvent_GetLastScreenSpacePosition__UeForward = "UKismetInputLibrary::PointerEvent_GetLastScreenSpacePosition";
+        static constexpr const char* PointerEvent_GetPointerIndex__UeForward = "UKismetInputLibrary::PointerEvent_GetPointerIndex";
+        static constexpr const char* PointerEvent_GetScreenSpacePosition__UeForward = "UKismetInputLibrary::PointerEvent_GetScreenSpacePosition";
+        static constexpr const char* PointerEvent_GetTouchpadIndex__UeForward = "UKismetInputLibrary::PointerEvent_GetTouchpadIndex";
+        static constexpr const char* PointerEvent_GetUserIndex__UeForward = "UKismetInputLibrary::PointerEvent_GetUserIndex";
+        static constexpr const char* PointerEvent_GetWheelDelta__UeForward = "UKismetInputLibrary::PointerEvent_GetWheelDelta";
+        static constexpr const char* PointerEvent_IsMouseButtonDown__UeForward = "UKismetInputLibrary::PointerEvent_IsMouseButtonDown";
+        static constexpr const char* PointerEvent_IsTouchEvent__UeForward = "UKismetInputLibrary::PointerEvent_IsTouchEvent";
+    };
 };
 
 struct FProgressBarStyle : public FSlateWidgetStyle

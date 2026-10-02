@@ -17,9 +17,13 @@ class PRW_PlatformGun_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/PlatformGun/PRW_PlatformGun", "PRW_PlatformGun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "848105dfcb7e67418b895a86febf2be4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f09d61eb81c7714f8d0f5bf3e52e6529";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "848105dfcb7e67418b895a86febf2be4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f09d61eb81c7714f8d0f5bf3e52e6529";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun

@@ -26,7 +26,6 @@ public:
     using Lore_Container_Text_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_C;
     using Lore_Container_WindowTextAndIcon_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Combat_Weakpoints_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Combat_Weakpoints_C__UeName = "UberGraphFrame";
     Basic_Window_CutCorner_C* Basic_Window_CutCorner;
     class UImage* Image_Creature;
     class UImage* Line_Corner;
@@ -41,6 +40,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Combat_Weakpoints_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Combat

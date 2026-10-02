@@ -18,17 +18,21 @@ class DBA_CoreCorruption_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/DBA_CoreCorruption", "DBA_CoreCorruption_C");
     class UDebrisDataComponent* D_SmallInfluencerStone;
-    static constexpr const char* D_SmallInfluencerStone__UeScsNode = "0a7b73e042381d489a6df673e6de23e5";
     class UDebrisDataComponent* D_SmallInfluencerPurpleStone;
-    static constexpr const char* D_SmallInfluencerPurpleStone__UeScsNode = "96dda8b59e25cb41a8f81451f0015dcb";
     class UDebrisDataComponent* C_Stone;
-    static constexpr const char* C_Stone__UeScsNode = "ad2ad95ece074148967c42c008837c39";
     class UDebrisDataComponent* C_PurpleStone;
-    static constexpr const char* C_PurpleStone__UeScsNode = "fa939791b388e743b8069f8f661f0320";
     class UDebrisItemComponent* I_CoreRift;
-    static constexpr const char* I_CoreRift__UeScsNode = "ac22035576f42c4db64c9ded98cc609e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7ec15c424061ac49b65bbf9d100a6089";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* D_SmallInfluencerStone__UeScsNode = "0a7b73e042381d489a6df673e6de23e5";
+        static constexpr const char* D_SmallInfluencerPurpleStone__UeScsNode = "96dda8b59e25cb41a8f81451f0015dcb";
+        static constexpr const char* C_Stone__UeScsNode = "ad2ad95ece074148967c42c008837c39";
+        static constexpr const char* C_PurpleStone__UeScsNode = "fa939791b388e743b8069f8f661f0320";
+        static constexpr const char* I_CoreRift__UeScsNode = "ac22035576f42c4db64c9ded98cc609e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7ec15c424061ac49b65bbf9d100a6089";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption

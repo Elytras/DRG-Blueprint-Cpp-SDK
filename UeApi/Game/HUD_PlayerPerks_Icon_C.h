@@ -26,8 +26,8 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using UI_RoundedCanvas_C = Game::UI::_GlobalAssets::MaskedImage::UI_RoundedCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimCoolingDown;
-    class UWidgetAnimation* AnimCoolDownFinished;
+    UE_READONLY class UWidgetAnimation* AnimCoolingDown;
+    UE_READONLY class UWidgetAnimation* AnimCoolDownFinished;
     class UImage* BackgroundImage;
     class UBorder* CounterBorder;
     Basic_Label_C* CounterLabel;
@@ -47,7 +47,6 @@ public:
     void RefreshUseCharges(class UPerkAsset* Perk, int Value);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Begin_Cool_Down(float Duration);
-    static constexpr const char* Begin_Cool_Down__UeName = "Begin Cool Down";
     void OnAnimCoolDownFinished();
     UE_COSMETIC void Construct();
     void ReceivePerkAssetChanged();
@@ -60,6 +59,11 @@ public:
     UE_PURE int GetMaxUseCharges();
     UE_PURE float GetCoolDownProgress();
     UE_PURE float GetCooldownDuration();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Begin_Cool_Down__UeName = "Begin Cool Down";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Perks

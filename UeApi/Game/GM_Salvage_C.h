@@ -24,13 +24,9 @@ public:
     using BP_Salvage_Point_C = Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C;
     using EVENT_DropPodDefense_Base_C = Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C;
     using OBJ_1st_Salvage_C = Game::GameElements::Objectives::Salvage::OBJ_1st_Salvage_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Salvage_C;
-    static constexpr const char* UberGraphFrame_GM_Salvage_C__UeName = "UberGraphFrame";
     class UAudioComponent* UplinkComplete_Cue;
-    static constexpr const char* UplinkComplete_Cue__UeScsNode = "1928a8e699ba7c4892ae7c5d8d09ec0a";
     class UAudioComponent* DroppodMuleReady_Cue;
-    static constexpr const char* DroppodMuleReady_Cue__UeScsNode = "6293edcbbc0c9840bf801283186fd7d0";
     class ADropPod* DropPod;
     EVENT_DropPodDefense_Base_C* DefenseEvent;
     TArray<class AActor*> MulesSalvaged;
@@ -55,11 +51,19 @@ public:
     void ReachedDropShip();
     void DonkeyButtonPressed();
     void Call_DropPod();
-    static constexpr const char* Call_DropPod__UeName = "Call DropPod";
     void OnLevelGenerationComplete(int pass);
     void EnableNextRepairPoint();
     void SpawnRepairPoints();
     void UpdateFailsafeMollyCounters(FVector v2);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_GM_Salvage_C__UeName = "UberGraphFrame";
+        static constexpr const char* UplinkComplete_Cue__UeScsNode = "1928a8e699ba7c4892ae7c5d8d09ec0a";
+        static constexpr const char* DroppodMuleReady_Cue__UeScsNode = "6293edcbbc0c9840bf801283186fd7d0";
+        static constexpr const char* Call_DropPod__UeName = "Call DropPod";
+    };
 };
 
 }}   // namespace Game::Game

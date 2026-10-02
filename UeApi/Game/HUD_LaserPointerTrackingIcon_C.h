@@ -26,8 +26,8 @@ public:
     using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* AnimIcon;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* AnimIcon;
     class UImage* Arrow;
     Basic_HUD_BracketWindowSmall_C* Basic_HUD_BracketWindowSmall;
     class UTextBlock* DistanceLabel;

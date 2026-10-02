@@ -26,43 +26,23 @@ class BP_Ebonut_C : public Game::GameElements::Resources::Collectibles::BP_Colle
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Ebonut/BP_Ebonut", "BP_Ebonut_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Ebonut_C;
-    static constexpr const char* UberGraphFrame_BP_Ebonut_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "97f64651b498b74a8b53cd19fac1e263";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "7dfec1d612b25147ab3bd14748d81e7c";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "3c3e99817a998c46ad80442b6204fe72";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "c505b2861c9a7740a26d5df1579904c1";
     class UPathfinderCollisionComponent* PathfinderWalkable;
-    static constexpr const char* PathfinderWalkable__UeScsNode = "03854334f7bdb94f84524839026d53f5";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "5966544599604f409055843d800a6d17";
     class USceneComponent* PickupParticleSpawnPoint;
-    static constexpr const char* PickupParticleSpawnPoint__UeScsNode = "1bf3b3a96a3ce84584130fd6d88e2fec";
     class UAudioComponent* OpenHit;
-    static constexpr const char* OpenHit__UeScsNode = "bb9abe70a9f36940bdd91bcfd8201bbc";
     class UAudioComponent* TwondHit;
-    static constexpr const char* TwondHit__UeName = "2ndHit";
-    static constexpr const char* TwondHit__UeScsNode = "1c4e7363b5a634458a1eaeea7aa024fd";
     class UAudioComponent* OnestHit;
-    static constexpr const char* OnestHit__UeName = "1stHit";
-    static constexpr const char* OnestHit__UeScsNode = "50f5cd1fc6f815429d744221be03abbd";
     class UStaticMeshComponent* Shell3;
-    static constexpr const char* Shell3__UeScsNode = "295f0db7da6c014882c41d9eb2a2f40f";
     class UStaticMeshComponent* Shell2;
-    static constexpr const char* Shell2__UeScsNode = "b886ac3311bad6448961ee92a2988dc0";
     class UStaticMeshComponent* Shell1;
-    static constexpr const char* Shell1__UeScsNode = "60be77093aa51345a9509ff67ae0a956";
     class UStaticMeshComponent* CoreMesh;
-    static constexpr const char* CoreMesh__UeScsNode = "ab9da9e23633ed4ead39d004514a9da6";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "145f2a61b0f68b4c9747ed0db2026988";
     class UStaticMeshComponent* BaseMesh;
-    static constexpr const char* BaseMesh__UeScsNode = "81dd1c3c31298543aa5c5fb355144465";
     float ScaleDown_NewTrack;
-    static constexpr const char* ScaleDown_NewTrack__UeName = "ScaleDown_NewTrack_0_F8D011474F43755B827C2BB8FCF9590F";
     TEnum<ETimelineDirection> ScaleDown__Direction_F8D011474F43755B827C2BB8FCF9590F;
     class UTimelineComponent* ScaleDown;
     float FirstThreshold;
@@ -82,6 +62,30 @@ public:
     void ScaleDown__FinishedFunc();
     void OnRep_State();
     void ShowOpen2();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Ebonut_C__UeName = "UberGraphFrame";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "97f64651b498b74a8b53cd19fac1e263";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "7dfec1d612b25147ab3bd14748d81e7c";
+        static constexpr const char* PointLight1__UeScsNode = "3c3e99817a998c46ad80442b6204fe72";
+        static constexpr const char* terrainPlacement__UeScsNode = "c505b2861c9a7740a26d5df1579904c1";
+        static constexpr const char* PathfinderWalkable__UeScsNode = "03854334f7bdb94f84524839026d53f5";
+        static constexpr const char* PointLight__UeScsNode = "5966544599604f409055843d800a6d17";
+        static constexpr const char* PickupParticleSpawnPoint__UeScsNode = "1bf3b3a96a3ce84584130fd6d88e2fec";
+        static constexpr const char* OpenHit__UeScsNode = "bb9abe70a9f36940bdd91bcfd8201bbc";
+        static constexpr const char* TwondHit__UeName = "2ndHit";
+        static constexpr const char* TwondHit__UeScsNode = "1c4e7363b5a634458a1eaeea7aa024fd";
+        static constexpr const char* OnestHit__UeName = "1stHit";
+        static constexpr const char* OnestHit__UeScsNode = "50f5cd1fc6f815429d744221be03abbd";
+        static constexpr const char* Shell3__UeScsNode = "295f0db7da6c014882c41d9eb2a2f40f";
+        static constexpr const char* Shell2__UeScsNode = "b886ac3311bad6448961ee92a2988dc0";
+        static constexpr const char* Shell1__UeScsNode = "60be77093aa51345a9509ff67ae0a956";
+        static constexpr const char* CoreMesh__UeScsNode = "ab9da9e23633ed4ead39d004514a9da6";
+        static constexpr const char* SimpleHealth__UeScsNode = "145f2a61b0f68b4c9747ed0db2026988";
+        static constexpr const char* BaseMesh__UeScsNode = "81dd1c3c31298543aa5c5fb355144465";
+        static constexpr const char* ScaleDown_NewTrack__UeName = "ScaleDown_NewTrack_0_F8D011474F43755B827C2BB8FCF9590F";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Ebonut

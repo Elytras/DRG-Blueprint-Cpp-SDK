@@ -18,9 +18,7 @@ class Grenade_WallSaw_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/WallSaw/Grenade_WallSaw", "Grenade_WallSaw_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_WallSaw_C;
-    static constexpr const char* UberGraphFrame_Grenade_WallSaw_C__UeName = "UberGraphFrame";
     FVector InitialDirection;
     class UClass* WallSawSpawnable;
     void ExecuteUbergraph_Grenade_WallSaw(int EntryPoint);
@@ -28,6 +26,12 @@ public:
     void ReceiveBeginPlay();
     void GetDurationBeforeExpiration(float& Duration_0);
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_WallSaw_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::WallSaw

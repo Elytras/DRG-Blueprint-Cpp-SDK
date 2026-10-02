@@ -17,16 +17,20 @@ class BP_PropHunt_Crate_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season06/BP_PropHunt_Crate", "BP_PropHunt_Crate_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Lantern_001;
-    static constexpr const char* SM_Lantern_001__UeScsNode = "36efb121c72968479a5b71473af07fc6";
     class UStaticMeshComponent* sm_Crate_03;
-    static constexpr const char* sm_Crate_03__UeScsNode = "38df51bcf4f75641ac89d77f9f66621d";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     void ExecuteUbergraph_BP_PropHunt_Crate(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* SM_Lantern_001__UeScsNode = "36efb121c72968479a5b71473af07fc6";
+        static constexpr const char* sm_Crate_03__UeScsNode = "38df51bcf4f75641ac89d77f9f66621d";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season06

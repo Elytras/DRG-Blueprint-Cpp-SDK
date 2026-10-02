@@ -22,12 +22,16 @@ public:
     class UTextBlock* Text;
     FVector Position;
     FString Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     void ExecuteUbergraph_HUD_Radar_WorldCorners(int EntryPoint);
     UE_COSMETIC void Construct();
     void InitPoint(class URadarPointComponent* RadarComponent, bool& success);
     void Get3dPosition(FVector& Pos);
     void UpdatePoint(float alpha, float verticalDist, bool& destroy);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::Radar

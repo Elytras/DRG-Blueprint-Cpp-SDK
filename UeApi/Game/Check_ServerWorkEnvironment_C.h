@@ -25,7 +25,7 @@ public:
     class UButton* ClickButton;
     class UTextBlock* NameLabel;
     bool IsChecked;
-    class UDifficultySetting* Difficulty;
+    UE_READONLY class UDifficultySetting* Difficulty;
     TMulticastInlineDelegate<void(Check_ServerWorkEnvironment_C* CheckBox_0, class UDifficultySetting* Difficulty_0, bool IsChecked_0)> OnCheckedChanged;
     void ExecuteUbergraph_Check_ServerWorkEnvironment(int EntryPoint);
     UE_COSMETIC void Construct();

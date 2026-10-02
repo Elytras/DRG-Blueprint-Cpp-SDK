@@ -20,13 +20,17 @@ public:
     UE_CLASS("/Game/WeaponsNTools/DualMachinePistols/PRW_DualMPs", "PRW_DualMPs_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh1;
-    static constexpr const char* SkeletalMesh1__UeScsNode = "4616eb331cad164191c49e63f754335c";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "88715d7d46e23b49825ddb82bce0f1f1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9fe38aee9459754d883df8e8cc4c8787";
     void ExecuteUbergraph_PRW_DualMPs(int EntryPoint);
     void OnSkinItem(class USkinEffect* Skin);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh1__UeScsNode = "4616eb331cad164191c49e63f754335c";
+        static constexpr const char* SkeletalMesh__UeScsNode = "88715d7d46e23b49825ddb82bce0f1f1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9fe38aee9459754d883df8e8cc4c8787";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols

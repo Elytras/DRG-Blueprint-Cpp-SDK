@@ -13,6 +13,11 @@ class STE_FacilityElectricAttack_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/STE_FacilityElectricAttack", "STE_FacilityElectricAttack_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.ShoutStatusEffectItem ShoutStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker

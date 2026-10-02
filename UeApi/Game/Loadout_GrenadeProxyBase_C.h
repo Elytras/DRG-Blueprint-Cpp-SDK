@@ -17,15 +17,19 @@ class Loadout_GrenadeProxyBase_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Loadout_GrenadeProxyBase", "Loadout_GrenadeProxyBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "31dd546131ea6444a59823b549715494";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "34f0ed2fb827ea439f9926bc5b403f0d";
     void ExecuteUbergraph_Loadout_GrenadeProxyBase(int EntryPoint);
     void RecieveUnequipped();
     void RecieveEquipped();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* StaticMesh__UeScsNode = "31dd546131ea6444a59823b549715494";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "34f0ed2fb827ea439f9926bc5b403f0d";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

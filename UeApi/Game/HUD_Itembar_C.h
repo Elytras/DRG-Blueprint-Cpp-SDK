@@ -21,7 +21,7 @@ class HUD_Itembar_C : public UItemsBar
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Items/HUD_Itembar", "HUD_Itembar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* FadeOut;
     class UBorder* FadeBorder;
     class UHorizontalBox* IconsParent;
     class URetainerBox* RetainerBox_0;

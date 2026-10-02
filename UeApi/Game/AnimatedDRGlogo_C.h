@@ -18,11 +18,11 @@ class AnimatedDRGlogo_C : public UUserWidget
 public:
     UE_CLASS("/Game/Art/_TestingGrounds/UItesting/AnimatedDRGlogo", "AnimatedDRGlogo_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Flash4;
-    class UWidgetAnimation* Flash3;
-    class UWidgetAnimation* Flash2;
-    class UWidgetAnimation* Flash1;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Flash4;
+    UE_READONLY class UWidgetAnimation* Flash3;
+    UE_READONLY class UWidgetAnimation* Flash2;
+    UE_READONLY class UWidgetAnimation* Flash1;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UImage* Logo;
     void ExecuteUbergraph_AnimatedDRGlogo(int EntryPoint);
     UE_COSMETIC void Construct();

@@ -25,8 +25,8 @@ public:
     using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
     using UI_Milestone_Tier_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Outro;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Outro;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
     class UBorder* Frame;
     class UImage* Glow;
@@ -43,8 +43,12 @@ public:
     void OnMilestoneReached_Event(class UMilestoneAsset* Milestone_0, int ReachedTier);
     UE_COSMETIC void Construct();
     void Init_Widget();
-    static constexpr const char* Init_Widget__UeName = "Init Widget";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Init_Widget__UeName = "Init Widget";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

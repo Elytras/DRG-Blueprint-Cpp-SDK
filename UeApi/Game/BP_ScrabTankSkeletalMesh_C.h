@@ -17,9 +17,13 @@ class BP_ScrabTankSkeletalMesh_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Seasons/Season06/SpaceRig_Decor/ScrabTank/BP_ScrabTankSkeletalMesh", "BP_ScrabTankSkeletalMesh_C");
     class USkeletalMeshComponent* ScrabMesh;
-    static constexpr const char* ScrabMesh__UeScsNode = "f026f87778aad14c8b916c752dd0e34e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f0d5d8fbb9b6764682a4a22b29b47360";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ScrabMesh__UeScsNode = "f026f87778aad14c8b916c752dd0e34e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f0d5d8fbb9b6764682a4a22b29b47360";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank

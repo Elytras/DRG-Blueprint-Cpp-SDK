@@ -21,24 +21,15 @@ class ENE_GliderBeast_C : public AFlyingEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/GliderBeast/ENE_GliderBeast", "ENE_GliderBeast_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GliderBeastDeath_Cue;
-    static constexpr const char* GliderBeastDeath_Cue__UeScsNode = "e6218f5e7375334498158a8dca3d3ac9";
     class UAudioComponent* GliderBeastGrabOneShotScream;
-    static constexpr const char* GliderBeastGrabOneShotScream__UeScsNode = "34a4aa117988b84981c639e260ca1e4d";
     class UAudioComponent* GliderBeastIdleScream;
-    static constexpr const char* GliderBeastIdleScream__UeScsNode = "3d57b5c43c787c4d988db902d3c59d8f";
     class UAudioComponent* GliderBeastAttachScream;
-    static constexpr const char* GliderBeastAttachScream__UeScsNode = "6137535c05b7304aae16a50493bf8509";
     class UAIPlayerControlComponent* AIPlayerControl;
-    static constexpr const char* AIPlayerControl__UeScsNode = "dcfb549c8ea9a54a9fd03e96d6d54546";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "38949f6a86754246b38f9bfab653fd63";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "7361fe3447c48946868cb017c831cb41";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "08c63e554a1f8c43afc98d911bf6de1f";
     FTimerHandle AudioScreamHandle;
     bool IsControlledByPlayer;
     bool LastScreamForced;
@@ -55,6 +46,19 @@ public:
     void OnNotifyBegin_71AD1CB34498196F772390944624EEFE(FName NotifyName);
     void OnNotifyEnd_71AD1CB34498196F772390944624EEFE(FName NotifyName);
     void PlayScream(class UAudioComponent* ForcedScream);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* GliderBeastDeath_Cue__UeScsNode = "e6218f5e7375334498158a8dca3d3ac9";
+        static constexpr const char* GliderBeastGrabOneShotScream__UeScsNode = "34a4aa117988b84981c639e260ca1e4d";
+        static constexpr const char* GliderBeastIdleScream__UeScsNode = "3d57b5c43c787c4d988db902d3c59d8f";
+        static constexpr const char* GliderBeastAttachScream__UeScsNode = "6137535c05b7304aae16a50493bf8509";
+        static constexpr const char* AIPlayerControl__UeScsNode = "dcfb549c8ea9a54a9fd03e96d6d54546";
+        static constexpr const char* Sphere__UeScsNode = "38949f6a86754246b38f9bfab653fd63";
+        static constexpr const char* enemy__UeScsNode = "7361fe3447c48946868cb017c831cb41";
+        static constexpr const char* outline__UeScsNode = "08c63e554a1f8c43afc98d911bf6de1f";
+    };
 };
 
 }}}   // namespace Game::Critters::GliderBeast

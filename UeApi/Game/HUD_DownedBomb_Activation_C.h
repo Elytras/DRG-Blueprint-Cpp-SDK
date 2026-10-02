@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_DownedBomb_Activation", "HUD_DownedBomb_Activation_C");
     using HUD_Hold_Activation_C = Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     HUD_Hold_Activation_C* HUD_Hold_Activation;
     bool PlayerDown;
     class UDownedStateComponent* DownedState;

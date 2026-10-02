@@ -13,6 +13,11 @@ class STE_Crossbow_Cryo_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/StatusEffects/STE_Crossbow_Cryo", "STE_Crossbow_Cryo_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects

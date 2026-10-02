@@ -17,10 +17,14 @@ public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_Drop_CamShake", "BP_Drop_CamShake_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "306a3ac83e384f4eb58d1cd8c4ca336a";
     void ExecuteUbergraph_BP_Drop_CamShake(int EntryPoint);
     void TriggerShakeSequence();
     void SetStandingDown(bool IsStandingDown);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "306a3ac83e384f4eb58d1cd8c4ca336a";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

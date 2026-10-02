@@ -17,7 +17,6 @@ class EWC_Escort_EndDefense_C : public Game::Enemies::Waves::WaveControllers::EW
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_EndDefense", "EWC_Escort_EndDefense_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Escort_EndDefense_C;
-    static constexpr const char* UberGraphFrame_EWC_Escort_EndDefense_C__UeName = "UberGraphFrame";
     TArray<FVector> SpawnLocations;
     FVector DestinationLocation;
     void ExecuteUbergraph_EWC_Escort_EndDefense(int EntryPoint);
@@ -32,6 +31,11 @@ public:
     void StopConstantPreassure();
     void StartWave();
     void GetDestinationLocation(FVector& Location);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Escort_EndDefense_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

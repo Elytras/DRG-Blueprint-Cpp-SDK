@@ -13,7 +13,11 @@ class AIC_FacilityTurret_Sniper_C : public Game::GameElements::Objectives::Facil
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/AIC_FacilityTurret_Sniper", "AIC_FacilityTurret_Sniper_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.AIPerceptionComponent Perception;/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.AIPerceptionComponent Perception;/Script/AIModule.AISenseConfig_Sight Perception:AISenseConfig_Sight_0;/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

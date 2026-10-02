@@ -29,39 +29,24 @@ class PRJ_StaticBomber_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/BarrageInfector/PRJ_StaticBomber", "PRJ_StaticBomber_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "51549f3d0dfefc49a7e1124ff13e7bdc";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "ba445c64f5df00418bfff8fe036d7d8d";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "8acda3fb24dfa84c9a71bf66f30f3f69";
     class USkeletalMeshComponent* SK_spitballer_shot;
-    static constexpr const char* SK_spitballer_shot__UeScsNode = "2c840a3a54db8447b134c4287186eb1b";
     class USceneComponent* Pivot;
-    static constexpr const char* Pivot__UeScsNode = "5e15e25b012f314e83bdbd3c82197e1b";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "0a7dc63626b2ea4991194830d6aea7b9";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "3fef6ab86fed684d82a8003d29f5e2be";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "ef6a307981501a419f009bea7eabf05a";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "63626b3f77ccbd4885183de6bfeee684";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "7cdfce11aa2ff5439618ab6d963d8da5";
     class UAudioComponent* ProjectileLoop;
-    static constexpr const char* ProjectileLoop__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     float Glow_Intensity_NewTrack;
-    static constexpr const char* Glow_Intensity_NewTrack__UeName = "Glow_Intensity_NewTrack_0_983682A94558969EB75E068C8411244B";
     TEnum<ETimelineDirection> Glow_Intensity__Direction_983682A94558969EB75E068C8411244B;
     class UTimelineComponent* glow_intensity;
     bool IsFuseTriggered;
-    static constexpr const char* IsFuseTriggered__Replicated = "OnRep_IsFuseTriggered:";
     float Value;
     FMaterialParameterInfo Parameter_Info;
-    static constexpr const char* Parameter_Info__UeName = "Parameter Info";
     class UMaterialInstanceDynamic* DynamicMaterialInstance;
     void ExecuteUbergraph_PRJ_StaticBomber(int EntryPoint);
     void BndEvt__PRJ_StaticBomber_SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
@@ -73,6 +58,25 @@ public:
     void Glow_Intensity__UpdateFunc();
     void Glow_Intensity__FinishedFunc();
     void OnRep_IsFuseTriggered();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* PointLight__UeScsNode = "51549f3d0dfefc49a7e1124ff13e7bdc";
+        static constexpr const char* outline__UeScsNode = "ba445c64f5df00418bfff8fe036d7d8d";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "8acda3fb24dfa84c9a71bf66f30f3f69";
+        static constexpr const char* SK_spitballer_shot__UeScsNode = "2c840a3a54db8447b134c4287186eb1b";
+        static constexpr const char* Pivot__UeScsNode = "5e15e25b012f314e83bdbd3c82197e1b";
+        static constexpr const char* Niagara__UeScsNode = "0a7dc63626b2ea4991194830d6aea7b9";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "3fef6ab86fed684d82a8003d29f5e2be";
+        static constexpr const char* RotatingMovement__UeScsNode = "ef6a307981501a419f009bea7eabf05a";
+        static constexpr const char* SimpleHealth__UeScsNode = "63626b3f77ccbd4885183de6bfeee684";
+        static constexpr const char* Damage__UeScsNode = "7cdfce11aa2ff5439618ab6d963d8da5";
+        static constexpr const char* ProjectileLoop__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+        static constexpr const char* Glow_Intensity_NewTrack__UeName = "Glow_Intensity_NewTrack_0_983682A94558969EB75E068C8411244B";
+        static constexpr const char* IsFuseTriggered__Replicated = "OnRep_IsFuseTriggered:";
+        static constexpr const char* Parameter_Info__UeName = "Parameter Info";
+    };
 };
 
 }}}   // namespace Game::Enemies::BarrageInfector

@@ -13,6 +13,11 @@ class STE_HeartstoneTrap_Slow_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/HeartStoneCore/HeartStoneTRAP/STE_HeartstoneTrap_Slow", "STE_HeartstoneTrap_Slow_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP

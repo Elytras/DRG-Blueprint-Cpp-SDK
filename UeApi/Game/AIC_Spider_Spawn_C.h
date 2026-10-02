@@ -14,11 +14,15 @@ class AIC_Spider_Spawn_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/Spawn/AIC_Spider_Spawn", "AIC_Spider_Spawn_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Spawn_C;
-    static constexpr const char* UberGraphFrame_AIC_Spider_Spawn_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Spawn(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* UberGraphFrame_AIC_Spider_Spawn_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Swarmer::Spawn

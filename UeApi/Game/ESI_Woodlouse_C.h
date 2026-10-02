@@ -17,9 +17,13 @@ class ESI_Woodlouse_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/ESI_Woodlouse", "ESI_Woodlouse_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "9d64f54c4f0f6a408deac6d9124db5be";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7b0b19f836c388449dee8a90ecc1118a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "9d64f54c4f0f6a408deac6d9124db5be";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7b0b19f836c388449dee8a90ecc1118a";
+    };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse

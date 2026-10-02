@@ -30,11 +30,9 @@ public:
     FSlateColor ImageTint;
     class UTexture* Mask;
     bool Invert_Mask;
-    static constexpr const char* Invert_Mask__UeName = "Invert Mask";
     TEnum<ESlateBrushDrawType> DrawAs;
     class UMaterialInstanceDynamic* Material;
     bool Mask_Black;
-    static constexpr const char* Mask_Black__UeName = "Mask Black";
     class UObject* BrushImage;
     void ExecuteUbergraph_UI_MaskedImage(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -46,6 +44,12 @@ public:
     void SetDrawAs(TEnum<ESlateBrushDrawType> InBrush_DrawAs);
     void UpdateMaterial();
     void SetMaskBlack(bool Index_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Invert_Mask__UeName = "Invert Mask";
+        static constexpr const char* Mask_Black__UeName = "Mask Black";
+    };
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

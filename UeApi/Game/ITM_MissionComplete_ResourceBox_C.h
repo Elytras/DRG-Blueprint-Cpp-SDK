@@ -29,35 +29,39 @@ public:
     class UVerticalBox* LinesBox;
     float ItemDelay;
     class USoundBase* Item_Sound;
-    static constexpr const char* Item_Sound__UeName = "Item Sound";
     TMulticastInlineDelegate<void()> Finished;
     int NextIndex;
-    int PreviewCount;
+    UE_READONLY int PreviewCount;
     TArray<ITM_MissionComplete_Resource_C*> ResourceWidgets;
-    int MaxIconsPerRow;
-    FMargin IconPadding;
-    int IconSize;
+    UE_READONLY int MaxIconsPerRow;
+    UE_READONLY FMargin IconPadding;
+    UE_READONLY int IconSize;
     bool Counting;
     class UAudioComponent* AudioComponent;
     void ExecuteUbergraph_ITM_MissionComplete_ResourceBox(int EntryPoint);
     void OnAudioFinished_Event();
     void Stop_Counting_Audio(float FadeDuration);
-    static constexpr const char* Stop_Counting_Audio__UeName = "Stop Counting Audio";
     void Start_Counting_Audio(class USoundBase* Item_Sound_0);
-    static constexpr const char* Start_Counting_Audio__UeName = "Start Counting Audio";
     void Add_Line_No_Anim(FText Description, int amount, class UTexture2D* Texture);
-    static constexpr const char* Add_Line_No_Anim__UeName = "Add Line No Anim";
     void Show_Custom(TMap<class UResourceData*, float> ResourceMap);
-    static constexpr const char* Show_Custom__UeName = "Show Custom";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Add_Line(FText Description, int amount, class UTexture2D* Texture);
-    static constexpr const char* Add_Line__UeName = "Add Line";
     void Show(float DelayBetweenItems, class USoundBase* ItemSound);
     void CreateIcons(TArray<ITM_MissionComplete_Resource_C*>& OutWidgets);
     void AddIcon(bool ForceNewLine, float SizeScale, ITM_MissionComplete_Resource_C*& OutIconWidget);
     void GetOrCreateHorizontalBar(bool ForceNewLine, class UHorizontalBox*& OutHorizontal);
     void ClearIcons();
     void IsBarleyResource(class UResourceData* InResource, bool& OutIsBarley);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Item_Sound__UeName = "Item Sound";
+        static constexpr const char* Stop_Counting_Audio__UeName = "Stop Counting Audio";
+        static constexpr const char* Start_Counting_Audio__UeName = "Start Counting Audio";
+        static constexpr const char* Add_Line_No_Anim__UeName = "Add Line No Anim";
+        static constexpr const char* Show_Custom__UeName = "Show Custom";
+        static constexpr const char* Add_Line__UeName = "Add Line";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

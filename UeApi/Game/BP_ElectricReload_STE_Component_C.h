@@ -13,6 +13,11 @@ class BP_ElectricReload_STE_Component_C : public UWeaponHitCounterComponent
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/AssaultRifle/Overclocks/OC_BonusesAndPenalties/BP_ElectricReload_STE_Component", "BP_ElectricReload_STE_Component_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatusHitCountEffect StatusHitCountEffect_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::AssaultRifle::Overclocks::OC_BonusesAndPenalties

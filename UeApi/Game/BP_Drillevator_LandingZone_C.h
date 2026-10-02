@@ -21,15 +21,10 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_Drillevator_LandingZone", "BP_Drillevator_LandingZone_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_BGStructure_11;
-    static constexpr const char* SM_BGStructure_11__UeScsNode = "f150baa094d496409abe8a146717dcb6";
     class USkeletalMeshComponent* SK_DropPod_Drill;
-    static constexpr const char* SK_DropPod_Drill__UeScsNode = "4e0bfd8eeaae5f498e01edab99a5d7a9";
     class UStaticMeshComponent* SM_BGStructure_23;
-    static constexpr const char* SM_BGStructure_23__UeScsNode = "87901e1088c9f24299f785aa68197513";
     class UStaticMeshComponent* SM_Drillevator_Railing_01;
-    static constexpr const char* SM_Drillevator_Railing_01__UeScsNode = "f4f839e295180d4cb8361e4eca1aac21";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
     float Timeline_0_Opacity_CBA474A14615E1B9F9177ABFE371356B;
     TEnum<ETimelineDirection> Timeline_0__Direction_CBA474A14615E1B9F9177ABFE371356B;
     class UTimelineComponent* Timeline_0;
@@ -45,6 +40,15 @@ public:
     void Timeline_0__FinishedFunc();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_BGStructure_11__UeScsNode = "f150baa094d496409abe8a146717dcb6";
+        static constexpr const char* SK_DropPod_Drill__UeScsNode = "4e0bfd8eeaae5f498e01edab99a5d7a9";
+        static constexpr const char* SM_BGStructure_23__UeScsNode = "87901e1088c9f24299f785aa68197513";
+        static constexpr const char* SM_Drillevator_Railing_01__UeScsNode = "f4f839e295180d4cb8361e4eca1aac21";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0f551b46d543234d9b45ae21ec87aa4b";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

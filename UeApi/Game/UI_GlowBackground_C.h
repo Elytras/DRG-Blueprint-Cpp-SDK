@@ -21,7 +21,7 @@ class UI_GlowBackground_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/UI_GlowBackground", "UI_GlowBackground_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimGlow;
+    UE_READONLY class UWidgetAnimation* AnimGlow;
     class UImage* Glow1;
     class UImage* Glow2;
     class UOverlay* GlowOverlay;

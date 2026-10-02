@@ -25,7 +25,7 @@ public:
     using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
     using UI_Season_Popup_C = Game::UI::Menu_Seasons::UI_Season_Popup_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimShow;
+    UE_READONLY class UWidgetAnimation* AnimShow;
     ITM_Special_ButtonCutCorner_C* NoBtn;
     UI_Season_Popup_C* Season_Popup;
     class UWidgetSwitcher* SeasonSwitcher;

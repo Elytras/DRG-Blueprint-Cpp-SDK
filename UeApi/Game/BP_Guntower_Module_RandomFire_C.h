@@ -19,24 +19,28 @@ class BP_Guntower_Module_RandomFire_C : public ARandomFiringGuntowerModule
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_RandomFire/BP_Guntower_Module_RandomFire", "BP_Guntower_Module_RandomFire_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent LaserSound;/Script/FSD.DamageComponent Damage;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/Engine.ParticleSystemComponent BackBottimMuzzleEffect;/Script/Engine.ParticleSystemComponent BackMuzzleEffect;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.ParticleSystemComponent FrontBottomMuzzleEffect;/Script/Engine.ParticleSystemComponent FrontTopMuzzleEffect;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/Engine.StaticMeshComponent LaserBackBottom;/Script/Engine.StaticMeshComponent LaserBackTop;/Script/Engine.StaticMeshComponent LaserFrontBottom;/Script/Engine.StaticMeshComponent LaserFrontTop;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "991c6a564a70584ca5dcd91a4e3da7ff";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "ab23baa20626564c8cfe511c63a8554a";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "512aeb0d22c7e949a73134a46f9444b4";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "3a5e7a4b57acb849b65321e203a67005";
     class UChildActorComponent* WeakPoint1;
-    static constexpr const char* WeakPoint1__UeScsNode = "ec0225d3fc10954d8f6ffd7ef13014ca";
     class UChildActorComponent* Weakpoint;
-    static constexpr const char* Weakpoint__UeScsNode = "62fcd27dd117954c816fda375fc5c2c0";
     void ExecuteUbergraph_BP_Guntower_Module_RandomFire(int EntryPoint);
     void OnTearArmor();
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent LaserSound;/Script/FSD.DamageComponent Damage;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/Engine.ParticleSystemComponent BackBottimMuzzleEffect;/Script/Engine.ParticleSystemComponent BackMuzzleEffect;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.ParticleSystemComponent FrontBottomMuzzleEffect;/Script/Engine.ParticleSystemComponent FrontTopMuzzleEffect;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/Engine.StaticMeshComponent LaserBackBottom;/Script/Engine.StaticMeshComponent LaserBackTop;/Script/Engine.StaticMeshComponent LaserFrontBottom;/Script/Engine.StaticMeshComponent LaserFrontTop;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Capsule__UeScsNode = "991c6a564a70584ca5dcd91a4e3da7ff";
+        static constexpr const char* PointLight1__UeScsNode = "ab23baa20626564c8cfe511c63a8554a";
+        static constexpr const char* PointLight__UeScsNode = "512aeb0d22c7e949a73134a46f9444b4";
+        static constexpr const char* outline__UeScsNode = "3a5e7a4b57acb849b65321e203a67005";
+        static constexpr const char* WeakPoint1__UeScsNode = "ec0225d3fc10954d8f6ffd7ef13014ca";
+        static constexpr const char* Weakpoint__UeScsNode = "62fcd27dd117954c816fda375fc5c2c0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RandomFire

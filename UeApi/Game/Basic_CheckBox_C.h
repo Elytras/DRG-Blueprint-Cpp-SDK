@@ -24,8 +24,8 @@ class Basic_CheckBox_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_CheckBox", "Basic_CheckBox_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TickShow;
-    class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* TickShow;
+    UE_READONLY class UWidgetAnimation* Click;
     class UImage* Checkbox_Border;
     class UButton* Checkbox_Button;
     class UImage* CheckBox_Tick;

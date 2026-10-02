@@ -32,21 +32,25 @@ public:
     class UNamedSlot* Content;
     class USizeBox* Content_SizeBox;
     float Colorbar_Opacity;
-    static constexpr const char* Colorbar_Opacity__UeName = "Colorbar Opacity";
     class UMaterialInterface* Colorbar_Material;
-    static constexpr const char* Colorbar_Material__UeName = "Colorbar Material";
     FSizeBoxSettings Content_Size;
-    static constexpr const char* Content_Size__UeName = "Content Size";
     float Content_Blur_Strength;
-    static constexpr const char* Content_Blur_Strength__UeName = "Content Blur Strength";
     TEnum<EHorizontalAlignment> Content_HAlign;
-    static constexpr const char* Content_HAlign__UeName = "Content HAlign";
     TEnum<EVerticalAlignment> Content_VAlign;
-    static constexpr const char* Content_VAlign__UeName = "Content VAlign";
     FMargin Content_Padding;
-    static constexpr const char* Content_Padding__UeName = "Content Padding";
     void ExecuteUbergraph_Basic_Header(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Colorbar_Opacity__UeName = "Colorbar Opacity";
+        static constexpr const char* Colorbar_Material__UeName = "Colorbar Material";
+        static constexpr const char* Content_Size__UeName = "Content Size";
+        static constexpr const char* Content_Blur_Strength__UeName = "Content Blur Strength";
+        static constexpr const char* Content_HAlign__UeName = "Content HAlign";
+        static constexpr const char* Content_VAlign__UeName = "Content VAlign";
+        static constexpr const char* Content_Padding__UeName = "Content Padding";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

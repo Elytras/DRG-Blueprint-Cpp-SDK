@@ -17,11 +17,15 @@ class BP_RotatingSpotlight01_C : public Game::Art::BasicArtAssets::Tech::BP_Rada
 public:
     UE_CLASS("/Game/Art/BasicArtAssets/Tech/BP_RotatingSpotlight01", "BP_RotatingSpotlight01_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_RotatingSpotlight01_C;
-    static constexpr const char* UberGraphFrame_BP_RotatingSpotlight01_C__UeName = "UberGraphFrame";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "2404a577e51d1d4082b1b74db3bd90aa";
     void ExecuteUbergraph_BP_RotatingSpotlight01(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_RotatingSpotlight01_C__UeName = "UberGraphFrame";
+        static constexpr const char* SpotLight__UeScsNode = "2404a577e51d1d4082b1b74db3bd90aa";
+    };
 };
 
 }}}}   // namespace Game::Art::BasicArtAssets::Tech

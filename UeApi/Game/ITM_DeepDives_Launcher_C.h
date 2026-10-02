@@ -65,7 +65,7 @@ public:
     class UMediaPlayer* MediaPlayer;
     class UMediaTexture* MediaTexture;
     class UMediaSource* Movie;
-    bool ShowHardDeepDive;
+    UE_READONLY bool ShowHardDeepDive;
     bool IsHovering;
     TMulticastInlineDelegate<void(class UDeepDive* DeepDive)> OnStartMission;
     TMulticastInlineDelegate<void(bool EliteDeepDive)> OnJoinMission;

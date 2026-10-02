@@ -29,7 +29,6 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class ASpiderEnemy* PossibleTarget;
     class ASpiderEnemy* FriendedEnemy;
-    static constexpr const char* FriendedEnemy__Replicated = ":";
     FGameplayTagQuery Filter;
     class UClass* LoadedFriendable;
     TSoftClassPtr<class UClass> Friendable;
@@ -49,7 +48,6 @@ public:
     void usedBy(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnFriendedEnemyDeath(class UHealthComponentBase* HealthComponent);
     void Setup_Shouts();
-    static constexpr const char* Setup_Shouts__UeName = "Setup Shouts";
     UE_SERVER UE_RELIABLE void Server_Befriend(class ASpiderEnemy* Spider);
     void OnTargetChanged(class AActor* NewTarget, class UPrimitiveComponent* NewPrimitive);
     void ReceiveBeginPlay();
@@ -61,6 +59,12 @@ public:
     UE_PURE class AFSDPlayerController* GetPlayerController();
     void ChangeAttacks(class ASpiderEnemy* enemy);
     void UpdateHoldProgress();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FriendedEnemy__Replicated = ":";
+        static constexpr const char* Setup_Shouts__UeName = "Setup Shouts";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster

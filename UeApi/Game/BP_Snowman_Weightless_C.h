@@ -23,16 +23,11 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_Snowman_Weightless", "BP_Snowman_Weightless_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Xmas_TopHat;
-    static constexpr const char* SM_Xmas_TopHat__UeScsNode = "aa461600d7ce5f429e0f0b6c9967d323";
     class UStaticMeshComponent* SM_Xmas_SnowmanSplit_02;
-    static constexpr const char* SM_Xmas_SnowmanSplit_02__UeScsNode = "d7a82704f044c846bca9167db44e62b7";
     class UStaticMeshComponent* SM_Xmas_SnowmanSplit_01;
-    static constexpr const char* SM_Xmas_SnowmanSplit_01__UeScsNode = "29c3e510500b044ab15eb8a73216cd6b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a2c996c729f7bc4a9678ead8db4d4226";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     TArray<class UStaticMesh*> MeshesToChooseFrom;
     TArray<class UMaterialInterface*> Mats_Wrapper;
@@ -40,7 +35,6 @@ public:
     int RandomPresentSound;
     FRandomStream RandomStream;
     int RandomSeed;
-    static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
     TArray<float> SpinSpeed;
     TArray<class UMeshComponent*> MeshParts;
     TArray<FVector> Directions;
@@ -49,6 +43,16 @@ public:
     void ReceiveBeginPlay();
     void OnRep_KickSoundLocation();
     void OnRep_RandomSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Xmas_TopHat__UeScsNode = "aa461600d7ce5f429e0f0b6c9967d323";
+        static constexpr const char* SM_Xmas_SnowmanSplit_02__UeScsNode = "d7a82704f044c846bca9167db44e62b7";
+        static constexpr const char* SM_Xmas_SnowmanSplit_01__UeScsNode = "29c3e510500b044ab15eb8a73216cd6b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a2c996c729f7bc4a9678ead8db4d4226";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

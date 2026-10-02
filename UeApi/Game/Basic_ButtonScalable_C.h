@@ -34,12 +34,9 @@ public:
     FText ButtonText;
     TMulticastInlineDelegate<void()> OnClicked;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     float Width__minimum_;
-    static constexpr const char* Width__minimum___UeName = "Width (minimum)";
     float Height;
     bool Thick_Bars;
-    static constexpr const char* Thick_Bars__UeName = "Thick Bars";
     TMulticastInlineDelegate<void()> OnPressed;
     TMulticastInlineDelegate<void()> OnReleased;
     void ExecuteUbergraph_Basic_ButtonScalable(int EntryPoint);
@@ -52,6 +49,13 @@ public:
     void SetFontSize(int FontSize);
     void SetButtonText(FText Text);
     void IsPressed(bool& IsPressed_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Width__minimum___UeName = "Width (minimum)";
+        static constexpr const char* Thick_Bars__UeName = "Thick Bars";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

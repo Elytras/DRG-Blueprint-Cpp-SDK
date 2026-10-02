@@ -16,7 +16,11 @@ class BP_TurretbaseDebris_C : public Game::GameElements::Objectives::Facility::T
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/BP_TurretbaseDebris", "BP_TurretbaseDebris_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "e7f6689765e4fd469a43816765bb463f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "e7f6689765e4fd469a43816765bb463f";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

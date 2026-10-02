@@ -16,12 +16,16 @@ class EWC_Refinery_End_C : public Game::Enemies::Waves::WaveControllers::EWC_Bas
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Refinery_End", "EWC_Refinery_End_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Refinery_End_C;
-    static constexpr const char* UberGraphFrame_EWC_Refinery_End_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     int WaveCountConstantPressure;
     int WaveCountWaves;
     void ExecuteUbergraph_EWC_Refinery_End(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Refinery_End_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

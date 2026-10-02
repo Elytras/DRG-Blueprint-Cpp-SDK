@@ -18,19 +18,23 @@ class BP_BarrelDispenser_C : public Game::GameElements::ItemDispenser::BP_ItemDi
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_BarrelDispenser", "BP_BarrelDispenser_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InstantUsable Usable;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "8a9bc12faf64b54999ff5b7642945bb6";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "c086f888773d9042afaeecfe5818ee26";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "af9c1997ade4864aba1a60299a862181";
     bool StartReady;
     void ExecuteUbergraph_BP_BarrelDispenser(int EntryPoint);
     void SetOutline(float ActiveTime);
     void ReceiveBeginPlay();
     void ManageOutline(float ActiveTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InstantUsable Usable;/Script/Engine.SceneComponent Root";
+        static constexpr const char* SkeletalMesh__UeScsNode = "8a9bc12faf64b54999ff5b7642945bb6";
+        static constexpr const char* outline__UeScsNode = "c086f888773d9042afaeecfe5818ee26";
+        static constexpr const char* Sphere__UeScsNode = "af9c1997ade4864aba1a60299a862181";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent

@@ -239,6 +239,14 @@ struct FInputChord
 
     FInputChord() = default;
     FInputChord(FKey Key, bool bShift, bool bCtrl, bool bAlt, bool bCmd) {}
+
+    // UKismetInputLibrary::InputChord_GetDisplayName (Engine.h)
+    FText InputChord_GetDisplayName() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InputChord_GetDisplayName__UeForward = "UKismetInputLibrary::InputChord_GetDisplayName";
+    };
 };
 
 struct FVirtualKeyboardOptions

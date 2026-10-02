@@ -27,17 +27,21 @@ public:
     class UTextBlock* TextBlock_Rank;
     class UPerkAsset* PerkItem;
     TMulticastInlineDelegate<void(Cheat_SetPerk_Row_C* Buff_row_to_skip)> On_PerkRow_checked;
-    static constexpr const char* On_PerkRow_checked__UeName = "On PerkRow checked";
     void ExecuteUbergraph_Cheat_SetPerk_Row(int EntryPoint);
     void UpdateTextColor();
     void ChangedRank(int InChange);
     void BndEvt__Cheat_SetPerk_Row_PlusBtn_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Cheat_SetPerk_Row_MinusBtn_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Check_if_owned_perk_is_a_active_perk();
-    static constexpr const char* Check_if_owned_perk_is_a_active_perk__UeName = "Check if owned perk is a active perk";
     void BndEvt__CheckBox_0_K2Node_ComponentBoundEvent_64_OnCheckBoxComponentStateChanged__DelegateSignature(bool bIsChecked);
     void Set_Perk_for_row(class UPerkAsset* Perk_for_row);
-    static constexpr const char* Set_Perk_for_row__UeName = "Set Perk for row";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_PerkRow_checked__UeName = "On PerkRow checked";
+        static constexpr const char* Check_if_owned_perk_is_a_active_perk__UeName = "Check if owned perk is a active perk";
+        static constexpr const char* Set_Perk_for_row__UeName = "Set Perk for row";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

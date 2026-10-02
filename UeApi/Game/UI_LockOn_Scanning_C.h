@@ -18,7 +18,7 @@ class UI_LockOn_Scanning_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/UI_LockOn_Scanning", "UI_LockOn_Scanning_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimScanning;
+    UE_READONLY class UWidgetAnimation* AnimScanning;
     class UImage* Image_1;
     class UImage* Image_2;
     class UImage* Image_3;

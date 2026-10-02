@@ -18,11 +18,15 @@ class BP_PostProcessing_CausticMire_C : public AFSDPostProcessingActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Testing/CausticMire/BP_PostProcessing_CausticMire", "BP_PostProcessing_CausticMire_C");
     class UPostProcessComponent* PostProcess;
-    static constexpr const char* PostProcess__UeScsNode = "4bb53ff7839e164ebd1fed6227643a0f";
     class UExponentialHeightFogComponent* ExponentialHeightFog;
-    static constexpr const char* ExponentialHeightFog__UeScsNode = "266add90e2b34a4681e874a53db36ceb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PostProcess__UeScsNode = "4bb53ff7839e164ebd1fed6227643a0f";
+        static constexpr const char* ExponentialHeightFog__UeScsNode = "266add90e2b34a4681e874a53db36ceb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::CausticMire

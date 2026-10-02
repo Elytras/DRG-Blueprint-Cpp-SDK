@@ -34,10 +34,10 @@ public:
     using ITM_MasteryBar_C = Game::UI::Menu_Loadout::ITM_MasteryBar_C;
     using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* IntroRight;
-    class UWidgetAnimation* IntroLeft;
-    class UWidgetAnimation* ClickAnim;
-    class UWidgetAnimation* HoverAnim;
+    UE_READONLY class UWidgetAnimation* IntroRight;
+    UE_READONLY class UWidgetAnimation* IntroLeft;
+    UE_READONLY class UWidgetAnimation* ClickAnim;
+    UE_READONLY class UWidgetAnimation* HoverAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UBorder* Brackets;
     class UButton* ButtonLeft;
@@ -57,16 +57,12 @@ public:
     class UCanvasPanel* NavigationPanel;
     class UBorder* Upgrades_BG;
     TMulticastInlineDelegate<void(ITM_Loadout_ItemWindow_C* Item)> On_Clicked;
-    static constexpr const char* On_Clicked__UeName = "On Clicked";
     class UPlayerCharacterID* CharacterClass;
     TEnum<EItemCategory> Item_Category;
-    static constexpr const char* Item_Category__UeName = "Item Category";
     bool ItemHovered;
     class UItemID* itemClass;
     TMulticastInlineDelegate<void(ITM_Loadout_ItemWindow_C* Item)> On_Hovered;
-    static constexpr const char* On_Hovered__UeName = "On Hovered";
     TMulticastInlineDelegate<void(ITM_Loadout_ItemWindow_C* Item)> On_Unhovered;
-    static constexpr const char* On_Unhovered__UeName = "On Unhovered";
     TArray<class UItemID*> ItemsOwned;
     bool HideCounter;
     void ExecuteUbergraph_ITM_Loadout_ItemWindow(int EntryPoint);
@@ -76,7 +72,6 @@ public:
     void BndEvt__ButtonRight_K2Node_ComponentBoundEvent_511_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Select_Item(class UItemID* InItemClass);
-    static constexpr const char* Select_Item__UeName = "Select Item";
     void SelectPrevious();
     void SelectNext();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
@@ -90,6 +85,15 @@ public:
     void GetOwnedItems(class UPlayerCharacterID* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UItemID*>& Owned_Items, bool& NewWeaponNotification);
     void GetNextItem(int Direction, class UItemID*& NextItem);
     void SetHideCounter(bool HideCounter_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Clicked__UeName = "On Clicked";
+        static constexpr const char* Item_Category__UeName = "Item Category";
+        static constexpr const char* On_Hovered__UeName = "On Hovered";
+        static constexpr const char* On_Unhovered__UeName = "On Unhovered";
+        static constexpr const char* Select_Item__UeName = "Select Item";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

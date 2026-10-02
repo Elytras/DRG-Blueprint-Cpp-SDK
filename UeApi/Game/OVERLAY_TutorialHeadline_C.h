@@ -25,9 +25,9 @@ public:
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* Enter;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* Enter;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow_152;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow_C_153;

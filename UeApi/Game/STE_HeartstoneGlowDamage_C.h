@@ -13,6 +13,11 @@ class STE_HeartstoneGlowDamage_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/STE_HeartstoneGlowDamage", "STE_HeartstoneGlowDamage_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

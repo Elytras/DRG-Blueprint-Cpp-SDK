@@ -16,11 +16,15 @@ class BP_PropHunt_WorkTable_002_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_WorkTable_002", "BP_PropHunt_WorkTable_002_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "cd0f9518740ad848966380c9b9bce28f";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "1bd9876d3585a54f9b9cae6bc0ac1160";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* Arrow__UeScsNode = "cd0f9518740ad848966380c9b9bce28f";
+        static constexpr const char* StaticMesh__UeScsNode = "1bd9876d3585a54f9b9cae6bc0ac1160";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props

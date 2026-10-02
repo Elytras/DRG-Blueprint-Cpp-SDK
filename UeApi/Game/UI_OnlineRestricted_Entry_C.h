@@ -23,7 +23,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Basic_Image;
     Basic_Label_C* Basic_Label;
-    TEnum<EBlueprintablePrivilegeResults> PrivilegeResult;
+    UE_READONLY TEnum<EBlueprintablePrivilegeResults> PrivilegeResult;
     int FontSize;
     void ExecuteUbergraph_UI_OnlineRestricted_Entry(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

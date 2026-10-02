@@ -20,15 +20,19 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalTumbleWeed/BP_TumbleweedSpawner", "BP_TumbleweedSpawner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "eca3dddf661d5f4f8406b4a977acbb5f";
     class UBillboardComponent* SpawnPoint;
-    static constexpr const char* SpawnPoint__UeScsNode = "2a72929c431779468ac9ef76e1d9b8df";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "339bb06365436f45a3535c8d160dab1d";
     class UClass* ClassToSpawn;
     void ExecuteUbergraph_BP_TumbleweedSpawner(int EntryPoint);
     void SpawnPinecone();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "eca3dddf661d5f4f8406b4a977acbb5f";
+        static constexpr const char* SpawnPoint__UeScsNode = "2a72929c431779468ac9ef76e1d9b8df";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "339bb06365436f45a3535c8d160dab1d";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalTumbleWeed

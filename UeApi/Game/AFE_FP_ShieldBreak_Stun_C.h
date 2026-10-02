@@ -13,7 +13,11 @@ class AFE_FP_ShieldBreak_Stun_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/AFE_FP_ShieldBreak_Stun", "AFE_FP_ShieldBreak_Stun_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Armor

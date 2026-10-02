@@ -13,6 +13,11 @@ class STE_Prospector_SlowImmunity_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/STE_Prospector_SlowImmunity", "STE_Prospector_SlowImmunity_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}   // namespace Game::Critters::Prospector

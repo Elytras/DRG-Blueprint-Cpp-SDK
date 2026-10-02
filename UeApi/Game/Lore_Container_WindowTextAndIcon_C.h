@@ -29,7 +29,7 @@ public:
     using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
     using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Glow;
+    UE_READONLY class UWidgetAnimation* Glow;
     Basic_IconWithOutline_C* Basic_HexIcon;
     Basic_Window_CutCorner_C* Basic_Window;
     class UHorizontalBox* HorizontalBox_Headline;

@@ -23,10 +23,14 @@ public:
     class UTextBlock* HeaderLabel;
     FText HeaderText;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     int BarThickness;
     void ExecuteUbergraph_UI_WeaponMaintenance_Header(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+    };
 };
 
 }}}   // namespace Game::UI::WeaponMaintenance

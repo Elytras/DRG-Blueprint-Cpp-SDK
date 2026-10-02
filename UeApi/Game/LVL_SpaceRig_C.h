@@ -44,15 +44,11 @@ public:
     int DesiredBarrelNumber;
     int MedbayBantersPlayed;
     int Players_spawned;
-    static constexpr const char* Players_spawned__UeName = "Players spawned";
     class UFSDAchievement* TimeWellSpentAchievement;
-    static constexpr const char* TimeWellSpentAchievement__Replicated = ":";
     class UFSDAchievement* ForeignObjectsInTheLaunchbay;
-    static constexpr const char* ForeignObjectsInTheLaunchbay__Replicated = ":";
     TArray<TSoftClassPtr<class UClass>> Preload_Widgets;
     TArray<class UAudioComponent*> AmbientAudioComponents;
     FLinearColor BarLightColor;
-    static constexpr const char* BarLightColor__Replicated = "OnRep_BarLightColor:";
     class USoundCue* CurrentAmbienceCue;
     class USoundCue* DefaultAmbienceCue;
     class AStaticMeshActor* ForceShield_ExecuteUbergraph_LVL_SpaceRig_RefProperty;
@@ -122,7 +118,6 @@ public:
     void BndEvt__InsideDroppodTriggerBox_AllBarrelsIn_K2Node_ActorBoundEvent_7_ActorEndOverlapSignature__DelegateSignature(class AActor* OverlappedActor, class AActor* OtherActor);
     void BndEvt__InsideDroppodTriggerBox_AllBarrelsIn_K2Node_ActorBoundEvent_6_ActorBeginOverlapSignature__DelegateSignature(class AActor* OverlappedActor, class AActor* OtherActor);
     UE_SERVER void Play_medbay_banter(class AFSDPlayerController* Player_controller);
-    static constexpr const char* Play_medbay_banter__UeName = "Play medbay banter";
     void BndEvt__Start_16_K2Node_ActorBoundEvent_5_PlayerSpawnInHub__DelegateSignature(class AFSDPlayerController* Controller);
     void BndEvt__Start_12_K2Node_ActorBoundEvent_3_PlayerSpawnInHub__DelegateSignature(class AFSDPlayerController* Controller);
     void BndEvt__Start_14_K2Node_ActorBoundEvent_2_PlayerSpawnInHub__DelegateSignature(class AFSDPlayerController* Controller);
@@ -135,10 +130,19 @@ public:
     void ReceiveBeginPlay();
     void OnLoaded_C80486AD4277C47F32FE05A37AB96333(TSubclassOf<class UObject> Loaded);
     void Set_Beer_Event_Active(bool Is_Active);
-    static constexpr const char* Set_Beer_Event_Active__UeName = "Set Beer Event Active";
     void GetEventOrDefaultAmbiance(class USoundCue*& OutAmbiance);
     void OnRep_BarLightColor();
     void UpdateAmbienceAudioComponents();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Players_spawned__UeName = "Players spawned";
+        static constexpr const char* TimeWellSpentAchievement__Replicated = ":";
+        static constexpr const char* ForeignObjectsInTheLaunchbay__Replicated = ":";
+        static constexpr const char* BarLightColor__Replicated = "OnRep_BarLightColor:";
+        static constexpr const char* Play_medbay_banter__UeName = "Play medbay banter";
+        static constexpr const char* Set_Beer_Event_Active__UeName = "Set Beer Event Active";
+    };
 };
 
 }}}   // namespace Game::Maps::SpaceRig

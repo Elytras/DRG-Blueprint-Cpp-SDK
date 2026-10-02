@@ -41,7 +41,7 @@ public:
     using ITM_MissionInfo_C = Game::UI::Menu_EscapeMenu::ITM_MissionInfo_C;
     using ITM_ObjectiveBox_InMission_C = Game::UI::Menu_EscapeMenu::ITM_ObjectiveBox_InMission_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* NewMissionSelected;
+    UE_READONLY class UWidgetAnimation* NewMissionSelected;
     Basic_IconWithOutline_C* Basic_IconWithOutline;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;
@@ -104,10 +104,14 @@ public:
     void UpdateMissionInfo(class UGeneratedMission* mission);
     void UpdateMissionStructure(bool& IsDeepDive);
     UE_PURE class UWidget* Get_Tool_Tip_Widget();
-    static constexpr const char* Get_Tool_Tip_Widget__UeName = "Get Tool Tip Widget";
     void UpdateBiomeInfo(class UBiome* Biome);
     void UpdateFromAnimation();
     void SequenceEvent__ENTRYPOINTITM_EscMenu_BriefingV2_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Get_Tool_Tip_Widget__UeName = "Get Tool Tip Widget";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

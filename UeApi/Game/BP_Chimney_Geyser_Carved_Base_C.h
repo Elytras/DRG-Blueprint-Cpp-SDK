@@ -22,25 +22,29 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ChimneyGeyser/BP_Chimney_Geyser_Carved_Base", "BP_Chimney_Geyser_Carved_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "19a7aa71b41426439111062233197405";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "3f378504f8bba2418969028fc74e3a5a";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "de9eed6dadd5b4468e0f3650964ff428";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "91c156b9c9172e49a6762eafcd06e90d";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "a7983ef477426f46b4f314220feb5fcd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "70b2e2023a04db4ba782ffebe8cfb04e";
     bool IsBroken;
-    static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
     class UAudioComponent* SoundInstance;
     void ExecuteUbergraph_BP_Chimney_Geyser_Carved_Base(int EntryPoint);
     void BndEvt__TerrainDetect1_K2Node_ComponentBoundEvent_1_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void ReceiveBeginPlay();
     void OnRep_IsBroken();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TerrainDetect__UeScsNode = "19a7aa71b41426439111062233197405";
+        static constexpr const char* TerrainDetect1__UeScsNode = "3f378504f8bba2418969028fc74e3a5a";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "de9eed6dadd5b4468e0f3650964ff428";
+        static constexpr const char* terrainPlacement__UeScsNode = "91c156b9c9172e49a6762eafcd06e90d";
+        static constexpr const char* ParticleSystem__UeScsNode = "a7983ef477426f46b4f314220feb5fcd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "70b2e2023a04db4ba782ffebe8cfb04e";
+        static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser

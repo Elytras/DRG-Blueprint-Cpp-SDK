@@ -13,7 +13,11 @@ class PRJ_GooProjectile_Fragment_Normal_C : public Game::WeaponsNTools::GooCanno
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_GooProjectile_Fragment_Normal", "PRJ_GooProjectile_Fragment_Normal_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

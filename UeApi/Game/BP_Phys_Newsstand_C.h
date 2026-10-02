@@ -15,8 +15,12 @@ class BP_Phys_Newsstand_C : public Game::Art::Environments::SpaceRig::BP_Kickabl
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Newsstand/BP_Phys_Newsstand", "BP_Phys_Newsstand_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Phys_Newsstand_C;
-    static constexpr const char* UberGraphFrame_BP_Phys_Newsstand_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_Phys_Newsstand(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Phys_Newsstand_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Newsstand

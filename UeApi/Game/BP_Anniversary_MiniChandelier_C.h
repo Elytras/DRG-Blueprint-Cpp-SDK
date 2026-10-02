@@ -23,20 +23,24 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Anniversary/Blueprint/BP_Anniversary_MiniChandelier", "BP_Anniversary_MiniChandelier_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d1453a199e52c34886afa7910344b3e4";
     class USkeletalMeshComponent* SK_Anniversary_WallLamp_01;
-    static constexpr const char* SK_Anniversary_WallLamp_01__UeScsNode = "6c3a6a5a6762b040b25c17ac9fefed6e";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "a16b13a7615e514d898f6de1d6e90172";
-    TArray<class USkeletalMesh*> LampMeshes;
+    UE_READONLY TArray<class USkeletalMesh*> LampMeshes;
     class USkeletalMesh* UsedLampMesh;
-    static constexpr const char* UsedLampMesh__Replicated = "OnRep_UsedLampMesh:";
     FTimerHandle Timer;
     void ExecuteUbergraph_BP_Anniversary_MiniChandelier(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnCollide();
     void OnRep_UsedLampMesh();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "d1453a199e52c34886afa7910344b3e4";
+        static constexpr const char* SK_Anniversary_WallLamp_01__UeScsNode = "6c3a6a5a6762b040b25c17ac9fefed6e";
+        static constexpr const char* Scene__UeScsNode = "a16b13a7615e514d898f6de1d6e90172";
+        static constexpr const char* UsedLampMesh__Replicated = "OnRep_UsedLampMesh:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint

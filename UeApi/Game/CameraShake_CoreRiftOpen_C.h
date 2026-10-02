@@ -13,7 +13,11 @@ class CameraShake_CoreRiftOpen_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/CameraShake_CoreRiftOpen", "CameraShake_CoreRiftOpen_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift

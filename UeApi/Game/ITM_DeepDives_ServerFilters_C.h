@@ -54,16 +54,15 @@ public:
     class UTextBlock* TextDistanceWorld;
     class UTextBlock* TextOpenServerType;
     class UTextBlock* TextPasswordServerType;
-    float Width;
-    bool ShowHeader;
-    bool ShowTextFilter;
-    bool ShowDistanceFilter;
-    bool ShowHazardFilter;
-    bool ShowServerTypeFilter;
-    bool ShowAutoRefresh;
+    UE_READONLY float Width;
+    UE_READONLY bool ShowHeader;
+    UE_READONLY bool ShowTextFilter;
+    UE_READONLY bool ShowDistanceFilter;
+    UE_READONLY bool ShowHazardFilter;
+    UE_READONLY bool ShowServerTypeFilter;
+    UE_READONLY bool ShowAutoRefresh;
     TMulticastInlineDelegate<void()> OnSearchFiltersChanged;
     FMargin Inner_Padding;
-    static constexpr const char* Inner_Padding__UeName = "Inner Padding";
     bool ServerSideFiltering;
     bool ShowGametypeFilter;
     void ExecuteUbergraph_ITM_DeepDives_ServerFilters(int EntryPoint);
@@ -87,6 +86,11 @@ public:
     void GetAutoRefresh(bool& AutoRefresh_0);
     void UpdatePasswordFilter();
     void GetGametypeFilter(TArray<EGameType>& SelectedGametypes);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Inner_Padding__UeName = "Inner Padding";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_DeepDives

@@ -30,37 +30,24 @@ class BP_RockCracker_EndPoint_C : public ARockCrackerDrill
 public:
     UE_CLASS("/Game/WeaponsNTools/RockCrackerBuilder/BP_RockCracker_EndPoint", "BP_RockCracker_EndPoint_C");
     using BP_RockCrackerPod_C = Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent ConstructUsable;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* LHologram;
-    static constexpr const char* LHologram__UeScsNode = "eb19b7cc266d1f47b4f3a5522cdc621a";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "71763ef63e54b74bb9aa196723ea0ce1";
     class UParticleSystemComponent* P_Extractor_PipeLinkUp;
-    static constexpr const char* P_Extractor_PipeLinkUp__UeScsNode = "da2167e3dea04048ae28502d8f4a1b0d";
     class UCapsuleComponent* BuildTrigger;
-    static constexpr const char* BuildTrigger__UeScsNode = "2862f4bb5b05b042958441eff9aefcd4";
     class USkeletalMeshComponent* SK_Hologram;
-    static constexpr const char* SK_Hologram__UeScsNode = "d0dd1aaa592aa74db40128983fcde6c3";
     class USkeletalMeshComponent* SK_RockCracker;
-    static constexpr const char* SK_RockCracker__UeScsNode = "7e961bca94b3f74285827036a37be485";
     class UStaticMeshComponent* SM_FuelLine_Connector;
-    static constexpr const char* SM_FuelLine_Connector__UeScsNode = "17db070f2165fd4ea5d6addf4464f7dc";
     class UAudioComponent* RockCrackerPodEndpointRunning_Cue;
-    static constexpr const char* RockCrackerPodEndpointRunning_Cue__UeScsNode = "df407930473bcb409d535820ea659101";
     class USceneComponent* PistonRoot;
-    static constexpr const char* PistonRoot__UeScsNode = "c4f91f19dd46594bbb9a49d214cbb8b9";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e583f9ab5379de4480e6ef1740ff7b93";
     bool Pinging;
     bool PlacementValid;
     bool shouldHide;
-    static constexpr const char* shouldHide__Replicated = "OnRep_ShouldHide:";
     TMulticastInlineDelegate<void(BP_RockCracker_EndPoint_C* EndPoint)> OnConnected;
     TArray<class UMaterialInterface*> OriginalMaterials;
     float Time;
     bool ShowBuildIcon;
-    static constexpr const char* ShowBuildIcon__Replicated = "OnRep_ShowBuildIcon:";
     FTimerHandle StartDrillTimer;
     void ExecuteUbergraph_BP_RockCracker_EndPoint(int EntryPoint);
     void StartDrill();
@@ -76,6 +63,23 @@ public:
     void EnableButton();
     void OnRep_ShowBuildIcon();
     void OnRep_ShouldHide();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent ConstructUsable;/Script/Engine.SplineComponent ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* LHologram__UeScsNode = "eb19b7cc266d1f47b4f3a5522cdc621a";
+        static constexpr const char* outline__UeScsNode = "71763ef63e54b74bb9aa196723ea0ce1";
+        static constexpr const char* P_Extractor_PipeLinkUp__UeScsNode = "da2167e3dea04048ae28502d8f4a1b0d";
+        static constexpr const char* BuildTrigger__UeScsNode = "2862f4bb5b05b042958441eff9aefcd4";
+        static constexpr const char* SK_Hologram__UeScsNode = "d0dd1aaa592aa74db40128983fcde6c3";
+        static constexpr const char* SK_RockCracker__UeScsNode = "7e961bca94b3f74285827036a37be485";
+        static constexpr const char* SM_FuelLine_Connector__UeScsNode = "17db070f2165fd4ea5d6addf4464f7dc";
+        static constexpr const char* RockCrackerPodEndpointRunning_Cue__UeScsNode = "df407930473bcb409d535820ea659101";
+        static constexpr const char* PistonRoot__UeScsNode = "c4f91f19dd46594bbb9a49d214cbb8b9";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e583f9ab5379de4480e6ef1740ff7b93";
+        static constexpr const char* shouldHide__Replicated = "OnRep_ShouldHide:";
+        static constexpr const char* ShowBuildIcon__Replicated = "OnRep_ShowBuildIcon:";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder

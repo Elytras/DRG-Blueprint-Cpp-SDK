@@ -23,15 +23,12 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/BP_TurretEMPDischarge_Indicator", "BP_TurretEMPDischarge_Indicator_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* PlasmaLineRangeSphere;
-    static constexpr const char* PlasmaLineRangeSphere__UeScsNode = "0e388be31c1c224395da66a8ea7f13a2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "352fa26d5d32354e8e61f7b4b97878c0";
     float AnimIntro_Scale_57882F7043B8B09C3BF272B62C090308;
     TEnum<ETimelineDirection> AnimIntro__Direction_57882F7043B8B09C3BF272B62C090308;
     class UTimelineComponent* AnimIntro;
     class APlayerCharacter* LocalPlayer;
     class ARedeployableSentryGun* Redeployable_Sentry_Gun;
-    static constexpr const char* Redeployable_Sentry_Gun__UeName = "Redeployable Sentry Gun";
     void ExecuteUbergraph_BP_TurretEMPDischarge_Indicator(int EntryPoint);
     void OnStateChanged_Event(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void OnItemUnequipped(class AItem* Item);
@@ -40,6 +37,13 @@ public:
     void AnimIntro__UpdateFunc();
     void AnimIntro__FinishedFunc();
     void UpdateState(bool animate);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PlasmaLineRangeSphere__UeScsNode = "0e388be31c1c224395da66a8ea7f13a2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "352fa26d5d32354e8e61f7b4b97878c0";
+        static constexpr const char* Redeployable_Sentry_Gun__UeName = "Redeployable Sentry Gun";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SentryGun

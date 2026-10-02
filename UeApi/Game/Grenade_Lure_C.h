@@ -19,14 +19,18 @@ class Grenade_Lure_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Lure/Grenade_Lure", "Grenade_Lure_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Lure_C;
-    static constexpr const char* UberGraphFrame_Grenade_Lure_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_Grenade_Lure(int EntryPoint);
     UE_MULTICAST void DoCustomExplosion();
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_Lure_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Lure

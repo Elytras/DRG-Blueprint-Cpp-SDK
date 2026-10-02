@@ -21,17 +21,16 @@ class UI_AvailablePerkPoints_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_AvailablePerkPoints", "UI_AvailablePerkPoints_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* PingAnim;
+    UE_READONLY class UWidgetAnimation* PingAnim;
     class UTextBlock* AmountText;
     class USpacer* IconSpacer;
     class UImage* PerkIcon;
     int FontSize;
     float Image_Size;
-    static constexpr const char* Image_Size__UeName = "Image Size";
     float Spacing;
     float CurrentPerkPoints;
     int TargetPerkPoints;
-    bool DoCountAnimation;
+    UE_READONLY bool DoCountAnimation;
     void ExecuteUbergraph_UI_AvailablePerkPoints(int EntryPoint);
     void OnPingAnimFinished();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
@@ -40,6 +39,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetPerkPointsText(int Points);
     void CountPerkPoints(float DeltaTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Image_Size__UeName = "Image Size";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

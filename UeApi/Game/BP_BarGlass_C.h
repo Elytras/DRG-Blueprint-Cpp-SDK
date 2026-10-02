@@ -22,16 +22,20 @@ public:
     UE_CLASS("/Game/GameElements/Bar/BP_BarGlass", "BP_BarGlass_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "dc33a92d3b50b643867e6c2293494765";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "e14d3eadd9db2441b252b63a0789c5af";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f02194651f161c4a866d7413933e621a";
     FVector StartLocation;
     void ExecuteUbergraph_BP_BarGlass(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_DrinkableData();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InstantUsable__UeScsNode = "dc33a92d3b50b643867e6c2293494765";
+        static constexpr const char* Box__UeScsNode = "e14d3eadd9db2441b252b63a0789c5af";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f02194651f161c4a866d7413933e621a";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

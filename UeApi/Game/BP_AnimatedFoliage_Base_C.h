@@ -28,19 +28,12 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/BP_AnimatedFoliage_Base", "BP_AnimatedFoliage_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "2b570cdc1cd5a44ab78f835d4c421b2c";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "0b4a4092c10496429263b706b8496116";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "3cf110c0fd8a14419b1966aeced4477f";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "570e13dcd4d01246a28fb2e5e2d9ed3a";
     class UCapsuleComponent* CapsuleCollision;
-    static constexpr const char* CapsuleCollision__UeScsNode = "e3a827d547253140b6137e66d5348e28";
     class USkeletalMeshComponent* SK_AnimatedMesh;
-    static constexpr const char* SK_AnimatedMesh__UeScsNode = "bb33371467cff34cb6f5670c16f59f4b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "fe265ad8c5dd1549a0786f5b76ea8faa";
     class USoundCue* deathSound;
     class UParticleSystem* deathParticles;
     class UNiagaraSystem* NiagaraDeathParticles;
@@ -52,6 +45,17 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "2b570cdc1cd5a44ab78f835d4c421b2c";
+        static constexpr const char* terrainPlacement__UeScsNode = "0b4a4092c10496429263b706b8496116";
+        static constexpr const char* TerrainDetect__UeScsNode = "3cf110c0fd8a14419b1966aeced4477f";
+        static constexpr const char* SimpleHealth__UeScsNode = "570e13dcd4d01246a28fb2e5e2d9ed3a";
+        static constexpr const char* CapsuleCollision__UeScsNode = "e3a827d547253140b6137e66d5348e28";
+        static constexpr const char* SK_AnimatedMesh__UeScsNode = "bb33371467cff34cb6f5670c16f59f4b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "fe265ad8c5dd1549a0786f5b76ea8faa";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage

@@ -34,8 +34,8 @@ public:
     using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
     using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimCount;
-    class UWidgetAnimation* AnimOpenMatrix;
+    UE_READONLY class UWidgetAnimation* AnimCount;
+    UE_READONLY class UWidgetAnimation* AnimOpenMatrix;
     class UBorder* CounterBorder;
     class UOverlay* CounterOverlay;
     Basic_Label_C* CountLabel;
@@ -55,12 +55,11 @@ public:
     class UImage* UpperBarCorner;
     class UOverlay* WeaponIcon;
     TMulticastInlineDelegate<void()> OnMatrixCoreOpened;
-    bool ShowMatrixCore;
+    UE_READONLY bool ShowMatrixCore;
     int CountingTo;
     float CountProgress;
     void ExecuteUbergraph_UI_Forge_Details(int EntryPoint);
     void Stop_Counting();
-    static constexpr const char* Stop_Counting__UeName = "Stop Counting";
     void AnimOpenMatrixFinished();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -70,6 +69,11 @@ public:
     void SetCountProgress(float InValue);
     void StartCounting();
     void SequenceEvent__ENTRYPOINTUI_Forge_Details_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Stop_Counting__UeName = "Stop Counting";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

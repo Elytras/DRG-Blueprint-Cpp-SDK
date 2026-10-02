@@ -20,18 +20,22 @@ public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooExplosion", "BP_GooExplosion_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* TargetDamage;
-    static constexpr const char* TargetDamage__UeScsNode = "348519b25119e74dbe64c4ca1efcd776";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "44003940e637ba44887987a5f0df6dec";
     class UNiagaraComponent* NS_ToxicCatalyst_DeathExplosion;
-    static constexpr const char* NS_ToxicCatalyst_DeathExplosion__UeScsNode = "a1b243e46ff6774293ce12dbe1ff58a2";
     class UDamageComponent* ExplosionDamage;
-    static constexpr const char* ExplosionDamage__UeScsNode = "e4b21483600f2140b49bb38b57557fd1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8963de5d7adb9949977d4369fa9b56c4";
     FRuntimeFloatCurve Curve;
     void ExecuteUbergraph_BP_GooExplosion(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TargetDamage__UeScsNode = "348519b25119e74dbe64c4ca1efcd776";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "44003940e637ba44887987a5f0df6dec";
+        static constexpr const char* NS_ToxicCatalyst_DeathExplosion__UeScsNode = "a1b243e46ff6774293ce12dbe1ff58a2";
+        static constexpr const char* ExplosionDamage__UeScsNode = "e4b21483600f2140b49bb38b57557fd1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8963de5d7adb9949977d4369fa9b56c4";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

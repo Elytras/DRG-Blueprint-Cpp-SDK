@@ -24,19 +24,13 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/BP_Grenade_IFG_Area_Base", "BP_Grenade_IFG_Area_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "c75beccd3ac6664db51e3893ea0c092d";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "d848b1f453499049be44f9bbf47c9aef";
     class UParticleSystemComponent* ColdCloud;
-    static constexpr const char* ColdCloud__UeScsNode = "e37f1e600c336943986f3c3a0f8890ef";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "530acadf2247244f822b9cadf4bd5639";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
     float LifeTime;
     float ParticleDeathDuration;
     bool Actice;
-    static constexpr const char* Actice__Replicated = "OnRep_Actice:";
     class USoundBase* FieldStop_Cue;
     class USoundBase* Explosion_Cue;
     class USoundBase* EnterField_Cue;
@@ -50,6 +44,16 @@ public:
     void UserConstructionScript();
     void OnRep_Actice();
     void AttachToValidSurface();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "c75beccd3ac6664db51e3893ea0c092d";
+        static constexpr const char* Audio__UeScsNode = "d848b1f453499049be44f9bbf47c9aef";
+        static constexpr const char* ColdCloud__UeScsNode = "e37f1e600c336943986f3c3a0f8890ef";
+        static constexpr const char* Sphere__UeScsNode = "530acadf2247244f822b9cadf4bd5639";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
+        static constexpr const char* Actice__Replicated = "OnRep_Actice:";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG

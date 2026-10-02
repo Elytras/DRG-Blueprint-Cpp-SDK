@@ -24,19 +24,12 @@ class ENE_Spider_Tank_Radioactive_C : public Game::Enemies::Spider::Tank::ENE_Sp
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ENE_Spider_Tank_Radioactive", "ENE_Spider_Tank_Radioactive_C");
     using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Radioactive_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Radioactive_C__UeName = "UberGraphFrame";
     BP_ConeAttackBase_C* RadiationAttack;
-    static constexpr const char* RadiationAttack__UeScsNode = "c51f2f1e05e96f40936c82e02e52a869";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bf8fec52d45cca4a883450fbebfacb48";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "654141ac193bb244a07561bdcb3d3c43";
     class UStaticMeshComponent* RadiationSphere;
-    static constexpr const char* RadiationSphere__UeScsNode = "0f1f92be41d8054a8eb6cbffc7011316";
     class UAudioComponent* RadiationSound;
-    static constexpr const char* RadiationSound__UeScsNode = "e25b8861edfcdd48aa768711320c0144";
     float Radiation_Intensity_491FF937435DBE6C1B8926899616FADE;
     TEnum<ETimelineDirection> Radiation__Direction_491FF937435DBE6C1B8926899616FADE;
     class UTimelineComponent* Radiation;
@@ -46,7 +39,6 @@ public:
     class UMaterialInstanceDynamic* DynamicGlowbuttMat;
     float BaseLightRadius;
     bool RadiationAttackActive;
-    static constexpr const char* RadiationAttackActive__Replicated = "OnRep_RadiationAttackActive:";
     void ExecuteUbergraph_ENE_Spider_Tank_Radioactive(int EntryPoint);
     void SpecialAttackFlow_1();
     void OnUnFrozen();
@@ -60,6 +52,18 @@ public:
     void Radiation__UpdateFunc();
     void Radiation__FinishedFunc();
     void OnRep_RadiationAttackActive();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Radioactive_C__UeName = "UberGraphFrame";
+        static constexpr const char* RadiationAttack__UeScsNode = "c51f2f1e05e96f40936c82e02e52a869";
+        static constexpr const char* Sphere__UeScsNode = "bf8fec52d45cca4a883450fbebfacb48";
+        static constexpr const char* ParticleSystem__UeScsNode = "654141ac193bb244a07561bdcb3d3c43";
+        static constexpr const char* RadiationSphere__UeScsNode = "0f1f92be41d8054a8eb6cbffc7011316";
+        static constexpr const char* RadiationSound__UeScsNode = "e25b8861edfcdd48aa768711320c0144";
+        static constexpr const char* RadiationAttackActive__Replicated = "OnRep_RadiationAttackActive:";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

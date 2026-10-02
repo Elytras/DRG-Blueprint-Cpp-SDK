@@ -28,11 +28,8 @@ public:
     class UOverlay* Root_Overlay;
     FDifficultyMutatorItem Mutator;
     int Icon_Size;
-    static constexpr const char* Icon_Size__UeName = "Icon Size";
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     int Text_Offset;
-    static constexpr const char* Text_Offset__UeName = "Text Offset";
     bool IconActive;
     void ExecuteUbergraph_UI_HazPlus_Icon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -41,8 +38,15 @@ public:
     void SetSize(int InIconSize, int inFontSize, int InTextOffset);
     UE_PURE bool IsMutatorType(FDifficultyMutatorItem InMutator);
     void Set_Icon_Active(bool InIconActive);
-    static constexpr const char* Set_Icon_Active__UeName = "Set Icon Active";
     void GetMutator(FDifficultyMutatorItem& OutMutator);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Icon_Size__UeName = "Icon Size";
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Text_Offset__UeName = "Text Offset";
+        static constexpr const char* Set_Icon_Active__UeName = "Set Icon Active";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

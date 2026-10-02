@@ -25,33 +25,19 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_TreasureRoom_DeepScan_Base", "BP_TreasureRoom_DeepScan_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UDebrisDataComponent* D_Geode_Crystal;
-    static constexpr const char* D_Geode_Crystal__UeScsNode = "a3aeb600a9349d4e8b94f9ca82992a36";
     class UNiagaraComponent* NS_Treasure_Room_Atmosphere;
-    static constexpr const char* NS_Treasure_Room_Atmosphere__UeScsNode = "13e72afebca4814ab692ab108d83fd41";
     class UMeshCarverComponent* CrystalMaterialFillCarver;
-    static constexpr const char* CrystalMaterialFillCarver__UeScsNode = "3387b0ac3f9beb4f86e2a0bbb075d37e";
     class ULevelGenerationCarverComponent* LevelGenerationCarver2;
-    static constexpr const char* LevelGenerationCarver2__UeScsNode = "a034c68f70ea9b4f9dd6039c27d450c2";
     class ULevelGenerationCarverComponent* LevelGenerationCarver1;
-    static constexpr const char* LevelGenerationCarver1__UeScsNode = "97875052db9b6642b6b49c135d179724";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "05f081dee8f554429d3d0dd60fceabad";
     class USceneComponent* CavityCarvers;
-    static constexpr const char* CavityCarvers__UeScsNode = "1d7492518cd1184583a783ccb170dbc0";
     class UStaticMeshComponent* SM_ScannerPrim_Triangle;
-    static constexpr const char* SM_ScannerPrim_Triangle__UeScsNode = "246cfc6568662d449cb45b4c1e5ac949";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "bc6ae0436b6e794e8d52cff43baa0155";
     class UMeshCarverComponent* MidLayerFillCarver;
-    static constexpr const char* MidLayerFillCarver__UeScsNode = "4d5f35d9a339924bb7f140a69d93ff87";
     class UBillboardComponent* Billboard1;
-    static constexpr const char* Billboard1__UeScsNode = "fac979a132ffc2448f791059a25da338";
     class UBillboardComponent* Billboard;
-    static constexpr const char* Billboard__UeScsNode = "fe62473d67de7348971b771a2f8f6f72";
     class UMeshCarverComponent* HardRockFillCarver;
-    static constexpr const char* HardRockFillCarver__UeScsNode = "6a2de4be13bce54c86067a1180e654bb";
     class USceneComponent* Carvers;
-    static constexpr const char* Carvers__UeScsNode = "b0c74cbd6355164ea8a4be390773621e";
     float ShellRadius_0;
     int CrystalPlacementAttemptsCounter;
     int InitialCrystalPlacementAttempts;
@@ -60,6 +46,24 @@ public:
     void AddTreasureNuts();
     void CarveLargeCrystals();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* D_Geode_Crystal__UeScsNode = "a3aeb600a9349d4e8b94f9ca82992a36";
+        static constexpr const char* NS_Treasure_Room_Atmosphere__UeScsNode = "13e72afebca4814ab692ab108d83fd41";
+        static constexpr const char* CrystalMaterialFillCarver__UeScsNode = "3387b0ac3f9beb4f86e2a0bbb075d37e";
+        static constexpr const char* LevelGenerationCarver2__UeScsNode = "a034c68f70ea9b4f9dd6039c27d450c2";
+        static constexpr const char* LevelGenerationCarver1__UeScsNode = "97875052db9b6642b6b49c135d179724";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "05f081dee8f554429d3d0dd60fceabad";
+        static constexpr const char* CavityCarvers__UeScsNode = "1d7492518cd1184583a783ccb170dbc0";
+        static constexpr const char* SM_ScannerPrim_Triangle__UeScsNode = "246cfc6568662d449cb45b4c1e5ac949";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "bc6ae0436b6e794e8d52cff43baa0155";
+        static constexpr const char* MidLayerFillCarver__UeScsNode = "4d5f35d9a339924bb7f140a69d93ff87";
+        static constexpr const char* Billboard1__UeScsNode = "fac979a132ffc2448f791059a25da338";
+        static constexpr const char* Billboard__UeScsNode = "fe62473d67de7348971b771a2f8f6f72";
+        static constexpr const char* HardRockFillCarver__UeScsNode = "6a2de4be13bce54c86067a1180e654bb";
+        static constexpr const char* Carvers__UeScsNode = "b0c74cbd6355164ea8a4be390773621e";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms

@@ -23,8 +23,8 @@ public:
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHide;
-    class UWidgetAnimation* AnimShow;
+    UE_READONLY class UWidgetAnimation* AnimHide;
+    UE_READONLY class UWidgetAnimation* AnimShow;
     Basic_Label_C* EventName;
     Basic_Image_C* FlashImage;
     class UWidgetSwitcher* StateSwitcher;

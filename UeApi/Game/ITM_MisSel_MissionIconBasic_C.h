@@ -30,9 +30,8 @@ public:
     class USizeBox* IconSize;
     Basic_ToolTip_C* ToolTip;
     bool ThickOutline;
-    float Size;
-    bool Show_Frame;
-    static constexpr const char* Show_Frame__UeName = "Show Frame";
+    UE_READONLY float Size;
+    UE_READONLY bool Show_Frame;
     bool Selected;
     FObjectiveMissionIcon MissionIcon;
     bool DataSet;
@@ -42,6 +41,11 @@ public:
     void SetMission(class UGeneratedMission* InMission);
     void SetSelected(bool InSelected);
     void SetTemplate(class UMissionTemplate* Template, bool UseSimpleIcon);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Frame__UeName = "Show Frame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

@@ -26,11 +26,15 @@ public:
     static void GetFontSize(class UTextBlock*& Label, class UObject* __WorldContext, int& Size);
     static void GetTimeText(float Dividend, class UObject* __WorldContext, FText& Text);
     static void Select_Character_ID_Text(class UPlayerCharacterID* characterID, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
-    static constexpr const char* Select_Character_ID_Text__UeName = "Select Character ID Text";
     static void Select_Character_Class_Text(class UPlayerCharacterID* CharacterClass, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
-    static constexpr const char* Select_Character_Class_Text__UeName = "Select Character Class Text";
     static void Select_CharacterText(class APlayerCharacter* Character, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
-    static constexpr const char* Select_CharacterText__UeName = "Select CharacterText";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Select_Character_ID_Text__UeName = "Select Character ID Text";
+        static constexpr const char* Select_Character_Class_Text__UeName = "Select Character Class Text";
+        static constexpr const char* Select_CharacterText__UeName = "Select CharacterText";
+    };
 };
 
 }}}   // namespace Game::Game::Text

@@ -20,15 +20,19 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_BigCrystal", "BP_BigCrystal_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "bfbfec01a9cbbd4a8ceb9c9e76dbabde";
     class UMeshCarverComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "a3e37fa2f5efad49ac4b9fa1d7854f36";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "fd284f7aaed52444bd79b63471cf511d";
     FVector ScaleMin;
     FVector ScaleMax;
     void ExecuteUbergraph_BP_BigCrystal(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "bfbfec01a9cbbd4a8ceb9c9e76dbabde";
+        static constexpr const char* MeshCarver__UeScsNode = "a3e37fa2f5efad49ac4b9fa1d7854f36";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "fd284f7aaed52444bd79b63471cf511d";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms

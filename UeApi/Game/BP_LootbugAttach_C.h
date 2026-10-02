@@ -17,9 +17,13 @@ class BP_LootbugAttach_C : public AActor
 public:
     UE_CLASS("/Game/CharacterStructure/Gear_Unarmed/TP/EndScreenAnims/Attachments/BP_LootbugAttach", "BP_LootbugAttach_C");
     class USkeletalMeshComponent* SK_LootbugVictory_A;
-    static constexpr const char* SK_LootbugVictory_A__UeScsNode = "79e0c819b5854a43988af60e6ca7d96e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9f77a282c0aae647b73d5864fa1ecfad";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_LootbugVictory_A__UeScsNode = "79e0c819b5854a43988af60e6ca7d96e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9f77a282c0aae647b73d5864fa1ecfad";
+    };
 };
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments

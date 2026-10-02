@@ -13,6 +13,11 @@ class CP_PrestigeAssignment_PickaxeHunt_50__C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_PrestigeAssignment_PickaxeHunt_50_", "CP_PrestigeAssignment_PickaxeHunt_50__C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.PickaxePartReward CampaignMission_0:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_1:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_2:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_1;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_2;/Script/FSD.PickaxePartReward CampaignMission_3:PickaxePartReward_6;/Script/FSD.PlayerRankCampaignRequirement PlayerRankCampaignRequirement_0;/Script/FSD.PlayerRankCampaignRequirement PlayerRankCampaignRequirement_1";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

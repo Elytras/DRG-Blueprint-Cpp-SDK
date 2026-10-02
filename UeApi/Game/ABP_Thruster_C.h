@@ -28,13 +28,17 @@ public:
     FAnimNode_Constraint AnimGraphNode_Constraint;
     FAnimNode_ModifyBone AnimGraphNode_ModifyBone;
     BP_RocketAttachment_C* As_BP_Rocket_Attachment;
-    static constexpr const char* As_BP_Rocket_Attachment__UeName = "As BP Rocket Attachment";
     FName BoneNameToFollow;
     FVector LookAtLocation;
     void ExecuteUbergraph_ABP_Thruster(int EntryPoint);
     void BlueprintInitializeAnimation();
     void BlueprintUpdateAnimation(float DeltaTimeX);
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* As_BP_Rocket_Attachment__UeName = "As BP Rocket Attachment";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::Assets

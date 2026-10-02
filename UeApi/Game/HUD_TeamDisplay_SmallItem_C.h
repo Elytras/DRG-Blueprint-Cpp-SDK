@@ -38,11 +38,11 @@ public:
     using UI_CallingMolly_C = Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;
     using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* RevivedAnimation;
-    class UWidgetAnimation* DamageAnimation;
-    class UWidgetAnimation* IntroAnimation;
-    class UWidgetAnimation* ParalyzedAnimation;
-    class UWidgetAnimation* DownAnimation;
+    UE_READONLY class UWidgetAnimation* RevivedAnimation;
+    UE_READONLY class UWidgetAnimation* DamageAnimation;
+    UE_READONLY class UWidgetAnimation* IntroAnimation;
+    UE_READONLY class UWidgetAnimation* ParalyzedAnimation;
+    UE_READONLY class UWidgetAnimation* DownAnimation;
     ITM_SupplyBar_C* AmmoBar;
     class USizeBox* AmmoSizeBox;
     class UImage* DownIcon;
@@ -56,7 +56,7 @@ public:
     class UCircularThrobber* PlayerOnHisWayIndicator;
     UI_PlayerSpeaking_C* PlayerSpeaking;
     UI_CallingMolly_C* UI_CallingMolly;
-    class AFSDPlayerState* PlayerState;
+    UE_READONLY class AFSDPlayerState* PlayerState;
     class UPlayerHealthComponent* HealthComponent;
     class APlayerCharacter* PlayerCharacter;
     bool IsDown;
@@ -66,7 +66,7 @@ public:
     class APlayerCharacter* LocalCharacter;
     class AFSDPlayerState* LocalPlayerState;
     bool LookingAtSupplyPod;
-    class UHUDVisibilityGroup* VisibilityGroup;
+    UE_READONLY class UHUDVisibilityGroup* VisibilityGroup;
     bool DownFollowingPlayer;
     FString PreviewName;
     void ExecuteUbergraph_HUD_TeamDisplay_SmallItem(int EntryPoint);
@@ -75,7 +75,6 @@ public:
     void OnBeginHoveringEvent(class UUsableComponentBase* Component);
     void OnEndHoveringEvent_Event();
     void Show_Ammo_Bar();
-    static constexpr const char* Show_Ammo_Bar__UeName = "Show Ammo Bar";
     void OnLaserPointerPressed_Event();
     void OnLaserPointerReleased_Event();
     void OnDownCameraTargetChanged(class APlayerCharacter* Target);
@@ -94,6 +93,11 @@ public:
     void BndEvt__PlayerSpeaking_K2Node_ComponentBoundEvent_0_OnChanged__DelegateSignature(bool InTalking);
     void OnVisibilityModeChanged(class UHUDVisibilityGroup* Group, TEnum<EHUDVisibilityMode> Mode);
     void ShowDynamicHUD();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Ammo_Bar__UeName = "Show Ammo Bar";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display

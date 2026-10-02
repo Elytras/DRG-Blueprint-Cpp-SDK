@@ -24,15 +24,10 @@ class Grenade_Incendiary_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_B
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Incendiary/Grenade_Incendiary", "Grenade_Incendiary_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Incendiary_C;
-    static constexpr const char* UberGraphFrame_Grenade_Incendiary_C__UeName = "UberGraphFrame";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "b7e4e6ec3f68cf41a5d698398510f19d";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "3438ba09403cf74580c938d14842e053";
     class UAreaSpawnerComponent* AreaSpawner;
-    static constexpr const char* AreaSpawner__UeScsNode = "7056f88bea12ff4e978bff6d19cba0b2";
     float Radius;
     class UParticleSystem* TriggerEffect;
     class USoundCue* TriggerSound;
@@ -43,6 +38,15 @@ public:
     void OnExploded();
     void SpawnFireOnGround();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_Incendiary_C__UeName = "UberGraphFrame";
+        static constexpr const char* Damage__UeScsNode = "b7e4e6ec3f68cf41a5d698398510f19d";
+        static constexpr const char* Sphere__UeScsNode = "3438ba09403cf74580c938d14842e053";
+        static constexpr const char* AreaSpawner__UeScsNode = "7056f88bea12ff4e978bff6d19cba0b2";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Incendiary

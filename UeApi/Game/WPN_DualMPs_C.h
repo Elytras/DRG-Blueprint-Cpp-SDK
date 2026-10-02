@@ -22,28 +22,32 @@ class WPN_DualMPs_C : public ADualMachinePistols
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DualMachinePistols/WPN_DualMPs", "WPN_DualMPs_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMeshLeft;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/Engine.SkeletalMeshComponent TPMeshLeft;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidgetLeft;
-    static constexpr const char* FirstPersonWidgetLeft__UeScsNode = "026022ec9b29d84abcd072c1ab563542";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh1;
-    static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "41fe05019989864587378391bb4115e2";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "72efa25662f6484593ece6d425abfeb0";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "cec924872edaba44b9f5877aee9be3e3";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "895f6ad8f1bb5c40aed8276942aae32f";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "f328c0ecff9a7e44ac4d4ce7e8927115";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "e9b10ea4ac519447baf8918277721f9c";
     class UPointLightComponent* MuzzleFlash;
-    static constexpr const char* MuzzleFlash__UeScsNode = "9408430d70b2f4468ba6c76f0a6d9974";
     void ExecuteUbergraph_WPN_DualMPs(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMeshLeft;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/Engine.SkeletalMeshComponent TPMeshLeft;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonWidgetLeft__UeScsNode = "026022ec9b29d84abcd072c1ab563542";
+        static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "41fe05019989864587378391bb4115e2";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "72efa25662f6484593ece6d425abfeb0";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "cec924872edaba44b9f5877aee9be3e3";
+        static constexpr const char* HitScan__UeScsNode = "895f6ad8f1bb5c40aed8276942aae32f";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "f328c0ecff9a7e44ac4d4ce7e8927115";
+        static constexpr const char* Damage__UeScsNode = "e9b10ea4ac519447baf8918277721f9c";
+        static constexpr const char* MuzzleFlash__UeScsNode = "9408430d70b2f4468ba6c76f0a6d9974";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols

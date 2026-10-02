@@ -13,6 +13,11 @@ class STE_Crossbow_Pheromone_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/StatusEffects/STE_Crossbow_Pheromone", "STE_Crossbow_Pheromone_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.MakeAttackableStatusEffectItem MakeAttackableStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects

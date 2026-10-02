@@ -20,10 +20,8 @@ class ENE_Grabber_C : public AFlyingLifter
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Grabber/ENE_Grabber", "ENE_Grabber_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GrabLoopSound;/Script/Engine.AudioComponent ScreamAudio;/Script/Engine.AudioComponent WingSound;/Script/Engine.CapsuleComponent GrabCapsuleComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.GrabberComponent GrabberComponent;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.InDangerComponent InDangerComponent;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.PointLightComponent GrabberLight;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "b188a4d72f505c458f1ffbe61fca532c";
     FTimerHandle RagdollTimer;
     void ExecuteUbergraph_ENE_Grabber(int EntryPoint);
     void DissolveMesh();
@@ -42,6 +40,12 @@ public:
     void OnMessageAI(FName TriggerName);
     void UserConstructionScript();
     void OnRep_DeathType();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GrabLoopSound;/Script/Engine.AudioComponent ScreamAudio;/Script/Engine.AudioComponent WingSound;/Script/Engine.CapsuleComponent GrabCapsuleComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.GrabberComponent GrabberComponent;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.InDangerComponent InDangerComponent;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.PointLightComponent GrabberLight;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* WeakpointGlow__UeScsNode = "b188a4d72f505c458f1ffbe61fca532c";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Grabber

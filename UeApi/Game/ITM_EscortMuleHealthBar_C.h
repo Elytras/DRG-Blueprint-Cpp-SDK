@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/DrillingVehicle/ITM_EscortMuleHealthBar", "ITM_EscortMuleHealthBar_C");
     using ITM_HealthBarPercentWWarning_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_HealthBarPercentWWarning_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnHeal;
+    UE_READONLY class UWidgetAnimation* OnHeal;
     class UImage* DrillDozer_Background;
     class UImage* DrillDozer_Background_Caterpillar;
     ITM_HealthBarPercentWWarning_C* ITM_HealthBarPercentWWarning_Left;

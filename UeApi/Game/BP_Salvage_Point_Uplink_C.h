@@ -27,41 +27,23 @@ class BP_Salvage_Point_Uplink_C : public Game::GameElements::Objectives::Salvage
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_Point_Uplink", "BP_Salvage_Point_Uplink_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Salvage_Point_Uplink_C;
-    static constexpr const char* UberGraphFrame_BP_Salvage_Point_Uplink_C__UeName = "UberGraphFrame";
     class UTerrainDetectComponent* TerrainDetect3;
-    static constexpr const char* TerrainDetect3__UeScsNode = "c1907d36157785498d9ccf042f02bec7";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "020f34392e867f4abded7a6eb5426c5f";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "e2e405a4451b0e4fbead10e748651edf";
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "97b4439e5dea6844aaef9b6030b0cc86";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "eacfdb9df482f54cbed15608fc0ff8b6";
     class UDropToTerrainComponent* DropToTerrain;
-    static constexpr const char* DropToTerrain__UeScsNode = "705e1f9c61870544bca0328899e7884f";
     class UOxygenSourceComponent* OxygenSource;
-    static constexpr const char* OxygenSource__UeScsNode = "f4400f3ce8d8ab439809f88285eaa772";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "2afeed6662e6c846a7e1289e77d76f67";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "58b86a5a2ad1364b9073a6da216111e5";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "9611f9a413c27e468e919e65529ea6c9";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "d420a7d6f2e2624ab2df5d7fd44bb7d3";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "3e87acac0d252a4eb4a955f6890e311b";
     class UBoxComponent* UplinkCollision;
-    static constexpr const char* UplinkCollision__UeScsNode = "0a056181fc92704da90eb544abd558e8";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "8f505d94556fe843a66ded526bf82f24";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "aa637b921d1642429695b95ec804b013";
     class UAudioComponent* UplinkTriangulation_Cue;
-    static constexpr const char* UplinkTriangulation_Cue__UeScsNode = "e0e6e5fe5c2ac84f805b6f1de02e52c9";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "fec95c8678e0764e915a724a72b545fe";
     void ExecuteUbergraph_BP_Salvage_Point_Uplink(int EntryPoint);
     void Cheat_RepairUplink();
     void UpdateTerrainScannerMesh();
@@ -72,6 +54,28 @@ public:
     void OnDefenseStart();
     void ReceiveBeginPlay();
     void HandlePhotosensitivity();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Salvage_Point_Uplink_C__UeName = "UberGraphFrame";
+        static constexpr const char* TerrainDetect3__UeScsNode = "c1907d36157785498d9ccf042f02bec7";
+        static constexpr const char* TerrainDetect2__UeScsNode = "020f34392e867f4abded7a6eb5426c5f";
+        static constexpr const char* TerrainDetect1__UeScsNode = "e2e405a4451b0e4fbead10e748651edf";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "97b4439e5dea6844aaef9b6030b0cc86";
+        static constexpr const char* TerrainDetect__UeScsNode = "eacfdb9df482f54cbed15608fc0ff8b6";
+        static constexpr const char* DropToTerrain__UeScsNode = "705e1f9c61870544bca0328899e7884f";
+        static constexpr const char* OxygenSource__UeScsNode = "f4400f3ce8d8ab439809f88285eaa772";
+        static constexpr const char* PointLight1__UeScsNode = "2afeed6662e6c846a7e1289e77d76f67";
+        static constexpr const char* PointLight__UeScsNode = "58b86a5a2ad1364b9073a6da216111e5";
+        static constexpr const char* PointLight2__UeScsNode = "9611f9a413c27e468e919e65529ea6c9";
+        static constexpr const char* StaticMesh1__UeScsNode = "d420a7d6f2e2624ab2df5d7fd44bb7d3";
+        static constexpr const char* StaticMesh__UeScsNode = "3e87acac0d252a4eb4a955f6890e311b";
+        static constexpr const char* UplinkCollision__UeScsNode = "0a056181fc92704da90eb544abd558e8";
+        static constexpr const char* SkeletalMesh__UeScsNode = "8f505d94556fe843a66ded526bf82f24";
+        static constexpr const char* PathfinderCollision__UeScsNode = "aa637b921d1642429695b95ec804b013";
+        static constexpr const char* UplinkTriangulation_Cue__UeScsNode = "e0e6e5fe5c2ac84f805b6f1de02e52c9";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "fec95c8678e0764e915a724a72b545fe";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

@@ -29,21 +29,13 @@ public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/BP_Microwave_Heatsink", "BP_Microwave_Heatsink_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "b4342de7b093744f8b4f4f490c99263f";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "d69e87a51e12d44fb36eef7331170ef8";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "ca6ad7ea9b516540be29b99b448f13f4";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "87dab5cbbe4f9346894529186a43daf1";
     class UParticleSystemComponent* P_Steam;
-    static constexpr const char* P_Steam__UeScsNode = "0ee036cc93fb9c44b7a188de17999d72";
     class USphereComponent* HeatRadius;
-    static constexpr const char* HeatRadius__UeScsNode = "81a7ded831b3a9498725c8e023d733c1";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "3bbe8deef3a7b84b8dcabff6ee9bd1c9";
     class USphereComponent* Collision;
-    static constexpr const char* Collision__UeScsNode = "2809638458bae842a36b1fdb575c9e21";
     float Timeline_0_Brightness_5A2B78D649E3C1F0338A2C84B8669952;
     TEnum<ETimelineDirection> Timeline_0__Direction_5A2B78D649E3C1F0338A2C84B8669952;
     class UTimelineComponent* Timeline_0;
@@ -60,6 +52,18 @@ public:
     void BndEvt__BP_Microwave_Heatsink_Sphere_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Explosion__UeScsNode = "b4342de7b093744f8b4f4f490c99263f";
+        static constexpr const char* Damage__UeScsNode = "d69e87a51e12d44fb36eef7331170ef8";
+        static constexpr const char* SimpleHealth__UeScsNode = "ca6ad7ea9b516540be29b99b448f13f4";
+        static constexpr const char* PointLight__UeScsNode = "87dab5cbbe4f9346894529186a43daf1";
+        static constexpr const char* P_Steam__UeScsNode = "0ee036cc93fb9c44b7a188de17999d72";
+        static constexpr const char* HeatRadius__UeScsNode = "81a7ded831b3a9498725c8e023d733c1";
+        static constexpr const char* StaticMesh__UeScsNode = "3bbe8deef3a7b84b8dcabff6ee9bd1c9";
+        static constexpr const char* Collision__UeScsNode = "2809638458bae842a36b1fdb575c9e21";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun

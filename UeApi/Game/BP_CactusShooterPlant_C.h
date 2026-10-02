@@ -30,23 +30,14 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/CactusShooter/BP_CactusShooterPlant", "BP_CactusShooterPlant_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "90ecf244ab327d419f8b7e0f5cc550a7";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "e9321109dc15a340998bde15d6314490";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "d185931ba2099644988925dacb50ffb5";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "02e63c9085241648a67e7aef845d0cc1";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "f66ffe2279685740929cc8e43b120ef6";
     class UBoxComponent* ShootSpinesTrigger;
-    static constexpr const char* ShootSpinesTrigger__UeScsNode = "06b59f0c04aa2949bf25c60cd3c749f0";
     class UCapsuleComponent* CapsuleCollision;
-    static constexpr const char* CapsuleCollision__UeScsNode = "84e976fd17327948ab48f2c9f2031483";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "eed2bac496e60440bb374d7ff27583bd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0f795f3e54fb984da1ddf7c88d222c2c";
     bool CanTrigger;
     float ResetTime;
     TMulticastInlineDelegate<void(bool IsIdle)> OnChangeState;
@@ -67,6 +58,19 @@ public:
     void ShootTheSpikes();
     void BndEvt__ShootSpinesTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "90ecf244ab327d419f8b7e0f5cc550a7";
+        static constexpr const char* SimpleHealth__UeScsNode = "e9321109dc15a340998bde15d6314490";
+        static constexpr const char* terrainPlacement__UeScsNode = "d185931ba2099644988925dacb50ffb5";
+        static constexpr const char* PathfinderCollision__UeScsNode = "02e63c9085241648a67e7aef845d0cc1";
+        static constexpr const char* TerrainDetect__UeScsNode = "f66ffe2279685740929cc8e43b120ef6";
+        static constexpr const char* ShootSpinesTrigger__UeScsNode = "06b59f0c04aa2949bf25c60cd3c749f0";
+        static constexpr const char* CapsuleCollision__UeScsNode = "84e976fd17327948ab48f2c9f2031483";
+        static constexpr const char* SkeletalMesh__UeScsNode = "eed2bac496e60440bb374d7ff27583bd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0f795f3e54fb984da1ddf7c88d222c2c";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CactusShooter

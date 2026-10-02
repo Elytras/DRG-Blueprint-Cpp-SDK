@@ -13,7 +13,11 @@ class BP_Sentry_PlasmaBeam_C : public ASentryElectroBeam
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/BP_Sentry_PlasmaBeam", "BP_Sentry_PlasmaBeam_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SentryGun

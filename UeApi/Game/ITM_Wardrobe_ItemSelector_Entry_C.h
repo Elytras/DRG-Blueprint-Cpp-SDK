@@ -38,7 +38,6 @@ public:
     class USizeBox* EntrySizeBox;
     ITM_ItemUnlockedIcon_C* Notification_NewItem;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     TMulticastInlineDelegate<void(int Param_Index_0, ITM_Wardrobe_ItemSelector_Entry_C* InEntryWidget)> OnEntryHovered;
     TMulticastInlineDelegate<void(int Param_Index_0, ITM_Wardrobe_ItemSelector_Entry_C* InEntryWidget)> OnEntryUnhovered;
     TMulticastInlineDelegate<void(int Param_Index_0, ITM_Wardrobe_ItemSelector_Entry_C* InEntryWidget)> OnEntryClicked;
@@ -58,6 +57,11 @@ public:
     void GetTags(FDetailedTagSet& OutTags);
     UE_PURE class UWidget* Get_EntryButton_ToolTipWidget();
     UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

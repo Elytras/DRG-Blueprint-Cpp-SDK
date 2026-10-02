@@ -54,11 +54,15 @@ public:
     void ChangeName(FString NewName);
     void SetStatsOwner(class AFSDPlayerState* Player_State);
     void Set_Selected_Item(UI_InfirmaryStats_Item_C* SelectedLine_0);
-    static constexpr const char* Set_Selected_Item__UeName = "Set Selected Item";
     void Store_Mode(int Index_0);
-    static constexpr const char* Store_Mode__UeName = "Store Mode";
     void GetMissionStats(TArray<class UMissionStat*>& assets);
     void SortStats(TArray<class UMissionStat*>& InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Selected_Item__UeName = "Set Selected Item";
+        static constexpr const char* Store_Mode__UeName = "Store Mode";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary

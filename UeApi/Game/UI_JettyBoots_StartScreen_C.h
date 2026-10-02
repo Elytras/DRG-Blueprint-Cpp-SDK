@@ -22,8 +22,8 @@ public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/UI_JettyBoots_StartScreen", "UI_JettyBoots_StartScreen_C");
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBootIdle;
-    class UWidgetAnimation* AnimBootJump;
+    UE_READONLY class UWidgetAnimation* AnimBootIdle;
+    UE_READONLY class UWidgetAnimation* AnimBootJump;
     class UWidgetSwitcher* CenterSwitcher;
     Basic_Image_C* Character_Image;
     class UVerticalBox* HighScores_Box;

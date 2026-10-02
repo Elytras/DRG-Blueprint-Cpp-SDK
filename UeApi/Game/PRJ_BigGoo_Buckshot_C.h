@@ -13,7 +13,11 @@ class PRJ_BigGoo_Buckshot_C : public Game::WeaponsNTools::GooCannon::PRJ_BaseBig
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BigGoo_Buckshot", "PRJ_BigGoo_Buckshot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

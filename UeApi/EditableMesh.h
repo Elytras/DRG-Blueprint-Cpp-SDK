@@ -371,9 +371,9 @@ class UEditableMesh : public UObject
 public:
     UE_CLASS("/Script/EditableMesh", "EditableMesh");
     TArray<class UEditableMeshAdapter*> Adapters;
-    int TextureCoordinateCount;
+    UE_READONLY int TextureCoordinateCount;
     int PendingCompactCounter;
-    int SubdivisionCount;
+    UE_READONLY int SubdivisionCount;
     UE_PURE static FEdgeID InvalidEdgeID();
     UE_PURE static FPolygonGroupID InvalidPolygonGroupID();
     UE_PURE static FPolygonID InvalidPolygonID();

@@ -14,13 +14,17 @@ class ITM_BarGlass_Item_Oktoberfest_C : public Game::GameElements::Bar::ITM_BarG
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/ITM_BarGlass_Item_Oktoberfest", "ITM_BarGlass_Item_Oktoberfest_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame_ITM_BarGlass_Item_Oktoberfest_C;
-    static constexpr const char* UberGraphFrame_ITM_BarGlass_Item_Oktoberfest_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_ITM_BarGlass_Item_Oktoberfest(int EntryPoint);
     void SkinThrownGlass();
     UE_MULTICAST void All_Drink();
     void OnEmpty();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UberGraphFrame_ITM_BarGlass_Item_Oktoberfest_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::Drinkables

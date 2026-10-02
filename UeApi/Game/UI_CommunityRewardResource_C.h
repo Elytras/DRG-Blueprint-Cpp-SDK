@@ -21,8 +21,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* ResourceAmount;
     class UImage* ResourceIcon;
-    class UResourceData* Resource;
-    int amount;
+    UE_READONLY class UResourceData* Resource;
+    UE_READONLY int amount;
     void ExecuteUbergraph_UI_CommunityRewardResource(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

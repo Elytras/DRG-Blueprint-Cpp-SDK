@@ -22,17 +22,11 @@ class PRJ_MicroMissile_PlasmaBurster_C : public Game::WeaponsNTools::MicroMissil
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_PlasmaBurster", "PRJ_MicroMissile_PlasmaBurster_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_MicroMissile_PlasmaBurster_C;
-    static constexpr const char* UberGraphFrame_PRJ_MicroMissile_PlasmaBurster_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_HandGrenade_I;
-    static constexpr const char* SM_HandGrenade_I__UeScsNode = "bb304298ddf4ab49a4d0e8a28e61a71d";
     class UDamageComponent* PenetrationDamage_NOTUSED;
-    static constexpr const char* PenetrationDamage_NOTUSED__UeName = "PenetrationDamage-NOTUSED";
-    static constexpr const char* PenetrationDamage_NOTUSED__UeScsNode = "37335f3537c8c34c84c7432ab365a406";
     int MaxPawnImpacts;
     class USceneComponent* Homing_Target;
-    static constexpr const char* Homing_Target__UeName = "Homing Target";
     float TimeOfLastBounce;
     float LastHitTime;
     void ExecuteUbergraph_PRJ_MicroMissile_PlasmaBurster(int EntryPoint);
@@ -43,6 +37,16 @@ public:
     void BndEvt__PRJ_MicroMissile_PlasmaBurster_MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void OnInitialized();
     void OnPenetrated(bool PredictedPenetration, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_MicroMissile_PlasmaBurster_C__UeName = "UberGraphFrame";
+        static constexpr const char* SM_HandGrenade_I__UeScsNode = "bb304298ddf4ab49a4d0e8a28e61a71d";
+        static constexpr const char* PenetrationDamage_NOTUSED__UeName = "PenetrationDamage-NOTUSED";
+        static constexpr const char* PenetrationDamage_NOTUSED__UeScsNode = "37335f3537c8c34c84c7432ab365a406";
+        static constexpr const char* Homing_Target__UeName = "Homing Target";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

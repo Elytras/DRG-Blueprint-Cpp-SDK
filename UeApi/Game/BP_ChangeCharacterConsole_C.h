@@ -26,31 +26,35 @@ public:
     using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Greepling_005;
-    static constexpr const char* SM_Greepling_005__UeScsNode = "f420c3c44a10564b93ef653caf669ae6";
     class UStaticMeshComponent* SM_Greepling_006;
-    static constexpr const char* SM_Greepling_006__UeScsNode = "7689366d788e70469340479f841154fa";
     class UStaticMeshComponent* SM_Greepling_008;
-    static constexpr const char* SM_Greepling_008__UeScsNode = "1b698270b6ff8c489235ce5a25c915bf";
     class UStaticMeshComponent* SM_Greepling_007;
-    static constexpr const char* SM_Greepling_007__UeScsNode = "8e3b2a1a5b9cdd4281f9ffff2e97f6b1";
     class UStaticMeshComponent* SM_Greepling_003;
-    static constexpr const char* SM_Greepling_003__UeScsNode = "7fa96260ba1aff459972c3bef33a4d79";
     class UStaticMeshComponent* SM_Greepling_004;
-    static constexpr const char* SM_Greepling_004__UeScsNode = "2c4592ec039d7240b019f1824d3e0053";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "618178d31b01e64c8516a8879d888858";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
     void ExecuteUbergraph_BP_ChangeCharacterConsole(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Greepling_005__UeScsNode = "f420c3c44a10564b93ef653caf669ae6";
+        static constexpr const char* SM_Greepling_006__UeScsNode = "7689366d788e70469340479f841154fa";
+        static constexpr const char* SM_Greepling_008__UeScsNode = "1b698270b6ff8c489235ce5a25c915bf";
+        static constexpr const char* SM_Greepling_007__UeScsNode = "8e3b2a1a5b9cdd4281f9ffff2e97f6b1";
+        static constexpr const char* SM_Greepling_003__UeScsNode = "7fa96260ba1aff459972c3bef33a4d79";
+        static constexpr const char* SM_Greepling_004__UeScsNode = "2c4592ec039d7240b019f1824d3e0053";
+        static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
+        static constexpr const char* TextRender__UeScsNode = "618178d31b01e64c8516a8879d888858";
+        static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
+        static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

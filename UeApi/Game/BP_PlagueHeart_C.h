@@ -22,22 +22,13 @@ class BP_PlagueHeart_C : public Game::GameElements::Resources::Embedded::Gems::B
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueHeart", "BP_PlagueHeart_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlagueHeart_C;
-    static constexpr const char* UberGraphFrame_BP_PlagueHeart_C__UeName = "UberGraphFrame";
     class UNiagaraComponent* Niagara_Spores;
-    static constexpr const char* Niagara_Spores__UeName = "Niagara Spores";
-    static constexpr const char* Niagara_Spores__UeScsNode = "bffa94b85993674f956efa209698fabe";
     class UAudioComponent* Idle_Cue;
-    static constexpr const char* Idle_Cue__UeScsNode = "6508f060a62c22479a9505878db17c00";
     class USkeletalMeshComponent* ThirdPersonSkeletalMesh;
-    static constexpr const char* ThirdPersonSkeletalMesh__UeScsNode = "d6f53730ad3bb5429e57ef755f7a9de6";
     class UPointLightComponent* PointLightLarge;
-    static constexpr const char* PointLightLarge__UeScsNode = "281351293c0a1e489f26cc76f0094b4b";
     class UFirstPersonSkeletalMeshComponent* FirstPersonSkeletalMesh;
-    static constexpr const char* FirstPersonSkeletalMesh__UeScsNode = "4772e3626995534cab4b7707698f467b";
     bool PickedUp;
-    static constexpr const char* PickedUp__Replicated = ":";
     bool PushedEffect;
     TMulticastInlineDelegate<void()> OnHeartDeposited;
     void ExecuteUbergraph_BP_PlagueHeart(int EntryPoint);
@@ -46,6 +37,19 @@ public:
     void BndEvt__BP_PlagueHeart_Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     void BndEvt__BP_PlagueHeart_Carriable_K2Node_ComponentBoundEvent_3_CarriableEvent__DelegateSignature();
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_PlagueHeart_C__UeName = "UberGraphFrame";
+        static constexpr const char* Niagara_Spores__UeName = "Niagara Spores";
+        static constexpr const char* Niagara_Spores__UeScsNode = "bffa94b85993674f956efa209698fabe";
+        static constexpr const char* Idle_Cue__UeScsNode = "6508f060a62c22479a9505878db17c00";
+        static constexpr const char* ThirdPersonSkeletalMesh__UeScsNode = "d6f53730ad3bb5429e57ef755f7a9de6";
+        static constexpr const char* PointLightLarge__UeScsNode = "281351293c0a1e489f26cc76f0094b4b";
+        static constexpr const char* FirstPersonSkeletalMesh__UeScsNode = "4772e3626995534cab4b7707698f467b";
+        static constexpr const char* PickedUp__Replicated = ":";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor

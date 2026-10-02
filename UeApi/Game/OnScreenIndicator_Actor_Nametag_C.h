@@ -30,11 +30,15 @@ public:
     void OnToggleNameplatesEvent_Event_0(bool boolValue);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Player(class APlayerCharacter* Player_0);
-    static constexpr const char* Set_Player__UeName = "Set Player";
     void OnPlayerNameChanged_Event(FString NewName);
     UE_COSMETIC void Construct();
     void UpdateName();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Player__UeName = "Set Player";
+    };
 };
 
 }}}   // namespace Game::UI::OnScreenIndicators

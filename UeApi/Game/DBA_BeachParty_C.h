@@ -17,9 +17,13 @@ class DBA_BeachParty_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/Game/Events/BeachParty/DBA_BeachParty", "DBA_BeachParty_C");
     class UDebrisItemComponent* DebrisItem;
-    static constexpr const char* DebrisItem__UeScsNode = "9b041137fca5c44188f4baab1ed5f5d5";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "28dd79daba536a4697ab29cb3edebc70";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DebrisItem__UeScsNode = "9b041137fca5c44188f4baab1ed5f5d5";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "28dd79daba536a4697ab29cb3edebc70";
+    };
 };
 
 }}}}   // namespace Game::Game::Events::BeachParty

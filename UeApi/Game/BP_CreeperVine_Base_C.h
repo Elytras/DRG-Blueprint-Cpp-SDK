@@ -29,32 +29,22 @@ class BP_CreeperVine_Base_C : public ASplinePlant
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/ThornBranches/BP_CreeperVine_Base", "BP_CreeperVine_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* HurtAudioComponent;
-    static constexpr const char* HurtAudioComponent__UeScsNode = "9892f4ecef17764eac21d29f42a5291a";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "a5bc995c9a8947429c61d22d6c4d4fd8";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "bec71937cc5f434fba17a76ce1385c40";
     class UStaticMeshComponent* SM_brokenFloor_01;
-    static constexpr const char* SM_brokenFloor_01__UeScsNode = "1140df8c115f9c498d7bb2948898f14e";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "8dfb9025876edf4cacb95479234ced90";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "965d7fb3253b1b4f9e1f3e9cdd670cac";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "d548c35f7daaf94eaf459f07337fc355";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "090ddb64468c6445bdebb043999caedb";
     FTimerHandle CheckPlayersTimer;
     bool IsRetracted;
-    static constexpr const char* IsRetracted__Replicated = "OnRep_IsRetracted:";
     float SplineNodeRandomOffset;
     class USoundBase* HurtAudio;
-    float SpeedRetraction;
-    float SpeedExtending;
-    float LengthRetracted;
+    UE_READONLY float SpeedRetraction;
+    UE_READONLY float SpeedExtending;
+    UE_READONLY float LengthRetracted;
     float LastPlayerHitTime;
     void ExecuteUbergraph_BP_CreeperVine_Base(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_3_HealthChangedSig__DelegateSignature(float Health);
@@ -71,6 +61,20 @@ public:
     void PrepareSpline(class USplineComponent* InSplineComponent, int InSeed);
     void HandleActorHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     void HandleActorOverlap(class AActor* OverlappedActor, class AActor* OtherActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
+        static constexpr const char* HurtAudioComponent__UeScsNode = "9892f4ecef17764eac21d29f42a5291a";
+        static constexpr const char* Trail__UeScsNode = "a5bc995c9a8947429c61d22d6c4d4fd8";
+        static constexpr const char* terrainPlacement__UeScsNode = "bec71937cc5f434fba17a76ce1385c40";
+        static constexpr const char* SM_brokenFloor_01__UeScsNode = "1140df8c115f9c498d7bb2948898f14e";
+        static constexpr const char* TerrainDetect__UeScsNode = "8dfb9025876edf4cacb95479234ced90";
+        static constexpr const char* PathfinderCollision__UeScsNode = "965d7fb3253b1b4f9e1f3e9cdd670cac";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "d548c35f7daaf94eaf459f07337fc355";
+        static constexpr const char* SimpleHealth__UeScsNode = "090ddb64468c6445bdebb043999caedb";
+        static constexpr const char* IsRetracted__Replicated = "OnRep_IsRetracted:";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::ThornBranches

@@ -23,19 +23,23 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_LunarFestival/Blueprints/BP_LunarFestival_Lamp01", "BP_LunarFestival_Lamp01_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d1453a199e52c34886afa7910344b3e4";
     class USkeletalMeshComponent* SK_LunarFestival_Lamp_01;
-    static constexpr const char* SK_LunarFestival_Lamp_01__UeScsNode = "fb81fef106f07c43bc092e10ba46515d";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "a16b13a7615e514d898f6de1d6e90172";
     int Random_Seed;
-    static constexpr const char* Random_Seed__Replicated = "OnRep_Random_Seed:";
     TArray<class UMaterialInstance*> Materials;
     void ExecuteUbergraph_BP_LunarFestival_Lamp01(int EntryPoint);
     void OnCollide();
     void BndEvt__BP_LunarFestival_Lamp01_SK_LunarFestival_Lamp_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
     void OnRep_Random_Seed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "d1453a199e52c34886afa7910344b3e4";
+        static constexpr const char* SK_LunarFestival_Lamp_01__UeScsNode = "fb81fef106f07c43bc092e10ba46515d";
+        static constexpr const char* Scene__UeScsNode = "a16b13a7615e514d898f6de1d6e90172";
+        static constexpr const char* Random_Seed__Replicated = "OnRep_Random_Seed:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints

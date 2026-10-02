@@ -17,9 +17,13 @@ class ESI_Bomber_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/ESI_Bomber", "ESI_Bomber_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7c4f9515c4ff99479c086aef6df6858c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0a601a00a04cca41bf1e7db92ffd441b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "7c4f9515c4ff99479c086aef6df6858c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0a601a00a04cca41bf1e7db92ffd441b";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

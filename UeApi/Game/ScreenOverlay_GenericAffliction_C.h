@@ -21,16 +21,20 @@ class ScreenOverlay_GenericAffliction_C : public UPlayerAfflictionOverlayWidget
 public:
     UE_CLASS("/Game/UI/ScreenOverlays/ScreenOverlay_GenericAffliction", "ScreenOverlay_GenericAffliction_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFading;
+    UE_READONLY class UWidgetAnimation* AnimFading;
     class UImage* AfflictionImage;
     float FadeDuration;
     void ExecuteUbergraph_ScreenOverlay_GenericAffliction(int EntryPoint);
     void OnAnimFadingFinished();
     void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
-    static constexpr const char* Play_Fade__UeName = "Play Fade";
     void ReceiveEndOverlay();
     void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Play_Fade__UeName = "Play Fade";
+    };
 };
 
 }}}   // namespace Game::UI::ScreenOverlays

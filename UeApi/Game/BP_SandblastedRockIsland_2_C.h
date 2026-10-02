@@ -19,13 +19,17 @@ class BP_SandblastedRockIsland_2_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Carvers/BP_SandblastedRockIsland_2", "BP_SandblastedRockIsland_2_C");
     class UStaticMeshComponent* SM_Carver_Rock12;
-    static constexpr const char* SM_Carver_Rock12__UeScsNode = "6eb019b758f5a347b4b9533769f48d11";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "9b3a8f818373e845bcb98f16f8490b93";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "eac1cc14aed6cc48bd247749c4a65fd4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "db0373e167f62948a57ae116fbc45346";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Carver_Rock12__UeScsNode = "6eb019b758f5a347b4b9533769f48d11";
+        static constexpr const char* terrainPlacement__UeScsNode = "9b3a8f818373e845bcb98f16f8490b93";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "eac1cc14aed6cc48bd247749c4a65fd4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "db0373e167f62948a57ae116fbc45346";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Carvers

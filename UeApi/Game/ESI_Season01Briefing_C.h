@@ -17,9 +17,13 @@ class ESI_Season01Briefing_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ESI_Season01Briefing", "ESI_Season01Briefing_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "dea46150f8cd8144a530c852ef415d10";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "2051a2d778eefb44ba5195f5492ee061";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "dea46150f8cd8144a530c852ef415d10";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "2051a2d778eefb44ba5195f5492ee061";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

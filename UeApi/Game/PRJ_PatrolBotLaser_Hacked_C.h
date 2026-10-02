@@ -13,7 +13,11 @@ class PRJ_PatrolBotLaser_Hacked_C : public Game::GameElements::Objectives::Facil
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/Projectiles/PRJ_PatrolBotLaser_Hacked", "PRJ_PatrolBotLaser_Hacked_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::RivalTech::PatrolBot::Projectiles

@@ -52,6 +52,11 @@ public:
     class UMRMeshComponent* MRMesh;
     void ConnectMRMesh(class UMRMeshComponent* InMRMeshPtr);
     void DisconnectMRMesh(class UMRMeshComponent* InMRMeshPtr);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnMeshTrackerUpdated__UeDispatcher = "Assignable";
+    };
 };
 
 class UMRMeshComponent : public UPrimitiveComponent

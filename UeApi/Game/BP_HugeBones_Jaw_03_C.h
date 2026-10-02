@@ -16,7 +16,11 @@ class BP_HugeBones_Jaw_03_C : public Game::LevelElements::RoomObjects::HugeCarve
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/Bones/BP_HugeBones_Jaw_03", "BP_HugeBones_Jaw_03_C");
     class ULevelGenerationCarverComponent* LevelGenerationCarver1;
-    static constexpr const char* LevelGenerationCarver1__UeScsNode = "089303c898e3dd4f982178fd0ef5e2e5";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarver1__UeScsNode = "089303c898e3dd4f982178fd0ef5e2e5";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Bones

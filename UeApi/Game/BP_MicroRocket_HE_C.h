@@ -13,7 +13,11 @@ class BP_MicroRocket_HE_C : public Game::WeaponsNTools::RocketRifle::BP_MicroRoc
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RocketRifle/BP_MicroRocket_HE", "BP_MicroRocket_HE_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::RocketRifle

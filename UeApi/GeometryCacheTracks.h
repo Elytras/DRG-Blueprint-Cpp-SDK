@@ -45,7 +45,11 @@ class UMovieSceneGeometryCacheSection : public UMovieSceneSection
 public:
     UE_CLASS("/Script/GeometryCacheTracks", "MovieSceneGeometryCacheSection");
     FMovieSceneGeometryCacheParams Params_0;
-    static constexpr const char* Params_0__UeName = "Params";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Params_0__UeName = "Params";
+    };
 };
 
 class UMovieSceneGeometryCacheTrack : public UMovieSceneNameableTrack

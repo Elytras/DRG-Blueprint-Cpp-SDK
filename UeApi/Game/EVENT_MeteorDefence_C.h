@@ -24,26 +24,21 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/EVENT_MeteorDefence", "EVENT_MeteorDefence_C");
     using EWC_PlagueMeteorDefence_C = Game::Enemies::Waves::WaveControllers::EWC_PlagueMeteorDefence_C;
     using HUD_RockCracker_Event_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bc06ffc6444e5443869cc339e6356bd3";
     TArray<class APlayerCharacter*> DefendingPlayers;
     TMulticastInlineDelegate<void()> DefendSucceded;
     TMulticastInlineDelegate<void()> DefendFailed;
     TMulticastInlineDelegate<void(float NewProgress)> ProgressUpdated;
     EWC_PlagueMeteorDefence_C* Wave;
     HUD_RockCracker_Event_C* Event_Widget;
-    static constexpr const char* Event_Widget__UeName = "Event Widget";
     FText EventText;
     int ActivePodCount;
-    static constexpr const char* ActivePodCount__Replicated = "OnRep_ActivePodCount:";
     TMulticastInlineDelegate<void(int DefenderCount)> BrokenCountUpdated;
     FText EventSuccedText;
     class UDialogDataAsset* EventStartShout;
     class UDialogDataAsset* EventFailWarningShout;
     class APlagueMeteor* Event;
-    static constexpr const char* Event__Replicated = ":";
     int NumberToSpawn;
     void ExecuteUbergraph_EVENT_MeteorDefence(int EntryPoint);
     void OnEventFinished(bool eventSuccess);
@@ -56,6 +51,15 @@ public:
     void UpdateActivePodCount();
     void IsPodBroken(int& WorkingCount);
     void OnRep_ActivePodCount();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
+        static constexpr const char* Audio__UeScsNode = "bc06ffc6444e5443869cc339e6356bd3";
+        static constexpr const char* Event_Widget__UeName = "Event Widget";
+        static constexpr const char* ActivePodCount__Replicated = "OnRep_ActivePodCount:";
+        static constexpr const char* Event__Replicated = ":";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor

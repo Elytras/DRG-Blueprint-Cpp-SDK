@@ -17,10 +17,8 @@ class BP_SpectatorBase_C : public ASpectatorPawn
 {
 public:
     UE_CLASS("/Game/Game/BP_SpectatorBase", "BP_SpectatorBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SpectatorPawnMovement MovementComponent0;/Script/Engine.SphereComponent CollisionComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Menu_Music;
-    static constexpr const char* Menu_Music__UeName = "Menu Music";
     class UAudioComponent* Menu_StaticRadio;
     TArray<TSoftObjectPtr<class UObject>> LoadingSounds;
     void ReceiveBeginPlay();
@@ -28,6 +26,12 @@ public:
     void StartLoadingMusic(class USoundBase* LoadingMusic, class USoundBase* LoadingAmbient);
     void CustomEvent_0();
     void ExecuteUbergraph_BP_SpectatorBase(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SpectatorPawnMovement MovementComponent0;/Script/Engine.SphereComponent CollisionComponent0";
+        static constexpr const char* Menu_Music__UeName = "Menu Music";
+    };
 };
 
 }}   // namespace Game::Game

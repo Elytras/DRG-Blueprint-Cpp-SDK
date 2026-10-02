@@ -19,7 +19,7 @@ class ITM_MissionMap_Icon_BG_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MissionMap_Icon_BG", "ITM_MissionMap_Icon_BG_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BlinkWarning;
+    UE_READONLY class UWidgetAnimation* BlinkWarning;
     class UImage* bgB;
     class UImage* bgB_Warning;
     class UImage* bgM;

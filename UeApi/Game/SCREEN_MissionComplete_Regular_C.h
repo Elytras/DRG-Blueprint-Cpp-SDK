@@ -50,9 +50,8 @@ public:
     using UI_MissionComplete_CharacterBox_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CharacterBox_C;
     using UI_MissionComplete_CombinedRewards_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewards_C;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_MissionComplete_Regular_C;
-    static constexpr const char* UberGraphFrame_SCREEN_MissionComplete_Regular_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* SeasonAppear;
-    class UWidgetAnimation* BottomBarAppear;
+    UE_READONLY class UWidgetAnimation* SeasonAppear;
+    UE_READONLY class UWidgetAnimation* BottomBarAppear;
     BlurBackground_C* BlurBackground;
     class UBorder* BonusBorder;
     Basic_ButtonScalable2_C* BTN_Continue;
@@ -98,7 +97,6 @@ public:
     TArray<UI_MissionComplete_CharacterBox_C*> ActiveCharacterWidgets;
     int XPSum;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     TArray<FCharacterViewInfo> CharactersToView;
     class UMissionStat* TrackedStat;
     float BonusCountSpeed;
@@ -138,6 +136,12 @@ public:
     UE_PURE TEnum<ESlateVisibility> Get_Button_GiveAllocade_Visiblity();
     void SendHostAnalytics();
     void GetIsTutorialBiome(bool& IsTutorialBiome);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_SCREEN_MissionComplete_Regular_C__UeName = "UberGraphFrame";
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

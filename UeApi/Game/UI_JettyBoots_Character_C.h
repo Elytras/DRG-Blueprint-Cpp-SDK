@@ -20,9 +20,9 @@ class UI_JettyBoots_Character_C : public USpriteRectWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/UI_JettyBoots_Character", "UI_JettyBoots_Character_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimSafe;
-    class UWidgetAnimation* AnimDead;
-    class UWidgetAnimation* AnimJetActive;
+    UE_READONLY class UWidgetAnimation* AnimSafe;
+    UE_READONLY class UWidgetAnimation* AnimDead;
+    UE_READONLY class UWidgetAnimation* AnimJetActive;
     class UImage* Character_Sprite;
     class UImage* JetBoost_Sprite;
     class UCanvasPanel* Root_Canvas;
@@ -34,10 +34,14 @@ public:
     UE_COSMETIC void Construct();
     void SetJetActive(bool InJetActive, bool& OutValueChanged, bool& OutJetActive);
     void Set_Dead(bool InIsDead);
-    static constexpr const char* Set_Dead__UeName = "Set Dead";
     void Set_Safe(bool InIsSafe);
-    static constexpr const char* Set_Safe__UeName = "Set Safe";
     void CheckFSDEvents();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Dead__UeName = "Set Dead";
+        static constexpr const char* Set_Safe__UeName = "Set Safe";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots

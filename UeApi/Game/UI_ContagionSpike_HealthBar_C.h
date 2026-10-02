@@ -20,8 +20,8 @@ class UI_ContagionSpike_HealthBar_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Art/MainOnScreenHUD/ContagionSpike/UI_ContagionSpike_HealthBar", "UI_ContagionSpike_HealthBar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimAttention;
-    class UWidgetAnimation* AnimGhostHealth;
+    UE_READONLY class UWidgetAnimation* AnimAttention;
+    UE_READONLY class UWidgetAnimation* AnimGhostHealth;
     class UProgressBar* GhostHealthBar;
     class UProgressBar* HealthBar;
     class UImage* Image_129;

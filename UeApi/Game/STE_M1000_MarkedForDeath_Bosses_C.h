@@ -13,6 +13,11 @@ class STE_M1000_MarkedForDeath_Bosses_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BoltActionRifle/STE_M1000_MarkedForDeath_Bosses", "STE_M1000_MarkedForDeath_Bosses_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle

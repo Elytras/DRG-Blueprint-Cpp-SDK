@@ -18,16 +18,20 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/ESI_Facility_Caretaker", "ESI_Facility_Caretaker_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh4;
-    static constexpr const char* SkeletalMesh4__UeScsNode = "cba60bf7854fdc4ba447bd4e7bc95818";
     class USkeletalMeshComponent* SkeletalMesh3;
-    static constexpr const char* SkeletalMesh3__UeScsNode = "d8df79399ab5a042823a9b1b89fa00a7";
     class USkeletalMeshComponent* SkeletalMesh2;
-    static constexpr const char* SkeletalMesh2__UeScsNode = "ec37304d79988a4b8a7340e521d58b50";
     class USkeletalMeshComponent* SkeletalMesh1;
-    static constexpr const char* SkeletalMesh1__UeScsNode = "5811f619b11cf547a0c1adff709caa86";
     class USkeletalMeshComponent* ActiveEye;
     void ExecuteUbergraph_ESI_Facility_Caretaker(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh4__UeScsNode = "cba60bf7854fdc4ba447bd4e7bc95818";
+        static constexpr const char* SkeletalMesh3__UeScsNode = "d8df79399ab5a042823a9b1b89fa00a7";
+        static constexpr const char* SkeletalMesh2__UeScsNode = "ec37304d79988a4b8a7340e521d58b50";
+        static constexpr const char* SkeletalMesh1__UeScsNode = "5811f619b11cf547a0c1adff709caa86";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker

@@ -22,31 +22,35 @@ class BP_DropPod_Escape_Escort_C : public Game::LevelElements::Droppod::BP_DropP
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Escape_Escort", "BP_DropPod_Escape_Escort_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_DropPod_Escape_Escort_C;
-    static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Escort_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* SM_Doretta_Broken;
-    static constexpr const char* SM_Doretta_Broken__UeScsNode = "cad576bbb19c574d8fc51c517ac17a87";
     class UBoxComponent* DorettaCollision;
-    static constexpr const char* DorettaCollision__UeScsNode = "27642ebda3a28d40a1fc81305d8f055a";
     class UBoxComponent* DorettaHeadChecker;
-    static constexpr const char* DorettaHeadChecker__UeScsNode = "e88c5e7a01fa734a905534e5a29a5b42";
     float DorettaHeadMove_Alpha_C2033C6740443751B5AF4294D2EFCD51;
     TEnum<ETimelineDirection> DorettaHeadMove__Direction_C2033C6740443751B5AF4294D2EFCD51;
     class UTimelineComponent* DorettaHeadMove;
     bool IsDorettaHeadInside;
-    static constexpr const char* IsDorettaHeadInside__Replicated = ":";
     FTransform DorettaStart;
     FTransform DorettaEnd;
     void ExecuteUbergraph_BP_DropPod_Escape_Escort(int EntryPoint);
     void BndEvt__DorettaHeadChecker_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_SERVER UE_RELIABLE void ServerHandleDorettaHead(class ADorrettaHead* DorettaHead);
     UE_MULTICAST UE_RELIABLE void Transfer_Doretta(FTransform DorettaHeadTransform);
-    static constexpr const char* Transfer_Doretta__UeName = "Transfer Doretta";
     void OnPrepForTakeOff();
     void DorettaHeadMove__UpdateFunc();
     void DorettaHeadMove__FinishedFunc();
     void OnRep_IsDorettaHeadInside();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Escort_C__UeName = "UberGraphFrame";
+        static constexpr const char* SM_Doretta_Broken__UeScsNode = "cad576bbb19c574d8fc51c517ac17a87";
+        static constexpr const char* DorettaCollision__UeScsNode = "27642ebda3a28d40a1fc81305d8f055a";
+        static constexpr const char* DorettaHeadChecker__UeScsNode = "e88c5e7a01fa734a905534e5a29a5b42";
+        static constexpr const char* IsDorettaHeadInside__Replicated = ":";
+        static constexpr const char* Transfer_Doretta__UeName = "Transfer Doretta";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

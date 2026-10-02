@@ -13,6 +13,11 @@ class CP_Season06_RelicsOfHoxxes_Part2_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Season06_RelicsOfHoxxes_Part2", "CP_Season06_RelicsOfHoxxes_Part2_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.CampaignMission CampaignMission_5;/Script/FSD.CampaignMission CampaignMission_6;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_5;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_6;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_4;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_5;/Script/FSD.ResourceReward CampaignMission_5:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_5:ResourceReward_4;/Script/FSD.ResourceReward CampaignMission_5:ResourceReward_5;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_4;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_5;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_6;/Script/FSD.ResourceReward CampaignMission_6:ResourceReward_7;/Script/FSD.SeasonXPReward CampaignMission_2:SeasonXPReward_0;/Script/FSD.SeasonXPReward CampaignMission_3:SeasonXPReward_0;/Script/FSD.SeasonXPReward CampaignMission_4:SeasonXPReward_0;/Script/FSD.SeasonXPReward CampaignMission_5:SeasonXPReward_0;/Script/FSD.SeasonXPReward CampaignMission_6:SeasonXPReward_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

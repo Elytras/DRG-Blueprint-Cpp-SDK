@@ -21,8 +21,8 @@ class HUD_CooldownWidget_C : public UCoolDownProgressWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/CooldownDisplay/HUD_CooldownWidget", "HUD_CooldownWidget_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFinished;
-    class UWidgetAnimation* AnimBegin;
+    UE_READONLY class UWidgetAnimation* AnimFinished;
+    UE_READONLY class UWidgetAnimation* AnimBegin;
     class UImage* CoolDownImage;
     class USizeBox* Sizer;
     class UImage* SplashImage;

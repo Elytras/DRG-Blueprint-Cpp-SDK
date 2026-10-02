@@ -25,7 +25,7 @@ public:
     using MissionControl_TextAnimator_C = Game::UI::MissionControl::MissionControl_TextAnimator_C;
     using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIn;
+    UE_READONLY class UWidgetAnimation* AnimIn;
     class UImage* BorderInner;
     class UImage* BorderOuter;
     UI_MaskedImage_C* CharacterIcon;
@@ -34,7 +34,7 @@ public:
     class UImage* Image_109;
     MissionControl_TextAnimator_C* MissionControl_TextAnimator;
     class UDialogDataAsset* PreviewShout;
-    bool ManuallyControlled;
+    UE_READONLY bool ManuallyControlled;
     FText Text;
     float Duration;
     float StartTime;
@@ -48,7 +48,6 @@ public:
     UE_COSMETIC void Construct();
     void OnMissionShout(const FText& Text_0, float Duration_0);
     void Start_Running_Text(FText Text_0, float Duration_0);
-    static constexpr const char* Start_Running_Text__UeName = "Start Running Text";
     void SpeakManually(class UDialogDataAsset* MissionShout, float& Duration_0, class UAudioComponent*& AudioComponent);
     void SpeakEntryManually(FDialogStruct entry, float& Duration_0, class UAudioComponent*& AudioComponent);
     void StopRunningText();
@@ -56,6 +55,11 @@ public:
     void SetProgress(float Progress, bool& Finished);
     void Reset();
     void SetPreview(class UDialogDataAsset* PreviewShout_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Running_Text__UeName = "Start Running Text";
+    };
 };
 
 }}}   // namespace Game::UI::MissionControl

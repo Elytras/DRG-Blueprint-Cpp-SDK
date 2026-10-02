@@ -18,12 +18,16 @@ class EWC_SW_Macteras_C : public Game::Enemies::Waves::WaveControllers::EWC_Base
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_SW_Macteras", "EWC_SW_Macteras_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_SW_Macteras_C;
-    static constexpr const char* UberGraphFrame_EWC_SW_Macteras_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     void ExecuteUbergraph_EWC_SW_Macteras(int EntryPoint);
     void StopConstantPreassure();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_SW_Macteras_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

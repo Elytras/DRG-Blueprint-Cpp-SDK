@@ -18,7 +18,6 @@ class EWC_Escort_Refueling_C : public Game::Enemies::Waves::WaveControllers::EWC
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_Refueling", "EWC_Escort_Refueling_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Escort_Refueling_C;
-    static constexpr const char* UberGraphFrame_EWC_Escort_Refueling_C__UeName = "UberGraphFrame";
     FVector TunnelEntranceLocation;
     float DelayBetweenWaves;
     int WaveCountConstantPressure;
@@ -27,6 +26,11 @@ public:
     void ExecuteUbergraph_EWC_Escort_Refueling(int EntryPoint);
     void OnWaveCompleted();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Escort_Refueling_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

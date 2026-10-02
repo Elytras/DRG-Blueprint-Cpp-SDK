@@ -42,9 +42,7 @@ public:
     FText ControllerOverrideText;
     FSlateFontInfo Font;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     float Width__minimum_;
-    static constexpr const char* Width__minimum___UeName = "Width (minimum)";
     float Height;
     TMulticastInlineDelegate<void()> OnPressed;
     TMulticastInlineDelegate<void()> OnReleased;
@@ -55,7 +53,6 @@ public:
     void ExecuteUbergraph_ITM_Special_ButtonCutCorner(int EntryPoint);
     void Click();
     void Update_Look();
-    static constexpr const char* Update_Look__UeName = "Update Look";
     void SetSelected(bool IsSelected_0);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_6_OnButtonReleasedEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
@@ -67,6 +64,13 @@ public:
     void SetButtonText(FText Text, FText OverrideControllerText);
     void IsPressed(bool& IsPressed_0);
     void SetFlipHorizontally(bool FlipButton);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Width__minimum___UeName = "Width (minimum)";
+        static constexpr const char* Update_Look__UeName = "Update Look";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

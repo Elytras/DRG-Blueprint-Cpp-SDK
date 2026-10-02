@@ -14,11 +14,15 @@ class PRJ_GooProjectile_Fragment_Base_C : public Game::WeaponsNTools::GooCannon:
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_GooProjectile_Fragment_Base", "PRJ_GooProjectile_Fragment_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_GooProjectile_Fragment_Base_C;
-    static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_Base_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_PRJ_GooProjectile_Fragment_Base(int EntryPoint);
     void OnInitialized();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_Base_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

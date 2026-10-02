@@ -13,6 +13,11 @@ class STE_LineCutter_Slow_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/STE_LineCutter_Slow", "STE_LineCutter_Slow_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

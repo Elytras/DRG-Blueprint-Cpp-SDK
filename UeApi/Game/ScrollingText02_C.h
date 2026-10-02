@@ -18,7 +18,7 @@ class ScrollingText02_C : public UUserWidget
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/Assets/ScrollingText02", "ScrollingText02_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* NewAnimation;
+    UE_READONLY class UWidgetAnimation* NewAnimation;
     class UImage* IMG_Caution;
     class UImage* IMG_Caution_1;
     class UImage* IMG_Caution_2;

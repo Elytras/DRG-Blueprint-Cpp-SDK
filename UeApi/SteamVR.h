@@ -24,6 +24,12 @@ public:
     TMulticastInlineDelegate<void()> OnLeaveBounds;
     TMulticastInlineDelegate<void()> OnReturnToBounds;
     UE_PURE TArray<FVector> GetBounds() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnLeaveBounds__UeDispatcher = "Assignable";
+        static constexpr const char* OnReturnToBounds__UeDispatcher = "Assignable";
+    };
 };
 
 class USteamVRFunctionLibrary : public UBlueprintFunctionLibrary
@@ -39,10 +45,10 @@ class USteamVRHQStereoLayerShape : public UStereoLayerShapeQuad
 {
 public:
     UE_CLASS("/Script/SteamVR", "SteamVRHQStereoLayerShape");
-    bool bCurved;
-    bool bAntiAlias;
-    float AutoCurveMinDistance;
-    float AutoCurveMaxDistance;
+    UE_READONLY bool bCurved;
+    UE_READONLY bool bAntiAlias;
+    UE_READONLY float AutoCurveMinDistance;
+    UE_READONLY float AutoCurveMaxDistance;
     void SetAntiAlias(bool InAntiAlias);
     void SetAutoCurveMaxDistance(float InDistance);
     void SetAutoCurveMinDistance(float InDistance);

@@ -13,6 +13,11 @@ class CP_PrestigeAssignment_ArmorHunt_60__C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_PrestigeAssignment_ArmorHunt_60_", "CP_PrestigeAssignment_ArmorHunt_60__C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.PlayerRankCampaignRequirement PlayerRankCampaignRequirement_0;/Script/FSD.PlayerRankCampaignRequirement PlayerRankCampaignRequirement_1;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_1;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_1;/Script/FSD.VanityReward CampaignMission_3:VanityReward_0;/Script/FSD.VanityReward CampaignMission_3:VanityReward_1;/Script/FSD.VanityReward CampaignMission_3:VanityReward_2;/Script/FSD.VanityReward CampaignMission_3:VanityReward_3;/Script/FSD.VanityReward CampaignMission_3:VanityReward_4";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

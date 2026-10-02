@@ -16,11 +16,15 @@ class BP_PropHunt_OktoberfestBarrel_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Oktoberfest/BP_PropHunt_OktoberfestBarrel", "BP_PropHunt_OktoberfestBarrel_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "98f2aef858186f4698b96b4c7e96d334";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "1bd9876d3585a54f9b9cae6bc0ac1160";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* Arrow__UeScsNode = "98f2aef858186f4698b96b4c7e96d334";
+        static constexpr const char* StaticMesh__UeScsNode = "1bd9876d3585a54f9b9cae6bc0ac1160";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Oktoberfest

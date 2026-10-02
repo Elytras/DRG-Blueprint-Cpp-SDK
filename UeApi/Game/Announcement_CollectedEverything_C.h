@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/UI/Announcements/Announcement_CollectedEverything", "Announcement_CollectedEverything_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnnounceAnim;
+    UE_READONLY class UWidgetAnimation* AnnounceAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_83;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_85;

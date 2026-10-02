@@ -38,13 +38,17 @@ public:
     ITM_Craft_ResourceBig_C* ITM_Craft_ResourceBig;
     class UVerticalBox* NoPromotionsBox;
     bool NoCharactersPromoted;
-    int CharacterRetirementCount;
-    bool Enable_Preview;
-    static constexpr const char* Enable_Preview__UeName = "Enable Preview";
+    UE_READONLY int CharacterRetirementCount;
+    UE_READONLY bool Enable_Preview;
     void ExecuteUbergraph_UI_RetirementInfo(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetData(class UClass* Character);
     void UpdateBenefits(bool InNoCharactersPromoted, int InCharacterRetirementCount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Enable_Preview__UeName = "Enable Preview";
+    };
 };
 
 }}}}   // namespace Game::UI::CharacterSelectionMK2::Retirement

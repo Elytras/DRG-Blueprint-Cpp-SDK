@@ -20,19 +20,23 @@ class WPN_FlareGun_C : public AFlareGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/WPN_FlareGun", "WPN_FlareGun_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "0e5f08a8f579964e90950964c1898561";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "2a5835e2670df045966d5c83c0193247";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "0f1c35f9c30bc44bacc2edaa1819aaca";
     class UProjectileLauncherComponent* projectileLauncher;
-    static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     void ExecuteUbergraph_WPN_FlareGun(int EntryPoint);
     void ReceiveBeginPlay();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "0e5f08a8f579964e90950964c1898561";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "2a5835e2670df045966d5c83c0193247";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "0f1c35f9c30bc44bacc2edaa1819aaca";
+        static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlareGun

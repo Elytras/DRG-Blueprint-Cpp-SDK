@@ -17,9 +17,13 @@ class PRW_ShieldRegeneratorItem_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/PRW_ShieldRegeneratorItem", "PRW_ShieldRegeneratorItem_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "414d4cd432d1b5469f07de58581ad348";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f001cb642bd7d04aa98c370ef93952e7";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "414d4cd432d1b5469f07de58581ad348";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f001cb642bd7d04aa98c370ef93952e7";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator

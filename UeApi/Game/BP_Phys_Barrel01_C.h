@@ -26,18 +26,12 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_Phys_Barrel01", "BP_Phys_Barrel01_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* BarrelRiderCollission;
-    static constexpr const char* BarrelRiderCollission__UeScsNode = "10af1a1c177d5841bd4bd1e942ae06f3";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     class UCapsuleComponent* UseCapsule;
-    static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
     class UStaticMeshComponent* StaticMeshComponent0;
-    static constexpr const char* StaticMeshComponent0__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     class UFSDAchievement* BarrelRiderAchievement;
     float RideBeginTime;
@@ -45,7 +39,6 @@ public:
     void ExecuteUbergraph_BP_Phys_Barrel01(int EntryPoint);
     void Explode();
     UE_MULTICAST void Spawn_Bronzehead_Effects();
-    static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
     void BndEvt__BarrelRiderCollission_K2Node_ComponentBoundEvent_7_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__BarrelRiderCollission_K2Node_ComponentBoundEvent_6_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
@@ -54,6 +47,17 @@ public:
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_KickSoundLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BarrelRiderCollission__UeScsNode = "10af1a1c177d5841bd4bd1e942ae06f3";
+        static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
+        static constexpr const char* StaticMeshComponent0__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

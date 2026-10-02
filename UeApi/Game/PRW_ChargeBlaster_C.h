@@ -17,9 +17,13 @@ class PRW_ChargeBlaster_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/PRW_ChargeBlaster", "PRW_ChargeBlaster_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7879a6f31acffa4da0a9e6807ab00c5f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "89348bb35dcf584597d2342de3c5330f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "7879a6f31acffa4da0a9e6807ab00c5f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "89348bb35dcf584597d2342de3c5330f";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

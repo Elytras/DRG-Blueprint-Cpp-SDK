@@ -18,11 +18,15 @@ class BP_MedbaySign_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_MedbaySign", "BP_MedbaySign_C");
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "befe75495cfd33469dd3c06d66760cce";
     class UStaticMeshComponent* MedbaySign;
-    static constexpr const char* MedbaySign__UeScsNode = "e6fd860246eab74eadb853f527414768";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a4515980eda28743b48bd5d393436564";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "befe75495cfd33469dd3c06d66760cce";
+        static constexpr const char* MedbaySign__UeScsNode = "e6fd860246eab74eadb853f527414768";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a4515980eda28743b48bd5d393436564";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

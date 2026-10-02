@@ -17,21 +17,25 @@ class BP_TreasureRoom_DeepScan_Shafts_C : public Game::GameElements::Objectives:
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_TreasureRoom_DeepScan_Shafts", "BP_TreasureRoom_DeepScan_Shafts_C");
     class ULevelGenerationCarverComponent* LevelGenerationCarver5;
-    static constexpr const char* LevelGenerationCarver5__UeScsNode = "47ea52e3711c08448761a2392318ebdd";
     class UMeshCarverComponent* MainCavityCarver_Multi_7;
-    static constexpr const char* MainCavityCarver_Multi_7__UeScsNode = "d507a757ebac6f4ebc3031b9d710b3fe";
     class ULevelGenerationCarverComponent* LevelGenerationCarver4;
-    static constexpr const char* LevelGenerationCarver4__UeScsNode = "4d774ad88ab8de4ea277aec05651764d";
     class ULevelGenerationCarverComponent* LevelGenerationCarver3;
-    static constexpr const char* LevelGenerationCarver3__UeScsNode = "1fafb4405facbe44b87423cdd4f06959";
     class ULevelGenerationCarverComponent* LevelGenerationCarverMulti;
-    static constexpr const char* LevelGenerationCarverMulti__UeScsNode = "93216f84a2c19a49a23ea835670e14fb";
     class UMeshCarverComponent* MainCavityCarver_Multi_4;
-    static constexpr const char* MainCavityCarver_Multi_4__UeScsNode = "2dd778136ab6f540964ad25d9557ca0b";
     class UMeshCarverComponent* MainCavityCarver_Multi_6;
-    static constexpr const char* MainCavityCarver_Multi_6__UeScsNode = "d0d3f879ef21c547829634167942fc07";
     class UMeshCarverComponent* MainCavityCarver_Multi_5;
-    static constexpr const char* MainCavityCarver_Multi_5__UeScsNode = "0da86bbf79bb17429194bb984a6754ca";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarver5__UeScsNode = "47ea52e3711c08448761a2392318ebdd";
+        static constexpr const char* MainCavityCarver_Multi_7__UeScsNode = "d507a757ebac6f4ebc3031b9d710b3fe";
+        static constexpr const char* LevelGenerationCarver4__UeScsNode = "4d774ad88ab8de4ea277aec05651764d";
+        static constexpr const char* LevelGenerationCarver3__UeScsNode = "1fafb4405facbe44b87423cdd4f06959";
+        static constexpr const char* LevelGenerationCarverMulti__UeScsNode = "93216f84a2c19a49a23ea835670e14fb";
+        static constexpr const char* MainCavityCarver_Multi_4__UeScsNode = "2dd778136ab6f540964ad25d9557ca0b";
+        static constexpr const char* MainCavityCarver_Multi_6__UeScsNode = "d0d3f879ef21c547829634167942fc07";
+        static constexpr const char* MainCavityCarver_Multi_5__UeScsNode = "0da86bbf79bb17429194bb984a6754ca";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms

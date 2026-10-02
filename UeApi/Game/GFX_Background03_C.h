@@ -18,7 +18,7 @@ class GFX_Background03_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/GFX_Background03", "GFX_Background03_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BackgroundWiggle;
+    UE_READONLY class UWidgetAnimation* BackgroundWiggle;
     class UImage* BackgroundOverlay;
     class UImage* Image_0;
     void ExecuteUbergraph_GFX_Background03(int EntryPoint);

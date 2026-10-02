@@ -28,28 +28,17 @@ class ENE_ShootingPlant_C : public AShootingPlant
 {
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/ENE_ShootingPlant", "ENE_ShootingPlant_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyLineOfSightComponent* EnemyLineOfSight;
-    static constexpr const char* EnemyLineOfSight__UeScsNode = "896e1867b26c794e81219e528f096f9a";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "f4611e15d4c3174ea65a6cc11023d3c1";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "dd0921c01a6f1b45bff741a61b71690d";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "7360a6f34f86b14aa9141b9f06dfbadf";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "aebb5dfe7cbd8548906ed7258026c327";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "3bdb07d3324761478c75720aebf59e1f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
     void ExecuteUbergraph_ENE_ShootingPlant(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_Target();
@@ -60,6 +49,21 @@ public:
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void SetupWeakpointGlow();
     class USkeletalMeshComponent* GetMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* EnemyLineOfSight__UeScsNode = "896e1867b26c794e81219e528f096f9a";
+        static constexpr const char* PointLight__UeScsNode = "f4611e15d4c3174ea65a6cc11023d3c1";
+        static constexpr const char* WeakpointGlow__UeScsNode = "dd0921c01a6f1b45bff741a61b71690d";
+        static constexpr const char* ProjectileAttack__UeScsNode = "7360a6f34f86b14aa9141b9f06dfbadf";
+        static constexpr const char* terrainPlacement__UeScsNode = "aebb5dfe7cbd8548906ed7258026c327";
+        static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
+        static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
+        static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
+        static constexpr const char* SkeletalMesh__UeScsNode = "3bdb07d3324761478c75720aebf59e1f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "294cb3ff8fc0c74c9231973f1e6345b9";
+    };
 };
 
 }}}   // namespace Game::Enemies::ShootingPlant

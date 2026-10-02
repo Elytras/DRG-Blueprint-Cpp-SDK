@@ -13,6 +13,11 @@ class STE_Plague__EnemyBuffs_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/STE_Plague__EnemyBuffs", "STE_Plague__EnemyBuffs_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDPawnStatusEffectItem FSDPawnStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_8";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

@@ -17,10 +17,14 @@ class BP_WormholeLocation_OutsideBase_C : public Game::GameElements::Bar::DrinkE
 public:
     UE_CLASS("/Game/GameElements/Bar/DrinkEffects/Wormhole_Assets/BP_WormholeLocation_OutsideBase", "BP_WormholeLocation_OutsideBase_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_WormholeLocation_OutsideBase_C;
-    static constexpr const char* UberGraphFrame_BP_WormholeLocation_OutsideBase_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_WormholeLocation_OutsideBase(int EntryPoint);
     void OnPlayerLeaveLocation(class APlayerCharacter* Character);
     void OnPlayerEnterLocation(class APlayerCharacter* Character);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_WormholeLocation_OutsideBase_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Bar::DrinkEffects::Wormhole_Assets

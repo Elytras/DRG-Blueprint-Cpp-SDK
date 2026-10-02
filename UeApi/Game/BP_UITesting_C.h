@@ -28,21 +28,17 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BP_UITesting", "BP_UITesting_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e6d88e5c0881d340b002022f52ab985e";
     float Crosshair_Spin_Scale_3C06262F40B28AFF76CC83AA5B6151F5;
     TEnum<ETimelineDirection> Crosshair_Spin__Direction_3C06262F40B28AFF76CC83AA5B6151F5;
     class UTimelineComponent* Crosshair_Spin;
-    static constexpr const char* Crosshair_Spin__UeName = "Crosshair Spin";
     TArray<class UWidget*> Widgets;
     class APlayerController* PlayerController;
     bool HudInitialized;
     class UFSDMainHUDWidget* HudWidget;
     TArray<class URadarPointComponent*> RadarPointsInQueue;
     class UUserWidget* Default_CrossHair_Widget;
-    static constexpr const char* Default_CrossHair_Widget__UeName = "Default CrossHair Widget";
     class APlayerCharacter* PlayerCharacter;
     class UUserWidget* CrossHair_Widget;
-    static constexpr const char* CrossHair_Widget__UeName = "CrossHair Widget";
     class UWindowWidget* EscMenu;
     class UClass* MainHUDType;
     void ExecuteUbergraph_BP_UITesting(int EntryPoint);
@@ -51,18 +47,26 @@ public:
     void OnItemEquipped(class AItem* Item);
     void OnToggleMapTool(bool Visible);
     void Spin_Crosshair();
-    static constexpr const char* Spin_Crosshair__UeName = "Spin Crosshair";
     void OnVisibilityChanged();
     void HandleSeamlessTravel();
     void RadarPointAdded(class URadarPointComponent* radarPoint);
     void PlayerSpawned(class APlayerCharacter* Player);
     void Crosshair_Spin__UpdateFunc();
-    static constexpr const char* Crosshair_Spin__UpdateFunc__UeName = "Crosshair Spin__UpdateFunc";
     void Crosshair_Spin__FinishedFunc();
-    static constexpr const char* Crosshair_Spin__FinishedFunc__UeName = "Crosshair Spin__FinishedFunc";
     void AddWidget(class UClass* Class_0, class UWidget*& Widget);
     void Change_Crosshair(class UUserWidget* New_Crosshair);
-    static constexpr const char* Change_Crosshair__UeName = "Change Crosshair";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e6d88e5c0881d340b002022f52ab985e";
+        static constexpr const char* Crosshair_Spin__UeName = "Crosshair Spin";
+        static constexpr const char* Default_CrossHair_Widget__UeName = "Default CrossHair Widget";
+        static constexpr const char* CrossHair_Widget__UeName = "CrossHair Widget";
+        static constexpr const char* Spin_Crosshair__UeName = "Spin Crosshair";
+        static constexpr const char* Crosshair_Spin__UpdateFunc__UeName = "Crosshair Spin__UpdateFunc";
+        static constexpr const char* Crosshair_Spin__FinishedFunc__UeName = "Crosshair Spin__FinishedFunc";
+        static constexpr const char* Change_Crosshair__UeName = "Change Crosshair";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

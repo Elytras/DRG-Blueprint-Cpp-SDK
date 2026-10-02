@@ -67,7 +67,11 @@ public:
     void GotoNext(bool Next, bool PlaySound_0);
     void CheckArmorUnlocks();
     FEventReply Handle_Key_Input(const FKeyEvent& InKeyEvent, bool& Handled);
-    static constexpr const char* Handle_Key_Input__UeName = "Handle Key Input";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Handle_Key_Input__UeName = "Handle Key Input";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

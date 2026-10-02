@@ -18,16 +18,20 @@ class BP_HeavyParticleCannon_StickyFlame_C : public AStickyFlame
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/BP_HeavyParticleCannon_StickyFlame", "BP_HeavyParticleCannon_StickyFlame_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NG_Magma;
-    static constexpr const char* NG_Magma__UeScsNode = "a87597a6880aea439f0367e0f5afbd01";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "690cc6f243f5444291faf0a9c766eb1b";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bf356c6b9f8ec04cb84b4cb2d380ad70";
     void ExecuteUbergraph_BP_HeavyParticleCannon_StickyFlame(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
+        static constexpr const char* NG_Magma__UeScsNode = "a87597a6880aea439f0367e0f5afbd01";
+        static constexpr const char* PathfinderCollision__UeScsNode = "690cc6f243f5444291faf0a9c766eb1b";
+        static constexpr const char* Sphere__UeScsNode = "bf356c6b9f8ec04cb84b4cb2d380ad70";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

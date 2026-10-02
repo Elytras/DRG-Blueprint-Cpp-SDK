@@ -18,16 +18,20 @@ class BP_Crossbow_Projectile_Stuck_Chemical_C : public Game::WeaponsNTools::Cros
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Chemical", "BP_Crossbow_Projectile_Stuck_Chemical_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     class UNiagaraComponent* ChemicalParticles;
-    static constexpr const char* ChemicalParticles__UeScsNode = "5a7f35666348f148babc4adff43148b5";
     class UCrossbowStuckProjectileEffectExploding* EffectExploding;
-    static constexpr const char* EffectExploding__UeScsNode = "d31cb5c02458f24d8c2034dc5c6ba8fb";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "005978b4693a154f9d921252c99351d6";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "97356439995b7049acfa3c22d289ed05";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
+        static constexpr const char* ChemicalParticles__UeScsNode = "5a7f35666348f148babc4adff43148b5";
+        static constexpr const char* EffectExploding__UeScsNode = "d31cb5c02458f24d8c2034dc5c6ba8fb";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "005978b4693a154f9d921252c99351d6";
+        static constexpr const char* Damage__UeScsNode = "97356439995b7049acfa3c22d289ed05";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

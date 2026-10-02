@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_MissionControl_MemorialHallWelcome", "BP_MissionControl_MemorialHallWelcome_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* TriggerBox;
-    static constexpr const char* TriggerBox__UeScsNode = "2345d8a3aa505042bbf1fd90ce4004bd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6eb84e8b6e7f05449dbade64ac903c98";
     void ExecuteUbergraph_BP_MissionControl_MemorialHallWelcome(int EntryPoint);
     void ReceiveActorBeginOverlap(class AActor* OtherActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TriggerBox__UeScsNode = "2345d8a3aa505042bbf1fd90ce4004bd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6eb84e8b6e7f05449dbade64ac903c98";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

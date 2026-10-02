@@ -43,7 +43,7 @@ public:
     class UInventoryComponent* Inventory;
     class ARecallableSentryGunItem* Item;
     int PreviewSentryCount;
-    class UHUDVisibilityGroup* VisibilityGroup;
+    UE_READONLY class UHUDVisibilityGroup* VisibilityGroup;
     TArray<HUD_SentryGunWidget_C*> SentryWidgets;
     class APlayerCharacter* Character;
     bool LaserpointerEquipped;
@@ -51,10 +51,8 @@ public:
     void OnLaserPointerReleased_Event();
     void OnLaserPointerPressed_Event();
     void Setup_Dynamic_Visibility();
-    static constexpr const char* Setup_Dynamic_Visibility__UeName = "Setup Dynamic Visibility";
     void OnSentryStateChanged_Event();
     void Update_Dynamic_Visibility();
-    static constexpr const char* Update_Dynamic_Visibility__UeName = "Update Dynamic Visibility";
     void OnItemCurrentAmountChanged(int amount);
     void OnActiveItemsChanged(class ARecallableSentryGunItem* Item_0);
     void OnItemsLoaded();
@@ -63,6 +61,12 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OutOfAmmo(bool& OutOfAmmo_0);
     void ItemEquipped(bool& IsEquipped);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Dynamic_Visibility__UeName = "Setup Dynamic Visibility";
+        static constexpr const char* Update_Dynamic_Visibility__UeName = "Update Dynamic Visibility";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

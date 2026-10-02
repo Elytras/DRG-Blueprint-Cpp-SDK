@@ -30,9 +30,9 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using WarningBox_C = Game::UI::Global_UI_Elements::WarningBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* BlinkText;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* BlinkText;
     Basic_ButtonScalable2_C* Basic_ButtonScalable2;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;

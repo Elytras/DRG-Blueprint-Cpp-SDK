@@ -28,36 +28,40 @@ public:
     class UBorder* IconColorer;
     class UHorizontalBox* IconsHolder;
     ITM_UpgGear_UpgIconSingle_C* TierIcon;
-    FUpgradeTier Tier;
-    int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
-    class UClass* CharacterClass;
-    class UClass* itemClass;
+    UE_READONLY FUpgradeTier Tier;
+    UE_READONLY int Index_0;
+    UE_READONLY class UClass* CharacterClass;
+    UE_READONLY class UClass* itemClass;
     bool IsRowLocked;
     TArray<ITM_UpgGear_UpgIconSingle_C*> UpgradeWidgets;
-    ITM_UpgGear_SideBar_C* UpgradesMenu;
+    UE_READONLY ITM_UpgGear_SideBar_C* UpgradesMenu;
     ITM_UpgGear_UpgIconSingle_C* PurchaseUpgradeWidget;
     class UDialogDataAsset* ShoutUpgradePurchased;
     void ExecuteUbergraph_ITM_UpgGear_TierRow(int EntryPoint);
     void OnUpgrade_Clicked(ITM_UpgGear_UpgIconSingle_C* Widget);
-    static constexpr const char* OnUpgrade_Clicked__UeName = "OnUpgrade Clicked";
     void OnUpgradeUnhovered(ITM_UpgGear_UpgIconSingle_C* Widget);
     void OnUpgradeHovered(ITM_UpgGear_UpgIconSingle_C* Widget);
     void Unequip_Upgrade(ITM_UpgGear_UpgIconSingle_C* Upgrade);
-    static constexpr const char* Unequip_Upgrade__UeName = "Unequip Upgrade";
     void Refresh_Tier_Icon();
-    static constexpr const char* Refresh_Tier_Icon__UeName = "Refresh Tier Icon";
     void OnPurchaseConfirmation(bool Yes);
     void PurchaseUpgrade(ITM_UpgGear_UpgIconSingle_C* UpgradeWidget);
     void EquipUpgrade(ITM_UpgGear_UpgIconSingle_C* UpgradeWidget);
     void Refresh();
     void Initialize_Upgrade_Widget(ITM_UpgGear_UpgIconSingle_C* Widget);
-    static constexpr const char* Initialize_Upgrade_Widget__UeName = "Initialize Upgrade Widget";
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE bool GetIsRowLocked();
     void SetPurchasedShout(class UDialogDataAsset* InShout);
     void UpdateBackBar();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* OnUpgrade_Clicked__UeName = "OnUpgrade Clicked";
+        static constexpr const char* Unequip_Upgrade__UeName = "Unequip Upgrade";
+        static constexpr const char* Refresh_Tier_Icon__UeName = "Refresh Tier Icon";
+        static constexpr const char* Initialize_Upgrade_Widget__UeName = "Initialize Upgrade Widget";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

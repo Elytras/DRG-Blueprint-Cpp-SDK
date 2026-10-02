@@ -23,6 +23,11 @@ struct FName;
 struct FText;
 #include "Conv.h"
 
+/* Methods_<T>.inc, included last in FString, FName, FText and the soft pointers: every library static taking the
+   value first as a method (`Path.MakeSoftClassPath()`), which AssetGen calls with the value first, and each
+   one-parameter Conv_ as To<Target>() (`Path.ToSoftClassPtr()`). Methods.h declares what they name. */
+#include "Methods.h"
+
 struct FString {
   WChar *Data;
   int32  Length;
@@ -38,6 +43,8 @@ struct FString {
     Len() const {
     return Length;
   }
+
+#include "Methods_FString.inc"
 };
 
 struct FName {
@@ -49,6 +56,8 @@ struct FName {
   FName(double) {}
   UE_CONV_FName
   explicit operator bool() const; // `if (Name)`: Name != None
+
+#include "Methods_FName.inc"
 };
 
 struct FText {
@@ -59,6 +68,8 @@ struct FText {
   FText(const char *) {}
   FText(double) {}
   UE_CONV_FText
+
+#include "Methods_FText.inc"
 };
 
 inline FString operator+(const FString &, const FString &) { return FString(); }
@@ -98,6 +109,8 @@ template <class T> struct TSoftObjectPtr {
   TSoftObjectPtr(const WChar *) {}
   template <class U> TSoftObjectPtr(const TSoftObjectPtr<U> &) {}
   UE_CONV_TSoftObjectPtr
+
+#include "Methods_TSoftObjectPtr.inc"
 };
 
 template <class T> struct TSoftClassPtr {
@@ -107,6 +120,8 @@ template <class T> struct TSoftClassPtr {
   TSoftClassPtr(const WChar *) {}
   template <class U> TSoftClassPtr(const TSoftClassPtr<U> &) {}
   UE_CONV_TSoftClassPtr
+
+#include "Methods_TSoftClassPtr.inc"
 };
 
 template <class T, class U> T *Cast(U *) { return nullptr; }

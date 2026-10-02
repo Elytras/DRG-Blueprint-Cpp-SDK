@@ -440,17 +440,25 @@ class AControlPointMeshActor : public AActor
 {
 public:
     UE_CLASS("/Script/Landscape", "ControlPointMeshActor");
-    class UControlPointMeshComponent* ControlPointMeshComponent;
-    static constexpr const char* ControlPointMeshComponent__UeSubobject = "ControlPointMeshComponent0 /Script/Landscape.ControlPointMeshComponent";
-    static constexpr const char* RootComponent__UeSubobject = "ControlPointMeshComponent0 /Script/Landscape.ControlPointMeshComponent";
+    UE_READONLY class UControlPointMeshComponent* ControlPointMeshComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ControlPointMeshComponent__UeSubobject = "ControlPointMeshComponent0 /Script/Landscape.ControlPointMeshComponent";
+        static constexpr const char* RootComponent__UeSubobject = "ControlPointMeshComponent0 /Script/Landscape.ControlPointMeshComponent";
+    };
 };
 
 class UControlPointMeshComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Landscape", "ControlPointMeshComponent");
-    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     float VirtualTextureMainPassMaxDrawDistance;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class ALandscapeProxy : public AActor
@@ -477,12 +485,12 @@ public:
     class UMaterialInterface* LandscapeMaterial;
     class UMaterialInterface* LandscapeHoleMaterial;
     TArray<FLandscapeProxyMaterialOverride> LandscapeMaterialsOverride;
-    bool bMeshHoles;
-    uint8 MeshHolesMaxLod;
+    UE_READONLY bool bMeshHoles;
+    UE_READONLY uint8 MeshHolesMaxLod;
     TArray<class URuntimeVirtualTexture*> RuntimeVirtualTextures;
-    int VirtualTextureNumLods;
-    int VirtualTextureLodBias;
-    TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
+    UE_READONLY int VirtualTextureNumLods;
+    UE_READONLY int VirtualTextureLodBias;
+    UE_READONLY TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
     float NegativeZBoundsExtension;
     float PositiveZBoundsExtension;
     TArray<class ULandscapeComponent*> LandscapeComponents;
@@ -490,25 +498,25 @@ public:
     TArray<class UHierarchicalInstancedStaticMeshComponent*> FoliageComponents;
     bool bHasLandscapeGrass;
     float StaticLightingResolution;
-    bool CastShadow;
-    bool bCastDynamicShadow;
-    bool bCastStaticShadow;
-    bool bCastFarShadow;
-    bool bCastHiddenShadow;
-    bool bCastShadowAsTwoSided;
-    bool bAffectDistanceFieldLighting;
-    FLightingChannels LightingChannels;
+    UE_READONLY bool CastShadow;
+    UE_READONLY bool bCastDynamicShadow;
+    UE_READONLY bool bCastStaticShadow;
+    UE_READONLY bool bCastFarShadow;
+    UE_READONLY bool bCastHiddenShadow;
+    UE_READONLY bool bCastShadowAsTwoSided;
+    UE_READONLY bool bAffectDistanceFieldLighting;
+    UE_READONLY FLightingChannels LightingChannels;
     bool bUseMaterialPositionOffsetInStaticLighting;
-    bool bRenderCustomDepth;
-    TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
-    int CustomDepthStencilValue;
-    float LDMaxDrawDistance;
+    UE_READONLY bool bRenderCustomDepth;
+    UE_READONLY TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
+    UE_READONLY int CustomDepthStencilValue;
+    UE_READONLY float LDMaxDrawDistance;
     FLightmassPrimitiveSettings LightmassSettings;
     int CollisionMipLevel;
     int SimpleCollisionMipLevel;
     float CollisionThickness;
-    FBodyInstance BodyInstance;
-    bool bGenerateOverlapEvents;
+    UE_READONLY FBodyInstance BodyInstance;
+    UE_READONLY bool bGenerateOverlapEvents;
     bool bBakeMaterialPositionOffsetIntoCollision;
     int ComponentSizeQuads;
     int SubsectionSizeQuads;
@@ -520,7 +528,6 @@ public:
     bool bUseLandscapeForCullingInvisibleHLODVertices;
     bool bHasLayersContent;
     TMap<class UTexture2D*, class ULandscapeWeightmapUsage*> WeightmapUsageMap;
-    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
     void ChangeComponentScreenSizeToUseSubSections(float InComponentScreenSizeToUseSubSections);
     void ChangeLODDistanceFactor(float InLODDistanceFactor);
     void ChangeTessellationComponentScreenSize(float InTessellationComponentScreenSize);
@@ -532,13 +539,22 @@ public:
     void SetLandscapeMaterialScalarParameterValue(FName ParameterName, float Value);
     void SetLandscapeMaterialTextureParameterValue(FName ParameterName, class UTexture* Value);
     void SetLandscapeMaterialVectorParameterValue(FName ParameterName, FLinearColor Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class ALandscape : public ALandscapeProxy
 {
 public:
     UE_CLASS("/Script/Landscape", "Landscape");
-    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class ALandscapeBlueprintBrushBase : public AActor
@@ -561,8 +577,8 @@ class ULandscapeComponent : public UPrimitiveComponent
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeComponent");
-    int SectionBaseX;
-    int SectionBaseY;
+    UE_READONLY int SectionBaseX;
+    UE_READONLY int SectionBaseY;
     int ComponentSizeQuads;
     int SubsectionSizeQuads;
     int NumSubsections;
@@ -589,26 +605,34 @@ public:
     float NegativeZBoundsExtension;
     float PositiveZBoundsExtension;
     float StaticLightingResolution;
-    int ForcedLOD;
-    int LODBias;
+    UE_READONLY int ForcedLOD;
+    UE_READONLY int LODBias;
     FGuid StateId;
     FGuid BakedTextureMaterialGuid;
-    class UTexture2D* GIBakedBaseColorTexture;
+    UE_READONLY class UTexture2D* GIBakedBaseColorTexture;
     uint8 MobileBlendableLayerMask;
     class UMaterialInterface* MobileMaterialInterface;
     TArray<class UMaterialInterface*> MobileMaterialInterfaces;
     TArray<class UTexture2D*> MobileWeightmapTextures;
-    static constexpr const char* LODStreamingProxy__UeSubobject = "LandscapeLODStreamingProxy /Script/Landscape.LandscapeLODStreamingProxy";
     float EditorGetPaintLayerWeightAtLocation(const FVector& InLocation, class ULandscapeLayerInfoObject* PaintLayer);
     float EditorGetPaintLayerWeightByNameAtLocation(const FVector& InLocation, FName InPaintLayerName);
     UE_PURE class UMaterialInstanceDynamic* GetMaterialInstanceDynamic(int InIndex) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LODStreamingProxy__UeSubobject = "LandscapeLODStreamingProxy /Script/Landscape.LandscapeLODStreamingProxy";
+    };
 };
 
 class ALandscapeGizmoActor : public AActor
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeGizmoActor");
-    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class ALandscapeGizmoActiveActor : public ALandscapeGizmoActor
@@ -705,19 +729,27 @@ class ALandscapeMeshProxyActor : public AActor
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeMeshProxyActor");
-    class ULandscapeMeshProxyComponent* LandscapeMeshProxyComponent;
-    static constexpr const char* LandscapeMeshProxyComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
-    static constexpr const char* RootComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
+    UE_READONLY class ULandscapeMeshProxyComponent* LandscapeMeshProxyComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LandscapeMeshProxyComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
+        static constexpr const char* RootComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
+    };
 };
 
 class ULandscapeMeshProxyComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeMeshProxyComponent");
-    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
     FGuid LandscapeGuid;
     TArray<FIntPoint> ProxyComponentBases;
     int8 ProxyLOD;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class ULandscapeSettings : public UDeveloperSettings
@@ -771,7 +803,11 @@ class ALandscapeStreamingProxy : public ALandscapeProxy
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeStreamingProxy");
-    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class ULandscapeSubsystem : public UTickableWorldSubsystem

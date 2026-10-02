@@ -18,11 +18,15 @@ class PRW_Cryospray_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/PRW_Cryospray", "PRW_Cryospray_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "575f762a1d3d6147b1f213eca460e188";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "afeeb97f393e404e9742679dd1b50c38";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "1e55db92d79aa54b9be1455cab257d74";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "575f762a1d3d6147b1f213eca460e188";
+        static constexpr const char* SkeletalMesh__UeScsNode = "afeeb97f393e404e9742679dd1b50c38";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "1e55db92d79aa54b9be1455cab257d74";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

@@ -24,30 +24,34 @@ class PRJ_ShootingPlant_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/PRJ_ShootingPlant", "PRJ_ShootingPlant_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "730a9cbb0413294a90533e71298c4d14";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "3d8bfb9b1b7b1548b959050b9173bce2";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "8d00f57a04c3c144ade7edaf2608e886";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "e0682bc58637844892312c5717844876";
     class UStaticMeshComponent* SK_ShootingPlant_Projectile;
-    static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "78ddd0e59efa4941bb61d1ae2131537a";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
     void ExecuteUbergraph_PRJ_ShootingPlant(int EntryPoint);
     UE_MULTICAST void GoBoom();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "730a9cbb0413294a90533e71298c4d14";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "3d8bfb9b1b7b1548b959050b9173bce2";
+        static constexpr const char* SimpleHealth__UeScsNode = "8d00f57a04c3c144ade7edaf2608e886";
+        static constexpr const char* RotatingMovement__UeScsNode = "e0682bc58637844892312c5717844876";
+        static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "78ddd0e59efa4941bb61d1ae2131537a";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
+        static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+        static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
+    };
 };
 
 }}}   // namespace Game::Enemies::ShootingPlant

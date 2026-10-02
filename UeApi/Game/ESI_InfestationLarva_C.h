@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/Enemies/InfestationLarva/ESI_InfestationLarva", "ESI_InfestationLarva_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "cdeefa5b6d28c04b9a716ef5cb43fa0e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e0c6b4c46437b341912171fae9884568";
     void ExecuteUbergraph_ESI_InfestationLarva(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "cdeefa5b6d28c04b9a716ef5cb43fa0e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e0c6b4c46437b341912171fae9884568";
+    };
 };
 
 }}}   // namespace Game::Enemies::InfestationLarva

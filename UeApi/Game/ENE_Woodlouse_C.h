@@ -28,20 +28,13 @@ class ENE_Woodlouse_C : public AWoodLouse
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/ENE_Woodlouse", "ENE_Woodlouse_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/AIModule.PawnSensingComponent Sensing;/Script/Engine.SceneComponent RollingCenter;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* ProjectileHit;
-    static constexpr const char* ProjectileHit__UeScsNode = "be36128a6eb6ed4eba0e15b4dd344804";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "67649f79e83d7342a1f8665d16ed1c6c";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "d0cca009b80343419625f79d7c0b7f2b";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "27f48d26849b5c4e9a1d2031e5a24f79";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "c1d3f304c2c0ee47b31208f78aba21e0";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "20e808d2ac313040afc0f7ff7eeab146";
     class USoundCue* deathSound;
     class USoundCue* FoldSound;
     class USoundCue* UnfoldSound;
@@ -54,11 +47,9 @@ public:
     UE_MULTICAST UE_RELIABLE void All_Ragdoll(FVector_NetQuantize Impulse);
     void StartBurn();
     void Play_Burn_Death();
-    static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
     void StartCorrosiveDissovle();
     void CorrosiveDeath();
     void Cooked_Death();
-    static constexpr const char* Cooked_Death__UeName = "Cooked Death";
     void ChemicalExplosionDeath();
     void NormalDeath();
     void DeathDetailedBase(const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
@@ -75,6 +66,19 @@ public:
     void GetFXMeshScale(float& NewParam);
     void SetBurnMaterialSettings();
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemicalArrow);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/AIModule.PawnSensingComponent Sensing;/Script/Engine.SceneComponent RollingCenter;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* ProjectileHit__UeScsNode = "be36128a6eb6ed4eba0e15b4dd344804";
+        static constexpr const char* outline__UeScsNode = "67649f79e83d7342a1f8665d16ed1c6c";
+        static constexpr const char* enemy__UeScsNode = "d0cca009b80343419625f79d7c0b7f2b";
+        static constexpr const char* PawnStats__UeScsNode = "27f48d26849b5c4e9a1d2031e5a24f79";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "c1d3f304c2c0ee47b31208f78aba21e0";
+        static constexpr const char* ParticleSystem__UeScsNode = "20e808d2ac313040afc0f7ff7eeab146";
+        static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
+        static constexpr const char* Cooked_Death__UeName = "Cooked Death";
+    };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse

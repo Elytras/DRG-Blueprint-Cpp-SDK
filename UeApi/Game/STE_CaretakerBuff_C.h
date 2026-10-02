@@ -13,6 +13,11 @@ class STE_CaretakerBuff_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/STE_CaretakerBuff", "STE_CaretakerBuff_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HealingStatusEffectItem HealingStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker

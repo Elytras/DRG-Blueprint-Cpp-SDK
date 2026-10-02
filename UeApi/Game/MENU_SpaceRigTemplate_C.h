@@ -41,8 +41,8 @@ public:
     using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
     using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHideTopBar;
-    class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* AnimHideTopBar;
+    UE_READONLY class UWidgetAnimation* FadeIn;
     class UImage* BackForeground;
     Basic_Popup_YesNoPrompt_C* Basic_Popup_YesNoPrompt;
     class UNamedSlot* BottomCenter;
@@ -71,16 +71,14 @@ public:
     TArray<class UResourceData*> AdditionalResources;
     bool IsCloseBack;
     TMulticastInlineDelegate<void()> OnBackClicked;
-    bool ShowPlayersSpeaking;
-    float PlayersSpeakingOffsetY;
+    UE_READONLY bool ShowPlayersSpeaking;
+    UE_READONLY float PlayersSpeakingOffsetY;
     void ExecuteUbergraph_MENU_SpaceRigTemplate(int EntryPoint);
     void AnimateTopBarVisible(bool InVisible);
     void PlayFadeIn();
     void Click_Close_Button();
-    static constexpr const char* Click_Close_Button__UeName = "Click Close Button";
     void OnSelectedCharacterChanged(TSubclassOf<class APlayerCharacter> NewCharacter);
     void Setup_Player_Events(class APlayerState* NewPlayer);
-    static constexpr const char* Setup_Player_Events__UeName = "Setup Player Events";
     void OnSelectedCharacterChanged_Event(TSubclassOf<class APlayerCharacter> NewCharacter);
     void OnPlayerLeave_Event(class AFSDPlayerState* PlayerState_0);
     void OnPlayerJoined_Event(class AFSDPlayerState* PlayerState_0);
@@ -94,6 +92,12 @@ public:
     void UpdatePlayerCount();
     void SetBackMode(bool Close_Is_Back);
     void IsCloseButtonVisible(bool& Visible);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Click_Close_Button__UeName = "Click Close Button";
+        static constexpr const char* Setup_Player_Events__UeName = "Setup Player Events";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_TopBar

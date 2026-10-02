@@ -18,13 +18,17 @@ class AIC_Maggot_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/AIC_Maggot", "AIC_Maggot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviorTree;
     void ExecuteUbergraph_AIC_Maggot(int EntryPoint);
     void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

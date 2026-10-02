@@ -19,22 +19,26 @@ public:
     UE_CLASS("/Game/Enemies/HydraWeed/ESI_HydraWeed", "ESI_HydraWeed_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh1;
-    static constexpr const char* SkeletalMesh1__UeScsNode = "761ecd8be9553941b3deef0c9e3c7aaa";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "1f1a7fae1090b64181e25c6576b071bd";
     class USkeletalMeshComponent* ShootingPlant_small;
-    static constexpr const char* ShootingPlant_small__UeScsNode = "6768b96efbf89d40981f7017377ca4e8";
     class USceneComponent* Scale;
-    static constexpr const char* Scale__UeScsNode = "642bb541cab1e648b0e4a1d5a0ed5f67";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
     TArray<FSingleAnimationPlayData> Animations;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     float LastPlayTime;
     void ExecuteUbergraph_ESI_HydraWeed(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh1__UeScsNode = "761ecd8be9553941b3deef0c9e3c7aaa";
+        static constexpr const char* SkeletalMesh__UeScsNode = "1f1a7fae1090b64181e25c6576b071bd";
+        static constexpr const char* ShootingPlant_small__UeScsNode = "6768b96efbf89d40981f7017377ca4e8";
+        static constexpr const char* Scale__UeScsNode = "642bb541cab1e648b0e4a1d5a0ed5f67";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

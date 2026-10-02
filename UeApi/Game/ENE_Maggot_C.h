@@ -22,16 +22,11 @@ class ENE_Maggot_C : public AMaggot
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot", "ENE_Maggot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "c2eeddee5581174a88a9504c0d6f4f62";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "086fb07138aba54bb0de68e6427a66b1";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "f696529ad27c5b4e8d7add5c15dbd17b";
     class UParticleSystem* DeathParticle;
     void ExecuteUbergraph_ENE_Maggot(int EntryPoint);
     void ReceiveBeginPlay();
@@ -41,6 +36,15 @@ public:
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(TEnum<EDeepMovementState> State);
     void OnRep_Moving();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Capsule__UeScsNode = "c2eeddee5581174a88a9504c0d6f4f62";
+        static constexpr const char* Audio__UeScsNode = "086fb07138aba54bb0de68e6427a66b1";
+        static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "f696529ad27c5b4e8d7add5c15dbd17b";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

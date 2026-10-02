@@ -53,7 +53,7 @@ public:
     using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
     using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* LookingForServers;
+    UE_READONLY class UWidgetAnimation* LookingForServers;
     Basic_CheckBox_C* AutoRefresh;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_RadioButton_C* Basic_RadioButton_Open;
@@ -204,7 +204,6 @@ public:
     void RestrictToMission(class UGeneratedMission* mission);
     void ServelistChanged();
     void Back_Pressed();
-    static constexpr const char* Back_Pressed__UeName = "Back Pressed";
     void JoinServerWithPassword(FBlueprintSessionResult Session, FString Password);
     void JoinServerWithoutPassword(FBlueprintSessionResult Session);
     void JoinServer(FBlueprintSessionResult Session);
@@ -240,13 +239,18 @@ public:
     void UpdateFromWorkEnvironment();
     void UpdateFromGametype();
     void Disable_Progression_Mods_and_Join(FBlueprintSessionResult Session);
-    static constexpr const char* Disable_Progression_Mods_and_Join__UeName = "Disable Progression Mods and Join";
     void GetHoveredEntryInfo(ITM_ServerList_Entry_C*& EntryWidget, float& WidgetMouseOffset, FString& ServerID);
     void GetWidgetMousePosition(class UWidget* InWidget, FVector2D& OutLocalPos);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void UpdateSeasonSearch();
     void GetActiveSeasons(TArray<class USeason*>& Seasons1);
     void UpdateSeasonHeader();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Back_Pressed__UeName = "Back Pressed";
+        static constexpr const char* Disable_Progression_Mods_and_Join__UeName = "Disable Progression Mods and Join";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

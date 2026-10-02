@@ -27,16 +27,20 @@ public:
     class UImage* CH_Top;
     class UImage* CH_TopInterior;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     void ExecuteUbergraph_HUD_CrosNewSuperShotgun(int EntryPoint);
     UE_COSMETIC void Construct();
     void SetData(class AItem* Item);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

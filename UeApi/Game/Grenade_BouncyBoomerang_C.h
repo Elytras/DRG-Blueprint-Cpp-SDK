@@ -27,28 +27,17 @@ class Grenade_BouncyBoomerang_C : public ABouncyBoomerang
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BoomerangBouncy/Grenade_BouncyBoomerang", "Grenade_BouncyBoomerang_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Boomerang_Trail;
-    static constexpr const char* NS_Boomerang_Trail__UeScsNode = "711995a233158e48b2dc95d850ba57f9";
     class UUpgradableGearComponent* UpgradableGear;
-    static constexpr const char* UpgradableGear__UeScsNode = "8f745a4f63a8104a98eeba52b987dbb3";
     class UParticleSystemComponent* Particle_Trail;
-    static constexpr const char* Particle_Trail__UeScsNode = "463ba3fedc50714fbf334453685e08eb";
     class USceneComponent* LocalPivot;
-    static constexpr const char* LocalPivot__UeScsNode = "9d73e4c8af4463489ffbb318d212b50b";
     class UStaticMeshComponent* MeshComponent;
-    static constexpr const char* MeshComponent__UeScsNode = "542dfb0ce96f66489610af820ab1cc99";
     class USceneComponent* BoomerangPivot;
-    static constexpr const char* BoomerangPivot__UeScsNode = "c4abdb71925e8e4488209e11ffa3da95";
     class UAudioComponent* BoomerangFlightSound;
-    static constexpr const char* BoomerangFlightSound__UeScsNode = "4bd11a9d70b6e94184468a07c885ec66";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "66272b204f1c234cb657d0d9c21f5976";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "1c938b6c8802814cbebf029249f77279";
     class UDialogDataAsset* Grenade_warning;
-    static constexpr const char* Grenade_warning__UeName = "Grenade warning";
     class USoundMix* ExplosionMixModifier;
     class APlayerCharacter* Character;
     void ExecuteUbergraph_Grenade_BouncyBoomerang(int EntryPoint);
@@ -56,6 +45,21 @@ public:
     void OnExploded();
     void ReceiveTick(float DeltaSeconds);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent Root";
+        static constexpr const char* NS_Boomerang_Trail__UeScsNode = "711995a233158e48b2dc95d850ba57f9";
+        static constexpr const char* UpgradableGear__UeScsNode = "8f745a4f63a8104a98eeba52b987dbb3";
+        static constexpr const char* Particle_Trail__UeScsNode = "463ba3fedc50714fbf334453685e08eb";
+        static constexpr const char* LocalPivot__UeScsNode = "9d73e4c8af4463489ffbb318d212b50b";
+        static constexpr const char* MeshComponent__UeScsNode = "542dfb0ce96f66489610af820ab1cc99";
+        static constexpr const char* BoomerangPivot__UeScsNode = "c4abdb71925e8e4488209e11ffa3da95";
+        static constexpr const char* BoomerangFlightSound__UeScsNode = "4bd11a9d70b6e94184468a07c885ec66";
+        static constexpr const char* PointLight__UeScsNode = "66272b204f1c234cb657d0d9c21f5976";
+        static constexpr const char* Damage__UeScsNode = "1c938b6c8802814cbebf029249f77279";
+        static constexpr const char* Grenade_warning__UeName = "Grenade warning";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy

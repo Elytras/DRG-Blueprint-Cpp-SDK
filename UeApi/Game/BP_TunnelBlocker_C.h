@@ -17,9 +17,13 @@ class BP_TunnelBlocker_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_TunnelBlocker", "BP_TunnelBlocker_C");
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "7b6c96b889ec184e9ef9baf372d36c3b";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "2f959edcde90b64786fd93aa2d36587b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PathfinderCollision__UeScsNode = "7b6c96b889ec184e9ef9baf372d36c3b";
+        static constexpr const char* Scene__UeScsNode = "2f959edcde90b64786fd93aa2d36587b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod

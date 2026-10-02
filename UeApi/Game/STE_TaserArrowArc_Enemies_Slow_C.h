@@ -13,6 +13,11 @@ class STE_TaserArrowArc_Enemies_Slow_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/StatusEffects/STE_TaserArrowArc_Enemies_Slow", "STE_TaserArrowArc_Enemies_Slow_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects

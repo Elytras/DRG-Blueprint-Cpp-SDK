@@ -17,9 +17,13 @@ class PRW_Drone_Bosco_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/GameElements/Drone/PRW_Drone_Bosco", "PRW_Drone_Bosco_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c242c1a1cf5d9f43a1f93685a302b125";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "dd1bcd1bfa515c4fba8b20bae5b8eade";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "c242c1a1cf5d9f43a1f93685a302b125";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "dd1bcd1bfa515c4fba8b20bae5b8eade";
+    };
 };
 
 }}}   // namespace Game::GameElements::Drone

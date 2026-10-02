@@ -20,9 +20,8 @@ class TOOLTIP_Season_EventBonus_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/TOOLTIP_Season_EventBonus", "TOOLTIP_Season_EventBonus_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UTextBlock* _1;
-    static constexpr const char* _1__UeName = "+1";
     class UImage* Image_Background;
     class UImage* Image_NormalClaim_1;
     class UImage* Scrip;
@@ -36,6 +35,11 @@ public:
     void SetBackRowText(bool IsBackRowClaimed);
     void SetData(TEnum<ESeasonVisibilityState> State);
     UE_PURE TEnum<ESlateVisibility> SetScripAmountVisibility();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* _1__UeName = "+1";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

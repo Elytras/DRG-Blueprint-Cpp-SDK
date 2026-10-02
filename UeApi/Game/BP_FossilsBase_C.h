@@ -22,11 +22,8 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Fossils/BP_FossilsBase", "BP_FossilsBase_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "18aef8b308610f4ab49fd7a94cf85564";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "7db56a53d98a2f4291b6f112625807f4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
     class USoundBase* SpookyAudio;
     float AudioActivationDistance;
     FRandRange RandomScale;
@@ -34,6 +31,13 @@ public:
     void OnLocalPlayerClose(class APlayerCharacter* Player, bool enteredTrigger);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "18aef8b308610f4ab49fd7a94cf85564";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "7db56a53d98a2f4291b6f112625807f4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Fossils

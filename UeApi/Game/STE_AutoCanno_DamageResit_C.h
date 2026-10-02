@@ -13,6 +13,11 @@ class STE_AutoCanno_DamageResit_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/STE_AutoCanno_DamageResit", "STE_AutoCanno_DamageResit_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Autocannon

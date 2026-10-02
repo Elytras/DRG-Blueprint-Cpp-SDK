@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_NeedleSprayer_C : public Game::WeaponsNTools::Grenade
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/Loadout_GrenadeProxy_NeedleSprayer", "Loadout_GrenadeProxy_NeedleSprayer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer

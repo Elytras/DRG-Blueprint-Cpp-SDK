@@ -26,22 +26,14 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Drills/WPN_DoubleDrills", "WPN_DoubleDrills_C");
     using WeaponDisplay_Drill_Heat_C = Game::WeaponsNTools::Drills::WeaponDisplay_Drill_Heat_C;
     using WeaponDisplay_Overheat_C = Game::UI::WeaponDisplays::WeaponDisplay_Overheat_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.DoubleDrillAggregator Aggregator;/Script/FSD.FirstPersonParticleSystemComponent FP_Left_DrillParticles;/Script/FSD.FirstPersonParticleSystemComponent FP_Right_DrillParticles;/Script/FSD.FirstPersonSkeletalMeshComponent FPLMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPRMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPLMesh;/Script/Engine.SkeletalMeshComponent TPRMesh;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* Widget_Heat;
-    static constexpr const char* Widget_Heat__UeScsNode = "de62c620c9d56641a969852a49bf455d";
     class UFirstPersonWidgetComponent* Widget_Fuel;
-    static constexpr const char* Widget_Fuel__UeScsNode = "485d5d1de1dc1041a3dec4c1fbdcc970";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh1;
-    static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "f23b12573ddf1c4cb91895e8f715608c";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b9d0cb6f9dfa1b4aa94ae93620d9b90c";
     class USceneComponent* OverheatingAudioScene;
-    static constexpr const char* OverheatingAudioScene__UeScsNode = "8d784348dd1e404c9dcdba88861f8f2e";
     class UHeatMaterialComponent* HeatMaterial;
-    static constexpr const char* HeatMaterial__UeScsNode = "b734f717861e47408cb947689b406c76";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "cad4319cdb16ca49988d4dfaaa81aa4f";
     float NextSplatTime;
     float DefaultFOV;
     WeaponDisplay_Overheat_C* OverheatWidget1;
@@ -57,12 +49,24 @@ public:
     void BP_OnDrillDamage();
     void AddedToInventory(class APlayerCharacter* ItemOwner);
     void Decrease_FOV();
-    static constexpr const char* Decrease_FOV__UeName = "Decrease FOV";
     void Increase_FOV();
-    static constexpr const char* Increase_FOV__UeName = "Increase FOV";
     void OnTemperatureChanged(float temperature, bool overheated_0);
     class USceneComponent* GetHeatingAudioSceneComponent();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.BreakIceBonus Damage:BreakIceBonus_0;/Script/FSD.DamageComponent Damage;/Script/FSD.DoubleDrillAggregator Aggregator;/Script/FSD.FirstPersonParticleSystemComponent FP_Left_DrillParticles;/Script/FSD.FirstPersonParticleSystemComponent FP_Right_DrillParticles;/Script/FSD.FirstPersonSkeletalMeshComponent FPLMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPRMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPLMesh;/Script/Engine.SkeletalMeshComponent TPRMesh;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Widget_Heat__UeScsNode = "de62c620c9d56641a969852a49bf455d";
+        static constexpr const char* Widget_Fuel__UeScsNode = "485d5d1de1dc1041a3dec4c1fbdcc970";
+        static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "f23b12573ddf1c4cb91895e8f715608c";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b9d0cb6f9dfa1b4aa94ae93620d9b90c";
+        static constexpr const char* OverheatingAudioScene__UeScsNode = "8d784348dd1e404c9dcdba88861f8f2e";
+        static constexpr const char* HeatMaterial__UeScsNode = "b734f717861e47408cb947689b406c76";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "cad4319cdb16ca49988d4dfaaa81aa4f";
+        static constexpr const char* Decrease_FOV__UeName = "Decrease FOV";
+        static constexpr const char* Increase_FOV__UeName = "Increase FOV";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Drills

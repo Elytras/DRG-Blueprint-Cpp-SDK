@@ -13,7 +13,11 @@ class CameraShake_Droppod_HeavyImpact_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_Droppod_HeavyImpact", "CameraShake_Droppod_HeavyImpact_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

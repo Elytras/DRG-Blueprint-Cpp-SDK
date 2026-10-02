@@ -28,24 +28,15 @@ class ENE_PF_SpiderBase_C : public ASpiderEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ENE_PF_SpiderBase", "ENE_PF_SpiderBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UIKComponent* IK;
-    static constexpr const char* IK__UeScsNode = "e92c9fc8c5bb544f86c7e8417cbe11db";
     class UPawnAlertComponent* PawnAlert;
-    static constexpr const char* PawnAlert__UeScsNode = "f1cf5eb81a94a94b9adafb7b25d0041c";
     class UPathfinderReactiveTerrainTrackerComponent* PathfinderReactiveTerrainTracker;
-    static constexpr const char* PathfinderReactiveTerrainTracker__UeScsNode = "a96e5269dad1b240957cb04fbaa09032";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "5a0826fcb9a06141b2c7b8b605fd7eb6";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "8069e0bf9160f84888bc6cc90c5ec1ec";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "24b2f33b964c8c45b942740acd13b6c1";
     class UFXSystemAsset* Death_Particles;
-    static constexpr const char* Death_Particles__UeName = "Death Particles";
     class USoundCue* Death_Sound;
-    static constexpr const char* Death_Sound__UeName = "Death Sound";
     float DeathDuration;
     float AlertOthersRadius;
     float MeshScale;
@@ -78,6 +69,19 @@ public:
     void ChangeVisibility(bool bNewVisibility);
     void BeginSpecialAttack(int SpecialAttackIndex, class UAnimMontage*& Montage);
     void EndSpecialAttack();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* IK__UeScsNode = "e92c9fc8c5bb544f86c7e8417cbe11db";
+        static constexpr const char* PawnAlert__UeScsNode = "f1cf5eb81a94a94b9adafb7b25d0041c";
+        static constexpr const char* PathfinderReactiveTerrainTracker__UeScsNode = "a96e5269dad1b240957cb04fbaa09032";
+        static constexpr const char* outline__UeScsNode = "5a0826fcb9a06141b2c7b8b605fd7eb6";
+        static constexpr const char* enemy__UeScsNode = "8069e0bf9160f84888bc6cc90c5ec1ec";
+        static constexpr const char* PawnSensing__UeScsNode = "24b2f33b964c8c45b942740acd13b6c1";
+        static constexpr const char* Death_Particles__UeName = "Death Particles";
+        static constexpr const char* Death_Sound__UeName = "Death Sound";
+    };
 };
 
 }}}   // namespace Game::Enemies::Spider

@@ -36,9 +36,9 @@ public:
     using WND_TreeOfVanity_C = Game::UI::Menu_Seasons::WND_TreeOfVanity_C;
     using Wnd_SeasonBriefing_C = Game::UI::Menu_Seasons::Wnd_SeasonBriefing_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ShowSeasonPage;
-    class UWidgetAnimation* NotEnoughTokens;
-    class UWidgetAnimation* NewSectionOpen;
+    UE_READONLY class UWidgetAnimation* ShowSeasonPage;
+    UE_READONLY class UWidgetAnimation* NotEnoughTokens;
+    UE_READONLY class UWidgetAnimation* NewSectionOpen;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Header_ButtonCutCorner_C* BTN_CheatCollectCellRack;
     Header_ButtonCutCorner_C* BTN_ClearChallenges;
@@ -97,13 +97,17 @@ public:
     void BndEvt__BTN_TreeOfVanity_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__BTN_Season_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void Toggle_Button_On(Header_ButtonCutCorner_C* Button);
-    static constexpr const char* Toggle_Button_On__UeName = "Toggle Button On";
     UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void Start_End_Flow(int numberOfChallenges, bool hasEvent, int ExtrsXP);
-    static constexpr const char* Start_End_Flow__UeName = "Start End Flow";
     UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SelectSection(class UWindowWidget* InSection, Header_ButtonCutCorner_C* InButton);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Toggle_Button_On__UeName = "Toggle Button On";
+        static constexpr const char* Start_End_Flow__UeName = "Start End Flow";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

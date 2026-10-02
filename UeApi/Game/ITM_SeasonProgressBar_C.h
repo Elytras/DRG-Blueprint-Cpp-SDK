@@ -20,8 +20,8 @@ class ITM_SeasonProgressBar_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonProgressBar", "ITM_SeasonProgressBar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TrailTurnBlue;
-    class UWidgetAnimation* NewLevel;
+    UE_READONLY class UWidgetAnimation* TrailTurnBlue;
+    UE_READONLY class UWidgetAnimation* NewLevel;
     class UImage* Icon_PerformancePoint;
     class UImage* Image_258;
     class UImage* Image_NormalClaim;

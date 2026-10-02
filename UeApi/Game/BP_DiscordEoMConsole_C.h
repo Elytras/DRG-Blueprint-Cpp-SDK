@@ -22,15 +22,10 @@ public:
     using Console_DiscordEoMScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordEoMScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Cube1;
-    static constexpr const char* Cube1__UeScsNode = "415716aeb13ef643a6fe46630f32ba47";
     class UWidgetComponent* PSA;
-    static constexpr const char* PSA__UeScsNode = "b17face6ab03ad448e90a1056e84ad32";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "5562a7d7b608e84db3502557a1288017";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     float LastUpdate;
     Console_DiscordEoMScreen_C* DiscordConsole;
     bool HEOM;
@@ -38,6 +33,15 @@ public:
     void RecieveEoMData(bool HasEoM);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Cube1__UeScsNode = "415716aeb13ef643a6fe46630f32ba47";
+        static constexpr const char* PSA__UeScsNode = "b17face6ab03ad448e90a1056e84ad32";
+        static constexpr const char* Box__UeScsNode = "5562a7d7b608e84db3502557a1288017";
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

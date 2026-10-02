@@ -38,8 +38,7 @@ public:
     using Lore_Container_CreatureInfo_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_CreatureInfo_C;
     using Lore_Content_Statistics_C = Game::UI::Menu_MinersManual::Lore_Content_Statistics_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Creatures_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Creatures_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* CreatureFadeOut;
+    UE_READONLY class UWidgetAnimation* CreatureFadeOut;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox_116;
     class UImage* CreatureImage;
     class UHorizontalBox* HorizontalBox_KillCount;
@@ -68,6 +67,11 @@ public:
     void RefreshCreature();
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Creatures_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

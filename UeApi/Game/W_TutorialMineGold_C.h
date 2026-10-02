@@ -17,15 +17,19 @@ class W_TutorialMineGold_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialMineGold", "W_TutorialMineGold_C");
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialMineGold_C;
-    static constexpr const char* UberGraphFrame_W_TutorialMineGold_C__UeName = "UberGraphFrame";
     float Gold_Mined;
-    static constexpr const char* Gold_Mined__UeName = "Gold Mined";
     float GoldToMine;
     void ExecuteUbergraph_W_TutorialMineGold(int EntryPoint);
     void UpdateResource();
     void ResourceIncreased(class UCappedResource* Resource, float amount);
     void UpdateTaskText();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_TutorialMineGold_C__UeName = "UberGraphFrame";
+        static constexpr const char* Gold_Mined__UeName = "Gold Mined";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

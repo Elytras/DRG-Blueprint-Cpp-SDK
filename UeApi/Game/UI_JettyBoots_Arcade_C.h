@@ -48,7 +48,6 @@ public:
     UI_JettyBoots_StartScreen_C* Screen_Start;
     class UWidgetSwitcher* Screen_Switcher;
     class USceneComponent* Audio_Scene_Component;
-    static constexpr const char* Audio_Scene_Component__UeName = "Audio Scene Component";
     class UJettyBootSettings* LevelSettings;
     int MaxLives;
     class UAudioComponent* MusicComponent;
@@ -66,7 +65,6 @@ public:
     TMulticastInlineDelegate<void(FJettyBootsScore InScore, bool InOnHighScoreList, int InHighScoreIndex, class APlayerCharacter* InPlayer)> OnGameOver;
     TMulticastInlineDelegate<void(FJettyBootsScore InScore, bool InOnHighScoreList, int InIHighScoreIndex, class APlayerCharacter* InPlayer)> OnGameEnded;
     TArray<FJettyBootsScore> High_Scores;
-    static constexpr const char* High_Scores__UeName = "High Scores";
     FJettyBootsReplay LastReplay;
     int CurrentHighScore;
     TSoftClassPtr<class UClass> EventWidgetPreview;
@@ -74,22 +72,16 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GameOverAudio();
     void Setup_FSD_Events();
-    static constexpr const char* Setup_FSD_Events__UeName = "Setup FSD Events";
     UE_COSMETIC void Construct();
     void BndEvt__UI_JettyBoots_Arcade_Game_UI_K2Node_ComponentBoundEvent_2_OnPointsGathered__DelegateSignature(int OutPoints);
     void BndEvt__UI_JettyBoots_Arcade_Game_UI_K2Node_ComponentBoundEvent_1_OnGateCleared__DelegateSignature();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void SetAudioSceneComponent(class USceneComponent* Audio_Scene_Component_0);
     void Display_State(int InLevel, int InScore, int InLives);
-    static constexpr const char* Display_State__UeName = "Display State";
     void Display_HighScore(int InHighScore);
-    static constexpr const char* Display_HighScore__UeName = "Display HighScore";
     void Display_Score(int InValue);
-    static constexpr const char* Display_Score__UeName = "Display Score";
     void Display_Lives(int InValue, bool& OutGameOver);
-    static constexpr const char* Display_Lives__UeName = "Display Lives";
     void Display_Level(int InValue);
-    static constexpr const char* Display_Level__UeName = "Display Level";
     void SetHighScores(TArray<FJettyBootsScore>& InHighScores, int InLastIndex);
     void StartGame(class APlayerCharacter* InUser, class AJettyBootsArcadeActor* InArcade);
     void GetUserName(FString& OutName);
@@ -98,8 +90,20 @@ public:
     void GetScoreStatus(int InNewScore, bool& OutOnList, int& OutIndex);
     void StartNextLevel();
     void Check_FSDEvents();
-    static constexpr const char* Check_FSDEvents__UeName = "Check FSDEvents";
     void IsJumpPressed(bool& OutPressed) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Audio_Scene_Component__UeName = "Audio Scene Component";
+        static constexpr const char* High_Scores__UeName = "High Scores";
+        static constexpr const char* Setup_FSD_Events__UeName = "Setup FSD Events";
+        static constexpr const char* Display_State__UeName = "Display State";
+        static constexpr const char* Display_HighScore__UeName = "Display HighScore";
+        static constexpr const char* Display_Score__UeName = "Display Score";
+        static constexpr const char* Display_Lives__UeName = "Display Lives";
+        static constexpr const char* Display_Level__UeName = "Display Level";
+        static constexpr const char* Check_FSDEvents__UeName = "Check FSDEvents";
+    };
 };
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade

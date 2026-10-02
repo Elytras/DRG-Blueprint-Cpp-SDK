@@ -13,6 +13,11 @@ class STE_BomberIcePuddle_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/STE_BomberIcePuddle", "STE_BomberIcePuddle_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

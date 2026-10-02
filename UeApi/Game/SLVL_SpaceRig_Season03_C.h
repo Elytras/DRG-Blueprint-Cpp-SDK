@@ -17,7 +17,6 @@ public:
     UE_CLASS("/Game/Maps/SpaceRig/SLVL_SpaceRig_Season03", "SLVL_SpaceRig_Season03_C");
     FPointerToUberGraphFrame UberGraphFrame;
     int SpawnSeed;
-    static constexpr const char* SpawnSeed__Replicated = "OnRep_SpawnSeed:";
     class AStaticMeshActor* SM_Plague_BiohazardHelmet9_2_EdGraph_0_RefProperty;
     class AStaticMeshActor* SM_Plague_BiohazardHelmet8_EdGraph_0_RefProperty;
     class AStaticMeshActor* SM_Plague_BiohazardHelmet7_EdGraph_0_RefProperty;
@@ -54,6 +53,11 @@ public:
     void ReceiveBeginPlay();
     void OnRep_SpawnSeed();
     void Unhide(FRandomStream& RandomStream, const TArray<class AStaticMeshActor*>& Meshes, int Number_To_Unhide);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpawnSeed__Replicated = "OnRep_SpawnSeed:";
+    };
 };
 
 }}}   // namespace Game::Maps::SpaceRig

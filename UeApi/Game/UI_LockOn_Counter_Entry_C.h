@@ -19,8 +19,8 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/UI_LockOn_Counter_Entry", "UI_LockOn_Counter_Entry_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimLimit;
-    class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimLimit;
+    UE_READONLY class UWidgetAnimation* AnimPing;
     UI_ImageTinted_C* Background;
     UI_ImageTinted_C* Foreground;
     UI_ImageTinted_C* Limit;

@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Perks/HUD_ActivatablePerks", "HUD_ActivatablePerks_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* WidgetBox;
-    TEnum<EPerkHUDActivationLocation> Location;
+    UE_READONLY TEnum<EPerkHUDActivationLocation> Location;
     void ExecuteUbergraph_HUD_ActivatablePerks(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();

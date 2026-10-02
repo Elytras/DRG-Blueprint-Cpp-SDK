@@ -18,16 +18,20 @@ class BP_GoldChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Veins/ResourceChunks/BP_GoldChunk", "BP_GoldChunk_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d80f848516a895439311d52d78b47370";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "84d865c3cafdaf46b5fa82ba4562532a";
     void ExecuteUbergraph_BP_GoldChunk(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
+        static constexpr const char* Mesh__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";
+        static constexpr const char* Sphere__UeScsNode = "d80f848516a895439311d52d78b47370";
+        static constexpr const char* PointLight__UeScsNode = "84d865c3cafdaf46b5fa82ba4562532a";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks

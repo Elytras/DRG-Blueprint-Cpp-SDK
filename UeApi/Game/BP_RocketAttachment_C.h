@@ -30,45 +30,28 @@ class BP_RocketAttachment_C : public ARocketAttachment
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachment", "BP_RocketAttachment_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarryingItemUsable AttachUsable;/Script/FSD.DroneUseComponent DroneUsable;/Script/FSD.SingleUsableComponent BuildUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* CollisionBox1;
-    static constexpr const char* CollisionBox1__UeScsNode = "b2b2e3855079e7419d637ab3aae3ab4c";
     class UBoxComponent* CollisionBox2;
-    static constexpr const char* CollisionBox2__UeScsNode = "c90090f802a54e47bc4f796944876db7";
     class UCapsuleComponent* UsableCapsule;
-    static constexpr const char* UsableCapsule__UeScsNode = "96fae248bc950742a395d15fb7d22060";
     class USkeletalMeshComponent* SK_Laser;
-    static constexpr const char* SK_Laser__UeScsNode = "b2f7191f5b370e4a920aecaf67cfbc1e";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "cf28f594fc8e5444ae3a231547af8743";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "d4d69d8cecf28848b88e2bc7777608ef";
     class UParticleSystemComponent* ThrusterParticles;
-    static constexpr const char* ThrusterParticles__UeScsNode = "4f255a8827226f4aa2cb06ac46a58f16";
     class USkeletalMeshComponent* Thruster;
-    static constexpr const char* Thruster__UeScsNode = "71255d8c64179445917bc7d86f602fac";
     class USkeletalMeshComponent* Thruster_Mount;
-    static constexpr const char* Thruster_Mount__UeScsNode = "16d07703dbc0d24095a168cd6a396727";
     class UNiagaraComponent* P_Excavation;
-    static constexpr const char* P_Excavation__UeScsNode = "1c7a383e351cbb44a56e6821a25e071e";
     class UMeshCarverComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "1425f26cec0fc248893a76da6e8d160d";
     class UWidgetComponent* BuildWidget;
-    static constexpr const char* BuildWidget__UeScsNode = "ddb3bb026c4f784981dcad7c913c1a4f";
     class UWidgetComponent* AttachWidget;
-    static constexpr const char* AttachWidget__UeScsNode = "788129462fa1884396de965105d8d21f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "609b5c996ac5204186f3d9e5cc4f6dd8";
     TArray<class UMaterialInterface*> RocketMaterials;
     TArray<class UMaterialInterface*> AnchorMaterials;
     bool IsReadyToAttach;
-    static constexpr const char* IsReadyToAttach__Replicated = ":";
     class UAudioComponent* AttachAnimSound;
     void ExecuteUbergraph_BP_RocketAttachment(int EntryPoint);
     void BndEvt__BP_RocketAttachment_DroneUsable_K2Node_ComponentBoundEvent_8_DroneFinishedUsing__DelegateSignature(int TimesUsed);
     void Use_Timer_Elapsed();
-    static constexpr const char* Use_Timer_Elapsed__UeName = "Use Timer Elapsed";
     void BndEvt__BP_RocketAttachment_ThrusterParticles_K2Node_ComponentBoundEvent_7_ActorComponentDeactivateSignature__DelegateSignature(class UActorComponent* Component);
     void BndEvt__BP_RocketAttachment_ThrusterParticles_K2Node_ComponentBoundEvent_6_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset);
     void ReceiveBeginPlay();
@@ -95,6 +78,27 @@ public:
     void UpdateCollisionEnabled(bool CollisionEnabled);
     void GetLaserOrigin(FVector& LaserOrigin);
     FVector GetDroneUseLocation() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarryingItemUsable AttachUsable;/Script/FSD.DroneUseComponent DroneUsable;/Script/FSD.SingleUsableComponent BuildUsable";
+        static constexpr const char* CollisionBox1__UeScsNode = "b2b2e3855079e7419d637ab3aae3ab4c";
+        static constexpr const char* CollisionBox2__UeScsNode = "c90090f802a54e47bc4f796944876db7";
+        static constexpr const char* UsableCapsule__UeScsNode = "96fae248bc950742a395d15fb7d22060";
+        static constexpr const char* SK_Laser__UeScsNode = "b2f7191f5b370e4a920aecaf67cfbc1e";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "cf28f594fc8e5444ae3a231547af8743";
+        static constexpr const char* Capsule__UeScsNode = "d4d69d8cecf28848b88e2bc7777608ef";
+        static constexpr const char* ThrusterParticles__UeScsNode = "4f255a8827226f4aa2cb06ac46a58f16";
+        static constexpr const char* Thruster__UeScsNode = "71255d8c64179445917bc7d86f602fac";
+        static constexpr const char* Thruster_Mount__UeScsNode = "16d07703dbc0d24095a168cd6a396727";
+        static constexpr const char* P_Excavation__UeScsNode = "1c7a383e351cbb44a56e6821a25e071e";
+        static constexpr const char* MeshCarver__UeScsNode = "1425f26cec0fc248893a76da6e8d160d";
+        static constexpr const char* BuildWidget__UeScsNode = "ddb3bb026c4f784981dcad7c913c1a4f";
+        static constexpr const char* AttachWidget__UeScsNode = "788129462fa1884396de965105d8d21f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "609b5c996ac5204186f3d9e5cc4f6dd8";
+        static constexpr const char* IsReadyToAttach__Replicated = ":";
+        static constexpr const char* Use_Timer_Elapsed__UeName = "Use Timer Elapsed";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment

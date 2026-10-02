@@ -23,7 +23,7 @@ public:
     using ITM_SeasonContentToggle_C = Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;
     using UI_Season_Popup_C = Game::UI::Menu_Seasons::UI_Season_Popup_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimShow;
+    UE_READONLY class UWidgetAnimation* AnimShow;
     class UButton* CloseButton;
     ITM_SeasonContentToggle_C* ITM_SeasonContentToggle_1;
     ITM_MenuBackground_C* MenuBackground;

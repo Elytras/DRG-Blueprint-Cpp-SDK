@@ -23,9 +23,9 @@ class HUD_Croshair_HPC_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_Croshair_HPC", "HUD_Croshair_HPC_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BoostFadeIn;
-    class UWidgetAnimation* ready;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* BoostFadeIn;
+    UE_READONLY class UWidgetAnimation* ready;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UTextBlock* BoostText;
     class UImage* CH_Bottom;
     class UImage* CH_In_B;
@@ -45,7 +45,6 @@ public:
     float OpacityHigh;
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     class AAmmoDrivenWeapon* Weapon;
     void ExecuteUbergraph_HUD_Croshair_HPC(int EntryPoint);
     void OnBoosterActived(bool IsActive);
@@ -55,6 +54,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     void SetData(class AItem* Item);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

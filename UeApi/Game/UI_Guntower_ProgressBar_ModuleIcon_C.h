@@ -18,8 +18,8 @@ class UI_Guntower_ProgressBar_ModuleIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/UI_Guntower_ProgressBar_ModuleIcon", "UI_Guntower_ProgressBar_ModuleIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FlashActive;
-    class UWidgetAnimation* FlashGreen;
+    UE_READONLY class UWidgetAnimation* FlashActive;
+    UE_READONLY class UWidgetAnimation* FlashGreen;
     class UImage* Icon;
     bool Active;
     void ExecuteUbergraph_UI_Guntower_ProgressBar_ModuleIcon(int EntryPoint);

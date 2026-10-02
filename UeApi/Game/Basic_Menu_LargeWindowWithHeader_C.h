@@ -43,7 +43,11 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Header_Text(FText InText);
-    static constexpr const char* Set_Header_Text__UeName = "Set Header Text";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Header_Text__UeName = "Set Header Text";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

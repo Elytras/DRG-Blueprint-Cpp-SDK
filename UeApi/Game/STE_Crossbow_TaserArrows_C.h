@@ -13,6 +13,11 @@ class STE_Crossbow_TaserArrows_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/StatusEffects/STE_Crossbow_TaserArrows", "STE_Crossbow_TaserArrows_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects

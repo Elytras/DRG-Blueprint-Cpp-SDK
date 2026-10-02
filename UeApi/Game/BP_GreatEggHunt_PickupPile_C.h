@@ -22,19 +22,23 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_PickupPile", "BP_GreatEggHunt_PickupPile_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "015ac397b783c5408d2b12a5419ee374";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "1f2a4d68eb0b1742b0edd41856d84ef9";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "8a232f0209169a4992773092dd6be902";
     TArray<class UUseAnimationSetting*> Settings;
     int AnimationSetting;
-    static constexpr const char* AnimationSetting__Replicated = "OnRep_AnimationSettings:";
     void ExecuteUbergraph_BP_GreatEggHunt_PickupPile(int EntryPoint);
     void SetRandomAnimation();
     void ReceiveBeginPlay();
     void BndEvt__BP_GreatEggHunt_PickupPile_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_AnimationSettings();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "015ac397b783c5408d2b12a5419ee374";
+        static constexpr const char* InstantUsable__UeScsNode = "1f2a4d68eb0b1742b0edd41856d84ef9";
+        static constexpr const char* StaticMesh__UeScsNode = "8a232f0209169a4992773092dd6be902";
+        static constexpr const char* AnimationSetting__Replicated = "OnRep_AnimationSettings:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

@@ -21,16 +21,11 @@ class WPN_Extractor_C : public AExtractorItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Extractor/WPN_Extractor", "WPN_Extractor_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.ParticleSystemComponent InvalidSurfaceParticles;/Script/Engine.ParticleSystemComponent MeltingEffect;/Script/Engine.ParticleSystemComponent MuzzleEffect;/Script/Engine.ParticleSystemComponent MuzzleEInvalidffect;/Script/Engine.ParticleSystemComponent TPMuzzleEffect;/Script/Engine.ParticleSystemComponent TPMuzzleInvalidEffect;/Script/Engine.PointLightComponent SurfaceLight;/Script/Engine.SkeletalMeshComponent DropppedMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "7222c572553fa34bb6753591b663c439";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "c6f448085625664289886747c4daca86";
     class UCapsuleComponent* UsableCapsule;
-    static constexpr const char* UsableCapsule__UeScsNode = "0faac5daf950494f829cbb31bd067848";
     class UInstantUsable* PickupUsable;
-    static constexpr const char* PickupUsable__UeScsNode = "ce68a0615ccc9940b5c2e075cc5847f2";
     bool Attaching;
     FVector ThrowVelocity;
     void ExecuteUbergraph_WPN_Extractor(int EntryPoint);
@@ -43,6 +38,15 @@ public:
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.ParticleSystemComponent InvalidSurfaceParticles;/Script/Engine.ParticleSystemComponent MeltingEffect;/Script/Engine.ParticleSystemComponent MuzzleEffect;/Script/Engine.ParticleSystemComponent MuzzleEInvalidffect;/Script/Engine.ParticleSystemComponent TPMuzzleEffect;/Script/Engine.ParticleSystemComponent TPMuzzleInvalidEffect;/Script/Engine.PointLightComponent SurfaceLight;/Script/Engine.SkeletalMeshComponent DropppedMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* outline__UeScsNode = "7222c572553fa34bb6753591b663c439";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "c6f448085625664289886747c4daca86";
+        static constexpr const char* UsableCapsule__UeScsNode = "0faac5daf950494f829cbb31bd067848";
+        static constexpr const char* PickupUsable__UeScsNode = "ce68a0615ccc9940b5c2e075cc5847f2";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Extractor

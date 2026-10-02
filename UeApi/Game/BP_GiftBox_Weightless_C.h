@@ -22,12 +22,9 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_GiftBox_Weightless", "BP_GiftBox_Weightless_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "8bab5d3830f81d4d99e2272235856636";
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     TArray<class UStaticMesh*> MeshesToChooseFrom;
     TArray<class UMaterialInterface*> Mats_Wrapper;
@@ -36,6 +33,13 @@ public:
     void ExecuteUbergraph_BP_GiftBox_Weightless(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_KickSoundLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RotatingMovement__UeScsNode = "8bab5d3830f81d4d99e2272235856636";
+        static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

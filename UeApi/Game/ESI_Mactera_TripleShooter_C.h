@@ -17,9 +17,13 @@ class ESI_Mactera_TripleShooter_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ESI_Mactera_TripleShooter", "ESI_Mactera_TripleShooter_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "6bf23ae8fee94a45bd6da9e1a6fa0785";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "633896c7fe35264c9cc037a12bc437c8";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "6bf23ae8fee94a45bd6da9e1a6fa0785";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "633896c7fe35264c9cc037a12bc437c8";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

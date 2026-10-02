@@ -19,21 +19,25 @@ class AIC_Spider_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/AIC_Spider", "AIC_Spider_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviorTree;
     class UEnemyHealthComponent* EnemyHealthComponent;
     float SpeedModifier;
     void ExecuteUbergraph_AIC_Spider(int EntryPoint);
     void Start_Behaviour_Tree();
-    static constexpr const char* Start_Behaviour_Tree__UeName = "Start Behaviour Tree";
     void StartSpeedModifier();
     void attackingChanged(bool IsAttacking);
     void Speed_Changer();
-    static constexpr const char* Speed_Changer__UeName = "Speed Changer";
     void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* Start_Behaviour_Tree__UeName = "Start Behaviour Tree";
+        static constexpr const char* Speed_Changer__UeName = "Speed Changer";
+    };
 };
 
 }}}   // namespace Game::Enemies::Spider

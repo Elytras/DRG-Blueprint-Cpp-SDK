@@ -31,40 +31,44 @@ public:
     using BP_DamageTriggerComponent_C = Game::LevelElements::Components::BP_DamageTriggerComponent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelGenerationCarverComponent* LevelGenerationCarver_Hole;
-    static constexpr const char* LevelGenerationCarver_Hole__UeScsNode = "8cfd0b228b9d074b97a2c19db530c723";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "a590686632b2f14199c861b1c117a2ec";
     class UAudioComponent* AzureMagic_Hole_Cue;
-    static constexpr const char* AzureMagic_Hole_Cue__UeScsNode = "20d462c67f303b47a76521ff149f3503";
     BP_DamageTriggerComponent_C* BP_DamageTriggerComponent;
-    static constexpr const char* BP_DamageTriggerComponent__UeScsNode = "c2c63786a3d4444585bb428fcae2e58f";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "1c820b6648b22e4a97451f37ad5e7a1d";
     class UChildActorComponent* BP_MagicHoleBottomDebris;
-    static constexpr const char* BP_MagicHoleBottomDebris__UeScsNode = "582c02b26d5f284aaa15ca51f0f6a2fa";
     class UBillboardComponent* Billboard;
-    static constexpr const char* Billboard__UeScsNode = "84f540f81f0f764c8d949e9433505194";
     class UParticleSystemComponent* P_Biome_Azure_MagicHole_Sparks;
-    static constexpr const char* P_Biome_Azure_MagicHole_Sparks__UeScsNode = "55dc65fbb8d2944f80a5d26fd5b71d0f";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_Base;
-    static constexpr const char* LevelGenerationCarver_Base__UeScsNode = "bd1122963816e14faf97b23854604a17";
     class USceneComponent* Carvers;
-    static constexpr const char* Carvers__UeScsNode = "156a9bcf00076847b1654df32bb55077";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "19793dd3d83d1044b0696c772e3eda0c";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "bb86673d244ed14495d4abf7e331adba";
     class UStaticMeshComponent* SM_Carver_DropPodDrill002;
-    static constexpr const char* SM_Carver_DropPodDrill002__UeScsNode = "9b0027360ceaeb40a553c2aedd26ca75";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "5ce7beb492ba0946955185ec7778008d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "57b1bf2ce04a854fb6bd9b9633033df4";
     float UpwardPush;
     void ExecuteUbergraph_BP_Azure_MagicHole(int EntryPoint);
     void OnComponentEndOverlap_Event_0(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void OnComponentBeginOverlap_Event_0(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarver_Hole__UeScsNode = "8cfd0b228b9d074b97a2c19db530c723";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "a590686632b2f14199c861b1c117a2ec";
+        static constexpr const char* AzureMagic_Hole_Cue__UeScsNode = "20d462c67f303b47a76521ff149f3503";
+        static constexpr const char* BP_DamageTriggerComponent__UeScsNode = "c2c63786a3d4444585bb428fcae2e58f";
+        static constexpr const char* Capsule__UeScsNode = "1c820b6648b22e4a97451f37ad5e7a1d";
+        static constexpr const char* BP_MagicHoleBottomDebris__UeScsNode = "582c02b26d5f284aaa15ca51f0f6a2fa";
+        static constexpr const char* Billboard__UeScsNode = "84f540f81f0f764c8d949e9433505194";
+        static constexpr const char* P_Biome_Azure_MagicHole_Sparks__UeScsNode = "55dc65fbb8d2944f80a5d26fd5b71d0f";
+        static constexpr const char* LevelGenerationCarver_Base__UeScsNode = "bd1122963816e14faf97b23854604a17";
+        static constexpr const char* Carvers__UeScsNode = "156a9bcf00076847b1654df32bb55077";
+        static constexpr const char* terrainPlacement__UeScsNode = "19793dd3d83d1044b0696c772e3eda0c";
+        static constexpr const char* PointLight__UeScsNode = "bb86673d244ed14495d4abf7e331adba";
+        static constexpr const char* SM_Carver_DropPodDrill002__UeScsNode = "9b0027360ceaeb40a553c2aedd26ca75";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "5ce7beb492ba0946955185ec7778008d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "57b1bf2ce04a854fb6bd9b9633033df4";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole

@@ -13,6 +13,11 @@ class STE_HydraWeed_GerminatingHeal_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/STE_HydraWeed_GerminatingHeal", "STE_HydraWeed_GerminatingHeal_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HealingStatusEffectItem HealingStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

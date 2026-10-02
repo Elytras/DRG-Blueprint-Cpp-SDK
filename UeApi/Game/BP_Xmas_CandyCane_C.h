@@ -26,18 +26,12 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_Xmas_CandyCane", "BP_Xmas_CandyCane_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* ImpactSound;
-    static constexpr const char* ImpactSound__UeScsNode = "c8f622fe3b752546bfb1bf2be8485f6a";
     class UFSDAudioComponent* MovingSound;
-    static constexpr const char* MovingSound__UeScsNode = "1733d25266f39e4b849f0a184b079e12";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "e8e423752077a24382a3af840d146798";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "7dcc09662365064a92419949515a3d3c";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "e6560fa47a0c6e488ea0d3f0670376a5";
     float SlapStrength;
     int RandomSeed;
-    static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
     FRandomStream RandomStream;
     float BowChance;
     TArray<class UMaterialInstance*> BowMaterials;
@@ -54,6 +48,16 @@ public:
     void ReceiveBeginPlay();
     void ImpulseSlapTree(FVector_NetQuantize PlayerPosition);
     void OnRep_RandomSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ImpactSound__UeScsNode = "c8f622fe3b752546bfb1bf2be8485f6a";
+        static constexpr const char* MovingSound__UeScsNode = "1733d25266f39e4b849f0a184b079e12";
+        static constexpr const char* Box__UeScsNode = "e8e423752077a24382a3af840d146798";
+        static constexpr const char* InstantUsable__UeScsNode = "7dcc09662365064a92419949515a3d3c";
+        static constexpr const char* SkeletalMesh__UeScsNode = "e6560fa47a0c6e488ea0d3f0670376a5";
+        static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

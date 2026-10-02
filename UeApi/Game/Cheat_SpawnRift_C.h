@@ -27,7 +27,6 @@ public:
     class USpinBox* DelayTime;
     class UTextBlock* TextBlock;
     TMulticastInlineDelegate<void()> Bosco_spawn_requested;
-    static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
     FVector ChosenLocation;
     class UClass* MeteorShowerClass;
     void ExecuteUbergraph_Cheat_SpawnRift(int EntryPoint);
@@ -35,6 +34,11 @@ public:
     void SpawnNearSurface(FVector inPoint);
     UE_SERVER UE_RELIABLE void SpawnRift(FVector Location, FRotator Rotation);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_13_OnButtonClickedEvent__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

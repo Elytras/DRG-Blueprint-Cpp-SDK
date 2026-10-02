@@ -24,7 +24,7 @@ public:
     using Basic_TextInputField_C = Game::UI::Art::WidgetParts::Basic_TextInputField_C;
     using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FlashingText;
+    UE_READONLY class UWidgetAnimation* FlashingText;
     Basic_ButtonCutCorner_C* Basic_CurrentProgress;
     Basic_ButtonCutCorner_C* Basic_NewProgress;
     class UImage* IMG_MissionIcon;

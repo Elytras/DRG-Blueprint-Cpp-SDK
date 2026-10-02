@@ -35,26 +35,16 @@ public:
     using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
     using WeaponDisplay_ChargeBlaster_Heat_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
     using WeaponDisplay_Coilgun_Charge_C = Game::WeaponsNTools::CoilGun::WeaponDisplay_Coilgun_Charge_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.CoilgunTrailSpawner TrailSpawner;/Script/FSD.DamageComponent BlastDamage;/Script/FSD.DamageComponent MoleDamage;/Script/FSD.DamageComponent NormalDamage;/Script/FSD.DamageComponent OverchargeDamage;/Script/FSD.DamageComponent ShotwaveDamage;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent FP_OverchargeIndicatorParticles;/Script/Niagara.NiagaraComponent FullyChargedParticles;/Script/Niagara.NiagaraComponent TP_FullchargeParticles;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* CoilGunChargeGlow;
-    static constexpr const char* CoilGunChargeGlow__UeScsNode = "f0e518855af1b241b0b7d6c4c6f7df07";
     class UFSDAudioComponent* CoilGunCharge;
-    static constexpr const char* CoilGunCharge__UeScsNode = "984a2260ceb791429e477cb2e2a1cd25";
     class UFirstPersonWidgetComponent* Widget_ChargeNew;
-    static constexpr const char* Widget_ChargeNew__UeScsNode = "05abeabdd48efb4596cf6a9b6c5b66ba";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "b469cdbd4e5700479b2e5538e2718f32";
     class UDamageComponent* FireExplosionDamage;
-    static constexpr const char* FireExplosionDamage__UeScsNode = "191d3bb2473ff146b843d6bde23d2d46";
     class UAllPiercingHitscanComponent* AllPiercingHitscan;
-    static constexpr const char* AllPiercingHitscan__UeScsNode = "41ca589d611ecd42aee6e77b93499bf3";
     class UAudioComponent* AC_ChargeLevel;
-    static constexpr const char* AC_ChargeLevel__UeScsNode = "7acb3a7e6c29af4cb3ee93ad46e3ce73";
     class UPointLightComponent* MuzzlePointLight;
-    static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
     float FadeTimeline_ChargeFade_C49992004992D09AEFEFFF997C5FEA5C;
     float FadeTimeline_SoundFade_C49992004992D09AEFEFFF997C5FEA5C;
     float FadeTimeline_LightFade_C49992004992D09AEFEFFF997C5FEA5C;
@@ -96,6 +86,20 @@ public:
     void HandleHeatAudio();
     void FadeOutIfValid(class UAudioComponent*& AC);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.CoilgunTrailSpawner TrailSpawner;/Script/FSD.DamageComponent BlastDamage;/Script/FSD.DamageComponent MoleDamage;/Script/FSD.DamageComponent NormalDamage;/Script/FSD.DamageComponent OverchargeDamage;/Script/FSD.DamageComponent ShotwaveDamage;/Script/FSD.DamageConversionBonus NormalDamage:DamageConversionBonus_0;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent FP_OverchargeIndicatorParticles;/Script/Niagara.NiagaraComponent FullyChargedParticles;/Script/Niagara.NiagaraComponent TP_FullchargeParticles;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* CoilGunChargeGlow__UeScsNode = "f0e518855af1b241b0b7d6c4c6f7df07";
+        static constexpr const char* CoilGunCharge__UeScsNode = "984a2260ceb791429e477cb2e2a1cd25";
+        static constexpr const char* Widget_ChargeNew__UeScsNode = "05abeabdd48efb4596cf6a9b6c5b66ba";
+        static constexpr const char* Scene__UeScsNode = "b469cdbd4e5700479b2e5538e2718f32";
+        static constexpr const char* FireExplosionDamage__UeScsNode = "191d3bb2473ff146b843d6bde23d2d46";
+        static constexpr const char* AllPiercingHitscan__UeScsNode = "41ca589d611ecd42aee6e77b93499bf3";
+        static constexpr const char* AC_ChargeLevel__UeScsNode = "7acb3a7e6c29af4cb3ee93ad46e3ce73";
+        static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

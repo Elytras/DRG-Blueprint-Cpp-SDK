@@ -21,7 +21,7 @@ class ITM_CharacterBuffIcon_C : public UFSDUserWidget
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_CharacterBuffIcon", "ITM_CharacterBuffIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UHorizontalBox* HBox_Beers;
     class USizeBox* SizeBox_0;
     float Size;

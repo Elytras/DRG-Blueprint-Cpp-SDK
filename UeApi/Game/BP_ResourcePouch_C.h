@@ -25,24 +25,15 @@ class BP_ResourcePouch_C : public AResourcePouch
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/BP_ResourcePouch", "BP_ResourcePouch_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "1a2cb6add35b1145b9636a8365e263f9";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "441e450c80295c4d8992bb6c40f93329";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "105340f313ac45439b37a4e2f677f17c";
     class USphereComponent* Useable;
-    static constexpr const char* Useable__UeScsNode = "ae75bb52f1fc7148a8cd4b91ed941b5f";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "1dfb2aeebb843747a9734db9dc9e5db3";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "17ed5f4ad2f35641bc3f32adf87120ce";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "0a3f5913862b2e4e9be95758dfdb48bd";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "02f52a87afc8c04ca63cb47e9ddcbaac";
     FVector throwForce;
     void ExecuteUbergraph_BP_ResourcePouch(int EntryPoint);
     void ReceiveBeginPlay();
@@ -51,6 +42,19 @@ public:
     void Throw(FVector force);
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "1a2cb6add35b1145b9636a8365e263f9";
+        static constexpr const char* outline__UeScsNode = "441e450c80295c4d8992bb6c40f93329";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "105340f313ac45439b37a4e2f677f17c";
+        static constexpr const char* Useable__UeScsNode = "ae75bb52f1fc7148a8cd4b91ed941b5f";
+        static constexpr const char* PointLight__UeScsNode = "1dfb2aeebb843747a9734db9dc9e5db3";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "17ed5f4ad2f35641bc3f32adf87120ce";
+        static constexpr const char* Box__UeScsNode = "0a3f5913862b2e4e9be95758dfdb48bd";
+        static constexpr const char* Carriable__UeScsNode = "02f52a87afc8c04ca63cb47e9ddcbaac";
+    };
 };
 
 }}}   // namespace Game::GameElements::Resources

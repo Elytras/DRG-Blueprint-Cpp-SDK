@@ -35,8 +35,12 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Clear();
     void Set_Item(class UUpgradableGearComponent* InUpgradable, class AFSDPlayerState* InPlayerState, TSubclassOf<class AActor> InItemClass);
-    static constexpr const char* Set_Item__UeName = "Set Item";
     void SetInnerPadding(FMargin InPadding);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Item__UeName = "Set Item";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

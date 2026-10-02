@@ -26,9 +26,9 @@ public:
     UE_CLASS("/Game/UI/Tutorial/ITM_BasicTutorialWindow", "ITM_BasicTutorialWindow_C");
     using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TaskProgress;
-    class UWidgetAnimation* CompleteAnim;
-    class UWidgetAnimation* RemoveAnim;
+    UE_READONLY class UWidgetAnimation* TaskProgress;
+    UE_READONLY class UWidgetAnimation* CompleteAnim;
+    UE_READONLY class UWidgetAnimation* RemoveAnim;
     Basic_CheckBox_C* Basic_CheckBox;
     class UBorder* Border_Checkbox;
     class UHorizontalBox* HorizontalBox_TaskBar;

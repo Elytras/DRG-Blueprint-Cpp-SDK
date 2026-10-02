@@ -19,7 +19,7 @@ class MissionControl_TextAnimator_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MissionControl/MissionControl_TextAnimator", "MissionControl_TextAnimator_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimTextRun;
+    UE_READONLY class UWidgetAnimation* AnimTextRun;
     class URichTextBlock* TextBlock;
     FText Text;
     FRichTextParseResult Parser;

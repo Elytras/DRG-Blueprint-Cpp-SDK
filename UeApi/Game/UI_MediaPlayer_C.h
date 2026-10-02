@@ -18,7 +18,7 @@ class UI_MediaPlayer_C : public UMediaPlayerWidget
 public:
     UE_CLASS("/Game/UI/MENU_Merch/UI_MediaPlayer", "UI_MediaPlayer_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class UImage* FadeInImage;
     void ExecuteUbergraph_UI_MediaPlayer(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

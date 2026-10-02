@@ -21,13 +21,9 @@ public:
     UE_CLASS("/Game/LevelElements/Tutorial/BP_SpecialTutorialCrystal", "BP_SpecialTutorialCrystal_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "0bc1c950443ec942bceab2968b568d5a";
     class UMeshCarverComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "81d4f0a21d39ea4abf895235a6d1a83b";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "8d576b56b91df247af2d37f03016ee14";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "da8e2da9f6b21d4e9450b315f3fb1b9b";
     float Timeline_0_LightIntensity_CD888BD245F644A958710A8BA8A62D72;
     TEnum<ETimelineDirection> Timeline_0__Direction_CD888BD245F644A958710A8BA8A62D72;
     class UTimelineComponent* Timeline_0;
@@ -38,6 +34,14 @@ public:
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TerrainDetect__UeScsNode = "0bc1c950443ec942bceab2968b568d5a";
+        static constexpr const char* MeshCarver__UeScsNode = "81d4f0a21d39ea4abf895235a6d1a83b";
+        static constexpr const char* PointLight__UeScsNode = "8d576b56b91df247af2d37f03016ee14";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "da8e2da9f6b21d4e9450b315f3fb1b9b";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Tutorial

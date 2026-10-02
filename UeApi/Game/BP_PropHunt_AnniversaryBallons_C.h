@@ -17,14 +17,18 @@ class BP_PropHunt_AnniversaryBallons_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Anniversary/BP_PropHunt_AnniversaryBallons", "BP_PropHunt_AnniversaryBallons_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "318668dfbcc84b4e88dbb9cfa9fa3b37";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     void ExecuteUbergraph_BP_PropHunt_AnniversaryBallons(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* SkeletalMesh__UeScsNode = "318668dfbcc84b4e88dbb9cfa9fa3b37";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Anniversary

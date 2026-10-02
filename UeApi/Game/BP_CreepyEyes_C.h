@@ -30,34 +30,20 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/CreepyEyes/BP_CreepyEyes", "BP_CreepyEyes_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "ab6a9e2271e56c4cbf2a2ac1b5efd1b3";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "4387d49f8a9022458ee5e0867b84d832";
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "dacfe44d3553e945824be09d2ba5d2a8";
     class USceneComponent* EyeParent;
-    static constexpr const char* EyeParent__UeScsNode = "ae01981d0119ee429bd8348e2428e697";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "c27fd1549daa0242bba7e6d2af1236c2";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "0ca969821669b747aead146f5bfe6dbc";
     class USkeletalMeshComponent* EyeLids;
-    static constexpr const char* EyeLids__UeScsNode = "6bdb465bb38c374b9fb762cb0310c4c9";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "a32c1c62cb20214da9d9a9b49fa24e13";
     class USceneComponent* Eyelids_And_Trigger;
-    static constexpr const char* Eyelids_And_Trigger__UeName = "Eyelids And Trigger";
-    static constexpr const char* Eyelids_And_Trigger__UeScsNode = "8d2c496d8df06a46ba0d3c3603c35adf";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "d1bb6672c7e21c4cb198a9f224b3be44";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "30058f6c14285c4a9124148dac590764";
     float Scale_1_NewTrack;
-    static constexpr const char* Scale_1_NewTrack__UeName = "Scale_1_NewTrack_3_BCD68ACC423F5ECA6576CB9BC05971B4";
     float Scale_1_Displacement_Offset_BCD68ACC423F5ECA6576CB9BC05971B4;
     TEnum<ETimelineDirection> Scale_1__Direction_BCD68ACC423F5ECA6576CB9BC05971B4;
     class UTimelineComponent* Scale_1;
-    static constexpr const char* Scale_1__UeName = "Scale 1";
     bool IsMoving;
     bool IsTracking;
     TArray<class APlayerCharacter*> PlayersInSight;
@@ -88,10 +74,28 @@ public:
     void OnNotifyBegin_94DC49124A78E8FE15AA45AD56169758(FName NotifyName);
     void OnNotifyEnd_94DC49124A78E8FE15AA45AD56169758(FName NotifyName);
     void Scale_1__UpdateFunc();
-    static constexpr const char* Scale_1__UpdateFunc__UeName = "Scale 1__UpdateFunc";
     void Scale_1__FinishedFunc();
-    static constexpr const char* Scale_1__FinishedFunc__UeName = "Scale 1__FinishedFunc";
     void GetRandomPlayer(class APlayerCharacter*& RandomPlayer_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere1__UeScsNode = "ab6a9e2271e56c4cbf2a2ac1b5efd1b3";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "4387d49f8a9022458ee5e0867b84d832";
+        static constexpr const char* Sphere__UeScsNode = "dacfe44d3553e945824be09d2ba5d2a8";
+        static constexpr const char* EyeParent__UeScsNode = "ae01981d0119ee429bd8348e2428e697";
+        static constexpr const char* TerrainDetect__UeScsNode = "c27fd1549daa0242bba7e6d2af1236c2";
+        static constexpr const char* terrainPlacement__UeScsNode = "0ca969821669b747aead146f5bfe6dbc";
+        static constexpr const char* EyeLids__UeScsNode = "6bdb465bb38c374b9fb762cb0310c4c9";
+        static constexpr const char* Box__UeScsNode = "a32c1c62cb20214da9d9a9b49fa24e13";
+        static constexpr const char* Eyelids_And_Trigger__UeName = "Eyelids And Trigger";
+        static constexpr const char* Eyelids_And_Trigger__UeScsNode = "8d2c496d8df06a46ba0d3c3603c35adf";
+        static constexpr const char* SimpleHealth__UeScsNode = "d1bb6672c7e21c4cb198a9f224b3be44";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "30058f6c14285c4a9124148dac590764";
+        static constexpr const char* Scale_1_NewTrack__UeName = "Scale_1_NewTrack_3_BCD68ACC423F5ECA6576CB9BC05971B4";
+        static constexpr const char* Scale_1__UeName = "Scale 1";
+        static constexpr const char* Scale_1__UpdateFunc__UeName = "Scale 1__UpdateFunc";
+        static constexpr const char* Scale_1__FinishedFunc__UeName = "Scale 1__FinishedFunc";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::CreepyEyes

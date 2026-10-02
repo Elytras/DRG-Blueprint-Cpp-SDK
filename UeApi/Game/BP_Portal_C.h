@@ -20,13 +20,17 @@ public:
     UE_CLASS("/Game/Maps/UILevels/BP_Portal", "BP_Portal_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Prim_GeoSphere_20segments;
-    static constexpr const char* SM_Prim_GeoSphere_20segments__UeScsNode = "e22f92c6947c2d449ee41bff501c700a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "2162241663ef0a4c98c3e869d0c8a511";
     class USceneCaptureComponent2D* NewVar_0;
     class UObject* SceneReference;
     void ExecuteUbergraph_BP_Portal(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Prim_GeoSphere_20segments__UeScsNode = "e22f92c6947c2d449ee41bff501c700a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "2162241663ef0a4c98c3e869d0c8a511";
+    };
 };
 
 }}}   // namespace Game::Maps::UILevels

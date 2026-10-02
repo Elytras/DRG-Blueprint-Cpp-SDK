@@ -28,21 +28,13 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/StickySpiderWeb/BP_StickySpiderWeb_New", "BP_StickySpiderWeb_New_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "d4528ccefbfe0842bd9be45a283f7a53";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "bb02cb20dfa48d47aab3410a49bc623c";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "03cddc1526dcbe4087a156c38e1ad794";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "40b49b7407a9de49ab9421e227400e9f";
     class UStaticMeshComponent* SM_SpiderwebPlane01;
-    static constexpr const char* SM_SpiderwebPlane01__UeScsNode = "2fb9c8e94b03b7439d297ec94cb61588";
     class UBoxComponent* BoxTrigger;
-    static constexpr const char* BoxTrigger__UeScsNode = "c9931b33f0ae0342aa8eaced24e96e22";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c88a32b8b9f01342a4469b13c400cb17";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_A1817B7349EE1CBF83D087BC6F7AC2B7";
     TEnum<ETimelineDirection> Timeline_0__Direction_A1817B7349EE1CBF83D087BC6F7AC2B7;
     class UTimelineComponent* Timeline_0;
     class UMaterialInstanceDynamic* MaterialInstance;
@@ -53,6 +45,18 @@ public:
     void BndEvt__BoxTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "d4528ccefbfe0842bd9be45a283f7a53";
+        static constexpr const char* SimpleHealth__UeScsNode = "bb02cb20dfa48d47aab3410a49bc623c";
+        static constexpr const char* TerrainDetect__UeScsNode = "03cddc1526dcbe4087a156c38e1ad794";
+        static constexpr const char* terrainPlacement__UeScsNode = "40b49b7407a9de49ab9421e227400e9f";
+        static constexpr const char* SM_SpiderwebPlane01__UeScsNode = "2fb9c8e94b03b7439d297ec94cb61588";
+        static constexpr const char* BoxTrigger__UeScsNode = "c9931b33f0ae0342aa8eaced24e96e22";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c88a32b8b9f01342a4469b13c400cb17";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_A1817B7349EE1CBF83D087BC6F7AC2B7";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb

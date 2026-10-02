@@ -25,10 +25,14 @@ public:
     FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;
     FAnimNode_RigidBody AnimGraphNode_RigidBody;
     BP_MissionControlPointlight_C* Point_Light;
-    static constexpr const char* Point_Light__UeName = "Point Light";
     void ExecuteUbergraph_ABP_Vanity_Headwear_Halloween_MissionControl(int EntryPoint);
     void BlueprintInitializeAnimation();
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Point_Light__UeName = "Point Light";
+    };
 };
 
 }}}}   // namespace Game::Character::Vanity2::Headwear

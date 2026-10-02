@@ -13,6 +13,11 @@ class STE_SlugeCatalyst_DeathExplosion_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/STE_SlugeCatalyst_DeathExplosion", "STE_SlugeCatalyst_DeathExplosion_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AddComponentStatusEffectItem AddComponentStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Pistol

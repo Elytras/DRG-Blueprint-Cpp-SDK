@@ -159,7 +159,7 @@ class UClothingAssetCommon : public UClothingAssetBase
 public:
     UE_CLASS("/Script/ClothingSystemRuntimeCommon", "ClothingAssetCommon");
     class UPhysicsAsset* PhysicsAsset;
-    TMap<FName, class UClothConfigBase*> ClothConfigs;
+    UE_READONLY TMap<FName, class UClothConfigBase*> ClothConfigs;
     TArray<FClothLODDataCommon> LODData;
     TArray<int> LodMap;
     TArray<FName> UsedBoneNames;

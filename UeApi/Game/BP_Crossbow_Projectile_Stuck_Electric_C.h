@@ -20,12 +20,9 @@ class BP_Crossbow_Projectile_Stuck_Electric_C : public Game::WeaponsNTools::Cros
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Electric", "BP_Crossbow_Projectile_Stuck_Electric_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ArcAreaDisplay;
-    static constexpr const char* ArcAreaDisplay__UeScsNode = "d34ef430a18a2b4983fb9c5c76475dfa";
     class UCrossbowStuckProjectileEffectElectric* EffectElectric;
-    static constexpr const char* EffectElectric__UeScsNode = "a9e8a19a1210ac45b74ebe90eceda798";
     float FadeIn_Scale_643276574A22DD1BAF32FA8777128C4F;
     TEnum<ETimelineDirection> FadeIn__Direction_643276574A22DD1BAF32FA8777128C4F;
     class UTimelineComponent* FadeIn;
@@ -52,6 +49,13 @@ public:
     void RingPulse__UpdateFunc();
     void RingPulse__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
+        static constexpr const char* ArcAreaDisplay__UeScsNode = "d34ef430a18a2b4983fb9c5c76475dfa";
+        static constexpr const char* EffectElectric__UeScsNode = "a9e8a19a1210ac45b74ebe90eceda798";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

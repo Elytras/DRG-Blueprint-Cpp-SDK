@@ -13,6 +13,11 @@ class STE_Env_StickySpiderWeb_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/StickySpiderWeb/STE_Env_StickySpiderWeb", "STE_Env_StickySpiderWeb_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb

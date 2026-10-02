@@ -16,7 +16,7 @@ class UI_CoreInfuser_Rewards_Animator_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreInfuser/UI_CoreInfuser_Rewards_Animator", "UI_CoreInfuser_Rewards_Animator_C");
-    class UWidgetAnimation* AnimOpen;
+    UE_READONLY class UWidgetAnimation* AnimOpen;
     class UNamedSlot* CenterSlot;
     class UNamedSlot* LeftSlot;
     class UNamedSlot* RewardSlot;

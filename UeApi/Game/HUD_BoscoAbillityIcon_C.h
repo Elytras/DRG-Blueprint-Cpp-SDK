@@ -22,12 +22,11 @@ class HUD_BoscoAbillityIcon_C : public UFSDUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/HUD_BoscoAbillityIcon", "HUD_BoscoAbillityIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Ping;
     class UImage* Border;
     class UProgressBar* FlareProduction;
     class UInventoryComponent* Inventory;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     float LastProgress;
     class UBoscoAbillityComponent* Abillity;
     FLinearColor FilledColor;
@@ -36,10 +35,15 @@ public:
     void ExecuteUbergraph_HUD_BoscoAbillityIcon(int EntryPoint);
     void OnChargeUsed(int aCurrentCharges);
     void On_Flare_Production_Finished();
-    static constexpr const char* On_Flare_Production_Finished__UeName = "On Flare Production Finished";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Init(int Param_Index_0, class UBoscoAbillityComponent* Abillity_0);
     void SetProgress(float Percent, bool DisableAnim);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* On_Flare_Production_Finished__UeName = "On Flare Production Finished";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display

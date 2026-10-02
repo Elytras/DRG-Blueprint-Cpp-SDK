@@ -21,9 +21,9 @@ class ScreenOverlay_Radiated_C : public UPlayerAfflictionOverlayWidget
 public:
     UE_CLASS("/Game/UI/ScreenOverlays/ScreenOverlay_Radiated", "ScreenOverlay_Radiated_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimJitter;
-    class UWidgetAnimation* AnimPulse;
-    class UWidgetAnimation* AnimFading;
+    UE_READONLY class UWidgetAnimation* AnimJitter;
+    UE_READONLY class UWidgetAnimation* AnimPulse;
+    UE_READONLY class UWidgetAnimation* AnimFading;
     class UImage* AfflictionImage;
     float FadeDuration;
     void ExecuteUbergraph_ScreenOverlay_Radiated(int EntryPoint);
@@ -32,7 +32,11 @@ public:
     void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     void OnAnimFadingFinished();
     void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
-    static constexpr const char* Play_Fade__UeName = "Play Fade";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Play_Fade__UeName = "Play Fade";
+    };
 };
 
 }}}   // namespace Game::UI::ScreenOverlays

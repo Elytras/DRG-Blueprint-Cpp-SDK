@@ -18,11 +18,15 @@ class BP_PostProcessing_SpaceRig_C : public AFSDPostProcessingActor
 public:
     UE_CLASS("/Game/Art/PostProcess/BP_PostProcessing_SpaceRig", "BP_PostProcessing_SpaceRig_C");
     class UExponentialHeightFogComponent* ExponentialHeightFog1;
-    static constexpr const char* ExponentialHeightFog1__UeScsNode = "e7a7e722c5311643835190d18ce1f40e";
     class UPostProcessComponent* PostProcess;
-    static constexpr const char* PostProcess__UeScsNode = "e9916fce6e38334b8bc945f34e221599";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ExponentialHeightFog1__UeScsNode = "e7a7e722c5311643835190d18ce1f40e";
+        static constexpr const char* PostProcess__UeScsNode = "e9916fce6e38334b8bc945f34e221599";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+    };
 };
 
 }}}   // namespace Game::Art::PostProcess

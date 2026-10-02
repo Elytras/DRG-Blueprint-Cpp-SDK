@@ -16,11 +16,15 @@ class AIC_Crawler_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/AIC_Crawler", "AIC_Crawler_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviorTree;
     void ExecuteUbergraph_AIC_Crawler(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Crawler

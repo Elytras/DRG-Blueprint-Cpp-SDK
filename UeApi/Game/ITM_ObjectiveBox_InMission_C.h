@@ -30,8 +30,12 @@ public:
     void SetCustom(FText Text, bool Completed);
     void OnObjectiveUpdated(class UObjective* Objective_0);
     void Set_Objective(class UObjective* Objective_0, bool IsPrimary);
-    static constexpr const char* Set_Objective__UeName = "Set Objective";
     void UpdateText(const FText& InText, FText InCounterText, class UTexture2D* InCounterIcon, bool Completed);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Objective__UeName = "Set Objective";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

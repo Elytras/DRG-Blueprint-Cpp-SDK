@@ -15,9 +15,13 @@ class CSG_MakePlaguieMaterialDead_C : public ACSGBuilder
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/CSG_MakePlaguieMaterialDead", "CSG_MakePlaguieMaterialDead_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSDEngine.CSGGroupComponent CSGRoot";
     class UCSGSphereComponent* CSGSphere;
-    static constexpr const char* CSGSphere__UeScsNode = "2384ba0dbd1f674aaf93056acb84491a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSDEngine.CSGGroupComponent CSGRoot";
+        static constexpr const char* CSGSphere__UeScsNode = "2384ba0dbd1f674aaf93056acb84491a";
+    };
 };
 
 }}}   // namespace Game::GameElements::Plague

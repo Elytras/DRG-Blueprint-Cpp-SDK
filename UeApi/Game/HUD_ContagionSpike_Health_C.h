@@ -26,9 +26,9 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using UI_ContagionSpike_HealthBar_C = Game::UI::Art::MainOnScreenHUD::ContagionSpike::UI_ContagionSpike_HealthBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFirstIntro;
-    class UWidgetAnimation* AnimDeath;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimFirstIntro;
+    UE_READONLY class UWidgetAnimation* AnimDeath;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Label_C* Header;
     UI_ContagionSpike_HealthBar_C* HealthBar;
     class UImage* RedGlow;
@@ -42,13 +42,17 @@ public:
     void ExecuteUbergraph_HUD_ContagionSpike_Health(int EntryPoint);
     void OnStayVisibleTimeOut();
     void Try_Init_Health_Bar();
-    static constexpr const char* Try_Init_Health_Bar__UeName = "Try Init Health Bar";
     void OnDeath_Event(class UHealthComponentBase* HealthComponent_0);
     void RefreshHealth();
     void OnHealthChanged_Event_0(float Health);
     void SetIsNearby(bool InIsNearby);
     void Finished_7DCB89564DBC24AC88ED3CA4A6B0E489();
     void Finished_3ADA294E4411BFB7634E1DAAB2BF7E75();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Try_Init_Health_Bar__UeName = "Try Init Health Bar";
+    };
 };
 
 }}}}}   // namespace Game::UI::Art::MainOnScreenHUD::ContagionSpike

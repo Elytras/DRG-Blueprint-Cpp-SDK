@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/Game/Modding/Proxies/MOD_Proxy_SpawnWave", "MOD_Proxy_SpawnWave_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "da47d0e9391cdb47a6dffc6ba0077aa0";
     class UClass* Wave;
     class UEnemyWaveController* WaveInstance;
     void ExecuteUbergraph_MOD_Proxy_SpawnWave(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "da47d0e9391cdb47a6dffc6ba0077aa0";
+    };
 };
 
 }}}}   // namespace Game::Game::Modding::Proxies

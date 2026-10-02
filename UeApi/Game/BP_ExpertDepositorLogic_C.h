@@ -33,11 +33,15 @@ public:
     class ATeamTransport* DropPod;
     void ExecuteUbergraph_BP_ExpertDepositorLogic(int EntryPoint);
     void Try_start_logic();
-    static constexpr const char* Try_start_logic__UeName = "Try start logic";
     void CheckMollyDistance();
     void StartLogic(int Rank);
     void CheckInRange(class AActor* OtherActor);
     FText GetAdditionalText(int Rank) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Try_start_logic__UeName = "Try start logic";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

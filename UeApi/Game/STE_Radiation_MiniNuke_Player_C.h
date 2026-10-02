@@ -13,6 +13,11 @@ class STE_Radiation_MiniNuke_Player_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/STE_Radiation_MiniNuke_Player", "STE_Radiation_MiniNuke_Player_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards

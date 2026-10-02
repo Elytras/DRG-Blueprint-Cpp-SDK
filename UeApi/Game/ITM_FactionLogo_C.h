@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_FactionLogo", "ITM_FactionLogo_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Animation;
+    UE_READONLY class UWidgetAnimation* Animation;
     class UImage* Image_232;
     class USizeBox* SizeBox_17;
     UI_ImageTinted_C* UI_ImageTinted;

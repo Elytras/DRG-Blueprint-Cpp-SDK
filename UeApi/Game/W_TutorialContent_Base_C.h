@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialContent_Base", "W_TutorialContent_Base_C");
     using ITM_BasicTutorialWindow_C = Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* MainObjectiveAnim;
+    UE_READONLY class UWidgetAnimation* MainObjectiveAnim;
     ITM_BasicTutorialWindow_C* ITM_BasicTutorialWindow;
     void ExecuteUbergraph_W_TutorialContent_Base(int EntryPoint);
     void SetTaskCounter(int Counter, int Denominator);

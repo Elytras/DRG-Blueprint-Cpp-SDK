@@ -39,9 +39,9 @@ public:
     using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* IconReady;
-    class UWidgetAnimation* AnimReveal;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* IconReady;
+    UE_READONLY class UWidgetAnimation* AnimReveal;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UBorder* Border_75;
     class UOverlay* ContentOverlay;
     class UImage* ICON_Item;
@@ -63,9 +63,8 @@ public:
     TMulticastInlineDelegate<void(UI_Forge_Schematic_C* Item)> OnItemUnhovered;
     TMulticastInlineDelegate<void(UI_Forge_Schematic_C* Item)> OnItemClicked;
     bool Show_Cost;
-    static constexpr const char* Show_Cost__UeName = "Show Cost";
-    bool HideIfNotForgeable;
-    bool ShowNewItemNotification;
+    UE_READONLY bool HideIfNotForgeable;
+    UE_READONLY bool ShowNewItemNotification;
     class UTextureRenderTarget2D* IconRenderTarget;
     void ExecuteUbergraph_UI_Forge_Schematic(int EntryPoint);
     void GenerateIcon(class UVanityItem* Item, class UPlayerCharacterID* Character);
@@ -85,6 +84,11 @@ public:
     void PlayRevealAnim(float Duration);
     void PrepareRevealAnim();
     void ReleaseRenderTarget();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Cost__UeName = "Show Cost";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

@@ -49,10 +49,14 @@ class UOnsetNRT : public UAudioSynesthesiaNRT
 {
 public:
     UE_CLASS("/Script/AudioSynesthesia", "OnsetNRT");
-    class UOnsetNRTSettings* Settings;
-    static constexpr const char* Settings__UeSubobject = "DefaultOnsetNRTSettings /Script/AudioSynesthesia.OnsetNRTSettings";
+    UE_READONLY class UOnsetNRTSettings* Settings;
     void GetChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int InChannel, TArray<float>& OutOnsetTimestamps, TArray<float>& OutOnsetStrengths) const;
     void GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int InChannel, TArray<float>& OutOnsetTimestamps, TArray<float>& OutOnsetStrengths) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Settings__UeSubobject = "DefaultOnsetNRTSettings /Script/AudioSynesthesia.OnsetNRTSettings";
+    };
 };
 
 class UAudioSynesthesiaNRTSettings : public UAudioAnalyzerNRTSettings
@@ -65,59 +69,67 @@ class UConstantQNRTSettings : public UAudioSynesthesiaNRTSettings
 {
 public:
     UE_CLASS("/Script/AudioSynesthesia", "ConstantQNRTSettings");
-    float StartingFrequency;
-    int NumBands;
-    float NumBandsPerOctave;
-    float AnalysisPeriod;
-    bool bDownmixToMono;
-    TEnum<EConstantQFFTSizeEnum> FFTSize;
-    TEnum<EFFTWindowType> WindowType;
-    TEnum<EAudioSpectrumType> SpectrumType;
-    float BandWidthStretch;
-    TEnum<EConstantQNormalizationEnum> CQTNormalization;
-    float NoiseFloorDb;
+    UE_READONLY float StartingFrequency;
+    UE_READONLY int NumBands;
+    UE_READONLY float NumBandsPerOctave;
+    UE_READONLY float AnalysisPeriod;
+    UE_READONLY bool bDownmixToMono;
+    UE_READONLY TEnum<EConstantQFFTSizeEnum> FFTSize;
+    UE_READONLY TEnum<EFFTWindowType> WindowType;
+    UE_READONLY TEnum<EAudioSpectrumType> SpectrumType;
+    UE_READONLY float BandWidthStretch;
+    UE_READONLY TEnum<EConstantQNormalizationEnum> CQTNormalization;
+    UE_READONLY float NoiseFloorDb;
 };
 
 class UConstantQNRT : public UAudioSynesthesiaNRT
 {
 public:
     UE_CLASS("/Script/AudioSynesthesia", "ConstantQNRT");
-    class UConstantQNRTSettings* Settings;
-    static constexpr const char* Settings__UeSubobject = "DefaultConstantQNRTSettings /Script/AudioSynesthesia.ConstantQNRTSettings";
+    UE_READONLY class UConstantQNRTSettings* Settings;
     void GetChannelConstantQAtTime(float InSeconds, int InChannel, TArray<float>& OutConstantQ) const;
     void GetNormalizedChannelConstantQAtTime(float InSeconds, int InChannel, TArray<float>& OutConstantQ) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Settings__UeSubobject = "DefaultConstantQNRTSettings /Script/AudioSynesthesia.ConstantQNRTSettings";
+    };
 };
 
 class ULoudnessNRTSettings : public UAudioSynesthesiaNRTSettings
 {
 public:
     UE_CLASS("/Script/AudioSynesthesia", "LoudnessNRTSettings");
-    float AnalysisPeriod;
-    float MinimumFrequency;
-    float MaximumFrequency;
-    TEnum<ELoudnessNRTCurveTypeEnum> CurveType;
-    float NoiseFloorDb;
+    UE_READONLY float AnalysisPeriod;
+    UE_READONLY float MinimumFrequency;
+    UE_READONLY float MaximumFrequency;
+    UE_READONLY TEnum<ELoudnessNRTCurveTypeEnum> CurveType;
+    UE_READONLY float NoiseFloorDb;
 };
 
 class ULoudnessNRT : public UAudioSynesthesiaNRT
 {
 public:
     UE_CLASS("/Script/AudioSynesthesia", "LoudnessNRT");
-    class ULoudnessNRTSettings* Settings;
-    static constexpr const char* Settings__UeSubobject = "DefaultLoudnessNRTSettings /Script/AudioSynesthesia.LoudnessNRTSettings";
+    UE_READONLY class ULoudnessNRTSettings* Settings;
     void GetChannelLoudnessAtTime(float InSeconds, int InChannel, float& OutLoudness) const;
     void GetLoudnessAtTime(float InSeconds, float& OutLoudness) const;
     void GetNormalizedChannelLoudnessAtTime(float InSeconds, int InChannel, float& OutLoudness) const;
     void GetNormalizedLoudnessAtTime(float InSeconds, float& OutLoudness) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Settings__UeSubobject = "DefaultLoudnessNRTSettings /Script/AudioSynesthesia.LoudnessNRTSettings";
+    };
 };
 
 class UOnsetNRTSettings : public UAudioSynesthesiaNRTSettings
 {
 public:
     UE_CLASS("/Script/AudioSynesthesia", "OnsetNRTSettings");
-    bool bDownmixToMono;
-    float GranularityInSeconds;
-    float Sensitivity;
-    float MinimumFrequency;
-    float MaximumFrequency;
+    UE_READONLY bool bDownmixToMono;
+    UE_READONLY float GranularityInSeconds;
+    UE_READONLY float Sensitivity;
+    UE_READONLY float MinimumFrequency;
+    UE_READONLY float MaximumFrequency;
 };

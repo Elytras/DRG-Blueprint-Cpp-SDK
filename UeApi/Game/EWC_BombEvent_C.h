@@ -19,7 +19,6 @@ class EWC_BombEvent_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/EWC_BombEvent", "EWC_BombEvent_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_BombEvent_C;
-    static constexpr const char* UberGraphFrame_EWC_BombEvent_C__UeName = "UberGraphFrame";
     FVector WaveOrigin;
     int NumWaves;
     void ExecuteUbergraph_EWC_BombEvent(int EntryPoint);
@@ -27,10 +26,15 @@ public:
     void StartWave();
     UE_PURE class UEnemyWaveManager* GetWaveManager();
     UE_PURE FVector Get_Refinery_Location();
-    static constexpr const char* Get_Refinery_Location__UeName = "Get Refinery Location";
     void GetRandomPlayer(class APlayerCharacter*& NewParam, bool& PlayerFound);
     void SetWaveOrigin(FVector NewOrigin);
     void SpawnWave(float Difficulty, bool IsConstantPressure);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_BombEvent_C__UeName = "UberGraphFrame";
+        static constexpr const char* Get_Refinery_Location__UeName = "Get Refinery Location";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent

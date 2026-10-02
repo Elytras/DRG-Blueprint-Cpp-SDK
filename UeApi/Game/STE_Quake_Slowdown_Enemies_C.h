@@ -13,6 +13,11 @@ class STE_Quake_Slowdown_Enemies_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/MagmaCaves/STE_Quake_Slowdown_Enemies", "STE_Quake_Slowdown_Enemies_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves

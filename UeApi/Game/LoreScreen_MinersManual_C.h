@@ -20,7 +20,6 @@ public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_MinersManual", "LoreScreen_MinersManual_C");
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_MinersManual_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_MinersManual_C__UeName = "UberGraphFrame";
     class UImage* Image_381;
     LoreScreen_Template_C* LoreScreen_Template;
     bool IsHovering;
@@ -28,6 +27,11 @@ public:
     void ExecuteUbergraph_LoreScreen_MinersManual(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_MinersManual_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

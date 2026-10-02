@@ -13,6 +13,11 @@ class CP_CoreHunt_1_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_CoreHunt_1", "CP_CoreHunt_1_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AnyRetiredCampaignRequirement AnyRetiredCampaignRequirement_0;/Script/FSD.AnyRetiredCampaignRequirement AnyRetiredCampaignRequirement_1;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.SchematicReward CampaignMission_0:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_1:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_2:SchematicReward_1;/Script/FSD.ValidWeeklySeedCampaignRequirement ValidWeeklySeedCampaignRequirement_0;/Script/FSD.WeeklyTimerCampaignRequirement WeeklyTimerCampaignRequirement_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

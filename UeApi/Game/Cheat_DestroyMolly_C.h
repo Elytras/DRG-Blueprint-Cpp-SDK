@@ -21,10 +21,14 @@ public:
     class UButton* Button_0;
     class UTextBlock* Label;
     TMulticastInlineDelegate<void()> Bosco_spawn_requested;
-    static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
     void ExecuteUbergraph_Cheat_DestroyMolly(int EntryPoint);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_13_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

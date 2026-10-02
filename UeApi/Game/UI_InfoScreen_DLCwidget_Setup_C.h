@@ -21,7 +21,7 @@ class UI_InfoScreen_DLCwidget_Setup_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_DLCwidget_Setup", "UI_InfoScreen_DLCwidget_Setup_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UButton* Button_0;
     class UImage* Image_BG;
     class UImage* Image_Flash;

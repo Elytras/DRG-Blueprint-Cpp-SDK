@@ -101,15 +101,10 @@ public:
     int DependencyRequestsProgress;
     FTimerHandle DependencyProgressTimer;
     bool Is_Start_Screen;
-    static constexpr const char* Is_Start_Screen__UeName = "Is Start Screen";
     bool Mod_Browser_Open;
-    static constexpr const char* Mod_Browser_Open__UeName = "Mod Browser Open";
     ModioModBrowserWidget_C* Mod_Browser;
-    static constexpr const char* Mod_Browser__UeName = "Mod Browser";
     bool Is_Initialized;
-    static constexpr const char* Is_Initialized__UeName = "Is Initialized";
     Dialog_Modding_TermsAndConditions_C* Terms_and_Conditions_box;
-    static constexpr const char* Terms_and_Conditions_box__UeName = "Terms and Conditions box";
     void ExecuteUbergraph_ITM_Modding_Menu(int EntryPoint);
     void Update();
     void BndEvt__ITM_Modding_Menu_RetryModioErrorButton_K2Node_ComponentBoundEvent_16_OnClicked__DelegateSignature();
@@ -121,11 +116,8 @@ public:
     void Initialize();
     void BndEvt__ITM_Tab_Modding_BTN_Exit_K2Node_ComponentBoundEvent_10_OnClicked__DelegateSignature();
     void Start_Screen_Apply();
-    static constexpr const char* Start_Screen_Apply__UeName = "Start Screen Apply";
     void Reload_Tab();
-    static constexpr const char* Reload_Tab__UeName = "Reload Tab";
     void On_Mod_Browser_Closed();
-    static constexpr const char* On_Mod_Browser_Closed__UeName = "On Mod Browser Closed";
     void OnShouldRemoveDependencyProgress();
     void OnModioRequestHandled(TEnum<EModioRequestType> requestType);
     void BndEvt__ITM_Tab_Modding_ITM_Modding_LoadoutSelection_K2Node_ComponentBoundEvent_8_OnSlotLoaded__DelegateSignature();
@@ -157,7 +149,6 @@ public:
     void CheckTermsAndConditions(bool& Accepted);
     void OnTermsAndConditionAnswered(bool Agree);
     void On_Fetched_Terms_and_Conditions(class UModioTermsWrapper* Terms);
-    static constexpr const char* On_Fetched_Terms_and_Conditions__UeName = "On Fetched Terms and Conditions";
     void GetPendingModStatus(FText& ModStatus);
     void JoinWithTitle(FText InTitle, TArray<FString>& Install, FString& OutResult);
     void OnDownloadExtractMods(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading, int Progress, int Total);
@@ -165,7 +156,6 @@ public:
     void SetCompactMode(bool CompactView_0);
     void UpdateModCounter();
     void Hide_Mod_Browser();
-    static constexpr const char* Hide_Mod_Browser__UeName = "Hide Mod Browser";
     void ReorderInstalledMods(TEnum<EPackageSortField> InField, bool InAscending);
     void RemovePendingRequests();
     void RefreshApplyCancelButtons();
@@ -175,8 +165,22 @@ public:
     void GetModSlotStatusText(FText& ModSlotStatus);
     UE_PURE FText GetTermsOfUseAcesssText();
     void Should_Modding_Menu_Be_Enabled(bool& Result);
-    static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Start_Screen__UeName = "Is Start Screen";
+        static constexpr const char* Mod_Browser_Open__UeName = "Mod Browser Open";
+        static constexpr const char* Mod_Browser__UeName = "Mod Browser";
+        static constexpr const char* Is_Initialized__UeName = "Is Initialized";
+        static constexpr const char* Terms_and_Conditions_box__UeName = "Terms and Conditions box";
+        static constexpr const char* Start_Screen_Apply__UeName = "Start Screen Apply";
+        static constexpr const char* Reload_Tab__UeName = "Reload Tab";
+        static constexpr const char* On_Mod_Browser_Closed__UeName = "On Mod Browser Closed";
+        static constexpr const char* On_Fetched_Terms_and_Conditions__UeName = "On Fetched Terms and Conditions";
+        static constexpr const char* Hide_Mod_Browser__UeName = "Hide Mod Browser";
+        static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding

@@ -22,35 +22,24 @@ class BP_MuleLeg_C : public Game::GameElements::Resources::Embedded::Gems::BP_Ge
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/MuleLeg/BP_MuleLeg", "BP_MuleLeg_C");
     using BP_MiniMule_Salvage_C = Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_MuleLeg_C;
-    static constexpr const char* UberGraphFrame_BP_MuleLeg_C__UeName = "UberGraphFrame";
     class UAudioComponent* MiniMuleLegPickUp;
-    static constexpr const char* MiniMuleLegPickUp__UeScsNode = "7bd24d421dd0284ab958ebf29a253746";
     class UAudioComponent* MiniMuleLegDrop;
-    static constexpr const char* MiniMuleLegDrop__UeScsNode = "146e0ff1c056b74ea7a057ecebe441e9";
     class UAudioComponent* AudioPingWhenPickedUp;
-    static constexpr const char* AudioPingWhenPickedUp__UeScsNode = "d911589dea838a42ad43e608dde5f0fe";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "4a95ad0a096c17438846ef8e2501b328";
     class UStaticMeshComponent* Distress_Sphere;
-    static constexpr const char* Distress_Sphere__UeScsNode = "2e1e6f49369e49439176a2bddad7c7b2";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "ebb0b6def4e67a4d853a747fe57d2828";
     float Beacon_Alpha_5F66972149AD0193977EA08FF82B6FB4;
     float Beacon_Scale_5F66972149AD0193977EA08FF82B6FB4;
     TEnum<ETimelineDirection> Beacon__Direction_5F66972149AD0193977EA08FF82B6FB4;
     class UTimelineComponent* Beacon;
     bool IsVisibleOnScanner;
-    static constexpr const char* IsVisibleOnScanner__Replicated = "OnRep_IsVisibleOnScanner:";
     TArray<BP_MiniMule_Salvage_C*> PingingMules;
     TArray<BP_MiniMule_Salvage_C*> AllMules;
     void ExecuteUbergraph_BP_MuleLeg(int EntryPoint);
     void Ping_While_Carried();
-    static constexpr const char* Ping_While_Carried__UeName = "Ping While Carried";
     void OnDisableLegSpheres_Event();
     void Ping_Beacon();
-    static constexpr const char* Ping_Beacon__UeName = "Ping Beacon";
     void OnPickedUp_Event();
     void OnDropped_Event_0();
     void SetVisibleOnScanner();
@@ -63,6 +52,21 @@ public:
     void InitVisibleOnScanner();
     void UpdateBeacon();
     void GetDistToNearestMULE(float& OutDist);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_MuleLeg_C__UeName = "UberGraphFrame";
+        static constexpr const char* MiniMuleLegPickUp__UeScsNode = "7bd24d421dd0284ab958ebf29a253746";
+        static constexpr const char* MiniMuleLegDrop__UeScsNode = "146e0ff1c056b74ea7a057ecebe441e9";
+        static constexpr const char* AudioPingWhenPickedUp__UeScsNode = "d911589dea838a42ad43e608dde5f0fe";
+        static constexpr const char* terrainPlacement__UeScsNode = "4a95ad0a096c17438846ef8e2501b328";
+        static constexpr const char* Distress_Sphere__UeScsNode = "2e1e6f49369e49439176a2bddad7c7b2";
+        static constexpr const char* PointLight__UeScsNode = "ebb0b6def4e67a4d853a747fe57d2828";
+        static constexpr const char* IsVisibleOnScanner__Replicated = "OnRep_IsVisibleOnScanner:";
+        static constexpr const char* Ping_While_Carried__UeName = "Ping While Carried";
+        static constexpr const char* Ping_Beacon__UeName = "Ping Beacon";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::MuleLeg

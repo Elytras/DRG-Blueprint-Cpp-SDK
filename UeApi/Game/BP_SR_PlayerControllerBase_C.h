@@ -17,9 +17,7 @@ class BP_SR_PlayerControllerBase_C : public Game::Game::BP_PlayerControllerBase_
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_SR_PlayerControllerBase", "BP_SR_PlayerControllerBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_SR_PlayerControllerBase_C;
-    static constexpr const char* UberGraphFrame_BP_SR_PlayerControllerBase_C__UeName = "UberGraphFrame";
     bool IsOpeningCharSelectionWorld;
     void ExecuteUbergraph_BP_SR_PlayerControllerBase(int EntryPoint);
     void ShowForgeWorkshop();
@@ -27,6 +25,12 @@ public:
     void GetCrafting(class UWindowWidget*& Widget);
     void GetPopupCrafting(class UWindowWidget*& Widget);
     void GetMissionSelect(class UWindowWidget*& Widget);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* UberGraphFrame_BP_SR_PlayerControllerBase_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

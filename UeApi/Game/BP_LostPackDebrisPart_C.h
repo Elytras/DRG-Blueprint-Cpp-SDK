@@ -22,22 +22,26 @@ public:
     UE_CLASS("/Game/GameElements/Treasure/LostPack/BP_LostPackDebrisPart", "BP_LostPackDebrisPart_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "2ff2160e503590468a93d25b05a3baad";
     class UStaticMeshComponent* DebrisMesh;
-    static constexpr const char* DebrisMesh__UeScsNode = "d95ca275f3f549408110758eb60f59b8";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "71def86e40ff7c428baacda1046c992a";
     class UDropToTerrainComponent* DropToTerrain;
-    static constexpr const char* DropToTerrain__UeScsNode = "fcb3ce45c88ed8449d7c6a521842748d";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "0eedc9fd3690904ab756ce2cdac4c356";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "18cbd6b8c04b2543bee31d5390e4c32d";
     int Version;
-    static constexpr const char* Version__Replicated = "OnRep_Version:";
     void ExecuteUbergraph_BP_LostPackDebrisPart(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_Version();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "2ff2160e503590468a93d25b05a3baad";
+        static constexpr const char* DebrisMesh__UeScsNode = "d95ca275f3f549408110758eb60f59b8";
+        static constexpr const char* Sphere__UeScsNode = "71def86e40ff7c428baacda1046c992a";
+        static constexpr const char* DropToTerrain__UeScsNode = "fcb3ce45c88ed8449d7c6a521842748d";
+        static constexpr const char* TerrainDetect__UeScsNode = "0eedc9fd3690904ab756ce2cdac4c356";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "18cbd6b8c04b2543bee31d5390e4c32d";
+        static constexpr const char* Version__Replicated = "OnRep_Version:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Treasure::LostPack

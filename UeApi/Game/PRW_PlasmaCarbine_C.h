@@ -17,9 +17,13 @@ class PRW_PlasmaCarbine_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/PRW_PlasmaCarbine", "PRW_PlasmaCarbine_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "932cd4f8b3b32a429a0a4679f6272fc1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f502096cee50584d8a88376e03a3b49f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "932cd4f8b3b32a429a0a4679f6272fc1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f502096cee50584d8a88376e03a3b49f";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

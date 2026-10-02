@@ -57,8 +57,8 @@ public:
     using WND_MisSel_MissionDescription_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionDescription_C;
     using WND_MisSel_MissionOptions_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionOptions_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnDiceClick;
-    class UWidgetAnimation* OnDiceHover;
+    UE_READONLY class UWidgetAnimation* OnDiceClick;
+    UE_READONLY class UWidgetAnimation* OnDiceHover;
     AnimatedStaticOverlay_WithScanlines_C* AnimatedStaticOverlay_WithScanlines;
     class UBorder* Background;
     class USizeBox* Bar_Left_Sizer;

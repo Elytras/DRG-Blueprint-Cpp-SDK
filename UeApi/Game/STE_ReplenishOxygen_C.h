@@ -13,6 +13,11 @@ class STE_ReplenishOxygen_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/NoOxygen/STE_ReplenishOxygen", "STE_ReplenishOxygen_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ReplenishOxygenStatusEffectItem ReplenishOxygenStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen

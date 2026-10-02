@@ -13,6 +13,11 @@ class STE_Dash_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/STE_Dash", "STE_Dash_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

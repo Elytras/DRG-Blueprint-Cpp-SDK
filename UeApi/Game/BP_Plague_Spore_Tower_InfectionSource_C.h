@@ -18,45 +18,49 @@ class BP_Plague_Spore_Tower_InfectionSource_C : public Game::GameElements::Plagu
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower_InfectionSource", "BP_Plague_Spore_Tower_InfectionSource_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_Plague_Spore_Tower_InfectionSource_C;
-    static constexpr const char* UberGraphFrame_BP_Plague_Spore_Tower_InfectionSource_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* MeteoritePath4;
-    static constexpr const char* MeteoritePath4__UeScsNode = "29a4a8f78e0ecd4fbeb7735fc7648b10";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_MeteoritePAthFill1;
-    static constexpr const char* LevelGenerationCarver_MeteoritePAthFill1__UeScsNode = "3a9e26e27ed8e94aaea713808f4e2a10";
     class UStaticMeshComponent* MeteoritePath3;
-    static constexpr const char* MeteoritePath3__UeScsNode = "a59549a4260736408cf489d26c43a688";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_MeteoritePath2;
-    static constexpr const char* LevelGenerationCarver_MeteoritePath2__UeScsNode = "33e6402529a47c408df1a5b4b63e3cc8";
     class UStaticMeshComponent* MeteorShard03;
-    static constexpr const char* MeteorShard03__UeScsNode = "d3f610fac3333f47a30c134b21aa3b38";
     class UStaticMeshComponent* MeteorShard02;
-    static constexpr const char* MeteorShard02__UeScsNode = "802a853438c0784c805b31c1919b277a";
     class UStaticMeshComponent* MeteorShard01;
-    static constexpr const char* MeteorShard01__UeScsNode = "798c489a79960b4c886e2fb8762cc82f";
     class UStaticMeshComponent* MeteorShard04;
-    static constexpr const char* MeteorShard04__UeScsNode = "ca4b9eb42feb034182e80c7061da8a77";
     class USceneComponent* MainMeteor;
-    static constexpr const char* MainMeteor__UeScsNode = "2a8dba55de5d3d429e1e768e249d413f";
     class UStaticMeshComponent* ImpactCraterCarver;
-    static constexpr const char* ImpactCraterCarver__UeScsNode = "041a76416255524b90d964f44f1853b0";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_IMpactCrater;
-    static constexpr const char* LevelGenerationCarver_IMpactCrater__UeScsNode = "55ddba636d35af4ebfd376e89ed8fd4e";
     class UStaticMeshComponent* PlagueBump;
-    static constexpr const char* PlagueBump__UeScsNode = "5dd3f75cdcfd724fa4966efc6b287a61";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_PlagueBump;
-    static constexpr const char* LevelGenerationCarver_PlagueBump__UeScsNode = "936338b8667e344290994571e11aea9b";
     class UStaticMeshComponent* MeteoritePath2;
-    static constexpr const char* MeteoritePath2__UeScsNode = "e5fce453e8aa3044b41354780b2e0b92";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_MeteoritePAthFill;
-    static constexpr const char* LevelGenerationCarver_MeteoritePAthFill__UeScsNode = "6dcc41eaa620b64c8640d602e3932607";
     class UStaticMeshComponent* MeteoritePath1;
-    static constexpr const char* MeteoritePath1__UeScsNode = "75a31b7e305f9d4a9760cb8616238eb3";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_MeteoritePath1;
-    static constexpr const char* LevelGenerationCarver_MeteoritePath1__UeScsNode = "a58a87610713d64687ff496de3fd2db5";
     void ExecuteUbergraph_BP_Plague_Spore_Tower_InfectionSource(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
+        static constexpr const char* UberGraphFrame_BP_Plague_Spore_Tower_InfectionSource_C__UeName = "UberGraphFrame";
+        static constexpr const char* MeteoritePath4__UeScsNode = "29a4a8f78e0ecd4fbeb7735fc7648b10";
+        static constexpr const char* LevelGenerationCarver_MeteoritePAthFill1__UeScsNode = "3a9e26e27ed8e94aaea713808f4e2a10";
+        static constexpr const char* MeteoritePath3__UeScsNode = "a59549a4260736408cf489d26c43a688";
+        static constexpr const char* LevelGenerationCarver_MeteoritePath2__UeScsNode = "33e6402529a47c408df1a5b4b63e3cc8";
+        static constexpr const char* MeteorShard03__UeScsNode = "d3f610fac3333f47a30c134b21aa3b38";
+        static constexpr const char* MeteorShard02__UeScsNode = "802a853438c0784c805b31c1919b277a";
+        static constexpr const char* MeteorShard01__UeScsNode = "798c489a79960b4c886e2fb8762cc82f";
+        static constexpr const char* MeteorShard04__UeScsNode = "ca4b9eb42feb034182e80c7061da8a77";
+        static constexpr const char* MainMeteor__UeScsNode = "2a8dba55de5d3d429e1e768e249d413f";
+        static constexpr const char* ImpactCraterCarver__UeScsNode = "041a76416255524b90d964f44f1853b0";
+        static constexpr const char* LevelGenerationCarver_IMpactCrater__UeScsNode = "55ddba636d35af4ebfd376e89ed8fd4e";
+        static constexpr const char* PlagueBump__UeScsNode = "5dd3f75cdcfd724fa4966efc6b287a61";
+        static constexpr const char* LevelGenerationCarver_PlagueBump__UeScsNode = "936338b8667e344290994571e11aea9b";
+        static constexpr const char* MeteoritePath2__UeScsNode = "e5fce453e8aa3044b41354780b2e0b92";
+        static constexpr const char* LevelGenerationCarver_MeteoritePAthFill__UeScsNode = "6dcc41eaa620b64c8640d602e3932607";
+        static constexpr const char* MeteoritePath1__UeScsNode = "75a31b7e305f9d4a9760cb8616238eb3";
+        static constexpr const char* LevelGenerationCarver_MeteoritePath1__UeScsNode = "a58a87610713d64687ff496de3fd2db5";
+    };
 };
 
 }}}   // namespace Game::GameElements::Plague

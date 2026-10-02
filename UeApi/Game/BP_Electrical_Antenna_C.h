@@ -19,17 +19,12 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_Electrical_Antenna", "BP_Electrical_Antenna_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "f50d4289345e7b4da0e2b18b2122f5d6";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "1bb002e4b1622b418d5d8feaa0716ca1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d0469f3a49049044b4157737007c7235";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_E582EA524803E9C74EB2B5B181BF700F";
     TEnum<ETimelineDirection> Timeline_0__Direction_E582EA524803E9C74EB2B5B181BF700F;
     class UTimelineComponent* Timeline_0;
     bool Active;
-    static constexpr const char* Active__Replicated = "OnRep_Active:";
     void ExecuteUbergraph_BP_Electrical_Antenna(int EntryPoint);
     void Retract();
     void DeactivateAnenna();
@@ -37,6 +32,15 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void OnRep_Active();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh__UeScsNode = "f50d4289345e7b4da0e2b18b2122f5d6";
+        static constexpr const char* Scene__UeScsNode = "1bb002e4b1622b418d5d8feaa0716ca1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d0469f3a49049044b4157737007c7235";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_E582EA524803E9C74EB2B5B181BF700F";
+        static constexpr const char* Active__Replicated = "OnRep_Active:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

@@ -18,9 +18,9 @@ class UI_InfoScreen_Overlay_DrgSurvivor_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay_DrgSurvivor", "UI_InfoScreen_Overlay_DrgSurvivor_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UButton* Button_Outer;
     void ExecuteUbergraph_UI_InfoScreen_Overlay_DrgSurvivor(int EntryPoint);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();

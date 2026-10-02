@@ -20,7 +20,7 @@ class ITM_SeasonEvent_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonEvent", "ITM_SeasonEvent_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UImage* Event_Icon;
     class UImage* Icon_SeasonXP_3;
     class UTextBlock* Text_Count;

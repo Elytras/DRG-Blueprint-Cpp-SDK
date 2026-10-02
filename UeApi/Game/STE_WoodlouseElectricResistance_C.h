@@ -13,6 +13,11 @@ class STE_WoodlouseElectricResistance_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/STE_WoodlouseElectricResistance", "STE_WoodlouseElectricResistance_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse

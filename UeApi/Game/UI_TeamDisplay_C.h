@@ -44,13 +44,17 @@ public:
     void UpdateFriendInviteVisibility();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Setup_Invite_Friends();
-    static constexpr const char* Setup_Invite_Friends__UeName = "Setup Invite Friends";
     void OnLastWindowClosed();
     void OnFirstWindowOpened();
     UE_COSMETIC void Construct();
     void UpdateIcons();
     void GetTeam(TArray<class AFSDPlayerState*>& OutTeamMembers);
     void GetParents(TArray<FString>& Names1);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Invite_Friends__UeName = "Setup Invite Friends";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

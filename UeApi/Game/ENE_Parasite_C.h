@@ -21,26 +21,30 @@ class ENE_Parasite_C : public AParasiteEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/Parasite/ENE_Parasite", "ENE_Parasite_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.OutlineComponent OutLine;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.StaticMeshComponent Tentacles1;/Script/Engine.StaticMeshComponent Tentacles2;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "3da9c0fbc023df4984044fa705dc09ac";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "0e57a2740ca4664b81ee3372e613f216";
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     float Emission_Multiplier;
-    static constexpr const char* Emission_Multiplier__UeName = "Emission Multiplier";
     float Emission_Flash;
-    static constexpr const char* Emission_Flash__UeName = "Emission Flash";
     float Displacement_Intensity;
-    static constexpr const char* Displacement_Intensity__UeName = "Displacement Intensity";
     float Displacement_Burst;
-    static constexpr const char* Displacement_Burst__UeName = "Displacement Burst";
     void ExecuteUbergraph_ENE_Parasite(int EntryPoint);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.OutlineComponent OutLine;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.StaticMeshComponent Tentacles1;/Script/Engine.StaticMeshComponent Tentacles2;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* WeakpointGlow__UeScsNode = "3da9c0fbc023df4984044fa705dc09ac";
+        static constexpr const char* Sphere__UeScsNode = "0e57a2740ca4664b81ee3372e613f216";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+        static constexpr const char* Emission_Multiplier__UeName = "Emission Multiplier";
+        static constexpr const char* Emission_Flash__UeName = "Emission Flash";
+        static constexpr const char* Displacement_Intensity__UeName = "Displacement Intensity";
+        static constexpr const char* Displacement_Burst__UeName = "Displacement Burst";
+    };
 };
 
 }}}}   // namespace Game::Enemies::MuleInfected::Parasite

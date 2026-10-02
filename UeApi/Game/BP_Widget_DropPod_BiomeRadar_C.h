@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/Art/DropPod/Widgets/BP_Widget_DropPod_BiomeRadar", "BP_Widget_DropPod_BiomeRadar_C");
     using Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "94129ee85ff71f49a7e4fe96a5919125";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
     Widget_DropPod_AltitudeMeter_C* Widget;
     float Duration;
     float Start;
     float End;
     float DepthArrivalVariable;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget1__UeScsNode = "94129ee85ff71f49a7e4fe96a5919125";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
+    };
 };
 
 }}}}   // namespace Game::Art::DropPod::Widgets

@@ -33,10 +33,10 @@ public:
     using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
     using UI_MediaPlayer_C = Game::UI::MENU_Merch::UI_MediaPlayer_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimGlow;
-    class UWidgetAnimation* AnimClick;
-    class UWidgetAnimation* AnimFadeInMovie;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimGlow;
+    UE_READONLY class UWidgetAnimation* AnimClick;
+    UE_READONLY class UWidgetAnimation* AnimFadeInMovie;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UCanvasPanel* ButtonCanvas;
     class UWidgetSwitcher* ContentSwitcher;
     class UImage* DLC_Banner;
@@ -46,8 +46,8 @@ public:
     class UOverlay* Owned_Overlay;
     ShadowBG_C* ShadowBG;
     UI_MediaPlayer_C* UI_MediaPlayer;
-    class UGameDLC* DLC;
-    float Width;
+    UE_READONLY class UGameDLC* DLC;
+    UE_READONLY float Width;
     class UMediaSoundComponent* MediaSound;
     TMulticastInlineDelegate<void(ITM_DLC_Entry_C* InEntry)> OnHoverBegin;
     TMulticastInlineDelegate<void(ITM_DLC_Entry_C* InEntry)> OnHoverEnd;
@@ -57,9 +57,7 @@ public:
     void ExecuteUbergraph_ITM_DLC_Entry(int EntryPoint);
     void OnMovieLoaded();
     void Stop_Movie();
-    static constexpr const char* Stop_Movie__UeName = "Stop Movie";
     void Start_Movie();
-    static constexpr const char* Start_Movie__UeName = "Start Movie";
     void BndEvt__ITM_DLC_Entry_UI_MediaPlayer_K2Node_ComponentBoundEvent_3_StateChanged__DelegateSignature(class UMediaPlayerWidget* InPlayerWidget, TEnum<EMediaPlayerState> InState);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -68,6 +66,12 @@ public:
     void BndEvt__DLC_Button_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__DLC_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Hover(bool InHover, bool& OutChanged);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Stop_Movie__UeName = "Stop Movie";
+        static constexpr const char* Start_Movie__UeName = "Start Movie";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_DLC

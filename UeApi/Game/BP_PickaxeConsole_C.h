@@ -18,13 +18,17 @@ class BP_PickaxeConsole_C : public Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsol
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_PickaxeConsole", "BP_PickaxeConsole_C");
     class UWidgetComponent* TerminalWidget;
-    static constexpr const char* TerminalWidget__UeScsNode = "2dca0b2a7b9fc04d8e51b6a0970765ff";
     class UStaticMeshComponent* Mesh_Monitor;
-    static constexpr const char* Mesh_Monitor__UeScsNode = "c40d72f8362f2841b2cfe105246480cf";
     class UCapsuleComponent* collider;
-    static constexpr const char* collider__UeScsNode = "3ef89e02cff0d345937f2c1f8dfb3ba1";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "1e372498b5b8404b91f651f6e20c5f6d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TerminalWidget__UeScsNode = "2dca0b2a7b9fc04d8e51b6a0970765ff";
+        static constexpr const char* Mesh_Monitor__UeScsNode = "c40d72f8362f2841b2cfe105246480cf";
+        static constexpr const char* collider__UeScsNode = "3ef89e02cff0d345937f2c1f8dfb3ba1";
+        static constexpr const char* StaticMesh__UeScsNode = "1e372498b5b8404b91f651f6e20c5f6d";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

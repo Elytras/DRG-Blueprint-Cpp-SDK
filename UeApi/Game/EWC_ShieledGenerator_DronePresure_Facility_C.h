@@ -16,7 +16,6 @@ class EWC_ShieledGenerator_DronePresure_Facility_C : public Game::Enemies::Waves
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_ShieledGenerator_DronePresure_Facility", "EWC_ShieledGenerator_DronePresure_Facility_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_ShieledGenerator_DronePresure_Facility_C;
-    static constexpr const char* UberGraphFrame_EWC_ShieledGenerator_DronePresure_Facility_C__UeName = "UberGraphFrame";
     int WaveCountConstantPressure;
     int WaveCountWaves;
     FTimerHandle ConstantWaveTimer;
@@ -25,7 +24,12 @@ public:
     void OnWaveCompleted();
     void StartWave();
     UE_PURE FVector Get_Refinery_Location();
-    static constexpr const char* Get_Refinery_Location__UeName = "Get Refinery Location";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_ShieledGenerator_DronePresure_Facility_C__UeName = "UberGraphFrame";
+        static constexpr const char* Get_Refinery_Location__UeName = "Get Refinery Location";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

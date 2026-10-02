@@ -13,10 +13,14 @@ class BP_SpacerigSpectator_C : public ASpectatorPawn
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_SpacerigSpectator", "BP_SpacerigSpectator_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SpectatorPawnMovement MovementComponent0;/Script/Engine.SphereComponent CollisionComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_SpacerigSpectator(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SpectatorPawnMovement MovementComponent0;/Script/Engine.SphereComponent CollisionComponent0";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

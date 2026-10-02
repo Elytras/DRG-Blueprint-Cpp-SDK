@@ -27,14 +27,18 @@ public:
     TEnum<EItemCategory> myItemCategory;
     bool IsEquipped;
     int Original_name_Size;
-    static constexpr const char* Original_name_Size__UeName = "Original name Size";
     int Original_Desc_size;
-    static constexpr const char* Original_Desc_size__UeName = "Original Desc size";
     void ExecuteUbergraph_Cheat_PerkListItem(int EntryPoint);
     void Increase_font_size();
-    static constexpr const char* Increase_font_size__UeName = "Increase font size";
     void BndEvt__CheckBox_49_K2Node_ComponentBoundEvent_5_OnCheckBoxComponentStateChanged__DelegateSignature(bool bIsChecked);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Original_name_Size__UeName = "Original name Size";
+        static constexpr const char* Original_Desc_size__UeName = "Original Desc size";
+        static constexpr const char* Increase_font_size__UeName = "Increase font size";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

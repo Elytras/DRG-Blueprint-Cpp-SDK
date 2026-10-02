@@ -15,9 +15,13 @@ class EWC_EndMission_Tutorial_C : public Game::Enemies::Waves::WaveControllers::
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_EndMission_Tutorial", "EWC_EndMission_Tutorial_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_EndMission_Tutorial_C;
-    static constexpr const char* UberGraphFrame_EWC_EndMission_Tutorial_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_EWC_EndMission_Tutorial(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_EndMission_Tutorial_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

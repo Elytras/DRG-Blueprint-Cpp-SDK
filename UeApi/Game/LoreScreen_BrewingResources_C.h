@@ -22,7 +22,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_ResourcesPage_C = Game::UI::Menu_MinersManual::Lore_ResourcesPage_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_BrewingResources_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_BrewingResources_C__UeName = "UberGraphFrame";
     Lore_ResourcesPage_C* Lore_ResourcesPage;
     LoreScreen_Template_C* LoreScreen_Template;
     class UAudioComponent* HoverSound;
@@ -30,6 +29,11 @@ public:
     void ExecuteUbergraph_LoreScreen_BrewingResources(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_BrewingResources_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::CraftingResources

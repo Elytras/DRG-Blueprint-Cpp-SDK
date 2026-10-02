@@ -18,11 +18,15 @@ class PRW_FlameThrower_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/PRW_FlameThrower", "PRW_FlameThrower_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "bfe6202b1ddce24b9012d67fbc3c173b";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7163bbe76269584ba814583944a81830";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "549bee8bb2247d4ead1f461f414e2e76";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "bfe6202b1ddce24b9012d67fbc3c173b";
+        static constexpr const char* SkeletalMesh__UeScsNode = "7163bbe76269584ba814583944a81830";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "549bee8bb2247d4ead1f461f414e2e76";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower

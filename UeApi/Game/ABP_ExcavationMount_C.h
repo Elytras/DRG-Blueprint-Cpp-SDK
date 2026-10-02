@@ -29,11 +29,15 @@ public:
     float AssemblyTime;
     float AssemblyTimeTarget;
     class USingleUsableComponent* Build_Usable;
-    static constexpr const char* Build_Usable__UeName = "Build Usable";
     void ExecuteUbergraph_ABP_ExcavationMount(int EntryPoint);
     void BlueprintInitializeAnimation();
     void BlueprintUpdateAnimation(float DeltaTimeX);
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Build_Usable__UeName = "Build Usable";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::Assets

@@ -22,18 +22,22 @@ public:
     class UTextBlock* Label;
     FText Text;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     TEnum<ETextJustify> Justification;
     FFontOutlineSettings Outline_Settings;
-    static constexpr const char* Outline_Settings__UeName = "Outline Settings";
     float Min_Desired_Width;
-    static constexpr const char* Min_Desired_Width__UeName = "Min Desired Width";
     void ExecuteUbergraph_HUD_DefaultLabel(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText NewText);
     void SetFontSize(int inFontSize);
     void SetJustification(TEnum<ETextJustify> InJustification);
     void SetOutlineSettings(FFontOutlineSettings InFontInfo_OutlineSettings);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Outline_Settings__UeName = "Outline Settings";
+        static constexpr const char* Min_Desired_Width__UeName = "Min Desired Width";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard

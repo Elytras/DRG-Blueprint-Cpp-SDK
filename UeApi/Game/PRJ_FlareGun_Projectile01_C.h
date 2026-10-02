@@ -28,35 +28,21 @@ class PRJ_FlareGun_Projectile01_C : public AFlareGunProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/PRJ_FlareGun_Projectile01", "PRJ_FlareGun_Projectile01_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Lit_Fuse_Cue;
-    static constexpr const char* Lit_Fuse_Cue__UeScsNode = "45301ce91fc07441bfb26773731eee84";
     class UDamageComponent* Damage1;
-    static constexpr const char* Damage1__UeScsNode = "2c86d78f2704834dab83be33c094b6e7";
     class UStaticMeshComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "8c0045ed11dd8b41921271a08718917c";
     class USpotLightComponent* SpotLight_Shadow_3;
-    static constexpr const char* SpotLight_Shadow_3__UeScsNode = "236de984775d6b428ea04f3c9d1ec75f";
     class USpotLightComponent* SpotLight_Shadow_2;
-    static constexpr const char* SpotLight_Shadow_2__UeScsNode = "52667e3e43bfef4da8ba91e08d980ddc";
     class USpotLightComponent* SpotLight_Shadow_1;
-    static constexpr const char* SpotLight_Shadow_1__UeScsNode = "577438648d819040935c394be56f98c1";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "3eee357390a7444aac5e7e49c8f5749f";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "07231370214adc4389f8cbc388c3f752";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "59a6f99e659c0f48b254a4326c5a5f4e";
     class UPointLightComponent* PointLight_Dead;
-    static constexpr const char* PointLight_Dead__UeScsNode = "ea9c0688a86b3f4fa20056abba27d89c";
     class UPointLightComponent* PointLight_NoShadow;
-    static constexpr const char* PointLight_NoShadow__UeScsNode = "6a26563995042444b173e21a92ef8fcc";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "1b099cac0cab274e9af4b5a9fe099f1a";
     float Light_Anim_ShadowMultiplier_7569FDBD44600A7270E9429A8EC6FB81;
     float Light_Anim_NewTrack;
-    static constexpr const char* Light_Anim_NewTrack__UeName = "Light_Anim_NewTrack_0_7569FDBD44600A7270E9429A8EC6FB81";
     TEnum<ETimelineDirection> Light_Anim__Direction_7569FDBD44600A7270E9429A8EC6FB81;
     class UTimelineComponent* Light_Anim;
     float LightIntensity_Point;
@@ -64,7 +50,6 @@ public:
     FScaledEffect DamageEffect;
     float LightIntensity_Spot;
     bool bFallToGround;
-    static constexpr const char* bFallToGround__Replicated = "OnRep_bFallToGround:";
     FHitResult ImpactHit;
     class UAudioComponent* FlareBurnAudio;
     void ExecuteUbergraph_PRJ_FlareGun_Projectile01(int EntryPoint);
@@ -83,6 +68,25 @@ public:
     void UpdateShadowRadius();
     void SpawnImpact();
     void OnRep_bFallToGround();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Lit_Fuse_Cue__UeScsNode = "45301ce91fc07441bfb26773731eee84";
+        static constexpr const char* Damage1__UeScsNode = "2c86d78f2704834dab83be33c094b6e7";
+        static constexpr const char* Arrow__UeScsNode = "8c0045ed11dd8b41921271a08718917c";
+        static constexpr const char* SpotLight_Shadow_3__UeScsNode = "236de984775d6b428ea04f3c9d1ec75f";
+        static constexpr const char* SpotLight_Shadow_2__UeScsNode = "52667e3e43bfef4da8ba91e08d980ddc";
+        static constexpr const char* SpotLight_Shadow_1__UeScsNode = "577438648d819040935c394be56f98c1";
+        static constexpr const char* TerrainDetect__UeScsNode = "3eee357390a7444aac5e7e49c8f5749f";
+        static constexpr const char* ParticleSystem__UeScsNode = "07231370214adc4389f8cbc388c3f752";
+        static constexpr const char* StaticMesh__UeScsNode = "59a6f99e659c0f48b254a4326c5a5f4e";
+        static constexpr const char* PointLight_Dead__UeScsNode = "ea9c0688a86b3f4fa20056abba27d89c";
+        static constexpr const char* PointLight_NoShadow__UeScsNode = "6a26563995042444b173e21a92ef8fcc";
+        static constexpr const char* Box__UeScsNode = "1b099cac0cab274e9af4b5a9fe099f1a";
+        static constexpr const char* Light_Anim_NewTrack__UeName = "Light_Anim_NewTrack_0_7569FDBD44600A7270E9429A8EC6FB81";
+        static constexpr const char* bFallToGround__Replicated = "OnRep_bFallToGround:";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlareGun

@@ -13,6 +13,11 @@ class STE_FrostGeyser1_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/FrostGeyser/STE_FrostGeyser1", "STE_FrostGeyser1_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::FrostGeyser

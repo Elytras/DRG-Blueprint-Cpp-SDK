@@ -18,7 +18,7 @@ class ScrollingText_HackingTool_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/ScrollingText_HackingTool", "ScrollingText_HackingTool_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* NewAnimation;
+    UE_READONLY class UWidgetAnimation* NewAnimation;
     class UImage* Image_346;
     class UImage* IMG_Caution;
     class UImage* IMG_Caution_1;

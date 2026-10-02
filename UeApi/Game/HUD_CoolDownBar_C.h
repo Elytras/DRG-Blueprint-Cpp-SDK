@@ -33,11 +33,15 @@ public:
     void OnItemSet();
     void OnEquipped();
     void On_UnEquipped();
-    static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
     void ProgressSound();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
     void Initialize(class UCoolDownItemAggregator* CoolDown, class AItem* Item_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs

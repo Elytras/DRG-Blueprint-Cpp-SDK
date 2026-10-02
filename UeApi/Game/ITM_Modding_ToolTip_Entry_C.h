@@ -32,11 +32,15 @@ public:
     class UWidgetSwitcher* StatusSwitcher;
     bool Installed;
     FString Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     void ExecuteUbergraph_ITM_Modding_ToolTip_Entry(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMetaData(class UModioModInfoWrapper* InMetaData);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::Modding

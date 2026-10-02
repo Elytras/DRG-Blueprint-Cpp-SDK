@@ -17,19 +17,23 @@ public:
     UE_CLASS("/Game/Character/States/BP_PassedOut", "BP_PassedOut_C");
     FPointerToUberGraphFrame UberGraphFrame;
     FTransform Start_Transform;
-    static constexpr const char* Start_Transform__UeName = "Start Transform";
     bool WakeInBed;
     void ExecuteUbergraph_BP_PassedOut(int EntryPoint);
     void ReceiveTeamPassedOut();
     void Remove_Drinking_Mugs();
-    static constexpr const char* Remove_Drinking_Mugs__UeName = "Remove Drinking Mugs";
     void Turn_Off_Juke_Box();
-    static constexpr const char* Turn_Off_Juke_Box__UeName = "Turn Off Juke Box";
     void ReceiveStateExit();
     void ReceiveStateEnter();
     UE_CLIENT UE_RELIABLE void BeginFadeToBlack();
     void ReceiveBeginPlay();
     void AllPassedOut(bool& AllPassedOut_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Transform__UeName = "Start Transform";
+        static constexpr const char* Remove_Drinking_Mugs__UeName = "Remove Drinking Mugs";
+        static constexpr const char* Turn_Off_Juke_Box__UeName = "Turn Off Juke Box";
+    };
 };
 
 }}}   // namespace Game::Character::States

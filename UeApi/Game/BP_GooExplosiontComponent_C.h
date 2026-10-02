@@ -26,13 +26,17 @@ public:
     class UPawnAfflictionComponent* Affliction;
     class UStatusEffect* Effect;
     class AActor* Effect_Owner;
-    static constexpr const char* Effect_Owner__UeName = "Effect Owner";
     void ExecuteUbergraph_BP_GooExplosiontComponent(int EntryPoint);
     void InitializeEffect(class UStatusEffect* Effect_0, class AActor* EffectOwner);
     void OnAfflictionActivatedEvent_Event_0(class UPawnAffliction* Affliction_0);
     void TryTriggerExplosion();
     void TriggerExplosion();
     void GetFXMeshScale(float& Scale);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Effect_Owner__UeName = "Effect Owner";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

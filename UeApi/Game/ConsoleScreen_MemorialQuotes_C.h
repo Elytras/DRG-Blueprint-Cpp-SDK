@@ -18,7 +18,7 @@ class ConsoleScreen_MemorialQuotes_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_MemorialQuotes", "ConsoleScreen_MemorialQuotes_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     class UTextBlock* TextBlock_2;
     class UTextBlock* TextBlock_146;
     class UTextBlock* TXT_Main;

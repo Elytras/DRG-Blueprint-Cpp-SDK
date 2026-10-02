@@ -28,7 +28,7 @@ class UMSDFAssetData : public UAssetUserData
 {
 public:
     UE_CLASS("/Script/MSDFSupport", "MSDFAssetData");
-    FSVGConversionParams ImportParameters;
+    UE_READONLY FSVGConversionParams ImportParameters;
 };
 
 class URenderMSDF : public UMaterialExpression

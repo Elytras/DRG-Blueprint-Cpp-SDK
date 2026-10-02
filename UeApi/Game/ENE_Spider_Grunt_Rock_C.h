@@ -18,14 +18,18 @@ class ENE_Spider_Grunt_Rock_C : public Game::Enemies::Spider::Grunt::ENE_Spider_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Rock/ENE_Spider_Grunt_Rock", "ENE_Spider_Grunt_Rock_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Grunt_Rock_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Rock_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_ENE_Spider_Grunt_Rock(int EntryPoint);
     UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Grunt_Rock_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Play_Body_Death_Effects();
-    static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Rock_C__UeName = "UberGraphFrame";
+        static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Rock

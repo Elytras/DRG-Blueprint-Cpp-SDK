@@ -27,7 +27,7 @@ public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_PictureOverText", "Lore_Container_PictureOverText_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DataSwitch;
+    UE_READONLY class UWidgetAnimation* DataSwitch;
     Basic_Menu_ColorBar_C* ColorbarTextSeparator;
     class UImage* Image_Front;
     class UImage* Image_Item;

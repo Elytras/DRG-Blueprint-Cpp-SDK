@@ -23,12 +23,12 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/EnemyHealthBar/HUD_EnemyTargeting_Affliction", "HUD_EnemyTargeting_Affliction_C");
     using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeIn;
     UI_MaskedImage_C* AfflictionIcon;
     class UImage* BorderInner;
     class UImage* BorderOuter;
     class USizeBox* ImgSize;
-    float Size;
+    UE_READONLY float Size;
     bool Active;
     class UPawnAffliction* Affliction;
     void ExecuteUbergraph_HUD_EnemyTargeting_Affliction(int EntryPoint);

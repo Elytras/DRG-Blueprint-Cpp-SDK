@@ -329,7 +329,7 @@ class ADatasmithAreaLightActor : public AActor
 {
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithAreaLightActor");
-    TEnum<EComponentMobility> Mobility;
+    UE_READONLY TEnum<EComponentMobility> Mobility;
     TEnum<EDatasmithAreaLightActorType> LightType;
     TEnum<EDatasmithAreaLightActorShape> LightShape;
     FVector2D Dimensions;
@@ -533,8 +533,12 @@ class ADatasmithImportedSequencesActor : public AActor
 public:
     UE_CLASS("/Script/DatasmithContent", "DatasmithImportedSequencesActor");
     TArray<class ULevelSequence*> ImportedSequences;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void PlayLevelSequence(class ULevelSequence* SequenceToPlay);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UDatasmithOptionsBase : public UObject

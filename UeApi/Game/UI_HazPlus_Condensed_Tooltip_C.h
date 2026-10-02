@@ -21,16 +21,20 @@ public:
     class UUniformGridPanel* Item_Grid;
     TArray<FDifficultyMutatorItem> Mutators;
     FMargin Icon_Padding;
-    static constexpr const char* Icon_Padding__UeName = "Icon Padding";
     int Icon_Size;
-    static constexpr const char* Icon_Size__UeName = "Icon Size";
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     int Text_Offset;
-    static constexpr const char* Text_Offset__UeName = "Text Offset";
     void ExecuteUbergraph_UI_HazPlus_Condensed_Tooltip(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMutators(TArray<FDifficultyMutatorItem>& InMutator);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Icon_Padding__UeName = "Icon Padding";
+        static constexpr const char* Icon_Size__UeName = "Icon Size";
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Text_Offset__UeName = "Text Offset";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

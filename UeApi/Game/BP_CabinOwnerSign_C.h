@@ -21,21 +21,25 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_CabinOwnerSign", "BP_CabinOwnerSign_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "2f2d718c43d4e74ea8d5ea7a3bb40aa2";
     class UStaticMeshComponent* StaticMesh2;
-    static constexpr const char* StaticMesh2__UeScsNode = "44519de715d891468a70387eca95d1ba";
     class UWidgetComponent* NameWidget;
-    static constexpr const char* NameWidget__UeScsNode = "955f40f53a1bf344b084730546e7a67a";
     class UStaticMeshComponent* Lamp;
-    static constexpr const char* Lamp__UeScsNode = "5c23ce61717007489e3deb227caabd41";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "53b093f447186a4e98679404000edc62";
     void ExecuteUbergraph_BP_CabinOwnerSign(int EntryPoint);
     void ReceiveBeginPlay();
     void ChangeName(FString NewName);
     void SetCabinOwner(class AFSDPlayerState* PlayerState);
     void UserConstructionScript();
     void SetPlayerName(FText& Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "2f2d718c43d4e74ea8d5ea7a3bb40aa2";
+        static constexpr const char* StaticMesh2__UeScsNode = "44519de715d891468a70387eca95d1ba";
+        static constexpr const char* NameWidget__UeScsNode = "955f40f53a1bf344b084730546e7a67a";
+        static constexpr const char* Lamp__UeScsNode = "5c23ce61717007489e3deb227caabd41";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "53b093f447186a4e98679404000edc62";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

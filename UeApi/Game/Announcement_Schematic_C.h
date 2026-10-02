@@ -24,7 +24,7 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnnounceAnim;
+    UE_READONLY class UWidgetAnimation* AnnounceAnim;
     class UImage* Image_167;
     class UCanvasPanel* Root;
     Basic_Label_C* TitleLabel;

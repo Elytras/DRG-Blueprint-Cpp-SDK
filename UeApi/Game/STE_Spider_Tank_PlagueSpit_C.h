@@ -13,6 +13,11 @@ class STE_Spider_Tank_PlagueSpit_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/STE_Spider_Tank_PlagueSpit", "STE_Spider_Tank_PlagueSpit_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

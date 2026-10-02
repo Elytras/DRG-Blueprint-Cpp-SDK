@@ -19,9 +19,7 @@ public:
     UE_CLASS("/Game/Enemies/BarrageInfector/ESI_BarrageInfector", "ESI_BarrageInfector_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "12e157cd4d3e194a82851420f75cb83e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
     float NextAnimTime;
     void ExecuteUbergraph_ESI_BarrageInfector(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
@@ -31,6 +29,12 @@ public:
     void OnInterrupted_607445684735AE18607BFCB27EC9535F(FName NotifyName);
     void OnNotifyBegin_607445684735AE18607BFCB27EC9535F(FName NotifyName);
     void OnNotifyEnd_607445684735AE18607BFCB27EC9535F(FName NotifyName);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "12e157cd4d3e194a82851420f75cb83e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
+    };
 };
 
 }}}   // namespace Game::Enemies::BarrageInfector

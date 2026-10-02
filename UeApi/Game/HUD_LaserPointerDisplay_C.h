@@ -30,8 +30,8 @@ public:
     using HUD_LaserPointerScanProgress_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerScanProgress_C;
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIconIn;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* FadeIconIn;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UTextBlock* Description;
     class UTextBlock* DistLabel;
     HUD_LaserPointerScanProgress_C* HUD_LaserPointerScanProgress;
@@ -56,17 +56,21 @@ public:
     UE_COSMETIC void Construct();
     void OnEquipped();
     void Update_Display(FHitResult Hit, float Distance, FLaserPointerData Data);
-    static constexpr const char* Update_Display__UeName = "Update Display";
     void OnUnEquipped();
     void StopScan();
     void StartScan();
     void OnBoscoChanged(class ABosco* Bosco);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Point_Of_Interest(class UTexture2D* Texture, FLinearColor Tint);
-    static constexpr const char* Point_Of_Interest__UeName = "Point Of Interest";
     void Finished_2FB3B1024A257294FCE363AC76E7AAF6();
     void UpdateCommands();
     void SetIconAndTint(class UTexture2D* Texture, FLinearColor Tint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Display__UeName = "Update Display";
+        static constexpr const char* Point_Of_Interest__UeName = "Point Of Interest";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer

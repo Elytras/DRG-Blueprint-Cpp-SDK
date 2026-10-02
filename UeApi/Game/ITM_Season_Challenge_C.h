@@ -26,17 +26,17 @@ class ITM_Season_Challenge_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_Challenge", "ITM_Season_Challenge_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnHover;
-    class UWidgetAnimation* OnHoverEndScreen;
-    class UWidgetAnimation* MissionSelection;
-    class UWidgetAnimation* ChallengeComplete;
-    class UWidgetAnimation* CountFinished;
-    class UWidgetAnimation* CountProgress;
-    class UWidgetAnimation* ShowReroll;
-    class UWidgetAnimation* UNUSED_OLD_OnHover;
-    class UWidgetAnimation* RerollAnim;
-    class UWidgetAnimation* NewChallengeIntro;
-    class UWidgetAnimation* ImageLoaded;
+    UE_READONLY class UWidgetAnimation* OnHover;
+    UE_READONLY class UWidgetAnimation* OnHoverEndScreen;
+    UE_READONLY class UWidgetAnimation* MissionSelection;
+    UE_READONLY class UWidgetAnimation* ChallengeComplete;
+    UE_READONLY class UWidgetAnimation* CountFinished;
+    UE_READONLY class UWidgetAnimation* CountProgress;
+    UE_READONLY class UWidgetAnimation* ShowReroll;
+    UE_READONLY class UWidgetAnimation* UNUSED_OLD_OnHover;
+    UE_READONLY class UWidgetAnimation* RerollAnim;
+    UE_READONLY class UWidgetAnimation* NewChallengeIntro;
+    UE_READONLY class UWidgetAnimation* ImageLoaded;
     class UButton* Button_Outer;
     class UButton* Button_Reroll;
     class UHorizontalBox* HBox_Gain;

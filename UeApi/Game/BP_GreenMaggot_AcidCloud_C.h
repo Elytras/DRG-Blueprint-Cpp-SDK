@@ -15,10 +15,14 @@ class BP_GreenMaggot_AcidCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cl
 public:
     UE_CLASS("/Game/Critters/Maggot/BP_GreenMaggot_AcidCloud", "BP_GreenMaggot_AcidCloud_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_GreenMaggot_AcidCloud_C;
-    static constexpr const char* UberGraphFrame_BP_GreenMaggot_AcidCloud_C__UeName = "UberGraphFrame";
     float InitialDamageDelay;
     void ExecuteUbergraph_BP_GreenMaggot_AcidCloud(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_GreenMaggot_AcidCloud_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

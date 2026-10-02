@@ -31,25 +31,29 @@ public:
     class USpinBox* MacAmountSel;
     class USpinBox* SpecAmountSel;
     TMulticastInlineDelegate<void()> On_close_requested;
-    static constexpr const char* On_close_requested__UeName = "On close requested";
     void ExecuteUbergraph_Cheat_SpawnEnemyAdvanced(int EntryPoint);
     void BndEvt__ListView_SpiderBasic_K2Node_ComponentBoundEvent_13_SimpleListItemEventDynamic__DelegateSignature(class UObject* Item);
     void BndEvt__ListView_SpiderAdv_K2Node_ComponentBoundEvent_12_SimpleListItemEventDynamic__DelegateSignature(class UObject* Item);
     void BndEvt__ListView_Specials_K2Node_ComponentBoundEvent_11_SimpleListItemEventDynamic__DelegateSignature(class UObject* Item);
     void BndEvt__ListView_Mactera_K2Node_ComponentBoundEvent_8_SimpleListItemEventDynamic__DelegateSignature(class UObject* Item);
     void Spawn_From_Listview(class UListView* Selected_descriptors, int amount);
-    static constexpr const char* Spawn_From_Listview__UeName = "Spawn From Listview";
     void BndEvt__Button_SpawnAll_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
     void Build_Mactera_List();
-    static constexpr const char* Build_Mactera_List__UeName = "Build Mactera List";
     void Build_Specials_List();
-    static constexpr const char* Build_Specials_List__UeName = "Build Specials List";
     void Build_Basic_Spider_list();
-    static constexpr const char* Build_Basic_Spider_list__UeName = "Build Basic Spider list";
     void Build_Adv_Spider_list();
-    static constexpr const char* Build_Adv_Spider_list__UeName = "Build Adv Spider list";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_close_requested__UeName = "On close requested";
+        static constexpr const char* Spawn_From_Listview__UeName = "Spawn From Listview";
+        static constexpr const char* Build_Mactera_List__UeName = "Build Mactera List";
+        static constexpr const char* Build_Specials_List__UeName = "Build Specials List";
+        static constexpr const char* Build_Basic_Spider_list__UeName = "Build Basic Spider list";
+        static constexpr const char* Build_Adv_Spider_list__UeName = "Build Adv Spider list";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

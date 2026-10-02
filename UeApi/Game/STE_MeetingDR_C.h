@@ -13,6 +13,11 @@ class STE_MeetingDR_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/STE_MeetingDR", "STE_MeetingDR_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

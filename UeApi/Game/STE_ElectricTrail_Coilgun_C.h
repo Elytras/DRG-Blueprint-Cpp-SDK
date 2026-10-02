@@ -13,6 +13,11 @@ class STE_ElectricTrail_Coilgun_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/STE_ElectricTrail_Coilgun", "STE_ElectricTrail_Coilgun_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

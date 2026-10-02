@@ -9,6 +9,10 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "DeveloperSettings.h"
 #include "Engine.h"
 
+struct FGameplayTag;
+struct FGameplayTagContainer;
+struct FGameplayTagQuery;
+
 class AActor;
 class UDataTable;
 class UObject;
@@ -65,6 +69,32 @@ struct FGameplayTag
 
     FGameplayTag() = default;
     FGameplayTag(FName TagName) {}
+
+    // UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTag (GameplayTags.h)
+    FString GetDebugStringFromGameplayTag() const;
+    // UBlueprintGameplayTagLibrary::GetTagName (GameplayTags.h)
+    FName GetTagName() const;
+    // UBlueprintGameplayTagLibrary::IsGameplayTagValid (GameplayTags.h)
+    bool IsGameplayTagValid() const;
+    // UBlueprintGameplayTagLibrary::MakeGameplayTagContainerFromTag (GameplayTags.h)
+    FGameplayTagContainer MakeGameplayTagContainerFromTag() const;
+    // UBlueprintGameplayTagLibrary::MakeLiteralGameplayTag (GameplayTags.h)
+    FGameplayTag MakeLiteralGameplayTag() const;
+    // UBlueprintGameplayTagLibrary::MatchesAnyTags (GameplayTags.h)
+    bool MatchesAnyTags(const FGameplayTagContainer& OtherContainer, bool bExactMatch) const;
+    // UBlueprintGameplayTagLibrary::MatchesTag (GameplayTags.h)
+    bool MatchesTag(FGameplayTag TagTwo, bool bExactMatch) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetDebugStringFromGameplayTag__UeForward = "UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTag";
+        static constexpr const char* GetTagName__UeForward = "UBlueprintGameplayTagLibrary::GetTagName";
+        static constexpr const char* IsGameplayTagValid__UeForward = "UBlueprintGameplayTagLibrary::IsGameplayTagValid";
+        static constexpr const char* MakeGameplayTagContainerFromTag__UeForward = "UBlueprintGameplayTagLibrary::MakeGameplayTagContainerFromTag";
+        static constexpr const char* MakeLiteralGameplayTag__UeForward = "UBlueprintGameplayTagLibrary::MakeLiteralGameplayTag";
+        static constexpr const char* MatchesAnyTags__UeForward = "UBlueprintGameplayTagLibrary::MatchesAnyTags";
+        static constexpr const char* MatchesTag__UeForward = "UBlueprintGameplayTagLibrary::MatchesTag";
+    };
 };
 
 struct FGameplayTagCategoryRemap
@@ -83,6 +113,35 @@ struct FGameplayTagContainer
 
     FGameplayTagContainer() = default;
     FGameplayTagContainer(TArray<FGameplayTag> GameplayTags, TArray<FGameplayTag> ParentTags) {}
+
+    // UBlueprintGameplayTagLibrary::BreakGameplayTagContainer (GameplayTags.h)
+    void BreakGameplayTagContainer(TArray<FGameplayTag>& GameplayTags) const;
+    // UBlueprintGameplayTagLibrary::DoesContainerMatchTagQuery (GameplayTags.h)
+    bool DoesContainerMatchTagQuery(const FGameplayTagQuery& tagQuery) const;
+    // UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTagContainer (GameplayTags.h)
+    FString GetDebugStringFromGameplayTagContainer() const;
+    // UBlueprintGameplayTagLibrary::GetNumGameplayTagsInContainer (GameplayTags.h)
+    int GetNumGameplayTagsInContainer() const;
+    // UBlueprintGameplayTagLibrary::HasAllTags (GameplayTags.h)
+    bool HasAllTags(const FGameplayTagContainer& OtherContainer, bool bExactMatch) const;
+    // UBlueprintGameplayTagLibrary::HasAnyTags (GameplayTags.h)
+    bool HasAnyTags(const FGameplayTagContainer& OtherContainer, bool bExactMatch) const;
+    // UBlueprintGameplayTagLibrary::HasTag (GameplayTags.h)
+    bool HasTag(FGameplayTag Tag, bool bExactMatch) const;
+    // UBlueprintGameplayTagLibrary::MakeLiteralGameplayTagContainer (GameplayTags.h)
+    FGameplayTagContainer MakeLiteralGameplayTagContainer() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakGameplayTagContainer__UeForward = "UBlueprintGameplayTagLibrary::BreakGameplayTagContainer";
+        static constexpr const char* DoesContainerMatchTagQuery__UeForward = "UBlueprintGameplayTagLibrary::DoesContainerMatchTagQuery";
+        static constexpr const char* GetDebugStringFromGameplayTagContainer__UeForward = "UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTagContainer";
+        static constexpr const char* GetNumGameplayTagsInContainer__UeForward = "UBlueprintGameplayTagLibrary::GetNumGameplayTagsInContainer";
+        static constexpr const char* HasAllTags__UeForward = "UBlueprintGameplayTagLibrary::HasAllTags";
+        static constexpr const char* HasAnyTags__UeForward = "UBlueprintGameplayTagLibrary::HasAnyTags";
+        static constexpr const char* HasTag__UeForward = "UBlueprintGameplayTagLibrary::HasTag";
+        static constexpr const char* MakeLiteralGameplayTagContainer__UeForward = "UBlueprintGameplayTagLibrary::MakeLiteralGameplayTagContainer";
+    };
 };
 
 struct FGameplayTagCreationWidgetHelper
@@ -103,6 +162,20 @@ struct FGameplayTagQuery
 
     FGameplayTagQuery() = default;
     FGameplayTagQuery(int TokenStreamVersion, TArray<FGameplayTag> TagDictionary, TArray<uint8> QueryTokenStream, FString UserDescription, FString AutoDescription) {}
+
+    // UActorFunctionLibrary::ActorMatchesTagQuery (FSD.h)
+    bool ActorMatchesTagQuery(class AActor* InActor) const;
+    // UBlueprintGameplayTagLibrary::IsTagQueryEmpty (GameplayTags.h)
+    bool IsTagQueryEmpty() const;
+    // UBlueprintGameplayTagLibrary::MakeGameplayTagQuery (GameplayTags.h)
+    FGameplayTagQuery MakeGameplayTagQuery() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ActorMatchesTagQuery__UeForward = "UActorFunctionLibrary::ActorMatchesTagQuery";
+        static constexpr const char* IsTagQueryEmpty__UeForward = "UBlueprintGameplayTagLibrary::IsTagQueryEmpty";
+        static constexpr const char* MakeGameplayTagQuery__UeForward = "UBlueprintGameplayTagLibrary::MakeGameplayTagQuery";
+    };
 };
 
 struct FGameplayTagRedirect

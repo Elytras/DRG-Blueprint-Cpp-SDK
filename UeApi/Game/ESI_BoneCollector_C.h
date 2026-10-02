@@ -17,9 +17,13 @@ class ESI_BoneCollector_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/Enemies/ESI_BoneCollector", "ESI_BoneCollector_C");
     class USkeletalMeshComponent* SK_BoneCollector;
-    static constexpr const char* SK_BoneCollector__UeScsNode = "97e9fe746866a14b932a890a4af13cb5";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_BoneCollector__UeScsNode = "97e9fe746866a14b932a890a4af13cb5";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::TunnelEvent::Enemies

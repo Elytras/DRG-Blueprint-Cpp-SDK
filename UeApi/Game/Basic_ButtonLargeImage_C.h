@@ -21,7 +21,7 @@ class Basic_ButtonLargeImage_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_ButtonLargeImage", "Basic_ButtonLargeImage_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UButton* Button_0;
     class UImage* Overlay;
     class USizeBox* Sizer;
@@ -32,7 +32,6 @@ public:
     float ButtonSize;
     class UTexture2D* Texture;
     bool One6_9_toggle;
-    static constexpr const char* One6_9_toggle__UeName = "16:9 toggle";
     void ExecuteUbergraph_Basic_ButtonLargeImage(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_6_OnButtonReleasedEvent__DelegateSignature();
@@ -42,6 +41,11 @@ public:
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void IsPressed(bool& IsPressed_0);
     void SetTexture(class UTexture2D* Texture_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* One6_9_toggle__UeName = "16:9 toggle";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

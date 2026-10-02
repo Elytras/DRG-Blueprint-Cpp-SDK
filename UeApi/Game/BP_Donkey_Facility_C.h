@@ -18,16 +18,20 @@ class BP_Donkey_Facility_C : public Game::GameElements::Donkey::BP_Donkey_C
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/BP_Donkey_Facility", "BP_Donkey_Facility_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_BP_Donkey_Facility_C;
-    static constexpr const char* UberGraphFrame_BP_Donkey_Facility_C__UeName = "UberGraphFrame";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "679bcb086850fd4681b305eb7a02d445";
     class UStaticMeshComponent* DataRack;
-    static constexpr const char* DataRack__UeScsNode = "ec3206ca164f58469234ff38f182280d";
     void ExecuteUbergraph_BP_Donkey_Facility(int EntryPoint);
     void OnResourceIncreased(class UCappedResource* Resource, float amount);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_BP_Donkey_Facility_C__UeName = "UberGraphFrame";
+        static constexpr const char* Niagara__UeScsNode = "679bcb086850fd4681b305eb7a02d445";
+        static constexpr const char* DataRack__UeScsNode = "ec3206ca164f58469234ff38f182280d";
+    };
 };
 
 }}}   // namespace Game::GameElements::Donkey

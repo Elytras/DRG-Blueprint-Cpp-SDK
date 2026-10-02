@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/HUD_Crossbow_AmmoCount", "HUD_Crossbow_AmmoCount_C");
     using HUD_Crossbow_AmmoCount_Row_C = Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimSwap;
+    UE_READONLY class UWidgetAnimation* AnimSwap;
     HUD_Crossbow_AmmoCount_Row_C* Arrow_Active;
     HUD_Crossbow_AmmoCount_Row_C* Arrow_Inactive;
     class ACrossbow* Crossbow;

@@ -27,10 +27,10 @@ public:
     UE_CLASS("/Game/UI/_GlobalAssets/ITM_BigButton", "ITM_BigButton_C");
     using UI_InputIcon_C = Game::UI::_GlobalAssets::UI_InputIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* HoverEnd;
-    class UWidgetAnimation* HoverStart;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* HoverEnd;
+    UE_READONLY class UWidgetAnimation* HoverStart;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     class UImage* BGglow;
     class UBorder* Border_129;
     class USizeBox* Button_SizeBox;
@@ -49,8 +49,8 @@ public:
     class UTextBlock* TextBlock_92;
     TMulticastInlineDelegate<void()> OnClicked;
     FText Text;
-    class USoundBase* AudioClick;
-    class USoundBase* AudioHover;
+    UE_READONLY class USoundBase* AudioClick;
+    UE_READONLY class USoundBase* AudioHover;
     float ButtonHeight;
     void ExecuteUbergraph_ITM_BigButton(int EntryPoint);
     void SetColor(FLinearColor Color);

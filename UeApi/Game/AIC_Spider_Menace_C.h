@@ -16,13 +16,17 @@ class AIC_Spider_Menace_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/RapidShooter/AIC_Spider_Menace", "AIC_Spider_Menace_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Menace_C;
-    static constexpr const char* UberGraphFrame_AIC_Spider_Menace_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Menace(int EntryPoint);
     void Recieve_BlackboardValueChanged(const FName& KeyName);
     void ReceivePossess(class APawn* PossessedPawn);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* UberGraphFrame_AIC_Spider_Menace_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::RapidShooter

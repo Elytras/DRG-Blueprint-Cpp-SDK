@@ -19,7 +19,6 @@ class WeaponDisplay_Drill_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponD
 public:
     UE_CLASS("/Game/WeaponsNTools/Drills/WeaponDisplay_Drill_AmmoCount", "WeaponDisplay_Drill_AmmoCount_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_Drill_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_Drill_AmmoCount_C__UeName = "UberGraphFrame";
     class UTextBlock* AmmoCount;
     class UProgressBar* AmmoProgressBar;
     class UImage* Image_87;
@@ -31,6 +30,11 @@ public:
     void SetTotalCount(int Value);
     void SetClipCount(int Value);
     void AdjustProgressBar();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_Drill_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Drills

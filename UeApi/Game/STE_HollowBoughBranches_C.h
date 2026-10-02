@@ -13,6 +13,11 @@ class STE_HollowBoughBranches_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/ReactiveTerrain/STE_HollowBoughBranches", "STE_HollowBoughBranches_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Landscape::ReactiveTerrain

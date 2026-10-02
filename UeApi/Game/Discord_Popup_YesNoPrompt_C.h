@@ -41,9 +41,7 @@ public:
     void ExecuteUbergraph_Discord_Popup_YesNoPrompt(int EntryPoint);
     void SetResources(const TArray<FCraftingCost>& Resources);
     void Add_Resource(class UResourceData* InResource, float InAmount);
-    static constexpr const char* Add_Resource__UeName = "Add Resource";
     void Clear_Resources();
-    static constexpr const char* Clear_Resources__UeName = "Clear Resources";
     void No();
     void Yes();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -51,6 +49,12 @@ public:
     void BndEvt__BTN_Yes_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void OnShow(const FText& Title, const FText& Message);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Resource__UeName = "Add Resource";
+        static constexpr const char* Clear_Resources__UeName = "Clear Resources";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

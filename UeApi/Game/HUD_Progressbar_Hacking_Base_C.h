@@ -24,10 +24,9 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_Progressbar_Hacking_Base", "HUD_Progressbar_Hacking_Base_C");
     using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_Progressbar_Hacking_Base_C;
-    static constexpr const char* UberGraphFrame_HUD_Progressbar_Hacking_Base_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* ArmorFullAnim;
-    class UWidgetAnimation* ArmorHitAnim;
-    class UWidgetAnimation* HitAnim;
+    UE_READONLY class UWidgetAnimation* ArmorFullAnim;
+    UE_READONLY class UWidgetAnimation* ArmorHitAnim;
+    UE_READONLY class UWidgetAnimation* HitAnim;
     ITM_BossFightContainer_C* ITM_BossFightContainer;
     class UProgressBar* ProgressBar_Main;
     class UEnemyTemperatureReplicatorComponent* TemperatureReplicator;
@@ -45,6 +44,11 @@ public:
     void OnFightRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     void OnRemoveBossFight();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HUD_Progressbar_Hacking_Base_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

@@ -14,12 +14,16 @@ class BP_FriendlyParasite_C : public AFriendlyParasite
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/BP_FriendlyParasite", "BP_FriendlyParasite_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     float MaxParasiteLifetime;
     void ExecuteUbergraph_BP_FriendlyParasite(int EntryPoint);
     void LifetimeExceded();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.StatusEffectsComponent StatusEffects";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

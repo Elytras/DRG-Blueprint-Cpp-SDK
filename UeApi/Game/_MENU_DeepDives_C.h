@@ -50,10 +50,8 @@ public:
     class UAudioComponent* AmbianceAudio;
     void ExecuteUbergraph__MENU_DeepDives(int EntryPoint);
     void First_Time_Shout();
-    static constexpr const char* First_Time_Shout__UeName = "First Time Shout";
     void OnClosed();
     void Update_Time();
-    static constexpr const char* Update_Time__UeName = "Update Time";
     void BndEvt__MenuTemplate_K2Node_ComponentBoundEvent_2_OnBackClicked__DelegateSignature();
     void BndEvt__MenuTemplate_K2Node_ComponentBoundEvent_1_OnClosedClicked__DelegateSignature();
     void BndEvt__TabPage_Start_K2Node_ComponentBoundEvent_0_OnJoinMission__DelegateSignature(bool EliteDeepDive);
@@ -64,6 +62,12 @@ public:
     UE_PURE FText ConvertDurationToText(FTimespan A);
     UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* First_Time_Shout__UeName = "First Time Shout";
+        static constexpr const char* Update_Time__UeName = "Update Time";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_DeepDives

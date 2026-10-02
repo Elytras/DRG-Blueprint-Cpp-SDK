@@ -19,18 +19,22 @@ class PRJ_Crye_SnowBall_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/PRJ_Crye_SnowBall", "PRJ_Crye_SnowBall_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "bb2b1f0014dc9e49a3e150208e62078e";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "5cec1b2d7b2c664d9ac52df42d95bf1e";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "028ca520dc8e994db813eac046e7b34a";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "444be9a852389745acd2bbb1b35aed8a";
     void ExecuteUbergraph_PRJ_Crye_SnowBall(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "bb2b1f0014dc9e49a3e150208e62078e";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "5cec1b2d7b2c664d9ac52df42d95bf1e";
+        static constexpr const char* StaticMesh__UeScsNode = "028ca520dc8e994db813eac046e7b34a";
+        static constexpr const char* ParticleSystem__UeScsNode = "444be9a852389745acd2bbb1b35aed8a";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

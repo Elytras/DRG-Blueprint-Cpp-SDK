@@ -36,12 +36,16 @@ public:
     void AddWidgetToBox(class UUserWidget* InWidget);
     void OnNoneClicked_Event();
     void Add_None();
-    static constexpr const char* Add_None__UeName = "Add None";
     void OnClicked_Event(ITM_LoadOut_PerksEquip_Item_C* Item);
     void Add_Perk(class UPerkAsset* Perk);
-    static constexpr const char* Add_Perk__UeName = "Add Perk";
     void Refresh(class UPlayerCharacterID* characterID, TEnum<EPerkUsageType> PerkType);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_None__UeName = "Add None";
+        static constexpr const char* Add_Perk__UeName = "Add Perk";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks

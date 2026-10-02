@@ -27,7 +27,7 @@ public:
     using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
     using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UButton* ClickButton;
     class UImage* HoveringImg;
     class USizeBox* ItemSizer;

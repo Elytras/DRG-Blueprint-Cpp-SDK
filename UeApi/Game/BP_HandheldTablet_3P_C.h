@@ -20,14 +20,18 @@ class BP_HandheldTablet_3P_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/HandheldTablet/BP_HandheldTablet_3P", "BP_HandheldTablet_3P_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "20baa1f084d24c40ab662f07c032359a";
     class USceneComponent* DefaultRoot;
-    static constexpr const char* DefaultRoot__UeScsNode = "ca13d25321e9644aa8cf17c91431ab17";
     class UMaterialInstanceDynamic* MonitorMaterial;
     void UserConstructionScript();
     void SetBackgroundColor(FLinearColor Value);
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "20baa1f084d24c40ab662f07c032359a";
+        static constexpr const char* DefaultRoot__UeScsNode = "ca13d25321e9644aa8cf17c91431ab17";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HandheldTablet

@@ -13,7 +13,11 @@ class E3trailer_CamShake_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Art/Cinematics/E3trailer2017/E3trailer_CamShake", "E3trailer_CamShake_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::Art::Cinematics::E3trailer2017

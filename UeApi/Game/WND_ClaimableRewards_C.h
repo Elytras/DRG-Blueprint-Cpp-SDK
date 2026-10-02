@@ -24,7 +24,7 @@ public:
     using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
     using UI_ClaimableRewards_View_C = Game::UI::ClaimableRewards::UI_ClaimableRewards_View_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBlurIn;
+    UE_READONLY class UWidgetAnimation* AnimBlurIn;
     Basic_ButtonScalable2_C* ContinueButton;
     UI_ClaimableRewards_View_C* RewardView;
     class UAudioComponent* AudioSpeak;

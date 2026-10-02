@@ -20,18 +20,22 @@ class WPN_RocketRifle_C : public AAmmoDrivenWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RocketRifle/WPN_RocketRifle", "WPN_RocketRifle_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget_Ammo;
-    static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
     class UProjectileLauncherComponent* projectileLauncher;
-    static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     void ExecuteUbergraph_WPN_RocketRifle(int EntryPoint);
     void CustomEvent1(class UItemUpgrade* Event);
     void ReceiveBeginPlay();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
+        static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::RocketRifle

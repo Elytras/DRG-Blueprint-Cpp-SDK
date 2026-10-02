@@ -13,6 +13,11 @@ class STE_HalloweenSkull_ColdRadiance_Far_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Halloween/STE_HalloweenSkull_ColdRadiance_Far", "STE_HalloweenSkull_ColdRadiance_Far_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween

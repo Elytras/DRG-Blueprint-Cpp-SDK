@@ -23,7 +23,7 @@ public:
     float Size;
     class AFSDPlayerState* PlayerState;
     TMulticastInlineDelegate<void(bool InTalking)> OnChanged;
-    bool CollapseWhenHidden;
+    UE_READONLY bool CollapseWhenHidden;
     void ExecuteUbergraph_UI_PlayerSpeaking(int EntryPoint);
     void SetPlayerState(class AFSDPlayerState* NewPlayerState);
     void OnTalkingChanged(bool IsTalking);

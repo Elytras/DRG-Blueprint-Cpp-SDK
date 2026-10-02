@@ -30,8 +30,7 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_ITM_MissionStepRow_C = Game::UI::Menu_MinersManual::Lore_ITM_MissionStepRow_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_PlagueMissionType_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_PlagueMissionType_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* HoverStep;
+    UE_READONLY class UWidgetAnimation* HoverStep;
     class UTextBlock* Big_Headline;
     class UImage* BigHeader_Header;
     class UImage* Image_59;
@@ -58,6 +57,11 @@ public:
     void RefreshContent();
     UE_COSMETIC void Construct();
     void StepHovered(FMissionStepDescription step, int StepIndex, int StepsInRow);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_PlagueMissionType_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

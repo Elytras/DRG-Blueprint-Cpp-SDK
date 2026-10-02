@@ -13,6 +13,11 @@ class STE_RegenerativeEnemies_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/RegenerativeEnemies/STE_RegenerativeEnemies", "STE_RegenerativeEnemies_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HealingStatusEffectItem HealingStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RegenerativeEnemies

@@ -20,21 +20,25 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/BP_ToxicCatalistExplosion", "BP_ToxicCatalistExplosion_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_ToxicCatalyst_DeathExplosion;
-    static constexpr const char* NS_ToxicCatalyst_DeathExplosion__UeScsNode = "a1b243e46ff6774293ce12dbe1ff58a2";
     class UDamageComponent* ExplosionDamage;
-    static constexpr const char* ExplosionDamage__UeScsNode = "e4b21483600f2140b49bb38b57557fd1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8963de5d7adb9949977d4369fa9b56c4";
     float BaseExplosionDamage;
     float ExtraDamagePerBullet;
     float BaseRadius;
     float ExtraRadiusPerBullet;
     FRuntimeFloatCurve Curve;
     class USkeletalMeshComponent* Victim_Mesh;
-    static constexpr const char* Victim_Mesh__UeName = "Victim Mesh";
     int StackAmmount;
     void ExecuteUbergraph_BP_ToxicCatalistExplosion(int EntryPoint);
     UE_MULTICAST void TriggerDeathExplosion(int NumBullets, float DamageDelay, class USkeletalMeshComponent* VictimMesh);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_ToxicCatalyst_DeathExplosion__UeScsNode = "a1b243e46ff6774293ce12dbe1ff58a2";
+        static constexpr const char* ExplosionDamage__UeScsNode = "e4b21483600f2140b49bb38b57557fd1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8963de5d7adb9949977d4369fa9b56c4";
+        static constexpr const char* Victim_Mesh__UeName = "Victim Mesh";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Pistol

@@ -17,13 +17,17 @@ class Tutorial_Hint_Sabotage_FollowTheCables_C : public UTutorialHintComponent
 public:
     UE_CLASS("/Game/Character/Tutorials/Tutorial_Hint_Sabotage_FollowTheCables", "Tutorial_Hint_Sabotage_FollowTheCables_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UClass* Target_Objective;
-    static constexpr const char* Target_Objective__UeName = "Target Objective";
+    UE_READONLY class UClass* Target_Objective;
     float DelayAfterFacilityWasSeenBeforeShowingHint;
     bool FoundPowerstation;
     void ExecuteUbergraph_Tutorial_Hint_Sabotage_FollowTheCables(int EntryPoint);
     void FacilityWasFound();
     void ReceiveOnInitialized();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Target_Objective__UeName = "Target Objective";
+    };
 };
 
 }}}   // namespace Game::Character::Tutorials

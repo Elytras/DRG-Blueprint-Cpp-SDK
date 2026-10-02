@@ -18,11 +18,15 @@ class PRW_Revolver_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Revolver/PRW_Revolver", "PRW_Revolver_C");
     class UStaticMeshComponent* Drum;
-    static constexpr const char* Drum__UeScsNode = "8ad3042a226c7e4fbf65010b090e1230";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "af65ab08ffef59469cf0273745d2c97f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f9d530c5b2cfc74bb4d440d3a7083a52";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Drum__UeScsNode = "8ad3042a226c7e4fbf65010b090e1230";
+        static constexpr const char* SkeletalMesh__UeScsNode = "af65ab08ffef59469cf0273745d2c97f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f9d530c5b2cfc74bb4d440d3a7083a52";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Revolver

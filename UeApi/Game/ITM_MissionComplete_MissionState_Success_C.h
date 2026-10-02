@@ -33,8 +33,8 @@ public:
     using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimReward;
-    class UWidgetAnimation* StateTextAppear;
+    UE_READONLY class UWidgetAnimation* AnimReward;
+    UE_READONLY class UWidgetAnimation* StateTextAppear;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UOverlay* CompletedOverlay;
     class UTextBlock* DATA_MissionState;
@@ -63,9 +63,9 @@ public:
     UI_RunningText_C* UI_RunningText;
     bool MissionFailed;
     FText StatusText;
-    float StartDelay;
+    UE_READONLY float StartDelay;
     TMulticastInlineDelegate<void()> OnAnnouncementFinished;
-    class USchematic* Reward;
+    UE_READONLY class USchematic* Reward;
     float RewardProgress;
     void ExecuteUbergraph_ITM_MissionComplete_MissionState_Success(int EntryPoint);
     void BndEvt__UI_RunningText_K2Node_ComponentBoundEvent_0_OnFinished__DelegateSignature();

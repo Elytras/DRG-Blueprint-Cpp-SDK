@@ -18,7 +18,6 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/BP_EventParticipant", "BP_EventParticipant_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8ad947e2e4d64e4da18b5b5993368f54";
     void ExecuteUbergraph_BP_EventParticipant(int EntryPoint);
     void OnEventTriggered();
     void OnEventProgress(float Progress);
@@ -27,6 +26,11 @@ public:
     bool SetupEvent(class AGameEvent* GameEvent);
     bool AdvanceOneObjective();
     bool AddEventProgress(float Progress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8ad947e2e4d64e4da18b5b5993368f54";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent

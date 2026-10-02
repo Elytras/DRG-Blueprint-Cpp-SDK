@@ -23,9 +23,9 @@ public:
     using ITM_SeasonReward_Owned_C = Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ClaimSpecialGlow;
-    class UWidgetAnimation* ClaimNormalGlow;
-    class UWidgetAnimation* NextLevel;
+    UE_READONLY class UWidgetAnimation* ClaimSpecialGlow;
+    UE_READONLY class UWidgetAnimation* ClaimNormalGlow;
+    UE_READONLY class UWidgetAnimation* NextLevel;
     class UImage* BG_Color;
     class UImage* I_VerticalLine;
     class UImage* Image_NormalCheckmark;

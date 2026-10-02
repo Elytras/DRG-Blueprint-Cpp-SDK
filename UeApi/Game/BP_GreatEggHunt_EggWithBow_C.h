@@ -24,26 +24,30 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_EggWithBow", "BP_GreatEggHunt_EggWithBow_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "c7e7da792f7aa34aa4e71535b0d6a5b8";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "388145609c085044ab59c3306a6c2580";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "ea7739741981244eb79ffcee3c67dba0";
     class USkeletalMeshComponent* SK_GreatEggHunt_EggBow;
-    static constexpr const char* SK_GreatEggHunt_EggBow__UeScsNode = "bf5c5f61abe30741b7b7cfef5e0bcb6d";
     TArray<FColor> Colors_Bows;
     TArray<class UTexture*> Textures_Eggs;
     FLinearColor UsedColor;
     float RotationSpeed;
     float SlapStrength;
     int RandomSeed;
-    static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
     FRandomStream RandomStream;
     void ExecuteUbergraph_BP_GreatEggHunt_EggWithBow(int EntryPoint);
     UE_MULTICAST void AddImpulseFromLocation(FVector_NetQuantize playerPos);
     void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
     void OnRep_RandomSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "c7e7da792f7aa34aa4e71535b0d6a5b8";
+        static constexpr const char* InstantUsable__UeScsNode = "388145609c085044ab59c3306a6c2580";
+        static constexpr const char* RotatingMovement__UeScsNode = "ea7739741981244eb79ffcee3c67dba0";
+        static constexpr const char* SK_GreatEggHunt_EggBow__UeScsNode = "bf5c5f61abe30741b7b7cfef5e0bcb6d";
+        static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

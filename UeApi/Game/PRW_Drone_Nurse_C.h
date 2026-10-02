@@ -19,13 +19,17 @@ class PRW_Drone_Nurse_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Drone/PRW_Drone_Nurse", "PRW_Drone_Nurse_C");
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "c9f884cd65a0044f859d64fde348229d";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "f2d57e179d08b44e9811c94bf7960d06";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c242c1a1cf5d9f43a1f93685a302b125";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "dd1bcd1bfa515c4fba8b20bae5b8eade";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Box__UeScsNode = "c9f884cd65a0044f859d64fde348229d";
+        static constexpr const char* StaticMesh__UeScsNode = "f2d57e179d08b44e9811c94bf7960d06";
+        static constexpr const char* SkeletalMesh__UeScsNode = "c242c1a1cf5d9f43a1f93685a302b125";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "dd1bcd1bfa515c4fba8b20bae5b8eade";
+    };
 };
 
 }}}   // namespace Game::GameElements::Drone

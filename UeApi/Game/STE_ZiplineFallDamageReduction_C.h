@@ -13,6 +13,11 @@ class STE_ZiplineFallDamageReduction_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/STE_ZiplineFallDamageReduction", "STE_ZiplineFallDamageReduction_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

@@ -13,6 +13,11 @@ class CP_TradeTerminal_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_TradeTerminal", "CP_TradeTerminal_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_1;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_1";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

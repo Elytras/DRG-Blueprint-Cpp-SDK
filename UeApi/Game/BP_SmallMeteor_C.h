@@ -31,53 +31,32 @@ class BP_SmallMeteor_C : public APlagueMeteor
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/MeteorShower/BP_SmallMeteor", "BP_SmallMeteor_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ImpactDamgage;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent MeteorMesh;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ImpactCraterCarver1;
-    static constexpr const char* ImpactCraterCarver1__UeScsNode = "2baf9e72dcb6754690c1bcb845ee06b7";
     class USceneComponent* PlagueheartLocation;
-    static constexpr const char* PlagueheartLocation__UeScsNode = "a70d80a955d22843a7aba2367a9a9bf4";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "7e4ca0688f48cd4babb8a2ad4c88edae";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "41c8532865e0954dba286f0abc9a614a";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "fcb3473b5944df4bb676a2595eea6d3d";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "4be70551eb74b943b8383eee334ee26d";
     class UDropToTerrainComponent* DropToTerrain;
-    static constexpr const char* DropToTerrain__UeScsNode = "fa3849ff6cccd44eb8f7e157c2181488";
     class USceneComponent* RoofBreakChecker;
-    static constexpr const char* RoofBreakChecker__UeScsNode = "b5346f26dd52db46a1a1db78727f16bc";
     class UPointLightComponent* Light_Meteor_Area_Glow;
-    static constexpr const char* Light_Meteor_Area_Glow__UeScsNode = "686b7e9d4a3e604aaf949292487d06fd";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "120934cb4c7c8c44b0f512c06f4f7044";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e290b463fb1321479d4cd3b9fac32e86";
     class UStaticMeshComponent* ImpactCraterCarver;
-    static constexpr const char* ImpactCraterCarver__UeScsNode = "40d73fe8426d3745b8eff4ee6d39a5b8";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "ba5e2bf05fb95e4e9c2ce6c2dfa2891e";
     class USpotLightComponent* SpotLight2;
-    static constexpr const char* SpotLight2__UeScsNode = "cc0cfb7b7ebdab4bb242aec47d72af68";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "83407e547196374cb83fb119ecfa7108";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "f42311f80c2e9d4a983aede3a505e0f8";
     class UAudioComponent* MeteorRumble_Cue;
-    static constexpr const char* MeteorRumble_Cue__UeScsNode = "e36cc31575732a46ad1ab9f800d7df10";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "f925c795317ad04da217c174b8e0960b";
     class UAutoCarverComponent* AutoCarver;
-    static constexpr const char* AutoCarver__UeScsNode = "93e6e6296c81b342a3a75cb066a3e890";
     int Stage;
     class UAudioComponent* RumbleSound;
     class UParticleSystemComponent* EarthquakeParticles;
     class UNiagaraComponent* EarthquakeParticles2;
     float PlagueHeartChance;
     class UAudioComponent* Micro_Meteor_Sound;
-    static constexpr const char* Micro_Meteor_Sound__UeName = "Micro Meteor Sound";
     FTimerHandle BreakRoofTimer;
     int OldStage;
     class UAudioComponent* SmallMeteorIdle;
@@ -95,6 +74,31 @@ public:
     void BndEvt__BP_SmallMeteor_SimpleHealth_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void Impacted();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ImpactDamgage;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent MeteorMesh;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* ImpactCraterCarver1__UeScsNode = "2baf9e72dcb6754690c1bcb845ee06b7";
+        static constexpr const char* PlagueheartLocation__UeScsNode = "a70d80a955d22843a7aba2367a9a9bf4";
+        static constexpr const char* PathfinderCollision__UeScsNode = "7e4ca0688f48cd4babb8a2ad4c88edae";
+        static constexpr const char* TerrainDetect2__UeScsNode = "41c8532865e0954dba286f0abc9a614a";
+        static constexpr const char* TerrainDetect1__UeScsNode = "fcb3473b5944df4bb676a2595eea6d3d";
+        static constexpr const char* TerrainDetect__UeScsNode = "4be70551eb74b943b8383eee334ee26d";
+        static constexpr const char* DropToTerrain__UeScsNode = "fa3849ff6cccd44eb8f7e157c2181488";
+        static constexpr const char* RoofBreakChecker__UeScsNode = "b5346f26dd52db46a1a1db78727f16bc";
+        static constexpr const char* Light_Meteor_Area_Glow__UeScsNode = "686b7e9d4a3e604aaf949292487d06fd";
+        static constexpr const char* outline__UeScsNode = "120934cb4c7c8c44b0f512c06f4f7044";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e290b463fb1321479d4cd3b9fac32e86";
+        static constexpr const char* ImpactCraterCarver__UeScsNode = "40d73fe8426d3745b8eff4ee6d39a5b8";
+        static constexpr const char* SpotLight__UeScsNode = "ba5e2bf05fb95e4e9c2ce6c2dfa2891e";
+        static constexpr const char* SpotLight2__UeScsNode = "cc0cfb7b7ebdab4bb242aec47d72af68";
+        static constexpr const char* SpotLight1__UeScsNode = "83407e547196374cb83fb119ecfa7108";
+        static constexpr const char* Scene__UeScsNode = "f42311f80c2e9d4a983aede3a505e0f8";
+        static constexpr const char* MeteorRumble_Cue__UeScsNode = "e36cc31575732a46ad1ab9f800d7df10";
+        static constexpr const char* SimpleHealth__UeScsNode = "f925c795317ad04da217c174b8e0960b";
+        static constexpr const char* AutoCarver__UeScsNode = "93e6e6296c81b342a3a75cb066a3e890";
+        static constexpr const char* Micro_Meteor_Sound__UeName = "Micro Meteor Sound";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower

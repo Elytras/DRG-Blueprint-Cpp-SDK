@@ -39,10 +39,9 @@ public:
     TMulticastInlineDelegate<void(UI_Forge_Schematic_C* Item)> OnItemClicked;
     TArray<class USchematic*> Schematics;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     FTimerHandle NextTimer;
     FText CurrentCategory;
-    bool ShowHistory;
+    UE_READONLY bool ShowHistory;
     void ExecuteUbergraph_UI_Forge_SchematicList(int EntryPoint);
     UE_COSMETIC void Construct();
     void Clear();
@@ -54,6 +53,11 @@ public:
     void TryAddSeparator(class USchematic* InNextSchematic);
     void PopulateList();
     void AddSeparator(FText Text);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

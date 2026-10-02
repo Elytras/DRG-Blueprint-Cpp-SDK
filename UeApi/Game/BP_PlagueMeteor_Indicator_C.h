@@ -16,14 +16,18 @@ class BP_PlagueMeteor_Indicator_C : public AImpactIndicator
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueMeteor_Indicator", "BP_PlagueMeteor_Indicator_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent InnerScaler;/Script/Engine.SceneComponent OuterScaler;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* InnerIndicator1;
-    static constexpr const char* InnerIndicator1__UeScsNode = "5ad876d189554a40a52681f7e8661405";
     class UStaticMeshComponent* OuterIndicator;
-    static constexpr const char* OuterIndicator__UeScsNode = "4196536b78ff014489428c9c9cca5d40";
     void ExecuteUbergraph_BP_PlagueMeteor_Indicator(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent InnerScaler;/Script/Engine.SceneComponent OuterScaler;/Script/Engine.SceneComponent Root";
+        static constexpr const char* InnerIndicator1__UeScsNode = "5ad876d189554a40a52681f7e8661405";
+        static constexpr const char* OuterIndicator__UeScsNode = "4196536b78ff014489428c9c9cca5d40";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor

@@ -16,7 +16,11 @@ class BP_StartMenu_GameMode_C : public AGameModeBase
 public:
     UE_CLASS("/Game/Game/StartMenu/BP_StartMenu_GameMode", "BP_StartMenu_GameMode_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9cbe082b90fd4c459b59e034d8f1416e";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9cbe082b90fd4c459b59e034d8f1416e";
+    };
 };
 
 }}}   // namespace Game::Game::StartMenu

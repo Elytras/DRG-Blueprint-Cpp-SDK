@@ -29,20 +29,13 @@ class BP_CoreCorruption_Crystal_C : public ACoreCorruptionCrystal
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/BP_CoreCorruption_Crystal", "BP_CoreCorruption_Crystal_C");
     using EWC_CoreCorruption_C = Game::GameElements::Missions::Warnings::CoreCorruption::EWC_CoreCorruption_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AliveSound;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.CoreCorruptionPillarSpawnerComponent SpawnerComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent ShieldCollision;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/Engine.SphereComponent KnockbackTriggerComponent;/Script/Engine.StaticMeshComponent ShieldMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_CoreCorruption_Trail;
-    static constexpr const char* NS_CoreCorruption_Trail__UeScsNode = "c17538fe17a03748ac17c640d649fbd4";
     class UStatusEffectsComponent* StatusEffects;
-    static constexpr const char* StatusEffects__UeScsNode = "577e6b54ba79774689345a7c2b67b767";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "262f34667224934482c65ab6469bafa8";
     class UWeakpointGlowComponent* WeakpointGlow_Crystal;
-    static constexpr const char* WeakpointGlow_Crystal__UeScsNode = "5cfbbf5cfd570b4781f29fa0899b832a";
     class UWeakpointGlowComponent* WeakpointGlow_Body;
-    static constexpr const char* WeakpointGlow_Body__UeScsNode = "7d3350e10aaa82418d43f91de84d85a1";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "e7714b833abd674289114a27f63cfd95";
     float ShieldFade_Value_3459267E4E749D90A2DDB6AC33ECEC45;
     TEnum<ETimelineDirection> ShieldFade__Direction_3459267E4E749D90A2DDB6AC33ECEC45;
     class UTimelineComponent* ShieldFade;
@@ -69,6 +62,17 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AliveSound;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.CoreCorruptionPillarSpawnerComponent SpawnerComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.KnockbackDamageBonus KnockbackDamageComponent:KnockbackDamageBonus_0;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent ShieldCollision;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/Engine.SphereComponent KnockbackTriggerComponent;/Script/Engine.StaticMeshComponent ShieldMesh";
+        static constexpr const char* NS_CoreCorruption_Trail__UeScsNode = "c17538fe17a03748ac17c640d649fbd4";
+        static constexpr const char* StatusEffects__UeScsNode = "577e6b54ba79774689345a7c2b67b767";
+        static constexpr const char* outline__UeScsNode = "262f34667224934482c65ab6469bafa8";
+        static constexpr const char* WeakpointGlow_Crystal__UeScsNode = "5cfbbf5cfd570b4781f29fa0899b832a";
+        static constexpr const char* WeakpointGlow_Body__UeScsNode = "7d3350e10aaa82418d43f91de84d85a1";
+        static constexpr const char* Niagara__UeScsNode = "e7714b833abd674289114a27f63cfd95";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption

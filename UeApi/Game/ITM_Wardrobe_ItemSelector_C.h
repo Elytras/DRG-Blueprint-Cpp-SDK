@@ -28,7 +28,7 @@ public:
     using ITM_Wardrobe_ItemSelector_Entry_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_Entry_C;
     using ITM_Wardrobe_ItemSlot_Base_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimOpen;
+    UE_READONLY class UWidgetAnimation* AnimOpen;
     class UVerticalBox* Content_Box;
     ITM_MenuBackground_C* ITM_MenuBackground;
     ITM_VanityTag_FilterButton_C* ITM_VanityTag_FilterButton;

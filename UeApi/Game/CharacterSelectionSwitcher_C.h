@@ -39,19 +39,12 @@ public:
     using EndScreenSetups_C = Game::Character::CharacterSelection::EndScreenSetups_C;
     FPointerToUberGraphFrame UberGraphFrame;
     EndScreenSetups_C* EndScreenSetups;
-    static constexpr const char* EndScreenSetups__UeScsNode = "dd08291d8e70184d889a3e716774c646";
     EndScreenActorController_C* EndScreenActorController3;
-    static constexpr const char* EndScreenActorController3__UeScsNode = "41e3cda6e55bfc45ba82d20abfb5a337";
     EndScreenActorController_C* EndScreenActorController2;
-    static constexpr const char* EndScreenActorController2__UeScsNode = "c8724951d2e2d84a8c302b7d62eed656";
     EndScreenActorController_C* EndScreenActorController1;
-    static constexpr const char* EndScreenActorController1__UeScsNode = "6c297e5f8c1a4149a8da9981caa6d9d5";
     EndScreenActorController_C* EndScreenActorController0;
-    static constexpr const char* EndScreenActorController0__UeScsNode = "657d8c0988aeb240a6dc7cca6316c8b3";
     class USkeletalMeshComponent* Dwarf_Rig;
-    static constexpr const char* Dwarf_Rig__UeScsNode = "994df922f7f4e047a1841c12e923045f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "b1a79a75b747f14392053cc557fa3f6e";
     class UClass* PlayerCharacterClass;
     class APlayerCharacter* Character;
     class ACameraActor* Camera;
@@ -148,7 +141,6 @@ public:
     void SelectCameraLocation(TEnum<ECharselectionCameraLocation> Selection);
     void SetPreviewItem(class UItemID* Item);
     void Add_Yaw_World_Rotation(float Yaw);
-    static constexpr const char* Add_Yaw_World_Rotation__UeName = "Add Yaw World Rotation";
     void DestroyPreviousSceneActors();
     void FindEndscreenActorPos(int num_players, int Index_0, class AActor*& NewParam);
     void LoadVictoryPoseStuff(class UVictoryPose* VicPose);
@@ -157,6 +149,18 @@ public:
     void CleanActors();
     UE_PURE class APlayerCharacter* GetActiveCharacter() const;
     UE_PURE class AActor* GetViewerActor() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* EndScreenSetups__UeScsNode = "dd08291d8e70184d889a3e716774c646";
+        static constexpr const char* EndScreenActorController3__UeScsNode = "41e3cda6e55bfc45ba82d20abfb5a337";
+        static constexpr const char* EndScreenActorController2__UeScsNode = "c8724951d2e2d84a8c302b7d62eed656";
+        static constexpr const char* EndScreenActorController1__UeScsNode = "6c297e5f8c1a4149a8da9981caa6d9d5";
+        static constexpr const char* EndScreenActorController0__UeScsNode = "657d8c0988aeb240a6dc7cca6316c8b3";
+        static constexpr const char* Dwarf_Rig__UeScsNode = "994df922f7f4e047a1841c12e923045f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "b1a79a75b747f14392053cc557fa3f6e";
+        static constexpr const char* Add_Yaw_World_Rotation__UeName = "Add Yaw World Rotation";
+    };
 };
 
 }}}   // namespace Game::Character::CharacterSelection

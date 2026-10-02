@@ -36,12 +36,16 @@ public:
     class UCommunityGoalFaction* CurrentFaction;
     int Cost;
     TMulticastInlineDelegate<void()> CheckState;
-    TArray<class UCommunityGoalFaction*> FactionArray;
+    UE_READONLY TArray<class UCommunityGoalFaction*> FactionArray;
     void ExecuteUbergraph_ITM_ResetFaction_ConsoleScreenV1(int EntryPoint);
     void Set_Faction(class UCommunityGoalFaction* Faction);
-    static constexpr const char* Set_Faction__UeName = "Set Faction";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE int CurrentFactionID();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Faction__UeName = "Set Faction";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

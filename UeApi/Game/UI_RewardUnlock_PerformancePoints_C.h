@@ -29,9 +29,9 @@ public:
     using ITM_SeasonProgressBar_C = Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* MakeVisibleTest;
-    class UWidgetAnimation* NewRewardsSlam;
-    class UWidgetAnimation* CelebrateAnim;
+    UE_READONLY class UWidgetAnimation* MakeVisibleTest;
+    UE_READONLY class UWidgetAnimation* NewRewardsSlam;
+    UE_READONLY class UWidgetAnimation* CelebrateAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_1;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_2;

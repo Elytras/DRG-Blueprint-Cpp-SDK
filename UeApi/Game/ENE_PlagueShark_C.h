@@ -27,34 +27,21 @@ class ENE_PlagueShark_C : public ASharkEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShark/ENE_PlagueShark", "ENE_PlagueShark_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "f91e87d19dd8464b8d1c90682d7bd18e";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "964cc26405ff8342aa236cfdbd38ee05";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "0952ac8e91cc7043a5fe69de10a7392e";
     class UCapsuleComponent* ProjectileCollision;
-    static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
     class UAudioComponent* VulnerableSound;
-    static constexpr const char* VulnerableSound__UeScsNode = "53623f6a6a9206479997c9b61d93f60c";
     class UParticleSystemComponent* VulnerableParticles;
-    static constexpr const char* VulnerableParticles__UeScsNode = "6e7b21adae061a44aec196c0f8dc6613";
     class UAudioComponent* AttackSound;
-    static constexpr const char* AttackSound__UeScsNode = "87b8d707113c3b4b8d9ee579023bda2c";
     class UAudioComponent* DiveSound;
-    static constexpr const char* DiveSound__UeScsNode = "9a2862b23bf2844ca47438076e8178f9";
     class UAudioComponent* CirclingSound;
-    static constexpr const char* CirclingSound__UeScsNode = "6821a5f0ae44514a9b284a392afdf5ec";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "0904c5337a1b354093581a6d930500ea";
     TMulticastInlineDelegate<void()> OnDamagedTarget;
     bool DiedbyCritical;
-    static constexpr const char* DiedbyCritical__Replicated = "OnRep_DiedbyCritical:";
     TArray<class UMaterialInstanceDynamic*> DynamicMaterials;
     class UParticleSystemComponent* Dirt_particles;
-    static constexpr const char* Dirt_particles__UeName = "Dirt particles";
     class UClass* AcidCloudClass;
     void ExecuteUbergraph_ENE_PlagueShark(int EntryPoint);
     void OnJumpEvent();
@@ -71,6 +58,23 @@ public:
     void SoundHandling(bool IdleSound, bool CirclingSound_0, bool AttackSound_0, bool DiveSound_0, bool Vulnerable);
     void FadeOutIfPlaying(class UAudioComponent* Sound);
     void ToggleInAir(bool IsInAir);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PushStatusEffectDamageBonus BumpDamage:PushStatusEffectDamageBonus_0;/Script/FSD.PushStatusEffectDamageBonus Damage:PushStatusEffectDamageBonus_0;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Trail__UeScsNode = "f91e87d19dd8464b8d1c90682d7bd18e";
+        static constexpr const char* ProjectileAttack__UeScsNode = "964cc26405ff8342aa236cfdbd38ee05";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "0952ac8e91cc7043a5fe69de10a7392e";
+        static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
+        static constexpr const char* VulnerableSound__UeScsNode = "53623f6a6a9206479997c9b61d93f60c";
+        static constexpr const char* VulnerableParticles__UeScsNode = "6e7b21adae061a44aec196c0f8dc6613";
+        static constexpr const char* AttackSound__UeScsNode = "87b8d707113c3b4b8d9ee579023bda2c";
+        static constexpr const char* DiveSound__UeScsNode = "9a2862b23bf2844ca47438076e8178f9";
+        static constexpr const char* CirclingSound__UeScsNode = "6821a5f0ae44514a9b284a392afdf5ec";
+        static constexpr const char* outline__UeScsNode = "0904c5337a1b354093581a6d930500ea";
+        static constexpr const char* DiedbyCritical__Replicated = "OnRep_DiedbyCritical:";
+        static constexpr const char* Dirt_particles__UeName = "Dirt particles";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShark

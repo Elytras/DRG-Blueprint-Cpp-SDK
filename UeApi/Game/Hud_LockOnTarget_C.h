@@ -21,8 +21,8 @@ class Hud_LockOnTarget_C : public ULockOnTrackingWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/Hud_LockOnTarget", "Hud_LockOnTarget_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* SavedAmmoOutro;
-    class UWidgetAnimation* TargetLocked;
+    UE_READONLY class UWidgetAnimation* SavedAmmoOutro;
+    UE_READONLY class UWidgetAnimation* TargetLocked;
     class UImage* Arrow;
     class UImage* CrossHair_Base;
     class UImage* CrossHair_Glow;

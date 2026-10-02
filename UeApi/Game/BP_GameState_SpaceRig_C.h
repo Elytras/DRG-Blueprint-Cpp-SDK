@@ -16,20 +16,14 @@ class BP_GameState_SpaceRig_C : public Game::Game::BP_GameState_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_GameState_SpaceRig", "BP_GameState_SpaceRig_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AttackerManagerComponent AttackerManager;/Script/FSD.DifficultyManager DifficultyManager;/Script/FSD.GemProximityTracker GemProximityTracker;/Script/FSD.PlayerProximityTracker ProximityTracker;/Script/FSD.SeasonReplicatorComponent SeasonReplicator;/Script/FSD.ShowroomManager ShowroomManager;/Script/FSD.SoundMixManagerComponent SoundMixManager;/Script/FSD.SpawnEffectsComponent SpawnEffects;/Script/FSD.TeamResourcesComponent TeamResources";
     FPointerToUberGraphFrame UberGraphFrame_BP_GameState_SpaceRig_C;
-    static constexpr const char* UberGraphFrame_BP_GameState_SpaceRig_C__UeName = "UberGraphFrame";
     TMulticastInlineDelegate<void(class UGeneratedMission* mission)> OnMisionSelected;
     float MissionCountdown;
-    static constexpr const char* MissionCountdown__Replicated = "OnRep_MissionCountdown:";
     bool MissionCountdownActive;
-    static constexpr const char* MissionCountdownActive__Replicated = "OnRep_MissionTimerActive:";
     TMulticastInlineDelegate<void(bool IsActive)> OnMissionCountdownChanged;
     bool HostReady;
     bool HostCountdownActive;
-    static constexpr const char* HostCountdownActive__Replicated = "OnRep_HostCountdownActive:";
     float HostCountdown;
-    static constexpr const char* HostCountdown__Replicated = "OnRep_HostCountdown:";
     TMulticastInlineDelegate<void(bool IsActive)> OnHostCountdownChanged;
     TMulticastInlineDelegate<void()> OnCountdownCompleted;
     TMulticastInlineDelegate<void(float newTime)> OnHostTimerChanged;
@@ -61,6 +55,16 @@ public:
     void OnRep_HostCountdown();
     void HandleActiveCountdown();
     UE_PURE bool AreDeepDiveRequirementsMet();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AttackerManagerComponent AttackerManager;/Script/FSD.DifficultyManager DifficultyManager;/Script/FSD.GemProximityTracker GemProximityTracker;/Script/FSD.PlayerProximityTracker ProximityTracker;/Script/FSD.SeasonReplicatorComponent SeasonReplicator;/Script/FSD.ShowroomManager ShowroomManager;/Script/FSD.SoundMixManagerComponent SoundMixManager;/Script/FSD.SpawnEffectsComponent SpawnEffects;/Script/FSD.TeamResourcesComponent TeamResources";
+        static constexpr const char* UberGraphFrame_BP_GameState_SpaceRig_C__UeName = "UberGraphFrame";
+        static constexpr const char* MissionCountdown__Replicated = "OnRep_MissionCountdown:";
+        static constexpr const char* MissionCountdownActive__Replicated = "OnRep_MissionTimerActive:";
+        static constexpr const char* HostCountdownActive__Replicated = "OnRep_HostCountdownActive:";
+        static constexpr const char* HostCountdown__Replicated = "OnRep_HostCountdown:";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

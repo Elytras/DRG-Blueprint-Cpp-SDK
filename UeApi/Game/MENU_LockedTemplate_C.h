@@ -29,7 +29,7 @@ public:
     using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimLock;
+    UE_READONLY class UWidgetAnimation* AnimLock;
     class UNamedSlot* BodySlot;
     class URichTextBlock* BodyText;
     Basic_ButtonScalable2_C* CloseButton;

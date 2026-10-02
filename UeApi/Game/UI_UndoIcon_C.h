@@ -20,14 +20,14 @@ class UI_UndoIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_UndoIcon", "UI_UndoIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
-    class UWidgetAnimation* AnimActivate;
+    UE_READONLY class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimActivate;
     class UBorder* Background;
     class UBorder* FrameBorder;
     class UBorder* SelectionBorder;
     class UOverlay* ShuffleOverlay;
     class USizeBox* Sizer;
-    int Dimension;
+    UE_READONLY int Dimension;
     void ExecuteUbergraph_UI_UndoIcon(int EntryPoint);
     void SetHovered(bool IsHovered_0);
     void PlayActivateAnimation();

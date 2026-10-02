@@ -19,47 +19,26 @@ class BP_SwarmerTunnels_variant_6_C : public Game::LevelElements::RoomObjects::H
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SwarmerTunnel/BP_SwarmerTunnels_variant_6", "BP_SwarmerTunnels_variant_6_C");
     class ULevelGenerationCarverComponent* t3_0;
-    static constexpr const char* t3_0__UeScsNode = "d3e06a2bdac2144abbf51f386546f84c";
     class ULevelGenerationCarverComponent* e3_0;
-    static constexpr const char* e3_0__UeScsNode = "3b7f0cf4ed4cea44b7270c7d1c4731d4";
     class ULevelGenerationCarverComponent* t9_0;
-    static constexpr const char* t9_0__UeScsNode = "fb657d078d23474fb887b33f8e339eea";
     class ULevelGenerationCarverComponent* e9_0;
-    static constexpr const char* e9_0__UeScsNode = "ef9dd41db01bb042b705d6b80badf302";
     class ULevelGenerationCarverComponent* t6_0;
-    static constexpr const char* t6_0__UeScsNode = "686653cf8ca35343abc27e9f079b3ee1";
     class ULevelGenerationCarverComponent* e6_0;
-    static constexpr const char* e6_0__UeScsNode = "413cc15347dd1d44b25a370a4f7e815a";
     class ULevelGenerationCarverComponent* t4_0;
-    static constexpr const char* t4_0__UeScsNode = "ad7001ac3527e94caae9635010db51e5";
     class ULevelGenerationCarverComponent* e4_0;
-    static constexpr const char* e4_0__UeScsNode = "07c0939373e96244be5ce4e749d7b554";
     class ULevelGenerationCarverComponent* t5_0;
-    static constexpr const char* t5_0__UeScsNode = "3c9332ad6a8aa640959ba2b409180280";
     class ULevelGenerationCarverComponent* e5_0;
-    static constexpr const char* e5_0__UeScsNode = "08e57fcaf07a9641bfa8ca0ff2d2ae1a";
     class USceneComponent* tunnels;
-    static constexpr const char* tunnels__UeScsNode = "3b1a6277f83fd1408807c9c7d37c7464";
     class UStaticMeshComponent* StaticMesh17_0;
-    static constexpr const char* StaticMesh17_0__UeScsNode = "016f756c10fd4f4c86a5bcc67fad0780";
     class UStaticMeshComponent* StaticMesh16_0;
-    static constexpr const char* StaticMesh16_0__UeScsNode = "1e59dcaa707d574cba8f032a793b7d31";
     class UStaticMeshComponent* StaticMesh15_0;
-    static constexpr const char* StaticMesh15_0__UeScsNode = "fc30075799bffc4ab6a8e4c9a1e52d7b";
     class UStaticMeshComponent* StaticMesh13_0;
-    static constexpr const char* StaticMesh13_0__UeScsNode = "011dbdffe522c947a74ea4bf328c11e6";
     class UStaticMeshComponent* StaticMesh11_0;
-    static constexpr const char* StaticMesh11_0__UeScsNode = "70d514afbfcb3544825992fc76974e1c";
     class UStaticMeshComponent* StaticMesh10_0;
-    static constexpr const char* StaticMesh10_0__UeScsNode = "caa6388413e6834db859b1dce1542719";
     class UStaticMeshComponent* StaticMesh8_0;
-    static constexpr const char* StaticMesh8_0__UeScsNode = "caed950f95646e4fb22bf90a1db8f37d";
     class UStaticMeshComponent* StaticMesh6_0;
-    static constexpr const char* StaticMesh6_0__UeScsNode = "26ff1c1c8a3c12459c17bb4ad92b9a7a";
     class UStaticMeshComponent* StaticMesh4_0;
-    static constexpr const char* StaticMesh4_0__UeScsNode = "f3523791e9e0c14ebe9a0f5599a9168d";
     class UStaticMeshComponent* StaticMesh3_0;
-    static constexpr const char* StaticMesh3_0__UeScsNode = "00db3af51210ad43a9203faa319054f7";
     class UEnemyDescriptor* EnemyToSpawn_0;
     bool CanSpawn_0;
     float ChainReactionDistance_0;
@@ -71,6 +50,31 @@ public:
     float SpawnProbability_0;
     float MinSpawnDistanceFromDropPod_0;
     TArray<class USceneComponent*> ExitCarvers_0;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* t3_0__UeScsNode = "d3e06a2bdac2144abbf51f386546f84c";
+        static constexpr const char* e3_0__UeScsNode = "3b7f0cf4ed4cea44b7270c7d1c4731d4";
+        static constexpr const char* t9_0__UeScsNode = "fb657d078d23474fb887b33f8e339eea";
+        static constexpr const char* e9_0__UeScsNode = "ef9dd41db01bb042b705d6b80badf302";
+        static constexpr const char* t6_0__UeScsNode = "686653cf8ca35343abc27e9f079b3ee1";
+        static constexpr const char* e6_0__UeScsNode = "413cc15347dd1d44b25a370a4f7e815a";
+        static constexpr const char* t4_0__UeScsNode = "ad7001ac3527e94caae9635010db51e5";
+        static constexpr const char* e4_0__UeScsNode = "07c0939373e96244be5ce4e749d7b554";
+        static constexpr const char* t5_0__UeScsNode = "3c9332ad6a8aa640959ba2b409180280";
+        static constexpr const char* e5_0__UeScsNode = "08e57fcaf07a9641bfa8ca0ff2d2ae1a";
+        static constexpr const char* tunnels__UeScsNode = "3b1a6277f83fd1408807c9c7d37c7464";
+        static constexpr const char* StaticMesh17_0__UeScsNode = "016f756c10fd4f4c86a5bcc67fad0780";
+        static constexpr const char* StaticMesh16_0__UeScsNode = "1e59dcaa707d574cba8f032a793b7d31";
+        static constexpr const char* StaticMesh15_0__UeScsNode = "fc30075799bffc4ab6a8e4c9a1e52d7b";
+        static constexpr const char* StaticMesh13_0__UeScsNode = "011dbdffe522c947a74ea4bf328c11e6";
+        static constexpr const char* StaticMesh11_0__UeScsNode = "70d514afbfcb3544825992fc76974e1c";
+        static constexpr const char* StaticMesh10_0__UeScsNode = "caa6388413e6834db859b1dce1542719";
+        static constexpr const char* StaticMesh8_0__UeScsNode = "caed950f95646e4fb22bf90a1db8f37d";
+        static constexpr const char* StaticMesh6_0__UeScsNode = "26ff1c1c8a3c12459c17bb4ad92b9a7a";
+        static constexpr const char* StaticMesh4_0__UeScsNode = "f3523791e9e0c14ebe9a0f5599a9168d";
+        static constexpr const char* StaticMesh3_0__UeScsNode = "00db3af51210ad43a9203faa319054f7";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel

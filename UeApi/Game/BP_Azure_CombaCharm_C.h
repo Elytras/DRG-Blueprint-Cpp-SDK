@@ -30,34 +30,22 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/CombaCharm/BP_Azure_CombaCharm", "BP_Azure_CombaCharm_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "53b51d5ba05cdb4baa180d599d1f2515";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "f941299f1313914cb734fa6f2fded54f";
     class UStaticMeshComponent* SM_Biome_AzureWeald_Flower_BigEgg_01;
-    static constexpr const char* SM_Biome_AzureWeald_Flower_BigEgg_01__UeScsNode = "f9b02776b71eba45bf0b0c9370d31f8c";
     class UAudioComponent* CombaCharmIdle;
-    static constexpr const char* CombaCharmIdle__UeScsNode = "7f9d6bba22e4db45b6c115948e8e627d";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "08828bf80df51449bfb0af3d08d5bacf";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "538da4355023ef4799daacbe793c8ca2";
     class UStaticMeshComponent* Biome_AzureWeald_Flower_BigEgg;
-    static constexpr const char* Biome_AzureWeald_Flower_BigEgg__UeScsNode = "900e55171ce3d2408f4b0b80d355722c";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "bf7f30842abea04b9eb4b0fc95a428fb";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "88effa977abcfe4298ef75acb15d9a33";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "e47787b9f37185488b75db9ca4f8b31b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
     float Glowtimeline_Glow_3F65C7DD4A6637F8B110998EAD89619E;
     TEnum<ETimelineDirection> Glowtimeline__Direction_3F65C7DD4A6637F8B110998EAD89619E;
     class UTimelineComponent* Glowtimeline;
     class UMaterialInstanceDynamic* GlowMat;
     float BaseGlow;
     bool Glow;
-    static constexpr const char* Glow__Replicated = "OnRep_Glow:";
     void ExecuteUbergraph_BP_Azure_CombaCharm(int EntryPoint);
     void PlayerClose(class APlayerCharacter* Player, bool enteredTrigger);
     void StopGlow();
@@ -68,6 +56,22 @@ public:
     void Glowtimeline__FinishedFunc();
     void UserConstructionScript();
     void OnRep_Glow();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RotatingMovement__UeScsNode = "53b51d5ba05cdb4baa180d599d1f2515";
+        static constexpr const char* TerrainDetect__UeScsNode = "f941299f1313914cb734fa6f2fded54f";
+        static constexpr const char* SM_Biome_AzureWeald_Flower_BigEgg_01__UeScsNode = "f9b02776b71eba45bf0b0c9370d31f8c";
+        static constexpr const char* CombaCharmIdle__UeScsNode = "7f9d6bba22e4db45b6c115948e8e627d";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "08828bf80df51449bfb0af3d08d5bacf";
+        static constexpr const char* PathfinderCollision__UeScsNode = "538da4355023ef4799daacbe793c8ca2";
+        static constexpr const char* Biome_AzureWeald_Flower_BigEgg__UeScsNode = "900e55171ce3d2408f4b0b80d355722c";
+        static constexpr const char* PointLight__UeScsNode = "bf7f30842abea04b9eb4b0fc95a428fb";
+        static constexpr const char* SimpleHealth__UeScsNode = "88effa977abcfe4298ef75acb15d9a33";
+        static constexpr const char* terrainPlacement__UeScsNode = "e47787b9f37185488b75db9ca4f8b31b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e18adc020f10fd41bb9d8fb5070f7fb8";
+        static constexpr const char* Glow__Replicated = "OnRep_Glow:";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm

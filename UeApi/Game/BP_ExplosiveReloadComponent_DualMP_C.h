@@ -13,6 +13,11 @@ class BP_ExplosiveReloadComponent_DualMP_C : public UWeaponHitCounterComponent
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/BP_ExplosiveReloadComponent_DualMP", "BP_ExplosiveReloadComponent_DualMP_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageHitCountEffect DamageHitCountEffect_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties

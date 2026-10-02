@@ -28,10 +28,9 @@ public:
     int IconSize;
     bool ShowRequiredAmount;
     FText No_Resources_Text;
-    static constexpr const char* No_Resources_Text__UeName = "No Resources Text";
     FSlateFontInfo NoResourcesFont;
     TMap<class UResourceData*, ITM_UpgGear_ResourceCounter_C*> ResourceWidgets;
-    TMap<class UResourceData*, int> PreviewDict;
+    UE_READONLY TMap<class UResourceData*, int> PreviewDict;
     void ExecuteUbergraph_UI_HorizontalResourceBar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void AddResourceCustom(class UResourceData* InResource, float InAmount, float InRequiredAmount, bool IconOnRight, bool ShowRequiredAmount_0);
@@ -39,6 +38,11 @@ public:
     void AddResource(class UResourceData* InResource, float InAmount, float InRequiredAmount);
     void SetCraftingCost(TArray<FCraftingCost>& Cost, bool& OutCanAfford);
     void SetFromDict(TMap<class UResourceData*, int> InResources);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* No_Resources_Text__UeName = "No Resources Text";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

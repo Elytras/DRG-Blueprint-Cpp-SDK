@@ -21,17 +21,11 @@ class ENE_Spider_Charger_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Charger/ENE_Spider_Charger", "ENE_Spider_Charger_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Charger_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Charger_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* Capsule1;
-    static constexpr const char* Capsule1__UeScsNode = "84b46b0646962949a51ef7b0ba359c3e";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "ea2102983e2ba74bb8be9200fc3567ba";
     class UPointLightComponent* Light_BackBody;
-    static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
     float Timeline_1_0_NewTrack;
-    static constexpr const char* Timeline_1_0_NewTrack__UeName = "Timeline_1_0_NewTrack_3_58C49B7C4DBC0550846DEABB8A2FF230";
     TEnum<ETimelineDirection> Timeline_1_0__Direction_58C49B7C4DBC0550846DEABB8A2FF230;
     class UTimelineComponent* Timeline_1_0;
     class UClass* AcidCloudClass;
@@ -50,6 +44,16 @@ public:
     void Timeline_1_0__FinishedFunc();
     void UserConstructionScript();
     void BeginSpecialAttack(int SpecialAttackIndex, class UAnimMontage*& Montage);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Charger_C__UeName = "UberGraphFrame";
+        static constexpr const char* Capsule1__UeScsNode = "84b46b0646962949a51ef7b0ba359c3e";
+        static constexpr const char* Capsule__UeScsNode = "ea2102983e2ba74bb8be9200fc3567ba";
+        static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
+        static constexpr const char* Timeline_1_0_NewTrack__UeName = "Timeline_1_0_NewTrack_3_58C49B7C4DBC0550846DEABB8A2FF230";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Charger

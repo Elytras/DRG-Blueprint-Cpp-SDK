@@ -35,8 +35,8 @@ public:
     using ITM_SkinItem_C = Game::UI::Menu_Loadout::ITM_SkinItem_C;
     using UI_FocusableCanvas_C = Game::UI::Global_UI_Elements::UI_FocusableCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ButtonHover;
-    class UWidgetAnimation* WindowAppear;
+    UE_READONLY class UWidgetAnimation* ButtonHover;
+    UE_READONLY class UWidgetAnimation* WindowAppear;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     UI_FocusableCanvas_C* ItemsWindow;
     ITM_ItemUnlockedIcon_C* ITM_ItemUnlockedIcon;

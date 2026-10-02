@@ -25,8 +25,7 @@ public:
     using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
     using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Shots_Fired;
-    static constexpr const char* Shots_Fired__UeName = "Shots Fired";
+    UE_READONLY class UWidgetAnimation* Shots_Fired;
     class UProgressBar* AmmoProgress;
     class UImage* Arrow;
     Basic_HUD_BracketWindowSmall_C* Basic_HUD_BracketWindowSmall;
@@ -46,6 +45,11 @@ public:
     void UpdateArrow(bool inView, float Angle);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetInfo(FText InText, class UTexture2D* Texture);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Shots_Fired__UeName = "Shots Fired";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Extractor

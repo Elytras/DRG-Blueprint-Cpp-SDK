@@ -32,7 +32,6 @@ public:
     class UTextBlock* TXT_DeepDive_BG;
     class UTextBlock* TXT_DeepDive_Front;
     FText Header_Contents;
-    static constexpr const char* Header_Contents__UeName = "Header Contents";
     bool EliteActive;
     void ExecuteUbergraph_ITM_DeepDiveHeader(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -40,6 +39,11 @@ public:
     void SetEliteActive(bool EliteActive_0);
     void FromDeepDive(class UDeepDive* InDeepDive);
     void FromActiveDeepDive();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Header_Contents__UeName = "Header Contents";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionStart

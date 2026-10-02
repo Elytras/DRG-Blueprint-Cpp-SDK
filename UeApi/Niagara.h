@@ -1999,7 +1999,7 @@ public:
     bool bEnableGpuComputeDebug;
     bool bAutoDestroy;
     bool bRenderingEnabled;
-    bool bAutoManageAttachment;
+    UE_READONLY bool bAutoManageAttachment;
     bool bAutoAttachWeldSimulatedBodies;
     float MaxTimeBeforeForceUpdateTransform;
     TArray<FNiagaraMaterialOverride> EmitterMaterials;
@@ -2068,6 +2068,11 @@ public:
     UE_PURE float GetSeekDelta() const;
     UE_PURE TEnum<ENiagaraTickBehavior> GetTickBehavior() const;
     UE_PURE bool IsPaused() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSystemFinished__UeDispatcher = "Assignable";
+    };
 };
 
 class UMovieSceneNiagaraTrack : public UMovieSceneNameableTrack
@@ -2249,7 +2254,7 @@ class UNiagaraDataInterfaceArray : public UNiagaraDataInterface
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceArray");
-    int MaxElements;
+    UE_READONLY int MaxElements;
 };
 
 class UNiagaraDataInterfaceArrayFloat : public UNiagaraDataInterfaceArray
@@ -2932,7 +2937,11 @@ public:
     class UMaterialParameterCollection* SourceMaterialCollection;
     class UNiagaraParameterCollectionInstance* DefaultInstance;
     FGuid CompileId;
-    static constexpr const char* DefaultInstance__UeSubobject = "Default Instance /Script/Niagara.NiagaraParameterCollectionInstance";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultInstance__UeSubobject = "Default Instance /Script/Niagara.NiagaraParameterCollectionInstance";
+    };
 };
 
 class UNiagaraParameterDefinitionsBase : public UObject
@@ -2946,8 +2955,8 @@ class UNiagaraBaselineController : public UObject
 public:
     UE_CLASS("/Script/Niagara", "NiagaraBaselineController");
     float TestDuration;
-    class UNiagaraEffectType* EffectType;
-    class ANiagaraPerfBaselineActor* Owner;
+    UE_READONLY class UNiagaraEffectType* EffectType;
+    UE_READONLY class ANiagaraPerfBaselineActor* Owner;
     TSoftObjectPtr<class UNiagaraSystem> System;
     class UNiagaraSystem* GetSystem();
     void OnBeginTest();
@@ -3066,11 +3075,15 @@ public:
     int NumX;
     int NumY;
     TArray<class UChildActorComponent*> PreviewComponents;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
     void ActivatePreviews(bool bReset);
     void DeactivatePreviews();
     void GetPreviews(TArray<class UNiagaraComponent*>& OutPreviews);
     void SetPaused(bool bPaused);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UNiagaraRibbonRendererProperties : public UNiagaraRendererProperties
@@ -3259,10 +3272,14 @@ class ANiagaraActor : public AActor
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraActor");
-    class UNiagaraComponent* NiagaraComponent;
+    UE_READONLY class UNiagaraComponent* NiagaraComponent;
     bool bDestroyOnSystemFinish;
-    static constexpr const char* NiagaraComponent__UeSubobject = "NiagaraComponent0 /Script/Niagara.NiagaraComponent";
-    static constexpr const char* RootComponent__UeSubobject = "NiagaraComponent0 /Script/Niagara.NiagaraComponent";
     void OnNiagaraSystemFinished(class UNiagaraComponent* FinishedComponent);
     void SetDestroyOnSystemFinish(bool bShouldDestroyOnSystemFinish);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NiagaraComponent__UeSubobject = "NiagaraComponent0 /Script/Niagara.NiagaraComponent";
+        static constexpr const char* RootComponent__UeSubobject = "NiagaraComponent0 /Script/Niagara.NiagaraComponent";
+    };
 };

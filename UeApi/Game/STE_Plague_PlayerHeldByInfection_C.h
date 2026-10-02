@@ -13,6 +13,11 @@ class STE_Plague_PlayerHeldByInfection_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Character/Affliction/STE_Plague_PlayerHeldByInfection", "STE_Plague_PlayerHeldByInfection_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Character::Affliction

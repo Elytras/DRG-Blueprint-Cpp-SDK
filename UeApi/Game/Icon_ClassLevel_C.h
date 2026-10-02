@@ -25,9 +25,13 @@ public:
     class UWidgetSwitcher* WidgetSwitcher_0;
     float IconSize;
     bool Player_Rank;
-    static constexpr const char* Player_Rank__UeName = "Player Rank";
     void ExecuteUbergraph_Icon_ClassLevel(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Player_Rank__UeName = "Player Rank";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

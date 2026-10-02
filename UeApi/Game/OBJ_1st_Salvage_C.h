@@ -26,6 +26,11 @@ public:
     UE_PURE int GetObjectiveAmount(float missionLength) const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0;/Script/FSD.DebrisPositioning DebrisPositioning_1";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

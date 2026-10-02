@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_Bouncy_C : public Game::WeaponsNTools::Grenades::Load
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Bouncy/Loadout_GrenadeProxy_Bouncy", "Loadout_GrenadeProxy_Bouncy_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Bouncy

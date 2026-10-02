@@ -13,7 +13,11 @@ class BP_DropPod_Landing_Salvage_C : public Game::LevelElements::Droppod::BP_Dro
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Landing_Salvage", "BP_DropPod_Landing_Salvage_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

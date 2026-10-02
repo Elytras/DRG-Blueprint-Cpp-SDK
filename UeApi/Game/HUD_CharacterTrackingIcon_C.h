@@ -26,8 +26,8 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_CharacterTrackingIcon", "HUD_CharacterTrackingIcon_C");
     using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPlayerDown;
-    class UWidgetAnimation* AnimInView;
+    UE_READONLY class UWidgetAnimation* AnimPlayerDown;
+    UE_READONLY class UWidgetAnimation* AnimInView;
     class UImage* Arrow;
     class UBorder* BorderInfo;
     class USizeBox* BoxSizer;

@@ -19,7 +19,7 @@ class DefuseBomb_Wire_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Defuse/DefuseBomb_Wire", "DefuseBomb_Wire_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBreak;
+    UE_READONLY class UWidgetAnimation* AnimBreak;
     float CutPosition;
     float BreakProgress;
     FInterpCurveVector2D Curve;

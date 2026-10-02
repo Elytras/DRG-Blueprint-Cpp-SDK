@@ -17,9 +17,13 @@ class BP_Crystal_VictoryScreen_C : public AActor
 public:
     UE_CLASS("/Game/CharacterStructure/Gear_Unarmed/TP/EndScreenAnims/Attachments/BP_Crystal_VictoryScreen", "BP_Crystal_VictoryScreen_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "0468ffc5d1477248936ff7ef24d56d04";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "75b002507665224397f15e33652bdf91";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "0468ffc5d1477248936ff7ef24d56d04";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "75b002507665224397f15e33652bdf91";
+    };
 };
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments

@@ -19,18 +19,22 @@ class BP_BarGlass_PropHunt_C : public Game::GameElements::Bar::BP_BarGlass_Stand
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/BP_BarGlass_PropHunt", "BP_BarGlass_PropHunt_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_BarGlass_PropHunt_C;
-    static constexpr const char* UberGraphFrame_BP_BarGlass_PropHunt_C__UeName = "UberGraphFrame";
     class UChildActorComponent* PropIndicator;
-    static constexpr const char* PropIndicator__UeScsNode = "40c1e310047df24e86c29d65be63d661";
     class UPropHuntInitializerComponent* PropHuntInitializer;
-    static constexpr const char* PropHuntInitializer__UeScsNode = "3c28bf81a691974982643e216342c8ef";
     class UChildActorComponent* HunterIndicator;
-    static constexpr const char* HunterIndicator__UeScsNode = "87c218bbe19b3e4e815aab86c8c1c67d";
     TArray<class UMaterialInterface*> MaterialsCache;
     void ExecuteUbergraph_BP_BarGlass_PropHunt(int EntryPoint);
     void OnRep_BarSlotIndex();
     void ReceiveBeginPlay();
     void Refresh();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_BarGlass_PropHunt_C__UeName = "UberGraphFrame";
+        static constexpr const char* PropIndicator__UeScsNode = "40c1e310047df24e86c29d65be63d661";
+        static constexpr const char* PropHuntInitializer__UeScsNode = "3c28bf81a691974982643e216342c8ef";
+        static constexpr const char* HunterIndicator__UeScsNode = "87c218bbe19b3e4e815aab86c8c1c67d";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt

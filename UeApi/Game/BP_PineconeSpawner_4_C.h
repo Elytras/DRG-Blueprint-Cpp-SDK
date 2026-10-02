@@ -16,11 +16,15 @@ class BP_PineconeSpawner_4_C : public Game::LevelElements::RoomObjects::LoosePhy
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalPinecones/BP_PineconeSpawner_4", "BP_PineconeSpawner_4_C");
     class UStaticMeshComponent* U33_BiomPlant_Pinecone1;
-    static constexpr const char* U33_BiomPlant_Pinecone1__UeScsNode = "b9575a9beca93d428a6d9d8adcab239d";
     class UStaticMeshComponent* U33_BiomPlant_Pinecone3;
-    static constexpr const char* U33_BiomPlant_Pinecone3__UeScsNode = "ffdb72f3d9610348a8f80dae0b98858a";
     class UStaticMeshComponent* U33_BiomPlant_Pinecone2;
-    static constexpr const char* U33_BiomPlant_Pinecone2__UeScsNode = "810bafa47bc56e4ca060e52dbb15b43c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* U33_BiomPlant_Pinecone1__UeScsNode = "b9575a9beca93d428a6d9d8adcab239d";
+        static constexpr const char* U33_BiomPlant_Pinecone3__UeScsNode = "ffdb72f3d9610348a8f80dae0b98858a";
+        static constexpr const char* U33_BiomPlant_Pinecone2__UeScsNode = "810bafa47bc56e4ca060e52dbb15b43c";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones

@@ -39,7 +39,6 @@ public:
     bool IsAutoScrolling;
     Lore_List_Filler_C* FillerElement;
     int _PendingButtons;
-    static constexpr const char* _PendingButtons__UeName = "#PendingButtons";
     void ExecuteUbergraph_ScrollLIst_Category_Window(int EntryPoint);
     void SetSelectedButton(int Index_0);
     void DecreseFillSpace();
@@ -56,6 +55,11 @@ public:
     void SetData(_MENU_MinersManual_C* _MENU_MinersManual_0);
     void OnClicked(int Index_0);
     void SelectNext(int Direction);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* _PendingButtons__UeName = "#PendingButtons";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

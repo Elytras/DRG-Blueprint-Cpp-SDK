@@ -27,7 +27,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardUnlock", "UI_RewardUnlock_C");
     using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CelebrateAnim;
+    UE_READONLY class UWidgetAnimation* CelebrateAnim;
     class UImage* BigImage;
     class USizeBox* BigImageSize;
     class UHorizontalBox* HorizontalBox_1;

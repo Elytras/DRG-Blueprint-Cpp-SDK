@@ -13,7 +13,11 @@ class BP_ItemDispenserBase_C : public AItemDispenser
 {
 public:
     UE_CLASS("/Game/GameElements/ItemDispenser/BP_ItemDispenserBase", "BP_ItemDispenserBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InstantUsable Usable;/Script/Engine.SceneComponent Root";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InstantUsable Usable;/Script/Engine.SceneComponent Root";
+    };
 };
 
 }}}   // namespace Game::GameElements::ItemDispenser

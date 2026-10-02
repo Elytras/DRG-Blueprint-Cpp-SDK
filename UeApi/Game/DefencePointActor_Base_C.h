@@ -20,21 +20,13 @@ class DefencePointActor_Base_C : public ADefensePointActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/Defense/DefencePointActor_Base", "DefencePointActor_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SingleUsableComponent DefendPointUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "f12b7e8fd4d2a148abc6971ca18bbff2";
     class UStaticMeshComponent* Terrain_scanner_mesh;
-    static constexpr const char* Terrain_scanner_mesh__UeName = "Terrain scanner mesh";
-    static constexpr const char* Terrain_scanner_mesh__UeScsNode = "4a7b92fdf1084443a60b7e8e718586ad";
     class UStaticMeshComponent* DistressSphere;
-    static constexpr const char* DistressSphere__UeScsNode = "82ef8fb5b31bc24b8df1a0c3a3bb77d4";
     class UCapsuleComponent* UseableCollider;
-    static constexpr const char* UseableCollider__UeScsNode = "bcfebc8d9be4eb4d8844c08392299ce8";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "405b59213aa93c46ad7ffb9cc22bfa7c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a4fdaec03c294143b912ccac8dfb4592";
     void ExecuteUbergraph_DefencePointActor_Base(int EntryPoint);
     void ReceiveBeginPlay();
     void DefenseFail();
@@ -42,6 +34,18 @@ public:
     void OnDefenceFailed();
     void OnDefenseSucceed();
     void DefenseStart();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SingleUsableComponent DefendPointUsable";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "f12b7e8fd4d2a148abc6971ca18bbff2";
+        static constexpr const char* Terrain_scanner_mesh__UeName = "Terrain scanner mesh";
+        static constexpr const char* Terrain_scanner_mesh__UeScsNode = "4a7b92fdf1084443a60b7e8e718586ad";
+        static constexpr const char* DistressSphere__UeScsNode = "82ef8fb5b31bc24b8df1a0c3a3bb77d4";
+        static constexpr const char* UseableCollider__UeScsNode = "bcfebc8d9be4eb4d8844c08392299ce8";
+        static constexpr const char* terrainPlacement__UeScsNode = "405b59213aa93c46ad7ffb9cc22bfa7c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a4fdaec03c294143b912ccac8dfb4592";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::Defense

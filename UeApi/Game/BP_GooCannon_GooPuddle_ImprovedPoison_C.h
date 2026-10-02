@@ -13,7 +13,11 @@ class BP_GooCannon_GooPuddle_ImprovedPoison_C : public Game::WeaponsNTools::GooC
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_GooPuddle_ImprovedPoison", "BP_GooCannon_GooPuddle_ImprovedPoison_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

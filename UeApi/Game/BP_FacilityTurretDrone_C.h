@@ -25,33 +25,21 @@ class BP_FacilityTurretDrone_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/BP_FacilityTurretDrone", "BP_FacilityTurretDrone_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "91f72479e4c3b54abad210db04777b43";
     class UNiagaraComponent* JetParticles3;
-    static constexpr const char* JetParticles3__UeScsNode = "aa91262d46520e4bbe46eae4229dca3b";
     class UNiagaraComponent* JetParticles2;
-    static constexpr const char* JetParticles2__UeScsNode = "23097b1fc5909245b73868cf54f0175a";
     class UNiagaraComponent* JetParticles1;
-    static constexpr const char* JetParticles1__UeScsNode = "d18d1956e5e3274fb3f8f45a95df3414";
     class UNiagaraComponent* JetParticles;
-    static constexpr const char* JetParticles__UeScsNode = "be13055bb442c549bb9c7f9e007a0e77";
     class UArrowComponent* ArrowLeft;
-    static constexpr const char* ArrowLeft__UeScsNode = "16d02880f7e46c448659821d24e01e2c";
     class UArrowComponent* ArrowRight;
-    static constexpr const char* ArrowRight__UeScsNode = "42390b2edb72ba4cad24c74cdcc3df0a";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "1d95338ff0590341b6b15cbd3e865afe";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "e8a2edb582247e4eb15cb4153fcbff9c";
     FTransform SpawnTransform;
     class UClass* TurretClass;
     TMulticastInlineDelegate<void(class AFacilityTurret* spawnedTurret)> OnTurretSpawned;
     bool UnSpawn;
-    static constexpr const char* UnSpawn__Replicated = "OnRep_UnSpawn:";
     bool Deploy;
-    static constexpr const char* Deploy__Replicated = "OnRep_Deploy:";
     class AAIController* TempTurretController;
     void ExecuteUbergraph_BP_FacilityTurretDrone(int EntryPoint);
     void SpawnDust(FVector DustLocation);
@@ -63,6 +51,22 @@ public:
     void OnRep_UnSpawn();
     void OnRep_Deploy();
     void SpawnPhysMeshes(TArray<class UStaticMeshComponent*>& Meshes);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Box__UeScsNode = "91f72479e4c3b54abad210db04777b43";
+        static constexpr const char* JetParticles3__UeScsNode = "aa91262d46520e4bbe46eae4229dca3b";
+        static constexpr const char* JetParticles2__UeScsNode = "23097b1fc5909245b73868cf54f0175a";
+        static constexpr const char* JetParticles1__UeScsNode = "d18d1956e5e3274fb3f8f45a95df3414";
+        static constexpr const char* JetParticles__UeScsNode = "be13055bb442c549bb9c7f9e007a0e77";
+        static constexpr const char* ArrowLeft__UeScsNode = "16d02880f7e46c448659821d24e01e2c";
+        static constexpr const char* ArrowRight__UeScsNode = "42390b2edb72ba4cad24c74cdcc3df0a";
+        static constexpr const char* PointLight__UeScsNode = "1d95338ff0590341b6b15cbd3e865afe";
+        static constexpr const char* ParticleSystem__UeScsNode = "e8a2edb582247e4eb15cb4153fcbff9c";
+        static constexpr const char* UnSpawn__Replicated = "OnRep_UnSpawn:";
+        static constexpr const char* Deploy__Replicated = "OnRep_Deploy:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

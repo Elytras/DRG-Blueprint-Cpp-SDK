@@ -13,7 +13,11 @@ class CameraShake_Meteor_Crackopen_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/CameraShake_Meteor_Crackopen", "CameraShake_Meteor_Crackopen_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor

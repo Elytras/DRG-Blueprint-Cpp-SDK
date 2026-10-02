@@ -710,6 +710,12 @@ public:
     void SetStartOffset(FFrameNumber InStartOffset);
     UE_PURE class USoundBase* GetSound() const;
     UE_PURE FFrameNumber GetStartOffset() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnAudioFinished__UeDispatcher = "";
+        static constexpr const char* OnAudioPlaybackPercent__UeDispatcher = "";
+    };
 };
 
 class UMovieSceneAudioTrack : public UMovieSceneNameableTrack
@@ -1178,7 +1184,6 @@ class UMovieSceneSkeletalAnimationSection : public UMovieSceneSection
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneSkeletalAnimationSection");
     FMovieSceneSkeletalAnimationParams Params_0;
-    static constexpr const char* Params_0__UeName = "Params";
     class UAnimSequence* AnimSequence;
     class UAnimSequenceBase* Animation;
     float StartOffset;
@@ -1197,6 +1202,11 @@ public:
     bool bMatchRotationYaw;
     bool bMatchRotationPitch;
     bool bMatchRotationRoll;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Params_0__UeName = "Params";
+    };
 };
 
 class UMovieSceneSkeletalAnimationTrack : public UMovieSceneNameableTrack

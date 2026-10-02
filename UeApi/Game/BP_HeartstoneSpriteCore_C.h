@@ -18,18 +18,13 @@ class BP_HeartstoneSpriteCore_C : public AFSDPawn
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/EnergySpriteSwarm/BP_HeartstoneSpriteCore", "BP_HeartstoneSpriteCore_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "32ed224404f11547af4cd0a4ffb18fc9";
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "9a571a8488ee3d4b9c70abebd02bd7f4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f234dca866e0fd44a1fdebcc8500e320";
     int BaseNumSprites;
     int NumSpritesPerExtraPlayer;
     float SpriteSpawnDelay;
-    static constexpr const char* SpriteSpawnDelay__Replicated = "OnRep_SpriteSpawnDelay:";
     float TotalPhaseLifetime;
     int MinNumSprites;
     void ExecuteUbergraph_BP_HeartstoneSpriteCore(int EntryPoint);
@@ -37,6 +32,15 @@ public:
     void ReceiveBeginPlay();
     void SpawnEnergySpriteWave();
     void OnRep_SpriteSpawnDelay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* enemy__UeScsNode = "32ed224404f11547af4cd0a4ffb18fc9";
+        static constexpr const char* Sphere__UeScsNode = "9a571a8488ee3d4b9c70abebd02bd7f4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f234dca866e0fd44a1fdebcc8500e320";
+        static constexpr const char* SpriteSpawnDelay__Replicated = "OnRep_SpriteSpawnDelay:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::EnergySpriteSwarm

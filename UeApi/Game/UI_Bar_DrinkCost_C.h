@@ -24,7 +24,7 @@ public:
     class UTextBlock* TXT_Free;
     class UDrinkableDataAsset* Drinkable;
     bool ShowUnlockCost;
-    float Height;
+    UE_READONLY float Height;
     void ExecuteUbergraph_UI_Bar_DrinkCost(int EntryPoint);
     void ShowFixedCost(const TMap<class UResourceData*, int>& Cost);
     void OnFreeBeerRewardChanged(bool IsBeersFree);

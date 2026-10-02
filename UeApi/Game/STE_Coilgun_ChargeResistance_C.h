@@ -13,6 +13,11 @@ class STE_Coilgun_ChargeResistance_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/STE_Coilgun_ChargeResistance", "STE_Coilgun_ChargeResistance_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

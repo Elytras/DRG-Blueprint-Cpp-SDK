@@ -13,7 +13,11 @@ class BP_CoilgunTrail_Burn_C : public Game::WeaponsNTools::CoilGun::Trails::BP_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/Trails/BP_CoilgunTrail_Burn", "BP_CoilgunTrail_Burn_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Collision;/Script/Niagara.NiagaraComponent TrailNiagara;/Script/Engine.SceneComponent RootComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Collision;/Script/Niagara.NiagaraComponent TrailNiagara;/Script/Engine.SceneComponent RootComponent";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::CoilGun::Trails

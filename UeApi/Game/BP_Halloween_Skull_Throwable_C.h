@@ -22,22 +22,26 @@ class BP_Halloween_Skull_Throwable_C : public ABasicDepositableItem
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Halloween/BP_Halloween_Skull_Throwable", "BP_Halloween_Skull_Throwable_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BoxCollision;/Script/FSD.CarriableComponent Carriable;/Script/FSD.FirstPersonStaticMeshComponent FirstPersonMesh;/Script/FSD.InstantUsable Usable;/Script/Engine.SphereComponent UseSphere;/Script/Engine.StaticMeshComponent ThirdpersonMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "630dfdc601a2424eaf0755dde2cb2d84";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "ae28f61d247b454786bb01a7900e86f9";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "4b292d2277cac942ad31fe195b01f768";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "36b46091b6541543a71f1f78745295f9";
     bool CanTriggerSound;
     void ExecuteUbergraph_BP_Halloween_Skull_Throwable(int EntryPoint);
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
     void ReceiveBeginPlay();
     void Throw(FVector force);
     void AddImpulse(FVector Impulse);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BoxCollision;/Script/FSD.CarriableComponent Carriable;/Script/FSD.FirstPersonStaticMeshComponent FirstPersonMesh;/Script/FSD.InstantUsable Usable;/Script/Engine.SphereComponent UseSphere;/Script/Engine.StaticMeshComponent ThirdpersonMesh";
+        static constexpr const char* outline__UeScsNode = "630dfdc601a2424eaf0755dde2cb2d84";
+        static constexpr const char* PointLight__UeScsNode = "ae28f61d247b454786bb01a7900e86f9";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "4b292d2277cac942ad31fe195b01f768";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "36b46091b6541543a71f1f78745295f9";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween

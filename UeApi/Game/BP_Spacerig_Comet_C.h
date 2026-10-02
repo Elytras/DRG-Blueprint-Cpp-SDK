@@ -18,13 +18,17 @@ public:
     UE_CLASS("/Game/GameElements/Plague/BP_Spacerig_Comet", "BP_Spacerig_Comet_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Comet_Meteors;
-    static constexpr const char* NS_Comet_Meteors__UeScsNode = "b46a1ac5701b4a4eac27625edf94e4f2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6d45bcfc7f2930448b6c823e5a92e7f2";
     float Speed_X;
     void ExecuteUbergraph_BP_Spacerig_Comet(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_Comet_Meteors__UeScsNode = "b46a1ac5701b4a4eac27625edf94e4f2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6d45bcfc7f2930448b6c823e5a92e7f2";
+    };
 };
 
 }}}   // namespace Game::GameElements::Plague

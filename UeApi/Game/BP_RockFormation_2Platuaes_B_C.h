@@ -16,7 +16,11 @@ class BP_RockFormation_2Platuaes_B_C : public Game::LevelElements::RoomObjects::
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/IceFormation/BP_RockFormation_2Platuaes_B", "BP_RockFormation_2Platuaes_B_C");
     class UStaticMeshComponent* Ice_Formation_A;
-    static constexpr const char* Ice_Formation_A__UeScsNode = "5f63bc85cfe0f44f8bc841139bb83465";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Ice_Formation_A__UeScsNode = "5f63bc85cfe0f44f8bc841139bb83465";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::IceFormation

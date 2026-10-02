@@ -22,16 +22,20 @@ public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/MAG_Flamethrower_BottleTP", "MAG_Flamethrower_BottleTP_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "4f4043e2dd55b04f95463d900f4ef186";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "faf0dd696c18ea46a8a6ce4d8a89f3ad";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "1366f1694299054fba8e53db821376e2";
     void ExecuteUbergraph_MAG_Flamethrower_BottleTP(int EntryPoint);
     void OnItemSkinned(class USkinEffect* Skin);
     void DoRelease();
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "4f4043e2dd55b04f95463d900f4ef186";
+        static constexpr const char* Capsule__UeScsNode = "faf0dd696c18ea46a8a6ce4d8a89f3ad";
+        static constexpr const char* Scene__UeScsNode = "1366f1694299054fba8e53db821376e2";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower

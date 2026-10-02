@@ -18,16 +18,20 @@ class PRJ_LargeStabbyThorn_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/ThornBranches/PRJ_LargeStabbyThorn", "PRJ_LargeStabbyThorn_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "8b5ae0b078ea5e4fb74c0beddedb4272";
     class UParticleSystemComponent* P_CactusSpikeTrail1;
-    static constexpr const char* P_CactusSpikeTrail1__UeScsNode = "b8b226fbc64ec84ba6fa148844018844";
     class UStaticMeshComponent* SM_CactusSpikeProjectile;
-    static constexpr const char* SM_CactusSpikeProjectile__UeScsNode = "5c93072d443afc4bacf6ca65260b077d";
     void ExecuteUbergraph_PRJ_LargeStabbyThorn(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "8b5ae0b078ea5e4fb74c0beddedb4272";
+        static constexpr const char* P_CactusSpikeTrail1__UeScsNode = "b8b226fbc64ec84ba6fa148844018844";
+        static constexpr const char* SM_CactusSpikeProjectile__UeScsNode = "5c93072d443afc4bacf6ca65260b077d";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches

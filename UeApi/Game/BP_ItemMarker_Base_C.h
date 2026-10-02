@@ -23,9 +23,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/BaseBlueprints/BP_ItemMarker_Base", "BP_ItemMarker_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c6b1f4792a24f74f9569296cb384f13a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "54288da85ae72b4393ed51a6b571ce46";
     class UMaterialInstanceDynamic* Material;
     FName ColorName;
     FLinearColor ValidColor;
@@ -33,6 +31,12 @@ public:
     void OnMarkerValidChanged(bool Valid);
     void UserConstructionScript();
     void SetMaterials(class UMeshComponent* Mesh, class UMaterialInterface* ParentMaterial, class UMaterialInstanceDynamic*& DynamicMaterial);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "c6b1f4792a24f74f9569296cb384f13a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "54288da85ae72b4393ed51a6b571ce46";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::BaseBlueprints

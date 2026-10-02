@@ -18,13 +18,17 @@ class PRJ_Crossbow_IceProjectile_C : public Game::WeaponsNTools::Crossbow::Proje
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_IceProjectile", "PRJ_Crossbow_IceProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Crossbow_IceProjectile_C;
-    static constexpr const char* UberGraphFrame_PRJ_Crossbow_IceProjectile_C__UeName = "UberGraphFrame";
     class USphereComponent* FlammableCollision;
-    static constexpr const char* FlammableCollision__UeScsNode = "3e6b9b1370b00f4ab14c39c1fc0f5ede";
     void ExecuteUbergraph_PRJ_Crossbow_IceProjectile(int EntryPoint);
     void BndEvt__PRJ_Crossbow_IceProjectile_FlammableCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_Crossbow_IceProjectile_C__UeName = "UberGraphFrame";
+        static constexpr const char* FlammableCollision__UeScsNode = "3e6b9b1370b00f4ab14c39c1fc0f5ede";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

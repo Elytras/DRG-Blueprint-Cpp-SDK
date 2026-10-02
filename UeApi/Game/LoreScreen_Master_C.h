@@ -18,8 +18,8 @@ class LoreScreen_Master_C : public ULoreScreenMasterWidget
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_Master", "LoreScreen_Master_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OutandIntro;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* OutandIntro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UMinersManual* MinersManual;
     void ExecuteUbergraph_LoreScreen_Master(int EntryPoint);
     void PlayIntroAnim();

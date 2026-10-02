@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/UI_SimpleAngleIndicator", "UI_SimpleAngleIndicator_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     UI_ImageTinted_C* ArrowLeft;
     UI_ImageTinted_C* ArrowRight;
     class UCanvasPanel* ClippingCanvas;

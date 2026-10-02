@@ -23,11 +23,15 @@ public:
     class UButton* Button_SpawnMeteor;
     class UTextBlock* TextBlock;
     TMulticastInlineDelegate<void()> Bosco_spawn_requested;
-    static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
     TSoftClassPtr<class UClass> EventClass;
     void ExecuteUbergraph_Cheat_Spawn_CoreCrystal(int EntryPoint);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_13_OnButtonClickedEvent__DelegateSignature();
     void OnLoaded_600FF47B40A8123C2AD683AEB8311169(TSubclassOf<class UObject> Loaded);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

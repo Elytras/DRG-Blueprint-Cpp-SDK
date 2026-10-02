@@ -26,22 +26,14 @@ class ENE_InsectSwarm_Spawner_C : public AInsectSwarmSpawner
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/ENE_InsectSwarm_Spawner", "ENE_InsectSwarm_Spawner_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "c1892a258176d64c87ea262950a46fdf";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "dee02b535c76344b9e78211e87bcf28f";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "395bf648f441524cbc159da176656af0";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "a91a9400d575814fba4c07f461b77790";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "5bd57aced5abb149a705b417d1520ba5";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_24041E04487F50C14665D9A721366BB3";
     TEnum<ETimelineDirection> Timeline_0__Direction_24041E04487F50C14665D9A721366BB3;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_ENE_InsectSwarm_Spawner(int EntryPoint);
@@ -54,6 +46,18 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     class UStaticMeshComponent* Receive_GetStaticMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
+        static constexpr const char* TerrainDetect__UeScsNode = "c1892a258176d64c87ea262950a46fdf";
+        static constexpr const char* terrainPlacement__UeScsNode = "dee02b535c76344b9e78211e87bcf28f";
+        static constexpr const char* PathfinderCollision__UeScsNode = "395bf648f441524cbc159da176656af0";
+        static constexpr const char* StaticMesh__UeScsNode = "a91a9400d575814fba4c07f461b77790";
+        static constexpr const char* outline__UeScsNode = "5bd57aced5abb149a705b417d1520ba5";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_24041E04487F50C14665D9A721366BB3";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm

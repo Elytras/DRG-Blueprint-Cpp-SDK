@@ -18,21 +18,25 @@ class PLS_Refinery_C : public Game::Landscape::ProceduralLevelSetups::PLS_Fractu
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Refinery", "PLS_Refinery_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_Refinery_C;
-    static constexpr const char* UberGraphFrame_PLS_Refinery_C__UeName = "UberGraphFrame";
     class URoomGeneratorGroup* Room_Group;
-    static constexpr const char* Room_Group__UeName = "Room Group";
     FRoomGeneratorGroupInstance Group_Instance;
-    static constexpr const char* Group_Instance__UeName = "Group Instance";
     class URoomGenerator* Start_Room;
-    static constexpr const char* Start_Room__UeName = "Start Room";
     float ChanceOfTunnelRoom;
     TArray<class URoomGenerator*> TestRooms;
     void ExecuteUbergraph_PLS_Refinery(int EntryPoint);
     void CreateCaveGraph();
     UE_PURE class URoomGenerator* SelectRoomFromDNA(int QueryIndex);
     void GetDNARoomCount(int& RoomCount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
+        static constexpr const char* UberGraphFrame_PLS_Refinery_C__UeName = "UberGraphFrame";
+        static constexpr const char* Room_Group__UeName = "Room Group";
+        static constexpr const char* Group_Instance__UeName = "Group Instance";
+        static constexpr const char* Start_Room__UeName = "Start Room";
+    };
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

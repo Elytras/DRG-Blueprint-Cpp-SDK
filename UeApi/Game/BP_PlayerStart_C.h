@@ -16,7 +16,11 @@ class BP_PlayerStart_C : public AFSDPlayerStart
 public:
     UE_CLASS("/Game/Game/BP_PlayerStart", "BP_PlayerStart_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c1070466dc8a284b99f549fa8480539d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c1070466dc8a284b99f549fa8480539d";
+    };
 };
 
 }}   // namespace Game::Game

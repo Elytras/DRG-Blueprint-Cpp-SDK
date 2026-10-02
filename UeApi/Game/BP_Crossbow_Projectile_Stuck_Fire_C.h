@@ -21,18 +21,22 @@ class BP_Crossbow_Projectile_Stuck_Fire_C : public Game::WeaponsNTools::Crossbow
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Fire", "BP_Crossbow_Projectile_Stuck_Fire_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* EffectParticle;
-    static constexpr const char* EffectParticle__UeScsNode = "37c9c99ff69d1e4d9d31f00b95225f40";
     class USphereComponent* FlammableCollision;
-    static constexpr const char* FlammableCollision__UeScsNode = "4c7979fbed8b074fa8fcef6c537d9b6b";
     class UCrossbowStuckProjectileEffectApplication* CrossbowStuckProjectileEffectApplication;
-    static constexpr const char* CrossbowStuckProjectileEffectApplication__UeScsNode = "f3242aca7bb1f840a51e48d86c7e7c66";
     TArray<class AFSDPawn*> Targets;
     bool IgnoreCollission;
     void ExecuteUbergraph_BP_Crossbow_Projectile_Stuck_Fire(int EntryPoint);
     void BndEvt__PRJ_Crossbow_FireProjectile_FlammableCollision_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
+        static constexpr const char* EffectParticle__UeScsNode = "37c9c99ff69d1e4d9d31f00b95225f40";
+        static constexpr const char* FlammableCollision__UeScsNode = "4c7979fbed8b074fa8fcef6c537d9b6b";
+        static constexpr const char* CrossbowStuckProjectileEffectApplication__UeScsNode = "f3242aca7bb1f840a51e48d86c7e7c66";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

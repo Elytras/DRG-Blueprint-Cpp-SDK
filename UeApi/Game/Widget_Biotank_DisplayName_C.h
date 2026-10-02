@@ -22,8 +22,7 @@ public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/Widget_Biotank_DisplayName", "Widget_Biotank_DisplayName_C");
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame_Widget_Biotank_DisplayName_C;
-    static constexpr const char* UberGraphFrame_Widget_Biotank_DisplayName_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* NewAnimation;
+    UE_READONLY class UWidgetAnimation* NewAnimation;
     Basic_Label_C* DisplayName;
     Basic_Label_C* DisplayName_2;
     Basic_Label_C* DisplayName_3;
@@ -33,6 +32,11 @@ public:
     void ExecuteUbergraph_Widget_Biotank_DisplayName(int EntryPoint);
     void ContentUpdated(const FDisplayContent& Content);
     void SetCase(class ADisplayCase* Case);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Widget_Biotank_DisplayName_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco

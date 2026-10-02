@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound", "BP_OxygenTankSound_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "7449d4a2d2ac2a4da9a8dd651a75d79f";
     class USoundAttenuation* OverrideAttenuation;
     void ExecuteUbergraph_BP_OxygenTankSound(int EntryPoint);
     void OnOxygenActivationChanged_Event_0(bool IsActive);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Audio__UeScsNode = "7449d4a2d2ac2a4da9a8dd651a75d79f";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen

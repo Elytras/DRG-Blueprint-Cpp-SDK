@@ -25,25 +25,17 @@ class ENE_JellyBreeder_Base_C : public AJellyBreeder
 {
 public:
     UE_CLASS("/Game/Enemies/Jelly_Breeder/ENE_JellyBreeder_Base", "ENE_JellyBreeder_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "06982c69f546b4459eb2f491227e5327";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "92a6a25f73c38c44b66d4f837c0b2b88";
     class UAudioComponent* JellyBreederDeath_Cue;
-    static constexpr const char* JellyBreederDeath_Cue__UeScsNode = "6a73ffbb7ca5ef489ad7fae69577462b";
     class UAudioComponent* JellyBreederIdle_Cue;
-    static constexpr const char* JellyBreederIdle_Cue__UeScsNode = "31e9795f94f6e345932fd338c180536b";
     class UImpactComponent* Impact;
-    static constexpr const char* Impact__UeScsNode = "96ee643216a5ed4caf80259d9530660f";
     class UPhysicalAnimationComponent* PhysicalAnimation;
-    static constexpr const char* PhysicalAnimation__UeScsNode = "46d14c12aacd02468b7bc2aef278fda4";
     TArray<FName> BoneNames;
     FName Profile;
     FVector Location;
     float Emission_Multiplier;
-    static constexpr const char* Emission_Multiplier__UeName = "Emission Multiplier";
     float EmissionFlash;
     int EmissionID;
     class UFXSystemAsset* deathParticles;
@@ -57,6 +49,18 @@ public:
     void ReceiveBeginPlay();
     void ToggleBonePhysics(bool BonePhysics);
     void SpawnDeathParticles();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Capsule__UeScsNode = "06982c69f546b4459eb2f491227e5327";
+        static constexpr const char* WeakpointGlow__UeScsNode = "92a6a25f73c38c44b66d4f837c0b2b88";
+        static constexpr const char* JellyBreederDeath_Cue__UeScsNode = "6a73ffbb7ca5ef489ad7fae69577462b";
+        static constexpr const char* JellyBreederIdle_Cue__UeScsNode = "31e9795f94f6e345932fd338c180536b";
+        static constexpr const char* Impact__UeScsNode = "96ee643216a5ed4caf80259d9530660f";
+        static constexpr const char* PhysicalAnimation__UeScsNode = "46d14c12aacd02468b7bc2aef278fda4";
+        static constexpr const char* Emission_Multiplier__UeName = "Emission Multiplier";
+    };
 };
 
 }}}   // namespace Game::Enemies::Jelly_Breeder

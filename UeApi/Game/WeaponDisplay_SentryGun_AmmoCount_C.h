@@ -19,13 +19,17 @@ class WeaponDisplay_SentryGun_AmmoCount_C : public Game::UI::WeaponDisplays::Wea
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/WeaponDisplay_SentryGun_AmmoCount", "WeaponDisplay_SentryGun_AmmoCount_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_SentryGun_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_SentryGun_AmmoCount_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* Fire;
+    UE_READONLY class UWidgetAnimation* Fire;
     class UTextBlock* AmmoCount;
     void ExecuteUbergraph_WeaponDisplay_SentryGun_AmmoCount(int EntryPoint);
     UE_COSMETIC void Construct();
     void OnAmmoCountChanged(int AmmoCount_0, int Change);
     void SetSentry(class ASentryGun* SentryGun);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_SentryGun_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

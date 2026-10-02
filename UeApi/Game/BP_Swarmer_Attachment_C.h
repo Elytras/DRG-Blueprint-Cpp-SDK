@@ -17,9 +17,13 @@ class BP_Swarmer_Attachment_C : public AActor
 public:
     UE_CLASS("/Game/CharacterStructure/Gear_Unarmed/TP/EndScreenAnims/Attachments/BP_Swarmer_Attachment", "BP_Swarmer_Attachment_C");
     class USkeletalMeshComponent* SK_Swarmer_VictoryPose_I;
-    static constexpr const char* SK_Swarmer_VictoryPose_I__UeScsNode = "f16bee107373dc46896c5cefe0b56662";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "2125665daae0604486601e12e2158d28";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_Swarmer_VictoryPose_I__UeScsNode = "f16bee107373dc46896c5cefe0b56662";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "2125665daae0604486601e12e2158d28";
+    };
 };
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments

@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Jobs", "ConsoleScreen_Jobs_C");
     using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
     FText TextToDisplay;
     void ExecuteUbergraph_ConsoleScreen_Jobs(int EntryPoint);

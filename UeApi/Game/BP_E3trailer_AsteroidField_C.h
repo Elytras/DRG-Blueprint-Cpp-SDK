@@ -19,18 +19,22 @@ class BP_E3trailer_AsteroidField_C : public AActor
 public:
     UE_CLASS("/Game/Art/Cinematics/E3trailer2017/BP_E3trailer_AsteroidField", "BP_E3trailer_AsteroidField_C");
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "1c6f079f0fa39348b11619376584e548";
     float Radius;
     TArray<class UStaticMesh*> Meshes_to_spawn;
-    static constexpr const char* Meshes_to_spawn__UeName = "Meshes to spawn";
     TArray<class UInstancedStaticMeshComponent*> Instanced_meshes;
-    static constexpr const char* Instanced_meshes__UeName = "Instanced meshes";
     int Number_of_meshes;
-    static constexpr const char* Number_of_meshes__UeName = "Number of meshes";
     FRandomStream Random_seed;
-    static constexpr const char* Random_seed__UeName = "Random seed";
     float Scale;
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Scene__UeScsNode = "1c6f079f0fa39348b11619376584e548";
+        static constexpr const char* Meshes_to_spawn__UeName = "Meshes to spawn";
+        static constexpr const char* Instanced_meshes__UeName = "Instanced meshes";
+        static constexpr const char* Number_of_meshes__UeName = "Number of meshes";
+        static constexpr const char* Random_seed__UeName = "Random seed";
+    };
 };
 
 }}}}   // namespace Game::Art::Cinematics::E3trailer2017

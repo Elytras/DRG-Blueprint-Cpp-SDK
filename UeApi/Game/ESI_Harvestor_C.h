@@ -17,9 +17,13 @@ class ESI_Harvestor_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/Harvester/ESI_Harvestor", "ESI_Harvestor_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "bdf4c6373f70124a8a1d02d869d92bbf";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "bdf4c6373f70124a8a1d02d869d92bbf";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+    };
 };
 
 }}}   // namespace Game::Critters::Harvester

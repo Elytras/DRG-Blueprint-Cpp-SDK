@@ -29,8 +29,12 @@ public:
     bool IsEquipped;
     void ExecuteUbergraph_Cheat_SkinListItem(int EntryPoint);
     void Setup_Skin_Selection_Widget();
-    static constexpr const char* Setup_Skin_Selection_Widget__UeName = "Setup Skin Selection Widget";
     void BndEvt__SkinActivationButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Skin_Selection_Widget__UeName = "Setup Skin Selection Widget";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets

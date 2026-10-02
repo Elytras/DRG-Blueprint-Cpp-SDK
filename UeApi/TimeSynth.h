@@ -224,4 +224,9 @@ public:
     UE_PURE float GetEnvelopeFollowerValue() const;
     UE_PURE int GetMaxActiveClipLimit() const;
     UE_PURE TArray<FTimeSynthSpectralData> GetSpectralData() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnPlaybackTime__UeDispatcher = "Assignable";
+    };
 };

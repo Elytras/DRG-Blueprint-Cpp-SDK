@@ -25,7 +25,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/FilterSelector/ITM_VanityTag_CheckBox", "ITM_VanityTag_CheckBox_C");
     using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHovered;
+    UE_READONLY class UWidgetAnimation* AnimHovered;
     Basic_CheckBox_C* CheckBox;
     class UButton* Click_Button;
     class UHorizontalBox* Content_HorizontalBox;

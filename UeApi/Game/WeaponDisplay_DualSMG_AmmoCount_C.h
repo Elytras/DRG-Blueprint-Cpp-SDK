@@ -20,7 +20,6 @@ public:
     UE_CLASS("/Game/WeaponsNTools/DualMachinePistols/WeaponDisplay_DualSMG_AmmoCount", "WeaponDisplay_DualSMG_AmmoCount_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_DualSMG_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_DualSMG_AmmoCount_C__UeName = "UberGraphFrame";
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UTextBlock* DATA_AmmoClip;
     class UTextBlock* DATA_AmmoTotal;
@@ -28,6 +27,11 @@ public:
     void ExecuteUbergraph_WeaponDisplay_DualSMG_AmmoCount(int EntryPoint);
     void SetTotalCount(int Value);
     void SetClipCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_DualSMG_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols

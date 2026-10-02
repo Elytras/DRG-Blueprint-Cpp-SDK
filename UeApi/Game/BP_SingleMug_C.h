@@ -17,9 +17,13 @@ class BP_SingleMug_C : public AActor
 public:
     UE_CLASS("/Game/CharacterStructure/Gear_Unarmed/TP/EndScreenAnims/Attachments/BP_SingleMug", "BP_SingleMug_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "9dfc1624395c774ca702aa48936d3cc0";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "41e090c63a76c745b7e9a913ab51f0f8";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "9dfc1624395c774ca702aa48936d3cc0";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "41e090c63a76c745b7e9a913ab51f0f8";
+    };
 };
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments

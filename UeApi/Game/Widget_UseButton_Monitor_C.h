@@ -22,8 +22,8 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimMinimizeProgress;
-    class UWidgetAnimation* AnimArrow;
+    UE_READONLY class UWidgetAnimation* AnimMinimizeProgress;
+    UE_READONLY class UWidgetAnimation* AnimArrow;
     UI_ImageTinted_C* Img_Arrow;
     Basic_Label_C* Txt_Progress;
     Basic_Label_C* Txt_Status;

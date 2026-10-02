@@ -13,6 +13,11 @@ class STE_Electric_BurstPistolMines_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/Overclocks/OCBonusPenalty/STE_Electric_BurstPistolMines", "STE_Electric_BurstPistolMines_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty

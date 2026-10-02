@@ -18,15 +18,19 @@ class ENE_Spider_Tank_Ice_C : public Game::Enemies::Spider::Tank::ENE_Spider_Tan
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ENE_Spider_Tank_Ice", "ENE_Spider_Tank_Ice_C");
     using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Ice_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Ice_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* ConeCapsule;
-    static constexpr const char* ConeCapsule__UeScsNode = "59805f66eb9cd94a82a0ff4082de5a68";
     BP_ConeAttackBase_C* ConeAttack;
-    static constexpr const char* ConeAttack__UeScsNode = "6af5c6dab1fe5d44aec0af3ad0827378";
     void ExecuteUbergraph_ENE_Spider_Tank_Ice(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Ice_C__UeName = "UberGraphFrame";
+        static constexpr const char* ConeCapsule__UeScsNode = "59805f66eb9cd94a82a0ff4082de5a68";
+        static constexpr const char* ConeAttack__UeScsNode = "6af5c6dab1fe5d44aec0af3ad0827378";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

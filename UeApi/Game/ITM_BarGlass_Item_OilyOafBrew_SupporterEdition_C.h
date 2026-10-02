@@ -13,7 +13,11 @@ class ITM_BarGlass_Item_OilyOafBrew_SupporterEdition_C : public Game::GameElemen
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/ITM_BarGlass_Item_OilyOafBrew_SupporterEdition", "ITM_BarGlass_Item_OilyOafBrew_SupporterEdition_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::Drinkables

@@ -13,8 +13,12 @@ class BP_PlayerState_Tutorial_C : public Game::Game::BP_PlayerState_C
 {
 public:
     UE_CLASS("/Game/Game/BP_PlayerState_Tutorial", "BP_PlayerState_Tutorial_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
+    };
 };
 
 }}   // namespace Game::Game

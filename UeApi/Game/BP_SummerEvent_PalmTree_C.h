@@ -22,17 +22,21 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_SummerEvent_PalmTree", "BP_SummerEvent_PalmTree_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "e8e423752077a24382a3af840d146798";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "e6560fa47a0c6e488ea0d3f0670376a5";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "3538adf625068948b5d92186ddd67223";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "7dcc09662365064a92419949515a3d3c";
     float SlapStrength;
     void ExecuteUbergraph_BP_SummerEvent_PalmTree(int EntryPoint);
     UE_MULTICAST void ImpulseSlapTree(FVector_NetQuantize PlayerPosition);
     void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Box__UeScsNode = "e8e423752077a24382a3af840d146798";
+        static constexpr const char* SkeletalMesh__UeScsNode = "e6560fa47a0c6e488ea0d3f0670376a5";
+        static constexpr const char* Scene__UeScsNode = "3538adf625068948b5d92186ddd67223";
+        static constexpr const char* InstantUsable__UeScsNode = "7dcc09662365064a92419949515a3d3c";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

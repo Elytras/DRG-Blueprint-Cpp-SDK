@@ -19,7 +19,7 @@ class MENU_Merch_C : public UWindowWidget
 public:
     UE_CLASS("/Game/UI/MENU_Merch/MENU_Merch", "MENU_Merch_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class UCanvasPanel* RootCanvas;
     void ExecuteUbergraph_MENU_Merch(int EntryPoint);
     void OnVisibilityChanged_Event(TEnum<ESlateVisibility> InVisibility);

@@ -28,20 +28,13 @@ public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/WPN_GooCannon", "WPN_GooCannon_C");
     using BP_GooCannon_GooPuddle_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C;
     using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GooCannon_FullyCharged_Cue;
-    static constexpr const char* GooCannon_FullyCharged_Cue__UeScsNode = "6ace973a970d2d48b15fe8542dc8f67f";
     class UFirstPersonWidgetComponent* Widget_Ammo;
-    static constexpr const char* Widget_Ammo__UeScsNode = "94402b12ea429b4aae0d4636aea488d0";
     class UAudioComponent* GooCannonCharge_Cue;
-    static constexpr const char* GooCannonCharge_Cue__UeScsNode = "3e9c350c393a5e4288a682d8c312fbd3";
     class UChargedProjectileLauncherComponent* ChargedProjectileLauncher;
-    static constexpr const char* ChargedProjectileLauncher__UeScsNode = "d1a63a2ffe776d46b53d42d7f0bdfbd2";
     class UPointLightComponent* MuzzlePointLight;
-    static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
     WeaponDisplay_ChargeBlaster_AmmoCounter_C* AmmoUI;
     class UAudioComponent* AC_ChargeLevel_0;
     class UAudioComponent* AC_ChargeSpinUp;
@@ -62,11 +55,22 @@ public:
     void RecieveUnequipped();
     void UserConstructionScript();
     void Handle_Charge_Audio(float charge);
-    static constexpr const char* Handle_Charge_Audio__UeName = "Handle Charge Audio";
     void FadeOutIfValid(class UAudioComponent*& AC);
     void GetNearbyPuddles();
     void ApplyUpgradeModifiers(class UItemUpgrade* ItemUpgrade);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* GooCannon_FullyCharged_Cue__UeScsNode = "6ace973a970d2d48b15fe8542dc8f67f";
+        static constexpr const char* Widget_Ammo__UeScsNode = "94402b12ea429b4aae0d4636aea488d0";
+        static constexpr const char* GooCannonCharge_Cue__UeScsNode = "3e9c350c393a5e4288a682d8c312fbd3";
+        static constexpr const char* ChargedProjectileLauncher__UeScsNode = "d1a63a2ffe776d46b53d42d7f0bdfbd2";
+        static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
+        static constexpr const char* Handle_Charge_Audio__UeName = "Handle Charge Audio";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

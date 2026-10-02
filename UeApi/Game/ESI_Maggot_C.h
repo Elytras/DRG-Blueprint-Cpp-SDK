@@ -17,9 +17,13 @@ class ESI_Maggot_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/Maggot/ESI_Maggot", "ESI_Maggot_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "487e0abcf8ba30468a012baee1377948";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8dfdecf46d46ff43ae1db3d42f5b0972";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "487e0abcf8ba30468a012baee1377948";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8dfdecf46d46ff43ae1db3d42f5b0972";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

@@ -16,10 +16,14 @@ class EWC_OktoberFest_BeerAmbush_C : public Game::Enemies::Waves::WaveController
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_OktoberFest_BeerAmbush", "EWC_OktoberFest_BeerAmbush_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_OktoberFest_BeerAmbush_C;
-    static constexpr const char* UberGraphFrame_EWC_OktoberFest_BeerAmbush_C__UeName = "UberGraphFrame";
     FVector MugLocation;
     void ExecuteUbergraph_EWC_OktoberFest_BeerAmbush(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_OktoberFest_BeerAmbush_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

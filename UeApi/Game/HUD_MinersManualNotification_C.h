@@ -21,7 +21,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/MinersManualNotifications/HUD_MinersManualNotification", "HUD_MinersManualNotification_C");
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UImage* Image_Background;
     class UTextBlock* PageText;
     class UTextBlock* TextBlock_Headline;

@@ -20,11 +20,10 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/Assets/HackingPod_HackScreenMiddle", "HackingPod_HackScreenMiddle_C");
     using ScrollingText02_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText02_C;
     FPointerToUberGraphFrame UberGraphFrame_HackingPod_HackScreenMiddle_C;
-    static constexpr const char* UberGraphFrame_HackingPod_HackScreenMiddle_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* TextBoxPopup;
-    class UWidgetAnimation* AccessGranted2;
-    class UWidgetAnimation* AccessGranted1;
-    class UWidgetAnimation* CautionBlink;
+    UE_READONLY class UWidgetAnimation* TextBoxPopup;
+    UE_READONLY class UWidgetAnimation* AccessGranted2;
+    UE_READONLY class UWidgetAnimation* AccessGranted1;
+    UE_READONLY class UWidgetAnimation* CautionBlink;
     class UImage* Image_93;
     class UImage* IMG_Caution;
     class UImage* IMG_Caution_1;
@@ -33,6 +32,11 @@ public:
     ScrollingText02_C* ScrollingText_3;
     void ExecuteUbergraph_HackingPod_HackScreenMiddle(int EntryPoint);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HackingPod_HackScreenMiddle_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets

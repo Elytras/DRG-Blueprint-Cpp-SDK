@@ -13,6 +13,11 @@ class STE_JetBootsBurn_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/STE_JetBootsBurn", "STE_JetBootsBurn_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint

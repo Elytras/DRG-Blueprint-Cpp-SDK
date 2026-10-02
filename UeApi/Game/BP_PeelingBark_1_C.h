@@ -23,19 +23,23 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/HollowBough/Assets/Bark/BP_PeelingBark_1", "BP_PeelingBark_1_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "f07496ef3fae1749b8a394f5adeadccb";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "f5fb0f9ca4e29c4a827e7bde50be87ee";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "b1cbc5df92761945925afde963f6337c";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "a84e7579ca4b3346a972387f6d70dc8f";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "61dea91490f5bc4eb52fa7d65d40e931";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d2da5caeccf30e4fb5fd83b539c54917";
     void ExecuteUbergraph_BP_PeelingBark_1(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "f07496ef3fae1749b8a394f5adeadccb";
+        static constexpr const char* SimpleHealth__UeScsNode = "f5fb0f9ca4e29c4a827e7bde50be87ee";
+        static constexpr const char* TerrainDetect__UeScsNode = "b1cbc5df92761945925afde963f6337c";
+        static constexpr const char* terrainPlacement__UeScsNode = "a84e7579ca4b3346a972387f6d70dc8f";
+        static constexpr const char* StaticMesh__UeScsNode = "61dea91490f5bc4eb52fa7d65d40e931";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d2da5caeccf30e4fb5fd83b539c54917";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark

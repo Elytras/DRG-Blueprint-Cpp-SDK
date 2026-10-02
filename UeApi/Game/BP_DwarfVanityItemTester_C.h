@@ -21,38 +21,28 @@ public:
     UE_CLASS("/Game/Character/Vanity2/BP_DwarfVanityItemTester", "BP_DwarfVanityItemTester_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "a7a2009a76d2e04a8d7a354f245b1f11";
     class USceneComponent* SharedRoot;
-    static constexpr const char* SharedRoot__UeScsNode = "72e28dd71758de4789cb4d7716c9c497";
     bool PlayAnim;
     FSingleAnimationPlayData Animation;
     FText Asset_Name;
-    static constexpr const char* Asset_Name__UeName = "Asset Name";
     bool ToggleBody;
     class USkeletalMesh* Armor_Mesh;
-    static constexpr const char* Armor_Mesh__UeName = "Armor Mesh";
     bool SingleChannelHair;
     class USkeletalMesh* Headwear_Mesh;
-    static constexpr const char* Headwear_Mesh__UeName = "Headwear Mesh";
     class UMaterialInterface* SkinMaterial;
     class UMaterialInterface* ArmorMaterial;
     bool ToggleHead;
     class USkeletalMesh* Head_Mesh;
-    static constexpr const char* Head_Mesh__UeName = "Head Mesh";
     class UMaterialInterface* HeadwearOverride;
     class UMaterialInterface* BaseHairMaterial;
     class UMaterialInterface* BeardOverride;
     bool ToggleHair;
     class USkeletalMesh* Beard_Mesh;
-    static constexpr const char* Beard_Mesh__UeName = "Beard Mesh";
     class USkeletalMesh* Moustache_Mesh;
-    static constexpr const char* Moustache_Mesh__UeName = "Moustache Mesh";
     class USkeletalMesh* Sideburns_Mesh;
-    static constexpr const char* Sideburns_Mesh__UeName = "Sideburns Mesh";
     class UMaterialInterface* MoustacheOverride;
     class UMaterialInterface* SideburnOverride;
     class USkeletalMesh* Eyebrows_Mesh;
-    static constexpr const char* Eyebrows_Mesh__UeName = "Eyebrows Mesh";
     class UMaterialInterface* EyebrowsOverride;
     class USkeletalMeshComponent* Armor;
     class USkeletalMeshComponent* NewVar_0;
@@ -61,6 +51,20 @@ public:
     void UserConstructionScript();
     void SetBeardPiece(class USkeletalMesh* Mesh, class UMaterialInterface* HairOverride);
     void SetAnim(class USkeletalMeshComponent* Target);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TextRender__UeScsNode = "a7a2009a76d2e04a8d7a354f245b1f11";
+        static constexpr const char* SharedRoot__UeScsNode = "72e28dd71758de4789cb4d7716c9c497";
+        static constexpr const char* Asset_Name__UeName = "Asset Name";
+        static constexpr const char* Armor_Mesh__UeName = "Armor Mesh";
+        static constexpr const char* Headwear_Mesh__UeName = "Headwear Mesh";
+        static constexpr const char* Head_Mesh__UeName = "Head Mesh";
+        static constexpr const char* Beard_Mesh__UeName = "Beard Mesh";
+        static constexpr const char* Moustache_Mesh__UeName = "Moustache Mesh";
+        static constexpr const char* Sideburns_Mesh__UeName = "Sideburns Mesh";
+        static constexpr const char* Eyebrows_Mesh__UeName = "Eyebrows Mesh";
+    };
 };
 
 }}}   // namespace Game::Character::Vanity2

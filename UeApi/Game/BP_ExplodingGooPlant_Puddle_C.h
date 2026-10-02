@@ -19,24 +19,28 @@ class BP_ExplodingGooPlant_Puddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ExplodingGooPlant/BP_ExplodingGooPlant_Puddle", "BP_ExplodingGooPlant_Puddle_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     class UBoxComponent* BoxTrigger;
-    static constexpr const char* BoxTrigger__UeScsNode = "c99b98723a06bb469e51a636ae364085";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e1031f314bc7a44fa3ea44bd961e3a11";
     class USphereComponent* Sphere3;
-    static constexpr const char* Sphere3__UeScsNode = "afa5f0c504be4d4b823e0bab6429b31f";
     class USphereComponent* Sphere2;
-    static constexpr const char* Sphere2__UeScsNode = "17e3a4a152c4a34ebcd9abe6c5773d22";
     class USphereComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "a5b35a86371019418f7751cc0dbdc6e7";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "965ba99fd1150e4ba9e1c4ba03b87893";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "ca4ac9a19bf66b48b4dd7f524939690e";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "d8d591ced953b54595f1e591d016bc72";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* BoxTrigger__UeScsNode = "c99b98723a06bb469e51a636ae364085";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e1031f314bc7a44fa3ea44bd961e3a11";
+        static constexpr const char* Sphere3__UeScsNode = "afa5f0c504be4d4b823e0bab6429b31f";
+        static constexpr const char* Sphere2__UeScsNode = "17e3a4a152c4a34ebcd9abe6c5773d22";
+        static constexpr const char* Sphere1__UeScsNode = "a5b35a86371019418f7751cc0dbdc6e7";
+        static constexpr const char* Sphere__UeScsNode = "965ba99fd1150e4ba9e1c4ba03b87893";
+        static constexpr const char* terrainPlacement__UeScsNode = "ca4ac9a19bf66b48b4dd7f524939690e";
+        static constexpr const char* ParticleSystem__UeScsNode = "d8d591ced953b54595f1e591d016bc72";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant

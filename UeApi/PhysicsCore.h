@@ -205,21 +205,21 @@ class UPhysicalMaterial : public UObject
 {
 public:
     UE_CLASS("/Script/PhysicsCore", "PhysicalMaterial");
-    float Friction;
-    float StaticFriction;
-    TEnum<EFrictionCombineMode> FrictionCombineMode;
+    UE_READONLY float Friction;
+    UE_READONLY float StaticFriction;
+    UE_READONLY TEnum<EFrictionCombineMode> FrictionCombineMode;
     bool bOverrideFrictionCombineMode;
-    float Restitution;
-    TEnum<EFrictionCombineMode> RestitutionCombineMode;
+    UE_READONLY float Restitution;
+    UE_READONLY TEnum<EFrictionCombineMode> RestitutionCombineMode;
     bool bOverrideRestitutionCombineMode;
-    float Density;
-    float SleepLinearVelocityThreshold;
-    float SleepAngularVelocityThreshold;
-    int SleepCounterThreshold;
-    float RaiseMassToPower;
-    float DestructibleDamageThresholdScale;
+    UE_READONLY float Density;
+    UE_READONLY float SleepLinearVelocityThreshold;
+    UE_READONLY float SleepAngularVelocityThreshold;
+    UE_READONLY int SleepCounterThreshold;
+    UE_READONLY float RaiseMassToPower;
+    UE_READONLY float DestructibleDamageThresholdScale;
     class UPhysicalMaterialPropertyBase* PhysicalMaterialProperty;
-    TEnum<EPhysicalSurface> SurfaceType;
+    UE_READONLY TEnum<EPhysicalSurface> SurfaceType;
 };
 
 class UPhysicalMaterialPropertyBase : public UObject
@@ -232,11 +232,11 @@ class UChaosPhysicalMaterial : public UObject
 {
 public:
     UE_CLASS("/Script/PhysicsCore", "ChaosPhysicalMaterial");
-    float Friction;
-    float StaticFriction;
-    float Restitution;
-    float LinearEtherDrag;
-    float AngularEtherDrag;
-    float SleepingLinearVelocityThreshold;
-    float SleepingAngularVelocityThreshold;
+    UE_READONLY float Friction;
+    UE_READONLY float StaticFriction;
+    UE_READONLY float Restitution;
+    UE_READONLY float LinearEtherDrag;
+    UE_READONLY float AngularEtherDrag;
+    UE_READONLY float SleepingLinearVelocityThreshold;
+    UE_READONLY float SleepingAngularVelocityThreshold;
 };

@@ -32,43 +32,26 @@ public:
     UE_CLASS("/Game/Art/Environments/ShipTesting/BP_JukeBox", "BP_JukeBox_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_SpaceRig_Jukebox_B;
-    static constexpr const char* SM_SpaceRig_Jukebox_B__UeScsNode = "111ccbe9b325e54f842a8e1748b87933";
     class UWidgetComponent* Widget5;
-    static constexpr const char* Widget5__UeScsNode = "632cc4f88e4bd440a7c7d7233aed2fad";
     class UWidgetComponent* Widget4;
-    static constexpr const char* Widget4__UeScsNode = "575a40e0ca896b40a5c2c509b88a593c";
     class UWidgetComponent* Widget3;
-    static constexpr const char* Widget3__UeScsNode = "c9545cf40d266c4ea1dcf035e6f4876e";
     class UWidgetComponent* Widget2;
-    static constexpr const char* Widget2__UeScsNode = "b8b2aa9a9d807348a487f1a29279de99";
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "acf2e6b7139e404d87e0779d350bd53c";
     class UWidgetComponent* Widget_Display;
-    static constexpr const char* Widget_Display__UeScsNode = "2c63e989d8a115488b034d236ceeea20";
     class UStaticMeshComponent* Jukebox;
-    static constexpr const char* Jukebox__UeScsNode = "c39d354b4df89248aaabb0741d27a817";
     class USphereComponent* DanceSphere;
-    static constexpr const char* DanceSphere__UeScsNode = "4596d2cec1fd9140be6110bd9cd2ee93";
     class UStaticMeshComponent* SM_Speaker1;
-    static constexpr const char* SM_Speaker1__UeScsNode = "62eb76692c694a45a51a6c8fee1be274";
     class UStaticMeshComponent* SM_Speaker;
-    static constexpr const char* SM_Speaker__UeScsNode = "10048429d7cbbb459703ca494047403b";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "2b568515b4287040aa3b1bbc5b018752";
     class UAudioComponent* JukeBox_Random_Cue;
-    static constexpr const char* JukeBox_Random_Cue__UeScsNode = "142a6f3ef15d70409adc7f4840a4a3f8";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "986a4065d8678946960bfce0322296b3";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "af1528ba7b081e4ab5354e6a30a991f7";
     float Timeline_0_Scale_Transform_97D3E280454882350654EE88E83F3CA7;
     TEnum<ETimelineDirection> Timeline_0__Direction_97D3E280454882350654EE88E83F3CA7;
     class UTimelineComponent* Timeline_0;
     float RotationSpeed;
     bool Can_use;
-    static constexpr const char* Can_use__UeName = "Can use";
     int musicIndex;
-    static constexpr const char* musicIndex__Replicated = "OnRep_MusicIndex:";
     FVector Scale;
     TArray<TSoftObjectPtr<class USoundBase>> MusicList;
     class UFSDAchievement* PartyTimeAchievement;
@@ -81,7 +64,6 @@ public:
     void SetupDisableJukeboxMusic();
     void StopJukebox();
     void Stop_Juke_Box();
-    static constexpr const char* Stop_Juke_Box__UeName = "Stop Juke Box";
     void LoadAndPlay(TSoftObjectPtr<class USoundBase> Music);
     void BndEvt__DanceSphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__DanceSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -95,6 +77,28 @@ public:
     void PayCredits(class APlayerCharacter* User, int amount, bool& Purchased);
     void GetAvailableMusic(TArray<TSoftObjectPtr<class USoundBase>>& OutMusicList);
     void UpdateCurrentMusic();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_SpaceRig_Jukebox_B__UeScsNode = "111ccbe9b325e54f842a8e1748b87933";
+        static constexpr const char* Widget5__UeScsNode = "632cc4f88e4bd440a7c7d7233aed2fad";
+        static constexpr const char* Widget4__UeScsNode = "575a40e0ca896b40a5c2c509b88a593c";
+        static constexpr const char* Widget3__UeScsNode = "c9545cf40d266c4ea1dcf035e6f4876e";
+        static constexpr const char* Widget2__UeScsNode = "b8b2aa9a9d807348a487f1a29279de99";
+        static constexpr const char* Widget1__UeScsNode = "acf2e6b7139e404d87e0779d350bd53c";
+        static constexpr const char* Widget_Display__UeScsNode = "2c63e989d8a115488b034d236ceeea20";
+        static constexpr const char* Jukebox__UeScsNode = "c39d354b4df89248aaabb0741d27a817";
+        static constexpr const char* DanceSphere__UeScsNode = "4596d2cec1fd9140be6110bd9cd2ee93";
+        static constexpr const char* SM_Speaker1__UeScsNode = "62eb76692c694a45a51a6c8fee1be274";
+        static constexpr const char* SM_Speaker__UeScsNode = "10048429d7cbbb459703ca494047403b";
+        static constexpr const char* Box__UeScsNode = "2b568515b4287040aa3b1bbc5b018752";
+        static constexpr const char* JukeBox_Random_Cue__UeScsNode = "142a6f3ef15d70409adc7f4840a4a3f8";
+        static constexpr const char* InstantUsable__UeScsNode = "986a4065d8678946960bfce0322296b3";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "af1528ba7b081e4ab5354e6a30a991f7";
+        static constexpr const char* Can_use__UeName = "Can use";
+        static constexpr const char* musicIndex__Replicated = "OnRep_MusicIndex:";
+        static constexpr const char* Stop_Juke_Box__UeName = "Stop Juke Box";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::ShipTesting

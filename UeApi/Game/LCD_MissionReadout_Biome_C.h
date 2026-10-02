@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionReadouts/LCD_MissionReadout_Biome", "LCD_MissionReadout_Biome_C");
     using UI_MissionReadOut_Base_C = Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Pan;
+    UE_READONLY class UWidgetAnimation* Pan;
     class UTextBlock* BiomeName;
     class UImage* Image_Biome;
     class UTextBlock* PlanetaryRegion;

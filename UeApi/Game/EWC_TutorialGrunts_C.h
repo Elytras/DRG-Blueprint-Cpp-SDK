@@ -20,13 +20,17 @@ public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_TutorialGrunts", "EWC_TutorialGrunts_C");
     using BP_TutorialTriggerManager_C = Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_TutorialGrunts_C;
-    static constexpr const char* UberGraphFrame_EWC_TutorialGrunts_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     BP_TutorialTriggerManager_C* TriggerManager;
     void ExecuteUbergraph_EWC_TutorialGrunts(int EntryPoint);
     void StopConstantPreassure();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_TutorialGrunts_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

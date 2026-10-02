@@ -20,7 +20,7 @@ class Itm_LevelSelectIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Itm_LevelSelectIcon", "Itm_LevelSelectIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ScaleUp;
+    UE_READONLY class UWidgetAnimation* ScaleUp;
     class UButton* Button_Outer;
     class UImage* Image_Icon;
     FVector2D Size;

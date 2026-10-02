@@ -13,6 +13,11 @@ class STE_ScoutSpeedBoost_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrapplingGun/STE_ScoutSpeedBoost", "STE_ScoutSpeedBoost_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun

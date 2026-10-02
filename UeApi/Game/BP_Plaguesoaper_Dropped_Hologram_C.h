@@ -18,15 +18,19 @@ class BP_Plaguesoaper_Dropped_Hologram_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/BP_Plaguesoaper_Dropped_Hologram", "BP_Plaguesoaper_Dropped_Hologram_C");
     class UStaticMeshComponent* Hologram1;
-    static constexpr const char* Hologram1__UeScsNode = "8277af15f0b2db4787b406473eb6c3f2";
     class UStaticMeshComponent* Hologram3;
-    static constexpr const char* Hologram3__UeScsNode = "0f670afd27808a469b6b995c041f88fb";
     class UStaticMeshComponent* Hologram2;
-    static constexpr const char* Hologram2__UeScsNode = "4437d518ba709e4bbb2407a7e50abfe7";
     class URotatingSceneComponent* RotatingScene;
-    static constexpr const char* RotatingScene__UeScsNode = "7a1edaf7e70dbc4c9fb6cd3f927179c8";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7581567e9a32964b957afc5cab15feac";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Hologram1__UeScsNode = "8277af15f0b2db4787b406473eb6c3f2";
+        static constexpr const char* Hologram3__UeScsNode = "0f670afd27808a469b6b995c041f88fb";
+        static constexpr const char* Hologram2__UeScsNode = "4437d518ba709e4bbb2407a7e50abfe7";
+        static constexpr const char* RotatingScene__UeScsNode = "7a1edaf7e70dbc4c9fb6cd3f927179c8";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7581567e9a32964b957afc5cab15feac";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper

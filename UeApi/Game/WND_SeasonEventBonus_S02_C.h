@@ -23,8 +23,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonEventBonus_S02", "WND_SeasonEventBonus_S02_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_SeasonEventBonus_S02_C;
-    static constexpr const char* UberGraphFrame_WND_SeasonEventBonus_S02_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* FlipRows;
+    UE_READONLY class UWidgetAnimation* FlipRows;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UButton* Button_BackRowBlocker;
     class UHorizontalBox* HorizontalBox_BackRow;
@@ -37,6 +36,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetupRows(int Completed, int claimed, int Total);
     UE_PURE class UWidget* Get_Button_BackRowBlocker_ToolTipWidget();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WND_SeasonEventBonus_S02_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

@@ -26,7 +26,7 @@ public:
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     class UHorizontalBox* DotsBox;
     TArray<EHUDVisibilityMode> AvailableModes;
-    class UHUDVisibilityGroup* VisibilityGroup;
+    UE_READONLY class UHUDVisibilityGroup* VisibilityGroup;
     void ExecuteUbergraph_Options_HUD_Element(int EntryPoint);
     void OnModeChanged_Event(class UHUDVisibilityGroup* Group, TEnum<EHUDVisibilityMode> Mode);
     UE_COSMETIC void Construct();

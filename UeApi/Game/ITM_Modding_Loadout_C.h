@@ -27,7 +27,7 @@ public:
     using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
     using Basic_ToolTip_HeadlineAndText_C = Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UBorder* Background;
     class UButton* Button_0;
     class UButton* IconButton;

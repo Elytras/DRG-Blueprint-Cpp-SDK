@@ -29,41 +29,23 @@ public:
     using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USpotLightComponent* SpotLight2;
-    static constexpr const char* SpotLight2__UeScsNode = "9d959e8f750ab942a4b42c3dec82c105";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "f27769c24aaf6945ad101a1e2eda31a8";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "b7f57d7808b0204e8afdf94dc4efa598";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "4230a7133d9cc547998bb3939cc72836";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "d3b96dd0654f7243a4700db96dfc9128";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "2f0a7d6c01ffc74ca85f641e8c2f2ba3";
     class UStaticMeshComponent* LightCone2;
-    static constexpr const char* LightCone2__UeScsNode = "289a0b5c967a0e4d99cc65105a42daf4";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "5bb3c5210a1ff744ac9b1ba26e4c1b61";
     class UStaticMeshComponent* LightCone1;
-    static constexpr const char* LightCone1__UeScsNode = "09c90f062bd2af48862b287ad0041f15";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
     class UWidgetComponent* Widget2;
-    static constexpr const char* Widget2__UeScsNode = "83659bc8c4eeb84db2e270c162a41536";
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "577298098a66d2479820781f8fe33649";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "58fefed49939684eb72800f1437a784a";
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "7d0ad32bf43a474780cdcc6bce400711";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_26FA2F8A445C2278C5D1B8901F1A6686";
     TEnum<ETimelineDirection> Timeline_0__Direction_26FA2F8A445C2278C5D1B8901F1A6686;
     class UTimelineComponent* Timeline_0;
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
@@ -73,6 +55,28 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpotLight2__UeScsNode = "9d959e8f750ab942a4b42c3dec82c105";
+        static constexpr const char* PointLight4__UeScsNode = "f27769c24aaf6945ad101a1e2eda31a8";
+        static constexpr const char* PointLight3__UeScsNode = "b7f57d7808b0204e8afdf94dc4efa598";
+        static constexpr const char* PointLight2__UeScsNode = "4230a7133d9cc547998bb3939cc72836";
+        static constexpr const char* PointLight1__UeScsNode = "d3b96dd0654f7243a4700db96dfc9128";
+        static constexpr const char* SpotLight1__UeScsNode = "2f0a7d6c01ffc74ca85f641e8c2f2ba3";
+        static constexpr const char* LightCone2__UeScsNode = "289a0b5c967a0e4d99cc65105a42daf4";
+        static constexpr const char* SpotLight__UeScsNode = "5bb3c5210a1ff744ac9b1ba26e4c1b61";
+        static constexpr const char* LightCone1__UeScsNode = "09c90f062bd2af48862b287ad0041f15";
+        static constexpr const char* Widget__UeScsNode = "95f1358a7902ad428050be5780516ce8";
+        static constexpr const char* Widget2__UeScsNode = "83659bc8c4eeb84db2e270c162a41536";
+        static constexpr const char* Widget1__UeScsNode = "577298098a66d2479820781f8fe33649";
+        static constexpr const char* StaticMesh__UeScsNode = "58fefed49939684eb72800f1437a784a";
+        static constexpr const char* TextRender__UeScsNode = "7d0ad32bf43a474780cdcc6bce400711";
+        static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
+        static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_26FA2F8A445C2278C5D1B8901F1A6686";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

@@ -30,8 +30,8 @@ public:
     class UTexture2D* ImageBackground;
     class UTexture2D* ImageFilled;
     class UTexture2D* ImageOutline;
-    int BrokenIconSize;
-    FMargin BrokenIconPadding;
+    UE_READONLY int BrokenIconSize;
+    UE_READONLY FMargin BrokenIconPadding;
     class APipelineStart* PipelineStart;
     void ExecuteUbergraph_ITM_Refinery_Pipeline(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

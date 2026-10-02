@@ -13,7 +13,11 @@ class CameraShake_Droppod_TakeOff_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_Droppod_TakeOff", "CameraShake_Droppod_TakeOff_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

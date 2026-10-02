@@ -19,11 +19,8 @@ class BP_GooCannon_Cannister_C : public Game::WeaponsNTools::MAG_BaseClass_C
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_Cannister", "BP_GooCannon_Cannister_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_GooCannon_Cannister_C;
-    static constexpr const char* UberGraphFrame_BP_GooCannon_Cannister_C__UeName = "UberGraphFrame";
     class UFirstPersonStaticMeshComponent* Bar;
-    static constexpr const char* Bar__UeScsNode = "d353f002f7629a4ca342eea2fb5d7a2b";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_FBE0858B42174801F4BF1E8D85338A2E";
     TEnum<ETimelineDirection> Timeline_0__Direction_FBE0858B42174801F4BF1E8D85338A2E;
     class UTimelineComponent* Timeline_0;
     float StartZScale;
@@ -32,6 +29,13 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     bool OnSpawnRelease_Attached(class AActor* Parent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_GooCannon_Cannister_C__UeName = "UberGraphFrame";
+        static constexpr const char* Bar__UeScsNode = "d353f002f7629a4ca342eea2fb5d7a2b";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_FBE0858B42174801F4BF1E8D85338A2E";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

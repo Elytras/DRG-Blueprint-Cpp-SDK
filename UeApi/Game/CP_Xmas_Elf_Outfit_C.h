@@ -13,6 +13,11 @@ class CP_Xmas_Elf_Outfit_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Xmas_Elf_Outfit", "CP_Xmas_Elf_Outfit_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.CampaignMission CampaignMission_5;/Script/FSD.CampaignMission CampaignMission_6;/Script/FSD.PickaxePartReward CampaignMission_0:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_1:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_2:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_4:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_5:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_6:PickaxePartReward_0;/Script/FSD.PickaxePartReward CampaignMission_6:PickaxePartReward_1;/Script/FSD.SkinUnlock CampaignMission_4:SkinUnlock_0;/Script/FSD.VanityReward CampaignMission_1:VanityReward_0;/Script/FSD.VanityReward CampaignMission_6:VanityReward_1";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

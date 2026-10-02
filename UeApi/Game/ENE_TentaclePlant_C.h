@@ -31,32 +31,19 @@ class ENE_TentaclePlant_C : public ATentaclePlant
 {
 public:
     UE_CLASS("/Game/Enemies/TentaclePlant/ENE_TentaclePlant", "ENE_TentaclePlant_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "29d10933ce7c7146835bb54965b84ac0";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "3d19da54ab04da468a50cafa2ba4c3dd";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "7c20cb7a80dbc840b0f74a2e03b23b0d";
     class UFSDAudioComponent* IdleSound;
-    static constexpr const char* IdleSound__UeScsNode = "e9f4e08da4be264c9f4de1725fe8b0b9";
     class UEnemyLineOfSightComponent* EnemyLineOfSight;
-    static constexpr const char* EnemyLineOfSight__UeScsNode = "2cf2007460c09242b2309c46b0acbfa6";
     class UTerrainPlacementComponent* TerrainPlacement_Tentacle;
-    static constexpr const char* TerrainPlacement_Tentacle__UeScsNode = "9d9564f64d76694d84641f54744c4704";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "4d64ba976ae11045acea51097b7130b9";
     class USceneComponent* Root;
-    static constexpr const char* Root__UeScsNode = "d83f212be8dfa34ab6815fec2fb30525";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "7360a6f34f86b14aa9141b9f06dfbadf";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
     bool IsOpen;
-    static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
     TArray<FName> ArmorBones;
     void ExecuteUbergraph_ENE_TentaclePlant(int EntryPoint);
     void OnUnFrozen();
@@ -73,6 +60,23 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Capsule__UeScsNode = "29d10933ce7c7146835bb54965b84ac0";
+        static constexpr const char* PointLight__UeScsNode = "3d19da54ab04da468a50cafa2ba4c3dd";
+        static constexpr const char* PathfinderCollision__UeScsNode = "7c20cb7a80dbc840b0f74a2e03b23b0d";
+        static constexpr const char* IdleSound__UeScsNode = "e9f4e08da4be264c9f4de1725fe8b0b9";
+        static constexpr const char* EnemyLineOfSight__UeScsNode = "2cf2007460c09242b2309c46b0acbfa6";
+        static constexpr const char* TerrainPlacement_Tentacle__UeScsNode = "9d9564f64d76694d84641f54744c4704";
+        static constexpr const char* SkeletalMesh__UeScsNode = "4d64ba976ae11045acea51097b7130b9";
+        static constexpr const char* Root__UeScsNode = "d83f212be8dfa34ab6815fec2fb30525";
+        static constexpr const char* ProjectileAttack__UeScsNode = "7360a6f34f86b14aa9141b9f06dfbadf";
+        static constexpr const char* PawnSensing__UeScsNode = "72d648c287c10e4ebe492745762358cf";
+        static constexpr const char* outline__UeScsNode = "33d323bf04863e44a3b9c4e72298a7ee";
+        static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
+    };
 };
 
 }}}   // namespace Game::Enemies::TentaclePlant

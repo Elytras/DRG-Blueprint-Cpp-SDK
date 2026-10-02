@@ -24,28 +24,32 @@ class PRJ_Spider_Tank_Boss_Eggshot_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/EggShot/PRJ_Spider_Tank_Boss_Eggshot", "PRJ_Spider_Tank_Boss_Eggshot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "c8729631ffce5d4683be320a88635848";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "9d12a4be7b6a7e4385b204182fd39a83";
     class UStaticMeshComponent* Mesh_Egg;
-    static constexpr const char* Mesh_Egg__UeScsNode = "30506694d8737241b4458de603eccb05";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c3fb2cb79964e34bad7d1ff7427c797c";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
     class UParticleSystemComponent* Particle_Smoke;
-    static constexpr const char* Particle_Smoke__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
     class UEnemyDescriptor* EnemyToSpawn;
     int SpawnAmount;
     void ExecuteUbergraph_PRJ_Spider_Tank_Boss_Eggshot(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "c8729631ffce5d4683be320a88635848";
+        static constexpr const char* RotatingMovement__UeScsNode = "9d12a4be7b6a7e4385b204182fd39a83";
+        static constexpr const char* Mesh_Egg__UeScsNode = "30506694d8737241b4458de603eccb05";
+        static constexpr const char* Damage__UeScsNode = "c3fb2cb79964e34bad7d1ff7427c797c";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
+        static constexpr const char* Particle_Smoke__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+        static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::EggShot

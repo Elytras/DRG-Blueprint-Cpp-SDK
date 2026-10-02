@@ -486,6 +486,14 @@ struct FModioTextValidationRule
 
     FModioTextValidationRule() = default;
     FModioTextValidationRule(EModioTextValidationRule RuleToUse, FText ValidationMessage, int MinimumLength, int MaximumLength) {}
+
+    // UModioUIInputValidationLibrary::ValidateUsingRule (ModioUI.h)
+    bool ValidateUsingRule(const FText& TextToValidate, FText& ValidationMessageText) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ValidateUsingRule__UeForward = "UModioUIInputValidationLibrary::ValidateUsingRule";
+    };
 };
 
 struct FModioUIAction
@@ -526,37 +534,41 @@ class UModioUserWidgetBase : public UUserWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUserWidgetBase");
-    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     bool bRoutedSetDataSource;
     bool bRoutedLoadExternalData;
     bool bRoutedFinishLoadExternalData;
-    class UObject* DataSource;
+    UE_READONLY class UObject* DataSource;
     void FinishLoadExternalData(FModioErrorCode ec);
     void LoadExternalData();
     void OnBeginLoadExternalData();
     void OnDataSourceUpdated();
     void OnFinishLoadExternalData(FModioErrorCode ec);
     void SetDataSource(class UObject* NewDataSource);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class UModioModTileBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModTileBase");
-    bool bCurrentExpandedState;
+    UE_READONLY bool bCurrentExpandedState;
     FModioUIMaterialRef LoadingMaterial;
     FModioUIMaterialRef ErrorMaterial;
-    class UModioImage* Thumbnail;
-    class UModioUserWidgetBase* SubscriptionIndicator;
-    class UModioRichTextBlock* ModName;
-    class UWidgetAnimation* FocusTransition;
-    class UModioRoundedBorder* TileBorder;
-    class UModioImage* TileFrame;
-    class UModioRichTextButton* SubscribeButton;
+    UE_READONLY class UModioImage* Thumbnail;
+    UE_READONLY class UModioUserWidgetBase* SubscriptionIndicator;
+    UE_READONLY class UModioRichTextBlock* ModName;
+    UE_READONLY class UWidgetAnimation* FocusTransition;
+    UE_READONLY class UModioRoundedBorder* TileBorder;
+    UE_READONLY class UModioImage* TileFrame;
+    UE_READONLY class UModioRichTextButton* SubscribeButton;
     FModioUIStyleRef Style;
     class UModioUI4Subsystem* UISubsystem;
-    FText SubscribeLabel;
-    FText UnsubscribeLabel;
+    UE_READONLY FText SubscribeLabel;
+    UE_READONLY FText UnsubscribeLabel;
     TMulticastInlineDelegate<void(class UModioModInfoUI* ModInfo)> OnSubscribeClicked;
     void EnableSubscribeButton();
     void HandleModLogoOperationStateChanged(TEnum<EModioUIAsyncOperationWidgetState> NewState);
@@ -564,14 +576,19 @@ public:
     void OnModSubscriptionStatusChanged(FModioModID ID, bool Subscribed);
     void OnSetExpandedState(bool bExpanded);
     void SetExpandedState(bool bExpanded);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSubscribeClicked__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioFeaturedMod : public UModioModTileBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioFeaturedMod");
-    class UModioPopupMenu* MoreOptionsMenu;
-    class UModioImage* TileActiveFrame;
+    UE_READONLY class UModioPopupMenu* MoreOptionsMenu;
+    UE_READONLY class UModioImage* TileActiveFrame;
     void NativeMoreOptionsClicked();
     void SubmitModReport();
     void SubmitNegativeRating();
@@ -597,10 +614,10 @@ class UModioUIAsyncLoadingOverlay : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUIAsyncLoadingOverlay");
-    FModioUIStyleRef DialogStyle;
-    class UModioRichTextButton* CancelButton;
-    class UModioRichTextBlock* LoadingText;
-    class UImage* BackgroundImage;
+    UE_READONLY FModioUIStyleRef DialogStyle;
+    UE_READONLY class UModioRichTextButton* CancelButton;
+    UE_READONLY class UModioRichTextBlock* LoadingText;
+    UE_READONLY class UImage* BackgroundImage;
     void Close();
 };
 
@@ -609,8 +626,8 @@ class UModioMenuView : public UModioUserWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioMenuView");
     class UUserWidget* CachedMenuTitleContentWidget;
-    FText MenuName;
-    TSubclassOf<class UUserWidget> TitleContentClass;
+    UE_READONLY FText MenuName;
+    UE_READONLY TSubclassOf<class UUserWidget> TitleContentClass;
     bool bShouldShowTopNavBar;
     bool bShouldShowBackButton;
 };
@@ -619,23 +636,23 @@ class UModioCollectionView : public UModioMenuView
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioCollectionView");
-    class UModioRichTextBlock* CollectionTitle;
-    class UModioEditableTextBox* SearchInput;
-    FText ShowUserSubscriptionsText;
-    FText ShowSystemCollectionText;
-    class UModioRichTextButton* FetchButton;
-    class UModioPopupComboBox* ModGroupSelection;
-    class UModioPopupComboBox* SortBy;
-    class UModioListView* CollectionList;
-    class UModioRichTextBlock* CollectionCount;
-    class UModioRichTextBlock* InfoRichTextBlock;
+    UE_READONLY class UModioRichTextBlock* CollectionTitle;
+    UE_READONLY class UModioEditableTextBox* SearchInput;
+    UE_READONLY FText ShowUserSubscriptionsText;
+    UE_READONLY FText ShowSystemCollectionText;
+    UE_READONLY class UModioRichTextButton* FetchButton;
+    UE_READONLY class UModioPopupComboBox* ModGroupSelection;
+    UE_READONLY class UModioPopupComboBox* SortBy;
+    UE_READONLY class UModioListView* CollectionList;
+    UE_READONLY class UModioRichTextBlock* CollectionCount;
+    UE_READONLY class UModioRichTextBlock* InfoRichTextBlock;
     TArray<class UModioModCollectionEntryUI*> CachedCollection;
     TArray<class UModioModCollectionEntryUI*> FilteredCollection;
     class UModioModCollectionTile* CurrentTile;
-    FText DefaultButtonLabel;
-    FText SearchingButtonLabel;
-    FText NoSubscribedModsText;
-    FText NoModsFoundText;
+    UE_READONLY FText DefaultButtonLabel;
+    UE_READONLY FText SearchingButtonLabel;
+    UE_READONLY FText NoSubscribedModsText;
+    UE_READONLY FText NoModsFoundText;
     void OnFetchUpdatesClicked();
     void OnModGroupChanged(FText SelectedItem, TEnum<ESelectInfo> SelectionType);
     void SortAToZ();
@@ -648,22 +665,22 @@ class UModioDownloadListWidgetBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDownloadListWidgetBase");
-    class UModioListView* QueueList;
-    class UModioRichTextBlock* QueueTypeLabel;
-    class UModioRichTextBlock* StatusString;
+    UE_READONLY class UModioListView* QueueList;
+    UE_READONLY class UModioRichTextBlock* QueueTypeLabel;
+    UE_READONLY class UModioRichTextBlock* StatusString;
 };
 
 class UModioDownloadQueueEntry : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDownloadQueueEntry");
-    class UModioImage* ModThumbnail;
-    class UModioRichTextBlock* ModNameLabel;
-    class UModioRichTextBlock* ModSizeLabel;
-    class UModioRichTextButton* UnsubscribeButton;
-    class UModioRichTextBlock* ModStatusLabel;
-    FModioUIStyleRef EntryStyle;
-    class UBorder* EntryBorder;
+    UE_READONLY class UModioImage* ModThumbnail;
+    UE_READONLY class UModioRichTextBlock* ModNameLabel;
+    UE_READONLY class UModioRichTextBlock* ModSizeLabel;
+    UE_READONLY class UModioRichTextButton* UnsubscribeButton;
+    UE_READONLY class UModioRichTextBlock* ModStatusLabel;
+    UE_READONLY FModioUIStyleRef EntryStyle;
+    UE_READONLY class UBorder* EntryBorder;
     FEventReply OnEntryPressed(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OnUnsubClicked();
 };
@@ -678,13 +695,13 @@ class UModioDownloadQueueOpProgress : public UModioModManagementWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDownloadQueueOpProgress");
-    class UModioRichTextButton* UnsubscribeButton;
-    class UModioProgressBar* ProgressBar;
-    class UModioRichTextBlock* ModNameLabel;
-    class UModioRichTextBlock* OperationSpeedText;
-    class UModioRichTextBlock* OperationProgressText;
-    FText SpeedFormatText;
-    FText ProgressFormatText;
+    UE_READONLY class UModioRichTextButton* UnsubscribeButton;
+    UE_READONLY class UModioProgressBar* ProgressBar;
+    UE_READONLY class UModioRichTextBlock* ModNameLabel;
+    UE_READONLY class UModioRichTextBlock* OperationSpeedText;
+    UE_READONLY class UModioRichTextBlock* OperationProgressText;
+    UE_READONLY FText SpeedFormatText;
+    UE_READONLY FText ProgressFormatText;
     void OnUnsubscribeClicked();
 };
 
@@ -692,18 +709,18 @@ class UModioDownloadQueueDrawer : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDownloadQueueDrawer");
-    class UModioUserProfileButton* ProfileIcon;
-    class UModioRichTextBlock* UserLabel;
-    class UModioRichTextBlock* ActivityText;
-    class UModioRichTextBlock* StatusText;
-    class UModioRichTextButton* LogOutButton;
-    class UModioDownloadQueueOpProgress* CurrentOpProgress;
-    class UModioDownloadListWidgetBase* OperationQueue;
-    class UModioDownloadListWidgetBase* CompletedQueue;
-    FText DownloadingActionText;
-    FText ExtractingActionText;
-    FText InitializingActionText;
-    FText NoDownloadText;
+    UE_READONLY class UModioUserProfileButton* ProfileIcon;
+    UE_READONLY class UModioRichTextBlock* UserLabel;
+    UE_READONLY class UModioRichTextBlock* ActivityText;
+    UE_READONLY class UModioRichTextBlock* StatusText;
+    UE_READONLY class UModioRichTextButton* LogOutButton;
+    UE_READONLY class UModioDownloadQueueOpProgress* CurrentOpProgress;
+    UE_READONLY class UModioDownloadListWidgetBase* OperationQueue;
+    UE_READONLY class UModioDownloadListWidgetBase* CompletedQueue;
+    UE_READONLY FText DownloadingActionText;
+    UE_READONLY FText ExtractingActionText;
+    UE_READONLY FText InitializingActionText;
+    UE_READONLY FText NoDownloadText;
     void HandleOperationCompleted();
     void OnLogoutClicked();
     void OnSubsricptionChanged(FModioModID ID, bool Subscribed);
@@ -713,11 +730,11 @@ class UModioEditableTextBox : public UEditableTextBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioEditableTextBox");
-    int MaxCharacters;
-    bool bValidateInput;
-    TArray<FModioTextValidationRule> ValidationRules;
-    bool bDisplayValidationErrors;
-    FModioUIStyleRef TextBoxStyle;
+    UE_READONLY int MaxCharacters;
+    UE_READONLY bool bValidateInput;
+    UE_READONLY TArray<FModioTextValidationRule> ValidationRules;
+    UE_READONLY bool bDisplayValidationErrors;
+    UE_READONLY FModioUIStyleRef TextBoxStyle;
     FModioUIStyleRef TextStyle;
     void StartInput();
 };
@@ -726,7 +743,7 @@ class UModioNotificationWidgetBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioNotificationWidgetBase");
-    FModioUIStyleRef NotificationStyle;
+    UE_READONLY FModioUIStyleRef NotificationStyle;
     static class UWidget* CreateFromParams(TSubclassOf<class UWidget> NotificationClass, const FModioNotificationParams& Params_0, class UWidget* Outer_0);
 };
 
@@ -734,19 +751,19 @@ class UModioNotificationErrorWidgetBase : public UModioNotificationWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioNotificationErrorWidgetBase");
-    class UModioImage* StatusColorBackground;
-    class UModioImage* StatusIndicator;
-    class UModioRichTextBlock* NotificationTitle;
-    class UModioRichTextBlock* NotificationMessage;
+    UE_READONLY class UModioImage* StatusColorBackground;
+    UE_READONLY class UModioImage* StatusIndicator;
+    UE_READONLY class UModioRichTextBlock* NotificationTitle;
+    UE_READONLY class UModioRichTextBlock* NotificationMessage;
 };
 
 class UModioErrorRetryWidget : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioErrorRetryWidget");
-    class UModioRichTextBlock* ErrorText;
+    UE_READONLY class UModioRichTextBlock* ErrorText;
     FString ErrorTextValue;
-    class UModioRichTextButton* RetryButton;
+    UE_READONLY class UModioRichTextButton* RetryButton;
     void OnRetryClicked();
     void SetErrorText(FString Error);
 };
@@ -755,16 +772,16 @@ class UModioFeaturedCategory : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioFeaturedCategory");
-    class UWidgetAnimation* NavLeftHoverAnim;
-    class UWidgetAnimation* NavRightHoverAnim;
-    class UModioRichTextBlock* Title;
-    class UModioTileView* ItemList;
-    class UWidget* TileLoader;
-    class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
-    class UModioButton* SeeAllButton;
-    class UModioButton* NavLeftButton;
-    class UModioButton* NavRightButton;
-    class UModioAsyncOpWrapperWidget* CategoryViewContent;
+    UE_READONLY class UWidgetAnimation* NavLeftHoverAnim;
+    UE_READONLY class UWidgetAnimation* NavRightHoverAnim;
+    UE_READONLY class UModioRichTextBlock* Title;
+    UE_READONLY class UModioTileView* ItemList;
+    UE_READONLY class UWidget* TileLoader;
+    UE_READONLY class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
+    UE_READONLY class UModioButton* SeeAllButton;
+    UE_READONLY class UModioButton* NavLeftButton;
+    UE_READONLY class UModioButton* NavRightButton;
+    UE_READONLY class UModioAsyncOpWrapperWidget* CategoryViewContent;
     FModioFilterParams Filter;
     TMulticastInlineDelegate<void(int Index_0, class UModioFeaturedCategory* RealCategory)> SelectionChangedDelegate;
     int ArrowButtonScrollAmount;
@@ -780,16 +797,21 @@ public:
     void PlayNavRightUnhoverAnim();
     void SetSelectionIndexDelegate(TDelegate<void()> Delegate);
     class UModioTileView* GetItemList() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SelectionChangedDelegate__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioFeaturedView : public UModioMenuView
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioFeaturedView");
-    class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
-    class UWidget* PrimaryFeaturedCategoryLoader;
-    class UModioListView* AdditionalCategories;
-    class UModioAsyncOpWrapperWidget* FeaturedViewContent;
+    UE_READONLY class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
+    UE_READONLY class UWidget* PrimaryFeaturedCategoryLoader;
+    UE_READONLY class UModioListView* AdditionalCategories;
+    UE_READONLY class UModioAsyncOpWrapperWidget* FeaturedViewContent;
     class UModioGridPanel* PrimaryCategoryGridPanel;
     class UModioFeaturedModCarousel* FeaturedModCarousel;
     TArray<class UObject*> CachedFeaturedItems;
@@ -803,11 +825,11 @@ class UModioCodeInputWidget : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioCodeInputWidget");
-    int NumberOfCharacters;
-    FModioUIStyleRef Style;
-    bool bValidateInput;
-    TArray<FModioTextValidationRule> ValidationRules;
-    bool bDisplayValidationErrors;
+    UE_READONLY int NumberOfCharacters;
+    UE_READONLY FModioUIStyleRef Style;
+    UE_READONLY bool bValidateInput;
+    UE_READONLY TArray<FModioTextValidationRule> ValidationRules;
+    UE_READONLY bool bDisplayValidationErrors;
     FModioUIStyleRef TextStyle;
     FEventReply ValidateCodeInputCharacter(FString Character);
 };
@@ -816,9 +838,9 @@ class UModioMenuBar : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioMenuBar");
-    class UModioRichTextButton* SearchButton;
-    class UModioRichTextButton* BackButton;
-    class UModioUserProfileButton* UserProfileButton;
+    UE_READONLY class UModioRichTextButton* SearchButton;
+    UE_READONLY class UModioRichTextButton* BackButton;
+    UE_READONLY class UModioUserProfileButton* UserProfileButton;
     void OnBackClicked();
     void OnSearchClicked();
 };
@@ -827,25 +849,25 @@ class UModioMenu : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioMenu");
-    class UWidgetAnimation* ViewChangedAnim;
-    class UWidgetAnimation* DialogAnim;
-    class UModioWidgetSwitcher* ViewController;
-    class UModioMenuBar* MenuBar;
-    class UModioImage* Background;
-    class UModioDrawerController* DrawerController;
-    class UModioDialogController* DialogController;
-    class UUserWidget* HideCursorWidget;
-    class UWidget* NotificationController;
-    class UUserWidget* ModioMenuBarWidget;
+    UE_READONLY class UWidgetAnimation* ViewChangedAnim;
+    UE_READONLY class UWidgetAnimation* DialogAnim;
+    UE_READONLY class UModioWidgetSwitcher* ViewController;
+    UE_READONLY class UModioMenuBar* MenuBar;
+    UE_READONLY class UModioImage* Background;
+    UE_READONLY class UModioDrawerController* DrawerController;
+    UE_READONLY class UModioDialogController* DialogController;
+    UE_READONLY class UUserWidget* HideCursorWidget;
+    UE_READONLY class UWidget* NotificationController;
+    UE_READONLY class UUserWidget* ModioMenuBarWidget;
     class USizeBox* MenuSizeBox;
     class UBorder* LeftBlurBorder;
     class UBorder* RightBlurBorder;
-    TSubclassOf<class UModioMenuView> FeaturedView;
-    TSubclassOf<class UModioMenuView> CollectionView;
-    TSubclassOf<class UModioMenuView> SearchResultsView;
-    TSubclassOf<class UModioMenuView> ModDetailsView;
-    TSubclassOf<class UModioDrawer> DownloadProgressDrawer;
-    TSubclassOf<class UModioDrawer> RefineSearchDrawer;
+    UE_READONLY TSubclassOf<class UModioMenuView> FeaturedView;
+    UE_READONLY TSubclassOf<class UModioMenuView> CollectionView;
+    UE_READONLY TSubclassOf<class UModioMenuView> SearchResultsView;
+    UE_READONLY TSubclassOf<class UModioMenuView> ModDetailsView;
+    UE_READONLY TSubclassOf<class UModioDrawer> DownloadProgressDrawer;
+    UE_READONLY TSubclassOf<class UModioDrawer> RefineSearchDrawer;
     void HandleDialogClosed();
     void HandleViewChanged(int ViewIndex);
     void OnSearchSettingsChanged(FModioFilterParams Settings);
@@ -858,35 +880,35 @@ class UModioCollectionTileStatus : public UModioModManagementWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioCollectionTileStatus");
-    FText PendingLabelText;
-    FText UpdatePendingLabelText;
-    FText UninstallPendingLabelText;
-    FText DownloadingLabelText;
-    FText ExtractingLabelText;
-    FText SubscribedLabelText;
-    FText InstalledLabelText;
-    FText InstalledByOthersLabelText;
-    FText ErrorLabelText;
-    class UModioRichTextBlock* StatusText;
-    class UModioRichTextBlock* StatusPercent;
-    class UModioProgressBar* ProgressBar;
-    class UModioSizeBox* ProgressBarSizeBox;
+    UE_READONLY FText PendingLabelText;
+    UE_READONLY FText UpdatePendingLabelText;
+    UE_READONLY FText UninstallPendingLabelText;
+    UE_READONLY FText DownloadingLabelText;
+    UE_READONLY FText ExtractingLabelText;
+    UE_READONLY FText SubscribedLabelText;
+    UE_READONLY FText InstalledLabelText;
+    UE_READONLY FText InstalledByOthersLabelText;
+    UE_READONLY FText ErrorLabelText;
+    UE_READONLY class UModioRichTextBlock* StatusText;
+    UE_READONLY class UModioRichTextBlock* StatusPercent;
+    UE_READONLY class UModioProgressBar* ProgressBar;
+    UE_READONLY class UModioSizeBox* ProgressBarSizeBox;
 };
 
 class UModioModCollectionTile : public UModioModTileBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModCollectionTile");
-    class UModioRichTextBlock* SizeOnDiskLabel;
-    class UModioCollectionTileStatus* StatusWidget;
-    class UModioRichTextBlock* StatusLine;
+    UE_READONLY class UModioRichTextBlock* SizeOnDiskLabel;
+    UE_READONLY class UModioCollectionTileStatus* StatusWidget;
+    UE_READONLY class UModioRichTextBlock* StatusLine;
     class UButton* TileButton;
     class UModioEnableModSwitch* EnableModSwitch;
-    FText SubscribedStatusText;
-    FText InstalledStatusText;
-    FText EnabledStatusText;
-    FText DisabledStatusText;
-    class UModioPopupMenu* MoreOptionsMenu;
+    UE_READONLY FText SubscribedStatusText;
+    UE_READONLY FText InstalledStatusText;
+    UE_READONLY FText EnabledStatusText;
+    UE_READONLY FText DisabledStatusText;
+    UE_READONLY class UModioPopupMenu* MoreOptionsMenu;
     FModioUIColorRef InnerTileEnabledColor;
     FModioUIColorRef InnerTileDisabledColor;
     FModioUIColorRef InnerTileErrorColor;
@@ -906,10 +928,10 @@ class UModioModDetailsImageGalleryNavButtonBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModDetailsImageGalleryNavButtonBase");
-    class UModioImage* Image;
-    TSoftObjectPtr<class UMaterialInterface> SpecifiedMaterial;
-    FSlateColor UnselectedColor;
-    FSlateColor SelectedColor;
+    UE_READONLY class UModioImage* Image;
+    UE_READONLY TSoftObjectPtr<class UMaterialInterface> SpecifiedMaterial;
+    UE_READONLY FSlateColor UnselectedColor;
+    UE_READONLY FSlateColor SelectedColor;
 };
 
 class UModioModDetailsImageGallery : public UModioUserWidgetBase
@@ -917,11 +939,11 @@ class UModioModDetailsImageGallery : public UModioUserWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioModDetailsImageGallery");
     TArray<FModioModDetailsGalleryImageInfo> ImageInfo;
-    class UModioImageGalleryBase* ImageGallery;
-    class UModioListViewInteger* NavButtons;
+    UE_READONLY class UModioImageGalleryBase* ImageGallery;
+    UE_READONLY class UModioListViewInteger* NavButtons;
     FModioUIStyleRef Style;
-    class UModioRoundedImage* ActiveBackground;
-    class UModioGridPanel* NavButtonGridPanel;
+    UE_READONLY class UModioRoundedImage* ActiveBackground;
+    UE_READONLY class UModioGridPanel* NavButtonGridPanel;
     bool bIsFocused;
     void ApplyImageToWidget(class UWidget* Widget, int ImageIndex);
     int GetImageCount();
@@ -934,28 +956,28 @@ class UModioModDetailsImage : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModDetailsImage");
-    class UModioRoundedImage* Image;
-    FModioUIMaterialRef FrameMaterial;
-    FName TextureParameterName;
+    UE_READONLY class UModioRoundedImage* Image;
+    UE_READONLY FModioUIMaterialRef FrameMaterial;
+    UE_READONLY FName TextureParameterName;
 };
 
 class UModioModDetailsOpProgress : public UModioModManagementWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModDetailsOpProgress");
-    class UModioProgressBar* ProgressBar;
-    class UModioRichTextBlock* TimeRemainingText;
-    FText TimeRemainingTextFormat;
-    FText SpeedTextFormat;
-    class UModioRichTextBlock* OperationSpeedText;
-    class UModioRichTextBlock* OperationProgressText;
+    UE_READONLY class UModioProgressBar* ProgressBar;
+    UE_READONLY class UModioRichTextBlock* TimeRemainingText;
+    UE_READONLY FText TimeRemainingTextFormat;
+    UE_READONLY FText SpeedTextFormat;
+    UE_READONLY class UModioRichTextBlock* OperationSpeedText;
+    UE_READONLY class UModioRichTextBlock* OperationProgressText;
 };
 
 class UModioModPropertyInspectorBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModPropertyInspectorBase");
-    TArray<FModioModInfoPropertyDescriptor> PropertiesToDisplay;
+    UE_READONLY TArray<FModioModInfoPropertyDescriptor> PropertiesToDisplay;
     void OnUpdatePropertyDisplay();
     void UpdatePropertyDisplay();
 };
@@ -964,13 +986,13 @@ class UModioModDetailsPropertyInspector : public UModioModPropertyInspectorBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModDetailsPropertyInspector");
-    class UModioGridPanel* PropertyGrid;
-    FText LastUpdatedFormat;
-    FModioUIStyleRef PropertyNameTextStyle;
+    UE_READONLY class UModioGridPanel* PropertyGrid;
+    UE_READONLY FText LastUpdatedFormat;
+    UE_READONLY FModioUIStyleRef PropertyNameTextStyle;
     FName DefaultPropertyNameStyleName;
-    FModioUIStyleRef PropertyValueTextStyle;
+    UE_READONLY FModioUIStyleRef PropertyValueTextStyle;
     FName DefaultPropertyValueStyleName;
-    FModioUIStyleRef FillerTextStyle;
+    UE_READONLY FModioUIStyleRef FillerTextStyle;
     FName FillerStyleName;
     FModioRichTextStyle GetTextStyle(FModioUIStyleRef TextStyle);
     TArray<FString> GetFillerStyleNames() const;
@@ -982,29 +1004,29 @@ class UModioModDetailsView : public UModioMenuView
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModDetailsView");
-    class UWidget* DetailsLoader;
-    class UModioAsyncOpWrapperWidget* DetailsViewContent;
-    class UModioRichTextButton* SubscribeButton;
-    class UModioRichTextButton* RateUpButton;
-    class UModioRichTextButton* RateDownButton;
-    class UModioRichTextButton* ReportButton;
-    class UModioUserWidgetBase* ModPropertiesInspector;
-    class UModioModManagementWidgetBase* ProgressWidget;
-    FText SubscribeButtonFormat;
-    FText RateUpTextFormat;
-    FText RateDownTextFormat;
-    FText ReportTextFormat;
-    class UModioRichTextBlock* ModTitleTextBlock;
-    class UModioRichTextBlock* ModSummaryTextBlock;
-    class UModioRichTextBlock* ModFullDescriptionTextBlock;
-    class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
-    class UModioTagList* ModTags;
-    class UModioRichTextBlock* ModChangelog;
-    FText SubscribeLabel;
-    FText UnsubscribeLabel;
-    class UModioModDetailsImageGallery* ImageGallery;
-    class UModioSubscriptionBadge* SubscriptionBadge;
-    class UModioScrollBox* ScrollBox;
+    UE_READONLY class UWidget* DetailsLoader;
+    UE_READONLY class UModioAsyncOpWrapperWidget* DetailsViewContent;
+    UE_READONLY class UModioRichTextButton* SubscribeButton;
+    UE_READONLY class UModioRichTextButton* RateUpButton;
+    UE_READONLY class UModioRichTextButton* RateDownButton;
+    UE_READONLY class UModioRichTextButton* ReportButton;
+    UE_READONLY class UModioUserWidgetBase* ModPropertiesInspector;
+    UE_READONLY class UModioModManagementWidgetBase* ProgressWidget;
+    UE_READONLY FText SubscribeButtonFormat;
+    UE_READONLY FText RateUpTextFormat;
+    UE_READONLY FText RateDownTextFormat;
+    UE_READONLY FText ReportTextFormat;
+    UE_READONLY class UModioRichTextBlock* ModTitleTextBlock;
+    UE_READONLY class UModioRichTextBlock* ModSummaryTextBlock;
+    UE_READONLY class UModioRichTextBlock* ModFullDescriptionTextBlock;
+    UE_READONLY class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
+    UE_READONLY class UModioTagList* ModTags;
+    UE_READONLY class UModioRichTextBlock* ModChangelog;
+    UE_READONLY FText SubscribeLabel;
+    UE_READONLY FText UnsubscribeLabel;
+    UE_READONLY class UModioModDetailsImageGallery* ImageGallery;
+    UE_READONLY class UModioSubscriptionBadge* SubscriptionBadge;
+    UE_READONLY class UModioScrollBox* ScrollBox;
     int ControllerScrollingMultiplier;
     float ScrollingSpeed;
     void EnableSubscribeButton();
@@ -1032,8 +1054,8 @@ public:
     class UWidgetAnimation* ModErrorAnimation;
     class UScaleBox* InputBindingScaleBox;
     class USizeBox* ButtonSizeBox;
-    FModioUIStyleRef EnabledStyle;
-    FModioUIStyleRef DisabledStyle;
+    UE_READONLY FModioUIStyleRef EnabledStyle;
+    UE_READONLY FModioUIStyleRef DisabledStyle;
     FVector2D ButtonInitTransform;
     bool bIsModEnabled;
     void InitWithModState(bool bIsInactive, bool bEnabled);
@@ -1047,9 +1069,9 @@ class UModioModTile : public UModioModTileBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModTile");
-    class UModioPopupMenu* MoreOptionsMenu;
-    FText MoreOptionsLabel;
-    class UModioImage* TileActiveFrame;
+    UE_READONLY class UModioPopupMenu* MoreOptionsMenu;
+    UE_READONLY FText MoreOptionsLabel;
+    UE_READONLY class UModioImage* TileActiveFrame;
     TMulticastInlineDelegate<void(class UModioModInfoUI* ModInfo)> OnDetailsClicked;
     TMulticastInlineDelegate<void(class UModioModInfoUI* ModInfo)> OnReportClicked;
     float TruncateDivider;
@@ -1060,15 +1082,21 @@ public:
     void SubmitModReport();
     void SubmitNegativeRating();
     void SubmitPositiveRating();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnDetailsClicked__UeDispatcher = "Assignable";
+        static constexpr const char* OnReportClicked__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioMultiLineEditableTextBox : public UMultiLineEditableTextBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioMultiLineEditableTextBox");
-    bool bValidateInput;
-    TArray<FModioTextValidationRule> ValidationRules;
-    bool bDisplayValidationErrors;
+    UE_READONLY bool bValidateInput;
+    UE_READONLY TArray<FModioTextValidationRule> ValidationRules;
+    UE_READONLY bool bDisplayValidationErrors;
     FModioUIStyleRef ErrorTextStyle;
     FModioUIStyleRef TextBoxStyle;
     bool bApplyFocusedStyleInReadOnlyMode;
@@ -1079,8 +1107,8 @@ class UModioNotificationControllerBase : public UModioUserWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioNotificationControllerBase");
     int MaxNotificationsOnScreen;
-    TSubclassOf<class UUserWidget> ErrorNotificationClass;
-    class UVerticalBox* NotificationList;
+    UE_READONLY TSubclassOf<class UUserWidget> ErrorNotificationClass;
+    UE_READONLY class UVerticalBox* NotificationList;
     TArray<FString> RecentMessages;
     void OnNotificationExpired(class UWidget* Notification);
 };
@@ -1089,12 +1117,12 @@ class UModioUserProfileButton : public UModioModManagementWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUserProfileButton");
-    class UModioCircularProgressBar* DownloadProgressIndicator;
-    class UModioButton* ProfileButton;
-    class UModioImage* ProfileImage;
+    UE_READONLY class UModioCircularProgressBar* DownloadProgressIndicator;
+    UE_READONLY class UModioButton* ProfileButton;
+    UE_READONLY class UModioImage* ProfileImage;
     class UMaterialInterface* GCMaterial;
-    class UMaterialInterface* UserBrushMaterial;
-    class UMaterialInterface* NoUserBrushMaterial;
+    UE_READONLY class UMaterialInterface* UserBrushMaterial;
+    UE_READONLY class UMaterialInterface* NoUserBrushMaterial;
     FName ProfileTextureParameterName;
     void OnButtonClicked();
 };
@@ -1103,11 +1131,11 @@ class UModioRefineSearchDrawer : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioRefineSearchDrawer");
-    class UModioEditableTextBox* SearchInput;
-    class UModioTagListWidgetBase* TagSelector;
-    class UModioRichTextButton* ApplyButton;
-    class UModioRichTextButton* ClearButton;
-    class UModioRichTextButton* CancelButton;
+    UE_READONLY class UModioEditableTextBox* SearchInput;
+    UE_READONLY class UModioTagListWidgetBase* TagSelector;
+    UE_READONLY class UModioRichTextButton* ApplyButton;
+    UE_READONLY class UModioRichTextButton* ClearButton;
+    UE_READONLY class UModioRichTextButton* CancelButton;
     TMulticastInlineDelegate<void(FModioFilterParams SearchSettings)> OnSettingsChanged;
     class UModioTagOptionsUI* TagOptions;
     TArray<class UWidget*> NavigationPath;
@@ -1118,6 +1146,11 @@ public:
     void OnCancelClicked();
     void OnClearClicked();
     void OnCollapse();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSettingsChanged__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioSearchResultsView : public UModioMenuView
@@ -1125,21 +1158,21 @@ class UModioSearchResultsView : public UModioMenuView
 public:
     UE_CLASS("/Script/ModioUI", "ModioSearchResultsView");
     TArray<class UModioModInfoUI*> SearchResults;
-    class UModioTileView* ResultsTileView;
+    UE_READONLY class UModioTileView* ResultsTileView;
     class UUserWidget* FirstTile;
-    class UWidget* ResultLoader;
+    UE_READONLY class UWidget* ResultLoader;
     class UModioGridPanel* NoResultsDialog;
-    class UModioTagList* SearchTags;
-    class UModioButton* RefineSearchButton;
-    class UModioButton* NoResultsRefineSearchButton;
-    class UModioPopupComboBox* SortBy;
-    class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
-    class UModioRichTextBlock* SearchResultsCount;
-    FModioUIStyleRef TitleTextStyle;
-    FText PageTitle;
-    FText ModQueryFormatText;
-    FString DefaultTagText;
-    FText SearchInputTagFormatText;
+    UE_READONLY class UModioTagList* SearchTags;
+    UE_READONLY class UModioButton* RefineSearchButton;
+    UE_READONLY class UModioButton* NoResultsRefineSearchButton;
+    UE_READONLY class UModioPopupComboBox* SortBy;
+    UE_READONLY class UModioErrorRetryWidget* ModioErrorWithRetryWidget;
+    UE_READONLY class UModioRichTextBlock* SearchResultsCount;
+    UE_READONLY FModioUIStyleRef TitleTextStyle;
+    UE_READONLY FText PageTitle;
+    UE_READONLY FText ModQueryFormatText;
+    UE_READONLY FString DefaultTagText;
+    UE_READONLY FText SearchInputTagFormatText;
     void OnDrawerClosed();
     void OnRefineSearchButtonClicked();
     void OnRetryPressed();
@@ -1155,11 +1188,11 @@ class UModioSelectableTag : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioSelectableTag");
-    FModioUIStyleRef RadioCheckboxStyle;
-    FModioUIStyleRef RadioCheckboxFocusedStyle;
-    class UModioCheckBox* TagSelectedCheckbox;
-    FModioUIStyleRef NormalStyle;
-    FModioUIStyleRef FocusedStyle;
+    UE_READONLY FModioUIStyleRef RadioCheckboxStyle;
+    UE_READONLY FModioUIStyleRef RadioCheckboxFocusedStyle;
+    UE_READONLY class UModioCheckBox* TagSelectedCheckbox;
+    UE_READONLY FModioUIStyleRef NormalStyle;
+    UE_READONLY FModioUIStyleRef FocusedStyle;
     FString SearchString;
     void OnCheckboxCheckStateChanged(bool bIsChecked);
 };
@@ -1168,21 +1201,21 @@ class UModioSubscriptionBadge : public UModioModManagementWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioSubscriptionBadge");
-    class UModioProgressBar* ProgressBar;
-    class UModioRichTextBlock* Label;
-    FModioUIStyleRef BadgeStyle;
-    FText PendingLabelText;
-    FText DownloadingLabelText;
-    FText ExtractingLabelText;
-    FText SubscribedLabelText;
-    FText ErrorLabelText;
+    UE_READONLY class UModioProgressBar* ProgressBar;
+    UE_READONLY class UModioRichTextBlock* Label;
+    UE_READONLY FModioUIStyleRef BadgeStyle;
+    UE_READONLY FText PendingLabelText;
+    UE_READONLY FText DownloadingLabelText;
+    UE_READONLY FText ExtractingLabelText;
+    UE_READONLY FText SubscribedLabelText;
+    UE_READONLY FText ErrorLabelText;
 };
 
 class UModioTagListWidgetBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTagListWidgetBase");
-    class UModioRichTextBlock* CategoryTextBlock;
+    UE_READONLY class UModioRichTextBlock* CategoryTextBlock;
     class UScrollBox* SelectorListScrollBox;
     TSubclassOf<class UModioTagSelectorWidgetBase> TagSelectorListTemplate;
     void ClearSelectedTags();
@@ -1194,10 +1227,10 @@ class UModioTagSelectorWidgetBase : public UModioUserWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioTagSelectorWidgetBase");
     class UModioTagInfoUI* CachedTagInfo;
-    class UModioRichTextBlock* TagCategoryLabel;
-    class UModioButton* TagCategoryCollapseButton;
-    class UModioImage* TagCategoryCollapseImage;
-    class UModioInputBindingImage* TagCategoryInputHint;
+    UE_READONLY class UModioRichTextBlock* TagCategoryLabel;
+    UE_READONLY class UModioButton* TagCategoryCollapseButton;
+    UE_READONLY class UModioImage* TagCategoryCollapseImage;
+    UE_READONLY class UModioInputBindingImage* TagCategoryInputHint;
     class UVerticalBox* CategoryVerticalBox;
     TSubclassOf<class UModioSelectableTag> TagWidgetTemplate;
     void OnCategoryCollapseToggled();
@@ -1210,9 +1243,9 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioTagWidgetBase");
     FText TagTextFormat;
     FString TagValue;
-    class UModioRichTextBlock* TagText;
-    class UModioImage* TagBackground;
-    FModioUIStyleRef TagStyle;
+    UE_READONLY class UModioRichTextBlock* TagText;
+    UE_READONLY class UModioImage* TagBackground;
+    UE_READONLY FModioUIStyleRef TagStyle;
     FModioRichTextStyle GetTagTextStyle();
     void SetTagTextFormat(FText NewFormat);
     void SetTagValue(FString Category, FString NewValue);
@@ -1346,19 +1379,19 @@ public:
     class UBorder* HeaderBorder;
     class UBorder* ContentBorder;
     class UBorder* FooterBorder;
-    float HeaderFillOverride;
-    float ContentFillOverride;
-    float FooterFillOverride;
-    FMargin HeaderPadding;
-    TEnum<EHorizontalAlignment> HeaderHorizontalAlignment;
-    TEnum<EVerticalAlignment> HeaderVerticalAlignment;
-    FMargin ContentPadding;
-    TEnum<EHorizontalAlignment> ContentHorizontalAlignment;
-    TEnum<EVerticalAlignment> ContentVerticalAlignment;
-    FMargin FooterPadding;
-    TEnum<EHorizontalAlignment> FooterHorizontalAlignment;
-    TEnum<EVerticalAlignment> FooterVerticalAlignment;
-    int MinWidth;
+    UE_READONLY float HeaderFillOverride;
+    UE_READONLY float ContentFillOverride;
+    UE_READONLY float FooterFillOverride;
+    UE_READONLY FMargin HeaderPadding;
+    UE_READONLY TEnum<EHorizontalAlignment> HeaderHorizontalAlignment;
+    UE_READONLY TEnum<EVerticalAlignment> HeaderVerticalAlignment;
+    UE_READONLY FMargin ContentPadding;
+    UE_READONLY TEnum<EHorizontalAlignment> ContentHorizontalAlignment;
+    UE_READONLY TEnum<EVerticalAlignment> ContentVerticalAlignment;
+    UE_READONLY FMargin FooterPadding;
+    UE_READONLY TEnum<EHorizontalAlignment> FooterHorizontalAlignment;
+    UE_READONLY TEnum<EVerticalAlignment> FooterVerticalAlignment;
+    UE_READONLY int MinWidth;
 };
 
 class IModioUICommand
@@ -1542,7 +1575,7 @@ class UModioAuthenticationMethodSelector : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioAuthenticationMethodSelector");
-    class UModioRichTextButton* CancelButton;
+    UE_READONLY class UModioRichTextButton* CancelButton;
     void CancelClicked();
 };
 
@@ -1551,11 +1584,16 @@ class UModioButton : public UButton
 public:
     UE_CLASS("/Script/ModioUI", "ModioButton");
     TMulticastInlineDelegate<void(FText NewLabel)> OnSetLabel;
-    FModioUIStyleRef ButtonStyle;
+    UE_READONLY FModioUIStyleRef ButtonStyle;
     FModioWidgetBorderStyle BorderStyle;
-    bool bOverrideGlobalStyle;
+    UE_READONLY bool bOverrideGlobalStyle;
     void SetButtonStyle(FModioUIStyleRef ButtonStyleRef, bool bApplyStyle);
     void SetLabel(FText NewLabel);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSetLabel__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioButtonStyleContainer : public UModioUIWidgetStyleContainer
@@ -1569,8 +1607,8 @@ class UModioCheckBox : public UCheckBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioCheckBox");
-    FText LabelText;
-    FModioUIStyleRef CheckBoxStyle;
+    UE_READONLY FText LabelText;
+    UE_READONLY FModioUIStyleRef CheckBoxStyle;
 };
 
 class UModioProceduralBrushParams : public UObject
@@ -1644,16 +1682,16 @@ class UModioComboBox : public UComboBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioComboBox");
-    TEnum<EMenuPlacement> MenuPlacement;
+    UE_READONLY TEnum<EMenuPlacement> MenuPlacement;
 };
 
 class UModioComboBoxString : public UComboBoxString
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioComboBoxString");
-    TEnum<EMenuPlacement> Placement;
-    bool bCreateNewWindow;
-    bool bWrapMenuContent;
+    UE_READONLY TEnum<EMenuPlacement> Placement;
+    UE_READONLY bool bCreateNewWindow;
+    UE_READONLY bool bWrapMenuContent;
     TSoftObjectPtr<class UMaterialInterface> ContentWrapMaterial;
     bool bEnableBorder;
     FColor BorderColor;
@@ -1697,17 +1735,21 @@ class UModioDefaultPopupMenuContent : public UUserWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDefaultPopupMenuContent");
-    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
-    FModioUIStyleRef TextStyle;
-    FModioUIStyleRef BorderStyle;
+    UE_READONLY FModioUIStyleRef TextStyle;
+    UE_READONLY FModioUIStyleRef BorderStyle;
     FModioUIMaterialRef RetainerMaterial;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class UModioDialogBase : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDialogBase");
-    FModioUIStyleRef DialogStyle;
+    UE_READONLY FModioUIStyleRef DialogStyle;
 };
 
 class UModioDialogBaseInternal : public UWidget
@@ -1716,8 +1758,8 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioDialogBaseInternal");
     class UWidget* LoadingSpinner;
     class UObject* DataSource;
-    FModioUIStyleRef DialogStyle;
-    FMargin ButtonSpacing;
+    UE_READONLY FModioUIStyleRef DialogStyle;
+    UE_READONLY FMargin ButtonSpacing;
     class UWidget* SubHeaderWidget;
     class UWidget* InputWidget;
     class UWidget* ButtonWidget;
@@ -1738,21 +1780,21 @@ class UModioDialogController : public UModioWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioDialogController");
     class UModioDialogBaseInternal* ActualDialog;
-    FModioUIStyleRef InvisibleButtonStyleRef;
-    bool bCurrentlyDisplayingDialog;
+    UE_READONLY FModioUIStyleRef InvisibleButtonStyleRef;
+    UE_READONLY bool bCurrentlyDisplayingDialog;
     TArray<FString> DialogInputValues;
-    FInterpCurveFloat BlurCurve;
-    TSoftObjectPtr<class UModioDialogInfo> AuthenticationChoiceDialog;
-    TSoftObjectPtr<class UModioDialogInfo> UnsubscribeConfirmationDialog;
-    TSoftObjectPtr<class UModioDialogInfo> EmailAuthenticationDialog;
-    TSoftObjectPtr<class UModioDialogInfo> ReportContentDialog;
-    TSoftObjectPtr<class UModioDialogInfo> ReportEmailDialog;
-    TSoftObjectPtr<class UModioDialogInfo> UninstallConfirmationDialog;
-    TSoftObjectPtr<class UModioDialogInfo> TermsOfUseDialog;
-    TSoftObjectPtr<class UModioDialogInfo> TermsOfUseFailDialog;
-    TSoftObjectPtr<class UModioDialogInfo> ErrorDisplayDialog;
-    TSoftObjectPtr<class UModioDialogInfo> LogoutConfirmationDialog;
-    TSubclassOf<class UWidget> LoadingOverlay;
+    UE_READONLY FInterpCurveFloat BlurCurve;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> AuthenticationChoiceDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> UnsubscribeConfirmationDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> EmailAuthenticationDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> ReportContentDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> ReportEmailDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> UninstallConfirmationDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> TermsOfUseDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> TermsOfUseFailDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> ErrorDisplayDialog;
+    UE_READONLY TSoftObjectPtr<class UModioDialogInfo> LogoutConfirmationDialog;
+    UE_READONLY TSubclassOf<class UWidget> LoadingOverlay;
     TArray<class UModioDialogInfo*> DialogStack;
     FEventReply HandleBackgroundClick(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void ShowErrorDialog(FModioErrorCode ec, bool bCloseDialogsOnOK);
@@ -1774,11 +1816,11 @@ class UModioDrawerControllerSlot : public UOverlaySlot
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioDrawerControllerSlot");
-    TEnum<EModioDrawerControllerSlotEdge> Edge;
-    TEnum<EHorizontalAlignment> DrawerHorizontalAlignment;
-    TEnum<EVerticalAlignment> DrawerVerticalAlignment;
-    bool bExpanded;
-    float AnimationTime;
+    UE_READONLY TEnum<EModioDrawerControllerSlotEdge> Edge;
+    UE_READONLY TEnum<EHorizontalAlignment> DrawerHorizontalAlignment;
+    UE_READONLY TEnum<EVerticalAlignment> DrawerVerticalAlignment;
+    UE_READONLY bool bExpanded;
+    UE_READONLY float AnimationTime;
     float CurrentAnimationProgress;
 };
 
@@ -1835,10 +1877,10 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioImageGalleryBase");
     class UWidget* ForegroundContent;
     class UWidget* BackgroundContent;
-    TDelegate<void(class UWidget* ImageWidget, int ImageIndex)> OnDisplayImage;
-    TDelegate<void()> OnConstructWidget;
-    TDelegate<void()> OnGetItemCount;
-    TSubclassOf<class UUserWidget> ImageWidgetClass;
+    UE_READONLY TDelegate<void(class UWidget* ImageWidget, int ImageIndex)> OnDisplayImage;
+    UE_READONLY TDelegate<void()> OnConstructWidget;
+    UE_READONLY TDelegate<void()> OnGetItemCount;
+    UE_READONLY TSubclassOf<class UUserWidget> ImageWidgetClass;
     void DisplayGalleryImageAtIndex(TEnum<EModioUIDirection> Direction, int DirectIndex);
     void RefreshCurrentImage();
     void ResetGallery();
@@ -1848,7 +1890,7 @@ class UModioInputBindingImage : public UModioImage
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioInputBindingImage");
-    FKey KeyToShow;
+    UE_READONLY FKey KeyToShow;
     void SetKeyToShow(FKey NewKey);
 };
 
@@ -1856,8 +1898,8 @@ class UModioInputGlyphSet : public UDataAsset
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioInputGlyphSet");
-    TMap<FKey, class UTexture2D*> Glyphs;
-    TMap<FKey, class UTexture2D*> PngGlyphs;
+    UE_READONLY TMap<FKey, class UTexture2D*> Glyphs;
+    UE_READONLY TMap<FKey, class UTexture2D*> PngGlyphs;
 };
 
 class UModioInputMappingGlyphLibrary : public UBlueprintFunctionLibrary
@@ -1877,32 +1919,32 @@ class UModioListViewInteger : public UListViewBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioListViewInteger");
-    TEnum<EOrientation> Orientation;
-    TEnum<ESlateVisibility> ScrollbarVisibility;
-    float EntrySpacing;
-    bool bOverrideItemSize;
-    FVector2D ItemSize;
+    UE_READONLY TEnum<EOrientation> Orientation;
+    UE_READONLY TEnum<ESlateVisibility> ScrollbarVisibility;
+    UE_READONLY float EntrySpacing;
+    UE_READONLY bool bOverrideItemSize;
+    UE_READONLY FVector2D ItemSize;
 };
 
 class UModioListViewString : public UListViewBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioListViewString");
-    TEnum<EOrientation> Orientation;
-    TEnum<ESlateVisibility> ScrollbarVisibility;
-    float EntrySpacing;
-    bool bOverrideItemSize;
-    FVector2D ItemSize;
+    UE_READONLY TEnum<EOrientation> Orientation;
+    UE_READONLY TEnum<ESlateVisibility> ScrollbarVisibility;
+    UE_READONLY float EntrySpacing;
+    UE_READONLY bool bOverrideItemSize;
+    UE_READONLY FVector2D ItemSize;
 };
 
 class UModioLoadingSpinner : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioLoadingSpinner");
-    FModioUIMaterialRef LoadingImage;
-    FVector2D ImageBrushSize;
-    TEnum<EStretch> Stretch;
-    TEnum<EStretchDirection> StretchDirection;
+    UE_READONLY FModioUIMaterialRef LoadingImage;
+    UE_READONLY FVector2D ImageBrushSize;
+    UE_READONLY TEnum<EStretch> Stretch;
+    UE_READONLY TEnum<EStretchDirection> StretchDirection;
     class UMaterialInterface* CachedReferencedMaterial;
 };
 
@@ -1911,7 +1953,7 @@ class UModioLogoWidget : public UWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioLogoWidget");
     class UObject* DataSource;
-    FModioUIStyleRef StyleRef;
+    UE_READONLY FModioUIStyleRef StyleRef;
 };
 
 class UModioMaterialData : public UDataAsset
@@ -1943,9 +1985,13 @@ class UModioModBrowserParams : public UDataAsset
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioModBrowserParams");
-    class UModioFeaturedCategoryParams* PrimaryCategoryParams;
-    TArray<class UModioFeaturedCategoryParams*> AdditionalCategoryParams;
-    static constexpr const char* PrimaryCategoryParams__UeSubobject = "PrimaryCategoryParams /Script/ModioUICore.ModioFeaturedCategoryParams";
+    UE_READONLY class UModioFeaturedCategoryParams* PrimaryCategoryParams;
+    UE_READONLY TArray<class UModioFeaturedCategoryParams*> AdditionalCategoryParams;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PrimaryCategoryParams__UeSubobject = "PrimaryCategoryParams /Script/ModioUICore.ModioFeaturedCategoryParams";
+    };
 };
 
 class UModioCarousel : public UWidget
@@ -1954,7 +2000,7 @@ public:
     UE_CLASS("/Script/ModioUI", "ModioCarousel");
     TArray<class UUserWidget*> EntryWidgets;
     TArray<class UModioModInfoUI*> ModsToDisplay;
-    TSubclassOf<class UUserWidget> EntryWidgetClass;
+    UE_READONLY TSubclassOf<class UUserWidget> EntryWidgetClass;
 };
 
 class UModioModCarouselTile : public UModioModTileBase
@@ -1986,29 +2032,29 @@ class UModioModNameWidget : public UWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioModNameWidget");
     class UObject* DataSource;
-    FModioUIStyleRef Style;
+    UE_READONLY FModioUIStyleRef Style;
 };
 
 class UModioWidgetCarousel : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioWidgetCarousel");
-    TSubclassOf<class UModioUserWidgetBase> EntryWidgetClass;
-    class UModioWidgetCarouselEntryWrapper* LeftCarouselWidget;
-    class UModioWidgetCarouselEntryWrapper* CenterCarouselWidget;
-    class UModioWidgetCarouselEntryWrapper* RightCarouselWidget;
-    class UModioWidgetCarouselEntryWrapper* IncomingWidget;
-    float RelativeWidgetSpacing;
-    TEnum<EWidgetClipping> EntryWidgetClipping;
-    TEnum<EModioWidgetCarouselSizeOverrideType> EntryWidgetSizeOverride;
-    bool bOverrideAbsoluteWidth;
-    float EntryWidgetWidthOverride;
-    bool bOverrideAbsoluteHeight;
-    float EntryWidgetHeightOverride;
-    bool bOverrideRelativeLayoutWidth;
-    float EntryWidgetRelativeWidthOverride;
-    bool bOverrideRelativeLayoutHeight;
-    float EntryWidgetRelativeHeightOverride;
+    UE_READONLY TSubclassOf<class UModioUserWidgetBase> EntryWidgetClass;
+    UE_READONLY class UModioWidgetCarouselEntryWrapper* LeftCarouselWidget;
+    UE_READONLY class UModioWidgetCarouselEntryWrapper* CenterCarouselWidget;
+    UE_READONLY class UModioWidgetCarouselEntryWrapper* RightCarouselWidget;
+    UE_READONLY class UModioWidgetCarouselEntryWrapper* IncomingWidget;
+    UE_READONLY float RelativeWidgetSpacing;
+    UE_READONLY TEnum<EWidgetClipping> EntryWidgetClipping;
+    UE_READONLY TEnum<EModioWidgetCarouselSizeOverrideType> EntryWidgetSizeOverride;
+    UE_READONLY bool bOverrideAbsoluteWidth;
+    UE_READONLY float EntryWidgetWidthOverride;
+    UE_READONLY bool bOverrideAbsoluteHeight;
+    UE_READONLY float EntryWidgetHeightOverride;
+    UE_READONLY bool bOverrideRelativeLayoutWidth;
+    UE_READONLY float EntryWidgetRelativeWidthOverride;
+    UE_READONLY bool bOverrideRelativeLayoutHeight;
+    UE_READONLY float EntryWidgetRelativeHeightOverride;
     void ScrollLeft();
     void ScrollRight();
     void SetFocusToCurrentElement();
@@ -2027,14 +2073,14 @@ class UModioModUninstallHeaderWidget : public UWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioModUninstallHeaderWidget");
     class UObject* DataSource;
-    FModioUIStyleRef Style;
+    UE_READONLY FModioUIStyleRef Style;
 };
 
 class UModioMoreOptionsDialog : public UModioDialogBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioMoreOptionsDialog");
-    class UModioTileView* OptionsList;
+    UE_READONLY class UModioTileView* OptionsList;
 };
 
 class UModioMultiLineEditableTextBoxStyleContainer : public UModioUIWidgetStyleContainer
@@ -2048,7 +2094,7 @@ class UModioNamedGlyphMaterialParams : public UModioProceduralBrushParams
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioNamedGlyphMaterialParams");
-    FName GlyphName;
+    UE_READONLY FName GlyphName;
     TArray<FString> GetValidGlyphNames();
 };
 
@@ -2070,23 +2116,23 @@ class UModioNavigationConfigFactory : public UModioNavigationConfigFactoryBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioNavigationConfigFactory");
-    bool bTabNavigation;
-    bool bKeyNavigation;
-    bool bAnalogNavigation;
-    float AnalogNavigationHorizontalThreshold;
-    float AnalogNavigationVerticalThreshold;
+    UE_READONLY bool bTabNavigation;
+    UE_READONLY bool bKeyNavigation;
+    UE_READONLY bool bAnalogNavigation;
+    UE_READONLY float AnalogNavigationHorizontalThreshold;
+    UE_READONLY float AnalogNavigationVerticalThreshold;
 };
 
 class UModioNotificationControllerSlot : public UOverlaySlot
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioNotificationControllerSlot");
-    TEnum<EModioNotificationControllerSlotEdge> Edge;
-    TEnum<EHorizontalAlignment> NotificationHorizontalAlignment;
-    TEnum<EVerticalAlignment> NotificationVerticalAlignment;
+    UE_READONLY TEnum<EModioNotificationControllerSlotEdge> Edge;
+    UE_READONLY TEnum<EHorizontalAlignment> NotificationHorizontalAlignment;
+    UE_READONLY TEnum<EVerticalAlignment> NotificationVerticalAlignment;
     float VisibleDuration;
-    bool bExpanded;
-    float AnimationTime;
+    UE_READONLY bool bExpanded;
+    UE_READONLY float AnimationTime;
     float CurrentAnimationProgress;
 };
 
@@ -2102,30 +2148,30 @@ class UModioPopupComboBox : public UWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioPopupComboBox");
     FModioUIMenuCommandList CurrentEntries;
-    FText Description;
-    FText LabelFormatText;
-    FText ValueFormatText;
-    bool bUseRoundedCorners;
-    FModioUIStyleRef RoundedCornerStyle;
-    FModioUIStyleRef ComboBoxStyle;
-    FModioUIStyleRef TextStyle;
-    FMargin ContentPadding;
-    bool bPreviewOpen;
-    TArray<FText> OptionValues;
-    TEnum<EModioPopupPlacement> PopupPlacement;
+    UE_READONLY FText Description;
+    UE_READONLY FText LabelFormatText;
+    UE_READONLY FText ValueFormatText;
+    UE_READONLY bool bUseRoundedCorners;
+    UE_READONLY FModioUIStyleRef RoundedCornerStyle;
+    UE_READONLY FModioUIStyleRef ComboBoxStyle;
+    UE_READONLY FModioUIStyleRef TextStyle;
+    UE_READONLY FMargin ContentPadding;
+    UE_READONLY bool bPreviewOpen;
+    UE_READONLY TArray<FText> OptionValues;
+    UE_READONLY TEnum<EModioPopupPlacement> PopupPlacement;
 };
 
 class UModioPopupMenu : public UMenuAnchor
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioPopupMenu");
-    FText ButtonLabel;
-    TEnum<ETextJustify> ButtonLabelJustification;
+    UE_READONLY FText ButtonLabel;
+    UE_READONLY TEnum<ETextJustify> ButtonLabelJustification;
     class UUserWidget* CurrentContent;
     class UModioRichTextButton* MenuButton;
-    FModioUIStyleRef ButtonStyle;
-    FModioUIStyleRef PopupMenuStyle;
-    TSubclassOf<class UUserWidget> MenuContentWidgetClass;
+    UE_READONLY FModioUIStyleRef ButtonStyle;
+    UE_READONLY FModioUIStyleRef PopupMenuStyle;
+    UE_READONLY TSubclassOf<class UUserWidget> MenuContentWidgetClass;
     FKey KeyForInputHint;
     bool bPaintOverCurrentUI;
     class UUserWidget* GeneratePopupMenuContent();
@@ -2144,7 +2190,7 @@ class UModioProgressBar : public UProgressBar
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioProgressBar");
-    FModioUIStyleRef StyleRef;
+    UE_READONLY FModioUIStyleRef StyleRef;
     void SetStyleRef(FModioUIStyleRef NewStyle);
 };
 
@@ -2159,10 +2205,10 @@ class UModioRemoveModDialog : public UModioDialogBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioRemoveModDialog");
-    class UModioTextBlock* ModName;
-    class UModioTextBlock* PromptMessage;
-    class UModioButton* BackButton;
-    class UModioButton* ConfirmButton;
+    UE_READONLY class UModioTextBlock* ModName;
+    UE_READONLY class UModioTextBlock* PromptMessage;
+    UE_READONLY class UModioButton* BackButton;
+    UE_READONLY class UModioButton* ConfirmButton;
 };
 
 class UModioReportButtonGroupWidget : public UWidget
@@ -2170,7 +2216,7 @@ class UModioReportButtonGroupWidget : public UWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioReportButtonGroupWidget");
     class UObject* DataSource;
-    FModioUIStyleRef ButtonStyle;
+    UE_READONLY FModioUIStyleRef ButtonStyle;
     void CancelClicked();
 };
 
@@ -2212,11 +2258,11 @@ class UModioRichTextButton : public UModioButton
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioRichTextButton");
-    class UModioRichTextBlock* ButtonContent;
-    class UModioInputBindingImage* InputHintImage;
-    FText ButtonLabel;
+    UE_READONLY class UModioRichTextBlock* ButtonContent;
+    UE_READONLY class UModioInputBindingImage* InputHintImage;
+    UE_READONLY FText ButtonLabel;
     FName DefaultStyleName;
-    TEnum<ETextJustify> Justification;
+    UE_READONLY TEnum<ETextJustify> Justification;
     FKey KeyForInputHint;
     TEnum<ESlateVisibility> GetInputHintVisibility(TEnum<EModioUIInputMode> InputMode);
     FModioRichTextStyle GetRichTextStyle() const;
@@ -2242,10 +2288,10 @@ class UModioRoundedImage : public UModioImage
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioRoundedImage");
-    FModioUIMaterialRef MaterialToUse;
+    UE_READONLY FModioUIMaterialRef MaterialToUse;
     class UMaterialInterface* CachedReferencedMaterial;
-    class UMaterialInstanceDynamic* ImageMaterial;
-    FName TextureParameterName;
+    UE_READONLY class UMaterialInstanceDynamic* ImageMaterial;
+    UE_READONLY FName TextureParameterName;
 };
 
 class UModioRoundedRectangleMaterialParams : public UModioProceduralBrushParams
@@ -2270,18 +2316,18 @@ class UModioScrollBox : public UScrollBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioScrollBox");
-    TEnum<EModioScrollBoxBarAlignment> ScrollBarAlignment;
-    float AdditionalPadding;
+    UE_READONLY TEnum<EModioScrollBoxBarAlignment> ScrollBarAlignment;
+    UE_READONLY float AdditionalPadding;
 };
 
 class UModioSearchOptionsDialog : public UModioDialogBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioSearchOptionsDialog");
-    class UModioTabController* TagCategorySelector;
-    class UModioListView* TagList;
-    class UModioButton* ApplyButton;
-    class UModioButton* MoreOptionsButton;
+    UE_READONLY class UModioTabController* TagCategorySelector;
+    UE_READONLY class UModioListView* TagList;
+    UE_READONLY class UModioButton* ApplyButton;
+    UE_READONLY class UModioButton* MoreOptionsButton;
 };
 
 class UModioSizeBox : public USizeBox
@@ -2296,7 +2342,7 @@ class UModioSpecifiedMaterialParams : public UModioProceduralBrushParams
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioSpecifiedMaterialParams");
-    class UMaterialInterface* SpecifiedMaterial;
+    UE_READONLY class UMaterialInterface* SpecifiedMaterial;
 };
 
 class UModioSubscriptionBadgeStyleContainer : public UModioUIWidgetStyleContainer
@@ -2310,11 +2356,11 @@ class UModioTabBar : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTabBar");
-    TArray<FText> TabNames;
-    FTableRowStyle TEMP_TableRowStyle;
+    UE_READONLY TArray<FText> TabNames;
+    UE_READONLY FTableRowStyle TEMP_TableRowStyle;
     FModioUIStyleRef TabButtonStyle;
     FModioUIStyleRef InactiveTabButtonStyle;
-    FSlateBrush SelectedButtonBrush;
+    UE_READONLY FSlateBrush SelectedButtonBrush;
     TMap<FName, FModioUIColorRef> SerializedColors;
     FVector2D ItemSize;
     void OnTabIndexChanged(int TabIndex);
@@ -2324,22 +2370,27 @@ class UModioTabButton : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTabButton");
-    class UModioButton* ClickableRegion;
+    UE_READONLY class UModioButton* ClickableRegion;
 };
 
 class UModioTabController : public UModioUserWidgetBase
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTabController");
-    class UModioInputBindingImage* NavigatePreviousHint;
-    class UModioTileView* TabButtons;
-    class UModioInputBindingImage* NavigateNextHint;
+    UE_READONLY class UModioInputBindingImage* NavigatePreviousHint;
+    UE_READONLY class UModioTileView* TabButtons;
+    UE_READONLY class UModioInputBindingImage* NavigateNextHint;
     TMulticastInlineDelegate<void(int64 TabIndex, class UObject* AssociatedItem)> OnCurrentTabChanged;
     TEnum<ESlateVisibility> GetInputHintVisibility(TEnum<EModioUIInputMode> InputMode);
     void NextTab();
     void PrevTab();
     void SetCurrentTab(int64 TabIndex);
     void SetTabItems(TArray<class UObject*> NewItems);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnCurrentTabChanged__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioTableRowStyleContainer : public UModioUIWidgetStyleContainer
@@ -2359,10 +2410,10 @@ class UModioTagList : public UModioWrapBox
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTagList");
-    int NumberOfTagsToShow;
-    TArray<FModioModTag> Tags;
-    FText ExcessTagCountText;
-    TSubclassOf<class UModioTagWidgetBase> TagWidgetClass;
+    UE_READONLY int NumberOfTagsToShow;
+    UE_READONLY TArray<FModioModTag> Tags;
+    UE_READONLY FText ExcessTagCountText;
+    UE_READONLY TSubclassOf<class UModioTagWidgetBase> TagWidgetClass;
     void SetTags(TArray<FModioModTag> NewTags);
 };
 
@@ -2378,15 +2429,15 @@ class UModioTermsLinksWidget : public UWidget
 public:
     UE_CLASS("/Script/ModioUI", "ModioTermsLinksWidget");
     class UObject* DataSource;
-    FModioUIStyleRef ButtonStyle;
+    UE_READONLY FModioUIStyleRef ButtonStyle;
 };
 
 class UModioTextBlock : public UTextBlock
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTextBlock");
-    FModioUIStyleRef StyleRef;
-    bool bOverrideGlobalStyle;
+    UE_READONLY FModioUIStyleRef StyleRef;
+    UE_READONLY bool bOverrideGlobalStyle;
 };
 
 class UModioTextWidgetStyleContainer : public UModioUIWidgetStyleContainer
@@ -2400,10 +2451,10 @@ class UModioTileView : public UTileView
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioTileView");
-    bool AllowPartialItems;
-    bool CenterPanelItems;
-    bool bZoomSelectedEntryWidget;
-    TEnum<ESlateVisibility> ScrollbarVisibility;
+    UE_READONLY bool AllowPartialItems;
+    UE_READONLY bool CenterPanelItems;
+    UE_READONLY bool bZoomSelectedEntryWidget;
+    UE_READONLY TEnum<ESlateVisibility> ScrollbarVisibility;
     void SetAllowPartialItems(bool bAllowPartialItems);
     void SetCenterPanelItems(bool bCenterPanelItems);
 };
@@ -2442,17 +2493,17 @@ class UModioUISettings : public UObject
 {
 public:
     UE_CLASS("/Script/ModioUI", "ModioUISettings");
-    TArray<FModioInputMapping> ModioToProjectInputMappings;
-    TSoftObjectPtr<class UModioUIStyleSet> DefaultStyleSet;
-    TSoftObjectPtr<class UModioNavigationConfigFactoryBase> NavigationConfigOverride;
-    TSubclassOf<class UObject> AuthenticationDataProvider;
-    TSubclassOf<class UObject> InputHintGlyphProvider;
-    TSoftObjectPtr<class UModioModBrowserParams> BrowserCategoryConfiguration;
-    TEnum<EModioUIInputMode> InputDevicesForTesting;
-    bool bOverridePlatformMaterials;
-    bool bEnableCollectionModDisableUI;
-    bool bEnableCenteredUI;
-    float MaxMenuWidth;
+    UE_READONLY TArray<FModioInputMapping> ModioToProjectInputMappings;
+    UE_READONLY TSoftObjectPtr<class UModioUIStyleSet> DefaultStyleSet;
+    UE_READONLY TSoftObjectPtr<class UModioNavigationConfigFactoryBase> NavigationConfigOverride;
+    UE_READONLY TSubclassOf<class UObject> AuthenticationDataProvider;
+    UE_READONLY TSubclassOf<class UObject> InputHintGlyphProvider;
+    UE_READONLY TSoftObjectPtr<class UModioModBrowserParams> BrowserCategoryConfiguration;
+    UE_READONLY TEnum<EModioUIInputMode> InputDevicesForTesting;
+    UE_READONLY bool bOverridePlatformMaterials;
+    UE_READONLY bool bEnableCollectionModDisableUI;
+    UE_READONLY bool bEnableCenteredUI;
+    UE_READONLY float MaxMenuWidth;
     bool bDisableInputGlyphsCompletely;
     TMap<FString, FText> LocalizedTags;
     bool bUnsubscribeShortcutInDownloadQueue;
@@ -2475,7 +2526,7 @@ class UModioUserWidgetNamedSlotBase : public UModioUserWidgetBase
 public:
     UE_CLASS("/Script/ModioUI", "ModioUserWidgetNamedSlotBase");
     TMap<FName, class UWidget*> NamedWidgets;
-    TArray<FName> DesignerSpecifiedSlotNames;
+    UE_READONLY TArray<FName> DesignerSpecifiedSlotNames;
 };
 
 class UModioWidgetCarouselEntryWrapper : public UWidget
@@ -2496,6 +2547,11 @@ class UModioWidgetSwitcher : public UWidgetSwitcher
 public:
     UE_CLASS("/Script/ModioUI", "ModioWidgetSwitcher");
     TMulticastInlineDelegate<void(int Index_0)> OnActiveWidgetChanged;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnActiveWidgetChanged__UeDispatcher = "Assignable";
+    };
 };
 
 /* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */

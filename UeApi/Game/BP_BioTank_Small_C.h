@@ -19,20 +19,24 @@ class BP_BioTank_Small_C : public ADisplayCase
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/BP_BioTank_Small", "BP_BioTank_Small_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Biotank_Bubbles_Small;
-    static constexpr const char* NS_Biotank_Bubbles_Small__UeScsNode = "ddaca1be556cc24db591508716f1dbeb";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "949106d8b68db244b3d9c506fd15dbf5";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "44617230b40e9a45956958d95cc48270";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "1a2641327498094d8ecc30c8fa70626a";
     class UStaticMeshComponent* SM_Plague_Biotank_Stand;
-    static constexpr const char* SM_Plague_Biotank_Stand__UeScsNode = "1979e977b966784babc7a8db55cba237";
     void ExecuteUbergraph_BP_BioTank_Small(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
+        static constexpr const char* NS_Biotank_Bubbles_Small__UeScsNode = "ddaca1be556cc24db591508716f1dbeb";
+        static constexpr const char* SpotLight__UeScsNode = "949106d8b68db244b3d9c506fd15dbf5";
+        static constexpr const char* Capsule__UeScsNode = "44617230b40e9a45956958d95cc48270";
+        static constexpr const char* StaticMesh__UeScsNode = "1a2641327498094d8ecc30c8fa70626a";
+        static constexpr const char* SM_Plague_Biotank_Stand__UeScsNode = "1979e977b966784babc7a8db55cba237";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco

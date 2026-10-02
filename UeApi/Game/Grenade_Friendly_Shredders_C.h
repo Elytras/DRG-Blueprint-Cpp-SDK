@@ -21,19 +21,12 @@ class Grenade_Friendly_Shredders_C : public Game::WeaponsNTools::Grenades::ITM_G
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/Grenade_Friendly_Shredders", "Grenade_Friendly_Shredders_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Friendly_Shredders_C;
-    static constexpr const char* UberGraphFrame_Grenade_Friendly_Shredders_C__UeName = "UberGraphFrame";
     class UFSDAudioComponent* GrenadeParasiteSpawn;
-    static constexpr const char* GrenadeParasiteSpawn__UeScsNode = "57673c4fc542034eb140795a5dbb0850";
     class UFSDAudioComponent* GrenadeParasiteHit;
-    static constexpr const char* GrenadeParasiteHit__UeScsNode = "c5e79fb8c88de84c946206a31ba22e2a";
     class UNiagaraComponent* NS_ExplosionParticles;
-    static constexpr const char* NS_ExplosionParticles__UeScsNode = "4c21413354bb2e4cb9df12e0d3c89dda";
     int ParticleRandomSeed;
-    static constexpr const char* ParticleRandomSeed__Replicated = "OnRep_ParticleRandomSeed:";
     int SpawnedDrones;
-    static constexpr const char* SpawnedDrones__Replicated = ":";
     class UClass* friendlyShredderSpawnedActorClass;
     void ExecuteUbergraph_Grenade_Friendly_Shredders(int EntryPoint);
     void KillOtherGrenades();
@@ -44,6 +37,17 @@ public:
     void UserConstructionScript();
     void OnRep_ParticleRandomSeed();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_Friendly_Shredders_C__UeName = "UberGraphFrame";
+        static constexpr const char* GrenadeParasiteSpawn__UeScsNode = "57673c4fc542034eb140795a5dbb0850";
+        static constexpr const char* GrenadeParasiteHit__UeScsNode = "c5e79fb8c88de84c946206a31ba22e2a";
+        static constexpr const char* NS_ExplosionParticles__UeScsNode = "4c21413354bb2e4cb9df12e0d3c89dda";
+        static constexpr const char* ParticleRandomSeed__Replicated = "OnRep_ParticleRandomSeed:";
+        static constexpr const char* SpawnedDrones__Replicated = ":";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

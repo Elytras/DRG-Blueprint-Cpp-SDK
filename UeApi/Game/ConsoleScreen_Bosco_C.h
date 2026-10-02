@@ -22,7 +22,7 @@ public:
     using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
     ConsoleScreen_Notification_C* ConsoleScreen_Notification;
     FText TextToDisplay;

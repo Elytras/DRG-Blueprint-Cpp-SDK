@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_PlasmaBoomerang_C : public Game::WeaponsNTools::Grena
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/PlasmaBoomerang/Loadout_GrenadeProxy_PlasmaBoomerang", "Loadout_GrenadeProxy_PlasmaBoomerang_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::PlasmaBoomerang

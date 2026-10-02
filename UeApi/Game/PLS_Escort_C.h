@@ -19,24 +19,15 @@ class PLS_Escort_C : public Game::Landscape::ProceduralLevelSetups::PLS_Linear_B
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Escort", "PLS_Escort_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_Escort_C;
-    static constexpr const char* UberGraphFrame_PLS_Escort_C__UeName = "UberGraphFrame";
     FRoomGeneratorGroupInstance RoomGroupInstance;
     class URoomGeneratorGroup* Room_Group;
-    static constexpr const char* Room_Group__UeName = "Room Group";
     class URoomGenerator* Starting_Room;
-    static constexpr const char* Starting_Room__UeName = "Starting Room";
     class URoomGenerator* End_Room;
-    static constexpr const char* End_Room__UeName = "End Room";
     class URoomGeneratorGroup* Small_Room_Group;
-    static constexpr const char* Small_Room_Group__UeName = "Small Room Group";
     FRoomGeneratorGroupInstance Small_Room_Group_Instance;
-    static constexpr const char* Small_Room_Group_Instance__UeName = "Small Room Group Instance";
     float Min_Room_Distance;
-    static constexpr const char* Min_Room_Distance__UeName = "Min Room Distance";
     float Max_Room_Distance;
-    static constexpr const char* Max_Room_Distance__UeName = "Max Room Distance";
     int NumberOfMainRooms;
     bool MidWayRoom1;
     bool MidWayRoom2;
@@ -52,6 +43,19 @@ public:
     void CreateGraphSecondPass();
     UE_PURE class URoomGenerator* SelectRoom(int DNARoomIndex);
     void AddOilShaleInfluencers();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
+        static constexpr const char* UberGraphFrame_PLS_Escort_C__UeName = "UberGraphFrame";
+        static constexpr const char* Room_Group__UeName = "Room Group";
+        static constexpr const char* Starting_Room__UeName = "Starting Room";
+        static constexpr const char* End_Room__UeName = "End Room";
+        static constexpr const char* Small_Room_Group__UeName = "Small Room Group";
+        static constexpr const char* Small_Room_Group_Instance__UeName = "Small Room Group Instance";
+        static constexpr const char* Min_Room_Distance__UeName = "Min Room Distance";
+        static constexpr const char* Max_Room_Distance__UeName = "Max Room Distance";
+    };
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

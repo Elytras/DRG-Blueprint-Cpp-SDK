@@ -22,8 +22,8 @@ public:
     class UTextBlock* ResourceAmount;
     class UImage* ResourceIcon;
     class UTextBlock* TextBlock_0;
-    class UResourceData* Resource;
-    int amount;
+    UE_READONLY class UResourceData* Resource;
+    UE_READONLY int amount;
     void ExecuteUbergraph_UI_RewardResourceAditive(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

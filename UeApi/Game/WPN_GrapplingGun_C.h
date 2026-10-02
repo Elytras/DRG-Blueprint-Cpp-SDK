@@ -28,24 +28,15 @@ class WPN_GrapplingGun_C : public AGrapplingHookGun
 public:
     UE_CLASS("/Game/WeaponsNTools/GrapplingGun/WPN_GrapplingGun", "WPN_GrapplingGun_C");
     using HUD_CroNew_GrapplingGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNew_GrapplingGun_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CoolDownItemAggregator CoolDownAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* AudioMoving;
-    static constexpr const char* AudioMoving__UeScsNode = "e52ea4e265161744adeea72d779cb8ed";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b9343a100d61f944b147076d829b7ebe";
     class UFirstPersonWidgetComponent* CoolDownWidgetFirstPerson;
-    static constexpr const char* CoolDownWidgetFirstPerson__UeScsNode = "254f37ec96e6ea42b9458103adef31b8";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "614a396df99a47468ded8a8b2132772a";
     class USkeletalMeshComponent* Projectile;
-    static constexpr const char* Projectile__UeScsNode = "d38355af0bc1364f85f38e5687350f12";
     class USceneComponent* TP_Muzzle;
-    static constexpr const char* TP_Muzzle__UeScsNode = "2530141fdbe8144997e30bdad08073a3";
     class USceneComponent* FP_Muzzle;
-    static constexpr const char* FP_Muzzle__UeScsNode = "418850ff43dea9488a22d5299a9c8f39";
     class UCableComponent* Cable;
-    static constexpr const char* Cable__UeScsNode = "8c86cd991544b447bd974de062981bb9";
     float ProjectileMovement_Lerp_t_87ACE2EC4276B8AA3B88169B28949E3A;
     TEnum<ETimelineDirection> ProjectileMovement__Direction_87ACE2EC4276B8AA3B88169B28949E3A;
     class UTimelineComponent* ProjectileMovement;
@@ -70,6 +61,19 @@ public:
     void SetCableEndPoint(FVector Location);
     UE_PURE FTransform GetCableTransform();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CoolDownItemAggregator CoolDownAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* AudioMoving__UeScsNode = "e52ea4e265161744adeea72d779cb8ed";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b9343a100d61f944b147076d829b7ebe";
+        static constexpr const char* CoolDownWidgetFirstPerson__UeScsNode = "254f37ec96e6ea42b9458103adef31b8";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "614a396df99a47468ded8a8b2132772a";
+        static constexpr const char* Projectile__UeScsNode = "d38355af0bc1364f85f38e5687350f12";
+        static constexpr const char* TP_Muzzle__UeScsNode = "2530141fdbe8144997e30bdad08073a3";
+        static constexpr const char* FP_Muzzle__UeScsNode = "418850ff43dea9488a22d5299a9c8f39";
+        static constexpr const char* Cable__UeScsNode = "8c86cd991544b447bd974de062981bb9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun

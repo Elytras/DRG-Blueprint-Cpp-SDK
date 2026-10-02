@@ -24,13 +24,13 @@ class Basic_Image_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_Image", "Basic_Image_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class UImage* ImageComponent;
     FSlateBrush Brush;
     float TintOpacity;
-    TMap<FName, float> Scalars;
-    TMap<FName, FLinearColor> Vectors;
-    TMap<FName, TSoftObjectPtr<class UTexture>> Textures;
+    UE_READONLY TMap<FName, float> Scalars;
+    UE_READONLY TMap<FName, FLinearColor> Vectors;
+    UE_READONLY TMap<FName, TSoftObjectPtr<class UTexture>> Textures;
     FText BasicToolTipText;
     FVector2D BasicToolTipPosition;
     FVector2D BasicToolTipAlignment;

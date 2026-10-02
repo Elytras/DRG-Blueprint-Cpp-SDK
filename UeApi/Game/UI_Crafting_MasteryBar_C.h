@@ -28,8 +28,8 @@ public:
     using UI_Crafting_MasteryBar_Reward_C = Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_Reward_C;
     using UI_Forge_LevelIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimLevelUp;
-    class UWidgetAnimation* AnimProgress;
+    UE_READONLY class UWidgetAnimation* AnimLevelUp;
+    UE_READONLY class UWidgetAnimation* AnimProgress;
     class UImage* Image_111;
     UI_Crafting_MasteryBar_Reward_C* Mastery_AnimReward;
     UI_Crafting_MasteryBar_Reward_C* Mastery_Reward;

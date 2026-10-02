@@ -18,21 +18,25 @@ class BP_Guntower_Module_RadialFire_new_C : public ARadialFireModule
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_RadialFire/BP_Guntower_Module_RadialFire_new", "BP_Guntower_Module_RadialFire_new_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "11b9a5c0deffda4aaf7584c677352a4e";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "ce4bfe9f7a8c184883134e9f1ecf58ba";
     class UChildActorComponent* WeakPoint2;
-    static constexpr const char* WeakPoint2__UeScsNode = "0163a3b6805fb742b8c1b587be80cffa";
     class UChildActorComponent* WeakPoint1;
-    static constexpr const char* WeakPoint1__UeScsNode = "8d58d1bf930e7649bfa26b65010b91eb";
     class UChildActorComponent* Weakpoint;
-    static constexpr const char* Weakpoint__UeScsNode = "0634c527100ff140835e72fec5bc556f";
     void ExecuteUbergraph_BP_Guntower_Module_RadialFire_new(int EntryPoint);
     void OnTearArmor();
     void OnFire();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Capsule__UeScsNode = "11b9a5c0deffda4aaf7584c677352a4e";
+        static constexpr const char* outline__UeScsNode = "ce4bfe9f7a8c184883134e9f1ecf58ba";
+        static constexpr const char* WeakPoint2__UeScsNode = "0163a3b6805fb742b8c1b587be80cffa";
+        static constexpr const char* WeakPoint1__UeScsNode = "8d58d1bf930e7649bfa26b65010b91eb";
+        static constexpr const char* Weakpoint__UeScsNode = "0634c527100ff140835e72fec5bc556f";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire

@@ -24,25 +24,15 @@ public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ENE_Spider_Boss_TwinB", "ENE_Spider_Boss_TwinB_C");
     using BP_BurrowAttackComponent_C = Game::Enemies::Attacks::BP_BurrowAttackComponent_C;
     using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_TwinB_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinB_C__UeName = "UberGraphFrame";
     class UAttackCooldownComponent* AttackCooldown;
-    static constexpr const char* AttackCooldown__UeScsNode = "9f194b9f262f804faf4c1d4a10853235";
     class UMeleeAttackComponent* BiteAttack;
-    static constexpr const char* BiteAttack__UeScsNode = "3b6328512ffc604bb6a815f34b37d438";
     class UEnemyBufferComponent* EnemyBuffer;
-    static constexpr const char* EnemyBuffer__UeScsNode = "b45791296e68a646980ebc02c93a8b33";
     class UMeleeAttackComponent* CarveAttack;
-    static constexpr const char* CarveAttack__UeScsNode = "c1d6ec60dff0044e95ad6f4b5a048eae";
     class UProjectileAttackComponent* ThreeWayAttack;
-    static constexpr const char* ThreeWayAttack__UeScsNode = "916fdffee3e5f54d84f5564209900564";
     BP_ConeAttackBase_C* ConeAttack;
-    static constexpr const char* ConeAttack__UeScsNode = "b1f8ca98b9d2cb48b842e6af2cde1476";
     BP_BurrowAttackComponent_C* BurrowAttack;
-    static constexpr const char* BurrowAttack__UeScsNode = "67db6d031481f340ba33b25b7dd89605";
     class UCapsuleComponent* SpecialAttackCollider;
-    static constexpr const char* SpecialAttackCollider__UeScsNode = "62b630a09ff0f046ac085be2c7b47dc1";
     void ExecuteUbergraph_ENE_Spider_Boss_TwinB(int EntryPoint);
     void Grieve(FVector GreeveLocation);
     void RemoveDR();
@@ -51,6 +41,20 @@ public:
     void OnDeathBase();
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinB_C__UeName = "UberGraphFrame";
+        static constexpr const char* AttackCooldown__UeScsNode = "9f194b9f262f804faf4c1d4a10853235";
+        static constexpr const char* BiteAttack__UeScsNode = "3b6328512ffc604bb6a815f34b37d438";
+        static constexpr const char* EnemyBuffer__UeScsNode = "b45791296e68a646980ebc02c93a8b33";
+        static constexpr const char* CarveAttack__UeScsNode = "c1d6ec60dff0044e95ad6f4b5a048eae";
+        static constexpr const char* ThreeWayAttack__UeScsNode = "916fdffee3e5f54d84f5564209900564";
+        static constexpr const char* ConeAttack__UeScsNode = "b1f8ca98b9d2cb48b842e6af2cde1476";
+        static constexpr const char* BurrowAttack__UeScsNode = "67db6d031481f340ba33b25b7dd89605";
+        static constexpr const char* SpecialAttackCollider__UeScsNode = "62b630a09ff0f046ac085be2c7b47dc1";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

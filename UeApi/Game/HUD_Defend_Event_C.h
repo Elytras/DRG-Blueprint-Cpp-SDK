@@ -55,13 +55,17 @@ public:
     void ExecuteUbergraph_HUD_Defend_Event(int EntryPoint);
     void failed();
     void Defenders_Updated(int DefenderCount);
-    static constexpr const char* Defenders_Updated__UeName = "Defenders Updated";
     void success();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void ProgressUpdated(float NewProgress);
     UE_COSMETIC void Construct();
     void AddDefendersToArray();
     void UpdateDefenderBlocks(int DefenderCount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Defenders_Updated__UeName = "Defenders Updated";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events

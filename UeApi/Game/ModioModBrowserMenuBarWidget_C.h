@@ -19,7 +19,11 @@ public:
     using UI_InfoScreen_C = Game::UI::Menu_StartScreen::UI_InfoScreen_C;
     class UModioInputBindingImage* ProfileDownloadQueueInputHint;
     UI_InfoScreen_C* UI_Screen;
-    static constexpr const char* UI_Screen__UeName = "UI Screen";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UI_Screen__UeName = "UI Screen";
+    };
 };
 
 }}}}   // namespace Modio::UI::Browser::Views

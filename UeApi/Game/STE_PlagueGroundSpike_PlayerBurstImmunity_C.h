@@ -13,6 +13,11 @@ class STE_PlagueGroundSpike_PlayerBurstImmunity_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/STE_PlagueGroundSpike_PlayerBurstImmunity", "STE_PlagueGroundSpike_PlayerBurstImmunity_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

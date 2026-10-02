@@ -20,34 +20,38 @@ public:
     float TargetScale;
     class APlayerCharacter* Character;
     float StartScale;
-    static constexpr const char* StartScale__Replicated = ":";
     float Progress;
     float CurrentScale;
-    static constexpr const char* CurrentScale__Replicated = "OnRep_CurrentScale:";
     float Scale_Check_Cooldown;
-    static constexpr const char* Scale_Check_Cooldown__UeName = "Scale Check Cooldown";
     bool IsScalingActive;
-    static constexpr const char* IsScalingActive__Replicated = ":";
     float Previous_Progress;
-    static constexpr const char* Previous_Progress__UeName = "Previous Progress";
     float StartCameraOffset;
-    static constexpr const char* StartCameraOffset__Replicated = ":";
     float TargetCameraOffset;
     float CurrentCameraOffset;
-    static constexpr const char* CurrentCameraOffset__Replicated = "OnRep_CurrentCameraOffset:";
     bool EffectEnabled;
     float OriginalPitchValue;
     void ExecuteUbergraph_DE_UnderhillDeluxe(int EntryPoint);
     void Reset_Voice();
-    static constexpr const char* Reset_Voice__UeName = "Reset Voice";
     void Handle_Scaling(float DeltaTime);
-    static constexpr const char* Handle_Scaling__UeName = "Handle Scaling";
     void OnStopEffect();
     void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void TraceForScaledCollision(bool& IsNextScaleColliding);
     void OnRep_CurrentScale();
     void OnRep_CurrentCameraOffset();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StartScale__Replicated = ":";
+        static constexpr const char* CurrentScale__Replicated = "OnRep_CurrentScale:";
+        static constexpr const char* Scale_Check_Cooldown__UeName = "Scale Check Cooldown";
+        static constexpr const char* IsScalingActive__Replicated = ":";
+        static constexpr const char* Previous_Progress__UeName = "Previous Progress";
+        static constexpr const char* StartCameraOffset__Replicated = ":";
+        static constexpr const char* CurrentCameraOffset__Replicated = "OnRep_CurrentCameraOffset:";
+        static constexpr const char* Reset_Voice__UeName = "Reset Voice";
+        static constexpr const char* Handle_Scaling__UeName = "Handle Scaling";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

@@ -26,23 +26,14 @@ public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueGroundSpike", "BP_PlagueGroundSpike_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* TEMP_WalkingPlagueHeart_SpikeBurst_Cue;
-    static constexpr const char* TEMP_WalkingPlagueHeart_SpikeBurst_Cue__UeScsNode = "4897b1ebf8c4014cbf1304cca083b9c6";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "dcc0b89dbb5564488aaf6bae5fa94b84";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "9fda1776ed4aac49a1a43627c5cffe91";
     class UNiagaraComponent* NS_Ground_Spike;
-    static constexpr const char* NS_Ground_Spike__UeScsNode = "12e418caf9603249aa6eeab97063d999";
     class USphereComponent* SphereDamageTrigger;
-    static constexpr const char* SphereDamageTrigger__UeScsNode = "48cd528df5e4f247902a2cb14ef7d333";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "bdb27484fe1fb346a6e11450fc899320";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "3b2f866775c4f849ae567e1673e084d6";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d027f1a2b88637498e8ed696dbf9cb99";
     float SpikeDurationFade_NewTrack;
-    static constexpr const char* SpikeDurationFade_NewTrack__UeName = "SpikeDurationFade_NewTrack_0_598055184F53D08F9DFFFC9BD3409EFF";
     TEnum<ETimelineDirection> SpikeDurationFade__Direction_598055184F53D08F9DFFFC9BD3409EFF;
     class UTimelineComponent* SpikeDurationFade;
     float Rotation;
@@ -54,6 +45,19 @@ public:
     void ReceiveBeginPlay();
     void SpikeDurationFade__UpdateFunc();
     void SpikeDurationFade__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TEMP_WalkingPlagueHeart_SpikeBurst_Cue__UeScsNode = "4897b1ebf8c4014cbf1304cca083b9c6";
+        static constexpr const char* PointLight__UeScsNode = "dcc0b89dbb5564488aaf6bae5fa94b84";
+        static constexpr const char* Arrow__UeScsNode = "9fda1776ed4aac49a1a43627c5cffe91";
+        static constexpr const char* NS_Ground_Spike__UeScsNode = "12e418caf9603249aa6eeab97063d999";
+        static constexpr const char* SphereDamageTrigger__UeScsNode = "48cd528df5e4f247902a2cb14ef7d333";
+        static constexpr const char* Damage__UeScsNode = "bdb27484fe1fb346a6e11450fc899320";
+        static constexpr const char* StaticMesh__UeScsNode = "3b2f866775c4f849ae567e1673e084d6";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d027f1a2b88637498e8ed696dbf9cb99";
+        static constexpr const char* SpikeDurationFade_NewTrack__UeName = "SpikeDurationFade_NewTrack_0_598055184F53D08F9DFFFC9BD3409EFF";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

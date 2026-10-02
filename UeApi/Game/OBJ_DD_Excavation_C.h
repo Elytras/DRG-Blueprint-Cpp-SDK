@@ -16,6 +16,11 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_Excavation", "OBJ_DD_Excavation_C");
     FObjectiveMissionIcon GetMissionIcon() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepDive

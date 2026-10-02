@@ -21,12 +21,16 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     bool PEffect;
     class UParticleSystemComponent* Particle_Effect;
-    static constexpr const char* Particle_Effect__UeName = "Particle Effect";
     class UAudioComponent* soundComp;
     class UAudioComponent* soundCompDown;
     void ExecuteUbergraph_DE_BlackoutStout(int EntryPoint);
     void OnStopEffect();
     void OnStartEffect(class APlayerCharacter* Character);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Particle_Effect__UeName = "Particle Effect";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

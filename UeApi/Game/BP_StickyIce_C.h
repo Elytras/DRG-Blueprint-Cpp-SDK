@@ -20,18 +20,12 @@ class BP_StickyIce_C : public AStickyIce
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/BP_StickyIce", "BP_StickyIce_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent VisualRoot;/Script/FSD.SimpleHealthComponent Health;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_CrystalSpike_A;
-    static constexpr const char* SM_CrystalSpike_A__UeScsNode = "36f33f7d2a1dc54b836013516b953058";
     class USphereComponent* collider;
-    static constexpr const char* collider__UeScsNode = "29cc6807bd7f4f4699a679740f8cec94";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "9086374b372d17438575782d06d9ef01";
     class UNiagaraComponent* NS_StickyFrost;
-    static constexpr const char* NS_StickyFrost__UeScsNode = "ef80168826e1fc4aa6fdeff2a14cb4cb";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_1_859263F34EED5A2D6A4CEF82230780FC";
     TEnum<ETimelineDirection> Timeline_0__Direction_859263F34EED5A2D6A4CEF82230780FC;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_BP_StickyIce(int EntryPoint);
@@ -39,6 +33,16 @@ public:
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent VisualRoot;/Script/FSD.SimpleHealthComponent Health;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
+        static constexpr const char* SM_CrystalSpike_A__UeScsNode = "36f33f7d2a1dc54b836013516b953058";
+        static constexpr const char* collider__UeScsNode = "29cc6807bd7f4f4699a679740f8cec94";
+        static constexpr const char* Box__UeScsNode = "9086374b372d17438575782d06d9ef01";
+        static constexpr const char* NS_StickyFrost__UeScsNode = "ef80168826e1fc4aa6fdeff2a14cb4cb";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_1_859263F34EED5A2D6A4CEF82230780FC";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

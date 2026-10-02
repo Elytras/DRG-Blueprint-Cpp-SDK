@@ -43,8 +43,8 @@ public:
     using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimShowMasteryBar;
-    class UWidgetAnimation* AnimEnterSelection;
+    UE_READONLY class UWidgetAnimation* AnimShowMasteryBar;
+    UE_READONLY class UWidgetAnimation* AnimEnterSelection;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_142;
     Basic_ButtonScalable2_C* ButtonHistory;
     Basic_ButtonScalable2_C* ButtonSkip;
@@ -65,7 +65,7 @@ public:
     UI_Forge_Details_C* UI_Forge_Details;
     class UBorder* WindowBorder;
     class UTextBlock* WindowHeader;
-    float ItemSize;
+    UE_READONLY float ItemSize;
     UI_Forge_Schematic_C* SelectedItem;
     bool SelectionBoxOpen;
     bool ItemPopUpOpen;
@@ -86,7 +86,6 @@ public:
     UE_COSMETIC void Construct();
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature();
     void Display_Pending_Mastery_Reward();
-    static constexpr const char* Display_Pending_Mastery_Reward__UeName = "Display Pending Mastery Reward";
     void BndEvt__UI_Forge_MasteryReward_K2Node_ComponentBoundEvent_6_OnFinished__DelegateSignature();
     void BndEvt__UI_Forge_MasteryBar_K2Node_ComponentBoundEvent_4_OnCountingFinished__DelegateSignature(uint8 Reward);
     void BndEvt__UI_Forge_Completed_K2Node_ComponentBoundEvent_3_OnFinished__DelegateSignature();
@@ -108,10 +107,15 @@ public:
     void ToggleSelectionList(bool Visible);
     void ToggleItemPopUp(bool Visible);
     void Forge_Schematic(UI_Forge_Schematic_C* InSchematic, bool& success);
-    static constexpr const char* Forge_Schematic__UeName = "Forge Schematic";
     void ToggleMasteryBar(bool Visible, bool AllowClaimButton);
     UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCursorVisible(bool IsVisible_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Display_Pending_Mastery_Reward__UeName = "Display Pending Mastery Reward";
+        static constexpr const char* Forge_Schematic__UeName = "Forge Schematic";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

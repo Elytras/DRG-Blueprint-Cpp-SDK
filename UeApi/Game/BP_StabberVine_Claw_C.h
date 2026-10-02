@@ -20,9 +20,7 @@ public:
     UE_CLASS("/Game/Enemies/StabberVine/BP_StabberVine_Claw", "BP_StabberVine_Claw_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "361482ce49105948bf4fe528534fba1e";
     class UStaticMeshComponent* SM_StabberVine_Blade;
-    static constexpr const char* SM_StabberVine_Blade__UeScsNode = "6b4c31f9ff0cc5428c0307749c2f7321";
     class UMaterialInstanceDynamic* Material;
     FLinearColor DissolveTint1;
     FLinearColor DissolveTint2;
@@ -31,6 +29,12 @@ public:
     void AddImpulse();
     void dissolve();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* enemy__UeScsNode = "361482ce49105948bf4fe528534fba1e";
+        static constexpr const char* SM_StabberVine_Blade__UeScsNode = "6b4c31f9ff0cc5428c0307749c2f7321";
+    };
 };
 
 }}}   // namespace Game::Enemies::StabberVine

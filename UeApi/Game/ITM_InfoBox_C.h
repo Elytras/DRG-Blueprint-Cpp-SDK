@@ -24,8 +24,8 @@ public:
     UE_CLASS("/Game/UI/_GlobalAssets/ITM_InfoBox", "ITM_InfoBox_C");
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ItemDesc_Hover;
-    class UWidgetAnimation* ItemDesc_Click;
+    UE_READONLY class UWidgetAnimation* ItemDesc_Hover;
+    UE_READONLY class UWidgetAnimation* ItemDesc_Click;
     BlurBackground_C* BlurBackground;
     class UButton* BTN_Info;
     class UTextBlock* DATA_GearDesc;

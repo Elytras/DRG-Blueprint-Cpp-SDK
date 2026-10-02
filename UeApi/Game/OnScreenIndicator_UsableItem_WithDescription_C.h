@@ -26,7 +26,7 @@ public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_UsableItem_WithDescription", "OnScreenIndicator_UsableItem_WithDescription_C");
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* fade;
+    UE_READONLY class UWidgetAnimation* fade;
     class UVerticalBox* holder;
     UI_AdvancedLabel_C* KeyLabel;
     class UProgressBar* Use_Progress;
@@ -37,7 +37,6 @@ public:
     void ExecuteUbergraph_OnScreenIndicator_UsableItem_WithDescription(int EntryPoint);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void On_Initialize();
-    static constexpr const char* On_Initialize__UeName = "On Initialize";
     UE_COSMETIC void Construct();
     void BeginHover(class UUsableComponentBase* Component);
     void EndHover();
@@ -46,6 +45,11 @@ public:
     void SetAction(FText NewText, FText OverrideControllerText);
     void SetTitle(FText InText);
     UE_PURE class UUsableComponentBase* GetUsable();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Initialize__UeName = "On Initialize";
+    };
 };
 
 }}}   // namespace Game::UI::OnScreenIndicators

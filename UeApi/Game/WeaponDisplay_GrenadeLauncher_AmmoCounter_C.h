@@ -21,8 +21,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/WeaponDisplay_GrenadeLauncher_AmmoCounter", "WeaponDisplay_GrenadeLauncher_AmmoCounter_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_GrenadeLauncher_AmmoCounter_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_GrenadeLauncher_AmmoCounter_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* AmmoCritical;
+    UE_READONLY class UWidgetAnimation* AmmoCritical;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UImage* Image_88;
     class UTextBlock* MaxAmmo;
@@ -30,10 +29,15 @@ public:
     class UImage* WarningOverlay;
     void ExecuteUbergraph_WeaponDisplay_GrenadeLauncher_AmmoCounter(int EntryPoint);
     void Total_Ammo_left_changed(int amount);
-    static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
     void Max_Ammo_Changed(int amount);
-    static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_GrenadeLauncher_AmmoCounter_C__UeName = "UberGraphFrame";
+        static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
+        static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher

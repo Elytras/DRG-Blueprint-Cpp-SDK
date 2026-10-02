@@ -19,11 +19,15 @@ public:
     UE_CLASS("/Game/UI/Tutorial/W_Tutorial_Sprinting", "W_Tutorial_Sprinting_C");
     using BP_TutorialTriggerManager_C = Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
     FPointerToUberGraphFrame UberGraphFrame_W_Tutorial_Sprinting_C;
-    static constexpr const char* UberGraphFrame_W_Tutorial_Sprinting_C__UeName = "UberGraphFrame";
     BP_TutorialTriggerManager_C* Manager;
     void ExecuteUbergraph_W_Tutorial_Sprinting(int EntryPoint);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_Tutorial_Sprinting_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

@@ -17,11 +17,15 @@ class BP_BossFight_NeutralEvent_C : public UObject
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/BP_BossFight_NeutralEvent", "BP_BossFight_NeutralEvent_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FBossFight BossFight;
     bool IsStillValid();
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
     class AActor* GetBossActor();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

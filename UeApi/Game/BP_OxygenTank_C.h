@@ -19,18 +19,22 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank", "BP_OxygenTank_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* FrontPlane;
-    static constexpr const char* FrontPlane__UeScsNode = "8d0cd26c17483d438375b7023d4349ce";
     class UStaticMeshComponent* SM_Screen_005;
-    static constexpr const char* SM_Screen_005__UeScsNode = "ce834f61149d2240ae02a87565ba9f63";
     class UParticleSystemComponent* P_GasCanister_air_Mule1;
-    static constexpr const char* P_GasCanister_air_Mule1__UeScsNode = "8a08d9b617f58b4d989f44b66ba9f2c8";
     class UStaticMeshComponent* SM_GasCanister;
-    static constexpr const char* SM_GasCanister__UeScsNode = "3062bbd258768d4b81f21ad835e4fbf6";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "213133b2b4071b4199601b58184ca0d4";
     void ExecuteUbergraph_BP_OxygenTank(int EntryPoint);
     void OnOxygenActivationChanged_Event_0(bool IsActive);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FrontPlane__UeScsNode = "8d0cd26c17483d438375b7023d4349ce";
+        static constexpr const char* SM_Screen_005__UeScsNode = "ce834f61149d2240ae02a87565ba9f63";
+        static constexpr const char* P_GasCanister_air_Mule1__UeScsNode = "8a08d9b617f58b4d989f44b66ba9f2c8";
+        static constexpr const char* SM_GasCanister__UeScsNode = "3062bbd258768d4b81f21ad835e4fbf6";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "213133b2b4071b4199601b58184ca0d4";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen

@@ -27,8 +27,8 @@ public:
     using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
     using HUD_TabPlayerListEntryV2_C = Game::UI::Menu_Tab::HUD_TabPlayerListEntryV2_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Exit;
-    class UWidgetAnimation* Enter;
+    UE_READONLY class UWidgetAnimation* Exit;
+    UE_READONLY class UWidgetAnimation* Enter;
     Basic_ButtonCutCorner_C* BTN_GamerCard;
     Basic_ButtonCutCorner_C* BTN_Kick;
     Basic_ButtonCutCorner_C* BTN_mute;
@@ -54,9 +54,13 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnPlayerSet();
     void Update_Mute_Button();
-    static constexpr const char* Update_Mute_Button__UeName = "Update Mute Button";
     void OnPlayerCharacterSpawned_Event(class APlayerCharacter* PlayerCharacter);
     void SetPlayer(class AFSDPlayerState* State);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Mute_Button__UeName = "Update Mute Button";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Tab

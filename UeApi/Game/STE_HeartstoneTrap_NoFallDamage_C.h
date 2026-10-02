@@ -13,6 +13,11 @@ class STE_HeartstoneTrap_NoFallDamage_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/HeartStoneCore/HeartStoneTRAP/STE_HeartstoneTrap_NoFallDamage", "STE_HeartstoneTrap_NoFallDamage_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP

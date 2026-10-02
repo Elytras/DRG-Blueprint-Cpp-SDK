@@ -24,13 +24,9 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_CleanupPod_Marker", "BP_CleanupPod_Marker_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "59df53d69835c1489fac860fc5d28b9a";
     class UStaticMeshComponent* SupplyPod_SingleMesh;
-    static constexpr const char* SupplyPod_SingleMesh__UeScsNode = "a59e3aadad6cc744b08e703b5173aed0";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "58c308dc06d61847938c396311f277e5";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ee2f54edf5747f40aad57f5707d3bbbb";
     class UMaterialInstanceDynamic* Material;
     FLinearColor StartColor;
     FName ColorName;
@@ -40,6 +36,14 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void SetMaterials(class UMaterial* ParentMaterial, class UMeshComponent* Mesh, class UMaterialInstanceDynamic*& DynamicMaterial);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "59df53d69835c1489fac860fc5d28b9a";
+        static constexpr const char* SupplyPod_SingleMesh__UeScsNode = "a59e3aadad6cc744b08e703b5173aed0";
+        static constexpr const char* Widget__UeScsNode = "58c308dc06d61847938c396311f277e5";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ee2f54edf5747f40aad57f5707d3bbbb";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod

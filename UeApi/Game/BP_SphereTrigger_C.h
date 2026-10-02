@@ -19,11 +19,15 @@ class BP_SphereTrigger_C : public Game::LevelElements::Triggers::BP_TriggerBase_
 public:
     UE_CLASS("/Game/LevelElements/Triggers/BP_SphereTrigger", "BP_SphereTrigger_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_SphereTrigger_C;
-    static constexpr const char* UberGraphFrame_BP_SphereTrigger_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bda817f204ff5a4aafd1e39315964826";
     void ExecuteUbergraph_BP_SphereTrigger(int EntryPoint);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_SphereTrigger_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "bda817f204ff5a4aafd1e39315964826";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Triggers

@@ -24,19 +24,12 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Anniversary/Blueprint/BP_Anniversary_Sparkler", "BP_Anniversary_Sparkler_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Anniversary_Sparkler_Outer;
-    static constexpr const char* SM_Anniversary_Sparkler_Outer__UeScsNode = "6a564a39a4a258438468c1e445a50317";
     class UFSDAudioComponent* FSDAudio;
-    static constexpr const char* FSDAudio__UeScsNode = "f55c0a6311da1245a6ae6c24480ffc20";
     class USphereComponent* Usable;
-    static constexpr const char* Usable__UeScsNode = "bcbce4072b979648ad040fb984f6aa37";
     class UStaticMeshComponent* SM_Anniversary_Sparkler;
-    static constexpr const char* SM_Anniversary_Sparkler__UeScsNode = "4897622fc6f456478d8b3087ae020498";
     class USceneComponent* StopPoint;
-    static constexpr const char* StopPoint__UeScsNode = "37205c9862c91a459170ff8c1c9cec8d";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "ea5e126c6ef4644e82c61d058ddc7dc8";
     class UNiagaraComponent* NS_Lunar_Sparks;
-    static constexpr const char* NS_Lunar_Sparks__UeScsNode = "abfa64deb1418d44bddf22cd1d05ae3b";
     float BurnSpeed;
     float CurrentDistance;
     float InitialDistance;
@@ -47,6 +40,17 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_Burning();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Anniversary_Sparkler_Outer__UeScsNode = "6a564a39a4a258438468c1e445a50317";
+        static constexpr const char* FSDAudio__UeScsNode = "f55c0a6311da1245a6ae6c24480ffc20";
+        static constexpr const char* Usable__UeScsNode = "bcbce4072b979648ad040fb984f6aa37";
+        static constexpr const char* SM_Anniversary_Sparkler__UeScsNode = "4897622fc6f456478d8b3087ae020498";
+        static constexpr const char* StopPoint__UeScsNode = "37205c9862c91a459170ff8c1c9cec8d";
+        static constexpr const char* InstantUsable__UeScsNode = "ea5e126c6ef4644e82c61d058ddc7dc8";
+        static constexpr const char* NS_Lunar_Sparks__UeScsNode = "abfa64deb1418d44bddf22cd1d05ae3b";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint

@@ -24,10 +24,14 @@ public:
     class USlider* RadiusSlider;
     void ExecuteUbergraph_Cheat_CharacterPointLight(int EntryPoint);
     void Set_max_value_on_radius_and_intensity();
-    static constexpr const char* Set_max_value_on_radius_and_intensity__UeName = "Set max value on radius and intensity";
     void BndEvt__Radius_K2Node_ComponentBoundEvent_96_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void BndEvt__IntensitySlider_K2Node_ComponentBoundEvent_79_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void Update();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_max_value_on_radius_and_intensity__UeName = "Set max value on radius and intensity";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

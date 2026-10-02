@@ -13,6 +13,11 @@ class STE_TemperatureShockFromFrozen_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Temperature/STE_TemperatureShockFromFrozen", "STE_TemperatureShockFromFrozen_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_1;/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Temperature

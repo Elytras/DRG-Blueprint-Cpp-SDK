@@ -13,6 +13,11 @@ class STE_PlayerDefrosted_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Temperature/STE_PlayerDefrosted", "STE_PlayerDefrosted_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Temperature

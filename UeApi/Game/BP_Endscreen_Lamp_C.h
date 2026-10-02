@@ -21,25 +21,29 @@ public:
     UE_CLASS("/Game/Character/CharacterSelection/BP_Endscreen_Lamp", "BP_Endscreen_Lamp_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Static_Mesh;
-    static constexpr const char* Static_Mesh__UeName = "Static Mesh";
-    static constexpr const char* Static_Mesh__UeScsNode = "4245c0b10f8b384fa34a6e733d87697c";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "33f53e9524b9f9438b80f95a71a4efb4";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "20830364d330b94c9699714e7a1e1b60";
     bool Survived;
     float Light_Intensity;
-    static constexpr const char* Light_Intensity__UeName = "Light Intensity";
     float Light_Attenuation;
-    static constexpr const char* Light_Attenuation__UeName = "Light Attenuation";
     float MaterialGlow;
     FVector Light_Offset;
-    static constexpr const char* Light_Offset__UeName = "Light Offset";
     class UMaterialInstanceDynamic* DynamicMaterial;
     void ExecuteUbergraph_BP_Endscreen_Lamp(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void UpdateLights();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Static_Mesh__UeName = "Static Mesh";
+        static constexpr const char* Static_Mesh__UeScsNode = "4245c0b10f8b384fa34a6e733d87697c";
+        static constexpr const char* Scene__UeScsNode = "33f53e9524b9f9438b80f95a71a4efb4";
+        static constexpr const char* PointLight__UeScsNode = "20830364d330b94c9699714e7a1e1b60";
+        static constexpr const char* Light_Intensity__UeName = "Light Intensity";
+        static constexpr const char* Light_Attenuation__UeName = "Light Attenuation";
+        static constexpr const char* Light_Offset__UeName = "Light Offset";
+    };
 };
 
 }}}   // namespace Game::Character::CharacterSelection

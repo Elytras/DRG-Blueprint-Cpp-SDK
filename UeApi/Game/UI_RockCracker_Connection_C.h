@@ -26,8 +26,8 @@ public:
     using Basic_ProgressBar_C = Game::UI::Art::WidgetParts::Basic_ProgressBar_C;
     using ITM_Pipeline_BrokenIcon_C = Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CrackerActive;
-    class UWidgetAnimation* AnimCableProgress;
+    UE_READONLY class UWidgetAnimation* CrackerActive;
+    UE_READONLY class UWidgetAnimation* AnimCableProgress;
     class UOverlay* Cable_Anim;
     Basic_Image_C* Cable_Bg;
     ITM_Pipeline_BrokenIcon_C* ITM_Pipeline_BrokenIcon;

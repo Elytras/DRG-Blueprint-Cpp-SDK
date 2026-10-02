@@ -13,6 +13,11 @@ class STE_Refinery_Heat_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/STE_Refinery_Heat", "STE_Refinery_Heat_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

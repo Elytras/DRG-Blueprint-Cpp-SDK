@@ -13,7 +13,11 @@ class PRJ_Crossbow_PheromoneProjectile_C : public Game::WeaponsNTools::Crossbow:
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_PheromoneProjectile", "PRJ_Crossbow_PheromoneProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

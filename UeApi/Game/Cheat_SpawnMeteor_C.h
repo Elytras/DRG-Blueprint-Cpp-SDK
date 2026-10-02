@@ -34,7 +34,6 @@ public:
     class UTextBlock* TextBlock;
     class UTextBlock* TextBlock_1;
     TMulticastInlineDelegate<void()> Bosco_spawn_requested;
-    static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
     FVector ChosenLocation;
     TSoftClassPtr<class UClass> MeteorShowerClass;
     TSoftClassPtr<class UClass> PlagueMeteorClass;
@@ -48,6 +47,11 @@ public:
     void OnLoaded_7187A1EC49734C30A20B959751B95B04(TSubclassOf<class UObject> Loaded);
     void OnLoaded_CAEF5B5E494C7D8B0D67A1A50A8FB885(TSubclassOf<class UObject> Loaded);
     void OnLoaded_852E2675461706E9DA989B9AFB6F92B2(TSubclassOf<class UObject> Loaded);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Bosco_spawn_requested__UeName = "Bosco spawn requested";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

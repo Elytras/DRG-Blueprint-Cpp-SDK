@@ -13,6 +13,11 @@ class BP_DamageOnReloadComponent_BRT_C : public UWeaponHitCounterComponent
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/Overclocks/OCBonusPenalty/BP_DamageOnReloadComponent_BRT", "BP_DamageOnReloadComponent_BRT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageHitCountEffect DamageHitCountEffect_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty

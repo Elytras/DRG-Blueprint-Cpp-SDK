@@ -35,50 +35,28 @@ class BP_SentryGun_Redeployable_C : public ARedeployableSentryGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Redeployable", "BP_SentryGun_Redeployable_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* ArcIndicator;
-    static constexpr const char* ArcIndicator__UeScsNode = "2d684a218e017143b15d8ec40fc96e56";
     class UChildActorComponent* EMPIndicator;
-    static constexpr const char* EMPIndicator__UeScsNode = "e4d15cb0a85d6641818f7a72f459a316";
     class UBoxComponent* SpecialAttackCollider;
-    static constexpr const char* SpecialAttackCollider__UeScsNode = "5596d337db5a0d45b864d8db2fd88256";
     class UParticleSystemComponent* SpecialAttackParticleSystem;
-    static constexpr const char* SpecialAttackParticleSystem__UeScsNode = "b62c76c26531b945a39c776195639800";
     class UWidgetComponent* AmmoCountWidget;
-    static constexpr const char* AmmoCountWidget__UeScsNode = "0db9dc607d168a458593f9c7d5ae7036";
     class UStaticMeshComponent* BarrelsMesh;
-    static constexpr const char* BarrelsMesh__UeScsNode = "758e43f06bd73644bcc87fde2ae3f880";
     class USceneComponent* SpotLightBase;
-    static constexpr const char* SpotLightBase__UeScsNode = "8da70b823f48244db15dc3eb974bcfed";
     class UStaticMeshComponent* LightCone;
-    static constexpr const char* LightCone__UeScsNode = "eaabf372c8040347bd49bd9e3a663fc0";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "dd916ca11e082b428b8f31ef6bd8d344";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "afe3ae2aa2d6dd46a91a06518ab15bfc";
     class UProjectileLauncherComponent* projectileLauncher;
-    static constexpr const char* projectileLauncher__UeScsNode = "02b9efbf48abf6429f17c1e15d349146";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "edbac1230c4c134f9f27459849695bc6";
     class UDamageComponent* DamageComponent;
-    static constexpr const char* DamageComponent__UeScsNode = "1fde37266442054faeba749dc772c17a";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "2224aaac42ddf54bbd9261bb6d3b630d";
     class UReloadSentryUsableComponent* ReloadSentryUsable;
-    static constexpr const char* ReloadSentryUsable__UeScsNode = "950c47f06f91c743a8cfc1f5aa9801ae";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e9b681b5f7672c45b67a01f80f0de401";
     class USingleUsableComponent* DeployUsable;
-    static constexpr const char* DeployUsable__UeScsNode = "ab9166156d10da4485e78f6bdbf7a7b4";
     class UWidgetComponent* BuildWidget;
-    static constexpr const char* BuildWidget__UeScsNode = "2919593694be284aad704001d074d214";
     class UStaticMeshComponent* SpotLight2;
-    static constexpr const char* SpotLight2__UeScsNode = "8fa3d73817a69f4ab503c10ce116e4e4";
     class USphereComponent* UsableCollision;
-    static constexpr const char* UsableCollision__UeScsNode = "05515cc1421695429352f9300a31ffe3";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "a2d2010edfc9e547b65418f23d1c8a2e";
     float Timeline_0_Translate_BarrelOverchargeShot_4853B22243389D0916A3E09304615D5D;
     TEnum<ETimelineDirection> Timeline_0__Direction_4853B22243389D0916A3E09304615D5D;
     class UTimelineComponent* Timeline_0;
@@ -96,9 +74,7 @@ public:
     void BndEvt__Hitscan_K2Node_ComponentBoundEvent_2_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void UpdateShadows();
     void Reset_Special_Attack();
-    static constexpr const char* Reset_Special_Attack__UeName = "Reset Special Attack";
     UE_MULTICAST UE_RELIABLE void Multicast_Special_Attack_GFX();
-    static constexpr const char* Multicast_Special_Attack_GFX__UeName = "Multicast Special Attack GFX";
     UE_AUTHORITY_ONLY void ActivateSpecialAttack();
     void ReceiveOnSentryGunOwnerChanged();
     void ReceiveBeginPlay();
@@ -115,6 +91,34 @@ public:
     void ConditionallyEnableShadows();
     void UpdateIndicatorLight(bool FiredShot);
     UE_PURE float GetDeployProgress() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
+        static constexpr const char* ArcIndicator__UeScsNode = "2d684a218e017143b15d8ec40fc96e56";
+        static constexpr const char* EMPIndicator__UeScsNode = "e4d15cb0a85d6641818f7a72f459a316";
+        static constexpr const char* SpecialAttackCollider__UeScsNode = "5596d337db5a0d45b864d8db2fd88256";
+        static constexpr const char* SpecialAttackParticleSystem__UeScsNode = "b62c76c26531b945a39c776195639800";
+        static constexpr const char* AmmoCountWidget__UeScsNode = "0db9dc607d168a458593f9c7d5ae7036";
+        static constexpr const char* BarrelsMesh__UeScsNode = "758e43f06bd73644bcc87fde2ae3f880";
+        static constexpr const char* SpotLightBase__UeScsNode = "8da70b823f48244db15dc3eb974bcfed";
+        static constexpr const char* LightCone__UeScsNode = "eaabf372c8040347bd49bd9e3a663fc0";
+        static constexpr const char* PointLight__UeScsNode = "dd916ca11e082b428b8f31ef6bd8d344";
+        static constexpr const char* SpotLight__UeScsNode = "afe3ae2aa2d6dd46a91a06518ab15bfc";
+        static constexpr const char* projectileLauncher__UeScsNode = "02b9efbf48abf6429f17c1e15d349146";
+        static constexpr const char* SimpleHealth__UeScsNode = "edbac1230c4c134f9f27459849695bc6";
+        static constexpr const char* DamageComponent__UeScsNode = "1fde37266442054faeba749dc772c17a";
+        static constexpr const char* PointLight1__UeScsNode = "2224aaac42ddf54bbd9261bb6d3b630d";
+        static constexpr const char* ReloadSentryUsable__UeScsNode = "950c47f06f91c743a8cfc1f5aa9801ae";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e9b681b5f7672c45b67a01f80f0de401";
+        static constexpr const char* DeployUsable__UeScsNode = "ab9166156d10da4485e78f6bdbf7a7b4";
+        static constexpr const char* BuildWidget__UeScsNode = "2919593694be284aad704001d074d214";
+        static constexpr const char* SpotLight2__UeScsNode = "8fa3d73817a69f4ab503c10ce116e4e4";
+        static constexpr const char* UsableCollision__UeScsNode = "05515cc1421695429352f9300a31ffe3";
+        static constexpr const char* HitScan__UeScsNode = "a2d2010edfc9e547b65418f23d1c8a2e";
+        static constexpr const char* Reset_Special_Attack__UeName = "Reset Special Attack";
+        static constexpr const char* Multicast_Special_Attack_GFX__UeName = "Multicast Special Attack GFX";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

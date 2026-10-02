@@ -17,9 +17,13 @@ class PRW_DoubleDrills_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Drills/PRW_DoubleDrills", "PRW_DoubleDrills_C");
     class USkeletalMeshComponent* SkeletalMesh1;
-    static constexpr const char* SkeletalMesh1__UeScsNode = "8dd42f83d2a3c145a6f37b118c5bd80f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a120331404c6ae468e41c571487e43bd";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh1__UeScsNode = "8dd42f83d2a3c145a6f37b118c5bd80f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a120331404c6ae468e41c571487e43bd";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Drills

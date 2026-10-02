@@ -26,22 +26,14 @@ class BP_Phys_BeachBall_C : public AGem
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_Phys_BeachBall", "BP_Phys_BeachBall_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* Spaceballimpact;
-    static constexpr const char* Spaceballimpact__UeScsNode = "6a3e307285d3fa41a778b591b64fd2ab";
     class USingleUsableComponent* SingleUsable;
-    static constexpr const char* SingleUsable__UeScsNode = "a97f4d88e16ed047b405e3d43aa39489";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "8a6f2682bd00e44785d11c38fa69269f";
     class UStaticMeshComponent* SM_BeachBall_01;
-    static constexpr const char* SM_BeachBall_01__UeScsNode = "0652c14cc632c44a8e431bf186780155";
     class USphereComponent* Collision;
-    static constexpr const char* Collision__UeScsNode = "5e8eda3740911a4083cf04d984ca65f0";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "98d094386647cd449a30f44a991c0d99";
     class APlayerCharacter* KickedBy;
-    static constexpr const char* KickedBy__Replicated = ":";
     FVector ImpactNormal;
     FVector ImpactPoint;
     FVector TraceDirection;
@@ -65,6 +57,18 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     UE_MULTICAST void PlayKickAnim(class APlayerCharacter* Kicker);
     void UsedByClient(TEnum<EInputKeys> Key, class APlayerCharacter* KickedBy_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* Spaceballimpact__UeScsNode = "6a3e307285d3fa41a778b591b64fd2ab";
+        static constexpr const char* SingleUsable__UeScsNode = "a97f4d88e16ed047b405e3d43aa39489";
+        static constexpr const char* UseSphere__UeScsNode = "8a6f2682bd00e44785d11c38fa69269f";
+        static constexpr const char* SM_BeachBall_01__UeScsNode = "0652c14cc632c44a8e431bf186780155";
+        static constexpr const char* Collision__UeScsNode = "5e8eda3740911a4083cf04d984ca65f0";
+        static constexpr const char* Carriable__UeScsNode = "98d094386647cd449a30f44a991c0d99";
+        static constexpr const char* KickedBy__Replicated = ":";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

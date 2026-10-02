@@ -22,30 +22,34 @@ class BP_Guntower_Module_LMG_C : public ALMGGuntoweModule
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_AimingLMG/BP_Guntower_Module_LMG", "BP_Guntower_Module_LMG_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FiringAudioComponent;/Script/FSD.DamageComponent DMGComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/FSD.HitscanComponent HitComponent;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.SceneComponent AimAtWhenNoTarget;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "60f4202485458f47986f8f4d1a7cd3ad";
     class UStaticMeshComponent* LightCone;
-    static constexpr const char* LightCone__UeScsNode = "5082149fc862d74c89de3e9eb55ccce1";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "3ffa637a5e3caf4b8d8eeca272eacfe2";
     class UAIPerceptionComponent* AIPerception;
-    static constexpr const char* AIPerception__UeScsNode = "608d2ea62e04dc4691508f78bf988dfe";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "c670abecd748114c9271abdbfbcd565f";
     class UChildActorComponent* ChildActor2;
-    static constexpr const char* ChildActor2__UeScsNode = "65609cee96946a409ff9bce71ee2e9a7";
     class UChildActorComponent* ChildActor1;
-    static constexpr const char* ChildActor1__UeScsNode = "8b0de0298bc1884581274caf67f98b1d";
     class UChildActorComponent* ChildActor;
-    static constexpr const char* ChildActor__UeScsNode = "1a1cc92e42b7f24380880e29fda712e9";
     class UMaterialInstanceDynamic* LightMaterial;
     void ExecuteUbergraph_BP_Guntower_Module_LMG(int EntryPoint);
     void OnTearArmor();
     void OnActivationChanged(bool IsActivated);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FiringAudioComponent;/Script/FSD.DamageComponent DMGComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GunTowerHealthComponent ModuleHealthComponent;/Script/FSD.HitscanComponent HitComponent;/Script/Engine.ParticleSystemComponent DestroyedSmoke;/Script/Engine.SceneComponent AimAtWhenNoTarget;/Script/Engine.SceneComponent ModuleBase;/Script/Engine.SkeletalMeshComponent DestroyedMesh;/Script/Engine.SkeletalMeshComponent ModuleMesh;/Script/Engine.StaticMeshComponent Armor1;/Script/Engine.StaticMeshComponent Armor2;/Script/Engine.StaticMeshComponent Armor3;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Capsule__UeScsNode = "60f4202485458f47986f8f4d1a7cd3ad";
+        static constexpr const char* LightCone__UeScsNode = "5082149fc862d74c89de3e9eb55ccce1";
+        static constexpr const char* SpotLight__UeScsNode = "3ffa637a5e3caf4b8d8eeca272eacfe2";
+        static constexpr const char* AIPerception__UeScsNode = "608d2ea62e04dc4691508f78bf988dfe";
+        static constexpr const char* outline__UeScsNode = "c670abecd748114c9271abdbfbcd565f";
+        static constexpr const char* ChildActor2__UeScsNode = "65609cee96946a409ff9bce71ee2e9a7";
+        static constexpr const char* ChildActor1__UeScsNode = "8b0de0298bc1884581274caf67f98b1d";
+        static constexpr const char* ChildActor__UeScsNode = "1a1cc92e42b7f24380880e29fda712e9";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG

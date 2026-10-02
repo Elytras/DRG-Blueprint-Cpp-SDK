@@ -23,7 +23,7 @@ public:
     using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
     using Options_MouseKeyboard_KeyCapture_C = Game::UI::Keybindings::Options_MouseKeyboard_KeyCapture_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Error;
+    UE_READONLY class UWidgetAnimation* Error;
     Basic_Option_C* Basic_Option;
     class UTextBlock* ErrorLabel;
     Options_MouseKeyboard_KeyCapture_C* UI_KeyCapture_Primary;

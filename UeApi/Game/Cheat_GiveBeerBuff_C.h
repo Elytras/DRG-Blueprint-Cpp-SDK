@@ -23,11 +23,15 @@ public:
     class UScrollBox* ScrollBox_79;
     TArray<class UTemporaryBuff*> BeerBuffList;
     TArray<Cheat_GiveBeerBuff_Row_C*> my_beer_buff_rows;
-    static constexpr const char* my_beer_buff_rows__UeName = "my beer buff rows";
     void ExecuteUbergraph_Cheat_GiveBeerBuff(int EntryPoint);
     void set_selected_row_active(Cheat_GiveBeerBuff_Row_C* Buff_row_to_skip);
-    static constexpr const char* set_selected_row_active__UeName = "set selected row active";
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* my_beer_buff_rows__UeName = "my beer buff rows";
+        static constexpr const char* set_selected_row_active__UeName = "set selected row active";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

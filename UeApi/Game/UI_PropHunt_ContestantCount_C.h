@@ -20,7 +20,7 @@ class UI_PropHunt_ContestantCount_C : public UUserWidget
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/UI/UI_PropHunt_ContestantCount", "UI_PropHunt_ContestantCount_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimCountChanged;
+    UE_READONLY class UWidgetAnimation* AnimCountChanged;
     class UHorizontalBox* ElementsBox;
     class UTextBlock* TitleLabel;
     FText Title;

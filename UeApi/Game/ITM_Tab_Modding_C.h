@@ -80,16 +80,12 @@ public:
     int DependencyRequestsProgress;
     FTimerHandle DependencyProgressTimer;
     bool Is_Initialized;
-    static constexpr const char* Is_Initialized__UeName = "Is Initialized";
     Dialog_Modding_TermsAndConditions_C* Terms_and_Conditions_box;
-    static constexpr const char* Terms_and_Conditions_box__UeName = "Terms and Conditions box";
     void ExecuteUbergraph_ITM_Tab_Modding(int EntryPoint);
     void BndEvt__ITM_Tab_Modding_BTN_Leave_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void Initialize();
     void Start_Screen_Apply();
-    static constexpr const char* Start_Screen_Apply__UeName = "Start Screen Apply";
     void Reload_Tab();
-    static constexpr const char* Reload_Tab__UeName = "Reload Tab";
     void OnModioRequestHandled(TEnum<EModioRequestType> requestType);
     void OnModActivationChanged(ITM_Mod_C* ManipulatedModItem);
     void UpdateButtonsAndCounter();
@@ -111,7 +107,6 @@ public:
     void CheckTermsAndConditions(bool& Accepted);
     void OnTermsAndConditionAnswered(bool Agree);
     void On_Fetched_Terms_and_Conditions(class UModioTermsWrapper* Terms);
-    static constexpr const char* On_Fetched_Terms_and_Conditions__UeName = "On Fetched Terms and Conditions";
     void GetPendingModStatus(FText& ModStatus);
     void JoinWithTitle(FText InTitle, TArray<FString>& Install, FString& OutResult);
     void OnDownloadExtractMods(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading, int Progress, int Total);
@@ -127,8 +122,17 @@ public:
     void GetModSlotStatusText(FText& ModSlotStatus);
     UE_PURE FText GetTermsOfUseAcesssText();
     void Should_Modding_Menu_Be_Enabled(bool& Result);
-    static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Initialized__UeName = "Is Initialized";
+        static constexpr const char* Terms_and_Conditions_box__UeName = "Terms and Conditions box";
+        static constexpr const char* Start_Screen_Apply__UeName = "Start Screen Apply";
+        static constexpr const char* Reload_Tab__UeName = "Reload Tab";
+        static constexpr const char* On_Fetched_Terms_and_Conditions__UeName = "On Fetched Terms and Conditions";
+        static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding

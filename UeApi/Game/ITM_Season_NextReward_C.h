@@ -26,7 +26,7 @@ public:
     using ITM_Season_Progress_Small_C = Game::UI::Menu_Seasons::ITM_Season_Progress_Small_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BGglow;
+    UE_READONLY class UWidgetAnimation* BGglow;
     class UImage* BG_Top;
     class UImage* I_Background;
     class UImage* I_BG_Black;
@@ -49,7 +49,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetData(FSeasonLevel Season_Level);
     UE_PURE class UWidget* Get_Tooltip();
-    static constexpr const char* Get_Tooltip__UeName = "Get Tooltip";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Get_Tooltip__UeName = "Get Tooltip";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

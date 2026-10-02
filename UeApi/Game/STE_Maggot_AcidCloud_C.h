@@ -13,6 +13,11 @@ class STE_Maggot_AcidCloud_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/STE_Maggot_AcidCloud", "STE_Maggot_AcidCloud_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

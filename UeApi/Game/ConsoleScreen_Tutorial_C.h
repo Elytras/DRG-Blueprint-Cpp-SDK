@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Tutorial", "ConsoleScreen_Tutorial_C");
     using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
     class UTextBlock* TXT_Main;
     class UTextBlock* TXT_Unavailable;

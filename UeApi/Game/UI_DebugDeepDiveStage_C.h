@@ -43,7 +43,6 @@ public:
     void GetDuration(class UMissionDuration*& Output);
     void GetAnomaly(class UMissionMutator*& Output);
     void Get_Warning_A(class UMissionWarning*& Output);
-    static constexpr const char* Get_Warning_A__UeName = "Get Warning A";
     void GenerateMissionTypeOptions();
     void GenerateMutatorOptions();
     void GenerateWarningAOptions();
@@ -51,6 +50,11 @@ public:
     void GetDeepDiveStage(FDeepDiveTesterItem& Stage_0);
     void GetDDSecondary(class UClass*& Output);
     void RefreshDDSecondaries();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Get_Warning_A__UeName = "Get Warning A";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat

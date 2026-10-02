@@ -28,21 +28,25 @@ public:
     class UButton* ButtonWidget;
     FText Text;
     bool UpperCase;
-    bool AutoWrapText;
+    UE_READONLY bool AutoWrapText;
     int FontSize;
     TMulticastInlineDelegate<void(Basic_FlatButton_C* Button)> OnClicked;
-    FSlateFontInfo Font;
-    FSizeBoxSettings SizeSettings;
+    UE_READONLY FSlateFontInfo Font;
+    UE_READONLY FSizeBoxSettings SizeSettings;
     void ExecuteUbergraph_Basic_FlatButton(int EntryPoint);
     void BndEvt__ButtonWidget_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ButtonWidget_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ButtonWidget_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Set_Font_Size(int FontSize_0);
-    static constexpr const char* Set_Font_Size__UeName = "Set Font Size";
     void Set_Text(FText Text_0, bool UpperCase_0);
-    static constexpr const char* Set_Text__UeName = "Set Text";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Font_Size__UeName = "Set Font Size";
+        static constexpr const char* Set_Text__UeName = "Set Text";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

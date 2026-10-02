@@ -23,14 +23,10 @@ class ENE_Bomber_C : public ABomber
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/ENE_Bomber", "ENE_Bomber_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GooAudioComponent;/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/Engine.ParticleSystemComponent GooEmitterLeft;/Script/Engine.ParticleSystemComponent GooEmitterRight;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDashPoints* DashPoints;
-    static constexpr const char* DashPoints__UeScsNode = "788c8e168963b54eaa7046723690703c";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "2031468883d28a4f822166344cfcbe34";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "e5ffe04ded43044da89f4f05d6d84b73";
     class UParticleSystemComponent* ParticleSystem;
     int Dashes;
     FTimerHandle RagdollTimer;
@@ -48,6 +44,14 @@ public:
     void UserConstructionScript();
     void InitCharge();
     void OnRep_DeathType();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GooAudioComponent;/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/Engine.ParticleSystemComponent GooEmitterLeft;/Script/Engine.ParticleSystemComponent GooEmitterRight;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* DashPoints__UeScsNode = "788c8e168963b54eaa7046723690703c";
+        static constexpr const char* WeakpointGlow__UeScsNode = "2031468883d28a4f822166344cfcbe34";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "e5ffe04ded43044da89f4f05d6d84b73";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

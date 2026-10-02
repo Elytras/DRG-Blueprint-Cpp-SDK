@@ -13,6 +13,11 @@ class STE_ExpertDepositorMollyDefense_2_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/STE_ExpertDepositorMollyDefense_2", "STE_ExpertDepositorMollyDefense_2_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

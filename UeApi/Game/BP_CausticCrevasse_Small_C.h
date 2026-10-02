@@ -20,17 +20,21 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/CausticMireCrevasse/BP_CausticCrevasse_Small", "BP_CausticCrevasse_Small_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Old_Crevasse;
-    static constexpr const char* Old_Crevasse__UeScsNode = "4b37f7a57834ca448208f5f11cb44381";
     class UStaticMeshComponent* Crevasse;
-    static constexpr const char* Crevasse__UeScsNode = "af8a399be02749449214b07c6e146b9a";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "ef3d9234114d084299c902633637a89c";
     class UTerrainPlacementComponent* terrainPlacement_0;
-    static constexpr const char* terrainPlacement_0__UeScsNode = "1dd9f86bc300a24a82ce04a7bbd41d3e";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "f3af85dd6e40a94782f52e6570c07182";
     void ExecuteUbergraph_BP_CausticCrevasse_Small(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Old_Crevasse__UeScsNode = "4b37f7a57834ca448208f5f11cb44381";
+        static constexpr const char* Crevasse__UeScsNode = "af8a399be02749449214b07c6e146b9a";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "ef3d9234114d084299c902633637a89c";
+        static constexpr const char* terrainPlacement_0__UeScsNode = "1dd9f86bc300a24a82ce04a7bbd41d3e";
+        static constexpr const char* Scene__UeScsNode = "f3af85dd6e40a94782f52e6570c07182";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse

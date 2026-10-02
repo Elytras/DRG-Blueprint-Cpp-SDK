@@ -18,14 +18,18 @@ class WPN_FuelLine_Builder_C : public AFuelLineBuilderItem
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/WPN_FuelLine_Builder", "WPN_FuelLine_Builder_C");
     using UI_FuelLine_Builder_C = Game::WeaponsNTools::FuelLineBuilder::UI_FuelLine_Builder_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CrosshairAggregator CrosshairAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator SegmentPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
-    static constexpr const char* MonitorWidget__UeScsNode = "b704e8ef4708f8448cffdec957c561b1";
     void ExecuteUbergraph_WPN_FuelLine_Builder(int EntryPoint);
     void ReceivePlacementUpdated(bool InCanPlace, bool InConnecting, float InDistanceProgress);
     void ReceiveBeginPlaceSegment();
     void GetMonitorWidget(UI_FuelLine_Builder_C*& MonitorUI);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CrosshairAggregator CrosshairAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator SegmentPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* MonitorWidget__UeScsNode = "b704e8ef4708f8448cffdec957c561b1";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder

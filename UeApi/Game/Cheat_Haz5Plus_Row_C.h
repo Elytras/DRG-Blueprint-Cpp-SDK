@@ -27,7 +27,6 @@ public:
     class UTextBlock* TextBlock_Rank;
     class UDifficultyMutatorSetupItem* MutatorItem;
     TMulticastInlineDelegate<void(Cheat_SetPerk_Row_C* Buff_row_to_skip)> On_PerkRow_checked;
-    static constexpr const char* On_PerkRow_checked__UeName = "On PerkRow checked";
     void ExecuteUbergraph_Cheat_Haz5Plus_Row(int EntryPoint);
     void ChangedRank(int InChange);
     void BndEvt__Cheat_SetPerk_Row_PlusBtn_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
@@ -35,6 +34,11 @@ public:
     void SetMutatorForRow(class UDifficultyMutatorSetupItem* Mutator);
     void FindCurrentMutatorRank(class UDifficultyMutatorSetupItem* LookUpMutator, int& Rank);
     void ChangeMutatorRank(TArray<FDifficultyMutatorItem>& InMutators, class UDifficultyMutatorSetupItem* InMutatorToChange, int NewRank, TArray<FDifficultyMutatorItem>& OutMutators);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_PerkRow_checked__UeName = "On PerkRow checked";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

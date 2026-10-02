@@ -23,7 +23,7 @@ class Basic_ExpandableMenu_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_ExpandableMenu", "Basic_ExpandableMenu_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimOpen;
+    UE_READONLY class UWidgetAnimation* AnimOpen;
     class UBorder* Border_0;
     class UButton* CategoryButton;
     class UNamedSlot* Content;
@@ -33,7 +33,6 @@ public:
     class UImage* OpenImage;
     class USizeBox* WidthSizeBox;
     bool Menu_Open;
-    static constexpr const char* Menu_Open__UeName = "Menu Open";
     float OpenHeight;
     float HeightScale;
     float Width;
@@ -53,6 +52,11 @@ public:
     void SetFixedSizeOpenHeight(int Item_Count, float Item_Height);
     void InstaOpenMenu(bool Open);
     void SetWidth(float InWidth);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Menu_Open__UeName = "Menu Open";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

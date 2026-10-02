@@ -13,7 +13,11 @@ class PRW_PickAxe_Engineer_C : public Game::WeaponsNTools::Pickaxe::PRW_PickAxe_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pickaxe/PRW_PickAxe_Engineer", "PRW_PickAxe_Engineer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TP_RootComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TP_RootComponent";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe

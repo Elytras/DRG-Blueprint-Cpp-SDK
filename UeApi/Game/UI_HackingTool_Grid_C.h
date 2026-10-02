@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/UI_HackingTool_Grid", "UI_HackingTool_Grid_C");
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFill;
+    UE_READONLY class UWidgetAnimation* AnimFill;
     Basic_Image_C* Grid_Image;
     int Size;
     float FilledRadius;

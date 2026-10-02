@@ -20,7 +20,6 @@ class EWC_Spiders_Boss_C : public Game::Enemies::Waves::WaveControllers::EWC_Bas
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Spiders_Boss", "EWC_Spiders_Boss_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Spiders_Boss_C;
-    static constexpr const char* UberGraphFrame_EWC_Spiders_Boss_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     TSet<class APawn*> spawnedEnemies;
@@ -28,6 +27,11 @@ public:
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void spawned(class APawn* enemy);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Spiders_Boss_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

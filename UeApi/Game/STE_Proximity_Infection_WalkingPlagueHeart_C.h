@@ -13,6 +13,11 @@ class STE_Proximity_Infection_WalkingPlagueHeart_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/STE_Proximity_Infection_WalkingPlagueHeart", "STE_Proximity_Infection_WalkingPlagueHeart_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

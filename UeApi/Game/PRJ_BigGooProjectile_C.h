@@ -19,11 +19,8 @@ class PRJ_BigGooProjectile_C : public Game::WeaponsNTools::GooCannon::PRJ_BaseBi
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BigGooProjectile", "PRJ_BigGooProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_BigGooProjectile_C;
-    static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_C__UeName = "UberGraphFrame";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_74F2130944154F0318A73A910B7DD01B";
     TEnum<ETimelineDirection> Timeline_0__Direction_74F2130944154F0318A73A910B7DD01B;
     class UTimelineComponent* Timeline_0;
     float ClusterEjectionForce;
@@ -36,6 +33,13 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void SpawnSmallGoo(FVector InVec);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_C__UeName = "UberGraphFrame";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_74F2130944154F0318A73A910B7DD01B";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

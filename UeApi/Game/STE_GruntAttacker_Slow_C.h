@@ -13,6 +13,11 @@ class STE_GruntAttacker_Slow_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Attacker/STE_GruntAttacker_Slow", "STE_GruntAttacker_Slow_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Attacker

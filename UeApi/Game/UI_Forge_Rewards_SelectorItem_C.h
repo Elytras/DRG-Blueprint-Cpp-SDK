@@ -24,7 +24,7 @@ public:
     using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     ITM_CharacterIcon_C* Character_Icon;
     class UButton* Item_Button;
     UI_GradientMasked_Image_C* Type_GradientBG;

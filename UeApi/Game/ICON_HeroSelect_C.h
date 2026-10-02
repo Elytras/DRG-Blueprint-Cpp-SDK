@@ -87,7 +87,6 @@ public:
     void SetChallengeIcon(bool InHovered, class UTexture2D* Icon, FLinearColor Color);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Update_Retirement_Button();
-    static constexpr const char* Update_Retirement_Button__UeName = "Update Retirement Button";
     void BndEvt__BTN_Retire_K2Node_ComponentBoundEvent_63_OnClicked__DelegateSignature();
     void BndEvt__BTN_Retire_K2Node_ComponentBoundEvent_0_OnUnhovered__DelegateSignature();
     void BndEvt__BTN_Retire_K2Node_ComponentBoundEvent_25_OnHovered__DelegateSignature();
@@ -96,7 +95,6 @@ public:
     void OnCharacterStatsChanged_Event(class AFSDPlayerState* PlayerState_0);
     void SelectedCharacterChanged(TSubclassOf<class APlayerCharacter> NewCharacter);
     void On_Click();
-    static constexpr const char* On_Click__UeName = "On Click";
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCharacterClass(class UPlayerCharacterID* Class_0);
@@ -108,6 +106,12 @@ public:
     UE_PURE bool IsEligibleForPromotion();
     void InternalUpdateHovered();
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Retirement_Button__UeName = "Update Retirement Button";
+        static constexpr const char* On_Click__UeName = "On Click";
+    };
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

@@ -20,20 +20,24 @@ class PRJ_ExplosiveBombDrop_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_ExplosiveBombDrop", "PRJ_ExplosiveBombDrop_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "a7745ffaa6c9fd488f3de0617b07d2b7";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "e188aef62755ca4799684c8eca325734";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "839e5a2532171e48855c0da946fa2b69";
     class USoundBase* Impact_Sound;
-    static constexpr const char* Impact_Sound__UeName = "Impact Sound";
     class UParticleSystem* Impact_particles;
-    static constexpr const char* Impact_particles__UeName = "Impact particles";
     void ExecuteUbergraph_PRJ_ExplosiveBombDrop(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Explosion__UeScsNode = "a7745ffaa6c9fd488f3de0617b07d2b7";
+        static constexpr const char* Damage__UeScsNode = "e188aef62755ca4799684c8eca325734";
+        static constexpr const char* StaticMesh__UeScsNode = "839e5a2532171e48855c0da946fa2b69";
+        static constexpr const char* Impact_Sound__UeName = "Impact Sound";
+        static constexpr const char* Impact_particles__UeName = "Impact particles";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

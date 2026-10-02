@@ -20,13 +20,17 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_DeepScan_DrillevatorLocationSelector", "BP_DeepScan_DrillevatorLocationSelector_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "f4be35550acba84a903b0adbd5b6f3fe";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "5e5e296bdfe6c74385c613bd07f38818";
     TMulticastInlineDelegate<void(FTransform Location_0)> OnDrillevatorLocationSelected;
     FTransform Location;
     void ExecuteUbergraph_BP_DeepScan_DrillevatorLocationSelector(int EntryPoint);
     void FindDrillevatorLocation(TSubclassOf<class AActor> SpawnedActorClass);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "f4be35550acba84a903b0adbd5b6f3fe";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "5e5e296bdfe6c74385c613bd07f38818";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

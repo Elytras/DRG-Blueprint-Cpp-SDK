@@ -22,7 +22,6 @@ public:
     using BP_SmallMeteorSpawner_C = Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteorSpawner_C;
     using BP_SmallMeteor_C = Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteor_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_MeteorShowerTimer_C;
-    static constexpr const char* UberGraphFrame_BP_MeteorShowerTimer_C__UeName = "UberGraphFrame";
     TArray<BP_SmallMeteor_C*> Meteors;
     class USoundBase* WarningSound;
     TArray<BP_SmallMeteorSpawner_C*> Spawners;
@@ -38,6 +37,11 @@ public:
     void ReceiveBeginPlay();
     FTransform GetSpawnTransform();
     void GetValidMeteor(BP_SmallMeteor_C*& meteor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_MeteorShowerTimer_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower

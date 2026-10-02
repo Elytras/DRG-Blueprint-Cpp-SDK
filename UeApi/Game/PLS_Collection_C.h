@@ -18,15 +18,19 @@ class PLS_Collection_C : public Game::Landscape::ProceduralLevelSetups::PLS_Frac
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Collection", "PLS_Collection_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_Collection_C;
-    static constexpr const char* UberGraphFrame_PLS_Collection_C__UeName = "UberGraphFrame";
     class URoomGeneratorGroup* RoomGroup;
     FRoomGeneratorGroupInstance groupInstance;
     float RoomDistance;
     void ExecuteUbergraph_PLS_Collection(int EntryPoint);
     void CreateCaveGraph();
     UE_PURE class URoomGenerator* SelectRoomFromDNA();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
+        static constexpr const char* UberGraphFrame_PLS_Collection_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

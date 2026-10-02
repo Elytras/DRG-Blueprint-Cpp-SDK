@@ -25,8 +25,8 @@ class ToolTip_WithKeyIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/ToolTips/ToolTip_WithKeyIcon", "ToolTip_WithKeyIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UBorder* Border_BG;
     class UTextBlock* DATA_ToolTipHeadline;
     class UTextBlock* DATA_TooltipText;
@@ -41,7 +41,6 @@ public:
     FActionIconMapping Icon;
     void ExecuteUbergraph_ToolTip_WithKeyIcon(int EntryPoint);
     void Set_Tool_Tip_Owner(class UWidget* Owner);
-    static constexpr const char* Set_Tool_Tip_Owner__UeName = "Set Tool Tip Owner";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTarget(class UWidget* Target_Widget);
     void SetData(FText Headline_0, FText Text_0, FActionIconMapping Icon_0);
@@ -50,6 +49,11 @@ public:
     void SetMaxWidth(float MaxWidth);
     void SetWidth(float InWidthOverride);
     void FadeIn(float Duration);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Tool_Tip_Owner__UeName = "Set Tool Tip Owner";
+    };
 };
 
 }}}   // namespace Game::UI::ToolTips

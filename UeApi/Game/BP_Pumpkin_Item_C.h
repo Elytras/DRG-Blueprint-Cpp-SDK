@@ -27,22 +27,15 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_Pumpkin_Item", "BP_Pumpkin_Item_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "1560759f6def6d44b8db8cb3032e083b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
     class UParticleSystem* deathParticles;
     class USoundCue* deathSound;
     TArray<class UStaticMesh*> PumpkinOptions;
     uint8 PumpkinMesh;
-    static constexpr const char* PumpkinMesh__Replicated = "OnRep_PumpkinMesh:";
     void ExecuteUbergraph_BP_Pumpkin_Item(int EntryPoint);
     UE_MULTICAST void EvilLaugh(FVector Location);
     UE_MULTICAST void OnTerrainPointRemoved();
@@ -50,6 +43,17 @@ public:
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void ReceiveBeginPlay();
     void OnRep_PumpkinMesh();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
+        static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
+        static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
+        static constexpr const char* terrainPlacement__UeScsNode = "1560759f6def6d44b8db8cb3032e083b";
+        static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
+        static constexpr const char* PumpkinMesh__Replicated = "OnRep_PumpkinMesh:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween

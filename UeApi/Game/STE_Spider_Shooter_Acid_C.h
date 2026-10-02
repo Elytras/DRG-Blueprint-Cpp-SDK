@@ -13,6 +13,11 @@ class STE_Spider_Shooter_Acid_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/STE_Spider_Shooter_Acid", "STE_Spider_Shooter_Acid_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Shooter

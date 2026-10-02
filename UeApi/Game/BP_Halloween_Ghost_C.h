@@ -23,19 +23,23 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_Halloween_Ghost", "BP_Halloween_Ghost_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GhostLaugh_Cue;
-    static constexpr const char* GhostLaugh_Cue__UeScsNode = "dc0d7df05f196049a856950b12b762fb";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "4f14a043dd1e824a8091e0e3ad4832d1";
     class UBoxComponent* SlapBox;
-    static constexpr const char* SlapBox__UeScsNode = "d6ef9ad0771daf418f49a4e297d052ae";
     class USkeletalMeshComponent* SK_Halloween_Ghost_01;
-    static constexpr const char* SK_Halloween_Ghost_01__UeScsNode = "0d7c7b885f72964780aa86226a2e9f99";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3686c4d68405cb40a2ad5da611622cad";
     float SlapStrength;
     void ExecuteUbergraph_BP_Halloween_Ghost(int EntryPoint);
     UE_MULTICAST void ImpulseSlapGhost(FVector_NetQuantize PlayerPosition);
     void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GhostLaugh_Cue__UeScsNode = "dc0d7df05f196049a856950b12b762fb";
+        static constexpr const char* InstantUsable__UeScsNode = "4f14a043dd1e824a8091e0e3ad4832d1";
+        static constexpr const char* SlapBox__UeScsNode = "d6ef9ad0771daf418f49a4e297d052ae";
+        static constexpr const char* SK_Halloween_Ghost_01__UeScsNode = "0d7c7b885f72964780aa86226a2e9f99";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3686c4d68405cb40a2ad5da611622cad";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween

@@ -13,6 +13,11 @@ class STE_InfernoUse_Knockback_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/STE_InfernoUse_Knockback", "STE_InfernoUse_Knockback_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower

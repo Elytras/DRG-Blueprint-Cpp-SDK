@@ -16,11 +16,15 @@ class BP_PropHunt_BeachPartyBucket_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BeachParty/BP_PropHunt_BeachPartyBucket", "BP_PropHunt_BeachPartyBucket_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     class UStaticMeshComponent* SM_WaterBalloonBucket;
-    static constexpr const char* SM_WaterBalloonBucket__UeScsNode = "1fee19066a785843b944acbac7745128";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "98f2aef858186f4698b96b4c7e96d334";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* SM_WaterBalloonBucket__UeScsNode = "1fee19066a785843b944acbac7745128";
+        static constexpr const char* Arrow__UeScsNode = "98f2aef858186f4698b96b4c7e96d334";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::BeachParty

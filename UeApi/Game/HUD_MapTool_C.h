@@ -26,9 +26,9 @@ public:
     using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* MainTurnOn;
-    class UWidgetAnimation* MapTurnOn;
-    class UWidgetAnimation* RecordingDot;
+    UE_READONLY class UWidgetAnimation* MainTurnOn;
+    UE_READONLY class UWidgetAnimation* MapTurnOn;
+    UE_READONLY class UWidgetAnimation* RecordingDot;
     UI_AdvancedLabel_C* AlignLabel;
     Basic_HUD_BracketWindowBig_C* Basic_HUD_BracketWindowBig;
     Basic_HUD_BracketWindowBig_C* Basic_HUD_BracketWindowBig_C_0;

@@ -17,18 +17,22 @@ class Grenade_Neurotoxin_C : public Game::WeaponsNTools::Grenades::ITM_AOE_Grena
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/Grenade_Neurotoxin", "Grenade_Neurotoxin_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Neurotoxin_C;
-    static constexpr const char* UberGraphFrame_Grenade_Neurotoxin_C__UeName = "UberGraphFrame";
     class UParticleSystemComponent* P_Grenade_Neurotoxin_NozzleCone1;
-    static constexpr const char* P_Grenade_Neurotoxin_NozzleCone1__UeScsNode = "7868cd7a2915fa4fa6a8de09fd16307b";
     class UParticleSystemComponent* P_Grenade_Neurotoxin_NozzleCone3;
-    static constexpr const char* P_Grenade_Neurotoxin_NozzleCone3__UeScsNode = "2e111186d9b6f74c8e595a26be713ac9";
     class UParticleSystemComponent* P_Grenade_Neurotoxin_NozzleCone2;
-    static constexpr const char* P_Grenade_Neurotoxin_NozzleCone2__UeScsNode = "6f9be4e566ee0448924c5780da11d317";
     void ExecuteUbergraph_Grenade_Neurotoxin(int EntryPoint);
     void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_Neurotoxin_C__UeName = "UberGraphFrame";
+        static constexpr const char* P_Grenade_Neurotoxin_NozzleCone1__UeScsNode = "7868cd7a2915fa4fa6a8de09fd16307b";
+        static constexpr const char* P_Grenade_Neurotoxin_NozzleCone3__UeScsNode = "2e111186d9b6f74c8e595a26be713ac9";
+        static constexpr const char* P_Grenade_Neurotoxin_NozzleCone2__UeScsNode = "6f9be4e566ee0448924c5780da11d317";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin

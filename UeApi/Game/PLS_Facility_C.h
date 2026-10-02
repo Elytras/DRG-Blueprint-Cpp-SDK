@@ -20,14 +20,10 @@ class PLS_Facility_C : public Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Facility", "PLS_Facility_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
     FPointerToUberGraphFrame UberGraphFrame_PLS_Facility_C;
-    static constexpr const char* UberGraphFrame_PLS_Facility_C__UeName = "UberGraphFrame";
     FRoomGeneratorGroupInstance Room_Group_Instance;
-    static constexpr const char* Room_Group_Instance__UeName = "Room Group Instance";
     class URoomGeneratorGroup* RoomGenerators;
     FRoomGeneratorGroupInstance Room_Group_MainStation_Instance;
-    static constexpr const char* Room_Group_MainStation_Instance__UeName = "Room Group MainStation Instance";
     int MainStationRoomIndex;
     class URoomGeneratorGroup* RoomGeneratorMainStation;
     TArray<int> GeneratorRoomIndex;
@@ -45,18 +41,26 @@ public:
     void CreateCaveGraph();
     void CustomEvent();
     void Circular_Simple();
-    static constexpr const char* Circular_Simple__UeName = "Circular Simple";
     void SuperCompactLinear();
     void SuperCompactCircular();
     void LinearShort();
     void Linear();
     void Circular_Complex();
-    static constexpr const char* Circular_Complex__UeName = "Circular Complex";
     UE_PURE class URoomGenerator* SelectRoom();
     UE_PURE class URoomGenerator* SelectRoomMainStation();
     void SetFacilityRoom(int FacilityRoom);
     UE_PURE class URoomGenerator* SelectTraversalChallenge();
     void AddRoomLinear(const FRoomNode& PreviousRoom, FVector Direction, float DistanceRadiusMultiplier, bool PlaceDirt, class URoomGeneratorBase*& RoomGenerator, FRoomNode& NewRoom);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NoisyPathfinderComponent NoisyPathfinder;/Script/FSD.PLSEncounterComponent Encounters;/Script/FSD.ProceduralObjectColliders ObjectColliders;/Script/FSD.ProceduralResources ProceduralResources;/Script/FSD.ProceduralTunnelComponent ProceduralTunnel;/Script/FSD.ProceduralVeinsComponent ProceduralVeins";
+        static constexpr const char* UberGraphFrame_PLS_Facility_C__UeName = "UberGraphFrame";
+        static constexpr const char* Room_Group_Instance__UeName = "Room Group Instance";
+        static constexpr const char* Room_Group_MainStation_Instance__UeName = "Room Group MainStation Instance";
+        static constexpr const char* Circular_Simple__UeName = "Circular Simple";
+        static constexpr const char* Circular_Complex__UeName = "Circular Complex";
+    };
 };
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02

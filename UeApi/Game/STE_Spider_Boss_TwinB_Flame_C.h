@@ -13,6 +13,11 @@ class STE_Spider_Boss_TwinB_Flame_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/STE_Spider_Boss_TwinB_Flame", "STE_Spider_Boss_TwinB_Flame_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

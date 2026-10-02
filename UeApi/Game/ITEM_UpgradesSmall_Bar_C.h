@@ -23,13 +23,9 @@ public:
     using ITEM_UpgradesSmall_SingleIcon_Connector_C = Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_Connector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITEM_UpgradesSmall_SingleIcon_Connector_C* Connector1_2;
-    static constexpr const char* Connector1_2__UeName = "Connector1-2";
     ITEM_UpgradesSmall_SingleIcon_Connector_C* Connector2_3;
-    static constexpr const char* Connector2_3__UeName = "Connector2-3";
     ITEM_UpgradesSmall_SingleIcon_Connector_C* Connector3_4;
-    static constexpr const char* Connector3_4__UeName = "Connector3-4";
     ITEM_UpgradesSmall_SingleIcon_Connector_C* Connector4_5;
-    static constexpr const char* Connector4_5__UeName = "Connector4-5";
     ITEM_UpgradesSmall_SingleIcon_C* Upgrade1;
     ITEM_UpgradesSmall_SingleIcon_C* Upgrade2;
     ITEM_UpgradesSmall_SingleIcon_C* Upgrade3;
@@ -50,6 +46,14 @@ public:
     void OnUpgradeClicked(class UItemUpgrade* Upgrade);
     void ShowUpgradeBar(class UClass* Item_0);
     void GetFSDPlayerState(class AFSDPlayerState*& AsFSDPlayer_State);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Connector1_2__UeName = "Connector1-2";
+        static constexpr const char* Connector2_3__UeName = "Connector2-3";
+        static constexpr const char* Connector3_4__UeName = "Connector3-4";
+        static constexpr const char* Connector4_5__UeName = "Connector4-5";
+    };
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

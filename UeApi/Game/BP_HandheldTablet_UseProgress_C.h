@@ -21,16 +21,20 @@ class BP_HandheldTablet_UseProgress_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/HandheldTablet/BP_HandheldTablet_UseProgress", "BP_HandheldTablet_UseProgress_C");
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "7b185f37b7a65e4798a40d5f8dcffdc5";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "7989d4ded8fdcf49bcb179d0fd2c97d1";
     class USceneComponent* DefaultRoot;
-    static constexpr const char* DefaultRoot__UeScsNode = "ca13d25321e9644aa8cf17c91431ab17";
     class UMaterialInstanceDynamic* MonitorMaterial;
     void UserConstructionScript();
     void SetBackgroundColor(FLinearColor Value);
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FirstPersonWidget__UeScsNode = "7b185f37b7a65e4798a40d5f8dcffdc5";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "7989d4ded8fdcf49bcb179d0fd2c97d1";
+        static constexpr const char* DefaultRoot__UeScsNode = "ca13d25321e9644aa8cf17c91431ab17";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HandheldTablet

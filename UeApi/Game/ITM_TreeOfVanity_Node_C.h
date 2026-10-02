@@ -32,10 +32,10 @@ public:
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     using Tooltip_TreeOfVanityReward_C = Game::UI::Menu_Seasons::Tooltip_TreeOfVanityReward_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BoughtBigAnim;
-    class UWidgetAnimation* BoughtAnim;
-    class UWidgetAnimation* GlowAnim;
-    class UWidgetAnimation* NodeUnlocked;
+    UE_READONLY class UWidgetAnimation* BoughtBigAnim;
+    UE_READONLY class UWidgetAnimation* BoughtAnim;
+    UE_READONLY class UWidgetAnimation* GlowAnim;
+    UE_READONLY class UWidgetAnimation* NodeUnlocked;
     class UButton* Button_Outer;
     class UImage* Image_Editor_CharClass;
     class UImage* Image_Empty_BG;
@@ -84,11 +84,16 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE class UWidget* Get_ToolTipWidget();
     void Node_Bought();
-    static constexpr const char* Node_Bought__UeName = "Node Bought";
     void AdjacentNodeBought();
     void SetInfo(FText Title_0, class UPlayerCharacterID* OptionalCharacterID_0);
     void UpdateBoughtLook();
     void GetReward(class UReward*& OutReward);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.VanityReward VanityReward_0";
+        static constexpr const char* Node_Bought__UeName = "Node Bought";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

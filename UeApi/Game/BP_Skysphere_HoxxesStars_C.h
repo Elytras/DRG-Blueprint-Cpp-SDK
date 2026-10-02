@@ -16,7 +16,11 @@ class BP_Skysphere_HoxxesStars_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/Space/BP_Skysphere_HoxxesStars", "BP_Skysphere_HoxxesStars_C");
     class UStaticMeshComponent* StaticMeshComponent0;
-    static constexpr const char* StaticMeshComponent0__UeScsNode = "11626d809754134ab41b54c789aed29f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMeshComponent0__UeScsNode = "11626d809754134ab41b54c789aed29f";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Space

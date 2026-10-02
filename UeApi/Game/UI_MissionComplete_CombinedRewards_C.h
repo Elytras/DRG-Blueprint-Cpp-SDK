@@ -35,8 +35,12 @@ public:
     void BndEvt__XpColumn_K2Node_ComponentBoundEvent_1_OnCountingFinished__DelegateSignature();
     void BndEvt__CreditsColumn_K2Node_ComponentBoundEvent_0_OnCountingFinished__DelegateSignature();
     void Begin_Counting();
-    static constexpr const char* Begin_Counting__UeName = "Begin Counting";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Begin_Counting__UeName = "Begin Counting";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

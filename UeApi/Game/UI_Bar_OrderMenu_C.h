@@ -53,7 +53,6 @@ public:
     class UDrinkableDataAsset* SelectedDrink;
     void ExecuteUbergraph_UI_Bar_OrderMenu(int EntryPoint);
     void Hovered_Drinkable_type_changed();
-    static constexpr const char* Hovered_Drinkable_type_changed__UeName = "Hovered Drinkable type changed";
     UE_COSMETIC void Construct();
     void OnDrinkUnlocked(class UDrinkableDataAsset* Drink);
     void BndEvt__MENU_SpaceRigTemplate_K2Node_ComponentBoundEvent_11_OnClosedClicked__DelegateSignature();
@@ -70,11 +69,16 @@ public:
     void OnHover_Event(class USpaceRigBarMenuItem* OrderItem);
     void OnShown();
     void Cancel_Order();
-    static constexpr const char* Cancel_Order__UeName = "Cancel Order";
     void OnDrinksPurchased_Event(class UDrinkableDataAsset* Drink);
     void OnDrinkAdded(UI_Bar_OrderMenu_Item_C* DrinkWidget);
     void SetMenu(class UDrinkableDataAsset* Special, TArray<class UDrinkableDataAsset*>& Drinks, class UDrinkableDataAsset* SpecialEventBeer);
     TArray<class UDrinkableDataAsset*> GetDrinkables(class UDrinkableDataAsset*& SpecialEventBeer);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Hovered_Drinkable_type_changed__UeName = "Hovered Drinkable type changed";
+        static constexpr const char* Cancel_Order__UeName = "Cancel Order";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

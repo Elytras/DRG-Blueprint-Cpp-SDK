@@ -18,26 +18,30 @@ class BP_Compressed_Gold_C : public Game::GameElements::Resources::Embedded::Gem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/CompressedGold/BP_Compressed_Gold", "BP_Compressed_Gold_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_Compressed_Gold_C;
-    static constexpr const char* UberGraphFrame_BP_Compressed_Gold_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight6;
-    static constexpr const char* PointLight6__UeScsNode = "109ae01030510a4fa9456012ba6d0895";
     class UPointLightComponent* PointLight5;
-    static constexpr const char* PointLight5__UeScsNode = "8ead766d49ae734ca4f41836bb9ec0e4";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "a8a6578752ddb94cbead2459aa9189d6";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "ad48ab4db266ca4a979742a49a67a5d2";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "0972357f852c8640a5d0e7821fed82b7";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "d02a165c95251e4888e5111491d31d20";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d2161b9cb06a134c90b9abdbd9249780";
     void ExecuteUbergraph_BP_Compressed_Gold(int EntryPoint);
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
     UE_MULTICAST void All_PlayDugFree();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_Compressed_Gold_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight6__UeScsNode = "109ae01030510a4fa9456012ba6d0895";
+        static constexpr const char* PointLight5__UeScsNode = "8ead766d49ae734ca4f41836bb9ec0e4";
+        static constexpr const char* PointLight4__UeScsNode = "a8a6578752ddb94cbead2459aa9189d6";
+        static constexpr const char* PointLight3__UeScsNode = "ad48ab4db266ca4a979742a49a67a5d2";
+        static constexpr const char* PointLight2__UeScsNode = "0972357f852c8640a5d0e7821fed82b7";
+        static constexpr const char* PointLight1__UeScsNode = "d02a165c95251e4888e5111491d31d20";
+        static constexpr const char* PointLight__UeScsNode = "d2161b9cb06a134c90b9abdbd9249780";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::CompressedGold

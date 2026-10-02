@@ -26,12 +26,16 @@ public:
     class USizeBox* SizeBox_0;
     class UItemID* ItemID;
     float In_Height_Override;
-    static constexpr const char* In_Height_Override__UeName = "In Height Override";
     FMargin In_Padding;
-    static constexpr const char* In_Padding__UeName = "In Padding";
     void ExecuteUbergraph_UI_WeaponMaintenance_RewardOverlay(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetItemID(class UItemID* InItemID);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* In_Height_Override__UeName = "In Height Override";
+        static constexpr const char* In_Padding__UeName = "In Padding";
+    };
 };
 
 }}}   // namespace Game::UI::WeaponMaintenance

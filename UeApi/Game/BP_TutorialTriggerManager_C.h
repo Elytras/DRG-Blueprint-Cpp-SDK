@@ -17,10 +17,14 @@ public:
     UE_CLASS("/Game/LevelElements/Tutorial/BP_TutorialTriggerManager", "BP_TutorialTriggerManager_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "63ace0bcad26f94e9c1617803072800b";
     TMulticastInlineDelegate<void(FName TriggerName)> MessageReceived;
     void ExecuteUbergraph_BP_TutorialTriggerManager(int EntryPoint);
     void SendMessage(FName TriggerName);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "63ace0bcad26f94e9c1617803072800b";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Tutorial

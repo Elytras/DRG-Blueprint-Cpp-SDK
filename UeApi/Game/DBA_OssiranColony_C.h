@@ -17,9 +17,13 @@ class DBA_OssiranColony_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/ScrabNestingGrounds/DBA_OssiranColony", "DBA_OssiranColony_C");
     class UDebrisItemComponent* I_TunnelMonster;
-    static constexpr const char* I_TunnelMonster__UeScsNode = "83f27a52cdedb645a2f6f044fc36af0a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c776a83cdc6f1e46821408787040b3c8";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* I_TunnelMonster__UeScsNode = "83f27a52cdedb645a2f6f044fc36af0a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c776a83cdc6f1e46821408787040b3c8";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ScrabNestingGrounds

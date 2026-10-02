@@ -24,14 +24,10 @@ class BP_FuelLine_Segment_C : public AFuelLineSegment
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_Segment", "BP_FuelLine_Segment_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SceneComponent PreviewEndPostLocation;/Script/FSD.SimpleHealthComponent DeconstructHealthComponent;/Script/Engine.SplineComponent FuelLineSplineComponent;/Script/Engine.SplineMeshComponent FuelLineSplineMesh;/Script/Engine.StaticMeshComponent FuelLineEndPostMesh;/Script/FSD.TrackBuilderUsable NextSegmentUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "c3d9e3786228b74892f84ee0efe3f397";
     class UAudioComponent* Audio_Placeing;
-    static constexpr const char* Audio_Placeing__UeScsNode = "21d65c2f4a621444ad2f052d9ccbdac5";
     class USphereComponent* UsableSphere;
-    static constexpr const char* UsableSphere__UeScsNode = "1ca8d5a470eeca42b3f344cd73d74102";
     TArray<class UMaterialInterface*> MaterialsDefaultEndPost;
     FVector EndLocation;
     void ExecuteUbergraph_BP_FuelLine_Segment(int EntryPoint);
@@ -46,6 +42,14 @@ public:
     void UpdateVisualState();
     void OverrideMaterialByName(class UMeshComponent* InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, FName InMaterialSlotName, class UMaterialInterface* InMaterial);
     void OverrideMaterialByIndex(class UPrimitiveComponent*& InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, int InIndex, class UMaterialInterface* InMaterial);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SceneComponent PreviewEndPostLocation;/Script/FSD.SimpleHealthComponent DeconstructHealthComponent;/Script/Engine.SplineComponent FuelLineSplineComponent;/Script/Engine.SplineMeshComponent FuelLineSplineMesh;/Script/Engine.StaticMeshComponent FuelLineEndPostMesh;/Script/FSD.TrackBuilderUsable NextSegmentUsable";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "c3d9e3786228b74892f84ee0efe3f397";
+        static constexpr const char* Audio_Placeing__UeScsNode = "21d65c2f4a621444ad2f052d9ccbdac5";
+        static constexpr const char* UsableSphere__UeScsNode = "1ca8d5a470eeca42b3f344cd73d74102";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder

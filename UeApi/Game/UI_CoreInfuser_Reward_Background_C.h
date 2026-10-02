@@ -20,7 +20,7 @@ class UI_CoreInfuser_Reward_Background_C : public UUserWidget
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreInfuser/UI_CoreInfuser_Reward_Background", "UI_CoreInfuser_Reward_Background_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UImage* BG;
     class USizeBox* IconSizer;
     class UImage* Overlay;

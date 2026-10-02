@@ -16,10 +16,14 @@ class EWC_Refinery_BokenPipe_LocalWave_C : public Game::Enemies::Waves::WaveCont
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Refinery_BokenPipe_LocalWave", "EWC_Refinery_BokenPipe_LocalWave_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Refinery_BokenPipe_LocalWave_C;
-    static constexpr const char* UberGraphFrame_EWC_Refinery_BokenPipe_LocalWave_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     void ExecuteUbergraph_EWC_Refinery_BokenPipe_LocalWave(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Refinery_BokenPipe_LocalWave_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

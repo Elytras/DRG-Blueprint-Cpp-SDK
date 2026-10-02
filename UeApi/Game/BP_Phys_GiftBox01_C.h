@@ -28,18 +28,12 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_Phys_GiftBox01", "BP_Phys_GiftBox01_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "b9894124cfca9444a16b36d0ee6ae89b";
     class UCapsuleComponent* UseCapsule;
-    static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     TArray<class UStaticMesh*> MeshesToChooseFrom;
     TArray<class UMaterialInterface*> Mats_Wrapper;
@@ -47,7 +41,6 @@ public:
     int RandomPresentSound;
     FRandomStream RandomStream;
     int RandomSeed;
-    static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
     void ExecuteUbergraph_BP_Phys_GiftBox01(int EntryPoint);
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void ReceiveBeginPlay();
@@ -55,6 +48,17 @@ public:
     void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_KickSoundLocation();
     void OnRep_RandomSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* ParticleSystem__UeScsNode = "b9894124cfca9444a16b36d0ee6ae89b";
+        static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
+        static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

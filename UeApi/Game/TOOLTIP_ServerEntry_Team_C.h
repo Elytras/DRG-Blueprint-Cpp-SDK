@@ -26,7 +26,7 @@ public:
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UVerticalBox* ContentBox;
     FSlateFontInfo ResourceFont;
-    int MaxIcons;
+    UE_READONLY int MaxIcons;
     void ExecuteUbergraph_TOOLTIP_ServerEntry_Team(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetData(ITM_ServerList_Entry_PlayerIcons_C* TeamWidget, TArray<class UPlayerCharacterID*>& Players, bool IsClassLocked);

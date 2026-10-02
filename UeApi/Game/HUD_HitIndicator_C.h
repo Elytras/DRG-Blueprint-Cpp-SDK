@@ -20,7 +20,7 @@ class HUD_HitIndicator_C : public UFSDUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/HUD_HitIndicator", "HUD_HitIndicator_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* HitAnim;
+    UE_READONLY class UWidgetAnimation* HitAnim;
     class UImage* IndicatorImage;
     class UImage* KillImage;
     int CurrentPriority;

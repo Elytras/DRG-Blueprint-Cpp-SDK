@@ -25,30 +25,18 @@ class PRJ_PlasmaCarbineShot_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/PRJ_PlasmaCarbineShot", "PRJ_PlasmaCarbineShot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_ElectricPlasma;
-    static constexpr const char* P_ElectricPlasma__UeScsNode = "b5e4aab98d3a07449f693050f87a9679";
     class UNiagaraComponent* Niagara_Shield;
-    static constexpr const char* Niagara_Shield__UeScsNode = "3906f825ac88424ba8ba1d95fbfc0f24";
     class UNiagaraComponent* Niagara_HOT;
-    static constexpr const char* Niagara_HOT__UeScsNode = "4754ce0aea215d4b9af48782297f091a";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "8f9a684947bc1e469d0ff5c1ee547f1c";
     class UParticleSystemComponent* P_ShieldPlasma;
-    static constexpr const char* P_ShieldPlasma__UeScsNode = "24700735bd92da4f94dc7a0c275d5803";
     class UProjectileExplosion* ProjectileExplosionHot;
-    static constexpr const char* ProjectileExplosionHot__UeScsNode = "ead63c460c182d4591e59023dec8344e";
     class UProjectileExplosion* ProjectileExplosionElectric;
-    static constexpr const char* ProjectileExplosionElectric__UeScsNode = "ed73e6d753e9814f8026ab6a78e15ee1";
     class UProjectileExplosion* ProjectileExplosionSplash;
-    static constexpr const char* ProjectileExplosionSplash__UeScsNode = "054b5f17b5386142b8033b7a6aa17722";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "898f6108c2a9144ea0eb3733d16dd302";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c87e3d363ceea447baae1298ac37533e";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
     int MaxBounces;
     bool IsElectric;
     bool IsBouncy;
@@ -67,6 +55,22 @@ public:
     void HandleImpact(FHitResult& HitResult);
     bool ShouldBreakArmorBeforeDamage(class AActor* Target);
     class UDamageComponent* GetDamageComponent();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* P_ElectricPlasma__UeScsNode = "b5e4aab98d3a07449f693050f87a9679";
+        static constexpr const char* Niagara_Shield__UeScsNode = "3906f825ac88424ba8ba1d95fbfc0f24";
+        static constexpr const char* Niagara_HOT__UeScsNode = "4754ce0aea215d4b9af48782297f091a";
+        static constexpr const char* Niagara__UeScsNode = "8f9a684947bc1e469d0ff5c1ee547f1c";
+        static constexpr const char* P_ShieldPlasma__UeScsNode = "24700735bd92da4f94dc7a0c275d5803";
+        static constexpr const char* ProjectileExplosionHot__UeScsNode = "ead63c460c182d4591e59023dec8344e";
+        static constexpr const char* ProjectileExplosionElectric__UeScsNode = "ed73e6d753e9814f8026ab6a78e15ee1";
+        static constexpr const char* ProjectileExplosionSplash__UeScsNode = "054b5f17b5386142b8033b7a6aa17722";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "898f6108c2a9144ea0eb3733d16dd302";
+        static constexpr const char* Damage__UeScsNode = "c87e3d363ceea447baae1298ac37533e";
+        static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

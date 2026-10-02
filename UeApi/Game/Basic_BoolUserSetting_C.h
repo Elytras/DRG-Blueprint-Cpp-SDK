@@ -17,7 +17,6 @@ class Basic_BoolUserSetting_C : public Game::UI::Art::WidgetParts::Basic_CheckBo
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_BoolUserSetting", "Basic_BoolUserSetting_C");
     FPointerToUberGraphFrame UberGraphFrame_Basic_BoolUserSetting_C;
-    static constexpr const char* UberGraphFrame_Basic_BoolUserSetting_C__UeName = "UberGraphFrame";
     class UBoolUserSettingAsset* Setting;
     void ExecuteUbergraph_Basic_BoolUserSetting(int EntryPoint);
     void Refresh();
@@ -27,6 +26,11 @@ public:
     void SetValue(bool InValue);
     void OnClicked(bool InChecked);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Basic_BoolUserSetting_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

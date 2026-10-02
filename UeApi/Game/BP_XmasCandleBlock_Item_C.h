@@ -29,35 +29,20 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_XmasCandleBlock_Item", "BP_XmasCandleBlock_Item_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* mainLight;
-    static constexpr const char* mainLight__UeScsNode = "f99de0c04b8be34ab3efded4c6f59c34";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "3ba14ceafa68504db430384c8e34ec85";
     class UStaticMeshComponent* StaticMesh4;
-    static constexpr const char* StaticMesh4__UeScsNode = "a716bb6a9034714b93d11000c61ab2e9";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "2096b54fc9f8804fa41133c1ac0db8d1";
     class UStaticMeshComponent* StaticMesh3;
-    static constexpr const char* StaticMesh3__UeScsNode = "c38d7228777cd9458d4ae2265b8196b5";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "32b48e3faf3bb444896c96e5e210be62";
     class UStaticMeshComponent* StaticMesh2;
-    static constexpr const char* StaticMesh2__UeScsNode = "9e0802074c3caa4789af5a4e916288a6";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "155a03971f05d44a831a69f9c4c0763f";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "a0744ea40046444fbe753c43694f398e";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "1560759f6def6d44b8db8cb3032e083b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
     float CandleFlicker_LightIntensityMod_9FFB83D746EE53EE1A830883D2DC356F;
     TEnum<ETimelineDirection> CandleFlicker__Direction_9FFB83D746EE53EE1A830883D2DC356F;
     class UTimelineComponent* CandleFlicker;
@@ -75,6 +60,25 @@ public:
     void ReceiveBeginPlay();
     void CandleFlicker__UpdateFunc();
     void CandleFlicker__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* mainLight__UeScsNode = "f99de0c04b8be34ab3efded4c6f59c34";
+        static constexpr const char* PointLight3__UeScsNode = "3ba14ceafa68504db430384c8e34ec85";
+        static constexpr const char* StaticMesh4__UeScsNode = "a716bb6a9034714b93d11000c61ab2e9";
+        static constexpr const char* PointLight2__UeScsNode = "2096b54fc9f8804fa41133c1ac0db8d1";
+        static constexpr const char* StaticMesh3__UeScsNode = "c38d7228777cd9458d4ae2265b8196b5";
+        static constexpr const char* PointLight1__UeScsNode = "32b48e3faf3bb444896c96e5e210be62";
+        static constexpr const char* StaticMesh2__UeScsNode = "9e0802074c3caa4789af5a4e916288a6";
+        static constexpr const char* PointLight__UeScsNode = "155a03971f05d44a831a69f9c4c0763f";
+        static constexpr const char* StaticMesh1__UeScsNode = "a0744ea40046444fbe753c43694f398e";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
+        static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
+        static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
+        static constexpr const char* terrainPlacement__UeScsNode = "1560759f6def6d44b8db8cb3032e083b";
+        static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

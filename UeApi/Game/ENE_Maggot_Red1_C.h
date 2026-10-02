@@ -16,13 +16,17 @@ class ENE_Maggot_Red1_C : public Game::Critters::Maggot::ENE_Maggot_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_Red1", "ENE_Maggot_Red1_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Maggot_Red1_C;
-    static constexpr const char* UberGraphFrame_ENE_Maggot_Red1_C__UeName = "UberGraphFrame";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2acc2ba0539ddf49bf9e2f5f3cebf538";
     void ExecuteUbergraph_ENE_Maggot_Red1(int EntryPoint);
     void Died();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Maggot_Red1_C__UeName = "UberGraphFrame";
+        static constexpr const char* Damage__UeScsNode = "2acc2ba0539ddf49bf9e2f5f3cebf538";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

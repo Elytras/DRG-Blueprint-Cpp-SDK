@@ -13,6 +13,11 @@ class STE_PlagueRT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/ReactiveTerrain/STE_PlagueRT", "STE_PlagueRT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Landscape::ReactiveTerrain

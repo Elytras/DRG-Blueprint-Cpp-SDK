@@ -23,10 +23,10 @@ public:
     using HUD_EnemyTargeting_Affliction_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Affliction_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* AfflictionBox;
-    float Size;
+    UE_READONLY float Size;
     class UPawnAfflictionComponent* AfflictionComponent;
     TMap<class UPawnAffliction*, HUD_EnemyTargeting_Affliction_C*> AfflictionWidgets;
-    TArray<TSoftObjectPtr<class UPawnAffliction>> PreviewAfflictions;
+    UE_READONLY TArray<TSoftObjectPtr<class UPawnAffliction>> PreviewAfflictions;
     TArray<class UPawnAffliction*> IgnoreAfflictions;
     void ExecuteUbergraph_HUD_EnemyTargeting_AfflictionBox(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

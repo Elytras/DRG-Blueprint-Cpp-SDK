@@ -14,11 +14,15 @@ class AIC_Spider_Tank_Normal_C : public Game::Enemies::Spider::Tank::AIC_Spider_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/AIC_Spider_Tank_Normal", "AIC_Spider_Tank_Normal_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Tank_Normal_C;
-    static constexpr const char* UberGraphFrame_AIC_Spider_Tank_Normal_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Tank_Normal(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* UberGraphFrame_AIC_Spider_Tank_Normal_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

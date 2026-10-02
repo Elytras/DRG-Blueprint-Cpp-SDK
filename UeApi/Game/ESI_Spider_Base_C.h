@@ -17,9 +17,13 @@ class ESI_Spider_Base_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Spider/ESI_Spider_Base", "ESI_Spider_Base_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "9761a801eb16c547b49000a9b3aa5b3f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c75c3bdd7a1f7e4ba88c77e6dc026712";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "9761a801eb16c547b49000a9b3aa5b3f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c75c3bdd7a1f7e4ba88c77e6dc026712";
+    };
 };
 
 }}}   // namespace Game::Enemies::Spider

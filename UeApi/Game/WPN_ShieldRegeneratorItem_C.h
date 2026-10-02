@@ -19,10 +19,8 @@ class WPN_ShieldRegeneratorItem_C : public AShieldGeneratorItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/WPN_ShieldRegeneratorItem", "WPN_ShieldRegeneratorItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Capacity;/Script/FSD.CapacityHoldingItemAggregator ChargeCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* RechargeAudio;
-    static constexpr const char* RechargeAudio__UeScsNode = "676d842f2be1184ea4c2457dbd4b218c";
     class UMaterialInterface* RechargedMaterial;
     void ExecuteUbergraph_WPN_ShieldRegeneratorItem(int EntryPoint);
     void ReceiveGeneratorReturned();
@@ -35,6 +33,12 @@ public:
     void UserConstructionScript();
     void UpdateMaterial();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Capacity;/Script/FSD.CapacityHoldingItemAggregator ChargeCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* RechargeAudio__UeScsNode = "676d842f2be1184ea4c2457dbd4b218c";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator

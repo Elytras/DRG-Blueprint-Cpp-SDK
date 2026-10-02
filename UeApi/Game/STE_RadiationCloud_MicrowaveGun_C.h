@@ -13,6 +13,11 @@ class STE_RadiationCloud_MicrowaveGun_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/STE/STE_RadiationCloud_MicrowaveGun", "STE_RadiationCloud_MicrowaveGun_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE

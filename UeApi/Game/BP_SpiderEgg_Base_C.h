@@ -28,29 +28,17 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpiderEgg/BP_SpiderEgg_Base", "BP_SpiderEgg_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "6ae9e1663f81a744bbe83e26724f1b18";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "cb523a6518570b4fb694f6eb47d5d714";
     class USceneComponent* Egg_Whole;
-    static constexpr const char* Egg_Whole__UeName = "Egg Whole";
-    static constexpr const char* Egg_Whole__UeScsNode = "ccb6ccde7b15e1488d6c86a0beb50683";
     class USceneComponent* Egg_Broken;
-    static constexpr const char* Egg_Broken__UeName = "Egg Broken";
-    static constexpr const char* Egg_Broken__UeScsNode = "53f78e2ee0dbd94ab5680081a3dda124";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "4b38eada4b9f5b40ace97c99462a80cb";
     class UBillboardComponent* Spider_Spawn_Point;
-    static constexpr const char* Spider_Spawn_Point__UeName = "Spider Spawn Point";
-    static constexpr const char* Spider_Spawn_Point__UeScsNode = "875bb48520a9a549b7dda42d8bcd05d1";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "6531e21e24ec3442bb9a8fd45afe58b4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6935dfc1789c874ea29299228ccda153";
     class UEnemyDescriptor* EnemyToSpawn;
     class UParticleSystem* EggBreakParticles;
     class UMaterialInterface* EggGooDecal;
     bool CanOpen;
-    static constexpr const char* CanOpen__Replicated = ":";
     bool OpenOnPlayerProximity;
     float ProximityOpenRange;
     float ProximityOpenDelayMax;
@@ -74,6 +62,22 @@ public:
     void GetEliminationObjective(class UEliminationObjective*& AsElimination_Objective);
     void GetEnemyToSpawn(class UEnemyDescriptor*& enemy);
     void CheckSecondaryObjective();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "6ae9e1663f81a744bbe83e26724f1b18";
+        static constexpr const char* SimpleHealth__UeScsNode = "cb523a6518570b4fb694f6eb47d5d714";
+        static constexpr const char* Egg_Whole__UeName = "Egg Whole";
+        static constexpr const char* Egg_Whole__UeScsNode = "ccb6ccde7b15e1488d6c86a0beb50683";
+        static constexpr const char* Egg_Broken__UeName = "Egg Broken";
+        static constexpr const char* Egg_Broken__UeScsNode = "53f78e2ee0dbd94ab5680081a3dda124";
+        static constexpr const char* terrainPlacement__UeScsNode = "4b38eada4b9f5b40ace97c99462a80cb";
+        static constexpr const char* Spider_Spawn_Point__UeName = "Spider Spawn Point";
+        static constexpr const char* Spider_Spawn_Point__UeScsNode = "875bb48520a9a549b7dda42d8bcd05d1";
+        static constexpr const char* TerrainDetect__UeScsNode = "6531e21e24ec3442bb9a8fd45afe58b4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6935dfc1789c874ea29299228ccda153";
+        static constexpr const char* CanOpen__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg

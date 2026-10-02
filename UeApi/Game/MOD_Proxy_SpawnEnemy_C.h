@@ -19,7 +19,6 @@ public:
     UE_CLASS("/Game/Game/Modding/Proxies/MOD_Proxy_SpawnEnemy", "MOD_Proxy_SpawnEnemy_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4b03ec26acfffa4fa69bbb35001b3625";
     class UEnemyDescriptor* enemy;
     TMulticastInlineDelegate<void(class APawn* enemy_0)> OnEnemySpawned;
     bool useSpawnFX;
@@ -27,6 +26,11 @@ public:
     void ExecuteUbergraph_MOD_Proxy_SpawnEnemy(int EntryPoint);
     void spawned(class APawn* enemy_0);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4b03ec26acfffa4fa69bbb35001b3625";
+    };
 };
 
 }}}}   // namespace Game::Game::Modding::Proxies

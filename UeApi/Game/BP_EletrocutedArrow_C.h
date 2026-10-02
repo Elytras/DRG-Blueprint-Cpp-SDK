@@ -20,16 +20,20 @@ class BP_EletrocutedArrow_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_EletrocutedArrow", "BP_EletrocutedArrow_C");
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "8c25eb7b61ac7e4cb4b132ca17b2ef6e";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "9badab84652c9b40b536821daef46cde";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "c6ff5e1d8c85514b91ea10132cf503a5";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "3255fc2fd0cdee4185c577f01b78acfd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8b949740922d8e498fd9513311772323";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Niagara__UeScsNode = "8c25eb7b61ac7e4cb4b132ca17b2ef6e";
+        static constexpr const char* Sphere__UeScsNode = "9badab84652c9b40b536821daef46cde";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "c6ff5e1d8c85514b91ea10132cf503a5";
+        static constexpr const char* Audio__UeScsNode = "3255fc2fd0cdee4185c577f01b78acfd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8b949740922d8e498fd9513311772323";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles

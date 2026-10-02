@@ -19,8 +19,8 @@ class ITM_ItemUnlockedIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_ItemUnlockedIcon", "ITM_ItemUnlockedIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OutroAnim;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* OutroAnim;
+    UE_READONLY class UWidgetAnimation* Ping;
     class UImage* UnlockedIcon;
     bool MatchChildNotifications;
     TArray<class UObject*> IDArray;

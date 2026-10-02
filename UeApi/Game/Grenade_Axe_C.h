@@ -20,16 +20,20 @@ class Grenade_Axe_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/Grenade_Axe", "Grenade_Axe_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Axe_C;
-    static constexpr const char* UberGraphFrame_Grenade_Axe_C__UeName = "UberGraphFrame";
     class UDamageComponent* BluntDamage;
-    static constexpr const char* BluntDamage__UeScsNode = "4556e1edd8d9354db0a2bee3719fd733";
     float BladeExtentionDelay;
     void ExecuteUbergraph_Grenade_Axe(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_Axe_C__UeName = "UberGraphFrame";
+        static constexpr const char* BluntDamage__UeScsNode = "4556e1edd8d9354db0a2bee3719fd733";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe

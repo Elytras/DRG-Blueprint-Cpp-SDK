@@ -28,24 +28,17 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_Phys_Balloon", "BP_Phys_Balloon_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     class UCapsuleComponent* UseCapsule;
-    static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     TArray<class UStaticMesh*> MeshesToChooseFrom;
     TArray<class UMaterialInterface*> Mats_Wrapper;
     int NumberOfImpacts;
     int MaterialIndex;
-    static constexpr const char* MaterialIndex__Replicated = "OnRep_MaterialIndex:";
     bool Popped;
-    static constexpr const char* Popped__Replicated = "OnRep_Popped:";
     TArray<class UMaterialInstance*> Mats_Wrapper_Anniversary;
     void ExecuteUbergraph_BP_Phys_Balloon(int EntryPoint);
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
@@ -55,6 +48,17 @@ public:
     void OnRep_KickSoundLocation();
     void OnRep_MaterialIndex();
     void OnRep_Popped();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
+        static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* MaterialIndex__Replicated = "OnRep_MaterialIndex:";
+        static constexpr const char* Popped__Replicated = "OnRep_Popped:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

@@ -32,7 +32,6 @@ public:
     using ITM_DeepDiveStatus_Stage_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Stage_C;
     using ITM_DeepDive_MisCompBG_C = Game::UI::Menu_MissionStart::ITM_DeepDive_MisCompBG_C;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_MissionComplete_DeepDive_C;
-    static constexpr const char* UberGraphFrame_SCREEN_MissionComplete_DeepDive_C__UeName = "UberGraphFrame";
     Basic_ButtonScalable2_C* BTN_Continue;
     class UTextBlock* Data_CodeName;
     class UFSDLabelWidget* DATA_MissionTime;
@@ -59,11 +58,8 @@ public:
     void InitializeScreen();
     void OnDeepDiveContinueCountdownChanged();
     void Update_Continue_Button();
-    static constexpr const char* Update_Continue_Button__UeName = "Update Continue Button";
     void Click_Continue();
-    static constexpr const char* Click_Continue__UeName = "Click Continue";
     void Setup_Count_Down();
-    static constexpr const char* Setup_Count_Down__UeName = "Setup Count Down";
     void OnUpdateCountDown();
     void BndEvt__BTN_Continue_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void UpdateMissionTime(int Value);
@@ -74,6 +70,14 @@ public:
     UE_PURE class UDeepDive* GetCurrentDeepDive();
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE bool IsValidResource(class UCappedResource* Resource) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_SCREEN_MissionComplete_DeepDive_C__UeName = "UberGraphFrame";
+        static constexpr const char* Update_Continue_Button__UeName = "Update Continue Button";
+        static constexpr const char* Click_Continue__UeName = "Click Continue";
+        static constexpr const char* Setup_Count_Down__UeName = "Setup Count Down";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

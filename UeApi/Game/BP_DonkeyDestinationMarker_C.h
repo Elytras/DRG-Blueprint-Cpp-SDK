@@ -20,18 +20,22 @@ public:
     UE_CLASS("/Game/GameElements/Donkey/BP_DonkeyDestinationMarker", "BP_DonkeyDestinationMarker_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Donkey_DestinationMarker;
-    static constexpr const char* SM_Donkey_DestinationMarker__UeScsNode = "dec802db000fa648bd3bd80b7ef4b1ac";
     class UStaticMeshComponent* SM_Light02;
-    static constexpr const char* SM_Light02__UeScsNode = "6e7530e9fee0f0408bec41cba7e1d1b2";
     class UDecalComponent* Decal;
-    static constexpr const char* Decal__UeScsNode = "b43eaa478c3aeb45b6242793e9b0b2bb";
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "75b5b492a4827a438cabd17028fc0871";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "70b4114126639d4380cabe64ca5519e2";
     void ExecuteUbergraph_BP_DonkeyDestinationMarker(int EntryPoint);
     void HideMarker();
     void ActivateAtPosition(FVector Loc);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Donkey_DestinationMarker__UeScsNode = "dec802db000fa648bd3bd80b7ef4b1ac";
+        static constexpr const char* SM_Light02__UeScsNode = "6e7530e9fee0f0408bec41cba7e1d1b2";
+        static constexpr const char* Decal__UeScsNode = "b43eaa478c3aeb45b6242793e9b0b2bb";
+        static constexpr const char* Cube__UeScsNode = "75b5b492a4827a438cabd17028fc0871";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "70b4114126639d4380cabe64ca5519e2";
+    };
 };
 
 }}}   // namespace Game::GameElements::Donkey

@@ -36,8 +36,8 @@ public:
     using ITM_MissionBar_Warning_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Warning_C;
     using UI_HazPlus_Row_C = Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ANIM_AssignmentIcon_Throb;
-    class UWidgetAnimation* ANIM_Intro;
+    UE_READONLY class UWidgetAnimation* ANIM_AssignmentIcon_Throb;
+    UE_READONLY class UWidgetAnimation* ANIM_Intro;
     class UImage* AssignmentIcon;
     class UImage* AssignmentIconGlow;
     class UOverlay* AssignmentIconHolder;

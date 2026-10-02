@@ -19,18 +19,22 @@ class AIC_Shredder_C : public AFSDAIController
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Shredder/AIC_Shredder", "AIC_Shredder_C");
     using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     float SpeedModifier;
     void ExecuteUbergraph_AIC_Shredder(int EntryPoint);
     void StartSpeedModifier();
     void Speed_Changer();
-    static constexpr const char* Speed_Changer__UeName = "Speed Changer";
     void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     ENE_Jelly_Passive_Mother_C* FindNewMother();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* Speed_Changer__UeName = "Speed Changer";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Shredder

@@ -41,7 +41,7 @@ public:
     class UCanvasPanel* RootCanvas;
     class USizeBox* SizeBoostProgress;
     class UZipLineStateComponent* ZiplineState;
-    float Size;
+    UE_READONLY float Size;
     void ExecuteUbergraph_OnScreen_Indicator_UsableZipLine(int EntryPoint);
     void OnInputSourceChanged_Event(TEnum<EFSDInputSource> InputSource);
     void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);

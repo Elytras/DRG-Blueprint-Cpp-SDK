@@ -28,7 +28,6 @@ public:
     using ITM_CampaignProgress_NoBrackets_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;
     using Jobs_List_Element_BG_CutCorner_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame_Jobs_Header_Assignment_Slot_C;
-    static constexpr const char* UberGraphFrame_Jobs_Header_Assignment_Slot_C__UeName = "UberGraphFrame";
     class UVerticalBox* AssignmentSelected;
     Basic_ButtonCutCorner_C* B_StopAssignment;
     class UButton* Button_Outer;
@@ -68,6 +67,11 @@ public:
     void BndEvt__B_StopAssignment_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void AbortPressed(bool& Handled);
     void SetData(class UCampaign* Campaign_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Jobs_Header_Assignment_Slot_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign

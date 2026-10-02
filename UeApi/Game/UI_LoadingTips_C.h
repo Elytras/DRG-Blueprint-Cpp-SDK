@@ -25,8 +25,8 @@ public:
     UE_CLASS("/Game/UI/Tips/UI_LoadingTips", "UI_LoadingTips_C");
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
     class UBorder* Border_0;
     class UTextBlock* HintCategoryText;
     class UTextBlock* HintDescription;
@@ -48,10 +48,14 @@ public:
     void OnFadeOutFinished();
     void OnFadeInFinished();
     void Show_Hint(int Index_0);
-    static constexpr const char* Show_Hint__UeName = "Show Hint";
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Hint__UeName = "Show Hint";
+    };
 };
 
 }}}   // namespace Game::UI::Tips

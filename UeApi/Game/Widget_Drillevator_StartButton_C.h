@@ -23,7 +23,7 @@ public:
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimArrow;
+    UE_READONLY class UWidgetAnimation* AnimArrow;
     Basic_Image_C* Arrow_Image;
     class UCanvasPanel* Content_Canvas;
     Basic_Label_C* Txt_Status;

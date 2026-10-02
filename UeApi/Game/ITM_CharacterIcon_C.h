@@ -42,7 +42,6 @@ public:
     bool ShowPromotion;
     bool ShowHost;
     float Base_Icon_Size;
-    static constexpr const char* Base_Icon_Size__UeName = "Base Icon Size";
     bool ShowSessionLeader;
     void ExecuteUbergraph_ITM_CharacterIcon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -56,6 +55,11 @@ public:
     void SetFromCharacterClass(class UPlayerCharacterID* InCharacterClass);
     void SetFromCharacterID(class UPlayerCharacterID* characterID);
     void SetShowSonySessionLeader(bool Index_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Base_Icon_Size__UeName = "Base Icon Size";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

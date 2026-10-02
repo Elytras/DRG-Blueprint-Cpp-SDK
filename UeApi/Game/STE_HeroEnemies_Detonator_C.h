@@ -13,6 +13,11 @@ class STE_HeroEnemies_Detonator_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/HeroEnemies/STE_HeroEnemies_Detonator", "STE_HeroEnemies_Detonator_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDPawnStatusEffectItem FSDPawnStatusEffectItem_5;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies

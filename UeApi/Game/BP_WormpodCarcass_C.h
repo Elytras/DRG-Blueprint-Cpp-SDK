@@ -19,16 +19,20 @@ class BP_WormpodCarcass_C : public Game::GameElements::Objectives::Facility::Tet
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_WormpodCarcass", "BP_WormpodCarcass_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_WormpodCarcass_C;
-    static constexpr const char* UberGraphFrame_BP_WormpodCarcass_C__UeName = "UberGraphFrame";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "1ef6b5adbc3c424d9d1cddd34c482685";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "e50638f483cc2a4bb25e1370a61ac207";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "7d323fd875296140ae622ccd4a16d874";
     void ExecuteUbergraph_BP_WormpodCarcass(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__BP_WormpodCarcas_DropToTerrain_K2Node_ComponentBoundEvent_0_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_WormpodCarcass_C__UeName = "UberGraphFrame";
+        static constexpr const char* outline__UeScsNode = "1ef6b5adbc3c424d9d1cddd34c482685";
+        static constexpr const char* SimpleHealth__UeScsNode = "e50638f483cc2a4bb25e1370a61ac207";
+        static constexpr const char* StaticMesh__UeScsNode = "7d323fd875296140ae622ccd4a16d874";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

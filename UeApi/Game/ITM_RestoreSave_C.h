@@ -22,7 +22,7 @@ public:
     using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimShow;
+    UE_READONLY class UWidgetAnimation* AnimShow;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     Basic_ButtonScalable2_C* BTN_No;
     Basic_ButtonScalable2_C* BTN_Yes;
@@ -34,11 +34,15 @@ public:
     void ExecuteUbergraph_ITM_RestoreSave(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Check_Savegame();
-    static constexpr const char* Check_Savegame__UeName = "Check Savegame";
     void HideUIDelayed();
     void BndEvt__BTN_No_K2Node_ComponentBoundEvent_28_OnClicked__DelegateSignature();
     void BndEvt__BTN_Yes_K2Node_ComponentBoundEvent_19_OnClicked__DelegateSignature();
     void ShowWindow();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Check_Savegame__UeName = "Check Savegame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

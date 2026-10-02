@@ -23,23 +23,20 @@ public:
     using DefuseBomb_Socket_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Socket_C;
     using DefuseBomb_Wire_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Wire_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPingSockets;
-    class UWidgetAnimation* AnimPingTarget;
-    class UWidgetAnimation* AnimCutWire;
-    class UWidgetAnimation* AnimFadeOut;
+    UE_READONLY class UWidgetAnimation* AnimPingSockets;
+    UE_READONLY class UWidgetAnimation* AnimPingTarget;
+    UE_READONLY class UWidgetAnimation* AnimCutWire;
+    UE_READONLY class UWidgetAnimation* AnimFadeOut;
     Basic_Image_C* CutTarget;
     DefuseBomb_Socket_C* EndSocket;
     DefuseBomb_Socket_C* StartSocket;
     DefuseBomb_Wire_C* wire;
     FVector2D Start_Pos;
-    static constexpr const char* Start_Pos__UeName = "Start Pos";
     FVector2D StartTangent;
     FVector2D EndPos;
     FVector2D EndTangent;
     int Start_Index;
-    static constexpr const char* Start_Index__UeName = "Start Index";
     int End_Index;
-    static constexpr const char* End_Index__UeName = "End Index";
     float CuttingPosition;
     float TargetPosition;
     bool IsFadeOut;
@@ -55,7 +52,6 @@ public:
     void SetStartAndEnd(FVector2D InStartPos, FVector2D InEndPos, FVector2D InStartTangent, FVector2D InEndTangent, int InStartIndex, int InEndIndex);
     void SetEnd(FVector2D EndPos_0, FVector2D EndTangent_0, int End_Index_0);
     void Try_Highlight_Socket(int InIndex, bool& OutHighlighted);
-    static constexpr const char* Try_Highlight_Socket__UeName = "Try Highlight Socket";
     void SetCuttable(bool InCuttable);
     void TrySelectSocket(int InIndex, bool& OutWireSelected, bool& OutSocketSelected);
     void SetWireOpacity(float InOpacity);
@@ -70,6 +66,14 @@ public:
     UE_PURE bool IsWireSelected();
     UE_COSMETIC void OnPaint(FPaintContext& Context) const;
     void IsWireCut(bool& WireCut_0) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Pos__UeName = "Start Pos";
+        static constexpr const char* Start_Index__UeName = "Start Index";
+        static constexpr const char* End_Index__UeName = "End Index";
+        static constexpr const char* Try_Highlight_Socket__UeName = "Try Highlight Socket";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse

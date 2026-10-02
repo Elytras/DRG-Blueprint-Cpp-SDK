@@ -24,34 +24,20 @@ class BP_S05_CoreSpawnTank_Big_C : public ADisplayCase
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/S05_SetDressing/BP_S05_CoreSpawnTank_Big", "BP_S05_CoreSpawnTank_Big_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_CoreSpawnTank_React;
-    static constexpr const char* NS_CoreSpawnTank_React__UeScsNode = "770185e2943a3f4f865ac89f044a8e53";
     class UCapsuleComponent* Collision;
-    static constexpr const char* Collision__UeScsNode = "17f47aeebba78a42ac721a73d99be6a6";
     class UWidgetComponent* Widget_Bars2;
-    static constexpr const char* Widget_Bars2__UeScsNode = "a6de77fd76e55e479f8670cc8829db98";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "6b335742d029064cab6d9ffbfcf464da";
     class UFSDAudioComponent* Idle;
-    static constexpr const char* Idle__UeScsNode = "436edef8b104ee4a966a6210277a0003";
     class UWidgetComponent* DisplayName2;
-    static constexpr const char* DisplayName2__UeScsNode = "6ae42f92219a864d9f7bed61f395e4b7";
     class USkeletalMeshComponent* CoreSpawnTank;
-    static constexpr const char* CoreSpawnTank__UeScsNode = "8e23ed33559dee46a9164ba41cd535cd";
     class UNiagaraComponent* NS_Biotank_BubbleReact;
-    static constexpr const char* NS_Biotank_BubbleReact__UeScsNode = "ab50e7e5a385ce46ac0884e61c18dd0b";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "4956611199970e4197499900cb55731c";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "349b854e7285df459dcfcfa8955df5fb";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "9e9977616adfb54fa9f26d4f379a5362";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "9a49ec94a64d7d43932e70e5436915d9";
     class UPointLightComponent* BlueLight;
-    static constexpr const char* BlueLight__UeScsNode = "e5463b34244b0e43b2272bc2a0f2350d";
     bool PlayReact;
     bool MissionControlSpeak;
     float SeasonEventSpawnChance;
@@ -62,6 +48,24 @@ public:
     void ReceiveBeginPlay();
     void UpdateMeshesForHolidays();
     void GetSeasonBarrelSpawnChance(float& Out);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
+        static constexpr const char* NS_CoreSpawnTank_React__UeScsNode = "770185e2943a3f4f865ac89f044a8e53";
+        static constexpr const char* Collision__UeScsNode = "17f47aeebba78a42ac721a73d99be6a6";
+        static constexpr const char* Widget_Bars2__UeScsNode = "a6de77fd76e55e479f8670cc8829db98";
+        static constexpr const char* Capsule__UeScsNode = "6b335742d029064cab6d9ffbfcf464da";
+        static constexpr const char* Idle__UeScsNode = "436edef8b104ee4a966a6210277a0003";
+        static constexpr const char* DisplayName2__UeScsNode = "6ae42f92219a864d9f7bed61f395e4b7";
+        static constexpr const char* CoreSpawnTank__UeScsNode = "8e23ed33559dee46a9164ba41cd535cd";
+        static constexpr const char* NS_Biotank_BubbleReact__UeScsNode = "ab50e7e5a385ce46ac0884e61c18dd0b";
+        static constexpr const char* PointLight__UeScsNode = "4956611199970e4197499900cb55731c";
+        static constexpr const char* SpotLight1__UeScsNode = "349b854e7285df459dcfcfa8955df5fb";
+        static constexpr const char* SpotLight__UeScsNode = "9e9977616adfb54fa9f26d4f379a5362";
+        static constexpr const char* InstantUsable__UeScsNode = "9a49ec94a64d7d43932e70e5436915d9";
+        static constexpr const char* BlueLight__UeScsNode = "e5463b34244b0e43b2272bc2a0f2350d";
+    };
 };
 
 }}}}   // namespace Game::Game::SpaceRig::S05_SetDressing

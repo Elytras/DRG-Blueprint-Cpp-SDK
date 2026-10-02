@@ -14,12 +14,16 @@ class BP_HologramBiome_C : public USceneComponent
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/BP_HologramBiome", "BP_HologramBiome_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
+    UE_READONLY int Index_0;
     float azimuth;
     float elevation;
     void ExecuteUbergraph_BP_HologramBiome(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

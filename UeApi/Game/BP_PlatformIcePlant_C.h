@@ -24,23 +24,27 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/PlatformIcePlant/BP_PlatformIcePlant", "BP_PlatformIcePlant_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "38369e15305e7949aa803e98f063cda7";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "82ee59312f912543bb61085ea763d0ae";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "4d6a63d5a845be41b298120588ae3fed";
     class UBillboardComponent* SpawnPoint;
-    static constexpr const char* SpawnPoint__UeScsNode = "a7693788532ac94681d10f1140253f4f";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "d75106024ca6c74187cbfec0af6ac7c4";
     class UStaticMeshComponent* Body;
-    static constexpr const char* Body__UeScsNode = "6bdd8a7c98ada445b461e67bc08c0d33";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7cf14231671d6344a10528fb133a9c75";
     float SpawnDelay;
     void ExecuteUbergraph_BP_PlatformIcePlant(int EntryPoint);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "38369e15305e7949aa803e98f063cda7";
+        static constexpr const char* terrainPlacement__UeScsNode = "82ee59312f912543bb61085ea763d0ae";
+        static constexpr const char* TerrainDetect__UeScsNode = "4d6a63d5a845be41b298120588ae3fed";
+        static constexpr const char* SpawnPoint__UeScsNode = "a7693788532ac94681d10f1140253f4f";
+        static constexpr const char* SimpleHealth__UeScsNode = "d75106024ca6c74187cbfec0af6ac7c4";
+        static constexpr const char* Body__UeScsNode = "6bdd8a7c98ada445b461e67bc08c0d33";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7cf14231671d6344a10528fb133a9c75";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::PlatformIcePlant

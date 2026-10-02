@@ -18,7 +18,7 @@ class ITM_Pipeline_BrokenIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/GameElements/Objectives/Refinery/ITM_Pipeline_BrokenIcon", "ITM_Pipeline_BrokenIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimActive;
+    UE_READONLY class UWidgetAnimation* AnimActive;
     class USizeBox* ImageSizer;
     int Size;
     bool IconActive;

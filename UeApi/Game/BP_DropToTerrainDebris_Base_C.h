@@ -22,19 +22,23 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_DropToTerrainDebris_Base", "BP_DropToTerrainDebris_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "c5a192c2a3a43e4ea9fd05364546fb10";
     class UBoxComponent* PlayerCollider;
-    static constexpr const char* PlayerCollider__UeScsNode = "e962ea9bb1d29a429f2af6a9b7878005";
     class UDropToTerrainComponent* DropToTerrain;
-    static constexpr const char* DropToTerrain__UeScsNode = "a5ffb14411ce074686b4a2bf897c37bf";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "6a0a3ef72b5db74396c6500d2b5cdd76";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "069be395fccea142a797a20cc54fdec0";
     class USoundBase* FallImpactSound;
     void ExecuteUbergraph_BP_DropToTerrainDebris_Base(int EntryPoint);
     void BndEvt__DropToTerrain_K2Node_ComponentBoundEvent_0_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "c5a192c2a3a43e4ea9fd05364546fb10";
+        static constexpr const char* PlayerCollider__UeScsNode = "e962ea9bb1d29a429f2af6a9b7878005";
+        static constexpr const char* DropToTerrain__UeScsNode = "a5ffb14411ce074686b4a2bf897c37bf";
+        static constexpr const char* TerrainDetect__UeScsNode = "6a0a3ef72b5db74396c6500d2b5cdd76";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "069be395fccea142a797a20cc54fdec0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers

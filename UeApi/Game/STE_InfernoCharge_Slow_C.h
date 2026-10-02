@@ -13,6 +13,11 @@ class STE_InfernoCharge_Slow_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/STE_InfernoCharge_Slow", "STE_InfernoCharge_Slow_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower

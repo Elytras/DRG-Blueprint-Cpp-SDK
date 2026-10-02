@@ -25,9 +25,8 @@ public:
     class UTextBlock* CharacterLevel;
     class UBorder* LevelBG;
     class UHorizontalBox* LineBox;
-    float Width;
-    float Right_Padding;
-    static constexpr const char* Right_Padding__UeName = "Right Padding";
+    UE_READONLY float Width;
+    UE_READONLY float Right_Padding;
     void ExecuteUbergraph_ITM_TopBar_CharacterLevel(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnCharacterStatsChanged_Event(class AFSDPlayerState* PlayerState);
@@ -35,6 +34,11 @@ public:
     UE_COSMETIC void Construct();
     void SetCharacterLevel(int CharacterLevel_0);
     void FromPlayerState(class APlayerState* PlayerState);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Right_Padding__UeName = "Right Padding";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_TopBar

@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/BP_Turret_Arc_Indicator", "BP_Turret_Arc_Indicator_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* RangeSphere;
-    static constexpr const char* RangeSphere__UeScsNode = "e393dc9ead6495458fe66b65e6128325";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ae3bd482f20e11449fb4002309010f44";
     void ExecuteUbergraph_BP_Turret_Arc_Indicator(int EntryPoint);
     void SetArcIndicatorActive(bool Active);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RangeSphere__UeScsNode = "e393dc9ead6495458fe66b65e6128325";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ae3bd482f20e11449fb4002309010f44";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SentryGun

@@ -26,7 +26,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_Container_PictureOverText_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_PictureOverText_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Spacerig_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Spacerig_C__UeName = "UberGraphFrame";
     Button_Spacerig_Map_Circle_C* AbyssBar;
     Button_Spacerig_Map_Circle_C* ArcadeArea;
     Button_Spacerig_Map_Circle_C* AssignmentTerminal;
@@ -62,6 +61,11 @@ public:
     void OnHover(Button_Spacerig_Map_Circle_C* Button, class UMinersManualData* Data);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Spacerig_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Basics

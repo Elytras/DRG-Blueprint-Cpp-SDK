@@ -13,7 +13,11 @@ class AIC_InfectedMule_C : public AConvertedRobotController
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/AIC_InfectedMule", "AIC_InfectedMule_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}   // namespace Game::Enemies::MuleInfected

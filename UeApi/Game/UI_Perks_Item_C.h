@@ -25,7 +25,7 @@ public:
     using UI_PerkBackground_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
     using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Ping;
     class UButton* ClickButton;
     class UBorder* SelectionBorder;
     UI_PerkBackground_C* UI_PerkBackground;
@@ -35,13 +35,13 @@ public:
     TMulticastInlineDelegate<void(UI_Perks_Item_C* Widget)> OnHoverEnter;
     TMulticastInlineDelegate<void(UI_Perks_Item_C* Widget)> OnHoverLeave;
     TMulticastInlineDelegate<void(UI_Perks_Item_C* Widget)> OnClick;
-    TEnum<EPerkTierState> PreviewState;
-    bool PreviewHovered;
-    bool PreviewSelected;
+    UE_READONLY TEnum<EPerkTierState> PreviewState;
+    UE_READONLY bool PreviewHovered;
+    UE_READONLY bool PreviewSelected;
     bool ItemHovered;
     bool ItemSelected;
     bool ItemHighlighted;
-    bool PreviewHighlighted;
+    UE_READONLY bool PreviewHighlighted;
     int Size;
     void ExecuteUbergraph_UI_Perks_Item(int EntryPoint);
     void BndEvt__ClickButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
@@ -53,15 +53,19 @@ public:
     void OnPerkHighlighted_Event(class UPerkAsset* Perk, bool IsHighlighted);
     UE_COSMETIC void Construct();
     void Set_Hovered(bool Hovered);
-    static constexpr const char* Set_Hovered__UeName = "Set Hovered";
     void OnPerkClaimed(class UPerkAsset* Perk, int ClaimedTier);
     void Refresh();
     void GetPerkAsset(class UPerkAsset*& PerkAsset_0, EPerkTierState& State, int& Tier_0);
     class UWidget* CreateToolTipWidget();
     void ShowAs(class UPerkAsset* InPerkAsset, int InRank, TEnum<EPerkTierState> InState, bool InHovered, bool InPerkHighlighted, bool InSelected);
     void Set_Selected(bool InSelected);
-    static constexpr const char* Set_Selected__UeName = "Set Selected";
     void SetIconSize(int InSize);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Hovered__UeName = "Set Hovered";
+        static constexpr const char* Set_Selected__UeName = "Set Selected";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

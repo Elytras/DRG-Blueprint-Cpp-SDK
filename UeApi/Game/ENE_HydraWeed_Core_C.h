@@ -35,47 +35,26 @@ class ENE_HydraWeed_Core_C : public AHydraWeedCore
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/ENE_HydraWeed_Core", "ENE_HydraWeed_Core_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Carving_Mesh;
-    static constexpr const char* Carving_Mesh__UeName = "Carving Mesh";
-    static constexpr const char* Carving_Mesh__UeScsNode = "fd6e8cb185c1a748b92f7b41efee5fb6";
     class USphereComponent* WakeUpTrigger;
-    static constexpr const char* WakeUpTrigger__UeScsNode = "b508264012c66647bf8404193d978ab3";
     class UParticleSystemComponent* P_GodRays;
-    static constexpr const char* P_GodRays__UeScsNode = "0a6cc2b77c8c1040b9d4265c053267e2";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "f7d518e6822ee5419b129ae111483754";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "61125d5c3f983640b07d1c4195c8d13c";
     class UStaticMeshComponent* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_06;
-    static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_06__UeScsNode = "34c04b364425c34f9cecb56b4e33ec3a";
     class UStaticMeshComponent* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_05;
-    static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_05__UeScsNode = "d31ef0b80060c945be56b0d4a8e17b0f";
     class UStaticMeshComponent* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_04;
-    static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_04__UeScsNode = "619f9e31dbeeed48bf94c929e78e11b3";
     class UStaticMeshComponent* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_03;
-    static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_03__UeScsNode = "f1b18def39c8d84a8917ae7b4f930536";
     class UStaticMeshComponent* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_01;
-    static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_01__UeScsNode = "92ea00929d498c4e84dd09270131f8d6";
     class UStaticMeshComponent* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_02;
-    static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_02__UeScsNode = "261c9b85e9f7644ea2dc4c504f92faec";
     class USceneComponent* BigRoots;
-    static constexpr const char* BigRoots__UeScsNode = "c74116733fdc2b439ade81b7bbca3412";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "adc12d8f736ff94982194273d8e1caea";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "1ea91fdd1cf1314ba9b26117615ae4f5";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "7f19fbf1a15fe34c9457d5ea3498de51";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7483c3e06d53a64cade7a9202d88ace0";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "10f1209c08442b4aa93cf6a1b05f369c";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "4ea28e9c3552af4590f6d4c30c842ef4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "805e38d058aaf24784a5a780d3e104c4";
     float GlowIntensity_Glow_E20983104900FF1AA1B7E19B0232B66F;
     TEnum<ETimelineDirection> GlowIntensity__Direction_E20983104900FF1AA1B7E19B0232B66F;
     class UTimelineComponent* GlowIntensity;
@@ -83,12 +62,10 @@ public:
     int NumShootersKilledToOpen;
     int NumShootersKilled;
     bool IsOpen;
-    static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
     TArray<class AActor*> MyShooters;
     float DamageTakenWhileOpen;
     int ShooterIndex;
     bool IsDormant;
-    static constexpr const char* IsDormant__Replicated = "OnRep_IsDormant:";
     TMulticastInlineDelegate<void(bool IsOpen_0)> OnOpenChanged;
     int MaxAllowedShooters;
     TArray<class AActor*> MyHealers;
@@ -110,7 +87,6 @@ public:
     float TimeToDamagePenaltyPerPlayer;
     TMulticastInlineDelegate<void(bool IsDormant_0)> OnDormantChanged;
     bool IsHealthbarVisible;
-    static constexpr const char* IsHealthbarVisible__Replicated = "OnRep_IsHealthbarVisible:";
     int NumSpawnAttempts;
     float ShooterDormantRange;
     float ShooterActiveRange;
@@ -151,6 +127,34 @@ public:
     UE_PURE bool GetIsTargetable() const;
     class USkeletalMeshComponent* GetMesh() const;
     UE_PURE FVector GetTargetCenterMass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Carving_Mesh__UeName = "Carving Mesh";
+        static constexpr const char* Carving_Mesh__UeScsNode = "fd6e8cb185c1a748b92f7b41efee5fb6";
+        static constexpr const char* WakeUpTrigger__UeScsNode = "b508264012c66647bf8404193d978ab3";
+        static constexpr const char* P_GodRays__UeScsNode = "0a6cc2b77c8c1040b9d4265c053267e2";
+        static constexpr const char* PathfinderCollision__UeScsNode = "f7d518e6822ee5419b129ae111483754";
+        static constexpr const char* outline__UeScsNode = "61125d5c3f983640b07d1c4195c8d13c";
+        static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_06__UeScsNode = "34c04b364425c34f9cecb56b4e33ec3a";
+        static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_05__UeScsNode = "d31ef0b80060c945be56b0d4a8e17b0f";
+        static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_04__UeScsNode = "619f9e31dbeeed48bf94c929e78e11b3";
+        static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_03__UeScsNode = "f1b18def39c8d84a8917ae7b4f930536";
+        static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_01__UeScsNode = "92ea00929d498c4e84dd09270131f8d6";
+        static constexpr const char* SM_HydraWeed_Extra_Roots_SM_HydraWeed_Root_02__UeScsNode = "261c9b85e9f7644ea2dc4c504f92faec";
+        static constexpr const char* BigRoots__UeScsNode = "c74116733fdc2b439ade81b7bbca3412";
+        static constexpr const char* WeakpointGlow__UeScsNode = "adc12d8f736ff94982194273d8e1caea";
+        static constexpr const char* PointLight__UeScsNode = "1ea91fdd1cf1314ba9b26117615ae4f5";
+        static constexpr const char* Sphere__UeScsNode = "7f19fbf1a15fe34c9457d5ea3498de51";
+        static constexpr const char* SkeletalMesh__UeScsNode = "7483c3e06d53a64cade7a9202d88ace0";
+        static constexpr const char* terrainPlacement__UeScsNode = "10f1209c08442b4aa93cf6a1b05f369c";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "4ea28e9c3552af4590f6d4c30c842ef4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "805e38d058aaf24784a5a780d3e104c4";
+        static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
+        static constexpr const char* IsDormant__Replicated = "OnRep_IsDormant:";
+        static constexpr const char* IsHealthbarVisible__Replicated = "OnRep_IsHealthbarVisible:";
+    };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

@@ -30,32 +30,18 @@ class ENE_FlyingCritterBase_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/FlyingCritterBase/ENE_FlyingCritterBase", "ENE_FlyingCritterBase_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "6a15e95508def34299e0a35a89725b36";
     class UAudioComponent* Audio_Flying;
-    static constexpr const char* Audio_Flying__UeName = "Audio Flying";
-    static constexpr const char* Audio_Flying__UeScsNode = "cf439eae89533b41891c0c41ff68f9d4";
     class UAudioComponent* Audio_Idle;
-    static constexpr const char* Audio_Idle__UeName = "Audio Idle";
-    static constexpr const char* Audio_Idle__UeScsNode = "196a0b2803843945837ce73517bc6096";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "3cae6244c642a44c8c00a7978f4f24b6";
     class USkeletalMeshComponent* Wings;
-    static constexpr const char* Wings__UeScsNode = "74d7ee76f437af48ad95566415d0adeb";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "86e4d56af2735542a2eaeb5165b476fa";
     class UInDangerComponent* InDanger;
-    static constexpr const char* InDanger__UeScsNode = "5de2c6b6ef4b8643976f336e07328b47";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "d2c75d65fe5cee4fb1d806dfd822058f";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "d2199f5305aad64999a8623eae931e61";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "08fbdbda92a39c4d8548885033684a9c";
     class UGroundToAirComponent* GroundToAir;
-    static constexpr const char* GroundToAir__UeScsNode = "3ad5e1c12cafd547bd52f7b0098555cc";
     float FleeFromplayerRange;
     float MinWalkTIme;
     float MaxWalkTime;
@@ -72,6 +58,24 @@ public:
     void OnMessageAI(FName TriggerName);
     void BndEvt__GroundToAir_K2Node_ComponentBoundEvent_0_ChangedStateSig__DelegateSignature();
     void SetWantstoFly(bool Fly);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Trail__UeScsNode = "6a15e95508def34299e0a35a89725b36";
+        static constexpr const char* Audio_Flying__UeName = "Audio Flying";
+        static constexpr const char* Audio_Flying__UeScsNode = "cf439eae89533b41891c0c41ff68f9d4";
+        static constexpr const char* Audio_Idle__UeName = "Audio Idle";
+        static constexpr const char* Audio_Idle__UeScsNode = "196a0b2803843945837ce73517bc6096";
+        static constexpr const char* PointLight__UeScsNode = "3cae6244c642a44c8c00a7978f4f24b6";
+        static constexpr const char* Wings__UeScsNode = "74d7ee76f437af48ad95566415d0adeb";
+        static constexpr const char* terrainPlacement__UeScsNode = "86e4d56af2735542a2eaeb5165b476fa";
+        static constexpr const char* InDanger__UeScsNode = "5de2c6b6ef4b8643976f336e07328b47";
+        static constexpr const char* outline__UeScsNode = "d2c75d65fe5cee4fb1d806dfd822058f";
+        static constexpr const char* enemy__UeScsNode = "d2199f5305aad64999a8623eae931e61";
+        static constexpr const char* Sphere__UeScsNode = "08fbdbda92a39c4d8548885033684a9c";
+        static constexpr const char* GroundToAir__UeScsNode = "3ad5e1c12cafd547bd52f7b0098555cc";
+    };
 };
 
 }}}   // namespace Game::Critters::FlyingCritterBase

@@ -39,11 +39,15 @@ public:
     void ExecuteUbergraph_WeaponDisplay_ChargeBlaster_Charge(int EntryPoint);
     void OnEquipped();
     void On_UnEquipped();
-    static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
     void Init(class AItem* Item_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetChargeValue(float ChargeValue, bool overheated, bool ready, bool FullCharge);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

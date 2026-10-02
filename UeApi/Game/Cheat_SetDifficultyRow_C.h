@@ -30,7 +30,6 @@ public:
     class UTextBlock* TextBlock_DiffName;
     class UDifficultySetting* Difficulty;
     TMulticastInlineDelegate<void()> On_Difficulty_Selected;
-    static constexpr const char* On_Difficulty_Selected__UeName = "On Difficulty Selected";
     Cheat_Haz5Plus_C* MutatorMenu;
     void ExecuteUbergraph_Cheat_SetDifficultyRow(int EntryPoint);
     void OnCloseRequested_Event_0();
@@ -38,10 +37,15 @@ public:
     void BndEvt__Cheat_SetDifficultyRow_Button_Mutators_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__CheckBox_SelectDiff_K2Node_ComponentBoundEvent_3_OnCheckBoxComponentStateChanged__DelegateSignature(bool bIsChecked);
     void Check_if_owned_difficulty_is_active();
-    static constexpr const char* Check_if_owned_difficulty_is_active__UeName = "Check if owned difficulty is active";
     void Set_Difficulty_Item(class UDifficultySetting* Difficulty_0);
-    static constexpr const char* Set_Difficulty_Item__UeName = "Set Difficulty Item";
     UE_PURE class UWidget* On_MenuAnchor_Haz5Plus_GetMenuContent_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Difficulty_Selected__UeName = "On Difficulty Selected";
+        static constexpr const char* Check_if_owned_difficulty_is_active__UeName = "Check if owned difficulty is active";
+        static constexpr const char* Set_Difficulty_Item__UeName = "Set Difficulty Item";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

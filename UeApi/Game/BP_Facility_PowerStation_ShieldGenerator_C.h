@@ -24,32 +24,18 @@ class BP_Facility_PowerStation_ShieldGenerator_C : public Game::GameElements::Ob
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/ShieldGenerator/BP_Facility_PowerStation_ShieldGenerator", "BP_Facility_PowerStation_ShieldGenerator_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Facility_PowerStation_ShieldGenerator_C;
-    static constexpr const char* UberGraphFrame_BP_Facility_PowerStation_ShieldGenerator_C__UeName = "UberGraphFrame";
     class UNiagaraComponent* ActiveParticles1;
-    static constexpr const char* ActiveParticles1__UeScsNode = "ca10076f721ff848b918710bd18a9c43";
     class UPathfinderCollisionComponent* PathfinderCollision1;
-    static constexpr const char* PathfinderCollision1__UeScsNode = "d573bb7c600a3145bc6fa17ec3bba3f8";
     class UStaticMeshComponent* SM_Facility_Tower_Base_Dummy_01;
-    static constexpr const char* SM_Facility_Tower_Base_Dummy_01__UeScsNode = "905133fff927a84a91acaef4dedee252";
     class UParticleSystemComponent* P_Shield_Generator_DeathSmoke;
-    static constexpr const char* P_Shield_Generator_DeathSmoke__UeScsNode = "b3e1b07c2db94641aa5692993473b6ef";
     class UNiagaraComponent* Shield_Generator_effect;
-    static constexpr const char* Shield_Generator_effect__UeName = "Shield Generator effect";
-    static constexpr const char* Shield_Generator_effect__UeScsNode = "955f6b08a7320c4e8352b7eca717ca86";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "f359822ed0751948abc57bc4194f76c3";
     class UBoxComponent* BlockPlayer;
-    static constexpr const char* BlockPlayer__UeScsNode = "0003152d8848e64b83e362ff725a533f";
     class UAudioComponent* FacilityPowerStationLoop;
-    static constexpr const char* FacilityPowerStationLoop__UeScsNode = "e59ed647ca56764683b254b751c44c0f";
     class UPointLightComponent* Light_Phaser01;
-    static constexpr const char* Light_Phaser01__UeScsNode = "7981808ab5d2e240ae0d880a40dd9ed2";
     class UPointLightComponent* Light_Phaser04;
-    static constexpr const char* Light_Phaser04__UeScsNode = "638f92b6261da24d857c736f7347a76e";
     class UPointLightComponent* Light_Phaser03;
-    static constexpr const char* Light_Phaser03__UeScsNode = "42ee8fd357143b4281e6425ef428aeba";
     class UPointLightComponent* Light_RightShield;
-    static constexpr const char* Light_RightShield__UeScsNode = "5841b4bf226d8948b87e20d3b4cd693e";
     void ExecuteUbergraph_BP_Facility_PowerStation_ShieldGenerator(int EntryPoint);
     void OnHackingComplete();
     void LaunchPlates();
@@ -57,6 +43,24 @@ public:
     void Rep_IsCharged(bool isCharged);
     void GetConnectorPoint(TArray<FTransform>& outTransform);
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Facility_PowerStation_ShieldGenerator_C__UeName = "UberGraphFrame";
+        static constexpr const char* ActiveParticles1__UeScsNode = "ca10076f721ff848b918710bd18a9c43";
+        static constexpr const char* PathfinderCollision1__UeScsNode = "d573bb7c600a3145bc6fa17ec3bba3f8";
+        static constexpr const char* SM_Facility_Tower_Base_Dummy_01__UeScsNode = "905133fff927a84a91acaef4dedee252";
+        static constexpr const char* P_Shield_Generator_DeathSmoke__UeScsNode = "b3e1b07c2db94641aa5692993473b6ef";
+        static constexpr const char* Shield_Generator_effect__UeName = "Shield Generator effect";
+        static constexpr const char* Shield_Generator_effect__UeScsNode = "955f6b08a7320c4e8352b7eca717ca86";
+        static constexpr const char* Box__UeScsNode = "f359822ed0751948abc57bc4194f76c3";
+        static constexpr const char* BlockPlayer__UeScsNode = "0003152d8848e64b83e362ff725a533f";
+        static constexpr const char* FacilityPowerStationLoop__UeScsNode = "e59ed647ca56764683b254b751c44c0f";
+        static constexpr const char* Light_Phaser01__UeScsNode = "7981808ab5d2e240ae0d880a40dd9ed2";
+        static constexpr const char* Light_Phaser04__UeScsNode = "638f92b6261da24d857c736f7347a76e";
+        static constexpr const char* Light_Phaser03__UeScsNode = "42ee8fd357143b4281e6425ef428aeba";
+        static constexpr const char* Light_RightShield__UeScsNode = "5841b4bf226d8948b87e20d3b4cd693e";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::ShieldGenerator

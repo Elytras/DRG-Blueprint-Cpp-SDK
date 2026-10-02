@@ -30,10 +30,10 @@ public:
     using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
     using UI_Forge_LevelIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimToolTip;
-    class UWidgetAnimation* AnimResetReward;
-    class UWidgetAnimation* AnimRewardPopUp;
-    class UWidgetAnimation* AnimCount;
+    UE_READONLY class UWidgetAnimation* AnimToolTip;
+    UE_READONLY class UWidgetAnimation* AnimResetReward;
+    UE_READONLY class UWidgetAnimation* AnimRewardPopUp;
+    UE_READONLY class UWidgetAnimation* AnimCount;
     class UBorder* BorderProgressBarXP;
     Basic_Menu_MinimalWindow_C* Box_ToolTip;
     ITM_BigButton_C* ClaimButton;

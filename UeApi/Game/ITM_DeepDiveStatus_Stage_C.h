@@ -27,8 +27,8 @@ public:
     using ITM_DeepDive_ObjectiveIcon_C = Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;
     using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHighlight;
-    class UWidgetAnimation* AnimReveal;
+    UE_READONLY class UWidgetAnimation* AnimHighlight;
+    UE_READONLY class UWidgetAnimation* AnimReveal;
     class UImage* BackgroundImage;
     class UTextBlock* DATA_ObjectiveText;
     class UTextBlock* DATA_StatusText;
@@ -36,7 +36,7 @@ public:
     ITM_MatrixCore_C* ITM_DeepDive_StageRewardIcon;
     class UWidgetSwitcher* MissionTextSwitcher;
     class UHorizontalBox* MutatorWarningBox;
-    int stageIndex;
+    UE_READONLY int stageIndex;
     TMulticastInlineDelegate<void(ITM_DeepDiveStatus_Stage_C* StageWidget)> OnRevealed;
     void ExecuteUbergraph_ITM_DeepDiveStatus_Stage(int EntryPoint);
     void Reveal(float StartDelay);

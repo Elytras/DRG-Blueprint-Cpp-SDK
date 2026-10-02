@@ -20,7 +20,7 @@ class ITM_MenuDamageIndicator_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_MenuDamageIndicator", "ITM_MenuDamageIndicator_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DamageTaken;
+    UE_READONLY class UWidgetAnimation* DamageTaken;
     class UImage* Image_Damage;
     class UUserWidget* Menu;
     void ExecuteUbergraph_ITM_MenuDamageIndicator(int EntryPoint);

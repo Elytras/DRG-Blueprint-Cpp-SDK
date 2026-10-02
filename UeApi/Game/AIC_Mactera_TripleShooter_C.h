@@ -13,7 +13,11 @@ class AIC_Mactera_TripleShooter_C : public Game::Enemies::FlyingBug::Shooter::AI
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/AIC_Mactera_TripleShooter", "AIC_Mactera_TripleShooter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

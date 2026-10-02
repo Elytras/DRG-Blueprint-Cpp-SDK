@@ -28,7 +28,7 @@ public:
     using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
     using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     ITM_GlowBackground_Adjustable_C* Glow_Background;
     class UBorder* Item_Border;
     class UButton* Item_Button;
@@ -39,9 +39,7 @@ public:
     ShadowBG_C* ShadowBG;
     class USeason* Season;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     bool Season_Active;
-    static constexpr const char* Season_Active__UeName = "Season Active";
     bool IsItemHovered;
     TMulticastInlineDelegate<void()> OnNoClicked;
     void ExecuteUbergraph_ITM_SeasonSelection_Item(int EntryPoint);
@@ -58,6 +56,12 @@ public:
     void SetSeason(class USeason* InSeason, int InIndex);
     void SetSeasonActive(bool InSeasonActive);
     void CanActivateSeason(bool& OutCanActivate);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* Season_Active__UeName = "Season Active";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Seasons::SeasonSelector

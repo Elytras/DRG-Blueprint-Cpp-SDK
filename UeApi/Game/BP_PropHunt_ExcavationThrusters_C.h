@@ -17,14 +17,18 @@ class BP_PropHunt_ExcavationThrusters_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season06/BP_PropHunt_ExcavationThrusters", "BP_PropHunt_ExcavationThrusters_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SK_ExcavationThruster;
-    static constexpr const char* SK_ExcavationThruster__UeScsNode = "f73676b6da97d345ae9e11040ebbede9";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     void ExecuteUbergraph_BP_PropHunt_ExcavationThrusters(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* SK_ExcavationThruster__UeScsNode = "f73676b6da97d345ae9e11040ebbede9";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season06

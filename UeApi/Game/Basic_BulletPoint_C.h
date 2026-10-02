@@ -29,24 +29,28 @@ public:
     class URichTextBlock* Bullet_Text;
     FText Text;
     bool Text_To_Upper;
-    static constexpr const char* Text_To_Upper__UeName = "Text To Upper";
     int TextMinWidth;
     FTextBlockStyle Text_Default_Style;
-    static constexpr const char* Text_Default_Style__UeName = "Text Default Style";
     class UDataTable* Text_Style_Set;
-    static constexpr const char* Text_Style_Set__UeName = "Text Style Set";
     class UTexture2D* BulletTexture;
     FVector2D BulletSize;
     int BulletSpacing;
     FMargin Bullet_Padding;
-    static constexpr const char* Bullet_Padding__UeName = "Bullet Padding";
     TEnum<EHorizontalAlignment> Bullet_Horizontal_Alignment;
-    static constexpr const char* Bullet_Horizontal_Alignment__UeName = "Bullet Horizontal Alignment";
     TEnum<EVerticalAlignment> Bullet_Vertical_Alignment;
-    static constexpr const char* Bullet_Vertical_Alignment__UeName = "Bullet Vertical Alignment";
     void ExecuteUbergraph_Basic_BulletPoint(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetBulletLayout(TEnum<EHorizontalAlignment> InHorizontalAlignment, TEnum<EVerticalAlignment> InVerticalAlignment, FMargin InPadding);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Text_To_Upper__UeName = "Text To Upper";
+        static constexpr const char* Text_Default_Style__UeName = "Text Default Style";
+        static constexpr const char* Text_Style_Set__UeName = "Text Style Set";
+        static constexpr const char* Bullet_Padding__UeName = "Bullet Padding";
+        static constexpr const char* Bullet_Horizontal_Alignment__UeName = "Bullet Horizontal Alignment";
+        static constexpr const char* Bullet_Vertical_Alignment__UeName = "Bullet Vertical Alignment";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard

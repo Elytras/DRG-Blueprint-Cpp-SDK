@@ -13,6 +13,11 @@ class STE_PatrolBot_Hacked_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/STE_PatrolBot_Hacked", "STE_PatrolBot_Hacked_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.MakeAttackableStatusEffectItem MakeAttackableStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_2";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot

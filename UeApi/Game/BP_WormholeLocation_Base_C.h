@@ -18,10 +18,14 @@ public:
     UE_CLASS("/Game/GameElements/Bar/DrinkEffects/Wormhole_Assets/BP_WormholeLocation_Base", "BP_WormholeLocation_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8c4238e8c9412f408a902a8afcbb7856";
     void ExecuteUbergraph_BP_WormholeLocation_Base(int EntryPoint);
     void OnPlayerLeaveLocation(class APlayerCharacter* Character);
     void OnPlayerEnterLocation(class APlayerCharacter* Character);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8c4238e8c9412f408a902a8afcbb7856";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Bar::DrinkEffects::Wormhole_Assets

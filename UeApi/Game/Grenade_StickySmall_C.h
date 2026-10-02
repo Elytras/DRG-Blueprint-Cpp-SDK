@@ -20,15 +20,19 @@ class Grenade_StickySmall_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickySmall/Grenade_StickySmall", "Grenade_StickySmall_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_StickySmall_C;
-    static constexpr const char* UberGraphFrame_Grenade_StickySmall_C__UeName = "UberGraphFrame";
     class UDamageComponent* BluntDamage;
-    static constexpr const char* BluntDamage__UeScsNode = "264b64d20b95164998bd454baa4a0bfa";
     void ExecuteUbergraph_Grenade_StickySmall(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_StickySmall_C__UeName = "UberGraphFrame";
+        static constexpr const char* BluntDamage__UeScsNode = "264b64d20b95164998bd454baa4a0bfa";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickySmall

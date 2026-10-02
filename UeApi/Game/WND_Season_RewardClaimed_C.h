@@ -33,9 +33,9 @@ public:
     using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Glow;
-    class UWidgetAnimation* Zoom;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Glow;
+    UE_READONLY class UWidgetAnimation* Zoom;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_1;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_2;

@@ -15,9 +15,13 @@ class ENE_Maggot_SplineTrail_C : public Game::Critters::Maggot::ENE_Maggot_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_SplineTrail", "ENE_Maggot_SplineTrail_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     class USplineTrailComponent* SplineTrail;
-    static constexpr const char* SplineTrail__UeScsNode = "657b8c97cee7b742b1c251cdccb1b9c6";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent HealthComponent;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* SplineTrail__UeScsNode = "657b8c97cee7b742b1c251cdccb1b9c6";
+    };
 };
 
 }}}   // namespace Game::Critters::Maggot

@@ -15,9 +15,13 @@ class BP_Crossbow_PheromoneAttackerPositioning_C : public Game::WeaponsNTools::G
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/BP_Crossbow_PheromoneAttackerPositioning", "BP_Crossbow_PheromoneAttackerPositioning_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Crossbow_PheromoneAttackerPositioning_C;
-    static constexpr const char* UberGraphFrame_BP_Crossbow_PheromoneAttackerPositioning_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_Crossbow_PheromoneAttackerPositioning(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Crossbow_PheromoneAttackerPositioning_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Crossbow

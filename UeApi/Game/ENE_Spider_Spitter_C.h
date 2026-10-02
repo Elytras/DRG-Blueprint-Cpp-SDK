@@ -19,21 +19,25 @@ class ENE_Spider_Spitter_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Spitter/ENE_Spider_Spitter", "ENE_Spider_Spitter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Spitter_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Spitter_C__UeName = "UberGraphFrame";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "82aecddc56b0b24c881e5f72f61e51d7";
     class UAudioComponent* SpiderSpitterIdle_Cue;
-    static constexpr const char* SpiderSpitterIdle_Cue__UeScsNode = "ef92e4105b029c48815291d99d74627b";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "6265cad96aecd6498635626921c8604c";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bee99dfdc9abf346a8860ba851142730";
     void ExecuteUbergraph_ENE_Spider_Spitter(int EntryPoint);
     void OnDeathBase();
     void OnRagdoll();
     void GetEnemySpawnedCount(int& SpawnCount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Spitter_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProjectileAttack__UeScsNode = "82aecddc56b0b24c881e5f72f61e51d7";
+        static constexpr const char* SpiderSpitterIdle_Cue__UeScsNode = "ef92e4105b029c48815291d99d74627b";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "6265cad96aecd6498635626921c8604c";
+        static constexpr const char* Sphere__UeScsNode = "bee99dfdc9abf346a8860ba851142730";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Spitter

@@ -17,12 +17,16 @@ class BP_NetworkPlayGameMode_C : public Game::Game::BP_GameMode_C
 {
 public:
     UE_CLASS("/Game/Game/BP_NetworkPlayGameMode", "BP_NetworkPlayGameMode_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_NetworkPlayGameMode_C;
-    static constexpr const char* UberGraphFrame_BP_NetworkPlayGameMode_C__UeName = "UberGraphFrame";
     class UClass* GetDefaultPawnClassForController(class AController* InController);
     void RecieveAllDwarvesDown();
     void ExecuteUbergraph_BP_NetworkPlayGameMode(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_BP_NetworkPlayGameMode_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}   // namespace Game::Game

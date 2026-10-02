@@ -17,12 +17,16 @@ class BP_MouthPlant_C : public Game::LevelElements::RoomObjects::PassiveFoliage:
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/MouthPlant/BP_MouthPlant", "BP_MouthPlant_C");
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "0c4370cf8f676845a3b2e9b41f95e42c";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0a045905b09eab4aadbc784a4009a96b";
     class USphereComponent* SphereCollision;
-    static constexpr const char* SphereCollision__UeScsNode = "57c942b918038145af8244349667cbda";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "0c4370cf8f676845a3b2e9b41f95e42c";
+        static constexpr const char* InstantUsable__UeScsNode = "0a045905b09eab4aadbc784a4009a96b";
+        static constexpr const char* SphereCollision__UeScsNode = "57c942b918038145af8244349667cbda";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage::MouthPlant

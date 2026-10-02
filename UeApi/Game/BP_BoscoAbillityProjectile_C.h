@@ -20,23 +20,27 @@ class BP_BoscoAbillityProjectile_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_BoscoAbillityProjectile", "BP_BoscoAbillityProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* Light_Exhaust;
-    static constexpr const char* Light_Exhaust__UeScsNode = "318b2a2e28543741bc3ffb80217d6629";
     class UParticleSystemComponent* Particle_Trail;
-    static constexpr const char* Particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
     class UParticleSystemComponent* Particle_Exhaust;
-    static constexpr const char* Particle_Exhaust__UeScsNode = "560f1a111de1c34fb3deec9bf60fdc51";
     class UStaticMeshComponent* MeshRocket;
-    static constexpr const char* MeshRocket__UeScsNode = "fdedf66f9d196442ac74520c06e03439";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "9a1c9d4e00f75449b2bd67dfacb06c7d";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
     void ExecuteUbergraph_BP_BoscoAbillityProjectile(int EntryPoint);
     void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Light_Exhaust__UeScsNode = "318b2a2e28543741bc3ffb80217d6629";
+        static constexpr const char* Particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
+        static constexpr const char* Particle_Exhaust__UeScsNode = "560f1a111de1c34fb3deec9bf60fdc51";
+        static constexpr const char* MeshRocket__UeScsNode = "fdedf66f9d196442ac74520c06e03439";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "9a1c9d4e00f75449b2bd67dfacb06c7d";
+        static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
+    };
 };
 
 }}}   // namespace Game::GameElements::Drone

@@ -22,16 +22,20 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/Pipeline/BP_AttackablePiplinesegmentActor", "BP_AttackablePiplinesegmentActor_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UCustomObjectAttackerPositioning* CustomObjectAttackerPositioning;
-    static constexpr const char* CustomObjectAttackerPositioning__UeScsNode = "0254710f335b9e40b47329896c9bc01a";
     class UObjectAttackerPositioning* ObjectAttackerPositioning;
-    static constexpr const char* ObjectAttackerPositioning__UeScsNode = "c283eff13bfb0c41b2a43034956f0549";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "fdf5403aaf84da429de737feb6291287";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a40280b248fd884f9cfb31f7319369d2";
     void ExecuteUbergraph_BP_AttackablePiplinesegmentActor(int EntryPoint);
     void ReceiveBeginPlay();
     UE_PURE FVector GetTargetCenterMass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CustomObjectAttackerPositioning__UeScsNode = "0254710f335b9e40b47329896c9bc01a";
+        static constexpr const char* ObjectAttackerPositioning__UeScsNode = "c283eff13bfb0c41b2a43034956f0549";
+        static constexpr const char* SimpleHealth__UeScsNode = "fdf5403aaf84da429de737feb6291287";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a40280b248fd884f9cfb31f7319369d2";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline

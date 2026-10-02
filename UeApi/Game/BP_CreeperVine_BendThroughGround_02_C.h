@@ -13,7 +13,11 @@ class BP_CreeperVine_BendThroughGround_02_C : public Game::LevelElements::RoomOb
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/ThornBranches/BP_CreeperVine_BendThroughGround_02", "BP_CreeperVine_BendThroughGround_02_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::ThornBranches

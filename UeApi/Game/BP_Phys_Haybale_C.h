@@ -21,12 +21,16 @@ class BP_Phys_Haybale_C : public Game::Art::Environments::SpaceRig::BP_Kickable_
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Oktoberfest/BP_Phys_Haybale", "BP_Phys_Haybale_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Phys_Haybale_C;
-    static constexpr const char* UberGraphFrame_BP_Phys_Haybale_C__UeName = "UberGraphFrame";
     bool CanSpawnParticles;
     void ExecuteUbergraph_BP_Phys_Haybale(int EntryPoint);
     void BndEvt__BP_Phys_Haybale_InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    static constexpr const char* BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_Haybale_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Phys_Haybale_C__UeName = "UberGraphFrame";
+        static constexpr const char* BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_Haybale_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest

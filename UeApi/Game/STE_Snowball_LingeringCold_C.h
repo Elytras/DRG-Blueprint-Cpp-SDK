@@ -13,6 +13,11 @@ class STE_Snowball_LingeringCold_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/STE_Snowball_LingeringCold", "STE_Snowball_LingeringCold_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

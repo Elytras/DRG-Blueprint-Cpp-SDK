@@ -18,11 +18,15 @@ class BP_HoverBootsBurnTrigger_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_HoverBootsBurnTrigger", "BP_HoverBootsBurnTrigger_C");
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "e260dbc91bee87439233702120a6509e";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "75fa96c642d1964ca0d57f2de14b077b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "185bab3e0d676f4e8c09996e7899ceb1";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "e260dbc91bee87439233702120a6509e";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "75fa96c642d1964ca0d57f2de14b077b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "185bab3e0d676f4e8c09996e7899ceb1";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

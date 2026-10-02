@@ -58,13 +58,13 @@ public:
     int TitleSize;
     FSlateBrush IconImage;
     class UCommunityGoalFaction* Faction;
-    FText ResultText;
-    FText BronzeText;
-    FText SilverText;
-    FText GoldText;
+    UE_READONLY FText ResultText;
+    UE_READONLY FText BronzeText;
+    UE_READONLY FText SilverText;
+    UE_READONLY FText GoldText;
     FVector2D TierIconSize;
     class UCommunityGoal* CurrentGoal;
-    FText ResultTextN;
+    UE_READONLY FText ResultTextN;
     FSlateBrush FrameBrush;
     void ExecuteUbergraph_ITM_CommunityGoalReward(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_LockWarning", "UI_Bar_LockWarning_C");
     using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Anim_InfoBoxAppear;
+    UE_READONLY class UWidgetAnimation* Anim_InfoBoxAppear;
     class UImage* Image_0;
     class UImage* Image_1;
     class UImage* Image_82;

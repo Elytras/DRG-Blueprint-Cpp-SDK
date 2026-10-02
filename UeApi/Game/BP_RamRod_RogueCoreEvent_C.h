@@ -20,24 +20,28 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/DropPodShip/BP_RamRod_RogueCoreEvent", "BP_RamRod_RogueCoreEvent_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_RamRodVFX;
-    static constexpr const char* SM_RamRodVFX__UeScsNode = "477cf54c2979b94392dc122187e6d435";
     class USplineComponent* Spline;
-    static constexpr const char* Spline__UeScsNode = "9b5d87441ba266408dd6bc0e0e779cea";
     class UNiagaraComponent* DropPodReturning;
-    static constexpr const char* DropPodReturning__UeScsNode = "63dc7617e16463408f243d1ce88a6b4f";
     class UNiagaraComponent* DropPodLeaving;
-    static constexpr const char* DropPodLeaving__UeScsNode = "af6a9cb2fc65cb40b700809f88257e12";
     class UStaticMeshComponent* SM_RamrodSpaceshipExterior01;
-    static constexpr const char* SM_RamrodSpaceshipExterior01__UeScsNode = "b5122fda3c98f34792d625864d008298";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "2b12a1ea9662ae4c8397abf60cb54660";
     float SpawnTimer;
     bool DropPodHome_;
-    static constexpr const char* DropPodHome___UeName = "DropPodHome?";
     void ExecuteUbergraph_BP_RamRod_RogueCoreEvent(int EntryPoint);
     void Recieve_DropPod();
-    static constexpr const char* Recieve_DropPod__UeName = "Recieve DropPod";
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_RamRodVFX__UeScsNode = "477cf54c2979b94392dc122187e6d435";
+        static constexpr const char* Spline__UeScsNode = "9b5d87441ba266408dd6bc0e0e779cea";
+        static constexpr const char* DropPodReturning__UeScsNode = "63dc7617e16463408f243d1ce88a6b4f";
+        static constexpr const char* DropPodLeaving__UeScsNode = "af6a9cb2fc65cb40b700809f88257e12";
+        static constexpr const char* SM_RamrodSpaceshipExterior01__UeScsNode = "b5122fda3c98f34792d625864d008298";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "2b12a1ea9662ae4c8397abf60cb54660";
+        static constexpr const char* DropPodHome___UeName = "DropPodHome?";
+        static constexpr const char* Recieve_DropPod__UeName = "Recieve DropPod";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::DropPodShip

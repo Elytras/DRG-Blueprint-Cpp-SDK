@@ -21,15 +21,19 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SMG/BP_SMG_ElectrifiedPlatforms", "BP_SMG_ElectrifiedPlatforms_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NiagaraParticle;
-    static constexpr const char* NiagaraParticle__UeScsNode = "c403defcb49125459be7ce514dcafb7f";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "eb6295cc4ec0b842898ae24e28a4e7c2";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "3e14e554f8ae7d4aa6ee75206f1b91b9";
     float LifeTime;
     void ExecuteUbergraph_BP_SMG_ElectrifiedPlatforms(int EntryPoint);
     void BndEvt__BP_SMG_ElectrifiedPlatforms_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NiagaraParticle__UeScsNode = "c403defcb49125459be7ce514dcafb7f";
+        static constexpr const char* Sphere__UeScsNode = "eb6295cc4ec0b842898ae24e28a4e7c2";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "3e14e554f8ae7d4aa6ee75206f1b91b9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SMG

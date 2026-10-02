@@ -34,7 +34,7 @@ public:
     UI_ModdingProgressBar_C* ModdingProgressBar;
     class UCircularThrobber* ModName_Loading;
     class UButton* OptionalRequiredButton;
-    FString ModId;
+    UE_READONLY FString ModId;
     bool DownloadFinished;
     TMulticastInlineDelegate<void(FString ModId_0, EUGCApprovalStatus ModStatus, ITM_Mod_Joining_C* ModWidget)> OnMetaDataLoaded;
     FString ModName;

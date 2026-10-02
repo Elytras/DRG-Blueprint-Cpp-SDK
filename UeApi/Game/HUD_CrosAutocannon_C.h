@@ -20,7 +20,7 @@ class HUD_CrosAutocannon_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CrosAutocannon", "HUD_CrosAutocannon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Bracket_Left;
     class UImage* Bracket_Right;
     class UImage* CH_LeftBottom;
@@ -36,9 +36,7 @@ public:
     class UImage* Line_TOp;
     class UImage* LineBottom;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     float SpreadMultiplier;
     void ExecuteUbergraph_HUD_CrosAutocannon(int EntryPoint);
     void SwitchToMortar();
@@ -48,6 +46,12 @@ public:
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void SetData(class AItem* Item);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

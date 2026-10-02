@@ -13,6 +13,11 @@ class STE_SnowStom_Slowdown_Enemies_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/IceCaves/STE_SnowStom_Slowdown_Enemies", "STE_SnowStom_Slowdown_Enemies_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves

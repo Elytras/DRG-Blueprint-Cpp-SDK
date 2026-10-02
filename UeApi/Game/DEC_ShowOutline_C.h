@@ -18,13 +18,17 @@ class DEC_ShowOutline_C : public UBTDecorator_BlueprintBase
 {
 public:
     UE_CLASS("/Game/AI/Decorators/DEC_ShowOutline", "DEC_ShowOutline_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Game";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     void ExecuteUbergraph_DEC_ShowOutline(int EntryPoint);
     void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
     void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Game";
+    };
 };
 
 }}}   // namespace Game::AI::Decorators

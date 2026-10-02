@@ -18,11 +18,15 @@ class BP_PhysicsTumbleweed_C : public Game::LevelElements::RoomObjects::LoosePhy
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalTumbleWeed/BP_PhysicsTumbleweed", "BP_PhysicsTumbleweed_C");
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "50dd9da1a2bfd94d8a3493284d7be161";
     class UStaticMeshComponent* TumbleWeedModel;
-    static constexpr const char* TumbleWeedModel__UeScsNode = "cb72ea147dffa4478f5493d6f748a1a7";
     TArray<class UStaticMesh*> StatichMeshOptions;
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "50dd9da1a2bfd94d8a3493284d7be161";
+        static constexpr const char* TumbleWeedModel__UeScsNode = "cb72ea147dffa4478f5493d6f748a1a7";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalTumbleWeed

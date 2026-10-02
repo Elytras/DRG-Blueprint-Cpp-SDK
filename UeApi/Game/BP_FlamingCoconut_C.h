@@ -23,35 +23,39 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_FlamingCoconut", "BP_FlamingCoconut_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Coconut_Light_Flicker;
-    static constexpr const char* NS_Coconut_Light_Flicker__UeScsNode = "21e1abc1a6cbe541b7178f8be3b8aee8";
     class UNiagaraComponent* NS_Fire_Coconut;
-    static constexpr const char* NS_Fire_Coconut__UeScsNode = "a40752911e031542891713463efa86e8";
     class UPointLightComponent* Light_FireFlicker;
-    static constexpr const char* Light_FireFlicker__UeScsNode = "20830364d330b94c9699714e7a1e1b60";
     class UStaticMeshComponent* SM_TikiTorch;
-    static constexpr const char* SM_TikiTorch__UeScsNode = "c1ec45e579c3cf4aae660497701a5560";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "33f53e9524b9f9438b80f95a71a4efb4";
     FLinearColor Light_Color;
-    static constexpr const char* Light_Color__UeName = "Light Color";
     float Light_Intensity;
-    static constexpr const char* Light_Intensity__UeName = "Light Intensity";
     float Light_Attenuation;
-    static constexpr const char* Light_Attenuation__UeName = "Light Attenuation";
     TArray<class UStaticMesh*> Mesh;
     int Mesh_to_use;
-    static constexpr const char* Mesh_to_use__UeName = "Mesh to use";
     float MaterialGlow;
     bool Flicker;
     int TimesToFlash;
     bool Casts_Shadows;
-    static constexpr const char* Casts_Shadows__UeName = "Casts Shadows";
     FVector Light_Offset;
-    static constexpr const char* Light_Offset__UeName = "Light Offset";
     class UMaterialInstanceDynamic* DynamicMaterial;
     bool NewVar_0;
     void ExecuteUbergraph_BP_FlamingCoconut(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_Coconut_Light_Flicker__UeScsNode = "21e1abc1a6cbe541b7178f8be3b8aee8";
+        static constexpr const char* NS_Fire_Coconut__UeScsNode = "a40752911e031542891713463efa86e8";
+        static constexpr const char* Light_FireFlicker__UeScsNode = "20830364d330b94c9699714e7a1e1b60";
+        static constexpr const char* SM_TikiTorch__UeScsNode = "c1ec45e579c3cf4aae660497701a5560";
+        static constexpr const char* Scene__UeScsNode = "33f53e9524b9f9438b80f95a71a4efb4";
+        static constexpr const char* Light_Color__UeName = "Light Color";
+        static constexpr const char* Light_Intensity__UeName = "Light Intensity";
+        static constexpr const char* Light_Attenuation__UeName = "Light Attenuation";
+        static constexpr const char* Mesh_to_use__UeName = "Mesh to use";
+        static constexpr const char* Casts_Shadows__UeName = "Casts Shadows";
+        static constexpr const char* Light_Offset__UeName = "Light Offset";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

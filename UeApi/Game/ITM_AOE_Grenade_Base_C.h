@@ -17,14 +17,18 @@ class ITM_AOE_Grenade_Base_C : public Game::WeaponsNTools::Grenades::ITM_Grenade
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_AOE_Grenade_Base", "ITM_AOE_Grenade_Base_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_ITM_AOE_Grenade_Base_C;
-    static constexpr const char* UberGraphFrame_ITM_AOE_Grenade_Base_C__UeName = "UberGraphFrame";
     class UClass* AOEClass;
     class USoundBase* DischargeSound;
     float AoESpawnDelay;
     void ExecuteUbergraph_ITM_AOE_Grenade_Base(int EntryPoint);
     void OnExploded();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_ITM_AOE_Grenade_Base_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

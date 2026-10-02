@@ -27,7 +27,7 @@ public:
     using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
     using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* IntroOutro;
+    UE_READONLY class UWidgetAnimation* IntroOutro;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner;
     class UBorder* Border_Glow;
     class UBorder* Border_Outline;

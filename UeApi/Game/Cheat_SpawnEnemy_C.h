@@ -26,10 +26,14 @@ public:
     class USpinBox* EnemyCountBox;
     TArray<class UEnemyDescriptor*> Enemies;
     TEnum<EEnemyDescriptorCheatClass> Cheat_Class;
-    static constexpr const char* Cheat_Class__UeName = "Cheat Class";
     void ExecuteUbergraph_Cheat_SpawnEnemy(int EntryPoint);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_23_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Cheat_Class__UeName = "Cheat Class";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

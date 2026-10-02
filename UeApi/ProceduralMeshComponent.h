@@ -77,8 +77,8 @@ class UProceduralMeshComponent : public UMeshComponent
 {
 public:
     UE_CLASS("/Script/ProceduralMeshComponent", "ProceduralMeshComponent");
-    bool bUseComplexAsSimpleCollision;
-    bool bUseAsyncCooking;
+    UE_READONLY bool bUseComplexAsSimpleCollision;
+    UE_READONLY bool bUseAsyncCooking;
     class UBodySetup* ProcMeshBodySetup;
     TArray<FProcMeshSection> ProcMeshSections;
     TArray<FKConvexElem> CollisionConvexElems;

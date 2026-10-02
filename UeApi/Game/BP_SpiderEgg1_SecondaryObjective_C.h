@@ -16,9 +16,13 @@ class BP_SpiderEgg1_SecondaryObjective_C : public Game::LevelElements::RoomObjec
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpiderEgg/BP_SpiderEgg1_SecondaryObjective", "BP_SpiderEgg1_SecondaryObjective_C");
     class UStaticMeshComponent* EggWhole;
-    static constexpr const char* EggWhole__UeScsNode = "7b4f0c17587330429cadfa7f072d5d3d";
     class UStaticMeshComponent* EggBroken;
-    static constexpr const char* EggBroken__UeScsNode = "97ff1d5a9bc77148a0e2a3b3fd60ffcb";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* EggWhole__UeScsNode = "7b4f0c17587330429cadfa7f072d5d3d";
+        static constexpr const char* EggBroken__UeScsNode = "97ff1d5a9bc77148a0e2a3b3fd60ffcb";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg

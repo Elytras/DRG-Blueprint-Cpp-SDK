@@ -17,12 +17,16 @@ class AIC_LootBug_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/AIC_LootBug", "AIC_LootBug_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_LootBug(int EntryPoint);
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void ReceivePossess(class APawn* PossessedPawn);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}   // namespace Game::Critters::LootBug

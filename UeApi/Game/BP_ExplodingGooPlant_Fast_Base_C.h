@@ -27,30 +27,34 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ExplodingGooPlant/BP_ExplodingGooPlant_Fast_Base", "BP_ExplodingGooPlant_Fast_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "74dc670f098af045977b5ddd87df8595";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "7be443bed3a64d4b98b59e60bc14712c";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "aa10e23a4fbb5d4d916e852b466d9a2f";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "79f0b651fe08fa4291ade27116f2075e";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "91977c584d0c96478b63956119f84734";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "b4a446d3517bea4abfa5fa444b1d6430";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "44b941c232bb764085b641dc45766a22";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "5d5ce9e78c76404bb0627882cd2521da";
     class UStaticMeshComponent* Body;
-    static constexpr const char* Body__UeScsNode = "ed6b6a731f89b84db2d0747de026d447";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "656dcaa5f0bc89428a5ba1a999eabad9";
     float Damage;
     float BlastRadius;
     void ExecuteUbergraph_BP_ExplodingGooPlant_Fast_Base(int EntryPoint);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "74dc670f098af045977b5ddd87df8595";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "7be443bed3a64d4b98b59e60bc14712c";
+        static constexpr const char* TerrainDetect__UeScsNode = "aa10e23a4fbb5d4d916e852b466d9a2f";
+        static constexpr const char* outline__UeScsNode = "79f0b651fe08fa4291ade27116f2075e";
+        static constexpr const char* terrainPlacement__UeScsNode = "91977c584d0c96478b63956119f84734";
+        static constexpr const char* PathfinderCollision__UeScsNode = "b4a446d3517bea4abfa5fa444b1d6430";
+        static constexpr const char* PointLight__UeScsNode = "44b941c232bb764085b641dc45766a22";
+        static constexpr const char* SimpleHealth__UeScsNode = "5d5ce9e78c76404bb0627882cd2521da";
+        static constexpr const char* Body__UeScsNode = "ed6b6a731f89b84db2d0747de026d447";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "656dcaa5f0bc89428a5ba1a999eabad9";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant

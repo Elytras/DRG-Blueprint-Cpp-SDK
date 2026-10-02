@@ -13,6 +13,11 @@ class CP_Mission_Unlock_Facility_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Mission_Unlock_Facility", "CP_Mission_Unlock_Facility_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActivityCardReward CampaignMission_0:ActivityCardReward_0;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_1;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.UnlockMissionTypeReward CampaignMission_0:UnlockMissionTypeReward_0;/Script/FSD.UnlockMissionTypeReward UnlockMissionTypeReward_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

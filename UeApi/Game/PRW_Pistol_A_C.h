@@ -18,11 +18,15 @@ class PRW_Pistol_A_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/PRW_Pistol_A", "PRW_Pistol_A_C");
     class UStaticMeshComponent* Mag;
-    static constexpr const char* Mag__UeScsNode = "1dc54381bd1a5946ba4bf8a48754f5b3";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "38eb0116425b9b4eb7e7942563defd72";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a7eeaf86d720474fb75282d3718edf43";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mag__UeScsNode = "1dc54381bd1a5946ba4bf8a48754f5b3";
+        static constexpr const char* SkeletalMesh__UeScsNode = "38eb0116425b9b4eb7e7942563defd72";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a7eeaf86d720474fb75282d3718edf43";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Pistol

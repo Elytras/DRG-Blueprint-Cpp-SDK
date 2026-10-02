@@ -17,9 +17,13 @@ class BP_PitJawPlacementCarver_C : public AActor
 public:
     UE_CLASS("/Game/Enemies/Ossiran/PitJaw/BP_PitJawPlacementCarver", "BP_PitJawPlacementCarver_C");
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "25aff419acee7547be313cef8b294241";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3b8cd71050f8b54b9e60991c807dfba8";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "25aff419acee7547be313cef8b294241";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3b8cd71050f8b54b9e60991c807dfba8";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Ossiran::PitJaw

@@ -25,20 +25,13 @@ class PRJ_Grenade_StickySmall_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickySmall/PRJ_Grenade_StickySmall", "PRJ_Grenade_StickySmall_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "fffc1d6989f45b478155512416476b25";
     class UDamageComponent* BoomDamage;
-    static constexpr const char* BoomDamage__UeScsNode = "8862c92d6d67c544b0dabfa4f9572e71";
     class UDamageComponent* SpikeDamage;
-    static constexpr const char* SpikeDamage__UeScsNode = "b356f7d00f8cc9429ebf4493703fb214";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "b045057a0815344e9889e88d7d7aa383";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "b7404f8875ec0148917917895b993c2a";
     class UStaticMeshComponent* mesh_front;
-    static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     float ExplosionDelay;
     class USoundBase* ExplosionSound;
     class UParticleSystem* ExplosionParticles;
@@ -55,6 +48,17 @@ public:
     void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_Stick();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Explosion__UeScsNode = "fffc1d6989f45b478155512416476b25";
+        static constexpr const char* BoomDamage__UeScsNode = "8862c92d6d67c544b0dabfa4f9572e71";
+        static constexpr const char* SpikeDamage__UeScsNode = "b356f7d00f8cc9429ebf4493703fb214";
+        static constexpr const char* RotatingMovement__UeScsNode = "b045057a0815344e9889e88d7d7aa383";
+        static constexpr const char* Trail__UeScsNode = "b7404f8875ec0148917917895b993c2a";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickySmall

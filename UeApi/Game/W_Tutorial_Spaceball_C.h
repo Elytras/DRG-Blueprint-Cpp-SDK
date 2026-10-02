@@ -17,11 +17,15 @@ class W_Tutorial_Spaceball_C : public Game::UI::Tutorial::W_TutorialContent_Base
 public:
     UE_CLASS("/Game/UI/Tutorial/W_Tutorial_Spaceball", "W_Tutorial_Spaceball_C");
     FPointerToUberGraphFrame UberGraphFrame_W_Tutorial_Spaceball_C;
-    static constexpr const char* UberGraphFrame_W_Tutorial_Spaceball_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_W_Tutorial_Spaceball(int EntryPoint);
     void FinishSpaceballTutorial(class UUsableComponentBase* Component);
     void OnShown();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_Tutorial_Spaceball_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

@@ -32,9 +32,9 @@ public:
     using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
     using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AmmoDepleted;
-    class UWidgetAnimation* SentryPlaced;
-    class UWidgetAnimation* ShotFired;
+    UE_READONLY class UWidgetAnimation* AmmoDepleted;
+    UE_READONLY class UWidgetAnimation* SentryPlaced;
+    UE_READONLY class UWidgetAnimation* ShotFired;
     class UBorder* Ammo_Border;
     class UProgressBar* AmmoProgress;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
@@ -49,7 +49,6 @@ public:
     class ARecallableSentryGun* RecallableActor;
     class ARecallableSentryGunItem* Item;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     class UInventoryComponent* Inventory;
     TMulticastInlineDelegate<void()> OnSentryStateChanged;
     void ExecuteUbergraph_HUD_SentryGunWidget(int EntryPoint);
@@ -58,26 +57,31 @@ public:
     UE_COSMETIC void Construct();
     void OnDeployProgress_Event(float Progress);
     void Check_For_Ammo_Depletion();
-    static constexpr const char* Check_For_Ammo_Depletion__UeName = "Check For Ammo Depletion";
     void OnGunStateChanged(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void OnItemEquipped(class AItem* Item_0);
     void Set_Selected(bool Is_Selected);
-    static constexpr const char* Set_Selected__UeName = "Set Selected";
     void OnSelectedItemChanged(class ARecallableSentryGun* SentryGun_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Update_State(FString reason);
-    static constexpr const char* Update_State__UeName = "Update State";
     void OnStateChanged(class ARecallableActor* Sender, TEnum<ERecallableActorState> State);
     void OnActiveItemsChanged(class ARecallableSentryGunItem* Item_0);
     void Init(class UInventoryComponent* Inventory_0, class ARecallableSentryGunItem* Item_0, int Param_Index_0);
     void On_Ammo_Count_Changed(int AmmoCount, int Change);
-    static constexpr const char* On_Ammo_Count_Changed__UeName = "On Ammo Count Changed";
     void Set_Sentry_Home();
-    static constexpr const char* Set_Sentry_Home__UeName = "Set Sentry Home";
     void Set_Sentry(class ARecallableSentryGun* Sentry_Gun);
-    static constexpr const char* Set_Sentry__UeName = "Set Sentry";
     void GetMovementState(ERecallableActorState& State);
     void IsOutOfAmmo(bool& OutOfAmmo);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* Check_For_Ammo_Depletion__UeName = "Check For Ammo Depletion";
+        static constexpr const char* Set_Selected__UeName = "Set Selected";
+        static constexpr const char* Update_State__UeName = "Update State";
+        static constexpr const char* On_Ammo_Count_Changed__UeName = "On Ammo Count Changed";
+        static constexpr const char* Set_Sentry_Home__UeName = "Set Sentry Home";
+        static constexpr const char* Set_Sentry__UeName = "Set Sentry";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

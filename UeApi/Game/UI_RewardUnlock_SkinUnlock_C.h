@@ -28,7 +28,7 @@ public:
     using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CelebrateAnim;
+    UE_READONLY class UWidgetAnimation* CelebrateAnim;
     class UImage* CategoryIcon;
     class USizeBox* CategorySizer;
     class UOverlay* IconOverlay;

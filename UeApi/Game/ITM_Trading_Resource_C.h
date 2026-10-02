@@ -26,7 +26,7 @@ public:
     using Basic_BG_CutCorner_W_Image_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;
     using ITM_Trading_BasketItem_C = Game::UI::Menu_Trading::ITM_Trading_BasketItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* GradiantFadeIn;
+    UE_READONLY class UWidgetAnimation* GradiantFadeIn;
     class UButton* B_Add;
     class UButton* B_Subtract;
     Basic_BG_CutCorner_W_Image_C* Basic_BG_CutCorner_W_Image;

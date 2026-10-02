@@ -21,18 +21,22 @@ class BP_Azure_MagicCrystal_A_C : public Game::Landscape::Biomes::Biomes_Ingame:
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicCrystals/BP_Azure_MagicCrystal_A", "BP_Azure_MagicCrystal_A_C");
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "918ae52d7352fc48b43da4ef3def4ea7";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "bda242d31f3ba4458aaab70123a28a88";
     class UAudioComponent* Idle_Sound;
-    static constexpr const char* Idle_Sound__UeName = "Idle Sound";
-    static constexpr const char* Idle_Sound__UeScsNode = "868fd9e1abd3df438d6970cd5c369543";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "cbb7ff0824af5248a79455db25f02e2b";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_Floor;
-    static constexpr const char* LevelGenerationCarver_Floor__UeScsNode = "3289483e5ebe4148843994c2c1aa335f";
     class UParticleSystemComponent* P_Biome_Azure_MagicCrystal_Sparks;
-    static constexpr const char* P_Biome_Azure_MagicCrystal_Sparks__UeScsNode = "b45df26745783541aaf50cdedf289b33";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "918ae52d7352fc48b43da4ef3def4ea7";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "bda242d31f3ba4458aaab70123a28a88";
+        static constexpr const char* Idle_Sound__UeName = "Idle Sound";
+        static constexpr const char* Idle_Sound__UeScsNode = "868fd9e1abd3df438d6970cd5c369543";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "cbb7ff0824af5248a79455db25f02e2b";
+        static constexpr const char* LevelGenerationCarver_Floor__UeScsNode = "3289483e5ebe4148843994c2c1aa335f";
+        static constexpr const char* P_Biome_Azure_MagicCrystal_Sparks__UeScsNode = "b45df26745783541aaf50cdedf289b33";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals

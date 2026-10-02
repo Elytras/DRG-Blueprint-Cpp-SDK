@@ -24,7 +24,7 @@ public:
     using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BGglow;
+    UE_READONLY class UWidgetAnimation* BGglow;
     class UBorder* Border_3;
     class UImage* I_Background;
     class UImage* I_Gradient;

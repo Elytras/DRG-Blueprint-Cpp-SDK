@@ -17,9 +17,13 @@ class ESI_Jelly_Passive_Mother_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/JellyPlatform/ESI_Jelly_Passive_Mother", "ESI_Jelly_Passive_Mother_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "f50f53184ef3e04a89785fe32377b423";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "49786cb9e999104faa5fff4d3d632be3";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "f50f53184ef3e04a89785fe32377b423";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "49786cb9e999104faa5fff4d3d632be3";
+    };
 };
 
 }}}   // namespace Game::Critters::JellyPlatform

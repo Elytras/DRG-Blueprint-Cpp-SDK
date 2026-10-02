@@ -17,7 +17,7 @@ class BP_Ping_Widget_C : public UUserWidget
 public:
     UE_CLASS("/Game/Maps/UILevels/Assets/HUD/BP_Ping_Widget", "BP_Ping_Widget_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Ping;
     void ExecuteUbergraph_BP_Ping_Widget(int EntryPoint);
     UE_COSMETIC void Construct();
 };

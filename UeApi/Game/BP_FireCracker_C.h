@@ -25,27 +25,18 @@ class BP_FireCracker_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_LunarFestival/Blueprints/BP_FireCracker", "BP_FireCracker_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* FSDAudio1;
-    static constexpr const char* FSDAudio1__UeScsNode = "ce5283ab07527646a81f078dcaf52b69";
     class UFSDAudioComponent* FSDAudio;
-    static constexpr const char* FSDAudio__UeScsNode = "3f4b6091cd8f584baf1e30ee0973ce86";
     class USplineComponent* Spline;
-    static constexpr const char* Spline__UeScsNode = "aa626a70477fed42831bfff2f74ce1fb";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "6f8f6e61ddbe6c4eab7b4f89359de722";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
     float ImpulseStrength;
     FName ImpulseSocketName;
     float InitialAngularVelocityScale;
     float FuseTimer;
-    static constexpr const char* FuseTimer__Replicated = ":";
     float FuseTime;
-    static constexpr const char* FuseTime__Replicated = ":";
     FVector LocalExplosionDirection;
     bool CanPlayImpactSound;
     void ExecuteUbergraph_BP_FireCracker(int EntryPoint);
@@ -61,6 +52,19 @@ public:
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* FSDAudio1__UeScsNode = "ce5283ab07527646a81f078dcaf52b69";
+        static constexpr const char* FSDAudio__UeScsNode = "3f4b6091cd8f584baf1e30ee0973ce86";
+        static constexpr const char* Spline__UeScsNode = "aa626a70477fed42831bfff2f74ce1fb";
+        static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";
+        static constexpr const char* Niagara__UeScsNode = "6f8f6e61ddbe6c4eab7b4f89359de722";
+        static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
+        static constexpr const char* FuseTimer__Replicated = ":";
+        static constexpr const char* FuseTime__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints

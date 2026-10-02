@@ -23,25 +23,16 @@ class PRJ_Spider_Boss_Twin_Mine_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/PRJ_Spider_Boss_Twin_Mine", "PRJ_Spider_Boss_Twin_Mine_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Twins_Mine_Trail;
-    static constexpr const char* P_Twins_Mine_Trail__UeScsNode = "7e985f3471d19c43a1bd4a68e8ca2bd3";
     class UAudioComponent* Twin_B_ProjectileBarrage_Cue;
-    static constexpr const char* Twin_B_ProjectileBarrage_Cue__UeScsNode = "c9df350ec456204792fcad2e4a1014b2";
     class UStaticMeshComponent* Mesh_Range_hidden;
-    static constexpr const char* Mesh_Range_hidden__UeScsNode = "c67cd946bcdb674f889d4b9582cac845";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "22bed248e3803a43b0d23fa788b9e81a";
     class UFirstPersonStaticMeshComponent* ProjectileMesh;
-    static constexpr const char* ProjectileMesh__UeScsNode = "928b3560c2cfeb478a9ea2938c252564";
     class UPointLightComponent* AreaLight;
-    static constexpr const char* AreaLight__UeScsNode = "6b61af4e537f854a89d1f74f198f68a8";
     TMulticastInlineDelegate<void()> NewEventDispatcher_0_0;
     bool HasExploded;
-    static constexpr const char* HasExploded__Replicated = "OnRep_HasExploded:";
     class UParticleSystem* Explosion_Particles;
-    static constexpr const char* Explosion_Particles__UeName = "Explosion Particles";
     class USoundBase* ExplosionSound;
     float TimeToExplode;
     class USoundBase* ImpactSound;
@@ -51,6 +42,19 @@ public:
     void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_HasExploded();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* P_Twins_Mine_Trail__UeScsNode = "7e985f3471d19c43a1bd4a68e8ca2bd3";
+        static constexpr const char* Twin_B_ProjectileBarrage_Cue__UeScsNode = "c9df350ec456204792fcad2e4a1014b2";
+        static constexpr const char* Mesh_Range_hidden__UeScsNode = "c67cd946bcdb674f889d4b9582cac845";
+        static constexpr const char* Damage__UeScsNode = "22bed248e3803a43b0d23fa788b9e81a";
+        static constexpr const char* ProjectileMesh__UeScsNode = "928b3560c2cfeb478a9ea2938c252564";
+        static constexpr const char* AreaLight__UeScsNode = "6b61af4e537f854a89d1f74f198f68a8";
+        static constexpr const char* HasExploded__Replicated = "OnRep_HasExploded:";
+        static constexpr const char* Explosion_Particles__UeName = "Explosion Particles";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

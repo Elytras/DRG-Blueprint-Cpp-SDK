@@ -18,12 +18,9 @@ class BP_RockCracker_StartPoint_C : public AFuelLineStart
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RockCrackerBuilder/BP_RockCracker_StartPoint", "BP_RockCracker_StartPoint_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineStartUsable UsableStartFuelLine;/Script/FSD.OutlineComponent OutlineComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* WidgetStartFuelLine;
-    static constexpr const char* WidgetStartFuelLine__UeScsNode = "2c5c0ce09877cf4b8677114be090f924";
     class UBoxComponent* UsableCollider;
-    static constexpr const char* UsableCollider__UeScsNode = "980f75c1b349984b8bd765b2dcfee42b";
     TArray<class UMaterialInterface*> DefaultMaterials;
     void ExecuteUbergraph_BP_RockCracker_StartPoint(int EntryPoint);
     void PodLanded();
@@ -32,6 +29,13 @@ public:
     void UserConstructionScript();
     void UpdateState();
     void SetMaterial(FName InSlotName, class UMaterialInterface* InMaterial);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineStartUsable UsableStartFuelLine;/Script/FSD.OutlineComponent OutlineComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* WidgetStartFuelLine__UeScsNode = "2c5c0ce09877cf4b8677114be090f924";
+        static constexpr const char* UsableCollider__UeScsNode = "980f75c1b349984b8bd765b2dcfee42b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder

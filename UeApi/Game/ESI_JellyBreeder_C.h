@@ -17,9 +17,13 @@ class ESI_JellyBreeder_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Jelly_Breeder/ESI_JellyBreeder", "ESI_JellyBreeder_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "1e53657765c41149834ba5925a4d2664";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "931ddd96673e0e428b27f690758eea20";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "1e53657765c41149834ba5925a4d2664";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "931ddd96673e0e428b27f690758eea20";
+    };
 };
 
 }}}   // namespace Game::Enemies::Jelly_Breeder

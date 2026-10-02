@@ -24,8 +24,8 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_Rewards_Selector", "UI_Forge_Rewards_Selector_C");
     using UI_Forge_Rewards_SelectorItem_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_SelectorItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPing;
-    class UWidgetAnimation* AnimBeginSelection;
+    UE_READONLY class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimBeginSelection;
     class UBackgroundBlur* FadeBlur;
     UI_Forge_Rewards_SelectorItem_C* Item_Left;
     UI_Forge_Rewards_SelectorItem_C* Item_Right;
@@ -46,10 +46,14 @@ public:
     void OnClicked(class USchematic* InSchematic);
     UE_COSMETIC void Construct();
     void Begin_Pick_Reward(int InLevel, int InSeed);
-    static constexpr const char* Begin_Pick_Reward__UeName = "Begin Pick Reward";
     void PopRandomReward(const TMap<class UPlayerCharacterID*, class USchematic*>& Rewards, FRandomStream Random, class UPlayerCharacterID*& OutCharacter, class USchematic*& OutReward);
     void EndPickReward(class USchematic* InReward);
     void Reset();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Begin_Pick_Reward__UeName = "Begin Pick Reward";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

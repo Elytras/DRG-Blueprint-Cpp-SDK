@@ -21,13 +21,17 @@ public:
     float Health;
     class USkeletalMeshComponent* EyeMesh;
     bool IsAlive;
-    static constexpr const char* IsAlive__Replicated = "OnRep_IsAlive:";
     void ExecuteUbergraph_BP_SpawnerEyeComponent(int EntryPoint);
     void ReceiveBeginPlay();
     void SetMeshAndCollider(class UPrimitiveComponent* collider, class USkeletalMeshComponent* Mesh, int PartOfTotalHealth, float SpawnerHealth);
     void TakeDamage(float Damage, bool& Died);
     void IsEyeThatWasHit(class UPrimitiveComponent* EyeCollider_0, bool& WasHit);
     void OnRep_IsAlive();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* IsAlive__Replicated = "OnRep_IsAlive:";
+    };
 };
 
 }}}   // namespace Game::Enemies::EnemySpawner

@@ -19,20 +19,24 @@ class PRJ_Rockpox_PlagueGlob_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PRJ_Rockpox_PlagueGlob", "PRJ_Rockpox_PlagueGlob_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Plague_Projectile_Trail;
-    static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "2fba38529e487f4da9e40d18d36ac90f";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "f8f1718bb260e946903a5ffb53f1206a";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2f81d7141a3abe46837ba8cdf3c7752a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     void ExecuteUbergraph_PRJ_Rockpox_PlagueGlob(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "2fba38529e487f4da9e40d18d36ac90f";
+        static constexpr const char* StaticMesh__UeScsNode = "f8f1718bb260e946903a5ffb53f1206a";
+        static constexpr const char* Damage__UeScsNode = "2f81d7141a3abe46837ba8cdf3c7752a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

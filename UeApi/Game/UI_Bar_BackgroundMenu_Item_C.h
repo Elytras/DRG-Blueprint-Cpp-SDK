@@ -24,12 +24,16 @@ public:
     class UImage* ImgIcon;
     class UTextBlock* LabelName;
     UI_Bar_DrinkCost_C* UI_Bar_DrinkCost;
-    class UDrinkableDataAsset* Drinkable;
+    UE_READONLY class UDrinkableDataAsset* Drinkable;
     void ExecuteUbergraph_UI_Bar_BackgroundMenu_Item(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Drinkable_shown_price();
-    static constexpr const char* Set_Drinkable_shown_price__UeName = "Set Drinkable shown price";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Drinkable_shown_price__UeName = "Set Drinkable shown price";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

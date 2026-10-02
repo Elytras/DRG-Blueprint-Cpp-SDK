@@ -19,18 +19,22 @@ class PRJ_Spider_RapidShooter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/RapidShooter/PRJ_Spider_RapidShooter", "PRJ_Spider_RapidShooter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "7cdfce11aa2ff5439618ab6d963d8da5";
     class UStaticMeshComponent* SK_ShootingPlant_Projectile;
-    static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "c2f15b3f511d3f4fb5c5ddef7916373b";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     void ExecuteUbergraph_PRJ_Spider_RapidShooter(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "7cdfce11aa2ff5439618ab6d963d8da5";
+        static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "c2f15b3f511d3f4fb5c5ddef7916373b";
+        static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::RapidShooter

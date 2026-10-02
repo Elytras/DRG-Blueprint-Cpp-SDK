@@ -15,7 +15,7 @@ class OBJ_2nd_KillFleas_C : public UKillEnemiesObjective
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/OBJ_2nd_KillFleas", "OBJ_2nd_KillFleas_C");
-    FText MissionText;
+    UE_READONLY FText MissionText;
     FText GetObjectiveDescription(float missionLength);
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
@@ -23,6 +23,11 @@ public:
     FObjectiveMissionIcon GetMissionIcon() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0";
+    };
 };
 
 }}}   // namespace Game::GameElements::Objectives

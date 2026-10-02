@@ -13,7 +13,11 @@ class PRJ_ZipLineGun_Safe_C : public Game::WeaponsNTools::ZipLineGun::PRJ_ZipLin
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/PRJ_ZipLineGun_Safe", "PRJ_ZipLineGun_Safe_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.TimelineComponent LightTimeLine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.TimelineComponent LightTimeLine";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

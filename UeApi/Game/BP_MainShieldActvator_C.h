@@ -27,28 +27,17 @@ public:
     using BP_ShieldBattery_C = Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "6d2d37c6ad311e499bcfa75f5b860501";
     class UStaticMeshComponent* Light;
-    static constexpr const char* Light__UeScsNode = "582a13e5377e9c46b84fbf92352763b9";
     class UStaticMeshComponent* Tube;
-    static constexpr const char* Tube__UeScsNode = "bdaa27f61a3e6d4ebde9aa3548244805";
     class UStaticMeshComponent* Box;
-    static constexpr const char* Box__UeScsNode = "d1a3f2d3fe94c149913696e341489259";
     class UArrowComponent* BarrelDirection;
-    static constexpr const char* BarrelDirection__UeScsNode = "bbcb2d318fa1e6478251b89f1192506e";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "a79a69400a5694479f550d0d399f21b6";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "27a213207bfe9749bdc3cd141e15004e";
     class USingleUsableComponent* SingleUsable;
-    static constexpr const char* SingleUsable__UeScsNode = "464fd67658e03f47b79e5b2094be9aae";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d2007d47d803dd4ab9105ebddbba9eb3";
     TMulticastInlineDelegate<void()> Activated;
     float Launch_force;
-    static constexpr const char* Launch_force__UeName = "Launch force";
     BP_ShieldBattery_C* SpawnedBattery;
-    static constexpr const char* SpawnedBattery__Replicated = "OnRep_SpawnedBattery:";
     class UMaterialInstanceDynamic* Mid;
     float LightIntensity;
     void ExecuteUbergraph_BP_MainShieldActvator(int EntryPoint);
@@ -56,6 +45,21 @@ public:
     void UserConstructionScript();
     void OnRep_SpawnedBattery();
     void Expose();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "6d2d37c6ad311e499bcfa75f5b860501";
+        static constexpr const char* Light__UeScsNode = "582a13e5377e9c46b84fbf92352763b9";
+        static constexpr const char* Tube__UeScsNode = "bdaa27f61a3e6d4ebde9aa3548244805";
+        static constexpr const char* Box__UeScsNode = "d1a3f2d3fe94c149913696e341489259";
+        static constexpr const char* BarrelDirection__UeScsNode = "bbcb2d318fa1e6478251b89f1192506e";
+        static constexpr const char* Capsule__UeScsNode = "a79a69400a5694479f550d0d399f21b6";
+        static constexpr const char* StaticMesh__UeScsNode = "27a213207bfe9749bdc3cd141e15004e";
+        static constexpr const char* SingleUsable__UeScsNode = "464fd67658e03f47b79e5b2094be9aae";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d2007d47d803dd4ab9105ebddbba9eb3";
+        static constexpr const char* Launch_force__UeName = "Launch force";
+        static constexpr const char* SpawnedBattery__Replicated = "OnRep_SpawnedBattery:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::ShieldGenerator

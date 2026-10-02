@@ -22,7 +22,7 @@ class HUD_Cro_GooCannon_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_Cro_GooCannon", "HUD_Cro_GooCannon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CA_Left1;
     class UImage* CA_Left2;
     class UImage* CA_Left3;

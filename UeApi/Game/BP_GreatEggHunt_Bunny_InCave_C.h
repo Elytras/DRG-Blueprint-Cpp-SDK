@@ -31,36 +31,21 @@ class BP_GreatEggHunt_Bunny_InCave_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Easter/BP_GreatEggHunt_Bunny_InCave", "BP_GreatEggHunt_Bunny_InCave_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* BunnyAlarmedEnd;
-    static constexpr const char* BunnyAlarmedEnd__UeScsNode = "0519dc79faf4f34d95059f8108175046";
     class UAudioComponent* BunnyScaredStart;
-    static constexpr const char* BunnyScaredStart__UeScsNode = "f72e77984623454d9aef1937df9efee0";
     class UFSDAudioComponent* BunnyIdle;
-    static constexpr const char* BunnyIdle__UeScsNode = "58be66b6b5a15d4ca9c9fac320a82295";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "fcc24a2122b74c498bab3f2bc16915c9";
     class UNiagaraComponent* NS_Bunny_Trail;
-    static constexpr const char* NS_Bunny_Trail__UeScsNode = "330949c608127a449e2039add3822c35";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "befbdc5ebbe6894dae84eb1da1f1865f";
     class USceneComponent* NisseSpawnPoint;
-    static constexpr const char* NisseSpawnPoint__UeScsNode = "17a79de8475f664eaf00613651334485";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "b42860c161a99045bb0a8d720e98a8b2";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "88c1007bffcf5941bfc0e78686d191ea";
     class UPathfinderReactiveTerrainTrackerComponent* PathfinderReactiveTerrainTracker;
-    static constexpr const char* PathfinderReactiveTerrainTracker__UeScsNode = "b3691f16709951448bb7b0c71e6fa3cd";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "4e900e5792390f4aa5f864d129a2c7b1";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "805905c5e7044f49bc54ae3031465961";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "f0836d40a4f3da4cb92bfeeecc436bff";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "b964a996c82dba4b9f44ad3068875ee0";
     FTimerHandle RunTimer;
     float RunSpeedMod;
     void ExecuteUbergraph_BP_GreatEggHunt_Bunny_InCave(int EntryPoint);
@@ -71,6 +56,25 @@ public:
     void TimerElapsed();
     void ResetRunTimer();
     void BndEvt__BP_Nisse_PawnSensing_K2Node_ComponentBoundEvent_1_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* BunnyAlarmedEnd__UeScsNode = "0519dc79faf4f34d95059f8108175046";
+        static constexpr const char* BunnyScaredStart__UeScsNode = "f72e77984623454d9aef1937df9efee0";
+        static constexpr const char* BunnyIdle__UeScsNode = "58be66b6b5a15d4ca9c9fac320a82295";
+        static constexpr const char* PointLight1__UeScsNode = "fcc24a2122b74c498bab3f2bc16915c9";
+        static constexpr const char* NS_Bunny_Trail__UeScsNode = "330949c608127a449e2039add3822c35";
+        static constexpr const char* Trail__UeScsNode = "befbdc5ebbe6894dae84eb1da1f1865f";
+        static constexpr const char* NisseSpawnPoint__UeScsNode = "17a79de8475f664eaf00613651334485";
+        static constexpr const char* DropShadow__UeScsNode = "b42860c161a99045bb0a8d720e98a8b2";
+        static constexpr const char* Capsule__UeScsNode = "88c1007bffcf5941bfc0e78686d191ea";
+        static constexpr const char* PathfinderReactiveTerrainTracker__UeScsNode = "b3691f16709951448bb7b0c71e6fa3cd";
+        static constexpr const char* enemy__UeScsNode = "4e900e5792390f4aa5f864d129a2c7b1";
+        static constexpr const char* PawnSensing__UeScsNode = "805905c5e7044f49bc54ae3031465961";
+        static constexpr const char* outline__UeScsNode = "f0836d40a4f3da4cb92bfeeecc436bff";
+        static constexpr const char* PawnStats__UeScsNode = "b964a996c82dba4b9f44ad3068875ee0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Holidays::Easter

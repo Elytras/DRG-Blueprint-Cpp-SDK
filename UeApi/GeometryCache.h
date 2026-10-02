@@ -32,8 +32,8 @@ public:
     UE_CLASS("/Script/GeometryCache", "GeometryCache");
     TArray<class UMaterialInterface*> Materials;
     TArray<class UGeometryCacheTrack*> Tracks;
-    int StartFrame;
-    int EndFrame;
+    UE_READONLY int StartFrame;
+    UE_READONLY int EndFrame;
     uint64 Hash;
 };
 
@@ -41,10 +41,14 @@ class AGeometryCacheActor : public AActor
 {
 public:
     UE_CLASS("/Script/GeometryCache", "GeometryCacheActor");
-    class UGeometryCacheComponent* GeometryCacheComponent;
-    static constexpr const char* GeometryCacheComponent__UeSubobject = "GeometryCacheComponent /Script/GeometryCache.GeometryCacheComponent";
-    static constexpr const char* RootComponent__UeSubobject = "GeometryCacheComponent /Script/GeometryCache.GeometryCacheComponent";
+    UE_READONLY class UGeometryCacheComponent* GeometryCacheComponent;
     UE_PURE class UGeometryCacheComponent* GetGeometryCacheComponent() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GeometryCacheComponent__UeSubobject = "GeometryCacheComponent /Script/GeometryCache.GeometryCacheComponent";
+        static constexpr const char* RootComponent__UeSubobject = "GeometryCacheComponent /Script/GeometryCache.GeometryCacheComponent";
+    };
 };
 
 class UGeometryCacheCodecBase : public UObject
@@ -71,7 +75,7 @@ class UGeometryCacheComponent : public UMeshComponent
 {
 public:
     UE_CLASS("/Script/GeometryCache", "GeometryCacheComponent");
-    class UGeometryCache* GeometryCache;
+    UE_READONLY class UGeometryCache* GeometryCache;
     bool bRunning;
     bool bLooping;
     bool bExtrapolateFrames;
@@ -80,7 +84,7 @@ public:
     float MotionVectorScale;
     int NumTracks;
     float ElapsedTime;
-    float Duration;
+    UE_READONLY float Duration;
     bool bManualTick;
     void Pause();
     void Play();

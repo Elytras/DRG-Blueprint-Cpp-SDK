@@ -24,11 +24,15 @@ public:
     class UImage* FloraImage;
     class USizeBox* SizeBox_17;
     FText Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     FText Description;
     void ExecuteUbergraph_Lore_Content_Itm_Flora(int EntryPoint);
     void SetData(FText Param_Name_0, FText Description_0, class UTexture2D* Texture, FGuid ObjectID);
     UE_PURE class UWidget* GetToolTipWidget_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

@@ -14,11 +14,15 @@ class AIC_MiniMule_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/AIC_MiniMule", "AIC_MiniMule_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_MiniMule(int EntryPoint);
     void CustomEvent_0();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

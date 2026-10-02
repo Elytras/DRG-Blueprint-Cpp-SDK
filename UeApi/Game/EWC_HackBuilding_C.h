@@ -22,9 +22,7 @@ class EWC_HackBuilding_C : public Game::Enemies::Waves::WaveControllers::EWC_Bas
 public:
     UE_CLASS("/Game/GameElements/Objectives/HackBuilding/EWC_HackBuilding", "EWC_HackBuilding_C");
     using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame_EWC_HackBuilding_C;
-    static constexpr const char* UberGraphFrame_EWC_HackBuilding_C__UeName = "UberGraphFrame";
     BP_Facility_PowerStation_GeneratorBase_C* FromGenerator;
     FVector WaveOrigin;
     class UTetherComponent* origintether;
@@ -37,10 +35,16 @@ public:
     void OnWaveCompleted();
     UE_PURE class UEnemyWaveManager* GetWaveManager();
     UE_PURE FVector Get_Refinery_Location();
-    static constexpr const char* Get_Refinery_Location__UeName = "Get Refinery Location";
     void GetRandomPlayer(class APlayerCharacter*& NewParam, bool& PlayerFound);
     void SetWaveOrigin(BP_Facility_PowerStation_GeneratorBase_C* Generator_0, class UTetherComponent* tetherstart);
     void SpawnWave(float Difficulty, bool IsConstantPressure);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+        static constexpr const char* UberGraphFrame_EWC_HackBuilding_C__UeName = "UberGraphFrame";
+        static constexpr const char* Get_Refinery_Location__UeName = "Get Refinery Location";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::HackBuilding

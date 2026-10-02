@@ -42,9 +42,7 @@ public:
     using Popup_GearUpgrade_Buy_C = Game::UI::CharacterSelectionMK2::Popup_GearUpgrade_Buy_C;
     using SCREEN_CharacterSelection_Clean_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Clean_C;
     using WND_AssignmentMissionComplete_C = Game::UI::HUD_SpaceRig::CampaignNotifications::WND_AssignmentMissionComplete_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerController_SpaceRig_C;
-    static constexpr const char* UberGraphFrame_BP_PlayerController_SpaceRig_C__UeName = "UberGraphFrame";
     class UWindowWidget* ServerBrowser;
     MENU_Loadout_C* Loadout;
     class UEscapeMenuWindow* options;
@@ -73,18 +71,14 @@ public:
     bool EscapeMenuEnabled;
     class UWindowWidget* Bosco;
     int Medbay_speech_counter;
-    static constexpr const char* Medbay_speech_counter__UeName = "Medbay speech counter";
     float Time_between_shouts;
-    static constexpr const char* Time_between_shouts__UeName = "Time between shouts";
     int MixerConfettiTime;
     FScaledEffect MixerConfetti;
     class UFSDAchievement* SelfControlAchievement;
     bool HasKickedABarrel;
-    static constexpr const char* HasKickedABarrel__Replicated = ":";
     class UFSDAchievement* MugInHoopAchievement;
     class UFSDAchievement* DiscJockeyAchievement;
     bool CanUseInstantUsableDiscord;
-    static constexpr const char* CanUseInstantUsableDiscord__Replicated = ":";
     class UWindowWidget* DeepDives;
     TArray<FSoftObjectPath> UIToAsyncLoad;
     TMulticastInlineDelegate<void()> OnOpenedEscapeMenu;
@@ -100,7 +94,6 @@ public:
     void OnCharacterSelected();
     void Back_Event_0();
     void Setup_Jukebox_Sound_Mix();
-    static constexpr const char* Setup_Jukebox_Sound_Mix__UeName = "Setup Jukebox Sound Mix";
     void OpenStandaloneMinersManualPage(TEnum<EMinersManualSinglePage> page);
     void OpenStandaloneMinersManual(TEnum<EMinersManualSection> Section, const FGuid& ID);
     void ShowEscapeMenu();
@@ -111,15 +104,12 @@ public:
     void ShowForgeWorkshop();
     void ShowCharacterSelectionBackground(bool resetToDefaultWeapon, TEnum<ECharselectionCameraLocation> cameraLocation);
     void On_Prompt(bool Yes);
-    static constexpr const char* On_Prompt__UeName = "On Prompt";
     void PromptLaunchTutorial();
     void LaunchTutorial();
     void ShowLookAtConsole();
     UE_SERVER UE_RELIABLE void Server_PopLooatAtAffliction();
     UE_CLIENT void Reset_Player_Scale_On_Clients();
-    static constexpr const char* Reset_Player_Scale_On_Clients__UeName = "Reset Player Scale On Clients";
     UE_SERVER void Reset_Player_Location();
-    static constexpr const char* Reset_Player_Location__UeName = "Reset Player Location";
     void SetIsEscapeMenuEnabled(bool IsEscapeMenuEnabled);
     void SetHasShownCharacterSelector(bool HasShown);
     UE_CLIENT UE_RELIABLE void OpenSpacerigConsole(BP_BaseSpaceRigConsole_C* Console);
@@ -134,7 +124,6 @@ public:
     void ShowItemUpgradeScreen(class UClass* CharacterClass, class UClass* itemClass, TEnum<EItemCategory> ItemCategory);
     UE_CLIENT UE_RELIABLE void ShowJobs();
     UE_CLIENT UE_RELIABLE void Deduct_Credits_On_Client(int amount);
-    static constexpr const char* Deduct_Credits_On_Client__UeName = "Deduct Credits On Client";
     UE_SERVER UE_RELIABLE void OrderBarRound(class ASpaceRigBar* Bar, class UDrinkableDataAsset* Drink);
     void OnRoundSelected_Event(class ASpaceRigBar* Bar, class UDrinkableDataAsset* RequestedDrink);
     UE_CLIENT void ShowBarMenu(class ASpaceRigBar* Bar);
@@ -172,7 +161,6 @@ public:
     void OnFailure_84F86EB44BDC03B3D4D52D92FC0B069A();
     void OnLoaded_0C1A95084D16C934A469CF8C3B445101(TSubclassOf<class UObject> Loaded);
     void InpActEvt_Ctrl_Alt_H_K2Node_InputKeyEvent_1(FKey Key);
-    static constexpr const char* InpActEvt_Ctrl_Alt_H_K2Node_InputKeyEvent_1__UeName = "InpActEvt_Ctrl+Alt_H_K2Node_InputKeyEvent_1";
     void InpActEvt_Nine_K2Node_InputKeyEvent_2(FKey Key);
     void InpActEvt_Nine_K2Node_InputKeyEvent_3(FKey Key);
     void InpActEvt_Eight_K2Node_InputKeyEvent_4(FKey Key);
@@ -195,10 +183,26 @@ public:
     void GetPopupCrafting(class UWindowWidget*& Widget);
     void GetMissionSelect(class UWindowWidget*& Widget);
     void Change_Savegame();
-    static constexpr const char* Change_Savegame__UeName = "Change Savegame";
     void ModdedSavegameCheck();
     void ResetCheats();
     UE_PURE class UEscapeMenuWindow* GetEscapeMenu() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* UberGraphFrame_BP_PlayerController_SpaceRig_C__UeName = "UberGraphFrame";
+        static constexpr const char* Medbay_speech_counter__UeName = "Medbay speech counter";
+        static constexpr const char* Time_between_shouts__UeName = "Time between shouts";
+        static constexpr const char* HasKickedABarrel__Replicated = ":";
+        static constexpr const char* CanUseInstantUsableDiscord__Replicated = ":";
+        static constexpr const char* Setup_Jukebox_Sound_Mix__UeName = "Setup Jukebox Sound Mix";
+        static constexpr const char* On_Prompt__UeName = "On Prompt";
+        static constexpr const char* Reset_Player_Scale_On_Clients__UeName = "Reset Player Scale On Clients";
+        static constexpr const char* Reset_Player_Location__UeName = "Reset Player Location";
+        static constexpr const char* Deduct_Credits_On_Client__UeName = "Deduct Credits On Client";
+        static constexpr const char* InpActEvt_Ctrl_Alt_H_K2Node_InputKeyEvent_1__UeName = "InpActEvt_Ctrl+Alt_H_K2Node_InputKeyEvent_1";
+        static constexpr const char* Change_Savegame__UeName = "Change Savegame";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

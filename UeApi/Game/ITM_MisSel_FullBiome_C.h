@@ -32,7 +32,6 @@ public:
     class UBiome* Biome;
     ITM_MisSel_BiomeBase_C* BiomeMapWidget;
     bool Is_In_Season_Event_Zone;
-    static constexpr const char* Is_In_Season_Event_Zone__UeName = "Is In Season Event Zone";
     void ExecuteUbergraph_ITM_MisSel_FullBiome(int EntryPoint);
     void SetData(const TArray<class UGeneratedMission*>& missions, class UBiome* Biome_0);
     UE_COSMETIC void Construct();
@@ -41,6 +40,11 @@ public:
     void GetRandomFreeMissionSlot(ITM_MisSel_MissionMapIcon_C*& Output);
     void UpdateMapPan(FVector2D InPosition);
     void HighlightMissions(TArray<class UObject*>& AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_In_Season_Event_Zone__UeName = "Is In Season Event Zone";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

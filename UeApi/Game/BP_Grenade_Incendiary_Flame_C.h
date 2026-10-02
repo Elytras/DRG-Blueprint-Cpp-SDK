@@ -19,18 +19,22 @@ class BP_Grenade_Incendiary_Flame_C : public AStickyFlame
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Incendiary/BP_Grenade_Incendiary_Flame", "BP_Grenade_Incendiary_Flame_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UObjectTemperatureComponent* ObjectTemperature;
-    static constexpr const char* ObjectTemperature__UeScsNode = "204f0a3f18e0c44f898056cce696ce79";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "9498ad0919e03841b21e1f3d3ff35927";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bf356c6b9f8ec04cb84b4cb2d380ad70";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "0df676c2d90b82428e8afaf2fe6bc287";
     void ExecuteUbergraph_BP_Grenade_Incendiary_Flame(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
+        static constexpr const char* ObjectTemperature__UeScsNode = "204f0a3f18e0c44f898056cce696ce79";
+        static constexpr const char* PathfinderCollision__UeScsNode = "9498ad0919e03841b21e1f3d3ff35927";
+        static constexpr const char* Sphere__UeScsNode = "bf356c6b9f8ec04cb84b4cb2d380ad70";
+        static constexpr const char* PointLight__UeScsNode = "0df676c2d90b82428e8afaf2fe6bc287";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Incendiary

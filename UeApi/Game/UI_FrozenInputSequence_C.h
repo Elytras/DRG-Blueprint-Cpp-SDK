@@ -22,7 +22,6 @@ public:
     class UHorizontalBox* HorizontalBox_41;
     TArray<UI_FrozenInputDirectionIcon_C*> DirectionalArrows;
     int Array_Index;
-    static constexpr const char* Array_Index__UeName = "Array Index";
     int UsedIndex;
     TArray<EThawInputDirection> Sequence;
     void ExecuteUbergraph_UI_FrozenInputSequence(int EntryPoint);
@@ -31,6 +30,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void SetupSequence(const TArray<EThawInputDirection>& Sequence_0, bool First);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Array_Index__UeName = "Array Index";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

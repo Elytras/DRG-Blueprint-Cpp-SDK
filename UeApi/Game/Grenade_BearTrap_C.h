@@ -26,29 +26,17 @@ class Grenade_BearTrap_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Bas
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BearTrap/Grenade_BearTrap", "Grenade_BearTrap_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_BearTrap_C;
-    static constexpr const char* UberGraphFrame_Grenade_BearTrap_C__UeName = "UberGraphFrame";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "196b00f0477b244d879e34f3ffa0ba4a";
     class USingleUsableComponent* SingleUsable;
-    static constexpr const char* SingleUsable__UeScsNode = "db1a6912420fe34b89c1c19c6545f4b4";
     class UStaticMeshComponent* StaticMesh2;
-    static constexpr const char* StaticMesh2__UeScsNode = "732d0506b7fc7e479375f8af8be76717";
     class USceneComponent* Scene1;
-    static constexpr const char* Scene1__UeScsNode = "a1360083bce2b842bfef5aaaa549ec39";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "95e8f3ed36a92f479f711fe193638745";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "919aeb5011ee6a478eb3522edae6b09a";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "7daf101474361c43b0ddf1b461fa25d2";
     class UBoxComponent* SnapCollision;
-    static constexpr const char* SnapCollision__UeScsNode = "be15dd1facaacf47ad77dcdfaba84b48";
     bool Stuck;
-    static constexpr const char* Stuck__Replicated = "OnRep_Stick:";
     bool Snapped;
-    static constexpr const char* Snapped__Replicated = "OnRep_Snapped:";
     float SnappedTimer;
     bool EverSnapped;
     void ExecuteUbergraph_Grenade_BearTrap(int EntryPoint);
@@ -63,6 +51,22 @@ public:
     void SetFixedOrientation();
     void HandleSnapAnimation(float DeltaTime);
     void SetSnapProgress(float Progress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_BearTrap_C__UeName = "UberGraphFrame";
+        static constexpr const char* UseSphere__UeScsNode = "196b00f0477b244d879e34f3ffa0ba4a";
+        static constexpr const char* SingleUsable__UeScsNode = "db1a6912420fe34b89c1c19c6545f4b4";
+        static constexpr const char* StaticMesh2__UeScsNode = "732d0506b7fc7e479375f8af8be76717";
+        static constexpr const char* Scene1__UeScsNode = "a1360083bce2b842bfef5aaaa549ec39";
+        static constexpr const char* StaticMesh1__UeScsNode = "95e8f3ed36a92f479f711fe193638745";
+        static constexpr const char* Scene__UeScsNode = "919aeb5011ee6a478eb3522edae6b09a";
+        static constexpr const char* Damage__UeScsNode = "7daf101474361c43b0ddf1b461fa25d2";
+        static constexpr const char* SnapCollision__UeScsNode = "be15dd1facaacf47ad77dcdfaba84b48";
+        static constexpr const char* Stuck__Replicated = "OnRep_Stick:";
+        static constexpr const char* Snapped__Replicated = "OnRep_Snapped:";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BearTrap

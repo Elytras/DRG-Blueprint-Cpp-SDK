@@ -26,7 +26,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Resources/HUD_Resources_Team", "HUD_Resources_Team_C");
     using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Transition;
+    UE_READONLY class UWidgetAnimation* Transition;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UVerticalBox* IconParentBottom;
     class UVerticalBox* IconParentTop;
@@ -46,16 +46,20 @@ public:
     void OnDepositingEnd_Event(class UResourceBank* ResourceBank);
     void OnTransitionFinished();
     void Ping_Widget();
-    static constexpr const char* Ping_Widget__UeName = "Ping Widget";
     void Hide_Widget();
-    static constexpr const char* Hide_Widget__UeName = "Hide Widget";
     void Show_Widget();
-    static constexpr const char* Show_Widget__UeName = "Show Widget";
     void Add_Resource(class UCappedResource* Resource);
-    static constexpr const char* Add_Resource__UeName = "Add Resource";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void IsObjectiveResource(class UCappedResource* InResource, bool& IsObjective, class UCappedResource*& OutResource);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Ping_Widget__UeName = "Ping Widget";
+        static constexpr const char* Hide_Widget__UeName = "Hide Widget";
+        static constexpr const char* Show_Widget__UeName = "Show Widget";
+        static constexpr const char* Add_Resource__UeName = "Add Resource";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources

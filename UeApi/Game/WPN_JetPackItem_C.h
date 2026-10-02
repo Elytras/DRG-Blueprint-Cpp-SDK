@@ -20,20 +20,13 @@ class WPN_JetPackItem_C : public AJetPackItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/JetPack/WPN_JetPackItem", "WPN_JetPackItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* SmokeParticle;
-    static constexpr const char* SmokeParticle__UeScsNode = "57027dacf4410a4589ce96c46dbe4994";
     class UAudioComponent* ThrusterAudio;
-    static constexpr const char* ThrusterAudio__UeScsNode = "56219d314664ec4d8beced62dac545f5";
     class UWidgetComponent* Display;
-    static constexpr const char* Display__UeScsNode = "0d6c61bc1e368741af6884e47a511842";
     class UParticleSystemComponent* ThrusterParticleRight;
-    static constexpr const char* ThrusterParticleRight__UeScsNode = "21d67b32a829a24ba8d30e035261b9f0";
     class UParticleSystemComponent* ThrusterParticleLeft;
-    static constexpr const char* ThrusterParticleLeft__UeScsNode = "8d830d2a19293a468cfcc2d7a1de587e";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "41bc59a92ac1f84ab7201bba96048fa6";
     float ThrusterAudioTimeLine_VolumeModifier_8AF52364460D65D4AF1B6CA27FE77FA0;
     TEnum<ETimelineDirection> ThrusterAudioTimeLine__Direction_8AF52364460D65D4AF1B6CA27FE77FA0;
     class UTimelineComponent* ThrusterAudioTimeLine;
@@ -45,6 +38,17 @@ public:
     void ThrusterAudioTimeLine__FinishedFunc();
     void UserConstructionScript();
     void ToggleThrusters(bool On);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* SmokeParticle__UeScsNode = "57027dacf4410a4589ce96c46dbe4994";
+        static constexpr const char* ThrusterAudio__UeScsNode = "56219d314664ec4d8beced62dac545f5";
+        static constexpr const char* Display__UeScsNode = "0d6c61bc1e368741af6884e47a511842";
+        static constexpr const char* ThrusterParticleRight__UeScsNode = "21d67b32a829a24ba8d30e035261b9f0";
+        static constexpr const char* ThrusterParticleLeft__UeScsNode = "8d830d2a19293a468cfcc2d7a1de587e";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "41bc59a92ac1f84ab7201bba96048fa6";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::JetPack

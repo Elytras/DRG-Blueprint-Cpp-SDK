@@ -29,7 +29,6 @@ public:
     using UI_LoadingTips_C = Game::UI::Tips::UI_LoadingTips_C;
     using WND_MissionBar_C = Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_C;
     FPointerToUberGraphFrame UberGraphFrame_Screen_LoadLevel_C;
-    static constexpr const char* UberGraphFrame_Screen_LoadLevel_C__UeName = "UberGraphFrame";
     AnimatedStaticOverlay_C* AnimatedStaticOverlay_76;
     class UBorder* Border_0;
     class UBorder* Border_3;
@@ -59,6 +58,11 @@ public:
     void RemovePlayer(class AFSDPlayerState* PlayerState);
     void AllPlayersHaveDifferentClass(bool& AllClassesUniuqe);
     void SetSeed(class UTextBlock* Widget, int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Screen_LoadLevel_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionStart

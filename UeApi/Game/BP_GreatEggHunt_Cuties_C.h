@@ -15,14 +15,18 @@ class BP_GreatEggHunt_Cuties_C : public AStaticMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_Cuties", "BP_GreatEggHunt_Cuties_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<class UStaticMesh*> Meshes;
     class UStaticMesh* UsedMesh;
-    static constexpr const char* UsedMesh__Replicated = "OnRep_UsedMesh:";
     void ExecuteUbergraph_BP_GreatEggHunt_Cuties(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_UsedMesh();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
+        static constexpr const char* UsedMesh__Replicated = "OnRep_UsedMesh:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

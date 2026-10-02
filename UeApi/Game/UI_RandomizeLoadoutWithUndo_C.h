@@ -26,8 +26,8 @@ public:
     using UI_RandomizeIcon_C = Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
     using UI_UndoIcon_C = Game::UI::Menu_Wardrobe::UI_UndoIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnHoverV2;
-    class UWidgetAnimation* OnHover;
+    UE_READONLY class UWidgetAnimation* OnHoverV2;
+    UE_READONLY class UWidgetAnimation* OnHover;
     class UBorder* Background;
     class UButton* Button_Dice;
     class UButton* Button_HoverCheck;

@@ -16,11 +16,15 @@ class ENE_Butterfly_C : public Game::Critters::FlyingCritterBase::ENE_FlyingCrit
 {
 public:
     UE_CLASS("/Game/Critters/Butterfly/Ene_Butterfly", "ENE_Butterfly_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     class USphereComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "5dd365c36753b04e8d3464b8431a9b1d";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "1cdaf33205e82a4184975c2c3f338f63";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Sphere1__UeScsNode = "5dd365c36753b04e8d3464b8431a9b1d";
+        static constexpr const char* InstantUsable__UeScsNode = "1cdaf33205e82a4184975c2c3f338f63";
+    };
 };
 
 }}}   // namespace Game::Critters::Butterfly

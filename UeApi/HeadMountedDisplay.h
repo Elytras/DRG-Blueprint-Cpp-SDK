@@ -9,6 +9,9 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "Engine.h"
 #include "InputCore.h"
 
+struct FRotator;
+struct FVector;
+
 class AActor;
 class UMaterialInterface;
 class UObject;
@@ -145,6 +148,17 @@ struct FXRDeviceId
 
     FXRDeviceId() = default;
     FXRDeviceId(FName SystemName, int DeviceID) {}
+
+    // UHeadMountedDisplayFunctionLibrary::GetDevicePose (HeadMountedDisplay.h)
+    void GetDevicePose(bool& bIsTracked, FRotator& Orientation, bool& bHasPositionalTracking, FVector& Position) const;
+    // UHeadMountedDisplayFunctionLibrary::IsDeviceTracking (HeadMountedDisplay.h)
+    bool IsDeviceTracking() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetDevicePose__UeForward = "UHeadMountedDisplayFunctionLibrary::GetDevicePose";
+        static constexpr const char* IsDeviceTracking__UeForward = "UHeadMountedDisplayFunctionLibrary::IsDeviceTracking";
+    };
 };
 
 struct FXRGestureConfig
@@ -158,6 +172,14 @@ struct FXRGestureConfig
 
     FXRGestureConfig() = default;
     FXRGestureConfig(bool bTap, bool bHold, ESpatialInputGestureAxis AxisGesture, bool bNavigationAxisX, bool bNavigationAxisY, bool bNavigationAxisZ) {}
+
+    // UHeadMountedDisplayFunctionLibrary::ConfigureGestures (HeadMountedDisplay.h)
+    bool ConfigureGestures() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ConfigureGestures__UeForward = "UHeadMountedDisplayFunctionLibrary::ConfigureGestures";
+    };
 };
 
 struct FXRHMDData
@@ -267,12 +289,12 @@ public:
     TEnum<EControllerHand> hand;
     FName MotionSource;
     bool bDisableLowLatencyUpdate;
-    TEnum<ETrackingStatus> CurrentTrackingStatus;
+    UE_READONLY TEnum<ETrackingStatus> CurrentTrackingStatus;
     bool bDisplayDeviceModel;
     FName DisplayModelSource;
     class UStaticMesh* CustomDisplayMesh;
-    TArray<class UMaterialInterface*> DisplayMeshMaterialOverrides;
-    class UPrimitiveComponent* DisplayComponent;
+    UE_READONLY TArray<class UMaterialInterface*> DisplayMeshMaterialOverrides;
+    UE_READONLY class UPrimitiveComponent* DisplayComponent;
     FVector GetHandJointPosition(int jointIndex, bool& bValueFound);
     float GetParameterValue(FName InName, bool& bValueFound);
     void OnMotionControllerUpdated();
@@ -323,6 +345,19 @@ public:
     TMulticastInlineDelegate<void()> HMDPutOnHeadDelegate;
     TMulticastInlineDelegate<void()> HMDRemovedFromHeadDelegate;
     TMulticastInlineDelegate<void()> VRControllerRecenteredDelegate;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* HMDTrackingInitializingAndNeedsHMDToBeTrackedDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDTrackingInitializedDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDRecenteredDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDLostDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDReconnectedDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDConnectCanceledDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDPutOnHeadDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* HMDRemovedFromHeadDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* VRControllerRecenteredDelegate__UeDispatcher = "Assignable";
+    };
 };
 
 class UXRAssetFunctionLibrary : public UBlueprintFunctionLibrary
@@ -342,6 +377,12 @@ public:
     class UPrimitiveComponent* SpawnedComponent;
     static class UAsyncTask_LoadXRDeviceVisComponent* AddDeviceVisualizationComponentAsync(class AActor* Target, const FXRDeviceId& XRDeviceId, bool bManualAttachment, const FTransform& RelativeTransform, class UPrimitiveComponent*& NewComponent);
     static class UAsyncTask_LoadXRDeviceVisComponent* AddNamedDeviceVisualizationComponentAsync(class AActor* Target, FName SystemName, FName DeviceName, bool bManualAttachment, const FTransform& RelativeTransform, FXRDeviceId& XRDeviceId, class UPrimitiveComponent*& NewComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnModelLoaded__UeDispatcher = "Assignable";
+        static constexpr const char* OnLoadFailure__UeDispatcher = "Assignable";
+    };
 };
 
 class UXRLoadingScreenFunctionLibrary : public UBlueprintFunctionLibrary

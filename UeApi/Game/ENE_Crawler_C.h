@@ -28,35 +28,21 @@ class ENE_Crawler_C : public Game::Enemies::CoreSpawn::BP_CoreSpawnEnemy_C
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/ENE_Crawler", "ENE_Crawler_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeathComponent Death;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent PawnAlert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Crawler_C;
-    static constexpr const char* UberGraphFrame_ENE_Crawler_C__UeName = "UberGraphFrame";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "aac58149a264b24d9b0accdc61c82b06";
     class UAudioComponent* IdleAudio;
-    static constexpr const char* IdleAudio__UeScsNode = "891f77bf753ca749914e4ce7db4b59e1";
     class USphereComponent* HeadshotSphere;
-    static constexpr const char* HeadshotSphere__UeScsNode = "5b97eccf94a4dc4f959c1b2723444386";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "6183c295456cb946b0ae2c57484fa380";
     class UPoseCorrectionComponent* PoseCorrection;
-    static constexpr const char* PoseCorrection__UeScsNode = "7df987e334bf384ead07fe0e5266f6d6";
     class UPlayerProximity* PlayerProximity;
-    static constexpr const char* PlayerProximity__UeScsNode = "610ab125e1689c48834dde1f04aa3fc8";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "af3ebc96f03b774eaa4a4d93211e750d";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "c43a6112b46d784ea3aece56c25bf979";
     class UPointLightComponent* Mouth_Light;
-    static constexpr const char* Mouth_Light__UeScsNode = "e9eb47c8e1a56c4fbe72925ff27ab5dd";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "f46da4eaf9419e4aae1e17351e1f0e1d";
     class UBallisticMovementComponent* BallisticMovement;
-    static constexpr const char* BallisticMovement__UeScsNode = "9e28f69bd44e4a428580cc268e643942";
     class UAudioComponent* IdleSound;
     class USoundCue* SpawnSoundCue;
     class USoundCue* Player_Proximity_Sound;
-    static constexpr const char* Player_Proximity_Sound__UeName = "Player Proximity Sound";
     class UAudioComponent* ProxySound;
     class UAudioComponent* JumpLoop;
     void ExecuteUbergraph_ENE_Crawler(int EntryPoint);
@@ -67,6 +53,24 @@ public:
     void BndEvt__ENE_Crawler_BallisticMovement_K2Node_ComponentBoundEvent_0_LaunchDelegate__DelegateSignature();
     void BndEvt__ENE_Crawler_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeathComponent Death;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent PawnAlert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Crawler_C__UeName = "UberGraphFrame";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "aac58149a264b24d9b0accdc61c82b06";
+        static constexpr const char* IdleAudio__UeScsNode = "891f77bf753ca749914e4ce7db4b59e1";
+        static constexpr const char* HeadshotSphere__UeScsNode = "5b97eccf94a4dc4f959c1b2723444386";
+        static constexpr const char* Sphere__UeScsNode = "6183c295456cb946b0ae2c57484fa380";
+        static constexpr const char* PoseCorrection__UeScsNode = "7df987e334bf384ead07fe0e5266f6d6";
+        static constexpr const char* PlayerProximity__UeScsNode = "610ab125e1689c48834dde1f04aa3fc8";
+        static constexpr const char* Niagara__UeScsNode = "af3ebc96f03b774eaa4a4d93211e750d";
+        static constexpr const char* DropShadow__UeScsNode = "c43a6112b46d784ea3aece56c25bf979";
+        static constexpr const char* Mouth_Light__UeScsNode = "e9eb47c8e1a56c4fbe72925ff27ab5dd";
+        static constexpr const char* MeleeAttack__UeScsNode = "f46da4eaf9419e4aae1e17351e1f0e1d";
+        static constexpr const char* BallisticMovement__UeScsNode = "9e28f69bd44e4a428580cc268e643942";
+        static constexpr const char* Player_Proximity_Sound__UeName = "Player Proximity Sound";
+    };
 };
 
 }}}   // namespace Game::Enemies::Crawler

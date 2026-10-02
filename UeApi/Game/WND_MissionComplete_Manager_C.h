@@ -38,19 +38,14 @@ public:
     void AddCompleteScreen(class UClass* Widget_MissionComplete);
     void OnShown();
     void Setup_Continue_Count_Down();
-    static constexpr const char* Setup_Continue_Count_Down__UeName = "Setup Continue Count Down";
     void OnContinueCountdownChanged();
     void Transition_To_Normal_End_Screen();
-    static constexpr const char* Transition_To_Normal_End_Screen__UeName = "Transition To Normal End Screen";
     void Mark_Ready_To_Continue();
-    static constexpr const char* Mark_Ready_To_Continue__UeName = "Mark Ready To Continue";
     void BndEvt__ITM_MissionComplete_MissionState_K2Node_ComponentBoundEvent_2_OnFadeOutBackgroundFinished__DelegateSignature();
     void BndEvt__ITM_MissionComplete_MissionState_K2Node_ComponentBoundEvent_1_OnFadeOutOverlayFinished__DelegateSignature();
     void BndEvt__ITM_MissionComplete_MissionState_K2Node_ComponentBoundEvent_0_OnAnnouncementFinished__DelegateSignature();
     void Start_Deep_Dive_End_Screen();
-    static constexpr const char* Start_Deep_Dive_End_Screen__UeName = "Start Deep Dive End Screen";
     void Start_Normal_End_Screen();
-    static constexpr const char* Start_Normal_End_Screen__UeName = "Start Normal End Screen";
     void OnLoaded_FD59AC8A419416B6454AA4BDCCA31D69(class UObject* Loaded);
     void OnLoaded_FD59AC8A419416B6454AA4BD22EFF1A7(class UObject* Loaded);
     void SetOverlay(class UUserWidget* Content);
@@ -59,8 +54,17 @@ public:
     void FadeoutMenuMusic(float FadeoutDuration);
     UE_PURE bool ShowSpaceLoadRigOnContinue();
     void Set_Cursor_Visible(bool InVisible);
-    static constexpr const char* Set_Cursor_Visible__UeName = "Set Cursor Visible";
     void OnScreenWantsCursor(class UUserWidget* InWidget);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Continue_Count_Down__UeName = "Setup Continue Count Down";
+        static constexpr const char* Transition_To_Normal_End_Screen__UeName = "Transition To Normal End Screen";
+        static constexpr const char* Mark_Ready_To_Continue__UeName = "Mark Ready To Continue";
+        static constexpr const char* Start_Deep_Dive_End_Screen__UeName = "Start Deep Dive End Screen";
+        static constexpr const char* Start_Normal_End_Screen__UeName = "Start Normal End Screen";
+        static constexpr const char* Set_Cursor_Visible__UeName = "Set Cursor Visible";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

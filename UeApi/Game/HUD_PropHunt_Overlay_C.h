@@ -35,12 +35,16 @@ public:
     class UCanvasPanel* RootCanvas;
     void ExecuteUbergraph_HUD_PropHunt_Overlay(int EntryPoint);
     void On_Player_State_Changed(class UPropHuntContestant* ContestantComponent_0);
-    static constexpr const char* On_Player_State_Changed__UeName = "On Player State Changed";
     void OnGameStateChanged();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetPlayerState(TEnum<EPropHuntRole> InRole, int InRemainingLives, int InMaxLives);
     void SetHunterAmmo(int InCurrent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Player_State_Changed__UeName = "On Player State Changed";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::UI

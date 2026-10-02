@@ -17,7 +17,6 @@ class BP_Phys_Newsstand_FreeBeer_C : public Game::Art::Environments::SpaceRig::N
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Newsstand/BP_Phys_Newsstand_FreeBeer", "BP_Phys_Newsstand_FreeBeer_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Phys_Newsstand_FreeBeer_C;
-    static constexpr const char* UberGraphFrame_BP_Phys_Newsstand_FreeBeer_C__UeName = "UberGraphFrame";
     bool ShouldUseEventTexture;
     TSoftObjectPtr<class UMaterialInterface> AnniversaryText;
     TSoftObjectPtr<class UMaterialInterface> EasterText;
@@ -31,6 +30,11 @@ public:
     void TrySetupEventText();
     void SetEventMaterial(TSoftObjectPtr<class UMaterialInterface> Material);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Phys_Newsstand_FreeBeer_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Newsstand

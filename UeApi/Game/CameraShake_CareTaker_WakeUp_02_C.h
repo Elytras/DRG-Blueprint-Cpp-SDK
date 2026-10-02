@@ -13,7 +13,11 @@ class CameraShake_CareTaker_WakeUp_02_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/Character/Camera/CameraShakes/CameraShake_CareTaker_WakeUp_02", "CameraShake_CareTaker_WakeUp_02_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::Character::Camera::CameraShakes

@@ -13,6 +13,11 @@ class STE_Spider_AcidCloud_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/STE_Spider_AcidCloud", "STE_Spider_AcidCloud_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

@@ -26,15 +26,11 @@ class BP_SpaceRig_Gamemode_C : public AFSDGameModeSpaceRig
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_SpaceRig_GamemOde", "BP_SpaceRig_Gamemode_C");
     using BP_GameState_SpaceRig_C = Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDifficultyManager* DifficultyManager;
-    static constexpr const char* DifficultyManager__UeScsNode = "42f92fde4b7dbc4f926d68549aeb2c76";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "6eca5b3fc6ccf24da73d38cd2071200e";
     void ExecuteUbergraph_BP_SpaceRig_Gamemode(int EntryPoint);
     void On_online_privilige_checked(class APlayerState* CheckedPlayerState, TEnum<EBlueprintableUserPrivileges> CheckedPrivilege, TEnum<EBlueprintablePrivilegeResults> PrivilegeResult);
-    static constexpr const char* On_online_privilige_checked__UeName = "On online privilige checked";
     void InstantlyStartMission();
     void ControllerReady(class AFSDPlayerController* Target);
     void K2_OnRestartPlayer(class AController* NewPlayer);
@@ -51,6 +47,14 @@ public:
     void SelectRandomAvailableClass(class AFSDPlayerState* Player);
     void SendMissionStartAnalytics();
     bool PlayerCanRestart(class APlayerController* Player);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* DifficultyManager__UeScsNode = "42f92fde4b7dbc4f926d68549aeb2c76";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "6eca5b3fc6ccf24da73d38cd2071200e";
+        static constexpr const char* On_online_privilige_checked__UeName = "On online privilige checked";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

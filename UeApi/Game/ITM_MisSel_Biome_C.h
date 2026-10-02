@@ -37,9 +37,9 @@ public:
     using ITM_MisSel_RegionImage_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_RegionImage_C;
     using ITM_SeasonChallengeIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ScannersOutOfRange;
-    class UWidgetAnimation* Infobox_MouseOver;
-    class UWidgetAnimation* NewZoneIntro;
+    UE_READONLY class UWidgetAnimation* ScannersOutOfRange;
+    UE_READONLY class UWidgetAnimation* Infobox_MouseOver;
+    UE_READONLY class UWidgetAnimation* NewZoneIntro;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     class UCanvasPanel* CanvasPanel_Outer;
     ITM_SeasonChallengeIcon_C* Icon_Challenge;
@@ -54,13 +54,9 @@ public:
     int NumberOfMissions;
     TArray<class UGeneratedMission*> missions;
     float Biome_Image_Size;
-    static constexpr const char* Biome_Image_Size__UeName = "Biome Image Size";
     FVector2D Biome_Image_Position;
-    static constexpr const char* Biome_Image_Position__UeName = "Biome Image Position";
     float Biome_Image_Angle;
-    static constexpr const char* Biome_Image_Angle__UeName = "Biome Image Angle";
     FVector2D Biome_Image_Shear;
-    static constexpr const char* Biome_Image_Shear__UeName = "Biome Image Shear";
     ITM_MisSel_RegionImage_C* Region;
     bool IsNew;
     class UMaterialInstanceDynamic* DynamicMaterial;
@@ -87,6 +83,14 @@ public:
     UE_PURE bool IsUnlocked();
     void SetCampaignVisiblity();
     void GetSoundCoordinate(FVector& SoundWorldPos);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Biome_Image_Size__UeName = "Biome Image Size";
+        static constexpr const char* Biome_Image_Position__UeName = "Biome Image Position";
+        static constexpr const char* Biome_Image_Angle__UeName = "Biome Image Angle";
+        static constexpr const char* Biome_Image_Shear__UeName = "Biome Image Shear";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

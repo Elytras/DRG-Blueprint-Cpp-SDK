@@ -13,7 +13,11 @@ class Grenade_Cluster_Fragment_C : public Game::WeaponsNTools::Grenades::ITM_Gre
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Cluster/Grenade_Cluster_Fragment", "Grenade_Cluster_Fragment_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Cluster

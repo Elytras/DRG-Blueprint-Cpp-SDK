@@ -21,9 +21,7 @@ public:
     using Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "f481ef727f28254290a90e85f4c22268";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
     Widget_DropPod_AltitudeMeter_C* Widget;
     float Duration;
     float Start;
@@ -35,6 +33,12 @@ public:
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     void TriggerCountdown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget1__UeScsNode = "f481ef727f28254290a90e85f4c22268";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
+    };
 };
 
 }}}}   // namespace Game::Art::DropPod::Widgets

@@ -21,8 +21,8 @@ public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/UI_JettyBoots_Announcement", "UI_JettyBoots_Announcement_C");
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeOut;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimFadeOut;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Label_C* Announcement_Label;
     class UVerticalBox* HighScore_Box;
     Basic_Label_C* HighScore_Label;
@@ -30,14 +30,18 @@ public:
     FTimerHandle AnimTimer;
     void ExecuteUbergraph_UI_JettyBoots_Announcement(int EntryPoint);
     void Game_Over(int InScore, bool InNewHighScore);
-    static constexpr const char* Game_Over__UeName = "Game Over";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Level_Up(int InNewLevel);
-    static constexpr const char* Level_Up__UeName = "Level Up";
     UE_COSMETIC void Construct();
     void BeginFadeOut();
     void EndFadeOut();
     void Hide();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Game_Over__UeName = "Game Over";
+        static constexpr const char* Level_Up__UeName = "Level Up";
+    };
 };
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade

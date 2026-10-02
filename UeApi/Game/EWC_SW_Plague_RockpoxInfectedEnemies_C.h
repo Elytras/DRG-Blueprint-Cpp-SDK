@@ -18,13 +18,17 @@ class EWC_SW_Plague_RockpoxInfectedEnemies_C : public Game::Enemies::Waves::Wave
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_SW_Plague_RockpoxInfectedEnemies", "EWC_SW_Plague_RockpoxInfectedEnemies_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_SW_Plague_RockpoxInfectedEnemies_C;
-    static constexpr const char* UberGraphFrame_EWC_SW_Plague_RockpoxInfectedEnemies_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     TArray<FVector> SpawnLocations;
     void ExecuteUbergraph_EWC_SW_Plague_RockpoxInfectedEnemies(int EntryPoint);
     void StopConstantPreassure();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_SW_Plague_RockpoxInfectedEnemies_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

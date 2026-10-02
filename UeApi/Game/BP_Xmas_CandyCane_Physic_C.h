@@ -18,11 +18,15 @@ class BP_Xmas_CandyCane_Physic_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_Xmas_CandyCane_Physic", "BP_Xmas_CandyCane_Physic_C");
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "03a710635ae3cd468963bfa54753e4b6";
     class USkeletalMeshComponent* SK_Xmas_CandyCane_01;
-    static constexpr const char* SK_Xmas_CandyCane_01__UeScsNode = "f84774da8c732c4595b8bdd42b86a915";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "9c5fc6f00aca28419a3482fb7fb27c56";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "03a710635ae3cd468963bfa54753e4b6";
+        static constexpr const char* SK_Xmas_CandyCane_01__UeScsNode = "f84774da8c732c4595b8bdd42b86a915";
+        static constexpr const char* Box__UeScsNode = "9c5fc6f00aca28419a3482fb7fb27c56";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

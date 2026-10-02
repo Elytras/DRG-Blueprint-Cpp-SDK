@@ -33,9 +33,9 @@ public:
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     using UI_SelectCrossplayOption_C = CrossPlatform::UI_SelectCrossplayOption_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* BlinkText;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* BlinkText;
     AnimatedDRGlogo_C* AnimatedDRGlogo;
     AnimatedStaticOverlay_C* AnimatedStaticOverlay;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -61,15 +61,19 @@ public:
     class UTextBlock* VersionInfo;
     class USeason* Season;
     void Show_Crossplay_Setting_Window();
-    static constexpr const char* Show_Crossplay_Setting_Window__UeName = "Show Crossplay Setting Window";
     void SetSeason(class USeason* InSeason);
     void FadeIt(bool FadeIn, float& Duration);
     UE_COSMETIC void Construct();
     void PressStart();
     void Set_Season_Images();
-    static constexpr const char* Set_Season_Images__UeName = "Set Season Images";
     UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void ExecuteUbergraph_UI_StartScreen(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Crossplay_Setting_Window__UeName = "Show Crossplay Setting Window";
+        static constexpr const char* Set_Season_Images__UeName = "Set Season Images";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

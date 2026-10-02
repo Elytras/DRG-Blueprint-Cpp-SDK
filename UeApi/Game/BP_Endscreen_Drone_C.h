@@ -17,9 +17,13 @@ class BP_Endscreen_Drone_C : public AActor
 public:
     UE_CLASS("/Game/Character/CharacterSelection/BP_Endscreen_Drone", "BP_Endscreen_Drone_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "fb84afb7a785384b8f1012cc6a5be3bd";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "59bab3773cd72345b549fa86c808d024";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "fb84afb7a785384b8f1012cc6a5be3bd";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "59bab3773cd72345b549fa86c808d024";
+    };
 };
 
 }}}   // namespace Game::Character::CharacterSelection

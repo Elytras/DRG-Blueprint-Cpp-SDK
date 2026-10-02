@@ -36,7 +36,6 @@ public:
     UE_COSMETIC void Construct();
     void BndEvt__ITM_Loadout_PerksEquip_Selection_K2Node_ComponentBoundEvent_4_OnPerkClicked__DelegateSignature(class UPerkAsset* PerkAsset);
     void Set_Character_Class(class UPlayerCharacterID* characterID);
-    static constexpr const char* Set_Character_Class__UeName = "Set Character Class";
     void UpdateEquippedPerks();
     void GetEquippedPerkAt(int Index_0, const TArray<class UPerkAsset*>& TargetArray, class UPerkAsset*& Perk);
     UE_PURE class UWidget* Get_PerkStar_ToolTipWidget_0();
@@ -44,6 +43,11 @@ public:
     void CreateSlots(class UVerticalBox* InSlotsBox, class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType);
     void SelectSlot(ITM_LoadOut_PerksEquip_Slot_C* InSlot);
     void GetEquippedPerksByType(class UPlayerCharacterID* InCharacterClass, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& OutPerks);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Character_Class__UeName = "Set Character Class";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks

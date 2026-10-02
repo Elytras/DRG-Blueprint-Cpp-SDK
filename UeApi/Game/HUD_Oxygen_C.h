@@ -21,8 +21,8 @@ class HUD_Oxygen_C : public UFSDUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Oxygen/HUD_Oxygen", "HUD_Oxygen_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DangerAnim;
-    class UWidgetAnimation* Fueling;
+    UE_READONLY class UWidgetAnimation* DangerAnim;
+    UE_READONLY class UWidgetAnimation* Fueling;
     class UImage* ARROW_Fueling;
     class UBorder* Border_1;
     class UTextBlock* DangerText;
@@ -34,9 +34,13 @@ public:
     UE_COSMETIC void Construct();
     void SetProgress(float CurrentProgress);
     void Four0PercentOxygenLeft();
-    static constexpr const char* Four0PercentOxygenLeft__UeName = "40PercentOxygenLeft";
     void OnOxygenReplenishingEvent_Event_0(bool IsActive);
     void OnOxygenChanged_Event_0(int oxygenLevel);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Four0PercentOxygenLeft__UeName = "40PercentOxygenLeft";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Oxygen

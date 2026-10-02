@@ -14,13 +14,17 @@ class ITM_BarGlass_Item_PropHunt_C : public Game::GameElements::Bar::ITM_BarGlas
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/ITM_BarGlass_Item_PropHunt", "ITM_BarGlass_Item_PropHunt_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame_ITM_BarGlass_Item_PropHunt_C;
-    static constexpr const char* UberGraphFrame_ITM_BarGlass_Item_PropHunt_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_ITM_BarGlass_Item_PropHunt(int EntryPoint);
     void ReceiveConsumed();
     void ReceiveBeginPlay();
     void Refresh();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UberGraphFrame_ITM_BarGlass_Item_PropHunt_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt

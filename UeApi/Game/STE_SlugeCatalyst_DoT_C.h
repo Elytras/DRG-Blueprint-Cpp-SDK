@@ -13,6 +13,11 @@ class STE_SlugeCatalyst_DoT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/STE_SlugeCatalyst_DoT", "STE_SlugeCatalyst_DoT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Pistol

@@ -20,7 +20,7 @@ class UI_ProgressBar_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/UI_ProgressBar", "UI_ProgressBar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimEase;
+    UE_READONLY class UWidgetAnimation* AnimEase;
     class UProgressBar* InternalProgressBar;
     float Percent;
     float AnimationProgress;

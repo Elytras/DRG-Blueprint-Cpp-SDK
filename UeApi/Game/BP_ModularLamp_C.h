@@ -20,11 +20,8 @@ class BP_ModularLamp_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Furniture/BP_ModularLamp", "BP_ModularLamp_C");
     class UPointLightComponent* Light;
-    static constexpr const char* Light__UeScsNode = "0703638e03bc9649965e18078bee06c9";
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "71139201529c384e9f61aa36299eb0bf";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "dfd66a896f6bda4498080636df52a49c";
     FLinearColor LightColor;
     float LightIntensity;
     float LightAttenuation;
@@ -34,6 +31,13 @@ public:
     class UMaterialInstanceDynamic* DynLightMaterial;
     void UserConstructionScript();
     void SetLightColor(FLinearColor LightColor_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Light__UeScsNode = "0703638e03bc9649965e18078bee06c9";
+        static constexpr const char* Mesh__UeScsNode = "71139201529c384e9f61aa36299eb0bf";
+        static constexpr const char* Scene__UeScsNode = "dfd66a896f6bda4498080636df52a49c";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Furniture

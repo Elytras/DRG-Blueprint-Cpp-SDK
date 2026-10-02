@@ -30,42 +30,24 @@ class ENE_InfectedMule_C : public AConvertedRobot
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/ENE_InfectedMule", "ENE_InfectedMule_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent PulsatingSoundComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitscanComponent Hitscan;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent ShieldRoot;/Script/Engine.SceneComponent TurretRoot;/Script/FSD.SingleUsableComponent Usable;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/Engine.SpotLightComponent FloodLight;/Script/Engine.StaticMeshComponent InnerShield;/Script/Engine.StaticMeshComponent LaserBeam;/Script/Engine.StaticMeshComponent LightCone;/Script/Engine.StaticMeshComponent OuterShieldLayer;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "f8f510c69c4d7648a7de0359dffa835e";
     class UBoxComponent* OverlapsPlayerTrigger;
-    static constexpr const char* OverlapsPlayerTrigger__UeScsNode = "2f29192d566647418b123c26cc6f7d66";
     class UPointLightComponent* WakeUp_PointLight;
-    static constexpr const char* WakeUp_PointLight__UeScsNode = "72276e5b95e74a4b936ca45408c63644";
     class UParticleSystemComponent* ActivationParticle;
-    static constexpr const char* ActivationParticle__UeScsNode = "b16af4235546da429431af3502615a36";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "70a49f9997e2c944bda8526d6ab55cfb";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "dbccc3e9f3e83b4ba7bf098bb3e60738";
     class UPointLightComponent* Light_TurretGlow;
-    static constexpr const char* Light_TurretGlow__UeScsNode = "006ed55feda64148bf3cc595443b2e62";
     class UPointLightComponent* Light_Leg4;
-    static constexpr const char* Light_Leg4__UeScsNode = "53b0bb5e1c0f9b4484b1d27831204f11";
     class UPointLightComponent* Light_Leg3;
-    static constexpr const char* Light_Leg3__UeScsNode = "dd846a1e8899a54cb83c89470d6dff87";
     class UPointLightComponent* Light_Leg2;
-    static constexpr const char* Light_Leg2__UeScsNode = "8283136dbdc5f9468e00185d5f3df141";
     class UPointLightComponent* Light_Leg1;
-    static constexpr const char* Light_Leg1__UeScsNode = "cbcb47311cfd33469a754e8c9504598f";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "fb2223c579720a41ba87240ce63a48b5";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "620f99c7fe80494cad655af963b59827";
     class USceneComponent* ParasitePoint3;
-    static constexpr const char* ParasitePoint3__UeScsNode = "d55ad940de66ea4182e2444d2eb99cd0";
     class USceneComponent* ParasitePoint2;
-    static constexpr const char* ParasitePoint2__UeScsNode = "f8798a35b406e14ea6fc5e3006652601";
     class USceneComponent* ParasitePoint1;
-    static constexpr const char* ParasitePoint1__UeScsNode = "a3ab254784c11849a5ae879674bee6fd";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "eb0de25a958a8e48b99ddac753c18a43";
     class UMaterialInstanceDynamic* LegLightsMat;
     class UAudioComponent* InfectedMuleWaitingForRepair;
     class UMaterialInstanceDynamic* FloodLightMat;
@@ -75,7 +57,6 @@ public:
     int playersInside;
     class UFSDAchievement* BetCAchievement;
     bool ShowBossHealth;
-    static constexpr const char* ShowBossHealth__Replicated = "OnRep_ShowBossHealth:";
     bool ishealthbarshown;
     void ExecuteUbergraph_ENE_InfectedMule(int EntryPoint);
     void BP_OnStateChanged(TEnum<ERobotState> TeamState_0);
@@ -86,6 +67,29 @@ public:
     void OnMessageAI(FName TriggerName);
     void ReceiveBeginPlay();
     void OnRep_ShowBossHealth();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent PulsatingSoundComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitscanComponent Hitscan;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent ShieldRoot;/Script/Engine.SceneComponent TurretRoot;/Script/FSD.SingleUsableComponent Usable;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/Engine.SpotLightComponent FloodLight;/Script/Engine.StaticMeshComponent InnerShield;/Script/Engine.StaticMeshComponent LaserBeam;/Script/Engine.StaticMeshComponent LightCone;/Script/Engine.StaticMeshComponent OuterShieldLayer;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Widget__UeScsNode = "f8f510c69c4d7648a7de0359dffa835e";
+        static constexpr const char* OverlapsPlayerTrigger__UeScsNode = "2f29192d566647418b123c26cc6f7d66";
+        static constexpr const char* WakeUp_PointLight__UeScsNode = "72276e5b95e74a4b936ca45408c63644";
+        static constexpr const char* ActivationParticle__UeScsNode = "b16af4235546da429431af3502615a36";
+        static constexpr const char* terrainPlacement__UeScsNode = "70a49f9997e2c944bda8526d6ab55cfb";
+        static constexpr const char* SpotLight1__UeScsNode = "dbccc3e9f3e83b4ba7bf098bb3e60738";
+        static constexpr const char* Light_TurretGlow__UeScsNode = "006ed55feda64148bf3cc595443b2e62";
+        static constexpr const char* Light_Leg4__UeScsNode = "53b0bb5e1c0f9b4484b1d27831204f11";
+        static constexpr const char* Light_Leg3__UeScsNode = "dd846a1e8899a54cb83c89470d6dff87";
+        static constexpr const char* Light_Leg2__UeScsNode = "8283136dbdc5f9468e00185d5f3df141";
+        static constexpr const char* Light_Leg1__UeScsNode = "cbcb47311cfd33469a754e8c9504598f";
+        static constexpr const char* UseSphere__UeScsNode = "fb2223c579720a41ba87240ce63a48b5";
+        static constexpr const char* Box__UeScsNode = "620f99c7fe80494cad655af963b59827";
+        static constexpr const char* ParasitePoint3__UeScsNode = "d55ad940de66ea4182e2444d2eb99cd0";
+        static constexpr const char* ParasitePoint2__UeScsNode = "f8798a35b406e14ea6fc5e3006652601";
+        static constexpr const char* ParasitePoint1__UeScsNode = "a3ab254784c11849a5ae879674bee6fd";
+        static constexpr const char* PawnSensing__UeScsNode = "eb0de25a958a8e48b99ddac753c18a43";
+        static constexpr const char* ShowBossHealth__Replicated = "OnRep_ShowBossHealth:";
+    };
 };
 
 }}}   // namespace Game::Enemies::MuleInfected

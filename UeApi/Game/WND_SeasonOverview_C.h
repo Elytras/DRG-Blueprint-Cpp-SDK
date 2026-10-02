@@ -34,7 +34,7 @@ public:
     using WND_SeasonEventBonus_Base_C = Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C;
     using WND_SeasonLevels_C = Game::UI::Menu_Seasons::WND_SeasonLevels_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimRevealSeasonToggle;
+    UE_READONLY class UWidgetAnimation* AnimRevealSeasonToggle;
     ITM_Season_NextReward_C* ITM_BP_NextReward;
     ITM_InfoBox_C* ITM_InfoBox;
     ITM_SeasonContentToggle_C* Toggle_SeasonContent;
@@ -57,10 +57,14 @@ public:
     void BndEvt__WND_SeasonOverview_WND_SeasonLevels_K2Node_ComponentBoundEvent_0_RewardClaimed__DelegateSignature(class UReward* Reward);
     void OnClosed();
     void Scroll_with_controller(float Pitch, float Yaw);
-    static constexpr const char* Scroll_with_controller__UeName = "Scroll with controller";
     UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_PURE int CaclFirstLevel();
     void ScrollRow(float Value, bool& didScroll);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Scroll_with_controller__UeName = "Scroll with controller";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

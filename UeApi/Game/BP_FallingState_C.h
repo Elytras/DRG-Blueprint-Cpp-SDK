@@ -25,7 +25,7 @@ public:
     class USoundBase* ImpactCompensation_Activate_Cue;
     class USoundBase* ImpactCompensationDeactivateCue;
     bool IC_WasActivated;
-    float HoverBootsBreakingSpeed;
+    UE_READONLY float HoverBootsBreakingSpeed;
     class UParticleSystem* JumpBootsActivated_Particles_FirstPerson;
     void ExecuteUbergraph_BP_FallingState(int EntryPoint);
     void ReceiveHoverBootsActiveChanged(bool IsActive_0);

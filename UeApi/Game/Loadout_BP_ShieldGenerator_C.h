@@ -17,15 +17,19 @@ class Loadout_BP_ShieldGenerator_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/Loadout_BP_ShieldGenerator", "Loadout_BP_ShieldGenerator_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "e6f556e666a0ec4cb3cf5aa4d01ed87d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "050b527ea4d62b4796597facacb50c39";
     void ExecuteUbergraph_Loadout_BP_ShieldGenerator(int EntryPoint);
     void RecieveUnequipped();
     void RecieveEquipped();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* StaticMesh__UeScsNode = "e6f556e666a0ec4cb3cf5aa4d01ed87d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "050b527ea4d62b4796597facacb50c39";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator

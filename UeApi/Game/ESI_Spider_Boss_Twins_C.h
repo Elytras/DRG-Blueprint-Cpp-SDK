@@ -16,7 +16,11 @@ class ESI_Spider_Boss_Twins_C : public Game::Enemies::Spider::ESI_Spider_Base_C
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ESI_Spider_Boss_Twins", "ESI_Spider_Boss_Twins_C");
     class USkeletalMeshComponent* TwinB;
-    static constexpr const char* TwinB__UeScsNode = "9bae30de0aee9345a43390aca17a90a4";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TwinB__UeScsNode = "9bae30de0aee9345a43390aca17a90a4";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

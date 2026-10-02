@@ -17,9 +17,13 @@ class BP_TransmitterNode_SpaceRig_C : public AActor
 public:
     UE_CLASS("/Game/Game/SpaceRig/S01_SetDressing/BP_TransmitterNode_SpaceRig", "BP_TransmitterNode_SpaceRig_C");
     class UFSDAudioComponent* FSDAudio;
-    static constexpr const char* FSDAudio__UeScsNode = "596cb06a8a1e6b44af59cf1bd6f913a9";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "cd1b42606b9a2043b8de58fafe73b303";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FSDAudio__UeScsNode = "596cb06a8a1e6b44af59cf1bd6f913a9";
+        static constexpr const char* SkeletalMesh__UeScsNode = "cd1b42606b9a2043b8de58fafe73b303";
+    };
 };
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing

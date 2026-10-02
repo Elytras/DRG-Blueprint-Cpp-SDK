@@ -29,30 +29,18 @@ class WPN_SMG_OneHand_C : public AElectricalSMG
 public:
     UE_CLASS("/Game/WeaponsNTools/SMG/WPN_SMG_OneHand", "WPN_SMG_OneHand_C");
     using BP_TurretEMPDischarge_Indicator_C = Game::WeaponsNTools::SentryGun::BP_TurretEMPDischarge_Indicator_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FP_AnimationMag;
-    static constexpr const char* FP_AnimationMag__UeScsNode = "e68f669cbb5db5498bd8c25aac17b506";
     class UStaticMeshComponent* TP_AnimationMag;
-    static constexpr const char* TP_AnimationMag__UeScsNode = "bca751b7a4273a438bb5a776b9601e17";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "2e07a837ca88dd4fa52bb5298364f1dc";
     class UFirstPersonParticleSystemComponent* FirstPersonParticleSystem;
-    static constexpr const char* FirstPersonParticleSystem__UeScsNode = "ae212d6bc654d74db275f9b414b12020";
     class UStaticMeshComponent* TP_SMG_MAG;
-    static constexpr const char* TP_SMG_MAG__UeScsNode = "b96882c87bb1154cb50a919dd9b6b8d6";
     class UFirstPersonStaticMeshComponent* SMG_Mag_Full;
-    static constexpr const char* SMG_Mag_Full__UeScsNode = "5c6997b360057c419bc54e2f09c4e574";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "5e7099ac04c9264ab63d4ac5c61693fc";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "3c6296f4dad8ad428316a20d6fd085af";
     class UPointLightComponent* MuzzleLight;
-    static constexpr const char* MuzzleLight__UeScsNode = "cd35b968491ba44f9ee76ceadb65fb67";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "f46c8c295895f040a60586776373067a";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "fada7ffe56ff1f4ebd0836b6694e19d3";
     FVector SalineConductorScale;
     TArray<BP_TurretEMPDischarge_Indicator_C*> EMPDischargeIndicators;
     FTimerHandle EMPIndicatorUpdateTimer;
@@ -68,6 +56,22 @@ public:
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
     class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FP_AnimationMag__UeScsNode = "e68f669cbb5db5498bd8c25aac17b506";
+        static constexpr const char* TP_AnimationMag__UeScsNode = "bca751b7a4273a438bb5a776b9601e17";
+        static constexpr const char* ParticleSystem__UeScsNode = "2e07a837ca88dd4fa52bb5298364f1dc";
+        static constexpr const char* FirstPersonParticleSystem__UeScsNode = "ae212d6bc654d74db275f9b414b12020";
+        static constexpr const char* TP_SMG_MAG__UeScsNode = "b96882c87bb1154cb50a919dd9b6b8d6";
+        static constexpr const char* SMG_Mag_Full__UeScsNode = "5c6997b360057c419bc54e2f09c4e574";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "5e7099ac04c9264ab63d4ac5c61693fc";
+        static constexpr const char* Damage__UeScsNode = "3c6296f4dad8ad428316a20d6fd085af";
+        static constexpr const char* MuzzleLight__UeScsNode = "cd35b968491ba44f9ee76ceadb65fb67";
+        static constexpr const char* HitScan__UeScsNode = "f46c8c295895f040a60586776373067a";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "fada7ffe56ff1f4ebd0836b6694e19d3";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SMG

@@ -25,27 +25,18 @@ class BP_Spider_Lobber_Puddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/BP_Spider_Lobber_Puddle", "BP_Spider_Lobber_Puddle_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* BoxTrigger;
-    static constexpr const char* BoxTrigger__UeScsNode = "5928edd0bfa4ce4186c8c35769486048";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "2fd5be2a8e4412418c8399e895b0de6c";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "5070fb8083619e449c4dc4e84fb3202d";
     class UAudioComponent* Acid_Cue;
-    static constexpr const char* Acid_Cue__UeScsNode = "85616ba2e035c44097a8cdbc3e211cdc";
     class UNiagaraComponent* P_Puddle;
-    static constexpr const char* P_Puddle__UeScsNode = "81882e871a7b07438a2e0b9ab7530430";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e1031f314bc7a44fa3ea44bd961e3a11";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "ca4ac9a19bf66b48b4dd7f524939690e";
     TArray<class UActorComponent*> ClosePuddles;
     int OtherPuddleIndex;
     bool FoundPlace;
     int NiagaraSeed;
-    static constexpr const char* NiagaraSeed__Replicated = "OnRep_NiagaraSeed:";
     FTimerHandle FadeOutTimer;
     void ExecuteUbergraph_BP_Spider_Lobber_Puddle(int EntryPoint);
     void FadeOut();
@@ -56,6 +47,19 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void OnRep_NiagaraSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* BoxTrigger__UeScsNode = "5928edd0bfa4ce4186c8c35769486048";
+        static constexpr const char* TerrainDetect__UeScsNode = "2fd5be2a8e4412418c8399e895b0de6c";
+        static constexpr const char* PointLight3__UeScsNode = "5070fb8083619e449c4dc4e84fb3202d";
+        static constexpr const char* Acid_Cue__UeScsNode = "85616ba2e035c44097a8cdbc3e211cdc";
+        static constexpr const char* P_Puddle__UeScsNode = "81882e871a7b07438a2e0b9ab7530430";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e1031f314bc7a44fa3ea44bd961e3a11";
+        static constexpr const char* terrainPlacement__UeScsNode = "ca4ac9a19bf66b48b4dd7f524939690e";
+        static constexpr const char* NiagaraSeed__Replicated = "OnRep_NiagaraSeed:";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber

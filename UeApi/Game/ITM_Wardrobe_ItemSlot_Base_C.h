@@ -38,10 +38,10 @@ public:
     using UI_RandomizeIcon_C = Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
     using UI_ToggleSleevelessIcon_C = Game::UI::Menu_Wardrobe::UI_ToggleSleevelessIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimShuffle;
-    class UWidgetAnimation* IntroRight;
-    class UWidgetAnimation* IntroLeft;
-    class UWidgetAnimation* AnimHovered;
+    UE_READONLY class UWidgetAnimation* AnimShuffle;
+    UE_READONLY class UWidgetAnimation* IntroRight;
+    UE_READONLY class UWidgetAnimation* IntroLeft;
+    UE_READONLY class UWidgetAnimation* AnimHovered;
     class UImage* IconImage;
     class USizeBox* IconSizer;
     ITM_ItemUnlockedIcon_C* Notification_NewItemAny;
@@ -73,8 +73,8 @@ public:
     bool IsDesignTime;
     TMulticastInlineDelegate<void()> OnEquippedChanged;
     class UDialogDataAsset* ShoutOnEquipped;
-    bool CanShuffle;
-    bool CanToggleType;
+    UE_READONLY bool CanShuffle;
+    UE_READONLY bool CanToggleType;
     bool GenerateWidgets;
     TMulticastInlineDelegate<void()> OnRequestCloseSelectors;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_Base(int EntryPoint);

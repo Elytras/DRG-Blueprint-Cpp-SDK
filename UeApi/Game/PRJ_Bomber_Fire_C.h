@@ -21,18 +21,12 @@ class PRJ_Bomber_Fire_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_Bomber_Fire", "PRJ_Bomber_Fire_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "506a4b430a2767448e28a2441e63ca61";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2aba206a37578346b3f10060674c74a6";
     class UStaticMeshComponent* ProjectileMesh;
-    static constexpr const char* ProjectileMesh__UeScsNode = "d149cdd3ecd4444ca587f0b05f8cea9d";
     class UPointLightComponent* AreaLight;
-    static constexpr const char* AreaLight__UeScsNode = "6b61af4e537f854a89d1f74f198f68a8";
     bool HasExploded;
-    static constexpr const char* HasExploded__Replicated = "OnRep_HasExploded:";
     class UAudioComponent* AlarmSound;
     float TimeToExplode;
     void ExecuteUbergraph_PRJ_Bomber_Fire(int EntryPoint);
@@ -40,6 +34,16 @@ public:
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_HasExploded();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "506a4b430a2767448e28a2441e63ca61";
+        static constexpr const char* Damage__UeScsNode = "2aba206a37578346b3f10060674c74a6";
+        static constexpr const char* ProjectileMesh__UeScsNode = "d149cdd3ecd4444ca587f0b05f8cea9d";
+        static constexpr const char* AreaLight__UeScsNode = "6b61af4e537f854a89d1f74f198f68a8";
+        static constexpr const char* HasExploded__Replicated = "OnRep_HasExploded:";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

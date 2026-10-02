@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_Cluster_C : public Game::WeaponsNTools::Grenades::Loa
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Cluster/Loadout_GrenadeProxy_Cluster", "Loadout_GrenadeProxy_Cluster_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Cluster

@@ -35,7 +35,11 @@ public:
     void OnShown();
     void SlowDownRender();
     void Set_Data(int Level_0, bool FirstInRow);
-    static constexpr const char* Set_Data__UeName = "Set Data";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Data__UeName = "Set Data";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

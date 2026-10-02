@@ -31,7 +31,7 @@ public:
     using ITM_HazPlusItem_C = Game::UI::Menu_MissionSelectionMK3::ITM_HazPlusItem_C;
     using UI_HazPlus_Icon_C = Game::UI::Global_UI_Elements::UI_HazPlus_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimShowPopup;
+    UE_READONLY class UWidgetAnimation* AnimShowPopup;
     BlurBackground_C* BlurBackground;
     class UHorizontalBox* HorizontalBox;
     class UHorizontalBox* HorizontalBox_53;
@@ -58,11 +58,15 @@ public:
     void GetCurrentHazardBonus(class UDifficultySetting* Difficulty, float& OutBonus);
     void GetDifficultyMutators(TArray<FDifficultyMutatorItem>& OutMutators);
     void Get_Hovered_Item(ITM_HazPlusItem_C*& OutItem);
-    static constexpr const char* Get_Hovered_Item__UeName = "Get Hovered Item";
     void Update_Hovered_Item(ITM_HazPlusItem_C* InHovered);
-    static constexpr const char* Update_Hovered_Item__UeName = "Update Hovered Item";
     void HidePopup();
     UE_PURE bool IsHazPlusUnlocked();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Get_Hovered_Item__UeName = "Get Hovered Item";
+        static constexpr const char* Update_Hovered_Item__UeName = "Update Hovered Item";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

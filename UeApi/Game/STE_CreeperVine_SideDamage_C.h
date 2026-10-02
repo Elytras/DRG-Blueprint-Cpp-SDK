@@ -13,6 +13,11 @@ class STE_CreeperVine_SideDamage_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/ReactiveTerrain/STE_CreeperVine_SideDamage", "STE_CreeperVine_SideDamage_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Landscape::ReactiveTerrain

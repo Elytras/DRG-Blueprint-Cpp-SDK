@@ -25,8 +25,8 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/UI_GuntowerProgressBar_2", "UI_GuntowerProgressBar_2_C");
     using UI_Guntower_ProgressBar_ModuleIcon_C = Game::GameElements::GameEvents::GuntowerEvent::UI_Guntower_ProgressBar_ModuleIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Activated;
-    class UWidgetAnimation* Startup;
+    UE_READONLY class UWidgetAnimation* Activated;
+    UE_READONLY class UWidgetAnimation* Startup;
     class UTextBlock* AnalysingText;
     class UImage* BaseElementBG;
     class UCanvasPanel* CanvasPanel_0;

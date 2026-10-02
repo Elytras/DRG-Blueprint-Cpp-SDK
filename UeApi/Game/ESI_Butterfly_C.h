@@ -17,11 +17,15 @@ class ESI_Butterfly_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/Butterfly/ESI_Butterfly", "ESI_Butterfly_C");
     class USkeletalMeshComponent* Wings;
-    static constexpr const char* Wings__UeScsNode = "b2001620a9937b4cba3798a6e9a67c8c";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c42ac8e8e3470840823c30c8c657ae69";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f2f02a1533d0204c83ff48413056cd24";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Wings__UeScsNode = "b2001620a9937b4cba3798a6e9a67c8c";
+        static constexpr const char* SkeletalMesh__UeScsNode = "c42ac8e8e3470840823c30c8c657ae69";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f2f02a1533d0204c83ff48413056cd24";
+    };
 };
 
 }}}   // namespace Game::Critters::Butterfly

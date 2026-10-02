@@ -19,7 +19,7 @@ class TextField_SeeThrough_C : public UUserWidget
 public:
     UE_CLASS("/Game/Art/_TestingGrounds/TextField/TextField_SeeThrough", "TextField_SeeThrough_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     class UBorder* Border_0;
     class UTextBlock* TXT_Main;
     TArray<FText> texts;

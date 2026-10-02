@@ -23,8 +23,8 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_ChallengeTimer", "ITM_Season_ChallengeTimer_C");
     using ITM_TimeText_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* RotateHourGlass;
-    class UWidgetAnimation* OnHover;
+    UE_READONLY class UWidgetAnimation* RotateHourGlass;
+    UE_READONLY class UWidgetAnimation* OnHover;
     class UButton* Button_Outer;
     class UImage* I_Background;
     class UImage* I_Outline;

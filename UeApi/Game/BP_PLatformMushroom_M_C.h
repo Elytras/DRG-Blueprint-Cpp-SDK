@@ -16,7 +16,11 @@ class BP_PLatformMushroom_M_C : public Game::LevelElements::RoomObjects::Helpers
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/PlatformMushrooms/BP_PLatformMushroom_M", "BP_PLatformMushroom_M_C");
     class ULevelGenerationCarverComponent* LevelGenerationCarverStem;
-    static constexpr const char* LevelGenerationCarverStem__UeScsNode = "7486099a5e33954794aac9830d4827ec";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarverStem__UeScsNode = "7486099a5e33954794aac9830d4827ec";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms

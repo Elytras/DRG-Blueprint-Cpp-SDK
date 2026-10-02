@@ -26,7 +26,7 @@ public:
     using BG_Window_Outline_4px_C = Game::UI::Menu_MinersManual::BG_Window_Outline_4px_C;
     using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Glitch;
+    UE_READONLY class UWidgetAnimation* Glitch;
     Basic_BG_CutCorner_C* Basic_BG_CutCorner;
     BG_Window_Outline_4px_C* BG_Window_Outline_4px;
     class UButton* Button_Outer;

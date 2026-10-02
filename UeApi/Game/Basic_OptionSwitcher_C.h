@@ -30,7 +30,6 @@ public:
     bool Loop;
     TMulticastInlineDelegate<void(FText Value, int Index_0)> OnSelectionChanged;
     bool White_Text;
-    static constexpr const char* White_Text__UeName = "White Text";
     void ExecuteUbergraph_Basic_OptionSwitcher(int EntryPoint);
     void BndEvt__Button_Right_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_Right_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
@@ -40,17 +39,22 @@ public:
     void BndEvt__Button_Left_K2Node_ComponentBoundEvent_143_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Options(TArray<FText>& options_0, int DefaultIndex);
-    static constexpr const char* Set_Options__UeName = "Set Options";
     void SetSelectedIndex(int NewIndex);
     void SetSelectedValue(FText Value);
     void GetSelectedIndex(int& Index_0);
     void GetSelectedValue(FText& Value);
     void Add_Option(FText Option, int& Index_0);
-    static constexpr const char* Add_Option__UeName = "Add Option";
     void ClearOptions();
     void GetOptionCount(int& Count);
     bool RemoveOption(FText& Item);
     void ContainsOption(FText Option, bool& DoesContain);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* White_Text__UeName = "White Text";
+        static constexpr const char* Set_Options__UeName = "Set Options";
+        static constexpr const char* Add_Option__UeName = "Add Option";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

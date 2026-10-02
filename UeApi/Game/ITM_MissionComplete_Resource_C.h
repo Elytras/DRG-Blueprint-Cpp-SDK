@@ -27,17 +27,21 @@ public:
     class UVerticalBox* TextVertical;
     int amount;
     FText Description;
-    int Size;
+    UE_READONLY int Size;
     void ExecuteUbergraph_ITM_MissionComplete_Resource(int EntryPoint);
     void Init(FText Description_0, int amount_0);
     void Start_Counter();
-    static constexpr const char* Start_Counter__UeName = "Start Counter";
     void Init_No_Anim(FText Description_0, int amount_0, class UTexture2D* Texture);
-    static constexpr const char* Init_No_Anim__UeName = "Init No Anim";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Init_With_Icon(FText Description_0, int amount_0, class UTexture2D* Texture);
-    static constexpr const char* Init_With_Icon__UeName = "Init With Icon";
     UE_PURE float Scale(float OriginalSize);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Counter__UeName = "Start Counter";
+        static constexpr const char* Init_No_Anim__UeName = "Init No Anim";
+        static constexpr const char* Init_With_Icon__UeName = "Init With Icon";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

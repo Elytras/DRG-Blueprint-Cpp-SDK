@@ -21,9 +21,9 @@ class ScreenOverlay_Plague_Build_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/ScreenOverlays/ScreenOverlay_Plague_Build", "ScreenOverlay_Plague_Build_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimJitter;
-    class UWidgetAnimation* AnimPulse;
-    class UWidgetAnimation* AnimFading;
+    UE_READONLY class UWidgetAnimation* AnimJitter;
+    UE_READONLY class UWidgetAnimation* AnimPulse;
+    UE_READONLY class UWidgetAnimation* AnimFading;
     class UImage* AfflictionImage;
     class UImage* AfflictionImage_Bottom;
     class UImage* AfflictionImage_Bottom_Background;
@@ -41,9 +41,13 @@ public:
     void OnInfectionLevelChangedEvent_Event(int IntValue);
     void OnCameraModeChanged(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
     void End_Splat();
-    static constexpr const char* End_Splat__UeName = "End Splat";
     void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* End_Splat__UeName = "End Splat";
+    };
 };
 
 }}}   // namespace Game::UI::ScreenOverlays

@@ -35,6 +35,11 @@ public:
     class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Excavation

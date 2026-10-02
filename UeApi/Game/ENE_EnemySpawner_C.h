@@ -21,19 +21,15 @@ class ENE_EnemySpawner_C : public AEnemyPawn
 {
 public:
     UE_CLASS("/Game/Enemies/EnemySpawner/ENE_EnemySpawner", "ENE_EnemySpawner_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "61c6c6071f2d364aad6a74b9faf66653";
     float Spawn_Interval;
-    static constexpr const char* Spawn_Interval__UeName = "Spawn Interval";
     int AliveCount;
     int MaxConcurrentEnemies;
     int SpawnCount;
     int MaxTotalSpawnCount;
     class UEnemySpawnManager* Manager;
     TMulticastInlineDelegate<void()> On_Begin_Play;
-    static constexpr const char* On_Begin_Play__UeName = "On Begin Play";
     TArray<class UEnemyDescriptor*> SpawnQueue;
     bool IsAlertet;
     bool PlayersClose;
@@ -48,6 +44,14 @@ public:
     bool CanSpawn(class UEnemyDescriptor* EnemyClass);
     void SetInactive(class AActor* Target);
     void SetReferenceToSpawner(class AActor* Actor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "61c6c6071f2d364aad6a74b9faf66653";
+        static constexpr const char* Spawn_Interval__UeName = "Spawn Interval";
+        static constexpr const char* On_Begin_Play__UeName = "On Begin Play";
+    };
 };
 
 }}}   // namespace Game::Enemies::EnemySpawner

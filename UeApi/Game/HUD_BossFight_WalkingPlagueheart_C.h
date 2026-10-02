@@ -32,10 +32,9 @@ public:
     using ITM_HealthBarSection_C = Game::UI::MainOnscreenHUD::BossFight::ITM_HealthBarSection_C;
     using ITM_SegmentedHealthBar_C = Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedHealthBar_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_BossFight_WalkingPlagueheart_C;
-    static constexpr const char* UberGraphFrame_HUD_BossFight_WalkingPlagueheart_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* ArmorFullAnim;
-    class UWidgetAnimation* ArmorHitAnim;
-    class UWidgetAnimation* HitAnim;
+    UE_READONLY class UWidgetAnimation* ArmorFullAnim;
+    UE_READONLY class UWidgetAnimation* ArmorHitAnim;
+    UE_READONLY class UWidgetAnimation* HitAnim;
     class UBorder* Border;
     class UBorder* Border_3;
     HUD_EnemyTargeting_AfflictionBox_C* HUD_EnemyTargeting_AfflictionBox;
@@ -71,6 +70,11 @@ public:
     void OnCanTakeDamageChanged(bool OutCanTakeDamage);
     void GetBossFight(FBossFight& BossFight_0);
     void UpdateFromShields(TArray<BP_PlagueHeartShield_Base_C*>& Shields);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HUD_BossFight_WalkingPlagueheart_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

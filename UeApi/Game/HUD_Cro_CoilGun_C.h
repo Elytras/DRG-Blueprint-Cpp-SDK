@@ -21,7 +21,7 @@ class HUD_Cro_CoilGun_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_Cro_CoilGun", "HUD_Cro_CoilGun_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CH_Full;
     class UImage* CH_Full_Inner;
     class UImage* CH_FullLeft;
@@ -32,7 +32,6 @@ public:
     class UImage* Dot;
     class APlayerCharacter* Character;
     class UImage* CH_Full_Inner_0;
-    static constexpr const char* CH_Full_Inner_0__UeName = "CH Full Inner";
     void ExecuteUbergraph_HUD_Cro_CoilGun(int EntryPoint);
     void OnChargeChanged(float charge);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
@@ -40,6 +39,11 @@ public:
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void SetData(class AItem* Item);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CH_Full_Inner_0__UeName = "CH Full Inner";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

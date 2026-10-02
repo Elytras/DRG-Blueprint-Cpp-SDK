@@ -21,24 +21,28 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_FuelPoint", "BP_Salvage_FuelPoint_C");
     using BP_Salvage_FuelPod_C = Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPod_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_Salvage_FuelPoint_C;
-    static constexpr const char* UberGraphFrame_BP_Salvage_FuelPoint_C__UeName = "UberGraphFrame";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "fa8b0af428dbeb48a829841b90ba6684";
     BP_Salvage_FuelPod_C* pod;
-    static constexpr const char* pod__Replicated = ":";
     TArray<TSoftClassPtr<class UClass>> MoveIfCloseTo;
     FVector InitalLocation;
     int TriesToSpawn;
     void ExecuteUbergraph_BP_Salvage_FuelPoint(int EntryPoint);
     void ReceiveBeginPlay();
     void Call_In_Pod();
-    static constexpr const char* Call_In_Pod__UeName = "Call In Pod";
     void OnDefenseFail();
     void OnDefenseComplete();
     void OnDefenseStart();
     void EnableRepair();
     void CheckIfCloseToInvalidators(bool& IsClose);
     void SolveTooCloseToInvalidator();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Salvage_FuelPoint_C__UeName = "UberGraphFrame";
+        static constexpr const char* terrainPlacement__UeScsNode = "fa8b0af428dbeb48a829841b90ba6684";
+        static constexpr const char* pod__Replicated = ":";
+        static constexpr const char* Call_In_Pod__UeName = "Call In Pod";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

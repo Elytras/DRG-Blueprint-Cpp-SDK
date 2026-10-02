@@ -15,11 +15,15 @@ class EWC_Generic_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Generic", "EWC_Generic_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Generic_C;
-    static constexpr const char* UberGraphFrame_EWC_Generic_C__UeName = "UberGraphFrame";
     TArray<FVector> SpawnLocations;
     void ExecuteUbergraph_EWC_Generic(int EntryPoint);
     void StopConstantPreassure();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Generic_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

@@ -17,20 +17,24 @@ class ENE_Spider_Boss_TwinA_C : public Game::Enemies::Spider::TankBoss::BossTwin
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ENE_Spider_Boss_TwinA", "ENE_Spider_Boss_TwinA_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_TwinA_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinA_C__UeName = "UberGraphFrame";
     class UProjectileAttackComponent* Projectile_MinesBarrage;
-    static constexpr const char* Projectile_MinesBarrage__UeScsNode = "6d31f9134a8a0947ba3cbfe0f8b25bdf";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "e130d90def34054e98c2a0ec2aea426d";
     class UProjectileAttackComponent* Projectile_Mines;
-    static constexpr const char* Projectile_Mines__UeScsNode = "fa9ed13c6ed91247863159886beb6121";
     class UProjectileAttackComponent* Projectile_Fireball;
-    static constexpr const char* Projectile_Fireball__UeScsNode = "0c15e630b55b4242bf4153b10622e8ef";
     void ExecuteUbergraph_ENE_Spider_Boss_TwinA(int EntryPoint);
     void BndEvt__Projectile_MinesBarrage_K2Node_ComponentBoundEvent_1_ProjectileAttackDelegate__DelegateSignature();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinA_C__UeName = "UberGraphFrame";
+        static constexpr const char* Projectile_MinesBarrage__UeScsNode = "6d31f9134a8a0947ba3cbfe0f8b25bdf";
+        static constexpr const char* MeleeAttack__UeScsNode = "e130d90def34054e98c2a0ec2aea426d";
+        static constexpr const char* Projectile_Mines__UeScsNode = "fa9ed13c6ed91247863159886beb6121";
+        static constexpr const char* Projectile_Fireball__UeScsNode = "0c15e630b55b4242bf4153b10622e8ef";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

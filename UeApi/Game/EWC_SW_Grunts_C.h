@@ -18,13 +18,17 @@ class EWC_SW_Grunts_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_SW_Grunts", "EWC_SW_Grunts_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_SW_Grunts_C;
-    static constexpr const char* UberGraphFrame_EWC_SW_Grunts_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     TArray<FVector> SpawnLocations;
     void ExecuteUbergraph_EWC_SW_Grunts(int EntryPoint);
     void StopConstantPreassure();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_SW_Grunts_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

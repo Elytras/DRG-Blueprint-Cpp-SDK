@@ -13,7 +13,11 @@ class PRJ_FriendlyInfectedMuleGrenade_C : public Game::Enemies::MuleInfected::PR
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/PRJ_FriendlyInfectedMuleGrenade", "PRJ_FriendlyInfectedMuleGrenade_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}   // namespace Game::Enemies::MuleInfected

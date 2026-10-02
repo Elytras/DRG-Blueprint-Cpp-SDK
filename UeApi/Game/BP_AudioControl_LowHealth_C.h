@@ -50,9 +50,7 @@ public:
     class USubmixEffectFilterPreset* PlagueInfectedFilter;
     class UAudioComponent* InfectedSound;
     float Infection_Level_max;
-    static constexpr const char* Infection_Level_max__UeName = "Infection Level max";
     float Infection_Level_Current;
-    static constexpr const char* Infection_Level_Current__UeName = "Infection Level Current";
     void ExecuteUbergraph_BP_AudioControl_LowHealth(int EntryPoint);
     void OnDeahtAndDestroyed();
     void OnDestroyed_Event(class AActor* DestroyedActor);
@@ -66,6 +64,12 @@ public:
     void ReceiveBeginPlay();
     UE_PURE bool ShouldSetTimestamp(bool IsActivate);
     void SetSoundFromAlpha(float FadeAlpha);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Infection_Level_max__UeName = "Infection Level max";
+        static constexpr const char* Infection_Level_Current__UeName = "Infection Level Current";
+    };
 };
 
 }}}   // namespace Game::Audio::SoundControl

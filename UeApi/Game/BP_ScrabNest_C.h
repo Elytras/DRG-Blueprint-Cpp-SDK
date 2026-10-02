@@ -16,7 +16,11 @@ class BP_ScrabNest_C : public Game::GameElements::GameEvents::TunnelEvent::BP_Tu
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ScrabNest/BP_ScrabNest", "BP_ScrabNest_C");
     class UInfluencerSpawnComponent* InfluencerSpawn;
-    static constexpr const char* InfluencerSpawn__UeScsNode = "60c08cfa4d612b43ba5b428e0d92f19c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InfluencerSpawn__UeScsNode = "60c08cfa4d612b43ba5b428e0d92f19c";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ScrabNest

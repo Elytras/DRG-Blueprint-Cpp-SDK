@@ -13,6 +13,11 @@ class STE_Plague_SlimeTrailStink_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/SlimeTrail/STE_Plague_SlimeTrailStink", "STE_Plague_SlimeTrailStink_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail

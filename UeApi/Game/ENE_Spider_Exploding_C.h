@@ -21,17 +21,11 @@ class ENE_Spider_Exploding_C : public Game::Enemies::Spider::ENE_SpiderBase_Larg
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Exploder/ENE_Spider_Exploding", "ENE_Spider_Exploding_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Exploding_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Exploding_C__UeName = "UberGraphFrame";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "0d8fe0e47b059c4e8b7cfc7041bcab3c";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "e95463d1d24583489eac11e5ff8a7fe9";
     class UPointLightComponent* Light_BackBody;
-    static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
     bool Exploded;
-    static constexpr const char* Exploded__Replicated = "OnRep_Exploded:";
     bool IsFleeing_0;
     class UParticleSystem* ExplosionParticles;
     bool ExplodeOnDeath;
@@ -40,19 +34,15 @@ public:
     void OnExplosionFinished();
     void ExplodedDeath();
     void Cooked_Death();
-    static constexpr const char* Cooked_Death__UeName = "Cooked Death";
     void ChemicalExplosionDeath();
     void CorrosiveDeath();
     void StopMontagesOnDeath();
     void DisableExplosion();
     void Play_Frozen_Death();
-    static constexpr const char* Play_Frozen_Death__UeName = "Play Frozen Death";
     void OnUnFrozen();
     void OnFrozen(class AActor* Source);
     void Play_Body_Death_Effects();
-    static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
     void Play_Burn_Death();
-    static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
     void OnMessageAI(FName TriggerName);
     void OnExploded();
     void Explode();
@@ -63,6 +53,20 @@ public:
     UE_PURE float GetDistanceToLocalPlayer();
     void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Exploding_C__UeName = "UberGraphFrame";
+        static constexpr const char* Damage__UeScsNode = "0d8fe0e47b059c4e8b7cfc7041bcab3c";
+        static constexpr const char* Sphere__UeScsNode = "e95463d1d24583489eac11e5ff8a7fe9";
+        static constexpr const char* Light_BackBody__UeScsNode = "829a152dd78e214ab098bd6167672c06";
+        static constexpr const char* Exploded__Replicated = "OnRep_Exploded:";
+        static constexpr const char* Cooked_Death__UeName = "Cooked Death";
+        static constexpr const char* Play_Frozen_Death__UeName = "Play Frozen Death";
+        static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
+        static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Exploder

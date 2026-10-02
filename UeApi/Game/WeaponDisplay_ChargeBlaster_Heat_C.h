@@ -34,10 +34,14 @@ public:
     void ExecuteUbergraph_WeaponDisplay_ChargeBlaster_Heat(int EntryPoint);
     void OnEquipped();
     void On_UnEquipped();
-    static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
     void Init(class AItem* Item_0);
     UE_COSMETIC void Construct();
     void SetHeatValue(float HeatPercentage, bool overheated);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_UnEquipped__UeName = "On UnEquipped";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

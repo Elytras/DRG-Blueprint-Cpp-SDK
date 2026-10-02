@@ -27,7 +27,7 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBlurIn;
+    UE_READONLY class UWidgetAnimation* AnimBlurIn;
     class UCanvasPanel* BackgroundCanvas;
     BlurBackground_C* BlurBackground;
     class UHorizontalBox* EntryBox;
@@ -48,17 +48,21 @@ public:
     void ReceiveEndFlow();
     void OnRewardClaimed(class UClaimableRewardEntryWidget* InEntryWidget);
     void Move_In_Rewards();
-    static constexpr const char* Move_In_Rewards__UeName = "Move In Rewards";
     void ShowMouseCursor();
     void ShowBlur();
     void Start_Mission_Control_Speak();
-    static constexpr const char* Start_Mission_Control_Speak__UeName = "Start Mission Control Speak";
     void OnAudioFinished_Event();
     void StopAudio();
     void TryFinish();
     void SetupView(FClaimableRewardView InViewData);
     void GetLine(class UHorizontalBox*& EntryBox_0);
     void GetEntryWidgetClass(TSoftClassPtr<class UClass> InOverridetClass, class UClass*& OutWidgetClass);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Move_In_Rewards__UeName = "Move In Rewards";
+        static constexpr const char* Start_Mission_Control_Speak__UeName = "Start Mission Control Speak";
+    };
 };
 
 }}}   // namespace Game::UI::ClaimableRewards

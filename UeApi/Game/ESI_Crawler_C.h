@@ -19,9 +19,7 @@ public:
     UE_CLASS("/Game/Enemies/Crawler/ESI_Crawler", "ESI_Crawler_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "17e88db6cfa98849880c8e01ae21aeeb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "46328cb9f513cc44b10f042c5e63ecf7";
     float NextAnimTime;
     void ExecuteUbergraph_ESI_Crawler(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
@@ -31,6 +29,12 @@ public:
     void OnInterrupted_BE9FD27546DC255F49A9C2BA512ED40E(FName NotifyName);
     void OnNotifyBegin_BE9FD27546DC255F49A9C2BA512ED40E(FName NotifyName);
     void OnNotifyEnd_BE9FD27546DC255F49A9C2BA512ED40E(FName NotifyName);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "17e88db6cfa98849880c8e01ae21aeeb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "46328cb9f513cc44b10f042c5e63ecf7";
+    };
 };
 
 }}}   // namespace Game::Enemies::Crawler

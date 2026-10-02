@@ -18,7 +18,7 @@ class UI_Cursor_Controller_C : public UMouseCursorWidget
 public:
     UE_CLASS("/Game/UI/Mouse_Cursor/UI_Cursor_Controller", "UI_Cursor_Controller_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UImage* Controller;
     void ExecuteUbergraph_UI_Cursor_Controller(int EntryPoint);
     void OnUnhover();

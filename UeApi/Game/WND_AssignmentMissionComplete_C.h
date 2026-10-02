@@ -48,12 +48,12 @@ public:
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     using UI_RewardResourcesBox_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResourcesBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* RemoveUI;
-    class UWidgetAnimation* AppearV2;
-    class UWidgetAnimation* MoveInProgressBarV2;
-    class UWidgetAnimation* MoveToTopProgressBar;
-    class UWidgetAnimation* MoveInProgressBar;
-    class UWidgetAnimation* Appear;
+    UE_READONLY class UWidgetAnimation* RemoveUI;
+    UE_READONLY class UWidgetAnimation* AppearV2;
+    UE_READONLY class UWidgetAnimation* MoveInProgressBarV2;
+    UE_READONLY class UWidgetAnimation* MoveToTopProgressBar;
+    UE_READONLY class UWidgetAnimation* MoveInProgressBar;
+    UE_READONLY class UWidgetAnimation* Appear;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     class UImage* CampaignImage;
@@ -91,16 +91,11 @@ public:
     void OnProgressBarMoveFinished();
     void OnNewTopWindow();
     void Reward_Claimed();
-    static constexpr const char* Reward_Claimed__UeName = "Reward Claimed";
     void Count_Down();
-    static constexpr const char* Count_Down__UeName = "Count Down";
     void On_Mission_Control_Finished();
-    static constexpr const char* On_Mission_Control_Finished__UeName = "On Mission Control Finished";
     void OnAppearFinished();
     void Start_Mission_Control_Speak();
-    static constexpr const char* Start_Mission_Control_Speak__UeName = "Start Mission Control Speak";
     void Init_Window();
-    static constexpr const char* Init_Window__UeName = "Init Window";
     void CursorInputHack();
     void Continue();
     void SetMissionControlPaused(bool IsPaused);
@@ -109,9 +104,7 @@ public:
     void BndEvt__ContinueButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Add_Reward(class UReward* Reward);
-    static constexpr const char* Add_Reward__UeName = "Add Reward";
     void Add_Reward_List(const TArray<class UReward*>& List);
-    static constexpr const char* Add_Reward_List__UeName = "Add Reward List";
     void CreateRewardWidget(class UReward* Reward, class URewardWidget*& Widget);
     void GetMissionCompleteShout(class UDialogDataAsset*& MissionCompleteShout);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
@@ -119,6 +112,17 @@ public:
     void UpdateCampaignProgressBar(bool ShowLastMission);
     void UpdateGoogleAnalytics();
     void CheckMinersManualNotifications();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Reward_Claimed__UeName = "Reward Claimed";
+        static constexpr const char* Count_Down__UeName = "Count Down";
+        static constexpr const char* On_Mission_Control_Finished__UeName = "On Mission Control Finished";
+        static constexpr const char* Start_Mission_Control_Speak__UeName = "Start Mission Control Speak";
+        static constexpr const char* Init_Window__UeName = "Init Window";
+        static constexpr const char* Add_Reward__UeName = "Add Reward";
+        static constexpr const char* Add_Reward_List__UeName = "Add Reward List";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications

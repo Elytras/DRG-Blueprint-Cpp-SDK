@@ -29,8 +29,8 @@ public:
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBuy;
-    class UWidgetAnimation* ButtonPulse;
+    UE_READONLY class UWidgetAnimation* AnimBuy;
+    UE_READONLY class UWidgetAnimation* ButtonPulse;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     Basic_FlatButton_C* BTN_Buy;
     Basic_FlatButton_C* BTN_CantAfford;
@@ -49,13 +49,17 @@ public:
     int Rank;
     void ExecuteUbergraph_UI_Perks_Buy(int EntryPoint);
     void Buy_Selected_Perk();
-    static constexpr const char* Buy_Selected_Perk__UeName = "Buy Selected Perk";
     void OnPerkPointsChanged(int PerkPoints, int Change);
     UE_COSMETIC void Construct();
     void BndEvt__ButtonBuy_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Basic_FlatButton_C* Button);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetPerk(class UPerkAsset* InPerk, int InTier);
     void CanBuyPerk(bool& Can_Buy);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Buy_Selected_Perk__UeName = "Buy Selected Perk";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

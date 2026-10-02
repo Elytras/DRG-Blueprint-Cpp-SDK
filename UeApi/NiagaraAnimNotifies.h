@@ -16,13 +16,13 @@ class UAnimNotify_PlayNiagaraEffect : public UAnimNotify
 {
 public:
     UE_CLASS("/Script/NiagaraAnimNotifies", "AnimNotify_PlayNiagaraEffect");
-    class UNiagaraSystem* Template;
-    FVector LocationOffset;
-    FRotator RotationOffset;
-    FVector Scale;
-    bool bAbsoluteScale;
-    bool Attached;
-    FName SocketName;
+    UE_READONLY class UNiagaraSystem* Template;
+    UE_READONLY FVector LocationOffset;
+    UE_READONLY FRotator RotationOffset;
+    UE_READONLY FVector Scale;
+    UE_READONLY bool bAbsoluteScale;
+    UE_READONLY bool Attached;
+    UE_READONLY FName SocketName;
     class UFXSystemComponent* GetSpawnedEffect() const;
 };
 
@@ -30,11 +30,11 @@ class UAnimNotifyState_TimedNiagaraEffect : public UAnimNotifyState
 {
 public:
     UE_CLASS("/Script/NiagaraAnimNotifies", "AnimNotifyState_TimedNiagaraEffect");
-    class UNiagaraSystem* Template;
-    FName SocketName;
-    FVector LocationOffset;
-    FRotator RotationOffset;
-    bool bDestroyAtEnd;
+    UE_READONLY class UNiagaraSystem* Template;
+    UE_READONLY FName SocketName;
+    UE_READONLY FVector LocationOffset;
+    UE_READONLY FRotator RotationOffset;
+    UE_READONLY bool bDestroyAtEnd;
     class UFXSystemComponent* GetSpawnedEffect(class UMeshComponent* MeshComp) const;
 };
 

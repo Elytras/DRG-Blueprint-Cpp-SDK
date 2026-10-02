@@ -17,9 +17,13 @@ class DeepDiveBragger_C : public AActor
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/DeepDiveBragger", "DeepDiveBragger_C");
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "7c7e8f1f7462f24e97bde0d4e111d172";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a2fba82859c9d94dac2b6c09deabc13f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "7c7e8f1f7462f24e97bde0d4e111d172";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a2fba82859c9d94dac2b6c09deabc13f";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionStart

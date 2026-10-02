@@ -27,7 +27,6 @@ public:
     using ITM_Prerequisites_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;
     using Jobs_List_Element_BG_CutCorner_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_JobsEntryV2_C;
-    static constexpr const char* UberGraphFrame_WND_JobsEntryV2_C__UeName = "UberGraphFrame";
     class UImage* Assignment_Image;
     class UHorizontalBox* Box_CampaignItems;
     class UButton* Button_Main;
@@ -54,6 +53,11 @@ public:
     UE_PURE bool VisibleAndEnabled(class UWidget* Widget);
     UE_PURE bool CanStartCampaign(class UCampaign* InCampaign);
     void SetData(class UCampaign* Campaign_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WND_JobsEntryV2_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Jobs

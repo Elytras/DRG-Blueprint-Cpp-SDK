@@ -18,15 +18,10 @@ class PRJ_MicroMissile_Cluster_C : public Game::WeaponsNTools::MicroMissileLaunc
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Cluster", "PRJ_MicroMissile_Cluster_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_MicroMissile_Cluster_C;
-    static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Cluster_C__UeName = "UberGraphFrame";
     class UClusterbombSpawner* ClusterbombSpawner;
-    static constexpr const char* ClusterbombSpawner__UeScsNode = "7c0dcf11f11f1e47b17c8deb17656768";
     class UStaticMeshComponent* SM_MicroMissile_Cluster;
-    static constexpr const char* SM_MicroMissile_Cluster__UeScsNode = "224d88c4206ee34eb3cbc8b81ac0ed4a";
     class UStaticMeshComponent* Locationindicator;
-    static constexpr const char* Locationindicator__UeScsNode = "a7fcd866a8224c4bb6a72cbd136a83cb";
     FTimerHandle IndicatorTimer;
     float IndicatorUpdateTime;
     bool CanCluster;
@@ -38,6 +33,15 @@ public:
     void OnInitialized();
     UE_MULTICAST void SpawnClusters(FVector InVector, float ClusterDelay);
     void CalculateClusterTrajectory(float RealDeltaTime, float ProjectileSpeed, FVector& ClusterHitCenter);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Cluster_C__UeName = "UberGraphFrame";
+        static constexpr const char* ClusterbombSpawner__UeScsNode = "7c0dcf11f11f1e47b17c8deb17656768";
+        static constexpr const char* SM_MicroMissile_Cluster__UeScsNode = "224d88c4206ee34eb3cbc8b81ac0ed4a";
+        static constexpr const char* Locationindicator__UeScsNode = "a7fcd866a8224c4bb6a72cbd136a83cb";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher

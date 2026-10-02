@@ -26,23 +26,27 @@ public:
     class UImage* Icon;
     class UTexture2D* CategoryIcon;
     bool CategorySelected;
-    bool IsAllCategory;
+    UE_READONLY bool IsAllCategory;
     TMulticastInlineDelegate<void(UI_MissionStats_Category_C* CategoryWidget, bool Is_Selected)> On_Clicked;
-    static constexpr const char* On_Clicked__UeName = "On Clicked";
     void ExecuteUbergraph_UI_MissionStats_Category(int EntryPoint);
     void Set_Hovered(bool IsHovered_0);
-    static constexpr const char* Set_Hovered__UeName = "Set Hovered";
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC void Construct();
     void Set_Selected(bool CategorySelected_0);
-    static constexpr const char* Set_Selected__UeName = "Set Selected";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void IsSelected(bool& CategorySelected_0);
     UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void GetCategoryIcon(class UTexture2D*& CategoryIcon_0);
     void Click();
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Clicked__UeName = "On Clicked";
+        static constexpr const char* Set_Hovered__UeName = "Set Hovered";
+        static constexpr const char* Set_Selected__UeName = "Set Selected";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

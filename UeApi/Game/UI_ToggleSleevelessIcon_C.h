@@ -22,9 +22,9 @@ public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_ToggleSleevelessIcon", "UI_ToggleSleevelessIcon_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimNotAvailable;
-    class UWidgetAnimation* AnimHover;
-    class UWidgetAnimation* AnimActivate;
+    UE_READONLY class UWidgetAnimation* AnimNotAvailable;
+    UE_READONLY class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimActivate;
     class UBorder* Background;
     class UBorder* FrameBorder;
     UI_ImageTinted_C* NoVariantAvailable;
@@ -33,7 +33,7 @@ public:
     class USizeBox* Sizer;
     UI_ImageTinted_C* WithoutSleeveIcon_1;
     UI_ImageTinted_C* WithSleeveIcon;
-    int Dimension;
+    UE_READONLY int Dimension;
     bool IsSleevesDesired;
     bool IsSleevelessAvailable;
     void ExecuteUbergraph_UI_ToggleSleevelessIcon(int EntryPoint);

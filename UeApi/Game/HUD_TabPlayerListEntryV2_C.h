@@ -52,9 +52,13 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Set_Data(class AFSDPlayerState* State);
-    static constexpr const char* Set_Data__UeName = "Set Data";
     void UpdateVolatileStats();
     void UpdatePlayerClass();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Data__UeName = "Set Data";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Tab

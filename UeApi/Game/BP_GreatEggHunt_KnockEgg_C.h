@@ -27,15 +27,10 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_KnockEgg", "BP_GreatEggHunt_KnockEgg_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "0db0b4bd6a71464e8f2d9775c12a2f7e";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "4b1f9e0afb55a5409af844e4bcbd3297";
     class USceneComponent* MeshPivot;
-    static constexpr const char* MeshPivot__UeScsNode = "33cd179f1678764688b04e67df1f90ca";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "dfde231fb5e84c45b14c9c16a76b48aa";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "d5d1cae916fe57409065ed68e0d1ffee";
     bool PlayReact;
     float PlayingReactTimer;
     float ReactSpeed;
@@ -43,7 +38,6 @@ public:
     bool LerpingOut;
     FRotator LerpOutStartRot;
     class UMaterialInstance* MaterialUsed;
-    static constexpr const char* MaterialUsed__Replicated = "OnRep_MaterialUsed:";
     TArray<class UMaterialInstance*> Materials;
     int AnimationIndex;
     TArray<class UAnimSequence*> Animations;
@@ -56,6 +50,16 @@ public:
     void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnKnock(class APlayerCharacter* Player);
     void OnRep_MaterialUsed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "0db0b4bd6a71464e8f2d9775c12a2f7e";
+        static constexpr const char* SkeletalMesh__UeScsNode = "4b1f9e0afb55a5409af844e4bcbd3297";
+        static constexpr const char* MeshPivot__UeScsNode = "33cd179f1678764688b04e67df1f90ca";
+        static constexpr const char* Scene__UeScsNode = "dfde231fb5e84c45b14c9c16a76b48aa";
+        static constexpr const char* InstantUsable__UeScsNode = "d5d1cae916fe57409065ed68e0d1ffee";
+        static constexpr const char* MaterialUsed__Replicated = "OnRep_MaterialUsed:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

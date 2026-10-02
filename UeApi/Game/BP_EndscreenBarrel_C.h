@@ -17,9 +17,13 @@ class BP_EndscreenBarrel_C : public AActor
 public:
     UE_CLASS("/Game/CharacterStructure/Gear_Unarmed/TP/EndScreenAnims/BP_EndscreenBarrel", "BP_EndscreenBarrel_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c637faf9dcecd0429bb764bd22ee3f81";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e1e82ca77dc1f64b9e2c1008a9d09f3c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "c637faf9dcecd0429bb764bd22ee3f81";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e1e82ca77dc1f64b9e2c1008a9d09f3c";
+    };
 };
 
 }}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims

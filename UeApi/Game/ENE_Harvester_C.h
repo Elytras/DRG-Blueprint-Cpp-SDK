@@ -27,22 +27,14 @@ class ENE_Harvester_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/Harvester/ENE_Harvester", "ENE_Harvester_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "177bc98042c3e443890b2ab5f2a1ec54";
     class UBoxComponent* PlayerRideCollision;
-    static constexpr const char* PlayerRideCollision__UeScsNode = "271dde812430424b8b72ad6725039563";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "745a06730a409e42a84c7f0dcf4fb323";
     class UParticleSystemComponent* P_Harvesting_A;
-    static constexpr const char* P_Harvesting_A__UeScsNode = "681ba2fef0472245981d6bc9d7142df4";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "21a62bc86a54af438b36c71d5907953e";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "086fb07138aba54bb0de68e6427a66b1";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
     class UParticleSystem* DeathParticle;
     float PlayerBeginRideTime;
     int EnemiesKilled;
@@ -54,6 +46,18 @@ public:
     void BndEvt__PlayerRideCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnRep_Moving();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* enemy__UeScsNode = "177bc98042c3e443890b2ab5f2a1ec54";
+        static constexpr const char* PlayerRideCollision__UeScsNode = "271dde812430424b8b72ad6725039563";
+        static constexpr const char* Box__UeScsNode = "745a06730a409e42a84c7f0dcf4fb323";
+        static constexpr const char* P_Harvesting_A__UeScsNode = "681ba2fef0472245981d6bc9d7142df4";
+        static constexpr const char* SimpleHealth__UeScsNode = "21a62bc86a54af438b36c71d5907953e";
+        static constexpr const char* Audio__UeScsNode = "086fb07138aba54bb0de68e6427a66b1";
+        static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
+    };
 };
 
 }}}   // namespace Game::Critters::Harvester

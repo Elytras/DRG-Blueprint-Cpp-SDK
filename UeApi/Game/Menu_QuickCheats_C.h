@@ -72,9 +72,7 @@ public:
     class UCanvasPanel* TopCanvasPanel;
     class UCheckBox* UsingSavedCheats;
     int Current_Tab_Index;
-    static constexpr const char* Current_Tab_Index__UeName = "Current Tab Index";
     int Amount_of_main_tabs;
-    static constexpr const char* Amount_of_main_tabs__UeName = "Amount of main tabs";
     bool GodmodeActive;
     bool FastMovementActive;
     bool FlyingActive;
@@ -82,14 +80,12 @@ public:
     bool MaxLightingActive;
     bool AmmoCostEnabled;
     Cheat_SpawnEnemyAdvanced_C* Advanced_Spawn_Menu;
-    static constexpr const char* Advanced_Spawn_Menu__UeName = "Advanced Spawn Menu";
     class UPlayerCharacterID* ActiveCharac;
     void ExecuteUbergraph_Menu_QuickCheats(int EntryPoint);
     void BndEvt__UsingSavedCheats_K2Node_ComponentBoundEvent_9_OnCheckBoxComponentStateChanged__DelegateSignature(bool bIsChecked);
     void BndEvt__MenuAnchor_advSpawn_K2Node_ComponentBoundEvent_20_OnMenuOpenChangedEvent__DelegateSignature(bool bIsOpen);
     void BndEvt__Button_EnemySpawning_K2Node_ComponentBoundEvent_19_OnButtonClickedEvent__DelegateSignature();
     void Close_Advanced_spawning();
-    static constexpr const char* Close_Advanced_spawning__UeName = "Close Advanced spawning";
     void BndEvt__ComboBoxString_138_K2Node_ComponentBoundEvent_18_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__Button_ToggleBosco_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_SpawnWaveFromPool_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature();
@@ -98,7 +94,6 @@ public:
     void BndEvt__Button_CompleteObjectives_K2Node_ComponentBoundEvent_13_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_OpenDifficulty_K2Node_ComponentBoundEvent_12_OnButtonClickedEvent__DelegateSignature();
     void Set_Cheats_from_setting();
-    static constexpr const char* Set_Cheats_from_setting__UeName = "Set Cheats from setting";
     void BndEvt__Button_SwapSecondary_K2Node_ComponentBoundEvent_11_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_SwapPrimary_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_96_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature();
@@ -111,9 +106,7 @@ public:
     void BndEvt__Button_Resupply_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__HealthSlider_K2Node_ComponentBoundEvent_2_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void HotKey_Interaction_change_character();
-    static constexpr const char* HotKey_Interaction_change_character__UeName = "HotKey Interaction change character";
     void Swap_Weapon_to_next(TEnum<EItemCategory> Item_Category);
-    static constexpr const char* Swap_Weapon_to_next__UeName = "Swap Weapon to next";
     UE_COSMETIC void Construct();
     void BndEvt__Button_Scout_K2Node_ComponentBoundEvent_782_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Driller_K2Node_ComponentBoundEvent_758_OnButtonClickedEvent__DelegateSignature();
@@ -134,6 +127,17 @@ public:
     UE_PURE FLinearColor GetColorAndOpacity_MaxLightningActive();
     UE_PURE FLinearColor GetColorAndOpacity_NoAmmoCost();
     class UWidget* On_MenuAnchor_advSpawn_GetMenuContent_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Current_Tab_Index__UeName = "Current Tab Index";
+        static constexpr const char* Amount_of_main_tabs__UeName = "Amount of main tabs";
+        static constexpr const char* Advanced_Spawn_Menu__UeName = "Advanced Spawn Menu";
+        static constexpr const char* Close_Advanced_spawning__UeName = "Close Advanced spawning";
+        static constexpr const char* Set_Cheats_from_setting__UeName = "Set Cheats from setting";
+        static constexpr const char* HotKey_Interaction_change_character__UeName = "HotKey Interaction change character";
+        static constexpr const char* Swap_Weapon_to_next__UeName = "Swap Weapon to next";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

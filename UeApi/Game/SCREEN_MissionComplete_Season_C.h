@@ -31,15 +31,14 @@ public:
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* SeasonMultiplierIntro;
-    class UWidgetAnimation* LevelUpSmoke;
-    class UWidgetAnimation* RemoveLevelUpBanner;
-    class UWidgetAnimation* Appear;
-    class UWidgetAnimation* PerformancePointShake;
-    class UWidgetAnimation* HideEvents;
-    class UWidgetAnimation* NewRewardIntro;
+    UE_READONLY class UWidgetAnimation* SeasonMultiplierIntro;
+    UE_READONLY class UWidgetAnimation* LevelUpSmoke;
+    UE_READONLY class UWidgetAnimation* RemoveLevelUpBanner;
+    UE_READONLY class UWidgetAnimation* Appear;
+    UE_READONLY class UWidgetAnimation* PerformancePointShake;
+    UE_READONLY class UWidgetAnimation* HideEvents;
+    UE_READONLY class UWidgetAnimation* NewRewardIntro;
     class UImage* Twox;
-    static constexpr const char* Twox__UeName = "2x";
     class UCanvasPanel* CanvasPanel_PPCounting;
     class UHorizontalBox* HB_PointsGained;
     class UHorizontalBox* HorizontalBox_Challenges;
@@ -99,6 +98,11 @@ public:
     void AddPoints(int Points);
     void AddLevelUpBanner(int Level);
     void SequenceEvent__ENTRYPOINTSCREEN_MissionComplete_Season_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Twox__UeName = "2x";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

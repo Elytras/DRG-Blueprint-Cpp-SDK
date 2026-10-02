@@ -22,7 +22,7 @@ class Announcement_Label_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Announcements/Announcement_Label", "Announcement_Label_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnnounceAnim;
+    UE_READONLY class UWidgetAnimation* AnnounceAnim;
     class UImage* Icon;
     class UTextBlock* Label;
     class UCanvasPanel* Root;
@@ -30,12 +30,16 @@ public:
     FLinearColor TextColor;
     class UTexture2D* IconTexture;
     FLinearColor Icon_Tint;
-    static constexpr const char* Icon_Tint__UeName = "Icon Tint";
     float StartDelay;
     void ExecuteUbergraph_Announcement_Label(int EntryPoint);
     void OnAnnounceAnimFinished();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Icon_Tint__UeName = "Icon Tint";
+    };
 };
 
 }}}   // namespace Game::UI::Announcements

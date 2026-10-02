@@ -18,11 +18,15 @@ class BP_Halloween_SmokyPumpkin_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_Halloween_SmokyPumpkin", "BP_Halloween_SmokyPumpkin_C");
     class UNiagaraComponent* NS_Pumpkin_Smoke_Constant;
-    static constexpr const char* NS_Pumpkin_Smoke_Constant__UeScsNode = "a3dfa0f48935184db27db396e3da77ff";
     class UStaticMeshComponent* Mesh_Pumpkin;
-    static constexpr const char* Mesh_Pumpkin__UeScsNode = "1f70c1820519bb47939a9da10373b48a";
     class USceneComponent* SharedRoot;
-    static constexpr const char* SharedRoot__UeScsNode = "1cb9501927b63244b271f2c24bb61cc5";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_Pumpkin_Smoke_Constant__UeScsNode = "a3dfa0f48935184db27db396e3da77ff";
+        static constexpr const char* Mesh_Pumpkin__UeScsNode = "1f70c1820519bb47939a9da10373b48a";
+        static constexpr const char* SharedRoot__UeScsNode = "1cb9501927b63244b271f2c24bb61cc5";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween

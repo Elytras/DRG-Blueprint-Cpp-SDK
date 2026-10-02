@@ -21,7 +21,7 @@ public:
     UE_CLASS("/Game/UI/Menu_MissionStart/ITM_DeepDive_MisCompBG", "ITM_DeepDive_MisCompBG_C");
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBackgroundFloat;
+    UE_READONLY class UWidgetAnimation* AnimBackgroundFloat;
     BlurBackground_C* BlurBackground;
     class UImage* ImageBackground;
     void ExecuteUbergraph_ITM_DeepDive_MisCompBG(int EntryPoint);

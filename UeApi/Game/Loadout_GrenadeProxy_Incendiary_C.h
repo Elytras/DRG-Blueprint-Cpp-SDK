@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_Incendiary_C : public Game::WeaponsNTools::Grenades::
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Incendiary/Loadout_GrenadeProxy_Incendiary", "Loadout_GrenadeProxy_Incendiary_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Incendiary

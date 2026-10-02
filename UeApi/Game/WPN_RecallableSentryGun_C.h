@@ -17,13 +17,17 @@ class WPN_RecallableSentryGun_C : public ARecallableSentryGunItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/WPN_RecallableSentryGun", "WPN_RecallableSentryGun_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator AmmoCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator ItemPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     bool ArcIndicatorActive;
     void ExecuteUbergraph_WPN_RecallableSentryGun(int EntryPoint);
     void BndEvt__WPN_RecallableSentryGun_ItemPlacer_K2Node_ComponentBoundEvent_0_MarkerDelegate__DelegateSignature(class AItemMarker* Marker);
     void SetArcIndicatorActive(bool Active);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator AmmoCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator ItemPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

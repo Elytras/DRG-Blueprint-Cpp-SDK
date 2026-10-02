@@ -25,9 +25,9 @@ public:
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     using HUD_PlayerClass_Icon_C = Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* IconOutro;
-    class UWidgetAnimation* IconIntro;
-    class UWidgetAnimation* Enter;
+    UE_READONLY class UWidgetAnimation* IconOutro;
+    UE_READONLY class UWidgetAnimation* IconIntro;
+    UE_READONLY class UWidgetAnimation* Enter;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow_0;
     class UImage* BGgradientBottom;
     class UImage* BGgradientTop;

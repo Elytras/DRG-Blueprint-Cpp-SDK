@@ -13,6 +13,11 @@ class STE_NoOxygenLeft_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/NoOxygen/STE_NoOxygenLeft", "STE_NoOxygenLeft_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen

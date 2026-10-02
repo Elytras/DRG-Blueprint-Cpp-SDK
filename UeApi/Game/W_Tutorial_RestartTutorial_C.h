@@ -15,12 +15,16 @@ class W_Tutorial_RestartTutorial_C : public Game::UI::Tutorial::W_TutorialConten
 public:
     UE_CLASS("/Game/UI/Tutorial/W_Tutorial_RestartTutorial", "W_Tutorial_RestartTutorial_C");
     FPointerToUberGraphFrame UberGraphFrame_W_Tutorial_RestartTutorial_C;
-    static constexpr const char* UberGraphFrame_W_Tutorial_RestartTutorial_C__UeName = "UberGraphFrame";
     FTimerHandle TimerHandle;
     void ExecuteUbergraph_W_Tutorial_RestartTutorial(int EntryPoint);
     void OnCloseTutorial();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_Tutorial_RestartTutorial_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

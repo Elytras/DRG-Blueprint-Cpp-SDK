@@ -22,29 +22,33 @@ public:
     UE_CLASS("/Game/LevelElements/Spacerig/Bar/DrinksDispenser/Assets/BP_DrinksBox", "BP_DrinksBox_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* BartenderLocation;
-    static constexpr const char* BartenderLocation__UeScsNode = "e39c5411839cc54898ea39f5aa9e06e2";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "36f1eb5ca5423a498867cf2b14454a12";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4f2b007429d9b448a6796e78fe5c90f0";
     uint8 State;
-    static constexpr const char* State__Replicated = "OnRep_State:";
     TMulticastInlineDelegate<void(BP_DrinksBox_C* DrinkBox)> OnAvailableForNewDrink;
     TMulticastInlineDelegate<void(BP_DrinksBox_C* DrinkBox)> OnDrinkReady;
     class ADrinkableActor* DrinkableActor;
-    static constexpr const char* DrinkableActor__Replicated = "OnRep_DrinkableActor:";
     TMulticastInlineDelegate<void(uint8 State_0)> OnStateChanged;
     int BarSlotIndex;
     void ExecuteUbergraph_BP_DrinksBox(int EntryPoint);
     void Fill_DrinkableActor();
-    static constexpr const char* Fill_DrinkableActor__UeName = "Fill DrinkableActor";
     void OnDrinkableDestroyed(class AActor* DestroyedActor);
     void Spawn_Drink(class UDrinkableDataAsset* Drinkable);
-    static constexpr const char* Spawn_Drink__UeName = "Spawn Drink";
     void OnLoaded_C20044584A6E4C14650B318543524FEE(TSubclassOf<class UObject> Loaded);
     void OnRep_State();
     void IsAvailable(bool& IsAvailable_0);
     void OnRep_DrinkableActor();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BartenderLocation__UeScsNode = "e39c5411839cc54898ea39f5aa9e06e2";
+        static constexpr const char* SkeletalMesh__UeScsNode = "36f1eb5ca5423a498867cf2b14454a12";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4f2b007429d9b448a6796e78fe5c90f0";
+        static constexpr const char* State__Replicated = "OnRep_State:";
+        static constexpr const char* DrinkableActor__Replicated = "OnRep_DrinkableActor:";
+        static constexpr const char* Fill_DrinkableActor__UeName = "Fill DrinkableActor";
+        static constexpr const char* Spawn_Drink__UeName = "Spawn Drink";
+    };
 };
 
 }}}}}}   // namespace Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets

@@ -24,18 +24,13 @@ class BP_WaterBalloon_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_WaterBalloon", "BP_WaterBalloon_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* BalloonMesh;
-    static constexpr const char* BalloonMesh__UeScsNode = "4e743e9341bc8746b097e7f9089e7333";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "ade588786209204e902cfa8a0e91e313";
     float ImpulseStrength;
     FName ImpulseSocketName;
     class USoundCue* Death_Sound;
-    static constexpr const char* Death_Sound__UeName = "Death Sound";
     void ExecuteUbergraph_BP_WaterBalloon(int EntryPoint);
     void ReceiveBeginPlay();
     void ApplyForceSM(class UStaticMeshComponent* Component, FVector Position);
@@ -43,6 +38,15 @@ public:
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
     void ReceiveIgnoreCharacter(class APlayerCharacter* Character);
     void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* BalloonMesh__UeScsNode = "4e743e9341bc8746b097e7f9089e7333";
+        static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
+        static constexpr const char* Sphere__UeScsNode = "ade588786209204e902cfa8a0e91e313";
+        static constexpr const char* Death_Sound__UeName = "Death Sound";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

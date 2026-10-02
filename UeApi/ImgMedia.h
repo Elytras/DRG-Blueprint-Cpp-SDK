@@ -15,10 +15,10 @@ class UImgMediaSource : public UBaseMediaSource
 {
 public:
     UE_CLASS("/Script/ImgMedia", "ImgMediaSource");
-    bool IsPathRelativeToProjectRoot;
+    UE_READONLY bool IsPathRelativeToProjectRoot;
     FFrameRate FrameRateOverride;
     FString ProxyOverride;
-    FDirectoryPath SequencePath;
+    UE_READONLY FDirectoryPath SequencePath;
     void AddGlobalCamera(class AActor* InActor);
     void AddTargetObject(class AActor* InActor, float Width);
     void RemoveGlobalCamera(class AActor* InActor);

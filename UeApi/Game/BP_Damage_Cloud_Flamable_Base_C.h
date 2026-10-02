@@ -22,15 +22,10 @@ class BP_Damage_Cloud_Flamable_Base_C : public Game::Enemies::BaseItems::BP_Dama
 public:
     UE_CLASS("/Game/Enemies/BaseItems/BP_Damage_Cloud_Flamable_Base", "BP_Damage_Cloud_Flamable_Base_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Damage_Cloud_Flamable_Base_C;
-    static constexpr const char* UberGraphFrame_BP_Damage_Cloud_Flamable_Base_C__UeName = "UberGraphFrame";
     class UDamageComponent* CombustionDamageIce;
-    static constexpr const char* CombustionDamageIce__UeScsNode = "96093e657d251c44bfc4cc9a736692ce";
     class UDamageComponent* CombustionDamageFire;
-    static constexpr const char* CombustionDamageFire__UeScsNode = "df552dcc2b2e9a419da3791413245a98";
     class UObjectTemperatureComponent* ObjectTemperature;
-    static constexpr const char* ObjectTemperature__UeScsNode = "8b3d2b12094a6f4396ca483df0d488c1";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "a86b9677905a0d4cade766bec2d9dd3e";
     class USoundBase* CombustionSound;
     class UNiagaraSystem* CombustionFX;
     class UNiagaraSystem* FireCombustionFX;
@@ -38,7 +33,6 @@ public:
     class USoundBase* FireCombustionSound;
     class USoundBase* IceCombustionSound;
     bool Ignited;
-    static constexpr const char* Ignited__Replicated = ":";
     void ExecuteUbergraph_BP_Damage_Cloud_Flamable_Base(int EntryPoint);
     void EvaluateFX();
     void Freeze();
@@ -46,6 +40,16 @@ public:
     void BndEvt__BP_Damage_Cloud_Flamable_Base_ObjectTemperature_K2Node_ComponentBoundEvent_2_Delegate__DelegateSignature();
     void BndEvt__ObjectTemperature_K2Node_ComponentBoundEvent_0_OnStartBurning__DelegateSignature();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Damage_Cloud_Flamable_Base_C__UeName = "UberGraphFrame";
+        static constexpr const char* CombustionDamageIce__UeScsNode = "96093e657d251c44bfc4cc9a736692ce";
+        static constexpr const char* CombustionDamageFire__UeScsNode = "df552dcc2b2e9a419da3791413245a98";
+        static constexpr const char* ObjectTemperature__UeScsNode = "8b3d2b12094a6f4396ca483df0d488c1";
+        static constexpr const char* SimpleHealth__UeScsNode = "a86b9677905a0d4cade766bec2d9dd3e";
+        static constexpr const char* Ignited__Replicated = ":";
+    };
 };
 
 }}}   // namespace Game::Enemies::BaseItems

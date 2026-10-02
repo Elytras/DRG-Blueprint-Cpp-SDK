@@ -23,22 +23,26 @@ class BP_Phys_GreatEggHunt_InflatableCarrot_C : public Game::Art::Environments::
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_Phys_GreatEggHunt_InflatableCarrot", "BP_Phys_GreatEggHunt_InflatableCarrot_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Phys_GreatEggHunt_InflatableCarrot_C;
-    static constexpr const char* UberGraphFrame_BP_Phys_GreatEggHunt_InflatableCarrot_C__UeName = "UberGraphFrame";
     class UCapsuleComponent* UseableCapsule;
-    static constexpr const char* UseableCapsule__UeScsNode = "221abbc506864649a8a85e34457764ef";
     class UNiagaraComponent* PopParticles;
-    static constexpr const char* PopParticles__UeScsNode = "0d65edb7d5aa7d42a389616976b06fde";
     class UActorComponent* LastBounce;
     int NumberOfImpacts;
     bool IsBroken;
-    static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
     int RequiredImpactsToPop;
     void ExecuteUbergraph_BP_Phys_GreatEggHunt_InflatableCarrot(int EntryPoint);
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void ReceiveBeginPlay();
     void BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    static constexpr const char* BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_InflatableSausage_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
     void OnRep_IsBroken();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Phys_GreatEggHunt_InflatableCarrot_C__UeName = "UberGraphFrame";
+        static constexpr const char* UseableCapsule__UeScsNode = "221abbc506864649a8a85e34457764ef";
+        static constexpr const char* PopParticles__UeScsNode = "0d65edb7d5aa7d42a389616976b06fde";
+        static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
+        static constexpr const char* BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_InflatableSausage_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

@@ -18,15 +18,19 @@ class BP_MainFacility_ShieldEmitter_Hologram_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_MainFacility_ShieldEmitter_Hologram", "BP_MainFacility_ShieldEmitter_Hologram_C");
     class UStaticMeshComponent* Hologram5;
-    static constexpr const char* Hologram5__UeScsNode = "cf785e2b76ff824eb30d3f3ef3447f03";
     class UStaticMeshComponent* Hologram6;
-    static constexpr const char* Hologram6__UeScsNode = "71767db5ea8bd84da76aff21c2770693";
     class UStaticMeshComponent* Hologram4;
-    static constexpr const char* Hologram4__UeScsNode = "0ca80bb25a73d64caa4ea86a19427c96";
     class URotatingSceneComponent* RotatingScene;
-    static constexpr const char* RotatingScene__UeScsNode = "b8b966f10e248c4ebbc57fc7b5a31a12";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7581567e9a32964b957afc5cab15feac";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Hologram5__UeScsNode = "cf785e2b76ff824eb30d3f3ef3447f03";
+        static constexpr const char* Hologram6__UeScsNode = "71767db5ea8bd84da76aff21c2770693";
+        static constexpr const char* Hologram4__UeScsNode = "0ca80bb25a73d64caa4ea86a19427c96";
+        static constexpr const char* RotatingScene__UeScsNode = "b8b966f10e248c4ebbc57fc7b5a31a12";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7581567e9a32964b957afc5cab15feac";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

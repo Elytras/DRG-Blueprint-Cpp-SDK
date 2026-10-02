@@ -49,7 +49,6 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnShown();
     void Close_Window();
-    static constexpr const char* Close_Window__UeName = "Close Window";
     void BndEvt__KPIView_K2Node_ComponentBoundEvent_3_OnHasClaimableChanged__DelegateSignature(bool HasClaimable);
     void SelectStatistics();
     void BndEvt__BTN_Perks_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
@@ -59,6 +58,11 @@ public:
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SelectNextTab(int Direction);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Close_Window__UeName = "Close Window";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

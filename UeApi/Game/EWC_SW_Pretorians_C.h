@@ -18,12 +18,16 @@ class EWC_SW_Pretorians_C : public Game::Enemies::Waves::WaveControllers::EWC_Ba
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_SW_Pretorians", "EWC_SW_Pretorians_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_SW_Pretorians_C;
-    static constexpr const char* UberGraphFrame_EWC_SW_Pretorians_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     void ExecuteUbergraph_EWC_SW_Pretorians(int EntryPoint);
     void StopConstantPreassure();
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_SW_Pretorians_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

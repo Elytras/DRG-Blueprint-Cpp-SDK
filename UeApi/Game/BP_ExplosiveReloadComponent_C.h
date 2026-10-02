@@ -13,6 +13,11 @@ class BP_ExplosiveReloadComponent_C : public UWeaponHitCounterComponent
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/Overclocks/OC_BonusesAndPenalties/BP_ExplosiveReloadComponent", "BP_ExplosiveReloadComponent_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageHitCountEffect DamageHitCountEffect_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties

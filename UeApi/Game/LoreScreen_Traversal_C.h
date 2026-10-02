@@ -24,7 +24,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_Container_PictureOverText_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_PictureOverText_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Traversal_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Traversal_C__UeName = "UberGraphFrame";
     Basic_IconWithOutline_C* DrillerIcon;
     Basic_IconWithOutline_C* EngineerIcon;
     Basic_IconWithOutline_C* GunnarIcon;
@@ -42,6 +41,11 @@ public:
     void ExecuteUbergraph_LoreScreen_Traversal(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Traversal_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Basics

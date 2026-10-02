@@ -27,24 +27,15 @@ class ENE_FacilityTurret_Spinning_C : public ASpinningFacilityturret
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Spinning", "ENE_FacilityTurret_Spinning_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "69f62019043beb4ab3f5b12f856957e1";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "23187b255ebc724da627d619313c82d0";
     class UStaticMeshComponent* ShieldMesh;
-    static constexpr const char* ShieldMesh__UeScsNode = "09812f64c178474ba75853686d43fdc8";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "8d316f35d3cd6743809a8ce71e0ba4a2";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "cc0a1d7a441f2b43967f42a85bfd96c4";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "ccd27a88a8a842439c00ececb58ecd10";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "d095c33df2cdb040b7103ba453834285";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_AC7B3F7C4EBC4266A6222DB9EEEB9907";
     TEnum<ETimelineDirection> Timeline_0__Direction_AC7B3F7C4EBC4266A6222DB9EEEB9907;
     class UTimelineComponent* Timeline_0;
     int Attacks;
@@ -62,6 +53,19 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     UE_PURE FVector GetTargetCenterMass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* terrainPlacement__UeScsNode = "69f62019043beb4ab3f5b12f856957e1";
+        static constexpr const char* TerrainDetect__UeScsNode = "23187b255ebc724da627d619313c82d0";
+        static constexpr const char* ShieldMesh__UeScsNode = "09812f64c178474ba75853686d43fdc8";
+        static constexpr const char* Capsule__UeScsNode = "8d316f35d3cd6743809a8ce71e0ba4a2";
+        static constexpr const char* WeakpointGlow__UeScsNode = "cc0a1d7a441f2b43967f42a85bfd96c4";
+        static constexpr const char* PathfinderCollision__UeScsNode = "ccd27a88a8a842439c00ececb58ecd10";
+        static constexpr const char* outline__UeScsNode = "d095c33df2cdb040b7103ba453834285";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_AC7B3F7C4EBC4266A6222DB9EEEB9907";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

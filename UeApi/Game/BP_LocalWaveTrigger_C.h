@@ -17,10 +17,14 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_LocalWaveTrigger", "BP_LocalWaveTrigger_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "01b29ee2a7537c41b2977e63c2d1429d";
     void ExecuteUbergraph_BP_LocalWaveTrigger(int EntryPoint);
     void CheckForNearbyPlayers();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "01b29ee2a7537c41b2977e63c2d1429d";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

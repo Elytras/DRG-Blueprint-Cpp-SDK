@@ -13,6 +13,11 @@ class STE_PlasmaExplosion_DoT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/STE_PlasmaExplosion_DoT", "STE_PlasmaExplosion_DoT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

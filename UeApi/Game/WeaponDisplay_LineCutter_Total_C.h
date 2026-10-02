@@ -20,7 +20,6 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/WeaponDisplay_LineCutter_Total", "WeaponDisplay_LineCutter_Total_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_LineCutter_Total_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_LineCutter_Total_C__UeName = "UberGraphFrame";
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UImage* Image_88;
     class UTextBlock* MaxAmmo;
@@ -28,6 +27,11 @@ public:
     void ExecuteUbergraph_WeaponDisplay_LineCutter_Total(int EntryPoint);
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_LineCutter_Total_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

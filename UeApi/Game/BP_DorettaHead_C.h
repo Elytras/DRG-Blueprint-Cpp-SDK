@@ -28,28 +28,17 @@ class BP_DorettaHead_C : public ADorrettaHead
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_DorettaHead", "BP_DorettaHead_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarriableComponent;/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NiagaraNoBlinking;
-    static constexpr const char* NiagaraNoBlinking__UeScsNode = "691a57c7b9da31419b0580a75e379264";
     class USphereComponent* SphereTrigger;
-    static constexpr const char* SphereTrigger__UeScsNode = "54480676f9fb4243a08fef92598354a4";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "f0a2bf5fe203ce46929807a90dd0da0b";
     class UStaticMeshComponent* SM_Doretta;
-    static constexpr const char* SM_Doretta__UeScsNode = "c58ca47127ba904e8baccc86376dea58";
     class USceneComponent* DorettaHeadRoot;
-    static constexpr const char* DorettaHeadRoot__UeScsNode = "4d336f0db63d4a4d804e30a33e50b895";
     class USceneComponent* SoundSpawnPoint;
-    static constexpr const char* SoundSpawnPoint__UeScsNode = "a2b8b306c944264da8f3deb636a9b697";
     class USphereComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "959c313d5e1d1b42a3dd97caa0b48426";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "7f03084ca44a4745b2de8b93f9696181";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "b80f6ebd7c07fc42b4950c51a384aabf";
     class USphereComponent* SphereUsable;
-    static constexpr const char* SphereUsable__UeScsNode = "c2494a7e95a07b419ca471025f33097b";
     FVector JIggle_Jiggle_4D1EF936403F1B634C819C8AC37A7DE1;
     TEnum<ETimelineDirection> JIggle__Direction_4D1EF936403F1B634C819C8AC37A7DE1;
     class UTimelineComponent* JIggle;
@@ -70,6 +59,21 @@ public:
     void BndEvt__CarriableComponent_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
     void JIggle__UpdateFunc();
     void JIggle__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarriableComponent;/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* NiagaraNoBlinking__UeScsNode = "691a57c7b9da31419b0580a75e379264";
+        static constexpr const char* SphereTrigger__UeScsNode = "54480676f9fb4243a08fef92598354a4";
+        static constexpr const char* Niagara__UeScsNode = "f0a2bf5fe203ce46929807a90dd0da0b";
+        static constexpr const char* SM_Doretta__UeScsNode = "c58ca47127ba904e8baccc86376dea58";
+        static constexpr const char* DorettaHeadRoot__UeScsNode = "4d336f0db63d4a4d804e30a33e50b895";
+        static constexpr const char* SoundSpawnPoint__UeScsNode = "a2b8b306c944264da8f3deb636a9b697";
+        static constexpr const char* Sphere1__UeScsNode = "959c313d5e1d1b42a3dd97caa0b48426";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "7f03084ca44a4745b2de8b93f9696181";
+        static constexpr const char* Box__UeScsNode = "b80f6ebd7c07fc42b4950c51a384aabf";
+        static constexpr const char* SphereUsable__UeScsNode = "c2494a7e95a07b419ca471025f33097b";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

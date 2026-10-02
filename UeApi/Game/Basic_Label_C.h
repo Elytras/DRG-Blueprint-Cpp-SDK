@@ -22,7 +22,7 @@ public:
     class UFSDLabelWidget* Label;
     FText Text;
     bool ToUpper;
-    FSlateFontInfo Font;
+    UE_READONLY FSlateFontInfo Font;
     TEnum<ETextJustify> Justification;
     float MinDesiredWidth;
     FMargin TextMargin;

@@ -26,20 +26,13 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/EVENT_DropPodDefense_Base", "EVENT_DropPodDefense_Base_C");
     using EWC_Salvage_Defend_C = Game::Enemies::Waves::WaveControllers::EWC_Salvage_Defend_C;
     using HUD_Salvage_Defend_C = Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bc06ffc6444e5443869cc339e6356bd3";
     class UStaticMeshComponent* SphereInner1;
-    static constexpr const char* SphereInner1__UeScsNode = "44de89c7e13cec489ed519af6605fcf1";
     class UStaticMeshComponent* SphereInner2;
-    static constexpr const char* SphereInner2__UeScsNode = "cd30a12defa9c7469f19b326a6c55dda";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "344656be17d36f429c811a66a77b7e6b";
     class UStaticMeshComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "3cc95ba6367e1d4e8b17502dc377b44c";
     float Progress;
-    static constexpr const char* Progress__Replicated = "OnRep_Progress:";
     float Duration;
     float InitialProgress;
     TArray<class APlayerCharacter*> DefendingPlayers;
@@ -48,19 +41,15 @@ public:
     TMulticastInlineDelegate<void(float NewProgress)> ProgressUpdated;
     EWC_Salvage_Defend_C* Wave;
     HUD_Salvage_Defend_C* Event_Widget;
-    static constexpr const char* Event_Widget__UeName = "Event Widget";
     FText EventText;
     float ExtraDefenderBonus;
     int DefendingPlayerCount;
-    static constexpr const char* DefendingPlayerCount__Replicated = "OnRep_DefendingPlayerCount:";
     TMulticastInlineDelegate<void(int DefenderCount)> DefenderCountUpdated;
     FText EventSuccedText;
     class UDialogDataAsset* EventStartShout;
     class UDialogDataAsset* EventFailWarningShout;
     class UDialogDataAsset* Seven5pProgressShout;
-    static constexpr const char* Seven5pProgressShout__UeName = "75pProgressShout";
     class UDialogDataAsset* Five0pProgressShout;
-    static constexpr const char* Five0pProgressShout__UeName = "50pProgressShout";
     void ExecuteUbergraph_EVENT_DropPodDefense_Base(int EntryPoint);
     void EventFailed();
     void EventSucceded();
@@ -74,6 +63,21 @@ public:
     UE_PURE float GetDefenderBonus(int DefendingPlayers_0);
     void UpdateDefenderCount();
     void OnRep_DefendingPlayerCount();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
+        static constexpr const char* Audio__UeScsNode = "bc06ffc6444e5443869cc339e6356bd3";
+        static constexpr const char* SphereInner1__UeScsNode = "44de89c7e13cec489ed519af6605fcf1";
+        static constexpr const char* SphereInner2__UeScsNode = "cd30a12defa9c7469f19b326a6c55dda";
+        static constexpr const char* Sphere__UeScsNode = "344656be17d36f429c811a66a77b7e6b";
+        static constexpr const char* Sphere1__UeScsNode = "3cc95ba6367e1d4e8b17502dc377b44c";
+        static constexpr const char* Progress__Replicated = "OnRep_Progress:";
+        static constexpr const char* Event_Widget__UeName = "Event Widget";
+        static constexpr const char* DefendingPlayerCount__Replicated = "OnRep_DefendingPlayerCount:";
+        static constexpr const char* Seven5pProgressShout__UeName = "75pProgressShout";
+        static constexpr const char* Five0pProgressShout__UeName = "50pProgressShout";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

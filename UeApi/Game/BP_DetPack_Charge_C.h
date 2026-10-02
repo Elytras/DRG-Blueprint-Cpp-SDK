@@ -25,34 +25,23 @@ class BP_DetPack_Charge_C : public ADetPack
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/BP_DetPack_Charge", "BP_DetPack_Charge_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ExplosionComponent Explosion;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/FSD.SingleUsableComponent UseComp";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "2b68595ca8a55d4c83e161edd2212747";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "5282f3edd4632c41af3cb761c95bc685";
     class USphereComponent* Useable;
-    static constexpr const char* Useable__UeScsNode = "c118dd0bd16435408372e87c3ebfa977";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "a7e543d8573e0640a6ee87a150b627e0";
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d88b1143bfef1644ac32e95985a705c1";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "1233c82fc24f7746a8178399f01873b1";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "9dc467854c3c5d44a4af045dc6b820e1";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "8e1b2820d099e748a07e95e3a4afaa6f";
     float SphereTimeline_Alpha_B734CAA34EA448BC3B483384E4E415D3;
     float SphereTimeline_Scale_B734CAA34EA448BC3B483384E4E415D3;
     TEnum<ETimelineDirection> SphereTimeline__Direction_B734CAA34EA448BC3B483384E4E415D3;
     class UTimelineComponent* SphereTimeline;
     class UMaterialInstanceDynamic* SphereMaterial;
     bool IsPlaced;
-    static constexpr const char* IsPlaced__Replicated = "OnRep_IsPlaced:";
     void ExecuteUbergraph_BP_DetPack_Charge(int EntryPoint);
     void Show_Warning_Sphere();
-    static constexpr const char* Show_Warning_Sphere__UeName = "Show Warning Sphere";
     void OnExploded();
     void RecieveHitObject();
     void ReceiveBeginPlay();
@@ -60,6 +49,21 @@ public:
     void SphereTimeline__FinishedFunc();
     void UserConstructionScript();
     void OnRep_IsPlaced();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ExplosionComponent Explosion;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/FSD.SingleUsableComponent UseComp";
+        static constexpr const char* outline__UeScsNode = "2b68595ca8a55d4c83e161edd2212747";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "5282f3edd4632c41af3cb761c95bc685";
+        static constexpr const char* Useable__UeScsNode = "c118dd0bd16435408372e87c3ebfa977";
+        static constexpr const char* Damage__UeScsNode = "a7e543d8573e0640a6ee87a150b627e0";
+        static constexpr const char* Sphere__UeScsNode = "d88b1143bfef1644ac32e95985a705c1";
+        static constexpr const char* Audio__UeScsNode = "1233c82fc24f7746a8178399f01873b1";
+        static constexpr const char* SkeletalMesh__UeScsNode = "9dc467854c3c5d44a4af045dc6b820e1";
+        static constexpr const char* Box__UeScsNode = "8e1b2820d099e748a07e95e3a4afaa6f";
+        static constexpr const char* IsPlaced__Replicated = "OnRep_IsPlaced:";
+        static constexpr const char* Show_Warning_Sphere__UeName = "Show Warning Sphere";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DetPack

@@ -13,6 +13,11 @@ class STE_WaspInsectDoT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/STE_WaspInsectDoT", "STE_WaspInsectDoT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion

@@ -22,11 +22,8 @@ public:
     UE_CLASS("/Game/WeaponsNTools/MAG_BaseClass", "MAG_BaseClass_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "ad725323a5d3b14bad2f3720670db751";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "7dde0308cdc6e944815dcecce46a83e1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "12231a9c580ac44fbed4be82aef2e727";
     float ChangeFovDelay;
     bool ApplySkin;
     void ExecuteUbergraph_MAG_BaseClass(int EntryPoint);
@@ -34,6 +31,13 @@ public:
     void DoRelease();
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh__UeScsNode = "ad725323a5d3b14bad2f3720670db751";
+        static constexpr const char* Box__UeScsNode = "7dde0308cdc6e944815dcecce46a83e1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "12231a9c580ac44fbed4be82aef2e727";
+    };
 };
 
 }}   // namespace Game::WeaponsNTools

@@ -18,8 +18,8 @@ class Lore_List_Filler_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_List_Filler", "Lore_List_Filler_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeOutNavigationIcon;
-    class UWidgetAnimation* IntroAnim;
+    UE_READONLY class UWidgetAnimation* FadeOutNavigationIcon;
+    UE_READONLY class UWidgetAnimation* IntroAnim;
     class USpacer* Spacer_161;
     TMulticastInlineDelegate<void(int Index_0)> OnClicked;
     float ButtonYSize;

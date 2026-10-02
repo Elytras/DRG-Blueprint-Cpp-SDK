@@ -20,9 +20,9 @@ class UI_FrozenInputDirectionIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/UI_FrozenInputDirectionIcon", "UI_FrozenInputDirectionIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* failed;
-    class UWidgetAnimation* Pressed;
-    class UWidgetAnimation* Active;
+    UE_READONLY class UWidgetAnimation* failed;
+    UE_READONLY class UWidgetAnimation* Pressed;
+    UE_READONLY class UWidgetAnimation* Active;
     class UImage* Image_92;
     TArray<class UTexture2D*> Textures;
     FWidgetTransform EForward;

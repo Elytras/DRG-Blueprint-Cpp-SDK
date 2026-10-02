@@ -22,8 +22,8 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Season01", "ConsoleScreen_Season01_C");
     using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BackgroundAnim;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* BackgroundAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     class UBorder* Border_3;
     ConsoleScreen_Notification_C* ConsoleScreen_Notification;
     class UImage* Image_Cover;
@@ -33,7 +33,6 @@ public:
     class UTexture2D* NotificationIcon;
     bool NotificationVisible;
     bool Toggle_Header_Bars;
-    static constexpr const char* Toggle_Header_Bars__UeName = "Toggle Header Bars";
     int TextSize;
     void ExecuteUbergraph_ConsoleScreen_Season01(int EntryPoint);
     void LoadSeasonImages();
@@ -45,6 +44,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetNotification(FText Text, class UTexture2D* InIcon);
     void SetNotificationVisible(bool IsVisible_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Toggle_Header_Bars__UeName = "Toggle Header Bars";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

@@ -13,6 +13,11 @@ class STE_Magma_HPC_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/STE_Magma_HPC", "STE_Magma_HPC_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

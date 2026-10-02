@@ -19,24 +19,28 @@ class BP_RockpoxBomber_PlaguePuddle_C : public AAdicPuddle
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_RockpoxBomber_PlaguePuddle", "BP_RockpoxBomber_PlaguePuddle_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
     class UBoxComponent* BoxTrigger;
-    static constexpr const char* BoxTrigger__UeScsNode = "8411f9fbebf7264686817ed560d228f6";
     class UNiagaraComponent* NS_Plague_Goo_Puddle;
-    static constexpr const char* NS_Plague_Goo_Puddle__UeScsNode = "a63c13b42af1e54894abb5199c4dec2c";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "07f1ef0332b8b548a46dbe76c3430396";
     class USphereComponent* Sphere4;
-    static constexpr const char* Sphere4__UeScsNode = "d0fa4838b0848e48b5c98f02ad5ae774";
     class USphereComponent* Sphere3;
-    static constexpr const char* Sphere3__UeScsNode = "e89356537b4787409e37705cf13eaddc";
     class USphereComponent* Sphere2;
-    static constexpr const char* Sphere2__UeScsNode = "02f0ece27c2fef459bda33493db02246";
     class USphereComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "5454cbfd2be04e499583df502dcab34b";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "d8d591ced953b54595f1e591d016bc72";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* BoxTrigger__UeScsNode = "8411f9fbebf7264686817ed560d228f6";
+        static constexpr const char* NS_Plague_Goo_Puddle__UeScsNode = "a63c13b42af1e54894abb5199c4dec2c";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "07f1ef0332b8b548a46dbe76c3430396";
+        static constexpr const char* Sphere4__UeScsNode = "d0fa4838b0848e48b5c98f02ad5ae774";
+        static constexpr const char* Sphere3__UeScsNode = "e89356537b4787409e37705cf13eaddc";
+        static constexpr const char* Sphere2__UeScsNode = "02f0ece27c2fef459bda33493db02246";
+        static constexpr const char* Sphere1__UeScsNode = "5454cbfd2be04e499583df502dcab34b";
+        static constexpr const char* ParticleSystem__UeScsNode = "d8d591ced953b54595f1e591d016bc72";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

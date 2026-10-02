@@ -20,19 +20,23 @@ public:
     UE_CLASS("/Game/Landscape/CaveAssets/Foliage/DeadTrees/BP_Branch_A", "BP_Branch_A_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "5d4b6e53cf344c488ee02e9d02d5f0fa";
     class UStaticMeshComponent* SM_DeadTree_Branch_A;
-    static constexpr const char* SM_DeadTree_Branch_A__UeScsNode = "0e65f2b7d657eb4fafcbca7337119e50";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "3e0f1a5bf83b6046a1c64a2cab96d23d";
     class UStaticMeshComponent* SM_DeadTree_Twig_A;
-    static constexpr const char* SM_DeadTree_Twig_A__UeScsNode = "4491b13110103a4d98583282bfae0c88";
     class UStaticMeshComponent* Twig2;
-    static constexpr const char* Twig2__UeScsNode = "cabd4470a9ce564ea7745531db82abac";
     float TwigProbability;
     void ExecuteUbergraph_BP_Branch_A(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "5d4b6e53cf344c488ee02e9d02d5f0fa";
+        static constexpr const char* SM_DeadTree_Branch_A__UeScsNode = "0e65f2b7d657eb4fafcbca7337119e50";
+        static constexpr const char* SimpleHealth__UeScsNode = "3e0f1a5bf83b6046a1c64a2cab96d23d";
+        static constexpr const char* SM_DeadTree_Twig_A__UeScsNode = "4491b13110103a4d98583282bfae0c88";
+        static constexpr const char* Twig2__UeScsNode = "cabd4470a9ce564ea7745531db82abac";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DeadTrees

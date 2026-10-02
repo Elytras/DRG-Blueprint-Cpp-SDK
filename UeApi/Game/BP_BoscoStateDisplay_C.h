@@ -22,13 +22,9 @@ public:
     UE_CLASS("/Game/GameElements/Drone/BP_BoscoStateDisplay", "BP_BoscoStateDisplay_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* BackPlane;
-    static constexpr const char* BackPlane__UeScsNode = "f5d2d578bdd8024c8986b10b946b979e";
     class UStaticMeshComponent* FrontPlane;
-    static constexpr const char* FrontPlane__UeScsNode = "a578f414d5907f4cb6810ad56018dcde";
     class UStaticMeshComponent* Plane;
-    static constexpr const char* Plane__UeScsNode = "d8102b3ec1856446966f9aea8002b2db";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e291a7df59b0b940991d1a5bf7f3cb2b";
     class UMaterialInstance* MiningMaterial;
     class UMaterialInstance* FightingMaterial;
     class UMaterialInstance* LightingMaterial;
@@ -42,6 +38,14 @@ public:
     void ReceiveBeginPlay();
     void SetState(TEnum<EDroneAIState> State);
     void SetMaterial(class UMaterialInstance* NewParam);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BackPlane__UeScsNode = "f5d2d578bdd8024c8986b10b946b979e";
+        static constexpr const char* FrontPlane__UeScsNode = "a578f414d5907f4cb6810ad56018dcde";
+        static constexpr const char* Plane__UeScsNode = "d8102b3ec1856446966f9aea8002b2db";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e291a7df59b0b940991d1a5bf7f3cb2b";
+    };
 };
 
 }}}   // namespace Game::GameElements::Drone

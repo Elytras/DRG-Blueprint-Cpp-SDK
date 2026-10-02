@@ -23,7 +23,7 @@ public:
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ForgeAnim;
+    UE_READONLY class UWidgetAnimation* ForgeAnim;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;

@@ -47,15 +47,19 @@ public:
     void BndEvt__ItemButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ItemButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Set_Selected(bool IsSelected);
-    static constexpr const char* Set_Selected__UeName = "Set Selected";
     void Set_Perk(class UPerkAsset* PerkAsset_0);
-    static constexpr const char* Set_Perk__UeName = "Set Perk";
     void Refresh();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void IsItemLocked(bool& ItemLocked_0);
     class UWidget* CreateToolTip();
     void GetPerkAsset(class UPerkAsset*& PerkAsset_0) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Selected__UeName = "Set Selected";
+        static constexpr const char* Set_Perk__UeName = "Set Perk";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks

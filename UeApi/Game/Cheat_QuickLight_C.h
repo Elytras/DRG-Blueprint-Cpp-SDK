@@ -26,8 +26,12 @@ public:
     class UButton* SpawnLightbutton;
     void ExecuteUbergraph_Cheat_QuickLight(int EntryPoint);
     UE_SERVER void Spawn_Lights(class APlayerCharacter* Owning_character);
-    static constexpr const char* Spawn_Lights__UeName = "Spawn Lights";
     void BndEvt__Button_67_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Spawn_Lights__UeName = "Spawn Lights";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

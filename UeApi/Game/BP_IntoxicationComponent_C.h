@@ -37,19 +37,23 @@ public:
     void ReceiveDrunkBegin();
     void ReceiveDrunkEnd();
     void Lerp_Post_Process_Strength(float DeltaTime);
-    static constexpr const char* Lerp_Post_Process_Strength__UeName = "Lerp Post Process Strength";
     void ReceivePassOutDrunk();
     void ReceiveDrunkTick(float DeltaTime, float DrunkTime);
     void Pop_Effects(FString DebugReason);
-    static constexpr const char* Pop_Effects__UeName = "Pop Effects";
     void Push_Effects();
-    static constexpr const char* Push_Effects__UeName = "Push Effects";
     void Lerp_Movement_Stength(float DeltaTime);
-    static constexpr const char* Lerp_Movement_Stength__UeName = "Lerp Movement Stength";
     void SetPostProcessStrength(float NewStrength);
     void MyLerp(float Current_Value, float Target_Value, float Delta_Time, float& Result);
     void ToPercentStr(float Progress, FString& PercentString);
     int GetAlcoholPct(TEnum<EDrinkableAlcoholStrength> Strength) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Lerp_Post_Process_Strength__UeName = "Lerp Post Process Strength";
+        static constexpr const char* Pop_Effects__UeName = "Pop Effects";
+        static constexpr const char* Push_Effects__UeName = "Push Effects";
+        static constexpr const char* Lerp_Movement_Stength__UeName = "Lerp Movement Stength";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

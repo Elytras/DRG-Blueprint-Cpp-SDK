@@ -17,9 +17,13 @@ class BP_PlagueSpawnTarget_C : public AActor
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/SlimeTrail/BP_PlagueSpawnTarget", "BP_PlagueSpawnTarget_C");
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "e2f82f234bac774a8d32b879a2c079be";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "370db67288f2554da6bc4257a3985ee7";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "e2f82f234bac774a8d32b879a2c079be";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "370db67288f2554da6bc4257a3985ee7";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail

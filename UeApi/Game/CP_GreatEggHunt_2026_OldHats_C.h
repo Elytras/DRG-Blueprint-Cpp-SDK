@@ -13,6 +13,11 @@ class CP_GreatEggHunt_2026_OldHats_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_GreatEggHunt_2026_OldHats", "CP_GreatEggHunt_2026_OldHats_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_2;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_3;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_4;/Script/FSD.ResourceReward CampaignMission_3:ResourceReward_5;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_1;/Script/FSD.VanityReward CampaignMission_0:VanityReward_0;/Script/FSD.VanityReward CampaignMission_2:VanityReward_0;/Script/FSD.VanityReward CampaignMission_3:VanityReward_0;/Script/FSD.VanityReward CampaignMission_4:VanityReward_0;/Script/FSD.VanityReward CampaignMission_4:VanityReward_1;/Script/FSD.VanityReward CampaignMission_4:VanityReward_2";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

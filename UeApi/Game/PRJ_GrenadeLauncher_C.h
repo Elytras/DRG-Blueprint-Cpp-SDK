@@ -26,27 +26,17 @@ class PRJ_GrenadeLauncher_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/PRJ_GrenadeLauncher", "PRJ_GrenadeLauncher_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UProjectileExplosion* ProjectileExplosionHyper;
-    static constexpr const char* ProjectileExplosionHyper__UeScsNode = "bee1d748da1196488f72abf450401569";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "a5f3d208d524784d9e8267b816a396ce";
     class UProjectileExplosion* ProjectileExplosionMiniNuke;
-    static constexpr const char* ProjectileExplosionMiniNuke__UeScsNode = "d0a08abf0428a9459e71d6ee18c7173a";
     class UParticleSystemComponent* P_GrenadeTrail;
-    static constexpr const char* P_GrenadeTrail__UeScsNode = "653cddb62ed0d84fb7b65501ec27b6e8";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "dd9d7e7d60d6b044a19a4735fc36a214";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "82fef54d9c10ec48882fa93575e2c12f";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "d1a467784b06fa41a3eafa1e61ab4d12";
     class UStaticMeshComponent* mesh_front;
-    static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     float ForcePush;
     bool Lit;
-    static constexpr const char* Lit__Replicated = "OnRep_Lit:";
     float Speed;
     FRuntimeFloatCurve KnockBackCurve;
     bool IsHyper;
@@ -65,6 +55,20 @@ public:
     void UserConstructionScript();
     void OnRep_Lit();
     void LaunchPlayer(class APlayerCharacter* Player);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* ProjectileExplosionHyper__UeScsNode = "bee1d748da1196488f72abf450401569";
+        static constexpr const char* PointLight__UeScsNode = "a5f3d208d524784d9e8267b816a396ce";
+        static constexpr const char* ProjectileExplosionMiniNuke__UeScsNode = "d0a08abf0428a9459e71d6ee18c7173a";
+        static constexpr const char* P_GrenadeTrail__UeScsNode = "653cddb62ed0d84fb7b65501ec27b6e8";
+        static constexpr const char* Sphere__UeScsNode = "dd9d7e7d60d6b044a19a4735fc36a214";
+        static constexpr const char* Damage__UeScsNode = "82fef54d9c10ec48882fa93575e2c12f";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "d1a467784b06fa41a3eafa1e61ab4d12";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* Lit__Replicated = "OnRep_Lit:";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher

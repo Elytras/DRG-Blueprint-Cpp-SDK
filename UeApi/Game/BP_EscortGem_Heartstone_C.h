@@ -22,22 +22,26 @@ class BP_EscortGem_Heartstone_C : public Game::GameElements::Resources::Embedded
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/EscortGem/BP_EscortGem_Heartstone", "BP_EscortGem_Heartstone_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_EscortGem_Heartstone_C;
-    static constexpr const char* UberGraphFrame_BP_EscortGem_Heartstone_C__UeName = "UberGraphFrame";
     class ULightStrobingComponent* LightStrobing;
-    static constexpr const char* LightStrobing__UeScsNode = "90dc148baa463e40aa985b8e128a9fad";
     class UAudioComponent* HeartStoneGemIdle;
-    static constexpr const char* HeartStoneGemIdle__UeScsNode = "ba85f0090fb2ca44bec8a79583f09b5e";
     class UParticleSystemComponent* P_OmoranHeartStoneMagic_01;
-    static constexpr const char* P_OmoranHeartStoneMagic_01__UeScsNode = "0708d71ee222124db7877462b87b66bf";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "ecf7ac2afd30d042ba22cb34257f78a4";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
     void ExecuteUbergraph_BP_EscortGem_Heartstone(int EntryPoint);
     void ReceiveBeginPlay();
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_EscortGem_Heartstone_C__UeName = "UberGraphFrame";
+        static constexpr const char* LightStrobing__UeScsNode = "90dc148baa463e40aa985b8e128a9fad";
+        static constexpr const char* HeartStoneGemIdle__UeScsNode = "ba85f0090fb2ca44bec8a79583f09b5e";
+        static constexpr const char* P_OmoranHeartStoneMagic_01__UeScsNode = "0708d71ee222124db7877462b87b66bf";
+        static constexpr const char* PointLight__UeScsNode = "ecf7ac2afd30d042ba22cb34257f78a4";
+        static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::EscortGem

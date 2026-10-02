@@ -14,14 +14,18 @@ class BP_DropPod_Landing_Escort_C : public Game::LevelElements::Droppod::BP_Drop
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Landing_Escort", "BP_DropPod_Landing_Escort_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_DropPod_Landing_Escort_C;
-    static constexpr const char* UberGraphFrame_BP_DropPod_Landing_Escort_C__UeName = "UberGraphFrame";
     bool ShouldDelaySpawnGarage;
     void ExecuteUbergraph_BP_DropPod_Landing_Escort(int EntryPoint);
     void ReceiveDestroyed();
     void BypassGarageSpawnDelay();
     void OnFirstPlayerLeftPod();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UberGraphFrame_BP_DropPod_Landing_Escort_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

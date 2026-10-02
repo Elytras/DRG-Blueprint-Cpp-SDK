@@ -29,28 +29,17 @@ class WPN_LockOnRifle_C : public ALockOnWeapon
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/WPN_LockOnRifle", "WPN_LockOnRifle_C");
     using ABP_LockOnRifle_A_C = Game::WeaponsNTools::LockOnRifle::ABP_LockOnRifle_A_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* Mag_FP;
-    static constexpr const char* Mag_FP__UeScsNode = "2f0566d464b3de4a94d62c2e8e5e95fc";
     class UStaticMeshComponent* Mag_TP;
-    static constexpr const char* Mag_TP__UeScsNode = "7df307e1e784a447973f628bc4ca52dc";
     class USceneComponent* BeamStart;
-    static constexpr const char* BeamStart__UeScsNode = "01aceca891d56d4580d3605b001e0a62";
     class UAudioComponent* LockOnRifleHUDDeActivated_Cue;
-    static constexpr const char* LockOnRifleHUDDeActivated_Cue__UeScsNode = "bee2e35721397a44beb3cf94e570cb59";
     class UAudioComponent* LockOnRifleHUDActivated_Cue;
-    static constexpr const char* LockOnRifleHUDActivated_Cue__UeScsNode = "bda8af9ffb81dd4ca07477c6b3e42873";
     class UAudioComponent* LockOnRifleLocked_Cue;
-    static constexpr const char* LockOnRifleLocked_Cue__UeScsNode = "097e9b5f76e91b439f95abbcec1b5d00";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "fc969b38f6835942870100ce1857a7a0";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "9ee1f7164dc736489dce00bb4977702d";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "69e08369cee508449aeec281cb1c367b";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "2be50f24b3e69b489346fe54785850d9";
     TArray<ABP_LockOnRifle_A_C*> ABPs;
     bool WideAngle;
     bool SpeedBoost;
@@ -66,6 +55,21 @@ public:
     void LockingStarted_Event();
     void ReceiveBeginPlay();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_0;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_1;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Mag_FP__UeScsNode = "2f0566d464b3de4a94d62c2e8e5e95fc";
+        static constexpr const char* Mag_TP__UeScsNode = "7df307e1e784a447973f628bc4ca52dc";
+        static constexpr const char* BeamStart__UeScsNode = "01aceca891d56d4580d3605b001e0a62";
+        static constexpr const char* LockOnRifleHUDDeActivated_Cue__UeScsNode = "bee2e35721397a44beb3cf94e570cb59";
+        static constexpr const char* LockOnRifleHUDActivated_Cue__UeScsNode = "bda8af9ffb81dd4ca07477c6b3e42873";
+        static constexpr const char* LockOnRifleLocked_Cue__UeScsNode = "097e9b5f76e91b439f95abbcec1b5d00";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "fc969b38f6835942870100ce1857a7a0";
+        static constexpr const char* Damage__UeScsNode = "9ee1f7164dc736489dce00bb4977702d";
+        static constexpr const char* HitScan__UeScsNode = "69e08369cee508449aeec281cb1c367b";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "2be50f24b3e69b489346fe54785850d9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle

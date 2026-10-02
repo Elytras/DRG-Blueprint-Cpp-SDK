@@ -26,8 +26,8 @@ class ITM_BaseUpgradeIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_BaseUpgradeIcon", "ITM_BaseUpgradeIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Unlock;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* Unlock;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UImage* BG;
     class UImage* Icon;
     class UImage* Icon_Lock;
@@ -39,12 +39,12 @@ public:
     class UImage* SelectionOutline;
     class USizeBox* SizeBox_0;
     class UButton* WidgetButton;
-    class UTexture2D* PreviewIcon;
-    TEnum<EItemUpgradeStatus> PreviewStatus;
-    int PreviewLockRequirement;
-    bool PreviewShowEquippedAsBorder;
-    bool PreviewShowLockIcon;
-    bool PreviewShowLockRequirement;
+    UE_READONLY class UTexture2D* PreviewIcon;
+    UE_READONLY TEnum<EItemUpgradeStatus> PreviewStatus;
+    UE_READONLY int PreviewLockRequirement;
+    UE_READONLY bool PreviewShowEquippedAsBorder;
+    UE_READONLY bool PreviewShowLockIcon;
+    UE_READONLY bool PreviewShowLockRequirement;
     TMulticastInlineDelegate<void(ITM_BaseUpgradeIcon_C* Widget)> OnHoverBegin;
     TMulticastInlineDelegate<void(ITM_BaseUpgradeIcon_C* Widget)> OnHoverEnd;
     TMulticastInlineDelegate<void(ITM_BaseUpgradeIcon_C* Widget)> OnClicked;

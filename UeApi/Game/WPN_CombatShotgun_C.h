@@ -23,20 +23,13 @@ class WPN_CombatShotgun_C : public AAutoShotgun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CombatShotgun/WPN_CombatShotgun", "WPN_CombatShotgun_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b18b4327d171804a8ca37713ce12880b";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "bc0ced2124bfa249a3b3d31b342ee4ac";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "982ca0b2d1b40c48a9de784db6f2b085";
     class UPointLightComponent* MuzzlePointLight;
-    static constexpr const char* MuzzlePointLight__UeScsNode = "5725fe05f1fa4341ac916ddb4fc4f536";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "fada7ffe56ff1f4ebd0836b6694e19d3";
     class UMultiHitscanComponent* MultiHitscan;
-    static constexpr const char* MultiHitscan__UeScsNode = "92e2f6d5c500ff4a8e5a52a1dcf3adae";
     bool IsPumpAction;
     float PumpDelay;
     FTimerHandle PumpActionTimer;
@@ -54,6 +47,17 @@ public:
     void OnNotifyEnd_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_0;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_1;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b18b4327d171804a8ca37713ce12880b";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "bc0ced2124bfa249a3b3d31b342ee4ac";
+        static constexpr const char* Damage__UeScsNode = "982ca0b2d1b40c48a9de784db6f2b085";
+        static constexpr const char* MuzzlePointLight__UeScsNode = "5725fe05f1fa4341ac916ddb4fc4f536";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "fada7ffe56ff1f4ebd0836b6694e19d3";
+        static constexpr const char* MultiHitscan__UeScsNode = "92e2f6d5c500ff4a8e5a52a1dcf3adae";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun

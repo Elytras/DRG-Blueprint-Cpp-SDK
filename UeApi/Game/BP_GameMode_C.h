@@ -25,14 +25,10 @@ class BP_GameMode_C : public AFSDGameMode
 {
 public:
     UE_CLASS("/Game/Game/BP_GameMode", "BP_GameMode_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyWaveManager* EnemyWaveManager;
-    static constexpr const char* EnemyWaveManager__UeScsNode = "92a9f5393680e9498effd45d6f165c64";
     class UEncounterManager* EncounterManager;
-    static constexpr const char* EncounterManager__UeScsNode = "4cddf289ac11cd43b4237181ccf96889";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "dd711a79dac9534986df9fce0fc10dd6";
     FTimerHandle TimerHandle;
     bool CanSpawnBosco;
     void GetEditorCharacterClass(class UPlayerCharacterID*& Character_Class);
@@ -49,18 +45,26 @@ public:
     void WaitForGeneration();
     void Recieve_ContinueTimerEnded();
     void Call_DropPod();
-    static constexpr const char* Call_DropPod__UeName = "Call DropPod";
     void Trigger_End_Wave(bool cancelAllWaves);
-    static constexpr const char* Trigger_End_Wave__UeName = "Trigger End Wave";
     void SpawnBosco(FTransform Location);
     void RemoveBosco();
     void Handle_Bosco_Respawn();
-    static constexpr const char* Handle_Bosco_Respawn__UeName = "Handle Bosco Respawn";
     void OnPlayerLeave(class AFSDPlayerState* PlayerState);
     void Loaded();
     void DonkeyButtonPressed();
     void LoadSpaceRig();
     void ExecuteUbergraph_BP_GameMode(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* EnemyWaveManager__UeScsNode = "92a9f5393680e9498effd45d6f165c64";
+        static constexpr const char* EncounterManager__UeScsNode = "4cddf289ac11cd43b4237181ccf96889";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "dd711a79dac9534986df9fce0fc10dd6";
+        static constexpr const char* Call_DropPod__UeName = "Call DropPod";
+        static constexpr const char* Trigger_End_Wave__UeName = "Trigger End Wave";
+        static constexpr const char* Handle_Bosco_Respawn__UeName = "Handle Bosco Respawn";
+    };
 };
 
 }}   // namespace Game::Game

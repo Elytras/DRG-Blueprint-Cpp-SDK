@@ -20,15 +20,19 @@ public:
     UE_CLASS("/Game/Character/Vanity2/Headwear/Blueprints/BP_MissionControlPointlight", "BP_MissionControlPointlight_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "ac0c317727de1449867ee1630ad6d026";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "46482986d544824180e7f5daaf1e3b4c";
     class UAnimInstance* OwnerAnim;
     class UObject* Owner_Mesh;
-    static constexpr const char* Owner_Mesh__UeName = "Owner Mesh";
     void ExecuteUbergraph_BP_MissionControlPointlight(int EntryPoint);
     void Set_ABP_Reference(class UObject* OwnerMesh);
     void CheckOwner();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "ac0c317727de1449867ee1630ad6d026";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "46482986d544824180e7f5daaf1e3b4c";
+        static constexpr const char* Owner_Mesh__UeName = "Owner Mesh";
+    };
 };
 
 }}}}}   // namespace Game::Character::Vanity2::Headwear::Blueprints

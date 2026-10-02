@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_BearTrap_C : public Game::WeaponsNTools::Grenades::Lo
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BearTrap/Loadout_GrenadeProxy_BearTrap", "Loadout_GrenadeProxy_BearTrap_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BearTrap

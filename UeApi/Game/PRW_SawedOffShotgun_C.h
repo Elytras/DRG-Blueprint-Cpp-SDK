@@ -17,9 +17,13 @@ class PRW_SawedOffShotgun_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/PRW_SawedOffShotgun", "PRW_SawedOffShotgun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "6f4bed478abc4d4a94d1e0ba05beed7e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "bbe8f3ed2c461c4e97f0832a350ba9ed";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "6f4bed478abc4d4a94d1e0ba05beed7e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "bbe8f3ed2c461c4e97f0832a350ba9ed";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun

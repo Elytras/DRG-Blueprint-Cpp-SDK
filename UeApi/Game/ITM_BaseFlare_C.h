@@ -25,23 +25,14 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Flares/ITM_BaseFlare", "ITM_BaseFlare_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* Light_AfterGlow;
-    static constexpr const char* Light_AfterGlow__UeScsNode = "e326853cabb695488e37447e5a632b04";
     class UPointLightComponent* Light_NoShadow;
-    static constexpr const char* Light_NoShadow__UeScsNode = "925b5e575c9cac47921899f159d9b6f9";
     class USpotLightComponent* SpotLight_Shadow_3;
-    static constexpr const char* SpotLight_Shadow_3__UeScsNode = "865fd8d17bcdaa41a295eeaa817b28ac";
     class USpotLightComponent* SpotLight_Shadow_2;
-    static constexpr const char* SpotLight_Shadow_2__UeScsNode = "8b2f1e9cc87d9741a3a44a6e1af879d6";
     class USpotLightComponent* SpotLight_Shadow_1;
-    static constexpr const char* SpotLight_Shadow_1__UeScsNode = "43e6011935cbf1488d1eb8e1ee94fe5a";
     class UUpgradableGearComponent* UpgradableGear;
-    static constexpr const char* UpgradableGear__UeScsNode = "adce141ea4bbfb418634ac47047dcf00";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "1ad807a0ce1b6f44bf89f9c6145d581d";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "10344025c3771644a973ad204cf6c1b1";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "ba8f7160c9410649b911af46ee3b5a9b";
     float Timeline_0_BrightnessShadows_14DB2CD947ED9EE06017768CF842D625;
     float Timeline_0_Brightness_14DB2CD947ED9EE06017768CF842D625;
     TEnum<ETimelineDirection> Timeline_0__Direction_14DB2CD947ED9EE06017768CF842D625;
@@ -59,6 +50,19 @@ public:
     void StartFadeOut(float& Time);
     void UpdateShadowRadius();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Light_AfterGlow__UeScsNode = "e326853cabb695488e37447e5a632b04";
+        static constexpr const char* Light_NoShadow__UeScsNode = "925b5e575c9cac47921899f159d9b6f9";
+        static constexpr const char* SpotLight_Shadow_3__UeScsNode = "865fd8d17bcdaa41a295eeaa817b28ac";
+        static constexpr const char* SpotLight_Shadow_2__UeScsNode = "8b2f1e9cc87d9741a3a44a6e1af879d6";
+        static constexpr const char* SpotLight_Shadow_1__UeScsNode = "43e6011935cbf1488d1eb8e1ee94fe5a";
+        static constexpr const char* UpgradableGear__UeScsNode = "adce141ea4bbfb418634ac47047dcf00";
+        static constexpr const char* ParticleSystem__UeScsNode = "1ad807a0ce1b6f44bf89f9c6145d581d";
+        static constexpr const char* StaticMesh__UeScsNode = "10344025c3771644a973ad204cf6c1b1";
+        static constexpr const char* Box__UeScsNode = "ba8f7160c9410649b911af46ee3b5a9b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Flares

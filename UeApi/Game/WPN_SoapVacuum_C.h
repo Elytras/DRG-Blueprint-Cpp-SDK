@@ -27,24 +27,15 @@ class WPN_SoapVacuum_C : public ASoapVacuumItem
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Vacuum/WPN_SoapVacuum", "WPN_SoapVacuum_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.CapsuleComponent VacuumCollision;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Niagara.NiagaraComponent NS_Vacuum_TP;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoscoCarryingDetailComponent* BoscoCarryingDetail;
-    static constexpr const char* BoscoCarryingDetail__UeScsNode = "cb3c8b879577984f946ff524ced45753";
     class USceneComponent* VacuumSource;
-    static constexpr const char* VacuumSource__UeScsNode = "094462459f3bbc4392d6334b13bf2cba";
     class UFSDAudioComponent* GroundImpact;
-    static constexpr const char* GroundImpact__UeScsNode = "e704ab4eb3f1054c9b7213779bd13979";
     class UActorTrackingComponent* ActorTracking;
-    static constexpr const char* ActorTracking__UeScsNode = "f03bfe964ee88a4e90a6615a80782dfb";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "b0ff2cf981fc344a840abfea18bb4253";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "8221b0cbef54104daf1ad83d18cfded6";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "280d41d17c4bdf479673bb92d3200ad2";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "39860c5a9e92a64a891e1e3bb5e46854";
     FVector OriginalRelative;
     bool ObjectiveIsComplete;
     float EffectAlpha;
@@ -62,6 +53,19 @@ public:
     void OnReceiveEquippedFinished();
     void ReceiveBeginPlay();
     class USceneComponent* GetVacuumSource() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.CapsuleComponent VacuumCollision;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Niagara.NiagaraComponent NS_Vacuum_TP;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* BoscoCarryingDetail__UeScsNode = "cb3c8b879577984f946ff524ced45753";
+        static constexpr const char* VacuumSource__UeScsNode = "094462459f3bbc4392d6334b13bf2cba";
+        static constexpr const char* GroundImpact__UeScsNode = "e704ab4eb3f1054c9b7213779bd13979";
+        static constexpr const char* ActorTracking__UeScsNode = "f03bfe964ee88a4e90a6615a80782dfb";
+        static constexpr const char* PointLight__UeScsNode = "b0ff2cf981fc344a840abfea18bb4253";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "8221b0cbef54104daf1ad83d18cfded6";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "280d41d17c4bdf479673bb92d3200ad2";
+        static constexpr const char* outline__UeScsNode = "39860c5a9e92a64a891e1e3bb5e46854";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum

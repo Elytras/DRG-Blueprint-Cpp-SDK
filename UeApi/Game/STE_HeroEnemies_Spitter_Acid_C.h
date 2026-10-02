@@ -13,6 +13,11 @@ class STE_HeroEnemies_Spitter_Acid_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/HeroEnemies/STE_HeroEnemies_Spitter_Acid", "STE_HeroEnemies_Spitter_Acid_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureStatusEffectItem EnemyTemperatureStatusEffectItem_0;/Script/FSD.FSDPawnStatusEffectItem FSDPawnStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_7";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies

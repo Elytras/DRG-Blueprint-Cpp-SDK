@@ -17,14 +17,18 @@ class PRJ_DrippingPlant_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Landscape/CaveAssets/Foliage/DrippingPlant/PRJ_DrippingPlant", "PRJ_DrippingPlant_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "9813815aee9b9645aefbf86e4778d8b3";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     void ExecuteUbergraph_PRJ_DrippingPlant(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "9813815aee9b9645aefbf86e4778d8b3";
+        static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DrippingPlant

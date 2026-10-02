@@ -13,6 +13,11 @@ class STE_ElectricJelly_Stun_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/ReactiveTerrain/STE_ElectricJelly_Stun", "STE_ElectricJelly_Stun_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Landscape::ReactiveTerrain

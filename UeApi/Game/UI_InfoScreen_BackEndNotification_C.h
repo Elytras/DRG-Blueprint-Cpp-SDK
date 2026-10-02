@@ -21,7 +21,7 @@ class UI_InfoScreen_BackEndNotification_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_BackEndNotification", "UI_InfoScreen_BackEndNotification_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Blink;
+    UE_READONLY class UWidgetAnimation* Blink;
     class UTextBlock* Body_Text;
     class UTextBlock* Header_Text;
     class UImage* LeftDot;

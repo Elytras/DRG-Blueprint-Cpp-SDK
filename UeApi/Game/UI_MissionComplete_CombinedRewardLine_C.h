@@ -23,13 +23,12 @@ public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/UI_MissionComplete_CombinedRewardLine", "UI_MissionComplete_CombinedRewardLine_C");
     using UI_MissionComplete_RewardColumn_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RewardColumn_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimCount;
+    UE_READONLY class UWidgetAnimation* AnimCount;
     class UTextBlock* AmountLabel;
     class UTextBlock* DescriptionLabel;
     class UImage* IconImage;
     FText Description;
     bool Uppercase_Description;
-    static constexpr const char* Uppercase_Description__UeName = "Uppercase Description";
     int amount;
     class UTexture2D* Icon;
     FLinearColor IconTint;
@@ -37,7 +36,7 @@ public:
     int PreviousAmount;
     UI_MissionComplete_RewardColumn_C* Column;
     int currentAmount;
-    int Size;
+    UE_READONLY int Size;
     void ExecuteUbergraph_UI_MissionComplete_CombinedRewardLine(int EntryPoint);
     void SetCountProgress(float InProgress);
     void BeginCount(UI_MissionComplete_RewardColumn_C* InColumn, float Duration);
@@ -46,6 +45,11 @@ public:
     void SetAmount(int Value);
     void SetIcon(class UTexture2D* Texture, FLinearColor TextureTint);
     void GetAmount(int& amount_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Uppercase_Description__UeName = "Uppercase Description";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

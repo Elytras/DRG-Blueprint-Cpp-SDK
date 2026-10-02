@@ -33,7 +33,7 @@ public:
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     using Lore_Content_Text_Header_C = Game::UI::Menu_MinersManual::Lore_Content_Text_Header_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* MovieIntro;
+    UE_READONLY class UWidgetAnimation* MovieIntro;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UImage* HeaderImage;
     class UImage* Image_Background;

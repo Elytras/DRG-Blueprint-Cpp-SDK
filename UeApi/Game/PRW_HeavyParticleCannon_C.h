@@ -18,11 +18,15 @@ class PRW_HeavyParticleCannon_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/PRW_HeavyParticleCannon", "PRW_HeavyParticleCannon_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "76a6fa79ab69314498688ffbc470fc86";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "c191af9d5aeb3b4088c3b70871723257";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "8bb156661d9d284b9fd6580aaaee718a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "76a6fa79ab69314498688ffbc470fc86";
+        static constexpr const char* StaticMesh__UeScsNode = "c191af9d5aeb3b4088c3b70871723257";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "8bb156661d9d284b9fd6580aaaee718a";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

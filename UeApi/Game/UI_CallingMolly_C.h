@@ -24,8 +24,8 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/UI_CallingMolly", "UI_CallingMolly_C");
     using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPing;
-    class UWidgetAnimation* AnimShow;
+    UE_READONLY class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimShow;
     Basic_Image_C* Molly_Image;
     class USizeBox* MollySize;
     int Size;

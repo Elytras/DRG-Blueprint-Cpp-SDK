@@ -14,10 +14,14 @@ class AIC_GreatEggHunt_SpringBunny_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Easter/AIC_GreatEggHunt_SpringBunny", "AIC_GreatEggHunt_SpringBunny_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_GreatEggHunt_SpringBunny(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Holidays::Easter

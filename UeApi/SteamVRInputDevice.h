@@ -8,6 +8,10 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "CoreUObject.h"
 #include "Engine.h"
 
+struct FSteamVRActionSet;
+struct FSteamVRInputBindingInfo;
+struct FSteamVRInputOriginInfo;
+
 class UStaticMesh;
 class UStaticMeshComponent;
 
@@ -137,6 +141,23 @@ struct FSteamVRAction
 
     FSteamVRAction() = default;
     FSteamVRAction(FName Name, FString Path) {}
+
+    // USteamVRInputDeviceFunctionLibrary::GetSteamVR_InputBindingInfo (SteamVRInputDevice.h)
+    TArray<FSteamVRInputBindingInfo> GetSteamVR_InputBindingInfo() const;
+    // USteamVRInputDeviceFunctionLibrary::GetSteamVR_OriginLocalizedName (SteamVRInputDevice.h)
+    void GetSteamVR_OriginLocalizedName(TArray<ESteamVRInputStringBits> LocalizedParts, FString& OriginLocalizedName) const;
+    // USteamVRInputDeviceFunctionLibrary::GetSteamVR_OriginTrackedDeviceInfo (SteamVRInputDevice.h)
+    bool GetSteamVR_OriginTrackedDeviceInfo(FSteamVRInputOriginInfo& InputOriginInfo) const;
+    // USteamVRInputDeviceFunctionLibrary::ShowSteamVR_ActionOrigin (SteamVRInputDevice.h)
+    void ShowSteamVR_ActionOrigin(FSteamVRActionSet SteamVRActionSet) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetSteamVR_InputBindingInfo__UeForward = "USteamVRInputDeviceFunctionLibrary::GetSteamVR_InputBindingInfo";
+        static constexpr const char* GetSteamVR_OriginLocalizedName__UeForward = "USteamVRInputDeviceFunctionLibrary::GetSteamVR_OriginLocalizedName";
+        static constexpr const char* GetSteamVR_OriginTrackedDeviceInfo__UeForward = "USteamVRInputDeviceFunctionLibrary::GetSteamVR_OriginTrackedDeviceInfo";
+        static constexpr const char* ShowSteamVR_ActionOrigin__UeForward = "USteamVRInputDeviceFunctionLibrary::ShowSteamVR_ActionOrigin";
+    };
 };
 
 struct FSteamVRActionSet
@@ -232,7 +253,13 @@ public:
     TMulticastInlineDelegate<void(int DeviceID, FName DeviceClass, FString DeviceModel)> OnTrackedDeviceDeactivated;
     float ActiveDevicePollFrequency;
     FVector TrackingReferenceScale;
-    TArray<class UStaticMeshComponent*> TrackingReferences;
+    UE_READONLY TArray<class UStaticMeshComponent*> TrackingReferences;
     void HideTrackingReferences();
     bool ShowTrackingReferences(class UStaticMesh* TrackingReferenceMesh);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnTrackedDeviceActivated__UeDispatcher = "Assignable";
+        static constexpr const char* OnTrackedDeviceDeactivated__UeDispatcher = "Assignable";
+    };
 };

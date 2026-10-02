@@ -29,8 +29,8 @@ public:
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     using Itm_SeasonChallenge_Small_C = Game::UI::Menu_Seasons::Itm_SeasonChallenge_Small_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* HoverAnim;
-    class UWidgetAnimation* ClickAnim;
+    UE_READONLY class UWidgetAnimation* HoverAnim;
+    UE_READONLY class UWidgetAnimation* ClickAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UImage* BG_Solid;
     class UButton* BTN_Info;

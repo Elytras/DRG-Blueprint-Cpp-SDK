@@ -26,11 +26,8 @@ public:
     void OnItemEquipped();
     void OnItemUnequipped();
     void Reload_Time_Tick(float amount);
-    static constexpr const char* Reload_Time_Tick__UeName = "Reload Time Tick";
     void Total_Ammo_left_changed(int amount);
-    static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
     void Max_Ammo_Changed(int amount);
-    static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
     void OnReloadComplete();
     void OnReloadStarted();
     void InitializeAmmoWidget(class AItem* OwningItem, class UWidgetComponent* WidgetComp);
@@ -42,6 +39,13 @@ public:
     void SetTotalCount(int Value);
     void RequestRedraw();
     void SetMaxAmmo(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Reload_Time_Tick__UeName = "Reload Time Tick";
+        static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
+        static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
+    };
 };
 
 }}}   // namespace Game::UI::WeaponDisplays

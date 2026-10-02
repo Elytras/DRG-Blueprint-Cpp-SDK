@@ -21,7 +21,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_LevelUp", "ITM_Season_LevelUp_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_1;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_2;

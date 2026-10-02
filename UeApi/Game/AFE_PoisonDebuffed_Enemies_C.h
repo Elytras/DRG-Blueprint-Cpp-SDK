@@ -13,7 +13,11 @@ class AFE_PoisonDebuffed_Enemies_C : public UAttachedParticlesAfflictionEffect
 {
 public:
     UE_CLASS("/Game/GameElements/PawnAffliction/EnemyEffects/AFE_PoisonDebuffed_Enemies", "AFE_PoisonDebuffed_Enemies_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 }}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects

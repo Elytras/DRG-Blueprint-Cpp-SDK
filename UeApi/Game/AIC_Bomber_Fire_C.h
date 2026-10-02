@@ -13,7 +13,11 @@ class AIC_Bomber_Fire_C : public AFSDFlyingBugController
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/AIC_Bomber_Fire", "AIC_Bomber_Fire_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

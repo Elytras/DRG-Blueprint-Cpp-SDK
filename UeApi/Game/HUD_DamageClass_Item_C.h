@@ -19,8 +19,8 @@ class HUD_DamageClass_Item_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_DamageClass_Item", "HUD_DamageClass_Item_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimDeactivate;
-    class UWidgetAnimation* AnimActivate;
+    UE_READONLY class UWidgetAnimation* AnimDeactivate;
+    UE_READONLY class UWidgetAnimation* AnimActivate;
     class UImage* Icon;
     TMulticastInlineDelegate<void(HUD_DamageClass_Item_C* Item)> Elapsed;
     class UPawnAffliction* Affliction;

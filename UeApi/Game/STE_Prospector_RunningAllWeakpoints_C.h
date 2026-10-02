@@ -13,6 +13,11 @@ class STE_Prospector_RunningAllWeakpoints_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/STE_Prospector_RunningAllWeakpoints", "STE_Prospector_RunningAllWeakpoints_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Critters::Prospector

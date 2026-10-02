@@ -28,8 +28,8 @@ public:
     using ITM_VanityTag_ToolButton_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_ToolButton_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
-    class UWidgetAnimation* AnimClick;
+    UE_READONLY class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimClick;
     class UBorder* Button_Border;
     ITM_VanityTag_ToolButton_C* Button_Clear;
     class UBorder* Button_Frame;
@@ -42,7 +42,6 @@ public:
     class UOverlay* Menu_Overlay;
     ITM_VanityTag_FilterMenu_C* Menu_Widget;
     bool Left_Side;
-    static constexpr const char* Left_Side__UeName = "Left Side";
     bool MenuOpen;
     TMulticastInlineDelegate<void()> OnSelectionChanged;
     FDetailedTagSet AllTags;
@@ -67,6 +66,11 @@ public:
     void SetItemsHidden(int InCount);
     void IsMenuOpen(bool& OutMenuOpen);
     void CanMenuOpen(bool& OutCanOpen);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Left_Side__UeName = "Left Side";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector

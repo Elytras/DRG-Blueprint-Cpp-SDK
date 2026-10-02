@@ -32,38 +32,22 @@ public:
     using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
     using WeaponDisplay_ChargeBlaster_Charge_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Charge_C;
     using WeaponDisplay_ChargeBlaster_Heat_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* ChargeBlaster_Overheat_Cue;
-    static constexpr const char* ChargeBlaster_Overheat_Cue__UeScsNode = "e64f75900dc4de4696bb2f48fda40cea";
     class UAudioComponent* ChargeBlaster_SpinUp_Cue;
-    static constexpr const char* ChargeBlaster_SpinUp_Cue__UeScsNode = "aba8511ff653584eaebda8e57d0db202";
     class UAudioComponent* AC_ChargeLevel;
-    static constexpr const char* AC_ChargeLevel__UeScsNode = "7acb3a7e6c29af4cb3ee93ad46e3ce73";
     class UFirstPersonWidgetComponent* Widget_ChargeNew;
-    static constexpr const char* Widget_ChargeNew__UeScsNode = "05abeabdd48efb4596cf6a9b6c5b66ba";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh2;
-    static constexpr const char* FirstPersonStaticMesh2__UeScsNode = "409b1b773351cc40b1b5bcb9ab17a4fb";
     class UFirstPersonWidgetComponent* Widget_Ammo;
-    static constexpr const char* Widget_Ammo__UeScsNode = "94402b12ea429b4aae0d4636aea488d0";
     class UFirstPersonWidgetComponent* Widget_HeatNew;
-    static constexpr const char* Widget_HeatNew__UeScsNode = "560ba802778d4c40b957c288c4bd95fc";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh1;
-    static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "866683a0bc764b458efd4cada704e2fe";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "f315da3785fb7240aaeb6c77873b190a";
     class UFirstPersonParticleSystemComponent* FirstPersonParticleSystem_Arc;
-    static constexpr const char* FirstPersonParticleSystem_Arc__UeScsNode = "0cc9c6a18600a54f8f5cd99e38e752b3";
     class UFirstPersonParticleSystemComponent* FirstPersonParticleSystem_Right;
-    static constexpr const char* FirstPersonParticleSystem_Right__UeScsNode = "8fa135400b54754b8d8a4102ef93f48c";
     class UFirstPersonParticleSystemComponent* FirstPersonParticleSystem_Left;
-    static constexpr const char* FirstPersonParticleSystem_Left__UeScsNode = "15a7517eac83af40bcf0c7c777f2c2bc";
     class UChargedProjectileLauncherComponent* ChargedProjectileLauncher;
-    static constexpr const char* ChargedProjectileLauncher__UeScsNode = "d1a63a2ffe776d46b53d42d7f0bdfbd2";
     class UPointLightComponent* MuzzlePointLight;
-    static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
     WeaponDisplay_ChargeBlaster_Charge_C* ChargeUI;
     WeaponDisplay_ChargeBlaster_Heat_C* OverheatUI;
     WeaponDisplay_ChargeBlaster_AmmoCounter_C* AmmoUI;
@@ -87,8 +71,28 @@ public:
     void HandleChargeAudio(float charge);
     void HandleHeatAudio();
     void Fade_Out_if_Valid(class UAudioComponent*& AC);
-    static constexpr const char* Fade_Out_if_Valid__UeName = "Fade Out if Valid";
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* ChargeBlaster_Overheat_Cue__UeScsNode = "e64f75900dc4de4696bb2f48fda40cea";
+        static constexpr const char* ChargeBlaster_SpinUp_Cue__UeScsNode = "aba8511ff653584eaebda8e57d0db202";
+        static constexpr const char* AC_ChargeLevel__UeScsNode = "7acb3a7e6c29af4cb3ee93ad46e3ce73";
+        static constexpr const char* Widget_ChargeNew__UeScsNode = "05abeabdd48efb4596cf6a9b6c5b66ba";
+        static constexpr const char* FirstPersonStaticMesh2__UeScsNode = "409b1b773351cc40b1b5bcb9ab17a4fb";
+        static constexpr const char* Widget_Ammo__UeScsNode = "94402b12ea429b4aae0d4636aea488d0";
+        static constexpr const char* Widget_HeatNew__UeScsNode = "560ba802778d4c40b957c288c4bd95fc";
+        static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "866683a0bc764b458efd4cada704e2fe";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "f315da3785fb7240aaeb6c77873b190a";
+        static constexpr const char* FirstPersonParticleSystem_Arc__UeScsNode = "0cc9c6a18600a54f8f5cd99e38e752b3";
+        static constexpr const char* FirstPersonParticleSystem_Right__UeScsNode = "8fa135400b54754b8d8a4102ef93f48c";
+        static constexpr const char* FirstPersonParticleSystem_Left__UeScsNode = "15a7517eac83af40bcf0c7c777f2c2bc";
+        static constexpr const char* ChargedProjectileLauncher__UeScsNode = "d1a63a2ffe776d46b53d42d7f0bdfbd2";
+        static constexpr const char* MuzzlePointLight__UeScsNode = "d81895c14f838642a4ab04da0cfb0d0f";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "9db288b98389e04781277486bcc60c7a";
+        static constexpr const char* Fade_Out_if_Valid__UeName = "Fade Out if Valid";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

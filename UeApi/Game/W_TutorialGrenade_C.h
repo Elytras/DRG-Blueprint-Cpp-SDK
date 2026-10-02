@@ -15,14 +15,18 @@ class W_TutorialGrenade_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialGrenade", "W_TutorialGrenade_C");
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialGrenade_C;
-    static constexpr const char* UberGraphFrame_W_TutorialGrenade_C__UeName = "UberGraphFrame";
     float Gold_Mined;
-    static constexpr const char* Gold_Mined__UeName = "Gold Mined";
     float GoldToMine;
     void ExecuteUbergraph_W_TutorialGrenade(int EntryPoint);
     void GrenadeThrown();
     void UpdateTaskText();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_TutorialGrenade_C__UeName = "UberGraphFrame";
+        static constexpr const char* Gold_Mined__UeName = "Gold Mined";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

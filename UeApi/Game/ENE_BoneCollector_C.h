@@ -32,34 +32,21 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/Enemies/ENE_BoneCollector", "ENE_BoneCollector_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
     using BP_TunnelEventBase_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_BoneCollector_C;
-    static constexpr const char* UberGraphFrame_ENE_BoneCollector_C__UeName = "UberGraphFrame";
     class USphereComponent* PlayerFleeTrigger;
-    static constexpr const char* PlayerFleeTrigger__UeScsNode = "778055f141a07f44b58e5d5dff9c0622";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "ebbbd96ed8516b46a086fb413d96cb96";
     class UBoscoIgnoreComponent* BoscoIgnore;
-    static constexpr const char* BoscoIgnore__UeScsNode = "5222a29a722e42449aadc4381713129b";
     class UParticleSystemComponent* P_Ossiran_BoneCollector_Drops;
-    static constexpr const char* P_Ossiran_BoneCollector_Drops__UeScsNode = "afb0d06d590eeb48a3505b43744e0fb7";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "b799d3cf71db5d478fb348ac8d3570d0";
     class USphereComponent* DebrisSpawner;
-    static constexpr const char* DebrisSpawner__UeScsNode = "e1f0d88e84a3214fb4550c656f88d8e5";
     class UAlignEnemyComponent* AlignEnemy;
-    static constexpr const char* AlignEnemy__UeScsNode = "c21a90138e9c2c43a7bcb9925dc6e3bb";
     class UMeleeAttackComponent* CarveAttack;
-    static constexpr const char* CarveAttack__UeScsNode = "5a96e57cb3ed2947b2f76c338fb809c5";
     BP_BurrowComponent_C* BP_BurrowComponent;
-    static constexpr const char* BP_BurrowComponent__UeScsNode = "8ff80cbf19751e4e878832989ba164df";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "92ad03e172f2d140b2d204ce0232fb27";
     float DebrisDistanceIntervalSquared;
     FVector LastDebrisPos;
     BP_TunnelEventBase_C* Tunnel;
     bool HeadingForTunnel;
-    static constexpr const char* HeadingForTunnel__Replicated = "OnRep_HeadingForTunnel:";
     bool IsFakeBurrow;
     FVector LastPotentialStuckLocation;
     FTimerHandle VelocityCheckHandle;
@@ -87,6 +74,23 @@ public:
     void OnRep_HeadingForTunnel();
     bool OnTriggerAI(FName TriggerName);
     void FleeTick();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_BoneCollector_C__UeName = "UberGraphFrame";
+        static constexpr const char* PlayerFleeTrigger__UeScsNode = "778055f141a07f44b58e5d5dff9c0622";
+        static constexpr const char* terrainPlacement__UeScsNode = "ebbbd96ed8516b46a086fb413d96cb96";
+        static constexpr const char* BoscoIgnore__UeScsNode = "5222a29a722e42449aadc4381713129b";
+        static constexpr const char* P_Ossiran_BoneCollector_Drops__UeScsNode = "afb0d06d590eeb48a3505b43744e0fb7";
+        static constexpr const char* PointLight__UeScsNode = "b799d3cf71db5d478fb348ac8d3570d0";
+        static constexpr const char* DebrisSpawner__UeScsNode = "e1f0d88e84a3214fb4550c656f88d8e5";
+        static constexpr const char* AlignEnemy__UeScsNode = "c21a90138e9c2c43a7bcb9925dc6e3bb";
+        static constexpr const char* CarveAttack__UeScsNode = "5a96e57cb3ed2947b2f76c338fb809c5";
+        static constexpr const char* BP_BurrowComponent__UeScsNode = "8ff80cbf19751e4e878832989ba164df";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "92ad03e172f2d140b2d204ce0232fb27";
+        static constexpr const char* HeadingForTunnel__Replicated = "OnRep_HeadingForTunnel:";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::TunnelEvent::Enemies

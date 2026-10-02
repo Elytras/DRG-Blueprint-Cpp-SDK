@@ -22,14 +22,14 @@ class HUD_SpaceRig_Notification_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/VanityNotification/HUD_SpaceRig_Notification", "HUD_SpaceRig_Notification_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Outro;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Outro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UBorder* Frame;
     class UImage* Glow;
     class UTextBlock* Header;
     class UImage* NotificationIcon;
     class URichTextBlock* NotificationRichLabel;
-    FSpaceRigNotification Notification;
+    UE_READONLY FSpaceRigNotification Notification;
     void ExecuteUbergraph_HUD_SpaceRig_Notification(int EntryPoint);
     void OnOutroFinished();
     void OnIntroFinished();

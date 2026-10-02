@@ -33,7 +33,6 @@ public:
     class UNamedSlot* PutStuffHere;
     class USizeBox* SizeBox;
     FText Option_Name;
-    static constexpr const char* Option_Name__UeName = "Option Name";
     int Slider;
     int switcher;
     bool WasHovering;
@@ -43,6 +42,11 @@ public:
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetOptionText(FText InText);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Option_Name__UeName = "Option Name";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

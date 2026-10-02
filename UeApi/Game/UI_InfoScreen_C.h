@@ -47,9 +47,9 @@ public:
     using UI_InfoScreen_WebStreamedBanner_C = Game::UI::Menu_StartScreen::UI_InfoScreen_WebStreamedBanner_C;
     using UI_PatchNotes_C = Game::UI::Menu_StartScreen::UI_PatchNotes_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* BlinkText;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* BlinkText;
     AnimatedDRGlogo_C* AnimatedDRGlogo;
     AnimatedStaticOverlay_C* AnimatedStaticOverlay;
     UI_InfoScreen_BackEndNotification_C* BackendNotification;
@@ -88,19 +88,13 @@ public:
     int PathNodeIndex;
     bool LastKeyControl;
     ModioModBrowserWidget_C* Modio_Mod_Browser;
-    static constexpr const char* Modio_Mod_Browser__UeName = "Modio Mod Browser";
     void ExecuteUbergraph_UI_InfoScreen(int EntryPoint);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Modding_Text();
-    static constexpr const char* Modding_Text__UeName = "Modding Text";
     void Close_Screen();
-    static constexpr const char* Close_Screen__UeName = "Close Screen";
     void Close_Mod_Menu();
-    static constexpr const char* Close_Mod_Menu__UeName = "Close Mod Menu";
     void On_Mods_Updated(FModioErrorCode ErrorCode);
-    static constexpr const char* On_Mods_Updated__UeName = "On Mods Updated";
     void Set_Up_Modding_Buttons();
-    static constexpr const char* Set_Up_Modding_Buttons__UeName = "Set Up Modding Buttons";
     void BndEvt__UI_InfoScreen_BTN_Continue_1_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void FadeOutStarted();
     void OnFadeInFinished();
@@ -108,15 +102,25 @@ public:
     void SetupAnimHandlers();
     UE_COSMETIC void Construct();
     void BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On_Clicked__DelegateSignature();
-    static constexpr const char* BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On Clicked__DelegateSignature";
     void BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On_Clicked__DelegateSignature();
-    static constexpr const char* BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On Clicked__DelegateSignature";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Button_210_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature();
     void FadeIt(bool FadeIn_0, float& Duration);
     void UpdateButtons(bool HasClaimed, bool IsFollowing);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Modio_Mod_Browser__UeName = "Modio Mod Browser";
+        static constexpr const char* Modding_Text__UeName = "Modding Text";
+        static constexpr const char* Close_Screen__UeName = "Close Screen";
+        static constexpr const char* Close_Mod_Menu__UeName = "Close Mod Menu";
+        static constexpr const char* On_Mods_Updated__UeName = "On Mods Updated";
+        static constexpr const char* Set_Up_Modding_Buttons__UeName = "Set Up Modding Buttons";
+        static constexpr const char* BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On Clicked__DelegateSignature";
+        static constexpr const char* BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On Clicked__DelegateSignature";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

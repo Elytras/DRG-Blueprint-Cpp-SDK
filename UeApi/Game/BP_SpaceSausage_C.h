@@ -18,14 +18,18 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Oktoberfest/BP_SpaceSausage", "BP_SpaceSausage_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class URotatingMovementComponent* RotatingMovementLocal;
-    static constexpr const char* RotatingMovementLocal__UeScsNode = "6ca19879c74bb141882dbf06d22fe669";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "1197e209ed1c3b4e8e0d6901673c5b75";
     class UStaticMeshComponent* SM_InflatableSausage;
-    static constexpr const char* SM_InflatableSausage__UeScsNode = "8508d16f2a5ea14bb76fde27e3bc541e";
     float Radius;
     void ExecuteUbergraph_BP_SpaceSausage(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RotatingMovementLocal__UeScsNode = "6ca19879c74bb141882dbf06d22fe669";
+        static constexpr const char* RotatingMovement__UeScsNode = "1197e209ed1c3b4e8e0d6901673c5b75";
+        static constexpr const char* SM_InflatableSausage__UeScsNode = "8508d16f2a5ea14bb76fde27e3bc541e";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest

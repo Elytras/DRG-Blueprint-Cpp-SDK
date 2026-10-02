@@ -16,6 +16,11 @@ class OBJ_Eliminate_Eggs_C : public Game::GameElements::Objectives::Elimination:
 public:
     UE_CLASS("/Game/GameElements/Objectives/Elimination/OBJ_Eliminate_Eggs", "OBJ_Eliminate_Eggs_C");
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Elimination

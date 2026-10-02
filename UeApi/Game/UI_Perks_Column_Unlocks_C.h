@@ -25,11 +25,15 @@ public:
     TArray<UI_Perks_Column_Unlocks_Arrow_C*> ArrowWidgets;
     void ExecuteUbergraph_UI_Perks_Column_Unlocks(int EntryPoint);
     void Set_Unlocked_Count(int UnlockedCount_0);
-    static constexpr const char* Set_Unlocked_Count__UeName = "Set Unlocked Count";
     void Set_Arrow_Count(int ArrowCount_0, int UnlockedCount_0);
-    static constexpr const char* Set_Arrow_Count__UeName = "Set Arrow Count";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void IsUnlocked(bool& Unlocked);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Unlocked_Count__UeName = "Set Unlocked Count";
+        static constexpr const char* Set_Arrow_Count__UeName = "Set Arrow Count";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

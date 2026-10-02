@@ -22,8 +22,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/WeaponDisplay_LineCutter_CurrentClip", "WeaponDisplay_LineCutter_CurrentClip_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_LineCutter_CurrentClip_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_LineCutter_CurrentClip_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* Fire;
+    UE_READONLY class UWidgetAnimation* Fire;
     class UTextBlock* AmmoCount;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UImage* Image_88;
@@ -33,6 +32,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTotalCount(int Value);
     void SetClipCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_LineCutter_CurrentClip_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

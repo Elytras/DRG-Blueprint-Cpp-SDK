@@ -16,13 +16,17 @@ class PRJ_FacilityTurretLaser_Sniper_C : public Game::GameElements::Objectives::
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/PRJ_FacilityTurretLaser_Sniper", "PRJ_FacilityTurretLaser_Sniper_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C;
-    static constexpr const char* UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C__UeName = "UberGraphFrame";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "174ed3749f8a43408bd2806de739cd8e";
     void ExecuteUbergraph_PRJ_FacilityTurretLaser_Sniper(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "174ed3749f8a43408bd2806de739cd8e";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

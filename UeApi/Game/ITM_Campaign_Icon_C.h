@@ -22,7 +22,7 @@ class ITM_Campaign_Icon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_Campaign_Icon", "ITM_Campaign_Icon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CampaignIconGlow;
+    UE_READONLY class UWidgetAnimation* CampaignIconGlow;
     class UImage* CampaignIcon_BG;
     class UImage* CampaignIcon_Border;
     class UImage* CampaignIcon_Glow;

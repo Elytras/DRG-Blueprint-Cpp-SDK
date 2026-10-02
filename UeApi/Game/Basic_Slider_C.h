@@ -39,22 +39,26 @@ public:
     float PreviewPercent;
     void ExecuteUbergraph_Basic_Slider(int EntryPoint);
     void Update_Text();
-    static constexpr const char* Update_Text__UeName = "Update Text";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Slider_K2Node_ComponentBoundEvent_6_OnMouseCaptureEndEvent__DelegateSignature();
     void BndEvt__Slider_K2Node_ComponentBoundEvent_5_OnMouseCaptureBeginEvent__DelegateSignature();
     void BndEvt__Slider_K2Node_ComponentBoundEvent_4_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void Set_Percent(float New_Percent);
-    static constexpr const char* Set_Percent__UeName = "Set Percent";
     void Set_Value(float Value);
-    static constexpr const char* Set_Value__UeName = "Set Value";
     void Get_Percent(float& Percent);
-    static constexpr const char* Get_Percent__UeName = "Get Percent";
     void Get_Value(float& Value);
-    static constexpr const char* Get_Value__UeName = "Get Value";
     void Set_Text(FText New_Text);
-    static constexpr const char* Set_Text__UeName = "Set Text";
     void SetMinTextWidth(float InMinDesiredWidth);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Text__UeName = "Update Text";
+        static constexpr const char* Set_Percent__UeName = "Set Percent";
+        static constexpr const char* Set_Value__UeName = "Set Value";
+        static constexpr const char* Get_Percent__UeName = "Get Percent";
+        static constexpr const char* Get_Value__UeName = "Get Value";
+        static constexpr const char* Set_Text__UeName = "Set Text";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

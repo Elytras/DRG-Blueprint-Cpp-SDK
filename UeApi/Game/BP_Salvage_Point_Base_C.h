@@ -22,19 +22,23 @@ class BP_Salvage_Point_Base_C : public Game::GameElements::Objectives::Salvage::
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_Point_Base", "BP_Salvage_Point_Base_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Salvage_Point_Base_C;
-    static constexpr const char* UberGraphFrame_BP_Salvage_Point_Base_C__UeName = "UberGraphFrame";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "a058daee7d93ee45b8f05e4618b6f7ad";
     class UStaticMeshComponent* DistressSphere;
-    static constexpr const char* DistressSphere__UeScsNode = "093e812a502dc94c85bfb977157b481d";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "97cc56fc7bf5f3439071bf7d94681857";
     class USingleUsableComponent* SingleUsable;
-    static constexpr const char* SingleUsable__UeScsNode = "30fedcf255bd7349bb9d8d39e3692f45";
     void ExecuteUbergraph_BP_Salvage_Point_Base(int EntryPoint);
     void EnableRepair();
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Salvage_Point_Base_C__UeName = "UberGraphFrame";
+        static constexpr const char* Box__UeScsNode = "a058daee7d93ee45b8f05e4618b6f7ad";
+        static constexpr const char* DistressSphere__UeScsNode = "093e812a502dc94c85bfb977157b481d";
+        static constexpr const char* terrainPlacement__UeScsNode = "97cc56fc7bf5f3439071bf7d94681857";
+        static constexpr const char* SingleUsable__UeScsNode = "30fedcf255bd7349bb9d8d39e3692f45";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

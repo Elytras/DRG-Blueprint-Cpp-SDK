@@ -18,12 +18,16 @@ public:
     UE_CLASS("/Game/UI/Menu_Lobby/TestLobbyGameMode", "TestLobbyGameMode_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "230646e1a711da45a311bf5be84aaaaf";
     void ExecuteUbergraph_TestLobbyGameMode(int EntryPoint);
     void Join_Session(FBlueprintSessionResult Session_Result);
-    static constexpr const char* Join_Session__UeName = "Join Session";
     void OnSuccess_CAB842EC41BAFB8B6D6C0595A9F96FB4();
     void OnFailure_CAB842EC41BAFB8B6D6C0595A9F96FB4();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "230646e1a711da45a311bf5be84aaaaf";
+        static constexpr const char* Join_Session__UeName = "Join Session";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Lobby

@@ -23,7 +23,6 @@ public:
     float range;
     FBlackboardKeySelector Target;
     bool Require_LoS;
-    static constexpr const char* Require_LoS__UeName = "Require LoS";
     FGameplayTagQuery Query;
     FBlackboardKeySelector FromKey;
     bool UseFromActor;
@@ -31,6 +30,11 @@ public:
     void ExecuteUbergraph_SER_GetEnemyTarget_Chance(int EntryPoint);
     void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
     void GetEnemyTargetChance(class AActor* FromAcor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Require_LoS__UeName = "Require LoS";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Grunt

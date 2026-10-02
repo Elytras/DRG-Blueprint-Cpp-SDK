@@ -207,6 +207,11 @@ public:
     void Start();
     void Stop();
     UE_PURE bool IsPlaying() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnAudioEnvelopeValue__UeDispatcher = "Assignable";
+    };
 };
 
 class USubmixEffectReverbPreset : public USoundEffectSubmixPreset

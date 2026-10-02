@@ -18,19 +18,23 @@ class ESI_StabberVine_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ESI_StabberVine", "ESI_StabberVine_C");
     class USceneComponent* Head;
-    static constexpr const char* Head__UeScsNode = "22157462efce72499da9b1a174edd44c";
     class USkeletalMeshComponent* SK_StabberVine_Stalk;
-    static constexpr const char* SK_StabberVine_Stalk__UeScsNode = "53cb12a13cc38d438af6495ad3e8a42e";
     class UStaticMeshComponent* SM_BladeMesh;
-    static constexpr const char* SM_BladeMesh__UeScsNode = "fc4b24b45ae2b4409c79090667c91730";
     class UStaticMeshComponent* WeakSpot;
-    static constexpr const char* WeakSpot__UeScsNode = "1691924ecedee843a723705ec693911a";
     class UStaticMeshComponent* U33_BiomPlant_ThornBlob_003;
-    static constexpr const char* U33_BiomPlant_ThornBlob_003__UeScsNode = "6f1541ee62f25d478b394fa131df37a8";
     class UStaticMeshComponent* Body;
-    static constexpr const char* Body__UeScsNode = "748a256296af46489ddb2665735d6c8f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Head__UeScsNode = "22157462efce72499da9b1a174edd44c";
+        static constexpr const char* SK_StabberVine_Stalk__UeScsNode = "53cb12a13cc38d438af6495ad3e8a42e";
+        static constexpr const char* SM_BladeMesh__UeScsNode = "fc4b24b45ae2b4409c79090667c91730";
+        static constexpr const char* WeakSpot__UeScsNode = "1691924ecedee843a723705ec693911a";
+        static constexpr const char* U33_BiomPlant_ThornBlob_003__UeScsNode = "6f1541ee62f25d478b394fa131df37a8";
+        static constexpr const char* Body__UeScsNode = "748a256296af46489ddb2665735d6c8f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e81209a53f38814ca6428128e6d5a830";
+    };
 };
 
 }}}   // namespace Game::Enemies::StabberVine

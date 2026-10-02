@@ -13,6 +13,11 @@ class STE_NeedleSprayer_DamageLimmiter_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/STE_NeedleSprayer_DamageLimmiter", "STE_NeedleSprayer_DamageLimmiter_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer

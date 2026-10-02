@@ -21,15 +21,19 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/ESI_InsectSwarm_Spawner", "ESI_InsectSwarm_Spawner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_InsectSwarm;
-    static constexpr const char* P_InsectSwarm__UeScsNode = "97e7efedac66d84fbb23944a878eee5d";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "e97ddd3089507e499c3a9d2389e1f4ec";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "90ab200ba9940747ab2b5e1f6ce04e8f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ecafb27877119c41808077a15c49c2c1";
     void ExecuteUbergraph_ESI_InsectSwarm_Spawner(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* P_InsectSwarm__UeScsNode = "97e7efedac66d84fbb23944a878eee5d";
+        static constexpr const char* PointLight__UeScsNode = "e97ddd3089507e499c3a9d2389e1f4ec";
+        static constexpr const char* StaticMesh__UeScsNode = "90ab200ba9940747ab2b5e1f6ce04e8f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ecafb27877119c41808077a15c49c2c1";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm

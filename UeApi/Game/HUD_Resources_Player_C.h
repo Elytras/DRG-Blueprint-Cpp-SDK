@@ -32,7 +32,7 @@ public:
     class APlayerCharacter* Character;
     class UResourcesComponent* ResourceComponent;
     bool LaserpointerEquipped;
-    class UHUDVisibilityGroup* VisibilityGroup;
+    UE_READONLY class UHUDVisibilityGroup* VisibilityGroup;
     int PreviewCount;
     void ExecuteUbergraph_HUD_Resources_Player(int EntryPoint);
     void OnLaserPointerReleased_Event();
@@ -41,9 +41,13 @@ public:
     void OnResourceChanged(HUD_Resources_Player_Icon_C* ResourceIcon);
     void OnResourceAdded(class UCappedResource* Resource);
     void Add_Resource(class UCappedResource* Resource);
-    static constexpr const char* Add_Resource__UeName = "Add Resource";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Resource__UeName = "Add Resource";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources

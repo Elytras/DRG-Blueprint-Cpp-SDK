@@ -29,24 +29,15 @@ class WPN_Cryospray_C : public ACryosprayItem
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/WPN_Cryospray", "WPN_Cryospray_C");
     using WeaponDisplay_CryoSpray_Ammo_C = Game::WeaponsNTools::Cryospray::WeaponDisplay_CryoSpray_Ammo_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.BasicWeaponFireComponent WeaponFire;/Script/FSD.DamageComponent AoEDamageComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent ChargeUpAudioComponent;/Script/FSD.MotionAudioController MotionAudio;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* AudioPressurerising;
-    static constexpr const char* AudioPressurerising__UeScsNode = "dbf7cd7591c3f04eb81166c76967ee3a";
     class UFirstPersonPointLightComponent* GaugeLight;
-    static constexpr const char* GaugeLight__UeScsNode = "4df007580282cf409004b1c39c1a8423";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "9f42b5e61895064e89e8ea762a3d9b9e";
     class UFirstPersonStaticMeshComponent* FP_Widget_Shooting_Gauge;
-    static constexpr const char* FP_Widget_Shooting_Gauge__UeScsNode = "c7e1fd2c834adf4898459ac202caad5c";
     class UFirstPersonParticleSystemComponent* PressureVent_Particle;
-    static constexpr const char* PressureVent_Particle__UeScsNode = "3361339c88b94f48a85ddf70a7eda081";
     class UFirstPersonWidgetComponent* FPwidget_Ammo;
-    static constexpr const char* FPwidget_Ammo__UeScsNode = "92ac40a8c7af554898453751818b1d03";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "b2827df577c2be4c913807d50ddcb39a";
     class UPointLightComponent* MuzzleLight;
-    static constexpr const char* MuzzleLight__UeScsNode = "d16e303932f0414792a91ef63e2fb173";
     WeaponDisplay_CryoSpray_Ammo_C* UI_Ammo;
     class UParticleSystemComponent* ChargeInstance;
     class UParticleSystem* LaunchProjectileParticlesFP;
@@ -57,15 +48,28 @@ public:
     void ReceiveBeginPlay();
     void OnProjectileLaunched(const FVector& Location);
     void Toggle_RepressurerisingFX(bool On);
-    static constexpr const char* Toggle_RepressurerisingFX__UeName = "Toggle RepressurerisingFX";
     void RecieveUnequipped();
     void RecieveEquipped();
     void ReceiveRepressurisingChanged(bool Value);
     void Update_Ammo_Display();
-    static constexpr const char* Update_Ammo_Display__UeName = "Update Ammo Display";
     void BndEvt__Aggregator_K2Node_ComponentBoundEvent_0_AmountChangedSignature__DelegateSignature(int amount);
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.BasicWeaponFireComponent WeaponFire;/Script/FSD.DamageComponent AoEDamageComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FlatDamageBonus DamageComponent:FlatDamageBonus_0;/Script/FSD.FSDAudioComponent ChargeUpAudioComponent;/Script/FSD.MotionAudioController MotionAudio;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* AudioPressurerising__UeScsNode = "dbf7cd7591c3f04eb81166c76967ee3a";
+        static constexpr const char* GaugeLight__UeScsNode = "4df007580282cf409004b1c39c1a8423";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "9f42b5e61895064e89e8ea762a3d9b9e";
+        static constexpr const char* FP_Widget_Shooting_Gauge__UeScsNode = "c7e1fd2c834adf4898459ac202caad5c";
+        static constexpr const char* PressureVent_Particle__UeScsNode = "3361339c88b94f48a85ddf70a7eda081";
+        static constexpr const char* FPwidget_Ammo__UeScsNode = "92ac40a8c7af554898453751818b1d03";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "b2827df577c2be4c913807d50ddcb39a";
+        static constexpr const char* MuzzleLight__UeScsNode = "d16e303932f0414792a91ef63e2fb173";
+        static constexpr const char* Toggle_RepressurerisingFX__UeName = "Toggle RepressurerisingFX";
+        static constexpr const char* Update_Ammo_Display__UeName = "Update Ammo Display";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

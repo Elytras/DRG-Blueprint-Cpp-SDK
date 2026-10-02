@@ -19,17 +19,21 @@ class BP_HugeBones_RibCage_02_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/Bones/BP_HugeBones_RibCage_02", "BP_HugeBones_RibCage_02_C");
     class UInfluencerSpawnComponent* InfluencerSpawn2;
-    static constexpr const char* InfluencerSpawn2__UeScsNode = "1eded6c72e638940adc4111df8885d18";
     class UInfluencerSpawnComponent* InfluencerSpawn1;
-    static constexpr const char* InfluencerSpawn1__UeScsNode = "a6bcb7901c554546b01f6549994b3d9b";
     class UInfluencerSpawnComponent* InfluencerSpawn;
-    static constexpr const char* InfluencerSpawn__UeScsNode = "87051f4dc1fe04428e02d945326c2198";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "9a23b4fa3f00c94cb83083c4d25d5493";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "e93360e48eb9354bbabb43dda8883d6d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4f86bd5b67049742a0c1e66bed337f6c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InfluencerSpawn2__UeScsNode = "1eded6c72e638940adc4111df8885d18";
+        static constexpr const char* InfluencerSpawn1__UeScsNode = "a6bcb7901c554546b01f6549994b3d9b";
+        static constexpr const char* InfluencerSpawn__UeScsNode = "87051f4dc1fe04428e02d945326c2198";
+        static constexpr const char* terrainPlacement__UeScsNode = "9a23b4fa3f00c94cb83083c4d25d5493";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "e93360e48eb9354bbabb43dda8883d6d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4f86bd5b67049742a0c1e66bed337f6c";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Bones

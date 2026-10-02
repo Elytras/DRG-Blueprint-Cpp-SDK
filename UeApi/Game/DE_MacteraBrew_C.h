@@ -21,11 +21,15 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     bool PEffect;
     class UParticleSystemComponent* Particle_Effect;
-    static constexpr const char* Particle_Effect__UeName = "Particle Effect";
     class UAudioComponent* soundComp;
     void ExecuteUbergraph_DE_MacteraBrew(int EntryPoint);
     void OnStartEffect(class APlayerCharacter* Character);
     void OnStopEffect();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Particle_Effect__UeName = "Particle Effect";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

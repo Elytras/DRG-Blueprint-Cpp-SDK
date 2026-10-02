@@ -39,11 +39,15 @@ public:
     UE_COSMETIC void Construct();
     void OnFlareCountChanged(int CurrentCount, class UInventoryComponent* Inventory);
     void Setup_Dynamic_HUD();
-    static constexpr const char* Setup_Dynamic_HUD__UeName = "Setup Dynamic HUD";
     void OnFlareProduction(int NextIndex_0, float Progress_0);
     void OnItemsLoaded();
     void CreateIcons(int IconCount);
     void SetFlareProduction(int InNextIndex, float InProgress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Dynamic_HUD__UeName = "Setup Dynamic HUD";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

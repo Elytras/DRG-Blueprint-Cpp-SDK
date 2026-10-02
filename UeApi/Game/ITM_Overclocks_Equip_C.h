@@ -41,9 +41,9 @@ public:
     using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
     using ITM_Overclocks_Equip_Item_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPopUpSelection;
-    class UWidgetAnimation* AnimHoverButton;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimPopUpSelection;
+    UE_READONLY class UWidgetAnimation* AnimHoverButton;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class UButton* BlockCursorInput;
     class UImage* ButtonFrame;
     class UTextBlock* DATA_Overclock_CategoryName;
@@ -70,9 +70,9 @@ public:
     class UTextBlock* TextBlock_1;
     class UTextBlock* TextBlock_361;
     class UVerticalBox* VerticalBox_Menu;
-    FLinearColor TintClean;
-    FLinearColor TintBalanced;
-    FLinearColor TintUnstable;
+    UE_READONLY FLinearColor TintClean;
+    UE_READONLY FLinearColor TintBalanced;
+    UE_READONLY FLinearColor TintUnstable;
     class UClass* CharacterClass;
     class UClass* itemClass;
     class UUpgradableItemComponent* UpgradableComponent;

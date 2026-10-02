@@ -18,16 +18,20 @@ class PRJ_Spider_Spitter_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Spitter/PRJ_Spider_Spitter", "PRJ_Spider_Spitter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2f81d7141a3abe46837ba8cdf3c7752a";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     void ExecuteUbergraph_PRJ_Spider_Spitter(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Damage__UeScsNode = "2f81d7141a3abe46837ba8cdf3c7752a";
+        static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Spitter

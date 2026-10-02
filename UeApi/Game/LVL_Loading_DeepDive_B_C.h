@@ -26,8 +26,12 @@ public:
     void PlayerStart(class ULevelSequence* LoaderLevelSequence);
     void ReceiveBeginPlay();
     void Start_Player(class ULevelSequence* LevelSequence);
-    static constexpr const char* Start_Player__UeName = "Start Player";
     void StopPlayer();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Player__UeName = "Start Player";
+    };
 };
 
 }}}   // namespace Game::Maps::UILevels

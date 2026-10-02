@@ -38,9 +38,13 @@ public:
     bool IsTriggered;
     void ExecuteUbergraph_ABP_SpikeyPlant_A(int EntryPoint);
     void Change_state(bool Is_Extruded, bool Is_Triggered);
-    static constexpr const char* Change_state__UeName = "Change state";
     void BlueprintBeginPlay();
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Change_state__UeName = "Change state";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpikyPlant

@@ -13,6 +13,11 @@ class CP_EndGameAssignment_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_EndGameAssignment", "CP_EndGameAssignment_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AnyRetiredCampaignRequirement AnyRetiredCampaignRequirement_0;/Script/FSD.AnyRetiredCampaignRequirement AnyRetiredCampaignRequirement_1;/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_3;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.CampaignMission CampaignMission_5;/Script/FSD.CampaignMission CampaignMission_6;/Script/FSD.CampaignMission CampaignMission_7;/Script/FSD.CampaignMission CampaignMission_8;/Script/FSD.PureTextReward CampaignMission_8:PureTextReward_0;/Script/FSD.SchematicReward CampaignMission_0:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_2:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_4:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_6:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_8:SchematicReward_0;/Script/FSD.SchematicReward CampaignMission_8:SchematicReward_1";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

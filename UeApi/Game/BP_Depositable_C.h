@@ -28,26 +28,19 @@ class BP_Depositable_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_Depositable", "BP_Depositable_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "0c5e64669265e14fb55ffdc1ec142103";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "e1501cb18130b54b82f2ccc1a48a56f0";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "826a1e6decd82441870586ce706f599f";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "076c64c51f6a8f4eb6545f2677d98623";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "259a162a6d10214faf2b81304bd017b7";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "a37645d682e25140b5bf72bb9b787d03";
     int Detects;
-    class USoundCue* DugFreeCue;
+    UE_READONLY class USoundCue* DugFreeCue;
     bool CanTriggerSound;
-    class USoundBase* ImpactSound;
-    FName ImpactSoundParameter;
-    class USoundBase* PickupSound;
+    UE_READONLY class USoundBase* ImpactSound;
+    UE_READONLY FName ImpactSoundParameter;
+    UE_READONLY class USoundBase* PickupSound;
     FVector InWorldScale;
     FVector throwForce;
     bool VisibleToTerrainScanner;
@@ -68,6 +61,17 @@ public:
     UE_MULTICAST void All_PlayActivated();
     void SetPickedUp(class APlayerCharacter* Character);
     void Release();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* outline__UeScsNode = "0c5e64669265e14fb55ffdc1ec142103";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "e1501cb18130b54b82f2ccc1a48a56f0";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "826a1e6decd82441870586ce706f599f";
+        static constexpr const char* Carriable__UeScsNode = "076c64c51f6a8f4eb6545f2677d98623";
+        static constexpr const char* Box__UeScsNode = "259a162a6d10214faf2b81304bd017b7";
+        static constexpr const char* Sphere__UeScsNode = "a37645d682e25140b5bf72bb9b787d03";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems

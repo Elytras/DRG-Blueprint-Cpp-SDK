@@ -26,9 +26,9 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season06EventBonus", "ITM_Season06EventBonus_C");
     using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnHover;
-    class UWidgetAnimation* EnterCheckmark;
-    class UWidgetAnimation* ScaleDown;
+    UE_READONLY class UWidgetAnimation* OnHover;
+    UE_READONLY class UWidgetAnimation* EnterCheckmark;
+    UE_READONLY class UWidgetAnimation* ScaleDown;
     class UImage* Background;
     class UBorder* Border_Token;
     class UButton* Button_Selector;

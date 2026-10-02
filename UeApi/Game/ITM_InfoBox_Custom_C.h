@@ -25,7 +25,7 @@ public:
     UE_CLASS("/Game/UI/_GlobalAssets/ITM_InfoBox_Custom", "ITM_InfoBox_Custom_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimContentOpen;
+    UE_READONLY class UWidgetAnimation* AnimContentOpen;
     class UNamedSlot* Content;
     Basic_Menu_ColorBar_C* Content_Bottom_Bar;
     class UButton* Content_Button;

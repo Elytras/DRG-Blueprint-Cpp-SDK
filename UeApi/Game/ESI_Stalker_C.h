@@ -32,7 +32,6 @@ public:
     class UMaterialInterface* BodyMaterial;
     class UMaterialInterface* ArmorMaterial;
     bool IsCloaked;
-    static constexpr const char* IsCloaked__Replicated = ":";
     float ToggleSpeed;
     void ExecuteUbergraph_ESI_Stalker(int EntryPoint);
     void ToggleCloak();
@@ -43,6 +42,11 @@ public:
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* IsCloaked__Replicated = ":";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

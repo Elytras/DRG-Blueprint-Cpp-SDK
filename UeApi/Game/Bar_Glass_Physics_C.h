@@ -28,19 +28,12 @@ public:
     UE_CLASS("/Game/GameElements/Bar/Bar_Glass_Physics", "Bar_Glass_Physics_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Useable;
-    static constexpr const char* Useable__UeScsNode = "462843d9076eb841b94cc43e38abfee8";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "8c747e6a47d6444d90a14c1535798a88";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "cf8eabeb0bf2ea47957313475868aefb";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "0e5f09a1f077f649b494dae3a2574500";
     class USkeletalMeshComponent* GlassMesh;
-    static constexpr const char* GlassMesh__UeScsNode = "51ba8f9b6a20654b997f7514e8407004";
     class UStaticMeshComponent* collider;
-    static constexpr const char* collider__UeScsNode = "cc842bcae40f344091484bf56bfcf9d6";
     bool Thrown;
-    static constexpr const char* Thrown__Replicated = "OnRep_Thrown:";
     class UClass* itemClass;
     class APlayerCharacter* CurrentUser;
     void ExecuteUbergraph_Bar_Glass_Physics(int EntryPoint);
@@ -52,6 +45,17 @@ public:
     void UserConstructionScript();
     void OnRep_Thrown();
     void OnRep_Drinkable();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Useable__UeScsNode = "462843d9076eb841b94cc43e38abfee8";
+        static constexpr const char* InstantUsable__UeScsNode = "8c747e6a47d6444d90a14c1535798a88";
+        static constexpr const char* GravityChanged__UeScsNode = "cf8eabeb0bf2ea47957313475868aefb";
+        static constexpr const char* Sphere__UeScsNode = "0e5f09a1f077f649b494dae3a2574500";
+        static constexpr const char* GlassMesh__UeScsNode = "51ba8f9b6a20654b997f7514e8407004";
+        static constexpr const char* collider__UeScsNode = "cc842bcae40f344091484bf56bfcf9d6";
+        static constexpr const char* Thrown__Replicated = "OnRep_Thrown:";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

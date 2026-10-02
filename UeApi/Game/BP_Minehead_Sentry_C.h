@@ -28,30 +28,18 @@ class BP_Minehead_Sentry_C : public ASentryGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_MineHead/BP_Minehead_Sentry", "BP_Minehead_Sentry_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "494026207bf5414ca98af71654f9c8a3";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "84e67f27693bf949af70f714283ed260";
     class UParticleSystemComponent* P_SentryGun_MineHead_Casing;
-    static constexpr const char* P_SentryGun_MineHead_Casing__UeScsNode = "6734d1ee20720b47815a37c12c84f042";
     class USceneComponent* SpotLightBase;
-    static constexpr const char* SpotLightBase__UeScsNode = "768eb0c3fdbd344eb82896ddbf0e69f0";
     class UStaticMeshComponent* LightCone;
-    static constexpr const char* LightCone__UeScsNode = "eaabf372c8040347bd49bd9e3a663fc0";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "dd916ca11e082b428b8f31ef6bd8d344";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "afe3ae2aa2d6dd46a91a06518ab15bfc";
     class UWidgetComponent* AmmoCountWidget;
-    static constexpr const char* AmmoCountWidget__UeScsNode = "7c7af99a9beb794cab41d966257344a2";
     class UDamageComponent* Damage1;
-    static constexpr const char* Damage1__UeScsNode = "d9b3dec455681f4299ecc2f2048d8d0e";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e9b681b5f7672c45b67a01f80f0de401";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "a2d2010edfc9e547b65418f23d1c8a2e";
     float Undeploy_Progress_02B4B0BE41996CA1C5785D8CDFE1AD49;
     TEnum<ETimelineDirection> Undeploy__Direction_02B4B0BE41996CA1C5785D8CDFE1AD49;
     class UTimelineComponent* Undeploy;
@@ -60,18 +48,14 @@ public:
     class UTimelineComponent* DeployTimeline;
     float FoldoutAnimDuration;
     float Old_Z_Angle;
-    static constexpr const char* Old_Z_Angle__UeName = "Old Z Angle";
     float Old_Z_Direction;
-    static constexpr const char* Old_Z_Direction__UeName = "Old Z Direction";
     bool IsDeployed;
-    static constexpr const char* IsDeployed__Replicated = "OnRep_IsDeployed:";
     float DeployProgress;
     void ExecuteUbergraph_BP_Minehead_Sentry(int EntryPoint);
     void BndEvt__Hitscan_K2Node_ComponentBoundEvent_0_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void UpdateShadows();
     void Deploy();
     void Sentry_Gun_Ready();
-    static constexpr const char* Sentry_Gun_Ready__UeName = "Sentry Gun Ready";
     void ReceiveBeginPlay();
     void AmmoSpent();
     void Undeploy__UpdateFunc();
@@ -82,6 +66,26 @@ public:
     void OnRep_IsDeployed();
     void ConditionallyEnableShadows();
     UE_PURE float GetDeployProgress() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
+        static constexpr const char* PathfinderCollision__UeScsNode = "494026207bf5414ca98af71654f9c8a3";
+        static constexpr const char* Capsule__UeScsNode = "84e67f27693bf949af70f714283ed260";
+        static constexpr const char* P_SentryGun_MineHead_Casing__UeScsNode = "6734d1ee20720b47815a37c12c84f042";
+        static constexpr const char* SpotLightBase__UeScsNode = "768eb0c3fdbd344eb82896ddbf0e69f0";
+        static constexpr const char* LightCone__UeScsNode = "eaabf372c8040347bd49bd9e3a663fc0";
+        static constexpr const char* PointLight__UeScsNode = "dd916ca11e082b428b8f31ef6bd8d344";
+        static constexpr const char* SpotLight__UeScsNode = "afe3ae2aa2d6dd46a91a06518ab15bfc";
+        static constexpr const char* AmmoCountWidget__UeScsNode = "7c7af99a9beb794cab41d966257344a2";
+        static constexpr const char* Damage1__UeScsNode = "d9b3dec455681f4299ecc2f2048d8d0e";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e9b681b5f7672c45b67a01f80f0de401";
+        static constexpr const char* HitScan__UeScsNode = "a2d2010edfc9e547b65418f23d1c8a2e";
+        static constexpr const char* Old_Z_Angle__UeName = "Old Z Angle";
+        static constexpr const char* Old_Z_Direction__UeName = "Old Z Direction";
+        static constexpr const char* IsDeployed__Replicated = "OnRep_IsDeployed:";
+        static constexpr const char* Sentry_Gun_Ready__UeName = "Sentry Gun Ready";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_MineHead

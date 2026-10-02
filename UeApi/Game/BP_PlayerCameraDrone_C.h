@@ -23,22 +23,14 @@ class BP_PlayerCameraDrone_C : public APlayerCameraDrone
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_PlayerCameraDrone", "BP_PlayerCameraDrone_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.FloatingPawnMovement Movement";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "81cfa9c7229df646984b403ac938c434";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "ee6248933b724648b662d8f563756b1f";
     class UStaticMeshComponent* collider;
-    static constexpr const char* collider__UeScsNode = "51bbaf98b4857b47af96aff3019f1c35";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "bbe8fa87d0769e4885b53839a53a3c8a";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "bd431240c07c444abdd794ceb38b8ea6";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "43c85157b9e26245ab5d32ab3076a1e7";
     class UCameraComponent* Camera;
-    static constexpr const char* Camera__UeScsNode = "69b92976a762454eb9dfd0adaef87afe";
     bool Visible;
     TMulticastInlineDelegate<void()> CreateQuickCheatMenu;
     class UWindowWidget* CheatMenu;
@@ -66,6 +58,18 @@ public:
     void InpActEvt_Add_K2Node_InputKeyEvent_12(FKey Key);
     void InpActEvt_Nine_K2Node_InputKeyEvent_13(FKey Key);
     void InpActEvt_Eight_K2Node_InputKeyEvent_14(FKey Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.FloatingPawnMovement Movement";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "81cfa9c7229df646984b403ac938c434";
+        static constexpr const char* outline__UeScsNode = "ee6248933b724648b662d8f563756b1f";
+        static constexpr const char* collider__UeScsNode = "51bbaf98b4857b47af96aff3019f1c35";
+        static constexpr const char* SpotLight__UeScsNode = "bbe8fa87d0769e4885b53839a53a3c8a";
+        static constexpr const char* PointLight__UeScsNode = "bd431240c07c444abdd794ceb38b8ea6";
+        static constexpr const char* StaticMesh__UeScsNode = "43c85157b9e26245ab5d32ab3076a1e7";
+        static constexpr const char* Camera__UeScsNode = "69b92976a762454eb9dfd0adaef87afe";
+    };
 };
 
 }}}   // namespace Game::GameElements::MovieMode

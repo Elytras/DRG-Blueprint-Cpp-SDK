@@ -26,24 +26,16 @@ class BP_GreatEggHunt_ThrowableEgg_C : public AThrowableActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_ThrowableEgg", "BP_GreatEggHunt_ThrowableEgg_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";
     class USceneComponent* MeshPivot;
-    static constexpr const char* MeshPivot__UeScsNode = "aec37a461d60c8448d6041e6855489c2";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "ade588786209204e902cfa8a0e91e313";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
     float ImpulseStrength;
-    static constexpr const char* ImpulseStrength__Replicated = ":";
     FName ImpulseSocketName;
     float RotationSpeed;
     class UFXSystemAsset* ExplosionParticles;
-    static constexpr const char* ExplosionParticles__Replicated = ":";
     class UMaterialInstance* UsedMaterial;
-    static constexpr const char* UsedMaterial__Replicated = "OnRep_UsedMaterial:";
     void ExecuteUbergraph_BP_GreatEggHunt_ThrowableEgg(int EntryPoint);
     void SetMaterial(class UMaterialInstance* Material);
     void KillActorWithEffects();
@@ -55,6 +47,18 @@ public:
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
     void ReceiveBeginPlay();
     void OnRep_UsedMaterial();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* StaticMesh__UeScsNode = "a6545b9abf66b64ca23b28d325f478a0";
+        static constexpr const char* MeshPivot__UeScsNode = "aec37a461d60c8448d6041e6855489c2";
+        static constexpr const char* Sphere__UeScsNode = "ade588786209204e902cfa8a0e91e313";
+        static constexpr const char* Damage__UeScsNode = "f20185dc2a47bb47a6634ef6fb926cae";
+        static constexpr const char* ImpulseStrength__Replicated = ":";
+        static constexpr const char* ExplosionParticles__Replicated = ":";
+        static constexpr const char* UsedMaterial__Replicated = "OnRep_UsedMaterial:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

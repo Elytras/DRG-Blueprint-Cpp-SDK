@@ -21,21 +21,25 @@ class Grenade_IFG_C : public Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/Grenade_IFG", "Grenade_IFG_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_IFG_C;
-    static constexpr const char* UberGraphFrame_Grenade_IFG_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "859d117c169f9b4796c6341ccb368540";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "287d3047aacb7a40927230df3bfa4229";
     bool Stick;
-    static constexpr const char* Stick__Replicated = "OnRep_Stick:";
     void ExecuteUbergraph_Grenade_IFG(int EntryPoint);
     void BndEvt__Box_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void EnableWeakeningEffect();
     void OnRep_Stick();
     void AttachToValidSurface();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_IFG_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight__UeScsNode = "859d117c169f9b4796c6341ccb368540";
+        static constexpr const char* ParticleSystem__UeScsNode = "287d3047aacb7a40927230df3bfa4229";
+        static constexpr const char* Stick__Replicated = "OnRep_Stick:";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG

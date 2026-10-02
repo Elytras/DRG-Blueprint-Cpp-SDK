@@ -24,19 +24,12 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/DrillDozer/BP_CaterpillarTrack", "BP_CaterpillarTrack_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "905032bcb1a287489ecd29d35165f2d8";
     class UInstancedMeshOnSpline* InstancedMeshOnSpline1;
-    static constexpr const char* InstancedMeshOnSpline1__UeScsNode = "e3bef9a3e8b9064b9907e629a08a76c9";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "a5eedb9580686b49a26a9c6896d19c4a";
     class USplineComponent* SourceSpline;
-    static constexpr const char* SourceSpline__UeScsNode = "da8da2543699194f993de5c676b24396";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "a96dd00c5cabdb4da69d7bb2ba927701";
     class USplineComponent* TargetSpline;
-    static constexpr const char* TargetSpline__UeScsNode = "d4990ec33baa0640a14a4985038c9164";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3066d827395df64985f7aa05c8bc3631";
     FVector LastTrace;
     FVector CurrTrace;
     float DeltaTime;
@@ -48,7 +41,18 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void Line_Trace(FVector Start, FVector End, FVector& Hit, bool& DidHit);
-    static constexpr const char* Line_Trace__UeName = "Line Trace";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "905032bcb1a287489ecd29d35165f2d8";
+        static constexpr const char* InstancedMeshOnSpline1__UeScsNode = "e3bef9a3e8b9064b9907e629a08a76c9";
+        static constexpr const char* outline__UeScsNode = "a5eedb9580686b49a26a9c6896d19c4a";
+        static constexpr const char* SourceSpline__UeScsNode = "da8da2543699194f993de5c676b24396";
+        static constexpr const char* SkeletalMesh__UeScsNode = "a96dd00c5cabdb4da69d7bb2ba927701";
+        static constexpr const char* TargetSpline__UeScsNode = "d4990ec33baa0640a14a4985038c9164";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3066d827395df64985f7aa05c8bc3631";
+        static constexpr const char* Line_Trace__UeName = "Line Trace";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::DrillDozer

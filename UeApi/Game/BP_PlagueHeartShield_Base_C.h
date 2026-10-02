@@ -24,30 +24,19 @@ public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueHeartShield_Base", "BP_PlagueHeartShield_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "749d9a1ae9facc4f8e7eecd276b2013f";
     class UStaticMeshComponent* OuterPoint_5;
-    static constexpr const char* OuterPoint_5__UeScsNode = "63b861f5065e9e44ac29a06b1db1dfcb";
     class UStaticMeshComponent* OuterPoint_4;
-    static constexpr const char* OuterPoint_4__UeScsNode = "17aa616f1a230945b63e0c23705a8fab";
     class UStaticMeshComponent* OuterPoint_3;
-    static constexpr const char* OuterPoint_3__UeScsNode = "003f58af063d104781a99603844bbdb5";
     class UStaticMeshComponent* OuterPoint_2;
-    static constexpr const char* OuterPoint_2__UeScsNode = "f927f1977fb7d441a6fbacd5426ccf8d";
     class UStaticMeshComponent* OuterPoint_1;
-    static constexpr const char* OuterPoint_1__UeScsNode = "41081e19568c444db6727da648bdaebe";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "a2dd297fc0b4574396946d95eaf9e16f";
     class UInfectionPointCleaningComponent* InfectionPointCleaning;
-    static constexpr const char* InfectionPointCleaning__UeScsNode = "bccab2ba336e4f4d8a08a4c4677139f1";
     class UStaticMeshComponent* Shell;
-    static constexpr const char* Shell__UeScsNode = "9f59540fd368df46bfd2bcb0ce832cea";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "5191e7d549b41641bba18c04feb742ff";
     float GrowInnerBoils_BoilScale_CC6321444C8D21F72E6A978121093A32;
     TEnum<ETimelineDirection> GrowInnerBoils__Direction_CC6321444C8D21F72E6A978121093A32;
     class UTimelineComponent* GrowInnerBoils;
     int Stage;
-    static constexpr const char* Stage__Replicated = "OnRep_Stage:";
     TMulticastInlineDelegate<void(BP_PlagueHeartShield_Base_C* Shield)> Cleaned;
     int ShieldID;
     TMulticastInlineDelegate<void()> OnPointFoamed;
@@ -58,12 +47,10 @@ public:
     float InnerMeshStartScale;
     TMulticastInlineDelegate<void()> OnLaserPointed;
     bool IsDead;
-    static constexpr const char* IsDead__Replicated = "OnRep_IsDead:";
     TMulticastInlineDelegate<void(BP_PlagueHeartShield_Base_C* Shield)> OnShieldDeath;
     void ExecuteUbergraph_BP_PlagueHeartShield_Base(int EntryPoint);
     void OnDeath();
     void Cheat_Kill();
-    static constexpr const char* Cheat_Kill__UeName = "Cheat Kill";
     void InitPointCleaning();
     void GrowInnerBoilds();
     void BndEvt__BP_PlagueHeartShield_InfectionPointCleaning_K2Node_ComponentBoundEvent_4_Delegate__DelegateSignature();
@@ -76,6 +63,23 @@ public:
     void DestroyAttachedMeshes();
     void OnRep_IsDead();
     class UInfectionPointCleaningComponent* GetCleaningPoints(FVector fromLocation);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Arrow__UeScsNode = "749d9a1ae9facc4f8e7eecd276b2013f";
+        static constexpr const char* OuterPoint_5__UeScsNode = "63b861f5065e9e44ac29a06b1db1dfcb";
+        static constexpr const char* OuterPoint_4__UeScsNode = "17aa616f1a230945b63e0c23705a8fab";
+        static constexpr const char* OuterPoint_3__UeScsNode = "003f58af063d104781a99603844bbdb5";
+        static constexpr const char* OuterPoint_2__UeScsNode = "f927f1977fb7d441a6fbacd5426ccf8d";
+        static constexpr const char* OuterPoint_1__UeScsNode = "41081e19568c444db6727da648bdaebe";
+        static constexpr const char* Damage__UeScsNode = "a2dd297fc0b4574396946d95eaf9e16f";
+        static constexpr const char* InfectionPointCleaning__UeScsNode = "bccab2ba336e4f4d8a08a4c4677139f1";
+        static constexpr const char* Shell__UeScsNode = "9f59540fd368df46bfd2bcb0ce832cea";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "5191e7d549b41641bba18c04feb742ff";
+        static constexpr const char* Stage__Replicated = "OnRep_Stage:";
+        static constexpr const char* IsDead__Replicated = "OnRep_IsDead:";
+        static constexpr const char* Cheat_Kill__UeName = "Cheat Kill";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

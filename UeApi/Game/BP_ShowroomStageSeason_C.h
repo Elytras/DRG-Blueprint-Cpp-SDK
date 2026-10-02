@@ -18,19 +18,23 @@ class BP_ShowroomStageSeason_C : public AShowroomStage
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/BP_ShowroomStageSeason", "BP_ShowroomStageSeason_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D SceneCapture;/Script/Engine.SceneComponent CameraFocusPoint;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "e7b69e074fee4c44b838cb8f741fbfa3";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "fb04e8a6eb2eeb4c9941a9c5992fa4cf";
     class USpotLightComponent* SpotLight2;
-    static constexpr const char* SpotLight2__UeScsNode = "adf5aa4374108a40b4c1e365d7437c19";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "c59479c5c0b4cf40be1a1f6641aaa8ce";
     void ExecuteUbergraph_BP_ShowroomStageSeason(int EntryPoint);
     void ReceiveBeginPlay();
     class UTextureRenderTarget2D* CreateRenderTarget();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D SceneCapture;/Script/Engine.SceneComponent CameraFocusPoint;/Script/Engine.SceneComponent Root";
+        static constexpr const char* SpotLight__UeScsNode = "e7b69e074fee4c44b838cb8f741fbfa3";
+        static constexpr const char* SpotLight1__UeScsNode = "fb04e8a6eb2eeb4c9941a9c5992fa4cf";
+        static constexpr const char* SpotLight2__UeScsNode = "adf5aa4374108a40b4c1e365d7437c19";
+        static constexpr const char* StaticMesh__UeScsNode = "c59479c5c0b4cf40be1a1f6641aaa8ce";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

@@ -24,22 +24,15 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Anniversary/Blueprint/BP_Anniversary_CocktailGlass", "BP_Anniversary_CocktailGlass_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* TallGlassParticlePos;
-    static constexpr const char* TallGlassParticlePos__UeScsNode = "41e99a9c5e8c644e930802c93fb660cc";
     class USceneComponent* ShortGlassParticlePos;
-    static constexpr const char* ShortGlassParticlePos__UeScsNode = "f06b3956c3d8a448ac63de14dcb523ca";
     class UNiagaraComponent* NS_Anniversary_Bubbles;
-    static constexpr const char* NS_Anniversary_Bubbles__UeScsNode = "18ed8bf5902bd54bad0f281f428ea307";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "7f72404287aab5468ab66d9f555b27f0";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "861638b1290dee46ba72fda1412ad5d7";
     class UStaticMesh* UsedMesh;
-    static constexpr const char* UsedMesh__Replicated = "OnRep_UsedMesh:";
     TArray<class UStaticMesh*> CocktailMeshes;
     bool IsShortGlass;
     float ForceRequiredToBreak;
     bool IsBroken;
-    static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
     void ExecuteUbergraph_BP_Anniversary_CocktailGlass(int EntryPoint);
     void BndEvt__BP_Anniversary_CocktailGlass_Sphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__BP_Anniversary_CocktailGlass_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
@@ -47,6 +40,17 @@ public:
     void UserConstructionScript();
     void OnRep_UsedMesh();
     void OnRep_IsBroken();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TallGlassParticlePos__UeScsNode = "41e99a9c5e8c644e930802c93fb660cc";
+        static constexpr const char* ShortGlassParticlePos__UeScsNode = "f06b3956c3d8a448ac63de14dcb523ca";
+        static constexpr const char* NS_Anniversary_Bubbles__UeScsNode = "18ed8bf5902bd54bad0f281f428ea307";
+        static constexpr const char* Sphere__UeScsNode = "7f72404287aab5468ab66d9f555b27f0";
+        static constexpr const char* StaticMesh__UeScsNode = "861638b1290dee46ba72fda1412ad5d7";
+        static constexpr const char* UsedMesh__Replicated = "OnRep_UsedMesh:";
+        static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint

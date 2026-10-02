@@ -31,9 +31,7 @@ public:
     FText ButtonText;
     TMulticastInlineDelegate<void(Header_ButtonCutCorner_C* Button)> OnClicked;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     float Width__minimum_;
-    static constexpr const char* Width__minimum___UeName = "Width (minimum)";
     float Height;
     TMulticastInlineDelegate<void()> OnPressed;
     TMulticastInlineDelegate<void()> OnReleased;
@@ -46,7 +44,6 @@ public:
     void ToggleNotificationIcon(bool InShow);
     void Click();
     void Update_Look();
-    static constexpr const char* Update_Look__UeName = "Update Look";
     void Toggle(bool IsToggleOn);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_6_OnButtonReleasedEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
@@ -57,6 +54,13 @@ public:
     void SetFontSize(int FontSize);
     void SetButtonText(FText Text);
     void IsPressed(bool& IsPressed_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Width__minimum___UeName = "Width (minimum)";
+        static constexpr const char* Update_Look__UeName = "Update Look";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

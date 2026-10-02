@@ -21,21 +21,25 @@ class BP_InflatablePretzel_C : public Game::Art::Environments::SpaceRig::BP_Kick
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Oktoberfest/BP_InflatablePretzel", "BP_InflatablePretzel_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_InflatablePretzel_C;
-    static constexpr const char* UberGraphFrame_BP_InflatablePretzel_C__UeName = "UberGraphFrame";
     class UNiagaraComponent* PopParticles;
-    static constexpr const char* PopParticles__UeScsNode = "16c850e181bfee4fb366e6af7357fc71";
     class UStaticMeshComponent* UsableCollision;
-    static constexpr const char* UsableCollision__UeScsNode = "c565400d62d31d4d900eb7ff7c683089";
     FVector OriginalScale;
     bool IsBroken;
-    static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
     int NumberOfImpacts;
     int RequiredImpactsToPop;
     void ExecuteUbergraph_BP_InflatablePretzel(int EntryPoint);
     void BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    static constexpr const char* BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_InflatableSausage_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
     void ReceiveBeginPlay();
     void OnRep_IsBroken();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_InflatablePretzel_C__UeName = "UberGraphFrame";
+        static constexpr const char* PopParticles__UeScsNode = "16c850e181bfee4fb366e6af7357fc71";
+        static constexpr const char* UsableCollision__UeScsNode = "c565400d62d31d4d900eb7ff7c683089";
+        static constexpr const char* IsBroken__Replicated = "OnRep_IsBroken:";
+        static constexpr const char* BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_InflatableSausage_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest

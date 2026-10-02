@@ -23,16 +23,12 @@ public:
     using UI_CoreInfuser_Rewards_Selector_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Selector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_Rewards;
-    static constexpr const char* Widget_Rewards__UeScsNode = "0918bdef751abc45aded3d16bb5d0a5c";
     class UWidgetComponent* Widget_Bg;
-    static constexpr const char* Widget_Bg__UeScsNode = "a7d5dda6eb9411489fcf7bba89f7f3ae";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f5c9d7e854f20045976560ee1f35a888";
     bool IsVisible;
     TMulticastInlineDelegate<void(class USchematic* SchematicReward)> OnRewardSelected;
     void ExecuteUbergraph_BP_CoreInfuser_Rewards_Selector(int EntryPoint);
     void Set_Selectable_Rewards(TArray<class USchematic*>& InRewards);
-    static constexpr const char* Set_Selectable_Rewards__UeName = "Set Selectable Rewards";
     void SetDispenser(class AEventRewardDispenser* InDispenser);
     void SetSelectedReward(class USchematic* InReward);
     void OnRewardSelectedEvent(class USchematic* Reward);
@@ -40,6 +36,14 @@ public:
     void ReceiveBeginPlay();
     void GetRewardsWidget(UI_CoreInfuser_Rewards_Selector_C*& Widget);
     void GetBackgroundsWidget(UI_CoreInfuser_Rewards_Background_C*& Widget);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget_Rewards__UeScsNode = "0918bdef751abc45aded3d16bb5d0a5c";
+        static constexpr const char* Widget_Bg__UeScsNode = "a7d5dda6eb9411489fcf7bba89f7f3ae";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f5c9d7e854f20045976560ee1f35a888";
+        static constexpr const char* Set_Selectable_Rewards__UeName = "Set Selectable Rewards";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreInfuser

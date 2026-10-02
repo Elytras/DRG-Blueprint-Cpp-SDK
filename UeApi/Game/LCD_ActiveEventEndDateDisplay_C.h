@@ -23,7 +23,7 @@ class LCD_ActiveEventEndDateDisplay_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Events/LCD_ActiveEventEndDateDisplay", "LCD_ActiveEventEndDateDisplay_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Fade_Out;
+    UE_READONLY class UWidgetAnimation* Fade_Out;
     class UTextBlock* countdownText;
     class UVerticalBox* EventEndBox;
     class UImage* EventImageLeft;
@@ -32,10 +32,8 @@ public:
     class UImage* Image_41;
     FDateTime EndDate;
     FTimerHandle Refresh_Handle;
-    static constexpr const char* Refresh_Handle__UeName = "Refresh Handle";
     FSlateBrush CurrentDisplayedEventImage;
     int Active_Displayed_Event_index;
-    static constexpr const char* Active_Displayed_Event_index__UeName = "Active Displayed Event index";
     TArray<class UFSDEvent*> ActiveEvents;
     FTimerHandle CheckForEventHandle;
     int CheckForEventCount;
@@ -46,6 +44,12 @@ public:
     void GetEventToDisplay(class UFSDEvent*& EventToDisplay);
     void ChangeEvent();
     void SequenceEvent__ENTRYPOINTLCD_ActiveEventEndDateDisplay_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Refresh_Handle__UeName = "Refresh Handle";
+        static constexpr const char* Active_Displayed_Event_index__UeName = "Active Displayed Event index";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Events

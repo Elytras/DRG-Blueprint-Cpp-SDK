@@ -104,7 +104,11 @@ class UInteractiveFoliageComponent : public UStaticMeshComponent
 {
 public:
     UE_CLASS("/Script/Foliage", "InteractiveFoliageComponent");
-    static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00004 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class UFoliageInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent
@@ -114,6 +118,12 @@ public:
     TMulticastInlineDelegate<void(int InstanceIndex, float Damage, class AController* InstigatedBy, FVector HitLocation, FVector ShotFromDirection, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakePointDamage;
     TMulticastInlineDelegate<void(TArray<int> Instances, TArray<float> Damages, class AController* InstigatedBy, FVector Origin, float MaxRadius, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakeRadialDamage;
     FGuid GenerationGuid;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnInstanceTakePointDamage__UeDispatcher = "Assignable";
+        static constexpr const char* OnInstanceTakeRadialDamage__UeDispatcher = "Assignable";
+    };
 };
 
 class UFoliageStatistics : public UBlueprintFunctionLibrary
@@ -159,29 +169,29 @@ public:
     FVector CollisionScale;
     FBoxSphereBounds MeshBounds;
     FVector LowBoundOriginRadius;
-    TEnum<EComponentMobility> Mobility;
+    UE_READONLY TEnum<EComponentMobility> Mobility;
     FInt32Interval CullDistance;
     bool bEnableStaticLighting;
-    bool CastShadow;
-    bool bAffectDynamicIndirectLighting;
-    bool bAffectDistanceFieldLighting;
-    bool bCastDynamicShadow;
-    bool bCastStaticShadow;
-    bool bCastShadowAsTwoSided;
-    bool bReceivesDecals;
-    bool bOverrideLightMapRes;
-    int OverriddenLightMapRes;
-    TEnum<ELightmapType> LightmapType;
-    bool bUseAsOccluder;
-    bool bVisibleInRayTracing;
-    bool bEvaluateWorldPositionOffset;
+    UE_READONLY bool CastShadow;
+    UE_READONLY bool bAffectDynamicIndirectLighting;
+    UE_READONLY bool bAffectDistanceFieldLighting;
+    UE_READONLY bool bCastDynamicShadow;
+    UE_READONLY bool bCastStaticShadow;
+    UE_READONLY bool bCastShadowAsTwoSided;
+    UE_READONLY bool bReceivesDecals;
+    UE_READONLY bool bOverrideLightMapRes;
+    UE_READONLY int OverriddenLightMapRes;
+    UE_READONLY TEnum<ELightmapType> LightmapType;
+    UE_READONLY bool bUseAsOccluder;
+    UE_READONLY bool bVisibleInRayTracing;
+    UE_READONLY bool bEvaluateWorldPositionOffset;
     FBodyInstance BodyInstance;
     TEnum<EHasCustomNavigableGeometry> CustomNavigableGeometry;
-    FLightingChannels LightingChannels;
-    bool bRenderCustomDepth;
-    TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
-    int CustomDepthStencilValue;
-    int TranslucencySortPriority;
+    UE_READONLY FLightingChannels LightingChannels;
+    UE_READONLY bool bRenderCustomDepth;
+    UE_READONLY TEnum<ERendererStencilMask> CustomDepthStencilWriteMask;
+    UE_READONLY int CustomDepthStencilValue;
+    UE_READONLY int TranslucencySortPriority;
     float CollisionRadius;
     float ShadeRadius;
     int NumSteps;
@@ -217,8 +227,8 @@ public:
     bool bEnableDensityScaling;
     bool bEnableDiscardOnLoad;
     TArray<class URuntimeVirtualTexture*> RuntimeVirtualTextures;
-    int VirtualTextureCullMips;
-    TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
+    UE_READONLY int VirtualTextureCullMips;
+    UE_READONLY TEnum<ERuntimeVirtualTextureMainPassType> VirtualTextureRenderPassType;
 };
 
 class UFoliageType_Actor : public UFoliageType
@@ -242,7 +252,11 @@ class AInstancedFoliageActor : public AActor
 {
 public:
     UE_CLASS("/Script/Foliage", "InstancedFoliageActor");
-    static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "RootComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class AInteractiveFoliageActor : public AStaticMeshActor
@@ -263,9 +277,13 @@ public:
     float MaxTouchImpulse;
     float MaxForce;
     float Mass;
-    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
-    static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Foliage.InteractiveFoliageComponent";
     void CapsuleTouched(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& OverlapInfo);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+        static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Foliage.InteractiveFoliageComponent";
+    };
 };
 
 class AProceduralFoliageBlockingVolume : public AVolume
@@ -273,8 +291,12 @@ class AProceduralFoliageBlockingVolume : public AVolume
 public:
     UE_CLASS("/Script/Foliage", "ProceduralFoliageBlockingVolume");
     class AProceduralFoliageVolume* ProceduralFoliageVolume;
-    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };
 
 class UProceduralFoliageComponent : public UActorComponent
@@ -291,10 +313,10 @@ class UProceduralFoliageSpawner : public UObject
 {
 public:
     UE_CLASS("/Script/Foliage", "ProceduralFoliageSpawner");
-    int RandomSeed;
-    float TileSize;
-    int NumUniqueTiles;
-    float MinimumQuadTreeSize;
+    UE_READONLY int RandomSeed;
+    UE_READONLY float TileSize;
+    UE_READONLY int NumUniqueTiles;
+    UE_READONLY float MinimumQuadTreeSize;
     TArray<FFoliageTypeObject> FoliageTypes;
     void Simulate(int NumSteps);
 };
@@ -311,8 +333,12 @@ class AProceduralFoliageVolume : public AVolume
 {
 public:
     UE_CLASS("/Script/Foliage", "ProceduralFoliageVolume");
-    class UProceduralFoliageComponent* ProceduralComponent;
-    static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    static constexpr const char* ProceduralComponent__UeSubobject = "ProceduralFoliageComponent /Script/Foliage.ProceduralFoliageComponent";
-    static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    UE_READONLY class UProceduralFoliageComponent* ProceduralComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* ProceduralComponent__UeSubobject = "ProceduralFoliageComponent /Script/Foliage.ProceduralFoliageComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };

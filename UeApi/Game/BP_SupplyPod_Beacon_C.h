@@ -26,29 +26,17 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_SupplyPod_Beacon", "BP_SupplyPod_Beacon_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Hologram3;
-    static constexpr const char* Mesh_Hologram3__UeScsNode = "c5ab69da2c6a444caefa122c005233ac";
     class UStaticMeshComponent* Mesh_Hologram2;
-    static constexpr const char* Mesh_Hologram2__UeScsNode = "28d366d2bd254d49b3869a72435ac6b0";
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "7690d55315042f4cacbf0c768b088516";
     class UStaticMeshComponent* Mesh_Hologram1;
-    static constexpr const char* Mesh_Hologram1__UeScsNode = "70e2bf556e55fb4692795ee525688ae0";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "c1a4d5d2bf45874eae7102691ee6c4f5";
     class URotatingSceneComponent* RotatingScene;
-    static constexpr const char* RotatingScene__UeScsNode = "2fc161ca76443c4b9d19be19c4ed42e8";
     class ULightStrobingComponent* LightStrobing;
-    static constexpr const char* LightStrobing__UeScsNode = "ce8dd481854eca488a25c0e2de3bd279";
     class USphereComponent* FindCollision;
-    static constexpr const char* FindCollision__UeScsNode = "a74da9c45018fa4b81d4d92f99580e11";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "ce7578b76bdb8b47a2326f7c4b141f01";
     class USkeletalMeshComponent* Mesh_Beacon;
-    static constexpr const char* Mesh_Beacon__UeScsNode = "3e2bedd581e7d4458d456b5c2d149d67";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "fa94e77912f3a44b8ecd6febee0daa6f";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "3483f4406194db48b75a5c1716f008c1";
     float LightIntensity;
     FLinearColor LightColor;
     void ExecuteUbergraph_BP_SupplyPod_Beacon(int EntryPoint);
@@ -56,6 +44,22 @@ public:
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void SetBlinkIntensity(float BlinkIntensity);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh_Hologram3__UeScsNode = "c5ab69da2c6a444caefa122c005233ac";
+        static constexpr const char* Mesh_Hologram2__UeScsNode = "28d366d2bd254d49b3869a72435ac6b0";
+        static constexpr const char* Widget1__UeScsNode = "7690d55315042f4cacbf0c768b088516";
+        static constexpr const char* Mesh_Hologram1__UeScsNode = "70e2bf556e55fb4692795ee525688ae0";
+        static constexpr const char* Widget__UeScsNode = "c1a4d5d2bf45874eae7102691ee6c4f5";
+        static constexpr const char* RotatingScene__UeScsNode = "2fc161ca76443c4b9d19be19c4ed42e8";
+        static constexpr const char* LightStrobing__UeScsNode = "ce8dd481854eca488a25c0e2de3bd279";
+        static constexpr const char* FindCollision__UeScsNode = "a74da9c45018fa4b81d4d92f99580e11";
+        static constexpr const char* PointLight__UeScsNode = "ce7578b76bdb8b47a2326f7c4b141f01";
+        static constexpr const char* Mesh_Beacon__UeScsNode = "3e2bedd581e7d4458d456b5c2d149d67";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "fa94e77912f3a44b8ecd6febee0daa6f";
+        static constexpr const char* Scene__UeScsNode = "3483f4406194db48b75a5c1716f008c1";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod

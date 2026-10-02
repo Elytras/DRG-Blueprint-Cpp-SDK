@@ -21,7 +21,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UTextBlock* CategoryHeader;
-    FText Category;
+    UE_READONLY FText Category;
     void ExecuteUbergraph_UI_Forge_SchematicList_Separator(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

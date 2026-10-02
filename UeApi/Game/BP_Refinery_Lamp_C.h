@@ -21,17 +21,21 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Lamp", "BP_Refinery_Lamp_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "a9c84e35f0d1b346983a3c0220b61212";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "192682de3c45344e914066b33b22609b";
     class UStaticMeshComponent* Lamp_Mesh;
-    static constexpr const char* Lamp_Mesh__UeName = "Lamp Mesh";
-    static constexpr const char* Lamp_Mesh__UeScsNode = "a936bf6c98a91642b2e02d7900840352";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
     void ExecuteUbergraph_BP_Refinery_Lamp(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "a9c84e35f0d1b346983a3c0220b61212";
+        static constexpr const char* Box__UeScsNode = "192682de3c45344e914066b33b22609b";
+        static constexpr const char* Lamp_Mesh__UeName = "Lamp Mesh";
+        static constexpr const char* Lamp_Mesh__UeScsNode = "a936bf6c98a91642b2e02d7900840352";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

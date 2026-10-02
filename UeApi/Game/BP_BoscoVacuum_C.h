@@ -17,14 +17,18 @@ class BP_BoscoVacuum_C : public ADroneVacuumStream
 {
 public:
     UE_CLASS("/Game/GameElements/Drone/BP_BoscoVacuum", "BP_BoscoVacuum_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Collision;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent VacuumSource";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "d9886b8600d1b14abc76ec2b785abe4a";
     class UAudioComponent* VacuumSound;
     void ExecuteUbergraph_BP_BoscoVacuum(int EntryPoint);
     void Receive_OnAbilityDataSet();
     void ReceiveDestroyed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Collision;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent VacuumSource";
+        static constexpr const char* ParticleSystem__UeScsNode = "d9886b8600d1b14abc76ec2b785abe4a";
+    };
 };
 
 }}}   // namespace Game::GameElements::Drone

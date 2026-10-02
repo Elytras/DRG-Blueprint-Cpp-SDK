@@ -18,7 +18,7 @@ class UI_MicroMissileLauncher_Charge_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/UI/UI_MicroMissileLauncher_Charge", "UI_MicroMissileLauncher_Charge_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimCharged;
+    UE_READONLY class UWidgetAnimation* AnimCharged;
     class UImage* Background;
     class UImage* Charged;
     bool On;

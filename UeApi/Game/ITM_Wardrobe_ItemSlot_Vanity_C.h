@@ -24,11 +24,10 @@ public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_Vanity", "ITM_Wardrobe_ItemSlot_Vanity_C");
     using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame_ITM_Wardrobe_ItemSlot_Vanity_C;
-    static constexpr const char* UberGraphFrame_ITM_Wardrobe_ItemSlot_Vanity_C__UeName = "UberGraphFrame";
     TEnum<EVanitySlot> VanitySlot;
     TArray<class UVanityItem*> VanityItems;
     class UTexture2D* DefaultItemIcon;
-    FText DefaultItemName;
+    UE_READONLY FText DefaultItemName;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_Vanity(int EntryPoint);
     void PostInitilization();
     void ReceivePreConstruct();
@@ -44,6 +43,11 @@ public:
     void GetVanityDLC(class UVanityItem* InItem, class UDLCBase*& Required_DLC);
     UE_PURE class UVanityItem* GetDefaultItem();
     void ReceiveShowShuffleOptions(bool& OutShowOptions);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_ITM_Wardrobe_ItemSlot_Vanity_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

@@ -26,23 +26,27 @@ public:
     using BP_TipJarUsable_C = Game::Art::Environments::SpaceRig::TipMachine::BP_TipJarUsable_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_TipJarUsable_C* BP_TipJarUsable;
-    static constexpr const char* BP_TipJarUsable__UeScsNode = "63d602340877ab4082100162265de854";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "9de066d81ce7f94eb3a7f4f8e64a742d";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "720affaf134b424ab4f610530766b77b";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "25469c9d57b07349ac627f9f97ea219d";
     class USkeletalMeshComponent* SK_TipMachine;
-    static constexpr const char* SK_TipMachine__UeScsNode = "40636fae6c39f54080cff88f5251469b";
     class USceneComponent* DefaultSceneRoot1;
-    static constexpr const char* DefaultSceneRoot1__UeScsNode = "97d37ec95018e64da1d66227b85ba3f4";
     class ASpaceRigBar* BarReference;
     int TipAmount;
     void ExecuteUbergraph_BP_TipJar_Base_Blueprint(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__BP_TipJarUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_MULTICAST UE_RELIABLE void All_PlayTip(class APlayerCharacter* User, int AnimIndex);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BP_TipJarUsable__UeScsNode = "63d602340877ab4082100162265de854";
+        static constexpr const char* ParticleSystem__UeScsNode = "9de066d81ce7f94eb3a7f4f8e64a742d";
+        static constexpr const char* Widget__UeScsNode = "720affaf134b424ab4f610530766b77b";
+        static constexpr const char* Box__UeScsNode = "25469c9d57b07349ac627f9f97ea219d";
+        static constexpr const char* SK_TipMachine__UeScsNode = "40636fae6c39f54080cff88f5251469b";
+        static constexpr const char* DefaultSceneRoot1__UeScsNode = "97d37ec95018e64da1d66227b85ba3f4";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TipMachine

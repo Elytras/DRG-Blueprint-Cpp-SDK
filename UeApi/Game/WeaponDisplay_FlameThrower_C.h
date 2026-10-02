@@ -19,12 +19,16 @@ class WeaponDisplay_FlameThrower_C : public Game::UI::WeaponDisplays::WeaponDisp
 public:
     UE_CLASS("/Game/UI/WeaponDisplays/WeaponDisplay_FlameThrower", "WeaponDisplay_FlameThrower_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_FlameThrower_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_FlameThrower_C__UeName = "UberGraphFrame";
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
     class UImage* Image_88;
     void ExecuteUbergraph_WeaponDisplay_FlameThrower(int EntryPoint);
     void SetTotalCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_FlameThrower_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::WeaponDisplays

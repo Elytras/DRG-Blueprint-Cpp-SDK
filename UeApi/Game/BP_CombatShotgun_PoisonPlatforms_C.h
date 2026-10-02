@@ -20,16 +20,20 @@ public:
     UE_CLASS("/Game/WeaponsNTools/CombatShotgun/BP_CombatShotgun_PoisonPlatforms", "BP_CombatShotgun_PoisonPlatforms_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "02aff94b04b633469f24b49f220c0ee8";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "3e14e554f8ae7d4aa6ee75206f1b91b9";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "eb6295cc4ec0b842898ae24e28a4e7c2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c63c246896b5494989c475254fb46299";
     float LifeTime;
     void ExecuteUbergraph_BP_CombatShotgun_PoisonPlatforms(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Niagara__UeScsNode = "02aff94b04b633469f24b49f220c0ee8";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "3e14e554f8ae7d4aa6ee75206f1b91b9";
+        static constexpr const char* Sphere__UeScsNode = "eb6295cc4ec0b842898ae24e28a4e7c2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c63c246896b5494989c475254fb46299";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun

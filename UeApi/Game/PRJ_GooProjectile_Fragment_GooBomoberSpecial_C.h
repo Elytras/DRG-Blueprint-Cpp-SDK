@@ -18,14 +18,18 @@ class PRJ_GooProjectile_Fragment_GooBomoberSpecial_C : public Game::WeaponsNTool
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_GooProjectile_Fragment_GooBomoberSpecial", "PRJ_GooProjectile_Fragment_GooBomoberSpecial_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_GooProjectile_Fragment_GooBomoberSpecial_C;
-    static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_GooBomoberSpecial_C__UeName = "UberGraphFrame";
     class USphereComponent* ApplyGooTrigger;
-    static constexpr const char* ApplyGooTrigger__UeScsNode = "4cea4f54daad964cb9be0b59c2dcefcc";
     void ExecuteUbergraph_PRJ_GooProjectile_Fragment_GooBomoberSpecial(int EntryPoint);
     void BndEvt__ApplyGooTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnInitialized();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_GooBomoberSpecial_C__UeName = "UberGraphFrame";
+        static constexpr const char* ApplyGooTrigger__UeScsNode = "4cea4f54daad964cb9be0b59c2dcefcc";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

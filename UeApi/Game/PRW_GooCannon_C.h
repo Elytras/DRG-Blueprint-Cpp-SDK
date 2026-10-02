@@ -17,9 +17,13 @@ class PRW_GooCannon_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRW_GooCannon", "PRW_GooCannon_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "37489342a73af240bb9ffba3ff2fd821";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0f0920dc325b994695afedbb91cda87e";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "37489342a73af240bb9ffba3ff2fd821";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0f0920dc325b994695afedbb91cda87e";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

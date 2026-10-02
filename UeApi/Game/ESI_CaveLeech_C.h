@@ -18,11 +18,15 @@ class ESI_CaveLeech_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/CaveLeech/ESI_CaveLeech", "ESI_CaveLeech_C");
     class UStaticMeshComponent* SM_Stone_007;
-    static constexpr const char* SM_Stone_007__UeScsNode = "f63556496a8dce49819739a3aa65f4c6";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "17e88db6cfa98849880c8e01ae21aeeb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "46328cb9f513cc44b10f042c5e63ecf7";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Stone_007__UeScsNode = "f63556496a8dce49819739a3aa65f4c6";
+        static constexpr const char* SkeletalMesh__UeScsNode = "17e88db6cfa98849880c8e01ae21aeeb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "46328cb9f513cc44b10f042c5e63ecf7";
+    };
 };
 
 }}}   // namespace Game::Enemies::CaveLeech

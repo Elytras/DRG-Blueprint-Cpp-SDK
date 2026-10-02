@@ -13,6 +13,11 @@ class STE_Plague_SlimeTrail_Contact_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/SlimeTrail/STE_Plague_SlimeTrail_Contact", "STE_Plague_SlimeTrail_Contact_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail

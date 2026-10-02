@@ -16,12 +16,16 @@ class BP_Bramble_Cable_C : public ASplineCableActor
 {
 public:
     UE_CLASS("/Game/Enemies/TentaclePlant/BP_Bramble_Cable", "BP_Bramble_Cable_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SplineComponent PathSplineComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "b49d536473addc46a49fdb546b538059";
     void ExecuteUbergraph_BP_Bramble_Cable(int EntryPoint);
     void OnUpdateMaterials();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SplineComponent PathSplineComponent";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "b49d536473addc46a49fdb546b538059";
+    };
 };
 
 }}}   // namespace Game::Enemies::TentaclePlant

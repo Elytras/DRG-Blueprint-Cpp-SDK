@@ -29,43 +29,24 @@ public:
     UE_CLASS("/Game/LevelElements/Spacerig/Spacerig_Fun/SpaceBall/BP_Spacerig_Spaceball", "BP_Spacerig_Spaceball_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* Spaceballimpact;
-    static constexpr const char* Spaceballimpact__UeScsNode = "6a3e307285d3fa41a778b591b64fd2ab";
     class USingleUsableComponent* SingleUsable;
-    static constexpr const char* SingleUsable__UeScsNode = "a97f4d88e16ed047b405e3d43aa39489";
     class USpotLightComponent* SpotLight12;
-    static constexpr const char* SpotLight12__UeScsNode = "2175358335749144b8abc642b3edf86b";
     class USpotLightComponent* SpotLight11;
-    static constexpr const char* SpotLight11__UeScsNode = "e1a2ec276ab1854e9e220df29e34c360";
     class USpotLightComponent* SpotLight10;
-    static constexpr const char* SpotLight10__UeScsNode = "a2e619fc9e5db64694298f5e94c4ccf1";
     class USpotLightComponent* SpotLight9;
-    static constexpr const char* SpotLight9__UeScsNode = "2bb276a7510abc49b31d8d61075e5a2c";
     class USpotLightComponent* SpotLight8;
-    static constexpr const char* SpotLight8__UeScsNode = "df4335d1e28b3848b3b89a8a98a76b19";
     class USpotLightComponent* SpotLight7;
-    static constexpr const char* SpotLight7__UeScsNode = "244414484cd6c64a909890bfa57a75cf";
     class USpotLightComponent* SpotLight6;
-    static constexpr const char* SpotLight6__UeScsNode = "2e95e2d6f1e9c144b52046b4ae99da4c";
     class USpotLightComponent* SpotLight5;
-    static constexpr const char* SpotLight5__UeScsNode = "018ddae1e186d24d92cd0a5c2c820966";
     class USpotLightComponent* SpotLight4;
-    static constexpr const char* SpotLight4__UeScsNode = "75d921e5de39bb438f2123ce2f4cab78";
     class USpotLightComponent* SpotLight3;
-    static constexpr const char* SpotLight3__UeScsNode = "ffc031a6115817409b642870250bdce6";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "2bedc085afb1b04ca93c7a4f612fa2e6";
     class USpotLightComponent* SpotLight2;
-    static constexpr const char* SpotLight2__UeScsNode = "aec72a39869f774eab7a862302ad20f7";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "8a6f2682bd00e44785d11c38fa69269f";
     class UStaticMeshComponent* SM_spaceball_01;
-    static constexpr const char* SM_spaceball_01__UeScsNode = "0652c14cc632c44a8e431bf186780155";
     class USphereComponent* Collision;
-    static constexpr const char* Collision__UeScsNode = "5e8eda3740911a4083cf04d984ca65f0";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "98d094386647cd449a30f44a991c0d99";
     class APlayerCharacter* KickedBy;
-    static constexpr const char* KickedBy__Replicated = ":";
     FVector ImpactNormal;
     FVector ImpactPoint;
     FVector TraceDirection;
@@ -89,6 +70,29 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     UE_MULTICAST void PlayKickAnim(class APlayerCharacter* Kicker);
     void UsedByClient(TEnum<EInputKeys> Key, class APlayerCharacter* KickedBy_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Spaceballimpact__UeScsNode = "6a3e307285d3fa41a778b591b64fd2ab";
+        static constexpr const char* SingleUsable__UeScsNode = "a97f4d88e16ed047b405e3d43aa39489";
+        static constexpr const char* SpotLight12__UeScsNode = "2175358335749144b8abc642b3edf86b";
+        static constexpr const char* SpotLight11__UeScsNode = "e1a2ec276ab1854e9e220df29e34c360";
+        static constexpr const char* SpotLight10__UeScsNode = "a2e619fc9e5db64694298f5e94c4ccf1";
+        static constexpr const char* SpotLight9__UeScsNode = "2bb276a7510abc49b31d8d61075e5a2c";
+        static constexpr const char* SpotLight8__UeScsNode = "df4335d1e28b3848b3b89a8a98a76b19";
+        static constexpr const char* SpotLight7__UeScsNode = "244414484cd6c64a909890bfa57a75cf";
+        static constexpr const char* SpotLight6__UeScsNode = "2e95e2d6f1e9c144b52046b4ae99da4c";
+        static constexpr const char* SpotLight5__UeScsNode = "018ddae1e186d24d92cd0a5c2c820966";
+        static constexpr const char* SpotLight4__UeScsNode = "75d921e5de39bb438f2123ce2f4cab78";
+        static constexpr const char* SpotLight3__UeScsNode = "ffc031a6115817409b642870250bdce6";
+        static constexpr const char* SpotLight1__UeScsNode = "2bedc085afb1b04ca93c7a4f612fa2e6";
+        static constexpr const char* SpotLight2__UeScsNode = "aec72a39869f774eab7a862302ad20f7";
+        static constexpr const char* UseSphere__UeScsNode = "8a6f2682bd00e44785d11c38fa69269f";
+        static constexpr const char* SM_spaceball_01__UeScsNode = "0652c14cc632c44a8e431bf186780155";
+        static constexpr const char* Collision__UeScsNode = "5e8eda3740911a4083cf04d984ca65f0";
+        static constexpr const char* Carriable__UeScsNode = "98d094386647cd449a30f44a991c0d99";
+        static constexpr const char* KickedBy__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall

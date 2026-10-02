@@ -13,6 +13,11 @@ class STE_Termniator_Squeeze_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/STE_Termniator_Squeeze", "STE_Termniator_Squeeze_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

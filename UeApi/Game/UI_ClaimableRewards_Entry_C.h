@@ -25,9 +25,9 @@ public:
     UE_CLASS("/Game/UI/ClaimableRewards/UI_ClaimableRewards_Entry", "UI_ClaimableRewards_Entry_C");
     using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimClaim;
-    class UWidgetAnimation* AnimPing;
-    class UWidgetAnimation* AnimMoveIn;
+    UE_READONLY class UWidgetAnimation* AnimClaim;
+    UE_READONLY class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimMoveIn;
     class UBorder* BorderHeader;
     class USizeBox* BoxSizer;
     ITM_BigButton_C* BTN_Claim;

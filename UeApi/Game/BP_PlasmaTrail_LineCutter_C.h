@@ -20,16 +20,20 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/BP_PlasmaTrail_LineCutter", "BP_PlasmaTrail_LineCutter_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "633a6e499caaed418306d543c8e64481";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "a1b6933b60b955489201b075ca495170";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "667e517bb3a4f44882d141944c5d10eb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "1d9fe3ee20859a4d87cf6ca5b8d5fb6c";
     void ExecuteUbergraph_BP_PlasmaTrail_LineCutter(int EntryPoint);
     void SetLineWidth(float Width);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ParticleSystem__UeScsNode = "633a6e499caaed418306d543c8e64481";
+        static constexpr const char* Capsule__UeScsNode = "a1b6933b60b955489201b075ca495170";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "667e517bb3a4f44882d141944c5d10eb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "1d9fe3ee20859a4d87cf6ca5b8d5fb6c";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

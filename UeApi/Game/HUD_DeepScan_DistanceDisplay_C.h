@@ -27,36 +27,24 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using UI_ProgressBar_C = Game::UI::_GlobalAssets::UI_ProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFirstIntro;
-    class UWidgetAnimation* AnimDeath;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimFirstIntro;
+    UE_READONLY class UWidgetAnimation* AnimDeath;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     class UImage* BarEnd;
     Basic_Label_C* Header;
     class UImage* Image_Vertical;
     class UHorizontalBox* Markings_2step_0_10;
-    static constexpr const char* Markings_2step_0_10__UeName = "Markings-2step_0-10";
     class UHorizontalBox* Markings_3step_0_15;
-    static constexpr const char* Markings_3step_0_15__UeName = "Markings-3step_0-15";
     class UVerticalBox* Markings_4step;
-    static constexpr const char* Markings_4step__UeName = "Markings-4step";
     class UHorizontalBox* Markings_4step_30_90;
-    static constexpr const char* Markings_4step_30_90__UeName = "Markings-4step_30-90";
     class UHorizontalBox* Markings_4step_30_90_1;
-    static constexpr const char* Markings_4step_30_90_1__UeName = "Markings-4step_30-90_1";
     class UHorizontalBox* Markings_4step_5_35;
-    static constexpr const char* Markings_4step_5_35__UeName = "Markings-4step_5-35";
     class UVerticalBox* Markings_5step;
-    static constexpr const char* Markings_5step__UeName = "Markings-5step";
     class UHorizontalBox* Markings_5step_0_50;
-    static constexpr const char* Markings_5step_0_50__UeName = "Markings-5step_0-50";
     class UHorizontalBox* Markings_5step_0_50_M;
-    static constexpr const char* Markings_5step_0_50_M__UeName = "Markings-5step_0-50_M";
     class UHorizontalBox* Markings_5step_30_80;
-    static constexpr const char* Markings_5step_30_80__UeName = "Markings-5step_30-80";
     class UHorizontalBox* Markings_6step;
-    static constexpr const char* Markings_6step__UeName = "Markings-6step";
     class UHorizontalBox* Markings_NoSignal;
-    static constexpr const char* Markings_NoSignal__UeName = "Markings-NoSignal";
     UI_ProgressBar_C* UI_ProgressBar;
     Basic_HUD_BracketWindowBig_Single_C* Window;
     FTimerHandle DelayHandle;
@@ -75,7 +63,6 @@ public:
     float PingPercentDistance;
     float PingDelay;
     int Measurement_Steps;
-    static constexpr const char* Measurement_Steps__UeName = "Measurement Steps";
     bool HasPlayedOutro;
     int DistanceIndex;
     void ExecuteUbergraph_HUD_DeepScan_DistanceDisplay(int EntryPoint);
@@ -85,13 +72,30 @@ public:
     void UpdateHeaderText(bool NoSignal);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Try_Init_Health_Bar();
-    static constexpr const char* Try_Init_Health_Bar__UeName = "Try Init Health Bar";
     void ChangeDistanceLevel(int DistanceIndex_0);
     void TryInitPinger(int NumMeasurementSteps);
     void DoPing(float PercentDistance, float Delay, float VerticalDistance, int TargetIndex, bool Continuous);
     void OnStayVisibleTimeOut();
     void Finished_E8ADEB6E45A88879CBB3CEB89297A096();
     void GetVerticalIndex(float VerticalDistance, int& Index_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Markings_2step_0_10__UeName = "Markings-2step_0-10";
+        static constexpr const char* Markings_3step_0_15__UeName = "Markings-3step_0-15";
+        static constexpr const char* Markings_4step__UeName = "Markings-4step";
+        static constexpr const char* Markings_4step_30_90__UeName = "Markings-4step_30-90";
+        static constexpr const char* Markings_4step_30_90_1__UeName = "Markings-4step_30-90_1";
+        static constexpr const char* Markings_4step_5_35__UeName = "Markings-4step_5-35";
+        static constexpr const char* Markings_5step__UeName = "Markings-5step";
+        static constexpr const char* Markings_5step_0_50__UeName = "Markings-5step_0-50";
+        static constexpr const char* Markings_5step_0_50_M__UeName = "Markings-5step_0-50_M";
+        static constexpr const char* Markings_5step_30_80__UeName = "Markings-5step_30-80";
+        static constexpr const char* Markings_6step__UeName = "Markings-6step";
+        static constexpr const char* Markings_NoSignal__UeName = "Markings-NoSignal";
+        static constexpr const char* Measurement_Steps__UeName = "Measurement Steps";
+        static constexpr const char* Try_Init_Health_Bar__UeName = "Try Init Health Bar";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

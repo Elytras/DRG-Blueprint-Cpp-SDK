@@ -38,11 +38,9 @@ public:
     class UBorder* MainBG;
     class UNamedSlot* PutStuffHere;
     TMulticastInlineDelegate<void()> On_Clicked;
-    static constexpr const char* On_Clicked__UeName = "On Clicked";
     bool BottomArrow;
     TMulticastInlineDelegate<void()> ThickBars;
     bool Thick_Bars;
-    static constexpr const char* Thick_Bars__UeName = "Thick Bars";
     bool MouseOver;
     TMulticastInlineDelegate<void(Basic_Menu_MinimalWindow_C* Window)> OnCursorEnter;
     TMulticastInlineDelegate<void(Basic_Menu_MinimalWindow_C* Window)> OnCursorLeave;
@@ -57,6 +55,12 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);
     void IsMouseOver(bool& MouseOver_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Clicked__UeName = "On Clicked";
+        static constexpr const char* Thick_Bars__UeName = "Thick Bars";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

@@ -19,17 +19,21 @@ class ITM_SupplyDrop_C : public ARessuplyPodItem
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/ITM_SupplyDrop", "ITM_SupplyDrop_C");
     using OnScreenIndicator_SupplyDrop_Order_C = Game::UI::OnScreenIndicators::OnScreenIndicator_SupplyDrop_Order_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class AItemMarker* Marker;
     OnScreenIndicator_SupplyDrop_Order_C* Widget;
     void ExecuteUbergraph_ITM_SupplyDrop(int EntryPoint);
     void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
     void Update_Widget();
-    static constexpr const char* Update_Widget__UeName = "Update Widget";
     void OnMarkerSpawned_Event(class AItemMarker* Marker_0);
     void RecieveEquipped();
     void RecieveCycledItem();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Update_Widget__UeName = "Update Widget";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod

@@ -17,9 +17,13 @@ class PRW_DetPack_Detonator_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/PRW_DetPack_Detonator", "PRW_DetPack_Detonator_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "072eb1af2481154f9e01c9770cf34931";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "1eec03cb33ddcf4aa606daa575b18587";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "072eb1af2481154f9e01c9770cf34931";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "1eec03cb33ddcf4aa606daa575b18587";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DetPack

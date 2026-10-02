@@ -15,9 +15,13 @@ class BP_StickyFrost_C : public AStickyFlame
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/BP_StickyFrost", "BP_StickyFrost_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bf356c6b9f8ec04cb84b4cb2d380ad70";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent Audio;/Script/Engine.ParticleSystemComponent FlameParticles;/Script/Engine.SceneComponent RootComponent;/Script/FSD.StatusEffectTriggerComponent StatusEffectTrigger";
+        static constexpr const char* Sphere__UeScsNode = "bf356c6b9f8ec04cb84b4cb2d380ad70";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

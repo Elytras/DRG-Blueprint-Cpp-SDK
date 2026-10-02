@@ -29,7 +29,7 @@ public:
     using ITM_BaseUpgradeIcon_C = Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;
     using TOOLTIP_UpgradeIcon_C = Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnPurchased;
+    UE_READONLY class UWidgetAnimation* OnPurchased;
     ITM_BaseUpgradeIcon_C* UpgradeIcon;
     class UItemUpgrade* Upgrade;
     TEnum<EItemUpgradeStatus> Status;
@@ -39,7 +39,7 @@ public:
     TMulticastInlineDelegate<void(ITM_UpgGear_UpgIconSingle_C* Widget)> OnUpgradeHovered;
     TMulticastInlineDelegate<void(ITM_UpgGear_UpgIconSingle_C* Widget)> OnUpgradeUnhovered;
     TMulticastInlineDelegate<void(ITM_UpgGear_UpgIconSingle_C* Widget)> OnUpgradeClicked;
-    bool OverrideStatus;
+    UE_READONLY bool OverrideStatus;
     bool ShowEquippedAsBorder;
     class UPlayerCharacterID* CharacerID;
     TOOLTIP_UpgradeIcon_C* IconToolTip;
@@ -48,7 +48,6 @@ public:
     void ExecuteUbergraph_ITM_UpgGear_UpgIconSingle(int EntryPoint);
     void PlayPurchasedAnim();
     void Refresh_Tool_Tip();
-    static constexpr const char* Refresh_Tool_Tip__UeName = "Refresh Tool Tip";
     void BndEvt__UpgradeIcon_K2Node_ComponentBoundEvent_137_OnClicked__DelegateSignature(ITM_BaseUpgradeIcon_C* Widget);
     void BndEvt__UpgradeIcon_K2Node_ComponentBoundEvent_129_OnHoverEnd__DelegateSignature(ITM_BaseUpgradeIcon_C* Widget);
     void BndEvt__UpgradeIcon_K2Node_ComponentBoundEvent_122_OnHoverBegin__DelegateSignature(ITM_BaseUpgradeIcon_C* Widget);
@@ -72,6 +71,11 @@ public:
     UE_PURE class UWidget* Get_UpgradeIcon_ToolTip();
     UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC bool IsInteractable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Refresh_Tool_Tip__UeName = "Refresh Tool Tip";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

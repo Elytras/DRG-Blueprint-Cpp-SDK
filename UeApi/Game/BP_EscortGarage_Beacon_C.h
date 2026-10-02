@@ -20,9 +20,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_EscortGarage_Beacon", "BP_EscortGarage_Beacon_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "d59415b18037074aa76a0b9f43b9d2f6";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "3483f4406194db48b75a5c1716f008c1";
     float FadeIn_Opacity_8E81A0E64677DBDCECDF68BB3B6D6B18;
     TEnum<ETimelineDirection> FadeIn__Direction_8E81A0E64677DBDCECDF68BB3B6D6B18;
     class UTimelineComponent* FadeIn;
@@ -31,7 +29,6 @@ public:
     class UTimelineComponent* fade;
     TArray<class UMaterialInstanceDynamic*> Materials;
     bool FadingOut;
-    static constexpr const char* FadingOut__Replicated = "OnRep_FadingOut:";
     float StartFadeTime;
     void ExecuteUbergraph_BP_EscortGarage_Beacon(int EntryPoint);
     void FadeOut();
@@ -41,6 +38,13 @@ public:
     void Fade__UpdateFunc();
     void Fade__FinishedFunc();
     void OnRep_FadingOut();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "d59415b18037074aa76a0b9f43b9d2f6";
+        static constexpr const char* Scene__UeScsNode = "3483f4406194db48b75a5c1716f008c1";
+        static constexpr const char* FadingOut__Replicated = "OnRep_FadingOut:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

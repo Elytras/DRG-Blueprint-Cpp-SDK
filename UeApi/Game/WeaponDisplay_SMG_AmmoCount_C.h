@@ -18,8 +18,7 @@ class WeaponDisplay_SMG_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDis
 public:
     UE_CLASS("/Game/WeaponsNTools/SMG/WeaponDisplay_SMG_AmmoCount", "WeaponDisplay_SMG_AmmoCount_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_SMG_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_SMG_AmmoCount_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* Fire;
+    UE_READONLY class UWidgetAnimation* Fire;
     class UTextBlock* DATA_AmmoCurrent;
     class UTextBlock* DATA_AmmoTotal;
     class UTextBlock* TXT_Loading;
@@ -27,6 +26,11 @@ public:
     UE_COSMETIC void Construct();
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_SMG_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SMG

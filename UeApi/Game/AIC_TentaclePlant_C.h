@@ -14,11 +14,15 @@ class AIC_TentaclePlant_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/TentaclePlant/AIC_TentaclePlant", "AIC_TentaclePlant_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_TentaclePlant(int EntryPoint);
     void Recieve_BlackboardValueChanged(const FName& KeyName);
     void StartBehaviour();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}   // namespace Game::Enemies::TentaclePlant

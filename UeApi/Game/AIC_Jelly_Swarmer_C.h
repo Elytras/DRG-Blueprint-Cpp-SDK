@@ -19,7 +19,6 @@ class AIC_Jelly_Swarmer_C : public AFSDAIController
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/AIC_Jelly_Swarmer", "AIC_Jelly_Swarmer_C");
     using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     void ExecuteUbergraph_AIC_Jelly_Swarmer(int EntryPoint);
@@ -27,6 +26,11 @@ public:
     void OnDeath(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     ENE_Jelly_Passive_Mother_C* FindNewMother();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Jellyfish

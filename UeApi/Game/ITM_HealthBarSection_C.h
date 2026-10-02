@@ -20,9 +20,9 @@ class ITM_HealthBarSection_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/ITM_HealthBarSection", "ITM_HealthBarSection_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* HealAnim;
-    class UWidgetAnimation* FadeToGray;
-    class UWidgetAnimation* HitAnim;
+    UE_READONLY class UWidgetAnimation* HealAnim;
+    UE_READONLY class UWidgetAnimation* FadeToGray;
+    UE_READONLY class UWidgetAnimation* HitAnim;
     class UImage* Background;
     class UProgressBar* ProgressBar_Health;
     class UProgressBar* ProgressBar_Trail;

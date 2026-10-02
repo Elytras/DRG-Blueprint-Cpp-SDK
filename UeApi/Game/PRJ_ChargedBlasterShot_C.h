@@ -29,34 +29,21 @@ class PRJ_ChargedBlasterShot_C : public AChargedProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/PRJ_ChargedBlasterShot", "PRJ_ChargedBlasterShot_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* TCFDamage;
-    static constexpr const char* TCFDamage__UeScsNode = "b1f4e55571f4ef4ab9ba556a68a490e8";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "201b9d2c9b2a3f41bf758d8b37d70a21";
     class USphereComponent* AoEDamageSphere;
-    static constexpr const char* AoEDamageSphere__UeScsNode = "ab3cded04cfd2242ad6b163fc15722c6";
     class UParticleSystemComponent* P_Charged_Shot_Warmup;
-    static constexpr const char* P_Charged_Shot_Warmup__UeScsNode = "ad6292a35405474682ef7e3de021287e";
     class UParticleSystemComponent* P_Charged_Shot;
-    static constexpr const char* P_Charged_Shot__UeScsNode = "5fbf27798887c24a817591449e062894";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "095a8d680385164bb94ab1da9593abdd";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
     class USceneComponent* AnimNode;
-    static constexpr const char* AnimNode__UeScsNode = "fe10ef34ab5b834bb0a22c2436396462";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "1990f4d90a0fc74c8de100a2f4d41d96";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "f1010391a3dc5d4685169fd09d417550";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "d1a467784b06fa41a3eafa1e61ab4d12";
     float Grow_Time_Line_Scale_70B952944B635ADB4B7086A2A6BEB7D9;
     TEnum<ETimelineDirection> Grow_Time_Line__Direction_70B952944B635ADB4B7086A2A6BEB7D9;
     class UTimelineComponent* Grow_Time_Line;
-    static constexpr const char* Grow_Time_Line__UeName = "Grow Time Line";
     float DamageRadiusAtOverCharge;
     float Acceleration;
     class UParticleSystemComponent* AoEParticle;
@@ -71,10 +58,27 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Grow_Time_Line__UpdateFunc();
-    static constexpr const char* Grow_Time_Line__UpdateFunc__UeName = "Grow Time Line__UpdateFunc";
     void Grow_Time_Line__FinishedFunc();
-    static constexpr const char* Grow_Time_Line__FinishedFunc__UeName = "Grow Time Line__FinishedFunc";
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* TCFDamage__UeScsNode = "b1f4e55571f4ef4ab9ba556a68a490e8";
+        static constexpr const char* Audio__UeScsNode = "201b9d2c9b2a3f41bf758d8b37d70a21";
+        static constexpr const char* AoEDamageSphere__UeScsNode = "ab3cded04cfd2242ad6b163fc15722c6";
+        static constexpr const char* P_Charged_Shot_Warmup__UeScsNode = "ad6292a35405474682ef7e3de021287e";
+        static constexpr const char* P_Charged_Shot__UeScsNode = "5fbf27798887c24a817591449e062894";
+        static constexpr const char* PointLight__UeScsNode = "095a8d680385164bb94ab1da9593abdd";
+        static constexpr const char* StaticMesh__UeScsNode = "2468bff4c85fff48b5b4699ea17284b9";
+        static constexpr const char* AnimNode__UeScsNode = "fe10ef34ab5b834bb0a22c2436396462";
+        static constexpr const char* Damage__UeScsNode = "1990f4d90a0fc74c8de100a2f4d41d96";
+        static constexpr const char* SimpleHealth__UeScsNode = "f1010391a3dc5d4685169fd09d417550";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "d1a467784b06fa41a3eafa1e61ab4d12";
+        static constexpr const char* Grow_Time_Line__UeName = "Grow Time Line";
+        static constexpr const char* Grow_Time_Line__UpdateFunc__UeName = "Grow Time Line__UpdateFunc";
+        static constexpr const char* Grow_Time_Line__FinishedFunc__UeName = "Grow Time Line__FinishedFunc";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

@@ -29,13 +29,12 @@ public:
     class UTextBlock* ToolTipBox;
     class UTexture2D* TextureEmpty;
     float Icon_Size;
-    static constexpr const char* Icon_Size__UeName = "Icon Size";
     TOOLTIP_ServerEntry_Team_C* ToolTip;
     int NumPlayers;
     TArray<class UPlayerCharacterID*> Players;
     bool ClassLocked;
     TArray<class UImage*> PlayerIcons;
-    int MaxIcons;
+    UE_READONLY int MaxIcons;
     void ExecuteUbergraph_ITM_ServerList_Entry_PlayerIcons(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
@@ -43,7 +42,12 @@ public:
     void SetIndexBrush(int NumPlayers_0, int EntryNum, class UImage* Target, TArray<class UPlayerCharacterID*>& Players_0, bool IsClassLocked);
     UE_PURE TOOLTIP_ServerEntry_Team_C* GetToolTip();
     void Get_Player_Details(TArray<class UPlayerCharacterID*>& Players_0, int PlayerIndex, bool IsClassLocked, FLinearColor& OutColor, class UTexture2D*& OutIcon, class UPlayerCharacterID*& outPlayer);
-    static constexpr const char* Get_Player_Details__UeName = "Get Player Details";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Icon_Size__UeName = "Icon Size";
+        static constexpr const char* Get_Player_Details__UeName = "Get Player Details";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

@@ -19,19 +19,23 @@ class BP_HugeBones_RibCage_03_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/Bones/BP_HugeBones_RibCage_03", "BP_HugeBones_RibCage_03_C");
     class UInfluencerSpawnComponent* InfluencerSpawn3;
-    static constexpr const char* InfluencerSpawn3__UeScsNode = "68b58ac4eeb51e4db9824c7916934a19";
     class UInfluencerSpawnComponent* InfluencerSpawn2;
-    static constexpr const char* InfluencerSpawn2__UeScsNode = "46c27c42fe75484cbefbbd8c04358a6b";
     class UInfluencerSpawnComponent* InfluencerSpawn1;
-    static constexpr const char* InfluencerSpawn1__UeScsNode = "ca171f2f0d75974c8d97baf3c00d9f64";
     class UInfluencerSpawnComponent* InfluencerSpawn;
-    static constexpr const char* InfluencerSpawn__UeScsNode = "87051f4dc1fe04428e02d945326c2198";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "9a23b4fa3f00c94cb83083c4d25d5493";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "e93360e48eb9354bbabb43dda8883d6d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4f86bd5b67049742a0c1e66bed337f6c";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InfluencerSpawn3__UeScsNode = "68b58ac4eeb51e4db9824c7916934a19";
+        static constexpr const char* InfluencerSpawn2__UeScsNode = "46c27c42fe75484cbefbbd8c04358a6b";
+        static constexpr const char* InfluencerSpawn1__UeScsNode = "ca171f2f0d75974c8d97baf3c00d9f64";
+        static constexpr const char* InfluencerSpawn__UeScsNode = "87051f4dc1fe04428e02d945326c2198";
+        static constexpr const char* terrainPlacement__UeScsNode = "9a23b4fa3f00c94cb83083c4d25d5493";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "e93360e48eb9354bbabb43dda8883d6d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4f86bd5b67049742a0c1e66bed337f6c";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Bones

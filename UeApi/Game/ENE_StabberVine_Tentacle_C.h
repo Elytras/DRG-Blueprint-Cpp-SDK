@@ -34,40 +34,23 @@ class ENE_StabberVine_Tentacle_C : public AStabberVine
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVine_Tentacle", "ENE_StabberVine_Tentacle_C");
     using ENE_StabberVines_C = Game::Enemies::StabberVine::ENE_StabberVines_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* LaserPointer;
-    static constexpr const char* LaserPointer__UeScsNode = "f34863a852fbc94d83085a001346ffee";
     class UParticleSystemComponent* P_KillerVine_Death;
-    static constexpr const char* P_KillerVine_Death__UeScsNode = "bf4e1622d9e3fc42aeb7e61683461d17";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "aad2154fa362a14180e9cd001273d1e4";
     class UStaticMeshComponent* SM_BladeMesh;
-    static constexpr const char* SM_BladeMesh__UeScsNode = "e95ee63a4a80934897b3b3622b8e0643";
     class USceneComponent* Rotator;
-    static constexpr const char* Rotator__UeScsNode = "05c2d8bf068ca742868b04451ff0f338";
     class USphereComponent* DamageSphere;
-    static constexpr const char* DamageSphere__UeScsNode = "b64d884acaba134f97a567aad2a66ad3";
     class USceneComponent* Head;
-    static constexpr const char* Head__UeScsNode = "c1dd4acfe622f946963b6c99441653d1";
     class USkeletalMeshComponent* SK_VineMesh;
-    static constexpr const char* SK_VineMesh__UeScsNode = "f6db655dcbfa6748a973d7d079000595";
     class USplineComponent* Spline;
-    static constexpr const char* Spline__UeScsNode = "b45fc4c5389e014290a0b7a45748ca1c";
     class UMotionAudioController* MotionAudioController;
-    static constexpr const char* MotionAudioController__UeScsNode = "bc181ce72c97b648ab49e954128ea39f";
     class UStaticMeshComponent* WeakSpot;
-    static constexpr const char* WeakSpot__UeScsNode = "fad0787af60cc145a771fd49270cfc60";
     class UAudioComponent* KillerVine_Attack_Cue;
-    static constexpr const char* KillerVine_Attack_Cue__UeScsNode = "0dfac31805a0a1499fd2a842eedbb1fe";
     class UDamageComponent* HeadDamage;
-    static constexpr const char* HeadDamage__UeScsNode = "cac0426465b84144adac94147f7136d2";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "b8c141ec48cc2b47a633f35b96b19a40";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "023b0b90ee256e46934f1cefc78caed6";
     ENE_StabberVines_C* TentaclesBody_BP;
-    static constexpr const char* TentaclesBody_BP__Replicated = "OnRep_TentaclesBody_BP:";
     class UMaterialInstanceDynamic* DynamicMaterial;
     FLinearColor IdleColor;
     FName MaterialColourParamString;
@@ -99,6 +82,27 @@ public:
     class USceneComponent* GetHeadRoot();
     class USceneComponent* GetHeadRotator();
     UE_PURE FVector GetTargetCenterMass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* LaserPointer__UeScsNode = "f34863a852fbc94d83085a001346ffee";
+        static constexpr const char* P_KillerVine_Death__UeScsNode = "bf4e1622d9e3fc42aeb7e61683461d17";
+        static constexpr const char* outline__UeScsNode = "aad2154fa362a14180e9cd001273d1e4";
+        static constexpr const char* SM_BladeMesh__UeScsNode = "e95ee63a4a80934897b3b3622b8e0643";
+        static constexpr const char* Rotator__UeScsNode = "05c2d8bf068ca742868b04451ff0f338";
+        static constexpr const char* DamageSphere__UeScsNode = "b64d884acaba134f97a567aad2a66ad3";
+        static constexpr const char* Head__UeScsNode = "c1dd4acfe622f946963b6c99441653d1";
+        static constexpr const char* SK_VineMesh__UeScsNode = "f6db655dcbfa6748a973d7d079000595";
+        static constexpr const char* Spline__UeScsNode = "b45fc4c5389e014290a0b7a45748ca1c";
+        static constexpr const char* MotionAudioController__UeScsNode = "bc181ce72c97b648ab49e954128ea39f";
+        static constexpr const char* WeakSpot__UeScsNode = "fad0787af60cc145a771fd49270cfc60";
+        static constexpr const char* KillerVine_Attack_Cue__UeScsNode = "0dfac31805a0a1499fd2a842eedbb1fe";
+        static constexpr const char* HeadDamage__UeScsNode = "cac0426465b84144adac94147f7136d2";
+        static constexpr const char* Explosion__UeScsNode = "b8c141ec48cc2b47a633f35b96b19a40";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "023b0b90ee256e46934f1cefc78caed6";
+        static constexpr const char* TentaclesBody_BP__Replicated = "OnRep_TentaclesBody_BP:";
+    };
 };
 
 }}}   // namespace Game::Enemies::StabberVine

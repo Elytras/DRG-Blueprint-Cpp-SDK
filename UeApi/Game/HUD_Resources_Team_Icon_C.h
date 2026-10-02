@@ -26,7 +26,7 @@ public:
     using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* PingAmount;
+    UE_READONLY class UWidgetAnimation* PingAmount;
     class UWidgetSwitcher* AmountSwitcher;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UInvalidationBox* Invalidation;
@@ -45,9 +45,13 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnChanged(class UCappedResource* Resource_0, float amount_0);
     void Init_Resource();
-    static constexpr const char* Init_Resource__UeName = "Init Resource";
     void SetResource(class UCappedResource* InResource, bool HideIfEmpty_0);
     void UpdateAmount(float DeltaSeconds);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Init_Resource__UeName = "Init Resource";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources

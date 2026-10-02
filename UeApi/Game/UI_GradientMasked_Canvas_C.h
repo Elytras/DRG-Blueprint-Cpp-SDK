@@ -18,11 +18,15 @@ class UI_GradientMasked_Canvas_C : public Game::UI::_GlobalAssets::MaskedImage::
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/MaskedImage/UI_GradientMasked_Canvas", "UI_GradientMasked_Canvas_C");
     FPointerToUberGraphFrame UberGraphFrame_UI_GradientMasked_Canvas_C;
-    static constexpr const char* UberGraphFrame_UI_GradientMasked_Canvas_C__UeName = "UberGraphFrame";
     class UNamedSlot* Content;
     class URetainerBox* Retainer;
     void ExecuteUbergraph_UI_GradientMasked_Canvas(int EntryPoint);
     void OnMaterialRefreshed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_GradientMasked_Canvas_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

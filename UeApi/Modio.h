@@ -9,6 +9,29 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "Engine.h"
 #include "UMG.h"
 
+struct FModioCreateModParams;
+struct FModioErrorCode;
+struct FModioGameInfo;
+struct FModioImageWrapper;
+struct FModioInitializeOptions;
+struct FModioModDependency;
+struct FModioModDependencyList;
+struct FModioModID;
+struct FModioModInfo;
+struct FModioModInfoList;
+struct FModioModProgressInfo;
+struct FModioModTagInfo;
+struct FModioModTagOptions;
+struct FModioNotificationParams;
+struct FModioOptionalModID;
+struct FModioOptionalModInfoList;
+struct FModioPagedResult;
+struct FModioReportParams;
+struct FModioTerms;
+struct FModioUnsigned64;
+struct FModioUser;
+
+class IModioModInfoUIDetails;
 class UTexture;
 class UTexture2DDynamic;
 
@@ -310,6 +333,14 @@ struct FModioApiKey
 
     FModioApiKey() = default;
     FModioApiKey(FString ApiKey) {}
+
+    // UModioCommonTypesLibrary::Conv_ApiKeyToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_ApiKeyToString";
+    };
 };
 
 struct FModioAuthenticationParams
@@ -350,6 +381,14 @@ struct FModioEmailAddress
 
     FModioEmailAddress() = default;
     UE_CONV_FModioEmailAddress
+
+    // UModioCommonTypesLibrary::Conv_EmailAddressToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_EmailAddressToString";
+    };
 };
 
 struct FModioEmailAuthCode
@@ -357,6 +396,14 @@ struct FModioEmailAuthCode
 
     FModioEmailAuthCode() = default;
     UE_CONV_FModioEmailAuthCode
+
+    // UModioCommonTypesLibrary::Conv_EmailAuthCodeToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_EmailAuthCodeToString";
+    };
 };
 
 struct FModioEntitlementParams
@@ -369,14 +416,74 @@ struct FModioEntitlementParams
 
 struct FModioErrorCode
 {
+
+    // UModioNotificationParamsLibrary::CreateInstallationNotification (ModioUICore.h)
+    FModioNotificationParams CreateInstallationNotification(const TScriptInterface<class IModioModInfoUIDetails>& ModInfo) const;
+    // UModioNotificationParamsLibrary::CreateNotificationParams (ModioUICore.h)
+    FModioNotificationParams CreateNotificationParams(const FText& TitleText, const FText& SuccessText, const FText& ErrorText) const;
+    // UModioNotificationParamsLibrary::CreateRatingNotification (ModioUICore.h)
+    FModioNotificationParams CreateRatingNotification(const TScriptInterface<class IModioModInfoUIDetails>& ModInfo) const;
+    // UModioNotificationParamsLibrary::CreateSubscriptionNotification (ModioUICore.h)
+    FModioNotificationParams CreateSubscriptionNotification(const TScriptInterface<class IModioModInfoUIDetails>& ModInfo) const;
+    // UModioNotificationParamsLibrary::CreateUninstallNotification (ModioUICore.h)
+    FModioNotificationParams CreateUninstallNotification(const TScriptInterface<class IModioModInfoUIDetails>& ModInfo) const;
+    // UModioErrorConditionLibrary::ErrorCodeMatches (Modio.h)
+    bool ErrorCodeMatches(TEnum<EModioErrorCondition> Condition) const;
+    // UModioErrorCodeLibrary::GetMessage (Modio.h)
+    FString GetMessage() const;
+    // UModioErrorCodeLibrary::GetValue (Modio.h)
+    int GetValue() const;
+    // UModioErrorCodeLibrary::IsError (Modio.h)
+    bool IsError() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CreateInstallationNotification__UeForward = "UModioNotificationParamsLibrary::CreateInstallationNotification";
+        static constexpr const char* CreateNotificationParams__UeForward = "UModioNotificationParamsLibrary::CreateNotificationParams";
+        static constexpr const char* CreateRatingNotification__UeForward = "UModioNotificationParamsLibrary::CreateRatingNotification";
+        static constexpr const char* CreateSubscriptionNotification__UeForward = "UModioNotificationParamsLibrary::CreateSubscriptionNotification";
+        static constexpr const char* CreateUninstallNotification__UeForward = "UModioNotificationParamsLibrary::CreateUninstallNotification";
+        static constexpr const char* ErrorCodeMatches__UeForward = "UModioErrorConditionLibrary::ErrorCodeMatches";
+        static constexpr const char* GetMessage__UeForward = "UModioErrorCodeLibrary::GetMessage";
+        static constexpr const char* GetValue__UeForward = "UModioErrorCodeLibrary::GetValue";
+        static constexpr const char* IsError__UeForward = "UModioErrorCodeLibrary::IsError";
+    };
 };
 
 struct FModioFileMetadataID
 {
+
+    // UModioCommonTypesLibrary::Conv_FileMetadataIDToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_FileMetadataIDToString";
+    };
 };
 
 struct FModioModID
 {
+
+    // UModioCommonTypesLibrary::EqualTo (Modio.h)
+    bool EqualTo(const FModioModID& B) const;
+    // UModioCommonTypesLibrary::GetRawValueFromModID (Modio.h)
+    int64 GetRawValueFromModID() const;
+    // UModioReportLibrary::MakeReportForMod (Modio.h)
+    FModioReportParams MakeReportForMod(TEnum<EModioReportType> Type, FString ReportDescription, FString ReporterName, FString ReporterContact) const;
+    // UModioCommonTypesLibrary::NotEqualTo (Modio.h)
+    bool NotEqualTo(const FModioModID& B) const;
+    // UModioCommonTypesLibrary::Conv_ModIDToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* EqualTo__UeForward = "UModioCommonTypesLibrary::EqualTo";
+        static constexpr const char* GetRawValueFromModID__UeForward = "UModioCommonTypesLibrary::GetRawValueFromModID";
+        static constexpr const char* MakeReportForMod__UeForward = "UModioReportLibrary::MakeReportForMod";
+        static constexpr const char* NotEqualTo__UeForward = "UModioCommonTypesLibrary::NotEqualTo";
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_ModIDToString";
+    };
 };
 
 struct FModioFileMetadata
@@ -398,6 +505,14 @@ struct FModioFileMetadata
 
 struct FModioFilterParams
 {
+
+    // UModioExampleLibrary::ListUserSubscriptionAsync (Modio.h)
+    void ListUserSubscriptionAsync(TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModInfoList Result)> Callback) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ListUserSubscriptionAsync__UeForward = "UModioExampleLibrary::ListUserSubscriptionAsync";
+    };
 };
 
 struct FModioGameID
@@ -406,6 +521,17 @@ struct FModioGameID
 
     FModioGameID() = default;
     FModioGameID(int64 GameId) {}
+
+    // UModioReportLibrary::MakeReportForGame (Modio.h)
+    FModioReportParams MakeReportForGame(TEnum<EModioReportType> Type, FString ReportDescription, FString ReporterName, FString ReporterContact) const;
+    // UModioCommonTypesLibrary::Conv_GameIDToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* MakeReportForGame__UeForward = "UModioReportLibrary::MakeReportForGame";
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_GameIDToString";
+    };
 };
 
 struct FModioIcon
@@ -518,6 +644,20 @@ struct FModioImageWrapper
 
     FModioImageWrapper() = default;
     FModioImageWrapper(FString ImagePath) {}
+
+    // UModioImageLibrary::GetState (Modio.h)
+    TEnum<EModioImageState> GetState() const;
+    // UModioImageLibrary::GetTexture (Modio.h)
+    class UTexture2DDynamic* GetTexture() const;
+    // UModioImageLibrary::LoadAsync (Modio.h)
+    void LoadAsync(TDelegate<void(class UTexture2DDynamic* Texture)> OnImageLoaded) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetState__UeForward = "UModioImageLibrary::GetState";
+        static constexpr const char* GetTexture__UeForward = "UModioImageLibrary::GetTexture";
+        static constexpr const char* LoadAsync__UeForward = "UModioImageLibrary::LoadAsync";
+    };
 };
 
 struct FModioInitializeOptions
@@ -531,6 +671,17 @@ struct FModioInitializeOptions
 
     FModioInitializeOptions() = default;
     FModioInitializeOptions(FModioGameID GameId, FModioApiKey ApiKey, EModioEnvironment GameEnvironment, EModioPortal PortalInUse, TMap<FString, FString> ExtendedInitializationParameters, bool bUseBackgroundThread) {}
+
+    // UModioCommonTypesLibrary::SetPortal (Modio.h)
+    FModioInitializeOptions SetPortal(TEnum<EModioPortal> PortalToUse) const;
+    // UModioCommonTypesLibrary::SetSessionIdentifier (Modio.h)
+    FModioInitializeOptions SetSessionIdentifier(FString SessionIdentifier) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SetPortal__UeForward = "UModioCommonTypesLibrary::SetPortal";
+        static constexpr const char* SetSessionIdentifier__UeForward = "UModioCommonTypesLibrary::SetSessionIdentifier";
+    };
 };
 
 struct FModioLink
@@ -558,10 +709,35 @@ struct FModioMetadata
 
 struct FModioModCollectionEntry
 {
+
+    // UModioModCollectionLibrary::GetID (Modio.h)
+    FModioModID GetID() const;
+    // UModioModCollectionLibrary::GetModProfile (Modio.h)
+    FModioModInfo GetModProfile() const;
+    // UModioModCollectionLibrary::GetModState (Modio.h)
+    TEnum<EModioModState> GetModState() const;
+    // UModioModCollectionLibrary::GetPath (Modio.h)
+    FString GetPath() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetID__UeForward = "UModioModCollectionLibrary::GetID";
+        static constexpr const char* GetModProfile__UeForward = "UModioModCollectionLibrary::GetModProfile";
+        static constexpr const char* GetModState__UeForward = "UModioModCollectionLibrary::GetModState";
+        static constexpr const char* GetPath__UeForward = "UModioModCollectionLibrary::GetPath";
+    };
 };
 
 struct FModioModCreationHandle
 {
+
+    // UModioSubmissionExtensionLibrary::K2_SubmitNewModFromMemoryAsync (ModioEx.h)
+    void K2_SubmitNewModFromMemoryAsync(FModioCreateModParams Params_0, TArray<uint8> PngData, TDelegate<void(FModioErrorCode ErrorCode, FModioOptionalModID NewModID)> Callback) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* K2_SubmitNewModFromMemoryAsync__UeForward = "UModioSubmissionExtensionLibrary::K2_SubmitNewModFromMemoryAsync";
+    };
 };
 
 struct FModioModDependency
@@ -592,10 +768,32 @@ struct FModioModDependencyList
 
     FModioModDependencyList() = default;
     FModioModDependencyList(FModioPagedResult PagedResult, TArray<FModioModDependency> InternalList) {}
+
+    // UModioModDependenciesLibrary::GetDependencies (Modio.h)
+    TArray<FModioModDependency> GetDependencies() const;
+    // UModioModDependenciesLibrary::GetPagedResult (Modio.h)
+    FModioPagedResult GetPagedResult() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetDependencies__UeForward = "UModioModDependenciesLibrary::GetDependencies";
+        static constexpr const char* GetPagedResult__UeForward = "UModioModDependenciesLibrary::GetPagedResult";
+    };
 };
 
 struct FModioUserID
 {
+
+    // UModioReportLibrary::MakeReportForUser (Modio.h)
+    FModioReportParams MakeReportForUser(TEnum<EModioReportType> Type, FString ReportDescription, FString ReporterName, FString ReporterContact) const;
+    // UModioCommonTypesLibrary::Conv_UserIDToString (Modio.h)
+    FString ToString() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* MakeReportForUser__UeForward = "UModioReportLibrary::MakeReportForUser";
+        static constexpr const char* ToString__UeForward = "UModioCommonTypesLibrary::Conv_UserIDToString";
+    };
 };
 
 struct FModioUser
@@ -680,6 +878,17 @@ struct FModioModInfoList
 
     FModioModInfoList() = default;
     FModioModInfoList(FModioPagedResult PagedResult, TArray<FModioModInfo> InternalList) {}
+
+    // UModioModInfoListLibrary::GetMods (Modio.h)
+    TArray<FModioModInfo> GetMods() const;
+    // UModioModInfoListLibrary::GetPagedResult (Modio.h)
+    FModioPagedResult GetPagedResult() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetMods__UeForward = "UModioModInfoListLibrary::GetMods";
+        static constexpr const char* GetPagedResult__UeForward = "UModioModInfoListLibrary::GetPagedResult";
+    };
 };
 
 struct FModioModManagementEvent
@@ -698,6 +907,20 @@ struct FModioModProgressInfo
 
     FModioModProgressInfo() = default;
     FModioModProgressInfo(FModioModID ID) {}
+
+    // UModioModProgressInfoLibrary::GetCurrentProgress (Modio.h)
+    FModioUnsigned64 GetCurrentProgress(TEnum<EModioModProgressState> State) const;
+    // UModioModProgressInfoLibrary::GetCurrentState (Modio.h)
+    TEnum<EModioModProgressState> GetCurrentState() const;
+    // UModioModProgressInfoLibrary::GetTotalProgress (Modio.h)
+    FModioUnsigned64 GetTotalProgress(TEnum<EModioModProgressState> State) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetCurrentProgress__UeForward = "UModioModProgressInfoLibrary::GetCurrentProgress";
+        static constexpr const char* GetCurrentState__UeForward = "UModioModProgressInfoLibrary::GetCurrentState";
+        static constexpr const char* GetTotalProgress__UeForward = "UModioModProgressInfoLibrary::GetTotalProgress";
+    };
 };
 
 struct FModioModTagInfo
@@ -717,14 +940,47 @@ struct FModioModTagOptions
 
     FModioModTagOptions() = default;
     FModioModTagOptions(FModioPagedResult PagedResult, TArray<FModioModTagInfo> InternalList) {}
+
+    // UModioModTagOptionsLibrary::GetPagedResult (Modio.h)
+    FModioPagedResult GetPagedResult() const;
+    // UModioModTagOptionsLibrary::GetTags (Modio.h)
+    TArray<FModioModTagInfo> GetTags() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetPagedResult__UeForward = "UModioModTagOptionsLibrary::GetPagedResult";
+        static constexpr const char* GetTags__UeForward = "UModioModTagOptionsLibrary::GetTags";
+    };
 };
 
 struct FModioOptionalGameInfo
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalGameInfo (Modio.h)
+    bool GetValue_ModioOptionalGameInfo(FModioGameInfo& GameInfo) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalGameInfo (Modio.h)
+    bool IsSet_ModioOptionalGameInfo() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalGameInfo__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalGameInfo";
+        static constexpr const char* IsSet_ModioOptionalGameInfo__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalGameInfo";
+    };
 };
 
 struct FModioOptionalImage
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalImage (Modio.h)
+    bool GetValue_ModioOptionalImage(FModioImageWrapper& Image) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalImage (Modio.h)
+    bool IsSet_ModioOptionalImage() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalImage__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalImage";
+        static constexpr const char* IsSet_ModioOptionalImage__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalImage";
+    };
 };
 
 struct FModioOptionalMapPreview
@@ -733,30 +989,107 @@ struct FModioOptionalMapPreview
 
 struct FModioOptionalModDependencyList
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalModDependencyList (Modio.h)
+    bool GetValue_ModioOptionalModDependencyList(FModioModDependencyList& DependencyList) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalModDependencyList (Modio.h)
+    bool IsSet_ModioOptionalModDependencyList() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalModDependencyList__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalModDependencyList";
+        static constexpr const char* IsSet_ModioOptionalModDependencyList__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalModDependencyList";
+    };
 };
 
 struct FModioOptionalModID
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalModID (Modio.h)
+    bool GetValue_ModioOptionalModID(FModioModID& ID) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalModID (Modio.h)
+    bool IsSet_ModioOptionalModID() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalModID__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalModID";
+        static constexpr const char* IsSet_ModioOptionalModID__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalModID";
+    };
 };
 
 struct FModioOptionalModInfo
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalModInfo (Modio.h)
+    bool GetValue_ModioOptionalModInfo(FModioModInfo& ModInfo) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalModInfo (Modio.h)
+    bool IsSet_ModioOptionalModInfo() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalModInfo__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalModInfo";
+        static constexpr const char* IsSet_ModioOptionalModInfo__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalModInfo";
+    };
 };
 
 struct FModioOptionalModInfoList
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalModInfoList (Modio.h)
+    bool GetValue_ModioOptionalModInfoList(FModioModInfoList& ModInfoList) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalModInfoList (Modio.h)
+    bool IsSet_ModioOptionalModInfoList() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalModInfoList__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalModInfoList";
+        static constexpr const char* IsSet_ModioOptionalModInfoList__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalModInfoList";
+    };
 };
 
 struct FModioOptionalModProgressInfo
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalModProgressInfo (Modio.h)
+    bool GetValue_ModioOptionalModProgressInfo(FModioModProgressInfo& ModProgressInfo) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalModProgressInfo (Modio.h)
+    bool IsSet_ModioOptionalModProgressInfo() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalModProgressInfo__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalModProgressInfo";
+        static constexpr const char* IsSet_ModioOptionalModProgressInfo__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalModProgressInfo";
+    };
 };
 
 struct FModioOptionalModTagOptions
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalModTagOptions (Modio.h)
+    bool GetValue_ModioOptionalModTagOptions(FModioModTagOptions& ModTagOptions) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalModTagOptions (Modio.h)
+    bool IsSet_ModioOptionalModTagOptions() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalModTagOptions__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalModTagOptions";
+        static constexpr const char* IsSet_ModioOptionalModTagOptions__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalModTagOptions";
+    };
 };
 
 struct FModioOptionalTerms
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalTerms (Modio.h)
+    bool GetValue_ModioOptionalTerms(FModioTerms& Terms) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalTerms (Modio.h)
+    bool IsSet_ModioOptionalTerms() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalTerms__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalTerms";
+        static constexpr const char* IsSet_ModioOptionalTerms__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalTerms";
+    };
 };
 
 struct FModioOptionalTransactionRecord
@@ -765,6 +1098,17 @@ struct FModioOptionalTransactionRecord
 
 struct FModioOptionalUser
 {
+
+    // UModioOptionalLibrary::GetValue_ModioOptionalUser (Modio.h)
+    bool GetValue_ModioOptionalUser(FModioUser& User) const;
+    // UModioOptionalLibrary::IsSet_ModioOptionalUser (Modio.h)
+    bool IsSet_ModioOptionalUser() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GetValue_ModioOptionalUser__UeForward = "UModioOptionalLibrary::GetValue_ModioOptionalUser";
+        static constexpr const char* IsSet_ModioOptionalUser__UeForward = "UModioOptionalLibrary::IsSet_ModioOptionalUser";
+    };
 };
 
 struct FModioOptionalUserList
@@ -790,6 +1134,47 @@ struct FModioTerms
 
 struct FModioUnsigned64
 {
+
+    // UModioUnsigned64Library::Add (Modio.h)
+    FModioUnsigned64 Add(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::BreakToComponents (Modio.h)
+    void BreakToComponents(int& High, int& Low) const;
+    // UModioUnsigned64Library::Divide (Modio.h)
+    FModioUnsigned64 Divide(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::DivideFloat (Modio.h)
+    float DivideFloat(float RHS) const;
+    // UModioUnsigned64Library::DivideToFloat (Modio.h)
+    float DivideToFloat(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::EqualTo (Modio.h)
+    bool EqualTo(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::GreaterThan (Modio.h)
+    bool GreaterThan(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::LessThan (Modio.h)
+    bool LessThan(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::NotEqualTo (Modio.h)
+    bool NotEqualTo(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::Percentage_Unsigned64 (Modio.h)
+    float Percentage_Unsigned64(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::Subtract (Modio.h)
+    FModioUnsigned64 Subtract(const FModioUnsigned64& RHS) const;
+    // UModioUnsigned64Library::Conv_FModioUnsigned64ToFloat (Modio.h)
+    float ToFloat() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add__UeForward = "UModioUnsigned64Library::Add";
+        static constexpr const char* BreakToComponents__UeForward = "UModioUnsigned64Library::BreakToComponents";
+        static constexpr const char* Divide__UeForward = "UModioUnsigned64Library::Divide";
+        static constexpr const char* DivideFloat__UeForward = "UModioUnsigned64Library::DivideFloat";
+        static constexpr const char* DivideToFloat__UeForward = "UModioUnsigned64Library::DivideToFloat";
+        static constexpr const char* EqualTo__UeForward = "UModioUnsigned64Library::EqualTo";
+        static constexpr const char* GreaterThan__UeForward = "UModioUnsigned64Library::GreaterThan";
+        static constexpr const char* LessThan__UeForward = "UModioUnsigned64Library::LessThan";
+        static constexpr const char* NotEqualTo__UeForward = "UModioUnsigned64Library::NotEqualTo";
+        static constexpr const char* Percentage_Unsigned64__UeForward = "UModioUnsigned64Library::Percentage_Unsigned64";
+        static constexpr const char* Subtract__UeForward = "UModioUnsigned64Library::Subtract";
+        static constexpr const char* ToFloat__UeForward = "UModioUnsigned64Library::Conv_FModioUnsigned64ToFloat";
+    };
 };
 
 struct FModioTransactionRecord
@@ -1011,18 +1396,26 @@ class UModioPopupBase : public UUserWidget
 {
 public:
     UE_CLASS("/Script/Modio", "ModioPopupBase");
-    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class UModioPopupContainer : public UUserWidget
 {
 public:
     UE_CLASS("/Script/Modio", "ModioPopupContainer");
-    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
     TArray<class UModioPopupBase*> PopupStack;
     TArray<class UModioPopupBase*> PopupCache;
     class UModioPopupBase* PopPopup(TSubclassOf<class UModioPopupBase> PopupClass);
     class UModioPopupBase* PushPopup(TSubclassOf<class UModioPopupBase> PopupClass);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class UModioReportLibrary : public UBlueprintFunctionLibrary

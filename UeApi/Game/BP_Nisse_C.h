@@ -31,44 +31,25 @@ class BP_Nisse_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Xmas/Nisse/BP_Nisse", "BP_Nisse_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SK_Sideburns_Rig_A_Braided;
-    static constexpr const char* SK_Sideburns_Rig_A_Braided__UeScsNode = "2cc37a053e555c47965915131872f0dd";
     class UNiagaraComponent* NS_Xmas_Nisse_SnowTrail;
-    static constexpr const char* NS_Xmas_Nisse_SnowTrail__UeScsNode = "330949c608127a449e2039add3822c35";
     class USkeletalMeshComponent* SK_Vanity_Beard006_Prospector;
-    static constexpr const char* SK_Vanity_Beard006_Prospector__UeScsNode = "b760bc881e6e1a4e824f363f39268bd6";
     class USkeletalMeshComponent* SK_Moustache_Rig_A_003;
-    static constexpr const char* SK_Moustache_Rig_A_003__UeScsNode = "27e62653a91497428dc2d6fb415375a4";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "befbdc5ebbe6894dae84eb1da1f1865f";
     class UAudioComponent* AudioScaredLoop;
-    static constexpr const char* AudioScaredLoop__UeScsNode = "f72e77984623454d9aef1937df9efee0";
     class USceneComponent* NisseSpawnPoint;
-    static constexpr const char* NisseSpawnPoint__UeScsNode = "17a79de8475f664eaf00613651334485";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "4ed807cd11073542bd155f9af44839c1";
     class USkeletalMeshComponent* SK_Xmas_CandyCane_01;
-    static constexpr const char* SK_Xmas_CandyCane_01__UeScsNode = "9d1216b5be89b1498487f8b55eb39625";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "b42860c161a99045bb0a8d720e98a8b2";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "88c1007bffcf5941bfc0e78686d191ea";
     class UPathfinderReactiveTerrainTrackerComponent* PathfinderReactiveTerrainTracker;
-    static constexpr const char* PathfinderReactiveTerrainTracker__UeScsNode = "b3691f16709951448bb7b0c71e6fa3cd";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "4e900e5792390f4aa5f864d129a2c7b1";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "805905c5e7044f49bc54ae3031465961";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "f0836d40a4f3da4cb92bfeeecc436bff";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "b964a996c82dba4b9f44ad3068875ee0";
     class USkeletalMeshComponent* SK_Vanity_Head002;
-    static constexpr const char* SK_Vanity_Head002__UeScsNode = "7943394c877fbc47b17a7510761f5515";
     class USkeletalMeshComponent* SK_Vanity_Head001;
-    static constexpr const char* SK_Vanity_Head001__UeScsNode = "aaf839855ce6ec4d9c437d5494167f27";
     FTimerHandle RunTimer;
     float RunSpeedMod;
     void ExecuteUbergraph_BP_Nisse(int EntryPoint);
@@ -79,6 +60,29 @@ public:
     void ResetRunTimer();
     void BndEvt__BP_Nisse_PawnSensing_K2Node_ComponentBoundEvent_1_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* SK_Sideburns_Rig_A_Braided__UeScsNode = "2cc37a053e555c47965915131872f0dd";
+        static constexpr const char* NS_Xmas_Nisse_SnowTrail__UeScsNode = "330949c608127a449e2039add3822c35";
+        static constexpr const char* SK_Vanity_Beard006_Prospector__UeScsNode = "b760bc881e6e1a4e824f363f39268bd6";
+        static constexpr const char* SK_Moustache_Rig_A_003__UeScsNode = "27e62653a91497428dc2d6fb415375a4";
+        static constexpr const char* Trail__UeScsNode = "befbdc5ebbe6894dae84eb1da1f1865f";
+        static constexpr const char* AudioScaredLoop__UeScsNode = "f72e77984623454d9aef1937df9efee0";
+        static constexpr const char* NisseSpawnPoint__UeScsNode = "17a79de8475f664eaf00613651334485";
+        static constexpr const char* PointLight__UeScsNode = "4ed807cd11073542bd155f9af44839c1";
+        static constexpr const char* SK_Xmas_CandyCane_01__UeScsNode = "9d1216b5be89b1498487f8b55eb39625";
+        static constexpr const char* DropShadow__UeScsNode = "b42860c161a99045bb0a8d720e98a8b2";
+        static constexpr const char* Capsule__UeScsNode = "88c1007bffcf5941bfc0e78686d191ea";
+        static constexpr const char* PathfinderReactiveTerrainTracker__UeScsNode = "b3691f16709951448bb7b0c71e6fa3cd";
+        static constexpr const char* enemy__UeScsNode = "4e900e5792390f4aa5f864d129a2c7b1";
+        static constexpr const char* PawnSensing__UeScsNode = "805905c5e7044f49bc54ae3031465961";
+        static constexpr const char* outline__UeScsNode = "f0836d40a4f3da4cb92bfeeecc436bff";
+        static constexpr const char* PawnStats__UeScsNode = "b964a996c82dba4b9f44ad3068875ee0";
+        static constexpr const char* SK_Vanity_Head002__UeScsNode = "7943394c877fbc47b17a7510761f5515";
+        static constexpr const char* SK_Vanity_Head001__UeScsNode = "aaf839855ce6ec4d9c437d5494167f27";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Holidays::Xmas::Nisse

@@ -22,24 +22,28 @@ class UI_InfoScreen_DLC_Billboard_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_DLC_Billboard", "UI_InfoScreen_DLC_Billboard_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Click;
     class UButton* BannerButton;
     class USizeBox* BannerSizer;
     class UWidgetSwitcher* SwitcherDLC;
     float Width;
     float SegmentTime__seconds_;
-    static constexpr const char* SegmentTime__seconds___UeName = "SegmentTime (seconds)";
     class UGameDLCSettings* GameDLCSettings;
     void ExecuteUbergraph_UI_InfoScreen_DLC_Billboard(int EntryPoint);
     void AnimClick();
     void BndEvt__BannerButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__BannerButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     void On_Banner_Clicked(class UGameDLC* DLC);
-    static constexpr const char* On_Banner_Clicked__UeName = "On Banner Clicked";
     void ShowNextWidget();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SegmentTime__seconds___UeName = "SegmentTime (seconds)";
+        static constexpr const char* On_Banner_Clicked__UeName = "On Banner Clicked";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

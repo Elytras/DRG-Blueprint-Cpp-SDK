@@ -22,10 +22,9 @@ class WeaponDisplay_Coilgun_Charge_C : public Game::UI::WeaponDisplays::WeaponDi
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/WeaponDisplay_Coilgun_Charge", "WeaponDisplay_Coilgun_Charge_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_Coilgun_Charge_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_Coilgun_Charge_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* AmmoCountDownBlink;
-    class UWidgetAnimation* AmmoCountDown;
-    class UWidgetAnimation* TextFadeIn;
+    UE_READONLY class UWidgetAnimation* AmmoCountDownBlink;
+    UE_READONLY class UWidgetAnimation* AmmoCountDown;
+    UE_READONLY class UWidgetAnimation* TextFadeIn;
     class UBorder* Block1;
     class UBorder* Block2;
     class UBorder* Block3;
@@ -50,17 +49,22 @@ public:
     int TargetAmmoCount;
     int OldAmmoCount;
     float Charge_Value;
-    static constexpr const char* Charge_Value__UeName = "Charge Value";
     void ExecuteUbergraph_WeaponDisplay_Coilgun_Charge(int EntryPoint);
     void WidgetAnimationEvt_AmmoCountDown_K2Node_WidgetAnimationEvent_0();
     void Total_Ammo_left_changed(int amount);
-    static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void SetChargeValue(float ChargeValue, bool overheated, bool ready, bool FullCharge);
     void AmmoCountDownTick();
     void SequenceEvent__ENTRYPOINTWeaponDisplay_Coilgun_Charge_0();
     void SequenceEvent__ENTRYPOINTWeaponDisplay_Coilgun_Charge_1();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_Coilgun_Charge_C__UeName = "UberGraphFrame";
+        static constexpr const char* Charge_Value__UeName = "Charge Value";
+        static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

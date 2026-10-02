@@ -13,6 +13,11 @@ class STE_SnowStorm_SlowDownFreeze_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/IceCaves/STE_SnowStorm_SlowDownFreeze", "STE_SnowStorm_SlowDownFreeze_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves

@@ -18,12 +18,16 @@ class BP_PlagueMeteorTimer_C : public Game::GameElements::GameEvents::PlagueMete
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueMeteorTimer", "BP_PlagueMeteorTimer_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_PlagueMeteorTimer_C;
-    static constexpr const char* UberGraphFrame_BP_PlagueMeteorTimer_C__UeName = "UberGraphFrame";
     class USoundBase* WarningSound;
     void ExecuteUbergraph_BP_PlagueMeteorTimer(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_PlayWarningSound();
     void PreEventSpawn();
     FTransform GetSpawnTransform();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_PlagueMeteorTimer_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor

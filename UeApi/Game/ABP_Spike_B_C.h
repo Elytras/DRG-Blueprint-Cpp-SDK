@@ -33,12 +33,16 @@ public:
     FAnimNode_StateResult AnimGraphNode_StateResult;
     FAnimNode_StateMachine AnimGraphNode_StateMachine;
     bool Is_Extruded;
-    static constexpr const char* Is_Extruded__UeName = "Is Extruded";
     void ExecuteUbergraph_ABP_Spike_B(int EntryPoint);
     void SetupEvent(BP_SpikeyPlant_C* NewParam);
     void Set_is_Extruded(bool Is_Extruded_0, bool Is_Triggered);
-    static constexpr const char* Set_is_Extruded__UeName = "Set is Extruded";
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Extruded__UeName = "Is Extruded";
+        static constexpr const char* Set_is_Extruded__UeName = "Set is Extruded";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpikyPlant

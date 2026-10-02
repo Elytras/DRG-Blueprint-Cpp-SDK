@@ -26,7 +26,6 @@ public:
     UE_CLASS("/Game/Game/BP_PlayerControllerBase", "BP_PlayerControllerBase_C");
     using BP_FSDCameraManager_C = Game::Character::Camera::BP_FSDCameraManager_C;
     using BP_Invitation_C = Game::UI::Menu_Invitation::BP_Invitation_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void(int Reply)> ReplyToInviteRequest;
     BP_Invitation_C* InviteRequest;
@@ -40,25 +39,19 @@ public:
     TSoftClassPtr<class UClass> hudClass;
     void ExecuteUbergraph_BP_PlayerControllerBase(int EntryPoint);
     void Event_On_Join_Request_Reply(int Reply);
-    static constexpr const char* Event_On_Join_Request_Reply__UeName = "Event On Join Request Reply";
     void OnJoinRequest(const FDiscordUserDataSDK& joinRequest);
     void SpawnHUDAsync();
     void CustomEvent_1();
     UE_SERVER void Reset_Player_Location();
-    static constexpr const char* Reset_Player_Location__UeName = "Reset Player Location";
     void ChangeUserReply(bool Yes);
     void ChangeUser();
     void Setup_Change_User();
-    static constexpr const char* Setup_Change_User__UeName = "Setup Change User";
     void AdjustCamera();
     UE_CLIENT UE_RELIABLE void UpdateAnalytics();
     void OnCharacterCanRetire_Event(TSubclassOf<class APlayerCharacter> CharacterClass);
     void Setup_Retirement_Notification();
-    static constexpr const char* Setup_Retirement_Notification__UeName = "Setup Retirement Notification";
     void Setup_Invite_Handling();
-    static constexpr const char* Setup_Invite_Handling__UeName = "Setup Invite Handling";
     UE_CLIENT UE_RELIABLE void Return_Client_Camera();
-    static constexpr const char* Return_Client_Camera__UeName = "Return Client Camera";
     UE_SERVER UE_RELIABLE void SetPhotographyMode(bool Active);
     void ReceiveBeginPlay();
     void InpActEvt_Ctrl_O_K2Node_InputKeyEvent_0(FKey Key);
@@ -76,6 +69,17 @@ public:
     void SetHasShownCharacterSelector(bool HasShown);
     void SetIsEscapeMenuEnabled(bool IsEscapeMenuEnabled);
     void GetEditorCharacterClass(class UPlayerCharacterID*& Character_Class);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* Event_On_Join_Request_Reply__UeName = "Event On Join Request Reply";
+        static constexpr const char* Reset_Player_Location__UeName = "Reset Player Location";
+        static constexpr const char* Setup_Change_User__UeName = "Setup Change User";
+        static constexpr const char* Setup_Retirement_Notification__UeName = "Setup Retirement Notification";
+        static constexpr const char* Setup_Invite_Handling__UeName = "Setup Invite Handling";
+        static constexpr const char* Return_Client_Camera__UeName = "Return Client Camera";
+    };
 };
 
 }}   // namespace Game::Game

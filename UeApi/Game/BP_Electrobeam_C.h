@@ -13,7 +13,11 @@ class BP_Electrobeam_C : public AElectroBeam
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ElectricPlant/BP_Electrobeam", "BP_Electrobeam_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ElectricPlant

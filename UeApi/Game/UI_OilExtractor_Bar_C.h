@@ -19,7 +19,7 @@ class UI_OilExtractor_Bar_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/Extractor/UI_OilExtractor_Bar", "UI_OilExtractor_Bar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Full;
+    UE_READONLY class UWidgetAnimation* Full;
     class UProgressBar* ProgressBar_41;
     class UTextBlock* TextBlock_70;
     void ExecuteUbergraph_UI_OilExtractor_Bar(int EntryPoint);

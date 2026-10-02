@@ -18,13 +18,17 @@ class ESI_BhaBarnacle_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Critters/BhaBarnacle/ESI_BhaBarnacle", "ESI_BhaBarnacle_C");
     class UStaticMeshComponent* SM_Stone_008;
-    static constexpr const char* SM_Stone_008__UeScsNode = "90c5c79ea267924baeacbf832c49ad4d";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c42ac8e8e3470840823c30c8c657ae69";
     class UStaticMeshComponent* SM_Stone_007;
-    static constexpr const char* SM_Stone_007__UeScsNode = "604232542a31764c91e5309e1b08a125";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f2f02a1533d0204c83ff48413056cd24";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Stone_008__UeScsNode = "90c5c79ea267924baeacbf832c49ad4d";
+        static constexpr const char* SkeletalMesh__UeScsNode = "c42ac8e8e3470840823c30c8c657ae69";
+        static constexpr const char* SM_Stone_007__UeScsNode = "604232542a31764c91e5309e1b08a125";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f2f02a1533d0204c83ff48413056cd24";
+    };
 };
 
 }}}   // namespace Game::Critters::BhaBarnacle

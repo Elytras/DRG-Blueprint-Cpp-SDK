@@ -21,13 +21,9 @@ class BP_TunnelGem_C : public Game::GameElements::Resources::Embedded::Gems::BP_
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelGem", "BP_TunnelGem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_TunnelGem_C;
-    static constexpr const char* UberGraphFrame_BP_TunnelGem_C__UeName = "UberGraphFrame";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "b7a18ed98181e44ebb49dc77c53998f4";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "338476daacd03540a4e43cbc0d7926dc";
     FTransform RemoteCarriableTransform;
     FVector CachedScale;
     void ExecuteUbergraph_BP_TunnelGem(int EntryPoint);
@@ -40,6 +36,14 @@ public:
     UE_MULTICAST UE_RELIABLE void GrantBoneFragmentProcess(FVector Location);
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_TunnelGem_C__UeName = "UberGraphFrame";
+        static constexpr const char* Audio__UeScsNode = "b7a18ed98181e44ebb49dc77c53998f4";
+        static constexpr const char* PointLight__UeScsNode = "338476daacd03540a4e43cbc0d7926dc";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent

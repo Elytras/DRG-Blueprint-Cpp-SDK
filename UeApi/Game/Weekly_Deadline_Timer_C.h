@@ -30,9 +30,13 @@ public:
     class UWeeklyTimerCampaignRequirement* Requirement;
     void ExecuteUbergraph_Weekly_Deadline_Timer(int EntryPoint);
     void Update_Time();
-    static constexpr const char* Update_Time__UeName = "Update Time";
     void SetData(class UCampaign* Campaign_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Time__UeName = "Update Time";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign

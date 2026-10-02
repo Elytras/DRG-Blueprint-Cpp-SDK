@@ -13,6 +13,11 @@ class STE_StingerMobilityLimiter_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stinger/STE_StingerMobilityLimiter", "STE_StingerMobilityLimiter_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AddComponentStatusEffectItem AddComponentStatusEffectItem_1;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stinger

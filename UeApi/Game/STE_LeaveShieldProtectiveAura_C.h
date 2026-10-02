@@ -13,6 +13,11 @@ class STE_LeaveShieldProtectiveAura_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ShieldGenerator/STE_LeaveShieldProtectiveAura", "STE_LeaveShieldProtectiveAura_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator

@@ -17,19 +17,23 @@ class BP_SeasonsConsole_C : public Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsol
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_SeasonsConsole", "BP_SeasonsConsole_C");
     class UWidgetComponent* Widget_SeasonTerminal;
-    static constexpr const char* Widget_SeasonTerminal__UeScsNode = "89f68a034484d04ca76e081c17b970bf";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "fb1faf04b78a2f459644473590631970";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "c0977677c570394f812ae939a2c759c2";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "4cb858d68e83c94dbf49af94490152d6";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "10a6a847d830ba4daaf91f9d17d293b7";
     class UWidgetComponent* Widget_NextReward;
-    static constexpr const char* Widget_NextReward__UeScsNode = "76ca155f8aed004cb23ac5153c3b4731";
     class UWidgetComponent* Widget_Progress;
-    static constexpr const char* Widget_Progress__UeScsNode = "ec96a357dc23c145ac265ccc41d4f10a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget_SeasonTerminal__UeScsNode = "89f68a034484d04ca76e081c17b970bf";
+        static constexpr const char* PointLight4__UeScsNode = "fb1faf04b78a2f459644473590631970";
+        static constexpr const char* PointLight3__UeScsNode = "c0977677c570394f812ae939a2c759c2";
+        static constexpr const char* PointLight2__UeScsNode = "4cb858d68e83c94dbf49af94490152d6";
+        static constexpr const char* PointLight1__UeScsNode = "10a6a847d830ba4daaf91f9d17d293b7";
+        static constexpr const char* Widget_NextReward__UeScsNode = "76ca155f8aed004cb23ac5153c3b4731";
+        static constexpr const char* Widget_Progress__UeScsNode = "ec96a357dc23c145ac265ccc41d4f10a";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

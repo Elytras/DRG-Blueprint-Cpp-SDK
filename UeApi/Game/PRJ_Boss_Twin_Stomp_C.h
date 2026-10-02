@@ -21,20 +21,24 @@ class PRJ_Boss_Twin_Stomp_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/PRJ_Boss_Twin_Stomp", "PRJ_Boss_Twin_Stomp_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Twin_B_ProjectileBarrage_Cue;
-    static constexpr const char* Twin_B_ProjectileBarrage_Cue__UeScsNode = "8a449cb7ee289941bf3254ec720845d0";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "f0061a0750c3f74fa168b082272869e3";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "53ce39934872e24e9300f1454588e35d";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "ea13b15d213efd4e8e260851213ea4c3";
     void ExecuteUbergraph_PRJ_Boss_Twin_Stomp(int EntryPoint);
     void CustomEvent_0(class AActor* DestroyedActor);
     void ReceiveBeginPlay();
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Twin_B_ProjectileBarrage_Cue__UeScsNode = "8a449cb7ee289941bf3254ec720845d0";
+        static constexpr const char* Niagara__UeScsNode = "f0061a0750c3f74fa168b082272869e3";
+        static constexpr const char* Damage__UeScsNode = "53ce39934872e24e9300f1454588e35d";
+        static constexpr const char* Box__UeScsNode = "ea13b15d213efd4e8e260851213ea4c3";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

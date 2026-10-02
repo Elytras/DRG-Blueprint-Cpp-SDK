@@ -17,18 +17,22 @@ class BP_GreatEggHunt_EggCluster_C : public AStaticMeshActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_GreatEggHunt_EggCluster", "BP_GreatEggHunt_EggCluster_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<class UTexture*> Textures_Eggs;
     TArray<class UStaticMesh*> Meshes;
     FRandomStream RandomStream;
     int RandomSeed;
-    static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
     void ExecuteUbergraph_BP_GreatEggHunt_EggCluster(int EntryPoint);
     void ReceiveBeginPlay();
     void OnRep_UsedMesh();
     void OnRep_UsedTextures();
     void OnRep_RandomSeed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.StaticMeshComponent StaticMeshComponent0";
+        static constexpr const char* RandomSeed__Replicated = "OnRep_RandomSeed:";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint

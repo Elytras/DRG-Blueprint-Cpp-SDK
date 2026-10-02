@@ -21,7 +21,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_Trading_DailyDeal", "ITM_Trading_DailyDeal_C");
     using ITM_Trading_ResourcePoster_C = Game::UI::Menu_Trading::ITM_Trading_ResourcePoster_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* SalesBubblePing;
+    UE_READONLY class UWidgetAnimation* SalesBubblePing;
     class UImage* I_SaleBubble;
     class UImage* I_SaleBubbleBG;
     class UImage* I_TopBG;

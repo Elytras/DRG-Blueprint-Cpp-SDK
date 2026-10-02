@@ -18,16 +18,20 @@ class BP_MorkiteChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Veins/ResourceChunks/BP_MorkiteChunk", "BP_MorkiteChunk_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d9c907ce8451714c80215fd416564f97";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "26801aab3eca7e47afa1ceace6b5bb7f";
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";
     void ExecuteUbergraph_BP_MorkiteChunk(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
+        static constexpr const char* Sphere__UeScsNode = "d9c907ce8451714c80215fd416564f97";
+        static constexpr const char* PointLight__UeScsNode = "26801aab3eca7e47afa1ceace6b5bb7f";
+        static constexpr const char* Cube__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks

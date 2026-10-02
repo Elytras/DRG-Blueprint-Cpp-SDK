@@ -20,15 +20,10 @@ class PRJ_Spider_Lobber_Projectile_C : public Game::Enemies::Spider::Lobber::PRJ
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/PRJ_Spider_Lobber_Projectile", "PRJ_Spider_Lobber_Projectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Spider_Lobber_Projectile_C;
-    static constexpr const char* UberGraphFrame_PRJ_Spider_Lobber_Projectile_C__UeName = "UberGraphFrame";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "0b3d9ac6275a3348986092674d0c2047";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "b24a2be5a9aed44584c96d245f527e69";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_1997C95D415B8B6775FF2BACB50CF47A";
     TEnum<ETimelineDirection> Timeline_0__Direction_1997C95D415B8B6775FF2BACB50CF47A;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_PRJ_Spider_Lobber_Projectile(int EntryPoint);
@@ -40,6 +35,15 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void SpawnSmallGoo(FVector InVec);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_Spider_Lobber_Projectile_C__UeName = "UberGraphFrame";
+        static constexpr const char* SimpleHealth__UeScsNode = "0b3d9ac6275a3348986092674d0c2047";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "b24a2be5a9aed44584c96d245f527e69";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_1997C95D415B8B6775FF2BACB50CF47A";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber

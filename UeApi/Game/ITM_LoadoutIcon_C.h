@@ -26,12 +26,16 @@ public:
     class UBorder* SelectionBorder;
     TMulticastInlineDelegate<void(class UTexture2D* Texture, int Param_Index_0)> OnClicked;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     void ExecuteUbergraph_ITM_LoadoutIcon(int EntryPoint);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void SetData(class UTexture2D* Texture, int Param_Index_0);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Loadout::LoadoutSelection

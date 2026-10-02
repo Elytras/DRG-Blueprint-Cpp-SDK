@@ -13,6 +13,11 @@ class STE_TranqSlowdown_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/Overclocks/OC_BonusesAndPenalties/STE_TranqSlowdown", "STE_TranqSlowdown_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties

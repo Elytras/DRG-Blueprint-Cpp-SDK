@@ -17,7 +17,6 @@ class UI_RunningMultiText_C : public Game::UI::MainOnscreenHUD::Standard::Basic_
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/UI_RunningMultiText", "UI_RunningMultiText_C");
     FPointerToUberGraphFrame UberGraphFrame_UI_RunningMultiText_C;
-    static constexpr const char* UberGraphFrame_UI_RunningMultiText_C__UeName = "UberGraphFrame";
     TArray<FText> texts;
     float DelayBetweenText;
     float TextDuration;
@@ -40,6 +39,11 @@ public:
     void SetNextLine();
     void InitRun();
     void PlayCue(class USoundCue* InSound);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_RunningMultiText_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

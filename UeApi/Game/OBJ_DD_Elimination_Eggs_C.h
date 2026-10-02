@@ -16,6 +16,11 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_Elimination_Eggs", "OBJ_DD_Elimination_Eggs_C");
     UE_PURE int GetObjectiveAmount(float missionLength) const;
     FObjectiveMissionIcon GetMissionIcon() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepDive

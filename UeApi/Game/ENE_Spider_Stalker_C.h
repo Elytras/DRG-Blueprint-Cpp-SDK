@@ -16,14 +16,18 @@ class ENE_Spider_Stalker_C : public Game::Enemies::Spider::Stalker::ENE_Spider_S
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/ENE_Spider_Stalker", "ENE_Spider_Stalker_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Stalker_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_C__UeName = "UberGraphFrame";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "f59fc34abffcf943ab615307a734b3af";
     void ExecuteUbergraph_ENE_Spider_Stalker(int EntryPoint);
     void BndEvt__ENE_Spider_Stalker_MeleeAttack_K2Node_ComponentBoundEvent_0_MeleeAttackDelegate__DelegateSignature();
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_C__UeName = "UberGraphFrame";
+        static constexpr const char* MeleeAttack__UeScsNode = "f59fc34abffcf943ab615307a734b3af";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

@@ -30,8 +30,8 @@ public:
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* RadarRotation;
-    class UWidgetAnimation* DeepDiveLogo;
+    UE_READONLY class UWidgetAnimation* RadarRotation;
+    UE_READONLY class UWidgetAnimation* DeepDiveLogo;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     Basic_ResourceIcon_C* Basic_ResourceIcon_0;

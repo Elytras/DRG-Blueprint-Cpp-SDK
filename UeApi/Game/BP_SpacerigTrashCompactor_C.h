@@ -22,18 +22,14 @@ public:
     UE_CLASS("/Game/LevelElements/Spacerig/Spacerig_Fun/SpacerigTrashCompactor/BP_SpacerigTrashCompactor", "BP_SpacerigTrashCompactor_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UInstancedStaticMeshComponent* InstancedStaticMesh;
-    static constexpr const char* InstancedStaticMesh__UeScsNode = "5b3740805424af47a8178248af4da736";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0d1a08464b00cc4094a3af35e180f7b4";
     float FadeOut_Scale_7287E2514093D4CF47DDFC8BAD4637B9;
     TEnum<ETimelineDirection> FadeOut__Direction_7287E2514093D4CF47DDFC8BAD4637B9;
     class UTimelineComponent* FadeOut;
     TArray<FTransform> Instance_Transforms;
-    static constexpr const char* Instance_Transforms__UeName = "Instance Transforms";
     TArray<FVector> MoveVectors;
     TArray<FVector> Rotators;
     float float_headSpeed;
-    static constexpr const char* float_headSpeed__UeName = "float headSpeed";
     int NumberOfHeads;
     TArray<class UStaticMesh*> StaticMeshesList;
     float StartTime;
@@ -53,6 +49,14 @@ public:
     void SetupInstances();
     void AddStaticMeshes(TArray<FTransform>& Transforms);
     void ChooseList();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InstancedStaticMesh__UeScsNode = "5b3740805424af47a8178248af4da736";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0d1a08464b00cc4094a3af35e180f7b4";
+        static constexpr const char* Instance_Transforms__UeName = "Instance Transforms";
+        static constexpr const char* float_headSpeed__UeName = "float headSpeed";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpacerigTrashCompactor

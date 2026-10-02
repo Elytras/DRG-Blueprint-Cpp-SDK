@@ -17,9 +17,13 @@ class DBA_EasterEggHunt_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/Game/Events/GreatEggHunt/DBA_EasterEggHunt", "DBA_EasterEggHunt_C");
     class UDebrisItemComponent* I_Easter;
-    static constexpr const char* I_Easter__UeScsNode = "5efc41119e2022469a22acc33f4020ac";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ebf0b1eed9654e44b29afc6db69e7178";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* I_Easter__UeScsNode = "5efc41119e2022469a22acc33f4020ac";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ebf0b1eed9654e44b29afc6db69e7178";
+    };
 };
 
 }}}}   // namespace Game::Game::Events::GreatEggHunt

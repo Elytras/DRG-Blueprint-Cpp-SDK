@@ -30,25 +30,15 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/PoisonGasFungus/BP_PoisonGasFungus", "BP_PoisonGasFungus_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "f7ffc1d7bd78274dbaaf1b08789e5920";
     class USphereComponent* collider;
-    static constexpr const char* collider__UeScsNode = "95c67d671b033d44ace34754c230acf5";
     class USkeletalMeshComponent* AnimatedBody;
-    static constexpr const char* AnimatedBody__UeScsNode = "d3ed1b06e604944584b25f3941b6415c";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "400868bb75e629418c97e9a703cb9c6d";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "772df927ec791c49aae7a671abb3329e";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "3f0b656c8e8a69449ec13055a956a479";
     class UBillboardComponent* GasReleasePoint;
-    static constexpr const char* GasReleasePoint__UeScsNode = "ab8f65fdb24a1541906094725677069e";
     class USphereComponent* SporesTrigger;
-    static constexpr const char* SporesTrigger__UeScsNode = "12658eeac9d49e468d1117f48ed3209d";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "7aaad2e5b4760045a81f7e1441c44d12";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "1c9805852a434044a0eac69c8cd68a40";
     class UClass* GasCloudClass;
     bool CanTrigger;
     float ResetTime;
@@ -59,6 +49,20 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void BndEvt__SporesTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void SetCanAnimate(bool CanAnimate);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "f7ffc1d7bd78274dbaaf1b08789e5920";
+        static constexpr const char* collider__UeScsNode = "95c67d671b033d44ace34754c230acf5";
+        static constexpr const char* AnimatedBody__UeScsNode = "d3ed1b06e604944584b25f3941b6415c";
+        static constexpr const char* PathfinderCollision__UeScsNode = "400868bb75e629418c97e9a703cb9c6d";
+        static constexpr const char* terrainPlacement__UeScsNode = "772df927ec791c49aae7a671abb3329e";
+        static constexpr const char* TerrainDetect__UeScsNode = "3f0b656c8e8a69449ec13055a956a479";
+        static constexpr const char* GasReleasePoint__UeScsNode = "ab8f65fdb24a1541906094725677069e";
+        static constexpr const char* SporesTrigger__UeScsNode = "12658eeac9d49e468d1117f48ed3209d";
+        static constexpr const char* SimpleHealth__UeScsNode = "7aaad2e5b4760045a81f7e1441c44d12";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "1c9805852a434044a0eac69c8cd68a40";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus

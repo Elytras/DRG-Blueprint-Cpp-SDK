@@ -36,7 +36,6 @@ public:
     void RandomiseGrabTime();
     void FollowTarget();
     void Blood_Particles();
-    static constexpr const char* Blood_Particles__UeName = "Blood Particles";
     void ReceiveCompleteAttack();
     void CustomEvent(class AActor* aGrabbedActor, bool fullGrabElapsed);
     void CustomEvent_1(class AActor* aGrabbedActor);
@@ -49,6 +48,11 @@ public:
     void FinalCheckRangeTargetLOS(class AActor* CurrentTarget_0, bool& HaveLOS);
     void ThrowPlayer(class UObject* Object);
     void StopAttack();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Blood_Particles__UeName = "Blood Particles";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

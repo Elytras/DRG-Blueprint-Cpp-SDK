@@ -17,7 +17,6 @@ class BP_New_SnowStorm_C : public Game::Landscape::Biomes::BP_WeatherEffect_C
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/IceCaves/BP_New_SnowStorm", "BP_New_SnowStorm_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_New_SnowStorm_C;
-    static constexpr const char* UberGraphFrame_BP_New_SnowStorm_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_321EE05E466F9B8147EEF89FEA0B8335;
     TEnum<ETimelineDirection> Fadeout__Direction_321EE05E466F9B8147EEF89FEA0B8335;
     class UTimelineComponent* FadeOut;
@@ -31,6 +30,11 @@ public:
     void Fadeout__FinishedFunc();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_New_SnowStorm_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves

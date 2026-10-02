@@ -13,6 +13,11 @@ class STE_HeroEnemies_Spitter_Menace_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/HeroEnemies/STE_HeroEnemies_Spitter_Menace", "STE_HeroEnemies_Spitter_Menace_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureStatusEffectItem EnemyTemperatureStatusEffectItem_0;/Script/FSD.FSDPawnStatusEffectItem FSDPawnStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies

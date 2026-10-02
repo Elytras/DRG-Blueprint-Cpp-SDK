@@ -25,23 +25,27 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_QuickJoinGameConsole", "BP_QuickJoinGameConsole_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "73a19f146364174387fc793e416bc682";
     class UTextRenderComponent* TextRender1;
-    static constexpr const char* TextRender1__UeScsNode = "6a19d2b8b5d9e24eb9b5fb189683b834";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "d4319a0239b274459691cde14d7d4a74";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "f773d430645dc149bb88891e4a8acf61";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
     void ExecuteUbergraph_BP_QuickJoinGameConsole(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "73a19f146364174387fc793e416bc682";
+        static constexpr const char* TextRender1__UeScsNode = "6a19d2b8b5d9e24eb9b5fb189683b834";
+        static constexpr const char* Widget__UeScsNode = "d4319a0239b274459691cde14d7d4a74";
+        static constexpr const char* StaticMesh1__UeScsNode = "f773d430645dc149bb88891e4a8acf61";
+        static constexpr const char* Box__UeScsNode = "b9e09c544a3da546ab62a5eb219127bb";
+        static constexpr const char* InstantUsable__UeScsNode = "0b202b427341814b8939885b0b5c595c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "094239a8c748684a94db65cc6ef454f0";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

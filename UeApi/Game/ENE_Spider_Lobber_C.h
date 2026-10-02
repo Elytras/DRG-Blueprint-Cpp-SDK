@@ -18,17 +18,21 @@ class ENE_Spider_Lobber_C : public Game::Enemies::Spider::Lobber::ENE_Spider_Lob
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/ENE_Spider_Lobber", "ENE_Spider_Lobber_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Lobber_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Lobber_C__UeName = "UberGraphFrame";
     class UProjectileAttackComponent* ProjectileAttackNarrow;
-    static constexpr const char* ProjectileAttackNarrow__UeScsNode = "34d06eb3a5bca14a9ad56827c530b896";
     class UProjectileAttackComponent* ProjectileAttack;
-    static constexpr const char* ProjectileAttack__UeScsNode = "cbae92cb2a775b48854a47c5e8d5067b";
     void ExecuteUbergraph_ENE_Spider_Lobber(int EntryPoint);
     void BndEvt__ENE_Spider_Lobber_ProjectileAttackNarrow_K2Node_ComponentBoundEvent_2_ProjetileSpawnedDelegate__DelegateSignature(class AProjectileBase* Projectile, class AActor* Target);
     void BndEvt__ENE_Spider_Lobber_ProjectileAttack_K2Node_ComponentBoundEvent_1_ProjetileSpawnedDelegate__DelegateSignature(class AProjectileBase* Projectile, class AActor* Target);
     void GetEnemySpawnedCount(int& SpawnCount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Lobber_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProjectileAttackNarrow__UeScsNode = "34d06eb3a5bca14a9ad56827c530b896";
+        static constexpr const char* ProjectileAttack__UeScsNode = "cbae92cb2a775b48854a47c5e8d5067b";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber

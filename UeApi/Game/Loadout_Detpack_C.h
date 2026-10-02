@@ -17,15 +17,19 @@ class Loadout_Detpack_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/Loadout_Detpack", "Loadout_Detpack_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "174e65c0e952864c957c8db46d7f59b2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "75c9719f12829843921add42dddd2277";
     void ExecuteUbergraph_Loadout_Detpack(int EntryPoint);
     void RecieveUnequipped();
     void RecieveEquipped();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* StaticMesh__UeScsNode = "174e65c0e952864c957c8db46d7f59b2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "75c9719f12829843921add42dddd2277";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DetPack

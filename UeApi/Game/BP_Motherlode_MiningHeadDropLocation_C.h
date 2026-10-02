@@ -16,7 +16,11 @@ class BP_Motherlode_MiningHeadDropLocation_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/Minehead/BP_Motherlode_MiningHeadDropLocation", "BP_Motherlode_MiningHeadDropLocation_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3a7dc339427e874ab7834688a218b665";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3a7dc339427e874ab7834688a218b665";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Minehead

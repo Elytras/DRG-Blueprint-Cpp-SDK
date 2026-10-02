@@ -18,16 +18,20 @@ public:
     UE_CLASS("/Game/Character/Tutorials/Tutorial_Hint_EggMissionTerrainScanner", "Tutorial_Hint_EggMissionTerrainScanner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     float First_Time_Delay;
-    static constexpr const char* First_Time_Delay__UeName = "First Time Delay";
-    class UClass* Target_Objective;
-    static constexpr const char* Target_Objective__UeName = "Target Objective";
-    float AfterUseDelay;
+    UE_READONLY class UClass* Target_Objective;
+    UE_READONLY float AfterUseDelay;
     void ExecuteUbergraph_Tutorial_Hint_EggMissionTerrainScanner(int EntryPoint);
     void ReceiveOnHidden();
     void Mark_Ready();
-    static constexpr const char* Mark_Ready__UeName = "Mark Ready";
     void OnToggleMapTool_Event(bool Visible);
     void ReceiveOnInitialized();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* First_Time_Delay__UeName = "First Time Delay";
+        static constexpr const char* Target_Objective__UeName = "Target Objective";
+        static constexpr const char* Mark_Ready__UeName = "Mark Ready";
+    };
 };
 
 }}}   // namespace Game::Character::Tutorials

@@ -21,24 +21,28 @@ public:
     using BP_DepthCountWidget_C = Game::Maps::UILevels::Assets::HUD::BP_DepthCountWidget_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_Pinger;
-    static constexpr const char* Widget_Pinger__UeName = "Widget Pinger";
-    static constexpr const char* Widget_Pinger__UeScsNode = "cb88b43d156c87429cba6deb0bf12491";
     class UWidgetComponent* DepthWidget;
-    static constexpr const char* DepthWidget__UeScsNode = "9b3232ea2776c3429d6830f04fc7bfce";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
     BP_DepthCountWidget_C* Widget;
     float NewDepth;
     float currentDepth;
     bool PingActive;
     class UAudioComponent* Audio_Component;
-    static constexpr const char* Audio_Component__UeName = "Audio Component";
     FTimerHandle PingHandle;
     void ExecuteUbergraph_BP_DepthCount(int EntryPoint);
     void DoPing();
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     void SetPingActive(bool InPingActive);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget_Pinger__UeName = "Widget Pinger";
+        static constexpr const char* Widget_Pinger__UeScsNode = "cb88b43d156c87429cba6deb0bf12491";
+        static constexpr const char* DepthWidget__UeScsNode = "9b3232ea2776c3429d6830f04fc7bfce";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
+        static constexpr const char* Audio_Component__UeName = "Audio Component";
+    };
 };
 
 }}}}}   // namespace Game::Maps::UILevels::Assets::HUD

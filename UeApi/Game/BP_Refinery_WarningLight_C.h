@@ -20,14 +20,18 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_WarningLight", "BP_Refinery_WarningLight_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "47da8e5d2a49044d836dbf397f8f1819";
     class UStaticMeshComponent* ST_Refinery_WarningLight;
-    static constexpr const char* ST_Refinery_WarningLight__UeScsNode = "230eb47f441b5645b28e6e1e2e78ccd7";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
     void ExecuteUbergraph_BP_Refinery_WarningLight(int EntryPoint);
     void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "47da8e5d2a49044d836dbf397f8f1819";
+        static constexpr const char* ST_Refinery_WarningLight__UeScsNode = "230eb47f441b5645b28e6e1e2e78ccd7";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a9715d697d0c7445aae7c7c34ec7ab74";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

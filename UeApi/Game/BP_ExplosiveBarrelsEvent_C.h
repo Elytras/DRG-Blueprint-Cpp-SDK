@@ -30,47 +30,27 @@ class BP_ExplosiveBarrelsEvent_C : public AExplosiveBarrelEvent
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_ExplosiveBarrelsEvent", "BP_ExplosiveBarrelsEvent_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/FSD.DamageComponent EndDamage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
-    static constexpr const char* MeshCarver__UeScsNode = "a0263cdd9565524aae1ddf86d35c0d12";
     class UPathfinderCollisionComponent* PathfinderCollision1;
-    static constexpr const char* PathfinderCollision1__UeScsNode = "2a207bf65113c14aa240489ccf1a5699";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "3edc336df52a3d4397f4e3c1d2afdcee";
     class UCapsuleComponent* Capsule1;
-    static constexpr const char* Capsule1__UeScsNode = "38e97496b48f5142ae02ebadc8d436e7";
     class UChildActorComponent* Starter8;
-    static constexpr const char* Starter8__UeScsNode = "973d9141a90b0d4c8e0ee0a3e30cf5d1";
     class UChildActorComponent* Starter7;
-    static constexpr const char* Starter7__UeScsNode = "216e9511f4c8554f9af2bc01178cbeaf";
     class UChildActorComponent* Starter1;
-    static constexpr const char* Starter1__UeScsNode = "5998b9c48ef2214f80eae237fcc08756";
     class UChildActorComponent* Starter2;
-    static constexpr const char* Starter2__UeScsNode = "262f7ee713ab014a817c39d4d92dc3d3";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "48dac551eac9164f86267de86923b732";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "06aacb16aa278247960ef0899357359c";
     class URoomCarverComponent* RoomCarver;
-    static constexpr const char* RoomCarver__UeScsNode = "4f21e8878b22cb43b50c3164357b55f6";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "34345d9c06c4684da387c336bcf54eea";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "ceba348f65a2f247a822a28a15b5c6dd";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "87b40482b213364e8c7a28956610caed";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "8ea17ba21c23c44cb51d344a7d1ec433";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "523873ad80964d4289ba6b9104a23733";
     class UEnemyHealthComponent* EnemyHealth;
-    static constexpr const char* EnemyHealth__UeScsNode = "78d4f0fafd4d7c4c801d0d2f230a18c9";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "3a63d262e28bbc49993c9ef3fb09a8ed";
     FVector PodSpawnLocation;
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     FLinearColor InitialColor;
     FLinearColor FinalColor;
     FLinearColor InitialEdgeColor;
@@ -91,6 +71,30 @@ public:
     void OnEventFinished(bool eventSuccess);
     void OnEventTriggered();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame.BP_RewardFrame_C StartEventObject:StartEventObject_BP_RewardFrame_C_CAT;/Script/Engine.ChildActorComponent StartEventObject;/Script/FSD.DamageComponent EndDamage;/Script/Engine.SceneComponent Root;/Script/FSD.SpecialEventUsableComponent StartEventObject:StartEventObject_BP_RewardFrame_C_CAT:EventUsable";
+        static constexpr const char* MeshCarver__UeScsNode = "a0263cdd9565524aae1ddf86d35c0d12";
+        static constexpr const char* PathfinderCollision1__UeScsNode = "2a207bf65113c14aa240489ccf1a5699";
+        static constexpr const char* PathfinderCollision__UeScsNode = "3edc336df52a3d4397f4e3c1d2afdcee";
+        static constexpr const char* Capsule1__UeScsNode = "38e97496b48f5142ae02ebadc8d436e7";
+        static constexpr const char* Starter8__UeScsNode = "973d9141a90b0d4c8e0ee0a3e30cf5d1";
+        static constexpr const char* Starter7__UeScsNode = "216e9511f4c8554f9af2bc01178cbeaf";
+        static constexpr const char* Starter1__UeScsNode = "5998b9c48ef2214f80eae237fcc08756";
+        static constexpr const char* Starter2__UeScsNode = "262f7ee713ab014a817c39d4d92dc3d3";
+        static constexpr const char* StaticMesh__UeScsNode = "48dac551eac9164f86267de86923b732";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "06aacb16aa278247960ef0899357359c";
+        static constexpr const char* RoomCarver__UeScsNode = "4f21e8878b22cb43b50c3164357b55f6";
+        static constexpr const char* outline__UeScsNode = "34345d9c06c4684da387c336bcf54eea";
+        static constexpr const char* Capsule__UeScsNode = "ceba348f65a2f247a822a28a15b5c6dd";
+        static constexpr const char* SkeletalMesh__UeScsNode = "87b40482b213364e8c7a28956610caed";
+        static constexpr const char* enemy__UeScsNode = "8ea17ba21c23c44cb51d344a7d1ec433";
+        static constexpr const char* StaticMesh1__UeScsNode = "523873ad80964d4289ba6b9104a23733";
+        static constexpr const char* EnemyHealth__UeScsNode = "78d4f0fafd4d7c4c801d0d2f230a18c9";
+        static constexpr const char* terrainPlacement__UeScsNode = "3a63d262e28bbc49993c9ef3fb09a8ed";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent

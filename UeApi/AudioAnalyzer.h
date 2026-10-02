@@ -25,6 +25,6 @@ class UAudioAnalyzerNRT : public UAudioAnalyzerAsset
 {
 public:
     UE_CLASS("/Script/AudioAnalyzer", "AudioAnalyzerNRT");
-    class USoundWave* Sound;
-    float DurationInSeconds;
+    UE_READONLY class USoundWave* Sound;
+    UE_READONLY float DurationInSeconds;
 };

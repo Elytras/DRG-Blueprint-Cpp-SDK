@@ -27,21 +27,13 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryItem_PlaceMarker", "BP_SentryItem_PlaceMarker_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* ArcIndicator;
-    static constexpr const char* ArcIndicator__UeScsNode = "82d27f15e0dcda4a8d642b1d2cb043a9";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "c6b1f4792a24f74f9569296cb384f13a";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "bc08e539a9480549a946f3ae09c275ea";
     class UStaticMeshComponent* RightLine;
-    static constexpr const char* RightLine__UeScsNode = "48a4d5f818df7c43ad7e445897b7cdf7";
     class UStaticMeshComponent* LeftLine;
-    static constexpr const char* LeftLine__UeScsNode = "6c27e918d0dce14aa6cd763f421b8a2e";
     class USceneComponent* AimScene;
-    static constexpr const char* AimScene__UeScsNode = "8caa88f5a306284eb66792027ba607ea";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "317f3455b3e5e447bd3af1dffc81a4a2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "54288da85ae72b4393ed51a6b571ce46";
     class UMaterialInstanceDynamic* Material;
     FName ColorName;
     FLinearColor ValidColor;
@@ -53,6 +45,18 @@ public:
     void UserConstructionScript();
     void SetMaterials(class UMeshComponent* Mesh, class UMaterialInterface* ParentMaterial, class UMaterialInstanceDynamic*& DynamicMaterial);
     void SetAngleRestriction(float AngleRestriction);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ArcIndicator__UeScsNode = "82d27f15e0dcda4a8d642b1d2cb043a9";
+        static constexpr const char* SkeletalMesh__UeScsNode = "c6b1f4792a24f74f9569296cb384f13a";
+        static constexpr const char* Scene__UeScsNode = "bc08e539a9480549a946f3ae09c275ea";
+        static constexpr const char* RightLine__UeScsNode = "48a4d5f818df7c43ad7e445897b7cdf7";
+        static constexpr const char* LeftLine__UeScsNode = "6c27e918d0dce14aa6cd763f421b8a2e";
+        static constexpr const char* AimScene__UeScsNode = "8caa88f5a306284eb66792027ba607ea";
+        static constexpr const char* Arrow__UeScsNode = "317f3455b3e5e447bd3af1dffc81a4a2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "54288da85ae72b4393ed51a6b571ce46";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

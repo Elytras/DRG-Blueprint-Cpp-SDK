@@ -21,10 +21,14 @@ public:
     float PercentageChanceAfterThreshold;
     void ExecuteUbergraph_AC_ScrabTankButtonCooldown(int EntryPoint);
     void Mission_Punish_Shoud_CD_Timer_Elapsed();
-    static constexpr const char* Mission_Punish_Shoud_CD_Timer_Elapsed__UeName = "Mission Punish Shoud CD Timer Elapsed";
     void Start_Cooldown();
-    static constexpr const char* Start_Cooldown__UeName = "Start Cooldown";
     void PressButton(bool& Activated);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mission_Punish_Shoud_CD_Timer_Elapsed__UeName = "Mission Punish Shoud CD Timer Elapsed";
+        static constexpr const char* Start_Cooldown__UeName = "Start Cooldown";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank

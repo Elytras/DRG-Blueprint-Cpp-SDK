@@ -26,7 +26,7 @@ class ITM_Season01EventBonus_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season01EventBonus", "ITM_Season01EventBonus_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OnHover;
+    UE_READONLY class UWidgetAnimation* OnHover;
     class UBorder* Border_Token;
     class UButton* Button_Outer;
     class UWidgetSwitcher* CLAIM;

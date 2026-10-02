@@ -19,7 +19,7 @@ class ITM_Trading_ResourcePoster_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_Trading_ResourcePoster", "ITM_Trading_ResourcePoster_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Pan1;
+    UE_READONLY class UWidgetAnimation* Pan1;
     class UImage* I_IconsMaterial;
     class UImage* I_PosterImage;
     class UImage* Image_Resource;

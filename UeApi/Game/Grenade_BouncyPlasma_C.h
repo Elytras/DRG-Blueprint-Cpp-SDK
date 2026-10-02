@@ -21,15 +21,10 @@ class Grenade_BouncyPlasma_C : public Game::WeaponsNTools::Grenades::ITM_Grenade
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Bouncy/Grenade_BouncyPlasma", "Grenade_BouncyPlasma_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_BouncyPlasma_C;
-    static constexpr const char* UberGraphFrame_Grenade_BouncyPlasma_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "9d1fccefb67a5047abbbac19756eb73d";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "e6d7b5277d65a74f8be339e92563f4e2";
     int ExplosionCount;
-    static constexpr const char* ExplosionCount__Replicated = "OnRep_ExplosionCount:";
     int MaxExplosions;
     float ConcecutiveExplosionsDelay;
     bool Exploded;
@@ -41,6 +36,15 @@ public:
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_ExplosionCount();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_BouncyPlasma_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "9d1fccefb67a5047abbbac19756eb73d";
+        static constexpr const char* Damage__UeScsNode = "e6d7b5277d65a74f8be339e92563f4e2";
+        static constexpr const char* ExplosionCount__Replicated = "OnRep_ExplosionCount:";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Bouncy

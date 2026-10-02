@@ -22,7 +22,6 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_BossFight_PlagueMeteor", "HUD_BossFight_PlagueMeteor_C");
     using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_BossFight_PlagueMeteor_C;
-    static constexpr const char* UberGraphFrame_HUD_BossFight_PlagueMeteor_C__UeName = "UberGraphFrame";
     class UImage* Image_316;
     class UImage* Image_401;
     ITM_BossFightContainer_C* ITM_BossFightContainer;
@@ -35,6 +34,11 @@ public:
     void OnBossRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     void MeteorHealthChanged(float CurrentProgress);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_HUD_BossFight_PlagueMeteor_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

@@ -64,12 +64,11 @@ public:
     TEnum<ECommunityUIState> CurrentState;
     TEnum<ECommunityUIState> LastState;
     bool IsRecruitmentPeriod;
-    TArray<class UCommunityGoalFaction*> FactionData;
+    UE_READONLY TArray<class UCommunityGoalFaction*> FactionData;
     bool IsGoalPeriod;
     void ExecuteUbergraph_Screen_DiscordScreen(int EntryPoint);
     void OnGoalInitialized();
     void Refresh_Ui();
-    static constexpr const char* Refresh_Ui__UeName = "Refresh Ui";
     void OnFactionChangedEvent();
     void BndEvt__ClaimRewardButton_K2Node_ComponentBoundEvent_15_OnClicked__DelegateSignature();
     void ResetFactionCheckState();
@@ -81,7 +80,6 @@ public:
     void CheckState();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Do_Running_Text(FText Text, int Index_0, class UTextBlock* Target);
-    static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
     UE_COSMETIC void Construct();
     void TestCommunityGoals();
     void SetGoals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members);
@@ -93,6 +91,12 @@ public:
     void SetResult(ITM_CommunityGoalResult_C* ResultUI, int FactionID);
     void RefreshCurrentState();
     void BuildProgressUI(bool ForceRefresh);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Refresh_Ui__UeName = "Refresh Ui";
+        static constexpr const char* Do_Running_Text__UeName = "Do Running Text";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

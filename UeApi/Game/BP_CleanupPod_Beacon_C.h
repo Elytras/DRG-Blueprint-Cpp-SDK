@@ -17,11 +17,15 @@ class BP_CleanupPod_Beacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyP
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_CleanupPod_Beacon", "BP_CleanupPod_Beacon_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_CleanupPod_Beacon_C;
-    static constexpr const char* UberGraphFrame_BP_CleanupPod_Beacon_C__UeName = "UberGraphFrame";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "34302ab890a6d240a6547023add263b1";
     void ExecuteUbergraph_BP_CleanupPod_Beacon(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_CleanupPod_Beacon_C__UeName = "UberGraphFrame";
+        static constexpr const char* terrainPlacement__UeScsNode = "34302ab890a6d240a6547023add263b1";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod

@@ -50,16 +50,20 @@ public:
     void ExecuteUbergraph_UI_MissionStats_View(int EntryPoint);
     void OnCategorySelectionChanged();
     void Setup_Category_Selection();
-    static constexpr const char* Setup_Category_Selection__UeName = "Setup Category Selection";
     void OnHoverEnd_Event(UI_MissionStats_Item_C* Sender);
     void OnHoverBegin_Event(UI_MissionStats_Item_C* Sender);
     void Set_Selected_Item(UI_MissionStats_Item_C* SelectedLine_0);
-    static constexpr const char* Set_Selected_Item__UeName = "Set Selected Item";
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetMissionStats(TArray<class UMissionStat*>& assets);
     void SortStats(TArray<class UMissionStat*>& InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
     void NextStoreMode();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Category_Selection__UeName = "Setup Category Selection";
+        static constexpr const char* Set_Selected_Item__UeName = "Set Selected Item";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

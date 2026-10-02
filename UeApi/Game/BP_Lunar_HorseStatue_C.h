@@ -23,21 +23,25 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_LunarFestival/Blueprints/BP_Lunar_HorseStatue", "BP_Lunar_HorseStatue_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Collider1;
-    static constexpr const char* Collider1__UeScsNode = "0060a6b9f82d6e4385ee418bb40adc0b";
     class UNiagaraComponent* NS_Lunar_LuckyGlow_Burst;
-    static constexpr const char* NS_Lunar_LuckyGlow_Burst__UeScsNode = "838333cedf4dfe4c8585710a7e9fdea5";
     class UCapsuleComponent* collider;
-    static constexpr const char* collider__UeScsNode = "9b452c824c5cba4493b110dfd345468c";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "18c454ae1ea1c348b74bc06f2a978b69";
     class UStaticMeshComponent* SM_Lunar_RabbitStatue;
-    static constexpr const char* SM_Lunar_RabbitStatue__UeScsNode = "9697c6d0ca36014ea552f13b9fce2b3b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0e962e40b6f1ee43a53736fb5d7e239e";
     void ExecuteUbergraph_BP_Lunar_HorseStatue(int EntryPoint);
     UE_MULTICAST void All_PlayParticles();
     void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Collider1__UeScsNode = "0060a6b9f82d6e4385ee418bb40adc0b";
+        static constexpr const char* NS_Lunar_LuckyGlow_Burst__UeScsNode = "838333cedf4dfe4c8585710a7e9fdea5";
+        static constexpr const char* collider__UeScsNode = "9b452c824c5cba4493b110dfd345468c";
+        static constexpr const char* InstantUsable__UeScsNode = "18c454ae1ea1c348b74bc06f2a978b69";
+        static constexpr const char* SM_Lunar_RabbitStatue__UeScsNode = "9697c6d0ca36014ea552f13b9fce2b3b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0e962e40b6f1ee43a53736fb5d7e239e";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints

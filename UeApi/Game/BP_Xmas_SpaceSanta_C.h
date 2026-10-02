@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Xmas/BP_Xmas_SpaceSanta", "BP_Xmas_SpaceSanta_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SK_Xmas_SantaSleigh_01;
-    static constexpr const char* SK_Xmas_SantaSleigh_01__UeScsNode = "5024f7ba9553cf4ca97fb43982c27354";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "1197e209ed1c3b4e8e0d6901673c5b75";
     class UStaticMeshComponent* SM_SantaSleigh;
-    static constexpr const char* SM_SantaSleigh__UeScsNode = "8508d16f2a5ea14bb76fde27e3bc541e";
     float Radius;
     void ExecuteUbergraph_BP_Xmas_SpaceSanta(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_Xmas_SantaSleigh_01__UeScsNode = "5024f7ba9553cf4ca97fb43982c27354";
+        static constexpr const char* RotatingMovement__UeScsNode = "1197e209ed1c3b4e8e0d6901673c5b75";
+        static constexpr const char* SM_SantaSleigh__UeScsNode = "8508d16f2a5ea14bb76fde27e3bc541e";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas

@@ -32,7 +32,7 @@ public:
     using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UNamedSlot* BelowTooltipSlot;
     class UNamedSlot* BottomSlot;
     Basic_Label_C* BottomText;

@@ -20,23 +20,14 @@ class BP_RepairTreasureboxItem_C : public Game::GameElements::Resources::Embedde
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/BP_RepairTreasureboxItem", "BP_RepairTreasureboxItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_RepairTreasureboxItem_C;
-    static constexpr const char* UberGraphFrame_BP_RepairTreasureboxItem_C__UeName = "UberGraphFrame";
     class UDestinationActorComponent* DestinationActor;
-    static constexpr const char* DestinationActor__UeScsNode = "574de9cdd4551542823a925a3a56974e";
     class UAudioComponent* AudioPingWhenPickedUp;
-    static constexpr const char* AudioPingWhenPickedUp__UeScsNode = "6143c7179e312d468990796f02484103";
     class UAudioComponent* AudioPingWhenNotPickedUp;
-    static constexpr const char* AudioPingWhenNotPickedUp__UeScsNode = "3424e7223e0e714194901d11cd3341e6";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "fd9ebc9936c1c943b6d25a78d73b5e0f";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "4fc7c22759ea2a4cbf340ae5a301d079";
     class UStaticMeshComponent* Distress_Sphere;
-    static constexpr const char* Distress_Sphere__UeScsNode = "87f40b860499ff42b668d9d426c1711f";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "a0dfb7715b317a448810122160e981ee";
     bool IsPickedUp;
     void ExecuteUbergraph_BP_RepairTreasureboxItem(int EntryPoint);
     void Ping();
@@ -44,9 +35,22 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void OnPickedUpLeg();
     void OnDropped_Leg();
-    static constexpr const char* OnDropped_Leg__UeName = "OnDropped Leg";
     void ReceiveBeginPlay();
     UE_PURE float GetPingDelay(float MinDist, float MaxDist, float MinDelay, float MaxDelay);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_RepairTreasureboxItem_C__UeName = "UberGraphFrame";
+        static constexpr const char* DestinationActor__UeScsNode = "574de9cdd4551542823a925a3a56974e";
+        static constexpr const char* AudioPingWhenPickedUp__UeScsNode = "6143c7179e312d468990796f02484103";
+        static constexpr const char* AudioPingWhenNotPickedUp__UeScsNode = "3424e7223e0e714194901d11cd3341e6";
+        static constexpr const char* StaticMesh__UeScsNode = "fd9ebc9936c1c943b6d25a78d73b5e0f";
+        static constexpr const char* terrainPlacement__UeScsNode = "4fc7c22759ea2a4cbf340ae5a301d079";
+        static constexpr const char* Distress_Sphere__UeScsNode = "87f40b860499ff42b668d9d426c1711f";
+        static constexpr const char* PointLight__UeScsNode = "a0dfb7715b317a448810122160e981ee";
+        static constexpr const char* OnDropped_Leg__UeName = "OnDropped Leg";
+    };
 };
 
 }}}   // namespace Game::GameElements::Treasure

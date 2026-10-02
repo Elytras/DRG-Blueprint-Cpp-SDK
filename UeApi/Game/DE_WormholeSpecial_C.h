@@ -22,21 +22,25 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class APlayerCharacter* Character;
     FTransform On_Start_Transform;
-    static constexpr const char* On_Start_Transform__UeName = "On Start Transform";
     BP_WormholeLocation_Base_C* ActiveWormhole;
     void ExecuteUbergraph_DE_WormholeSpecial(int EntryPoint);
     void Disable_Active_Location_Effects();
-    static constexpr const char* Disable_Active_Location_Effects__UeName = "Disable Active Location Effects";
     void Spawn_Teleport_Effects();
-    static constexpr const char* Spawn_Teleport_Effects__UeName = "Spawn Teleport Effects";
     void OnStopEffect();
     void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void Set_Original_position();
-    static constexpr const char* Set_Original_position__UeName = "Set Original position";
     void IsLastActiveWormholeEffect(bool& was_last_effect);
     void Disable_Older_Active_Wormhole_Effects();
-    static constexpr const char* Disable_Older_Active_Wormhole_Effects__UeName = "Disable Older Active Wormhole Effects";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Start_Transform__UeName = "On Start Transform";
+        static constexpr const char* Disable_Active_Location_Effects__UeName = "Disable Active Location Effects";
+        static constexpr const char* Spawn_Teleport_Effects__UeName = "Spawn Teleport Effects";
+        static constexpr const char* Set_Original_position__UeName = "Set Original position";
+        static constexpr const char* Disable_Older_Active_Wormhole_Effects__UeName = "Disable Older Active Wormhole Effects";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

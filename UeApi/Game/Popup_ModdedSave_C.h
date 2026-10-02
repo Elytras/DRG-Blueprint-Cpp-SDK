@@ -55,15 +55,19 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void Set_Create_New_Saveslot_Entry();
-    static constexpr const char* Set_Create_New_Saveslot_Entry__UeName = "Set Create New Saveslot Entry";
     void SetColors();
     void BindSaveslotEvents(ITM_SaveSlot_Entry_C* SaveslotWidget);
     void Reset_Color_on_Non_Selected_Save(class UFSDSaveGame* SaveSlot);
-    static constexpr const char* Reset_Color_on_Non_Selected_Save__UeName = "Reset Color on Non Selected Save";
     void SetCanCancel(bool Can, FText OptionalTooltipText);
     UE_PURE class UWidget* CancelButtonTooltip();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Create_New_Saveslot_Entry__UeName = "Set Create New Saveslot Entry";
+        static constexpr const char* Reset_Color_on_Non_Selected_Save__UeName = "Reset Color on Non Selected Save";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_SaveSlots

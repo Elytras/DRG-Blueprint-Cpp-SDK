@@ -21,7 +21,7 @@ class HUD_CroNewAssaultRifle_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CroNewAssaultRifle", "HUD_CroNewAssaultRifle_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Bracket_Left;
     class UImage* Bracket_Right;
     class UImage* CH_Bottom;
@@ -30,16 +30,20 @@ public:
     class UImage* CH_Top;
     class UImage* Dot;
     float Opacity_High;
-    static constexpr const char* Opacity_High__UeName = "Opacity High";
     class APlayerCharacter* Character;
     float Opacity_Low;
-    static constexpr const char* Opacity_Low__UeName = "Opacity Low";
     void ExecuteUbergraph_HUD_CroNewAssaultRifle(int EntryPoint);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void SetData(class AItem* Item);
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Opacity_High__UeName = "Opacity High";
+        static constexpr const char* Opacity_Low__UeName = "Opacity Low";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

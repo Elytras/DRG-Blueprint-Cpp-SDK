@@ -30,30 +30,19 @@ class WPN_LineCutter_C : public ALineCutter
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/WPN_LineCutter", "WPN_LineCutter_C");
     using PRJ_LineCutter2_C = Game::WeaponsNTools::LineCutter::PRJ_LineCutter2_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* HomingTarget;
-    static constexpr const char* HomingTarget__UeScsNode = "d40d6ec011310946baa6d39b6b2997bd";
     class UFirstPersonWidgetComponent* Widget_TotalAmmo;
-    static constexpr const char* Widget_TotalAmmo__UeScsNode = "9509548ba9c4d1409554bb8ebc45b950";
     class UFirstPersonWidgetComponent* Widget_CurrentClip;
-    static constexpr const char* Widget_CurrentClip__UeScsNode = "f026837baecd524ca31eeb041f937f8e";
     class UFirstPersonParticleSystemComponent* FP_P_Plasma_Beam_Right;
-    static constexpr const char* FP_P_Plasma_Beam_Right__UeScsNode = "a0b560519bfdd743b5a2b9d2b15a86b0";
     class UPointLightComponent* MuzzleLight;
-    static constexpr const char* MuzzleLight__UeScsNode = "e490c19a970e074f8b06483c1de3a2b6";
     class UPointLightComponent* Line_Light;
-    static constexpr const char* Line_Light__UeScsNode = "fd176726afa7834198cd492005f9fcf7";
     class UFirstPersonParticleSystemComponent* FP_P_Plasma_Beam;
-    static constexpr const char* FP_P_Plasma_Beam__UeScsNode = "6d3638bd9dd19e42b7e1f6fc8f5ef556";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
     class UProjectileLauncherComponent* projectileLauncher;
-    static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     float Flicker_Brightness_Intensity_E04C79F0493C5086E3B612961CA53D93;
     TEnum<ETimelineDirection> Flicker_Brightness__Direction_E04C79F0493C5086E3B612961CA53D93;
     class UTimelineComponent* Flicker_Brightness;
-    static constexpr const char* Flicker_Brightness__UeName = "Flicker Brightness";
     float DamageFrequency;
     PRJ_LineCutter2_C* CurrentProjectile;
     float HomingTraceDistance;
@@ -75,14 +64,29 @@ public:
     void BndEvt__WPN_LineCutter_ProjectileLauncher_K2Node_ComponentBoundEvent_0_ProjectileSpawned__DelegateSignature(class AProjectileBase* Projectile);
     void OnFireWhileLastProjectileAlive(class ALineCutterProjectile* Projectile);
     void Flicker_Brightness__UpdateFunc();
-    static constexpr const char* Flicker_Brightness__UpdateFunc__UeName = "Flicker Brightness__UpdateFunc";
     void Flicker_Brightness__FinishedFunc();
-    static constexpr const char* Flicker_Brightness__FinishedFunc__UeName = "Flicker Brightness__FinishedFunc";
     void UserConstructionScript();
     void GetHomingIgnoreList(TArray<class AActor*>& OutTargets);
     void Get_Homing_Target_Location(FVector& OutLocation);
-    static constexpr const char* Get_Homing_Target_Location__UeName = "Get Homing Target Location";
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* HomingTarget__UeScsNode = "d40d6ec011310946baa6d39b6b2997bd";
+        static constexpr const char* Widget_TotalAmmo__UeScsNode = "9509548ba9c4d1409554bb8ebc45b950";
+        static constexpr const char* Widget_CurrentClip__UeScsNode = "f026837baecd524ca31eeb041f937f8e";
+        static constexpr const char* FP_P_Plasma_Beam_Right__UeScsNode = "a0b560519bfdd743b5a2b9d2b15a86b0";
+        static constexpr const char* MuzzleLight__UeScsNode = "e490c19a970e074f8b06483c1de3a2b6";
+        static constexpr const char* Line_Light__UeScsNode = "fd176726afa7834198cd492005f9fcf7";
+        static constexpr const char* FP_P_Plasma_Beam__UeScsNode = "6d3638bd9dd19e42b7e1f6fc8f5ef556";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
+        static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
+        static constexpr const char* Flicker_Brightness__UeName = "Flicker Brightness";
+        static constexpr const char* Flicker_Brightness__UpdateFunc__UeName = "Flicker Brightness__UpdateFunc";
+        static constexpr const char* Flicker_Brightness__FinishedFunc__UeName = "Flicker Brightness__FinishedFunc";
+        static constexpr const char* Get_Homing_Target_Location__UeName = "Get Homing Target Location";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

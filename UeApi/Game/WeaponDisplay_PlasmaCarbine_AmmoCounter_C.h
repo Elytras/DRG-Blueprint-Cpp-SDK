@@ -21,11 +21,10 @@ class WeaponDisplay_PlasmaCarbine_AmmoCounter_C : public Game::UI::WeaponDisplay
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/UI/WeaponDisplay_PlasmaCarbine_AmmoCounter", "WeaponDisplay_PlasmaCarbine_AmmoCounter_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_PlasmaCarbine_AmmoCounter_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_PlasmaCarbine_AmmoCounter_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* Anim_ProgressColor;
-    class UWidgetAnimation* Anim_LowerBlink;
-    class UWidgetAnimation* Anim_Overheat;
-    class UWidgetAnimation* Anim_AmmoCritical;
+    UE_READONLY class UWidgetAnimation* Anim_ProgressColor;
+    UE_READONLY class UWidgetAnimation* Anim_LowerBlink;
+    UE_READONLY class UWidgetAnimation* Anim_Overheat;
+    UE_READONLY class UWidgetAnimation* Anim_AmmoCritical;
     class UTextBlock* DATA_AmmoCount;
     class UTextBlock* DATA_AmmoLow;
     class UImage* Image_Progress;
@@ -40,16 +39,21 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetClipCount(int Value);
     void Total_Ammo_left_changed(int amount);
-    static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
     void Max_Ammo_Changed(int amount);
-    static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
     void SetTotalCount(int Value);
     void UpdateAmount(int Value);
     void SetProgress(float Value);
     void OverheatStatus(bool Condition);
     void Scrub_Animation(class UWidgetAnimation* InAnimation, float InProgress);
-    static constexpr const char* Scrub_Animation__UeName = "Scrub Animation";
     void SetProgressColor(FLinearColor InColor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_PlasmaCarbine_AmmoCounter_C__UeName = "UberGraphFrame";
+        static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
+        static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
+        static constexpr const char* Scrub_Animation__UeName = "Scrub Animation";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::PlasmaCarbine::UI

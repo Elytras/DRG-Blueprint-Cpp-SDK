@@ -18,13 +18,17 @@ class ESI_FacilityTurret_Sniper_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ESI_FacilityTurret_Sniper", "ESI_FacilityTurret_Sniper_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "3a65151876fa5c42a54c4e8ce890bc72";
     class UStaticMeshComponent* SM_Stone_007;
-    static constexpr const char* SM_Stone_007__UeScsNode = "850f13e2e99c0644957062069b4bf4fc";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "dea46150f8cd8144a530c852ef415d10";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "2051a2d778eefb44ba5195f5492ee061";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "3a65151876fa5c42a54c4e8ce890bc72";
+        static constexpr const char* SM_Stone_007__UeScsNode = "850f13e2e99c0644957062069b4bf4fc";
+        static constexpr const char* SkeletalMesh__UeScsNode = "dea46150f8cd8144a530c852ef415d10";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "2051a2d778eefb44ba5195f5492ee061";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

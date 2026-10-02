@@ -33,7 +33,7 @@ public:
     TMulticastInlineDelegate<void()> CheckState;
     class UCommunityGoalFaction* CurrentFaction;
     int FactionIndex;
-    TArray<class UCommunityGoalFaction*> FactionsArray;
+    UE_READONLY TArray<class UCommunityGoalFaction*> FactionsArray;
     void ExecuteUbergraph_ITM_CommunityGoalRecruitment(int EntryPoint);
     void ResetFactionCheckState();
     UE_COSMETIC void Construct();

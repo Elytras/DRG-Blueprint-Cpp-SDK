@@ -23,15 +23,11 @@ public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_PlagueMeteorDefence", "EWC_PlagueMeteorDefence_C");
     using BP_RockCrackerPod_C = Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_PlagueMeteorDefence_C;
-    static constexpr const char* UberGraphFrame_EWC_PlagueMeteorDefence_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     int Wave_Count_Waves;
-    static constexpr const char* Wave_Count_Waves__UeName = "Wave Count Waves";
     int Wave_Count_Constant_Pressure;
-    static constexpr const char* Wave_Count_Constant_Pressure__UeName = "Wave Count Constant Pressure";
     TArray<BP_RockCrackerPod_C*> Out_Actors;
-    static constexpr const char* Out_Actors__UeName = "Out Actors";
     int AlivePods;
     void ExecuteUbergraph_EWC_PlagueMeteorDefence(int EntryPoint);
     void SpawnEnemiesAtMilestone();
@@ -40,6 +36,14 @@ public:
     void PodDied(class UHealthComponentBase* HealthComponent);
     void StartWave();
     void PodsAlive(bool& IsActive);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_PlagueMeteorDefence_C__UeName = "UberGraphFrame";
+        static constexpr const char* Wave_Count_Waves__UeName = "Wave Count Waves";
+        static constexpr const char* Wave_Count_Constant_Pressure__UeName = "Wave Count Constant Pressure";
+        static constexpr const char* Out_Actors__UeName = "Out Actors";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

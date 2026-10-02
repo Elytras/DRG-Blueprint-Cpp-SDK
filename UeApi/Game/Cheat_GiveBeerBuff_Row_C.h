@@ -23,14 +23,18 @@ public:
     class UTextBlock* TextBlock_BeerName;
     class UTemporaryBuff* myBeerBuff;
     TMulticastInlineDelegate<void(Cheat_GiveBeerBuff_Row_C* Buff_row_to_skip)> On_BeerbuffRow_checked;
-    static constexpr const char* On_BeerbuffRow_checked__UeName = "On BeerbuffRow checked";
     bool alreadyActive;
     void ExecuteUbergraph_Cheat_GiveBeerBuff_Row(int EntryPoint);
     void Check_if_owned_buff_is_the_active_buff();
-    static constexpr const char* Check_if_owned_buff_is_the_active_buff__UeName = "Check if owned buff is the active buff";
     void BndEvt__CheckBox_0_K2Node_ComponentBoundEvent_64_OnCheckBoxComponentStateChanged__DelegateSignature(bool bIsChecked);
     void Set_BeerBuff(class UTemporaryBuff* berr_buff_in);
-    static constexpr const char* Set_BeerBuff__UeName = "Set BeerBuff";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_BeerbuffRow_checked__UeName = "On BeerbuffRow checked";
+        static constexpr const char* Check_if_owned_buff_is_the_active_buff__UeName = "Check if owned buff is the active buff";
+        static constexpr const char* Set_BeerBuff__UeName = "Set BeerBuff";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

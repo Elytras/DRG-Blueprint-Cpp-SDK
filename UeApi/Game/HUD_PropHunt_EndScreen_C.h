@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/UI/HUD_PropHunt_EndScreen", "HUD_PropHunt_EndScreen_C");
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Label_C* Hunters_Label;
     class UOverlay* PanelHuntersWin;
     class UOverlay* PanelPropsWin;

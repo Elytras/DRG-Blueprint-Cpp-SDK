@@ -19,7 +19,7 @@ class UI_LockOn_Crosshair_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/UI_LockOn_Crosshair", "UI_LockOn_Crosshair_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimAngle;
+    UE_READONLY class UWidgetAnimation* AnimAngle;
     class UImage* Circle;
     class UCanvasPanel* RotationPanel;
     float Angle;

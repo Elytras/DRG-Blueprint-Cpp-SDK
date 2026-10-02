@@ -31,9 +31,9 @@ public:
     using Basic_Header_C = Game::UI::Art::WidgetParts::Basic_Header_C;
     using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     Basic_Header_C* DLC_Header;
     class UImage* DLC_Image;
     class UImage* DLC_Label;
@@ -44,18 +44,12 @@ public:
     class USizeBox* TitleSizebox;
     class UGameDLC* DLC;
     class UMaterialInstanceDynamic* Dynamic_Image;
-    static constexpr const char* Dynamic_Image__UeName = "Dynamic Image";
     FString On_Click_URL;
-    static constexpr const char* On_Click_URL__UeName = "On Click URL";
     FString Steam_Name;
-    static constexpr const char* Steam_Name__UeName = "Steam Name";
     FString Title_Text;
-    static constexpr const char* Title_Text__UeName = "Title Text";
     FString Live_Timestamp;
-    static constexpr const char* Live_Timestamp__UeName = "Live Timestamp";
     void ExecuteUbergraph_UI_InfoScreen_WebStreamedBanner(int EntryPoint);
     void Update_Image(FString Image_URL);
-    static constexpr const char* Update_Image__UeName = "Update Image";
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
@@ -69,6 +63,16 @@ public:
     void GetSeasonDLC(class UGameDLC*& Season_DLC);
     UE_PURE FSlateBrush Get_DLC_Image_Brush_0();
     UE_PURE FLinearColor Get_DLC_Image_ColorAndOpacity_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Dynamic_Image__UeName = "Dynamic Image";
+        static constexpr const char* On_Click_URL__UeName = "On Click URL";
+        static constexpr const char* Steam_Name__UeName = "Steam Name";
+        static constexpr const char* Title_Text__UeName = "Title Text";
+        static constexpr const char* Live_Timestamp__UeName = "Live Timestamp";
+        static constexpr const char* Update_Image__UeName = "Update Image";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

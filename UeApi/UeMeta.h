@@ -49,6 +49,18 @@ template <class E> __EnumMapInit__<E> __EnumMap__() { return {}; }
 #define UE_ENUM_IN(Enum, ModPackage) static constexpr const char *Enum##__UeEnum = ModPackage
 
 /*
+Final through one leaf: `UE_FINAL_AS(UMyBase, MyLeaf);` at namespace scope (the leaf's package path, as for any class)
+declares `class MyLeaf final : public UMyBase {}`, the one class ever made. UMyBase is then compiled as if final - its
+calls on `this` bound and copied in, its functions FUNC_Final - and cooked Abstract; any other subclass of it is
+refused. Put it in the header beside UMyBase, so a mod that includes the header is refused a subclass too.
+*/
+#define UE_FINAL_AS(Base, Leaf)                                                                                        \
+  class Leaf final : public Base {                                                                                     \
+  public:                                                                                                              \
+    static constexpr bool UeFinalAsLeaf = true;                                                                        \
+  }
+
+/*
 An asset some other package holds, a game one or another mod's, named so `&ED_Spider_Grunt` can point at it:
 `UE_ASSET_AT(UEnemyDescriptor, ED_Spider_Grunt, "/Game/Enemies/Spider/Grunt/ED_Spider_Grunt");`. The asset's
 object name is the path's last segment, unless the path spells it: "/Game/Dir/Package.Object". It may sit in a
@@ -313,6 +325,15 @@ no access, and clang has already refused what C++ forbids. Mind that `class` sta
 Read-only needs none either: a `const` member (`const int32 Limit = 3;`) is cooked BlueprintReadOnly, its
 initializer being the default - the editor offers a Get node and no Set. The VM does not enforce that either.
 */
+
+/*
+BlueprintReadOnly that may still be written: `UE_READONLY int32 Limit = 3;`. It is cooked as a `const` member is, but
+a subclass's UE_DEFAULTS can give its default, which `const` forbids, and a write from code compiles with a warning
+- the editor would refuse it, the VM does not (setting a deferred spawn's members before FinishSpawning is the use).
+UeApi marks the engine's and game's BlueprintReadOnly properties with it. It is `mutable` to the compiler, the one
+specifier a member can carry without changing its type, kept in the AST dump as the field's "mutable".
+*/
+#define UE_READONLY mutable
 
 /*
 An inline class variable needs no macro: C++'s own `static inline const` (or `static constexpr`) member

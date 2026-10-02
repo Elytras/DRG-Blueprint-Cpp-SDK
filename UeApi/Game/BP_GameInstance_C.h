@@ -23,8 +23,6 @@ public:
     using WND_JoiningModded_C = Game::UI::Menu_ServerList::WND_JoiningModded_C;
     using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
     using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
-    static constexpr const char* UeClassTail = "0x00800008 /Script/CoreUObject.Object Game";
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDCloudLoadSave FSDCloudLoadSave;/Script/FSD.FSDSendToURL FSDSendToURL;/Script/FSD.FSDSessionUpdater SessionUpdater";
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void(TArray<TScriptInterface<class ICraftable>>& NewItems)> OnAvailableCraftingItems;
     bool EligibleForRetirementAssignment;
@@ -62,7 +60,6 @@ public:
     void OnFailure_7B3ECFCE46627790F0C9B89A0D72085C();
     void IsEligibleForRetirementAassignment(bool& EligibleForRetirementAssignment_0);
     void Setup_Join_with_Password(FBlueprintSessionResult Session);
-    static constexpr const char* Setup_Join_with_Password__UeName = "Setup Join with Password";
     void SetupJoinModded(FBlueprintSessionResult Session);
     void ShouldPromptSandboxUser(FBlueprintSessionResult Session, bool& Yes);
     void PromptSandboxUser(FBlueprintSessionResult Session);
@@ -70,6 +67,13 @@ public:
     void SetModdedSession();
     void CreateAndOpenModdedWidget();
     void ResetTempSessions();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800008 /Script/CoreUObject.Object Game";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDCloudLoadSave FSDCloudLoadSave;/Script/FSD.FSDCloudSaveHandler FSDCloudLoadSave:CloudSaveHandler;/Script/FSD.FSDLobbyHandler SessionUpdater:LobbyHandler;/Script/FSD.FSDSendToURL FSDSendToURL;/Script/FSD.FSDSessionHandler SessionUpdater:SessionHandler;/Script/FSD.FSDSessionUpdater SessionUpdater";
+        static constexpr const char* Setup_Join_with_Password__UeName = "Setup Join with Password";
+    };
 };
 
 }}   // namespace Game::Game

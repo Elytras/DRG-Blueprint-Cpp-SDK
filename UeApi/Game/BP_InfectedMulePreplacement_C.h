@@ -17,9 +17,13 @@ public:
     UE_CLASS("/Game/Enemies/MuleInfected/BP_InfectedMulePreplacement", "BP_InfectedMulePreplacement_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "fce26e34b8c2664eb74eec02f20c3892";
     void ExecuteUbergraph_BP_InfectedMulePreplacement(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "fce26e34b8c2664eb74eec02f20c3892";
+    };
 };
 
 }}}   // namespace Game::Enemies::MuleInfected

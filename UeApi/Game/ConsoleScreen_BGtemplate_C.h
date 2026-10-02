@@ -22,8 +22,8 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_BGtemplate", "ConsoleScreen_BGtemplate_C");
     using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* BGicon;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* BGicon;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     class UBorder* Border_0;
     class UBorder* Border_2;
     class UBorder* Border_3;
@@ -36,7 +36,6 @@ public:
     class UTexture2D* NotificationIcon;
     bool NotificationVisible;
     bool Toggle_Header_Bars;
-    static constexpr const char* Toggle_Header_Bars__UeName = "Toggle Header Bars";
     int TextSize;
     void ExecuteUbergraph_ConsoleScreen_BGtemplate(int EntryPoint);
     UE_COSMETIC void Construct();
@@ -46,6 +45,11 @@ public:
     void SetNotificationVisible(bool IsVisible_0);
     void SetHeaderBars(bool Toggle_Header_Bars_0);
     void SetTextSize(int TextSize_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Toggle_Header_Bars__UeName = "Toggle Header Bars";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

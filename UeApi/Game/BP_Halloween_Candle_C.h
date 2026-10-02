@@ -18,13 +18,17 @@ class BP_Halloween_Candle_C : public AActor
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_Halloween_Candle", "BP_Halloween_Candle_C");
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "56fa4e64c6902844bec5fd67d69b3f2d";
     class UStaticMeshComponent* Mesh_Candle;
-    static constexpr const char* Mesh_Candle__UeScsNode = "1f70c1820519bb47939a9da10373b48a";
     class UStaticMeshComponent* Mesh_Flame01;
-    static constexpr const char* Mesh_Flame01__UeScsNode = "6f212c9e22b559468fbbaa209a80c596";
     class USceneComponent* SharedRoot;
-    static constexpr const char* SharedRoot__UeScsNode = "1cb9501927b63244b271f2c24bb61cc5";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "56fa4e64c6902844bec5fd67d69b3f2d";
+        static constexpr const char* Mesh_Candle__UeScsNode = "1f70c1820519bb47939a9da10373b48a";
+        static constexpr const char* Mesh_Flame01__UeScsNode = "6f212c9e22b559468fbbaa209a80c596";
+        static constexpr const char* SharedRoot__UeScsNode = "1cb9501927b63244b271f2c24bb61cc5";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween

@@ -17,15 +17,19 @@ class BP_DirtChunk_C : public AResourceChunk
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/BP_DirtChunk", "BP_DirtChunk_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d80f848516a895439311d52d78b47370";
     void ExecuteUbergraph_BP_DirtChunk(int EntryPoint);
     void ReceiveBeginPlay();
     void SetMaterial();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleObjectInfoComponent Info";
+        static constexpr const char* Mesh__UeScsNode = "05ff7ec3070e1b41a926d6d072ad3d98";
+        static constexpr const char* Sphere__UeScsNode = "d80f848516a895439311d52d78b47370";
+    };
 };
 
 }}}   // namespace Game::Critters::Prospector

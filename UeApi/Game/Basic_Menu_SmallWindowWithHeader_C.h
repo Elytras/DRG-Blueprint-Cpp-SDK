@@ -44,10 +44,8 @@ public:
     bool ShowCounter;
     bool WindowIsButton;
     TMulticastInlineDelegate<void()> On_Clicked;
-    static constexpr const char* On_Clicked__UeName = "On Clicked";
     FButtonStyle ButtonStyle;
     bool Brackets_Active;
-    static constexpr const char* Brackets_Active__UeName = "Brackets Active";
     bool SidesActive;
     void ExecuteUbergraph_Basic_Menu_SmallWindowWithHeader(int EntryPoint);
     void SetCounterText(FText InText);
@@ -57,6 +55,12 @@ public:
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     UE_PURE bool IsHovering();
     void SetHeaderText(FText NewHeaderText);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Clicked__UeName = "On Clicked";
+        static constexpr const char* Brackets_Active__UeName = "Brackets Active";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

@@ -19,14 +19,18 @@ class BP_PostProcessing_CharSelect_C : public AFSDPostProcessingActor
 public:
     UE_CLASS("/Game/Art/PostProcess/BP_PostProcessing_CharSelect", "BP_PostProcessing_CharSelect_C");
     class UPostProcessComponent* PostProcess;
-    static constexpr const char* PostProcess__UeScsNode = "9a4c46a261ca2846b3a606d3d194712a";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "7fd552ea0c17944bb7b41178cd07772f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
     FVector BoundsSize;
     bool Unbound;
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PostProcess__UeScsNode = "9a4c46a261ca2846b3a606d3d194712a";
+        static constexpr const char* Box__UeScsNode = "7fd552ea0c17944bb7b41178cd07772f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+    };
 };
 
 }}}   // namespace Game::Art::PostProcess

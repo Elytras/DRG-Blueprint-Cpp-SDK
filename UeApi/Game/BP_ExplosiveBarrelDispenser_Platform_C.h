@@ -27,49 +27,29 @@ class BP_ExplosiveBarrelDispenser_Platform_C : public ARessuplyPod
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_ExplosiveBarrelDispenser_Platform", "BP_ExplosiveBarrelDispenser_Platform_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
-    static constexpr const char* TerrainDetect3__UeScsNode = "22771086baeb4247a2932e1749d800df";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "2537b432fefe51478b2878e0c9de0544";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "049670c6d8aa9f409659d3486e9bdc95";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "ca362c4c89903143a5f3eb30b08c7464";
     class UDropToTerrainComponent* DropToTerrain;
-    static constexpr const char* DropToTerrain__UeScsNode = "a4a24fc1bf25c143bd86f8ecbf16d3e5";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "d21e1dac3e9b7649baf862294aea0173";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "f20ea477bc489842a57ae8c4e49ab6c4";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "c24803a98c9ce547807fe6deda3c6c25";
     class UTerrainPlacementComponent* TerrainPlacement1;
-    static constexpr const char* TerrainPlacement1__UeScsNode = "944e6b23acf2fd4398795e8671f511f7";
     class UChildActorComponent* RightDispenser;
-    static constexpr const char* RightDispenser__UeScsNode = "b571d39b9c817e42bf2697e33fcfbb89";
     class UChildActorComponent* BackDispenser;
-    static constexpr const char* BackDispenser__UeScsNode = "2c707ea975470041a1416a589e9e905e";
     class UChildActorComponent* LeftDispenser;
-    static constexpr const char* LeftDispenser__UeScsNode = "7d7d4465f7aed5478cee753760ab33a8";
     class UChildActorComponent* ForwardDispenser;
-    static constexpr const char* ForwardDispenser__UeScsNode = "e733fa84bf51894eacc093b37bcd3baa";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d26c18871a72b947bfe680f010c77d89";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "734b3cd1ca9dfe4795aec566776cbb88";
     class USkeletalMeshComponent* Drill;
-    static constexpr const char* Drill__UeScsNode = "c91951ec2a437845abb05341983d01ff";
     class UAutoCarverComponent* AutoCarver;
-    static constexpr const char* AutoCarver__UeScsNode = "509e8b763a67cb4ea945820e1e8ccdf4";
     class USkeletalMeshComponent* Base;
-    static constexpr const char* Base__UeScsNode = "1951f8a2952a9247896e1ce15782aace";
     class AGameEvent* OwningEvent;
     float OutlineTime;
     FTimerHandle ResizeCarverTimer;
     bool ChildrenActive;
-    static constexpr const char* ChildrenActive__Replicated = "OnRep_ChildrenActive:";
     bool ActivateOnLanding;
     void ExecuteUbergraph_BP_ExplosiveBarrelDispenser_Platform(int EntryPoint);
     void BndEvt__DropToTerrain_K2Node_ComponentBoundEvent_0_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
@@ -89,6 +69,30 @@ public:
     bool SetupEvent(class AGameEvent* GameEvent);
     bool AdvanceOneObjective();
     bool AddEventProgress(float Progress);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
+        static constexpr const char* TerrainDetect3__UeScsNode = "22771086baeb4247a2932e1749d800df";
+        static constexpr const char* TerrainDetect2__UeScsNode = "2537b432fefe51478b2878e0c9de0544";
+        static constexpr const char* TerrainDetect1__UeScsNode = "049670c6d8aa9f409659d3486e9bdc95";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "ca362c4c89903143a5f3eb30b08c7464";
+        static constexpr const char* DropToTerrain__UeScsNode = "a4a24fc1bf25c143bd86f8ecbf16d3e5";
+        static constexpr const char* TerrainDetect__UeScsNode = "d21e1dac3e9b7649baf862294aea0173";
+        static constexpr const char* Widget__UeScsNode = "f20ea477bc489842a57ae8c4e49ab6c4";
+        static constexpr const char* outline__UeScsNode = "c24803a98c9ce547807fe6deda3c6c25";
+        static constexpr const char* TerrainPlacement1__UeScsNode = "944e6b23acf2fd4398795e8671f511f7";
+        static constexpr const char* RightDispenser__UeScsNode = "b571d39b9c817e42bf2697e33fcfbb89";
+        static constexpr const char* BackDispenser__UeScsNode = "2c707ea975470041a1416a589e9e905e";
+        static constexpr const char* LeftDispenser__UeScsNode = "7d7d4465f7aed5478cee753760ab33a8";
+        static constexpr const char* ForwardDispenser__UeScsNode = "e733fa84bf51894eacc093b37bcd3baa";
+        static constexpr const char* PointLight__UeScsNode = "d26c18871a72b947bfe680f010c77d89";
+        static constexpr const char* Capsule__UeScsNode = "734b3cd1ca9dfe4795aec566776cbb88";
+        static constexpr const char* Drill__UeScsNode = "c91951ec2a437845abb05341983d01ff";
+        static constexpr const char* AutoCarver__UeScsNode = "509e8b763a67cb4ea945820e1e8ccdf4";
+        static constexpr const char* Base__UeScsNode = "1951f8a2952a9247896e1ce15782aace";
+        static constexpr const char* ChildrenActive__Replicated = "OnRep_ChildrenActive:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent

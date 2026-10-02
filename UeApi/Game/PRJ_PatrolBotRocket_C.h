@@ -28,30 +28,18 @@ class PRJ_PatrolBotRocket_C : public AHomingDroneBomb
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/Projectiles/PRJ_PatrolBotRocket", "PRJ_PatrolBotRocket_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "41bce277d0d6014ebff7ce2f1a84118e";
     class UParticleSystemComponent* Particle_Trail1;
-    static constexpr const char* Particle_Trail1__UeScsNode = "9b23fcae819102478ae069153ff2591f";
     class UStaticMeshComponent* MeshRocket1;
-    static constexpr const char* MeshRocket1__UeScsNode = "3ec137a91616b247829a284dfe709dfb";
     class UPointLightComponent* Light_Exhaust1;
-    static constexpr const char* Light_Exhaust1__UeScsNode = "9cdbf979fc1bf1489bc880e7f78683c3";
     class UParticleSystemComponent* Particle_Exhaust;
-    static constexpr const char* Particle_Exhaust__UeScsNode = "9643c38cef080246804241b5b886e876";
     class USceneComponent* Visuals;
-    static constexpr const char* Visuals__UeScsNode = "dc509ab1a8357f42924521968d214a43";
     class UAudioComponent* HomingDroneIdle_Cue;
-    static constexpr const char* HomingDroneIdle_Cue__UeScsNode = "67660b3468517745b9ce6ef7b1f3375a";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "d0c9bc4278b31d49ac4b63f305e7f8f7";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "9a1c9d4e00f75449b2bd67dfacb06c7d";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
     bool Explode;
-    static constexpr const char* Explode__Replicated = "OnRep_Explode:";
     class AActor* Target;
     void ExecuteUbergraph_PRJ_PatrolBotRocket(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
@@ -62,6 +50,22 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Sphere__UeScsNode = "41bce277d0d6014ebff7ce2f1a84118e";
+        static constexpr const char* Particle_Trail1__UeScsNode = "9b23fcae819102478ae069153ff2591f";
+        static constexpr const char* MeshRocket1__UeScsNode = "3ec137a91616b247829a284dfe709dfb";
+        static constexpr const char* Light_Exhaust1__UeScsNode = "9cdbf979fc1bf1489bc880e7f78683c3";
+        static constexpr const char* Particle_Exhaust__UeScsNode = "9643c38cef080246804241b5b886e876";
+        static constexpr const char* Visuals__UeScsNode = "dc509ab1a8357f42924521968d214a43";
+        static constexpr const char* HomingDroneIdle_Cue__UeScsNode = "67660b3468517745b9ce6ef7b1f3375a";
+        static constexpr const char* outline__UeScsNode = "d0c9bc4278b31d49ac4b63f305e7f8f7";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "9a1c9d4e00f75449b2bd67dfacb06c7d";
+        static constexpr const char* Damage__UeScsNode = "fb532dc79f9d4743880f586e349273b8";
+        static constexpr const char* Explode__Replicated = "OnRep_Explode:";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::RivalTech::PatrolBot::Projectiles

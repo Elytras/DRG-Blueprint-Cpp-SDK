@@ -24,15 +24,13 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USizeBox* BarSize;
     class UHorizontalBox* EntryBox;
-    float MinDesiredWidth;
+    UE_READONLY float MinDesiredWidth;
     class UClass* DefaultClassReference;
-    int PreviewEntries;
+    UE_READONLY int PreviewEntries;
     bool IsPreviewing;
     void ExecuteUbergraph_HUD_BossFight_Manager(int EntryPoint);
     void Setup_Custom_Widgets();
-    static constexpr const char* Setup_Custom_Widgets__UeName = "Setup Custom Widgets";
     void Setup_BossFights();
-    static constexpr const char* Setup_BossFights__UeName = "Setup BossFights";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnNewBossFight(const TScriptInterface<class IBossFightInterface>& BossFight);
     UE_COSMETIC void Construct();
@@ -40,6 +38,12 @@ public:
     void AddBossFight(const TScriptInterface<class IBossFightInterface>& BossFight);
     void AddCustomWidget(class UUserWidget* InWidget);
     void RemoveCustomWidget(class UUserWidget* InWidget);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Custom_Widgets__UeName = "Setup Custom Widgets";
+        static constexpr const char* Setup_BossFights__UeName = "Setup BossFights";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

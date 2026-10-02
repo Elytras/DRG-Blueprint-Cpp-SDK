@@ -19,17 +19,11 @@ class BP_LiftRocketCarriable_C : public Game::GameElements::Resources::Embedded:
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_LiftRocketCarriable", "BP_LiftRocketCarriable_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_LiftRocketCarriable_C;
-    static constexpr const char* UberGraphFrame_BP_LiftRocketCarriable_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "3be29149d5b4c3408346d34e61522fc3";
     class UStaticMeshComponent* DistressSphere;
-    static constexpr const char* DistressSphere__UeScsNode = "ee2d4ae8637c8745bb16184ee5241236";
     class UActorTrackingComponent* ActorTracking;
-    static constexpr const char* ActorTracking__UeScsNode = "b898f82c50f61547a07c6a81b6713fcf";
     bool IsStaticPickup;
-    static constexpr const char* IsStaticPickup__Replicated = ":";
     void ExecuteUbergraph_BP_LiftRocketCarriable(int EntryPoint);
     void FixWeldedCollision();
     void BndEvt__BP_LiftRocketCarriable_Carriable_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
@@ -39,6 +33,16 @@ public:
     void UpdateAttachState(bool Attached);
     void SetPickedUp(class APlayerCharacter* Character);
     void PointCleared();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_LiftRocketCarriable_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight__UeScsNode = "3be29149d5b4c3408346d34e61522fc3";
+        static constexpr const char* DistressSphere__UeScsNode = "ee2d4ae8637c8745bb16184ee5241236";
+        static constexpr const char* ActorTracking__UeScsNode = "b898f82c50f61547a07c6a81b6713fcf";
+        static constexpr const char* IsStaticPickup__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment

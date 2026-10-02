@@ -18,11 +18,15 @@ class PRW_Crossbow_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/PRW_Crossbow", "PRW_Crossbow_C");
     class UStaticMeshComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "1c3cdb7ce3076644b7f3b2da8876e622";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "7879a6f31acffa4da0a9e6807ab00c5f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "89348bb35dcf584597d2342de3c5330f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Arrow__UeScsNode = "1c3cdb7ce3076644b7f3b2da8876e622";
+        static constexpr const char* SkeletalMesh__UeScsNode = "7879a6f31acffa4da0a9e6807ab00c5f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "89348bb35dcf584597d2342de3c5330f";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Crossbow

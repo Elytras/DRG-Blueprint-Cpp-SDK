@@ -30,10 +30,14 @@ public:
     void OnNoClicked();
     void OnPlayerLeave(class AFSDPlayerState* PlayerState);
     void On_Player_Joined(class AFSDPlayerState* PlayerState);
-    static constexpr const char* On_Player_Joined__UeName = "On Player Joined";
     void UpdateSinglePlayerText();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Player_Joined__UeName = "On Player Joined";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Seasons::SeasonSelector

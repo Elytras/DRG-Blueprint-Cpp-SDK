@@ -36,57 +36,29 @@ class BP_Refinery_Target_C : public APipelineFinish
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Target", "BP_Refinery_Target_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/FSD.SingleUsableComponent UsableOrderExtractor;/Script/FSD.TrackBuilderConnectPoint TrackEndConnection";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "e6a1135533620b4882122718fbb5ef49";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "f5d9e4270f97f74b9b1c0113ebefc933";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "00524f0e496aac409d71e11790f8a3e0";
     class UStaticMeshComponent* ST_LiquidMorkite_Well;
-    static constexpr const char* ST_LiquidMorkite_Well__UeScsNode = "0cd3db797640034dbac9912f1cbcc0ae";
     class UStaticMeshComponent* ST_LiquidMorkite_Well1;
-    static constexpr const char* ST_LiquidMorkite_Well1__UeScsNode = "dc598833c683224cae6c85ecea78af18";
     class USceneComponent* GroundRoot;
-    static constexpr const char* GroundRoot__UeScsNode = "ca4026ba21a6f547bf9d477a245a2979";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "cf6d5b8fc46c68409858fcb50b02a945";
     class UAudioComponent* AudioIdle;
-    static constexpr const char* AudioIdle__UeScsNode = "797c5cff0e53be4f8872a8aaf98f5ed2";
     class UMeshCarverComponent* MeshCarver_MaterialVein2;
-    static constexpr const char* MeshCarver_MaterialVein2__UeName = "MeshCarver-MaterialVein2";
-    static constexpr const char* MeshCarver_MaterialVein2__UeScsNode = "94ee20a9931dc449b27e50355afe264d";
     class UMeshCarverComponent* MeshCarver_MaterialVein1;
-    static constexpr const char* MeshCarver_MaterialVein1__UeName = "MeshCarver-MaterialVein1";
-    static constexpr const char* MeshCarver_MaterialVein1__UeScsNode = "ef34675681bd4d4b8bec5b033858ace7";
     class ULevelGenerationDebris* LevelGenerationDebris;
-    static constexpr const char* LevelGenerationDebris__UeScsNode = "ab1436175775a241bf6afe6d84f5b905";
     class UMeshCarverComponent* MeshCarver_MaterialBottom;
-    static constexpr const char* MeshCarver_MaterialBottom__UeName = "MeshCarver-MaterialBottom";
-    static constexpr const char* MeshCarver_MaterialBottom__UeScsNode = "67ced3cb622722469894009d2d28fa3b";
     class UMeshCarverComponent* MeshCarver_Outside;
-    static constexpr const char* MeshCarver_Outside__UeName = "MeshCarver-Outside";
-    static constexpr const char* MeshCarver_Outside__UeScsNode = "80d7b17fddac7f45b7f5917419cb6f52";
     class UMeshCarverComponent* MeshCarver_Mid;
-    static constexpr const char* MeshCarver_Mid__UeName = "MeshCarver-Mid";
-    static constexpr const char* MeshCarver_Mid__UeScsNode = "0d294d1dc1641c4aa1fda38a30b1bd3d";
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "6c644c2d4021f544890e44bf6b496da1";
     class UPointLightComponent* FindMe_PointLight;
-    static constexpr const char* FindMe_PointLight__UeScsNode = "bad74eb057664044afde799d39bd6a66";
     class UChildActorComponent* ExtractorBlueprintChildActor;
-    static constexpr const char* ExtractorBlueprintChildActor__UeScsNode = "1e32224c5047cf469d91b0bdea4e30bc";
     class USphereComponent* OrderExtractorCollision;
-    static constexpr const char* OrderExtractorCollision__UeScsNode = "0a2d5ccc52dda44d945e3d60a097bfa0";
     class USphereComponent* GroundCollision;
-    static constexpr const char* GroundCollision__UeScsNode = "ada6fbf7d7b8e54ba7c08d8036c6e33c";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "d145ecd6f6c2c34a9c4671adba8e5bab";
     class UStaticMeshComponent* ResourceMesh;
-    static constexpr const char* ResourceMesh__UeScsNode = "e900d76fcab2d14cb46ee84c8c596d2e";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "9ddea2f8939b534e96bd3e419da2fb12";
     bool PlayerLookingAtTarget;
     bool PlacementValid;
     class APipelineStart* PipelineStart;
@@ -110,6 +82,38 @@ public:
     void UpdateState();
     void UpdateIsRefining();
     FVector GetLandingOffset();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/FSD.SingleUsableComponent UsableOrderExtractor;/Script/Engine.SplineComponent TrackEndConnection:ConnectorSplineCache;/Script/FSD.TrackBuilderConnectPoint TrackEndConnection";
+        static constexpr const char* PathfinderCollision__UeScsNode = "e6a1135533620b4882122718fbb5ef49";
+        static constexpr const char* Audio__UeScsNode = "f5d9e4270f97f74b9b1c0113ebefc933";
+        static constexpr const char* ParticleSystem__UeScsNode = "00524f0e496aac409d71e11790f8a3e0";
+        static constexpr const char* ST_LiquidMorkite_Well__UeScsNode = "0cd3db797640034dbac9912f1cbcc0ae";
+        static constexpr const char* ST_LiquidMorkite_Well1__UeScsNode = "dc598833c683224cae6c85ecea78af18";
+        static constexpr const char* GroundRoot__UeScsNode = "ca4026ba21a6f547bf9d477a245a2979";
+        static constexpr const char* outline__UeScsNode = "cf6d5b8fc46c68409858fcb50b02a945";
+        static constexpr const char* AudioIdle__UeScsNode = "797c5cff0e53be4f8872a8aaf98f5ed2";
+        static constexpr const char* MeshCarver_MaterialVein2__UeName = "MeshCarver-MaterialVein2";
+        static constexpr const char* MeshCarver_MaterialVein2__UeScsNode = "94ee20a9931dc449b27e50355afe264d";
+        static constexpr const char* MeshCarver_MaterialVein1__UeName = "MeshCarver-MaterialVein1";
+        static constexpr const char* MeshCarver_MaterialVein1__UeScsNode = "ef34675681bd4d4b8bec5b033858ace7";
+        static constexpr const char* LevelGenerationDebris__UeScsNode = "ab1436175775a241bf6afe6d84f5b905";
+        static constexpr const char* MeshCarver_MaterialBottom__UeName = "MeshCarver-MaterialBottom";
+        static constexpr const char* MeshCarver_MaterialBottom__UeScsNode = "67ced3cb622722469894009d2d28fa3b";
+        static constexpr const char* MeshCarver_Outside__UeName = "MeshCarver-Outside";
+        static constexpr const char* MeshCarver_Outside__UeScsNode = "80d7b17fddac7f45b7f5917419cb6f52";
+        static constexpr const char* MeshCarver_Mid__UeName = "MeshCarver-Mid";
+        static constexpr const char* MeshCarver_Mid__UeScsNode = "0d294d1dc1641c4aa1fda38a30b1bd3d";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "6c644c2d4021f544890e44bf6b496da1";
+        static constexpr const char* FindMe_PointLight__UeScsNode = "bad74eb057664044afde799d39bd6a66";
+        static constexpr const char* ExtractorBlueprintChildActor__UeScsNode = "1e32224c5047cf469d91b0bdea4e30bc";
+        static constexpr const char* OrderExtractorCollision__UeScsNode = "0a2d5ccc52dda44d945e3d60a097bfa0";
+        static constexpr const char* GroundCollision__UeScsNode = "ada6fbf7d7b8e54ba7c08d8036c6e33c";
+        static constexpr const char* terrainPlacement__UeScsNode = "d145ecd6f6c2c34a9c4671adba8e5bab";
+        static constexpr const char* ResourceMesh__UeScsNode = "e900d76fcab2d14cb46ee84c8c596d2e";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "9ddea2f8939b534e96bd3e419da2fb12";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

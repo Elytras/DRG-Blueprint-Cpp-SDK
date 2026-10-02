@@ -16,7 +16,11 @@ class BP_TutorialDroppodLocation_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/Tutorial/BP_TutorialDroppodLocation", "BP_TutorialDroppodLocation_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ac91ff442e29fc4780cabd663559e078";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ac91ff442e29fc4780cabd663559e078";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Tutorial

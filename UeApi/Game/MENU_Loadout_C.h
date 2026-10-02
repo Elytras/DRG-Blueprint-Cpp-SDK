@@ -56,11 +56,8 @@ public:
     float FadeInAnimTime;
     void ExecuteUbergraph_MENU_Loadout(int EntryPoint);
     void Open_Item_Window(ITM_Loadout_ItemWindow_C* Item);
-    static constexpr const char* Open_Item_Window__UeName = "Open Item Window";
     void On_Hovered(ITM_Loadout_ItemWindow_C* Item);
-    static constexpr const char* On_Hovered__UeName = "On Hovered";
     void On_Unhovered_Event(ITM_Loadout_ItemWindow_C* Item);
-    static constexpr const char* On_Unhovered_Event__UeName = "On Unhovered_Event";
     void LoadoutRefreshed();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_1_NewLoadoutSelected__DelegateSignature();
     void ReceiveSelectPreviousCommand();
@@ -68,14 +65,10 @@ public:
     void ReceiveSelectCharacterCommand();
     void OnNewTopWindow();
     void Setup_Loadout_Items();
-    static constexpr const char* Setup_Loadout_Items__UeName = "Setup Loadout Items";
     void Refresh_Loadout_Items();
-    static constexpr const char* Refresh_Loadout_Items__UeName = "Refresh Loadout Items";
     void OnClosed();
     void Start_Ansel();
-    static constexpr const char* Start_Ansel__UeName = "Start Ansel";
     void Stop_Ansel();
-    static constexpr const char* Stop_Ansel__UeName = "Stop Ansel";
     void BndEvt__ITM_Loadout_CharSelect_K2Node_ComponentBoundEvent_0_OnCharacterChanged__DelegateSignature(class UClass* Character);
     void Refresh();
     void OnShown();
@@ -87,6 +80,17 @@ public:
     void CheckForNotification();
     void PlayIntroAnimations();
     void GetCharacter(class APlayerCharacter*& Character);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Open_Item_Window__UeName = "Open Item Window";
+        static constexpr const char* On_Hovered__UeName = "On Hovered";
+        static constexpr const char* On_Unhovered_Event__UeName = "On Unhovered_Event";
+        static constexpr const char* Setup_Loadout_Items__UeName = "Setup Loadout Items";
+        static constexpr const char* Refresh_Loadout_Items__UeName = "Refresh Loadout Items";
+        static constexpr const char* Start_Ansel__UeName = "Start Ansel";
+        static constexpr const char* Stop_Ansel__UeName = "Stop Ansel";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

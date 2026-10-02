@@ -21,7 +21,6 @@ public:
     UE_CLASS("/Game/UI/Menu_MissionStart/Screen_LoadDeepDive", "Screen_LoadDeepDive_C");
     using UI_CurvedCanvas_C = Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame_Screen_LoadDeepDive_C;
-    static constexpr const char* UberGraphFrame_Screen_LoadDeepDive_C__UeName = "UberGraphFrame";
     class UHorizontalBox* PlayerBox;
     UI_CurvedCanvas_C* UI_CurvedCanvas;
     void ExecuteUbergraph_Screen_LoadDeepDive(int EntryPoint);
@@ -30,6 +29,11 @@ public:
     void StartLoadSeq();
     void AddPlayer(class AFSDPlayerState* PlayerState);
     void RemovePlayer(class APlayerState* PlayerState);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Screen_LoadDeepDive_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MissionStart

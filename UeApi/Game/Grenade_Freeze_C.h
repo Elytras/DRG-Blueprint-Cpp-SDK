@@ -22,19 +22,23 @@ class Grenade_Freeze_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Freeze/Grenade_Freeze", "Grenade_Freeze_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_Freeze_C;
-    static constexpr const char* UberGraphFrame_Grenade_Freeze_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "917190a76b27e344a29a67c7ff2983bc";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "9795bc44a60a744ea52d90fff280c10f";
     class UParticleSystem* TriggerEffect;
     class USoundCue* TriggerSound;
     void ExecuteUbergraph_Grenade_Freeze(int EntryPoint);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_Freeze_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "917190a76b27e344a29a67c7ff2983bc";
+        static constexpr const char* Damage__UeScsNode = "9795bc44a60a744ea52d90fff280c10f";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Freeze

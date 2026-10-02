@@ -13,6 +13,11 @@ class STE_RadioactiveGlyphidPoison_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/STE_RadioactiveGlyphidPoison", "STE_RadioactiveGlyphidPoison_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer

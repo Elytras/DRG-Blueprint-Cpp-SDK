@@ -22,17 +22,11 @@ class Bp_Azure_Nenup_C : public Game::LevelElements::RoomObjects::PassiveFoliage
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/Nenup/Bp_Azure_Nenup", "Bp_Azure_Nenup_C");
     FPointerToUberGraphFrame UberGraphFrame_Bp_Azure_Nenup_C;
-    static constexpr const char* UberGraphFrame_Bp_Azure_Nenup_C__UeName = "UberGraphFrame";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "9657fab7cf01e144bce6e853fca5d201";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "b2c014512e74f04082d97f476ad72da4";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "2c11d09cd7c3984fb42264a6a4eca1a6";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "1332312d11de2d4a994f10867b45bec1";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_CCE667474C695780AD163197E2E87F35";
     TEnum<ETimelineDirection> Timeline_0__Direction_CCE667474C695780AD163197E2E87F35;
     class UTimelineComponent* Timeline_0;
     int LightIntensity;
@@ -43,6 +37,16 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_Bp_Azure_Nenup_C__UeName = "UberGraphFrame";
+        static constexpr const char* ParticleSystem__UeScsNode = "9657fab7cf01e144bce6e853fca5d201";
+        static constexpr const char* PointLight__UeScsNode = "b2c014512e74f04082d97f476ad72da4";
+        static constexpr const char* SimpleHealth__UeScsNode = "2c11d09cd7c3984fb42264a6a4eca1a6";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "1332312d11de2d4a994f10867b45bec1";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_CCE667474C695780AD163197E2E87F35";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::Nenup

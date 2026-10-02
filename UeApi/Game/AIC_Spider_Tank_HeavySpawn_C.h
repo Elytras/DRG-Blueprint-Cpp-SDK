@@ -13,7 +13,11 @@ class AIC_Spider_Tank_HeavySpawn_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/AIC_Spider_Tank_HeavySpawn", "AIC_Spider_Tank_HeavySpawn_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy

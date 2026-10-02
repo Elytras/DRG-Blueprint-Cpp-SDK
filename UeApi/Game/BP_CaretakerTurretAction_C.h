@@ -25,7 +25,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<FTransform> TurretTransforms;
     TArray<class UClass*> ChosenTurrets;
-    TArray<class AActor*> Turrets;
+    UE_READONLY TArray<class AActor*> Turrets;
     FTimerHandle TurretWave_Handle;
     int BaseMaxTurrets;
     int ExtraMaxTurretsPerPlayer;
@@ -47,9 +47,13 @@ public:
     void SetupDrone(BP_FacilityTurretDrone_C* Drone, FTransform Transform);
     void OnStopped();
     void Turret_wave();
-    static constexpr const char* Turret_wave__UeName = "Turret wave";
     void OnStarted();
     UE_AUTHORITY_ONLY UE_PURE bool CanUse() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Turret_wave__UeName = "Turret wave";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker

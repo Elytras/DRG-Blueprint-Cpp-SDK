@@ -13,6 +13,11 @@ class STA_SpiderBoss_Pheromone_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTank/STA_SpiderBoss_Pheromone", "STA_SpiderBoss_Pheromone_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank

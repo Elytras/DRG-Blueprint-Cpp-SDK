@@ -16,7 +16,11 @@ class Bar_Glass_Physics_Base_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Bar/Bar_Glass_Physics_Base", "Bar_Glass_Physics_Base_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "23815f783e495940ab8ca161d348daf9";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "23815f783e495940ab8ca161d348daf9";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

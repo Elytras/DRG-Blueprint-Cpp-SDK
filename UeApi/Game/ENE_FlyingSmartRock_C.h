@@ -30,28 +30,17 @@ class ENE_FlyingSmartRock_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/FlyingSmartRocks/ENE_FlyingSmartRock", "ENE_FlyingSmartRock_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_FlyingRock_Birth;
-    static constexpr const char* P_FlyingRock_Birth__UeScsNode = "3792c786982d764195623dba061a8ef3";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "b35ffb532a72854ea586a2ac4d1634b9";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "cabf6923b5d2ff46881f02e491193e0c";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "c24f8862c92a60418870cc65e4d697ba";
     class UStaticMeshComponent* Core;
-    static constexpr const char* Core__UeScsNode = "f65ce9bc16374848ac0be97a1cc4ad4a";
     class UAudioComponent* RockAttack_FloatingLoop_Cue;
-    static constexpr const char* RockAttack_FloatingLoop_Cue__UeScsNode = "571d8cba6f30c144b6355c4dbd7800db";
     class UAudioComponent* PrepareToAttack_Cue;
-    static constexpr const char* PrepareToAttack_Cue__UeScsNode = "1bd526bcc7531543b293a2992ad40b98";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "070c5c30fe865945a84ae9045971c9e6";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "3ad051f7003fde4c8bf22a306c337ed3";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "1dac1457f886d743ad1995f7ec0b00d5";
     float Timeline_1_ScaleMesh_EC054E764BE887708377689ABBE38A90;
     TEnum<ETimelineDirection> Timeline_1__Direction_EC054E764BE887708377689ABBE38A90;
     class UTimelineComponent* Timeline_1;
@@ -93,6 +82,21 @@ public:
     void AttackTell__UpdateFunc();
     void AttackTell__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* P_FlyingRock_Birth__UeScsNode = "3792c786982d764195623dba061a8ef3";
+        static constexpr const char* Trail__UeScsNode = "b35ffb532a72854ea586a2ac4d1634b9";
+        static constexpr const char* PointLight__UeScsNode = "cabf6923b5d2ff46881f02e491193e0c";
+        static constexpr const char* Sphere__UeScsNode = "c24f8862c92a60418870cc65e4d697ba";
+        static constexpr const char* Core__UeScsNode = "f65ce9bc16374848ac0be97a1cc4ad4a";
+        static constexpr const char* RockAttack_FloatingLoop_Cue__UeScsNode = "571d8cba6f30c144b6355c4dbd7800db";
+        static constexpr const char* PrepareToAttack_Cue__UeScsNode = "1bd526bcc7531543b293a2992ad40b98";
+        static constexpr const char* Damage__UeScsNode = "070c5c30fe865945a84ae9045971c9e6";
+        static constexpr const char* outline__UeScsNode = "3ad051f7003fde4c8bf22a306c337ed3";
+        static constexpr const char* enemy__UeScsNode = "1dac1457f886d743ad1995f7ec0b00d5";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::FlyingSmartRocks

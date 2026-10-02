@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/BP_HangingMistCloud_Azure", "BP_HangingMistCloud_Azure_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "eb564338b899e44e82abf9a61f7058d9";
     class UParticleSystemComponent* P_CaveFX_Rain01;
-    static constexpr const char* P_CaveFX_Rain01__UeScsNode = "3b4a252ea8637e4fa3a024fbfc26188b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
     bool PlayerInsideGas;
     void ExecuteUbergraph_BP_HangingMistCloud_Azure(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* terrainPlacement__UeScsNode = "eb564338b899e44e82abf9a61f7058d9";
+        static constexpr const char* P_CaveFX_Rain01__UeScsNode = "3b4a252ea8637e4fa3a024fbfc26188b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d392526625b5b24c97ded21449067236";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald

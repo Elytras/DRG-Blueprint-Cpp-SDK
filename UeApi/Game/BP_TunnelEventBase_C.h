@@ -25,16 +25,12 @@ class BP_TunnelEventBase_C : public ATunnelEventBase
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEventBase", "BP_TunnelEventBase_C");
     using BP_Gem_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BillboardComponent EntranceIndicator;/Script/Engine.SceneComponent Adders;/Script/Engine.SceneComponent DebrisParent;/Script/Engine.SceneComponent Removers;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TunnelEntranceCarvers";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "d9a704583bc3834eaddd2b467066360f";
     class UBoxComponent* OnEnteredTrigger;
-    static constexpr const char* OnEnteredTrigger__UeScsNode = "9d31dfadbbd7944792ea81e04a95c875";
     TArray<BP_Gem_C*> AllGems;
     TArray<class APlayerCharacter*> PlayerCharactersToCaveIn;
     bool AnyPlayerHasEntered;
-    static constexpr const char* AnyPlayerHasEntered__Replicated = "OnRep_AnyPlayerHasEntered:";
     class USceneComponent* Current;
     TArray<class USceneComponent*> ToCarve;
     TArray<class AActor*> ToAlert;
@@ -52,6 +48,14 @@ public:
     void PlayGemMissionShout();
     void PlayFoundBoneCollectorShout();
     void SetBeaconVisibility(bool IsVisible);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BillboardComponent EntranceIndicator;/Script/Engine.SceneComponent Adders;/Script/Engine.SceneComponent DebrisParent;/Script/Engine.SceneComponent Removers;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TunnelEntranceCarvers";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "d9a704583bc3834eaddd2b467066360f";
+        static constexpr const char* OnEnteredTrigger__UeScsNode = "9d31dfadbbd7944792ea81e04a95c875";
+        static constexpr const char* AnyPlayerHasEntered__Replicated = "OnRep_AnyPlayerHasEntered:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent

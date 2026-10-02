@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay_SteamAwards2019", "UI_InfoScreen_Overlay_SteamAwards2019_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Idle;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UImage* Glow1;
     class UImage* Glow2;

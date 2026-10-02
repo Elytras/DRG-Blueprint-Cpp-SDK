@@ -13,7 +13,11 @@ class BP_CameraDrone_FlareProjectile_C : public Game::WeaponsNTools::FlareGun::P
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_CameraDrone_FlareProjectile", "BP_CameraDrone_FlareProjectile_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}   // namespace Game::GameElements::MovieMode

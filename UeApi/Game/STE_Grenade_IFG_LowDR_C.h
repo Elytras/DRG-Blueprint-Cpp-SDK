@@ -13,6 +13,11 @@ class STE_Grenade_IFG_LowDR_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/STE_Grenade_IFG_LowDR", "STE_Grenade_IFG_LowDR_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG

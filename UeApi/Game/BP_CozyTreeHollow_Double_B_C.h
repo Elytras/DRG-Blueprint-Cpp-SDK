@@ -17,9 +17,13 @@ class BP_CozyTreeHollow_Double_B_C : public Game::LevelElements::RoomObjects::Co
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/CozyTreeHollows/BP_CozyTreeHollow_Double_B", "BP_CozyTreeHollow_Double_B_C");
     class UStaticMeshComponent* StaticMesh_Room1;
-    static constexpr const char* StaticMesh_Room1__UeScsNode = "988650dfab62074eaee2162de628c894";
     class ULevelGenerationCarverComponent* LevelGenerationCarver_Room1;
-    static constexpr const char* LevelGenerationCarver_Room1__UeScsNode = "a175a106054b4243a020382d1fcc7904";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh_Room1__UeScsNode = "988650dfab62074eaee2162de628c894";
+        static constexpr const char* LevelGenerationCarver_Room1__UeScsNode = "a175a106054b4243a020382d1fcc7904";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::CozyTreeHollows

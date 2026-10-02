@@ -133,11 +133,15 @@ class ULevelSequenceBurnIn : public UUserWidget
 {
 public:
     UE_CLASS("/Script/LevelSequence", "LevelSequenceBurnIn");
-    static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
-    FLevelSequencePlayerSnapshot FrameInformation;
-    class ALevelSequenceActor* LevelSequenceActor;
+    UE_READONLY FLevelSequencePlayerSnapshot FrameInformation;
+    UE_READONLY class ALevelSequenceActor* LevelSequenceActor;
     void SetSettings(class UObject* InSettings);
     TSubclassOf<class ULevelSequenceBurnInInitSettings> GetSettingsClass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00a00000 /Script/CoreUObject.Object Engine";
+    };
 };
 
 class UAnimSequenceLevelSequenceLink : public UAssetUserData
@@ -182,23 +186,18 @@ class ALevelSequenceActor : public AActor
 {
 public:
     UE_CLASS("/Script/LevelSequence", "LevelSequenceActor");
-    FMovieSceneSequencePlaybackSettings PlaybackSettings;
-    class ULevelSequencePlayer* SequencePlayer;
-    static constexpr const char* SequencePlayer__Replicated = ":";
-    FSoftObjectPath LevelSequence;
+    UE_READONLY FMovieSceneSequencePlaybackSettings PlaybackSettings;
+    UE_READONLY class ULevelSequencePlayer* SequencePlayer;
+    UE_READONLY FSoftObjectPath LevelSequence;
     FLevelSequenceCameraSettings CameraSettings;
-    class ULevelSequenceBurnInOptions* BurnInOptions;
-    class UMovieSceneBindingOverrides* BindingOverrides;
+    UE_READONLY class ULevelSequenceBurnInOptions* BurnInOptions;
+    UE_READONLY class UMovieSceneBindingOverrides* BindingOverrides;
     bool bAutoPlay;
     bool bOverrideInstanceData;
     bool bReplicatePlayback;
     class UObject* DefaultInstanceData;
     class ULevelSequenceBurnIn* BurnInInstance;
     bool bShowBurnin;
-    static constexpr const char* BindingOverrides__UeSubobject = "BindingOverrides /Script/MovieScene.MovieSceneBindingOverrides";
-    static constexpr const char* BurnInOptions__UeSubobject = "BurnInOptions /Script/LevelSequence.LevelSequenceBurnInOptions";
-    static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
-    static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/LevelSequence.LevelSequencePlayer";
     void AddBinding(FMovieSceneObjectBindingID Binding, class AActor* Actor, bool bAllowBindingsFromAsset);
     void AddBindingByTag(FName BindingTag, class AActor* Actor, bool bAllowBindingsFromAsset);
     void HideBurnin();
@@ -216,6 +215,15 @@ public:
     UE_PURE class ULevelSequence* GetSequence() const;
     UE_PURE class ULevelSequencePlayer* GetSequencePlayer() const;
     UE_PURE class ULevelSequence* LoadSequence() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SequencePlayer__Replicated = ":";
+        static constexpr const char* BindingOverrides__UeSubobject = "BindingOverrides /Script/MovieScene.MovieSceneBindingOverrides";
+        static constexpr const char* BurnInOptions__UeSubobject = "BurnInOptions /Script/LevelSequence.LevelSequenceBurnInOptions";
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+        static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/LevelSequence.LevelSequencePlayer";
+    };
 };
 
 class ULevelSequenceAnimSequenceLink : public UAssetUserData
@@ -229,7 +237,7 @@ class ULevelSequenceDirector : public UObject
 {
 public:
     UE_CLASS("/Script/LevelSequence", "LevelSequenceDirector");
-    class ULevelSequencePlayer* Player;
+    UE_READONLY class ULevelSequencePlayer* Player;
     int SubSequenceID;
     int MovieScenePlayerIndex;
     class AActor* GetBoundActor(FMovieSceneObjectBindingID ObjectBinding);
@@ -254,6 +262,11 @@ public:
     static class ULevelSequencePlayer* CreateLevelSequencePlayer(class UObject* WorldContextObject, class ULevelSequence* LevelSequence, FMovieSceneSequencePlaybackSettings Settings, class ALevelSequenceActor*& OutActor);
     static class ULevelSequencePlayer* CreateLevelSequencePlayer(class ULevelSequence* LevelSequence, FMovieSceneSequencePlaybackSettings Settings, class ALevelSequenceActor*& OutActor);
     UE_PURE class UCameraComponent* GetActiveCameraComponent() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnCameraCut__UeDispatcher = "Assignable";
+    };
 };
 
 class ULevelSequenceProjectSettings : public UDeveloperSettings
@@ -270,14 +283,18 @@ class ALevelSequenceMediaController : public AActor
 {
 public:
     UE_CLASS("/Script/LevelSequence", "LevelSequenceMediaController");
-    class ALevelSequenceActor* Sequence;
-    class UMediaComponent* MediaComponent;
-    float ServerStartTimeSeconds;
-    static constexpr const char* ServerStartTimeSeconds__Replicated = "OnRep_ServerStartTimeSeconds:";
-    static constexpr const char* MediaComponent__UeSubobject = "MediaComponent /Script/MediaAssets.MediaComponent";
+    UE_READONLY class ALevelSequenceActor* Sequence;
+    UE_READONLY class UMediaComponent* MediaComponent;
+    UE_READONLY float ServerStartTimeSeconds;
     void OnRep_ServerStartTimeSeconds();
     void Play();
     void SynchronizeToServer(float DesyncThresholdSeconds);
     UE_PURE class UMediaComponent* GetMediaComponent() const;
     UE_PURE class ALevelSequenceActor* GetSequence() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ServerStartTimeSeconds__Replicated = "OnRep_ServerStartTimeSeconds:";
+        static constexpr const char* MediaComponent__UeSubobject = "MediaComponent /Script/MediaAssets.MediaComponent";
+    };
 };

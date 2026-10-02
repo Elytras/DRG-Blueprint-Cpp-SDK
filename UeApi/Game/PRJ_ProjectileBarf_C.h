@@ -21,22 +21,16 @@ class PRJ_ProjectileBarf_C : public AProjectile
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/PRJ_ProjectileBarf", "PRJ_ProjectileBarf_C");
     using BP_WalkingPlagueheart_SlimeTrailPuddle_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "7a323c1444c45a40b20b68274b806d7d";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_3717E14C4B7CB080E7AA388B3D991446";
     TEnum<ETimelineDirection> Timeline_0__Direction_3717E14C4B7CB080E7AA388B3D991446;
     class UTimelineComponent* Timeline_0;
     float LockOnTime;
     class USceneComponent* Homing_Target;
-    static constexpr const char* Homing_Target__UeName = "Homing Target";
-    static constexpr const char* Homing_Target__Replicated = "OnRep_Homing Target:";
     float Acceptance;
     TMulticastInlineDelegate<void(BP_WalkingPlagueheart_SlimeTrailPuddle_C* puddle)> OnPuddleSpawned;
     FVector_NetQuantize ArrivedLocation;
-    static constexpr const char* ArrivedLocation__Replicated = "OnRep_ArrivedLocation:";
     void ExecuteUbergraph_PRJ_ProjectileBarf(int EntryPoint);
     void OnArrived(FVector ArrivedLocation_0);
     void ReceiveTick(float DeltaSeconds);
@@ -44,8 +38,18 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void OnRep_Homing_Target();
-    static constexpr const char* OnRep_Homing_Target__UeName = "OnRep_Homing Target";
     void OnRep_ArrivedLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Niagara__UeScsNode = "7a323c1444c45a40b20b68274b806d7d";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_3717E14C4B7CB080E7AA388B3D991446";
+        static constexpr const char* Homing_Target__UeName = "Homing Target";
+        static constexpr const char* Homing_Target__Replicated = "OnRep_Homing Target:";
+        static constexpr const char* ArrivedLocation__Replicated = "OnRep_ArrivedLocation:";
+        static constexpr const char* OnRep_Homing_Target__UeName = "OnRep_Homing Target";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

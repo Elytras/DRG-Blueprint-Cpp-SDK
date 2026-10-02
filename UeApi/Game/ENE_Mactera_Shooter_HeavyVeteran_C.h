@@ -18,19 +18,23 @@ class ENE_Mactera_Shooter_HeavyVeteran_C : public Game::Enemies::FlyingBug::Shoo
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ENE_Mactera_Shooter_HeavyVeteran", "ENE_Mactera_Shooter_HeavyVeteran_C");
     using BP_Mactera_Heavy_ProjectileAttack_C = Game::Enemies::FlyingBug::Shooter::BP_Mactera_Heavy_ProjectileAttack_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Mactera_Shooter_HeavyVeteran_C;
-    static constexpr const char* UberGraphFrame_ENE_Mactera_Shooter_HeavyVeteran_C__UeName = "UberGraphFrame";
     BP_Mactera_Heavy_ProjectileAttack_C* Mactera_Heavy_ProjectileAttack;
-    static constexpr const char* Mactera_Heavy_ProjectileAttack__UeScsNode = "21fd5c53a7638f46be92e25d4850c043";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "5e2d3bded62a1843bdea6d062889284b";
     bool DoEliteExplosion;
     void ExecuteUbergraph_ENE_Mactera_Shooter_HeavyVeteran(int EntryPoint);
     void Death_Normal();
-    static constexpr const char* Death_Normal__UeName = "Death Normal";
     void MakeElite();
     void BndEvt__ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Mactera_Shooter_HeavyVeteran_C__UeName = "UberGraphFrame";
+        static constexpr const char* Mactera_Heavy_ProjectileAttack__UeScsNode = "21fd5c53a7638f46be92e25d4850c043";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "5e2d3bded62a1843bdea6d062889284b";
+        static constexpr const char* Death_Normal__UeName = "Death Normal";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

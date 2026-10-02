@@ -17,9 +17,13 @@ class ESI_Scrab_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Ossiran/Scrab/ESI_Scrab", "ESI_Scrab_C");
     class USkeletalMeshComponent* SK_Scrab;
-    static constexpr const char* SK_Scrab__UeScsNode = "97e9fe746866a14b932a890a4af13cb5";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_Scrab__UeScsNode = "97e9fe746866a14b932a890a4af13cb5";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f72ef8b3ab915b438027560509f002a2";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab

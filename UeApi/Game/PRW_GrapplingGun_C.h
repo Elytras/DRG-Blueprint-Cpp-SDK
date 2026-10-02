@@ -17,9 +17,13 @@ class PRW_GrapplingGun_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/GrapplingGun/PRW_GrapplingGun", "PRW_GrapplingGun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "a7a329ad1901e344a216588cf81d887b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "22318f80a4c688438fb60d53ecc3d202";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "a7a329ad1901e344a216588cf81d887b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "22318f80a4c688438fb60d53ecc3d202";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun

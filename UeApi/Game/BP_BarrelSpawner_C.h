@@ -28,18 +28,11 @@ public:
     using BP_Phys_Barrel01_C = Game::Art::Environments::SpaceRig::BP_Phys_Barrel01_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Screen;
-    static constexpr const char* Mesh_Screen__UeScsNode = "ace5d9becaf79b45ae3d2de5eba4d75c";
     class UWidgetComponent* Widget_Barrel_Counter;
-    static constexpr const char* Widget_Barrel_Counter__UeName = "Widget Barrel Counter";
-    static constexpr const char* Widget_Barrel_Counter__UeScsNode = "f46e0aa887264446bc6c0ca0335b9c89";
     class UDecalComponent* Decal;
-    static constexpr const char* Decal__UeScsNode = "7bdc7aa265c5744d95a3dd4d90417d9f";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "606ac4c83da7724a845a3296bb3de6b3";
     class UBillboardComponent* Billboard;
-    static constexpr const char* Billboard__UeScsNode = "574450e76e4cd142913bd1c4a0801472";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "195d814e277fa34f9986fe14d0e26808";
     BP_Phys_Barrel01_C* LastBarrel;
     int BarrelsSpawned;
     int SpawnCicle;
@@ -54,6 +47,17 @@ public:
     void BndEvt__Box_K2Node_ComponentBoundEvent_2_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void SpawnBarrel();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mesh_Screen__UeScsNode = "ace5d9becaf79b45ae3d2de5eba4d75c";
+        static constexpr const char* Widget_Barrel_Counter__UeName = "Widget Barrel Counter";
+        static constexpr const char* Widget_Barrel_Counter__UeScsNode = "f46e0aa887264446bc6c0ca0335b9c89";
+        static constexpr const char* Decal__UeScsNode = "7bdc7aa265c5744d95a3dd4d90417d9f";
+        static constexpr const char* Box__UeScsNode = "606ac4c83da7724a845a3296bb3de6b3";
+        static constexpr const char* Billboard__UeScsNode = "574450e76e4cd142913bd1c4a0801472";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "195d814e277fa34f9986fe14d0e26808";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops

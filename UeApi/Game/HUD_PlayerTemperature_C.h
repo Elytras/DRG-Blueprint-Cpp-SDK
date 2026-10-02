@@ -22,10 +22,10 @@ class HUD_PlayerTemperature_C : public UFSDUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_PlayerTemperature", "HUD_PlayerTemperature_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Appear;
-    class UWidgetAnimation* Pulse;
-    class UWidgetAnimation* fade;
-    class UWidgetAnimation* Warning;
+    UE_READONLY class UWidgetAnimation* Appear;
+    UE_READONLY class UWidgetAnimation* Pulse;
+    UE_READONLY class UWidgetAnimation* fade;
+    UE_READONLY class UWidgetAnimation* Warning;
     class UImage* Arrow01;
     class UImage* Arrow02;
     class UImage* Arrow03;

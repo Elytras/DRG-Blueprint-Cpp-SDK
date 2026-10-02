@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_Community_Console_ClaimReward", "ITM_Community_Console_ClaimReward_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* LogoAnimation;
+    UE_READONLY class UWidgetAnimation* LogoAnimation;
     class UImage* Image_Faction;
     class USizeBox* SydicateLogoBox;
     UI_ImageTinted_C* SyndicateLogo;

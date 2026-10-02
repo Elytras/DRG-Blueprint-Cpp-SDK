@@ -19,9 +19,9 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_OptionalHudElement", "HUD_OptionalHudElement_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNamedSlot* Content;
-    class UHUDVisibilityGroup* VisibilityGroup;
-    TEnum<ESlateVisibility> VisibleMode;
-    TEnum<ESlateVisibility> HiddenMode;
+    UE_READONLY class UHUDVisibilityGroup* VisibilityGroup;
+    UE_READONLY TEnum<ESlateVisibility> VisibleMode;
+    UE_READONLY TEnum<ESlateVisibility> HiddenMode;
     void ExecuteUbergraph_HUD_OptionalHudElement(int EntryPoint);
     UE_COSMETIC void Construct();
 };

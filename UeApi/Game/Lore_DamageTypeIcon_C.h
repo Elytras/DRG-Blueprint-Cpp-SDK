@@ -22,7 +22,7 @@ class Lore_DamageTypeIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_DamageTypeIcon", "Lore_DamageTypeIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UButton* Button_0;
     class UImage* Icon;
     FVector2D IconSize;

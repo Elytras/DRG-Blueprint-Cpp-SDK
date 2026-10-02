@@ -19,11 +19,15 @@ public:
     using BP_PlagueHeart_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueHeart_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f3d6862d280b07439342f3dc99b6d1fe";
     int heartsDeposited;
     void ExecuteUbergraph_BP_WalkingPlagueheart_PlagueheartCollectionShoutManager(int EntryPoint);
     void InitializeHeart(BP_PlagueHeart_C* RegisterPlagueheart);
     void OnHeartDeposited();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f3d6862d280b07439342f3dc99b6d1fe";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

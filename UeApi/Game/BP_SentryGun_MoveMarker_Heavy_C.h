@@ -23,11 +23,8 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_MoveMarker_Heavy", "BP_SentryGun_MoveMarker_Heavy_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "5a28fb0c65676546a6998e163c51669b";
     class UWidgetComponent* DistanceWidget;
-    static constexpr const char* DistanceWidget__UeScsNode = "d650a970a545bd4e894333aa8a258a0f";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "aec9b1cd17e278498ec44a0270cd9e52";
     class UMaterialInterface* Material;
     void ExecuteUbergraph_BP_SentryGun_MoveMarker_Heavy(int EntryPoint);
     void ReceiveBeginPlay();
@@ -36,6 +33,13 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "5a28fb0c65676546a6998e163c51669b";
+        static constexpr const char* DistanceWidget__UeScsNode = "d650a970a545bd4e894333aa8a258a0f";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "aec9b1cd17e278498ec44a0270cd9e52";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

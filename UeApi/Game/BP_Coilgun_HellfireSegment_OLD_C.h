@@ -23,21 +23,25 @@ public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/BP_Coilgun_HellfireSegment_OLD", "BP_Coilgun_HellfireSegment_OLD_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "fbdf63c71ce9944dbedb1ba658e754dc";
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
-    static constexpr const char* StatusEffectTrigger__UeScsNode = "f76a4b5c992e1d4ca1d07f23d5148b3e";
     class UObjectTemperatureComponent* ObjectTemperature;
-    static constexpr const char* ObjectTemperature__UeScsNode = "37adfdbfc117f24a8a5c19934fd41382";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "f85459f7b094f84bba59756a4283f0ef";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "d63532e6e5a1f3419fb776bbddedbdf7";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "1bea6aa40c9b14419362b30a8c85b4e7";
     void ExecuteUbergraph_BP_Coilgun_HellfireSegment_OLD(int EntryPoint);
     void OnStartEffects();
     void OnEndEffects();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "fbdf63c71ce9944dbedb1ba658e754dc";
+        static constexpr const char* StatusEffectTrigger__UeScsNode = "f76a4b5c992e1d4ca1d07f23d5148b3e";
+        static constexpr const char* ObjectTemperature__UeScsNode = "37adfdbfc117f24a8a5c19934fd41382";
+        static constexpr const char* PathfinderCollision__UeScsNode = "f85459f7b094f84bba59756a4283f0ef";
+        static constexpr const char* Audio__UeScsNode = "d63532e6e5a1f3419fb776bbddedbdf7";
+        static constexpr const char* ParticleSystem__UeScsNode = "1bea6aa40c9b14419362b30a8c85b4e7";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CoilGun

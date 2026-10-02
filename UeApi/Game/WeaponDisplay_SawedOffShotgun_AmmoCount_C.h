@@ -19,7 +19,6 @@ class WeaponDisplay_SawedOffShotgun_AmmoCount_C : public Game::UI::WeaponDisplay
 public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/WeaponDisplay_SawedOffShotgun_AmmoCount", "WeaponDisplay_SawedOffShotgun_AmmoCount_C");
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_SawedOffShotgun_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_SawedOffShotgun_AmmoCount_C__UeName = "UberGraphFrame";
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
     class UImage* Image_88;
@@ -27,6 +26,11 @@ public:
     void ExecuteUbergraph_WeaponDisplay_SawedOffShotgun_AmmoCount(int EntryPoint);
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_SawedOffShotgun_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun

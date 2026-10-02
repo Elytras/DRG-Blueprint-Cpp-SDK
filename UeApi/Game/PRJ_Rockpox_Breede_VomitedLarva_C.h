@@ -20,24 +20,28 @@ class PRJ_Rockpox_Breede_VomitedLarva_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/PRJ_Rockpox_Breede_VomitedLarva", "PRJ_Rockpox_Breede_VomitedLarva_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Spitballer_BlueGooSplat_Cue;
-    static constexpr const char* Spitballer_BlueGooSplat_Cue__UeScsNode = "a388396eddd7dc4595107e4a3284481c";
     class UNiagaraComponent* NS_Plague_Projectile_Trail;
-    static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "08c769b83d64264d829b0daad785913d";
     class USkeletalMeshComponent* ProjecitleMesh;
-    static constexpr const char* ProjecitleMesh__UeScsNode = "c54bfc6eb084f341a5ee0c98e3c0bdf1";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "1bb97c1eedf43d478556c229eb05d3a7";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "2fec48152b173c468260fc4a6dc46e6b";
     bool Blocking_Hit;
-    static constexpr const char* Blocking_Hit__UeName = "Blocking Hit";
     void ExecuteUbergraph_PRJ_Rockpox_Breede_VomitedLarva(int EntryPoint);
     void OnInitialized();
     void DoOnSpawn();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Spitballer_BlueGooSplat_Cue__UeScsNode = "a388396eddd7dc4595107e4a3284481c";
+        static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "08c769b83d64264d829b0daad785913d";
+        static constexpr const char* ProjecitleMesh__UeScsNode = "c54bfc6eb084f341a5ee0c98e3c0bdf1";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "1bb97c1eedf43d478556c229eb05d3a7";
+        static constexpr const char* Damage__UeScsNode = "2fec48152b173c468260fc4a6dc46e6b";
+        static constexpr const char* Blocking_Hit__UeName = "Blocking Hit";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder

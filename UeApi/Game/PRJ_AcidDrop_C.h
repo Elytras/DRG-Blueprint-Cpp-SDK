@@ -16,12 +16,16 @@ class PRJ_AcidDrop_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_AcidDrop", "PRJ_AcidDrop_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystem* Impact_particles;
-    static constexpr const char* Impact_particles__UeName = "Impact particles";
     void ExecuteUbergraph_PRJ_AcidDrop(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Impact_particles__UeName = "Impact particles";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

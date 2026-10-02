@@ -13,6 +13,11 @@ class STE_WoodlouseYounglingExplosiveResistance_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/STE_WoodlouseYounglingExplosiveResistance", "STE_WoodlouseYounglingExplosiveResistance_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse

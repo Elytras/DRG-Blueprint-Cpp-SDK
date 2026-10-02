@@ -13,6 +13,11 @@ class STE_GooPuddle_GC_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/STE_GooPuddle_GC", "STE_GooPuddle_GC_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

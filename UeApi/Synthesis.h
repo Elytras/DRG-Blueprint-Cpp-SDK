@@ -829,6 +829,11 @@ class UEnvelopeFollowerListener : public UActorComponent
 public:
     UE_CLASS("/Script/Synthesis", "EnvelopeFollowerListener");
     TMulticastInlineDelegate<void(float EnvelopeValue)> OnEnvelopeFollowerUpdate;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnEnvelopeFollowerUpdate__UeDispatcher = "Assignable";
+    };
 };
 
 class UModularSynthPresetBank : public UObject
@@ -842,7 +847,7 @@ class USourceEffectEnvelopeFollowerPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectEnvelopeFollowerPreset");
-    FSourceEffectEnvelopeFollowerSettings Settings;
+    UE_READONLY FSourceEffectEnvelopeFollowerSettings Settings;
     void RegisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* EnvelopeFollowerListener);
     void SetSettings(const FSourceEffectEnvelopeFollowerSettings& InSettings);
     void UnregisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* EnvelopeFollowerListener);
@@ -859,7 +864,7 @@ class UModularSynthComponent : public USynthComponent
 {
 public:
     UE_CLASS("/Script/Synthesis", "ModularSynthComponent");
-    int VoiceCount;
+    UE_READONLY int VoiceCount;
     FPatchId CreatePatch(TEnum<ESynth1PatchSource> PatchSource, const TArray<FSynth1PatchCable>& PatchCables, bool bEnableByDefault);
     void NoteOff(float Note, bool bAllNotesOff, bool bKillAllNotes);
     void NoteOn(float Note, int Velocity, float Duration);
@@ -925,7 +930,7 @@ class USourceEffectBitCrusherPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectBitCrusherPreset");
-    FSourceEffectBitCrusherSettings Settings;
+    UE_READONLY FSourceEffectBitCrusherSettings Settings;
     void SetBitModulator(class USoundModulatorBase* Modulator);
     void SetBits(float Bits);
     void SetModulationSettings(const FSourceEffectBitCrusherSettings& ModulationSettings);
@@ -938,7 +943,7 @@ class USourceEffectChorusPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectChorusPreset");
-    FSourceEffectChorusSettings Settings;
+    UE_READONLY FSourceEffectChorusSettings Settings;
     void SetDepth(float Depth);
     void SetDepthModulator(class USoundModulatorBase* Modulator);
     void SetDry(float DryAmount);
@@ -959,7 +964,7 @@ class USourceEffectDynamicsProcessorPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectDynamicsProcessorPreset");
-    FSourceEffectDynamicsProcessorSettings Settings;
+    UE_READONLY FSourceEffectDynamicsProcessorSettings Settings;
     void SetSettings(const FSourceEffectDynamicsProcessorSettings& InSettings);
 };
 
@@ -967,7 +972,7 @@ class USourceEffectEQPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectEQPreset");
-    FSourceEffectEQSettings Settings;
+    UE_READONLY FSourceEffectEQSettings Settings;
     void SetSettings(const FSourceEffectEQSettings& InSettings);
 };
 
@@ -975,7 +980,7 @@ class USourceEffectFilterPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectFilterPreset");
-    FSourceEffectFilterSettings Settings;
+    UE_READONLY FSourceEffectFilterSettings Settings;
     void SetSettings(const FSourceEffectFilterSettings& InSettings);
 };
 
@@ -983,7 +988,7 @@ class USourceEffectFoldbackDistortionPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectFoldbackDistortionPreset");
-    FSourceEffectFoldbackDistortionSettings Settings;
+    UE_READONLY FSourceEffectFoldbackDistortionSettings Settings;
     void SetSettings(const FSourceEffectFoldbackDistortionSettings& InSettings);
 };
 
@@ -991,7 +996,7 @@ class USourceEffectMidSideSpreaderPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectMidSideSpreaderPreset");
-    FSourceEffectMidSideSpreaderSettings Settings;
+    UE_READONLY FSourceEffectMidSideSpreaderSettings Settings;
     void SetSettings(const FSourceEffectMidSideSpreaderSettings& InSettings);
 };
 
@@ -999,7 +1004,7 @@ class USourceEffectPannerPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectPannerPreset");
-    FSourceEffectPannerSettings Settings;
+    UE_READONLY FSourceEffectPannerSettings Settings;
     void SetSettings(const FSourceEffectPannerSettings& InSettings);
 };
 
@@ -1015,7 +1020,7 @@ class USourceEffectRingModulationPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectRingModulationPreset");
-    FSourceEffectRingModulationSettings Settings;
+    UE_READONLY FSourceEffectRingModulationSettings Settings;
     void SetSettings(const FSourceEffectRingModulationSettings& InSettings);
 };
 
@@ -1023,7 +1028,7 @@ class USourceEffectSimpleDelayPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectSimpleDelayPreset");
-    FSourceEffectSimpleDelaySettings Settings;
+    UE_READONLY FSourceEffectSimpleDelaySettings Settings;
     void SetSettings(const FSourceEffectSimpleDelaySettings& InSettings);
 };
 
@@ -1031,7 +1036,7 @@ class USourceEffectStereoDelayPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectStereoDelayPreset");
-    FSourceEffectStereoDelaySettings Settings;
+    UE_READONLY FSourceEffectStereoDelaySettings Settings;
     void SetSettings(const FSourceEffectStereoDelaySettings& InSettings);
 };
 
@@ -1039,7 +1044,7 @@ class USourceEffectWaveShaperPreset : public USoundEffectSourcePreset
 {
 public:
     UE_CLASS("/Script/Synthesis", "SourceEffectWaveShaperPreset");
-    FSourceEffectWaveShaperSettings Settings;
+    UE_READONLY FSourceEffectWaveShaperSettings Settings;
     void SetSettings(const FSourceEffectWaveShaperSettings& InSettings);
 };
 
@@ -1050,8 +1055,8 @@ public:
     TArray<float> ImpulseResponse;
     int NumChannels;
     int SampleRate;
-    float NormalizationVolumeDb;
-    bool bTrueStereo;
+    UE_READONLY float NormalizationVolumeDb;
+    UE_READONLY bool bTrueStereo;
     TArray<float> IRData;
 };
 
@@ -1061,8 +1066,8 @@ public:
     UE_CLASS("/Script/Synthesis", "SubmixEffectConvolutionReverbPreset");
     class UAudioImpulseResponse* ImpulseResponse;
     FSubmixEffectConvolutionReverbSettings Settings;
-    TEnum<ESubmixEffectConvolutionReverbBlockSize> BlockSize;
-    bool bEnableHardwareAcceleration;
+    UE_READONLY TEnum<ESubmixEffectConvolutionReverbBlockSize> BlockSize;
+    UE_READONLY bool bEnableHardwareAcceleration;
     void SetImpulseResponse(class UAudioImpulseResponse* InImpulseResponse);
     void SetSettings(const FSubmixEffectConvolutionReverbSettings& InSettings);
 };
@@ -1141,11 +1146,11 @@ public:
     TDelegate<void()> ValueXDelegate;
     TDelegate<void()> ValueYDelegate;
     FSynth2DSliderStyle WidgetStyle;
-    FLinearColor SliderHandleColor;
-    bool IndentHandle;
-    bool Locked;
-    float StepSize;
-    bool IsFocusable;
+    UE_READONLY FLinearColor SliderHandleColor;
+    UE_READONLY bool IndentHandle;
+    UE_READONLY bool Locked;
+    UE_READONLY float StepSize;
+    UE_READONLY bool IsFocusable;
     TMulticastInlineDelegate<void()> OnMouseCaptureBegin;
     TMulticastInlineDelegate<void()> OnMouseCaptureEnd;
     TMulticastInlineDelegate<void()> OnControllerCaptureBegin;
@@ -1158,6 +1163,16 @@ public:
     void SetStepSize(float InValue);
     void SetValue(FVector2D InValue);
     UE_PURE FVector2D GetValue() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnMouseCaptureBegin__UeDispatcher = "Assignable";
+        static constexpr const char* OnMouseCaptureEnd__UeDispatcher = "Assignable";
+        static constexpr const char* OnControllerCaptureBegin__UeDispatcher = "Assignable";
+        static constexpr const char* OnControllerCaptureEnd__UeDispatcher = "Assignable";
+        static constexpr const char* OnValueChangedX__UeDispatcher = "Assignable";
+        static constexpr const char* OnValueChangedY__UeDispatcher = "Assignable";
+    };
 };
 
 class UGranularSynth : public USynthComponent
@@ -1192,10 +1207,10 @@ class UMonoWaveTableSynthPreset : public UObject
 public:
     UE_CLASS("/Script/Synthesis", "MonoWaveTableSynthPreset");
     FString PresetName;
-    bool bLockKeyframesToGridBool;
-    int LockKeyframesToGrid;
-    int WaveTableResolution;
-    TArray<FRuntimeFloatCurve> WaveTable;
+    UE_READONLY bool bLockKeyframesToGridBool;
+    UE_READONLY int LockKeyframesToGrid;
+    UE_READONLY int WaveTableResolution;
+    UE_READONLY TArray<FRuntimeFloatCurve> WaveTable;
     bool bNormalizeWaveTables;
 };
 
@@ -1250,14 +1265,20 @@ public:
     void SetWaveTablePosition(float InPosition);
     UE_PURE TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
     UE_PURE int GetMaxTableIndex() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnTableAltered__UeDispatcher = "Assignable";
+        static constexpr const char* OnNumTablesChanged__UeDispatcher = "Assignable";
+    };
 };
 
 class USynthComponentToneGenerator : public USynthComponent
 {
 public:
     UE_CLASS("/Script/Synthesis", "SynthComponentToneGenerator");
-    float Frequency;
-    float Volume;
+    UE_READONLY float Frequency;
+    UE_READONLY float Volume;
     void SetFrequency(float InFrequency);
     void SetVolume(float InVolume);
 };
@@ -1278,6 +1299,12 @@ public:
     UE_PURE float GetCurrentPlaybackProgressTime() const;
     UE_PURE float GetSampleDuration() const;
     UE_PURE bool IsLoaded() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSampleLoaded__UeDispatcher = "Assignable";
+        static constexpr const char* OnSamplePlaybackProgress__UeDispatcher = "Assignable";
+    };
 };
 
 class USynthesisUtilitiesBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
@@ -1293,16 +1320,16 @@ class USynthKnob : public UWidget
 public:
     UE_CLASS("/Script/Synthesis", "SynthKnob");
     float Value;
-    float StepSize;
-    float MouseSpeed;
-    float MouseFineTuneSpeed;
-    bool ShowTooltipInfo;
-    FText ParameterName;
-    FText ParameterUnits;
+    UE_READONLY float StepSize;
+    UE_READONLY float MouseSpeed;
+    UE_READONLY float MouseFineTuneSpeed;
+    UE_READONLY bool ShowTooltipInfo;
+    UE_READONLY FText ParameterName;
+    UE_READONLY FText ParameterUnits;
     TDelegate<void()> ValueDelegate;
     FSynthKnobStyle WidgetStyle;
-    bool Locked;
-    bool IsFocusable;
+    UE_READONLY bool Locked;
+    UE_READONLY bool IsFocusable;
     TMulticastInlineDelegate<void()> OnMouseCaptureBegin;
     TMulticastInlineDelegate<void()> OnMouseCaptureEnd;
     TMulticastInlineDelegate<void()> OnControllerCaptureBegin;
@@ -1312,4 +1339,13 @@ public:
     void SetStepSize(float InValue);
     void SetValue(float InValue);
     UE_PURE float GetValue() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnMouseCaptureBegin__UeDispatcher = "Assignable";
+        static constexpr const char* OnMouseCaptureEnd__UeDispatcher = "Assignable";
+        static constexpr const char* OnControllerCaptureBegin__UeDispatcher = "Assignable";
+        static constexpr const char* OnControllerCaptureEnd__UeDispatcher = "Assignable";
+        static constexpr const char* OnValueChanged__UeDispatcher = "Assignable";
+    };
 };

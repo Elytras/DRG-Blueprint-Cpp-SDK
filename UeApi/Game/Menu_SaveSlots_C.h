@@ -63,10 +63,14 @@ public:
     void SetInitialSelectedSave();
     void SetColors();
     void Set_Selected_Save(class UFSDSaveGame* SaveSlot);
-    static constexpr const char* Set_Selected_Save__UeName = "Set Selected Save";
     void BindSaveslotEvents(ITM_SaveSlot_Entry_C* SaveslotWidget);
     void Set_Create_New_Saveslot_Entry();
-    static constexpr const char* Set_Create_New_Saveslot_Entry__UeName = "Set Create New Saveslot Entry";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Selected_Save__UeName = "Set Selected Save";
+        static constexpr const char* Set_Create_New_Saveslot_Entry__UeName = "Set Create New Saveslot Entry";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_SaveSlots

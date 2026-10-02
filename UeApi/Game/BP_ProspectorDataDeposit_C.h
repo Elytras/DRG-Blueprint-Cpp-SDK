@@ -28,25 +28,15 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/HackBuilding/BP_ProspectorDataDeposit", "BP_ProspectorDataDeposit_C");
     using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_ProspectorDataDeposit_C;
-    static constexpr const char* UberGraphFrame_BP_ProspectorDataDeposit_C__UeName = "UberGraphFrame";
     class UAudioComponent* ProspectingDataDepositIdle;
-    static constexpr const char* ProspectingDataDepositIdle__UeScsNode = "67112f500ea3444ab9c3cb6efcf0a552";
     class UNiagaraComponent* NS_DoorOpenSteam;
-    static constexpr const char* NS_DoorOpenSteam__UeScsNode = "bc54d73451e9444e85320b36d1bdc9f1";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "ba5ebad6c667ff41b7eb837f4afba899";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "fec3cb35da57894685688c70b61e9d5a";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "fa2112726bbfd744aade64d4fe27b227";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "1fc91b987cec40469107bc7c9cec1fa8";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "e4ee49cc871544469755e923f1061c9e";
     class USceneComponent* LaunchPoint;
-    static constexpr const char* LaunchPoint__UeScsNode = "597cedc9d17c6b4b86ebc774b1d1b223";
     class USingleUsableComponent* EjectCoreUsable;
-    static constexpr const char* EjectCoreUsable__UeScsNode = "7f51cd9dc6c3704da641ad808edc630f";
     class UEnemyWaveController* ActiveWave;
     bool OverChargerCalled;
     void ExecuteUbergraph_BP_ProspectorDataDeposit(int EntryPoint);
@@ -57,6 +47,20 @@ public:
     void OnLoaded_B91065F0477C87A6C355AF868F6F6BB2(TSubclassOf<class UObject> Loaded);
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
     void SpawnDataCell();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_ProspectorDataDeposit_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProspectingDataDepositIdle__UeScsNode = "67112f500ea3444ab9c3cb6efcf0a552";
+        static constexpr const char* NS_DoorOpenSteam__UeScsNode = "bc54d73451e9444e85320b36d1bdc9f1";
+        static constexpr const char* PointLight__UeScsNode = "ba5ebad6c667ff41b7eb837f4afba899";
+        static constexpr const char* PointLight4__UeScsNode = "fec3cb35da57894685688c70b61e9d5a";
+        static constexpr const char* PointLight3__UeScsNode = "fa2112726bbfd744aade64d4fe27b227";
+        static constexpr const char* PointLight2__UeScsNode = "1fc91b987cec40469107bc7c9cec1fa8";
+        static constexpr const char* PointLight1__UeScsNode = "e4ee49cc871544469755e923f1061c9e";
+        static constexpr const char* LaunchPoint__UeScsNode = "597cedc9d17c6b4b86ebc774b1d1b223";
+        static constexpr const char* EjectCoreUsable__UeScsNode = "7f51cd9dc6c3704da641ad808edc630f";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::HackBuilding

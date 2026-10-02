@@ -24,23 +24,14 @@ class ENE_Spider_Buffer_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Buffer/ENE_Spider_Buffer", "ENE_Spider_Buffer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Buffer_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Buffer_C__UeName = "UberGraphFrame";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "9d8ac7a57100a441bac22da6724d70c6";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "ab43e1056a4c4a4f8021d90d4952bffe";
     class UCapsuleComponent* Capsule1;
-    static constexpr const char* Capsule1__UeScsNode = "84861d3e3d84f941beb54a289b9571a8";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "476829b649529643a8d79651dfdc2bb8";
     class UAudioComponent* BuffingLoop;
-    static constexpr const char* BuffingLoop__UeScsNode = "a6fdf81499dfc94db113a404cdc9388d";
     class UEnemyBufferComponent* EnemyBuffer;
-    static constexpr const char* EnemyBuffer__UeScsNode = "4d48a63f54c72e40a73e1403524426a9";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "8c508ff33bce574cbae6ab4746f7086f";
     void ExecuteUbergraph_ENE_Spider_Buffer(int EntryPoint);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__EnemyBuffer_K2Node_ComponentBoundEvent_1_BuffingChangedDelegate__DelegateSignature(bool boolValue);
@@ -48,6 +39,19 @@ public:
     void OnFrozen(class AActor* Source);
     void OnRagdoll();
     void HandleWeapointDeath(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Buffer_C__UeName = "UberGraphFrame";
+        static constexpr const char* WeakpointGlow__UeScsNode = "9d8ac7a57100a441bac22da6724d70c6";
+        static constexpr const char* Capsule__UeScsNode = "ab43e1056a4c4a4f8021d90d4952bffe";
+        static constexpr const char* Capsule1__UeScsNode = "84861d3e3d84f941beb54a289b9571a8";
+        static constexpr const char* PointLight__UeScsNode = "476829b649529643a8d79651dfdc2bb8";
+        static constexpr const char* BuffingLoop__UeScsNode = "a6fdf81499dfc94db113a404cdc9388d";
+        static constexpr const char* EnemyBuffer__UeScsNode = "4d48a63f54c72e40a73e1403524426a9";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "8c508ff33bce574cbae6ab4746f7086f";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Buffer

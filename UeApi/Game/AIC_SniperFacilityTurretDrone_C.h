@@ -13,7 +13,11 @@ class AIC_SniperFacilityTurretDrone_C : public Game::GameElements::Objectives::F
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/AIC_SniperFacilityTurretDrone", "AIC_SniperFacilityTurretDrone_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

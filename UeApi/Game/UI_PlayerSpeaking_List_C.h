@@ -24,7 +24,7 @@ public:
     class UHorizontalBox* Box_Horizontal;
     class UVerticalBox* Box_Vertical;
     TArray<UI_PlayerSpeaking_WithName_C*> Entries;
-    bool Vertical;
+    UE_READONLY bool Vertical;
     TArray<class AFSDPlayerState*> PlayerStates;
     void ExecuteUbergraph_UI_PlayerSpeaking_List(int EntryPoint);
     void OnPlayerLeave(class AFSDPlayerState* PlayerState);

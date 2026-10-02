@@ -19,19 +19,23 @@ class HUD_FlareIcon_C : public UFSDUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_FlareIcon", "HUD_FlareIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* Ping;
     class UProgressBar* FlareProduction;
     class UInventoryComponent* Inventory;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     float LastProgress;
     void ExecuteUbergraph_HUD_FlareIcon(int EntryPoint);
     void On_Flare_Production_Finished();
-    static constexpr const char* On_Flare_Production_Finished__UeName = "On Flare Production Finished";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnFlareCountChanged(int CurrentCount, class UInventoryComponent* Inventory_0);
     void Init(int Param_Index_0, class UInventoryComponent* Inventory_0);
     void SetProgress(float Percent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* On_Flare_Production_Finished__UeName = "On Flare Production Finished";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

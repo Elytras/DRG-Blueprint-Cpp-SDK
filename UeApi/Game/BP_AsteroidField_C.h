@@ -25,41 +25,45 @@ public:
     UE_CLASS("/Game/Art/Environments/Space/HoxxesMK2/BP_AsteroidField", "BP_AsteroidField_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Sphere_RockRoot;
-    static constexpr const char* Sphere_RockRoot__UeScsNode = "9ec331a86ec2ee4fad4b41e7ae55f398";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "f52404a15ef4544e94f0264805adae2d";
     class UBillboardComponent* Billboard;
-    static constexpr const char* Billboard__UeScsNode = "3499467ae4794b448ccf9b03ddc31756";
     class UStaticMeshComponent* Mesh_PlanetaryRing;
-    static constexpr const char* Mesh_PlanetaryRing__UeScsNode = "a599bbc780e57f49ae9729b48e1f3b78";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "1c6f079f0fa39348b11619376584e548";
     TArray<class UStaticMesh*> Meshes_to_spawn;
-    static constexpr const char* Meshes_to_spawn__UeName = "Meshes to spawn";
     int Number_of_meshes;
-    static constexpr const char* Number_of_meshes__UeName = "Number of meshes";
     float AsteroidScale;
     float RadiusInner;
     float RadiusOuter;
     TArray<class UInstancedStaticMeshComponent*> Instanced_meshes;
-    static constexpr const char* Instanced_meshes__UeName = "Instanced meshes";
     TSoftObjectPtr<class UHierarchicalInstancedStaticMeshComponent> NewVar_0;
     float RingNoiseScale;
     float RingHeight;
     float RingMeshCircumferance;
     bool RingField;
     bool RingField___Show_Ring;
-    static constexpr const char* RingField___Show_Ring__UeName = "RingField - Show Ring";
     float RingOpacity;
     FRandomStream Random_seed;
-    static constexpr const char* Random_seed__UeName = "Random seed";
     float RingEmissiveMultiplier;
     class UMaterialInterface* Asteroid_Material;
-    static constexpr const char* Asteroid_Material__UeName = "Asteroid Material";
     FRotator Rotation;
     void ExecuteUbergraph_BP_AsteroidField(int EntryPoint);
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere_RockRoot__UeScsNode = "9ec331a86ec2ee4fad4b41e7ae55f398";
+        static constexpr const char* RotatingMovement__UeScsNode = "f52404a15ef4544e94f0264805adae2d";
+        static constexpr const char* Billboard__UeScsNode = "3499467ae4794b448ccf9b03ddc31756";
+        static constexpr const char* Mesh_PlanetaryRing__UeScsNode = "a599bbc780e57f49ae9729b48e1f3b78";
+        static constexpr const char* Scene__UeScsNode = "1c6f079f0fa39348b11619376584e548";
+        static constexpr const char* Meshes_to_spawn__UeName = "Meshes to spawn";
+        static constexpr const char* Number_of_meshes__UeName = "Number of meshes";
+        static constexpr const char* Instanced_meshes__UeName = "Instanced meshes";
+        static constexpr const char* RingField___Show_Ring__UeName = "RingField - Show Ring";
+        static constexpr const char* Random_seed__UeName = "Random seed";
+        static constexpr const char* Asteroid_Material__UeName = "Asteroid Material";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Space::HoxxesMK2

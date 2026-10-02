@@ -17,7 +17,6 @@ class BP_New_HeavyRain_Lush_C : public Game::Landscape::Biomes::BP_WeatherEffect
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/LushDownpour/BP_New_HeavyRain_Lush", "BP_New_HeavyRain_Lush_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_New_HeavyRain_Lush_C;
-    static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Lush_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_6AF7D3FF4ECB419F4995D9B03104B55F;
     TEnum<ETimelineDirection> Fadeout__Direction_6AF7D3FF4ECB419F4995D9B03104B55F;
     class UTimelineComponent* FadeOut;
@@ -31,6 +30,11 @@ public:
     void Fadeout__FinishedFunc();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Lush_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::LushDownpour

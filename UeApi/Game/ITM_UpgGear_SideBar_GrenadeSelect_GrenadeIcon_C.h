@@ -29,7 +29,7 @@ public:
     using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C;
     using TOOLTIP_UpgradeIcon_C = Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UImage* BorderOuter;
     class UImage* BorderOuterBG;
     class UButton* ClickButton;
@@ -39,7 +39,7 @@ public:
     class UPlayerCharacterID* PlayerId;
     class UItemID* itemClass;
     TMulticastInlineDelegate<void(class UItemID* itemClass_0)> ItemEquipped;
-    TEnum<EItemUpgradeStatus> PreviewItemStatus;
+    UE_READONLY TEnum<EItemUpgradeStatus> PreviewItemStatus;
     bool Hovered;
     TOOLTIP_UpgradeIcon_C* IconToolTip;
     TMulticastInlineDelegate<void(ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C* Widget, bool IsUnlocked)> ItemHovered;

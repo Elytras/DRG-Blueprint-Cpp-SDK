@@ -22,21 +22,25 @@ class ENE_Jelly_Passive_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Critters/JellyPlatform/ENE_Jelly_Passive", "ENE_Jelly_Passive_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "8a527e710244b24dbbc5073bf3cf67e9";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "12e41404306a9042a8b7444f3c40033d";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "3dcbc843993e9646b352516f7b086407";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "8cdf6c3ab7bdbe48a183779dd71a6ce4";
     class UParticleSystem* DeathParticle;
     class USoundBase* DeathScream;
     void ExecuteUbergraph_ENE_Jelly_Passive(int EntryPoint);
     void OnDeath();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* enemy__UeScsNode = "8a527e710244b24dbbc5073bf3cf67e9";
+        static constexpr const char* Audio__UeScsNode = "12e41404306a9042a8b7444f3c40033d";
+        static constexpr const char* PawnStats__UeScsNode = "3dcbc843993e9646b352516f7b086407";
+        static constexpr const char* SimpleHealth__UeScsNode = "8cdf6c3ab7bdbe48a183779dd71a6ce4";
+    };
 };
 
 }}}   // namespace Game::Critters::JellyPlatform

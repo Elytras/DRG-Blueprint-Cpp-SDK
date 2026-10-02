@@ -18,11 +18,15 @@ class BP_PostProcessing_Tutorial_C : public AFSDPostProcessingActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/_Tutorial/BP_PostProcessing_Tutorial", "BP_PostProcessing_Tutorial_C");
     class UExponentialHeightFogComponent* ExponentialHeightFog;
-    static constexpr const char* ExponentialHeightFog__UeScsNode = "59ff2084e88f04429043233aa54f3a54";
     class UPostProcessComponent* PostProcess;
-    static constexpr const char* PostProcess__UeScsNode = "007ea4fa3c16f34b919be508b5f934a1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ExponentialHeightFog__UeScsNode = "59ff2084e88f04429043233aa54f3a54";
+        static constexpr const char* PostProcess__UeScsNode = "007ea4fa3c16f34b919be508b5f934a1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::_Tutorial

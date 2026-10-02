@@ -25,9 +25,9 @@ public:
     using Basic_Header_C = Game::UI::Art::WidgetParts::Basic_Header_C;
     using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     Basic_Header_C* DLC_Header;
     class UImage* DLC_Image;
     class UImage* DLC_Label;

@@ -230,14 +230,14 @@ class UChaosDestructionListener : public USceneComponent
 {
 public:
     UE_CLASS("/Script/GeometryCollectionEngine", "ChaosDestructionListener");
-    bool bIsCollisionEventListeningEnabled;
-    bool bIsBreakingEventListeningEnabled;
-    bool bIsTrailingEventListeningEnabled;
-    FChaosCollisionEventRequestSettings CollisionEventRequestSettings;
-    FChaosBreakingEventRequestSettings BreakingEventRequestSettings;
-    FChaosTrailingEventRequestSettings TrailingEventRequestSettings;
-    TSet<class AChaosSolverActor*> ChaosSolverActors;
-    TSet<class AGeometryCollectionActor*> GeometryCollectionActors;
+    UE_READONLY bool bIsCollisionEventListeningEnabled;
+    UE_READONLY bool bIsBreakingEventListeningEnabled;
+    UE_READONLY bool bIsTrailingEventListeningEnabled;
+    UE_READONLY FChaosCollisionEventRequestSettings CollisionEventRequestSettings;
+    UE_READONLY FChaosBreakingEventRequestSettings BreakingEventRequestSettings;
+    UE_READONLY FChaosTrailingEventRequestSettings TrailingEventRequestSettings;
+    UE_READONLY TSet<class AChaosSolverActor*> ChaosSolverActors;
+    UE_READONLY TSet<class AGeometryCollectionActor*> GeometryCollectionActors;
     TMulticastInlineDelegate<void(TArray<FChaosCollisionEventData> CollisionEvents)> OnCollisionEvents;
     TMulticastInlineDelegate<void(TArray<FChaosBreakingEventData> BreakingEvents)> OnBreakingEvents;
     TMulticastInlineDelegate<void(TArray<FChaosTrailingEventData> TrailingEvents)> OnTrailingEvents;
@@ -255,17 +255,28 @@ public:
     void SortCollisionEvents(TArray<FChaosCollisionEventData>& CollisionEvents, TEnum<EChaosCollisionSortMethod> SortMethod);
     void SortTrailingEvents(TArray<FChaosTrailingEventData>& TrailingEvents, TEnum<EChaosTrailingSortMethod> SortMethod);
     UE_PURE bool IsEventListening() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnCollisionEvents__UeDispatcher = "Assignable";
+        static constexpr const char* OnBreakingEvents__UeDispatcher = "Assignable";
+        static constexpr const char* OnTrailingEvents__UeDispatcher = "Assignable";
+    };
 };
 
 class AGeometryCollectionActor : public AActor
 {
 public:
     UE_CLASS("/Script/GeometryCollectionEngine", "GeometryCollectionActor");
-    class UGeometryCollectionComponent* GeometryCollectionComponent;
+    UE_READONLY class UGeometryCollectionComponent* GeometryCollectionComponent;
     class UGeometryCollectionDebugDrawComponent* GeometryCollectionDebugDrawComponent;
-    static constexpr const char* GeometryCollectionComponent__UeSubobject = "GeometryCollectionComponent0 /Script/GeometryCollectionEngine.GeometryCollectionComponent";
-    static constexpr const char* RootComponent__UeSubobject = "GeometryCollectionComponent0 /Script/GeometryCollectionEngine.GeometryCollectionComponent";
     bool RaycastSingle(FVector Start, FVector End, FHitResult& OutHit) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GeometryCollectionComponent__UeSubobject = "GeometryCollectionComponent0 /Script/GeometryCollectionEngine.GeometryCollectionComponent";
+        static constexpr const char* RootComponent__UeSubobject = "GeometryCollectionComponent0 /Script/GeometryCollectionEngine.GeometryCollectionComponent";
+    };
 };
 
 class UGeometryCollectionCache : public UObject
@@ -282,8 +293,8 @@ class UGeometryCollectionComponent : public UMeshComponent
 public:
     UE_CLASS("/Script/GeometryCollectionEngine", "GeometryCollectionComponent");
     class AChaosSolverActor* ChaosSolverActor;
-    class UGeometryCollection* RestCollection;
-    TArray<class AFieldSystemActor*> InitializationFields;
+    UE_READONLY class UGeometryCollection* RestCollection;
+    UE_READONLY TArray<class AFieldSystemActor*> InitializationFields;
     bool Simulating;
     TEnum<EObjectStateTypeEnum> ObjectType;
     bool EnableClustering;
@@ -299,7 +310,7 @@ public:
     TEnum<EInitialVelocityTypeEnum> InitialVelocityType;
     FVector InitialLinearVelocity;
     FVector InitialAngularVelocity;
-    class UPhysicalMaterial* PhysicalMaterialOverride;
+    UE_READONLY class UPhysicalMaterial* PhysicalMaterialOverride;
     FGeomComponentCacheParameters CacheParameters;
     TMulticastInlineDelegate<void(class UGeometryCollectionComponent* FracturedComponent)> NotifyGeometryCollectionPhysicsStateChange;
     TMulticastInlineDelegate<void(class UGeometryCollectionComponent* FracturedComponent)> NotifyGeometryCollectionPhysicsLoadingStateChange;
@@ -307,13 +318,12 @@ public:
     float DesiredCacheTime;
     bool CachePlayback;
     TMulticastInlineDelegate<void(FChaosPhysicsCollisionInfo CollisionInfo)> OnChaosPhysicsCollision;
-    bool bNotifyBreaks;
-    bool bNotifyCollisions;
-    bool bEnableReplication;
-    bool bEnableAbandonAfterLevel;
-    int ReplicationAbandonClusterLevel;
+    UE_READONLY bool bNotifyBreaks;
+    UE_READONLY bool bNotifyCollisions;
+    UE_READONLY bool bEnableReplication;
+    UE_READONLY bool bEnableAbandonAfterLevel;
+    UE_READONLY int ReplicationAbandonClusterLevel;
     FGeometryCollectionRepData RepData;
-    static constexpr const char* RepData__Replicated = "OnRep_RepData:";
     class UBodySetup* DummyBodySetup;
     void ApplyKinematicField(float Radius, FVector Position);
     void ApplyPhysicsField(bool Enabled, TEnum<EGeometryCollectionPhysicsTypeEnum> Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
@@ -321,6 +331,15 @@ public:
     void OnRep_RepData(const FGeometryCollectionRepData& OldData);
     void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
     void SetNotifyBreaks(bool bNewNotifyBreaks);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NotifyGeometryCollectionPhysicsStateChange__UeDispatcher = "Assignable";
+        static constexpr const char* NotifyGeometryCollectionPhysicsLoadingStateChange__UeDispatcher = "Assignable";
+        static constexpr const char* OnChaosBreakEvent__UeDispatcher = "Assignable";
+        static constexpr const char* OnChaosPhysicsCollision__UeDispatcher = "Assignable";
+        static constexpr const char* RepData__Replicated = "OnRep_RepData:";
+    };
 };
 
 class AGeometryCollectionDebugDrawActor : public AActor
@@ -388,7 +407,11 @@ public:
     FColor VertexIndexColor;
     FColor VertexNormalColor;
     class UBillboardComponent* SpriteComponent;
-    static constexpr const char* RootComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+    };
 };
 
 class UGeometryCollectionDebugDrawComponent : public UActorComponent
@@ -410,20 +433,20 @@ public:
     TEnum<EClusterConnectionTypeEnum> ClusterConnectionType;
     TArray<FGeometryCollectionSource> GeometrySource;
     TArray<class UMaterialInterface*> Materials;
-    TEnum<ECollisionTypeEnum> CollisionType;
-    TEnum<EImplicitTypeEnum> ImplicitType;
-    int MinLevelSetResolution;
-    int MaxLevelSetResolution;
-    int MinClusterLevelSetResolution;
-    int MaxClusterLevelSetResolution;
-    float CollisionObjectReductionPercentage;
-    bool bMassAsDensity;
-    float Mass;
-    float MinimumMassClamp;
-    float CollisionParticlesFraction;
-    int MaximumCollisionParticles;
+    UE_READONLY TEnum<ECollisionTypeEnum> CollisionType;
+    UE_READONLY TEnum<EImplicitTypeEnum> ImplicitType;
+    UE_READONLY int MinLevelSetResolution;
+    UE_READONLY int MaxLevelSetResolution;
+    UE_READONLY int MinClusterLevelSetResolution;
+    UE_READONLY int MaxClusterLevelSetResolution;
+    UE_READONLY float CollisionObjectReductionPercentage;
+    UE_READONLY bool bMassAsDensity;
+    UE_READONLY float Mass;
+    UE_READONLY float MinimumMassClamp;
+    UE_READONLY float CollisionParticlesFraction;
+    UE_READONLY int MaximumCollisionParticles;
     TArray<FGeometryCollectionSizeSpecificData> SizeSpecificData;
-    bool EnableRemovePiecesOnFracture;
+    UE_READONLY bool EnableRemovePiecesOnFracture;
     TArray<class UMaterialInterface*> RemoveOnFractureMaterials;
     FGuid PersistentGuid;
     FGuid StateGuid;
@@ -440,14 +463,18 @@ public:
     float Isovalue;
     bool Enabled;
     bool RenderVolumeBoundingBox;
-    static constexpr const char* RootComponent__UeSubobject = "PostProcessComponent0 /Script/Engine.PostProcessComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "PostProcessComponent0 /Script/Engine.PostProcessComponent";
+    };
 };
 
 class USkeletalMeshSimulationComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/GeometryCollectionEngine", "SkeletalMeshSimulationComponent");
-    class UChaosPhysicalMaterial* PhysicalMaterial;
+    UE_READONLY class UChaosPhysicalMaterial* PhysicalMaterial;
     class AChaosSolverActor* ChaosSolverActor;
     class UPhysicsAsset* OverridePhysicsAsset;
     bool bSimulating;
@@ -460,14 +487,19 @@ public:
     float ImplicitShapeParticlesPerUnitArea;
     int ImplicitShapeMinNumParticles;
     int ImplicitShapeMaxNumParticles;
-    int MinLevelSetResolution;
-    int MaxLevelSetResolution;
+    UE_READONLY int MinLevelSetResolution;
+    UE_READONLY int MaxLevelSetResolution;
     int CollisionGroup;
     TEnum<EInitialVelocityTypeEnum> InitialVelocityType;
     FVector InitialLinearVelocity;
     FVector InitialAngularVelocity;
     TMulticastInlineDelegate<void(FChaosPhysicsCollisionInfo CollisionInfo)> OnChaosPhysicsCollision;
     void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnChaosPhysicsCollision__UeDispatcher = "Assignable";
+    };
 };
 
 class UStaticMeshSimulationComponent : public UActorComponent
@@ -480,16 +512,21 @@ public:
     float Mass;
     TEnum<ECollisionTypeEnum> CollisionType;
     TEnum<EImplicitTypeEnum> ImplicitType;
-    int MinLevelSetResolution;
-    int MaxLevelSetResolution;
+    UE_READONLY int MinLevelSetResolution;
+    UE_READONLY int MaxLevelSetResolution;
     TEnum<EInitialVelocityTypeEnum> InitialVelocityType;
     FVector InitialLinearVelocity;
     FVector InitialAngularVelocity;
     float DamageThreshold;
-    class UChaosPhysicalMaterial* PhysicalMaterial;
+    UE_READONLY class UChaosPhysicalMaterial* PhysicalMaterial;
     class AChaosSolverActor* ChaosSolverActor;
     TMulticastInlineDelegate<void(FChaosPhysicsCollisionInfo CollisionInfo)> OnChaosPhysicsCollision;
     TArray<class UPrimitiveComponent*> SimulatedComponents;
     void ForceRecreatePhysicsState();
     void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnChaosPhysicsCollision__UeDispatcher = "Assignable";
+    };
 };

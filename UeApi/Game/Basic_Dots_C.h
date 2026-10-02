@@ -24,13 +24,13 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* Horizontal_Dots;
     class UVerticalBox* Vertical_Dots;
-    bool Horizontal;
+    UE_READONLY bool Horizontal;
     int DotCount;
     int SelectedDotIndex;
     TArray<Basic_Image_C*> Dots;
-    float DotSpacing;
-    FSlateBrush SelectedDotBrush;
-    FSlateBrush UnselectedDotBrush;
+    UE_READONLY float DotSpacing;
+    UE_READONLY FSlateBrush SelectedDotBrush;
+    UE_READONLY FSlateBrush UnselectedDotBrush;
     void ExecuteUbergraph_Basic_Dots(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Clear();

@@ -33,30 +33,18 @@ class BP_RiftCrystal_C : public ARiftCrystal
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_RiftCrystal", "BP_RiftCrystal_C");
     using EWC_CoreRift_C = Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent CrystalIdleComponent;/Script/Engine.AudioComponent RockIdleComponent;/Script/Engine.CapsuleComponent KnockbackTriggerComponent;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.MeshCarverComponent SpaceCarverComponent;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent PillarParticlesComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent EscortblockerComponent;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RiftSpawnerComponent SpawnerComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent FlightRootComponent;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/FSD.SpawnActorWithDebrisPosComponent DebrisSpawnerComponent;/Script/FSD.TerrainDetectComponent TerrainDetect_1;/Script/FSD.TerrainDetectComponent TerrainDetect_2;/Script/FSD.TerrainDetectComponent TerrainDetect_3";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "5022dfb46e3b4b4f8b793a95789d1c0f";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "5f4de19a5253c441a8a219baa33c8fad";
     class UStatusEffectsComponent* StatusEffects;
-    static constexpr const char* StatusEffects__UeScsNode = "f561baa17bd6d749a81e4a474d310381";
     class UWeakpointGlowComponent* WeakpointGlow1_Body;
-    static constexpr const char* WeakpointGlow1_Body__UeScsNode = "4141b0749240be4c8d1c9ed99f473741";
     class UWeakpointGlowComponent* WeakpointGlow_Crystal;
-    static constexpr const char* WeakpointGlow_Crystal__UeScsNode = "5ceb788684b41d4f992bb672f0b8ef1b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "efd445787131c44a8536f06fbac73503";
     class UDamageComponent* BreakFreeDamage;
-    static constexpr const char* BreakFreeDamage__UeScsNode = "6646cac72c85b74eafa0001ec1f253fd";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "1e23b487c7188740b8f424b36fc474aa";
     class UMeshCarverComponent* DestoyPillarCarver;
-    static constexpr const char* DestoyPillarCarver__UeScsNode = "3b32093499bd144aa372e96b928967ed";
     class UMeshCarverComponent* PillarCarver;
-    static constexpr const char* PillarCarver__UeScsNode = "65421c812eee8a4da52c5ea03f4089e4";
     class UNiagaraComponent* NS_RockCarvingTrail;
-    static constexpr const char* NS_RockCarvingTrail__UeScsNode = "77eb8de893692246a56218a2e152a65b";
     class UTerrainMaterial* CarveMaterial;
     FVector locaiton;
     EWC_CoreRift_C* RiftWave;
@@ -83,6 +71,22 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent CrystalIdleComponent;/Script/Engine.AudioComponent RockIdleComponent;/Script/Engine.CapsuleComponent KnockbackTriggerComponent;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.KnockbackDamageBonus KnockbackDamageComponent:KnockbackDamageBonus_0;/Script/FSD.MeshCarverComponent SpaceCarverComponent;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent PillarParticlesComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent EscortblockerComponent;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RiftSpawnerComponent SpawnerComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent FlightRootComponent;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/FSD.SpawnActorWithDebrisPosComponent DebrisSpawnerComponent;/Script/FSD.TerrainDetectComponent TerrainDetect_1;/Script/FSD.TerrainDetectComponent TerrainDetect_2;/Script/FSD.TerrainDetectComponent TerrainDetect_3";
+        static constexpr const char* outline__UeScsNode = "5022dfb46e3b4b4f8b793a95789d1c0f";
+        static constexpr const char* Niagara__UeScsNode = "5f4de19a5253c441a8a219baa33c8fad";
+        static constexpr const char* StatusEffects__UeScsNode = "f561baa17bd6d749a81e4a474d310381";
+        static constexpr const char* WeakpointGlow1_Body__UeScsNode = "4141b0749240be4c8d1c9ed99f473741";
+        static constexpr const char* WeakpointGlow_Crystal__UeScsNode = "5ceb788684b41d4f992bb672f0b8ef1b";
+        static constexpr const char* StaticMesh__UeScsNode = "efd445787131c44a8536f06fbac73503";
+        static constexpr const char* BreakFreeDamage__UeScsNode = "6646cac72c85b74eafa0001ec1f253fd";
+        static constexpr const char* terrainPlacement__UeScsNode = "1e23b487c7188740b8f424b36fc474aa";
+        static constexpr const char* DestoyPillarCarver__UeScsNode = "3b32093499bd144aa372e96b928967ed";
+        static constexpr const char* PillarCarver__UeScsNode = "65421c812eee8a4da52c5ea03f4089e4";
+        static constexpr const char* NS_RockCarvingTrail__UeScsNode = "77eb8de893692246a56218a2e152a65b";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift

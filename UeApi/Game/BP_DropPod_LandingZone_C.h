@@ -17,9 +17,13 @@ class BP_DropPod_LandingZone_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_LandingZone", "BP_DropPod_LandingZone_C");
     class UDecalComponent* Decal;
-    static constexpr const char* Decal__UeScsNode = "212a2f30c8b66147a143db3b0cb7add4";
     class USkeletalMeshComponent* SkeletalMeshComponent0;
-    static constexpr const char* SkeletalMeshComponent0__UeScsNode = "222157b87e3e2b4d99ed7d4f95fce208";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Decal__UeScsNode = "212a2f30c8b66147a143db3b0cb7add4";
+        static constexpr const char* SkeletalMeshComponent0__UeScsNode = "222157b87e3e2b4d99ed7d4f95fce208";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

@@ -26,9 +26,9 @@ public:
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* BlinkText;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* BlinkText;
     Basic_ButtonScalable2_C* Basic_ButtonScalable2;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     BlurBackground_C* BlurBackground;

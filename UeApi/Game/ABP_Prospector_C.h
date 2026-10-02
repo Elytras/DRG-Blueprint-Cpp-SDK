@@ -36,11 +36,15 @@ public:
     FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;
     FVector NewVar_0;
     FVector External_force;
-    static constexpr const char* External_force__UeName = "External force";
     void ExecuteUbergraph_ABP_Prospector(int EntryPoint);
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Prospector_AnimGraphNode_BlendListByInt_12F6F3B34348AA6B90DA3687DBCE4E7F();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Prospector_AnimGraphNode_ModifyBone_F0657A5644715BBC7E5BE5A2E64FD1DF();
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* External_force__UeName = "External force";
+    };
 };
 
 }}}}   // namespace Game::Critters::Prospector::Assets

@@ -17,9 +17,13 @@ class PRW_ZipLineGun_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/PRW_ZipLineGun", "PRW_ZipLineGun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "0824416e919660458b25d491ab53cd40";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4d2bec4450fd2946b761046ce7bf070b";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "0824416e919660458b25d491ab53cd40";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4d2bec4450fd2946b761046ce7bf070b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

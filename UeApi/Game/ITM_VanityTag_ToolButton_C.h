@@ -23,8 +23,8 @@ public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/FilterSelector/ITM_VanityTag_ToolButton", "ITM_VanityTag_ToolButton_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
-    class UWidgetAnimation* AnimClick;
+    UE_READONLY class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimClick;
     class UBorder* Button_Border;
     class UBorder* Button_Frame;
     UI_ImageTinted_C* Button_Icon;

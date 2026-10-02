@@ -16,13 +16,17 @@ class BP_GooCannon_GooPuddle_ImprovedSlow_C : public Game::WeaponsNTools::GooCan
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_GooPuddle_ImprovedSlow", "BP_GooCannon_GooPuddle_ImprovedSlow_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
     FPointerToUberGraphFrame UberGraphFrame_BP_GooCannon_GooPuddle_ImprovedSlow_C;
-    static constexpr const char* UberGraphFrame_BP_GooCannon_GooPuddle_ImprovedSlow_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_GooCannon_GooPuddle_ImprovedSlow(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveActorBeginOverlap(class AActor* OtherActor);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* UberGraphFrame_BP_GooCannon_GooPuddle_ImprovedSlow_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon

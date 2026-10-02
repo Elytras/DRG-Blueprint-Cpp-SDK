@@ -17,9 +17,13 @@ class BP_CaveLeechPlacementCarver_C : public AActor
 public:
     UE_CLASS("/Game/Enemies/CaveLeech/BP_CaveLeechPlacementCarver", "BP_CaveLeechPlacementCarver_C");
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "442f98dbd379d2408d02125c59145170";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e426a25e629ebb478f47ca7d2a4a8303";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "442f98dbd379d2408d02125c59145170";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e426a25e629ebb478f47ca7d2a4a8303";
+    };
 };
 
 }}}   // namespace Game::Enemies::CaveLeech

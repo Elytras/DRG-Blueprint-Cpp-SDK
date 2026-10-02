@@ -26,14 +26,14 @@ public:
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimRewardSchematic;
+    UE_READONLY class UWidgetAnimation* AnimRewardSchematic;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UImage* BackgroundImage;
     class UImage* Category_CanisterBG;
     ITM_Overclock_Icon_C* CoreIcon;
     class USizeBox* RewardSizer;
     float IconSize;
-    bool ShowToolTip;
+    UE_READONLY bool ShowToolTip;
     class USchematic* Schematic;
     void ExecuteUbergraph_ITM_MatrixCore(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

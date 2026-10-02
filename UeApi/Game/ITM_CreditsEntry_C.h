@@ -21,9 +21,13 @@ public:
     class UTextBlock* DATA_Title;
     FText Title;
     FText Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     void ExecuteUbergraph_ITM_CreditsEntry(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

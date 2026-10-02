@@ -31,7 +31,7 @@ public:
     using ITM_EscortMuleHealthBar_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_EscortMuleHealthBar_C;
     using ITM_FuelCannisterStatus_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_FuelCannisterStatus_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* OutOfFuel;
+    UE_READONLY class UWidgetAnimation* OutOfFuel;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UProgressBar* FAKEFuelGauge_Left;
     class UImage* Icon_Fuel;

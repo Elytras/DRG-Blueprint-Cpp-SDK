@@ -15,9 +15,13 @@ class Loadout_Flare_Driller_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Flares/Loadout_Flare_Driller", "Loadout_Flare_Driller_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "33b9c0ab3f2bc446a7e48b77b33f56be";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "33b9c0ab3f2bc446a7e48b77b33f56be";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Flares

@@ -21,26 +21,30 @@ class BP_DataCell_SpaceRig_C : public Game::GameElements::Resources::Embedded::G
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/S01_SetDressing/BP_DataCell_SpaceRig", "BP_DataCell_SpaceRig_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_DataCell_SpaceRig_C;
-    static constexpr const char* UberGraphFrame_BP_DataCell_SpaceRig_C__UeName = "UberGraphFrame";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "4bf9c3fa48b8664ca80598052fbdc63c";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "4c5430c75d8a9840b504c013f352fc2e";
     class UPointLightComponent* PointLightLarge;
-    static constexpr const char* PointLightLarge__UeScsNode = "281351293c0a1e489f26cc76f0094b4b";
     class UAudioComponent* Idle_Cue;
-    static constexpr const char* Idle_Cue__UeScsNode = "6508f060a62c22479a9505878db17c00";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "64f3bc096638c24fafc9612e9085cbf2";
     bool PickedUp;
-    static constexpr const char* PickedUp__Replicated = ":";
     void ExecuteUbergraph_BP_DataCell_SpaceRig(int EntryPoint);
     void BndEvt__BP_DataCell_Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void BndEvt__BP_DataCell_Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void UpdateAttachState(bool Attached);
     void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_DataCell_SpaceRig_C__UeName = "UberGraphFrame";
+        static constexpr const char* outline__UeScsNode = "4bf9c3fa48b8664ca80598052fbdc63c";
+        static constexpr const char* Niagara__UeScsNode = "4c5430c75d8a9840b504c013f352fc2e";
+        static constexpr const char* PointLightLarge__UeScsNode = "281351293c0a1e489f26cc76f0094b4b";
+        static constexpr const char* Idle_Cue__UeScsNode = "6508f060a62c22479a9505878db17c00";
+        static constexpr const char* PointLight__UeScsNode = "64f3bc096638c24fafc9612e9085cbf2";
+        static constexpr const char* PickedUp__Replicated = ":";
+    };
 };
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing

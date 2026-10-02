@@ -23,8 +23,8 @@ public:
     UE_CLASS("/Game/UI/ToolTips/Basic_ToolTip_HeadlineAndText", "Basic_ToolTip_HeadlineAndText_C");
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UTextBlock* DATA_ToolTipHeadline;
     class UTextBlock* DATA_TooltipText;
@@ -35,7 +35,6 @@ public:
     FVector2D Alignment;
     void ExecuteUbergraph_Basic_ToolTip_HeadlineAndText(int EntryPoint);
     void Set_Tool_Tip_Owner(class UWidget* Owner);
-    static constexpr const char* Set_Tool_Tip_Owner__UeName = "Set Tool Tip Owner";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTarget(class UWidget* Target_Widget);
     void SetText(FText Headline_0, FText Text_0);
@@ -44,6 +43,11 @@ public:
     void SetMaxWidth(float MaxWidth);
     void SetWidth(float InWidthOverride);
     void FadeIn(float Duration);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Tool_Tip_Owner__UeName = "Set Tool Tip Owner";
+    };
 };
 
 }}}   // namespace Game::UI::ToolTips

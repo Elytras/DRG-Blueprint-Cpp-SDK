@@ -928,8 +928,12 @@ public:
     class UCSGBase* CurrentPreviewRoot;
     class UBakeConfig* CurrentPreviewConfig;
     class UCSGPreviewScene* PreviewScene;
-    static constexpr const char* CSGRoot__UeSubobject = "CSGRoot /Script/FSDEngine.CSGGroupComponent";
-    static constexpr const char* RootComponent__UeSubobject = "CSGRoot /Script/FSDEngine.CSGGroupComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CSGRoot__UeSubobject = "CSGRoot /Script/FSDEngine.CSGGroupComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CSGRoot /Script/FSDEngine.CSGGroupComponent";
+    };
 };
 
 class UCSGBuilderBaseSceneComponent : public USceneComponent
@@ -1014,10 +1018,10 @@ class UTerrainMaterialCore : public UTerrainMaterialBase
 {
 public:
     UE_CLASS("/Script/FSDEngine", "TerrainMaterialCore");
-    class UTerrainMaterialCore* BurntMaterial;
-    class UTerrainMaterialCore* BulletBurntMaterial;
-    bool PathfinderDanger;
-    bool PathfinderPreventSpawning;
+    UE_READONLY class UTerrainMaterialCore* BurntMaterial;
+    UE_READONLY class UTerrainMaterialCore* BulletBurntMaterial;
+    UE_READONLY bool PathfinderDanger;
+    UE_READONLY bool PathfinderPreventSpawning;
     class UMaterialInterface* ScannerMaterial;
     TSoftObjectPtr<class UMaterialInterface> RenderMaterial;
 };
@@ -1464,9 +1468,13 @@ class ADeepCSGSection : public AActor
 {
 public:
     UE_CLASS("/Script/FSDEngine", "DeepCSGSection");
-    class UDeepProceduralMeshComponent* DeepMesh;
-    static constexpr const char* DeepMesh__UeSubobject = "DeepMesh /Script/FSDEngine.DeepProceduralMeshComponent";
-    static constexpr const char* RootComponent__UeSubobject = "DeepMesh /Script/FSDEngine.DeepProceduralMeshComponent";
+    UE_READONLY class UDeepProceduralMeshComponent* DeepMesh;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DeepMesh__UeSubobject = "DeepMesh /Script/FSDEngine.DeepProceduralMeshComponent";
+        static constexpr const char* RootComponent__UeSubobject = "DeepMesh /Script/FSDEngine.DeepProceduralMeshComponent";
+    };
 };
 
 class UDeepProceduralMeshComponent : public UMeshComponent
@@ -1484,8 +1492,12 @@ public:
     TEnum<EPreviewCellSize> PreviewSize;
     class UTerrainMaterialCore* PreviewMaterial;
     class USDFUnionOpComponent* SDFRoot;
-    static constexpr const char* RootComponent__UeSubobject = "SDFRoot /Script/FSDEngine.SDFUnionOpComponent";
-    static constexpr const char* SDFRoot__UeSubobject = "SDFRoot /Script/FSDEngine.SDFUnionOpComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SDFRoot /Script/FSDEngine.SDFUnionOpComponent";
+        static constexpr const char* SDFRoot__UeSubobject = "SDFRoot /Script/FSDEngine.SDFUnionOpComponent";
+    };
 };
 
 class UHeightMapWithMinMaxQuadTree : public UDataAsset

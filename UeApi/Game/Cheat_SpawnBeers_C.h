@@ -25,12 +25,16 @@ public:
     class UComboBoxString* ComboBoxString_0;
     class UDrinkSettings* DrinkSettings;
     class ADrinkableActor* CurrentDrink;
-    static constexpr const char* CurrentDrink__Replicated = "OnRep_CurrentDrink:";
     void ExecuteUbergraph_Cheat_SpawnBeers(int EntryPoint);
     void BndEvt__Cheat_SpawnBeers_Button_0_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
     void OnLoaded_92546AE04DDDB88AD67C3094C2B92E45(TSubclassOf<class UObject> Loaded);
     void OnRep_CurrentDrink();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CurrentDrink__Replicated = "OnRep_CurrentDrink:";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

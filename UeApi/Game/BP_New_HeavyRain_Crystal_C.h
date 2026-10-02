@@ -17,7 +17,6 @@ class BP_New_HeavyRain_Crystal_C : public Game::Landscape::Biomes::BP_WeatherEff
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/CrystalCaves/BP_New_HeavyRain_Crystal", "BP_New_HeavyRain_Crystal_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_New_HeavyRain_Crystal_C;
-    static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Crystal_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_A3017D9546A53807B6D05BB6AE0CDCAB;
     TEnum<ETimelineDirection> Fadeout__Direction_A3017D9546A53807B6D05BB6AE0CDCAB;
     class UTimelineComponent* FadeOut;
@@ -31,6 +30,11 @@ public:
     void Fadeout__FinishedFunc();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Crystal_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves

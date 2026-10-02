@@ -22,7 +22,6 @@ public:
     using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     using Lore_Container_DamageType_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_DamageType_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Combat_DamageTypes_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Combat_DamageTypes_C__UeName = "UberGraphFrame";
     Lore_Container_DamageType_C* Lore_Container_DamageType;
     Lore_Container_DamageType_C* Lore_Container_DamageType_C_0;
     Lore_Container_DamageType_C* Lore_Container_DamageType_C_1;
@@ -33,6 +32,11 @@ public:
     void ExecuteUbergraph_LoreScreen_Combat_DamageTypes(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Combat_DamageTypes_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Combat

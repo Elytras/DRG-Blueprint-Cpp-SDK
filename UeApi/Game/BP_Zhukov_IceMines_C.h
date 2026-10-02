@@ -27,20 +27,12 @@ public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/Overclocks/OCBonusPenalty/BP_Zhukov_IceMines", "BP_Zhukov_IceMines_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "e70cd70c93434446bd83e7a46885e44e";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "d8e2ef527695b043aa9ee65bf4315426";
     class USphereComponent* Area_Trigger;
-    static constexpr const char* Area_Trigger__UeName = "Area Trigger";
-    static constexpr const char* Area_Trigger__UeScsNode = "e5bc08f4ab687c4e904676f19cfc00bf";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c032634708a931409d3480c59a59aed7";
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "0bad68930dc4014881d6c6ac1eeee874";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "560d7fd0273cd54198b9917f52a4b733";
     bool Triggered;
-    static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
     bool Exploded;
     class USoundCue* ExplosionSound;
     class UParticleSystem* ExplosionParticles;
@@ -49,17 +41,29 @@ public:
     float ExplosionDuckMaxDistance;
     float ExplosionDuckingTime;
     bool ready;
-    static constexpr const char* ready__Replicated = "OnRep_Ready:";
     float ArmingDelay;
     void ExecuteUbergraph_BP_Zhukov_IceMines(int EntryPoint);
     void GetArmed();
     void TriggerExplosion();
     void BndEvt__Area_Trigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    static constexpr const char* BndEvt__Area_Trigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature__UeName = "BndEvt__Area Trigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature";
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void OnRep_Triggered();
     void OnRep_Ready();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "e70cd70c93434446bd83e7a46885e44e";
+        static constexpr const char* Explosion__UeScsNode = "d8e2ef527695b043aa9ee65bf4315426";
+        static constexpr const char* Area_Trigger__UeName = "Area Trigger";
+        static constexpr const char* Area_Trigger__UeScsNode = "e5bc08f4ab687c4e904676f19cfc00bf";
+        static constexpr const char* Damage__UeScsNode = "c032634708a931409d3480c59a59aed7";
+        static constexpr const char* Sphere__UeScsNode = "0bad68930dc4014881d6c6ac1eeee874";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "560d7fd0273cd54198b9917f52a4b733";
+        static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
+        static constexpr const char* ready__Replicated = "OnRep_Ready:";
+        static constexpr const char* BndEvt__Area_Trigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature__UeName = "BndEvt__Area Trigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty

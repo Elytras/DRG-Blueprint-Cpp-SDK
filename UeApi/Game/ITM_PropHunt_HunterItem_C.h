@@ -17,12 +17,16 @@ class ITM_PropHunt_HunterItem_C : public APropHuntHunterItem
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/ITM_PropHunt_HunterItem", "ITM_PropHunt_HunterItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Throwlocation;
-    static constexpr const char* Throwlocation__UeScsNode = "8942c7244be5ed4ab52d93ab76e53f31";
     void ExecuteUbergraph_ITM_PropHunt_HunterItem(int EntryPoint);
     void RemovedFromInventory(class ACharacter* oldCharacter);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Throwlocation__UeScsNode = "8942c7244be5ed4ab52d93ab76e53f31";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt

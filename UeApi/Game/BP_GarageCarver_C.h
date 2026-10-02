@@ -17,9 +17,13 @@ class BP_GarageCarver_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_GarageCarver", "BP_GarageCarver_C");
     class URoomCarverComponent* RoomCarver;
-    static constexpr const char* RoomCarver__UeScsNode = "886b671e49f10d4883f740edd5c160f1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "28867cb8bce0c846a3ae3d9898d1b190";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RoomCarver__UeScsNode = "886b671e49f10d4883f740edd5c160f1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "28867cb8bce0c846a3ae3d9898d1b190";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

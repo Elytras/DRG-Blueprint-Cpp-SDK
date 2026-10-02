@@ -29,19 +29,12 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_MorkiteSeed_New", "BP_MorkiteSeed_New_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "773311d64536704b8026cf8b663362b9";
     class UStaticMeshComponent* CoreMesh;
-    static constexpr const char* CoreMesh__UeScsNode = "5238d1debfc1e6419e33b48788c8675c";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d88a0bc3eefb2e4288f286afd726075c";
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
-    static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "f8543326435e564c828c4981cf032189";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "c91b2ba0cb93d24ea4c1fc55b8bdedce";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "eba8ca24cc2f29498c4e7bb755c04b26";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "129a11410e242a43a1f3b5147130836e";
     float ImpulseAtDrop;
     float RadialImpulseCof;
     float TimeBeforeDrop;
@@ -49,13 +42,24 @@ public:
     class USoundBase* ImpactSound;
     bool CanTriggerSound;
     FName Impact_Sound_Parameter;
-    static constexpr const char* Impact_Sound_Parameter__UeName = "Impact Sound Parameter";
     void ExecuteUbergraph_BP_MorkiteSeed_New(int EntryPoint);
     void BndEvt__BP_MorkiteSeed_New_Box_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__BP_MorkiteSeed_New_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_MULTICAST UE_RELIABLE void PickedUp_All();
     void OnCrackedOpen();
     void InitializePhysics();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Box__UeScsNode = "773311d64536704b8026cf8b663362b9";
+        static constexpr const char* CoreMesh__UeScsNode = "5238d1debfc1e6419e33b48788c8675c";
+        static constexpr const char* Sphere__UeScsNode = "d88a0bc3eefb2e4288f286afd726075c";
+        static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "f8543326435e564c828c4981cf032189";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "c91b2ba0cb93d24ea4c1fc55b8bdedce";
+        static constexpr const char* PointLight2__UeScsNode = "eba8ca24cc2f29498c4e7bb755c04b26";
+        static constexpr const char* InstantUsable__UeScsNode = "129a11410e242a43a1f3b5147130836e";
+        static constexpr const char* Impact_Sound_Parameter__UeName = "Impact Sound Parameter";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

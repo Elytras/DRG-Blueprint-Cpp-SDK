@@ -17,9 +17,13 @@ class BP_ConffetiPipe_A_C : public AActor
 public:
     UE_CLASS("/Game/CharacterStructure/Gear_Unarmed/TP/EndScreenAnims/Attachments/Confetti/BP_ConffetiPipe_A", "BP_ConffetiPipe_A_C");
     class USkeletalMeshComponent* SK_ConfettiPipe_A;
-    static constexpr const char* SK_ConfettiPipe_A__UeScsNode = "23b77b8dd4909344bb2d306e3b611f8c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "79de7fc5353e7c4782a0d5ba62864b8a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SK_ConfettiPipe_A__UeScsNode = "23b77b8dd4909344bb2d306e3b611f8c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "79de7fc5353e7c4782a0d5ba62864b8a";
+    };
 };
 
 }}}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Confetti

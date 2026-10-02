@@ -22,7 +22,7 @@ class HUD_CroDualMachinePistols_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CroDualMachinePistols", "HUD_CroDualMachinePistols_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CH_BottomLeft;
     class UImage* CH_BottomRight;
     class UImage* CH_FullLeft;

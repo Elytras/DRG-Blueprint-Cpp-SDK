@@ -33,38 +33,26 @@ class Grenade_StickyMine_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_B
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickyMine/Grenade_StickyMine", "Grenade_StickyMine_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
     FPointerToUberGraphFrame UberGraphFrame_Grenade_StickyMine_C;
-    static constexpr const char* UberGraphFrame_Grenade_StickyMine_C__UeName = "UberGraphFrame";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "c3e74038245bff418079aa96ec7049c0";
     class USingleUsableComponent* SingleUsable;
-    static constexpr const char* SingleUsable__UeScsNode = "aba864e7eaa7164cadc5f15d6ae906f2";
     class USkeletalMeshComponent* SM_MineGround;
-    static constexpr const char* SM_MineGround__UeScsNode = "5bb172c6f1a29840bdc04915f0a1ebf7";
     class UStaticMeshComponent* TriggerAreaDisplay;
-    static constexpr const char* TriggerAreaDisplay__UeScsNode = "7004f30fae6d7b4c9367dee68cbaefab";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "1a147465b7a8074989ff110fd874df01";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "264b64d20b95164998bd454baa4a0bfa";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "088fd452fa780c498b27df7396e3e3a4";
     float RingPulse_Scale_1486413F4ABF9550B6797DBA3F0A55DB;
     TEnum<ETimelineDirection> RingPulse__Direction_1486413F4ABF9550B6797DBA3F0A55DB;
     class UTimelineComponent* RingPulse;
     bool Triggered;
-    static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
     float ArmingDelay;
     bool Armed;
-    static constexpr const char* Armed__Replicated = "OnRep_Armed:";
     class USoundCue* ExplosionSound;
     class UParticleSystem* ExplosionParticles;
     class UMaterialInstanceDynamic* TriggerAreaDynamicMat;
     FLinearColor TriggerAreaColor;
     bool Exploded;
     class UMaterialInterface* Not_Blinking_Dynamic_Material;
-    static constexpr const char* Not_Blinking_Dynamic_Material__UeName = "Not Blinking Dynamic Material";
     int MaxExplosions;
     int ExplosionCount;
     bool Over;
@@ -72,7 +60,6 @@ public:
     FLinearColor TriggeredLightsColour;
     float LifespanAfterFirstTrigger;
     bool Dead;
-    static constexpr const char* Dead__Replicated = "OnRep_Dead:";
     TArray<class AActor*> UntargetableTriggeringActors;
     void ExecuteUbergraph_Grenade_StickyMine(int EntryPoint);
     void BndEvt__Grenade_StickyMine_Sphere_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
@@ -94,6 +81,23 @@ public:
     void OnRep_Dead();
     void CheckUntargetableTriggers(bool& TargetabilityChanged);
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UberGraphFrame_Grenade_StickyMine_C__UeName = "UberGraphFrame";
+        static constexpr const char* UseSphere__UeScsNode = "c3e74038245bff418079aa96ec7049c0";
+        static constexpr const char* SingleUsable__UeScsNode = "aba864e7eaa7164cadc5f15d6ae906f2";
+        static constexpr const char* SM_MineGround__UeScsNode = "5bb172c6f1a29840bdc04915f0a1ebf7";
+        static constexpr const char* TriggerAreaDisplay__UeScsNode = "7004f30fae6d7b4c9367dee68cbaefab";
+        static constexpr const char* Explosion__UeScsNode = "1a147465b7a8074989ff110fd874df01";
+        static constexpr const char* Damage__UeScsNode = "264b64d20b95164998bd454baa4a0bfa";
+        static constexpr const char* Sphere__UeScsNode = "088fd452fa780c498b27df7396e3e3a4";
+        static constexpr const char* Triggered__Replicated = "OnRep_Triggered:";
+        static constexpr const char* Armed__Replicated = "OnRep_Armed:";
+        static constexpr const char* Not_Blinking_Dynamic_Material__UeName = "Not Blinking Dynamic Material";
+        static constexpr const char* Dead__Replicated = "OnRep_Dead:";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickyMine

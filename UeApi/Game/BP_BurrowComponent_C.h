@@ -26,11 +26,8 @@ public:
     TMulticastInlineDelegate<void(bool IsEmerging)> OnBurrowComplete;
     FTimerHandle TimerHandle;
     bool IsBurrowed;
-    static constexpr const char* IsBurrowed__Replicated = "OnRep_IsBurrowed:";
     class UAnimMontage* CurrentBurrowAnimation;
-    static constexpr const char* CurrentBurrowAnimation__Replicated = ":";
     class UAnimMontage* CurrentUnburrowAnimation;
-    static constexpr const char* CurrentUnburrowAnimation__Replicated = ":";
     void ExecuteUbergraph_BP_BurrowComponent(int EntryPoint);
     void OnDeath_Event_0(class UHealthComponentBase* HealthComponent);
     void OnFrozenEvent_Event_0(bool boolValue);
@@ -43,6 +40,13 @@ public:
     void PlayBurrow(class UAnimMontage* MontageToPlay);
     void GetPawn(class AEnemyDeepPathfinderCharacter*& AsEnemy_Deep_Pathfinder_Character);
     void OnRep_IsBurrowed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* IsBurrowed__Replicated = "OnRep_IsBurrowed:";
+        static constexpr const char* CurrentBurrowAnimation__Replicated = ":";
+        static constexpr const char* CurrentUnburrowAnimation__Replicated = ":";
+    };
 };
 
 }}}   // namespace Game::Enemies::Spider

@@ -15,9 +15,13 @@ class BP_LasePointer_SecondaryMarker_C : public Game::WeaponsNTools::LaserPointe
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/BP_LasePointer_SecondaryMarker", "BP_LasePointer_SecondaryMarker_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_LasePointer_SecondaryMarker_C;
-    static constexpr const char* UberGraphFrame_BP_LasePointer_SecondaryMarker_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_LasePointer_SecondaryMarker(int EntryPoint);
     void UpdateMaterial();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_LasePointer_SecondaryMarker_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer

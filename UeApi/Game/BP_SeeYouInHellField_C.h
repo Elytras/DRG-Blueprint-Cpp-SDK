@@ -19,13 +19,17 @@ class BP_SeeYouInHellField_C : public Game::WeaponsNTools::Grenades::IFG::BP_Gre
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_SeeYouInHellField", "BP_SeeYouInHellField_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_SeeYouInHellField_C;
-    static constexpr const char* UberGraphFrame_BP_SeeYouInHellField_C__UeName = "UberGraphFrame";
     class USphereComponent* FearSphere;
-    static constexpr const char* FearSphere__UeScsNode = "aa3e42096d9ddd4cabdb840585392ed1";
     void ExecuteUbergraph_BP_SeeYouInHellField(int EntryPoint);
     void FearMe(class AActor* FearTarget);
     void BndEvt__FearSphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_SeeYouInHellField_C__UeName = "UberGraphFrame";
+        static constexpr const char* FearSphere__UeScsNode = "aa3e42096d9ddd4cabdb840585392ed1";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

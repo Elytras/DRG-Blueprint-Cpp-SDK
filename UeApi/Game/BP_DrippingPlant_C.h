@@ -27,23 +27,14 @@ public:
     UE_CLASS("/Game/Landscape/CaveAssets/Foliage/DrippingPlant/BP_DrippingPlant", "BP_DrippingPlant_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "7c027f08e07da5438c3a4848ea4d62dc";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "1f61a08413f645409b6e93b633a7f0ab";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "8722e33cac578f40a1eb4c12bfb2f22c";
     class UBillboardComponent* DripOrigin;
-    static constexpr const char* DripOrigin__UeScsNode = "782e4cd86267864c94d8d0d6e9cc99ed";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "6a23f97a55fccb42b7a99c5688a119be";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "30c2de6d06f71f4cbf04b8634bc1f8da";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "b383b442efdb6e4a8825629e00796dd3";
     class UStaticMeshComponent* SM_DripingPlant_02;
-    static constexpr const char* SM_DripingPlant_02__UeScsNode = "c781170d12868c4aa372283e65c9cead";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cbb1b61c75664f418229178dc07c2fe1";
     float DripIntervalMin;
     float DripIntervalMax;
     bool DoDrip;
@@ -59,6 +50,19 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ProximityChanged(class APlayerCharacter* Player, bool enteredTrigger);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Capsule__UeScsNode = "7c027f08e07da5438c3a4848ea4d62dc";
+        static constexpr const char* PathfinderCollision__UeScsNode = "1f61a08413f645409b6e93b633a7f0ab";
+        static constexpr const char* TerrainDetect__UeScsNode = "8722e33cac578f40a1eb4c12bfb2f22c";
+        static constexpr const char* DripOrigin__UeScsNode = "782e4cd86267864c94d8d0d6e9cc99ed";
+        static constexpr const char* terrainPlacement__UeScsNode = "6a23f97a55fccb42b7a99c5688a119be";
+        static constexpr const char* SimpleHealth__UeScsNode = "30c2de6d06f71f4cbf04b8634bc1f8da";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "b383b442efdb6e4a8825629e00796dd3";
+        static constexpr const char* SM_DripingPlant_02__UeScsNode = "c781170d12868c4aa372283e65c9cead";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cbb1b61c75664f418229178dc07c2fe1";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DrippingPlant

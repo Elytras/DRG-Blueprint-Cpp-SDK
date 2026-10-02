@@ -38,9 +38,9 @@ public:
     using UI_InfoScreen_LatestDLC_C = Game::UI::Menu_StartScreen::UI_InfoScreen_LatestDLC_C;
     using UI_PatchNotes_C = Game::UI::Menu_StartScreen::UI_PatchNotes_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeIn;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* BlinkText;
+    UE_READONLY class UWidgetAnimation* FadeIn;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* BlinkText;
     AnimatedDRGlogo_C* AnimatedDRGlogo;
     AnimatedStaticOverlay_C* AnimatedStaticOverlay;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -75,14 +75,18 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On_Clicked__DelegateSignature();
-    static constexpr const char* BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On Clicked__DelegateSignature";
     void BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On_Clicked__DelegateSignature();
-    static constexpr const char* BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On Clicked__DelegateSignature";
     void SetupAnimEvents();
     void OnFadeInStarted();
     void OnFadeInFinished();
     void OnFadeOutStarted();
     void ExecuteUbergraph_UI_InfoScreen_Xbox(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_K2Node_ComponentBoundEvent_130_On Clicked__DelegateSignature";
+        static constexpr const char* BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On_Clicked__DelegateSignature__UeName = "BndEvt__BTN_Steam_Joined_K2Node_ComponentBoundEvent_136_On Clicked__DelegateSignature";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

@@ -21,14 +21,11 @@ public:
     using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "4f88a2a188e3e64a8ccdde0dbf9c5bf5";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d2228967b7dce841a289c9bdf4d28b8c";
     ENE_FacilityTentacle_C* spawned;
     float TentacleRespawnTime;
     FTimerHandle TentacleRespawnTimer;
     bool HasTentacle;
-    static constexpr const char* HasTentacle__Replicated = "OnRep_HasTentacle:";
     FTimerHandle TentaclePauseTimer;
     void ExecuteUbergraph_BP_FacilityTentacleManager(int EntryPoint);
     void UnpauseTentacles();
@@ -42,6 +39,13 @@ public:
     void HasActiveTentacle(bool& HasSpawned);
     void CanSpawnTentacle(bool& IsBossfightActive);
     void OnRep_HasTentacle();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "4f88a2a188e3e64a8ccdde0dbf9c5bf5";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d2228967b7dce841a289c9bdf4d28b8c";
+        static constexpr const char* HasTentacle__Replicated = "OnRep_HasTentacle:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

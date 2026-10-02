@@ -43,9 +43,9 @@ public:
     using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
     using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimClaim;
-    class UWidgetAnimation* AnimPing;
-    class UWidgetAnimation* AnimMoveIn;
+    UE_READONLY class UWidgetAnimation* AnimClaim;
+    UE_READONLY class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimMoveIn;
     Basic_Image_C* Basic_Image;
     class UBorder* BorderHeader;
     ITM_BigButton_C* BTN_Claim;

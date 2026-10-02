@@ -7,6 +7,9 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "UeMeta.h"
 #include "CoreUObject.h"
 
+struct FActionIconMapping;
+enum class EUINavigationAction : uint8;
+
 enum class EConsoleForGamepadLabels : uint8
 {
     None                         = 0,
@@ -73,6 +76,68 @@ struct FKey
 
     FKey() = default;
     FKey(FName KeyName) {}
+
+    // UHeadMountedDisplayFunctionLibrary::BreakKey (HeadMountedDisplay.h)
+    void BreakKey(FString& InteractionProfile, EControllerHand& hand, FName& MotionSource, FString& Indentifier, FString& Component) const;
+    // UControllerIconSettings::FindControllerKeyIcon (FSD.h)
+    bool FindControllerKeyIcon(FActionIconMapping& KeyIcon) const;
+    // UControllerIconSettings::FindKeyIcon (FSD.h)
+    bool FindKeyIcon(FActionIconMapping& KeyIcon) const;
+    // UControllerIconSettings::FindMouseKeyboardKeyIcon (FSD.h)
+    bool FindMouseKeyboardKeyIcon(FActionIconMapping& KeyIcon) const;
+    // UFSDWidgetBlueprintLibrary::GetKeyName (FSD.h)
+    FText GetKeyName() const;
+    // UKismetInputLibrary::Key_GetDisplayName (Engine.h)
+    FText Key_GetDisplayName() const;
+    // UKismetInputLibrary::Key_GetNavigationAction (Engine.h)
+    TEnum<EUINavigationAction> Key_GetNavigationAction() const;
+    // UKismetInputLibrary::Key_IsAnalog (Engine.h)
+    bool Key_IsAnalog() const;
+    // UKismetInputLibrary::Key_IsAxis1D (Engine.h)
+    bool Key_IsAxis1D() const;
+    // UKismetInputLibrary::Key_IsAxis2D (Engine.h)
+    bool Key_IsAxis2D() const;
+    // UKismetInputLibrary::Key_IsAxis3D (Engine.h)
+    bool Key_IsAxis3D() const;
+    // UKismetInputLibrary::Key_IsButtonAxis (Engine.h)
+    bool Key_IsButtonAxis() const;
+    // UKismetInputLibrary::Key_IsDigital (Engine.h)
+    bool Key_IsDigital() const;
+    // UKismetInputLibrary::Key_IsGamepadKey (Engine.h)
+    bool Key_IsGamepadKey() const;
+    // UKismetInputLibrary::Key_IsKeyboardKey (Engine.h)
+    bool Key_IsKeyboardKey() const;
+    // UKismetInputLibrary::Key_IsModifierKey (Engine.h)
+    bool Key_IsModifierKey() const;
+    // UKismetInputLibrary::Key_IsMouseButton (Engine.h)
+    bool Key_IsMouseButton() const;
+    // UKismetInputLibrary::Key_IsValid (Engine.h)
+    bool Key_IsValid() const;
+    // UKismetInputLibrary::Key_IsVectorAxis (Engine.h)
+    bool Key_IsVectorAxis() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BreakKey__UeForward = "UHeadMountedDisplayFunctionLibrary::BreakKey";
+        static constexpr const char* FindControllerKeyIcon__UeForward = "UControllerIconSettings::FindControllerKeyIcon";
+        static constexpr const char* FindKeyIcon__UeForward = "UControllerIconSettings::FindKeyIcon";
+        static constexpr const char* FindMouseKeyboardKeyIcon__UeForward = "UControllerIconSettings::FindMouseKeyboardKeyIcon";
+        static constexpr const char* GetKeyName__UeForward = "UFSDWidgetBlueprintLibrary::GetKeyName";
+        static constexpr const char* Key_GetDisplayName__UeForward = "UKismetInputLibrary::Key_GetDisplayName";
+        static constexpr const char* Key_GetNavigationAction__UeForward = "UKismetInputLibrary::Key_GetNavigationAction";
+        static constexpr const char* Key_IsAnalog__UeForward = "UKismetInputLibrary::Key_IsAnalog";
+        static constexpr const char* Key_IsAxis1D__UeForward = "UKismetInputLibrary::Key_IsAxis1D";
+        static constexpr const char* Key_IsAxis2D__UeForward = "UKismetInputLibrary::Key_IsAxis2D";
+        static constexpr const char* Key_IsAxis3D__UeForward = "UKismetInputLibrary::Key_IsAxis3D";
+        static constexpr const char* Key_IsButtonAxis__UeForward = "UKismetInputLibrary::Key_IsButtonAxis";
+        static constexpr const char* Key_IsDigital__UeForward = "UKismetInputLibrary::Key_IsDigital";
+        static constexpr const char* Key_IsGamepadKey__UeForward = "UKismetInputLibrary::Key_IsGamepadKey";
+        static constexpr const char* Key_IsKeyboardKey__UeForward = "UKismetInputLibrary::Key_IsKeyboardKey";
+        static constexpr const char* Key_IsModifierKey__UeForward = "UKismetInputLibrary::Key_IsModifierKey";
+        static constexpr const char* Key_IsMouseButton__UeForward = "UKismetInputLibrary::Key_IsMouseButton";
+        static constexpr const char* Key_IsValid__UeForward = "UKismetInputLibrary::Key_IsValid";
+        static constexpr const char* Key_IsVectorAxis__UeForward = "UKismetInputLibrary::Key_IsVectorAxis";
+    };
 };
 
 class UInputCoreTypes : public UObject

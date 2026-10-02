@@ -13,6 +13,11 @@ class STE_Stalker_SpeedBuff_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/STE_Stalker_SpeedBuff", "STE_Stalker_SpeedBuff_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

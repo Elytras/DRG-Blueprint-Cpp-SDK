@@ -27,24 +27,16 @@ public:
     UE_CLASS("/Game/LevelElements/Spacerig/BP_GravitySwitch", "BP_GravitySwitch_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "327332d6840c2c40b3124b34a3a264a3";
     class UAudioComponent* Alarm;
-    static constexpr const char* Alarm__UeScsNode = "da68c9efb7609540b214a738f1543130";
     class UStaticMeshComponent* ButtonSphere;
-    static constexpr const char* ButtonSphere__UeScsNode = "0f63c1dd1fe7ad4e9cfeb1022cbdf50c";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "917f6922dd52814f901655d1c5ec6f36";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "aab97a1ccd173f449657189d56d1f812";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "78ec7b2fcc64164684eb7550d5225f4c";
     float Timeline_0_LightIntensity_2CB0110A43F837100C1A68A2642737BF;
     TEnum<ETimelineDirection> Timeline_0__Direction_2CB0110A43F837100C1A68A2642737BF;
     class UTimelineComponent* Timeline_0;
     int Normal_Gravity;
-    static constexpr const char* Normal_Gravity__UeName = "Normal Gravity";
     bool Can_use;
-    static constexpr const char* Can_use__UeName = "Can use";
     class ASkyLight* SkyLight;
     FLinearColor OriginalSkylightClour;
     float OriginalSkyLightIntensity;
@@ -56,6 +48,18 @@ public:
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User_0, TEnum<EInputKeys> Key);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "327332d6840c2c40b3124b34a3a264a3";
+        static constexpr const char* Alarm__UeScsNode = "da68c9efb7609540b214a738f1543130";
+        static constexpr const char* ButtonSphere__UeScsNode = "0f63c1dd1fe7ad4e9cfeb1022cbdf50c";
+        static constexpr const char* Box__UeScsNode = "917f6922dd52814f901655d1c5ec6f36";
+        static constexpr const char* InstantUsable__UeScsNode = "aab97a1ccd173f449657189d56d1f812";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "78ec7b2fcc64164684eb7550d5225f4c";
+        static constexpr const char* Normal_Gravity__UeName = "Normal Gravity";
+        static constexpr const char* Can_use__UeName = "Can use";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Spacerig

@@ -22,7 +22,7 @@ class ITM_ManualCooling_Bar_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/GatlingGun/UI/ITM_ManualCooling_Bar", "ITM_ManualCooling_Bar_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPing;
+    UE_READONLY class UWidgetAnimation* AnimPing;
     class UHorizontalBox* Charges_HBar;
     class UOverlay* Root_Overlay;
     FVector2D BrushSize;

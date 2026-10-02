@@ -23,16 +23,11 @@ class ITM_HackingTool_C : public AHackingToolItem
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/ITM_HackingTool", "ITM_HackingTool_C");
     using HackingTool_Controller_C = Game::WeaponsNTools::HackingTool::UI::HackingTool_Controller_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "7068dfcbdb86e44aae86a5eaf1d1a1e6";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "b95c332b4e54f647bacd2e20057a09f1";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "15236368a11cc847865cf118afbc36cd";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "413bebed9434b245a05c83f1a7be07c9";
     HackingTool_Controller_C* HackingControllerWidget;
     void ExecuteUbergraph_ITM_HackingTool(int EntryPoint);
     void ReceivedActionReleased();
@@ -43,6 +38,15 @@ public:
     void OnHackingCompleted(bool InSuccess);
     void ReceiveHackingStarted();
     void AudioOnFail(class USoundCue* InFailCue, class UDialogDataAsset* InShout);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Widget__UeScsNode = "7068dfcbdb86e44aae86a5eaf1d1a1e6";
+        static constexpr const char* StaticMesh__UeScsNode = "b95c332b4e54f647bacd2e20057a09f1";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "15236368a11cc847865cf118afbc36cd";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "413bebed9434b245a05c83f1a7be07c9";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::HackingTool

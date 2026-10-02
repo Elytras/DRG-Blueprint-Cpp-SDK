@@ -15,9 +15,13 @@ class BP_NetFungus_C : public Game::LevelElements::RoomObjects::PassiveFoliage::
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/BP_NetFungus", "BP_NetFungus_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_NetFungus_C;
-    static constexpr const char* UberGraphFrame_BP_NetFungus_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_NetFungus(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_NetFungus_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage

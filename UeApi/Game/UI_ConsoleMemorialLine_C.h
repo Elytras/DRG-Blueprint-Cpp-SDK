@@ -20,7 +20,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/UI_ConsoleMemorialLine", "UI_ConsoleMemorialLine_C");
     using ConsoleScreenMemorialWall_C = Game::UI::HUD_SpaceRig::ConsoleScreenMemorialWall_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Move;
+    UE_READONLY class UWidgetAnimation* Move;
     class UTextBlock* TXT_Main;
     float Duration;
     float AnimationSpeed;

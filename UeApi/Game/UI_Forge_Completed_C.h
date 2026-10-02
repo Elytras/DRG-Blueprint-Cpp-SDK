@@ -24,7 +24,7 @@ public:
     using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
     using UI_Forge_Details_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     ITM_BigButton_C* ContinueButton;
     class UImage* NoiseImage;
     UI_Forge_Details_C* UI_Forge_Details;

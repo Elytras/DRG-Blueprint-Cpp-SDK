@@ -21,11 +21,8 @@ class BP_PlayerController_C : public Game::Game::BP_PlayerControllerBase_C
 public:
     UE_CLASS("/Game/Game/BP_PlayerController", "BP_PlayerController_C");
     using BP_ProceduralController_C = Game::Landscape::BP_ProceduralController_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerController_C;
-    static constexpr const char* UberGraphFrame_BP_PlayerController_C__UeName = "UberGraphFrame";
     BP_ProceduralController_C* ProceduralController;
-    static constexpr const char* ProceduralController__UeScsNode = "22ad02c578cf2f40b9bcf6b2598f0d2f";
     TMulticastInlineDelegate<void()> MainMenuRequested;
     bool HUD_Visible;
     int cheatCounter;
@@ -64,11 +61,8 @@ public:
     void InpActEvt_Add_K2Node_InputKeyEvent_4(FKey Key);
     void InpActEvt_Multiply_K2Node_InputKeyEvent_3(FKey Key);
     void InpActEvt_Ctrl_Alt_N_K2Node_InputKeyEvent_2(FKey Key);
-    static constexpr const char* InpActEvt_Ctrl_Alt_N_K2Node_InputKeyEvent_2__UeName = "InpActEvt_Ctrl+Alt_N_K2Node_InputKeyEvent_2";
     void InpActEvt_Ctrl_Alt_O_K2Node_InputKeyEvent_1(FKey Key);
-    static constexpr const char* InpActEvt_Ctrl_Alt_O_K2Node_InputKeyEvent_1__UeName = "InpActEvt_Ctrl+Alt_O_K2Node_InputKeyEvent_1";
     void InpActEvt_Ctrl_Shift_B_K2Node_InputKeyEvent_0(FKey Key);
-    static constexpr const char* InpActEvt_Ctrl_Shift_B_K2Node_InputKeyEvent_0__UeName = "InpActEvt_Ctrl+Shift_B_K2Node_InputKeyEvent_0";
     UE_SERVER UE_RELIABLE void SelectNewHero(class UPlayerCharacterID* Hero);
     void ReceiveBeginPlay();
     void OnGenerationDone();
@@ -76,6 +70,16 @@ public:
     void ReceiveEndLevel();
     UE_SERVER UE_RELIABLE void Server_ClientReady();
     UE_SERVER UE_RELIABLE void SelectLateJoinCharacter(class UPlayerCharacterID* Hero);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* UberGraphFrame_BP_PlayerController_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProceduralController__UeScsNode = "22ad02c578cf2f40b9bcf6b2598f0d2f";
+        static constexpr const char* InpActEvt_Ctrl_Alt_N_K2Node_InputKeyEvent_2__UeName = "InpActEvt_Ctrl+Alt_N_K2Node_InputKeyEvent_2";
+        static constexpr const char* InpActEvt_Ctrl_Alt_O_K2Node_InputKeyEvent_1__UeName = "InpActEvt_Ctrl+Alt_O_K2Node_InputKeyEvent_1";
+        static constexpr const char* InpActEvt_Ctrl_Shift_B_K2Node_InputKeyEvent_0__UeName = "InpActEvt_Ctrl+Shift_B_K2Node_InputKeyEvent_0";
+    };
 };
 
 }}   // namespace Game::Game

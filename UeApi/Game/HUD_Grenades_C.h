@@ -35,14 +35,18 @@ public:
     void OnLaserPointerReleased();
     void OnLaserPointerPressed();
     void Update_Visibility();
-    static constexpr const char* Update_Visibility__UeName = "Update Visibility";
     void OnItemUnequipped_Event(class AItem* Item);
     void OnItemEquipped_Event(class AItem* Item);
     void Setup_Dynamic_HUD();
-    static constexpr const char* Setup_Dynamic_HUD__UeName = "Setup Dynamic HUD";
     UE_COSMETIC void Construct();
     void OnGrenadeCountChanged(int CurrentCount);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Visibility__UeName = "Update Visibility";
+        static constexpr const char* Setup_Dynamic_HUD__UeName = "Setup Dynamic HUD";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

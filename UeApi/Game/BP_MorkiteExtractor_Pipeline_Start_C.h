@@ -21,20 +21,13 @@ class BP_MorkiteExtractor_Pipeline_Start_C : public APipelineStart
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/BP_MorkiteExtractor_Pipeline_Start", "BP_MorkiteExtractor_Pipeline_Start_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TrackBuilderUsable PipelineStartUsable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* ColliderPipelineStart;
-    static constexpr const char* ColliderPipelineStart__UeScsNode = "30387aaa8ae74143a4df5387be3eeed4";
     class USceneComponent* PipelineStartTransform;
-    static constexpr const char* PipelineStartTransform__UeScsNode = "305356f68a15bd43babd7f0fc885f4c7";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "3137be812366c148b2716f13afa56ccc";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "31143cf21f67d145b4d2cc8af2bea372";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "24cd5a4e5907c84f89f13bf06d477aac";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "2d3c06dbca80f74c8c6c1a5f52ae3849";
     class UMaterialInterface* MarkerRingMaterial;
     void ExecuteUbergraph_BP_MorkiteExtractor_Pipeline_Start(int EntryPoint);
     void ReceiveBuildStateChanged(TEnum<EPipelineBuildState> InBuildState);
@@ -43,6 +36,17 @@ public:
     void UserConstructionScript();
     void UpdateState();
     void UpdatePipelineNumber();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TrackBuilderUsable PipelineStartUsable";
+        static constexpr const char* ColliderPipelineStart__UeScsNode = "30387aaa8ae74143a4df5387be3eeed4";
+        static constexpr const char* PipelineStartTransform__UeScsNode = "305356f68a15bd43babd7f0fc885f4c7";
+        static constexpr const char* StaticMesh__UeScsNode = "3137be812366c148b2716f13afa56ccc";
+        static constexpr const char* Scene__UeScsNode = "31143cf21f67d145b4d2cc8af2bea372";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "24cd5a4e5907c84f89f13bf06d477aac";
+        static constexpr const char* outline__UeScsNode = "2d3c06dbca80f74c8c6c1a5f52ae3849";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery

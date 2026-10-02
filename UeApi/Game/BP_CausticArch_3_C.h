@@ -16,7 +16,11 @@ class BP_CausticArch_3_C : public Game::LevelElements::RoomObjects::HugeCarvers:
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/SandArches/BP_CausticArch_3", "BP_CausticArch_3_C");
     class UStaticMeshComponent* SM_Arch04;
-    static constexpr const char* SM_Arch04__UeScsNode = "101d78da99d39149bb30f870f208dbb2";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Arch04__UeScsNode = "101d78da99d39149bb30f870f208dbb2";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::SandArches

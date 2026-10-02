@@ -17,9 +17,13 @@ class BP_WalkingPlagueHeart_PlagueCloud_C : public Game::Enemies::BaseItems::BP_
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_WalkingPlagueHeart_PlagueCloud", "BP_WalkingPlagueHeart_PlagueCloud_C");
     class UStaticMeshComponent* Sphere1;
-    static constexpr const char* Sphere1__UeScsNode = "63fe8cda41f3bd4fac30fb72dbb2a3f4";
     class UNiagaraComponent* NS_Plague_Spider_Tank_DeathCloud;
-    static constexpr const char* NS_Plague_Spider_Tank_DeathCloud__UeScsNode = "c8e8865ba5be9f499bee188998393ca9";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere1__UeScsNode = "63fe8cda41f3bd4fac30fb72dbb2a3f4";
+        static constexpr const char* NS_Plague_Spider_Tank_DeathCloud__UeScsNode = "c8e8865ba5be9f499bee188998393ca9";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss

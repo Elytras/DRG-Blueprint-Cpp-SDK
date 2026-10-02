@@ -37,8 +37,12 @@ public:
     void ExecuteUbergraph_UI_Bar_BackgroundMenu(int EntryPoint);
     void OnNewDrinkableSpecial(class UDrinkableDataAsset* Drinkable);
     void Set_Bartender(BP_SpaceRig_Bartender_C* InBartender);
-    static constexpr const char* Set_Bartender__UeName = "Set Bartender";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Set_Bartender__UeName = "Set Bartender";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

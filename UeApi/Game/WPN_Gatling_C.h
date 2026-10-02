@@ -27,28 +27,17 @@ class WPN_Gatling_C : public AGatlingGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GatlingGun/WPN_Gatling", "WPN_Gatling_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BarrelProximityDamage;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "33e5fa0ceb39af47b8fe33fe95ff83dd";
     class UWeaponImpactComponent* WeaponImpact;
-    static constexpr const char* WeaponImpact__UeScsNode = "7cec97977bde9b4cbf16dd9700314d93";
     class UDamageComponent* CritcalOverheatDamage;
-    static constexpr const char* CritcalOverheatDamage__UeScsNode = "0064f7419d20464a99d173a604b96174";
     class UFirstPersonParticleSystemComponent* FirstPersonParticleSystem;
-    static constexpr const char* FirstPersonParticleSystem__UeScsNode = "77f2c5a3e985c1498c52de5c04e0aac9";
     class UFirstPersonPointLightComponent* Light_MuzzleFlash;
-    static constexpr const char* Light_MuzzleFlash__UeScsNode = "71c76e670aeee74ca7761f74fec5000b";
     class UFirstPersonWidgetComponent* Widget_Overheat;
-    static constexpr const char* Widget_Overheat__UeScsNode = "e1722e388b2da14383065e05c9969110";
     class UHeatMaterialComponent* HeatMaterial;
-    static constexpr const char* HeatMaterial__UeScsNode = "1e76adff22d08a4ba46c20fd3b63c5a6";
     class UFirstPersonWidgetComponent* Widget_Ammo;
-    static constexpr const char* Widget_Ammo__UeScsNode = "c312701be95e8147b8dccf8e8aa52ecb";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "3d02558e84561942b5d50184e13a07b8";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "8e86ad8eea911f48bc270c22798bbc07";
     void ExecuteUbergraph_WPN_Gatling(int EntryPoint);
     void OnManualHeatReductionTriggered_Event_0();
     void CustomEvent1(class UItemUpgrade* Event);
@@ -64,6 +53,21 @@ public:
     void Receive_Overheated();
     void UserConstructionScript();
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BarrelProximityDamage;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageConversionBonus BarrelProximityDamage:DamageConversionBonus_0;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* ParticleSystem__UeScsNode = "33e5fa0ceb39af47b8fe33fe95ff83dd";
+        static constexpr const char* WeaponImpact__UeScsNode = "7cec97977bde9b4cbf16dd9700314d93";
+        static constexpr const char* CritcalOverheatDamage__UeScsNode = "0064f7419d20464a99d173a604b96174";
+        static constexpr const char* FirstPersonParticleSystem__UeScsNode = "77f2c5a3e985c1498c52de5c04e0aac9";
+        static constexpr const char* Light_MuzzleFlash__UeScsNode = "71c76e670aeee74ca7761f74fec5000b";
+        static constexpr const char* Widget_Overheat__UeScsNode = "e1722e388b2da14383065e05c9969110";
+        static constexpr const char* HeatMaterial__UeScsNode = "1e76adff22d08a4ba46c20fd3b63c5a6";
+        static constexpr const char* Widget_Ammo__UeScsNode = "c312701be95e8147b8dccf8e8aa52ecb";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "3d02558e84561942b5d50184e13a07b8";
+        static constexpr const char* HitScan__UeScsNode = "8e86ad8eea911f48bc270c22798bbc07";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GatlingGun

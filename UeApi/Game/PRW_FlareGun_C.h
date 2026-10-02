@@ -17,9 +17,13 @@ class PRW_FlareGun_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/PRW_FlareGun", "PRW_FlareGun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "a20604616dd76a47b11f36cb02bad73e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "aa02ee2a5c2e3b4fa8c43537fb2004df";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "a20604616dd76a47b11f36cb02bad73e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "aa02ee2a5c2e3b4fa8c43537fb2004df";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlareGun

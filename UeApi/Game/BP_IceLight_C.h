@@ -18,11 +18,15 @@ class BP_IceLight_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/IceLights/BP_IceLight", "BP_IceLight_C");
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "454172578b80b849ab00b1740e3ed6ed";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "dc260516cc167345abe1e1dd564865cb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "47c352c54959e842b0bac0ca4d56cb7e";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "454172578b80b849ab00b1740e3ed6ed";
+        static constexpr const char* terrainPlacement__UeScsNode = "dc260516cc167345abe1e1dd564865cb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "47c352c54959e842b0bac0ca4d56cb7e";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::IceLights

@@ -38,7 +38,11 @@ public:
     UE_COSMETIC void Construct();
     void SetIsServer(bool IsServer);
     void Add_Buff(class UTemporaryBuff* buff);
-    static constexpr const char* Add_Buff__UeName = "Add Buff";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Buff__UeName = "Add Buff";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

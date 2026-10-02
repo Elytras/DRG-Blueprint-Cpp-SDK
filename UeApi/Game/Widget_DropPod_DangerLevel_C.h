@@ -46,7 +46,6 @@ public:
     class UWidgetSwitcher* WidgetSwitcher_138;
     TArray<FText> Names;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     float TimePassed;
     void ExecuteUbergraph_Widget_DropPod_DangerLevel(int EntryPoint);
     void OnGeneratedMissionChanged(class UGeneratedMission* OutGeneratedMission);
@@ -54,6 +53,11 @@ public:
     UE_COSMETIC void Construct();
     void SetGeneratedMission(class UGeneratedMission* In_Mission);
     void AdjustBar(float InputPin);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Index_0__UeName = "Index";
+    };
 };
 
 }}}}   // namespace Game::Art::DropPod::Widgets

@@ -22,7 +22,7 @@ class ITM_SeasonEndWarningTimer_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonEndWarningTimer", "ITM_SeasonEndWarningTimer_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Pulse;
+    UE_READONLY class UWidgetAnimation* Pulse;
     class UVerticalBox* AnyTimeNowBox;
     class UVerticalBox* CountDownBox;
     class UTextBlock* countdownText;
@@ -36,17 +36,21 @@ public:
     void ExecuteUbergraph_ITM_SeasonEndWarningTimer(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Stop_Monitoring();
-    static constexpr const char* Stop_Monitoring__UeName = "Stop Monitoring";
     void Begin_Monitoring();
-    static constexpr const char* Begin_Monitoring__UeName = "Begin Monitoring";
     UE_COSMETIC void Construct();
     void Refresh();
     void OnCheckForUpdateComplete(bool IsUpdatePending);
     void SetPreviewState(int Index_0);
     void Int2Text(int InValue, FText& OutText);
     void On_Request_Season_End_Complete(FDateTime EndTime, bool validExpireTime);
-    static constexpr const char* On_Request_Season_End_Complete__UeName = "On Request Season End Complete";
     void GetFormattedDateString(FTimespan Remaining_Time, FText& Remaining_time_Text);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Stop_Monitoring__UeName = "Stop Monitoring";
+        static constexpr const char* Begin_Monitoring__UeName = "Begin Monitoring";
+        static constexpr const char* On_Request_Season_End_Complete__UeName = "On Request Season End Complete";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

@@ -22,23 +22,16 @@ class ITM_BarGlass_Item_C : public ADrinkableItem
 public:
     UE_CLASS("/Game/GameElements/Bar/ITM_BarGlass_Item", "ITM_BarGlass_Item_C");
     using Bar_Glass_Physics_C = Game::GameElements::Bar::Bar_Glass_Physics_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* TPParticleSystem;
-    static constexpr const char* TPParticleSystem__UeScsNode = "74d731d3cc1a2542b5de6cc34aa32363";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "18bf32d1e196a648855a31794cf625e5";
     class UAudioComponent* SparkleDrink;
-    static constexpr const char* SparkleDrink__UeScsNode = "d79ca644ee28af4cb1456909b1a363e5";
     bool IsFull;
-    static constexpr const char* IsFull__Replicated = "OnRep_IsFull:";
     class UClass* PhysicsActor;
     class UAnimMontage* TPMontage;
     class UAnimMontage* FPMontage;
     bool Visible;
-    static constexpr const char* Visible__Replicated = "OnRep_Visible:";
     Bar_Glass_Physics_C* ThrownGlass;
-    static constexpr const char* ThrownGlass__Replicated = "OnRep_ThrownGlass:";
     float DelayBeforeFoamRemoval;
     bool InDelayBeforeDrink;
     void ExecuteUbergraph_ITM_BarGlass_Item(int EntryPoint);
@@ -61,6 +54,17 @@ public:
     void OnRep_ThrownGlass();
     void OnEmpty();
     bool CheckCanSalute() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* TPParticleSystem__UeScsNode = "74d731d3cc1a2542b5de6cc34aa32363";
+        static constexpr const char* ParticleSystem__UeScsNode = "18bf32d1e196a648855a31794cf625e5";
+        static constexpr const char* SparkleDrink__UeScsNode = "d79ca644ee28af4cb1456909b1a363e5";
+        static constexpr const char* IsFull__Replicated = "OnRep_IsFull:";
+        static constexpr const char* Visible__Replicated = "OnRep_Visible:";
+        static constexpr const char* ThrownGlass__Replicated = "OnRep_ThrownGlass:";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

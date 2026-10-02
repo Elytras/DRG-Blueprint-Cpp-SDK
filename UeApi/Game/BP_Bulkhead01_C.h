@@ -24,28 +24,19 @@ public:
     UE_CLASS("/Game/Art/Environments/ShipTesting/BP_Bulkhead01", "BP_Bulkhead01_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "db867cc16ba8b044834588dbb110d659";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "30c9cda4294f1b4dae2d7e9ba95e2b3b";
     class UBoxComponent* SideCollider1;
-    static constexpr const char* SideCollider1__UeScsNode = "a7eb3f62d343ca449559906678c905e8";
     class UBoxComponent* SideCollider;
-    static constexpr const char* SideCollider__UeScsNode = "ce602d44753c1242bb46ef2fab5a9e0a";
     class UBoxComponent* collider;
-    static constexpr const char* collider__UeScsNode = "c92301690bd1dd4baab0d89d153ab850";
     class USkeletalMeshComponent* Mesh_Door;
-    static constexpr const char* Mesh_Door__UeScsNode = "480a90126b778c41b85318cfa2841431";
     class UBoxComponent* TriggerBox;
-    static constexpr const char* TriggerBox__UeScsNode = "2b9cd7908ad60c4894ec80edf69d065a";
     class USceneComponent* SharedRoot;
-    static constexpr const char* SharedRoot__UeScsNode = "6c904c8cda6cda4d9d020202a54b6c2d";
     float Driver_Movement_137D39154F4F54A9387D6EB46EC05709;
     TEnum<ETimelineDirection> Driver__Direction_137D39154F4F54A9387D6EB46EC05709;
     class UTimelineComponent* Driver;
     float Open_Time;
     TArray<class APlayerCharacter*> Players;
     bool IsOpen;
-    static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
     float TimeSinceLastSwap;
     float MinDoorTime;
     bool DoorCanOpen;
@@ -59,6 +50,19 @@ public:
     void Driver__FinishedFunc();
     void OnRep_IsOpen();
     void HasPlayersNearby(bool& AnyPlayers);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight1__UeScsNode = "db867cc16ba8b044834588dbb110d659";
+        static constexpr const char* PointLight__UeScsNode = "30c9cda4294f1b4dae2d7e9ba95e2b3b";
+        static constexpr const char* SideCollider1__UeScsNode = "a7eb3f62d343ca449559906678c905e8";
+        static constexpr const char* SideCollider__UeScsNode = "ce602d44753c1242bb46ef2fab5a9e0a";
+        static constexpr const char* collider__UeScsNode = "c92301690bd1dd4baab0d89d153ab850";
+        static constexpr const char* Mesh_Door__UeScsNode = "480a90126b778c41b85318cfa2841431";
+        static constexpr const char* TriggerBox__UeScsNode = "2b9cd7908ad60c4894ec80edf69d065a";
+        static constexpr const char* SharedRoot__UeScsNode = "6c904c8cda6cda4d9d020202a54b6c2d";
+        static constexpr const char* IsOpen__Replicated = "OnRep_IsOpen:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::ShipTesting

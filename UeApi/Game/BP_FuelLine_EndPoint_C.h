@@ -20,12 +20,9 @@ class BP_FuelLine_EndPoint_C : public AFuelLineEndPoint
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_EndPoint", "BP_FuelLine_EndPoint_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent StaticMesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "e583f9ab5379de4480e6ef1740ff7b93";
     class UParticleSystemComponent* P_Extractor_PipeLinkUp;
-    static constexpr const char* P_Extractor_PipeLinkUp__UeScsNode = "da2167e3dea04048ae28502d8f4a1b0d";
     class UMaterialInterface* DefaultRingMaterial;
     bool Pinging;
     bool PlacementValid;
@@ -36,6 +33,13 @@ public:
     void ReceivePing(bool InValidPlacement);
     void UserConstructionScript();
     void UpdateState();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SplineComponent ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "e583f9ab5379de4480e6ef1740ff7b93";
+        static constexpr const char* P_Extractor_PipeLinkUp__UeScsNode = "da2167e3dea04048ae28502d8f4a1b0d";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder

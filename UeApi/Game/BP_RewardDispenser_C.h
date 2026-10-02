@@ -30,26 +30,18 @@ public:
     using BP_RewardUsableComponent_C = Game::GameElements::GameEvents::RewardDispenser::BP_RewardUsableComponent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_RewardUsableComponent_C* BP_RewardUsableComponent;
-    static constexpr const char* BP_RewardUsableComponent__UeScsNode = "477f265087e1ef4592dd70c7e583e212";
     class UChildActorComponent* RewardSelectorActor;
-    static constexpr const char* RewardSelectorActor__UeScsNode = "1110c65d69f5dc46a98aedd1bdff3dd0";
     class UBoxComponent* PlayerTrigger;
-    static constexpr const char* PlayerTrigger__UeScsNode = "121d422d3bd9d04c923a53f92de00ec8";
     class USphereComponent* UsableCollision;
-    static constexpr const char* UsableCollision__UeScsNode = "2f3f1f91ae28ad4dbd6230ebdcbca372";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "08b71074c97b77409186f5406238a83a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "bc87575fae248c408bdd75371def8b65";
     bool RewardSelectorVisible;
     class APlayerCharacter* NearbyPlayer;
     TMulticastInlineDelegate<void()> OnDispenserFinished;
     void ExecuteUbergraph_BP_RewardDispenser(int EntryPoint);
     void Turn_On_Buttons();
-    static constexpr const char* Turn_On_Buttons__UeName = "Turn On Buttons";
     void OnRewardSelected();
     void On_Selector_Finished(class USchematic* SchematicReward);
-    static constexpr const char* On_Selector_Finished__UeName = "On Selector Finished";
     void OnOpenDispenser();
     void Initialize();
     void BndEvt__BP_RewardUsableComponent_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
@@ -61,6 +53,18 @@ public:
     void IsPlayerLocallyControlled(bool& LocallyControlled);
     void GetRewardSelector(BP_CoreInfuser_Rewards_Selector_C*& Selector);
     UE_PURE bool IsStateValid();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BP_RewardUsableComponent__UeScsNode = "477f265087e1ef4592dd70c7e583e212";
+        static constexpr const char* RewardSelectorActor__UeScsNode = "1110c65d69f5dc46a98aedd1bdff3dd0";
+        static constexpr const char* PlayerTrigger__UeScsNode = "121d422d3bd9d04c923a53f92de00ec8";
+        static constexpr const char* UsableCollision__UeScsNode = "2f3f1f91ae28ad4dbd6230ebdcbca372";
+        static constexpr const char* SkeletalMesh__UeScsNode = "08b71074c97b77409186f5406238a83a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "bc87575fae248c408bdd75371def8b65";
+        static constexpr const char* Turn_On_Buttons__UeName = "Turn On Buttons";
+        static constexpr const char* On_Selector_Finished__UeName = "On Selector Finished";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RewardDispenser

@@ -21,7 +21,6 @@ public:
     class UButton* Button_Base;
     class UTextBlock* TextBlock_3;
     FText Button_Text;
-    static constexpr const char* Button_Text__UeName = "Button Text";
     TMulticastInlineDelegate<void(CheatMenu_BasicButtonWText_C* Button)> OnClicked;
     TMulticastInlineDelegate<void()> OnPressed;
     TMulticastInlineDelegate<void()> OnRelease;
@@ -31,6 +30,11 @@ public:
     void BndEvt__Button_Base_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetButtonText(const FText& InText);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Button_Text__UeName = "Button Text";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

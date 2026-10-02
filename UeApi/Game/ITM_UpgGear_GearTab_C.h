@@ -37,7 +37,7 @@ public:
     class UImage* Locked;
     class UOverlay* Unlocked;
     bool ItemHovered;
-    class UUpgradableGearComponent* UpgradableGear;
+    UE_READONLY class UUpgradableGearComponent* UpgradableGear;
     TMulticastInlineDelegate<void(ITM_UpgGear_GearTab_C* Tab)> OnClicked;
     TMulticastInlineDelegate<void(ITM_UpgGear_GearTab_C* Tab)> OnHovered;
     TMulticastInlineDelegate<void(ITM_UpgGear_GearTab_C* Tab)> OnUnhovered;

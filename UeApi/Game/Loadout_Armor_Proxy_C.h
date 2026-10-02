@@ -15,9 +15,13 @@ class Loadout_Armor_Proxy_C : public ALoadoutItemProxy
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/Loadout_Armor_Proxy", "Loadout_Armor_Proxy_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "57b99b6801554f4a99d62d2a867261e7";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "57b99b6801554f4a99d62d2a867261e7";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Armor

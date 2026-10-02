@@ -16,7 +16,11 @@ class bp_Boneyard_DestructibleBones_Vertebrae_01_C : public Game::Landscape::Bio
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Destructables/bp_Boneyard_DestructibleBones_Vertebrae_01", "bp_Boneyard_DestructibleBones_Vertebrae_01_C");
     class UStaticMeshComponent* Preview1;
-    static constexpr const char* Preview1__UeScsNode = "e456426fe28b2643ac1b6368be7c83c3";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Preview1__UeScsNode = "e456426fe28b2643ac1b6368be7c83c3";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables

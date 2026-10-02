@@ -79,7 +79,6 @@ public:
     TArray<FString> NamesOfDependencies;
     TEnum<EUGCDownloadVersion> ModDownloadVersion;
     ITM_Modding_Menu_C* Modding_Menu;
-    static constexpr const char* Modding_Menu__UeName = "Modding Menu";
     void ExecuteUbergraph_ITM_Mod(int EntryPoint);
     void CustomEvent_1();
     void CustomEvent_0(FString LastURL);
@@ -108,7 +107,6 @@ public:
     void SetCompactMode(bool SimpleMode);
     void HasCrashed(bool& OutHasCrashed);
     void On_Overlay_Closed();
-    static constexpr const char* On_Overlay_Closed__UeName = "On Overlay Closed";
     void SetModEnabled(bool InEnabled);
     void ResetModEnabled();
     void OnModStateDependencyChanged(bool IsChecked, bool ShouldDisableCheckmark, bool& HasChanged);
@@ -121,6 +119,12 @@ public:
     void GetDownloadVersionText(TEnum<EUGCDownloadVersion> InDownloadVersion, FText& OutStatus);
     void GetDownloadVersionToolTip(TEnum<EUGCDownloadVersion> InStatus, FText& OutStatus);
     void ITM_Mod_AutoGenFunc(FString LastURL);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Modding_Menu__UeName = "Modding Menu";
+        static constexpr const char* On_Overlay_Closed__UeName = "On Overlay Closed";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding

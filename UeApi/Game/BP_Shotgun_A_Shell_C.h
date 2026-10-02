@@ -17,9 +17,13 @@ class BP_Shotgun_A_Shell_C : public Game::WeaponsNTools::MAG_BaseClass_C
 public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/BP_Shotgun_A_Shell", "BP_Shotgun_A_Shell_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Shotgun_A_Shell_C;
-    static constexpr const char* UberGraphFrame_BP_Shotgun_A_Shell_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_BP_Shotgun_A_Shell(int EntryPoint);
     void OnItemSkinned(class USkinEffect* Skin);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Shotgun_A_Shell_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun

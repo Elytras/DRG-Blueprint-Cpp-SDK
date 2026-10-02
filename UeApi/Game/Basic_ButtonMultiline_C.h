@@ -30,12 +30,9 @@ public:
     class USizeBox* SizeBox_0;
     class UTextBlock* TXT_ButtonText;
     TMulticastInlineDelegate<void()> On_Clicked;
-    static constexpr const char* On_Clicked__UeName = "On Clicked";
     FText Text;
     int Font_Size;
-    static constexpr const char* Font_Size__UeName = "Font Size";
     FVector2D Button_Size;
-    static constexpr const char* Button_Size__UeName = "Button Size";
     bool Overlay;
     class USoundBase* HoveredSound;
     class USoundBase* PressedSound;
@@ -46,6 +43,13 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetFontSize(int NewParam);
     void SetButtonText(FText NewParam);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Clicked__UeName = "On Clicked";
+        static constexpr const char* Font_Size__UeName = "Font Size";
+        static constexpr const char* Button_Size__UeName = "Button Size";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

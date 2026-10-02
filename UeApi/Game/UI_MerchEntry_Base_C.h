@@ -21,9 +21,13 @@ public:
     bool ShouldOpenInExternalBrowser;
     void ExecuteUbergraph_UI_MerchEntry_Base(int EntryPoint);
     void On_Overlay_Closed(FString LastURL);
-    static constexpr const char* On_Overlay_Closed__UeName = "On Overlay Closed";
     void OpenLink();
     void Log(FString InText);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Overlay_Closed__UeName = "On Overlay Closed";
+    };
 };
 
 }}}}   // namespace Game::UI::MENU_Merch::_Common

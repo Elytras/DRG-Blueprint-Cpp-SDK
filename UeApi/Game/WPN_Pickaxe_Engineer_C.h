@@ -13,7 +13,11 @@ class WPN_Pickaxe_Engineer_C : public Game::WeaponsNTools::Pickaxe::WPN_Pickaxe_
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pickaxe/Eng/WPN_Pickaxe_Engineer", "WPN_Pickaxe_Engineer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.DamageComponent SpecialDamage;/Script/Engine.SceneComponent FP_Root;/Script/Engine.SceneComponent FP_Scale;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TP_Root;/Script/Engine.SceneComponent TP_Scale;/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.BreakIceBonus Damage:BreakIceBonus_0;/Script/FSD.BreakIceBonus SpecialDamage:BreakIceBonus_0;/Script/FSD.DamageComponent Damage;/Script/FSD.DamageComponent SpecialDamage;/Script/Engine.SceneComponent FP_Root;/Script/Engine.SceneComponent FP_Scale;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TP_Root;/Script/Engine.SceneComponent TP_Scale;/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Pickaxe::Eng

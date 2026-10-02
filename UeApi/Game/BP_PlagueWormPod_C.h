@@ -19,17 +19,21 @@ class BP_PlagueWormPod_C : public AWormPod
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_PlagueWormPod", "BP_PlagueWormPod_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ScalePoint;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent PodMesh";
     class UNiagaraComponent* NS_Spores;
-    static constexpr const char* NS_Spores__UeScsNode = "b77e26839fef7e448b689b4a1f840cae";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "8b2c3c7d50137945ae73541be9ff0788";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "ceb6b9ef6da45b449b643f28c267a458";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "7cf6273cdff9334e903b01c0b7fee184";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "459ab7504e84894cb3517b81d3812b7a";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ScalePoint;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent PodMesh";
+        static constexpr const char* NS_Spores__UeScsNode = "b77e26839fef7e448b689b4a1f840cae";
+        static constexpr const char* PointLight__UeScsNode = "8b2c3c7d50137945ae73541be9ff0788";
+        static constexpr const char* enemy__UeScsNode = "ceb6b9ef6da45b449b643f28c267a458";
+        static constexpr const char* outline__UeScsNode = "7cf6273cdff9334e903b01c0b7fee184";
+        static constexpr const char* terrainPlacement__UeScsNode = "459ab7504e84894cb3517b81d3812b7a";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

@@ -19,24 +19,17 @@ class BP_FoamPuddle_WalkingPlagueheart_C : public AFoamPuddle_WalkingPlagueheart
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/BP_FoamPuddle_WalkingPlagueheart", "BP_FoamPuddle_WalkingPlagueheart_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Engine.SceneComponent PuddleRoot;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "52857381bce39743ad61d71a9c34f2dd";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "323917cf83e4184abcf2508c87cab05a";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "36e82c022eb1b146a25e6a6b983137ba";
     float Timeline_1_NewTrack;
-    static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_52E7C03D403167AE64268C894B31D3D0";
     TEnum<ETimelineDirection> Timeline_1__Direction_52E7C03D403167AE64268C894B31D3D0;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_C23EA9F3436D333E3044BA8F6AEE4E8E";
     TEnum<ETimelineDirection> Timeline_0__Direction_C23EA9F3436D333E3044BA8F6AEE4E8E;
     class UTimelineComponent* Timeline_0;
     bool ShouldDestroy;
-    static constexpr const char* ShouldDestroy__Replicated = "OnRep_ShouldDestory:";
     void ExecuteUbergraph_BP_FoamPuddle_WalkingPlagueheart(int EntryPoint);
     void OnChangeVacuumStateDelegate_Event(TEnum<EVacuumState> State_0);
     UE_AUTHORITY_ONLY void SetPuddleLifetime(float LifeTime);
@@ -47,6 +40,17 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void OnRep_ShouldDestory();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Engine.SceneComponent PuddleRoot;/Script/Engine.SceneComponent Root";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "52857381bce39743ad61d71a9c34f2dd";
+        static constexpr const char* Box__UeScsNode = "323917cf83e4184abcf2508c87cab05a";
+        static constexpr const char* Sphere__UeScsNode = "36e82c022eb1b146a25e6a6b983137ba";
+        static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_52E7C03D403167AE64268C894B31D3D0";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_C23EA9F3436D333E3044BA8F6AEE4E8E";
+        static constexpr const char* ShouldDestroy__Replicated = "OnRep_ShouldDestory:";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper

@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/Art/DropPod/Widgets/BP_Widget_DropPod_MissionType", "BP_Widget_DropPod_MissionType_C");
     using Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "5c40b3f2cd958545bc78046c204b004e";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
     Widget_DropPod_AltitudeMeter_C* Widget;
     float Duration;
     float Start;
     float End;
     float DepthArrivalVariable;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget1__UeScsNode = "5c40b3f2cd958545bc78046c204b004e";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
+    };
 };
 
 }}}}   // namespace Game::Art::DropPod::Widgets

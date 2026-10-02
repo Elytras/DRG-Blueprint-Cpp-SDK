@@ -23,20 +23,24 @@ public:
     UE_CLASS("/Game/Art/Environments/ShipTesting/BP_Hologram", "BP_Hologram_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Usable_Collider;
-    static constexpr const char* Usable_Collider__UeScsNode = "afd623cdda3ce24d88687e7b3269bdd3";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "b0855d2e7f53394ebe7c21e292d10fd1";
     class UTextRenderComponent* TextRender;
-    static constexpr const char* TextRender__UeScsNode = "245b5a66a22e434ea5908b58c3ef9774";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "986a4065d8678946960bfce0322296b3";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "af1528ba7b081e4ab5354e6a30a991f7";
     float RotationSpeed;
     int NumberOfMarkers;
     void ExecuteUbergraph_BP_Hologram(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Usable_Collider__UeScsNode = "afd623cdda3ce24d88687e7b3269bdd3";
+        static constexpr const char* RotatingMovement__UeScsNode = "b0855d2e7f53394ebe7c21e292d10fd1";
+        static constexpr const char* TextRender__UeScsNode = "245b5a66a22e434ea5908b58c3ef9774";
+        static constexpr const char* InstantUsable__UeScsNode = "986a4065d8678946960bfce0322296b3";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "af1528ba7b081e4ab5354e6a30a991f7";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::ShipTesting

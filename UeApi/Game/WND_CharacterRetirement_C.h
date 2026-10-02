@@ -40,9 +40,9 @@ public:
     using OVERLAY_RetirementGranted_C = Game::UI::Menu_MIssionCompleteMK2::OVERLAY_RetirementGranted_C;
     using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimPanBackground;
-    class UWidgetAnimation* FadeOut;
-    class UWidgetAnimation* WarningPulse;
+    UE_READONLY class UWidgetAnimation* AnimPanBackground;
+    UE_READONLY class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* WarningPulse;
     class UBorder* BackgroundFade;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_LargeWindowWithHeader_C* Basic_Menu_LargeWindowWithHeader;
@@ -72,7 +72,6 @@ public:
     void BndEvt__SkipButton_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature();
     void OnClosed();
     void Stop_Character_Audio();
-    static constexpr const char* Stop_Character_Audio__UeName = "Stop Character Audio";
     void FadeInBackground(float Duration);
     void Retire();
     void BndEvt__OVERLAY_RetirementGranted_K2Node_ComponentBoundEvent_1_OnFinished__DelegateSignature();
@@ -88,6 +87,11 @@ public:
     UE_PURE bool IsAudioFinished(class UAudioComponent* InAudioComponent);
     void StopAudio(class UAudioComponent* InAudioComponent);
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Stop_Character_Audio__UeName = "Stop Character Audio";
+    };
 };
 
 }}}}   // namespace Game::UI::CharacterSelectionMK2::Retirement

@@ -16,9 +16,13 @@ class BP_TreasureRoom_DeepScan_Basier_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_TreasureRoom_DeepScan_Basier", "BP_TreasureRoom_DeepScan_Basier_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "a7cc108efa5d784785bd8745d72a3742";
     float ShellRadius;
     void GetDroppodLandingZoneLocation(FVector& Location);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "a7cc108efa5d784785bd8745d72a3742";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms

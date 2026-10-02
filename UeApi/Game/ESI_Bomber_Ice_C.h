@@ -17,9 +17,13 @@ class ESI_Bomber_Ice_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/ESI_Bomber_Ice", "ESI_Bomber_Ice_C");
     class USkeletalMeshComponent* SkeletalMesh1;
-    static constexpr const char* SkeletalMesh1__UeScsNode = "89adc2a2b9a1ef44abe56b155e957598";
     class USceneComponent* Root;
-    static constexpr const char* Root__UeScsNode = "9be102e881795a459345f8b9f9f21660";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh1__UeScsNode = "89adc2a2b9a1ef44abe56b155e957598";
+        static constexpr const char* Root__UeScsNode = "9be102e881795a459345f8b9f9f21660";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

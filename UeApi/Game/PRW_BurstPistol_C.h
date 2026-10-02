@@ -17,9 +17,13 @@ class PRW_BurstPistol_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/PRW_BurstPistol", "PRW_BurstPistol_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "b236708fecbc04459c2c9846f9e3f4f4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "b53a62d1455da24fa7b28d82b4f25378";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "b236708fecbc04459c2c9846f9e3f4f4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "b53a62d1455da24fa7b28d82b4f25378";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol

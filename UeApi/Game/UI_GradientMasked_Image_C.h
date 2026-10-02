@@ -18,7 +18,6 @@ class UI_GradientMasked_Image_C : public Game::UI::_GlobalAssets::MaskedImage::U
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/MaskedImage/UI_GradientMasked_Image", "UI_GradientMasked_Image_C");
     FPointerToUberGraphFrame UberGraphFrame_UI_GradientMasked_Image_C;
-    static constexpr const char* UberGraphFrame_UI_GradientMasked_Image_C__UeName = "UberGraphFrame";
     class UImage* ImageMasked;
     class UTexture2D* Texture;
     float MenuColorOpacity;
@@ -27,6 +26,11 @@ public:
     void OnMaterialRefreshed();
     void SetImage(class UTexture2D* InTexture);
     UE_PURE class UTexture2D* GetTextureOrDefault();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_GradientMasked_Image_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

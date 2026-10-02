@@ -17,13 +17,17 @@ class ENE_FacilityTentacle_End_C : public Game::GameElements::Objectives::Facili
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle_End", "ENE_FacilityTentacle_End_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTentacle_End_C;
-    static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_End_C__UeName = "UberGraphFrame";
     class UStaticMeshComponent* Base;
-    static constexpr const char* Base__UeScsNode = "b1a357f0562dbb4ab4a59955b43bbf4a";
     void ExecuteUbergraph_ENE_FacilityTentacle_End(int EntryPoint);
     void ReceivePossessed(class AController* NewController);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_End_C__UeName = "UberGraphFrame";
+        static constexpr const char* Base__UeScsNode = "b1a357f0562dbb4ab4a59955b43bbf4a";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

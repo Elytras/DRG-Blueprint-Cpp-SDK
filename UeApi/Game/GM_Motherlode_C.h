@@ -20,9 +20,7 @@ class GM_Motherlode_C : public Game::Game::BP_NetworkPlayGameMode_C
 public:
     UE_CLASS("/Game/Game/GM_Motherlode", "GM_Motherlode_C");
     using BP_MineHead_C = Game::LevelElements::Minehead::BP_MineHead_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Motherlode_C;
-    static constexpr const char* UberGraphFrame_GM_Motherlode_C__UeName = "UberGraphFrame";
     FVector SelectedSpawnLocation;
     class ADroppableOutpost* MineHead;
     void ExecuteUbergraph_GM_Motherlode(int EntryPoint);
@@ -35,6 +33,12 @@ public:
     void GetMineHead(BP_MineHead_C*& Output);
     void GetLandingZoneLocation(FVector& Output);
     void OnRep_SelectedSpawnLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_GM_Motherlode_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}   // namespace Game::Game

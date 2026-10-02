@@ -37,38 +37,22 @@ class ENE_PatrolBot_C : public APatrolBot
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/ENE_PatrolBot", "ENE_PatrolBot_C");
     using AIC_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::AIC_PatrolBot_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FlyingAudioComponent;/Script/Engine.AudioComponent RollingAudioComponent;/Script/FSD.AvoidCeilingComponent CeilingAvoidance;/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.ParticleSystemComponent LaserBeamIndicator;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PlayerImpactCooldownComponent ImpactCooldown;/Script/FSD.ProjectileAttackComponent FlyingRangedAttack;/Script/FSD.ProjectileAttackComponent MissileAttack;/Script/FSD.ProjectileAttackComponent RangedAttack;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* spawnParticles;
-    static constexpr const char* spawnParticles__UeScsNode = "91de2e5539bfe7469bbb7738724143be";
     class UNiagaraComponent* JetParticles3;
-    static constexpr const char* JetParticles3__UeScsNode = "9343130d4be5a54897c0dc3ded1b27a3";
     class UNiagaraComponent* JetParticles2;
-    static constexpr const char* JetParticles2__UeScsNode = "6b3f97c1bc2e194fbab2c402cfe9aa39";
     class UNiagaraComponent* JetParticles1;
-    static constexpr const char* JetParticles1__UeScsNode = "11bedefe1706c04baa7fbeb59404a2d8";
     class UNiagaraComponent* JetParticles;
-    static constexpr const char* JetParticles__UeScsNode = "d54db8176724c740a38493b5ecb81996";
     class UParticleSystemComponent* Trail1;
-    static constexpr const char* Trail1__UeScsNode = "3bb07ec6fa95084986329bd76a2c890e";
     class USphereComponent* HackUse;
-    static constexpr const char* HackUse__UeScsNode = "4fb9e7ef4257674bbd90b955f8611d6c";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "b4482c8de316274195109257b08cc7a1";
     class UPointLightComponent* PointLight_HeadGlow;
-    static constexpr const char* PointLight_HeadGlow__UeScsNode = "808c5d08dcdeb0488ad56daf05805e88";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "43b1902c0dc7f149bd844650e7446d3d";
     class USingleUsableComponent* HackUsable;
-    static constexpr const char* HackUsable__UeScsNode = "c546cb1d90e33c4494fadf37b1a51000";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "9d78b2bf6ee3c34aba9b3b0b35abdcb6";
     class UCapsuleComponent* ProjectileCollision;
-    static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "0904c5337a1b354093581a6d930500ea";
     class UParticleSystemComponent* Dirt_particles;
-    static constexpr const char* Dirt_particles__UeName = "Dirt particles";
     FTimerHandle RandomImpulseTimer;
     class USoundBase* LandingImpact_Cue;
     int RocketIndex;
@@ -109,6 +93,26 @@ public:
     UE_PURE bool CheckCanBeHacked();
     void UpdateLookAtShout();
     void StopHackableSound();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FlyingAudioComponent;/Script/Engine.AudioComponent RollingAudioComponent;/Script/FSD.AvoidCeilingComponent CeilingAvoidance;/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HackingUsableComponent HackingUsable;/Script/FSD.NormalProjectileAttack FlyingRangedAttack:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_2;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_3;/Script/FSD.NormalProjectileAttack RangedAttack:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack RangedAttack:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack RangedAttack:NormalProjectileAttack_2;/Script/Engine.ParticleSystemComponent LaserBeamIndicator;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PlayerImpactCooldownComponent ImpactCooldown;/Script/FSD.ProjectileAttackComponent FlyingRangedAttack;/Script/FSD.ProjectileAttackComponent MissileAttack;/Script/FSD.ProjectileAttackComponent RangedAttack;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* spawnParticles__UeScsNode = "91de2e5539bfe7469bbb7738724143be";
+        static constexpr const char* JetParticles3__UeScsNode = "9343130d4be5a54897c0dc3ded1b27a3";
+        static constexpr const char* JetParticles2__UeScsNode = "6b3f97c1bc2e194fbab2c402cfe9aa39";
+        static constexpr const char* JetParticles1__UeScsNode = "11bedefe1706c04baa7fbeb59404a2d8";
+        static constexpr const char* JetParticles__UeScsNode = "d54db8176724c740a38493b5ecb81996";
+        static constexpr const char* Trail1__UeScsNode = "3bb07ec6fa95084986329bd76a2c890e";
+        static constexpr const char* HackUse__UeScsNode = "4fb9e7ef4257674bbd90b955f8611d6c";
+        static constexpr const char* PointLight__UeScsNode = "b4482c8de316274195109257b08cc7a1";
+        static constexpr const char* PointLight_HeadGlow__UeScsNode = "808c5d08dcdeb0488ad56daf05805e88";
+        static constexpr const char* WeakpointGlow__UeScsNode = "43b1902c0dc7f149bd844650e7446d3d";
+        static constexpr const char* HackUsable__UeScsNode = "c546cb1d90e33c4494fadf37b1a51000";
+        static constexpr const char* PawnStats__UeScsNode = "9d78b2bf6ee3c34aba9b3b0b35abdcb6";
+        static constexpr const char* ProjectileCollision__UeScsNode = "48da19646e715644841b7ff754d8744a";
+        static constexpr const char* outline__UeScsNode = "0904c5337a1b354093581a6d930500ea";
+        static constexpr const char* Dirt_particles__UeName = "Dirt particles";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot

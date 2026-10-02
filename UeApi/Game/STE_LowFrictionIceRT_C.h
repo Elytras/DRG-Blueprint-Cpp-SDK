@@ -13,6 +13,11 @@ class STE_LowFrictionIceRT_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/ReactiveTerrain/STE_LowFrictionIceRT", "STE_LowFrictionIceRT_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_3";
+    };
 };
 
 }}}   // namespace Game::Landscape::ReactiveTerrain

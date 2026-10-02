@@ -21,16 +21,20 @@ class ScreenOverlay_HeartstoneBeam_C : public UPlayerAfflictionOverlayWidget
 public:
     UE_CLASS("/Game/UI/ScreenOverlays/ScreenOverlay_HeartstoneBeam", "ScreenOverlay_HeartstoneBeam_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFading;
+    UE_READONLY class UWidgetAnimation* AnimFading;
     class UImage* AfflictionImage;
     float FadeDuration;
     void ExecuteUbergraph_ScreenOverlay_HeartstoneBeam(int EntryPoint);
     void OnAnimFadingFinished();
     void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
-    static constexpr const char* Play_Fade__UeName = "Play Fade";
     void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     UE_COSMETIC void Construct();
     void ReceiveEndOverlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Play_Fade__UeName = "Play Fade";
+    };
 };
 
 }}}   // namespace Game::UI::ScreenOverlays

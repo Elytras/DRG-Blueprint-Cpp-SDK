@@ -13,6 +13,11 @@ class STE_SpiderBuffer_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Buffer/STE_SpiderBuffer", "STE_SpiderBuffer_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HealingStatusEffectItem HealingStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Buffer

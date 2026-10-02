@@ -24,7 +24,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonContentToggle", "ITM_SeasonContentToggle_C");
     using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class USizeBox* BoxSizer;
     class UButton* CheckButton;
     Basic_CheckBox_C* CHK_IsUsingSeasonContent;

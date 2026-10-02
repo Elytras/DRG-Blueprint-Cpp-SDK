@@ -19,15 +19,19 @@ class BP_Plague_VialDispenser_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/BP_Plague_VialDispenser", "BP_Plague_VialDispenser_C");
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "772fb6229d82ca4e8d29e4bff4ff460e";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "8b864bf9ef4b694ea0a719d1173e1e39";
     class UWidgetComponent* ScreenWidget;
-    static constexpr const char* ScreenWidget__UeScsNode = "87ddf9458a8c9f4dafd77d2d45444195";
     class UStaticMeshComponent* SM_Plague_VialVendingMachine;
-    static constexpr const char* SM_Plague_VialVendingMachine__UeScsNode = "e1b65ceb8064604090e0e95581b23d99";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "e0cca1401c29bf4a86a0a9900792fcfe";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight1__UeScsNode = "772fb6229d82ca4e8d29e4bff4ff460e";
+        static constexpr const char* PointLight__UeScsNode = "8b864bf9ef4b694ea0a719d1173e1e39";
+        static constexpr const char* ScreenWidget__UeScsNode = "87ddf9458a8c9f4dafd77d2d45444195";
+        static constexpr const char* SM_Plague_VialVendingMachine__UeScsNode = "e1b65ceb8064604090e0e95581b23d99";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "e0cca1401c29bf4a86a0a9900792fcfe";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco

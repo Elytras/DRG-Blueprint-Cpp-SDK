@@ -27,10 +27,14 @@ public:
     ModioDownloadQueue_C* ModioDownloadQueue;
     ModioRefineSearchDrawer_C* ModioRefineSearchDrawer;
     UI_InfoScreen_C* UI_Info_Screen;
-    static constexpr const char* UI_Info_Screen__UeName = "UI Info Screen";
     void ExecuteUbergraph_ModioModBrowserWidget(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UI_Info_Screen__UeName = "UI Info Screen";
+    };
 };
 
 }}}}   // namespace Modio::UI::Browser::Views

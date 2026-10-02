@@ -19,7 +19,7 @@ class ITM_HealthBarPercentWWarning_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/DrillingVehicle/ITM_HealthBarPercentWWarning", "ITM_HealthBarPercentWWarning_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* PingWarning;
+    UE_READONLY class UWidgetAnimation* PingWarning;
     class UImage* Image_RightGradient;
     class UImage* Image_RightIcon;
     class UImage* Line_RightPercent;

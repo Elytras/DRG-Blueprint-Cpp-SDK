@@ -19,25 +19,15 @@ class BP_Collectible_Barley_B4_C : public Game::GameElements::Resources::Collect
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Collectible_Barley_B4", "BP_Collectible_Barley_B4_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Collectible_Barley_B4_C;
-    static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B4_C__UeName = "UberGraphFrame";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "75c377a0a28eff44955b65df9ade9bf2";
     class UStaticMeshComponent* Fruit4;
-    static constexpr const char* Fruit4__UeScsNode = "40e99a735b373d4b9b9be62d73a7bf85";
     class UStaticMeshComponent* Stem4;
-    static constexpr const char* Stem4__UeScsNode = "3b834909155811428fe80ca739b6f4ff";
     class UStaticMeshComponent* Fruit3;
-    static constexpr const char* Fruit3__UeScsNode = "cb6f4c930b67264b8dc17813bcb2c2a2";
     class UStaticMeshComponent* Stem3;
-    static constexpr const char* Stem3__UeScsNode = "358e38effbb38c4497d62a904b36ca45";
     class UStaticMeshComponent* Fruit2;
-    static constexpr const char* Fruit2__UeScsNode = "0d52e0c6bbbb3044b889fcf06b7caad3";
     class UStaticMeshComponent* Stem2;
-    static constexpr const char* Stem2__UeScsNode = "85070eec17aafa4383683dbc725b701f";
     class UStaticMeshComponent* Fruit1;
-    static constexpr const char* Fruit1__UeScsNode = "a0263da95cb15b42ab54595e56850386";
     class UStaticMeshComponent* Stem1;
-    static constexpr const char* Stem1__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
     float Timeline_3_NewCurveBase_F2EAE79A48FEF78FA29C98A2B8B2415B;
     TEnum<ETimelineDirection> Timeline_3__Direction_F2EAE79A48FEF78FA29C98A2B8B2415B;
     class UTimelineComponent* Timeline_3;
@@ -61,6 +51,20 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B4_C__UeName = "UberGraphFrame";
+        static constexpr const char* Sphere__UeScsNode = "75c377a0a28eff44955b65df9ade9bf2";
+        static constexpr const char* Fruit4__UeScsNode = "40e99a735b373d4b9b9be62d73a7bf85";
+        static constexpr const char* Stem4__UeScsNode = "3b834909155811428fe80ca739b6f4ff";
+        static constexpr const char* Fruit3__UeScsNode = "cb6f4c930b67264b8dc17813bcb2c2a2";
+        static constexpr const char* Stem3__UeScsNode = "358e38effbb38c4497d62a904b36ca45";
+        static constexpr const char* Fruit2__UeScsNode = "0d52e0c6bbbb3044b889fcf06b7caad3";
+        static constexpr const char* Stem2__UeScsNode = "85070eec17aafa4383683dbc725b701f";
+        static constexpr const char* Fruit1__UeScsNode = "a0263da95cb15b42ab54595e56850386";
+        static constexpr const char* Stem1__UeScsNode = "4e19299cc3497c4abd36f03483977afb";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Barley

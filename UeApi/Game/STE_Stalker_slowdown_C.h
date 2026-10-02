@@ -13,6 +13,11 @@ class STE_Stalker_slowdown_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/STE_Stalker_slowdown", "STE_Stalker_slowdown_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker

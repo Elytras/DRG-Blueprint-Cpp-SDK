@@ -30,48 +30,27 @@ class ENE_PitJaw_C : public APitJaw
 {
 public:
     UE_CLASS("/Game/Enemies/Ossiran/PitJaw/ENE_PitJaw", "ENE_PitJaw_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.MeleeAttackComponent Bite;/Script/FSD.MeleeAttackComponent FirstBite;/Script/FSD.MeshCarverComponent MajorCarve;/Script/FSD.MeshCarverComponent MinorCarve;/Script/FSD.MeshCarverComponent MouthCarve;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent CarverRoot;/Script/Engine.SkeletalMeshComponent SkeletalMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "e9f824266f96874bb7f3a87b2961eecc";
     class UNiagaraComponent* P_Dust;
-    static constexpr const char* P_Dust__UeScsNode = "a4127bbf83ff59459a3d0ea6abda2c04";
     class USphereComponent* GrabSphere;
-    static constexpr const char* GrabSphere__UeScsNode = "a81e0e679157234a9074d11be9c6486f";
     class USphereComponent* LockOnSphere;
-    static constexpr const char* LockOnSphere__UeScsNode = "c37d26e95c1e664c90dae443278bc4b5";
     class USphereComponent* LoseLockOnSphere;
-    static constexpr const char* LoseLockOnSphere__UeScsNode = "ee4f4a013b79764d88aa67e41032752b";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "1deb73edb27e5e4e85371cce3393b8f0";
     class UTerrainDetectComponent* TerrainDetect8;
-    static constexpr const char* TerrainDetect8__UeScsNode = "15fd79ddbbc3f242ac4aa48870bc6fb0";
     class UTerrainDetectComponent* TerrainDetect7;
-    static constexpr const char* TerrainDetect7__UeScsNode = "84e2aa04e2dc2d47a73156a37c1079a1";
     class UTerrainDetectComponent* TerrainDetect6;
-    static constexpr const char* TerrainDetect6__UeScsNode = "ae0ad4023c7cd147a3efae656665548d";
     class UTerrainDetectComponent* TerrainDetect5;
-    static constexpr const char* TerrainDetect5__UeScsNode = "ecdb6ed20bd33a4a976b360f339b5340";
     class UTerrainDetectComponent* TerrainDetect4;
-    static constexpr const char* TerrainDetect4__UeScsNode = "e8dfc1f9873a0d46a79fbdc36220e548";
     class UTerrainDetectComponent* TerrainDetect3;
-    static constexpr const char* TerrainDetect3__UeScsNode = "5a53c2b93d41744499b749218c14c23c";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "582790ba84411d40b4c793a23b63f0ae";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "352ab9bc03cf7949aa34069113b75416";
     class UNiagaraComponent* P_Burrow;
-    static constexpr const char* P_Burrow__UeScsNode = "858b9b062eda3c428ceb9142a18faa37";
     class UAudioComponent* MouthAudio;
-    static constexpr const char* MouthAudio__UeScsNode = "01fd14d18d517a4894ccb84dc25545f3";
     class UNiagaraComponent* P_Excavation;
-    static constexpr const char* P_Excavation__UeScsNode = "26d6be1d8cab7e44ae9074dd4d6eea07";
     class UAudioComponent* ExcavationSound;
-    static constexpr const char* ExcavationSound__UeScsNode = "85321841a2599148a2da755e8c70e1fe";
     class USceneComponent* MouthLocation;
-    static constexpr const char* MouthLocation__UeScsNode = "7c5b89e56ce7154d96e2748316eb6362";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "d56b9260fc1d584190ed61cdf2748bd2";
     class USoundBase* PreparingAudio;
     class USoundBase* LungingAudio;
     FTransform DefaultTransform;
@@ -87,7 +66,6 @@ public:
     bool isBurrowing;
     class UMaterialInstance* ParticleMaterial;
     class UResourceData* Resource_Data;
-    static constexpr const char* Resource_Data__UeName = "Resource Data";
     void ExecuteUbergraph_ENE_PitJaw(int EntryPoint);
     void RepelEnemies();
     void BndEvt__ENE_PitJaw_TerrainDetect11_K2Node_ComponentBoundEvent_8_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
@@ -104,7 +82,6 @@ public:
     void CarveAndBurrow();
     UE_MULTICAST void FinishRelocationAll(FTransform relocationPoint);
     void On_Distant_Cry_Timer_Elapsed();
-    static constexpr const char* On_Distant_Cry_Timer_Elapsed__UeName = "On Distant Cry Timer Elapsed";
     void Burrow();
     void QuickLunge();
     void Lunge();
@@ -134,6 +111,33 @@ public:
     UE_PURE FVector GetMouthLocation() const;
     UE_PURE FVector GetMouthDirection() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Bite:DamageComponent_0;/Script/FSD.DamageComponent FirstBite:DamageComponent_0;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.MeleeAttackComponent Bite;/Script/FSD.MeleeAttackComponent FirstBite;/Script/FSD.MeshCarverComponent MajorCarve;/Script/FSD.MeshCarverComponent MinorCarve;/Script/FSD.MeshCarverComponent MouthCarve;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent CarverRoot;/Script/Engine.SkeletalMeshComponent SkeletalMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* terrainPlacement__UeScsNode = "e9f824266f96874bb7f3a87b2961eecc";
+        static constexpr const char* P_Dust__UeScsNode = "a4127bbf83ff59459a3d0ea6abda2c04";
+        static constexpr const char* GrabSphere__UeScsNode = "a81e0e679157234a9074d11be9c6486f";
+        static constexpr const char* LockOnSphere__UeScsNode = "c37d26e95c1e664c90dae443278bc4b5";
+        static constexpr const char* LoseLockOnSphere__UeScsNode = "ee4f4a013b79764d88aa67e41032752b";
+        static constexpr const char* Capsule__UeScsNode = "1deb73edb27e5e4e85371cce3393b8f0";
+        static constexpr const char* TerrainDetect8__UeScsNode = "15fd79ddbbc3f242ac4aa48870bc6fb0";
+        static constexpr const char* TerrainDetect7__UeScsNode = "84e2aa04e2dc2d47a73156a37c1079a1";
+        static constexpr const char* TerrainDetect6__UeScsNode = "ae0ad4023c7cd147a3efae656665548d";
+        static constexpr const char* TerrainDetect5__UeScsNode = "ecdb6ed20bd33a4a976b360f339b5340";
+        static constexpr const char* TerrainDetect4__UeScsNode = "e8dfc1f9873a0d46a79fbdc36220e548";
+        static constexpr const char* TerrainDetect3__UeScsNode = "5a53c2b93d41744499b749218c14c23c";
+        static constexpr const char* TerrainDetect2__UeScsNode = "582790ba84411d40b4c793a23b63f0ae";
+        static constexpr const char* TerrainDetect1__UeScsNode = "352ab9bc03cf7949aa34069113b75416";
+        static constexpr const char* P_Burrow__UeScsNode = "858b9b062eda3c428ceb9142a18faa37";
+        static constexpr const char* MouthAudio__UeScsNode = "01fd14d18d517a4894ccb84dc25545f3";
+        static constexpr const char* P_Excavation__UeScsNode = "26d6be1d8cab7e44ae9074dd4d6eea07";
+        static constexpr const char* ExcavationSound__UeScsNode = "85321841a2599148a2da755e8c70e1fe";
+        static constexpr const char* MouthLocation__UeScsNode = "7c5b89e56ce7154d96e2748316eb6362";
+        static constexpr const char* outline__UeScsNode = "d56b9260fc1d584190ed61cdf2748bd2";
+        static constexpr const char* Resource_Data__UeName = "Resource Data";
+        static constexpr const char* On_Distant_Cry_Timer_Elapsed__UeName = "On Distant Cry Timer Elapsed";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Ossiran::PitJaw

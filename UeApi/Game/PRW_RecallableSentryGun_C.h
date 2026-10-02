@@ -17,9 +17,13 @@ class PRW_RecallableSentryGun_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/PRW_RecallableSentryGun", "PRW_RecallableSentryGun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "84c8b2cd017f2046880c25f55d18d07c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "3aca447a2490dd4ea77548ec12561f1d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "84c8b2cd017f2046880c25f55d18d07c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "3aca447a2490dd4ea77548ec12561f1d";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer

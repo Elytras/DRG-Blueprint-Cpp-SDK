@@ -32,7 +32,6 @@ public:
     class UButton* OpenButton;
     class UVerticalBox* Owned_VerticalBox;
     FText Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
     bool Open;
     void ExecuteUbergraph_Cheat_EquipList_Category(int EntryPoint);
     void BndEvt__OpenButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
@@ -42,6 +41,11 @@ public:
     void Clear();
     void AddEntry(FText Param_Name_0, FText Description, bool owned, bool Equipped, class UObject* Data, bool AlwaysOwned, bool SchematicOwned, bool HasSchematic, class UObject* contextObject, Cheat_EquipList_Entry_C*& OutWidget);
     void Refresh();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets

@@ -1122,21 +1122,25 @@ class UAnimSequencerInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "AnimSequencerInstance");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
+    };
 };
 
 class UAnimNotify_PlayMontageNotify : public UAnimNotify
 {
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "AnimNotify_PlayMontageNotify");
-    FName NotifyName;
+    UE_READONLY FName NotifyName;
 };
 
 class UAnimNotify_PlayMontageNotifyWindow : public UAnimNotifyState
 {
 public:
     UE_CLASS("/Script/AnimGraphRuntime", "AnimNotify_PlayMontageNotifyWindow");
-    FName NotifyName;
+    UE_READONLY FName NotifyName;
 };
 
 class UPlayMontageCallbackProxy : public UObject
@@ -1153,6 +1157,15 @@ public:
     void OnMontageEnded(class UAnimMontage* Montage, bool bInterrupted);
     void OnNotifyBeginReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
     void OnNotifyEndReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnCompleted__UeDispatcher = "Assignable";
+        static constexpr const char* OnBlendOut__UeDispatcher = "Assignable";
+        static constexpr const char* OnInterrupted__UeDispatcher = "Assignable";
+        static constexpr const char* OnNotifyBegin__UeDispatcher = "Assignable";
+        static constexpr const char* OnNotifyEnd__UeDispatcher = "Assignable";
+    };
 };
 
 class ISequencerAnimationSupport

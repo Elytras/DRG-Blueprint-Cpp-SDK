@@ -18,15 +18,19 @@ class EWC_Salvage_Defend_C : public Game::Enemies::Waves::WaveControllers::EWC_B
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Salvage_Defend", "EWC_Salvage_Defend_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Salvage_Defend_C;
-    static constexpr const char* UberGraphFrame_EWC_Salvage_Defend_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     int Wave_Count_Waves;
-    static constexpr const char* Wave_Count_Waves__UeName = "Wave Count Waves";
     int Wave_Count_Constant_Pressure;
-    static constexpr const char* Wave_Count_Constant_Pressure__UeName = "Wave Count Constant Pressure";
     void ExecuteUbergraph_EWC_Salvage_Defend(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Salvage_Defend_C__UeName = "UberGraphFrame";
+        static constexpr const char* Wave_Count_Waves__UeName = "Wave Count Waves";
+        static constexpr const char* Wave_Count_Constant_Pressure__UeName = "Wave Count Constant Pressure";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

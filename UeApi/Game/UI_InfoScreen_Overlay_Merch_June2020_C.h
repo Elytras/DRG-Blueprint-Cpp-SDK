@@ -21,9 +21,9 @@ public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay_Merch_June2020", "UI_InfoScreen_Overlay_Merch_June2020_C");
     using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
-    class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UButton* Button_0;
     class UImage* Glow1;

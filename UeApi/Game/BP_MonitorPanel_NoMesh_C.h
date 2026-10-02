@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/BP_MonitorPanel_NoMesh", "BP_MonitorPanel_NoMesh_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "f94bac06aefce445b1275cb3ffc4f1d8";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "74dd99b6174dfd41bc3e3a48b5c0843e";
     void ExecuteUbergraph_BP_MonitorPanel_NoMesh(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "f94bac06aefce445b1275cb3ffc4f1d8";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "74dd99b6174dfd41bc3e3a48b5c0843e";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::SpaceRig

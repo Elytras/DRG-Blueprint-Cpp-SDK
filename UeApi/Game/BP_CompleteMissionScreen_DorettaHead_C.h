@@ -20,16 +20,20 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_CompleteMissionScreen_DorettaHead", "BP_CompleteMissionScreen_DorettaHead_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NiagaraNoBlinking;
-    static constexpr const char* NiagaraNoBlinking__UeScsNode = "940bc75d7f4740409c6861083bddbae3";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "55fa877d20993242a9c5482228e8fdaa";
     class UStaticMeshComponent* SM_Doretta_Broken;
-    static constexpr const char* SM_Doretta_Broken__UeScsNode = "9d3a9d5f18f3ca4eb65da2b6af51b5b4";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "81d774dc59abf44d8053bd7f9b60cb5f";
     void ExecuteUbergraph_BP_CompleteMissionScreen_DorettaHead(int EntryPoint);
     void StartPlay(TEnum<ECharselectionCameraLocation> selectionLocation);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NiagaraNoBlinking__UeScsNode = "940bc75d7f4740409c6861083bddbae3";
+        static constexpr const char* Niagara__UeScsNode = "55fa877d20993242a9c5482228e8fdaa";
+        static constexpr const char* SM_Doretta_Broken__UeScsNode = "9d3a9d5f18f3ca4eb65da2b6af51b5b4";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "81d774dc59abf44d8053bd7f9b60cb5f";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

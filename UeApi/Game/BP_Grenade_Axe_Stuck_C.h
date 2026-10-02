@@ -28,27 +28,16 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/BP_Grenade_Axe_Stuck", "BP_Grenade_Axe_Stuck_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "25dfbe1bc938484a887fa6a02c4a9dee";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "b9d746ffde2d1740baea78074b79edbd";
     class UBoxComponent* Blade;
-    static constexpr const char* Blade__UeScsNode = "63839a89f4586b43ae1be5ae107efc2f";
     class UBoxComponent* Handle;
-    static constexpr const char* Handle__UeScsNode = "0d6f522a18e24f4e87a8bc17811497a4";
     class UBoxComponent* WorldCollision;
-    static constexpr const char* WorldCollision__UeScsNode = "8b2dccbdb0228547b0e7787f6343047b";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "46cd8cfa13aed741a32dbc0cf9df8982";
     class UStaticMeshComponent* SM_HandGrenade_M_Thrown2;
-    static constexpr const char* SM_HandGrenade_M_Thrown2__UeScsNode = "685e784881eb5442a37b533d711f8893";
     class AThrownGrenadeItem* AxeGrenadeItem;
-    static constexpr const char* AxeGrenadeItem__Replicated = "OnRep_AxeGrenadeItem:";
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     bool StandOnMe;
-    static constexpr const char* StandOnMe__Replicated = "OnRep_StandOnMe:";
     bool SimulateAxePhysics;
-    static constexpr const char* SimulateAxePhysics__Replicated = "OnRep_SimulateAxePhysics:";
     void ExecuteUbergraph_BP_Grenade_Axe_Stuck(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
@@ -59,12 +48,27 @@ public:
     void OnDestroyed_Event(class AActor* DestroyedActor);
     void Attach(class AActor* ParentActor, class USceneComponent* ParentComponent_0, FName ParentSocketName, bool CanRetrieve);
     void Detach_Axe();
-    static constexpr const char* Detach_Axe__UeName = "Detach Axe";
     void PickUpAxe(class AThrownGrenadeItem* ThrownGrenadeItem);
     void UserConstructionScript();
     void OnRep_AxeGrenadeItem();
     void OnRep_StandOnMe();
     void OnRep_SimulateAxePhysics();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "25dfbe1bc938484a887fa6a02c4a9dee";
+        static constexpr const char* InstantUsable__UeScsNode = "b9d746ffde2d1740baea78074b79edbd";
+        static constexpr const char* Blade__UeScsNode = "63839a89f4586b43ae1be5ae107efc2f";
+        static constexpr const char* Handle__UeScsNode = "0d6f522a18e24f4e87a8bc17811497a4";
+        static constexpr const char* WorldCollision__UeScsNode = "8b2dccbdb0228547b0e7787f6343047b";
+        static constexpr const char* Sphere__UeScsNode = "46cd8cfa13aed741a32dbc0cf9df8982";
+        static constexpr const char* SM_HandGrenade_M_Thrown2__UeScsNode = "685e784881eb5442a37b533d711f8893";
+        static constexpr const char* AxeGrenadeItem__Replicated = "OnRep_AxeGrenadeItem:";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+        static constexpr const char* StandOnMe__Replicated = "OnRep_StandOnMe:";
+        static constexpr const char* SimulateAxePhysics__Replicated = "OnRep_SimulateAxePhysics:";
+        static constexpr const char* Detach_Axe__UeName = "Detach Axe";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe

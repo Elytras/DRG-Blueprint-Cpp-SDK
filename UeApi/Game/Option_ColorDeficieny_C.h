@@ -26,7 +26,7 @@ public:
     using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
     using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ImageIntro;
+    UE_READONLY class UWidgetAnimation* ImageIntro;
     Basic_Option_C* Basic_Option;
     class UBorder* Border_DeficiencyOutline;
     class UImage* Image_ColorDeficiency_Collapsed;

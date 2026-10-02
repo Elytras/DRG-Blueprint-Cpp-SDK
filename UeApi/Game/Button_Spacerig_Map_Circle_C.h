@@ -22,8 +22,8 @@ class Button_Spacerig_Map_Circle_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Button_Spacerig_Map_Circle", "Button_Spacerig_Map_Circle_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Ping;
-    class UWidgetAnimation* HoverAnim;
+    UE_READONLY class UWidgetAnimation* Ping;
+    UE_READONLY class UWidgetAnimation* HoverAnim;
     class UButton* Enter;
     class UImage* Image_DotFilled;
     class UImage* Image_Dots;

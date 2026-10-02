@@ -28,8 +28,8 @@ public:
     using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFade;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimFade;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     class UButton* IconButton;
     class USizeBox* IconSizer;
     ITM_CharacterIcon_C* ITM_CharacterIcon;
@@ -43,7 +43,7 @@ public:
     TMulticastInlineDelegate<void(UI_CoreInfuser_Reward_Icon_C* IconWidget)> OnRewardSelected;
     bool IsIconFaded;
     bool IsIconHovered;
-    int iconIndex;
+    UE_READONLY int iconIndex;
     FTimerHandle ProgressTimer;
     bool IsRewardSelected;
     class USchematic* SchematicReward;

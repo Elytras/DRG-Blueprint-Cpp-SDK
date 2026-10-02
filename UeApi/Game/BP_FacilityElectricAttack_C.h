@@ -29,7 +29,6 @@ public:
     TArray<int> Feedbackbar;
     float Progress;
     int Stage;
-    static constexpr const char* Stage__Replicated = "OnRep_Stage:";
     TArray<FName> Ring_A_Sockets;
     TArray<FName> Ring_B_Sockets;
     TArray<FName> Ring_C_Sockets;
@@ -42,6 +41,11 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void SetupDamage(class UDamageComponent* Damage, TArray<int>& Feedbackbar_0);
     void OnRep_Stage();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Stage__Replicated = "OnRep_Stage:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility

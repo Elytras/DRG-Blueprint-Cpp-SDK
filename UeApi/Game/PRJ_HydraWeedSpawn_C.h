@@ -19,18 +19,22 @@ class PRJ_HydraWeedSpawn_C : public AHydraWeedSpawnProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/PRJ_HydraWeedSpawn", "PRJ_HydraWeedSpawn_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "e6ee98d9a464584cb87b070acb619b99";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "9ba7433eaf265f449df6210e939b9430";
     class UParticleSystem* SeedImpactParticles;
     class USoundBase* SeedImpactSound;
     void ExecuteUbergraph_PRJ_HydraWeedSpawn(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void ReceiveBeginPlay();
     bool NewFunction_0();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* Audio__UeScsNode = "e6ee98d9a464584cb87b070acb619b99";
+        static constexpr const char* ParticleSystem__UeScsNode = "9ba7433eaf265f449df6210e939b9430";
+    };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

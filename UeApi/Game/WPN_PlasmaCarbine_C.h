@@ -29,24 +29,16 @@ class WPN_PlasmaCarbine_C : public APlasmaCarbine
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/WPN_PlasmaCarbine", "WPN_PlasmaCarbine_C");
     using WeaponDisplay_PlasmaCarbine_AmmoCounter_C = Game::WeaponsNTools::PlasmaCarbine::UI::WeaponDisplay_PlasmaCarbine_AmmoCounter_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UHeatMaterialComponent* HeatMaterial;
-    static constexpr const char* HeatMaterial__UeScsNode = "70a466791c9510419c80dd16bf982692";
     class UDamageComponent* AoEDamageComponent;
-    static constexpr const char* AoEDamageComponent__UeScsNode = "e3ff6cb433326646bcc5782094b52d59";
     class UAudioComponent* OverHeatSound;
-    static constexpr const char* OverHeatSound__UeScsNode = "ca6f5013cece3d449da0222f536fd4ce";
     class UFirstPersonWidgetComponent* FirstPersonWidget_Ammo;
-    static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
     class UProjectileLauncherComponent* projectileLauncher;
-    static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
     float Overheat_Ammo_Regen_Effect_6788C26846C5EA00DB58E08FBF311673;
     TEnum<ETimelineDirection> Overheat_Ammo_Regen__Direction_6788C26846C5EA00DB58E08FBF311673;
     class UTimelineComponent* Overheat_Ammo_Regen;
-    static constexpr const char* Overheat_Ammo_Regen__UeName = "Overheat Ammo Regen";
     float Overheat;
     bool HasOverheated;
     bool RegenAmmoOnOverheat;
@@ -67,9 +59,7 @@ public:
     void OnSkinChanged(class USkinEffect* Skin);
     UE_SERVER void ServerPushSpeedBoost();
     UE_MULTICAST void Trigger_Aoe_Effects();
-    static constexpr const char* Trigger_Aoe_Effects__UeName = "Trigger Aoe Effects";
     UE_SERVER void Server_Trigger_Aoe();
-    static constexpr const char* Server_Trigger_Aoe__UeName = "Server Trigger Aoe";
     void RecieveStartUsing();
     void Receive_Overheated();
     void Receive_IsFiringChanged(bool NewValue);
@@ -77,13 +67,27 @@ public:
     void CustomEvent1(class UItemUpgrade* Event);
     void ReceiveBeginPlay();
     void Overheat_Ammo_Regen__UpdateFunc();
-    static constexpr const char* Overheat_Ammo_Regen__UpdateFunc__UeName = "Overheat Ammo Regen__UpdateFunc";
     void Overheat_Ammo_Regen__FinishedFunc();
-    static constexpr const char* Overheat_Ammo_Regen__FinishedFunc__UeName = "Overheat Ammo Regen__FinishedFunc";
     void UserConstructionScript();
     void SetUpgradesAndOverclocks(class UItemUpgrade* ItemUpgrade);
     void GetAmmoWidget(WeaponDisplay_PlasmaCarbine_AmmoCounter_C*& AsWeapon_Display_Plasma_Carbine_Ammo_Counter);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* HeatMaterial__UeScsNode = "70a466791c9510419c80dd16bf982692";
+        static constexpr const char* AoEDamageComponent__UeScsNode = "e3ff6cb433326646bcc5782094b52d59";
+        static constexpr const char* OverHeatSound__UeScsNode = "ca6f5013cece3d449da0222f536fd4ce";
+        static constexpr const char* FirstPersonWidget_Ammo__UeScsNode = "b835adb0eac3694f8bc12709554d5fd0";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "6162824bbd52a245966e2560abaa4729";
+        static constexpr const char* projectileLauncher__UeScsNode = "9b95c6f3b74fcc40a79f45df250ee43f";
+        static constexpr const char* Overheat_Ammo_Regen__UeName = "Overheat Ammo Regen";
+        static constexpr const char* Trigger_Aoe_Effects__UeName = "Trigger Aoe Effects";
+        static constexpr const char* Server_Trigger_Aoe__UeName = "Server Trigger Aoe";
+        static constexpr const char* Overheat_Ammo_Regen__UpdateFunc__UeName = "Overheat Ammo Regen__UpdateFunc";
+        static constexpr const char* Overheat_Ammo_Regen__FinishedFunc__UeName = "Overheat Ammo Regen__FinishedFunc";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

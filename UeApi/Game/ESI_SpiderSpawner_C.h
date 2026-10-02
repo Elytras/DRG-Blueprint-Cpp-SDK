@@ -19,33 +19,19 @@ public:
     UE_CLASS("/Game/Enemies/EnemySpawner/ESI_SpiderSpawner", "ESI_SpiderSpawner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* Spawn1;
-    static constexpr const char* Spawn1__UeScsNode = "038abfc97f0cb84bbb057f65ae4ac938";
     class USkeletalMeshComponent* Spawn2;
-    static constexpr const char* Spawn2__UeScsNode = "29e2737c19fe0c4a86b9edd7974b1db2";
     class USceneComponent* WalkPoint6;
-    static constexpr const char* WalkPoint6__UeScsNode = "389cc7a7b2a7dd4892ddc1f52c650578";
     class USceneComponent* WalkPoint5;
-    static constexpr const char* WalkPoint5__UeScsNode = "e524352fa8eec64983d896657a646e50";
     class USceneComponent* WalkPoint4;
-    static constexpr const char* WalkPoint4__UeScsNode = "3dcaf2f7f392b44ba7477e55b7e53f0d";
     class USceneComponent* WalkPoint3;
-    static constexpr const char* WalkPoint3__UeScsNode = "84342ec4b037724c82b8e64dd349c547";
     class USceneComponent* WalkPoint2;
-    static constexpr const char* WalkPoint2__UeScsNode = "894e5164ab425f4f8af2794d55204e6d";
     class USceneComponent* WalkPoint1;
-    static constexpr const char* WalkPoint1__UeScsNode = "184378aa94df3d4cb47982cc444c04d4";
     class USkeletalMeshComponent* Spawner_Eye1_Rig;
-    static constexpr const char* Spawner_Eye1_Rig__UeScsNode = "9ef4eb4604e4074d9347e015b0583977";
     class USkeletalMeshComponent* Spawner_Eye4_Rig;
-    static constexpr const char* Spawner_Eye4_Rig__UeScsNode = "f8248e185371874294955beec1c04244";
     class USkeletalMeshComponent* Spawner_Eye3_Rig;
-    static constexpr const char* Spawner_Eye3_Rig__UeScsNode = "bb004f740b90774084938a70eccb23df";
     class USkeletalMeshComponent* Spawner_Eye2_Rig;
-    static constexpr const char* Spawner_Eye2_Rig__UeScsNode = "c4e8fc19bf0c2e4087beea3963d89173";
     class USkeletalMeshComponent* SK_Spawner;
-    static constexpr const char* SK_Spawner__UeScsNode = "58dd43475ac7ad48966a0b93e5aec83a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9529d2bf51fe1647895150f920badcbf";
     TArray<int> CurrPos;
     TArray<int> EndPoint;
     TArray<float> StartTime;
@@ -63,6 +49,24 @@ public:
     void GetPointPos(int Index_0, FVector& Pos);
     void WalkToPoint(class USkeletalMeshComponent* Spider);
     void UpdateWalking();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Spawn1__UeScsNode = "038abfc97f0cb84bbb057f65ae4ac938";
+        static constexpr const char* Spawn2__UeScsNode = "29e2737c19fe0c4a86b9edd7974b1db2";
+        static constexpr const char* WalkPoint6__UeScsNode = "389cc7a7b2a7dd4892ddc1f52c650578";
+        static constexpr const char* WalkPoint5__UeScsNode = "e524352fa8eec64983d896657a646e50";
+        static constexpr const char* WalkPoint4__UeScsNode = "3dcaf2f7f392b44ba7477e55b7e53f0d";
+        static constexpr const char* WalkPoint3__UeScsNode = "84342ec4b037724c82b8e64dd349c547";
+        static constexpr const char* WalkPoint2__UeScsNode = "894e5164ab425f4f8af2794d55204e6d";
+        static constexpr const char* WalkPoint1__UeScsNode = "184378aa94df3d4cb47982cc444c04d4";
+        static constexpr const char* Spawner_Eye1_Rig__UeScsNode = "9ef4eb4604e4074d9347e015b0583977";
+        static constexpr const char* Spawner_Eye4_Rig__UeScsNode = "f8248e185371874294955beec1c04244";
+        static constexpr const char* Spawner_Eye3_Rig__UeScsNode = "bb004f740b90774084938a70eccb23df";
+        static constexpr const char* Spawner_Eye2_Rig__UeScsNode = "c4e8fc19bf0c2e4087beea3963d89173";
+        static constexpr const char* SK_Spawner__UeScsNode = "58dd43475ac7ad48966a0b93e5aec83a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9529d2bf51fe1647895150f920badcbf";
+    };
 };
 
 }}}   // namespace Game::Enemies::EnemySpawner

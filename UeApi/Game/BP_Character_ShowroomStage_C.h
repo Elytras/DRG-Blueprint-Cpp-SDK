@@ -20,26 +20,30 @@ class BP_Character_ShowroomStage_C : public AShowroomStage
 {
 public:
     UE_CLASS("/Game/UI/Showroom/BP_Character_ShowroomStage", "BP_Character_ShowroomStage_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D SceneCapture;/Script/Engine.SceneComponent CameraFocusPoint;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame;
     class UShowroomSceneCaptureComponent* Capture_SeasonsMenu;
-    static constexpr const char* Capture_SeasonsMenu__UeScsNode = "26eb29b04bbb6c4195b859e83ad4097c";
     class UShowroomSceneCaptureComponent* Capture_EscapeMenu;
-    static constexpr const char* Capture_EscapeMenu__UeScsNode = "426d66b19730224f820b97e6bfec839b";
     class USpotLightComponent* SpotLight2;
-    static constexpr const char* SpotLight2__UeScsNode = "321c8d12a005eb40910b99264ad05b31";
     class UCameraComponent* Camera;
-    static constexpr const char* Camera__UeScsNode = "a89fa5138243184f9b105b4b6dd0d75f";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "e7b69e074fee4c44b838cb8f741fbfa3";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "bb9bb4eee422334fa5fd00702e021e76";
     class USkeletalMeshComponent* PreviewMesh;
-    static constexpr const char* PreviewMesh__UeScsNode = "eafa8091d55b534faaf7114368373b78";
     void ExecuteUbergraph_BP_Character_ShowroomStage(int EntryPoint);
     void ReceiveBeginPlay();
     class UTextureRenderTarget2D* CreateRenderTarget();
     void UpdateActorsToHide();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D SceneCapture;/Script/Engine.SceneComponent CameraFocusPoint;/Script/Engine.SceneComponent Root";
+        static constexpr const char* Capture_SeasonsMenu__UeScsNode = "26eb29b04bbb6c4195b859e83ad4097c";
+        static constexpr const char* Capture_EscapeMenu__UeScsNode = "426d66b19730224f820b97e6bfec839b";
+        static constexpr const char* SpotLight2__UeScsNode = "321c8d12a005eb40910b99264ad05b31";
+        static constexpr const char* Camera__UeScsNode = "a89fa5138243184f9b105b4b6dd0d75f";
+        static constexpr const char* SpotLight__UeScsNode = "e7b69e074fee4c44b838cb8f741fbfa3";
+        static constexpr const char* SpotLight1__UeScsNode = "bb9bb4eee422334fa5fd00702e021e76";
+        static constexpr const char* PreviewMesh__UeScsNode = "eafa8091d55b534faaf7114368373b78";
+    };
 };
 
 }}}   // namespace Game::UI::Showroom

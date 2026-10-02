@@ -20,9 +20,9 @@ public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_DeepDiveStatus_Animator", "ITM_DeepDiveStatus_Animator_C");
     using ITM_DeepDive_StageIcon_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CompletedStage3;
-    class UWidgetAnimation* CompletedStage2;
-    class UWidgetAnimation* CompletedStage1;
+    UE_READONLY class UWidgetAnimation* CompletedStage3;
+    UE_READONLY class UWidgetAnimation* CompletedStage2;
+    UE_READONLY class UWidgetAnimation* CompletedStage1;
     ITM_DeepDive_StageIcon_C* IconStage1;
     ITM_DeepDive_StageIcon_C* IconStage2;
     ITM_DeepDive_StageIcon_C* IconStage3;

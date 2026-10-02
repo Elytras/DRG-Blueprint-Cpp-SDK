@@ -14,11 +14,15 @@ class ENE_Spider_Grunt_Guard_Radioactive_C : public Game::Enemies::Spider::Grunt
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Guard/ENE_Spider_Grunt_Guard_Radioactive", "ENE_Spider_Grunt_Guard_Radioactive_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Grunt_Guard_Radioactive_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Guard_Radioactive_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_ENE_Spider_Grunt_Guard_Radioactive(int EntryPoint);
     void OnDeathBase();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Guard_Radioactive_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Guard

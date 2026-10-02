@@ -21,17 +21,21 @@ class ITM_MissionBar_Warning_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionOverview/ITM_MissionBar_Warning", "ITM_MissionBar_Warning_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Blink;
+    UE_READONLY class UWidgetAnimation* Blink;
     class UTextBlock* DATA_Warning;
     class UImage* GradientBG;
     class UImage* IconMutator;
     class UImage* IconWarning;
     bool Is_Mutator;
-    static constexpr const char* Is_Mutator__UeName = "Is Mutator";
     void ExecuteUbergraph_ITM_MissionBar_Warning(int EntryPoint);
     void SetMutator(class UMissionMutator* Mutator);
     void SetWarning(class UMissionWarning* Warning);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Is_Mutator__UeName = "Is Mutator";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview

@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Modding/HUD_Modding_Downloads", "HUD_Modding_Downloads_C");
     using HUD_Modding_Downloads_Entry_C = Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_Entry_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimOpenClose;
+    UE_READONLY class UWidgetAnimation* AnimOpenClose;
     class UVerticalBox* EntryBox;
     class UTextBlock* TextHeadline;
     FString PreviewName;

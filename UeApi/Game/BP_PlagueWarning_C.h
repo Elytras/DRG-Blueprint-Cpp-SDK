@@ -18,7 +18,6 @@ class BP_PlagueWarning_C : public URunningMissionBP
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/BP_PlagueWarning", "BP_PlagueWarning_C");
-    static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyGroupDescriptor* EnemyDescriptor;
     float MinSpawnTimerNoTurrets;
@@ -27,20 +26,25 @@ public:
     float MinSpawnTimerWithTurrets;
     float MaxSpawnTimerWithTurrets;
     int testInt;
-    static constexpr const char* testInt__Replicated = ":";
     class UPlagueObjective* PlagueObj;
     FTimerHandle InfectedLoopTimer;
     void ExecuteUbergraph_BP_PlagueWarning(int EntryPoint);
     void ResetLoopTimer();
     void PlagueCenterKilled(class AActor* SporeTower);
     void FirstPlayerNear_Tower(class AActor* SporeTower);
-    static constexpr const char* FirstPlayerNear_Tower__UeName = "FirstPlayerNear Tower";
     void CustomEvent_0();
     void CheckIfTargetingPlague();
     void StartLogic();
     void StartTimer();
     void FirstSpawn();
     void SpawnInfectedEnemies();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/CoreUObject.Object Engine";
+        static constexpr const char* testInt__Replicated = ":";
+        static constexpr const char* FirstPlayerNear_Tower__UeName = "FirstPlayerNear Tower";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::Plague

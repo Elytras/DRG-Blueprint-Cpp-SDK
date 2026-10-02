@@ -13,7 +13,11 @@ class Grenade_HighExplosive_C : public Game::WeaponsNTools::Grenades::ITM_Grenad
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/HighExplosive/Grenade_HighExplosive", "Grenade_HighExplosive_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::HighExplosive

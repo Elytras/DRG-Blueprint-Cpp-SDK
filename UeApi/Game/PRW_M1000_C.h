@@ -18,11 +18,15 @@ class PRW_M1000_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/BoltActionRifle/PRW_M1000", "PRW_M1000_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "765026fd7f623e439f4b1ac002c10ebd";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "a5472ed7923e904eb1a0867c9b42e27d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "dffdae97d9562f459ba3e63b93053416";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "765026fd7f623e439f4b1ac002c10ebd";
+        static constexpr const char* SkeletalMesh__UeScsNode = "a5472ed7923e904eb1a0867c9b42e27d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "dffdae97d9562f459ba3e63b93053416";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle

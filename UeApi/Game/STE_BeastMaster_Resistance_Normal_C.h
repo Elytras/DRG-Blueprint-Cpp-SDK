@@ -13,6 +13,11 @@ class STE_BeastMaster_Resistance_Normal_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BeastMaster/STE_BeastMaster_Resistance_Normal", "STE_BeastMaster_Resistance_Normal_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_1";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster

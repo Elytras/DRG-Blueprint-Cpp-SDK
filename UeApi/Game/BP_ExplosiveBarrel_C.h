@@ -30,23 +30,14 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_ExplosiveBarrel", "BP_ExplosiveBarrel_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "49df34cf46d2744cba0d781fa04bd98e";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "0a5b792282a8d548a0193a69650c2d2b";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "753aab8e7efe4742855d0fb3f1d820c5";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "ed41ec43321ccc4fa7a58d6d0072ef1e";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "b8f7262fa227f54d96965d9b4c5cc1f1";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "de729d0f9fa8cd4084258cf568cb7c63";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "9189405aa280eb4fbc890f4298a00e87";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "de1c784e2d73104bb6d85587dbd119d7";
     bool Explode;
-    static constexpr const char* Explode__Replicated = "OnRep_Explode:";
     float SpeedThreshold;
     bool Init;
     FVector throwForce;
@@ -61,6 +52,19 @@ public:
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveBeginPlay();
     void OnRep_Explode();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "49df34cf46d2744cba0d781fa04bd98e";
+        static constexpr const char* Box__UeScsNode = "0a5b792282a8d548a0193a69650c2d2b";
+        static constexpr const char* Sphere__UeScsNode = "753aab8e7efe4742855d0fb3f1d820c5";
+        static constexpr const char* StaticMesh__UeScsNode = "ed41ec43321ccc4fa7a58d6d0072ef1e";
+        static constexpr const char* Carriable__UeScsNode = "b8f7262fa227f54d96965d9b4c5cc1f1";
+        static constexpr const char* InstantUsable__UeScsNode = "de729d0f9fa8cd4084258cf568cb7c63";
+        static constexpr const char* SimpleHealth__UeScsNode = "9189405aa280eb4fbc890f4298a00e87";
+        static constexpr const char* Damage__UeScsNode = "de1c784e2d73104bb6d85587dbd119d7";
+        static constexpr const char* Explode__Replicated = "OnRep_Explode:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent

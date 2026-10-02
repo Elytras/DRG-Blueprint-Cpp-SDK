@@ -16,14 +16,18 @@ class AIC_Spider_Tank_Boss_C : public Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTank/AIC_Spider_Tank_Boss", "AIC_Spider_Tank_Boss_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Tank_Boss_C;
-    static constexpr const char* UberGraphFrame_AIC_Spider_Tank_Boss_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_AIC_Spider_Tank_Boss(int EntryPoint);
     void StartSpeedModifier();
     void ReceiveBeginPlay();
     void ReceivePossess(class APawn* PossessedPawn);
     void OnArmorDestroyed(float EnrageDuration);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* UberGraphFrame_AIC_Spider_Tank_Boss_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank

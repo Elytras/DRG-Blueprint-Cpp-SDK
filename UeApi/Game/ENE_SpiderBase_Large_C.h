@@ -30,13 +30,9 @@ class ENE_SpiderBase_Large_C : public Game::Enemies::Spider::ENE_PF_SpiderBase_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ENE_SpiderBase_Large", "ENE_SpiderBase_Large_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_SpiderBase_Large_C;
-    static constexpr const char* UberGraphFrame_ENE_SpiderBase_Large_C__UeName = "UberGraphFrame";
     class UAudioComponent* GlyphidPraetorianIdle_Cue;
-    static constexpr const char* GlyphidPraetorianIdle_Cue__UeScsNode = "c86c9bc36031d74fbdce1a42d97c43ba";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "7287ee449309ae4585d59812b22a14a2";
     float RagdollImpulseSpeed;
     class UFXSystemAsset* HeadshotParticle;
     class UClass* FrontLegGib;
@@ -61,7 +57,6 @@ public:
     void BreakLimb(uint8 BoneIndex);
     UE_MULTICAST UE_RELIABLE void All_Ragdoll(FVector_NetQuantize Impulse, const FVector_NetQuantize& Location, uint8 BoneIndex, uint8 limbIndex, bool GibLegs);
     void Cooked_Death();
-    static constexpr const char* Cooked_Death__UeName = "Cooked Death";
     void SpawnLegGib(const FVector& force);
     void StartCorrosiveDissovle();
     void CorrosiveDeath();
@@ -73,7 +68,6 @@ public:
     void SpawnLegGib_Local();
     void TrySpawnEnemies();
     void Play_Body_Death_Effects();
-    static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
     void ExplodedDeath();
     void PlayAnimatedDeath(int AnimationIndex);
     UE_MULTICAST void SendRagdollImpulse(FVector_NetQuantize Impulse, uint8 BoneIndex);
@@ -81,10 +75,8 @@ public:
     void OnUnFrozen();
     void StartBurn();
     void Play_Frozen_Death();
-    static constexpr const char* Play_Frozen_Death__UeName = "Play Frozen Death";
     void StartDissolve();
     void Play_Burn_Death();
-    static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
     void UserConstructionScript();
     void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     void SpawnLeg(FName InSocketName, FVector force);
@@ -103,6 +95,18 @@ public:
     void GetFXMeshScale(float& Scale);
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemicalArrow);
     void CalcDissolveDelay(float& Delay);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_SpiderBase_Large_C__UeName = "UberGraphFrame";
+        static constexpr const char* GlyphidPraetorianIdle_Cue__UeScsNode = "c86c9bc36031d74fbdce1a42d97c43ba";
+        static constexpr const char* DropShadow__UeScsNode = "7287ee449309ae4585d59812b22a14a2";
+        static constexpr const char* Cooked_Death__UeName = "Cooked Death";
+        static constexpr const char* Play_Body_Death_Effects__UeName = "Play Body Death Effects";
+        static constexpr const char* Play_Frozen_Death__UeName = "Play Frozen Death";
+        static constexpr const char* Play_Burn_Death__UeName = "Play Burn Death";
+    };
 };
 
 }}}   // namespace Game::Enemies::Spider

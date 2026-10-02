@@ -22,7 +22,6 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_54;
     class UTextBlock* ItemIn_GameName;
-    static constexpr const char* ItemIn_GameName__UeName = "ItemIn-GameName";
     class UObject* Item;
     bool IsSelected;
     void ExecuteUbergraph_Cheat_SpawnEnemySingleWidget(int EntryPoint);
@@ -31,6 +30,11 @@ public:
     void BP_OnItemExpansionChanged(bool bIsExpanded);
     void BP_OnEntryReleased();
     UE_PURE FLinearColor GetBrushColor_BG();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ItemIn_GameName__UeName = "ItemIn-GameName";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

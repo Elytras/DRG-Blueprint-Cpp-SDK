@@ -20,15 +20,19 @@ class BP_OldSupplyPod_FailSmokeCloud_C : public Game::Enemies::BaseItems::BP_Dam
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_OldSupplyPod_FailSmokeCloud", "BP_OldSupplyPod_FailSmokeCloud_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_OldSupplyPod_FailSmokeCloud_C;
-    static constexpr const char* UberGraphFrame_BP_OldSupplyPod_FailSmokeCloud_C__UeName = "UberGraphFrame";
     class UStatusEffectsComponent* StatusEffects;
-    static constexpr const char* StatusEffects__UeScsNode = "70bd4ed612ebf240a26d1d4ccd6454d6";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "327cd73b955f0a4da7a858fcb9601a3f";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "f53f38959167de46ae3dcd069de5723c";
     void ExecuteUbergraph_BP_OldSupplyPod_FailSmokeCloud(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_OldSupplyPod_FailSmokeCloud_C__UeName = "UberGraphFrame";
+        static constexpr const char* StatusEffects__UeScsNode = "70bd4ed612ebf240a26d1d4ccd6454d6";
+        static constexpr const char* Damage__UeScsNode = "327cd73b955f0a4da7a858fcb9601a3f";
+        static constexpr const char* SimpleHealth__UeScsNode = "f53f38959167de46ae3dcd069de5723c";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod

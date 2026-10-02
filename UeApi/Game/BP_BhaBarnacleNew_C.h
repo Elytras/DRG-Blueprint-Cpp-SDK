@@ -35,33 +35,19 @@ public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/BhaBarnacle/BP_BhaBarnacleNew", "BP_BhaBarnacleNew_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "ad5810336373de4fb62dffb5346623f3";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "c5a3aff9565b554cb6f13217e768dd51";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "b22e42052f95834187ec75be27e95a7a";
     class UFSDAudioComponent* IdleSound;
-    static constexpr const char* IdleSound__UeScsNode = "cf6fb271b2064b4f9f897b1743fe5dbe";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "0f38e1694547574b8d65122466de3d10";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "e692146773b0824698ec8c73678c40c6";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "160a911318aa8f448e7bc892bd2c407e";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "8bc934866b1bc04b9c7e401e17077e68";
     class UStaticMeshComponent* SM_LightCone002;
-    static constexpr const char* SM_LightCone002__UeScsNode = "89e35f9470c5b34d8db0de927c132951";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "9b1f505567725f43b205411fd81367ec";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "31ed71a389212b4e848d06fa60d800da";
     class UEnemyHealthComponent* EnemyHealth;
-    static constexpr const char* EnemyHealth__UeScsNode = "7552e46f1f65594884e253507d593405";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "09e904eae0934341bf8c62caeec1799a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "885f19777d3a1e4dbcf642d686892dc9";
     void ExecuteUbergraph_BP_BhaBarnacleNew(int EntryPoint);
     void ReceiveBeginPlay();
     void BndEvt__BP_BahBarnacleNew_EnemyHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
@@ -70,6 +56,24 @@ public:
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* enemy__UeScsNode = "ad5810336373de4fb62dffb5346623f3";
+        static constexpr const char* SpotLight__UeScsNode = "c5a3aff9565b554cb6f13217e768dd51";
+        static constexpr const char* Niagara__UeScsNode = "b22e42052f95834187ec75be27e95a7a";
+        static constexpr const char* IdleSound__UeScsNode = "cf6fb271b2064b4f9f897b1743fe5dbe";
+        static constexpr const char* SkeletalMesh__UeScsNode = "0f38e1694547574b8d65122466de3d10";
+        static constexpr const char* PointLight1__UeScsNode = "e692146773b0824698ec8c73678c40c6";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "160a911318aa8f448e7bc892bd2c407e";
+        static constexpr const char* Sphere__UeScsNode = "8bc934866b1bc04b9c7e401e17077e68";
+        static constexpr const char* SM_LightCone002__UeScsNode = "89e35f9470c5b34d8db0de927c132951";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "9b1f505567725f43b205411fd81367ec";
+        static constexpr const char* terrainPlacement__UeScsNode = "31ed71a389212b4e848d06fa60d800da";
+        static constexpr const char* EnemyHealth__UeScsNode = "7552e46f1f65594884e253507d593405";
+        static constexpr const char* outline__UeScsNode = "09e904eae0934341bf8c62caeec1799a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "885f19777d3a1e4dbcf642d686892dc9";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::BhaBarnacle

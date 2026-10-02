@@ -20,7 +20,7 @@ class ITM_GlowBackground_Adjustable_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_GlowBackground_Adjustable", "ITM_GlowBackground_Adjustable_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class UImage* Glow1;
     class UImage* Glow2;
     class UCanvasPanel* Glow_Canvas;
@@ -29,7 +29,6 @@ public:
     FLinearColor Tin01;
     FLinearColor Tin02;
     float Tint_Opacity;
-    static constexpr const char* Tint_Opacity__UeName = "Tint Opacity";
     float FadeInDuration;
     float FadeoutDuration;
     void ExecuteUbergraph_ITM_GlowBackground_Adjustable(int EntryPoint);
@@ -40,6 +39,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void GetAnimSpeed(float InDuration, float& OutSpeed);
     void SetGlowParams(class UImage* InImage, FLinearColor InTint, float InSpeed);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Tint_Opacity__UeName = "Tint Opacity";
+    };
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

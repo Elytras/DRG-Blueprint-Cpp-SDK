@@ -25,8 +25,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/GatlingGun/UI/WeaponDisplay_GatlingGun_AmmoCount", "WeaponDisplay_GatlingGun_AmmoCount_C");
     using ITM_ManualCooling_Bar_C = Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_GatlingGun_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_GatlingGun_AmmoCount_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* AmmoLow;
+    UE_READONLY class UWidgetAnimation* AmmoLow;
     class UTextBlock* AmmoCount;
     class UImage* Image_161;
     class UImage* Image_163;
@@ -49,10 +48,15 @@ public:
     void SetMaxAmmo(int Value);
     void SetTotalCount(int Value);
     void Check_AmmoLow();
-    static constexpr const char* Check_AmmoLow__UeName = "Check AmmoLow";
     void AdjustProgressBar();
     void AnimateClipCount();
     void AdjustPercentage();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_GatlingGun_AmmoCount_C__UeName = "UberGraphFrame";
+        static constexpr const char* Check_AmmoLow__UeName = "Check AmmoLow";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::GatlingGun::UI

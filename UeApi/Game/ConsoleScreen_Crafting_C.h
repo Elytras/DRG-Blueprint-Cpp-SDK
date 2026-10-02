@@ -22,11 +22,11 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Crafting", "ConsoleScreen_Crafting_C");
     using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ShopRotate;
-    class UWidgetAnimation* Pan03;
-    class UWidgetAnimation* Pan02;
-    class UWidgetAnimation* Pan01;
-    class UWidgetAnimation* Blink;
+    UE_READONLY class UWidgetAnimation* ShopRotate;
+    UE_READONLY class UWidgetAnimation* Pan03;
+    UE_READONLY class UWidgetAnimation* Pan02;
+    UE_READONLY class UWidgetAnimation* Pan01;
+    UE_READONLY class UWidgetAnimation* Blink;
     ConsoleScreen_Notification_C* ConsoleScreen_Notification;
     class UImage* Image_Ad;
     class UImage* Image_Blink;
@@ -35,13 +35,17 @@ public:
     TArray<class UTexture2D*> NewVar_0;
     class UTexture2D* NewVar_1;
     bool Show_Shop_Sign;
-    static constexpr const char* Show_Shop_Sign__UeName = "Show Shop Sign";
     void ExecuteUbergraph_ConsoleScreen_Crafting(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Notification_Change();
-    static constexpr const char* Notification_Change__UeName = "Notification Change";
     UE_COSMETIC void Construct();
     void SetShowShopSign(bool Show_Shop_Sign_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Show_Shop_Sign__UeName = "Show Shop Sign";
+        static constexpr const char* Notification_Change__UeName = "Notification Change";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

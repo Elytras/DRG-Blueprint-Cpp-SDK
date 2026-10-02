@@ -20,14 +20,10 @@ class BP_ReturningPromotionKey_C : public ADeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/PromotionKey/BP_ReturningPromotionKey", "BP_ReturningPromotionKey_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* MovingAudioComponent;
-    static constexpr const char* MovingAudioComponent__UeScsNode = "03e6f60dae35c2419681fb1edb878db8";
     class UStaticMeshComponent* KeyMesh;
-    static constexpr const char* KeyMesh__UeScsNode = "f7676aeef18cf44ca4900a2ecea5ddd4";
     class USceneComponent* KeyMover;
-    static constexpr const char* KeyMover__UeScsNode = "64afd5fffb08a14bb96b244d0ea72142";
     FTransform KeyTransform;
     float alpha;
     class APlayerCharacter* Target;
@@ -39,6 +35,14 @@ public:
     void Completed_FDAEBDB24C3AD5E8021577B83AA4B3FD(float DeltaTime, float NormalizedTime);
     void OnTick_FDAEBDB24C3AD5E8021577B83AA4B3FD(float DeltaTime, float NormalizedTime);
     void MoveTowardsCamera(bool& Finished);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* MovingAudioComponent__UeScsNode = "03e6f60dae35c2419681fb1edb878db8";
+        static constexpr const char* KeyMesh__UeScsNode = "f7676aeef18cf44ca4900a2ecea5ddd4";
+        static constexpr const char* KeyMover__UeScsNode = "64afd5fffb08a14bb96b244d0ea72142";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::PromotionKey

@@ -878,15 +878,11 @@ public:
     class UPathFollowingComponent* PathFollowingComponent;
     class UBrainComponent* BrainComponent;
     class UAIPerceptionComponent* PerceptionComponent;
-    class UPawnActionsComponent* ActionsComp;
-    class UBlackboardComponent* Blackboard;
+    UE_READONLY class UPawnActionsComponent* ActionsComp;
+    UE_READONLY class UBlackboardComponent* Blackboard;
     class UGameplayTasksComponent* CachedGameplayTasksComponent;
     TSubclassOf<class UNavigationQueryFilter> DefaultNavigationFilterClass;
     TMulticastInlineDelegate<void(FAIRequestID RequestID, EPathFollowingResult Result)> ReceiveMoveCompleted;
-    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
-    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
-    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
-    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
     void ClaimTaskResource(TSubclassOf<class UGameplayTaskResource> ResourceClass);
     UE_PURE class UAIPerceptionComponent* GetAIPerceptionComponent();
     void K2_ClearFocus();
@@ -908,16 +904,29 @@ public:
     UE_PURE TEnum<EPathFollowingStatus> GetMoveStatus() const;
     UE_PURE class UPathFollowingComponent* GetPathFollowingComponent() const;
     UE_PURE bool HasPartialPath() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ReceiveMoveCompleted__UeDispatcher = "Assignable";
+        static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+        static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.PathFollowingComponent";
+        static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class UBTNode : public UObject
 {
 public:
     UE_CLASS("/Script/AIModule", "BTNode");
-    static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Game";
     FString NodeName;
     class UBehaviorTree* TreeAsset;
     class UBTCompositeNode* ParentNode;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00000000 /Script/CoreUObject.Object Game";
+    };
 };
 
 class UBTTaskNode : public UBTNode
@@ -1011,9 +1020,9 @@ class UAISenseConfig : public UObject
 {
 public:
     UE_CLASS("/Script/AIModule", "AISenseConfig");
-    FColor DebugColor;
-    float MaxAge;
-    bool bStartsEnabled;
+    UE_READONLY FColor DebugColor;
+    UE_READONLY float MaxAge;
+    UE_READONLY bool bStartsEnabled;
 };
 
 class UAISenseConfig_Touch : public UAISenseConfig
@@ -1033,10 +1042,10 @@ class UAISense : public UObject
 {
 public:
     UE_CLASS("/Script/AIModule", "AISense");
-    float DefaultExpirationAge;
-    TEnum<EAISenseNotifyType> NotifyType;
-    bool bWantsNewPawnNotification;
-    bool bAutoRegisterAllPawnsAsSources;
+    UE_READONLY float DefaultExpirationAge;
+    UE_READONLY TEnum<EAISenseNotifyType> NotifyType;
+    UE_READONLY bool bWantsNewPawnNotification;
+    UE_READONLY bool bAutoRegisterAllPawnsAsSources;
     class UAIPerceptionSystem* PerceptionSystemInstance;
 };
 
@@ -1129,6 +1138,12 @@ public:
     TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnSuccess;
     TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnFail;
     void OnMoveCompleted(FAIRequestID RequestID, TEnum<EPathFollowingResult> MovementResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFail__UeDispatcher = "Assignable";
+    };
 };
 
 class UAIBlueprintHelperLibrary : public UBlueprintFunctionLibrary
@@ -1184,14 +1199,21 @@ public:
     void GetPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>& OutActors) const;
     void GetPerceivedHostileActors(TArray<class AActor*>& OutActors) const;
     void GetPerceivedHostileActorsBySense(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>& OutActors) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnPerceptionUpdated__UeDispatcher = "Assignable";
+        static constexpr const char* OnTargetPerceptionUpdated__UeDispatcher = "Assignable";
+        static constexpr const char* OnTargetPerceptionInfoUpdated__UeDispatcher = "Assignable";
+    };
 };
 
 class UAIPerceptionStimuliSourceComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/AIModule", "AIPerceptionStimuliSourceComponent");
-    bool bAutoRegisterAsSource;
-    TArray<TSubclassOf<class UAISense>> RegisterAsSourceForSenses;
+    UE_READONLY bool bAutoRegisterAsSource;
+    UE_READONLY TArray<TSubclassOf<class UAISense>> RegisterAsSourceForSenses;
     void RegisterForSense(TSubclassOf<class UAISense> SenseClass);
     void RegisterWithPerceptionSystem();
     void UnregisterFromPerceptionSystem();
@@ -1237,7 +1259,7 @@ class UAISense_Blueprint : public UAISense
 public:
     UE_CLASS("/Script/AIModule", "AISense_Blueprint");
     TSubclassOf<class UUserDefinedStruct> ListenerDataType;
-    TArray<class UAIPerceptionComponent*> ListenerContainer;
+    UE_READONLY TArray<class UAIPerceptionComponent*> ListenerContainer;
     TArray<class UAISenseEvent*> UnprocessedEvents;
     void K2_OnNewPawn(class APawn* NewPawn);
     void OnListenerRegistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
@@ -1302,25 +1324,25 @@ class UAISenseConfig_Blueprint : public UAISenseConfig
 {
 public:
     UE_CLASS("/Script/AIModule", "AISenseConfig_Blueprint");
-    TSubclassOf<class UAISense_Blueprint> Implementation;
+    UE_READONLY TSubclassOf<class UAISense_Blueprint> Implementation;
 };
 
 class UAISenseConfig_Damage : public UAISenseConfig
 {
 public:
     UE_CLASS("/Script/AIModule", "AISenseConfig_Damage");
-    TSubclassOf<class UAISense_Damage> Implementation;
+    UE_READONLY TSubclassOf<class UAISense_Damage> Implementation;
 };
 
 class UAISenseConfig_Hearing : public UAISenseConfig
 {
 public:
     UE_CLASS("/Script/AIModule", "AISenseConfig_Hearing");
-    TSubclassOf<class UAISense_Hearing> Implementation;
-    float HearingRange;
-    float LoSHearingRange;
+    UE_READONLY TSubclassOf<class UAISense_Hearing> Implementation;
+    UE_READONLY float HearingRange;
+    UE_READONLY float LoSHearingRange;
     bool bUseLoSHearing;
-    FAISenseAffiliationFilter DetectionByAffiliation;
+    UE_READONLY FAISenseAffiliationFilter DetectionByAffiliation;
 };
 
 class UAISenseConfig_Prediction : public UAISenseConfig
@@ -1333,14 +1355,14 @@ class UAISenseConfig_Sight : public UAISenseConfig
 {
 public:
     UE_CLASS("/Script/AIModule", "AISenseConfig_Sight");
-    TSubclassOf<class UAISense_Sight> Implementation;
-    float SightRadius;
-    float LoseSightRadius;
-    float PeripheralVisionAngleDegrees;
-    FAISenseAffiliationFilter DetectionByAffiliation;
-    float AutoSuccessRangeFromLastSeenLocation;
-    float PointOfViewBackwardOffset;
-    float NearClippingRadius;
+    UE_READONLY TSubclassOf<class UAISense_Sight> Implementation;
+    UE_READONLY float SightRadius;
+    UE_READONLY float LoseSightRadius;
+    UE_READONLY float PeripheralVisionAngleDegrees;
+    UE_READONLY FAISenseAffiliationFilter DetectionByAffiliation;
+    UE_READONLY float AutoSuccessRangeFromLastSeenLocation;
+    UE_READONLY float PointOfViewBackwardOffset;
+    UE_READONLY float NearClippingRadius;
 };
 
 class UAISenseConfig_Team : public UAISenseConfig
@@ -1407,7 +1429,7 @@ class UAITask : public UGameplayTask
 {
 public:
     UE_CLASS("/Script/AIModule", "AITask");
-    class AAIController* OwnerController;
+    UE_READONLY class AAIController* OwnerController;
 };
 
 class UAITask_LockLogic : public UAITask
@@ -1424,6 +1446,12 @@ public:
     TMulticastInlineDelegate<void(EPathFollowingResult Result, class AAIController* AIController)> OnMoveFinished;
     FAIMoveRequest MoveRequest;
     static class UAITask_MoveTo* AIMoveTo(class AAIController* Controller, FVector GoalLocation, class AActor* GoalActor, float AcceptanceRadius, TEnum<EAIOptionFlag> StopOnOverlap, TEnum<EAIOptionFlag> AcceptPartialPath, bool bUsePathfinding, bool bLockAILogic, bool bUseContinuosGoalTracking, TEnum<EAIOptionFlag> ProjectGoalOnNavigation);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnRequestFailed__UeDispatcher = "Assignable";
+        static constexpr const char* OnMoveFinished__UeDispatcher = "Assignable";
+    };
 };
 
 class UAITask_RunEQS : public UAITask
@@ -2020,10 +2048,14 @@ class ADetourCrowdAIController : public AAIController
 {
 public:
     UE_CLASS("/Script/AIModule", "DetourCrowdAIController");
-    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
-    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.CrowdFollowingComponent";
-    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
-    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+        static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.CrowdFollowingComponent";
+        static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class UEnvQuery : public UDataAsset
@@ -2198,9 +2230,9 @@ class UEnvQueryInstanceBlueprintWrapper : public UObject
 {
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryInstanceBlueprintWrapper");
-    int QueryID;
-    TSubclassOf<class UEnvQueryItemType> ItemType;
-    int OptionIndex;
+    UE_READONLY int QueryID;
+    UE_READONLY TSubclassOf<class UEnvQueryItemType> ItemType;
+    UE_READONLY int OptionIndex;
     TMulticastInlineDelegate<void(class UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus QueryStatus)> OnQueryFinishedEvent;
     void SetNamedParam(FName ParamName, float Value);
     UE_PURE float GetItemScore(int ItemIndex) const;
@@ -2208,6 +2240,11 @@ public:
     bool GetQueryResultsAsLocations(TArray<FVector>& ResultLocations) const;
     UE_PURE TArray<class AActor*> GetResultsAsActors() const;
     UE_PURE TArray<FVector> GetResultsAsLocations() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnQueryFinishedEvent__UeDispatcher = "Assignable";
+    };
 };
 
 class UEnvQueryItemType : public UObject
@@ -2400,9 +2437,13 @@ public:
     bool bTickDuringGame;
     TEnum<EEnvQueryRunMode> QueryingMode;
     FNavAgentProperties NavAgentProperties;
-    static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
-    static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
-    static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+        static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
+        static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
+    };
 };
 
 class IGenericTeamAgentInterface
@@ -2415,10 +2456,14 @@ class AGridPathAIController : public AAIController
 {
 public:
     UE_CLASS("/Script/AIModule", "GridPathAIController");
-    static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
-    static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.GridPathFollowingComponent";
-    static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
-    static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+        static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.GridPathFollowingComponent";
+        static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    };
 };
 
 class UGridPathFollowingComponent : public UPathFollowingComponent
@@ -2438,18 +2483,23 @@ class ANavLinkProxy : public AActor
 {
 public:
     UE_CLASS("/Script/AIModule", "NavLinkProxy");
-    TArray<FNavigationLink> PointLinks;
+    UE_READONLY TArray<FNavigationLink> PointLinks;
     TArray<FNavigationSegmentLink> SegmentLinks;
     class UNavLinkCustomComponent* SmartLinkComp;
     bool bSmartLinkIsRelevant;
     TMulticastInlineDelegate<void(class AActor* MovingActor, FVector DestinationPoint)> OnSmartLinkReached;
-    static constexpr const char* RootComponent__UeSubobject = "PositionComponent /Script/Engine.SceneComponent";
-    static constexpr const char* SmartLinkComp__UeSubobject = "SmartLinkComp /Script/NavigationSystem.NavLinkCustomComponent";
     void ReceiveSmartLinkReached(class AActor* Agent, const FVector& Destination);
     void ResumePathFollowing(class AActor* Agent);
     void SetSmartLinkEnabled(bool bEnabled);
     UE_PURE bool HasMovingAgents() const;
     UE_PURE bool IsSmartLinkEnabled() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSmartLinkReached__UeDispatcher = "Assignable";
+        static constexpr const char* RootComponent__UeSubobject = "PositionComponent /Script/Engine.SceneComponent";
+        static constexpr const char* SmartLinkComp__UeSubobject = "SmartLinkComp /Script/NavigationSystem.NavLinkCustomComponent";
+    };
 };
 
 class UNavLocalGridManager : public UObject
@@ -2487,7 +2537,7 @@ public:
     class UPawnActionsComponent* OwnerComponent;
     class UObject* Instigator;
     class UBrainComponent* BrainComp;
-    bool bAllowNewSameClassInstance;
+    UE_READONLY bool bAllowNewSameClassInstance;
     bool bReplaceActiveSameClassInstance;
     bool bShouldPauseMovement;
     bool bAlwaysNotifyOnFinished;
@@ -2531,7 +2581,7 @@ public:
     UE_CLASS("/Script/AIModule", "PawnAction_Repeat");
     class UPawnAction* ActionToRepeat;
     class UPawnAction* RecentActionCopy;
-    TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
+    UE_READONLY TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
 };
 
 class UPawnAction_Sequence : public UPawnAction
@@ -2539,7 +2589,7 @@ class UPawnAction_Sequence : public UPawnAction
 public:
     UE_CLASS("/Script/AIModule", "PawnAction_Sequence");
     TArray<class UPawnAction*> ActionSequence;
-    TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
+    UE_READONLY TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
     class UPawnAction* RecentActionCopy;
 };
 
@@ -2554,7 +2604,7 @@ class UPawnActionsComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/AIModule", "PawnActionsComponent");
-    class APawn* ControlledPawn;
+    UE_READONLY class APawn* ControlledPawn;
     TArray<FPawnActionStack> ActionStacks;
     TArray<FPawnActionEvent> ActionEvents;
     class UPawnAction* CurrentAction;
@@ -2571,21 +2621,27 @@ public:
     float HearingThreshold;
     float LOSHearingThreshold;
     float SightRadius;
-    float SensingInterval;
+    UE_READONLY float SensingInterval;
     float HearingMaxSoundAge;
-    bool bEnableSensingUpdates;
+    UE_READONLY bool bEnableSensingUpdates;
     bool bOnlySensePlayers;
     bool bSeePawns;
     bool bHearNoises;
     TMulticastInlineDelegate<void(class APawn* Pawn)> OnSeePawn;
     TMulticastInlineDelegate<void(class APawn* Instigator, FVector Location, float Volume)> OnHearNoise;
-    float PeripheralVisionAngle;
+    UE_READONLY float PeripheralVisionAngle;
     float PeripheralVisionCosine;
     UE_AUTHORITY_ONLY void SetPeripheralVisionAngle(float NewPeripheralVisionAngle);
     UE_AUTHORITY_ONLY void SetSensingInterval(float NewSensingInterval);
     UE_AUTHORITY_ONLY void SetSensingUpdatesEnabled(bool bEnabled);
     UE_PURE float GetPeripheralVisionAngle() const;
     UE_PURE float GetPeripheralVisionCosine() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSeePawn__UeDispatcher = "Assignable";
+        static constexpr const char* OnHearNoise__UeDispatcher = "Assignable";
+    };
 };
 
 class UVisualLoggerExtension : public UObject

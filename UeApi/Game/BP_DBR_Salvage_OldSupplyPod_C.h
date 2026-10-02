@@ -13,6 +13,11 @@ class BP_DBR_Salvage_OldSupplyPod_C : public UDebrisItemComponent
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_DBR_Salvage_OldSupplyPod", "BP_DBR_Salvage_OldSupplyPod_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DebrisPositioning DebrisPositioning_0";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

@@ -51,7 +51,6 @@ public:
     void BndEvt__Normal_Launcher_K2Node_ComponentBoundEvent_6_OnStartMission__DelegateSignature(class UDeepDive* DeepDive);
     void BndEvt__Hard_Launcher_K2Node_ComponentBoundEvent_5_OnStartMission__DelegateSignature(class UDeepDive* DeepDive);
     void Start_Mission(class UDeepDive* mission);
-    static constexpr const char* Start_Mission__UeName = "Start Mission";
     void BndEvt__OptionSolo_K2Node_ComponentBoundEvent_2_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void BndEvt__OptionPrivate_K2Node_ComponentBoundEvent_1_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void BndEvt__OptionPublic_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
@@ -62,6 +61,11 @@ public:
     void UpdateOptions();
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void HandleKeyDown(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Mission__UeName = "Start Mission";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_DeepDives

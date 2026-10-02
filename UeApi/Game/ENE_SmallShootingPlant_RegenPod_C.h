@@ -31,30 +31,18 @@ class ENE_SmallShootingPlant_RegenPod_C : public AHydraWeedHealer
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/ENE_SmallShootingPlant_RegenPod", "ENE_SmallShootingPlant_RegenPod_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Hydra_Healing_Seed;
-    static constexpr const char* P_Hydra_Healing_Seed__UeScsNode = "8d6f932529f6404eadb2372844c3f160";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "3c3d42f29bcda0478dd6c50119da5976";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "7ae1d1bbc1020a4bbb1ce9d30e3c9b07";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "7ee17cc48feff4449ba4671cc8a35c86";
     class UWeakpointGlowComponent* WeakpointGlow;
-    static constexpr const char* WeakpointGlow__UeScsNode = "21ba77a8cc5194478540626c4bae5606";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "b45824f4067b0046a88d656d36c6297a";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "f56166b16336e445a118e0243e2ac281";
     class UEnemyBufferComponent* EnemyBuffer;
-    static constexpr const char* EnemyBuffer__UeScsNode = "ec854070acee0044b965b0ad2bec5d82";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "50d3c0331f9ff54785a3451821154735";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "47961f330ac1bc40a48b81a5479afc7a";
     float Timeline_1_NewTrack;
-    static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_E713C7134F9737E0824F80801E2D3B4E";
     TEnum<ETimelineDirection> Timeline_1__Direction_E713C7134F9737E0824F80801E2D3B4E;
     class UTimelineComponent* Timeline_1;
     float Timeline_0_Size_74F2544C4A1361E2EE80E89D85FD7033;
@@ -79,6 +67,22 @@ public:
     class UMeshComponent* Receive_GetMeshComponent() const;
     class USkeletalMeshComponent* GetMesh() const;
     UE_PURE FVector GetTargetCenterMass() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* P_Hydra_Healing_Seed__UeScsNode = "8d6f932529f6404eadb2372844c3f160";
+        static constexpr const char* PointLight__UeScsNode = "3c3d42f29bcda0478dd6c50119da5976";
+        static constexpr const char* PathfinderCollision__UeScsNode = "7ae1d1bbc1020a4bbb1ce9d30e3c9b07";
+        static constexpr const char* outline__UeScsNode = "7ee17cc48feff4449ba4671cc8a35c86";
+        static constexpr const char* WeakpointGlow__UeScsNode = "21ba77a8cc5194478540626c4bae5606";
+        static constexpr const char* Sphere__UeScsNode = "b45824f4067b0046a88d656d36c6297a";
+        static constexpr const char* SkeletalMesh__UeScsNode = "f56166b16336e445a118e0243e2ac281";
+        static constexpr const char* EnemyBuffer__UeScsNode = "ec854070acee0044b965b0ad2bec5d82";
+        static constexpr const char* terrainPlacement__UeScsNode = "50d3c0331f9ff54785a3451821154735";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "47961f330ac1bc40a48b81a5479afc7a";
+        static constexpr const char* Timeline_1_NewTrack__UeName = "Timeline_1_NewTrack_0_E713C7134F9737E0824F80801E2D3B4E";
+    };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed

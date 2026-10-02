@@ -23,17 +23,21 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_MissionStats", "BP_MissionStats_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Cube1;
-    static constexpr const char* Cube1__UeScsNode = "ac64957a48c88d4caa8879eafadfd9c8";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "5562a7d7b608e84db3502557a1288017";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "750528ffaf714e47b20f94b67ff3529d";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     void ExecuteUbergraph_BP_MissionStats(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Cube1__UeScsNode = "ac64957a48c88d4caa8879eafadfd9c8";
+        static constexpr const char* Box__UeScsNode = "5562a7d7b608e84db3502557a1288017";
+        static constexpr const char* InstantUsable__UeScsNode = "750528ffaf714e47b20f94b67ff3529d";
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

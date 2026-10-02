@@ -29,38 +29,22 @@ class BP_Halloween_Skull_C : public AHalloweenSkull
 {
 public:
     UE_CLASS("/Game/GameElements/Holidays/Halloween/BP_Halloween_Skull", "BP_Halloween_Skull_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "bf0d65afea3b4d41bc4a17dfbec37122";
     class USphereComponent* ColdSphere_Close;
-    static constexpr const char* ColdSphere_Close__UeScsNode = "4972f76999d6d447ae0c4e3733e3d96b";
     class USphereComponent* ColdSphere_Far;
-    static constexpr const char* ColdSphere_Far__UeScsNode = "208fc0d6c03f144780d5b4f62a0d74de";
     class UPointLightComponent* PointLight_Far;
-    static constexpr const char* PointLight_Far__UeScsNode = "3d971734cff5c544bcf61d814184fccc";
     class UStatusEffectTriggerComponent* ColdStatusEffectTrigger_Close;
-    static constexpr const char* ColdStatusEffectTrigger_Close__UeScsNode = "3c2277b3cd83e14282e29789a4339deb";
     class UStatusEffectTriggerComponent* ColdStatusEffectTrigger_Far;
-    static constexpr const char* ColdStatusEffectTrigger_Far__UeScsNode = "7620d21d1408be4d8ada4c7c3ce4112a";
     class UNiagaraComponent* NS_Fire_SkullFlame_WS;
-    static constexpr const char* NS_Fire_SkullFlame_WS__UeScsNode = "f192333a70ef9045acb8c850a266dab5";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "8a63ae16eb5aa641b0296ec3b39f585a";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "287822a7cff28f47816d8bea353dc0c9";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "b5fdac8fd1b71c45b4d8ea99c5d74e60";
     class UPawnStatsComponent* PawnStats;
-    static constexpr const char* PawnStats__UeScsNode = "7a42dc95ba409b4f81c821a641422993";
     class UFSDAudioComponent* AudioLoop;
-    static constexpr const char* AudioLoop__UeScsNode = "ea0c8fe5779f20499ab88b9f65650ba9";
     class UNiagaraComponent* NS_Fire_SkullFlame;
-    static constexpr const char* NS_Fire_SkullFlame__UeScsNode = "2b3c56058036e3419bd056c909cff1b8";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "56fa4e64c6902844bec5fd67d69b3f2d";
     class UStaticMeshComponent* Mesh_Flame01;
-    static constexpr const char* Mesh_Flame01__UeScsNode = "6f212c9e22b559468fbbaa209a80c596";
     float Timeline_0_Scale_7E993DAF452B4981CFEA5EB3782B00C8;
     TEnum<ETimelineDirection> Timeline_0__Direction_7E993DAF452B4981CFEA5EB3782B00C8;
     class UTimelineComponent* Timeline_0;
@@ -86,6 +70,26 @@ public:
     void ScaleUpFlames__UpdateFunc();
     void ScaleUpFlames__FinishedFunc();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* outline__UeScsNode = "bf0d65afea3b4d41bc4a17dfbec37122";
+        static constexpr const char* ColdSphere_Close__UeScsNode = "4972f76999d6d447ae0c4e3733e3d96b";
+        static constexpr const char* ColdSphere_Far__UeScsNode = "208fc0d6c03f144780d5b4f62a0d74de";
+        static constexpr const char* PointLight_Far__UeScsNode = "3d971734cff5c544bcf61d814184fccc";
+        static constexpr const char* ColdStatusEffectTrigger_Close__UeScsNode = "3c2277b3cd83e14282e29789a4339deb";
+        static constexpr const char* ColdStatusEffectTrigger_Far__UeScsNode = "7620d21d1408be4d8ada4c7c3ce4112a";
+        static constexpr const char* NS_Fire_SkullFlame_WS__UeScsNode = "f192333a70ef9045acb8c850a266dab5";
+        static constexpr const char* Sphere__UeScsNode = "8a63ae16eb5aa641b0296ec3b39f585a";
+        static constexpr const char* enemy__UeScsNode = "287822a7cff28f47816d8bea353dc0c9";
+        static constexpr const char* PawnSensing__UeScsNode = "b5fdac8fd1b71c45b4d8ea99c5d74e60";
+        static constexpr const char* PawnStats__UeScsNode = "7a42dc95ba409b4f81c821a641422993";
+        static constexpr const char* AudioLoop__UeScsNode = "ea0c8fe5779f20499ab88b9f65650ba9";
+        static constexpr const char* NS_Fire_SkullFlame__UeScsNode = "2b3c56058036e3419bd056c909cff1b8";
+        static constexpr const char* PointLight__UeScsNode = "56fa4e64c6902844bec5fd67d69b3f2d";
+        static constexpr const char* Mesh_Flame01__UeScsNode = "6f212c9e22b559468fbbaa209a80c596";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween

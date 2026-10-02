@@ -13,6 +13,11 @@ class STE_Crawler_Puddle_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/STE_Crawler_Puddle", "STE_Crawler_Puddle_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Crawler

@@ -21,11 +21,8 @@ class BP_PumpkinFace_Item_C : public Game::Art::Environments::Holiday_Halloween:
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_PumpkinFace_Item", "BP_PumpkinFace_Item_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_PumpkinFace_Item_C;
-    static constexpr const char* UberGraphFrame_BP_PumpkinFace_Item_C__UeName = "UberGraphFrame";
     class USphereComponent* ProximityTrigger;
-    static constexpr const char* ProximityTrigger__UeScsNode = "4fa226c2bead3645a84a863f39a4a34e";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "120b7340982b34438b3eac4f96c09037";
     float Timeline_0_LightIntensity_7354DC9243CD117360DDC3823BE25B3E;
     TEnum<ETimelineDirection> Timeline_0__Direction_7354DC9243CD117360DDC3823BE25B3E;
     class UTimelineComponent* Timeline_0;
@@ -34,6 +31,13 @@ public:
     void BndEvt__ProximityTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_PumpkinFace_Item_C__UeName = "UberGraphFrame";
+        static constexpr const char* ProximityTrigger__UeScsNode = "4fa226c2bead3645a84a863f39a4a34e";
+        static constexpr const char* PointLight__UeScsNode = "120b7340982b34438b3eac4f96c09037";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween

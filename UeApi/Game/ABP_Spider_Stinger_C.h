@@ -15,11 +15,15 @@ class ABP_Spider_Stinger_C : public Game::Enemies::Spider::ABP_Spider_C
 public:
     UE_CLASS("/Game/Enemies/Spider/Stinger/assets/ABP_Spider_Stinger", "ABP_Spider_Stinger_C");
     FPointerToUberGraphFrame UberGraphFrame_ABP_Spider_Stinger_C;
-    static constexpr const char* UberGraphFrame_ABP_Spider_Stinger_C__UeName = "UberGraphFrame";
     float LastPlayed;
     float CoolDown;
     void ExecuteUbergraph_ABP_Spider_Stinger(int EntryPoint);
     void AnimNotify_StingerScream();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_ABP_Spider_Stinger_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Stinger::assets

@@ -18,33 +18,37 @@ class BP_AmberChunk_C : public Game::GameElements::Resources::Embedded::Gems::BP
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_AmberChunk", "BP_AmberChunk_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_AmberChunk_C;
-    static constexpr const char* UberGraphFrame_BP_AmberChunk_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "2c8feb0788f6b94c87a0116d7ed2e32f";
     FTimerHandle TimerHandle;
     float LifeTime;
     bool destroyed;
-    static constexpr const char* destroyed__Replicated = "OnRep_Destroyed:";
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     FLinearColor Initial_Colour;
-    static constexpr const char* Initial_Colour__UeName = "Initial Colour";
     FLinearColor Final_Colour;
-    static constexpr const char* Final_Colour__UeName = "Final Colour";
     float ProgressFrequency;
     float TimeElapsed;
     FLinearColor Initial_Color_Tint1;
-    static constexpr const char* Initial_Color_Tint1__UeName = "Initial Color Tint1";
     FLinearColor Final_Color_Tint1;
-    static constexpr const char* Final_Color_Tint1__UeName = "Final Color Tint1";
     void ExecuteUbergraph_BP_AmberChunk(int EntryPoint);
     void Time();
     void DestroySelf();
     void ReceiveBeginPlay();
     void UserConstructionScript();
     void OnRep_Destroyed();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_AmberChunk_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight__UeScsNode = "2c8feb0788f6b94c87a0116d7ed2e32f";
+        static constexpr const char* destroyed__Replicated = "OnRep_Destroyed:";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+        static constexpr const char* Initial_Colour__UeName = "Initial Colour";
+        static constexpr const char* Final_Colour__UeName = "Final Colour";
+        static constexpr const char* Initial_Color_Tint1__UeName = "Initial Color Tint1";
+        static constexpr const char* Final_Color_Tint1__UeName = "Final Color Tint1";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems

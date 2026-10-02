@@ -13,6 +13,11 @@ class BP_Mactera_Shooter_Attack_Elite_C : public UProjectileAttackComponent
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/BP_Mactera_Shooter_Attack_Elite", "BP_Mactera_Shooter_Attack_Elite_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.NormalProjectileAttack NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack NormalProjectileAttack_1";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

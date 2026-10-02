@@ -20,9 +20,7 @@ public:
     using BP_Count_Randoms_Widget_C = Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_Widget_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "a81c85290933394b93f81b1f28faef8d";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
     BP_Count_Randoms_Widget_C* Widget;
     float Duration;
     float Start;
@@ -32,6 +30,12 @@ public:
     void ExecuteUbergraph_BP_Count_Randoms(int EntryPoint);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget1__UeScsNode = "a81c85290933394b93f81b1f28faef8d";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "cde5f351a4794549b01ddac680fc53ab";
+    };
 };
 
 }}}}}   // namespace Game::Maps::UILevels::Assets::HUD

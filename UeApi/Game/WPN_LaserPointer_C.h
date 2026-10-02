@@ -29,22 +29,14 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/WPN_LaserPointer", "WPN_LaserPointer_C");
     using BP_PointOfInterest_C = Game::WeaponsNTools::LaserPointer::BP_PointOfInterest_C;
     using HUD_LaserPointerDisplay_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerDisplay_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Pointer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "a2ae0199ca35384aa2345b8d5d2b746a";
     class USceneComponent* FPTransform;
-    static constexpr const char* FPTransform__UeScsNode = "32f1617ce0799d4dbb024cc979d25c52";
     class UStaticMeshComponent* LightBeam_Cylinder;
-    static constexpr const char* LightBeam_Cylinder__UeScsNode = "3986a7820f25f842ab97c010ff060703";
     class USceneComponent* LightBeam;
-    static constexpr const char* LightBeam__UeScsNode = "6b4bb4dc35260641b81059e3341991cf";
     class UAudioComponent* LaserLight_On_Cue;
-    static constexpr const char* LaserLight_On_Cue__UeScsNode = "786bafbd16f28e44b10df367c2089751";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "6fd4db3a57eeca44acc868a9c145eab0";
     class USceneComponent* TPTransform;
-    static constexpr const char* TPTransform__UeScsNode = "fe40692576bfa4468bc2b2d6d498cb81";
     HUD_LaserPointerDisplay_C* HUD;
     float Delay;
     class UMaterialInstanceDynamic* BackgroundMaterial;
@@ -69,12 +61,24 @@ public:
     void UserConstructionScript();
     void GetPointTransform(FTransform& PointTransform);
     void Adjust_Beam();
-    static constexpr const char* Adjust_Beam__UeName = "Adjust Beam";
     void SetBackgroundColor(FLinearColor Value);
     void UpdateBackgroundColor();
     void CanPlacePOI(FVector Location, class UTexture* Icon, bool& Can_Place);
     void SetBeamVisibility(bool bNewVisibility);
     void SetLaserBeamMaterial(class APlayerCharacter* InCharacter);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Pointer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "a2ae0199ca35384aa2345b8d5d2b746a";
+        static constexpr const char* FPTransform__UeScsNode = "32f1617ce0799d4dbb024cc979d25c52";
+        static constexpr const char* LightBeam_Cylinder__UeScsNode = "3986a7820f25f842ab97c010ff060703";
+        static constexpr const char* LightBeam__UeScsNode = "6b4bb4dc35260641b81059e3341991cf";
+        static constexpr const char* LaserLight_On_Cue__UeScsNode = "786bafbd16f28e44b10df367c2089751";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "6fd4db3a57eeca44acc868a9c145eab0";
+        static constexpr const char* TPTransform__UeScsNode = "fe40692576bfa4468bc2b2d6d498cb81";
+        static constexpr const char* Adjust_Beam__UeName = "Adjust Beam";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer

@@ -76,7 +76,6 @@ public:
     void BndEvt__MENU_MissionCheat_BTN_StartMission_1_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature();
     void GenerateCustomMission();
     void Update_Haz();
-    static constexpr const char* Update_Haz__UeName = "Update Haz";
     void MutatorChanged_Event_0();
     void BndEvt__MENU_MissionCheat_Difficulty_K2Node_ComponentBoundEvent_7_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     void BndEvt__MENU_MissionCheat_BTN_DeepDives_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
@@ -97,9 +96,7 @@ public:
     void GetDuration(class UMissionDuration*& Output);
     void GetAnomaly(class UMissionMutator*& Output);
     void Get_Warning_A(class UMissionWarning*& Output);
-    static constexpr const char* Get_Warning_A__UeName = "Get Warning A";
     void Get_Warning_B(class UMissionWarning*& Output);
-    static constexpr const char* Get_Warning_B__UeName = "Get Warning B";
     UE_PURE bool IsCustomMissionAllowed();
     void GetSecondary(TArray<class UClass*>& Output);
     void RefreshSecondaries();
@@ -118,6 +115,13 @@ public:
     void GetGameHazard(float& Hazard);
     void GenerateResourceOptions();
     void GetGemResource(class UGemResourceData*& Output);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Update_Haz__UeName = "Update Haz";
+        static constexpr const char* Get_Warning_A__UeName = "Get Warning A";
+        static constexpr const char* Get_Warning_B__UeName = "Get Warning B";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat

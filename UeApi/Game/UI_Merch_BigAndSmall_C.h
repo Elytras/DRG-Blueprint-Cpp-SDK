@@ -30,9 +30,8 @@ public:
     using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     using UI_MediaPlayer_C = Game::UI::MENU_Merch::UI_MediaPlayer_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_Merch_BigAndSmall_C;
-    static constexpr const char* UberGraphFrame_UI_Merch_BigAndSmall_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* AnimClick;
-    class UWidgetAnimation* AnimHover;
+    UE_READONLY class UWidgetAnimation* AnimClick;
+    UE_READONLY class UWidgetAnimation* AnimHover;
     Basic_Label_C* Description_Label;
     class UButton* EntryButton;
     class UImage* Image_148;
@@ -48,11 +47,8 @@ public:
     Basic_Image_C* SmallImage;
     float SmallImageWidth;
     int Index_0;
-    static constexpr const char* Index_0__UeName = "Index";
     int Big_Image_Width;
-    static constexpr const char* Big_Image_Width__UeName = "Big Image Width";
     int Small_Images_Spacing;
-    static constexpr const char* Small_Images_Spacing__UeName = "Small Images Spacing";
     class UFileMediaSource* Movie;
     class UMediaPlayer* Target;
     void ExecuteUbergraph_UI_Merch_BigAndSmall(int EntryPoint);
@@ -61,6 +57,14 @@ public:
     void BndEvt__UI_Merch_BigAndSmall_EntryButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void CreateSmallImages();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_UI_Merch_BigAndSmall_C__UeName = "UberGraphFrame";
+        static constexpr const char* Index_0__UeName = "Index";
+        static constexpr const char* Big_Image_Width__UeName = "Big Image Width";
+        static constexpr const char* Small_Images_Spacing__UeName = "Small Images Spacing";
+    };
 };
 
 }}}}   // namespace Game::UI::MENU_Merch::_Common

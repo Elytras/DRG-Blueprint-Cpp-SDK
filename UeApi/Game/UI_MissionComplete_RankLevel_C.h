@@ -34,7 +34,6 @@ public:
     float StartTime;
     void ExecuteUbergraph_UI_MissionComplete_RankLevel(int EntryPoint);
     void Start_Counter(FPlayerProgress PlayerProgressStart, FPlayerProgress PlayerProgressFinish, FCharacterProgress CharacterProgressStart, FCharacterProgress CharacterProgressFinish);
-    static constexpr const char* Start_Counter__UeName = "Start Counter";
     void PingCharacterLevel(int Level, int Stars);
     void UpdateValues(int PlayerRank, int PlayerStars, int CharacterLevel, float CharacterProgress);
     void PingPlayerRank();
@@ -43,6 +42,11 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetRankStarsAndLevel(int Rank, int Stars, int Level, float LevelProgress);
     void SetBorderColor(FLinearColor InColorAndOpacity);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Counter__UeName = "Start Counter";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2

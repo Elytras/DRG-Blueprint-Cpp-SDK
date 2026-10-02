@@ -16,7 +16,11 @@ class BP_CameraDrone_SplineMesh_C : public AActor
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_CameraDrone_SplineMesh", "BP_CameraDrone_SplineMesh_C");
     class USplineMeshComponent* SplineMesh;
-    static constexpr const char* SplineMesh__UeScsNode = "3ded69138002e3418d14f2dcd791ab71";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SplineMesh__UeScsNode = "3ded69138002e3418d14f2dcd791ab71";
+    };
 };
 
 }}}   // namespace Game::GameElements::MovieMode

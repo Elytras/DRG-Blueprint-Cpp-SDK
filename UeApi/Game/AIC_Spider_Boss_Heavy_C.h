@@ -20,9 +20,7 @@ class AIC_Spider_Boss_Heavy_C : public Game::Enemies::Spider::AIC_Spider_C
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/AIC_Spider_Boss_Heavy", "AIC_Spider_Boss_Heavy_C");
     using ENE_Spider_Boss_Heavy_C = Game::Enemies::Spider::TankBoss::BossHeavy::ENE_Spider_Boss_Heavy_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Boss_Heavy_C;
-    static constexpr const char* UberGraphFrame_AIC_Spider_Boss_Heavy_C__UeName = "UberGraphFrame";
     bool Enraged;
     TSet<class AFSDPawn*> spawnedEnemies;
     FTimerHandle HandleSafetyTimer;
@@ -39,6 +37,12 @@ public:
     void StartSafetyTimer();
     void SpawnSentinelsBySafetyTimer();
     bool CanSpawnSentinels();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+        static constexpr const char* UberGraphFrame_AIC_Spider_Boss_Heavy_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy

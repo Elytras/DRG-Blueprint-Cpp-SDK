@@ -32,22 +32,14 @@ class ENE_LootBug_C : public ACaveWorm
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/ENE_LootBug", "ENE_LootBug_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "b7d33d2648993f41acf77b1485e919c6";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "d8c3a6a0079b654ebc7b3272845ffc91";
     class UStaticMeshComponent* DropShadow;
-    static constexpr const char* DropShadow__UeScsNode = "88c2c8ed34358a4db782e3540ae18212";
     class UAudioComponent* Lootbug_idle;
-    static constexpr const char* Lootbug_idle__UeScsNode = "f9be19ccd2e0e944b9c054cad1eb5db6";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "0813f2ffa9f4b643b5071f9085380093";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_3777A85D4507AA016A87A299C2D01021";
     TEnum<ETimelineDirection> Timeline_0__Direction_3777A85D4507AA016A87A299C2D01021;
     class UTimelineComponent* Timeline_0;
     TArray<class UResourceData*> Loot;
@@ -80,12 +72,24 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void Drop_Loot(FVector Impulse, FVector DropOffset, bool& success);
-    static constexpr const char* Drop_Loot__UeName = "Drop Loot";
     void Has_Loot(bool& Has_Loot_0);
-    static constexpr const char* Has_Loot__UeName = "Has Loot";
     bool OnTriggerAI(FName TriggerName);
     void EatChunk(class AResourceChunk* chunk);
     void DropEatenLott(FVector DropOffset);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* Sphere__UeScsNode = "b7d33d2648993f41acf77b1485e919c6";
+        static constexpr const char* InstantUsable__UeScsNode = "d8c3a6a0079b654ebc7b3272845ffc91";
+        static constexpr const char* DropShadow__UeScsNode = "88c2c8ed34358a4db782e3540ae18212";
+        static constexpr const char* Lootbug_idle__UeScsNode = "f9be19ccd2e0e944b9c054cad1eb5db6";
+        static constexpr const char* enemy__UeScsNode = "0813f2ffa9f4b643b5071f9085380093";
+        static constexpr const char* outline__UeScsNode = "22bfe0632a20e3479e3975ff99e6b193";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_3777A85D4507AA016A87A299C2D01021";
+        static constexpr const char* Drop_Loot__UeName = "Drop Loot";
+        static constexpr const char* Has_Loot__UeName = "Has Loot";
+    };
 };
 
 }}}   // namespace Game::Critters::LootBug

@@ -17,9 +17,13 @@ class PRW_CombatShotgun_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/CombatShotgun/PRW_CombatShotgun", "PRW_CombatShotgun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "4229f1028e99134e80a962087e4ab3bc";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "0dec234eb3ce21448c884352b20da4e0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "4229f1028e99134e80a962087e4ab3bc";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "0dec234eb3ce21448c884352b20da4e0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun

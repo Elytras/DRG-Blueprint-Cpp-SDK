@@ -13,6 +13,11 @@ class STE_StickyFlame_Frost_Improved_D_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/STE_StickyFlame_Frost_Improved_D", "STE_StickyFlame_Frost_Improved_D_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TemperatureStatusEffectItem TemperatureStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Cryospray

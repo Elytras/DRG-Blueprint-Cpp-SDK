@@ -13,7 +13,11 @@ class Loadout_GrenadeProxy_DamageEnhancer_C : public Game::WeaponsNTools::Grenad
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/DamageEnhancer/Loadout_GrenadeProxy_DamageEnhancer", "Loadout_GrenadeProxy_DamageEnhancer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::DamageEnhancer

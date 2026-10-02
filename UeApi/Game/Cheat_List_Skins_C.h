@@ -23,7 +23,6 @@ public:
     using Cheat_EquipList_Entry_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     TArray<EItemCategory> WeaponCategories;
     TEnum<EItemSkinType> Skin_Type;
-    static constexpr const char* Skin_Type__UeName = "Skin Type";
     void GetCharacterID(class UPlayerCharacterID*& characterID);
     void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
     void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
@@ -31,6 +30,11 @@ public:
     void Refresh();
     void ReceiveEntrySchematicClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
     void GetSchematicState(class UItemSkin* ItemSkin, class UPlayerCharacterID* characterID, bool& HasSchematic_0, bool& IsOwned);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Skin_Type__UeName = "Skin Type";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets

@@ -21,23 +21,27 @@ class PRJ_Spider_Tank_Boss_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTank/PRJ_Spider_Tank_Boss", "PRJ_Spider_Tank_Boss_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "4f5a8ab6d46c9049ae67117d61fa7daf";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "c3fb2cb79964e34bad7d1ff7427c797c";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
     class UParticleSystemComponent* ParticleComponent;
-    static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
     float LightIntensity;
     void ExecuteUbergraph_PRJ_Spider_Tank_Boss(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "4f5a8ab6d46c9049ae67117d61fa7daf";
+        static constexpr const char* Damage__UeScsNode = "c3fb2cb79964e34bad7d1ff7427c797c";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "afec8dd2f2eb35408affa037d20701ed";
+        static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
+        static constexpr const char* Audio__UeScsNode = "bbdcaa95e9a484468391f26127f1f0ae";
+        static constexpr const char* PointLight__UeScsNode = "2570499736b842438334f5fe67342a1a";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank

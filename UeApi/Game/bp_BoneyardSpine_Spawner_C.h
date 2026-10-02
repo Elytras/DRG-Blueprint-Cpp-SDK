@@ -19,34 +19,38 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Destructables/bp_BoneyardSpine_Spawner", "bp_BoneyardSpine_Spawner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Preview10;
-    static constexpr const char* Preview10__UeScsNode = "6549ae4faf0285448568f984fe5a18b1";
     class UStaticMeshComponent* Preview9;
-    static constexpr const char* Preview9__UeScsNode = "70a237e11ecd3d4eb8e327dc29b0d627";
     class UStaticMeshComponent* Preview8;
-    static constexpr const char* Preview8__UeScsNode = "12d4c976990c5542b59ce74bbf50e034";
     class UStaticMeshComponent* Preview7;
-    static constexpr const char* Preview7__UeScsNode = "c6c6b52d31c4554d89a8469cbc7838bc";
     class UStaticMeshComponent* Preview6;
-    static constexpr const char* Preview6__UeScsNode = "c775bb29f09c9e4994f3e860b757cf3b";
     class UStaticMeshComponent* Preview5;
-    static constexpr const char* Preview5__UeScsNode = "f0d16204216f074283971161d26610af";
     class UStaticMeshComponent* Preview4;
-    static constexpr const char* Preview4__UeScsNode = "5762cc324653f74aa9b24b88231920c3";
     class UStaticMeshComponent* Preview3;
-    static constexpr const char* Preview3__UeScsNode = "4c7534dfa33b264c88145db7d1a49e6a";
     class UStaticMeshComponent* Preview2;
-    static constexpr const char* Preview2__UeScsNode = "173046028f8d86458b84e27851d68ff6";
     class UStaticMeshComponent* Preview1;
-    static constexpr const char* Preview1__UeScsNode = "85e1f5778e57794a8c66299f2229345e";
     class USceneComponent* Spawners;
-    static constexpr const char* Spawners__UeScsNode = "e7239e213251cf42acbb8492d9af51d5";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "3107d757fd56c849909173e93ea5c9e1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "974df6e15d24bc42a53bd12197431b38";
     void ExecuteUbergraph_bp_BoneyardSpine_Spawner(int EntryPoint);
     void OnMatchStarted_BeginPlay();
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Preview10__UeScsNode = "6549ae4faf0285448568f984fe5a18b1";
+        static constexpr const char* Preview9__UeScsNode = "70a237e11ecd3d4eb8e327dc29b0d627";
+        static constexpr const char* Preview8__UeScsNode = "12d4c976990c5542b59ce74bbf50e034";
+        static constexpr const char* Preview7__UeScsNode = "c6c6b52d31c4554d89a8469cbc7838bc";
+        static constexpr const char* Preview6__UeScsNode = "c775bb29f09c9e4994f3e860b757cf3b";
+        static constexpr const char* Preview5__UeScsNode = "f0d16204216f074283971161d26610af";
+        static constexpr const char* Preview4__UeScsNode = "5762cc324653f74aa9b24b88231920c3";
+        static constexpr const char* Preview3__UeScsNode = "4c7534dfa33b264c88145db7d1a49e6a";
+        static constexpr const char* Preview2__UeScsNode = "173046028f8d86458b84e27851d68ff6";
+        static constexpr const char* Preview1__UeScsNode = "85e1f5778e57794a8c66299f2229345e";
+        static constexpr const char* Spawners__UeScsNode = "e7239e213251cf42acbb8492d9af51d5";
+        static constexpr const char* terrainPlacement__UeScsNode = "3107d757fd56c849909173e93ea5c9e1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "974df6e15d24bc42a53bd12197431b38";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables

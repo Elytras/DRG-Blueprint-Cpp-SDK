@@ -92,14 +92,14 @@ class UMakeReplaceableActorComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "MakeReplaceableActorComponent");
-    TSubclassOf<class AActor> CompatibleReplacement;
+    UE_READONLY TSubclassOf<class AActor> CompatibleReplacement;
 };
 
 class UReplacementActorComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "ReplacementActorComponent");
-    TArray<TSubclassOf<class AActor>> ActorClassesToReplace;
+    UE_READONLY TArray<TSubclassOf<class AActor>> ActorClassesToReplace;
 };
 
 class UUGCBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -118,12 +118,12 @@ class UModioModInfoWrapper : public UObject
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "ModioModInfoWrapper");
-    FString ModName;
-    FString ModURL;
-    FString ModAuthor;
-    FString ModVersion;
-    FString ModDescription;
-    TEnum<EUGCApprovalStatus> Status;
+    UE_READONLY FString ModName;
+    UE_READONLY FString ModURL;
+    UE_READONLY FString ModAuthor;
+    UE_READONLY FString ModVersion;
+    UE_READONLY FString ModDescription;
+    UE_READONLY TEnum<EUGCApprovalStatus> Status;
     UE_PURE int64 GetModIdAsInt();
     UE_PURE FString GetModIdAsString();
     UE_PURE bool IsModIdInvalid();
@@ -133,13 +133,13 @@ class UModioTermsWrapper : public UObject
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "ModioTermsWrapper");
-    FString AgreeButtonText;
-    FString DisagreeButtonText;
-    FString TermsLink;
-    FString TermsText;
-    FString PrivacyLink;
-    FString PrivacyText;
-    FString TermsOfUseText;
+    UE_READONLY FString AgreeButtonText;
+    UE_READONLY FString DisagreeButtonText;
+    UE_READONLY FString TermsLink;
+    UE_READONLY FString TermsText;
+    UE_READONLY FString PrivacyLink;
+    UE_READONLY FString PrivacyText;
+    UE_READONLY FString TermsOfUseText;
     UE_PURE bool isEmpty();
 };
 
@@ -147,7 +147,7 @@ class UUGCLatentActionManager : public UObject
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "UGCLatentActionManager");
-    TMap<int64, class UTexture2DDynamic*> ModioModThumbnails;
+    UE_READONLY TMap<int64, class UTexture2DDynamic*> ModioModThumbnails;
     TMap<int64, class UModioModInfoWrapper*> ModioModMetaDatas;
     UE_PURE class UModioModInfoWrapper* GetCachedModioModMetaData(int64 ModId);
     void RemoveTermsAndConditionLatent();
@@ -157,31 +157,35 @@ class UUGCPackage : public UObject
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "UGCPackage");
-    FString Name_0;
-    static constexpr const char* Name_0__UeName = "Name";
-    FString Version;
-    FString ModURL;
-    FString Categories;
-    bool IsMounted;
+    UE_READONLY FString Name_0;
+    UE_READONLY FString Version;
+    UE_READONLY FString ModURL;
+    UE_READONLY FString Categories;
+    UE_READONLY bool IsMounted;
     bool MountingToBeApplied;
     bool DeprecatedLocation;
-    TArray<int64> Dependencies;
-    FString ModPath;
-    FString PakFileLocation;
-    TArray<FString> PakFileAssets;
-    FString Author;
-    FString AuthorURL;
-    FString Description;
-    TEnum<EUGCApprovalStatus> Status;
-    TEnum<EUGCDownloadVersion> DownloadVersion;
-    bool ShowStatusForAudioCosmetic;
+    UE_READONLY TArray<int64> Dependencies;
+    UE_READONLY FString ModPath;
+    UE_READONLY FString PakFileLocation;
+    UE_READONLY TArray<FString> PakFileAssets;
+    UE_READONLY FString Author;
+    UE_READONLY FString AuthorURL;
+    UE_READONLY FString Description;
+    UE_READONLY TEnum<EUGCApprovalStatus> Status;
+    UE_READONLY TEnum<EUGCDownloadVersion> DownloadVersion;
+    UE_READONLY bool ShowStatusForAudioCosmetic;
     bool DependencyRemoved;
-    bool PackagedForLatestVersion;
+    UE_READONLY bool PackagedForLatestVersion;
     bool OverridePackedForLatestVersion;
     FDateTime LastUpdated;
     UE_PURE int64 GetIdAsInt();
     UE_PURE FString GetIdAsString();
     void ShowModDetails();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Name_0__UeName = "Name";
+    };
 };
 
 class UUGCRegistry : public UObject
@@ -189,9 +193,9 @@ class UUGCRegistry : public UObject
 public:
     UE_CLASS("/Script/SimpleUGC", "UGCRegistry");
     TMulticastInlineDelegate<void(int Count)> OnBlueprintsSpawned;
-    TArray<class UUGCPackage*> UGCPackages;
+    UE_READONLY TArray<class UUGCPackage*> UGCPackages;
     bool PackageChange;
-    TMap<TSubclassOf<class AActor>, TSubclassOf<class AActor>> RegisteredOverrides;
+    UE_READONLY TMap<TSubclassOf<class AActor>, TSubclassOf<class AActor>> RegisteredOverrides;
     TMulticastInlineDelegate<void(bool Sandbox)> OnPackageMounted;
     TArray<class UUGCPackage*> UGCPackagesInstalledDuringJoin;
     TArray<class UUGCPackage*> UGCPackagesUnmountedDuringJoin;
@@ -218,6 +222,12 @@ public:
     UE_PURE bool IsModInstalledByIdOrName(FString ModIdOrName, bool IncludeDeprecatedLocation) const;
     UE_PURE bool IsModInstalledImprecise(FString ModName, bool IncludeDeprecatedLocation) const;
     UE_PURE bool IsModToBeEnabled(int64 ModId) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnBlueprintsSpawned__UeDispatcher = "Assignable";
+        static constexpr const char* OnPackageMounted__UeDispatcher = "Assignable";
+    };
 };
 
 class UUGCSettings : public UObject
@@ -232,7 +242,7 @@ public:
     int slot3Icon;
     TArray<FString> slot4;
     int slot4Icon;
-    int SelectedSlot;
+    UE_READONLY int SelectedSlot;
     TMulticastInlineDelegate<void()> OnSettingsUpdated;
     void CleanupSlots();
     void ClearSlot(int SlotNumber);
@@ -247,20 +257,25 @@ public:
     void SaveToSlot(int SlotNumber);
     void SetIconIndexOfSlot(int SlotNumber, int iconIndex);
     bool WriteToPlainText(FString Filename, FString TextContent, FText& OutError, bool Append);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSettingsUpdated__UeDispatcher = "Assignable";
+    };
 };
 
 class UUGCSubsystem : public UEngineSubsystem
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "UGCSubsystem");
-    bool forceNoMods;
-    bool noInternetAccess;
-    bool noModioUser;
+    UE_READONLY bool forceNoMods;
+    UE_READONLY bool noInternetAccess;
+    UE_READONLY bool noModioUser;
     bool IsJoining;
     TArray<FString> CrashingDisabledMods;
-    bool ModioTermsAndConditionsAccepted;
+    UE_READONLY bool ModioTermsAndConditionsAccepted;
     bool ModioTermsAndConditionsEnabled;
-    bool AuthenticationRequestActive;
+    UE_READONLY bool AuthenticationRequestActive;
     TMulticastInlineDelegate<void(bool Authenticated)> OnModioUserAuthenticated;
     TMulticastInlineDelegate<void(FString ModName, EUGCPackageError ErrorType)> OnErrorInstalling;
     TMap<FString, EUGCPackageError> ModsFailedInstall;
@@ -268,14 +283,14 @@ public:
     TMulticastInlineDelegate<void(FString ModName, FString ModId)> OnModDownloadExtractProgressFinished;
     TMulticastInlineDelegate<void(FString ModName, FString ModId)> OnModUninstallProgressFinished;
     TMulticastInlineDelegate<void(bool Enabled)> OnModManagementStateChanged;
-    bool IsModioModManagementEnabled;
+    UE_READONLY bool IsModioModManagementEnabled;
     TMulticastInlineDelegate<void()> OnLocalUserModsInstalled;
-    bool IsLocalUserModsInstalled;
+    UE_READONLY bool IsLocalUserModsInstalled;
     TMulticastInlineDelegate<void()> OnEscapeMenuOpened;
     TMulticastInlineDelegate<void(EModioRequestType requestType)> OnModioRequestHandled;
-    class UUGCRegistry* UGCRegistry;
-    class UUGCSettings* UGCSettings;
-    class UUGCLatentActionManager* UGCLatentActionManager;
+    UE_READONLY class UUGCRegistry* UGCRegistry;
+    UE_READONLY class UUGCSettings* UGCSettings;
+    UE_READONLY class UUGCLatentActionManager* UGCLatentActionManager;
     TArray<class UUGCPackage*> ModsPendingUninstall;
     TArray<class UUGCPackage*> ModsPendingUpdate;
     TArray<EModioRequestType> ModioRequests;
@@ -327,13 +342,26 @@ public:
     void SetPackagesAsRecentlyInstalled(TArray<class UUGCPackage*> RecentMods);
     UE_PURE bool IsModPendingUninstall(class UUGCPackage* InMod) const;
     static UUGCSubsystem* Get();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnModioUserAuthenticated__UeDispatcher = "Assignable";
+        static constexpr const char* OnErrorInstalling__UeDispatcher = "Assignable";
+        static constexpr const char* OnModDownloadExtractProgress__UeDispatcher = "Assignable";
+        static constexpr const char* OnModDownloadExtractProgressFinished__UeDispatcher = "Assignable";
+        static constexpr const char* OnModUninstallProgressFinished__UeDispatcher = "Assignable";
+        static constexpr const char* OnModManagementStateChanged__UeDispatcher = "Assignable";
+        static constexpr const char* OnLocalUserModsInstalled__UeDispatcher = "Assignable";
+        static constexpr const char* OnEscapeMenuOpened__UeDispatcher = "Assignable Callable";
+        static constexpr const char* OnModioRequestHandled__UeDispatcher = "Assignable";
+    };
 };
 
 class UModioModInfoWrapper_Windows : public UModioModInfoWrapper
 {
 public:
     UE_CLASS("/Script/SimpleUGC", "ModioModInfoWrapper_Windows");
-    FModioModID ModId;
+    UE_READONLY FModioModID ModId;
 };
 
 class UUGCLatentActionManager_Windows : public UUGCLatentActionManager

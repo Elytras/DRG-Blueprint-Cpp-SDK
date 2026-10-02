@@ -21,7 +21,7 @@ class HUD_CroBurstPistol_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CroBurstPistol", "HUD_CroBurstPistol_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CH_Bottom;
     class UImage* CH_FullLeft;
     class UImage* CH_FullRight;

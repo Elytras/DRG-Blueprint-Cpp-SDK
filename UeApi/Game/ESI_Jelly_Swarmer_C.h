@@ -17,9 +17,13 @@ class ESI_Jelly_Swarmer_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/ESI_Jelly_Swarmer", "ESI_Jelly_Swarmer_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "616831ff002cc74b96f0eca7bb45d8da";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "1c0b2f9062856d45b074af4f689d6821";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "616831ff002cc74b96f0eca7bb45d8da";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "1c0b2f9062856d45b074af4f689d6821";
+    };
 };
 
 }}}   // namespace Game::Enemies::Jellyfish

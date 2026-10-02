@@ -39,16 +39,14 @@ public:
     HUD_PlayerPerks_C* HUD_PlayerPerks;
     class UOverlay* NameLine;
     UI_CallingMolly_C* UI_CallingMolly;
-    bool PreviewShowName_Icon;
-    static constexpr const char* PreviewShowName_Icon__UeName = "PreviewShowName&Icon";
-    bool PreviewShowHealth_Shield;
-    static constexpr const char* PreviewShowHealth_Shield__UeName = "PreviewShowHealth&Shield";
+    UE_READONLY bool PreviewShowName_Icon;
+    UE_READONLY bool PreviewShowHealth_Shield;
     class APlayerCharacter* Character;
     class UPlayerHealthComponent* HealthComponent;
     bool WasDead;
     bool UsingItem;
     bool UsingLaserpointer;
-    class UHUDVisibilityGroup* HG_ClassName;
+    UE_READONLY class UHUDVisibilityGroup* HG_ClassName;
     class UHUDVisibilityGroup* HG_HealthShield;
     bool LookingAtSupplyPod;
     void ExecuteUbergraph_HUD_PlayerInfo(int EntryPoint);
@@ -69,6 +67,12 @@ public:
     void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
     void ShowDynamically();
     void SetElementVisibility(bool Name__Class___Icon, bool Health___Shield);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PreviewShowName_Icon__UeName = "PreviewShowName&Icon";
+        static constexpr const char* PreviewShowHealth_Shield__UeName = "PreviewShowHealth&Shield";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

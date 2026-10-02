@@ -23,8 +23,8 @@ class ITM_CampaignItem_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_CampaignItem", "ITM_CampaignItem_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ANIM_PingIcon;
-    class UWidgetAnimation* ANIM_ActiveMission;
+    UE_READONLY class UWidgetAnimation* ANIM_PingIcon;
+    UE_READONLY class UWidgetAnimation* ANIM_ActiveMission;
     class UImage* BackgroundGlow;
     class UImage* ConnectorLine;
     class UImage* InnerBorder;

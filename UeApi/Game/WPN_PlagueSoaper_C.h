@@ -27,26 +27,16 @@ class WPN_PlagueSoaper_C : public APlagueSoaperItem
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/WPN_PlagueSoaper", "WPN_PlagueSoaper_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoscoCarryingDetailComponent* BoscoCarryingDetail;
-    static constexpr const char* BoscoCarryingDetail__UeScsNode = "d69400329046cb44a71b12b3ea760d0e";
     class UNiagaraComponent* Niagara3P;
-    static constexpr const char* Niagara3P__UeScsNode = "fe23668e07f0a74e849bb10718a09b59";
     class UFSDAudioComponent* GroundImpact;
-    static constexpr const char* GroundImpact__UeScsNode = "ecb3c2719d99d046854b41e413d02864";
     class UActorTrackingComponent* ActorTracking;
-    static constexpr const char* ActorTracking__UeScsNode = "65c4231466f2244fa5c1daeb68198ee8";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "52c636859cd9694899ca60571bffab04";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "6644c3ec0c8d6b43887c217f663c9906";
     class UNiagaraComponent* Niagara;
-    static constexpr const char* Niagara__UeScsNode = "9191139c64f47d49aad72ae28d0253b9";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "06a95186faea3a4999795497559716d9";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "f3252fe17784e146ab86fccab4aaf23c";
     bool ObjectiveIsComplete;
     class AActor* hologramRef;
     void ExecuteUbergraph_WPN_PlagueSoaper(int EntryPoint);
@@ -56,6 +46,20 @@ public:
     void BndEvt__DroppedCollider_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* BoscoCarryingDetail__UeScsNode = "d69400329046cb44a71b12b3ea760d0e";
+        static constexpr const char* Niagara3P__UeScsNode = "fe23668e07f0a74e849bb10718a09b59";
+        static constexpr const char* GroundImpact__UeScsNode = "ecb3c2719d99d046854b41e413d02864";
+        static constexpr const char* ActorTracking__UeScsNode = "65c4231466f2244fa5c1daeb68198ee8";
+        static constexpr const char* PointLight__UeScsNode = "52c636859cd9694899ca60571bffab04";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "6644c3ec0c8d6b43887c217f663c9906";
+        static constexpr const char* Niagara__UeScsNode = "9191139c64f47d49aad72ae28d0253b9";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "06a95186faea3a4999795497559716d9";
+        static constexpr const char* outline__UeScsNode = "f3252fe17784e146ab86fccab4aaf23c";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper

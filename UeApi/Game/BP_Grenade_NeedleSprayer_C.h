@@ -21,28 +21,32 @@ class BP_Grenade_NeedleSprayer_C : public ANeedleSprayer
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/BP_Grenade_NeedleSprayer", "BP_Grenade_NeedleSprayer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HitscanComponent HitscanComponent;/Script/FSD.HitscanComponent OnSpawnedEffect;/Script/Niagara.NiagaraComponent ImpactNiagara;/Script/Niagara.NiagaraComponent MuzzleFlashNiagara;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ShotOriginPivot;/Script/Engine.SkeletalMeshComponent Mesh";
     FPointerToUberGraphFrame UberGraphFrame;
     class USpotLightComponent* SpotLightCloseShadowCast;
-    static constexpr const char* SpotLightCloseShadowCast__UeScsNode = "f91e603c949735449090b8815ce262fc";
     class UFSDAudioComponent* GrenadeStart;
-    static constexpr const char* GrenadeStart__UeScsNode = "ed6953e1c500ec459832dbe83ea7cf8c";
     class UFSDAudioComponent* GrenadeStop;
-    static constexpr const char* GrenadeStop__UeScsNode = "181052a7324c024a9dd8e26a266d0a7c";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "0bc8c438fee7b54c8245c500023f8187";
     class UStaticMeshComponent* SM_LightProjection;
-    static constexpr const char* SM_LightProjection__UeScsNode = "ead990cccac5a94389d796a509216171";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "cbec6f09ff03664892c35ad48f2d1f91";
     class UHitscanComponent* HitScan;
-    static constexpr const char* HitScan__UeScsNode = "0fd654c0c447284e95cdd7a5ce51da92";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "ccd2b68c43237b4ebe0e7a9f0a18f32e";
     void ExecuteUbergraph_BP_Grenade_NeedleSprayer(int EntryPoint);
     void ReceiveBeginPlay();
     void ReceiveDestroyed();
     void OnSpinningChanged(bool isSpinning);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HitscanComponent HitscanComponent;/Script/FSD.HitscanComponent OnSpawnedEffect;/Script/Niagara.NiagaraComponent ImpactNiagara;/Script/Niagara.NiagaraComponent MuzzleFlashNiagara;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ShotOriginPivot;/Script/Engine.SkeletalMeshComponent Mesh";
+        static constexpr const char* SpotLightCloseShadowCast__UeScsNode = "f91e603c949735449090b8815ce262fc";
+        static constexpr const char* GrenadeStart__UeScsNode = "ed6953e1c500ec459832dbe83ea7cf8c";
+        static constexpr const char* GrenadeStop__UeScsNode = "181052a7324c024a9dd8e26a266d0a7c";
+        static constexpr const char* SpotLight__UeScsNode = "0bc8c438fee7b54c8245c500023f8187";
+        static constexpr const char* SM_LightProjection__UeScsNode = "ead990cccac5a94389d796a509216171";
+        static constexpr const char* PathfinderCollision__UeScsNode = "cbec6f09ff03664892c35ad48f2d1f91";
+        static constexpr const char* HitScan__UeScsNode = "0fd654c0c447284e95cdd7a5ce51da92";
+        static constexpr const char* Damage__UeScsNode = "ccd2b68c43237b4ebe0e7a9f0a18f32e";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer

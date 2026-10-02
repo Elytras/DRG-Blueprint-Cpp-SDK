@@ -19,27 +19,16 @@ class BP_UnknownArtifact_C : public Game::GameElements::Resources::Embedded::Gem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/UnknownArtifact/BP_UnknownArtifact", "BP_UnknownArtifact_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame_BP_UnknownArtifact_C;
-    static constexpr const char* UberGraphFrame_BP_UnknownArtifact_C__UeName = "UberGraphFrame";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
     class UPointLightComponent* PointLight6;
-    static constexpr const char* PointLight6__UeScsNode = "8a6be903e223f64cae993353797d890c";
     class UPointLightComponent* PointLight5;
-    static constexpr const char* PointLight5__UeScsNode = "965cc5350e998e49ba0d5b75ccf92b67";
     class UPointLightComponent* PointLight4;
-    static constexpr const char* PointLight4__UeScsNode = "bb81983455959848a5a3deecd0b340ff";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "25e11e646d0ace4295f9e55c02cf597b";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "013f6c23243d9749a3b7c75420ffa945";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "279057d33f2d274c86e9c312984e5a81";
     class UPointLightComponent* light_center;
-    static constexpr const char* light_center__UeScsNode = "e4241d3b636bd64f9059fa35082ce0ea";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_26F6B6C743C5284D0A49D79127722B1A";
     TEnum<ETimelineDirection> Timeline_0__Direction_26F6B6C743C5284D0A49D79127722B1A;
     class UTimelineComponent* Timeline_0;
     float LightIntensity;
@@ -49,6 +38,21 @@ public:
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UberGraphFrame_BP_UnknownArtifact_C__UeName = "UberGraphFrame";
+        static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
+        static constexpr const char* PointLight6__UeScsNode = "8a6be903e223f64cae993353797d890c";
+        static constexpr const char* PointLight5__UeScsNode = "965cc5350e998e49ba0d5b75ccf92b67";
+        static constexpr const char* PointLight4__UeScsNode = "bb81983455959848a5a3deecd0b340ff";
+        static constexpr const char* PointLight3__UeScsNode = "25e11e646d0ace4295f9e55c02cf597b";
+        static constexpr const char* PointLight2__UeScsNode = "013f6c23243d9749a3b7c75420ffa945";
+        static constexpr const char* PointLight1__UeScsNode = "279057d33f2d274c86e9c312984e5a81";
+        static constexpr const char* light_center__UeScsNode = "e4241d3b636bd64f9059fa35082ce0ea";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_26F6B6C743C5284D0A49D79127722B1A";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::UnknownArtifact

@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_HeightenedSense_Discharge", "BP_HeightenedSense_Discharge_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "e5b37a1804c77946a917136297d22f94";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4516340d73f4dd4dbd414f8847340295";
     void ExecuteUbergraph_BP_HeightenedSense_Discharge(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ParticleSystem__UeScsNode = "e5b37a1804c77946a917136297d22f94";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4516340d73f4dd4dbd414f8847340295";
+    };
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

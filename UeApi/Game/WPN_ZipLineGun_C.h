@@ -29,25 +29,15 @@ class WPN_ZipLineGun_C : public AZipLineItem
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/WPN_ZipLineGun", "WPN_ZipLineGun_C");
     using HUD_Crosshair_ZiplineGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_ZiplineGun_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "32c867e8084cb34dba8e403ed30d0d46";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "3f9901feb427bf41a789a906fcb28e5d";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "e274e15b2bbf4a49a9a0992a1b006e36";
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "53abe83a83e61748932119551fd0d8b4";
     class UPointLightComponent* Muzzle_Light;
-    static constexpr const char* Muzzle_Light__UeName = "Muzzle Light";
-    static constexpr const char* Muzzle_Light__UeScsNode = "8dabeb00880fe04e8bf6d93fb93c2441";
     class UZiplineLauncherComponent* ZiplineLauncher;
-    static constexpr const char* ZiplineLauncher__UeScsNode = "9edcfa8e9efcdf4c98c8ff20422b1fde";
     class USceneComponent* Beam;
-    static constexpr const char* Beam__UeScsNode = "3485e574adb8a74ea8c5578a0c4c16bd";
     class UCrosshairAggregator* CrosshairAggregator;
-    static constexpr const char* CrosshairAggregator__UeScsNode = "8a3830aa4631474c8d6a556201e387f1";
     float debug_t;
     HUD_Crosshair_ZiplineGun_C* Crosshair;
     float BeamDelay;
@@ -67,16 +57,30 @@ public:
     void LineTrace(FHitResult& OutHit, FVector& Direction, float& Distance, bool& HitAny);
     UE_PURE FVector GetStartLocation();
     void Can_Fire(FText& FailMsg, class UDialogDataAsset*& FailShout, bool& CanShoot);
-    static constexpr const char* Can_Fire__UeName = "Can Fire";
     void Between(float Value, float Min, float Max, bool& IsBetween);
     void Negate(float Value, float& Result);
     void Update_Line_Of_Sight(FVector Direction, FVector End, bool DidHit);
-    static constexpr const char* Update_Line_Of_Sight__UeName = "Update Line Of Sight";
     void GetCrosshair(HUD_Crosshair_ZiplineGun_C*& Result);
     bool CanFireWeapon(FText& FailMsg, class UDialogDataAsset*& FailShout);
     UE_PURE FVector CalcFirstPersonMuzzleLocation();
     void GetGrounded(bool& OutGrounded);
     void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* PointLight__UeScsNode = "32c867e8084cb34dba8e403ed30d0d46";
+        static constexpr const char* SpotLight__UeScsNode = "3f9901feb427bf41a789a906fcb28e5d";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "e274e15b2bbf4a49a9a0992a1b006e36";
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "53abe83a83e61748932119551fd0d8b4";
+        static constexpr const char* Muzzle_Light__UeName = "Muzzle Light";
+        static constexpr const char* Muzzle_Light__UeScsNode = "8dabeb00880fe04e8bf6d93fb93c2441";
+        static constexpr const char* ZiplineLauncher__UeScsNode = "9edcfa8e9efcdf4c98c8ff20422b1fde";
+        static constexpr const char* Beam__UeScsNode = "3485e574adb8a74ea8c5578a0c4c16bd";
+        static constexpr const char* CrosshairAggregator__UeScsNode = "8a3830aa4631474c8d6a556201e387f1";
+        static constexpr const char* Can_Fire__UeName = "Can Fire";
+        static constexpr const char* Update_Line_Of_Sight__UeName = "Update Line Of Sight";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun

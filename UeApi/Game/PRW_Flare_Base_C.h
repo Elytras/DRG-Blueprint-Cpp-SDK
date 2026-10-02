@@ -17,9 +17,13 @@ class PRW_Flare_Base_C : public AActor
 public:
     UE_CLASS("/Game/WeaponsNTools/Flares/PRW_Flare_Base", "PRW_Flare_Base_C");
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "5407ba5473442b4d9d7f3226e94ef3bc";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "54cce6a8844ecb449afe588e18523175";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* StaticMesh__UeScsNode = "5407ba5473442b4d9d7f3226e94ef3bc";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "54cce6a8844ecb449afe588e18523175";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Flares

@@ -31,11 +31,15 @@ public:
     void OnCheckedChanged(Check_ServerWorkEnvironment_C* CheckBox, class UDifficultySetting* Difficulty, bool IsChecked);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Add_Work_Environment(class UDifficultySetting* Difficulty, Check_ServerWorkEnvironment_C*& OutWidget, bool& OutIsChecked);
-    static constexpr const char* Add_Work_Environment__UeName = "Add Work Environment";
     void UpdateSubheader();
     void IsDifficultySelected(class UDifficultySetting* InDifficulty, bool& Selected);
     void GetSelectedDifficulties(TArray<class UDifficultySetting*>& Difficulties);
     void OpenMenu(bool Open);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Add_Work_Environment__UeName = "Add Work Environment";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

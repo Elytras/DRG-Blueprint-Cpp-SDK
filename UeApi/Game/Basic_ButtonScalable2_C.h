@@ -27,9 +27,9 @@ class Basic_ButtonScalable2_C : public UFSDAdvancedLabel
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_ButtonScalable2", "Basic_ButtonScalable2_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Anim_Btn_Click;
-    class UWidgetAnimation* Anim_Unhover;
-    class UWidgetAnimation* Anim_Hover;
+    UE_READONLY class UWidgetAnimation* Anim_Btn_Click;
+    UE_READONLY class UWidgetAnimation* Anim_Unhover;
+    UE_READONLY class UWidgetAnimation* Anim_Hover;
     class USizeBox* Bar_Left_Sizer;
     class USizeBox* Bar_Right_Sizer;
     class UBorder* BaseLeft;
@@ -45,19 +45,12 @@ public:
     class USpacer* Spacer_1;
     class UHorizontalBox* CurrentLine;
     bool Thick_Bars;
-    static constexpr const char* Thick_Bars__UeName = "Thick Bars";
     float Width__minimum_;
-    static constexpr const char* Width__minimum___UeName = "Width (minimum)";
     float Height__minimum_;
-    static constexpr const char* Height__minimum___UeName = "Height (minimum)";
     int Icon_Size;
-    static constexpr const char* Icon_Size__UeName = "Icon Size";
     int Icon_Size___Controller_Override;
-    static constexpr const char* Icon_Size___Controller_Override__UeName = "Icon Size - Controller Override";
     FLinearColor Tint___PC_Icon;
-    static constexpr const char* Tint___PC_Icon__UeName = "Tint - PC Icon";
     FLinearColor Tint___Controller_Icon;
-    static constexpr const char* Tint___Controller_Icon__UeName = "Tint - Controller Icon";
     FSlateFontInfo Font;
     TMulticastInlineDelegate<void()> OnClicked;
     FSlateBrush LeftIconBrush;
@@ -65,7 +58,6 @@ public:
     FSlateBrush RightIconBrush;
     FMargin RightIconPadding;
     FLinearColor Font_Color;
-    static constexpr const char* Font_Color__UeName = "Font Color";
     float Width2;
     float Width4;
     bool ToggledOn;
@@ -90,6 +82,18 @@ public:
     void SetIconBrush(class UImage*& Icon, FSlateBrush InBrush, FMargin InPadding);
     void SetCountDown(int SecondsRemaining, int MinimumIntegralDigits);
     void HideCountDown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Thick_Bars__UeName = "Thick Bars";
+        static constexpr const char* Width__minimum___UeName = "Width (minimum)";
+        static constexpr const char* Height__minimum___UeName = "Height (minimum)";
+        static constexpr const char* Icon_Size__UeName = "Icon Size";
+        static constexpr const char* Icon_Size___Controller_Override__UeName = "Icon Size - Controller Override";
+        static constexpr const char* Tint___PC_Icon__UeName = "Tint - PC Icon";
+        static constexpr const char* Tint___Controller_Icon__UeName = "Tint - Controller Icon";
+        static constexpr const char* Font_Color__UeName = "Font Color";
+    };
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

@@ -23,7 +23,6 @@ public:
     using Lore_Container_Text_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_C;
     using Lore_Container_WindowTextAndIcon_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Combat_Armor_C;
-    static constexpr const char* UberGraphFrame_LoreScreen_Combat_Armor_C__UeName = "UberGraphFrame";
     class UImage* Image_HeavyArmor;
     class UImage* Image_LightArmor;
     class UImage* Image_UnbreakableArmor;
@@ -36,6 +35,11 @@ public:
     void ExecuteUbergraph_LoreScreen_Combat_Armor(int EntryPoint);
     void RefreshContent();
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_LoreScreen_Combat_Armor_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Combat

@@ -31,7 +31,7 @@ public:
     using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* ShowObjectives;
+    UE_READONLY class UWidgetAnimation* ShowObjectives;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UHorizontalBox* DeepDiveBox;
     Basic_Label_C* DeepDiveElite;
@@ -54,13 +54,17 @@ public:
     void SetVisible(bool InVisible, bool animate);
     void OnGameEventCompletedEvent(FText GameEventName);
     void Setup_Deep_Dive_Label();
-    static constexpr const char* Setup_Deep_Dive_Label__UeName = "Setup Deep Dive Label";
     void ShowDynamically();
     void OnLaserPointerReleased();
     void OnLaserPointerPressed();
     void OnObjectiveAdded(class UObjective* Objective);
     UE_COSMETIC void Construct();
     void CreateObjectiveWidget(class UObjective* Objective);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Setup_Deep_Dive_Label__UeName = "Setup Deep Dive Label";
+    };
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Objectives

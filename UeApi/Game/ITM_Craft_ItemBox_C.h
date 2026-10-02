@@ -31,8 +31,8 @@ public:
     using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
     using UI_VanityEventSource_C = Game::UI::Menu_Crafting::UI_VanityEventSource_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
     class UImage* Arrow;
     class UBorder* BG;
     class UBorder* Border_0;

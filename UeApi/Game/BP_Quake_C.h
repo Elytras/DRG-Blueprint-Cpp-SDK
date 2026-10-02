@@ -18,11 +18,15 @@ public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/MagmaCaves/BP_Quake", "BP_Quake_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* EarthQuakeSound;
-    static constexpr const char* EarthQuakeSound__UeScsNode = "35ae314cfab9b443962598781be19b6c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "eebe24b55258d2499fb4f5a492f921a1";
     void ExecuteUbergraph_BP_Quake(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* EarthQuakeSound__UeScsNode = "35ae314cfab9b443962598781be19b6c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "eebe24b55258d2499fb4f5a492f921a1";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves

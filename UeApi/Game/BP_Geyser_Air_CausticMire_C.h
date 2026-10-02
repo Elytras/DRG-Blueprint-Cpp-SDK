@@ -17,9 +17,13 @@ class BP_Geyser_Air_CausticMire_C : public Game::LevelElements::RoomObjects::Haz
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/AirGeyser/BP_Geyser_Air_CausticMire", "BP_Geyser_Air_CausticMire_C");
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "724a9be72977324c8e833fb2077a97df";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "b57be6ccc973074f861b811f4e34f9bb";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "724a9be72977324c8e833fb2077a97df";
+        static constexpr const char* SpotLight__UeScsNode = "b57be6ccc973074f861b811f4e34f9bb";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::AirGeyser

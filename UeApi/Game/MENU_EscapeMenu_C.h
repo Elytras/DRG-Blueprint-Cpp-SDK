@@ -99,7 +99,6 @@ public:
     bool ApplySettingsOnClose;
     FBlueprintSessionResult RejoinSearchResult;
     TEnum<ESlateVisibility> GSG_Logo_Visibility;
-    static constexpr const char* GSG_Logo_Visibility__UeName = "GSG Logo Visibility";
     _MENU_MinersManual_C* Menu_MinersManual;
     TArray<Header_ButtonCutCorner_C*> Buttons;
     TArray<class UWindowWidget*> Sections;
@@ -166,11 +165,16 @@ public:
     void OnMinersManualOpen(class UObject* IdentifyingObject, bool Open_Specific_Page, TEnum<EMinersManualSinglePage> page);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void Should_Modding_Menu_Be_Enabled(bool& Result);
-    static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
     void Remove_Button_If_Condition(Header_ButtonCutCorner_C* InButton, bool InCondition);
-    static constexpr const char* Remove_Button_If_Condition__UeName = "Remove Button If Condition";
     void Remove_Buttons_If_Condition(TArray<Header_ButtonCutCorner_C*>& InButtons, bool InCondition);
-    static constexpr const char* Remove_Buttons_If_Condition__UeName = "Remove Buttons If Condition";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* GSG_Logo_Visibility__UeName = "GSG Logo Visibility";
+        static constexpr const char* Should_Modding_Menu_Be_Enabled__UeName = "Should Modding Menu Be Enabled";
+        static constexpr const char* Remove_Button_If_Condition__UeName = "Remove Button If Condition";
+        static constexpr const char* Remove_Buttons_If_Condition__UeName = "Remove Buttons If Condition";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

@@ -25,10 +25,14 @@ public:
     TArray<Cheat_SetDifficultyRow_C*> myListItems;
     void ExecuteUbergraph_Cheat_SetDifficulty(int EntryPoint);
     void On_Change_diff();
-    static constexpr const char* On_Change_diff__UeName = "On Change diff";
     void Build_Difficulty_List();
-    static constexpr const char* Build_Difficulty_List__UeName = "Build Difficulty List";
     UE_COSMETIC void Construct();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_Change_diff__UeName = "On Change diff";
+        static constexpr const char* Build_Difficulty_List__UeName = "Build Difficulty List";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

@@ -20,21 +20,25 @@ class PRJ_Mortar_Autocannon_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/PRJ_Mortar_Autocannon", "PRJ_Mortar_Autocannon_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "c2746a0ad65a9b4db717765d87cc866f";
     class UProjectileExplosion* ProjectileExplosion;
-    static constexpr const char* ProjectileExplosion__UeScsNode = "1fb95bbecf4f9d459b01b5d2b4f3ad1d";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "864ec3671b937748ad2c8ffdb020fa37";
     class UParticleSystemComponent* P_GrenadeTrail;
-    static constexpr const char* P_GrenadeTrail__UeScsNode = "5dcebd0fcb90ce41b00298686e4cc341";
     class UStaticMeshComponent* mesh_front;
-    static constexpr const char* mesh_front__UeScsNode = "9f90a2f6e5d66a4ab4def462bf7b3f9b";
     void ExecuteUbergraph_PRJ_Mortar_Autocannon(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     class UDamageComponent* GetDamageComponent();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* PointLight__UeScsNode = "c2746a0ad65a9b4db717765d87cc866f";
+        static constexpr const char* ProjectileExplosion__UeScsNode = "1fb95bbecf4f9d459b01b5d2b4f3ad1d";
+        static constexpr const char* Damage__UeScsNode = "864ec3671b937748ad2c8ffdb020fa37";
+        static constexpr const char* P_GrenadeTrail__UeScsNode = "5dcebd0fcb90ce41b00298686e4cc341";
+        static constexpr const char* mesh_front__UeScsNode = "9f90a2f6e5d66a4ab4def462bf7b3f9b";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Autocannon

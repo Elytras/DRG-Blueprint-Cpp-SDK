@@ -23,11 +23,8 @@ public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_ProgressBar", "BP_Refinery_ProgressBar_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "9a4cedbf70cf344aa362d64a53a462a3";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "a13f44da303e594caf44f8de24667227";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9e0e844a2c13a34fb8308ca9fe7265e2";
     class UMaterialInstanceDynamic* ProgressMaterial;
     float Progress;
     class AFSDRefinery* Refinery;
@@ -40,6 +37,13 @@ public:
     void UserConstructionScript();
     void SetProgress(float InProgress01);
     void SetColors(FLinearColor InStartColor, FLinearColor InEndColor, FLinearColor InBackgroundColor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Capsule__UeScsNode = "9a4cedbf70cf344aa362d64a53a462a3";
+        static constexpr const char* StaticMesh__UeScsNode = "a13f44da303e594caf44f8de24667227";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9e0e844a2c13a34fb8308ca9fe7265e2";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

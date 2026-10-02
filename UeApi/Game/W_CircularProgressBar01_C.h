@@ -22,9 +22,7 @@ public:
     class UTexture* Texture;
     float Percent;
     float Start_Angle;
-    static constexpr const char* Start_Angle__UeName = "Start Angle";
     float Complete_Range;
-    static constexpr const char* Complete_Range__UeName = "Complete Range";
     float RingRadius;
     float RingThickness;
     bool Clockwise;
@@ -41,6 +39,12 @@ public:
     void GetPercent(float& Percent_0);
     void IncPercent(float Value, float& Percent_0);
     void SetTintOpacity(float TintOpacity_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Start_Angle__UeName = "Start Angle";
+        static constexpr const char* Complete_Range__UeName = "Complete Range";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall

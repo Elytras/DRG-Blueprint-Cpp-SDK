@@ -20,13 +20,9 @@ class BP_MiniNuke_RadiationCloud_C : public Game::Enemies::BaseItems::BP_Damage_
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/BP_MiniNuke_RadiationCloud", "BP_MiniNuke_RadiationCloud_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_MiniNuke_RadiationCloud_C;
-    static constexpr const char* UberGraphFrame_BP_MiniNuke_RadiationCloud_C__UeName = "UberGraphFrame";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "79b44975c8c10c47abe845a7f928de61";
     class UAudioComponent* RadiationSound;
-    static constexpr const char* RadiationSound__UeScsNode = "8131efd2702ff44383f8276e18a6d595";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "f7e730c8c23e914c81303660915f3cab";
     float Timeline_0_Brightness_3A67B370490B2F862C2D6E9E451100CB;
     TEnum<ETimelineDirection> Timeline_0__Direction_3A67B370490B2F862C2D6E9E451100CB;
     class UTimelineComponent* Timeline_0;
@@ -35,6 +31,14 @@ public:
     void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_MiniNuke_RadiationCloud_C__UeName = "UberGraphFrame";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "79b44975c8c10c47abe845a7f928de61";
+        static constexpr const char* RadiationSound__UeScsNode = "8131efd2702ff44383f8276e18a6d595";
+        static constexpr const char* PointLight__UeScsNode = "f7e730c8c23e914c81303660915f3cab";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher

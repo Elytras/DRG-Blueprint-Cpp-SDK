@@ -25,7 +25,7 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimFadeIn;
+    UE_READONLY class UWidgetAnimation* AnimFadeIn;
     Basic_ButtonScalable2_C* Basic_ButtonScalable2;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     BlurBackground_C* BlurBackground;

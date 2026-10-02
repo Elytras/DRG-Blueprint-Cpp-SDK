@@ -19,13 +19,17 @@ public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/MAG_BurstPistol", "MAG_BurstPistol_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
-    static constexpr const char* FirstPersonStaticMesh__UeScsNode = "4c8d03fda9ad5144a4c0d152f2e9405e";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "e8c4e9c1b331c14e9ba813f9ac033a50";
     void ExecuteUbergraph_MAG_BurstPistol(int EntryPoint);
     void DoRelease();
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FirstPersonStaticMesh__UeScsNode = "4c8d03fda9ad5144a4c0d152f2e9405e";
+        static constexpr const char* Box__UeScsNode = "e8c4e9c1b331c14e9ba813f9ac033a50";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol

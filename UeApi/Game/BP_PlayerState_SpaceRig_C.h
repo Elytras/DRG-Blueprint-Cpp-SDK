@@ -18,13 +18,9 @@ class BP_PlayerState_SpaceRig_C : public Game::Game::BP_PlayerState_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_PlayerState_SpaceRig", "BP_PlayerState_SpaceRig_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerState_SpaceRig_C;
-    static constexpr const char* UberGraphFrame_BP_PlayerState_SpaceRig_C__UeName = "UberGraphFrame";
     class UItemUpgradePreviewComponent* ItemUpgradePreview;
-    static constexpr const char* ItemUpgradePreview__UeScsNode = "f9f0ccc319760247b86725566f668295";
     int HealthInsuranceStatus;
-    static constexpr const char* HealthInsuranceStatus__Replicated = ":";
     TMulticastInlineDelegate<void(class UMissionStat* MissionStat, FText StatValue)> OnStatChange;
     void ExecuteUbergraph_BP_PlayerState_SpaceRig(int EntryPoint);
     UE_SERVER UE_RELIABLE void Server_UpdateStat(class UMissionStat* Mission_Stat, float Stat_Value);
@@ -40,6 +36,14 @@ public:
     void UpdateMissionStat(class UMissionStat* MissionStat, float Value);
     void SendMissionStatData(class UMissionStat* MissionStat, float Value);
     void GetMissionStatValue(class UMissionStat* MissionStat, FText& StatValue, bool& Valid);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlayerRejoinState RejoinState;/Script/FSD.PlayerStatsComponent PlayerStatsComponent;/Script/FSD.SaveGameStateComponent SaveGameStateComponent";
+        static constexpr const char* UberGraphFrame_BP_PlayerState_SpaceRig_C__UeName = "UberGraphFrame";
+        static constexpr const char* ItemUpgradePreview__UeScsNode = "f9f0ccc319760247b86725566f668295";
+        static constexpr const char* HealthInsuranceStatus__Replicated = ":";
+    };
 };
 
 }}}   // namespace Game::Game::SpaceRig

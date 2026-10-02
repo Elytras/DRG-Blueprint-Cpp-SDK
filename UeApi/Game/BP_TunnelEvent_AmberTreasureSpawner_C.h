@@ -30,23 +30,15 @@ public:
     using BP_TunnelGem_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelGem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* BaseRoot;
-    static constexpr const char* BaseRoot__UeScsNode = "280516d43306a14c998717c9686b0fab";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "a7563b980d31b147b281e328cd821c71";
     class UStaticMeshComponent* GemPreview;
-    static constexpr const char* GemPreview__UeScsNode = "81cf41d14cce8f46a97f27f4e8408812";
     class USphereComponent* AlertEnemiesBounds;
-    static constexpr const char* AlertEnemiesBounds__UeScsNode = "7416ed7b5bd19c4ab87713c5d53baf0d";
     class UPathfinderCollisionComponent* PathfinderWalkable;
-    static constexpr const char* PathfinderWalkable__UeScsNode = "4c470e23e169a54e8dab99ad4b0090d1";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "66ea70a380d19344b4a34b0e4321372b";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "1dcee69380abfa41b4e258efb0ad07ca";
     BP_TunnelGem_C* Gem;
     TArray<TSoftObjectPtr<class UStaticMesh>> MeshTypes;
     int SelectedMeshIdx;
-    static constexpr const char* SelectedMeshIdx__Replicated = "OnRep_SelectedMeshIdx:";
     FTransform BaseTransformCoefficient;
     TArray<FOssiumCrystalBaseData> BaseModels;
     FOssiumCrystalBaseData SelectedBaseModels;
@@ -57,7 +49,6 @@ public:
     void ExecuteUbergraph_BP_TunnelEvent_AmberTreasureSpawner(int EntryPoint);
     void OnLoadedDependencies();
     UE_MULTICAST void Multi_Play_Released_Sound();
-    static constexpr const char* Multi_Play_Released_Sound__UeName = "Multi_Play Released Sound";
     void ReceiveBeginPlay();
     void OnGemReleased();
     void SelectRandomMesh();
@@ -65,6 +56,19 @@ public:
     void SpawnGem();
     void ConstructAssetDependencyArray(TArray<TSoftObjectPtr<class UObject>>& Array);
     UE_PURE FTransform GetGemBaseTransform();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BaseRoot__UeScsNode = "280516d43306a14c998717c9686b0fab";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "a7563b980d31b147b281e328cd821c71";
+        static constexpr const char* GemPreview__UeScsNode = "81cf41d14cce8f46a97f27f4e8408812";
+        static constexpr const char* AlertEnemiesBounds__UeScsNode = "7416ed7b5bd19c4ab87713c5d53baf0d";
+        static constexpr const char* PathfinderWalkable__UeScsNode = "4c470e23e169a54e8dab99ad4b0090d1";
+        static constexpr const char* SimpleHealth__UeScsNode = "66ea70a380d19344b4a34b0e4321372b";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "1dcee69380abfa41b4e258efb0ad07ca";
+        static constexpr const char* SelectedMeshIdx__Replicated = "OnRep_SelectedMeshIdx:";
+        static constexpr const char* Multi_Play_Released_Sound__UeName = "Multi_Play Released Sound";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent

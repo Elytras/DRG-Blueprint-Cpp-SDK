@@ -13,7 +13,11 @@ class BP_HydraWeedCoreFragment_03_C : public Game::GameElements::Resources::Embe
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_HydraWeedCoreFragment_03", "BP_HydraWeedCoreFragment_03_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems

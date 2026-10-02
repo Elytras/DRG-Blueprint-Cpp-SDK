@@ -13,7 +13,11 @@ class WPN_DetPack_Detonator_Driller_C : public Game::WeaponsNTools::DetPack::WPN
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/WPN_DetPack_Detonator_Driller", "WPN_DetPack_Detonator_Driller_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent DetonatorFPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent DetonatorTPMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent DetonatorFPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent DetonatorTPMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::DetPack

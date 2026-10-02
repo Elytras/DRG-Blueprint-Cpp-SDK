@@ -18,16 +18,20 @@ public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialShieldGenerator", "W_TutorialShieldGenerator_C");
     using WPN_ShieldRegeneratorItem_C = Game::WeaponsNTools::ShieldGenerator::WPN_ShieldRegeneratorItem_C;
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialShieldGenerator_C;
-    static constexpr const char* UberGraphFrame_W_TutorialShieldGenerator_C__UeName = "UberGraphFrame";
     float Gold_Mined;
-    static constexpr const char* Gold_Mined__UeName = "Gold Mined";
     float GoldToMine;
     WPN_ShieldRegeneratorItem_C* ShieldItem;
     void ExecuteUbergraph_W_TutorialShieldGenerator(int EntryPoint);
     void Shield_Used(int amount);
-    static constexpr const char* Shield_Used__UeName = "Shield Used";
     void UpdateTaskText();
     void OnShown();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_W_TutorialShieldGenerator_C__UeName = "UberGraphFrame";
+        static constexpr const char* Gold_Mined__UeName = "Gold Mined";
+        static constexpr const char* Shield_Used__UeName = "Shield Used";
+    };
 };
 
 }}}   // namespace Game::UI::Tutorial

@@ -20,16 +20,20 @@ class BP_BarGlass_Standard_C : public Game::GameElements::Bar::BP_BarGlass_C
 public:
     UE_CLASS("/Game/GameElements/Bar/BP_BarGlass_Standard", "BP_BarGlass_Standard_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_BarGlass_Standard_C;
-    static constexpr const char* UberGraphFrame_BP_BarGlass_Standard_C__UeName = "UberGraphFrame";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "e92a61943c1d7a4d849ebefb7233a42f";
     class UAudioComponent* SparkleDrink;
-    static constexpr const char* SparkleDrink__UeScsNode = "8176f32aa6ab6941b257f42dfea13b9b";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "5573dd5f1749fa42a8c3de83fc268fcf";
     void ExecuteUbergraph_BP_BarGlass_Standard(int EntryPoint);
     void BndEvt__ParticleSystem_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset);
     void Fill();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_BarGlass_Standard_C__UeName = "UberGraphFrame";
+        static constexpr const char* ParticleSystem__UeScsNode = "e92a61943c1d7a4d849ebefb7233a42f";
+        static constexpr const char* SparkleDrink__UeScsNode = "8176f32aa6ab6941b257f42dfea13b9b";
+        static constexpr const char* SkeletalMesh__UeScsNode = "5573dd5f1749fa42a8c3de83fc268fcf";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar

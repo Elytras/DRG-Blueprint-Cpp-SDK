@@ -39,8 +39,12 @@ public:
     void BndEvt__Basic_ButtonScalable_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void OnShown();
     void Close_Window();
-    static constexpr const char* Close_Window__UeName = "Close Window";
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Close_Window__UeName = "Close Window";
+    };
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

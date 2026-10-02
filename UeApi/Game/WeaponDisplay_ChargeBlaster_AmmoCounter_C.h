@@ -21,8 +21,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/WeaponDisplay_ChargeBlaster_AmmoCounter", "WeaponDisplay_ChargeBlaster_AmmoCounter_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_ChargeBlaster_AmmoCounter_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_ChargeBlaster_AmmoCounter_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* AmmoCritical;
+    UE_READONLY class UWidgetAnimation* AmmoCritical;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UTextBlock* DATA_AmmoCount;
     class UImage* Image_0;
@@ -32,12 +31,17 @@ public:
     void ExecuteUbergraph_WeaponDisplay_ChargeBlaster_AmmoCounter(int EntryPoint);
     void SetClipCount(int Value);
     void Total_Ammo_left_changed(int amount);
-    static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
     void Max_Ammo_Changed(int amount);
-    static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
     UE_COSMETIC void Construct();
     void SetTotalCount(int Value);
     void UpdateAmount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_ChargeBlaster_AmmoCounter_C__UeName = "UberGraphFrame";
+        static constexpr const char* Total_Ammo_left_changed__UeName = "Total Ammo left changed";
+        static constexpr const char* Max_Ammo_Changed__UeName = "Max Ammo Changed";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster

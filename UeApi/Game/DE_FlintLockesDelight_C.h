@@ -24,22 +24,26 @@ public:
     float NextJump;
     FVector ImpulseStrength;
     class UParticleSystemComponent* SmokeParticles;
-    static constexpr const char* SmokeParticles__Replicated = ":";
     class UAudioComponent* Fuse_Sound;
-    static constexpr const char* Fuse_Sound__UeName = "Fuse Sound";
     class UParticleSystemComponent* ExplosionParticles;
-    static constexpr const char* ExplosionParticles__Replicated = ":";
     class UAudioComponent* ExplosionSound;
     void ExecuteUbergraph_DE_FlintLockesDelight(int EntryPoint);
     UE_MULTICAST void Stop_Effects();
-    static constexpr const char* Stop_Effects__UeName = "Stop Effects";
     void OnStopEffect();
     UE_MULTICAST void Trigger_Explosion();
-    static constexpr const char* Trigger_Explosion__UeName = "Trigger Explosion";
     void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void OnRep_Trigger_Explosion();
-    static constexpr const char* OnRep_Trigger_Explosion__UeName = "OnRep_Trigger Explosion";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SmokeParticles__Replicated = ":";
+        static constexpr const char* Fuse_Sound__UeName = "Fuse Sound";
+        static constexpr const char* ExplosionParticles__Replicated = ":";
+        static constexpr const char* Stop_Effects__UeName = "Stop Effects";
+        static constexpr const char* Trigger_Explosion__UeName = "Trigger Explosion";
+        static constexpr const char* OnRep_Trigger_Explosion__UeName = "OnRep_Trigger Explosion";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

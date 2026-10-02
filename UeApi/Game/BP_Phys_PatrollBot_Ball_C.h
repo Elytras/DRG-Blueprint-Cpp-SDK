@@ -26,31 +26,35 @@ public:
     UE_CLASS("/Game/Game/SpaceRig/S01_SetDressing/BP_Phys_PatrollBot_Ball", "BP_Phys_PatrollBot_Ball_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "752f26446a4b4940baa3892f5c296040";
     class UStaticMeshComponent* SM_PatrollBotParts_Ball;
-    static constexpr const char* SM_PatrollBotParts_Ball__UeScsNode = "a23d7c4012fac640a3f520fcadd25886";
     class USphereComponent* Collision;
-    static constexpr const char* Collision__UeScsNode = "6bc39606b3db094a9f1f4024d8ed9257";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     bool CanTriggerSound;
     FVector KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     bool KickedIntoHoop;
     class UFSDAchievement* BarrelRiderAchievement;
     void ExecuteUbergraph_BP_Phys_PatrollBot_Ball(int EntryPoint);
     void BndEvt__BP_Phys_PatrollBot_Ball_SM_PatrollBotParts_Ball_K2Node_ComponentBoundEvent_2_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void Spawn_Bronzehead_Effects();
-    static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
     UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void DestroyOvertime();
     UE_MULTICAST void destroy();
     void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_KickSoundLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "752f26446a4b4940baa3892f5c296040";
+        static constexpr const char* SM_PatrollBotParts_Ball__UeScsNode = "a23d7c4012fac640a3f520fcadd25886";
+        static constexpr const char* Collision__UeScsNode = "6bc39606b3db094a9f1f4024d8ed9257";
+        static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+        static constexpr const char* Spawn_Bronzehead_Effects__UeName = "Spawn Bronzehead Effects";
+    };
 };
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing

@@ -15,10 +15,14 @@ class EWC_Excavation_LaunchPhase_C : public Game::Enemies::Waves::WaveController
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Excavation_LaunchPhase", "EWC_Excavation_LaunchPhase_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Excavation_LaunchPhase_C;
-    static constexpr const char* UberGraphFrame_EWC_Excavation_LaunchPhase_C__UeName = "UberGraphFrame";
     TArray<FVector> SpawnLocations;
     void ExecuteUbergraph_EWC_Excavation_LaunchPhase(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Excavation_LaunchPhase_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

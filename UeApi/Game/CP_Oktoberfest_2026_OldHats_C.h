@@ -13,6 +13,11 @@ class CP_Oktoberfest_2026_OldHats_C : public UCampaign
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/CP_Oktoberfest_2026_OldHats", "CP_Oktoberfest_2026_OldHats_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CamapaignCompletedRequirement CamapaignCompletedRequirement_0;/Script/FSD.CampaignMission CampaignMission_0;/Script/FSD.CampaignMission CampaignMission_1;/Script/FSD.CampaignMission CampaignMission_2;/Script/FSD.CampaignMission CampaignMission_4;/Script/FSD.CampaignMission CampaignMission_5;/Script/FSD.ResourceReward CampaignMission_0:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_1:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_2:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_4:ResourceReward_0;/Script/FSD.ResourceReward CampaignMission_5:ResourceReward_0;/Script/FSD.VanityReward CampaignMission_0:VanityReward_0;/Script/FSD.VanityReward CampaignMission_1:VanityReward_0;/Script/FSD.VanityReward CampaignMission_2:VanityReward_0;/Script/FSD.VanityReward CampaignMission_4:VanityReward_0;/Script/FSD.VanityReward CampaignMission_5:VanityReward_1;/Script/FSD.VanityReward CampaignMission_5:VanityReward_2";
+    };
 };
 
 }}}   // namespace Game::GameElements::Campaign

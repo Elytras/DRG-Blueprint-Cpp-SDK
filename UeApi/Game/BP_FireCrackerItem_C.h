@@ -18,14 +18,18 @@ class BP_FireCrackerItem_C : public AHolidayThrowableItem
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_LunarFestival/Blueprints/BP_FireCrackerItem", "BP_FireCrackerItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Throwlocation;
-    static constexpr const char* Throwlocation__UeScsNode = "8942c7244be5ed4ab52d93ab76e53f31";
     void ExecuteUbergraph_BP_FireCrackerItem(int EntryPoint);
     void OnReceiveEquippedFinished();
     void RemovedFromInventory(class ACharacter* oldCharacter);
     void ReceiveItemThrown(class AThrowableActor* thrownActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Throwlocation__UeScsNode = "8942c7244be5ed4ab52d93ab76e53f31";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints

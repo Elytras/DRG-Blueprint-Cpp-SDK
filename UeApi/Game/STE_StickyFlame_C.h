@@ -13,6 +13,11 @@ class STE_StickyFlame_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlameThrower/STE_StickyFlame", "STE_StickyFlame_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.HeatSourceStatusEffectItem HeatSourceStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower

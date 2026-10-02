@@ -19,7 +19,6 @@ class AIC_TerminatorTentacle_C : public AFSDAIController
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/AIC_TerminatorTentacle", "AIC_TerminatorTentacle_C");
     using ENE_TerminatorTentacle_C = Game::Enemies::RivalTech::Terminator::ENE_TerminatorTentacle_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_TerminatorTentacle_C* Tentacle;
     class UBehaviorTree* Behavior;
@@ -28,6 +27,11 @@ public:
     void SetPaused(bool IsPaused);
     void ReceivePossess(class APawn* PossessedPawn);
     void Recieve_BlackboardValueChanged(const FName& KeyName);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator

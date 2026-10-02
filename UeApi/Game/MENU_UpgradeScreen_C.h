@@ -51,9 +51,9 @@ public:
     using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
     using WND_Skins_C = Game::UI::Menu_Loadout::WND_Skins_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimCollapseSideBar;
-    class UWidgetAnimation* ItemDesc_Hover;
-    class UWidgetAnimation* ItemDesc_Click;
+    UE_READONLY class UWidgetAnimation* AnimCollapseSideBar;
+    UE_READONLY class UWidgetAnimation* ItemDesc_Hover;
+    UE_READONLY class UWidgetAnimation* ItemDesc_Click;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Popup_YesNoPrompt_C* Basic_Popup_YesNoPrompt;
     class UButton* BTN_Info;
@@ -95,7 +95,6 @@ public:
     bool SideBarCollapsed;
     void ExecuteUbergraph_MENU_UpgradeScreen(int EntryPoint);
     void Toggle_Sidebar_Collapsed();
-    static constexpr const char* Toggle_Sidebar_Collapsed__UeName = "Toggle Sidebar Collapsed";
     void ResetSideBar();
     void BndEvt__MENU_UpgradeScreen_ITM_UpgGear_Upgrades_K2Node_ComponentBoundEvent_9_OnToggleCollapsed__DelegateSignature();
     void BndEvt__Basic_Popup_YesNoPrompt_K2Node_ComponentBoundEvent_8_OnClickedYesNo__DelegateSignature(bool InYes);
@@ -131,8 +130,13 @@ public:
     void GetItemTabIndex(class UClass* InItemClass, int& OutIndex);
     void ChangeItemCustom(class UClass* InItemClass, bool EquipItem, bool IsUnlocked);
     void Toggle_Auto_GearStats_Preview(bool IsOn);
-    static constexpr const char* Toggle_Auto_GearStats_Preview__UeName = "Toggle Auto GearStats Preview";
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Toggle_Sidebar_Collapsed__UeName = "Toggle Sidebar Collapsed";
+        static constexpr const char* Toggle_Auto_GearStats_Preview__UeName = "Toggle Auto GearStats Preview";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

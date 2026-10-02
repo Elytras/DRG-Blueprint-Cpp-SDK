@@ -23,9 +23,9 @@ class ITM_BossFightContainer_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/ITM_BossFightContainer", "ITM_BossFightContainer_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* IntroAnim;
-    class UWidgetAnimation* DisengagedAnim;
-    class UWidgetAnimation* deathAnim;
+    UE_READONLY class UWidgetAnimation* IntroAnim;
+    UE_READONLY class UWidgetAnimation* DisengagedAnim;
+    UE_READONLY class UWidgetAnimation* deathAnim;
     class UImage* BG_Left_1;
     class UImage* BG_Middle;
     class UImage* BG_Middle_2;

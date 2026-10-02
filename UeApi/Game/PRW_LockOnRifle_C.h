@@ -18,11 +18,15 @@ class PRW_LockOnRifle_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/PRW_LockOnRifle", "PRW_LockOnRifle_C");
     class UStaticMeshComponent* SM_LockOnRifle_Mag_Full;
-    static constexpr const char* SM_LockOnRifle_Mag_Full__UeScsNode = "887fcd5169bc4d4dbf8280468c776c51";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "5d94c3b7337d59439dbf92d178d6917a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "56504d4db4497d469677a824402e4174";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_LockOnRifle_Mag_Full__UeScsNode = "887fcd5169bc4d4dbf8280468c776c51";
+        static constexpr const char* SkeletalMesh__UeScsNode = "5d94c3b7337d59439dbf92d178d6917a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "56504d4db4497d469677a824402e4174";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle

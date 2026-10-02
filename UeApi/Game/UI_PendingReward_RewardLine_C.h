@@ -23,9 +23,13 @@ public:
     class UTextBlock* DataPostfix;
     void ExecuteUbergraph_UI_PendingReward_RewardLine(int EntryPoint);
     void Init_Simple(FText Description, FText Postfix, int amount);
-    static constexpr const char* Init_Simple__UeName = "Init Simple";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Init(FText Description, FText Postfix, int amount, float StartDelay, class USoundBase* Sound);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Init_Simple__UeName = "Init Simple";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

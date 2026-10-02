@@ -18,14 +18,18 @@ class BP_Refinery_Extractor_Blueprint_C : public AActor
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Extractor_Blueprint", "BP_Refinery_Extractor_Blueprint_C");
     class USceneComponent* AttachmentPoint;
-    static constexpr const char* AttachmentPoint__UeScsNode = "e00bb6738c335241a8161244105e13ed";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "3f300ca8fec67e4f9e3fc77f8ef3d3c1";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "bee2ac67ea6a074c84e95e0fe9f519b8";
     void UserConstructionScript();
     UE_PURE FVector GetAttachementLocation(bool WorldCoordinates);
     void SetValid(bool IsValid);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AttachmentPoint__UeScsNode = "e00bb6738c335241a8161244105e13ed";
+        static constexpr const char* SkeletalMesh__UeScsNode = "3f300ca8fec67e4f9e3fc77f8ef3d3c1";
+        static constexpr const char* Scene__UeScsNode = "bee2ac67ea6a074c84e95e0fe9f519b8";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Refinery

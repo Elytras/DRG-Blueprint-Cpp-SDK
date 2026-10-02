@@ -27,15 +27,19 @@ public:
     class UHealthComponent* HealthComponent;
     void ExecuteUbergraph_HUD_Armor_Base(int EntryPoint);
     void Bind_To_Player(class APlayerCharacter* Player);
-    static constexpr const char* Bind_To_Player__UeName = "Bind To Player";
     void Set_Armor_Pct(float InPercent);
-    static constexpr const char* Set_Armor_Pct__UeName = "Set Armor Pct";
     void Unbind_Health_Component();
-    static constexpr const char* Unbind_Health_Component__UeName = "Unbind Health Component";
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Bind_To_Health_Component(class UHealthComponent* HealthComponent_0);
-    static constexpr const char* Bind_To_Health_Component__UeName = "Bind To Health Component";
     void ArmorChanged(float Health);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Bind_To_Player__UeName = "Bind To Player";
+        static constexpr const char* Set_Armor_Pct__UeName = "Set Armor Pct";
+        static constexpr const char* Unbind_Health_Component__UeName = "Unbind Health Component";
+        static constexpr const char* Bind_To_Health_Component__UeName = "Bind To Health Component";
+    };
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

@@ -281,8 +281,8 @@ class UModioModCollectionEntryUI : public UObject
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioModCollectionEntryUI");
-    FModioModCollectionEntry Underlying;
-    bool bCachedSubscriptionStatus;
+    UE_READONLY FModioModCollectionEntry Underlying;
+    UE_READONLY bool bCachedSubscriptionStatus;
 };
 
 class UModioModInfoUI : public UObject
@@ -319,7 +319,7 @@ class UModioUIAsyncLoader : public UWidget
 {
 public:
     UE_CLASS("/Script/ModioUICore", "ModioUIAsyncLoader");
-    TEnum<EModioUIAsyncOperationWidgetState> CurrentState;
+    UE_READONLY TEnum<EModioUIAsyncOperationWidgetState> CurrentState;
     TMap<FName, class UWidget*> NamedWidgets;
     void NativeHandleAsyncOperationStateChange(TEnum<EModioUIAsyncOperationWidgetState> NewState);
     void OnRetryRequested();
@@ -361,6 +361,11 @@ public:
     void UninstallHandler(FModioErrorCode ErrorCode, FModioModID ID);
     void UnsubscribeHandler(FModioErrorCode ErrorCode, FModioModID ID);
     static UModioUISubsystem* Get();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnModEnabledChanged__UeDispatcher = "Assignable";
+    };
 };
 
 /* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */

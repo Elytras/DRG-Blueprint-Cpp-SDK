@@ -28,7 +28,7 @@ public:
     UI_SaveGame_CharacterClass_C* UI_SaveGame_CharacterClass_0;
     UI_SaveGame_CharacterClass_C* UI_SaveGame_CharacterClass_1;
     UI_SaveGame_CharacterClass_C* UI_SaveGame_CharacterClass_2;
-    FString Filename;
+    UE_READONLY FString Filename;
     void ExecuteUbergraph_UI_SaveGame_Entry(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

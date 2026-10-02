@@ -13,6 +13,11 @@ class STE_WoodlouseColdResistance_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/STE_WoodlouseColdResistance", "STE_WoodlouseColdResistance_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse

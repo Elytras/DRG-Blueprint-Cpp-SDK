@@ -27,29 +27,17 @@ class ENE_Spider_Stinger_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stinger/ENE_Spider_Stinger", "ENE_Spider_Stinger_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Stinger_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Stinger_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight_Tail;
-    static constexpr const char* PointLight_Tail__UeScsNode = "1de1d5aec2fabc4087a93d8d7bde49cd";
     class UPointLightComponent* PointLight_Weakpoint;
-    static constexpr const char* PointLight_Weakpoint__UeScsNode = "a104170f2b6e07449ad6b2ebdaab7d47";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "c7b4ecfd12de754e8dfdcd8d46654215";
     class UStingerIdleAudioComponent* StingerIdleAudio;
-    static constexpr const char* StingerIdleAudio__UeScsNode = "d58e7cc6e8b855489b643ce1edddabb1";
     class USplineMeshComponent* Extender;
-    static constexpr const char* Extender__UeScsNode = "0ff0f5534b4f10439a3e0d7ace98a1ef";
     class USkeletalMeshComponent* TailEnd;
-    static constexpr const char* TailEnd__UeScsNode = "a262b9f4f7c72446aaf6769be7075e1e";
     class USplineHookAttack* SplineHookAttack;
-    static constexpr const char* SplineHookAttack__UeScsNode = "3c3c135f8b61834ba82b59bdc5731e53";
     class UAlignEnemyComponent* AlignEnemy;
-    static constexpr const char* AlignEnemy__UeScsNode = "64cea4cbe1ec7944bfa77d9d513318c8";
     class UArmorHealthDamageComponent* ArmorHealthDamage;
-    static constexpr const char* ArmorHealthDamage__UeScsNode = "7c15f13d92334f4cbe7532b2ff4aac15";
     class UMeleeAttackComponent* MeleeAttack;
-    static constexpr const char* MeleeAttack__UeScsNode = "7a1c1d7fef53934a8250642ab9613e30";
     TArray<class UMaterialInterface*> TailMateirals;
     void ExecuteUbergraph_ENE_Spider_Stinger(int EntryPoint);
     void StartCorrosiveDissovle();
@@ -59,6 +47,22 @@ public:
     void StartDissolve();
     void ReceiveBeginPlay();
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Stinger_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight_Tail__UeScsNode = "1de1d5aec2fabc4087a93d8d7bde49cd";
+        static constexpr const char* PointLight_Weakpoint__UeScsNode = "a104170f2b6e07449ad6b2ebdaab7d47";
+        static constexpr const char* Capsule__UeScsNode = "c7b4ecfd12de754e8dfdcd8d46654215";
+        static constexpr const char* StingerIdleAudio__UeScsNode = "d58e7cc6e8b855489b643ce1edddabb1";
+        static constexpr const char* Extender__UeScsNode = "0ff0f5534b4f10439a3e0d7ace98a1ef";
+        static constexpr const char* TailEnd__UeScsNode = "a262b9f4f7c72446aaf6769be7075e1e";
+        static constexpr const char* SplineHookAttack__UeScsNode = "3c3c135f8b61834ba82b59bdc5731e53";
+        static constexpr const char* AlignEnemy__UeScsNode = "64cea4cbe1ec7944bfa77d9d513318c8";
+        static constexpr const char* ArmorHealthDamage__UeScsNode = "7c15f13d92334f4cbe7532b2ff4aac15";
+        static constexpr const char* MeleeAttack__UeScsNode = "7a1c1d7fef53934a8250642ab9613e30";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stinger

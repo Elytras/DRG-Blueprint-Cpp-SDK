@@ -18,11 +18,15 @@ class BP_PostProcessing_SaltCaves_C : public AFSDPostProcessingActor
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/SaltCaves/BP_PostProcessing_SaltCaves", "BP_PostProcessing_SaltCaves_C");
     class UPostProcessComponent* PostProcess;
-    static constexpr const char* PostProcess__UeScsNode = "98d6a6a9b92e874088d34169224f40fa";
     class UExponentialHeightFogComponent* ExponentialHeightFog;
-    static constexpr const char* ExponentialHeightFog__UeScsNode = "266add90e2b34a4681e874a53db36ceb";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PostProcess__UeScsNode = "98d6a6a9b92e874088d34169224f40fa";
+        static constexpr const char* ExponentialHeightFog__UeScsNode = "266add90e2b34a4681e874a53db36ceb";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "110582c3bd6f2b4f94bce60454658d3d";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SaltCaves

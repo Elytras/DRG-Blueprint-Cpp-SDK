@@ -19,8 +19,7 @@ class GooCannon_AmmoCounter_C : public Game::UI::WeaponDisplays::WeaponDisplay_B
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/UI/GooCannon_AmmoCounter", "GooCannon_AmmoCounter_C");
     FPointerToUberGraphFrame UberGraphFrame_GooCannon_AmmoCounter_C;
-    static constexpr const char* UberGraphFrame_GooCannon_AmmoCounter_C__UeName = "UberGraphFrame";
-    class UWidgetAnimation* AmmoCritical;
+    UE_READONLY class UWidgetAnimation* AmmoCritical;
     class UImage* BG;
     class UTextBlock* ClipCount;
     class UTextBlock* TotalCount;
@@ -35,6 +34,11 @@ public:
     void SetNumber(int Value, class UTextBlock* Label, int& OutValue);
     void UpdateAmmoCritical();
     void UpdateClipCount();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_GooCannon_AmmoCounter_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::GooCannon::UI

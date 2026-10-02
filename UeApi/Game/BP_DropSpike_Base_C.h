@@ -35,48 +35,30 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/DropSpike/BP_DropSpike_Base", "BP_DropSpike_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* DirectDamage;
-    static constexpr const char* DirectDamage__UeScsNode = "ee3e685924577f439b03bb2c2ebb5547";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "1bf07b74fe80c64fa3b6b20e9bf3d581";
     class UExplosionComponent* Explosion;
-    static constexpr const char* Explosion__UeScsNode = "bac88bd172fcfc4eb01c4b2115a6ca8f";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "825195e1b994134cab8218ee7baa4880";
     class UCapsuleComponent* SpikeCapsule;
-    static constexpr const char* SpikeCapsule__UeScsNode = "d7cee1c64038d24dad953821e5fa26f4";
     class USceneComponent* SpikeScaler;
-    static constexpr const char* SpikeScaler__UeScsNode = "68159bb4cb6f2b478967923a4ef82274";
     class UStaticMeshComponent* Spike;
-    static constexpr const char* Spike__UeScsNode = "438499be86cdda448922e8c7c08e02a9";
     class USphereComponent* DamageTrigger;
-    static constexpr const char* DamageTrigger__UeScsNode = "b9e3d79915d6884a9ba16df0099de1da";
     class USphereComponent* GrenadeSphere;
-    static constexpr const char* GrenadeSphere__UeScsNode = "b76189e02bad314989de417eb432721c";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "427fd0e42885e445807e255d6f16f95f";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "003af90625da74408d00ba81eb33dfe9";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "6fe3798eb69042499936ea6f2f7c5062";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "99c691fe59d8544fa773e4b55acb010d";
     float LifespanAfterTrigger;
     bool IsTriggered;
-    static constexpr const char* IsTriggered__Replicated = "OnRep_IsTriggered:";
     float MinAcceptableDistanceToFloor;
     float MaxAcceptableDistanceToFloor;
     float DistanceToFloor;
-    static constexpr const char* DistanceToFloor__Replicated = "OnRep_DistanceToFloor:";
     FVector FloorHitLocation;
     bool DoWarning;
-    static constexpr const char* DoWarning__Replicated = "OnRep_DoWarning:";
     float TriggerDropProbability;
     float MaxTriggerDelay;
     float BaseDamageAmmount;
     bool DoClearNearbyDebris;
-    static constexpr const char* DoClearNearbyDebris__Replicated = "OnRep_DoClearNearbyDebris:";
     bool IsSilent;
-    static constexpr const char* IsSilent__Replicated = ":";
     FVector2D DamageMinMax;
     float ChainReactionProbability;
     float ChainReactionDistance;
@@ -113,6 +95,28 @@ public:
     void ClearNearbyDebris();
     void OnRep_DistanceToFloor();
     void StartChainReaction();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DirectDamage__UeScsNode = "ee3e685924577f439b03bb2c2ebb5547";
+        static constexpr const char* Damage__UeScsNode = "1bf07b74fe80c64fa3b6b20e9bf3d581";
+        static constexpr const char* Explosion__UeScsNode = "bac88bd172fcfc4eb01c4b2115a6ca8f";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "825195e1b994134cab8218ee7baa4880";
+        static constexpr const char* SpikeCapsule__UeScsNode = "d7cee1c64038d24dad953821e5fa26f4";
+        static constexpr const char* SpikeScaler__UeScsNode = "68159bb4cb6f2b478967923a4ef82274";
+        static constexpr const char* Spike__UeScsNode = "438499be86cdda448922e8c7c08e02a9";
+        static constexpr const char* DamageTrigger__UeScsNode = "b9e3d79915d6884a9ba16df0099de1da";
+        static constexpr const char* GrenadeSphere__UeScsNode = "b76189e02bad314989de417eb432721c";
+        static constexpr const char* SimpleHealth__UeScsNode = "427fd0e42885e445807e255d6f16f95f";
+        static constexpr const char* TerrainDetect__UeScsNode = "003af90625da74408d00ba81eb33dfe9";
+        static constexpr const char* terrainPlacement__UeScsNode = "6fe3798eb69042499936ea6f2f7c5062";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "99c691fe59d8544fa773e4b55acb010d";
+        static constexpr const char* IsTriggered__Replicated = "OnRep_IsTriggered:";
+        static constexpr const char* DistanceToFloor__Replicated = "OnRep_DistanceToFloor:";
+        static constexpr const char* DoWarning__Replicated = "OnRep_DoWarning:";
+        static constexpr const char* DoClearNearbyDebris__Replicated = "OnRep_DoClearNearbyDebris:";
+        static constexpr const char* IsSilent__Replicated = ":";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::DropSpike

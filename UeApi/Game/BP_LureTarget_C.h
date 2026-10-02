@@ -34,29 +34,17 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Lure/BP_LureTarget", "BP_LureTarget_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UFriendlyHealthComponent* FriendlyHealth;
-    static constexpr const char* FriendlyHealth__UeScsNode = "c6f0ea79e339594cb3834031ee7331f1";
     class UFakeFallComponent* FakeFall;
-    static constexpr const char* FakeFall__UeScsNode = "1b762d35bc4a5348b4aa3cfe5bfe5180";
     class UWidgetComponent* Widget1;
-    static constexpr const char* Widget1__UeScsNode = "4c68ffb7523afe4aa478832b9b37ce99";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "3bc4bea62f673d41b122ee36640caba8";
     class USkeletalMeshComponent* Mesh_Hologram;
-    static constexpr const char* Mesh_Hologram__UeScsNode = "0db113ea38a1f849a19f5a5a2b2a1605";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "624e1819db799043a72707b5993e3d93";
     class UStaticMeshComponent* Mesh_Projector;
-    static constexpr const char* Mesh_Projector__UeScsNode = "2a1a1402cb0d224bb990c376b38cfd30";
     class UParticleSystemComponent* P_Grenade_Lure_HolloStreaks;
-    static constexpr const char* P_Grenade_Lure_HolloStreaks__UeScsNode = "aa07e8e7d684ba489c508e16bea7af6b";
     class UCapsuleComponent* Capsule;
-    static constexpr const char* Capsule__UeScsNode = "8bac6b2212c3844cbeced1f7f9338062";
     class UDamageComponent* Damage;
-    static constexpr const char* Damage__UeScsNode = "db47014ed7a50c4c86a8e77b0c3fdea4";
     class UObjectAttackerPositioning* ObjectAttackerPositioning;
-    static constexpr const char* ObjectAttackerPositioning__UeScsNode = "4b45571fc3bb4c4193bd5bf1987aa15a";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "d841f292d9c4224485d73deaa4b17328";
     float GlitchAnimationRate_Visibility_C039C82E4E9A2669384696BB798667AF;
     float GlitchAnimationRate_Animation_Rate_C039C82E4E9A2669384696BB798667AF;
     TEnum<ETimelineDirection> GlitchAnimationRate__Direction_C039C82E4E9A2669384696BB798667AF;
@@ -83,13 +71,11 @@ public:
     class UTimelineComponent* GrowHologramZ;
     float LifeTime;
     class UMaterialInstanceDynamic* Dynamic_Material;
-    static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
     FLinearColor FinalColour;
     FLinearColor InitialColour;
     class UObject* Animation;
     TArray<class UAnimSequence*> Anim;
     class UMaterialInstanceDynamic* Base_Dynamic_Material;
-    static constexpr const char* Base_Dynamic_Material__UeName = "Base Dynamic Material";
     float RandomZ;
     float RandomY;
     float RandomX;
@@ -117,10 +103,28 @@ public:
     void SetScaleUpLerp(float Z, float Y, float X);
     void SetScaleDownLerp(float Z, float Y, float X);
     void Attach_to_Valid_Surface();
-    static constexpr const char* Attach_to_Valid_Surface__UeName = "Attach to Valid Surface";
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
     UE_PURE FVector GetTargetCenterMass() const;
     UE_PURE bool GetIsTargetable() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* FriendlyHealth__UeScsNode = "c6f0ea79e339594cb3834031ee7331f1";
+        static constexpr const char* FakeFall__UeScsNode = "1b762d35bc4a5348b4aa3cfe5bfe5180";
+        static constexpr const char* Widget1__UeScsNode = "4c68ffb7523afe4aa478832b9b37ce99";
+        static constexpr const char* Widget__UeScsNode = "3bc4bea62f673d41b122ee36640caba8";
+        static constexpr const char* Mesh_Hologram__UeScsNode = "0db113ea38a1f849a19f5a5a2b2a1605";
+        static constexpr const char* PointLight__UeScsNode = "624e1819db799043a72707b5993e3d93";
+        static constexpr const char* Mesh_Projector__UeScsNode = "2a1a1402cb0d224bb990c376b38cfd30";
+        static constexpr const char* P_Grenade_Lure_HolloStreaks__UeScsNode = "aa07e8e7d684ba489c508e16bea7af6b";
+        static constexpr const char* Capsule__UeScsNode = "8bac6b2212c3844cbeced1f7f9338062";
+        static constexpr const char* Damage__UeScsNode = "db47014ed7a50c4c86a8e77b0c3fdea4";
+        static constexpr const char* ObjectAttackerPositioning__UeScsNode = "4b45571fc3bb4c4193bd5bf1987aa15a";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "d841f292d9c4224485d73deaa4b17328";
+        static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";
+        static constexpr const char* Base_Dynamic_Material__UeName = "Base Dynamic Material";
+        static constexpr const char* Attach_to_Valid_Surface__UeName = "Attach to Valid Surface";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Lure

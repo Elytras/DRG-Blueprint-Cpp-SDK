@@ -20,7 +20,7 @@ class ITM_SeasonChallengeIcon_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_SeasonChallengeIcon", "ITM_SeasonChallengeIcon_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Glow;
+    UE_READONLY class UWidgetAnimation* Glow;
     class UImage* Icon_Glow;
     class UImage* Image_Challenge;
     void ExecuteUbergraph_ITM_SeasonChallengeIcon(int EntryPoint);

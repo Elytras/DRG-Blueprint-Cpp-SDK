@@ -32,9 +32,9 @@ public:
     using UI_Bar_LockWarning_C = Game::GameElements::Bar::UI::UI_Bar_LockWarning_C;
     using UI_Bar_PlayerRankWarning_C = Game::GameElements::Bar::UI::UI_Bar_PlayerRankWarning_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Idle;
-    class UWidgetAnimation* Click;
-    class UWidgetAnimation* Hover;
+    UE_READONLY class UWidgetAnimation* Idle;
+    UE_READONLY class UWidgetAnimation* Click;
+    UE_READONLY class UWidgetAnimation* Hover;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UButton* BuyButton;
     class UImage* DrinkIconLeft;

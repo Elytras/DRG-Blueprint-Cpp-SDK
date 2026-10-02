@@ -13,7 +13,11 @@ class PRJ_PlasmaCarbineShot_Big_C : public Game::WeaponsNTools::PlasmaCarbine::P
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/PRJ_PlasmaCarbineShot_Big", "PRJ_PlasmaCarbineShot_Big_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

@@ -17,9 +17,13 @@ class PRW_GrenadeLauncher_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/PRW_GrenadeLauncher", "PRW_GrenadeLauncher_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "4a81eade2250854f896a410bd4e663df";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f5ef07b55f2c114e94e2f5966c16a017";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "4a81eade2250854f896a410bd4e663df";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f5ef07b55f2c114e94e2f5966c16a017";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher

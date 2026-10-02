@@ -24,24 +24,16 @@ class PRJ_PowerupSphere_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RockEnemies/PRJ_PowerupSphere", "PRJ_PowerupSphere_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "0f5a3d65e3857e4d96817dbebe06947a";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "c76b7c7b487410448819525a02056550";
     class URotatingMovementComponent* RotatingMovement;
-    static constexpr const char* RotatingMovement__UeScsNode = "4190d4782780c349a6f3b35e0abd8430";
     class UParticleSystemComponent* P_PickAxePowerUp_Glow;
-    static constexpr const char* P_PickAxePowerUp_Glow__UeScsNode = "dd7bbda1e8b9de4aa968f7f14b603c78";
     class USphereComponent* PowerUpTrigger;
-    static constexpr const char* PowerUpTrigger__UeScsNode = "a5b9f87749371144944647606341c71c";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "b4c20aaebb8e354d841245438cbdc88e";
     FRuntimeFloatCurve FadeCurve;
     FTimerHandle LifetimeHandle;
     bool Moving;
-    static constexpr const char* Moving__Replicated = "OnRep_Moving:";
     void ExecuteUbergraph_PRJ_PowerupSphere(int EntryPoint);
     void EndLife();
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_1_OnProjectileStopDelegate__DelegateSignature(const FHitResult& ImpactResult);
@@ -50,6 +42,18 @@ public:
     void BndEvt__PowerUpTrigger_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ReceiveBeginPlay();
     void OnRep_Moving();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* outline__UeScsNode = "0f5a3d65e3857e4d96817dbebe06947a";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "c76b7c7b487410448819525a02056550";
+        static constexpr const char* RotatingMovement__UeScsNode = "4190d4782780c349a6f3b35e0abd8430";
+        static constexpr const char* P_PickAxePowerUp_Glow__UeScsNode = "dd7bbda1e8b9de4aa968f7f14b603c78";
+        static constexpr const char* PowerUpTrigger__UeScsNode = "a5b9f87749371144944647606341c71c";
+        static constexpr const char* StaticMesh__UeScsNode = "b4c20aaebb8e354d841245438cbdc88e";
+        static constexpr const char* Moving__Replicated = "OnRep_Moving:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RockEnemies

@@ -29,24 +29,15 @@ class ENE_BoughWasp_Nest_Small_C : public AInsectSwarmSpawner
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Nest_Small", "ENE_BoughWasp_Nest_Small_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "c1892a258176d64c87ea262950a46fdf";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "dee02b535c76344b9e78211e87bcf28f";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "395bf648f441524cbc159da176656af0";
     class UStaticMeshComponent* SM_HollowboughWaspNest_01;
-    static constexpr const char* SM_HollowboughWaspNest_01__UeScsNode = "827c4de72ff0d046ab30692e490cd19d";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "f2cbff8a08563648a4ed4ad9593fad19";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "5bd57aced5abb149a705b417d1520ba5";
     float Timeline_0_NewTrack;
-    static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_8FDE92A940E0DE45F55F4885FCDF9646";
     TEnum<ETimelineDirection> Timeline_0__Direction_8FDE92A940E0DE45F55F4885FCDF9646;
     class UTimelineComponent* Timeline_0;
     class UParticleSystem* DeathParticle_1;
@@ -63,6 +54,19 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     class UStaticMeshComponent* Receive_GetStaticMesh() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
+        static constexpr const char* TerrainDetect__UeScsNode = "c1892a258176d64c87ea262950a46fdf";
+        static constexpr const char* terrainPlacement__UeScsNode = "dee02b535c76344b9e78211e87bcf28f";
+        static constexpr const char* PathfinderCollision__UeScsNode = "395bf648f441524cbc159da176656af0";
+        static constexpr const char* SM_HollowboughWaspNest_01__UeScsNode = "827c4de72ff0d046ab30692e490cd19d";
+        static constexpr const char* Scene__UeScsNode = "f2cbff8a08563648a4ed4ad9593fad19";
+        static constexpr const char* outline__UeScsNode = "5bd57aced5abb149a705b417d1520ba5";
+        static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_8FDE92A940E0DE45F55F4885FCDF9646";
+    };
 };
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion

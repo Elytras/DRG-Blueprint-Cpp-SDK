@@ -27,24 +27,15 @@ class BP_GunkSeed_C : public AGem
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/GunkSeed/BP_GunkSeed", "BP_GunkSeed_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "4262a70d4dac35428b6eaf8bfdb16a03";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "3353286ad0a7e84da1a13f48b3a27e96";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "9790c991c4e57245a2be0e622923fab8";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "fb148230ab659041ae247ffa4ce6f7c8";
     class UBoxComponent* Box;
-    static constexpr const char* Box__UeScsNode = "15d134dc41ae38409c06878a69b35244";
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "927e67fc5226ff42b5c09e6b82e337c7";
     class UCarriableComponent* Carriable;
-    static constexpr const char* Carriable__UeScsNode = "81efaa4adab18946b703c0d047fce5e2";
     class USphereComponent* UseSphere;
-    static constexpr const char* UseSphere__UeScsNode = "7a2b37e102580b4db2929a534dae1b7f";
     FVector throwForce;
     class USoundBase* ImpactSound;
     float MaxLength;
@@ -56,6 +47,19 @@ public:
     void Throw(FVector force);
     void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* PointLight__UeScsNode = "4262a70d4dac35428b6eaf8bfdb16a03";
+        static constexpr const char* outline__UeScsNode = "3353286ad0a7e84da1a13f48b3a27e96";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "9790c991c4e57245a2be0e622923fab8";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "fb148230ab659041ae247ffa4ce6f7c8";
+        static constexpr const char* Box__UeScsNode = "15d134dc41ae38409c06878a69b35244";
+        static constexpr const char* Sphere__UeScsNode = "927e67fc5226ff42b5c09e6b82e337c7";
+        static constexpr const char* Carriable__UeScsNode = "81efaa4adab18946b703c0d047fce5e2";
+        static constexpr const char* UseSphere__UeScsNode = "7a2b37e102580b4db2929a534dae1b7f";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::GunkSeed

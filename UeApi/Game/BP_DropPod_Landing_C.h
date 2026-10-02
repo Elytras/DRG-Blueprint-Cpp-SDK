@@ -25,17 +25,11 @@ class BP_DropPod_Landing_C : public Game::LevelElements::Droppod::BP_DropPod_Bas
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Landing", "BP_DropPod_Landing_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
     FPointerToUberGraphFrame UberGraphFrame_BP_DropPod_Landing_C;
-    static constexpr const char* UberGraphFrame_BP_DropPod_Landing_C__UeName = "UberGraphFrame";
     class USceneComponent* BoscoSpawningPoint;
-    static constexpr const char* BoscoSpawningPoint__UeScsNode = "7f6a88c547cfa3408c9de31d51c6b007";
     class UAudioComponent* Audio_0;
-    static constexpr const char* Audio_0__UeScsNode = "6f143317025c60478ca13d7af7a0066b";
     class UParticleSystemComponent* ParticleSystem_DroppodDoorRocks;
-    static constexpr const char* ParticleSystem_DroppodDoorRocks__UeScsNode = "93c676edeb85d448815d9637033409d9";
     class UBoxComponent* LeaveDropShipTrigger;
-    static constexpr const char* LeaveDropShipTrigger__UeScsNode = "fa2853514fc31c43a4e98e41412f4754";
     bool SkipSequence;
     TArray<class UAudioComponent*> AudioArray;
     void ExecuteUbergraph_BP_DropPod_Landing(int EntryPoint);
@@ -57,6 +51,16 @@ public:
     UE_PURE bool IsOwnedPlayerStart(class APlayerController* Controller, class UChildActorComponent* Component);
     void AttachCharacter(class APlayerCharacter* PlayerCharacter);
     void FadeToBlack();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UberGraphFrame_BP_DropPod_Landing_C__UeName = "UberGraphFrame";
+        static constexpr const char* BoscoSpawningPoint__UeScsNode = "7f6a88c547cfa3408c9de31d51c6b007";
+        static constexpr const char* Audio_0__UeScsNode = "6f143317025c60478ca13d7af7a0066b";
+        static constexpr const char* ParticleSystem_DroppodDoorRocks__UeScsNode = "93c676edeb85d448815d9637033409d9";
+        static constexpr const char* LeaveDropShipTrigger__UeScsNode = "fa2853514fc31c43a4e98e41412f4754";
+    };
 };
 
 }}}   // namespace Game::LevelElements::Droppod

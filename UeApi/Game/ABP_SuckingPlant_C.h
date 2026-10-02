@@ -51,14 +51,10 @@ public:
     FAnimNode_StateMachine AnimGraphNode_StateMachine;
     BP_SuckingPlant__C* SuckingPlant_Ref;
     FRotator Current_Rotation;
-    static constexpr const char* Current_Rotation__UeName = "Current Rotation";
     bool remove_test;
-    static constexpr const char* remove_test__UeName = "remove test";
     float Previous_Yaw_Value;
-    static constexpr const char* Previous_Yaw_Value__UeName = "Previous Yaw Value";
     void ExecuteUbergraph_ABP_SuckingPlant(int EntryPoint);
     void Remove_me_too();
-    static constexpr const char* Remove_me_too__UeName = "Remove me too";
     void BlueprintUpdateAnimation(float DeltaTimeX);
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_9167A2C140F772009EEF7A8C0F8436C7();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_561A0D0D497D83C4B66150B3EF828CBC();
@@ -67,13 +63,21 @@ public:
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_BlendSpaceEvaluator_FAF2A81D4D60864F94696AA842026B63();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_6CCF84CD42BE5088DB62ECAA791DD0DD();
     void set_rotation(FVector Target_Rotation);
-    static constexpr const char* set_rotation__UeName = "set rotation";
     void BlueprintInitializeAnimation();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_8406EC9946965BC871F0FDAB578C9963();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_0EA1C1304252907E29C29C9A3ADDA903();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_DC2ED01848B1FF5FCA3FE5A3455DFEA8();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SuckingPlant_AnimGraphNode_TransitionResult_E2AF042E4851FC81E3E48B8889497FB8();
     void AnimGraph(FPoseLink& AnimGraph_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Current_Rotation__UeName = "Current Rotation";
+        static constexpr const char* remove_test__UeName = "remove test";
+        static constexpr const char* Previous_Yaw_Value__UeName = "Previous Yaw Value";
+        static constexpr const char* Remove_me_too__UeName = "Remove me too";
+        static constexpr const char* set_rotation__UeName = "set rotation";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SuckingPlant

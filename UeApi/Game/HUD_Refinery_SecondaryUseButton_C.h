@@ -21,7 +21,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/HUD_Refinery_SecondaryUseButton", "HUD_Refinery_SecondaryUseButton_C");
     using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimDownArrow;
+    UE_READONLY class UWidgetAnimation* AnimDownArrow;
     UI_ImageTinted_C* IMG_DownArrow;
     class UImage* IMG_Icon;
     class AFSDRefinery* Refinery;

@@ -27,9 +27,13 @@ public:
     TArray<Cheat_PerkListItem_C*> perklistItems;
     void ExecuteUbergraph_Cheat_OverclockSelection(int EntryPoint);
     void On_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
-    static constexpr const char* On_state_change__UeName = "On state change";
     void Initiate_Widget(TEnum<EItemCategory> ItemCategory);
-    static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* On_state_change__UeName = "On state change";
+        static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

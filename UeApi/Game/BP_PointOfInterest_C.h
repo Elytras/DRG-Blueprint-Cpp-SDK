@@ -20,16 +20,20 @@ public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/BP_PointOfInterest", "BP_PointOfInterest_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "8d7400029256294baa474fb3f1610f78";
     class UFirstPersonWidgetComponent* FirstPersonWidget;
-    static constexpr const char* FirstPersonWidget__UeScsNode = "839e9c21a6bc9e448a17b2132bf4b763";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f548abc7c9b6c24c874070fae11dd262";
     class UTexture2D* Icon;
     void ExecuteUbergraph_BP_PointOfInterest(int EntryPoint);
     void Finished_Event();
     void ReceiveBeginPlay();
     void Init(class UTexture2D* Texture);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "8d7400029256294baa474fb3f1610f78";
+        static constexpr const char* FirstPersonWidget__UeScsNode = "839e9c21a6bc9e448a17b2132bf4b763";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f548abc7c9b6c24c874070fae11dd262";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer

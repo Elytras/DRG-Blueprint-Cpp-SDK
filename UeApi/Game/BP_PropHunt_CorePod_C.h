@@ -21,32 +21,36 @@ class BP_PropHunt_CorePod_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/Season05/BP_PropHunt_CorePod", "BP_PropHunt_CorePod_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SK_S05_CrawlerArm;
-    static constexpr const char* SK_S05_CrawlerArm__UeScsNode = "b7009cd9ca0ef14d8399294c82721215";
     class UFSDAudioComponent* Idle;
-    static constexpr const char* Idle__UeScsNode = "e6443f0724c4fc4fb1f9c6ba0c37925d";
     class UWidgetComponent* Widget_Bars2;
-    static constexpr const char* Widget_Bars2__UeScsNode = "5a9c3c1154bdf3408fd85ec4a2d5056a";
     class UWidgetComponent* DisplayName2;
-    static constexpr const char* DisplayName2__UeScsNode = "f2ba8411b57d6641b6aa27a08872cea3";
     class USkeletalMeshComponent* CoreSpawnTank;
-    static constexpr const char* CoreSpawnTank__UeScsNode = "c3c818eb16bb3941a6c162e980ca5a03";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "d05aec0b9357f348ae9bf049c848b44e";
     class USpotLightComponent* SpotLight1;
-    static constexpr const char* SpotLight1__UeScsNode = "6470dabc1e0dd14aa32dad661a913a11";
     class USpotLightComponent* SpotLight;
-    static constexpr const char* SpotLight__UeScsNode = "ab0d5efbea90a24499ebf2058b2dd808";
     class UPointLightComponent* BlueLight;
-    static constexpr const char* BlueLight__UeScsNode = "34ccacea6183854a9b3f1e5ca020ac17";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "d57db81b0623d64086b19b3f8effdc43";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     void ExecuteUbergraph_BP_PropHunt_CorePod(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* SK_S05_CrawlerArm__UeScsNode = "b7009cd9ca0ef14d8399294c82721215";
+        static constexpr const char* Idle__UeScsNode = "e6443f0724c4fc4fb1f9c6ba0c37925d";
+        static constexpr const char* Widget_Bars2__UeScsNode = "5a9c3c1154bdf3408fd85ec4a2d5056a";
+        static constexpr const char* DisplayName2__UeScsNode = "f2ba8411b57d6641b6aa27a08872cea3";
+        static constexpr const char* CoreSpawnTank__UeScsNode = "c3c818eb16bb3941a6c162e980ca5a03";
+        static constexpr const char* SkeletalMesh__UeScsNode = "d05aec0b9357f348ae9bf049c848b44e";
+        static constexpr const char* SpotLight1__UeScsNode = "6470dabc1e0dd14aa32dad661a913a11";
+        static constexpr const char* SpotLight__UeScsNode = "ab0d5efbea90a24499ebf2058b2dd808";
+        static constexpr const char* BlueLight__UeScsNode = "34ccacea6183854a9b3f1e5ca020ac17";
+        static constexpr const char* PointLight__UeScsNode = "d57db81b0623d64086b19b3f8effdc43";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05

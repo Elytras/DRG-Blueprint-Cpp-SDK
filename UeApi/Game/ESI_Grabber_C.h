@@ -17,9 +17,13 @@ class ESI_Grabber_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Grabber/ESI_Grabber", "ESI_Grabber_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "62bed93a6eccd543900226cc083ea255";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "219cc13bebd87d48afdfadf2a1ae05ce";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "62bed93a6eccd543900226cc083ea255";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "219cc13bebd87d48afdfadf2a1ae05ce";
+    };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Grabber

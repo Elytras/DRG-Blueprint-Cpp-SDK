@@ -18,11 +18,15 @@ class PRW_MicrowaveGun_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/PRW_MicrowaveGun", "PRW_MicrowaveGun_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "b0160e47e80d78498fb34fd940038273";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "1a8fbd0ab013754188b7160fa1d5bd9c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "94aec48dc62b334b812216271850cbfe";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "b0160e47e80d78498fb34fd940038273";
+        static constexpr const char* StaticMesh__UeScsNode = "1a8fbd0ab013754188b7160fa1d5bd9c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "94aec48dc62b334b812216271850cbfe";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun

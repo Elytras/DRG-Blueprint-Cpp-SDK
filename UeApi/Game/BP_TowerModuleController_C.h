@@ -14,9 +14,13 @@ class BP_TowerModuleController_C : public AHostileGuntowerModuleController
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/GunTower_Module_AimingLMG/BP_TowerModuleController", "BP_TowerModuleController_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.AIPerceptionComponent Perception;/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_TowerModuleController(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.AIPerceptionComponent Perception;/Script/AIModule.AISenseConfig_Sight Perception:AISenseConfig_Sight_0;/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG

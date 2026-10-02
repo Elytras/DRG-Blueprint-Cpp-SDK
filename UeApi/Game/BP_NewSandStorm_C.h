@@ -17,7 +17,6 @@ class BP_NewSandStorm_C : public Game::Landscape::Biomes::BP_WeatherEffect_C
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/SandblastedCorridors/BP_NewSandstorm", "BP_NewSandStorm_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_NewSandStorm_C;
-    static constexpr const char* UberGraphFrame_BP_NewSandStorm_C__UeName = "UberGraphFrame";
     float Fadeout_OneToZero_1C9D7E9C43D38F352386738892203941;
     TEnum<ETimelineDirection> Fadeout__Direction_1C9D7E9C43D38F352386738892203941;
     class UTimelineComponent* FadeOut;
@@ -31,6 +30,11 @@ public:
     void Fadeout__FinishedFunc();
     void Fadin__UpdateFunc();
     void Fadin__FinishedFunc();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_BP_NewSandStorm_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors

@@ -20,31 +20,18 @@ public:
     UE_CLASS("/Game/GameElements/Donkey/Donkey_BreadCrumb", "Donkey_BreadCrumb_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Donkey_DestinationMarker;
-    static constexpr const char* SM_Donkey_DestinationMarker__UeScsNode = "3d06eec696e6d441999c1cb0ed3ac772";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "6641e70976e8604fbc0d19822d27277d";
     class UStaticMeshComponent* Shape_Cone3;
-    static constexpr const char* Shape_Cone3__UeScsNode = "5ac866acd034d74fb6cf6933311ae2d5";
     class UStaticMeshComponent* Shape_Cone;
-    static constexpr const char* Shape_Cone__UeScsNode = "7efeec3fdbd21144b77fa06b2688bdba";
     class UStaticMeshComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "2773b6e84158cd4b9a1448902fbf7dfa";
     class UStaticMeshComponent* TerrainScannerMesh;
-    static constexpr const char* TerrainScannerMesh__UeScsNode = "20f15cd94d175040acd849c7c28adaff";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "90694c4d32fbca47a824a229fbe51c8f";
     class UStaticMeshComponent* SM_Light02;
-    static constexpr const char* SM_Light02__UeScsNode = "db39aacaf049fb4b8e288698cc97bb2c";
     class UPointLightComponent* PointLight_NoShadow;
-    static constexpr const char* PointLight_NoShadow__UeScsNode = "6a26563995042444b173e21a92ef8fcc";
     class UStaticMeshComponent* mesh_front;
-    static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     class UStaticMeshComponent* Mesh_Light;
-    static constexpr const char* Mesh_Light__UeScsNode = "0724e69dcddae346a0fe8d7a24416e16";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "bf8bb96e030a5740a3b53fffd61e7455";
     FRotator NextPointLookat;
-    static constexpr const char* NextPointLookat__Replicated = "OnRep_NextPointLookat:";
     void ExecuteUbergraph_Donkey_BreadCrumb(int EntryPoint);
     void Blink_Photosensitive();
     void Blink();
@@ -52,6 +39,23 @@ public:
     void SetNextArrowPoint(FVector NextPoint);
     void OnRep_NextPointLookat();
     UE_PURE FVector GetArrowPoint() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SM_Donkey_DestinationMarker__UeScsNode = "3d06eec696e6d441999c1cb0ed3ac772";
+        static constexpr const char* StaticMesh__UeScsNode = "6641e70976e8604fbc0d19822d27277d";
+        static constexpr const char* Shape_Cone3__UeScsNode = "5ac866acd034d74fb6cf6933311ae2d5";
+        static constexpr const char* Shape_Cone__UeScsNode = "7efeec3fdbd21144b77fa06b2688bdba";
+        static constexpr const char* Sphere__UeScsNode = "2773b6e84158cd4b9a1448902fbf7dfa";
+        static constexpr const char* TerrainScannerMesh__UeScsNode = "20f15cd94d175040acd849c7c28adaff";
+        static constexpr const char* PointLight__UeScsNode = "90694c4d32fbca47a824a229fbe51c8f";
+        static constexpr const char* SM_Light02__UeScsNode = "db39aacaf049fb4b8e288698cc97bb2c";
+        static constexpr const char* PointLight_NoShadow__UeScsNode = "6a26563995042444b173e21a92ef8fcc";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* Mesh_Light__UeScsNode = "0724e69dcddae346a0fe8d7a24416e16";
+        static constexpr const char* Scene__UeScsNode = "bf8bb96e030a5740a3b53fffd61e7455";
+        static constexpr const char* NextPointLookat__Replicated = "OnRep_NextPointLookat:";
+    };
 };
 
 }}}   // namespace Game::GameElements::Donkey

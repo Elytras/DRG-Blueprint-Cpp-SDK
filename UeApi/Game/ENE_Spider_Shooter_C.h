@@ -17,17 +17,21 @@ class ENE_Spider_Shooter_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ENE_Spider_Shooter", "ENE_Spider_Shooter_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Shooter_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Shooter_C__UeName = "UberGraphFrame";
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    static constexpr const char* SimpleArmorDamage__UeScsNode = "e6ed058249cc274599b64c9fad1e9397";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "bee99dfdc9abf346a8860ba851142730";
     void ExecuteUbergraph_ENE_Spider_Shooter(int EntryPoint);
     void OnDeathBase();
     void OnRagdoll();
     void GetEnemySpawnedCount(int& SpawnCount);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Shooter_C__UeName = "UberGraphFrame";
+        static constexpr const char* SimpleArmorDamage__UeScsNode = "e6ed058249cc274599b64c9fad1e9397";
+        static constexpr const char* Sphere__UeScsNode = "bee99dfdc9abf346a8860ba851142730";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Shooter

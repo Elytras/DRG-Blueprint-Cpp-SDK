@@ -18,14 +18,18 @@ class BP_WaterballoonItem_C : public AHolidayThrowableItem
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_WaterballoonItem", "BP_WaterballoonItem_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Throwlocation;
-    static constexpr const char* Throwlocation__UeScsNode = "8942c7244be5ed4ab52d93ab76e53f31";
     void ExecuteUbergraph_BP_WaterballoonItem(int EntryPoint);
     void RecieveEquipped();
     void RemovedFromInventory(class ACharacter* oldCharacter);
     void ReceiveItemThrown(class AThrowableActor* thrownActor);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* Throwlocation__UeScsNode = "8942c7244be5ed4ab52d93ab76e53f31";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty

@@ -27,18 +27,12 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_Phys_Pumpkin", "BP_Phys_Pumpkin_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Halloween_LightBugs_Const;
-    static constexpr const char* NS_Halloween_LightBugs_Const__UeScsNode = "be8b0e299bba694b8b5ed6d66416c79b";
     class UStaticMeshComponent* Mesh;
-    static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
     class UCapsuleComponent* UseCapsule;
-    static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
     class UGravityChangedComponent* GravityChanged;
-    static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
     class UInstantUsable* InstantUsable;
-    static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
     bool CanTriggerSound;
     FVector_NetQuantize KickSoundLocation;
-    static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
     class APlayerCharacter* KickedBy;
     TArray<class UStaticMesh*> MeshesToChooseFrom;
     void ExecuteUbergraph_BP_Phys_Pumpkin(int EntryPoint);
@@ -46,6 +40,16 @@ public:
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnRep_KickSoundLocation();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* NS_Halloween_LightBugs_Const__UeScsNode = "be8b0e299bba694b8b5ed6d66416c79b";
+        static constexpr const char* Mesh__UeScsNode = "56d2caf2e1854349a02e4d5e28d58db6";
+        static constexpr const char* UseCapsule__UeScsNode = "88e4ec7732934140afec89ee07389a06";
+        static constexpr const char* GravityChanged__UeScsNode = "7e45b22f8f31214b9dd6208baad9419a";
+        static constexpr const char* InstantUsable__UeScsNode = "718366fda56f164c93e950f789d30368";
+        static constexpr const char* KickSoundLocation__Replicated = "OnRep_KickSoundLocation:";
+    };
 };
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween

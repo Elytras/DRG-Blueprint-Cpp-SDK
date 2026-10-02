@@ -17,9 +17,13 @@ class ESI_PatrolBot_C : public AEnemyShowroomItem
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/ESI_PatrolBot", "ESI_PatrolBot_C");
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "425ca0ac184ef2499968d51fd2d928a2";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "50f381a9639aba46a5d57fd400989e51";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SkeletalMesh__UeScsNode = "425ca0ac184ef2499968d51fd2d928a2";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "50f381a9639aba46a5d57fd400989e51";
+    };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot

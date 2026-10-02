@@ -14,11 +14,15 @@ class PRJ_Turret_Barrier_C : public Game::GameElements::Objectives::Facility::PR
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/PRJ_Turret_Barrier", "PRJ_Turret_Barrier_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Turret_Barrier_C;
-    static constexpr const char* UberGraphFrame_PRJ_Turret_Barrier_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_PRJ_Turret_Barrier(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UberGraphFrame_PRJ_Turret_Barrier_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret

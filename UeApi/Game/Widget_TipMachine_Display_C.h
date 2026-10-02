@@ -19,7 +19,7 @@ class Widget_TipMachine_Display_C : public UUserWidget
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/TipMachine/Widget_TipMachine_Display", "Widget_TipMachine_Display_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Smile;
+    UE_READONLY class UWidgetAnimation* Smile;
     class UImage* Smile1;
     class UImage* Smile2;
     class UWidgetSwitcher* WidgetSwitcher_0;

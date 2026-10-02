@@ -18,11 +18,15 @@ class PRW_AssaultRifle_C : public AItemPreviewActor
 public:
     UE_CLASS("/Game/WeaponsNTools/AssaultRifle/PRW_AssaultRifle", "PRW_AssaultRifle_C");
     class UStaticMeshComponent* Mag;
-    static constexpr const char* Mag__UeScsNode = "cde73939d8d6304cb766f1aca9562808";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "43c4353c694c384da8d7504c774fa5b5";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "5a3d593df812a34eb0995539bb632976";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Mag__UeScsNode = "cde73939d8d6304cb766f1aca9562808";
+        static constexpr const char* SkeletalMesh__UeScsNode = "43c4353c694c384da8d7504c774fa5b5";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "5a3d593df812a34eb0995539bb632976";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::AssaultRifle

@@ -19,14 +19,18 @@ public:
     UE_CLASS("/Game/Audio/SoundControl/BP_AudioVolume_Reverb_MediemCave", "BP_AudioVolume_Reverb_MediemCave_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "7696c0eb5b81ac48ac5419600020f35c";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "659d47ae2acbaa498ee5778838d10086";
     float Volume;
     float FadeTime;
     void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
     void ReceiveActorEndOverlap(class AActor* OtherActor_ReceiveActorEndOverlap);
     void ExecuteUbergraph_BP_AudioVolume_Reverb_MediemCave(int EntryPoint);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Sphere__UeScsNode = "7696c0eb5b81ac48ac5419600020f35c";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "659d47ae2acbaa498ee5778838d10086";
+    };
 };
 
 }}}   // namespace Game::Audio::SoundControl

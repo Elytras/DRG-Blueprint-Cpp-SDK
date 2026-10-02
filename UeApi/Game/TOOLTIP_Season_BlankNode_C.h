@@ -20,7 +20,7 @@ class TOOLTIP_Season_BlankNode_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/TOOLTIP_Season_BlankNode", "TOOLTIP_Season_BlankNode_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Intro;
+    UE_READONLY class UWidgetAnimation* Intro;
     class UHorizontalBox* HorizontalBox_Cost;
     class UImage* Image_Background;
     class UImage* Image_Token;

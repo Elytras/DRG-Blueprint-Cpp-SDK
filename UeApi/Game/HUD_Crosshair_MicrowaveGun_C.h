@@ -24,7 +24,7 @@ class HUD_Crosshair_MicrowaveGun_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_Crosshair_MicrowaveGun", "HUD_Crosshair_MicrowaveGun_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class USizeBox* BorderLeftBottomInner;
     class USizeBox* BorderLeftBottomOuter;
     class USizeBox* BorderLeftTopInner;

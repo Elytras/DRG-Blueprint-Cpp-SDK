@@ -26,25 +26,29 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/BP_PassiveFoliage_Base", "BP_PassiveFoliage_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
     class USimpleHealthComponent* SimpleHealth;
-    static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
     class UPathfinderCollisionComponent* PathfinderCollision;
-    static constexpr const char* PathfinderCollision__UeScsNode = "6d588ed2a5d9ab4aa9f9bcf9c48ad237";
     class UTerrainDetectComponent* TerrainDetect;
-    static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "1560759f6def6d44b8db8cb3032e083b";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
     class UParticleSystem* deathParticles;
     class USoundCue* deathSound;
     void ExecuteUbergraph_BP_PassiveFoliage_Base(int EntryPoint);
     UE_MULTICAST void OnTerrainPointRemoved();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "b806032ba124b941bce2226bcbd692f3";
+        static constexpr const char* SimpleHealth__UeScsNode = "1826d75ab914b5419e99079ba569d6ea";
+        static constexpr const char* PathfinderCollision__UeScsNode = "6d588ed2a5d9ab4aa9f9bcf9c48ad237";
+        static constexpr const char* TerrainDetect__UeScsNode = "93ea61a11a9a1241867733f83fd26537";
+        static constexpr const char* terrainPlacement__UeScsNode = "1560759f6def6d44b8db8cb3032e083b";
+        static constexpr const char* StaticMesh__UeScsNode = "70570fcfd874714c976d0cc45c40ba91";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "c0c2d4bb9df371468d47ecdb6d3d19b9";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage

@@ -21,7 +21,7 @@ class UI_RewardResourcesBox_C : public URewardWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardResourcesBox", "UI_RewardResourcesBox_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* CelebrateAnim;
+    UE_READONLY class UWidgetAnimation* CelebrateAnim;
     class UHorizontalBox* HorizontalBox_1;
     class UImage* IconLeft;
     class UImage* IconRight;

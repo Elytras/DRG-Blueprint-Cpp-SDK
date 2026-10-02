@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_MinersManual", "ConsoleScreen_MinersManual_C");
     using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
     void ExecuteUbergraph_ConsoleScreen_MinersManual(int EntryPoint);
     UE_COSMETIC void Construct();

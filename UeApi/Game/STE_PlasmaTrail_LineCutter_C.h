@@ -13,6 +13,11 @@ class STE_PlasmaTrail_LineCutter_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/STE_PlasmaTrail_LineCutter", "STE_PlasmaTrail_LineCutter_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter

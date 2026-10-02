@@ -23,7 +23,7 @@ public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Items/HUD_ItemWheel", "HUD_ItemWheel_C");
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeInOut;
+    UE_READONLY class UWidgetAnimation* FadeInOut;
     UI_AdvancedLabel_C* dpaddown;
     UI_AdvancedLabel_C* dpadleft;
     UI_AdvancedLabel_C* dpadright;

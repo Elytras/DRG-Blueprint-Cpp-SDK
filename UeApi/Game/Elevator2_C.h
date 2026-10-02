@@ -23,32 +23,36 @@ public:
     UE_CLASS("/Game/Art/FromPersonalFolders/Elevator2", "Elevator2_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "cb9fd07ae4af2d40a8c76d781082a378";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "e28766984592354db97313b8653c43f6";
     class UMotionAudioController* MotionAudioController;
-    static constexpr const char* MotionAudioController__UeScsNode = "bf16bb33ff5f7743944c5947a478315d";
     class UAudioComponent* Engine_noise_Cue;
-    static constexpr const char* Engine_noise_Cue__UeScsNode = "79b84868463007448d2334d14c9bb0ee";
     class UBoxComponent* Collider_Floor;
-    static constexpr const char* Collider_Floor__UeScsNode = "943bef8aad0163438cae433ab116d36d";
     class UStaticMeshComponent* Mesh_Elevator;
-    static constexpr const char* Mesh_Elevator__UeScsNode = "e7f368eff7c95b48b9e518ba3e190fc1";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "f2a5bb268c6e0e4e8cfa27c9068a8bf5";
     FVector ElevatorScale;
     float ElevatorHeight;
     float LiftTime;
     float WaitTime;
     float Timer;
     bool GoingUp;
-    static constexpr const char* GoingUp__Replicated = "OnRep_GoingUp:";
     float DeltaTime;
     float ElevatorSpeed;
     void ExecuteUbergraph_Elevator2(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void UserConstructionScript();
     void OnRep_GoingUp();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PointLight__UeScsNode = "cb9fd07ae4af2d40a8c76d781082a378";
+        static constexpr const char* StaticMesh__UeScsNode = "e28766984592354db97313b8653c43f6";
+        static constexpr const char* MotionAudioController__UeScsNode = "bf16bb33ff5f7743944c5947a478315d";
+        static constexpr const char* Engine_noise_Cue__UeScsNode = "79b84868463007448d2334d14c9bb0ee";
+        static constexpr const char* Collider_Floor__UeScsNode = "943bef8aad0163438cae433ab116d36d";
+        static constexpr const char* Mesh_Elevator__UeScsNode = "e7f368eff7c95b48b9e518ba3e190fc1";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "f2a5bb268c6e0e4e8cfa27c9068a8bf5";
+        static constexpr const char* GoingUp__Replicated = "OnRep_GoingUp:";
+    };
 };
 
 }}}   // namespace Game::Art::FromPersonalFolders

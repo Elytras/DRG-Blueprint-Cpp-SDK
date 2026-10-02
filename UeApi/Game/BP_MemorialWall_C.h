@@ -23,17 +23,11 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_MemorialWall", "BP_MemorialWall_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
-    static constexpr const char* Audio__UeScsNode = "e889316dbd093a47a3c70f1a50caa38b";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "d85c9a4748e67a40a3f4a5fd7fdffa4c";
     class USphereComponent* DanceSphere;
-    static constexpr const char* DanceSphere__UeScsNode = "0fc95cde32d6ed40b85e41783de89e7d";
     class UStaticMeshComponent* Cube;
-    static constexpr const char* Cube__UeScsNode = "b698ff893ab6284c839107b312b8f9d3";
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
     bool IsControlled;
     float FastSpeed;
     float SlowSpeed;
@@ -45,6 +39,16 @@ public:
     void ReceiveBeginPlay();
     void SetIsControlled();
     void SetFastScrollSpeed(bool flag);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Audio__UeScsNode = "e889316dbd093a47a3c70f1a50caa38b";
+        static constexpr const char* Sphere__UeScsNode = "d85c9a4748e67a40a3f4a5fd7fdffa4c";
+        static constexpr const char* DanceSphere__UeScsNode = "0fc95cde32d6ed40b85e41783de89e7d";
+        static constexpr const char* Cube__UeScsNode = "b698ff893ab6284c839107b312b8f9d3";
+        static constexpr const char* Widget__UeScsNode = "88c056cef25be344861606377be5ccec";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "9537c0e36ef65048a5951a90e6a80962";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

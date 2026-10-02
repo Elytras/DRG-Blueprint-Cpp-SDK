@@ -13,6 +13,11 @@ class STE_ElectricSMG_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SMG/STE_ElectricSMG", "STE_ElectricSMG_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::SMG

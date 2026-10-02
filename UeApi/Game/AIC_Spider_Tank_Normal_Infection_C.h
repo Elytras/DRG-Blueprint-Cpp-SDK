@@ -13,7 +13,11 @@ class AIC_Spider_Tank_Normal_Infection_C : public Game::Enemies::Spider::Tank::A
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/AIC_Spider_Tank_Normal_Infection", "AIC_Spider_Tank_Normal_Infection_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/AIModule.PawnActionsComponent ActionsComp;/Script/Engine.SceneComponent TransformComponent0";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank

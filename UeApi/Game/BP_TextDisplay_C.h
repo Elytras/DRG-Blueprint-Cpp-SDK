@@ -19,13 +19,17 @@ public:
     UE_CLASS("/Game/UI/IngameTextDisplay/BP_TextDisplay", "BP_TextDisplay_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
-    static constexpr const char* Widget__UeScsNode = "30a98f2492308c43b41843fa4b88eeb6";
     class USceneComponent* Scene;
-    static constexpr const char* Scene__UeScsNode = "24fa92a773c9434fbb45044803f255ba";
     FText Text;
     FSlateFontInfo NewVar_0;
     void ExecuteUbergraph_BP_TextDisplay(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Widget__UeScsNode = "30a98f2492308c43b41843fa4b88eeb6";
+        static constexpr const char* Scene__UeScsNode = "24fa92a773c9434fbb45044803f255ba";
+    };
 };
 
 }}}   // namespace Game::UI::IngameTextDisplay

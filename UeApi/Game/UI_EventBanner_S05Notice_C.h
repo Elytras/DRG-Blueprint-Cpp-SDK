@@ -23,8 +23,8 @@ public:
     using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* AnimBob;
-    class UWidgetAnimation* AnimIntro;
+    UE_READONLY class UWidgetAnimation* AnimBob;
+    UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow_0;
     class UImage* BGgradientBottom;
     class UImage* BGgradientTop;

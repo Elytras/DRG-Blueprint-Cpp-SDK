@@ -97,8 +97,8 @@ public:
     bool bUpdateHandScale;
     class UMaterialInterface* MaterialOverride;
     TMap<EBone, FName> BoneNameMappings;
-    TArray<FOculusCapsuleCollider> CollisionCapsules;
-    bool bSkeletalMeshInitialized;
+    UE_READONLY TArray<FOculusCapsuleCollider> CollisionCapsules;
+    UE_READONLY bool bSkeletalMeshInitialized;
 };
 
 class UOculusInputFunctionLibrary : public UBlueprintFunctionLibrary

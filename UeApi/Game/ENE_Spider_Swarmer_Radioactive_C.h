@@ -17,13 +17,9 @@ class ENE_Spider_Swarmer_Radioactive_C : public Game::Enemies::Spider::Swarmer::
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/ENE_Spider_Swarmer_Radioactive", "ENE_Spider_Swarmer_Radioactive_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Swarmer_Radioactive_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Swarmer_Radioactive_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "87c94fd6109ade4eafcba96e6ded03b7";
     class UParticleSystemComponent* ParticleSystem;
-    static constexpr const char* ParticleSystem__UeScsNode = "75519add80be404895acf48a8812b7c6";
     float RadiationDistance;
     float RadiationCheckDelay;
     bool IsRadioactive;
@@ -31,6 +27,14 @@ public:
     void ExecuteUbergraph_ENE_Spider_Swarmer_Radioactive(int EntryPoint);
     void RadiationLoop();
     void OnDeathBase();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Swarmer_Radioactive_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight__UeScsNode = "87c94fd6109ade4eafcba96e6ded03b7";
+        static constexpr const char* ParticleSystem__UeScsNode = "75519add80be404895acf48a8812b7c6";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer

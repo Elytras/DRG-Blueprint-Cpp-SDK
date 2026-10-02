@@ -28,31 +28,18 @@ class ENE_Spider_Hoarder_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_
 public:
     UE_CLASS("/Game/Critters/LootBug/Hoarder/ENE_Spider_Hoarder", "ENE_Spider_Hoarder_C");
     using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Hoarder_C;
-    static constexpr const char* UberGraphFrame_ENE_Spider_Hoarder_C__UeName = "UberGraphFrame";
     class UPointLightComponent* PointLight3;
-    static constexpr const char* PointLight3__UeScsNode = "c74ea9b1a6edbb4488e4785089091993";
     class UPointLightComponent* PointLight2;
-    static constexpr const char* PointLight2__UeScsNode = "63aa218a47c94a44956835b0f3a74e5b";
     class UPhysicalAnimationComponent* PhysicalAnimation;
-    static constexpr const char* PhysicalAnimation__UeScsNode = "662bd0090481bb4fb70ce50afbadc50e";
     class USkeletalMeshComponent* SK_HoarderHead_A;
-    static constexpr const char* SK_HoarderHead_A__UeScsNode = "b609b44008b3b1419b0eb6f3e80cbfab";
     class USkeletalMeshComponent* SK_HoarderBack_A;
-    static constexpr const char* SK_HoarderBack_A__UeScsNode = "4abde2bd5cf9f84aae70d92d1425134c";
     class UPointLightComponent* PointLight1;
-    static constexpr const char* PointLight1__UeScsNode = "c5a81feaf42e384e9597b9bc438ff681";
     class UAudioComponent* AudioScaredEnd;
-    static constexpr const char* AudioScaredEnd__UeScsNode = "78c3d27e19b062469273bed93a462b39";
     class UAudioComponent* AudioScaredLoop;
-    static constexpr const char* AudioScaredLoop__UeScsNode = "faedc262debe514eb7c327e5a48c4caa";
     class UAudioComponent* AudioScaredBegin;
-    static constexpr const char* AudioScaredBegin__UeScsNode = "ef5757cf1f833442869d261562003b7c";
     BP_BurrowComponent_C* BP_BurrowComponent;
-    static constexpr const char* BP_BurrowComponent__UeScsNode = "17c115b5f0a57d4b9445d7b764aefb53";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "4518becc93b4614aae8f64164d55cbbb";
     float Timeline_2_Light_IntensityB_BC447F934BD2DA41ABECE685727C08B5;
     float Timeline_2_Light_Intensity_G_BC447F934BD2DA41ABECE685727C08B5;
     float Timeline_2_Light_Intensity_R_BC447F934BD2DA41ABECE685727C08B5;
@@ -94,6 +81,23 @@ public:
     void Timeline_0__FinishedFunc();
     void HasLoot(bool& Has_Loot);
     void UpdateTarget(float MaxDistance, bool& OutTargetChanged);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UberGraphFrame_ENE_Spider_Hoarder_C__UeName = "UberGraphFrame";
+        static constexpr const char* PointLight3__UeScsNode = "c74ea9b1a6edbb4488e4785089091993";
+        static constexpr const char* PointLight2__UeScsNode = "63aa218a47c94a44956835b0f3a74e5b";
+        static constexpr const char* PhysicalAnimation__UeScsNode = "662bd0090481bb4fb70ce50afbadc50e";
+        static constexpr const char* SK_HoarderHead_A__UeScsNode = "b609b44008b3b1419b0eb6f3e80cbfab";
+        static constexpr const char* SK_HoarderBack_A__UeScsNode = "4abde2bd5cf9f84aae70d92d1425134c";
+        static constexpr const char* PointLight1__UeScsNode = "c5a81feaf42e384e9597b9bc438ff681";
+        static constexpr const char* AudioScaredEnd__UeScsNode = "78c3d27e19b062469273bed93a462b39";
+        static constexpr const char* AudioScaredLoop__UeScsNode = "faedc262debe514eb7c327e5a48c4caa";
+        static constexpr const char* AudioScaredBegin__UeScsNode = "ef5757cf1f833442869d261562003b7c";
+        static constexpr const char* BP_BurrowComponent__UeScsNode = "17c115b5f0a57d4b9445d7b764aefb53";
+        static constexpr const char* Sphere__UeScsNode = "4518becc93b4614aae8f64164d55cbbb";
+    };
 };
 
 }}}}   // namespace Game::Critters::LootBug::Hoarder

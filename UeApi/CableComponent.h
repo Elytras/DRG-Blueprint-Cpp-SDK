@@ -15,9 +15,13 @@ class ACableActor : public AActor
 {
 public:
     UE_CLASS("/Script/CableComponent", "CableActor");
-    class UCableComponent* CableComponent;
-    static constexpr const char* CableComponent__UeSubobject = "CableComponent0 /Script/CableComponent.CableComponent";
-    static constexpr const char* RootComponent__UeSubobject = "CableComponent0 /Script/CableComponent.CableComponent";
+    UE_READONLY class UCableComponent* CableComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CableComponent__UeSubobject = "CableComponent0 /Script/CableComponent.CableComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CableComponent0 /Script/CableComponent.CableComponent";
+    };
 };
 
 class UCableComponent : public UMeshComponent
@@ -30,8 +34,8 @@ public:
     FName AttachEndToSocketName;
     FVector EndLocation;
     float CableLength;
-    int NumSegments;
-    float SubstepTime;
+    UE_READONLY int NumSegments;
+    UE_READONLY float SubstepTime;
     int SolverIterations;
     bool bEnableStiffness;
     bool bUseSubstepping;
@@ -42,7 +46,7 @@ public:
     FVector CableForce;
     float CableGravityScale;
     float CableWidth;
-    int NumSides;
+    UE_READONLY int NumSides;
     float TileMaterial;
     void SetAttachEndTo(class AActor* Actor, FName ComponentProperty, FName SocketName);
     void SetAttachEndToComponent(class USceneComponent* Component, FName SocketName);

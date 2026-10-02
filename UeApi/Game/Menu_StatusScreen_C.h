@@ -33,7 +33,7 @@ public:
     using ITM_SeasonLogo_C = Game::UI::Menu_Seasons::ITM_SeasonLogo_C;
     using ITM_WeaponAndPerkInfo_C = Game::UI::Menu_EscapeMenu::ITM_WeaponAndPerkInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* LoadoutClicked;
+    UE_READONLY class UWidgetAnimation* LoadoutClicked;
     Basic_IconWithOutline_C* Basic_IconWithOutline;
     class UButton* Button_Loadout;
     class UTextBlock* dataReadout;

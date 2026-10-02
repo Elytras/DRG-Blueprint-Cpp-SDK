@@ -14,12 +14,16 @@ class EVENT_DropPodDefense_Uplink_C : public Game::GameElements::Objectives::Sal
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/EVENT_DropPodDefense_Uplink", "EVENT_DropPodDefense_Uplink_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
     FPointerToUberGraphFrame UberGraphFrame_EVENT_DropPodDefense_Uplink_C;
-    static constexpr const char* UberGraphFrame_EVENT_DropPodDefense_Uplink_C__UeName = "UberGraphFrame";
     void ExecuteUbergraph_EVENT_DropPodDefense_Uplink(int EntryPoint);
     void EventFailed();
     void EventSucceded();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UberGraphFrame_EVENT_DropPodDefense_Uplink_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage

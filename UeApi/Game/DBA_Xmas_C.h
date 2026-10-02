@@ -17,13 +17,17 @@ class DBA_Xmas_C : public ADebrisDataActor
 public:
     UE_CLASS("/Game/Game/Events/Xmas/DBA_Xmas", "DBA_Xmas_C");
     class UDebrisItemComponent* I_Baubles;
-    static constexpr const char* I_Baubles__UeScsNode = "d6e22170c1fa3348b6442dc1080a8b17";
     class UDebrisItemComponent* I_Gifts;
-    static constexpr const char* I_Gifts__UeScsNode = "d2b1cf762ade2448910a5b86684d02a0";
     class UDebrisItemComponent* I_Xmas;
-    static constexpr const char* I_Xmas__UeScsNode = "5efc41119e2022469a22acc33f4020ac";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "ebf0b1eed9654e44b29afc6db69e7178";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* I_Baubles__UeScsNode = "d6e22170c1fa3348b6442dc1080a8b17";
+        static constexpr const char* I_Gifts__UeScsNode = "d2b1cf762ade2448910a5b86684d02a0";
+        static constexpr const char* I_Xmas__UeScsNode = "5efc41119e2022469a22acc33f4020ac";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "ebf0b1eed9654e44b29afc6db69e7178";
+    };
 };
 
 }}}}   // namespace Game::Game::Events::Xmas

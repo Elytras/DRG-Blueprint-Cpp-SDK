@@ -28,7 +28,7 @@ public:
     class UBorder* Icon_Top;
     class UImage* RankIcon;
     bool HideBorder;
-    bool ShowIcon;
+    UE_READONLY bool ShowIcon;
     void ExecuteUbergraph_ICON_Rank(int EntryPoint);
     void SetRankAndStars(int Rank, int Stars);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

@@ -16,7 +16,11 @@ class BP_SmallMeteorSpawner_C : public APlagueMeteorSpawner
 public:
     UE_CLASS("/Game/GameElements/GameEvents/MeteorShower/BP_SmallMeteorSpawner", "BP_SmallMeteorSpawner_C");
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "7e8b89c5572e7b4b950a77de2c619e05";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "7e8b89c5572e7b4b950a77de2c619e05";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower

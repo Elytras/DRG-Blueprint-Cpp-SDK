@@ -45,7 +45,6 @@ public:
     using Screen_CharacterInfo_C = Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
     using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_CharacterSelection_Clean_C;
-    static constexpr const char* UberGraphFrame_SCREEN_CharacterSelection_Clean_C__UeName = "UberGraphFrame";
     class UNamedSlot* ButtonsGoHere;
     CharSelect_HeroSelect_Clean_C* CharSelect_HeroSelect;
     class UTextBlock* ClassDescription;
@@ -96,6 +95,11 @@ public:
     UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void HighlightClassChallenges(TArray<class UObject*>& AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_SCREEN_CharacterSelection_Clean_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

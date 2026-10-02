@@ -16,11 +16,15 @@ class ESI_Spider_Shooter_Rockpox_Plague_C : public Game::Enemies::Spider::ESI_Sp
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShooter/ESI_Spider_Shooter_Rockpox_Plague", "ESI_Spider_Shooter_Rockpox_Plague_C");
     class UStaticMeshComponent* InfectionPoint3;
-    static constexpr const char* InfectionPoint3__UeScsNode = "53274ac1c5d7e845a48fa7c1d17a154a";
     class UStaticMeshComponent* InfectionPoint8;
-    static constexpr const char* InfectionPoint8__UeScsNode = "4b258021239ddb49956f504c2b7f8a60";
     class UStaticMeshComponent* InfectionPoint2;
-    static constexpr const char* InfectionPoint2__UeScsNode = "33cd7b5a38e4e042ba1fb8111cb909b1";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InfectionPoint3__UeScsNode = "53274ac1c5d7e845a48fa7c1d17a154a";
+        static constexpr const char* InfectionPoint8__UeScsNode = "4b258021239ddb49956f504c2b7f8a60";
+        static constexpr const char* InfectionPoint2__UeScsNode = "33cd7b5a38e4e042ba1fb8111cb909b1";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShooter

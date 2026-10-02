@@ -25,26 +25,30 @@ class ENE_Jelly_Swarmer_C : public AEnemyDeepPathfinderCharacter
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/ENE_Jelly_Swarmer", "ENE_Jelly_Swarmer_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnAlertComponent* PawnAlert;
-    static constexpr const char* PawnAlert__UeScsNode = "4d7cf3d68af74d499d02d394ab7ef607";
     class UParticleSystemComponent* Trail;
-    static constexpr const char* Trail__UeScsNode = "b35ffb532a72854ea586a2ac4d1634b9";
     class UAudioComponent* JellySwarmerIdle;
-    static constexpr const char* JellySwarmerIdle__UeScsNode = "35cc06b221c78748bf0d698721b4db72";
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "3ad051f7003fde4c8bf22a306c337ed3";
     class UEnemyComponent* enemy;
-    static constexpr const char* enemy__UeScsNode = "1dac1457f886d743ad1995f7ec0b00d5";
     class UPawnSensingComponent* PawnSensing;
-    static constexpr const char* PawnSensing__UeScsNode = "7b7e16f150c9944a98d3680a970839d5";
     class USphereComponent* Sphere;
-    static constexpr const char* Sphere__UeScsNode = "59f4a5a9b182464aab27d134314764ea";
     class UParticleSystem* Deathpaticles;
     void ExecuteUbergraph_ENE_Jelly_Swarmer(int EntryPoint);
     void OnFrozen(class AActor* Source);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* PawnAlert__UeScsNode = "4d7cf3d68af74d499d02d394ab7ef607";
+        static constexpr const char* Trail__UeScsNode = "b35ffb532a72854ea586a2ac4d1634b9";
+        static constexpr const char* JellySwarmerIdle__UeScsNode = "35cc06b221c78748bf0d698721b4db72";
+        static constexpr const char* outline__UeScsNode = "3ad051f7003fde4c8bf22a306c337ed3";
+        static constexpr const char* enemy__UeScsNode = "1dac1457f886d743ad1995f7ec0b00d5";
+        static constexpr const char* PawnSensing__UeScsNode = "7b7e16f150c9944a98d3680a970839d5";
+        static constexpr const char* Sphere__UeScsNode = "59f4a5a9b182464aab27d134314764ea";
+    };
 };
 
 }}}   // namespace Game::Enemies::Jellyfish

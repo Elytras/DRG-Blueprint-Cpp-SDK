@@ -20,7 +20,6 @@ class ITM_Wardrobe_ItemSlot_VictoryMoves_C : public Game::UI::Menu_Wardrobe::ITM
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_VictoryMoves", "ITM_Wardrobe_ItemSlot_VictoryMoves_C");
     FPointerToUberGraphFrame UberGraphFrame_ITM_Wardrobe_ItemSlot_VictoryMoves_C;
-    static constexpr const char* UberGraphFrame_ITM_Wardrobe_ItemSlot_VictoryMoves_C__UeName = "UberGraphFrame";
     TArray<class UVictoryPose*> VictoryPoses;
     class UWidget* SelectedWidget;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_VictoryMoves(int EntryPoint);
@@ -32,6 +31,11 @@ public:
     void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
     void ReceiveEquipItem(int InIndex, bool& OutSuccess);
     void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_ITM_Wardrobe_ItemSlot_VictoryMoves_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

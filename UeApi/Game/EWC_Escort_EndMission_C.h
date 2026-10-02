@@ -18,11 +18,15 @@ class EWC_Escort_EndMission_C : public Game::Enemies::Waves::WaveControllers::EW
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_EndMission", "EWC_Escort_EndMission_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Escort_EndMission_C;
-    static constexpr const char* UberGraphFrame_EWC_Escort_EndMission_C__UeName = "UberGraphFrame";
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
     void ExecuteUbergraph_EWC_Escort_EndMission(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Escort_EndMission_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

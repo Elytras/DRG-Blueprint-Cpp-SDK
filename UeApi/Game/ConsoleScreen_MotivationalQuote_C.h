@@ -20,7 +20,7 @@ class ConsoleScreen_MotivationalQuote_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_MotivationalQuote", "ConsoleScreen_MotivationalQuote_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* TextAnim;
+    UE_READONLY class UWidgetAnimation* TextAnim;
     class UImage* Image;
     class UImage* Image_1;
     class UImage* Image_2;

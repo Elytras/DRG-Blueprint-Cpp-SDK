@@ -20,23 +20,27 @@ class GM_Refinery_C : public Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Refinery", "GM_Refinery_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
     FPointerToUberGraphFrame UberGraphFrame_GM_Refinery_C;
-    static constexpr const char* UberGraphFrame_GM_Refinery_C__UeName = "UberGraphFrame";
     FVector LandingZone;
     FSoftClassPath refineryClass;
     class UClass* RefineryLoadedClass;
     void ExecuteUbergraph_GM_Refinery(int EntryPoint);
     void RefineryStateChanged(TEnum<ERefineryState> InRefineryState);
     void Rocket_Launched();
-    static constexpr const char* Rocket_Launched__UeName = "Rocket Launched";
     void DropPodSpawned(class ADroppableOutpost* InDroppableOutpost);
     void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void OnMatchStarted_Event_0();
     void ReceiveBeginPlay();
     void Spawn_Refinery_And_Wells(class URefineryObjective* Refinery);
-    static constexpr const char* Spawn_Refinery_And_Wells__UeName = "Spawn Refinery And Wells";
     void IsComplexMission(bool& IsComplex);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UberGraphFrame_GM_Refinery_C__UeName = "UberGraphFrame";
+        static constexpr const char* Rocket_Launched__UeName = "Rocket Launched";
+        static constexpr const char* Spawn_Refinery_And_Wells__UeName = "Spawn Refinery And Wells";
+    };
 };
 
 }}   // namespace Game::Game

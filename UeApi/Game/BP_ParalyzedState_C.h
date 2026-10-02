@@ -18,10 +18,14 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FRotator StoredRotation;
     float Camera_Arm_Y_Rotation_;
-    static constexpr const char* Camera_Arm_Y_Rotation___UeName = "Camera Arm Y Rotation ";
     void ExecuteUbergraph_BP_ParalyzedState(int EntryPoint);
     void ReceiveStateExit();
     void ReceiveStateEnter();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Camera_Arm_Y_Rotation___UeName = "Camera Arm Y Rotation ";
+    };
 };
 
 }}}   // namespace Game::Character::States

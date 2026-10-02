@@ -24,7 +24,7 @@ public:
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     using UI_RunningMultiText_C = Game::UI::Global_UI_Elements::UI_RunningMultiText_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Fill;
+    UE_READONLY class UWidgetAnimation* Fill;
     BlurBackground_C* BlurBackground;
     class UImage* Glow;
     class UImage* ICON_label;

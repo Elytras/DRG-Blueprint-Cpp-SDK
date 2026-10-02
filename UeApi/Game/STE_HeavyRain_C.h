@@ -13,6 +13,11 @@ class STE_HeavyRain_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/CrystalCaves/STE_HeavyRain", "STE_HeavyRain_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves

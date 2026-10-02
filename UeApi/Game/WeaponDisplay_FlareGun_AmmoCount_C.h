@@ -20,7 +20,6 @@ public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/WeaponDisplay_FlareGun_AmmoCount", "WeaponDisplay_FlareGun_AmmoCount_C");
     using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_FlareGun_AmmoCount_C;
-    static constexpr const char* UberGraphFrame_WeaponDisplay_FlareGun_AmmoCount_C__UeName = "UberGraphFrame";
     class UTextBlock* AmmoCount;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UImage* Image_0;
@@ -30,6 +29,11 @@ public:
     void ExecuteUbergraph_WeaponDisplay_FlareGun_AmmoCount(int EntryPoint);
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_WeaponDisplay_FlareGun_AmmoCount_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::FlareGun

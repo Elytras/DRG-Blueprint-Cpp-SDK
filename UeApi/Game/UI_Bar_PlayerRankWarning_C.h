@@ -20,7 +20,7 @@ class UI_Bar_PlayerRankWarning_C : public UUserWidget
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_PlayerRankWarning", "UI_Bar_PlayerRankWarning_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* Anim_InfoBoxAppear;
+    UE_READONLY class UWidgetAnimation* Anim_InfoBoxAppear;
     class UImage* Image_82;
     class UImage* Image_84;
     class UImage* Image_85;

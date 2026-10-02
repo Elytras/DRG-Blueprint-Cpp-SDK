@@ -22,7 +22,7 @@ class Lore_ITM_MissionStep_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_ITM_MissionStep", "Lore_ITM_MissionStep_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* HoverZoom;
+    UE_READONLY class UWidgetAnimation* HoverZoom;
     class UButton* Button_Image;
     class UImage* Image_59;
     class UImage* Image_124;

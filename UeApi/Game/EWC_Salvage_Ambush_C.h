@@ -16,10 +16,14 @@ class EWC_Salvage_Ambush_C : public Game::Enemies::Waves::WaveControllers::EWC_B
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Salvage_Ambush", "EWC_Salvage_Ambush_C");
     FPointerToUberGraphFrame UberGraphFrame_EWC_Salvage_Ambush_C;
-    static constexpr const char* UberGraphFrame_EWC_Salvage_Ambush_C__UeName = "UberGraphFrame";
     FVector MuleLocation;
     void ExecuteUbergraph_EWC_Salvage_Ambush(int EntryPoint);
     void StartWave();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UberGraphFrame_EWC_Salvage_Ambush_C__UeName = "UberGraphFrame";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers

@@ -36,29 +36,17 @@ public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalFortifiedCaveEvent/BP_RivalFortifiedNode", "BP_RivalFortifiedNode_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
-    static constexpr const char* outline__UeScsNode = "30aacdcdb3dc48468f2ab0f473890385";
     class USkeletalMeshComponent* SkeletalMesh;
-    static constexpr const char* SkeletalMesh__UeScsNode = "b95fadbd15569e4f81351fbbe3addc0a";
     class UAudioComponent* TEMP_RivalTurretController_Idle_Cue;
-    static constexpr const char* TEMP_RivalTurretController_Idle_Cue__UeScsNode = "1e2593e123666a4c927d93bc63d5f9e9";
     class USimpleObjectInfoComponent* SimpleObjectInfo;
-    static constexpr const char* SimpleObjectInfo__UeScsNode = "6962ccd2146e0141896b83b9bc3af56c";
     class USphereComponent* HackUse;
-    static constexpr const char* HackUse__UeScsNode = "40dbad9c959f794db9cf46627d2d9f9b";
     class UHackingUsableComponent* HackingUsable;
-    static constexpr const char* HackingUsable__UeScsNode = "bb3b74c854432f4992f99aba267b22ad";
     class UTerrainPlacementComponent* terrainPlacement;
-    static constexpr const char* terrainPlacement__UeScsNode = "dad4f2e99862dd4bae20139d9b852613";
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
-    static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "7196a2b42c9f8043b0dfa86ebf51c869";
     class ULevelGenerationCarverComponent* LevelGenerationCarver;
-    static constexpr const char* LevelGenerationCarver__UeScsNode = "bc1ecce44f58674eaeb083247e2646c9";
     class UPointLightComponent* PointLight;
-    static constexpr const char* PointLight__UeScsNode = "fbc0906df4f2f745bbcad0cf2c4b38dc";
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
-    static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "116195fadde0b84cbba6ae46e36645a9";
     class USceneComponent* DefaultSceneRoot;
-    static constexpr const char* DefaultSceneRoot__UeScsNode = "4ce2b97e2ea6e141b693a5f1312a3f22";
     float LightBreath_Intensity_C8E7BB414DC030500D504F9FD0708336;
     TEnum<ETimelineDirection> LightBreath__Direction_C8E7BB414DC030500D504F9FD0708336;
     class UTimelineComponent* LightBreath;
@@ -74,7 +62,6 @@ public:
     float MaxLightIntensity;
     class UMaterialInstanceDynamic* DynamicGlowMat;
     bool Active;
-    static constexpr const char* Active__Replicated = "OnRep_Active:";
     float ShieldLaunchStrength;
     void ExecuteUbergraph_BP_RivalFortifiedNode(int EntryPoint);
     UE_MULTICAST void ShutDown();
@@ -88,6 +75,23 @@ public:
     void SpawnDefenses(class UClass* SpawnedActorClass, float Radius, class UDebrisPositioning* DebrisPositioning, class UCurveFloat* AvoidCostCurve, int ExtraDefenses);
     void OnRep_Active();
     void SpawnDebisChunks(TArray<class UStaticMeshComponent*>& NewParam);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* outline__UeScsNode = "30aacdcdb3dc48468f2ab0f473890385";
+        static constexpr const char* SkeletalMesh__UeScsNode = "b95fadbd15569e4f81351fbbe3addc0a";
+        static constexpr const char* TEMP_RivalTurretController_Idle_Cue__UeScsNode = "1e2593e123666a4c927d93bc63d5f9e9";
+        static constexpr const char* SimpleObjectInfo__UeScsNode = "6962ccd2146e0141896b83b9bc3af56c";
+        static constexpr const char* HackUse__UeScsNode = "40dbad9c959f794db9cf46627d2d9f9b";
+        static constexpr const char* HackingUsable__UeScsNode = "bb3b74c854432f4992f99aba267b22ad";
+        static constexpr const char* terrainPlacement__UeScsNode = "dad4f2e99862dd4bae20139d9b852613";
+        static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "7196a2b42c9f8043b0dfa86ebf51c869";
+        static constexpr const char* LevelGenerationCarver__UeScsNode = "bc1ecce44f58674eaeb083247e2646c9";
+        static constexpr const char* PointLight__UeScsNode = "fbc0906df4f2f745bbcad0cf2c4b38dc";
+        static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "116195fadde0b84cbba6ae46e36645a9";
+        static constexpr const char* DefaultSceneRoot__UeScsNode = "4ce2b97e2ea6e141b693a5f1312a3f22";
+        static constexpr const char* Active__Replicated = "OnRep_Active:";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalFortifiedCaveEvent

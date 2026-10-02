@@ -17,13 +17,17 @@ class BP_HackingPodDrillDebris_C : public Game::GameElements::Objectives::Facili
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_HackingPodDrillDebris", "BP_HackingPodDrillDebris_C");
     class UTerrainDetectComponent* TerrainDetect3;
-    static constexpr const char* TerrainDetect3__UeScsNode = "20d755406f3f94428c500ab9c8c7f814";
     class UTerrainDetectComponent* TerrainDetect2;
-    static constexpr const char* TerrainDetect2__UeScsNode = "cacd6dc91a56264ea1325a8442dc6071";
     class UTerrainDetectComponent* TerrainDetect1;
-    static constexpr const char* TerrainDetect1__UeScsNode = "2a2c6799cf28264eabc8a5b9d47ac4c1";
     class USkeletalMeshComponent* SK_DropPod_Drill;
-    static constexpr const char* SK_DropPod_Drill__UeScsNode = "42da8c28a98ab04ca13014d506ff247f";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TerrainDetect3__UeScsNode = "20d755406f3f94428c500ab9c8c7f814";
+        static constexpr const char* TerrainDetect2__UeScsNode = "cacd6dc91a56264ea1325a8442dc6071";
+        static constexpr const char* TerrainDetect1__UeScsNode = "2a2c6799cf28264eabc8a5b9d47ac4c1";
+        static constexpr const char* SK_DropPod_Drill__UeScsNode = "42da8c28a98ab04ca13014d506ff247f";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers

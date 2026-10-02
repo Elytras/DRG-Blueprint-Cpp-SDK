@@ -13,6 +13,11 @@ class STE_Electric_Plasma_Linecutter_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/Overclocks/OC_BonusesAndPenalties/STE_Electric_Plasma_Linecutter", "STE_Electric_Plasma_Linecutter_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DotStatusEffectItem DotStatusEffectItem_0;/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
+    };
 };
 
 }}}}}   // namespace Game::WeaponsNTools::LineCutter::Overclocks::OC_BonusesAndPenalties

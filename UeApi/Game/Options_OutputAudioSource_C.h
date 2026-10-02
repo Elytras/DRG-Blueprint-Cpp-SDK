@@ -26,7 +26,7 @@ public:
     using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
     using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* FadeOut;
+    UE_READONLY class UWidgetAnimation* FadeOut;
     Basic_CheckBox_C* Basic_CheckBox;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     BlurBackground_C* ErrorBackground;

@@ -17,22 +17,26 @@ class BP_PropHunt_PaperStack_C : public APropHuntDisguiseActor
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/Props/BP_PropHunt_PaperStack", "BP_PropHunt_PaperStack_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh4;
-    static constexpr const char* StaticMesh4__UeScsNode = "02347198438bcd4aa049701c77e29e9d";
     class UStaticMeshComponent* StaticMesh3;
-    static constexpr const char* StaticMesh3__UeScsNode = "1ee29a05b0705d43ae55ab003911a8bb";
     class UStaticMeshComponent* StaticMesh2;
-    static constexpr const char* StaticMesh2__UeScsNode = "46812e405ea38049a6d11d682136dc8a";
     class UStaticMeshComponent* StaticMesh1;
-    static constexpr const char* StaticMesh1__UeScsNode = "e3a3e8e8e4f59d4eaf362014afd46044";
     class UStaticMeshComponent* StaticMesh;
-    static constexpr const char* StaticMesh__UeScsNode = "e7138e3fa73dd544954773b5a19d1942";
     class UArrowComponent* Arrow;
-    static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     void ExecuteUbergraph_BP_PropHunt_PaperStack(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent CapsuleComponent;/Script/Engine.SceneComponent ContentComponent";
+        static constexpr const char* StaticMesh4__UeScsNode = "02347198438bcd4aa049701c77e29e9d";
+        static constexpr const char* StaticMesh3__UeScsNode = "1ee29a05b0705d43ae55ab003911a8bb";
+        static constexpr const char* StaticMesh2__UeScsNode = "46812e405ea38049a6d11d682136dc8a";
+        static constexpr const char* StaticMesh1__UeScsNode = "e3a3e8e8e4f59d4eaf362014afd46044";
+        static constexpr const char* StaticMesh__UeScsNode = "e7138e3fa73dd544954773b5a19d1942";
+        static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props

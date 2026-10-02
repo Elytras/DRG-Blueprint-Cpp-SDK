@@ -80,8 +80,12 @@ public:
     void SetData(class UPlayerCharacterID* CharacterClass);
     UE_PURE class UWidget* GetToolTipWidget();
     void Get_Selected_Button(ITM_LoadoutSelectButton_C*& Button, int& Index_0);
-    static constexpr const char* Get_Selected_Button__UeName = "Get Selected Button";
     void GetToolTipText(FText& Headline, FText& Text);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Get_Selected_Button__UeName = "Get Selected Button";
+    };
 };
 
 }}}}   // namespace Game::UI::Menu_Loadout::LoadoutSelection

@@ -13,7 +13,11 @@ class CameraShake_OmmoranTrap_Push_C : public UMatineeCameraShake
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/CameraShake_OmmoranTrap_Push", "CameraShake_OmmoranTrap_Push_C");
-    static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/GameplayCameras.MatineeCameraShakePattern RootShakePattern";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

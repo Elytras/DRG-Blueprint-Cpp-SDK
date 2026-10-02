@@ -13,6 +13,11 @@ class STE_Plague_BiteInfection_C : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/STE_Plague_BiteInfection", "STE_Plague_BiteInfection_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InfectionStatusEffectItem InfectionStatusEffectItem_0";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague

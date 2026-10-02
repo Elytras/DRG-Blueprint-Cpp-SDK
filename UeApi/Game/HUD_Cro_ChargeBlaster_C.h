@@ -21,7 +21,7 @@ class HUD_Cro_ChargeBlaster_C : public UCrosshairWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_Cro_ChargeBlaster", "HUD_Cro_ChargeBlaster_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UWidgetAnimation* DotFade;
+    UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* CA_Down1;
     class UImage* CA_Down2;
     class UImage* CA_Down3;

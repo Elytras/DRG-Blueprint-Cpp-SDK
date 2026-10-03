@@ -44,9 +44,11 @@ shared header names the mod that cooks it, as UE_STRUCT_IN does.
 #define UE_ENUM(Enum) static constexpr bool Enum##__UeEnum = true
 
 /*
-A table of an enum's names that follows the enum: `TMap<EMood, FName> Names = UE_ENUM_MAP(EMood);` and
-`TMap<FName, EMood> Moods = UE_ENUM_MAP(EMood);` are defaults the compiler fills at build time, one pair per
-enumerator, the name being its C++ identifier. FString works in place of FName. Any enum, a game's included.
+A table of an enum's names that follows the enum, declared as a member: `UE_ENUM_MAP(EMood, FName, Names);` and
+`UE_ENUM_MAP(FName, EMood, Moods);` are `TMap<EMood, FName> Names` and `TMap<FName, EMood> Moods` with defaults the
+compiler fills at build time, one pair per enumerator, the name being its C++ identifier. FString works in place of
+FName. Any enum, a game's included. The one-argument form is the default alone, for a member you declare:
+`TMap<EMood, FName> Names = UE_ENUM_MAP(EMood);`.
 */
 template <class E> struct __EnumMapInit__ {
   operator TMap<E, FName>() const { return {}; }
@@ -55,7 +57,54 @@ template <class E> struct __EnumMapInit__ {
   operator TMap<FString, E>() const { return {}; }
 };
 template <class E> __EnumMapInit__<E> __EnumMap__() { return {}; }
-#define UE_ENUM_MAP(Enum) __EnumMap__<Enum>()
+/* The enum of a map's two types, for the three-argument form: one of them an enum, the other FName or FString. A pair
+   that is not one still names a Type, an empty enum whose table converts to anything, so the static_assert in
+   __EnumMapCheck__ is the only error, and it names both types. The traits are plain C++, no compiler builtin, so the
+   MSVC IntelliSense BpMods.vcxproj runs reads them as clang does: an enum is what an int becomes by a cast but not by
+   itself, and has no members to point at. */
+enum class __EnumMapNone__ : unsigned char {};
+template <> struct __EnumMapInit__<__EnumMapNone__> {
+  template <class M> operator M() const { return {}; }
+};
+template <class A, class B> constexpr bool __EnumMapSame__ = false;
+template <class A> constexpr bool __EnumMapSame__<A, A> = true;
+template <class T> void __EnumMapTake__(T);
+template <class T> void __EnumMapMember__(int T::*);
+template <class T>
+constexpr bool __EnumMapEnum__ = requires(int I) { static_cast<T>(I); } && !requires(int I) { __EnumMapTake__<T>(I); }
+                                 && !requires { __EnumMapMember__<T>(nullptr); };
+template <class T> constexpr bool __EnumMapText__ = __EnumMapSame__<T, FName> || __EnumMapSame__<T, FString>;
+template <class K, class V>
+constexpr bool __EnumMapPair__ = (__EnumMapEnum__<K> && __EnumMapText__<V>) || (__EnumMapEnum__<V> && __EnumMapText__<K>);
+template <class K, class V, bool KeyIsEnum = __EnumMapEnum__<K> && __EnumMapText__<V>,
+          bool ValueIsEnum = __EnumMapEnum__<V> && __EnumMapText__<K>>
+struct __EnumMapSide__ { using Type = __EnumMapNone__; };
+template <class K, class V> struct __EnumMapSide__<K, V, true, false> { using Type = K; };
+template <class K, class V> struct __EnumMapSide__<K, V, false, true> { using Type = V; };
+template <class K, class V> struct __EnumMapCheck__ {
+  static_assert(__EnumMapPair__<K, V>, "UE_ENUM_MAP(Key, Value, Name): one of Key and Value is an enum and the other "
+                                       "FName or FString; for a TEnum<E>, write E");
+  using Type = typename __EnumMapSide__<K, V>::Type;
+};
+#define UE_ENUM_MAP__1(Enum) __EnumMap__<Enum>()
+#define UE_ENUM_MAP__3(Key, Value, Name) TMap<Key, Value> Name = __EnumMap__<__EnumMapCheck__<Key, Value>::Type>()
+/* Any other count of arguments, none or more than three included. */
+#define UE_ENUM_MAP__N(...)                                                                                            \
+  static_assert(false, "UE_ENUM_MAP takes (Enum), or (Key, Value, Name) to declare the member")
+#define UE_ENUM_MAP__PICK(_1, _2, _3, _4, _5, _6, _7, _8, Form, ...) Form
+#define UE_ENUM_MAP__EXPAND(X) X
+/* __VA_OPT__ tells no arguments from one. MSVC's traditional preprocessor, which BpMods.vcxproj's IntelliSense runs, has
+   none: there UE_ENUM_MAP() counts as the one-argument form given nothing, an error of its own. */
+#ifdef __clang__
+#define UE_ENUM_MAP(...)                                                                                               \
+  UE_ENUM_MAP__EXPAND(UE_ENUM_MAP__PICK(__VA_ARGS__ __VA_OPT__(, ) UE_ENUM_MAP__N, UE_ENUM_MAP__N, UE_ENUM_MAP__N,    \
+                                        UE_ENUM_MAP__N, UE_ENUM_MAP__N, UE_ENUM_MAP__3, UE_ENUM_MAP__N,                \
+                                        UE_ENUM_MAP__1, UE_ENUM_MAP__N, )(__VA_ARGS__))
+#else
+#define UE_ENUM_MAP(...)                                                                                               \
+  UE_ENUM_MAP__EXPAND(UE_ENUM_MAP__PICK(__VA_ARGS__, UE_ENUM_MAP__N, UE_ENUM_MAP__N, UE_ENUM_MAP__N, UE_ENUM_MAP__N,   \
+                                        UE_ENUM_MAP__N, UE_ENUM_MAP__3, UE_ENUM_MAP__N, UE_ENUM_MAP__1, )(__VA_ARGS__))
+#endif
 #define UE_ENUM_IN(Enum, ModPackage) static constexpr const char *Enum##__UeEnum = ModPackage
 
 /*

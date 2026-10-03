@@ -197,6 +197,11 @@ template <class T> struct TSet {
   TSet() = default;
   TSet(std::initializer_list<T>) {}
   UE_CONTAINER_TSet int32 Num() const;
+  /* Set_Union, Set_Difference and Set_Intersection as values: `Wanted - Active`. Both sides must be set variables or
+     the result of another of these. */
+  TSet operator+(const TSet &B) const;
+  TSet operator-(const TSet &B) const;
+  TSet operator&(const TSet &B) const;
   /* Range-for: over a ToArray() copy, so elements are read-only. */
   const T *begin() const;
   const T *end() const;

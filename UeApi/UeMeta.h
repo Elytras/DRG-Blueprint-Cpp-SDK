@@ -15,11 +15,21 @@ This is the one hand-written file here; UeApi.h beside it is generated.
   static constexpr const char *UeClassMeta = Package ":" UeName;                                                       \
   static class UClass         *StaticClass()
 
+/*
+UE_CLASS for a mod's own Blueprint class, named by its owner's UE_MOD_PACKAGE alone:
+`UE_CLASS_IN("/Game/_MyMods/Turrets");` in UTurretDef is
+UE_CLASS("/Game/_MyMods/Turrets/UTurretDef", "UTurretDef_C"). The compiler appends
+the class's namespaces and name, as UE_STRUCT_IN does, so the name is written once.
+*/
+#define UE_CLASS_IN(ModPackage)                                                                                        \
+  static constexpr const char *UeClassInMeta = ModPackage;                                                             \
+  static class UClass         *StaticClass()
+
 /* Marks a struct to be cooked as a UserDefinedStruct asset in the mod package. */
 #define UE_STRUCT static constexpr bool UeStructMeta = true
 
 /*
-UE_STRUCT for a struct in a header other mods include: `UE_STRUCT_IN("/Game/_ElytrasMods/ReadProperty");`.
+UE_STRUCT for a struct in a header other mods include: `UE_STRUCT_IN("/Game/_MyMods/Turrets");`.
 Only the source whose UE_MOD_PACKAGE is that path cooks it; every other mod imports
 <Path>/<Name>, the way a UE_CLASS outside its package is imported. It names one owner, so
 a struct cannot carry both macros.
@@ -98,7 +108,7 @@ struct (FVector, FRotator, ...) or an element, whose other parts are unknown her
 
 A game Blueprint's class defaults are edited by a patch of the class:
 
-    class GruntTweaks : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Normal_C {
+    class MyGruntPatch : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Normal_C {
       UE_PATCH;
       UE_DEFAULTS {
         SomeMember = 5;                     // a member of the class or of any class above it
@@ -351,8 +361,8 @@ A class has no static storage, so a static that is not const is refused where it
 /*
 The editor category of what follows it in a class, as an access specifier is the access of what follows it:
 
-    UE_CATEGORY("Teleporter|Setup");
-    static void Configure(...);      // listed under Teleporter > Setup in the editor's menus and My Blueprint
+    UE_CATEGORY("Turret|Setup");
+    static void Configure(...);      // listed under Turret > Setup in the editor's menus and My Blueprint
     int32 Charges;
     UE_CATEGORY("");                 // back to none
 

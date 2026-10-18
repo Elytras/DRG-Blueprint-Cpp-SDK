@@ -35,9 +35,9 @@ public:
     FAnimNode_StateResult AnimGraphNode_StateResult;
     FAnimNode_StateMachine AnimGraphNode_StateMachine;
     bool IsOpen;
-    bool IsHIt;
+    bool IsHit;
     void ExecuteUbergraph_ABP_FloatingLightPlant_A(int EntryPoint);
-    void OnChangeState(bool IsOpen_0, bool IsHIt_0);
+    void OnChangeState(bool IsOpen_0, bool IsHit_0);
     void BlueprintBeginPlay();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_FloatingLightPlant_A_AnimGraphNode_TransitionResult_530FB0CC4F33C0D9F79412B2EC183FAD();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_FloatingLightPlant_A_AnimGraphNode_TransitionResult_3FB1A8D74C801563ABAD31B28E08B5D5();

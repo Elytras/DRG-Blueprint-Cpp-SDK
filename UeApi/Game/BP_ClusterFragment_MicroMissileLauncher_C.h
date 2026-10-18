@@ -23,8 +23,8 @@ public:
     void ExecuteUbergraph_BP_ClusterFragment_MicroMissileLauncher(int EntryPoint);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds_0);
-    void OnInitialized();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+    void OnInitialized();
 private:
     struct UeMarkers
     {

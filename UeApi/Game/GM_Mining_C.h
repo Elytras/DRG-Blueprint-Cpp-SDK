@@ -15,8 +15,8 @@ class GM_Mining_C : public Game::Game::BP_NetworkPlayGameMode_C
 public:
     UE_CLASS("/Game/Game/GM_Mining", "GM_Mining_C");
     FPointerToUberGraphFrame UberGraphFrame_GM_Mining_C;
-    void BndEvt__ObjectivesManager_K2Node_ComponentBoundEvent_0_DelegateEvent__DelegateSignature();
     void DonkeyButtonPressed();
+    void BndEvt__ObjectivesManager_K2Node_ComponentBoundEvent_0_DelegateEvent__DelegateSignature();
     void ExecuteUbergraph_GM_Mining(int EntryPoint);
 private:
     struct UeMarkers

@@ -35,6 +35,10 @@ public:
     bool SimulateLateJoin;
     TSoftClassPtr<class UClass> CharacterSelectionClass;
     void ReceiveBeginPlay();
+    void CollapseAndRemoveFromParent(class UWidget* Widget);
+    class UClass* GetLoaderScreenUIClass();
+    void CleanupUI();
+    void GetNonTakenHero(class UPlayerCharacterID*& SelectedClass);
     void OnBack();
     void OnPlayerCharacterPossesed_Event(class APawn* Pawn);
     UE_SERVER UE_RELIABLE void Server_RequestNonTakenHero();
@@ -44,10 +48,6 @@ public:
     void ReceiveDestroyed();
     void ShowReconnect(bool Show);
     void ExecuteUbergraph_BP_NetworkPlayerController(int EntryPoint);
-    void CollapseAndRemoveFromParent(class UWidget* Widget);
-    class UClass* GetLoaderScreenUIClass();
-    void CleanupUI();
-    void GetNonTakenHero(class UPlayerCharacterID*& SelectedClass);
 private:
     struct UeMarkers
     {

@@ -50,7 +50,7 @@ public:
     TEnum<ETimelineDirection> Timeline_0__Direction_97D3E280454882350654EE88E83F3CA7;
     class UTimelineComponent* Timeline_0;
     float RotationSpeed;
-    bool Can_use;
+    bool Can_Use;
     int musicIndex;
     FVector Scale;
     TArray<TSoftObjectPtr<class USoundBase>> MusicList;
@@ -95,7 +95,7 @@ private:
         static constexpr const char* JukeBox_Random_Cue__UeScsNode = "142a6f3ef15d70409adc7f4840a4a3f8";
         static constexpr const char* InstantUsable__UeScsNode = "986a4065d8678946960bfce0322296b3";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "af1528ba7b081e4ab5354e6a30a991f7";
-        static constexpr const char* Can_use__UeName = "Can use";
+        static constexpr const char* Can_Use__UeName = "Can Use";
         static constexpr const char* musicIndex__Replicated = "OnRep_MusicIndex:";
         static constexpr const char* Stop_Juke_Box__UeName = "Stop Juke Box";
     };

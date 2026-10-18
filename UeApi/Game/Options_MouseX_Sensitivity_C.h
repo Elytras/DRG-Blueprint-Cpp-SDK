@@ -28,7 +28,7 @@ public:
     Basic_Slider_C* Basic_Slider;
     class UHorizontalBox* ManualSensitivityInput;
     class USpinBox* SensitivityInput;
-    class UButton* ToggleManualinput;
+    class UButton* Togglemanualinput;
     class UTextBlock* TXT_ButtonText;
     class UWidgetSwitcher* WidgetSwitcher_207;
     bool UseSpinboxInput;

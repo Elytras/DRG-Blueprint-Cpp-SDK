@@ -26,8 +26,8 @@ public:
     void ExecuteUbergraph_BP_NewSandStorm(int EntryPoint);
     void EndEffect();
     void StartEffect();
-    void Fadeout__UpdateFunc();
-    void Fadeout__FinishedFunc();
+    void FadeOut__UpdateFunc();
+    void FadeOut__FinishedFunc();
     void Fadin__UpdateFunc();
     void Fadin__FinishedFunc();
 private:

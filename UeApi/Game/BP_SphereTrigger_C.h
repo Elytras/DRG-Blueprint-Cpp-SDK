@@ -20,8 +20,8 @@ public:
     UE_CLASS("/Game/LevelElements/Triggers/BP_SphereTrigger", "BP_SphereTrigger_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_SphereTrigger_C;
     class USphereComponent* Sphere;
-    void ExecuteUbergraph_BP_SphereTrigger(int EntryPoint);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    void ExecuteUbergraph_BP_SphereTrigger(int EntryPoint);
 private:
     struct UeMarkers
     {

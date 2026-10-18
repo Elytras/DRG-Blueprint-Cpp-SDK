@@ -23,7 +23,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimDownArrow;
     UI_ImageTinted_C* IMG_DownArrow;
-    class UImage* IMG_Icon;
+    class UImage* Img_Icon;
     class AFSDRefinery* Refinery;
     void ExecuteUbergraph_HUD_Refinery_SecondaryUseButton(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

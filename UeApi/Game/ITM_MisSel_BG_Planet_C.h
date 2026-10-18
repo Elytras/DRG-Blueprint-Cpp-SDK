@@ -15,7 +15,7 @@ class ITM_MisSel_BG_Planet_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_BG_Planet", "ITM_MisSel_BG_Planet_C");
-    class UImage* BGImage;
+    class UImage* BGimage;
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

@@ -26,7 +26,7 @@ public:
     using ITM_Season_Progress_Small_C = Game::UI::Menu_Seasons::ITM_Season_Progress_Small_C;
     using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    UE_READONLY class UWidgetAnimation* BGglow;
+    UE_READONLY class UWidgetAnimation* BgGlow;
     class UImage* BG_Top;
     class UImage* I_Background;
     class UImage* I_BG_Black;

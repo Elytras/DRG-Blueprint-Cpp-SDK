@@ -15,8 +15,8 @@ class ITM_Wardrobe_ItemSlot_ArmorVanity_C : public Game::UI::Menu_Wardrobe::ITM_
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_ArmorVanity", "ITM_Wardrobe_ItemSlot_ArmorVanity_C");
-    void ReceiveToggleType(bool& success);
     void SetSelectedItem(class UVanityItem* Item);
+    void ReceiveToggleType(bool& success);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

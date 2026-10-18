@@ -38,8 +38,8 @@ public:
     void EnableMuleButton();
     void DestroyNetworkedActors();
     void LoadToMission(class UMissionTemplate* mission);
-    class UClass* GetDefaultPawnClassForController(class AController* InController);
-    class AActor* ChoosePlayerStart(class AController* Player);
+    class UClass* GetDefaultPawnClassForController(class AController* InController_GetDefaultPawnClassForController);
+    class AActor* ChoosePlayerStart(class AController* Player_ChoosePlayerStart);
     void RecieveEndLevel();
     void ReceiveBeginPlay();
     void WaitForGeneration();

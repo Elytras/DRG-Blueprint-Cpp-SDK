@@ -44,8 +44,8 @@ public:
     void ExecuteUbergraph_BP_SpacerigTrashCompactor(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
-    void Fadeout__UpdateFunc();
-    void Fadeout__FinishedFunc();
+    void FadeOut__UpdateFunc();
+    void FadeOut__FinishedFunc();
     void SetupInstances();
     void AddStaticMeshes(TArray<FTransform>& Transforms);
     void ChooseList();

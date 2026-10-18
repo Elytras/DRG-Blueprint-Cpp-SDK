@@ -63,7 +63,7 @@ public:
     FName Param_DisplacementSpeed;
     FName Param_DisplacementIntensity;
     float BaseMaterialDisplacement;
-    TMulticastInlineDelegate<void(bool IsOpen, bool IsHIt)> OnChangeState;
+    TMulticastInlineDelegate<void(bool IsOpen, bool IsHit)> OnChangeState;
     float HideDuration;
     void ExecuteUbergraph_BP_FloatingLightPlant2(int EntryPoint);
     UE_MULTICAST void OnTerrainPointRemoved();

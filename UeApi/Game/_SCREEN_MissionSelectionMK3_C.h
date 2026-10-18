@@ -129,7 +129,7 @@ public:
     TArray<ITM_MisSel_PlanetZone_C*> ZoneLocks;
     TArray<class UBiome*> NewBiomes;
     FVector2D CurrPos;
-    FVector2D targetPos;
+    FVector2D TargetPos;
     bool IsBiomeHovered;
     bool CanParalaxCamera;
     float BiomeHoverStartTime;

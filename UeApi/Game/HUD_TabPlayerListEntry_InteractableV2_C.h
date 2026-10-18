@@ -29,7 +29,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Exit;
     UE_READONLY class UWidgetAnimation* Enter;
-    Basic_ButtonCutCorner_C* BTN_GamerCard;
+    Basic_ButtonCutCorner_C* BTN_Gamercard;
     Basic_ButtonCutCorner_C* BTN_Kick;
     Basic_ButtonCutCorner_C* BTN_mute;
     Basic_ButtonCutCorner_C* BTN_Respawn_Spacerig;

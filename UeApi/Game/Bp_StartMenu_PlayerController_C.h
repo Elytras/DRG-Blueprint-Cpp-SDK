@@ -70,6 +70,9 @@ public:
     void OnClose_Event_0(UI_InfoScreen_C* Screen);
     void InpAxisKeyEvt_MouseX_K2Node_InputAxisKeyEvent_0(float AxisValue);
     void InpAxisKeyEvt_MouseY_K2Node_InputAxisKeyEvent_1(float AxisValue);
+    void InpAxisKeyEvt_Gamepad_LeftX_K2Node_InputAxisKeyEvent_17(float AxisValue);
+    void InpAxisKeyEvt_Gamepad_LeftY_K2Node_InputAxisKeyEvent_63(float AxisValue);
+    void InpAxisKeyEvt_Gamepad_RightX_K2Node_InputAxisKeyEvent_71(float AxisValue);
     void InpAxisKeyEvt_Gamepad_RightY_K2Node_InputAxisKeyEvent_76(float AxisValue);
     void ReceiveTick(float DeltaSeconds_ReceiveTick);
     void NetworkErrorAccepted();
@@ -83,11 +86,8 @@ public:
     void NiagaraGenrationDone();
     void CheckSavegame();
     void Check_Info_Screen_Guid();
-    void InpAxisKeyEvt_Gamepad_LeftX_K2Node_InputAxisKeyEvent_17(float AxisValue);
-    void InpAxisKeyEvt_Gamepad_LeftY_K2Node_InputAxisKeyEvent_63(float AxisValue);
     void Reset_Shown_Info_Screen();
     void ExecuteUbergraph_Bp_StartMenu_PlayerController(int EntryPoint);
-    void InpAxisKeyEvt_Gamepad_RightX_K2Node_InputAxisKeyEvent_71(float AxisValue);
 private:
     struct UeMarkers
     {

@@ -23,14 +23,14 @@ public:
     TArray<class UVictoryPose*> VictoryPoses;
     class UWidget* SelectedWidget;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_VictoryMoves(int EntryPoint);
+    void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
+    void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
     void SetHovered(bool InSlotHovered);
     void ReceivePreConstruct();
     void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
     void ReceiveGetSelectedIndex(int& OutIndex);
     void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
-    void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
     void ReceiveEquipItem(int InIndex, bool& OutSuccess);
-    void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
 private:
     struct UeMarkers
     {

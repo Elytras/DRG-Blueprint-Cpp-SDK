@@ -43,7 +43,7 @@ public:
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     class UCanvasPanel* CanvasPanel_Outer;
     ITM_SeasonChallengeIcon_C* Icon_Challenge;
-    class UImage* Img_Shadow;
+    class UImage* IMG_Shadow;
     ITM_Campaign_Icon_C* ITM_Campaign_Icon;
     class UButton* MainButton;
     class UHorizontalBox* MissionsAvailiable;

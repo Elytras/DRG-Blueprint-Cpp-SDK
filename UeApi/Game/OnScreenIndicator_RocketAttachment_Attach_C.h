@@ -17,7 +17,7 @@ class OnScreenIndicator_RocketAttachment_Attach_C : public UFSDInWorldWidget
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_RocketAttachment_Attach", "OnScreenIndicator_RocketAttachment_Attach_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UImage* IMG_Icon;
+    class UImage* Img_Icon;
     void ExecuteUbergraph_OnScreenIndicator_RocketAttachment_Attach(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

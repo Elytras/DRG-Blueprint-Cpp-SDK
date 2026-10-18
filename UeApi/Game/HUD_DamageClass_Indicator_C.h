@@ -30,7 +30,7 @@ public:
     class UHorizontalBox* AfflictionBox_Right;
     HUD_PlayerInfection_C* HUD_PlayerInfection;
     HUD_PlayerTemperature_C* HUD_PlayerTemperature;
-    class USpacer* Spacer_Left;
+    class USpacer* Spacer_left;
     class USpacer* Spacer_right;
     bool IsOn;
     TMap<class UPawnAffliction*, HUD_DamageClass_Item_C*> Indicators;

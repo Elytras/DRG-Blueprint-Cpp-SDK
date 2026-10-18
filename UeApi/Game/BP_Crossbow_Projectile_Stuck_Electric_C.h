@@ -44,8 +44,8 @@ public:
     void DoIndicatorPulse();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
-    void Fadeout__UpdateFunc();
-    void Fadeout__FinishedFunc();
+    void FadeOut__UpdateFunc();
+    void FadeOut__FinishedFunc();
     void RingPulse__UpdateFunc();
     void RingPulse__FinishedFunc();
     void UserConstructionScript();

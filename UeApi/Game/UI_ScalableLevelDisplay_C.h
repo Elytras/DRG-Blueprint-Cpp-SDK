@@ -25,7 +25,7 @@ public:
     class UTextBlock* DATA_Name;
     class UBorder* Holder_Level;
     class UBorder* Holder_Name;
-    class UImage* IMG_Icon;
+    class UImage* Img_Icon;
     class USizeBox* SizeBox_5;
     class USpacer* Spacer_199;
     bool ShowClassInstead;

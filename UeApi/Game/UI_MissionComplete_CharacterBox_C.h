@@ -30,7 +30,7 @@ public:
     UE_READONLY class UWidgetAnimation* AnimMoveIn;
     class UBorder* Border_0;
     class UBorder* Border_1;
-    class UButton* BTN_GamerCard;
+    class UButton* BTN_Gamercard;
     class UTextBlock* Data_CharacterClass;
     class UTextBlock* Data_Kills;
     class UTextBlock* Data_Mining;

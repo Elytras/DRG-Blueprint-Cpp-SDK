@@ -29,9 +29,9 @@ public:
     class UStaticMeshComponent* SM_Screen_005;
     class UStaticMeshComponent* SM_GasCanister;
     class USceneComponent* DefaultSceneRoot;
-    void ExecuteUbergraph_BP_Anniversary_HeliumTank(int EntryPoint);
-    UE_MULTICAST UE_RELIABLE void All_PlayParticleFX();
     void BndEvt__BP_HeliumTank_InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    UE_MULTICAST UE_RELIABLE void All_PlayParticleFX();
+    void ExecuteUbergraph_BP_Anniversary_HeliumTank(int EntryPoint);
 private:
     struct UeMarkers
     {

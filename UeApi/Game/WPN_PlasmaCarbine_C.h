@@ -39,7 +39,7 @@ public:
     float Overheat_Ammo_Regen_Effect_6788C26846C5EA00DB58E08FBF311673;
     TEnum<ETimelineDirection> Overheat_Ammo_Regen__Direction_6788C26846C5EA00DB58E08FBF311673;
     class UTimelineComponent* Overheat_Ammo_Regen;
-    float Overheat;
+    float OverHeat;
     bool HasOverheated;
     bool RegenAmmoOnOverheat;
     bool AoeOnOverheat;

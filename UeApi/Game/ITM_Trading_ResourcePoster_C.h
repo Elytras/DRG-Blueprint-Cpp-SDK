@@ -27,7 +27,7 @@ public:
     class UImage* Image_Resource_2;
     class UImage* Image_Resource_3;
     class UImage* Image_Resource_4;
-    class UImage* Img_Background;
+    class UImage* IMG_Background;
     class UImage* IMG_GradientOverlay;
     void ExecuteUbergraph_ITM_Trading_ResourcePoster(int EntryPoint);
     void SetData(class UTexture2D* Icon);

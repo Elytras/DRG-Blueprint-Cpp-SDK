@@ -35,14 +35,14 @@ public:
     class UButton* Open_Button;
     class UCanvasPanel* Root_Canvas;
     class UGameDLC* DLC;
-    UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void GetSeasonDLC(class UGameDLC*& Season_DLC);
     void OpenDLCInSteamBrowser();
+    UE_COSMETIC void Construct();
+    UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
-    UE_COSMETIC void Construct();
-    void ExecuteUbergraph_UI_InfoScreen_LatestDLC(int EntryPoint);
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature();
+    void ExecuteUbergraph_UI_InfoScreen_LatestDLC(int EntryPoint);
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

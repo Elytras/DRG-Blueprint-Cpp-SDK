@@ -147,6 +147,8 @@
     FString LeftChop(int Count) const;
     // UKismetStringLibrary::LeftPad (Engine.h)
     FString LeftPad(int ChCount) const;
+    // UKismetStringLibrary::Len (Engine.h)
+    int Len() const;
     // UFSDWidgetBlueprintLibrary::LengthIgnoringWhitespace (FSD.h)
     int LengthIgnoringWhitespace() const;
     // UGameplayStatics::LoadGameFromSlot (Engine.h)
@@ -386,6 +388,7 @@ private:
         static constexpr const char* Left__UeForward = "UKismetStringLibrary::Left";
         static constexpr const char* LeftChop__UeForward = "UKismetStringLibrary::LeftChop";
         static constexpr const char* LeftPad__UeForward = "UKismetStringLibrary::LeftPad";
+        static constexpr const char* Len__UeForward = "UKismetStringLibrary::Len";
         static constexpr const char* LengthIgnoringWhitespace__UeForward = "UFSDWidgetBlueprintLibrary::LengthIgnoringWhitespace";
         static constexpr const char* LoadGameFromSlot__UeForward = "UGameplayStatics::LoadGameFromSlot";
         static constexpr const char* LogPerformanceSnapshot__UeForward = "UHealthSnapshotBlueprintLibrary::LogPerformanceSnapshot";

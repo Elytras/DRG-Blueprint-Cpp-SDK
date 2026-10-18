@@ -32,7 +32,7 @@ public:
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     class UVerticalBox* Header;
     UI_MissionStat_Preview_C* MissionStat_Preview;
-    class USpacer* Spacer_Left;
+    class USpacer* Spacer_left;
     class USpacer* Spacer_middle;
     class USpacer* Spacer_right;
     class UVerticalBox* StatsParent;

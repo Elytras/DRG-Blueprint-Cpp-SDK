@@ -30,7 +30,6 @@ public:
     class UClass* MouseCursor_DO_NOT_DELETE;
     TMulticastInlineDelegate<void()> ToggleFPS;
     TMulticastInlineDelegate<void()> QuickCheatMenuRequested;
-    void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_8(FKey Key);
     void UpdateTutorialComplete();
     UE_PURE bool ShouldSkipEndscreen();
     void DestroyCharacter();
@@ -49,12 +48,7 @@ public:
     void InpActEvt_Chat_K2Node_InputActionEvent_0(FKey Key);
     void InpActEvt_Gamepad_LeftThumbstick_K2Node_InputKeyEvent_10(FKey Key);
     void InpActEvt_Gamepad_LeftThumbstick_K2Node_InputKeyEvent_9(FKey Key);
-    UE_SERVER UE_RELIABLE void RequestLoadScreen();
-    UE_CLIENT UE_RELIABLE void ShowSelectCharacterScreen();
-    UE_CLIENT UE_RELIABLE void ShowLoadingScrren();
-    void Receive_EndLevel_WaitForData(bool areObjectivesCompleted, int numberOfPlayersInPod);
-    UE_SERVER UE_RELIABLE void Server_SetLag();
-    void ExecuteUbergraph_BP_PlayerController(int EntryPoint);
+    void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_8(FKey Key);
     void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_7(FKey Key);
     void InpActEvt_H_K2Node_InputKeyEvent_6(FKey Key);
     void InpActEvt_Subtract_K2Node_InputKeyEvent_5(FKey Key);
@@ -70,6 +64,12 @@ public:
     void ReceiveEndLevel();
     UE_SERVER UE_RELIABLE void Server_ClientReady();
     UE_SERVER UE_RELIABLE void SelectLateJoinCharacter(class UPlayerCharacterID* Hero);
+    UE_SERVER UE_RELIABLE void RequestLoadScreen();
+    UE_CLIENT UE_RELIABLE void ShowSelectCharacterScreen();
+    UE_CLIENT UE_RELIABLE void ShowLoadingScrren();
+    void Receive_EndLevel_WaitForData(bool areObjectivesCompleted_Receive_EndLevel_WaitForData, int numberOfPlayersInPod_Receive_EndLevel_WaitForData);
+    UE_SERVER UE_RELIABLE void Server_SetLag();
+    void ExecuteUbergraph_BP_PlayerController(int EntryPoint);
 private:
     struct UeMarkers
     {

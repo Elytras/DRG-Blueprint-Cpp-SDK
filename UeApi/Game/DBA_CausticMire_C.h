@@ -27,7 +27,7 @@ public:
     class UDebrisDataComponent* D_Rubble1;
     class UDebrisItemComponent* I_SandArches__15K_0_50__5K_0_30_;
     class UDebrisDataComponent* C_FlatRocks__10K_60_90_;
-    class USceneComponent* Rocks;
+    class USceneComponent* rocks;
     class UDebrisItemComponent* I_SulfurChimneys__2K_90_100_;
     class UDebrisDataComponent* D_SulfurDeposits;
     class UDebrisItemComponent* I_AirGeyser__10K_51_100_;
@@ -60,7 +60,7 @@ private:
         static constexpr const char* I_SandArches__15K_0_50__5K_0_30___UeScsNode = "22987a727701d546bd68122485471a16";
         static constexpr const char* C_FlatRocks__10K_60_90___UeName = "C_FlatRocks--10K(60-90)";
         static constexpr const char* C_FlatRocks__10K_60_90___UeScsNode = "89b8abcad12bd644bb8b76a3d136ef0a";
-        static constexpr const char* Rocks__UeScsNode = "9d17fb45b42a3545b66ad050d886d957";
+        static constexpr const char* rocks__UeScsNode = "9d17fb45b42a3545b66ad050d886d957";
         static constexpr const char* I_SulfurChimneys__2K_90_100___UeName = "I_SulfurChimneys--2K(90-100)";
         static constexpr const char* I_SulfurChimneys__2K_90_100___UeScsNode = "f7fc79d1ed68b04d8651b9ce42a2a407";
         static constexpr const char* D_SulfurDeposits__UeScsNode = "8f6ca63fac22f54d853f6131d9ebd9dd";

@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_UI_CallingMolly(int EntryPoint);
     void OnPingFinished();
     void PingIcon();
-    void OnTimeOut();
+    void OnTimeout();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void OnCalledByChanged(class APlayerCharacter* PlayerCharacter);

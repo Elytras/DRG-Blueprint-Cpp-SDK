@@ -28,11 +28,11 @@ public:
     UE_READONLY TArray<class USkeletalMesh*> LampMeshes;
     class USkeletalMesh* UsedLampMesh;
     FTimerHandle Timer;
-    void ExecuteUbergraph_BP_Anniversary_MiniChandelier(int EntryPoint);
-    void ReceiveBeginPlay();
-    void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void OnCollide();
     void OnRep_UsedLampMesh();
+    void OnCollide();
+    void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    void ReceiveBeginPlay();
+    void ExecuteUbergraph_BP_Anniversary_MiniChandelier(int EntryPoint);
 private:
     struct UeMarkers
     {

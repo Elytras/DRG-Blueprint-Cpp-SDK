@@ -39,11 +39,6 @@ struct FString {
   FString(double) {} // a FloatingLiteral, so `Str + 0.5` is not ambiguous across the scalar ctors
   UE_CONV_FString
 
-    int32
-    Len() const {
-    return Length;
-  }
-
 #include "Methods_FString.inc"
 };
 
@@ -97,6 +92,22 @@ template <class E> struct TEnum {
   operator E() const { return E(); }
   FName   Name() const;
   FString String() const;
+};
+
+/* A Blueprint bitmask over an enum: `TEnumMask<EMood> Moods;` compiles to a plain int32 - what the editor's Bitmask
+   variable over a Bitmask Flags enum is - whose bit N stands for the enumerator whose value is N; the enum itself stays
+   0, 1, 2, ... The methods are KismetNodeHelperLibrary's bit functions with the enumerator as the bit index: Has is
+   BitIsMarked, Add MarkBit, Remove ClearBit, Clear ClearAllBits. It converts to and from int32, so `|`, `&` and `~`
+   work on whole masks. A native enum whose values are already flags (1, 2, 4, ...) is not one of these: test it with
+   `&` on an int32. */
+template <class E> struct TEnumMask {
+  TEnumMask() = default;
+  TEnumMask(int32) {}
+  operator int32() const { return 0; }
+  bool Has(E) const;
+  void Add(E);
+  void Remove(E);
+  void Clear();
 };
 
 /* A soft pointer to a subclass passes where one to its parent is wanted, as UE's converts. Conv.h

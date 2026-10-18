@@ -242,12 +242,46 @@ writes for you:
     }
 It is not a constructor and never runs: AssetGen reads the assignments and writes them as
 defaults, and each SetupAttachment as where the component's node hangs. A plain member of this
-class takes its default from its own initializer instead.
+class takes its default from its own initializer instead. A default constructor is read the same
+way, as the class's defaults: its member initializers and assignments to the class's own members
+as their initializers, its other statements as this block's, after them.
 */
 #define UE_COMPONENT(Type, Name)                                                                                       \
   static constexpr const char *Name##__UeComponent = #Type;                                                            \
   Type                        *Name
 #define UE_DEFAULTS void UeDefaults__()
+
+/*
+A widget of a UUserWidget class's designer tree, which the class's constructor lays out:
+    UE_WIDGET(UCanvasPanel, Root);                   // the first UE_WIDGET is the tree's root
+    UE_WIDGET(UTextBlock, Title);
+    UMyCard() {
+      Root->AddChildToCanvas(Title)->SetPosition(FVector2D(20, 10));
+      Title->SetText(FText("Score"));
+    }
+Declares Title as a class variable (the editor's "Is Variable") and a widget of the tree, cooked
+as the editor saves one. Like UE_DEFAULTS, the constructor never runs: AddChild... calls place
+the widgets, and each setter is read as the property it sets, on the widget or on its slot.
+*/
+#define UE_WIDGET(Type, Name)                                                                                          \
+  static constexpr const char *Name##__UeWidget = #Type;                                                               \
+  Type                        *Name
+
+/*
+The layout's other lines, beside its AddChild calls:
+    Play->OnClicked.Add(this, &UMyCard::OnPlay);     // a widget's event, bound as each widget is made
+    UE_SLOT(Frame->Body, Inner);                     // Inner fills the named slot Body of the user widget Frame
+    UE_BIND(Title, Text, &UMyCard::GetScoreText);     // Title's Text, read from GetScoreText as it is drawn
+UE_SLOT's slot is a UNamedSlot of the nested widget's class (a UE_WIDGET of a mod class, a variable of a
+game one), and Inner one of this class's UE_WIDGETs, in no panel. UE_BIND's function returns the
+property's type and takes nothing; the widget must have a <Property>Delegate. Neither is a function
+that runs: like the rest of the layout they are read, and only in the constructor.
+*/
+#define UE_SLOT(Slot, Content) UeSlot__(Slot, Content)
+#define UE_BIND(Widget, Property, Function) UeBind__(Widget->Property##Delegate, Widget->Property, Function)
+void                                                 UeSlot__(class UNamedSlot *Slot, class UWidget *Content);
+template <class D, class C, class V> void UeBind__(D &Delegate, const V &Property, V (C::*Function)() const);
+template <class D, class C, class V> void UeBind__(D &Delegate, const V &Property, V (C::*Function)());
 
 /*
 An event dispatcher on a mod class: `UE_DISPATCHER(OnScored, int32 Points, AActor* By);`. Declares the
@@ -319,14 +353,30 @@ harmless `&&` / `||` keeps its branch. It is the real attribute, so `#pragma cla
 
 /*
 UE_AWAIT(Proxy->OnCompleted): the rest of the function runs when that dispatcher next fires, as the editor's
-async action node continues from its output pin. The value is the dispatcher's parameter when it has exactly one.
-A UBlueprintAsyncActionBase is activated after the bind. Like a latent call, the function moves into the
-ubergraph (Actor / ActorComponent, returns nothing, no non-const reference parameters). The event stays
-bound: a dispatcher that fires again re-enters the code after the await.
+async action node continues from its output pin. The value is the dispatcher's parameter when it has exactly one;
+of two or more, bind them: `auto [Who, Points] = UE_AWAIT(OnScored);`. A UBlueprintAsyncActionBase is activated
+after the bind. Like a latent call, the function moves into the ubergraph (Actor / ActorComponent, returns
+nothing, no non-const reference parameters). The event stays bound: a dispatcher that fires again re-enters the
+code after the await.
+ponytail: TAwaitValues has members for up to nine values, the most a UeApi dispatcher has; a line adds more.
 */
 template <class Sig> struct TMulticastInlineDelegate;
-template <class A> A       __Await__(TMulticastInlineDelegate<void(A)> &Dispatcher);
-template <class... A> void __Await__(TMulticastInlineDelegate<void(A...)> &Dispatcher);
+template <class... A> struct TAwaitValues {};
+template <class A, class B> struct TAwaitValues<A, B> { A V0; B V1; };
+template <class A, class B, class C> struct TAwaitValues<A, B, C> { A V0; B V1; C V2; };
+template <class A, class B, class C, class D> struct TAwaitValues<A, B, C, D> { A V0; B V1; C V2; D V3; };
+template <class A, class B, class C, class D, class E> struct TAwaitValues<A, B, C, D, E> { A V0; B V1; C V2; D V3; E V4; };
+template <class A, class B, class C, class D, class E, class F>
+struct TAwaitValues<A, B, C, D, E, F> { A V0; B V1; C V2; D V3; E V4; F V5; };
+template <class A, class B, class C, class D, class E, class F, class G>
+struct TAwaitValues<A, B, C, D, E, F, G> { A V0; B V1; C V2; D V3; E V4; F V5; G V6; };
+template <class A, class B, class C, class D, class E, class F, class G, class H>
+struct TAwaitValues<A, B, C, D, E, F, G, H> { A V0; B V1; C V2; D V3; E V4; F V5; G V6; H V7; };
+template <class A, class B, class C, class D, class E, class F, class G, class H, class I>
+struct TAwaitValues<A, B, C, D, E, F, G, H, I> { A V0; B V1; C V2; D V3; E V4; F V5; G V6; H V7; I V8; };
+void __Await__(TMulticastInlineDelegate<void()> &Dispatcher);
+template <class A> A __Await__(TMulticastInlineDelegate<void(A)> &Dispatcher);
+template <class A, class B, class... R> TAwaitValues<A, B, R...> __Await__(TMulticastInlineDelegate<void(A, B, R...)> &Dispatcher);
 #define UE_AWAIT(Dispatcher) __Await__(Dispatcher)
 
 /*
@@ -422,6 +472,64 @@ method but an override of a parent's event - and the variables that are not priv
 #define UE_CATEGORY__JOIN2(A, B) A##B
 #define UE_CATEGORY__JOIN(A, B) UE_CATEGORY__JOIN2(A, B)
 #define UE_CATEGORY(Text) static constexpr const char *UE_CATEGORY__JOIN(UeCategory__, __COUNTER__) = Text
+
+/*
+A method the engine calls on a key or an input action, as the editor's InputKey and InputAction events:
+
+    UE_INPUT_KEY("F5") void Toggle();                        // F5 pressed
+    UE_INPUT_KEY("F5", Released) void Stop();                // F5 released
+    UE_INPUT_KEY("S", Ctrl, Shift) void Save();              // Ctrl+Shift+S
+    UE_INPUT_ACTION("Use", NoConsume) void Used(FKey Key);   // the game's Use action, which the game still gets
+
+The key is the engine's name of it (F5, SpaceBar, One, LeftMouseButton, Gamepad_FaceButton_Bottom: EKeys), and one the
+engine does not have is refused with the closest it does; the action is one of the game's input settings, which AssetGen
+cannot check. The method returns void and takes nothing or the key that fired it. Options: Pressed and Released (both:
+one call each; neither: Pressed), Shift, Ctrl, Alt and Cmd (a key's), NoConsume (the game's own use of the input still
+runs: without it the mod takes the input from the game), WhenPaused (fires while the game is paused) and KeepParent (a
+binding a parent class made of the same input and event stays). Only an actor gets input: a pawn while possessed and a
+player controller always, any other once it calls EnableInput(PlayerController) or its UE_DEFAULTS set
+AutoReceiveInput = EAutoReceiveInput::Player0.
+*/
+#define UE_INPUT_KEY(Key, ...)                                                                                         \
+  static constexpr const char *UE_CATEGORY__JOIN(UeInputKey__, __COUNTER__) = Key "|" #__VA_ARGS__;
+#define UE_INPUT_ACTION(Action, ...)                                                                                   \
+  static constexpr const char *UE_CATEGORY__JOIN(UeInputAction__, __COUNTER__) = Action "|" #__VA_ARGS__;
+
+/*
+A timeline of an actor, as the editor's Timeline node: its length in seconds and options, its tracks, and the methods it
+calls.
+
+    UE_TIMELINE(Fade, 2.0f, AutoPlay);                                  // UTimelineComponent *Fade
+    UE_FLOAT_TRACK(Fade, Alpha, (0, 0), (1, 1, Cubic), (2, 0));        // float Alpha, set each frame it plays
+    UE_VECTOR_TRACK(Fade, Lift, (0, 0, 0, 0), (2, 0, 0, 100));          // FVector Lift: (time, x, y, z)
+    UE_COLOR_TRACK(Fade, Tint, (0, 1, 1, 1, 1), (2, 1, 0, 0, 1));       // FLinearColor Tint: (time, r, g, b, a)
+    UE_TIMELINE_UPDATE(Fade) void OnFade();                             // each frame it plays, after the tracks
+    UE_TIMELINE_FINISHED(Fade) void OnFaded();                          // at its end, or its start in reverse
+    UE_TIMELINE_EVENT(Fade, 0.5, 1.5) void Blink();                     // an event track: as it passes each time
+
+The options are AutoPlay, Loop, Replicated, IgnoreTimeDilation and LastKeyframe (the length is the last key's time). A
+key is Linear to the next unless Cubic (Auto tangents) or Constant follows its values; its numbers are literals. The
+methods return void and take nothing. Play it through the component: Fade->Play(), PlayFromStart(), Reverse(), Stop(),
+SetNewTime(T).
+*/
+#define UE_TIMELINE(Name, Length, ...)                                                                                 \
+  static constexpr const char *Name##__UeTimeline = #Length "|" #__VA_ARGS__;                                         \
+  UTimelineComponent          *Name
+#define UE_FLOAT_TRACK(Timeline, Name, ...)                                                                            \
+  static constexpr const char *Name##__UeTrack = #Timeline "|" #__VA_ARGS__;                                          \
+  float                        Name
+#define UE_VECTOR_TRACK(Timeline, Name, ...)                                                                           \
+  static constexpr const char *Name##__UeTrack = #Timeline "|" #__VA_ARGS__;                                          \
+  FVector                      Name
+#define UE_COLOR_TRACK(Timeline, Name, ...)                                                                            \
+  static constexpr const char *Name##__UeTrack = #Timeline "|" #__VA_ARGS__;                                          \
+  FLinearColor                 Name
+#define UE_TIMELINE_UPDATE(Timeline)                                                                                   \
+  static constexpr const char *UE_CATEGORY__JOIN(UeTimelineUpdate__, __COUNTER__) = #Timeline;
+#define UE_TIMELINE_FINISHED(Timeline)                                                                                 \
+  static constexpr const char *UE_CATEGORY__JOIN(UeTimelineFinished__, __COUNTER__) = #Timeline;
+#define UE_TIMELINE_EVENT(Timeline, ...)                                                                               \
+  static constexpr const char *UE_CATEGORY__JOIN(UeTimelineEvent__, __COUNTER__) = #Timeline "|" #__VA_ARGS__;
 
 /*
 The /Game package that the classes in a mod source are written into. A namespace is a folder: a class, struct,

@@ -30,9 +30,9 @@ public:
     void Cleanup();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void CalculateIndicatorPos();
-    void OnInitialized();
     UE_MULTICAST void SpawnClusters(FVector InVector, float ClusterDelay);
     void CalculateClusterTrajectory(float RealDeltaTime, float ProjectileSpeed, FVector& ClusterHitCenter);
+    void OnInitialized();
 private:
     struct UeMarkers
     {

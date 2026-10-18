@@ -36,7 +36,7 @@ public:
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;
     class UImage* bg1;
     class UImage* bg2;
-    class UImage* BGglow;
+    class UImage* BgGlow;
     BlurBackground_C* BlurBackground;
     class UBorder* Border_0;
     class USizeBox* BoxSizer;

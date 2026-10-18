@@ -28,7 +28,7 @@ public:
     class UDebrisItemComponent* I_FrostGeyser__10K_20_80__5K_50_70_;
     class UDebrisItemComponent* I_IceFormation2Platuaes__DISABLED;
     class UDebrisDataComponent* C_FlatRocks__10K_60_90_;
-    class USceneComponent* Rocks;
+    class USceneComponent* rocks;
     class UDebrisItemComponent* I_ClawRockFormation__10K_50_75_;
     class UDebrisItemComponent* I_ClawRockFormation_Dense__10K_75_100_;
     class UDebrisItemComponent* I_Glaciers__5K_40_70___A_1_5_;
@@ -66,7 +66,7 @@ private:
         static constexpr const char* I_IceFormation2Platuaes__DISABLED__UeScsNode = "e58db5be4e06084f8770e726c432d40b";
         static constexpr const char* C_FlatRocks__10K_60_90___UeName = "C_FlatRocks--10K(60-90)";
         static constexpr const char* C_FlatRocks__10K_60_90___UeScsNode = "acf5fc442988af4f9b84c88b0cfd35cb";
-        static constexpr const char* Rocks__UeScsNode = "1914b9d68e91194abed2cb0dbc627227";
+        static constexpr const char* rocks__UeScsNode = "1914b9d68e91194abed2cb0dbc627227";
         static constexpr const char* I_ClawRockFormation__10K_50_75___UeName = "I_ClawRockFormation--10K(50-75)";
         static constexpr const char* I_ClawRockFormation__10K_50_75___UeScsNode = "8d1433f0c5594744b100ef3b5144999b";
         static constexpr const char* I_ClawRockFormation_Dense__10K_75_100___UeName = "I_ClawRockFormation_Dense--10K(75-100)";

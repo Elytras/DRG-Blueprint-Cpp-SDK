@@ -27,12 +27,12 @@ public:
     class URichTextBlock* RT_CrossplayOptions;
     FString DisabledOptionsText;
     TMulticastInlineDelegate<void()> OnCrossplaySettingSelected;
-    void Set_Crossplay_Option_Text();
-    UE_COSMETIC void Construct();
     void ExecuteUbergraph_UI_SelectCrossplayOption(int EntryPoint);
-    void BndEvt__UI_SelectCrossplayOption_Button_Crossplay_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void BndEvt__UI_SelectCrossplayOption_Button_No_Crossplay_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__UI_SelectCrossplayOption_Button_EAS_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
+    void BndEvt__UI_SelectCrossplayOption_Button_No_Crossplay_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
+    void BndEvt__UI_SelectCrossplayOption_Button_Crossplay_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
+    UE_COSMETIC void Construct();
+    void Set_Crossplay_Option_Text();
 private:
     struct UeMarkers
     {

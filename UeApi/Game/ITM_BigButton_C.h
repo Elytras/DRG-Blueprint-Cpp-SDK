@@ -31,7 +31,7 @@ public:
     UE_READONLY class UWidgetAnimation* HoverStart;
     UE_READONLY class UWidgetAnimation* Hover;
     UE_READONLY class UWidgetAnimation* Idle;
-    class UImage* BGglow;
+    class UImage* BgGlow;
     class UBorder* Border_129;
     class USizeBox* Button_SizeBox;
     class UButton* ClickButton;

@@ -23,7 +23,7 @@ public:
     void Unfold();
     void Refresh();
     void SetData(class UCampaign* Campaign);
-    void fold();
+    void Fold();
 };
 
 }}}   // namespace Game::UI::Menu_Jobs

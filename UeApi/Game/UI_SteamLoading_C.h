@@ -45,12 +45,12 @@ public:
     class UCircularThrobber* Twitch_Loading;
     WarningBox_C* WarningBox;
     WarningBox_C* WarningBox_0;
+    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry_OnKeyUp, FKeyEvent InKeyEvent_OnKeyUp);
+    void FadeIt(bool FadeIn, float& Duration);
     UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature();
     void Close();
     void ExecuteUbergraph_UI_SteamLoading(int EntryPoint);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void FadeIt(bool FadeIn_0, float& Duration);
 };
 
 }}}   // namespace Game::UI::System

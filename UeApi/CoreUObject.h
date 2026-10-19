@@ -2354,8 +2354,8 @@ private:
 /* Obj->GetOuter() is OuterPrivate read straight off the object - UObject on UE 4.27 x64: vtable 0x0, ObjectFlags
    0x8, InternalIndex 0xC, ClassPrivate 0x10, NamePrivate 0x18, OuterPrivate 0x20 (the dump's Basic.hpp says so) -
    through the read intrinsics: one ArrayGetByRef, no engine call. As in C++, Obj must not be null (a read at
-   0x20 is a crash), and as with any pointer read the mod declares FDeref (Intrin.h) and the function is not
-   latent. UKismetSystemLibrary::GetOuterObject is the engine call it replaces, null-safe, if either bites. */
+   0x20 is a crash). UKismetSystemLibrary::GetOuterObject is the engine call it replaces, null-safe, if that
+   bites. */
 int64 __AddrOf__(class UObject *Ref);
 class UObject *__ReadObject__(int64 Addr);
 inline class UObject *UObject_GetOuter(class UObject *Obj) { return __ReadObject__(__AddrOf__(Obj) + 0x20); }

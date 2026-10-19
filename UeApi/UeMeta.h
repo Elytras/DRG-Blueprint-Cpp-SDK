@@ -182,8 +182,11 @@ function keeps the game's flags and parameters, so every caller still fits, and 
 GetEnemySpawnedCount__Vanilla (an RPC's body runs there as a plain function, where the RPC already arrived). A method
 the Blueprint does not define is added to it: a helper the other methods call, or an override of a function it
 inherits (`void ReceiveTick(float DeltaSeconds)`), which changes this class and its children only, where patching the
-parent that defines it changes them all. A latent call in a patch's method is refused. A patch is not a class of its
-own and cooks nothing else: a member or an interface of its own is refused, not dropped.
+parent that defines it changes them all. A method may wait (Delay): it resumes from an ubergraph the patch adds, and
+what it keeps across the wait is transient variables of the Blueprint. A member of the patch's own (`int32 Hits = 0;`)
+is a variable added to the Blueprint, its initializer on the default object; an interface it lists is added to the
+Blueprint with its methods and variables. A patch adds no component, widget or dispatcher, and its members do not
+replicate: each is refused, not dropped.
 */
 #define UE_ASSET_EDIT__CAT2(A, B) A##B
 #define UE_ASSET_EDIT__CAT(A, B) UE_ASSET_EDIT__CAT2(A, B)
@@ -222,6 +225,9 @@ A variable on an interface is AssetGen's own idea (an engine interface holds no 
 property of each class that implements the interface, once, and not again below it. Read it on an
 object of such a class (`this`, `Beacon->Marks`), never through the interface itself. Its initializer is
 the default; an implementing class's UE_DEFAULTS may give its own.
+
+With generate_api, the editor API stub of an interface is a Blueprint Interface asset, so a Blueprint made in the
+editor can implement it too. Its variables are not in the stub, and such a Blueprint does not have them.
 */
 #define UE_INTERFACE static constexpr bool UeInterfaceMeta = true
 
@@ -474,6 +480,18 @@ method but an override of a parent's event - and the variables that are not priv
 #define UE_CATEGORY(Text) static constexpr const char *UE_CATEGORY__JOIN(UeCategory__, __COUNTER__) = Text
 
 /*
+The tooltip and the search keywords of the method that follows, as the editor's Details panel of a function sets them:
+
+    UE_TOOLTIP("Adds charges, up to the cap.") UE_KEYWORDS("refill reload") void Recharge(int32 By);
+
+The tooltip shows over the call node and in the action menu; the keywords are extra words the action menu's search
+finds the function by. Like UE_CATEGORY, they reach the generated editor API stub only (generate_api): a cooked game
+keeps no editor metadata, so the pak carries neither.
+*/
+#define UE_TOOLTIP(Text) static constexpr const char *UE_CATEGORY__JOIN(UeToolTip__, __COUNTER__) = Text;
+#define UE_KEYWORDS(Text) static constexpr const char *UE_CATEGORY__JOIN(UeKeywords__, __COUNTER__) = Text;
+
+/*
 A method the engine calls on a key or an input action, as the editor's InputKey and InputAction events:
 
     UE_INPUT_KEY("F5") void Toggle();                        // F5 pressed
@@ -524,6 +542,46 @@ SetNewTime(T).
 #define UE_COLOR_TRACK(Timeline, Name, ...)                                                                            \
   static constexpr const char *Name##__UeTrack = #Timeline "|" #__VA_ARGS__;                                          \
   FLinearColor                 Name
+/*
+A track over a curve asset, the editor's External Curve: the timeline plays Curve's keys, as they are in the game, rather
+than keys written here. Curve is an asset a UE_ASSET_AT names (the UeAssets headers name every game curve), another mod's
+or the game's, or one this mod declares with UE_FLOAT_CURVE and kin; a float track plays a UCurveFloat, a vector track a
+UCurveVector, a color track a UCurveLinearColor.
+
+    UE_FLOAT_TRACK_CURVE(Fade, Alpha, UeAssets::UCurveFloat::Game::LevelElements::Blueprints::Hologram_FadeIn);
+*/
+#define UE_FLOAT_TRACK_CURVE(Timeline, Name, Curve)                                                                    \
+  static constexpr const char *Name##__UeTrack = #Timeline "|";                                                        \
+  [[maybe_unused]] static constexpr auto *Name##__UeTrackCurve = &Curve;                                               \
+  float                        Name
+#define UE_VECTOR_TRACK_CURVE(Timeline, Name, Curve)                                                                   \
+  static constexpr const char *Name##__UeTrack = #Timeline "|";                                                        \
+  [[maybe_unused]] static constexpr auto *Name##__UeTrackCurve = &Curve;                                               \
+  FVector                      Name
+#define UE_COLOR_TRACK_CURVE(Timeline, Name, Curve)                                                                    \
+  static constexpr const char *Name##__UeTrack = #Timeline "|";                                                        \
+  [[maybe_unused]] static constexpr auto *Name##__UeTrackCurve = &Curve;                                               \
+  FLinearColor                 Name
+
+/*
+A curve asset of the mod's own, at namespace scope, as the Content Browser's Miscellaneous > Curve makes one: cooked at
+<UE_MOD_PACKAGE>/<namespace folders>/<Name>, its keys written as a timeline track's are. `&Name` points at it, from a
+track (UE_FLOAT_TRACK_CURVE), a default or code, and another mod names it with UE_ASSET_AT.
+
+    UE_FLOAT_CURVE(Ramp, (0, 0), (1, 1, Cubic));                        // a UCurveFloat
+    UE_VECTOR_CURVE(Path, (0, 0, 0, 0), (2, 0, 0, 100));                // a UCurveVector: (time, x, y, z)
+    UE_COLOR_CURVE(Glow, (0, 1, 1, 1, 1), (2, 1, 0, 0, 1));             // a UCurveLinearColor: (time, r, g, b, a)
+*/
+#define UE_FLOAT_CURVE(Name, ...)                                                                                      \
+  static constexpr const char *Name##__UeCurve = "F|" #__VA_ARGS__;                                                    \
+  extern UCurveFloat           Name
+#define UE_VECTOR_CURVE(Name, ...)                                                                                     \
+  static constexpr const char *Name##__UeCurve = "V|" #__VA_ARGS__;                                                    \
+  extern UCurveVector          Name
+#define UE_COLOR_CURVE(Name, ...)                                                                                      \
+  static constexpr const char *Name##__UeCurve = "C|" #__VA_ARGS__;                                                    \
+  extern UCurveLinearColor     Name
+
 #define UE_TIMELINE_UPDATE(Timeline)                                                                                   \
   static constexpr const char *UE_CATEGORY__JOIN(UeTimelineUpdate__, __COUNTER__) = #Timeline;
 #define UE_TIMELINE_FINISHED(Timeline)                                                                                 \

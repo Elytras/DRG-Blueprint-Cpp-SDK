@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using BP_StickyFlame_C = Game::WeaponsNTools::FlameThrower::BP_StickyFlame_C;
+using BP_StickyFlame_C = ::Game::WeaponsNTools::FlameThrower::BP_StickyFlame_C;

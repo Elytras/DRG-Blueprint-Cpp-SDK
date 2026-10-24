@@ -22,7 +22,7 @@ class ITM_InfoBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/ITM_InfoBox", "ITM_InfoBox_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ItemDesc_Hover;
     UE_READONLY class UWidgetAnimation* ItemDesc_Click;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using ITM_InfoBox_C = Game::UI::_GlobalAssets::ITM_InfoBox_C;
+using ITM_InfoBox_C = ::Game::UI::_GlobalAssets::ITM_InfoBox_C;

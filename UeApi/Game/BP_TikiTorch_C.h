@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty
 
-using BP_TikiTorch_C = Game::Art::Environments::Holiday_BeachParty::BP_TikiTorch_C;
+using BP_TikiTorch_C = ::Game::Art::Environments::Holiday_BeachParty::BP_TikiTorch_C;

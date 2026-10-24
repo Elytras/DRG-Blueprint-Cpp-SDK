@@ -20,7 +20,7 @@ class BP_DeepScan_PlayerComponent_C : public UDeepScanPlayerComponent
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_DeepScan_PlayerComponent", "BP_DeepScan_PlayerComponent_C");
-    using HUD_DeepScan_DistanceDisplay_C = Game::GameElements::Objectives::DeepScan::HUD_DeepScan_DistanceDisplay_C;
+    using HUD_DeepScan_DistanceDisplay_C = ::Game::GameElements::Objectives::DeepScan::HUD_DeepScan_DistanceDisplay_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* AudioComponent;
     HUD_DeepScan_DistanceDisplay_C* PingerWidget;
@@ -71,4 +71,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DeepScan_PlayerComponent_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_PlayerComponent_C;
+using BP_DeepScan_PlayerComponent_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScan_PlayerComponent_C;

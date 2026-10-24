@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FaceTargetToCarve_C = Game::AI::Tasks::TSK_FaceTargetToCarve_C;
+using TSK_FaceTargetToCarve_C = ::Game::AI::Tasks::TSK_FaceTargetToCarve_C;

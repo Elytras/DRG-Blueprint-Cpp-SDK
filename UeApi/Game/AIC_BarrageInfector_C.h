@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::Enemies::BarrageInfector
 
-using AIC_BarrageInfector_C = Game::Enemies::BarrageInfector::AIC_BarrageInfector_C;
+using AIC_BarrageInfector_C = ::Game::Enemies::BarrageInfector::AIC_BarrageInfector_C;

@@ -39,14 +39,14 @@ class WND_AssignmentMissionComplete_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/WND_AssignmentMissionComplete", "WND_AssignmentMissionComplete_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using ITM_CampaignProgress_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
-    using UI_RewardResourcesBox_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResourcesBox_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using ITM_CampaignProgress_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using MissionControl_MainDialogue_C = ::Game::UI::MissionControl::MissionControl_MainDialogue_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_RewardResourcesBox_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResourcesBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* RemoveUI;
     UE_READONLY class UWidgetAnimation* AppearV2;
@@ -127,4 +127,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications
 
-using WND_AssignmentMissionComplete_C = Game::UI::HUD_SpaceRig::CampaignNotifications::WND_AssignmentMissionComplete_C;
+using WND_AssignmentMissionComplete_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::WND_AssignmentMissionComplete_C;

@@ -23,4 +23,4 @@ public:
 
 }}}   // namespace Game::GameElements::Bar
 
-using LIB_Intoxication_C = Game::GameElements::Bar::LIB_Intoxication_C;
+using LIB_Intoxication_C = ::Game::GameElements::Bar::LIB_Intoxication_C;

@@ -16,7 +16,7 @@ class UTerrainPlacementComponent;
 
 namespace Game { namespace GameElements { namespace Treasure {
 
-class BP_RepairTreasureboxItem_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_RepairTreasureboxItem_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/BP_RepairTreasureboxItem", "BP_RepairTreasureboxItem_C");
@@ -41,6 +41,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainScannerMesh";
         static constexpr const char* UberGraphFrame_BP_RepairTreasureboxItem_C__UeName = "UberGraphFrame";
         static constexpr const char* DestinationActor__UeScsNode = "574de9cdd4551542823a925a3a56974e";
         static constexpr const char* AudioPingWhenPickedUp__UeScsNode = "6143c7179e312d468990796f02484103";
@@ -55,4 +56,4 @@ private:
 
 }}}   // namespace Game::GameElements::Treasure
 
-using BP_RepairTreasureboxItem_C = Game::GameElements::Treasure::BP_RepairTreasureboxItem_C;
+using BP_RepairTreasureboxItem_C = ::Game::GameElements::Treasure::BP_RepairTreasureboxItem_C;

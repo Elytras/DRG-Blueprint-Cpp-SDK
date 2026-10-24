@@ -14,11 +14,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Escor
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_Escort_DigPhase_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_Escort_DigPhase_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_DigPhase", "EWC_Escort_DigPhase_C");
-    using AIC_EscortMule_C = Game::GameElements::Objectives::Escort::AIC_EscortMule_C;
+    using AIC_EscortMule_C = ::Game::GameElements::Objectives::Escort::AIC_EscortMule_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_Escort_DigPhase_C;
     FVector FirstSpawnLocationOverride;
     float DelayBetweenWaves;
@@ -40,4 +40,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_Escort_DigPhase_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_DigPhase_C;
+using EWC_Escort_DigPhase_C = ::Game::Enemies::Waves::WaveControllers::EWC_Escort_DigPhase_C;

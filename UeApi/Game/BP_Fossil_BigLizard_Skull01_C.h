@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Fossils {
 
-class BP_Fossil_BigLizard_Skull01_C : public Game::LevelElements::RoomObjects::Fossils::BP_FossilsBase_C
+class BP_Fossil_BigLizard_Skull01_C : public ::Game::LevelElements::RoomObjects::Fossils::BP_FossilsBase_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Fossils/BP_Fossil_BigLizard_Skull01", "BP_Fossil_BigLizard_Skull01_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;ICH-DefaultSceneRoot";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Fossils
 
-using BP_Fossil_BigLizard_Skull01_C = Game::LevelElements::RoomObjects::Fossils::BP_Fossil_BigLizard_Skull01_C;
+using BP_Fossil_BigLizard_Skull01_C = ::Game::LevelElements::RoomObjects::Fossils::BP_Fossil_BigLizard_Skull01_C;

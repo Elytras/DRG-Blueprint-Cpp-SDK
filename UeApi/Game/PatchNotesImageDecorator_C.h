@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using PatchNotesImageDecorator_C = Game::UI::Menu_StartScreen::PatchNotesImageDecorator_C;
+using PatchNotesImageDecorator_C = ::Game::UI::Menu_StartScreen::PatchNotesImageDecorator_C;

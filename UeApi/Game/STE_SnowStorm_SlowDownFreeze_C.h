@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves
 
-using STE_SnowStorm_SlowDownFreeze_C = Game::Landscape::Biomes::Biomes_Ingame::IceCaves::STE_SnowStorm_SlowDownFreeze_C;
+using STE_SnowStorm_SlowDownFreeze_C = ::Game::Landscape::Biomes::Biomes_Ingame::IceCaves::STE_SnowStorm_SlowDownFreeze_C;

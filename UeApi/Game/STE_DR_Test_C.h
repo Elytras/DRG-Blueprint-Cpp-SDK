@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using STE_DR_Test_C = Game::GameElements::Objectives::Escort::STE_DR_Test_C;
+using STE_DR_Test_C = ::Game::GameElements::Objectives::Escort::STE_DR_Test_C;

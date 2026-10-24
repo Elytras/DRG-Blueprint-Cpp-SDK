@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using STE_JetBootsBurn_C = Game::GameElements::JetBoots::Blueprint::STE_JetBootsBurn_C;
+using STE_JetBootsBurn_C = ::Game::GameElements::JetBoots::Blueprint::STE_JetBootsBurn_C;

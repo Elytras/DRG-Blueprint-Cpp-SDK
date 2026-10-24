@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using STE_FriendlyShredder_DamageLimiter_C = Game::WeaponsNTools::Grenades::FriendlyShredders::STE_FriendlyShredder_DamageLimiter_C;
+using STE_FriendlyShredder_DamageLimiter_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::STE_FriendlyShredder_DamageLimiter_C;

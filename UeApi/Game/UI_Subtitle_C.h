@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Subtitles
 
-using UI_Subtitle_C = Game::UI::MainOnscreenHUD::Subtitles::UI_Subtitle_C;
+using UI_Subtitle_C = ::Game::UI::MainOnscreenHUD::Subtitles::UI_Subtitle_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using AFE_FP_ShieldDebuff_Sound_C = Game::Enemies::Spider::Stalker::AFE_FP_ShieldDebuff_Sound_C;
+using AFE_FP_ShieldDebuff_Sound_C = ::Game::Enemies::Spider::Stalker::AFE_FP_ShieldDebuff_Sound_C;

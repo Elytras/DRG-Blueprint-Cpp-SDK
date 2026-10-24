@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Icon_ClassLevel_C = Game::UI::Art::WidgetParts::Icon_ClassLevel_C;
+using Icon_ClassLevel_C = ::Game::UI::Art::WidgetParts::Icon_ClassLevel_C;

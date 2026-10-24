@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using AFE_TP_GooCannon_DoT_C = Game::WeaponsNTools::GooCannon::AFE_TP_GooCannon_DoT_C;
+using AFE_TP_GooCannon_DoT_C = ::Game::WeaponsNTools::GooCannon::AFE_TP_GooCannon_DoT_C;

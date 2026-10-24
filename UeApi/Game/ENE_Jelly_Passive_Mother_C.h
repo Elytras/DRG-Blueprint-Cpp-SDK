@@ -13,7 +13,7 @@ class UParticleSystemComponent;
 
 namespace Game { namespace Critters { namespace JellyPlatform {
 
-class ENE_Jelly_Passive_Mother_C : public Game::Critters::JellyPlatform::ENE_Jelly_Passive_C
+class ENE_Jelly_Passive_Mother_C : public ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_C
 {
 public:
     UE_CLASS("/Game/Critters/JellyPlatform/ENE_Jelly_Passive_Mother", "ENE_Jelly_Passive_Mother_C");
@@ -26,6 +26,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy";
         static constexpr const char* UberGraphFrame_ENE_Jelly_Passive_Mother_C__UeName = "UberGraphFrame";
         static constexpr const char* ParticleSystem__UeScsNode = "9c5df0437398da4780f8059f0d5aa72e";
         static constexpr const char* Box1__UeScsNode = "87a5ed1ca367dd4d987b34a3222f3592";
@@ -34,4 +35,4 @@ private:
 
 }}}   // namespace Game::Critters::JellyPlatform
 
-using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+using ENE_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using STE_MechanicalParasite_slowdown_C = Game::WeaponsNTools::Grenades::FriendlyShredders::STE_MechanicalParasite_slowdown_C;
+using STE_MechanicalParasite_slowdown_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::STE_MechanicalParasite_slowdown_C;

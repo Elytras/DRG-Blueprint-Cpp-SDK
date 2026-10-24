@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using ABP_AutoCannon_C = Game::WeaponsNTools::Autocannon::ABP_AutoCannon_C;
+using ABP_AutoCannon_C = ::Game::WeaponsNTools::Autocannon::ABP_AutoCannon_C;

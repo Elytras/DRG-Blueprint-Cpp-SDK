@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CroLineCutter_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroLineCutter_C;
+using HUD_CroLineCutter_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroLineCutter_C;

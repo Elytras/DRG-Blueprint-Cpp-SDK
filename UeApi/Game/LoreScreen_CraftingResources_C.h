@@ -15,12 +15,12 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens { namespace CraftingResources {
 
-class LoreScreen_CraftingResources_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_CraftingResources_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/CraftingResources/LoreScreen_CraftingResources", "LoreScreen_CraftingResources_C");
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_ResourcesPage_C = Game::UI::Menu_MinersManual::Lore_ResourcesPage_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_ResourcesPage_C = ::Game::UI::Menu_MinersManual::Lore_ResourcesPage_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_CraftingResources_C;
     Lore_ResourcesPage_C* Lore_ResourcesPage;
     LoreScreen_Template_C* LoreScreen_Template;
@@ -38,4 +38,4 @@ private:
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::CraftingResources
 
-using LoreScreen_CraftingResources_C = Game::UI::Menu_MinersManual::InfoScreens::CraftingResources::LoreScreen_CraftingResources_C;
+using LoreScreen_CraftingResources_C = ::Game::UI::Menu_MinersManual::InfoScreens::CraftingResources::LoreScreen_CraftingResources_C;

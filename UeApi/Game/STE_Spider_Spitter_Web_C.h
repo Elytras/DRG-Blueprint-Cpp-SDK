@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Spitter
 
-using STE_Spider_Spitter_Web_C = Game::Enemies::Spider::Spitter::STE_Spider_Spitter_Web_C;
+using STE_Spider_Spitter_Web_C = ::Game::Enemies::Spider::Spitter::STE_Spider_Spitter_Web_C;

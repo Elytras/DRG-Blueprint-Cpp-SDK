@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Critters::JellyPlatform
 
-using ESI_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ESI_Jelly_Passive_Mother_C;
+using ESI_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::ESI_Jelly_Passive_Mother_C;

@@ -33,4 +33,4 @@ public:
 
 }}}}}   // namespace Game::Maps::UILevels::Assets::HUD
 
-using BP_Count_Randoms_Widget_C = Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_Widget_C;
+using BP_Count_Randoms_Widget_C = ::Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_Widget_C;

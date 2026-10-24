@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_SummerEvent_TurtleHat_C = Game::Character::Vanity2::Headwear::ABP_SummerEvent_TurtleHat_C;
+using ABP_SummerEvent_TurtleHat_C = ::Game::Character::Vanity2::Headwear::ABP_SummerEvent_TurtleHat_C;

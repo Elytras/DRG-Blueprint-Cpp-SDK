@@ -17,8 +17,8 @@ class DLCclaimPopup_DLC07_Biohazard_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/DLCclaimPopups/DLCclaimPopup_DLC07_Biohazard", "DLCclaimPopup_DLC07_Biohazard_C");
-    using _DLCclaimPopup_Base_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
-    using _DLCclaimPopup_TextLine_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
+    using _DLCclaimPopup_Base_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
+    using _DLCclaimPopup_TextLine_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     _DLCclaimPopup_Base_C* DLCclaimPopup_Base;
     _DLCclaimPopup_TextLine_C* UI_ClaimableDLC_TextLine;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::DLCclaimPopups
 
-using DLCclaimPopup_DLC07_Biohazard_C = Game::UI::DLCclaimPopups::DLCclaimPopup_DLC07_Biohazard_C;
+using DLCclaimPopup_DLC07_Biohazard_C = ::Game::UI::DLCclaimPopups::DLCclaimPopup_DLC07_Biohazard_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_ForgeScreen_C = Game::UI::HUD_SpaceRig::BP_ForgeScreen_C;
+using BP_ForgeScreen_C = ::Game::UI::HUD_SpaceRig::BP_ForgeScreen_C;

@@ -12,11 +12,11 @@ namespace Game { namespace WeaponsNTools { namespace ShieldGenerator { class WPN
 
 namespace Game { namespace UI { namespace Tutorial {
 
-class W_TutorialShieldGenerator_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
+class W_TutorialShieldGenerator_C : public ::Game::UI::Tutorial::W_TutorialContent_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialShieldGenerator", "W_TutorialShieldGenerator_C");
-    using WPN_ShieldRegeneratorItem_C = Game::WeaponsNTools::ShieldGenerator::WPN_ShieldRegeneratorItem_C;
+    using WPN_ShieldRegeneratorItem_C = ::Game::WeaponsNTools::ShieldGenerator::WPN_ShieldRegeneratorItem_C;
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialShieldGenerator_C;
     float Gold_Mined;
     float GoldToMine;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_TutorialShieldGenerator_C = Game::UI::Tutorial::W_TutorialShieldGenerator_C;
+using W_TutorialShieldGenerator_C = ::Game::UI::Tutorial::W_TutorialShieldGenerator_C;

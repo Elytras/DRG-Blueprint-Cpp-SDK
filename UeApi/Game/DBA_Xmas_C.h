@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisPositioning I_Baubles_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Gifts_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Xmas_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* I_Baubles__UeScsNode = "d6e22170c1fa3348b6442dc1080a8b17";
         static constexpr const char* I_Gifts__UeScsNode = "d2b1cf762ade2448910a5b86684d02a0";
         static constexpr const char* I_Xmas__UeScsNode = "5efc41119e2022469a22acc33f4020ac";
@@ -32,4 +33,4 @@ private:
 
 }}}}   // namespace Game::Game::Events::Xmas
 
-using DBA_Xmas_C = Game::Game::Events::Xmas::DBA_Xmas_C;
+using DBA_Xmas_C = ::Game::Game::Events::Xmas::DBA_Xmas_C;

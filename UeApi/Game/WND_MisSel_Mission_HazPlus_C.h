@@ -26,10 +26,10 @@ class WND_MisSel_Mission_HazPlus_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/WND_MisSel_Mission_HazPlus", "WND_MisSel_Mission_HazPlus_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_HazPlusItem_C = Game::UI::Menu_MissionSelectionMK3::ITM_HazPlusItem_C;
-    using UI_HazPlus_Icon_C = Game::UI::Global_UI_Elements::UI_HazPlus_Icon_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_HazPlusItem_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_HazPlusItem_C;
+    using UI_HazPlus_Icon_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShowPopup;
     BlurBackground_C* BlurBackground;
@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using WND_MisSel_Mission_HazPlus_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_Mission_HazPlus_C;
+using WND_MisSel_Mission_HazPlus_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_Mission_HazPlus_C;

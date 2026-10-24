@@ -45,7 +45,7 @@ public:
     class UStaticMeshComponent* Tentacle3;
     class UStaticMeshComponent* Tentacle2;
     class UStaticMeshComponent* SM_Stone_007;
-    class UStaticMeshComponent* Tentacle;
+    class UStaticMeshComponent* tentacle;
     class UStaticMeshComponent* PlagueTower;
     class USceneComponent* Location;
     class USceneComponent* DefaultSceneRoot;
@@ -79,7 +79,7 @@ private:
         static constexpr const char* Tentacle3__UeScsNode = "e6908401468c4749b0784b120d155966";
         static constexpr const char* Tentacle2__UeScsNode = "6ddbc857c37567458833f42e6c02a1a9";
         static constexpr const char* SM_Stone_007__UeScsNode = "0ffb85ad1cc55145ac935e88d7a4b7b0";
-        static constexpr const char* Tentacle__UeScsNode = "58d91f3d5f8dca45aebbe0c0ca956103";
+        static constexpr const char* tentacle__UeScsNode = "58d91f3d5f8dca45aebbe0c0ca956103";
         static constexpr const char* PlagueTower__UeScsNode = "0df7f18d702dd147afd25f01cfd6394f";
         static constexpr const char* Location__UeScsNode = "6cb7ef691cd1b7419f3469e5b1f9f2a6";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "2051a2d778eefb44ba5195f5492ee061";
@@ -88,4 +88,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ESI_Season03Briefing_C = Game::UI::Menu_Seasons::ESI_Season03Briefing_C;
+using ESI_Season03Briefing_C = ::Game::UI::Menu_Seasons::ESI_Season03Briefing_C;

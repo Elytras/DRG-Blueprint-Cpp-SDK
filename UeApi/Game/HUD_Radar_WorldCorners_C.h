@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Radar
 
-using HUD_Radar_WorldCorners_C = Game::UI::Radar::HUD_Radar_WorldCorners_C;
+using HUD_Radar_WorldCorners_C = ::Game::UI::Radar::HUD_Radar_WorldCorners_C;

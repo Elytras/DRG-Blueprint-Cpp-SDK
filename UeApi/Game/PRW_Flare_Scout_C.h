@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Flares {
 
-class PRW_Flare_Scout_C : public Game::WeaponsNTools::Flares::PRW_Flare_Base_C
+class PRW_Flare_Scout_C : public ::Game::WeaponsNTools::Flares::PRW_Flare_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Flares/PRW_Flare_Scout", "PRW_Flare_Scout_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Flares
 
-using PRW_Flare_Scout_C = Game::WeaponsNTools::Flares::PRW_Flare_Scout_C;
+using PRW_Flare_Scout_C = ::Game::WeaponsNTools::Flares::PRW_Flare_Scout_C;

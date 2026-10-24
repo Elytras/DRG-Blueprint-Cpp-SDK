@@ -64,4 +64,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::GunkSeed
 
-using BP_GunkSeed_C = Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_C;
+using BP_GunkSeed_C = ::Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_C;

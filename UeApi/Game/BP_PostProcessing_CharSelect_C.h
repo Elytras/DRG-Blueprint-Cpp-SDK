@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::Art::PostProcess
 
-using BP_PostProcessing_CharSelect_C = Game::Art::PostProcess::BP_PostProcessing_CharSelect_C;
+using BP_PostProcessing_CharSelect_C = ::Game::Art::PostProcess::BP_PostProcessing_CharSelect_C;

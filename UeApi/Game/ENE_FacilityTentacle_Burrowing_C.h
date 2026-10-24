@@ -16,11 +16,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefensiveTentacles {
 
-class ENE_FacilityTentacle_Burrowing_C : public Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C
+class ENE_FacilityTentacle_Burrowing_C : public ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle_Burrowing", "ENE_FacilityTentacle_Burrowing_C");
-    using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    using ENE_FacilityTentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_FacilityTentacle_Burrowing_C;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     ENE_FacilityTentacle_C* ChildTentacle;
@@ -35,11 +35,12 @@ public:
     void BurrowingAttack(class AActor* AttackTarget, FVector BurrowLocation);
     void FindGroundLocation(bool& success, FVector& Location);
     void PlaceEndTentacles(FVector PlayerLocation, bool& success, class AActor*& SpawnedTentacle);
-    void GetTentacle(ENE_FacilityTentacle_C*& Tentacle);
+    void GetTentacle(ENE_FacilityTentacle_C*& tentacle);
 private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "NS_Inner_Energy";
         static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_Burrowing_C__UeName = "UberGraphFrame";
         static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "58e77a61776bcd4486c4deabac2bcfef";
     };
@@ -47,4 +48,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using ENE_FacilityTentacle_Burrowing_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_Burrowing_C;
+using ENE_FacilityTentacle_Burrowing_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_Burrowing_C;

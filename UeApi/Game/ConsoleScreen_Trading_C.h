@@ -16,7 +16,7 @@ class ConsoleScreen_Trading_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Trading", "ConsoleScreen_Trading_C");
-    using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
+    using ConsoleScreen_BGtemplate_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
     void ExecuteUbergraph_ConsoleScreen_Trading(int EntryPoint);
@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Trading_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Trading_C;
+using ConsoleScreen_Trading_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Trading_C;

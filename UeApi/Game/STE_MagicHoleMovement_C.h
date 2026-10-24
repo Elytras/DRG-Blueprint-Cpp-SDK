@@ -22,4 +22,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole
 
-using STE_MagicHoleMovement_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::STE_MagicHoleMovement_C;
+using STE_MagicHoleMovement_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::STE_MagicHoleMovement_C;

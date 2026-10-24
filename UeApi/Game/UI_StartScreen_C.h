@@ -27,11 +27,11 @@ class UI_StartScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_StartScreen", "UI_StartScreen_C");
-    using AnimatedDRGlogo_C = Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
-    using AnimatedStaticOverlay_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_SelectCrossplayOption_C = CrossPlatform::UI_SelectCrossplayOption_C;
+    using AnimatedDRGlogo_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
+    using AnimatedStaticOverlay_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_SelectCrossplayOption_C = ::CrossPlatform::UI_SelectCrossplayOption_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -78,4 +78,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_StartScreen_C = Game::UI::Menu_StartScreen::UI_StartScreen_C;
+using UI_StartScreen_C = ::Game::UI::Menu_StartScreen::UI_StartScreen_C;

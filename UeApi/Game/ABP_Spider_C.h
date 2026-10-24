@@ -112,4 +112,4 @@ public:
 
 }}}   // namespace Game::Enemies::Spider
 
-using ABP_Spider_C = Game::Enemies::Spider::ABP_Spider_C;
+using ABP_Spider_C = ::Game::Enemies::Spider::ABP_Spider_C;

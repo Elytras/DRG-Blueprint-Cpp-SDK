@@ -25,12 +25,12 @@ class UI_MissionComplete_CharacterBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/UI_MissionComplete_CharacterBox", "UI_MissionComplete_CharacterBox_C");
-    using UI_MissionComplete_RankLevel_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RankLevel_C;
+    using UI_MissionComplete_RankLevel_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RankLevel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimMoveIn;
     class UBorder* Border_0;
     class UBorder* Border_1;
-    class UButton* BTN_Gamercard;
+    class UButton* BTN_GamerCard;
     class UTextBlock* Data_CharacterClass;
     class UTextBlock* Data_Kills;
     class UTextBlock* Data_Mining;
@@ -67,4 +67,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using UI_MissionComplete_CharacterBox_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CharacterBox_C;
+using UI_MissionComplete_CharacterBox_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CharacterBox_C;

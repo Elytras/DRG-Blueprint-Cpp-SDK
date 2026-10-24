@@ -18,7 +18,7 @@ class ABP_MiniMule_C : public USimpleMovingEnemyAnimInstance
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/ABP_MiniMule", "ABP_MiniMule_C");
-    using BP_MiniMule_Salvage_C = Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;
+    using BP_MiniMule_Salvage_C = ::Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_4;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using ABP_MiniMule_C = Game::GameElements::Objectives::Salvage::ABP_MiniMule_C;
+using ABP_MiniMule_C = ::Game::GameElements::Objectives::Salvage::ABP_MiniMule_C;

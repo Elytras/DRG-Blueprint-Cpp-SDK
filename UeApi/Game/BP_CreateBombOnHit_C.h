@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty
 
-using BP_CreateBombOnHit_C = Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_CreateBombOnHit_C;
+using BP_CreateBombOnHit_C = ::Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_CreateBombOnHit_C;

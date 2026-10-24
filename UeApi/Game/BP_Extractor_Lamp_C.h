@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Extractor_Lamp_C = Game::LevelElements::Refinery::BP_Extractor_Lamp_C;
+using BP_Extractor_Lamp_C = ::Game::LevelElements::Refinery::BP_Extractor_Lamp_C;

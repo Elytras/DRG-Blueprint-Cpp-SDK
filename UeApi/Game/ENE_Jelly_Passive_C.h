@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::Critters::JellyPlatform
 
-using ENE_Jelly_Passive_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_C;
+using ENE_Jelly_Passive_C = ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_C;

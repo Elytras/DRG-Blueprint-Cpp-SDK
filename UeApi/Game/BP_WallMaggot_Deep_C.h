@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace HollowBough { namespace HollowBoughMaggot {
 
-class BP_WallMaggot_Deep_C : public Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot::BP_WallMaggot_C
+class BP_WallMaggot_Deep_C : public ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot::BP_WallMaggot_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/HollowBough/HollowBoughMaggot/BP_WallMaggot_Deep", "BP_WallMaggot_Deep_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;ICH-DefaultSceneRoot;SK_HollowBoughMaggot_01;TerrainDetect";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot
 
-using BP_WallMaggot_Deep_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot::BP_WallMaggot_Deep_C;
+using BP_WallMaggot_Deep_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot::BP_WallMaggot_Deep_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Character::Components
 
-using STE_ThrowCarriable_C = Game::Character::Components::STE_ThrowCarriable_C;
+using STE_ThrowCarriable_C = ::Game::Character::Components::STE_ThrowCarriable_C;

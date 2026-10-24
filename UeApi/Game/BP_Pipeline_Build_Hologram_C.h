@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using BP_Pipeline_Build_Hologram_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Build_Hologram_C;
+using BP_Pipeline_Build_Hologram_C = ::Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Build_Hologram_C;

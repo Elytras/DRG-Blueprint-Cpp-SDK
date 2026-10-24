@@ -22,7 +22,7 @@ class Console_DiscordEoMScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/Console_DiscordEoMScreen", "Console_DiscordEoMScreen_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* avatar;
     class UCanvasPanel* AvatarPanel;
@@ -68,4 +68,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using Console_DiscordEoMScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordEoMScreen_C;
+using Console_DiscordEoMScreen_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordEoMScreen_C;

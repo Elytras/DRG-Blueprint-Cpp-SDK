@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using AFE_TP_Stalker_ShieldBreak_Damage_C = Game::Enemies::Spider::Stalker::AFE_TP_Stalker_ShieldBreak_Damage_C;
+using AFE_TP_Stalker_ShieldBreak_Damage_C = ::Game::Enemies::Spider::Stalker::AFE_TP_Stalker_ShieldBreak_Damage_C;

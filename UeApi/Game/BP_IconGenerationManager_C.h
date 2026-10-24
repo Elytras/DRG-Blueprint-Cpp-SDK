@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::Vanity2
 
-using BP_IconGenerationManager_C = Game::Character::Vanity2::BP_IconGenerationManager_C;
+using BP_IconGenerationManager_C = ::Game::Character::Vanity2::BP_IconGenerationManager_C;

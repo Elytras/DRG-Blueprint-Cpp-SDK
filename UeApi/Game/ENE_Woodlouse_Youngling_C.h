@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Woodlouse {
 
-class ENE_Woodlouse_Youngling_C : public Game::Enemies::Woodlouse::ENE_Woodlouse_C
+class ENE_Woodlouse_Youngling_C : public ::Game::Enemies::Woodlouse::ENE_Woodlouse_C
 {
 public:
     UE_CLASS("/Game/Enemies/Woodlouse/ENE_Woodlouse_Youngling", "ENE_Woodlouse_Youngling_C");
@@ -21,10 +21,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/AIModule.PawnSensingComponent Sensing;/Script/Engine.SceneComponent RollingCenter;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;Enemy;ProjectileHit";
         static constexpr const char* UberGraphFrame_ENE_Woodlouse_Youngling_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using ENE_Woodlouse_Youngling_C = Game::Enemies::Woodlouse::ENE_Woodlouse_Youngling_C;
+using ENE_Woodlouse_Youngling_C = ::Game::Enemies::Woodlouse::ENE_Woodlouse_Youngling_C;

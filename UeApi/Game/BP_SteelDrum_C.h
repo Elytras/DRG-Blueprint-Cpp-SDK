@@ -84,4 +84,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Instruments
 
-using BP_SteelDrum_C = Game::Art::Environments::SpaceRig::Instruments::BP_SteelDrum_C;
+using BP_SteelDrum_C = ::Game::Art::Environments::SpaceRig::Instruments::BP_SteelDrum_C;

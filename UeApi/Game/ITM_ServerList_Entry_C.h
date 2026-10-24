@@ -33,15 +33,15 @@ class ITM_ServerList_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/ITM_ServerList_Entry", "ITM_ServerList_Entry_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Biome_ToolTip_C = Game::UI::ToolTips::Biome_ToolTip_C;
-    using ITM_MisSel_DotMarker_CaveDifficulty_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
-    using ITM_MisSel_DotMarker_MissionLength_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
-    using ITM_MisSel_DotMarker_WorkEnvironment_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_WorkEnvironment_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_ServerList_Entry_PlayerIcons_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
-    using UI_HazPlus_Condensed_C = Game::UI::Global_UI_Elements::UI_HazPlus_Condensed_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Biome_ToolTip_C = ::Game::UI::ToolTips::Biome_ToolTip_C;
+    using ITM_MisSel_DotMarker_CaveDifficulty_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
+    using ITM_MisSel_DotMarker_MissionLength_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
+    using ITM_MisSel_DotMarker_WorkEnvironment_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_WorkEnvironment_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_ServerList_Entry_PlayerIcons_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
+    using UI_HazPlus_Condensed_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Condensed_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UImage* Biome_Icon;
@@ -118,4 +118,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using ITM_ServerList_Entry_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_C;
+using ITM_ServerList_Entry_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_C;

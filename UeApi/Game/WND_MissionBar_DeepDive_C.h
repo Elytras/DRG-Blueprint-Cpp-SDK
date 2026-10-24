@@ -25,11 +25,11 @@ class WND_MissionBar_DeepDive_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionOverview/WND_MissionBar_DeepDive", "WND_MissionBar_DeepDive_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using ITM_DeepDive_Codename_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_DeepDive_Codename_C;
-    using ITM_Gear_Bar_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_DeepDive_Codename_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_DeepDive_Codename_C;
+    using ITM_Gear_Bar_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -61,4 +61,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using WND_MissionBar_DeepDive_C = Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_DeepDive_C;
+using WND_MissionBar_DeepDive_C = ::Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_DeepDive_C;

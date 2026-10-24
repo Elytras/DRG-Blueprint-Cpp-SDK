@@ -25,8 +25,8 @@ class ITM_Wardrobe_ItemSelector_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSelector_Entry", "ITM_Wardrobe_ItemSelector_Entry_C");
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using UI_DLC_Indicator_C = Game::UI::Menu_Loadout::UI_DLC_Indicator_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using UI_DLC_Indicator_C = ::Game::UI::Menu_Loadout::UI_DLC_Indicator_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* BlankImage;
     class UBorder* Border_Inner;
@@ -66,4 +66,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSelector_Entry_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_Entry_C;
+using ITM_Wardrobe_ItemSelector_Entry_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_Entry_C;

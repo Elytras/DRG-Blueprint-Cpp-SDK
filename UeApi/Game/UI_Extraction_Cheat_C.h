@@ -16,7 +16,7 @@ class UI_Extraction_Cheat_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_Extraction_Cheat", "UI_Extraction_Cheat_C");
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     CheatMenu_BasicButtonWText_C* CheatMenu_FillMorkite;
     void ExecuteUbergraph_UI_Extraction_Cheat(int EntryPoint);
@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_Extraction_Cheat_C = Game::UI::Menu_Cheats::MissionCheat::UI_Extraction_Cheat_C;
+using UI_Extraction_Cheat_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_Extraction_Cheat_C;

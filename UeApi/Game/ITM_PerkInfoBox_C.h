@@ -25,8 +25,8 @@ class ITM_PerkInfoBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_PerkInfoBox", "ITM_PerkInfoBox_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using ITM_StatusScreen_PerkItem_C = Game::UI::Menu_EscapeMenu::ITM_StatusScreen_PerkItem_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using ITM_StatusScreen_PerkItem_C = ::Game::UI::Menu_EscapeMenu::ITM_StatusScreen_PerkItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner_165;
     class UHorizontalBox* HorizontalBox_ActrivePerks;
@@ -49,4 +49,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_PerkInfoBox_C = Game::UI::Menu_EscapeMenu::ITM_PerkInfoBox_C;
+using ITM_PerkInfoBox_C = ::Game::UI::Menu_EscapeMenu::ITM_PerkInfoBox_C;

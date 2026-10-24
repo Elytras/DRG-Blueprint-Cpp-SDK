@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_EscapeMenu_MissionModifier_C = Game::UI::Menu_EscapeMenu::ITM_EscapeMenu_MissionModifier_C;
+using ITM_EscapeMenu_MissionModifier_C = ::Game::UI::Menu_EscapeMenu::ITM_EscapeMenu_MissionModifier_C;

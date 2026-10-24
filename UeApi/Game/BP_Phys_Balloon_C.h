@@ -40,14 +40,14 @@ public:
     int MaterialIndex;
     bool Popped;
     TArray<class UMaterialInstance*> Mats_Wrapper_Anniversary;
-    void OnRep_Popped();
-    void OnRep_MaterialIndex();
-    void OnRep_KickSoundLocation();
-    void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
-    UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
     void ExecuteUbergraph_BP_Phys_Balloon(int EntryPoint);
+    UE_MULTICAST void Play_Kick(class APlayerCharacter* Kicker);
+    void ReceiveBeginPlay();
+    void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    void OnRep_KickSoundLocation();
+    void OnRep_MaterialIndex();
+    void OnRep_Popped();
 private:
     struct UeMarkers
     {
@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_Phys_Balloon_C = Game::Art::Environments::Holiday_Xmas::BP_Phys_Balloon_C;
+using BP_Phys_Balloon_C = ::Game::Art::Environments::Holiday_Xmas::BP_Phys_Balloon_C;

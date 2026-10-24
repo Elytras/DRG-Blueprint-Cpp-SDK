@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_IronWillActivation_C = Game::GameElements::KPI::Perks::BP_IronWillActivation_C;
+using BP_IronWillActivation_C = ::Game::GameElements::KPI::Perks::BP_IronWillActivation_C;

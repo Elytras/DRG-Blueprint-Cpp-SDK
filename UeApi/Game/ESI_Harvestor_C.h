@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Critters::Harvester
 
-using ESI_Harvestor_C = Game::Critters::Harvester::ESI_Harvestor_C;
+using ESI_Harvestor_C = ::Game::Critters::Harvester::ESI_Harvestor_C;

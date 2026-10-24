@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using STE_ConductiveTermals_Temperature_PlasmaCarbine_C = Game::WeaponsNTools::PlasmaCarbine::STE_ConductiveTermals_Temperature_PlasmaCarbine_C;
+using STE_ConductiveTermals_Temperature_PlasmaCarbine_C = ::Game::WeaponsNTools::PlasmaCarbine::STE_ConductiveTermals_Temperature_PlasmaCarbine_C;

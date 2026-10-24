@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace SentryGun { namespace SentryGun_Engineer { namespace Assets {
 
-class ABP_SentryGun_Engineer_Heavy_C : public Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets::ABP_SentryGun_Engineer_C
+class ABP_SentryGun_Engineer_Heavy_C : public ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets::ABP_SentryGun_Engineer_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/Assets/ABP_SentryGun_Engineer_Heavy", "ABP_SentryGun_Engineer_Heavy_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets
 
-using ABP_SentryGun_Engineer_Heavy_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets::ABP_SentryGun_Engineer_Heavy_C;
+using ABP_SentryGun_Engineer_Heavy_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets::ABP_SentryGun_Engineer_Heavy_C;

@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using ESI_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::ESI_PatrolBot_C;
+using ESI_PatrolBot_C = ::Game::Enemies::RivalTech::PatrolBot::ESI_PatrolBot_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_EyeForEye_SYIHpassive_PerkComponent_C = Game::GameElements::KPI::Perks::BP_EyeForEye_SYIHpassive_PerkComponent_C;
+using BP_EyeForEye_SYIHpassive_PerkComponent_C = ::Game::GameElements::KPI::Perks::BP_EyeForEye_SYIHpassive_PerkComponent_C;

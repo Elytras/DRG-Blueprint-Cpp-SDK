@@ -67,4 +67,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_EventSpawnTimer_C = Game::GameElements::GameEvents::PlagueMeteor::BP_EventSpawnTimer_C;
+using BP_EventSpawnTimer_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_EventSpawnTimer_C;

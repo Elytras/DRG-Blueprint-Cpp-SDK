@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_DrillToTarget_C = Game::AI::Tasks::TSK_DrillToTarget_C;
+using TSK_DrillToTarget_C = ::Game::AI::Tasks::TSK_DrillToTarget_C;

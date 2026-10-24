@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::Game::SpaceRig::S05_SetDressing
 
-using BP_S05_CoreSpawnTank_Big_C = Game::Game::SpaceRig::S05_SetDressing::BP_S05_CoreSpawnTank_Big_C;
+using BP_S05_CoreSpawnTank_Big_C = ::Game::Game::SpaceRig::S05_SetDressing::BP_S05_CoreSpawnTank_Big_C;

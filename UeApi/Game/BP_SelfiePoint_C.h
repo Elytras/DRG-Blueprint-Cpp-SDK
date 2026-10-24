@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::Character::Camera
 
-using BP_SelfiePoint_C = Game::Character::Camera::BP_SelfiePoint_C;
+using BP_SelfiePoint_C = ::Game::Character::Camera::BP_SelfiePoint_C;

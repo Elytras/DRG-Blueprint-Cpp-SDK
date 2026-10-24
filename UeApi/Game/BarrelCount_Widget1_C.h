@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops
 
-using BarrelCount_Widget1_C = Game::LevelElements::Spacerig::Bar::Hoops::BarrelCount_Widget1_C;
+using BarrelCount_Widget1_C = ::Game::LevelElements::Spacerig::Bar::Hoops::BarrelCount_Widget1_C;

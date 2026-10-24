@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using ITM_DeepDive_Codename_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_DeepDive_Codename_C;
+using ITM_DeepDive_Codename_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_DeepDive_Codename_C;

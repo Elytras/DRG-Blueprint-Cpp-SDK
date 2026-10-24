@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::ExploderTank
 
-using PRJ_ExploderTankClusterBomb_C = Game::Enemies::Spider::ExploderTank::PRJ_ExploderTankClusterBomb_C;
+using PRJ_ExploderTankClusterBomb_C = ::Game::Enemies::Spider::ExploderTank::PRJ_ExploderTankClusterBomb_C;

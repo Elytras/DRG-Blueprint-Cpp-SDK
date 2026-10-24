@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_Salvage_End_C = Game::Enemies::Waves::WaveControllers::EWC_Salvage_End_C;
+using EWC_Salvage_End_C = ::Game::Enemies::Waves::WaveControllers::EWC_Salvage_End_C;

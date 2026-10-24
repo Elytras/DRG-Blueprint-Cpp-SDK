@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C;
+using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C;

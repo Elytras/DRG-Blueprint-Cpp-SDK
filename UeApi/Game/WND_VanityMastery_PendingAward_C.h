@@ -19,9 +19,9 @@ class WND_VanityMastery_PendingAward_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/WND_VanityMastery_PendingAward", "WND_VanityMastery_PendingAward_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class URichTextSizable* BodyText;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using WND_VanityMastery_PendingAward_C = Game::UI::Menu_Wardrobe::WND_VanityMastery_PendingAward_C;
+using WND_VanityMastery_PendingAward_C = ::Game::UI::Menu_Wardrobe::WND_VanityMastery_PendingAward_C;

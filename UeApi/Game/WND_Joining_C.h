@@ -23,9 +23,9 @@ class WND_Joining_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/WND_Joining", "WND_Joining_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeOut;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+using WND_Joining_C = ::Game::UI::Menu_ServerList::WND_Joining_C;

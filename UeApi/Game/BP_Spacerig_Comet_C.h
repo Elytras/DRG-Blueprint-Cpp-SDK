@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::GameElements::Plague
 
-using BP_Spacerig_Comet_C = Game::GameElements::Plague::BP_Spacerig_Comet_C;
+using BP_Spacerig_Comet_C = ::Game::GameElements::Plague::BP_Spacerig_Comet_C;

@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DeepScan_DrillevatorLocationSelector_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_DrillevatorLocationSelector_C;
+using BP_DeepScan_DrillevatorLocationSelector_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScan_DrillevatorLocationSelector_C;

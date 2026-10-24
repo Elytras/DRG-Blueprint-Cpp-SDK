@@ -31,15 +31,15 @@ class ITM_EscMenu_BriefingV2_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_EscMenu_BriefingV2", "ITM_EscMenu_BriefingV2_C");
-    using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using ITM_DeepDiveInfo_C = Game::UI::Menu_EscapeMenu::ITM_DeepDiveInfo_C;
-    using ITM_DeepDive_ObjectiveIcon_C = Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_MissionBar_Objective_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Objective_C;
-    using ITM_MissionInfo_C = Game::UI::Menu_EscapeMenu::ITM_MissionInfo_C;
-    using ITM_ObjectiveBox_InMission_C = Game::UI::Menu_EscapeMenu::ITM_ObjectiveBox_InMission_C;
+    using Basic_IconWithOutline_C = ::Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_DeepDiveInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_DeepDiveInfo_C;
+    using ITM_DeepDive_ObjectiveIcon_C = ::Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_MissionBar_Objective_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Objective_C;
+    using ITM_MissionInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_MissionInfo_C;
+    using ITM_ObjectiveBox_InMission_C = ::Game::UI::Menu_EscapeMenu::ITM_ObjectiveBox_InMission_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* NewMissionSelected;
     Basic_IconWithOutline_C* Basic_IconWithOutline;
@@ -52,7 +52,7 @@ public:
     class UButton* Button_MissionType;
     class UButton* Button_Spacerig;
     class UTextBlock* DATA_MissionTime;
-    class UTextBlock* DATAMissionName;
+    class UTextBlock* DataMissionName;
     class UImage* Image_Campaign;
     class UImage* Image_MissionTerminal;
     class UImage* Image_Separator;
@@ -116,4 +116,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_EscMenu_BriefingV2_C = Game::UI::Menu_EscapeMenu::ITM_EscMenu_BriefingV2_C;
+using ITM_EscMenu_BriefingV2_C = ::Game::UI::Menu_EscapeMenu::ITM_EscMenu_BriefingV2_C;

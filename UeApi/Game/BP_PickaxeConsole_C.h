@@ -13,7 +13,7 @@ class UWidgetComponent;
 
 namespace Game { namespace UI { namespace HUD_SpaceRig {
 
-class BP_PickaxeConsole_C : public Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
+class BP_PickaxeConsole_C : public ::Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_PickaxeConsole", "BP_PickaxeConsole_C");
@@ -24,6 +24,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;PointLight;StaticMesh1;Widget";
         static constexpr const char* TerminalWidget__UeScsNode = "2dca0b2a7b9fc04d8e51b6a0970765ff";
         static constexpr const char* Mesh_Monitor__UeScsNode = "c40d72f8362f2841b2cfe105246480cf";
         static constexpr const char* collider__UeScsNode = "3ef89e02cff0d345937f2c1f8dfb3ba1";
@@ -33,4 +34,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_PickaxeConsole_C = Game::UI::HUD_SpaceRig::BP_PickaxeConsole_C;
+using BP_PickaxeConsole_C = ::Game::UI::HUD_SpaceRig::BP_PickaxeConsole_C;

@@ -44,8 +44,8 @@ public:
     void ExecuteUbergraph_BP_SpacerigTrashCompactor(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
-    void FadeOut__UpdateFunc();
-    void FadeOut__FinishedFunc();
+    void Fadeout__UpdateFunc();
+    void Fadeout__FinishedFunc();
     void SetupInstances();
     void AddStaticMeshes(TArray<FTransform>& Transforms);
     void ChooseList();
@@ -61,4 +61,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpacerigTrashCompactor
 
-using BP_SpacerigTrashCompactor_C = Game::LevelElements::Spacerig::Spacerig_Fun::SpacerigTrashCompactor::BP_SpacerigTrashCompactor_C;
+using BP_SpacerigTrashCompactor_C = ::Game::LevelElements::Spacerig::Spacerig_Fun::SpacerigTrashCompactor::BP_SpacerigTrashCompactor_C;

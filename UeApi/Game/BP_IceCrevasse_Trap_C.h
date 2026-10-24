@@ -73,4 +73,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::IceCrevasse
 
-using BP_IceCrevasse_Trap_C = Game::LevelElements::RoomObjects::Hazards::IceCrevasse::BP_IceCrevasse_Trap_C;
+using BP_IceCrevasse_Trap_C = ::Game::LevelElements::RoomObjects::Hazards::IceCrevasse::BP_IceCrevasse_Trap_C;

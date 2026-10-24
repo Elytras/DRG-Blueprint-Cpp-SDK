@@ -14,7 +14,7 @@ class UTextBlock;
 
 namespace Game { namespace WeaponsNTools { namespace SawedOffShotgun {
 
-class WeaponDisplay_SawedOffShotgun_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_SawedOffShotgun_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/WeaponDisplay_SawedOffShotgun_AmmoCount", "WeaponDisplay_SawedOffShotgun_AmmoCount_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun
 
-using WeaponDisplay_SawedOffShotgun_AmmoCount_C = Game::WeaponsNTools::SawedOffShotgun::WeaponDisplay_SawedOffShotgun_AmmoCount_C;
+using WeaponDisplay_SawedOffShotgun_AmmoCount_C = ::Game::WeaponsNTools::SawedOffShotgun::WeaponDisplay_SawedOffShotgun_AmmoCount_C;

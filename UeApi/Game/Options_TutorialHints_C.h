@@ -16,8 +16,8 @@ class Options_TutorialHints_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_TutorialHints", "Options_TutorialHints_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     Basic_ButtonScalable_C* Button_Reset;
@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_TutorialHints_C = Game::UI::Menu_Options::Options_TutorialHints_C;
+using Options_TutorialHints_C = ::Game::UI::Menu_Options::Options_TutorialHints_C;

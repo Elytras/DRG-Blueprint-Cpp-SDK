@@ -107,4 +107,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::ShieldGenerator
 
-using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;

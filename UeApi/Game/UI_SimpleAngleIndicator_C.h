@@ -21,7 +21,7 @@ class UI_SimpleAngleIndicator_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/UI_SimpleAngleIndicator", "UI_SimpleAngleIndicator_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFadeIn;
     UI_ImageTinted_C* ArrowLeft;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using UI_SimpleAngleIndicator_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::UI_SimpleAngleIndicator_C;
+using UI_SimpleAngleIndicator_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::UI_SimpleAngleIndicator_C;

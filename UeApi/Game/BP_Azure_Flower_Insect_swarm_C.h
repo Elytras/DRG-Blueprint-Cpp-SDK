@@ -41,4 +41,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets
 
-using BP_Azure_Flower_Insect_swarm_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::BP_Azure_Flower_Insect_swarm_C;
+using BP_Azure_Flower_Insect_swarm_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::BP_Azure_Flower_Insect_swarm_C;

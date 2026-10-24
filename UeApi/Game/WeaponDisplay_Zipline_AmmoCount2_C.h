@@ -15,11 +15,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace ZipLineGun {
 
-class WeaponDisplay_Zipline_AmmoCount2_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Zipline_AmmoCount2_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/WeaponDisplay_Zipline_AmmoCount2", "WeaponDisplay_Zipline_AmmoCount2_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_Zipline_AmmoCount2_C;
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using WeaponDisplay_Zipline_AmmoCount2_C = Game::WeaponsNTools::ZipLineGun::WeaponDisplay_Zipline_AmmoCount2_C;
+using WeaponDisplay_Zipline_AmmoCount2_C = ::Game::WeaponsNTools::ZipLineGun::WeaponDisplay_Zipline_AmmoCount2_C;

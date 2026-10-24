@@ -11,7 +11,7 @@ class UTexture2D;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Elimination {
 
-class OBJ_Eliminate_Eggs_C : public Game::GameElements::Objectives::Elimination::OBJ_Elimination_Base_C
+class OBJ_Eliminate_Eggs_C : public ::Game::GameElements::Objectives::Elimination::OBJ_Elimination_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Elimination/OBJ_Eliminate_Eggs", "OBJ_Eliminate_Eggs_C");
@@ -25,4 +25,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Elimination
 
-using OBJ_Eliminate_Eggs_C = Game::GameElements::Objectives::Elimination::OBJ_Eliminate_Eggs_C;
+using OBJ_Eliminate_Eggs_C = ::Game::GameElements::Objectives::Elimination::OBJ_Eliminate_Eggs_C;

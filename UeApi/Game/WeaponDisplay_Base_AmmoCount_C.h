@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::WeaponDisplays
 
-using WeaponDisplay_Base_AmmoCount_C = Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C;
+using WeaponDisplay_Base_AmmoCount_C = ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C;

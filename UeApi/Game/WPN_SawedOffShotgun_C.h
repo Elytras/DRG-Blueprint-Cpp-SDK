@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun
 
-using WPN_SawedOffShotgun_C = Game::WeaponsNTools::SawedOffShotgun::WPN_SawedOffShotgun_C;
+using WPN_SawedOffShotgun_C = ::Game::WeaponsNTools::SawedOffShotgun::WPN_SawedOffShotgun_C;

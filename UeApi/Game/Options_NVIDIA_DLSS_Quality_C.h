@@ -17,7 +17,7 @@ class Options_NVIDIA_DLSS_Quality_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_NVIDIA_DLSS_Quality", "Options_NVIDIA_DLSS_Quality_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     TArray<EUDLSSMode> IndexMap;
@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_NVIDIA_DLSS_Quality_C = Game::UI::Menu_Options::Options_NVIDIA_DLSS_Quality_C;
+using Options_NVIDIA_DLSS_Quality_C = ::Game::UI::Menu_Options::Options_NVIDIA_DLSS_Quality_C;

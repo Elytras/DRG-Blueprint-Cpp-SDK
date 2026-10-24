@@ -21,10 +21,10 @@ class ConsoleScreen_Seasons_NextReward_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Seasons_NextReward", "ConsoleScreen_Seasons_NextReward_C");
-    using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using ITM_Season_CharacterIcon_C = ::Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    UE_READONLY class UWidgetAnimation* BgGlow;
+    UE_READONLY class UWidgetAnimation* BGglow;
     class UBorder* Border_3;
     class UImage* I_Background;
     class UImage* I_Gradient;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Seasons_NextReward_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Seasons_NextReward_C;
+using ConsoleScreen_Seasons_NextReward_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Seasons_NextReward_C;

@@ -20,4 +20,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_CurvedCanvas_C = Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;
+using UI_CurvedCanvas_C = ::Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;

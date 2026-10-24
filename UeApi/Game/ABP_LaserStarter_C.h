@@ -38,4 +38,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent::Models
 
-using ABP_LaserStarter_C = Game::GameElements::GameEvents::ExplosiveBarrelsEvent::Models::ABP_LaserStarter_C;
+using ABP_LaserStarter_C = ::Game::GameElements::GameEvents::ExplosiveBarrelsEvent::Models::ABP_LaserStarter_C;

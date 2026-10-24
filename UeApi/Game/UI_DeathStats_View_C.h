@@ -23,9 +23,9 @@ class UI_DeathStats_View_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Infirmary/UI_DeathStats_View", "UI_DeathStats_View_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using UI_InfirmaryStats_Item_C = Game::UI::HUD_SpaceRig::Infirmary::UI_InfirmaryStats_Item_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using UI_InfirmaryStats_Item_C = ::Game::UI::HUD_SpaceRig::Infirmary::UI_InfirmaryStats_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -50,7 +50,7 @@ public:
     bool Debug;
     void ExecuteUbergraph_UI_DeathStats_View(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReBuild();
+    void Rebuild();
     void ChangeName(FString NewName);
     void SetStatsOwner(class AFSDPlayerState* Player_State);
     void Set_Selected_Item(UI_InfirmaryStats_Item_C* SelectedLine_0);
@@ -67,4 +67,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary
 
-using UI_DeathStats_View_C = Game::UI::HUD_SpaceRig::Infirmary::UI_DeathStats_View_C;
+using UI_DeathStats_View_C = ::Game::UI::HUD_SpaceRig::Infirmary::UI_DeathStats_View_C;

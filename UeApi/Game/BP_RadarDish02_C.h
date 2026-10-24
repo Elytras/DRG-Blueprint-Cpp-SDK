@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Art { namespace BasicArtAssets { namespace Tech {
 
-class BP_RadarDish02_C : public Game::Art::BasicArtAssets::Tech::BP_RadarDish01_C
+class BP_RadarDish02_C : public ::Game::Art::BasicArtAssets::Tech::BP_RadarDish01_C
 {
 public:
     UE_CLASS("/Game/Art/BasicArtAssets/Tech/BP_RadarDish02", "BP_RadarDish02_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Mesh_Dish;Mesh_Light";
+    };
 };
 
 }}}}   // namespace Game::Art::BasicArtAssets::Tech
 
-using BP_RadarDish02_C = Game::Art::BasicArtAssets::Tech::BP_RadarDish02_C;
+using BP_RadarDish02_C = ::Game::Art::BasicArtAssets::Tech::BP_RadarDish02_C;

@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace Plague { namespace CleaningPod { namespace WalkingPlagueHeart {
 
-class BP_CleanupPod_Beacon_WalkingPlagueheart_C : public Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_Beacon_C
+class BP_CleanupPod_Beacon_WalkingPlagueheart_C : public ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/WalkingPlagueHeart/BP_CleanupPod_Beacon_WalkingPlagueheart", "BP_CleanupPod_Beacon_WalkingPlagueheart_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart
 
-using BP_CleanupPod_Beacon_WalkingPlagueheart_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart::BP_CleanupPod_Beacon_WalkingPlagueheart_C;
+using BP_CleanupPod_Beacon_WalkingPlagueheart_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart::BP_CleanupPod_Beacon_WalkingPlagueheart_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace CoreRift {
 
-class BP_SamplePod_Beacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_SamplePod_Beacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_SamplePod_Beacon", "BP_SamplePod_Beacon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SimpleObjectInfo;Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using BP_SamplePod_Beacon_C = Game::GameElements::GameEvents::CoreRift::BP_SamplePod_Beacon_C;
+using BP_SamplePod_Beacon_C = ::Game::GameElements::GameEvents::CoreRift::BP_SamplePod_Beacon_C;

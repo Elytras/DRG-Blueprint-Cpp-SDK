@@ -17,7 +17,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Bouncy {
 
-class Grenade_BouncyPlasma_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_BouncyPlasma_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Bouncy/Grenade_BouncyPlasma", "Grenade_BouncyPlasma_C");
@@ -40,6 +40,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_BouncyPlasma_C__UeName = "UberGraphFrame";
         static constexpr const char* Sphere__UeScsNode = "9d1fccefb67a5047abbbac19756eb73d";
         static constexpr const char* Damage__UeScsNode = "e6d7b5277d65a74f8be339e92563f4e2";
@@ -49,4 +50,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Bouncy
 
-using Grenade_BouncyPlasma_C = Game::WeaponsNTools::Grenades::Bouncy::Grenade_BouncyPlasma_C;
+using Grenade_BouncyPlasma_C = ::Game::WeaponsNTools::Grenades::Bouncy::Grenade_BouncyPlasma_C;

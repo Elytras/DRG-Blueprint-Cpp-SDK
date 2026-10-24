@@ -71,4 +71,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint
 
-using BP_Phys_GreatEggHunt_PaintedEgg_C = Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_Phys_GreatEggHunt_PaintedEgg_C;
+using BP_Phys_GreatEggHunt_PaintedEgg_C = ::Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_Phys_GreatEggHunt_PaintedEgg_C;

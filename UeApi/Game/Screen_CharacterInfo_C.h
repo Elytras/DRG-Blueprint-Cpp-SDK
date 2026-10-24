@@ -15,12 +15,12 @@ class Screen_CharacterInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Screen_CharacterInfo", "Screen_CharacterInfo_C");
-    using ITEM_SpaceRig_PlayerRank_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PlayerRank_C;
-    using UI_TeamDisplay_C = Game::UI::HUD_SpaceRig::UI_TeamDisplay_C;
+    using ITEM_SpaceRig_PlayerRank_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PlayerRank_C;
+    using UI_TeamDisplay_C = ::Game::UI::HUD_SpaceRig::UI_TeamDisplay_C;
     ITEM_SpaceRig_PlayerRank_C* CharSelect_Rank;
     UI_TeamDisplay_C* UI_TeamDisplay;
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using Screen_CharacterInfo_C = Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
+using Screen_CharacterInfo_C = ::Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;

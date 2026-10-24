@@ -27,11 +27,11 @@ class Widget_DropPod_MissionType_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/Widget_DropPod_MissionType", "Widget_DropPod_MissionType_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_DeepDive_ObjectiveIcon_C = Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;
-    using ITM_MisDesMutator_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_MissionBarDropPod_Objective_C = Game::Art::DropPod::ITM_MissionBarDropPod_Objective_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_DeepDive_ObjectiveIcon_C = ::Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;
+    using ITM_MisDesMutator_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_MissionBarDropPod_Objective_C = ::Game::Art::DropPod::ITM_MissionBarDropPod_Objective_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UTextBlock* DATA_MissionName;
@@ -61,4 +61,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_MissionType_C = Game::Art::DropPod::Widgets::Widget_DropPod_MissionType_C;
+using Widget_DropPod_MissionType_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_MissionType_C;

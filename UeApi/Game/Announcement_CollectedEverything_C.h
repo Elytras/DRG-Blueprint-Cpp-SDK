@@ -20,7 +20,7 @@ class Announcement_CollectedEverything_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Announcements/Announcement_CollectedEverything", "Announcement_CollectedEverything_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnnounceAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Announcements
 
-using Announcement_CollectedEverything_C = Game::UI::Announcements::Announcement_CollectedEverything_C;
+using Announcement_CollectedEverything_C = ::Game::UI::Announcements::Announcement_CollectedEverything_C;

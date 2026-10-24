@@ -71,4 +71,4 @@ private:
 
 }}}}   // namespace Game::Critters::FesterFlea::Flea
 
-using ENE_Flea_C = Game::Critters::FesterFlea::Flea::ENE_Flea_C;
+using ENE_Flea_C = ::Game::Critters::FesterFlea::Flea::ENE_Flea_C;

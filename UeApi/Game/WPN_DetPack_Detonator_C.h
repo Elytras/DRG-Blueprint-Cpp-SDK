@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DetPack
 
-using WPN_DetPack_Detonator_C = Game::WeaponsNTools::DetPack::WPN_DetPack_Detonator_C;
+using WPN_DetPack_Detonator_C = ::Game::WeaponsNTools::DetPack::WPN_DetPack_Detonator_C;

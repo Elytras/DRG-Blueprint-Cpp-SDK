@@ -39,4 +39,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse
 
-using BP_CausticCrevasse_Small_C = Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse::BP_CausticCrevasse_Small_C;
+using BP_CausticCrevasse_Small_C = ::Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse::BP_CausticCrevasse_Small_C;

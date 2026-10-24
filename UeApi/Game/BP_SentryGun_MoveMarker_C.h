@@ -44,4 +44,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryGun_MoveMarker_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_MoveMarker_C;
+using BP_SentryGun_MoveMarker_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_MoveMarker_C;

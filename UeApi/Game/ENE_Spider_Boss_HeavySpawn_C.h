@@ -15,7 +15,7 @@ class UMeleeAttackComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossHeavy {
 
-class ENE_Spider_Boss_HeavySpawn_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Boss_HeavySpawn_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/ENE_Spider_Boss_HeavySpawn", "ENE_Spider_Boss_HeavySpawn_C");
@@ -35,6 +35,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent BiteAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent CarveAttack_GEN_VARIABLE:DamageComponent_1;/Script/FSD.DamageComponent StabAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.MeshCarveAttackEffect CarveAttack_GEN_VARIABLE:MeshCarveAttackEffect_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Boss_HeavySpawn_C__UeName = "UberGraphFrame";
         static constexpr const char* CarveAttack__UeScsNode = "543037970a155c4d92f18b574b81eb92";
         static constexpr const char* AlignEnemy__UeScsNode = "0f4dafaec8c1f54f8238fe56e4704ba2";
@@ -47,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using ENE_Spider_Boss_HeavySpawn_C = Game::Enemies::Spider::TankBoss::BossHeavy::ENE_Spider_Boss_HeavySpawn_C;
+using ENE_Spider_Boss_HeavySpawn_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::ENE_Spider_Boss_HeavySpawn_C;

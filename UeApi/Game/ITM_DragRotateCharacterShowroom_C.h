@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using ITM_DragRotateCharacterShowroom_C = Game::UI::Menu_MinersManual::ITM_DragRotateCharacterShowroom_C;
+using ITM_DragRotateCharacterShowroom_C = ::Game::UI::Menu_MinersManual::ITM_DragRotateCharacterShowroom_C;

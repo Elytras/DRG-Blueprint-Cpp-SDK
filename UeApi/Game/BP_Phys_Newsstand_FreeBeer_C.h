@@ -12,7 +12,7 @@ class UMaterialInterface;
 
 namespace Game { namespace Art { namespace Environments { namespace SpaceRig { namespace Newsstand {
 
-class BP_Phys_Newsstand_FreeBeer_C : public Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_C
+class BP_Phys_Newsstand_FreeBeer_C : public ::Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Newsstand/BP_Phys_Newsstand_FreeBeer", "BP_Phys_Newsstand_FreeBeer_C");
@@ -33,10 +33,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Kickable Mesh";
         static constexpr const char* UberGraphFrame_BP_Phys_Newsstand_FreeBeer_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Newsstand
 
-using BP_Phys_Newsstand_FreeBeer_C = Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_FreeBeer_C;
+using BP_Phys_Newsstand_FreeBeer_C = ::Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_FreeBeer_C;

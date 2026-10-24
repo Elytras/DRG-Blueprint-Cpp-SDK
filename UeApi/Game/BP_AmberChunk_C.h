@@ -14,7 +14,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace Gems {
 
-class BP_AmberChunk_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_AmberChunk_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_AmberChunk", "BP_AmberChunk_C");
@@ -40,6 +40,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;Sphere";
         static constexpr const char* UberGraphFrame_BP_AmberChunk_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight__UeScsNode = "2c8feb0788f6b94c87a0116d7ed2e32f";
         static constexpr const char* destroyed__Replicated = "OnRep_Destroyed:";
@@ -53,4 +54,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_AmberChunk_C = Game::GameElements::Resources::Embedded::Gems::BP_AmberChunk_C;
+using BP_AmberChunk_C = ::Game::GameElements::Resources::Embedded::Gems::BP_AmberChunk_C;

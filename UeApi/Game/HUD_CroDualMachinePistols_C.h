@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CroDualMachinePistols_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroDualMachinePistols_C;
+using HUD_CroDualMachinePistols_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroDualMachinePistols_C;

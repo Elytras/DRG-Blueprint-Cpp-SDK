@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnGems_C = Game::UI::Menu_Cheats::Cheat_SpawnGems_C;
+using Cheat_SpawnGems_C = ::Game::UI::Menu_Cheats::Cheat_SpawnGems_C;

@@ -27,8 +27,8 @@ class HUD_LaserPointerDisplay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/HUD_LaserPointerDisplay", "HUD_LaserPointerDisplay_C");
-    using HUD_LaserPointerScanProgress_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerScanProgress_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using HUD_LaserPointerScanProgress_C = ::Game::WeaponsNTools::LaserPointer::HUD_LaserPointerScanProgress_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIconIn;
     UE_READONLY class UWidgetAnimation* Intro;
@@ -75,4 +75,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using HUD_LaserPointerDisplay_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerDisplay_C;
+using HUD_LaserPointerDisplay_C = ::Game::WeaponsNTools::LaserPointer::HUD_LaserPointerDisplay_C;

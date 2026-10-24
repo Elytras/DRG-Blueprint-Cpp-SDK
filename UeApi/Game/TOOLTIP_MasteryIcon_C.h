@@ -21,7 +21,7 @@ class TOOLTIP_MasteryIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/TOOLTIP_MasteryIcon", "TOOLTIP_MasteryIcon_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UTextBlock* HeaderLabel;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using TOOLTIP_MasteryIcon_C = Game::UI::Menu_Loadout::TOOLTIP_MasteryIcon_C;
+using TOOLTIP_MasteryIcon_C = ::Game::UI::Menu_Loadout::TOOLTIP_MasteryIcon_C;

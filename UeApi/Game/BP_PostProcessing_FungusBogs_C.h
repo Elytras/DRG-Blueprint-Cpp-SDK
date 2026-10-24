@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::FungusBogs
 
-using BP_PostProcessing_FungusBogs_C = Game::Landscape::Biomes::Biomes_Ingame::FungusBogs::BP_PostProcessing_FungusBogs_C;
+using BP_PostProcessing_FungusBogs_C = ::Game::Landscape::Biomes::Biomes_Ingame::FungusBogs::BP_PostProcessing_FungusBogs_C;

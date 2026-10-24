@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using SCREEN_CharacterSelection_Base_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C;
+using SCREEN_CharacterSelection_Base_C = ::Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C;

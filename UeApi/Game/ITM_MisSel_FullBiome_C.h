@@ -23,9 +23,9 @@ class ITM_MisSel_FullBiome_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_FullBiome", "ITM_MisSel_FullBiome_C");
-    using ITM_MisSel_BiomeBase_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_BiomeBase_C;
-    using ITM_MisSel_MissionMapIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionMapIcon_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using ITM_MisSel_BiomeBase_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_BiomeBase_C;
+    using ITM_MisSel_MissionMapIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionMapIcon_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UOverlay* Overlay_0;
     UI_PlayerSpeaking_List_C* UI_PlayerSpeaking_List;
@@ -49,4 +49,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_FullBiome_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_FullBiome_C;
+using ITM_MisSel_FullBiome_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_FullBiome_C;

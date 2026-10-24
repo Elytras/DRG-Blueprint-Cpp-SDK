@@ -25,9 +25,9 @@ class MENU_LockedTemplate_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_TopBar/MENU_LockedTemplate", "MENU_LockedTemplate_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimLock;
     class UNamedSlot* BodySlot;
@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using MENU_LockedTemplate_C = Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
+using MENU_LockedTemplate_C = ::Game::UI::Menu_TopBar::MENU_LockedTemplate_C;

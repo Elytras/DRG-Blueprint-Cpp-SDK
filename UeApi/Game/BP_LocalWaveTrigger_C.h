@@ -29,4 +29,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_LocalWaveTrigger_C = Game::LevelElements::Refinery::BP_LocalWaveTrigger_C;
+using BP_LocalWaveTrigger_C = ::Game::LevelElements::Refinery::BP_LocalWaveTrigger_C;

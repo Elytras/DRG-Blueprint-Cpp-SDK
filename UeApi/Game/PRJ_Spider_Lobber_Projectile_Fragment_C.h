@@ -13,7 +13,7 @@ class USoundBase;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Lobber {
 
-class PRJ_Spider_Lobber_Projectile_Fragment_C : public Game::Enemies::Spider::Lobber::PRJ_Base_Spider_Lobber_Projectile_C
+class PRJ_Spider_Lobber_Projectile_Fragment_C : public ::Game::Enemies::Spider::Lobber::PRJ_Base_Spider_Lobber_Projectile_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/PRJ_Spider_Lobber_Projectile_Fragment", "PRJ_Spider_Lobber_Projectile_Fragment_C");
@@ -26,10 +26,12 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;GooParticle;P_SpiderLobber_Projecitle_Trail_TEMP_Converted";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DirectDamageCondition Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0:DirectDamageCondition_0;/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_Spider_Lobber_Projectile_Fragment_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using PRJ_Spider_Lobber_Projectile_Fragment_C = Game::Enemies::Spider::Lobber::PRJ_Spider_Lobber_Projectile_Fragment_C;
+using PRJ_Spider_Lobber_Projectile_Fragment_C = ::Game::Enemies::Spider::Lobber::PRJ_Spider_Lobber_Projectile_Fragment_C;

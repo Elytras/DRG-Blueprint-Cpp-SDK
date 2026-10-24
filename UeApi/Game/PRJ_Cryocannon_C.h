@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using PRJ_Cryocannon_C = Game::WeaponsNTools::Cryospray::PRJ_Cryocannon_C;
+using PRJ_Cryocannon_C = ::Game::WeaponsNTools::Cryospray::PRJ_Cryocannon_C;

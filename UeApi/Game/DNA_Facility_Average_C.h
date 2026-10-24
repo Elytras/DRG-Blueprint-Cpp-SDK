@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Missions {
 
-class DNA_Facility_Average_C : public Game::GameElements::Missions::DNA_Facility_DNA_C
+class DNA_Facility_Average_C : public ::Game::GameElements::Missions::DNA_Facility_DNA_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/DNA_Facility_Average", "DNA_Facility_Average_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_Facility_Average_C = Game::GameElements::Missions::DNA_Facility_Average_C;
+using DNA_Facility_Average_C = ::Game::GameElements::Missions::DNA_Facility_Average_C;

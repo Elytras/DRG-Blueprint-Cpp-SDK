@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::UI::_GlobalAssets::CustomRichText
 
-using DEC_RichTextInput_C = Game::UI::_GlobalAssets::CustomRichText::DEC_RichTextInput_C;
+using DEC_RichTextInput_C = ::Game::UI::_GlobalAssets::CustomRichText::DEC_RichTextInput_C;

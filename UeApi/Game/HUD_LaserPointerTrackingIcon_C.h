@@ -23,8 +23,8 @@ class HUD_LaserPointerTrackingIcon_C : public UActorTrackingWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/HUD_LaserPointerTrackingIcon", "HUD_LaserPointerTrackingIcon_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* AnimIcon;
@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using HUD_LaserPointerTrackingIcon_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerTrackingIcon_C;
+using HUD_LaserPointerTrackingIcon_C = ::Game::WeaponsNTools::LaserPointer::HUD_LaserPointerTrackingIcon_C;

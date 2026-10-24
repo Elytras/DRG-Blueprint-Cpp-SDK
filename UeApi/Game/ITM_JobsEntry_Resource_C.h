@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Jobs
 
-using ITM_JobsEntry_Resource_C = Game::UI::Menu_Jobs::ITM_JobsEntry_Resource_C;
+using ITM_JobsEntry_Resource_C = ::Game::UI::Menu_Jobs::ITM_JobsEntry_Resource_C;

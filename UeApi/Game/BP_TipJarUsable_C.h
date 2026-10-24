@@ -27,4 +27,4 @@ public:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TipMachine
 
-using BP_TipJarUsable_C = Game::Art::Environments::SpaceRig::TipMachine::BP_TipJarUsable_C;
+using BP_TipJarUsable_C = ::Game::Art::Environments::SpaceRig::TipMachine::BP_TipJarUsable_C;

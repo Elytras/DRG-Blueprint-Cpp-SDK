@@ -17,7 +17,7 @@ class HoopsScore_Widget_C : public UHoopScoreWidget
 {
 public:
     UE_CLASS("/Game/LevelElements/Spacerig/Bar/Hoops/HoopsScore_Widget", "HoopsScore_Widget_C");
-    using ConsoleScreen_Empty_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Empty_C;
+    using ConsoleScreen_Empty_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Empty_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ConsoleScreen_Empty_C* ConsoleScreen_Empty;
     class UTextBlock* ScoreText;
@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops
 
-using HoopsScore_Widget_C = Game::LevelElements::Spacerig::Bar::Hoops::HoopsScore_Widget_C;
+using HoopsScore_Widget_C = ::Game::LevelElements::Spacerig::Bar::Hoops::HoopsScore_Widget_C;

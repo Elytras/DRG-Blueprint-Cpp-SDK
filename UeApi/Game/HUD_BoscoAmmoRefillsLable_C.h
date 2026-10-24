@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Bosco
 
-using HUD_BoscoAmmoRefillsLable_C = Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoAmmoRefillsLable_C;
+using HUD_BoscoAmmoRefillsLable_C = ::Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoAmmoRefillsLable_C;

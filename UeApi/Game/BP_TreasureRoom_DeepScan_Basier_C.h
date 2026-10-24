@@ -27,4 +27,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms
 
-using BP_TreasureRoom_DeepScan_Basier_C = Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Basier_C;
+using BP_TreasureRoom_DeepScan_Basier_C = ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Basier_C;

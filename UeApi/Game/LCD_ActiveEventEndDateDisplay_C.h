@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Events
 
-using LCD_ActiveEventEndDateDisplay_C = Game::UI::HUD_SpaceRig::Events::LCD_ActiveEventEndDateDisplay_C;
+using LCD_ActiveEventEndDateDisplay_C = ::Game::UI::HUD_SpaceRig::Events::LCD_ActiveEventEndDateDisplay_C;

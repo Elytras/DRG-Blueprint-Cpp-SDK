@@ -35,4 +35,4 @@ public:
 
 }}   // namespace Game::Game
 
-using LIB_Game_C = Game::Game::LIB_Game_C;
+using LIB_Game_C = ::Game::Game::LIB_Game_C;

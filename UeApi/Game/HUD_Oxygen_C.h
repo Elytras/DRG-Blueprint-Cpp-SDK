@@ -45,4 +45,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Oxygen
 
-using HUD_Oxygen_C = Game::UI::MainOnscreenHUD::Oxygen::HUD_Oxygen_C;
+using HUD_Oxygen_C = ::Game::UI::MainOnscreenHUD::Oxygen::HUD_Oxygen_C;

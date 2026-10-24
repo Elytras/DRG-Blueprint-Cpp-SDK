@@ -44,4 +44,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark
 
-using BP_PeelingBark_1_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark::BP_PeelingBark_1_C;
+using BP_PeelingBark_1_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark::BP_PeelingBark_1_C;

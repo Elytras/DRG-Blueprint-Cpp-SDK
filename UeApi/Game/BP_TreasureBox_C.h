@@ -141,4 +141,4 @@ private:
 
 }}}   // namespace Game::GameElements::Treasure
 
-using BP_TreasureBox_C = Game::GameElements::Treasure::BP_TreasureBox_C;
+using BP_TreasureBox_C = ::Game::GameElements::Treasure::BP_TreasureBox_C;

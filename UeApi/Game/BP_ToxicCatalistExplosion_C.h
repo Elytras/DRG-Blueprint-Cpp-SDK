@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pistol
 
-using BP_ToxicCatalistExplosion_C = Game::WeaponsNTools::Pistol::BP_ToxicCatalistExplosion_C;
+using BP_ToxicCatalistExplosion_C = ::Game::WeaponsNTools::Pistol::BP_ToxicCatalistExplosion_C;

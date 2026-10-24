@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using AIC_HydraWeed_Shooter_C = Game::Enemies::HydraWeed::AIC_HydraWeed_Shooter_C;
+using AIC_HydraWeed_Shooter_C = ::Game::Enemies::HydraWeed::AIC_HydraWeed_Shooter_C;

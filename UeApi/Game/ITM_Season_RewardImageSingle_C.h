@@ -33,8 +33,8 @@ class ITM_Season_RewardImageSingle_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_RewardImageSingle", "ITM_Season_RewardImageSingle_C");
-    using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
-    using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
+    using Basic_IconWithOutline_C = ::Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
+    using ITM_SkinIcon_C = ::Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimRewardMove;
     UE_READONLY class UWidgetAnimation* AnimMoveTick;
@@ -100,4 +100,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;

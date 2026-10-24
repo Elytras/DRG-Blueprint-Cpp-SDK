@@ -17,7 +17,7 @@ class ABP_SuckingPlant_C : public UAnimInstance
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SuckingPlant/ABP_SuckingPlant", "ABP_SuckingPlant_C");
-    using BP_SuckingPlant__C = Game::LevelElements::RoomObjects::Hazards::SuckingPlant::BP_SuckingPlant__C;
+    using BP_SuckingPlant__C = ::Game::LevelElements::RoomObjects::Hazards::SuckingPlant::BP_SuckingPlant__C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_7;
@@ -82,4 +82,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SuckingPlant
 
-using ABP_SuckingPlant_C = Game::LevelElements::RoomObjects::Hazards::SuckingPlant::ABP_SuckingPlant_C;
+using ABP_SuckingPlant_C = ::Game::LevelElements::RoomObjects::Hazards::SuckingPlant::ABP_SuckingPlant_C;

@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Refinery_RocketLamp_C = Game::LevelElements::Refinery::BP_Refinery_RocketLamp_C;
+using BP_Refinery_RocketLamp_C = ::Game::LevelElements::Refinery::BP_Refinery_RocketLamp_C;

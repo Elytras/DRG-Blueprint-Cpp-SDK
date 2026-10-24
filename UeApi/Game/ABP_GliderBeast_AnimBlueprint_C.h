@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::Critters::GliderBeast
 
-using ABP_GliderBeast_AnimBlueprint_C = Game::Critters::GliderBeast::ABP_GliderBeast_AnimBlueprint_C;
+using ABP_GliderBeast_AnimBlueprint_C = ::Game::Critters::GliderBeast::ABP_GliderBeast_AnimBlueprint_C;

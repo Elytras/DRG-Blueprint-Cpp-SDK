@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches
 
-using PRJ_LargeStabbyThorn_C = Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::PRJ_LargeStabbyThorn_C;
+using PRJ_LargeStabbyThorn_C = ::Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::PRJ_LargeStabbyThorn_C;

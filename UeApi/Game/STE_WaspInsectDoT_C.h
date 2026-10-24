@@ -22,4 +22,4 @@ private:
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion
 
-using STE_WaspInsectDoT_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::STE_WaspInsectDoT_C;
+using STE_WaspInsectDoT_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::STE_WaspInsectDoT_C;

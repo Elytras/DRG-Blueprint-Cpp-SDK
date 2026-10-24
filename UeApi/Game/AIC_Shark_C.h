@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::Shark
 
-using AIC_Shark_C = Game::Enemies::Shark::AIC_Shark_C;
+using AIC_Shark_C = ::Game::Enemies::Shark::AIC_Shark_C;

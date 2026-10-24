@@ -25,18 +25,18 @@ class UI_InfoScreen_Xbox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Xbox", "UI_InfoScreen_Xbox_C");
-    using AnimatedDRGlogo_C = Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
-    using AnimatedStaticOverlay_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
-    using Basic_ButtonMultiline_C = Game::UI::Art::WidgetParts::Basic_ButtonMultiline_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using Options_Language_C = Game::UI::Menu_Options::Options_Language_C;
-    using Options_ShowInfoScreen_C = Game::UI::Menu_Options::Options_ShowInfoScreen_C;
-    using UI_InfoScreen_Background_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Background_C;
-    using UI_InfoScreen_DLC_Billboard_C = Game::UI::Menu_StartScreen::UI_InfoScreen_DLC_Billboard_C;
-    using UI_InfoScreen_LatestDLC_C = Game::UI::Menu_StartScreen::UI_InfoScreen_LatestDLC_C;
-    using UI_PatchNotes_C = Game::UI::Menu_StartScreen::UI_PatchNotes_C;
+    using AnimatedDRGlogo_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
+    using AnimatedStaticOverlay_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
+    using Basic_ButtonMultiline_C = ::Game::UI::Art::WidgetParts::Basic_ButtonMultiline_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using Options_Language_C = ::Game::UI::Menu_Options::Options_Language_C;
+    using Options_ShowInfoScreen_C = ::Game::UI::Menu_Options::Options_ShowInfoScreen_C;
+    using UI_InfoScreen_Background_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Background_C;
+    using UI_InfoScreen_DLC_Billboard_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_DLC_Billboard_C;
+    using UI_InfoScreen_LatestDLC_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_LatestDLC_C;
+    using UI_PatchNotes_C = ::Game::UI::Menu_StartScreen::UI_PatchNotes_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -91,4 +91,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_Xbox_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Xbox_C;
+using UI_InfoScreen_Xbox_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Xbox_C;

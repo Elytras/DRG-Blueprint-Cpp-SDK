@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace HumongousFungus {
 
-class BP_HumongousFungus_3_C : public Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus::BP_HumongousFungus_Base_C
+class BP_HumongousFungus_3_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus::BP_HumongousFungus_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/HumongousFungus/BP_HumongousFungus_3", "BP_HumongousFungus_3_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus
 
-using BP_HumongousFungus_3_C = Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus::BP_HumongousFungus_3_C;
+using BP_HumongousFungus_3_C = ::Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus::BP_HumongousFungus_3_C;

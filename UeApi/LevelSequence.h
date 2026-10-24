@@ -80,6 +80,7 @@ struct FLevelSequenceLegacyObjectReference
 struct FLevelSequenceObject
 {
     FString ComponentName;
+    TWeakObjectPtr<class UObject> CachedComponent;
 };
 
 struct FLevelSequenceObjectReferenceMap

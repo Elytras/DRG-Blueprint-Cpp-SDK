@@ -32,12 +32,12 @@ class UI_Forge_Schematic_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_Schematic", "UI_Forge_Schematic_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
-    using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_MatrixCore_C = ::Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
+    using UI_Forge_Schematic_OwnerIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* IconReady;
     UE_READONLY class UWidgetAnimation* AnimReveal;
@@ -93,4 +93,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
+using UI_Forge_Schematic_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;

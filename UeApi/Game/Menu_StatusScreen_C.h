@@ -24,14 +24,14 @@ class Menu_StatusScreen_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Menu_StatusScreen", "Menu_StatusScreen_C");
-    using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
-    using HUD_TabPlayerListEntry_InteractableV2_C = Game::UI::Menu_Tab::HUD_TabPlayerListEntry_InteractableV2_C;
-    using HUD_TabPlayerList_InteractableV2_C = Game::UI::Menu_Tab::HUD_TabPlayerList_InteractableV2_C;
-    using ITM_EscMenu_BriefingV2_C = Game::UI::Menu_EscapeMenu::ITM_EscMenu_BriefingV2_C;
-    using ITM_PreventDuplicateCharacters_C = Game::UI::Menu_EscapeMenu::ITM_PreventDuplicateCharacters_C;
-    using ITM_PrivatePublic_C = Game::UI::Menu_EscapeMenu::ITM_PrivatePublic_C;
-    using ITM_SeasonLogo_C = Game::UI::Menu_Seasons::ITM_SeasonLogo_C;
-    using ITM_WeaponAndPerkInfo_C = Game::UI::Menu_EscapeMenu::ITM_WeaponAndPerkInfo_C;
+    using Basic_IconWithOutline_C = ::Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
+    using HUD_TabPlayerListEntry_InteractableV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerListEntry_InteractableV2_C;
+    using HUD_TabPlayerList_InteractableV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerList_InteractableV2_C;
+    using ITM_EscMenu_BriefingV2_C = ::Game::UI::Menu_EscapeMenu::ITM_EscMenu_BriefingV2_C;
+    using ITM_PreventDuplicateCharacters_C = ::Game::UI::Menu_EscapeMenu::ITM_PreventDuplicateCharacters_C;
+    using ITM_PrivatePublic_C = ::Game::UI::Menu_EscapeMenu::ITM_PrivatePublic_C;
+    using ITM_SeasonLogo_C = ::Game::UI::Menu_Seasons::ITM_SeasonLogo_C;
+    using ITM_WeaponAndPerkInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_WeaponAndPerkInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* LoadoutClicked;
     Basic_IconWithOutline_C* Basic_IconWithOutline;
@@ -70,4 +70,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using Menu_StatusScreen_C = Game::UI::Menu_EscapeMenu::Menu_StatusScreen_C;
+using Menu_StatusScreen_C = ::Game::UI::Menu_EscapeMenu::Menu_StatusScreen_C;

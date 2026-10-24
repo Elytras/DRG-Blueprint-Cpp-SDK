@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ESI_Season01Briefing_C = Game::UI::Menu_Seasons::ESI_Season01Briefing_C;
+using ESI_Season01Briefing_C = ::Game::UI::Menu_Seasons::ESI_Season01Briefing_C;

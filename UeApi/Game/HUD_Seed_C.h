@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Seed_C = Game::UI::MainOnscreenHUD::HUD_Seed_C;
+using HUD_Seed_C = ::Game::UI::MainOnscreenHUD::HUD_Seed_C;

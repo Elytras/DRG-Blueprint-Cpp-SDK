@@ -58,4 +58,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG
 
-using BP_Grenade_IFG_Area_Base_C = Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_Base_C;
+using BP_Grenade_IFG_Area_Base_C = ::Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_Base_C;

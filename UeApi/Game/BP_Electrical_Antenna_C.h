@@ -45,4 +45,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_Electrical_Antenna_C = Game::GameElements::Objectives::Facility::BP_Electrical_Antenna_C;
+using BP_Electrical_Antenna_C = ::Game::GameElements::Objectives::Facility::BP_Electrical_Antenna_C;

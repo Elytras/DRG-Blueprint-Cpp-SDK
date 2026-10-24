@@ -28,10 +28,10 @@ class UI_WeaponMaintenance_Item_C : public UWeaponMaintenanceItemWidget
 {
 public:
     UE_CLASS("/Game/UI/WeaponMaintenance/UI_WeaponMaintenance_Item", "UI_WeaponMaintenance_Item_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_Season_Border_C = Game::UI::Menu_Seasons::UI_Season_Border_C;
-    using WND_Season_RewardClaimed_C = Game::UI::Menu_Seasons::WND_Season_RewardClaimed_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_Season_Border_C = ::Game::UI::Menu_Seasons::UI_Season_Border_C;
+    using WND_Season_RewardClaimed_C = ::Game::UI::Menu_Seasons::WND_Season_RewardClaimed_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     class UOverlay* BG_Glow_Overlay;
@@ -68,4 +68,4 @@ public:
 
 }}}   // namespace Game::UI::WeaponMaintenance
 
-using UI_WeaponMaintenance_Item_C = Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Item_C;
+using UI_WeaponMaintenance_Item_C = ::Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Item_C;

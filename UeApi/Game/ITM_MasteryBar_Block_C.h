@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_MasteryBar_Block_C = Game::UI::Menu_Loadout::ITM_MasteryBar_Block_C;
+using ITM_MasteryBar_Block_C = ::Game::UI::Menu_Loadout::ITM_MasteryBar_Block_C;

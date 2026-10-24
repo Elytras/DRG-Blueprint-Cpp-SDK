@@ -17,8 +17,8 @@ class SLVL_SpaceRig_Xmas_C : public ALevelScriptActor
 {
 public:
     UE_CLASS("/Game/Maps/SpaceRig/SLVL_SpaceRig_Xmas", "SLVL_SpaceRig_Xmas_C");
-    using BP_GiftBox_Weightless_C = Game::Art::Environments::Holiday_Xmas::BP_GiftBox_Weightless_C;
-    using BP_Xmas_CandyCane_C = Game::Art::Environments::Holiday_Xmas::BP_Xmas_CandyCane_C;
+    using BP_GiftBox_Weightless_C = ::Game::Art::Environments::Holiday_Xmas::BP_GiftBox_Weightless_C;
+    using BP_Xmas_CandyCane_C = ::Game::Art::Environments::Holiday_Xmas::BP_Xmas_CandyCane_C;
     FPointerToUberGraphFrame UberGraphFrame;
     int SpawnSeed;
     FRandomStream RandomStream;
@@ -73,4 +73,4 @@ private:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_Xmas_C = Game::Maps::SpaceRig::SLVL_SpaceRig_Xmas_C;
+using SLVL_SpaceRig_Xmas_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_Xmas_C;

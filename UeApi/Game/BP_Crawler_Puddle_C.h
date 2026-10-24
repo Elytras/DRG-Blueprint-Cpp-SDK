@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using BP_Crawler_Puddle_C = Game::Enemies::Crawler::BP_Crawler_Puddle_C;
+using BP_Crawler_Puddle_C = ::Game::Enemies::Crawler::BP_Crawler_Puddle_C;

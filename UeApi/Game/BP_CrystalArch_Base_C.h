@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::CrystalArches
 
-using BP_CrystalArch_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::CrystalArches::BP_CrystalArch_Base_C;
+using BP_CrystalArch_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::CrystalArches::BP_CrystalArch_Base_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using STE_FastZiplineSpeed_C = Game::WeaponsNTools::ZipLineGun::STE_FastZiplineSpeed_C;
+using STE_FastZiplineSpeed_C = ::Game::WeaponsNTools::ZipLineGun::STE_FastZiplineSpeed_C;

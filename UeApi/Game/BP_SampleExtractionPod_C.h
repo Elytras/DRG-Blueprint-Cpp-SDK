@@ -120,4 +120,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using BP_SampleExtractionPod_C = Game::GameElements::GameEvents::CoreRift::BP_SampleExtractionPod_C;
+using BP_SampleExtractionPod_C = ::Game::GameElements::GameEvents::CoreRift::BP_SampleExtractionPod_C;

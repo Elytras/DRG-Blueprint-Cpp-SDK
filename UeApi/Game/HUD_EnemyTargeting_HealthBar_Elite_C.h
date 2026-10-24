@@ -54,4 +54,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar
 
-using HUD_EnemyTargeting_HealthBar_Elite_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_Elite_C;
+using HUD_EnemyTargeting_HealthBar_Elite_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_Elite_C;

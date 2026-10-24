@@ -29,4 +29,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::PlasmaBoomerang
 
-using Grenade_PlasmaBoomerang_C = Game::WeaponsNTools::Grenades::PlasmaBoomerang::Grenade_PlasmaBoomerang_C;
+using Grenade_PlasmaBoomerang_C = ::Game::WeaponsNTools::Grenades::PlasmaBoomerang::Grenade_PlasmaBoomerang_C;

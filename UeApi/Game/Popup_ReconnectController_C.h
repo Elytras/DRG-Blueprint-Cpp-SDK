@@ -19,9 +19,9 @@ class Popup_ReconnectController_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/System/Popup_ReconnectController", "Popup_ReconnectController_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonScalable2_C* Basic_ButtonScalable2;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::System
 
-using Popup_ReconnectController_C = Game::UI::System::Popup_ReconnectController_C;
+using Popup_ReconnectController_C = ::Game::UI::System::Popup_ReconnectController_C;

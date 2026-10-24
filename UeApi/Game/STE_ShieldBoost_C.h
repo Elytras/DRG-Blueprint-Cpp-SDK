@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_ShieldBoost_C = Game::GameElements::KPI::Perks::STE_ShieldBoost_C;
+using STE_ShieldBoost_C = ::Game::GameElements::KPI::Perks::STE_ShieldBoost_C;

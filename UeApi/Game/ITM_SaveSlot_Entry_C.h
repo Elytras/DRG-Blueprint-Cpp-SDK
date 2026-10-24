@@ -23,11 +23,11 @@ class ITM_SaveSlot_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/ITM_SaveSlot_Entry", "ITM_SaveSlot_Entry_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Biome_ToolTip_C = Game::UI::ToolTips::Biome_ToolTip_C;
-    using ITM_SaveSlot_Entry_ClassIcon_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_ClassIcon_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Biome_ToolTip_C = ::Game::UI::ToolTips::Biome_ToolTip_C;
+    using ITM_SaveSlot_Entry_ClassIcon_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_ClassIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_ButtonScalable_C* Button_Delete;
@@ -77,4 +77,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using ITM_SaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
+using ITM_SaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;

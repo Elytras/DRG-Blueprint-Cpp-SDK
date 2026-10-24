@@ -45,4 +45,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using BP_SentinelGoo_Puddle_C = Game::Enemies::Spider::TankBoss::BossHeavy::BP_SentinelGoo_Puddle_C;
+using BP_SentinelGoo_Puddle_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::BP_SentinelGoo_Puddle_C;

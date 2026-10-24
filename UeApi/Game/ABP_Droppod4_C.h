@@ -46,4 +46,4 @@ public:
 
 }}}}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment::Assets::Droppod4
 
-using ABP_Droppod4_C = Game::GameElements::Objectives::Excavation::RocketAttachment::Assets::Droppod4::ABP_Droppod4_C;
+using ABP_Droppod4_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::Assets::Droppod4::ABP_Droppod4_C;

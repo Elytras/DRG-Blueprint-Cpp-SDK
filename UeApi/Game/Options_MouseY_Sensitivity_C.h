@@ -22,13 +22,13 @@ class Options_MouseY_Sensitivity_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_MouseY_Sensitivity", "Options_MouseY_Sensitivity_C");
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* BaseMid;
     Basic_Slider_C* Basic_Slider;
     class UHorizontalBox* ManualSensitivityInput;
     class USpinBox* SensitivityInput;
-    class UButton* Togglemanualinput;
+    class UButton* ToggleManualinput;
     class UTextBlock* TXT_ButtonText;
     class UWidgetSwitcher* WidgetSwitcher_207;
     bool UseSpinboxInput;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_MouseY_Sensitivity_C = Game::UI::Menu_Options::Options_MouseY_Sensitivity_C;
+using Options_MouseY_Sensitivity_C = ::Game::UI::Menu_Options::Options_MouseY_Sensitivity_C;

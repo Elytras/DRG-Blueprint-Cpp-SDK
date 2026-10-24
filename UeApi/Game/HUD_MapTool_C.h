@@ -23,8 +23,8 @@ class HUD_MapTool_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_MapTool", "HUD_MapTool_C");
-    using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_HUD_BracketWindowBig_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* MainTurnOn;
     UE_READONLY class UWidgetAnimation* MapTurnOn;
@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_MapTool_C = Game::UI::MainOnscreenHUD::HUD_MapTool_C;
+using HUD_MapTool_C = ::Game::UI::MainOnscreenHUD::HUD_MapTool_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_StickyGooRT_C = Game::Landscape::ReactiveTerrain::STE_StickyGooRT_C;
+using STE_StickyGooRT_C = ::Game::Landscape::ReactiveTerrain::STE_StickyGooRT_C;

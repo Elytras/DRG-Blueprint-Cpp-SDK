@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SuperRapidFire_C = Game::UI::Menu_Cheats::Cheat_SuperRapidFire_C;
+using Cheat_SuperRapidFire_C = ::Game::UI::Menu_Cheats::Cheat_SuperRapidFire_C;

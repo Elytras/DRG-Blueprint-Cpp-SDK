@@ -43,4 +43,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_Homing
 
-using ABP_HomingModule_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_Homing::ABP_HomingModule_C;
+using ABP_HomingModule_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_Homing::ABP_HomingModule_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::Radiation
 
-using AFE_Radiation_Enemies_C = Game::GameElements::PawnAffliction::EnemyEffects::Radiation::AFE_Radiation_Enemies_C;
+using AFE_Radiation_Enemies_C = ::Game::GameElements::PawnAffliction::EnemyEffects::Radiation::AFE_Radiation_Enemies_C;

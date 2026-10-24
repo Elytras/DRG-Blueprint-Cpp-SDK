@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using BT_Task_InfectedMule_FindPlayerLocation_C = Game::Enemies::MuleInfected::BT_Task_InfectedMule_FindPlayerLocation_C;
+using BT_Task_InfectedMule_FindPlayerLocation_C = ::Game::Enemies::MuleInfected::BT_Task_InfectedMule_FindPlayerLocation_C;

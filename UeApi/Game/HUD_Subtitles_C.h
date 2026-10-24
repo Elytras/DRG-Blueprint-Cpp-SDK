@@ -18,8 +18,8 @@ class HUD_Subtitles_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Subtitles/HUD_Subtitles", "HUD_Subtitles_C");
-    using UI_ShoutBox_C = Game::UI::MainOnscreenHUD::Subtitles::UI_ShoutBox_C;
-    using UI_Subtitle_C = Game::UI::MainOnscreenHUD::Subtitles::UI_Subtitle_C;
+    using UI_ShoutBox_C = ::Game::UI::MainOnscreenHUD::Subtitles::UI_ShoutBox_C;
+    using UI_Subtitle_C = ::Game::UI::MainOnscreenHUD::Subtitles::UI_Subtitle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ShoutBox_C* PlayerShout;
     UI_Subtitle_C* SubtitleShout;
@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Subtitles
 
-using HUD_Subtitles_C = Game::UI::MainOnscreenHUD::Subtitles::HUD_Subtitles_C;
+using HUD_Subtitles_C = ::Game::UI::MainOnscreenHUD::Subtitles::HUD_Subtitles_C;

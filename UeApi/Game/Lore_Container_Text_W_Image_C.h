@@ -28,7 +28,7 @@ class Lore_Container_Text_W_Image_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_Text_W_Image", "Lore_Container_Text_W_Image_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* ColorbarTextSeparator;
     class UHorizontalBox* HorizontalBox_Outer;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers
 
-using Lore_Container_Text_W_Image_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_W_Image_C;
+using Lore_Container_Text_W_Image_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_W_Image_C;

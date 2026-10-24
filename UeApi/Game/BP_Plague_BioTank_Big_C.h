@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco
 
-using BP_Plague_BioTank_Big_C = Game::GameElements::Plague::Spacerig_Deco::BP_Plague_BioTank_Big_C;
+using BP_Plague_BioTank_Big_C = ::Game::GameElements::Plague::Spacerig_Deco::BP_Plague_BioTank_Big_C;

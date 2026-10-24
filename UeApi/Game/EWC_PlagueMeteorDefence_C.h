@@ -17,11 +17,11 @@ namespace Game { namespace GameElements { namespace GameEvents { namespace Plagu
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_PlagueMeteorDefence_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_PlagueMeteorDefence_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_PlagueMeteorDefence", "EWC_PlagueMeteorDefence_C");
-    using BP_RockCrackerPod_C = Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
+    using BP_RockCrackerPod_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_PlagueMeteorDefence_C;
     FVector SpawnLocation;
     class UEnemyGroupDescriptor* EnemyGroup;
@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_PlagueMeteorDefence_C = Game::Enemies::Waves::WaveControllers::EWC_PlagueMeteorDefence_C;
+using EWC_PlagueMeteorDefence_C = ::Game::Enemies::Waves::WaveControllers::EWC_PlagueMeteorDefence_C;

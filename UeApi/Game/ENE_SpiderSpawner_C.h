@@ -28,11 +28,11 @@ namespace Game { namespace Enemies { namespace EnemySpawner { class BP_SpawnerEy
 
 namespace Game { namespace Enemies { namespace EnemySpawner {
 
-class ENE_SpiderSpawner_C : public Game::Enemies::EnemySpawner::ENE_EnemySpawner_C
+class ENE_SpiderSpawner_C : public ::Game::Enemies::EnemySpawner::ENE_EnemySpawner_C
 {
 public:
     UE_CLASS("/Game/Enemies/EnemySpawner/ENE_SpiderSpawner", "ENE_SpiderSpawner_C");
-    using BP_SpawnerEyeComponent_C = Game::Enemies::EnemySpawner::BP_SpawnerEyeComponent_C;
+    using BP_SpawnerEyeComponent_C = ::Game::Enemies::EnemySpawner::BP_SpawnerEyeComponent_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_SpiderSpawner_C;
     class USphereComponent* Sphere_Eye4;
     class USphereComponent* Sphere_Eye3;
@@ -110,4 +110,4 @@ private:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using ENE_SpiderSpawner_C = Game::Enemies::EnemySpawner::ENE_SpiderSpawner_C;
+using ENE_SpiderSpawner_C = ::Game::Enemies::EnemySpawner::ENE_SpiderSpawner_C;

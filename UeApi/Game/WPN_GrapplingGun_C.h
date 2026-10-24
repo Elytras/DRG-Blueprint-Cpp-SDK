@@ -27,7 +27,7 @@ class WPN_GrapplingGun_C : public AGrapplingHookGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrapplingGun/WPN_GrapplingGun", "WPN_GrapplingGun_C");
-    using HUD_CroNew_GrapplingGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNew_GrapplingGun_C;
+    using HUD_CroNew_GrapplingGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNew_GrapplingGun_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* AudioMoving;
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
@@ -78,4 +78,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun
 
-using WPN_GrapplingGun_C = Game::WeaponsNTools::GrapplingGun::WPN_GrapplingGun_C;
+using WPN_GrapplingGun_C = ::Game::WeaponsNTools::GrapplingGun::WPN_GrapplingGun_C;

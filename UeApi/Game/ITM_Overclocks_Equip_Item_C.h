@@ -24,8 +24,8 @@ class ITM_Overclocks_Equip_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/Overclocks/ITM_Overclocks_Equip_Item", "ITM_Overclocks_Equip_Item_C");
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     class UButton* ClickButton;
@@ -54,4 +54,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Overclocks
 
-using ITM_Overclocks_Equip_Item_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_Item_C;
+using ITM_Overclocks_Equip_Item_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_Item_C;

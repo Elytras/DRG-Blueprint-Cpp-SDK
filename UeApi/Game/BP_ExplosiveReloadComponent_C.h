@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties
 
-using BP_ExplosiveReloadComponent_C = Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties::BP_ExplosiveReloadComponent_C;
+using BP_ExplosiveReloadComponent_C = ::Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties::BP_ExplosiveReloadComponent_C;

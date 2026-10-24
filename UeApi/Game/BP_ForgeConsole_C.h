@@ -18,7 +18,7 @@ class UWindowWidget;
 
 namespace Game { namespace UI { namespace HUD_SpaceRig {
 
-class BP_ForgeConsole_C : public Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
+class BP_ForgeConsole_C : public ::Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_ForgeConsole", "BP_ForgeConsole_C");
@@ -41,6 +41,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;StaticMesh1;TextRender;Widget";
         static constexpr const char* UberGraphFrame_BP_ForgeConsole_C__UeName = "UberGraphFrame";
         static constexpr const char* CollisionBox5__UeScsNode = "c237e164841c1a43b8b19d4d9eb38f7d";
         static constexpr const char* LightCone__UeScsNode = "d51d015327671641a0f6683c7e9b2a26";
@@ -63,4 +64,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_ForgeConsole_C = Game::UI::HUD_SpaceRig::BP_ForgeConsole_C;
+using BP_ForgeConsole_C = ::Game::UI::HUD_SpaceRig::BP_ForgeConsole_C;

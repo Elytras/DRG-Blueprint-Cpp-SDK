@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Tentacle_Spawn_C = Game::Character::Camera::CameraShakes::CameraShake_Tentacle_Spawn_C;
+using CameraShake_Tentacle_Spawn_C = ::Game::Character::Camera::CameraShakes::CameraShake_Tentacle_Spawn_C;

@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Minehead
 
-using BP_Motherlode_MiningHeadDropLocation_C = Game::LevelElements::Minehead::BP_Motherlode_MiningHeadDropLocation_C;
+using BP_Motherlode_MiningHeadDropLocation_C = ::Game::LevelElements::Minehead::BP_Motherlode_MiningHeadDropLocation_C;

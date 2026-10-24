@@ -24,9 +24,9 @@ class Menu_MovieMode_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/UI/Menu_MovieMode", "Menu_MovieMode_C");
-    using MovieMode_DronePointLight_C = Game::GameElements::MovieMode::UI::MovieMode_DronePointLight_C;
-    using MovieMode_FlareLight_C = Game::GameElements::MovieMode::UI::MovieMode_FlareLight_C;
-    using MovieMode_ScoutFlareLight_C = Game::GameElements::MovieMode::UI::MovieMode_ScoutFlareLight_C;
+    using MovieMode_DronePointLight_C = ::Game::GameElements::MovieMode::UI::MovieMode_DronePointLight_C;
+    using MovieMode_FlareLight_C = ::Game::GameElements::MovieMode::UI::MovieMode_FlareLight_C;
+    using MovieMode_ScoutFlareLight_C = ::Game::GameElements::MovieMode::UI::MovieMode_ScoutFlareLight_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USlider* BloomSlider;
     class UTextBlock* BloomText;
@@ -128,4 +128,4 @@ public:
 
 }}}}   // namespace Game::GameElements::MovieMode::UI
 
-using Menu_MovieMode_C = Game::GameElements::MovieMode::UI::Menu_MovieMode_C;
+using Menu_MovieMode_C = ::Game::GameElements::MovieMode::UI::Menu_MovieMode_C;

@@ -32,4 +32,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CactusShooter
 
-using ABP_CactusShooterPlant_C = Game::LevelElements::RoomObjects::Hazards::CactusShooter::ABP_CactusShooterPlant_C;
+using ABP_CactusShooterPlant_C = ::Game::LevelElements::RoomObjects::Hazards::CactusShooter::ABP_CactusShooterPlant_C;

@@ -24,10 +24,10 @@ class UI_Perks_Buy_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Perks_Buy", "UI_Perks_Buy_C");
-    using Basic_FlatButton_C = Game::UI::Art::WidgetParts::Basic_FlatButton_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
+    using Basic_FlatButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatButton_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_PerkIcon_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimBuy;
     UE_READONLY class UWidgetAnimation* ButtonPulse;
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Perks_Buy_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Buy_C;
+using UI_Perks_Buy_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Buy_C;

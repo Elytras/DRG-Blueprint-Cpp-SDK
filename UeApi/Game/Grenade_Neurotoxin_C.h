@@ -13,7 +13,7 @@ class UParticleSystemComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Neurotoxin {
 
-class Grenade_Neurotoxin_C : public Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base_C
+class Grenade_Neurotoxin_C : public ::Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/Grenade_Neurotoxin", "Grenade_Neurotoxin_C");
@@ -28,6 +28,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Neurotoxin_C__UeName = "UberGraphFrame";
         static constexpr const char* P_Grenade_Neurotoxin_NozzleCone1__UeScsNode = "7868cd7a2915fa4fa6a8de09fd16307b";
         static constexpr const char* P_Grenade_Neurotoxin_NozzleCone3__UeScsNode = "2e111186d9b6f74c8e595a26be713ac9";
@@ -37,4 +38,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin
 
-using Grenade_Neurotoxin_C = Game::WeaponsNTools::Grenades::Neurotoxin::Grenade_Neurotoxin_C;
+using Grenade_Neurotoxin_C = ::Game::WeaponsNTools::Grenades::Neurotoxin::Grenade_Neurotoxin_C;

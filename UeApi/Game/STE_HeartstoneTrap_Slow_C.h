@@ -22,4 +22,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP
 
-using STE_HeartstoneTrap_Slow_C = Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP::STE_HeartstoneTrap_Slow_C;
+using STE_HeartstoneTrap_Slow_C = ::Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP::STE_HeartstoneTrap_Slow_C;

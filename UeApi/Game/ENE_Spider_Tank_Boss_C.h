@@ -29,11 +29,11 @@ namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { nam
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossTank {
 
-class ENE_Spider_Tank_Boss_C : public Game::Enemies::Spider::TankBoss::ENE_Spider_Boss_Base_C
+class ENE_Spider_Tank_Boss_C : public ::Game::Enemies::Spider::TankBoss::ENE_Spider_Boss_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTank/ENE_Spider_Tank_Boss", "ENE_Spider_Tank_Boss_C");
-    using BP_Boss_AoEAttack_C = Game::Enemies::Spider::TankBoss::BossTank::BP_Boss_AoEAttack_C;
+    using BP_Boss_AoEAttack_C = ::Game::Enemies::Spider::TankBoss::BossTank::BP_Boss_AoEAttack_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Boss_C;
     class UWeakpointGlowComponent* WeakpointGlow;
     class UCapsuleComponent* Capsule;
@@ -104,6 +104,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;IK;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack EggProjectile_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.DamageComponent CarveAttack_GEN_VARIABLE:DamageComponent_1;/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent SlamAttackk_GEN_VARIABLE:DamageComponent_0;/Script/FSD.KnockbackDamageBonus SlamAttackk_GEN_VARIABLE:DamageComponent_0:KnockbackDamageBonus_0;/Script/FSD.MeshCarveAttackEffect CarveAttack_GEN_VARIABLE:MeshCarveAttackEffect_0;/Script/FSD.NormalProjectileAttack Fireball_GEN_VARIABLE:NormalProjectileAttack_0;/Script/Engine.SphereComponent IK_GEN_VARIABLE:SphereComponent_1;/Script/FSD.WithinAngleValidator EggProjectile_GEN_VARIABLE:WithinAngleValidator_0;/Script/FSD.WithinAngleValidator Fireball_GEN_VARIABLE:WithinAngleValidator_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Boss_C__UeName = "UberGraphFrame";
         static constexpr const char* WeakpointGlow__UeScsNode = "710083f9bbcce3458399b60e0d1e2c20";
         static constexpr const char* Capsule__UeScsNode = "ea2102983e2ba74bb8be9200fc3567ba";
@@ -133,4 +135,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank
 
-using ENE_Spider_Tank_Boss_C = Game::Enemies::Spider::TankBoss::BossTank::ENE_Spider_Tank_Boss_C;
+using ENE_Spider_Tank_Boss_C = ::Game::Enemies::Spider::TankBoss::BossTank::ENE_Spider_Tank_Boss_C;

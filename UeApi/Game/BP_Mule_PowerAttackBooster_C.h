@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RockInfestation
 
-using BP_Mule_PowerAttackBooster_C = Game::GameElements::Missions::Warnings::RockInfestation::BP_Mule_PowerAttackBooster_C;
+using BP_Mule_PowerAttackBooster_C = ::Game::GameElements::Missions::Warnings::RockInfestation::BP_Mule_PowerAttackBooster_C;

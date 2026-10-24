@@ -14,7 +14,7 @@ class UTextBlock;
 
 namespace Game { namespace UI { namespace WeaponDisplays {
 
-class WeaponDisplay_Basic_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Basic_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/UI/WeaponDisplays/WeaponDisplay_Basic_AmmoCount", "WeaponDisplay_Basic_AmmoCount_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::UI::WeaponDisplays
 
-using WeaponDisplay_Basic_AmmoCount_C = Game::UI::WeaponDisplays::WeaponDisplay_Basic_AmmoCount_C;
+using WeaponDisplay_Basic_AmmoCount_C = ::Game::UI::WeaponDisplays::WeaponDisplay_Basic_AmmoCount_C;

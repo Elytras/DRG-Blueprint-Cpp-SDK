@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ExploderInfestation
 
-using BP_ExploderInfestation_C = Game::GameElements::Missions::Warnings::ExploderInfestation::BP_ExploderInfestation_C;
+using BP_ExploderInfestation_C = ::Game::GameElements::Missions::Warnings::ExploderInfestation::BP_ExploderInfestation_C;

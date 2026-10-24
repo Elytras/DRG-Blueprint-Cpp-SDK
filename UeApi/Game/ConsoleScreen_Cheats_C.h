@@ -15,10 +15,10 @@ class ConsoleScreen_Cheats_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Cheats", "ConsoleScreen_Cheats_C");
-    using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
+    using ConsoleScreen_BGtemplate_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Cheats_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Cheats_C;
+using ConsoleScreen_Cheats_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Cheats_C;

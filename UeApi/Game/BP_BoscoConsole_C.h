@@ -23,7 +23,7 @@ class BP_BoscoConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_BoscoConsole", "BP_BoscoConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh3;
     class UStaticMeshComponent* StaticMesh2;
@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_BoscoConsole_C = Game::UI::HUD_SpaceRig::BP_BoscoConsole_C;
+using BP_BoscoConsole_C = ::Game::UI::HUD_SpaceRig::BP_BoscoConsole_C;

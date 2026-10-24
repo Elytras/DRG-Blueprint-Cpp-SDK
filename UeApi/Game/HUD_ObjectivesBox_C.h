@@ -26,10 +26,10 @@ class HUD_ObjectivesBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Objectives/HUD_ObjectivesBox", "HUD_ObjectivesBox_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ShowObjectives;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
@@ -69,4 +69,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Objectives
 
-using HUD_ObjectivesBox_C = Game::UI::MainOnscreenHUD::Objectives::HUD_ObjectivesBox_C;
+using HUD_ObjectivesBox_C = ::Game::UI::MainOnscreenHUD::Objectives::HUD_ObjectivesBox_C;

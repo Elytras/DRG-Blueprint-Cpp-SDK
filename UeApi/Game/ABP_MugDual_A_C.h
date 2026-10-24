@@ -24,4 +24,4 @@ public:
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments
 
-using ABP_MugDual_A_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::ABP_MugDual_A_C;
+using ABP_MugDual_A_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::ABP_MugDual_A_C;

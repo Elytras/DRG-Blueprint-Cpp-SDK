@@ -44,4 +44,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_LevelEndGradient_C = Game::UI::Menu_Seasons::ITM_Season_LevelEndGradient_C;
+using ITM_Season_LevelEndGradient_C = ::Game::UI::Menu_Seasons::ITM_Season_LevelEndGradient_C;

@@ -21,4 +21,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::Ghost
 
-using BP_GhostMutator_C = Game::GameElements::Missions::Warnings::Ghost::BP_GhostMutator_C;
+using BP_GhostMutator_C = ::Game::GameElements::Missions::Warnings::Ghost::BP_GhostMutator_C;

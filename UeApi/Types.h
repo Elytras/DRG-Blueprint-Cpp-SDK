@@ -135,7 +135,22 @@ template <class T> struct TSoftClassPtr {
 #include "Methods_TSoftClassPtr.inc"
 };
 
-template <class T, class U> T *Cast(U *) { return nullptr; }
+/* A native struct's or class's weak member (WeakObjectProperty), read like an object reference, as a Blueprint's
+   Break node reads one: `Data.Instigator->K2_GetPawn()`, `AActor *A = Data.DamageCauser;`, `if (Data.DamageCauser)`.
+   The VM hands the object out of the weak pointer, None once it is gone. No assignment: the game's are read-only. */
+template <class T> struct TWeakObjectPtr {
+  T *Ptr;
+  T *operator->() const;
+  operator T *() const { return Ptr; }
+};
+
+template <class T, class U> inline T *Cast(U *) { return nullptr; }
+template <class T, class U> inline T *Cast(const TWeakObjectPtr<U> &) { return nullptr; }     // the object it reads as
+
+/* The class default object of a class value, the editor's Get Class Defaults: `->Member` and `->Fn()` on it run in
+   EX_ClassContext(Class). Class holds a T: a TSubclassOf<T> or of a subclass, or any class for T = UObject. */
+template <class T> inline const T *GetDefault(UClass *) { return nullptr; }
+template <class T> inline T *GetMutableDefault(UClass *) { return nullptr; }
 
 /* An object seen through one of its interfaces: InterfaceProperty. Made from an object
    (EX_ObjToInterfaceCast) or another interface (EX_CrossInterfaceCast); GetObject() is
@@ -157,20 +172,54 @@ template <class T> struct TScriptInterface {
 /* Delegates. A delegate value is `{this, &Class::Handler}`, self's function bound by name
    (EX_InstanceDelegate). A dispatcher takes Add / Remove / Clear, and Broadcast when AssetGen knows
    its signature function, which it does for one declared with UE_DISPATCHER. */
+/* A handler's parameters match a signature's when each is the same type, by value or `const&`: a native signature's
+   UeApi spelling does not say which its parameter is (the dump keeps no CPF_ReferenceParm), and the engine hands a
+   handler the value either way. TSubclassOf<UObject> is a UClass*, both a ClassProperty of UObject. */
+template <class T> struct UeBareT { using Type = T; };
+template <class T> struct UeBareT<const T> { using Type = typename UeBareT<T>::Type; };
+template <class T> struct UeBareT<T &> { using Type = typename UeBareT<T>::Type; };
+template <> struct UeBareT<TSubclassOf<UObject>> { using Type = UClass *; };
+template <class E> struct UeBareT<TEnum<E>> { using Type = E; };
+template <class X, class Y> constexpr bool UeSameT = false;
+template <class X> constexpr bool          UeSameT<X, X> = true;
+template <class... X> struct UeParams {};
+template <class P, class Q> constexpr bool UeSameParams = false;
+template <class... X, class... Y>
+  requires(sizeof...(X) == sizeof...(Y))
+constexpr bool UeSameParams<UeParams<X...>, UeParams<Y...>> =
+    (UeSameT<typename UeBareT<X>::Type, typename UeBareT<Y>::Type> && ...);
+
 template <class Sig> struct TDelegate;
 template <class R, class... A> struct TDelegate<R(A...)> {
   uint8 Opaque[16];
   TDelegate() = default;
-  template <class O, class C> TDelegate(O *, R (C::*)(A...)) {}
+  template <class O, class C, class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  TDelegate(O *, R (C::*)(B...)) {}
+  /* Calls the bound function. A Blueprint has no node for it, so AssetGen adds the value to a dispatcher local of this
+     signature and broadcasts that: an unbound value does nothing, and a value-returning signature is refused. */
+  R Execute(A...) const;
+  R ExecuteIfBound(A...) const;
 };
 
 template <class Sig> struct TMulticastInlineDelegate;
 template <class R, class... A> struct TMulticastInlineDelegate<R(A...)> {
-  uint8                            Opaque[16];
-  template <class O, class C> void Add(O *, R (C::*)(A...));
-  template <class O, class C> void Remove(O *, R (C::*)(A...));
-  void                             Clear();
-  void                             Broadcast(A...);
+  uint8 Opaque[16];
+  template <class O, class C, class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Add(O *, R (C::*)(B...));
+  template <class O, class C, class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Remove(O *, R (C::*)(B...));
+  /* A delegate value bound already, a variable or parameter: the editor's Add / Remove node fed a delegate pin. */
+  template <class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Add(const TDelegate<R(B...)> &);
+  template <class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Remove(const TDelegate<R(B...)> &);
+  void Clear();
+  void Broadcast(A...);
 };
 
 template <class Sig> using TMulticastSparseDelegate = TMulticastInlineDelegate<Sig>;
@@ -185,13 +234,46 @@ template <class Sig> using TMulticastSparseDelegate = TMulticastInlineDelegate<S
    the value of a `static inline const` class variable (UeMeta.h), it is a Make Array / Set / Map where it is used. */
 #include <initializer_list>
 
+/* A container of objects passes where one of a base class is wanted: `TArray<AActor*>` for a `const TArray<UObject*>&`
+   or by-value parameter, member, initialiser or return, as the editor links an Actor array pin to an Object array one
+   (ArePinTypesCompatible). The bytes are the same pointers, so nothing converts. Each element, key and value is the same
+   type or an object pointer to a base class; an interface is no UObject, so `IScorable*` never is. A non-const
+   `TArray<UObject*>&` takes no `TArray<AActor*>`: a write through it could put a UObject in an Actor array. */
+template <class From, class To> struct UeTwoPtrs { static constexpr bool Value = false; };
+template <class D, class B> struct UeTwoPtrs<D *, B *> {
+  static constexpr bool Value = !UeSameT<D, B>;
+  using Derived = D;
+  using Base    = B;
+};
+/* A conjunction stops at its first false part: the trait sees two distinct classes, both complete. */
+template <class From, class To>
+concept UeUpcast = UeTwoPtrs<From, To>::Value
+                && requires { sizeof(typename UeTwoPtrs<From, To>::Derived) + sizeof(typename UeTwoPtrs<From, To>::Base); }
+                && __is_base_of(UObject, typename UeTwoPtrs<From, To>::Base)
+                && __is_base_of(typename UeTwoPtrs<From, To>::Base, typename UeTwoPtrs<From, To>::Derived);
+template <class From, class To> concept UeSameOrUpcast = UeSameT<From, To> || UeUpcast<From, To>;
+
+/* `for (auto& [Item, Index] : Items.Enumerate())`: Item is the element where it lives, so a write lands in the array, and
+   Index is its int32 index, which nothing assigns. `const auto&` makes Item read-only too; `auto [Item, Index]` copies
+   the element. A method, not `auto& [A, B] : Items` itself, which C++ reads as unpacking each element (a struct's two
+   members). AssetGen lowers it as any range-for over the array, by index; the methods have no body. */
+template <class T> struct TIndexed {
+  T           Item;
+  const int32 Index;
+};
+template <class T> struct TEnumerated {
+  TIndexed<T> *begin();
+  TIndexed<T> *end();
+};
+
 template <class T> struct TArray {
-  T    *Data;
-  int32 Num_;
-  int32 Max_;
+  T    *Data = nullptr;
+  int32 Num_ = 0;
+  int32 Max_ = 0;
 
   TArray() = default;
   TArray(std::initializer_list<T>) {}
+  template <class E> requires UeUpcast<E, T> TArray(const TArray<E> &) {}
   UE_CONTAINER_TArray int32 Num() const;
   T                        &operator[](int32 I) { return Data[I]; }
   const T                  &operator[](int32 I) const { return Data[I]; }
@@ -200,13 +282,16 @@ template <class T> struct TArray {
   T       *end();
   const T *begin() const;
   const T *end() const;
+  TEnumerated<T>       Enumerate();
+  TEnumerated<const T> Enumerate() const;
 };
 
 template <class T> struct TSet {
-  uint8 Opaque[80];
+  uint8 Opaque[80] = {};
 
   TSet() = default;
   TSet(std::initializer_list<T>) {}
+  template <class E> requires UeUpcast<E, T> TSet(const TSet<E> &) {}
   UE_CONTAINER_TSet int32 Num() const;
   /* Set_Union, Set_Difference and Set_Intersection as values: `Wanted - Active`. Both sides must be set variables or
      the result of another of these. */
@@ -225,10 +310,13 @@ template <class K, class V> struct TPair {
 };
 
 template <class K, class V> struct TMap {
-  uint8 Opaque[80];
+  uint8 Opaque[80] = {};
 
   TMap() = default;
   TMap(std::initializer_list<TPair<K, V>>) {}
+  template <class K2, class V2>
+    requires UeSameOrUpcast<K2, K> && UeSameOrUpcast<V2, V> && (!UeSameT<K2, K> || !UeSameT<V2, V>)
+  TMap(const TMap<K2, V2> &) {}
   UE_CONTAINER_TMap int32 Num() const;
   /* A read is Find(), the value type's default for a missing key; `Map[Key] = V` is Add(). A container method on
      `Map[Key]` runs on a copy, stored back when it writes. */

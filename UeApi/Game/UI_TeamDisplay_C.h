@@ -21,9 +21,9 @@ class UI_TeamDisplay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/UI_TeamDisplay", "UI_TeamDisplay_C");
-    using ITEM_SpaceRig_PersonalCharacterLevel_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PersonalCharacterLevel_C;
-    using ITEM_SpaceRig_TeamMember_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_TeamMember_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using ITEM_SpaceRig_PersonalCharacterLevel_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PersonalCharacterLevel_C;
+    using ITEM_SpaceRig_TeamMember_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_TeamMember_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USizeBox* Holder_FriendInvite;
     ITEM_SpaceRig_PersonalCharacterLevel_C* HUD_PlayerClass_SpaceRig;
@@ -59,4 +59,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using UI_TeamDisplay_C = Game::UI::HUD_SpaceRig::UI_TeamDisplay_C;
+using UI_TeamDisplay_C = ::Game::UI::HUD_SpaceRig::UI_TeamDisplay_C;

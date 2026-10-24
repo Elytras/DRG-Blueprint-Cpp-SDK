@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun
 
-using STE_CQCBuff_C = Game::WeaponsNTools::CombatShotgun::STE_CQCBuff_C;
+using STE_CQCBuff_C = ::Game::WeaponsNTools::CombatShotgun::STE_CQCBuff_C;

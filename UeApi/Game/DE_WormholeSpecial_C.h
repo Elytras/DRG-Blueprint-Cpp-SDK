@@ -18,7 +18,7 @@ class DE_WormholeSpecial_C : public UDrinkEffectComponent
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/DrinkEffects/DE_WormholeSpecial", "DE_WormholeSpecial_C");
-    using BP_WormholeLocation_Base_C = Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_Base_C;
+    using BP_WormholeLocation_Base_C = ::Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class APlayerCharacter* Character;
     FTransform On_Start_Transform;
@@ -45,4 +45,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_WormholeSpecial_C = Game::GameElements::Bar::DrinkEffects::DE_WormholeSpecial_C;
+using DE_WormholeSpecial_C = ::Game::GameElements::Bar::DrinkEffects::DE_WormholeSpecial_C;

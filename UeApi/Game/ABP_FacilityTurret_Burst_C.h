@@ -45,4 +45,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret::Assets
 
-using ABP_FacilityTurret_Burst_C = Game::GameElements::Objectives::Facility::DefenseTurret::Assets::ABP_FacilityTurret_Burst_C;
+using ABP_FacilityTurret_Burst_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::Assets::ABP_FacilityTurret_Burst_C;

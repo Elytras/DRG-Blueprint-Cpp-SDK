@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using WND_MissionBar_C = Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_C;
+using WND_MissionBar_C = ::Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_C;

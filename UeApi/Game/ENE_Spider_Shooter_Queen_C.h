@@ -15,11 +15,11 @@ namespace Game { namespace Enemies { namespace Spider { class BP_BurrowComponent
 
 namespace Game { namespace Enemies { namespace Spider { namespace Shooter { namespace ShooterQueen {
 
-class ENE_Spider_Shooter_Queen_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Shooter_Queen_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ShooterQueen/ENE_Spider_Shooter_Queen", "ENE_Spider_Shooter_Queen_C");
-    using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+    using BP_BurrowComponent_C = ::Game::Enemies::Spider::BP_BurrowComponent_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Shooter_Queen_C;
     class UProjectileAttackComponent* ProjectileAttack;
     BP_BurrowComponent_C* BP_BurrowComponent;
@@ -34,6 +34,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Shooter_Queen_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileAttack__UeScsNode = "223d8c70391fa34e9018cceef4e52032";
         static constexpr const char* BP_BurrowComponent__UeScsNode = "4a76a2746ff8994096704b1c3e9be855";
@@ -44,4 +46,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::Shooter::ShooterQueen
 
-using ENE_Spider_Shooter_Queen_C = Game::Enemies::Spider::Shooter::ShooterQueen::ENE_Spider_Shooter_Queen_C;
+using ENE_Spider_Shooter_Queen_C = ::Game::Enemies::Spider::Shooter::ShooterQueen::ENE_Spider_Shooter_Queen_C;

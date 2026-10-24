@@ -23,8 +23,8 @@ class HUD_Resources_Player_Icon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Resources/HUD_Resources_Player_Icon", "HUD_Resources_Player_Icon_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Ping;
     UE_READONLY class UWidgetAnimation* Intro;
@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources
 
-using HUD_Resources_Player_Icon_C = Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Player_Icon_C;
+using HUD_Resources_Player_Icon_C = ::Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Player_Icon_C;

@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_BurningLove_C = Game::GameElements::Bar::DrinkEffects::DE_BurningLove_C;
+using DE_BurningLove_C = ::Game::GameElements::Bar::DrinkEffects::DE_BurningLove_C;

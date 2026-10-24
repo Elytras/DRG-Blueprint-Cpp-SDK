@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonProgressBar_C = Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;
+using ITM_SeasonProgressBar_C = ::Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;

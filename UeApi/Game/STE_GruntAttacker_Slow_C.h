@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Attacker
 
-using STE_GruntAttacker_Slow_C = Game::Enemies::Spider::Grunt::Attacker::STE_GruntAttacker_Slow_C;
+using STE_GruntAttacker_Slow_C = ::Game::Enemies::Spider::Grunt::Attacker::STE_GruntAttacker_Slow_C;

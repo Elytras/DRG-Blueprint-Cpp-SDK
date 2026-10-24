@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Spitballer_Scream_C = Game::Character::Camera::CameraShakes::CameraShake_Spitballer_Scream_C;
+using CameraShake_Spitballer_Scream_C = ::Game::Character::Camera::CameraShakes::CameraShake_Spitballer_Scream_C;

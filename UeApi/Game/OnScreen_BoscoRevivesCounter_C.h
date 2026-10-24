@@ -16,8 +16,8 @@ class OnScreen_BoscoRevivesCounter_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Bosco/OnScreen_BoscoRevivesCounter", "OnScreen_BoscoRevivesCounter_C");
-    using HUD_BoscoAmmoRefillsLable_C = Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoAmmoRefillsLable_C;
-    using HUD_BoscoRevivesLable_C = Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoRevivesLable_C;
+    using HUD_BoscoAmmoRefillsLable_C = ::Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoAmmoRefillsLable_C;
+    using HUD_BoscoRevivesLable_C = ::Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoRevivesLable_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_BoscoAmmoRefillsLable_C* HUD_BoscoAmmoRefillsLable;
     HUD_BoscoRevivesLable_C* HUD_BoscoRevivesLable;
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Bosco
 
-using OnScreen_BoscoRevivesCounter_C = Game::UI::MainOnscreenHUD::Bosco::OnScreen_BoscoRevivesCounter_C;
+using OnScreen_BoscoRevivesCounter_C = ::Game::UI::MainOnscreenHUD::Bosco::OnScreen_BoscoRevivesCounter_C;

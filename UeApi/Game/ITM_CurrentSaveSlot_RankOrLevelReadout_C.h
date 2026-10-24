@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using ITM_CurrentSaveSlot_RankOrLevelReadout_C = Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_RankOrLevelReadout_C;
+using ITM_CurrentSaveSlot_RankOrLevelReadout_C = ::Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_RankOrLevelReadout_C;

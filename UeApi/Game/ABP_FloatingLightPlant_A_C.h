@@ -47,4 +47,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant
 
-using ABP_FloatingLightPlant_A_C = Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant::ABP_FloatingLightPlant_A_C;
+using ABP_FloatingLightPlant_A_C = ::Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant::ABP_FloatingLightPlant_A_C;

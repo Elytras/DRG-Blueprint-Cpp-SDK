@@ -11,7 +11,7 @@ class UStaticMesh;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace BoneYards { namespace Carvers {
 
-class BP_Stalagnates_Large_C : public Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_BoneyardLevelCarversBase_C
+class BP_Stalagnates_Large_C : public ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_BoneyardLevelCarversBase_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_Stalagnates_Large", "BP_Stalagnates_Large_C");
@@ -19,8 +19,13 @@ public:
     TArray<float> MeshHeights;
     TArray<float> DistanceThresholds;
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_Stalagnates_Large_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Stalagnates_Large_C;
+using BP_Stalagnates_Large_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Stalagnates_Large_C;

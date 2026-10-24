@@ -19,7 +19,7 @@ class UI_WeaponMaintenance_RewardOverlay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/WeaponMaintenance/UI_WeaponMaintenance_RewardOverlay", "UI_WeaponMaintenance_RewardOverlay_C");
-    using ITM_ItemIcon_C = Game::UI::Menu_Loadout::ITM_ItemIcon_C;
+    using ITM_ItemIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_ItemIcon_C* ItemIcon_Left;
     ITM_ItemIcon_C* ItemIcon_Right;
@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::UI::WeaponMaintenance
 
-using UI_WeaponMaintenance_RewardOverlay_C = Game::UI::WeaponMaintenance::UI_WeaponMaintenance_RewardOverlay_C;
+using UI_WeaponMaintenance_RewardOverlay_C = ::Game::UI::WeaponMaintenance::UI_WeaponMaintenance_RewardOverlay_C;

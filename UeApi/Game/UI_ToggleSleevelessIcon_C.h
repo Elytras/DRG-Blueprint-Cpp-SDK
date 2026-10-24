@@ -20,7 +20,7 @@ class UI_ToggleSleevelessIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_ToggleSleevelessIcon", "UI_ToggleSleevelessIcon_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimNotAvailable;
     UE_READONLY class UWidgetAnimation* AnimHover;
@@ -46,4 +46,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using UI_ToggleSleevelessIcon_C = Game::UI::Menu_Wardrobe::UI_ToggleSleevelessIcon_C;
+using UI_ToggleSleevelessIcon_C = ::Game::UI::Menu_Wardrobe::UI_ToggleSleevelessIcon_C;

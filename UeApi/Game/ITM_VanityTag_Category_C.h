@@ -21,8 +21,8 @@ class ITM_VanityTag_Category_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/FilterSelector/ITM_VanityTag_Category", "ITM_VanityTag_Category_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_VanityTag_CheckBox_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_CheckBox_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_VanityTag_CheckBox_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* Content_VBox;
     class UVerticalBox* Entry_Box;
@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector
 
-using ITM_VanityTag_Category_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_Category_C;
+using ITM_VanityTag_Category_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_Category_C;

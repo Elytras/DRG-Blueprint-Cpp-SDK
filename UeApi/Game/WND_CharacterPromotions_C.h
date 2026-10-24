@@ -28,13 +28,13 @@ class WND_CharacterPromotions_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/MENU_Promotion/WND_CharacterPromotions", "WND_CharacterPromotions_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using CharSelect_HeroSelect_Clean_C = Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Clean_C;
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
-    using Screen_CharacterInfo_C = Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_RetirementInfo_C = Game::UI::CharacterSelectionMK2::Retirement::UI_RetirementInfo_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using CharSelect_HeroSelect_Clean_C = ::Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Clean_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+    using Screen_CharacterInfo_C = ::Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_RetirementInfo_C = ::Game::UI::CharacterSelectionMK2::Retirement::UI_RetirementInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimMoveIn;
     class UNamedSlot* ButtonsGoHere;
@@ -83,4 +83,4 @@ private:
 
 }}}   // namespace Game::UI::MENU_Promotion
 
-using WND_CharacterPromotions_C = Game::UI::MENU_Promotion::WND_CharacterPromotions_C;
+using WND_CharacterPromotions_C = ::Game::UI::MENU_Promotion::WND_CharacterPromotions_C;

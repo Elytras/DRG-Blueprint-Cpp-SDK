@@ -51,4 +51,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using BP_MorkiteExtractor_Pipeline_Start_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::BP_MorkiteExtractor_Pipeline_Start_C;
+using BP_MorkiteExtractor_Pipeline_Start_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::BP_MorkiteExtractor_Pipeline_Start_C;

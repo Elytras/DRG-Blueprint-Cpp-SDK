@@ -44,4 +44,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_CabinOwnerSign_C = Game::Art::Environments::SpaceRig::BP_CabinOwnerSign_C;
+using BP_CabinOwnerSign_C = ::Game::Art::Environments::SpaceRig::BP_CabinOwnerSign_C;

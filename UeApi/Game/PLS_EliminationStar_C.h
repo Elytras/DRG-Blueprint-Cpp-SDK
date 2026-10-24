@@ -14,7 +14,7 @@ class URoomGeneratorGroup;
 
 namespace Game { namespace Landscape { namespace ProceduralLevelSetups { namespace Alpha02 {
 
-class PLS_EliminationStar_C : public Game::Landscape::PLS_Base_C
+class PLS_EliminationStar_C : public ::Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_EliminationStar", "PLS_EliminationStar_C");
@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02
 
-using PLS_EliminationStar_C = Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_EliminationStar_C;
+using PLS_EliminationStar_C = ::Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_EliminationStar_C;

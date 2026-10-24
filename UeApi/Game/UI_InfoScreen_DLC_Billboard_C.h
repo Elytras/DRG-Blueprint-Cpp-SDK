@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_DLC_Billboard_C = Game::UI::Menu_StartScreen::UI_InfoScreen_DLC_Billboard_C;
+using UI_InfoScreen_DLC_Billboard_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_DLC_Billboard_C;

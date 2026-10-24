@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_PlayerRankWarning_C = Game::GameElements::Bar::UI::UI_Bar_PlayerRankWarning_C;
+using UI_Bar_PlayerRankWarning_C = ::Game::GameElements::Bar::UI::UI_Bar_PlayerRankWarning_C;

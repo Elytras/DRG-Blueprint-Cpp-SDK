@@ -50,4 +50,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank
 
-using ABP_Spider_Boss_Adult_C = Game::Enemies::Spider::TankBoss::BossTank::ABP_Spider_Boss_Adult_C;
+using ABP_Spider_Boss_Adult_C = ::Game::Enemies::Spider::TankBoss::BossTank::ABP_Spider_Boss_Adult_C;

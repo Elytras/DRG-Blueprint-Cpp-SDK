@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Weekly_1_C = Game::GameElements::Campaign::CP_Weekly_1_C;
+using CP_Weekly_1_C = ::Game::GameElements::Campaign::CP_Weekly_1_C;

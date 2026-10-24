@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Retirement_Gunner_C = Game::GameElements::Campaign::CP_Retirement_Gunner_C;
+using CP_Retirement_Gunner_C = ::Game::GameElements::Campaign::CP_Retirement_Gunner_C;

@@ -19,8 +19,8 @@ class UI_Hoop_History_C : public UUIHoopHistory
 {
 public:
     UE_CLASS("/Game/LevelElements/Spacerig/Bar/Hoops/UI_Hoop_History", "UI_Hoop_History_C");
-    using ConsoleScreen_Empty_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Empty_C;
-    using UI_Hoop_HistoryLine_C = Game::LevelElements::Spacerig::Bar::Hoops::UI_Hoop_HistoryLine_C;
+    using ConsoleScreen_Empty_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Empty_C;
+    using UI_Hoop_HistoryLine_C = ::Game::LevelElements::Spacerig::Bar::Hoops::UI_Hoop_HistoryLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ConsoleScreen_Empty_C* ConsoleScreen_Empty;
     class UTextBlock* Header;
@@ -46,4 +46,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops
 
-using UI_Hoop_History_C = Game::LevelElements::Spacerig::Bar::Hoops::UI_Hoop_History_C;
+using UI_Hoop_History_C = ::Game::LevelElements::Spacerig::Bar::Hoops::UI_Hoop_History_C;

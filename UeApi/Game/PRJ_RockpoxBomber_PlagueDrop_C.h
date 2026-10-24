@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using PRJ_RockpoxBomber_PlagueDrop_C = Game::Enemies::Plague::PRJ_RockpoxBomber_PlagueDrop_C;
+using PRJ_RockpoxBomber_PlagueDrop_C = ::Game::Enemies::Plague::PRJ_RockpoxBomber_PlagueDrop_C;

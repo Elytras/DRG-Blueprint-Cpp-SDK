@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::GameElements::MovieMode
 
-using BP_CameraDrone_SplineMesh_C = Game::GameElements::MovieMode::BP_CameraDrone_SplineMesh_C;
+using BP_CameraDrone_SplineMesh_C = ::Game::GameElements::MovieMode::BP_CameraDrone_SplineMesh_C;

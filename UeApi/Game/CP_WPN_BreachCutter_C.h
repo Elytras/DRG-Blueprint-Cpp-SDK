@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_WPN_BreachCutter_C = Game::GameElements::Campaign::CP_WPN_BreachCutter_C;
+using CP_WPN_BreachCutter_C = ::Game::GameElements::Campaign::CP_WPN_BreachCutter_C;

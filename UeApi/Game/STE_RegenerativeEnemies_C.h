@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RegenerativeEnemies
 
-using STE_RegenerativeEnemies_C = Game::GameElements::Missions::Warnings::RegenerativeEnemies::STE_RegenerativeEnemies_C;
+using STE_RegenerativeEnemies_C = ::Game::GameElements::Missions::Warnings::RegenerativeEnemies::STE_RegenerativeEnemies_C;

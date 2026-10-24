@@ -14,14 +14,14 @@ class USphereComponent;
 
 namespace Game { namespace LevelElements { namespace Triggers {
 
-class BP_SphereTrigger_C : public Game::LevelElements::Triggers::BP_TriggerBase_C
+class BP_SphereTrigger_C : public ::Game::LevelElements::Triggers::BP_TriggerBase_C
 {
 public:
     UE_CLASS("/Game/LevelElements/Triggers/BP_SphereTrigger", "BP_SphereTrigger_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_SphereTrigger_C;
     class USphereComponent* Sphere;
-    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ExecuteUbergraph_BP_SphereTrigger(int EntryPoint);
+    void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 private:
     struct UeMarkers
     {
@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Triggers
 
-using BP_SphereTrigger_C = Game::LevelElements::Triggers::BP_SphereTrigger_C;
+using BP_SphereTrigger_C = ::Game::LevelElements::Triggers::BP_SphereTrigger_C;

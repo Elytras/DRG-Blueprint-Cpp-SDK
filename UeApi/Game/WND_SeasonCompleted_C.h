@@ -19,9 +19,9 @@ class WND_SeasonCompleted_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonCompleted", "WND_SeasonCompleted_C");
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_SeasonContentToggle_C = Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;
-    using UI_Season_Popup_C = Game::UI::Menu_Seasons::UI_Season_Popup_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_SeasonContentToggle_C = ::Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;
+    using UI_Season_Popup_C = ::Game::UI::Menu_Seasons::UI_Season_Popup_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShow;
     class UButton* CloseButton;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_SeasonCompleted_C = Game::UI::Menu_Seasons::WND_SeasonCompleted_C;
+using WND_SeasonCompleted_C = ::Game::UI::Menu_Seasons::WND_SeasonCompleted_C;

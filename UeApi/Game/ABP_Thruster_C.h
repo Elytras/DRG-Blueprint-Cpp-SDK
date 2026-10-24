@@ -17,7 +17,7 @@ class ABP_Thruster_C : public UAnimInstance
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/Assets/ABP_Thruster", "ABP_Thruster_C");
-    using BP_RocketAttachment_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_RocketAttachment_C;
+    using BP_RocketAttachment_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_RocketAttachment_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_SequenceEvaluator AnimGraphNode_SequenceEvaluator;
@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::Assets
 
-using ABP_Thruster_C = Game::GameElements::Objectives::Excavation::Assets::ABP_Thruster_C;
+using ABP_Thruster_C = ::Game::GameElements::Objectives::Excavation::Assets::ABP_Thruster_C;

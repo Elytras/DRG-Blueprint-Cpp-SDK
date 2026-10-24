@@ -29,4 +29,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween
 
-using AIC_Halloween_Skull_C = Game::GameElements::Holidays::Halloween::AIC_Halloween_Skull_C;
+using AIC_Halloween_Skull_C = ::Game::GameElements::Holidays::Halloween::AIC_Halloween_Skull_C;

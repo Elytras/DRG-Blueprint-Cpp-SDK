@@ -91,4 +91,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_TransmitterNode_C = Game::GameElements::Objectives::Facility::Tethers::BP_TransmitterNode_C;
+using BP_TransmitterNode_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_TransmitterNode_C;

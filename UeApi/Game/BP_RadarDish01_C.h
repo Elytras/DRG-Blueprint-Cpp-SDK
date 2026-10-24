@@ -44,4 +44,4 @@ private:
 
 }}}}   // namespace Game::Art::BasicArtAssets::Tech
 
-using BP_RadarDish01_C = Game::Art::BasicArtAssets::Tech::BP_RadarDish01_C;
+using BP_RadarDish01_C = ::Game::Art::BasicArtAssets::Tech::BP_RadarDish01_C;

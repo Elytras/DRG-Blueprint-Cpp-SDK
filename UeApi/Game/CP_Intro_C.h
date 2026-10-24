@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Intro_C = Game::GameElements::Campaign::CP_Intro_C;
+using CP_Intro_C = ::Game::GameElements::Campaign::CP_Intro_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Campaign::OLDSeasonalEventCampaigns
 
-using CP_AnniversaryYear05_C = Game::GameElements::Campaign::OLDSeasonalEventCampaigns::CP_AnniversaryYear05_C;
+using CP_AnniversaryYear05_C = ::Game::GameElements::Campaign::OLDSeasonalEventCampaigns::CP_AnniversaryYear05_C;

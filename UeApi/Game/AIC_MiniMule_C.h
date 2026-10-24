@@ -27,4 +27,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using AIC_MiniMule_C = Game::GameElements::Objectives::Salvage::AIC_MiniMule_C;
+using AIC_MiniMule_C = ::Game::GameElements::Objectives::Salvage::AIC_MiniMule_C;

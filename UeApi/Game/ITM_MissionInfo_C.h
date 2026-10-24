@@ -20,10 +20,10 @@ class ITM_MissionInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_MissionInfo", "ITM_MissionInfo_C");
-    using ITM_MisSel_DotMarker_CaveDifficulty_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
-    using ITM_MisSel_DotMarker_MissionLength_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
-    using ITM_WarningAndMutator_C = Game::UI::Menu_EscapeMenu::ITM_WarningAndMutator_C;
-    using UI_HazPlus_Row_C = Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;
+    using ITM_MisSel_DotMarker_CaveDifficulty_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
+    using ITM_MisSel_DotMarker_MissionLength_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
+    using ITM_WarningAndMutator_C = ::Game::UI::Menu_EscapeMenu::ITM_WarningAndMutator_C;
+    using UI_HazPlus_Row_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DataDifficultyName;
     ITM_MisSel_DotMarker_CaveDifficulty_C* ITM_MisSel_DotMarker_CaveDifficulty;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_MissionInfo_C = Game::UI::Menu_EscapeMenu::ITM_MissionInfo_C;
+using ITM_MissionInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_MissionInfo_C;

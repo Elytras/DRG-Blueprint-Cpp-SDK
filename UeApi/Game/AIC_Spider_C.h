@@ -42,4 +42,4 @@ private:
 
 }}}   // namespace Game::Enemies::Spider
 
-using AIC_Spider_C = Game::Enemies::Spider::AIC_Spider_C;
+using AIC_Spider_C = ::Game::Enemies::Spider::AIC_Spider_C;

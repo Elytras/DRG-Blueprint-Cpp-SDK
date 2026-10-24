@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Plague { namespace WalkingPlagueheartBoss {
 
-class AIC_WalkingPlagueheart_C : public Game::Enemies::Spider::AIC_Spider_C
+class AIC_WalkingPlagueheart_C : public ::Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/AIC_WalkingPlagueheart", "AIC_WalkingPlagueheart_C");
@@ -27,4 +27,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using AIC_WalkingPlagueheart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::AIC_WalkingPlagueheart_C;
+using AIC_WalkingPlagueheart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::AIC_WalkingPlagueheart_C;

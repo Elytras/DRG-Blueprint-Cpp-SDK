@@ -64,4 +64,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint
 
-using BP_GreatEggHunt_KnockEgg_C = Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_KnockEgg_C;
+using BP_GreatEggHunt_KnockEgg_C = ::Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_KnockEgg_C;

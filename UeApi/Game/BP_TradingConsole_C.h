@@ -23,7 +23,7 @@ class BP_TradingConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_TradingConsole", "BP_TradingConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box1;
     class UWidgetComponent* Widget_Second;
@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_TradingConsole_C = Game::UI::HUD_SpaceRig::BP_TradingConsole_C;
+using BP_TradingConsole_C = ::Game::UI::HUD_SpaceRig::BP_TradingConsole_C;

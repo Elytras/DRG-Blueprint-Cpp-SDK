@@ -23,9 +23,9 @@ class ITM_RestoreSaveList_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_RestoreSave/ITM_RestoreSaveList_Entry", "ITM_RestoreSaveList_Entry_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Biome_ToolTip_C = Game::UI::ToolTips::Biome_ToolTip_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Biome_ToolTip_C = ::Game::UI::ToolTips::Biome_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UButton* Button_0;
@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_RestoreSave
 
-using ITM_RestoreSaveList_Entry_C = Game::UI::Menu_RestoreSave::ITM_RestoreSaveList_Entry_C;
+using ITM_RestoreSaveList_Entry_C = ::Game::UI::Menu_RestoreSave::ITM_RestoreSaveList_Entry_C;

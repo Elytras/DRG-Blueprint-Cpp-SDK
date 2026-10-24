@@ -27,9 +27,9 @@ class HUD_Cro_LockOnRifle_C : public UCrosshairWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/HUD_Cro_LockOnRifle", "HUD_Cro_LockOnRifle_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_LockOn_Counter_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_C;
-    using UI_LockOn_Scanning_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Scanning_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_LockOn_Counter_C = ::Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_C;
+    using UI_LockOn_Scanning_C = ::Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Scanning_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* DotFade;
     class UImage* Bracket_Left;
@@ -94,4 +94,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI
 
-using HUD_Cro_LockOnRifle_C = Game::WeaponsNTools::LockOnRifle::UI::HUD_Cro_LockOnRifle_C;
+using HUD_Cro_LockOnRifle_C = ::Game::WeaponsNTools::LockOnRifle::UI::HUD_Cro_LockOnRifle_C;

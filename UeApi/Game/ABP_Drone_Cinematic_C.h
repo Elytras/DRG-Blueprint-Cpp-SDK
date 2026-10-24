@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Drone::Drone_Cinematic
 
-using ABP_Drone_Cinematic_C = Game::GameElements::Drone::Drone_Cinematic::ABP_Drone_Cinematic_C;
+using ABP_Drone_Cinematic_C = ::Game::GameElements::Drone::Drone_Cinematic::ABP_Drone_Cinematic_C;

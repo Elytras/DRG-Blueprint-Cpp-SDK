@@ -64,6 +64,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_2";
         static constexpr const char* Capsule__UeScsNode = "29d10933ce7c7146835bb54965b84ac0";
         static constexpr const char* PointLight__UeScsNode = "3d19da54ab04da468a50cafa2ba4c3dd";
         static constexpr const char* PathfinderCollision__UeScsNode = "7c20cb7a80dbc840b0f74a2e03b23b0d";
@@ -81,4 +82,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using ENE_TentaclePlant_C = Game::Enemies::TentaclePlant::ENE_TentaclePlant_C;
+using ENE_TentaclePlant_C = ::Game::Enemies::TentaclePlant::ENE_TentaclePlant_C;

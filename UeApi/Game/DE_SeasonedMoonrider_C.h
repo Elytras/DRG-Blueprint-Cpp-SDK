@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_SeasonedMoonrider_C = Game::GameElements::Bar::DrinkEffects::DE_SeasonedMoonrider_C;
+using DE_SeasonedMoonrider_C = ::Game::GameElements::Bar::DrinkEffects::DE_SeasonedMoonrider_C;

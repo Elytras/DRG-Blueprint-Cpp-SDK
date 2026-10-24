@@ -41,4 +41,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::CoreRift::Assets
 
-using ABP_SamplePod_Door_C = Game::GameElements::GameEvents::CoreRift::Assets::ABP_SamplePod_Door_C;
+using ABP_SamplePod_Door_C = ::Game::GameElements::GameEvents::CoreRift::Assets::ABP_SamplePod_Door_C;

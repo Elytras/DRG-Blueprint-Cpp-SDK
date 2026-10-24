@@ -90,4 +90,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_MineHead
 
-using BP_Minehead_Sentry_C = Game::WeaponsNTools::SentryGun::SentryGun_MineHead::BP_Minehead_Sentry_C;
+using BP_Minehead_Sentry_C = ::Game::WeaponsNTools::SentryGun::SentryGun_MineHead::BP_Minehead_Sentry_C;

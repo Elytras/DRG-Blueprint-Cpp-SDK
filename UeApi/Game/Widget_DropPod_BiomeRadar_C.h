@@ -25,10 +25,10 @@ class Widget_DropPod_BiomeRadar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/Widget_DropPod_BiomeRadar", "Widget_DropPod_BiomeRadar_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* RadarRotation;
     UE_READONLY class UWidgetAnimation* DeepDiveLogo;
@@ -57,4 +57,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_BiomeRadar_C = Game::Art::DropPod::Widgets::Widget_DropPod_BiomeRadar_C;
+using Widget_DropPod_BiomeRadar_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_BiomeRadar_C;

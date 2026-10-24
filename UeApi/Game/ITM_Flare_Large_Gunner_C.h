@@ -9,14 +9,19 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Flares {
 
-class ITM_Flare_Large_Gunner_C : public Game::WeaponsNTools::Flares::ITM_Flare_Large_C
+class ITM_Flare_Large_Gunner_C : public ::Game::WeaponsNTools::Flares::ITM_Flare_Large_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Flares/ITM_Flare_Large_Gunner", "ITM_Flare_Large_Gunner_C");
     float BaseIntensity_0;
     bool CanTriggerSound_0;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Light_AfterGlow;Light_NoShadow;SpotLight_Shadow_1;SpotLight_Shadow_2;SpotLight_Shadow_3;StaticMesh;UpgradableGear";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Flares
 
-using ITM_Flare_Large_Gunner_C = Game::WeaponsNTools::Flares::ITM_Flare_Large_Gunner_C;
+using ITM_Flare_Large_Gunner_C = ::Game::WeaponsNTools::Flares::ITM_Flare_Large_Gunner_C;

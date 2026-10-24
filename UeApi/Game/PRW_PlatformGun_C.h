@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun
 
-using PRW_PlatformGun_C = Game::WeaponsNTools::PlatformGun::PRW_PlatformGun_C;
+using PRW_PlatformGun_C = ::Game::WeaponsNTools::PlatformGun::PRW_PlatformGun_C;

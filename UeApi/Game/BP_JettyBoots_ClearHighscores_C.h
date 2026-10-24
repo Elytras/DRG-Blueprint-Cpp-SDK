@@ -47,4 +47,4 @@ private:
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using BP_JettyBoots_ClearHighscores_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::BP_JettyBoots_ClearHighscores_C;
+using BP_JettyBoots_ClearHighscores_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::BP_JettyBoots_ClearHighscores_C;

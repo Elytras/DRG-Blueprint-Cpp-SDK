@@ -17,7 +17,7 @@ class UI_FrozenInputSequence_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/UI_FrozenInputSequence", "UI_FrozenInputSequence_C");
-    using UI_FrozenInputDirectionIcon_C = Game::UI::MainOnscreenHUD::UI_FrozenInputDirectionIcon_C;
+    using UI_FrozenInputDirectionIcon_C = ::Game::UI::MainOnscreenHUD::UI_FrozenInputDirectionIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* HorizontalBox_41;
     TArray<UI_FrozenInputDirectionIcon_C*> DirectionalArrows;
@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using UI_FrozenInputSequence_C = Game::UI::MainOnscreenHUD::UI_FrozenInputSequence_C;
+using UI_FrozenInputSequence_C = ::Game::UI::MainOnscreenHUD::UI_FrozenInputSequence_C;

@@ -18,7 +18,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Shooter {
 
-class ENE_Spider_Amber_Shooter_C : public Game::Enemies::Spider::Shooter::ENE_Spider_Shooter_C
+class ENE_Spider_Amber_Shooter_C : public ::Game::Enemies::Spider::Shooter::ENE_Spider_Shooter_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ENE_Spider_Amber_Shooter", "ENE_Spider_Amber_Shooter_C");
@@ -45,6 +45,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;SimpleArmorDamage";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Amber_Shooter_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileAttack__UeScsNode = "46d90ff4648b6c4c9345a8d5f75424d5";
         static constexpr const char* Mesh_Infestation03__UeScsNode = "30ac07dfaa385d40970a7a2e38eb37fe";
@@ -58,4 +60,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Shooter
 
-using ENE_Spider_Amber_Shooter_C = Game::Enemies::Spider::Shooter::ENE_Spider_Amber_Shooter_C;
+using ENE_Spider_Amber_Shooter_C = ::Game::Enemies::Spider::Shooter::ENE_Spider_Amber_Shooter_C;

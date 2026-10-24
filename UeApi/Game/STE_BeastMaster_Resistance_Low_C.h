@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster
 
-using STE_BeastMaster_Resistance_Low_C = Game::GameElements::KPI::Perks::BeastMaster::STE_BeastMaster_Resistance_Low_C;
+using STE_BeastMaster_Resistance_Low_C = ::Game::GameElements::KPI::Perks::BeastMaster::STE_BeastMaster_Resistance_Low_C;

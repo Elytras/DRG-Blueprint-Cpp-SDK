@@ -19,7 +19,7 @@ class ITM_Craft_Resource_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/ITM_Craft_Resource", "ITM_Craft_Resource_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UBorder* Border_3;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using ITM_Craft_Resource_C = Game::UI::Menu_Crafting::ITM_Craft_Resource_C;
+using ITM_Craft_Resource_C = ::Game::UI::Menu_Crafting::ITM_Craft_Resource_C;

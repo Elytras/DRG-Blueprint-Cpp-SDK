@@ -19,9 +19,9 @@ class Itm_MinersManual_TabsHeader_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Itm_MinersManual_TabsHeader", "Itm_MinersManual_TabsHeader_C");
-    using Itm_HeaderCategory_C = Game::UI::Menu_MinersManual::Itm_HeaderCategory_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using _MENU_MinersManual_C = Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
+    using Itm_HeaderCategory_C = ::Game::UI::Menu_MinersManual::Itm_HeaderCategory_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using _MENU_MinersManual_C = ::Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* HorizontalBox_Back;
     class UImage* Image_BG;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Itm_MinersManual_TabsHeader_C = Game::UI::Menu_MinersManual::Itm_MinersManual_TabsHeader_C;
+using Itm_MinersManual_TabsHeader_C = ::Game::UI::Menu_MinersManual::Itm_MinersManual_TabsHeader_C;

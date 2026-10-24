@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::Critters::Harvester
 
-using ABP_Harvester_C = Game::Critters::Harvester::ABP_Harvester_C;
+using ABP_Harvester_C = ::Game::Critters::Harvester::ABP_Harvester_C;

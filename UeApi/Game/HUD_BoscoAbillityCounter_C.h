@@ -19,7 +19,7 @@ class HUD_BoscoAbillityCounter_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/HUD_BoscoAbillityCounter", "HUD_BoscoAbillityCounter_C");
-    using HUD_BoscoAbillityIcon_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityIcon_C;
+    using HUD_BoscoAbillityIcon_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* FlareBox;
     TArray<HUD_BoscoAbillityIcon_C*> Icons;
@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display
 
-using HUD_BoscoAbillityCounter_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityCounter_C;
+using HUD_BoscoAbillityCounter_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityCounter_C;

@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco
 
-using Console_Plague_VialDispenserScreen_C = Game::GameElements::Plague::Spacerig_Deco::Console_Plague_VialDispenserScreen_C;
+using Console_Plague_VialDispenserScreen_C = ::Game::GameElements::Plague::Spacerig_Deco::Console_Plague_VialDispenserScreen_C;

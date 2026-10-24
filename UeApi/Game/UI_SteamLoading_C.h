@@ -24,11 +24,11 @@ class UI_SteamLoading_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/System/UI_SteamLoading", "UI_SteamLoading_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using WarningBox_C = Game::UI::Global_UI_Elements::WarningBox_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using WarningBox_C = ::Game::UI::Global_UI_Elements::WarningBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::UI::System
 
-using UI_SteamLoading_C = Game::UI::System::UI_SteamLoading_C;
+using UI_SteamLoading_C = ::Game::UI::System::UI_SteamLoading_C;

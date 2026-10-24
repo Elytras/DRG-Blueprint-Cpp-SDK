@@ -21,8 +21,8 @@ class ITM_DeepDive_ObjectiveIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/ITM_DeepDive_ObjectiveIcon", "ITM_DeepDive_ObjectiveIcon_C");
-    using ITM_MisSel_MissionIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIcon_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using ITM_MisSel_MissionIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIcon_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* BG;
     ITM_MisSel_MissionIcon_C* Icon_MissionTemplate;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using ITM_DeepDive_ObjectiveIcon_C = Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;
+using ITM_DeepDive_ObjectiveIcon_C = ::Game::UI::Menu_MissionStart::ITM_DeepDive_ObjectiveIcon_C;

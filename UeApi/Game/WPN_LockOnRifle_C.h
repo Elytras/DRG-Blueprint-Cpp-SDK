@@ -28,7 +28,7 @@ class WPN_LockOnRifle_C : public ALockOnWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/WPN_LockOnRifle", "WPN_LockOnRifle_C");
-    using ABP_LockOnRifle_A_C = Game::WeaponsNTools::LockOnRifle::ABP_LockOnRifle_A_C;
+    using ABP_LockOnRifle_A_C = ::Game::WeaponsNTools::LockOnRifle::ABP_LockOnRifle_A_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonStaticMeshComponent* Mag_FP;
     class UStaticMeshComponent* Mag_TP;
@@ -74,4 +74,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using WPN_LockOnRifle_C = Game::WeaponsNTools::LockOnRifle::WPN_LockOnRifle_C;
+using WPN_LockOnRifle_C = ::Game::WeaponsNTools::LockOnRifle::WPN_LockOnRifle_C;

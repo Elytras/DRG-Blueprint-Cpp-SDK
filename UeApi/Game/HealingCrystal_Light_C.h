@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Crystals
 
-using HealingCrystal_Light_C = Game::Art::Environments::Crystals::HealingCrystal_Light_C;
+using HealingCrystal_Light_C = ::Game::Art::Environments::Crystals::HealingCrystal_Light_C;

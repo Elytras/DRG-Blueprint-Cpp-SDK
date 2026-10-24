@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Bar { namespace Drinkables { namespace PropHunt {
 
-class ITM_BarGlass_Item_PropHunt_C : public Game::GameElements::Bar::ITM_BarGlass_Item_C
+class ITM_BarGlass_Item_PropHunt_C : public ::Game::GameElements::Bar::ITM_BarGlass_Item_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/ITM_BarGlass_Item_PropHunt", "ITM_BarGlass_Item_PropHunt_C");
@@ -29,4 +29,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt
 
-using ITM_BarGlass_Item_PropHunt_C = Game::GameElements::Bar::Drinkables::PropHunt::ITM_BarGlass_Item_PropHunt_C;
+using ITM_BarGlass_Item_PropHunt_C = ::Game::GameElements::Bar::Drinkables::PropHunt::ITM_BarGlass_Item_PropHunt_C;

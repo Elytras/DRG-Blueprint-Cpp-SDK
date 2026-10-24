@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::LavaGeyser
 
-using BP_SmallLavaGeyserFiledOrigin_C = Game::LevelElements::RoomObjects::Hazards::LavaGeyser::BP_SmallLavaGeyserFiledOrigin_C;
+using BP_SmallLavaGeyserFiledOrigin_C = ::Game::LevelElements::RoomObjects::Hazards::LavaGeyser::BP_SmallLavaGeyserFiledOrigin_C;

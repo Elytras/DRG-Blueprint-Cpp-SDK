@@ -23,4 +23,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using BP_TentacleBurrowAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleBurrowAttack_C;
+using BP_TentacleBurrowAttack_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleBurrowAttack_C;

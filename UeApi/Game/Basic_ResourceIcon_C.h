@@ -18,7 +18,7 @@ class Basic_ResourceIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_ResourceICon", "Basic_ResourceIcon_C");
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ResourceIcon;
     float IconSize;
@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;

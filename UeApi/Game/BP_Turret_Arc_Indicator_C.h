@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using BP_Turret_Arc_Indicator_C = Game::WeaponsNTools::SentryGun::BP_Turret_Arc_Indicator_C;
+using BP_Turret_Arc_Indicator_C = ::Game::WeaponsNTools::SentryGun::BP_Turret_Arc_Indicator_C;

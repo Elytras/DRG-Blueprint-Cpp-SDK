@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;

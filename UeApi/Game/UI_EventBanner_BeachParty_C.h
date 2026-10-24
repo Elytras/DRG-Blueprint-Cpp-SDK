@@ -20,9 +20,9 @@ class UI_EventBanner_BeachParty_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/FSDEvents/UI_EventBanner_BeachParty", "UI_EventBanner_BeachParty_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Label_C* Basic_Label;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::FSDEvents
 
-using UI_EventBanner_BeachParty_C = Game::UI::FSDEvents::UI_EventBanner_BeachParty_C;
+using UI_EventBanner_BeachParty_C = ::Game::UI::FSDEvents::UI_EventBanner_BeachParty_C;

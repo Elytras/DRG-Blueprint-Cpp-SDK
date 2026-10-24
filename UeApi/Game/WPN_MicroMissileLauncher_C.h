@@ -25,7 +25,7 @@ class WPN_MicroMissileLauncher_C : public AMicroMissileLauncher
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/WPN_MicroMissileLauncher", "WPN_MicroMissileLauncher_C");
-    using PRJ_MicroMissile_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C;
+    using PRJ_MicroMissile_C = ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UChargedProjectileLauncherComponent* ChargedProjectileLauncher;
     class USceneComponent* HomingTarget;
@@ -65,4 +65,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using WPN_MicroMissileLauncher_C = Game::WeaponsNTools::MicroMissileLauncher::WPN_MicroMissileLauncher_C;
+using WPN_MicroMissileLauncher_C = ::Game::WeaponsNTools::MicroMissileLauncher::WPN_MicroMissileLauncher_C;

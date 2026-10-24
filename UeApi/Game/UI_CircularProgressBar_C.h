@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::UI::_GlobalAssets::CircularProgressBar
 
-using UI_CircularProgressBar_C = Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
+using UI_CircularProgressBar_C = ::Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;

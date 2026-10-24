@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using BP_HackedPatrolBotComponent_C = Game::Enemies::RivalTech::PatrolBot::BP_HackedPatrolBotComponent_C;
+using BP_HackedPatrolBotComponent_C = ::Game::Enemies::RivalTech::PatrolBot::BP_HackedPatrolBotComponent_C;

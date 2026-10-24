@@ -22,7 +22,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_1;
     class UTextBlock* DataRank;
-    class UBorder* Icon_BG;
+    class UBorder* ICON_BG;
     class UBorder* Icon_Center;
     class UBorder* Icon_Left;
     class UBorder* Icon_Right;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using ITM_TopBar_PlayerRank_C = Game::UI::Menu_TopBar::ITM_TopBar_PlayerRank_C;
+using ITM_TopBar_PlayerRank_C = ::Game::UI::Menu_TopBar::ITM_TopBar_PlayerRank_C;

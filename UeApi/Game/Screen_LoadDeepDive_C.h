@@ -15,11 +15,11 @@ namespace Game { namespace UI { namespace Global_UI_Elements { class UI_CurvedCa
 
 namespace Game { namespace UI { namespace Menu_MissionStart {
 
-class Screen_LoadDeepDive_C : public Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C
+class Screen_LoadDeepDive_C : public ::Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/Screen_LoadDeepDive", "Screen_LoadDeepDive_C");
-    using UI_CurvedCanvas_C = Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;
+    using UI_CurvedCanvas_C = ::Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame_Screen_LoadDeepDive_C;
     class UHorizontalBox* PlayerBox;
     UI_CurvedCanvas_C* UI_CurvedCanvas;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using Screen_LoadDeepDive_C = Game::UI::Menu_MissionStart::Screen_LoadDeepDive_C;
+using Screen_LoadDeepDive_C = ::Game::UI::Menu_MissionStart::Screen_LoadDeepDive_C;

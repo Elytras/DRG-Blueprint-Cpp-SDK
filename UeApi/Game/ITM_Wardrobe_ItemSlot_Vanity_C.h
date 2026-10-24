@@ -18,30 +18,30 @@ namespace Game { namespace UI { namespace Menu_Wardrobe { class ITM_GeneratedIco
 
 namespace Game { namespace UI { namespace Menu_Wardrobe {
 
-class ITM_Wardrobe_ItemSlot_Vanity_C : public Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C
+class ITM_Wardrobe_ItemSlot_Vanity_C : public ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_Vanity", "ITM_Wardrobe_ItemSlot_Vanity_C");
-    using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
+    using ITM_GeneratedIcon_Item_C = ::Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame_ITM_Wardrobe_ItemSlot_Vanity_C;
     TEnum<EVanitySlot> VanitySlot;
     TArray<class UVanityItem*> VanityItems;
     class UTexture2D* DefaultItemIcon;
     UE_READONLY FText DefaultItemName;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_Vanity(int EntryPoint);
-    void SetSelectedItem(class UVanityItem* Item);
-    void CreateItemWidget(bool InBackgroundVisible, bool InShowToolTip, ITM_GeneratedIcon_Item_C*& OutItemWidget);
-    void UpdateItemWidget(ITM_GeneratedIcon_Item_C* InWidget, class UVanityItem* InVanityItem, bool In_Show_Tool_Tip, FName In_Cancel_Group);
-    UE_PURE FText GetVanityName(class UVanityItem* InVanityItem);
-    void GetVanityDLC(class UVanityItem* InItem, class UDLCBase*& Required_DLC);
-    UE_PURE class UVanityItem* GetDefaultItem();
     void PostInitilization();
     void ReceivePreConstruct();
     void ReceiveReleaseResource(class UWidget* InWidget);
+    void SetSelectedItem(class UVanityItem* Item);
+    void CreateItemWidget(bool InBackgroundVisible, bool InShowToolTip, ITM_GeneratedIcon_Item_C*& OutItemWidget);
     void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
     void ReceiveGetSelectedIndex(int& OutIndex);
     void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
     void ReceiveEquipItem(int InIndex, bool& OutSuccess);
+    void UpdateItemWidget(ITM_GeneratedIcon_Item_C* InWidget, class UVanityItem* InVanityItem, bool In_Show_Tool_Tip, FName In_Cancel_Group);
+    UE_PURE FText GetVanityName(class UVanityItem* InVanityItem);
+    void GetVanityDLC(class UVanityItem* InItem, class UDLCBase*& Required_DLC);
+    UE_PURE class UVanityItem* GetDefaultItem();
     void ReceiveShowShuffleOptions(bool& OutShowOptions);
 private:
     struct UeMarkers
@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSlot_Vanity_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Vanity_C;
+using ITM_Wardrobe_ItemSlot_Vanity_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Vanity_C;

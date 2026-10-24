@@ -83,4 +83,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::GurkenShuck
 
-using Bp_Azure_GurkenShuck_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::GurkenShuck::Bp_Azure_GurkenShuck_C;
+using Bp_Azure_GurkenShuck_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::GurkenShuck::Bp_Azure_GurkenShuck_C;

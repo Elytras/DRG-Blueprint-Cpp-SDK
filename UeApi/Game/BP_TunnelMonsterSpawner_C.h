@@ -67,4 +67,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent
 
-using BP_TunnelMonsterSpawner_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelMonsterSpawner_C;
+using BP_TunnelMonsterSpawner_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelMonsterSpawner_C;

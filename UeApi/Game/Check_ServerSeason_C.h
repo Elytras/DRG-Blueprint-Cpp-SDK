@@ -16,7 +16,7 @@ class Check_ServerSeason_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/Check_ServerSeason", "Check_ServerSeason_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* CheckBox;
     TMulticastInlineDelegate<void(bool IsChecked, EGameType Gametype)> OnCheckedChanged;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using Check_ServerSeason_C = Game::UI::Menu_ServerList::Check_ServerSeason_C;
+using Check_ServerSeason_C = ::Game::UI::Menu_ServerList::Check_ServerSeason_C;

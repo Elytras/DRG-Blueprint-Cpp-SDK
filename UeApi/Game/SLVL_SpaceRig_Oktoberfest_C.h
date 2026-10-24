@@ -20,4 +20,4 @@ public:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_Oktoberfest_C = Game::Maps::SpaceRig::SLVL_SpaceRig_Oktoberfest_C;
+using SLVL_SpaceRig_Oktoberfest_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_Oktoberfest_C;

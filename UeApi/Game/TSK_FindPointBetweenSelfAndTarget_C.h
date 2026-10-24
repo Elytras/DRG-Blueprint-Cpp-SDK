@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindPointBetweenSelfAndTarget_C = Game::AI::Tasks::TSK_FindPointBetweenSelfAndTarget_C;
+using TSK_FindPointBetweenSelfAndTarget_C = ::Game::AI::Tasks::TSK_FindPointBetweenSelfAndTarget_C;

@@ -16,7 +16,7 @@ class HUD_Salvage_Defend_PlayerSlot_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Events/HUD_Salvage_Defend_PlayerSlot", "HUD_Salvage_Defend_PlayerSlot_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     UI_ImageTinted_C* Filled;
     UI_ImageTinted_C* NotFilled;
     class UWidgetSwitcher* StateSwitcher;
@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events
 
-using HUD_Salvage_Defend_PlayerSlot_C = Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_PlayerSlot_C;
+using HUD_Salvage_Defend_PlayerSlot_C = ::Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_PlayerSlot_C;

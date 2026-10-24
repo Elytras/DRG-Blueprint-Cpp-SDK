@@ -20,7 +20,7 @@ class Options_Gamepad_KeyCapture_C : public UInputCaptureWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_Gamepad_KeyCapture", "Options_Gamepad_KeyCapture_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetSwitcher* DisplaySwitcher;
     class UImage* FocusedIndicator;
@@ -43,4 +43,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_Gamepad_KeyCapture_C = Game::UI::Keybindings::Options_Gamepad_KeyCapture_C;
+using Options_Gamepad_KeyCapture_C = ::Game::UI::Keybindings::Options_Gamepad_KeyCapture_C;

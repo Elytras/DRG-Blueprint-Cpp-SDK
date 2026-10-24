@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::Art::_TestingGrounds::TextField
 
-using TextField_SeeThrough_C = Game::Art::_TestingGrounds::TextField::TextField_SeeThrough_C;
+using TextField_SeeThrough_C = ::Game::Art::_TestingGrounds::TextField::TextField_SeeThrough_C;

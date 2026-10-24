@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using CameraShake_MeteorDigging_C = Game::GameElements::GameEvents::PlagueMeteor::CameraShake_MeteorDigging_C;
+using CameraShake_MeteorDigging_C = ::Game::GameElements::GameEvents::PlagueMeteor::CameraShake_MeteorDigging_C;

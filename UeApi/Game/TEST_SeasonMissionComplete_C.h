@@ -16,7 +16,7 @@ class TEST_SeasonMissionComplete_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/TEST_SeasonMissionComplete", "TEST_SeasonMissionComplete_C");
-    using SCREEN_MissionComplete_Season_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Season_C;
+    using SCREEN_MissionComplete_Season_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Season_C;
     FPointerToUberGraphFrame UberGraphFrame;
     SCREEN_MissionComplete_Season_C* SCREEN_MissionComplete_Season;
     void ExecuteUbergraph_TEST_SeasonMissionComplete(int EntryPoint);
@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using TEST_SeasonMissionComplete_C = Game::UI::Menu_Seasons::TEST_SeasonMissionComplete_C;
+using TEST_SeasonMissionComplete_C = ::Game::UI::Menu_Seasons::TEST_SeasonMissionComplete_C;

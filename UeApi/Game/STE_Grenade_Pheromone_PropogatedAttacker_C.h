@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Pheromone
 
-using STE_Grenade_Pheromone_PropogatedAttacker_C = Game::WeaponsNTools::Grenades::Pheromone::STE_Grenade_Pheromone_PropogatedAttacker_C;
+using STE_Grenade_Pheromone_PropogatedAttacker_C = ::Game::WeaponsNTools::Grenades::Pheromone::STE_Grenade_Pheromone_PropogatedAttacker_C;

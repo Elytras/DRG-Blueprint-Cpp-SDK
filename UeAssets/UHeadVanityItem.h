@@ -102,8 +102,8 @@ UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2022_HoodedMonster, "/Game/
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2022_MissionControl, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Halloween2022_MissionControl");
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2023_ClownMask, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Halloween2023_ClownMask");
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2024_CreepMask, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Halloween2024_CreepMask");
-UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2025_CorespawnMask, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Halloween2025_CorespawnMask");
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2025_CrawlerMask_2025, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Halloween2025_CrawlerMask_2025");
+UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Halloween2026_ScareCrow, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Halloween2026_ScareCrow");
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Headset01, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Headset01");
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_Headset01FREE, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_Headset01FREE");
 UE_ASSET_AT(::UHeadVanityItem, VAN_Headwear_HeadWrap, "/Game/Character/Vanity2/Headwear/InUse/VAN_Headwear_HeadWrap");

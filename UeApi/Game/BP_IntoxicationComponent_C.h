@@ -58,4 +58,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using BP_IntoxicationComponent_C = Game::GameElements::Bar::BP_IntoxicationComponent_C;
+using BP_IntoxicationComponent_C = ::Game::GameElements::Bar::BP_IntoxicationComponent_C;

@@ -19,7 +19,7 @@ class HUD_CrossHair_Crossbow_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CrossHair_Crossbow", "HUD_CrossHair_Crossbow_C");
-    using UI_ProgressBar_C = Game::UI::_GlobalAssets::UI_ProgressBar_C;
+    using UI_ProgressBar_C = ::Game::UI::_GlobalAssets::UI_ProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Dot;
     class UImage* Line2Left;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrossHair_Crossbow_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_Crossbow_C;
+using HUD_CrossHair_Crossbow_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_Crossbow_C;

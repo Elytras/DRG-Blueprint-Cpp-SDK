@@ -263,4 +263,4 @@ public:
 
 }}   // namespace Game::Character
 
-using ABP_TP_Dwarf_C = Game::Character::ABP_TP_Dwarf_C;
+using ABP_TP_Dwarf_C = ::Game::Character::ABP_TP_Dwarf_C;

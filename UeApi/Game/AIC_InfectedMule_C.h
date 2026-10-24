@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using AIC_InfectedMule_C = Game::Enemies::MuleInfected::AIC_InfectedMule_C;
+using AIC_InfectedMule_C = ::Game::Enemies::MuleInfected::AIC_InfectedMule_C;

@@ -130,4 +130,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsBox_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsBox_C;
+using BP_JetBootsBox_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsBox_C;

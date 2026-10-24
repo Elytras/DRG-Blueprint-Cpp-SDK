@@ -25,8 +25,8 @@ class UI_RewardUnlock_SkinUnlock_C : public URewardWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardUnlock_SkinUnlock", "UI_RewardUnlock_SkinUnlock_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_GeneratedIcon_Item_C = ::Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* CelebrateAnim;
     class UImage* CategoryIcon;
@@ -48,4 +48,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications
 
-using UI_RewardUnlock_SkinUnlock_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardUnlock_SkinUnlock_C;
+using UI_RewardUnlock_SkinUnlock_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardUnlock_SkinUnlock_C;

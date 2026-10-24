@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using BP_LockOnRifle_AoE_C = Game::WeaponsNTools::LockOnRifle::BP_LockOnRifle_AoE_C;
+using BP_LockOnRifle_AoE_C = ::Game::WeaponsNTools::LockOnRifle::BP_LockOnRifle_AoE_C;

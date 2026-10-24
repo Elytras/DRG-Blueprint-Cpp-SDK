@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Jellyfish::JellyFish_Egg
 
-using ABP_JellyFish_Egg_A_C = Game::Enemies::Jellyfish::JellyFish_Egg::ABP_JellyFish_Egg_A_C;
+using ABP_JellyFish_Egg_A_C = ::Game::Enemies::Jellyfish::JellyFish_Egg::ABP_JellyFish_Egg_A_C;

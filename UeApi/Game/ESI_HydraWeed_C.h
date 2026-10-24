@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using ESI_HydraWeed_C = Game::Enemies::HydraWeed::ESI_HydraWeed_C;
+using ESI_HydraWeed_C = ::Game::Enemies::HydraWeed::ESI_HydraWeed_C;

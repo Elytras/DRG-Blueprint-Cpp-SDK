@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_CharCustomization_IconScreen_C = Game::UI::HUD_SpaceRig::ConsoleScreen_CharCustomization_IconScreen_C;
+using ConsoleScreen_CharCustomization_IconScreen_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_CharCustomization_IconScreen_C;

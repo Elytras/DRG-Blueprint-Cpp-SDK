@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class BP_WormpodCarcass_C : public Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
+class BP_WormpodCarcass_C : public ::Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_WormpodCarcass", "BP_WormpodCarcass_C");
@@ -28,6 +28,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "PlayerCollider;SimpleObjectInfo;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_WormpodCarcass_C__UeName = "UberGraphFrame";
         static constexpr const char* outline__UeScsNode = "1ef6b5adbc3c424d9d1cddd34c482685";
         static constexpr const char* SimpleHealth__UeScsNode = "e50638f483cc2a4bb25e1370a61ac207";
@@ -37,4 +38,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using BP_WormpodCarcass_C = Game::Enemies::Plague::BP_WormpodCarcass_C;
+using BP_WormpodCarcass_C = ::Game::Enemies::Plague::BP_WormpodCarcass_C;

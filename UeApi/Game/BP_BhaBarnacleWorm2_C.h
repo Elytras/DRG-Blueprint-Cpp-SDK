@@ -38,4 +38,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::BhaBarnacle
 
-using BP_BhaBarnacleWorm2_C = Game::GameElements::Resources::Collectibles::BhaBarnacle::BP_BhaBarnacleWorm2_C;
+using BP_BhaBarnacleWorm2_C = ::Game::GameElements::Resources::Collectibles::BhaBarnacle::BP_BhaBarnacleWorm2_C;

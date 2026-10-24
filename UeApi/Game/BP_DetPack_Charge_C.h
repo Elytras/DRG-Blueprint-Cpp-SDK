@@ -68,4 +68,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DetPack
 
-using BP_DetPack_Charge_C = Game::WeaponsNTools::DetPack::BP_DetPack_Charge_C;
+using BP_DetPack_Charge_C = ::Game::WeaponsNTools::DetPack::BP_DetPack_Charge_C;

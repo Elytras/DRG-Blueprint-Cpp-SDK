@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI
 
-using UI_HackingTool_Progress_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
+using UI_HackingTool_Progress_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;

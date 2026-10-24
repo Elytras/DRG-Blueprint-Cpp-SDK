@@ -163,4 +163,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_OldSupplyPod_Salvage_C = Game::WeaponsNTools::SupplyPod::BP_OldSupplyPod_Salvage_C;
+using BP_OldSupplyPod_Salvage_C = ::Game::WeaponsNTools::SupplyPod::BP_OldSupplyPod_Salvage_C;

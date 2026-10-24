@@ -58,4 +58,4 @@ private:
 
 }}}   // namespace Game::UI::ToolTips
 
-using ToolTip_WithKeyIcon_C = Game::UI::ToolTips::ToolTip_WithKeyIcon_C;
+using ToolTip_WithKeyIcon_C = ::Game::UI::ToolTips::ToolTip_WithKeyIcon_C;

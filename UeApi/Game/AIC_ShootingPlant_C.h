@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::Enemies::ShootingPlant
 
-using AIC_ShootingPlant_C = Game::Enemies::ShootingPlant::AIC_ShootingPlant_C;
+using AIC_ShootingPlant_C = ::Game::Enemies::ShootingPlant::AIC_ShootingPlant_C;

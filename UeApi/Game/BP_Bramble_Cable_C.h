@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using BP_Bramble_Cable_C = Game::Enemies::TentaclePlant::BP_Bramble_Cable_C;
+using BP_Bramble_Cable_C = ::Game::Enemies::TentaclePlant::BP_Bramble_Cable_C;

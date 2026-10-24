@@ -16,7 +16,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Swarmer {
 
-class ENE_Spider_Swarmer_C : public Game::Enemies::Spider::ENE_PF_SpiderBase_C
+class ENE_Spider_Swarmer_C : public ::Game::Enemies::Spider::ENE_PF_SpiderBase_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/ENE_Spider_Swarmer", "ENE_Spider_Swarmer_C");
@@ -34,6 +34,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;PawnSensing";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent JumpAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Swarmer_C__UeName = "UberGraphFrame";
         static constexpr const char* JumpAttack__UeScsNode = "d1aa16979e00e84ca39371002ad2871c";
         static constexpr const char* MeleeAttack__UeScsNode = "c2e15aac80621a44b78c4a2e2b9829db";
@@ -45,4 +47,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using ENE_Spider_Swarmer_C = Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C;
+using ENE_Spider_Swarmer_C = ::Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C;

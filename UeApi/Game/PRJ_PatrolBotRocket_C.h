@@ -70,4 +70,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::RivalTech::PatrolBot::Projectiles
 
-using PRJ_PatrolBotRocket_C = Game::Enemies::RivalTech::PatrolBot::Projectiles::PRJ_PatrolBotRocket_C;
+using PRJ_PatrolBotRocket_C = ::Game::Enemies::RivalTech::PatrolBot::Projectiles::PRJ_PatrolBotRocket_C;

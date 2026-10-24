@@ -71,4 +71,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::UmbraSeeker
 
-using BP_Azure_UmbraSeeker_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::UmbraSeeker::BP_Azure_UmbraSeeker_C;
+using BP_Azure_UmbraSeeker_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::UmbraSeeker::BP_Azure_UmbraSeeker_C;

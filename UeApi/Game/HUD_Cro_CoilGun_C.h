@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_Cro_CoilGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Cro_CoilGun_C;
+using HUD_Cro_CoilGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Cro_CoilGun_C;

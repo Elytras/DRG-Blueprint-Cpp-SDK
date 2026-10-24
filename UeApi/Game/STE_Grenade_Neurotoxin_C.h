@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin
 
-using STE_Grenade_Neurotoxin_C = Game::WeaponsNTools::Grenades::Neurotoxin::STE_Grenade_Neurotoxin_C;
+using STE_Grenade_Neurotoxin_C = ::Game::WeaponsNTools::Grenades::Neurotoxin::STE_Grenade_Neurotoxin_C;

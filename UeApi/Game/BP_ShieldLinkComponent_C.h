@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_ShieldLinkComponent_C = Game::GameElements::KPI::Perks::BP_ShieldLinkComponent_C;
+using BP_ShieldLinkComponent_C = ::Game::GameElements::KPI::Perks::BP_ShieldLinkComponent_C;

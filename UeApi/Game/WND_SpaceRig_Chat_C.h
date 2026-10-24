@@ -15,10 +15,10 @@ class WND_SpaceRig_Chat_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/WND_SpaceRig_Chat", "WND_SpaceRig_Chat_C");
-    using HUD_Chat_C = Game::UI::Chat::HUD_Chat_C;
+    using HUD_Chat_C = ::Game::UI::Chat::HUD_Chat_C;
     HUD_Chat_C* HUD_Chat;
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using WND_SpaceRig_Chat_C = Game::UI::HUD_SpaceRig::WND_SpaceRig_Chat_C;
+using WND_SpaceRig_Chat_C = ::Game::UI::HUD_SpaceRig::WND_SpaceRig_Chat_C;

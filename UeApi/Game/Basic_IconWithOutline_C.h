@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
+using Basic_IconWithOutline_C = ::Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;

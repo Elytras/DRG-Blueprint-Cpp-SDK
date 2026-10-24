@@ -39,4 +39,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets
 
-using ABP_SentryGun_Engineer_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets::ABP_SentryGun_Engineer_C;
+using ABP_SentryGun_Engineer_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::Assets::ABP_SentryGun_Engineer_C;

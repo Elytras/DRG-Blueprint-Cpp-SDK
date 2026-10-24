@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_2_01_C = Game::GameElements::Missions::DNA_2_01_C;
+using DNA_2_01_C = ::Game::GameElements::Missions::DNA_2_01_C;

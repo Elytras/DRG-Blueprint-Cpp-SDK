@@ -80,6 +80,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* ProjectileAttack__UeScsNode = "532826efb38ab4419956cc03c57b36b3";
         static constexpr const char* PathfinderCollision__UeScsNode = "9c97288d59deb348a11c9ae5bb2d1556";
         static constexpr const char* PointLight__UeScsNode = "bf8881c13508df4481c5f7576580ee34";
@@ -95,4 +96,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using ENE_ShootingPlant_Small_C = Game::Enemies::HydraWeed::ENE_ShootingPlant_Small_C;
+using ENE_ShootingPlant_Small_C = ::Game::Enemies::HydraWeed::ENE_ShootingPlant_Small_C;

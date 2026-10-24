@@ -33,4 +33,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using ABP_TransmitterNode_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ABP_TransmitterNode_C;
+using ABP_TransmitterNode_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::ABP_TransmitterNode_C;

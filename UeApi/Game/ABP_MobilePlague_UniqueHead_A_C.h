@@ -23,4 +23,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::Assets
 
-using ABP_MobilePlague_UniqueHead_A_C = Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_UniqueHead_A_C;
+using ABP_MobilePlague_UniqueHead_A_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_UniqueHead_A_C;

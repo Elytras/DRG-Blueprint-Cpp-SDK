@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Neurotoxin {
 
-class BP_Grenade_Neurotoxin_Cloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
+class BP_Grenade_Neurotoxin_Cloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/BP_Grenade_Neurotoxin_Cloud", "BP_Grenade_Neurotoxin_Cloud_C");
@@ -21,10 +21,12 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "CombustionDamageFire;CombustionDamageIce;ObjectTemperature;AcidCloud;ICH-DefaultSceneRoot;Sphere;StatusEffectTrigger";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CombustionDamageFire_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus CombustionDamageIce_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_BP_Grenade_Neurotoxin_Cloud_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin
 
-using BP_Grenade_Neurotoxin_Cloud_C = Game::WeaponsNTools::Grenades::Neurotoxin::BP_Grenade_Neurotoxin_Cloud_C;
+using BP_Grenade_Neurotoxin_Cloud_C = ::Game::WeaponsNTools::Grenades::Neurotoxin::BP_Grenade_Neurotoxin_Cloud_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Tank {
 
-class BP_Spider_FrostCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_Spider_FrostCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/BP_Spider_FrostCloud", "BP_Spider_FrostCloud_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "AcidCloud;StatusEffectTrigger";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank
 
-using BP_Spider_FrostCloud_C = Game::Enemies::Spider::Tank::BP_Spider_FrostCloud_C;
+using BP_Spider_FrostCloud_C = ::Game::Enemies::Spider::Tank::BP_Spider_FrostCloud_C;

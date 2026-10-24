@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Item_Gatling_C = Game::Character::Camera::CameraShakes::CameraShake_Item_Gatling_C;
+using CameraShake_Item_Gatling_C = ::Game::Character::Camera::CameraShakes::CameraShake_Item_Gatling_C;

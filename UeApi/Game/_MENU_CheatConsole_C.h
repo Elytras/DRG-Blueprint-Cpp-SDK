@@ -23,12 +23,12 @@ class _MENU_CheatConsole_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/CheatConsole/_MENU_CheatConsole", "_MENU_CheatConsole_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_LargeWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_ForceMachineEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceMachineEvent_C;
-    using UI_ForceOtherSpecialEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;
-    using UI_ForceSeasonEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_LargeWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_ForceMachineEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceMachineEvent_C;
+    using UI_ForceOtherSpecialEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;
+    using UI_ForceSeasonEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* LookingForServers;
     Basic_ButtonScalable2_C* Basic_AddSeasonLevel;
@@ -106,4 +106,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Cheats::CheatConsole
 
-using _MENU_CheatConsole_C = Game::UI::Menu_Cheats::CheatConsole::_MENU_CheatConsole_C;
+using _MENU_CheatConsole_C = ::Game::UI::Menu_Cheats::CheatConsole::_MENU_CheatConsole_C;

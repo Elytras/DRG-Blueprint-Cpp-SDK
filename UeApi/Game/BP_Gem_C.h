@@ -102,4 +102,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_Gem_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_C;
+using BP_Gem_C = ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C;

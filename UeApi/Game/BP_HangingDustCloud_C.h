@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards
 
-using BP_HangingDustCloud_C = Game::LevelElements::RoomObjects::Hazards::BP_HangingDustCloud_C;
+using BP_HangingDustCloud_C = ::Game::LevelElements::RoomObjects::Hazards::BP_HangingDustCloud_C;

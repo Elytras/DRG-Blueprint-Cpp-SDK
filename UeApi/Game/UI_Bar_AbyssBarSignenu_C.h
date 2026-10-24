@@ -20,7 +20,7 @@ class UI_Bar_AbyssBarSignenu_C : public UBarMenuWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_AbyssBarSignenu", "UI_Bar_AbyssBarSignenu_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_AbyssBarSignenu_C = Game::GameElements::Bar::UI::UI_Bar_AbyssBarSignenu_C;
+using UI_Bar_AbyssBarSignenu_C = ::Game::GameElements::Bar::UI::UI_Bar_AbyssBarSignenu_C;

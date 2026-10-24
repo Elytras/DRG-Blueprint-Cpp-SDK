@@ -21,8 +21,8 @@ class ITM_DeepDiveHeader_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/ITM_DeepDiveHeader", "ITM_DeepDiveHeader_C");
-    using ITM_DeepDiveHeaderElite_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeaderElite_C;
-    using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
+    using ITM_DeepDiveHeaderElite_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeaderElite_C;
+    using ShadowBG_C = ::Game::UI::_GlobalAssets::ShadowBG_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_188;
     class UImage* Image_304;
@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;

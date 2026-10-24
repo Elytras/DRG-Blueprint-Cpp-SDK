@@ -22,7 +22,7 @@ public:
     UE_CLASS("/Game/GameElements/Drone/BP_BoscoAbillityProjectile", "BP_BoscoAbillityProjectile_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* Light_Exhaust;
-    class UParticleSystemComponent* particle_Trail;
+    class UParticleSystemComponent* Particle_Trail;
     class UParticleSystemComponent* Particle_Exhaust;
     class UStaticMeshComponent* MeshRocket;
     class UProjectileExplosion* ProjectileExplosion;
@@ -35,7 +35,7 @@ private:
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
         static constexpr const char* Light_Exhaust__UeScsNode = "318b2a2e28543741bc3ffb80217d6629";
-        static constexpr const char* particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
+        static constexpr const char* Particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
         static constexpr const char* Particle_Exhaust__UeScsNode = "560f1a111de1c34fb3deec9bf60fdc51";
         static constexpr const char* MeshRocket__UeScsNode = "fdedf66f9d196442ac74520c06e03439";
         static constexpr const char* ProjectileExplosion__UeScsNode = "9a1c9d4e00f75449b2bd67dfacb06c7d";
@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::GameElements::Drone
 
-using BP_BoscoAbillityProjectile_C = Game::GameElements::Drone::BP_BoscoAbillityProjectile_C;
+using BP_BoscoAbillityProjectile_C = ::Game::GameElements::Drone::BP_BoscoAbillityProjectile_C;

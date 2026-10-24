@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_TickerText_C = Game::UI::Global_UI_Elements::UI_TickerText_C;
+using UI_TickerText_C = ::Game::UI::Global_UI_Elements::UI_TickerText_C;

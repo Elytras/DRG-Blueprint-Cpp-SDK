@@ -76,4 +76,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm
 
-using BP_Azure_CombaCharm_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm::BP_Azure_CombaCharm_C;
+using BP_Azure_CombaCharm_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm::BP_Azure_CombaCharm_C;

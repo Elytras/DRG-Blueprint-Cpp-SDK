@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun
 
-using PRW_CombatShotgun_C = Game::WeaponsNTools::CombatShotgun::PRW_CombatShotgun_C;
+using PRW_CombatShotgun_C = ::Game::WeaponsNTools::CombatShotgun::PRW_CombatShotgun_C;

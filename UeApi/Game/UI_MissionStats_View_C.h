@@ -18,21 +18,21 @@ namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI { class U
 
 namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI {
 
-class UI_MissionStats_View_C : public Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C
+class UI_MissionStats_View_C : public ::Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_MissionStats_View", "UI_MissionStats_View_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using UI_MissionStat_Preview_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_Preview_C;
-    using UI_MissionStats_Categories_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Categories_C;
-    using UI_MissionStats_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Item_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using UI_MissionStat_Preview_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_Preview_C;
+    using UI_MissionStats_Categories_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Categories_C;
+    using UI_MissionStats_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_1;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     class UVerticalBox* Header;
     UI_MissionStat_Preview_C* MissionStat_Preview;
-    class USpacer* Spacer_left;
+    class USpacer* Spacer_Left;
     class USpacer* Spacer_middle;
     class USpacer* Spacer_right;
     class UVerticalBox* StatsParent;
@@ -68,4 +68,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_MissionStats_View_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_View_C;
+using UI_MissionStats_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_View_C;

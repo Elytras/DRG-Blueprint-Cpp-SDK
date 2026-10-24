@@ -23,11 +23,11 @@ public:
     class UImage* Image_0;
     class USizeBox* SizeBox_2;
     float Size;
-    void ExecuteUbergraph_WarningBox(int EntryPoint);
+    UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     UE_COSMETIC void Construct();
-    UE_COSMETIC void PreConstruct(bool IsDesignTime);
+    void ExecuteUbergraph_WarningBox(int EntryPoint);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using WarningBox_C = Game::UI::Global_UI_Elements::WarningBox_C;
+using WarningBox_C = ::Game::UI::Global_UI_Elements::WarningBox_C;

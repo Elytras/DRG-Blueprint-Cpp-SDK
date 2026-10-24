@@ -31,7 +31,7 @@ class BP_CleanupPod_C : public ACleanupPod
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_CleanupPod", "BP_CleanupPod_C");
-    using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+    using BP_SupplyDropToTerrainLogic_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Box;
     class UBoxComponent* Box1;
@@ -74,6 +74,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent RemovePlague";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_ItemRack_Simple_Soaper.BP_ItemRack_Simple_Soaper_C SoapRack1_GEN_VARIABLE:SoapRack1_GEN_VARIABLE_BP_ItemRack_Simple_Soaper_C_CAT;/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_ItemRack_Simple_Soaper.BP_ItemRack_Simple_Soaper_C SoapRack2_GEN_VARIABLE:SoapRack2_GEN_VARIABLE_BP_ItemRack_Simple_Soaper_C_CAT;/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_ItemRack_Simple_Vacuum.BP_ItemRack_Simple_Vacuum_C VacuumRack1_GEN_VARIABLE:VacuumRack1_GEN_VARIABLE_BP_ItemRack_Simple_Vacuum_C_CAT;/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_ItemRack_Simple_Vacuum.BP_ItemRack_Simple_Vacuum_C VacuumRack2_GEN_VARIABLE:VacuumRack2_GEN_VARIABLE_BP_ItemRack_Simple_Vacuum_C_CAT";
         static constexpr const char* Box__UeScsNode = "df7b3976503cc2419ba92f20027f51b2";
         static constexpr const char* Box1__UeScsNode = "a25ec41817e53245bce6228c3a932568";
         static constexpr const char* SM_Carver_AtLanding__UeScsNode = "11a6a1e5397bc244bc22ed65cf8f9c67";
@@ -102,4 +103,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using BP_CleanupPod_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_C;
+using BP_CleanupPod_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_C;

@@ -73,4 +73,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig_Exterior
 
-using BP_SpaceRig_Exterior_C = Game::Art::Environments::SpaceRig_Exterior::BP_SpaceRig_Exterior_C;
+using BP_SpaceRig_Exterior_C = ::Game::Art::Environments::SpaceRig_Exterior::BP_SpaceRig_Exterior_C;

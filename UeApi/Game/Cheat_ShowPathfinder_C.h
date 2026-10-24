@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_ShowPathfinder_C = Game::UI::Menu_Cheats::Cheat_ShowPathfinder_C;
+using Cheat_ShowPathfinder_C = ::Game::UI::Menu_Cheats::Cheat_ShowPathfinder_C;

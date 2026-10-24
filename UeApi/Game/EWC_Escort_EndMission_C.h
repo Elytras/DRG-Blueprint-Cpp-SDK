@@ -13,7 +13,7 @@ class UEnemyGroupDescriptor;
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_Escort_EndMission_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_Escort_EndMission_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_EndMission", "EWC_Escort_EndMission_C");
@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_Escort_EndMission_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_EndMission_C;
+using EWC_Escort_EndMission_C = ::Game::Enemies::Waves::WaveControllers::EWC_Escort_EndMission_C;

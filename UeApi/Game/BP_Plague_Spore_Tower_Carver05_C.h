@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Plague {
 
-class BP_Plague_Spore_Tower_Carver05_C : public Game::GameElements::Plague::BP_Plague_Spore_Tower_C
+class BP_Plague_Spore_Tower_Carver05_C : public ::Game::GameElements::Plague::BP_Plague_Spore_Tower_C
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower_Carver05", "BP_Plague_Spore_Tower_Carver05_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
+        static constexpr const char* UeIchRecords = "DeathEffect;Niagara Spores;Niagara_Spores;PlayerTrigger_DisplayBar";
     };
 };
 
 }}}   // namespace Game::GameElements::Plague
 
-using BP_Plague_Spore_Tower_Carver05_C = Game::GameElements::Plague::BP_Plague_Spore_Tower_Carver05_C;
+using BP_Plague_Spore_Tower_Carver05_C = ::Game::GameElements::Plague::BP_Plague_Spore_Tower_Carver05_C;

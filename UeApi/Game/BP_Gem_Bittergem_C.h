@@ -16,7 +16,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace Gems {
 
-class BP_Gem_Bittergem_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_Gem_Bittergem_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_Gem_Bittergem", "BP_Gem_Bittergem_C");
@@ -37,6 +37,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo";
         static constexpr const char* UberGraphFrame_BP_Gem_Bittergem_C__UeName = "UberGraphFrame";
         static constexpr const char* GemBitterIdle_Cue__UeScsNode = "184d2f3e0a97044fab4cfda2d8ee2889";
         static constexpr const char* GemTracker__UeScsNode = "fd3f6eb7771f7d48800b614ee96763b4";
@@ -52,4 +53,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_Gem_Bittergem_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_Bittergem_C;
+using BP_Gem_Bittergem_C = ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_Bittergem_C;

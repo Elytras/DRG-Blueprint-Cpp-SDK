@@ -25,9 +25,9 @@ class _DLCclaimPopup_Base_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/DLCclaimPopups/_DLCclaimPopup_Base", "_DLCclaimPopup_Base_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Intro;
     UE_READONLY class UWidgetAnimation* GlowPulse;
@@ -36,7 +36,7 @@ public:
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;
     class UImage* bg1;
     class UImage* bg2;
-    class UImage* BgGlow;
+    class UImage* BGglow;
     BlurBackground_C* BlurBackground;
     class UBorder* Border_0;
     class USizeBox* BoxSizer;
@@ -65,4 +65,4 @@ public:
 
 }}}   // namespace Game::UI::DLCclaimPopups
 
-using _DLCclaimPopup_Base_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
+using _DLCclaimPopup_Base_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;

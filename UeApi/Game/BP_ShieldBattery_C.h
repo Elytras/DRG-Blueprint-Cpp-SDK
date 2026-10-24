@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility {
 
-class BP_ShieldBattery_C : public Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_ExplosiveBarrel_C
+class BP_ShieldBattery_C : public ::Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_ExplosiveBarrel_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_ShieldBattery", "BP_ShieldBattery_C");
@@ -20,10 +20,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;Damage;StaticMesh";
         static constexpr const char* UberGraphFrame_BP_ShieldBattery_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_ShieldBattery_C = Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
+using BP_ShieldBattery_C = ::Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;

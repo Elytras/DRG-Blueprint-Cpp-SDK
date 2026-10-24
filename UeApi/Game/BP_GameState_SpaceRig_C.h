@@ -12,7 +12,7 @@ class UGeneratedMission;
 
 namespace Game { namespace Game { namespace SpaceRig {
 
-class BP_GameState_SpaceRig_C : public Game::Game::BP_GameState_C
+class BP_GameState_SpaceRig_C : public ::Game::Game::BP_GameState_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_GameState_SpaceRig", "BP_GameState_SpaceRig_C");
@@ -69,4 +69,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_GameState_SpaceRig_C = Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
+using BP_GameState_SpaceRig_C = ::Game::Game::SpaceRig::BP_GameState_SpaceRig_C;

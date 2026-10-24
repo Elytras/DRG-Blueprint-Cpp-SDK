@@ -30,20 +30,20 @@ namespace Game { namespace UI { namespace Menu_Wardrobe { class ITM_DragRotateCh
 
 namespace Game { namespace UI { namespace CharacterSelectionMK2 {
 
-class SCREEN_CharacterSelection_Clean_C : public Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C
+class SCREEN_CharacterSelection_Clean_C : public ::Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/SCREEN_CharacterSelection_Clean", "SCREEN_CharacterSelection_Clean_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_SmallWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_C;
-    using CharSelect_HeroSelect_Clean_C = Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Clean_C;
-    using ITEM_CharacterSelectMovie_C = Game::UI::CharacterSelectionMK2::ITEM_CharacterSelectMovie_C;
-    using ITM_Challenge_InfoBox_C = Game::UI::Menu_Seasons::ITM_Challenge_InfoBox_C;
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
-    using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
-    using Screen_CharacterInfo_C = Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_SmallWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_C;
+    using CharSelect_HeroSelect_Clean_C = ::Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Clean_C;
+    using ITEM_CharacterSelectMovie_C = ::Game::UI::CharacterSelectionMK2::ITEM_CharacterSelectMovie_C;
+    using ITM_Challenge_InfoBox_C = ::Game::UI::Menu_Seasons::ITM_Challenge_InfoBox_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+    using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+    using Screen_CharacterInfo_C = ::Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_CharacterSelection_Clean_C;
     class UNamedSlot* ButtonsGoHere;
     CharSelect_HeroSelect_Clean_C* CharSelect_HeroSelect;
@@ -104,4 +104,4 @@ private:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using SCREEN_CharacterSelection_Clean_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Clean_C;
+using SCREEN_CharacterSelection_Clean_C = ::Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Clean_C;

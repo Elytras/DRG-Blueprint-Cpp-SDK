@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreInfuser
 
-using UI_CoreInfuser_Reward_Background_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Background_C;
+using UI_CoreInfuser_Reward_Background_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Background_C;

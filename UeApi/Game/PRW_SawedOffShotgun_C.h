@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun
 
-using PRW_SawedOffShotgun_C = Game::WeaponsNTools::SawedOffShotgun::PRW_SawedOffShotgun_C;
+using PRW_SawedOffShotgun_C = ::Game::WeaponsNTools::SawedOffShotgun::PRW_SawedOffShotgun_C;

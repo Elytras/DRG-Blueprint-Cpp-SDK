@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace Droppod {
 
-class BP_DropPod_Landing_Escort_C : public Game::LevelElements::Droppod::BP_DropPod_Landing_C
+class BP_DropPod_Landing_Escort_C : public ::Game::LevelElements::Droppod::BP_DropPod_Landing_C
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Landing_Escort", "BP_DropPod_Landing_Escort_C");
@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_Landing_Escort_C = Game::LevelElements::Droppod::BP_DropPod_Landing_Escort_C;
+using BP_DropPod_Landing_Escort_C = ::Game::LevelElements::Droppod::BP_DropPod_Landing_Escort_C;

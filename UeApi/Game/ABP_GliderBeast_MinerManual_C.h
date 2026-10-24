@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::Critters::GliderBeast
 
-using ABP_GliderBeast_MinerManual_C = Game::Critters::GliderBeast::ABP_GliderBeast_MinerManual_C;
+using ABP_GliderBeast_MinerManual_C = ::Game::Critters::GliderBeast::ABP_GliderBeast_MinerManual_C;

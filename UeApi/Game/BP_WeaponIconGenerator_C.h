@@ -38,6 +38,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent MeshRoot;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/MicroMissileLauncher/PRW_MicroMissileLauncher.PRW_MicroMissileLauncher_C PRW_BurstPistol_GEN_VARIABLE:PRW_BurstPistol_GEN_VARIABLE_PRW_MicroMissileLauncher_C_CAT";
         static constexpr const char* TestCamera__UeScsNode = "81bc461e0bd17649adea1cfa97698d43";
         static constexpr const char* WeaponCapture_LargeCloseUp__UeScsNode = "c8766a0ca1b10d4896e09a4ec92b1919";
         static constexpr const char* WeaponCapture_MediumCloseUp__UeScsNode = "758a218c47b4cc459d379ab641e6c6fc";
@@ -57,4 +58,4 @@ private:
 
 }}}   // namespace Game::Character::Vanity2
 
-using BP_WeaponIconGenerator_C = Game::Character::Vanity2::BP_WeaponIconGenerator_C;
+using BP_WeaponIconGenerator_C = ::Game::Character::Vanity2::BP_WeaponIconGenerator_C;

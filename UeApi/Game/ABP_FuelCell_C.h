@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using ABP_FuelCell_C = Game::GameElements::Objectives::Salvage::ABP_FuelCell_C;
+using ABP_FuelCell_C = ::Game::GameElements::Objectives::Salvage::ABP_FuelCell_C;

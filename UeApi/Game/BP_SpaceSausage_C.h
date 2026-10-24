@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest
 
-using BP_SpaceSausage_C = Game::Art::Environments::Holiday_Oktoberfest::BP_SpaceSausage_C;
+using BP_SpaceSausage_C = ::Game::Art::Environments::Holiday_Oktoberfest::BP_SpaceSausage_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using STE_HydraWeed_GerminatingHeal_C = Game::Enemies::HydraWeed::STE_HydraWeed_GerminatingHeal_C;
+using STE_HydraWeed_GerminatingHeal_C = ::Game::Enemies::HydraWeed::STE_HydraWeed_GerminatingHeal_C;

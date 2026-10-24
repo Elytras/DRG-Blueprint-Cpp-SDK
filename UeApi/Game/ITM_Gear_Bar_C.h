@@ -18,7 +18,7 @@ class ITM_Gear_Bar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionOverview/ITM_Gear_Bar", "ITM_Gear_Bar_C");
-    using ITM_DeepDive_StageIcon_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;
+    using ITM_DeepDive_StageIcon_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* ItemBar;
     ITM_DeepDive_StageIcon_C* ITM_DeepDive_StageIcon;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using ITM_Gear_Bar_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;
+using ITM_Gear_Bar_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;

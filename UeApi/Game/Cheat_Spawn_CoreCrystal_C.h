@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_Spawn_CoreCrystal_C = Game::UI::Menu_Cheats::Cheat_Spawn_CoreCrystal_C;
+using Cheat_Spawn_CoreCrystal_C = ::Game::UI::Menu_Cheats::Cheat_Spawn_CoreCrystal_C;

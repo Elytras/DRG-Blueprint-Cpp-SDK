@@ -20,24 +20,24 @@ class Options_Tab_Gameplay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_Gameplay", "Options_Tab_Gameplay_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Option_ColorDeficieny_C = Game::UI::Menu_Options::ColorDeficiency::Option_ColorDeficieny_C;
-    using Options_CameraShake_C = Game::UI::Menu_Options::Options_CameraShake_C;
-    using Options_FOV_C = Game::UI::Menu_Options::Options_FOV_C;
-    using Options_GameServerName_C = Game::UI::Menu_Options::Options_GameServerName_C;
-    using Options_Headbob_C = Game::UI::Menu_Options::Options_Headbob_C;
-    using Options_HoldToBreakImmobilization_C = Game::UI::Menu_Options::Options_HoldToBreakImmobilization_C;
-    using Options_HoldToFire_C = Game::UI::Menu_Options::Options_HoldToFire_C;
-    using Options_Language_C = Game::UI::Menu_Options::Options_Language_C;
-    using Options_LocalizationDebug_C = Game::UI::Menu_Options::Options_LocalizationDebug_C;
-    using Options_OverlayIntensity_C = Game::UI::Menu_Options::Options_OverlayIntensity_C;
-    using Options_PhotosensitivityMode_C = Game::UI::Menu_Options::Options_PhotosensitivityMode_C;
-    using Options_PreventLatejoinCharacterDuplication_C = Game::UI::Menu_Options::Options_PreventLatejoinCharacterDuplication_C;
-    using Options_ShowSubtitles_C = Game::UI::Menu_Options::Options_ShowSubtitles_C;
-    using Options_TutorialHints_C = Game::UI::Menu_Options::Options_TutorialHints_C;
-    using Options_UseStreamerProgram_C = Game::UI::Menu_Options::Options_UseStreamerProgram_C;
-    using Options_WeaponSway_C = Game::UI::Menu_Options::Options_WeaponSway_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Option_ColorDeficieny_C = ::Game::UI::Menu_Options::ColorDeficiency::Option_ColorDeficieny_C;
+    using Options_CameraShake_C = ::Game::UI::Menu_Options::Options_CameraShake_C;
+    using Options_FOV_C = ::Game::UI::Menu_Options::Options_FOV_C;
+    using Options_GameServerName_C = ::Game::UI::Menu_Options::Options_GameServerName_C;
+    using Options_Headbob_C = ::Game::UI::Menu_Options::Options_Headbob_C;
+    using Options_HoldToBreakImmobilization_C = ::Game::UI::Menu_Options::Options_HoldToBreakImmobilization_C;
+    using Options_HoldToFire_C = ::Game::UI::Menu_Options::Options_HoldToFire_C;
+    using Options_Language_C = ::Game::UI::Menu_Options::Options_Language_C;
+    using Options_LocalizationDebug_C = ::Game::UI::Menu_Options::Options_LocalizationDebug_C;
+    using Options_OverlayIntensity_C = ::Game::UI::Menu_Options::Options_OverlayIntensity_C;
+    using Options_PhotosensitivityMode_C = ::Game::UI::Menu_Options::Options_PhotosensitivityMode_C;
+    using Options_PreventLatejoinCharacterDuplication_C = ::Game::UI::Menu_Options::Options_PreventLatejoinCharacterDuplication_C;
+    using Options_ShowSubtitles_C = ::Game::UI::Menu_Options::Options_ShowSubtitles_C;
+    using Options_TutorialHints_C = ::Game::UI::Menu_Options::Options_TutorialHints_C;
+    using Options_UseStreamerProgram_C = ::Game::UI::Menu_Options::Options_UseStreamerProgram_C;
+    using Options_WeaponSway_C = ::Game::UI::Menu_Options::Options_WeaponSway_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* Basic_Option;
     Basic_Option_C* Basic_Option_C_0;
@@ -77,4 +77,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_Gameplay_C = Game::UI::Menu_Options::Options_Tab_Gameplay_C;
+using Options_Tab_Gameplay_C = ::Game::UI::Menu_Options::Options_Tab_Gameplay_C;

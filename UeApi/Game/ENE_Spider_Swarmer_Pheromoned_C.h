@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Swarmer {
 
-class ENE_Spider_Swarmer_Pheromoned_C : public Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C
+class ENE_Spider_Swarmer_Pheromoned_C : public ::Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/ENE_Spider_Swarmer_Pheromoned", "ENE_Spider_Swarmer_Pheromoned_C");
@@ -17,9 +17,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "JumpAttack;MeleeAttack";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent JumpAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0";
     };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using ENE_Spider_Swarmer_Pheromoned_C = Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_Pheromoned_C;
+using ENE_Spider_Swarmer_Pheromoned_C = ::Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_Pheromoned_C;

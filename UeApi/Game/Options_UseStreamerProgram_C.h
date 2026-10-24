@@ -16,7 +16,7 @@ class Options_UseStreamerProgram_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_UseStreamerProgram", "Options_UseStreamerProgram_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     void ExecuteUbergraph_Options_UseStreamerProgram(int EntryPoint);
@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_UseStreamerProgram_C = Game::UI::Menu_Options::Options_UseStreamerProgram_C;
+using Options_UseStreamerProgram_C = ::Game::UI::Menu_Options::Options_UseStreamerProgram_C;

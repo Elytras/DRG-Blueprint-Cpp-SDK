@@ -21,14 +21,14 @@ namespace Game { namespace UI { namespace _GlobalAssets { class BlurBackground_C
 
 namespace Game { namespace UI { namespace Menu_StartScreen {
 
-class UI_DisconnectScreen_C : public Game::UI::Menu_StartScreen::UI_Disconnect_Screen_Base_C
+class UI_DisconnectScreen_C : public ::Game::UI::Menu_StartScreen::UI_Disconnect_Screen_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_DisconnectScreen", "UI_DisconnectScreen_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_PendingRewardScreen_C = Game::UI::Menu_StartScreen::UI_PendingRewardScreen_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_PendingRewardScreen_C = ::Game::UI::Menu_StartScreen::UI_PendingRewardScreen_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_DisconnectScreen_C;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -62,4 +62,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_DisconnectScreen_C = Game::UI::Menu_StartScreen::UI_DisconnectScreen_C;
+using UI_DisconnectScreen_C = ::Game::UI::Menu_StartScreen::UI_DisconnectScreen_C;

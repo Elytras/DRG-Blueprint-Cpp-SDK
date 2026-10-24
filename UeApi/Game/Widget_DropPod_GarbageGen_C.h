@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_GarbageGen_C = Game::Art::DropPod::Widgets::Widget_DropPod_GarbageGen_C;
+using Widget_DropPod_GarbageGen_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_GarbageGen_C;

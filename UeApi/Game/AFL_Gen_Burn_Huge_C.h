@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::Burning
 
-using AFL_Gen_Burn_Huge_C = Game::GameElements::PawnAffliction::EnemyEffects::Burning::AFL_Gen_Burn_Huge_C;
+using AFL_Gen_Burn_Huge_C = ::Game::GameElements::PawnAffliction::EnemyEffects::Burning::AFL_Gen_Burn_Huge_C;

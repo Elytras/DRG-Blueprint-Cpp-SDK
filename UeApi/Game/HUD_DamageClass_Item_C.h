@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_DamageClass_Item_C = Game::UI::MainOnscreenHUD::HUD_DamageClass_Item_C;
+using HUD_DamageClass_Item_C = ::Game::UI::MainOnscreenHUD::HUD_DamageClass_Item_C;

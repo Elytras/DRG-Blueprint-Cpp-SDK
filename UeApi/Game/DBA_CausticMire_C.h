@@ -27,7 +27,7 @@ public:
     class UDebrisDataComponent* D_Rubble1;
     class UDebrisItemComponent* I_SandArches__15K_0_50__5K_0_30_;
     class UDebrisDataComponent* C_FlatRocks__10K_60_90_;
-    class USceneComponent* rocks;
+    class USceneComponent* Rocks;
     class UDebrisItemComponent* I_SulfurChimneys__2K_90_100_;
     class UDebrisDataComponent* D_SulfurDeposits;
     class UDebrisItemComponent* I_AirGeyser__10K_51_100_;
@@ -46,6 +46,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_FlatRocks--10K(60-90)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_SoftRockIslands--DISABLED(Replaced by Veins)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisMesh D_GeyserPods--DISABLED_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_GrassSmall_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Rubble1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Rubble_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Rubble_Hotspring_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Rubble_SoftRock_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_RubbleWall_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SoftRockGrassSmall_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SulfurDeposits_GEN_VARIABLE:DebrisMesh_5;/Script/FSD.DebrisMesh GeyserDebris_GEN_VARIABLE:DebrisMesh_3;/Script/FSD.DebrisMesh GooBalls_GEN_VARIABLE:DebrisMesh_4;/Script/FSD.DebrisPositioning I_AirGeyser--10K(51-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Crevasse--2K(0-50)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_HotSpring--10K(0-30)_2K(51-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_HotSpring_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SandArches--15K(0-50)_5K(0-30)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SulfurChimneys--2K(90-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning V_SoftRock_Veins_GEN_VARIABLE:VeinResourceCreator_0:DebrisPositioning_0;/Script/FSD.VeinResourceCreator V_SoftRock_Veins_GEN_VARIABLE:VeinResourceCreator_0";
         static constexpr const char* I_Crevasse__2K_0_50___UeName = "I_Crevasse--2K(0-50)";
         static constexpr const char* I_Crevasse__2K_0_50___UeScsNode = "ef0c3f63469cc34baaed3132353438ab";
         static constexpr const char* GooBalls__UeScsNode = "6ef7232bc738074a82b90ea5fb7491f9";
@@ -60,7 +61,7 @@ private:
         static constexpr const char* I_SandArches__15K_0_50__5K_0_30___UeScsNode = "22987a727701d546bd68122485471a16";
         static constexpr const char* C_FlatRocks__10K_60_90___UeName = "C_FlatRocks--10K(60-90)";
         static constexpr const char* C_FlatRocks__10K_60_90___UeScsNode = "89b8abcad12bd644bb8b76a3d136ef0a";
-        static constexpr const char* rocks__UeScsNode = "9d17fb45b42a3545b66ad050d886d957";
+        static constexpr const char* Rocks__UeScsNode = "9d17fb45b42a3545b66ad050d886d957";
         static constexpr const char* I_SulfurChimneys__2K_90_100___UeName = "I_SulfurChimneys--2K(90-100)";
         static constexpr const char* I_SulfurChimneys__2K_90_100___UeScsNode = "f7fc79d1ed68b04d8651b9ce42a2a407";
         static constexpr const char* D_SulfurDeposits__UeScsNode = "8f6ca63fac22f54d853f6131d9ebd9dd";
@@ -84,4 +85,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::CausticMire
 
-using DBA_CausticMire_C = Game::Landscape::Biomes::Biomes_Testing::CausticMire::DBA_CausticMire_C;
+using DBA_CausticMire_C = ::Game::Landscape::Biomes::Biomes_Testing::CausticMire::DBA_CausticMire_C;

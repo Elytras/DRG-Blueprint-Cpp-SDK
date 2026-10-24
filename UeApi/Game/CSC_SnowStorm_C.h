@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace IceCaves {
 
-class CSC_SnowStorm_C : public Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C
+class CSC_SnowStorm_C : public ::Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/IceCaves/CSC_SnowStorm", "CSC_SnowStorm_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves
 
-using CSC_SnowStorm_C = Game::Landscape::Biomes::Biomes_Ingame::IceCaves::CSC_SnowStorm_C;
+using CSC_SnowStorm_C = ::Game::Landscape::Biomes::Biomes_Ingame::IceCaves::CSC_SnowStorm_C;

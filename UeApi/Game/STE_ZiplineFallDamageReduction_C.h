@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using STE_ZiplineFallDamageReduction_C = Game::WeaponsNTools::ZipLineGun::STE_ZiplineFallDamageReduction_C;
+using STE_ZiplineFallDamageReduction_C = ::Game::WeaponsNTools::ZipLineGun::STE_ZiplineFallDamageReduction_C;

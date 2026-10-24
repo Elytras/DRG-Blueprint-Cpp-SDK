@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using ESI_SpiderSpawner_C = Game::Enemies::EnemySpawner::ESI_SpiderSpawner_C;
+using ESI_SpiderSpawner_C = ::Game::Enemies::EnemySpawner::ESI_SpiderSpawner_C;

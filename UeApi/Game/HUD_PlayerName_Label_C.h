@@ -18,7 +18,7 @@ class HUD_PlayerName_Label_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_PlayerName_Label", "HUD_PlayerName_Label_C");
-    using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
+    using UI_PlayerSpeaking_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DATA_PlayerName;
     class UInvalidationBox* InvalidationBox_1;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_PlayerName_Label_C = Game::UI::MainOnscreenHUD::HUD_PlayerName_Label_C;
+using HUD_PlayerName_Label_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerName_Label_C;

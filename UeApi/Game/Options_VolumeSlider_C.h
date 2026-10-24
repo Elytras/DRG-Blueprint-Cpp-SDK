@@ -16,7 +16,7 @@ class Options_VolumeSlider_C : public USoundClassWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_VolumeSlider", "Options_VolumeSlider_C");
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
     TEnum<EVolumeType> volumeType;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_VolumeSlider_C = Game::UI::Menu_Options::Options_VolumeSlider_C;
+using Options_VolumeSlider_C = ::Game::UI::Menu_Options::Options_VolumeSlider_C;

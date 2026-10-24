@@ -24,9 +24,9 @@ class ITM_SeasonSelection_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/SeasonSelector/ITM_SeasonSelection_Item", "ITM_SeasonSelection_Item_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
-    using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using ITM_GlowBackground_Adjustable_C = ::Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
+    using ShadowBG_C = ::Game::UI::_GlobalAssets::ShadowBG_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     ITM_GlowBackground_Adjustable_C* Glow_Background;
@@ -66,4 +66,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Seasons::SeasonSelector
 
-using ITM_SeasonSelection_Item_C = Game::UI::Menu_Seasons::SeasonSelector::ITM_SeasonSelection_Item_C;
+using ITM_SeasonSelection_Item_C = ::Game::UI::Menu_Seasons::SeasonSelector::ITM_SeasonSelection_Item_C;

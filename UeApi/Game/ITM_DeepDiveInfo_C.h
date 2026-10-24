@@ -21,9 +21,9 @@ class ITM_DeepDiveInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_DeepDiveInfo", "ITM_DeepDiveInfo_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_WarningAndMutator_C = Game::UI::Menu_EscapeMenu::ITM_WarningAndMutator_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_WarningAndMutator_C = ::Game::UI::Menu_EscapeMenu::ITM_WarningAndMutator_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_3;
     ITM_WarningAndMutator_C* DeepDive_WarningAndMutator;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_DeepDiveInfo_C = Game::UI::Menu_EscapeMenu::ITM_DeepDiveInfo_C;
+using ITM_DeepDiveInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_DeepDiveInfo_C;

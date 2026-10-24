@@ -26,9 +26,9 @@ class Widget_DropPod_DangerLevel_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/Widget_DropPod_DangerLevel", "Widget_DropPod_DangerLevel_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using WarningBox_C = Game::UI::Global_UI_Elements::WarningBox_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using WarningBox_C = ::Game::UI::Global_UI_Elements::WarningBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UTextBlock* DATA_PlanetaryRegionName;
@@ -62,4 +62,4 @@ private:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_DangerLevel_C = Game::Art::DropPod::Widgets::Widget_DropPod_DangerLevel_C;
+using Widget_DropPod_DangerLevel_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_DangerLevel_C;

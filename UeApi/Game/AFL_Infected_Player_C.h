@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::Affliction
 
-using AFL_Infected_Player_C = Game::Character::Affliction::AFL_Infected_Player_C;
+using AFL_Infected_Player_C = ::Game::Character::Affliction::AFL_Infected_Player_C;

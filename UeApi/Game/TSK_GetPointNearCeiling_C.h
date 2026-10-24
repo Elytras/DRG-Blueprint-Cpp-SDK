@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using TSK_GetPointNearCeiling_C = Game::Enemies::FlyingBug::Bomber::TSK_GetPointNearCeiling_C;
+using TSK_GetPointNearCeiling_C = ::Game::Enemies::FlyingBug::Bomber::TSK_GetPointNearCeiling_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_HollowBoughBranches_C = Game::Landscape::ReactiveTerrain::STE_HollowBoughBranches_C;
+using STE_HollowBoughBranches_C = ::Game::Landscape::ReactiveTerrain::STE_HollowBoughBranches_C;

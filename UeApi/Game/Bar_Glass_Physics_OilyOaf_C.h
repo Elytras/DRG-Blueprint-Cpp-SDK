@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Bar {
 
-class Bar_Glass_Physics_OilyOaf_C : public Game::GameElements::Bar::Bar_Glass_Physics_C
+class Bar_Glass_Physics_OilyOaf_C : public ::Game::GameElements::Bar::Bar_Glass_Physics_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Bar_Glass_Physics_OilyOaf", "Bar_Glass_Physics_OilyOaf_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Collider";
+    };
 };
 
 }}}   // namespace Game::GameElements::Bar
 
-using Bar_Glass_Physics_OilyOaf_C = Game::GameElements::Bar::Bar_Glass_Physics_OilyOaf_C;
+using Bar_Glass_Physics_OilyOaf_C = ::Game::GameElements::Bar::Bar_Glass_Physics_OilyOaf_C;

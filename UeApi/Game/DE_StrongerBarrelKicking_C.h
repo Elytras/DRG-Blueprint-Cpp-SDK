@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_StrongerBarrelKicking_C = Game::GameElements::Bar::DrinkEffects::DE_StrongerBarrelKicking_C;
+using DE_StrongerBarrelKicking_C = ::Game::GameElements::Bar::DrinkEffects::DE_StrongerBarrelKicking_C;

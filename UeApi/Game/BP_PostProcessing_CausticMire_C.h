@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::CausticMire
 
-using BP_PostProcessing_CausticMire_C = Game::Landscape::Biomes::Biomes_Testing::CausticMire::BP_PostProcessing_CausticMire_C;
+using BP_PostProcessing_CausticMire_C = ::Game::Landscape::Biomes::Biomes_Testing::CausticMire::BP_PostProcessing_CausticMire_C;

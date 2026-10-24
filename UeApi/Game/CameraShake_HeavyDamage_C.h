@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_HeavyDamage_C = Game::Character::Camera::CameraShakes::CameraShake_HeavyDamage_C;
+using CameraShake_HeavyDamage_C = ::Game::Character::Camera::CameraShakes::CameraShake_HeavyDamage_C;

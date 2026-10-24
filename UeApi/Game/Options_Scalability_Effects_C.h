@@ -16,7 +16,7 @@ class Options_Scalability_Effects_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Scalability_Effects", "Options_Scalability_Effects_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     void ExecuteUbergraph_Options_Scalability_Effects(int EntryPoint);
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Scalability_Effects_C = Game::UI::Menu_Options::Options_Scalability_Effects_C;
+using Options_Scalability_Effects_C = ::Game::UI::Menu_Options::Options_Scalability_Effects_C;

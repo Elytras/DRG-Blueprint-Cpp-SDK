@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Fashionite
 
-using BP_PhazyoniteChunk_C = Game::GameElements::Resources::Carved::Fashionite::BP_PhazyoniteChunk_C;
+using BP_PhazyoniteChunk_C = ::Game::GameElements::Resources::Carved::Fashionite::BP_PhazyoniteChunk_C;

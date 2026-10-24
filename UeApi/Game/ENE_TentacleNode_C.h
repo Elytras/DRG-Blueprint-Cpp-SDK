@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using ENE_TentacleNode_C = Game::Enemies::TentaclePlant::ENE_TentacleNode_C;
+using ENE_TentacleNode_C = ::Game::Enemies::TentaclePlant::ENE_TentacleNode_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using STE_EnemySlowdown_HeavyParticleCannon_C = Game::WeaponsNTools::HeavyParticleCannon::STE_EnemySlowdown_HeavyParticleCannon_C;
+using STE_EnemySlowdown_HeavyParticleCannon_C = ::Game::WeaponsNTools::HeavyParticleCannon::STE_EnemySlowdown_HeavyParticleCannon_C;

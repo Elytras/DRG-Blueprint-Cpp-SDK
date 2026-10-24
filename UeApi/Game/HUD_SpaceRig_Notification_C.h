@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::VanityNotification
 
-using HUD_SpaceRig_Notification_C = Game::UI::HUD_SpaceRig::VanityNotification::HUD_SpaceRig_Notification_C;
+using HUD_SpaceRig_Notification_C = ::Game::UI::HUD_SpaceRig::VanityNotification::HUD_SpaceRig_Notification_C;

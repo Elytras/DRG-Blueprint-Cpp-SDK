@@ -17,7 +17,7 @@ class ITM_DeepDive_StageIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_DeepDive_StageIcon", "ITM_DeepDive_StageIcon_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* TextBlock_75;
     class UTextBlock* TextBlock_87;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_DeepDive_StageIcon_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;
+using ITM_DeepDive_StageIcon_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;

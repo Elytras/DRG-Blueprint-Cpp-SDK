@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using UI_ProgressBar_C = Game::UI::_GlobalAssets::UI_ProgressBar_C;
+using UI_ProgressBar_C = ::Game::UI::_GlobalAssets::UI_ProgressBar_C;

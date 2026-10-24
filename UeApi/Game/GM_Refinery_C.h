@@ -16,7 +16,7 @@ class URefineryObjective;
 
 namespace Game { namespace Game {
 
-class GM_Refinery_C : public Game::Game::BP_NetworkPlayGameMode_C
+class GM_Refinery_C : public ::Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Refinery", "GM_Refinery_C");
@@ -37,6 +37,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UeIchRecords = "EnemyWaveManager";
         static constexpr const char* UberGraphFrame_GM_Refinery_C__UeName = "UberGraphFrame";
         static constexpr const char* Rocket_Launched__UeName = "Rocket Launched";
         static constexpr const char* Spawn_Refinery_And_Wells__UeName = "Spawn Refinery And Wells";
@@ -45,4 +46,4 @@ private:
 
 }}   // namespace Game::Game
 
-using GM_Refinery_C = Game::Game::GM_Refinery_C;
+using GM_Refinery_C = ::Game::Game::GM_Refinery_C;

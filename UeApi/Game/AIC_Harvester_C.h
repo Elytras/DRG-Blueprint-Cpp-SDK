@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::Critters::Harvester
 
-using AIC_Harvester_C = Game::Critters::Harvester::AIC_Harvester_C;
+using AIC_Harvester_C = ::Game::Critters::Harvester::AIC_Harvester_C;

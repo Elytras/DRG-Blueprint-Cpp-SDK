@@ -19,11 +19,11 @@ namespace Game { namespace Enemies { namespace Spider { class BP_BurrowComponent
 
 namespace Game { namespace Enemies { namespace Spider { namespace Stalker {
 
-class ENE_Spider_Stalker_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Stalker_Base_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/ENE_Spider_Stalker_Base", "ENE_Spider_Stalker_Base_C");
-    using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+    using BP_BurrowComponent_C = ::Game::Enemies::Spider::BP_BurrowComponent_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Stalker_Base_C;
     class USphereComponent* Sphere;
     class UInDangerComponent* InDanger;
@@ -68,6 +68,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing";
         static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_Base_C__UeName = "UberGraphFrame";
         static constexpr const char* Sphere__UeScsNode = "56917c6939636d488e716e5c1af8d2bc";
         static constexpr const char* InDanger__UeScsNode = "ea8f6b77fd635442a9f5b827c224001c";
@@ -81,4 +82,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using ENE_Spider_Stalker_Base_C = Game::Enemies::Spider::Stalker::ENE_Spider_Stalker_Base_C;
+using ENE_Spider_Stalker_Base_C = ::Game::Enemies::Spider::Stalker::ENE_Spider_Stalker_Base_C;

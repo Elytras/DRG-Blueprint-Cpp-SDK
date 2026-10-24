@@ -18,8 +18,8 @@ class UI_OnlineRestricted_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/System/UI_OnlineRestricted_Entry", "UI_OnlineRestricted_Entry_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Basic_Image;
     Basic_Label_C* Basic_Label;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::System
 
-using UI_OnlineRestricted_Entry_C = Game::UI::System::UI_OnlineRestricted_Entry_C;
+using UI_OnlineRestricted_Entry_C = ::Game::UI::System::UI_OnlineRestricted_Entry_C;

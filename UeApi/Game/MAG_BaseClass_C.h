@@ -42,4 +42,4 @@ private:
 
 }}   // namespace Game::WeaponsNTools
 
-using MAG_BaseClass_C = Game::WeaponsNTools::MAG_BaseClass_C;
+using MAG_BaseClass_C = ::Game::WeaponsNTools::MAG_BaseClass_C;

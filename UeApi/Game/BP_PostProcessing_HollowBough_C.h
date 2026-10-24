@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough
 
-using BP_PostProcessing_HollowBough_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::BP_PostProcessing_HollowBough_C;
+using BP_PostProcessing_HollowBough_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::BP_PostProcessing_HollowBough_C;

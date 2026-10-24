@@ -23,10 +23,10 @@ class ITM_Wardrobe_ItemSelector_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSelector", "ITM_Wardrobe_ItemSelector_C");
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_VanityTag_FilterButton_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterButton_C;
-    using ITM_Wardrobe_ItemSelector_Entry_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_Entry_C;
-    using ITM_Wardrobe_ItemSlot_Base_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_VanityTag_FilterButton_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterButton_C;
+    using ITM_Wardrobe_ItemSelector_Entry_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_Entry_C;
+    using ITM_Wardrobe_ItemSlot_Base_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimOpen;
     class UVerticalBox* Content_Box;
@@ -73,4 +73,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
+using ITM_Wardrobe_ItemSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;

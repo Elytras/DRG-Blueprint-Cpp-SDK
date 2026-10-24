@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Character::CharacterSelection
 
-using BP_Endscreen_Drone_C = Game::Character::CharacterSelection::BP_Endscreen_Drone_C;
+using BP_Endscreen_Drone_C = ::Game::Character::CharacterSelection::BP_Endscreen_Drone_C;

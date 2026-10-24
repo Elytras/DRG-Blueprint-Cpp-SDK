@@ -13,7 +13,7 @@ class APlayerCharacter;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Caretaker {
 
-class BP_CaretakerMortarAction_C : public Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C
+class BP_CaretakerMortarAction_C : public ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/BP_CaretakerMortarAction", "BP_CaretakerMortarAction_C");
@@ -39,4 +39,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using BP_CaretakerMortarAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerMortarAction_C;
+using BP_CaretakerMortarAction_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerMortarAction_C;

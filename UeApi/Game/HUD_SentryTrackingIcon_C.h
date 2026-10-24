@@ -27,8 +27,8 @@ class HUD_SentryTrackingIcon_C : public UActorTrackingWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/HUD_SentryTrackingIcon", "HUD_SentryTrackingIcon_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Shots_Fired;
     class UProgressBar* AmmoProgress;
@@ -72,4 +72,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using HUD_SentryTrackingIcon_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryTrackingIcon_C;
+using HUD_SentryTrackingIcon_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryTrackingIcon_C;

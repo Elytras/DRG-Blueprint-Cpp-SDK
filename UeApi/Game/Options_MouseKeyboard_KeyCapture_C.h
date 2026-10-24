@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_MouseKeyboard_KeyCapture_C = Game::UI::Keybindings::Options_MouseKeyboard_KeyCapture_C;
+using Options_MouseKeyboard_KeyCapture_C = ::Game::UI::Keybindings::Options_MouseKeyboard_KeyCapture_C;

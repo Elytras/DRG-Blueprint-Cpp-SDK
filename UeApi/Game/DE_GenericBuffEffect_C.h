@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_GenericBuffEffect_C = Game::GameElements::Bar::DrinkEffects::DE_GenericBuffEffect_C;
+using DE_GenericBuffEffect_C = ::Game::GameElements::Bar::DrinkEffects::DE_GenericBuffEffect_C;

@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using STE_PlasmaExplosion_Kill_C = Game::WeaponsNTools::PlasmaCarbine::STE_PlasmaExplosion_Kill_C;
+using STE_PlasmaExplosion_Kill_C = ::Game::WeaponsNTools::PlasmaCarbine::STE_PlasmaExplosion_Kill_C;

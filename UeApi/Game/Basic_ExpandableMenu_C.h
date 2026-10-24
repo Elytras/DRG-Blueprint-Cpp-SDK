@@ -61,4 +61,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ExpandableMenu_C = Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
+using Basic_ExpandableMenu_C = ::Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;

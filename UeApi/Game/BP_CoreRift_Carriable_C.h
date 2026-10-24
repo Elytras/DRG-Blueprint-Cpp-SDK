@@ -75,4 +75,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using BP_CoreRift_Carriable_C = Game::GameElements::GameEvents::CoreRift::BP_CoreRift_Carriable_C;
+using BP_CoreRift_Carriable_C = ::Game::GameElements::GameEvents::CoreRift::BP_CoreRift_Carriable_C;

@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Revolver
 
-using ABP_Pistol_B_C = Game::WeaponsNTools::Revolver::ABP_Pistol_B_C;
+using ABP_Pistol_B_C = ::Game::WeaponsNTools::Revolver::ABP_Pistol_B_C;

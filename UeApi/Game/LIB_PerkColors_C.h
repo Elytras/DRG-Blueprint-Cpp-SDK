@@ -22,4 +22,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using LIB_PerkColors_C = Game::UI::Art::WidgetParts::LIB_PerkColors_C;
+using LIB_PerkColors_C = ::Game::UI::Art::WidgetParts::LIB_PerkColors_C;

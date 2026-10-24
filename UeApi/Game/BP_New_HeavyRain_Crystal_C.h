@@ -12,7 +12,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace CrystalCaves {
 
-class BP_New_HeavyRain_Crystal_C : public Game::Landscape::Biomes::BP_WeatherEffect_C
+class BP_New_HeavyRain_Crystal_C : public ::Game::Landscape::Biomes::BP_WeatherEffect_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/CrystalCaves/BP_New_HeavyRain_Crystal", "BP_New_HeavyRain_Crystal_C");
@@ -26,17 +26,18 @@ public:
     void ExecuteUbergraph_BP_New_HeavyRain_Crystal(int EntryPoint);
     void EndEffect();
     void StartEffect();
-    void FadeOut__UpdateFunc();
-    void FadeOut__FinishedFunc();
+    void Fadeout__UpdateFunc();
+    void Fadeout__FinishedFunc();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "ActiveSound;FadingSound";
         static constexpr const char* UberGraphFrame_BP_New_HeavyRain_Crystal_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves
 
-using BP_New_HeavyRain_Crystal_C = Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves::BP_New_HeavyRain_Crystal_C;
+using BP_New_HeavyRain_Crystal_C = ::Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves::BP_New_HeavyRain_Crystal_C;

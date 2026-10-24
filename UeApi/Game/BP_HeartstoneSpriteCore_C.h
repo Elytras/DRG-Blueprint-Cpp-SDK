@@ -45,4 +45,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::EnergySpriteSwarm
 
-using BP_HeartstoneSpriteCore_C = Game::GameElements::Objectives::Escort::EnergySpriteSwarm::BP_HeartstoneSpriteCore_C;
+using BP_HeartstoneSpriteCore_C = ::Game::GameElements::Objectives::Escort::EnergySpriteSwarm::BP_HeartstoneSpriteCore_C;

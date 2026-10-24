@@ -15,7 +15,7 @@ class JettyBoot_Overlay_Anniversary_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/Events/JettyBoot_Overlay_Anniversary", "JettyBoot_Overlay_Anniversary_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     Basic_Image_C* Basic_Image;
     Basic_Image_C* Basic_Image_1;
     Basic_Image_C* Basic_Image_2;
@@ -25,4 +25,4 @@ public:
 
 }}}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::Events
 
-using JettyBoot_Overlay_Anniversary_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::Events::JettyBoot_Overlay_Anniversary_C;
+using JettyBoot_Overlay_Anniversary_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::Events::JettyBoot_Overlay_Anniversary_C;

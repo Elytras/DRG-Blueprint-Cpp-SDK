@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_TankBoss_Spawn_C = Game::Character::Camera::CameraShakes::CameraShake_TankBoss_Spawn_C;
+using CameraShake_TankBoss_Spawn_C = ::Game::Character::Camera::CameraShakes::CameraShake_TankBoss_Spawn_C;

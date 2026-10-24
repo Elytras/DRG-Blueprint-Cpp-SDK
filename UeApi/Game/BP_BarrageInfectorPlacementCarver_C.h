@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::BarrageInfector
 
-using BP_BarrageInfectorPlacementCarver_C = Game::Enemies::BarrageInfector::BP_BarrageInfectorPlacementCarver_C;
+using BP_BarrageInfectorPlacementCarver_C = ::Game::Enemies::BarrageInfector::BP_BarrageInfectorPlacementCarver_C;

@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pistol
 
-using WPN_Pistol_A_C = Game::WeaponsNTools::Pistol::WPN_Pistol_A_C;
+using WPN_Pistol_A_C = ::Game::WeaponsNTools::Pistol::WPN_Pistol_A_C;

@@ -18,8 +18,8 @@ class Options_Console_StaticResolutionScaling_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Console_StaticResolutionScaling", "Options_Console_StaticResolutionScaling_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Basic_Label_Dynamic;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Console_StaticResolutionScaling_C = Game::UI::Menu_Options::Options_Console_StaticResolutionScaling_C;
+using Options_Console_StaticResolutionScaling_C = ::Game::UI::Menu_Options::Options_Console_StaticResolutionScaling_C;

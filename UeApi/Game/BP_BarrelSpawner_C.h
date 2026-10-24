@@ -25,7 +25,7 @@ class BP_BarrelSpawner_C : public ABarrelSpawner
 {
 public:
     UE_CLASS("/Game/LevelElements/Spacerig/Bar/Hoops/BP_BarrelSpawner", "BP_BarrelSpawner_C");
-    using BP_Phys_Barrel01_C = Game::Art::Environments::SpaceRig::BP_Phys_Barrel01_C;
+    using BP_Phys_Barrel01_C = ::Game::Art::Environments::SpaceRig::BP_Phys_Barrel01_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Screen;
     class UWidgetComponent* Widget_Barrel_Counter;
@@ -62,4 +62,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops
 
-using BP_BarrelSpawner_C = Game::LevelElements::Spacerig::Bar::Hoops::BP_BarrelSpawner_C;
+using BP_BarrelSpawner_C = ::Game::LevelElements::Spacerig::Bar::Hoops::BP_BarrelSpawner_C;

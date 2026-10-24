@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_LandingZone_C = Game::LevelElements::Droppod::BP_DropPod_LandingZone_C;
+using BP_DropPod_LandingZone_C = ::Game::LevelElements::Droppod::BP_DropPod_LandingZone_C;

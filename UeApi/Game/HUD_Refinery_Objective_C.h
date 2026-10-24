@@ -24,8 +24,8 @@ class HUD_Refinery_Objective_C : public UOptionalObjectiveWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Refinery/HUD_Refinery_Objective", "HUD_Refinery_Objective_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using ITM_Refinery_Pipeline_C = Game::GameElements::Objectives::Refinery::ITM_Refinery_Pipeline_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using ITM_Refinery_Pipeline_C = ::Game::GameElements::Objectives::Refinery::ITM_Refinery_Pipeline_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UImage* Image_Separator;
@@ -49,4 +49,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery
 
-using HUD_Refinery_Objective_C = Game::GameElements::Objectives::Refinery::HUD_Refinery_Objective_C;
+using HUD_Refinery_Objective_C = ::Game::GameElements::Objectives::Refinery::HUD_Refinery_Objective_C;

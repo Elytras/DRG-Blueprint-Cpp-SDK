@@ -18,7 +18,7 @@ class HUD_ActionHoldProgress_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_ActionHoldProgress", "HUD_ActionHoldProgress_C");
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_DefaultLabel_C* ActionText;
     class UProgressBar* HoldingProgress;
@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_ActionHoldProgress_C = Game::UI::MainOnscreenHUD::HUD_ActionHoldProgress_C;
+using HUD_ActionHoldProgress_C = ::Game::UI::MainOnscreenHUD::HUD_ActionHoldProgress_C;

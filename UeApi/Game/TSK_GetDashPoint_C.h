@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Enemies::FlyingBug
 
-using TSK_GetDashPoint_C = Game::Enemies::FlyingBug::TSK_GetDashPoint_C;
+using TSK_GetDashPoint_C = ::Game::Enemies::FlyingBug::TSK_GetDashPoint_C;

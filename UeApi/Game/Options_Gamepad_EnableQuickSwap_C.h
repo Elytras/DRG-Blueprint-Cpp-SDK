@@ -18,8 +18,8 @@ class Options_Gamepad_EnableQuickSwap_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_Gamepad_EnableQuickSwap", "Options_Gamepad_EnableQuickSwap_C");
-    using Basic_Dots_C = Game::UI::Art::WidgetParts::Basic_Dots_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Dots_C = ::Game::UI::Art::WidgetParts::Basic_Dots_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Dots_C* Basic_Dots;
     class UButton* Button_Left;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_Gamepad_EnableQuickSwap_C = Game::UI::Keybindings::Options_Gamepad_EnableQuickSwap_C;
+using Options_Gamepad_EnableQuickSwap_C = ::Game::UI::Keybindings::Options_Gamepad_EnableQuickSwap_C;

@@ -19,11 +19,11 @@ namespace Game { namespace UI { namespace Menu_Wardrobe { class ITM_GeneratedIco
 
 namespace Game { namespace UI { namespace Menu_Pickaxe {
 
-class ITM_Pickaxe_Slot_C : public Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C
+class ITM_Pickaxe_Slot_C : public ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Pickaxe/ITM_Pickaxe_Slot", "ITM_Pickaxe_Slot_C");
-    using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
+    using ITM_GeneratedIcon_Item_C = ::Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame_ITM_Pickaxe_Slot_C;
     FText CategoryText;
     TArray<class UPickaxePart*> Items;
@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Pickaxe
 
-using ITM_Pickaxe_Slot_C = Game::UI::Menu_Pickaxe::ITM_Pickaxe_Slot_C;
+using ITM_Pickaxe_Slot_C = ::Game::UI::Menu_Pickaxe::ITM_Pickaxe_Slot_C;

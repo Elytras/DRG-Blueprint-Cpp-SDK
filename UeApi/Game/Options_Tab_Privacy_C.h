@@ -21,11 +21,11 @@ class Options_Tab_Privacy_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_Privacy", "Options_Tab_Privacy_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Options_AnonymousMetrics_C = Game::UI::PopUp_Analytics::Options_AnonymousMetrics_C;
-    using Options_AppearOffline_C = Game::UI::Menu_Options::Options_AppearOffline_C;
-    using Options_PersonalMetrics_C = Game::UI::PopUp_Analytics::Options_PersonalMetrics_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Options_AnonymousMetrics_C = ::Game::UI::PopUp_Analytics::Options_AnonymousMetrics_C;
+    using Options_AppearOffline_C = ::Game::UI::Menu_Options::Options_AppearOffline_C;
+    using Options_PersonalMetrics_C = ::Game::UI::PopUp_Analytics::Options_PersonalMetrics_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* AggregatedText;
     Basic_Option_C* AppearOfflineOption;
@@ -49,4 +49,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_Privacy_C = Game::UI::Menu_Options::Options_Tab_Privacy_C;
+using Options_Tab_Privacy_C = ::Game::UI::Menu_Options::Options_Tab_Privacy_C;

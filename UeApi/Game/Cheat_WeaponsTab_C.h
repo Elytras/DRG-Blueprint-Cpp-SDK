@@ -18,9 +18,9 @@ class Cheat_WeaponsTab_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_WeaponsTab", "Cheat_WeaponsTab_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Cheat_List_Overclocks_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Overclocks_C;
-    using Cheat_List_Skins_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Skins_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Cheat_List_Overclocks_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Overclocks_C;
+    using Cheat_List_Skins_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Skins_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Cheat_List_Skins_C* Cheat_List_Frameworks;
     Cheat_List_Overclocks_C* Cheat_List_Overclocks;
@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_WeaponsTab_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_WeaponsTab_C;
+using Cheat_WeaponsTab_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_WeaponsTab_C;

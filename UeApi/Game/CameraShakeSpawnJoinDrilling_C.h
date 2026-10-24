@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShakeSpawnJoinDrilling_C = Game::Character::Camera::CameraShakes::CameraShakeSpawnJoinDrilling_C;
+using CameraShakeSpawnJoinDrilling_C = ::Game::Character::Camera::CameraShakes::CameraShakeSpawnJoinDrilling_C;

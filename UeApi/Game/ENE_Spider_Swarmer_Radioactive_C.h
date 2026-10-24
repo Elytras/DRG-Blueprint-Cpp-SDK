@@ -13,7 +13,7 @@ class UPointLightComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Swarmer {
 
-class ENE_Spider_Swarmer_Radioactive_C : public Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C
+class ENE_Spider_Swarmer_Radioactive_C : public ::Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/ENE_Spider_Swarmer_Radioactive", "ENE_Spider_Swarmer_Radioactive_C");
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using ENE_Spider_Swarmer_Radioactive_C = Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_Radioactive_C;
+using ENE_Spider_Swarmer_Radioactive_C = ::Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_Radioactive_C;

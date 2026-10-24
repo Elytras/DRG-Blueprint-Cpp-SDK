@@ -19,8 +19,8 @@ class OnScreenIndicator_SupplyDrop_Order_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_SupplyDrop_Order", "OnScreenIndicator_SupplyDrop_Order_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowSmall_C* Basic_HUD_BracketWindowSmall;
     UI_AdvancedLabel_C* KeyLabel;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_SupplyDrop_Order_C = Game::UI::OnScreenIndicators::OnScreenIndicator_SupplyDrop_Order_C;
+using OnScreenIndicator_SupplyDrop_Order_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_SupplyDrop_Order_C;

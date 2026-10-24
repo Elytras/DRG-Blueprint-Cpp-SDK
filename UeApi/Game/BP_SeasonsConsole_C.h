@@ -12,7 +12,7 @@ class UWidgetComponent;
 
 namespace Game { namespace UI { namespace HUD_SpaceRig {
 
-class BP_SeasonsConsole_C : public Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
+class BP_SeasonsConsole_C : public ::Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_SeasonsConsole", "BP_SeasonsConsole_C");
@@ -26,6 +26,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;PointLight;StaticMesh1;TextRender;Widget";
         static constexpr const char* Widget_SeasonTerminal__UeScsNode = "89f68a034484d04ca76e081c17b970bf";
         static constexpr const char* PointLight4__UeScsNode = "fb1faf04b78a2f459644473590631970";
         static constexpr const char* PointLight3__UeScsNode = "c0977677c570394f812ae939a2c759c2";
@@ -38,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_SeasonsConsole_C = Game::UI::HUD_SpaceRig::BP_SeasonsConsole_C;
+using BP_SeasonsConsole_C = ::Game::UI::HUD_SpaceRig::BP_SeasonsConsole_C;

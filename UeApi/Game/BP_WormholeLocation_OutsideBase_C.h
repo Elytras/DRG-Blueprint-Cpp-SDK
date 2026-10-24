@@ -12,7 +12,7 @@ class APlayerCharacter;
 
 namespace Game { namespace GameElements { namespace Bar { namespace DrinkEffects { namespace Wormhole_Assets {
 
-class BP_WormholeLocation_OutsideBase_C : public Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_Base_C
+class BP_WormholeLocation_OutsideBase_C : public ::Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/DrinkEffects/Wormhole_Assets/BP_WormholeLocation_OutsideBase", "BP_WormholeLocation_OutsideBase_C");
@@ -29,4 +29,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Bar::DrinkEffects::Wormhole_Assets
 
-using BP_WormholeLocation_OutsideBase_C = Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_OutsideBase_C;
+using BP_WormholeLocation_OutsideBase_C = ::Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_OutsideBase_C;

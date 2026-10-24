@@ -23,10 +23,10 @@ class TOOLTIP_UpgradeIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/TOOLTIP_UpgradeIcon", "TOOLTIP_UpgradeIcon_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_BaseUpgradeIcon_C = Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_BaseUpgradeIcon_C = ::Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* ActionBorder;
     UI_AdvancedLabel_C* ActionLabel;
@@ -51,4 +51,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using TOOLTIP_UpgradeIcon_C = Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
+using TOOLTIP_UpgradeIcon_C = ::Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;

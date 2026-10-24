@@ -15,11 +15,11 @@ namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { nam
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossHeavy {
 
-class AIC_Spider_Boss_Heavy_C : public Game::Enemies::Spider::AIC_Spider_C
+class AIC_Spider_Boss_Heavy_C : public ::Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/AIC_Spider_Boss_Heavy", "AIC_Spider_Boss_Heavy_C");
-    using ENE_Spider_Boss_Heavy_C = Game::Enemies::Spider::TankBoss::BossHeavy::ENE_Spider_Boss_Heavy_C;
+    using ENE_Spider_Boss_Heavy_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::ENE_Spider_Boss_Heavy_C;
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Boss_Heavy_C;
     bool Enraged;
     TSet<class AFSDPawn*> spawnedEnemies;
@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using AIC_Spider_Boss_Heavy_C = Game::Enemies::Spider::TankBoss::BossHeavy::AIC_Spider_Boss_Heavy_C;
+using AIC_Spider_Boss_Heavy_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::AIC_Spider_Boss_Heavy_C;

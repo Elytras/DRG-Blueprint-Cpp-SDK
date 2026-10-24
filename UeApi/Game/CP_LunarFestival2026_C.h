@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_LunarFestival2026_C = Game::GameElements::Campaign::CP_LunarFestival2026_C;
+using CP_LunarFestival2026_C = ::Game::GameElements::Campaign::CP_LunarFestival2026_C;

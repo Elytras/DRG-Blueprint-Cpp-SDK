@@ -43,4 +43,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Excavation::AmberDeposits::Assets
 
-using ABP_Amberrockrig_C = Game::GameElements::Objectives::Excavation::AmberDeposits::Assets::ABP_Amberrockrig_C;
+using ABP_Amberrockrig_C = ::Game::GameElements::Objectives::Excavation::AmberDeposits::Assets::ABP_Amberrockrig_C;

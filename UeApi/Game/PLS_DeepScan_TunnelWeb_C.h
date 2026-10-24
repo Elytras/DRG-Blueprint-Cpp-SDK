@@ -16,11 +16,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace DeepS
 
 namespace Game { namespace Landscape { namespace ProceduralLevelSetups { namespace Alpha02 {
 
-class PLS_DeepScan_TunnelWeb_C : public Game::Landscape::PLS_Base_C
+class PLS_DeepScan_TunnelWeb_C : public ::Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_DeepScan_TunnelWeb", "PLS_DeepScan_TunnelWeb_C");
-    using BP_DeepScanPLSComponent_C = Game::GameElements::Objectives::DeepScan::BP_DeepScanPLSComponent_C;
+    using BP_DeepScanPLSComponent_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScanPLSComponent_C;
     FPointerToUberGraphFrame UberGraphFrame_PLS_DeepScan_TunnelWeb_C;
     BP_DeepScanPLSComponent_C* BP_DeepScanPLSComponent;
     TArray<class URoomGenerator*> RandomRooms;
@@ -47,4 +47,4 @@ private:
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02
 
-using PLS_DeepScan_TunnelWeb_C = Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_DeepScan_TunnelWeb_C;
+using PLS_DeepScan_TunnelWeb_C = ::Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_DeepScan_TunnelWeb_C;

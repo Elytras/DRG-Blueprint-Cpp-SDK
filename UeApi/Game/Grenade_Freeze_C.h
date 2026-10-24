@@ -18,7 +18,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Freeze {
 
-class Grenade_Freeze_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Freeze_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Freeze/Grenade_Freeze", "Grenade_Freeze_C");
@@ -35,6 +35,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Freeze_C__UeName = "UberGraphFrame";
         static constexpr const char* Sphere__UeScsNode = "917190a76b27e344a29a67c7ff2983bc";
         static constexpr const char* Damage__UeScsNode = "9795bc44a60a744ea52d90fff280c10f";
@@ -43,4 +44,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Freeze
 
-using Grenade_Freeze_C = Game::WeaponsNTools::Grenades::Freeze::Grenade_Freeze_C;
+using Grenade_Freeze_C = ::Game::WeaponsNTools::Grenades::Freeze::Grenade_Freeze_C;

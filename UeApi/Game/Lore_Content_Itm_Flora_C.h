@@ -37,4 +37,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Content_Itm_Flora_C = Game::UI::Menu_MinersManual::Lore_Content_Itm_Flora_C;
+using Lore_Content_Itm_Flora_C = ::Game::UI::Menu_MinersManual::Lore_Content_Itm_Flora_C;

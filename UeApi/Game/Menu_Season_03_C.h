@@ -26,15 +26,15 @@ class Menu_Season_03_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Menu_Season_03", "Menu_Season_03_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Header_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Header_ButtonCutCorner_C;
-    using ITM_SeasonMenu_BG04_C = Game::UI::Menu_Seasons::ITM_SeasonMenu_BG04_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
-    using WND_SeasonOverview_C = Game::UI::Menu_Seasons::WND_SeasonOverview_C;
-    using WND_TreeOfVanity_C = Game::UI::Menu_Seasons::WND_TreeOfVanity_C;
-    using Wnd_SeasonBriefing_C = Game::UI::Menu_Seasons::Wnd_SeasonBriefing_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Header_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Header_ButtonCutCorner_C;
+    using ITM_SeasonMenu_BG04_C = ::Game::UI::Menu_Seasons::ITM_SeasonMenu_BG04_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using WND_SeasonOverview_C = ::Game::UI::Menu_Seasons::WND_SeasonOverview_C;
+    using WND_TreeOfVanity_C = ::Game::UI::Menu_Seasons::WND_TreeOfVanity_C;
+    using Wnd_SeasonBriefing_C = ::Game::UI::Menu_Seasons::Wnd_SeasonBriefing_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ShowSeasonPage;
     UE_READONLY class UWidgetAnimation* NotEnoughTokens;
@@ -112,4 +112,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Menu_Season_03_C = Game::UI::Menu_Seasons::Menu_Season_03_C;
+using Menu_Season_03_C = ::Game::UI::Menu_Seasons::Menu_Season_03_C;

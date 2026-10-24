@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_MenuDamageIndicator_C = Game::UI::Menu_EscapeMenu::ITM_MenuDamageIndicator_C;
+using ITM_MenuDamageIndicator_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuDamageIndicator_C;

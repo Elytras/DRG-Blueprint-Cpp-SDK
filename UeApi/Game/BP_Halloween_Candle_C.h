@@ -33,4 +33,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween
 
-using BP_Halloween_Candle_C = Game::Art::Environments::Holiday_Halloween::BP_Halloween_Candle_C;
+using BP_Halloween_Candle_C = ::Game::Art::Environments::Holiday_Halloween::BP_Halloween_Candle_C;

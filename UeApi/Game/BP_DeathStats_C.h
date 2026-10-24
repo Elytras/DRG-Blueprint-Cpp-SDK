@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary
 
-using BP_DeathStats_C = Game::UI::HUD_SpaceRig::Infirmary::BP_DeathStats_C;
+using BP_DeathStats_C = ::Game::UI::HUD_SpaceRig::Infirmary::BP_DeathStats_C;

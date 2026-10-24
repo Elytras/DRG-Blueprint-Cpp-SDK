@@ -12,7 +12,7 @@ class APawn;
 
 namespace Game { namespace Enemies { namespace Spider { namespace ExploderTank {
 
-class AIC_Spider_ExploderTank_C : public Game::Enemies::Spider::AIC_Spider_C
+class AIC_Spider_ExploderTank_C : public ::Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/AIC_Spider_ExploderTank", "AIC_Spider_ExploderTank_C");
@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::ExploderTank
 
-using AIC_Spider_ExploderTank_C = Game::Enemies::Spider::ExploderTank::AIC_Spider_ExploderTank_C;
+using AIC_Spider_ExploderTank_C = ::Game::Enemies::Spider::ExploderTank::AIC_Spider_ExploderTank_C;

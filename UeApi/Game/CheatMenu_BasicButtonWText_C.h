@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;

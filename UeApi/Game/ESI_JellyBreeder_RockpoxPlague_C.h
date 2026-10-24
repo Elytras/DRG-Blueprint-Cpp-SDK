@@ -43,4 +43,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder
 
-using ESI_JellyBreeder_RockpoxPlague_C = Game::Enemies::Plague::PlagueBreeder::ESI_JellyBreeder_RockpoxPlague_C;
+using ESI_JellyBreeder_RockpoxPlague_C = ::Game::Enemies::Plague::PlagueBreeder::ESI_JellyBreeder_RockpoxPlague_C;

@@ -7,6 +7,7 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../CoreUObject.h"
 #include "../Engine.h"
+#include "FEndScreenMove.h"
 
 class UAnimSequence;
 class UClass;
@@ -20,14 +21,16 @@ public:
     UE_CLASS("/Game/Character/CharacterSelection/EndScreenSetups", "EndScreenSetups_C");
     FRandomStream RandStream;
     void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
+    void GetEndScreenMoveSet(bool Survived, class UVictoryPose* VictPose, FRandomStream& RandStream_0, FEndScreenMove& Selected);
     void ResetMovesets(int NewSeed);
     void SplitMoveSetAnims(const TArray<TSoftObjectPtr<class UAnimSequence>>& TargetArray, class UAnimSequence*& Selected1, TArray<TSoftObjectPtr<class UAnimSequence>>& Rest1);
     void LoadAnimSeq(TSoftObjectPtr<class UAnimSequence> Soft, class UAnimSequence*& Hard);
     void LoadAnimSeqArray(TArray<TSoftObjectPtr<class UAnimSequence>>& Soft, TArray<class UAnimSequence*>& Hard);
     void LoadActorClass(TSoftClassPtr<class UClass> Soft, class UClass*& Hard);
+    void LoadVictoryAnims(class UVictoryPose* InputPin, FRandomStream& RandStream_0, FEndScreenMove& EndScreenMove);
     void GetRandomWalkAnim(class UVictoryPose* VicPose, FRandomStream& RandStream_0, TSoftObjectPtr<class UAnimSequence>& Walk);
 };
 
 }}}   // namespace Game::Character::CharacterSelection
 
-using EndScreenSetups_C = Game::Character::CharacterSelection::EndScreenSetups_C;
+using EndScreenSetups_C = ::Game::Character::CharacterSelection::EndScreenSetups_C;

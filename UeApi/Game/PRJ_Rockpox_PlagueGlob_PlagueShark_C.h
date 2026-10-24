@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Plague { namespace PlagueShark {
 
-class PRJ_Rockpox_PlagueGlob_PlagueShark_C : public Game::Enemies::Plague::PRJ_Rockpox_PlagueGlob_C
+class PRJ_Rockpox_PlagueGlob_PlagueShark_C : public ::Game::Enemies::Plague::PRJ_Rockpox_PlagueGlob_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShark/PRJ_Rockpox_PlagueGlob_PlagueShark", "PRJ_Rockpox_PlagueGlob_PlagueShark_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "NS_Plague_Projectile_Trail;StaticMesh";
     };
 };
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShark
 
-using PRJ_Rockpox_PlagueGlob_PlagueShark_C = Game::Enemies::Plague::PlagueShark::PRJ_Rockpox_PlagueGlob_PlagueShark_C;
+using PRJ_Rockpox_PlagueGlob_PlagueShark_C = ::Game::Enemies::Plague::PlagueShark::PRJ_Rockpox_PlagueGlob_PlagueShark_C;

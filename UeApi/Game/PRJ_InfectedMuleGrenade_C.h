@@ -57,4 +57,4 @@ private:
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using PRJ_InfectedMuleGrenade_C = Game::Enemies::MuleInfected::PRJ_InfectedMuleGrenade_C;
+using PRJ_InfectedMuleGrenade_C = ::Game::Enemies::MuleInfected::PRJ_InfectedMuleGrenade_C;

@@ -26,8 +26,8 @@ class ITM_UpgGear_UpgIconSingle_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_UpgIconSingle", "ITM_UpgGear_UpgIconSingle_C");
-    using ITM_BaseUpgradeIcon_C = Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;
-    using TOOLTIP_UpgradeIcon_C = Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
+    using ITM_BaseUpgradeIcon_C = ::Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;
+    using TOOLTIP_UpgradeIcon_C = ::Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OnPurchased;
     ITM_BaseUpgradeIcon_C* UpgradeIcon;
@@ -80,4 +80,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_UpgIconSingle_C = Game::UI::Menu_Loadout::ITM_UpgGear_UpgIconSingle_C;
+using ITM_UpgGear_UpgIconSingle_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_UpgIconSingle_C;

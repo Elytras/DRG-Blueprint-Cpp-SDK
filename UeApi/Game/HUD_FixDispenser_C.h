@@ -20,11 +20,11 @@ class HUD_FixDispenser_C : public UFSDInWorldWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/HUD_FixDispenser", "HUD_FixDispenser_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimDownArrow;
     UI_ImageTinted_C* IMG_DownArrow;
-    class UImage* Img_Icon;
+    class UImage* IMG_Icon;
     class AFSDRefinery* Refinery;
     class UUsableComponentBase* Usable;
     void ExecuteUbergraph_HUD_FixDispenser(int EntryPoint);
@@ -34,4 +34,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using HUD_FixDispenser_C = Game::GameElements::Objectives::Facility::Tethers::HUD_FixDispenser_C;
+using HUD_FixDispenser_C = ::Game::GameElements::Objectives::Facility::Tethers::HUD_FixDispenser_C;

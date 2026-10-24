@@ -17,4 +17,4 @@ public:
 
 }}   // namespace Engine::EngineDamageTypes
 
-using DmgTypeBP_Environmental_C = Engine::EngineDamageTypes::DmgTypeBP_Environmental_C;
+using DmgTypeBP_Environmental_C = ::Engine::EngineDamageTypes::DmgTypeBP_Environmental_C;

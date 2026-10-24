@@ -16,7 +16,7 @@ class Options_Scalability_ResolutioScale_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Scalability_ResolutioScale", "Options_Scalability_ResolutioScale_C");
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
     void ExecuteUbergraph_Options_Scalability_ResolutioScale(int EntryPoint);
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Scalability_ResolutioScale_C = Game::UI::Menu_Options::Options_Scalability_ResolutioScale_C;
+using Options_Scalability_ResolutioScale_C = ::Game::UI::Menu_Options::Options_Scalability_ResolutioScale_C;

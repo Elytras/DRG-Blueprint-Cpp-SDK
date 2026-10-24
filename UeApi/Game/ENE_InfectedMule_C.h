@@ -94,4 +94,4 @@ private:
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using ENE_InfectedMule_C = Game::Enemies::MuleInfected::ENE_InfectedMule_C;
+using ENE_InfectedMule_C = ::Game::Enemies::MuleInfected::ENE_InfectedMule_C;

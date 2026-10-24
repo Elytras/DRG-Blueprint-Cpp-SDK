@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BFL_RefineryLibrary_C = Game::LevelElements::Refinery::BFL_RefineryLibrary_C;
+using BFL_RefineryLibrary_C = ::Game::LevelElements::Refinery::BFL_RefineryLibrary_C;

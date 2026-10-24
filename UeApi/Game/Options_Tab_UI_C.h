@@ -21,17 +21,17 @@ class Options_Tab_UI_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_UI", "Options_Tab_UI_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_Chat_FadeTime_C = Game::UI::Menu_Options::Options_Chat_FadeTime_C;
-    using Options_Chat_FontSize_C = Game::UI::Menu_Options::Options_Chat_FontSize_C;
-    using Options_HUD_ElementPresets_C = Game::UI::Menu_Options::HUD::Options_HUD_ElementPresets_C;
-    using Options_ProfanityFilter_C = Game::UI::Menu_Options::Options_ProfanityFilter_C;
-    using Options_ShowFPS_C = Game::UI::Menu_Options::Options_ShowFPS_C;
-    using Options_ShowInfoScreen_C = Game::UI::Menu_Options::Options_ShowInfoScreen_C;
-    using Options_ShowNetInfo_C = Game::UI::Menu_Options::Options_ShowNetInfo_C;
-    using Options_ShowUIAnimations_C = Game::UI::Menu_Options::Options_ShowUIAnimations_C;
-    using Options_SoundOnChatMessage_C = Game::UI::Menu_Options::Options_SoundOnChatMessage_C;
-    using Options_UIScale_Slider_C = Game::UI::Menu_Options::Options_UIScale_Slider_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_Chat_FadeTime_C = ::Game::UI::Menu_Options::Options_Chat_FadeTime_C;
+    using Options_Chat_FontSize_C = ::Game::UI::Menu_Options::Options_Chat_FontSize_C;
+    using Options_HUD_ElementPresets_C = ::Game::UI::Menu_Options::HUD::Options_HUD_ElementPresets_C;
+    using Options_ProfanityFilter_C = ::Game::UI::Menu_Options::Options_ProfanityFilter_C;
+    using Options_ShowFPS_C = ::Game::UI::Menu_Options::Options_ShowFPS_C;
+    using Options_ShowInfoScreen_C = ::Game::UI::Menu_Options::Options_ShowInfoScreen_C;
+    using Options_ShowNetInfo_C = ::Game::UI::Menu_Options::Options_ShowNetInfo_C;
+    using Options_ShowUIAnimations_C = ::Game::UI::Menu_Options::Options_ShowUIAnimations_C;
+    using Options_SoundOnChatMessage_C = ::Game::UI::Menu_Options::Options_SoundOnChatMessage_C;
+    using Options_UIScale_Slider_C = ::Game::UI::Menu_Options::Options_UIScale_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* Basic_Option_C_0;
     Basic_Option_C* Basic_Option_C_1;
@@ -62,4 +62,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_UI_C = Game::UI::Menu_Options::Options_Tab_UI_C;
+using Options_Tab_UI_C = ::Game::UI::Menu_Options::Options_Tab_UI_C;

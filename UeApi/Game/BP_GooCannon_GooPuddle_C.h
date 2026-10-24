@@ -62,6 +62,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus ExplosionDamage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* ObjectTemperature__UeScsNode = "7a437d7af84c674f94d7381c13b44200";
         static constexpr const char* TerrainDetect__UeScsNode = "c001efca36e111458c6ee29fce1c9011";
         static constexpr const char* ExplosionDamage__UeScsNode = "23f2583c5be5a74c8c3231f1c117c5f8";
@@ -81,4 +82,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooCannon_GooPuddle_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C;
+using BP_GooCannon_GooPuddle_C = ::Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C;

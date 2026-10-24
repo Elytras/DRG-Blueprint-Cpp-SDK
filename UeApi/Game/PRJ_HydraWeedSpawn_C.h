@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using PRJ_HydraWeedSpawn_C = Game::Enemies::HydraWeed::PRJ_HydraWeedSpawn_C;
+using PRJ_HydraWeedSpawn_C = ::Game::Enemies::HydraWeed::PRJ_HydraWeedSpawn_C;

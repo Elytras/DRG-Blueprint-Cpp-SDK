@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_DBR_Salvage_OldSupplyPod_C = Game::GameElements::Objectives::Salvage::BP_DBR_Salvage_OldSupplyPod_C;
+using BP_DBR_Salvage_OldSupplyPod_C = ::Game::GameElements::Objectives::Salvage::BP_DBR_Salvage_OldSupplyPod_C;

@@ -25,10 +25,10 @@ class UI_Forge_MasteryBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_MasteryBar", "UI_Forge_MasteryBar_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
-    using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
-    using UI_Forge_LevelIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using ITM_MatrixCore_C = ::Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
+    using UI_Forge_LevelIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimToolTip;
     UE_READONLY class UWidgetAnimation* AnimResetReward;
@@ -71,4 +71,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_MasteryBar_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_MasteryBar_C;
+using UI_Forge_MasteryBar_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_MasteryBar_C;

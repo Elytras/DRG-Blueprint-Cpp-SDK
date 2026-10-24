@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace HUD_SpaceRig { namespace CommunityTerminal {
 
-class BP_DiscordConsoleWhite_C : public Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsole_C
+class BP_DiscordConsoleWhite_C : public ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsole_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/BP_DiscordConsoleWhite", "BP_DiscordConsoleWhite_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using BP_DiscordConsoleWhite_C = Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsoleWhite_C;
+using BP_DiscordConsoleWhite_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsoleWhite_C;

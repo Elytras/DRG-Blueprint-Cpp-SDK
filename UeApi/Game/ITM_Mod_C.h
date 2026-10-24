@@ -27,10 +27,10 @@ class ITM_Mod_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/ITM_Mod", "ITM_Mod_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using ITM_Modding_Menu_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Menu_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using ITM_Modding_Menu_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Menu_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Background;
     class UImage* backgroundOutline;
@@ -129,4 +129,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using ITM_Mod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Mod_C;
+using ITM_Mod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Mod_C;

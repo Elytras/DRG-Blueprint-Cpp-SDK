@@ -17,7 +17,7 @@ class Cheat_SpawnEnemies_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_SpawnEnemies", "Cheat_SpawnEnemies_C");
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     CheatMenu_BasicButtonWText_C* CheatMenu_BasicButtonWText;
     class UCheckBox* CheckBox_0;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnEnemies_C = Game::UI::Menu_Cheats::Cheat_SpawnEnemies_C;
+using Cheat_SpawnEnemies_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEnemies_C;

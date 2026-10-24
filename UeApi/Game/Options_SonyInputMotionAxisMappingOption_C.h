@@ -16,7 +16,7 @@ class Options_SonyInputMotionAxisMappingOption_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/SonyOptions/Options_SonyInputMotionAxisMappingOption", "Options_SonyInputMotionAxisMappingOption_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     void ExecuteUbergraph_Options_SonyInputMotionAxisMappingOption(int EntryPoint);
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::SonyOptions
 
-using Options_SonyInputMotionAxisMappingOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputMotionAxisMappingOption_C;
+using Options_SonyInputMotionAxisMappingOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputMotionAxisMappingOption_C;

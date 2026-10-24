@@ -20,8 +20,8 @@ class UI_EventBanner_Xmas_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/FSDEvents/UI_EventBanner_Xmas", "UI_EventBanner_Xmas_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimBob;
     UE_READONLY class UWidgetAnimation* AnimIntro;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::FSDEvents
 
-using UI_EventBanner_Xmas_C = Game::UI::FSDEvents::UI_EventBanner_Xmas_C;
+using UI_EventBanner_Xmas_C = ::Game::UI::FSDEvents::UI_EventBanner_Xmas_C;

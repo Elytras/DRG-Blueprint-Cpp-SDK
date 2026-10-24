@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Pickaxe { namespace Driller {
 
-class WPN_Pickaxe_Driller_C : public Game::WeaponsNTools::Pickaxe::WPN_Pickaxe_C
+class WPN_Pickaxe_Driller_C : public ::Game::WeaponsNTools::Pickaxe::WPN_Pickaxe_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pickaxe/Driller/WPN_Pickaxe_Driller", "WPN_Pickaxe_Driller_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Pickaxe::Driller
 
-using WPN_Pickaxe_Driller_C = Game::WeaponsNTools::Pickaxe::Driller::WPN_Pickaxe_Driller_C;
+using WPN_Pickaxe_Driller_C = ::Game::WeaponsNTools::Pickaxe::Driller::WPN_Pickaxe_Driller_C;

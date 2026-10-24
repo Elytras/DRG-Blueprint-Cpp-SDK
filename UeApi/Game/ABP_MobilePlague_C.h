@@ -25,4 +25,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::Assets
 
-using ABP_MobilePlague_C = Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_C;
+using ABP_MobilePlague_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_C;

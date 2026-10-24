@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Milestone_Manager_C = Game::UI::MainOnscreenHUD::HUD_Milestone_Manager_C;
+using HUD_Milestone_Manager_C = ::Game::UI::MainOnscreenHUD::HUD_Milestone_Manager_C;

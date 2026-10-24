@@ -24,4 +24,4 @@ public:
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments
 
-using ABP_LootbugVictory_A_Skeleton_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::ABP_LootbugVictory_A_Skeleton_C;
+using ABP_LootbugVictory_A_Skeleton_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::ABP_LootbugVictory_A_Skeleton_C;

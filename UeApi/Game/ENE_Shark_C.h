@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::Enemies::Shark
 
-using ENE_Shark_C = Game::Enemies::Shark::ENE_Shark_C;
+using ENE_Shark_C = ::Game::Enemies::Shark::ENE_Shark_C;

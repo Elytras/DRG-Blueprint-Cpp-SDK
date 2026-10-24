@@ -16,7 +16,7 @@ class Options_AnonymousMetrics_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/PopUp_Analytics/Options_AnonymousMetrics", "Options_AnonymousMetrics_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     int PreviousStatus;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::PopUp_Analytics
 
-using Options_AnonymousMetrics_C = Game::UI::PopUp_Analytics::Options_AnonymousMetrics_C;
+using Options_AnonymousMetrics_C = ::Game::UI::PopUp_Analytics::Options_AnonymousMetrics_C;

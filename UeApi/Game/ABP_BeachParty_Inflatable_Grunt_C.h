@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty
 
-using ABP_BeachParty_Inflatable_Grunt_C = Game::Art::Environments::Holiday_BeachParty::ABP_BeachParty_Inflatable_Grunt_C;
+using ABP_BeachParty_Inflatable_Grunt_C = ::Game::Art::Environments::Holiday_BeachParty::ABP_BeachParty_Inflatable_Grunt_C;

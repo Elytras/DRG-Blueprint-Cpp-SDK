@@ -45,9 +45,9 @@ class BP_AmberDepositBase_C : public AAmberExcavation
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/AmberDeposits/BP_AmberDepositBase", "BP_AmberDepositBase_C");
-    using BP_LiftPod_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftPod_C;
-    using EWC_Excavation_ExcavationPhase_C = Game::Enemies::Waves::WaveControllers::EWC_Excavation_ExcavationPhase_C;
-    using HUD_GameEvent_Excavation_C = Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Excavation_C;
+    using BP_LiftPod_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftPod_C;
+    using EWC_Excavation_ExcavationPhase_C = ::Game::Enemies::Waves::WaveControllers::EWC_Excavation_ExcavationPhase_C;
+    using HUD_GameEvent_Excavation_C = ::Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Excavation_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBillboardComponent* LiftPodFallback;
     class UGemTracker* GemTracker;
@@ -302,6 +302,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachment.BP_RocketAttachment_C RocketAttachment1_GEN_VARIABLE:RocketAttachment1_GEN_VARIABLE_BP_RocketAttachment_C_CAT;/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachment.BP_RocketAttachment_C RocketAttachment2_GEN_VARIABLE:RocketAttachment2_GEN_VARIABLE_BP_RocketAttachment_C_CAT;/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachment.BP_RocketAttachment_C RocketAttachment3_GEN_VARIABLE:RocketAttachment3_GEN_VARIABLE_BP_RocketAttachment_C_CAT;/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachment.BP_RocketAttachment_C RocketAttachment4_GEN_VARIABLE:RocketAttachment4_GEN_VARIABLE_BP_RocketAttachment_C_CAT;/Script/FSD.CarryingItemUsable RocketAttachment1_GEN_VARIABLE:RocketAttachment1_GEN_VARIABLE_BP_RocketAttachment_C_CAT:AttachUsable;/Script/FSD.CarryingItemUsable RocketAttachment2_GEN_VARIABLE:RocketAttachment2_GEN_VARIABLE_BP_RocketAttachment_C_CAT:AttachUsable;/Script/FSD.CarryingItemUsable RocketAttachment3_GEN_VARIABLE:RocketAttachment3_GEN_VARIABLE_BP_RocketAttachment_C_CAT:AttachUsable;/Script/FSD.CarryingItemUsable RocketAttachment4_GEN_VARIABLE:RocketAttachment4_GEN_VARIABLE_BP_RocketAttachment_C_CAT:AttachUsable;/Script/FSD.DroneUseComponent RocketAttachment1_GEN_VARIABLE:RocketAttachment1_GEN_VARIABLE_BP_RocketAttachment_C_CAT:DroneUsable;/Script/FSD.DroneUseComponent RocketAttachment2_GEN_VARIABLE:RocketAttachment2_GEN_VARIABLE_BP_RocketAttachment_C_CAT:DroneUsable;/Script/FSD.DroneUseComponent RocketAttachment3_GEN_VARIABLE:RocketAttachment3_GEN_VARIABLE_BP_RocketAttachment_C_CAT:DroneUsable;/Script/FSD.DroneUseComponent RocketAttachment4_GEN_VARIABLE:RocketAttachment4_GEN_VARIABLE_BP_RocketAttachment_C_CAT:DroneUsable;/Script/FSD.SingleUsableComponent RocketAttachment1_GEN_VARIABLE:RocketAttachment1_GEN_VARIABLE_BP_RocketAttachment_C_CAT:BuildUsable;/Script/FSD.SingleUsableComponent RocketAttachment2_GEN_VARIABLE:RocketAttachment2_GEN_VARIABLE_BP_RocketAttachment_C_CAT:BuildUsable;/Script/FSD.SingleUsableComponent RocketAttachment3_GEN_VARIABLE:RocketAttachment3_GEN_VARIABLE_BP_RocketAttachment_C_CAT:BuildUsable;/Script/FSD.SingleUsableComponent RocketAttachment4_GEN_VARIABLE:RocketAttachment4_GEN_VARIABLE_BP_RocketAttachment_C_CAT:BuildUsable";
         static constexpr const char* LiftPodFallback__UeScsNode = "8490df5fdc9beb4084cfbd27760c3355";
         static constexpr const char* GemTracker__UeScsNode = "9abcc47579fb314e9949868f37450ee7";
         static constexpr const char* SpotLightUp__UeScsNode = "cd3da3994fff6d47be164414c1bbdf80";
@@ -500,4 +501,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::AmberDeposits
 
-using BP_AmberDepositBase_C = Game::GameElements::Objectives::Excavation::AmberDeposits::BP_AmberDepositBase_C;
+using BP_AmberDepositBase_C = ::Game::GameElements::Objectives::Excavation::AmberDeposits::BP_AmberDepositBase_C;

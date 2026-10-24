@@ -19,7 +19,7 @@ class LVL_CharacterSelection_C : public ALevelScriptActor
 {
 public:
     UE_CLASS("/Game/Maps/UILevels/LVL_CharacterSelection", "LVL_CharacterSelection_C");
-    using CharacterSelectionSwitcher_C = Game::Character::CharacterSelection::CharacterSelectionSwitcher_C;
+    using CharacterSelectionSwitcher_C = ::Game::Character::CharacterSelection::CharacterSelectionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelSequencePlayer* Player;
     CharacterSelectionSwitcher_C* switcher;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::Maps::UILevels
 
-using LVL_CharacterSelection_C = Game::Maps::UILevels::LVL_CharacterSelection_C;
+using LVL_CharacterSelection_C = ::Game::Maps::UILevels::LVL_CharacterSelection_C;

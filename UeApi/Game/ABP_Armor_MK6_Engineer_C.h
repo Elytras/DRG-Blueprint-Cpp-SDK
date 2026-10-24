@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using ABP_Armor_MK6_Engineer_C = Game::Character::Vanity2::Armor::ABP_Armor_MK6_Engineer_C;
+using ABP_Armor_MK6_Engineer_C = ::Game::Character::Vanity2::Armor::ABP_Armor_MK6_Engineer_C;

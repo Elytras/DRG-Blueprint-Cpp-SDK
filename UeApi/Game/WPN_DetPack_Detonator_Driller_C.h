@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace DetPack {
 
-class WPN_DetPack_Detonator_Driller_C : public Game::WeaponsNTools::DetPack::WPN_DetPack_Detonator_C
+class WPN_DetPack_Detonator_Driller_C : public ::Game::WeaponsNTools::DetPack::WPN_DetPack_Detonator_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DetPack/WPN_DetPack_Detonator_Driller", "WPN_DetPack_Detonator_Driller_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DetPack
 
-using WPN_DetPack_Detonator_Driller_C = Game::WeaponsNTools::DetPack::WPN_DetPack_Detonator_Driller_C;
+using WPN_DetPack_Detonator_Driller_C = ::Game::WeaponsNTools::DetPack::WPN_DetPack_Detonator_Driller_C;

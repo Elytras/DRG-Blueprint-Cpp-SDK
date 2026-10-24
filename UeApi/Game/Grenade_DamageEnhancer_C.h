@@ -65,4 +65,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::DamageEnhancer
 
-using Grenade_DamageEnhancer_C = Game::WeaponsNTools::Grenades::DamageEnhancer::Grenade_DamageEnhancer_C;
+using Grenade_DamageEnhancer_C = ::Game::WeaponsNTools::Grenades::DamageEnhancer::Grenade_DamageEnhancer_C;

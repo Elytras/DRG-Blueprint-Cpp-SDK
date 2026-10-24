@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Game::Modding::Proxies
 
-using MOD_Proxy_SpawnEnemy_C = Game::Game::Modding::Proxies::MOD_Proxy_SpawnEnemy_C;
+using MOD_Proxy_SpawnEnemy_C = ::Game::Game::Modding::Proxies::MOD_Proxy_SpawnEnemy_C;

@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::LockOnBeam
 
-using BP_LockOnBeam_C = Game::WeaponsNTools::LockOnRifle::LockOnBeam::BP_LockOnBeam_C;
+using BP_LockOnBeam_C = ::Game::WeaponsNTools::LockOnRifle::LockOnBeam::BP_LockOnBeam_C;

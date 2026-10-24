@@ -33,7 +33,7 @@ class ENE_StabberVine_Tentacle_C : public AStabberVine
 {
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVine_Tentacle", "ENE_StabberVine_Tentacle_C");
-    using ENE_StabberVines_C = Game::Enemies::StabberVine::ENE_StabberVines_C;
+    using ENE_StabberVines_C = ::Game::Enemies::StabberVine::ENE_StabberVines_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UCapsuleComponent* LaserPointer;
     class UParticleSystemComponent* P_KillerVine_Death;
@@ -86,6 +86,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus HeadDamage_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* LaserPointer__UeScsNode = "f34863a852fbc94d83085a001346ffee";
         static constexpr const char* P_KillerVine_Death__UeScsNode = "bf4e1622d9e3fc42aeb7e61683461d17";
         static constexpr const char* outline__UeScsNode = "aad2154fa362a14180e9cd001273d1e4";
@@ -107,4 +108,4 @@ private:
 
 }}}   // namespace Game::Enemies::StabberVine
 
-using ENE_StabberVine_Tentacle_C = Game::Enemies::StabberVine::ENE_StabberVine_Tentacle_C;
+using ENE_StabberVine_Tentacle_C = ::Game::Enemies::StabberVine::ENE_StabberVine_Tentacle_C;

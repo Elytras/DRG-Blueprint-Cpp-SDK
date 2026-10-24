@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::Critters::FlyingCritterBase
 
-using AIC_FlyingCritterBase_C = Game::Critters::FlyingCritterBase::AIC_FlyingCritterBase_C;
+using AIC_FlyingCritterBase_C = ::Game::Critters::FlyingCritterBase::AIC_FlyingCritterBase_C;

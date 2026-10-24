@@ -33,4 +33,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using AIC_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::AIC_PatrolBot_C;
+using AIC_PatrolBot_C = ::Game::Enemies::RivalTech::PatrolBot::AIC_PatrolBot_C;

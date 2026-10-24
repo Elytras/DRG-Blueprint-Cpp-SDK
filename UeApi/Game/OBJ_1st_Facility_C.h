@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using OBJ_1st_Facility_C = Game::GameElements::Objectives::Facility::OBJ_1st_Facility_C;
+using OBJ_1st_Facility_C = ::Game::GameElements::Objectives::Facility::OBJ_1st_Facility_C;

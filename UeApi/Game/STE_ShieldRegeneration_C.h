@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using STE_ShieldRegeneration_C = Game::WeaponsNTools::ShieldGenerator::STE_ShieldRegeneration_C;
+using STE_ShieldRegeneration_C = ::Game::WeaponsNTools::ShieldGenerator::STE_ShieldRegeneration_C;

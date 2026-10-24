@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::BrokenDNA
 
-using BP_BrokenDNA_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::BrokenDNA::BP_BrokenDNA_Base_C;
+using BP_BrokenDNA_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::BrokenDNA::BP_BrokenDNA_Base_C;

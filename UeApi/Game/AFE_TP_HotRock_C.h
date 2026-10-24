@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects
 
-using AFE_TP_HotRock_C = Game::GameElements::PawnAffliction::TPEffects::AFE_TP_HotRock_C;
+using AFE_TP_HotRock_C = ::Game::GameElements::PawnAffliction::TPEffects::AFE_TP_HotRock_C;

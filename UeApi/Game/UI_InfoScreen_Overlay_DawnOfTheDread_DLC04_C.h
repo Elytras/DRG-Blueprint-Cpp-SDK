@@ -21,14 +21,14 @@ class UI_InfoScreen_Overlay_DawnOfTheDread_DLC04_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay_DawnOfTheDread_DLC04", "UI_InfoScreen_Overlay_DawnOfTheDread_DLC04_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
     UE_READONLY class UWidgetAnimation* Idle;
-    class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
-    class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C;
-    class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
+    class ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
+    class ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C;
+    class ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
     BlurBackground_C* BlurBackground;
     class UButton* Button_0;
     class UImage* Glow1;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_Overlay_DawnOfTheDread_DLC04_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_DawnOfTheDread_DLC04_C;
+using UI_InfoScreen_Overlay_DawnOfTheDread_DLC04_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_DawnOfTheDread_DLC04_C;

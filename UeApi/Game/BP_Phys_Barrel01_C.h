@@ -62,4 +62,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_Phys_Barrel01_C = Game::Art::Environments::SpaceRig::BP_Phys_Barrel01_C;
+using BP_Phys_Barrel01_C = ::Game::Art::Environments::SpaceRig::BP_Phys_Barrel01_C;

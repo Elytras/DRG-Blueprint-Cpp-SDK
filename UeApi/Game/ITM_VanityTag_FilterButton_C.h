@@ -23,10 +23,10 @@ class ITM_VanityTag_FilterButton_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/FilterSelector/ITM_VanityTag_FilterButton", "ITM_VanityTag_FilterButton_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_VanityTag_FilterMenu_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterMenu_C;
-    using ITM_VanityTag_ToolButton_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_ToolButton_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_VanityTag_FilterMenu_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterMenu_C;
+    using ITM_VanityTag_ToolButton_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_ToolButton_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     UE_READONLY class UWidgetAnimation* AnimClick;
@@ -75,4 +75,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector
 
-using ITM_VanityTag_FilterButton_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterButton_C;
+using ITM_VanityTag_FilterButton_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterButton_C;

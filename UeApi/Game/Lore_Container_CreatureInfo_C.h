@@ -26,12 +26,12 @@ class Lore_Container_CreatureInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_CreatureInfo", "Lore_Container_CreatureInfo_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using Lore_InfoBox_C = Game::UI::Menu_MinersManual::Lore_InfoBox_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using Lore_InfoBox_C = ::Game::UI::Menu_MinersManual::Lore_InfoBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C* Basic_BG_CutCorner_C;
-    class Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C* Basic_BG_CutCorner_C_0;
-    class Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C* Basic_BG_Window_C_0;
+    class ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C* Basic_BG_CutCorner_C;
+    class ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C* Basic_BG_CutCorner_C_0;
+    class ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C* Basic_BG_Window_C_0;
     Basic_Window_CutCorner_C* Basic_Window;
     class UHorizontalBox* HBox_Armor;
     class UHorizontalBox* HBox_Attack;
@@ -68,4 +68,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers
 
-using Lore_Container_CreatureInfo_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_CreatureInfo_C;
+using Lore_Container_CreatureInfo_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_CreatureInfo_C;

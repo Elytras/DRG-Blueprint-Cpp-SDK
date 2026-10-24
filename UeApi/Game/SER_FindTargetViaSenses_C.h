@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Services
 
-using SER_FindTargetViaSenses_C = Game::AI::Services::SER_FindTargetViaSenses_C;
+using SER_FindTargetViaSenses_C = ::Game::AI::Services::SER_FindTargetViaSenses_C;

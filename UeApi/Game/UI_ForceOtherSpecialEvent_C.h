@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::CheatConsole
 
-using UI_ForceOtherSpecialEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;
+using UI_ForceOtherSpecialEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;

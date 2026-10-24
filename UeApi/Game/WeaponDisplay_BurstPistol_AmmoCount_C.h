@@ -15,11 +15,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace BurstFirePistol {
 
-class WeaponDisplay_BurstPistol_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_BurstPistol_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BurstFirePistol/WeaponDisplay_BurstPistol_AmmoCount", "WeaponDisplay_BurstPistol_AmmoCount_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_BurstPistol_AmmoCount_C;
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
@@ -42,4 +42,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol
 
-using WeaponDisplay_BurstPistol_AmmoCount_C = Game::WeaponsNTools::BurstFirePistol::WeaponDisplay_BurstPistol_AmmoCount_C;
+using WeaponDisplay_BurstPistol_AmmoCount_C = ::Game::WeaponsNTools::BurstFirePistol::WeaponDisplay_BurstPistol_AmmoCount_C;

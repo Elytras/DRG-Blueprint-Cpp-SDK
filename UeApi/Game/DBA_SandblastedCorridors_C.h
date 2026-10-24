@@ -46,6 +46,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_RockFormations--r5C(0-5)_GEN_VARIABLE:DebrisCarved_35;/Script/FSD.DebrisCarved C_RockFormations03--15K(0-50)_1K(0-30)_GEN_VARIABLE:DebrisCarved_51;/Script/FSD.DebrisCarved DebrisData1_GEN_VARIABLE:DebrisCarved_743;/Script/FSD.DebrisCarved DebrisData_GEN_VARIABLE:DebrisCarved_282;/Script/FSD.DebrisMesh D_IslandRubble_GEN_VARIABLE:DebrisMesh_1758;/Script/FSD.DebrisMesh D_Rubble--r2C(0-1)_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Rubble-Sparce_GEN_VARIABLE:DebrisMesh_203;/Script/FSD.DebrisMesh D_Rubble_Dark--r60(0-2)_GEN_VARIABLE:DebrisMesh_23;/Script/FSD.DebrisMesh DebrisData2_GEN_VARIABLE:DebrisMesh_49;/Script/FSD.DebrisPositioning I_BombSpitter--15K(70-100)_1K(0-20)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_DeadTree--15K(0-40)_1K(10-40)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_ElectricPlantCave--15K(0-30)_5K(85-100)--DISABLED_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_ElectricPlantTunnels--15K(0-30)_5K(70-100)--DISABLED_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_GiantFossils_Rare--r50K(0-50)_15K(40-70)_5K(0-50)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_GlowTree--15K(0-50)_5C(30-40)--DISABLED_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Honeycomb--15K(30-60)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_RockIslandCarvers--15K(50-80)_5K(50-100)_GEN_VARIABLE:DebrisPositioning_7;/Script/FSD.DebrisPositioning I_SandArches--15K(0-50)_5K(0-30)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SandGeyser--b15K(30-100)_5K(50-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SpikeyPlant--15K(0-20)_5K(50-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SwarmerTunnels--b15K(0-30)_r2K(0-25)_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* I_GiantFossils_Rare__r50K_0_50__15K_40_70__5K_0_50___UeName = "I_GiantFossils_Rare--r50K(0-50)_15K(40-70)_5K(0-50)";
         static constexpr const char* I_GiantFossils_Rare__r50K_0_50__15K_40_70__5K_0_50___UeScsNode = "9e323e84f3b9a44a9bd3f1ff365b45d8";
         static constexpr const char* DebrisProbability__UeScsNode = "02c6d7c22652b44fb1cfa087d19697f5";
@@ -93,4 +94,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors
 
-using DBA_SandblastedCorridors_C = Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::DBA_SandblastedCorridors_C;
+using DBA_SandblastedCorridors_C = ::Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::DBA_SandblastedCorridors_C;

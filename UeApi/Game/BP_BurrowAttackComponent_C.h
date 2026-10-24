@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::Enemies::Attacks
 
-using BP_BurrowAttackComponent_C = Game::Enemies::Attacks::BP_BurrowAttackComponent_C;
+using BP_BurrowAttackComponent_C = ::Game::Enemies::Attacks::BP_BurrowAttackComponent_C;

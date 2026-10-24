@@ -38,4 +38,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using ABP_Spider_Boss_Twin_C = Game::Enemies::Spider::TankBoss::BossTwins::ABP_Spider_Boss_Twin_C;
+using ABP_Spider_Boss_Twin_C = ::Game::Enemies::Spider::TankBoss::BossTwins::ABP_Spider_Boss_Twin_C;

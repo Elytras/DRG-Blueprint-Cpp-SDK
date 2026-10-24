@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::Critters::Butterfly
 
-using ESI_Butterfly_C = Game::Critters::Butterfly::ESI_Butterfly_C;
+using ESI_Butterfly_C = ::Game::Critters::Butterfly::ESI_Butterfly_C;

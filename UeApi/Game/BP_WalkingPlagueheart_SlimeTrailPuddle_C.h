@@ -29,8 +29,8 @@ class BP_WalkingPlagueheart_SlimeTrailPuddle_C : public APlaguePuddle
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/SlimeTrail/BP_WalkingPlagueheart_SlimeTrailPuddle", "BP_WalkingPlagueheart_SlimeTrailPuddle_C");
-    using BP_PlagueWormPod_C = Game::Enemies::Plague::BP_PlagueWormPod_C;
-    using ENE_WalkingPlagueheart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;
+    using BP_PlagueWormPod_C = ::Game::Enemies::Plague::BP_PlagueWormPod_C;
+    using ENE_WalkingPlagueheart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* SphereTrigger2;
     class UTerrainDetectComponent* TerrainDetect2;
@@ -49,7 +49,7 @@ public:
     class UTerrainPlacementComponent* terrainPlacement;
     bool isFoamed;
     BP_PlagueWormPod_C* SpawnedWormpod;
-    ENE_WalkingPlagueheart_C* WalkingPlagueheartRef;
+    ENE_WalkingPlagueheart_C* walkingPlagueheartRef;
     int numberOfTerrainDetectorsClear;
     void ExecuteUbergraph_BP_WalkingPlagueheart_SlimeTrailPuddle(int EntryPoint);
     UE_MULTICAST void PlayStepOnCueAll(class APlayerCharacter* Player);
@@ -87,4 +87,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail
 
-using BP_WalkingPlagueheart_SlimeTrailPuddle_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
+using BP_WalkingPlagueheart_SlimeTrailPuddle_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;

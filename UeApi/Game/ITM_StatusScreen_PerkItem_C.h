@@ -21,8 +21,8 @@ class ITM_StatusScreen_PerkItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_StatusScreen_PerkItem", "ITM_StatusScreen_PerkItem_C");
-    using UI_PerkBackground_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
-    using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
+    using UI_PerkBackground_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
+    using UI_PerkIcon_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* ItemButton;
     class UBorder* SelectionBorder;
@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_StatusScreen_PerkItem_C = Game::UI::Menu_EscapeMenu::ITM_StatusScreen_PerkItem_C;
+using ITM_StatusScreen_PerkItem_C = ::Game::UI::Menu_EscapeMenu::ITM_StatusScreen_PerkItem_C;

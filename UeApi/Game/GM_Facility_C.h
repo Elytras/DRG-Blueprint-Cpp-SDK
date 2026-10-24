@@ -19,15 +19,15 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace Game {
 
-class GM_Facility_C : public Game::Game::BP_NetworkPlayGameMode_C
+class GM_Facility_C : public ::Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Facility", "GM_Facility_C");
-    using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
-    using BP_MainFacility_DataVault_C = Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
-    using EWC_Base_C = Game::Enemies::Waves::WaveControllers::EWC_Base_C;
-    using EWC_OverloadShieldGenerator_Facility_C = Game::Enemies::Waves::WaveControllers::EWC_OverloadShieldGenerator_Facility_C;
-    using OBJ_1st_Facility_C = Game::GameElements::Objectives::Facility::OBJ_1st_Facility_C;
+    using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    using BP_MainFacility_DataVault_C = ::Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
+    using EWC_Base_C = ::Game::Enemies::Waves::WaveControllers::EWC_Base_C;
+    using EWC_OverloadShieldGenerator_Facility_C = ::Game::Enemies::Waves::WaveControllers::EWC_OverloadShieldGenerator_Facility_C;
+    using OBJ_1st_Facility_C = ::Game::GameElements::Objectives::Facility::OBJ_1st_Facility_C;
     FPointerToUberGraphFrame UberGraphFrame_GM_Facility_C;
     OBJ_1st_Facility_C* Objective;
     BP_MainFacility_DataVault_C* mainFacility;
@@ -66,6 +66,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UeIchRecords = "EnemyWaveManager";
         static constexpr const char* UberGraphFrame_GM_Facility_C__UeName = "UberGraphFrame";
         static constexpr const char* Facility_Generator_Class__UeName = "Facility Generator Class";
     };
@@ -73,4 +74,4 @@ private:
 
 }}   // namespace Game::Game
 
-using GM_Facility_C = Game::Game::GM_Facility_C;
+using GM_Facility_C = ::Game::Game::GM_Facility_C;

@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Chilled_C = Game::UI::ScreenOverlays::ScreenOverlay_Chilled_C;
+using ScreenOverlay_Chilled_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Chilled_C;

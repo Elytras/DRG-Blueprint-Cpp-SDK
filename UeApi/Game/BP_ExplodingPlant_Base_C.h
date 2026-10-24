@@ -95,4 +95,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingPlant
 
-using BP_ExplodingPlant_Base_C = Game::LevelElements::RoomObjects::Hazards::ExplodingPlant::BP_ExplodingPlant_Base_C;
+using BP_ExplodingPlant_Base_C = ::Game::LevelElements::RoomObjects::Hazards::ExplodingPlant::BP_ExplodingPlant_Base_C;

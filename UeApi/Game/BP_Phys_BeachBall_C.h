@@ -73,4 +73,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty
 
-using BP_Phys_BeachBall_C = Game::Art::Environments::Holiday_BeachParty::BP_Phys_BeachBall_C;
+using BP_Phys_BeachBall_C = ::Game::Art::Environments::Holiday_BeachParty::BP_Phys_BeachBall_C;

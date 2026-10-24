@@ -21,11 +21,11 @@ class ITM_DeepDives_Start_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_Start", "ITM_DeepDives_Start_C");
-    using Basic_PasswordField_C = Game::UI::Art::WidgetParts::Basic_PasswordField_C;
-    using Basic_RadioButton_C = Game::UI::Art::WidgetParts::Basic_RadioButton_C;
-    using ITM_DeepDives_Launcher_C = Game::UI::Menu_DeepDives::ITM_DeepDives_Launcher_C;
-    using ITM_OnlineRestricted_C = Game::UI::System::ITM_OnlineRestricted_C;
-    using ITM_ServerList_Warning_C = Game::UI::Menu_ServerList::ITM_ServerList_Warning_C;
+    using Basic_PasswordField_C = ::Game::UI::Art::WidgetParts::Basic_PasswordField_C;
+    using Basic_RadioButton_C = ::Game::UI::Art::WidgetParts::Basic_RadioButton_C;
+    using ITM_DeepDives_Launcher_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_Launcher_C;
+    using ITM_OnlineRestricted_C = ::Game::UI::System::ITM_OnlineRestricted_C;
+    using ITM_ServerList_Warning_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Warning_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_DeepDives_Launcher_C* Hard_Launcher;
     ITM_OnlineRestricted_C* ITM_OnlineRestricted;
@@ -41,7 +41,7 @@ public:
     void BndEvt__ITM_DeepDives_Start_PasswordField_K2Node_ComponentBoundEvent_9_OnTextCommitted__DelegateSignature(FText Text, uint8 CommitMethod);
     void BndEvt__Hard_Launcher_K2Node_ComponentBoundEvent_8_OnRefresh__DelegateSignature(bool success);
     void RefreshTimeout(bool success);
-    void OnTimeout();
+    void OnTimeOut();
     void BndEvt__Normal_Launcher_K2Node_ComponentBoundEvent_7_OnRefresh__DelegateSignature(bool success);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
@@ -70,4 +70,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_Start_C = Game::UI::Menu_DeepDives::ITM_DeepDives_Start_C;
+using ITM_DeepDives_Start_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_Start_C;

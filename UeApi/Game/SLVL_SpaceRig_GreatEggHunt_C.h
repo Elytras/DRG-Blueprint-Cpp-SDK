@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_GreatEggHunt_C = Game::Maps::SpaceRig::SLVL_SpaceRig_GreatEggHunt_C;
+using SLVL_SpaceRig_GreatEggHunt_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_GreatEggHunt_C;

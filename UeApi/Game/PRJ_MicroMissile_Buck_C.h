@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher {
 
-class PRJ_MicroMissile_Buck_C : public Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
+class PRJ_MicroMissile_Buck_C : public ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Buck", "PRJ_MicroMissile_Buck_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using PRJ_MicroMissile_Buck_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Buck_C;
+using PRJ_MicroMissile_Buck_C = ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Buck_C;

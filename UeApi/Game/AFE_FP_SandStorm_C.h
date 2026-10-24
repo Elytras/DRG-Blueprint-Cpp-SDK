@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects
 
-using AFE_FP_SandStorm_C = Game::GameElements::PawnAffliction::FPEffects::AFE_FP_SandStorm_C;
+using AFE_FP_SandStorm_C = ::Game::GameElements::PawnAffliction::FPEffects::AFE_FP_SandStorm_C;

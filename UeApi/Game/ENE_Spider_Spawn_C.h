@@ -17,11 +17,11 @@ namespace Game { namespace Enemies { namespace EnemySpawner { class BP_EnemySpaw
 
 namespace Game { namespace Enemies { namespace Spider { namespace Swarmer { namespace Spawn {
 
-class ENE_Spider_Spawn_C : public Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C
+class ENE_Spider_Spawn_C : public ::Game::Enemies::Spider::Swarmer::ENE_Spider_Swarmer_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/Spawn/ENE_Spider_Spawn", "ENE_Spider_Spawn_C");
-    using BP_EnemySpawnerOwner_C = Game::Enemies::EnemySpawner::BP_EnemySpawnerOwner_C;
+    using BP_EnemySpawnerOwner_C = ::Game::Enemies::EnemySpawner::BP_EnemySpawnerOwner_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Spawn_C;
     BP_EnemySpawnerOwner_C* BP_EnemySpawnerOwner;
     float Spawn_Time_B1CBC18A4B11AF202D22269E86350761;
@@ -44,6 +44,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;PawnSensing;Sphere";
         static constexpr const char* UberGraphFrame_ENE_Spider_Spawn_C__UeName = "UberGraphFrame";
         static constexpr const char* BP_EnemySpawnerOwner__UeScsNode = "592aceac97e244428002ba429b7c0a00";
         static constexpr const char* Spawn_ENE_Spider_Spawn_C__UeName = "Spawn";
@@ -55,4 +56,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::Swarmer::Spawn
 
-using ENE_Spider_Spawn_C = Game::Enemies::Spider::Swarmer::Spawn::ENE_Spider_Spawn_C;
+using ENE_Spider_Spawn_C = ::Game::Enemies::Spider::Swarmer::Spawn::ENE_Spider_Spawn_C;

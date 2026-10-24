@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_KPI_Tab_C = Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C;
+using UI_KPI_Tab_C = ::Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C;

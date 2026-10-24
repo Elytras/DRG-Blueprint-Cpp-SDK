@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using BP_Mactera_Heavy_ProjectileAttack_C = Game::Enemies::FlyingBug::Shooter::BP_Mactera_Heavy_ProjectileAttack_C;
+using BP_Mactera_Heavy_ProjectileAttack_C = ::Game::Enemies::FlyingBug::Shooter::BP_Mactera_Heavy_ProjectileAttack_C;

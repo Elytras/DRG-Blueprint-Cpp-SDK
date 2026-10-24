@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::Regenerating
 
-using AFE_Regenerating_C = Game::GameElements::PawnAffliction::EnemyEffects::Regenerating::AFE_Regenerating_C;
+using AFE_Regenerating_C = ::Game::GameElements::PawnAffliction::EnemyEffects::Regenerating::AFE_Regenerating_C;

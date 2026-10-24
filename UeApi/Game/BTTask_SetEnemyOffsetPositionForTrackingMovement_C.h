@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using BTTask_SetEnemyOffsetPositionForTrackingMovement_C = Game::WeaponsNTools::Grenades::FriendlyShredders::BTTask_SetEnemyOffsetPositionForTrackingMovement_C;
+using BTTask_SetEnemyOffsetPositionForTrackingMovement_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::BTTask_SetEnemyOffsetPositionForTrackingMovement_C;

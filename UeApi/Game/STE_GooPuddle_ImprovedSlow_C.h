@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using STE_GooPuddle_ImprovedSlow_C = Game::WeaponsNTools::GooCannon::STE_GooPuddle_ImprovedSlow_C;
+using STE_GooPuddle_ImprovedSlow_C = ::Game::WeaponsNTools::GooCannon::STE_GooPuddle_ImprovedSlow_C;

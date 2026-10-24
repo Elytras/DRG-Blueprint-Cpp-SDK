@@ -17,7 +17,7 @@ class UI_HackingTool_Chip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/UI_HackingTool_Chip", "UI_HackingTool_Chip_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USizeBox* Chip_SizeBox;
     Basic_Image_C* Img_Bg;
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI
 
-using UI_HackingTool_Chip_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Chip_C;
+using UI_HackingTool_Chip_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Chip_C;

@@ -27,7 +27,7 @@ public:
     class UTextBlock* RadiusLabel_2;
     class USlider* RadiusSlider;
     void ExecuteUbergraph_MovieMode_DronePointLight(int EntryPoint);
-    void ReBuild();
+    void Rebuild();
     UE_COSMETIC void Construct();
     void BndEvt__Button_291_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__RadiusSlider_K2Node_ComponentBoundEvent_2_OnFloatValueChangedEvent__DelegateSignature(float Value);
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::GameElements::MovieMode::UI
 
-using MovieMode_DronePointLight_C = Game::GameElements::MovieMode::UI::MovieMode_DronePointLight_C;
+using MovieMode_DronePointLight_C = ::Game::GameElements::MovieMode::UI::MovieMode_DronePointLight_C;

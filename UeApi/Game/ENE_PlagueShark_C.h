@@ -62,6 +62,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FakePhysGrabberComponent RestrictedGrabberComponent;/Script/FSD.InDangerComponent Danger;/Script/Engine.ParticleSystemComponent AirTrailParticles;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PushStatusEffectDamageBonus BumpDamage:PushStatusEffectDamageBonus_0;/Script/FSD.PushStatusEffectDamageBonus Damage:PushStatusEffectDamageBonus_0;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/Engine.SphereComponent NearTargetSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* Trail__UeScsNode = "f91e87d19dd8464b8d1c90682d7bd18e";
         static constexpr const char* ProjectileAttack__UeScsNode = "964cc26405ff8342aa236cfdbd38ee05";
         static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "0952ac8e91cc7043a5fe69de10a7392e";
@@ -79,4 +80,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShark
 
-using ENE_PlagueShark_C = Game::Enemies::Plague::PlagueShark::ENE_PlagueShark_C;
+using ENE_PlagueShark_C = ::Game::Enemies::Plague::PlagueShark::ENE_PlagueShark_C;

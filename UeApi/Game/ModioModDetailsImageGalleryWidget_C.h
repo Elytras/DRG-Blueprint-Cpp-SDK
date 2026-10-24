@@ -27,4 +27,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::ModDetails
 
-using ModioModDetailsImageGalleryWidget_C = Modio::UI::Browser::Views::ModDetails::ModioModDetailsImageGalleryWidget_C;
+using ModioModDetailsImageGalleryWidget_C = ::Modio::UI::Browser::Views::ModDetails::ModioModDetailsImageGalleryWidget_C;

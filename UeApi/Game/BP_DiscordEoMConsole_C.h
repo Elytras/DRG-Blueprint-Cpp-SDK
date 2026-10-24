@@ -19,7 +19,7 @@ class BP_DiscordEoMConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/BP_DiscordEoMConsole", "BP_DiscordEoMConsole_C");
-    using Console_DiscordEoMScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordEoMScreen_C;
+    using Console_DiscordEoMScreen_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordEoMScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Cube1;
     class UWidgetComponent* PSA;
@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using BP_DiscordEoMConsole_C = Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordEoMConsole_C;
+using BP_DiscordEoMConsole_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordEoMConsole_C;

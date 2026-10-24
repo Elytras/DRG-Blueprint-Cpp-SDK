@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Autocannon {
 
-class Mag_Autocannon_C : public Game::WeaponsNTools::MAG_BaseClass_C
+class Mag_Autocannon_C : public ::Game::WeaponsNTools::MAG_BaseClass_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/Mag_Autocannon", "Mag_Autocannon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Box;Mesh";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using Mag_Autocannon_C = Game::WeaponsNTools::Autocannon::Mag_Autocannon_C;
+using Mag_Autocannon_C = ::Game::WeaponsNTools::Autocannon::Mag_Autocannon_C;

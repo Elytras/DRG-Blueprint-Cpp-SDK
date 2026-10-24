@@ -91,6 +91,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus Pull_Inside_GEN_VARIABLE:KnockbackDamageBonus_0;/Script/FSD.KnockbackDamageBonus Pull_Inside_Small_GEN_VARIABLE:KnockbackDamageBonus_0;/Script/FSD.KnockbackDamageBonus PushAway_InAir_GEN_VARIABLE:KnockbackDamageBonus_0;/Script/FSD.KnockbackDamageBonus PushAway_OnGround_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* Pull_Inside_Small__UeScsNode = "4f6c3bef4a307946aff08ad0093fc803";
         static constexpr const char* PathfinderCollision__UeScsNode = "9e059823f4e8d34a8195984ffa0fa5f5";
         static constexpr const char* PushAway_InAir__UeScsNode = "c0f5adb26e55a4458950955ec70380e8";
@@ -120,4 +121,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_CrystalTrap_C = Game::GameElements::Objectives::Escort::BP_CrystalTrap_C;
+using BP_CrystalTrap_C = ::Game::GameElements::Objectives::Escort::BP_CrystalTrap_C;

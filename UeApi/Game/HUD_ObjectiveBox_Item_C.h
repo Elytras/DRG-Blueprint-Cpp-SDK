@@ -18,7 +18,7 @@ class HUD_ObjectiveBox_Item_C : public UObjectiveWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Objectives/HUD_ObjectiveBox_Item", "HUD_ObjectiveBox_Item_C");
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Checkbox_Border;
     class UImage* CheckMark;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Objectives
 
-using HUD_ObjectiveBox_Item_C = Game::UI::MainOnscreenHUD::Objectives::HUD_ObjectiveBox_Item_C;
+using HUD_ObjectiveBox_Item_C = ::Game::UI::MainOnscreenHUD::Objectives::HUD_ObjectiveBox_Item_C;

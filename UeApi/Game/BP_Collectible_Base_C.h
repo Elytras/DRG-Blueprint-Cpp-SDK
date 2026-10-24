@@ -52,4 +52,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Resources::Collectibles
 
-using BP_Collectible_Base_C = Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C;
+using BP_Collectible_Base_C = ::Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C;

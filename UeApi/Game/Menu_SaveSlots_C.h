@@ -21,13 +21,13 @@ class Menu_SaveSlots_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/Menu_SaveSlots", "Menu_SaveSlots_C");
-    using ITM_CreateNewSaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_CreateNewSaveSlot_Entry_C;
-    using ITM_CurrentSaveSlot_RankOrLevelReadout_C = Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_RankOrLevelReadout_C;
-    using ITM_CurrentSaveSlot_Resources_C = Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_Resources_C;
-    using ITM_SaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
-    using ITM_SaveSlot_Entry_Header_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
-    using ITM_TopBar_CharacterIcon_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using ITM_CreateNewSaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_CreateNewSaveSlot_Entry_C;
+    using ITM_CurrentSaveSlot_RankOrLevelReadout_C = ::Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_RankOrLevelReadout_C;
+    using ITM_CurrentSaveSlot_Resources_C = ::Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_Resources_C;
+    using ITM_SaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
+    using ITM_SaveSlot_Entry_Header_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
+    using ITM_TopBar_CharacterIcon_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* CharLevelBG;
     ITM_TopBar_ResourceCounter_C* CreditsCounter;
@@ -75,4 +75,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using Menu_SaveSlots_C = Game::UI::Menu_SaveSlots::Menu_SaveSlots_C;
+using Menu_SaveSlots_C = ::Game::UI::Menu_SaveSlots::Menu_SaveSlots_C;

@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_ZipLineState_C = Game::Character::States::BP_ZipLineState_C;
+using BP_ZipLineState_C = ::Game::Character::States::BP_ZipLineState_C;

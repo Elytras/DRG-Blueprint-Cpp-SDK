@@ -24,4 +24,4 @@ public:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TipMachine
 
-using ABP_TipMachine_C = Game::Art::Environments::SpaceRig::TipMachine::ABP_TipMachine_C;
+using ABP_TipMachine_C = ::Game::Art::Environments::SpaceRig::TipMachine::ABP_TipMachine_C;

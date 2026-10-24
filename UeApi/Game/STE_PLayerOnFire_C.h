@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Temperature
 
-using STE_PLayerOnFire_C = Game::GameElements::Temperature::STE_PLayerOnFire_C;
+using STE_PLayerOnFire_C = ::Game::GameElements::Temperature::STE_PLayerOnFire_C;

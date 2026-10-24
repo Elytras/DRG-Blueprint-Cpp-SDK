@@ -30,8 +30,8 @@ class LoreScreen_Template_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_Template", "LoreScreen_Template_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Lore_Content_Text_Header_C = Game::UI::Menu_MinersManual::Lore_Content_Text_Header_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Lore_Content_Text_Header_C = ::Game::UI::Menu_MinersManual::Lore_Content_Text_Header_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* MovieIntro;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -61,4 +61,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;

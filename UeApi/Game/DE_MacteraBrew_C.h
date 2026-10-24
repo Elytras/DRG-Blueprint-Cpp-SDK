@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_MacteraBrew_C = Game::GameElements::Bar::DrinkEffects::DE_MacteraBrew_C;
+using DE_MacteraBrew_C = ::Game::GameElements::Bar::DrinkEffects::DE_MacteraBrew_C;

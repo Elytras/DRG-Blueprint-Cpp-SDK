@@ -43,7 +43,7 @@ class BP_DropPod_Base_C : public ADropPod
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Base", "BP_DropPod_Base_C");
-    using BP_Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::BP_Widget_DropPod_AltitudeMeter_C;
+    using BP_Widget_DropPod_AltitudeMeter_C = ::Game::Art::DropPod::Widgets::BP_Widget_DropPod_AltitudeMeter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_SeatMonitorRight1;
     class UWidgetComponent* Widget_SeatMonitorLeft1;
@@ -254,6 +254,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Game/Art/Environments/SpaceRig/SpringDwarf/BP_TruckerBalls.BP_TruckerBalls_C BP_TruckerBalls_GEN_VARIABLE:BP_TruckerBalls_GEN_VARIABLE_BP_TruckerBalls_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_AltitudeMeter.BP_Widget_DropPod_AltitudeMeter_C Widget_Countdown1_GEN_VARIABLE:Widget_Countdown1_GEN_VARIABLE_BP_Widget_DropPod_AltitudeMeter_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_AltitudeMeter.BP_Widget_DropPod_AltitudeMeter_C Widget_Countdown2_GEN_VARIABLE:Widget_Countdown2_GEN_VARIABLE_BP_Widget_DropPod_AltitudeMeter_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_BiomeRadar.BP_Widget_DropPod_BiomeRadar_C Widget_ResourceScreen01_GEN_VARIABLE:Widget_ResourceScreen01_GEN_VARIABLE_BP_Widget_DropPod_BiomeRadar_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_BiomeRadar.BP_Widget_DropPod_BiomeRadar_C Widget_ResourceScreen02_GEN_VARIABLE:Widget_ResourceScreen02_GEN_VARIABLE_BP_Widget_DropPod_BiomeRadar_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_Complexity.BP_Widget_DropPod_Complexity_C Widget_CaveData1_GEN_VARIABLE:Widget_CaveData1_GEN_VARIABLE_BP_Widget_DropPod_Complexity_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel01_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel02_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode01_GEN_VARIABLE:Widget_RandomCode01_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode02_GEN_VARIABLE:Widget_RandomCode02_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode03_GEN_VARIABLE:Widget_RandomCode03_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode04_GEN_VARIABLE:Widget_RandomCode04_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode05_GEN_VARIABLE:Widget_RandomCode05_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode06_GEN_VARIABLE:Widget_RandomCode06_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_GarbageGen.BP_Widget_DropPod_GarbageGen_C Widget_RandomCode07_GEN_VARIABLE:Widget_RandomCode07_GEN_VARIABLE_BP_Widget_DropPod_GarbageGen_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_MissionType.BP_Widget_DropPod_MissionType_C Widget_MissionData1_GEN_VARIABLE:Widget_MissionData1_GEN_VARIABLE_BP_Widget_DropPod_MissionType_C_CAT";
         static constexpr const char* Widget_SeatMonitorRight1__UeScsNode = "1e7082c203e41843a891e4116bd853d5";
         static constexpr const char* Widget_SeatMonitorLeft1__UeScsNode = "c88dc325f2b23341971da05df5e5f6ff";
         static constexpr const char* Widget_RandomCode07__UeScsNode = "09de9c68a0fe434097b48b9978cd999a";
@@ -381,4 +382,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_Base_C = Game::LevelElements::Droppod::BP_DropPod_Base_C;
+using BP_DropPod_Base_C = ::Game::LevelElements::Droppod::BP_DropPod_Base_C;

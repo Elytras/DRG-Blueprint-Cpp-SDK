@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_DangerLevel_TextString_C = Game::Art::DropPod::Widgets::Widget_DropPod_DangerLevel_TextString_C;
+using Widget_DropPod_DangerLevel_TextString_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_DangerLevel_TextString_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::LineCutter::Overclocks::OC_BonusesAndPenalties
 
-using STE_Heat_Plasma_Linecutter_C = Game::WeaponsNTools::LineCutter::Overclocks::OC_BonusesAndPenalties::STE_Heat_Plasma_Linecutter_C;
+using STE_Heat_Plasma_Linecutter_C = ::Game::WeaponsNTools::LineCutter::Overclocks::OC_BonusesAndPenalties::STE_Heat_Plasma_Linecutter_C;

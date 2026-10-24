@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using STE_WoodlouseColdResistance_C = Game::Enemies::Woodlouse::STE_WoodlouseColdResistance_C;
+using STE_WoodlouseColdResistance_C = ::Game::Enemies::Woodlouse::STE_WoodlouseColdResistance_C;

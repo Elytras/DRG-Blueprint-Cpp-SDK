@@ -63,4 +63,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::AssaultRifle
 
-using WPN_AssaultRifle_C = Game::WeaponsNTools::AssaultRifle::WPN_AssaultRifle_C;
+using WPN_AssaultRifle_C = ::Game::WeaponsNTools::AssaultRifle::WPN_AssaultRifle_C;

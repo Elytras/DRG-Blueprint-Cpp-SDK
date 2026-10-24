@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::Enemies::StabberVine
 
-using SK_StabberVine_Stalk_FlatHierarchy_Skeleton_AnimBlueprint_C = Game::Enemies::StabberVine::SK_StabberVine_Stalk_FlatHierarchy_Skeleton_AnimBlueprint_C;
+using SK_StabberVine_Stalk_FlatHierarchy_Skeleton_AnimBlueprint_C = ::Game::Enemies::StabberVine::SK_StabberVine_Stalk_FlatHierarchy_Skeleton_AnimBlueprint_C;

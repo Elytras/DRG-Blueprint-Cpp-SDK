@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using STE_InfernoCharge_Slow_C = Game::WeaponsNTools::FlameThrower::STE_InfernoCharge_Slow_C;
+using STE_InfernoCharge_Slow_C = ::Game::WeaponsNTools::FlameThrower::STE_InfernoCharge_Slow_C;

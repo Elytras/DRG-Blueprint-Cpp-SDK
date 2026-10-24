@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_CrossHair_PickAxe_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_PickAxe_C;
+using HUD_CrossHair_PickAxe_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_PickAxe_C;

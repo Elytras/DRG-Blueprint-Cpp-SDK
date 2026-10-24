@@ -22,7 +22,7 @@ class Basic_Menu_SmallWindowWithHeader_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_Menu_SmallWindowWithHeader", "Basic_Menu_SmallWindowWithHeader_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_0;
@@ -65,4 +65,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Menu_SmallWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_C;
+using Basic_Menu_SmallWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_C;

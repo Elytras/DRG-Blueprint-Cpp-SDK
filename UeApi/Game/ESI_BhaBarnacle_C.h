@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::Critters::BhaBarnacle
 
-using ESI_BhaBarnacle_C = Game::Critters::BhaBarnacle::ESI_BhaBarnacle_C;
+using ESI_BhaBarnacle_C = ::Game::Critters::BhaBarnacle::ESI_BhaBarnacle_C;

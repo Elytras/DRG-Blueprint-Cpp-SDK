@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace PlagueMeteor {
 
-class BP_RockCrackerPod_Beacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_RockCrackerPod_Beacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_RockCrackerPod_Beacon", "BP_RockCrackerPod_Beacon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
+    };
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_RockCrackerPod_Beacon_C = Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_Beacon_C;
+using BP_RockCrackerPod_Beacon_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_Beacon_C;

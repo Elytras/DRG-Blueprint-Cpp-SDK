@@ -26,16 +26,16 @@ class _MENU_Wardrobe_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/_MENU_Wardrobe", "_MENU_Wardrobe_C");
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
-    using ITM_Wardrobe_ClassSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
-    using ITM_Wardrobe_ItemSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
-    using ITM_Wardrobe_ItemSlot_ArmorVanity_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_ArmorVanity_C;
-    using ITM_Wardrobe_ItemSlot_Base_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;
-    using ITM_Wardrobe_ItemSlot_Vanity_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Vanity_C;
-    using ITM_Wardrobe_ItemSlot_VictoryMoves_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_VictoryMoves_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_RandomizeLoadoutWithUndo_C = Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+    using ITM_Wardrobe_ClassSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
+    using ITM_Wardrobe_ItemSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
+    using ITM_Wardrobe_ItemSlot_ArmorVanity_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_ArmorVanity_C;
+    using ITM_Wardrobe_ItemSlot_Base_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;
+    using ITM_Wardrobe_ItemSlot_Vanity_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Vanity_C;
+    using ITM_Wardrobe_ItemSlot_VictoryMoves_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_VictoryMoves_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_RandomizeLoadoutWithUndo_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_Wardrobe_ClassSelector_C* ClassSelector;
     ITM_Wardrobe_ItemSelector_C* ItemSelector_Left;
@@ -91,4 +91,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using _MENU_Wardrobe_C = Game::UI::Menu_Wardrobe::_MENU_Wardrobe_C;
+using _MENU_Wardrobe_C = ::Game::UI::Menu_Wardrobe::_MENU_Wardrobe_C;

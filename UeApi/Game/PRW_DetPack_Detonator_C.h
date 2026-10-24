@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DetPack
 
-using PRW_DetPack_Detonator_C = Game::WeaponsNTools::DetPack::PRW_DetPack_Detonator_C;
+using PRW_DetPack_Detonator_C = ::Game::WeaponsNTools::DetPack::PRW_DetPack_Detonator_C;

@@ -14,7 +14,7 @@ class UTextBlock;
 
 namespace Game { namespace WeaponsNTools { namespace Revolver {
 
-class WeaponDisplay_Revolver_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Revolver_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Revolver/WeaponDisplay_Revolver_AmmoCount", "WeaponDisplay_Revolver_AmmoCount_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Revolver
 
-using WeaponDisplay_Revolver_AmmoCount_C = Game::WeaponsNTools::Revolver::WeaponDisplay_Revolver_AmmoCount_C;
+using WeaponDisplay_Revolver_AmmoCount_C = ::Game::WeaponsNTools::Revolver::WeaponDisplay_Revolver_AmmoCount_C;

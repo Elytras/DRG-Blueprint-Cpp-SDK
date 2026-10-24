@@ -44,4 +44,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using OBJ_1st_Escort_C = Game::GameElements::Objectives::Escort::OBJ_1st_Escort_C;
+using OBJ_1st_Escort_C = ::Game::GameElements::Objectives::Escort::OBJ_1st_Escort_C;

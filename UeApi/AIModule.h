@@ -654,6 +654,7 @@ struct FActorPerceptionBlueprintInfo
 struct FActorPerceptionUpdateInfo
 {
     int TargetId;
+    TWeakObjectPtr<class AActor> Target;
     FAIStimulus Stimulus;
 };
 

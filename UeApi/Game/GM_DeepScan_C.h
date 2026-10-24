@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Game {
 
-class GM_DeepScan_C : public Game::Game::BP_NetworkPlayGameMode_C
+class GM_DeepScan_C : public ::Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_DeepScan", "GM_DeepScan_C");
@@ -23,10 +23,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UeIchRecords = "EnemyWaveManager";
         static constexpr const char* UberGraphFrame_GM_DeepScan_C__UeName = "UberGraphFrame";
     };
 };
 
 }}   // namespace Game::Game
 
-using GM_DeepScan_C = Game::Game::GM_DeepScan_C;
+using GM_DeepScan_C = ::Game::Game::GM_DeepScan_C;

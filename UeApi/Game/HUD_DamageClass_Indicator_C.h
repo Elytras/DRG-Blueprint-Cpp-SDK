@@ -22,15 +22,15 @@ class HUD_DamageClass_Indicator_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_DamageClass_Indicator", "HUD_DamageClass_Indicator_C");
-    using HUD_DamageClass_Item_C = Game::UI::MainOnscreenHUD::HUD_DamageClass_Item_C;
-    using HUD_PlayerInfection_C = Game::UI::MainOnscreenHUD::HUD_PlayerInfection_C;
-    using HUD_PlayerTemperature_C = Game::UI::MainOnscreenHUD::HUD_PlayerTemperature_C;
+    using HUD_DamageClass_Item_C = ::Game::UI::MainOnscreenHUD::HUD_DamageClass_Item_C;
+    using HUD_PlayerInfection_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerInfection_C;
+    using HUD_PlayerTemperature_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerTemperature_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* AfflictionBox_Left;
     class UHorizontalBox* AfflictionBox_Right;
     HUD_PlayerInfection_C* HUD_PlayerInfection;
     HUD_PlayerTemperature_C* HUD_PlayerTemperature;
-    class USpacer* Spacer_left;
+    class USpacer* Spacer_Left;
     class USpacer* Spacer_right;
     bool IsOn;
     TMap<class UPawnAffliction*, HUD_DamageClass_Item_C*> Indicators;
@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_DamageClass_Indicator_C = Game::UI::MainOnscreenHUD::HUD_DamageClass_Indicator_C;
+using HUD_DamageClass_Indicator_C = ::Game::UI::MainOnscreenHUD::HUD_DamageClass_Indicator_C;

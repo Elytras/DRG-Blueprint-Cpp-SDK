@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_Bogs_C = Game::Landscape::ReactiveTerrain::RT_Bogs_C;
+using RT_Bogs_C = ::Game::Landscape::ReactiveTerrain::RT_Bogs_C;

@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol
 
-using WPN_BurstPistol_C = Game::WeaponsNTools::BurstFirePistol::WPN_BurstPistol_C;
+using WPN_BurstPistol_C = ::Game::WeaponsNTools::BurstFirePistol::WPN_BurstPistol_C;

@@ -23,9 +23,9 @@ class UI_Bar_OrderMenu_Preview_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_OrderMenu_Preview", "UI_Bar_OrderMenu_Preview_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_Bar_DrinkCost_C = ::Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Open;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -62,4 +62,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_OrderMenu_Preview_C = Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Preview_C;
+using UI_Bar_OrderMenu_Preview_C = ::Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Preview_C;

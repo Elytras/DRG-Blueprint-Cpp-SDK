@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using BML_InputHandling_C = Game::UI::Menu_EscapeMenu::BML_InputHandling_C;
+using BML_InputHandling_C = ::Game::UI::Menu_EscapeMenu::BML_InputHandling_C;

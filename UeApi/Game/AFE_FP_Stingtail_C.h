@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects
 
-using AFE_FP_Stingtail_C = Game::GameElements::PawnAffliction::FPEffects::AFE_FP_Stingtail_C;
+using AFE_FP_Stingtail_C = ::Game::GameElements::PawnAffliction::FPEffects::AFE_FP_Stingtail_C;

@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_SeasonEventBonus_Base_C = Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C;
+using WND_SeasonEventBonus_Base_C = ::Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C;

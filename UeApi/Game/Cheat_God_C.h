@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_God_C = Game::UI::Menu_Cheats::Cheat_God_C;
+using Cheat_God_C = ::Game::UI::Menu_Cheats::Cheat_God_C;

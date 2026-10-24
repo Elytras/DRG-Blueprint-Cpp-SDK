@@ -22,7 +22,7 @@ class ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoal_TotalProgress_ConsoleScreenV2", "ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UCheckBox* CheckBox_Goal_0;
     class UCheckBox* CheckBox_Goal_1;
@@ -95,4 +95,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C;
+using ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C;

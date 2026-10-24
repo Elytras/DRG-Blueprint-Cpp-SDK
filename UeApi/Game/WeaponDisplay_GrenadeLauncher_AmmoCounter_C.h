@@ -15,11 +15,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace GrenadeLauncher {
 
-class WeaponDisplay_GrenadeLauncher_AmmoCounter_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_GrenadeLauncher_AmmoCounter_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/WeaponDisplay_GrenadeLauncher_AmmoCounter", "WeaponDisplay_GrenadeLauncher_AmmoCounter_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_GrenadeLauncher_AmmoCounter_C;
     UE_READONLY class UWidgetAnimation* AmmoCritical;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
@@ -42,4 +42,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher
 
-using WeaponDisplay_GrenadeLauncher_AmmoCounter_C = Game::WeaponsNTools::GrenadeLauncher::WeaponDisplay_GrenadeLauncher_AmmoCounter_C;
+using WeaponDisplay_GrenadeLauncher_AmmoCounter_C = ::Game::WeaponsNTools::GrenadeLauncher::WeaponDisplay_GrenadeLauncher_AmmoCounter_C;

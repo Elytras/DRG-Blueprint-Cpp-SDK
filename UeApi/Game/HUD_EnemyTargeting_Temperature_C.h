@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar
 
-using HUD_EnemyTargeting_Temperature_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;
+using HUD_EnemyTargeting_Temperature_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;

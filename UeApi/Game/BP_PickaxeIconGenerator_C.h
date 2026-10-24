@@ -72,4 +72,4 @@ private:
 
 }}}   // namespace Game::Character::Vanity2
 
-using BP_PickaxeIconGenerator_C = Game::Character::Vanity2::BP_PickaxeIconGenerator_C;
+using BP_PickaxeIconGenerator_C = ::Game::Character::Vanity2::BP_PickaxeIconGenerator_C;

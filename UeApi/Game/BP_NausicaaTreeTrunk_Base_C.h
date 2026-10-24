@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::NausicaaTreeTrunks
 
-using BP_NausicaaTreeTrunk_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::NausicaaTreeTrunks::BP_NausicaaTreeTrunk_Base_C;
+using BP_NausicaaTreeTrunk_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::NausicaaTreeTrunks::BP_NausicaaTreeTrunk_Base_C;

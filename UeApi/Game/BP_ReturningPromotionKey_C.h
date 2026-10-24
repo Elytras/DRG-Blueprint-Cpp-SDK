@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::PromotionKey
 
-using BP_ReturningPromotionKey_C = Game::GameElements::GameEvents::RewardDispenser::PromotionKey::BP_ReturningPromotionKey_C;
+using BP_ReturningPromotionKey_C = ::Game::GameElements::GameEvents::RewardDispenser::PromotionKey::BP_ReturningPromotionKey_C;

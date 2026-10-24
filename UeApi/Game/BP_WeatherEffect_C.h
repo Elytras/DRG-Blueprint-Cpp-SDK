@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::Landscape::Biomes
 
-using BP_WeatherEffect_C = Game::Landscape::Biomes::BP_WeatherEffect_C;
+using BP_WeatherEffect_C = ::Game::Landscape::Biomes::BP_WeatherEffect_C;

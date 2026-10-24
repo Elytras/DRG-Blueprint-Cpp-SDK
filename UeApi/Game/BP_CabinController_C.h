@@ -22,9 +22,9 @@ class BP_CabinController_C : public AActor
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_CabinController", "BP_CabinController_C");
-    using BP_CabinOwnerSign_C = Game::Art::Environments::SpaceRig::BP_CabinOwnerSign_C;
-    using BP_DeathStats_C = Game::UI::HUD_SpaceRig::Infirmary::BP_DeathStats_C;
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_CabinOwnerSign_C = ::Game::Art::Environments::SpaceRig::BP_CabinOwnerSign_C;
+    using BP_DeathStats_C = ::Game::UI::HUD_SpaceRig::Infirmary::BP_DeathStats_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     BP_CabinOwnerSign_C* CabinSign;
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_CabinController_C = Game::Game::SpaceRig::BP_CabinController_C;
+using BP_CabinController_C = ::Game::Game::SpaceRig::BP_CabinController_C;

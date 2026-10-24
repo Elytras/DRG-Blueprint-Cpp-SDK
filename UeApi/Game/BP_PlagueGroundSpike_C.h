@@ -48,6 +48,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* TEMP_WalkingPlagueHeart_SpikeBurst_Cue__UeScsNode = "4897b1ebf8c4014cbf1304cca083b9c6";
         static constexpr const char* PointLight__UeScsNode = "dcc0b89dbb5564488aaf6bae5fa94b84";
         static constexpr const char* Arrow__UeScsNode = "9fda1776ed4aac49a1a43627c5cffe91";
@@ -62,4 +63,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using BP_PlagueGroundSpike_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueGroundSpike_C;
+using BP_PlagueGroundSpike_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueGroundSpike_C;

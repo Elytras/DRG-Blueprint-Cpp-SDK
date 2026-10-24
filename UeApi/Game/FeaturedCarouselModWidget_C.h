@@ -20,4 +20,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::CategoryBrowser
 
-using FeaturedCarouselModWidget_C = Modio::UI::Browser::Views::CategoryBrowser::FeaturedCarouselModWidget_C;
+using FeaturedCarouselModWidget_C = ::Modio::UI::Browser::Views::CategoryBrowser::FeaturedCarouselModWidget_C;

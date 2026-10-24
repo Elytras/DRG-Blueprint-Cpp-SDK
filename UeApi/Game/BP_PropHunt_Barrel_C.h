@@ -29,4 +29,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props
 
-using BP_PropHunt_Barrel_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::BP_PropHunt_Barrel_C;
+using BP_PropHunt_Barrel_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::BP_PropHunt_Barrel_C;

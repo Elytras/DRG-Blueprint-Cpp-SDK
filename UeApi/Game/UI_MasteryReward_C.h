@@ -22,7 +22,7 @@ class UI_MasteryReward_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/UI_MasteryReward", "UI_MasteryReward_C");
-    using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
+    using ITM_SkinIcon_C = ::Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ICON_GearFiller;
     class UImage* ICON_GearOutline;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using UI_MasteryReward_C = Game::UI::Menu_Loadout::UI_MasteryReward_C;
+using UI_MasteryReward_C = ::Game::UI::Menu_Loadout::UI_MasteryReward_C;

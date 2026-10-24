@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using STE_Magma_HPC_C = Game::WeaponsNTools::HeavyParticleCannon::STE_Magma_HPC_C;
+using STE_Magma_HPC_C = ::Game::WeaponsNTools::HeavyParticleCannon::STE_Magma_HPC_C;

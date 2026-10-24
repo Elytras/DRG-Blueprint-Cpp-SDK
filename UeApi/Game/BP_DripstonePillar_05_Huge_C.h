@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace BoneYards { namespace Carvers {
 
-class BP_DripstonePillar_05_Huge_C : public Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_BoneyardLevelCarversBase_C
+class BP_DripstonePillar_05_Huge_C : public ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_BoneyardLevelCarversBase_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_DripstonePillar_05_Huge", "BP_DripstonePillar_05_Huge_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;ICH-DefaultSceneRoot;TerrainPlacement";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_DripstonePillar_05_Huge_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_DripstonePillar_05_Huge_C;
+using BP_DripstonePillar_05_Huge_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_DripstonePillar_05_Huge_C;

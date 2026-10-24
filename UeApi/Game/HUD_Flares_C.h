@@ -19,8 +19,8 @@ class HUD_Flares_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Flares", "HUD_Flares_C");
-    using HUD_FlareIcon_C = Game::UI::MainOnscreenHUD::HUD_FlareIcon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using HUD_FlareIcon_C = ::Game::UI::MainOnscreenHUD::HUD_FlareIcon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* FlareBox;
     UI_AdvancedLabel_C* InputLabel;
@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Flares_C = Game::UI::MainOnscreenHUD::HUD_Flares_C;
+using HUD_Flares_C = ::Game::UI::MainOnscreenHUD::HUD_Flares_C;

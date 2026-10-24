@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects
 
-using AFE_Electrocuted_C = Game::GameElements::PawnAffliction::TPEffects::AFE_Electrocuted_C;
+using AFE_Electrocuted_C = ::Game::GameElements::PawnAffliction::TPEffects::AFE_Electrocuted_C;

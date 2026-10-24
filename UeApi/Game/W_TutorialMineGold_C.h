@@ -12,7 +12,7 @@ class UCappedResource;
 
 namespace Game { namespace UI { namespace Tutorial {
 
-class W_TutorialMineGold_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
+class W_TutorialMineGold_C : public ::Game::UI::Tutorial::W_TutorialContent_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialMineGold", "W_TutorialMineGold_C");
@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_TutorialMineGold_C = Game::UI::Tutorial::W_TutorialMineGold_C;
+using W_TutorialMineGold_C = ::Game::UI::Tutorial::W_TutorialMineGold_C;

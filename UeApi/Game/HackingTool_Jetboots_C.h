@@ -21,12 +21,12 @@ class HackingTool_Jetboots_C : public UHackingToolWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/HackingTool_Jetboots", "HackingTool_Jetboots_C");
-    using UI_HackingTool_Button_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
-    using UI_HackingTool_Chip_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Chip_C;
-    using UI_HackingTool_Grid_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Grid_C;
-    using UI_HackingTool_Header_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
-    using UI_HackingTool_Progress_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
-    using UI_JettyBoots_Game_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;
+    using UI_HackingTool_Button_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
+    using UI_HackingTool_Chip_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Chip_C;
+    using UI_HackingTool_Grid_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Grid_C;
+    using UI_HackingTool_Header_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
+    using UI_HackingTool_Progress_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
+    using UI_JettyBoots_Game_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimEnableInterface;
     UE_READONLY class UWidgetAnimation* AnimFindChip;
@@ -56,4 +56,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots
 
-using HackingTool_Jetboots_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::HackingTool_Jetboots_C;
+using HackingTool_Jetboots_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::HackingTool_Jetboots_C;

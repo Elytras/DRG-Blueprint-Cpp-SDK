@@ -46,4 +46,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;

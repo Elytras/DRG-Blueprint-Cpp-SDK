@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnEarthQuake_C = Game::UI::Menu_Cheats::Cheat_SpawnEarthQuake_C;
+using Cheat_SpawnEarthQuake_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEarthQuake_C;

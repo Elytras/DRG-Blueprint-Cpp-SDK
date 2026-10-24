@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Incapacitated_C = Game::UI::ScreenOverlays::ScreenOverlay_Incapacitated_C;
+using ScreenOverlay_Incapacitated_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Incapacitated_C;

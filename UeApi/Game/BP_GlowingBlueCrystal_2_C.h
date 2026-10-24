@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Helpers { namespace GlowingLightCrystals {
 
-class BP_GlowingBlueCrystal_2_C : public Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_Base_C
+class BP_GlowingBlueCrystal_2_C : public ::Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/GlowingLightCrystals/BP_GlowingBlueCrystal_2", "BP_GlowingBlueCrystal_2_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;PointLight;ICH-DefaultSceneRoot";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals
 
-using BP_GlowingBlueCrystal_2_C = Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_2_C;
+using BP_GlowingBlueCrystal_2_C = ::Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_2_C;

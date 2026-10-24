@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class BP_GooCannon_Cannister_TP_C : public Game::WeaponsNTools::GooCannon::BP_GooCannon_Cannister_C
+class BP_GooCannon_Cannister_TP_C : public ::Game::WeaponsNTools::GooCannon::BP_GooCannon_Cannister_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_Cannister_TP", "BP_GooCannon_Cannister_TP_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Bar;Mesh";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooCannon_Cannister_TP_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_Cannister_TP_C;
+using BP_GooCannon_Cannister_TP_C = ::Game::WeaponsNTools::GooCannon::BP_GooCannon_Cannister_TP_C;

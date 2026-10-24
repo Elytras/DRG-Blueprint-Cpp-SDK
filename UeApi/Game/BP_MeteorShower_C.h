@@ -41,4 +41,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco
 
-using BP_MeteorShower_C = Game::GameElements::Plague::Spacerig_Deco::BP_MeteorShower_C;
+using BP_MeteorShower_C = ::Game::GameElements::Plague::Spacerig_Deco::BP_MeteorShower_C;

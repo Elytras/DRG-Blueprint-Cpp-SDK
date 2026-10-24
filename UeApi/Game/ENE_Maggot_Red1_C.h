@@ -12,7 +12,7 @@ class UDamageComponent;
 
 namespace Game { namespace Critters { namespace Maggot {
 
-class ENE_Maggot_Red1_C : public Game::Critters::Maggot::ENE_Maggot_C
+class ENE_Maggot_Red1_C : public ::Game::Critters::Maggot::ENE_Maggot_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_Red1", "ENE_Maggot_Red1_C");
@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using ENE_Maggot_Red1_C = Game::Critters::Maggot::ENE_Maggot_Red1_C;
+using ENE_Maggot_Red1_C = ::Game::Critters::Maggot::ENE_Maggot_Red1_C;

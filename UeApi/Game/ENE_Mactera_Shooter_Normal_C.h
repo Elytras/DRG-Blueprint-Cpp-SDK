@@ -12,7 +12,7 @@ class UProjectileAttackComponent;
 
 namespace Game { namespace Enemies { namespace FlyingBug { namespace Shooter {
 
-class ENE_Mactera_Shooter_Normal_C : public Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Base_C
+class ENE_Mactera_Shooter_Normal_C : public ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ENE_Mactera_Shooter_Normal", "ENE_Mactera_Shooter_Normal_C");
@@ -24,6 +24,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "DashPoints";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Mactera_Shooter_Normal_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileAttack__UeScsNode = "48068183f1728547ae0dd8da438507f5";
     };
@@ -31,4 +33,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using ENE_Mactera_Shooter_Normal_C = Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Normal_C;
+using ENE_Mactera_Shooter_Normal_C = ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Normal_C;

@@ -42,4 +42,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Fossils
 
-using BP_FossilsBase_C = Game::LevelElements::RoomObjects::Fossils::BP_FossilsBase_C;
+using BP_FossilsBase_C = ::Game::LevelElements::RoomObjects::Fossils::BP_FossilsBase_C;

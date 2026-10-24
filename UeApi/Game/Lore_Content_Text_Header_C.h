@@ -22,8 +22,8 @@ class Lore_Content_Text_Header_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Content_Text_Header", "Lore_Content_Text_Header_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_BG_CutCorner_C* Basic_BG_Window_65;
     class UImage* Image_Icon;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Content_Text_Header_C = Game::UI::Menu_MinersManual::Lore_Content_Text_Header_C;
+using Lore_Content_Text_Header_C = ::Game::UI::Menu_MinersManual::Lore_Content_Text_Header_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Incendiary
 
-using STE_Grenade_Incendiary_C = Game::WeaponsNTools::Grenades::Incendiary::STE_Grenade_Incendiary_C;
+using STE_Grenade_Incendiary_C = ::Game::WeaponsNTools::Grenades::Incendiary::STE_Grenade_Incendiary_C;

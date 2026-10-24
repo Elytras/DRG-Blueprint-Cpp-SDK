@@ -48,6 +48,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* TMP_Caretaker_Phasebomb_TeleportEnd__UeScsNode = "5973f775adb246418f6dfd2429aad72b";
         static constexpr const char* P_PhaseBomb_SpawnAtLocation__UeScsNode = "c131560202f0e342b456f9627bacb311";
         static constexpr const char* PointLight__UeScsNode = "e2b19e81112705478dee36bc68bf8cad";
@@ -61,4 +62,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::PhaseBomb
 
-using BP_PhaseBomb_C = Game::GameElements::Objectives::Facility::PhaseBomb::BP_PhaseBomb_C;
+using BP_PhaseBomb_C = ::Game::GameElements::Objectives::Facility::PhaseBomb::BP_PhaseBomb_C;

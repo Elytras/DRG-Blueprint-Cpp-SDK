@@ -69,4 +69,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank
 
-using BP_Spider_TankBoss_FracturedArmor_C = Game::Enemies::Spider::TankBoss::BossTank::BP_Spider_TankBoss_FracturedArmor_C;
+using BP_Spider_TankBoss_FracturedArmor_C = ::Game::Enemies::Spider::TankBoss::BossTank::BP_Spider_TankBoss_FracturedArmor_C;

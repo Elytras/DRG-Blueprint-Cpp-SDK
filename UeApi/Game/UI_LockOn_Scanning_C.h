@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI
 
-using UI_LockOn_Scanning_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Scanning_C;
+using UI_LockOn_Scanning_C = ::Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Scanning_C;

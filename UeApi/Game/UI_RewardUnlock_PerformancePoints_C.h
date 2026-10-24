@@ -25,9 +25,9 @@ class UI_RewardUnlock_PerformancePoints_C : public URewardWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardUnlock_PerformancePoints", "UI_RewardUnlock_PerformancePoints_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_SeasonProgressBar_C = Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_SeasonProgressBar_C = ::Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* MakeVisibleTest;
     UE_READONLY class UWidgetAnimation* NewRewardsSlam;
@@ -62,4 +62,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications
 
-using UI_RewardUnlock_PerformancePoints_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardUnlock_PerformancePoints_C;
+using UI_RewardUnlock_PerformancePoints_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardUnlock_PerformancePoints_C;

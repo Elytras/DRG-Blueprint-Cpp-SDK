@@ -18,7 +18,7 @@ class HUD_Flashlight_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Flashlight", "HUD_Flashlight_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ImageOFF;
     class UImage* ImageON;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Flashlight_C = Game::UI::MainOnscreenHUD::HUD_Flashlight_C;
+using HUD_Flashlight_C = ::Game::UI::MainOnscreenHUD::HUD_Flashlight_C;

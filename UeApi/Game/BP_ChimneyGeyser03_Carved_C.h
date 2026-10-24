@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace ChimneyGeyser {
 
-class BP_ChimneyGeyser03_Carved_C : public Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser::BP_Chimney_Geyser_Carved_Base_C
+class BP_ChimneyGeyser03_Carved_C : public ::Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser::BP_Chimney_Geyser_Carved_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ChimneyGeyser/BP_ChimneyGeyser03_Carved", "BP_ChimneyGeyser03_Carved_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;ParticleSystem;ICH-DefaultSceneRoot;TerrainDetect1;TerrainDetect";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser
 
-using BP_ChimneyGeyser03_Carved_C = Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser::BP_ChimneyGeyser03_Carved_C;
+using BP_ChimneyGeyser03_Carved_C = ::Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser::BP_ChimneyGeyser03_Carved_C;

@@ -17,8 +17,8 @@ class BP_BossFight_WalkingPlagueHeart_C : public UObject
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_BossFight_WalkingPlagueHeart", "BP_BossFight_WalkingPlagueHeart_C");
-    using ENE_WalkingPlagueheart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;
-    ENE_WalkingPlagueheart_C* WalkingPlagueheartRef;
+    using ENE_WalkingPlagueheart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;
+    ENE_WalkingPlagueheart_C* walkingPlagueheartRef;
     bool IsStillValid();
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
     class AActor* GetBossActor();
@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using BP_BossFight_WalkingPlagueHeart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_BossFight_WalkingPlagueHeart_C;
+using BP_BossFight_WalkingPlagueHeart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_BossFight_WalkingPlagueHeart_C;

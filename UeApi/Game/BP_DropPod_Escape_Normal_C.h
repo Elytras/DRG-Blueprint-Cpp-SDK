@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace Droppod {
 
-class BP_DropPod_Escape_Normal_C : public Game::LevelElements::Droppod::BP_DropPod_Escape_Base_C
+class BP_DropPod_Escape_Normal_C : public ::Game::LevelElements::Droppod::BP_DropPod_Escape_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Escape_Normal", "BP_DropPod_Escape_Normal_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_Escape_Normal_C = Game::LevelElements::Droppod::BP_DropPod_Escape_Normal_C;
+using BP_DropPod_Escape_Normal_C = ::Game::LevelElements::Droppod::BP_DropPod_Escape_Normal_C;

@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using BP_ShieldRegenerator_Mover_C = Game::WeaponsNTools::ShieldGenerator::BP_ShieldRegenerator_Mover_C;
+using BP_ShieldRegenerator_Mover_C = ::Game::WeaponsNTools::ShieldGenerator::BP_ShieldRegenerator_Mover_C;

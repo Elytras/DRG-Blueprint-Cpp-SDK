@@ -94,4 +94,4 @@ private:
 
 }}}   // namespace Game::Critters::LootBug
 
-using ENE_LootBug_C = Game::Critters::LootBug::ENE_LootBug_C;
+using ENE_LootBug_C = ::Game::Critters::LootBug::ENE_LootBug_C;

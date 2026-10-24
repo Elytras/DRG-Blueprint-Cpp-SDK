@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves
 
-using STE_Quake_Slowdown_Enemies_C = Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::STE_Quake_Slowdown_Enemies_C;
+using STE_Quake_Slowdown_Enemies_C = ::Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::STE_Quake_Slowdown_Enemies_C;

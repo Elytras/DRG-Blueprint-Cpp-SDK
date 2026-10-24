@@ -71,4 +71,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DeadTrees
 
-using BP_DeadTree_A_C = Game::Landscape::CaveAssets::Foliage::DeadTrees::BP_DeadTree_A_C;
+using BP_DeadTree_A_C = ::Game::Landscape::CaveAssets::Foliage::DeadTrees::BP_DeadTree_A_C;

@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::CheatConsole
 
-using UI_ForceSeasonEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;
+using UI_ForceSeasonEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;

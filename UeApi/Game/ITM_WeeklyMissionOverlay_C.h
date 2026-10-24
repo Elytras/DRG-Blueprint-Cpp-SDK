@@ -23,9 +23,9 @@ class ITM_WeeklyMissionOverlay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/JobsV2_Redesign/ITM_WeeklyMissionOverlay", "ITM_WeeklyMissionOverlay_C");
-    using ITM_Prerequisites_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;
-    using ITM_TimeText_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
-    using Jobs_List_Element_BG_CutCorner_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
+    using ITM_Prerequisites_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;
+    using ITM_TimeText_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
+    using Jobs_List_Element_BG_CutCorner_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_Checkmark;
     class UBorder* DeadlineTimer;
@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using ITM_WeeklyMissionOverlay_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_WeeklyMissionOverlay_C;
+using ITM_WeeklyMissionOverlay_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_WeeklyMissionOverlay_C;

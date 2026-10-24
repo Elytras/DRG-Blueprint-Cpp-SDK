@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using WPN_ShieldRegeneratorItem_C = Game::WeaponsNTools::ShieldGenerator::WPN_ShieldRegeneratorItem_C;
+using WPN_ShieldRegeneratorItem_C = ::Game::WeaponsNTools::ShieldGenerator::WPN_ShieldRegeneratorItem_C;

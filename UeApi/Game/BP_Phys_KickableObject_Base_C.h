@@ -69,4 +69,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects
 
-using BP_Phys_KickableObject_Base_C = Game::LevelElements::RoomObjects::LoosePhysicalObjects::BP_Phys_KickableObject_Base_C;
+using BP_Phys_KickableObject_Base_C = ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::BP_Phys_KickableObject_Base_C;

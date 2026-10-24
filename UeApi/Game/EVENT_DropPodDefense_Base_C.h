@@ -24,8 +24,8 @@ class EVENT_DropPodDefense_Base_C : public AGameEvent
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/EVENT_DropPodDefense_Base", "EVENT_DropPodDefense_Base_C");
-    using EWC_Salvage_Defend_C = Game::Enemies::Waves::WaveControllers::EWC_Salvage_Defend_C;
-    using HUD_Salvage_Defend_C = Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_C;
+    using EWC_Salvage_Defend_C = ::Game::Enemies::Waves::WaveControllers::EWC_Salvage_Defend_C;
+    using HUD_Salvage_Defend_C = ::Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
     class UStaticMeshComponent* SphereInner1;
@@ -82,4 +82,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using EVENT_DropPodDefense_Base_C = Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C;
+using EVENT_DropPodDefense_Base_C = ::Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C;

@@ -30,8 +30,8 @@ class ITM_DLC_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DLC/Itm_DLC_Entry", "ITM_DLC_Entry_C");
-    using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
-    using UI_MediaPlayer_C = Game::UI::MENU_Merch::UI_MediaPlayer_C;
+    using ShadowBG_C = ::Game::UI::_GlobalAssets::ShadowBG_C;
+    using UI_MediaPlayer_C = ::Game::UI::MENU_Merch::UI_MediaPlayer_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimGlow;
     UE_READONLY class UWidgetAnimation* AnimClick;
@@ -76,4 +76,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_DLC
 
-using ITM_DLC_Entry_C = Game::UI::Menu_DLC::ITM_DLC_Entry_C;
+using ITM_DLC_Entry_C = ::Game::UI::Menu_DLC::ITM_DLC_Entry_C;

@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::GameElements::MovieMode::UI
 
-using WND_CheatCountDown_C = Game::GameElements::MovieMode::UI::WND_CheatCountDown_C;
+using WND_CheatCountDown_C = ::Game::GameElements::MovieMode::UI::WND_CheatCountDown_C;

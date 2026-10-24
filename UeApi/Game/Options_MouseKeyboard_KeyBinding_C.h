@@ -20,8 +20,8 @@ class Options_MouseKeyboard_KeyBinding_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_MouseKeyboard_KeyBinding", "Options_MouseKeyboard_KeyBinding_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_MouseKeyboard_KeyCapture_C = Game::UI::Keybindings::Options_MouseKeyboard_KeyCapture_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_MouseKeyboard_KeyCapture_C = ::Game::UI::Keybindings::Options_MouseKeyboard_KeyCapture_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Error;
     Basic_Option_C* Basic_Option;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_MouseKeyboard_KeyBinding_C = Game::UI::Keybindings::Options_MouseKeyboard_KeyBinding_C;
+using Options_MouseKeyboard_KeyBinding_C = ::Game::UI::Keybindings::Options_MouseKeyboard_KeyBinding_C;

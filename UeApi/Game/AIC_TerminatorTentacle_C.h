@@ -18,9 +18,9 @@ class AIC_TerminatorTentacle_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/AIC_TerminatorTentacle", "AIC_TerminatorTentacle_C");
-    using ENE_TerminatorTentacle_C = Game::Enemies::RivalTech::Terminator::ENE_TerminatorTentacle_C;
+    using ENE_TerminatorTentacle_C = ::Game::Enemies::RivalTech::Terminator::ENE_TerminatorTentacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    ENE_TerminatorTentacle_C* Tentacle;
+    ENE_TerminatorTentacle_C* tentacle;
     class UBehaviorTree* Behavior;
     bool IsChildOfOtherTentacle;
     void ExecuteUbergraph_AIC_TerminatorTentacle(int EntryPoint);
@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using AIC_TerminatorTentacle_C = Game::Enemies::RivalTech::Terminator::AIC_TerminatorTentacle_C;
+using AIC_TerminatorTentacle_C = ::Game::Enemies::RivalTech::Terminator::AIC_TerminatorTentacle_C;

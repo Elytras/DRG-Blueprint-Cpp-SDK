@@ -19,9 +19,9 @@ class ScrollLIst_Category_Window_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/ScrollLIst_Category_Window", "ScrollLIst_Category_Window_C");
-    using Lore_List_Element_C = Game::UI::Menu_MinersManual::Lore_List_Element_C;
-    using Lore_List_Filler_C = Game::UI::Menu_MinersManual::Lore_List_Filler_C;
-    using _MENU_MinersManual_C = Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
+    using Lore_List_Element_C = ::Game::UI::Menu_MinersManual::Lore_List_Element_C;
+    using Lore_List_Filler_C = ::Game::UI::Menu_MinersManual::Lore_List_Filler_C;
+    using _MENU_MinersManual_C = ::Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Lore_List_Element_C* Basic_List_Element;
     Lore_List_Element_C* Basic_List_Element_C_0;
@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using ScrollLIst_Category_Window_C = Game::UI::Menu_MinersManual::ScrollLIst_Category_Window_C;
+using ScrollLIst_Category_Window_C = ::Game::UI::Menu_MinersManual::ScrollLIst_Category_Window_C;

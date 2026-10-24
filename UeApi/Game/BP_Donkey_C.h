@@ -41,9 +41,9 @@ class BP_Donkey_C : public AMolly
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/BP_Donkey", "BP_Donkey_C");
-    using BP_DonkeyDestinationMarker_C = Game::GameElements::Donkey::BP_DonkeyDestinationMarker_C;
-    using BP_Mule_PowerAttackBooster_C = Game::GameElements::Missions::Warnings::RockInfestation::BP_Mule_PowerAttackBooster_C;
-    using Donkey_BreadCrumb_C = Game::GameElements::Donkey::Donkey_BreadCrumb_C;
+    using BP_DonkeyDestinationMarker_C = ::Game::GameElements::Donkey::BP_DonkeyDestinationMarker_C;
+    using BP_Mule_PowerAttackBooster_C = ::Game::GameElements::Missions::Warnings::RockInfestation::BP_Mule_PowerAttackBooster_C;
+    using Donkey_BreadCrumb_C = ::Game::GameElements::Donkey::Donkey_BreadCrumb_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_Mule_PowerAttackBooster_C* BP_Mule_PowerAttackBooster;
     class UStaticMeshComponent* TerrainScannerMesh;
@@ -165,4 +165,4 @@ private:
 
 }}}   // namespace Game::GameElements::Donkey
 
-using BP_Donkey_C = Game::GameElements::Donkey::BP_Donkey_C;
+using BP_Donkey_C = ::Game::GameElements::Donkey::BP_Donkey_C;

@@ -15,7 +15,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Lure {
 
-class Grenade_Lure_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Lure_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Lure/Grenade_Lure", "Grenade_Lure_C");
@@ -29,10 +29,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Lure_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Lure
 
-using Grenade_Lure_C = Game::WeaponsNTools::Grenades::Lure::Grenade_Lure_C;
+using Grenade_Lure_C = ::Game::WeaponsNTools::Grenades::Lure::Grenade_Lure_C;

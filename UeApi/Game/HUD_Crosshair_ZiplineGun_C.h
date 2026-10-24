@@ -19,8 +19,8 @@ class HUD_Crosshair_ZiplineGun_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_Crosshair_ZiplineGun", "HUD_Crosshair_ZiplineGun_C");
-    using HUD_AngleIndicator_C = Game::WeaponsNTools::_Crosshairs::HUD_AngleIndicator_C;
-    using HUD_CrossHair_Basic02_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_Basic02_C;
+    using HUD_AngleIndicator_C = ::Game::WeaponsNTools::_Crosshairs::HUD_AngleIndicator_C;
+    using HUD_CrossHair_Basic02_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_Basic02_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* BottomArrow;
     class UImage* Dot;
@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_Crosshair_ZiplineGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_ZiplineGun_C;
+using HUD_Crosshair_ZiplineGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_ZiplineGun_C;

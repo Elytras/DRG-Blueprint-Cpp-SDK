@@ -18,9 +18,9 @@ class Options_Gamepad_CustomizeControls_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_Gamepad_CustomizeControls", "Options_Gamepad_CustomizeControls_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using Basic_ButtonWithControls_C = Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using Basic_ButtonWithControls_C = ::Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* Basic_Option;
     class UVerticalBox* BindingsBox;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_Gamepad_CustomizeControls_C = Game::UI::Keybindings::Options_Gamepad_CustomizeControls_C;
+using Options_Gamepad_CustomizeControls_C = ::Game::UI::Keybindings::Options_Gamepad_CustomizeControls_C;

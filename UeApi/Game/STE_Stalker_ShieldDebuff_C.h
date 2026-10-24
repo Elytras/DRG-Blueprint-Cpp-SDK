@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using STE_Stalker_ShieldDebuff_C = Game::Enemies::Spider::Stalker::STE_Stalker_ShieldDebuff_C;
+using STE_Stalker_ShieldDebuff_C = ::Game::Enemies::Spider::Stalker::STE_Stalker_ShieldDebuff_C;

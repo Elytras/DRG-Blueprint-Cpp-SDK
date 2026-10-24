@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace LoosePhysicalObjects { namespace PhysicalPinecones {
 
-class BP_PhysicsPineCone_Small_C : public Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PhysicsPineCone_C
+class BP_PhysicsPineCone_Small_C : public ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PhysicsPineCone_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalPinecones/BP_PhysicsPineCone_Small", "BP_PhysicsPineCone_Small_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "StaticMesh";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones
 
-using BP_PhysicsPineCone_Small_C = Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PhysicsPineCone_Small_C;
+using BP_PhysicsPineCone_Small_C = ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PhysicsPineCone_Small_C;

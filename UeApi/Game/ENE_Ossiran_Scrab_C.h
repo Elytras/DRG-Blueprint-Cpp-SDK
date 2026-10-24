@@ -83,6 +83,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingAudio;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.IKComponent IK;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WalkAndFlyEnemyComponent WalkAndFly";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent ChargeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent DiveAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* Sphere__UeScsNode = "aaf5124d5dba2844a2023558ef3a7412";
         static constexpr const char* ArmorHealthDamage__UeScsNode = "f7b440701bcb6346bf6323e972a7af47";
         static constexpr const char* DiveAttack__UeScsNode = "1ece54e2a228cf41b913e0e0ef456c7d";
@@ -92,4 +93,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab
 
-using ENE_Ossiran_Scrab_C = Game::Enemies::Ossiran::Scrab::ENE_Ossiran_Scrab_C;
+using ENE_Ossiran_Scrab_C = ::Game::Enemies::Ossiran::Scrab::ENE_Ossiran_Scrab_C;

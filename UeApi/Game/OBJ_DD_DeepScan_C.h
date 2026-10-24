@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using OBJ_DD_DeepScan_C = Game::GameElements::Objectives::DeepScan::OBJ_DD_DeepScan_C;
+using OBJ_DD_DeepScan_C = ::Game::GameElements::Objectives::DeepScan::OBJ_DD_DeepScan_C;

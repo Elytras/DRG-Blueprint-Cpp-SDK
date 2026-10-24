@@ -18,7 +18,7 @@ class UStatusEffect;
 
 namespace Game { namespace Enemies { namespace Plague { namespace PlagueExploder {
 
-class ENE_Spider_Exploding_Rockpox_Plague_C : public Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_C
+class ENE_Spider_Exploding_Rockpox_Plague_C : public ::Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueExploder/ENE_Spider_Exploding_Rockpox_Plague", "ENE_Spider_Exploding_Rockpox_Plague_C");
@@ -48,6 +48,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Damage;Enemy";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Exploding_Rockpox_Plague_C__UeName = "UberGraphFrame";
         static constexpr const char* ArmorHealthDamage__UeScsNode = "7f2984bca1bbb846a58496b86e8e9e6b";
         static constexpr const char* SporeCloud__UeScsNode = "1415f1d8a07e4643ba7db0eeeee1e703";
@@ -66,4 +68,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueExploder
 
-using ENE_Spider_Exploding_Rockpox_Plague_C = Game::Enemies::Plague::PlagueExploder::ENE_Spider_Exploding_Rockpox_Plague_C;
+using ENE_Spider_Exploding_Rockpox_Plague_C = ::Game::Enemies::Plague::PlagueExploder::ENE_Spider_Exploding_Rockpox_Plague_C;

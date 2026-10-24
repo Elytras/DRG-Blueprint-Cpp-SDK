@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Ossiran::Afflictions
 
-using AFL_Scrab_C = Game::Enemies::Ossiran::Afflictions::AFL_Scrab_C;
+using AFL_Scrab_C = ::Game::Enemies::Ossiran::Afflictions::AFL_Scrab_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Buffer
 
-using STE_SpiderBuffer_C = Game::Enemies::Spider::Buffer::STE_SpiderBuffer_C;
+using STE_SpiderBuffer_C = ::Game::Enemies::Spider::Buffer::STE_SpiderBuffer_C;

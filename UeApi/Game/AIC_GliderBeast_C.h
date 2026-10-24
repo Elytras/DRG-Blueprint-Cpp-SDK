@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::Critters::GliderBeast
 
-using AIC_GliderBeast_C = Game::Critters::GliderBeast::AIC_GliderBeast_C;
+using AIC_GliderBeast_C = ::Game::Critters::GliderBeast::AIC_GliderBeast_C;

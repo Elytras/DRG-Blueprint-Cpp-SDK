@@ -53,9 +53,9 @@ class BP_EscortMule_C : public AEscortMule
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_EscortMule", "BP_EscortMule_C");
-    using ABP_DrillDozer_Drill_C = Game::GameElements::Objectives::Escort::DrillDozer::ABP_DrillDozer_Drill_C;
-    using BP_BossFight_Heartstone_C = Game::GameElements::Objectives::Escort::BP_BossFight_Heartstone_C;
-    using BP_EscortCannisterUsable_C = Game::GameElements::Objectives::Escort::BP_EscortCannisterUsable_C;
+    using ABP_DrillDozer_Drill_C = ::Game::GameElements::Objectives::Escort::DrillDozer::ABP_DrillDozer_Drill_C;
+    using BP_BossFight_Heartstone_C = ::Game::GameElements::Objectives::Escort::BP_BossFight_Heartstone_C;
+    using BP_EscortCannisterUsable_C = ::Game::GameElements::Objectives::Escort::BP_EscortCannisterUsable_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* Collision_Drill_Pawn;
     class USceneComponent* impactLocation;
@@ -278,6 +278,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FriendlyHealthComponent HealthComponent2;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.RestrictedResourceBank RestrictedResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/Escort/DrillDozer/BP_CaterpillarTrack_Left.BP_CaterpillarTrack_Left_C LTrack_GEN_VARIABLE:LTrack_GEN_VARIABLE_BP_CaterpillarTrack_Left_C_CAT;/Game/GameElements/Objectives/Escort/DrillDozer/BP_CaterpillarTrack_Right.BP_CaterpillarTrack_Right_C RTrack_GEN_VARIABLE:RTrack_GEN_VARIABLE_BP_CaterpillarTrack_Right_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank01_GEN_VARIABLE:OxygenTank01_GEN_VARIABLE_BP_OxygenTank_C_CAT";
         static constexpr const char* Collision_Drill_Pawn__UeScsNode = "c611f9edf93dd64da3b97d4e6deebc3d";
         static constexpr const char* impactLocation__UeScsNode = "2675417e296ff14181d5ef6125880ccd";
         static constexpr const char* Mesh_DrillHead__UeScsNode = "e9787024794a5047b3fbd86d4a09990a";
@@ -389,4 +390,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_EscortMule_C = Game::GameElements::Objectives::Escort::BP_EscortMule_C;
+using BP_EscortMule_C = ::Game::GameElements::Objectives::Escort::BP_EscortMule_C;

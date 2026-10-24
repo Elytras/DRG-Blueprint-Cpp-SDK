@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using ITM_MutatorsAndWarnings_Entry1_C = Game::UI::MainOnscreenHUD::ITM_MutatorsAndWarnings_Entry1_C;
+using ITM_MutatorsAndWarnings_Entry1_C = ::Game::UI::MainOnscreenHUD::ITM_MutatorsAndWarnings_Entry1_C;

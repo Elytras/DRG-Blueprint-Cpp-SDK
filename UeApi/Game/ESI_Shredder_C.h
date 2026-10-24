@@ -38,4 +38,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Shredder
 
-using ESI_Shredder_C = Game::Enemies::RivalTech::Shredder::ESI_Shredder_C;
+using ESI_Shredder_C = ::Game::Enemies::RivalTech::Shredder::ESI_Shredder_C;

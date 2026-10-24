@@ -23,4 +23,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Resources::Collectibles::BhaBarnacle::Assets
 
-using ASS_BhaBarnacle_C = Game::GameElements::Resources::Collectibles::BhaBarnacle::Assets::ASS_BhaBarnacle_C;
+using ASS_BhaBarnacle_C = ::Game::GameElements::Resources::Collectibles::BhaBarnacle::Assets::ASS_BhaBarnacle_C;

@@ -16,7 +16,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Axe {
 
-class Grenade_Axe_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Axe_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Axe/Grenade_Axe", "Grenade_Axe_C");
@@ -31,6 +31,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;P_GrenadeTrail;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Axe_C__UeName = "UberGraphFrame";
         static constexpr const char* BluntDamage__UeScsNode = "4556e1edd8d9354db0a2bee3719fd733";
     };
@@ -38,4 +39,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe
 
-using Grenade_Axe_C = Game::WeaponsNTools::Grenades::Axe::Grenade_Axe_C;
+using Grenade_Axe_C = ::Game::WeaponsNTools::Grenades::Axe::Grenade_Axe_C;

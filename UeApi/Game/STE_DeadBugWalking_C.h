@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties
 
-using STE_DeadBugWalking_C = Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties::STE_DeadBugWalking_C;
+using STE_DeadBugWalking_C = ::Game::WeaponsNTools::Pistol::Overclocks::OC_BonusesAndPenalties::STE_DeadBugWalking_C;

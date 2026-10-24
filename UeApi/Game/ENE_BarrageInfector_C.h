@@ -53,6 +53,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_1;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_2;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_3;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_4;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_5;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_6;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_7;/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_8";
         static constexpr const char* EnemyLineOfSight__UeScsNode = "e86e24d3cbcfb64586750ceb26e41137";
         static constexpr const char* Capsule__UeScsNode = "fae8f0cc32581b4bb9004b71403cf7e8";
         static constexpr const char* WeakpointGlow__UeScsNode = "03ef5d2ec413d8448c3df4fec4288c8d";
@@ -69,4 +70,4 @@ private:
 
 }}}   // namespace Game::Enemies::BarrageInfector
 
-using ENE_BarrageInfector_C = Game::Enemies::BarrageInfector::ENE_BarrageInfector_C;
+using ENE_BarrageInfector_C = ::Game::Enemies::BarrageInfector::ENE_BarrageInfector_C;

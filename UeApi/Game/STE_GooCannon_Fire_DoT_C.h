@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::GooCannon::STEs
 
-using STE_GooCannon_Fire_DoT_C = Game::WeaponsNTools::GooCannon::STEs::STE_GooCannon_Fire_DoT_C;
+using STE_GooCannon_Fire_DoT_C = ::Game::WeaponsNTools::GooCannon::STEs::STE_GooCannon_Fire_DoT_C;

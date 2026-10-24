@@ -24,8 +24,8 @@ class UI_ClaimableRewards_View_C : public UClaimableRewardViewWidget
 {
 public:
     UE_CLASS("/Game/UI/ClaimableRewards/UI_ClaimableRewards_View", "UI_ClaimableRewards_View_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using MissionControl_MainDialogue_C = ::Game::UI::MissionControl::MissionControl_MainDialogue_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimBlurIn;
     class UCanvasPanel* BackgroundCanvas;
@@ -67,4 +67,4 @@ private:
 
 }}}   // namespace Game::UI::ClaimableRewards
 
-using UI_ClaimableRewards_View_C = Game::UI::ClaimableRewards::UI_ClaimableRewards_View_C;
+using UI_ClaimableRewards_View_C = ::Game::UI::ClaimableRewards::UI_ClaimableRewards_View_C;

@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent
 
-using UI_Guntower_ProgressBar_ModuleIcon_C = Game::GameElements::GameEvents::GuntowerEvent::UI_Guntower_ProgressBar_ModuleIcon_C;
+using UI_Guntower_ProgressBar_ModuleIcon_C = ::Game::GameElements::GameEvents::GuntowerEvent::UI_Guntower_ProgressBar_ModuleIcon_C;

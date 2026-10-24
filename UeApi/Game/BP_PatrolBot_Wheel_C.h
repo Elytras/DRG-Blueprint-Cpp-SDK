@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using BP_PatrolBot_Wheel_C = Game::Enemies::RivalTech::PatrolBot::BP_PatrolBot_Wheel_C;
+using BP_PatrolBot_Wheel_C = ::Game::Enemies::RivalTech::PatrolBot::BP_PatrolBot_Wheel_C;

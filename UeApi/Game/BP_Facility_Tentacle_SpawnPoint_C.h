@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using BP_Facility_Tentacle_SpawnPoint_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Facility_Tentacle_SpawnPoint_C;
+using BP_Facility_Tentacle_SpawnPoint_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Facility_Tentacle_SpawnPoint_C;

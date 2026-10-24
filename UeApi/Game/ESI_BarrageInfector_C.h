@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::Enemies::BarrageInfector
 
-using ESI_BarrageInfector_C = Game::Enemies::BarrageInfector::ESI_BarrageInfector_C;
+using ESI_BarrageInfector_C = ::Game::Enemies::BarrageInfector::ESI_BarrageInfector_C;

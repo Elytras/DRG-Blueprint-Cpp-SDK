@@ -16,11 +16,11 @@ class Bottom_DataReadout_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Bottom_DataReadout", "Bottom_DataReadout_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     Basic_BG_CutCorner_C* Basic_BG_Window;
     class UImage* Image_47;
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Bottom_DataReadout_C = Game::UI::Menu_MinersManual::Bottom_DataReadout_C;
+using Bottom_DataReadout_C = ::Game::UI::Menu_MinersManual::Bottom_DataReadout_C;

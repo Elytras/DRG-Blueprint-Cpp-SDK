@@ -20,4 +20,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::ModDetails
 
-using ModioModDetailsImageWidget_C = Modio::UI::Browser::Views::ModDetails::ModioModDetailsImageWidget_C;
+using ModioModDetailsImageWidget_C = ::Modio::UI::Browser::Views::ModDetails::ModioModDetailsImageWidget_C;

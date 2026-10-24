@@ -19,8 +19,8 @@ class ITM_RestoreSave_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_RestoreSave", "ITM_RestoreSave_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShow;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_RestoreSave_C = Game::UI::Menu_EscapeMenu::ITM_RestoreSave_C;
+using ITM_RestoreSave_C = ::Game::UI::Menu_EscapeMenu::ITM_RestoreSave_C;

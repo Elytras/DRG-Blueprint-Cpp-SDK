@@ -45,4 +45,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using ITM_HealthBarSection_C = Game::UI::MainOnscreenHUD::BossFight::ITM_HealthBarSection_C;
+using ITM_HealthBarSection_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_HealthBarSection_C;

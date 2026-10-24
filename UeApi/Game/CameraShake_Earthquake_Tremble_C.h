@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Earthquake_Tremble_C = Game::Character::Camera::CameraShakes::CameraShake_Earthquake_Tremble_C;
+using CameraShake_Earthquake_Tremble_C = ::Game::Character::Camera::CameraShakes::CameraShake_Earthquake_Tremble_C;

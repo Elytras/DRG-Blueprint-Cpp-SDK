@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_SonyTeamLeader_C = Game::UI::Global_UI_Elements::ITM_SonyTeamLeader_C;
+using ITM_SonyTeamLeader_C = ::Game::UI::Global_UI_Elements::ITM_SonyTeamLeader_C;

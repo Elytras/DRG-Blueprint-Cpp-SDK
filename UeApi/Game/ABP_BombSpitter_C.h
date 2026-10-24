@@ -36,4 +36,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::BombSpitter
 
-using ABP_BombSpitter_C = Game::LevelElements::RoomObjects::Hazards::BombSpitter::ABP_BombSpitter_C;
+using ABP_BombSpitter_C = ::Game::LevelElements::RoomObjects::Hazards::BombSpitter::ABP_BombSpitter_C;

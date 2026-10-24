@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_TrackMovementState_C = Game::Character::States::BP_TrackMovementState_C;
+using BP_TrackMovementState_C = ::Game::Character::States::BP_TrackMovementState_C;

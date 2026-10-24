@@ -98,6 +98,7 @@ struct FStructSerializerObjectTestStruct
     TSubclassOf<class UMetaData> SubClass;
     TSoftClassPtr<class UClass> SoftClass;
     class UObject* Object;
+    TWeakObjectPtr<class UMetaData> WeakObject;
     TSoftObjectPtr<class UMetaData> SoftObject;
     FSoftClassPath ClassPath;
     FSoftObjectPath ObjectPath;

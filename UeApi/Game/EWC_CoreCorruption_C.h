@@ -15,12 +15,12 @@ namespace Game { namespace GameElements { namespace Missions { namespace Warning
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace CoreCorruption {
 
-class EWC_CoreCorruption_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_CoreCorruption_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/EWC_CoreCorruption", "EWC_CoreCorruption_C");
-    using BP_CoreCorruption_Rift_C = Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Rift_C;
-    using BP_CoreRift_C = Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
+    using BP_CoreCorruption_Rift_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Rift_C;
+    using BP_CoreRift_C = ::Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_CoreCorruption_C;
     int InitalRiftWaves;
     FTimerHandle Handle_Spawn;
@@ -52,4 +52,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption
 
-using EWC_CoreCorruption_C = Game::GameElements::Missions::Warnings::CoreCorruption::EWC_CoreCorruption_C;
+using EWC_CoreCorruption_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::EWC_CoreCorruption_C;

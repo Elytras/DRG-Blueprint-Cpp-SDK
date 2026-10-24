@@ -17,7 +17,7 @@ class WPN_ResonanceScanner_Builder_C : public AFuelLineBuilderItem
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/WPN_ResonanceScanner_Builder", "WPN_ResonanceScanner_Builder_C");
-    using UI_RockCracker_Builder_C = Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;
+    using UI_RockCracker_Builder_C = ::Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     void ExecuteUbergraph_WPN_ResonanceScanner_Builder(int EntryPoint);
@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using WPN_ResonanceScanner_Builder_C = Game::GameElements::Objectives::DeepScan::WPN_ResonanceScanner_Builder_C;
+using WPN_ResonanceScanner_Builder_C = ::Game::GameElements::Objectives::DeepScan::WPN_ResonanceScanner_Builder_C;

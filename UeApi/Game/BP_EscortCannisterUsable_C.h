@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_EscortCannisterUsable_C = Game::GameElements::Objectives::Escort::BP_EscortCannisterUsable_C;
+using BP_EscortCannisterUsable_C = ::Game::GameElements::Objectives::Escort::BP_EscortCannisterUsable_C;

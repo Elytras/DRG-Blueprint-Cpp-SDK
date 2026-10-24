@@ -24,8 +24,8 @@ class BP_Crossbow_Projectile_Stuck_C : public ACrossbowProjectileStuck
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck", "BP_Crossbow_Projectile_Stuck_C");
-    using BP_BansheeModule_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
-    using BP_RecallableArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_RecallableArrow_Component_C;
+    using BP_BansheeModule_Component_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
+    using BP_RecallableArrow_Component_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_RecallableArrow_Component_C;
     BP_RecallableArrow_Component_C* BP_RecallableArrow_Component;
     BP_BansheeModule_Component_C* BP_BansheeModule_Component;
     class UOutlineComponent* outline;
@@ -62,4 +62,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using BP_Crossbow_Projectile_Stuck_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_C;
+using BP_Crossbow_Projectile_Stuck_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_C;

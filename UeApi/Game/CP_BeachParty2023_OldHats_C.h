@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_BeachParty2023_OldHats_C = Game::GameElements::Campaign::CP_BeachParty2023_OldHats_C;
+using CP_BeachParty2023_OldHats_C = ::Game::GameElements::Campaign::CP_BeachParty2023_OldHats_C;

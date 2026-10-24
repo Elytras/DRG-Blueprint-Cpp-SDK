@@ -18,12 +18,12 @@ class Options_Tab_GFX_Console_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_GFX_Console", "Options_Tab_GFX_Console_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_Console_QualitySetting_C = Game::UI::Menu_Options::Options_Console_QualitySetting_C;
-    using Options_Console_StaticResolutionScaling_C = Game::UI::Menu_Options::Options_Console_StaticResolutionScaling_C;
-    using Options_GFX_Gamma_C = Game::UI::Menu_Options::Options_GFX_Gamma_C;
-    using Options_GFX_HDR_Gamma_C = Game::UI::Menu_Options::Options_GFX_HDR_Gamma_C;
-    using Options_Scalability_Ragdolls_C = Game::UI::Menu_Options::Options_Scalability_Ragdolls_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_Console_QualitySetting_C = ::Game::UI::Menu_Options::Options_Console_QualitySetting_C;
+    using Options_Console_StaticResolutionScaling_C = ::Game::UI::Menu_Options::Options_Console_StaticResolutionScaling_C;
+    using Options_GFX_Gamma_C = ::Game::UI::Menu_Options::Options_GFX_Gamma_C;
+    using Options_GFX_HDR_Gamma_C = ::Game::UI::Menu_Options::Options_GFX_HDR_Gamma_C;
+    using Options_Scalability_Ragdolls_C = ::Game::UI::Menu_Options::Options_Scalability_Ragdolls_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class URichTextBlock* ModeDescription;
     Basic_Option_C* OPT_Gamma;
@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_GFX_Console_C = Game::UI::Menu_Options::Options_Tab_GFX_Console_C;
+using Options_Tab_GFX_Console_C = ::Game::UI::Menu_Options::Options_Tab_GFX_Console_C;

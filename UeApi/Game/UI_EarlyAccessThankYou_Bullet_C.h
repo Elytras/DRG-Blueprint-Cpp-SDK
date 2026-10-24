@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_EarlyAccessThankYou_Bullet_C = Game::UI::Menu_StartScreen::UI_EarlyAccessThankYou_Bullet_C;
+using UI_EarlyAccessThankYou_Bullet_C = ::Game::UI::Menu_StartScreen::UI_EarlyAccessThankYou_Bullet_C;

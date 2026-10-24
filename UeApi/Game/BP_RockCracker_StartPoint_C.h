@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder
 
-using BP_RockCracker_StartPoint_C = Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_StartPoint_C;
+using BP_RockCracker_StartPoint_C = ::Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_StartPoint_C;

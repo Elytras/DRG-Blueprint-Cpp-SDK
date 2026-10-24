@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::GameElements::Donkey
 
-using TSK_ChangeDestIfFarAwayFromPlayer_C = Game::GameElements::Donkey::TSK_ChangeDestIfFarAwayFromPlayer_C;
+using TSK_ChangeDestIfFarAwayFromPlayer_C = ::Game::GameElements::Donkey::TSK_ChangeDestIfFarAwayFromPlayer_C;

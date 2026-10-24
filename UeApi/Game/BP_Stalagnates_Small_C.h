@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace BoneYards { namespace Carvers {
 
-class BP_Stalagnates_Small_C : public Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Stalagnates_Large_C
+class BP_Stalagnates_Small_C : public ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Stalagnates_Large_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_Stalagnates_Small", "BP_Stalagnates_Small_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "TerrainPlacement";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_Stalagnates_Small_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Stalagnates_Small_C;
+using BP_Stalagnates_Small_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Stalagnates_Small_C;

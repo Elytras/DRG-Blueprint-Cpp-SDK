@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_SugarRush_C = Game::GameElements::KPI::Perks::STE_SugarRush_C;
+using STE_SugarRush_C = ::Game::GameElements::KPI::Perks::STE_SugarRush_C;

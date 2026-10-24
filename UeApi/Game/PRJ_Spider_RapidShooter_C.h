@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::RapidShooter
 
-using PRJ_Spider_RapidShooter_C = Game::Enemies::Spider::RapidShooter::PRJ_Spider_RapidShooter_C;
+using PRJ_Spider_RapidShooter_C = ::Game::Enemies::Spider::RapidShooter::PRJ_Spider_RapidShooter_C;

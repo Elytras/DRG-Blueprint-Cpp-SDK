@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing
 
-using ABP_HackC_C = Game::Game::SpaceRig::S01_SetDressing::ABP_HackC_C;
+using ABP_HackC_C = ::Game::Game::SpaceRig::S01_SetDressing::ABP_HackC_C;

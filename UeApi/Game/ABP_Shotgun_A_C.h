@@ -23,4 +23,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::SawedOffShotgun
 
-using ABP_Shotgun_A_C = Game::WeaponsNTools::SawedOffShotgun::ABP_Shotgun_A_C;
+using ABP_Shotgun_A_C = ::Game::WeaponsNTools::SawedOffShotgun::ABP_Shotgun_A_C;

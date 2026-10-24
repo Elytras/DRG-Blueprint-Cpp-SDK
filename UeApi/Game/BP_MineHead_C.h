@@ -39,7 +39,7 @@ class BP_MineHead_C : public AFSDMiningHead
 {
 public:
     UE_CLASS("/Game/LevelElements/Minehead/BP_MineHead", "BP_MineHead_C");
-    using BP_Minehead_LandingZone_C = Game::LevelElements::Minehead::BP_Minehead_LandingZone_C;
+    using BP_Minehead_LandingZone_C = ::Game::LevelElements::Minehead::BP_Minehead_LandingZone_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* MineHead__TerrainScanner;
     class UPathfinderCollisionComponent* PB_SmallPlatform05;
@@ -146,6 +146,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/FSD.ResourceBank ResourceBank;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank01_GEN_VARIABLE:OxygenTank01_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank02_GEN_VARIABLE:OxygenTank02_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank03_GEN_VARIABLE:OxygenTank03_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank04_GEN_VARIABLE:OxygenTank04_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank05_GEN_VARIABLE:OxygenTank05_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C OxygenAudio_GEN_VARIABLE:OxygenAudio_GEN_VARIABLE_BP_OxygenTankSound_C_CAT";
         static constexpr const char* MineHead__TerrainScanner__UeName = "MineHead_ TerrainScanner";
         static constexpr const char* MineHead__TerrainScanner__UeScsNode = "fb534106b717e34e8523ba03235fc14c";
         static constexpr const char* PB_SmallPlatform05__UeScsNode = "27e79e65e9313941b5da5d28f487c04f";
@@ -220,4 +221,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Minehead
 
-using BP_MineHead_C = Game::LevelElements::Minehead::BP_MineHead_C;
+using BP_MineHead_C = ::Game::LevelElements::Minehead::BP_MineHead_C;

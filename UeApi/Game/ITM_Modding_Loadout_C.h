@@ -24,8 +24,8 @@ class ITM_Modding_Loadout_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/ITM_Modding_Loadout", "ITM_Modding_Loadout_C");
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Basic_ToolTip_HeadlineAndText_C = Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_ToolTip_HeadlineAndText_C = ::Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Hover;
     class UBorder* Background;
@@ -63,4 +63,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using ITM_Modding_Loadout_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Loadout_C;
+using ITM_Modding_Loadout_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Loadout_C;

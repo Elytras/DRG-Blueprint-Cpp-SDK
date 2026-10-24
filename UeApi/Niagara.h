@@ -702,6 +702,7 @@ struct FNiagaraTypeDefinitionHandle
 
     FNiagaraTypeDefinitionHandle() = default;
     FNiagaraTypeDefinitionHandle(int RegisteredTypeIndex) {}
+    FNiagaraTypeDefinitionHandle(const struct FNiagaraTypeDefinition &) {}
 };
 
 struct FNiagaraVariableBase

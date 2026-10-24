@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using BTTask_ResetIfDead_C = Game::WeaponsNTools::Grenades::FriendlyShredders::BTTask_ResetIfDead_C;
+using BTTask_ResetIfDead_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::BTTask_ResetIfDead_C;

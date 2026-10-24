@@ -16,7 +16,7 @@ class WND_Popup_Legacy_C : public UFSDEventPopupWidget
 {
 public:
     UE_CLASS("/Game/Game/Events/Anniversary/WND_Popup_Legacy", "WND_Popup_Legacy_C");
-    using _DLCclaimPopup_Base_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
+    using _DLCclaimPopup_Base_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     _DLCclaimPopup_Base_C* DLC_Base;
     void ExecuteUbergraph_WND_Popup_Legacy(int EntryPoint);
@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Game::Events::Anniversary
 
-using WND_Popup_Legacy_C = Game::Game::Events::Anniversary::WND_Popup_Legacy_C;
+using WND_Popup_Legacy_C = ::Game::Game::Events::Anniversary::WND_Popup_Legacy_C;

@@ -16,7 +16,7 @@ class ABP_DrunksBox_C : public UAnimInstance
 {
 public:
     UE_CLASS("/Game/LevelElements/Spacerig/Bar/DrinksDispenser/Assets/ABP_DrunksBox", "ABP_DrunksBox_C");
-    using BP_DrinksBox_C = Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;
+    using BP_DrinksBox_C = ::Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_4;
@@ -47,4 +47,4 @@ public:
 
 }}}}}}   // namespace Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets
 
-using ABP_DrunksBox_C = Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::ABP_DrunksBox_C;
+using ABP_DrunksBox_C = ::Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::ABP_DrunksBox_C;

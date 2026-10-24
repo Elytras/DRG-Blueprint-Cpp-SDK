@@ -48,4 +48,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ButtonTab_C = Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
+using Basic_ButtonTab_C = ::Game::UI::Art::WidgetParts::Basic_ButtonTab_C;

@@ -16,7 +16,7 @@ class Basic_DropdownItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_DropdownItem", "Basic_DropdownItem_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     class UTextBlock* DropdownText;
     UE_PURE FText GetDropdownText();
@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_DropdownItem_C = Game::UI::Art::WidgetParts::Basic_DropdownItem_C;
+using Basic_DropdownItem_C = ::Game::UI::Art::WidgetParts::Basic_DropdownItem_C;

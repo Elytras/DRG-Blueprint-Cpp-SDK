@@ -16,7 +16,7 @@ class Options_OverlayIntensity_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_OverlayIntensity", "Options_OverlayIntensity_C");
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
     void ExecuteUbergraph_Options_OverlayIntensity(int EntryPoint);
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_OverlayIntensity_C = Game::UI::Menu_Options::Options_OverlayIntensity_C;
+using Options_OverlayIntensity_C = ::Game::UI::Menu_Options::Options_OverlayIntensity_C;

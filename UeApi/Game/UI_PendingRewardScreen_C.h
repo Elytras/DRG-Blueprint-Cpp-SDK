@@ -21,8 +21,8 @@ class UI_PendingRewardScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_PendingRewardScreen", "UI_PendingRewardScreen_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_MissionComplete_ResourceBox_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_ResourceBox_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_MissionComplete_ResourceBox_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_ResourceBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UVerticalBox* CreditsBox;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_PendingRewardScreen_C = Game::UI::Menu_StartScreen::UI_PendingRewardScreen_C;
+using UI_PendingRewardScreen_C = ::Game::UI::Menu_StartScreen::UI_PendingRewardScreen_C;

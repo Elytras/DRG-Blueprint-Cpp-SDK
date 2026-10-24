@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Milestone_Tier_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
+using UI_Milestone_Tier_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;

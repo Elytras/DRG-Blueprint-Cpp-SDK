@@ -26,9 +26,9 @@ class ITM_CommunityGoalResult_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalResult", "ITM_CommunityGoalResult_C");
-    using ITM_FactionToolTip_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using ITM_FactionToolTip_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UOverlay* BronzeImage;
     class USizeBox* CurrentSizebox;
@@ -70,4 +70,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalResult_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_C;
+using ITM_CommunityGoalResult_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_C;

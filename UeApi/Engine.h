@@ -4244,6 +4244,7 @@ struct FA2CSPose : public FA2Pose
 struct FActiveCameraShakeInfo
 {
     class UCameraShakeBase* ShakeInstance;
+    TWeakObjectPtr<class UCameraShakeSourceComponent> ShakeSource;
     bool bIsCustomInitialized;
 };
 
@@ -5233,6 +5234,7 @@ struct FEdGraphTerminalType
 {
     FName TerminalCategory;
     FName TerminalSubCategory;
+    TWeakObjectPtr<class UObject> TerminalSubCategoryObject;
     bool bTerminalIsConst;
     bool bTerminalIsWeakPointer;
     bool bTerminalIsUObjectWrapper;
@@ -5242,6 +5244,7 @@ struct FEdGraphPinType
 {
     FName PinCategory;
     FName PinSubCategory;
+    TWeakObjectPtr<class UObject> PinSubCategoryObject;
     FSimpleMemberReference PinSubCategoryMemberReference;
     FEdGraphTerminalType PinValueType;
     EPinContainerType ContainerType;
@@ -6676,6 +6679,7 @@ struct FCharacterServerMovePackedBits : public FCharacterNetworkSerializationPac
 
 struct FChildActorAttachedActorInfo
 {
+    TWeakObjectPtr<class AActor> Actor;
     FName SocketName;
     FTransform RelativeTransform;
 };
@@ -7502,6 +7506,7 @@ struct FDynamicTextureInstance : public FStreamableTextureInstance
 
 struct FEdGraphPinReference
 {
+    TWeakObjectPtr<class UEdGraphNode> OwningNode;
     FGuid PinId;
 };
 
@@ -7765,6 +7770,9 @@ struct FHitResult
     uint8 ElementIndex;
     bool bBlockingHit;
     bool bStartPenetrating;
+    TWeakObjectPtr<class UPhysicalMaterial> PhysMaterial;
+    TWeakObjectPtr<class AActor> Actor;
+    TWeakObjectPtr<class UPrimitiveComponent> Component;
     FName BoneName;
     FName MyBoneName;
 
@@ -8143,6 +8151,7 @@ struct FGenericStruct
 
     FGenericStruct() = default;
     FGenericStruct(int Data) {}
+    template <class T> FGenericStruct(const T &) {}
 };
 
 struct FGeomSelection
@@ -8348,6 +8357,7 @@ struct FImportanceTexture
     TArray<float> MarginalCDF;
     TArray<float> ConditionalCDF;
     TArray<FColor> TextureData;
+    TWeakObjectPtr<class UTexture2D> Texture;
     EImportanceWeight Weighting;
 
     // UImportanceSamplingLibrary::BreakImportanceTexture (Engine.h)
@@ -9548,6 +9558,8 @@ struct FOrbitOptions
 
 struct FOverlapResult
 {
+    TWeakObjectPtr<class AActor> Actor;
+    TWeakObjectPtr<class UPrimitiveComponent> Component;
     bool bBlockingHit;
 };
 
@@ -10628,6 +10640,7 @@ struct FSkeletalMeshBuildSettings
 
 struct FSkeletalMeshClothBuildParams
 {
+    TWeakObjectPtr<class UClothingAssetBase> TargetAsset;
     int TargetLod;
     bool bRemapParameters;
     FString AssetName;
@@ -11717,6 +11730,7 @@ struct FTimeline
     TArray<FTimelineVectorTrack> InterpVectors;
     TArray<FTimelineFloatTrack> InterpFloats;
     TArray<FTimelineLinearColorTrack> InterpLinearColors;
+    TWeakObjectPtr<class UObject> PropertySetObject;
     FName DirectionPropertyName;
 };
 
@@ -12401,6 +12415,9 @@ public:
     UE_PURE TArray<class UActorComponent*> K2_GetComponentsByClass(TSubclassOf<class UActorComponent> ComponentClass) const;
     UE_PURE class USceneComponent* K2_GetRootComponent() const;
     UE_PURE bool WasRecentlyRendered(float Tolerance) const;
+    /* The editor's Get Components by Class node: K2_GetComponentsByClass(T::StaticClass()), its array of
+       UActorComponent* taken as an array of T* (every element is a T). AssetGen lowers it; no UFunction. */
+    template <class T> TArray<T *> GetComponentsByClass() const;
 private:
     struct UeMarkers
     {

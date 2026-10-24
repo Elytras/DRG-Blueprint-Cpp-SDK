@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ArrowButton02_C = Game::UI::Art::WidgetParts::Basic_ArrowButton02_C;
+using Basic_ArrowButton02_C = ::Game::UI::Art::WidgetParts::Basic_ArrowButton02_C;

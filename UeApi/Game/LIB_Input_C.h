@@ -30,4 +30,4 @@ public:
 
 }}   // namespace Game::UI
 
-using LIB_Input_C = Game::UI::LIB_Input_C;
+using LIB_Input_C = ::Game::UI::LIB_Input_C;

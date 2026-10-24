@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Treasure
 
-using BP_WeaponSkinRewarder_C = Game::GameElements::Treasure::BP_WeaponSkinRewarder_C;
+using BP_WeaponSkinRewarder_C = ::Game::GameElements::Treasure::BP_WeaponSkinRewarder_C;

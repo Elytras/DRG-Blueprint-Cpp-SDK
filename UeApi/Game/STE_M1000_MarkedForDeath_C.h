@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using STE_M1000_MarkedForDeath_C = Game::WeaponsNTools::BoltActionRifle::STE_M1000_MarkedForDeath_C;
+using STE_M1000_MarkedForDeath_C = ::Game::WeaponsNTools::BoltActionRifle::STE_M1000_MarkedForDeath_C;

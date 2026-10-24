@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Art::Cinematics::E3trailer2017
 
-using E3trailer_CamShake_C = Game::Art::Cinematics::E3trailer2017::E3trailer_CamShake_C;
+using E3trailer_CamShake_C = ::Game::Art::Cinematics::E3trailer2017::E3trailer_CamShake_C;

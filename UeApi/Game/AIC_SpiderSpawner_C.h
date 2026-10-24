@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using AIC_SpiderSpawner_C = Game::Enemies::EnemySpawner::AIC_SpiderSpawner_C;
+using AIC_SpiderSpawner_C = ::Game::Enemies::EnemySpawner::AIC_SpiderSpawner_C;

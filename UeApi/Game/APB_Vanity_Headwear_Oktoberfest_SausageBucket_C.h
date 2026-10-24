@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using APB_Vanity_Headwear_Oktoberfest_SausageBucket_C = Game::Character::Vanity2::Headwear::APB_Vanity_Headwear_Oktoberfest_SausageBucket_C;
+using APB_Vanity_Headwear_Oktoberfest_SausageBucket_C = ::Game::Character::Vanity2::Headwear::APB_Vanity_Headwear_Oktoberfest_SausageBucket_C;

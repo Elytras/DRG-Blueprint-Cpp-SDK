@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_Escort_Repair_C = Game::Character::Tutorials::Tutorial_Hint_Escort_Repair_C;
+using Tutorial_Hint_Escort_Repair_C = ::Game::Character::Tutorials::Tutorial_Hint_Escort_Repair_C;

@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using UI_BeerBuff_Spacerig_C = Game::UI::HUD_SpaceRig::UI_BeerBuff_Spacerig_C;
+using UI_BeerBuff_Spacerig_C = ::Game::UI::HUD_SpaceRig::UI_BeerBuff_Spacerig_C;

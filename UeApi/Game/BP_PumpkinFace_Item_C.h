@@ -16,7 +16,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Art { namespace Environments { namespace Holiday_Halloween {
 
-class BP_PumpkinFace_Item_C : public Game::Art::Environments::Holiday_Halloween::BP_Pumpkin_Item_C
+class BP_PumpkinFace_Item_C : public ::Game::Art::Environments::Holiday_Halloween::BP_Pumpkin_Item_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Halloween/BP_PumpkinFace_Item", "BP_PumpkinFace_Item_C");
@@ -34,6 +34,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SimpleObjectInfo";
         static constexpr const char* UberGraphFrame_BP_PumpkinFace_Item_C__UeName = "UberGraphFrame";
         static constexpr const char* ProximityTrigger__UeScsNode = "4fa226c2bead3645a84a863f39a4a34e";
         static constexpr const char* PointLight__UeScsNode = "120b7340982b34438b3eac4f96c09037";
@@ -42,4 +43,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween
 
-using BP_PumpkinFace_Item_C = Game::Art::Environments::Holiday_Halloween::BP_PumpkinFace_Item_C;
+using BP_PumpkinFace_Item_C = ::Game::Art::Environments::Holiday_Halloween::BP_PumpkinFace_Item_C;

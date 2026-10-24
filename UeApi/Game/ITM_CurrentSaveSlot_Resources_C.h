@@ -19,7 +19,7 @@ class ITM_CurrentSaveSlot_Resources_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/ITM_CurrentSaveSlot_Resources", "ITM_CurrentSaveSlot_Resources_C");
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_TopBar_ResourceCounter_C* CreditsCounter;
     class UVerticalBox* VerticalBox_0;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using ITM_CurrentSaveSlot_Resources_C = Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_Resources_C;
+using ITM_CurrentSaveSlot_Resources_C = ::Game::UI::Menu_SaveSlots::ITM_CurrentSaveSlot_Resources_C;

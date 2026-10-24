@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards
 
-using BP_PostProcessing_OssuaryDepths_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::BP_PostProcessing_OssuaryDepths_C;
+using BP_PostProcessing_OssuaryDepths_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::BP_PostProcessing_OssuaryDepths_C;

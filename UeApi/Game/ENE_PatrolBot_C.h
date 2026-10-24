@@ -36,7 +36,7 @@ class ENE_PatrolBot_C : public APatrolBot
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/ENE_PatrolBot", "ENE_PatrolBot_C");
-    using AIC_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::AIC_PatrolBot_C;
+    using AIC_PatrolBot_C = ::Game::Enemies::RivalTech::PatrolBot::AIC_PatrolBot_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* spawnParticles;
     class UNiagaraComponent* JetParticles3;
@@ -117,4 +117,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using ENE_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::ENE_PatrolBot_C;
+using ENE_PatrolBot_C = ::Game::Enemies::RivalTech::PatrolBot::ENE_PatrolBot_C;

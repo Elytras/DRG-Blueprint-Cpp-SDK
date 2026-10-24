@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace SpiderEgg {
 
-class BP_SpiderEgg_C : public Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_Base_C
+class BP_SpiderEgg_C : public ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpiderEgg/BP_SpiderEgg", "BP_SpiderEgg_C");
@@ -20,6 +20,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Egg Broken;Egg Whole;ICH-DefaultSceneRoot;SimpleObjectInfo;TerrainPlacement";
         static constexpr const char* EggBroken__UeScsNode = "e3498ff79098b34cb0b6840fa2f3f22c";
         static constexpr const char* EggWhole__UeScsNode = "fd4098c63b35dc46b1e38549127ba1a4";
     };
@@ -27,4 +28,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg
 
-using BP_SpiderEgg_C = Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_C;
+using BP_SpiderEgg_C = ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_C;

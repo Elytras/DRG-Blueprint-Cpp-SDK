@@ -19,11 +19,11 @@ class HUD_Refinery_SecondaryUseButton_C : public UFSDInWorldWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/HUD_Refinery_SecondaryUseButton", "HUD_Refinery_SecondaryUseButton_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimDownArrow;
     UI_ImageTinted_C* IMG_DownArrow;
-    class UImage* Img_Icon;
+    class UImage* IMG_Icon;
     class AFSDRefinery* Refinery;
     void ExecuteUbergraph_HUD_Refinery_SecondaryUseButton(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -33,4 +33,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using HUD_Refinery_SecondaryUseButton_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::HUD_Refinery_SecondaryUseButton_C;
+using HUD_Refinery_SecondaryUseButton_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::HUD_Refinery_SecondaryUseButton_C;

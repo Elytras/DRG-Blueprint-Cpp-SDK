@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage
 
-using BP_PassiveFoliage_Base_C = Game::LevelElements::RoomObjects::PassiveFoliage::BP_PassiveFoliage_Base_C;
+using BP_PassiveFoliage_Base_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::BP_PassiveFoliage_Base_C;

@@ -17,7 +17,7 @@ class BP_BossFight_PlagueMeteor_C : public UObject
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_BossFight_PlagueMeteor", "BP_BossFight_PlagueMeteor_C");
-    using BP_PlagueMeteor_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteor_C;
+    using BP_PlagueMeteor_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteor_C;
     BP_PlagueMeteor_C* MeteorRef;
     bool IsStillValid();
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_BossFight_PlagueMeteor_C = Game::GameElements::GameEvents::PlagueMeteor::BP_BossFight_PlagueMeteor_C;
+using BP_BossFight_PlagueMeteor_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_BossFight_PlagueMeteor_C;

@@ -61,4 +61,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CroNewGrenadeLauncher_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNewGrenadeLauncher_C;
+using HUD_CroNewGrenadeLauncher_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNewGrenadeLauncher_C;

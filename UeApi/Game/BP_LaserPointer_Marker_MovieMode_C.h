@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using BP_LaserPointer_Marker_MovieMode_C = Game::WeaponsNTools::LaserPointer::BP_LaserPointer_Marker_MovieMode_C;
+using BP_LaserPointer_Marker_MovieMode_C = ::Game::WeaponsNTools::LaserPointer::BP_LaserPointer_Marker_MovieMode_C;

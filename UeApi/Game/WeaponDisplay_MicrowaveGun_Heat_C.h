@@ -22,7 +22,7 @@ class WeaponDisplay_MicrowaveGun_Heat_C : public UUserWidget
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/WeaponDisplay_MicrowaveGun_Heat", "WeaponDisplay_MicrowaveGun_Heat_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    UE_READONLY class UWidgetAnimation* OverHeat;
+    UE_READONLY class UWidgetAnimation* Overheat;
     class UImage* Border;
     class UImage* Image;
     class UImage* Image_0;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using WeaponDisplay_MicrowaveGun_Heat_C = Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_Heat_C;
+using WeaponDisplay_MicrowaveGun_Heat_C = ::Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_Heat_C;

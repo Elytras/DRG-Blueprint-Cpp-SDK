@@ -83,6 +83,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/Art/Environments/SpaceRig/MinersManual_Hologram/BP_MinersManualConsole.BP_MinersManualConsole_C BP_MinersManual_GEN_VARIABLE:BP_MinersManual_GEN_VARIABLE_BP_MinersManual_C_CAT;/Game/UI/HUD_SpaceRig/BP_MissionStats.BP_MissionStats_C BP_MissionStats_GEN_VARIABLE:BP_MissionStats_GEN_VARIABLE_BP_MissionStats_C_CAT;/Game/UI/HUD_SpaceRig/BP_MotivationalQuotes.BP_MotivationalQuotes_C Monitor_MotivationalQuotes_GEN_VARIABLE:BP_MissionStats1_GEN_VARIABLE_BP_MotivationalQuotes_C_CAT;/Game/UI/HUD_SpaceRig/BP_SelectCharacterOnlyConsole.BP_SelectCharacterOnlyConsole_C Monitor_MotivationalQuotes1_GEN_VARIABLE:Monitor_MotivationalQuotes1_GEN_VARIABLE_BP_SelectCharacterOnlyConsole_C_CAT";
         static constexpr const char* BP_MinersManual__UeScsNode = "19858ada2990934888fbd6d30618b3c8";
         static constexpr const char* PointLight8__UeScsNode = "c92944caa8334642991323f909e55247";
         static constexpr const char* PointLight7__UeScsNode = "a7e14789f601df45bb4884314f1c9621";
@@ -143,4 +144,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_SpaceRig_Cabin01_C = Game::Art::Environments::SpaceRig::BP_SpaceRig_Cabin01_C;
+using BP_SpaceRig_Cabin01_C = ::Game::Art::Environments::SpaceRig::BP_SpaceRig_Cabin01_C;

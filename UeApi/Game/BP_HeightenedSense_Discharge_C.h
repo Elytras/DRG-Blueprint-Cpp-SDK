@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_HeightenedSense_Discharge_C = Game::GameElements::KPI::Perks::BP_HeightenedSense_Discharge_C;
+using BP_HeightenedSense_Discharge_C = ::Game::GameElements::KPI::Perks::BP_HeightenedSense_Discharge_C;

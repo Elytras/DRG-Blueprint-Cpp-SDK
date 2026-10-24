@@ -20,7 +20,7 @@ class UI_HazPlus_Icon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/UI_HazPlus_Icon", "UI_HazPlus_Icon_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Amount_Label;
     class USizeBox* Content_SizeBox;
@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_HazPlus_Icon_C = Game::UI::Global_UI_Elements::UI_HazPlus_Icon_C;
+using UI_HazPlus_Icon_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Icon_C;

@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Empty_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Empty_C;
+using ConsoleScreen_Empty_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Empty_C;

@@ -30,7 +30,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* P_Homing_Drone_Jets2;
     class UParticleSystemComponent* P_Homing_Drone_Jets1;
-    class UParticleSystemComponent* particle_Trail;
+    class UParticleSystemComponent* Particle_Trail;
     class UParticleSystemComponent* P_Homing_Drone_Jets;
     class UAudioComponent* HomingDroneIdle_Cue;
     class UEnemyComponent* enemy;
@@ -55,7 +55,7 @@ private:
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
         static constexpr const char* P_Homing_Drone_Jets2__UeScsNode = "d9498dfb0d3268458258da6c1d7fd42c";
         static constexpr const char* P_Homing_Drone_Jets1__UeScsNode = "39ea14501af64a44a6c1ac0e9b129a37";
-        static constexpr const char* particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
+        static constexpr const char* Particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
         static constexpr const char* P_Homing_Drone_Jets__UeScsNode = "742d6931dd55f44bad20f2361259b4ae";
         static constexpr const char* HomingDroneIdle_Cue__UeScsNode = "67660b3468517745b9ce6ef7b1f3375a";
         static constexpr const char* enemy__UeScsNode = "99043c23df924342b4fe8e479e074fec";
@@ -71,4 +71,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_Homing
 
-using PRJ_HomingDrone_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_Homing::PRJ_HomingDrone_C;
+using PRJ_HomingDrone_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_Homing::PRJ_HomingDrone_C;

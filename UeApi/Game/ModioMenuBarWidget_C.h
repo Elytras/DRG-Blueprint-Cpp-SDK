@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioMenuBarWidget_C = Modio::UI::Browser::Components::ModioMenuBarWidget_C;
+using ModioMenuBarWidget_C = ::Modio::UI::Browser::Components::ModioMenuBarWidget_C;

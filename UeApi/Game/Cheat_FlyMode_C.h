@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_FlyMode_C = Game::UI::Menu_Cheats::Cheat_FlyMode_C;
+using Cheat_FlyMode_C = ::Game::UI::Menu_Cheats::Cheat_FlyMode_C;

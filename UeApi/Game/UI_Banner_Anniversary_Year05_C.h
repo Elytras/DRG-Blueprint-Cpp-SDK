@@ -20,8 +20,8 @@ class UI_Banner_Anniversary_Year05_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/FSDEvents/UI_Banner_Anniversary_Year05", "UI_Banner_Anniversary_Year05_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow_0;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::FSDEvents
 
-using UI_Banner_Anniversary_Year05_C = Game::UI::FSDEvents::UI_Banner_Anniversary_Year05_C;
+using UI_Banner_Anniversary_Year05_C = ::Game::UI::FSDEvents::UI_Banner_Anniversary_Year05_C;

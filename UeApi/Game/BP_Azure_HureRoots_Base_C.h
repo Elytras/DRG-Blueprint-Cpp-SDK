@@ -42,4 +42,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs
 
-using BP_Azure_HureRoots_Base_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs::BP_Azure_HureRoots_Base_C;
+using BP_Azure_HureRoots_Base_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs::BP_Azure_HureRoots_Base_C;

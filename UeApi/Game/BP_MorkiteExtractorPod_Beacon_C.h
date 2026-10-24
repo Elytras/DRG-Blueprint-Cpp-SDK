@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace DeepDive { namespace LiquidMorkite_Refinery {
 
-class BP_MorkiteExtractorPod_Beacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_MorkiteExtractorPod_Beacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/BP_MorkiteExtractorPod_Beacon", "BP_MorkiteExtractorPod_Beacon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using BP_MorkiteExtractorPod_Beacon_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::BP_MorkiteExtractorPod_Beacon_C;
+using BP_MorkiteExtractorPod_Beacon_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::BP_MorkiteExtractorPod_Beacon_C;

@@ -27,9 +27,9 @@ class HUD_EscortMuleStatus_C : public UOptionalObjectiveWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/DrillingVehicle/HUD_EscortMuleStatus", "HUD_EscortMuleStatus_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using ITM_EscortMuleHealthBar_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_EscortMuleHealthBar_C;
-    using ITM_FuelCannisterStatus_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_FuelCannisterStatus_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using ITM_EscortMuleHealthBar_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_EscortMuleHealthBar_C;
+    using ITM_FuelCannisterStatus_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_FuelCannisterStatus_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OutOfFuel;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
@@ -70,4 +70,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::DrillingVehicle
 
-using HUD_EscortMuleStatus_C = Game::UI::MainOnscreenHUD::DrillingVehicle::HUD_EscortMuleStatus_C;
+using HUD_EscortMuleStatus_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::HUD_EscortMuleStatus_C;

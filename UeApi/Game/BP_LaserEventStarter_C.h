@@ -93,4 +93,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent
 
-using BP_LaserEventStarter_C = Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_LaserEventStarter_C;
+using BP_LaserEventStarter_C = ::Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_LaserEventStarter_C;

@@ -26,13 +26,13 @@ class WND_SeasonOverview_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonOverview", "WND_SeasonOverview_C");
-    using ITM_InfoBox_C = Game::UI::_GlobalAssets::ITM_InfoBox_C;
-    using ITM_SeasonContentToggle_C = Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;
-    using ITM_Season_NextReward_C = Game::UI::Menu_Seasons::ITM_Season_NextReward_C;
-    using UI_DLC_Season_C = Game::UI::Menu_Seasons::UI_DLC_Season_C;
-    using WND_SeasonChallenges_C = Game::UI::Menu_Seasons::WND_SeasonChallenges_C;
-    using WND_SeasonEventBonus_Base_C = Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C;
-    using WND_SeasonLevels_C = Game::UI::Menu_Seasons::WND_SeasonLevels_C;
+    using ITM_InfoBox_C = ::Game::UI::_GlobalAssets::ITM_InfoBox_C;
+    using ITM_SeasonContentToggle_C = ::Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;
+    using ITM_Season_NextReward_C = ::Game::UI::Menu_Seasons::ITM_Season_NextReward_C;
+    using UI_DLC_Season_C = ::Game::UI::Menu_Seasons::UI_DLC_Season_C;
+    using WND_SeasonChallenges_C = ::Game::UI::Menu_Seasons::WND_SeasonChallenges_C;
+    using WND_SeasonEventBonus_Base_C = ::Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C;
+    using WND_SeasonLevels_C = ::Game::UI::Menu_Seasons::WND_SeasonLevels_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimRevealSeasonToggle;
     ITM_Season_NextReward_C* ITM_BP_NextReward;
@@ -69,4 +69,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_SeasonOverview_C = Game::UI::Menu_Seasons::WND_SeasonOverview_C;
+using WND_SeasonOverview_C = ::Game::UI::Menu_Seasons::WND_SeasonOverview_C;

@@ -23,7 +23,7 @@ class BP_JobsConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_JobsConsole", "BP_JobsConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Monitor;
     class UTextRenderComponent* TextRender;
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_JobsConsole_C = Game::UI::HUD_SpaceRig::BP_JobsConsole_C;
+using BP_JobsConsole_C = ::Game::UI::HUD_SpaceRig::BP_JobsConsole_C;

@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Radiated_C = Game::UI::ScreenOverlays::ScreenOverlay_Radiated_C;
+using ScreenOverlay_Radiated_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Radiated_C;

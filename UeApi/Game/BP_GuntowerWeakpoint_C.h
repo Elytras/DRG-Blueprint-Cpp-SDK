@@ -51,4 +51,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Weakpoint
 
-using BP_GuntowerWeakpoint_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Weakpoint::BP_GuntowerWeakpoint_C;
+using BP_GuntowerWeakpoint_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Weakpoint::BP_GuntowerWeakpoint_C;

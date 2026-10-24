@@ -35,4 +35,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_StalactiteCluster_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_StalactiteCluster_C;
+using BP_StalactiteCluster_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_StalactiteCluster_C;

@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Incendiary
 
-using BP_Grenade_Incendiary_Flame_C = Game::WeaponsNTools::Grenades::Incendiary::BP_Grenade_Incendiary_Flame_C;
+using BP_Grenade_Incendiary_Flame_C = ::Game::WeaponsNTools::Grenades::Incendiary::BP_Grenade_Incendiary_Flame_C;

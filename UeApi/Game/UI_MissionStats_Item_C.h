@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_MissionStats_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Item_C;
+using UI_MissionStats_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Item_C;

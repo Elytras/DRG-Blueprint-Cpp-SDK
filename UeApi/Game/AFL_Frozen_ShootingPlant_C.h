@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::ShootingPlant::Affliction
 
-using AFL_Frozen_ShootingPlant_C = Game::Enemies::ShootingPlant::Affliction::AFL_Frozen_ShootingPlant_C;
+using AFL_Frozen_ShootingPlant_C = ::Game::Enemies::ShootingPlant::Affliction::AFL_Frozen_ShootingPlant_C;

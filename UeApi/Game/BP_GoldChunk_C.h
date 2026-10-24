@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks
 
-using BP_GoldChunk_C = Game::GameElements::Resources::Veins::ResourceChunks::BP_GoldChunk_C;
+using BP_GoldChunk_C = ::Game::GameElements::Resources::Veins::ResourceChunks::BP_GoldChunk_C;

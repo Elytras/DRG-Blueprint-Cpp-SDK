@@ -95,6 +95,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/SentryGun/BP_Turret_Arc_Indicator.BP_Turret_Arc_Indicator_C ARCIndicator_GEN_VARIABLE:ARCIndicator_GEN_VARIABLE_BP_Turret_Arc_Indicator_C_CAT;/Game/WeaponsNTools/SentryGun/BP_TurretEMPDischarge_Indicator.BP_TurretEMPDischarge_Indicator_C EMPIndicator_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_TurretEMPDischarge_Indicator_C_CAT";
         static constexpr const char* ArcIndicator__UeScsNode = "2d684a218e017143b15d8ec40fc96e56";
         static constexpr const char* EMPIndicator__UeScsNode = "e4d15cb0a85d6641818f7a72f459a316";
         static constexpr const char* SpecialAttackCollider__UeScsNode = "5596d337db5a0d45b864d8db2fd88256";
@@ -123,4 +124,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryGun_Redeployable_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Redeployable_C;
+using BP_SentryGun_Redeployable_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Redeployable_C;

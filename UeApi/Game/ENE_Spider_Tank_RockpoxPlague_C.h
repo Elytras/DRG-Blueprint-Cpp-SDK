@@ -18,7 +18,7 @@ class UStatusEffect;
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class ENE_Spider_Tank_RockpoxPlague_C : public Game::Enemies::Spider::Tank::ENE_Spider_Tank_Normal_C
+class ENE_Spider_Tank_RockpoxPlague_C : public ::Game::Enemies::Spider::Tank::ENE_Spider_Tank_Normal_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/ENE_Spider_Tank_RockpoxPlague", "ENE_Spider_Tank_RockpoxPlague_C");
@@ -46,6 +46,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;GlyphidPraetorianIdle_Cue;ConeAttack;Enemy;BiteAttack;StabAttack;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileThrowerAttack_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.DamageComponent BiteAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.PushStatusEffectDamageBonus BiteAttack_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Tank_RockpoxPlague_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileThrowerAttack__UeScsNode = "0e467a94e713d94995339a0c18c69b9b";
         static constexpr const char* ProjectileOrigin__UeScsNode = "4868c71d49e05049ad6f61c0d39dc1c1";
@@ -66,4 +68,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using ENE_Spider_Tank_RockpoxPlague_C = Game::Enemies::Plague::ENE_Spider_Tank_RockpoxPlague_C;
+using ENE_Spider_Tank_RockpoxPlague_C = ::Game::Enemies::Plague::ENE_Spider_Tank_RockpoxPlague_C;

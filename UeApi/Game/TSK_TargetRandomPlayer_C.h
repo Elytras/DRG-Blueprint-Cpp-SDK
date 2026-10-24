@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_TargetRandomPlayer_C = Game::AI::Tasks::TSK_TargetRandomPlayer_C;
+using TSK_TargetRandomPlayer_C = ::Game::AI::Tasks::TSK_TargetRandomPlayer_C;

@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_PerkListItem_C = Game::UI::Menu_Cheats::Cheat_PerkListItem_C;
+using Cheat_PerkListItem_C = ::Game::UI::Menu_Cheats::Cheat_PerkListItem_C;

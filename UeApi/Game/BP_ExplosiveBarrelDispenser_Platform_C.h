@@ -73,6 +73,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_BarrelDispenser.BP_BarrelDispenser_C BackDispenser_GEN_VARIABLE:BackDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT;/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_BarrelDispenser.BP_BarrelDispenser_C ForwardDispenser_GEN_VARIABLE:ForwardDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT;/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_BarrelDispenser.BP_BarrelDispenser_C LeftDispenser_GEN_VARIABLE:RightDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT;/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_BarrelDispenser.BP_BarrelDispenser_C RightDispenser_GEN_VARIABLE:LeftDispenser2_GEN_VARIABLE_BP_BarrelDispenser_C_CAT;/Script/FSD.InstantUsable BackDispenser_GEN_VARIABLE:BackDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Usable;/Script/FSD.InstantUsable ForwardDispenser_GEN_VARIABLE:ForwardDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Usable;/Script/FSD.InstantUsable LeftDispenser_GEN_VARIABLE:RightDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Usable;/Script/FSD.InstantUsable RightDispenser_GEN_VARIABLE:LeftDispenser2_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Usable;/Script/Engine.SceneComponent BackDispenser_GEN_VARIABLE:BackDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Root;/Script/Engine.SceneComponent ForwardDispenser_GEN_VARIABLE:ForwardDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Root;/Script/Engine.SceneComponent LeftDispenser_GEN_VARIABLE:RightDispenser_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Root;/Script/Engine.SceneComponent RightDispenser_GEN_VARIABLE:LeftDispenser2_GEN_VARIABLE_BP_BarrelDispenser_C_CAT:Root";
         static constexpr const char* TerrainDetect3__UeScsNode = "22771086baeb4247a2932e1749d800df";
         static constexpr const char* TerrainDetect2__UeScsNode = "2537b432fefe51478b2878e0c9de0544";
         static constexpr const char* TerrainDetect1__UeScsNode = "049670c6d8aa9f409659d3486e9bdc95";
@@ -97,4 +98,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent
 
-using BP_ExplosiveBarrelDispenser_Platform_C = Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_ExplosiveBarrelDispenser_Platform_C;
+using BP_ExplosiveBarrelDispenser_Platform_C = ::Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_ExplosiveBarrelDispenser_Platform_C;

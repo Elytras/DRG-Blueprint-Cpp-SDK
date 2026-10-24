@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Shooter { namespace ShooterQueen {
 
-class BP_ShooterQueen_Projectile_AcidCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_ShooterQueen_Projectile_AcidCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ShooterQueen/BP_ShooterQueen_Projectile_AcidCloud", "BP_ShooterQueen_Projectile_AcidCloud_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "AcidCloud;Sphere;StatusEffectTrigger";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Shooter::ShooterQueen
 
-using BP_ShooterQueen_Projectile_AcidCloud_C = Game::Enemies::Spider::Shooter::ShooterQueen::BP_ShooterQueen_Projectile_AcidCloud_C;
+using BP_ShooterQueen_Projectile_AcidCloud_C = ::Game::Enemies::Spider::Shooter::ShooterQueen::BP_ShooterQueen_Projectile_AcidCloud_C;

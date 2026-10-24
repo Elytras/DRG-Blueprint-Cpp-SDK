@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_DamageTypeIcon_C = Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;
+using Lore_DamageTypeIcon_C = ::Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;

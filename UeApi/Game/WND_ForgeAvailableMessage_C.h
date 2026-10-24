@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using WND_ForgeAvailableMessage_C = Game::UI::HUD_SpaceRig::WND_ForgeAvailableMessage_C;
+using WND_ForgeAvailableMessage_C = ::Game::UI::HUD_SpaceRig::WND_ForgeAvailableMessage_C;

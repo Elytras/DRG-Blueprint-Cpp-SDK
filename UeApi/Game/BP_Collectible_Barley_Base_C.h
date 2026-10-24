@@ -12,7 +12,7 @@ class USceneComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Collectibles { namespace Barley {
 
-class BP_Collectible_Barley_Base_C : public Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C
+class BP_Collectible_Barley_Base_C : public ::Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Collectible_Barley_Base", "BP_Collectible_Barley_Base_C");
@@ -20,8 +20,13 @@ public:
     void UserConstructionScript();
     void PickBerry(class USceneComponent* Berry, class USceneComponent* Stem);
     UE_PURE float GetPickDelay() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "InstantUsable;SimpleObjectInfo;UseTrigger";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Barley
 
-using BP_Collectible_Barley_Base_C = Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_Base_C;
+using BP_Collectible_Barley_Base_C = ::Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_Base_C;

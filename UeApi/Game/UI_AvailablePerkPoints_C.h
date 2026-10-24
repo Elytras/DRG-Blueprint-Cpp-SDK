@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_AvailablePerkPoints_C = Game::UI::HUD_SpaceRig::KPI::UI_AvailablePerkPoints_C;
+using UI_AvailablePerkPoints_C = ::Game::UI::HUD_SpaceRig::KPI::UI_AvailablePerkPoints_C;

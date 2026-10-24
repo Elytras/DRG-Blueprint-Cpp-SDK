@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::MicroMissileLauncher::UI
 
-using UI_MicroMissileLauncher_Charge_C = Game::WeaponsNTools::MicroMissileLauncher::UI::UI_MicroMissileLauncher_Charge_C;
+using UI_MicroMissileLauncher_Charge_C = ::Game::WeaponsNTools::MicroMissileLauncher::UI::UI_MicroMissileLauncher_Charge_C;

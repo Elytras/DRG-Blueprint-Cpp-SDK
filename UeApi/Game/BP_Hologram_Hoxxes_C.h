@@ -40,4 +40,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_Hologram_Hoxxes_C = Game::Art::Environments::SpaceRig::BP_Hologram_Hoxxes_C;
+using BP_Hologram_Hoxxes_C = ::Game::Art::Environments::SpaceRig::BP_Hologram_Hoxxes_C;

@@ -37,6 +37,7 @@ struct FTemplateSectionPropertyScale
 
 struct FTemplateSequenceBindingOverrideData
 {
+    TWeakObjectPtr<class UObject> Object;
     bool bOverridesDefault;
 };
 

@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Extractor::Fuel_Cannister
 
-using APB_FuelCannister_B_C = Game::WeaponsNTools::Extractor::Fuel_Cannister::APB_FuelCannister_B_C;
+using APB_FuelCannister_B_C = ::Game::WeaponsNTools::Extractor::Fuel_Cannister::APB_FuelCannister_B_C;

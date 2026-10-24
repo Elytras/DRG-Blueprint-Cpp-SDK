@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using STE_M1000_Electrocution_C = Game::WeaponsNTools::BoltActionRifle::STE_M1000_Electrocution_C;
+using STE_M1000_Electrocution_C = ::Game::WeaponsNTools::BoltActionRifle::STE_M1000_Electrocution_C;

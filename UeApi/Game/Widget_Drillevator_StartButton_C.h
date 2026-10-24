@@ -20,8 +20,8 @@ class Widget_Drillevator_StartButton_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/Drillevator/Widgets/Widget_Drillevator_StartButton", "Widget_Drillevator_StartButton_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimArrow;
     Basic_Image_C* Arrow_Image;
@@ -36,4 +36,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::DeepScan::Drillevator::Widgets
 
-using Widget_Drillevator_StartButton_C = Game::GameElements::Objectives::DeepScan::Drillevator::Widgets::Widget_Drillevator_StartButton_C;
+using Widget_Drillevator_StartButton_C = ::Game::GameElements::Objectives::DeepScan::Drillevator::Widgets::Widget_Drillevator_StartButton_C;

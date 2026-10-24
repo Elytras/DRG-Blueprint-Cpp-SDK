@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy
 
-using STE_BoomerangSnareLesser_C = Game::WeaponsNTools::Grenades::BoomerangBouncy::STE_BoomerangSnareLesser_C;
+using STE_BoomerangSnareLesser_C = ::Game::WeaponsNTools::Grenades::BoomerangBouncy::STE_BoomerangSnareLesser_C;

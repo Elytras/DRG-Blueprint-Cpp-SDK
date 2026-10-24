@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects
 
-using AFE_PowerAttack_C = Game::GameElements::PawnAffliction::FPEffects::AFE_PowerAttack_C;
+using AFE_PowerAttack_C = ::Game::GameElements::PawnAffliction::FPEffects::AFE_PowerAttack_C;

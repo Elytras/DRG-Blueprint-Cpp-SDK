@@ -33,4 +33,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props
 
-using BP_PropHunt_BiohazardSuit_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::BP_PropHunt_BiohazardSuit_C;
+using BP_PropHunt_BiohazardSuit_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::BP_PropHunt_BiohazardSuit_C;

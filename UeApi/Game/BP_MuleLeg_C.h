@@ -17,11 +17,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Salva
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace MuleLeg {
 
-class BP_MuleLeg_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_MuleLeg_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/MuleLeg/BP_MuleLeg", "BP_MuleLeg_C");
-    using BP_MiniMule_Salvage_C = Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;
+    using BP_MiniMule_Salvage_C = ::Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_MuleLeg_C;
     class UAudioComponent* MiniMuleLegPickUp;
     class UAudioComponent* MiniMuleLegDrop;
@@ -56,6 +56,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;Carriable;FirstPersonStaticMesh;SimpleObjectInfo;Sphere;TerrainScannerMesh;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_MuleLeg_C__UeName = "UberGraphFrame";
         static constexpr const char* MiniMuleLegPickUp__UeScsNode = "7bd24d421dd0284ab958ebf29a253746";
         static constexpr const char* MiniMuleLegDrop__UeScsNode = "146e0ff1c056b74ea7a057ecebe441e9";
@@ -71,4 +72,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::MuleLeg
 
-using BP_MuleLeg_C = Game::GameElements::Resources::Embedded::MuleLeg::BP_MuleLeg_C;
+using BP_MuleLeg_C = ::Game::GameElements::Resources::Embedded::MuleLeg::BP_MuleLeg_C;

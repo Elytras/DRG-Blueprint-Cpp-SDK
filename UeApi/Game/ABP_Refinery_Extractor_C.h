@@ -61,4 +61,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Extractor
 
-using ABP_Refinery_Extractor_C = Game::LevelElements::Refinery::Extractor::ABP_Refinery_Extractor_C;
+using ABP_Refinery_Extractor_C = ::Game::LevelElements::Refinery::Extractor::ABP_Refinery_Extractor_C;

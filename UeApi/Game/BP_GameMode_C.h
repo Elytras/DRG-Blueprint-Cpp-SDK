@@ -38,8 +38,8 @@ public:
     void EnableMuleButton();
     void DestroyNetworkedActors();
     void LoadToMission(class UMissionTemplate* mission);
-    class UClass* GetDefaultPawnClassForController(class AController* InController_GetDefaultPawnClassForController);
-    class AActor* ChoosePlayerStart(class AController* Player_ChoosePlayerStart);
+    class UClass* GetDefaultPawnClassForController(class AController* InController);
+    class AActor* ChoosePlayerStart(class AController* Player);
     void RecieveEndLevel();
     void ReceiveBeginPlay();
     void WaitForGeneration();
@@ -69,4 +69,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_GameMode_C = Game::Game::BP_GameMode_C;
+using BP_GameMode_C = ::Game::Game::BP_GameMode_C;

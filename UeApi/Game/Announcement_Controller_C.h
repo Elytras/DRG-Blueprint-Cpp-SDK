@@ -74,4 +74,4 @@ private:
 
 }}}   // namespace Game::UI::Announcements
 
-using Announcement_Controller_C = Game::UI::Announcements::Announcement_Controller_C;
+using Announcement_Controller_C = ::Game::UI::Announcements::Announcement_Controller_C;

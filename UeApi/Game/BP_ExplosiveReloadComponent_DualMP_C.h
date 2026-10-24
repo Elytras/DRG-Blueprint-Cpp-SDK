@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties
 
-using BP_ExplosiveReloadComponent_DualMP_C = Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties::BP_ExplosiveReloadComponent_DualMP_C;
+using BP_ExplosiveReloadComponent_DualMP_C = ::Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties::BP_ExplosiveReloadComponent_DualMP_C;

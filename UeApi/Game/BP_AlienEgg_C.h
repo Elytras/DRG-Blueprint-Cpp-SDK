@@ -17,7 +17,7 @@ class UTimelineComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace AlienEgg {
 
-class BP_AlienEgg_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_AlienEgg_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/AlienEgg/BP_AlienEgg", "BP_AlienEgg_C");
@@ -51,6 +51,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainScannerMesh;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_AlienEgg_C__UeName = "UberGraphFrame";
         static constexpr const char* SurroundingTerrainCarver__UeScsNode = "14af400613226d47be8eea9530b2a4e4";
         static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
@@ -68,4 +69,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::AlienEgg
 
-using BP_AlienEgg_C = Game::GameElements::Resources::Embedded::AlienEgg::BP_AlienEgg_C;
+using BP_AlienEgg_C = ::Game::GameElements::Resources::Embedded::AlienEgg::BP_AlienEgg_C;

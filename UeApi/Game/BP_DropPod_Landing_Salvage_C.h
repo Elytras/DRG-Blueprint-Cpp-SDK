@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace Droppod {
 
-class BP_DropPod_Landing_Salvage_C : public Game::LevelElements::Droppod::BP_DropPod_Landing_C
+class BP_DropPod_Landing_Salvage_C : public ::Game::LevelElements::Droppod::BP_DropPod_Landing_C
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Landing_Salvage", "BP_DropPod_Landing_Salvage_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeIchRecords = "Spot1;Spot2";
     };
 };
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_Landing_Salvage_C = Game::LevelElements::Droppod::BP_DropPod_Landing_Salvage_C;
+using BP_DropPod_Landing_Salvage_C = ::Game::LevelElements::Droppod::BP_DropPod_Landing_Salvage_C;

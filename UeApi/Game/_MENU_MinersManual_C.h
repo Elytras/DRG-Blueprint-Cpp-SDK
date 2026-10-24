@@ -28,10 +28,10 @@ class _MENU_MinersManual_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/_MENU_MinersManual", "_MENU_MinersManual_C");
-    using Itm_MinersManual_TabsHeader_C = Game::UI::Menu_MinersManual::Itm_MinersManual_TabsHeader_C;
-    using LoreScreen_Master_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C;
-    using LoreScreen_MinersManual_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MinersManual_C;
-    using ScrollLIst_Category_Window_C = Game::UI::Menu_MinersManual::ScrollLIst_Category_Window_C;
+    using Itm_MinersManual_TabsHeader_C = ::Game::UI::Menu_MinersManual::Itm_MinersManual_TabsHeader_C;
+    using LoreScreen_Master_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C;
+    using LoreScreen_MinersManual_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MinersManual_C;
+    using ScrollLIst_Category_Window_C = ::Game::UI::Menu_MinersManual::ScrollLIst_Category_Window_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OnMMLoaded;
     UE_READONLY class UWidgetAnimation* NewSection;
@@ -95,4 +95,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using _MENU_MinersManual_C = Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
+using _MENU_MinersManual_C = ::Game::UI::Menu_MinersManual::_MENU_MinersManual_C;

@@ -21,7 +21,7 @@ class HUD_EnemyTargeting_Affliction_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/EnemyHealthBar/HUD_EnemyTargeting_Affliction", "HUD_EnemyTargeting_Affliction_C");
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UI_MaskedImage_C* AfflictionIcon;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar
 
-using HUD_EnemyTargeting_Affliction_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Affliction_C;
+using HUD_EnemyTargeting_Affliction_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Affliction_C;

@@ -22,8 +22,8 @@ class UI_WeaponMaintenance_Character_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/WeaponMaintenance/UI_WeaponMaintenance_Character", "UI_WeaponMaintenance_Character_C");
-    using ICON_Hero_C = Game::UI::CharacterSelectionMK2::ICON_Hero_C;
-    using UI_WeaponMaintenance_Item_C = Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Item_C;
+    using ICON_Hero_C = ::Game::UI::CharacterSelectionMK2::ICON_Hero_C;
+    using UI_WeaponMaintenance_Item_C = ::Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* BannerBorder;
     ICON_Hero_C* ICON_Hero;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::WeaponMaintenance
 
-using UI_WeaponMaintenance_Character_C = Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Character_C;
+using UI_WeaponMaintenance_Character_C = ::Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Character_C;

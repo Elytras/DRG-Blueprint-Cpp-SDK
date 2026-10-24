@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_MinersManual_Hologram_C = Game::Art::Environments::SpaceRig::BP_MinersManual_Hologram_C;
+using BP_MinersManual_Hologram_C = ::Game::Art::Environments::SpaceRig::BP_MinersManual_Hologram_C;

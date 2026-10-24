@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Minehead
 
-using STE_MineHead_Heat_C = Game::LevelElements::Minehead::STE_MineHead_Heat_C;
+using STE_MineHead_Heat_C = ::Game::LevelElements::Minehead::STE_MineHead_Heat_C;

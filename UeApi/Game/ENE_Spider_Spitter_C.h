@@ -15,7 +15,7 @@ class USphereComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Spitter {
 
-class ENE_Spider_Spitter_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Spitter_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Spitter/ENE_Spider_Spitter", "ENE_Spider_Spitter_C");
@@ -32,6 +32,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Spitter_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileAttack__UeScsNode = "82aecddc56b0b24c881e5f72f61e51d7";
         static constexpr const char* SpiderSpitterIdle_Cue__UeScsNode = "ef92e4105b029c48815291d99d74627b";
@@ -42,4 +44,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Spitter
 
-using ENE_Spider_Spitter_C = Game::Enemies::Spider::Spitter::ENE_Spider_Spitter_C;
+using ENE_Spider_Spitter_C = ::Game::Enemies::Spider::Spitter::ENE_Spider_Spitter_C;

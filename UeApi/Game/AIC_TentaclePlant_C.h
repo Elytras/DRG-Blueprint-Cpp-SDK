@@ -27,4 +27,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using AIC_TentaclePlant_C = Game::Enemies::TentaclePlant::AIC_TentaclePlant_C;
+using AIC_TentaclePlant_C = ::Game::Enemies::TentaclePlant::AIC_TentaclePlant_C;

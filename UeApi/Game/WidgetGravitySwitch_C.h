@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using WidgetGravitySwitch_C = Game::Art::Environments::SpaceRig::WidgetGravitySwitch_C;
+using WidgetGravitySwitch_C = ::Game::Art::Environments::SpaceRig::WidgetGravitySwitch_C;

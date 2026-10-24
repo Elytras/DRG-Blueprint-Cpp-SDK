@@ -12,7 +12,7 @@ class UMeshCarverComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace DeepScan { namespace TreasureRooms {
 
-class BP_TreasureRoom_DeepScan_360Nooks_C : public Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Base_C
+class BP_TreasureRoom_DeepScan_360Nooks_C : public ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_TreasureRoom_DeepScan_360Nooks", "BP_TreasureRoom_DeepScan_360Nooks_C");
@@ -31,6 +31,8 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "D_Geode_Crystal;NS_Treasure_Room_Atmosphere;ICH-DefaultSceneRoot";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisMesh D_Geode_Crystal_GEN_VARIABLE:DebrisMesh_1";
         static constexpr const char* LevelGenerationCarverMulti2__UeScsNode = "917257fccd75624596ae5e14940eb3cd";
         static constexpr const char* MainCavityCarver_Multi_9__UeScsNode = "79b5a0c4fe798440bc0f3c20ec745564";
         static constexpr const char* LevelGenerationCarverMulti1__UeScsNode = "f88408847c5b644bbc32bca49bf399fe";
@@ -48,4 +50,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms
 
-using BP_TreasureRoom_DeepScan_360Nooks_C = Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_360Nooks_C;
+using BP_TreasureRoom_DeepScan_360Nooks_C = ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_360Nooks_C;

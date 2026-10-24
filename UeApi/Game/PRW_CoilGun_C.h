@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using PRW_CoilGun_C = Game::WeaponsNTools::CoilGun::PRW_CoilGun_C;
+using PRW_CoilGun_C = ::Game::WeaponsNTools::CoilGun::PRW_CoilGun_C;

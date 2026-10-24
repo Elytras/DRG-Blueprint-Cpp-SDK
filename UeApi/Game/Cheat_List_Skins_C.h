@@ -16,11 +16,11 @@ namespace Game { namespace UI { namespace Menu_Cheats { namespace VanityCheatWid
 
 namespace Game { namespace UI { namespace Menu_Cheats { namespace VanityCheatWidgets {
 
-class Cheat_List_Skins_C : public Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C
+class Cheat_List_Skins_C : public ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Skins", "Cheat_List_Skins_C");
-    using Cheat_EquipList_Entry_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
+    using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     TArray<EItemCategory> WeaponCategories;
     TEnum<EItemSkinType> Skin_Type;
     void GetCharacterID(class UPlayerCharacterID*& characterID);
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_List_Skins_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Skins_C;
+using Cheat_List_Skins_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Skins_C;

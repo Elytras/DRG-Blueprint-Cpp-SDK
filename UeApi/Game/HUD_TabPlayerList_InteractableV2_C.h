@@ -22,8 +22,8 @@ class HUD_TabPlayerList_InteractableV2_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Tab/HUD_TabPlayerList_InteractableV2", "HUD_TabPlayerList_InteractableV2_C");
-    using HUD_TabPlayerListEntry_InteractableV2_C = Game::UI::Menu_Tab::HUD_TabPlayerListEntry_InteractableV2_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using HUD_TabPlayerListEntry_InteractableV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerListEntry_InteractableV2_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button_InviteFriends1;
     class UButton* Button_InviteFriends2;
@@ -56,4 +56,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Tab
 
-using HUD_TabPlayerList_InteractableV2_C = Game::UI::Menu_Tab::HUD_TabPlayerList_InteractableV2_C;
+using HUD_TabPlayerList_InteractableV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerList_InteractableV2_C;

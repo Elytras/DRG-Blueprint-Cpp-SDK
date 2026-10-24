@@ -19,7 +19,7 @@ class Lore_Content_Info_Tab_W_Icon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Content_Info_Tab_W_Icon", "Lore_Content_Info_Tab_W_Icon_C");
-    using Basic_BG_Square_Outline_Flat_C = Game::UI::Menu_MinersManual::Basic_BG_Square_Outline_Flat_C;
+    using Basic_BG_Square_Outline_Flat_C = ::Game::UI::Menu_MinersManual::Basic_BG_Square_Outline_Flat_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_BG_Square_Outline_Flat_C* Basic_BG_Square_Outline_Flat;
     class UButton* Button_0;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Content_Info_Tab_W_Icon_C = Game::UI::Menu_MinersManual::Lore_Content_Info_Tab_W_Icon_C;
+using Lore_Content_Info_Tab_W_Icon_C = ::Game::UI::Menu_MinersManual::Lore_Content_Info_Tab_W_Icon_C;

@@ -65,4 +65,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints
 
-using BP_Lunar_FirecrackerThrowables_C = Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_Lunar_FirecrackerThrowables_C;
+using BP_Lunar_FirecrackerThrowables_C = ::Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_Lunar_FirecrackerThrowables_C;

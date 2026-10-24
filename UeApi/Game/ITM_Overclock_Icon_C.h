@@ -27,7 +27,7 @@ class ITM_Overclock_Icon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/ITM_OverClock_Icon", "ITM_Overclock_Icon_C");
-    using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
+    using ITM_SkinIcon_C = ::Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button_Outer;
     class USizeBox* IconSizer;
@@ -59,4 +59,4 @@ public:
 
 }}   // namespace Game::UI
 
-using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
+using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;

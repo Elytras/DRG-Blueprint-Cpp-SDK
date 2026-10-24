@@ -23,4 +23,4 @@ public:
 
 }}}   // namespace Modio::UI::Browser
 
-using ModioFeaturedCategoryWidget_C = Modio::UI::Browser::ModioFeaturedCategoryWidget_C;
+using ModioFeaturedCategoryWidget_C = ::Modio::UI::Browser::ModioFeaturedCategoryWidget_C;

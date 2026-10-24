@@ -32,6 +32,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "2fba38529e487f4da9e40d18d36ac90f";
         static constexpr const char* StaticMesh__UeScsNode = "f8f1718bb260e946903a5ffb53f1206a";
         static constexpr const char* Damage__UeScsNode = "2f81d7141a3abe46837ba8cdf3c7752a";
@@ -41,4 +42,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using PRJ_Rockpox_PlagueGlob_C = Game::Enemies::Plague::PRJ_Rockpox_PlagueGlob_C;
+using PRJ_Rockpox_PlagueGlob_C = ::Game::Enemies::Plague::PRJ_Rockpox_PlagueGlob_C;

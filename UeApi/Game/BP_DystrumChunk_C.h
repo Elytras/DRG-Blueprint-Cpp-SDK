@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks
 
-using BP_DystrumChunk_C = Game::GameElements::Resources::Veins::ResourceChunks::BP_DystrumChunk_C;
+using BP_DystrumChunk_C = ::Game::GameElements::Resources::Veins::ResourceChunks::BP_DystrumChunk_C;

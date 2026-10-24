@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures
 
-using BP_MangroveRock_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures::BP_MangroveRock_Base_C;
+using BP_MangroveRock_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures::BP_MangroveRock_Base_C;

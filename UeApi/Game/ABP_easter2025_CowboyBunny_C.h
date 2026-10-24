@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_easter2025_CowboyBunny_C = Game::Character::Vanity2::Headwear::ABP_easter2025_CowboyBunny_C;
+using ABP_easter2025_CowboyBunny_C = ::Game::Character::Vanity2::Headwear::ABP_easter2025_CowboyBunny_C;

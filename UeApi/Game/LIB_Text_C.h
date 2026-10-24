@@ -24,6 +24,7 @@ public:
     static void SetTextUpperCased(class UTextBlock* Target, FText InText, class UObject* __WorldContext);
     static void SetFontSize(class UTextBlock*& Label, int NewSize, class UObject* __WorldContext);
     static void GetFontSize(class UTextBlock*& Label, class UObject* __WorldContext, int& Size);
+    static void SetTextCased(class UTextBlock*& Target, FText InText, uint8 Text_Case, class UObject* __WorldContext);
     static void GetTimeText(float Dividend, class UObject* __WorldContext, FText& Text);
     static void Select_Character_ID_Text(class UPlayerCharacterID* characterID, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
     static void Select_Character_Class_Text(class UPlayerCharacterID* CharacterClass, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
@@ -39,4 +40,4 @@ private:
 
 }}}   // namespace Game::Game::Text
 
-using LIB_Text_C = Game::Game::Text::LIB_Text_C;
+using LIB_Text_C = ::Game::Game::Text::LIB_Text_C;

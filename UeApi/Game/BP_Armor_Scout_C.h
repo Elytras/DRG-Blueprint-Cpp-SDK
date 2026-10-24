@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using BP_Armor_Scout_C = Game::WeaponsNTools::Armor::BP_Armor_Scout_C;
+using BP_Armor_Scout_C = ::Game::WeaponsNTools::Armor::BP_Armor_Scout_C;

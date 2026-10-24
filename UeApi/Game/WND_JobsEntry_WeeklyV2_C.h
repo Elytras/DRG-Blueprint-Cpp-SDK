@@ -20,12 +20,12 @@ namespace Game { namespace UI { namespace Menu_Jobs { namespace JobsV2_Redesign 
 
 namespace Game { namespace UI { namespace Menu_Jobs {
 
-class WND_JobsEntry_WeeklyV2_C : public Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C
+class WND_JobsEntry_WeeklyV2_C : public ::Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/WND_JobsEntry_WeeklyV2", "WND_JobsEntry_WeeklyV2_C");
-    using ITM_WeeklyMissionOverlay_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_WeeklyMissionOverlay_C;
-    using Weekly_Deadline_Timer_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Weekly_Deadline_Timer_C;
+    using ITM_WeeklyMissionOverlay_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_WeeklyMissionOverlay_C;
+    using Weekly_Deadline_Timer_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Weekly_Deadline_Timer_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_JobsEntry_WeeklyV2_C;
     class UImage* Assignment_Image;
     class UHorizontalBox* Box_CampaignItems;
@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Jobs
 
-using WND_JobsEntry_WeeklyV2_C = Game::UI::Menu_Jobs::WND_JobsEntry_WeeklyV2_C;
+using WND_JobsEntry_WeeklyV2_C = ::Game::UI::Menu_Jobs::WND_JobsEntry_WeeklyV2_C;

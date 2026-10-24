@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Xmas_OldHats_2025_C = Game::GameElements::Campaign::CP_Xmas_OldHats_2025_C;
+using CP_Xmas_OldHats_2025_C = ::Game::GameElements::Campaign::CP_Xmas_OldHats_2025_C;

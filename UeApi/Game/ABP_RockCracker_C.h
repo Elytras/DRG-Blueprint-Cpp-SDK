@@ -49,4 +49,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor::RockCrackerModels
 
-using ABP_RockCracker_C = Game::GameElements::GameEvents::PlagueMeteor::RockCrackerModels::ABP_RockCracker_C;
+using ABP_RockCracker_C = ::Game::GameElements::GameEvents::PlagueMeteor::RockCrackerModels::ABP_RockCracker_C;

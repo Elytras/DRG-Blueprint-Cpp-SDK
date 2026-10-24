@@ -19,7 +19,7 @@ class UI_PipelineBuilder_Crosshair_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PipelineBuilder/UI_PipelineBuilder_Crosshair", "UI_PipelineBuilder_Crosshair_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* Box;
     class UImage* IMG_Status;
@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder
 
-using UI_PipelineBuilder_Crosshair_C = Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Crosshair_C;
+using UI_PipelineBuilder_Crosshair_C = ::Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Crosshair_C;

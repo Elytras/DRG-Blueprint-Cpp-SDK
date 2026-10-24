@@ -16,7 +16,7 @@ class Setting_ShowSandboxLabel_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/Setting_ShowSandboxLabel", "Setting_ShowSandboxLabel_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     float TextWidth;
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using Setting_ShowSandboxLabel_C = Game::UI::Menu_EscapeMenu::Modding::Setting_ShowSandboxLabel_C;
+using Setting_ShowSandboxLabel_C = ::Game::UI::Menu_EscapeMenu::Modding::Setting_ShowSandboxLabel_C;

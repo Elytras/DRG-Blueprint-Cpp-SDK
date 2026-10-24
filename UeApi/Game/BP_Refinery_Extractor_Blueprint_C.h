@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Refinery_Extractor_Blueprint_C = Game::LevelElements::Refinery::BP_Refinery_Extractor_Blueprint_C;
+using BP_Refinery_Extractor_Blueprint_C = ::Game::LevelElements::Refinery::BP_Refinery_Extractor_Blueprint_C;

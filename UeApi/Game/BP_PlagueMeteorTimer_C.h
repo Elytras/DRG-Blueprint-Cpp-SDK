@@ -13,7 +13,7 @@ class USoundBase;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace PlagueMeteor {
 
-class BP_PlagueMeteorTimer_C : public Game::GameElements::GameEvents::PlagueMeteor::BP_EventSpawnTimer_C
+class BP_PlagueMeteorTimer_C : public ::Game::GameElements::GameEvents::PlagueMeteor::BP_EventSpawnTimer_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueMeteorTimer", "BP_PlagueMeteorTimer_C");
@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_PlagueMeteorTimer_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteorTimer_C;
+using BP_PlagueMeteorTimer_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteorTimer_C;

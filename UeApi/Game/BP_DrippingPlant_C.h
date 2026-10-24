@@ -67,4 +67,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DrippingPlant
 
-using BP_DrippingPlant_C = Game::Landscape::CaveAssets::Foliage::DrippingPlant::BP_DrippingPlant_C;
+using BP_DrippingPlant_C = ::Game::Landscape::CaveAssets::Foliage::DrippingPlant::BP_DrippingPlant_C;

@@ -17,7 +17,7 @@ class ABP_Vanity_Headwear_Halloween_MissionControl_C : public UVanityAnimInstanc
 {
 public:
     UE_CLASS("/Game/Character/Vanity2/Headwear/ABP_Vanity_Headwear_Halloween_MissionControl", "ABP_Vanity_Headwear_Halloween_MissionControl_C");
-    using BP_MissionControlPointlight_C = Game::Character::Vanity2::Headwear::Blueprints::BP_MissionControlPointlight_C;
+    using BP_MissionControlPointlight_C = ::Game::Character::Vanity2::Headwear::Blueprints::BP_MissionControlPointlight_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_CopyPoseFromMesh AnimGraphNode_CopyPoseFromMesh;
@@ -37,4 +37,4 @@ private:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_Vanity_Headwear_Halloween_MissionControl_C = Game::Character::Vanity2::Headwear::ABP_Vanity_Headwear_Halloween_MissionControl_C;
+using ABP_Vanity_Headwear_Halloween_MissionControl_C = ::Game::Character::Vanity2::Headwear::ABP_Vanity_Headwear_Halloween_MissionControl_C;

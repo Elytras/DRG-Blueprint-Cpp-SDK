@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace IFG {
 
-class BP_Grenade_IFG_Area_SlowAndWeak_C : public Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_Base_C
+class BP_Grenade_IFG_Area_SlowAndWeak_C : public ::Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/BP_Grenade_IFG_Area_SlowAndWeak", "BP_Grenade_IFG_Area_SlowAndWeak_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG
 
-using BP_Grenade_IFG_Area_SlowAndWeak_C = Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_SlowAndWeak_C;
+using BP_Grenade_IFG_Area_SlowAndWeak_C = ::Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_SlowAndWeak_C;

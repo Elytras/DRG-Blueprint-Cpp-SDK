@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::Enemies::Spider
 
-using ABP_Spider_Showroom_C = Game::Enemies::Spider::ABP_Spider_Showroom_C;
+using ABP_Spider_Showroom_C = ::Game::Enemies::Spider::ABP_Spider_Showroom_C;

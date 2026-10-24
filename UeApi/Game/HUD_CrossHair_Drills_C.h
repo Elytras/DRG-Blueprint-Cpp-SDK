@@ -18,7 +18,7 @@ class HUD_CrossHair_Drills_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/NewCrossHairs/HUD_CrossHair_Drills", "HUD_CrossHair_Drills_C");
-    using UI_SimpleAngleIndicator_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::UI_SimpleAngleIndicator_C;
+    using UI_SimpleAngleIndicator_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::UI_SimpleAngleIndicator_C;
     UE_READONLY class UWidgetAnimation* AnimFadeIn;
     class UImage* Image_0;
     class UImage* Image_1;
@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrossHair_Drills_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_Drills_C;
+using HUD_CrossHair_Drills_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_Drills_C;

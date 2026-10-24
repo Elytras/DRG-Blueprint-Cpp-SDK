@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::IngameTextDisplay
 
-using Widget_TextDisplay_C = Game::UI::IngameTextDisplay::Widget_TextDisplay_C;
+using Widget_TextDisplay_C = ::Game::UI::IngameTextDisplay::Widget_TextDisplay_C;

@@ -42,4 +42,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using PRJ_ExplosiveBombDrop_C = Game::Enemies::FlyingBug::Bomber::PRJ_ExplosiveBombDrop_C;
+using PRJ_ExplosiveBombDrop_C = ::Game::Enemies::FlyingBug::Bomber::PRJ_ExplosiveBombDrop_C;

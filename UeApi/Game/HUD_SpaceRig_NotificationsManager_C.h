@@ -19,8 +19,8 @@ class HUD_SpaceRig_NotificationsManager_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/VanityNotification/HUD_SpaceRig_NotificationsManager", "HUD_SpaceRig_NotificationsManager_C");
-    using BP_GameInstance_C = Game::Game::BP_GameInstance_C;
-    using HUD_Milestone_Manager_C = Game::UI::MainOnscreenHUD::HUD_Milestone_Manager_C;
+    using BP_GameInstance_C = ::Game::Game::BP_GameInstance_C;
+    using HUD_Milestone_Manager_C = ::Game::UI::MainOnscreenHUD::HUD_Milestone_Manager_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* EntryBox;
     HUD_Milestone_Manager_C* HUD_Milestone_Manager;
@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::VanityNotification
 
-using HUD_SpaceRig_NotificationsManager_C = Game::UI::HUD_SpaceRig::VanityNotification::HUD_SpaceRig_NotificationsManager_C;
+using HUD_SpaceRig_NotificationsManager_C = ::Game::UI::HUD_SpaceRig::VanityNotification::HUD_SpaceRig_NotificationsManager_C;

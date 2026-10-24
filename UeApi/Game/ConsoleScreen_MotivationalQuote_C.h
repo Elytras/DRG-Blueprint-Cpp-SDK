@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_MotivationalQuote_C = Game::UI::HUD_SpaceRig::ConsoleScreen_MotivationalQuote_C;
+using ConsoleScreen_MotivationalQuote_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_MotivationalQuote_C;

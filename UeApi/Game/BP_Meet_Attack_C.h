@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using BP_Meet_Attack_C = Game::Enemies::Spider::TankBoss::BossTwins::BP_Meet_Attack_C;
+using BP_Meet_Attack_C = ::Game::Enemies::Spider::TankBoss::BossTwins::BP_Meet_Attack_C;

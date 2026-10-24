@@ -17,8 +17,8 @@ class DLCclaimPopup_DLC10_OrderOfTheDeep_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/DLCclaimPopups/DLCclaimPopup_DLC10_OrderOfTheDeep", "DLCclaimPopup_DLC10_OrderOfTheDeep_C");
-    using _DLCclaimPopup_Base_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
-    using _DLCclaimPopup_TextLine_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
+    using _DLCclaimPopup_Base_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
+    using _DLCclaimPopup_TextLine_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     _DLCclaimPopup_Base_C* DLCclaimPopup_Base;
     _DLCclaimPopup_TextLine_C* UI_ClaimableDLC_TextLine;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::DLCclaimPopups
 
-using DLCclaimPopup_DLC10_OrderOfTheDeep_C = Game::UI::DLCclaimPopups::DLCclaimPopup_DLC10_OrderOfTheDeep_C;
+using DLCclaimPopup_DLC10_OrderOfTheDeep_C = ::Game::UI::DLCclaimPopups::DLCclaimPopup_DLC10_OrderOfTheDeep_C;

@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsBurnTrigger_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsBurnTrigger_C;
+using BP_JetBootsBurnTrigger_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsBurnTrigger_C;

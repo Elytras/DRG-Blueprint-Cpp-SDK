@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using ITM_ServerEntry_TeamLine_C = Game::UI::Menu_ServerList::ITM_ServerEntry_TeamLine_C;
+using ITM_ServerEntry_TeamLine_C = ::Game::UI::Menu_ServerList::ITM_ServerEntry_TeamLine_C;

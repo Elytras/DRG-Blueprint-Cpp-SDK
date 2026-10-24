@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_Tutorial_C = Game::GameElements::Missions::DNA_Tutorial_C;
+using DNA_Tutorial_C = ::Game::GameElements::Missions::DNA_Tutorial_C;

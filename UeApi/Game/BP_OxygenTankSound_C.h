@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen
 
-using BP_OxygenTankSound_C = Game::GameElements::Missions::Warnings::NoOxygen::BP_OxygenTankSound_C;
+using BP_OxygenTankSound_C = ::Game::GameElements::Missions::Warnings::NoOxygen::BP_OxygenTankSound_C;

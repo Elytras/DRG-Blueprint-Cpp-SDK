@@ -68,4 +68,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::SmartCaveVine
 
-using BP_CaveVine_C = Game::LevelElements::RoomObjects::SmartCaveVine::BP_CaveVine_C;
+using BP_CaveVine_C = ::Game::LevelElements::RoomObjects::SmartCaveVine::BP_CaveVine_C;

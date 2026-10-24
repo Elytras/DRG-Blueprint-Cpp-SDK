@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_HoverBootsBurnTrigger_C = Game::GameElements::KPI::Perks::BP_HoverBootsBurnTrigger_C;
+using BP_HoverBootsBurnTrigger_C = ::Game::GameElements::KPI::Perks::BP_HoverBootsBurnTrigger_C;

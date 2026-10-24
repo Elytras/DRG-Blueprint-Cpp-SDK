@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_ExpertDepositorMollyDefense_1_C = Game::GameElements::KPI::Perks::STE_ExpertDepositorMollyDefense_1_C;
+using STE_ExpertDepositorMollyDefense_1_C = ::Game::GameElements::KPI::Perks::STE_ExpertDepositorMollyDefense_1_C;

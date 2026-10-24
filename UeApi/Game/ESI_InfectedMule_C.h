@@ -67,4 +67,4 @@ private:
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using ESI_InfectedMule_C = Game::Enemies::MuleInfected::ESI_InfectedMule_C;
+using ESI_InfectedMule_C = ::Game::Enemies::MuleInfected::ESI_InfectedMule_C;

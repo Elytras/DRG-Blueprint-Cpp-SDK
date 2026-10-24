@@ -21,7 +21,7 @@ class UI_Bar_LockWarning_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_LockWarning", "UI_Bar_LockWarning_C");
-    using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
+    using UI_Bar_DrinkCost_C = ::Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Anim_InfoBoxAppear;
     class UImage* Image_0;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_LockWarning_C = Game::GameElements::Bar::UI::UI_Bar_LockWarning_C;
+using UI_Bar_LockWarning_C = ::Game::GameElements::Bar::UI::UI_Bar_LockWarning_C;

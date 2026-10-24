@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_ToothGrinder_C = Game::GameElements::Bar::DrinkEffects::DE_ToothGrinder_C;
+using DE_ToothGrinder_C = ::Game::GameElements::Bar::DrinkEffects::DE_ToothGrinder_C;

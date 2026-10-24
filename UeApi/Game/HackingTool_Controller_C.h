@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI
 
-using HackingTool_Controller_C = Game::WeaponsNTools::HackingTool::UI::HackingTool_Controller_C;
+using HackingTool_Controller_C = ::Game::WeaponsNTools::HackingTool::UI::HackingTool_Controller_C;

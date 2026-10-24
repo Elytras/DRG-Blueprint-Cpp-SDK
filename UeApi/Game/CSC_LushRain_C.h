@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace LushDownpour {
 
-class CSC_LushRain_C : public Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C
+class CSC_LushRain_C : public ::Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/LushDownpour/CSC_LushRain", "CSC_LushRain_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::LushDownpour
 
-using CSC_LushRain_C = Game::Landscape::Biomes::Biomes_Ingame::LushDownpour::CSC_LushRain_C;
+using CSC_LushRain_C = ::Game::Landscape::Biomes::Biomes_Ingame::LushDownpour::CSC_LushRain_C;

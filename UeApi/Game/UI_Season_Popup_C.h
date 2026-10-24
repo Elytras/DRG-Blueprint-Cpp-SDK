@@ -22,7 +22,7 @@ class UI_Season_Popup_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/UI_Season_Popup", "UI_Season_Popup_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* BG_BarLeft;
     Basic_Image_C* BG_BarRight;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using UI_Season_Popup_C = Game::UI::Menu_Seasons::UI_Season_Popup_C;
+using UI_Season_Popup_C = ::Game::UI::Menu_Seasons::UI_Season_Popup_C;

@@ -15,10 +15,10 @@ class UI_Disconnect_Screen_Base_C : public UWindowWidget
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_Disconnect_Screen_Base", "UI_Disconnect_Screen_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    void Update();
     void ExecuteUbergraph_UI_Disconnect_Screen_Base(int EntryPoint);
+    void Update();
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_Disconnect_Screen_Base_C = Game::UI::Menu_StartScreen::UI_Disconnect_Screen_Base_C;
+using UI_Disconnect_Screen_Base_C = ::Game::UI::Menu_StartScreen::UI_Disconnect_Screen_Base_C;

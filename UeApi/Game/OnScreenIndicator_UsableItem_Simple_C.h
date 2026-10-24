@@ -22,8 +22,8 @@ class OnScreenIndicator_UsableItem_Simple_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_UsableItem_Simple", "OnScreenIndicator_UsableItem_Simple_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowSmall_C* BasicWindow_BracketSmall;
     UI_AdvancedLabel_C* KeyLabel;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_UsableItem_Simple_C = Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_Simple_C;
+using OnScreenIndicator_UsableItem_Simple_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_Simple_C;

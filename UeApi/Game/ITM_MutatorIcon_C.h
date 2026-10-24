@@ -20,7 +20,7 @@ class ITM_MutatorIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MutatorIcon", "ITM_MutatorIcon_C");
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* IconWarning;
     class USizeBox* WarningSizer;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MutatorIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MutatorIcon_C;
+using ITM_MutatorIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MutatorIcon_C;

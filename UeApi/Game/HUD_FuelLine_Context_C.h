@@ -22,7 +22,7 @@ class HUD_FuelLine_Context_C : public UActorContextWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/HUD_FuelLine_Context", "HUD_FuelLine_Context_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_AdvancedLabel_C* ContextLabel;
     class UProgressBar* HealthProgressBar;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder
 
-using HUD_FuelLine_Context_C = Game::WeaponsNTools::FuelLineBuilder::HUD_FuelLine_Context_C;
+using HUD_FuelLine_Context_C = ::Game::WeaponsNTools::FuelLineBuilder::HUD_FuelLine_Context_C;

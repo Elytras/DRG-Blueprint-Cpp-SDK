@@ -25,11 +25,11 @@ class ITM_Craft_ItemBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/ITM_Craft_ItemBox", "ITM_Craft_ItemBox_C");
-    using BTN_UnlockItem_C = Game::UI::Menu_Crafting::BTN_UnlockItem_C;
-    using ITM_Craft_ItemIcon_C = Game::UI::Menu_Crafting::ITM_Craft_ItemIcon_C;
-    using ITM_Craft_ResourceSmall_C = Game::UI::Menu_Crafting::ITM_Craft_ResourceSmall_C;
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using UI_VanityEventSource_C = Game::UI::Menu_Crafting::UI_VanityEventSource_C;
+    using BTN_UnlockItem_C = ::Game::UI::Menu_Crafting::BTN_UnlockItem_C;
+    using ITM_Craft_ItemIcon_C = ::Game::UI::Menu_Crafting::ITM_Craft_ItemIcon_C;
+    using ITM_Craft_ResourceSmall_C = ::Game::UI::Menu_Crafting::ITM_Craft_ResourceSmall_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using UI_VanityEventSource_C = ::Game::UI::Menu_Crafting::UI_VanityEventSource_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -70,4 +70,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using ITM_Craft_ItemBox_C = Game::UI::Menu_Crafting::ITM_Craft_ItemBox_C;
+using ITM_Craft_ItemBox_C = ::Game::UI::Menu_Crafting::ITM_Craft_ItemBox_C;

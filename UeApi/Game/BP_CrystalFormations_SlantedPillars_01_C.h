@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace LargeCrystalFormations {
 
-class BP_CrystalFormations_SlantedPillars_01_C : public Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_Base_C
+class BP_CrystalFormations_SlantedPillars_01_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/LargeCrystalFormations/BP_CrystalFormations_SlantedPillars_01", "BP_CrystalFormations_SlantedPillars_01_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations
 
-using BP_CrystalFormations_SlantedPillars_01_C = Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_01_C;
+using BP_CrystalFormations_SlantedPillars_01_C = ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_01_C;

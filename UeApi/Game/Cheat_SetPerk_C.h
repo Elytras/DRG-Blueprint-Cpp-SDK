@@ -18,7 +18,7 @@ class Cheat_SetPerk_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_SetPerk", "Cheat_SetPerk_C");
-    using Cheat_SetPerk_Row_C = Game::UI::Menu_Cheats::Cheat_SetPerk_Row_C;
+    using Cheat_SetPerk_Row_C = ::Game::UI::Menu_Cheats::Cheat_SetPerk_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UScrollBox* ScrollBox_79;
     TArray<Cheat_SetPerk_Row_C*> Perk_Rows;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SetPerk_C = Game::UI::Menu_Cheats::Cheat_SetPerk_C;
+using Cheat_SetPerk_C = ::Game::UI::Menu_Cheats::Cheat_SetPerk_C;

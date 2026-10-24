@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossHeavy {
 
-class AIC_Spider_Tank_HeavySpawn_C : public Game::Enemies::Spider::AIC_Spider_C
+class AIC_Spider_Tank_HeavySpawn_C : public ::Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/AIC_Spider_Tank_HeavySpawn", "AIC_Spider_Tank_HeavySpawn_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using AIC_Spider_Tank_HeavySpawn_C = Game::Enemies::Spider::TankBoss::BossHeavy::AIC_Spider_Tank_HeavySpawn_C;
+using AIC_Spider_Tank_HeavySpawn_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::AIC_Spider_Tank_HeavySpawn_C;

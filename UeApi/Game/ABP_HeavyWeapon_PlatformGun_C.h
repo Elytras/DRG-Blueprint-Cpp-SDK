@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun
 
-using ABP_HeavyWeapon_PlatformGun_C = Game::WeaponsNTools::PlatformGun::ABP_HeavyWeapon_PlatformGun_C;
+using ABP_HeavyWeapon_PlatformGun_C = ::Game::WeaponsNTools::PlatformGun::ABP_HeavyWeapon_PlatformGun_C;

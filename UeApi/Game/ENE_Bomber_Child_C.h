@@ -11,7 +11,7 @@ class UProjectileAttackComponent;
 
 namespace Game { namespace Enemies { namespace FlyingBug { namespace Bomber {
 
-class ENE_Bomber_Child_C : public Game::Enemies::FlyingBug::Bomber::ENE_Bomber_C
+class ENE_Bomber_Child_C : public ::Game::Enemies::FlyingBug::Bomber::ENE_Bomber_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/ENE_Bomber_Child", "ENE_Bomber_Child_C");
@@ -20,10 +20,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GooAudioComponent;/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/Engine.ParticleSystemComponent GooEmitterLeft;/Script/Engine.ParticleSystemComponent GooEmitterRight;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_0";
         static constexpr const char* ProjectileAttack__UeScsNode = "f161439dd8e84f4190940ca439529e2a";
     };
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using ENE_Bomber_Child_C = Game::Enemies::FlyingBug::Bomber::ENE_Bomber_Child_C;
+using ENE_Bomber_Child_C = ::Game::Enemies::FlyingBug::Bomber::ENE_Bomber_Child_C;

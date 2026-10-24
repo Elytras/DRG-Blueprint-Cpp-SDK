@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::SpringDwarf
 
-using BP_TruckerBalls_C = Game::Art::Environments::SpaceRig::SpringDwarf::BP_TruckerBalls_C;
+using BP_TruckerBalls_C = ::Game::Art::Environments::SpaceRig::SpringDwarf::BP_TruckerBalls_C;

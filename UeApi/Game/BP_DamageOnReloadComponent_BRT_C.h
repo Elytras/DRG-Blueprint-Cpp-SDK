@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty
 
-using BP_DamageOnReloadComponent_BRT_C = Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_DamageOnReloadComponent_BRT_C;
+using BP_DamageOnReloadComponent_BRT_C = ::Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_DamageOnReloadComponent_BRT_C;

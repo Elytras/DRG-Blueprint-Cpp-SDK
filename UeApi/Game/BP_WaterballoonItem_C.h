@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty
 
-using BP_WaterballoonItem_C = Game::Art::Environments::Holiday_BeachParty::BP_WaterballoonItem_C;
+using BP_WaterballoonItem_C = ::Game::Art::Environments::Holiday_BeachParty::BP_WaterballoonItem_C;

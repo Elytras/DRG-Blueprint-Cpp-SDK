@@ -26,8 +26,8 @@ class WPN_GooCannon_C : public AGooGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/WPN_GooCannon", "WPN_GooCannon_C");
-    using BP_GooCannon_GooPuddle_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C;
-    using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
+    using BP_GooCannon_GooPuddle_C = ::Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C;
+    using WeaponDisplay_ChargeBlaster_AmmoCounter_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* GooCannon_FullyCharged_Cue;
     class UFirstPersonWidgetComponent* Widget_Ammo;
@@ -75,4 +75,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using WPN_GooCannon_C = Game::WeaponsNTools::GooCannon::WPN_GooCannon_C;
+using WPN_GooCannon_C = ::Game::WeaponsNTools::GooCannon::WPN_GooCannon_C;

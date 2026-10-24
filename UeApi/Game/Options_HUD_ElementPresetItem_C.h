@@ -17,7 +17,7 @@ class Options_HUD_ElementPresetItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/HUD/Options_HUD_ElementPresetItem", "Options_HUD_ElementPresetItem_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonScalable2_C* Button;
     UE_READONLY TEnum<EHUDVisibilityPresets> PresetID;
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::HUD
 
-using Options_HUD_ElementPresetItem_C = Game::UI::Menu_Options::HUD::Options_HUD_ElementPresetItem_C;
+using Options_HUD_ElementPresetItem_C = ::Game::UI::Menu_Options::HUD::Options_HUD_ElementPresetItem_C;

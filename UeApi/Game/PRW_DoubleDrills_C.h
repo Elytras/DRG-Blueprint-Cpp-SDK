@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Drills
 
-using PRW_DoubleDrills_C = Game::WeaponsNTools::Drills::PRW_DoubleDrills_C;
+using PRW_DoubleDrills_C = ::Game::WeaponsNTools::Drills::PRW_DoubleDrills_C;

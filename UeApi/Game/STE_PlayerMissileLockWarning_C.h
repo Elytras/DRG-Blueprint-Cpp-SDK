@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::RivalTech::PatrolBot::Projectiles
 
-using STE_PlayerMissileLockWarning_C = Game::Enemies::RivalTech::PatrolBot::Projectiles::STE_PlayerMissileLockWarning_C;
+using STE_PlayerMissileLockWarning_C = ::Game::Enemies::RivalTech::PatrolBot::Projectiles::STE_PlayerMissileLockWarning_C;

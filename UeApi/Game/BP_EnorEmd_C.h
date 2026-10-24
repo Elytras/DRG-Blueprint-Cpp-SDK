@@ -13,7 +13,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace EnorPearl {
 
-class BP_EnorEmd_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_EnorEmd_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/EnorPearl/BP_EnorEmd", "BP_EnorEmd_C");
@@ -32,6 +32,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_EnorEmd_C__UeName = "UberGraphFrame";
         static constexpr const char* GemTracker__UeScsNode = "a85faf0d89130a45a54294b8d23b5540";
         static constexpr const char* PointLight6__UeScsNode = "109ae01030510a4fa9456012ba6d0895";
@@ -46,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::EnorPearl
 
-using BP_EnorEmd_C = Game::GameElements::Resources::Embedded::EnorPearl::BP_EnorEmd_C;
+using BP_EnorEmd_C = ::Game::GameElements::Resources::Embedded::EnorPearl::BP_EnorEmd_C;

@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueLarva
 
-using ABP_PlagueLarvaShowroom_C = Game::Enemies::Plague::PlagueLarva::ABP_PlagueLarvaShowroom_C;
+using ABP_PlagueLarvaShowroom_C = ::Game::Enemies::Plague::PlagueLarva::ABP_PlagueLarvaShowroom_C;

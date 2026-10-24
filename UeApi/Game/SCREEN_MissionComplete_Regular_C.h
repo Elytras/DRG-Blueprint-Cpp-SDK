@@ -31,24 +31,24 @@ namespace Game { namespace UI { namespace _GlobalAssets { class BlurBackground_C
 
 namespace Game { namespace UI { namespace Menu_MIssionCompleteMK2 {
 
-class SCREEN_MissionComplete_Regular_C : public Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C
+class SCREEN_MissionComplete_Regular_C : public ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/SCREEN_MissionComplete_Regular", "SCREEN_MissionComplete_Regular_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_FlatGradientButton_C = Game::UI::Art::WidgetParts::Basic_FlatGradientButton_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using HUD_Milestone_Manager_C = Game::UI::MainOnscreenHUD::HUD_Milestone_Manager_C;
-    using ITM_MisSel_DotMarker_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_C;
-    using ITM_MisSel_DotMarker_MissionLength_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
-    using ITM_MisSel_DotMarker_WorkEnvironment_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_WorkEnvironment_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_MissionComplete_DeepDiveHeader_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_DeepDiveHeader_C;
-    using ITM_MissionComplete_ResourceBox_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_ResourceBox_C;
-    using SCREEN_MissionComplete_Season_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Season_C;
-    using UI_HazPlus_Condensed_C = Game::UI::Global_UI_Elements::UI_HazPlus_Condensed_C;
-    using UI_MissionComplete_CharacterBox_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CharacterBox_C;
-    using UI_MissionComplete_CombinedRewards_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewards_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_FlatGradientButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatGradientButton_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using HUD_Milestone_Manager_C = ::Game::UI::MainOnscreenHUD::HUD_Milestone_Manager_C;
+    using ITM_MisSel_DotMarker_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_C;
+    using ITM_MisSel_DotMarker_MissionLength_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
+    using ITM_MisSel_DotMarker_WorkEnvironment_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_WorkEnvironment_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_MissionComplete_DeepDiveHeader_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_DeepDiveHeader_C;
+    using ITM_MissionComplete_ResourceBox_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_ResourceBox_C;
+    using SCREEN_MissionComplete_Season_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Season_C;
+    using UI_HazPlus_Condensed_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Condensed_C;
+    using UI_MissionComplete_CharacterBox_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CharacterBox_C;
+    using UI_MissionComplete_CombinedRewards_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewards_C;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_MissionComplete_Regular_C;
     UE_READONLY class UWidgetAnimation* SeasonAppear;
     UE_READONLY class UWidgetAnimation* BottomBarAppear;
@@ -146,4 +146,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using SCREEN_MissionComplete_Regular_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Regular_C;
+using SCREEN_MissionComplete_Regular_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Regular_C;

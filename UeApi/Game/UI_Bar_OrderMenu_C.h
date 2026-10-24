@@ -23,14 +23,14 @@ class UI_Bar_OrderMenu_C : public UBarMenuWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_OrderMenu", "UI_Bar_OrderMenu_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_Bar_Inventory_C = Game::GameElements::Bar::UI::UI_Bar_Inventory_C;
-    using UI_Bar_OrderMenu_ItemSpecial_C = Game::GameElements::Bar::UI::UI_Bar_OrderMenu_ItemSpecial_C;
-    using UI_Bar_OrderMenu_Item_C = Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Item_C;
-    using UI_Bar_OrderMenu_Preview_C = Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Preview_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_Bar_Inventory_C = ::Game::GameElements::Bar::UI::UI_Bar_Inventory_C;
+    using UI_Bar_OrderMenu_ItemSpecial_C = ::Game::GameElements::Bar::UI::UI_Bar_OrderMenu_ItemSpecial_C;
+    using UI_Bar_OrderMenu_Item_C = ::Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Item_C;
+    using UI_Bar_OrderMenu_Preview_C = ::Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Preview_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_0;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -83,4 +83,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_OrderMenu_C = Game::GameElements::Bar::UI::UI_Bar_OrderMenu_C;
+using UI_Bar_OrderMenu_C = ::Game::GameElements::Bar::UI::UI_Bar_OrderMenu_C;

@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ITEM_CharacterSelectMovie_C = Game::UI::CharacterSelectionMK2::ITEM_CharacterSelectMovie_C;
+using ITEM_CharacterSelectMovie_C = ::Game::UI::CharacterSelectionMK2::ITEM_CharacterSelectMovie_C;

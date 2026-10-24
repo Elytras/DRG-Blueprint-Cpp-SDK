@@ -28,8 +28,8 @@ class HUD_TeamDisplay_Bosco_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/HUD_TeamDisplay_Bosco", "HUD_TeamDisplay_Bosco_C");
-    using HUD_BoscoAbillityCounter_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityCounter_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using HUD_BoscoAbillityCounter_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityCounter_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* StateIconAnim;
     class UBorder* Border_0;
@@ -67,4 +67,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display
 
-using HUD_TeamDisplay_Bosco_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_Bosco_C;
+using HUD_TeamDisplay_Bosco_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_Bosco_C;

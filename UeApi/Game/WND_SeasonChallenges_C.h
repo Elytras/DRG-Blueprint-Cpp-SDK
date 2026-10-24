@@ -19,9 +19,9 @@ class WND_SeasonChallenges_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonChallenges", "WND_SeasonChallenges_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_Season_ChallengeTimer_C = Game::UI::Menu_Seasons::ITM_Season_ChallengeTimer_C;
-    using ITM_Season_Challenge_C = Game::UI::Menu_Seasons::ITM_Season_Challenge_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_Season_ChallengeTimer_C = ::Game::UI::Menu_Seasons::ITM_Season_ChallengeTimer_C;
+    using ITM_Season_Challenge_C = ::Game::UI::Menu_Seasons::ITM_Season_Challenge_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UGridPanel* Grid_Challenges;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_SeasonChallenges_C = Game::UI::Menu_Seasons::WND_SeasonChallenges_C;
+using WND_SeasonChallenges_C = ::Game::UI::Menu_Seasons::WND_SeasonChallenges_C;

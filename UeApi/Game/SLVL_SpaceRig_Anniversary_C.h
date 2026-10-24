@@ -15,13 +15,13 @@ class SLVL_SpaceRig_Anniversary_C : public ALevelScriptActor
 {
 public:
     UE_CLASS("/Game/Maps/SpaceRig/SLVL_SpaceRig_Anniversary", "SLVL_SpaceRig_Anniversary_C");
-    using BP_Anniversary_Sparkler_C = Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_Sparkler_C;
+    using BP_Anniversary_Sparkler_C = ::Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_Sparkler_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_Anniversary_Sparkler_C* BP_Anniversary_Sparkler11_2_ExecuteUbergraph_SLVL_SpaceRig_Anniversary_RefProperty;
-    void ReceiveBeginPlay();
     void ExecuteUbergraph_SLVL_SpaceRig_Anniversary(int EntryPoint);
+    void ReceiveBeginPlay();
 };
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_Anniversary_C = Game::Maps::SpaceRig::SLVL_SpaceRig_Anniversary_C;
+using SLVL_SpaceRig_Anniversary_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_Anniversary_C;

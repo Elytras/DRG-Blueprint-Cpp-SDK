@@ -36,14 +36,14 @@ class ICON_HeroSelect_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/ICON_HeroSelect", "ICON_HeroSelect_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using CharSelect_HeroSelect_Dots_C = Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Dots_C;
-    using ITEM_SpaceRig_ClassLevel_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_ClassLevel_C;
-    using ITM_RetirementBadge_C = Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
-    using ITM_SeasonChallengeIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
-    using UI_RoundedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_RoundedImage_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using CharSelect_HeroSelect_Dots_C = ::Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Dots_C;
+    using ITEM_SpaceRig_ClassLevel_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_ClassLevel_C;
+    using ITM_RetirementBadge_C = ::Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
+    using ITM_SeasonChallengeIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using UI_RoundedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_RoundedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonScalable2_C* BTN_Retire;
     class UCanvasPanel* CanvasPanel_1;
@@ -53,7 +53,7 @@ public:
     class UBorder* ClassName_OuterBorder;
     class UImage* ExtensionBG;
     class UImage* ExtensionFiller;
-    class UImage* Icon_BG;
+    class UImage* ICON_BG;
     class UImage* Icon_Border;
     ITM_SeasonChallengeIcon_C* Icon_Challenge;
     class UImage* Icon_Selection;
@@ -116,4 +116,4 @@ private:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ICON_HeroSelect_C = Game::UI::CharacterSelectionMK2::ICON_HeroSelect_C;
+using ICON_HeroSelect_C = ::Game::UI::CharacterSelectionMK2::ICON_HeroSelect_C;

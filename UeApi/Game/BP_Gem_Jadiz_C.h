@@ -14,7 +14,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace Gems {
 
-class BP_Gem_Jadiz_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_Gem_Jadiz_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_Gem_Jadiz", "BP_Gem_Jadiz_C");
@@ -34,6 +34,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo";
         static constexpr const char* UberGraphFrame_BP_Gem_Jadiz_C__UeName = "UberGraphFrame";
         static constexpr const char* GemJadizIdle_Cue__UeScsNode = "79794585caf5b14880b68bad0372bf00";
         static constexpr const char* GemTracker__UeScsNode = "ca5b204ffa64de4db535d6130e58ecd0";
@@ -49,4 +50,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_Gem_Jadiz_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_Jadiz_C;
+using BP_Gem_Jadiz_C = ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_Jadiz_C;

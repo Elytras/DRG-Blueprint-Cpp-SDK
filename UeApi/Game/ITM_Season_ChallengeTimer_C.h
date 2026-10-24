@@ -21,7 +21,7 @@ class ITM_Season_ChallengeTimer_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_ChallengeTimer", "ITM_Season_ChallengeTimer_C");
-    using ITM_TimeText_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
+    using ITM_TimeText_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* RotateHourGlass;
     UE_READONLY class UWidgetAnimation* OnHover;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_ChallengeTimer_C = Game::UI::Menu_Seasons::ITM_Season_ChallengeTimer_C;
+using ITM_Season_ChallengeTimer_C = ::Game::UI::Menu_Seasons::ITM_Season_ChallengeTimer_C;

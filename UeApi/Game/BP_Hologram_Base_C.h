@@ -42,4 +42,4 @@ private:
 
 }}}   // namespace Game::GameElements::Misc
 
-using BP_Hologram_Base_C = Game::GameElements::Misc::BP_Hologram_Base_C;
+using BP_Hologram_Base_C = ::Game::GameElements::Misc::BP_Hologram_Base_C;

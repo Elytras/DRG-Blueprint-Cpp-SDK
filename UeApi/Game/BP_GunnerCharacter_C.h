@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Character {
 
-class BP_GunnerCharacter_C : public Game::Character::BP_PlayerCharacter_C
+class BP_GunnerCharacter_C : public ::Game::Character::BP_PlayerCharacter_C
 {
 public:
     UE_CLASS("/Game/Character/BP_GunnerCharacter", "BP_GunnerCharacter_C");
@@ -22,4 +22,4 @@ private:
 
 }}   // namespace Game::Character
 
-using BP_GunnerCharacter_C = Game::Character::BP_GunnerCharacter_C;
+using BP_GunnerCharacter_C = ::Game::Character::BP_GunnerCharacter_C;

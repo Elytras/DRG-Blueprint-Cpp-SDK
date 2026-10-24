@@ -14,11 +14,11 @@ namespace Game { namespace GameElements { namespace GameEvents { namespace CoreR
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace CoreRift {
 
-class EWC_CoreRift_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_CoreRift_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/EWC_CoreRift", "EWC_CoreRift_C");
-    using BP_CoreRift_C = Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
+    using BP_CoreRift_C = ::Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_CoreRift_C;
     int InitalRiftWaves;
     FTimerHandle Handle_Spawn;
@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using EWC_CoreRift_C = Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;
+using EWC_CoreRift_C = ::Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;

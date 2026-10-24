@@ -24,4 +24,4 @@ public:
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments
 
-using ABP_Barrel_A_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::ABP_Barrel_A_C;
+using ABP_Barrel_A_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::ABP_Barrel_A_C;

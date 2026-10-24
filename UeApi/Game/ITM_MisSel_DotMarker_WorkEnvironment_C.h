@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_DotMarker_WorkEnvironment_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_WorkEnvironment_C;
+using ITM_MisSel_DotMarker_WorkEnvironment_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_WorkEnvironment_C;

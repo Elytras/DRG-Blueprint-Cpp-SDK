@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest
 
-using BP_Phys_WoodBarrel_C = Game::Art::Environments::Holiday_Oktoberfest::BP_Phys_WoodBarrel_C;
+using BP_Phys_WoodBarrel_C = ::Game::Art::Environments::Holiday_Oktoberfest::BP_Phys_WoodBarrel_C;

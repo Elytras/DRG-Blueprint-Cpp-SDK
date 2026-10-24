@@ -20,7 +20,7 @@ class UI_Forge_LevelIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_LevelIcon", "UI_Forge_LevelIcon_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DataLevel;
     UI_ImageTinted_C* IconImage;
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_LevelIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
+using UI_Forge_LevelIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;

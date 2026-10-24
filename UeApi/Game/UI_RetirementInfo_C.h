@@ -22,8 +22,8 @@ class UI_RetirementInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Retirement/UI_RetirementInfo", "UI_RetirementInfo_C");
-    using Basic_Menu_SmallWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_C;
-    using ITM_Craft_ResourceBig_C = Game::UI::Menu_Crafting::ITM_Craft_ResourceBig_C;
+    using Basic_Menu_SmallWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_C;
+    using ITM_Craft_ResourceBig_C = ::Game::UI::Menu_Crafting::ITM_Craft_ResourceBig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* AdditionalBenefitsBox;
     Basic_Menu_SmallWindowWithHeader_C* Basic_Menu_SmallWindowWithHeader;
@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::UI::CharacterSelectionMK2::Retirement
 
-using UI_RetirementInfo_C = Game::UI::CharacterSelectionMK2::Retirement::UI_RetirementInfo_C;
+using UI_RetirementInfo_C = ::Game::UI::CharacterSelectionMK2::Retirement::UI_RetirementInfo_C;

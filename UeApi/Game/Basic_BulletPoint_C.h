@@ -22,7 +22,7 @@ class Basic_BulletPoint_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Standard/Basic_BulletPoint", "Basic_BulletPoint_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Bullet_Image;
     class USizeBox* Bullet_SizeBox;
@@ -55,4 +55,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard
 
-using Basic_BulletPoint_C = Game::UI::MainOnscreenHUD::Standard::Basic_BulletPoint_C;
+using Basic_BulletPoint_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_BulletPoint_C;

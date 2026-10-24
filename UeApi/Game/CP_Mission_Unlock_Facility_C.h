@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Mission_Unlock_Facility_C = Game::GameElements::Campaign::CP_Mission_Unlock_Facility_C;
+using CP_Mission_Unlock_Facility_C = ::Game::GameElements::Campaign::CP_Mission_Unlock_Facility_C;

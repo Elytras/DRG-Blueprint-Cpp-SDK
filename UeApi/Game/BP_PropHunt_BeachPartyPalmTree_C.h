@@ -29,4 +29,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::BeachParty
 
-using BP_PropHunt_BeachPartyPalmTree_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::BeachParty::BP_PropHunt_BeachPartyPalmTree_C;
+using BP_PropHunt_BeachPartyPalmTree_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::BeachParty::BP_PropHunt_BeachPartyPalmTree_C;

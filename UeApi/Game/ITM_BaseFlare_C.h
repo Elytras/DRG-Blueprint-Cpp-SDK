@@ -67,4 +67,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Flares
 
-using ITM_BaseFlare_C = Game::WeaponsNTools::Flares::ITM_BaseFlare_C;
+using ITM_BaseFlare_C = ::Game::WeaponsNTools::Flares::ITM_BaseFlare_C;

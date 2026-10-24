@@ -40,9 +40,9 @@ class BP_PlagueMeteor_C : public APlagueMeteor
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueMeteor", "BP_PlagueMeteor_C");
-    using BP_RockCracker_EndPoint_C = Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;
-    using EVENT_MeteorDefence_C = Game::GameElements::GameEvents::PlagueMeteor::EVENT_MeteorDefence_C;
-    using HUD_RockCracker_Event_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
+    using BP_RockCracker_EndPoint_C = ::Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;
+    using EVENT_MeteorDefence_C = ::Game::GameElements::GameEvents::PlagueMeteor::EVENT_MeteorDefence_C;
+    using HUD_RockCracker_Event_C = ::Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAutoCarverComponent* AutoCarver1;
     class UDamageComponent* EndExplosionDamage;
@@ -146,6 +146,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ImpactDamgage;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent MeteorMesh;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/RockCrackerBuilder/BP_RockCracker_EndPoint.BP_RockCracker_EndPoint_C End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT;/Game/WeaponsNTools/RockCrackerBuilder/BP_RockCracker_EndPoint.BP_RockCracker_EndPoint_C End3_GEN_VARIABLE:End3_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT;/Script/FSD.FuelLineConnectPoint End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:ConnectPoint;/Script/FSD.FuelLineConnectPoint End3_GEN_VARIABLE:End3_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:ConnectPoint;/Script/Engine.SceneComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:RootComponent;/Script/Engine.SceneComponent End3_GEN_VARIABLE:End3_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:RootComponent;/Script/FSD.SingleUsableComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:ConstructUsable;/Script/FSD.SingleUsableComponent End3_GEN_VARIABLE:End3_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:ConstructUsable;/Script/Engine.SplineComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:ConnectPoint:ConnectorSplineCache;/Script/Engine.SplineComponent End3_GEN_VARIABLE:End3_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:StaticMesh;/Script/Engine.StaticMeshComponent End3_GEN_VARIABLE:End3_GEN_VARIABLE_BP_RockCracker_EndPoint_C_CAT:StaticMesh";
         static constexpr const char* AutoCarver1__UeScsNode = "8ee8a89e77a8344cb15c422ea11f801b";
         static constexpr const char* EndExplosionDamage__UeScsNode = "f2d38804a59ce84e91302233a5174dae";
         static constexpr const char* CrevasseCarver__UeScsNode = "edbabbefa62f3c4ba964d24f13bc322f";
@@ -192,4 +193,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_PlagueMeteor_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteor_C;
+using BP_PlagueMeteor_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteor_C;

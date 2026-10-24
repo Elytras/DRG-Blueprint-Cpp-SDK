@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_Motherlode_Short_C = Game::GameElements::Missions::DNA_Motherlode_Short_C;
+using DNA_Motherlode_Short_C = ::Game::GameElements::Missions::DNA_Motherlode_Short_C;

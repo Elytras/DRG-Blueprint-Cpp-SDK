@@ -87,4 +87,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using ENE_SmallShootingPlant_RegenPod_C = Game::Enemies::HydraWeed::ENE_SmallShootingPlant_RegenPod_C;
+using ENE_SmallShootingPlant_RegenPod_C = ::Game::Enemies::HydraWeed::ENE_SmallShootingPlant_RegenPod_C;

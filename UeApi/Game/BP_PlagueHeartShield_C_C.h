@@ -11,7 +11,7 @@ class UPointLightComponent;
 
 namespace Game { namespace Enemies { namespace Plague { namespace WalkingPlagueheartBoss {
 
-class BP_PlagueHeartShield_C_C : public Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C
+class BP_PlagueHeartShield_C_C : public ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueHeartShield_C", "BP_PlagueHeartShield_C_C");
@@ -20,6 +20,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Arrow;OuterPoint_1;OuterPoint_2;OuterPoint_3;OuterPoint_4;OuterPoint_5;Shell";
         static constexpr const char* PointLight5__UeScsNode = "72d4504a651e7b4c8308a59523ae9776";
         static constexpr const char* PointLight4__UeScsNode = "748326ccb1b47142a072690e0f8c0151";
     };
@@ -27,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using BP_PlagueHeartShield_C_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_C_C;
+using BP_PlagueHeartShield_C_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_C_C;

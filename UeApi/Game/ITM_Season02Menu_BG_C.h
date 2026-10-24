@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season02Menu_BG_C = Game::UI::Menu_Seasons::ITM_Season02Menu_BG_C;
+using ITM_Season02Menu_BG_C = ::Game::UI::Menu_Seasons::ITM_Season02Menu_BG_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_DownedBombDamage_C = Game::GameElements::KPI::Perks::BP_DownedBombDamage_C;
+using BP_DownedBombDamage_C = ::Game::GameElements::KPI::Perks::BP_DownedBombDamage_C;

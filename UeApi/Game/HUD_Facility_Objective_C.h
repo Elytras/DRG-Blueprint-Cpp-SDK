@@ -20,10 +20,10 @@ class HUD_Facility_Objective_C : public UOptionalObjectiveWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/UI/HUD_Facility_Objective", "HUD_Facility_Objective_C");
-    using UI_Facility_Objective_Caretaker_C = Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_Caretaker_C;
-    using UI_Facility_Objective_PowerStation_C = Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_PowerStation_C;
-    using UI_Facility_Objective_ShieldEmitter_C = Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_ShieldEmitter_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_Facility_Objective_Caretaker_C = ::Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_Caretaker_C;
+    using UI_Facility_Objective_PowerStation_C = ::Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_PowerStation_C;
+    using UI_Facility_Objective_ShieldEmitter_C = ::Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_ShieldEmitter_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ImageTinted_C* Background;
     UI_Facility_Objective_Caretaker_C* Caretaker;
@@ -38,4 +38,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::UI
 
-using HUD_Facility_Objective_C = Game::GameElements::Objectives::Facility::UI::HUD_Facility_Objective_C;
+using HUD_Facility_Objective_C = ::Game::GameElements::Objectives::Facility::UI::HUD_Facility_Objective_C;

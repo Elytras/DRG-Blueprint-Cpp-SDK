@@ -14,7 +14,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon { namespace UI {
 
-class GooCannon_AmmoCounter_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class GooCannon_AmmoCounter_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/UI/GooCannon_AmmoCounter", "GooCannon_AmmoCounter_C");
@@ -43,4 +43,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::GooCannon::UI
 
-using GooCannon_AmmoCounter_C = Game::WeaponsNTools::GooCannon::UI::GooCannon_AmmoCounter_C;
+using GooCannon_AmmoCounter_C = ::Game::WeaponsNTools::GooCannon::UI::GooCannon_AmmoCounter_C;

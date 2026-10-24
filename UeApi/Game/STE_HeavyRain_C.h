@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves
 
-using STE_HeavyRain_C = Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves::STE_HeavyRain_C;
+using STE_HeavyRain_C = ::Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves::STE_HeavyRain_C;

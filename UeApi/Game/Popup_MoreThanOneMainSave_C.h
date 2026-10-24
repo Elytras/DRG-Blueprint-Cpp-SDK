@@ -22,9 +22,9 @@ class Popup_MoreThanOneMainSave_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/Popup_MoreThanOneMainSave", "Popup_MoreThanOneMainSave_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_SaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
-    using ITM_SaveSlot_Entry_Header_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_SaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
+    using ITM_SaveSlot_Entry_Header_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FlashingText;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -56,4 +56,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using Popup_MoreThanOneMainSave_C = Game::UI::Menu_SaveSlots::Popup_MoreThanOneMainSave_C;
+using Popup_MoreThanOneMainSave_C = ::Game::UI::Menu_SaveSlots::Popup_MoreThanOneMainSave_C;

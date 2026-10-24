@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects
 
-using AFE_TP_Pheromones_C = Game::GameElements::PawnAffliction::TPEffects::AFE_TP_Pheromones_C;
+using AFE_TP_Pheromones_C = ::Game::GameElements::PawnAffliction::TPEffects::AFE_TP_Pheromones_C;

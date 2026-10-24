@@ -121,4 +121,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::DropSpike
 
-using BP_DropSpike_Base_C = Game::LevelElements::RoomObjects::Hazards::DropSpike::BP_DropSpike_Base_C;
+using BP_DropSpike_Base_C = ::Game::LevelElements::RoomObjects::Hazards::DropSpike::BP_DropSpike_Base_C;

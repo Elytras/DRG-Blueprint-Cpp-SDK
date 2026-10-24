@@ -18,12 +18,12 @@ namespace Game { namespace Enemies { namespace Attacks { class BP_BurrowAttackCo
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossTwins {
 
-class ENE_Spider_Boss_TwinB_C : public Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinBase_C
+class ENE_Spider_Boss_TwinB_C : public ::Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinBase_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ENE_Spider_Boss_TwinB", "ENE_Spider_Boss_TwinB_C");
-    using BP_BurrowAttackComponent_C = Game::Enemies::Attacks::BP_BurrowAttackComponent_C;
-    using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
+    using BP_BurrowAttackComponent_C = ::Game::Enemies::Attacks::BP_BurrowAttackComponent_C;
+    using BP_ConeAttackBase_C = ::Game::Enemies::Attacks::BP_ConeAttackBase_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_TwinB_C;
     class UAttackCooldownComponent* AttackCooldown;
     class UMeleeAttackComponent* BiteAttack;
@@ -45,6 +45,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;BP_BurrowComponent;BP_Meet_Attack;Enemy";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent BiteAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent BurrowAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent CarveAttack_GEN_VARIABLE:DamageComponent_1;/Script/FSD.KnockbackDamageBonus BurrowAttack_GEN_VARIABLE:DamageComponent_0:KnockbackDamageBonus_0;/Script/FSD.MeshCarveAttackEffect CarveAttack_GEN_VARIABLE:MeshCarveAttackEffect_0;/Script/FSD.NormalProjectileAttack ThreeWayAttack_GEN_VARIABLE:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack ThreeWayAttack_GEN_VARIABLE:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack ThreeWayAttack_GEN_VARIABLE:NormalProjectileAttack_2";
         static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinB_C__UeName = "UberGraphFrame";
         static constexpr const char* AttackCooldown__UeScsNode = "9f194b9f262f804faf4c1d4a10853235";
         static constexpr const char* BiteAttack__UeScsNode = "3b6328512ffc604bb6a815f34b37d438";
@@ -59,4 +61,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using ENE_Spider_Boss_TwinB_C = Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinB_C;
+using ENE_Spider_Boss_TwinB_C = ::Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinB_C;

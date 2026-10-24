@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShark
 
-using AIC_PlagueShark_C = Game::Enemies::Plague::PlagueShark::AIC_PlagueShark_C;
+using AIC_PlagueShark_C = ::Game::Enemies::Plague::PlagueShark::AIC_PlagueShark_C;

@@ -19,7 +19,7 @@ class UTimelineComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Helpers { namespace GlowingLightCrystals {
 
-class BP_RadioactiveGlowinggGreenCrystal_Hazard_C : public Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_Base_C
+class BP_RadioactiveGlowinggGreenCrystal_Hazard_C : public ::Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/GlowingLightCrystals/BP_RadioactiveGlowinggGreenCrystal_Hazard", "BP_RadioactiveGlowinggGreenCrystal_Hazard_C");
@@ -48,6 +48,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;PointLight";
         static constexpr const char* UberGraphFrame_BP_RadioactiveGlowinggGreenCrystal_Hazard_C__UeName = "UberGraphFrame";
         static constexpr const char* StatusEffectTrigger__UeScsNode = "253f3ec416344a4cb4cb68a0ed977a49";
         static constexpr const char* Audio__UeScsNode = "90107f90259f2445a8c4c64c66d54404";
@@ -60,4 +61,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals
 
-using BP_RadioactiveGlowinggGreenCrystal_Hazard_C = Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_RadioactiveGlowinggGreenCrystal_Hazard_C;
+using BP_RadioactiveGlowinggGreenCrystal_Hazard_C = ::Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_RadioactiveGlowinggGreenCrystal_Hazard_C;

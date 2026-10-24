@@ -26,15 +26,15 @@ class WND_MisSel_MissionDescription_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/WND_MisSel_MissionDescription", "WND_MisSel_MissionDescription_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_MisDesMutator_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
-    using ITM_MisSel_DotMarker_CaveDifficulty_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
-    using ITM_MisSel_DotMarker_MissionLength_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_MisSel_ObjectivePrimary_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ObjectivePrimary_C;
-    using ITM_MisSel_ObjectiveSecondary_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ObjectiveSecondary_C;
-    using Icon_ClassLevel_C = Game::UI::Art::WidgetParts::Icon_ClassLevel_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_MisDesMutator_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
+    using ITM_MisSel_DotMarker_CaveDifficulty_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
+    using ITM_MisSel_DotMarker_MissionLength_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_MisSel_ObjectivePrimary_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ObjectivePrimary_C;
+    using ITM_MisSel_ObjectiveSecondary_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ObjectiveSecondary_C;
+    using Icon_ClassLevel_C = ::Game::UI::Art::WidgetParts::Icon_ClassLevel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;
@@ -45,7 +45,7 @@ public:
     Basic_Menu_ColorBar_C* ColorBar_Bottom;
     class UTextBlock* DATADescription_Assignment;
     class UTextBlock* DATADescription_Assignment_Locked;
-    class UTextBlock* DATAMissionName;
+    class UTextBlock* DataMissionName;
     class UTextBlock* DATAMissionType;
     ITM_MisSel_DotMarker_CaveDifficulty_C* DotMarker_Complexity;
     ITM_MisSel_DotMarker_MissionLength_C* DotMarker_Length;
@@ -75,4 +75,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using WND_MisSel_MissionDescription_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionDescription_C;
+using WND_MisSel_MissionDescription_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionDescription_C;

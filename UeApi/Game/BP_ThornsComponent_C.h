@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_ThornsComponent_C = Game::GameElements::KPI::Perks::BP_ThornsComponent_C;
+using BP_ThornsComponent_C = ::Game::GameElements::KPI::Perks::BP_ThornsComponent_C;

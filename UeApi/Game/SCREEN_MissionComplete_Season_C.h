@@ -26,10 +26,10 @@ class SCREEN_MissionComplete_Season_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/SCREEN_MissionComplete_Season", "SCREEN_MissionComplete_Season_C");
-    using ITM_SeasonProgressBar_C = Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;
-    using ITM_Season_Challenge_C = Game::UI::Menu_Seasons::ITM_Season_Challenge_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
-    using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+    using ITM_SeasonProgressBar_C = ::Game::UI::Menu_Seasons::ITM_SeasonProgressBar_C;
+    using ITM_Season_Challenge_C = ::Game::UI::Menu_Seasons::ITM_Season_Challenge_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* SeasonMultiplierIntro;
     UE_READONLY class UWidgetAnimation* LevelUpSmoke;
@@ -107,4 +107,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using SCREEN_MissionComplete_Season_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Season_C;
+using SCREEN_MissionComplete_Season_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Season_C;

@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Extractor
 
-using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
+using BP_Extractor_Shell_C = ::Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;

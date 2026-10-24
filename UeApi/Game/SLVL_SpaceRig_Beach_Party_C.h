@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_Beach_Party_C = Game::Maps::SpaceRig::SLVL_SpaceRig_Beach_Party_C;
+using SLVL_SpaceRig_Beach_Party_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_Beach_Party_C;

@@ -20,7 +20,7 @@ class Cheat_OverclockSelection_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_OverclockSelection", "Cheat_OverclockSelection_C");
-    using Cheat_PerkListItem_C = Game::UI::Menu_Cheats::Cheat_PerkListItem_C;
+    using Cheat_PerkListItem_C = ::Game::UI::Menu_Cheats::Cheat_PerkListItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_0;
     class UScrollBox* SB_OverclockList;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_OverclockSelection_C = Game::UI::Menu_Cheats::Cheat_OverclockSelection_C;
+using Cheat_OverclockSelection_C = ::Game::UI::Menu_Cheats::Cheat_OverclockSelection_C;

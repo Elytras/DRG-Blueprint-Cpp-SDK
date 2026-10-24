@@ -18,8 +18,8 @@ class Options_Tab_GFX_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_GFX", "Options_Tab_GFX_C");
-    using Options_Tab_GFX_Console_C = Game::UI::Menu_Options::Options_Tab_GFX_Console_C;
-    using Options_Tab_GFX_Steam_C = Game::UI::Menu_Options::Options_Tab_GFX_Steam_C;
+    using Options_Tab_GFX_Console_C = ::Game::UI::Menu_Options::Options_Tab_GFX_Console_C;
+    using Options_Tab_GFX_Steam_C = ::Game::UI::Menu_Options::Options_Tab_GFX_Steam_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Options_Tab_GFX_Console_C* Options_Tab_GFX_Console;
     Options_Tab_GFX_Steam_C* Options_Tab_GFX_Steam;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_GFX_C = Game::UI::Menu_Options::Options_Tab_GFX_C;
+using Options_Tab_GFX_C = ::Game::UI::Menu_Options::Options_Tab_GFX_C;

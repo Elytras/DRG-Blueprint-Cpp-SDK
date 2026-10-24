@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using TSK_GetPointAboveTarget_C = Game::Enemies::FlyingBug::Bomber::TSK_GetPointAboveTarget_C;
+using TSK_GetPointAboveTarget_C = ::Game::Enemies::FlyingBug::Bomber::TSK_GetPointAboveTarget_C;

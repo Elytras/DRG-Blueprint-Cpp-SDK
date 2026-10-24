@@ -15,7 +15,7 @@ class USkeletalMeshComponent;
 
 namespace Game { namespace GameElements { namespace Bar {
 
-class BP_BarGlass_Standard_C : public Game::GameElements::Bar::BP_BarGlass_C
+class BP_BarGlass_Standard_C : public ::Game::GameElements::Bar::BP_BarGlass_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/BP_BarGlass_Standard", "BP_BarGlass_Standard_C");
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using BP_BarGlass_Standard_C = Game::GameElements::Bar::BP_BarGlass_Standard_C;
+using BP_BarGlass_Standard_C = ::Game::GameElements::Bar::BP_BarGlass_Standard_C;

@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using PRW_MicrowaveGun_C = Game::WeaponsNTools::MicrowaveGun::PRW_MicrowaveGun_C;
+using PRW_MicrowaveGun_C = ::Game::WeaponsNTools::MicrowaveGun::PRW_MicrowaveGun_C;

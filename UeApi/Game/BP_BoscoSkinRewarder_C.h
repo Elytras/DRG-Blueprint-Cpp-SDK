@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Treasure::LostPack
 
-using BP_BoscoSkinRewarder_C = Game::GameElements::Treasure::LostPack::BP_BoscoSkinRewarder_C;
+using BP_BoscoSkinRewarder_C = ::Game::GameElements::Treasure::LostPack::BP_BoscoSkinRewarder_C;

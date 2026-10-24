@@ -23,4 +23,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_FrozenState_C = Game::Character::States::BP_FrozenState_C;
+using BP_FrozenState_C = ::Game::Character::States::BP_FrozenState_C;

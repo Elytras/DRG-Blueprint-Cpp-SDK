@@ -17,7 +17,7 @@ class BP_Widget_DropPod_BiomeRadar_C : public AActor
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/BP_Widget_DropPod_BiomeRadar", "BP_Widget_DropPod_BiomeRadar_C");
-    using Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;
+    using Widget_DropPod_AltitudeMeter_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;
     class UWidgetComponent* Widget1;
     class USceneComponent* DefaultSceneRoot;
     Widget_DropPod_AltitudeMeter_C* Widget;
@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using BP_Widget_DropPod_BiomeRadar_C = Game::Art::DropPod::Widgets::BP_Widget_DropPod_BiomeRadar_C;
+using BP_Widget_DropPod_BiomeRadar_C = ::Game::Art::DropPod::Widgets::BP_Widget_DropPod_BiomeRadar_C;

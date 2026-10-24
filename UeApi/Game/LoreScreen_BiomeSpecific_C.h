@@ -21,14 +21,14 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens {
 
-class LoreScreen_BiomeSpecific_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_BiomeSpecific_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_BiomeSpecific", "LoreScreen_BiomeSpecific_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_Biome_ResourceIcon_C = Game::UI::Menu_MinersManual::ITM_Biome_ResourceIcon_C;
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_Text_W_Image_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_W_Image_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_Biome_ResourceIcon_C = ::Game::UI::Menu_MinersManual::ITM_Biome_ResourceIcon_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_Text_W_Image_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_W_Image_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_BiomeSpecific_C;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar3;
     Lore_Container_Text_W_Image_C* Feature0;
@@ -55,4 +55,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_BiomeSpecific_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_BiomeSpecific_C;
+using LoreScreen_BiomeSpecific_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_BiomeSpecific_C;

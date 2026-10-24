@@ -19,9 +19,9 @@ class ITM_ServerList_Warning_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/ITM_ServerList_Warning", "ITM_ServerList_Warning_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_ServerList_AttentionBox_C = Game::UI::Menu_ServerList::ITM_ServerList_AttentionBox_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_ServerList_AttentionBox_C = ::Game::UI::Menu_ServerList::ITM_ServerList_AttentionBox_C;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
     BlurBackground_C* BlurBackground;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using ITM_ServerList_Warning_C = Game::UI::Menu_ServerList::ITM_ServerList_Warning_C;
+using ITM_ServerList_Warning_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Warning_C;

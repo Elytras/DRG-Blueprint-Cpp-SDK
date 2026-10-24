@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_Master_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C;
+using LoreScreen_Master_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C;

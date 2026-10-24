@@ -23,7 +23,7 @@ class UTerrainPlacementComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace FrostGeyser {
 
-class BP_Geyser_Frost_C : public Game::LevelElements::RoomObjects::Hazards::Geyser::BP_Geyser_Base_C
+class BP_Geyser_Frost_C : public ::Game::LevelElements::RoomObjects::Hazards::Geyser::BP_Geyser_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/FrostGeyser/BP_Geyser_Frost", "BP_Geyser_Frost_C");
@@ -61,6 +61,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "ICH-DefaultSceneRoot";
         static constexpr const char* GeyserSandIdle_Cue__UeScsNode = "37c85478124754499df9993132672998";
         static constexpr const char* GeyserSandErupt_Cue__UeScsNode = "03aafe65dd12024f949c7117c947a36e";
         static constexpr const char* Capsule_Inside__UeName = "Capsule-Inside";
@@ -90,4 +91,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::FrostGeyser
 
-using BP_Geyser_Frost_C = Game::LevelElements::RoomObjects::Hazards::FrostGeyser::BP_Geyser_Frost_C;
+using BP_Geyser_Frost_C = ::Game::LevelElements::RoomObjects::Hazards::FrostGeyser::BP_Geyser_Frost_C;

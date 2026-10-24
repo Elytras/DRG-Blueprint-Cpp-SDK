@@ -78,4 +78,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_DorettaHead_C = Game::GameElements::Objectives::Escort::BP_DorettaHead_C;
+using BP_DorettaHead_C = ::Game::GameElements::Objectives::Escort::BP_DorettaHead_C;

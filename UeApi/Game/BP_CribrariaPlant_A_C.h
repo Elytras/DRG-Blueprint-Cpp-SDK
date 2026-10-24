@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace PassiveFoliage { namespace CribrariaPlant {
 
-class BP_CribrariaPlant_A_C : public Game::LevelElements::RoomObjects::PassiveFoliage::BP_PassiveFoliage_Base_C
+class BP_CribrariaPlant_A_C : public ::Game::LevelElements::RoomObjects::PassiveFoliage::BP_PassiveFoliage_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/CribrariaPlant/BP_CribrariaPlant_A", "BP_CribrariaPlant_A_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "PathfinderCollision;SimpleHealth;SimpleObjectInfo;StaticMesh;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage::CribrariaPlant
 
-using BP_CribrariaPlant_A_C = Game::LevelElements::RoomObjects::PassiveFoliage::CribrariaPlant::BP_CribrariaPlant_A_C;
+using BP_CribrariaPlant_A_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::CribrariaPlant::BP_CribrariaPlant_A_C;

@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::Defense
 
-using OBJ_DD_Defense_C = Game::GameElements::Objectives::DeepDive::Defense::OBJ_DD_Defense_C;
+using OBJ_DD_Defense_C = ::Game::GameElements::Objectives::DeepDive::Defense::OBJ_DD_Defense_C;

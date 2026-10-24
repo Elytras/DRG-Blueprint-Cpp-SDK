@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using STE_TurretArc_Enemies_C = Game::WeaponsNTools::SentryGun::STE_TurretArc_Enemies_C;
+using STE_TurretArc_Enemies_C = ::Game::WeaponsNTools::SentryGun::STE_TurretArc_Enemies_C;

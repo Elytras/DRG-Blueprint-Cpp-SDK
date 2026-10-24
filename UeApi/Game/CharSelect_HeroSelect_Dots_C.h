@@ -42,4 +42,4 @@ private:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using CharSelect_HeroSelect_Dots_C = Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Dots_C;
+using CharSelect_HeroSelect_Dots_C = ::Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Dots_C;

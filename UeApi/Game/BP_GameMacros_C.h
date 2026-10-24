@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Game::Macros
 
-using BP_GameMacros_C = Game::Game::Macros::BP_GameMacros_C;
+using BP_GameMacros_C = ::Game::Game::Macros::BP_GameMacros_C;

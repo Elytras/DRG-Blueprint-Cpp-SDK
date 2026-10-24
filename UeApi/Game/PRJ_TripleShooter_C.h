@@ -41,4 +41,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using PRJ_TripleShooter_C = Game::Enemies::FlyingBug::Shooter::PRJ_TripleShooter_C;
+using PRJ_TripleShooter_C = ::Game::Enemies::FlyingBug::Shooter::PRJ_TripleShooter_C;

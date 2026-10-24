@@ -26,4 +26,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::UI
 
-using UI_PropHunt_Ammo_C = Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_Ammo_C;
+using UI_PropHunt_Ammo_C = ::Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_Ammo_C;

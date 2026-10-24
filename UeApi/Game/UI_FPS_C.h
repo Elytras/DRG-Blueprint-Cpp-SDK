@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_FPS_C = Game::UI::Global_UI_Elements::UI_FPS_C;
+using UI_FPS_C = ::Game::UI::Global_UI_Elements::UI_FPS_C;

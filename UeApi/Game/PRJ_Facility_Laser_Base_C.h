@@ -45,4 +45,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using PRJ_Facility_Laser_Base_C = Game::GameElements::Objectives::Facility::PRJ_Facility_Laser_Base_C;
+using PRJ_Facility_Laser_Base_C = ::Game::GameElements::Objectives::Facility::PRJ_Facility_Laser_Base_C;

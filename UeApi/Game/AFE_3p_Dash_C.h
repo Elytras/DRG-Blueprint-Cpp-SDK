@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::PerkFX
 
-using AFE_3p_Dash_C = Game::GameElements::KPI::Perks::PerkFX::AFE_3p_Dash_C;
+using AFE_3p_Dash_C = ::Game::GameElements::KPI::Perks::PerkFX::AFE_3p_Dash_C;

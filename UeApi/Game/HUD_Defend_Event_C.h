@@ -23,9 +23,9 @@ class HUD_Defend_Event_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Events/HUD_Defend_Event", "HUD_Defend_Event_C");
-    using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
-    using EVENT_Defense_Base_C = Game::GameElements::Objectives::DeepDive::Defense::EVENT_Defense_Base_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using Basic_HUD_BracketWindowBig_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
+    using EVENT_Defense_Base_C = ::Game::GameElements::Objectives::DeepDive::Defense::EVENT_Defense_Base_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_C* Basic_HUD_BracketWindowBigWindowBracketBig;
     class UImage* DefenderActive_01;
@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events
 
-using HUD_Defend_Event_C = Game::UI::MainOnscreenHUD::Events::HUD_Defend_Event_C;
+using HUD_Defend_Event_C = ::Game::UI::MainOnscreenHUD::Events::HUD_Defend_Event_C;

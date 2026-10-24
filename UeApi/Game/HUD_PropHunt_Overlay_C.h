@@ -22,8 +22,8 @@ class HUD_PropHunt_Overlay_C : public UPropHuntOverlayWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/UI/HUD_PropHunt_Overlay", "HUD_PropHunt_Overlay_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using UI_PropHunt_ContestantCount_C = Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_ContestantCount_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using UI_PropHunt_ContestantCount_C = ::Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_ContestantCount_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UUniformGridPanel* AmmoGrid;
     Basic_Image_C* Crosshair_Image;
@@ -49,4 +49,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::UI
 
-using HUD_PropHunt_Overlay_C = Game::GameElements::Bar::Drinkables::PropHunt::UI::HUD_PropHunt_Overlay_C;
+using HUD_PropHunt_Overlay_C = ::Game::GameElements::Bar::Drinkables::PropHunt::UI::HUD_PropHunt_Overlay_C;

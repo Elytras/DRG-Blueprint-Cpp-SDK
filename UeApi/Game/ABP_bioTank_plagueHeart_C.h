@@ -24,4 +24,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes
 
-using ABP_bioTank_plagueHeart_C = Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_bioTank_plagueHeart_C;
+using ABP_bioTank_plagueHeart_C = ::Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_bioTank_plagueHeart_C;

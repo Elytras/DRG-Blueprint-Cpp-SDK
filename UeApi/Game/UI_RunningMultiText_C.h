@@ -12,7 +12,7 @@ class USoundCue;
 
 namespace Game { namespace UI { namespace Global_UI_Elements {
 
-class UI_RunningMultiText_C : public Game::UI::MainOnscreenHUD::Standard::Basic_Label_C
+class UI_RunningMultiText_C : public ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/UI_RunningMultiText", "UI_RunningMultiText_C");
@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_RunningMultiText_C = Game::UI::Global_UI_Elements::UI_RunningMultiText_C;
+using UI_RunningMultiText_C = ::Game::UI::Global_UI_Elements::UI_RunningMultiText_C;

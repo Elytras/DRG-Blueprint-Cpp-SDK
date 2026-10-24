@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::CharacterStructure::Rig::Facial_Hair_Rig
 
-using ABP_Beard_Rig_C_C = Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Beard_Rig_C_C;
+using ABP_Beard_Rig_C_C = ::Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Beard_Rig_C_C;

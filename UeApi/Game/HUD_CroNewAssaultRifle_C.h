@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CroNewAssaultRifle_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNewAssaultRifle_C;
+using HUD_CroNewAssaultRifle_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNewAssaultRifle_C;

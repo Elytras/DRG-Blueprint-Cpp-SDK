@@ -23,10 +23,10 @@ class UI_Crafting_MasteryBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/UI_Crafting_MasteryBar", "UI_Crafting_MasteryBar_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_Crafting_MasteryBar_Reward_C = Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_Reward_C;
-    using UI_Forge_LevelIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_Crafting_MasteryBar_Reward_C = ::Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_Reward_C;
+    using UI_Forge_LevelIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_LevelIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimLevelUp;
     UE_READONLY class UWidgetAnimation* AnimProgress;
@@ -59,4 +59,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using UI_Crafting_MasteryBar_C = Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_C;
+using UI_Crafting_MasteryBar_C = ::Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_C;

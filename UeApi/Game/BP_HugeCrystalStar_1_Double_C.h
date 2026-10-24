@@ -11,7 +11,7 @@ class ULevelGenerationCarverComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace LargeCrystalFormations {
 
-class BP_HugeCrystalStar_1_Double_C : public Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_HugeCrystalStar_Base_C
+class BP_HugeCrystalStar_1_Double_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_HugeCrystalStar_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/LargeCrystalFormations/BP_HugeCrystalStar_1_Double", "BP_HugeCrystalStar_1_Double_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;StaticMesh2;TerrainPlacement";
         static constexpr const char* LevelGenerationCarver1__UeScsNode = "276c2dea6dc8b34f897f12a3515a36c6";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations
 
-using BP_HugeCrystalStar_1_Double_C = Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_HugeCrystalStar_1_Double_C;
+using BP_HugeCrystalStar_1_Double_C = ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_HugeCrystalStar_1_Double_C;

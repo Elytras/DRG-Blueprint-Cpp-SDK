@@ -20,7 +20,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Incendiary {
 
-class Grenade_Incendiary_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Incendiary_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Incendiary/Grenade_Incendiary", "Grenade_Incendiary_C");
@@ -42,6 +42,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "P_GrenadeTrail;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Incendiary_C__UeName = "UberGraphFrame";
         static constexpr const char* Damage__UeScsNode = "b7e4e6ec3f68cf41a5d698398510f19d";
         static constexpr const char* Sphere__UeScsNode = "3438ba09403cf74580c938d14842e053";
@@ -51,4 +52,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Incendiary
 
-using Grenade_Incendiary_C = Game::WeaponsNTools::Grenades::Incendiary::Grenade_Incendiary_C;
+using Grenade_Incendiary_C = ::Game::WeaponsNTools::Grenades::Incendiary::Grenade_Incendiary_C;

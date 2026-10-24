@@ -138,4 +138,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms
 
-using BP_CeilingCrystal_C = Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_CeilingCrystal_C;
+using BP_CeilingCrystal_C = ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_CeilingCrystal_C;

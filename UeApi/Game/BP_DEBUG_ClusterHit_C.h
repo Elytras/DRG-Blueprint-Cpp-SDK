@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using BP_DEBUG_ClusterHit_C = Game::WeaponsNTools::MicroMissileLauncher::BP_DEBUG_ClusterHit_C;
+using BP_DEBUG_ClusterHit_C = ::Game::WeaponsNTools::MicroMissileLauncher::BP_DEBUG_ClusterHit_C;

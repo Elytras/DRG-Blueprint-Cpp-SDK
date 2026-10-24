@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen
 
-using BP_OxygenComponent_C = Game::GameElements::Missions::Warnings::NoOxygen::BP_OxygenComponent_C;
+using BP_OxygenComponent_C = ::Game::GameElements::Missions::Warnings::NoOxygen::BP_OxygenComponent_C;

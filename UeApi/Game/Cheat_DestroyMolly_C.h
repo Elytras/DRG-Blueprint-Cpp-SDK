@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_DestroyMolly_C = Game::UI::Menu_Cheats::Cheat_DestroyMolly_C;
+using Cheat_DestroyMolly_C = ::Game::UI::Menu_Cheats::Cheat_DestroyMolly_C;

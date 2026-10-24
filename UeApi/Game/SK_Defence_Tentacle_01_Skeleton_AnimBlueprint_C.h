@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using SK_Defence_Tentacle_01_Skeleton_AnimBlueprint_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::SK_Defence_Tentacle_01_Skeleton_AnimBlueprint_C;
+using SK_Defence_Tentacle_01_Skeleton_AnimBlueprint_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::SK_Defence_Tentacle_01_Skeleton_AnimBlueprint_C;

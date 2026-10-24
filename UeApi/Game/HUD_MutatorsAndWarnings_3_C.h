@@ -19,8 +19,8 @@ class HUD_MutatorsAndWarnings_3_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_MutatorsAndWarnings_3", "HUD_MutatorsAndWarnings_3_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using ITM_MutatorsAndWarnings_Entry1_C = Game::UI::MainOnscreenHUD::ITM_MutatorsAndWarnings_Entry1_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using ITM_MutatorsAndWarnings_Entry1_C = ::Game::UI::MainOnscreenHUD::ITM_MutatorsAndWarnings_Entry1_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UInvalidationBox* InvalidationBox_0;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_MutatorsAndWarnings_3_C = Game::UI::MainOnscreenHUD::HUD_MutatorsAndWarnings_3_C;
+using HUD_MutatorsAndWarnings_3_C = ::Game::UI::MainOnscreenHUD::HUD_MutatorsAndWarnings_3_C;

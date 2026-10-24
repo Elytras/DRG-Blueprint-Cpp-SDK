@@ -65,4 +65,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Header_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Header_ButtonCutCorner_C;
+using Header_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Header_ButtonCutCorner_C;

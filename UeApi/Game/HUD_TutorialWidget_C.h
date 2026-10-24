@@ -18,7 +18,7 @@ class HUD_TutorialWidget_C : public UTutorialWidget
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/HUD_TutorialWidget", "HUD_TutorialWidget_C");
-    using ITM_BasicTutorialWindow_C = Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
+    using ITM_BasicTutorialWindow_C = ::Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Exit;
     ITM_BasicTutorialWindow_C* ITM_BasicTutorialWindow;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Tutorial
 
-using HUD_TutorialWidget_C = Game::UI::Tutorial::HUD_TutorialWidget_C;
+using HUD_TutorialWidget_C = ::Game::UI::Tutorial::HUD_TutorialWidget_C;

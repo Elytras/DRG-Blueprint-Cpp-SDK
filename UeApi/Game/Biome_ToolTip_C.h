@@ -21,8 +21,8 @@ class Biome_ToolTip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/ToolTips/Biome_ToolTip", "Biome_ToolTip_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Intro;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::ToolTips
 
-using Biome_ToolTip_C = Game::UI::ToolTips::Biome_ToolTip_C;
+using Biome_ToolTip_C = ::Game::UI::ToolTips::Biome_ToolTip_C;

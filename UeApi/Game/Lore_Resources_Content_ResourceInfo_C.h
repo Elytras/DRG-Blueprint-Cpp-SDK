@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Resources_Content_ResourceInfo_C = Game::UI::Menu_MinersManual::Lore_Resources_Content_ResourceInfo_C;
+using Lore_Resources_Content_ResourceInfo_C = ::Game::UI::Menu_MinersManual::Lore_Resources_Content_ResourceInfo_C;

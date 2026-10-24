@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE
 
-using STE_HeatSink_MicrowaveGun_C = Game::WeaponsNTools::MicrowaveGun::STE::STE_HeatSink_MicrowaveGun_C;
+using STE_HeatSink_MicrowaveGun_C = ::Game::WeaponsNTools::MicrowaveGun::STE::STE_HeatSink_MicrowaveGun_C;

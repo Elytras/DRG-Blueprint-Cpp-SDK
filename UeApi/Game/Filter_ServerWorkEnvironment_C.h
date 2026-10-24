@@ -19,8 +19,8 @@ class Filter_ServerWorkEnvironment_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/Filter_ServerWorkEnvironment", "Filter_ServerWorkEnvironment_C");
-    using Basic_ExpandableMenu_C = Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
-    using Check_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::Check_ServerWorkEnvironment_C;
+    using Basic_ExpandableMenu_C = ::Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
+    using Check_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::Check_ServerWorkEnvironment_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* EntryBox;
     Basic_ExpandableMenu_C* MenuWorkEnvironment;
@@ -44,4 +44,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using Filter_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::Filter_ServerWorkEnvironment_C;
+using Filter_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::Filter_ServerWorkEnvironment_C;

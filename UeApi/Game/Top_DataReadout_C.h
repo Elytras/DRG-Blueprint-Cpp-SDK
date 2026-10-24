@@ -17,7 +17,7 @@ class Top_DataReadout_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Top_DataReadout", "Top_DataReadout_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     Basic_BG_CutCorner_C* Basic_BG_Window;
     class UImage* Image_47;
     class UProgressBar* ProgressBar_149;
@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Top_DataReadout_C = Game::UI::Menu_MinersManual::Top_DataReadout_C;
+using Top_DataReadout_C = ::Game::UI::Menu_MinersManual::Top_DataReadout_C;

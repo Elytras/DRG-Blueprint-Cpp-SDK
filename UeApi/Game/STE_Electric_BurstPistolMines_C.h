@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty
 
-using STE_Electric_BurstPistolMines_C = Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::STE_Electric_BurstPistolMines_C;
+using STE_Electric_BurstPistolMines_C = ::Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::STE_Electric_BurstPistolMines_C;

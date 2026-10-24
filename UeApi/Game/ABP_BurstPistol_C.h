@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol
 
-using ABP_BurstPistol_C = Game::WeaponsNTools::BurstFirePistol::ABP_BurstPistol_C;
+using ABP_BurstPistol_C = ::Game::WeaponsNTools::BurstFirePistol::ABP_BurstPistol_C;

@@ -14,7 +14,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace SentryGun { namespace SentryGun_Engineer {
 
-class WeaponDisplay_SentryGun_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_SentryGun_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/WeaponDisplay_SentryGun_AmmoCount", "WeaponDisplay_SentryGun_AmmoCount_C");
@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using WeaponDisplay_SentryGun_AmmoCount_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::WeaponDisplay_SentryGun_AmmoCount_C;
+using WeaponDisplay_SentryGun_AmmoCount_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::WeaponDisplay_SentryGun_AmmoCount_C;

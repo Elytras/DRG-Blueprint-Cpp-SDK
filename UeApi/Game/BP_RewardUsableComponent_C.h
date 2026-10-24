@@ -18,4 +18,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::RewardDispenser
 
-using BP_RewardUsableComponent_C = Game::GameElements::GameEvents::RewardDispenser::BP_RewardUsableComponent_C;
+using BP_RewardUsableComponent_C = ::Game::GameElements::GameEvents::RewardDispenser::BP_RewardUsableComponent_C;

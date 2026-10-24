@@ -38,4 +38,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using BP_EletrocutedArrow_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_EletrocutedArrow_C;
+using BP_EletrocutedArrow_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_EletrocutedArrow_C;

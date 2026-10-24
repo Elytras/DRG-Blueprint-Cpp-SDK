@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ITEM_Base_C = Game::UI::CharacterSelectionMK2::ITEM_Base_C;
+using ITEM_Base_C = ::Game::UI::CharacterSelectionMK2::ITEM_Base_C;

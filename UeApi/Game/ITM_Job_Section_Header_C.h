@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using ITM_Job_Section_Header_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Job_Section_Header_C;
+using ITM_Job_Section_Header_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Job_Section_Header_C;

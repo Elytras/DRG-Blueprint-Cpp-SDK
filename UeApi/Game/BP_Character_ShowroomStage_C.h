@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::Showroom
 
-using BP_Character_ShowroomStage_C = Game::UI::Showroom::BP_Character_ShowroomStage_C;
+using BP_Character_ShowroomStage_C = ::Game::UI::Showroom::BP_Character_ShowroomStage_C;

@@ -12,7 +12,7 @@ class UUsableComponentBase;
 
 namespace Game { namespace UI { namespace Tutorial {
 
-class W_Tutorial_Spaceball_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
+class W_Tutorial_Spaceball_C : public ::Game::UI::Tutorial::W_TutorialContent_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_Tutorial_Spaceball", "W_Tutorial_Spaceball_C");
@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_Tutorial_Spaceball_C = Game::UI::Tutorial::W_Tutorial_Spaceball_C;
+using W_Tutorial_Spaceball_C = ::Game::UI::Tutorial::W_Tutorial_Spaceball_C;

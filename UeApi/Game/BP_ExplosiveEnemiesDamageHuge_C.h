@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ExplosiveEnemies
 
-using BP_ExplosiveEnemiesDamageHuge_C = Game::GameElements::Missions::Warnings::ExplosiveEnemies::BP_ExplosiveEnemiesDamageHuge_C;
+using BP_ExplosiveEnemiesDamageHuge_C = ::Game::GameElements::Missions::Warnings::ExplosiveEnemies::BP_ExplosiveEnemiesDamageHuge_C;

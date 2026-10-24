@@ -25,16 +25,16 @@ class Menu_RestoreSaves_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_RestoreSave/Menu_RestoreSaves", "Menu_RestoreSaves_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_ButtonTab_C = Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
-    using Basic_Menu_LargeWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_RestoreSaveCategoryList_Entry_C = Game::UI::Menu_RestoreSave::ITM_RestoreSaveCategoryList_Entry_C;
-    using ITM_RestoreSave_Resources_C = Game::UI::Menu_RestoreSave::ITM_RestoreSave_Resources_C;
-    using ITM_TopBar_CharacterIcon_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
-    using ITM_TopBar_CharacterLevel_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterLevel_C;
-    using ITM_TopBar_PlayerRank_C = Game::UI::Menu_TopBar::ITM_TopBar_PlayerRank_C;
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_ButtonTab_C = ::Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
+    using Basic_Menu_LargeWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_RestoreSaveCategoryList_Entry_C = ::Game::UI::Menu_RestoreSave::ITM_RestoreSaveCategoryList_Entry_C;
+    using ITM_RestoreSave_Resources_C = ::Game::UI::Menu_RestoreSave::ITM_RestoreSave_Resources_C;
+    using ITM_TopBar_CharacterIcon_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
+    using ITM_TopBar_CharacterLevel_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterLevel_C;
+    using ITM_TopBar_PlayerRank_C = ::Game::UI::Menu_TopBar::ITM_TopBar_PlayerRank_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BlurBackground_C* BlurBackground;
     Basic_ButtonScalable2_C* BTN_Back;
@@ -84,4 +84,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_RestoreSave
 
-using Menu_RestoreSaves_C = Game::UI::Menu_RestoreSave::Menu_RestoreSaves_C;
+using Menu_RestoreSaves_C = ::Game::UI::Menu_RestoreSave::Menu_RestoreSaves_C;

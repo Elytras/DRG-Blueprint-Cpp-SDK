@@ -11,7 +11,7 @@ class UNiagaraComponent;
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class BP_Spider_PlagueCloud_DiffuseSpawn_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_Spider_PlagueCloud_DiffuseSpawn_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_Spider_PlagueCloud_DiffuseSpawn", "BP_Spider_PlagueCloud_DiffuseSpawn_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "AcidCloud;StatusEffectTrigger";
         static constexpr const char* NS_Plague_Spider_Tank_DeathCloud__UeScsNode = "c8e8865ba5be9f499bee188998393ca9";
     };
 };
 
 }}}   // namespace Game::Enemies::Plague
 
-using BP_Spider_PlagueCloud_DiffuseSpawn_C = Game::Enemies::Plague::BP_Spider_PlagueCloud_DiffuseSpawn_C;
+using BP_Spider_PlagueCloud_DiffuseSpawn_C = ::Game::Enemies::Plague::BP_Spider_PlagueCloud_DiffuseSpawn_C;

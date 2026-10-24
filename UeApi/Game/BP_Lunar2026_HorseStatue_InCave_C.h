@@ -101,4 +101,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Lunar_NewYear
 
-using BP_Lunar2026_HorseStatue_InCave_C = Game::GameElements::Holidays::Lunar_NewYear::BP_Lunar2026_HorseStatue_InCave_C;
+using BP_Lunar2026_HorseStatue_InCave_C = ::Game::GameElements::Holidays::Lunar_NewYear::BP_Lunar2026_HorseStatue_InCave_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_ShieldTank_TremorAttack_C = Game::Character::Camera::CameraShakes::CameraShake_ShieldTank_TremorAttack_C;
+using CameraShake_ShieldTank_TremorAttack_C = ::Game::Character::Camera::CameraShakes::CameraShake_ShieldTank_TremorAttack_C;

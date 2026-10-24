@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween
 
-using BP_Phys_Pumpkin_C = Game::Art::Environments::Holiday_Halloween::BP_Phys_Pumpkin_C;
+using BP_Phys_Pumpkin_C = ::Game::Art::Environments::Holiday_Halloween::BP_Phys_Pumpkin_C;

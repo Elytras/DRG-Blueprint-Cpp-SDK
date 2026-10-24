@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::Game::Modding::Proxies
 
-using MOD_Proxy_SpawnWave_C = Game::Game::Modding::Proxies::MOD_Proxy_SpawnWave_C;
+using MOD_Proxy_SpawnWave_C = ::Game::Game::Modding::Proxies::MOD_Proxy_SpawnWave_C;

@@ -49,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall
 
-using W_CircularProgressBar01_C = Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall::W_CircularProgressBar01_C;
+using W_CircularProgressBar01_C = ::Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall::W_CircularProgressBar01_C;

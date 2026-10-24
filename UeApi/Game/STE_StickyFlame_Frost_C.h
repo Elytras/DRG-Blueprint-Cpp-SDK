@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using STE_StickyFlame_Frost_C = Game::WeaponsNTools::Cryospray::STE_StickyFlame_Frost_C;
+using STE_StickyFlame_Frost_C = ::Game::WeaponsNTools::Cryospray::STE_StickyFlame_Frost_C;

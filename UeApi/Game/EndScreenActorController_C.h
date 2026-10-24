@@ -7,8 +7,10 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../CoreUObject.h"
 #include "../Engine.h"
+#include "FEndScreenMove.h"
 
 class AActor;
+class APlayerCharacter;
 class UAnimMontage;
 class UAnimSequence;
 class UClass;
@@ -21,7 +23,7 @@ class EndScreenActorController_C : public UActorComponent
 {
 public:
     UE_CLASS("/Game/Character/CharacterSelection/EndScreenActorController", "EndScreenActorController_C");
-    using BP_MisComp_FXspawner_C = Game::Character::CharacterSelection::BP_MisComp_FXspawner_C;
+    using BP_MisComp_FXspawner_C = ::Game::Character::CharacterSelection::BP_MisComp_FXspawner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPlayerTPAnimInstance* AnimInstance;
     float WalkPlayRate;
@@ -32,6 +34,7 @@ public:
     float PosePlayRate;
     FTransform SpawnTransfrom;
     bool IsLooping;
+    FEndScreenMove ActiveMoveSet;
     void ExecuteUbergraph_EndScreenActorController(int EntryPoint);
     void OnCharacterDestroyed(class AActor* DestroyedActor);
     void CustomEvent_0(class UAnimMontage* Montage, bool bInterrupted);
@@ -39,6 +42,7 @@ public:
     void WalkFinished(class UAnimMontage* Montage, bool bInterrupted);
     void BreakFinished(class UAnimMontage* Montage, bool bInterrupted);
     void PoseFinished(class UAnimMontage* Montage, bool bInterrupted);
+    void Play(class APlayerCharacter* PlayerCharacter, bool SurvivedInPod, FTransform SpawnTransform, FEndScreenMove ESMoveSet, int Seed);
     void ReceiveBeginPlay();
     void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
     void InitFXLights(FTransform SpawnTransform, bool Survived);
@@ -49,4 +53,4 @@ public:
 
 }}}   // namespace Game::Character::CharacterSelection
 
-using EndScreenActorController_C = Game::Character::CharacterSelection::EndScreenActorController_C;
+using EndScreenActorController_C = ::Game::Character::CharacterSelection::EndScreenActorController_C;

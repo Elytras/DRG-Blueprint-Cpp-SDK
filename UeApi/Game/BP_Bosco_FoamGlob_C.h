@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace Plague { namespace CleaningPod { namespace Soaper {
 
-class BP_Bosco_FoamGlob_C : public Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::PRJ_Foam_C
+class BP_Bosco_FoamGlob_C : public ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::PRJ_Foam_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/BP_Bosco_FoamGlob", "BP_Bosco_FoamGlob_C");
@@ -21,10 +21,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Niagara";
         static constexpr const char* UberGraphFrame_BP_Bosco_FoamGlob_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper
 
-using BP_Bosco_FoamGlob_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_Bosco_FoamGlob_C;
+using BP_Bosco_FoamGlob_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_Bosco_FoamGlob_C;

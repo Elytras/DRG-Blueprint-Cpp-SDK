@@ -63,4 +63,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb
 
-using BP_StickySpiderWeb_C = Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::BP_StickySpiderWeb_C;
+using BP_StickySpiderWeb_C = ::Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::BP_StickySpiderWeb_C;

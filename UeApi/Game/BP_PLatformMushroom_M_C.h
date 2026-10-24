@@ -11,7 +11,7 @@ class ULevelGenerationCarverComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Helpers { namespace PlatformMushrooms {
 
-class BP_PLatformMushroom_M_C : public Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms::BP_PlatformMushroom_Base_C
+class BP_PLatformMushroom_M_C : public ::Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms::BP_PlatformMushroom_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Helpers/PlatformMushrooms/BP_PLatformMushroom_M", "BP_PLatformMushroom_M_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;ICH-DefaultSceneRoot;TerrainPlacement";
         static constexpr const char* LevelGenerationCarverStem__UeScsNode = "7486099a5e33954794aac9830d4827ec";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms
 
-using BP_PLatformMushroom_M_C = Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms::BP_PLatformMushroom_M_C;
+using BP_PLatformMushroom_M_C = ::Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms::BP_PLatformMushroom_M_C;

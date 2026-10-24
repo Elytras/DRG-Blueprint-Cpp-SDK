@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using AIC_Woodlouse_C = Game::Enemies::Woodlouse::AIC_Woodlouse_C;
+using AIC_Woodlouse_C = ::Game::Enemies::Woodlouse::AIC_Woodlouse_C;

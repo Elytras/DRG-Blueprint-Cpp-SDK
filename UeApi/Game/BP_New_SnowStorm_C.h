@@ -12,7 +12,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace IceCaves {
 
-class BP_New_SnowStorm_C : public Game::Landscape::Biomes::BP_WeatherEffect_C
+class BP_New_SnowStorm_C : public ::Game::Landscape::Biomes::BP_WeatherEffect_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/IceCaves/BP_New_SnowStorm", "BP_New_SnowStorm_C");
@@ -26,17 +26,18 @@ public:
     void ExecuteUbergraph_BP_New_SnowStorm(int EntryPoint);
     void EndEffect();
     void StartEffect();
-    void FadeOut__UpdateFunc();
-    void FadeOut__FinishedFunc();
+    void Fadeout__UpdateFunc();
+    void Fadeout__FinishedFunc();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "ActiveSound;FadingSound";
         static constexpr const char* UberGraphFrame_BP_New_SnowStorm_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves
 
-using BP_New_SnowStorm_C = Game::Landscape::Biomes::Biomes_Ingame::IceCaves::BP_New_SnowStorm_C;
+using BP_New_SnowStorm_C = ::Game::Landscape::Biomes::Biomes_Ingame::IceCaves::BP_New_SnowStorm_C;

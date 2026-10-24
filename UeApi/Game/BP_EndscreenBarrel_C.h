@@ -28,4 +28,4 @@ private:
 
 }}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims
 
-using BP_EndscreenBarrel_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::BP_EndscreenBarrel_C;
+using BP_EndscreenBarrel_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::BP_EndscreenBarrel_C;

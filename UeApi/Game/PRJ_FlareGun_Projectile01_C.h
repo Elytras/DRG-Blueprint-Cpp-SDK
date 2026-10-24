@@ -91,4 +91,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlareGun
 
-using PRJ_FlareGun_Projectile01_C = Game::WeaponsNTools::FlareGun::PRJ_FlareGun_Projectile01_C;
+using PRJ_FlareGun_Projectile01_C = ::Game::WeaponsNTools::FlareGun::PRJ_FlareGun_Projectile01_C;

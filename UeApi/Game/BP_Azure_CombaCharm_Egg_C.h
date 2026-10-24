@@ -12,7 +12,7 @@ class USimpleObjectInfoComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace AzureWeald { namespace Assets { namespace CombaCharm {
 
-class BP_Azure_CombaCharm_Egg_C : public Game::LevelElements::RoomObjects::LoosePhysicalObjects::BP_Phys_KickableObject_Base_C
+class BP_Azure_CombaCharm_Egg_C : public ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::BP_Phys_KickableObject_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/CombaCharm/BP_Azure_CombaCharm_Egg", "BP_Azure_CombaCharm_Egg_C");
@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "UseCapsule_ForKicking;StaticMesh";
         static constexpr const char* UberGraphFrame_BP_Azure_CombaCharm_Egg_C__UeName = "UberGraphFrame";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "a1e80a76a60ae145acda51f233a3da1e";
     };
@@ -30,4 +31,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm
 
-using BP_Azure_CombaCharm_Egg_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm::BP_Azure_CombaCharm_Egg_C;
+using BP_Azure_CombaCharm_Egg_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CombaCharm::BP_Azure_CombaCharm_Egg_C;

@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnSnowStorm_C = Game::UI::Menu_Cheats::Cheat_SpawnSnowStorm_C;
+using Cheat_SpawnSnowStorm_C = ::Game::UI::Menu_Cheats::Cheat_SpawnSnowStorm_C;

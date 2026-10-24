@@ -20,7 +20,7 @@ class ConsoleScreen_Crafting_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Crafting", "ConsoleScreen_Crafting_C");
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ShopRotate;
     UE_READONLY class UWidgetAnimation* Pan03;
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Crafting_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Crafting_C;
+using ConsoleScreen_Crafting_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Crafting_C;

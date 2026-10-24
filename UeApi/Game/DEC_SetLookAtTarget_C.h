@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::AI::Decorators
 
-using DEC_SetLookAtTarget_C = Game::AI::Decorators::DEC_SetLookAtTarget_C;
+using DEC_SetLookAtTarget_C = ::Game::AI::Decorators::DEC_SetLookAtTarget_C;

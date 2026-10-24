@@ -24,7 +24,7 @@ class ITM_Special_ButtonCutCorner_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_Special_ButtonCutCorner", "ITM_Special_ButtonCutCorner_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Background;
     class UBorder* Border_LeftIcon;
@@ -75,4 +75,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
+using ITM_Special_ButtonCutCorner_C = ::Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;

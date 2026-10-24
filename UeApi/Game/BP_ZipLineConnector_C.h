@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using BP_ZipLineConnector_C = Game::WeaponsNTools::ZipLineGun::BP_ZipLineConnector_C;
+using BP_ZipLineConnector_C = ::Game::WeaponsNTools::ZipLineGun::BP_ZipLineConnector_C;

@@ -19,8 +19,8 @@ class Widget_UseButton_Monitor_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/Widgets/Widget_UseButton_Monitor", "Widget_UseButton_Monitor_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimMinimizeProgress;
     UE_READONLY class UWidgetAnimation* AnimArrow;
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Widgets
 
-using Widget_UseButton_Monitor_C = Game::LevelElements::Refinery::Widgets::Widget_UseButton_Monitor_C;
+using Widget_UseButton_Monitor_C = ::Game::LevelElements::Refinery::Widgets::Widget_UseButton_Monitor_C;

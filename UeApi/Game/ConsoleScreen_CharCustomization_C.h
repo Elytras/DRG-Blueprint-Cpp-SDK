@@ -16,8 +16,8 @@ class ConsoleScreen_CharCustomization_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_CharCustomization", "ConsoleScreen_CharCustomization_C");
-    using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using ConsoleScreen_BGtemplate_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
     ConsoleScreen_Notification_C* ConsoleScreen_Notification;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_CharCustomization_C = Game::UI::HUD_SpaceRig::ConsoleScreen_CharCustomization_C;
+using ConsoleScreen_CharCustomization_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_CharCustomization_C;

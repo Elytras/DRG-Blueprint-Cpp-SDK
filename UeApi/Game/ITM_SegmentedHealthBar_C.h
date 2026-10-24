@@ -20,7 +20,7 @@ class ITM_SegmentedHealthBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/ITM_SegmentedHealthBar", "ITM_SegmentedHealthBar_C");
-    using ITM_HealthBarSection_C = Game::UI::MainOnscreenHUD::BossFight::ITM_HealthBarSection_C;
+    using ITM_HealthBarSection_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_HealthBarSection_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_2;
     class UImage* ICON_Armor;
@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using ITM_SegmentedHealthBar_C = Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedHealthBar_C;
+using ITM_SegmentedHealthBar_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedHealthBar_C;

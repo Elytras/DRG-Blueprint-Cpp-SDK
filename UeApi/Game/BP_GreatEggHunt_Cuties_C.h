@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint
 
-using BP_GreatEggHunt_Cuties_C = Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_Cuties_C;
+using BP_GreatEggHunt_Cuties_C = ::Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_Cuties_C;

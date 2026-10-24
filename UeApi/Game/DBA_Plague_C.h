@@ -39,6 +39,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisMesh D_Active_Long_Tendrils_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Active_SporeBall_Big--5C(0-50)_2C(0-50)_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Active_SporeBall_Small--5C(0-50)_2C(0-50)_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Active_SporeVeins_Small--5C(0-50)_2C(0-50)_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Active_Tendrils--5C(0-50)_2C(0-50)_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Inactive_Infection_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Inactive_PlagueStructure_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Inactive_ScabsThatStay_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_ScabsAtMeteor_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Source_Active_Long_Tendrils1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Source_Active_SporeBall_Big--5C(0-50)_2C(0-50)1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Source_Active_SporeBall_Small--5C(0-50)_2C(0-50)1_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisMesh D_Source_Active_SporeVeins_Small--5C(0-50)_2C(0-50)1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Source_Active_Tendrils--5C(0-40)_2C(0-50)1_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisPositioning I_InfectionSource_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Plague_Spore_Tower_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SporeTower_Small_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* D_Source_Active_SporeVeins_Small__5C_0_50__2C_0_50_1__UeName = "D_Source_Active_SporeVeins_Small--5C(0-50)_2C(0-50)1";
         static constexpr const char* D_Source_Active_SporeVeins_Small__5C_0_50__2C_0_50_1__UeScsNode = "099a65af3eaf1943a6e8e8e4962a0fb5";
         static constexpr const char* D_Source_Active_SporeBall_Small__5C_0_50__2C_0_50_1__UeName = "D_Source_Active_SporeBall_Small--5C(0-50)_2C(0-50)1";
@@ -71,4 +72,4 @@ private:
 
 }}}   // namespace Game::GameElements::Plague
 
-using DBA_Plague_C = Game::GameElements::Plague::DBA_Plague_C;
+using DBA_Plague_C = ::Game::GameElements::Plague::DBA_Plague_C;

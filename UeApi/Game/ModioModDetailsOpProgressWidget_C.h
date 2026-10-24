@@ -20,4 +20,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::ModDetails
 
-using ModioModDetailsOpProgressWidget_C = Modio::UI::Browser::Views::ModDetails::ModioModDetailsOpProgressWidget_C;
+using ModioModDetailsOpProgressWidget_C = ::Modio::UI::Browser::Views::ModDetails::ModioModDetailsOpProgressWidget_C;

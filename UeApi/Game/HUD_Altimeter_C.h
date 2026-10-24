@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Altimeter_C = Game::UI::MainOnscreenHUD::HUD_Altimeter_C;
+using HUD_Altimeter_C = ::Game::UI::MainOnscreenHUD::HUD_Altimeter_C;

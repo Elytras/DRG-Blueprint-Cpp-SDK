@@ -31,7 +31,7 @@ class BP_GunkSeed_Hanger_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/GunkSeed/BP_GunkSeed_Hanger", "BP_GunkSeed_Hanger_C");
-    using BP_GunkSeed_C = Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_C;
+    using BP_GunkSeed_C = ::Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* AoeOverlapSphere;
     class UHealthDamageTracker* HealthDamageTracker;
@@ -88,4 +88,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::GunkSeed
 
-using BP_GunkSeed_Hanger_C = Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_Hanger_C;
+using BP_GunkSeed_Hanger_C = ::Game::GameElements::Resources::Collectibles::GunkSeed::BP_GunkSeed_Hanger_C;

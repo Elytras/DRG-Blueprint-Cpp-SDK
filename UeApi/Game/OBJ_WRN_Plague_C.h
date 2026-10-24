@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Plague
 
-using OBJ_WRN_Plague_C = Game::GameElements::Objectives::Plague::OBJ_WRN_Plague_C;
+using OBJ_WRN_Plague_C = ::Game::GameElements::Objectives::Plague::OBJ_WRN_Plague_C;

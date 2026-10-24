@@ -22,8 +22,8 @@ class WND_Trading_Resources_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/WND_Trading_Resources", "WND_Trading_Resources_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using ITM_Trading_Resource_C = Game::UI::Menu_Trading::ITM_Trading_Resource_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using ITM_Trading_Resource_C = ::Game::UI::Menu_Trading::ITM_Trading_Resource_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonCutCorner_C* B_Clear;
     Basic_ButtonCutCorner_C* B_Trade;
@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using WND_Trading_Resources_C = Game::UI::Menu_Trading::WND_Trading_Resources_C;
+using WND_Trading_Resources_C = ::Game::UI::Menu_Trading::WND_Trading_Resources_C;

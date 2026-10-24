@@ -22,8 +22,8 @@ class ITM_Loadout_PerksEquip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/Perks/ITM_Loadout_PerksEquip", "ITM_Loadout_PerksEquip_C");
-    using ITM_LoadOut_PerksEquip_Slot_C = Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Slot_C;
-    using ITM_Loadout_PerksEquip_Selection_C = Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_Selection_C;
+    using ITM_LoadOut_PerksEquip_Slot_C = ::Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Slot_C;
+    using ITM_Loadout_PerksEquip_Selection_C = ::Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_Selection_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* ActiveSlotsBox;
     ITM_Loadout_PerksEquip_Selection_C* ITM_Loadout_PerksEquip_Selection;
@@ -52,4 +52,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks
 
-using ITM_Loadout_PerksEquip_C = Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_C;
+using ITM_Loadout_PerksEquip_C = ::Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_C;

@@ -30,6 +30,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus ExplosionDamage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus TargetDamage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* TargetDamage__UeScsNode = "348519b25119e74dbe64c4ca1efcd776";
         static constexpr const char* ProjectileExplosion__UeScsNode = "44003940e637ba44887987a5f0df6dec";
         static constexpr const char* NS_ToxicCatalyst_DeathExplosion__UeScsNode = "a1b243e46ff6774293ce12dbe1ff58a2";
@@ -40,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooExplosion_C = Game::WeaponsNTools::GooCannon::BP_GooExplosion_C;
+using BP_GooExplosion_C = ::Game::WeaponsNTools::GooCannon::BP_GooExplosion_C;

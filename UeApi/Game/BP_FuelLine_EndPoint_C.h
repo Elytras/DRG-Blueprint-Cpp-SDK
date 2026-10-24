@@ -44,4 +44,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder
 
-using BP_FuelLine_EndPoint_C = Game::WeaponsNTools::FuelLineBuilder::BP_FuelLine_EndPoint_C;
+using BP_FuelLine_EndPoint_C = ::Game::WeaponsNTools::FuelLineBuilder::BP_FuelLine_EndPoint_C;

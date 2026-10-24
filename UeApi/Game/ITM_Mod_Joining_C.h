@@ -23,8 +23,8 @@ class ITM_Mod_Joining_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Modding/ITM_Mod_Joining", "ITM_Mod_Joining_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_ModdingProgressBar_C = Game::UI::Modding::UI_ModdingProgressBar_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_ModdingProgressBar_C = ::Game::UI::Modding::UI_ModdingProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetSwitcher* HasMetaData_Switcher;
     class UWidgetSwitcher* Installed_Switcher;
@@ -63,4 +63,4 @@ public:
 
 }}}   // namespace Game::UI::Modding
 
-using ITM_Mod_Joining_C = Game::UI::Modding::ITM_Mod_Joining_C;
+using ITM_Mod_Joining_C = ::Game::UI::Modding::ITM_Mod_Joining_C;

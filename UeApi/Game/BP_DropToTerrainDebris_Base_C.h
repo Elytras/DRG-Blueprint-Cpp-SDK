@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_DropToTerrainDebris_Base_C = Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C;
+using BP_DropToTerrainDebris_Base_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb
 
-using STE_Env_StickySpiderWeb_C = Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::STE_Env_StickySpiderWeb_C;
+using STE_Env_StickySpiderWeb_C = ::Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::STE_Env_StickySpiderWeb_C;

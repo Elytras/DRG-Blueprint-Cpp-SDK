@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Quantrite
 
-using BP_QuantriteChunk_C = Game::GameElements::Resources::Carved::Quantrite::BP_QuantriteChunk_C;
+using BP_QuantriteChunk_C = ::Game::GameElements::Resources::Carved::Quantrite::BP_QuantriteChunk_C;

@@ -19,7 +19,7 @@ class UTimelineComponent;
 
 namespace Game { namespace LevelElements { namespace Droppod {
 
-class BP_DropPod_Escape_Damaged_C : public Game::LevelElements::Droppod::BP_DropPod_Escape_Base_C
+class BP_DropPod_Escape_Damaged_C : public ::Game::LevelElements::Droppod::BP_DropPod_Escape_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Escape_Damaged", "BP_DropPod_Escape_Damaged_C");
@@ -52,6 +52,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeIchRecords = "PrettyCarver;Spawn1;Spawn2;Spawn3;Spawn4;P_GasCanister_air_Mule3;P_GasCanister_air_Mule4;light_display1;light_display2;light_display3;light_display4;light_filler1;light_filler2;PointLight1;PointLight;OreBox_Back;OreBox_Left;OreBox_Right;Ramp;SK_DropPod_Airlock;SK_DropPod_Drill;SK_DropPod_DroneBay;SK_DropPod_MuleBay;KillSphere;SpotLight1;SpotLight2;Cone1;Cone2;ExitZone;FrontPlane1;FrontPlane2;FrontPlane3;Monitor_Left;Monitor_Right;Seat_Empty1;Seat_Empty2;Seat_Empty3;Seat_Empty4;SM_DropPod_ClimbTread1;SM_DropPod_ClimbTread2;SM_DropPod_ClimbTread3;SM_DropPod_ClimbTread;SM_DropPod_Hull;SM_DropPod_Hull_NoCol;SM_GasCanister1;SM_GasCanister2;SM_GasCanister3;SM_GasCanister;SM_Light031;SM_Light032;SM_Light03;SM_Screen_005;SM_Screen_006;SM_Screen_007;SM_Screen_008;Spot1;Spot2;StaticMesh10;StaticMesh11;StaticMesh12;StaticMesh13;StaticMesh14;StaticMesh15;StaticMesh16;StaticMesh17;StaticMesh1;StaticMesh2;StaticMesh3;StaticMesh4;StaticMesh5;StaticMesh6;StaticMesh7;StaticMesh8;StaticMesh9;StaticMesh;TerrainPlacement";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_EndPoint.BP_FuelLine_EndPoint_C FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_EndPoint_C_CAT;/Script/FSD.FuelLineConnectPoint FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_EndPoint_C_CAT:ConnectPoint;/Script/Engine.SceneComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_EndPoint_C_CAT:RootComponent;/Script/Engine.SplineComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_EndPoint_C_CAT:ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_EndPoint_C_CAT:StaticMesh";
         static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Damaged_C__UeName = "UberGraphFrame";
         static constexpr const char* DistressLamp1__UeScsNode = "b79af8c45ae6cb4ca3cc99189a22fd46";
         static constexpr const char* DistressLamp3__UeScsNode = "04d10e2af1b37c4aaa5431e7cbc380a9";
@@ -71,4 +73,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_Escape_Damaged_C = Game::LevelElements::Droppod::BP_DropPod_Escape_Damaged_C;
+using BP_DropPod_Escape_Damaged_C = ::Game::LevelElements::Droppod::BP_DropPod_Escape_Damaged_C;

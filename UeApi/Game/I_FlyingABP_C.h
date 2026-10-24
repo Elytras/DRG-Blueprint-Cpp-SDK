@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Critters::FlyingCritterBase
 
-using I_FlyingABP_C = Game::Critters::FlyingCritterBase::I_FlyingABP_C;
+using I_FlyingABP_C = ::Game::Critters::FlyingCritterBase::I_FlyingABP_C;

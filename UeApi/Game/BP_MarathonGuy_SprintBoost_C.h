@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_MarathonGuy_SprintBoost_C = Game::GameElements::KPI::Perks::BP_MarathonGuy_SprintBoost_C;
+using BP_MarathonGuy_SprintBoost_C = ::Game::GameElements::KPI::Perks::BP_MarathonGuy_SprintBoost_C;

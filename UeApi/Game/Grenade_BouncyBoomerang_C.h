@@ -30,7 +30,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Boomerang_Trail;
     class UUpgradableGearComponent* UpgradableGear;
-    class UParticleSystemComponent* particle_Trail;
+    class UParticleSystemComponent* Particle_Trail;
     class USceneComponent* LocalPivot;
     class UStaticMeshComponent* MeshComponent;
     class USceneComponent* BoomerangPivot;
@@ -51,7 +51,7 @@ private:
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent Root";
         static constexpr const char* NS_Boomerang_Trail__UeScsNode = "711995a233158e48b2dc95d850ba57f9";
         static constexpr const char* UpgradableGear__UeScsNode = "8f745a4f63a8104a98eeba52b987dbb3";
-        static constexpr const char* particle_Trail__UeScsNode = "463ba3fedc50714fbf334453685e08eb";
+        static constexpr const char* Particle_Trail__UeScsNode = "463ba3fedc50714fbf334453685e08eb";
         static constexpr const char* LocalPivot__UeScsNode = "9d73e4c8af4463489ffbb318d212b50b";
         static constexpr const char* MeshComponent__UeScsNode = "542dfb0ce96f66489610af820ab1cc99";
         static constexpr const char* BoomerangPivot__UeScsNode = "c4abdb71925e8e4488209e11ffa3da95";
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy
 
-using Grenade_BouncyBoomerang_C = Game::WeaponsNTools::Grenades::BoomerangBouncy::Grenade_BouncyBoomerang_C;
+using Grenade_BouncyBoomerang_C = ::Game::WeaponsNTools::Grenades::BoomerangBouncy::Grenade_BouncyBoomerang_C;

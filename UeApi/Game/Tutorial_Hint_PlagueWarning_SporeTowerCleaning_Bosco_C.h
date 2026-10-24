@@ -19,7 +19,7 @@ class Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C : public UTutorialH
 {
 public:
     UE_CLASS("/Game/Character/Tutorials/Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco", "Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C");
-    using BP_CleanupPod_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_C;
+    using BP_CleanupPod_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_C;
     FPointerToUberGraphFrame UberGraphFrame;
     float AccumilatedDamage;
     float TotalDamageBeforeShowingHint;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C = Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C;
+using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C = ::Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C;

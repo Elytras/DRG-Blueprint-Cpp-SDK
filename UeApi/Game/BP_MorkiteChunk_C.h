@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks
 
-using BP_MorkiteChunk_C = Game::GameElements::Resources::Veins::ResourceChunks::BP_MorkiteChunk_C;
+using BP_MorkiteChunk_C = ::Game::GameElements::Resources::Veins::ResourceChunks::BP_MorkiteChunk_C;

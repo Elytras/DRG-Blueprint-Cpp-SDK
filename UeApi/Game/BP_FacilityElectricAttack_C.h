@@ -20,7 +20,7 @@ class BP_FacilityElectricAttack_C : public UAttackBaseComponent
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_FacilityElectricAttack", "BP_FacilityElectricAttack_C");
-    using BP_Electrical_Antenna_C = Game::GameElements::Objectives::Facility::BP_Electrical_Antenna_C;
+    using BP_Electrical_Antenna_C = ::Game::GameElements::Objectives::Facility::BP_Electrical_Antenna_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystem* ParticleSystem;
     class UParticleSystemComponent* ParticleInstance;
@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_FacilityElectricAttack_C = Game::GameElements::Objectives::Facility::BP_FacilityElectricAttack_C;
+using BP_FacilityElectricAttack_C = ::Game::GameElements::Objectives::Facility::BP_FacilityElectricAttack_C;

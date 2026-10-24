@@ -14,7 +14,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Crossbow { namespace Projectiles {
 
-class PRJ_Crossbow_IceProjectile_C : public Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_Projectile_C
+class PRJ_Crossbow_IceProjectile_C : public ::Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_Projectile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_IceProjectile", "PRJ_Crossbow_IceProjectile_C");
@@ -26,6 +26,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "MainDamage;BansheePulse;NS_Trail;P_Crossbow_Trail;SimpleObjectInfo;mesh_front";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.TargetSpecificDamageBonus MainDamage_GEN_VARIABLE:TargetSpecificDamageBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_Crossbow_IceProjectile_C__UeName = "UberGraphFrame";
         static constexpr const char* FlammableCollision__UeScsNode = "3e6b9b1370b00f4ab14c39c1fc0f5ede";
     };
@@ -33,4 +35,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using PRJ_Crossbow_IceProjectile_C = Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_IceProjectile_C;
+using PRJ_Crossbow_IceProjectile_C = ::Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_IceProjectile_C;

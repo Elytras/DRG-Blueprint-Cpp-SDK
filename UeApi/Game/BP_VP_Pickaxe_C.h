@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe
 
-using BP_VP_Pickaxe_C = Game::WeaponsNTools::Pickaxe::BP_VP_Pickaxe_C;
+using BP_VP_Pickaxe_C = ::Game::WeaponsNTools::Pickaxe::BP_VP_Pickaxe_C;

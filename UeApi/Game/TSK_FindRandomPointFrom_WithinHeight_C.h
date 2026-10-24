@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindRandomPointFrom_WithinHeight_C = Game::AI::Tasks::TSK_FindRandomPointFrom_WithinHeight_C;
+using TSK_FindRandomPointFrom_WithinHeight_C = ::Game::AI::Tasks::TSK_FindRandomPointFrom_WithinHeight_C;

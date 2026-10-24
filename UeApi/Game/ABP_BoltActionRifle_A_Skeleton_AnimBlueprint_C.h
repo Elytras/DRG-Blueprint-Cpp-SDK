@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using ABP_BoltActionRifle_A_Skeleton_AnimBlueprint_C = Game::WeaponsNTools::BoltActionRifle::ABP_BoltActionRifle_A_Skeleton_AnimBlueprint_C;
+using ABP_BoltActionRifle_A_Skeleton_AnimBlueprint_C = ::Game::WeaponsNTools::BoltActionRifle::ABP_BoltActionRifle_A_Skeleton_AnimBlueprint_C;

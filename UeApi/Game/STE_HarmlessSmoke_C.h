@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using STE_HarmlessSmoke_C = Game::WeaponsNTools::SupplyPod::STE_HarmlessSmoke_C;
+using STE_HarmlessSmoke_C = ::Game::WeaponsNTools::SupplyPod::STE_HarmlessSmoke_C;

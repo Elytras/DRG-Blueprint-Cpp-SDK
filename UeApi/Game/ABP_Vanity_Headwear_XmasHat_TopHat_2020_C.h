@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_Vanity_Headwear_XmasHat_TopHat_2020_C = Game::Character::Vanity2::Headwear::ABP_Vanity_Headwear_XmasHat_TopHat_2020_C;
+using ABP_Vanity_Headwear_XmasHat_TopHat_2020_C = ::Game::Character::Vanity2::Headwear::ABP_Vanity_Headwear_XmasHat_TopHat_2020_C;

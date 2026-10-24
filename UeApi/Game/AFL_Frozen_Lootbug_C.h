@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Critters::LootBug::Afflictions
 
-using AFL_Frozen_Lootbug_C = Game::Critters::LootBug::Afflictions::AFL_Frozen_Lootbug_C;
+using AFL_Frozen_Lootbug_C = ::Game::Critters::LootBug::Afflictions::AFL_Frozen_Lootbug_C;

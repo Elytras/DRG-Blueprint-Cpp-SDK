@@ -19,10 +19,10 @@ class ICON_Hero_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/ICON_Hero", "ICON_Hero_C");
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_MaskedImage_C* CharacterIcon;
-    class UImage* Icon_BG;
+    class UImage* ICON_BG;
     class UImage* Icon_Border;
     class USizeBox* IconSizeBox;
     int Size;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ICON_Hero_C = Game::UI::CharacterSelectionMK2::ICON_Hero_C;
+using ICON_Hero_C = ::Game::UI::CharacterSelectionMK2::ICON_Hero_C;

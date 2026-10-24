@@ -14,7 +14,7 @@ class UEnemyWaveManager;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace RivalBombEvent {
 
-class EWC_BombEvent_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_BombEvent_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/EWC_BombEvent", "EWC_BombEvent_C");
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent
 
-using EWC_BombEvent_C = Game::GameElements::GameEvents::RivalBombEvent::EWC_BombEvent_C;
+using EWC_BombEvent_C = ::Game::GameElements::GameEvents::RivalBombEvent::EWC_BombEvent_C;

@@ -24,8 +24,8 @@ class WPN_DoubleDrills_C : public ADoubleDrillItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Drills/WPN_DoubleDrills", "WPN_DoubleDrills_C");
-    using WeaponDisplay_Drill_Heat_C = Game::WeaponsNTools::Drills::WeaponDisplay_Drill_Heat_C;
-    using WeaponDisplay_Overheat_C = Game::UI::WeaponDisplays::WeaponDisplay_Overheat_C;
+    using WeaponDisplay_Drill_Heat_C = ::Game::WeaponsNTools::Drills::WeaponDisplay_Drill_Heat_C;
+    using WeaponDisplay_Overheat_C = ::Game::UI::WeaponDisplays::WeaponDisplay_Overheat_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* Widget_Heat;
     class UFirstPersonWidgetComponent* Widget_Fuel;
@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Drills
 
-using WPN_DoubleDrills_C = Game::WeaponsNTools::Drills::WPN_DoubleDrills_C;
+using WPN_DoubleDrills_C = ::Game::WeaponsNTools::Drills::WPN_DoubleDrills_C;

@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_CompleteMission_C = Game::UI::Menu_Cheats::Cheat_CompleteMission_C;
+using Cheat_CompleteMission_C = ::Game::UI::Menu_Cheats::Cheat_CompleteMission_C;

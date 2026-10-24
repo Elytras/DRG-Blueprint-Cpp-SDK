@@ -24,7 +24,7 @@ class HUD_Resources_Team_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Resources/HUD_Resources_Team", "HUD_Resources_Team_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Transition;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources
 
-using HUD_Resources_Team_C = Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Team_C;
+using HUD_Resources_Team_C = ::Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Team_C;

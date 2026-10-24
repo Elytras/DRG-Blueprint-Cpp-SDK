@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Lobby
 
-using TestLobbyGameMode_C = Game::UI::Menu_Lobby::TestLobbyGameMode_C;
+using TestLobbyGameMode_C = ::Game::UI::Menu_Lobby::TestLobbyGameMode_C;

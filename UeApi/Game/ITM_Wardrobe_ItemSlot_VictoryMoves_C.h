@@ -15,7 +15,7 @@ class UWidget;
 
 namespace Game { namespace UI { namespace Menu_Wardrobe {
 
-class ITM_Wardrobe_ItemSlot_VictoryMoves_C : public Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C
+class ITM_Wardrobe_ItemSlot_VictoryMoves_C : public ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_VictoryMoves", "ITM_Wardrobe_ItemSlot_VictoryMoves_C");
@@ -23,14 +23,14 @@ public:
     TArray<class UVictoryPose*> VictoryPoses;
     class UWidget* SelectedWidget;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_VictoryMoves(int EntryPoint);
-    void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
-    void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
     void SetHovered(bool InSlotHovered);
     void ReceivePreConstruct();
     void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
     void ReceiveGetSelectedIndex(int& OutIndex);
     void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
+    void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
     void ReceiveEquipItem(int InIndex, bool& OutSuccess);
+    void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
 private:
     struct UeMarkers
     {
@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSlot_VictoryMoves_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_VictoryMoves_C;
+using ITM_Wardrobe_ItemSlot_VictoryMoves_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_VictoryMoves_C;

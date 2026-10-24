@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace DeepDive {
 
-class OBJ_DD_Morkite_C : public Game::GameElements::Objectives::OBJ_Extraction_Base_C
+class OBJ_DD_Morkite_C : public ::Game::GameElements::Objectives::OBJ_Extraction_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_Morkite", "OBJ_DD_Morkite_C");
@@ -19,4 +19,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepDive
 
-using OBJ_DD_Morkite_C = Game::GameElements::Objectives::DeepDive::OBJ_DD_Morkite_C;
+using OBJ_DD_Morkite_C = ::Game::GameElements::Objectives::DeepDive::OBJ_DD_Morkite_C;

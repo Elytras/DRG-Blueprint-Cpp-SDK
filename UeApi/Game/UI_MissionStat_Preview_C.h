@@ -21,8 +21,8 @@ class UI_MissionStat_Preview_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_MissionStat_Preview", "UI_MissionStat_Preview_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using UI_MissionStat_PreviewItem_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_PreviewItem_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using UI_MissionStat_PreviewItem_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_PreviewItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UTextBlock* StatTitle;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_MissionStat_Preview_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_Preview_C;
+using UI_MissionStat_Preview_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_Preview_C;

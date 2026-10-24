@@ -46,4 +46,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_ScalableMissionStats_C = Game::UI::Global_UI_Elements::UI_ScalableMissionStats_C;
+using UI_ScalableMissionStats_C = ::Game::UI::Global_UI_Elements::UI_ScalableMissionStats_C;

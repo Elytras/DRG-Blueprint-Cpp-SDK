@@ -19,9 +19,9 @@ class DefuseBomb_SocketsAndWire_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Defuse/DefuseBomb_SocketsAndWire", "DefuseBomb_SocketsAndWire_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using DefuseBomb_Socket_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Socket_C;
-    using DefuseBomb_Wire_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Wire_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using DefuseBomb_Socket_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Socket_C;
+    using DefuseBomb_Wire_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Wire_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimPingSockets;
     UE_READONLY class UWidgetAnimation* AnimPingTarget;
@@ -78,4 +78,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse
 
-using DefuseBomb_SocketsAndWire_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_SocketsAndWire_C;
+using DefuseBomb_SocketsAndWire_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_SocketsAndWire_C;

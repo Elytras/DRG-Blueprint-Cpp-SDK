@@ -28,7 +28,7 @@ class BP_CoreRift_C : public ACoreRift
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_CoreRift", "BP_CoreRift_C");
-    using EWC_CoreRift_C = Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;
+    using EWC_CoreRift_C = ::Game::GameElements::GameEvents::CoreRift::EWC_CoreRift_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBoxComponent* BlockAll;
     class UPointLightComponent* PointLight;
@@ -114,4 +114,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using BP_CoreRift_C = Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;
+using BP_CoreRift_C = ::Game::GameElements::GameEvents::CoreRift::BP_CoreRift_C;

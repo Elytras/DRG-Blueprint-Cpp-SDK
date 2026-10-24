@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::Art::_TestingGrounds::UItesting
 
-using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;

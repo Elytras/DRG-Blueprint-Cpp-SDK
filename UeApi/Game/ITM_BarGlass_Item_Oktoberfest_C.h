@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Bar { namespace Drinkables {
 
-class ITM_BarGlass_Item_Oktoberfest_C : public Game::GameElements::Bar::ITM_BarGlass_Item_C
+class ITM_BarGlass_Item_Oktoberfest_C : public ::Game::GameElements::Bar::ITM_BarGlass_Item_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/ITM_BarGlass_Item_Oktoberfest", "ITM_BarGlass_Item_Oktoberfest_C");
@@ -23,10 +23,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeIchRecords = "ParticleSystem";
         static constexpr const char* UberGraphFrame_ITM_BarGlass_Item_Oktoberfest_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::GameElements::Bar::Drinkables
 
-using ITM_BarGlass_Item_Oktoberfest_C = Game::GameElements::Bar::Drinkables::ITM_BarGlass_Item_Oktoberfest_C;
+using ITM_BarGlass_Item_Oktoberfest_C = ::Game::GameElements::Bar::Drinkables::ITM_BarGlass_Item_Oktoberfest_C;

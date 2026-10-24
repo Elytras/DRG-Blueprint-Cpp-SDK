@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery
 
-using ITM_Pipeline_BrokenIcon_C = Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;
+using ITM_Pipeline_BrokenIcon_C = ::Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;

@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using ABP_CryoSpray_C = Game::WeaponsNTools::Cryospray::ABP_CryoSpray_C;
+using ABP_CryoSpray_C = ::Game::WeaponsNTools::Cryospray::ABP_CryoSpray_C;

@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::Enemies::StabberVine
 
-using BP_StabberVine_Claw_C = Game::Enemies::StabberVine::BP_StabberVine_Claw_C;
+using BP_StabberVine_Claw_C = ::Game::Enemies::StabberVine::BP_StabberVine_Claw_C;

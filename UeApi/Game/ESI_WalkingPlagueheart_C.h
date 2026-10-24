@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Plague { namespace WalkingPlagueheartBoss {
 
-class ESI_WalkingPlagueheart_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_WalkingPlagueheart_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/ESI_WalkingPlagueheart", "ESI_WalkingPlagueheart_C");
@@ -49,6 +49,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* NS_MobilePlague_Tendrils__UeScsNode = "cb26fcf74f4f6b4ba6361dbd3eb42a38";
         static constexpr const char* PointLight10__UeScsNode = "83cbf352fe9c2941ac028f12c987634c";
         static constexpr const char* OuterPoint_9__UeScsNode = "ca2175eef4473040bf84d013309e8355";
@@ -82,4 +83,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using ESI_WalkingPlagueheart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::ESI_WalkingPlagueheart_C;
+using ESI_WalkingPlagueheart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::ESI_WalkingPlagueheart_C;

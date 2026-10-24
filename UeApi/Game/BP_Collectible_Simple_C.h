@@ -15,7 +15,7 @@ class UTerrainPlacementComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Collectibles {
 
-class BP_Collectible_Simple_C : public Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C
+class BP_Collectible_Simple_C : public ::Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/BP_Collectible_Simple", "BP_Collectible_Simple_C");
@@ -41,4 +41,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Resources::Collectibles
 
-using BP_Collectible_Simple_C = Game::GameElements::Resources::Collectibles::BP_Collectible_Simple_C;
+using BP_Collectible_Simple_C = ::Game::GameElements::Resources::Collectibles::BP_Collectible_Simple_C;

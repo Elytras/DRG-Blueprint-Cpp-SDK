@@ -21,8 +21,8 @@ class Announcement_Schematic_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Announcements/Announcement_Schematic", "Announcement_Schematic_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_Forge_Schematic_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnnounceAnim;
     class UImage* Image_167;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Announcements
 
-using Announcement_Schematic_C = Game::UI::Announcements::Announcement_Schematic_C;
+using Announcement_Schematic_C = ::Game::UI::Announcements::Announcement_Schematic_C;

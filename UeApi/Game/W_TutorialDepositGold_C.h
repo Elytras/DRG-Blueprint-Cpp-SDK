@@ -12,7 +12,7 @@ class UResourceBank;
 
 namespace Game { namespace UI { namespace Tutorial {
 
-class W_TutorialDepositGold_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
+class W_TutorialDepositGold_C : public ::Game::UI::Tutorial::W_TutorialContent_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialDepositGold", "W_TutorialDepositGold_C");
@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_TutorialDepositGold_C = Game::UI::Tutorial::W_TutorialDepositGold_C;
+using W_TutorialDepositGold_C = ::Game::UI::Tutorial::W_TutorialDepositGold_C;

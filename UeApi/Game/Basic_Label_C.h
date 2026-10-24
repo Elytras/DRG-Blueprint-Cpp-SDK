@@ -46,4 +46,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard
 
-using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;

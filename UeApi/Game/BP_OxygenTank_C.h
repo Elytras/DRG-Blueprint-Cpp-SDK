@@ -39,4 +39,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen
 
-using BP_OxygenTank_C = Game::GameElements::Missions::Warnings::NoOxygen::BP_OxygenTank_C;
+using BP_OxygenTank_C = ::Game::GameElements::Missions::Warnings::NoOxygen::BP_OxygenTank_C;

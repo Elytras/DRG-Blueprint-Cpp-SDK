@@ -69,4 +69,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using ENE_Mactera_Shooter_Base_C = Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Base_C;
+using ENE_Mactera_Shooter_Base_C = ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Base_C;

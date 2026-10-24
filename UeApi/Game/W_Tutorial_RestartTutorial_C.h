@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace Tutorial {
 
-class W_Tutorial_RestartTutorial_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
+class W_Tutorial_RestartTutorial_C : public ::Game::UI::Tutorial::W_TutorialContent_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_Tutorial_RestartTutorial", "W_Tutorial_RestartTutorial_C");
@@ -29,4 +29,4 @@ private:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_Tutorial_RestartTutorial_C = Game::UI::Tutorial::W_Tutorial_RestartTutorial_C;
+using W_Tutorial_RestartTutorial_C = ::Game::UI::Tutorial::W_Tutorial_RestartTutorial_C;

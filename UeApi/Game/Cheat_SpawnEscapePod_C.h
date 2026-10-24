@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnEscapePod_C = Game::UI::Menu_Cheats::Cheat_SpawnEscapePod_C;
+using Cheat_SpawnEscapePod_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEscapePod_C;

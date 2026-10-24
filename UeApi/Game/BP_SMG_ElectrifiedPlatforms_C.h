@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SMG
 
-using BP_SMG_ElectrifiedPlatforms_C = Game::WeaponsNTools::SMG::BP_SMG_ElectrifiedPlatforms_C;
+using BP_SMG_ElectrifiedPlatforms_C = ::Game::WeaponsNTools::SMG::BP_SMG_ElectrifiedPlatforms_C;

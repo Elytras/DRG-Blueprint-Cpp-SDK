@@ -13,11 +13,11 @@ namespace Game { namespace WeaponsNTools { namespace HackingTool { namespace UI 
 
 namespace Game { namespace WeaponsNTools { namespace HackingTool { namespace UI { namespace Jetboots {
 
-class UI_JettyBoots_Gate_C : public Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Obstacle_C
+class UI_JettyBoots_Gate_C : public ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Obstacle_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/UI_JettyBoots_Gate", "UI_JettyBoots_Gate_C");
-    using UI_JettyBoots_Column_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;
+    using UI_JettyBoots_Column_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_JettyBoots_Gate_C;
     UI_JettyBoots_Column_C* BottomColumn;
     UI_JettyBoots_Column_C* TopColumn;
@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots
 
-using UI_JettyBoots_Gate_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Gate_C;
+using UI_JettyBoots_Gate_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Gate_C;

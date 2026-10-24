@@ -27,10 +27,10 @@ class UI_Bar_OrderMenu_Item_C : public USpaceRigBarMenuItem
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_OrderMenu_Item", "UI_Bar_OrderMenu_Item_C");
-    using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
-    using UI_Bar_LockWarning_C = Game::GameElements::Bar::UI::UI_Bar_LockWarning_C;
-    using UI_Bar_PlayerRankWarning_C = Game::GameElements::Bar::UI::UI_Bar_PlayerRankWarning_C;
-    using UI_Bar_SupporterLabel_C = Game::GameElements::Bar::UI::UI_Bar_SupporterLabel_C;
+    using UI_Bar_DrinkCost_C = ::Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
+    using UI_Bar_LockWarning_C = ::Game::GameElements::Bar::UI::UI_Bar_LockWarning_C;
+    using UI_Bar_PlayerRankWarning_C = ::Game::GameElements::Bar::UI::UI_Bar_PlayerRankWarning_C;
+    using UI_Bar_SupporterLabel_C = ::Game::GameElements::Bar::UI::UI_Bar_SupporterLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -91,4 +91,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_OrderMenu_Item_C = Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Item_C;
+using UI_Bar_OrderMenu_Item_C = ::Game::GameElements::Bar::UI::UI_Bar_OrderMenu_Item_C;

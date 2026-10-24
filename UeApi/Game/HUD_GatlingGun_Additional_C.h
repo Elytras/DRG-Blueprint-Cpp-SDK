@@ -18,9 +18,9 @@ class HUD_GatlingGun_Additional_C : public UCustomAmmoCountWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GatlingGun/UI/HUD_GatlingGun_Additional", "HUD_GatlingGun_Additional_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using ITM_ManualCooling_Bar_C = Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using ITM_ManualCooling_Bar_C = ::Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* CoolantOverlock_Window;
     UI_AdvancedLabel_C* KeyLabel;
@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::GatlingGun::UI
 
-using HUD_GatlingGun_Additional_C = Game::WeaponsNTools::GatlingGun::UI::HUD_GatlingGun_Additional_C;
+using HUD_GatlingGun_Additional_C = ::Game::WeaponsNTools::GatlingGun::UI::HUD_GatlingGun_Additional_C;

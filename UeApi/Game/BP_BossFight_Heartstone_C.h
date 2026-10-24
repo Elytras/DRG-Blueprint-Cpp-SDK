@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_BossFight_Heartstone_C = Game::GameElements::Objectives::Escort::BP_BossFight_Heartstone_C;
+using BP_BossFight_Heartstone_C = ::Game::GameElements::Objectives::Escort::BP_BossFight_Heartstone_C;

@@ -15,11 +15,11 @@ namespace Game { namespace LevelElements { namespace Minehead { class BP_MineHea
 
 namespace Game { namespace Game {
 
-class GM_Motherlode_C : public Game::Game::BP_NetworkPlayGameMode_C
+class GM_Motherlode_C : public ::Game::Game::BP_NetworkPlayGameMode_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Motherlode", "GM_Motherlode_C");
-    using BP_MineHead_C = Game::LevelElements::Minehead::BP_MineHead_C;
+    using BP_MineHead_C = ::Game::LevelElements::Minehead::BP_MineHead_C;
     FPointerToUberGraphFrame UberGraphFrame_GM_Motherlode_C;
     FVector SelectedSpawnLocation;
     class ADroppableOutpost* MineHead;
@@ -37,10 +37,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UeIchRecords = "EnemyWaveManager";
         static constexpr const char* UberGraphFrame_GM_Motherlode_C__UeName = "UberGraphFrame";
     };
 };
 
 }}   // namespace Game::Game
 
-using GM_Motherlode_C = Game::Game::GM_Motherlode_C;
+using GM_Motherlode_C = ::Game::Game::GM_Motherlode_C;

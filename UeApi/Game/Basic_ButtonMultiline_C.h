@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ButtonMultiline_C = Game::UI::Art::WidgetParts::Basic_ButtonMultiline_C;
+using Basic_ButtonMultiline_C = ::Game::UI::Art::WidgetParts::Basic_ButtonMultiline_C;

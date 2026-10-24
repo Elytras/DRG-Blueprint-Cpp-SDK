@@ -39,4 +39,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using PRJ_FacilityTentacleProjectile_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::PRJ_FacilityTentacleProjectile_C;
+using PRJ_FacilityTentacleProjectile_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::PRJ_FacilityTentacleProjectile_C;

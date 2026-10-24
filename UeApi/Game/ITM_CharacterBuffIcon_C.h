@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_CharacterBuffIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterBuffIcon_C;
+using ITM_CharacterBuffIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterBuffIcon_C;

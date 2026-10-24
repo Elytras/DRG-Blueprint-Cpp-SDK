@@ -31,4 +31,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_Arch_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Arch_C;
+using BP_Arch_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Arch_C;

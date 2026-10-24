@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_GrabbedState_C = Game::Character::States::BP_GrabbedState_C;
+using BP_GrabbedState_C = ::Game::Character::States::BP_GrabbedState_C;

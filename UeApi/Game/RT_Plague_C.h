@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_Plague_C = Game::Landscape::ReactiveTerrain::RT_Plague_C;
+using RT_Plague_C = ::Game::Landscape::ReactiveTerrain::RT_Plague_C;

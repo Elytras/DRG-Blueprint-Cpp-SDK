@@ -85,4 +85,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::FragilePlatform
 
-using BP_FragilePlatform_C = Game::LevelElements::RoomObjects::Hazards::FragilePlatform::BP_FragilePlatform_C;
+using BP_FragilePlatform_C = ::Game::LevelElements::RoomObjects::Hazards::FragilePlatform::BP_FragilePlatform_C;

@@ -17,7 +17,7 @@ class LVL_Loading_DeepDive_B_C : public ALevelScriptActor
 {
 public:
     UE_CLASS("/Game/Maps/UILevels/LVL_Loading_DeepDive_B", "LVL_Loading_DeepDive_B_C");
-    using BP_DepthCount_C = Game::Maps::UILevels::Assets::HUD::BP_DepthCount_C;
+    using BP_DepthCount_C = ::Game::Maps::UILevels::Assets::HUD::BP_DepthCount_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelSequencePlayer* Player;
     BP_DepthCount_C* BP_HUD_DepthCount_EdGraph_1_RefProperty;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::Maps::UILevels
 
-using LVL_Loading_DeepDive_B_C = Game::Maps::UILevels::LVL_Loading_DeepDive_B_C;
+using LVL_Loading_DeepDive_B_C = ::Game::Maps::UILevels::LVL_Loading_DeepDive_B_C;

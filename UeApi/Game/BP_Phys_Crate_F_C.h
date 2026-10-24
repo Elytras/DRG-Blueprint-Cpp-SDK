@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_Phys_Crate_F_C = Game::Art::Environments::SpaceRig::BP_Phys_Crate_F_C;
+using BP_Phys_Crate_F_C = ::Game::Art::Environments::SpaceRig::BP_Phys_Crate_F_C;

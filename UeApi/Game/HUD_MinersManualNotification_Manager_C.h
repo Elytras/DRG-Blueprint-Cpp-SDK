@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::MinersManualNotifications
 
-using HUD_MinersManualNotification_Manager_C = Game::UI::MainOnscreenHUD::MinersManualNotifications::HUD_MinersManualNotification_Manager_C;
+using HUD_MinersManualNotification_Manager_C = ::Game::UI::MainOnscreenHUD::MinersManualNotifications::HUD_MinersManualNotification_Manager_C;

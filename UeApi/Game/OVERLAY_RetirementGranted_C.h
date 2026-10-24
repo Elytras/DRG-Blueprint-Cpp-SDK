@@ -22,8 +22,8 @@ class OVERLAY_RetirementGranted_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/OVERLAY_RetirementGranted", "OVERLAY_RetirementGranted_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using HUD_PlayerClass_Icon_C = Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using HUD_PlayerClass_Icon_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* IconOutro;
     UE_READONLY class UWidgetAnimation* IconIntro;
@@ -47,4 +47,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using OVERLAY_RetirementGranted_C = Game::UI::Menu_MIssionCompleteMK2::OVERLAY_RetirementGranted_C;
+using OVERLAY_RetirementGranted_C = ::Game::UI::Menu_MIssionCompleteMK2::OVERLAY_RetirementGranted_C;

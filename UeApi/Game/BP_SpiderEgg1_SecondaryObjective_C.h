@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace SpiderEgg {
 
-class BP_SpiderEgg1_SecondaryObjective_C : public Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_SecondaryObjective_Base_C
+class BP_SpiderEgg1_SecondaryObjective_C : public ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_SecondaryObjective_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpiderEgg/BP_SpiderEgg1_SecondaryObjective", "BP_SpiderEgg1_SecondaryObjective_C");
@@ -20,6 +20,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Egg Broken;Egg Whole;SimpleObjectInfo";
         static constexpr const char* EggWhole__UeScsNode = "7b4f0c17587330429cadfa7f072d5d3d";
         static constexpr const char* EggBroken__UeScsNode = "97ff1d5a9bc77148a0e2a3b3fd60ffcb";
     };
@@ -27,4 +28,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg
 
-using BP_SpiderEgg1_SecondaryObjective_C = Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg1_SecondaryObjective_C;
+using BP_SpiderEgg1_SecondaryObjective_C = ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg1_SecondaryObjective_C;

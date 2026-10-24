@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_HostIcon_C = Game::UI::Global_UI_Elements::ITM_HostIcon_C;
+using ITM_HostIcon_C = ::Game::UI::Global_UI_Elements::ITM_HostIcon_C;

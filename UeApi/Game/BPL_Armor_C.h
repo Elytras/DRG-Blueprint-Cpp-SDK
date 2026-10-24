@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using BPL_Armor_C = Game::WeaponsNTools::Armor::BPL_Armor_C;
+using BPL_Armor_C = ::Game::WeaponsNTools::Armor::BPL_Armor_C;

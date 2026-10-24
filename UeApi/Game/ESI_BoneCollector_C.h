@@ -28,4 +28,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::TunnelEvent::Enemies
 
-using ESI_BoneCollector_C = Game::GameElements::GameEvents::TunnelEvent::Enemies::ESI_BoneCollector_C;
+using ESI_BoneCollector_C = ::Game::GameElements::GameEvents::TunnelEvent::Enemies::ESI_BoneCollector_C;

@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_BackEndNotification_C = Game::UI::Menu_StartScreen::UI_InfoScreen_BackEndNotification_C;
+using UI_InfoScreen_BackEndNotification_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_BackEndNotification_C;

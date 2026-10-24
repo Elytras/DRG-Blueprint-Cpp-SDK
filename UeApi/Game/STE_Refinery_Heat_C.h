@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using STE_Refinery_Heat_C = Game::LevelElements::Refinery::STE_Refinery_Heat_C;
+using STE_Refinery_Heat_C = ::Game::LevelElements::Refinery::STE_Refinery_Heat_C;

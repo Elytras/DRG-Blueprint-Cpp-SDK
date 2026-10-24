@@ -59,6 +59,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.ActorTrackingComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_C_CAT:ActorTrackingIcon;/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Redeployable.BP_SentryGun_Redeployable_C SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_C_CAT;/Script/FSD.OutlineComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_C_CAT:Outline;/Script/Engine.SceneComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_C_CAT:TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_C_CAT:SentryGunMesh";
         static constexpr const char* P_SentryGunMovementTrail__UeScsNode = "415555813f21f14d91fda11c980d6c37";
         static constexpr const char* AudioMoving__UeScsNode = "12f3b790e983534d86e459cca9c824ed";
         static constexpr const char* SentryGunActor__UeScsNode = "9ad1cc92f81f6d47af6b0567a72cfdb6";
@@ -68,4 +69,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryGun_Moveable_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Moveable_C;
+using BP_SentryGun_Moveable_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Moveable_C;

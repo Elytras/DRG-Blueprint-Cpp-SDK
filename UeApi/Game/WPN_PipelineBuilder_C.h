@@ -20,7 +20,7 @@ class WPN_PipelineBuilder_C : public APipelineBuilderItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PipelineBuilder/WPN_PipelineBuilder", "WPN_PipelineBuilder_C");
-    using UI_PipelineBuilder_Crosshair_C = Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Crosshair_C;
+    using UI_PipelineBuilder_Crosshair_C = ::Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Crosshair_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* SmallScreenWidget;
     class UFirstPersonWidgetComponent* LargeScreenWidget;
@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder
 
-using WPN_PipelineBuilder_C = Game::WeaponsNTools::PipelineBuilder::WPN_PipelineBuilder_C;
+using WPN_PipelineBuilder_C = ::Game::WeaponsNTools::PipelineBuilder::WPN_PipelineBuilder_C;

@@ -17,11 +17,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_OverloadShieldGenerator_Facility_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_OverloadShieldGenerator_Facility_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_OverloadShieldGenerator_Facility", "EWC_OverloadShieldGenerator_Facility_C");
-    using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_OverloadShieldGenerator_Facility_C;
     BP_Facility_PowerStation_GeneratorBase_C* FromGenerator;
     float NextWaveValue;
@@ -52,4 +52,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_OverloadShieldGenerator_Facility_C = Game::Enemies::Waves::WaveControllers::EWC_OverloadShieldGenerator_Facility_C;
+using EWC_OverloadShieldGenerator_Facility_C = ::Game::Enemies::Waves::WaveControllers::EWC_OverloadShieldGenerator_Facility_C;

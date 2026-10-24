@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_QuadPickAxe_C = Game::UI::Menu_Cheats::Cheat_QuadPickAxe_C;
+using Cheat_QuadPickAxe_C = ::Game::UI::Menu_Cheats::Cheat_QuadPickAxe_C;

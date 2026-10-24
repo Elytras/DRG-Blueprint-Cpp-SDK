@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe
 
-using WPN_Pickaxe_C = Game::WeaponsNTools::Pickaxe::WPN_Pickaxe_C;
+using WPN_Pickaxe_C = ::Game::WeaponsNTools::Pickaxe::WPN_Pickaxe_C;

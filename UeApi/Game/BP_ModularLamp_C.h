@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Furniture
 
-using BP_ModularLamp_C = Game::Art::Environments::SpaceRig::Furniture::BP_ModularLamp_C;
+using BP_ModularLamp_C = ::Game::Art::Environments::SpaceRig::Furniture::BP_ModularLamp_C;

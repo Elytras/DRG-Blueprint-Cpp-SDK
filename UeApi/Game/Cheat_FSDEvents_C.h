@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_FSDEvents_C = Game::UI::Menu_Cheats::Cheat_FSDEvents_C;
+using Cheat_FSDEvents_C = ::Game::UI::Menu_Cheats::Cheat_FSDEvents_C;

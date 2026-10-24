@@ -22,7 +22,7 @@ class UI_Forge_Rewards_Selector_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_Rewards_Selector", "UI_Forge_Rewards_Selector_C");
-    using UI_Forge_Rewards_SelectorItem_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_SelectorItem_C;
+    using UI_Forge_Rewards_SelectorItem_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_SelectorItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimPing;
     UE_READONLY class UWidgetAnimation* AnimBeginSelection;
@@ -58,4 +58,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_Rewards_Selector_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_Selector_C;
+using UI_Forge_Rewards_Selector_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_Selector_C;

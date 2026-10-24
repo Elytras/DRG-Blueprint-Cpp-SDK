@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace SandArches {
 
-class BP_AzureWealdArch_3_C : public Game::LevelElements::RoomObjects::HugeCarvers::SandArches::BP_SandArch_Base_C
+class BP_AzureWealdArch_3_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::SandArches::BP_SandArch_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/SandArches/BP_AzureWealdArch_3", "BP_AzureWealdArch_3_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
         static constexpr const char* SM_Arch04__UeScsNode = "101d78da99d39149bb30f870f208dbb2";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::SandArches
 
-using BP_AzureWealdArch_3_C = Game::LevelElements::RoomObjects::HugeCarvers::SandArches::BP_AzureWealdArch_3_C;
+using BP_AzureWealdArch_3_C = ::Game::LevelElements::RoomObjects::HugeCarvers::SandArches::BP_AzureWealdArch_3_C;

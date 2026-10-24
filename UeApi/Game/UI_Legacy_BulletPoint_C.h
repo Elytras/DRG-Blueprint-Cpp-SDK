@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::Game::Events::Anniversary
 
-using UI_Legacy_BulletPoint_C = Game::Game::Events::Anniversary::UI_Legacy_BulletPoint_C;
+using UI_Legacy_BulletPoint_C = ::Game::Game::Events::Anniversary::UI_Legacy_BulletPoint_C;

@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_PasswordField_C = Game::UI::Art::WidgetParts::Basic_PasswordField_C;
+using Basic_PasswordField_C = ::Game::UI::Art::WidgetParts::Basic_PasswordField_C;

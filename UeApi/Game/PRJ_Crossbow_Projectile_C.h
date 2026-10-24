@@ -25,9 +25,9 @@ class PRJ_Crossbow_Projectile_C : public ACrossbowProjectileBase
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_Projectile", "PRJ_Crossbow_Projectile_C");
-    using BP_BansheeModule_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
-    using BP_MagneticArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_MagneticArrow_Component_C;
-    using BP_RicochetArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_RicochetArrow_Component_C;
+    using BP_BansheeModule_Component_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_BansheeModule_Component_C;
+    using BP_MagneticArrow_Component_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_MagneticArrow_Component_C;
+    using BP_RicochetArrow_Component_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_RicochetArrow_Component_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* SimpleDamage;
     class UOutlineComponent* outline;
@@ -69,4 +69,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using PRJ_Crossbow_Projectile_C = Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_Projectile_C;
+using PRJ_Crossbow_Projectile_C = ::Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_Projectile_C;

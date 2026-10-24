@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_PlayRandomMontage_C = Game::AI::Tasks::TSK_PlayRandomMontage_C;
+using TSK_PlayRandomMontage_C = ::Game::AI::Tasks::TSK_PlayRandomMontage_C;

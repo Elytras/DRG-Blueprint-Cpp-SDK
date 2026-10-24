@@ -28,7 +28,7 @@ public:
     class UBorder* edgeM;
     class UImage* edgeR;
     class UNamedSlot* PutStuffHere;
-    class USpacer* Spacer_left;
+    class USpacer* Spacer_Left;
     float BG_Opacity;
     FLinearColor Edge_Tint;
     bool Mirror;
@@ -47,4 +47,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;

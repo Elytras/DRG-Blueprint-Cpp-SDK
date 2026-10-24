@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Bones
 
-using BP_HugeBones_Ribcage_TunnelBlocker_02_C = Game::LevelElements::RoomObjects::HugeCarvers::Bones::BP_HugeBones_Ribcage_TunnelBlocker_02_C;
+using BP_HugeBones_Ribcage_TunnelBlocker_02_C = ::Game::LevelElements::RoomObjects::HugeCarvers::Bones::BP_HugeBones_Ribcage_TunnelBlocker_02_C;

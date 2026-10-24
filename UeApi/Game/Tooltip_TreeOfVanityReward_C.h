@@ -22,7 +22,7 @@ class Tooltip_TreeOfVanityReward_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Tooltip_TreeOfVanityReward", "Tooltip_TreeOfVanityReward_C");
-    using TOOLTIP_Season_Reward_C = Game::UI::Menu_Seasons::TOOLTIP_Season_Reward_C;
+    using TOOLTIP_Season_Reward_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_Reward_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* TurnRed;
     class UProgressBar* Claim_Progress;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Tooltip_TreeOfVanityReward_C = Game::UI::Menu_Seasons::Tooltip_TreeOfVanityReward_C;
+using Tooltip_TreeOfVanityReward_C = ::Game::UI::Menu_Seasons::Tooltip_TreeOfVanityReward_C;

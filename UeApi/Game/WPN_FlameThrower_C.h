@@ -86,4 +86,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using WPN_FlameThrower_C = Game::WeaponsNTools::FlameThrower::WPN_FlameThrower_C;
+using WPN_FlameThrower_C = ::Game::WeaponsNTools::FlameThrower::WPN_FlameThrower_C;

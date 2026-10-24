@@ -16,11 +16,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace LineCutter {
 
-class WeaponDisplay_LineCutter_CurrentClip_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_LineCutter_CurrentClip_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/WeaponDisplay_LineCutter_CurrentClip", "WeaponDisplay_LineCutter_CurrentClip_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_LineCutter_CurrentClip_C;
     UE_READONLY class UWidgetAnimation* Fire;
     class UTextBlock* AmmoCount;
@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using WeaponDisplay_LineCutter_CurrentClip_C = Game::WeaponsNTools::LineCutter::WeaponDisplay_LineCutter_CurrentClip_C;
+using WeaponDisplay_LineCutter_CurrentClip_C = ::Game::WeaponsNTools::LineCutter::WeaponDisplay_LineCutter_CurrentClip_C;

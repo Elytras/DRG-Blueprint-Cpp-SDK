@@ -33,4 +33,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::FlameThrower::Projectile
 
-using BP_FlameWallSegment_C = Game::WeaponsNTools::FlameThrower::Projectile::BP_FlameWallSegment_C;
+using BP_FlameWallSegment_C = ::Game::WeaponsNTools::FlameThrower::Projectile::BP_FlameWallSegment_C;

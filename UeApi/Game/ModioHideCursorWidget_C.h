@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace modio::UI::Browser::Components
 
-using ModioHideCursorWidget_C = modio::UI::Browser::Components::ModioHideCursorWidget_C;
+using ModioHideCursorWidget_C = ::modio::UI::Browser::Components::ModioHideCursorWidget_C;

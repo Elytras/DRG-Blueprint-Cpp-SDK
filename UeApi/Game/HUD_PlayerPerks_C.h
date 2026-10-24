@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Perks
 
-using HUD_PlayerPerks_C = Game::UI::MainOnscreenHUD::Perks::HUD_PlayerPerks_C;
+using HUD_PlayerPerks_C = ::Game::UI::MainOnscreenHUD::Perks::HUD_PlayerPerks_C;

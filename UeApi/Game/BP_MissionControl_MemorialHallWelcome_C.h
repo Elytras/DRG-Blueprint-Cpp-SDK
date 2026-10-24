@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_MissionControl_MemorialHallWelcome_C = Game::Art::Environments::SpaceRig::BP_MissionControl_MemorialHallWelcome_C;
+using BP_MissionControl_MemorialHallWelcome_C = ::Game::Art::Environments::SpaceRig::BP_MissionControl_MemorialHallWelcome_C;

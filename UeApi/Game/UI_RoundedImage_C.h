@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_RoundedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_RoundedImage_C;
+using UI_RoundedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_RoundedImage_C;

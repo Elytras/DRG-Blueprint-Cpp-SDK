@@ -26,4 +26,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Vault::TentacleHatch
 
-using ABP_TentacleHatch_C = Game::GameElements::Objectives::Facility::Vault::TentacleHatch::ABP_TentacleHatch_C;
+using ABP_TentacleHatch_C = ::Game::GameElements::Objectives::Facility::Vault::TentacleHatch::ABP_TentacleHatch_C;

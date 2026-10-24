@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using PRW_LockOnRifle_C = Game::WeaponsNTools::LockOnRifle::PRW_LockOnRifle_C;
+using PRW_LockOnRifle_C = ::Game::WeaponsNTools::LockOnRifle::PRW_LockOnRifle_C;

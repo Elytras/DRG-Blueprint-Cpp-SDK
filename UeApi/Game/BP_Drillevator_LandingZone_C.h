@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_Drillevator_LandingZone_C = Game::GameElements::Objectives::DeepScan::BP_Drillevator_LandingZone_C;
+using BP_Drillevator_LandingZone_C = ::Game::GameElements::Objectives::DeepScan::BP_Drillevator_LandingZone_C;

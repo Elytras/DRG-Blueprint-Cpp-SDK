@@ -12,7 +12,7 @@ class UProjectileExplosion;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class PRJ_FacilityTurretLaser_Sniper_C : public Game::GameElements::Objectives::Facility::PRJ_Facility_Laser_Base_C
+class PRJ_FacilityTurretLaser_Sniper_C : public ::Game::GameElements::Objectives::Facility::PRJ_Facility_Laser_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/PRJ_FacilityTurretLaser_Sniper", "PRJ_FacilityTurretLaser_Sniper_C");
@@ -24,6 +24,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Niagara;Trail;Body";
         static constexpr const char* UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileExplosion__UeScsNode = "174ed3749f8a43408bd2806de739cd8e";
     };
@@ -31,4 +32,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using PRJ_FacilityTurretLaser_Sniper_C = Game::GameElements::Objectives::Facility::DefenseTurret::PRJ_FacilityTurretLaser_Sniper_C;
+using PRJ_FacilityTurretLaser_Sniper_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::PRJ_FacilityTurretLaser_Sniper_C;

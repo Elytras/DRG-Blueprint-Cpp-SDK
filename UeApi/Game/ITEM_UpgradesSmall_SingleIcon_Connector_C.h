@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ITEM_UpgradesSmall_SingleIcon_Connector_C = Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_Connector_C;
+using ITEM_UpgradesSmall_SingleIcon_Connector_C = ::Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_Connector_C;

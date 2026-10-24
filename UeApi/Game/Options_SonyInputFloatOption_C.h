@@ -17,7 +17,7 @@ class Options_SonyInputFloatOption_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/SonyOptions/Options_SonyInputFloatOption", "Options_SonyInputFloatOption_C");
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
     TEnum<ESonyInputSettingsFloats> Option;
@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::SonyOptions
 
-using Options_SonyInputFloatOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputFloatOption_C;
+using Options_SonyInputFloatOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputFloatOption_C;

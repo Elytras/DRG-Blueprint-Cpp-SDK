@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using CameraShake_CoreRiftOpen_C = Game::GameElements::GameEvents::CoreRift::CameraShake_CoreRiftOpen_C;
+using CameraShake_CoreRiftOpen_C = ::Game::GameElements::GameEvents::CoreRift::CameraShake_CoreRiftOpen_C;

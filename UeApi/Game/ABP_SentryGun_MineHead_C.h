@@ -39,4 +39,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_MineHead::Assets
 
-using ABP_SentryGun_MineHead_C = Game::WeaponsNTools::SentryGun::SentryGun_MineHead::Assets::ABP_SentryGun_MineHead_C;
+using ABP_SentryGun_MineHead_C = ::Game::WeaponsNTools::SentryGun::SentryGun_MineHead::Assets::ABP_SentryGun_MineHead_C;

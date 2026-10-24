@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using BP_TurretEMPDischarge_Indicator_C = Game::WeaponsNTools::SentryGun::BP_TurretEMPDischarge_Indicator_C;
+using BP_TurretEMPDischarge_Indicator_C = ::Game::WeaponsNTools::SentryGun::BP_TurretEMPDischarge_Indicator_C;

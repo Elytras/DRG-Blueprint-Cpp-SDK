@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects
 
-using STE_TaserArrowArc_Enemies_Damage_C = Game::WeaponsNTools::Crossbow::StatusEffects::STE_TaserArrowArc_Enemies_Damage_C;
+using STE_TaserArrowArc_Enemies_Damage_C = ::Game::WeaponsNTools::Crossbow::StatusEffects::STE_TaserArrowArc_Enemies_Damage_C;

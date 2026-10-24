@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_MasteryBar_C = Game::UI::Menu_Loadout::ITM_MasteryBar_C;
+using ITM_MasteryBar_C = ::Game::UI::Menu_Loadout::ITM_MasteryBar_C;

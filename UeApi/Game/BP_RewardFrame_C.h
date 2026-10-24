@@ -36,7 +36,7 @@ class BP_RewardFrame_C : public AEventRewardFrame
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame", "BP_RewardFrame_C");
-    using BP_ReturningPromotionKey_C = Game::GameElements::GameEvents::RewardDispenser::PromotionKey::BP_ReturningPromotionKey_C;
+    using BP_ReturningPromotionKey_C = ::Game::GameElements::GameEvents::RewardDispenser::PromotionKey::BP_ReturningPromotionKey_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
     class UTerrainDetectComponent* TerrainDetect3;
@@ -104,6 +104,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SpecialEventUsableComponent EventUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/GameEvents/RewardDispenser/BP_RewardDispenser.BP_RewardDispenser_C Dispenser1_GEN_VARIABLE:Dispenser1_GEN_VARIABLE_BP_RewardDispenser_C_CAT;/Game/GameElements/GameEvents/RewardDispenser/BP_RewardDispenser.BP_RewardDispenser_C Dispenser2_GEN_VARIABLE:Dispenser2_GEN_VARIABLE_BP_RewardDispenser_C_CAT;/Game/GameElements/GameEvents/RewardDispenser/BP_RewardDispenser.BP_RewardDispenser_C Dispenser3_GEN_VARIABLE:Dispenser3_GEN_VARIABLE_BP_RewardDispenser_C_CAT;/Game/GameElements/GameEvents/RewardDispenser/BP_RewardDispenser.BP_RewardDispenser_C Dispenser4_GEN_VARIABLE:Dispenser4_GEN_VARIABLE_BP_RewardDispenser_C_CAT";
         static constexpr const char* MeshCarver__UeScsNode = "55165304b65e114aa722290c4e639713";
         static constexpr const char* TerrainDetect3__UeScsNode = "a50e79474b31a4498879ef920c27ac6c";
         static constexpr const char* TerrainDetect2__UeScsNode = "e2b944adcd0327418d3894e16765372c";
@@ -135,4 +136,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RewardDispenser
 
-using BP_RewardFrame_C = Game::GameElements::GameEvents::RewardDispenser::BP_RewardFrame_C;
+using BP_RewardFrame_C = ::Game::GameElements::GameEvents::RewardDispenser::BP_RewardFrame_C;

@@ -12,7 +12,7 @@ class UMeleeAttackComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Stalker {
 
-class ENE_Spider_Stalker_C : public Game::Enemies::Spider::Stalker::ENE_Spider_Stalker_Base_C
+class ENE_Spider_Stalker_C : public ::Game::Enemies::Spider::Stalker::ENE_Spider_Stalker_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/ENE_Spider_Stalker", "ENE_Spider_Stalker_C");
@@ -25,6 +25,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.PlayerArmorDamageBonus MeleeAttack_GEN_VARIABLE:DamageComponent_0:PlayerArmorDamageBonus_0;/Script/FSD.PushStatusEffectDamageBonus MeleeAttack_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_0;/Script/FSD.PushStatusEffectDamageBonus MeleeAttack_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_1";
         static constexpr const char* UberGraphFrame_ENE_Spider_Stalker_C__UeName = "UberGraphFrame";
         static constexpr const char* MeleeAttack__UeScsNode = "f59fc34abffcf943ab615307a734b3af";
     };
@@ -32,4 +34,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using ENE_Spider_Stalker_C = Game::Enemies::Spider::Stalker::ENE_Spider_Stalker_C;
+using ENE_Spider_Stalker_C = ::Game::Enemies::Spider::Stalker::ENE_Spider_Stalker_C;

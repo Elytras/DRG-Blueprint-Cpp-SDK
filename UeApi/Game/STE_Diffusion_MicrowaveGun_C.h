@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE
 
-using STE_Diffusion_MicrowaveGun_C = Game::WeaponsNTools::MicrowaveGun::STE::STE_Diffusion_MicrowaveGun_C;
+using STE_Diffusion_MicrowaveGun_C = ::Game::WeaponsNTools::MicrowaveGun::STE::STE_Diffusion_MicrowaveGun_C;

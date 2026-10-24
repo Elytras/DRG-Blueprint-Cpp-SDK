@@ -23,7 +23,7 @@ class BP_TipJar_Base_Blueprint_C : public AActor
 {
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/TipMachine/BP_TIpJar_Base_Blueprint", "BP_TipJar_Base_Blueprint_C");
-    using BP_TipJarUsable_C = Game::Art::Environments::SpaceRig::TipMachine::BP_TipJarUsable_C;
+    using BP_TipJarUsable_C = ::Game::Art::Environments::SpaceRig::TipMachine::BP_TipJarUsable_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_TipJarUsable_C* BP_TipJarUsable;
     class UParticleSystemComponent* ParticleSystem;
@@ -51,4 +51,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TipMachine
 
-using BP_TipJar_Base_Blueprint_C = Game::Art::Environments::SpaceRig::TipMachine::BP_TipJar_Base_Blueprint_C;
+using BP_TipJar_Base_Blueprint_C = ::Game::Art::Environments::SpaceRig::TipMachine::BP_TipJar_Base_Blueprint_C;

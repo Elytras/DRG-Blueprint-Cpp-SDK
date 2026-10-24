@@ -20,9 +20,9 @@ class Options_Gamepad_Turn180Mode_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_Gamepad_Turn180Mode", "Options_Gamepad_Turn180Mode_C");
-    using Basic_Dots_C = Game::UI::Art::WidgetParts::Basic_Dots_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Dots_C = ::Game::UI::Art::WidgetParts::Basic_Dots_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Dots_C* Basic_Dots;
     Basic_Label_C* Basic_Label;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_Gamepad_Turn180Mode_C = Game::UI::Keybindings::Options_Gamepad_Turn180Mode_C;
+using Options_Gamepad_Turn180Mode_C = ::Game::UI::Keybindings::Options_Gamepad_Turn180Mode_C;

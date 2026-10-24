@@ -23,8 +23,8 @@ class ITM_Loadout_PerksEquip_Selection_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/Perks/ITM_Loadout_PerksEquip_Selection", "ITM_Loadout_PerksEquip_Selection_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_LoadOut_PerksEquip_Item_C = Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Item_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_LoadOut_PerksEquip_Item_C = ::Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UUniformGridPanel* ItemsGridBox;
@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks
 
-using ITM_Loadout_PerksEquip_Selection_C = Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_Selection_C;
+using ITM_Loadout_PerksEquip_Selection_C = ::Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_Selection_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace AzureWeald { namespace Assets { namespace MagicCrystals {
 
-class BP_Azure_MagicCrystal_B_C : public Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_Base_C
+class BP_Azure_MagicCrystal_B_C : public ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicCrystals/BP_Azure_MagicCrystal_B", "BP_Azure_MagicCrystal_B_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;PointLight;ICH-DefaultSceneRoot;TerrainPlacement";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals
 
-using BP_Azure_MagicCrystal_B_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_B_C;
+using BP_Azure_MagicCrystal_B_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_B_C;

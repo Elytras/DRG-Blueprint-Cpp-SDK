@@ -24,8 +24,8 @@ class EVENT_Defense_Base_C : public AGameEvent
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/Defense/EVENT_Defense_Base", "EVENT_Defense_Base_C");
-    using EWC_Salvage_Defend_C = Game::Enemies::Waves::WaveControllers::EWC_Salvage_Defend_C;
-    using HUD_Defend_Event_C = Game::UI::MainOnscreenHUD::Events::HUD_Defend_Event_C;
+    using EWC_Salvage_Defend_C = ::Game::Enemies::Waves::WaveControllers::EWC_Salvage_Defend_C;
+    using HUD_Defend_Event_C = ::Game::UI::MainOnscreenHUD::Events::HUD_Defend_Event_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
     class UStaticMeshComponent* SphereMesh;
@@ -91,4 +91,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::Defense
 
-using EVENT_Defense_Base_C = Game::GameElements::Objectives::DeepDive::Defense::EVENT_Defense_Base_C;
+using EVENT_Defense_Base_C = ::Game::GameElements::Objectives::DeepDive::Defense::EVENT_Defense_Base_C;

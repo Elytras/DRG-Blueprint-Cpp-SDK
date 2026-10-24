@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CactusShooter
 
-using PRJ_CactusSpike_C = Game::LevelElements::RoomObjects::Hazards::CactusShooter::PRJ_CactusSpike_C;
+using PRJ_CactusSpike_C = ::Game::LevelElements::RoomObjects::Hazards::CactusShooter::PRJ_CactusSpike_C;

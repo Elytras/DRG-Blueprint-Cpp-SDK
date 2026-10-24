@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::Audio::SoundControl
 
-using BP_AudioVolume_DiscoverCave_C = Game::Audio::SoundControl::BP_AudioVolume_DiscoverCave_C;
+using BP_AudioVolume_DiscoverCave_C = ::Game::Audio::SoundControl::BP_AudioVolume_DiscoverCave_C;

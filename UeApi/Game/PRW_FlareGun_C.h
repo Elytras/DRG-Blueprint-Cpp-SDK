@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlareGun
 
-using PRW_FlareGun_C = Game::WeaponsNTools::FlareGun::PRW_FlareGun_C;
+using PRW_FlareGun_C = ::Game::WeaponsNTools::FlareGun::PRW_FlareGun_C;

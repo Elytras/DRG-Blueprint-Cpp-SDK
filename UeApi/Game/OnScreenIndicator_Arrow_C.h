@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_Arrow_C = Game::UI::OnScreenIndicators::OnScreenIndicator_Arrow_C;
+using OnScreenIndicator_Arrow_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_Arrow_C;

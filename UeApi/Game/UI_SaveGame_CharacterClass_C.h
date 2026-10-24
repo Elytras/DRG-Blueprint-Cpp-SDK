@@ -19,8 +19,8 @@ class UI_SaveGame_CharacterClass_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Savegame/UI_SaveGame_CharacterClass", "UI_SaveGame_CharacterClass_C");
-    using ITEM_SpaceRig_ClassLevel_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_ClassLevel_C;
-    using ITM_RetirementBadge_C = Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
+    using ITEM_SpaceRig_ClassLevel_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_ClassLevel_C;
+    using ITM_RetirementBadge_C = ::Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ClassIcon;
     class USizeBox* IconSize;
@@ -37,4 +37,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::Savegame
 
-using UI_SaveGame_CharacterClass_C = Game::UI::Menu_Options::Savegame::UI_SaveGame_CharacterClass_C;
+using UI_SaveGame_CharacterClass_C = ::Game::UI::Menu_Options::Savegame::UI_SaveGame_CharacterClass_C;

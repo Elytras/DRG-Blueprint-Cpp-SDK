@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::Swarmageddon
 
-using BP_Swarmageddon_C = Game::GameElements::Missions::Warnings::Swarmageddon::BP_Swarmageddon_C;
+using BP_Swarmageddon_C = ::Game::GameElements::Missions::Warnings::Swarmageddon::BP_Swarmageddon_C;

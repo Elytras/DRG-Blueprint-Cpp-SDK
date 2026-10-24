@@ -25,8 +25,8 @@ class ITM_SimpleFragmentedBonusWidget_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SimpleFragmentedBonusWidget", "ITM_SimpleFragmentedBonusWidget_C");
-    using TOOLTIP_Season_EventBonus_C = Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_C;
-    using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+    using TOOLTIP_Season_EventBonus_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_C;
+    using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ScaleDown;
     UE_READONLY class UWidgetAnimation* EnterCheckmark;
@@ -67,4 +67,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SimpleFragmentedBonusWidget_C = Game::UI::Menu_Seasons::ITM_SimpleFragmentedBonusWidget_C;
+using ITM_SimpleFragmentedBonusWidget_C = ::Game::UI::Menu_Seasons::ITM_SimpleFragmentedBonusWidget_C;

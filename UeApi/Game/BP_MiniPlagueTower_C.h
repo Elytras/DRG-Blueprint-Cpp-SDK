@@ -46,4 +46,4 @@ private:
 
 }}}   // namespace Game::GameElements::Plague
 
-using BP_MiniPlagueTower_C = Game::GameElements::Plague::BP_MiniPlagueTower_C;
+using BP_MiniPlagueTower_C = ::Game::GameElements::Plague::BP_MiniPlagueTower_C;

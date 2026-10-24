@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::Affliction
 
-using AFL_Frozen_Player_C = Game::Character::Affliction::AFL_Frozen_Player_C;
+using AFL_Frozen_Player_C = ::Game::Character::Affliction::AFL_Frozen_Player_C;

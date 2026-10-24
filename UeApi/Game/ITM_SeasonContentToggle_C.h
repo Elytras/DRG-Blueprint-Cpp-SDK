@@ -22,7 +22,7 @@ class ITM_SeasonContentToggle_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonContentToggle", "ITM_SeasonContentToggle_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     class USizeBox* BoxSizer;
@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonContentToggle_C = Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;
+using ITM_SeasonContentToggle_C = ::Game::UI::Menu_Seasons::ITM_SeasonContentToggle_C;

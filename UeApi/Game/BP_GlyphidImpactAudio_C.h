@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Enemies::Spider
 
-using BP_GlyphidImpactAudio_C = Game::Enemies::Spider::BP_GlyphidImpactAudio_C;
+using BP_GlyphidImpactAudio_C = ::Game::Enemies::Spider::BP_GlyphidImpactAudio_C;

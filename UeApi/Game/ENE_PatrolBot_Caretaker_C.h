@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace RivalTech { namespace PatrolBot {
 
-class ENE_PatrolBot_Caretaker_C : public Game::Enemies::RivalTech::PatrolBot::ENE_PatrolBot_C
+class ENE_PatrolBot_Caretaker_C : public ::Game::Enemies::RivalTech::PatrolBot::ENE_PatrolBot_C
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/ENE_PatrolBot_Caretaker", "ENE_PatrolBot_Caretaker_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent FlyingAudioComponent;/Script/Engine.AudioComponent RollingAudioComponent;/Script/FSD.AvoidCeilingComponent CeilingAvoidance;/Script/FSD.DamageComponent BumpDamage;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HackingUsableComponent HackingUsable;/Script/FSD.NormalProjectileAttack FlyingRangedAttack:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_2;/Script/FSD.NormalProjectileAttack MissileAttack:NormalProjectileAttack_3;/Script/FSD.NormalProjectileAttack RangedAttack:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack RangedAttack:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack RangedAttack:NormalProjectileAttack_2;/Script/Engine.ParticleSystemComponent LaserBeamIndicator;/Script/Engine.ParticleSystemComponent TearingGroundParticles;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PlayerImpactCooldownComponent ImpactCooldown;/Script/FSD.ProjectileAttackComponent FlyingRangedAttack;/Script/FSD.ProjectileAttackComponent MissileAttack;/Script/FSD.ProjectileAttackComponent RangedAttack;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent CollisionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "JetParticles1;JetParticles2;JetParticles3;JetParticles;SpawnParticles";
     };
 };
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using ENE_PatrolBot_Caretaker_C = Game::Enemies::RivalTech::PatrolBot::ENE_PatrolBot_Caretaker_C;
+using ENE_PatrolBot_Caretaker_C = ::Game::Enemies::RivalTech::PatrolBot::ENE_PatrolBot_Caretaker_C;

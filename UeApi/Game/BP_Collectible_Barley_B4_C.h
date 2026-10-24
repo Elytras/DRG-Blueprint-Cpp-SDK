@@ -14,7 +14,7 @@ class UTimelineComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Collectibles { namespace Barley {
 
-class BP_Collectible_Barley_B4_C : public Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_Base_C
+class BP_Collectible_Barley_B4_C : public ::Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Collectible_Barley_B4", "BP_Collectible_Barley_B4_C");
@@ -54,6 +54,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "UseTrigger";
         static constexpr const char* UberGraphFrame_BP_Collectible_Barley_B4_C__UeName = "UberGraphFrame";
         static constexpr const char* Sphere__UeScsNode = "75c377a0a28eff44955b65df9ade9bf2";
         static constexpr const char* Fruit4__UeScsNode = "40e99a735b373d4b9b9be62d73a7bf85";
@@ -69,4 +70,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Barley
 
-using BP_Collectible_Barley_B4_C = Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_B4_C;
+using BP_Collectible_Barley_B4_C = ::Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_B4_C;

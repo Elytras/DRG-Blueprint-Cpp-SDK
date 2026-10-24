@@ -14,12 +14,12 @@ namespace Game { namespace UI { namespace Menu_Cheats { class CheatMenu_BasicBut
 
 namespace Game { namespace UI { namespace Menu_Cheats { namespace MissionCheat {
 
-class UI_Elimination_Cheat_C : public Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C
+class UI_Elimination_Cheat_C : public ::Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_Elimination_Cheat", "UI_Elimination_Cheat_C");
-    using BP_DreadnoughtEgg_C = Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_DreadnoughtEgg_C;
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using BP_DreadnoughtEgg_C = ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_DreadnoughtEgg_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* Left;
     TArray<CheatMenu_BasicButtonWText_C*> EggButtons;
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_Elimination_Cheat_C = Game::UI::Menu_Cheats::MissionCheat::UI_Elimination_Cheat_C;
+using UI_Elimination_Cheat_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_Elimination_Cheat_C;

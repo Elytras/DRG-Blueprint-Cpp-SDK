@@ -16,7 +16,7 @@ class Options_GameServerName_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_GameServerName", "Options_GameServerName_C");
-    using Basic_TextInputField_C = Game::UI::Art::WidgetParts::Basic_TextInputField_C;
+    using Basic_TextInputField_C = ::Game::UI::Art::WidgetParts::Basic_TextInputField_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_TextInputField_C* Basic_TextInputField;
     void ExecuteUbergraph_Options_GameServerName(int EntryPoint);
@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_GameServerName_C = Game::UI::Menu_Options::Options_GameServerName_C;
+using Options_GameServerName_C = ::Game::UI::Menu_Options::Options_GameServerName_C;

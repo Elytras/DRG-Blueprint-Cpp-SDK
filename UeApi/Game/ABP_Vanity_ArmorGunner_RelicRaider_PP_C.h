@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using ABP_Vanity_ArmorGunner_RelicRaider_PP_C = Game::Character::Vanity2::Armor::ABP_Vanity_ArmorGunner_RelicRaider_PP_C;
+using ABP_Vanity_ArmorGunner_RelicRaider_PP_C = ::Game::Character::Vanity2::Armor::ABP_Vanity_ArmorGunner_RelicRaider_PP_C;

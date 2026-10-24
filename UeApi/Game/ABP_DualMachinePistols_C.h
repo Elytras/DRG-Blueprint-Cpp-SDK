@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols
 
-using ABP_DualMachinePistols_C = Game::WeaponsNTools::DualMachinePistols::ABP_DualMachinePistols_C;
+using ABP_DualMachinePistols_C = ::Game::WeaponsNTools::DualMachinePistols::ABP_DualMachinePistols_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace PassiveFoliage { namespace RadioactiveBlobPlant {
 
-class BP_RadioactiveBlobPlant_02_C : public Game::LevelElements::RoomObjects::PassiveFoliage::RadioactiveBlobPlant::BP_RadioactiveBlobPlant_01_C
+class BP_RadioactiveBlobPlant_02_C : public ::Game::LevelElements::RoomObjects::PassiveFoliage::RadioactiveBlobPlant::BP_RadioactiveBlobPlant_01_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/RadioactiveBlobPlant/BP_RadioactiveBlobPlant_02", "BP_RadioactiveBlobPlant_02_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "ICH-DefaultSceneRoot;StaticMesh;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage::RadioactiveBlobPlant
 
-using BP_RadioactiveBlobPlant_02_C = Game::LevelElements::RoomObjects::PassiveFoliage::RadioactiveBlobPlant::BP_RadioactiveBlobPlant_02_C;
+using BP_RadioactiveBlobPlant_02_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::RadioactiveBlobPlant::BP_RadioactiveBlobPlant_02_C;

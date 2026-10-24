@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using BP_DiscordInstantUsable_C = Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordInstantUsable_C;
+using BP_DiscordInstantUsable_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordInstantUsable_C;

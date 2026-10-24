@@ -29,9 +29,9 @@ class WND_Season_RewardClaimed_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_Season_RewardClaimed", "WND_Season_RewardClaimed_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_Season_CharacterIcon_C = ::Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Glow;
     UE_READONLY class UWidgetAnimation* Zoom;
@@ -65,4 +65,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_Season_RewardClaimed_C = Game::UI::Menu_Seasons::WND_Season_RewardClaimed_C;
+using WND_Season_RewardClaimed_C = ::Game::UI::Menu_Seasons::WND_Season_RewardClaimed_C;

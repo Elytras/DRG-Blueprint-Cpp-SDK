@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_MonitorPanel_C = Game::Art::Environments::SpaceRig::BP_MonitorPanel_C;
+using BP_MonitorPanel_C = ::Game::Art::Environments::SpaceRig::BP_MonitorPanel_C;

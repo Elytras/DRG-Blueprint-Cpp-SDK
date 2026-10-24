@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using BP_ExplosiveBoil_C = Game::WeaponsNTools::MicrowaveGun::BP_ExplosiveBoil_C;
+using BP_ExplosiveBoil_C = ::Game::WeaponsNTools::MicrowaveGun::BP_ExplosiveBoil_C;

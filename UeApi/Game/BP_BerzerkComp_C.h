@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_BerzerkComp_C = Game::GameElements::KPI::Perks::BP_BerzerkComp_C;
+using BP_BerzerkComp_C = ::Game::GameElements::KPI::Perks::BP_BerzerkComp_C;

@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_GameTags_Entry_C = Game::UI::MainOnscreenHUD::HUD_GameTags_Entry_C;
+using HUD_GameTags_Entry_C = ::Game::UI::MainOnscreenHUD::HUD_GameTags_Entry_C;

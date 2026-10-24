@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Audio::Functions
 
-using MixFunctions_C = Game::Audio::Functions::MixFunctions_C;
+using MixFunctions_C = ::Game::Audio::Functions::MixFunctions_C;

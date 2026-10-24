@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Flyer {
 
-class ENE_Spider_Drone_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Drone_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Flyer/ENE_Spider_Drone", "ENE_Spider_Drone_C");
@@ -30,6 +30,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;PawnSensing";
         static constexpr const char* UberGraphFrame_ENE_Spider_Drone_C__UeName = "UberGraphFrame";
         static constexpr const char* GroundToAir__UeScsNode = "8dc2232421c9324fb238202c55acd4c1";
         static constexpr const char* LeftWing__UeScsNode = "35794259c58646419b0fa614b5a59ddc";
@@ -40,4 +41,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Flyer
 
-using ENE_Spider_Drone_C = Game::Enemies::Spider::Flyer::ENE_Spider_Drone_C;
+using ENE_Spider_Drone_C = ::Game::Enemies::Spider::Flyer::ENE_Spider_Drone_C;

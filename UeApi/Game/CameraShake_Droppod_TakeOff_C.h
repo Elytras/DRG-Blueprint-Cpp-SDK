@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Droppod_TakeOff_C = Game::Character::Camera::CameraShakes::CameraShake_Droppod_TakeOff_C;
+using CameraShake_Droppod_TakeOff_C = ::Game::Character::Camera::CameraShakes::CameraShake_Droppod_TakeOff_C;

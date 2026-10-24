@@ -592,6 +592,7 @@ struct FAnimNode_CopyBoneDelta : public FAnimNode_SkeletalControlBase
 
 struct FAnimNode_CopyPoseFromMesh : public FAnimNode_Base
 {
+    TWeakObjectPtr<class USkeletalMeshComponent> SourceMeshComponent;
     bool bUseAttachedParent;
     bool bCopyCurves;
     bool bCopyCustomAttributes;

@@ -21,4 +21,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::LowGravity
 
-using BP_LowGravity_C = Game::GameElements::Missions::Mutators::LowGravity::BP_LowGravity_C;
+using BP_LowGravity_C = ::Game::GameElements::Missions::Mutators::LowGravity::BP_LowGravity_C;

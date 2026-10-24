@@ -14,6 +14,7 @@ class UClass;
 class UDamageClass;
 class UItemUpgrade;
 class UObject;
+class UPawnStat;
 
 namespace Game { namespace WeaponsNTools {
 
@@ -29,7 +30,10 @@ public:
     static void UPGDESC_SingleUsable_UseDuration(class UClass* Item, class UClass* subItem, class AFSDPlayerState* Player, class UObject* __WorldContext, FGearStatEntry& GearStatEntry);
     static void UPGDESC_HitScan(class UClass* Item, class AFSDPlayerState* Player, TEnum<EHitScanBaseUpgradeType> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_Damage(class UClass*& Item, class UClass* upgradedItem, class AFSDPlayerState*& Player, TEnum<EDamageUpgrade> upgradeType, FText Prefix, TEnum<EDamageComponentType> DamageComponentType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void UPGDESC_AmmoDriven(class UClass* Item, class AFSDPlayerState* Player, TEnum<EAmmoDrivenWeapnUpgradeType> upgradeType, bool OverrideStatType, uint8 StatTypeOverride, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_DamageBonus_PushStatus(class UClass* Item, class AFSDPlayerState* Player, class UClass* StatusEffect, FText StatName, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void UPGDESC_DamageBonus_DamageConversion(class UClass* Item, class UClass* upgradedItem, class AFSDPlayerState* Player, class UDamageClass* DamageClass, FText StatName, bool OverrideStatType, uint8 StatTypeOverride, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void UPGDESC_DamageBonus_Flat(class UClass* Item, class AFSDPlayerState* Player, class UDamageClass* DamageClass, FText StatName, uint8 FormatType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_ElectricalSMG(class UClass* Item, class AFSDPlayerState* Player, TEnum<EElectricalSMGUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_StatusBonus(class UClass* Item, class AFSDPlayerState* Player, class UClass* SstatusEffectIn, FText StatName, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_TargetTypeBonus(class UClass* Item, class AFSDPlayerState* Player, FText StatName, FName Key, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
@@ -39,6 +43,7 @@ public:
     static void UPGDESC_ChargedWeapon(class UClass* Item, class AFSDPlayerState* Player, TEnum<EChargedWeaponUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_FlameThrower(class UClass* Item, class AFSDPlayerState* Player, TEnum<EFlameThrowerUpgradeType> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_Cryospray(class UClass* Item, class AFSDPlayerState* Player, TEnum<ECryoSprayUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void FormatPercentage(float Base_Value, float Upgraded_Value, float Old_Upgraded_Value, float Final_Value, uint8 Format, class UObject* __WorldContext, FText& Base_Text, FText& Upgrade_Text, FText& Value);
     static void FormatCmtoM(float Base_Value, float Upgrade_Value, float Old_Upgrade_Value, float Final_Value, class UObject* __WorldContext, FText& Base_Text, FText& Upgrade_Text, FText& Value);
     static void UPGDESC_ShieldRegenerator(class UClass* Item, class AFSDPlayerState* Player, TEnum<EShieldGeneratorUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_GatlingGun(class UClass* Item, class AFSDPlayerState* Player, TEnum<EGatlingGunUpgrade> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
@@ -48,6 +53,7 @@ public:
     static void UPGDESC_DamageBonus_HotBullets(class UClass* Item, class AFSDPlayerState* Player, class UDamageClass* DamageClass, FText StatName, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_AoEFear(class UClass* Item, class AFSDPlayerState* Player, FText StatName, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_BurstWeapon(class UClass* Item, class AFSDPlayerState* Player, TEnum<EBurstWeaponUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void UPGDESC_Armor(class AFSDPlayerState* Player, class UClass* armorClass, TEnum<EArmorUpgradeType> Armor_Upgrade_Type, FText Text, uint8 Format, uint8 PreviewFormat, class UObject* __WorldContext, FGearStatEntry& GearStatEntry);
     static void UPGDESC_SawedOff(class UClass* Item, class AFSDPlayerState* Player, TEnum<ESawedOffShotgunUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_StickyFlame(class UClass* Item, class AFSDPlayerState* Player, class UClass* StatusEffect, FText Text, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_ChargedProjectile(class UClass* Item, class AFSDPlayerState* Player, TEnum<EChargedProjectileUpgrades> upgradeType, class UClass* upgradedActor, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
@@ -61,16 +67,22 @@ public:
     static void UPGDESC_CoooldownAggregator(class UClass* Item, class AFSDPlayerState* Player, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_Bosco(class UClass* upgradedItem, class AFSDPlayerState* Player, TEnum<EBoscoUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasChanged);
     static void UPGDESC_PlatformGun(class UClass* Item, class AFSDPlayerState* Player, TEnum<EPlatformGunUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& Should_show_text);
+    static void UPGDESC_TriggeredStat(class AFSDPlayerState* Player, class UClass* Item, class UClass* Status_Effect, FText Text, TEnum<ETriggeredStatusEffectType> Type, uint8 Format, class UObject* __WorldContext, FGearStatEntry& gear_stat_entry, bool& is_upgraded);
+    static void UPGDESC_ArmorStat(class AFSDPlayerState* Player, class UClass* armorClass, class UPawnStat* Stat, FText Text, uint8 Format, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& Changed);
     static void UPGDESC_Flaregun(class UClass* Item, class AFSDPlayerState* PlayerState, TEnum<EFlaregunUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_Detpack(class UClass* Item, class AFSDPlayerState* PlayerState, TEnum<EDetPackUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_SentryGun(class UClass* Item, class AFSDPlayerState* Player, TEnum<ESentryGunUpgradeType> Upgrade_Type, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& Has_Upgraded_Value);
     static void UPGDESC_DualMPs(class UClass* Item, class AFSDPlayerState* Player, TEnum<EDualMachinePistolsUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_AmmoDrivenEx(class UClass* Item, class AFSDPlayerState* Player, TArray<EAmmoDrivenWeapnUpgradeType>& UpgradeTypes, TArray<FGearStatEntry>& GearStats, class UObject* __WorldContext);
+    static void FormatToPercentageNormalized(float Base_Value, float Upgrade_Value, float Old_Upgrade_Value, float Final_Value, uint8 FormatType, class UObject* __WorldContext, FText& Base_Text, FText& Upgrade_Text, FText& Value);
     static void UPGDESC_HitCounter(class UClass* Item, class AFSDPlayerState* Player, class UClass* HitCounterClass, FText Upgrade_Text, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_DamageBonus_Random(class UClass* Item, class AFSDPlayerState* Player, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_CryoSprayProjectile(class UClass* Item, class AFSDPlayerState* Player, class UClass* ProjectileClass, FText UpgradeText, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_Generic(class AFSDPlayerState* Player, class UClass* Item, class UItemUpgrade* upgradeType, bool UseCustomText, FText Text, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void FormatUpgrade(FUpgradeValues& UpgradeValues, uint8 StatFormat, uint8 PreviewFormat, class UObject* __WorldContext, FText& BaseText, FText& UpgradeText, FText& Value, EItemPreviewStatus& Format, bool& HasAnyupgrades);
+    static void FormatUpgradeToEntry(FText& Text, FUpgradeValues& UpgradeValues, uint8 StatFormat, uint8 PreviewFormat, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_DPS(class UClass* Item, class UClass* upgradedItem, class AFSDPlayerState* Player, FText StatName, float Interval, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
+    static void FormatStatic(FText Text, float Value, uint8 Format, class UObject* __WorldContext, FGearStatEntry& GearStatEntry);
     static void UPGDESC_GooCannon(class UClass* Item, class AFSDPlayerState* Player, TEnum<EGooGunUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_DynamicSTE(class UClass* Item, class UClass* upgradedItem, class AFSDPlayerState* Player, TEnum<EModifyStatusEffectDamageUpgrade> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_GooCannon_Projectile(class UClass* Item, class UClass* upgradedItem, class AFSDPlayerState* Player, TEnum<EGooGunProjectileUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry);
@@ -78,10 +90,13 @@ public:
     static void UPGDESC_ProjectileLauncher(class UClass* Item, class AFSDPlayerState* Player, TEnum<EProjectileLauncherBaseUpgradeType> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasUpgradedValue);
     static void UPGDESC_Crossbow(class UClass* Item, TSubclassOf<class ACrossbowProjectileBase> Projectile, class AFSDPlayerState* Player, TEnum<ECrossbowUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_CoilGun(class UClass* Item, class AFSDPlayerState* Player, FText Prefix, TEnum<ECoilgunUpgrades> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
+    static void FormatToPercentageZeroBasedNormalized(float Base_Value, float Upgrade_Value, float Old_Upgrade_Value, float Final_Value, uint8 FormatType, class UObject* __WorldContext, FText& Base_Text, FText& Upgrade_Text, FText& Value);
     static void UPGDESC_MicrowaveGun(class UClass* Item, class AFSDPlayerState* Player, FText Prefix, TEnum<EMicrowaveGunUpgrade> upgradeType, bool UseTextOnly, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
     static void UPGDESC_CapsuleHitScan(class UClass* Item, class AFSDPlayerState* Player, TEnum<ECapsuleHitscanUpgradeType> upgradeType, class UObject* __WorldContext, FGearStatEntry& GearStatEntry, bool& HasAnyupgrades);
+    static void FormatValues(FUpgradeValues& UpgradeValues, uint8 Format, class UObject* __WorldContext, FText& BaseText, FText& UpgradeText, FText& Value);
+    static TEnum<EItemPreviewStatus> FormatPreviewStatus(bool FormatValue, FUpgradeValues& UpgradeValues, uint8 FormatType, class UObject* __WorldContext);
 };
 
 }}   // namespace Game::WeaponsNTools
 
-using BPL_UpgradeHelpers_C = Game::WeaponsNTools::BPL_UpgradeHelpers_C;
+using BPL_UpgradeHelpers_C = ::Game::WeaponsNTools::BPL_UpgradeHelpers_C;

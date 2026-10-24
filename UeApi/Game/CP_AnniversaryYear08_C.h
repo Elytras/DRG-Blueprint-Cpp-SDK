@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_AnniversaryYear08_C = Game::GameElements::Campaign::CP_AnniversaryYear08_C;
+using CP_AnniversaryYear08_C = ::Game::GameElements::Campaign::CP_AnniversaryYear08_C;

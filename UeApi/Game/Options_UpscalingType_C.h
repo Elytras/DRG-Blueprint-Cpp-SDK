@@ -16,7 +16,7 @@ class Options_UpscalingType_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_UpscalingType", "Options_UpscalingType_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     TArray<int> IndexMap;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_UpscalingType_C = Game::UI::Menu_Options::Options_UpscalingType_C;
+using Options_UpscalingType_C = ::Game::UI::Menu_Options::Options_UpscalingType_C;

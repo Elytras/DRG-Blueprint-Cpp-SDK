@@ -19,9 +19,9 @@ class Filter_ServerSeason_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/Filter_ServerSeason", "Filter_ServerSeason_C");
-    using Basic_ExpandableMenu_C = Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
-    using Check_ServerSeason_C = Game::UI::Menu_ServerList::Check_ServerSeason_C;
-    using Check_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::Check_ServerWorkEnvironment_C;
+    using Basic_ExpandableMenu_C = ::Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
+    using Check_ServerSeason_C = ::Game::UI::Menu_ServerList::Check_ServerSeason_C;
+    using Check_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::Check_ServerWorkEnvironment_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Check_ServerSeason_C* Check_ServerSeason;
     Check_ServerSeason_C* Check_ServerSeason_1;
@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using Filter_ServerSeason_C = Game::UI::Menu_ServerList::Filter_ServerSeason_C;
+using Filter_ServerSeason_C = ::Game::UI::Menu_ServerList::Filter_ServerSeason_C;

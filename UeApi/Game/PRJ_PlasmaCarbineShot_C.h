@@ -59,6 +59,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* P_ElectricPlasma__UeScsNode = "b5e4aab98d3a07449f693050f87a9679";
         static constexpr const char* Niagara_Shield__UeScsNode = "3906f825ac88424ba8ba1d95fbfc0f24";
         static constexpr const char* Niagara_HOT__UeScsNode = "4754ce0aea215d4b9af48782297f091a";
@@ -75,4 +76,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using PRJ_PlasmaCarbineShot_C = Game::WeaponsNTools::PlasmaCarbine::PRJ_PlasmaCarbineShot_C;
+using PRJ_PlasmaCarbineShot_C = ::Game::WeaponsNTools::PlasmaCarbine::PRJ_PlasmaCarbineShot_C;

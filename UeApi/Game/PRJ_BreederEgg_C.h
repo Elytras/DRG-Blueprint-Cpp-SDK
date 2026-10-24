@@ -58,4 +58,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using PRJ_BreederEgg_C = Game::Enemies::Jelly_Breeder::PRJ_BreederEgg_C;
+using PRJ_BreederEgg_C = ::Game::Enemies::Jelly_Breeder::PRJ_BreederEgg_C;

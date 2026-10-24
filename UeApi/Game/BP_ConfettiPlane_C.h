@@ -32,4 +32,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::PartyStreamers
 
-using BP_ConfettiPlane_C = Game::Art::Environments::SpaceRig::PartyStreamers::BP_ConfettiPlane_C;
+using BP_ConfettiPlane_C = ::Game::Art::Environments::SpaceRig::PartyStreamers::BP_ConfettiPlane_C;

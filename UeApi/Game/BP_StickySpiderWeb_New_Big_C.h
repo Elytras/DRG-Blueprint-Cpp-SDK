@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace StickySpiderWeb {
 
-class BP_StickySpiderWeb_New_Big_C : public Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::BP_StickySpiderWeb_New_C
+class BP_StickySpiderWeb_New_Big_C : public ::Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::BP_StickySpiderWeb_New_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/StickySpiderWeb/BP_StickySpiderWeb_New_Big", "BP_StickySpiderWeb_New_Big_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "BoxTrigger;SM_SpiderwebPlane01;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb
 
-using BP_StickySpiderWeb_New_Big_C = Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::BP_StickySpiderWeb_New_Big_C;
+using BP_StickySpiderWeb_New_Big_C = ::Game::LevelElements::RoomObjects::Hazards::StickySpiderWeb::BP_StickySpiderWeb_New_Big_C;

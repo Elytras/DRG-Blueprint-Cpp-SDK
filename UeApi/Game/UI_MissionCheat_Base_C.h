@@ -17,11 +17,11 @@ class UI_MissionCheat_Base_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_MissionCheat_Base", "UI_MissionCheat_Base_C");
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     CheatMenu_BasicButtonWText_C* CreateButton(FString Base_Text, FString Item_Text, class UPanelWidget*& Panel, const TArray<CheatMenu_BasicButtonWText_C*>& TargetArray);
     void TeleportTo(float desiredDistance, class AActor*& Taget);
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_MissionCheat_Base_C = Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C;
+using UI_MissionCheat_Base_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C;

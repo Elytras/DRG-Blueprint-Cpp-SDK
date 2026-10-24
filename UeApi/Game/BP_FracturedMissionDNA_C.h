@@ -18,4 +18,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using BP_FracturedMissionDNA_C = Game::GameElements::Missions::BP_FracturedMissionDNA_C;
+using BP_FracturedMissionDNA_C = ::Game::GameElements::Missions::BP_FracturedMissionDNA_C;

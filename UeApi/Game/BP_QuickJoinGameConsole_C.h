@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_QuickJoinGameConsole_C = Game::UI::HUD_SpaceRig::BP_QuickJoinGameConsole_C;
+using BP_QuickJoinGameConsole_C = ::Game::UI::HUD_SpaceRig::BP_QuickJoinGameConsole_C;

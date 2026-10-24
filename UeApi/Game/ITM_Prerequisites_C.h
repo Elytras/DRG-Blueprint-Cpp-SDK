@@ -37,4 +37,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using ITM_Prerequisites_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;
+using ITM_Prerequisites_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;

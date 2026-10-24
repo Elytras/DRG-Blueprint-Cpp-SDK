@@ -17,7 +17,7 @@ class UI_WeaponMaintenance_Header_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/WeaponMaintenance/UI_WeaponMaintenance_Header", "UI_WeaponMaintenance_Header_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* GradientImage;
     class UTextBlock* HeaderLabel;
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::UI::WeaponMaintenance
 
-using UI_WeaponMaintenance_Header_C = Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Header_C;
+using UI_WeaponMaintenance_Header_C = ::Game::UI::WeaponMaintenance::UI_WeaponMaintenance_Header_C;

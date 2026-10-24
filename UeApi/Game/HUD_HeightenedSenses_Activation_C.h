@@ -17,7 +17,7 @@ class HUD_HeightenedSenses_Activation_C : public UPerkHUDActivationWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_HeightenedSenses_Activation", "HUD_HeightenedSenses_Activation_C");
-    using HUD_Hold_Activation_C = Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;
+    using HUD_Hold_Activation_C = ::Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_Hold_Activation_C* HUD_Hold_Activation;
     void ExecuteUbergraph_HUD_HeightenedSenses_Activation(int EntryPoint);
@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_HeightenedSenses_Activation_C = Game::UI::MainOnscreenHUD::HUD_HeightenedSenses_Activation_C;
+using HUD_HeightenedSenses_Activation_C = ::Game::UI::MainOnscreenHUD::HUD_HeightenedSenses_Activation_C;

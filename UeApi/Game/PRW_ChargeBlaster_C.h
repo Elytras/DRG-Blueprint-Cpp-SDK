@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using PRW_ChargeBlaster_C = Game::WeaponsNTools::ChargeBlaster::PRW_ChargeBlaster_C;
+using PRW_ChargeBlaster_C = ::Game::WeaponsNTools::ChargeBlaster::PRW_ChargeBlaster_C;

@@ -50,4 +50,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::Defense
 
-using DefencePointActor_Base_C = Game::GameElements::Objectives::DeepDive::Defense::DefencePointActor_Base_C;
+using DefencePointActor_Base_C = ::Game::GameElements::Objectives::DeepDive::Defense::DefencePointActor_Base_C;

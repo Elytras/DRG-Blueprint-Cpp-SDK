@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks
 
-using BP_CroppaChunk_C = Game::GameElements::Resources::Veins::ResourceChunks::BP_CroppaChunk_C;
+using BP_CroppaChunk_C = ::Game::GameElements::Resources::Veins::ResourceChunks::BP_CroppaChunk_C;

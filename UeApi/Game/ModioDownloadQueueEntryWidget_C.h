@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Drawers::DownloadQueue
 
-using ModioDownloadQueueEntryWidget_C = Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueueEntryWidget_C;
+using ModioDownloadQueueEntryWidget_C = ::Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueueEntryWidget_C;

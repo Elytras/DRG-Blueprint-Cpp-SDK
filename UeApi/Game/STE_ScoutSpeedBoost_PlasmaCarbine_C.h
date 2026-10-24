@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using STE_ScoutSpeedBoost_PlasmaCarbine_C = Game::WeaponsNTools::PlasmaCarbine::STE_ScoutSpeedBoost_PlasmaCarbine_C;
+using STE_ScoutSpeedBoost_PlasmaCarbine_C = ::Game::WeaponsNTools::PlasmaCarbine::STE_ScoutSpeedBoost_PlasmaCarbine_C;

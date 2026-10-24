@@ -37,4 +37,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ScrollArrow_C = Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
+using Basic_ScrollArrow_C = ::Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;

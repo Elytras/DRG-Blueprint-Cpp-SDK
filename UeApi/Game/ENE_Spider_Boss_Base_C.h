@@ -13,7 +13,7 @@ class UFSDAchievement;
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss {
 
-class ENE_Spider_Boss_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Boss_Base_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/ENE_Spider_Boss_Base", "ENE_Spider_Boss_Base_C");
@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::TankBoss
 
-using ENE_Spider_Boss_Base_C = Game::Enemies::Spider::TankBoss::ENE_Spider_Boss_Base_C;
+using ENE_Spider_Boss_Base_C = ::Game::Enemies::Spider::TankBoss::ENE_Spider_Boss_Base_C;

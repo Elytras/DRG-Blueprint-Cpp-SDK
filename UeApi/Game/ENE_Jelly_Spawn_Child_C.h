@@ -11,7 +11,7 @@ class UMeleeAttackComponent;
 
 namespace Game { namespace Enemies { namespace Jellyfish {
 
-class ENE_Jelly_Spawn_Child_C : public Game::Enemies::Jellyfish::ENE_Jelly_Swarmer_C
+class ENE_Jelly_Spawn_Child_C : public ::Game::Enemies::Jellyfish::ENE_Jelly_Swarmer_C
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/ENE_Jelly_Spawn_Child", "ENE_Jelly_Spawn_Child_C");
@@ -20,10 +20,12 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;Trail";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* MeleeAttack__UeScsNode = "c0d02f9c72d6ca42b415db7daa6d5122";
     };
 };
 
 }}}   // namespace Game::Enemies::Jellyfish
 
-using ENE_Jelly_Spawn_Child_C = Game::Enemies::Jellyfish::ENE_Jelly_Spawn_Child_C;
+using ENE_Jelly_Spawn_Child_C = ::Game::Enemies::Jellyfish::ENE_Jelly_Spawn_Child_C;

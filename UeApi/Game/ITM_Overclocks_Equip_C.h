@@ -36,10 +36,10 @@ class ITM_Overclocks_Equip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/Overclocks/ITM_Overclocks_Equip", "ITM_Overclocks_Equip_C");
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using ITM_Overclock_Details_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
-    using ITM_Overclocks_Equip_Item_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_Item_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_Overclock_Details_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
+    using ITM_Overclocks_Equip_Item_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimPopUpSelection;
     UE_READONLY class UWidgetAnimation* AnimHoverButton;
@@ -113,4 +113,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Overclocks
 
-using ITM_Overclocks_Equip_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_C;
+using ITM_Overclocks_Equip_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_C;

@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Critters { namespace LootBug { namespace Hoarder {
 
-class ABP_SpiderHoarder_C : public Game::Enemies::Spider::Grunt::ABP_Spider_Grunt_C
+class ABP_SpiderHoarder_C : public ::Game::Enemies::Spider::Grunt::ABP_Spider_Grunt_C
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/Hoarder/ABP_SpiderHoarder", "ABP_SpiderHoarder_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Critters::LootBug::Hoarder
 
-using ABP_SpiderHoarder_C = Game::Critters::LootBug::Hoarder::ABP_SpiderHoarder_C;
+using ABP_SpiderHoarder_C = ::Game::Critters::LootBug::Hoarder::ABP_SpiderHoarder_C;

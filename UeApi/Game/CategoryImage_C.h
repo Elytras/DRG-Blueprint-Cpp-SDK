@@ -21,8 +21,8 @@ class CategoryImage_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/CategoryImage", "CategoryImage_C");
-    using Basic_BG_CutCorner_W_Image_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using Basic_BG_CutCorner_W_Image_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_BG_CutCorner_W_Image_C* Basic_BG_CutCorner_W_Image;
     ITM_MisSel_MissionIconBasic_C* ITM_MisSel_MissionIconBasic;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using CategoryImage_C = Game::UI::Menu_MinersManual::CategoryImage_C;
+using CategoryImage_C = ::Game::UI::Menu_MinersManual::CategoryImage_C;

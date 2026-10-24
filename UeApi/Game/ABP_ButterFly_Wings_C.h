@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::Critters::Butterfly
 
-using ABP_ButterFly_Wings_C = Game::Critters::Butterfly::ABP_ButterFly_Wings_C;
+using ABP_ButterFly_Wings_C = ::Game::Critters::Butterfly::ABP_ButterFly_Wings_C;

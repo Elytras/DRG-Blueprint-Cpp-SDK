@@ -149,4 +149,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DrillevatorEngine_C = Game::GameElements::Objectives::DeepScan::BP_DrillevatorEngine_C;
+using BP_DrillevatorEngine_C = ::Game::GameElements::Objectives::DeepScan::BP_DrillevatorEngine_C;

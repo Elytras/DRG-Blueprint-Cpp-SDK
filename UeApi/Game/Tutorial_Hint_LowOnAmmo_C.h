@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_LowOnAmmo_C = Game::Character::Tutorials::Tutorial_Hint_LowOnAmmo_C;
+using Tutorial_Hint_LowOnAmmo_C = ::Game::Character::Tutorials::Tutorial_Hint_LowOnAmmo_C;

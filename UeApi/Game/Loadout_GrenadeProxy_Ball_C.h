@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades {
 
-class Loadout_GrenadeProxy_Ball_C : public Game::WeaponsNTools::Grenades::Loadout_GrenadeProxyBase_C
+class Loadout_GrenadeProxy_Ball_C : public ::Game::WeaponsNTools::Grenades::Loadout_GrenadeProxyBase_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Loadout_GrenadeProxy_Ball", "Loadout_GrenadeProxy_Ball_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using Loadout_GrenadeProxy_Ball_C = Game::WeaponsNTools::Grenades::Loadout_GrenadeProxy_Ball_C;
+using Loadout_GrenadeProxy_Ball_C = ::Game::WeaponsNTools::Grenades::Loadout_GrenadeProxy_Ball_C;

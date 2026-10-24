@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using ABP_WoodlouseNew_C = Game::Enemies::Woodlouse::ABP_WoodlouseNew_C;
+using ABP_WoodlouseNew_C = ::Game::Enemies::Woodlouse::ABP_WoodlouseNew_C;

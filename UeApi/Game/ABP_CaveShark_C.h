@@ -59,4 +59,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Shark::Animations
 
-using ABP_CaveShark_C = Game::Enemies::Shark::Animations::ABP_CaveShark_C;
+using ABP_CaveShark_C = ::Game::Enemies::Shark::Animations::ABP_CaveShark_C;

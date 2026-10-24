@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing
 
-using BP_Phys_PatrollBot_Ball_C = Game::Game::SpaceRig::S01_SetDressing::BP_Phys_PatrollBot_Ball_C;
+using BP_Phys_PatrollBot_Ball_C = ::Game::Game::SpaceRig::S01_SetDressing::BP_Phys_PatrollBot_Ball_C;

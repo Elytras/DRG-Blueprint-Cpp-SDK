@@ -18,7 +18,7 @@ class UI_EarlyAccessThankYou_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_EarlyAccessThankYou", "UI_EarlyAccessThankYou_C");
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     ITM_MenuBackground_C* ITM_MenuBackground;
@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_EarlyAccessThankYou_C = Game::UI::Menu_StartScreen::UI_EarlyAccessThankYou_C;
+using UI_EarlyAccessThankYou_C = ::Game::UI::Menu_StartScreen::UI_EarlyAccessThankYou_C;

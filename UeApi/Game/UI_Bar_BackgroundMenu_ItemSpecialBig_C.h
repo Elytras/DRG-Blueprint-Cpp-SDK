@@ -21,7 +21,7 @@ class UI_Bar_BackgroundMenu_ItemSpecialBig_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_BackgroundMenu_ItemSpecialBig", "UI_Bar_BackgroundMenu_ItemSpecialBig_C");
-    using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
+    using UI_Bar_DrinkCost_C = ::Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* DrinkIconIdle;
     class UImage* DrinkIcon;
@@ -47,4 +47,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_BackgroundMenu_ItemSpecialBig_C = Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_ItemSpecialBig_C;
+using UI_Bar_BackgroundMenu_ItemSpecialBig_C = ::Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_ItemSpecialBig_C;

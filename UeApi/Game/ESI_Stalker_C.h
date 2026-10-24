@@ -13,7 +13,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Stalker {
 
-class ESI_Stalker_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Stalker_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stalker/ESI_Stalker", "ESI_Stalker_C");
@@ -45,10 +45,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* IsCloaked__Replicated = ":";
     };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using ESI_Stalker_C = Game::Enemies::Spider::Stalker::ESI_Stalker_C;
+using ESI_Stalker_C = ::Game::Enemies::Spider::Stalker::ESI_Stalker_C;

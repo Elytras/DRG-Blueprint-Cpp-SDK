@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol
 
-using PRW_BurstPistol_C = Game::WeaponsNTools::BurstFirePistol::PRW_BurstPistol_C;
+using PRW_BurstPistol_C = ::Game::WeaponsNTools::BurstFirePistol::PRW_BurstPistol_C;

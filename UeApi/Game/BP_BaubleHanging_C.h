@@ -51,4 +51,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_BaubleHanging_C = Game::Art::Environments::Holiday_Xmas::BP_BaubleHanging_C;
+using BP_BaubleHanging_C = ::Game::Art::Environments::Holiday_Xmas::BP_BaubleHanging_C;

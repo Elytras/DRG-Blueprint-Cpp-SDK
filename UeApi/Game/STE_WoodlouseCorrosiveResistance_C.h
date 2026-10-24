@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using STE_WoodlouseCorrosiveResistance_C = Game::Enemies::Woodlouse::STE_WoodlouseCorrosiveResistance_C;
+using STE_WoodlouseCorrosiveResistance_C = ::Game::Enemies::Woodlouse::STE_WoodlouseCorrosiveResistance_C;

@@ -13,7 +13,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefensiveTentacles {
 
-class ENE_FacilityTentacle_End_C : public Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C
+class ENE_FacilityTentacle_End_C : public ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle_End", "ENE_FacilityTentacle_End_C");
@@ -25,6 +25,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "BurrowAttack;NS_Inner_Energy;PointLight";
         static constexpr const char* UberGraphFrame_ENE_FacilityTentacle_End_C__UeName = "UberGraphFrame";
         static constexpr const char* Base__UeScsNode = "b1a357f0562dbb4ab4a59955b43bbf4a";
     };
@@ -32,4 +33,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using ENE_FacilityTentacle_End_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_End_C;
+using ENE_FacilityTentacle_End_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_End_C;

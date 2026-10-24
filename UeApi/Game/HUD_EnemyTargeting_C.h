@@ -25,10 +25,10 @@ class HUD_EnemyTargeting_C : public ULookingAtWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/EnemyHealthBar/HUD_EnemyTargeting", "HUD_EnemyTargeting_C");
-    using HUD_EnemyTargeting_AfflictionBox_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_AfflictionBox_C;
-    using HUD_EnemyTargeting_HealthBar_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_C;
-    using HUD_EnemyTargeting_HealthBar_Elite_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_Elite_C;
-    using HUD_EnemyTargeting_Temperature_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;
+    using HUD_EnemyTargeting_AfflictionBox_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_AfflictionBox_C;
+    using HUD_EnemyTargeting_HealthBar_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_C;
+    using HUD_EnemyTargeting_HealthBar_Elite_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_HealthBar_Elite_C;
+    using HUD_EnemyTargeting_Temperature_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* DeadAnim;
     UE_READONLY class UWidgetAnimation* Intro;
@@ -60,4 +60,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar
 
-using HUD_EnemyTargeting_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_C;
+using HUD_EnemyTargeting_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_C;

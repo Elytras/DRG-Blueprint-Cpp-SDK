@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::Holiday_BeachParty
 
-using ABP_summer_shark_C = Game::Art::Environments::Holiday_BeachParty::ABP_summer_shark_C;
+using ABP_summer_shark_C = ::Game::Art::Environments::Holiday_BeachParty::ABP_summer_shark_C;

@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnBeers_C = Game::UI::Menu_Cheats::Cheat_SpawnBeers_C;
+using Cheat_SpawnBeers_C = ::Game::UI::Menu_Cheats::Cheat_SpawnBeers_C;

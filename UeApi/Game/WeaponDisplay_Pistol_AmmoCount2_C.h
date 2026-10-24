@@ -15,11 +15,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace Pistol {
 
-class WeaponDisplay_Pistol_AmmoCount2_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Pistol_AmmoCount2_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/WeaponDisplay_Pistol_AmmoCount2", "WeaponDisplay_Pistol_AmmoCount2_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_Pistol_AmmoCount2_C;
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pistol
 
-using WeaponDisplay_Pistol_AmmoCount2_C = Game::WeaponsNTools::Pistol::WeaponDisplay_Pistol_AmmoCount2_C;
+using WeaponDisplay_Pistol_AmmoCount2_C = ::Game::WeaponsNTools::Pistol::WeaponDisplay_Pistol_AmmoCount2_C;

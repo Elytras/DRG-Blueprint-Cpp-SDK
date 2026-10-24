@@ -16,7 +16,7 @@ class Options_ShowInfoScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_ShowInfoScreen", "Options_ShowInfoScreen_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     int PreviousStatus;
@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_ShowInfoScreen_C = Game::UI::Menu_Options::Options_ShowInfoScreen_C;
+using Options_ShowInfoScreen_C = ::Game::UI::Menu_Options::Options_ShowInfoScreen_C;

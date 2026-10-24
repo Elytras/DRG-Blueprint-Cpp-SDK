@@ -25,4 +25,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsBoxSpawner_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsBoxSpawner_C;
+using BP_JetBootsBoxSpawner_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsBoxSpawner_C;

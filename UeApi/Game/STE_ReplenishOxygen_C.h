@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen
 
-using STE_ReplenishOxygen_C = Game::GameElements::Missions::Warnings::NoOxygen::STE_ReplenishOxygen_C;
+using STE_ReplenishOxygen_C = ::Game::GameElements::Missions::Warnings::NoOxygen::STE_ReplenishOxygen_C;

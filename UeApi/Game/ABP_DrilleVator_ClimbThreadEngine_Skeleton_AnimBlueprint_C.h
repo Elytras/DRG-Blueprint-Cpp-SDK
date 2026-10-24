@@ -33,4 +33,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::DeepScan::Drillevator::ClimbThreadEngine
 
-using ABP_DrilleVator_ClimbThreadEngine_Skeleton_AnimBlueprint_C = Game::GameElements::Objectives::DeepScan::Drillevator::ClimbThreadEngine::ABP_DrilleVator_ClimbThreadEngine_Skeleton_AnimBlueprint_C;
+using ABP_DrilleVator_ClimbThreadEngine_Skeleton_AnimBlueprint_C = ::Game::GameElements::Objectives::DeepScan::Drillevator::ClimbThreadEngine::ABP_DrilleVator_ClimbThreadEngine_Skeleton_AnimBlueprint_C;

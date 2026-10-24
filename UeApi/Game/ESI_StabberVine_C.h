@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::Enemies::StabberVine
 
-using ESI_StabberVine_C = Game::Enemies::StabberVine::ESI_StabberVine_C;
+using ESI_StabberVine_C = ::Game::Enemies::StabberVine::ESI_StabberVine_C;

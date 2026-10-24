@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_CookEnemy_C = Game::Character::Camera::CameraShakes::CameraShake_CookEnemy_C;
+using CameraShake_CookEnemy_C = ::Game::Character::Camera::CameraShakes::CameraShake_CookEnemy_C;

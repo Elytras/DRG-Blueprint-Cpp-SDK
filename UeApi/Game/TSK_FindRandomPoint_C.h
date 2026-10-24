@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindRandomPoint_C = Game::AI::Tasks::TSK_FindRandomPoint_C;
+using TSK_FindRandomPoint_C = ::Game::AI::Tasks::TSK_FindRandomPoint_C;

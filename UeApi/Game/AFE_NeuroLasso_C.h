@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::NeuroLassoSlow
 
-using AFE_NeuroLasso_C = Game::GameElements::PawnAffliction::EnemyEffects::NeuroLassoSlow::AFE_NeuroLasso_C;
+using AFE_NeuroLasso_C = ::Game::GameElements::PawnAffliction::EnemyEffects::NeuroLassoSlow::AFE_NeuroLasso_C;

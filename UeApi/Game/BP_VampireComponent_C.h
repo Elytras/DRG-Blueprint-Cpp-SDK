@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_VampireComponent_C = Game::GameElements::KPI::Perks::BP_VampireComponent_C;
+using BP_VampireComponent_C = ::Game::GameElements::KPI::Perks::BP_VampireComponent_C;

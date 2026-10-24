@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindRandomPointFrom_Leash_C = Game::AI::Tasks::TSK_FindRandomPointFrom_Leash_C;
+using TSK_FindRandomPointFrom_Leash_C = ::Game::AI::Tasks::TSK_FindRandomPointFrom_Leash_C;

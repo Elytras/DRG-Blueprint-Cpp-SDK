@@ -24,4 +24,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ShieldDisruption
 
-using BP_ShieldDisruption_C = Game::GameElements::Missions::Warnings::ShieldDisruption::BP_ShieldDisruption_C;
+using BP_ShieldDisruption_C = ::Game::GameElements::Missions::Warnings::ShieldDisruption::BP_ShieldDisruption_C;

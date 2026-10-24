@@ -20,7 +20,7 @@ class HUD_ActorTrackingIcon_C : public UActorTrackingWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_ActorTrackingIcon", "HUD_ActorTrackingIcon_C");
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Arrow;
     class UImage* DataImage;
@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_ActorTrackingIcon_C = Game::UI::MainOnscreenHUD::HUD_ActorTrackingIcon_C;
+using HUD_ActorTrackingIcon_C = ::Game::UI::MainOnscreenHUD::HUD_ActorTrackingIcon_C;

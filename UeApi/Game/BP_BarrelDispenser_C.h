@@ -14,7 +14,7 @@ class USphereComponent;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace ExplosiveBarrelsEvent {
 
-class BP_BarrelDispenser_C : public Game::GameElements::ItemDispenser::BP_ItemDispenserBase_C
+class BP_BarrelDispenser_C : public ::Game::GameElements::ItemDispenser::BP_ItemDispenserBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_BarrelDispenser", "BP_BarrelDispenser_C");
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent
 
-using BP_BarrelDispenser_C = Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_BarrelDispenser_C;
+using BP_BarrelDispenser_C = ::Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_BarrelDispenser_C;

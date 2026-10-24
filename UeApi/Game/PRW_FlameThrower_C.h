@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using PRW_FlameThrower_C = Game::WeaponsNTools::FlameThrower::PRW_FlameThrower_C;
+using PRW_FlameThrower_C = ::Game::WeaponsNTools::FlameThrower::PRW_FlameThrower_C;

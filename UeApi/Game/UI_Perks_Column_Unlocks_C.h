@@ -17,7 +17,7 @@ class UI_Perks_Column_Unlocks_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Perks_Column_Unlocks", "UI_Perks_Column_Unlocks_C");
-    using UI_Perks_Column_Unlocks_Arrow_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_Arrow_C;
+    using UI_Perks_Column_Unlocks_Arrow_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_Arrow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* ArrowBox;
     int ArrowCount;
@@ -38,4 +38,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Perks_Column_Unlocks_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_C;
+using UI_Perks_Column_Unlocks_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_C;

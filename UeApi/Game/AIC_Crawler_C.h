@@ -29,4 +29,4 @@ private:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using AIC_Crawler_C = Game::Enemies::Crawler::AIC_Crawler_C;
+using AIC_Crawler_C = ::Game::Enemies::Crawler::AIC_Crawler_C;

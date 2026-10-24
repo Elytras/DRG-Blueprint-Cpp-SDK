@@ -19,8 +19,8 @@ class UI_Facility_Objective_Caretaker_C : public UOptionalObjectiveWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/UI/UI_Facility_Objective_Caretaker", "UI_Facility_Objective_Caretaker_C");
-    using BP_MainFacility_DataVault_C = Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using BP_MainFacility_DataVault_C = ::Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ImageTinted_C* Img_Caretaker_Outline;
     UI_ImageTinted_C* Img_Caretaker_Solid;
@@ -42,4 +42,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::UI
 
-using UI_Facility_Objective_Caretaker_C = Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_Caretaker_C;
+using UI_Facility_Objective_Caretaker_C = ::Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_Caretaker_C;

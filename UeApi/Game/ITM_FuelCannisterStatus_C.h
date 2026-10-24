@@ -22,7 +22,7 @@ class ITM_FuelCannisterStatus_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/DrillingVehicle/ITM_FuelCannisterStatus", "ITM_FuelCannisterStatus_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UProgressBar* FuelProgressBar;
     class UImage* Img_Complete;
@@ -47,4 +47,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::DrillingVehicle
 
-using ITM_FuelCannisterStatus_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_FuelCannisterStatus_C;
+using ITM_FuelCannisterStatus_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_FuelCannisterStatus_C;

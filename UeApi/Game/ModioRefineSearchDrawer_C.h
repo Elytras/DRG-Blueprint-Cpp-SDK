@@ -20,4 +20,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Drawers::RefineSearch
 
-using ModioRefineSearchDrawer_C = Modio::UI::Browser::Drawers::RefineSearch::ModioRefineSearchDrawer_C;
+using ModioRefineSearchDrawer_C = ::Modio::UI::Browser::Drawers::RefineSearch::ModioRefineSearchDrawer_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SeaUrchin
 
-using STE_SeaUrchin_C = Game::LevelElements::RoomObjects::Hazards::SeaUrchin::STE_SeaUrchin_C;
+using STE_SeaUrchin_C = ::Game::LevelElements::RoomObjects::Hazards::SeaUrchin::STE_SeaUrchin_C;

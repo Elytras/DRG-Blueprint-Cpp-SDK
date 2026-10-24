@@ -73,4 +73,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets
 
-using BP_RedThornFlower_Alone_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::BP_RedThornFlower_Alone_C;
+using BP_RedThornFlower_Alone_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::BP_RedThornFlower_Alone_C;

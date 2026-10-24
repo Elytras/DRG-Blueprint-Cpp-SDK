@@ -16,7 +16,7 @@ class HUD_Health_Player_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Health_Player", "HUD_Health_Player_C");
-    using HUD_Health_Base_C = Game::UI::MainOnscreenHUD::HUD_Health_Base_C;
+    using HUD_Health_Base_C = ::Game::UI::MainOnscreenHUD::HUD_Health_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_Health_Base_C* HUD_Health;
     void ExecuteUbergraph_HUD_Health_Player(int EntryPoint);
@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Health_Player_C = Game::UI::MainOnscreenHUD::HUD_Health_Player_C;
+using HUD_Health_Player_C = ::Game::UI::MainOnscreenHUD::HUD_Health_Player_C;

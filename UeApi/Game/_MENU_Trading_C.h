@@ -24,11 +24,11 @@ class _MENU_Trading_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/_MENU_Trading", "_MENU_Trading_C");
-    using ITM_NewsTicker_C = Game::UI::Menu_Trading::ITM_NewsTicker_C;
-    using MENU_LockedTemplate_C = Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using WND_Trading_DailyDeal_C = Game::UI::Menu_Trading::WND_Trading_DailyDeal_C;
-    using WND_Trading_Resources_C = Game::UI::Menu_Trading::WND_Trading_Resources_C;
+    using ITM_NewsTicker_C = ::Game::UI::Menu_Trading::ITM_NewsTicker_C;
+    using MENU_LockedTemplate_C = ::Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using WND_Trading_DailyDeal_C = ::Game::UI::Menu_Trading::WND_Trading_DailyDeal_C;
+    using WND_Trading_Resources_C = ::Game::UI::Menu_Trading::WND_Trading_Resources_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button_TradeTicker;
     class UImage* I_HeaderSeparator;
@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using _MENU_Trading_C = Game::UI::Menu_Trading::_MENU_Trading_C;
+using _MENU_Trading_C = ::Game::UI::Menu_Trading::_MENU_Trading_C;

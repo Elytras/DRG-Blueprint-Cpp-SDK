@@ -19,7 +19,7 @@ class MatrixCore_Display_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/MatrixCore/MatrixCore_Display", "MatrixCore_Display_C");
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_55;
     ITM_Overclock_Icon_C* ITM_Overclock_Icon;
@@ -32,4 +32,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::MatrixCore
 
-using MatrixCore_Display_C = Game::GameElements::GameEvents::RewardDispenser::MatrixCore::MatrixCore_Display_C;
+using MatrixCore_Display_C = ::Game::GameElements::GameEvents::RewardDispenser::MatrixCore::MatrixCore_Display_C;

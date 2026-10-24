@@ -18,8 +18,8 @@ class ITM_CommunityGoalRecruitment_ConsoleScreenV1_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalRecruitment_ConsoleScreenV1", "ITM_CommunityGoalRecruitment_ConsoleScreenV1_C");
-    using ITM_CommunityGoalResult_ConsoleScreenV1_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_ConsoleScreenV1_C;
-    using ITM_ResetFaction_ConsoleScreenV1_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_ResetFaction_ConsoleScreenV1_C;
+    using ITM_CommunityGoalResult_ConsoleScreenV1_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_ConsoleScreenV1_C;
+    using ITM_ResetFaction_ConsoleScreenV1_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_ResetFaction_ConsoleScreenV1_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_CommunityGoalResult_ConsoleScreenV1_C* CurrentFactionGoalResult;
     ITM_CommunityGoalResult_ConsoleScreenV1_C* Faction1GoalResult;
@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalRecruitment_ConsoleScreenV1_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_ConsoleScreenV1_C;
+using ITM_CommunityGoalRecruitment_ConsoleScreenV1_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_ConsoleScreenV1_C;

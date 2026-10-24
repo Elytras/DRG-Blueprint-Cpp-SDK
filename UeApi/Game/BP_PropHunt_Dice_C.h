@@ -35,4 +35,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05
 
-using BP_PropHunt_Dice_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05::BP_PropHunt_Dice_C;
+using BP_PropHunt_Dice_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05::BP_PropHunt_Dice_C;

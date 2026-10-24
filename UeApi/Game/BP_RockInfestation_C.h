@@ -31,4 +31,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RockInfestation
 
-using BP_RockInfestation_C = Game::GameElements::Missions::Warnings::RockInfestation::BP_RockInfestation_C;
+using BP_RockInfestation_C = ::Game::GameElements::Missions::Warnings::RockInfestation::BP_RockInfestation_C;

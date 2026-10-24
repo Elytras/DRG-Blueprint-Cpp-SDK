@@ -25,12 +25,12 @@ class Popup_ModdedSave_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/Popup_ModdedSave", "Popup_ModdedSave_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using ITM_CreateNewSaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_CreateNewSaveSlot_Entry_C;
-    using ITM_SaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
-    using ITM_SaveSlot_Entry_Header_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using ITM_CreateNewSaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_CreateNewSaveSlot_Entry_C;
+    using ITM_SaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_C;
+    using ITM_SaveSlot_Entry_Header_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UBorder* Border_0;
@@ -72,4 +72,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using Popup_ModdedSave_C = Game::UI::Menu_SaveSlots::Popup_ModdedSave_C;
+using Popup_ModdedSave_C = ::Game::UI::Menu_SaveSlots::Popup_ModdedSave_C;

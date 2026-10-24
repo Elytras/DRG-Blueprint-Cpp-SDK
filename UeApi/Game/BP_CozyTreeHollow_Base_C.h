@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::CozyTreeHollows
 
-using BP_CozyTreeHollow_Base_C = Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C;
+using BP_CozyTreeHollow_Base_C = ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C;

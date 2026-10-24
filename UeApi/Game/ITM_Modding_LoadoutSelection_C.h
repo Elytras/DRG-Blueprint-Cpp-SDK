@@ -21,9 +21,9 @@ class ITM_Modding_LoadoutSelection_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/ITM_Modding_LoadoutSelection", "ITM_Modding_LoadoutSelection_C");
-    using Basic_ToolTip_HeadlineAndText_C = Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
-    using ITM_LoadoutIconSelector_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIconSelector_C;
-    using ITM_Modding_Loadout_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Loadout_C;
+    using Basic_ToolTip_HeadlineAndText_C = ::Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
+    using ITM_LoadoutIconSelector_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIconSelector_C;
+    using ITM_Modding_Loadout_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Loadout_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_LoadoutIconSelector_C* ITM_LoadoutIconSelector;
     ITM_Modding_Loadout_C* ITM_Modding_LoadoutA;
@@ -51,4 +51,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using ITM_Modding_LoadoutSelection_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_LoadoutSelection_C;
+using ITM_Modding_LoadoutSelection_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_LoadoutSelection_C;

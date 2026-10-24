@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using STE_Spider_Boss_TwinB_Flame_C = Game::Enemies::Spider::TankBoss::BossTwins::STE_Spider_Boss_TwinB_Flame_C;
+using STE_Spider_Boss_TwinB_Flame_C = ::Game::Enemies::Spider::TankBoss::BossTwins::STE_Spider_Boss_TwinB_Flame_C;

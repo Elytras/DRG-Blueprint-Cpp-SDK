@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using OBJ_1st_Salvage_C = Game::GameElements::Objectives::Salvage::OBJ_1st_Salvage_C;
+using OBJ_1st_Salvage_C = ::Game::GameElements::Objectives::Salvage::OBJ_1st_Salvage_C;

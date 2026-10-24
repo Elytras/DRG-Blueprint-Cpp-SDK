@@ -19,9 +19,9 @@ class Filter_ServerGameType_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/Filter_ServerGameType", "Filter_ServerGameType_C");
-    using Basic_BoolUserSetting_C = Game::UI::Art::WidgetParts::Basic_BoolUserSetting_C;
-    using Basic_ExpandableMenu_C = Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
-    using Check_ServerGameType_C = Game::UI::Menu_ServerList::Check_ServerGameType_C;
+    using Basic_BoolUserSetting_C = ::Game::UI::Art::WidgetParts::Basic_BoolUserSetting_C;
+    using Basic_ExpandableMenu_C = ::Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
+    using Check_ServerGameType_C = ::Game::UI::Menu_ServerList::Check_ServerGameType_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Check_ServerGameType_C* Check_Approved;
     Check_ServerGameType_C* Check_Sandbox;
@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using Filter_ServerGameType_C = Game::UI::Menu_ServerList::Filter_ServerGameType_C;
+using Filter_ServerGameType_C = ::Game::UI::Menu_ServerList::Filter_ServerGameType_C;

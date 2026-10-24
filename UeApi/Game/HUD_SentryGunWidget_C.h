@@ -29,8 +29,8 @@ class HUD_SentryGunWidget_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/HUD_SentryGunWidget", "HUD_SentryGunWidget_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AmmoDepleted;
     UE_READONLY class UWidgetAnimation* SentryPlaced;
@@ -86,4 +86,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using HUD_SentryGunWidget_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryGunWidget_C;
+using HUD_SentryGunWidget_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryGunWidget_C;

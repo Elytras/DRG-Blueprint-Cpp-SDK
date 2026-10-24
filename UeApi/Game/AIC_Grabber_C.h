@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Grabber
 
-using AIC_Grabber_C = Game::Enemies::FlyingBug::Grabber::AIC_Grabber_C;
+using AIC_Grabber_C = ::Game::Enemies::FlyingBug::Grabber::AIC_Grabber_C;

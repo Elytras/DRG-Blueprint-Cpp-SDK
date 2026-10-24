@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_EquipItem_C = Game::Character::Tutorials::Tutorial_Hint_EquipItem_C;
+using Tutorial_Hint_EquipItem_C = ::Game::Character::Tutorials::Tutorial_Hint_EquipItem_C;

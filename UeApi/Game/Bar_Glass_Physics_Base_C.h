@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using Bar_Glass_Physics_Base_C = Game::GameElements::Bar::Bar_Glass_Physics_Base_C;
+using Bar_Glass_Physics_Base_C = ::Game::GameElements::Bar::Bar_Glass_Physics_Base_C;

@@ -16,7 +16,7 @@ class ABP_DroppodAirlock_C : public UAnimInstance
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Assets/Airlock/ABP_DroppodAirlock", "ABP_DroppodAirlock_C");
-    using BP_DropPod_Base_C = Game::LevelElements::Droppod::BP_DropPod_Base_C;
+    using BP_DropPod_Base_C = ::Game::LevelElements::Droppod::BP_DropPod_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_10;
@@ -56,4 +56,4 @@ public:
 
 }}}}}   // namespace Game::Art::DropPod::Assets::Airlock
 
-using ABP_DroppodAirlock_C = Game::Art::DropPod::Assets::Airlock::ABP_DroppodAirlock_C;
+using ABP_DroppodAirlock_C = ::Game::Art::DropPod::Assets::Airlock::ABP_DroppodAirlock_C;

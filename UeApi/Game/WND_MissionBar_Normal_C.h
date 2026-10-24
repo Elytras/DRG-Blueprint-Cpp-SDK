@@ -27,14 +27,14 @@ class WND_MissionBar_Normal_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionOverview/WND_MissionBar_Normal", "WND_MissionBar_Normal_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
-    using ITM_MisSel_DotMarker_CaveDifficulty_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
-    using ITM_MisSel_DotMarker_MissionLength_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_MissionBar_Objective_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Objective_C;
-    using ITM_MissionBar_Warning_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Warning_C;
-    using UI_HazPlus_Row_C = Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using ITM_MisSel_DotMarker_CaveDifficulty_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
+    using ITM_MisSel_DotMarker_MissionLength_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_MissionBar_Objective_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Objective_C;
+    using ITM_MissionBar_Warning_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Warning_C;
+    using UI_HazPlus_Row_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ANIM_AssignmentIcon_Throb;
     UE_READONLY class UWidgetAnimation* ANIM_Intro;
@@ -81,4 +81,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using WND_MissionBar_Normal_C = Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_Normal_C;
+using WND_MissionBar_Normal_C = ::Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_Normal_C;

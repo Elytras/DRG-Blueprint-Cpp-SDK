@@ -17,7 +17,7 @@ class Basic_OptionSlider_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_OptionSlider", "Basic_OptionSlider_C");
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Slider_C* Basic_Slider;
     class UBorder* Border_Outer;
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_OptionSlider_C = Game::UI::Art::WidgetParts::Basic_OptionSlider_C;
+using Basic_OptionSlider_C = ::Game::UI::Art::WidgetParts::Basic_OptionSlider_C;

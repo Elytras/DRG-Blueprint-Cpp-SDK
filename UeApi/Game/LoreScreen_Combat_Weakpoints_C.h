@@ -17,14 +17,14 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens { namespace Combat {
 
-class LoreScreen_Combat_Weakpoints_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_Combat_Weakpoints_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/Combat/LoreScreen_Combat_Weakpoints", "LoreScreen_Combat_Weakpoints_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_Text_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_C;
-    using Lore_Container_WindowTextAndIcon_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_Text_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_C;
+    using Lore_Container_WindowTextAndIcon_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Combat_Weakpoints_C;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner;
     class UImage* Image_Creature;
@@ -49,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Combat
 
-using LoreScreen_Combat_Weakpoints_C = Game::UI::Menu_MinersManual::InfoScreens::Combat::LoreScreen_Combat_Weakpoints_C;
+using LoreScreen_Combat_Weakpoints_C = ::Game::UI::Menu_MinersManual::InfoScreens::Combat::LoreScreen_Combat_Weakpoints_C;

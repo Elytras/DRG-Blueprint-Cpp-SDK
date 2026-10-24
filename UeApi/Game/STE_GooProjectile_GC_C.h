@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using STE_GooProjectile_GC_C = Game::WeaponsNTools::GooCannon::STE_GooProjectile_GC_C;
+using STE_GooProjectile_GC_C = ::Game::WeaponsNTools::GooCannon::STE_GooProjectile_GC_C;

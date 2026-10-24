@@ -15,7 +15,7 @@ class UTimelineComponent;
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class PRJ_BigGooProjectile_C : public Game::WeaponsNTools::GooCannon::PRJ_BaseBigGooProjectile_C
+class PRJ_BigGooProjectile_C : public ::Game::WeaponsNTools::GooCannon::PRJ_BaseBigGooProjectile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BigGooProjectile", "PRJ_BigGooProjectile_C");
@@ -37,6 +37,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Niagara";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.PushDynamicStatusEffectDamageBonus Damage_GEN_VARIABLE:PushDynamicStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_C__UeName = "UberGraphFrame";
         static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_74F2130944154F0318A73A910B7DD01B";
     };
@@ -44,4 +46,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using PRJ_BigGooProjectile_C = Game::WeaponsNTools::GooCannon::PRJ_BigGooProjectile_C;
+using PRJ_BigGooProjectile_C = ::Game::WeaponsNTools::GooCannon::PRJ_BigGooProjectile_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Xmas_Elf_Outfit_C = Game::GameElements::Campaign::CP_Xmas_Elf_Outfit_C;
+using CP_Xmas_Elf_Outfit_C = ::Game::GameElements::Campaign::CP_Xmas_Elf_Outfit_C;

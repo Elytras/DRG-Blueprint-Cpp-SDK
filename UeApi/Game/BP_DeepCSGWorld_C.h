@@ -22,4 +22,4 @@ private:
 
 }}   // namespace Game::Landscape
 
-using BP_DeepCSGWorld_C = Game::Landscape::BP_DeepCSGWorld_C;
+using BP_DeepCSGWorld_C = ::Game::Landscape::BP_DeepCSGWorld_C;

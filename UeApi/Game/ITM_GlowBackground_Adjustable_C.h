@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
+using ITM_GlowBackground_Adjustable_C = ::Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;

@@ -16,12 +16,12 @@ class MENU_PatchNotes_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/MENU_PatchNotes", "MENU_PatchNotes_C");
-    using ITM_SocialMediaButtons_C = Game::UI::Menu_EscapeMenu::ITM_SocialMediaButtons_C;
-    using UI_PatchNotes_C = Game::UI::Menu_StartScreen::UI_PatchNotes_C;
+    using ITM_SocialMediaButtons_C = ::Game::UI::Menu_EscapeMenu::ITM_SocialMediaButtons_C;
+    using UI_PatchNotes_C = ::Game::UI::Menu_StartScreen::UI_PatchNotes_C;
     ITM_SocialMediaButtons_C* ITM_SocialMediaButtons;
     UI_PatchNotes_C* UI_PatchNotes;
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using MENU_PatchNotes_C = Game::UI::Menu_EscapeMenu::MENU_PatchNotes_C;
+using MENU_PatchNotes_C = ::Game::UI::Menu_EscapeMenu::MENU_PatchNotes_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun
 
-using STE_ScoutSpeedBoost_C = Game::WeaponsNTools::GrapplingGun::STE_ScoutSpeedBoost_C;
+using STE_ScoutSpeedBoost_C = ::Game::WeaponsNTools::GrapplingGun::STE_ScoutSpeedBoost_C;

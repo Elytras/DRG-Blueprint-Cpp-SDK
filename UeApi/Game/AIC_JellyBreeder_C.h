@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using AIC_JellyBreeder_C = Game::Enemies::Jelly_Breeder::AIC_JellyBreeder_C;
+using AIC_JellyBreeder_C = ::Game::Enemies::Jelly_Breeder::AIC_JellyBreeder_C;

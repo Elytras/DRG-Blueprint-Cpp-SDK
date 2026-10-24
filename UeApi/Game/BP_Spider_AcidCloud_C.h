@@ -11,7 +11,7 @@ class UStatusEffectsComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Tank {
 
-class BP_Spider_AcidCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
+class BP_Spider_AcidCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/BP_Spider_AcidCloud", "BP_Spider_AcidCloud_C");
@@ -19,10 +19,12 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "CombustionDamageFire;CombustionDamageIce;Sphere;StatusEffectTrigger";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CombustionDamageFire_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus CombustionDamageIce_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* StatusEffects__UeScsNode = "70bd4ed612ebf240a26d1d4ccd6454d6";
     };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Tank
 
-using BP_Spider_AcidCloud_C = Game::Enemies::Spider::Tank::BP_Spider_AcidCloud_C;
+using BP_Spider_AcidCloud_C = ::Game::Enemies::Spider::Tank::BP_Spider_AcidCloud_C;

@@ -18,8 +18,8 @@ class ITM_MisSel_Timer_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_Timer", "ITM_MisSel_Timer_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_Timer_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Timer_C;
+using ITM_MisSel_Timer_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Timer_C;

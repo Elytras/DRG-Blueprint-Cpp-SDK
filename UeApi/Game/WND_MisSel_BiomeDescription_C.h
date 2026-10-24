@@ -22,11 +22,11 @@ class WND_MisSel_BiomeDescription_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/WND_MisSel_BiomeDescription", "WND_MisSel_BiomeDescription_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_MisSel_ResourceIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ResourceIcon_C;
-    using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_MisSel_ResourceIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ResourceIcon_C;
+    using ShadowBG_C = ::Game::UI::_GlobalAssets::ShadowBG_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using WND_MisSel_BiomeDescription_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_BiomeDescription_C;
+using WND_MisSel_BiomeDescription_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_BiomeDescription_C;

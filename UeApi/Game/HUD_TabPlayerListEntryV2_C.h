@@ -25,11 +25,11 @@ class HUD_TabPlayerListEntryV2_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Tab/HUD_TabPlayerListEntryV2", "HUD_TabPlayerListEntryV2_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_HealthBar_C = Game::UI::Global_UI_Elements::ITM_HealthBar_C;
-    using ITM_SupplyBar_C = Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
-    using UI_NameTags_C = Game::UI::HUD_SpaceRig::UI_NameTags_C;
-    using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_HealthBar_C = ::Game::UI::Global_UI_Elements::ITM_HealthBar_C;
+    using ITM_SupplyBar_C = ::Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
+    using UI_NameTags_C = ::Game::UI::HUD_SpaceRig::UI_NameTags_C;
+    using UI_PlayerSpeaking_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_SupplyBar_C* AmmoBar;
     class UBorder* Border_CharacterLevel;
@@ -63,4 +63,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Tab
 
-using HUD_TabPlayerListEntryV2_C = Game::UI::Menu_Tab::HUD_TabPlayerListEntryV2_C;
+using HUD_TabPlayerListEntryV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerListEntryV2_C;

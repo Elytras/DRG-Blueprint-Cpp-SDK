@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_WalkingState_C = Game::Character::States::BP_WalkingState_C;
+using BP_WalkingState_C = ::Game::Character::States::BP_WalkingState_C;

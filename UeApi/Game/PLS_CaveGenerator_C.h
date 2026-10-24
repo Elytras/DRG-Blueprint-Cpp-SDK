@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape {
 
-class PLS_CaveGenerator_C : public Game::Landscape::PLS_Base_C
+class PLS_CaveGenerator_C : public ::Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/PLS_CaveGenerator", "PLS_CaveGenerator_C");
@@ -28,4 +28,4 @@ private:
 
 }}   // namespace Game::Landscape
 
-using PLS_CaveGenerator_C = Game::Landscape::PLS_CaveGenerator_C;
+using PLS_CaveGenerator_C = ::Game::Landscape::PLS_CaveGenerator_C;

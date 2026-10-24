@@ -37,4 +37,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Particles
 
-using BP_Spider_Leg_Base_C = Game::Enemies::Spider::Particles::BP_Spider_Leg_Base_C;
+using BP_Spider_Leg_Base_C = ::Game::Enemies::Spider::Particles::BP_Spider_Leg_Base_C;

@@ -26,10 +26,10 @@ class ITM_CommunityGoalInformation_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalInformation", "ITM_CommunityGoalInformation_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_FactionToolTip_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_FactionToolTip_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;
@@ -64,4 +64,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalInformation_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalInformation_C;
+using ITM_CommunityGoalInformation_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalInformation_C;

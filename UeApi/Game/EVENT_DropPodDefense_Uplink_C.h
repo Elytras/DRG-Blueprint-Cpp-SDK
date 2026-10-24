@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Salvage {
 
-class EVENT_DropPodDefense_Uplink_C : public Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C
+class EVENT_DropPodDefense_Uplink_C : public ::Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/EVENT_DropPodDefense_Uplink", "EVENT_DropPodDefense_Uplink_C");
@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using EVENT_DropPodDefense_Uplink_C = Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Uplink_C;
+using EVENT_DropPodDefense_Uplink_C = ::Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Uplink_C;

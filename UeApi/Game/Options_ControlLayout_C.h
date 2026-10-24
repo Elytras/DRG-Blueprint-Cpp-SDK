@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_ControlLayout_C = Game::UI::Menu_Options::Options_ControlLayout_C;
+using Options_ControlLayout_C = ::Game::UI::Menu_Options::Options_ControlLayout_C;

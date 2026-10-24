@@ -31,4 +31,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_Bone_Medium_Skull_03_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Bone_Medium_Skull_03_C;
+using BP_Bone_Medium_Skull_03_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Bone_Medium_Skull_03_C;

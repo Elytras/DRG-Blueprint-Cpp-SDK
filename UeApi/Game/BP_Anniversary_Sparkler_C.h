@@ -33,13 +33,13 @@ public:
     float BurnSpeed;
     float CurrentDistance;
     float InitialDistance;
-    void OnRep_Burning();
-    void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveTick(float DeltaSeconds_ReceiveTick);
-    void OnKnock(class APlayerCharacter* Player);
-    UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player);
-    void ReceiveBeginPlay();
     void ExecuteUbergraph_BP_Anniversary_Sparkler(int EntryPoint);
+    void ReceiveBeginPlay();
+    UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player);
+    void OnKnock(class APlayerCharacter* Player);
+    void ReceiveTick(float DeltaSeconds);
+    void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    void OnRep_Burning();
 private:
     struct UeMarkers
     {
@@ -55,4 +55,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint
 
-using BP_Anniversary_Sparkler_C = Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_Sparkler_C;
+using BP_Anniversary_Sparkler_C = ::Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_Sparkler_C;

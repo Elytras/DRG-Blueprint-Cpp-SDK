@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::AmberDeposits
 
-using IAmberDeposit_C = Game::GameElements::Objectives::Excavation::AmberDeposits::IAmberDeposit_C;
+using IAmberDeposit_C = ::Game::GameElements::Objectives::Excavation::AmberDeposits::IAmberDeposit_C;

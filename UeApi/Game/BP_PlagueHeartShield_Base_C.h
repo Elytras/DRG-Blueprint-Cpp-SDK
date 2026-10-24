@@ -66,6 +66,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus Damage_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* Arrow__UeScsNode = "749d9a1ae9facc4f8e7eecd276b2013f";
         static constexpr const char* OuterPoint_5__UeScsNode = "63b861f5065e9e44ac29a06b1db1dfcb";
         static constexpr const char* OuterPoint_4__UeScsNode = "17aa616f1a230945b63e0c23705a8fab";
@@ -84,4 +85,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using BP_PlagueHeartShield_Base_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C;
+using BP_PlagueHeartShield_Base_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Critters::LootBug
 
-using ESI_LootBug_Gold_C = Game::Critters::LootBug::ESI_LootBug_Gold_C;
+using ESI_LootBug_Gold_C = ::Game::Critters::LootBug::ESI_LootBug_Gold_C;

@@ -22,7 +22,7 @@ class Basic_ButtonCutCorner_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_ButtonCutCorner", "Basic_ButtonCutCorner_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Background;
     class UButton* Button_0;
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;

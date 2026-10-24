@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_QuickLight_C = Game::UI::Menu_Cheats::Cheat_QuickLight_C;
+using Cheat_QuickLight_C = ::Game::UI::Menu_Cheats::Cheat_QuickLight_C;

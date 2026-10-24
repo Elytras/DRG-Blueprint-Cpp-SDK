@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::Enemies::Jellyfish
 
-using APB_JellySwarmer_C = Game::Enemies::Jellyfish::APB_JellySwarmer_C;
+using APB_JellySwarmer_C = ::Game::Enemies::Jellyfish::APB_JellySwarmer_C;

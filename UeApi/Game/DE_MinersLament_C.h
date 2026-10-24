@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_MinersLament_C = Game::GameElements::Bar::DrinkEffects::DE_MinersLament_C;
+using DE_MinersLament_C = ::Game::GameElements::Bar::DrinkEffects::DE_MinersLament_C;

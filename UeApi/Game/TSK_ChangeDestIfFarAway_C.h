@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::GameElements::Donkey
 
-using TSK_ChangeDestIfFarAway_C = Game::GameElements::Donkey::TSK_ChangeDestIfFarAway_C;
+using TSK_ChangeDestIfFarAway_C = ::Game::GameElements::Donkey::TSK_ChangeDestIfFarAway_C;

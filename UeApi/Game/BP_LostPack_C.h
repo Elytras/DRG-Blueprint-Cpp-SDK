@@ -159,4 +159,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Treasure::LostPack
 
-using BP_LostPack_C = Game::GameElements::Treasure::LostPack::BP_LostPack_C;
+using BP_LostPack_C = ::Game::GameElements::Treasure::LostPack::BP_LostPack_C;

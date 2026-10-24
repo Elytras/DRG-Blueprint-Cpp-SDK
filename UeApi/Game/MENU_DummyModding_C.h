@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using MENU_DummyModding_C = Game::UI::Menu_EscapeMenu::Modding::MENU_DummyModding_C;
+using MENU_DummyModding_C = ::Game::UI::Menu_EscapeMenu::Modding::MENU_DummyModding_C;

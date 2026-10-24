@@ -20,8 +20,8 @@ class ITM_UpgGear_ResourceCounter_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_ResourceCounter", "ITM_UpgGear_ResourceCounter_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* ContentBox;
     class UTextBlock* DATAAmount;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_ResourceCounter_C = Game::UI::Menu_Loadout::ITM_UpgGear_ResourceCounter_C;
+using ITM_UpgGear_ResourceCounter_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_ResourceCounter_C;

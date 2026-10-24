@@ -15,7 +15,7 @@ class USpiderAnimInstance;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Grunt { namespace Guard {
 
-class ENE_Spider_Grunt_Guard_C : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Base_C
+class ENE_Spider_Grunt_Guard_C : public ::Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/Guard/ENE_Spider_Grunt_Guard", "ENE_Spider_Grunt_Guard_C");
@@ -31,6 +31,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_Guard_C__UeName = "UberGraphFrame";
         static constexpr const char* MeleeAttack__UeScsNode = "e1ff9aae4c20d94399a02c97eda8878d";
         static constexpr const char* ArmorHealthDamage__UeScsNode = "a96becb988de804e8d43a8007ecfd7d3";
@@ -40,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::Grunt::Guard
 
-using ENE_Spider_Grunt_Guard_C = Game::Enemies::Spider::Grunt::Guard::ENE_Spider_Grunt_Guard_C;
+using ENE_Spider_Grunt_Guard_C = ::Game::Enemies::Spider::Grunt::Guard::ENE_Spider_Grunt_Guard_C;

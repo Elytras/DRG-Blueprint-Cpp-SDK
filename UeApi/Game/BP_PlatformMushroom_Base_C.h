@@ -34,4 +34,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms
 
-using BP_PlatformMushroom_Base_C = Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms::BP_PlatformMushroom_Base_C;
+using BP_PlatformMushroom_Base_C = ::Game::LevelElements::RoomObjects::Helpers::PlatformMushrooms::BP_PlatformMushroom_Base_C;

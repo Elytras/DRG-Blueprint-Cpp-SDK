@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_DashActivation_C = Game::GameElements::KPI::Perks::BP_DashActivation_C;
+using BP_DashActivation_C = ::Game::GameElements::KPI::Perks::BP_DashActivation_C;

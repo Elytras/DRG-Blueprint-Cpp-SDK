@@ -20,7 +20,7 @@ class UI_JettyBoots_StartScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/UI_JettyBoots_StartScreen", "UI_JettyBoots_StartScreen_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimBootIdle;
     UE_READONLY class UWidgetAnimation* AnimBootJump;
@@ -41,4 +41,4 @@ public:
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using UI_JettyBoots_StartScreen_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_StartScreen_C;
+using UI_JettyBoots_StartScreen_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_StartScreen_C;

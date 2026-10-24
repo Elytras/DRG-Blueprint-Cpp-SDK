@@ -29,4 +29,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::CreepyEyes::Animations
 
-using ABP_EyeBase_C = Game::LevelElements::RoomObjects::CreepyEyes::Animations::ABP_EyeBase_C;
+using ABP_EyeBase_C = ::Game::LevelElements::RoomObjects::CreepyEyes::Animations::ABP_EyeBase_C;

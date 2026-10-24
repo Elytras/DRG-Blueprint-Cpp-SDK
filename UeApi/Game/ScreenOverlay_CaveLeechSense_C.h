@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_CaveLeechSense_C = Game::UI::ScreenOverlays::ScreenOverlay_CaveLeechSense_C;
+using ScreenOverlay_CaveLeechSense_C = ::Game::UI::ScreenOverlays::ScreenOverlay_CaveLeechSense_C;

@@ -20,13 +20,13 @@ class UWeakpointGlowComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Lobber {
 
-class ENE_Spider_Lobber_Base_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Lobber_Base_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/ENE_Spider_Lobber_Base", "ENE_Spider_Lobber_Base_C");
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Lobber_Base_C;
     class UPointLightComponent* ButtLight1;
-    class UPointLightComponent* Headlight;
+    class UPointLightComponent* HeadLight;
     class UWeakpointGlowComponent* WeakpointGlow;
     class UCapsuleComponent* Capsule;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
@@ -69,9 +69,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
         static constexpr const char* UberGraphFrame_ENE_Spider_Lobber_Base_C__UeName = "UberGraphFrame";
         static constexpr const char* ButtLight1__UeScsNode = "af0de01f4e78c4478df78dec36d8b1b9";
-        static constexpr const char* Headlight__UeScsNode = "df7bb140d992254f865dcc5f293d5341";
+        static constexpr const char* HeadLight__UeScsNode = "df7bb140d992254f865dcc5f293d5341";
         static constexpr const char* WeakpointGlow__UeScsNode = "3c707a09dba15147bd11c4fef4b8a22a";
         static constexpr const char* Capsule__UeScsNode = "f6a9d3e69e34fd4795cb388ea0b7263e";
         static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "cdf3ae9b3ddfdf49b7dbd73b4ca1485b";
@@ -84,4 +85,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using ENE_Spider_Lobber_Base_C = Game::Enemies::Spider::Lobber::ENE_Spider_Lobber_Base_C;
+using ENE_Spider_Lobber_Base_C = ::Game::Enemies::Spider::Lobber::ENE_Spider_Lobber_Base_C;

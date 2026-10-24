@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using PRW_ShieldRegeneratorItem_C = Game::WeaponsNTools::ShieldGenerator::PRW_ShieldRegeneratorItem_C;
+using PRW_ShieldRegeneratorItem_C = ::Game::WeaponsNTools::ShieldGenerator::PRW_ShieldRegeneratorItem_C;

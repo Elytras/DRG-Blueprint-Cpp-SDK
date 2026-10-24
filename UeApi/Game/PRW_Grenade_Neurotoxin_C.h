@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Neurotoxin {
 
-class PRW_Grenade_Neurotoxin_C : public Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C
+class PRW_Grenade_Neurotoxin_C : public ::Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/PRW_Grenade_Neurotoxin", "PRW_Grenade_Neurotoxin_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "StaticMesh";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin
 
-using PRW_Grenade_Neurotoxin_C = Game::WeaponsNTools::Grenades::Neurotoxin::PRW_Grenade_Neurotoxin_C;
+using PRW_Grenade_Neurotoxin_C = ::Game::WeaponsNTools::Grenades::Neurotoxin::PRW_Grenade_Neurotoxin_C;

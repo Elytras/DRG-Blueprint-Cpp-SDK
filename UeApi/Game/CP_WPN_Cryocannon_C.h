@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_WPN_Cryocannon_C = Game::GameElements::Campaign::CP_WPN_Cryocannon_C;
+using CP_WPN_Cryocannon_C = ::Game::GameElements::Campaign::CP_WPN_Cryocannon_C;

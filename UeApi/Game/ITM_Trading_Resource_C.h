@@ -23,8 +23,8 @@ class ITM_Trading_Resource_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_Trading_Resource", "ITM_Trading_Resource_C");
-    using Basic_BG_CutCorner_W_Image_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;
-    using ITM_Trading_BasketItem_C = Game::UI::Menu_Trading::ITM_Trading_BasketItem_C;
+    using Basic_BG_CutCorner_W_Image_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;
+    using ITM_Trading_BasketItem_C = ::Game::UI::Menu_Trading::ITM_Trading_BasketItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* GradiantFadeIn;
     class UButton* B_Add;
@@ -74,4 +74,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using ITM_Trading_Resource_C = Game::UI::Menu_Trading::ITM_Trading_Resource_C;
+using ITM_Trading_Resource_C = ::Game::UI::Menu_Trading::ITM_Trading_Resource_C;

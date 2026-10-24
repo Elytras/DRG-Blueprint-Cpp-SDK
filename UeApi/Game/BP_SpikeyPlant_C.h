@@ -44,7 +44,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     float Retract_spikes_extract_12C035484D9FA60A9729318F1FE2B43F;
     TEnum<ETimelineDirection> Retract_spikes__Direction_12C035484D9FA60A9729318F1FE2B43F;
-    class UTimelineComponent* Retract_Spikes;
+    class UTimelineComponent* Retract_spikes;
     float Extrude_spikes_extract_506BA7914733C21AE25E36ACEB72E417;
     TEnum<ETimelineDirection> Extrude_spikes__Direction_506BA7914733C21AE25E36ACEB72E417;
     class UTimelineComponent* Extrude_spikes;
@@ -87,6 +87,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus Damage_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* Damage__UeScsNode = "8617ea3accff90488287fd45a90f0615";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "ee006a2f6ad8f8468da44a50a69f89b1";
         static constexpr const char* outline__UeScsNode = "b75094c104aac646a8e00a8001498dd6";
@@ -99,7 +100,7 @@ private:
         static constexpr const char* Spike_Spawn_Area__UeScsNode = "9c91d17ae306bd468767b9e40242f881";
         static constexpr const char* SimpleHealth__UeScsNode = "59fead87f65ac242b99fead279581ea7";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "40690dd2dfebe343b006268c1af91910";
-        static constexpr const char* Retract_Spikes__UeName = "Retract Spikes";
+        static constexpr const char* Retract_spikes__UeName = "Retract spikes";
         static constexpr const char* Extrude_spikes__UeName = "Extrude spikes";
         static constexpr const char* Max_Amount_Of_Spikes__UeName = "Max Amount Of Spikes";
         static constexpr const char* Min_amount_Of_Spikes__UeName = "Min amount Of Spikes";
@@ -122,4 +123,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpikyPlant
 
-using BP_SpikeyPlant_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::BP_SpikeyPlant_C;
+using BP_SpikeyPlant_C = ::Game::LevelElements::RoomObjects::Hazards::SpikyPlant::BP_SpikeyPlant_C;

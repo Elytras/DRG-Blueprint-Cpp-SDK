@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace StabberVine {
 
-class ENE_StabberVines2_C : public Game::Enemies::StabberVine::ENE_StabberVines_C
+class ENE_StabberVines2_C : public ::Game::Enemies::StabberVine::ENE_StabberVines_C
 {
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVines2", "ENE_StabberVines2_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Body;U33_BiomPlant_ThornBlob_003";
     };
 };
 
 }}}   // namespace Game::Enemies::StabberVine
 
-using ENE_StabberVines2_C = Game::Enemies::StabberVine::ENE_StabberVines2_C;
+using ENE_StabberVines2_C = ::Game::Enemies::StabberVine::ENE_StabberVines2_C;

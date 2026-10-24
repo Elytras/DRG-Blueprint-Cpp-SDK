@@ -17,4 +17,4 @@ public:
 
 }}   // namespace Game::Game
 
-using BP_GameData_C = Game::Game::BP_GameData_C;
+using BP_GameData_C = ::Game::Game::BP_GameData_C;

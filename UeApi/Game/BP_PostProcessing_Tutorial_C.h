@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::_Tutorial
 
-using BP_PostProcessing_Tutorial_C = Game::Landscape::Biomes::Biomes_Ingame::_Tutorial::BP_PostProcessing_Tutorial_C;
+using BP_PostProcessing_Tutorial_C = ::Game::Landscape::Biomes::Biomes_Ingame::_Tutorial::BP_PostProcessing_Tutorial_C;

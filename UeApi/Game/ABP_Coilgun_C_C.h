@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::CoilGun::Animation
 
-using ABP_Coilgun_C_C = Game::WeaponsNTools::CoilGun::Animation::ABP_Coilgun_C_C;
+using ABP_Coilgun_C_C = ::Game::WeaponsNTools::CoilGun::Animation::ABP_Coilgun_C_C;

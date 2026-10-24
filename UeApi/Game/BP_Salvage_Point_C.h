@@ -37,4 +37,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_Salvage_Point_C = Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C;
+using BP_Salvage_Point_C = ::Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C;

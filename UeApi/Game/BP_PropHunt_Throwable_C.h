@@ -51,4 +51,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt
 
-using BP_PropHunt_Throwable_C = Game::GameElements::Bar::Drinkables::PropHunt::BP_PropHunt_Throwable_C;
+using BP_PropHunt_Throwable_C = ::Game::GameElements::Bar::Drinkables::PropHunt::BP_PropHunt_Throwable_C;

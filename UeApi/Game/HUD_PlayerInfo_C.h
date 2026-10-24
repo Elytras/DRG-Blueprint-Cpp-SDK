@@ -26,10 +26,10 @@ class HUD_PlayerInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_PlayerInfo", "HUD_PlayerInfo_C");
-    using HUD_PlayerClass_Icon_C = Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;
-    using HUD_PlayerPerks_C = Game::UI::MainOnscreenHUD::Perks::HUD_PlayerPerks_C;
-    using ITM_SupplyBar_C = Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
-    using UI_CallingMolly_C = Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;
+    using HUD_PlayerClass_Icon_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;
+    using HUD_PlayerPerks_C = ::Game::UI::MainOnscreenHUD::Perks::HUD_PlayerPerks_C;
+    using ITM_SupplyBar_C = ::Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
+    using UI_CallingMolly_C = ::Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_SupplyBar_C* AmmoBar;
     class UOverlay* ClassLine;
@@ -77,4 +77,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_PlayerInfo_C = Game::UI::MainOnscreenHUD::HUD_PlayerInfo_C;
+using HUD_PlayerInfo_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerInfo_C;

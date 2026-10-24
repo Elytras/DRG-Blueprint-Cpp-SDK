@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_GemInfo_C = Game::UI::Menu_Cheats::Cheat_GemInfo_C;
+using Cheat_GemInfo_C = ::Game::UI::Menu_Cheats::Cheat_GemInfo_C;

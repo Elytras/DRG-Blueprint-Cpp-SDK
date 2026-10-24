@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_ItemIcon_C = Game::UI::Menu_Loadout::ITM_ItemIcon_C;
+using ITM_ItemIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemIcon_C;

@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using UI_PointOfInterest_C = Game::WeaponsNTools::LaserPointer::UI_PointOfInterest_C;
+using UI_PointOfInterest_C = ::Game::WeaponsNTools::LaserPointer::UI_PointOfInterest_C;

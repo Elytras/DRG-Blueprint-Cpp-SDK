@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_HitIndicator_C = Game::WeaponsNTools::_Crosshairs::HUD_HitIndicator_C;
+using HUD_HitIndicator_C = ::Game::WeaponsNTools::_Crosshairs::HUD_HitIndicator_C;

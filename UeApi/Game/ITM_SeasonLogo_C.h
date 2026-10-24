@@ -17,7 +17,7 @@ class ITM_SeasonLogo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonLogo", "ITM_SeasonLogo_C");
-    using ITM_SeasonEndWarningTimer_C = Game::UI::Menu_Seasons::ITM_SeasonEndWarningTimer_C;
+    using ITM_SeasonEndWarningTimer_C = ::Game::UI::Menu_Seasons::ITM_SeasonEndWarningTimer_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_SeasonTitle;
     ITM_SeasonEndWarningTimer_C* SeasonEndWarning;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonLogo_C = Game::UI::Menu_Seasons::ITM_SeasonLogo_C;
+using ITM_SeasonLogo_C = ::Game::UI::Menu_Seasons::ITM_SeasonLogo_C;

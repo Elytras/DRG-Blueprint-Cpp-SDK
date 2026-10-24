@@ -21,7 +21,7 @@ class UStatusEffect;
 
 namespace Game { namespace Enemies { namespace Plague { namespace PlagueShooter {
 
-class ENE_Spider_Shooter_Rockpox_Plague_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Shooter_Rockpox_Plague_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShooter/ENE_Spider_Shooter_Rockpox_Plague", "ENE_Spider_Shooter_Rockpox_Plague_C");
@@ -54,6 +54,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Shooter_Rockpox_Plague_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileAttack__UeScsNode = "979a906c7ee33844ad7bfbfa0e665f0d";
         static constexpr const char* InfectionPoint3__UeScsNode = "13724f4d4dd0aa4e97e2622df5aeda6e";
@@ -72,4 +74,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueShooter
 
-using ENE_Spider_Shooter_Rockpox_Plague_C = Game::Enemies::Plague::PlagueShooter::ENE_Spider_Shooter_Rockpox_Plague_C;
+using ENE_Spider_Shooter_Rockpox_Plague_C = ::Game::Enemies::Plague::PlagueShooter::ENE_Spider_Shooter_Rockpox_Plague_C;

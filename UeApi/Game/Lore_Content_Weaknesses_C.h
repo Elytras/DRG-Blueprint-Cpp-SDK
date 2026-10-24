@@ -20,7 +20,7 @@ class Lore_Content_Weaknesses_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Content_Weaknesses", "Lore_Content_Weaknesses_C");
-    using Lore_DamageTypeIcon_C = Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;
+    using Lore_DamageTypeIcon_C = ::Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     class UHorizontalBox* HorizontalBox_IconHolder;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Content_Weaknesses_C = Game::UI::Menu_MinersManual::Lore_Content_Weaknesses_C;
+using Lore_Content_Weaknesses_C = ::Game::UI::Menu_MinersManual::Lore_Content_Weaknesses_C;

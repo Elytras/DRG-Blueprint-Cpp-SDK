@@ -22,8 +22,8 @@ class LIB_ToolTips_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/UI/ToolTips/LIB_ToolTips", "LIB_ToolTips_C");
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Biome_ToolTip_C = Game::UI::ToolTips::Biome_ToolTip_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Biome_ToolTip_C = ::Game::UI::ToolTips::Biome_ToolTip_C;
     static void CreateBasicToolTip(class UWidget* Target, FText Text, FVector2D Position, FVector2D Alignment, class UObject* __WorldContext, Basic_ToolTip_C*& ToolTipWidget);
     static void CreateBiomeToolTip(class UWidget* Target, FVector2D Position, FVector2D Alignment, class UResourceData* ResourceA, class UResourceData* ResourceB, class UObject* __WorldContext, Biome_ToolTip_C*& ToolTipWidget);
     static void CreateToolTip(class UWidget* ToolTipTarget, class UClass* ToolTipClass, FVector2D Offset, class UObject* __WorldContext, class UUserWidget*& OutToolTip);
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::ToolTips
 
-using LIB_ToolTips_C = Game::UI::ToolTips::LIB_ToolTips_C;
+using LIB_ToolTips_C = ::Game::UI::ToolTips::LIB_ToolTips_C;

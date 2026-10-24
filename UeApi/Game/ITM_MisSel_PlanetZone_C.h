@@ -23,14 +23,14 @@ class ITM_MisSel_PlanetZone_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_PlanetZone", "ITM_MisSel_PlanetZone_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* LockBreak;
     UE_READONLY class UWidgetAnimation* Infobox_MouseOver;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     class UImage* IMG_Padlock;
-    class UImage* IMG_Shadow;
+    class UImage* Img_Shadow;
     class UImage* IMG_TooltipArrow;
     class UButton* MainButton;
     class UVerticalBox* VertBox_Tooltip;
@@ -56,4 +56,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_PlanetZone_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_PlanetZone_C;
+using ITM_MisSel_PlanetZone_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_PlanetZone_C;

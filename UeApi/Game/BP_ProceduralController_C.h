@@ -28,4 +28,4 @@ public:
 
 }}   // namespace Game::Landscape
 
-using BP_ProceduralController_C = Game::Landscape::BP_ProceduralController_C;
+using BP_ProceduralController_C = ::Game::Landscape::BP_ProceduralController_C;

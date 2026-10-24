@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueEnemy_Skeletal_Meshes
 
-using ABP_PlagueWormPod_C = Game::Enemies::Plague::PlagueEnemy_Skeletal_Meshes::ABP_PlagueWormPod_C;
+using ABP_PlagueWormPod_C = ::Game::Enemies::Plague::PlagueEnemy_Skeletal_Meshes::ABP_PlagueWormPod_C;

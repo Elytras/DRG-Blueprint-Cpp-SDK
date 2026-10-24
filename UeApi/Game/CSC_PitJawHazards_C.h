@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards
 
-using CSC_PitJawHazards_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::CSC_PitJawHazards_C;
+using CSC_PitJawHazards_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::CSC_PitJawHazards_C;

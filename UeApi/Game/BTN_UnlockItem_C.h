@@ -22,7 +22,7 @@ class BTN_UnlockItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/BTN_UnlockItem", "BTN_UnlockItem_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BlurBackground_C* BlurBackground;
     class UTextBlock* DATA_Rank;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using BTN_UnlockItem_C = Game::UI::Menu_Crafting::BTN_UnlockItem_C;
+using BTN_UnlockItem_C = ::Game::UI::Menu_Crafting::BTN_UnlockItem_C;

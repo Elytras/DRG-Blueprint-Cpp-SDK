@@ -61,4 +61,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Ossiran::Scrab::Assets
 
-using ABP_Ossiran_Scrab_C = Game::Enemies::Ossiran::Scrab::Assets::ABP_Ossiran_Scrab_C;
+using ABP_Ossiran_Scrab_C = ::Game::Enemies::Ossiran::Scrab::Assets::ABP_Ossiran_Scrab_C;

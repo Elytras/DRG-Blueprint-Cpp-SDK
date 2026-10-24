@@ -12,7 +12,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace SandblastedCorridors {
 
-class BP_NewSandStorm_C : public Game::Landscape::Biomes::BP_WeatherEffect_C
+class BP_NewSandStorm_C : public ::Game::Landscape::Biomes::BP_WeatherEffect_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/SandblastedCorridors/BP_NewSandstorm", "BP_NewSandStorm_C");
@@ -26,17 +26,18 @@ public:
     void ExecuteUbergraph_BP_NewSandStorm(int EntryPoint);
     void EndEffect();
     void StartEffect();
-    void FadeOut__UpdateFunc();
-    void FadeOut__FinishedFunc();
+    void Fadeout__UpdateFunc();
+    void Fadeout__FinishedFunc();
     void Fadin__UpdateFunc();
     void Fadin__FinishedFunc();
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "ActiveSound;FadingSound";
         static constexpr const char* UberGraphFrame_BP_NewSandStorm_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors
 
-using BP_NewSandStorm_C = Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::BP_NewSandStorm_C;
+using BP_NewSandStorm_C = ::Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::BP_NewSandStorm_C;

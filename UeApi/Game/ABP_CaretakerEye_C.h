@@ -31,4 +31,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using ABP_CaretakerEye_C = Game::GameElements::Objectives::Facility::Caretaker::ABP_CaretakerEye_C;
+using ABP_CaretakerEye_C = ::Game::GameElements::Objectives::Facility::Caretaker::ABP_CaretakerEye_C;

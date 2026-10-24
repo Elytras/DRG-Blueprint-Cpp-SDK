@@ -23,11 +23,11 @@ namespace Game { namespace Enemies { namespace Spider { class BP_BurrowComponent
 
 namespace Game { namespace Critters { namespace LootBug { namespace Hoarder {
 
-class ENE_Spider_Hoarder_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Hoarder_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/Hoarder/ENE_Spider_Hoarder", "ENE_Spider_Hoarder_C");
-    using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+    using BP_BurrowComponent_C = ::Game::Enemies::Spider::BP_BurrowComponent_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Hoarder_C;
     class UPointLightComponent* PointLight3;
     class UPointLightComponent* PointLight2;
@@ -74,17 +74,18 @@ public:
     void DropLoot();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void ReceiveBeginPlay();
+    void OnRagdoll();
     void Timeline_2__UpdateFunc();
     void Timeline_2__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void HasLoot(bool& Has_Loot);
     void UpdateTarget(float MaxDistance, bool& OutTargetChanged);
-    void OnRagdoll();
 private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;DropShadow";
         static constexpr const char* UberGraphFrame_ENE_Spider_Hoarder_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight3__UeScsNode = "c74ea9b1a6edbb4488e4785089091993";
         static constexpr const char* PointLight2__UeScsNode = "63aa218a47c94a44956835b0f3a74e5b";
@@ -102,4 +103,4 @@ private:
 
 }}}}   // namespace Game::Critters::LootBug::Hoarder
 
-using ENE_Spider_Hoarder_C = Game::Critters::LootBug::Hoarder::ENE_Spider_Hoarder_C;
+using ENE_Spider_Hoarder_C = ::Game::Critters::LootBug::Hoarder::ENE_Spider_Hoarder_C;

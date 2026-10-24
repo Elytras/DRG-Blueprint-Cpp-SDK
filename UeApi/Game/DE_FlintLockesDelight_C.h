@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_FlintLockesDelight_C = Game::GameElements::Bar::DrinkEffects::DE_FlintLockesDelight_C;
+using DE_FlintLockesDelight_C = ::Game::GameElements::Bar::DrinkEffects::DE_FlintLockesDelight_C;

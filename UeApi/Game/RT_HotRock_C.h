@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_HotRock_C = Game::Landscape::ReactiveTerrain::RT_HotRock_C;
+using RT_HotRock_C = ::Game::Landscape::ReactiveTerrain::RT_HotRock_C;

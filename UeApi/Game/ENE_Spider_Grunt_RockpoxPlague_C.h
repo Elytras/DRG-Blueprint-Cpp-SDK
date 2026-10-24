@@ -23,7 +23,7 @@ class UStatusEffect;
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class ENE_Spider_Grunt_RockpoxPlague_C : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Base_C
+class ENE_Spider_Grunt_RockpoxPlague_C : public ::Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/ENE_Spider_Grunt_RockpoxPlague", "ENE_Spider_Grunt_RockpoxPlague_C");
@@ -56,6 +56,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileThrowerAttack_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.DamageComponent MeleeAttackComponent_GEN_VARIABLE:DamageComponent_0;/Script/FSD.PushStatusEffectDamageBonus MeleeAttackComponent_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Grunt_RockpoxPlague_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileThrowerAttack__UeScsNode = "bb09350dc3fb0049a543c2b79d7a7f27";
         static constexpr const char* ProjectileOrigin__UeScsNode = "cb443444e790324ca608e9d917453bae";
@@ -76,4 +78,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using ENE_Spider_Grunt_RockpoxPlague_C = Game::Enemies::Plague::ENE_Spider_Grunt_RockpoxPlague_C;
+using ENE_Spider_Grunt_RockpoxPlague_C = ::Game::Enemies::Plague::ENE_Spider_Grunt_RockpoxPlague_C;

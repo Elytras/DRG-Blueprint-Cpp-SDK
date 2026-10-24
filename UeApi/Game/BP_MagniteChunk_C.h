@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Magnite
 
-using BP_MagniteChunk_C = Game::GameElements::Resources::Carved::Magnite::BP_MagniteChunk_C;
+using BP_MagniteChunk_C = ::Game::GameElements::Resources::Carved::Magnite::BP_MagniteChunk_C;

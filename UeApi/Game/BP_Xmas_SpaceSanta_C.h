@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_Xmas_SpaceSanta_C = Game::Art::Environments::Holiday_Xmas::BP_Xmas_SpaceSanta_C;
+using BP_Xmas_SpaceSanta_C = ::Game::Art::Environments::Holiday_Xmas::BP_Xmas_SpaceSanta_C;

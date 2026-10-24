@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::Enemies::HydraWeed::Assets
 
-using ABP_HydraWeed_Hearth_C = Game::Enemies::HydraWeed::Assets::ABP_HydraWeed_Hearth_C;
+using ABP_HydraWeed_Hearth_C = ::Game::Enemies::HydraWeed::Assets::ABP_HydraWeed_Hearth_C;

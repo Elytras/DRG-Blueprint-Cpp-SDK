@@ -24,7 +24,7 @@ class ITM_DeepDives_ServerList_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_ServerList", "ITM_DeepDives_ServerList_C");
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     class UBorder* HeaderBorder;
@@ -54,4 +54,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_ServerList_C = Game::UI::Menu_DeepDives::ITM_DeepDives_ServerList_C;
+using ITM_DeepDives_ServerList_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_ServerList_C;

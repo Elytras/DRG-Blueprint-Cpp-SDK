@@ -12,7 +12,7 @@ class UBoolUserSettingAsset;
 
 namespace Game { namespace UI { namespace Art { namespace WidgetParts {
 
-class Basic_BoolUserSetting_C : public Game::UI::Art::WidgetParts::Basic_CheckBox_C
+class Basic_BoolUserSetting_C : public ::Game::UI::Art::WidgetParts::Basic_CheckBox_C
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_BoolUserSetting", "Basic_BoolUserSetting_C");
@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_BoolUserSetting_C = Game::UI::Art::WidgetParts::Basic_BoolUserSetting_C;
+using Basic_BoolUserSetting_C = ::Game::UI::Art::WidgetParts::Basic_BoolUserSetting_C;

@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsBoxLid_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsBoxLid_C;
+using BP_JetBootsBoxLid_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsBoxLid_C;

@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Basic_Hover_Bracket_Small_C = Game::UI::Menu_MinersManual::Basic_Hover_Bracket_Small_C;
+using Basic_Hover_Bracket_Small_C = ::Game::UI::Menu_MinersManual::Basic_Hover_Bracket_Small_C;

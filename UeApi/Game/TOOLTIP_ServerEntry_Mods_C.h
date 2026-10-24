@@ -23,7 +23,7 @@ class TOOLTIP_ServerEntry_Mods_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/TOOLTIP_ServerEntry_Mods", "TOOLTIP_ServerEntry_Mods_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UImage* BiomeImage;
@@ -49,4 +49,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using TOOLTIP_ServerEntry_Mods_C = Game::UI::Menu_ServerList::TOOLTIP_ServerEntry_Mods_C;
+using TOOLTIP_ServerEntry_Mods_C = ::Game::UI::Menu_ServerList::TOOLTIP_ServerEntry_Mods_C;

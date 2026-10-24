@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_InputSwitcher_C = Game::UI::Art::WidgetParts::Basic_InputSwitcher_C;
+using Basic_InputSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_InputSwitcher_C;

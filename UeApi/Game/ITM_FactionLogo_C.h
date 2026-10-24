@@ -21,7 +21,7 @@ class ITM_FactionLogo_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_FactionLogo", "ITM_FactionLogo_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Animation;
     class UImage* Image_232;
@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_FactionLogo_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionLogo_C;
+using ITM_FactionLogo_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionLogo_C;

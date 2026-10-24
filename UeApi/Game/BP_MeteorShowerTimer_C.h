@@ -15,12 +15,12 @@ namespace Game { namespace GameElements { namespace GameEvents { namespace Meteo
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace MeteorShower {
 
-class BP_MeteorShowerTimer_C : public Game::GameElements::GameEvents::PlagueMeteor::BP_EventSpawnTimer_C
+class BP_MeteorShowerTimer_C : public ::Game::GameElements::GameEvents::PlagueMeteor::BP_EventSpawnTimer_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/MeteorShower/BP_MeteorShowerTimer", "BP_MeteorShowerTimer_C");
-    using BP_SmallMeteorSpawner_C = Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteorSpawner_C;
-    using BP_SmallMeteor_C = Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteor_C;
+    using BP_SmallMeteorSpawner_C = ::Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteorSpawner_C;
+    using BP_SmallMeteor_C = ::Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteor_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_MeteorShowerTimer_C;
     TArray<BP_SmallMeteor_C*> Meteors;
     class USoundBase* WarningSound;
@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower
 
-using BP_MeteorShowerTimer_C = Game::GameElements::GameEvents::MeteorShower::BP_MeteorShowerTimer_C;
+using BP_MeteorShowerTimer_C = ::Game::GameElements::GameEvents::MeteorShower::BP_MeteorShowerTimer_C;

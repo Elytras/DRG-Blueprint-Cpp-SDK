@@ -35,4 +35,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using AIC_FacilityTurretDrone_C = Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurretDrone_C;
+using AIC_FacilityTurretDrone_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurretDrone_C;

@@ -36,7 +36,7 @@ public:
     class UParticleSystemComponent* Particle_Exhaust_HighVelocity;
     class UPointLightComponent* Light_DistanceIndicator;
     class UPointLightComponent* Light_Exhaust;
-    class UParticleSystemComponent* particle_Trail;
+    class UParticleSystemComponent* Particle_Trail;
     class UPointLightComponent* UnstableFuelMixIndicator;
     class UAudioComponent* MicroMissileProjectileLoop_Cue;
     class UStaticMeshComponent* MeshRocket;
@@ -88,7 +88,7 @@ private:
         static constexpr const char* Particle_Exhaust_HighVelocity__UeScsNode = "8bc89760baeb2849936f46e6d1335d9c";
         static constexpr const char* Light_DistanceIndicator__UeScsNode = "a0b5a5b37eb4a242bca86bf270d15cfc";
         static constexpr const char* Light_Exhaust__UeScsNode = "318b2a2e28543741bc3ffb80217d6629";
-        static constexpr const char* particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
+        static constexpr const char* Particle_Trail__UeScsNode = "3ababb0f47861c4e823cbaf9878b7239";
         static constexpr const char* UnstableFuelMixIndicator__UeScsNode = "1ee9768985fe5046b66ab41816980544";
         static constexpr const char* MicroMissileProjectileLoop_Cue__UeScsNode = "29742d3414b03647b6316d28a066b804";
         static constexpr const char* MeshRocket__UeScsNode = "fdedf66f9d196442ac74520c06e03439";
@@ -99,4 +99,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using PRJ_Grenade_HackeShredder_C = Game::WeaponsNTools::Grenades::FriendlyShredders::PRJ_Grenade_HackeShredder_C;
+using PRJ_Grenade_HackeShredder_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::PRJ_Grenade_HackeShredder_C;

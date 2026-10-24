@@ -20,8 +20,8 @@ class ITM_TopBar_CharacterIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_TopBar/ITM_TopBar_CharacterIcon", "ITM_TopBar_CharacterIcon_C");
-    using ITM_CharacterData_C = Game::UI::Global_UI_Elements::ITM_CharacterData_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_CharacterData_C = ::Game::UI::Global_UI_Elements::ITM_CharacterData_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_CharacterData_C* ITM_CharacterData;
     ITM_CharacterIcon_C* ITM_CharacterIcon;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using ITM_TopBar_CharacterIcon_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
+using ITM_TopBar_CharacterIcon_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;

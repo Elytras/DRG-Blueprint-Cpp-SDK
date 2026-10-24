@@ -22,7 +22,7 @@ class UI_PerkBackground_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_PerkBackground", "UI_PerkBackground_C");
-    using UI_MaskedCanvas_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedCanvas_C;
+    using UI_MaskedCanvas_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* BackgroundBorder_Image;
     class UImage* BackgroundFill_Image;
@@ -44,4 +44,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_PerkBackground_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
+using UI_PerkBackground_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;

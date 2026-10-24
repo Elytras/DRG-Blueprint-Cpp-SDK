@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_MedbaySign_C = Game::Art::Environments::SpaceRig::BP_MedbaySign_C;
+using BP_MedbaySign_C = ::Game::Art::Environments::SpaceRig::BP_MedbaySign_C;

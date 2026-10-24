@@ -11,7 +11,7 @@ class UPointLightComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace ExploderTank {
 
-class ENE_Spider_ExploderTank_King_C : public Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_C
+class ENE_Spider_ExploderTank_King_C : public ::Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/ENE_Spider_ExploderTank_King", "ENE_Spider_ExploderTank_King_C");
@@ -21,6 +21,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;Enemy;Light_BackBody";
         static constexpr const char* Light_BackBody2__UeScsNode = "08489ca5e9552747a46db7554cc5b68a";
         static constexpr const char* Light_BackBody1__UeScsNode = "f5e3bb93ccdb4543b017ebb52e1173f0";
     };
@@ -28,4 +29,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::ExploderTank
 
-using ENE_Spider_ExploderTank_King_C = Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_King_C;
+using ENE_Spider_ExploderTank_King_C = ::Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_King_C;

@@ -16,7 +16,7 @@ class ITM_Wardrobe_ItemSelector_ToolTip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSelector_ToolTip", "ITM_Wardrobe_ItemSelector_ToolTip_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     Basic_Label_C* DescriptionLabel;
     Basic_Label_C* TextLabel;
     class UBorder* ToolTipBorder;
@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSelector_ToolTip_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_ToolTip_C;
+using ITM_Wardrobe_ItemSelector_ToolTip_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_ToolTip_C;

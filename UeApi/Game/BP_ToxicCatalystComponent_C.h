@@ -19,7 +19,7 @@ class BP_ToxicCatalystComponent_C : public UActorComponent
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Pistol/BP_ToxicCatalystComponent", "BP_ToxicCatalystComponent_C");
-    using BP_ToxicCatalistExplosion_C = Game::WeaponsNTools::Pistol::BP_ToxicCatalistExplosion_C;
+    using BP_ToxicCatalistExplosion_C = ::Game::WeaponsNTools::Pistol::BP_ToxicCatalistExplosion_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class AFSDPawn* OwningPawn;
     class USkeletalMeshComponent* VictimMesh;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Pistol
 
-using BP_ToxicCatalystComponent_C = Game::WeaponsNTools::Pistol::BP_ToxicCatalystComponent_C;
+using BP_ToxicCatalystComponent_C = ::Game::WeaponsNTools::Pistol::BP_ToxicCatalystComponent_C;

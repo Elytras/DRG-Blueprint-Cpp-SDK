@@ -15,11 +15,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Salva
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Salvage {
 
-class BP_Salvage_FuelPoint_C : public Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C
+class BP_Salvage_FuelPoint_C : public ::Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_FuelPoint", "BP_Salvage_FuelPoint_C");
-    using BP_Salvage_FuelPod_C = Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPod_C;
+    using BP_Salvage_FuelPod_C = ::Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPod_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_Salvage_FuelPoint_C;
     class UTerrainPlacementComponent* terrainPlacement;
     BP_Salvage_FuelPod_C* pod;
@@ -47,4 +47,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_Salvage_FuelPoint_C = Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPoint_C;
+using BP_Salvage_FuelPoint_C = ::Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPoint_C;

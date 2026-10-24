@@ -26,7 +26,7 @@ class BP_CraftingConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_CraftingConsole", "BP_CraftingConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USpotLightComponent* SpotLight2;
     class UPointLightComponent* PointLight4;
@@ -81,4 +81,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_CraftingConsole_C = Game::UI::HUD_SpaceRig::BP_CraftingConsole_C;
+using BP_CraftingConsole_C = ::Game::UI::HUD_SpaceRig::BP_CraftingConsole_C;

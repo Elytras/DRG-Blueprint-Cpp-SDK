@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Exploder
 
-using STE_Spider_Explode_C = Game::Enemies::Spider::Exploder::STE_Spider_Explode_C;
+using STE_Spider_Explode_C = ::Game::Enemies::Spider::Exploder::STE_Spider_Explode_C;

@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::GameElements::Drone
 
-using BP_BoscoStateDisplay_C = Game::GameElements::Drone::BP_BoscoStateDisplay_C;
+using BP_BoscoStateDisplay_C = ::Game::GameElements::Drone::BP_BoscoStateDisplay_C;

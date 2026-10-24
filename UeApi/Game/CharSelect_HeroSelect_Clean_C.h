@@ -22,7 +22,7 @@ class CharSelect_HeroSelect_Clean_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/CharSelect_HeroSelect_Clean", "CharSelect_HeroSelect_Clean_C");
-    using ICON_HeroSelect_C = Game::UI::CharacterSelectionMK2::ICON_HeroSelect_C;
+    using ICON_HeroSelect_C = ::Game::UI::CharacterSelectionMK2::ICON_HeroSelect_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ICON_HeroSelect_C* ICON_HeroSelect_65;
     ICON_HeroSelect_C* ICON_HeroSelect_C_66;
@@ -64,4 +64,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using CharSelect_HeroSelect_Clean_C = Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Clean_C;
+using CharSelect_HeroSelect_Clean_C = ::Game::UI::CharacterSelectionMK2::CharSelect_HeroSelect_Clean_C;

@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using TOOLTIP_Season_Levels_C = Game::UI::Menu_Seasons::TOOLTIP_Season_Levels_C;
+using TOOLTIP_Season_Levels_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_Levels_C;

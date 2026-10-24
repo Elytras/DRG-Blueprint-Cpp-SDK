@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace SentryGun { namespace SentryGun_Engineer {
 
-class BP_SentryGun_Redeployable_Heavy_C : public Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Redeployable_C
+class BP_SentryGun_Redeployable_Heavy_C : public ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Redeployable_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Redeployable_Heavy", "BP_SentryGun_Redeployable_Heavy_C");
@@ -17,9 +17,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTrackingIcon;/Script/FSD.OutlineComponent Outline;/Script/Engine.SceneComponent TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunMesh";
+        static constexpr const char* UeIchRecords = "EMPIndicator;AmmoCountWidget";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/SentryGun/BP_TurretEMPDischarge_Indicator.BP_TurretEMPDischarge_Indicator_C EMPIndicator_GEN_VARIABLE:EMPIndicator_GEN_VARIABLE_BP_TurretEMPDischarge_Indicator_C_CAT";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryGun_Redeployable_Heavy_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Redeployable_Heavy_C;
+using BP_SentryGun_Redeployable_Heavy_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Redeployable_Heavy_C;

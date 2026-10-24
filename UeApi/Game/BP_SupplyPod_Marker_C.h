@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_SupplyPod_Marker_C = Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Marker_C;
+using BP_SupplyPod_Marker_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Marker_C;

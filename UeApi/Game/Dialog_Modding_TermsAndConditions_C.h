@@ -23,9 +23,9 @@ class Dialog_Modding_TermsAndConditions_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/Dialog_Modding_TermsAndConditions", "Dialog_Modding_TermsAndConditions_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     Basic_ButtonScalable2_C* BTN_No;
@@ -56,4 +56,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using Dialog_Modding_TermsAndConditions_C = Game::UI::Menu_EscapeMenu::Modding::Dialog_Modding_TermsAndConditions_C;
+using Dialog_Modding_TermsAndConditions_C = ::Game::UI::Menu_EscapeMenu::Modding::Dialog_Modding_TermsAndConditions_C;

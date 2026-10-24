@@ -62,4 +62,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun
 
-using WPN_CombatShotgun_C = Game::WeaponsNTools::CombatShotgun::WPN_CombatShotgun_C;
+using WPN_CombatShotgun_C = ::Game::WeaponsNTools::CombatShotgun::WPN_CombatShotgun_C;

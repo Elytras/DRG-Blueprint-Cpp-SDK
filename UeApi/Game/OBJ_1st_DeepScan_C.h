@@ -20,7 +20,7 @@ class OBJ_1st_DeepScan_C : public UDeepScanObjective
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/OBJ_1st_DeepScan", "OBJ_1st_DeepScan_C");
-    using BP_TreasureRoom_DeepScan_Basier_C = Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Basier_C;
+    using BP_TreasureRoom_DeepScan_Basier_C = ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Basier_C;
     FPointerToUberGraphFrame UberGraphFrame;
     TSoftClassPtr<class UClass> DrillElevatorPlacerClass;
     BP_TreasureRoom_DeepScan_Basier_C* TreasureRoom;
@@ -61,4 +61,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using OBJ_1st_DeepScan_C = Game::GameElements::Objectives::DeepScan::OBJ_1st_DeepScan_C;
+using OBJ_1st_DeepScan_C = ::Game::GameElements::Objectives::DeepScan::OBJ_1st_DeepScan_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail
 
-using STE_Plague_SlimeTrail_Contact_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::STE_Plague_SlimeTrail_Contact_C;
+using STE_Plague_SlimeTrail_Contact_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::STE_Plague_SlimeTrail_Contact_C;

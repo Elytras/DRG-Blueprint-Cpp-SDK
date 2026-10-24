@@ -18,9 +18,9 @@ class ITM_TopBar_ResourceCounter_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_TopBar/ITM_TopBar_ResourceCounter", "ITM_TopBar_ResourceCounter_C");
-    using Basic_AnimatedNumber_C = Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_AnimatedNumber_C = ::Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_AnimatedNumber_C* Number;
     Basic_ResourceIcon_C* ResourceLeft;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;

@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::GameElements::Donkey
 
-using ABP_Donkey_C = Game::GameElements::Donkey::ABP_Donkey_C;
+using ABP_Donkey_C = ::Game::GameElements::Donkey::ABP_Donkey_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::EnemySpawner::Afflictions
 
-using AFL_Frozen_EnemySpawner_C = Game::Enemies::EnemySpawner::Afflictions::AFL_Frozen_EnemySpawner_C;
+using AFL_Frozen_EnemySpawner_C = ::Game::Enemies::EnemySpawner::Afflictions::AFL_Frozen_EnemySpawner_C;

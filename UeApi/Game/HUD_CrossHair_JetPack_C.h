@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_CrossHair_JetPack_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_JetPack_C;
+using HUD_CrossHair_JetPack_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_JetPack_C;

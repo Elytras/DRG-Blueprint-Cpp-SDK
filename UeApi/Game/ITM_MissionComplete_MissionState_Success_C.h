@@ -26,12 +26,12 @@ class ITM_MissionComplete_MissionState_Success_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_MissionState_Success", "ITM_MissionComplete_MissionState_Success_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
-    using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
-    using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_MatrixCore_C = ::Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
+    using UI_Forge_Schematic_OwnerIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
+    using UI_RunningText_C = ::Game::UI::Global_UI_Elements::UI_RunningText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimReward;
     UE_READONLY class UWidgetAnimation* StateTextAppear;
@@ -80,4 +80,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_MissionComplete_MissionState_Success_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_Success_C;
+using ITM_MissionComplete_MissionState_Success_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_Success_C;

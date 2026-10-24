@@ -27,17 +27,17 @@ class ITM_Tab_Modding_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/ITM_Tab_Modding", "ITM_Tab_Modding_C");
-    using Basic_BoolUserSetting_C = Game::UI::Art::WidgetParts::Basic_BoolUserSetting_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using Dialog_Modding_TermsAndConditions_C = Game::UI::Menu_EscapeMenu::Modding::Dialog_Modding_TermsAndConditions_C;
-    using ITM_IngameTab_Mod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_IngameTab_Mod_C;
-    using ITM_Mod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Mod_C;
-    using ITM_Modding_LoadoutSelection_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_LoadoutSelection_C;
-    using ITM_PendingMod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_PendingMod_C;
-    using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
-    using Setting_Modding_CheckVersion_C = Game::UI::Menu_EscapeMenu::Modding::Setting_Modding_CheckVersion_C;
-    using Setting_ShowSandboxLabel_C = Game::UI::Menu_EscapeMenu::Modding::Setting_ShowSandboxLabel_C;
-    using UI_Modding_SortBy_C = Game::UI::Menu_EscapeMenu::Modding::UI_Modding_SortBy_C;
+    using Basic_BoolUserSetting_C = ::Game::UI::Art::WidgetParts::Basic_BoolUserSetting_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using Dialog_Modding_TermsAndConditions_C = ::Game::UI::Menu_EscapeMenu::Modding::Dialog_Modding_TermsAndConditions_C;
+    using ITM_IngameTab_Mod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_IngameTab_Mod_C;
+    using ITM_Mod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Mod_C;
+    using ITM_Modding_LoadoutSelection_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_LoadoutSelection_C;
+    using ITM_PendingMod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_PendingMod_C;
+    using ITM_Special_ButtonCutCorner_C = ::Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
+    using Setting_Modding_CheckVersion_C = ::Game::UI::Menu_EscapeMenu::Modding::Setting_Modding_CheckVersion_C;
+    using Setting_ShowSandboxLabel_C = ::Game::UI::Menu_EscapeMenu::Modding::Setting_ShowSandboxLabel_C;
+    using UI_Modding_SortBy_C = ::Game::UI::Menu_EscapeMenu::Modding::UI_Modding_SortBy_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BlurBackground_C* BlurBackground;
     ITM_Special_ButtonCutCorner_C* BTN_Leave;
@@ -137,4 +137,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using ITM_Tab_Modding_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Tab_Modding_C;
+using ITM_Tab_Modding_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Tab_Modding_C;

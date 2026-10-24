@@ -20,10 +20,10 @@ class WND_TooManyModsEnabled_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Modding/WND_TooManyModsEnabled", "WND_TooManyModsEnabled_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Modding
 
-using WND_TooManyModsEnabled_C = Game::UI::HUD_SpaceRig::Modding::WND_TooManyModsEnabled_C;
+using WND_TooManyModsEnabled_C = ::Game::UI::HUD_SpaceRig::Modding::WND_TooManyModsEnabled_C;

@@ -17,7 +17,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace IFG {
 
-class Grenade_IFG_C : public Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base_C
+class Grenade_IFG_C : public ::Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/IFG/Grenade_IFG", "Grenade_IFG_C");
@@ -35,6 +35,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear;Widget";
         static constexpr const char* UberGraphFrame_Grenade_IFG_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight__UeScsNode = "859d117c169f9b4796c6341ccb368540";
         static constexpr const char* ParticleSystem__UeScsNode = "287d3047aacb7a40927230df3bfa4229";
@@ -44,4 +45,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG
 
-using Grenade_IFG_C = Game::WeaponsNTools::Grenades::IFG::Grenade_IFG_C;
+using Grenade_IFG_C = ::Game::WeaponsNTools::Grenades::IFG::Grenade_IFG_C;

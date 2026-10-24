@@ -58,6 +58,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent MomentumAudio;/Script/FSD.BobbingComponent BobbingComponent;/Script/FSD.BoscoAbillityComponent PrimaryAbility;/Script/FSD.BoscoAbillityComponent SecondaryAbility;/Script/FSD.DamageComponent Damage;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.DroneMeleeTool MeleeTool;/Script/FSD.DroneMiningToolBase MiningTool;/Script/FSD.DroneSkinnableComponent Skinnable;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.HitscanComponent BoscoHitscan;/Script/Engine.ParticleSystemComponent LTrail;/Script/Engine.ParticleSystemComponent RTrail;/Script/AIModule.PawnSensingComponent Senses;/Script/Engine.PointLightComponent PointlightComponent;/Script/Engine.SkeletalMeshComponent BoscoMesh;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_0;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_1;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_5;/Script/Engine.SpotLightComponent SpotlightComponent;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.UpgradableBoscoComponent Upgradable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Drone/BP_BoscoStateDisplay.BP_BoscoStateDisplay_C StateDisplay_GEN_VARIABLE:StateDisplay_GEN_VARIABLE_BP_BoscoStateDisplay_C_CAT";
         static constexpr const char* PawnStats__UeScsNode = "4d6c5dd082e8a746a580aff3166403a5";
         static constexpr const char* TerrainScannerMesh__UeScsNode = "beae4520e4c9654da60c6614a05cc869";
         static constexpr const char* StateDisplay__UeScsNode = "d3d36daa5d221741906b67a499f91ffe";
@@ -75,4 +76,4 @@ private:
 
 }}}   // namespace Game::GameElements::Drone
 
-using BP_Bosco_C = Game::GameElements::Drone::BP_Bosco_C;
+using BP_Bosco_C = ::Game::GameElements::Drone::BP_Bosco_C;

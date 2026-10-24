@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_ActiveButton_C = Game::UI::OnScreenIndicators::OnScreenIndicator_ActiveButton_C;
+using OnScreenIndicator_ActiveButton_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_ActiveButton_C;

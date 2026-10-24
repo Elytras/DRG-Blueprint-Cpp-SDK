@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using BP_Spider_Lobber_Puddle_C = Game::Enemies::Spider::Lobber::BP_Spider_Lobber_Puddle_C;
+using BP_Spider_Lobber_Puddle_C = ::Game::Enemies::Spider::Lobber::BP_Spider_Lobber_Puddle_C;

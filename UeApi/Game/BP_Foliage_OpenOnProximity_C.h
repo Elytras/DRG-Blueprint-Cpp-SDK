@@ -62,4 +62,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage
 
-using BP_Foliage_OpenOnProximity_C = Game::LevelElements::RoomObjects::PassiveFoliage::BP_Foliage_OpenOnProximity_C;
+using BP_Foliage_OpenOnProximity_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::BP_Foliage_OpenOnProximity_C;

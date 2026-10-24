@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_GenericAffliction_C = Game::UI::ScreenOverlays::ScreenOverlay_GenericAffliction_C;
+using ScreenOverlay_GenericAffliction_C = ::Game::UI::ScreenOverlays::ScreenOverlay_GenericAffliction_C;

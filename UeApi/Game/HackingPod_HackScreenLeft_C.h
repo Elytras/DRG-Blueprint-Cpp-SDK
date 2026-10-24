@@ -13,7 +13,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Tethers { namespace Assets {
 
-class HackingPod_HackScreenLeft_C : public Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
+class HackingPod_HackScreenLeft_C : public ::Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/Assets/HackingPod_HackScreenLeft", "HackingPod_HackScreenLeft_C");
@@ -35,4 +35,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using HackingPod_HackScreenLeft_C = Game::GameElements::Objectives::Facility::Tethers::Assets::HackingPod_HackScreenLeft_C;
+using HackingPod_HackScreenLeft_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::HackingPod_HackScreenLeft_C;

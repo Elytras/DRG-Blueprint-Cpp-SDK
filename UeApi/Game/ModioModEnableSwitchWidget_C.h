@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::Collection
 
-using ModioModEnableSwitchWidget_C = Modio::UI::Browser::Views::Collection::ModioModEnableSwitchWidget_C;
+using ModioModEnableSwitchWidget_C = ::Modio::UI::Browser::Views::Collection::ModioModEnableSwitchWidget_C;

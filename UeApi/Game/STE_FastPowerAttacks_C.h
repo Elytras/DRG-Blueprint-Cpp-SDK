@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RockEnemies
 
-using STE_FastPowerAttacks_C = Game::GameElements::GameEvents::RockEnemies::STE_FastPowerAttacks_C;
+using STE_FastPowerAttacks_C = ::Game::GameElements::GameEvents::RockEnemies::STE_FastPowerAttacks_C;

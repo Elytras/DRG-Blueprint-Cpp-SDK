@@ -20,8 +20,8 @@ class Basic_Window_CutCorner_Gradient_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_Window_CutCorner_Gradient", "Basic_Window_CutCorner_Gradient_C");
-    using Basic_BG_CutCorner_Gradient_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_Gradient_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_BG_CutCorner_Gradient_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_Gradient_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_BG_CutCorner_Gradient_C* Basic_BG_Window;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Window_CutCorner_Gradient_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_Gradient_C;
+using Basic_Window_CutCorner_Gradient_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_Gradient_C;

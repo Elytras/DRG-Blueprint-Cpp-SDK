@@ -36,4 +36,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets
 
-using PRJ_RedThorn_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::PRJ_RedThorn_C;
+using PRJ_RedThorn_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::PRJ_RedThorn_C;

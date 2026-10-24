@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_SeeYouInHellElectricField_C = Game::GameElements::KPI::Perks::STE_SeeYouInHellElectricField_C;
+using STE_SeeYouInHellElectricField_C = ::Game::GameElements::KPI::Perks::STE_SeeYouInHellElectricField_C;

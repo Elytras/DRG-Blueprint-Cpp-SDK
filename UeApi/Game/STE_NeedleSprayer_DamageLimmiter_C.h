@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer
 
-using STE_NeedleSprayer_DamageLimmiter_C = Game::WeaponsNTools::Grenades::NeedleSprayer::STE_NeedleSprayer_DamageLimmiter_C;
+using STE_NeedleSprayer_DamageLimmiter_C = ::Game::WeaponsNTools::Grenades::NeedleSprayer::STE_NeedleSprayer_DamageLimmiter_C;

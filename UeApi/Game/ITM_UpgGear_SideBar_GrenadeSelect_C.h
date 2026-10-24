@@ -24,8 +24,8 @@ class ITM_UpgGear_SideBar_GrenadeSelect_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_SideBar_GrenadeSelect", "ITM_UpgGear_SideBar_GrenadeSelect_C");
-    using Basic_Popup_YesNoPrompt_C = Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
-    using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C;
+    using Basic_Popup_YesNoPrompt_C = ::Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
+    using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* ItemBox;
     class UWidgetSwitcher* UpgradeBuySwitcher;
@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_SideBar_GrenadeSelect_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_C;
+using ITM_UpgGear_SideBar_GrenadeSelect_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_C;

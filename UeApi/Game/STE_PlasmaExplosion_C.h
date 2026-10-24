@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using STE_PlasmaExplosion_C = Game::WeaponsNTools::PlasmaCarbine::STE_PlasmaExplosion_C;
+using STE_PlasmaExplosion_C = ::Game::WeaponsNTools::PlasmaCarbine::STE_PlasmaExplosion_C;

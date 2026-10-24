@@ -126,4 +126,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops
 
-using BP_HoopsGame_C = Game::LevelElements::Spacerig::Bar::Hoops::BP_HoopsGame_C;
+using BP_HoopsGame_C = ::Game::LevelElements::Spacerig::Bar::Hoops::BP_HoopsGame_C;

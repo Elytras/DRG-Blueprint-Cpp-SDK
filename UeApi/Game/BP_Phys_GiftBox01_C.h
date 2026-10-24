@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_Phys_GiftBox01_C = Game::Art::Environments::Holiday_Xmas::BP_Phys_GiftBox01_C;
+using BP_Phys_GiftBox01_C = ::Game::Art::Environments::Holiday_Xmas::BP_Phys_GiftBox01_C;

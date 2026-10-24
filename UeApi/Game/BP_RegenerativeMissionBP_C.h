@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RegenerativeEnemies
 
-using BP_RegenerativeMissionBP_C = Game::GameElements::Missions::Warnings::RegenerativeEnemies::BP_RegenerativeMissionBP_C;
+using BP_RegenerativeMissionBP_C = ::Game::GameElements::Missions::Warnings::RegenerativeEnemies::BP_RegenerativeMissionBP_C;

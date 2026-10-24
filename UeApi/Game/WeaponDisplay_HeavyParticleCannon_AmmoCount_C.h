@@ -68,4 +68,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using WeaponDisplay_HeavyParticleCannon_AmmoCount_C = Game::WeaponsNTools::HeavyParticleCannon::WeaponDisplay_HeavyParticleCannon_AmmoCount_C;
+using WeaponDisplay_HeavyParticleCannon_AmmoCount_C = ::Game::WeaponsNTools::HeavyParticleCannon::WeaponDisplay_HeavyParticleCannon_AmmoCount_C;

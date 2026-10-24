@@ -22,13 +22,13 @@ namespace Game { namespace UI { namespace MainOnscreenHUD { namespace Standard {
 
 namespace Game { namespace UI { namespace MENU_Merch { namespace _Common {
 
-class UI_Merch_BigAndSmall_C : public Game::UI::MENU_Merch::_Common::UI_MerchEntry_Base_C
+class UI_Merch_BigAndSmall_C : public ::Game::UI::MENU_Merch::_Common::UI_MerchEntry_Base_C
 {
 public:
     UE_CLASS("/Game/UI/MENU_Merch/_Common/UI_Merch_BigAndSmall", "UI_Merch_BigAndSmall_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_MediaPlayer_C = Game::UI::MENU_Merch::UI_MediaPlayer_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_MediaPlayer_C = ::Game::UI::MENU_Merch::UI_MediaPlayer_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_Merch_BigAndSmall_C;
     UE_READONLY class UWidgetAnimation* AnimClick;
     UE_READONLY class UWidgetAnimation* AnimHover;
@@ -38,7 +38,7 @@ public:
     Basic_Image_C* Image_Big;
     Basic_Image_C* Image_Hovered;
     UI_MediaPlayer_C* Image_MediaPlayer;
-    Basic_Image_C* IMG_Shadow;
+    Basic_Image_C* Img_Shadow;
     class UOverlay* Overlay_Big;
     class UHorizontalBox* Small_Box;
     FText Description;
@@ -69,4 +69,4 @@ private:
 
 }}}}   // namespace Game::UI::MENU_Merch::_Common
 
-using UI_Merch_BigAndSmall_C = Game::UI::MENU_Merch::_Common::UI_Merch_BigAndSmall_C;
+using UI_Merch_BigAndSmall_C = ::Game::UI::MENU_Merch::_Common::UI_Merch_BigAndSmall_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_PrestigeAssignment_ArmorHunt_100_ScaleBrigade_C = Game::GameElements::Campaign::CP_PrestigeAssignment_ArmorHunt_100_ScaleBrigade_C;
+using CP_PrestigeAssignment_ArmorHunt_100_ScaleBrigade_C = ::Game::GameElements::Campaign::CP_PrestigeAssignment_ArmorHunt_100_ScaleBrigade_C;

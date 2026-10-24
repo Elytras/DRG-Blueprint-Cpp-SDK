@@ -15,10 +15,10 @@ class UI_Merch_DrgSurvivor_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MENU_Merch/Survivor/UI_Merch_DrgSurvivor", "UI_Merch_DrgSurvivor_C");
-    using UI_Merch_BigAndSmall_C = Game::UI::MENU_Merch::_Common::UI_Merch_BigAndSmall_C;
+    using UI_Merch_BigAndSmall_C = ::Game::UI::MENU_Merch::_Common::UI_Merch_BigAndSmall_C;
     UI_Merch_BigAndSmall_C* UI_Merch_BigAndSmall;
 };
 
 }}}}   // namespace Game::UI::MENU_Merch::Survivor
 
-using UI_Merch_DrgSurvivor_C = Game::UI::MENU_Merch::Survivor::UI_Merch_DrgSurvivor_C;
+using UI_Merch_DrgSurvivor_C = ::Game::UI::MENU_Merch::Survivor::UI_Merch_DrgSurvivor_C;

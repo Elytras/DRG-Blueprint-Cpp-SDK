@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using UI_CommunityRewardResource_C = Game::UI::HUD_SpaceRig::CommunityTerminal::UI_CommunityRewardResource_C;
+using UI_CommunityRewardResource_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::UI_CommunityRewardResource_C;

@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations
 
-using BP_CrystalFormations_SlantedPillars_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_Base_C;
+using BP_CrystalFormations_SlantedPillars_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_Base_C;

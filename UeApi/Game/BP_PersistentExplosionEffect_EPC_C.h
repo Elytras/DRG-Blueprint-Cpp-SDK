@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace ChargeBlaster {
 
-class BP_PersistentExplosionEffect_EPC_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_PersistentExplosionEffect_EPC_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/BP_PersistentExplosionEffect_EPC", "BP_PersistentExplosionEffect_EPC_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "AcidCloud;Sphere;StatusEffectTrigger";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using BP_PersistentExplosionEffect_EPC_C = Game::WeaponsNTools::ChargeBlaster::BP_PersistentExplosionEffect_EPC_C;
+using BP_PersistentExplosionEffect_EPC_C = ::Game::WeaponsNTools::ChargeBlaster::BP_PersistentExplosionEffect_EPC_C;

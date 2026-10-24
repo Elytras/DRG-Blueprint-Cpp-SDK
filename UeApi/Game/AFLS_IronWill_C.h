@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::PerkSFX
 
-using AFLS_IronWill_C = Game::GameElements::KPI::Perks::PerkSFX::AFLS_IronWill_C;
+using AFLS_IronWill_C = ::Game::GameElements::KPI::Perks::PerkSFX::AFLS_IronWill_C;

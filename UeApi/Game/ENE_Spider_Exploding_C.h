@@ -17,7 +17,7 @@ class USphereComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Exploder {
 
-class ENE_Spider_Exploding_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Exploding_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Exploder/ENE_Spider_Exploding", "ENE_Spider_Exploding_C");
@@ -57,6 +57,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
         static constexpr const char* UberGraphFrame_ENE_Spider_Exploding_C__UeName = "UberGraphFrame";
         static constexpr const char* Damage__UeScsNode = "0d8fe0e47b059c4e8b7cfc7041bcab3c";
         static constexpr const char* Sphere__UeScsNode = "e95463d1d24583489eac11e5ff8a7fe9";
@@ -71,4 +72,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Exploder
 
-using ENE_Spider_Exploding_C = Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_C;
+using ENE_Spider_Exploding_C = ::Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_C;

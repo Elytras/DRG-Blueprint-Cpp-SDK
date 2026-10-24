@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::GameElements::Bar
 
-using ABP_Bartender_C = Game::GameElements::Bar::ABP_Bartender_C;
+using ABP_Bartender_C = ::Game::GameElements::Bar::ABP_Bartender_C;

@@ -12,7 +12,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace CozyTreeHollows {
 
-class BP_CozyTreeHollow_Double_A_C : public Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C
+class BP_CozyTreeHollow_Double_A_C : public ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/CozyTreeHollows/BP_CozyTreeHollow_Double_A", "BP_CozyTreeHollow_Double_A_C");
@@ -21,6 +21,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver_Entrance";
         static constexpr const char* StaticMesh_Room1__UeScsNode = "988650dfab62074eaee2162de628c894";
         static constexpr const char* LevelGenerationCarver_Room1__UeScsNode = "a175a106054b4243a020382d1fcc7904";
     };
@@ -28,4 +29,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::CozyTreeHollows
 
-using BP_CozyTreeHollow_Double_A_C = Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Double_A_C;
+using BP_CozyTreeHollow_Double_A_C = ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Double_A_C;

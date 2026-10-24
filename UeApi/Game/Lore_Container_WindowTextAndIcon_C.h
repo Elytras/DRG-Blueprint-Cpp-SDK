@@ -25,9 +25,9 @@ class Lore_Container_WindowTextAndIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_WindowTextAndIcon", "Lore_Container_WindowTextAndIcon_C");
-    using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
+    using Basic_IconWithOutline_C = ::Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using UI_RunningText_C = ::Game::UI::Global_UI_Elements::UI_RunningText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Glow;
     Basic_IconWithOutline_C* Basic_HexIcon;
@@ -54,4 +54,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers
 
-using Lore_Container_WindowTextAndIcon_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;
+using Lore_Container_WindowTextAndIcon_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_WindowTextAndIcon_C;

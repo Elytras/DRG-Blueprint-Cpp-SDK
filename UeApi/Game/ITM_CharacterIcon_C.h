@@ -25,10 +25,10 @@ class ITM_CharacterIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_CharacterIcon", "ITM_CharacterIcon_C");
-    using ITM_HostIcon_C = Game::UI::Global_UI_Elements::ITM_HostIcon_C;
-    using ITM_RetirementBadge_C = Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
-    using ITM_SonyTeamLeader_C = Game::UI::Global_UI_Elements::ITM_SonyTeamLeader_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using ITM_HostIcon_C = ::Game::UI::Global_UI_Elements::ITM_HostIcon_C;
+    using ITM_RetirementBadge_C = ::Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
+    using ITM_SonyTeamLeader_C = ::Game::UI::Global_UI_Elements::ITM_SonyTeamLeader_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Border_CharacterColor;
     class UImage* Border_CharacterColorBG;
@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;

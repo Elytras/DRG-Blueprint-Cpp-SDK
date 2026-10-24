@@ -37,4 +37,4 @@ private:
 
 }}}}}   // namespace Game::Character::Vanity2::Headwear::Blueprints
 
-using BP_MissionControlPointlight_C = Game::Character::Vanity2::Headwear::Blueprints::BP_MissionControlPointlight_C;
+using BP_MissionControlPointlight_C = ::Game::Character::Vanity2::Headwear::Blueprints::BP_MissionControlPointlight_C;

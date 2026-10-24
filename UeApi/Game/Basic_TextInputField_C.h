@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_TextInputField_C = Game::UI::Art::WidgetParts::Basic_TextInputField_C;
+using Basic_TextInputField_C = ::Game::UI::Art::WidgetParts::Basic_TextInputField_C;

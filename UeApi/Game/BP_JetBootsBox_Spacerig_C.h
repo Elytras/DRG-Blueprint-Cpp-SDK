@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsBox_Spacerig_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsBox_Spacerig_C;
+using BP_JetBootsBox_Spacerig_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsBox_Spacerig_C;

@@ -20,7 +20,7 @@ class ITM_FactionToolTip_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_FactionToolTip", "ITM_FactionToolTip_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UVerticalBox* CCDescription;
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_FactionToolTip_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
+using ITM_FactionToolTip_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;

@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using WPN_RecallableSentryGun_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::WPN_RecallableSentryGun_C;
+using WPN_RecallableSentryGun_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::WPN_RecallableSentryGun_C;

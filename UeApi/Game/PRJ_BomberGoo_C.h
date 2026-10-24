@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using PRJ_BomberGoo_C = Game::Enemies::FlyingBug::Bomber::PRJ_BomberGoo_C;
+using PRJ_BomberGoo_C = ::Game::Enemies::FlyingBug::Bomber::PRJ_BomberGoo_C;

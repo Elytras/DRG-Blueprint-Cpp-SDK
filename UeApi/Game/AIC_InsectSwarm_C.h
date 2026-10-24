@@ -30,4 +30,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm
 
-using AIC_InsectSwarm_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::AIC_InsectSwarm_C;
+using AIC_InsectSwarm_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::AIC_InsectSwarm_C;

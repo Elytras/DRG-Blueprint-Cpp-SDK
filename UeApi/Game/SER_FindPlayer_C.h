@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Services
 
-using SER_FindPlayer_C = Game::AI::Services::SER_FindPlayer_C;
+using SER_FindPlayer_C = ::Game::AI::Services::SER_FindPlayer_C;

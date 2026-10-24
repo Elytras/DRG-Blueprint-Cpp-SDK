@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using BP_PipeGrindingConnector_C = Game::LevelElements::Refinery::Pipeline::BP_PipeGrindingConnector_C;
+using BP_PipeGrindingConnector_C = ::Game::LevelElements::Refinery::Pipeline::BP_PipeGrindingConnector_C;

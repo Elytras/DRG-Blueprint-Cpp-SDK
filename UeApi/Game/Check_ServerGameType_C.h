@@ -17,7 +17,7 @@ class Check_ServerGameType_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/Check_ServerGameType", "Check_ServerGameType_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* CheckBox;
     TMulticastInlineDelegate<void(bool IsChecked, EGameType Gametype_0)> OnCheckedChanged;
@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using Check_ServerGameType_C = Game::UI::Menu_ServerList::Check_ServerGameType_C;
+using Check_ServerGameType_C = ::Game::UI::Menu_ServerList::Check_ServerGameType_C;

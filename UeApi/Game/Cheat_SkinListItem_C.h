@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_SkinListItem_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_SkinListItem_C;
+using Cheat_SkinListItem_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_SkinListItem_C;

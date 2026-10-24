@@ -27,12 +27,12 @@ class ITM_Wardrobe_ClassSelector_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ClassSelector", "ITM_Wardrobe_ClassSelector_C");
-    using BP_GameState_C = Game::Game::BP_GameState_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollArrow_C = Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using BP_GameState_C = ::Game::Game::BP_GameState_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollArrow_C = ::Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_0;
@@ -75,4 +75,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ClassSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
+using ITM_Wardrobe_ClassSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;

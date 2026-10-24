@@ -15,11 +15,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Tethers {
 
-class BP_TetherDispenser_C : public Game::GameElements::ItemDispenser::BP_ItemDispenserBase_C
+class BP_TetherDispenser_C : public ::Game::GameElements::ItemDispenser::BP_ItemDispenserBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_TetherDispenser", "BP_TetherDispenser_C");
-    using BP_TransmitterNode_C = Game::GameElements::Objectives::Facility::Tethers::BP_TransmitterNode_C;
+    using BP_TransmitterNode_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_TransmitterNode_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USphereComponent* Sphere;
     class USkeletalMeshComponent* SkeletalMesh;
@@ -40,4 +40,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_TetherDispenser_C = Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenser_C;
+using BP_TetherDispenser_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenser_C;

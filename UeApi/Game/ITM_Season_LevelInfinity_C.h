@@ -20,7 +20,7 @@ class ITM_Season_LevelInfinity_C : public USeasonInfinityLevelWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_LevelInfinity", "ITM_Season_LevelInfinity_C");
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ClaimSpecialGlow;
     UE_READONLY class UWidgetAnimation* ClaimNormalGlow;
@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_LevelInfinity_C = Game::UI::Menu_Seasons::ITM_Season_LevelInfinity_C;
+using ITM_Season_LevelInfinity_C = ::Game::UI::Menu_Seasons::ITM_Season_LevelInfinity_C;

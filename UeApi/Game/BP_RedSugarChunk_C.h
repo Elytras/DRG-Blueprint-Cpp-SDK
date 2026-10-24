@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::RedSugar
 
-using BP_RedSugarChunk_C = Game::GameElements::Resources::Carved::RedSugar::BP_RedSugarChunk_C;
+using BP_RedSugarChunk_C = ::Game::GameElements::Resources::Carved::RedSugar::BP_RedSugarChunk_C;

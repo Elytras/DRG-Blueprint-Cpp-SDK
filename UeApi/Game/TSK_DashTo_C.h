@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::Enemies::FlyingBug
 
-using TSK_DashTo_C = Game::Enemies::FlyingBug::TSK_DashTo_C;
+using TSK_DashTo_C = ::Game::Enemies::FlyingBug::TSK_DashTo_C;

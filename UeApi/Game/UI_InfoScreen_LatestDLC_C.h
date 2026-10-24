@@ -22,8 +22,8 @@ class UI_InfoScreen_LatestDLC_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_LatestDLC", "UI_InfoScreen_LatestDLC_C");
-    using Basic_Header_C = Game::UI::Art::WidgetParts::Basic_Header_C;
-    using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
+    using Basic_Header_C = ::Game::UI::Art::WidgetParts::Basic_Header_C;
+    using ITM_GlowBackground_Adjustable_C = ::Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -37,9 +37,9 @@ public:
     class UGameDLC* DLC;
     void GetSeasonDLC(class UGameDLC*& Season_DLC);
     void OpenDLCInSteamBrowser();
-    UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
+    UE_COSMETIC void Construct();
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature();
     void ExecuteUbergraph_UI_InfoScreen_LatestDLC(int EntryPoint);
@@ -47,4 +47,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_LatestDLC_C = Game::UI::Menu_StartScreen::UI_InfoScreen_LatestDLC_C;
+using UI_InfoScreen_LatestDLC_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_LatestDLC_C;

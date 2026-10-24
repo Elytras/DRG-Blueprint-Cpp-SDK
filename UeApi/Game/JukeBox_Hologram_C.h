@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::ShipTesting
 
-using JukeBox_Hologram_C = Game::Art::Environments::ShipTesting::JukeBox_Hologram_C;
+using JukeBox_Hologram_C = ::Game::Art::Environments::ShipTesting::JukeBox_Hologram_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_Plague_MeteorImpact_Hot_DoT_C = Game::Landscape::ReactiveTerrain::STE_Plague_MeteorImpact_Hot_DoT_C;
+using STE_Plague_MeteorImpact_Hot_DoT_C = ::Game::Landscape::ReactiveTerrain::STE_Plague_MeteorImpact_Hot_DoT_C;

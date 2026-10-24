@@ -33,4 +33,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::Refinery::Pipeline::Assets
 
-using ABP_Pipeline_Connector_C = Game::LevelElements::Refinery::Pipeline::Assets::ABP_Pipeline_Connector_C;
+using ABP_Pipeline_Connector_C = ::Game::LevelElements::Refinery::Pipeline::Assets::ABP_Pipeline_Connector_C;

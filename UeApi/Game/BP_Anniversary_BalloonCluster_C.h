@@ -21,9 +21,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* SoundLocation;
     bool PlaySound;
-    void OnRep_PlaySound();
-    void BndEvt__BP_Anniversary_BalloonCluster_SkeletalMeshComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ExecuteUbergraph_BP_Anniversary_BalloonCluster(int EntryPoint);
+    void BndEvt__BP_Anniversary_BalloonCluster_SkeletalMeshComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    void OnRep_PlaySound();
 private:
     struct UeMarkers
     {
@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Anniversary
 
-using BP_Anniversary_BalloonCluster_C = Game::Art::Environments::Holiday_Anniversary::BP_Anniversary_BalloonCluster_C;
+using BP_Anniversary_BalloonCluster_C = ::Game::Art::Environments::Holiday_Anniversary::BP_Anniversary_BalloonCluster_C;

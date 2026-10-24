@@ -25,4 +25,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_MeteorSpawner_C = Game::GameElements::GameEvents::PlagueMeteor::BP_MeteorSpawner_C;
+using BP_MeteorSpawner_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_MeteorSpawner_C;

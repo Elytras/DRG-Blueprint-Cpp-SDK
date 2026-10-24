@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using AIC_Bomber_C = Game::Enemies::FlyingBug::Bomber::AIC_Bomber_C;
+using AIC_Bomber_C = ::Game::Enemies::FlyingBug::Bomber::AIC_Bomber_C;

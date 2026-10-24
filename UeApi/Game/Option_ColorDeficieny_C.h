@@ -22,9 +22,9 @@ class Option_ColorDeficieny_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/ColorDeficiency/Option_ColorDeficieny", "Option_ColorDeficieny_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ImageIntro;
     Basic_Option_C* Basic_Option;
@@ -48,4 +48,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::ColorDeficiency
 
-using Option_ColorDeficieny_C = Game::UI::Menu_Options::ColorDeficiency::Option_ColorDeficieny_C;
+using Option_ColorDeficieny_C = ::Game::UI::Menu_Options::ColorDeficiency::Option_ColorDeficieny_C;

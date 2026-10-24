@@ -160,4 +160,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SuckingPlant
 
-using BP_SuckingPlant__C = Game::LevelElements::RoomObjects::Hazards::SuckingPlant::BP_SuckingPlant__C;
+using BP_SuckingPlant__C = ::Game::LevelElements::RoomObjects::Hazards::SuckingPlant::BP_SuckingPlant__C;

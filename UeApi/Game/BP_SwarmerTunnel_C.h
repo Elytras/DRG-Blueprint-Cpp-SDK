@@ -153,4 +153,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel
 
-using BP_SwarmerTunnel_C = Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel::BP_SwarmerTunnel_C;
+using BP_SwarmerTunnel_C = ::Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel::BP_SwarmerTunnel_C;

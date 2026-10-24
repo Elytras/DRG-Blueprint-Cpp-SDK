@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::Enemies::CaveLeech
 
-using ESI_CaveLeech_C = Game::Enemies::CaveLeech::ESI_CaveLeech_C;
+using ESI_CaveLeech_C = ::Game::Enemies::CaveLeech::ESI_CaveLeech_C;

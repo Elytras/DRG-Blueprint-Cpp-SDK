@@ -20,7 +20,7 @@ UE_ASSET_AT(::UFSDEvent, EV_BeachParty2026, "/Game/Game/Events/EV_BeachParty2026
 UE_ASSET_AT(::UFSDEvent, EV_EarlyAccessHats, "/Game/Game/Events/EV_EarlyAccessHats");
 UE_ASSET_AT(::UFSDEvent, EV_GreatEggHunt2023, "/Game/Game/Events/EV_GreatEggHunt2023");
 UE_ASSET_AT(::UFSDEvent, EV_GreatEggHunt2026, "/Game/Game/Events/EV_GreatEggHunt2026");
-UE_ASSET_AT(::UFSDEvent, EV_Halloween2025, "/Game/Game/Events/EV_Halloween2025");
+UE_ASSET_AT(::UFSDEvent, EV_Halloween2026, "/Game/Game/Events/EV_Halloween2026");
 UE_ASSET_AT(::UFSDEvent, EV_LunarFestival2023, "/Game/Game/Events/EV_LunarFestival2023");
 UE_ASSET_AT(::UFSDEvent, EV_LunarFestival2026, "/Game/Game/Events/EV_LunarFestival2026");
 UE_ASSET_AT(::UFSDEvent, EV_Oktoberfest2023, "/Game/Game/Events/EV_Oktoberfest2023");

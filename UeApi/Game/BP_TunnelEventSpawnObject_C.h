@@ -25,4 +25,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent
 
-using BP_TunnelEventSpawnObject_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventSpawnObject_C;
+using BP_TunnelEventSpawnObject_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventSpawnObject_C;

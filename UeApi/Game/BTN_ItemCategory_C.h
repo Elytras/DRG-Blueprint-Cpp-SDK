@@ -26,7 +26,7 @@ class BTN_ItemCategory_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/BTN_ItemCategory", "BTN_ItemCategory_C");
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Pressed;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -66,4 +66,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using BTN_ItemCategory_C = Game::UI::Menu_Crafting::BTN_ItemCategory_C;
+using BTN_ItemCategory_C = ::Game::UI::Menu_Crafting::BTN_ItemCategory_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using AFE_TP_ShieldBreak_Damage_C = Game::WeaponsNTools::Armor::AFE_TP_ShieldBreak_Damage_C;
+using AFE_TP_ShieldBreak_Damage_C = ::Game::WeaponsNTools::Armor::AFE_TP_ShieldBreak_Damage_C;

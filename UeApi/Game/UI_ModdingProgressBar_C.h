@@ -20,7 +20,7 @@ class UI_ModdingProgressBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Modding/UI_ModdingProgressBar", "UI_ModdingProgressBar_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UProgressBar* ActionProgressBar;
     class USizeBox* HeightSizeBox;
@@ -47,4 +47,4 @@ public:
 
 }}}   // namespace Game::UI::Modding
 
-using UI_ModdingProgressBar_C = Game::UI::Modding::UI_ModdingProgressBar_C;
+using UI_ModdingProgressBar_C = ::Game::UI::Modding::UI_ModdingProgressBar_C;

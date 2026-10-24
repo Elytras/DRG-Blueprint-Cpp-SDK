@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;

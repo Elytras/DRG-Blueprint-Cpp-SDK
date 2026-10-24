@@ -3394,6 +3394,8 @@ struct FActiveOutline
 
 struct FActiveStatusEffect
 {
+    TWeakObjectPtr<class AActor> Owner;
+    TWeakObjectPtr<class APawn> Instigator;
 };
 
 struct FActiveStatusEffectBank
@@ -3533,6 +3535,7 @@ struct FAttackCooldown
 
 struct FAttackerInfo
 {
+    TWeakObjectPtr<class AActor> Attacker;
     int PositionIndex;
     float AttackerRadius;
 };
@@ -3706,6 +3709,9 @@ struct FBoscoLightSetting
 
 struct FBossFight
 {
+    TWeakObjectPtr<class AActor> BossActor;
+    TWeakObjectPtr<class UEnemyComponent> EnemyComponent;
+    TWeakObjectPtr<class UEnemyHealthComponent> HealthComponent;
 };
 
 struct FBulletPathSegment
@@ -3804,6 +3810,7 @@ struct FCablePoint
     ETrackBuildPlacementState PlacementState;
     FVector_NetQuantize Location;
     FVector_NetQuantize EulerRotation;
+    TWeakObjectPtr<class ACableEnd> CableEnd;
 };
 
 struct FCameraSpringSettings
@@ -4605,6 +4612,7 @@ struct FCurve2DAppearance
 
 struct FCustomCounter
 {
+    TWeakObjectPtr<class UObject> Owner;
 };
 
 struct FCustomKeySetting
@@ -4654,6 +4662,7 @@ struct FDailyDealSetup
 struct FDamageDataBase
 {
     class UFSDPhysicalMaterial* PhysMaterial;
+    TWeakObjectPtr<class UPrimitiveComponent> Component;
     FVector HitLocation;
     int BoneIndex;
     class UDamageImpulse* DamageImpulseOverride;
@@ -4663,6 +4672,8 @@ struct FDamageDataBase
 struct FDamageData : public FDamageDataBase
 {
     class UDamageClass* DamageClass;
+    TWeakObjectPtr<class AController> Instigator;
+    TWeakObjectPtr<class AActor> DamageCauser;
     float DamageModifier;
     float ArmorPenetration;
     bool IsFriendlyFire;
@@ -4952,6 +4963,7 @@ struct FEquippedActorData
 
 struct FDelayedActorSwitchData
 {
+    TWeakObjectPtr<class AActor> Actor;
     bool IsActive;
     bool IsExternalActor;
     bool IsUnEquipCalled;
@@ -5119,6 +5131,7 @@ struct FDisplayContent
 
 struct FDormantComponentState
 {
+    TWeakObjectPtr<class UActorComponent> Component;
     ECollisionEnabled Collision;
     FName CollisionProfileName;
     bool Active;
@@ -5127,6 +5140,7 @@ struct FDormantComponentState
 
 struct FDoubleDrillDamageItem
 {
+    TWeakObjectPtr<class UPrimitiveComponent> Target;
     FVector_NetQuantize Location;
     FVector_NetQuantizeNormal Normal;
     class UFSDPhysicalMaterial* Material;
@@ -5136,6 +5150,7 @@ struct FDoubleDrillDamageItem
 
 struct FDownCameraSettings
 {
+    TWeakObjectPtr<class APlayerCharacter> Target;
     int TargetIndex;
     float MinPitch;
     float MaxPitch;
@@ -5166,6 +5181,7 @@ struct FDrinkSave
 struct FDrinkableBarSlot
 {
     FVector WorldLocation;
+    TWeakObjectPtr<class ADrinkableActor> DrinkableActor;
 };
 
 struct FDroneLightSetting
@@ -5390,6 +5406,8 @@ struct FEnemySpawnItem
 
 struct FEnhancedTrace
 {
+    TWeakObjectPtr<class UHitscanBaseComponent> Component;
+    TWeakObjectPtr<class APlayerCharacter> Instigator;
     FVector Origin;
     FVector Direction;
     FVector HitPoint;
@@ -5850,6 +5868,7 @@ struct FFakeSawMover
 
 struct FFlareMeta
 {
+    TWeakObjectPtr<class AActor> Actor;
     float Inhibit;
     float Radius;
     float InvRadius;
@@ -6654,11 +6673,14 @@ struct FGuntowerModuleLevel
 
 struct FHUDVisibilityRegisteredWidget
 {
+    TWeakObjectPtr<class UWidget> Widget;
 };
 
 struct FHackingUsableState
 {
     bool bIsHacked;
+    TWeakObjectPtr<class AHackingToolItem> BeingHackedByItem;
+    TWeakObjectPtr<class APlayerCharacter> HackedBy;
 };
 
 struct FHandleRotationOptions
@@ -6700,6 +6722,8 @@ struct FHeatSource
 
 struct FHeightenedSenseTracker
 {
+    TWeakObjectPtr<class AActor> Actor;
+    TWeakObjectPtr<class UHealthComponentBase> HealthComponent;
 };
 
 struct FHeroInfo
@@ -6978,6 +7002,7 @@ struct FJettyBootSetting
 
 struct FJettyBootsPlayer
 {
+    TWeakObjectPtr<class APlayerCharacter> PlayerCharacter;
     bool bIsPlaying;
 };
 
@@ -7065,6 +7090,9 @@ struct FLerpingPercent
 
 struct FLightStrobeChannel
 {
+    TWeakObjectPtr<class UPointLightComponent> Light;
+    TWeakObjectPtr<class UMaterialInstanceDynamic> Mid;
+    TWeakObjectPtr<class UMeshComponent> Mesh;
     FName ParamName;
     float MinIntensity;
     float MaxIntensity;
@@ -7147,6 +7175,7 @@ struct FLocalizedLanguageInfo
 struct FLockCounter
 {
     int LockCount;
+    TWeakObjectPtr<class AActor> LockedActor;
 };
 
 struct FLookupSessionRequest
@@ -7646,6 +7675,7 @@ struct FPipelineMovementData
     float Speed;
     bool UpToSpeed;
     float Acceleration;
+    TWeakObjectPtr<class APipelineSegment> PipelineSegment;
 };
 
 struct FPitchedUsers
@@ -7732,6 +7762,7 @@ struct FProfileCategoryTiming
 
 struct FProfileEntry
 {
+    TWeakObjectPtr<class UObject> Context;
     FString Category;
     float TimeSpent;
 };
@@ -7749,6 +7780,8 @@ struct FProjectileImpact
 {
     FVector_NetQuantize Location;
     FVector_NetQuantizeNormal Normal;
+    TWeakObjectPtr<class AActor> Actor;
+    TWeakObjectPtr<class UPrimitiveComponent> Component;
     class UPhysicalMaterial* PhysMat;
     int BoneIndex;
     bool bBlockingHit;
@@ -7803,6 +7836,7 @@ struct FPropHuntContestantState
 {
     EPropHuntRole Role;
     FVector2D DisguiseSize;
+    TWeakObjectPtr<class APlayerCharacter> PlayerCharacter;
     int Lives;
 };
 
@@ -8013,6 +8047,7 @@ struct FRemoveFloatingIslandOperationData
 
 struct FReplicatedCharacterData
 {
+    TWeakObjectPtr<class AActor> Target;
     float TemperatureEffect;
     bool bCanTakeDamage;
 };
@@ -8188,6 +8223,7 @@ struct FRuntimeSpawnedDebris
 
 struct FSaveGameSnapShot
 {
+    TWeakObjectPtr<class UFSDSaveGame> SaveGame;
     FString Filename;
     bool IsObsolete;
     int VersionNumber;
@@ -8744,6 +8780,7 @@ struct FTerminatorTalkMaterial
 
 struct FTerminatorTarget : public FTentacleTarget
 {
+    TWeakObjectPtr<class AActor> TargetActor;
 };
 
 struct FTerrainSpawnDebrisOperationData
@@ -8913,6 +8950,7 @@ struct FTrackBuilderPoint
     FVector_NetQuantize Location;
     FVector_NetQuantize EulerRotation;
     bool bPointValid;
+    TWeakObjectPtr<class UTrackBuilderConnectPoint> ConnectPoint;
 };
 
 struct FTrackMovement
@@ -9252,6 +9290,7 @@ struct FWeaponAnalyticInfo
 
 struct FWeaponHitCounterEffectItem
 {
+    TWeakObjectPtr<class AActor> Target;
 };
 
 struct FWeaponMaintenanceEntry
@@ -9303,18 +9342,22 @@ struct FWidgetAnimationSettings
 
 struct FWidgetFade
 {
+    TWeakObjectPtr<class UUserWidget> Widget;
 };
 
 struct FWidgetMover
 {
+    TWeakObjectPtr<class UWidget> Widget;
 };
 
 struct FWidgetPing
 {
+    TWeakObjectPtr<class UWidget> Widget;
 };
 
 struct FWidgetTextCounter
 {
+    TWeakObjectPtr<class UTextBlock> Widget;
 };
 
 struct FXPSettings

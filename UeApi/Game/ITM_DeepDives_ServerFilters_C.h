@@ -25,12 +25,12 @@ class ITM_DeepDives_ServerFilters_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_ServerFilters", "ITM_DeepDives_ServerFilters_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_ExpandableMenu_C = Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
-    using Basic_RadioButton_C = Game::UI::Art::WidgetParts::Basic_RadioButton_C;
-    using Basic_TextInputField_C = Game::UI::Art::WidgetParts::Basic_TextInputField_C;
-    using Filter_ServerGameType_C = Game::UI::Menu_ServerList::Filter_ServerGameType_C;
-    using Filter_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::Filter_ServerWorkEnvironment_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_ExpandableMenu_C = ::Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
+    using Basic_RadioButton_C = ::Game::UI::Art::WidgetParts::Basic_RadioButton_C;
+    using Basic_TextInputField_C = ::Game::UI::Art::WidgetParts::Basic_TextInputField_C;
+    using Filter_ServerGameType_C = ::Game::UI::Menu_ServerList::Filter_ServerGameType_C;
+    using Filter_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::Filter_ServerWorkEnvironment_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* AutoRefresh;
     class UHorizontalBox* AutoRefreshBox;
@@ -95,4 +95,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_ServerFilters_C = Game::UI::Menu_DeepDives::ITM_DeepDives_ServerFilters_C;
+using ITM_DeepDives_ServerFilters_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_ServerFilters_C;

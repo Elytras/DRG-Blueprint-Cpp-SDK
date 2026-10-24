@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class BP_GooCannon_GooPuddle_ImprovedPoison_C : public Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C
+class BP_GooCannon_GooPuddle_ImprovedPoison_C : public ::Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_GooPuddle_ImprovedPoison", "BP_GooCannon_GooPuddle_ImprovedPoison_C");
@@ -17,9 +17,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* UeIchRecords = "ExplosionDamage;Niagara";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus ExplosionDamage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.PushStatusEffectDamageBonus ExplosionDamage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooCannon_GooPuddle_ImprovedPoison_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_ImprovedPoison_C;
+using BP_GooCannon_GooPuddle_ImprovedPoison_C = ::Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_ImprovedPoison_C;

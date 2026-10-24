@@ -19,8 +19,8 @@ class BP_CoreInfuser_Rewards_Selector_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreInfuser/BP_CoreInfuser_Rewards_Selector", "BP_CoreInfuser_Rewards_Selector_C");
-    using UI_CoreInfuser_Rewards_Background_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Background_C;
-    using UI_CoreInfuser_Rewards_Selector_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Selector_C;
+    using UI_CoreInfuser_Rewards_Background_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Background_C;
+    using UI_CoreInfuser_Rewards_Selector_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Selector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_Rewards;
     class UWidgetComponent* Widget_Bg;
@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreInfuser
 
-using BP_CoreInfuser_Rewards_Selector_C = Game::GameElements::GameEvents::CoreInfuser::BP_CoreInfuser_Rewards_Selector_C;
+using BP_CoreInfuser_Rewards_Selector_C = ::Game::GameElements::GameEvents::CoreInfuser::BP_CoreInfuser_Rewards_Selector_C;

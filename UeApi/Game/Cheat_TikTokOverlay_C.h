@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_TikTokOverlay_C = Game::UI::Menu_Cheats::Cheat_TikTokOverlay_C;
+using Cheat_TikTokOverlay_C = ::Game::UI::Menu_Cheats::Cheat_TikTokOverlay_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Flares {
 
-class PRW_Flare_Gunner_C : public Game::WeaponsNTools::Flares::PRW_Flare_Base_C
+class PRW_Flare_Gunner_C : public ::Game::WeaponsNTools::Flares::PRW_Flare_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Flares/PRW_Flare_Gunner", "PRW_Flare_Gunner_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "StaticMesh";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::Flares
 
-using PRW_Flare_Gunner_C = Game::WeaponsNTools::Flares::PRW_Flare_Gunner_C;
+using PRW_Flare_Gunner_C = ::Game::WeaponsNTools::Flares::PRW_Flare_Gunner_C;

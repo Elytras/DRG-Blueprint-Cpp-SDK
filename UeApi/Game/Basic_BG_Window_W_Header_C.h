@@ -16,7 +16,7 @@ class Basic_BG_Window_W_Header_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Basic_BG_Window_W_Header", "Basic_BG_Window_W_Header_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     Basic_BG_CutCorner_C* Basic_BG_Window;
     Basic_BG_CutCorner_C* Basic_BG_Window_65;
     class UNamedSlot* NamedSlot_65;
@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Basic_BG_Window_W_Header_C = Game::UI::Menu_MinersManual::Basic_BG_Window_W_Header_C;
+using Basic_BG_Window_W_Header_C = ::Game::UI::Menu_MinersManual::Basic_BG_Window_W_Header_C;

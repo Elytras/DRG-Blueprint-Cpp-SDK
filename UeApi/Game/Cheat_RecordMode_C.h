@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_RecordMode_C = Game::UI::Menu_Cheats::Cheat_RecordMode_C;
+using Cheat_RecordMode_C = ::Game::UI::Menu_Cheats::Cheat_RecordMode_C;

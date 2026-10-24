@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Game::SpaceRig::S01_SetDressing
 
-using BP_TransmitterNode_SpaceRig_C = Game::Game::SpaceRig::S01_SetDressing::BP_TransmitterNode_SpaceRig_C;
+using BP_TransmitterNode_SpaceRig_C = ::Game::Game::SpaceRig::S01_SetDressing::BP_TransmitterNode_SpaceRig_C;

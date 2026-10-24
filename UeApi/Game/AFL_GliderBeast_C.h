@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Critters::GliderBeast
 
-using AFL_GliderBeast_C = Game::Critters::GliderBeast::AFL_GliderBeast_C;
+using AFL_GliderBeast_C = ::Game::Critters::GliderBeast::AFL_GliderBeast_C;

@@ -23,7 +23,7 @@ class BP_ChangeCharacterConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_ChangeCharacterConsole", "BP_ChangeCharacterConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_Greepling_005;
     class UStaticMeshComponent* SM_Greepling_006;
@@ -59,4 +59,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_ChangeCharacterConsole_C = Game::UI::HUD_SpaceRig::BP_ChangeCharacterConsole_C;
+using BP_ChangeCharacterConsole_C = ::Game::UI::HUD_SpaceRig::BP_ChangeCharacterConsole_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Swarmer {
 
-class ESI_Swarmer_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Swarmer_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/ESI_Swarmer", "ESI_Swarmer_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using ESI_Swarmer_C = Game::Enemies::Spider::Swarmer::ESI_Swarmer_C;
+using ESI_Swarmer_C = ::Game::Enemies::Spider::Swarmer::ESI_Swarmer_C;

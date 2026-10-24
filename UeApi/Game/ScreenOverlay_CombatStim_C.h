@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_CombatStim_C = Game::UI::ScreenOverlays::ScreenOverlay_CombatStim_C;
+using ScreenOverlay_CombatStim_C = ::Game::UI::ScreenOverlays::ScreenOverlay_CombatStim_C;

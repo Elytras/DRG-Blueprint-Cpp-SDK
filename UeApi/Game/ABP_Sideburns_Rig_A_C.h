@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::CharacterStructure::Rig::Facial_Hair_Rig
 
-using ABP_Sideburns_Rig_A_C = Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Sideburns_Rig_A_C;
+using ABP_Sideburns_Rig_A_C = ::Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Sideburns_Rig_A_C;

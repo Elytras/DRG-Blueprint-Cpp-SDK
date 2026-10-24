@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_RedSugarRocksLogic_C = Game::GameElements::KPI::Perks::BP_RedSugarRocksLogic_C;
+using BP_RedSugarRocksLogic_C = ::Game::GameElements::KPI::Perks::BP_RedSugarRocksLogic_C;

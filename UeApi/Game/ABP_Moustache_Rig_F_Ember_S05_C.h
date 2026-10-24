@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::CharacterStructure::Rig::Facial_Hair_Rig
 
-using ABP_Moustache_Rig_F_Ember_S05_C = Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Moustache_Rig_F_Ember_S05_C;
+using ABP_Moustache_Rig_F_Ember_S05_C = ::Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Moustache_Rig_F_Ember_S05_C;

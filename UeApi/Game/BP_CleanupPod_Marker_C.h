@@ -48,4 +48,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using BP_CleanupPod_Marker_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_Marker_C;
+using BP_CleanupPod_Marker_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_Marker_C;

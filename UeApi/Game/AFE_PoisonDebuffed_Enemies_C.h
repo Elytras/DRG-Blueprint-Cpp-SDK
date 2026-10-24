@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects
 
-using AFE_PoisonDebuffed_Enemies_C = Game::GameElements::PawnAffliction::EnemyEffects::AFE_PoisonDebuffed_Enemies_C;
+using AFE_PoisonDebuffed_Enemies_C = ::Game::GameElements::PawnAffliction::EnemyEffects::AFE_PoisonDebuffed_Enemies_C;

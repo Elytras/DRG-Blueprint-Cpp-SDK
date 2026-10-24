@@ -26,7 +26,7 @@ class PRJ_FlyingSmartRock_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/FlyingSmartRocks/PRJ_FlyingSmartRock", "PRJ_FlyingSmartRock_C");
-    using SpikeSkeletalMesh_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::SpikeSkeletalMesh_C;
+    using SpikeSkeletalMesh_C = ::Game::LevelElements::RoomObjects::Hazards::SpikyPlant::SpikeSkeletalMesh_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     SpikeSkeletalMesh_C* SkeletalMesh;
@@ -62,4 +62,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::FlyingSmartRocks
 
-using PRJ_FlyingSmartRock_C = Game::GameElements::Objectives::Escort::FlyingSmartRocks::PRJ_FlyingSmartRock_C;
+using PRJ_FlyingSmartRock_C = ::Game::GameElements::Objectives::Escort::FlyingSmartRocks::PRJ_FlyingSmartRock_C;

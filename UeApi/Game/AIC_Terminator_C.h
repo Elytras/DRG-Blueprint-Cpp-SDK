@@ -26,4 +26,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using AIC_Terminator_C = Game::Enemies::RivalTech::Terminator::AIC_Terminator_C;
+using AIC_Terminator_C = ::Game::Enemies::RivalTech::Terminator::AIC_Terminator_C;

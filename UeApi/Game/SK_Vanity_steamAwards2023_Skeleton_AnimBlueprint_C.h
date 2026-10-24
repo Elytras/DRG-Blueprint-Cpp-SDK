@@ -22,4 +22,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using SK_Vanity_steamAwards2023_Skeleton_AnimBlueprint_C = Game::Character::Vanity2::Headwear::SK_Vanity_steamAwards2023_Skeleton_AnimBlueprint_C;
+using SK_Vanity_steamAwards2023_Skeleton_AnimBlueprint_C = ::Game::Character::Vanity2::Headwear::SK_Vanity_steamAwards2023_Skeleton_AnimBlueprint_C;

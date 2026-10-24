@@ -68,4 +68,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrosMicroMissileLauncher_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosMicroMissileLauncher_C;
+using HUD_CrosMicroMissileLauncher_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosMicroMissileLauncher_C;

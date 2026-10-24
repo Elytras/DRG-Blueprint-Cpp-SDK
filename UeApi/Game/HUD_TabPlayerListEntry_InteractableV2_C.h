@@ -24,12 +24,12 @@ class HUD_TabPlayerListEntry_InteractableV2_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Tab/HUD_TabPlayerListEntry_InteractableV2", "HUD_TabPlayerListEntry_InteractableV2_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using HUD_TabPlayerListEntryV2_C = Game::UI::Menu_Tab::HUD_TabPlayerListEntryV2_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using HUD_TabPlayerListEntryV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerListEntryV2_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Exit;
     UE_READONLY class UWidgetAnimation* Enter;
-    Basic_ButtonCutCorner_C* BTN_Gamercard;
+    Basic_ButtonCutCorner_C* BTN_GamerCard;
     Basic_ButtonCutCorner_C* BTN_Kick;
     Basic_ButtonCutCorner_C* BTN_mute;
     Basic_ButtonCutCorner_C* BTN_Respawn_Spacerig;
@@ -65,4 +65,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Tab
 
-using HUD_TabPlayerListEntry_InteractableV2_C = Game::UI::Menu_Tab::HUD_TabPlayerListEntry_InteractableV2_C;
+using HUD_TabPlayerListEntry_InteractableV2_C = ::Game::UI::Menu_Tab::HUD_TabPlayerListEntry_InteractableV2_C;

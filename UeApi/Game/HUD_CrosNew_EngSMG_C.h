@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrosNew_EngSMG_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosNew_EngSMG_C;
+using HUD_CrosNew_EngSMG_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosNew_EngSMG_C;

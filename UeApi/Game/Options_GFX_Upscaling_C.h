@@ -17,13 +17,13 @@ class Options_GFX_Upscaling_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_GFX_Upscaling", "Options_GFX_Upscaling_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_AMD_FSR2_Quality_C = Game::UI::Menu_Options::Options_AMD_FSR2_Quality_C;
-    using Options_AMD_FSR_Quality_C = Game::UI::Menu_Options::Options_AMD_FSR_Quality_C;
-    using Options_NVIDIA_DLSSFG_C = Game::UI::Menu_Options::Options_NVIDIA_DLSSFG_C;
-    using Options_NVIDIA_DLSS_Quality_C = Game::UI::Menu_Options::Options_NVIDIA_DLSS_Quality_C;
-    using Options_Scalability_ResolutioScale_C = Game::UI::Menu_Options::Options_Scalability_ResolutioScale_C;
-    using Options_UpscalingType_C = Game::UI::Menu_Options::Options_UpscalingType_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_AMD_FSR2_Quality_C = ::Game::UI::Menu_Options::Options_AMD_FSR2_Quality_C;
+    using Options_AMD_FSR_Quality_C = ::Game::UI::Menu_Options::Options_AMD_FSR_Quality_C;
+    using Options_NVIDIA_DLSSFG_C = ::Game::UI::Menu_Options::Options_NVIDIA_DLSSFG_C;
+    using Options_NVIDIA_DLSS_Quality_C = ::Game::UI::Menu_Options::Options_NVIDIA_DLSS_Quality_C;
+    using Options_Scalability_ResolutioScale_C = ::Game::UI::Menu_Options::Options_Scalability_ResolutioScale_C;
+    using Options_UpscalingType_C = ::Game::UI::Menu_Options::Options_UpscalingType_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* OPT_AMDFSRMode;
     Basic_Option_C* OPT_AMDFSRMode2;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_GFX_Upscaling_C = Game::UI::Menu_Options::Options_GFX_Upscaling_C;
+using Options_GFX_Upscaling_C = ::Game::UI::Menu_Options::Options_GFX_Upscaling_C;

@@ -74,4 +74,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot
 
-using BP_WallMaggot_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot::BP_WallMaggot_C;
+using BP_WallMaggot_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::HollowBoughMaggot::BP_WallMaggot_C;

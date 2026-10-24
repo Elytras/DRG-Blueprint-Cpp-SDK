@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects
 
-using AFE_TP_Fire_C = Game::GameElements::PawnAffliction::TPEffects::AFE_TP_Fire_C;
+using AFE_TP_Fire_C = ::Game::GameElements::PawnAffliction::TPEffects::AFE_TP_Fire_C;

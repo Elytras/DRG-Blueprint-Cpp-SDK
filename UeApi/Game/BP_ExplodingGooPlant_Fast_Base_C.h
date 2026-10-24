@@ -59,4 +59,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant
 
-using BP_ExplodingGooPlant_Fast_Base_C = Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::BP_ExplodingGooPlant_Fast_Base_C;
+using BP_ExplodingGooPlant_Fast_Base_C = ::Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::BP_ExplodingGooPlant_Fast_Base_C;

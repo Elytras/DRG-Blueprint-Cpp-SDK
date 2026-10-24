@@ -17,4 +17,4 @@ public:
 
 }}   // namespace Engine::EditorBlueprintResources
 
-using StandardMacros_C = Engine::EditorBlueprintResources::StandardMacros_C;
+using StandardMacros_C = ::Engine::EditorBlueprintResources::StandardMacros_C;

@@ -54,4 +54,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_PlayerTemperature_C = Game::UI::MainOnscreenHUD::HUD_PlayerTemperature_C;
+using HUD_PlayerTemperature_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerTemperature_C;

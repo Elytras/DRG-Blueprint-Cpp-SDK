@@ -23,8 +23,8 @@ class ITM_MatrixCore_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/ITM_MatrixCore", "ITM_MatrixCore_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimRewardSchematic;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
+using ITM_MatrixCore_C = ::Game::UI::Menu_MissionStart::ITM_MatrixCore_C;

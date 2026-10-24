@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_GiveBeerBuff_Row_C = Game::UI::Menu_Cheats::Cheat_GiveBeerBuff_Row_C;
+using Cheat_GiveBeerBuff_Row_C = ::Game::UI::Menu_Cheats::Cheat_GiveBeerBuff_Row_C;

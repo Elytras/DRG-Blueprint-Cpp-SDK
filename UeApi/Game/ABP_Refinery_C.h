@@ -62,4 +62,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Refinery
 
-using ABP_Refinery_C = Game::LevelElements::Refinery::Refinery::ABP_Refinery_C;
+using ABP_Refinery_C = ::Game::LevelElements::Refinery::Refinery::ABP_Refinery_C;

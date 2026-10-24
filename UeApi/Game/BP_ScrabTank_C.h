@@ -26,9 +26,9 @@ class BP_ScrabTank_C : public AScrabTank
 {
 public:
     UE_CLASS("/Game/GameElements/Seasons/Season06/SpaceRig_Decor/ScrabTank/BP_ScrabTank", "BP_ScrabTank_C");
-    using ABP_OssiranScrab_ScrabTank_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::Animations::ABP_OssiranScrab_ScrabTank_C;
-    using AC_ScrabTankButtonCooldown_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::AC_ScrabTankButtonCooldown_C;
-    using BP_ScrabTankSkeletalMesh_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTankSkeletalMesh_C;
+    using ABP_OssiranScrab_ScrabTank_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::Animations::ABP_OssiranScrab_ScrabTank_C;
+    using AC_ScrabTankButtonCooldown_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::AC_ScrabTankButtonCooldown_C;
+    using BP_ScrabTankSkeletalMesh_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTankSkeletalMesh_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh6;
     class UStaticMeshComponent* StaticMesh5;
@@ -105,4 +105,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank
 
-using BP_ScrabTank_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTank_C;
+using BP_ScrabTank_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTank_C;

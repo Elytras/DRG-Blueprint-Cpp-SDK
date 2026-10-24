@@ -14,7 +14,7 @@ class UClass;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace WallSaw {
 
-class Grenade_WallSaw_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_WallSaw_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/WallSaw/Grenade_WallSaw", "Grenade_WallSaw_C");
@@ -30,10 +30,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_WallSaw_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::WallSaw
 
-using Grenade_WallSaw_C = Game::WeaponsNTools::Grenades::WallSaw::Grenade_WallSaw_C;
+using Grenade_WallSaw_C = ::Game::WeaponsNTools::Grenades::WallSaw::Grenade_WallSaw_C;

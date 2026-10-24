@@ -37,7 +37,7 @@ class BP_SupplyPod_Ammo_C : public ARessuplyPod
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_SupplyPod_Ammo", "BP_SupplyPod_Ammo_C");
-    using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+    using BP_SupplyDropToTerrainLogic_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_SupplyDropToTerrainLogic_C* BP_SupplyDropToTerrainLogic;
     class UTerrainDetectComponent* TerrainDetect3;
@@ -107,6 +107,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank01_GEN_VARIABLE:OxygenTank01_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank02_GEN_VARIABLE:OxygenTank02_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C OxygenSound_GEN_VARIABLE:OxygenSound_GEN_VARIABLE_BP_OxygenTankSound_C_CAT";
         static constexpr const char* BP_SupplyDropToTerrainLogic__UeScsNode = "91514ebb27a6ec47afd47720d5b1abd0";
         static constexpr const char* TerrainDetect3__UeScsNode = "11df14ad42b0f14bb2cdb1c36a298371";
         static constexpr const char* TerrainDetect2__UeScsNode = "5352b9f5569e094d92348aae0f380426";
@@ -146,4 +147,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_SupplyPod_Ammo_C = Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Ammo_C;
+using BP_SupplyPod_Ammo_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Ammo_C;

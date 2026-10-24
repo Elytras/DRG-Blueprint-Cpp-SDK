@@ -13,11 +13,11 @@ namespace Game { namespace Game { namespace SpaceRig { class BP_PlayerController
 
 namespace Game { namespace UI { namespace MENU_Promotion {
 
-class BP_Promotion_Console_C : public Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
+class BP_Promotion_Console_C : public ::Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C
 {
 public:
     UE_CLASS("/Game/UI/MENU_Promotion/BP_Promotion_Console", "BP_Promotion_Console_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_Promotion_Console_C;
     class UAudioComponent* Audio;
     void ExecuteUbergraph_BP_Promotion_Console(int EntryPoint);
@@ -25,6 +25,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box";
         static constexpr const char* UberGraphFrame_BP_Promotion_Console_C__UeName = "UberGraphFrame";
         static constexpr const char* Audio__UeScsNode = "7642542eaa017747a0f7a95d163c1be9";
     };
@@ -32,4 +33,4 @@ private:
 
 }}}   // namespace Game::UI::MENU_Promotion
 
-using BP_Promotion_Console_C = Game::UI::MENU_Promotion::BP_Promotion_Console_C;
+using BP_Promotion_Console_C = ::Game::UI::MENU_Promotion::BP_Promotion_Console_C;

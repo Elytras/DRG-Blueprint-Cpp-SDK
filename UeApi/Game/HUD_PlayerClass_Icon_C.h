@@ -24,7 +24,7 @@ class HUD_PlayerClass_Icon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_PlayerClass_Icon", "HUD_PlayerClass_Icon_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* HBox_Beers;
     class UInvalidationBox* InvalidationBox_2;
@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_PlayerClass_Icon_C = Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;
+using HUD_PlayerClass_Icon_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerClass_Icon_C;

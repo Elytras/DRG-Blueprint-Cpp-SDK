@@ -33,29 +33,29 @@ class MENU_EscapeMenu_C : public UEscapeMenuWindow
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/MENU_EscapeMenu", "MENU_EscapeMenu_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using Basic_ButtonLargeImage_C = Game::UI::Art::WidgetParts::Basic_ButtonLargeImage_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_MenuLabel_C = Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_LargeWindowNoHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowNoHeader_C;
-    using Header_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Header_ButtonCutCorner_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_MenuDamageIndicator_C = Game::UI::Menu_EscapeMenu::ITM_MenuDamageIndicator_C;
-    using ITM_RestoreSave_C = Game::UI::Menu_EscapeMenu::ITM_RestoreSave_C;
-    using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
-    using MENU_DummyModding_C = Game::UI::Menu_EscapeMenu::Modding::MENU_DummyModding_C;
-    using MENU_Merch_C = Game::UI::MENU_Merch::MENU_Merch_C;
-    using MENU_Modding_C = Game::UI::Menu_EscapeMenu::Modding::MENU_Modding_C;
-    using MENU_PatchNotes_C = Game::UI::Menu_EscapeMenu::MENU_PatchNotes_C;
-    using Menu_DLC_C = Game::UI::Menu_DLC::Menu_DLC_C;
-    using Menu_Options_C = Game::UI::Menu_Options::Menu_Options_C;
-    using Menu_StatusScreen_C = Game::UI::Menu_EscapeMenu::Menu_StatusScreen_C;
-    using Options_ControlLayout_C = Game::UI::Menu_Options::Options_ControlLayout_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
-    using _MENU_MinersManual_C = Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using Basic_ButtonLargeImage_C = ::Game::UI::Art::WidgetParts::Basic_ButtonLargeImage_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_MenuLabel_C = ::Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_LargeWindowNoHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowNoHeader_C;
+    using Header_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Header_ButtonCutCorner_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_MenuDamageIndicator_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuDamageIndicator_C;
+    using ITM_RestoreSave_C = ::Game::UI::Menu_EscapeMenu::ITM_RestoreSave_C;
+    using ITM_Special_ButtonCutCorner_C = ::Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
+    using MENU_DummyModding_C = ::Game::UI::Menu_EscapeMenu::Modding::MENU_DummyModding_C;
+    using MENU_Merch_C = ::Game::UI::MENU_Merch::MENU_Merch_C;
+    using MENU_Modding_C = ::Game::UI::Menu_EscapeMenu::Modding::MENU_Modding_C;
+    using MENU_PatchNotes_C = ::Game::UI::Menu_EscapeMenu::MENU_PatchNotes_C;
+    using Menu_DLC_C = ::Game::UI::Menu_DLC::Menu_DLC_C;
+    using Menu_Options_C = ::Game::UI::Menu_Options::Menu_Options_C;
+    using Menu_StatusScreen_C = ::Game::UI::Menu_EscapeMenu::Menu_StatusScreen_C;
+    using Options_ControlLayout_C = ::Game::UI::Menu_Options::Options_ControlLayout_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using _MENU_MinersManual_C = ::Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_MenuLabel_C* Basic_MenuLabel_C_0;
@@ -179,4 +179,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using MENU_EscapeMenu_C = Game::UI::Menu_EscapeMenu::MENU_EscapeMenu_C;
+using MENU_EscapeMenu_C = ::Game::UI::Menu_EscapeMenu::MENU_EscapeMenu_C;

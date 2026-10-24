@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_ExploderTank_BlowUp_C = Game::Character::Camera::CameraShakes::CameraShake_ExploderTank_BlowUp_C;
+using CameraShake_ExploderTank_BlowUp_C = ::Game::Character::Camera::CameraShakes::CameraShake_ExploderTank_BlowUp_C;

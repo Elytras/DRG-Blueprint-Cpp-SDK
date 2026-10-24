@@ -30,4 +30,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Amber
 
-using BP_DigsiteAmberChunk_C = Game::GameElements::Resources::Carved::Amber::BP_DigsiteAmberChunk_C;
+using BP_DigsiteAmberChunk_C = ::Game::GameElements::Resources::Carved::Amber::BP_DigsiteAmberChunk_C;

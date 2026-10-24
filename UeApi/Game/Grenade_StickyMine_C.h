@@ -29,7 +29,7 @@ class UTimelineComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace StickyMine {
 
-class Grenade_StickyMine_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_StickyMine_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickyMine/Grenade_StickyMine", "Grenade_StickyMine_C");
@@ -85,6 +85,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_StickyMine_C__UeName = "UberGraphFrame";
         static constexpr const char* UseSphere__UeScsNode = "c3e74038245bff418079aa96ec7049c0";
         static constexpr const char* SingleUsable__UeScsNode = "aba864e7eaa7164cadc5f15d6ae906f2";
@@ -102,4 +103,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickyMine
 
-using Grenade_StickyMine_C = Game::WeaponsNTools::Grenades::StickyMine::Grenade_StickyMine_C;
+using Grenade_StickyMine_C = ::Game::WeaponsNTools::Grenades::StickyMine::Grenade_StickyMine_C;

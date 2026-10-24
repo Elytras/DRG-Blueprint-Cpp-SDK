@@ -12,7 +12,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefensiveTentacles {
 
-class ESI_Facility_Tentacle_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Facility_Tentacle_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ESI_Facility_Tentacle", "ESI_Facility_Tentacle_C");
@@ -21,6 +21,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* SM_Stone_007__UeScsNode = "4f07cc51a183ce4083c74a8f2fd4ce79";
         static constexpr const char* Head__UeScsNode = "b93c6c3cd423ab45ad42960af5edf32f";
     };
@@ -28,4 +29,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using ESI_Facility_Tentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ESI_Facility_Tentacle_C;
+using ESI_Facility_Tentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ESI_Facility_Tentacle_C;

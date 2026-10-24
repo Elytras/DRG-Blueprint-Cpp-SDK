@@ -16,7 +16,7 @@ class Options_Mouse_SeparateAxis_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Mouse_SeparateAxis", "Options_Mouse_SeparateAxis_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     void ExecuteUbergraph_Options_Mouse_SeparateAxis(int EntryPoint);
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Mouse_SeparateAxis_C = Game::UI::Menu_Options::Options_Mouse_SeparateAxis_C;
+using Options_Mouse_SeparateAxis_C = ::Game::UI::Menu_Options::Options_Mouse_SeparateAxis_C;

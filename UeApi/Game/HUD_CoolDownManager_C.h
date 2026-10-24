@@ -20,7 +20,7 @@ class HUD_CoolDownManager_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/CooldownDisplay/HUD_CoolDownManager", "HUD_CoolDownManager_C");
-    using HUD_CooldownWidget_C = Game::UI::MainOnscreenHUD::CooldownDisplay::HUD_CooldownWidget_C;
+    using HUD_CooldownWidget_C = ::Game::UI::MainOnscreenHUD::CooldownDisplay::HUD_CooldownWidget_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_CooldownWidget_C* CooldownWidget_2;
     HUD_CooldownWidget_C* CooldownWidget_C_3;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::CooldownDisplay
 
-using HUD_CoolDownManager_C = Game::UI::MainOnscreenHUD::CooldownDisplay::HUD_CoolDownManager_C;
+using HUD_CoolDownManager_C = ::Game::UI::MainOnscreenHUD::CooldownDisplay::HUD_CoolDownManager_C;

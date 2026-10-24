@@ -26,4 +26,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Easter
 
-using AIC_GreatEggHunt_SpringBunny_C = Game::GameElements::Holidays::Easter::AIC_GreatEggHunt_SpringBunny_C;
+using AIC_GreatEggHunt_SpringBunny_C = ::Game::GameElements::Holidays::Easter::AIC_GreatEggHunt_SpringBunny_C;

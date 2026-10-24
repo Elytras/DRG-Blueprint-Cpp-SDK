@@ -19,4 +19,4 @@ public:
 
 }}}   // namespace Game::Character::Components
 
-using IOnDamagedPlayer_C = Game::Character::Components::IOnDamagedPlayer_C;
+using IOnDamagedPlayer_C = ::Game::Character::Components::IOnDamagedPlayer_C;

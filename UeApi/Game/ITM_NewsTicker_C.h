@@ -20,7 +20,7 @@ class ITM_NewsTicker_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_NewsTicker", "ITM_NewsTicker_C");
-    using UI_TickerText_C = Game::UI::Global_UI_Elements::UI_TickerText_C;
+    using UI_TickerText_C = ::Game::UI::Global_UI_Elements::UI_TickerText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_TickerText_C* UI_TickerText;
     class UNewsTextHeadlines* MineralTradeData;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using ITM_NewsTicker_C = Game::UI::Menu_Trading::ITM_NewsTicker_C;
+using ITM_NewsTicker_C = ::Game::UI::Menu_Trading::ITM_NewsTicker_C;

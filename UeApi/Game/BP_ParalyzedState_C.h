@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::Character::States
 
-using BP_ParalyzedState_C = Game::Character::States::BP_ParalyzedState_C;
+using BP_ParalyzedState_C = ::Game::Character::States::BP_ParalyzedState_C;

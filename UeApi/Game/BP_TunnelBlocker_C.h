@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_TunnelBlocker_C = Game::WeaponsNTools::SupplyPod::BP_TunnelBlocker_C;
+using BP_TunnelBlocker_C = ::Game::WeaponsNTools::SupplyPod::BP_TunnelBlocker_C;

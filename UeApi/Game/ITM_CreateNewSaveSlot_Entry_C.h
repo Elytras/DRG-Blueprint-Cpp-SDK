@@ -20,9 +20,9 @@ class ITM_CreateNewSaveSlot_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/ITM_CreateNewSaveSlot_Entry", "ITM_CreateNewSaveSlot_Entry_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using Basic_TextInputField_C = Game::UI::Art::WidgetParts::Basic_TextInputField_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using Basic_TextInputField_C = ::Game::UI::Art::WidgetParts::Basic_TextInputField_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FlashingText;
     Basic_ButtonCutCorner_C* Basic_CurrentProgress;
@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using ITM_CreateNewSaveSlot_Entry_C = Game::UI::Menu_SaveSlots::ITM_CreateNewSaveSlot_Entry_C;
+using ITM_CreateNewSaveSlot_Entry_C = ::Game::UI::Menu_SaveSlots::ITM_CreateNewSaveSlot_Entry_C;

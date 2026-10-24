@@ -20,11 +20,11 @@ namespace Game { namespace UI { namespace Global_UI_Elements { class UI_GlowBack
 
 namespace Game { namespace UI { namespace Menu_Seasons {
 
-class ITM_Season06EventBonus_C : public Game::UI::Menu_Seasons::ITM_FragmentedBonusWidgetBase_C
+class ITM_Season06EventBonus_C : public ::Game::UI::Menu_Seasons::ITM_FragmentedBonusWidgetBase_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season06EventBonus", "ITM_Season06EventBonus_C");
-    using UI_GlowBackground_C = Game::UI::Global_UI_Elements::UI_GlowBackground_C;
+    using UI_GlowBackground_C = ::Game::UI::Global_UI_Elements::UI_GlowBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OnHover;
     UE_READONLY class UWidgetAnimation* EnterCheckmark;
@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season06EventBonus_C = Game::UI::Menu_Seasons::ITM_Season06EventBonus_C;
+using ITM_Season06EventBonus_C = ::Game::UI::Menu_Seasons::ITM_Season06EventBonus_C;

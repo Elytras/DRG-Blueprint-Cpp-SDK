@@ -21,10 +21,10 @@ class WND_DiscordCommunity_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/WND_DiscordCommunity", "WND_DiscordCommunity_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_ButtonTab_C = Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using Screen_DiscordScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Screen_DiscordScreen_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_ButtonTab_C = ::Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using Screen_DiscordScreen_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Screen_DiscordScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonScalable_C* Basic_ButtonScalable;
     Basic_ButtonScalable_C* Basic_ButtonScalable_C_0;
@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using WND_DiscordCommunity_C = Game::UI::HUD_SpaceRig::CommunityTerminal::WND_DiscordCommunity_C;
+using WND_DiscordCommunity_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::WND_DiscordCommunity_C;

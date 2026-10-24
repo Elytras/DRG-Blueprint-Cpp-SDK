@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using PRW_Cryospray_C = Game::WeaponsNTools::Cryospray::PRW_Cryospray_C;
+using PRW_Cryospray_C = ::Game::WeaponsNTools::Cryospray::PRW_Cryospray_C;

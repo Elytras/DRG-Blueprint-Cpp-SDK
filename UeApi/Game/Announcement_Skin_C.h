@@ -25,11 +25,11 @@ class Announcement_Skin_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Announcements/Announcement_Skin", "Announcement_Skin_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
-    using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_SkinIcon_C = ::Game::UI::Menu_Loadout::ITM_SkinIcon_C;
+    using UI_Forge_Schematic_OwnerIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnnounceAnim;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -54,4 +54,4 @@ public:
 
 }}}   // namespace Game::UI::Announcements
 
-using Announcement_Skin_C = Game::UI::Announcements::Announcement_Skin_C;
+using Announcement_Skin_C = ::Game::UI::Announcements::Announcement_Skin_C;

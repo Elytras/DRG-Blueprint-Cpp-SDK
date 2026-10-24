@@ -18,7 +18,7 @@ class ITM_DeepDiveStatus_Animator_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_DeepDiveStatus_Animator", "ITM_DeepDiveStatus_Animator_C");
-    using ITM_DeepDive_StageIcon_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;
+    using ITM_DeepDive_StageIcon_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDive_StageIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* CompletedStage3;
     UE_READONLY class UWidgetAnimation* CompletedStage2;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_DeepDiveStatus_Animator_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Animator_C;
+using ITM_DeepDiveStatus_Animator_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Animator_C;

@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::OilShale
 
-using BP_OilShaleChunk_C = Game::GameElements::Resources::Carved::OilShale::BP_OilShaleChunk_C;
+using BP_OilShaleChunk_C = ::Game::GameElements::Resources::Carved::OilShale::BP_OilShaleChunk_C;

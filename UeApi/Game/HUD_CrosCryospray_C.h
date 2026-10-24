@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrosCryospray_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosCryospray_C;
+using HUD_CrosCryospray_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosCryospray_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossHeavy {
 
-class ESI_Spider_Boss_Heavy_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Spider_Boss_Heavy_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossHeavy/ESI_Spider_Boss_Heavy", "ESI_Spider_Boss_Heavy_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using ESI_Spider_Boss_Heavy_C = Game::Enemies::Spider::TankBoss::BossHeavy::ESI_Spider_Boss_Heavy_C;
+using ESI_Spider_Boss_Heavy_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::ESI_Spider_Boss_Heavy_C;

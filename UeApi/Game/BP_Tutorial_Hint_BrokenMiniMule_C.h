@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using BP_Tutorial_Hint_BrokenMiniMule_C = Game::Character::Tutorials::BP_Tutorial_Hint_BrokenMiniMule_C;
+using BP_Tutorial_Hint_BrokenMiniMule_C = ::Game::Character::Tutorials::BP_Tutorial_Hint_BrokenMiniMule_C;

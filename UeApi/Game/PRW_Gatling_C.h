@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GatlingGun
 
-using PRW_Gatling_C = Game::WeaponsNTools::GatlingGun::PRW_Gatling_C;
+using PRW_Gatling_C = ::Game::WeaponsNTools::GatlingGun::PRW_Gatling_C;

@@ -14,7 +14,7 @@ class UTextBlock;
 
 namespace Game { namespace WeaponsNTools { namespace LockOnRifle {
 
-class WeaponDisplay_LockOnRifle_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_LockOnRifle_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/WeaponDisplay_LockOnRifle_AmmoCount", "WeaponDisplay_LockOnRifle_AmmoCount_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using WeaponDisplay_LockOnRifle_AmmoCount_C = Game::WeaponsNTools::LockOnRifle::WeaponDisplay_LockOnRifle_AmmoCount_C;
+using WeaponDisplay_LockOnRifle_AmmoCount_C = ::Game::WeaponsNTools::LockOnRifle::WeaponDisplay_LockOnRifle_AmmoCount_C;

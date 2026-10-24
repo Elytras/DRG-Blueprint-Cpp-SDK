@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::FrostGeyser
 
-using STE_FrostGeyser1_C = Game::LevelElements::RoomObjects::Hazards::FrostGeyser::STE_FrostGeyser1_C;
+using STE_FrostGeyser1_C = ::Game::LevelElements::RoomObjects::Hazards::FrostGeyser::STE_FrostGeyser1_C;

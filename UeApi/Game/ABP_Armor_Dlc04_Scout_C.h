@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using ABP_Armor_Dlc04_Scout_C = Game::Character::Vanity2::Armor::ABP_Armor_Dlc04_Scout_C;
+using ABP_Armor_Dlc04_Scout_C = ::Game::Character::Vanity2::Armor::ABP_Armor_Dlc04_Scout_C;

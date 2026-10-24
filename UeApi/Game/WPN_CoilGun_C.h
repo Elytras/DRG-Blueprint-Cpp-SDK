@@ -32,9 +32,9 @@ class WPN_CoilGun_C : public ACoilGun
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/WPN_CoilGun", "WPN_CoilGun_C");
-    using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
-    using WeaponDisplay_ChargeBlaster_Heat_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
-    using WeaponDisplay_Coilgun_Charge_C = Game::WeaponsNTools::CoilGun::WeaponDisplay_Coilgun_Charge_C;
+    using WeaponDisplay_ChargeBlaster_AmmoCounter_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
+    using WeaponDisplay_ChargeBlaster_Heat_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
+    using WeaponDisplay_Coilgun_Charge_C = ::Game::WeaponsNTools::CoilGun::WeaponDisplay_Coilgun_Charge_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDAudioComponent* CoilGunChargeGlow;
     class UFSDAudioComponent* CoilGunCharge;
@@ -104,4 +104,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using WPN_CoilGun_C = Game::WeaponsNTools::CoilGun::WPN_CoilGun_C;
+using WPN_CoilGun_C = ::Game::WeaponsNTools::CoilGun::WPN_CoilGun_C;

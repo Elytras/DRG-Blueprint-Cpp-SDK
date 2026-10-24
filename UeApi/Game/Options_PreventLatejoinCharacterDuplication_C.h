@@ -16,7 +16,7 @@ class Options_PreventLatejoinCharacterDuplication_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_PreventLatejoinCharacterDuplication", "Options_PreventLatejoinCharacterDuplication_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     void ExecuteUbergraph_Options_PreventLatejoinCharacterDuplication(int EntryPoint);
@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_PreventLatejoinCharacterDuplication_C = Game::UI::Menu_Options::Options_PreventLatejoinCharacterDuplication_C;
+using Options_PreventLatejoinCharacterDuplication_C = ::Game::UI::Menu_Options::Options_PreventLatejoinCharacterDuplication_C;

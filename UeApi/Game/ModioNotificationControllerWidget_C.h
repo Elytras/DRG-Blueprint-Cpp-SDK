@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Notifications
 
-using ModioNotificationControllerWidget_C = Modio::UI::Browser::Notifications::ModioNotificationControllerWidget_C;
+using ModioNotificationControllerWidget_C = ::Modio::UI::Browser::Notifications::ModioNotificationControllerWidget_C;

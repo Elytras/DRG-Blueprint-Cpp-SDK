@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::HotSpring
 
-using STE_HotSpring_C = Game::LevelElements::RoomObjects::Helpers::HotSpring::STE_HotSpring_C;
+using STE_HotSpring_C = ::Game::LevelElements::RoomObjects::Helpers::HotSpring::STE_HotSpring_C;

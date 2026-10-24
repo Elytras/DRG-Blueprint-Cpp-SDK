@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using PRW_GooCannon_C = Game::WeaponsNTools::GooCannon::PRW_GooCannon_C;
+using PRW_GooCannon_C = ::Game::WeaponsNTools::GooCannon::PRW_GooCannon_C;

@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::DrillingVehicle
 
-using ITM_HealthBarPercentWWarning_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_HealthBarPercentWWarning_C;
+using ITM_HealthBarPercentWWarning_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_HealthBarPercentWWarning_C;

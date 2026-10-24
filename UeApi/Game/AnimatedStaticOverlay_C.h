@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::Art::_TestingGrounds::UItesting
 
-using AnimatedStaticOverlay_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
+using AnimatedStaticOverlay_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;

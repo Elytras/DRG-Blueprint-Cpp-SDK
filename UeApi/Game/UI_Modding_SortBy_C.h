@@ -24,7 +24,7 @@ class UI_Modding_SortBy_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/UI_Modding_SortBy", "UI_Modding_SortBy_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Arrow_Active;
     class UImage* Arrow_Author;
@@ -78,4 +78,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using UI_Modding_SortBy_C = Game::UI::Menu_EscapeMenu::Modding::UI_Modding_SortBy_C;
+using UI_Modding_SortBy_C = ::Game::UI::Menu_EscapeMenu::Modding::UI_Modding_SortBy_C;

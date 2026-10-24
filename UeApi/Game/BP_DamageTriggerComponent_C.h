@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::LevelElements::Components
 
-using BP_DamageTriggerComponent_C = Game::LevelElements::Components::BP_DamageTriggerComponent_C;
+using BP_DamageTriggerComponent_C = ::Game::LevelElements::Components::BP_DamageTriggerComponent_C;

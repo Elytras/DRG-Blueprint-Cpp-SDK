@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Character {
 
-class BP_NavigatorCharacter_C : public Game::Character::BP_PlayerCharacter_C
+class BP_NavigatorCharacter_C : public ::Game::Character::BP_PlayerCharacter_C
 {
 public:
     UE_CLASS("/Game/Character/BP_NavigatorCharacter", "BP_NavigatorCharacter_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ActorTrackingComponent ActorTracking;/Script/Engine.CameraComponent DownCamera;/Script/Engine.CameraComponent FirstPersonCamera;/Script/Engine.CameraComponent FollowCamera;/Script/Engine.CameraComponent ThirdPersonCamera;/Script/Engine.CapsuleComponent CollisionCylinder;/Script/FSD.CharacterCameraController CameraController;/Script/FSD.CharacterRecoilComponent RecoilComponent;/Script/FSD.CharacterSightComponent SightComponent;/Script/FSD.CharacterUseComponent UseComponentNew;/Script/FSD.CharacterVanityComponent CharacterVanity;/Script/FSD.CommunicationComponent Communication;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable TrackGrindUsable;/Script/FSD.InventoryComponent Inventory;/Script/FSD.MissionStatsCollector MissionStatsCollector;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.PawnStatsComponent PawnStats;/Script/FSD.PlayerAfflictionComponent PawnAfflictions;/Script/FSD.PlayerAttackPositionComponent AttackerPositioning;/Script/FSD.PlayerHealthComponent Health;/Script/FSD.PlayerInfectionComponent InfectionComponent;/Script/FSD.PlayerInfoComponent PlayerInfoComponent;/Script/FSD.PlayerMovementComponent CharMoveComp;/Script/FSD.PlayerReactiveTerrainTrackerComponent TerrainTracker;/Script/FSD.PlayerTemperatureComponent TemperatureComponent;/Script/Engine.PointLightComponent ThirdPersonLight;/Script/Engine.SceneComponent FPRoot;/Script/FSD.SingleUsableComponent UsableComponent;/Script/Engine.SkeletalMeshComponent CharacterMesh0;/Script/Engine.SpringArmComponent FollowSpringArm;/Script/Engine.SpringArmComponent ThirdPersonSpringArm;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/UMG.WidgetInteractionComponent WidgetInteraction";
+        static constexpr const char* UeIchRecords = "TP_SpotLight_shadow";
     };
 };
 
 }}   // namespace Game::Character
 
-using BP_NavigatorCharacter_C = Game::Character::BP_NavigatorCharacter_C;
+using BP_NavigatorCharacter_C = ::Game::Character::BP_NavigatorCharacter_C;

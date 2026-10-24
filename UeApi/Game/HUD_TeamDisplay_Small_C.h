@@ -18,7 +18,7 @@ class HUD_TeamDisplay_Small_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/HUD_TeamDisplay_Small", "HUD_TeamDisplay_Small_C");
-    using HUD_TeamDisplay_Bosco_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_Bosco_C;
+    using HUD_TeamDisplay_Bosco_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_Bosco_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_TeamDisplay_Bosco_C* HUD_TeamDisplay_Bosco;
     class UVerticalBox* TeamBox;
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display
 
-using HUD_TeamDisplay_Small_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_Small_C;
+using HUD_TeamDisplay_Small_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_Small_C;

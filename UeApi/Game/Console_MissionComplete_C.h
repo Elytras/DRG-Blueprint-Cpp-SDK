@@ -23,10 +23,10 @@ class Console_MissionComplete_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Console_MissionComplete", "Console_MissionComplete_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_WindowBG_C = Game::UI::Art::WidgetParts::Basic_Menu_WindowBG_C;
-    using ITM_MisSel_DotMarker_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_C;
-    using ITM_WarningWithPercent_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_WarningWithPercent_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_WindowBG_C = ::Game::UI::Art::WidgetParts::Basic_Menu_WindowBG_C;
+    using ITM_MisSel_DotMarker_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_C;
+    using ITM_WarningWithPercent_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_WarningWithPercent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -74,4 +74,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using Console_MissionComplete_C = Game::UI::HUD_SpaceRig::Console_MissionComplete_C;
+using Console_MissionComplete_C = ::Game::UI::HUD_SpaceRig::Console_MissionComplete_C;

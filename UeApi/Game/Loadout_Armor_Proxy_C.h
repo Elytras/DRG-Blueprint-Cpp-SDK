@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using Loadout_Armor_Proxy_C = Game::WeaponsNTools::Armor::Loadout_Armor_Proxy_C;
+using Loadout_Armor_Proxy_C = ::Game::WeaponsNTools::Armor::Loadout_Armor_Proxy_C;

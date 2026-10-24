@@ -23,7 +23,7 @@ class UI_InfirmaryStats_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Infirmary/UI_InfirmaryStats_Item", "UI_InfirmaryStats_Item_C");
-    using UI_MissionStats_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Item_C;
+    using UI_MissionStats_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Icon;
     class UBorder* LineBorder;
@@ -55,4 +55,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary
 
-using UI_InfirmaryStats_Item_C = Game::UI::HUD_SpaceRig::Infirmary::UI_InfirmaryStats_Item_C;
+using UI_InfirmaryStats_Item_C = ::Game::UI::HUD_SpaceRig::Infirmary::UI_InfirmaryStats_Item_C;

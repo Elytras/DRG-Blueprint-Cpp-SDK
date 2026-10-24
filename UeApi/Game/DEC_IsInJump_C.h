@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using DEC_IsInJump_C = Game::Enemies::Crawler::DEC_IsInJump_C;
+using DEC_IsInJump_C = ::Game::Enemies::Crawler::DEC_IsInJump_C;

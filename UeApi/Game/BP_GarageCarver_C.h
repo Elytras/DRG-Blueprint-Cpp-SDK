@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_GarageCarver_C = Game::GameElements::Objectives::Escort::BP_GarageCarver_C;
+using BP_GarageCarver_C = ::Game::GameElements::Objectives::Escort::BP_GarageCarver_C;

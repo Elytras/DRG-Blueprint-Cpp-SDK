@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using BP_Sentry_PlasmaBeam_C = Game::WeaponsNTools::SentryGun::BP_Sentry_PlasmaBeam_C;
+using BP_Sentry_PlasmaBeam_C = ::Game::WeaponsNTools::SentryGun::BP_Sentry_PlasmaBeam_C;

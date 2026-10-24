@@ -21,8 +21,8 @@ class UI_Forge_Completed_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_Completed", "UI_Forge_Completed_C");
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
-    using UI_Forge_Details_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using UI_Forge_Details_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     ITM_BigButton_C* ContinueButton;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_Completed_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Completed_C;
+using UI_Forge_Completed_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Completed_C;

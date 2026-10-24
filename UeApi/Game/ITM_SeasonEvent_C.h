@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonEvent_C = Game::UI::Menu_Seasons::ITM_SeasonEvent_C;
+using ITM_SeasonEvent_C = ::Game::UI::Menu_Seasons::ITM_SeasonEvent_C;

@@ -12,7 +12,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace CoreRift {
 
-class BP_DetachableDrill_C : public Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
+class BP_DetachableDrill_C : public ::Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreRift/BP_DetachableDrill", "BP_DetachableDrill_C");
@@ -27,6 +27,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SimpleObjectInfo";
         static constexpr const char* UberGraphFrame_BP_DetachableDrill_C__UeName = "UberGraphFrame";
         static constexpr const char* SM_RiftPodDrill3__UeScsNode = "f0413fb51a9cbf4bb0bf08f9004b8243";
         static constexpr const char* SM_RiftPodDrill2__UeScsNode = "daf32ca784516c4c87da6f59ee9ad485";
@@ -38,4 +39,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreRift
 
-using BP_DetachableDrill_C = Game::GameElements::GameEvents::CoreRift::BP_DetachableDrill_C;
+using BP_DetachableDrill_C = ::Game::GameElements::GameEvents::CoreRift::BP_DetachableDrill_C;

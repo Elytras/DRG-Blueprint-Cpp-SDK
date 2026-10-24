@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DeepScan_ReverbZone_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_ReverbZone_C;
+using BP_DeepScan_ReverbZone_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScan_ReverbZone_C;

@@ -21,7 +21,7 @@ class ITM_Refinery_Pipeline_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Refinery/ITM_Refinery_Pipeline", "ITM_Refinery_Pipeline_C");
-    using ITM_Pipeline_BrokenIcon_C = Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;
+    using ITM_Pipeline_BrokenIcon_C = ::Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_Pipeline_BrokenIcon_C* BrokenIcon;
     class UImage* Pipeline_BG;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery
 
-using ITM_Refinery_Pipeline_C = Game::GameElements::Objectives::Refinery::ITM_Refinery_Pipeline_C;
+using ITM_Refinery_Pipeline_C = ::Game::GameElements::Objectives::Refinery::ITM_Refinery_Pipeline_C;

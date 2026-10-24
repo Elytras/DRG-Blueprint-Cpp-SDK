@@ -195,6 +195,7 @@ struct FMovieSceneObjectBindingID
 struct FMovieSceneBindingOverrideData
 {
     FMovieSceneObjectBindingID ObjectBindingID;
+    TWeakObjectPtr<class UObject> Object;
     bool bOverridesDefault;
 };
 
@@ -282,6 +283,7 @@ struct FMovieSceneEvaluationFieldEntityTree
 
 struct FMovieSceneEvaluationFieldEntityKey
 {
+    TWeakObjectPtr<class UObject> EntityOwner;
     uint32 EntityID;
 };
 
@@ -353,6 +355,7 @@ struct FMovieSceneEvalTemplateBase
 struct FMovieSceneEvalTemplate : public FMovieSceneEvalTemplateBase
 {
     EMovieSceneCompletionMode CompletionMode;
+    TWeakObjectPtr<class UMovieSceneSection> SourceSectionPtr;
 };
 
 struct FMovieSceneEvalTemplatePtr
@@ -523,6 +526,7 @@ struct FMovieSceneEvaluationTrack
     FGuid ObjectBindingID;
     uint16 EvaluationPriority;
     EEvaluationMethod EvaluationMethod;
+    TWeakObjectPtr<class UMovieSceneTrack> SourceTrack;
     TArray<FMovieSceneEvalTemplatePtr> ChildTemplates;
     FMovieSceneTrackImplementationPtr TrackTemplate;
     FName EvaluationGroup;
@@ -717,6 +721,7 @@ struct FMovieScenePropertySectionTemplate : public FMovieSceneEvalTemplate
 
 struct FMovieSceneRootEvaluationTemplateInstance
 {
+    TWeakObjectPtr<class UMovieSceneSequence> WeakRootSequence;
     class UMovieSceneCompiledDataManager* CompiledDataManager;
     class UMovieSceneEntitySystemLinker* EntitySystemLinker;
     TMap<FMovieSceneSequenceID, class UObject*> DirectorInstances;
@@ -907,6 +912,7 @@ struct FMovieSceneSpawnable
 
 struct FMovieSceneSubSectionData
 {
+    TWeakObjectPtr<class UMovieSceneSubSection> Section;
     FGuid ObjectBindingID;
     ESectionEvaluationFlags Flags;
 };

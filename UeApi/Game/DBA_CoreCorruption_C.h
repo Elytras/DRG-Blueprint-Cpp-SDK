@@ -26,6 +26,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_PurpleStone_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_Stone_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisMesh D_SmallInfluencerPurpleStone_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SmallInfluencerStone_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisPositioning I_CoreRift_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* D_SmallInfluencerStone__UeScsNode = "0a7b73e042381d489a6df673e6de23e5";
         static constexpr const char* D_SmallInfluencerPurpleStone__UeScsNode = "96dda8b59e25cb41a8f81451f0015dcb";
         static constexpr const char* C_Stone__UeScsNode = "ad2ad95ece074148967c42c008837c39";
@@ -37,4 +38,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption
 
-using DBA_CoreCorruption_C = Game::GameElements::Missions::Warnings::CoreCorruption::DBA_CoreCorruption_C;
+using DBA_CoreCorruption_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::DBA_CoreCorruption_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals
 
-using AFE_FP_MagicCrystalDefense_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::AFE_FP_MagicCrystalDefense_C;
+using AFE_FP_MagicCrystalDefense_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::AFE_FP_MagicCrystalDefense_C;

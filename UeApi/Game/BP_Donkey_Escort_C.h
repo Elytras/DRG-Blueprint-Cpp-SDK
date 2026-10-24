@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Donkey {
 
-class BP_Donkey_Escort_C : public Game::GameElements::Donkey::BP_Donkey_C
+class BP_Donkey_Escort_C : public ::Game::GameElements::Donkey::BP_Donkey_C
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/BP_Donkey_Escort", "BP_Donkey_Escort_C");
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::GameElements::Donkey
 
-using BP_Donkey_Escort_C = Game::GameElements::Donkey::BP_Donkey_Escort_C;
+using BP_Donkey_Escort_C = ::Game::GameElements::Donkey::BP_Donkey_Escort_C;

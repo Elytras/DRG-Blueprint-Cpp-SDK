@@ -17,4 +17,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using AGG_CleanupPod_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::AGG_CleanupPod_C;
+using AGG_CleanupPod_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::AGG_CleanupPod_C;

@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using UI_MasteryUnlockLine_C = Game::UI::Menu_Loadout::UI_MasteryUnlockLine_C;
+using UI_MasteryUnlockLine_C = ::Game::UI::Menu_Loadout::UI_MasteryUnlockLine_C;

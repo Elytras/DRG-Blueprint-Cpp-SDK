@@ -22,7 +22,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Bar {
 
-class Bar_Glass_Physics_C : public Game::GameElements::Bar::Bar_Glass_Physics_Base_C
+class Bar_Glass_Physics_C : public ::Game::GameElements::Bar::Bar_Glass_Physics_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Bar_Glass_Physics", "Bar_Glass_Physics_C");
@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using Bar_Glass_Physics_C = Game::GameElements::Bar::Bar_Glass_Physics_C;
+using Bar_Glass_Physics_C = ::Game::GameElements::Bar::Bar_Glass_Physics_C;

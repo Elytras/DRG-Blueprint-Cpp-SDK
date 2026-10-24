@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::ShipTesting
 
-using Widget_Jukebox02_C = Game::Art::Environments::ShipTesting::Widget_Jukebox02_C;
+using Widget_Jukebox02_C = ::Game::Art::Environments::ShipTesting::Widget_Jukebox02_C;

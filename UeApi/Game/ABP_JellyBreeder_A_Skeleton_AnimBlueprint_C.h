@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using ABP_JellyBreeder_A_Skeleton_AnimBlueprint_C = Game::Enemies::Jelly_Breeder::ABP_JellyBreeder_A_Skeleton_AnimBlueprint_C;
+using ABP_JellyBreeder_A_Skeleton_AnimBlueprint_C = ::Game::Enemies::Jelly_Breeder::ABP_JellyBreeder_A_Skeleton_AnimBlueprint_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe
 
-using PRW_PickAxe_C = Game::WeaponsNTools::Pickaxe::PRW_PickAxe_C;
+using PRW_PickAxe_C = ::Game::WeaponsNTools::Pickaxe::PRW_PickAxe_C;

@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace CharacterSelectionMK2 { namespace Retirement {
 
-class WND_RetirementRewards_C : public Game::UI::ClaimableRewards::WND_ClaimableRewards_C
+class WND_RetirementRewards_C : public ::Game::UI::ClaimableRewards::WND_ClaimableRewards_C
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Retirement/WND_RetirementRewards", "WND_RetirementRewards_C");
@@ -18,4 +18,4 @@ public:
 
 }}}}   // namespace Game::UI::CharacterSelectionMK2::Retirement
 
-using WND_RetirementRewards_C = Game::UI::CharacterSelectionMK2::Retirement::WND_RetirementRewards_C;
+using WND_RetirementRewards_C = ::Game::UI::CharacterSelectionMK2::Retirement::WND_RetirementRewards_C;

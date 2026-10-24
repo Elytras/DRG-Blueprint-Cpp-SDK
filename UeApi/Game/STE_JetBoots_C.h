@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using STE_JetBoots_C = Game::GameElements::JetBoots::Blueprint::STE_JetBoots_C;
+using STE_JetBoots_C = ::Game::GameElements::JetBoots::Blueprint::STE_JetBoots_C;

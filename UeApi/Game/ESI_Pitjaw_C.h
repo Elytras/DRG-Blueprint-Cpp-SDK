@@ -55,4 +55,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Ossiran::PitJaw
 
-using ESI_Pitjaw_C = Game::Enemies::Ossiran::PitJaw::ESI_Pitjaw_C;
+using ESI_Pitjaw_C = ::Game::Enemies::Ossiran::PitJaw::ESI_Pitjaw_C;

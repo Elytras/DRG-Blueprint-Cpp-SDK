@@ -16,7 +16,7 @@ class UI_InfoScreen_Overlay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay", "UI_InfoScreen_Overlay_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UImage* Icon;
     class UImage* Image_0;
@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_Overlay_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_C;
+using UI_InfoScreen_Overlay_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_C;

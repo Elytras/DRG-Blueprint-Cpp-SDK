@@ -18,7 +18,7 @@ class AIC_Jelly_Spawn_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/AIC_Jelly_SPawn", "AIC_Jelly_Spawn_C");
-    using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+    using ENE_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     void ExecuteUbergraph_AIC_Jelly_Spawn(int EntryPoint);
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jellyfish
 
-using AIC_Jelly_Spawn_C = Game::Enemies::Jellyfish::AIC_Jelly_Spawn_C;
+using AIC_Jelly_Spawn_C = ::Game::Enemies::Jellyfish::AIC_Jelly_Spawn_C;

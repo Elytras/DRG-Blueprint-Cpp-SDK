@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Roots
 
-using BP_HureRoots_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::Roots::BP_HureRoots_Base_C;
+using BP_HureRoots_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::Roots::BP_HureRoots_Base_C;

@@ -22,7 +22,7 @@ class UI_CallingMolly_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/UI_CallingMolly", "UI_CallingMolly_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimPing;
     UE_READONLY class UWidgetAnimation* AnimShow;
@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_UI_CallingMolly(int EntryPoint);
     void OnPingFinished();
     void PingIcon();
-    void OnTimeout();
+    void OnTimeOut();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void OnCalledByChanged(class APlayerCharacter* PlayerCharacter);
@@ -51,4 +51,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display
 
-using UI_CallingMolly_C = Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;
+using UI_CallingMolly_C = ::Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;

@@ -16,7 +16,7 @@ class UI_JettyBoot_Score_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/UI_JettyBoot_Score", "UI_JettyBoot_Score_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     UE_READONLY class UWidgetAnimation* AnimCount;
     Basic_Label_C* Score_Label;
     int PreviousScore;
@@ -28,4 +28,4 @@ public:
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using UI_JettyBoot_Score_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoot_Score_C;
+using UI_JettyBoot_Score_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoot_Score_C;

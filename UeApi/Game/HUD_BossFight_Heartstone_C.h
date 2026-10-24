@@ -18,11 +18,11 @@ namespace Game { namespace UI { namespace MainOnscreenHUD { namespace BossFight 
 
 namespace Game { namespace UI { namespace MainOnscreenHUD { namespace BossFight {
 
-class HUD_BossFight_Heartstone_C : public Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C
+class HUD_BossFight_Heartstone_C : public ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_BossFight_Heartstone", "HUD_BossFight_Heartstone_C");
-    using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
+    using ITM_BossFightContainer_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_BossFight_Heartstone_C;
     class UHorizontalBox* HorizontalBox_Healthbar;
     class UImage* Image_316;
@@ -52,4 +52,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using HUD_BossFight_Heartstone_C = Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_Heartstone_C;
+using HUD_BossFight_Heartstone_C = ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_Heartstone_C;

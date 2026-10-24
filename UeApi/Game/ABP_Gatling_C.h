@@ -47,4 +47,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::GatlingGun::Animation
 
-using ABP_Gatling_C = Game::WeaponsNTools::GatlingGun::Animation::ABP_Gatling_C;
+using ABP_Gatling_C = ::Game::WeaponsNTools::GatlingGun::Animation::ABP_Gatling_C;

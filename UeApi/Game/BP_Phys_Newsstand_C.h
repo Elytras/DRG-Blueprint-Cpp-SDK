@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Art { namespace Environments { namespace SpaceRig { namespace Newsstand {
 
-class BP_Phys_Newsstand_C : public Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
+class BP_Phys_Newsstand_C : public ::Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Newsstand/BP_Phys_Newsstand", "BP_Phys_Newsstand_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Capsule;Kickable Mesh";
         static constexpr const char* UberGraphFrame_BP_Phys_Newsstand_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Newsstand
 
-using BP_Phys_Newsstand_C = Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_C;
+using BP_Phys_Newsstand_C = ::Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_C;

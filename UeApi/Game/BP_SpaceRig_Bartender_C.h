@@ -33,7 +33,7 @@ class BP_SpaceRig_Bartender_C : public ASpaceRigBar
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/BP_SpaceRig_Bartender", "BP_SpaceRig_Bartender_C");
-    using BP_DrinksBox_C = Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;
+    using BP_DrinksBox_C = ::Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* Hat_Easter;
     class USkeletalMeshComponent* Hat_Anniversary;
@@ -167,4 +167,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using BP_SpaceRig_Bartender_C = Game::GameElements::Bar::BP_SpaceRig_Bartender_C;
+using BP_SpaceRig_Bartender_C = ::Game::GameElements::Bar::BP_SpaceRig_Bartender_C;

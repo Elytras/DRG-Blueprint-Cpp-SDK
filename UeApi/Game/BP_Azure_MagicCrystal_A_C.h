@@ -16,7 +16,7 @@ class UStatusEffectTriggerComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace AzureWeald { namespace Assets { namespace MagicCrystals {
 
-class BP_Azure_MagicCrystal_A_C : public Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_Base_C
+class BP_Azure_MagicCrystal_A_C : public ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicCrystals/BP_Azure_MagicCrystal_A", "BP_Azure_MagicCrystal_A_C");
@@ -29,6 +29,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;PointLight;ICH-DefaultSceneRoot;TerrainPlacement";
         static constexpr const char* Sphere__UeScsNode = "918ae52d7352fc48b43da4ef3def4ea7";
         static constexpr const char* StatusEffectTrigger__UeScsNode = "bda242d31f3ba4458aaab70123a28a88";
         static constexpr const char* Idle_Sound__UeName = "Idle Sound";
@@ -41,4 +42,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals
 
-using BP_Azure_MagicCrystal_A_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_A_C;
+using BP_Azure_MagicCrystal_A_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_A_C;

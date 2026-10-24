@@ -57,4 +57,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using ITM_GrenadeThrow_C = Game::WeaponsNTools::Grenades::ITM_GrenadeThrow_C;
+using ITM_GrenadeThrow_C = ::Game::WeaponsNTools::Grenades::ITM_GrenadeThrow_C;

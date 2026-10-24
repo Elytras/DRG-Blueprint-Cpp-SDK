@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Crossbow {
 
-class BP_Crossbow_PheromoneAttackerPositioning_C : public Game::WeaponsNTools::Grenades::Pheromone::BP_PheromoneAttackerPositioning_C
+class BP_Crossbow_PheromoneAttackerPositioning_C : public ::Game::WeaponsNTools::Grenades::Pheromone::BP_PheromoneAttackerPositioning_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/BP_Crossbow_PheromoneAttackerPositioning", "BP_Crossbow_PheromoneAttackerPositioning_C");
@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Crossbow
 
-using BP_Crossbow_PheromoneAttackerPositioning_C = Game::WeaponsNTools::Crossbow::BP_Crossbow_PheromoneAttackerPositioning_C;
+using BP_Crossbow_PheromoneAttackerPositioning_C = ::Game::WeaponsNTools::Crossbow::BP_Crossbow_PheromoneAttackerPositioning_C;

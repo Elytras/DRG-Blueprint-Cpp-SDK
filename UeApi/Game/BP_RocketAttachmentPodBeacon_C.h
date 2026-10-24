@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Excavation { namespace RocketAttachment {
 
-class BP_RocketAttachmentPodBeacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_RocketAttachmentPodBeacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_RocketAttachmentPodBeacon", "BP_RocketAttachmentPodBeacon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "PointLight;Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3;Widget1";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment
 
-using BP_RocketAttachmentPodBeacon_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_RocketAttachmentPodBeacon_C;
+using BP_RocketAttachmentPodBeacon_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_RocketAttachmentPodBeacon_C;

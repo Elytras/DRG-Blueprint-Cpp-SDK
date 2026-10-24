@@ -20,8 +20,8 @@ class UI_BlackOverlay_C : public UFSDLevelLoadingPersistentWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/UI_BlackOverlay", "UI_BlackOverlay_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* FullscreenImage;
     UI_AdvancedLabel_C* LoaderText;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_BlackOverlay_C = Game::UI::Global_UI_Elements::UI_BlackOverlay_C;
+using UI_BlackOverlay_C = ::Game::UI::Global_UI_Elements::UI_BlackOverlay_C;

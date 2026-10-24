@@ -29,7 +29,7 @@ class WPN_LineCutter_C : public ALineCutter
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/WPN_LineCutter", "WPN_LineCutter_C");
-    using PRJ_LineCutter2_C = Game::WeaponsNTools::LineCutter::PRJ_LineCutter2_C;
+    using PRJ_LineCutter2_C = ::Game::WeaponsNTools::LineCutter::PRJ_LineCutter2_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* HomingTarget;
     class UFirstPersonWidgetComponent* Widget_TotalAmmo;
@@ -91,4 +91,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using WPN_LineCutter_C = Game::WeaponsNTools::LineCutter::WPN_LineCutter_C;
+using WPN_LineCutter_C = ::Game::WeaponsNTools::LineCutter::WPN_LineCutter_C;

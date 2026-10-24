@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using STE_AutoCanno_DamageResit_C = Game::WeaponsNTools::Autocannon::STE_AutoCanno_DamageResit_C;
+using STE_AutoCanno_DamageResit_C = ::Game::WeaponsNTools::Autocannon::STE_AutoCanno_DamageResit_C;

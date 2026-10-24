@@ -25,8 +25,8 @@ class Basic_FlatGradientButton_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_FlatGradientButton", "Basic_FlatGradientButton_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button;
     Basic_Image_C* Button_Background;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_FlatGradientButton_C = Game::UI::Art::WidgetParts::Basic_FlatGradientButton_C;
+using Basic_FlatGradientButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatGradientButton_C;

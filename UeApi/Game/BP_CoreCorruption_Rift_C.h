@@ -80,6 +80,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent CrystalDeathPosition;/Script/Engine.SceneComponent CrystalSpawnPosition;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent placement";
+        static constexpr const char* UeTemplateSubobjects = "/Script/Niagara.NiagaraDataInterfaceSkeletalMesh CarveParticles_GEN_VARIABLE:NiagaraDataInterfaceSkeletalMesh_0";
         static constexpr const char* LevelGenerationCorruptionCarver1__UeScsNode = "b86640cc1e76d74f8bf742a435c43975";
         static constexpr const char* LevelGenerationCorruptionCarver__UeScsNode = "39181f378497d843bb382bfc5b7d5775";
         static constexpr const char* ImplosionParticles__UeScsNode = "6db758b4bca7594aae82cda3c94a3514";
@@ -125,4 +126,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption
 
-using BP_CoreCorruption_Rift_C = Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Rift_C;
+using BP_CoreCorruption_Rift_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Rift_C;

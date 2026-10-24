@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_Crosshair_LaserPointer_C = Game::WeaponsNTools::_Crosshairs::HUD_Crosshair_LaserPointer_C;
+using HUD_Crosshair_LaserPointer_C = ::Game::WeaponsNTools::_Crosshairs::HUD_Crosshair_LaserPointer_C;

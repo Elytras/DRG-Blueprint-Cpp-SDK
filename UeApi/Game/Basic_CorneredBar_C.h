@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_CorneredBar_C = Game::UI::Art::WidgetParts::Basic_CorneredBar_C;
+using Basic_CorneredBar_C = ::Game::UI::Art::WidgetParts::Basic_CorneredBar_C;

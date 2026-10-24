@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;

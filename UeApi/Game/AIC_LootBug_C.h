@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::Critters::LootBug
 
-using AIC_LootBug_C = Game::Critters::LootBug::AIC_LootBug_C;
+using AIC_LootBug_C = ::Game::Critters::LootBug::AIC_LootBug_C;

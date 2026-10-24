@@ -28,4 +28,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank
 
-using BP_ScrabTankSkeletalMesh_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTankSkeletalMesh_C;
+using BP_ScrabTankSkeletalMesh_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::BP_ScrabTankSkeletalMesh_C;

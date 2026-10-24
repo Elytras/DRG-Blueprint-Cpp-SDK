@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Revolver
 
-using STE_Revolver_Neurotoxin_C = Game::WeaponsNTools::Revolver::STE_Revolver_Neurotoxin_C;
+using STE_Revolver_Neurotoxin_C = ::Game::WeaponsNTools::Revolver::STE_Revolver_Neurotoxin_C;

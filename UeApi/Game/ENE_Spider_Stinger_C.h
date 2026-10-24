@@ -23,7 +23,7 @@ class UStingerIdleAudioComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Stinger {
 
-class ENE_Spider_Stinger_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Stinger_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Stinger/ENE_Spider_Stinger", "ENE_Spider_Stinger_C");
@@ -51,6 +51,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent SplineHookAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.PluckFromZiplineBonus SplineHookAttack_GEN_VARIABLE:DamageComponent_0:PluckFromZiplineBonus_0;/Script/FSD.PushStatusEffectDamageBonus SplineHookAttack_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Stinger_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight_Tail__UeScsNode = "1de1d5aec2fabc4087a93d8d7bde49cd";
         static constexpr const char* PointLight_Weakpoint__UeScsNode = "a104170f2b6e07449ad6b2ebdaab7d47";
@@ -67,4 +69,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Stinger
 
-using ENE_Spider_Stinger_C = Game::Enemies::Spider::Stinger::ENE_Spider_Stinger_C;
+using ENE_Spider_Stinger_C = ::Game::Enemies::Spider::Stinger::ENE_Spider_Stinger_C;

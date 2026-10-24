@@ -13,7 +13,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class ESI_Bomber_Rockpox_Plague_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Bomber_Rockpox_Plague_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/ESI_Bomber_Rockpox_Plague", "ESI_Bomber_Rockpox_Plague_C");
@@ -31,6 +31,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* ParticleSystem__UeScsNode = "1ec07038283165438d4418df2b15f0d6";
         static constexpr const char* ParticleSystem1__UeScsNode = "22b7843c05f17249a0b6b0331e96a326";
         static constexpr const char* InfectionPoint7__UeScsNode = "5aeac7cf5ca5ad4bae79e09651d304f8";
@@ -44,4 +45,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using ESI_Bomber_Rockpox_Plague_C = Game::Enemies::Plague::ESI_Bomber_Rockpox_Plague_C;
+using ESI_Bomber_Rockpox_Plague_C = ::Game::Enemies::Plague::ESI_Bomber_Rockpox_Plague_C;

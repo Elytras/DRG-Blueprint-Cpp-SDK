@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_TradeTerminal_C = Game::GameElements::Campaign::CP_TradeTerminal_C;
+using CP_TradeTerminal_C = ::Game::GameElements::Campaign::CP_TradeTerminal_C;

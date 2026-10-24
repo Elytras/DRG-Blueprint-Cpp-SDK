@@ -22,4 +22,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall
 
-using W_Spacerig_Spaceball_GoalWidget_Red_C = Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall::W_Spacerig_Spaceball_GoalWidget_Red_C;
+using W_Spacerig_Spaceball_GoalWidget_Red_C = ::Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall::W_Spacerig_Spaceball_GoalWidget_Red_C;

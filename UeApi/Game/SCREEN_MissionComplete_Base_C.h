@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using SCREEN_MissionComplete_Base_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C;
+using SCREEN_MissionComplete_Base_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C;

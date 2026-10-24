@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::DamageEnhancer
 
-using STE_DamageEnhancerPlayerKeepOut_C = Game::WeaponsNTools::Grenades::DamageEnhancer::STE_DamageEnhancerPlayerKeepOut_C;
+using STE_DamageEnhancerPlayerKeepOut_C = ::Game::WeaponsNTools::Grenades::DamageEnhancer::STE_DamageEnhancerPlayerKeepOut_C;

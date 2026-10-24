@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::GameElements::Donkey
 
-using BP_DonkeyDestinationMarker_C = Game::GameElements::Donkey::BP_DonkeyDestinationMarker_C;
+using BP_DonkeyDestinationMarker_C = ::Game::GameElements::Donkey::BP_DonkeyDestinationMarker_C;

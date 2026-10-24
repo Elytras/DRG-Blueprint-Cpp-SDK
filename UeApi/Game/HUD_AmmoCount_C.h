@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_AmmoCount_C = Game::UI::MainOnscreenHUD::HUD_AmmoCount_C;
+using HUD_AmmoCount_C = ::Game::UI::MainOnscreenHUD::HUD_AmmoCount_C;

@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::Enemies::Attacks
 
-using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
+using BP_ConeAttackBase_C = ::Game::Enemies::Attacks::BP_ConeAttackBase_C;

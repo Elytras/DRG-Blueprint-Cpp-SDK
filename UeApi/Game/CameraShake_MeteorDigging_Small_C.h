@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower
 
-using CameraShake_MeteorDigging_Small_C = Game::GameElements::GameEvents::MeteorShower::CameraShake_MeteorDigging_Small_C;
+using CameraShake_MeteorDigging_Small_C = ::Game::GameElements::GameEvents::MeteorShower::CameraShake_MeteorDigging_Small_C;

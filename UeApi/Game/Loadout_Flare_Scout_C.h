@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Flares
 
-using Loadout_Flare_Scout_C = Game::WeaponsNTools::Flares::Loadout_Flare_Scout_C;
+using Loadout_Flare_Scout_C = ::Game::WeaponsNTools::Flares::Loadout_Flare_Scout_C;

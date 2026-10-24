@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_AutoReloadPerkActivation_C = Game::GameElements::KPI::Perks::BP_AutoReloadPerkActivation_C;
+using BP_AutoReloadPerkActivation_C = ::Game::GameElements::KPI::Perks::BP_AutoReloadPerkActivation_C;

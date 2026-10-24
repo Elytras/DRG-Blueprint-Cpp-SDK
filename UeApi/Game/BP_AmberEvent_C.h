@@ -60,6 +60,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame.BP_RewardFrame_C StartEventObject:StartEventObject_BP_RewardFrame_C_CAT;/Script/Engine.ChildActorComponent StartEventObject;/Script/FSD.DamageComponent ExplosionDamage;/Script/Engine.SceneComponent Root;/Script/FSD.SpecialEventUsableComponent StartEventObject:StartEventObject_BP_RewardFrame_C_CAT:EventUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C StartButton1_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C StartButton2_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C StartButton3_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C StartButton4_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Script/Engine.SceneComponent StartButton1_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/Engine.SceneComponent StartButton2_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/Engine.SceneComponent StartButton3_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/Engine.SceneComponent StartButton4_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/FSD.SingleUsableComponent StartButton1_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent StartButton2_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent StartButton3_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent StartButton4_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable";
         static constexpr const char* Capsule1__UeScsNode = "f76e66ddebcf07459bf7886cf4c232f9";
         static constexpr const char* RoomCarver__UeScsNode = "2d002e25b63606499ffd0a373a65b6b1";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "43f45b0f26a5c84a8f02dc6df30d057f";
@@ -84,4 +85,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::AmberEvent
 
-using BP_AmberEvent_C = Game::GameElements::GameEvents::AmberEvent::BP_AmberEvent_C;
+using BP_AmberEvent_C = ::Game::GameElements::GameEvents::AmberEvent::BP_AmberEvent_C;

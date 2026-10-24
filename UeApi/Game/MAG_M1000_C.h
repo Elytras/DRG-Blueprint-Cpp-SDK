@@ -9,13 +9,18 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace BoltActionRifle {
 
-class MAG_M1000_C : public Game::WeaponsNTools::MAG_BaseClass_C
+class MAG_M1000_C : public ::Game::WeaponsNTools::MAG_BaseClass_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BoltActionRifle/MAG_M1000", "MAG_M1000_C");
     bool OnSpawnRelease_Released();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Box;Mesh";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using MAG_M1000_C = Game::WeaponsNTools::BoltActionRifle::MAG_M1000_C;
+using MAG_M1000_C = ::Game::WeaponsNTools::BoltActionRifle::MAG_M1000_C;

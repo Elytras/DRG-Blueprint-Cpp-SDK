@@ -15,7 +15,7 @@ class USimpleObjectInfoComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace AzureWeald { namespace Assets { namespace CallowSeeder {
 
-class Bp_Azure_CallowSeeder_C : public Game::LevelElements::RoomObjects::PassiveFoliage::BP_Foliage_OpenOnProximity_C
+class Bp_Azure_CallowSeeder_C : public ::Game::LevelElements::RoomObjects::PassiveFoliage::BP_Foliage_OpenOnProximity_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/CallowSeeder/Bp_Azure_CallowSeeder", "Bp_Azure_CallowSeeder_C");
@@ -29,6 +29,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "HitBox_Closed;HitBox_Open;PathfinderCollision1;Mesh;TerrainPlacement";
         static constexpr const char* UberGraphFrame_Bp_Azure_CallowSeeder_C__UeName = "UberGraphFrame";
         static constexpr const char* Capsule1__UeScsNode = "dca9a8d2cc37d846875bb7cbe1671456";
         static constexpr const char* Capsule__UeScsNode = "88c656e3142bb54c90f871fd0fb0daf2";
@@ -39,4 +40,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CallowSeeder
 
-using Bp_Azure_CallowSeeder_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CallowSeeder::Bp_Azure_CallowSeeder_C;
+using Bp_Azure_CallowSeeder_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::CallowSeeder::Bp_Azure_CallowSeeder_C;

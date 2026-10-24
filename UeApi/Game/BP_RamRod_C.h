@@ -44,4 +44,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::DropPodShip
 
-using BP_RamRod_C = Game::Art::Environments::SpaceRig::DropPodShip::BP_RamRod_C;
+using BP_RamRod_C = ::Game::Art::Environments::SpaceRig::DropPodShip::BP_RamRod_C;

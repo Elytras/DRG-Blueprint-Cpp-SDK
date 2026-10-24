@@ -51,4 +51,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Holidays::Xmas::Nisse
 
-using BP_ThrowableNisse_C = Game::GameElements::Holidays::Xmas::Nisse::BP_ThrowableNisse_C;
+using BP_ThrowableNisse_C = ::Game::GameElements::Holidays::Xmas::Nisse::BP_ThrowableNisse_C;

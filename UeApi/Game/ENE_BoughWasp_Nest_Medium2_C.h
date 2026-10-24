@@ -11,7 +11,7 @@ class UPointLightComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace InsectSwarm { namespace HollowBoughVersion {
 
-class ENE_BoughWasp_Nest_Medium2_C : public Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Medium_C
+class ENE_BoughWasp_Nest_Medium2_C : public ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Medium_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Nest_Medium2", "ENE_BoughWasp_Nest_Medium2_C");
@@ -20,10 +20,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "PathfinderCollision;PointLight;SM_HollowboughWaspNest_01;SM_HollowboughWaspNest_03";
         static constexpr const char* PointLight1__UeScsNode = "54b10500895593479f95f7d3ce4deba4";
     };
 };
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion
 
-using ENE_BoughWasp_Nest_Medium2_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Medium2_C;
+using ENE_BoughWasp_Nest_Medium2_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Medium2_C;

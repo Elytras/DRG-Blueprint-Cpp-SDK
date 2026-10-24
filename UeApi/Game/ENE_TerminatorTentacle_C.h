@@ -32,7 +32,7 @@ class ENE_TerminatorTentacle_C : public ATerminatorTentacle
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/ENE_TerminatorTentacle", "ENE_TerminatorTentacle_C");
-    using BP_TentacleGrab_C = Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
+    using BP_TentacleGrab_C = ::Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTentacleBusyComponent* TentacleBusy;
     BP_TentacleGrab_C* GrabAttack;
@@ -75,7 +75,7 @@ public:
     void OnNotifyEnd_A95BA6584C48C6EABBD6A895A1E446D7(FName NotifyName);
     void UserConstructionScript();
     void HitTerrainAndStop(FVector TargetLocation_0, float Penetration, FVector& NewTargetLocation, bool& HitTerrain);
-    void GetTentacle(ENE_TerminatorTentacle_C*& Tentacle);
+    void GetTentacle(ENE_TerminatorTentacle_C*& tentacle);
     class USceneComponent* GetHeadRoot();
     class USceneComponent* GetHeadRotator();
     void Spawn_Crush_Particles();
@@ -108,4 +108,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using ENE_TerminatorTentacle_C = Game::Enemies::RivalTech::Terminator::ENE_TerminatorTentacle_C;
+using ENE_TerminatorTentacle_C = ::Game::Enemies::RivalTech::Terminator::ENE_TerminatorTentacle_C;

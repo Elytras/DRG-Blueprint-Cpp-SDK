@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_ElectricJelly_Stun_C = Game::Landscape::ReactiveTerrain::STE_ElectricJelly_Stun_C;
+using STE_ElectricJelly_Stun_C = ::Game::Landscape::ReactiveTerrain::STE_ElectricJelly_Stun_C;

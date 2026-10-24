@@ -18,7 +18,7 @@ class AIC_FriendlyShredder_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/AIC_FriendlyShredder", "AIC_FriendlyShredder_C");
-    using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+    using ENE_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     float SpeedModifier;
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using AIC_FriendlyShredder_C = Game::WeaponsNTools::Grenades::FriendlyShredders::AIC_FriendlyShredder_C;
+using AIC_FriendlyShredder_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::AIC_FriendlyShredder_C;

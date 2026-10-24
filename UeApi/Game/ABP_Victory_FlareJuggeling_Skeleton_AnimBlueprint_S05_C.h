@@ -24,4 +24,4 @@ public:
 
 }}}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Flares
 
-using ABP_Victory_FlareJuggeling_Skeleton_AnimBlueprint_S05_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Flares::ABP_Victory_FlareJuggeling_Skeleton_AnimBlueprint_S05_C;
+using ABP_Victory_FlareJuggeling_Skeleton_AnimBlueprint_S05_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Flares::ABP_Victory_FlareJuggeling_Skeleton_AnimBlueprint_S05_C;

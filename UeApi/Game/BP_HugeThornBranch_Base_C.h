@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches
 
-using BP_HugeThornBranch_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_HugeThornBranch_Base_C;
+using BP_HugeThornBranch_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_HugeThornBranch_Base_C;

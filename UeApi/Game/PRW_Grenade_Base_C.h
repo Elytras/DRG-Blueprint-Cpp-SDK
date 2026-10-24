@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using PRW_Grenade_Base_C = Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C;
+using PRW_Grenade_Base_C = ::Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C;

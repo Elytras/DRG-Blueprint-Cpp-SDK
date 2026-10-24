@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::GameElements::JetBoots
 
-using HUD_JetBootsFuel_Vertical_C = Game::GameElements::JetBoots::HUD_JetBootsFuel_Vertical_C;
+using HUD_JetBootsFuel_Vertical_C = ::Game::GameElements::JetBoots::HUD_JetBootsFuel_Vertical_C;

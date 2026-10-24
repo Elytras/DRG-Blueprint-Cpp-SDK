@@ -28,7 +28,7 @@ class BP_Azure_MagicHole_C : public AActor
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicHole/BP_Azure_MagicHole", "BP_Azure_MagicHole_C");
-    using BP_DamageTriggerComponent_C = Game::LevelElements::Components::BP_DamageTriggerComponent_C;
+    using BP_DamageTriggerComponent_C = ::Game::LevelElements::Components::BP_DamageTriggerComponent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelGenerationCarverComponent* LevelGenerationCarver_Hole;
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
@@ -53,6 +53,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/MagicHole/BP_MagicHoleBottomDebris.BP_MagicHoleBottomDebris_C BP_MagicHoleBottomDebris_GEN_VARIABLE:BP_MagicHoleBottomDebris_GEN_VARIABLE_BP_MagicHoleBottomDebris_C_CAT";
         static constexpr const char* LevelGenerationCarver_Hole__UeScsNode = "8cfd0b228b9d074b97a2c19db530c723";
         static constexpr const char* StatusEffectTrigger__UeScsNode = "a590686632b2f14199c861b1c117a2ec";
         static constexpr const char* AzureMagic_Hole_Cue__UeScsNode = "20d462c67f303b47a76521ff149f3503";
@@ -73,4 +74,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole
 
-using BP_Azure_MagicHole_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::BP_Azure_MagicHole_C;
+using BP_Azure_MagicHole_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::BP_Azure_MagicHole_C;

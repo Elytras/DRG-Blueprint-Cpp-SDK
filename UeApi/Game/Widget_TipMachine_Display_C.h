@@ -29,4 +29,4 @@ public:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TipMachine
 
-using Widget_TipMachine_Display_C = Game::Art::Environments::SpaceRig::TipMachine::Widget_TipMachine_Display_C;
+using Widget_TipMachine_Display_C = ::Game::Art::Environments::SpaceRig::TipMachine::Widget_TipMachine_Display_C;

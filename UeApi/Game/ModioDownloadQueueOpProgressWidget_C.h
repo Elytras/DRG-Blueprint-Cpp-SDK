@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Drawers::DownloadQueue
 
-using ModioDownloadQueueOpProgressWidget_C = Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueueOpProgressWidget_C;
+using ModioDownloadQueueOpProgressWidget_C = ::Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueueOpProgressWidget_C;

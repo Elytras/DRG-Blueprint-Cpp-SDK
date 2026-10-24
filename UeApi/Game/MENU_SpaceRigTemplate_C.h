@@ -29,17 +29,17 @@ class MENU_SpaceRigTemplate_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_TopBar/MENU_SpaceRigTemplate", "MENU_SpaceRigTemplate_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Popup_YesNoPrompt_C = Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_ServerList_Entry_PlayerIcons_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
-    using ITM_TopBar_CharacterIcon_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
-    using ITM_TopBar_CharacterLevel_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterLevel_C;
-    using ITM_TopBar_PlayerRank_C = Game::UI::Menu_TopBar::ITM_TopBar_PlayerRank_C;
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
-    using ITM_TopBar_Resources_C = Game::UI::Menu_TopBar::ITM_TopBar_Resources_C;
-    using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Popup_YesNoPrompt_C = ::Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_ServerList_Entry_PlayerIcons_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
+    using ITM_TopBar_CharacterIcon_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterIcon_C;
+    using ITM_TopBar_CharacterLevel_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterLevel_C;
+    using ITM_TopBar_PlayerRank_C = ::Game::UI::Menu_TopBar::ITM_TopBar_PlayerRank_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using ITM_TopBar_Resources_C = ::Game::UI::Menu_TopBar::ITM_TopBar_Resources_C;
+    using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHideTopBar;
     UE_READONLY class UWidgetAnimation* FadeIn;
@@ -102,4 +102,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;

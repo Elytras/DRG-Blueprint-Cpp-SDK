@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_Empty_C = Game::UI::HUD_SpaceRig::BP_Empty_C;
+using BP_Empty_C = ::Game::UI::HUD_SpaceRig::BP_Empty_C;

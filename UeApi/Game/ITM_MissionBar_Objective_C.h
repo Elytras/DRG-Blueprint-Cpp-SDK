@@ -20,8 +20,8 @@ class ITM_MissionBar_Objective_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionOverview/ITM_MissionBar_Objective", "ITM_MissionBar_Objective_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UTextBlock* DATA_Amount;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using ITM_MissionBar_Objective_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Objective_C;
+using ITM_MissionBar_Objective_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Objective_C;

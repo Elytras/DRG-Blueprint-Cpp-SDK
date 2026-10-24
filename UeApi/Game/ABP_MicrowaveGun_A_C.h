@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using ABP_MicrowaveGun_A_C = Game::WeaponsNTools::MicrowaveGun::ABP_MicrowaveGun_A_C;
+using ABP_MicrowaveGun_A_C = ::Game::WeaponsNTools::MicrowaveGun::ABP_MicrowaveGun_A_C;

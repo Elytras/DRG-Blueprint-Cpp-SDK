@@ -17,7 +17,7 @@ class WPN_RockCracker_Builder_C : public AFuelLineBuilderItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RockCrackerBuilder/WPN_RockCracker_Builder", "WPN_RockCracker_Builder_C");
-    using UI_RockCracker_Builder_C = Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;
+    using UI_RockCracker_Builder_C = ::Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     void ExecuteUbergraph_WPN_RockCracker_Builder(int EntryPoint);
@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder
 
-using WPN_RockCracker_Builder_C = Game::WeaponsNTools::RockCrackerBuilder::WPN_RockCracker_Builder_C;
+using WPN_RockCracker_Builder_C = ::Game::WeaponsNTools::RockCrackerBuilder::WPN_RockCracker_Builder_C;

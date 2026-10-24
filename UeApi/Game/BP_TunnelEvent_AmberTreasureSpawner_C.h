@@ -27,7 +27,7 @@ class BP_TunnelEvent_AmberTreasureSpawner_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEvent_AmberTreasureSpawner", "BP_TunnelEvent_AmberTreasureSpawner_C");
-    using BP_TunnelGem_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelGem_C;
+    using BP_TunnelGem_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelGem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* BaseRoot;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
@@ -73,4 +73,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent
 
-using BP_TunnelEvent_AmberTreasureSpawner_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEvent_AmberTreasureSpawner_C;
+using BP_TunnelEvent_AmberTreasureSpawner_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEvent_AmberTreasureSpawner_C;

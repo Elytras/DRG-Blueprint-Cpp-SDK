@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Elimination
 
-using OBJ_Elimination_Base_C = Game::GameElements::Objectives::Elimination::OBJ_Elimination_Base_C;
+using OBJ_Elimination_Base_C = ::Game::GameElements::Objectives::Elimination::OBJ_Elimination_Base_C;

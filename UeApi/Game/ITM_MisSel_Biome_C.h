@@ -31,11 +31,11 @@ class ITM_MisSel_Biome_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_Biome", "ITM_MisSel_Biome_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_Campaign_Icon_C = Game::UI::Menu_MissionSelectionMK3::ITM_Campaign_Icon_C;
-    using ITM_MisSel_RegionImage_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_RegionImage_C;
-    using ITM_SeasonChallengeIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_Campaign_Icon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_Campaign_Icon_C;
+    using ITM_MisSel_RegionImage_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_RegionImage_C;
+    using ITM_SeasonChallengeIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ScannersOutOfRange;
     UE_READONLY class UWidgetAnimation* Infobox_MouseOver;
@@ -43,7 +43,7 @@ public:
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     class UCanvasPanel* CanvasPanel_Outer;
     ITM_SeasonChallengeIcon_C* Icon_Challenge;
-    class UImage* IMG_Shadow;
+    class UImage* Img_Shadow;
     ITM_Campaign_Icon_C* ITM_Campaign_Icon;
     class UButton* MainButton;
     class UHorizontalBox* MissionsAvailiable;
@@ -95,4 +95,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_Biome_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Biome_C;
+using ITM_MisSel_Biome_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Biome_C;

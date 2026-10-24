@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_LowFrictionIceRT_C = Game::Landscape::ReactiveTerrain::STE_LowFrictionIceRT_C;
+using STE_LowFrictionIceRT_C = ::Game::Landscape::ReactiveTerrain::STE_LowFrictionIceRT_C;

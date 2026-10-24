@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace PoisonGasFungus {
 
-class BP_PoisonGasFungus_PoisonGasCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
+class BP_PoisonGasFungus_PoisonGasCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/PoisonGasFungus/BP_PoisonGasFungus_PoisonGasCloud", "BP_PoisonGasFungus_PoisonGasCloud_C");
@@ -21,10 +21,12 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "CombustionDamageFire;AcidCloud;Sphere;StatusEffectTrigger";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CombustionDamageFire_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_BP_PoisonGasFungus_PoisonGasCloud_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus
 
-using BP_PoisonGasFungus_PoisonGasCloud_C = Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus::BP_PoisonGasFungus_PoisonGasCloud_C;
+using BP_PoisonGasFungus_PoisonGasCloud_C = ::Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus::BP_PoisonGasFungus_PoisonGasCloud_C;

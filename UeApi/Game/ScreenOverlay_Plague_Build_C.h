@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Plague_Build_C = Game::UI::ScreenOverlays::ScreenOverlay_Plague_Build_C;
+using ScreenOverlay_Plague_Build_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Plague_Build_C;

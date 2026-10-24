@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using STE_WoodlouseExplosiveResistance_C = Game::Enemies::Woodlouse::STE_WoodlouseExplosiveResistance_C;
+using STE_WoodlouseExplosiveResistance_C = ::Game::Enemies::Woodlouse::STE_WoodlouseExplosiveResistance_C;

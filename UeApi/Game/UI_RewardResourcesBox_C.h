@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications
 
-using UI_RewardResourcesBox_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResourcesBox_C;
+using UI_RewardResourcesBox_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResourcesBox_C;

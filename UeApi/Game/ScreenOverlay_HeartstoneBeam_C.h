@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_HeartstoneBeam_C = Game::UI::ScreenOverlays::ScreenOverlay_HeartstoneBeam_C;
+using ScreenOverlay_HeartstoneBeam_C = ::Game::UI::ScreenOverlays::ScreenOverlay_HeartstoneBeam_C;

@@ -18,13 +18,13 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens { namespace Basics {
 
-class LoreScreen_Spacerig_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_Spacerig_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/Basics/LoreScreen_Spacerig", "LoreScreen_Spacerig_C");
-    using Button_Spacerig_Map_Circle_C = Game::UI::Menu_MinersManual::Button_Spacerig_Map_Circle_C;
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_PictureOverText_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_PictureOverText_C;
+    using Button_Spacerig_Map_Circle_C = ::Game::UI::Menu_MinersManual::Button_Spacerig_Map_Circle_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_PictureOverText_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_PictureOverText_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Spacerig_C;
     Button_Spacerig_Map_Circle_C* AbyssBar;
     Button_Spacerig_Map_Circle_C* ArcadeArea;
@@ -70,4 +70,4 @@ private:
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Basics
 
-using LoreScreen_Spacerig_C = Game::UI::Menu_MinersManual::InfoScreens::Basics::LoreScreen_Spacerig_C;
+using LoreScreen_Spacerig_C = ::Game::UI::Menu_MinersManual::InfoScreens::Basics::LoreScreen_Spacerig_C;

@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::Developers::nilas
 
-using BPI_Laserable_C = Game::Developers::nilas::BPI_Laserable_C;
+using BPI_Laserable_C = ::Game::Developers::nilas::BPI_Laserable_C;

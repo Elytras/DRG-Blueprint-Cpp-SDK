@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnBosco_C = Game::UI::Menu_Cheats::Cheat_SpawnBosco_C;
+using Cheat_SpawnBosco_C = ::Game::UI::Menu_Cheats::Cheat_SpawnBosco_C;

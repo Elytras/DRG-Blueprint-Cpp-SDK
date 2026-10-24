@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_AcidLobber_C = Game::UI::ScreenOverlays::ScreenOverlay_AcidLobber_C;
+using ScreenOverlay_AcidLobber_C = ::Game::UI::ScreenOverlays::ScreenOverlay_AcidLobber_C;

@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::AssaultRifle
 
-using PRW_AssaultRifle_C = Game::WeaponsNTools::AssaultRifle::PRW_AssaultRifle_C;
+using PRW_AssaultRifle_C = ::Game::WeaponsNTools::AssaultRifle::PRW_AssaultRifle_C;

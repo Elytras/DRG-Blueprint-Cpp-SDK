@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using AFE_MarkedForDeath_Bosses_C = Game::WeaponsNTools::BoltActionRifle::AFE_MarkedForDeath_Bosses_C;
+using AFE_MarkedForDeath_Bosses_C = ::Game::WeaponsNTools::BoltActionRifle::AFE_MarkedForDeath_Bosses_C;

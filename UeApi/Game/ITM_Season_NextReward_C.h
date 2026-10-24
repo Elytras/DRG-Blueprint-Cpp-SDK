@@ -22,11 +22,11 @@ class ITM_Season_NextReward_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_NextReward", "ITM_Season_NextReward_C");
-    using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
-    using ITM_Season_Progress_Small_C = Game::UI::Menu_Seasons::ITM_Season_Progress_Small_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using ITM_Season_CharacterIcon_C = ::Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
+    using ITM_Season_Progress_Small_C = ::Game::UI::Menu_Seasons::ITM_Season_Progress_Small_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    UE_READONLY class UWidgetAnimation* BgGlow;
+    UE_READONLY class UWidgetAnimation* BGglow;
     class UImage* BG_Top;
     class UImage* I_Background;
     class UImage* I_BG_Black;
@@ -58,4 +58,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_NextReward_C = Game::UI::Menu_Seasons::ITM_Season_NextReward_C;
+using ITM_Season_NextReward_C = ::Game::UI::Menu_Seasons::ITM_Season_NextReward_C;

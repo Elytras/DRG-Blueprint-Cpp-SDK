@@ -18,7 +18,7 @@ class DefuseBomb_Socket_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Defuse/DefuseBomb_Socket", "DefuseBomb_Socket_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIndicate;
     Basic_Image_C* Socket_Image;
@@ -41,4 +41,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse
 
-using DefuseBomb_Socket_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Socket_C;
+using DefuseBomb_Socket_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Socket_C;

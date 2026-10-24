@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Button_Spacerig_Map_Circle_C = Game::UI::Menu_MinersManual::Button_Spacerig_Map_Circle_C;
+using Button_Spacerig_Map_Circle_C = ::Game::UI::Menu_MinersManual::Button_Spacerig_Map_Circle_C;

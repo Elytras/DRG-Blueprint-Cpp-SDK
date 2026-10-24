@@ -28,7 +28,7 @@ class WPN_MicrowaveGun_C : public AMicrowaveWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/WPN_MicrowaveGun", "WPN_MicrowaveGun_C");
-    using WeaponDisplay_MicrowaveGun_Heat_C = Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_Heat_C;
+    using WeaponDisplay_MicrowaveGun_Heat_C = ::Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_Heat_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonNiagaraComponent* HeatSmoke;
     class UProjectileLauncherComponent* projectileLauncher;
@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using WPN_MicrowaveGun_C = Game::WeaponsNTools::MicrowaveGun::WPN_MicrowaveGun_C;
+using WPN_MicrowaveGun_C = ::Game::WeaponsNTools::MicrowaveGun::WPN_MicrowaveGun_C;

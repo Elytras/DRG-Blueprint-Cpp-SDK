@@ -31,4 +31,4 @@ public:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum
 
-using ABP_Vacuum_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum::ABP_Vacuum_C;
+using ABP_Vacuum_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum::ABP_Vacuum_C;

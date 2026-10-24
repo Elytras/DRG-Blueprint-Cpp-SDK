@@ -17,7 +17,7 @@ class UI_JettyBoots_HighScore_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/UI_JettyBoots_HighScore", "UI_JettyBoots_HighScore_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Name_Label;
     Basic_Label_C* Position_Label;
@@ -25,9 +25,9 @@ public:
     int Preview;
     void ExecuteUbergraph_UI_JettyBoots_HighScore(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetHighScore(int InIndex, FJettyBootsScore InHighscore, bool InHighlight);
+    void SetHighScore(int InIndex, FJettyBootsScore InHighScore, bool inHighlight);
 };
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using UI_JettyBoots_HighScore_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_HighScore_C;
+using UI_JettyBoots_HighScore_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_HighScore_C;

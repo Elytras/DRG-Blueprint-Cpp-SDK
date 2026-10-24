@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::AssaultRifle
 
-using ABP_AssaultRifle_B_C = Game::WeaponsNTools::AssaultRifle::ABP_AssaultRifle_B_C;
+using ABP_AssaultRifle_B_C = ::Game::WeaponsNTools::AssaultRifle::ABP_AssaultRifle_B_C;

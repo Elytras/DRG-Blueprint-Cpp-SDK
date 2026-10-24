@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using BP_CampaignManager_C = Game::GameElements::Campaign::BP_CampaignManager_C;
+using BP_CampaignManager_C = ::Game::GameElements::Campaign::BP_CampaignManager_C;

@@ -23,9 +23,9 @@ class Cheat_EquipList_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_EquipList", "Cheat_EquipList_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Cheat_EquipList_Category_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Category_C;
-    using Cheat_EquipList_Entry_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Cheat_EquipList_Category_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Category_C;
+    using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Header_Text;
     class UVerticalBox* List_Categories;
@@ -49,4 +49,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_EquipList_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C;
+using Cheat_EquipList_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C;

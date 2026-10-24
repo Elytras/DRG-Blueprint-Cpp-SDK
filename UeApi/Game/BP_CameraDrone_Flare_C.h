@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace MovieMode {
 
-class BP_CameraDrone_Flare_C : public Game::WeaponsNTools::Flares::ITM_Flare_Large_C
+class BP_CameraDrone_Flare_C : public ::Game::WeaponsNTools::Flares::ITM_Flare_Large_C
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_CameraDrone_Flare", "BP_CameraDrone_Flare_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Box;ParticleSystem;Light_AfterGlow;Light_NoShadow;SpotLight_Shadow_1;SpotLight_Shadow_2;SpotLight_Shadow_3;StaticMesh;UpgradableGear";
+    };
 };
 
 }}}   // namespace Game::GameElements::MovieMode
 
-using BP_CameraDrone_Flare_C = Game::GameElements::MovieMode::BP_CameraDrone_Flare_C;
+using BP_CameraDrone_Flare_C = ::Game::GameElements::MovieMode::BP_CameraDrone_Flare_C;

@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using ABP_Bramble_C = Game::Enemies::TentaclePlant::ABP_Bramble_C;
+using ABP_Bramble_C = ::Game::Enemies::TentaclePlant::ABP_Bramble_C;

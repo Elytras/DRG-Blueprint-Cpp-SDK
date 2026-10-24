@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::Character::Vanity2
 
-using BP_IconGenerator_C = Game::Character::Vanity2::BP_IconGenerator_C;
+using BP_IconGenerator_C = ::Game::Character::Vanity2::BP_IconGenerator_C;

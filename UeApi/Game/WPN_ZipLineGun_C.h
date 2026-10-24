@@ -28,7 +28,7 @@ class WPN_ZipLineGun_C : public AZipLineItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/WPN_ZipLineGun", "WPN_ZipLineGun_C");
-    using HUD_Crosshair_ZiplineGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_ZiplineGun_C;
+    using HUD_Crosshair_ZiplineGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_ZiplineGun_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     class USpotLightComponent* SpotLight;
@@ -85,4 +85,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using WPN_ZipLineGun_C = Game::WeaponsNTools::ZipLineGun::WPN_ZipLineGun_C;
+using WPN_ZipLineGun_C = ::Game::WeaponsNTools::ZipLineGun::WPN_ZipLineGun_C;

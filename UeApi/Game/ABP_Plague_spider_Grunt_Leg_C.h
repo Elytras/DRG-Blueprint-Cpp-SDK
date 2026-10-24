@@ -25,4 +25,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes
 
-using ABP_Plague_spider_Grunt_Leg_C = Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_Plague_spider_Grunt_Leg_C;
+using ABP_Plague_spider_Grunt_Leg_C = ::Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_Plague_spider_Grunt_Leg_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt
 
-using DE_PropHunt_C = Game::GameElements::Bar::Drinkables::PropHunt::DE_PropHunt_C;
+using DE_PropHunt_C = ::Game::GameElements::Bar::Drinkables::PropHunt::DE_PropHunt_C;

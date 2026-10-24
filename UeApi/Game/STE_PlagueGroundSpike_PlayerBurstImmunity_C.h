@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using STE_PlagueGroundSpike_PlayerBurstImmunity_C = Game::Enemies::Plague::WalkingPlagueheartBoss::STE_PlagueGroundSpike_PlayerBurstImmunity_C;
+using STE_PlagueGroundSpike_PlayerBurstImmunity_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::STE_PlagueGroundSpike_PlayerBurstImmunity_C;

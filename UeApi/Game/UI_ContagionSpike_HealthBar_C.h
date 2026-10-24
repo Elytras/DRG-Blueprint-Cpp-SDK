@@ -38,4 +38,4 @@ public:
 
 }}}}}   // namespace Game::UI::Art::MainOnScreenHUD::ContagionSpike
 
-using UI_ContagionSpike_HealthBar_C = Game::UI::Art::MainOnScreenHUD::ContagionSpike::UI_ContagionSpike_HealthBar_C;
+using UI_ContagionSpike_HealthBar_C = ::Game::UI::Art::MainOnScreenHUD::ContagionSpike::UI_ContagionSpike_HealthBar_C;

@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::LevelElements::RoomObjects
 
-using Sign_MemorialUnlock_C = Game::LevelElements::RoomObjects::Sign_MemorialUnlock_C;
+using Sign_MemorialUnlock_C = ::Game::LevelElements::RoomObjects::Sign_MemorialUnlock_C;

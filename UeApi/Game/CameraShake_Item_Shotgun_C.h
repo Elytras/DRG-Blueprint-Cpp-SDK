@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Item_Shotgun_C = Game::Character::Camera::CameraShakes::CameraShake_Item_Shotgun_C;
+using CameraShake_Item_Shotgun_C = ::Game::Character::Camera::CameraShakes::CameraShake_Item_Shotgun_C;

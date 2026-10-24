@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using PRW_HeavyParticleCannon_C = Game::WeaponsNTools::HeavyParticleCannon::PRW_HeavyParticleCannon_C;
+using PRW_HeavyParticleCannon_C = ::Game::WeaponsNTools::HeavyParticleCannon::PRW_HeavyParticleCannon_C;

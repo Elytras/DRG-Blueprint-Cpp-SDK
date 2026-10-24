@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Temperature
 
-using STE_PlayerDefrosted_C = Game::GameElements::Temperature::STE_PlayerDefrosted_C;
+using STE_PlayerDefrosted_C = ::Game::GameElements::Temperature::STE_PlayerDefrosted_C;

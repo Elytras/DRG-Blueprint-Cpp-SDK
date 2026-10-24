@@ -45,4 +45,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Holidays::Easter::Assets
 
-using ABP_XpBunny_C = Game::GameElements::Holidays::Easter::Assets::ABP_XpBunny_C;
+using ABP_XpBunny_C = ::Game::GameElements::Holidays::Easter::Assets::ABP_XpBunny_C;

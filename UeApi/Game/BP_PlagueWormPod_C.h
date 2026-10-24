@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using BP_PlagueWormPod_C = Game::Enemies::Plague::BP_PlagueWormPod_C;
+using BP_PlagueWormPod_C = ::Game::Enemies::Plague::BP_PlagueWormPod_C;

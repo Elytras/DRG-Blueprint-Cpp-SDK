@@ -23,4 +23,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Ossiran::Scrab::Assets
 
-using ABP_OssiranScrabDisplayCase_C = Game::Enemies::Ossiran::Scrab::Assets::ABP_OssiranScrabDisplayCase_C;
+using ABP_OssiranScrabDisplayCase_C = ::Game::Enemies::Ossiran::Scrab::Assets::ABP_OssiranScrabDisplayCase_C;

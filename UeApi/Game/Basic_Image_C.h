@@ -59,4 +59,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;

@@ -124,4 +124,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::ElevatorPlant
 
-using BP_ElevatorPlant_C = Game::LevelElements::RoomObjects::Helpers::ElevatorPlant::BP_ElevatorPlant_C;
+using BP_ElevatorPlant_C = ::Game::LevelElements::RoomObjects::Helpers::ElevatorPlant::BP_ElevatorPlant_C;

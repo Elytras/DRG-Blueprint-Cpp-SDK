@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster
 
-using BP_PetAttackerPositioning_C = Game::GameElements::KPI::Perks::BeastMaster::BP_PetAttackerPositioning_C;
+using BP_PetAttackerPositioning_C = ::Game::GameElements::KPI::Perks::BeastMaster::BP_PetAttackerPositioning_C;

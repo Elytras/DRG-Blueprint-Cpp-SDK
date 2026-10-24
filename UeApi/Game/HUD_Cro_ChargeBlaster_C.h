@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_Cro_ChargeBlaster_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Cro_ChargeBlaster_C;
+using HUD_Cro_ChargeBlaster_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Cro_ChargeBlaster_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Critters::GliderBeast
 
-using ESI_GliderBeast_C = Game::Critters::GliderBeast::ESI_GliderBeast_C;
+using ESI_GliderBeast_C = ::Game::Critters::GliderBeast::ESI_GliderBeast_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::CaveLeech
 
-using BP_CaveLeechPlacementCarver_C = Game::Enemies::CaveLeech::BP_CaveLeechPlacementCarver_C;
+using BP_CaveLeechPlacementCarver_C = ::Game::Enemies::CaveLeech::BP_CaveLeechPlacementCarver_C;

@@ -33,10 +33,10 @@ class HUD_TeamDisplay_SmallItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Team_Display/HUD_TeamDisplay_SmallItem", "HUD_TeamDisplay_SmallItem_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_SupplyBar_C = Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
-    using UI_CallingMolly_C = Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;
-    using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_SupplyBar_C = ::Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
+    using UI_CallingMolly_C = ::Game::UI::MainOnscreenHUD::Team_Display::UI_CallingMolly_C;
+    using UI_PlayerSpeaking_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* RevivedAnimation;
     UE_READONLY class UWidgetAnimation* DamageAnimation;
@@ -102,4 +102,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display
 
-using HUD_TeamDisplay_SmallItem_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_SmallItem_C;
+using HUD_TeamDisplay_SmallItem_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_TeamDisplay_SmallItem_C;

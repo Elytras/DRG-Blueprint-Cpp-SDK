@@ -34,4 +34,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints
 
-using BP_FireCrackerItem_C = Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_FireCrackerItem_C;
+using BP_FireCrackerItem_C = ::Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_FireCrackerItem_C;

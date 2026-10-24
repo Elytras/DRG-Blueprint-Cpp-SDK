@@ -43,12 +43,12 @@ namespace Game { namespace Enemies { namespace Plague { namespace WalkingPlagueh
 
 namespace Game { namespace Enemies { namespace Plague { namespace WalkingPlagueheartBoss {
 
-class ENE_WalkingPlagueheart_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_WalkingPlagueheart_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/ENE_WalkingPlagueheart", "ENE_WalkingPlagueheart_C");
-    using BP_PlagueHeartShield_Base_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C;
-    using BP_WalkingPlagueheart_SlimeTrailPuddle_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
+    using BP_PlagueHeartShield_Base_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_PlagueHeartShield_Base_C;
+    using BP_WalkingPlagueheart_SlimeTrailPuddle_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_WalkingPlagueheart_C;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos2;
     class USphereComponent* ProximityInfectionSphereTrigger;
@@ -175,6 +175,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.AquireTargetTask LineSpikeAttack_GEN_VARIABLE:AquireTargetTask_1;/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueHeartShield_A.BP_PlagueHeartShield_A_C Shield_A_GEN_VARIABLE:Shield_A_GEN_VARIABLE_BP_PlagueHeartShield_A_C_CAT;/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueHeartShield_B.BP_PlagueHeartShield_B_C Shield_B_GEN_VARIABLE:Shield_B_GEN_VARIABLE_BP_PlagueHeartShield_B_C_CAT;/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_PlagueHeartShield_C.BP_PlagueHeartShield_C_C Shield_C_GEN_VARIABLE:Shield_C_GEN_VARIABLE_BP_PlagueHeartShield_C_C_CAT;/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.KnockbackDamageBonus MeleeAttack_GEN_VARIABLE:DamageComponent_0:KnockbackDamageBonus_0;/Script/FSD.ShootTask LineSpikeAttack_GEN_VARIABLE:ShootTask_0;/Script/FSD.ShootTask LineSpikeAttack_GEN_VARIABLE:ShootTask_1;/Script/FSD.ShootTask LineSpikeAttack_GEN_VARIABLE:ShootTask_2;/Script/FSD.WaitTask LineSpikeAttack_GEN_VARIABLE:WaitTask_0;/Script/FSD.WaitTask LineSpikeAttack_GEN_VARIABLE:WaitTask_1;/Script/FSD.WaitTask LineSpikeAttack_GEN_VARIABLE:WaitTask_2;/Script/FSD.WaitTask LineSpikeAttack_GEN_VARIABLE:WaitTask_3";
         static constexpr const char* UberGraphFrame_ENE_WalkingPlagueheart_C__UeName = "UberGraphFrame";
         static constexpr const char* SpawnActorWithDebrisPos2__UeScsNode = "e00589c13df94744a2c0c749132eb38e";
         static constexpr const char* ProximityInfectionSphereTrigger__UeScsNode = "1316a1a361fb1a41ae4f51992f0fb525";
@@ -242,4 +244,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using ENE_WalkingPlagueheart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;
+using ENE_WalkingPlagueheart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::ENE_WalkingPlagueheart_C;

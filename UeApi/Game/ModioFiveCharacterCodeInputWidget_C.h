@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioFiveCharacterCodeInputWidget_C = Modio::UI::Browser::Components::ModioFiveCharacterCodeInputWidget_C;
+using ModioFiveCharacterCodeInputWidget_C = ::Modio::UI::Browser::Components::ModioFiveCharacterCodeInputWidget_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using STE_LineCutter_Slow_C = Game::WeaponsNTools::LineCutter::STE_LineCutter_Slow_C;
+using STE_LineCutter_Slow_C = ::Game::WeaponsNTools::LineCutter::STE_LineCutter_Slow_C;

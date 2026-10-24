@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using ABP_Terminator_C = Game::Enemies::RivalTech::Terminator::ABP_Terminator_C;
+using ABP_Terminator_C = ::Game::Enemies::RivalTech::Terminator::ABP_Terminator_C;

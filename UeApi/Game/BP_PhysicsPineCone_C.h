@@ -11,7 +11,7 @@ class USimpleObjectInfoComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace LoosePhysicalObjects { namespace PhysicalPinecones {
 
-class BP_PhysicsPineCone_C : public Game::LevelElements::RoomObjects::LoosePhysicalObjects::BP_Phys_KickableObject_Base_C
+class BP_PhysicsPineCone_C : public ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::BP_Phys_KickableObject_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalPinecones/BP_PhysicsPineCone", "BP_PhysicsPineCone_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "UseCapsule_ForKicking;StaticMesh";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "11fcf435f0661c4c8cf91f4c9b9ae19a";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones
 
-using BP_PhysicsPineCone_C = Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PhysicsPineCone_C;
+using BP_PhysicsPineCone_C = ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PhysicsPineCone_C;

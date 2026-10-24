@@ -16,7 +16,7 @@ class HUD_Armor_Player_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Armor_Player", "HUD_Armor_Player_C");
-    using HUD_Armor_Base_C = Game::UI::MainOnscreenHUD::HUD_Armor_Base_C;
+    using HUD_Armor_Base_C = ::Game::UI::MainOnscreenHUD::HUD_Armor_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_Armor_Base_C* HUD_Armor;
     void ExecuteUbergraph_HUD_Armor_Player(int EntryPoint);
@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Armor_Player_C = Game::UI::MainOnscreenHUD::HUD_Armor_Player_C;
+using HUD_Armor_Player_C = ::Game::UI::MainOnscreenHUD::HUD_Armor_Player_C;

@@ -47,8 +47,8 @@ class BP_DeepScan_Drillevator_C : public ADrillevator
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_DeepScan_Drillevator", "BP_DeepScan_Drillevator_C");
-    using BP_DrillevatorEngine_C = Game::GameElements::Objectives::DeepScan::BP_DrillevatorEngine_C;
-    using EWC_DeepScan_Drillevator_C = Game::Enemies::Waves::WaveControllers::EWC_DeepScan_Drillevator_C;
+    using BP_DrillevatorEngine_C = ::Game::GameElements::Objectives::DeepScan::BP_DrillevatorEngine_C;
+    using EWC_DeepScan_Drillevator_C = ::Game::Enemies::Waves::WaveControllers::EWC_DeepScan_Drillevator_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* DrillingVehicle_CenterEngineLoopFire_Cue;
     class UAudioComponent* DrillingVehicle_CenterEngineLoop_Cue;
@@ -215,6 +215,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/DeepScan/BP_DrillevatorEngine.BP_DrillevatorEngine_C Engine_1_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT;/Game/GameElements/Objectives/DeepScan/BP_DrillevatorEngine.BP_DrillevatorEngine_C Engine_2_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT;/Game/GameElements/Objectives/DeepScan/BP_DrillevatorEngine.BP_DrillevatorEngine_C Engine_3_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT;/Game/GameElements/Objectives/DeepScan/BP_DrillevatorEngine.BP_DrillevatorEngine_C Engine_4_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank01_GEN_VARIABLE:OxygenTank01_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Script/Engine.SceneComponent Engine_1_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:RootComponent;/Script/Engine.SceneComponent Engine_2_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:RootComponent;/Script/Engine.SceneComponent Engine_3_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:RootComponent;/Script/Engine.SceneComponent Engine_4_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:RootComponent;/Script/FSD.SingleUsableComponent Engine_1_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:UsableComponent;/Script/FSD.SingleUsableComponent Engine_2_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:UsableComponent;/Script/FSD.SingleUsableComponent Engine_3_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:UsableComponent;/Script/FSD.SingleUsableComponent Engine_4_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:UsableComponent;/Script/Engine.SkeletalMeshComponent Engine_1_GEN_VARIABLE:ChildActor1_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:EngineMeshComponent;/Script/Engine.SkeletalMeshComponent Engine_2_GEN_VARIABLE:ChildActor2_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:EngineMeshComponent;/Script/Engine.SkeletalMeshComponent Engine_3_GEN_VARIABLE:ChildActor3_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:EngineMeshComponent;/Script/Engine.SkeletalMeshComponent Engine_4_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_DrillevatorEngine_C_CAT:EngineMeshComponent";
         static constexpr const char* DrillingVehicle_CenterEngineLoopFire_Cue__UeScsNode = "755174a97dfc8847bb8536c4ea40c377";
         static constexpr const char* DrillingVehicle_CenterEngineLoop_Cue__UeScsNode = "21ffda6351841e48bb49e21da11cdb78";
         static constexpr const char* LandingCarver__UeScsNode = "b5a27bc686f0564699f7e02da08071e0";
@@ -296,4 +297,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DeepScan_Drillevator_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_Drillevator_C;
+using BP_DeepScan_Drillevator_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScan_Drillevator_C;

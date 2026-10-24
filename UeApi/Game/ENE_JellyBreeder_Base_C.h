@@ -65,4 +65,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using ENE_JellyBreeder_Base_C = Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Base_C;
+using ENE_JellyBreeder_Base_C = ::Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Base_C;

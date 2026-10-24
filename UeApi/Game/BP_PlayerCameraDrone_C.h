@@ -74,4 +74,4 @@ private:
 
 }}}   // namespace Game::GameElements::MovieMode
 
-using BP_PlayerCameraDrone_C = Game::GameElements::MovieMode::BP_PlayerCameraDrone_C;
+using BP_PlayerCameraDrone_C = ::Game::GameElements::MovieMode::BP_PlayerCameraDrone_C;

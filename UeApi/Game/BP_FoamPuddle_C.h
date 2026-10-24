@@ -57,4 +57,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper
 
-using BP_FoamPuddle_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_FoamPuddle_C;
+using BP_FoamPuddle_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_FoamPuddle_C;

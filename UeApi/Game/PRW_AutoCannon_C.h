@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using PRW_AutoCannon_C = Game::WeaponsNTools::Autocannon::PRW_AutoCannon_C;
+using PRW_AutoCannon_C = ::Game::WeaponsNTools::Autocannon::PRW_AutoCannon_C;

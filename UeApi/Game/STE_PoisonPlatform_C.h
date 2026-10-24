@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun
 
-using STE_PoisonPlatform_C = Game::WeaponsNTools::CombatShotgun::STE_PoisonPlatform_C;
+using STE_PoisonPlatform_C = ::Game::WeaponsNTools::CombatShotgun::STE_PoisonPlatform_C;

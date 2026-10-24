@@ -24,7 +24,7 @@ class UI_ClassInfo_CharacterIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Lobby/UI_ClassInfo_CharacterIcon", "UI_ClassInfo_CharacterIcon_C");
-    using UI_ClassInfo_CharacterSelector_C = Game::UI::Menu_Lobby::UI_ClassInfo_CharacterSelector_C;
+    using UI_ClassInfo_CharacterSelector_C = ::Game::UI::Menu_Lobby::UI_ClassInfo_CharacterSelector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* BorderSelectionBorder;
     class UProgressBar* CharacterProgress;
@@ -58,4 +58,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Lobby
 
-using UI_ClassInfo_CharacterIcon_C = Game::UI::Menu_Lobby::UI_ClassInfo_CharacterIcon_C;
+using UI_ClassInfo_CharacterIcon_C = ::Game::UI::Menu_Lobby::UI_ClassInfo_CharacterIcon_C;

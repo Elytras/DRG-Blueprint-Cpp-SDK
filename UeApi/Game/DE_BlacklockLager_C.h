@@ -43,4 +43,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_BlacklockLager_C = Game::GameElements::Bar::DrinkEffects::DE_BlacklockLager_C;
+using DE_BlacklockLager_C = ::Game::GameElements::Bar::DrinkEffects::DE_BlacklockLager_C;

@@ -16,7 +16,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace Art { namespace Environments { namespace Holiday_Oktoberfest {
 
-class BP_Phys_Haybale_C : public Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
+class BP_Phys_Haybale_C : public ::Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Oktoberfest/BP_Phys_Haybale", "BP_Phys_Haybale_C");
@@ -28,6 +28,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Capsule;InstantUsable;Kickable Mesh";
         static constexpr const char* UberGraphFrame_BP_Phys_Haybale_C__UeName = "UberGraphFrame";
         static constexpr const char* BndEvt__BP_Phys_Haybale_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature__UeName = "BndEvt__BP_Phys_Haybale_Kickable Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature";
     };
@@ -35,4 +36,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest
 
-using BP_Phys_Haybale_C = Game::Art::Environments::Holiday_Oktoberfest::BP_Phys_Haybale_C;
+using BP_Phys_Haybale_C = ::Game::Art::Environments::Holiday_Oktoberfest::BP_Phys_Haybale_C;

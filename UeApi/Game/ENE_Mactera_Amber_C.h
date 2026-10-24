@@ -15,7 +15,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace FlyingBug { namespace Shooter {
 
-class ENE_Mactera_Amber_C : public Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Normal_C
+class ENE_Mactera_Amber_C : public ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Normal_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ENE_Mactera_Amber", "ENE_Mactera_Amber_C");
@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using ENE_Mactera_Amber_C = Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Amber_C;
+using ENE_Mactera_Amber_C = ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Amber_C;

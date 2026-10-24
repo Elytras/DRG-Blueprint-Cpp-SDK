@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using TOOLTIP_Season_BlankNode_C = Game::UI::Menu_Seasons::TOOLTIP_Season_BlankNode_C;
+using TOOLTIP_Season_BlankNode_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_BlankNode_C;

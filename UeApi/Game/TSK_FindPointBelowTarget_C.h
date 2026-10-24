@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindPointBelowTarget_C = Game::AI::Tasks::TSK_FindPointBelowTarget_C;
+using TSK_FindPointBelowTarget_C = ::Game::AI::Tasks::TSK_FindPointBelowTarget_C;

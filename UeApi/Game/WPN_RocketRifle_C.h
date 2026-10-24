@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::RocketRifle
 
-using WPN_RocketRifle_C = Game::WeaponsNTools::RocketRifle::WPN_RocketRifle_C;
+using WPN_RocketRifle_C = ::Game::WeaponsNTools::RocketRifle::WPN_RocketRifle_C;

@@ -28,12 +28,12 @@ public:
     class USkeletalMeshComponent* SK_Anniversary_Chandelier_01;
     FTimerHandle Timer;
     float RotationSpeed;
-    void OnRep_Random_Seed();
-    void OnCollide();
-    void BndEvt__BP_Anniversary_Chandelier_SK_Anniversary_Chandelier_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void CustomEvent_0();
-    void ReceiveBeginPlay();
     void ExecuteUbergraph_BP_Anniversary_Chandelier(int EntryPoint);
+    void ReceiveBeginPlay();
+    void CustomEvent_0();
+    void BndEvt__BP_Anniversary_Chandelier_SK_Anniversary_Chandelier_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    void OnCollide();
+    void OnRep_Random_Seed();
 private:
     struct UeMarkers
     {
@@ -46,4 +46,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint
 
-using BP_Anniversary_Chandelier_C = Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_Chandelier_C;
+using BP_Anniversary_Chandelier_C = ::Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_Chandelier_C;

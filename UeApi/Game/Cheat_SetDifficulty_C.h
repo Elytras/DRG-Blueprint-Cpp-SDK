@@ -18,7 +18,7 @@ class Cheat_SetDifficulty_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_SetDifficulty", "Cheat_SetDifficulty_C");
-    using Cheat_SetDifficultyRow_C = Game::UI::Menu_Cheats::Cheat_SetDifficultyRow_C;
+    using Cheat_SetDifficultyRow_C = ::Game::UI::Menu_Cheats::Cheat_SetDifficultyRow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UScrollBox* ScrollBox_0;
     TArray<class UDifficultySetting*> Difficulty;
@@ -37,4 +37,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SetDifficulty_C = Game::UI::Menu_Cheats::Cheat_SetDifficulty_C;
+using Cheat_SetDifficulty_C = ::Game::UI::Menu_Cheats::Cheat_SetDifficulty_C;

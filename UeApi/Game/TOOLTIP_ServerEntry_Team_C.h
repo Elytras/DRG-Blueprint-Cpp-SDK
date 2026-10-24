@@ -20,8 +20,8 @@ class TOOLTIP_ServerEntry_Team_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/TOOLTIP_ServerEntry_Team", "TOOLTIP_ServerEntry_Team_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_ServerList_Entry_PlayerIcons_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_ServerList_Entry_PlayerIcons_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UVerticalBox* ContentBox;
@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using TOOLTIP_ServerEntry_Team_C = Game::UI::Menu_ServerList::TOOLTIP_ServerEntry_Team_C;
+using TOOLTIP_ServerEntry_Team_C = ::Game::UI::Menu_ServerList::TOOLTIP_ServerEntry_Team_C;

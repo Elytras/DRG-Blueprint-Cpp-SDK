@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects
 
-using AFE_LookAtConsole_C = Game::GameElements::PawnAffliction::TPEffects::AFE_LookAtConsole_C;
+using AFE_LookAtConsole_C = ::Game::GameElements::PawnAffliction::TPEffects::AFE_LookAtConsole_C;

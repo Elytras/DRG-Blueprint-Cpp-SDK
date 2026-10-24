@@ -19,8 +19,8 @@ class OnScreenIndicator_CleanupDrop_Order_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/OnScreenIndicator_CleanupDrop_Order", "OnScreenIndicator_CleanupDrop_Order_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowSmall_C* Basic_HUD_BracketWindowSmall;
     UI_AdvancedLabel_C* KeyLabel;
@@ -33,4 +33,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using OnScreenIndicator_CleanupDrop_Order_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
+using OnScreenIndicator_CleanupDrop_Order_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;

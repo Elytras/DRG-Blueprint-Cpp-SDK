@@ -59,4 +59,4 @@ private:
 
 }}}   // namespace Game::GameElements::Resources
 
-using BP_ResourcePouch_C = Game::GameElements::Resources::BP_ResourcePouch_C;
+using BP_ResourcePouch_C = ::Game::GameElements::Resources::BP_ResourcePouch_C;

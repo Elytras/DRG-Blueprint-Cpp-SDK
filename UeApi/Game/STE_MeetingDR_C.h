@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using STE_MeetingDR_C = Game::Enemies::Spider::TankBoss::BossTwins::STE_MeetingDR_C;
+using STE_MeetingDR_C = ::Game::Enemies::Spider::TankBoss::BossTwins::STE_MeetingDR_C;

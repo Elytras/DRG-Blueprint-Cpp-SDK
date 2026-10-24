@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using STE_ExplosiveGoo_Component_C = Game::WeaponsNTools::GooCannon::STE_ExplosiveGoo_Component_C;
+using STE_ExplosiveGoo_Component_C = ::Game::WeaponsNTools::GooCannon::STE_ExplosiveGoo_Component_C;

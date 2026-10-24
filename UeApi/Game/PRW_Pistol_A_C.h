@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pistol
 
-using PRW_Pistol_A_C = Game::WeaponsNTools::Pistol::PRW_Pistol_A_C;
+using PRW_Pistol_A_C = ::Game::WeaponsNTools::Pistol::PRW_Pistol_A_C;

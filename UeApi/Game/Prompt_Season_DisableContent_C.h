@@ -18,9 +18,9 @@ class Prompt_Season_DisableContent_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Prompt_Season_DisableContent", "Prompt_Season_DisableContent_C");
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
-    using UI_Season_Popup_C = Game::UI::Menu_Seasons::UI_Season_Popup_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_Special_ButtonCutCorner_C = ::Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
+    using UI_Season_Popup_C = ::Game::UI::Menu_Seasons::UI_Season_Popup_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShow;
     ITM_MenuBackground_C* MenuBackground;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Prompt_Season_DisableContent_C = Game::UI::Menu_Seasons::Prompt_Season_DisableContent_C;
+using Prompt_Season_DisableContent_C = ::Game::UI::Menu_Seasons::Prompt_Season_DisableContent_C;

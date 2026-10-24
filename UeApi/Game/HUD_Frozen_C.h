@@ -23,9 +23,9 @@ class HUD_Frozen_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Frozen", "HUD_Frozen_C");
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_FrozenInputSequence_C = Game::UI::MainOnscreenHUD::UI_FrozenInputSequence_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_FrozenInputSequence_C = ::Game::UI::MainOnscreenHUD::UI_FrozenInputSequence_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical_C_0;
@@ -52,4 +52,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Frozen_C = Game::UI::MainOnscreenHUD::HUD_Frozen_C;
+using HUD_Frozen_C = ::Game::UI::MainOnscreenHUD::HUD_Frozen_C;

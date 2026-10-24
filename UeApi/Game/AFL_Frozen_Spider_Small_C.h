@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Afflictions
 
-using AFL_Frozen_Spider_Small_C = Game::Enemies::Spider::Afflictions::AFL_Frozen_Spider_Small_C;
+using AFL_Frozen_Spider_Small_C = ::Game::Enemies::Spider::Afflictions::AFL_Frozen_Spider_Small_C;

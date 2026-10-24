@@ -49,7 +49,7 @@ class BP_HackingPod_C : public AFacilityHackingPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_HackingPod", "BP_HackingPod_C");
-    using BP_TetherDispenser_C = Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenser_C;
+    using BP_TetherDispenser_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenser_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class URGBLightManagerComponent* RGBLightManager;
     class UTerrainDetectComponent* TerrainDetect3;
@@ -166,6 +166,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank1_GEN_VARIABLE:BP_OxygenTank1_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank_GEN_VARIABLE:BP_OxygenTank_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C BP_OxygenTankSound_GEN_VARIABLE:BP_OxygenTankSound_GEN_VARIABLE_BP_OxygenTankSound_C_CAT;/Game/GameElements/Objectives/Facility/Tethers/BP_TetherDispenser.BP_TetherDispenser_C DispenserActor_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_TetherDispenser_C_CAT;/Script/FSD.InstantUsable DispenserActor_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_TetherDispenser_C_CAT:Usable;/Script/Engine.SceneComponent DispenserActor_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_TetherDispenser_C_CAT:Root";
         static constexpr const char* RGBLightManager__UeScsNode = "43a8a1ce8bcd4d498178b8b897ba2b04";
         static constexpr const char* TerrainDetect3__UeScsNode = "a548e54328d3bb4d8e2aea8bec97bd5f";
         static constexpr const char* TerrainDetect2__UeScsNode = "7c600131160c7746b83bd4f66038e8dc";
@@ -217,4 +218,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_HackingPod_C = Game::GameElements::Objectives::Facility::Tethers::BP_HackingPod_C;
+using BP_HackingPod_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_HackingPod_C;

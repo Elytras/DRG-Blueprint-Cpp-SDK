@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE
 
-using STE_RadiationCloud_MicrowaveGun_C = Game::WeaponsNTools::MicrowaveGun::STE::STE_RadiationCloud_MicrowaveGun_C;
+using STE_RadiationCloud_MicrowaveGun_C = ::Game::WeaponsNTools::MicrowaveGun::STE::STE_RadiationCloud_MicrowaveGun_C;

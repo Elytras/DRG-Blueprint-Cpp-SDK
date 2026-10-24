@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::TPEffects
 
-using AFE_TP_Rockpox_Plague_Goo_C = Game::GameElements::PawnAffliction::TPEffects::AFE_TP_Rockpox_Plague_Goo_C;
+using AFE_TP_Rockpox_Plague_Goo_C = ::Game::GameElements::PawnAffliction::TPEffects::AFE_TP_Rockpox_Plague_Goo_C;

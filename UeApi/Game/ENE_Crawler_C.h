@@ -24,7 +24,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Crawler {
 
-class ENE_Crawler_C : public Game::Enemies::CoreSpawn::BP_CoreSpawnEnemy_C
+class ENE_Crawler_C : public ::Game::Enemies::CoreSpawn::BP_CoreSpawnEnemy_C
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/ENE_Crawler", "ENE_Crawler_C");
@@ -57,6 +57,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeathComponent Death;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PathfinderReactiveTerrainTrackerComponent PathfinderReactiveTerrainTracker;/Script/FSD.PawnAlertComponent PawnAlert;/Script/AIModule.PawnSensingComponent PawnSensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* UberGraphFrame_ENE_Crawler_C__UeName = "UberGraphFrame";
         static constexpr const char* ArmorHealthDamage__UeScsNode = "aac58149a264b24d9b0accdc61c82b06";
         static constexpr const char* IdleAudio__UeScsNode = "891f77bf753ca749914e4ce7db4b59e1";
@@ -75,4 +76,4 @@ private:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using ENE_Crawler_C = Game::Enemies::Crawler::ENE_Crawler_C;
+using ENE_Crawler_C = ::Game::Enemies::Crawler::ENE_Crawler_C;

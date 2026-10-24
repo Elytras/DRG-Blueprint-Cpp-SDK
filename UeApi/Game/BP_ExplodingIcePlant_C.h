@@ -57,4 +57,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::IceExplosivePlant
 
-using BP_ExplodingIcePlant_C = Game::LevelElements::RoomObjects::Hazards::IceExplosivePlant::BP_ExplodingIcePlant_C;
+using BP_ExplodingIcePlant_C = ::Game::LevelElements::RoomObjects::Hazards::IceExplosivePlant::BP_ExplodingIcePlant_C;

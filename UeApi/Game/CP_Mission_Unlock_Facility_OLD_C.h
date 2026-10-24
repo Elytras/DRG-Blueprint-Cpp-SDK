@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Campaign::OldUnusedCampaigns
 
-using CP_Mission_Unlock_Facility_OLD_C = Game::GameElements::Campaign::OldUnusedCampaigns::CP_Mission_Unlock_Facility_OLD_C;
+using CP_Mission_Unlock_Facility_OLD_C = ::Game::GameElements::Campaign::OldUnusedCampaigns::CP_Mission_Unlock_Facility_OLD_C;

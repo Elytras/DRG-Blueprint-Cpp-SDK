@@ -42,6 +42,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TrackBuilderUsable PipelineStartUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/LevelElements/Refinery/BP_Pipeline_StatusLamp.BP_Pipeline_StatusLamp_C BP_StatusLamp_GEN_VARIABLE:BP_StatusLamp_GEN_VARIABLE_BP_Pipeline_StatusLamp_C_CAT";
         static constexpr const char* NumberPlane__UeScsNode = "8edd9336595b7b48b970c218da4172d9";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "24cd5a4e5907c84f89f13bf06d477aac";
         static constexpr const char* outline__UeScsNode = "2d3c06dbca80f74c8c6c1a5f52ae3849";
@@ -54,4 +55,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using BP_Pipeline_Start_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Start_C;
+using BP_Pipeline_Start_C = ::Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Start_C;

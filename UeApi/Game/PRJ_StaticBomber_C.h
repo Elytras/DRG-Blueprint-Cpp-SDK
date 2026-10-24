@@ -62,6 +62,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DirectDamageCondition Damage_GEN_VARIABLE:DamageConversionBonus_0:DirectDamageCondition_0";
         static constexpr const char* PointLight__UeScsNode = "51549f3d0dfefc49a7e1124ff13e7bdc";
         static constexpr const char* outline__UeScsNode = "ba445c64f5df00418bfff8fe036d7d8d";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "8acda3fb24dfa84c9a71bf66f30f3f69";
@@ -81,4 +82,4 @@ private:
 
 }}}   // namespace Game::Enemies::BarrageInfector
 
-using PRJ_StaticBomber_C = Game::Enemies::BarrageInfector::PRJ_StaticBomber_C;
+using PRJ_StaticBomber_C = ::Game::Enemies::BarrageInfector::PRJ_StaticBomber_C;

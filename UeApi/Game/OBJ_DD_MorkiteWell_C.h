@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using OBJ_DD_MorkiteWell_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::OBJ_DD_MorkiteWell_C;
+using OBJ_DD_MorkiteWell_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::OBJ_DD_MorkiteWell_C;

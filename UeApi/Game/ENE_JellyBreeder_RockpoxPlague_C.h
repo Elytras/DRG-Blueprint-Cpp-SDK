@@ -20,7 +20,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Enemies { namespace Plague { namespace PlagueBreeder {
 
-class ENE_JellyBreeder_RockpoxPlague_C : public Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Base_C
+class ENE_JellyBreeder_RockpoxPlague_C : public ::Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueBreeder/ENE_JellyBreeder_RockpoxPlague", "ENE_JellyBreeder_RockpoxPlague_C");
@@ -60,6 +60,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "JellyBreederDeath_Cue;JellyBreederIdle_Cue";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileThrowerAttack_GEN_VARIABLE:BallisticProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_JellyBreeder_RockpoxPlague_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileThrowerAttack__UeScsNode = "dfaeb4a089cae5438b11a90c95028b34";
         static constexpr const char* InfectionPoint6__UeScsNode = "149f88d6c9334a48b8328fbb7fb2f0fe";
@@ -80,4 +82,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder
 
-using ENE_JellyBreeder_RockpoxPlague_C = Game::Enemies::Plague::PlagueBreeder::ENE_JellyBreeder_RockpoxPlague_C;
+using ENE_JellyBreeder_RockpoxPlague_C = ::Game::Enemies::Plague::PlagueBreeder::ENE_JellyBreeder_RockpoxPlague_C;

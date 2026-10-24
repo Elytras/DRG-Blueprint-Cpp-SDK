@@ -18,7 +18,7 @@ class ITM_TopBar_Resources_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_TopBar/ITM_TopBar_Resources", "ITM_TopBar_Resources_C");
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* ParentBox;
     TArray<class UResourceData*> Resources;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using ITM_TopBar_Resources_C = Game::UI::Menu_TopBar::ITM_TopBar_Resources_C;
+using ITM_TopBar_Resources_C = ::Game::UI::Menu_TopBar::ITM_TopBar_Resources_C;

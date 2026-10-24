@@ -18,7 +18,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Tank { namespace Amber {
 
-class ENE_Spider_Tank_Amber_C : public Game::Enemies::Spider::Tank::ENE_Spider_Tank_Base_C
+class ENE_Spider_Tank_Amber_C : public ::Game::Enemies::Spider::Tank::ENE_Spider_Tank_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/Amber/ENE_Spider_Tank_Amber", "ENE_Spider_Tank_Amber_C");
@@ -47,6 +47,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;Enemy;DropShadow";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent BiteAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.DamageComponent StabAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Amber_C__UeName = "UberGraphFrame";
         static constexpr const char* BiteAttack__UeScsNode = "974e86c270ddf143b4861315cb954df4";
         static constexpr const char* StabAttack__UeScsNode = "f82d78273f8171419f07b91d1098c5b7";
@@ -61,4 +63,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::Tank::Amber
 
-using ENE_Spider_Tank_Amber_C = Game::Enemies::Spider::Tank::Amber::ENE_Spider_Tank_Amber_C;
+using ENE_Spider_Tank_Amber_C = ::Game::Enemies::Spider::Tank::Amber::ENE_Spider_Tank_Amber_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::EliminationContract
 
-using BP_ExterminationContract_C = Game::GameElements::Missions::Mutators::EliminationContract::BP_ExterminationContract_C;
+using BP_ExterminationContract_C = ::Game::GameElements::Missions::Mutators::EliminationContract::BP_ExterminationContract_C;

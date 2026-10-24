@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_BuffBeerGeneric_C = Game::Character::Camera::CameraShakes::CameraShake_BuffBeerGeneric_C;
+using CameraShake_BuffBeerGeneric_C = ::Game::Character::Camera::CameraShakes::CameraShake_BuffBeerGeneric_C;

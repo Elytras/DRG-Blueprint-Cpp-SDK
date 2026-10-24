@@ -24,9 +24,9 @@ class TOOLTIP_Overclock_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/TOOLTIP_Overclock_Item", "TOOLTIP_Overclock_Item_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_Overclock_Details_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_Overclock_Details_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow23;
     class UTextBlock* DATA_Overclock_CategoryName;
@@ -46,4 +46,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using TOOLTIP_Overclock_Item_C = Game::UI::Menu_Loadout::TOOLTIP_Overclock_Item_C;
+using TOOLTIP_Overclock_Item_C = ::Game::UI::Menu_Loadout::TOOLTIP_Overclock_Item_C;

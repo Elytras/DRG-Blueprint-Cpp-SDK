@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_Base_C = Game::Enemies::Waves::WaveControllers::EWC_Base_C;
+using EWC_Base_C = ::Game::Enemies::Waves::WaveControllers::EWC_Base_C;

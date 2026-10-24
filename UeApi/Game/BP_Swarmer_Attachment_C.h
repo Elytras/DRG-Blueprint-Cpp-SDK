@@ -28,4 +28,4 @@ private:
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments
 
-using BP_Swarmer_Attachment_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::BP_Swarmer_Attachment_C;
+using BP_Swarmer_Attachment_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::BP_Swarmer_Attachment_C;

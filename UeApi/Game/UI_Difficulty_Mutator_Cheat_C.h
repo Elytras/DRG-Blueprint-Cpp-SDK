@@ -20,7 +20,7 @@ class UI_Difficulty_Mutator_Cheat_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_Difficulty_Mutator_Cheat", "UI_Difficulty_Mutator_Cheat_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UComboBoxString* Combo_Applications;
     Basic_Label_C* LBL_Haz;
@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_Difficulty_Mutator_Cheat_C = Game::UI::Menu_Cheats::MissionCheat::UI_Difficulty_Mutator_Cheat_C;
+using UI_Difficulty_Mutator_Cheat_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_Difficulty_Mutator_Cheat_C;

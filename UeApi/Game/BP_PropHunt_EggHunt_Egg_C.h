@@ -37,4 +37,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::EggHunt
 
-using BP_PropHunt_EggHunt_Egg_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::EggHunt::BP_PropHunt_EggHunt_Egg_C;
+using BP_PropHunt_EggHunt_Egg_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::EggHunt::BP_PropHunt_EggHunt_Egg_C;

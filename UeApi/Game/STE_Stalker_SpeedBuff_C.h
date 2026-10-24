@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Stalker
 
-using STE_Stalker_SpeedBuff_C = Game::Enemies::Spider::Stalker::STE_Stalker_SpeedBuff_C;
+using STE_Stalker_SpeedBuff_C = ::Game::Enemies::Spider::Stalker::STE_Stalker_SpeedBuff_C;

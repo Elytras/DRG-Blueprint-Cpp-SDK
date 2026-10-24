@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using BP_SpawnerEyeComponent_C = Game::Enemies::EnemySpawner::BP_SpawnerEyeComponent_C;
+using BP_SpawnerEyeComponent_C = ::Game::Enemies::EnemySpawner::BP_SpawnerEyeComponent_C;

@@ -23,15 +23,15 @@ class ITM_DeepDives_Join_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_Join", "ITM_DeepDives_Join_C");
-    using BP_GameState_SpaceRig_C = Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using ITM_DeepDives_ServerFilters_C = Game::UI::Menu_DeepDives::ITM_DeepDives_ServerFilters_C;
-    using ITM_DeepDives_ServerList_C = Game::UI::Menu_DeepDives::ITM_DeepDives_ServerList_C;
-    using ITM_OnlineRestricted_C = Game::UI::System::ITM_OnlineRestricted_C;
-    using WND_JoiningModded_C = Game::UI::Menu_ServerList::WND_JoiningModded_C;
-    using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
-    using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+    using BP_GameState_SpaceRig_C = ::Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_DeepDives_ServerFilters_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_ServerFilters_C;
+    using ITM_DeepDives_ServerList_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_ServerList_C;
+    using ITM_OnlineRestricted_C = ::Game::UI::System::ITM_OnlineRestricted_C;
+    using WND_JoiningModded_C = ::Game::UI::Menu_ServerList::WND_JoiningModded_C;
+    using WND_JoiningPassword_C = ::Game::UI::Menu_ServerList::WND_JoiningPassword_C;
+    using WND_Joining_C = ::Game::UI::Menu_ServerList::WND_Joining_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_DeepDiveHeader_C* ITM_DeepDiveHeader;
     ITM_OnlineRestricted_C* ITM_OnlineRestricted;
@@ -86,4 +86,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_Join_C = Game::UI::Menu_DeepDives::ITM_DeepDives_Join_C;
+using ITM_DeepDives_Join_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_Join_C;

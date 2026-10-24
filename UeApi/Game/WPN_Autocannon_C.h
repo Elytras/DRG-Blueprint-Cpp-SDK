@@ -66,4 +66,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using WPN_Autocannon_C = Game::WeaponsNTools::Autocannon::WPN_Autocannon_C;
+using WPN_Autocannon_C = ::Game::WeaponsNTools::Autocannon::WPN_Autocannon_C;

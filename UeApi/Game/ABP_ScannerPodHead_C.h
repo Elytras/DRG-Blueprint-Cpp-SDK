@@ -37,4 +37,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::DeepScan::Assets::Scanner
 
-using ABP_ScannerPodHead_C = Game::GameElements::Objectives::DeepScan::Assets::Scanner::ABP_ScannerPodHead_C;
+using ABP_ScannerPodHead_C = ::Game::GameElements::Objectives::DeepScan::Assets::Scanner::ABP_ScannerPodHead_C;

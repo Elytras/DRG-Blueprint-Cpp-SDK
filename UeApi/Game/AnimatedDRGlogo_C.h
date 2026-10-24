@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::Art::_TestingGrounds::UItesting
 
-using AnimatedDRGlogo_C = Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
+using AnimatedDRGlogo_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;

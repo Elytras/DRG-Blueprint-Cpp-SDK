@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Ossiran::PitJaw
 
-using BP_PitJawPlacementCarver_C = Game::Enemies::Ossiran::PitJaw::BP_PitJawPlacementCarver_C;
+using BP_PitJawPlacementCarver_C = ::Game::Enemies::Ossiran::PitJaw::BP_PitJawPlacementCarver_C;

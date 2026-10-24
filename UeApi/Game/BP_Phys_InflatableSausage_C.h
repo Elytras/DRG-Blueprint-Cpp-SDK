@@ -17,7 +17,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Art { namespace Environments { namespace Holiday_Oktoberfest {
 
-class BP_Phys_InflatableSausage_C : public Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
+class BP_Phys_InflatableSausage_C : public ::Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_Oktoberfest/BP_Phys_InflatableSausage", "BP_Phys_InflatableSausage_C");
@@ -35,6 +35,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Capsule;InstantUsable;Kickable Mesh";
         static constexpr const char* UberGraphFrame_BP_Phys_InflatableSausage_C__UeName = "UberGraphFrame";
         static constexpr const char* PopParticles__UeScsNode = "0d65edb7d5aa7d42a389616976b06fde";
         static constexpr const char* UsableCollision__UeScsNode = "22e8dc882aaee745a5bb3a8ed4f86cfe";
@@ -45,4 +46,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Oktoberfest
 
-using BP_Phys_InflatableSausage_C = Game::Art::Environments::Holiday_Oktoberfest::BP_Phys_InflatableSausage_C;
+using BP_Phys_InflatableSausage_C = ::Game::Art::Environments::Holiday_Oktoberfest::BP_Phys_InflatableSausage_C;

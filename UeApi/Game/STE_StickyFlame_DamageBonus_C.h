@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using STE_StickyFlame_DamageBonus_C = Game::WeaponsNTools::FlameThrower::STE_StickyFlame_DamageBonus_C;
+using STE_StickyFlame_DamageBonus_C = ::Game::WeaponsNTools::FlameThrower::STE_StickyFlame_DamageBonus_C;

@@ -15,7 +15,7 @@ class UStatusEffect;
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class ENE_Bomber_Rockpox_Plague_C : public Game::Enemies::FlyingBug::Bomber::ENE_Bomber_Child_C
+class ENE_Bomber_Rockpox_Plague_C : public ::Game::Enemies::FlyingBug::Bomber::ENE_Bomber_Child_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/ENE_Bomber_Rockpox_Plague", "ENE_Bomber_Rockpox_Plague_C");
@@ -38,6 +38,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent GooAudioComponent;/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/Engine.ParticleSystemComponent GooEmitterLeft;/Script/Engine.ParticleSystemComponent GooEmitterRight;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;ProjectileAttack";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Bomber_Rockpox_Plague_C__UeName = "UberGraphFrame";
         static constexpr const char* InfectionPoint10__UeScsNode = "c52679fa3254664484491c2cb6a70b1e";
         static constexpr const char* InfectionMaster__UeScsNode = "961ae3f022ea294fae5dc4a9f574982d";
@@ -51,4 +53,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using ENE_Bomber_Rockpox_Plague_C = Game::Enemies::Plague::ENE_Bomber_Rockpox_Plague_C;
+using ENE_Bomber_Rockpox_Plague_C = ::Game::Enemies::Plague::ENE_Bomber_Rockpox_Plague_C;

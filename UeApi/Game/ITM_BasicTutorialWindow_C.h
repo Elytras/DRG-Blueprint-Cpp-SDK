@@ -24,7 +24,7 @@ class ITM_BasicTutorialWindow_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/ITM_BasicTutorialWindow", "ITM_BasicTutorialWindow_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* TaskProgress;
     UE_READONLY class UWidgetAnimation* CompleteAnim;
@@ -58,4 +58,4 @@ public:
 
 }}}   // namespace Game::UI::Tutorial
 
-using ITM_BasicTutorialWindow_C = Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
+using ITM_BasicTutorialWindow_C = ::Game::UI::Tutorial::ITM_BasicTutorialWindow_C;

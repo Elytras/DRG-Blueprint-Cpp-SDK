@@ -55,4 +55,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches
 
-using BP_LargeStabbyThorn_C = Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_LargeStabbyThorn_C;
+using BP_LargeStabbyThorn_C = ::Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_LargeStabbyThorn_C;

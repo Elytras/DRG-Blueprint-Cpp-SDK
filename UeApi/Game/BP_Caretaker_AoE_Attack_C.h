@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using BP_Caretaker_AoE_Attack_C = Game::GameElements::Objectives::Facility::Caretaker::BP_Caretaker_AoE_Attack_C;
+using BP_Caretaker_AoE_Attack_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_Caretaker_AoE_Attack_C;

@@ -24,9 +24,9 @@ class PlayerReadyBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Lobby/PlayerReadyBox", "PlayerReadyBox_C");
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
-    using ITM_CharacterData_C = Game::UI::Global_UI_Elements::ITM_CharacterData_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using ITM_CharacterData_C = ::Game::UI::Global_UI_Elements::ITM_CharacterData_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UProgressBar* Bar_Loading;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
@@ -56,4 +56,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Lobby
 
-using PlayerReadyBox_C = Game::UI::Menu_Lobby::PlayerReadyBox_C;
+using PlayerReadyBox_C = ::Game::UI::Menu_Lobby::PlayerReadyBox_C;

@@ -19,12 +19,12 @@ namespace Game { namespace UI { namespace Menu_MissionStart { class Screen_BaseL
 
 namespace Game { namespace Game {
 
-class BP_NetworkPlayerController_C : public Game::Game::BP_PlayerController_C
+class BP_NetworkPlayerController_C : public ::Game::Game::BP_PlayerController_C
 {
 public:
     UE_CLASS("/Game/Game/BP_NetworkPlayerController", "BP_NetworkPlayerController_C");
-    using SCREEN_CharacterSelection_Base_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C;
-    using Screen_BaseLoadLevel_C = Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C;
+    using SCREEN_CharacterSelection_Base_C = ::Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Base_C;
+    using Screen_BaseLoadLevel_C = ::Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_NetworkPlayerController_C;
     SCREEN_CharacterSelection_Base_C* CharSelectScreen;
     Screen_BaseLoadLevel_C* LoaderScreenUI;
@@ -34,11 +34,11 @@ public:
     class UUserWidget* CharInfo;
     bool SimulateLateJoin;
     TSoftClassPtr<class UClass> CharacterSelectionClass;
-    void ReceiveBeginPlay();
     void CollapseAndRemoveFromParent(class UWidget* Widget);
     class UClass* GetLoaderScreenUIClass();
     void CleanupUI();
     void GetNonTakenHero(class UPlayerCharacterID*& SelectedClass);
+    void ReceiveBeginPlay();
     void OnBack();
     void OnPlayerCharacterPossesed_Event(class APawn* Pawn);
     UE_SERVER UE_RELIABLE void Server_RequestNonTakenHero();
@@ -58,4 +58,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_NetworkPlayerController_C = Game::Game::BP_NetworkPlayerController_C;
+using BP_NetworkPlayerController_C = ::Game::Game::BP_NetworkPlayerController_C;

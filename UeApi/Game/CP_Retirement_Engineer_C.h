@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Retirement_Engineer_C = Game::GameElements::Campaign::CP_Retirement_Engineer_C;
+using CP_Retirement_Engineer_C = ::Game::GameElements::Campaign::CP_Retirement_Engineer_C;

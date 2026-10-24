@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Flyer
 
-using TSK_GetForwardDownLocation_C = Game::Enemies::Spider::Flyer::TSK_GetForwardDownLocation_C;
+using TSK_GetForwardDownLocation_C = ::Game::Enemies::Spider::Flyer::TSK_GetForwardDownLocation_C;

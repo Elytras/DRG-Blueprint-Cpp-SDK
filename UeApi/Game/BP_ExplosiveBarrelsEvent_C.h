@@ -75,6 +75,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame.BP_RewardFrame_C StartEventObject:StartEventObject_BP_RewardFrame_C_CAT;/Script/Engine.ChildActorComponent StartEventObject;/Script/FSD.DamageComponent EndDamage;/Script/Engine.SceneComponent Root;/Script/FSD.SpecialEventUsableComponent StartEventObject:StartEventObject_BP_RewardFrame_C_CAT:EventUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_LaserEventStarter.BP_LaserEventStarter_C Starter1_GEN_VARIABLE:Starter1_GEN_VARIABLE_BP_LaserEventStarter_C_CAT;/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_LaserEventStarter.BP_LaserEventStarter_C Starter2_GEN_VARIABLE:Starter2_GEN_VARIABLE_BP_LaserEventStarter_C_CAT;/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_LaserEventStarter.BP_LaserEventStarter_C Starter7_GEN_VARIABLE:Starter7_GEN_VARIABLE_BP_LaserEventStarter_C_CAT;/Game/GameElements/GameEvents/ExplosiveBarrelsEvent/BP_LaserEventStarter.BP_LaserEventStarter_C Starter8_GEN_VARIABLE:Starter8_GEN_VARIABLE_BP_LaserEventStarter_C_CAT;/Script/Engine.SceneComponent Starter1_GEN_VARIABLE:Starter1_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Root;/Script/Engine.SceneComponent Starter2_GEN_VARIABLE:Starter2_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Root;/Script/Engine.SceneComponent Starter7_GEN_VARIABLE:Starter7_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Root;/Script/Engine.SceneComponent Starter8_GEN_VARIABLE:Starter8_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Root;/Script/FSD.SingleUsableComponent Starter1_GEN_VARIABLE:Starter1_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent Starter2_GEN_VARIABLE:Starter2_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent Starter7_GEN_VARIABLE:Starter7_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent Starter8_GEN_VARIABLE:Starter8_GEN_VARIABLE_BP_LaserEventStarter_C_CAT:Usable";
         static constexpr const char* MeshCarver__UeScsNode = "a0263cdd9565524aae1ddf86d35c0d12";
         static constexpr const char* PathfinderCollision1__UeScsNode = "2a207bf65113c14aa240489ccf1a5699";
         static constexpr const char* PathfinderCollision__UeScsNode = "3edc336df52a3d4397f4e3c1d2afdcee";
@@ -99,4 +100,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::ExplosiveBarrelsEvent
 
-using BP_ExplosiveBarrelsEvent_C = Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_ExplosiveBarrelsEvent_C;
+using BP_ExplosiveBarrelsEvent_C = ::Game::GameElements::GameEvents::ExplosiveBarrelsEvent::BP_ExplosiveBarrelsEvent_C;

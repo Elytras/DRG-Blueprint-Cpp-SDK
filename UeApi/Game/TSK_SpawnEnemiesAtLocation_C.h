@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_SpawnEnemiesAtLocation_C = Game::AI::Tasks::TSK_SpawnEnemiesAtLocation_C;
+using TSK_SpawnEnemiesAtLocation_C = ::Game::AI::Tasks::TSK_SpawnEnemiesAtLocation_C;

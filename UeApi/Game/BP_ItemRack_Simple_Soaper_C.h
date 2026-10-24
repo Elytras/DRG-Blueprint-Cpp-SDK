@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace Plague { namespace CleaningPod {
 
-class BP_ItemRack_Simple_Soaper_C : public Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_ItemRack_Simple_C
+class BP_ItemRack_Simple_Soaper_C : public ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_ItemRack_Simple_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_ItemRack_Simple_Soaper", "BP_ItemRack_Simple_Soaper_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "InstantUsable;StaticMesh";
+    };
 };
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using BP_ItemRack_Simple_Soaper_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_ItemRack_Simple_Soaper_C;
+using BP_ItemRack_Simple_Soaper_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_ItemRack_Simple_Soaper_C;

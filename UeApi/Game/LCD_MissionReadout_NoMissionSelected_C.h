@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts
 
-using LCD_MissionReadout_NoMissionSelected_C = Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_NoMissionSelected_C;
+using LCD_MissionReadout_NoMissionSelected_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_NoMissionSelected_C;

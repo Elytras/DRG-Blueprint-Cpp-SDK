@@ -28,11 +28,11 @@ class ITM_DeepDives_ServerList_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_ServerList_Entry", "ITM_DeepDives_ServerList_Entry_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using Biome_ToolTip_C = Game::UI::ToolTips::Biome_ToolTip_C;
-    using ITM_ServerList_Entry_PlayerIcons_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using Biome_ToolTip_C = ::Game::UI::ToolTips::Biome_ToolTip_C;
+    using ITM_ServerList_Entry_PlayerIcons_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UButton* Button_0;
@@ -73,4 +73,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_ServerList_Entry_C = Game::UI::Menu_DeepDives::ITM_DeepDives_ServerList_Entry_C;
+using ITM_DeepDives_ServerList_Entry_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_ServerList_Entry_C;

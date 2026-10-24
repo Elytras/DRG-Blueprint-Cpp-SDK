@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using ITM_ServerList_AttentionBox_C = Game::UI::Menu_ServerList::ITM_ServerList_AttentionBox_C;
+using ITM_ServerList_AttentionBox_C = ::Game::UI::Menu_ServerList::ITM_ServerList_AttentionBox_C;

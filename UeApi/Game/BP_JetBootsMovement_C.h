@@ -19,7 +19,7 @@ class BP_JetBootsMovement_C : public UJetBootsMovementComponent
 {
 public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/BP_JetBootsMovement", "BP_JetBootsMovement_C");
-    using BP_JetBootsBurnTrigger_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsBurnTrigger_C;
+    using BP_JetBootsBurnTrigger_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsBurnTrigger_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UClass* StatusEffect;
     class UJetBootsFuelWidget* FuelWidget;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsMovement_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsMovement_C;
+using BP_JetBootsMovement_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsMovement_C;

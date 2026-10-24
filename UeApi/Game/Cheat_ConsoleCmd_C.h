@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_ConsoleCmd_C = Game::UI::Menu_Cheats::Cheat_ConsoleCmd_C;
+using Cheat_ConsoleCmd_C = ::Game::UI::Menu_Cheats::Cheat_ConsoleCmd_C;

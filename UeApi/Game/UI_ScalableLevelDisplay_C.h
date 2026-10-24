@@ -25,7 +25,7 @@ public:
     class UTextBlock* DATA_Name;
     class UBorder* Holder_Level;
     class UBorder* Holder_Name;
-    class UImage* Img_Icon;
+    class UImage* IMG_Icon;
     class USizeBox* SizeBox_5;
     class USpacer* Spacer_199;
     bool ShowClassInstead;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_ScalableLevelDisplay_C = Game::UI::Global_UI_Elements::UI_ScalableLevelDisplay_C;
+using UI_ScalableLevelDisplay_C = ::Game::UI::Global_UI_Elements::UI_ScalableLevelDisplay_C;

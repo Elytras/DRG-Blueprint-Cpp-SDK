@@ -40,4 +40,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using ABP_FacilityTurret_C = Game::GameElements::Objectives::Facility::DefenseTurret::ABP_FacilityTurret_C;
+using ABP_FacilityTurret_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::ABP_FacilityTurret_C;

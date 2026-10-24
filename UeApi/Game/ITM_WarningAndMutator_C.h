@@ -18,7 +18,7 @@ class ITM_WarningAndMutator_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_WarningAndMutator", "ITM_WarningAndMutator_C");
-    using ITM_EscapeMenu_MissionModifier_C = Game::UI::Menu_EscapeMenu::ITM_EscapeMenu_MissionModifier_C;
+    using ITM_EscapeMenu_MissionModifier_C = ::Game::UI::Menu_EscapeMenu::ITM_EscapeMenu_MissionModifier_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_EscapeMenu_MissionModifier_C* ITM_EscapeMenu_Mutator;
     ITM_EscapeMenu_MissionModifier_C* ITM_EscapeMenu_Warning;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_WarningAndMutator_C = Game::UI::Menu_EscapeMenu::ITM_WarningAndMutator_C;
+using ITM_WarningAndMutator_C = ::Game::UI::Menu_EscapeMenu::ITM_WarningAndMutator_C;

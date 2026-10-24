@@ -25,4 +25,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes
 
-using ABP_plague_Projectile_C = Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_plague_Projectile_C;
+using ABP_plague_Projectile_C = ::Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_plague_Projectile_C;

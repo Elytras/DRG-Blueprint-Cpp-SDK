@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using ABP_JellyBreederShowroom_C = Game::Enemies::Jelly_Breeder::ABP_JellyBreederShowroom_C;
+using ABP_JellyBreederShowroom_C = ::Game::Enemies::Jelly_Breeder::ABP_JellyBreederShowroom_C;

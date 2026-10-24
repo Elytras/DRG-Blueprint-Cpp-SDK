@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::Enemies::InfestationLarva
 
-using ESI_InfestationLarva_C = Game::Enemies::InfestationLarva::ESI_InfestationLarva_C;
+using ESI_InfestationLarva_C = ::Game::Enemies::InfestationLarva::ESI_InfestationLarva_C;

@@ -12,7 +12,7 @@ class UTerrainDetectComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Tethers {
 
-class BP_HackingPodDrillDebris_C : public Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
+class BP_HackingPodDrillDebris_C : public ::Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_HackingPodDrillDebris", "BP_HackingPodDrillDebris_C");
@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "PlayerCollider;SimpleObjectInfo";
         static constexpr const char* TerrainDetect3__UeScsNode = "20d755406f3f94428c500ab9c8c7f814";
         static constexpr const char* TerrainDetect2__UeScsNode = "cacd6dc91a56264ea1325a8442dc6071";
         static constexpr const char* TerrainDetect1__UeScsNode = "2a2c6799cf28264eabc8a5b9d47ac4c1";
@@ -32,4 +33,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_HackingPodDrillDebris_C = Game::GameElements::Objectives::Facility::Tethers::BP_HackingPodDrillDebris_C;
+using BP_HackingPodDrillDebris_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_HackingPodDrillDebris_C;

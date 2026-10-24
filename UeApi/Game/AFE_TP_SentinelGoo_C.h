@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using AFE_TP_SentinelGoo_C = Game::Enemies::Spider::TankBoss::BossHeavy::AFE_TP_SentinelGoo_C;
+using AFE_TP_SentinelGoo_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::AFE_TP_SentinelGoo_C;

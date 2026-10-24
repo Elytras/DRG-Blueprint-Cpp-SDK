@@ -20,7 +20,7 @@ class Lore_InfoBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_InfoBox", "Lore_InfoBox_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_BG_CutCorner_C* Basic_BG_Window_59;
     class UImage* Image_Icon;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_InfoBox_C = Game::UI::Menu_MinersManual::Lore_InfoBox_C;
+using Lore_InfoBox_C = ::Game::UI::Menu_MinersManual::Lore_InfoBox_C;

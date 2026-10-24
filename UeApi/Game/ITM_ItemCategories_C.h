@@ -21,9 +21,9 @@ class ITM_ItemCategories_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/ITM_ItemCategories", "ITM_ItemCategories_C");
-    using BTN_ItemCategory_C = Game::UI::Menu_Crafting::BTN_ItemCategory_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using BTN_ItemCategory_C = ::Game::UI::Menu_Crafting::BTN_ItemCategory_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_4;
     BlurBackground_C* BlurBackground_C_1;
@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using ITM_ItemCategories_C = Game::UI::Menu_Crafting::ITM_ItemCategories_C;
+using ITM_ItemCategories_C = ::Game::UI::Menu_Crafting::ITM_ItemCategories_C;

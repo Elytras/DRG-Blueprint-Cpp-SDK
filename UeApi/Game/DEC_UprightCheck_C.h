@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::AI::Decorators
 
-using DEC_UprightCheck_C = Game::AI::Decorators::DEC_UprightCheck_C;
+using DEC_UprightCheck_C = ::Game::AI::Decorators::DEC_UprightCheck_C;

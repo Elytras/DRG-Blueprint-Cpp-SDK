@@ -15,12 +15,12 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens { namespace Combat {
 
-class LoreScreen_Combat_DamageTypes_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_Combat_DamageTypes_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/Combat/LoreScreen_Combat_DamageTypes", "LoreScreen_Combat_DamageTypes_C");
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_DamageType_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_DamageType_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_DamageType_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_DamageType_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Combat_DamageTypes_C;
     Lore_Container_DamageType_C* Lore_Container_DamageType;
     Lore_Container_DamageType_C* Lore_Container_DamageType_C_0;
@@ -41,4 +41,4 @@ private:
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Combat
 
-using LoreScreen_Combat_DamageTypes_C = Game::UI::Menu_MinersManual::InfoScreens::Combat::LoreScreen_Combat_DamageTypes_C;
+using LoreScreen_Combat_DamageTypes_C = ::Game::UI::Menu_MinersManual::InfoScreens::Combat::LoreScreen_Combat_DamageTypes_C;

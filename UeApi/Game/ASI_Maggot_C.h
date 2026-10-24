@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::Critters::Maggot
 
-using ASI_Maggot_C = Game::Critters::Maggot::ASI_Maggot_C;
+using ASI_Maggot_C = ::Game::Critters::Maggot::ASI_Maggot_C;

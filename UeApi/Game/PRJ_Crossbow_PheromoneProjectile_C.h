@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Crossbow { namespace Projectiles {
 
-class PRJ_Crossbow_PheromoneProjectile_C : public Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_Projectile_C
+class PRJ_Crossbow_PheromoneProjectile_C : public ::Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_Projectile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/PRJ_Crossbow_PheromoneProjectile", "PRJ_Crossbow_PheromoneProjectile_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Box;MainDamage;SimpleDamage;BansheePulse;NS_Trail;P_Crossbow_Trail;SimpleObjectInfo;mesh_front";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using PRJ_Crossbow_PheromoneProjectile_C = Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_PheromoneProjectile_C;
+using PRJ_Crossbow_PheromoneProjectile_C = ::Game::WeaponsNTools::Crossbow::Projectiles::PRJ_Crossbow_PheromoneProjectile_C;

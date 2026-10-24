@@ -29,7 +29,7 @@ class BP_Heartstone_DefensiveCrystal_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_Heartstone_DefensiveCrystal", "BP_Heartstone_DefensiveCrystal_C");
-    using BP_EscortDestination_C = Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
+    using BP_EscortDestination_C = ::Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* ParticleSystem;
     class UTerrainPlacementComponent* terrainPlacement;
@@ -112,4 +112,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_Heartstone_DefensiveCrystal_C = Game::GameElements::Objectives::Escort::BP_Heartstone_DefensiveCrystal_C;
+using BP_Heartstone_DefensiveCrystal_C = ::Game::GameElements::Objectives::Escort::BP_Heartstone_DefensiveCrystal_C;

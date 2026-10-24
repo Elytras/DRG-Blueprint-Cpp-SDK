@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::LushDownpour
 
-using BP_PostProcessing_LushDownpour_C = Game::Landscape::Biomes::Biomes_Ingame::LushDownpour::BP_PostProcessing_LushDownpour_C;
+using BP_PostProcessing_LushDownpour_C = ::Game::Landscape::Biomes::Biomes_Ingame::LushDownpour::BP_PostProcessing_LushDownpour_C;

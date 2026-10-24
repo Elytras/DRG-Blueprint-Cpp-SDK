@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Campaign::Requirements
 
-using ITM_AnyRetiredRequirement_C = Game::GameElements::Campaign::Requirements::ITM_AnyRetiredRequirement_C;
+using ITM_AnyRetiredRequirement_C = ::Game::GameElements::Campaign::Requirements::ITM_AnyRetiredRequirement_C;

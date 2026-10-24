@@ -17,8 +17,8 @@ class DLCclaimPopup_Supporter_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/DLCclaimPopups/DLCclaimPopup_Supporter", "DLCclaimPopup_Supporter_C");
-    using _DLCclaimPopup_Base_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
-    using _DLCclaimPopup_TextLine_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
+    using _DLCclaimPopup_Base_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
+    using _DLCclaimPopup_TextLine_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     _DLCclaimPopup_TextLine_C* _DLCclaimPopup_TextLine_C_5;
     _DLCclaimPopup_Base_C* DLCclaimPopup_Base;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::DLCclaimPopups
 
-using DLCclaimPopup_Supporter_C = Game::UI::DLCclaimPopups::DLCclaimPopup_Supporter_C;
+using DLCclaimPopup_Supporter_C = ::Game::UI::DLCclaimPopups::DLCclaimPopup_Supporter_C;

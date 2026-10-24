@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Geyser_Erruption_C = Game::Character::Camera::CameraShakes::CameraShake_Geyser_Erruption_C;
+using CameraShake_Geyser_Erruption_C = ::Game::Character::Camera::CameraShakes::CameraShake_Geyser_Erruption_C;

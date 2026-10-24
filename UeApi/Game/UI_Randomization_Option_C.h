@@ -21,9 +21,9 @@ class UI_Randomization_Option_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_Randomization_Option", "UI_Randomization_Option_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Hovered_Image;
     class UButton* Option_Button;
@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using UI_Randomization_Option_C = Game::UI::Menu_Wardrobe::UI_Randomization_Option_C;
+using UI_Randomization_Option_C = ::Game::UI::Menu_Wardrobe::UI_Randomization_Option_C;

@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display
 
-using HUD_BoscoAbillityIcon_C = Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityIcon_C;
+using HUD_BoscoAbillityIcon_C = ::Game::UI::MainOnscreenHUD::Team_Display::HUD_BoscoAbillityIcon_C;

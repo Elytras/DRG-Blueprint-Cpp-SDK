@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Ossiran::BoneCollector
 
-using ABP_BoneCollector_PP_C = Game::Enemies::Ossiran::BoneCollector::ABP_BoneCollector_PP_C;
+using ABP_BoneCollector_PP_C = ::Game::Enemies::Ossiran::BoneCollector::ABP_BoneCollector_PP_C;

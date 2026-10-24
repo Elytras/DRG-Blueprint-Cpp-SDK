@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant
 
-using AFE_TP_GooPlant_C = Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::AFE_TP_GooPlant_C;
+using AFE_TP_GooPlant_C = ::Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::AFE_TP_GooPlant_C;

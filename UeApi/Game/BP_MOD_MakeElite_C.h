@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Game::Modding::Components
 
-using BP_MOD_MakeElite_C = Game::Game::Modding::Components::BP_MOD_MakeElite_C;
+using BP_MOD_MakeElite_C = ::Game::Game::Modding::Components::BP_MOD_MakeElite_C;

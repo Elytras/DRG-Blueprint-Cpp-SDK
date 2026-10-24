@@ -17,7 +17,7 @@ class ITM_CommunityGoalFactionSelection_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalFactionSelection", "ITM_CommunityGoalFactionSelection_C");
-    using ITM_FactionSelect_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionSelect_C;
+    using ITM_FactionSelect_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionSelect_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_FactionSelect_C* ITM_FactionSelect;
     ITM_FactionSelect_C* ITM_FactionSelect_68;
@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalFactionSelection_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalFactionSelection_C;
+using ITM_CommunityGoalFactionSelection_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalFactionSelection_C;

@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Animation
 
-using ABP_Crossbow_A_C = Game::WeaponsNTools::Crossbow::Animation::ABP_Crossbow_A_C;
+using ABP_Crossbow_A_C = ::Game::WeaponsNTools::Crossbow::Animation::ABP_Crossbow_A_C;

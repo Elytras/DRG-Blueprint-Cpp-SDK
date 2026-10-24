@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using WeaponDisplay_CryoSpray_Ammo_C = Game::WeaponsNTools::Cryospray::WeaponDisplay_CryoSpray_Ammo_C;
+using WeaponDisplay_CryoSpray_Ammo_C = ::Game::WeaponsNTools::Cryospray::WeaponDisplay_CryoSpray_Ammo_C;

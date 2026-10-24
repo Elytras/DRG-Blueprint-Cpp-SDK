@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_MotorMask_S05_C = Game::Character::Vanity2::Headwear::ABP_MotorMask_S05_C;
+using ABP_MotorMask_S05_C = ::Game::Character::Vanity2::Headwear::ABP_MotorMask_S05_C;

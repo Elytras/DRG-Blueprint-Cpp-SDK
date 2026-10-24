@@ -23,7 +23,7 @@ class ITM_MissionComplete_ResourceBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_ResourceBox", "ITM_MissionComplete_ResourceBox_C");
-    using ITM_MissionComplete_Resource_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_Resource_C;
+    using ITM_MissionComplete_Resource_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_Resource_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* BarleyBox;
     class UVerticalBox* LinesBox;
@@ -66,4 +66,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_MissionComplete_ResourceBox_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_ResourceBox_C;
+using ITM_MissionComplete_ResourceBox_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_ResourceBox_C;

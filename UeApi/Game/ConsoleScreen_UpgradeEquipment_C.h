@@ -19,8 +19,8 @@ class ConsoleScreen_UpgradeEquipment_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_UpgradeEquipment", "ConsoleScreen_UpgradeEquipment_C");
-    using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using ConsoleScreen_BGtemplate_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_UpgradeEquipment_C = Game::UI::HUD_SpaceRig::ConsoleScreen_UpgradeEquipment_C;
+using ConsoleScreen_UpgradeEquipment_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_UpgradeEquipment_C;

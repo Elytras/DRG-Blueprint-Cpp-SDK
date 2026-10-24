@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_Collectible_C = Game::UI::Menu_Cheats::Cheat_Collectible_C;
+using Cheat_Collectible_C = ::Game::UI::Menu_Cheats::Cheat_Collectible_C;

@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using PRW_MicroMissileLauncher_C = Game::WeaponsNTools::MicroMissileLauncher::PRW_MicroMissileLauncher_C;
+using PRW_MicroMissileLauncher_C = ::Game::WeaponsNTools::MicroMissileLauncher::PRW_MicroMissileLauncher_C;

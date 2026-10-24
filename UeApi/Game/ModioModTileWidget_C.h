@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Modio::UI::Browser
 
-using ModioModTileWidget_C = Modio::UI::Browser::ModioModTileWidget_C;
+using ModioModTileWidget_C = ::Modio::UI::Browser::ModioModTileWidget_C;

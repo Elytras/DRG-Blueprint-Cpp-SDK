@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_MenuLabel_C = Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
+using Basic_MenuLabel_C = ::Game::UI::Art::WidgetParts::Basic_MenuLabel_C;

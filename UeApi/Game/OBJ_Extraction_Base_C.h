@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::GameElements::Objectives
 
-using OBJ_Extraction_Base_C = Game::GameElements::Objectives::OBJ_Extraction_Base_C;
+using OBJ_Extraction_Base_C = ::Game::GameElements::Objectives::OBJ_Extraction_Base_C;

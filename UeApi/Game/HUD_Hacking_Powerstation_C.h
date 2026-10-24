@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace MainOnscreenHUD { namespace BossFight {
 
-class HUD_Hacking_Powerstation_C : public Game::UI::MainOnscreenHUD::BossFight::HUD_Progressbar_Hacking_Base_C
+class HUD_Hacking_Powerstation_C : public ::Game::UI::MainOnscreenHUD::BossFight::HUD_Progressbar_Hacking_Base_C
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_Hacking_Powerstation", "HUD_Hacking_Powerstation_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using HUD_Hacking_Powerstation_C = Game::UI::MainOnscreenHUD::BossFight::HUD_Hacking_Powerstation_C;
+using HUD_Hacking_Powerstation_C = ::Game::UI::MainOnscreenHUD::BossFight::HUD_Hacking_Powerstation_C;

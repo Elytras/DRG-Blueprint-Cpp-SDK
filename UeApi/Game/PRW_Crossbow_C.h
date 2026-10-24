@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Crossbow
 
-using PRW_Crossbow_C = Game::WeaponsNTools::Crossbow::PRW_Crossbow_C;
+using PRW_Crossbow_C = ::Game::WeaponsNTools::Crossbow::PRW_Crossbow_C;

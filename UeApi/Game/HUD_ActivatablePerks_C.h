@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Perks
 
-using HUD_ActivatablePerks_C = Game::UI::MainOnscreenHUD::Perks::HUD_ActivatablePerks_C;
+using HUD_ActivatablePerks_C = ::Game::UI::MainOnscreenHUD::Perks::HUD_ActivatablePerks_C;

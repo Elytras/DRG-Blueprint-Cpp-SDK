@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Refinery_Depositor_C = Game::LevelElements::Refinery::BP_Refinery_Depositor_C;
+using BP_Refinery_Depositor_C = ::Game::LevelElements::Refinery::BP_Refinery_Depositor_C;

@@ -29,4 +29,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Halloween
 
-using BP_PropHunt_HalloweenGhost_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Halloween::BP_PropHunt_HalloweenGhost_C;
+using BP_PropHunt_HalloweenGhost_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Halloween::BP_PropHunt_HalloweenGhost_C;

@@ -22,4 +22,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::Collection
 
-using ModioCollectionViewWidget_C = Modio::UI::Browser::Views::Collection::ModioCollectionViewWidget_C;
+using ModioCollectionViewWidget_C = ::Modio::UI::Browser::Views::Collection::ModioCollectionViewWidget_C;

@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using BP_BossFight_NeutralEvent_C = Game::UI::MainOnscreenHUD::BossFight::BP_BossFight_NeutralEvent_C;
+using BP_BossFight_NeutralEvent_C = ::Game::UI::MainOnscreenHUD::BossFight::BP_BossFight_NeutralEvent_C;

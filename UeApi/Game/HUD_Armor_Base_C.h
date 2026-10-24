@@ -44,4 +44,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Armor_Base_C = Game::UI::MainOnscreenHUD::HUD_Armor_Base_C;
+using HUD_Armor_Base_C = ::Game::UI::MainOnscreenHUD::HUD_Armor_Base_C;

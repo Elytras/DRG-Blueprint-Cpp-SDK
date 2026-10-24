@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::CheatConsole
 
-using UI_ForceMachineEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceMachineEvent_C;
+using UI_ForceMachineEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceMachineEvent_C;

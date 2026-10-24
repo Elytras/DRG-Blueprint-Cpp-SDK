@@ -15,11 +15,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace UI { namespace WeaponDisplays {
 
-class WeaponDisplay_AssaultRifle_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_AssaultRifle_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/UI/WeaponDisplays/WeaponDisplay_AssaultRifle", "WeaponDisplay_AssaultRifle_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_AssaultRifle_C;
     class UHorizontalBox* AmmoBox;
     class UTextBlock* AmmoCount;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::UI::WeaponDisplays
 
-using WeaponDisplay_AssaultRifle_C = Game::UI::WeaponDisplays::WeaponDisplay_AssaultRifle_C;
+using WeaponDisplay_AssaultRifle_C = ::Game::UI::WeaponDisplays::WeaponDisplay_AssaultRifle_C;

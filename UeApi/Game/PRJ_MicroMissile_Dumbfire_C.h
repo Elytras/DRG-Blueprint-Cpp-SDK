@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher {
 
-class PRJ_MicroMissile_Dumbfire_C : public Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
+class PRJ_MicroMissile_Dumbfire_C : public ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Dumbfire", "PRJ_MicroMissile_Dumbfire_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Particle_Trail";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using PRJ_MicroMissile_Dumbfire_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Dumbfire_C;
+using PRJ_MicroMissile_Dumbfire_C = ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Dumbfire_C;

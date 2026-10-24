@@ -17,7 +17,7 @@ class New_Basic_Button_BIG_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/New_Basic_Button_BIG", "New_Basic_Button_BIG_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     Basic_BG_CutCorner_C* Basic_BG_Window;
     class UButton* Button_0;
     class UImage* Image_207;
@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using New_Basic_Button_BIG_C = Game::UI::Menu_MinersManual::New_Basic_Button_BIG_C;
+using New_Basic_Button_BIG_C = ::Game::UI::Menu_MinersManual::New_Basic_Button_BIG_C;

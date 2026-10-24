@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using PRJ_SentryOvercharge_Projectile_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::PRJ_SentryOvercharge_Projectile_C;
+using PRJ_SentryOvercharge_Projectile_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::PRJ_SentryOvercharge_Projectile_C;

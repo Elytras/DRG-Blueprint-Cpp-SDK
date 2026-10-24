@@ -38,8 +38,8 @@ class BP_LiftPod_C : public ARessuplyPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_LiftPod", "BP_LiftPod_C");
-    using BP_LiftRocketCarriable_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftRocketCarriable_C;
-    using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+    using BP_LiftRocketCarriable_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftRocketCarriable_C;
+    using BP_SupplyDropToTerrainLogic_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_SupplyDropToTerrainLogic_C* BP_SupplyDropToTerrainLogic;
     class USingleUsableComponent* LaunchUsable;
@@ -103,6 +103,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank1_GEN_VARIABLE:BP_OxygenTank1_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank_GEN_VARIABLE:BP_OxygenTank_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C BP_OxygenTankSound_GEN_VARIABLE:BP_OxygenTankSound_GEN_VARIABLE_BP_OxygenTankSound_C_CAT";
         static constexpr const char* BP_SupplyDropToTerrainLogic__UeScsNode = "c28470b3b1901f4e8fa5f3aaf8b89aea";
         static constexpr const char* LaunchUsable__UeScsNode = "5443fed86c44a340a4c348a250b4ade8";
         static constexpr const char* BP_OxygenTankSound__UeScsNode = "0b2aa43735286c40bf85e74ea9c4413f";
@@ -138,4 +139,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment
 
-using BP_LiftPod_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftPod_C;
+using BP_LiftPod_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftPod_C;

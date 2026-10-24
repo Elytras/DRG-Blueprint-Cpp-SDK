@@ -20,7 +20,7 @@ class PRJ_ProjectileBarf_C : public AProjectile
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/PRJ_ProjectileBarf", "PRJ_ProjectileBarf_C");
-    using BP_WalkingPlagueheart_SlimeTrailPuddle_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
+    using BP_WalkingPlagueheart_SlimeTrailPuddle_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_WalkingPlagueheart_SlimeTrailPuddle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     float Timeline_0_NewTrack;
@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using PRJ_ProjectileBarf_C = Game::Enemies::Plague::WalkingPlagueheartBoss::PRJ_ProjectileBarf_C;
+using PRJ_ProjectileBarf_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::PRJ_ProjectileBarf_C;

@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_MainFacility_ShieldEmitter_Hologram_C = Game::GameElements::Objectives::Facility::BP_MainFacility_ShieldEmitter_Hologram_C;
+using BP_MainFacility_ShieldEmitter_Hologram_C = ::Game::GameElements::Objectives::Facility::BP_MainFacility_ShieldEmitter_Hologram_C;

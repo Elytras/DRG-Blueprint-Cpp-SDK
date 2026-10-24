@@ -69,4 +69,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_XmasGift_Item_C = Game::Art::Environments::Holiday_Xmas::BP_XmasGift_Item_C;
+using BP_XmasGift_Item_C = ::Game::Art::Environments::Holiday_Xmas::BP_XmasGift_Item_C;

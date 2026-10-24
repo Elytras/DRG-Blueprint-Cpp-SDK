@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Drone::Tasks
 
-using TSK_GetPointInFrontOf_C = Game::GameElements::Drone::Tasks::TSK_GetPointInFrontOf_C;
+using TSK_GetPointInFrontOf_C = ::Game::GameElements::Drone::Tasks::TSK_GetPointInFrontOf_C;

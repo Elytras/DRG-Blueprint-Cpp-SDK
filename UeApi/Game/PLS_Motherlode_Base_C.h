@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace ProceduralLevelSetups {
 
-class PLS_Motherlode_Base_C : public Game::Landscape::PLS_Base_C
+class PLS_Motherlode_Base_C : public ::Game::Landscape::PLS_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/PLS_Motherlode_Base", "PLS_Motherlode_Base_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ProceduralLevelSetups
 
-using PLS_Motherlode_Base_C = Game::Landscape::ProceduralLevelSetups::PLS_Motherlode_Base_C;
+using PLS_Motherlode_Base_C = ::Game::Landscape::ProceduralLevelSetups::PLS_Motherlode_Base_C;

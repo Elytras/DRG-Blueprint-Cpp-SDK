@@ -28,7 +28,7 @@ class WPN_Cryospray_C : public ACryosprayItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Cryospray/WPN_Cryospray", "WPN_Cryospray_C");
-    using WeaponDisplay_CryoSpray_Ammo_C = Game::WeaponsNTools::Cryospray::WeaponDisplay_CryoSpray_Ammo_C;
+    using WeaponDisplay_CryoSpray_Ammo_C = ::Game::WeaponsNTools::Cryospray::WeaponDisplay_CryoSpray_Ammo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* AudioPressurerising;
     class UFirstPersonPointLightComponent* GaugeLight;
@@ -74,4 +74,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using WPN_Cryospray_C = Game::WeaponsNTools::Cryospray::WPN_Cryospray_C;
+using WPN_Cryospray_C = ::Game::WeaponsNTools::Cryospray::WPN_Cryospray_C;

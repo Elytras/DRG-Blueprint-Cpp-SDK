@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using Salvage_FuelCells_Beacon_Hologram_C = Game::GameElements::Objectives::Salvage::Salvage_FuelCells_Beacon_Hologram_C;
+using Salvage_FuelCells_Beacon_Hologram_C = ::Game::GameElements::Objectives::Salvage::Salvage_FuelCells_Beacon_Hologram_C;

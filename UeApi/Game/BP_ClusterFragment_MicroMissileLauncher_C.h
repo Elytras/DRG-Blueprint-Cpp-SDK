@@ -13,7 +13,7 @@ class URotatingMovementComponent;
 
 namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher {
 
-class BP_ClusterFragment_MicroMissileLauncher_C : public Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
+class BP_ClusterFragment_MicroMissileLauncher_C : public ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/BP_ClusterFragment_MicroMissileLauncher", "BP_ClusterFragment_MicroMissileLauncher_C");
@@ -23,12 +23,13 @@ public:
     void ExecuteUbergraph_BP_ClusterFragment_MicroMissileLauncher(int EntryPoint);
     void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds_0);
-    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnInitialized();
+    void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Particle_Exhaust;Particle_Trail;Light_DistanceIndicator;Light_Exhaust;ProjectileExplosion;MeshRocket";
         static constexpr const char* UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C__UeName = "UberGraphFrame";
         static constexpr const char* RotatingMovement__UeScsNode = "6d49dedb8218c64c9eff857af0b467d8";
         static constexpr const char* NS_MicroMissile_Cluster_Trail__UeScsNode = "edd0bd4ba4354f43aba70c3f4132a34e";
@@ -37,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using BP_ClusterFragment_MicroMissileLauncher_C = Game::WeaponsNTools::MicroMissileLauncher::BP_ClusterFragment_MicroMissileLauncher_C;
+using BP_ClusterFragment_MicroMissileLauncher_C = ::Game::WeaponsNTools::MicroMissileLauncher::BP_ClusterFragment_MicroMissileLauncher_C;

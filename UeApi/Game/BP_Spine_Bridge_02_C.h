@@ -49,4 +49,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_Spine_Bridge_02_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Spine_Bridge_02_C;
+using BP_Spine_Bridge_02_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_Spine_Bridge_02_C;

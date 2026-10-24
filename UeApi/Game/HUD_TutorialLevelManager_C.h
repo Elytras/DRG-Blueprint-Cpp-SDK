@@ -18,7 +18,7 @@ class HUD_TutorialLevelManager_C : public UTutorialLevelWidget
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/HUD_TutorialLevelManager", "HUD_TutorialLevelManager_C");
-    using W_TutorialContent_Base_C = Game::UI::Tutorial::W_TutorialContent_Base_C;
+    using W_TutorialContent_Base_C = ::Game::UI::Tutorial::W_TutorialContent_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     W_TutorialContent_Base_C* BP_TutorialContentWidget_Base;
     class UVerticalBox* WidgetHolder;
@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Tutorial
 
-using HUD_TutorialLevelManager_C = Game::UI::Tutorial::HUD_TutorialLevelManager_C;
+using HUD_TutorialLevelManager_C = ::Game::UI::Tutorial::HUD_TutorialLevelManager_C;

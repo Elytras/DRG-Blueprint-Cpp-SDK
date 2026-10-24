@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using BP_StickyIce_C = Game::WeaponsNTools::Cryospray::BP_StickyIce_C;
+using BP_StickyIce_C = ::Game::WeaponsNTools::Cryospray::BP_StickyIce_C;

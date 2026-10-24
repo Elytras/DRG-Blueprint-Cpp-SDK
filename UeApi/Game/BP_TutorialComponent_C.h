@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::LevelElements::Tutorial
 
-using BP_TutorialComponent_C = Game::LevelElements::Tutorial::BP_TutorialComponent_C;
+using BP_TutorialComponent_C = ::Game::LevelElements::Tutorial::BP_TutorialComponent_C;

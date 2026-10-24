@@ -22,8 +22,8 @@ class EVENT_MeteorDefence_C : public AMeteorDefenseEvent
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/EVENT_MeteorDefence", "EVENT_MeteorDefence_C");
-    using EWC_PlagueMeteorDefence_C = Game::Enemies::Waves::WaveControllers::EWC_PlagueMeteorDefence_C;
-    using HUD_RockCracker_Event_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
+    using EWC_PlagueMeteorDefence_C = ::Game::Enemies::Waves::WaveControllers::EWC_PlagueMeteorDefence_C;
+    using HUD_RockCracker_Event_C = ::Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* Audio;
     TArray<class APlayerCharacter*> DefendingPlayers;
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using EVENT_MeteorDefence_C = Game::GameElements::GameEvents::PlagueMeteor::EVENT_MeteorDefence_C;
+using EVENT_MeteorDefence_C = ::Game::GameElements::GameEvents::PlagueMeteor::EVENT_MeteorDefence_C;

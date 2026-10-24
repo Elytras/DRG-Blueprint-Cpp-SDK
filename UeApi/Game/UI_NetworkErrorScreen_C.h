@@ -22,9 +22,9 @@ class UI_NetworkErrorScreen_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_NetworkErrorScreen", "UI_NetworkErrorScreen_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_NetworkErrorScreen_C = Game::UI::Menu_StartScreen::UI_NetworkErrorScreen_C;
+using UI_NetworkErrorScreen_C = ::Game::UI::Menu_StartScreen::UI_NetworkErrorScreen_C;

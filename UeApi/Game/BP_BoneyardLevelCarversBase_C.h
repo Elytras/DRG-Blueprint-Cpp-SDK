@@ -14,7 +14,7 @@ class UTerrainMaterial;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace BoneYards { namespace Carvers {
 
-class BP_BoneyardLevelCarversBase_C : public Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_Base_C
+class BP_BoneyardLevelCarversBase_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCrystalFormations::BP_CrystalFormations_SlantedPillars_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_BoneyardLevelCarversBase", "BP_BoneyardLevelCarversBase_C");
@@ -28,10 +28,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
         static constexpr const char* PreviewMesh__UeScsNode = "60b82a7882e88842a94178b9b2d35f23";
     };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers
 
-using BP_BoneyardLevelCarversBase_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_BoneyardLevelCarversBase_C;
+using BP_BoneyardLevelCarversBase_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Carvers::BP_BoneyardLevelCarversBase_C;

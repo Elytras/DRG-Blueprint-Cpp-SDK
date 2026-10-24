@@ -16,34 +16,34 @@ class BP_TutorialManager_Base_C : public ATutorialManager
 {
 public:
     UE_CLASS("/Game/Character/Tutorials/BP_TutorialManager_Base", "BP_TutorialManager_Base_C");
-    using Tutorial_Hint_BoscoAbility_C = Game::Character::Tutorials::Tutorial_Hint_BoscoAbility_C;
-    using Tutorial_Hint_BoscoFirstSoloMission_C = Game::Character::Tutorials::Tutorial_Hint_BoscoFirstSoloMission_C;
-    using Tutorial_Hint_CoreStone_Bosco_C = Game::Character::Tutorials::Tutorial_Hint_CoreStone_Bosco_C;
-    using Tutorial_Hint_DeepScan_MorkiteSeed_Bosco_C = Game::Character::Tutorials::Tutorial_Hint_DeepScan_MorkiteSeed_Bosco_C;
-    using Tutorial_Hint_Deposite_C = Game::Character::Tutorials::Tutorial_Hint_Deposite_C;
-    using Tutorial_Hint_EggMissionTerrainScanner_C = Game::Character::Tutorials::Tutorial_Hint_EggMissionTerrainScanner_C;
-    using Tutorial_Hint_EquipClassTool_C = Game::Character::Tutorials::Tutorial_Hint_EquipClassTool_C;
-    using Tutorial_Hint_EquipGrenade_C = Game::Character::Tutorials::Tutorial_Hint_EquipGrenade_C;
-    using Tutorial_Hint_EquipSecondaryWeapon_C = Game::Character::Tutorials::Tutorial_Hint_EquipSecondaryWeapon_C;
-    using Tutorial_Hint_EquipTraversalTool_C = Game::Character::Tutorials::Tutorial_Hint_EquipTraversalTool_C;
-    using Tutorial_Hint_Escort_BoscoDefend_C = Game::Character::Tutorials::Tutorial_Hint_Escort_BoscoDefend_C;
-    using Tutorial_Hint_Escort_BoscoOilShale_C = Game::Character::Tutorials::Tutorial_Hint_Escort_BoscoOilShale_C;
-    using Tutorial_Hint_Escort_Repair_C = Game::Character::Tutorials::Tutorial_Hint_Escort_Repair_C;
-    using Tutorial_Hint_Flares_C = Game::Character::Tutorials::Tutorial_Hint_Flares_C;
-    using Tutorial_Hint_FocusShot_C = Game::Character::Tutorials::Tutorial_Hint_FocusShot_C;
-    using Tutorial_Hint_LaserPointer_C = Game::Character::Tutorials::Tutorial_Hint_LaserPointer_C;
-    using Tutorial_Hint_LowO2_C = Game::Character::Tutorials::Tutorial_Hint_LowO2_C;
-    using Tutorial_Hint_LowOnAmmo_C = Game::Character::Tutorials::Tutorial_Hint_LowOnAmmo_C;
-    using Tutorial_Hint_MinersManual_C = Game::Character::Tutorials::Tutorial_Hint_MinersManual_C;
-    using Tutorial_Hint_Nitra_C = Game::Character::Tutorials::Tutorial_Hint_Nitra_C;
-    using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool_C = Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool_C;
-    using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C = Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C;
-    using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_C = Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_C;
-    using Tutorial_Hint_PlagueWarning_Start_C = Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_Start_C;
-    using Tutorial_Hint_Refinery_BoscoBuilding_C = Game::Character::Tutorials::Tutorial_Hint_Refinery_BoscoBuilding_C;
-    using Tutorial_Hint_Resupply_C = Game::Character::Tutorials::Tutorial_Hint_Resupply_C;
-    using Tutorial_Hint_Sabotage_BoscoDefendHackingPod_C = Game::Character::Tutorials::Tutorial_Hint_Sabotage_BoscoDefendHackingPod_C;
-    using Tutorial_ThrowCarriable_C = Game::Character::Tutorials::Tutorial_ThrowCarriable_C;
+    using Tutorial_Hint_BoscoAbility_C = ::Game::Character::Tutorials::Tutorial_Hint_BoscoAbility_C;
+    using Tutorial_Hint_BoscoFirstSoloMission_C = ::Game::Character::Tutorials::Tutorial_Hint_BoscoFirstSoloMission_C;
+    using Tutorial_Hint_CoreStone_Bosco_C = ::Game::Character::Tutorials::Tutorial_Hint_CoreStone_Bosco_C;
+    using Tutorial_Hint_DeepScan_MorkiteSeed_Bosco_C = ::Game::Character::Tutorials::Tutorial_Hint_DeepScan_MorkiteSeed_Bosco_C;
+    using Tutorial_Hint_Deposite_C = ::Game::Character::Tutorials::Tutorial_Hint_Deposite_C;
+    using Tutorial_Hint_EggMissionTerrainScanner_C = ::Game::Character::Tutorials::Tutorial_Hint_EggMissionTerrainScanner_C;
+    using Tutorial_Hint_EquipClassTool_C = ::Game::Character::Tutorials::Tutorial_Hint_EquipClassTool_C;
+    using Tutorial_Hint_EquipGrenade_C = ::Game::Character::Tutorials::Tutorial_Hint_EquipGrenade_C;
+    using Tutorial_Hint_EquipSecondaryWeapon_C = ::Game::Character::Tutorials::Tutorial_Hint_EquipSecondaryWeapon_C;
+    using Tutorial_Hint_EquipTraversalTool_C = ::Game::Character::Tutorials::Tutorial_Hint_EquipTraversalTool_C;
+    using Tutorial_Hint_Escort_BoscoDefend_C = ::Game::Character::Tutorials::Tutorial_Hint_Escort_BoscoDefend_C;
+    using Tutorial_Hint_Escort_BoscoOilShale_C = ::Game::Character::Tutorials::Tutorial_Hint_Escort_BoscoOilShale_C;
+    using Tutorial_Hint_Escort_Repair_C = ::Game::Character::Tutorials::Tutorial_Hint_Escort_Repair_C;
+    using Tutorial_Hint_Flares_C = ::Game::Character::Tutorials::Tutorial_Hint_Flares_C;
+    using Tutorial_Hint_FocusShot_C = ::Game::Character::Tutorials::Tutorial_Hint_FocusShot_C;
+    using Tutorial_Hint_LaserPointer_C = ::Game::Character::Tutorials::Tutorial_Hint_LaserPointer_C;
+    using Tutorial_Hint_LowO2_C = ::Game::Character::Tutorials::Tutorial_Hint_LowO2_C;
+    using Tutorial_Hint_LowOnAmmo_C = ::Game::Character::Tutorials::Tutorial_Hint_LowOnAmmo_C;
+    using Tutorial_Hint_MinersManual_C = ::Game::Character::Tutorials::Tutorial_Hint_MinersManual_C;
+    using Tutorial_Hint_Nitra_C = ::Game::Character::Tutorials::Tutorial_Hint_Nitra_C;
+    using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool_C = ::Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool_C;
+    using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C = ::Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco_C;
+    using Tutorial_Hint_PlagueWarning_SporeTowerCleaning_C = ::Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_SporeTowerCleaning_C;
+    using Tutorial_Hint_PlagueWarning_Start_C = ::Game::Character::Tutorials::Tutorial_Hint_PlagueWarning_Start_C;
+    using Tutorial_Hint_Refinery_BoscoBuilding_C = ::Game::Character::Tutorials::Tutorial_Hint_Refinery_BoscoBuilding_C;
+    using Tutorial_Hint_Resupply_C = ::Game::Character::Tutorials::Tutorial_Hint_Resupply_C;
+    using Tutorial_Hint_Sabotage_BoscoDefendHackingPod_C = ::Game::Character::Tutorials::Tutorial_Hint_Sabotage_BoscoDefendHackingPod_C;
+    using Tutorial_ThrowCarriable_C = ::Game::Character::Tutorials::Tutorial_ThrowCarriable_C;
     Tutorial_Hint_DeepScan_MorkiteSeed_Bosco_C* Tutorial_Hint_DeepScan_MorkiteSeed_Bosco;
     Tutorial_Hint_CoreStone_Bosco_C* Tutorial_Hint_CoreStone_Bosco;
     Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool_C* Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool;
@@ -110,4 +110,4 @@ private:
 
 }}}   // namespace Game::Character::Tutorials
 
-using BP_TutorialManager_Base_C = Game::Character::Tutorials::BP_TutorialManager_Base_C;
+using BP_TutorialManager_Base_C = ::Game::Character::Tutorials::BP_TutorialManager_Base_C;

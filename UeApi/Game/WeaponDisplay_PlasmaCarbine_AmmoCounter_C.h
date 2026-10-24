@@ -16,7 +16,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace PlasmaCarbine { namespace UI {
 
-class WeaponDisplay_PlasmaCarbine_AmmoCounter_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_PlasmaCarbine_AmmoCounter_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/UI/WeaponDisplay_PlasmaCarbine_AmmoCounter", "WeaponDisplay_PlasmaCarbine_AmmoCounter_C");
@@ -58,4 +58,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::PlasmaCarbine::UI
 
-using WeaponDisplay_PlasmaCarbine_AmmoCounter_C = Game::WeaponsNTools::PlasmaCarbine::UI::WeaponDisplay_PlasmaCarbine_AmmoCounter_C;
+using WeaponDisplay_PlasmaCarbine_AmmoCounter_C = ::Game::WeaponsNTools::PlasmaCarbine::UI::WeaponDisplay_PlasmaCarbine_AmmoCounter_C;

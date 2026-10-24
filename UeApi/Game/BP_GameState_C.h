@@ -46,4 +46,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_GameState_C = Game::Game::BP_GameState_C;
+using BP_GameState_C = ::Game::Game::BP_GameState_C;

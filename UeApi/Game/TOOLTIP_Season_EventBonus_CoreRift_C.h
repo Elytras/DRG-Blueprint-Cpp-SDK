@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace Menu_Seasons {
 
-class TOOLTIP_Season_EventBonus_CoreRift_C : public Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_C
+class TOOLTIP_Season_EventBonus_CoreRift_C : public ::Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/TOOLTIP_Season_EventBonus_CoreRift", "TOOLTIP_Season_EventBonus_CoreRift_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using TOOLTIP_Season_EventBonus_CoreRift_C = Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_CoreRift_C;
+using TOOLTIP_Season_EventBonus_CoreRift_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_EventBonus_CoreRift_C;

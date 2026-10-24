@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MissionSelectionMK3::BiomeWidgets
 
-using PlagueOverlay_MapWidget_C = Game::UI::Menu_MissionSelectionMK3::BiomeWidgets::PlagueOverlay_MapWidget_C;
+using PlagueOverlay_MapWidget_C = ::Game::UI::Menu_MissionSelectionMK3::BiomeWidgets::PlagueOverlay_MapWidget_C;

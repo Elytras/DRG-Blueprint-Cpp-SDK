@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::Character::Rumble
 
-using LIB_RumbleFunctions_C = Game::Character::Rumble::LIB_RumbleFunctions_C;
+using LIB_RumbleFunctions_C = ::Game::Character::Rumble::LIB_RumbleFunctions_C;

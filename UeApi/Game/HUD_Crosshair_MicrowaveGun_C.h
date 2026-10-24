@@ -74,4 +74,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_Crosshair_MicrowaveGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_MicrowaveGun_C;
+using HUD_Crosshair_MicrowaveGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Crosshair_MicrowaveGun_C;

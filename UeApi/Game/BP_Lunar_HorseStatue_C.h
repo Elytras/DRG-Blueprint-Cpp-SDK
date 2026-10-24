@@ -46,4 +46,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints
 
-using BP_Lunar_HorseStatue_C = Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_Lunar_HorseStatue_C;
+using BP_Lunar_HorseStatue_C = ::Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_Lunar_HorseStatue_C;

@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Mouse_Cursor
 
-using UI_Cursor_Controller_C = Game::UI::Mouse_Cursor::UI_Cursor_Controller_C;
+using UI_Cursor_Controller_C = ::Game::UI::Mouse_Cursor::UI_Cursor_Controller_C;

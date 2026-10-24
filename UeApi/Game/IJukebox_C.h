@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::ShipTesting
 
-using IJukebox_C = Game::Art::Environments::ShipTesting::IJukebox_C;
+using IJukebox_C = ::Game::Art::Environments::ShipTesting::IJukebox_C;

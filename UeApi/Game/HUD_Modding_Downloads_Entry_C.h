@@ -20,8 +20,8 @@ class HUD_Modding_Downloads_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Modding/HUD_Modding_Downloads_Entry", "HUD_Modding_Downloads_Entry_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_ModdingProgressBar_C = Game::UI::Modding::UI_ModdingProgressBar_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_ModdingProgressBar_C = ::Game::UI::Modding::UI_ModdingProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USizeBox* ContentSizeBox;
     class UImage* Img_Completed;
@@ -49,4 +49,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Modding
 
-using HUD_Modding_Downloads_Entry_C = Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_Entry_C;
+using HUD_Modding_Downloads_Entry_C = ::Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_Entry_C;

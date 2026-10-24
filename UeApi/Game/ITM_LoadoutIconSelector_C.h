@@ -20,7 +20,7 @@ class ITM_LoadoutIconSelector_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/LoadoutSelection/ITM_LoadoutIconSelector", "ITM_LoadoutIconSelector_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UBorder* Border_1;
@@ -37,4 +37,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Loadout::LoadoutSelection
 
-using ITM_LoadoutIconSelector_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIconSelector_C;
+using ITM_LoadoutIconSelector_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIconSelector_C;

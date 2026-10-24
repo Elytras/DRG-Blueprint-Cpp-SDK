@@ -21,8 +21,8 @@ class HUD_Grenades_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Grenades", "HUD_Grenades_C");
-    using HUD_GrenadeIcon_C = Game::UI::MainOnscreenHUD::HUD_GrenadeIcon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using HUD_GrenadeIcon_C = ::Game::UI::MainOnscreenHUD::HUD_GrenadeIcon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DATA_GrenadeCount;
     HUD_GrenadeIcon_C* HUD_GrenadeIcon;
@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Grenades_C = Game::UI::MainOnscreenHUD::HUD_Grenades_C;
+using HUD_Grenades_C = ::Game::UI::MainOnscreenHUD::HUD_Grenades_C;

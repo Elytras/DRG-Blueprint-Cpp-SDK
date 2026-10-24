@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using SpawnPosMarker_C = Game::UI::Menu_Cheats::SpawnPosMarker_C;
+using SpawnPosMarker_C = ::Game::UI::Menu_Cheats::SpawnPosMarker_C;

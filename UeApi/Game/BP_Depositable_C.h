@@ -76,4 +76,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_Depositable_C = Game::GameElements::Resources::Embedded::Gems::BP_Depositable_C;
+using BP_Depositable_C = ::Game::GameElements::Resources::Embedded::Gems::BP_Depositable_C;

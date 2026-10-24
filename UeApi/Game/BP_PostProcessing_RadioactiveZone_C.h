@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::RadioactiveZone
 
-using BP_PostProcessing_RadioactiveZone_C = Game::Landscape::Biomes::Biomes_Ingame::RadioactiveZone::BP_PostProcessing_RadioactiveZone_C;
+using BP_PostProcessing_RadioactiveZone_C = ::Game::Landscape::Biomes::Biomes_Ingame::RadioactiveZone::BP_PostProcessing_RadioactiveZone_C;

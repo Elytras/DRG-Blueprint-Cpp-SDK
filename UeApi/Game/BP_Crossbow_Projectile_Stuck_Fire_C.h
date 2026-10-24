@@ -17,7 +17,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Crossbow { namespace Projectiles {
 
-class BP_Crossbow_Projectile_Stuck_Fire_C : public Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_C
+class BP_Crossbow_Projectile_Stuck_Fire_C : public ::Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Fire", "BP_Crossbow_Projectile_Stuck_Fire_C");
@@ -33,6 +33,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
+        static constexpr const char* UeIchRecords = "BansheePulse;SimpleObjectInfo;mesh_front";
         static constexpr const char* EffectParticle__UeScsNode = "37c9c99ff69d1e4d9d31f00b95225f40";
         static constexpr const char* FlammableCollision__UeScsNode = "4c7979fbed8b074fa8fcef6c537d9b6b";
         static constexpr const char* CrossbowStuckProjectileEffectApplication__UeScsNode = "f3242aca7bb1f840a51e48d86c7e7c66";
@@ -41,4 +42,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using BP_Crossbow_Projectile_Stuck_Fire_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_Fire_C;
+using BP_Crossbow_Projectile_Stuck_Fire_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_Fire_C;

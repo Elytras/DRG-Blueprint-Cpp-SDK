@@ -23,9 +23,9 @@ public:
     void Unfold();
     void Refresh();
     void SetData(class UCampaign* Campaign);
-    void Fold();
+    void fold();
 };
 
 }}}   // namespace Game::UI::Menu_Jobs
 
-using WND_Jobs_Entry_Base_C = Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C;
+using WND_Jobs_Entry_Base_C = ::Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C;

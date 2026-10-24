@@ -17,33 +17,33 @@ class Options_Tab_GFX_Steam_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_GFX_Steam", "Options_Tab_GFX_Steam_C");
-    using Basic_ButtonWithControls_C = Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
-    using Basic_MenuLabel_C = Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_Bloom_C = Game::UI::Menu_Options::Options_Bloom_C;
-    using Options_DX12_C = Game::UI::Menu_Options::Options_DX12_C;
-    using Options_FullScreen_C = Game::UI::Menu_Options::Options_FullScreen_C;
-    using Options_FullScreen_Resolutions_C = Game::UI::Menu_Options::Options_FullScreen_Resolutions_C;
-    using Options_FullScreen_UWP_C = Game::UI::Menu_Options::Options_FullScreen_UWP_C;
-    using Options_GFX_Gamma_C = Game::UI::Menu_Options::Options_GFX_Gamma_C;
-    using Options_GFX_HDR_Gamma_C = Game::UI::Menu_Options::Options_GFX_HDR_Gamma_C;
-    using Options_GFX_MaxFPS_C = Game::UI::Menu_Options::Options_GFX_MaxFPS_C;
-    using Options_GFX_Sharpening_C = Game::UI::Menu_Options::Options_GFX_Sharpening_C;
-    using Options_GFX_Upscaling_C = Game::UI::Menu_Options::Options_GFX_Upscaling_C;
-    using Options_HDR_C = Game::UI::Menu_Options::Options_HDR_C;
-    using Options_LensFlare_C = Game::UI::Menu_Options::Options_LensFlare_C;
-    using Options_Reflex_C = Game::UI::Menu_Options::Options_Reflex_C;
-    using Options_Scalability_AntiAliasingType_C = Game::UI::Menu_Options::Options_Scalability_AntiAliasingType_C;
-    using Options_Scalability_AntiAliasing_C = Game::UI::Menu_Options::Options_Scalability_AntiAliasing_C;
-    using Options_Scalability_Effects_C = Game::UI::Menu_Options::Options_Scalability_Effects_C;
-    using Options_Scalability_Overall_C = Game::UI::Menu_Options::Options_Scalability_Overall_C;
-    using Options_Scalability_PostProcess_C = Game::UI::Menu_Options::Options_Scalability_PostProcess_C;
-    using Options_Scalability_Ragdolls_C = Game::UI::Menu_Options::Options_Scalability_Ragdolls_C;
-    using Options_Scalability_Shadows_C = Game::UI::Menu_Options::Options_Scalability_Shadows_C;
-    using Options_Scalability_Textures_C = Game::UI::Menu_Options::Options_Scalability_Textures_C;
-    using Options_Scalability_ViewDistance_C = Game::UI::Menu_Options::Options_Scalability_ViewDistance_C;
-    using Options_VSync_C = Game::UI::Menu_Options::Options_VSync_C;
+    using Basic_ButtonWithControls_C = ::Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
+    using Basic_MenuLabel_C = ::Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_Bloom_C = ::Game::UI::Menu_Options::Options_Bloom_C;
+    using Options_DX12_C = ::Game::UI::Menu_Options::Options_DX12_C;
+    using Options_FullScreen_C = ::Game::UI::Menu_Options::Options_FullScreen_C;
+    using Options_FullScreen_Resolutions_C = ::Game::UI::Menu_Options::Options_FullScreen_Resolutions_C;
+    using Options_FullScreen_UWP_C = ::Game::UI::Menu_Options::Options_FullScreen_UWP_C;
+    using Options_GFX_Gamma_C = ::Game::UI::Menu_Options::Options_GFX_Gamma_C;
+    using Options_GFX_HDR_Gamma_C = ::Game::UI::Menu_Options::Options_GFX_HDR_Gamma_C;
+    using Options_GFX_MaxFPS_C = ::Game::UI::Menu_Options::Options_GFX_MaxFPS_C;
+    using Options_GFX_Sharpening_C = ::Game::UI::Menu_Options::Options_GFX_Sharpening_C;
+    using Options_GFX_Upscaling_C = ::Game::UI::Menu_Options::Options_GFX_Upscaling_C;
+    using Options_HDR_C = ::Game::UI::Menu_Options::Options_HDR_C;
+    using Options_LensFlare_C = ::Game::UI::Menu_Options::Options_LensFlare_C;
+    using Options_Reflex_C = ::Game::UI::Menu_Options::Options_Reflex_C;
+    using Options_Scalability_AntiAliasingType_C = ::Game::UI::Menu_Options::Options_Scalability_AntiAliasingType_C;
+    using Options_Scalability_AntiAliasing_C = ::Game::UI::Menu_Options::Options_Scalability_AntiAliasing_C;
+    using Options_Scalability_Effects_C = ::Game::UI::Menu_Options::Options_Scalability_Effects_C;
+    using Options_Scalability_Overall_C = ::Game::UI::Menu_Options::Options_Scalability_Overall_C;
+    using Options_Scalability_PostProcess_C = ::Game::UI::Menu_Options::Options_Scalability_PostProcess_C;
+    using Options_Scalability_Ragdolls_C = ::Game::UI::Menu_Options::Options_Scalability_Ragdolls_C;
+    using Options_Scalability_Shadows_C = ::Game::UI::Menu_Options::Options_Scalability_Shadows_C;
+    using Options_Scalability_Textures_C = ::Game::UI::Menu_Options::Options_Scalability_Textures_C;
+    using Options_Scalability_ViewDistance_C = ::Game::UI::Menu_Options::Options_Scalability_ViewDistance_C;
+    using Options_VSync_C = ::Game::UI::Menu_Options::Options_VSync_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonWithControls_C* Basic_ButtonWithControls;
     Basic_Option_C* Basic_MaxFPS;
@@ -106,4 +106,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_GFX_Steam_C = Game::UI::Menu_Options::Options_Tab_GFX_Steam_C;
+using Options_Tab_GFX_Steam_C = ::Game::UI::Menu_Options::Options_Tab_GFX_Steam_C;

@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_CrossHair_Basic02_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_Basic02_C;
+using HUD_CrossHair_Basic02_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_Basic02_C;

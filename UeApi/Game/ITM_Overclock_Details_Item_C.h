@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Overclocks
 
-using ITM_Overclock_Details_Item_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_Item_C;
+using ITM_Overclock_Details_Item_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_Item_C;

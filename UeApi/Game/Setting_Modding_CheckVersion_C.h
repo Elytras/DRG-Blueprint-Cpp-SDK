@@ -17,7 +17,7 @@ class Setting_Modding_CheckVersion_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/Setting_Modding_CheckVersion", "Setting_Modding_CheckVersion_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     float TextWidth;
@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using Setting_Modding_CheckVersion_C = Game::UI::Menu_EscapeMenu::Modding::Setting_Modding_CheckVersion_C;
+using Setting_Modding_CheckVersion_C = ::Game::UI::Menu_EscapeMenu::Modding::Setting_Modding_CheckVersion_C;

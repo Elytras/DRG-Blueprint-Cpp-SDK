@@ -37,4 +37,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms
 
-using BP_BigCrystal_C = Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_BigCrystal_C;
+using BP_BigCrystal_C = ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_BigCrystal_C;

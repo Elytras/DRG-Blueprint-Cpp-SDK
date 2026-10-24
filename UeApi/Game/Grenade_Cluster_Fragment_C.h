@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Cluster {
 
-class Grenade_Cluster_Fragment_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_HE_Base_C
+class Grenade_Cluster_Fragment_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_HE_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Cluster/Grenade_Cluster_Fragment", "Grenade_Cluster_Fragment_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;Damage;StaticMesh;UpgradableGear;Widget";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Cluster
 
-using Grenade_Cluster_Fragment_C = Game::WeaponsNTools::Grenades::Cluster::Grenade_Cluster_Fragment_C;
+using Grenade_Cluster_Fragment_C = ::Game::WeaponsNTools::Grenades::Cluster::Grenade_Cluster_Fragment_C;

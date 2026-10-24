@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Webbed_C = Game::UI::ScreenOverlays::ScreenOverlay_Webbed_C;
+using ScreenOverlay_Webbed_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Webbed_C;

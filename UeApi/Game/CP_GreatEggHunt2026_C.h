@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_GreatEggHunt2026_C = Game::GameElements::Campaign::CP_GreatEggHunt2026_C;
+using CP_GreatEggHunt2026_C = ::Game::GameElements::Campaign::CP_GreatEggHunt2026_C;

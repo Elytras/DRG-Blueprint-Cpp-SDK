@@ -17,7 +17,7 @@ class ITM_MissionComplete_DeepDiveHeader_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_DeepDiveHeader", "ITM_MissionComplete_DeepDiveHeader_C");
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* Data_CodeName;
     class UTextBlock* Data_Region;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_MissionComplete_DeepDiveHeader_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_DeepDiveHeader_C;
+using ITM_MissionComplete_DeepDiveHeader_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_DeepDiveHeader_C;

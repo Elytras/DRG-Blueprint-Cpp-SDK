@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace LineCutter {
 
-class BP_PersistentExplosionEffect_LineCutter_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_PersistentExplosionEffect_LineCutter_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LineCutter/BP_PersistentExplosionEffect_LineCutter", "BP_PersistentExplosionEffect_LineCutter_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "AcidCloud;Sphere;StatusEffectTrigger";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using BP_PersistentExplosionEffect_LineCutter_C = Game::WeaponsNTools::LineCutter::BP_PersistentExplosionEffect_LineCutter_C;
+using BP_PersistentExplosionEffect_LineCutter_C = ::Game::WeaponsNTools::LineCutter::BP_PersistentExplosionEffect_LineCutter_C;

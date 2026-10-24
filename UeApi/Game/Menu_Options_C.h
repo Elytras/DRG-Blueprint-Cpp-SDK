@@ -23,20 +23,20 @@ class Menu_Options_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Menu_Options", "Menu_Options_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using Basic_ButtonTab_C = Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using Options_ControlLayout_C = Game::UI::Menu_Options::Options_ControlLayout_C;
-    using Options_Tab_Audio_C = Game::UI::Menu_Options::Options_Tab_Audio_C;
-    using Options_Tab_Controls_C = Game::UI::Menu_Options::Options_Tab_Controls_C;
-    using Options_Tab_Crossplay_C = CrossPlatform::Options_Tab_Crossplay_C;
-    using Options_Tab_GFX_C = Game::UI::Menu_Options::Options_Tab_GFX_C;
-    using Options_Tab_Gameplay_C = Game::UI::Menu_Options::Options_Tab_Gameplay_C;
-    using Options_Tab_Privacy_C = Game::UI::Menu_Options::Options_Tab_Privacy_C;
-    using Options_Tab_Saves_C = Game::UI::Menu_Options::Options_Tab_Saves_C;
-    using Options_Tab_UI_C = Game::UI::Menu_Options::Options_Tab_UI_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using Basic_ButtonTab_C = ::Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using Options_ControlLayout_C = ::Game::UI::Menu_Options::Options_ControlLayout_C;
+    using Options_Tab_Audio_C = ::Game::UI::Menu_Options::Options_Tab_Audio_C;
+    using Options_Tab_Controls_C = ::Game::UI::Menu_Options::Options_Tab_Controls_C;
+    using Options_Tab_Crossplay_C = ::CrossPlatform::Options_Tab_Crossplay_C;
+    using Options_Tab_GFX_C = ::Game::UI::Menu_Options::Options_Tab_GFX_C;
+    using Options_Tab_Gameplay_C = ::Game::UI::Menu_Options::Options_Tab_Gameplay_C;
+    using Options_Tab_Privacy_C = ::Game::UI::Menu_Options::Options_Tab_Privacy_C;
+    using Options_Tab_Saves_C = ::Game::UI::Menu_Options::Options_Tab_Saves_C;
+    using Options_Tab_UI_C = ::Game::UI::Menu_Options::Options_Tab_UI_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonCutCorner_C* Basic_ButtonCutCorner;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
@@ -92,4 +92,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Menu_Options_C = Game::UI::Menu_Options::Menu_Options_C;
+using Menu_Options_C = ::Game::UI::Menu_Options::Menu_Options_C;

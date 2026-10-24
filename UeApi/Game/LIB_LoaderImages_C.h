@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::Maps::UILevels::ScreenShots
 
-using LIB_LoaderImages_C = Game::Maps::UILevels::ScreenShots::LIB_LoaderImages_C;
+using LIB_LoaderImages_C = ::Game::Maps::UILevels::ScreenShots::LIB_LoaderImages_C;

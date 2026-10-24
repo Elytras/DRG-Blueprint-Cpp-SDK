@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Critters { namespace Maggot {
 
-class ENE_Maggot_Green1_C : public Game::Critters::Maggot::ENE_Maggot_C
+class ENE_Maggot_Green1_C : public ::Game::Critters::Maggot::ENE_Maggot_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_Green1", "ENE_Maggot_Green1_C");
@@ -27,4 +27,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using ENE_Maggot_Green1_C = Game::Critters::Maggot::ENE_Maggot_Green1_C;
+using ENE_Maggot_Green1_C = ::Game::Critters::Maggot::ENE_Maggot_Green1_C;

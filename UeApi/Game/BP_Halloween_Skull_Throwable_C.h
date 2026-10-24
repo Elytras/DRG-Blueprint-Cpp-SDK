@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween
 
-using BP_Halloween_Skull_Throwable_C = Game::GameElements::Holidays::Halloween::BP_Halloween_Skull_Throwable_C;
+using BP_Halloween_Skull_Throwable_C = ::Game::GameElements::Holidays::Halloween::BP_Halloween_Skull_Throwable_C;

@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::GatlingGun
 
-using GatlingGun_Overheat_C = Game::WeaponsNTools::GatlingGun::GatlingGun_Overheat_C;
+using GatlingGun_Overheat_C = ::Game::WeaponsNTools::GatlingGun::GatlingGun_Overheat_C;

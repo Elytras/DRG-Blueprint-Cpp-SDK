@@ -47,4 +47,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RandomFire
 
-using ABP_RandomFire_Module_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RandomFire::ABP_RandomFire_Module_C;
+using ABP_RandomFire_Module_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RandomFire::ABP_RandomFire_Module_C;

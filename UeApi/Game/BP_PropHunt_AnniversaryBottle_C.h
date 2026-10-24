@@ -37,4 +37,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Anniversary
 
-using BP_PropHunt_AnniversaryBottle_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Anniversary::BP_PropHunt_AnniversaryBottle_C;
+using BP_PropHunt_AnniversaryBottle_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Anniversary::BP_PropHunt_AnniversaryBottle_C;

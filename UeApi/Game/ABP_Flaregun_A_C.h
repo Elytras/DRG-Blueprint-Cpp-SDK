@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::FlareGun
 
-using ABP_Flaregun_A_C = Game::WeaponsNTools::FlareGun::ABP_Flaregun_A_C;
+using ABP_Flaregun_A_C = ::Game::WeaponsNTools::FlareGun::ABP_Flaregun_A_C;

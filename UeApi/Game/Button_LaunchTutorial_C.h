@@ -17,7 +17,7 @@ class Button_LaunchTutorial_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Button_LaunchTutorial", "Button_LaunchTutorial_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonCutCorner_C* Basic_ButtonCutCorner;
     void ExecuteUbergraph_Button_LaunchTutorial(int EntryPoint);
@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Button_LaunchTutorial_C = Game::UI::Menu_MinersManual::Button_LaunchTutorial_C;
+using Button_LaunchTutorial_C = ::Game::UI::Menu_MinersManual::Button_LaunchTutorial_C;

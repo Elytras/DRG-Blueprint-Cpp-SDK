@@ -22,8 +22,8 @@ class UI_Facility_Objective_PowerStation_C : public UOptionalObjectiveWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/UI/UI_Facility_Objective_PowerStation", "UI_Facility_Objective_PowerStation_C");
-    using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimArrows;
     UE_READONLY class UWidgetAnimation* AnimHackingStopped;
@@ -73,4 +73,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::UI
 
-using UI_Facility_Objective_PowerStation_C = Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_PowerStation_C;
+using UI_Facility_Objective_PowerStation_C = ::Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_PowerStation_C;

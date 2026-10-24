@@ -64,6 +64,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_1";
         static constexpr const char* TCFDamage__UeScsNode = "b1f4e55571f4ef4ab9ba556a68a490e8";
         static constexpr const char* Audio__UeScsNode = "201b9d2c9b2a3f41bf758d8b37d70a21";
         static constexpr const char* AoEDamageSphere__UeScsNode = "ab3cded04cfd2242ad6b163fc15722c6";
@@ -83,4 +84,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using PRJ_ChargedBlasterShot_C = Game::WeaponsNTools::ChargeBlaster::PRJ_ChargedBlasterShot_C;
+using PRJ_ChargedBlasterShot_C = ::Game::WeaponsNTools::ChargeBlaster::PRJ_ChargedBlasterShot_C;

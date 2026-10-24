@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::Character::CharacterSelection
 
-using BP_MisComp_FXspawner_C = Game::Character::CharacterSelection::BP_MisComp_FXspawner_C;
+using BP_MisComp_FXspawner_C = ::Game::Character::CharacterSelection::BP_MisComp_FXspawner_C;

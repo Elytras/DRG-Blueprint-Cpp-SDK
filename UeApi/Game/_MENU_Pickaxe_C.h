@@ -27,13 +27,13 @@ class _MENU_Pickaxe_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Pickaxe/_MENU_Pickaxe", "_MENU_Pickaxe_C");
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
-    using ITM_Pickaxe_Slot_C = Game::UI::Menu_Pickaxe::ITM_Pickaxe_Slot_C;
-    using ITM_Wardrobe_ClassSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
-    using ITM_Wardrobe_ItemSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_RandomizeLoadoutWithUndo_C = Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+    using ITM_Pickaxe_Slot_C = ::Game::UI::Menu_Pickaxe::ITM_Pickaxe_Slot_C;
+    using ITM_Wardrobe_ClassSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
+    using ITM_Wardrobe_ItemSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_RandomizeLoadoutWithUndo_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_Wardrobe_ClassSelector_C* ClassSelector;
     ITM_Wardrobe_ItemSelector_C* ItemSelectorLeft;
@@ -76,4 +76,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Pickaxe
 
-using _MENU_Pickaxe_C = Game::UI::Menu_Pickaxe::_MENU_Pickaxe_C;
+using _MENU_Pickaxe_C = ::Game::UI::Menu_Pickaxe::_MENU_Pickaxe_C;

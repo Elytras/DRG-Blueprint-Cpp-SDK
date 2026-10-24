@@ -20,8 +20,8 @@ class ITM_Season_Level_C : public USeasonLevelWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Season_Level", "ITM_Season_Level_C");
-    using ITM_SeasonReward_Owned_C = Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using ITM_SeasonReward_Owned_C = ::Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ClaimSpecialGlow;
     UE_READONLY class UWidgetAnimation* ClaimNormalGlow;
@@ -54,4 +54,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_Level_C = Game::UI::Menu_Seasons::ITM_Season_Level_C;
+using ITM_Season_Level_C = ::Game::UI::Menu_Seasons::ITM_Season_Level_C;

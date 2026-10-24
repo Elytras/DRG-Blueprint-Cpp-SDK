@@ -58,4 +58,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RockEnemies
 
-using PRJ_PowerupSphere_C = Game::GameElements::GameEvents::RockEnemies::PRJ_PowerupSphere_C;
+using PRJ_PowerupSphere_C = ::Game::GameElements::GameEvents::RockEnemies::PRJ_PowerupSphere_C;

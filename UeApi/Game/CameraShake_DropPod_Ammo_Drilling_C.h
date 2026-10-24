@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_DropPod_Ammo_Drilling_C = Game::Character::Camera::CameraShakes::CameraShake_DropPod_Ammo_Drilling_C;
+using CameraShake_DropPod_Ammo_Drilling_C = ::Game::Character::Camera::CameraShakes::CameraShake_DropPod_Ammo_Drilling_C;

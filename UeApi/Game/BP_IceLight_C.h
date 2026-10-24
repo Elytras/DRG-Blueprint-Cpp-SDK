@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::IceLights
 
-using BP_IceLight_C = Game::LevelElements::RoomObjects::Helpers::IceLights::BP_IceLight_C;
+using BP_IceLight_C = ::Game::LevelElements::RoomObjects::Helpers::IceLights::BP_IceLight_C;

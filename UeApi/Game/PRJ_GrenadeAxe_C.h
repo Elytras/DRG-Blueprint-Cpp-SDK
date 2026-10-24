@@ -75,4 +75,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe
 
-using PRJ_GrenadeAxe_C = Game::WeaponsNTools::Grenades::Axe::PRJ_GrenadeAxe_C;
+using PRJ_GrenadeAxe_C = ::Game::WeaponsNTools::Grenades::Axe::PRJ_GrenadeAxe_C;

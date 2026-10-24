@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::Enemies::HydraWeed::Assets
 
-using ABP_HydraWeed_RegenPod_C = Game::Enemies::HydraWeed::Assets::ABP_HydraWeed_RegenPod_C;
+using ABP_HydraWeed_RegenPod_C = ::Game::Enemies::HydraWeed::Assets::ABP_HydraWeed_RegenPod_C;

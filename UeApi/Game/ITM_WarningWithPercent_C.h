@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using ITM_WarningWithPercent_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_WarningWithPercent_C;
+using ITM_WarningWithPercent_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_WarningWithPercent_C;

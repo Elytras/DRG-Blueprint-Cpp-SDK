@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_HealthDamage_C = Game::UI::ScreenOverlays::ScreenOverlay_HealthDamage_C;
+using ScreenOverlay_HealthDamage_C = ::Game::UI::ScreenOverlays::ScreenOverlay_HealthDamage_C;

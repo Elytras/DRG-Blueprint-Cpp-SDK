@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using BTService_GetOffsetMoveToTargetLocation_C = Game::WeaponsNTools::Grenades::FriendlyShredders::BTService_GetOffsetMoveToTargetLocation_C;
+using BTService_GetOffsetMoveToTargetLocation_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::BTService_GetOffsetMoveToTargetLocation_C;

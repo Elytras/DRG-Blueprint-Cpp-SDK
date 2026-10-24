@@ -23,8 +23,8 @@ class WND_TreeOfVanity_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_TreeOfVanity", "WND_TreeOfVanity_C");
-    using ITM_TreeOfVanity_Node_C = Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;
-    using Itm_TreeOfVanity_NodeConnection_C = Game::UI::Menu_Seasons::Itm_TreeOfVanity_NodeConnection_C;
+    using ITM_TreeOfVanity_Node_C = ::Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;
+    using Itm_TreeOfVanity_NodeConnection_C = ::Game::UI::Menu_Seasons::Itm_TreeOfVanity_NodeConnection_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UCanvasPanel* Canvas_Connections;
     class UCanvasPanel* CanvasPanel_Nodes;
@@ -91,4 +91,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_TreeOfVanity_C = Game::UI::Menu_Seasons::WND_TreeOfVanity_C;
+using WND_TreeOfVanity_C = ::Game::UI::Menu_Seasons::WND_TreeOfVanity_C;

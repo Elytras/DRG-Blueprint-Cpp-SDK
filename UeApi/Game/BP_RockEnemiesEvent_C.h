@@ -57,6 +57,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Game/GameElements/GameEvents/RewardDispenser/BP_RewardFrame.BP_RewardFrame_C StartEventObject:StartEventObject_BP_RewardFrame_C_CAT;/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.SpecialEventUsableComponent StartEventObject:StartEventObject_BP_RewardFrame_C_CAT:EventUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C Starter3_GEN_VARIABLE:Starter3_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C Starter4_GEN_VARIABLE:Starter4_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C Starter5_GEN_VARIABLE:Starter5_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Game/GameElements/GameEvents/EventStart/BP_MultiStageEventStarter.BP_MultiStageEventStarter_C Starter6_GEN_VARIABLE:Starter6_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT;/Script/Engine.SceneComponent Starter3_GEN_VARIABLE:Starter3_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/Engine.SceneComponent Starter4_GEN_VARIABLE:Starter4_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/Engine.SceneComponent Starter5_GEN_VARIABLE:Starter5_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/Engine.SceneComponent Starter6_GEN_VARIABLE:Starter6_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Root;/Script/FSD.SingleUsableComponent Starter3_GEN_VARIABLE:Starter3_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent Starter4_GEN_VARIABLE:Starter4_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent Starter5_GEN_VARIABLE:Starter5_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable;/Script/FSD.SingleUsableComponent Starter6_GEN_VARIABLE:Starter6_GEN_VARIABLE_BP_MultiStageEventStarter_C_CAT:Usable";
         static constexpr const char* SprinklerMiscG_1_Cue__UeScsNode = "57629b4973697b4ca5fc6491c0a5dda1";
         static constexpr const char* Box1__UeScsNode = "d4ff76c72e32f444978d773a3c6b899c";
         static constexpr const char* Box__UeScsNode = "73c5f6e76b979e4da9c9e305f3e8af03";
@@ -79,4 +80,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RockEnemies
 
-using BP_RockEnemiesEvent_C = Game::GameElements::GameEvents::RockEnemies::BP_RockEnemiesEvent_C;
+using BP_RockEnemiesEvent_C = ::Game::GameElements::GameEvents::RockEnemies::BP_RockEnemiesEvent_C;

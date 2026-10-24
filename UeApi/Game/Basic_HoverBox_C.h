@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_HoverBox_C = Game::UI::Art::WidgetParts::Basic_HoverBox_C;
+using Basic_HoverBox_C = ::Game::UI::Art::WidgetParts::Basic_HoverBox_C;

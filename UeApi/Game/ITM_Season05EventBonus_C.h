@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season05EventBonus_C = Game::UI::Menu_Seasons::ITM_Season05EventBonus_C;
+using ITM_Season05EventBonus_C = ::Game::UI::Menu_Seasons::ITM_Season05EventBonus_C;

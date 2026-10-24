@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::Critters::FesterFlea::Flea
 
-using AIC_Flea_C = Game::Critters::FesterFlea::Flea::AIC_Flea_C;
+using AIC_Flea_C = ::Game::Critters::FesterFlea::Flea::AIC_Flea_C;

@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::GameElements::Plague
 
-using CSG_MakePlaguieMaterialDead_C = Game::GameElements::Plague::CSG_MakePlaguieMaterialDead_C;
+using CSG_MakePlaguieMaterialDead_C = ::Game::GameElements::Plague::CSG_MakePlaguieMaterialDead_C;

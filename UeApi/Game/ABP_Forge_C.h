@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::CharacterStructure::Forge
 
-using ABP_Forge_C = Game::CharacterStructure::Forge::ABP_Forge_C;
+using ABP_Forge_C = ::Game::CharacterStructure::Forge::ABP_Forge_C;

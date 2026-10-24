@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery
 
-using BP_RefineryLanding_C = Game::GameElements::Objectives::Refinery::BP_RefineryLanding_C;
+using BP_RefineryLanding_C = ::Game::GameElements::Objectives::Refinery::BP_RefineryLanding_C;

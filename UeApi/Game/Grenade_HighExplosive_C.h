@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace HighExplosive {
 
-class Grenade_HighExplosive_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_HE_Base_C
+class Grenade_HighExplosive_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_HE_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/HighExplosive/Grenade_HighExplosive", "Grenade_HighExplosive_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Damage;Explosion;StaticMesh;UpgradableGear";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::HighExplosive
 
-using Grenade_HighExplosive_C = Game::WeaponsNTools::Grenades::HighExplosive::Grenade_HighExplosive_C;
+using Grenade_HighExplosive_C = ::Game::WeaponsNTools::Grenades::HighExplosive::Grenade_HighExplosive_C;

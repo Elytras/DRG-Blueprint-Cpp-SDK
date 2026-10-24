@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_CareTaker_WakeUp_02_C = Game::Character::Camera::CameraShakes::CameraShake_CareTaker_WakeUp_02_C;
+using CameraShake_CareTaker_WakeUp_02_C = ::Game::Character::Camera::CameraShakes::CameraShake_CareTaker_WakeUp_02_C;

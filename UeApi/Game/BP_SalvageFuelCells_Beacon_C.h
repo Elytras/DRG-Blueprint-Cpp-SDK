@@ -72,4 +72,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_SalvageFuelCells_Beacon_C = Game::GameElements::Objectives::Salvage::BP_SalvageFuelCells_Beacon_C;
+using BP_SalvageFuelCells_Beacon_C = ::Game::GameElements::Objectives::Salvage::BP_SalvageFuelCells_Beacon_C;

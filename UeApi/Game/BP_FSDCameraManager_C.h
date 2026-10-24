@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::Character::Camera
 
-using BP_FSDCameraManager_C = Game::Character::Camera::BP_FSDCameraManager_C;
+using BP_FSDCameraManager_C = ::Game::Character::Camera::BP_FSDCameraManager_C;

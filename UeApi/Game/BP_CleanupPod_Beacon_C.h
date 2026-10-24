@@ -12,7 +12,7 @@ class UTerrainPlacementComponent;
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace Plague { namespace CleaningPod {
 
-class BP_CleanupPod_Beacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_CleanupPod_Beacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/BP_CleanupPod_Beacon", "BP_CleanupPod_Beacon_C");
@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SimpleObjectInfo;Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
         static constexpr const char* UberGraphFrame_BP_CleanupPod_Beacon_C__UeName = "UberGraphFrame";
         static constexpr const char* terrainPlacement__UeScsNode = "34302ab890a6d240a6547023add263b1";
     };
@@ -30,4 +31,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using BP_CleanupPod_Beacon_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_Beacon_C;
+using BP_CleanupPod_Beacon_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_Beacon_C;

@@ -87,6 +87,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/FuelLineBuilder/BP_FuelLine_StartPoint.BP_FuelLine_StartPoint_C FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_StartPoint_C_CAT;/Script/FSD.FuelLineStartUsable FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_StartPoint_C_CAT:UsableStartFuelLine;/Script/FSD.OutlineComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_StartPoint_C_CAT:OutlineComponent;/Script/Engine.SceneComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_StartPoint_C_CAT:DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_StartPoint_C_CAT:ObjectInfo;/Script/Engine.StaticMeshComponent FuelLineConnector_GEN_VARIABLE:FuelLineConnector_GEN_VARIABLE_BP_FuelLine_StartPoint_C_CAT:StaticMesh";
         static constexpr const char* TerrainDetect3__UeScsNode = "e2c6e361d749cc43bf248cbe5d17c169";
         static constexpr const char* TerrainDetect2__UeScsNode = "689fe8ea5502ad4ebcd68037de2558e8";
         static constexpr const char* TerrainDetect1__UeScsNode = "5ee164a8315445478dcdeb2731621a43";
@@ -116,4 +117,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_Salvage_FuelPod_C = Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPod_C;
+using BP_Salvage_FuelPod_C = ::Game::GameElements::Objectives::Salvage::BP_Salvage_FuelPod_C;

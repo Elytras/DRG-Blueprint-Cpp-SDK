@@ -24,9 +24,9 @@ class ITM_OnlineRestricted_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/System/ITM_OnlineRestricted", "ITM_OnlineRestricted_C");
-    using Basic_FlatGradientButton_C = Game::UI::Art::WidgetParts::Basic_FlatGradientButton_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using Basic_FlatGradientButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatGradientButton_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_MenuBackground_C* Background;
     class UTextBlock* BlockingPriviligeDebug;
@@ -67,4 +67,4 @@ private:
 
 }}}   // namespace Game::UI::System
 
-using ITM_OnlineRestricted_C = Game::UI::System::ITM_OnlineRestricted_C;
+using ITM_OnlineRestricted_C = ::Game::UI::System::ITM_OnlineRestricted_C;

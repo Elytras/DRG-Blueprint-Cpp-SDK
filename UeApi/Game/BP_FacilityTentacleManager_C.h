@@ -18,7 +18,7 @@ class BP_FacilityTentacleManager_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_FacilityTentacleManager", "BP_FacilityTentacleManager_C");
-    using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    using ENE_FacilityTentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* SkeletalMesh;
     class USceneComponent* DefaultSceneRoot;
@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_FacilityTentacleManager_C = Game::GameElements::Objectives::Facility::BP_FacilityTentacleManager_C;
+using BP_FacilityTentacleManager_C = ::Game::GameElements::Objectives::Facility::BP_FacilityTentacleManager_C;

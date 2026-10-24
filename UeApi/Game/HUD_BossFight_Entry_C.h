@@ -18,15 +18,15 @@ namespace Game { namespace UI { namespace MainOnscreenHUD { namespace EnemyHealt
 
 namespace Game { namespace UI { namespace MainOnscreenHUD { namespace BossFight {
 
-class HUD_BossFight_Entry_C : public Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C
+class HUD_BossFight_Entry_C : public ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_BossFight_Entry", "HUD_BossFight_Entry_C");
-    using HUD_EnemyTargeting_AfflictionBox_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_AfflictionBox_C;
-    using HUD_EnemyTargeting_Temperature_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;
-    using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
-    using ITM_SegmentedArmorBar_C = Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedArmorBar_C;
-    using ITM_SegmentedHealthBar_C = Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedHealthBar_C;
+    using HUD_EnemyTargeting_AfflictionBox_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_AfflictionBox_C;
+    using HUD_EnemyTargeting_Temperature_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Temperature_C;
+    using ITM_BossFightContainer_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
+    using ITM_SegmentedArmorBar_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedArmorBar_C;
+    using ITM_SegmentedHealthBar_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_SegmentedHealthBar_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_BossFight_Entry_C;
     UE_READONLY class UWidgetAnimation* ArmorFullAnim;
     UE_READONLY class UWidgetAnimation* ArmorHitAnim;
@@ -60,4 +60,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using HUD_BossFight_Entry_C = Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_Entry_C;
+using HUD_BossFight_Entry_C = ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_Entry_C;

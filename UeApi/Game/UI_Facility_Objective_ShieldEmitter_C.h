@@ -21,8 +21,8 @@ class UI_Facility_Objective_ShieldEmitter_C : public UOptionalObjectiveWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/UI/UI_Facility_Objective_ShieldEmitter", "UI_Facility_Objective_ShieldEmitter_C");
-    using BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C = Game::GameElements::Objectives::Facility::BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C = ::Game::GameElements::Objectives::Facility::BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimArrows;
     UI_ImageTinted_C* Img_Arrow_Left;
@@ -45,4 +45,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::UI
 
-using UI_Facility_Objective_ShieldEmitter_C = Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_ShieldEmitter_C;
+using UI_Facility_Objective_ShieldEmitter_C = ::Game::GameElements::Objectives::Facility::UI::UI_Facility_Objective_ShieldEmitter_C;

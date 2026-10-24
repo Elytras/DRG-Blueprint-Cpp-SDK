@@ -12,7 +12,7 @@ class UDamageComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Escort {
 
-class BP_CrystalTrapDorette_C : public Game::GameElements::Objectives::Escort::BP_CrystalTrap_C
+class BP_CrystalTrapDorette_C : public ::Game::GameElements::Objectives::Escort::BP_CrystalTrap_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_CrystalTrapDorette", "BP_CrystalTrapDorette_C");
@@ -25,6 +25,8 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "RadioactiveGlowingCrystals_Noise_Cue;EscortMuleDamage;MeshCarver;PointLight;SK_heartStoneTrap_01;DamageTrigger;SM_Spike1;SM_Spike2;SM_Spike3";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus AoE_Push_Damage_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* UberGraphFrame_BP_CrystalTrapDorette_C__UeName = "UberGraphFrame";
         static constexpr const char* AoE_Push_Damage__UeScsNode = "d96f92c89312be45bc0cc4b107365863";
         static constexpr const char* On_Fully_Grown__UeName = "On Fully Grown";
@@ -33,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_CrystalTrapDorette_C = Game::GameElements::Objectives::Escort::BP_CrystalTrapDorette_C;
+using BP_CrystalTrapDorette_C = ::Game::GameElements::Objectives::Escort::BP_CrystalTrapDorette_C;

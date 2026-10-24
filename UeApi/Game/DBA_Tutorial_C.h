@@ -37,6 +37,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_Rocks01_GEN_VARIABLE:DebrisCarved_1;/Script/FSD.DebrisMesh D_Anemonemonies_GEN_VARIABLE:DebrisMesh_650;/Script/FSD.DebrisMesh D_CobWebs_GEN_VARIABLE:DebrisMesh_56;/Script/FSD.DebrisMesh D_EggPlant_GEN_VARIABLE:DebrisMesh_594;/Script/FSD.DebrisMesh D_Grass_GEN_VARIABLE:DebrisMesh_68;/Script/FSD.DebrisMesh D_Rubble_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Stalactites_GEN_VARIABLE:DebrisMesh_118;/Script/FSD.DebrisMesh D_SulfurDeposits_GEN_VARIABLE:DebrisMesh_6;/Script/FSD.DebrisMesh DebrisNoise_GEN_VARIABLE:DebrisMesh_5;/Script/FSD.DebrisMesh DebrisUniform_GEN_VARIABLE:DebrisMesh_4;/Script/FSD.DebrisPositioning I_CreepyEyes_Tunnels-DISABLED_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_GlowingBlueCrystals_Cave-DISABLED_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_GlowingBlueCrystals_Tunnels_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SulfurChimneys_Caves_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* D_Stalactites__UeScsNode = "f826baada3e977419dc2b5ceebc70382";
         static constexpr const char* D_CobWebs__UeScsNode = "5be039028c05444f9a7af6971827fa4c";
         static constexpr const char* C_Rocks01__UeScsNode = "741730a276897b4eb07ce86c49f28c7a";
@@ -61,4 +62,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::_Tutorial
 
-using DBA_Tutorial_C = Game::Landscape::Biomes::Biomes_Ingame::_Tutorial::DBA_Tutorial_C;
+using DBA_Tutorial_C = ::Game::Landscape::Biomes::Biomes_Ingame::_Tutorial::DBA_Tutorial_C;

@@ -13,11 +13,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace DeepS
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_DeepScan_Drillevator_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_DeepScan_Drillevator_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_DeepScan_Drillevator", "EWC_DeepScan_Drillevator_C");
-    using BP_DeepScan_Drillevator_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_Drillevator_C;
+    using BP_DeepScan_Drillevator_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScan_Drillevator_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_DeepScan_Drillevator_C;
     float DelayBetweenWaves;
     int WaveCountConstantPressure;
@@ -41,4 +41,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_DeepScan_Drillevator_C = Game::Enemies::Waves::WaveControllers::EWC_DeepScan_Drillevator_C;
+using EWC_DeepScan_Drillevator_C = ::Game::Enemies::Waves::WaveControllers::EWC_DeepScan_Drillevator_C;

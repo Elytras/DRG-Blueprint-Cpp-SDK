@@ -20,4 +20,4 @@ public:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using BP_EnemySpawnerOwner_C = Game::Enemies::EnemySpawner::BP_EnemySpawnerOwner_C;
+using BP_EnemySpawnerOwner_C = ::Game::Enemies::EnemySpawner::BP_EnemySpawnerOwner_C;

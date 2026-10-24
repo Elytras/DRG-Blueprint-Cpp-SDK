@@ -14,7 +14,7 @@ class UProjectileAttackComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Lobber {
 
-class ENE_Spider_Lobber_C : public Game::Enemies::Spider::Lobber::ENE_Spider_Lobber_Base_C
+class ENE_Spider_Lobber_C : public ::Game::Enemies::Spider::Lobber::ENE_Spider_Lobber_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Lobber/ENE_Spider_Lobber", "ENE_Spider_Lobber_C");
@@ -29,6 +29,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack ProjectileAttack_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.BallisticProjectileAttack ProjectileAttackNarrow_GEN_VARIABLE:BallisticProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_Lobber_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileAttackNarrow__UeScsNode = "34d06eb3a5bca14a9ad56827c530b896";
         static constexpr const char* ProjectileAttack__UeScsNode = "cbae92cb2a775b48854a47c5e8d5067b";
@@ -37,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using ENE_Spider_Lobber_C = Game::Enemies::Spider::Lobber::ENE_Spider_Lobber_C;
+using ENE_Spider_Lobber_C = ::Game::Enemies::Spider::Lobber::ENE_Spider_Lobber_C;

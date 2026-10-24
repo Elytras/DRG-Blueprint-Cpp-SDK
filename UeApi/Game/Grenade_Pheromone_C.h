@@ -13,7 +13,7 @@ class AFSDPlayerState;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Pheromone {
 
-class Grenade_Pheromone_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Pheromone_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Pheromone/Grenade_Pheromone", "Grenade_Pheromone_C");
@@ -30,10 +30,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Pheromone_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Pheromone
 
-using Grenade_Pheromone_C = Game::WeaponsNTools::Grenades::Pheromone::Grenade_Pheromone_C;
+using Grenade_Pheromone_C = ::Game::WeaponsNTools::Grenades::Pheromone::Grenade_Pheromone_C;

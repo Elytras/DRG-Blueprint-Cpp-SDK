@@ -13,7 +13,7 @@ class URetainerBox;
 
 namespace Game { namespace UI { namespace _GlobalAssets { namespace MaskedImage {
 
-class UI_GradientMasked_Canvas_C : public Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Base_C
+class UI_GradientMasked_Canvas_C : public ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Base_C
 {
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/MaskedImage/UI_GradientMasked_Canvas", "UI_GradientMasked_Canvas_C");
@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_GradientMasked_Canvas_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Canvas_C;
+using UI_GradientMasked_Canvas_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Canvas_C;

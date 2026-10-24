@@ -43,4 +43,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::RivalTech::Shredder::Assets
 
-using ABP_Shredder_C = Game::Enemies::RivalTech::Shredder::Assets::ABP_Shredder_C;
+using ABP_Shredder_C = ::Game::Enemies::RivalTech::Shredder::Assets::ABP_Shredder_C;

@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindDiagonalPointTowardsTarget_C = Game::AI::Tasks::TSK_FindDiagonalPointTowardsTarget_C;
+using TSK_FindDiagonalPointTowardsTarget_C = ::Game::AI::Tasks::TSK_FindDiagonalPointTowardsTarget_C;

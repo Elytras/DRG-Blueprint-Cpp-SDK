@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Grunt
 
-using SER_GetEnemyTarget_Chance_C = Game::Enemies::Spider::Grunt::SER_GetEnemyTarget_Chance_C;
+using SER_GetEnemyTarget_Chance_C = ::Game::Enemies::Spider::Grunt::SER_GetEnemyTarget_Chance_C;

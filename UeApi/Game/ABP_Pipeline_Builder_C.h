@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder
 
-using ABP_Pipeline_Builder_C = Game::WeaponsNTools::PipelineBuilder::ABP_Pipeline_Builder_C;
+using ABP_Pipeline_Builder_C = ::Game::WeaponsNTools::PipelineBuilder::ABP_Pipeline_Builder_C;

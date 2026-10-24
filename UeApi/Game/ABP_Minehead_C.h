@@ -72,4 +72,4 @@ public:
 
 }}}   // namespace Game::LevelElements::Minehead
 
-using ABP_Minehead_C = Game::LevelElements::Minehead::ABP_Minehead_C;
+using ABP_Minehead_C = ::Game::LevelElements::Minehead::ABP_Minehead_C;

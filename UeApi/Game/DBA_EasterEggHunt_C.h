@@ -21,6 +21,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisPositioning I_Easter_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* I_Easter__UeScsNode = "5efc41119e2022469a22acc33f4020ac";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "ebf0b1eed9654e44b29afc6db69e7178";
     };
@@ -28,4 +29,4 @@ private:
 
 }}}}   // namespace Game::Game::Events::GreatEggHunt
 
-using DBA_EasterEggHunt_C = Game::Game::Events::GreatEggHunt::DBA_EasterEggHunt_C;
+using DBA_EasterEggHunt_C = ::Game::Game::Events::GreatEggHunt::DBA_EasterEggHunt_C;

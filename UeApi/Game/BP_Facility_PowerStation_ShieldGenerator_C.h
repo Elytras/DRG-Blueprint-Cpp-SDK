@@ -19,7 +19,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace ShieldGenerator {
 
-class BP_Facility_PowerStation_ShieldGenerator_C : public Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C
+class BP_Facility_PowerStation_ShieldGenerator_C : public ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/ShieldGenerator/BP_Facility_PowerStation_ShieldGenerator", "BP_Facility_PowerStation_ShieldGenerator_C");
@@ -46,6 +46,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "ConnectionBeam;PathfinderCollision;ICH-DefaultSceneRoot;SimpleObjectInfo;SkeletalMesh";
         static constexpr const char* UberGraphFrame_BP_Facility_PowerStation_ShieldGenerator_C__UeName = "UberGraphFrame";
         static constexpr const char* ActiveParticles1__UeScsNode = "ca10076f721ff848b918710bd18a9c43";
         static constexpr const char* PathfinderCollision1__UeScsNode = "d573bb7c600a3145bc6fa17ec3bba3f8";
@@ -65,4 +66,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::ShieldGenerator
 
-using BP_Facility_PowerStation_ShieldGenerator_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_ShieldGenerator_C;
+using BP_Facility_PowerStation_ShieldGenerator_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_ShieldGenerator_C;

@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_HazPlus_Row_C = Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;
+using UI_HazPlus_Row_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Row_C;

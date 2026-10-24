@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_InputSpecific_Widget_C = Game::UI::Art::WidgetParts::Basic_InputSpecific_Widget_C;
+using Basic_InputSpecific_Widget_C = ::Game::UI::Art::WidgetParts::Basic_InputSpecific_Widget_C;

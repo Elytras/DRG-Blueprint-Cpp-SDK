@@ -14,7 +14,7 @@ class USphereComponent;
 
 namespace Game { namespace GameElements { namespace KPI { namespace Perks {
 
-class BP_SeeYouInHellField_C : public Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_Base_C
+class BP_SeeYouInHellField_C : public ::Game::WeaponsNTools::Grenades::IFG::BP_Grenade_IFG_Area_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_SeeYouInHellField", "BP_SeeYouInHellField_C");
@@ -27,6 +27,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Audio;ColdCloud;StatusEffectTrigger";
         static constexpr const char* UberGraphFrame_BP_SeeYouInHellField_C__UeName = "UberGraphFrame";
         static constexpr const char* FearSphere__UeScsNode = "aa3e42096d9ddd4cabdb840585392ed1";
     };
@@ -34,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_SeeYouInHellField_C = Game::GameElements::KPI::Perks::BP_SeeYouInHellField_C;
+using BP_SeeYouInHellField_C = ::Game::GameElements::KPI::Perks::BP_SeeYouInHellField_C;

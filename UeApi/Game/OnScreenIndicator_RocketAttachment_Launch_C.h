@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_RocketAttachment_Launch_C = Game::UI::OnScreenIndicators::OnScreenIndicator_RocketAttachment_Launch_C;
+using OnScreenIndicator_RocketAttachment_Launch_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_RocketAttachment_Launch_C;

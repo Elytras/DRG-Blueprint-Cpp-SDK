@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Tutorial
 
-using BP_TutorialDroppodLocation_C = Game::LevelElements::Tutorial::BP_TutorialDroppodLocation_C;
+using BP_TutorialDroppodLocation_C = ::Game::LevelElements::Tutorial::BP_TutorialDroppodLocation_C;

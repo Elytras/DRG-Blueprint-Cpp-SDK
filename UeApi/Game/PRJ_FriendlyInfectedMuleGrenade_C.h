@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace MuleInfected {
 
-class PRJ_FriendlyInfectedMuleGrenade_C : public Game::Enemies::MuleInfected::PRJ_InfectedMuleGrenade_C
+class PRJ_FriendlyInfectedMuleGrenade_C : public ::Game::Enemies::MuleInfected::PRJ_InfectedMuleGrenade_C
 {
 public:
     UE_CLASS("/Game/Enemies/MuleInfected/PRJ_FriendlyInfectedMuleGrenade", "PRJ_FriendlyInfectedMuleGrenade_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage";
     };
 };
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using PRJ_FriendlyInfectedMuleGrenade_C = Game::Enemies::MuleInfected::PRJ_FriendlyInfectedMuleGrenade_C;
+using PRJ_FriendlyInfectedMuleGrenade_C = ::Game::Enemies::MuleInfected::PRJ_FriendlyInfectedMuleGrenade_C;

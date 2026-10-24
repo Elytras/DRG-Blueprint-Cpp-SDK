@@ -35,4 +35,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using ABP_MorkiteRefineryPod_Base_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::ABP_MorkiteRefineryPod_Base_C;
+using ABP_MorkiteRefineryPod_Base_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::ABP_MorkiteRefineryPod_Base_C;

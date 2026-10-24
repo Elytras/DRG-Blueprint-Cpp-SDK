@@ -27,7 +27,7 @@ class BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_Mainfacility_ShieldEmitter_ForceFieldProjector", "BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C");
-    using BP_ShieldBattery_C = Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
+    using BP_ShieldBattery_C = ::Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     class UChildActorComponent* RHologram;
@@ -76,6 +76,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/Facility/BP_MainFacility_ShieldEmitter_Hologram.BP_MainFacility_ShieldEmitter_Hologram_C LHologram_GEN_VARIABLE:LHologram_GEN_VARIABLE_BP_MainFacility_ShieldEmitter_Hologram_C_CAT;/Game/GameElements/Objectives/Facility/BP_MainFacility_ShieldEmitter_Hologram.BP_MainFacility_ShieldEmitter_Hologram_C RHologram_GEN_VARIABLE:RHologram_GEN_VARIABLE_BP_MainFacility_ShieldEmitter_Hologram_C_CAT";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "6286cbf13fc2a849984185fc4d2a3d14";
         static constexpr const char* RHologram__UeScsNode = "8efae0623688094ea46b10bd6f46e090";
         static constexpr const char* LHologram__UeScsNode = "67e617dc5dd5a844bd58a8adf33ed7a3";
@@ -100,4 +101,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C = Game::GameElements::Objectives::Facility::BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C;
+using BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C = ::Game::GameElements::Objectives::Facility::BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C;

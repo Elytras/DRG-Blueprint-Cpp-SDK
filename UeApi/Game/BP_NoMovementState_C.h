@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_NoMovementState_C = Game::Character::States::BP_NoMovementState_C;
+using BP_NoMovementState_C = ::Game::Character::States::BP_NoMovementState_C;

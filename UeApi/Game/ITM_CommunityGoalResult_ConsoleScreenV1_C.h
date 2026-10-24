@@ -22,7 +22,7 @@ class ITM_CommunityGoalResult_ConsoleScreenV1_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalResult_ConsoleScreenV1", "ITM_CommunityGoalResult_ConsoleScreenV1_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UOverlay* BronzeImage;
     class UOverlay* GoldImage;
@@ -52,4 +52,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalResult_ConsoleScreenV1_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_ConsoleScreenV1_C;
+using ITM_CommunityGoalResult_ConsoleScreenV1_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_ConsoleScreenV1_C;

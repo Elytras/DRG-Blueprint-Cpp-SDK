@@ -24,15 +24,15 @@ class Screen_DiscordScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/Screen_DiscordScreen", "Screen_DiscordScreen_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
-    using ITM_CommunityGoalFactionSelection_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalFactionSelection_C;
-    using ITM_CommunityGoalProgress_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalProgress_C;
-    using ITM_CommunityGoalRecruitment_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_C;
-    using ITM_CommunityGoalResult_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_C;
-    using ITM_CommunityGoalReward_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalReward_C;
-    using ITM_CommunityGoal_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using ITM_CommunityGoalFactionSelection_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalFactionSelection_C;
+    using ITM_CommunityGoalProgress_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalProgress_C;
+    using ITM_CommunityGoalRecruitment_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_C;
+    using ITM_CommunityGoalResult_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_C;
+    using ITM_CommunityGoalReward_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalReward_C;
+    using ITM_CommunityGoal_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     Basic_ButtonScalable_C* ClaimRewardButton;
@@ -101,4 +101,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using Screen_DiscordScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Screen_DiscordScreen_C;
+using Screen_DiscordScreen_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Screen_DiscordScreen_C;

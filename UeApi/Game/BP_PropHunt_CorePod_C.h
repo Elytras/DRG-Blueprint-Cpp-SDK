@@ -55,4 +55,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05
 
-using BP_PropHunt_CorePod_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05::BP_PropHunt_CorePod_C;
+using BP_PropHunt_CorePod_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05::BP_PropHunt_CorePod_C;

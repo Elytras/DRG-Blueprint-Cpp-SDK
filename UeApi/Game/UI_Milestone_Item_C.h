@@ -29,8 +29,8 @@ class UI_Milestone_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Milestone_Item", "UI_Milestone_Item_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_Milestone_Tier_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_Milestone_Tier_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ClaimIdle;
     UE_READONLY class UWidgetAnimation* AnimHover;
@@ -92,4 +92,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Milestone_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Item_C;
+using UI_Milestone_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Item_C;

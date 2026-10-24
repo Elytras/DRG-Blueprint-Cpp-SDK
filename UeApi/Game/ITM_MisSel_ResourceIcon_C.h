@@ -18,7 +18,7 @@ class ITM_MisSel_ResourceIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_ResourceIcon", "ITM_MisSel_ResourceIcon_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UTextBlock* DATA_ResourceName;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_ResourceIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ResourceIcon_C;
+using ITM_MisSel_ResourceIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_ResourceIcon_C;

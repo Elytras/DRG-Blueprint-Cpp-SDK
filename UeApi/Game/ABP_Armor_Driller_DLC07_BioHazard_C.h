@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using ABP_Armor_Driller_DLC07_BioHazard_C = Game::Character::Vanity2::Armor::ABP_Armor_Driller_DLC07_BioHazard_C;
+using ABP_Armor_Driller_DLC07_BioHazard_C = ::Game::Character::Vanity2::Armor::ABP_Armor_Driller_DLC07_BioHazard_C;

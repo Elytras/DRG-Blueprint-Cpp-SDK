@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using AFL_Frozen_HydraWeed_Shooter_C = Game::Enemies::HydraWeed::AFL_Frozen_HydraWeed_Shooter_C;
+using AFL_Frozen_HydraWeed_Shooter_C = ::Game::Enemies::HydraWeed::AFL_Frozen_HydraWeed_Shooter_C;

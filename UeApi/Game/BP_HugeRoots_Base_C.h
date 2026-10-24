@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::WoodBranches
 
-using BP_HugeRoots_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::WoodBranches::BP_HugeRoots_Base_C;
+using BP_HugeRoots_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::WoodBranches::BP_HugeRoots_Base_C;

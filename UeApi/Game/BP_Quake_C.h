@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves
 
-using BP_Quake_C = Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::BP_Quake_C;
+using BP_Quake_C = ::Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::BP_Quake_C;

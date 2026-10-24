@@ -32,4 +32,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::SearchResults
 
-using ModioSearchResultsViewWidget_C = Modio::UI::Browser::Views::SearchResults::ModioSearchResultsViewWidget_C;
+using ModioSearchResultsViewWidget_C = ::Modio::UI::Browser::Views::SearchResults::ModioSearchResultsViewWidget_C;

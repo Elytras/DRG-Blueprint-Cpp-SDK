@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using AIC_Maggot_C = Game::Critters::Maggot::AIC_Maggot_C;
+using AIC_Maggot_C = ::Game::Critters::Maggot::AIC_Maggot_C;

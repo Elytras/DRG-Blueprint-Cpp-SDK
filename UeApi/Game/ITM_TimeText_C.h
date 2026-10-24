@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using ITM_TimeText_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
+using ITM_TimeText_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;

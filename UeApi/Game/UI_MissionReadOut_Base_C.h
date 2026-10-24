@@ -19,7 +19,7 @@ class UI_MissionReadOut_Base_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionReadouts/UI_MissionReadOut_Base", "UI_MissionReadOut_Base_C");
-    using LCD_MissionReadout_NoMissionSelected_C = Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_NoMissionSelected_C;
+    using LCD_MissionReadout_NoMissionSelected_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_NoMissionSelected_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UNamedSlot* ContentSlot;
     LCD_MissionReadout_NoMissionSelected_C* LCD_MissionReadout_NoMissionSelected;
@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts
 
-using UI_MissionReadOut_Base_C = Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
+using UI_MissionReadOut_Base_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;

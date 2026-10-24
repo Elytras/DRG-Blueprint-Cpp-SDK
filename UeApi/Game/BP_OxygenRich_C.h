@@ -24,4 +24,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::OxygenRich
 
-using BP_OxygenRich_C = Game::GameElements::Missions::Mutators::OxygenRich::BP_OxygenRich_C;
+using BP_OxygenRich_C = ::Game::GameElements::Missions::Mutators::OxygenRich::BP_OxygenRich_C;

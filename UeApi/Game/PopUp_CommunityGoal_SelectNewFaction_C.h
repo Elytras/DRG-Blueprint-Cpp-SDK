@@ -20,10 +20,10 @@ class PopUp_CommunityGoal_SelectNewFaction_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/PopUp_CommunityGoal_SelectNewFaction", "PopUp_CommunityGoal_SelectNewFaction_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_FactionSelect_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionSelect_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_FactionSelect_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionSelect_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     BlurBackground_C* BlurBackground;
@@ -45,4 +45,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using PopUp_CommunityGoal_SelectNewFaction_C = Game::UI::HUD_SpaceRig::CommunityTerminal::PopUp_CommunityGoal_SelectNewFaction_C;
+using PopUp_CommunityGoal_SelectNewFaction_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::PopUp_CommunityGoal_SelectNewFaction_C;

@@ -18,7 +18,7 @@ class USkeletalMeshComponent;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace PlagueMeteor {
 
-class BP_PlagueHeart_C : public Game::GameElements::Resources::Embedded::Gems::BP_Depositable_C
+class BP_PlagueHeart_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Depositable_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_PlagueHeart", "BP_PlagueHeart_C");
@@ -41,6 +41,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;Carriable;SimpleObjectInfo;Sphere;TerrainScannerMesh";
         static constexpr const char* UberGraphFrame_BP_PlagueHeart_C__UeName = "UberGraphFrame";
         static constexpr const char* Niagara_Spores__UeName = "Niagara Spores";
         static constexpr const char* Niagara_Spores__UeScsNode = "bffa94b85993674f956efa209698fabe";
@@ -54,4 +55,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_PlagueHeart_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueHeart_C;
+using BP_PlagueHeart_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueHeart_C;

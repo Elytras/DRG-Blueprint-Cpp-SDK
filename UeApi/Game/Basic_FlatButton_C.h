@@ -51,4 +51,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_FlatButton_C = Game::UI::Art::WidgetParts::Basic_FlatButton_C;
+using Basic_FlatButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatButton_C;

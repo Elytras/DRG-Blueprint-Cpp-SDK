@@ -62,4 +62,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;

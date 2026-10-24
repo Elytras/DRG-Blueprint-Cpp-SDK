@@ -16,7 +16,7 @@ class UProjectileAttackComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class ENE_FacilityTurret_Sniper_C : public Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Base_C
+class ENE_FacilityTurret_Sniper_C : public ::Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Sniper", "ENE_FacilityTurret_Sniper_C");
@@ -41,6 +41,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Box;Carver;StaticMesh;TerrainPlacement";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack SniperAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Sniper_C__UeName = "UberGraphFrame";
         static constexpr const char* AoECollision__UeScsNode = "427999ed0c1a2c499e58f2123bb10257";
         static constexpr const char* BeamLockOn__UeScsNode = "e2f4b4ac16b02e44889545c81f1fde25";
@@ -55,4 +57,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using ENE_FacilityTurret_Sniper_C = Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Sniper_C;
+using ENE_FacilityTurret_Sniper_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Sniper_C;

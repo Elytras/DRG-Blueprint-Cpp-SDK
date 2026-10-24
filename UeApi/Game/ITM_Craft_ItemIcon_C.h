@@ -49,4 +49,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using ITM_Craft_ItemIcon_C = Game::UI::Menu_Crafting::ITM_Craft_ItemIcon_C;
+using ITM_Craft_ItemIcon_C = ::Game::UI::Menu_Crafting::ITM_Craft_ItemIcon_C;

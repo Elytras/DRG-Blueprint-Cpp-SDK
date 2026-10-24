@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace RocketRifle {
 
-class BP_MicroRocket_HE_C : public Game::WeaponsNTools::RocketRifle::BP_MicroRocket_Base_C
+class BP_MicroRocket_HE_C : public ::Game::WeaponsNTools::RocketRifle::BP_MicroRocket_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RocketRifle/BP_MicroRocket_HE", "BP_MicroRocket_HE_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::RocketRifle
 
-using BP_MicroRocket_HE_C = Game::WeaponsNTools::RocketRifle::BP_MicroRocket_HE_C;
+using BP_MicroRocket_HE_C = ::Game::WeaponsNTools::RocketRifle::BP_MicroRocket_HE_C;

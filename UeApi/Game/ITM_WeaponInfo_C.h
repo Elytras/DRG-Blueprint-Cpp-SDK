@@ -28,10 +28,10 @@ class ITM_WeaponInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_WeaponInfo", "ITM_WeaponInfo_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using ITM_Loadout_UpgradeBar_C = Game::UI::Menu_Loadout::ITM_Loadout_UpgradeBar_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using ITM_Loadout_UpgradeBar_C = ::Game::UI::Menu_Loadout::ITM_Loadout_UpgradeBar_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner_165;
     class UImage* GearIcon_BG;
@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_WeaponInfo_C = Game::UI::Menu_EscapeMenu::ITM_WeaponInfo_C;
+using ITM_WeaponInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_WeaponInfo_C;

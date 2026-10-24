@@ -24,12 +24,12 @@ class Bp_StartMenu_PlayerController_C : public AFSDPlayerControllerBase
 {
 public:
     UE_CLASS("/Game/Game/StartMenu/Bp_StartMenu_PlayerController", "Bp_StartMenu_PlayerController_C");
-    using UI_Disconnect_Screen_Base_C = Game::UI::Menu_StartScreen::UI_Disconnect_Screen_Base_C;
-    using UI_InfoScreen_C = Game::UI::Menu_StartScreen::UI_InfoScreen_C;
-    using UI_InfoScreen_Xbox_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Xbox_C;
-    using UI_StartScreen_C = Game::UI::Menu_StartScreen::UI_StartScreen_C;
-    using UI_SteamLoading_C = Game::UI::System::UI_SteamLoading_C;
-    using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+    using UI_Disconnect_Screen_Base_C = ::Game::UI::Menu_StartScreen::UI_Disconnect_Screen_Base_C;
+    using UI_InfoScreen_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_C;
+    using UI_InfoScreen_Xbox_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Xbox_C;
+    using UI_StartScreen_C = ::Game::UI::Menu_StartScreen::UI_StartScreen_C;
+    using UI_SteamLoading_C = ::Game::UI::System::UI_SteamLoading_C;
+    using WND_Joining_C = ::Game::UI::Menu_ServerList::WND_Joining_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_StartScreen_C* StartScreen;
     class UWidget* ActiveScreen;
@@ -44,12 +44,12 @@ public:
     TArray<class UNiagaraComponent*> SpawnedParticles;
     bool Force_Intro_Screen;
     FString Current_Id;
+    void OnModdedSaveCancelled();
     void ShouldPromptUserToDeleteMainSaves(bool& Should, TArray<class UFSDSaveGame*>& outMainSaves);
     void Prompt_Delete_Main_Save(TArray<class UFSDSaveGame*>& Saves);
-    void OnModdedSaveCancelled();
     void ModdingSavegameCheck(bool& WaitForCallback);
-    UE_PURE bool ShouldSkipInfoScreen();
     void JoinInvite();
+    UE_PURE bool ShouldSkipInfoScreen();
     void OpenGameLevel();
     void DetectControllerMovement(float A);
     void DetectMouseMovement(float A);
@@ -57,9 +57,6 @@ public:
     void InpActEvt_AnyKey_K2Node_InputKeyEvent_0(FKey Key);
     void OnFailure_04D1FF9C451C776CE714DD955E807494();
     void OnSuccess_04D1FF9C451C776CE714DD955E807494(FBlueprintSessionResult Result);
-    void OnFailure_A64EBA1647E90DBDF8B6D99030E3E0D5();
-    void OnSuccess_A64EBA1647E90DBDF8B6D99030E3E0D5();
-    void OnLoaded_5BEC96E84FBD6958EFD47D9A09FD96A9(TSubclassOf<class UObject> Loaded);
     void OnLoaded_7CBF629D4A9F4FCA015C509A1D6E8A59(class UObject* Loaded);
     void OnLoaded_7CBF629D4A9F4FCA015C509AA9E0F545(class UObject* Loaded);
     void OnLoaded_7CBF629D4A9F4FCA015C509A49AA71BD(class UObject* Loaded);
@@ -88,6 +85,9 @@ public:
     void Check_Info_Screen_Guid();
     void Reset_Shown_Info_Screen();
     void ExecuteUbergraph_Bp_StartMenu_PlayerController(int EntryPoint);
+    void OnFailure_A64EBA1647E90DBDF8B6D99030E3E0D5();
+    void OnSuccess_A64EBA1647E90DBDF8B6D99030E3E0D5();
+    void OnLoaded_5BEC96E84FBD6958EFD47D9A09FD96A9(TSubclassOf<class UObject> Loaded);
 private:
     struct UeMarkers
     {
@@ -103,4 +103,4 @@ private:
 
 }}}   // namespace Game::Game::StartMenu
 
-using Bp_StartMenu_PlayerController_C = Game::Game::StartMenu::Bp_StartMenu_PlayerController_C;
+using Bp_StartMenu_PlayerController_C = ::Game::Game::StartMenu::Bp_StartMenu_PlayerController_C;

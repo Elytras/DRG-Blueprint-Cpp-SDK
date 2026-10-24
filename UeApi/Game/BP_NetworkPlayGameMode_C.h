@@ -13,12 +13,12 @@ class UClass;
 
 namespace Game { namespace Game {
 
-class BP_NetworkPlayGameMode_C : public Game::Game::BP_GameMode_C
+class BP_NetworkPlayGameMode_C : public ::Game::Game::BP_GameMode_C
 {
 public:
     UE_CLASS("/Game/Game/BP_NetworkPlayGameMode", "BP_NetworkPlayGameMode_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_NetworkPlayGameMode_C;
-    class UClass* GetDefaultPawnClassForController(class AController* InController_GetDefaultPawnClassForController);
+    class UClass* GetDefaultPawnClassForController(class AController* InController);
     void RecieveAllDwarvesDown();
     void ExecuteUbergraph_BP_NetworkPlayGameMode(int EntryPoint);
 private:
@@ -31,4 +31,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_NetworkPlayGameMode_C = Game::Game::BP_NetworkPlayGameMode_C;
+using BP_NetworkPlayGameMode_C = ::Game::Game::BP_NetworkPlayGameMode_C;

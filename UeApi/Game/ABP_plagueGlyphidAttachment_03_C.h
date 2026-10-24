@@ -24,4 +24,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes
 
-using ABP_plagueGlyphidAttachment_03_C = Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_plagueGlyphidAttachment_03_C;
+using ABP_plagueGlyphidAttachment_03_C = ::Game::GameElements::Plague::Spacerig_Deco::BioTank_Anims::SkeletalMeshes::ABP_plagueGlyphidAttachment_03_C;

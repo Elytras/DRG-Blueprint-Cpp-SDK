@@ -27,16 +27,16 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens {
 
-class LoreScreen_Creatures_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_Creatures_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_Creatures", "LoreScreen_Creatures_C");
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using ITM_DragRotateCharacterShowroom_C = Game::UI::Menu_MinersManual::ITM_DragRotateCharacterShowroom_C;
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_CombatTip_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_CombatTip_C;
-    using Lore_Container_CreatureInfo_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_CreatureInfo_C;
-    using Lore_Content_Statistics_C = Game::UI::Menu_MinersManual::Lore_Content_Statistics_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using ITM_DragRotateCharacterShowroom_C = ::Game::UI::Menu_MinersManual::ITM_DragRotateCharacterShowroom_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_CombatTip_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_CombatTip_C;
+    using Lore_Container_CreatureInfo_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_CreatureInfo_C;
+    using Lore_Content_Statistics_C = ::Game::UI::Menu_MinersManual::Lore_Content_Statistics_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Creatures_C;
     UE_READONLY class UWidgetAnimation* CreatureFadeOut;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox_116;
@@ -76,4 +76,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_Creatures_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Creatures_C;
+using LoreScreen_Creatures_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Creatures_C;

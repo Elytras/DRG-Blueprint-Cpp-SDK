@@ -46,4 +46,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots
 
-using UI_JettyBoots_Character_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Character_C;
+using UI_JettyBoots_Character_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Character_C;

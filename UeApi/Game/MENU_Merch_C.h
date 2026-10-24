@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::MENU_Merch
 
-using MENU_Merch_C = Game::UI::MENU_Merch::MENU_Merch_C;
+using MENU_Merch_C = ::Game::UI::MENU_Merch::MENU_Merch_C;

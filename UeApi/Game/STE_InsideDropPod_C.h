@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using STE_InsideDropPod_C = Game::LevelElements::Droppod::STE_InsideDropPod_C;
+using STE_InsideDropPod_C = ::Game::LevelElements::Droppod::STE_InsideDropPod_C;

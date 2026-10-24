@@ -12,7 +12,7 @@ class USpotLightComponent;
 
 namespace Game { namespace Art { namespace BasicArtAssets { namespace Tech {
 
-class BP_RotatingSpotlight01_C : public Game::Art::BasicArtAssets::Tech::BP_RadarDish01_C
+class BP_RotatingSpotlight01_C : public ::Game::Art::BasicArtAssets::Tech::BP_RadarDish01_C
 {
 public:
     UE_CLASS("/Game/Art/BasicArtAssets/Tech/BP_RotatingSpotlight01", "BP_RotatingSpotlight01_C");
@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Mesh_Dish;Mesh_Light";
         static constexpr const char* UberGraphFrame_BP_RotatingSpotlight01_C__UeName = "UberGraphFrame";
         static constexpr const char* SpotLight__UeScsNode = "2404a577e51d1d4082b1b74db3bd90aa";
     };
@@ -30,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Art::BasicArtAssets::Tech
 
-using BP_RotatingSpotlight01_C = Game::Art::BasicArtAssets::Tech::BP_RotatingSpotlight01_C;
+using BP_RotatingSpotlight01_C = ::Game::Art::BasicArtAssets::Tech::BP_RotatingSpotlight01_C;

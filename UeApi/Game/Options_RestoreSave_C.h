@@ -16,7 +16,7 @@ class Options_RestoreSave_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_RestoreSave", "Options_RestoreSave_C");
-    using Basic_ButtonWithControls_C = Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
+    using Basic_ButtonWithControls_C = ::Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonWithControls_C* Basic_ButtonWithControls;
     void ExecuteUbergraph_Options_RestoreSave(int EntryPoint);
@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_RestoreSave_C = Game::UI::Menu_Options::Options_RestoreSave_C;
+using Options_RestoreSave_C = ::Game::UI::Menu_Options::Options_RestoreSave_C;

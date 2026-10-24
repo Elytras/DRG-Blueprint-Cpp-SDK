@@ -20,7 +20,7 @@ class Widget_DropPod_AltitudeMeter_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/Widget_DropPod_AltitudeMeter", "Widget_DropPod_AltitudeMeter_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AlertBlink;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_AltitudeMeter_C = Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;
+using Widget_DropPod_AltitudeMeter_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_AltitudeMeter_C;

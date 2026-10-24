@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using STE_ContrailBase_CoilGun_C = Game::WeaponsNTools::CoilGun::STE_ContrailBase_CoilGun_C;
+using STE_ContrailBase_CoilGun_C = ::Game::WeaponsNTools::CoilGun::STE_ContrailBase_CoilGun_C;

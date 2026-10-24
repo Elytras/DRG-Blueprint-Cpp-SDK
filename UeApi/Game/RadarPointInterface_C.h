@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Radar
 
-using RadarPointInterface_C = Game::UI::Radar::RadarPointInterface_C;
+using RadarPointInterface_C = ::Game::UI::Radar::RadarPointInterface_C;

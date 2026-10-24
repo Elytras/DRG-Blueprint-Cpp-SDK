@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Escort { namespace DrillDozer {
 
-class BP_CaterpillarTrack_Left_C : public Game::GameElements::Objectives::Escort::DrillDozer::BP_CaterpillarTrack_C
+class BP_CaterpillarTrack_Left_C : public ::Game::GameElements::Objectives::Escort::DrillDozer::BP_CaterpillarTrack_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/DrillDozer/BP_CaterpillarTrack_Left", "BP_CaterpillarTrack_Left_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "InstancedMeshOnSpline1;SkeletalMesh";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::DrillDozer
 
-using BP_CaterpillarTrack_Left_C = Game::GameElements::Objectives::Escort::DrillDozer::BP_CaterpillarTrack_Left_C;
+using BP_CaterpillarTrack_Left_C = ::Game::GameElements::Objectives::Escort::DrillDozer::BP_CaterpillarTrack_Left_C;

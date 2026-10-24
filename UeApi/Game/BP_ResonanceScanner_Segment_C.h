@@ -54,4 +54,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_ResonanceScanner_Segment_C = Game::GameElements::Objectives::DeepScan::BP_ResonanceScanner_Segment_C;
+using BP_ResonanceScanner_Segment_C = ::Game::GameElements::Objectives::DeepScan::BP_ResonanceScanner_Segment_C;

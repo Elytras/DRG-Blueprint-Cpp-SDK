@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Ossiran::PitJaw::Assets
 
-using ABP_Ossiran_PitJaw_C = Game::Enemies::Ossiran::PitJaw::Assets::ABP_Ossiran_PitJaw_C;
+using ABP_Ossiran_PitJaw_C = ::Game::Enemies::Ossiran::PitJaw::Assets::ABP_Ossiran_PitJaw_C;

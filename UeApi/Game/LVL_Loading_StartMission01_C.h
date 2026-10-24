@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::Maps::UILevels
 
-using LVL_Loading_StartMission01_C = Game::Maps::UILevels::LVL_Loading_StartMission01_C;
+using LVL_Loading_StartMission01_C = ::Game::Maps::UILevels::LVL_Loading_StartMission01_C;

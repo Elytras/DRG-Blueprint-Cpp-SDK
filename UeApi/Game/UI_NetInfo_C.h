@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_NetInfo_C = Game::UI::Global_UI_Elements::UI_NetInfo_C;
+using UI_NetInfo_C = ::Game::UI::Global_UI_Elements::UI_NetInfo_C;

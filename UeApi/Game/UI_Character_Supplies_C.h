@@ -17,7 +17,7 @@ class UI_Character_Supplies_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/UI_Character_Supplies", "UI_Character_Supplies_C");
-    using ITM_SupplyBar_C = Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
+    using ITM_SupplyBar_C = ::Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_SupplyBar_C* ITM_SupplyBar_Ammo;
     ITM_SupplyBar_C* ITM_SupplyBar_Health;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_Character_Supplies_C = Game::UI::Global_UI_Elements::UI_Character_Supplies_C;
+using UI_Character_Supplies_C = ::Game::UI::Global_UI_Elements::UI_Character_Supplies_C;

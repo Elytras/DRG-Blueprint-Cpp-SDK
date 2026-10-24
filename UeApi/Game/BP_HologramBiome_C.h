@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using BP_HologramBiome_C = Game::UI::Menu_MissionSelectionMK3::BP_HologramBiome_C;
+using BP_HologramBiome_C = ::Game::UI::Menu_MissionSelectionMK3::BP_HologramBiome_C;

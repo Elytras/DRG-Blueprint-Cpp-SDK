@@ -17,4 +17,4 @@ public:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole
 
-using AFE_FP_MagicHoleMovement_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::AFE_FP_MagicHoleMovement_C;
+using AFE_FP_MagicHoleMovement_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::AFE_FP_MagicHoleMovement_C;

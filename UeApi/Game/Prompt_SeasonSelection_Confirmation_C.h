@@ -22,8 +22,8 @@ class Prompt_SeasonSelection_Confirmation_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/SeasonSelector/Prompt_SeasonSelection_Confirmation", "Prompt_SeasonSelection_Confirmation_C");
-    using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
-    using UI_Season_Popup_C = Game::UI::Menu_Seasons::UI_Season_Popup_C;
+    using ITM_Special_ButtonCutCorner_C = ::Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
+    using UI_Season_Popup_C = ::Game::UI::Menu_Seasons::UI_Season_Popup_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShow;
     ITM_Special_ButtonCutCorner_C* NoBtn;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Seasons::SeasonSelector
 
-using Prompt_SeasonSelection_Confirmation_C = Game::UI::Menu_Seasons::SeasonSelector::Prompt_SeasonSelection_Confirmation_C;
+using Prompt_SeasonSelection_Confirmation_C = ::Game::UI::Menu_Seasons::SeasonSelector::Prompt_SeasonSelection_Confirmation_C;

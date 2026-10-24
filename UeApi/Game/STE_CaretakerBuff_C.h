@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using STE_CaretakerBuff_C = Game::GameElements::Objectives::Facility::Caretaker::STE_CaretakerBuff_C;
+using STE_CaretakerBuff_C = ::Game::GameElements::Objectives::Facility::Caretaker::STE_CaretakerBuff_C;

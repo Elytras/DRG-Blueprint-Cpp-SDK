@@ -78,4 +78,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::WallSaw
 
-using BP_WallSaw_C = Game::WeaponsNTools::Grenades::WallSaw::BP_WallSaw_C;
+using BP_WallSaw_C = ::Game::WeaponsNTools::Grenades::WallSaw::BP_WallSaw_C;

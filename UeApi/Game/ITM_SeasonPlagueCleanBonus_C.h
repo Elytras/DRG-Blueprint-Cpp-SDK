@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonPlagueCleanBonus_C = Game::UI::Menu_Seasons::ITM_SeasonPlagueCleanBonus_C;
+using ITM_SeasonPlagueCleanBonus_C = ::Game::UI::Menu_Seasons::ITM_SeasonPlagueCleanBonus_C;

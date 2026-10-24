@@ -13,7 +13,7 @@ class AActor;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace DeepDive {
 
-class OBJ_DD_AlienEggs_C : public Game::GameElements::Objectives::OBJ_Gather_Gems_Base_C
+class OBJ_DD_AlienEggs_C : public ::Game::GameElements::Objectives::OBJ_Gather_Gems_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_AlienEggs", "OBJ_DD_AlienEggs_C");
@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepDive
 
-using OBJ_DD_AlienEggs_C = Game::GameElements::Objectives::DeepDive::OBJ_DD_AlienEggs_C;
+using OBJ_DD_AlienEggs_C = ::Game::GameElements::Objectives::DeepDive::OBJ_DD_AlienEggs_C;

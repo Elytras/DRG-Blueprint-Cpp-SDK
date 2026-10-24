@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using ABP_Spider_Swarmer_C = Game::Enemies::Spider::Swarmer::ABP_Spider_Swarmer_C;
+using ABP_Spider_Swarmer_C = ::Game::Enemies::Spider::Swarmer::ABP_Spider_Swarmer_C;

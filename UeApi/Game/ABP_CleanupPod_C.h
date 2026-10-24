@@ -32,4 +32,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using ABP_CleanupPod_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::ABP_CleanupPod_C;
+using ABP_CleanupPod_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::ABP_CleanupPod_C;

@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Lure
 
-using LureTarget_HealthReadout_C = Game::WeaponsNTools::Grenades::Lure::LureTarget_HealthReadout_C;
+using LureTarget_HealthReadout_C = ::Game::WeaponsNTools::Grenades::Lure::LureTarget_HealthReadout_C;

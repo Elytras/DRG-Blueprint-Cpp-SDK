@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_ReturnToSpacerig_C = Game::UI::Menu_Cheats::Cheat_ReturnToSpacerig_C;
+using Cheat_ReturnToSpacerig_C = ::Game::UI::Menu_Cheats::Cheat_ReturnToSpacerig_C;

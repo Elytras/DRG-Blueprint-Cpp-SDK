@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SimulatePlayerCount_C = Game::UI::Menu_Cheats::Cheat_SimulatePlayerCount_C;
+using Cheat_SimulatePlayerCount_C = ::Game::UI::Menu_Cheats::Cheat_SimulatePlayerCount_C;

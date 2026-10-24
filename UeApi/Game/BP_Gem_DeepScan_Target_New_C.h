@@ -34,7 +34,7 @@ class BP_Gem_DeepScan_Target_New_C : public ADeepScanHiddenCrystal
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_Gem_DeepScan_Target_New", "BP_Gem_DeepScan_Target_New_C");
-    using BP_ResonanceScanner_EndPoint_C = Game::GameElements::Objectives::DeepScan::BP_ResonanceScanner_EndPoint_C;
+    using BP_ResonanceScanner_EndPoint_C = ::Game::GameElements::Objectives::DeepScan::BP_ResonanceScanner_EndPoint_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_ScannerCrystal_Ambiance1;
     class UTerrainDetectComponent* TerrainDetect4;
@@ -89,6 +89,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/DeepScan/BP_ResonanceScanner_EndPoint.BP_ResonanceScanner_EndPoint_C End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_ResonanceScanner_EndPoint_C_CAT;/Script/FSD.FuelLineConnectPoint End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_ResonanceScanner_EndPoint_C_CAT:ConnectPoint;/Script/Engine.SceneComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_ResonanceScanner_EndPoint_C_CAT:RootComponent;/Script/FSD.SingleUsableComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_ResonanceScanner_EndPoint_C_CAT:ConstructUsable;/Script/Engine.SplineComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_ResonanceScanner_EndPoint_C_CAT:ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent End1_GEN_VARIABLE:End1_GEN_VARIABLE_BP_ResonanceScanner_EndPoint_C_CAT:StaticMesh";
         static constexpr const char* NS_ScannerCrystal_Ambiance1__UeScsNode = "fb1d57ef7475a945aa39b585ab88e3e6";
         static constexpr const char* TerrainDetect4__UeScsNode = "fe313ab556c13a4cb0e9c011a887efb3";
         static constexpr const char* TerrainDetect1__UeScsNode = "826081c835264e4197fb6d95fae6f59f";
@@ -120,4 +121,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_Gem_DeepScan_Target_New_C = Game::GameElements::Objectives::DeepScan::BP_Gem_DeepScan_Target_New_C;
+using BP_Gem_DeepScan_Target_New_C = ::Game::GameElements::Objectives::DeepScan::BP_Gem_DeepScan_Target_New_C;

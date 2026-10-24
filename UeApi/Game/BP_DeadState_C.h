@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::Character::States
 
-using BP_DeadState_C = Game::Character::States::BP_DeadState_C;
+using BP_DeadState_C = ::Game::Character::States::BP_DeadState_C;

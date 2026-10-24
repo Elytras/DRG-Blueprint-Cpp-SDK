@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_JumpBoots_C = Game::GameElements::KPI::Perks::BP_JumpBoots_C;
+using BP_JumpBoots_C = ::Game::GameElements::KPI::Perks::BP_JumpBoots_C;

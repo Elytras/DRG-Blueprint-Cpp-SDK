@@ -15,7 +15,7 @@ class UTimelineComponent;
 
 namespace Game { namespace WeaponsNTools { namespace GrenadeLauncher {
 
-class BP_MiniNuke_RadiationCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_MiniNuke_RadiationCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GrenadeLauncher/BP_MiniNuke_RadiationCloud", "BP_MiniNuke_RadiationCloud_C");
@@ -34,6 +34,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "AcidCloud;Sphere;StatusEffectTrigger";
         static constexpr const char* UberGraphFrame_BP_MiniNuke_RadiationCloud_C__UeName = "UberGraphFrame";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "79b44975c8c10c47abe845a7f928de61";
         static constexpr const char* RadiationSound__UeScsNode = "8131efd2702ff44383f8276e18a6d595";
@@ -43,4 +44,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher
 
-using BP_MiniNuke_RadiationCloud_C = Game::WeaponsNTools::GrenadeLauncher::BP_MiniNuke_RadiationCloud_C;
+using BP_MiniNuke_RadiationCloud_C = ::Game::WeaponsNTools::GrenadeLauncher::BP_MiniNuke_RadiationCloud_C;

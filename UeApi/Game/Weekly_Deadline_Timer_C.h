@@ -20,7 +20,7 @@ class Weekly_Deadline_Timer_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/JobsV2_Redesign/Weekly_Deadline_Timer", "Weekly_Deadline_Timer_C");
-    using ITM_TimeText_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
+    using ITM_TimeText_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_TimeText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* I_Background;
     class UImage* I_Outline;
@@ -41,4 +41,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using Weekly_Deadline_Timer_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Weekly_Deadline_Timer_C;
+using Weekly_Deadline_Timer_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Weekly_Deadline_Timer_C;

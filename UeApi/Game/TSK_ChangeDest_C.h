@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_ChangeDest_C = Game::AI::Tasks::TSK_ChangeDest_C;
+using TSK_ChangeDest_C = ::Game::AI::Tasks::TSK_ChangeDest_C;

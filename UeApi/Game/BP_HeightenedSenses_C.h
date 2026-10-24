@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_HeightenedSenses_C = Game::GameElements::KPI::Perks::BP_HeightenedSenses_C;
+using BP_HeightenedSenses_C = ::Game::GameElements::KPI::Perks::BP_HeightenedSenses_C;

@@ -26,8 +26,8 @@ class HUD_CrosshairManager_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/HUD_CrosshairManager", "HUD_CrosshairManager_C");
-    using HUD_HitIndicator_C = Game::WeaponsNTools::_Crosshairs::HUD_HitIndicator_C;
-    using OnScreen_Indicator_UsableZipLine_C = Game::UI::OnScreenIndicators::OnScreen_Indicator_UsableZipLine_C;
+    using HUD_HitIndicator_C = ::Game::WeaponsNTools::_Crosshairs::HUD_HitIndicator_C;
+    using OnScreen_Indicator_UsableZipLine_C = ::Game::UI::OnScreenIndicators::OnScreen_Indicator_UsableZipLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     class UWidgetSwitcher* CrosshairSwitcher;
@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_CrosshairManager_C = Game::WeaponsNTools::_Crosshairs::HUD_CrosshairManager_C;
+using HUD_CrosshairManager_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrosshairManager_C;

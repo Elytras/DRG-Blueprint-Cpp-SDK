@@ -57,4 +57,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_Snowman_Weightless_C = Game::Art::Environments::Holiday_Xmas::BP_Snowman_Weightless_C;
+using BP_Snowman_Weightless_C = ::Game::Art::Environments::Holiday_Xmas::BP_Snowman_Weightless_C;

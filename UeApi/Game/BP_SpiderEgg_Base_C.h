@@ -82,4 +82,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg
 
-using BP_SpiderEgg_Base_C = Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_Base_C;
+using BP_SpiderEgg_Base_C = ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_Base_C;

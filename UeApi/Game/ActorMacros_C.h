@@ -17,4 +17,4 @@ public:
 
 }}   // namespace Engine::EditorBlueprintResources
 
-using ActorMacros_C = Engine::EditorBlueprintResources::ActorMacros_C;
+using ActorMacros_C = ::Engine::EditorBlueprintResources::ActorMacros_C;

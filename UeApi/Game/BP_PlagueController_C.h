@@ -33,4 +33,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Plague
 
-using BP_PlagueController_C = Game::GameElements::Objectives::Plague::BP_PlagueController_C;
+using BP_PlagueController_C = ::Game::GameElements::Objectives::Plague::BP_PlagueController_C;

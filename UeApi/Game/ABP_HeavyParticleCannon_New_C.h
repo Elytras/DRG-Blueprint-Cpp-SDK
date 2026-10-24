@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using ABP_HeavyParticleCannon_New_C = Game::WeaponsNTools::HeavyParticleCannon::ABP_HeavyParticleCannon_New_C;
+using ABP_HeavyParticleCannon_New_C = ::Game::WeaponsNTools::HeavyParticleCannon::ABP_HeavyParticleCannon_New_C;

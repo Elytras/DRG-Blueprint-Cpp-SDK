@@ -80,4 +80,4 @@ private:
 
 }}}   // namespace Game::Critters::FlyingCritterBase
 
-using ENE_FlyingCritterBase_C = Game::Critters::FlyingCritterBase::ENE_FlyingCritterBase_C;
+using ENE_FlyingCritterBase_C = ::Game::Critters::FlyingCritterBase::ENE_FlyingCritterBase_C;

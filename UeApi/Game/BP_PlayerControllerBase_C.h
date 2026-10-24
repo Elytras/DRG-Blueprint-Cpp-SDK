@@ -24,8 +24,8 @@ class BP_PlayerControllerBase_C : public AFSDPlayerController
 {
 public:
     UE_CLASS("/Game/Game/BP_PlayerControllerBase", "BP_PlayerControllerBase_C");
-    using BP_FSDCameraManager_C = Game::Character::Camera::BP_FSDCameraManager_C;
-    using BP_Invitation_C = Game::UI::Menu_Invitation::BP_Invitation_C;
+    using BP_FSDCameraManager_C = ::Game::Character::Camera::BP_FSDCameraManager_C;
+    using BP_Invitation_C = ::Game::UI::Menu_Invitation::BP_Invitation_C;
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void(int Reply)> ReplyToInviteRequest;
     BP_Invitation_C* InviteRequest;
@@ -84,4 +84,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_PlayerControllerBase_C = Game::Game::BP_PlayerControllerBase_C;
+using BP_PlayerControllerBase_C = ::Game::Game::BP_PlayerControllerBase_C;

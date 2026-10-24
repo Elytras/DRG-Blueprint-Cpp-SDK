@@ -24,9 +24,9 @@ class LCD_MissionReadout_HazCompLen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionReadouts/LCD_MissionReadout_HazCompLen", "LCD_MissionReadout_HazCompLen_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using UI_MissionReadOut_Base_C = Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
-    using Widget_DropPod_DangerLevel_TextString_C = Game::Art::DropPod::Widgets::Widget_DropPod_DangerLevel_TextString_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using UI_MissionReadOut_Base_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
+    using Widget_DropPod_DangerLevel_TextString_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_DangerLevel_TextString_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Widget_DropPod_DangerLevel_TextString_C* BP_DropPodScreenTextWidget;
@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts
 
-using LCD_MissionReadout_HazCompLen_C = Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_HazCompLen_C;
+using LCD_MissionReadout_HazCompLen_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_HazCompLen_C;

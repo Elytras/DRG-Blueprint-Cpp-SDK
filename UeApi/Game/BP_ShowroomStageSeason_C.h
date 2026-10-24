@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using BP_ShowroomStageSeason_C = Game::UI::Menu_Seasons::BP_ShowroomStageSeason_C;
+using BP_ShowroomStageSeason_C = ::Game::UI::Menu_Seasons::BP_ShowroomStageSeason_C;

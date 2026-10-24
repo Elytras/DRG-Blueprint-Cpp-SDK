@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder
 
-using BP_RockCracker_Segment_C = Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_Segment_C;
+using BP_RockCracker_Segment_C = ::Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_Segment_C;

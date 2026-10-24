@@ -19,9 +19,9 @@ class Options_InputAudioSource_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_InputAudioSource", "Options_InputAudioSource_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
-    using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     Basic_Slider_C* MicAmplitudeSlider;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_InputAudioSource_C = Game::UI::Menu_Options::Options_InputAudioSource_C;
+using Options_InputAudioSource_C = ::Game::UI::Menu_Options::Options_InputAudioSource_C;

@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using SK_Vanity_Headwear_Hair_ManBunBraided_ABP_C = Game::Character::Vanity2::Headwear::SK_Vanity_Headwear_Hair_ManBunBraided_ABP_C;
+using SK_Vanity_Headwear_Hair_ManBunBraided_ABP_C = ::Game::Character::Vanity2::Headwear::SK_Vanity_Headwear_Hair_ManBunBraided_ABP_C;

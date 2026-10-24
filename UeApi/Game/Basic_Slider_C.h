@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Slider_C = Game::UI::Art::WidgetParts::Basic_Slider_C;
+using Basic_Slider_C = ::Game::UI::Art::WidgetParts::Basic_Slider_C;

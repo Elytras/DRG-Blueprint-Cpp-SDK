@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Upd32_Roughneck_Assignment_C = Game::GameElements::Campaign::CP_Upd32_Roughneck_Assignment_C;
+using CP_Upd32_Roughneck_Assignment_C = ::Game::GameElements::Campaign::CP_Upd32_Roughneck_Assignment_C;

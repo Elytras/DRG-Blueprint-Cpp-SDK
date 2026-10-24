@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_DeepSnowRT_C = Game::Landscape::ReactiveTerrain::STE_DeepSnowRT_C;
+using STE_DeepSnowRT_C = ::Game::Landscape::ReactiveTerrain::STE_DeepSnowRT_C;

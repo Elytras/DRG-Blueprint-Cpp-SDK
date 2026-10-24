@@ -26,12 +26,12 @@ namespace Game { namespace GameElements { namespace GameEvents { namespace Tunne
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace TunnelEvent { namespace Enemies {
 
-class ENE_BoneCollector_C : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Base_C
+class ENE_BoneCollector_C : public ::Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/Enemies/ENE_BoneCollector", "ENE_BoneCollector_C");
-    using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
-    using BP_TunnelEventBase_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C;
+    using BP_BurrowComponent_C = ::Game::Enemies::Spider::BP_BurrowComponent_C;
+    using BP_TunnelEventBase_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_BoneCollector_C;
     class USphereComponent* PlayerFleeTrigger;
     class UTerrainPlacementComponent* terrainPlacement;
@@ -78,6 +78,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;IK;Outline;PathfinderReactiveTerrainTracker";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent CarveAttack_GEN_VARIABLE:DamageComponent_1;/Script/FSD.MeshCarveAttackEffect CarveAttack_GEN_VARIABLE:MeshCarveAttackEffect_0";
         static constexpr const char* UberGraphFrame_ENE_BoneCollector_C__UeName = "UberGraphFrame";
         static constexpr const char* PlayerFleeTrigger__UeScsNode = "778055f141a07f44b58e5d5dff9c0622";
         static constexpr const char* terrainPlacement__UeScsNode = "ebbbd96ed8516b46a086fb413d96cb96";
@@ -95,4 +97,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::TunnelEvent::Enemies
 
-using ENE_BoneCollector_C = Game::GameElements::GameEvents::TunnelEvent::Enemies::ENE_BoneCollector_C;
+using ENE_BoneCollector_C = ::Game::GameElements::GameEvents::TunnelEvent::Enemies::ENE_BoneCollector_C;

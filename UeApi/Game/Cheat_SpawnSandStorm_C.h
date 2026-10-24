@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnSandStorm_C = Game::UI::Menu_Cheats::Cheat_SpawnSandStorm_C;
+using Cheat_SpawnSandStorm_C = ::Game::UI::Menu_Cheats::Cheat_SpawnSandStorm_C;

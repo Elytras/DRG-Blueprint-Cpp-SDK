@@ -55,4 +55,4 @@ private:
 
 }}}}   // namespace Game::Maps::UILevels::Assets
 
-using BP_DeepDive_SEQ_DropPod_C = Game::Maps::UILevels::Assets::BP_DeepDive_SEQ_DropPod_C;
+using BP_DeepDive_SEQ_DropPod_C = ::Game::Maps::UILevels::Assets::BP_DeepDive_SEQ_DropPod_C;

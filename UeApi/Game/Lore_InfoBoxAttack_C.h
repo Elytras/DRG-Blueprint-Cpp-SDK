@@ -19,8 +19,8 @@ class Lore_InfoBoxAttack_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_InfoBoxAttack", "Lore_InfoBoxAttack_C");
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
-    using Lore_DamageTypeIcon_C = Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using Lore_DamageTypeIcon_C = ::Game::UI::Menu_MinersManual::Lore_DamageTypeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_BG_CutCorner_C* Basic_BG_Window_59;
     Lore_DamageTypeIcon_C* Lore_DamageTypeIcon;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_InfoBoxAttack_C = Game::UI::Menu_MinersManual::Lore_InfoBoxAttack_C;
+using Lore_InfoBoxAttack_C = ::Game::UI::Menu_MinersManual::Lore_InfoBoxAttack_C;

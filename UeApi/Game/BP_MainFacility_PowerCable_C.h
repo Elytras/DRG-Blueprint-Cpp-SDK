@@ -26,4 +26,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::GeneratorLine
 
-using BP_MainFacility_PowerCable_C = Game::GameElements::Objectives::Facility::GeneratorLine::BP_MainFacility_PowerCable_C;
+using BP_MainFacility_PowerCable_C = ::Game::GameElements::Objectives::Facility::GeneratorLine::BP_MainFacility_PowerCable_C;

@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MissionMapIcon_LevelLock_C = Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_LevelLock_C;
+using ITM_MissionMapIcon_LevelLock_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_LevelLock_C;

@@ -19,4 +19,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment
 
-using TempRocketInterface_C = Game::GameElements::Objectives::Excavation::RocketAttachment::TempRocketInterface_C;
+using TempRocketInterface_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::TempRocketInterface_C;

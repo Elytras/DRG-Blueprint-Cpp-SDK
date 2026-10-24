@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_AngleIndicator_C = Game::WeaponsNTools::_Crosshairs::HUD_AngleIndicator_C;
+using HUD_AngleIndicator_C = ::Game::WeaponsNTools::_Crosshairs::HUD_AngleIndicator_C;

@@ -21,7 +21,7 @@ class HUD_ItemWheel_C : public UItemsBar
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Items/HUD_ItemWheel", "HUD_ItemWheel_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeInOut;
     UI_AdvancedLabel_C* dpaddown;
@@ -57,4 +57,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Items
 
-using HUD_ItemWheel_C = Game::UI::MainOnscreenHUD::Items::HUD_ItemWheel_C;
+using HUD_ItemWheel_C = ::Game::UI::MainOnscreenHUD::Items::HUD_ItemWheel_C;

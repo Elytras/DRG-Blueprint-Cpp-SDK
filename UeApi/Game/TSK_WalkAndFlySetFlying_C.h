@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab
 
-using TSK_WalkAndFlySetFlying_C = Game::Enemies::Ossiran::Scrab::TSK_WalkAndFlySetFlying_C;
+using TSK_WalkAndFlySetFlying_C = ::Game::Enemies::Ossiran::Scrab::TSK_WalkAndFlySetFlying_C;

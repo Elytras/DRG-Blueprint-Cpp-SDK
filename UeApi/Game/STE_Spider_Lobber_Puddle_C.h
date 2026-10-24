@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using STE_Spider_Lobber_Puddle_C = Game::Enemies::Spider::Lobber::STE_Spider_Lobber_Puddle_C;
+using STE_Spider_Lobber_Puddle_C = ::Game::Enemies::Spider::Lobber::STE_Spider_Lobber_Puddle_C;

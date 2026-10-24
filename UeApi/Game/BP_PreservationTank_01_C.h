@@ -11,7 +11,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Seasons { namespace Season06 { namespace SpaceRig_Decor {
 
-class BP_PreservationTank_01_C : public Game::GameElements::Plague::Spacerig_Deco::BP_Plague_BioTank_Big_C
+class BP_PreservationTank_01_C : public ::Game::GameElements::Plague::Spacerig_Deco::BP_Plague_BioTank_Big_C
 {
 public:
     UE_CLASS("/Game/GameElements/Seasons/Season06/SpaceRig_Decor/BP_PreservationTank_01", "BP_PreservationTank_01_C");
@@ -20,10 +20,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
+        static constexpr const char* UeIchRecords = "InstantUsable;NS_Biotank_BubbleReact;NS_Biotank_Bubbles;BlueLight;PointLight;SpotLight1;SpotLight;SM_Plague_Biotank_01;DisplayName2;Widget_Bars2";
         static constexpr const char* PointLight1__UeScsNode = "6785ff02b87faf41a3c413560aded722";
     };
 };
 
 }}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor
 
-using BP_PreservationTank_01_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::BP_PreservationTank_01_C;
+using BP_PreservationTank_01_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::BP_PreservationTank_01_C;

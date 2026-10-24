@@ -18,11 +18,11 @@ class UI_Testing_MainMenu_C : public UFSDMainHUDWidget
 {
 public:
     UE_CLASS("/Game/Art/_TestingGrounds/UItesting/UI_Testing_MainMenu", "UI_Testing_MainMenu_C");
-    using AnimatedDRGlogo_C = Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
-    using AnimatedStaticOverlay_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
-    using BTN_SideBar_Big_C = Game::Art::_TestingGrounds::UItesting::BTN_SideBar_Big_C;
-    using GFX_Background03_C = Game::UI::Global_UI_Elements::GFX_Background03_C;
-    using NewsTicker_C = Game::Art::_TestingGrounds::UItesting::NewsTicker_C;
+    using AnimatedDRGlogo_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
+    using AnimatedStaticOverlay_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
+    using BTN_SideBar_Big_C = ::Game::Art::_TestingGrounds::UItesting::BTN_SideBar_Big_C;
+    using GFX_Background03_C = ::Game::UI::Global_UI_Elements::GFX_Background03_C;
+    using NewsTicker_C = ::Game::Art::_TestingGrounds::UItesting::NewsTicker_C;
     FPointerToUberGraphFrame UberGraphFrame;
     AnimatedDRGlogo_C* AnimatedDRGlogo_C_219;
     AnimatedStaticOverlay_C* AnimatedStaticOverlay;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::Art::_TestingGrounds::UItesting
 
-using UI_Testing_MainMenu_C = Game::Art::_TestingGrounds::UItesting::UI_Testing_MainMenu_C;
+using UI_Testing_MainMenu_C = ::Game::Art::_TestingGrounds::UItesting::UI_Testing_MainMenu_C;

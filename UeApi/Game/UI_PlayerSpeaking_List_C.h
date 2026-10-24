@@ -19,7 +19,7 @@ class UI_PlayerSpeaking_List_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/UI_PlayerSpeaking_List", "UI_PlayerSpeaking_List_C");
-    using UI_PlayerSpeaking_WithName_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_WithName_C;
+    using UI_PlayerSpeaking_WithName_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_WithName_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* Box_Horizontal;
     class UVerticalBox* Box_Vertical;
@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;

@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::GameElements::Objectives
 
-using OBJ_FindItems_Base_C = Game::GameElements::Objectives::OBJ_FindItems_Base_C;
+using OBJ_FindItems_Base_C = ::Game::GameElements::Objectives::OBJ_FindItems_Base_C;

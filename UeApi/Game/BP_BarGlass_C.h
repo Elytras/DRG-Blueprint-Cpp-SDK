@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using BP_BarGlass_C = Game::GameElements::Bar::BP_BarGlass_C;
+using BP_BarGlass_C = ::Game::GameElements::Bar::BP_BarGlass_C;

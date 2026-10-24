@@ -48,4 +48,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_TutorialConsole_C = Game::UI::HUD_SpaceRig::BP_TutorialConsole_C;
+using BP_TutorialConsole_C = ::Game::UI::HUD_SpaceRig::BP_TutorialConsole_C;

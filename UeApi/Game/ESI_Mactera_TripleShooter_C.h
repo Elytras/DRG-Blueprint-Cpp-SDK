@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using ESI_Mactera_TripleShooter_C = Game::Enemies::FlyingBug::Shooter::ESI_Mactera_TripleShooter_C;
+using ESI_Mactera_TripleShooter_C = ::Game::Enemies::FlyingBug::Shooter::ESI_Mactera_TripleShooter_C;

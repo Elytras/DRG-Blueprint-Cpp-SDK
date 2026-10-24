@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using Loadout_BP_ShieldGenerator_C = Game::WeaponsNTools::ShieldGenerator::Loadout_BP_ShieldGenerator_C;
+using Loadout_BP_ShieldGenerator_C = ::Game::WeaponsNTools::ShieldGenerator::Loadout_BP_ShieldGenerator_C;

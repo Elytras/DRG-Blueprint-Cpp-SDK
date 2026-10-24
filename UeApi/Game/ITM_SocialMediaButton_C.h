@@ -17,7 +17,7 @@ class ITM_SocialMediaButton_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_SocialMediaButton", "ITM_SocialMediaButton_C");
-    using Basic_ButtonLargeImage_C = Game::UI::Art::WidgetParts::Basic_ButtonLargeImage_C;
+    using Basic_ButtonLargeImage_C = ::Game::UI::Art::WidgetParts::Basic_ButtonLargeImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonLargeImage_C* Button;
     class UTexture2D* Icon;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_SocialMediaButton_C = Game::UI::Menu_EscapeMenu::ITM_SocialMediaButton_C;
+using ITM_SocialMediaButton_C = ::Game::UI::Menu_EscapeMenu::ITM_SocialMediaButton_C;

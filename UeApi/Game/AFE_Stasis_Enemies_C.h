@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects
 
-using AFE_Stasis_Enemies_C = Game::GameElements::PawnAffliction::EnemyEffects::AFE_Stasis_Enemies_C;
+using AFE_Stasis_Enemies_C = ::Game::GameElements::PawnAffliction::EnemyEffects::AFE_Stasis_Enemies_C;

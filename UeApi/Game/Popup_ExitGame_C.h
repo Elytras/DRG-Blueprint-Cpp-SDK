@@ -22,11 +22,11 @@ class Popup_ExitGame_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/PopUp_ExitGame", "Popup_ExitGame_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_SocialMediaButtons_C = Game::UI::Menu_EscapeMenu::ITM_SocialMediaButtons_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_SocialMediaButtons_C = ::Game::UI::Menu_EscapeMenu::ITM_SocialMediaButtons_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Arrow_Left;
     class UImage* Arrow_Right;
@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using Popup_ExitGame_C = Game::UI::Menu_EscapeMenu::Popup_ExitGame_C;
+using Popup_ExitGame_C = ::Game::UI::Menu_EscapeMenu::Popup_ExitGame_C;

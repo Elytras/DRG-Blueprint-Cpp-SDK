@@ -23,7 +23,7 @@ class UI_GuntowerProgressBar_2_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/GuntowerEvent/UI_GuntowerProgressBar_2", "UI_GuntowerProgressBar_2_C");
-    using UI_Guntower_ProgressBar_ModuleIcon_C = Game::GameElements::GameEvents::GuntowerEvent::UI_Guntower_ProgressBar_ModuleIcon_C;
+    using UI_Guntower_ProgressBar_ModuleIcon_C = ::Game::GameElements::GameEvents::GuntowerEvent::UI_Guntower_ProgressBar_ModuleIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Activated;
     UE_READONLY class UWidgetAnimation* Startup;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent
 
-using UI_GuntowerProgressBar_2_C = Game::GameElements::GameEvents::GuntowerEvent::UI_GuntowerProgressBar_2_C;
+using UI_GuntowerProgressBar_2_C = ::Game::GameElements::GameEvents::GuntowerEvent::UI_GuntowerProgressBar_2_C;

@@ -57,4 +57,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using PRJ_HydraWeed_Shooter_C = Game::Enemies::HydraWeed::PRJ_HydraWeed_Shooter_C;
+using PRJ_HydraWeed_Shooter_C = ::Game::Enemies::HydraWeed::PRJ_HydraWeed_Shooter_C;

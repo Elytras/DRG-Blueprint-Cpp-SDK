@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards
 
-using STE_Radiation_Hazard_Medium_C = Game::LevelElements::RoomObjects::Hazards::STE_Radiation_Hazard_Medium_C;
+using STE_Radiation_Hazard_Medium_C = ::Game::LevelElements::RoomObjects::Hazards::STE_Radiation_Hazard_Medium_C;

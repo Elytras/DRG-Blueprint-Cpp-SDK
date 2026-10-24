@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace HydraWeed {
 
-class PRJ_HydraWeedSpawn_HealingPod_C : public Game::Enemies::HydraWeed::PRJ_HydraWeedSpawn_C
+class PRJ_HydraWeedSpawn_HealingPod_C : public ::Game::Enemies::HydraWeed::PRJ_HydraWeedSpawn_C
 {
 public:
     UE_CLASS("/Game/Enemies/HydraWeed/PRJ_HydraWeedSpawn_HealingPod", "PRJ_HydraWeedSpawn_HealingPod_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "ParticleSystem";
     };
 };
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using PRJ_HydraWeedSpawn_HealingPod_C = Game::Enemies::HydraWeed::PRJ_HydraWeedSpawn_HealingPod_C;
+using PRJ_HydraWeedSpawn_HealingPod_C = ::Game::Enemies::HydraWeed::PRJ_HydraWeedSpawn_HealingPod_C;

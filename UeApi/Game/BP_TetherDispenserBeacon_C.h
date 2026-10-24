@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Tethers {
 
-class BP_TetherDispenserBeacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_TetherDispenserBeacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/BP_TetherDispenserBeacon", "BP_TetherDispenserBeacon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3;Widget1";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_TetherDispenserBeacon_C = Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenserBeacon_C;
+using BP_TetherDispenserBeacon_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_TetherDispenserBeacon_C;

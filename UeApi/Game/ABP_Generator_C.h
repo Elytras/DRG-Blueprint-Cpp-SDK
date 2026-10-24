@@ -34,4 +34,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Misc::Generator::GeneratorRig
 
-using ABP_Generator_C = Game::GameElements::Misc::Generator::GeneratorRig::ABP_Generator_C;
+using ABP_Generator_C = ::Game::GameElements::Misc::Generator::GeneratorRig::ABP_Generator_C;

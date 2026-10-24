@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::Critters::FesterFlea
 
-using ABP_FleaWings_C = Game::Critters::FesterFlea::ABP_FleaWings_C;
+using ABP_FleaWings_C = ::Game::Critters::FesterFlea::ABP_FleaWings_C;

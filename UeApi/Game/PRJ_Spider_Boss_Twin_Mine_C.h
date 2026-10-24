@@ -59,4 +59,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using PRJ_Spider_Boss_Twin_Mine_C = Game::Enemies::Spider::TankBoss::BossTwins::PRJ_Spider_Boss_Twin_Mine_C;
+using PRJ_Spider_Boss_Twin_Mine_C = ::Game::Enemies::Spider::TankBoss::BossTwins::PRJ_Spider_Boss_Twin_Mine_C;

@@ -20,8 +20,8 @@ class Lore_Container_Text_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_Text", "Lore_Container_Text_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar2;
     Basic_Window_CutCorner_C* Basic_Window;
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers
 
-using Lore_Container_Text_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_C;
+using Lore_Container_Text_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_C;

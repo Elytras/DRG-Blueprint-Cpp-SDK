@@ -30,7 +30,7 @@ class BP_DeepScan_TreasureNut_C : public AMorkiteSeedNut
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_DeepScan_TreasureNut", "BP_DeepScan_TreasureNut_C");
-    using BP_MorkiteSeed_New_C = Game::GameElements::Objectives::DeepScan::BP_MorkiteSeed_New_C;
+    using BP_MorkiteSeed_New_C = ::Game::GameElements::Objectives::DeepScan::BP_MorkiteSeed_New_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect2;
     class UTerrainDetectComponent* TerrainDetect3;
@@ -109,4 +109,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DeepScan_TreasureNut_C = Game::GameElements::Objectives::DeepScan::BP_DeepScan_TreasureNut_C;
+using BP_DeepScan_TreasureNut_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScan_TreasureNut_C;

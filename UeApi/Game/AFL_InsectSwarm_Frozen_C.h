@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm
 
-using AFL_InsectSwarm_Frozen_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::AFL_InsectSwarm_Frozen_C;
+using AFL_InsectSwarm_Frozen_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::AFL_InsectSwarm_Frozen_C;

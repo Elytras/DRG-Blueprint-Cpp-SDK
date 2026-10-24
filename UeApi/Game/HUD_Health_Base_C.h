@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Health_Base_C = Game::UI::MainOnscreenHUD::HUD_Health_Base_C;
+using HUD_Health_Base_C = ::Game::UI::MainOnscreenHUD::HUD_Health_Base_C;

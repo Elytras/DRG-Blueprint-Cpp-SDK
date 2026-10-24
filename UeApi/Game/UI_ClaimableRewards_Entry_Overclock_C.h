@@ -34,14 +34,14 @@ class UI_ClaimableRewards_Entry_Overclock_C : public UClaimableRewardEntryWidget
 {
 public:
     UE_CLASS("/Game/UI/ClaimableRewards/UI_ClaimableRewards_Entry_Overclock", "UI_ClaimableRewards_Entry_Overclock_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
-    using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
-    using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_GeneratedIcon_Item_C = ::Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
+    using ITM_MatrixCore_C = ::Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
+    using UI_Forge_Schematic_OwnerIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimClaim;
     UE_READONLY class UWidgetAnimation* AnimPing;
@@ -82,4 +82,4 @@ public:
 
 }}}   // namespace Game::UI::ClaimableRewards
 
-using UI_ClaimableRewards_Entry_Overclock_C = Game::UI::ClaimableRewards::UI_ClaimableRewards_Entry_Overclock_C;
+using UI_ClaimableRewards_Entry_Overclock_C = ::Game::UI::ClaimableRewards::UI_ClaimableRewards_Entry_Overclock_C;

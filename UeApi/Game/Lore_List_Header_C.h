@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_List_Header_C = Game::UI::Menu_MinersManual::Lore_List_Header_C;
+using Lore_List_Header_C = ::Game::UI::Menu_MinersManual::Lore_List_Header_C;

@@ -20,7 +20,7 @@ class UI_PipelineBuilder_Widget_Small_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PipelineBuilder/UI_PipelineBuilder_Widget_Small", "UI_PipelineBuilder_Widget_Small_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_275;
     class UOverlay* InvalidBox;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder
 
-using UI_PipelineBuilder_Widget_Small_C = Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Widget_Small_C;
+using UI_PipelineBuilder_Widget_Small_C = ::Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Widget_Small_C;

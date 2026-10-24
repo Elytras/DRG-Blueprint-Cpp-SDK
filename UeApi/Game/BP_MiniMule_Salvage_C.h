@@ -44,8 +44,8 @@ class BP_MiniMule_Salvage_C : public AMiniMule
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_MiniMule_Salvage", "BP_MiniMule_Salvage_C");
-    using BP_DropPod_Base_C = Game::LevelElements::Droppod::BP_DropPod_Base_C;
-    using BP_Tutorial_Hint_BrokenMiniMule_C = Game::Character::Tutorials::BP_Tutorial_Hint_BrokenMiniMule_C;
+    using BP_DropPod_Base_C = ::Game::LevelElements::Droppod::BP_DropPod_Base_C;
+    using BP_Tutorial_Hint_BrokenMiniMule_C = ::Game::Character::Tutorials::BP_Tutorial_Hint_BrokenMiniMule_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect3;
     class UTerrainDetectComponent* TerrainDetect2;
@@ -170,4 +170,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_MiniMule_Salvage_C = Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;
+using BP_MiniMule_Salvage_C = ::Game::GameElements::Objectives::Salvage::BP_MiniMule_Salvage_C;

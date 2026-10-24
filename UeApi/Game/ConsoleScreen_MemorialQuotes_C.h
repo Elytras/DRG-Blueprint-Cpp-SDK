@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_MemorialQuotes_C = Game::UI::HUD_SpaceRig::ConsoleScreen_MemorialQuotes_C;
+using ConsoleScreen_MemorialQuotes_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_MemorialQuotes_C;

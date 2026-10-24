@@ -22,4 +22,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::CoreCorruption
 
-using OBJ_WRN_CoreCorruption_C = Game::GameElements::Objectives::CoreCorruption::OBJ_WRN_CoreCorruption_C;
+using OBJ_WRN_CoreCorruption_C = ::Game::GameElements::Objectives::CoreCorruption::OBJ_WRN_CoreCorruption_C;

@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using BP_FriendlyParasite_C = Game::WeaponsNTools::Grenades::FriendlyShredders::BP_FriendlyParasite_C;
+using BP_FriendlyParasite_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::BP_FriendlyParasite_C;

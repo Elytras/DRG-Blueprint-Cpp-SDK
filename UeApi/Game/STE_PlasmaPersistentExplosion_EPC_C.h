@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using STE_PlasmaPersistentExplosion_EPC_C = Game::WeaponsNTools::ChargeBlaster::STE_PlasmaPersistentExplosion_EPC_C;
+using STE_PlasmaPersistentExplosion_EPC_C = ::Game::WeaponsNTools::ChargeBlaster::STE_PlasmaPersistentExplosion_EPC_C;

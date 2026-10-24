@@ -45,4 +45,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using ABP_Tentacle_Head_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ABP_Tentacle_Head_C;
+using ABP_Tentacle_Head_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ABP_Tentacle_Head_C;

@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace HackingTool { namespace UI { namespace Defuse {
 
-class HackingTool_DefuseBomb_Long_C : public Game::WeaponsNTools::HackingTool::UI::Defuse::HackingTool_DefuseBomb_C
+class HackingTool_DefuseBomb_Long_C : public ::Game::WeaponsNTools::HackingTool::UI::Defuse::HackingTool_DefuseBomb_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Defuse/HackingTool_DefuseBomb_Long", "HackingTool_DefuseBomb_Long_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse
 
-using HackingTool_DefuseBomb_Long_C = Game::WeaponsNTools::HackingTool::UI::Defuse::HackingTool_DefuseBomb_Long_C;
+using HackingTool_DefuseBomb_Long_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::HackingTool_DefuseBomb_Long_C;

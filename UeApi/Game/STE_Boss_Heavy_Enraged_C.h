@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using STE_Boss_Heavy_Enraged_C = Game::Enemies::Spider::TankBoss::BossHeavy::STE_Boss_Heavy_Enraged_C;
+using STE_Boss_Heavy_Enraged_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::STE_Boss_Heavy_Enraged_C;

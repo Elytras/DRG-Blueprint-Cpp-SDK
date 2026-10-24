@@ -23,4 +23,4 @@ public:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_Halloween_C = Game::Maps::SpaceRig::SLVL_SpaceRig_Halloween_C;
+using SLVL_SpaceRig_Halloween_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_Halloween_C;

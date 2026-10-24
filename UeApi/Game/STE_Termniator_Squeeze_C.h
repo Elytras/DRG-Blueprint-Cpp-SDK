@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using STE_Termniator_Squeeze_C = Game::Enemies::RivalTech::Terminator::STE_Termniator_Squeeze_C;
+using STE_Termniator_Squeeze_C = ::Game::Enemies::RivalTech::Terminator::STE_Termniator_Squeeze_C;

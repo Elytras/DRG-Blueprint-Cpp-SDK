@@ -69,4 +69,4 @@ private:
 
 }}}   // namespace Game::Character::Vanity2
 
-using BP_DwarfVanityItemTester_C = Game::Character::Vanity2::BP_DwarfVanityItemTester_C;
+using BP_DwarfVanityItemTester_C = ::Game::Character::Vanity2::BP_DwarfVanityItemTester_C;

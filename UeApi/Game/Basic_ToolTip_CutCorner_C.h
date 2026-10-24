@@ -55,4 +55,4 @@ private:
 
 }}}   // namespace Game::UI::ToolTips
 
-using Basic_ToolTip_CutCorner_C = Game::UI::ToolTips::Basic_ToolTip_CutCorner_C;
+using Basic_ToolTip_CutCorner_C = ::Game::UI::ToolTips::Basic_ToolTip_CutCorner_C;

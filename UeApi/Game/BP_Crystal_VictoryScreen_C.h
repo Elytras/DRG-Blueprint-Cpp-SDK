@@ -28,4 +28,4 @@ private:
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments
 
-using BP_Crystal_VictoryScreen_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::BP_Crystal_VictoryScreen_C;
+using BP_Crystal_VictoryScreen_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::BP_Crystal_VictoryScreen_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace ThornBranches {
 
-class BP_LargeThornBranch_2_NEW_C : public Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_HugeThornBranch_Base_C
+class BP_LargeThornBranch_2_NEW_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_HugeThornBranch_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/ThornBranches/BP_LargeThornBranch_2_NEW", "BP_LargeThornBranch_2_NEW_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches
 
-using BP_LargeThornBranch_2_NEW_C = Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_LargeThornBranch_2_NEW_C;
+using BP_LargeThornBranch_2_NEW_C = ::Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_LargeThornBranch_2_NEW_C;

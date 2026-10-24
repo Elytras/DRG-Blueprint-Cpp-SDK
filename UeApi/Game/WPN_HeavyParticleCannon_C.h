@@ -30,7 +30,7 @@ class WPN_HeavyParticleCannon_C : public AHeavyParticleCannon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/WPN_HeavyParticleCannon", "WPN_HeavyParticleCannon_C");
-    using WeaponDisplay_HeavyParticleCannon_AmmoCount_C = Game::WeaponsNTools::HeavyParticleCannon::WeaponDisplay_HeavyParticleCannon_AmmoCount_C;
+    using WeaponDisplay_HeavyParticleCannon_AmmoCount_C = ::Game::WeaponsNTools::HeavyParticleCannon::WeaponDisplay_HeavyParticleCannon_AmmoCount_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* ExplosionDamage;
     class UExplosionComponent* Explosion;
@@ -69,6 +69,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent Damage;/Script/FSD.DamageConversionBonus Damage:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus Damage:DamageConversionBonus_1;/Script/FSD.DirectDamageCondition Damage:DamageConversionBonus_0:DirectDamageCondition_0;/Script/FSD.FirstPersonNiagaraComponent FirstPersonBeam;/Script/FSD.FirstPersonNiagaraComponent FirstPersonLaserSight;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Niagara.NiagaraComponent ThirdPersonBeam;/Script/FSD.ReflectionHitscanComponent ReflectionHitscanComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.StickyFlameSpawner StickyFlames;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus ExplosionDamage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* ExplosionDamage__UeScsNode = "4ef6180a401d124ca313a76a4f629ce4";
         static constexpr const char* Explosion__UeScsNode = "b59d5e6ee2e76a41818e95ed8bf11abc";
         static constexpr const char* WidgetChargeFinished_Cue__UeScsNode = "b0d6305cd0118a4dafa255917af0fc0e";
@@ -87,4 +88,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using WPN_HeavyParticleCannon_C = Game::WeaponsNTools::HeavyParticleCannon::WPN_HeavyParticleCannon_C;
+using WPN_HeavyParticleCannon_C = ::Game::WeaponsNTools::HeavyParticleCannon::WPN_HeavyParticleCannon_C;

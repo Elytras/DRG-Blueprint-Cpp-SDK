@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_CreeperVine_C = Game::Landscape::ReactiveTerrain::RT_CreeperVine_C;
+using RT_CreeperVine_C = ::Game::Landscape::ReactiveTerrain::RT_CreeperVine_C;

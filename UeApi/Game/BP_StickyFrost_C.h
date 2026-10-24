@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using BP_StickyFrost_C = Game::WeaponsNTools::Cryospray::BP_StickyFrost_C;
+using BP_StickyFrost_C = ::Game::WeaponsNTools::Cryospray::BP_StickyFrost_C;

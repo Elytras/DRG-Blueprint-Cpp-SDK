@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Itm_SeasonChallenge_Small_C = Game::UI::Menu_Seasons::Itm_SeasonChallenge_Small_C;
+using Itm_SeasonChallenge_Small_C = ::Game::UI::Menu_Seasons::Itm_SeasonChallenge_Small_C;

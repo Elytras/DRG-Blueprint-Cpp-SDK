@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::Profiling
 
-using MENU_Profiling_C = Game::UI::Profiling::MENU_Profiling_C;
+using MENU_Profiling_C = ::Game::UI::Profiling::MENU_Profiling_C;

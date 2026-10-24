@@ -21,31 +21,31 @@ class Options_Tab_Controls_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_Controls", "Options_Tab_Controls_C");
-    using Basic_ButtonWithControls_C = Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_Controller_AimAcceleration_Outer_C = Game::UI::Menu_Options::Options_Controller_AimAcceleration_Outer_C;
-    using Options_Controller_AimDeadZone_C = Game::UI::Menu_Options::Options_Controller_AimDeadZone_C;
-    using Options_Controller_AimSensitivity_C = Game::UI::Menu_Options::Options_Controller_AimSensitivity_C;
-    using Options_Controller_ForceFeedbackScale_C = Game::UI::Menu_Options::Options_Controller_ForceFeedbackScale_C;
-    using Options_Ctrl_InvertMouse_C = Game::UI::Menu_Options::Options_Ctrl_InvertMouse_C;
-    using Options_DownedTurnDirection_C = Game::UI::Menu_Options::Options_DownedTurnDirection_C;
-    using Options_Gamepad_CustomizeControls_C = Game::UI::Keybindings::Options_Gamepad_CustomizeControls_C;
-    using Options_Gamepad_EnableChat_C = Game::UI::Keybindings::Options_Gamepad_EnableChat_C;
-    using Options_Gamepad_EnableQuickSwap_C = Game::UI::Keybindings::Options_Gamepad_EnableQuickSwap_C;
-    using Options_Gamepad_SwapThumbsticks_C = Game::UI::Keybindings::Options_Gamepad_SwapThumbsticks_C;
-    using Options_GrapplingHookEquipPrevious_C = Game::UI::Menu_Options::Options_GrapplingHookEquipPrevious_C;
-    using Options_HoldToSprint_C = Game::UI::Menu_Options::Options_HoldToSprint_C;
-    using Options_InvertFlightControls_C = Game::UI::Menu_Options::Options_InvertFlightControls_C;
-    using Options_InvertMouseWheel_C = Game::UI::Menu_Options::Options_InvertMouseWheel_C;
-    using Options_MouseKeyboard_CustomizeControls_C = Game::UI::Keybindings::Options_MouseKeyboard_CustomizeControls_C;
-    using Options_MouseSmooting_C = Game::UI::Menu_Options::Options_MouseSmooting_C;
-    using Options_MouseX_Sensitivity_C = Game::UI::Menu_Options::Options_MouseX_Sensitivity_C;
-    using Options_MouseY_Sensitivity_C = Game::UI::Menu_Options::Options_MouseY_Sensitivity_C;
-    using Options_Mouse_SeparateAxis_C = Game::UI::Menu_Options::Options_Mouse_SeparateAxis_C;
-    using Options_SonyInput_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInput_C;
-    using Options_ToggleLaserpointer_C = Game::UI::Menu_Options::Options_ToggleLaserpointer_C;
-    using Options_ToggleTerrainScanner_C = Game::UI::Menu_Options::Options_ToggleTerrainScanner_C;
-    using Options_ZiplineGunEquipPrevious_C = Game::UI::Menu_Options::Options_ZiplineGunEquipPrevious_C;
+    using Basic_ButtonWithControls_C = ::Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_Controller_AimAcceleration_Outer_C = ::Game::UI::Menu_Options::Options_Controller_AimAcceleration_Outer_C;
+    using Options_Controller_AimDeadZone_C = ::Game::UI::Menu_Options::Options_Controller_AimDeadZone_C;
+    using Options_Controller_AimSensitivity_C = ::Game::UI::Menu_Options::Options_Controller_AimSensitivity_C;
+    using Options_Controller_ForceFeedbackScale_C = ::Game::UI::Menu_Options::Options_Controller_ForceFeedbackScale_C;
+    using Options_Ctrl_InvertMouse_C = ::Game::UI::Menu_Options::Options_Ctrl_InvertMouse_C;
+    using Options_DownedTurnDirection_C = ::Game::UI::Menu_Options::Options_DownedTurnDirection_C;
+    using Options_Gamepad_CustomizeControls_C = ::Game::UI::Keybindings::Options_Gamepad_CustomizeControls_C;
+    using Options_Gamepad_EnableChat_C = ::Game::UI::Keybindings::Options_Gamepad_EnableChat_C;
+    using Options_Gamepad_EnableQuickSwap_C = ::Game::UI::Keybindings::Options_Gamepad_EnableQuickSwap_C;
+    using Options_Gamepad_SwapThumbsticks_C = ::Game::UI::Keybindings::Options_Gamepad_SwapThumbsticks_C;
+    using Options_GrapplingHookEquipPrevious_C = ::Game::UI::Menu_Options::Options_GrapplingHookEquipPrevious_C;
+    using Options_HoldToSprint_C = ::Game::UI::Menu_Options::Options_HoldToSprint_C;
+    using Options_InvertFlightControls_C = ::Game::UI::Menu_Options::Options_InvertFlightControls_C;
+    using Options_InvertMouseWheel_C = ::Game::UI::Menu_Options::Options_InvertMouseWheel_C;
+    using Options_MouseKeyboard_CustomizeControls_C = ::Game::UI::Keybindings::Options_MouseKeyboard_CustomizeControls_C;
+    using Options_MouseSmooting_C = ::Game::UI::Menu_Options::Options_MouseSmooting_C;
+    using Options_MouseX_Sensitivity_C = ::Game::UI::Menu_Options::Options_MouseX_Sensitivity_C;
+    using Options_MouseY_Sensitivity_C = ::Game::UI::Menu_Options::Options_MouseY_Sensitivity_C;
+    using Options_Mouse_SeparateAxis_C = ::Game::UI::Menu_Options::Options_Mouse_SeparateAxis_C;
+    using Options_SonyInput_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInput_C;
+    using Options_ToggleLaserpointer_C = ::Game::UI::Menu_Options::Options_ToggleLaserpointer_C;
+    using Options_ToggleTerrainScanner_C = ::Game::UI::Menu_Options::Options_ToggleTerrainScanner_C;
+    using Options_ZiplineGunEquipPrevious_C = ::Game::UI::Menu_Options::Options_ZiplineGunEquipPrevious_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* Basic_Option_C_0;
     Basic_Option_C* Basic_Option_C_1;
@@ -107,4 +107,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_Controls_C = Game::UI::Menu_Options::Options_Tab_Controls_C;
+using Options_Tab_Controls_C = ::Game::UI::Menu_Options::Options_Tab_Controls_C;

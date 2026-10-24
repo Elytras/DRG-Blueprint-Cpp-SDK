@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Easter
 
-using BP_GreatEggHunt_ThrowableBunny_C = Game::GameElements::Holidays::Easter::BP_GreatEggHunt_ThrowableBunny_C;
+using BP_GreatEggHunt_ThrowableBunny_C = ::Game::GameElements::Holidays::Easter::BP_GreatEggHunt_ThrowableBunny_C;

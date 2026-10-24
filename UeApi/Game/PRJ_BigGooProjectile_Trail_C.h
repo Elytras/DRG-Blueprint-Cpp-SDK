@@ -13,7 +13,7 @@ class UProjectileUpgradeElement;
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class PRJ_BigGooProjectile_Trail_C : public Game::WeaponsNTools::GooCannon::PRJ_BaseBigGooProjectile_C
+class PRJ_BigGooProjectile_Trail_C : public ::Game::WeaponsNTools::GooCannon::PRJ_BaseBigGooProjectile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BigGooProjectile_Trail", "PRJ_BigGooProjectile_Trail_C");
@@ -33,6 +33,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Niagara;StaticMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.PushDynamicStatusEffectDamageBonus Damage_GEN_VARIABLE:PushDynamicStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_BigGooProjectile_Trail_C__UeName = "UberGraphFrame";
         static constexpr const char* SpawnedFragments__Replicated = "OnRep_SpawnedFragments:";
     };
@@ -40,4 +42,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using PRJ_BigGooProjectile_Trail_C = Game::WeaponsNTools::GooCannon::PRJ_BigGooProjectile_Trail_C;
+using PRJ_BigGooProjectile_Trail_C = ::Game::WeaponsNTools::GooCannon::PRJ_BigGooProjectile_Trail_C;

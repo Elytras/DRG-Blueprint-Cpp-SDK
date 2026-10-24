@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_PendingReward_RewardLine_C = Game::UI::Menu_StartScreen::UI_PendingReward_RewardLine_C;
+using UI_PendingReward_RewardLine_C = ::Game::UI::Menu_StartScreen::UI_PendingReward_RewardLine_C;

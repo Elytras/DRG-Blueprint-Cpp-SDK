@@ -12,7 +12,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace CozyTreeHollows {
 
-class BP_CozyTreeHollow_Tripple_C : public Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C
+class BP_CozyTreeHollow_Tripple_C : public ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/CozyTreeHollows/BP_CozyTreeHollow_Tripple", "BP_CozyTreeHollow_Tripple_C");
@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SugarChunksLocation;LevelGenerationCarver_Entrance;LevelGenerationCarver_Room;TerrainPlacement";
         static constexpr const char* StaticMesh_Room2__UeScsNode = "033466276f38d243bd809b4fbc3c9dba";
         static constexpr const char* LevelGenerationCarver_Room2__UeScsNode = "e6959fa00cef3448ac514819bffd8fe4";
         static constexpr const char* StaticMesh_Room1__UeScsNode = "988650dfab62074eaee2162de628c894";
@@ -32,4 +33,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::CozyTreeHollows
 
-using BP_CozyTreeHollow_Tripple_C = Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Tripple_C;
+using BP_CozyTreeHollow_Tripple_C = ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Tripple_C;

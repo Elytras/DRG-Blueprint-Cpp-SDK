@@ -28,9 +28,9 @@ class ITM_CommunityGoalReward_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalReward", "ITM_CommunityGoalReward_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UOverlay* BronzeImage;
@@ -79,4 +79,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalReward_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalReward_C;
+using ITM_CommunityGoalReward_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalReward_C;

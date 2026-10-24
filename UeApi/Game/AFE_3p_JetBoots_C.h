@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using AFE_3p_JetBoots_C = Game::GameElements::JetBoots::Blueprint::AFE_3p_JetBoots_C;
+using AFE_3p_JetBoots_C = ::Game::GameElements::JetBoots::Blueprint::AFE_3p_JetBoots_C;

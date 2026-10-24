@@ -36,4 +36,4 @@ public:
 
 }}}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::FoamTool
 
-using ABP_FoamTool_A_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::FoamTool::ABP_FoamTool_A_C;
+using ABP_FoamTool_A_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::FoamTool::ABP_FoamTool_A_C;

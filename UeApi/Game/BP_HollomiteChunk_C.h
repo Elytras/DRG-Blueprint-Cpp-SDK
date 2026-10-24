@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Hollomite
 
-using BP_HollomiteChunk_C = Game::GameElements::Resources::Carved::Hollomite::BP_HollomiteChunk_C;
+using BP_HollomiteChunk_C = ::Game::GameElements::Resources::Carved::Hollomite::BP_HollomiteChunk_C;

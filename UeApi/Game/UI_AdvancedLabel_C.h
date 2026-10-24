@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;

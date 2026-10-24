@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using GFX_Background03_C = Game::UI::Global_UI_Elements::GFX_Background03_C;
+using GFX_Background03_C = ::Game::UI::Global_UI_Elements::GFX_Background03_C;

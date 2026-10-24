@@ -22,9 +22,9 @@ class UI_Bar_BackgroundMenu_C : public UBarMenuWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_BackgroundMenu", "UI_Bar_BackgroundMenu_C");
-    using BP_SpaceRig_Bartender_C = Game::GameElements::Bar::BP_SpaceRig_Bartender_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using UI_Bar_BackgroundMenu_ItemSpecialBig_C = Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_ItemSpecialBig_C;
+    using BP_SpaceRig_Bartender_C = ::Game::GameElements::Bar::BP_SpaceRig_Bartender_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using UI_Bar_BackgroundMenu_ItemSpecialBig_C = ::Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_ItemSpecialBig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_1;
@@ -47,4 +47,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_BackgroundMenu_C = Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_C;
+using UI_Bar_BackgroundMenu_C = ::Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_C;

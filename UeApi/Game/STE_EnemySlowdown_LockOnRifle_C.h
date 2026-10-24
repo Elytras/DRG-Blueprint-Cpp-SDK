@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using STE_EnemySlowdown_LockOnRifle_C = Game::WeaponsNTools::LockOnRifle::STE_EnemySlowdown_LockOnRifle_C;
+using STE_EnemySlowdown_LockOnRifle_C = ::Game::WeaponsNTools::LockOnRifle::STE_EnemySlowdown_LockOnRifle_C;

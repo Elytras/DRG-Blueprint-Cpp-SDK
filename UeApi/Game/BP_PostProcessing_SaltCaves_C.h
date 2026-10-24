@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SaltCaves
 
-using BP_PostProcessing_SaltCaves_C = Game::Landscape::Biomes::Biomes_Ingame::SaltCaves::BP_PostProcessing_SaltCaves_C;
+using BP_PostProcessing_SaltCaves_C = ::Game::Landscape::Biomes::Biomes_Ingame::SaltCaves::BP_PostProcessing_SaltCaves_C;

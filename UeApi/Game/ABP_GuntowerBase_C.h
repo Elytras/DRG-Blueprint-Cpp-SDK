@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent
 
-using ABP_GuntowerBase_C = Game::GameElements::GameEvents::GuntowerEvent::ABP_GuntowerBase_C;
+using ABP_GuntowerBase_C = ::Game::GameElements::GameEvents::GuntowerEvent::ABP_GuntowerBase_C;

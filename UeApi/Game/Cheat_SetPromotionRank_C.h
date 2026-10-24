@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SetPromotionRank_C = Game::UI::Menu_Cheats::Cheat_SetPromotionRank_C;
+using Cheat_SetPromotionRank_C = ::Game::UI::Menu_Cheats::Cheat_SetPromotionRank_C;

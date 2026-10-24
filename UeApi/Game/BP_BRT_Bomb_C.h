@@ -53,6 +53,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* PointLight__UeScsNode = "e70cd70c93434446bd83e7a46885e44e";
         static constexpr const char* Explosion__UeScsNode = "d8e2ef527695b043aa9ee65bf4315426";
         static constexpr const char* Area_Trigger__UeName = "Area Trigger";
@@ -68,4 +69,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty
 
-using BP_BRT_Bomb_C = Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_BRT_Bomb_C;
+using BP_BRT_Bomb_C = ::Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_BRT_Bomb_C;

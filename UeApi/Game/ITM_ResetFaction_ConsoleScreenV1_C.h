@@ -22,9 +22,9 @@ class ITM_ResetFaction_ConsoleScreenV1_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_ResetFaction_ConsoleScreenV1", "ITM_ResetFaction_ConsoleScreenV1_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UTextBlock* CostTextBlock;
@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_ResetFaction_ConsoleScreenV1_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_ResetFaction_ConsoleScreenV1_C;
+using ITM_ResetFaction_ConsoleScreenV1_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_ResetFaction_ConsoleScreenV1_C;

@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::WeaponDisplays
 
-using WeaponDisplay_SentryGun_Generic_AmmoCount_C = Game::UI::WeaponDisplays::WeaponDisplay_SentryGun_Generic_AmmoCount_C;
+using WeaponDisplay_SentryGun_Generic_AmmoCount_C = ::Game::UI::WeaponDisplays::WeaponDisplay_SentryGun_Generic_AmmoCount_C;

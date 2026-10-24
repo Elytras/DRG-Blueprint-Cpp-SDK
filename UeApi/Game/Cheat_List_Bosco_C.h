@@ -15,11 +15,11 @@ namespace Game { namespace UI { namespace Menu_Cheats { namespace VanityCheatWid
 
 namespace Game { namespace UI { namespace Menu_Cheats { namespace VanityCheatWidgets {
 
-class Cheat_List_Bosco_C : public Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C
+class Cheat_List_Bosco_C : public ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Bosco", "Cheat_List_Bosco_C");
-    using Cheat_EquipList_Entry_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
+    using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
     void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
     void GetItemID(class UItemID*& ItemID);
@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_List_Bosco_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Bosco_C;
+using Cheat_List_Bosco_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Bosco_C;

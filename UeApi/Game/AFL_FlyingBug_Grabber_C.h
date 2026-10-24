@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Afflictions
 
-using AFL_FlyingBug_Grabber_C = Game::Enemies::FlyingBug::Afflictions::AFL_FlyingBug_Grabber_C;
+using AFL_FlyingBug_Grabber_C = ::Game::Enemies::FlyingBug::Afflictions::AFL_FlyingBug_Grabber_C;

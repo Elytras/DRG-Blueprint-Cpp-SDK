@@ -159,4 +159,4 @@ private:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using ENE_HydraWeed_Core_C = Game::Enemies::HydraWeed::ENE_HydraWeed_Core_C;
+using ENE_HydraWeed_Core_C = ::Game::Enemies::HydraWeed::ENE_HydraWeed_Core_C;

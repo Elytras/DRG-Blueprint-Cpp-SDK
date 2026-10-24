@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalCountdown_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalCountdown_C;
+using ITM_CommunityGoalCountdown_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalCountdown_C;

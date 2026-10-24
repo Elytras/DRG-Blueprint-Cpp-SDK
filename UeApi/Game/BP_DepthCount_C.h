@@ -18,7 +18,7 @@ class BP_DepthCount_C : public AActor
 {
 public:
     UE_CLASS("/Game/Maps/UILevels/Assets/HUD/BP_DepthCount", "BP_DepthCount_C");
-    using BP_DepthCountWidget_C = Game::Maps::UILevels::Assets::HUD::BP_DepthCountWidget_C;
+    using BP_DepthCountWidget_C = ::Game::Maps::UILevels::Assets::HUD::BP_DepthCountWidget_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget_Pinger;
     class UWidgetComponent* DepthWidget;
@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::Maps::UILevels::Assets::HUD
 
-using BP_DepthCount_C = Game::Maps::UILevels::Assets::HUD::BP_DepthCount_C;
+using BP_DepthCount_C = ::Game::Maps::UILevels::Assets::HUD::BP_DepthCount_C;

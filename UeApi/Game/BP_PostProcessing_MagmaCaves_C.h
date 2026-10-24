@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves
 
-using BP_PostProcessing_MagmaCaves_C = Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::BP_PostProcessing_MagmaCaves_C;
+using BP_PostProcessing_MagmaCaves_C = ::Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::BP_PostProcessing_MagmaCaves_C;

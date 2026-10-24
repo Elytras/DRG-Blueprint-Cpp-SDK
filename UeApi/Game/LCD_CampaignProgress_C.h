@@ -17,7 +17,7 @@ class LCD_CampaignProgress_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionReadouts/LCD_CampaignProgress", "LCD_CampaignProgress_C");
-    using ITM_CampaignProgress_Small_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_Small_C;
+    using ITM_CampaignProgress_Small_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_Small_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_41;
     ITM_CampaignProgress_Small_C* ITM_CampaignProgress_Small;
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts
 
-using LCD_CampaignProgress_C = Game::UI::HUD_SpaceRig::MissionReadouts::LCD_CampaignProgress_C;
+using LCD_CampaignProgress_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::LCD_CampaignProgress_C;

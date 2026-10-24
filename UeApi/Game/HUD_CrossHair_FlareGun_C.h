@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrossHair_FlareGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_FlareGun_C;
+using HUD_CrossHair_FlareGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_FlareGun_C;

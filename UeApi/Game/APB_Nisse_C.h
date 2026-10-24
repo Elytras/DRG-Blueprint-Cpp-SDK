@@ -44,4 +44,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Holidays::Xmas::Nisse
 
-using APB_Nisse_C = Game::GameElements::Holidays::Xmas::Nisse::APB_Nisse_C;
+using APB_Nisse_C = ::Game::GameElements::Holidays::Xmas::Nisse::APB_Nisse_C;

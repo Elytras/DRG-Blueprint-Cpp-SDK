@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using AFE_TP_SepticAcid_C = Game::Enemies::Spider::Lobber::AFE_TP_SepticAcid_C;
+using AFE_TP_SepticAcid_C = ::Game::Enemies::Spider::Lobber::AFE_TP_SepticAcid_C;

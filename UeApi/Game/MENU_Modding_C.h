@@ -15,10 +15,10 @@ class MENU_Modding_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/MENU_Modding", "MENU_Modding_C");
-    using ITM_Tab_Modding_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Tab_Modding_C;
+    using ITM_Tab_Modding_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Tab_Modding_C;
     ITM_Tab_Modding_C* Modding_Tab;
 };
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using MENU_Modding_C = Game::UI::Menu_EscapeMenu::Modding::MENU_Modding_C;
+using MENU_Modding_C = ::Game::UI::Menu_EscapeMenu::Modding::MENU_Modding_C;

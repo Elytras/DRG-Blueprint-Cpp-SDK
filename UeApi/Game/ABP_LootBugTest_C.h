@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::Critters::LootBug
 
-using ABP_LootBugTest_C = Game::Critters::LootBug::ABP_LootBugTest_C;
+using ABP_LootBugTest_C = ::Game::Critters::LootBug::ABP_LootBugTest_C;

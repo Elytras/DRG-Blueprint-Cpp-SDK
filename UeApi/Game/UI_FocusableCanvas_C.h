@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_FocusableCanvas_C = Game::UI::Global_UI_Elements::UI_FocusableCanvas_C;
+using UI_FocusableCanvas_C = ::Game::UI::Global_UI_Elements::UI_FocusableCanvas_C;

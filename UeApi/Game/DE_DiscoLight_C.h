@@ -47,4 +47,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_DiscoLight_C = Game::GameElements::Bar::DrinkEffects::DE_DiscoLight_C;
+using DE_DiscoLight_C = ::Game::GameElements::Bar::DrinkEffects::DE_DiscoLight_C;

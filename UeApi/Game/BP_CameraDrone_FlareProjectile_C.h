@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace MovieMode {
 
-class BP_CameraDrone_FlareProjectile_C : public Game::WeaponsNTools::FlareGun::PRJ_FlareGun_Projectile01_C
+class BP_CameraDrone_FlareProjectile_C : public ::Game::WeaponsNTools::FlareGun::PRJ_FlareGun_Projectile01_C
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_CameraDrone_FlareProjectile", "BP_CameraDrone_FlareProjectile_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::MovieMode
 
-using BP_CameraDrone_FlareProjectile_C = Game::GameElements::MovieMode::BP_CameraDrone_FlareProjectile_C;
+using BP_CameraDrone_FlareProjectile_C = ::Game::GameElements::MovieMode::BP_CameraDrone_FlareProjectile_C;

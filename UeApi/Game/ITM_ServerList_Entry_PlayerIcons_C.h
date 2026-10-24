@@ -20,7 +20,7 @@ class ITM_ServerList_Entry_PlayerIcons_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/ITM_ServerList_Entry_PlayerIcons", "ITM_ServerList_Entry_PlayerIcons_C");
-    using TOOLTIP_ServerEntry_Team_C = Game::UI::Menu_ServerList::TOOLTIP_ServerEntry_Team_C;
+    using TOOLTIP_ServerEntry_Team_C = ::Game::UI::Menu_ServerList::TOOLTIP_ServerEntry_Team_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Player1;
     class UImage* Player2;
@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using ITM_ServerList_Entry_PlayerIcons_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;
+using ITM_ServerList_Entry_PlayerIcons_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_PlayerIcons_C;

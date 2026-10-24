@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_MineheadLaunching_C = Game::Character::Camera::CameraShakes::CameraShake_MineheadLaunching_C;
+using CameraShake_MineheadLaunching_C = ::Game::Character::Camera::CameraShakes::CameraShake_MineheadLaunching_C;

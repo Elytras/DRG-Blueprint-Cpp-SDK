@@ -62,4 +62,4 @@ private:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_Season03_C = Game::Maps::SpaceRig::SLVL_SpaceRig_Season03_C;
+using SLVL_SpaceRig_Season03_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_Season03_C;

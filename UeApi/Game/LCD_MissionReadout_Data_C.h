@@ -20,9 +20,9 @@ class LCD_MissionReadout_Data_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionReadouts/LCD_MissionReadout_Data", "LCD_MissionReadout_Data_C");
-    using ITM_MisDesMutator_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using UI_MissionReadOut_Base_C = Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
+    using ITM_MisDesMutator_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using UI_MissionReadOut_Base_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DATA_MissionName;
     class UTextBlock* DATA_MissionType;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts
 
-using LCD_MissionReadout_Data_C = Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_Data_C;
+using LCD_MissionReadout_Data_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_Data_C;

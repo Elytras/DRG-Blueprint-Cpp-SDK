@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace JetBoots { namespace Blueprint {
 
-class BP_JetBootsMovement_Infinite_C : public Game::GameElements::JetBoots::Blueprint::BP_JetBootsMovement_C
+class BP_JetBootsMovement_Infinite_C : public ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsMovement_C
 {
 public:
     UE_CLASS("/Game/GameElements/JetBoots/Blueprint/BP_JetBootsMovement_Infinite", "BP_JetBootsMovement_Infinite_C");
@@ -26,4 +26,4 @@ private:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using BP_JetBootsMovement_Infinite_C = Game::GameElements::JetBoots::Blueprint::BP_JetBootsMovement_Infinite_C;
+using BP_JetBootsMovement_Infinite_C = ::Game::GameElements::JetBoots::Blueprint::BP_JetBootsMovement_Infinite_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace Rockformation {
 
-class BP_RockFormation_Stone_011_C : public Game::LevelElements::RoomObjects::HugeCarvers::Rockformation::BP_RockFormation_Base_C
+class BP_RockFormation_Stone_011_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::Rockformation::BP_RockFormation_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/Rockformation/BP_RockFormation_Stone_011", "BP_RockFormation_Stone_011_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Rockformation
 
-using BP_RockFormation_Stone_011_C = Game::LevelElements::RoomObjects::HugeCarvers::Rockformation::BP_RockFormation_Stone_011_C;
+using BP_RockFormation_Stone_011_C = ::Game::LevelElements::RoomObjects::HugeCarvers::Rockformation::BP_RockFormation_Stone_011_C;

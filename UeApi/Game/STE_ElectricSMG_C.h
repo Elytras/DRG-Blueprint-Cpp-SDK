@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SMG
 
-using STE_ElectricSMG_C = Game::WeaponsNTools::SMG::STE_ElectricSMG_C;
+using STE_ElectricSMG_C = ::Game::WeaponsNTools::SMG::STE_ElectricSMG_C;

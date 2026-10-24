@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::DLCclaimPopups
 
-using _DLCclaimPopup_TextLine_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
+using _DLCclaimPopup_TextLine_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;

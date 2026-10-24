@@ -20,9 +20,9 @@ class ConsoleScreen_DeathStats_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Infirmary/ConsoleScreen_DeathStats", "ConsoleScreen_DeathStats_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
-    using UI_DeathStats_View_C = Game::UI::HUD_SpaceRig::Infirmary::UI_DeathStats_View_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using UI_DeathStats_View_C = ::Game::UI::HUD_SpaceRig::Infirmary::UI_DeathStats_View_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ConsoleScreen_Notification_C* ConsoleScreen_Notification;
     class UCanvasPanel* Empty;
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Infirmary
 
-using ConsoleScreen_DeathStats_C = Game::UI::HUD_SpaceRig::Infirmary::ConsoleScreen_DeathStats_C;
+using ConsoleScreen_DeathStats_C = ::Game::UI::HUD_SpaceRig::Infirmary::ConsoleScreen_DeathStats_C;

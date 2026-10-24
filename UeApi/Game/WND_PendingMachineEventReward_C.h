@@ -20,10 +20,10 @@ class WND_PendingMachineEventReward_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/WND_PendingMachineEventReward", "WND_PendingMachineEventReward_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_Forge_Schematic_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFadeIn;
     Basic_ButtonScalable2_C* Basic_ButtonScalable2;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using WND_PendingMachineEventReward_C = Game::UI::HUD_SpaceRig::WND_PendingMachineEventReward_C;
+using WND_PendingMachineEventReward_C = ::Game::UI::HUD_SpaceRig::WND_PendingMachineEventReward_C;

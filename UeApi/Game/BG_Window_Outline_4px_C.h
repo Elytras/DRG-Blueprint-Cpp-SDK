@@ -20,4 +20,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using BG_Window_Outline_4px_C = Game::UI::Menu_MinersManual::BG_Window_Outline_4px_C;
+using BG_Window_Outline_4px_C = ::Game::UI::Menu_MinersManual::BG_Window_Outline_4px_C;

@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_SetBool_C = Game::AI::Tasks::TSK_SetBool_C;
+using TSK_SetBool_C = ::Game::AI::Tasks::TSK_SetBool_C;

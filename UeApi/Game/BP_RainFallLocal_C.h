@@ -24,8 +24,8 @@ public:
     class UParticleSystemComponent* P_CaveFX_Rain01;
     class USceneComponent* DefaultSceneRoot;
     bool PlayerInsideGas;
-    void ExecuteUbergraph_BP_RainFallLocal(int EntryPoint);
     void ReceiveBeginPlay();
+    void ExecuteUbergraph_BP_RainFallLocal(int EntryPoint);
 private:
     struct UeMarkers
     {
@@ -38,4 +38,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards
 
-using BP_RainFallLocal_C = Game::LevelElements::RoomObjects::Hazards::BP_RainFallLocal_C;
+using BP_RainFallLocal_C = ::Game::LevelElements::RoomObjects::Hazards::BP_RainFallLocal_C;

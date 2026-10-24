@@ -33,4 +33,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season01
 
-using BP_PropHunt_PatrolBotBall_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Season01::BP_PropHunt_PatrolBotBall_C;
+using BP_PropHunt_PatrolBotBall_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Season01::BP_PropHunt_PatrolBotBall_C;

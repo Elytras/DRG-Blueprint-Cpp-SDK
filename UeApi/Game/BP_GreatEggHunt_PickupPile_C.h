@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint
 
-using BP_GreatEggHunt_PickupPile_C = Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_PickupPile_C;
+using BP_GreatEggHunt_PickupPile_C = ::Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_PickupPile_C;

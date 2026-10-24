@@ -24,7 +24,7 @@ class BP_JettyBoots_Arcade_C : public AJettyBootsArcadeActor
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/BP_JettyBoots_Arcade", "BP_JettyBoots_Arcade_C");
-    using UI_JettyBoots_Arcade_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Arcade_C;
+    using UI_JettyBoots_Arcade_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Arcade_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* IdleAudio;
     class UStaticMeshComponent* SM_Plug;
@@ -63,6 +63,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.JettyBootUsableComponent StartGameUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/BP_JettyBoots_ClearHighscores.BP_JettyBoots_ClearHighscores_C ClearHighScores_Button_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_JettyBoots_ClearHighscores_C_CAT";
         static constexpr const char* IdleAudio__UeScsNode = "77d06798b4b17a4ab8cc3d9307b36718";
         static constexpr const char* SM_Plug__UeScsNode = "140a847deb026944af06d0432c3a6cdf";
         static constexpr const char* UsableCollider__UeScsNode = "da8813deec98cd4f9883f2945f81ca9b";
@@ -79,4 +80,4 @@ private:
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using BP_JettyBoots_Arcade_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::BP_JettyBoots_Arcade_C;
+using BP_JettyBoots_Arcade_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::BP_JettyBoots_Arcade_C;

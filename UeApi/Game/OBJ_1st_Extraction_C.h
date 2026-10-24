@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives {
 
-class OBJ_1st_Extraction_C : public Game::GameElements::Objectives::OBJ_Extraction_Base_C
+class OBJ_1st_Extraction_C : public ::Game::GameElements::Objectives::OBJ_Extraction_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/OBJ_1st_Extraction", "OBJ_1st_Extraction_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Objectives
 
-using OBJ_1st_Extraction_C = Game::GameElements::Objectives::OBJ_1st_Extraction_C;
+using OBJ_1st_Extraction_C = ::Game::GameElements::Objectives::OBJ_1st_Extraction_C;

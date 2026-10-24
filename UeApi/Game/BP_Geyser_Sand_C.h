@@ -24,7 +24,7 @@ class UTimelineComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace SandGeyser {
 
-class BP_Geyser_Sand_C : public Game::LevelElements::RoomObjects::Hazards::Geyser::BP_Geyser_Base_C
+class BP_Geyser_Sand_C : public ::Game::LevelElements::RoomObjects::Hazards::Geyser::BP_Geyser_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SandGeyser/BP_Geyser_Sand", "BP_Geyser_Sand_C");
@@ -99,4 +99,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SandGeyser
 
-using BP_Geyser_Sand_C = Game::LevelElements::RoomObjects::Hazards::SandGeyser::BP_Geyser_Sand_C;
+using BP_Geyser_Sand_C = ::Game::LevelElements::RoomObjects::Hazards::SandGeyser::BP_Geyser_Sand_C;

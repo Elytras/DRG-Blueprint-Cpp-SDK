@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Character { namespace Tutorials {
 
-class Tutorial_Hint_EquipClassTool_C : public Game::Character::Tutorials::Tutorial_Hint_EquipItem_C
+class Tutorial_Hint_EquipClassTool_C : public ::Game::Character::Tutorials::Tutorial_Hint_EquipItem_C
 {
 public:
     UE_CLASS("/Game/Character/Tutorials/Tutorial_Hint_EquipClassTool", "Tutorial_Hint_EquipClassTool_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_EquipClassTool_C = Game::Character::Tutorials::Tutorial_Hint_EquipClassTool_C;
+using Tutorial_Hint_EquipClassTool_C = ::Game::Character::Tutorials::Tutorial_Hint_EquipClassTool_C;

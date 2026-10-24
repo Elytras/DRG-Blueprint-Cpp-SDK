@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::MuleInfected
 
-using BP_InfectedMulePreplacement_C = Game::Enemies::MuleInfected::BP_InfectedMulePreplacement_C;
+using BP_InfectedMulePreplacement_C = ::Game::Enemies::MuleInfected::BP_InfectedMulePreplacement_C;

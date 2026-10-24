@@ -99,4 +99,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant
 
-using BP_FloatingLightPlant2_C = Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant::BP_FloatingLightPlant2_C;
+using BP_FloatingLightPlant2_C = ::Game::LevelElements::RoomObjects::Helpers::FloatingLightPlant::BP_FloatingLightPlant2_C;

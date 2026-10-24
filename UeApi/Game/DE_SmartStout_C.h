@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_SmartStout_C = Game::GameElements::Bar::DrinkEffects::DE_SmartStout_C;
+using DE_SmartStout_C = ::Game::GameElements::Bar::DrinkEffects::DE_SmartStout_C;

@@ -32,11 +32,11 @@ class ITM_Wardrobe_ItemSlot_Base_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_Base", "ITM_Wardrobe_ItemSlot_Base_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using ITM_Wardrobe_ItemSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
-    using UI_RandomizeIcon_C = Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
-    using UI_ToggleSleevelessIcon_C = Game::UI::Menu_Wardrobe::UI_ToggleSleevelessIcon_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_Wardrobe_ItemSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSelector_C;
+    using UI_RandomizeIcon_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
+    using UI_ToggleSleevelessIcon_C = ::Game::UI::Menu_Wardrobe::UI_ToggleSleevelessIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShuffle;
     UE_READONLY class UWidgetAnimation* IntroRight;
@@ -132,4 +132,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSlot_Base_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;
+using ITM_Wardrobe_ItemSlot_Base_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Base_C;

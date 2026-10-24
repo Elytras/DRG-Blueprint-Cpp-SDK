@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_RoomList_C = Game::UI::Menu_Cheats::Cheat_RoomList_C;
+using Cheat_RoomList_C = ::Game::UI::Menu_Cheats::Cheat_RoomList_C;

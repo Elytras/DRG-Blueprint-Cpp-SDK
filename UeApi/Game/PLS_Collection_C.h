@@ -14,7 +14,7 @@ class URoomGeneratorGroup;
 
 namespace Game { namespace Landscape { namespace ProceduralLevelSetups { namespace Alpha02 {
 
-class PLS_Collection_C : public Game::Landscape::ProceduralLevelSetups::PLS_Fractured_Base_C
+class PLS_Collection_C : public ::Game::Landscape::ProceduralLevelSetups::PLS_Fractured_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Collection", "PLS_Collection_C");
@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02
 
-using PLS_Collection_C = Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_Collection_C;
+using PLS_Collection_C = ::Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_Collection_C;

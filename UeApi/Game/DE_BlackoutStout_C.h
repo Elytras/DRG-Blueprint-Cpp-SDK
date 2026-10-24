@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_BlackoutStout_C = Game::GameElements::Bar::DrinkEffects::DE_BlackoutStout_C;
+using DE_BlackoutStout_C = ::Game::GameElements::Bar::DrinkEffects::DE_BlackoutStout_C;

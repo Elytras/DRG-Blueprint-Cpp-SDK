@@ -41,6 +41,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "c8729631ffce5d4683be320a88635848";
         static constexpr const char* RotatingMovement__UeScsNode = "9d12a4be7b6a7e4385b204182fd39a83";
         static constexpr const char* Mesh_Egg__UeScsNode = "30506694d8737241b4458de603eccb05";
@@ -54,4 +55,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::EggShot
 
-using PRJ_Spider_Tank_Boss_Eggshot_C = Game::Enemies::Spider::TankBoss::EggShot::PRJ_Spider_Tank_Boss_Eggshot_C;
+using PRJ_Spider_Tank_Boss_Eggshot_C = ::Game::Enemies::Spider::TankBoss::EggShot::PRJ_Spider_Tank_Boss_Eggshot_C;

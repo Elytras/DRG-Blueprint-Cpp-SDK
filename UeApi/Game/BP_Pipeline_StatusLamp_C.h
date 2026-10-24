@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Pipeline_StatusLamp_C = Game::LevelElements::Refinery::BP_Pipeline_StatusLamp_C;
+using BP_Pipeline_StatusLamp_C = ::Game::LevelElements::Refinery::BP_Pipeline_StatusLamp_C;

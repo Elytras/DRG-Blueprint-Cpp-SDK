@@ -18,11 +18,11 @@ class Cheat_VanityTab_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_VanityTab", "Cheat_VanityTab_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Cheat_List_Bosco_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Bosco_C;
-    using Cheat_List_Pickaxe_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Pickaxe_C;
-    using Cheat_List_Vanity_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Vanity_C;
-    using Cheat_List_VictoryMoves_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_VictoryMoves_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Cheat_List_Bosco_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Bosco_C;
+    using Cheat_List_Pickaxe_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Pickaxe_C;
+    using Cheat_List_Vanity_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Vanity_C;
+    using Cheat_List_VictoryMoves_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_VictoryMoves_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Cheat_List_Bosco_C* Cheat_List_Bosco;
     Cheat_List_Pickaxe_C* Cheat_List_Pickaxe;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_VanityTab_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_VanityTab_C;
+using Cheat_VanityTab_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_VanityTab_C;

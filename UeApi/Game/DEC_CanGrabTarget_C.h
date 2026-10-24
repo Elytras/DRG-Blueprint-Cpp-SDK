@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::AI::Decorators
 
-using DEC_CanGrabTarget_C = Game::AI::Decorators::DEC_CanGrabTarget_C;
+using DEC_CanGrabTarget_C = ::Game::AI::Decorators::DEC_CanGrabTarget_C;

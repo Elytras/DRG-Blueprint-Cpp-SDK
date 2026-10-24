@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_ShieldBroken_C = Game::UI::ScreenOverlays::ScreenOverlay_ShieldBroken_C;
+using ScreenOverlay_ShieldBroken_C = ::Game::UI::ScreenOverlays::ScreenOverlay_ShieldBroken_C;

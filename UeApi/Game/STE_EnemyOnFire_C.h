@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Temperature
 
-using STE_EnemyOnFire_C = Game::GameElements::Temperature::STE_EnemyOnFire_C;
+using STE_EnemyOnFire_C = ::Game::GameElements::Temperature::STE_EnemyOnFire_C;

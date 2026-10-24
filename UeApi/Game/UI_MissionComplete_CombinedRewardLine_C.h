@@ -21,7 +21,7 @@ class UI_MissionComplete_CombinedRewardLine_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/UI_MissionComplete_CombinedRewardLine", "UI_MissionComplete_CombinedRewardLine_C");
-    using UI_MissionComplete_RewardColumn_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RewardColumn_C;
+    using UI_MissionComplete_RewardColumn_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RewardColumn_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimCount;
     class UTextBlock* AmountLabel;
@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using UI_MissionComplete_CombinedRewardLine_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewardLine_C;
+using UI_MissionComplete_CombinedRewardLine_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewardLine_C;

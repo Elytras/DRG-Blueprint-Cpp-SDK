@@ -98,4 +98,4 @@ private:
 
 }}}}   // namespace Game::Game::Events::Oktoberfest
 
-using BP_InCaveOktoberfestMug_C = Game::Game::Events::Oktoberfest::BP_InCaveOktoberfestMug_C;
+using BP_InCaveOktoberfestMug_C = ::Game::Game::Events::Oktoberfest::BP_InCaveOktoberfestMug_C;

@@ -79,4 +79,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Minehead
 
-using BP_SpotLightInteractive_C = Game::LevelElements::Minehead::BP_SpotLightInteractive_C;
+using BP_SpotLightInteractive_C = ::Game::LevelElements::Minehead::BP_SpotLightInteractive_C;

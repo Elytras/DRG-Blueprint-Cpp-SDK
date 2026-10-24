@@ -22,8 +22,8 @@ class MissionControl_MainDialogue_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MissionControl/MissionControl_MainDialogue", "MissionControl_MainDialogue_C");
-    using MissionControl_TextAnimator_C = Game::UI::MissionControl::MissionControl_TextAnimator_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using MissionControl_TextAnimator_C = ::Game::UI::MissionControl::MissionControl_TextAnimator_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIn;
     class UImage* BorderInner;
@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::UI::MissionControl
 
-using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
+using MissionControl_MainDialogue_C = ::Game::UI::MissionControl::MissionControl_MainDialogue_C;

@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Profiling
 
-using ProfileEntry_C = Game::UI::Profiling::ProfileEntry_C;
+using ProfileEntry_C = ::Game::UI::Profiling::ProfileEntry_C;

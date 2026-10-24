@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_CrawlerDeathTrail_C = Game::UI::ScreenOverlays::ScreenOverlay_CrawlerDeathTrail_C;
+using ScreenOverlay_CrawlerDeathTrail_C = ::Game::UI::ScreenOverlays::ScreenOverlay_CrawlerDeathTrail_C;

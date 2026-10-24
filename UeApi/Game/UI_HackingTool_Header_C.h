@@ -16,7 +16,7 @@ class UI_HackingTool_Header_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/UI_HackingTool_Header", "UI_HackingTool_Header_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Header_Subtitle;
     Basic_Label_C* Header_Title;
@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI
 
-using UI_HackingTool_Header_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
+using UI_HackingTool_Header_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using STE_Plague_BomberRockpoxGoo_C = Game::Enemies::Plague::STE_Plague_BomberRockpoxGoo_C;
+using STE_Plague_BomberRockpoxGoo_C = ::Game::Enemies::Plague::STE_Plague_BomberRockpoxGoo_C;

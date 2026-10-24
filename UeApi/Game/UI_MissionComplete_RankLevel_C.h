@@ -21,7 +21,7 @@ class UI_MissionComplete_RankLevel_C : public UMissionPlayerAndCharacterWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/UI_MissionComplete_RankLevel", "UI_MissionComplete_RankLevel_C");
-    using ICON_Rank_C = Game::UI::CharacterSelectionMK2::ICON_Rank_C;
+    using ICON_Rank_C = ::Game::UI::CharacterSelectionMK2::ICON_Rank_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* BorderBottom;
     class UImage* BorderCenter;
@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using UI_MissionComplete_RankLevel_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RankLevel_C;
+using UI_MissionComplete_RankLevel_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RankLevel_C;

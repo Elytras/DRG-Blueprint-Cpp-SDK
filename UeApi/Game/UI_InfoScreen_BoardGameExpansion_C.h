@@ -15,10 +15,10 @@ class UI_InfoScreen_BoardGameExpansion_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MENU_Merch/BoardGame/UI_InfoScreen_BoardGameExpansion", "UI_InfoScreen_BoardGameExpansion_C");
-    using UI_InfoScreen_MerchLink_C = Game::UI::MENU_Merch::_Common::UI_InfoScreen_MerchLink_C;
+    using UI_InfoScreen_MerchLink_C = ::Game::UI::MENU_Merch::_Common::UI_InfoScreen_MerchLink_C;
     UI_InfoScreen_MerchLink_C* UI_InfoScreen_MerchLink;
 };
 
 }}}}   // namespace Game::UI::MENU_Merch::BoardGame
 
-using UI_InfoScreen_BoardGameExpansion_C = Game::UI::MENU_Merch::BoardGame::UI_InfoScreen_BoardGameExpansion_C;
+using UI_InfoScreen_BoardGameExpansion_C = ::Game::UI::MENU_Merch::BoardGame::UI_InfoScreen_BoardGameExpansion_C;

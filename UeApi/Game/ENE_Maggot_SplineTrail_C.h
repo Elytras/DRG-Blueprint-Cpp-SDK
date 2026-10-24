@@ -11,7 +11,7 @@ class USplineTrailComponent;
 
 namespace Game { namespace Critters { namespace Maggot {
 
-class ENE_Maggot_SplineTrail_C : public Game::Critters::Maggot::ENE_Maggot_C
+class ENE_Maggot_SplineTrail_C : public ::Game::Critters::Maggot::ENE_Maggot_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/ENE_Maggot_SplineTrail", "ENE_Maggot_SplineTrail_C");
@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using ENE_Maggot_SplineTrail_C = Game::Critters::Maggot::ENE_Maggot_SplineTrail_C;
+using ENE_Maggot_SplineTrail_C = ::Game::Critters::Maggot::ENE_Maggot_SplineTrail_C;

@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Campaign::Requirements
 
-using ITM_ValidSeedRequirement_C = Game::GameElements::Campaign::Requirements::ITM_ValidSeedRequirement_C;
+using ITM_ValidSeedRequirement_C = ::Game::GameElements::Campaign::Requirements::ITM_ValidSeedRequirement_C;

@@ -42,4 +42,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_MissionStats_C = Game::UI::HUD_SpaceRig::BP_MissionStats_C;
+using BP_MissionStats_C = ::Game::UI::HUD_SpaceRig::BP_MissionStats_C;

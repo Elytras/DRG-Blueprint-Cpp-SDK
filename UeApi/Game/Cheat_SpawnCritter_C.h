@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnCritter_C = Game::UI::Menu_Cheats::Cheat_SpawnCritter_C;
+using Cheat_SpawnCritter_C = ::Game::UI::Menu_Cheats::Cheat_SpawnCritter_C;

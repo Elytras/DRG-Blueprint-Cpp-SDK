@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_Plague_MeteorImpact_Hot_C = Game::Landscape::ReactiveTerrain::RT_Plague_MeteorImpact_Hot_C;
+using RT_Plague_MeteorImpact_Hot_C = ::Game::Landscape::ReactiveTerrain::RT_Plague_MeteorImpact_Hot_C;

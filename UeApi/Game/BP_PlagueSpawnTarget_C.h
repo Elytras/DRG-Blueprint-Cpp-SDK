@@ -28,4 +28,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail
 
-using BP_PlagueSpawnTarget_C = Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_PlagueSpawnTarget_C;
+using BP_PlagueSpawnTarget_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::SlimeTrail::BP_PlagueSpawnTarget_C;

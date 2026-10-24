@@ -29,4 +29,4 @@ public:
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using UI_JettyBoots_Lives_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Lives_C;
+using UI_JettyBoots_Lives_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Lives_C;

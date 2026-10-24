@@ -16,7 +16,7 @@ class HUD_GameTags_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_GameTags", "HUD_GameTags_C");
-    using HUD_GameTags_Entry_C = Game::UI::MainOnscreenHUD::HUD_GameTags_Entry_C;
+    using HUD_GameTags_Entry_C = ::Game::UI::MainOnscreenHUD::HUD_GameTags_Entry_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_GameTags_Entry_C* GameTag_Experimental;
     HUD_GameTags_Entry_C* GameTag_Sandbox;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_GameTags_C = Game::UI::MainOnscreenHUD::HUD_GameTags_C;
+using HUD_GameTags_C = ::Game::UI::MainOnscreenHUD::HUD_GameTags_C;

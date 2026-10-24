@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::UI::_GlobalAssets::CustomRichText
 
-using UI_RichTextInput_C = Game::UI::_GlobalAssets::CustomRichText::UI_RichTextInput_C;
+using UI_RichTextInput_C = ::Game::UI::_GlobalAssets::CustomRichText::UI_RichTextInput_C;

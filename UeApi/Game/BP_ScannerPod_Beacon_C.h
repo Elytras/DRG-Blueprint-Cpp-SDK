@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace DeepScan {
 
-class BP_ScannerPod_Beacon_C : public Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
+class BP_ScannerPod_Beacon_C : public ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_ScannerPod_Beacon", "BP_ScannerPod_Beacon_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SimpleObjectInfo;Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
+    };
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_ScannerPod_Beacon_C = Game::GameElements::Objectives::DeepScan::BP_ScannerPod_Beacon_C;
+using BP_ScannerPod_Beacon_C = ::Game::GameElements::Objectives::DeepScan::BP_ScannerPod_Beacon_C;

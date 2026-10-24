@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::Maps::UILevels
 
-using BP_Portal_C = Game::Maps::UILevels::BP_Portal_C;
+using BP_Portal_C = ::Game::Maps::UILevels::BP_Portal_C;

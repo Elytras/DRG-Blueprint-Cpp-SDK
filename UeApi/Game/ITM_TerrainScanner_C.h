@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::TerrainScanner
 
-using ITM_TerrainScanner_C = Game::WeaponsNTools::TerrainScanner::ITM_TerrainScanner_C;
+using ITM_TerrainScanner_C = ::Game::WeaponsNTools::TerrainScanner::ITM_TerrainScanner_C;

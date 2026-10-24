@@ -14,12 +14,12 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Tethers { namespace Assets {
 
-class HackingPod_HackScreenTop_C : public Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
+class HackingPod_HackScreenTop_C : public ::Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Tethers/Assets/HackingPod_HackScreenTop", "HackingPod_HackScreenTop_C");
-    using ScrollingText01_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText01_C;
-    using ScrollingText03_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText03_C;
+    using ScrollingText01_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText01_C;
+    using ScrollingText03_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText03_C;
     FPointerToUberGraphFrame UberGraphFrame_HackingPod_HackScreenTop_C;
     UE_READONLY class UWidgetAnimation* ButtonBlink;
     class UImage* IMG_Caution;
@@ -39,4 +39,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using HackingPod_HackScreenTop_C = Game::GameElements::Objectives::Facility::Tethers::Assets::HackingPod_HackScreenTop_C;
+using HackingPod_HackScreenTop_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::HackingPod_HackScreenTop_C;

@@ -22,7 +22,7 @@ class ITM_HackingTool_C : public AHackingToolItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/ITM_HackingTool", "ITM_HackingTool_C");
-    using HackingTool_Controller_C = Game::WeaponsNTools::HackingTool::UI::HackingTool_Controller_C;
+    using HackingTool_Controller_C = ::Game::WeaponsNTools::HackingTool::UI::HackingTool_Controller_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget;
     class UStaticMeshComponent* StaticMesh;
@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HackingTool
 
-using ITM_HackingTool_C = Game::WeaponsNTools::HackingTool::ITM_HackingTool_C;
+using ITM_HackingTool_C = ::Game::WeaponsNTools::HackingTool::ITM_HackingTool_C;

@@ -12,7 +12,7 @@ class USkeletalMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Caretaker {
 
-class ESI_Facility_Caretaker_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Facility_Caretaker_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/ESI_Facility_Caretaker", "ESI_Facility_Caretaker_C");
@@ -27,6 +27,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* SkeletalMesh4__UeScsNode = "cba60bf7854fdc4ba447bd4e7bc95818";
         static constexpr const char* SkeletalMesh3__UeScsNode = "d8df79399ab5a042823a9b1b89fa00a7";
         static constexpr const char* SkeletalMesh2__UeScsNode = "ec37304d79988a4b8a7340e521d58b50";
@@ -36,4 +37,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using ESI_Facility_Caretaker_C = Game::GameElements::Objectives::Facility::Caretaker::ESI_Facility_Caretaker_C;
+using ESI_Facility_Caretaker_C = ::Game::GameElements::Objectives::Facility::Caretaker::ESI_Facility_Caretaker_C;

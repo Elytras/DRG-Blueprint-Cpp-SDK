@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::Shark
 
-using ESI_Shark_C = Game::Enemies::Shark::ESI_Shark_C;
+using ESI_Shark_C = ::Game::Enemies::Shark::ESI_Shark_C;

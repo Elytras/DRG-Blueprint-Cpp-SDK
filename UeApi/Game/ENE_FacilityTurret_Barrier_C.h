@@ -15,7 +15,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class ENE_FacilityTurret_Barrier_C : public Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Spinning_C
+class ENE_FacilityTurret_Barrier_C : public ::Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Spinning_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/ENE_FacilityTurret_Barrier", "ENE_FacilityTurret_Barrier_C");
@@ -32,6 +32,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TurretMesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_2";
         static constexpr const char* UberGraphFrame_ENE_FacilityTurret_Barrier_C__UeName = "UberGraphFrame";
         static constexpr const char* BlockPlayers__UeScsNode = "d7c6fb3548cd1741b5c63b369b004d04";
         static constexpr const char* Base__UeScsNode = "d06f18e8bd1f0c42b285e3f7142ff7a7";
@@ -42,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using ENE_FacilityTurret_Barrier_C = Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Barrier_C;
+using ENE_FacilityTurret_Barrier_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Barrier_C;

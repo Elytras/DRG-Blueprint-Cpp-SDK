@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder
 
-using OnScreenIndicator_FuelLine_Build_C = Game::WeaponsNTools::FuelLineBuilder::OnScreenIndicator_FuelLine_Build_C;
+using OnScreenIndicator_FuelLine_Build_C = ::Game::WeaponsNTools::FuelLineBuilder::OnScreenIndicator_FuelLine_Build_C;

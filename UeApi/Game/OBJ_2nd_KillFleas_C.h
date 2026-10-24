@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::GameElements::Objectives
 
-using OBJ_2nd_KillFleas_C = Game::GameElements::Objectives::OBJ_2nd_KillFleas_C;
+using OBJ_2nd_KillFleas_C = ::Game::GameElements::Objectives::OBJ_2nd_KillFleas_C;

@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using ABP_TerminatorTentacle_Head_C = Game::Enemies::RivalTech::Terminator::ABP_TerminatorTentacle_Head_C;
+using ABP_TerminatorTentacle_Head_C = ::Game::Enemies::RivalTech::Terminator::ABP_TerminatorTentacle_Head_C;

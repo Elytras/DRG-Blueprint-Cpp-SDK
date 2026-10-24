@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_ThrowCarriable_C = Game::Character::Tutorials::Tutorial_ThrowCarriable_C;
+using Tutorial_ThrowCarriable_C = ::Game::Character::Tutorials::Tutorial_ThrowCarriable_C;

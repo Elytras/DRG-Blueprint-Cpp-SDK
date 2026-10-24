@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects
 
-using AFE_FP_PlagueSpores_C = Game::GameElements::PawnAffliction::FPEffects::AFE_FP_PlagueSpores_C;
+using AFE_FP_PlagueSpores_C = ::Game::GameElements::PawnAffliction::FPEffects::AFE_FP_PlagueSpores_C;

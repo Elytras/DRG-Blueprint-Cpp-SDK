@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::Art::PostProcess
 
-using BP_PostProcessing_SpaceRig_C = Game::Art::PostProcess::BP_PostProcessing_SpaceRig_C;
+using BP_PostProcessing_SpaceRig_C = ::Game::Art::PostProcess::BP_PostProcessing_SpaceRig_C;

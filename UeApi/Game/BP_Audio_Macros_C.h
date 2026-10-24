@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Game::Macros
 
-using BP_Audio_Macros_C = Game::Game::Macros::BP_Audio_Macros_C;
+using BP_Audio_Macros_C = ::Game::Game::Macros::BP_Audio_Macros_C;

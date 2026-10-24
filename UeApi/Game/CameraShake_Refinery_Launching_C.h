@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using CameraShake_Refinery_Launching_C = Game::LevelElements::Refinery::CameraShake_Refinery_Launching_C;
+using CameraShake_Refinery_Launching_C = ::Game::LevelElements::Refinery::CameraShake_Refinery_Launching_C;

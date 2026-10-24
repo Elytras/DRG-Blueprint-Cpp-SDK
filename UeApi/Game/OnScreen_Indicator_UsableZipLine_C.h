@@ -27,8 +27,8 @@ class OnScreen_Indicator_UsableZipLine_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreen_Indicator_UsableZipLine", "OnScreen_Indicator_UsableZipLine_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ImageTinted_C* BoostIcon;
     UI_AdvancedLabel_C* BoostInputLabel;
@@ -53,4 +53,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreen_Indicator_UsableZipLine_C = Game::UI::OnScreenIndicators::OnScreen_Indicator_UsableZipLine_C;
+using OnScreen_Indicator_UsableZipLine_C = ::Game::UI::OnScreenIndicators::OnScreen_Indicator_UsableZipLine_C;

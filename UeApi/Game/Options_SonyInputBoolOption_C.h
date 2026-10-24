@@ -17,7 +17,7 @@ class Options_SonyInputBoolOption_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/SonyOptions/Options_SonyInputBoolOption", "Options_SonyInputBoolOption_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     TEnum<ESonyInputSettingsBools> Option;
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::SonyOptions
 
-using Options_SonyInputBoolOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputBoolOption_C;
+using Options_SonyInputBoolOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputBoolOption_C;

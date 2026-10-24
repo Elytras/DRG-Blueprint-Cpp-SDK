@@ -23,4 +23,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using DEC_IsAttackOffCooldown_C = Game::Enemies::Spider::TankBoss::BossTwins::DEC_IsAttackOffCooldown_C;
+using DEC_IsAttackOffCooldown_C = ::Game::Enemies::Spider::TankBoss::BossTwins::DEC_IsAttackOffCooldown_C;

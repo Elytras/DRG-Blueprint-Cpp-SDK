@@ -74,4 +74,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
+using ITM_GeneratedIcon_Item_C = ::Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;

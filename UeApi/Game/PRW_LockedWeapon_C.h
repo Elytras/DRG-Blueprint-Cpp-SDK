@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using PRW_LockedWeapon_C = Game::UI::Menu_Loadout::PRW_LockedWeapon_C;
+using PRW_LockedWeapon_C = ::Game::UI::Menu_Loadout::PRW_LockedWeapon_C;

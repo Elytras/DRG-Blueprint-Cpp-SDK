@@ -19,8 +19,8 @@ class UI_MissionStats_Categories_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_MissionStats_Categories", "UI_MissionStats_Categories_C");
-    using Basic_ArrowButton02_C = Game::UI::Art::WidgetParts::Basic_ArrowButton02_C;
-    using UI_MissionStats_Category_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Category_C;
+    using Basic_ArrowButton02_C = ::Game::UI::Art::WidgetParts::Basic_ArrowButton02_C;
+    using UI_MissionStats_Category_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Category_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ArrowButton02_C* ArrowLeft;
     Basic_ArrowButton02_C* ArrowRight;
@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_MissionStats_Categories_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Categories_C;
+using UI_MissionStats_Categories_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Categories_C;

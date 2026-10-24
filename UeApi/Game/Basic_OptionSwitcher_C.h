@@ -18,7 +18,7 @@ class Basic_OptionSwitcher_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_OptionSwitcher", "Basic_OptionSwitcher_C");
-    using Basic_ScrollArrow2_C = Game::UI::Art::WidgetParts::Basic_ScrollArrow2_C;
+    using Basic_ScrollArrow2_C = ::Game::UI::Art::WidgetParts::Basic_ScrollArrow2_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* ArrowBox_Text;
     Basic_ScrollArrow2_C* ArrowLeft;
@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;

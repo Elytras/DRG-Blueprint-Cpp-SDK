@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_StopAttackStance_C = Game::AI::Tasks::TSK_StopAttackStance_C;
+using TSK_StopAttackStance_C = ::Game::AI::Tasks::TSK_StopAttackStance_C;

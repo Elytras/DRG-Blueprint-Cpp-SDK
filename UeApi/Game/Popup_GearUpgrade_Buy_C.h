@@ -25,9 +25,9 @@ class Popup_GearUpgrade_Buy_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Popup_GearUpgrade_Buy", "Popup_GearUpgrade_Buy_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     BlurBackground_C* BlurBackground;
@@ -54,4 +54,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using Popup_GearUpgrade_Buy_C = Game::UI::CharacterSelectionMK2::Popup_GearUpgrade_Buy_C;
+using Popup_GearUpgrade_Buy_C = ::Game::UI::CharacterSelectionMK2::Popup_GearUpgrade_Buy_C;

@@ -26,11 +26,11 @@ class HUD_PlayerDown_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_PlayerDown", "HUD_PlayerDown_C");
-    using HUD_ActivatablePerks_C = Game::UI::MainOnscreenHUD::Perks::HUD_ActivatablePerks_C;
-    using HUD_Armor_Base_C = Game::UI::MainOnscreenHUD::HUD_Armor_Base_C;
-    using HUD_Health_Base_C = Game::UI::MainOnscreenHUD::HUD_Health_Base_C;
-    using ScreenOverlay_Incapacitated_C = Game::UI::ScreenOverlays::ScreenOverlay_Incapacitated_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using HUD_ActivatablePerks_C = ::Game::UI::MainOnscreenHUD::Perks::HUD_ActivatablePerks_C;
+    using HUD_Armor_Base_C = ::Game::UI::MainOnscreenHUD::HUD_Armor_Base_C;
+    using HUD_Health_Base_C = ::Game::UI::MainOnscreenHUD::HUD_Health_Base_C;
+    using ScreenOverlay_Incapacitated_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Incapacitated_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Brackets01;
     class UImage* Brackets02;
@@ -65,4 +65,4 @@ private:
 
 }}   // namespace Game::UI
 
-using HUD_PlayerDown_C = Game::UI::HUD_PlayerDown_C;
+using HUD_PlayerDown_C = ::Game::UI::HUD_PlayerDown_C;

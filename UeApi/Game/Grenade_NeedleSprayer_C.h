@@ -18,7 +18,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace NeedleSprayer {
 
-class Grenade_NeedleSprayer_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_NeedleSprayer_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/Grenade_NeedleSprayer", "Grenade_NeedleSprayer_C");
@@ -37,6 +37,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_NeedleSprayer_C__UeName = "UberGraphFrame";
         static constexpr const char* BouncySphere__UeScsNode = "7e2795347a92b44493d4aae87d30dd90";
         static constexpr const char* Arrow__UeScsNode = "0998978870ae034dacf79e680444d511";
@@ -45,4 +46,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer
 
-using Grenade_NeedleSprayer_C = Game::WeaponsNTools::Grenades::NeedleSprayer::Grenade_NeedleSprayer_C;
+using Grenade_NeedleSprayer_C = ::Game::WeaponsNTools::Grenades::NeedleSprayer::Grenade_NeedleSprayer_C;

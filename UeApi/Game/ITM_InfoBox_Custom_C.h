@@ -23,7 +23,7 @@ class ITM_InfoBox_Custom_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/ITM_InfoBox_Custom", "ITM_InfoBox_Custom_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimContentOpen;
     class UNamedSlot* Content;
@@ -59,4 +59,4 @@ public:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using ITM_InfoBox_Custom_C = Game::UI::_GlobalAssets::ITM_InfoBox_Custom_C;
+using ITM_InfoBox_Custom_C = ::Game::UI::_GlobalAssets::ITM_InfoBox_Custom_C;

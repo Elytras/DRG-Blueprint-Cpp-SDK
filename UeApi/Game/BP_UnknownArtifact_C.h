@@ -15,7 +15,7 @@ class UTimelineComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace UnknownArtifact {
 
-class BP_UnknownArtifact_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_UnknownArtifact_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/UnknownArtifact/BP_UnknownArtifact", "BP_UnknownArtifact_C");
@@ -42,6 +42,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_UnknownArtifact_C__UeName = "UberGraphFrame";
         static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
         static constexpr const char* PointLight6__UeScsNode = "8a6be903e223f64cae993353797d890c";
@@ -57,4 +58,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::UnknownArtifact
 
-using BP_UnknownArtifact_C = Game::GameElements::Resources::Embedded::UnknownArtifact::BP_UnknownArtifact_C;
+using BP_UnknownArtifact_C = ::Game::GameElements::Resources::Embedded::UnknownArtifact::BP_UnknownArtifact_C;

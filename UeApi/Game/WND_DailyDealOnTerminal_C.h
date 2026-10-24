@@ -18,8 +18,8 @@ class WND_DailyDealOnTerminal_C : public UDealWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/WND_DailyDealOnTerminal", "WND_DailyDealOnTerminal_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_Trading_DailyDeal_C = Game::UI::Menu_Trading::ITM_Trading_DailyDeal_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_Trading_DailyDeal_C = ::Game::UI::Menu_Trading::ITM_Trading_DailyDeal_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BlurBackground_C* BlurBackground;
     ITM_Trading_DailyDeal_C* ITM_Trading_DailyDeal;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using WND_DailyDealOnTerminal_C = Game::UI::Menu_Trading::WND_DailyDealOnTerminal_C;
+using WND_DailyDealOnTerminal_C = ::Game::UI::Menu_Trading::WND_DailyDealOnTerminal_C;

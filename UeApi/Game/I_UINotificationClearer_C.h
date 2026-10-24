@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using I_UINotificationClearer_C = Game::UI::HUD_SpaceRig::I_UINotificationClearer_C;
+using I_UINotificationClearer_C = ::Game::UI::HUD_SpaceRig::I_UINotificationClearer_C;

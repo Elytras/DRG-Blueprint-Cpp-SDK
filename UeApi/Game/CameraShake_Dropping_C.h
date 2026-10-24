@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_Dropping_C = Game::Character::Camera::CameraShakes::CameraShake_Dropping_C;
+using CameraShake_Dropping_C = ::Game::Character::Camera::CameraShakes::CameraShake_Dropping_C;

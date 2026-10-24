@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Perks_Column_Unlocks_Arrow_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_Arrow_C;
+using UI_Perks_Column_Unlocks_Arrow_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_Arrow_C;

@@ -17,7 +17,7 @@ class HUD_Countdown_Extraction_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Countdown_Extraction", "HUD_Countdown_Extraction_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UTextBlock* DATA_Header;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Countdown_Extraction_C = Game::UI::MainOnscreenHUD::HUD_Countdown_Extraction_C;
+using HUD_Countdown_Extraction_C = ::Game::UI::MainOnscreenHUD::HUD_Countdown_Extraction_C;

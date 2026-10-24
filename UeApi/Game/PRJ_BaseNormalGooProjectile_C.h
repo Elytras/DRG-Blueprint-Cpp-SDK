@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class PRJ_BaseNormalGooProjectile_C : public Game::WeaponsNTools::GooCannon::PRJ_BaseGooProjectile_C
+class PRJ_BaseNormalGooProjectile_C : public ::Game::WeaponsNTools::GooCannon::PRJ_BaseGooProjectile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_BaseNormalGooProjectile", "PRJ_BaseNormalGooProjectile_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Niagara";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using PRJ_BaseNormalGooProjectile_C = Game::WeaponsNTools::GooCannon::PRJ_BaseNormalGooProjectile_C;
+using PRJ_BaseNormalGooProjectile_C = ::Game::WeaponsNTools::GooCannon::PRJ_BaseNormalGooProjectile_C;

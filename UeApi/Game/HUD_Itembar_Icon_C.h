@@ -20,7 +20,7 @@ class HUD_Itembar_Icon_C : public UItemsBarIcon
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Items/HUD_Itembar_Icon", "HUD_Itembar_Icon_C");
-    using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
+    using Basic_HUD_BracketWindowBig_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimSelected;
     Basic_HUD_BracketWindowBig_C* BasicWindow_Bracket;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Items
 
-using HUD_Itembar_Icon_C = Game::UI::MainOnscreenHUD::Items::HUD_Itembar_Icon_C;
+using HUD_Itembar_Icon_C = ::Game::UI::MainOnscreenHUD::Items::HUD_Itembar_Icon_C;

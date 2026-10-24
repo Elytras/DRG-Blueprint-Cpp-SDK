@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::CharacterStructure::Rig::Facial_Hair_Rig
 
-using ABP_Beard_Rig_F_Ember_S05_Skeleton_C = Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Beard_Rig_F_Ember_S05_Skeleton_C;
+using ABP_Beard_Rig_F_Ember_S05_Skeleton_C = ::Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Beard_Rig_F_Ember_S05_Skeleton_C;

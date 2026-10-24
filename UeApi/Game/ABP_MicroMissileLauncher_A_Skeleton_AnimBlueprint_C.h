@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::MicroMissileLauncher::Animations
 
-using ABP_MicroMissileLauncher_A_Skeleton_AnimBlueprint_C = Game::WeaponsNTools::MicroMissileLauncher::Animations::ABP_MicroMissileLauncher_A_Skeleton_AnimBlueprint_C;
+using ABP_MicroMissileLauncher_A_Skeleton_AnimBlueprint_C = ::Game::WeaponsNTools::MicroMissileLauncher::Animations::ABP_MicroMissileLauncher_A_Skeleton_AnimBlueprint_C;

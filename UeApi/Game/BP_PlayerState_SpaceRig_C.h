@@ -7,6 +7,7 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../Engine.h"
 #include "BP_PlayerState_C.h"
+#include "FMissionStatItem.h"
 
 class UItemUpgradePreviewComponent;
 class UMissionStat;
@@ -14,7 +15,7 @@ class UObject;
 
 namespace Game { namespace Game { namespace SpaceRig {
 
-class BP_PlayerState_SpaceRig_C : public Game::Game::BP_PlayerState_C
+class BP_PlayerState_SpaceRig_C : public ::Game::Game::BP_PlayerState_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_PlayerState_SpaceRig", "BP_PlayerState_SpaceRig_C");
@@ -22,6 +23,7 @@ public:
     class UItemUpgradePreviewComponent* ItemUpgradePreview;
     int HealthInsuranceStatus;
     TMulticastInlineDelegate<void(class UMissionStat* MissionStat, FText StatValue)> OnStatChange;
+    TArray<FMissionStatItem> MissionStats;
     void ExecuteUbergraph_BP_PlayerState_SpaceRig(int EntryPoint);
     UE_SERVER UE_RELIABLE void Server_UpdateStat(class UMissionStat* Mission_Stat, float Stat_Value);
     void OnMissionStatChanged(class UObject* WorldContext, class UMissionStat* MissionStat, float Value);
@@ -43,9 +45,10 @@ private:
         static constexpr const char* UberGraphFrame_BP_PlayerState_SpaceRig_C__UeName = "UberGraphFrame";
         static constexpr const char* ItemUpgradePreview__UeScsNode = "f9f0ccc319760247b86725566f668295";
         static constexpr const char* HealthInsuranceStatus__Replicated = ":";
+        static constexpr const char* MissionStats__Replicated = "OnRep_MissionStats:";
     };
 };
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_PlayerState_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerState_SpaceRig_C;
+using BP_PlayerState_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerState_SpaceRig_C;

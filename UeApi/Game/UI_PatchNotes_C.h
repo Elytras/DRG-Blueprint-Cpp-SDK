@@ -17,9 +17,9 @@ class UI_PatchNotes_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_PatchNotes", "UI_PatchNotes_C");
-    using Basic_Menu_SmallWindowWithHeader_Redesign_C = Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_Redesign_C;
-    using Basic_ScrollArrow_C = Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using Basic_Menu_SmallWindowWithHeader_Redesign_C = ::Game::UI::Art::WidgetParts::Basic_Menu_SmallWindowWithHeader_Redesign_C;
+    using Basic_ScrollArrow_C = ::Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_SmallWindowWithHeader_Redesign_C* Basic_Menu_SmallWindowWithHeader;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_PatchNotes_C = Game::UI::Menu_StartScreen::UI_PatchNotes_C;
+using UI_PatchNotes_C = ::Game::UI::Menu_StartScreen::UI_PatchNotes_C;

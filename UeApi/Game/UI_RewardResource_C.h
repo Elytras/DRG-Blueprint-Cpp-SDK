@@ -21,7 +21,7 @@ class UI_RewardResource_C : public URewardWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardResource", "UI_RewardResource_C");
-    using Basic_AnimatedNumber_C = Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
+    using Basic_AnimatedNumber_C = ::Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* CelebrateAnim;
     Basic_AnimatedNumber_C* Basic_AnimatedNumber;
@@ -37,4 +37,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications
 
-using UI_RewardResource_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResource_C;
+using UI_RewardResource_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardResource_C;

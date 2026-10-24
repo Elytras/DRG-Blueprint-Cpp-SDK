@@ -57,4 +57,4 @@ private:
 
 }}}   // namespace Game::Art::FromPersonalFolders
 
-using Elevator2_C = Game::Art::FromPersonalFolders::Elevator2_C;
+using Elevator2_C = ::Game::Art::FromPersonalFolders::Elevator2_C;

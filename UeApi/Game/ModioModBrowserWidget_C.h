@@ -20,9 +20,9 @@ class ModioModBrowserWidget_C : public UModioMenu
 {
 public:
     UE_CLASS("/Modio/UI/Browser/Views/ModioModBrowserWidget", "ModioModBrowserWidget_C");
-    using ModioDownloadQueue_C = Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueue_C;
-    using ModioRefineSearchDrawer_C = Modio::UI::Browser::Drawers::RefineSearch::ModioRefineSearchDrawer_C;
-    using UI_InfoScreen_C = Game::UI::Menu_StartScreen::UI_InfoScreen_C;
+    using ModioDownloadQueue_C = ::Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueue_C;
+    using ModioRefineSearchDrawer_C = ::Modio::UI::Browser::Drawers::RefineSearch::ModioRefineSearchDrawer_C;
+    using UI_InfoScreen_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ModioDownloadQueue_C* ModioDownloadQueue;
     ModioRefineSearchDrawer_C* ModioRefineSearchDrawer;
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Modio::UI::Browser::Views
 
-using ModioModBrowserWidget_C = Modio::UI::Browser::Views::ModioModBrowserWidget_C;
+using ModioModBrowserWidget_C = ::Modio::UI::Browser::Views::ModioModBrowserWidget_C;

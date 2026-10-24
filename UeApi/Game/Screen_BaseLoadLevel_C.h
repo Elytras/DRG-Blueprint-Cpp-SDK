@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using Screen_BaseLoadLevel_C = Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C;
+using Screen_BaseLoadLevel_C = ::Game::UI::Menu_MissionStart::Screen_BaseLoadLevel_C;

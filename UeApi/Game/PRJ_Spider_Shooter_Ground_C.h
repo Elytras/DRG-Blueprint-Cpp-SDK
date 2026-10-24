@@ -31,6 +31,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* Damage__UeScsNode = "3968100e7023c342984d9b1dcbca46bc";
         static constexpr const char* SK_ShootingPlant_Projectile__UeScsNode = "c2f15b3f511d3f4fb5c5ddef7916373b";
         static constexpr const char* ParticleComponent__UeScsNode = "4238ea703aef944abc73e1b08c607c7a";
@@ -40,4 +41,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Shooter
 
-using PRJ_Spider_Shooter_Ground_C = Game::Enemies::Spider::Shooter::PRJ_Spider_Shooter_Ground_C;
+using PRJ_Spider_Shooter_Ground_C = ::Game::Enemies::Spider::Shooter::PRJ_Spider_Shooter_Ground_C;

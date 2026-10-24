@@ -23,13 +23,13 @@ class WND_KPI_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/WND_KPI", "WND_KPI_C");
-    using Basic_ButtonTab_C = Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_KPI_Tab_C = Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C;
-    using UI_Milestone_View_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_View_C;
-    using UI_MissionStats_View_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_View_C;
-    using UI_Perks_View_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_View_C;
+    using Basic_ButtonTab_C = ::Game::UI::Art::WidgetParts::Basic_ButtonTab_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_KPI_Tab_C = ::Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C;
+    using UI_Milestone_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_View_C;
+    using UI_MissionStats_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_View_C;
+    using UI_Perks_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_View_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UBorder* Border_0;
@@ -67,4 +67,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using WND_KPI_C = Game::UI::HUD_SpaceRig::KPI::WND_KPI_C;
+using WND_KPI_C = ::Game::UI::HUD_SpaceRig::KPI::WND_KPI_C;

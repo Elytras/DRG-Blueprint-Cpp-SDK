@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::AI::Services
 
-using SER_FindNearestPlayerTarget_C = Game::AI::Services::SER_FindNearestPlayerTarget_C;
+using SER_FindNearestPlayerTarget_C = ::Game::AI::Services::SER_FindNearestPlayerTarget_C;

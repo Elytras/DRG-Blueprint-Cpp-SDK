@@ -18,8 +18,8 @@ class UI_SaveGame_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Savegame/UI_SaveGame_Entry", "UI_SaveGame_Entry_C");
-    using Basic_MenuLabel_C = Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
-    using UI_SaveGame_CharacterClass_C = Game::UI::Menu_Options::Savegame::UI_SaveGame_CharacterClass_C;
+    using Basic_MenuLabel_C = ::Game::UI::Art::WidgetParts::Basic_MenuLabel_C;
+    using UI_SaveGame_CharacterClass_C = ::Game::UI::Menu_Options::Savegame::UI_SaveGame_CharacterClass_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_MenuLabel_C* Basic_MenuLabel;
     class UHorizontalBox* CharacterBox;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::Savegame
 
-using UI_SaveGame_Entry_C = Game::UI::Menu_Options::Savegame::UI_SaveGame_Entry_C;
+using UI_SaveGame_Entry_C = ::Game::UI::Menu_Options::Savegame::UI_SaveGame_Entry_C;

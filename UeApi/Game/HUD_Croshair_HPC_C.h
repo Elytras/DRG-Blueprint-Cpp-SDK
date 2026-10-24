@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_Croshair_HPC_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Croshair_HPC_C;
+using HUD_Croshair_HPC_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_Croshair_HPC_C;

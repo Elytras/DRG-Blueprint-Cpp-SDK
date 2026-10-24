@@ -34,4 +34,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
+using ITM_Season_CharacterIcon_C = ::Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;

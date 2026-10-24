@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::GameElements::Drone
 
-using BP_BoscoVacuum_C = Game::GameElements::Drone::BP_BoscoVacuum_C;
+using BP_BoscoVacuum_C = ::Game::GameElements::Drone::BP_BoscoVacuum_C;

@@ -51,4 +51,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG
 
-using ABP_GunTower_LMG_Skeleton_AnimBlueprint_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG::ABP_GunTower_LMG_Skeleton_AnimBlueprint_C;
+using ABP_GunTower_LMG_Skeleton_AnimBlueprint_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG::ABP_GunTower_LMG_Skeleton_AnimBlueprint_C;

@@ -13,7 +13,7 @@ class UTexture2D;
 
 namespace Game { namespace UI { namespace _GlobalAssets { namespace MaskedImage {
 
-class UI_GradientMasked_Image_C : public Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Base_C
+class UI_GradientMasked_Image_C : public ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Base_C
 {
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/MaskedImage/UI_GradientMasked_Image", "UI_GradientMasked_Image_C");
@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;

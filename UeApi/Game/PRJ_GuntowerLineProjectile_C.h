@@ -38,4 +38,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire
 
-using PRJ_GuntowerLineProjectile_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire::PRJ_GuntowerLineProjectile_C;
+using PRJ_GuntowerLineProjectile_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire::PRJ_GuntowerLineProjectile_C;

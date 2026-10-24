@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves
 
-using BP_PostProcessing_CrystalCaves_C = Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves::BP_PostProcessing_CrystalCaves_C;
+using BP_PostProcessing_CrystalCaves_C = ::Game::Landscape::Biomes::Biomes_Ingame::CrystalCaves::BP_PostProcessing_CrystalCaves_C;

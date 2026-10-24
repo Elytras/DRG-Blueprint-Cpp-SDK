@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant
 
-using STE_GooPlant_C = Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::STE_GooPlant_C;
+using STE_GooPlant_C = ::Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::STE_GooPlant_C;

@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::SaltFormations
 
-using BP_SaltFormations_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::SaltFormations::BP_SaltFormations_Base_C;
+using BP_SaltFormations_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::SaltFormations::BP_SaltFormations_Base_C;

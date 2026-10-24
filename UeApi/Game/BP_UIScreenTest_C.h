@@ -20,4 +20,4 @@ public:
 
 }}   // namespace Game::UI
 
-using BP_UIScreenTest_C = Game::UI::BP_UIScreenTest_C;
+using BP_UIScreenTest_C = ::Game::UI::BP_UIScreenTest_C;

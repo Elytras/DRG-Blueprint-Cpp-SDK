@@ -23,7 +23,7 @@ class ITM_Loadout_GearStats_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_Loadout_GearStats", "ITM_Loadout_GearStats_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USizeBox* SBox;
     class UBorder* StatBox_BG;
@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_Loadout_GearStats_C = Game::UI::Menu_Loadout::ITM_Loadout_GearStats_C;
+using ITM_Loadout_GearStats_C = ::Game::UI::Menu_Loadout::ITM_Loadout_GearStats_C;

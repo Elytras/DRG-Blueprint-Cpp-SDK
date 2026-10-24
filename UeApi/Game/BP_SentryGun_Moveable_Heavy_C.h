@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace SentryGun { namespace SentryGun_Engineer {
 
-class BP_SentryGun_Moveable_Heavy_C : public Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Moveable_C
+class BP_SentryGun_Moveable_Heavy_C : public ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Moveable_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Moveable_Heavy", "BP_SentryGun_Moveable_Heavy_C");
@@ -17,9 +17,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "SentryGunActor";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.ActorTrackingComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_Heavy_C_CAT:ActorTrackingIcon;/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryGun_Redeployable_Heavy.BP_SentryGun_Redeployable_Heavy_C SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_Heavy_C_CAT;/Script/FSD.OutlineComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_Heavy_C_CAT:Outline;/Script/Engine.SceneComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_Heavy_C_CAT:TurretLegs;/Script/Engine.SkeletalMeshComponent SentryGunActor_GEN_VARIABLE:SentryGunActor_GEN_VARIABLE_BP_SentryGun_Redeployable_Heavy_C_CAT:SentryGunMesh";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryGun_Moveable_Heavy_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Moveable_Heavy_C;
+using BP_SentryGun_Moveable_Heavy_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryGun_Moveable_Heavy_C;

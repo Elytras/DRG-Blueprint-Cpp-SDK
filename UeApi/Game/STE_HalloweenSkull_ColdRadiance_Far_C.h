@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween
 
-using STE_HalloweenSkull_ColdRadiance_Far_C = Game::GameElements::Holidays::Halloween::STE_HalloweenSkull_ColdRadiance_Far_C;
+using STE_HalloweenSkull_ColdRadiance_Far_C = ::Game::GameElements::Holidays::Halloween::STE_HalloweenSkull_ColdRadiance_Far_C;

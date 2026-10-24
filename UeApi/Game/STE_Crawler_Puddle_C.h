@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using STE_Crawler_Puddle_C = Game::Enemies::Crawler::STE_Crawler_Puddle_C;
+using STE_Crawler_Puddle_C = ::Game::Enemies::Crawler::STE_Crawler_Puddle_C;

@@ -28,9 +28,9 @@ class TOOLTIP_Season_Reward_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/TOOLTIP_Season_Reward", "TOOLTIP_Season_Reward_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_Season_CharacterIcon_C = Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_Season_CharacterIcon_C = ::Game::UI::Menu_Seasons::ITM_Season_CharacterIcon_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Intro;
     class UNamedSlot* BelowTooltipSlot;
@@ -61,4 +61,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using TOOLTIP_Season_Reward_C = Game::UI::Menu_Seasons::TOOLTIP_Season_Reward_C;
+using TOOLTIP_Season_Reward_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_Reward_C;

@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Art::_TestingGrounds::TextField
 
-using BP_TextField_Screen_SeeThrough_C = Game::Art::_TestingGrounds::TextField::BP_TextField_Screen_SeeThrough_C;
+using BP_TextField_Screen_SeeThrough_C = ::Game::Art::_TestingGrounds::TextField::BP_TextField_Screen_SeeThrough_C;

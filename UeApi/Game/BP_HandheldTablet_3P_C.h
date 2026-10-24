@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HandheldTablet
 
-using BP_HandheldTablet_3P_C = Game::WeaponsNTools::HandheldTablet::BP_HandheldTablet_3P_C;
+using BP_HandheldTablet_3P_C = ::Game::WeaponsNTools::HandheldTablet::BP_HandheldTablet_3P_C;

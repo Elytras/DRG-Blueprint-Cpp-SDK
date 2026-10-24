@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Shooter {
 
-class ENE_Spider_Shooter_Normal_Elite_C : public Game::Enemies::Spider::Shooter::ENE_Spider_Shooter_Normal_C
+class ENE_Spider_Shooter_Normal_Elite_C : public ::Game::Enemies::Spider::Shooter::ENE_Spider_Shooter_Normal_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/ENE_Spider_Shooter_Normal_Elite", "ENE_Spider_Shooter_Normal_Elite_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Shooter
 
-using ENE_Spider_Shooter_Normal_Elite_C = Game::Enemies::Spider::Shooter::ENE_Spider_Shooter_Normal_Elite_C;
+using ENE_Spider_Shooter_Normal_Elite_C = ::Game::Enemies::Spider::Shooter::ENE_Spider_Shooter_Normal_Elite_C;

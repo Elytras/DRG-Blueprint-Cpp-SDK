@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using STE_Maggot_AcidCloud_C = Game::Critters::Maggot::STE_Maggot_AcidCloud_C;
+using STE_Maggot_AcidCloud_C = ::Game::Critters::Maggot::STE_Maggot_AcidCloud_C;

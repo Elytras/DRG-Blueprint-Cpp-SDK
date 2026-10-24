@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_CharacterPointLight_C = Game::UI::Menu_Cheats::Cheat_CharacterPointLight_C;
+using Cheat_CharacterPointLight_C = ::Game::UI::Menu_Cheats::Cheat_CharacterPointLight_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using ESI_Maggot_C = Game::Critters::Maggot::ESI_Maggot_C;
+using ESI_Maggot_C = ::Game::Critters::Maggot::ESI_Maggot_C;

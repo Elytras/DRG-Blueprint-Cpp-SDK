@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_SporeTowerKilled_Scream_C = Game::Character::Camera::CameraShakes::CameraShake_SporeTowerKilled_Scream_C;
+using CameraShake_SporeTowerKilled_Scream_C = ::Game::Character::Camera::CameraShakes::CameraShake_SporeTowerKilled_Scream_C;

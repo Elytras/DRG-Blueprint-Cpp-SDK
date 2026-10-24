@@ -13,7 +13,7 @@ class USoundBase;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades {
 
-class ITM_AOE_Grenade_Base_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class ITM_AOE_Grenade_Base_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_AOE_Grenade_Base", "ITM_AOE_Grenade_Base_C");
@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using ITM_AOE_Grenade_Base_C = Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base_C;
+using ITM_AOE_Grenade_Base_C = ::Game::WeaponsNTools::Grenades::ITM_AOE_Grenade_Base_C;

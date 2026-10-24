@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_EyeForEye_C = Game::GameElements::KPI::Perks::STE_EyeForEye_C;
+using STE_EyeForEye_C = ::Game::GameElements::KPI::Perks::STE_EyeForEye_C;

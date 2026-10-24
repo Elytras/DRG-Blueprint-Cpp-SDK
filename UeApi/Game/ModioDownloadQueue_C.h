@@ -20,4 +20,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Drawers::DownloadQueue
 
-using ModioDownloadQueue_C = Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueue_C;
+using ModioDownloadQueue_C = ::Modio::UI::Browser::Drawers::DownloadQueue::ModioDownloadQueue_C;

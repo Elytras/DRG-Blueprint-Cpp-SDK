@@ -53,4 +53,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using ABP_HackingPod_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ABP_HackingPod_C;
+using ABP_HackingPod_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::ABP_HackingPod_C;

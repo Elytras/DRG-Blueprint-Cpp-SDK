@@ -20,7 +20,7 @@ class HUD_Modding_Downloads_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Modding/HUD_Modding_Downloads", "HUD_Modding_Downloads_C");
-    using HUD_Modding_Downloads_Entry_C = Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_Entry_C;
+    using HUD_Modding_Downloads_Entry_C = ::Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_Entry_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimOpenClose;
     class UVerticalBox* EntryBox;
@@ -54,4 +54,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Modding
 
-using HUD_Modding_Downloads_C = Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_C;
+using HUD_Modding_Downloads_C = ::Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_C;

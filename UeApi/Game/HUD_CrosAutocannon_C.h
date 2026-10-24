@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrosAutocannon_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosAutocannon_C;
+using HUD_CrosAutocannon_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosAutocannon_C;

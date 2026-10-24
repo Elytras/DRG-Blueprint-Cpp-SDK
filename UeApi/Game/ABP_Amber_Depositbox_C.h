@@ -35,4 +35,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::AmberEvent::Models
 
-using ABP_Amber_Depositbox_C = Game::GameElements::GameEvents::AmberEvent::Models::ABP_Amber_Depositbox_C;
+using ABP_Amber_Depositbox_C = ::Game::GameElements::GameEvents::AmberEvent::Models::ABP_Amber_Depositbox_C;

@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using ABP_Vanity_ArmorEngineer_Raider_C = Game::Character::Vanity2::Armor::ABP_Vanity_ArmorEngineer_Raider_C;
+using ABP_Vanity_ArmorEngineer_Raider_C = ::Game::Character::Vanity2::Armor::ABP_Vanity_ArmorEngineer_Raider_C;

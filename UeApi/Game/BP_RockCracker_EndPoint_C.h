@@ -29,7 +29,7 @@ class BP_RockCracker_EndPoint_C : public ARockCrackerDrill
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RockCrackerBuilder/BP_RockCracker_EndPoint", "BP_RockCracker_EndPoint_C");
-    using BP_RockCrackerPod_C = Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
+    using BP_RockCrackerPod_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* LHologram;
     class UOutlineComponent* outline;
@@ -67,6 +67,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent ConstructUsable;/Script/Engine.SplineComponent ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/Facility/BP_MainFacility_ShieldEmitter_Hologram.BP_MainFacility_ShieldEmitter_Hologram_C LHologram_GEN_VARIABLE:LHologram_GEN_VARIABLE_BP_MainFacility_ShieldEmitter_Hologram_C_CAT";
         static constexpr const char* LHologram__UeScsNode = "eb19b7cc266d1f47b4f3a5522cdc621a";
         static constexpr const char* outline__UeScsNode = "71763ef63e54b74bb9aa196723ea0ce1";
         static constexpr const char* P_Extractor_PipeLinkUp__UeScsNode = "da2167e3dea04048ae28502d8f4a1b0d";
@@ -84,4 +85,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder
 
-using BP_RockCracker_EndPoint_C = Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;
+using BP_RockCracker_EndPoint_C = ::Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;

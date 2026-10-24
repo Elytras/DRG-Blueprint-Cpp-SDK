@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using DropPod_EscapeSign_C = Game::LevelElements::Droppod::DropPod_EscapeSign_C;
+using DropPod_EscapeSign_C = ::Game::LevelElements::Droppod::DropPod_EscapeSign_C;

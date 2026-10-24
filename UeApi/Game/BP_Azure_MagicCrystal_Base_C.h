@@ -37,4 +37,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals
 
-using BP_Azure_MagicCrystal_Base_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_Base_C;
+using BP_Azure_MagicCrystal_Base_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::BP_Azure_MagicCrystal_Base_C;

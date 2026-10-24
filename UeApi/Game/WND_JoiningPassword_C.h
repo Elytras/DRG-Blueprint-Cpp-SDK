@@ -19,10 +19,10 @@ class WND_JoiningPassword_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/WND_JoiningPassword", "WND_JoiningPassword_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using Basic_PasswordField_C = Game::UI::Art::WidgetParts::Basic_PasswordField_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_PasswordField_C = ::Game::UI::Art::WidgetParts::Basic_PasswordField_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_PasswordField_C* Basic_PasswordField;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
@@ -43,4 +43,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
+using WND_JoiningPassword_C = ::Game::UI::Menu_ServerList::WND_JoiningPassword_C;

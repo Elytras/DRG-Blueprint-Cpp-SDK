@@ -15,11 +15,11 @@ namespace Game { namespace UI { namespace Menu_Cheats { namespace VanityCheatWid
 
 namespace Game { namespace UI { namespace Menu_Cheats { namespace VanityCheatWidgets {
 
-class Cheat_List_Pickaxe_C : public Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C
+class Cheat_List_Pickaxe_C : public ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Pickaxe", "Cheat_List_Pickaxe_C");
-    using Cheat_EquipList_Entry_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
+    using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     TArray<EPickaxePartLocation> PickaxeParts;
     void GetCharacterID(class UPlayerCharacterID*& characterID);
     void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets
 
-using Cheat_List_Pickaxe_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Pickaxe_C;
+using Cheat_List_Pickaxe_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_List_Pickaxe_C;

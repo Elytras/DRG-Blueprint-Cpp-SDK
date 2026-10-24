@@ -16,7 +16,7 @@ class Cheat_DestroyAllFlares_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_DestroyAllFlares", "Cheat_DestroyAllFlares_C");
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     CheatMenu_BasicButtonWText_C* CheatMenu_BasicButtonWText;
     void ExecuteUbergraph_Cheat_DestroyAllFlares(int EntryPoint);
@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_DestroyAllFlares_C = Game::UI::Menu_Cheats::Cheat_DestroyAllFlares_C;
+using Cheat_DestroyAllFlares_C = ::Game::UI::Menu_Cheats::Cheat_DestroyAllFlares_C;

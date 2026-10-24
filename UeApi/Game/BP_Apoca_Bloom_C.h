@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Resources { namespace Collectibles { namespace ApocaBloom {
 
-class BP_Apoca_Bloom_C : public Game::GameElements::Resources::Collectibles::BP_Collectible_Simple_C
+class BP_Apoca_Bloom_C : public ::Game::GameElements::Resources::Collectibles::BP_Collectible_Simple_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/ApocaBloom/BP_Apoca_Bloom", "BP_Apoca_Bloom_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "InstantUsable;SimpleObjectInfo;UseTrigger;Mesh";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::ApocaBloom
 
-using BP_Apoca_Bloom_C = Game::GameElements::Resources::Collectibles::ApocaBloom::BP_Apoca_Bloom_C;
+using BP_Apoca_Bloom_C = ::Game::GameElements::Resources::Collectibles::ApocaBloom::BP_Apoca_Bloom_C;

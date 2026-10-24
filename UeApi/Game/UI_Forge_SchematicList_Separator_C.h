@@ -17,7 +17,7 @@ class UI_Forge_SchematicList_Separator_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_SchematicList_Separator", "UI_Forge_SchematicList_Separator_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     class UTextBlock* CategoryHeader;
@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_SchematicList_Separator_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_SchematicList_Separator_C;
+using UI_Forge_SchematicList_Separator_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_SchematicList_Separator_C;

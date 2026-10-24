@@ -48,6 +48,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_Floor_BigSpikes_GEN_VARIABLE:DebrisCarved_1;/Script/FSD.DebrisCarved C_Roof_BigSpikes_GEN_VARIABLE:DebrisCarved_82;/Script/FSD.DebrisCarved HotFloor--10K(50-100)_2K(30-60)_5C_GEN_VARIABLE:DebrisCarved_8;/Script/FSD.DebrisMesh Balls_GEN_VARIABLE:DebrisMesh_22;/Script/FSD.DebrisMesh D_Chimney_LichenTubes_GEN_VARIABLE:DebrisMesh_1233;/Script/FSD.DebrisMesh D_LavaGeyserPods_GEN_VARIABLE:DebrisMesh_504;/Script/FSD.DebrisMesh D_LichenTubes_GEN_VARIABLE:DebrisMesh_685;/Script/FSD.DebrisMesh D_Pods_GEN_VARIABLE:DebrisMesh_174;/Script/FSD.DebrisMesh D_Rubble_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SlagDebrisShowingRange_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SlagRubble1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SmallSpikesRoof_GEN_VARIABLE:DebrisMesh_648;/Script/FSD.DebrisMesh D_SulfurDeposits_GEN_VARIABLE:DebrisMesh_660;/Script/FSD.DebrisMesh DebrisData_GEN_VARIABLE:DebrisMesh_49;/Script/FSD.DebrisPositioning I_Chimney_WormPlant--2K(90-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_CribrariaPlants--2K(30-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_DustClouds_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_ExplodingPlants--10K(0-50)_r5K(0-70)_2K(0-30)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_LavaGeysers--2K(0-70)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_MagmaQuakeFissure_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SmallGeyserFields--10K(50-100)_5K(0-50)_2K(40-80)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SmallGeysers_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SulfurChimneys--2K(90-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_SwarmerTunnels--r15K(0-35)_2K(70-100)_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* D_SlagRubble1__UeScsNode = "b9a704891eece747bc846045f36aa1ca";
         static constexpr const char* I_SmallGeysers__UeScsNode = "2390ab78d7580d47aa969cb7c8b68692";
         static constexpr const char* D_SlagDebrisShowingRange__UeScsNode = "19cb10b677b7934eb666bfa4d4cd341c";
@@ -89,4 +90,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves
 
-using DBA_MagmaCaves_C = Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::DBA_MagmaCaves_C;
+using DBA_MagmaCaves_C = ::Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::DBA_MagmaCaves_C;

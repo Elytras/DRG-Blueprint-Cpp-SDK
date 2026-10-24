@@ -25,4 +25,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Space
 
-using BP_Skysphere_HoxxesStars_C = Game::Art::Environments::Space::BP_Skysphere_HoxxesStars_C;
+using BP_Skysphere_HoxxesStars_C = ::Game::Art::Environments::Space::BP_Skysphere_HoxxesStars_C;

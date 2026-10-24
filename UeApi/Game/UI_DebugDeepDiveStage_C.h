@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_DebugDeepDiveStage_C = Game::UI::Menu_Cheats::MissionCheat::UI_DebugDeepDiveStage_C;
+using UI_DebugDeepDiveStage_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_DebugDeepDiveStage_C;

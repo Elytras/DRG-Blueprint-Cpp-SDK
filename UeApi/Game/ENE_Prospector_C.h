@@ -40,7 +40,7 @@ class ENE_Prospector_C : public AProspectorRobot
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/ENE_Prospector", "ENE_Prospector_C");
-    using AIC_Prospector_C = Game::Critters::Prospector::AIC_Prospector_C;
+    using AIC_Prospector_C = ::Game::Critters::Prospector::AIC_Prospector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USkeletalMeshComponent* ShieldMesh;
     class UNiagaraComponent* NS_Idle;
@@ -164,4 +164,4 @@ private:
 
 }}}   // namespace Game::Critters::Prospector
 
-using ENE_Prospector_C = Game::Critters::Prospector::ENE_Prospector_C;
+using ENE_Prospector_C = ::Game::Critters::Prospector::ENE_Prospector_C;

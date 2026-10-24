@@ -32,4 +32,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor::RockCrackerModels
 
-using ABP_RockCracker_Drill_C = Game::GameElements::GameEvents::PlagueMeteor::RockCrackerModels::ABP_RockCracker_Drill_C;
+using ABP_RockCracker_Drill_C = ::Game::GameElements::GameEvents::PlagueMeteor::RockCrackerModels::ABP_RockCracker_Drill_C;

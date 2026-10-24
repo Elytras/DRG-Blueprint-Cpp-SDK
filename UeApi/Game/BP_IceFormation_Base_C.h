@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::IceFormation
 
-using BP_IceFormation_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Base_C;
+using BP_IceFormation_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Base_C;

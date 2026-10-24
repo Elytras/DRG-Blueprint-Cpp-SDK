@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace PassiveFoliage { namespace PingPongPlant {
 
-class BP_PingPongPlant_B_C : public Game::LevelElements::RoomObjects::PassiveFoliage::BP_AnimatedFoliage_Base_C
+class BP_PingPongPlant_B_C : public ::Game::LevelElements::RoomObjects::PassiveFoliage::BP_AnimatedFoliage_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/PingPongPlant/BP_PingPongPlant_B", "BP_PingPongPlant_B_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "CapsuleCollision;ICH-DefaultSceneRoot;SimpleObjectInfo;SK_AnimatedMesh;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage::PingPongPlant
 
-using BP_PingPongPlant_B_C = Game::LevelElements::RoomObjects::PassiveFoliage::PingPongPlant::BP_PingPongPlant_B_C;
+using BP_PingPongPlant_B_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::PingPongPlant::BP_PingPongPlant_B_C;

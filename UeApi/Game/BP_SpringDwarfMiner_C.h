@@ -58,4 +58,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::SpringDwarf
 
-using BP_SpringDwarfMiner_C = Game::Art::Environments::SpaceRig::SpringDwarf::BP_SpringDwarfMiner_C;
+using BP_SpringDwarfMiner_C = ::Game::Art::Environments::SpaceRig::SpringDwarf::BP_SpringDwarfMiner_C;

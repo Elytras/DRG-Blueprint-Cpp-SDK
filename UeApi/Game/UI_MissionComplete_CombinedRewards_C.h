@@ -18,8 +18,8 @@ class UI_MissionComplete_CombinedRewards_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/UI_MissionComplete_CombinedRewards", "UI_MissionComplete_CombinedRewards_C");
-    using UI_MissionComplete_CombinedRewardLine_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewardLine_C;
-    using UI_MissionComplete_RewardColumn_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RewardColumn_C;
+    using UI_MissionComplete_CombinedRewardLine_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewardLine_C;
+    using UI_MissionComplete_RewardColumn_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_RewardColumn_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UNamedSlot* BottomCenter;
     class UNamedSlot* BottomRight;
@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using UI_MissionComplete_CombinedRewards_C = Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewards_C;
+using UI_MissionComplete_CombinedRewards_C = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewards_C;

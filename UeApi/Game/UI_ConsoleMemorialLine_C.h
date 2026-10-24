@@ -18,7 +18,7 @@ class UI_ConsoleMemorialLine_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/UI_ConsoleMemorialLine", "UI_ConsoleMemorialLine_C");
-    using ConsoleScreenMemorialWall_C = Game::UI::HUD_SpaceRig::ConsoleScreenMemorialWall_C;
+    using ConsoleScreenMemorialWall_C = ::Game::UI::HUD_SpaceRig::ConsoleScreenMemorialWall_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Move;
     class UTextBlock* TXT_Main;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using UI_ConsoleMemorialLine_C = Game::UI::HUD_SpaceRig::UI_ConsoleMemorialLine_C;
+using UI_ConsoleMemorialLine_C = ::Game::UI::HUD_SpaceRig::UI_ConsoleMemorialLine_C;

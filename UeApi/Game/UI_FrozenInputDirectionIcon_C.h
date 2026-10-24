@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using UI_FrozenInputDirectionIcon_C = Game::UI::MainOnscreenHUD::UI_FrozenInputDirectionIcon_C;
+using UI_FrozenInputDirectionIcon_C = ::Game::UI::MainOnscreenHUD::UI_FrozenInputDirectionIcon_C;

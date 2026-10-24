@@ -23,7 +23,7 @@ class BP_DeepDiveConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_DeepDiveConsole", "BP_DeepDiveConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* ScreenMesh;
     class UTextRenderComponent* WorkName;
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_DeepDiveConsole_C = Game::UI::HUD_SpaceRig::BP_DeepDiveConsole_C;
+using BP_DeepDiveConsole_C = ::Game::UI::HUD_SpaceRig::BP_DeepDiveConsole_C;

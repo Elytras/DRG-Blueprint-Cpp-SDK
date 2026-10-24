@@ -103,4 +103,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using PRJ_LineCutter2_C = Game::WeaponsNTools::LineCutter::PRJ_LineCutter2_C;
+using PRJ_LineCutter2_C = ::Game::WeaponsNTools::LineCutter::PRJ_LineCutter2_C;

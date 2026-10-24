@@ -18,7 +18,7 @@ class UI_JettyBoots_Column_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/UI_JettyBoots_Column", "UI_JettyBoots_Column_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Bottom_Image;
     Basic_Image_C* Column_Image;
@@ -35,4 +35,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots
 
-using UI_JettyBoots_Column_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;
+using UI_JettyBoots_Column_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;

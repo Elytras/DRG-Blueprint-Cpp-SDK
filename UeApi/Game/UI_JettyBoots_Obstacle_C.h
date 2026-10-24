@@ -17,7 +17,7 @@ class UI_JettyBoots_Obstacle_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/UI_JettyBoots_Obstacle", "UI_JettyBoots_Obstacle_C");
-    using UI_JettyBoots_Column_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;
+    using UI_JettyBoots_Column_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Column_C;
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_UI_JettyBoots_Obstacle(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -31,4 +31,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots
 
-using UI_JettyBoots_Obstacle_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Obstacle_C;
+using UI_JettyBoots_Obstacle_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Obstacle_C;

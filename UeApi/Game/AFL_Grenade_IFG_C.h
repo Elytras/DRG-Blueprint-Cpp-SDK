@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG
 
-using AFL_Grenade_IFG_C = Game::WeaponsNTools::Grenades::IFG::AFL_Grenade_IFG_C;
+using AFL_Grenade_IFG_C = ::Game::WeaponsNTools::Grenades::IFG::AFL_Grenade_IFG_C;

@@ -20,8 +20,8 @@ class HUD_GameEvent_Finished_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Events/HUD_GameEvent_Finished", "HUD_GameEvent_Finished_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHide;
     UE_READONLY class UWidgetAnimation* AnimShow;
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events
 
-using HUD_GameEvent_Finished_C = Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Finished_C;
+using HUD_GameEvent_Finished_C = ::Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Finished_C;

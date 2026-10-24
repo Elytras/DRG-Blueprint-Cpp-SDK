@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Pickaxe::PickAxe_Parts
 
-using BP_PickaxeRandomizer_C = Game::WeaponsNTools::Pickaxe::PickAxe_Parts::BP_PickaxeRandomizer_C;
+using BP_PickaxeRandomizer_C = ::Game::WeaponsNTools::Pickaxe::PickAxe_Parts::BP_PickaxeRandomizer_C;

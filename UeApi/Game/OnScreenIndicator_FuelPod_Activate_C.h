@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_FuelPod_Activate_C = Game::UI::OnScreenIndicators::OnScreenIndicator_FuelPod_Activate_C;
+using OnScreenIndicator_FuelPod_Activate_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_FuelPod_Activate_C;

@@ -78,4 +78,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::BhaBarnacle
 
-using BP_BhaBarnacleNew_C = Game::GameElements::Resources::Collectibles::BhaBarnacle::BP_BhaBarnacleNew_C;
+using BP_BhaBarnacleNew_C = ::Game::GameElements::Resources::Collectibles::BhaBarnacle::BP_BhaBarnacleNew_C;

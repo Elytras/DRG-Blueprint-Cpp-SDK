@@ -41,8 +41,8 @@ class ENE_Terminator_C : public ATerminatorEnemy
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/ENE_Terminator", "ENE_Terminator_C");
-    using BP_TentacleGrab_C = Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
-    using BP_Terminator_ElectricAttack_C = Game::Enemies::RivalTech::Terminator::BP_Terminator_ElectricAttack_C;
+    using BP_TentacleGrab_C = ::Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
+    using BP_Terminator_ElectricAttack_C = ::Game::Enemies::RivalTech::Terminator::BP_Terminator_ElectricAttack_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnAlertComponent* PawnAlert;
     class UPointLightComponent* PointLight;
@@ -139,6 +139,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent CarveAttack_GEN_VARIABLE:DamageComponent_1;/Game/Enemies/RivalTech/Terminator/ENE_TerminatorTentacle.ENE_TerminatorTentacle_C LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT;/Game/Enemies/RivalTech/Terminator/ENE_TerminatorTentacle.ENE_TerminatorTentacle_C RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT;/Script/FSD.EnemyComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Enemy;/Script/FSD.EnemyComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Enemy;/Script/FSD.EnemyHealthComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Health;/Script/FSD.EnemyHealthComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Health;/Script/FSD.EnemyPawnAfflictionComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Affliction;/Script/FSD.EnemyPawnAfflictionComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Affliction;/Script/FSD.EnemyTemperatureComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Temperature;/Script/FSD.EnemyTemperatureComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Temperature;/Script/FSD.GrabberComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Grabber;/Script/FSD.GrabberComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Grabber;/Script/FSD.MeshCarveAttackEffect CarveAttack_GEN_VARIABLE:MeshCarveAttackEffect_0;/Script/FSD.PawnStatsComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Stats;/Script/FSD.PawnStatsComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:Stats;/Script/FSD.StatusEffectsComponent LeftTentacle_GEN_VARIABLE:LeftTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:StatusEffects;/Script/FSD.StatusEffectsComponent RightTentacle_GEN_VARIABLE:RightTentacle_GEN_VARIABLE_ENE_TerminatorTentacle_C_CAT:StatusEffects";
         static constexpr const char* PawnAlert__UeScsNode = "6f41a177a3541b42a4cedaa1e78540d8";
         static constexpr const char* PointLight__UeScsNode = "345cc45fc65d1540a079bc328d9d747e";
         static constexpr const char* TerminatorDeath_Cue__UeScsNode = "403ae8d71bc6c04d83886c897b4dfa16";
@@ -166,4 +167,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using ENE_Terminator_C = Game::Enemies::RivalTech::Terminator::ENE_Terminator_C;
+using ENE_Terminator_C = ::Game::Enemies::RivalTech::Terminator::ENE_Terminator_C;

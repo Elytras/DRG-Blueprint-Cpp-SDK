@@ -17,7 +17,7 @@ class ConsoleScreen_SelectCharacterOnly_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_SelectCharacterOnly", "ConsoleScreen_SelectCharacterOnly_C");
-    using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
+    using ConsoleScreen_BGtemplate_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_SelectCharacterOnly_C = Game::UI::HUD_SpaceRig::ConsoleScreen_SelectCharacterOnly_C;
+using ConsoleScreen_SelectCharacterOnly_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_SelectCharacterOnly_C;

@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_BarrelDispenser_C = Game::UI::OnScreenIndicators::OnScreenIndicator_BarrelDispenser_C;
+using OnScreenIndicator_BarrelDispenser_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_BarrelDispenser_C;

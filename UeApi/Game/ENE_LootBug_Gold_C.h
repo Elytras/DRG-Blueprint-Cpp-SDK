@@ -13,7 +13,7 @@ class UPointLightComponent;
 
 namespace Game { namespace Critters { namespace LootBug {
 
-class ENE_LootBug_Gold_C : public Game::Critters::LootBug::ENE_LootBug_C
+class ENE_LootBug_Gold_C : public ::Game::Critters::LootBug::ENE_LootBug_C
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/ENE_LootBug_Gold", "ENE_LootBug_Gold_C");
@@ -26,6 +26,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy";
         static constexpr const char* UberGraphFrame_ENE_LootBug_Gold_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight__UeScsNode = "788a34d8b8580f44851d3236858fdeba";
         static constexpr const char* ParticleSystem__UeScsNode = "c6375dcc99c9a64cb69f1856da117e8d";
@@ -34,4 +35,4 @@ private:
 
 }}}   // namespace Game::Critters::LootBug
 
-using ENE_LootBug_Gold_C = Game::Critters::LootBug::ENE_LootBug_Gold_C;
+using ENE_LootBug_Gold_C = ::Game::Critters::LootBug::ENE_LootBug_Gold_C;

@@ -49,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser
 
-using BP_Chimney_Geyser_Carved_Base_C = Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser::BP_Chimney_Geyser_Carved_Base_C;
+using BP_Chimney_Geyser_Carved_Base_C = ::Game::LevelElements::RoomObjects::Hazards::ChimneyGeyser::BP_Chimney_Geyser_Carved_Base_C;

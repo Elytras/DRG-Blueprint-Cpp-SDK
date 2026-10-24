@@ -24,7 +24,7 @@ class ITM_LoadOut_PerksEquip_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/Perks/ITM_LoadOut_PerksEquip_Item", "ITM_LoadOut_PerksEquip_Item_C");
-    using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
+    using UI_PerkIcon_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Background;
     class UBorder* FrameBorder;
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks
 
-using ITM_LoadOut_PerksEquip_Item_C = Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Item_C;
+using ITM_LoadOut_PerksEquip_Item_C = ::Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Item_C;

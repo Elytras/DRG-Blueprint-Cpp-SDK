@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using AFL_Frozen_TentacleNode_C = Game::Enemies::TentaclePlant::AFL_Frozen_TentacleNode_C;
+using AFL_Frozen_TentacleNode_C = ::Game::Enemies::TentaclePlant::AFL_Frozen_TentacleNode_C;

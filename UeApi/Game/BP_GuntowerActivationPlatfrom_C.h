@@ -58,4 +58,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent
 
-using BP_GuntowerActivationPlatfrom_C = Game::GameElements::GameEvents::GuntowerEvent::BP_GuntowerActivationPlatfrom_C;
+using BP_GuntowerActivationPlatfrom_C = ::Game::GameElements::GameEvents::GuntowerEvent::BP_GuntowerActivationPlatfrom_C;

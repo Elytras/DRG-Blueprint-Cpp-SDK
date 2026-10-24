@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_ITM_MissionStep_C = Game::UI::Menu_MinersManual::Lore_ITM_MissionStep_C;
+using Lore_ITM_MissionStep_C = ::Game::UI::Menu_MinersManual::Lore_ITM_MissionStep_C;

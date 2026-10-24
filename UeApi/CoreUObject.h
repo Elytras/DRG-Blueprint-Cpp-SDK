@@ -2179,6 +2179,9 @@ struct FTransform
 
     FTransform() = default;
     FTransform(FQuat Rotation, FVector Translation, FVector Scale3D) {}
+    FTransform(const FRotator &Rotation, const FVector &Translation) {}
+    FTransform(const FRotator &Rotation, const FVector &Translation, const FVector &Scale3D) {}
+    FTransform(const FVector &Location, const FRotator &Rotation, const FVector &Scale) {}
     UE_CONV_FTransform
 
     // UARBlueprintLibrary::AddTrackedPointWithName (AugmentedReality.h)

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Critters::Prospector
 
-using ESI_Prospector_C = Game::Critters::Prospector::ESI_Prospector_C;
+using ESI_Prospector_C = ::Game::Critters::Prospector::ESI_Prospector_C;

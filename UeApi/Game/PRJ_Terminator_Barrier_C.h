@@ -12,7 +12,7 @@ class UAudioComponent;
 
 namespace Game { namespace Enemies { namespace RivalTech { namespace Terminator {
 
-class PRJ_Terminator_Barrier_C : public Game::GameElements::Objectives::Facility::PRJ_Facility_Barrier_Base_C
+class PRJ_Terminator_Barrier_C : public ::Game::GameElements::Objectives::Facility::PRJ_Facility_Barrier_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/PRJ_Terminator_Barrier", "PRJ_Terminator_Barrier_C");
@@ -25,6 +25,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "BounceBox;Damage";
         static constexpr const char* UberGraphFrame_PRJ_Terminator_Barrier_C__UeName = "UberGraphFrame";
         static constexpr const char* Audio__UeScsNode = "139a8c73632e8d4090fa6ff73d4c01a3";
     };
@@ -32,4 +33,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using PRJ_Terminator_Barrier_C = Game::Enemies::RivalTech::Terminator::PRJ_Terminator_Barrier_C;
+using PRJ_Terminator_Barrier_C = ::Game::Enemies::RivalTech::Terminator::PRJ_Terminator_Barrier_C;

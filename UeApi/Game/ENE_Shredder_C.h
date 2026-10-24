@@ -13,7 +13,7 @@ class UEnemyComponent;
 
 namespace Game { namespace Enemies { namespace RivalTech { namespace Shredder {
 
-class ENE_Shredder_C : public Game::Enemies::RivalTech::Shredder::ENE_Shredder_Base_C
+class ENE_Shredder_C : public ::Game::Enemies::RivalTech::Shredder::ENE_Shredder_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Shredder/ENE_Shredder", "ENE_Shredder_C");
@@ -26,6 +26,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "NS_Trail;SpawnParticles";
         static constexpr const char* UberGraphFrame_ENE_Shredder_C__UeName = "UberGraphFrame";
         static constexpr const char* enemy__UeScsNode = "1dac1457f886d743ad1995f7ec0b00d5";
     };
@@ -33,4 +34,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Shredder
 
-using ENE_Shredder_C = Game::Enemies::RivalTech::Shredder::ENE_Shredder_C;
+using ENE_Shredder_C = ::Game::Enemies::RivalTech::Shredder::ENE_Shredder_C;

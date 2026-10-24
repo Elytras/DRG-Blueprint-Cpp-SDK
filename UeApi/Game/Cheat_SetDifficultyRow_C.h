@@ -22,7 +22,7 @@ class Cheat_SetDifficultyRow_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_SetDifficultyRow", "Cheat_SetDifficultyRow_C");
-    using Cheat_Haz5Plus_C = Game::UI::Menu_Cheats::Cheat_Haz5Plus_C;
+    using Cheat_Haz5Plus_C = ::Game::UI::Menu_Cheats::Cheat_Haz5Plus_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button_Mutators;
     class UCheckBox* CheckBox_SelectDiff;
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SetDifficultyRow_C = Game::UI::Menu_Cheats::Cheat_SetDifficultyRow_C;
+using Cheat_SetDifficultyRow_C = ::Game::UI::Menu_Cheats::Cheat_SetDifficultyRow_C;

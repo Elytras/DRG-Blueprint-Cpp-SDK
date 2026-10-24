@@ -18,7 +18,7 @@ class ITM_SupplyDrop_C : public ARessuplyPodItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/ITM_SupplyDrop", "ITM_SupplyDrop_C");
-    using OnScreenIndicator_SupplyDrop_Order_C = Game::UI::OnScreenIndicators::OnScreenIndicator_SupplyDrop_Order_C;
+    using OnScreenIndicator_SupplyDrop_Order_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_SupplyDrop_Order_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class AItemMarker* Marker;
     OnScreenIndicator_SupplyDrop_Order_C* Widget;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using ITM_SupplyDrop_C = Game::WeaponsNTools::SupplyPod::ITM_SupplyDrop_C;
+using ITM_SupplyDrop_C = ::Game::WeaponsNTools::SupplyPod::ITM_SupplyDrop_C;

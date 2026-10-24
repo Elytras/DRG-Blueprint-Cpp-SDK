@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::Critters::LootBug::Hoarder
 
-using BTTask_InsideDistanceFromPoint_C = Game::Critters::LootBug::Hoarder::BTTask_InsideDistanceFromPoint_C;
+using BTTask_InsideDistanceFromPoint_C = ::Game::Critters::LootBug::Hoarder::BTTask_InsideDistanceFromPoint_C;

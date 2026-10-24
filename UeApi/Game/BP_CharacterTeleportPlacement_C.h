@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::Cheats
 
-using BP_CharacterTeleportPlacement_C = Game::Character::Cheats::BP_CharacterTeleportPlacement_C;
+using BP_CharacterTeleportPlacement_C = ::Game::Character::Cheats::BP_CharacterTeleportPlacement_C;

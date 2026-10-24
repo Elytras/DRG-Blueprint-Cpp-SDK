@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::CharacterStructure::Rig::Facial_Hair_Rig
 
-using ABP_Vanity_Headwear_PlatingBraid_S05_C = Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Vanity_Headwear_PlatingBraid_S05_C;
+using ABP_Vanity_Headwear_PlatingBraid_S05_C = ::Game::CharacterStructure::Rig::Facial_Hair_Rig::ABP_Vanity_Headwear_PlatingBraid_S05_C;

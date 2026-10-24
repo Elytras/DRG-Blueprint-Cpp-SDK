@@ -18,7 +18,7 @@ class TOOLTIP_ServerWorkEnvironment_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/TOOLTIP_ServerWorkEnvironment", "TOOLTIP_ServerWorkEnvironment_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class URichTextBlock* DATALockMessage;
@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using TOOLTIP_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::TOOLTIP_ServerWorkEnvironment_C;
+using TOOLTIP_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::TOOLTIP_ServerWorkEnvironment_C;

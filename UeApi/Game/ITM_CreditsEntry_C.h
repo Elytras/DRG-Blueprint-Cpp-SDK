@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_CreditsEntry_C = Game::UI::Menu_EscapeMenu::ITM_CreditsEntry_C;
+using ITM_CreditsEntry_C = ::Game::UI::Menu_EscapeMenu::ITM_CreditsEntry_C;

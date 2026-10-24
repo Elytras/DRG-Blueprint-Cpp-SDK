@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_ShieldLink_C = Game::GameElements::KPI::Perks::STE_ShieldLink_C;
+using STE_ShieldLink_C = ::Game::GameElements::KPI::Perks::STE_ShieldLink_C;

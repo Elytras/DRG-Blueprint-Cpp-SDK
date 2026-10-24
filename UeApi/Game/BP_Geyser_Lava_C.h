@@ -32,7 +32,7 @@ class BP_Geyser_Lava_C : public AActor
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/LavaGeyser/BP_Geyser_Lava", "BP_Geyser_Lava_C");
-    using BP_DamageTriggerComponent_C = Game::LevelElements::Components::BP_DamageTriggerComponent_C;
+    using BP_DamageTriggerComponent_C = ::Game::LevelElements::Components::BP_DamageTriggerComponent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* BoilingAudio;
     class UDamageComponent* Damage;
@@ -130,4 +130,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::LavaGeyser
 
-using BP_Geyser_Lava_C = Game::LevelElements::RoomObjects::Hazards::LavaGeyser::BP_Geyser_Lava_C;
+using BP_Geyser_Lava_C = ::Game::LevelElements::RoomObjects::Hazards::LavaGeyser::BP_Geyser_Lava_C;

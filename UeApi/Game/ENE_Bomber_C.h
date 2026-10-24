@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using ENE_Bomber_C = Game::Enemies::FlyingBug::Bomber::ENE_Bomber_C;
+using ENE_Bomber_C = ::Game::Enemies::FlyingBug::Bomber::ENE_Bomber_C;

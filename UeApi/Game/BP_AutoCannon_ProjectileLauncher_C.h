@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using BP_AutoCannon_ProjectileLauncher_C = Game::WeaponsNTools::Autocannon::BP_AutoCannon_ProjectileLauncher_C;
+using BP_AutoCannon_ProjectileLauncher_C = ::Game::WeaponsNTools::Autocannon::BP_AutoCannon_ProjectileLauncher_C;

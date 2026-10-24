@@ -17,8 +17,8 @@ class Options_Tab_Crossplay_C : public UUserWidget
 {
 public:
     UE_CLASS("/CrossPlatform/Options_Tab_Crossplay", "Options_Tab_Crossplay_C");
-    using Options_VolumeSlider_C = Game::UI::Menu_Options::Options_VolumeSlider_C;
-    using UI_SelectCrossplayOption_C = CrossPlatform::UI_SelectCrossplayOption_C;
+    using Options_VolumeSlider_C = ::Game::UI::Menu_Options::Options_VolumeSlider_C;
+    using UI_SelectCrossplayOption_C = ::CrossPlatform::UI_SelectCrossplayOption_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_SelectCrossplayOption_C* UI_SelectCrossplayOption;
     TMulticastInlineDelegate<void()> SettingsChanged;
@@ -29,4 +29,4 @@ public:
 
 }   // namespace CrossPlatform
 
-using Options_Tab_Crossplay_C = CrossPlatform::Options_Tab_Crossplay_C;
+using Options_Tab_Crossplay_C = ::CrossPlatform::Options_Tab_Crossplay_C;

@@ -20,7 +20,7 @@ class HUD_Crossbow_AmmoCount_C : public UCustomAmmoCountWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/HUD_Crossbow_AmmoCount", "HUD_Crossbow_AmmoCount_C");
-    using HUD_Crossbow_AmmoCount_Row_C = Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_Row_C;
+    using HUD_Crossbow_AmmoCount_Row_C = ::Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimSwap;
     HUD_Crossbow_AmmoCount_Row_C* Arrow_Active;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Crossbow
 
-using HUD_Crossbow_AmmoCount_C = Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_C;
+using HUD_Crossbow_AmmoCount_C = ::Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_C;

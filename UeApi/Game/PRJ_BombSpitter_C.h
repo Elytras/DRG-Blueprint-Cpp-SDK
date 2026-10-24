@@ -44,4 +44,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::BombSpitter
 
-using PRJ_BombSpitter_C = Game::LevelElements::RoomObjects::Hazards::BombSpitter::PRJ_BombSpitter_C;
+using PRJ_BombSpitter_C = ::Game::LevelElements::RoomObjects::Hazards::BombSpitter::PRJ_BombSpitter_C;

@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::Glacier
 
-using BP_Glacier_2_C = Game::LevelElements::RoomObjects::Hazards::Glacier::BP_Glacier_2_C;
+using BP_Glacier_2_C = ::Game::LevelElements::RoomObjects::Hazards::Glacier::BP_Glacier_2_C;

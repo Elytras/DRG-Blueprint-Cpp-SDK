@@ -40,4 +40,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Loadout::LoadoutSelection
 
-using ITM_LoadoutIcon_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIcon_C;
+using ITM_LoadoutIcon_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIcon_C;

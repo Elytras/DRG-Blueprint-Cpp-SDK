@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::PerkFX
 
-using AFE_3p_IronWill_C = Game::GameElements::KPI::Perks::PerkFX::AFE_3p_IronWill_C;
+using AFE_3p_IronWill_C = ::Game::GameElements::KPI::Perks::PerkFX::AFE_3p_IronWill_C;

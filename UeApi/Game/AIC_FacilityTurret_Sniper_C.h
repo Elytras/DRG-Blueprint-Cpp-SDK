@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class AIC_FacilityTurret_Sniper_C : public Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurret_Burst_C
+class AIC_FacilityTurret_Sniper_C : public ::Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurret_Burst_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/AIC_FacilityTurret_Sniper", "AIC_FacilityTurret_Sniper_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using AIC_FacilityTurret_Sniper_C = Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurret_Sniper_C;
+using AIC_FacilityTurret_Sniper_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurret_Sniper_C;

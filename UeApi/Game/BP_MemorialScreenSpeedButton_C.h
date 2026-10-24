@@ -22,7 +22,7 @@ class BP_MemorialScreenSpeedButton_C : public AActor
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_MemorialScreenSpeedButton", "BP_MemorialScreenSpeedButton_C");
-    using BP_MemorialWall_C = Game::UI::HUD_SpaceRig::BP_MemorialWall_C;
+    using BP_MemorialWall_C = ::Game::UI::HUD_SpaceRig::BP_MemorialWall_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* StaticMesh2;
     class UPointLightComponent* PointLight;
@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_MemorialScreenSpeedButton_C = Game::Game::SpaceRig::BP_MemorialScreenSpeedButton_C;
+using BP_MemorialScreenSpeedButton_C = ::Game::Game::SpaceRig::BP_MemorialScreenSpeedButton_C;

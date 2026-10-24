@@ -21,7 +21,7 @@ class LCD_MissionReadout_Biome_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/MissionReadouts/LCD_MissionReadout_Biome", "LCD_MissionReadout_Biome_C");
-    using UI_MissionReadOut_Base_C = Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
+    using UI_MissionReadOut_Base_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::UI_MissionReadOut_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Pan;
     class UTextBlock* BiomeName;
@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts
 
-using LCD_MissionReadout_Biome_C = Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_Biome_C;
+using LCD_MissionReadout_Biome_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::LCD_MissionReadout_Biome_C;

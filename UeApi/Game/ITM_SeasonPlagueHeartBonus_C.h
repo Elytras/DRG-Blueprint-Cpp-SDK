@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace Menu_Seasons {
 
-class ITM_SeasonPlagueHeartBonus_C : public Game::UI::Menu_Seasons::ITM_SimpleFragmentedBonusWidget_C
+class ITM_SeasonPlagueHeartBonus_C : public ::Game::UI::Menu_Seasons::ITM_SimpleFragmentedBonusWidget_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonPlagueHeartBonus", "ITM_SeasonPlagueHeartBonus_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonPlagueHeartBonus_C = Game::UI::Menu_Seasons::ITM_SeasonPlagueHeartBonus_C;
+using ITM_SeasonPlagueHeartBonus_C = ::Game::UI::Menu_Seasons::ITM_SeasonPlagueHeartBonus_C;

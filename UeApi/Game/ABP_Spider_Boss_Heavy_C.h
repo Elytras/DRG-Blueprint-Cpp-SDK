@@ -77,4 +77,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using ABP_Spider_Boss_Heavy_C = Game::Enemies::Spider::TankBoss::BossHeavy::ABP_Spider_Boss_Heavy_C;
+using ABP_Spider_Boss_Heavy_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::ABP_Spider_Boss_Heavy_C;

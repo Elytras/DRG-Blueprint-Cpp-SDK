@@ -20,4 +20,4 @@ public:
 
 }}}   // namespace Game::Movies::Intro
 
-using Movie_WidgetBlueprint_C = Game::Movies::Intro::Movie_WidgetBlueprint_C;
+using Movie_WidgetBlueprint_C = ::Game::Movies::Intro::Movie_WidgetBlueprint_C;

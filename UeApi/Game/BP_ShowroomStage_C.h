@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Showroom
 
-using BP_ShowroomStage_C = Game::UI::Showroom::BP_ShowroomStage_C;
+using BP_ShowroomStage_C = ::Game::UI::Showroom::BP_ShowroomStage_C;

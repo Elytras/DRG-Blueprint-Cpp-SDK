@@ -20,7 +20,7 @@ class AIC_Prospector_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/AIC_Prospector", "AIC_Prospector_C");
-    using ENE_Prospector_C = Game::Critters::Prospector::ENE_Prospector_C;
+    using ENE_Prospector_C = ::Game::Critters::Prospector::ENE_Prospector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FName IsRunningKey;
     FTimerHandle Timer_Running;
@@ -57,4 +57,4 @@ private:
 
 }}}   // namespace Game::Critters::Prospector
 
-using AIC_Prospector_C = Game::Critters::Prospector::AIC_Prospector_C;
+using AIC_Prospector_C = ::Game::Critters::Prospector::AIC_Prospector_C;

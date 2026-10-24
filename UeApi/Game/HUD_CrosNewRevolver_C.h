@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrosNewRevolver_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosNewRevolver_C;
+using HUD_CrosNewRevolver_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosNewRevolver_C;

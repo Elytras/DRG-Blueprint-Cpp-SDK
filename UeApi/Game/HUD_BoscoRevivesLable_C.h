@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Bosco
 
-using HUD_BoscoRevivesLable_C = Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoRevivesLable_C;
+using HUD_BoscoRevivesLable_C = ::Game::UI::MainOnscreenHUD::Bosco::HUD_BoscoRevivesLable_C;

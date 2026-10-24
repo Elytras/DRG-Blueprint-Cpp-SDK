@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Poison_C = Game::UI::ScreenOverlays::ScreenOverlay_Poison_C;
+using ScreenOverlay_Poison_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Poison_C;

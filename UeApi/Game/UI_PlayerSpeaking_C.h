@@ -17,7 +17,7 @@ class UI_PlayerSpeaking_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/UI_PlayerSpeaking", "UI_PlayerSpeaking_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Basic_Image;
     float Size;
@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
+using UI_PlayerSpeaking_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;

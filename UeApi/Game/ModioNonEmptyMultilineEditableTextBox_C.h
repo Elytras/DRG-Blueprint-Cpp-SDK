@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioNonEmptyMultilineEditableTextBox_C = Modio::UI::Browser::Components::ModioNonEmptyMultilineEditableTextBox_C;
+using ModioNonEmptyMultilineEditableTextBox_C = ::Modio::UI::Browser::Components::ModioNonEmptyMultilineEditableTextBox_C;

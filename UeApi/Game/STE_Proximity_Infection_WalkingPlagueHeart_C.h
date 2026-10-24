@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using STE_Proximity_Infection_WalkingPlagueHeart_C = Game::Enemies::Plague::WalkingPlagueheartBoss::STE_Proximity_Infection_WalkingPlagueHeart_C;
+using STE_Proximity_Infection_WalkingPlagueHeart_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::STE_Proximity_Infection_WalkingPlagueHeart_C;

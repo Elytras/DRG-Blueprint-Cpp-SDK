@@ -49,4 +49,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Crossbow
 
-using WPN_Crossbow_C = Game::WeaponsNTools::Crossbow::WPN_Crossbow_C;
+using WPN_Crossbow_C = ::Game::WeaponsNTools::Crossbow::WPN_Crossbow_C;

@@ -21,7 +21,7 @@ class UI_ShoutBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Subtitles/UI_ShoutBox", "UI_ShoutBox_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     class UImage* CharacterIcon;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Subtitles
 
-using UI_ShoutBox_C = Game::UI::MainOnscreenHUD::Subtitles::UI_ShoutBox_C;
+using UI_ShoutBox_C = ::Game::UI::MainOnscreenHUD::Subtitles::UI_ShoutBox_C;

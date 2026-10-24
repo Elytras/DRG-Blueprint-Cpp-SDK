@@ -27,4 +27,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Holidays::Xmas::Nisse
 
-using ABP_Xmas_CandyCane_Carry_Skeleton_AnimBlueprint_C = Game::GameElements::Holidays::Xmas::Nisse::ABP_Xmas_CandyCane_Carry_Skeleton_AnimBlueprint_C;
+using ABP_Xmas_CandyCane_Carry_Skeleton_AnimBlueprint_C = ::Game::GameElements::Holidays::Xmas::Nisse::ABP_Xmas_CandyCane_Carry_Skeleton_AnimBlueprint_C;

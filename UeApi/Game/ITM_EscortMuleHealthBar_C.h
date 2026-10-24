@@ -21,7 +21,7 @@ class ITM_EscortMuleHealthBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/DrillingVehicle/ITM_EscortMuleHealthBar", "ITM_EscortMuleHealthBar_C");
-    using ITM_HealthBarPercentWWarning_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_HealthBarPercentWWarning_C;
+    using ITM_HealthBarPercentWWarning_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_HealthBarPercentWWarning_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OnHeal;
     class UImage* DrillDozer_Background;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::DrillingVehicle
 
-using ITM_EscortMuleHealthBar_C = Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_EscortMuleHealthBar_C;
+using ITM_EscortMuleHealthBar_C = ::Game::UI::MainOnscreenHUD::DrillingVehicle::ITM_EscortMuleHealthBar_C;

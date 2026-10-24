@@ -27,12 +27,12 @@ class UI_Forge_Details_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/UI_Forge_Details", "UI_Forge_Details_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_MatrixCore_C = Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
-    using ITM_Overclock_Details_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_C;
-    using ITM_Overclock_Icon_C = Game::UI::ITM_Overclock_Icon_C;
-    using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_MatrixCore_C = ::Game::UI::Menu_MissionStart::ITM_MatrixCore_C;
+    using ITM_Overclock_Details_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclock_Details_C;
+    using ITM_Overclock_Icon_C = ::Game::UI::ITM_Overclock_Icon_C;
+    using UI_Forge_Schematic_OwnerIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimCount;
     UE_READONLY class UWidgetAnimation* AnimOpenMatrix;
@@ -78,4 +78,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using UI_Forge_Details_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;
+using UI_Forge_Details_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;

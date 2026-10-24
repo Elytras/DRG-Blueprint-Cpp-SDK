@@ -19,7 +19,7 @@ class ITM_MissionBarDropPod_Objective_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/Art/DropPod/ITM_MissionBarDropPod_Objective", "ITM_MissionBarDropPod_Objective_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UTextBlock* DATA_Amount;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::Art::DropPod
 
-using ITM_MissionBarDropPod_Objective_C = Game::Art::DropPod::ITM_MissionBarDropPod_Objective_C;
+using ITM_MissionBarDropPod_Objective_C = ::Game::Art::DropPod::ITM_MissionBarDropPod_Objective_C;

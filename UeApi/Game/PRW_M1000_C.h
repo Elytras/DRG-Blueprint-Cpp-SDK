@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using PRW_M1000_C = Game::WeaponsNTools::BoltActionRifle::PRW_M1000_C;
+using PRW_M1000_C = ::Game::WeaponsNTools::BoltActionRifle::PRW_M1000_C;

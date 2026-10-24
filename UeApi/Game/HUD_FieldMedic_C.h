@@ -21,7 +21,7 @@ class HUD_FieldMedic_C : public UPerkHUDActivationWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_FieldMedic", "HUD_FieldMedic_C");
-    using HUD_Hold_Activation_C = Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;
+    using HUD_Hold_Activation_C = ::Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     HUD_Hold_Activation_C* HUD_Hold_Activation;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_FieldMedic_C = Game::UI::MainOnscreenHUD::HUD_FieldMedic_C;
+using HUD_FieldMedic_C = ::Game::UI::MainOnscreenHUD::HUD_FieldMedic_C;

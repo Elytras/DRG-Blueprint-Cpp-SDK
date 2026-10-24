@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BaseBlueprints
 
-using BP_ItemMarker_Base_C = Game::WeaponsNTools::BaseBlueprints::BP_ItemMarker_Base_C;
+using BP_ItemMarker_Base_C = ::Game::WeaponsNTools::BaseBlueprints::BP_ItemMarker_Base_C;

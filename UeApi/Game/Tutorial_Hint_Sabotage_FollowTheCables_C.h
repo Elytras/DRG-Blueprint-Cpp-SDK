@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_Sabotage_FollowTheCables_C = Game::Character::Tutorials::Tutorial_Hint_Sabotage_FollowTheCables_C;
+using Tutorial_Hint_Sabotage_FollowTheCables_C = ::Game::Character::Tutorials::Tutorial_Hint_Sabotage_FollowTheCables_C;

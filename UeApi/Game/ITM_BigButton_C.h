@@ -25,13 +25,13 @@ class ITM_BigButton_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/_GlobalAssets/ITM_BigButton", "ITM_BigButton_C");
-    using UI_InputIcon_C = Game::UI::_GlobalAssets::UI_InputIcon_C;
+    using UI_InputIcon_C = ::Game::UI::_GlobalAssets::UI_InputIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* HoverEnd;
     UE_READONLY class UWidgetAnimation* HoverStart;
     UE_READONLY class UWidgetAnimation* Hover;
     UE_READONLY class UWidgetAnimation* Idle;
-    class UImage* BgGlow;
+    class UImage* BGglow;
     class UBorder* Border_129;
     class USizeBox* Button_SizeBox;
     class UButton* ClickButton;
@@ -66,4 +66,4 @@ public:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
+using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;

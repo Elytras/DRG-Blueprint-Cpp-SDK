@@ -27,12 +27,12 @@ class _MENU_DeepDives_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/_MENU_DeepDives", "_MENU_DeepDives_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_DeepDives_Join_C = Game::UI::Menu_DeepDives::ITM_DeepDives_Join_C;
-    using ITM_DeepDives_Start_C = Game::UI::Menu_DeepDives::ITM_DeepDives_Start_C;
-    using ITM_InfoBox_C = Game::UI::_GlobalAssets::ITM_InfoBox_C;
-    using MENU_LockedTemplate_C = Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_DeepDives_Join_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_Join_C;
+    using ITM_DeepDives_Start_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_Start_C;
+    using ITM_InfoBox_C = ::Game::UI::_GlobalAssets::ITM_InfoBox_C;
+    using MENU_LockedTemplate_C = ::Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* B_MainBG;
     Basic_Label_C* Data_PageCaption;
@@ -72,4 +72,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using _MENU_DeepDives_C = Game::UI::Menu_DeepDives::_MENU_DeepDives_C;
+using _MENU_DeepDives_C = ::Game::UI::Menu_DeepDives::_MENU_DeepDives_C;

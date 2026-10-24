@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::DetPack
 
-using ABP_Detonator_C = Game::WeaponsNTools::DetPack::ABP_Detonator_C;
+using ABP_Detonator_C = ::Game::WeaponsNTools::DetPack::ABP_Detonator_C;

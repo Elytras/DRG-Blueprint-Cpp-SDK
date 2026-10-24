@@ -24,8 +24,8 @@ class ITM_HazPlusItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_HazPlusItem", "ITM_HazPlusItem_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFade;
     Basic_Image_C* Arrow_Left;
@@ -77,4 +77,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_HazPlusItem_C = Game::UI::Menu_MissionSelectionMK3::ITM_HazPlusItem_C;
+using ITM_HazPlusItem_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_HazPlusItem_C;

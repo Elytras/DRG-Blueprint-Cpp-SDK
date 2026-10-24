@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Game::Macros
 
-using BP_Object_Macros_C = Game::Game::Macros::BP_Object_Macros_C;
+using BP_Object_Macros_C = ::Game::Game::Macros::BP_Object_Macros_C;

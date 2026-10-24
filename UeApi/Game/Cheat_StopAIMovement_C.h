@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_StopAIMovement_C = Game::UI::Menu_Cheats::Cheat_StopAIMovement_C;
+using Cheat_StopAIMovement_C = ::Game::UI::Menu_Cheats::Cheat_StopAIMovement_C;

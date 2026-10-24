@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Profiling
 
-using ProfileCategoryEntry_C = Game::UI::Profiling::ProfileCategoryEntry_C;
+using ProfileCategoryEntry_C = ::Game::UI::Profiling::ProfileCategoryEntry_C;

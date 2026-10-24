@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace ThornBranches {
 
-class BP_CreeperVine_Small_01_C : public Game::LevelElements::RoomObjects::ThornBranches::BP_CreeperVine_Base_C
+class BP_CreeperVine_Small_01_C : public ::Game::LevelElements::RoomObjects::ThornBranches::BP_CreeperVine_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/ThornBranches/BP_CreeperVine_Small_01", "BP_CreeperVine_Small_01_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AudioComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.SceneComponent PlantEndPoint;/Script/Engine.SplineComponent PlantSpline";
+        static constexpr const char* UeIchRecords = "SM_brokenFloor_01";
     };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::ThornBranches
 
-using BP_CreeperVine_Small_01_C = Game::LevelElements::RoomObjects::ThornBranches::BP_CreeperVine_Small_01_C;
+using BP_CreeperVine_Small_01_C = ::Game::LevelElements::RoomObjects::ThornBranches::BP_CreeperVine_Small_01_C;

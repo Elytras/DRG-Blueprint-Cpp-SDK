@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Revolver
 
-using PRW_Revolver_C = Game::WeaponsNTools::Revolver::PRW_Revolver_C;
+using PRW_Revolver_C = ::Game::WeaponsNTools::Revolver::PRW_Revolver_C;

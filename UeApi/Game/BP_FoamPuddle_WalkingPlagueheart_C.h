@@ -55,4 +55,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper
 
-using BP_FoamPuddle_WalkingPlagueheart_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_FoamPuddle_WalkingPlagueheart_C;
+using BP_FoamPuddle_WalkingPlagueheart_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_FoamPuddle_WalkingPlagueheart_C;

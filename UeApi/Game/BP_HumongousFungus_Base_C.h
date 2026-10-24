@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus
 
-using BP_HumongousFungus_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus::BP_HumongousFungus_Base_C;
+using BP_HumongousFungus_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::HumongousFungus::BP_HumongousFungus_Base_C;

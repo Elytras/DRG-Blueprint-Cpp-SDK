@@ -21,9 +21,9 @@ class ITM_MisSel_MissionIconBasic_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_MissionIconBasic", "ITM_MisSel_MissionIconBasic_C");
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    class UImage* Icon_BG;
+    class UImage* ICON_BG;
     class UImage* ICON_Frame;
     class UImage* ICON_MissionType;
     class UImage* ICON_Outline;
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;

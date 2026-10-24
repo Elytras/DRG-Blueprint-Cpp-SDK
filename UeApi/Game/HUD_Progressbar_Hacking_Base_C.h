@@ -18,11 +18,11 @@ namespace Game { namespace UI { namespace MainOnscreenHUD { namespace BossFight 
 
 namespace Game { namespace UI { namespace MainOnscreenHUD { namespace BossFight {
 
-class HUD_Progressbar_Hacking_Base_C : public Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C
+class HUD_Progressbar_Hacking_Base_C : public ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BossFight/HUD_Progressbar_Hacking_Base", "HUD_Progressbar_Hacking_Base_C");
-    using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
+    using ITM_BossFightContainer_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_Progressbar_Hacking_Base_C;
     UE_READONLY class UWidgetAnimation* ArmorFullAnim;
     UE_READONLY class UWidgetAnimation* ArmorHitAnim;
@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using HUD_Progressbar_Hacking_Base_C = Game::UI::MainOnscreenHUD::BossFight::HUD_Progressbar_Hacking_Base_C;
+using HUD_Progressbar_Hacking_Base_C = ::Game::UI::MainOnscreenHUD::BossFight::HUD_Progressbar_Hacking_Base_C;

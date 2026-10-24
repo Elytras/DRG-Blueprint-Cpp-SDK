@@ -23,8 +23,8 @@ class WND_Assignment_Popup_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/JobsV2_Redesign/WND_Assignment_Popup", "WND_Assignment_Popup_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using ITM_CampaignProgress_NoBrackets_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using ITM_CampaignProgress_NoBrackets_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonCutCorner_C* B_AbortAssignment;
     Basic_ButtonCutCorner_C* B_AcceptNoMissionAssignment;
@@ -59,4 +59,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using WND_Assignment_Popup_C = Game::UI::Menu_Jobs::JobsV2_Redesign::WND_Assignment_Popup_C;
+using WND_Assignment_Popup_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::WND_Assignment_Popup_C;

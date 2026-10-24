@@ -386,6 +386,7 @@ struct FAnimNode_ControlRigBase : public FAnimNode_CustomProperty
     TMap<FName, uint16> ControlRigBoneMapping;
     TMap<FName, uint16> ControlRigCurveMapping;
     TMap<FName, uint16> InputToCurveMappingUIDs;
+    TWeakObjectPtr<class UNodeMappingContainer> NodeMappingContainer;
     FControlRigIOSettings InputSettings;
     FControlRigIOSettings OutputSettings;
     bool bExecute;
@@ -415,6 +416,7 @@ struct FAnimNode_ControlRigInputPose : public FAnimNode_Base
 
 struct FAnimNode_ControlRig_ExternalSource : public FAnimNode_ControlRigBase
 {
+    TWeakObjectPtr<class UControlRig> ControlRig;
 };
 
 struct FConstraintNodeData

@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using BP_PlasmaExplosionComponent_C = Game::WeaponsNTools::PlasmaCarbine::BP_PlasmaExplosionComponent_C;
+using BP_PlasmaExplosionComponent_C = ::Game::WeaponsNTools::PlasmaCarbine::BP_PlasmaExplosionComponent_C;

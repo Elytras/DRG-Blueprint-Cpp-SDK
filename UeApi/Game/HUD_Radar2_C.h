@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Radar
 
-using HUD_Radar2_C = Game::UI::Radar::HUD_Radar2_C;
+using HUD_Radar2_C = ::Game::UI::Radar::HUD_Radar2_C;

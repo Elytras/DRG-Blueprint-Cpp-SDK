@@ -31,13 +31,13 @@ class ITM_DeepDives_Launcher_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_DeepDives/ITM_DeepDives_Launcher", "ITM_DeepDives_Launcher_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using ITM_DeepDives_LaunchButton_C = Game::UI::Menu_DeepDives::ITM_DeepDives_LaunchButton_C;
-    using ITM_DeepDives_RejoinButton_C = Game::UI::Menu_DeepDives::ITM_DeepDives_RejoinButton_C;
-    using ITM_Gear_Bar_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;
-    using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_DeepDives_LaunchButton_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_LaunchButton_C;
+    using ITM_DeepDives_RejoinButton_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_RejoinButton_C;
+    using ITM_Gear_Bar_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_Gear_Bar_C;
+    using ShadowBG_C = ::Game::UI::_GlobalAssets::ShadowBG_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* BackgroundButton;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -93,4 +93,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_Launcher_C = Game::UI::Menu_DeepDives::ITM_DeepDives_Launcher_C;
+using ITM_DeepDives_Launcher_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_Launcher_C;

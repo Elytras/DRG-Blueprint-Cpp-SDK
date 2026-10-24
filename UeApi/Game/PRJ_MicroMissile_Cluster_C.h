@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher {
 
-class PRJ_MicroMissile_Cluster_C : public Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
+class PRJ_MicroMissile_Cluster_C : public ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Cluster", "PRJ_MicroMissile_Cluster_C");
@@ -30,13 +30,14 @@ public:
     void Cleanup();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void CalculateIndicatorPos();
+    void OnInitialized();
     UE_MULTICAST void SpawnClusters(FVector InVector, float ClusterDelay);
     void CalculateClusterTrajectory(float RealDeltaTime, float ProjectileSpeed, FVector& ClusterHitCenter);
-    void OnInitialized();
 private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "MeshRocket";
         static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Cluster_C__UeName = "UberGraphFrame";
         static constexpr const char* ClusterbombSpawner__UeScsNode = "7c0dcf11f11f1e47b17c8deb17656768";
         static constexpr const char* SM_MicroMissile_Cluster__UeScsNode = "224d88c4206ee34eb3cbc8b81ac0ed4a";
@@ -46,4 +47,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using PRJ_MicroMissile_Cluster_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Cluster_C;
+using PRJ_MicroMissile_Cluster_C = ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Cluster_C;

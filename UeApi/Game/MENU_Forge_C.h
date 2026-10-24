@@ -29,19 +29,19 @@ class MENU_Forge_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Forge/MENU_Forge", "MENU_Forge_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
-    using MENU_LockedTemplate_C = Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_Forge_Completed_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Completed_C;
-    using UI_Forge_Details_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;
-    using UI_Forge_MasteryBar_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_MasteryBar_C;
-    using UI_Forge_Rewards_Display_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_Display_C;
-    using UI_Forge_Rewards_Selector_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_Selector_C;
-    using UI_Forge_SchematicList_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_SchematicList_C;
-    using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using MENU_LockedTemplate_C = ::Game::UI::Menu_TopBar::MENU_LockedTemplate_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_Forge_Completed_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Completed_C;
+    using UI_Forge_Details_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Details_C;
+    using UI_Forge_MasteryBar_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_MasteryBar_C;
+    using UI_Forge_Rewards_Display_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_Display_C;
+    using UI_Forge_Rewards_Selector_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Rewards_Selector_C;
+    using UI_Forge_SchematicList_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_SchematicList_C;
+    using UI_Forge_Schematic_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimShowMasteryBar;
     UE_READONLY class UWidgetAnimation* AnimEnterSelection;
@@ -120,4 +120,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge
 
-using MENU_Forge_C = Game::UI::HUD_SpaceRig::Forge::MENU_Forge_C;
+using MENU_Forge_C = ::Game::UI::HUD_SpaceRig::Forge::MENU_Forge_C;

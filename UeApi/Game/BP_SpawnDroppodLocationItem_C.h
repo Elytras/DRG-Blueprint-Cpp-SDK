@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_SpawnDroppodLocationItem_C = Game::LevelElements::Droppod::BP_SpawnDroppodLocationItem_C;
+using BP_SpawnDroppodLocationItem_C = ::Game::LevelElements::Droppod::BP_SpawnDroppodLocationItem_C;

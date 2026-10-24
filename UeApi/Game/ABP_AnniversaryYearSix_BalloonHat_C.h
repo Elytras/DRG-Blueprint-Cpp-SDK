@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_AnniversaryYearSix_BalloonHat_C = Game::Character::Vanity2::Headwear::ABP_AnniversaryYearSix_BalloonHat_C;
+using ABP_AnniversaryYearSix_BalloonHat_C = ::Game::Character::Vanity2::Headwear::ABP_AnniversaryYearSix_BalloonHat_C;

@@ -471,7 +471,6 @@ UE_ASSET_AT(::USkeletalMesh, SK_Vanity_Neck, "/Game/Character/Vanity2/Heads/SK_V
 UE_ASSET_AT(::USkeletalMesh, SK_Vanity_Neck_Thin, "/Game/Character/Vanity2/Heads/SK_Vanity_Neck_Thin");
 }
 namespace UeAssets::USkeletalMesh::Game::Character::Vanity2::Headwear {
-UE_ASSET_AT(::USkeletalMesh, SK_CoreSpawnMask, "/Game/Character/Vanity2/Headwear/SK_CoreSpawnMask");
 UE_ASSET_AT(::USkeletalMesh, SK_DLC08_Helmet, "/Game/Character/Vanity2/Headwear/SK_DLC08_Helmet");
 UE_ASSET_AT(::USkeletalMesh, SK_easter2025_CowboyBunny, "/Game/Character/Vanity2/Headwear/SK_easter2025_CowboyBunny");
 UE_ASSET_AT(::USkeletalMesh, SK_fiveAnniversaryHat, "/Game/Character/Vanity2/Headwear/SK_fiveAnniversaryHat");
@@ -495,6 +494,7 @@ UE_ASSET_AT(::USkeletalMesh, SK_Hair_Rig_A_Rambo, "/Game/Character/Vanity2/Headw
 UE_ASSET_AT(::USkeletalMesh, SK_Hair_Rig_A_ShortTail, "/Game/Character/Vanity2/Headwear/SK_Hair_Rig_A_ShortTail");
 UE_ASSET_AT(::USkeletalMesh, SK_Hair_Rig_A_ShortTailx3, "/Game/Character/Vanity2/Headwear/SK_Hair_Rig_A_ShortTailx3");
 UE_ASSET_AT(::USkeletalMesh, SK_Hair_Rig_B_Amazon_S04, "/Game/Character/Vanity2/Headwear/SK_Hair_Rig_B_Amazon_S04");
+UE_ASSET_AT(::USkeletalMesh, SK_Halloween2026_ScareCrow, "/Game/Character/Vanity2/Headwear/SK_Halloween2026_ScareCrow");
 UE_ASSET_AT(::USkeletalMesh, SK_Headwear_AnniversaryYearSix_BalloonHat, "/Game/Character/Vanity2/Headwear/SK_Headwear_AnniversaryYearSix_BalloonHat");
 UE_ASSET_AT(::USkeletalMesh, SK_Headwear_CameleonGoggles, "/Game/Character/Vanity2/Headwear/SK_Headwear_CameleonGoggles");
 UE_ASSET_AT(::USkeletalMesh, SK_Headwear_CoconutShade, "/Game/Character/Vanity2/Headwear/SK_Headwear_CoconutShade");

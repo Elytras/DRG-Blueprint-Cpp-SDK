@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Notifications
 
-using ModioErrorNotificationWidget_C = Modio::UI::Browser::Notifications::ModioErrorNotificationWidget_C;
+using ModioErrorNotificationWidget_C = ::Modio::UI::Browser::Notifications::ModioErrorNotificationWidget_C;

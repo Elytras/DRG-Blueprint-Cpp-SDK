@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Jobs
 
-using ITM_Jobs_WeeklyBG_C = Game::UI::Menu_Jobs::ITM_Jobs_WeeklyBG_C;
+using ITM_Jobs_WeeklyBG_C = ::Game::UI::Menu_Jobs::ITM_Jobs_WeeklyBG_C;

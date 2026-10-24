@@ -17,8 +17,8 @@ class Options_DownedTurnDirection_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_DownedTurnDirection", "Options_DownedTurnDirection_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     Basic_Option_C* Basic_Option;
@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_DownedTurnDirection_C = Game::UI::Menu_Options::Options_DownedTurnDirection_C;
+using Options_DownedTurnDirection_C = ::Game::UI::Menu_Options::Options_DownedTurnDirection_C;

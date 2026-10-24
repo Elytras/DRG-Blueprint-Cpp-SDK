@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpikyPlant
 
-using SpikeSkeletalMesh_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::SpikeSkeletalMesh_C;
+using SpikeSkeletalMesh_C = ::Game::LevelElements::RoomObjects::Hazards::SpikyPlant::SpikeSkeletalMesh_C;

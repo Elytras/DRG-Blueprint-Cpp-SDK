@@ -29,4 +29,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Oktoberfest
 
-using BP_PropHunt_OktoberfestBarrel_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Oktoberfest::BP_PropHunt_OktoberfestBarrel_C;
+using BP_PropHunt_OktoberfestBarrel_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Oktoberfest::BP_PropHunt_OktoberfestBarrel_C;

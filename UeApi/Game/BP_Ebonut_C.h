@@ -21,7 +21,7 @@ class UTimelineComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Collectibles { namespace Ebonut {
 
-class BP_Ebonut_C : public Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C
+class BP_Ebonut_C : public ::Game::GameElements::Resources::Collectibles::BP_Collectible_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Ebonut/BP_Ebonut", "BP_Ebonut_C");
@@ -65,6 +65,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "InstantUsable;SimpleObjectInfo;UseTrigger";
         static constexpr const char* UberGraphFrame_BP_Ebonut_C__UeName = "UberGraphFrame";
         static constexpr const char* SM_Carver_DropPodDrill001__UeScsNode = "97f64651b498b74a8b53cd19fac1e263";
         static constexpr const char* LevelGenerationCarver__UeScsNode = "7dfec1d612b25147ab3bd14748d81e7c";
@@ -90,4 +91,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Ebonut
 
-using BP_Ebonut_C = Game::GameElements::Resources::Collectibles::Ebonut::BP_Ebonut_C;
+using BP_Ebonut_C = ::Game::GameElements::Resources::Collectibles::Ebonut::BP_Ebonut_C;

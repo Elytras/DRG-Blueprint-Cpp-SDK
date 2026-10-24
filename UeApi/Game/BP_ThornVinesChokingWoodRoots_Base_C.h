@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches
 
-using BP_ThornVinesChokingWoodRoots_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_ThornVinesChokingWoodRoots_Base_C;
+using BP_ThornVinesChokingWoodRoots_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::ThornBranches::BP_ThornVinesChokingWoodRoots_Base_C;

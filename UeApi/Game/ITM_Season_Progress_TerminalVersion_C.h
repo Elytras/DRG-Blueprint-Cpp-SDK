@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Season_Progress_TerminalVersion_C = Game::UI::Menu_Seasons::ITM_Season_Progress_TerminalVersion_C;
+using ITM_Season_Progress_TerminalVersion_C = ::Game::UI::Menu_Seasons::ITM_Season_Progress_TerminalVersion_C;

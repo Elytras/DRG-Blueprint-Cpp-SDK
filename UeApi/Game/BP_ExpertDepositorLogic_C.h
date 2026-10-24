@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_ExpertDepositorLogic_C = Game::GameElements::KPI::Perks::BP_ExpertDepositorLogic_C;
+using BP_ExpertDepositorLogic_C = ::Game::GameElements::KPI::Perks::BP_ExpertDepositorLogic_C;

@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using HUD_BossFight_BaseEntry_C = Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C;
+using HUD_BossFight_BaseEntry_C = ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_BaseEntry_C;

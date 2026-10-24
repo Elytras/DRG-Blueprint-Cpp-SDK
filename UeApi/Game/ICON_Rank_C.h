@@ -21,7 +21,7 @@ public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/ICON_Rank", "ICON_Rank_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DataRank;
-    class UBorder* Icon_BG;
+    class UBorder* ICON_BG;
     class UBorder* Icon_Center;
     class UBorder* Icon_Left;
     class UBorder* Icon_Right;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ICON_Rank_C = Game::UI::CharacterSelectionMK2::ICON_Rank_C;
+using ICON_Rank_C = ::Game::UI::CharacterSelectionMK2::ICON_Rank_C;

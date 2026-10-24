@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using AFE_PlasmaExplosion_C = Game::WeaponsNTools::PlasmaCarbine::AFE_PlasmaExplosion_C;
+using AFE_PlasmaExplosion_C = ::Game::WeaponsNTools::PlasmaCarbine::AFE_PlasmaExplosion_C;

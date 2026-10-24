@@ -16,7 +16,7 @@ class BP_WalkingPlagueheart_PlagueheartCollectionShoutManager_C : public AActor
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/BP_WalkingPlagueheart_PlagueheartCollectionShoutManager", "BP_WalkingPlagueheart_PlagueheartCollectionShoutManager_C");
-    using BP_PlagueHeart_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueHeart_C;
+    using BP_PlagueHeart_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueHeart_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     int heartsDeposited;
@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss
 
-using BP_WalkingPlagueheart_PlagueheartCollectionShoutManager_C = Game::Enemies::Plague::WalkingPlagueheartBoss::BP_WalkingPlagueheart_PlagueheartCollectionShoutManager_C;
+using BP_WalkingPlagueheart_PlagueheartCollectionShoutManager_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::BP_WalkingPlagueheart_PlagueheartCollectionShoutManager_C;

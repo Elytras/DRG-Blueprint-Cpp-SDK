@@ -22,10 +22,10 @@ class Faction_Popup_YesNoPrompt_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/Faction_Popup_YesNoPrompt", "Faction_Popup_YesNoPrompt_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     BlurBackground_C* BlurBackground;
@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using Faction_Popup_YesNoPrompt_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Faction_Popup_YesNoPrompt_C;
+using Faction_Popup_YesNoPrompt_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Faction_Popup_YesNoPrompt_C;

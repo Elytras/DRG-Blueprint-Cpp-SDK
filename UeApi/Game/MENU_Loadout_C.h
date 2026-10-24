@@ -26,13 +26,13 @@ class MENU_Loadout_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/MENU_Loadout", "MENU_Loadout_C");
-    using ITM_CharacterSwitcherBar_C = Game::UI::Menu_Loadout::ITM_CharacterSwitcherBar_C;
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
-    using ITM_Loadout_ItemWindow_C = Game::UI::Menu_Loadout::ITM_Loadout_ItemWindow_C;
-    using ITM_Loadout_PerksEquip_C = Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_RandomizeLoadoutWithUndo_C = Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
+    using ITM_CharacterSwitcherBar_C = ::Game::UI::Menu_Loadout::ITM_CharacterSwitcherBar_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+    using ITM_Loadout_ItemWindow_C = ::Game::UI::Menu_Loadout::ITM_Loadout_ItemWindow_C;
+    using ITM_Loadout_PerksEquip_C = ::Game::UI::Menu_Loadout::Perks::ITM_Loadout_PerksEquip_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_RandomizeLoadoutWithUndo_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_DragRotateCharacter_C* ITM_DragRotateCharacter;
     ITM_CharacterSwitcherBar_C* ITM_Loadout_CharSelect;
@@ -95,4 +95,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using MENU_Loadout_C = Game::UI::Menu_Loadout::MENU_Loadout_C;
+using MENU_Loadout_C = ::Game::UI::Menu_Loadout::MENU_Loadout_C;

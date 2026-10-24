@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_RoomItem_C = Game::UI::Menu_Cheats::Cheat_RoomItem_C;
+using Cheat_RoomItem_C = ::Game::UI::Menu_Cheats::Cheat_RoomItem_C;

@@ -45,4 +45,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::ShipTesting
 
-using BP_Hologram_C = Game::Art::Environments::ShipTesting::BP_Hologram_C;
+using BP_Hologram_C = ::Game::Art::Environments::ShipTesting::BP_Hologram_C;

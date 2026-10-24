@@ -23,12 +23,12 @@ namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { nam
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossTwins {
 
-class ENE_Spider_Boss_TwinBase_C : public Game::Enemies::Spider::TankBoss::ENE_Spider_Boss_Base_C
+class ENE_Spider_Boss_TwinBase_C : public ::Game::Enemies::Spider::TankBoss::ENE_Spider_Boss_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ENE_Spider_Boss_TwinBase", "ENE_Spider_Boss_TwinBase_C");
-    using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
-    using BP_Meet_Attack_C = Game::Enemies::Spider::TankBoss::BossTwins::BP_Meet_Attack_C;
+    using BP_BurrowComponent_C = ::Game::Enemies::Spider::BP_BurrowComponent_C;
+    using BP_Meet_Attack_C = ::Game::Enemies::Spider::TankBoss::BossTwins::BP_Meet_Attack_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Boss_TwinBase_C;
     class UAudioComponent* TwinBurrow_Cue;
     BP_Meet_Attack_C* BP_Meet_Attack;
@@ -77,6 +77,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
         static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinBase_C__UeName = "UberGraphFrame";
         static constexpr const char* TwinBurrow_Cue__UeScsNode = "96d209510e072d489edb118bc2f58765";
         static constexpr const char* BP_Meet_Attack__UeScsNode = "c73ea7ca293cce40a960b9f2e3b4020c";
@@ -92,4 +93,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using ENE_Spider_Boss_TwinBase_C = Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinBase_C;
+using ENE_Spider_Boss_TwinBase_C = ::Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinBase_C;

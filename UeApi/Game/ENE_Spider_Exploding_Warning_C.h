@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Exploder {
 
-class ENE_Spider_Exploding_Warning_C : public Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_C
+class ENE_Spider_Exploding_Warning_C : public ::Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Exploder/ENE_Spider_Exploding_Warning", "ENE_Spider_Exploding_Warning_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Exploder
 
-using ENE_Spider_Exploding_Warning_C = Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_Warning_C;
+using ENE_Spider_Exploding_Warning_C = ::Game::Enemies::Spider::Exploder::ENE_Spider_Exploding_Warning_C;

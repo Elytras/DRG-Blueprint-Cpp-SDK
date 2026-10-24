@@ -20,7 +20,7 @@ class Basic_Dots_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_Dots", "Basic_Dots_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* Horizontal_Dots;
     class UVerticalBox* Vertical_Dots;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Dots_C = Game::UI::Art::WidgetParts::Basic_Dots_C;
+using Basic_Dots_C = ::Game::UI::Art::WidgetParts::Basic_Dots_C;

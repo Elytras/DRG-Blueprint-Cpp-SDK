@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::LavaGeyser
 
-using STE_Geyser_Lava_Small_C = Game::LevelElements::RoomObjects::Hazards::LavaGeyser::STE_Geyser_Lava_Small_C;
+using STE_Geyser_Lava_Small_C = ::Game::LevelElements::RoomObjects::Hazards::LavaGeyser::STE_Geyser_Lava_Small_C;

@@ -13,7 +13,7 @@ class UProjectileAttackComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace TankBoss { namespace BossTwins {
 
-class ENE_Spider_Boss_TwinA_C : public Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinBase_C
+class ENE_Spider_Boss_TwinA_C : public ::Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinBase_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/ENE_Spider_Boss_TwinA", "ENE_Spider_Boss_TwinA_C");
@@ -29,6 +29,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;BP_Meet_Attack;Enemy";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.BallisticProjectileAttack Projectile_Mines_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.BallisticProjectileAttack Projectile_Mines_GEN_VARIABLE:BallisticProjectileAttack_1;/Script/FSD.BallisticProjectileAttack Projectile_Mines_GEN_VARIABLE:BallisticProjectileAttack_2;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_0;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_1;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_10;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_2;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_3;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_4;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_5;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_6;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_7;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_8;/Script/FSD.BallisticProjectileAttack Projectile_MinesBarrage_GEN_VARIABLE:BallisticProjectileAttack_9;/Script/FSD.NormalProjectileAttack Projectile_Fireball_GEN_VARIABLE:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack Projectile_Fireball_GEN_VARIABLE:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack Projectile_Fireball_GEN_VARIABLE:NormalProjectileAttack_2;/Script/FSD.NormalProjectileAttack Projectile_Fireball_GEN_VARIABLE:NormalProjectileAttack_3;/Script/FSD.NormalProjectileAttack Projectile_Fireball_GEN_VARIABLE:NormalProjectileAttack_4";
         static constexpr const char* UberGraphFrame_ENE_Spider_Boss_TwinA_C__UeName = "UberGraphFrame";
         static constexpr const char* Projectile_MinesBarrage__UeScsNode = "6d31f9134a8a0947ba3cbfe0f8b25bdf";
         static constexpr const char* MeleeAttack__UeScsNode = "e130d90def34054e98c2a0ec2aea426d";
@@ -39,4 +41,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins
 
-using ENE_Spider_Boss_TwinA_C = Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinA_C;
+using ENE_Spider_Boss_TwinA_C = ::Game::Enemies::Spider::TankBoss::BossTwins::ENE_Spider_Boss_TwinA_C;

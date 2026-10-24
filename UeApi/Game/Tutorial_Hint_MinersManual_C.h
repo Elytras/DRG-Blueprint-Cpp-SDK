@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_MinersManual_C = Game::Character::Tutorials::Tutorial_Hint_MinersManual_C;
+using Tutorial_Hint_MinersManual_C = ::Game::Character::Tutorials::Tutorial_Hint_MinersManual_C;

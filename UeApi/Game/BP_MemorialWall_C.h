@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_MemorialWall_C = Game::UI::HUD_SpaceRig::BP_MemorialWall_C;
+using BP_MemorialWall_C = ::Game::UI::HUD_SpaceRig::BP_MemorialWall_C;

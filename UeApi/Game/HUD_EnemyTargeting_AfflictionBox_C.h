@@ -20,7 +20,7 @@ class HUD_EnemyTargeting_AfflictionBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/EnemyHealthBar/HUD_EnemyTargeting_AfflictionBox", "HUD_EnemyTargeting_AfflictionBox_C");
-    using HUD_EnemyTargeting_Affliction_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Affliction_C;
+    using HUD_EnemyTargeting_Affliction_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_Affliction_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* AfflictionBox;
     UE_READONLY float Size;
@@ -42,4 +42,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar
 
-using HUD_EnemyTargeting_AfflictionBox_C = Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_AfflictionBox_C;
+using HUD_EnemyTargeting_AfflictionBox_C = ::Game::UI::MainOnscreenHUD::EnemyHealthBar::HUD_EnemyTargeting_AfflictionBox_C;

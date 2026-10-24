@@ -42,4 +42,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using BP_BomberAcidPuddle_C = Game::Enemies::FlyingBug::Bomber::BP_BomberAcidPuddle_C;
+using BP_BomberAcidPuddle_C = ::Game::Enemies::FlyingBug::Bomber::BP_BomberAcidPuddle_C;

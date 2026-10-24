@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_FacilityCore_DataRack_C = Game::GameElements::Objectives::Facility::BP_FacilityCore_DataRack_C;
+using BP_FacilityCore_DataRack_C = ::Game::GameElements::Objectives::Facility::BP_FacilityCore_DataRack_C;

@@ -20,7 +20,7 @@ class Basic_ButtonWithControls_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_ButtonWithControls", "Basic_ButtonWithControls_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* BaseLeft;
     class UBorder* BaseMid;
@@ -44,4 +44,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ButtonWithControls_C = Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
+using Basic_ButtonWithControls_C = ::Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_RiftCrystal_PillarCarving_C = Game::Character::Camera::CameraShakes::CameraShake_RiftCrystal_PillarCarving_C;
+using CameraShake_RiftCrystal_PillarCarving_C = ::Game::Character::Camera::CameraShakes::CameraShake_RiftCrystal_PillarCarving_C;

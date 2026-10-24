@@ -29,9 +29,9 @@ class WPN_ChargeBlaster_C : public AChargedWeapon
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/WPN_ChargeBlaster", "WPN_ChargeBlaster_C");
-    using WeaponDisplay_ChargeBlaster_AmmoCounter_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
-    using WeaponDisplay_ChargeBlaster_Charge_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Charge_C;
-    using WeaponDisplay_ChargeBlaster_Heat_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
+    using WeaponDisplay_ChargeBlaster_AmmoCounter_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_AmmoCounter_C;
+    using WeaponDisplay_ChargeBlaster_Charge_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Charge_C;
+    using WeaponDisplay_ChargeBlaster_Heat_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Heat_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UAudioComponent* ChargeBlaster_Overheat_Cue;
     class UAudioComponent* ChargeBlaster_SpinUp_Cue;
@@ -97,4 +97,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using WPN_ChargeBlaster_C = Game::WeaponsNTools::ChargeBlaster::WPN_ChargeBlaster_C;
+using WPN_ChargeBlaster_C = ::Game::WeaponsNTools::ChargeBlaster::WPN_ChargeBlaster_C;

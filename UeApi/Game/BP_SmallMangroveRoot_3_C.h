@@ -9,13 +9,18 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace MangroveRockStructures {
 
-class BP_SmallMangroveRoot_3_C : public Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures::BP_MangroveRock_Base_C
+class BP_SmallMangroveRoot_3_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures::BP_MangroveRock_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/MangroveRockStructures/BP_SmallMangroveRoot_3", "BP_SmallMangroveRoot_3_C");
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures
 
-using BP_SmallMangroveRoot_3_C = Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures::BP_SmallMangroveRoot_3_C;
+using BP_SmallMangroveRoot_3_C = ::Game::LevelElements::RoomObjects::HugeCarvers::MangroveRockStructures::BP_SmallMangroveRoot_3_C;

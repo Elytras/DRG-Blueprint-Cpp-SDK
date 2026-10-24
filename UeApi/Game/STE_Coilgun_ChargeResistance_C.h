@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using STE_Coilgun_ChargeResistance_C = Game::WeaponsNTools::CoilGun::STE_Coilgun_ChargeResistance_C;
+using STE_Coilgun_ChargeResistance_C = ::Game::WeaponsNTools::CoilGun::STE_Coilgun_ChargeResistance_C;

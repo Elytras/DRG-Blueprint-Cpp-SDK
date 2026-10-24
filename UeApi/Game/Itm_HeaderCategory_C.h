@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Itm_HeaderCategory_C = Game::UI::Menu_MinersManual::Itm_HeaderCategory_C;
+using Itm_HeaderCategory_C = ::Game::UI::Menu_MinersManual::Itm_HeaderCategory_C;

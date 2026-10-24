@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::IFG
 
-using STE_Grenade_IFG_LowDR_C = Game::WeaponsNTools::Grenades::IFG::STE_Grenade_IFG_LowDR_C;
+using STE_Grenade_IFG_LowDR_C = ::Game::WeaponsNTools::Grenades::IFG::STE_Grenade_IFG_LowDR_C;

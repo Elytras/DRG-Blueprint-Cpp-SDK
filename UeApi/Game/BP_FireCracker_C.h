@@ -69,4 +69,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints
 
-using BP_FireCracker_C = Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_FireCracker_C;
+using BP_FireCracker_C = ::Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_FireCracker_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using STE_InfernoUse_Knockback_C = Game::WeaponsNTools::FlameThrower::STE_InfernoUse_Knockback_C;
+using STE_InfernoUse_Knockback_C = ::Game::WeaponsNTools::FlameThrower::STE_InfernoUse_Knockback_C;

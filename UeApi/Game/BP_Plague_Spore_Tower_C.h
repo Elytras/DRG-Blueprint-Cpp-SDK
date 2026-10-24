@@ -37,7 +37,7 @@ class BP_Plague_Spore_Tower_C : public APlagueInfectionNode
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower", "BP_Plague_Spore_Tower_C");
-    using HUD_ContagionSpike_Health_C = Game::UI::Art::MainOnScreenHUD::ContagionSpike::HUD_ContagionSpike_Health_C;
+    using HUD_ContagionSpike_Health_C = ::Game::UI::Art::MainOnScreenHUD::ContagionSpike::HUD_ContagionSpike_Health_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class ULevelGenerationCarverComponent* LevelGenerationCarver_ScabArea_All;
     class UNiagaraComponent* deathEffect;
@@ -136,4 +136,4 @@ private:
 
 }}}   // namespace Game::GameElements::Plague
 
-using BP_Plague_Spore_Tower_C = Game::GameElements::Plague::BP_Plague_Spore_Tower_C;
+using BP_Plague_Spore_Tower_C = ::Game::GameElements::Plague::BP_Plague_Spore_Tower_C;

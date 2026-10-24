@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Radar
 
-using HUD_RadarPoint_FuelDrop_C = Game::UI::Radar::HUD_RadarPoint_FuelDrop_C;
+using HUD_RadarPoint_FuelDrop_C = ::Game::UI::Radar::HUD_RadarPoint_FuelDrop_C;

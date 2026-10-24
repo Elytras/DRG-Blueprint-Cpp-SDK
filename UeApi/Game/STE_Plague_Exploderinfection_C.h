@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueExploder
 
-using STE_Plague_Exploderinfection_C = Game::Enemies::Plague::PlagueExploder::STE_Plague_Exploderinfection_C;
+using STE_Plague_Exploderinfection_C = ::Game::Enemies::Plague::PlagueExploder::STE_Plague_Exploderinfection_C;

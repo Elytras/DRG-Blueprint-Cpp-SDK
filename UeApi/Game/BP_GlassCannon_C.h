@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Challenges::GlassCannon
 
-using BP_GlassCannon_C = Game::GameElements::Missions::Challenges::GlassCannon::BP_GlassCannon_C;
+using BP_GlassCannon_C = ::Game::GameElements::Missions::Challenges::GlassCannon::BP_GlassCannon_C;

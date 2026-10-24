@@ -42,4 +42,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire
 
-using ABP_RadialFire_Module_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire::ABP_RadialFire_Module_C;
+using ABP_RadialFire_Module_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_RadialFire::ABP_RadialFire_Module_C;

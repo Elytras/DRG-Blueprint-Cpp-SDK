@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using AFE_TP_CrawlerDistortion_C = Game::Enemies::Crawler::AFE_TP_CrawlerDistortion_C;
+using AFE_TP_CrawlerDistortion_C = ::Game::Enemies::Crawler::AFE_TP_CrawlerDistortion_C;

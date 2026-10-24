@@ -31,17 +31,17 @@ namespace Game { namespace UI { namespace Menu_Loadout { class MENU_Loadout_C; c
 
 namespace Game { namespace Game { namespace SpaceRig {
 
-class BP_PlayerController_SpaceRig_C : public Game::Game::SpaceRig::BP_SR_PlayerControllerBase_C
+class BP_PlayerController_SpaceRig_C : public ::Game::Game::SpaceRig::BP_SR_PlayerControllerBase_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_PlayerController_SpaceRig", "BP_PlayerController_SpaceRig_C");
-    using BP_BaseSpaceRigConsole_C = Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C;
-    using BP_DiscordConsole_C = Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsole_C;
-    using MENU_Loadout_C = Game::UI::Menu_Loadout::MENU_Loadout_C;
-    using MENU_UpgradeScreen_C = Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
-    using Popup_GearUpgrade_Buy_C = Game::UI::CharacterSelectionMK2::Popup_GearUpgrade_Buy_C;
-    using SCREEN_CharacterSelection_Clean_C = Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Clean_C;
-    using WND_AssignmentMissionComplete_C = Game::UI::HUD_SpaceRig::CampaignNotifications::WND_AssignmentMissionComplete_C;
+    using BP_BaseSpaceRigConsole_C = ::Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C;
+    using BP_DiscordConsole_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsole_C;
+    using MENU_Loadout_C = ::Game::UI::Menu_Loadout::MENU_Loadout_C;
+    using MENU_UpgradeScreen_C = ::Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
+    using Popup_GearUpgrade_Buy_C = ::Game::UI::CharacterSelectionMK2::Popup_GearUpgrade_Buy_C;
+    using SCREEN_CharacterSelection_Clean_C = ::Game::UI::CharacterSelectionMK2::SCREEN_CharacterSelection_Clean_C;
+    using WND_AssignmentMissionComplete_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::WND_AssignmentMissionComplete_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerController_SpaceRig_C;
     class UWindowWidget* ServerBrowser;
     MENU_Loadout_C* Loadout;
@@ -207,4 +207,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;

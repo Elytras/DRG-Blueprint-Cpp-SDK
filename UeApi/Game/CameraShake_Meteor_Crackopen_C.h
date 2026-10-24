@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using CameraShake_Meteor_Crackopen_C = Game::GameElements::GameEvents::PlagueMeteor::CameraShake_Meteor_Crackopen_C;
+using CameraShake_Meteor_Crackopen_C = ::Game::GameElements::GameEvents::PlagueMeteor::CameraShake_Meteor_Crackopen_C;

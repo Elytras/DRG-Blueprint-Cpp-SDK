@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using AIC_FacilityTurret_Burst_C = Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurret_Burst_C;
+using AIC_FacilityTurret_Burst_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::AIC_FacilityTurret_Burst_C;

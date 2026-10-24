@@ -31,19 +31,19 @@ class Menu_Cheats_SpaceRig_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Menu_Cheats_SpaceRig", "Menu_Cheats_SpaceRig_C");
-    using Cheat_ConsoleCmd_C = Game::UI::Menu_Cheats::Cheat_ConsoleCmd_C;
-    using Cheat_ConvertSave_C = Game::UI::Menu_Cheats::Cheat_ConvertSave_C;
-    using Cheat_FSDEvents_C = Game::UI::Menu_Cheats::Cheat_FSDEvents_C;
-    using Cheat_LevelScale_C = Game::UI::Menu_Cheats::Cheat_LevelScale_C;
-    using Cheat_MakeMainSave_C = Game::UI::Menu_Cheats::Cheat_MakeMainSave_C;
-    using Cheat_MaterialInfo_C = Game::UI::Menu_Cheats::Cheat_MaterialInfo_C;
-    using Cheat_MiscUpgradesItem_C = Game::UI::Menu_Cheats::Cheat_MiscUpgradesItem_C;
-    using Cheat_RoomList_C = Game::UI::Menu_Cheats::Cheat_RoomList_C;
-    using Cheat_SetPromotionRank_C = Game::UI::Menu_Cheats::Cheat_SetPromotionRank_C;
-    using Cheat_SpawnEnemyAdvanced_C = Game::UI::Menu_Cheats::Cheat_SpawnEnemyAdvanced_C;
-    using Cheat_VanityTab_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_VanityTab_C;
-    using Cheat_WeaponsTab_C = Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_WeaponsTab_C;
-    using MENU_MissionCheat_C = Game::UI::Menu_Cheats::MissionCheat::MENU_MissionCheat_C;
+    using Cheat_ConsoleCmd_C = ::Game::UI::Menu_Cheats::Cheat_ConsoleCmd_C;
+    using Cheat_ConvertSave_C = ::Game::UI::Menu_Cheats::Cheat_ConvertSave_C;
+    using Cheat_FSDEvents_C = ::Game::UI::Menu_Cheats::Cheat_FSDEvents_C;
+    using Cheat_LevelScale_C = ::Game::UI::Menu_Cheats::Cheat_LevelScale_C;
+    using Cheat_MakeMainSave_C = ::Game::UI::Menu_Cheats::Cheat_MakeMainSave_C;
+    using Cheat_MaterialInfo_C = ::Game::UI::Menu_Cheats::Cheat_MaterialInfo_C;
+    using Cheat_MiscUpgradesItem_C = ::Game::UI::Menu_Cheats::Cheat_MiscUpgradesItem_C;
+    using Cheat_RoomList_C = ::Game::UI::Menu_Cheats::Cheat_RoomList_C;
+    using Cheat_SetPromotionRank_C = ::Game::UI::Menu_Cheats::Cheat_SetPromotionRank_C;
+    using Cheat_SpawnEnemyAdvanced_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEnemyAdvanced_C;
+    using Cheat_VanityTab_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_VanityTab_C;
+    using Cheat_WeaponsTab_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_WeaponsTab_C;
+    using MENU_MissionCheat_C = ::Game::UI::Menu_Cheats::MissionCheat::MENU_MissionCheat_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UScrollBox* BoscoUpgradePanel;
     class UButton* Button_Close;
@@ -186,4 +186,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Menu_Cheats_SpaceRig_C = Game::UI::Menu_Cheats::Menu_Cheats_SpaceRig_C;
+using Menu_Cheats_SpaceRig_C = ::Game::UI::Menu_Cheats::Menu_Cheats_SpaceRig_C;

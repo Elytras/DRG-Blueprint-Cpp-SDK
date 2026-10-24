@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using TSK_FindPointImtermediateJumpPoint_C = Game::Enemies::Crawler::TSK_FindPointImtermediateJumpPoint_C;
+using TSK_FindPointImtermediateJumpPoint_C = ::Game::Enemies::Crawler::TSK_FindPointImtermediateJumpPoint_C;

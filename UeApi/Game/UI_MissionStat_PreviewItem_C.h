@@ -21,7 +21,7 @@ class UI_MissionStat_PreviewItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_MissionStat_PreviewItem", "UI_MissionStat_PreviewItem_C");
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_MaskedImage_C* ClassIcon;
     UI_MaskedImage_C* ClassIcon_BG;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_MissionStat_PreviewItem_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_PreviewItem_C;
+using UI_MissionStat_PreviewItem_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStat_PreviewItem_C;

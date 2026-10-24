@@ -18,7 +18,7 @@ class AIC_Jelly_Swarmer_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/Jellyfish/AIC_Jelly_Swarmer", "AIC_Jelly_Swarmer_C");
-    using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+    using ENE_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     void ExecuteUbergraph_AIC_Jelly_Swarmer(int EntryPoint);
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jellyfish
 
-using AIC_Jelly_Swarmer_C = Game::Enemies::Jellyfish::AIC_Jelly_Swarmer_C;
+using AIC_Jelly_Swarmer_C = ::Game::Enemies::Jellyfish::AIC_Jelly_Swarmer_C;

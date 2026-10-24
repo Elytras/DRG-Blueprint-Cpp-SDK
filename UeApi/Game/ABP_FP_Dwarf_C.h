@@ -130,4 +130,4 @@ public:
 
 }}   // namespace Game::Character
 
-using ABP_FP_Dwarf_C = Game::Character::ABP_FP_Dwarf_C;
+using ABP_FP_Dwarf_C = ::Game::Character::ABP_FP_Dwarf_C;

@@ -23,4 +23,4 @@ public:
 
 }}}   // namespace Game::UI::Showroom
 
-using BP_EnemyShowroomController_C = Game::UI::Showroom::BP_EnemyShowroomController_C;
+using BP_EnemyShowroomController_C = ::Game::UI::Showroom::BP_EnemyShowroomController_C;

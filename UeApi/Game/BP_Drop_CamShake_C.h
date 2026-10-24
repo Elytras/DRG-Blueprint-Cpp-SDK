@@ -29,4 +29,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_Drop_CamShake_C = Game::LevelElements::Droppod::BP_Drop_CamShake_C;
+using BP_Drop_CamShake_C = ::Game::LevelElements::Droppod::BP_Drop_CamShake_C;

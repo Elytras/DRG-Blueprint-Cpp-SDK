@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using WidgetCabinPlayerName_C = Game::Art::Environments::SpaceRig::WidgetCabinPlayerName_C;
+using WidgetCabinPlayerName_C = ::Game::Art::Environments::SpaceRig::WidgetCabinPlayerName_C;

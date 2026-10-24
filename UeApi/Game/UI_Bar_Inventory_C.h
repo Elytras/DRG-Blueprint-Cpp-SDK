@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_Inventory_C = Game::GameElements::Bar::UI::UI_Bar_Inventory_C;
+using UI_Bar_Inventory_C = ::Game::GameElements::Bar::UI::UI_Bar_Inventory_C;

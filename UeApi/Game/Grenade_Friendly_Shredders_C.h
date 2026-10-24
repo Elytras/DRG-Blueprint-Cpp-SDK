@@ -17,7 +17,7 @@ class UNiagaraSystem;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace FriendlyShredders {
 
-class Grenade_Friendly_Shredders_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Friendly_Shredders_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/Grenade_Friendly_Shredders", "Grenade_Friendly_Shredders_C");
@@ -41,6 +41,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Friendly_Shredders_C__UeName = "UberGraphFrame";
         static constexpr const char* GrenadeParasiteSpawn__UeScsNode = "57673c4fc542034eb140795a5dbb0850";
         static constexpr const char* GrenadeParasiteHit__UeScsNode = "c5e79fb8c88de84c946206a31ba22e2a";
@@ -52,4 +53,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using Grenade_Friendly_Shredders_C = Game::WeaponsNTools::Grenades::FriendlyShredders::Grenade_Friendly_Shredders_C;
+using Grenade_Friendly_Shredders_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::Grenade_Friendly_Shredders_C;

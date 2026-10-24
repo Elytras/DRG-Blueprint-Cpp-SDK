@@ -29,4 +29,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Lunar
 
-using BP_PropHunt_LunarFireCracker_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Lunar::BP_PropHunt_LunarFireCracker_C;
+using BP_PropHunt_LunarFireCracker_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Lunar::BP_PropHunt_LunarFireCracker_C;

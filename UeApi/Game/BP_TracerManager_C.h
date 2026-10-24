@@ -19,6 +19,6 @@ public:
 }}}   // namespace Game::Game::SubSystems
 
 /* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
-inline Game::Game::SubSystems::BP_TracerManager_C* Game::Game::SubSystems::BP_TracerManager_C::Get(class UObject* WorldContextObject) { return (BP_TracerManager_C*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, BP_TracerManager_C::StaticClass()); }
+inline ::Game::Game::SubSystems::BP_TracerManager_C* ::Game::Game::SubSystems::BP_TracerManager_C::Get(class UObject* WorldContextObject) { return (BP_TracerManager_C*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, BP_TracerManager_C::StaticClass()); }
 
-using BP_TracerManager_C = Game::Game::SubSystems::BP_TracerManager_C;
+using BP_TracerManager_C = ::Game::Game::SubSystems::BP_TracerManager_C;

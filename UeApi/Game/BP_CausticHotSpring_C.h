@@ -108,4 +108,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::HotSpring
 
-using BP_CausticHotSpring_C = Game::LevelElements::RoomObjects::Helpers::HotSpring::BP_CausticHotSpring_C;
+using BP_CausticHotSpring_C = ::Game::LevelElements::RoomObjects::Helpers::HotSpring::BP_CausticHotSpring_C;

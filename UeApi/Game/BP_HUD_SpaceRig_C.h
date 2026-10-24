@@ -25,8 +25,8 @@ class BP_HUD_SpaceRig_C : public ASpaceRigHUD
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_HUD_SpaceRig", "BP_HUD_SpaceRig_C");
-    using BP_GameInstance_C = Game::Game::BP_GameInstance_C;
-    using HUD_SpaceRig_C = Game::UI::HUD_SpaceRig::HUD_SpaceRig_C;
+    using BP_GameInstance_C = ::Game::Game::BP_GameInstance_C;
+    using HUD_SpaceRig_C = ::Game::UI::HUD_SpaceRig::HUD_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     class APlayerCharacter* PlayerCharacter;
@@ -102,4 +102,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_HUD_SpaceRig_C = Game::UI::HUD_SpaceRig::BP_HUD_SpaceRig_C;
+using BP_HUD_SpaceRig_C = ::Game::UI::HUD_SpaceRig::BP_HUD_SpaceRig_C;

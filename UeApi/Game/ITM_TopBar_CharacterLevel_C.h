@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using ITM_TopBar_CharacterLevel_C = Game::UI::Menu_TopBar::ITM_TopBar_CharacterLevel_C;
+using ITM_TopBar_CharacterLevel_C = ::Game::UI::Menu_TopBar::ITM_TopBar_CharacterLevel_C;

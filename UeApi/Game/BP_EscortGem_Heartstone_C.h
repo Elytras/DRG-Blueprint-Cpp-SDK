@@ -18,7 +18,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace EscortGem {
 
-class BP_EscortGem_Heartstone_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_EscortGem_Heartstone_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/EscortGem/BP_EscortGem_Heartstone", "BP_EscortGem_Heartstone_C");
@@ -35,6 +35,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_EscortGem_Heartstone_C__UeName = "UberGraphFrame";
         static constexpr const char* LightStrobing__UeScsNode = "90dc148baa463e40aa985b8e128a9fad";
         static constexpr const char* HeartStoneGemIdle__UeScsNode = "ba85f0090fb2ca44bec8a79583f09b5e";
@@ -46,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::EscortGem
 
-using BP_EscortGem_Heartstone_C = Game::GameElements::Resources::Embedded::EscortGem::BP_EscortGem_Heartstone_C;
+using BP_EscortGem_Heartstone_C = ::Game::GameElements::Resources::Embedded::EscortGem::BP_EscortGem_Heartstone_C;

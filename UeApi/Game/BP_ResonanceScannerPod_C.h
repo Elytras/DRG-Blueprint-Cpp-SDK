@@ -83,6 +83,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank1_GEN_VARIABLE:BP_OxygenTank1_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank_GEN_VARIABLE:BP_OxygenTank_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C BP_OxygenTankSound_GEN_VARIABLE:BP_OxygenTankSound_GEN_VARIABLE_BP_OxygenTankSound_C_CAT;/Game/GameElements/Objectives/DeepScan/BP_ResonanceScanner_StartPoint.BP_ResonanceScanner_StartPoint_C FuelLineStart_GEN_VARIABLE:FuelLineStart_GEN_VARIABLE_BP_ResonanceScanner_StartPoint_C_CAT;/Script/FSD.FuelLineStartUsable FuelLineStart_GEN_VARIABLE:FuelLineStart_GEN_VARIABLE_BP_ResonanceScanner_StartPoint_C_CAT:UsableStartFuelLine;/Script/FSD.OutlineComponent FuelLineStart_GEN_VARIABLE:FuelLineStart_GEN_VARIABLE_BP_ResonanceScanner_StartPoint_C_CAT:OutlineComponent;/Script/Engine.SceneComponent FuelLineStart_GEN_VARIABLE:FuelLineStart_GEN_VARIABLE_BP_ResonanceScanner_StartPoint_C_CAT:DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent FuelLineStart_GEN_VARIABLE:FuelLineStart_GEN_VARIABLE_BP_ResonanceScanner_StartPoint_C_CAT:ObjectInfo;/Script/Engine.StaticMeshComponent FuelLineStart_GEN_VARIABLE:FuelLineStart_GEN_VARIABLE_BP_ResonanceScanner_StartPoint_C_CAT:StaticMesh";
         static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "bef1a87ac075194684e539ff1e1418a6";
         static constexpr const char* IdleSound_Cue__UeScsNode = "5de8461f9eb0644bae86015ecbd682d6";
         static constexpr const char* MeshCarver__UeScsNode = "89cbe45a642bfa4fa34bd35dbc02044b";
@@ -112,4 +113,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_ResonanceScannerPod_C = Game::GameElements::Objectives::DeepScan::BP_ResonanceScannerPod_C;
+using BP_ResonanceScannerPod_C = ::Game::GameElements::Objectives::DeepScan::BP_ResonanceScannerPod_C;

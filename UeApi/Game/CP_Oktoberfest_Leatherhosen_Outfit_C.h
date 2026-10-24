@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Oktoberfest_Leatherhosen_Outfit_C = Game::GameElements::Campaign::CP_Oktoberfest_Leatherhosen_Outfit_C;
+using CP_Oktoberfest_Leatherhosen_Outfit_C = ::Game::GameElements::Campaign::CP_Oktoberfest_Leatherhosen_Outfit_C;

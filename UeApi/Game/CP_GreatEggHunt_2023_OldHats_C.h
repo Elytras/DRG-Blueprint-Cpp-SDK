@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Campaign::OLDSeasonalEventCampaigns
 
-using CP_GreatEggHunt_2023_OldHats_C = Game::GameElements::Campaign::OLDSeasonalEventCampaigns::CP_GreatEggHunt_2023_OldHats_C;
+using CP_GreatEggHunt_2023_OldHats_C = ::Game::GameElements::Campaign::OLDSeasonalEventCampaigns::CP_GreatEggHunt_2023_OldHats_C;

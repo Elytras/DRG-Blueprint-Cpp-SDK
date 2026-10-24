@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_Resupply_C = Game::Character::Tutorials::Tutorial_Hint_Resupply_C;
+using Tutorial_Hint_Resupply_C = ::Game::Character::Tutorials::Tutorial_Hint_Resupply_C;

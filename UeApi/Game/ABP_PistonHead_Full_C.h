@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_PistonHead_Full_C = Game::Character::Vanity2::Headwear::ABP_PistonHead_Full_C;
+using ABP_PistonHead_Full_C = ::Game::Character::Vanity2::Headwear::ABP_PistonHead_Full_C;

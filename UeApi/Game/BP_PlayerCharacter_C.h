@@ -43,28 +43,28 @@ class BP_PlayerCharacter_C : public APlayerCharacter
 {
 public:
     UE_CLASS("/Game/Character/BP_PlayerCharacter", "BP_PlayerCharacter_C");
-    using BP_AttachedState_C = Game::Character::States::BP_AttachedState_C;
-    using BP_AudioControl_LowHealth_C = Game::Audio::SoundControl::BP_AudioControl_LowHealth_C;
-    using BP_DeadState_C = Game::Character::States::BP_DeadState_C;
-    using BP_DownedState_C = Game::Character::States::BP_DownedState_C;
-    using BP_EnemyControlState_C = Game::Character::States::BP_EnemyControlState_C;
-    using BP_FallingState_C = Game::Character::States::BP_FallingState_C;
-    using BP_FlyingState_C = Game::Character::States::BP_FlyingState_C;
-    using BP_FrozenState_C = Game::Character::States::BP_FrozenState_C;
-    using BP_GrabbedState_C = Game::Character::States::BP_GrabbedState_C;
-    using BP_InfectedState_C = Game::Character::States::BP_InfectedState_C;
-    using BP_IntoxicationComponent_C = Game::GameElements::Bar::BP_IntoxicationComponent_C;
-    using BP_NoMovementState_C = Game::Character::States::BP_NoMovementState_C;
-    using BP_ParalyzedState_C = Game::Character::States::BP_ParalyzedState_C;
-    using BP_PassedOut_C = Game::Character::States::BP_PassedOut_C;
-    using BP_PhotographyState_C = Game::Character::States::BP_PhotographyState_C;
-    using BP_PilotingState_C = Game::Character::States::BP_PilotingState_C;
-    using BP_PushingState_C = Game::Character::States::BP_PushingState_C;
-    using BP_SelfiePoint_C = Game::Character::Camera::BP_SelfiePoint_C;
-    using BP_TrackMovementState_C = Game::Character::States::BP_TrackMovementState_C;
-    using BP_UsingState_C = Game::Character::States::BP_UsingState_C;
-    using BP_WalkingState_C = Game::Character::States::BP_WalkingState_C;
-    using BP_ZipLineState_C = Game::Character::States::BP_ZipLineState_C;
+    using BP_AttachedState_C = ::Game::Character::States::BP_AttachedState_C;
+    using BP_AudioControl_LowHealth_C = ::Game::Audio::SoundControl::BP_AudioControl_LowHealth_C;
+    using BP_DeadState_C = ::Game::Character::States::BP_DeadState_C;
+    using BP_DownedState_C = ::Game::Character::States::BP_DownedState_C;
+    using BP_EnemyControlState_C = ::Game::Character::States::BP_EnemyControlState_C;
+    using BP_FallingState_C = ::Game::Character::States::BP_FallingState_C;
+    using BP_FlyingState_C = ::Game::Character::States::BP_FlyingState_C;
+    using BP_FrozenState_C = ::Game::Character::States::BP_FrozenState_C;
+    using BP_GrabbedState_C = ::Game::Character::States::BP_GrabbedState_C;
+    using BP_InfectedState_C = ::Game::Character::States::BP_InfectedState_C;
+    using BP_IntoxicationComponent_C = ::Game::GameElements::Bar::BP_IntoxicationComponent_C;
+    using BP_NoMovementState_C = ::Game::Character::States::BP_NoMovementState_C;
+    using BP_ParalyzedState_C = ::Game::Character::States::BP_ParalyzedState_C;
+    using BP_PassedOut_C = ::Game::Character::States::BP_PassedOut_C;
+    using BP_PhotographyState_C = ::Game::Character::States::BP_PhotographyState_C;
+    using BP_PilotingState_C = ::Game::Character::States::BP_PilotingState_C;
+    using BP_PushingState_C = ::Game::Character::States::BP_PushingState_C;
+    using BP_SelfiePoint_C = ::Game::Character::Camera::BP_SelfiePoint_C;
+    using BP_TrackMovementState_C = ::Game::Character::States::BP_TrackMovementState_C;
+    using BP_UsingState_C = ::Game::Character::States::BP_UsingState_C;
+    using BP_WalkingState_C = ::Game::Character::States::BP_WalkingState_C;
+    using BP_ZipLineState_C = ::Game::Character::States::BP_ZipLineState_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Mesh_Lamp;
     BP_InfectedState_C* BP_InfectedState;
@@ -287,4 +287,4 @@ private:
 
 }}   // namespace Game::Character
 
-using BP_PlayerCharacter_C = Game::Character::BP_PlayerCharacter_C;
+using BP_PlayerCharacter_C = ::Game::Character::BP_PlayerCharacter_C;

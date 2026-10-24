@@ -20,7 +20,7 @@ class UI_LockOn_Counter_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/UI_LockOn_Counter", "UI_LockOn_Counter_C");
-    using UI_LockOn_Counter_Entry_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_Entry_C;
+    using UI_LockOn_Counter_Entry_C = ::Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_Entry_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* RowBoxV;
     int MaxTargets;
@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI
 
-using UI_LockOn_Counter_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_C;
+using UI_LockOn_Counter_C = ::Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_C;

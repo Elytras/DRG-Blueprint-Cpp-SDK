@@ -97,4 +97,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using BP_ShieldRegenerator_C = Game::WeaponsNTools::ShieldGenerator::BP_ShieldRegenerator_C;
+using BP_ShieldRegenerator_C = ::Game::WeaponsNTools::ShieldGenerator::BP_ShieldRegenerator_C;

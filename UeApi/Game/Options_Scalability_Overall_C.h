@@ -16,7 +16,7 @@ class Options_Scalability_Overall_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Scalability_Overall", "Options_Scalability_Overall_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     FText CustomText;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Scalability_Overall_C = Game::UI::Menu_Options::Options_Scalability_Overall_C;
+using Options_Scalability_Overall_C = ::Game::UI::Menu_Options::Options_Scalability_Overall_C;

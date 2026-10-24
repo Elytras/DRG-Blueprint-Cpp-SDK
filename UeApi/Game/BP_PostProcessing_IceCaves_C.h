@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves
 
-using BP_PostProcessing_IceCaves_C = Game::Landscape::Biomes::Biomes_Ingame::IceCaves::BP_PostProcessing_IceCaves_C;
+using BP_PostProcessing_IceCaves_C = ::Game::Landscape::Biomes::Biomes_Ingame::IceCaves::BP_PostProcessing_IceCaves_C;

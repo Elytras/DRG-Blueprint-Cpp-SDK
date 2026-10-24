@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_ResupplierLogic_C = Game::GameElements::KPI::Perks::BP_ResupplierLogic_C;
+using BP_ResupplierLogic_C = ::Game::GameElements::KPI::Perks::BP_ResupplierLogic_C;

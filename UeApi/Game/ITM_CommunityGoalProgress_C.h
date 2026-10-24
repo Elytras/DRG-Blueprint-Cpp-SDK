@@ -20,12 +20,12 @@ class ITM_CommunityGoalProgress_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalProgress", "ITM_CommunityGoalProgress_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_CommunityGoalCountdown_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalCountdown_C;
-    using ITM_CommunityGoalInformation_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalInformation_C;
-    using ITM_CommunityGoalRewardToolTip_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRewardToolTip_C;
-    using ITM_CommunityGoal_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_C;
-    using ITM_CommunityGoal_TotalProgress_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_TotalProgress_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_CommunityGoalCountdown_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalCountdown_C;
+    using ITM_CommunityGoalInformation_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalInformation_C;
+    using ITM_CommunityGoalRewardToolTip_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRewardToolTip_C;
+    using ITM_CommunityGoal_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_C;
+    using ITM_CommunityGoal_TotalProgress_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_TotalProgress_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     ITM_CommunityGoal_C* CurrentFactionGoal;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalProgress_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalProgress_C;
+using ITM_CommunityGoalProgress_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalProgress_C;

@@ -22,8 +22,8 @@ class OVERLAY_TutorialHeadline_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/OVERLAY_TutorialHeadline", "OVERLAY_TutorialHeadline_C");
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using MissionControl_MainDialogue_C = ::Game::UI::MissionControl::MissionControl_MainDialogue_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeOut;
     UE_READONLY class UWidgetAnimation* FadeIn;
@@ -46,4 +46,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using OVERLAY_TutorialHeadline_C = Game::UI::Menu_MIssionCompleteMK2::OVERLAY_TutorialHeadline_C;
+using OVERLAY_TutorialHeadline_C = ::Game::UI::Menu_MIssionCompleteMK2::OVERLAY_TutorialHeadline_C;

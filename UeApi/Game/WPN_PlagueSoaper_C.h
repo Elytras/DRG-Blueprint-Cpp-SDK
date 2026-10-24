@@ -64,4 +64,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper
 
-using WPN_PlagueSoaper_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::WPN_PlagueSoaper_C;
+using WPN_PlagueSoaper_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::WPN_PlagueSoaper_C;

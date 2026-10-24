@@ -39,4 +39,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::SupplyPod::Assets::SupplyPod_Barrel
 
-using ABP_BarrelDispenser_C = Game::WeaponsNTools::SupplyPod::Assets::SupplyPod_Barrel::ABP_BarrelDispenser_C;
+using ABP_BarrelDispenser_C = ::Game::WeaponsNTools::SupplyPod::Assets::SupplyPod_Barrel::ABP_BarrelDispenser_C;

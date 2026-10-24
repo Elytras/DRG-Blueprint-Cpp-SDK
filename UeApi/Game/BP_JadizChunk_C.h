@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_JadizChunk_C = Game::GameElements::Resources::Embedded::Gems::BP_JadizChunk_C;
+using BP_JadizChunk_C = ::Game::GameElements::Resources::Embedded::Gems::BP_JadizChunk_C;

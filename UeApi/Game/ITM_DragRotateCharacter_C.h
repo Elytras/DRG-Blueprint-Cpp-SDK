@@ -17,7 +17,7 @@ class ITM_DragRotateCharacter_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_DragRotateCharacter", "ITM_DragRotateCharacter_C");
-    using CharacterSelectionSwitcher_C = Game::Character::CharacterSelection::CharacterSelectionSwitcher_C;
+    using CharacterSelectionSwitcher_C = ::Game::Character::CharacterSelection::CharacterSelectionSwitcher_C;
     class UImage* Image_0;
     bool GrabMouse;
     CharacterSelectionSwitcher_C* switcher;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;

@@ -27,8 +27,8 @@ class WPN_LaserPointer_C : public ALaserPointerItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/WPN_LaserPointer", "WPN_LaserPointer_C");
-    using BP_PointOfInterest_C = Game::WeaponsNTools::LaserPointer::BP_PointOfInterest_C;
-    using HUD_LaserPointerDisplay_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerDisplay_C;
+    using BP_PointOfInterest_C = ::Game::WeaponsNTools::LaserPointer::BP_PointOfInterest_C;
+    using HUD_LaserPointerDisplay_C = ::Game::WeaponsNTools::LaserPointer::HUD_LaserPointerDisplay_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* FirstPersonWidget;
     class USceneComponent* FPTransform;
@@ -83,4 +83,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using WPN_LaserPointer_C = Game::WeaponsNTools::LaserPointer::WPN_LaserPointer_C;
+using WPN_LaserPointer_C = ::Game::WeaponsNTools::LaserPointer::WPN_LaserPointer_C;

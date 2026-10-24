@@ -19,8 +19,8 @@ class ITM_SaveSlot_Entry_Header_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_SaveSlots/ITM_SaveSlot_Entry_Header", "ITM_SaveSlot_Entry_Header_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_ButtonScalable_C* Button_Convert;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using ITM_SaveSlot_Entry_Header_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;
+using ITM_SaveSlot_Entry_Header_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_Header_C;

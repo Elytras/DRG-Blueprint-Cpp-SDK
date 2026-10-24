@@ -17,7 +17,7 @@ class UI_SelectCrossplayOption_C : public UUserWidget
 {
 public:
     UE_CLASS("/CrossPlatform/UI_SelectCrossplayOption", "UI_SelectCrossplayOption_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonScalable2_C* Button_Crossplay;
     Basic_ButtonScalable2_C* Button_EAS;
@@ -27,12 +27,12 @@ public:
     class URichTextBlock* RT_CrossplayOptions;
     FString DisabledOptionsText;
     TMulticastInlineDelegate<void()> OnCrossplaySettingSelected;
-    void ExecuteUbergraph_UI_SelectCrossplayOption(int EntryPoint);
-    void BndEvt__UI_SelectCrossplayOption_Button_EAS_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
-    void BndEvt__UI_SelectCrossplayOption_Button_No_Crossplay_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
-    void BndEvt__UI_SelectCrossplayOption_Button_Crossplay_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    UE_COSMETIC void Construct();
     void Set_Crossplay_Option_Text();
+    UE_COSMETIC void Construct();
+    void BndEvt__UI_SelectCrossplayOption_Button_Crossplay_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
+    void BndEvt__UI_SelectCrossplayOption_Button_No_Crossplay_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
+    void BndEvt__UI_SelectCrossplayOption_Button_EAS_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
+    void ExecuteUbergraph_UI_SelectCrossplayOption(int EntryPoint);
 private:
     struct UeMarkers
     {
@@ -42,4 +42,4 @@ private:
 
 }   // namespace CrossPlatform
 
-using UI_SelectCrossplayOption_C = CrossPlatform::UI_SelectCrossplayOption_C;
+using UI_SelectCrossplayOption_C = ::CrossPlatform::UI_SelectCrossplayOption_C;

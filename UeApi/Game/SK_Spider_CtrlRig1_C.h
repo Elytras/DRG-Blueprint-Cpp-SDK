@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::Enemies::Spider
 
-using SK_Spider_CtrlRig1_C = Game::Enemies::Spider::SK_Spider_CtrlRig1_C;
+using SK_Spider_CtrlRig1_C = ::Game::Enemies::Spider::SK_Spider_CtrlRig1_C;

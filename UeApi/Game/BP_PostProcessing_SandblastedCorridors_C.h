@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors
 
-using BP_PostProcessing_SandblastedCorridors_C = Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::BP_PostProcessing_SandblastedCorridors_C;
+using BP_PostProcessing_SandblastedCorridors_C = ::Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::BP_PostProcessing_SandblastedCorridors_C;

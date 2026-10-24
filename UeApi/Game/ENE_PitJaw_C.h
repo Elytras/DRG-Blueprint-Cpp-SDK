@@ -142,4 +142,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Ossiran::PitJaw
 
-using ENE_PitJaw_C = Game::Enemies::Ossiran::PitJaw::ENE_PitJaw_C;
+using ENE_PitJaw_C = ::Game::Enemies::Ossiran::PitJaw::ENE_PitJaw_C;

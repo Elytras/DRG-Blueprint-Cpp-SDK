@@ -46,4 +46,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::CooldownDisplay
 
-using HUD_CooldownWidget_C = Game::UI::MainOnscreenHUD::CooldownDisplay::HUD_CooldownWidget_C;
+using HUD_CooldownWidget_C = ::Game::UI::MainOnscreenHUD::CooldownDisplay::HUD_CooldownWidget_C;

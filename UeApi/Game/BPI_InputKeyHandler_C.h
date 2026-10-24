@@ -18,4 +18,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using BPI_InputKeyHandler_C = Game::UI::Menu_EscapeMenu::BPI_InputKeyHandler_C;
+using BPI_InputKeyHandler_C = ::Game::UI::Menu_EscapeMenu::BPI_InputKeyHandler_C;

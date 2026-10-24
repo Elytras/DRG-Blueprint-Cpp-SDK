@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun
 
-using PRJ_PlatformMaker_C = Game::WeaponsNTools::PlatformGun::PRJ_PlatformMaker_C;
+using PRJ_PlatformMaker_C = ::Game::WeaponsNTools::PlatformGun::PRJ_PlatformMaker_C;

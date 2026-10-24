@@ -65,4 +65,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using ITM_Grenade_Base_C = Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C;
+using ITM_Grenade_Base_C = ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C;

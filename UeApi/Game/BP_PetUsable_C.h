@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster
 
-using BP_PetUsable_C = Game::GameElements::KPI::Perks::BeastMaster::BP_PetUsable_C;
+using BP_PetUsable_C = ::Game::GameElements::KPI::Perks::BeastMaster::BP_PetUsable_C;

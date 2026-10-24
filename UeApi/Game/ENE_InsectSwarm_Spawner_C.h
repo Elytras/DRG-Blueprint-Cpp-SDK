@@ -62,4 +62,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm
 
-using ENE_InsectSwarm_Spawner_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::ENE_InsectSwarm_Spawner_C;
+using ENE_InsectSwarm_Spawner_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::ENE_InsectSwarm_Spawner_C;

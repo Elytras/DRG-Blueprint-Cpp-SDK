@@ -86,4 +86,4 @@ private:
 
 }}}   // namespace Game::Enemies::Spider
 
-using ENE_PF_SpiderBase_C = Game::Enemies::Spider::ENE_PF_SpiderBase_C;
+using ENE_PF_SpiderBase_C = ::Game::Enemies::Spider::ENE_PF_SpiderBase_C;

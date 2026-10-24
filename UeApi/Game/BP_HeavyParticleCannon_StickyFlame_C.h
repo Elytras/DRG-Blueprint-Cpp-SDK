@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using BP_HeavyParticleCannon_StickyFlame_C = Game::WeaponsNTools::HeavyParticleCannon::BP_HeavyParticleCannon_StickyFlame_C;
+using BP_HeavyParticleCannon_StickyFlame_C = ::Game::WeaponsNTools::HeavyParticleCannon::BP_HeavyParticleCannon_StickyFlame_C;

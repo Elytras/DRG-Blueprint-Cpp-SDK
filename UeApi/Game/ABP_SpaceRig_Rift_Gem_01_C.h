@@ -24,4 +24,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::CoreRift::Assets
 
-using ABP_SpaceRig_Rift_Gem_01_C = Game::GameElements::GameEvents::CoreRift::Assets::ABP_SpaceRig_Rift_Gem_01_C;
+using ABP_SpaceRig_Rift_Gem_01_C = ::Game::GameElements::GameEvents::CoreRift::Assets::ABP_SpaceRig_Rift_Gem_01_C;

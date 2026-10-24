@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace RivalTech { namespace PatrolBot { namespace Projectiles {
 
-class PRJ_PatrolBotLaser_Flying_Hacked_C : public Game::Enemies::RivalTech::PatrolBot::Projectiles::PRJ_PatrolBotLaser_Flying_C
+class PRJ_PatrolBotLaser_Flying_Hacked_C : public ::Game::Enemies::RivalTech::PatrolBot::Projectiles::PRJ_PatrolBotLaser_Flying_C
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/PatrolBot/Projectiles/PRJ_PatrolBotLaser_Flying_Hacked", "PRJ_PatrolBotLaser_Flying_Hacked_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Niagara;Trail";
     };
 };
 
 }}}}}   // namespace Game::Enemies::RivalTech::PatrolBot::Projectiles
 
-using PRJ_PatrolBotLaser_Flying_Hacked_C = Game::Enemies::RivalTech::PatrolBot::Projectiles::PRJ_PatrolBotLaser_Flying_Hacked_C;
+using PRJ_PatrolBotLaser_Flying_Hacked_C = ::Game::Enemies::RivalTech::PatrolBot::Projectiles::PRJ_PatrolBotLaser_Flying_Hacked_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrapplingGun
 
-using PRW_GrapplingGun_C = Game::WeaponsNTools::GrapplingGun::PRW_GrapplingGun_C;
+using PRW_GrapplingGun_C = ::Game::WeaponsNTools::GrapplingGun::PRW_GrapplingGun_C;

@@ -37,4 +37,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::PhaseBomb
 
-using ABP_Phase_Bomb_Skeleton_AnimBlueprint_C = Game::GameElements::Objectives::Facility::PhaseBomb::ABP_Phase_Bomb_Skeleton_AnimBlueprint_C;
+using ABP_Phase_Bomb_Skeleton_AnimBlueprint_C = ::Game::GameElements::Objectives::Facility::PhaseBomb::ABP_Phase_Bomb_Skeleton_AnimBlueprint_C;

@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
+using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;

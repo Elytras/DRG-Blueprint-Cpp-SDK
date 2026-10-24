@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BurstFirePistol
 
-using MAG_BurstPistol_C = Game::WeaponsNTools::BurstFirePistol::MAG_BurstPistol_C;
+using MAG_BurstPistol_C = ::Game::WeaponsNTools::BurstFirePistol::MAG_BurstPistol_C;

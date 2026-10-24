@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Electricity_C = Game::UI::ScreenOverlays::ScreenOverlay_Electricity_C;
+using ScreenOverlay_Electricity_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Electricity_C;

@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace LaserPointer {
 
-class BP_LasePointer_SecondaryMarker_C : public Game::WeaponsNTools::LaserPointer::BP_LaserPointer_Marker_C
+class BP_LasePointer_SecondaryMarker_C : public ::Game::WeaponsNTools::LaserPointer::BP_LaserPointer_Marker_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LaserPointer/BP_LasePointer_SecondaryMarker", "BP_LasePointer_SecondaryMarker_C");
@@ -20,10 +20,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "StaticMesh1;StaticMesh2;StaticMesh3;StaticMesh";
         static constexpr const char* UberGraphFrame_BP_LasePointer_SecondaryMarker_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using BP_LasePointer_SecondaryMarker_C = Game::WeaponsNTools::LaserPointer::BP_LasePointer_SecondaryMarker_C;
+using BP_LasePointer_SecondaryMarker_C = ::Game::WeaponsNTools::LaserPointer::BP_LasePointer_SecondaryMarker_C;

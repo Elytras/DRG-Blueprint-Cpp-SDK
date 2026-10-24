@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class PRJ_FacilityturretLaser_Burst_C : public Game::GameElements::Objectives::Facility::PRJ_Facility_Laser_Base_C
+class PRJ_FacilityturretLaser_Burst_C : public ::Game::GameElements::Objectives::Facility::PRJ_Facility_Laser_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/PRJ_FacilityturretLaser_Burst", "PRJ_FacilityturretLaser_Burst_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage";
     };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using PRJ_FacilityturretLaser_Burst_C = Game::GameElements::Objectives::Facility::DefenseTurret::PRJ_FacilityturretLaser_Burst_C;
+using PRJ_FacilityturretLaser_Burst_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::PRJ_FacilityturretLaser_Burst_C;

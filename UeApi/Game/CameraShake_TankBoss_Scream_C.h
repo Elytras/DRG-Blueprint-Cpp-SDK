@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_TankBoss_Scream_C = Game::Character::Camera::CameraShakes::CameraShake_TankBoss_Scream_C;
+using CameraShake_TankBoss_Scream_C = ::Game::Character::Camera::CameraShakes::CameraShake_TankBoss_Scream_C;

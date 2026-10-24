@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_MissionComplete_MissionState_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_C;
+using ITM_MissionComplete_MissionState_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_C;

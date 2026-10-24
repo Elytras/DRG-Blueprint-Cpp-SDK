@@ -14,7 +14,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class PRJ_GooProjectile_Fragment_GooBomoberSpecial_C : public Game::WeaponsNTools::GooCannon::PRJ_GooProjectile_Fragment_Base_C
+class PRJ_GooProjectile_Fragment_GooBomoberSpecial_C : public ::Game::WeaponsNTools::GooCannon::PRJ_GooProjectile_Fragment_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/PRJ_GooProjectile_Fragment_GooBomoberSpecial", "PRJ_GooProjectile_Fragment_GooBomoberSpecial_C");
@@ -27,6 +27,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "Damage;Niagara;StaticMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.PushDynamicStatusEffectDamageBonus Damage_GEN_VARIABLE:PushDynamicStatusEffectDamageBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_GooBomoberSpecial_C__UeName = "UberGraphFrame";
         static constexpr const char* ApplyGooTrigger__UeScsNode = "4cea4f54daad964cb9be0b59c2dcefcc";
     };
@@ -34,4 +36,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using PRJ_GooProjectile_Fragment_GooBomoberSpecial_C = Game::WeaponsNTools::GooCannon::PRJ_GooProjectile_Fragment_GooBomoberSpecial_C;
+using PRJ_GooProjectile_Fragment_GooBomoberSpecial_C = ::Game::WeaponsNTools::GooCannon::PRJ_GooProjectile_Fragment_GooBomoberSpecial_C;

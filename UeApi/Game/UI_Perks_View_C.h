@@ -20,14 +20,14 @@ namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI { class U
 
 namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI {
 
-class UI_Perks_View_C : public Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C
+class UI_Perks_View_C : public ::Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Perks_View", "UI_Perks_View_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using UI_AvailablePerkPoints_C = Game::UI::HUD_SpaceRig::KPI::UI_AvailablePerkPoints_C;
-    using UI_Perks_Buy_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Buy_C;
-    using UI_Perks_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using UI_AvailablePerkPoints_C = ::Game::UI::HUD_SpaceRig::KPI::UI_AvailablePerkPoints_C;
+    using UI_Perks_Buy_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Buy_C;
+    using UI_Perks_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimLoadoutHint;
     Basic_ButtonScalable2_C* ButtonOkHint;
@@ -66,4 +66,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Perks_View_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_View_C;
+using UI_Perks_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_View_C;

@@ -25,8 +25,8 @@ class Lore_List_Element_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_List_Element", "Lore_List_Element_C");
-    using CategoryImage_C = Game::UI::Menu_MinersManual::CategoryImage_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using CategoryImage_C = ::Game::UI::Menu_MinersManual::CategoryImage_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeOutNavigationIcon;
     UE_READONLY class UWidgetAnimation* IntroAnim;
@@ -43,7 +43,7 @@ public:
     class UWidgetSwitcher* WidgetSwitcher_Navigation;
     FText Header;
     FText SubText;
-    class UTexture2D* BGimage;
+    class UTexture2D* BGImage;
     FLinearColor BackgroundColor;
     class UTexture2D* FrontImage;
     FObjectiveMissionIcon MissionIcon;
@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_List_Element_C = Game::UI::Menu_MinersManual::Lore_List_Element_C;
+using Lore_List_Element_C = ::Game::UI::Menu_MinersManual::Lore_List_Element_C;

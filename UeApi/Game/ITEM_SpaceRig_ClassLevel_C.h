@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ITEM_SpaceRig_ClassLevel_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_ClassLevel_C;
+using ITEM_SpaceRig_ClassLevel_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_ClassLevel_C;

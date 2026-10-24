@@ -18,7 +18,7 @@ class ITM_VanityTag_FilterMenu_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/FilterSelector/ITM_VanityTag_FilterMenu", "ITM_VanityTag_FilterMenu_C");
-    using ITM_VanityTag_Category_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_Category_C;
+    using ITM_VanityTag_Category_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_Category_C;
     class UVerticalBox* Menu_Category_Box;
     TMulticastInlineDelegate<void()> OnSelectionChanged;
     TArray<ITM_VanityTag_Category_C*> CategoryWidgets;
@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector
 
-using ITM_VanityTag_FilterMenu_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterMenu_C;
+using ITM_VanityTag_FilterMenu_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_FilterMenu_C;

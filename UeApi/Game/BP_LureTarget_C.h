@@ -109,6 +109,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* FriendlyHealth__UeScsNode = "c6f0ea79e339594cb3834031ee7331f1";
         static constexpr const char* FakeFall__UeScsNode = "1b762d35bc4a5348b4aa3cfe5bfe5180";
         static constexpr const char* Widget1__UeScsNode = "4c68ffb7523afe4aa478832b9b37ce99";
@@ -129,4 +130,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Lure
 
-using BP_LureTarget_C = Game::WeaponsNTools::Grenades::Lure::BP_LureTarget_C;
+using BP_LureTarget_C = ::Game::WeaponsNTools::Grenades::Lure::BP_LureTarget_C;

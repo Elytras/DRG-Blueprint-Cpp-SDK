@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using STE_CreeperVine_DoT_C = Game::Landscape::ReactiveTerrain::STE_CreeperVine_DoT_C;
+using STE_CreeperVine_DoT_C = ::Game::Landscape::ReactiveTerrain::STE_CreeperVine_DoT_C;

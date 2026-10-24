@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_ImpactPick_C = Game::Character::Camera::CameraShakes::CameraShake_ImpactPick_C;
+using CameraShake_ImpactPick_C = ::Game::Character::Camera::CameraShakes::CameraShake_ImpactPick_C;

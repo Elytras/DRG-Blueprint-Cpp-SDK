@@ -34,8 +34,8 @@ class BP_RivalBombEvent_C : public ARivalBomb
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RivalBombEvent/BP_RivalBombEvent", "BP_RivalBombEvent_C");
-    using ABP_RivalBomb_C = Game::GameElements::GameEvents::RivalBombEvent::ABP_RivalBomb_C;
-    using EWC_BombEvent_C = Game::GameElements::GameEvents::RivalBombEvent::EWC_BombEvent_C;
+    using ABP_RivalBomb_C = ::Game::GameElements::GameEvents::RivalBombEvent::ABP_RivalBomb_C;
+    using EWC_BombEvent_C = ::Game::GameElements::GameEvents::RivalBombEvent::EWC_BombEvent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainPlacementComponent* terrainPlacement;
     class UStaticMeshComponent* SM_Carver_DropPodDrill001;
@@ -173,4 +173,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent
 
-using BP_RivalBombEvent_C = Game::GameElements::GameEvents::RivalBombEvent::BP_RivalBombEvent_C;
+using BP_RivalBombEvent_C = ::Game::GameElements::GameEvents::RivalBombEvent::BP_RivalBombEvent_C;

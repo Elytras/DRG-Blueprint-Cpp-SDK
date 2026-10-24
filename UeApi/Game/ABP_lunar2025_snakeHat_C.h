@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_lunar2025_snakeHat_C = Game::Character::Vanity2::Headwear::ABP_lunar2025_snakeHat_C;
+using ABP_lunar2025_snakeHat_C = ::Game::Character::Vanity2::Headwear::ABP_lunar2025_snakeHat_C;

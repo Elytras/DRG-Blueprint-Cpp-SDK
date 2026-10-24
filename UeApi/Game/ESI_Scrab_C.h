@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab
 
-using ESI_Scrab_C = Game::Enemies::Ossiran::Scrab::ESI_Scrab_C;
+using ESI_Scrab_C = ::Game::Enemies::Ossiran::Scrab::ESI_Scrab_C;

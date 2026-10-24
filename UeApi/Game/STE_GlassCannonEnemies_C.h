@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Challenges::GlassCannon
 
-using STE_GlassCannonEnemies_C = Game::GameElements::Missions::Challenges::GlassCannon::STE_GlassCannonEnemies_C;
+using STE_GlassCannonEnemies_C = ::Game::GameElements::Missions::Challenges::GlassCannon::STE_GlassCannonEnemies_C;

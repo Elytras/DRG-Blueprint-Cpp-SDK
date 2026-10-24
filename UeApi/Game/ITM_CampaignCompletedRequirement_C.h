@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Campaign::Requirements
 
-using ITM_CampaignCompletedRequirement_C = Game::GameElements::Campaign::Requirements::ITM_CampaignCompletedRequirement_C;
+using ITM_CampaignCompletedRequirement_C = ::Game::GameElements::Campaign::Requirements::ITM_CampaignCompletedRequirement_C;

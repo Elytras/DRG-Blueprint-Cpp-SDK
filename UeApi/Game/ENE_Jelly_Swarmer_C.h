@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jellyfish
 
-using ENE_Jelly_Swarmer_C = Game::Enemies::Jellyfish::ENE_Jelly_Swarmer_C;
+using ENE_Jelly_Swarmer_C = ::Game::Enemies::Jellyfish::ENE_Jelly_Swarmer_C;

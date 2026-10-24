@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_Kickable_Base_C = Game::Art::Environments::SpaceRig::BP_Kickable_Base_C;
+using BP_Kickable_Base_C = ::Game::Art::Environments::SpaceRig::BP_Kickable_Base_C;

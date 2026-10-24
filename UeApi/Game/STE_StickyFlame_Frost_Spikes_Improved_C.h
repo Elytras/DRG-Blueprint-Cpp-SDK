@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using STE_StickyFlame_Frost_Spikes_Improved_C = Game::WeaponsNTools::Cryospray::STE_StickyFlame_Frost_Spikes_Improved_C;
+using STE_StickyFlame_Frost_Spikes_Improved_C = ::Game::WeaponsNTools::Cryospray::STE_StickyFlame_Frost_Spikes_Improved_C;

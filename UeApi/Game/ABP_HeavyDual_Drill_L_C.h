@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Drills
 
-using ABP_HeavyDual_Drill_L_C = Game::WeaponsNTools::Drills::ABP_HeavyDual_Drill_L_C;
+using ABP_HeavyDual_Drill_L_C = ::Game::WeaponsNTools::Drills::ABP_HeavyDual_Drill_L_C;

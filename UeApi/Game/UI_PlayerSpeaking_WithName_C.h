@@ -19,8 +19,8 @@ class UI_PlayerSpeaking_WithName_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/UI_PlayerSpeaking_WithName", "UI_PlayerSpeaking_WithName_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* LineBox;
     Basic_Label_C* NameLabel;
@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using UI_PlayerSpeaking_WithName_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_WithName_C;
+using UI_PlayerSpeaking_WithName_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_WithName_C;

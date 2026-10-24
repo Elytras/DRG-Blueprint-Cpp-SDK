@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::Critters::FesterFlea
 
-using ABP_FesterFlea_C = Game::Critters::FesterFlea::ABP_FesterFlea_C;
+using ABP_FesterFlea_C = ::Game::Critters::FesterFlea::ABP_FesterFlea_C;

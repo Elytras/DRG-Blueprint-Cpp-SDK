@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using ESI_Crawler_C = Game::Enemies::Crawler::ESI_Crawler_C;
+using ESI_Crawler_C = ::Game::Enemies::Crawler::ESI_Crawler_C;

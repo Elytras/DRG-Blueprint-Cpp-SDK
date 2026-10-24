@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace CausticMireCrevasse {
 
-class BP_CausticCrevasse_Big_C : public Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse::BP_CausticCrevasse_Small_C
+class BP_CausticCrevasse_Big_C : public ::Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse::BP_CausticCrevasse_Small_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/CausticMireCrevasse/BP_CausticCrevasse_Big", "BP_CausticCrevasse_Big_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;Old_Crevasse;TerrainPlacement_0";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse
 
-using BP_CausticCrevasse_Big_C = Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse::BP_CausticCrevasse_Big_C;
+using BP_CausticCrevasse_Big_C = ::Game::LevelElements::RoomObjects::Hazards::CausticMireCrevasse::BP_CausticCrevasse_Big_C;

@@ -21,4 +21,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using UI_HackingPod_Screen_Base_C = Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C;
+using UI_HackingPod_Screen_Base_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C;

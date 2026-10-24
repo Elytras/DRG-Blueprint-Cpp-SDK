@@ -358,6 +358,7 @@ struct FWidgetNavigationData
 {
     EUINavigationRule Rule;
     FName WidgetToFocus;
+    TWeakObjectPtr<class UWidget> Widget;
 };
 
 struct FWidgetTransform

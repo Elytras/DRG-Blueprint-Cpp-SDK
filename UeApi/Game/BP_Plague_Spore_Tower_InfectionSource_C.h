@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Plague {
 
-class BP_Plague_Spore_Tower_InfectionSource_C : public Game::GameElements::Plague::BP_Plague_Spore_Tower_C
+class BP_Plague_Spore_Tower_InfectionSource_C : public ::Game::GameElements::Plague::BP_Plague_Spore_Tower_C
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/BP_Plague_Spore_Tower_InfectionSource", "BP_Plague_Spore_Tower_InfectionSource_C");
@@ -42,6 +42,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SimpleHealthComponent HealthComponent";
+        static constexpr const char* UeIchRecords = "DeathEffect;Niagara Spores;Niagara_Spores;SimpleObjectInfo;SporeTower_Mesh;TerrainPlacement";
         static constexpr const char* UberGraphFrame_BP_Plague_Spore_Tower_InfectionSource_C__UeName = "UberGraphFrame";
         static constexpr const char* MeteoritePath4__UeScsNode = "29a4a8f78e0ecd4fbeb7735fc7648b10";
         static constexpr const char* LevelGenerationCarver_MeteoritePAthFill1__UeScsNode = "3a9e26e27ed8e94aaea713808f4e2a10";
@@ -65,4 +66,4 @@ private:
 
 }}}   // namespace Game::GameElements::Plague
 
-using BP_Plague_Spore_Tower_InfectionSource_C = Game::GameElements::Plague::BP_Plague_Spore_Tower_InfectionSource_C;
+using BP_Plague_Spore_Tower_InfectionSource_C = ::Game::GameElements::Plague::BP_Plague_Spore_Tower_InfectionSource_C;

@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using UI_Season_Border_C = Game::UI::Menu_Seasons::UI_Season_Border_C;
+using UI_Season_Border_C = ::Game::UI::Menu_Seasons::UI_Season_Border_C;

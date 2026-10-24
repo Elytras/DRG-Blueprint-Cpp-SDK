@@ -35,6 +35,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* Spitballer_BlueGooSplat_Cue__UeScsNode = "a388396eddd7dc4595107e4a3284481c";
         static constexpr const char* NS_Plague_Projectile_Trail__UeScsNode = "08c769b83d64264d829b0daad785913d";
         static constexpr const char* ProjecitleMesh__UeScsNode = "c54bfc6eb084f341a5ee0c98e3c0bdf1";
@@ -46,4 +47,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueBreeder
 
-using PRJ_Rockpox_Breede_VomitedLarva_C = Game::Enemies::Plague::PlagueBreeder::PRJ_Rockpox_Breede_VomitedLarva_C;
+using PRJ_Rockpox_Breede_VomitedLarva_C = ::Game::Enemies::Plague::PlagueBreeder::PRJ_Rockpox_Breede_VomitedLarva_C;

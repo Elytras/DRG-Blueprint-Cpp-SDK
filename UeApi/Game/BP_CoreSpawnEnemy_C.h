@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::Enemies::CoreSpawn
 
-using BP_CoreSpawnEnemy_C = Game::Enemies::CoreSpawn::BP_CoreSpawnEnemy_C;
+using BP_CoreSpawnEnemy_C = ::Game::Enemies::CoreSpawn::BP_CoreSpawnEnemy_C;

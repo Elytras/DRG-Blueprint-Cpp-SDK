@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::HackingTool
 
-using ScrollingText_HackingTool_C = Game::WeaponsNTools::HackingTool::ScrollingText_HackingTool_C;
+using ScrollingText_HackingTool_C = ::Game::WeaponsNTools::HackingTool::ScrollingText_HackingTool_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using STE_RadioactiveSwarmer_Radiation_C = Game::Enemies::Spider::Swarmer::STE_RadioactiveSwarmer_Radiation_C;
+using STE_RadioactiveSwarmer_Radiation_C = ::Game::Enemies::Spider::Swarmer::STE_RadioactiveSwarmer_Radiation_C;

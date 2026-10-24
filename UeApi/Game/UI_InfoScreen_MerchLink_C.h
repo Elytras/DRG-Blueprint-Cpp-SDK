@@ -19,11 +19,11 @@ namespace Game { namespace UI { namespace Art { namespace WidgetParts { class Ba
 
 namespace Game { namespace UI { namespace MENU_Merch { namespace _Common {
 
-class UI_InfoScreen_MerchLink_C : public Game::UI::MENU_Merch::_Common::UI_MerchEntry_Base_C
+class UI_InfoScreen_MerchLink_C : public ::Game::UI::MENU_Merch::_Common::UI_MerchEntry_Base_C
 {
 public:
     UE_CLASS("/Game/UI/MENU_Merch/_Common/UI_InfoScreen_MerchLink", "UI_InfoScreen_MerchLink_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame_UI_InfoScreen_MerchLink_C;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -52,4 +52,4 @@ private:
 
 }}}}   // namespace Game::UI::MENU_Merch::_Common
 
-using UI_InfoScreen_MerchLink_C = Game::UI::MENU_Merch::_Common::UI_InfoScreen_MerchLink_C;
+using UI_InfoScreen_MerchLink_C = ::Game::UI::MENU_Merch::_Common::UI_InfoScreen_MerchLink_C;

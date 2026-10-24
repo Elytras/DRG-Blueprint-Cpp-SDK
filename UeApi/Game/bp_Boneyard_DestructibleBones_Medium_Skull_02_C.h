@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace BoneYards { namespace Destructables {
 
-class bp_Boneyard_DestructibleBones_Medium_Skull_02_C : public Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleBones_Skull_01_C
+class bp_Boneyard_DestructibleBones_Medium_Skull_02_C : public ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleBones_Skull_01_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Destructables/bp_Boneyard_DestructibleBones_Medium_Skull_02", "bp_Boneyard_DestructibleBones_Medium_Skull_02_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "PathfinderCollision;ICH-DefaultSceneRoot;StaticMesh";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables
 
-using bp_Boneyard_DestructibleBones_Medium_Skull_02_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleBones_Medium_Skull_02_C;
+using bp_Boneyard_DestructibleBones_Medium_Skull_02_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleBones_Medium_Skull_02_C;

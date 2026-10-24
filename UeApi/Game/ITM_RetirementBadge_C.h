@@ -22,7 +22,7 @@ class ITM_RetirementBadge_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ITM_RetirementBadge", "ITM_RetirementBadge_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Count_Label;
     class UImage* ICON_Badge;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ITM_RetirementBadge_C = Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
+using ITM_RetirementBadge_C = ::Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;

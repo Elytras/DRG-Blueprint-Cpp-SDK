@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Drills
 
-using WeaponDisplay_Drill_Heat_C = Game::WeaponsNTools::Drills::WeaponDisplay_Drill_Heat_C;
+using WeaponDisplay_Drill_Heat_C = ::Game::WeaponsNTools::Drills::WeaponDisplay_Drill_Heat_C;

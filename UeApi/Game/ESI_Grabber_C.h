@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Grabber
 
-using ESI_Grabber_C = Game::Enemies::FlyingBug::Grabber::ESI_Grabber_C;
+using ESI_Grabber_C = ::Game::Enemies::FlyingBug::Grabber::ESI_Grabber_C;

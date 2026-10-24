@@ -45,4 +45,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::GatlingGun::UI
 
-using ITM_ManualCooling_Bar_C = Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;
+using ITM_ManualCooling_Bar_C = ::Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;

@@ -12,11 +12,11 @@ namespace Game { namespace LevelElements { namespace Tutorial { class BP_Tutoria
 
 namespace Game { namespace UI { namespace Tutorial {
 
-class W_TutorialMineMorkite_C : public Game::UI::Tutorial::W_TutorialContent_Base_C
+class W_TutorialMineMorkite_C : public ::Game::UI::Tutorial::W_TutorialContent_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialMineMorkite", "W_TutorialMineMorkite_C");
-    using BP_TutorialTriggerManager_C = Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
+    using BP_TutorialTriggerManager_C = ::Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
     FPointerToUberGraphFrame UberGraphFrame_W_TutorialMineMorkite_C;
     float Gold_Mined;
     float GoldToMine;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_TutorialMineMorkite_C = Game::UI::Tutorial::W_TutorialMineMorkite_C;
+using W_TutorialMineMorkite_C = ::Game::UI::Tutorial::W_TutorialMineMorkite_C;

@@ -18,9 +18,9 @@ class LVL_NewTutorial_C : public ALevelScriptActor
 {
 public:
     UE_CLASS("/Game/Maps/LVL_NewTutorial", "LVL_NewTutorial_C");
-    using BP_TutorialTriggerManager_C = Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
-    using EWC_TutorialGrunts_C = Game::Enemies::Waves::WaveControllers::EWC_TutorialGrunts_C;
-    using HUD_TutorialLevelManager_C = Game::UI::Tutorial::HUD_TutorialLevelManager_C;
+    using BP_TutorialTriggerManager_C = ::Game::LevelElements::Tutorial::BP_TutorialTriggerManager_C;
+    using EWC_TutorialGrunts_C = ::Game::Enemies::Waves::WaveControllers::EWC_TutorialGrunts_C;
+    using HUD_TutorialLevelManager_C = ::Game::UI::Tutorial::HUD_TutorialLevelManager_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_TutorialTriggerManager_C* Manager;
     EWC_TutorialGrunts_C* WaveManager;
@@ -34,4 +34,4 @@ public:
 
 }}   // namespace Game::Maps
 
-using LVL_NewTutorial_C = Game::Maps::LVL_NewTutorial_C;
+using LVL_NewTutorial_C = ::Game::Maps::LVL_NewTutorial_C;

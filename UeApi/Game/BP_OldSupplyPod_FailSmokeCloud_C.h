@@ -15,7 +15,7 @@ class UStatusEffectsComponent;
 
 namespace Game { namespace WeaponsNTools { namespace SupplyPod {
 
-class BP_OldSupplyPod_FailSmokeCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_OldSupplyPod_FailSmokeCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SupplyPod/BP_OldSupplyPod_FailSmokeCloud", "BP_OldSupplyPod_FailSmokeCloud_C");
@@ -28,6 +28,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "AcidCloud;Sphere;StatusEffectTrigger";
         static constexpr const char* UberGraphFrame_BP_OldSupplyPod_FailSmokeCloud_C__UeName = "UberGraphFrame";
         static constexpr const char* StatusEffects__UeScsNode = "70bd4ed612ebf240a26d1d4ccd6454d6";
         static constexpr const char* Damage__UeScsNode = "327cd73b955f0a4da7a858fcb9601a3f";
@@ -37,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_OldSupplyPod_FailSmokeCloud_C = Game::WeaponsNTools::SupplyPod::BP_OldSupplyPod_FailSmokeCloud_C;
+using BP_OldSupplyPod_FailSmokeCloud_C = ::Game::WeaponsNTools::SupplyPod::BP_OldSupplyPod_FailSmokeCloud_C;

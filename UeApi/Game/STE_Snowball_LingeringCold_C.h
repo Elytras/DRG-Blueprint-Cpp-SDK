@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Cryospray
 
-using STE_Snowball_LingeringCold_C = Game::WeaponsNTools::Cryospray::STE_Snowball_LingeringCold_C;
+using STE_Snowball_LingeringCold_C = ::Game::WeaponsNTools::Cryospray::STE_Snowball_LingeringCold_C;

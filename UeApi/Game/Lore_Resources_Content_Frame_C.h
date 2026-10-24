@@ -23,8 +23,8 @@ class Lore_Resources_Content_Frame_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Resources_Content_Frame", "Lore_Resources_Content_Frame_C");
-    using BG_Window_Outline_4px_C = Game::UI::Menu_MinersManual::BG_Window_Outline_4px_C;
-    using Basic_BG_CutCorner_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
+    using BG_Window_Outline_4px_C = ::Game::UI::Menu_MinersManual::BG_Window_Outline_4px_C;
+    using Basic_BG_CutCorner_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Glitch;
     Basic_BG_CutCorner_C* Basic_BG_CutCorner;
@@ -51,4 +51,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Resources_Content_Frame_C = Game::UI::Menu_MinersManual::Lore_Resources_Content_Frame_C;
+using Lore_Resources_Content_Frame_C = ::Game::UI::Menu_MinersManual::Lore_Resources_Content_Frame_C;

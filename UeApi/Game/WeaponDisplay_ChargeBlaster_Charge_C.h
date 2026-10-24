@@ -20,7 +20,7 @@ class WeaponDisplay_ChargeBlaster_Charge_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/WeaponDisplay_ChargeBlaster_Charge", "WeaponDisplay_ChargeBlaster_Charge_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UBorder* Block1;
@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using WeaponDisplay_ChargeBlaster_Charge_C = Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Charge_C;
+using WeaponDisplay_ChargeBlaster_Charge_C = ::Game::WeaponsNTools::ChargeBlaster::WeaponDisplay_ChargeBlaster_Charge_C;

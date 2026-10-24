@@ -19,7 +19,7 @@ class UI_PropHunt_OutlinedImage_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/UI/UI_PropHunt_OutlinedImage", "UI_PropHunt_OutlinedImage_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Image_C* Icon_Image;
     Basic_Image_C* Outline_Image;
@@ -32,4 +32,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::UI
 
-using UI_PropHunt_OutlinedImage_C = Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_OutlinedImage_C;
+using UI_PropHunt_OutlinedImage_C = ::Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_OutlinedImage_C;

@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_FastMovement_C = Game::UI::Menu_Cheats::Cheat_FastMovement_C;
+using Cheat_FastMovement_C = ::Game::UI::Menu_Cheats::Cheat_FastMovement_C;

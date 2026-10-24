@@ -48,4 +48,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals
 
-using BP_GlowingBlueCrystal_Base_C = Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_Base_C;
+using BP_GlowingBlueCrystal_Base_C = ::Game::LevelElements::RoomObjects::Helpers::GlowingLightCrystals::BP_GlowingBlueCrystal_Base_C;

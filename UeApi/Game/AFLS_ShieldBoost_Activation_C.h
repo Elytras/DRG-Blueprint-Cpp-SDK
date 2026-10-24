@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::PerkSFX
 
-using AFLS_ShieldBoost_Activation_C = Game::GameElements::KPI::Perks::PerkSFX::AFLS_ShieldBoost_Activation_C;
+using AFLS_ShieldBoost_Activation_C = ::Game::GameElements::KPI::Perks::PerkSFX::AFLS_ShieldBoost_Activation_C;

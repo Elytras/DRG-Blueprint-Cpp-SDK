@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_ResonanceScanner_StartPoint_C = Game::GameElements::Objectives::DeepScan::BP_ResonanceScanner_StartPoint_C;
+using BP_ResonanceScanner_StartPoint_C = ::Game::GameElements::Objectives::DeepScan::BP_ResonanceScanner_StartPoint_C;

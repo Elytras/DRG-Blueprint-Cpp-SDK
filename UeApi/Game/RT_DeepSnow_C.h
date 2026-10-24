@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_DeepSnow_C = Game::Landscape::ReactiveTerrain::RT_DeepSnow_C;
+using RT_DeepSnow_C = ::Game::Landscape::ReactiveTerrain::RT_DeepSnow_C;

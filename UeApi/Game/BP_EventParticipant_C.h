@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent
 
-using BP_EventParticipant_C = Game::GameElements::GameEvents::RivalBombEvent::BP_EventParticipant_C;
+using BP_EventParticipant_C = ::Game::GameElements::GameEvents::RivalBombEvent::BP_EventParticipant_C;

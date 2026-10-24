@@ -21,7 +21,7 @@ class Cheat_PerkListTier_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_PerkListTier", "Cheat_PerkListTier_C");
-    using Cheat_PerkListItem_C = Game::UI::Menu_Cheats::Cheat_PerkListItem_C;
+    using Cheat_PerkListItem_C = ::Game::UI::Menu_Cheats::Cheat_PerkListItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* TierText;
     class UVerticalBox* VerticalBox_113;
@@ -49,4 +49,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_PerkListTier_C = Game::UI::Menu_Cheats::Cheat_PerkListTier_C;
+using Cheat_PerkListTier_C = ::Game::UI::Menu_Cheats::Cheat_PerkListTier_C;

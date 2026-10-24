@@ -17,7 +17,7 @@ class BP_Pipeline_Movement_C : public UTrackBuilderMovement
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/Pipeline/BP_Pipeline_Movement", "BP_Pipeline_Movement_C");
-    using BP_Pipeline_Segment_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Segment_C;
+    using BP_Pipeline_Segment_C = ::Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Segment_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USplineComponent* MovementSpline;
     float SplineLength;
@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using BP_Pipeline_Movement_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Movement_C;
+using BP_Pipeline_Movement_C = ::Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Movement_C;

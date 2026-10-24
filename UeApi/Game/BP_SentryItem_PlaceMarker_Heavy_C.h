@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace SentryGun { namespace SentryGun_Engineer {
 
-class BP_SentryItem_PlaceMarker_Heavy_C : public Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryItem_PlaceMarker_C
+class BP_SentryItem_PlaceMarker_Heavy_C : public ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryItem_PlaceMarker_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/BP_SentryItem_PlaceMarker_Heavy", "BP_SentryItem_PlaceMarker_Heavy_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryItem_PlaceMarker_Heavy_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryItem_PlaceMarker_Heavy_C;
+using BP_SentryItem_PlaceMarker_Heavy_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryItem_PlaceMarker_Heavy_C;

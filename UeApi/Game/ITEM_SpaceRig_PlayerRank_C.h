@@ -22,9 +22,9 @@ class ITEM_SpaceRig_PlayerRank_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ITEM_SpaceRig_PlayerRank", "ITEM_SpaceRig_PlayerRank_C");
-    using ICON_Rank_C = Game::UI::CharacterSelectionMK2::ICON_Rank_C;
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
-    using UI_NameTags_C = Game::UI::HUD_SpaceRig::UI_NameTags_C;
+    using ICON_Rank_C = ::Game::UI::CharacterSelectionMK2::ICON_Rank_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using UI_NameTags_C = ::Game::UI::HUD_SpaceRig::UI_NameTags_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_NameDivider2;
     class UBorder* Border_PlayerName;
@@ -47,4 +47,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ITEM_SpaceRig_PlayerRank_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PlayerRank_C;
+using ITEM_SpaceRig_PlayerRank_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PlayerRank_C;

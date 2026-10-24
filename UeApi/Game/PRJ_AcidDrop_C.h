@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using PRJ_AcidDrop_C = Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop_C;
+using PRJ_AcidDrop_C = ::Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop_C;

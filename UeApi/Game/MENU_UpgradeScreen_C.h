@@ -39,17 +39,17 @@ class MENU_UpgradeScreen_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/MENU_UpgradeScreen", "MENU_UpgradeScreen_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Popup_YesNoPrompt_C = Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using ITM_InfoBox_Custom_C = Game::UI::_GlobalAssets::ITM_InfoBox_Custom_C;
-    using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
-    using ITM_Loadout_GearStats_C = Game::UI::Menu_Loadout::ITM_Loadout_GearStats_C;
-    using ITM_UnlockedCelebration_C = Game::UI::Menu_Loadout::ITM_UnlockedCelebration_C;
-    using ITM_UpgGear_SideBar_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_C;
-    using ITM_UpgGear_SideBar_GrenadeSelect_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using WND_Skins_C = Game::UI::Menu_Loadout::WND_Skins_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Popup_YesNoPrompt_C = ::Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using ITM_InfoBox_Custom_C = ::Game::UI::_GlobalAssets::ITM_InfoBox_Custom_C;
+    using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+    using ITM_Loadout_GearStats_C = ::Game::UI::Menu_Loadout::ITM_Loadout_GearStats_C;
+    using ITM_UnlockedCelebration_C = ::Game::UI::Menu_Loadout::ITM_UnlockedCelebration_C;
+    using ITM_UpgGear_SideBar_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_C;
+    using ITM_UpgGear_SideBar_GrenadeSelect_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using WND_Skins_C = ::Game::UI::Menu_Loadout::WND_Skins_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimCollapseSideBar;
     UE_READONLY class UWidgetAnimation* ItemDesc_Hover;
@@ -141,4 +141,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using MENU_UpgradeScreen_C = Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
+using MENU_UpgradeScreen_C = ::Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;

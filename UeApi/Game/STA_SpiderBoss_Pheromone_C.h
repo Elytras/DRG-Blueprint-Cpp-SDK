@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank
 
-using STA_SpiderBoss_Pheromone_C = Game::Enemies::Spider::TankBoss::BossTank::STA_SpiderBoss_Pheromone_C;
+using STA_SpiderBoss_Pheromone_C = ::Game::Enemies::Spider::TankBoss::BossTank::STA_SpiderBoss_Pheromone_C;

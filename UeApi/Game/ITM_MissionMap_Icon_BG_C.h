@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MissionMap_Icon_BG_C = Game::UI::Menu_MissionSelectionMK3::ITM_MissionMap_Icon_BG_C;
+using ITM_MissionMap_Icon_BG_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MissionMap_Icon_BG_C;

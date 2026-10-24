@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Difficulty_Haz5plus_C = Game::GameElements::Campaign::CP_Difficulty_Haz5plus_C;
+using CP_Difficulty_Haz5plus_C = ::Game::GameElements::Campaign::CP_Difficulty_Haz5plus_C;

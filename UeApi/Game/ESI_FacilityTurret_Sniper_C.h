@@ -33,4 +33,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using ESI_FacilityTurret_Sniper_C = Game::GameElements::Objectives::Facility::DefenseTurret::ESI_FacilityTurret_Sniper_C;
+using ESI_FacilityTurret_Sniper_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::ESI_FacilityTurret_Sniper_C;

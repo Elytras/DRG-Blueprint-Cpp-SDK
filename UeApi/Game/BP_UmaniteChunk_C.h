@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Umanite
 
-using BP_UmaniteChunk_C = Game::GameElements::Resources::Carved::Umanite::BP_UmaniteChunk_C;
+using BP_UmaniteChunk_C = ::Game::GameElements::Resources::Carved::Umanite::BP_UmaniteChunk_C;

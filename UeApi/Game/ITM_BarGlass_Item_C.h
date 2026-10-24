@@ -21,7 +21,7 @@ class ITM_BarGlass_Item_C : public ADrinkableItem
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/ITM_BarGlass_Item", "ITM_BarGlass_Item_C");
-    using Bar_Glass_Physics_C = Game::GameElements::Bar::Bar_Glass_Physics_C;
+    using Bar_Glass_Physics_C = ::Game::GameElements::Bar::Bar_Glass_Physics_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UParticleSystemComponent* TPParticleSystem;
     class UParticleSystemComponent* ParticleSystem;
@@ -69,4 +69,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using ITM_BarGlass_Item_C = Game::GameElements::Bar::ITM_BarGlass_Item_C;
+using ITM_BarGlass_Item_C = ::Game::GameElements::Bar::ITM_BarGlass_Item_C;

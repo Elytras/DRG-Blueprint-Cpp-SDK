@@ -22,4 +22,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using Jobs_List_Element_BG_CutCorner_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
+using Jobs_List_Element_BG_CutCorner_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;

@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_RandoWeisser_C = Game::GameElements::Bar::DrinkEffects::DE_RandoWeisser_C;
+using DE_RandoWeisser_C = ::Game::GameElements::Bar::DrinkEffects::DE_RandoWeisser_C;

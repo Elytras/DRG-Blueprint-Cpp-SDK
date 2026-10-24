@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace PassiveFoliage { namespace HarmlessSporesMushroom {
 
-class BP_Mushroom_03_C : public Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom::BP_Mushroom_Base_C
+class BP_Mushroom_03_C : public ::Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom::BP_Mushroom_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/HarmlessSporesMushroom/BP_Mushroom_03", "BP_Mushroom_03_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "ParticleSystem;PathfinderCollision;StaticMesh";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom
 
-using BP_Mushroom_03_C = Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom::BP_Mushroom_03_C;
+using BP_Mushroom_03_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom::BP_Mushroom_03_C;

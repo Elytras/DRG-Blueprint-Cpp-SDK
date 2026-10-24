@@ -16,8 +16,8 @@ class Lore_Content_Statistics_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Content_Statistics", "Lore_Content_Statistics_C");
-    using Lore_Content_ProgressBar_C = Game::UI::Menu_MinersManual::Lore_Content_ProgressBar_C;
-    using Lore_Content_Weaknesses_C = Game::UI::Menu_MinersManual::Lore_Content_Weaknesses_C;
+    using Lore_Content_ProgressBar_C = ::Game::UI::Menu_MinersManual::Lore_Content_ProgressBar_C;
+    using Lore_Content_Weaknesses_C = ::Game::UI::Menu_MinersManual::Lore_Content_Weaknesses_C;
     Lore_Content_ProgressBar_C* Bar_Damage;
     Lore_Content_ProgressBar_C* Bar_Health;
     Lore_Content_ProgressBar_C* Bar_Speed;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Content_Statistics_C = Game::UI::Menu_MinersManual::Lore_Content_Statistics_C;
+using Lore_Content_Statistics_C = ::Game::UI::Menu_MinersManual::Lore_Content_Statistics_C;

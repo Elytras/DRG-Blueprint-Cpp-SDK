@@ -12,11 +12,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace UI { namespace Menu_MissionSelectionMK3 { namespace BiomeWidgets {
 
-class FungusBogs_MapWidget_C : public Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_BiomeBase_C
+class FungusBogs_MapWidget_C : public ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_BiomeBase_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/BiomeWidgets/FungusBogs_MapWidget", "FungusBogs_MapWidget_C");
-    using AnimatedStaticOverlay_WithScanlines_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
+    using AnimatedStaticOverlay_WithScanlines_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
     AnimatedStaticOverlay_WithScanlines_C* AnimatedStaticOverlay_WithScanlines;
     class UCanvasPanel* CanvasPanel_0;
     void GetBasePanel(class UCanvasPanel*& Panel);
@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MissionSelectionMK3::BiomeWidgets
 
-using FungusBogs_MapWidget_C = Game::UI::Menu_MissionSelectionMK3::BiomeWidgets::FungusBogs_MapWidget_C;
+using FungusBogs_MapWidget_C = ::Game::UI::Menu_MissionSelectionMK3::BiomeWidgets::FungusBogs_MapWidget_C;

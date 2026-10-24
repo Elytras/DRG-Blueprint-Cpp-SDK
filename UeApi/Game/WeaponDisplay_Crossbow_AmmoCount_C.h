@@ -21,7 +21,7 @@ class WeaponDisplay_Crossbow_AmmoCount_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/WeaponDisplay_Crossbow_AmmoCount", "WeaponDisplay_Crossbow_AmmoCount_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetSwitcher* ArrowSwitcher;
     Basic_Image_C* EffectArrow;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Crossbow
 
-using WeaponDisplay_Crossbow_AmmoCount_C = Game::WeaponsNTools::Crossbow::WeaponDisplay_Crossbow_AmmoCount_C;
+using WeaponDisplay_Crossbow_AmmoCount_C = ::Game::WeaponsNTools::Crossbow::WeaponDisplay_Crossbow_AmmoCount_C;

@@ -22,7 +22,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* AttackLocation;
     class AActor* CurrentTarget;
-    class ATerminatorTentacle* Tentacle;
+    class ATerminatorTentacle* tentacle;
     bool InProgress;
     TMulticastInlineDelegate<void()> Started;
     TMulticastInlineDelegate<void()> Ended;
@@ -57,4 +57,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using BP_TentacleGrab_C = Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;
+using BP_TentacleGrab_C = ::Game::Enemies::RivalTech::Terminator::BP_TentacleGrab_C;

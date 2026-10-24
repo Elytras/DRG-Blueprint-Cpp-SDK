@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using TOOLTIP_UpgGear_GearTab_C = Game::UI::Menu_Loadout::TOOLTIP_UpgGear_GearTab_C;
+using TOOLTIP_UpgGear_GearTab_C = ::Game::UI::Menu_Loadout::TOOLTIP_UpgGear_GearTab_C;

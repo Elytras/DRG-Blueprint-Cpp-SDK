@@ -56,4 +56,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::VoidBasket
 
-using BP_Azure_VoidBasket_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::VoidBasket::BP_Azure_VoidBasket_C;
+using BP_Azure_VoidBasket_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::VoidBasket::BP_Azure_VoidBasket_C;

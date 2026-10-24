@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Radar
 
-using HUD_RadarPoint_EscapePod_C = Game::UI::Radar::HUD_RadarPoint_EscapePod_C;
+using HUD_RadarPoint_EscapePod_C = ::Game::UI::Radar::HUD_RadarPoint_EscapePod_C;

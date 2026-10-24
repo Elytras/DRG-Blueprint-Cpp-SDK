@@ -20,8 +20,8 @@ class ITM_SupplyBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_SupplyBar", "ITM_SupplyBar_C");
-    using ITM_SupplyBarItem_C = Game::UI::Global_UI_Elements::ITM_SupplyBarItem_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using ITM_SupplyBarItem_C = ::Game::UI::Global_UI_Elements::ITM_SupplyBarItem_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ImageTinted_C* Image_SupplyType;
     ITM_SupplyBarItem_C* ITM_SupplyBarItem_1;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_SupplyBar_C = Game::UI::Global_UI_Elements::ITM_SupplyBar_C;
+using ITM_SupplyBar_C = ::Game::UI::Global_UI_Elements::ITM_SupplyBar_C;

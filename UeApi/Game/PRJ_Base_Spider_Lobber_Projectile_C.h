@@ -40,6 +40,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DirectDamageCondition Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0:DirectDamageCondition_0;/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* P_SpiderLobber_Projecitle_Trail_TEMP_Converted__UeScsNode = "a4fba5ec3c1aca4b83b9c1dd244eb239";
         static constexpr const char* GooParticle__UeScsNode = "d1a08dd64475754ebf7e98d6205d9633";
         static constexpr const char* Audio__UeScsNode = "fc032520d364cc4f8defd55e12860f19";
@@ -49,4 +50,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using PRJ_Base_Spider_Lobber_Projectile_C = Game::Enemies::Spider::Lobber::PRJ_Base_Spider_Lobber_Projectile_C;
+using PRJ_Base_Spider_Lobber_Projectile_C = ::Game::Enemies::Spider::Lobber::PRJ_Base_Spider_Lobber_Projectile_C;

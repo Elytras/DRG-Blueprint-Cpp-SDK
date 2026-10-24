@@ -19,11 +19,11 @@ namespace Game { namespace Enemies { namespace Attacks { class BP_ConeAttackBase
 
 namespace Game { namespace Enemies { namespace Spider { namespace Tank {
 
-class ENE_Spider_Tank_Radioactive_C : public Game::Enemies::Spider::Tank::ENE_Spider_Tank_Generic_C
+class ENE_Spider_Tank_Radioactive_C : public ::Game::Enemies::Spider::Tank::ENE_Spider_Tank_Generic_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ENE_Spider_Tank_Radioactive", "ENE_Spider_Tank_Radioactive_C");
-    using BP_ConeAttackBase_C = Game::Enemies::Attacks::BP_ConeAttackBase_C;
+    using BP_ConeAttackBase_C = ::Game::Enemies::Attacks::BP_ConeAttackBase_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Tank_Radioactive_C;
     BP_ConeAttackBase_C* RadiationAttack;
     class USphereComponent* Sphere;
@@ -56,6 +56,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;Light_BackBody;DropShadow";
         static constexpr const char* UberGraphFrame_ENE_Spider_Tank_Radioactive_C__UeName = "UberGraphFrame";
         static constexpr const char* RadiationAttack__UeScsNode = "c51f2f1e05e96f40936c82e02e52a869";
         static constexpr const char* Sphere__UeScsNode = "bf8fec52d45cca4a883450fbebfacb48";
@@ -68,4 +69,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Tank
 
-using ENE_Spider_Tank_Radioactive_C = Game::Enemies::Spider::Tank::ENE_Spider_Tank_Radioactive_C;
+using ENE_Spider_Tank_Radioactive_C = ::Game::Enemies::Spider::Tank::ENE_Spider_Tank_Radioactive_C;

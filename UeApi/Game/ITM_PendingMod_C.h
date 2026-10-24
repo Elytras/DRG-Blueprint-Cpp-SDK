@@ -20,7 +20,7 @@ class ITM_PendingMod_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/ITM_PendingMod", "ITM_PendingMod_C");
-    using UI_ModdingProgressBar_C = Game::UI::Modding::UI_ModdingProgressBar_C;
+    using UI_ModdingProgressBar_C = ::Game::UI::Modding::UI_ModdingProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Background;
     class UImage* Image_Separator;
@@ -41,4 +41,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using ITM_PendingMod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_PendingMod_C;
+using ITM_PendingMod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_PendingMod_C;

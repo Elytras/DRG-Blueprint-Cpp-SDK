@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::MENU_Merch
 
-using UI_MediaPlayer_C = Game::UI::MENU_Merch::UI_MediaPlayer_C;
+using UI_MediaPlayer_C = ::Game::UI::MENU_Merch::UI_MediaPlayer_C;

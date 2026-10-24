@@ -35,4 +35,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RockEnemies::Models
 
-using ABP_PowerupSprinkler_C = Game::GameElements::GameEvents::RockEnemies::Models::ABP_PowerupSprinkler_C;
+using ABP_PowerupSprinkler_C = ::Game::GameElements::GameEvents::RockEnemies::Models::ABP_PowerupSprinkler_C;

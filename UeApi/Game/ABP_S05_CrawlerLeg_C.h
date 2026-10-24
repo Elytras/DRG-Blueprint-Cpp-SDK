@@ -25,4 +25,4 @@ public:
 
 }}}}}   // namespace Game::Game::SpaceRig::S05_SetDressing::Animated
 
-using ABP_S05_CrawlerLeg_C = Game::Game::SpaceRig::S05_SetDressing::Animated::ABP_S05_CrawlerLeg_C;
+using ABP_S05_CrawlerLeg_C = ::Game::Game::SpaceRig::S05_SetDressing::Animated::ABP_S05_CrawlerLeg_C;

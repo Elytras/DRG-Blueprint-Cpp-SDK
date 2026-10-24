@@ -18,9 +18,9 @@ class AIC_FacilityTentacle_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/AIC_FacilityTentacle", "AIC_FacilityTentacle_C");
-    using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    using ENE_FacilityTentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
-    ENE_FacilityTentacle_C* Tentacle;
+    ENE_FacilityTentacle_C* tentacle;
     class UBehaviorTree* Behavior;
     bool IsChildOfOtherTentacle;
     void ExecuteUbergraph_AIC_FacilityTentacle(int EntryPoint);
@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using AIC_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::AIC_FacilityTentacle_C;
+using AIC_FacilityTentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::AIC_FacilityTentacle_C;

@@ -15,11 +15,11 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens {
 
-class LoreScreen_MissionWarnings_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_MissionWarnings_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_MissionWarnings", "LoreScreen_MissionWarnings_C");
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_MissionWarnings_C;
     LoreScreen_Template_C* LoreScreen_Template;
     class UScrollBox* ScrollBox_List;
@@ -37,4 +37,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_MissionWarnings_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MissionWarnings_C;
+using LoreScreen_MissionWarnings_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MissionWarnings_C;

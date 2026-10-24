@@ -19,7 +19,7 @@ class UTimelineComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace SpiderEgg {
 
-class BP_DreadnoughtEgg_C : public Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_Base_C
+class BP_DreadnoughtEgg_C : public ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_SpiderEgg_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpiderEgg/BP_DreadnoughtEgg", "BP_DreadnoughtEgg_C");
@@ -56,6 +56,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Spider Spawn Point;Egg Broken;Egg Whole;ICH-DefaultSceneRoot;SimpleHealth;SimpleObjectInfo;TerrainDetect;TerrainPlacement";
         static constexpr const char* UberGraphFrame_BP_DreadnoughtEgg_C__UeName = "UberGraphFrame";
         static constexpr const char* TerrainScannerMesh__UeScsNode = "2bacd0589ff7db48a0aecd0690810815";
         static constexpr const char* BranchCarver2__UeScsNode = "2151bf056ad5b54da1375f697506a875";
@@ -77,4 +78,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpiderEgg
 
-using BP_DreadnoughtEgg_C = Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_DreadnoughtEgg_C;
+using BP_DreadnoughtEgg_C = ::Game::LevelElements::RoomObjects::Hazards::SpiderEgg::BP_DreadnoughtEgg_C;

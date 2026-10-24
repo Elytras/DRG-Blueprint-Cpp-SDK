@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects
 
-using STE_Crossbow_TaserArrows_C = Game::WeaponsNTools::Crossbow::StatusEffects::STE_Crossbow_TaserArrows_C;
+using STE_Crossbow_TaserArrows_C = ::Game::WeaponsNTools::Crossbow::StatusEffects::STE_Crossbow_TaserArrows_C;

@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Minehead
 
-using BP_Minehead_LandingZone_C = Game::LevelElements::Minehead::BP_Minehead_LandingZone_C;
+using BP_Minehead_LandingZone_C = ::Game::LevelElements::Minehead::BP_Minehead_LandingZone_C;

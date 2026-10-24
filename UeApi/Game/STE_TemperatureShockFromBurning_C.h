@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Temperature
 
-using STE_TemperatureShockFromBurning_C = Game::GameElements::Temperature::STE_TemperatureShockFromBurning_C;
+using STE_TemperatureShockFromBurning_C = ::Game::GameElements::Temperature::STE_TemperatureShockFromBurning_C;

@@ -42,11 +42,11 @@ class BP_EscortDestination_C : public AEscortDestination
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_EscortDestination", "BP_EscortDestination_C");
-    using BP_CrystalTrap_C = Game::GameElements::Objectives::Escort::BP_CrystalTrap_C;
-    using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
-    using BP_Heartstone_DefensiveCrystal_C = Game::GameElements::Objectives::Escort::BP_Heartstone_DefensiveCrystal_C;
-    using BP_TargetBeam_C = Game::GameElements::Objectives::Escort::BP_TargetBeam_C;
-    using EWC_Escort_EndDefense_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_EndDefense_C;
+    using BP_CrystalTrap_C = ::Game::GameElements::Objectives::Escort::BP_CrystalTrap_C;
+    using BP_Extractor_Shell_C = ::Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
+    using BP_Heartstone_DefensiveCrystal_C = ::Game::GameElements::Objectives::Escort::BP_Heartstone_DefensiveCrystal_C;
+    using BP_TargetBeam_C = ::Game::GameElements::Objectives::Escort::BP_TargetBeam_C;
+    using EWC_Escort_EndDefense_C = ::Game::Enemies::Waves::WaveControllers::EWC_Escort_EndDefense_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* SM_TrapPhaseDamageGlow1;
     class UDamageComponent* Damage_TrapPhaseGlow;
@@ -256,6 +256,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ExplosionDamage";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus GroundSlamDamage_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* SM_TrapPhaseDamageGlow1__UeScsNode = "868e2f1a51ab61429f3d8045fae25609";
         static constexpr const char* Damage_TrapPhaseGlow__UeScsNode = "b9df877f2c5eaf4da8faf90e64de054f";
         static constexpr const char* SM_TrapPhaseDamageGlow__UeScsNode = "e0486265557bc148b7d4bcfcfd22bd77";
@@ -392,4 +393,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_EscortDestination_C = Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
+using BP_EscortDestination_C = ::Game::GameElements::Objectives::Escort::BP_EscortDestination_C;

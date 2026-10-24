@@ -21,7 +21,7 @@ class Lobby_BarTop_Countdown_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Lobby_BarTop_Countdown", "Lobby_BarTop_Countdown_C");
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Pulse;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
@@ -44,4 +44,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;

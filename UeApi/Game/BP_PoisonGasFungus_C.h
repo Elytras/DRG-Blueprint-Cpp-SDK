@@ -67,4 +67,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus
 
-using BP_PoisonGasFungus_C = Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus::BP_PoisonGasFungus_C;
+using BP_PoisonGasFungus_C = ::Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus::BP_PoisonGasFungus_C;

@@ -28,12 +28,12 @@ class UI_JettyBoots_Arcade_C : public UJettyBootsArcadeWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/Arcade/UI_JettyBoots_Arcade", "UI_JettyBoots_Arcade_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_JettyBoot_Score_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoot_Score_C;
-    using UI_JettyBoots_Announcement_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Announcement_C;
-    using UI_JettyBoots_Game_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;
-    using UI_JettyBoots_Lives_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Lives_C;
-    using UI_JettyBoots_StartScreen_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_StartScreen_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_JettyBoot_Score_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoot_Score_C;
+    using UI_JettyBoots_Announcement_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Announcement_C;
+    using UI_JettyBoots_Game_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;
+    using UI_JettyBoots_Lives_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Lives_C;
+    using UI_JettyBoots_StartScreen_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_StartScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_JettyBoots_Announcement_C* Behind_Announce_UI;
     class UOverlay* Event_Overlay;
@@ -78,7 +78,7 @@ public:
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void SetAudioSceneComponent(class USceneComponent* Audio_Scene_Component_0);
     void Display_State(int InLevel, int InScore, int InLives);
-    void Display_HighScore(int InHighscore);
+    void Display_HighScore(int InHighScore);
     void Display_Score(int InValue);
     void Display_Lives(int InValue, bool& OutGameOver);
     void Display_Level(int InValue);
@@ -108,4 +108,4 @@ private:
 
 }}}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade
 
-using UI_JettyBoots_Arcade_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Arcade_C;
+using UI_JettyBoots_Arcade_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_Arcade_C;

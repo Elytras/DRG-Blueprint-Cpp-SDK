@@ -19,7 +19,7 @@ class UI_Bar_BackgroundMenu_Item_C : public UBarMenuWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_BackgroundMenu_Item", "UI_Bar_BackgroundMenu_Item_C");
-    using UI_Bar_DrinkCost_C = Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
+    using UI_Bar_DrinkCost_C = ::Game::GameElements::Bar::UI::UI_Bar_DrinkCost_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ImgIcon;
     class UTextBlock* LabelName;
@@ -38,4 +38,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_BackgroundMenu_Item_C = Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_Item_C;
+using UI_Bar_BackgroundMenu_Item_C = ::Game::GameElements::Bar::UI::UI_Bar_BackgroundMenu_Item_C;

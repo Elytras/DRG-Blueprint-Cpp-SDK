@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery
 
-using OBJ_1st_Refinery_C = Game::GameElements::Objectives::Refinery::OBJ_1st_Refinery_C;
+using OBJ_1st_Refinery_C = ::Game::GameElements::Objectives::Refinery::OBJ_1st_Refinery_C;

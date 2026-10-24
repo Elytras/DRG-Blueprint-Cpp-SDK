@@ -35,4 +35,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::Assets
 
-using ABP_EventRewardFrame_C = Game::GameElements::GameEvents::RewardDispenser::Assets::ABP_EventRewardFrame_C;
+using ABP_EventRewardFrame_C = ::Game::GameElements::GameEvents::RewardDispenser::Assets::ABP_EventRewardFrame_C;

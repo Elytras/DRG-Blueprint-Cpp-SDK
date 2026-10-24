@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_UnderhillDeluxe_C = Game::GameElements::Bar::DrinkEffects::DE_UnderhillDeluxe_C;
+using DE_UnderhillDeluxe_C = ::Game::GameElements::Bar::DrinkEffects::DE_UnderhillDeluxe_C;

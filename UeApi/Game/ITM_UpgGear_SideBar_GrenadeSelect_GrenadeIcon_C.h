@@ -26,8 +26,8 @@ class ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon", "ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C");
-    using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C;
-    using TOOLTIP_UpgradeIcon_C = Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
+    using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C;
+    using TOOLTIP_UpgradeIcon_C = ::Game::UI::Menu_Loadout::TOOLTIP_UpgradeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     class UImage* BorderOuter;
@@ -35,7 +35,7 @@ public:
     class UButton* ClickButton;
     ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock_C* GrenadeLock;
     class UImage* Icon;
-    class UImage* Icon_BG;
+    class UImage* ICON_BG;
     class UPlayerCharacterID* PlayerId;
     class UItemID* itemClass;
     TMulticastInlineDelegate<void(class UItemID* itemClass_0)> ItemEquipped;
@@ -69,4 +69,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C;
+using ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_C;

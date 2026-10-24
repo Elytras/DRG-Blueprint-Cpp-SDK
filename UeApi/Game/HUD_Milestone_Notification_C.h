@@ -22,8 +22,8 @@ class HUD_Milestone_Notification_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Milestone_Notification", "HUD_Milestone_Notification_C");
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
-    using UI_Milestone_Tier_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using UI_Milestone_Tier_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Tier_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Outro;
     UE_READONLY class UWidgetAnimation* Intro;
@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Milestone_Notification_C = Game::UI::MainOnscreenHUD::HUD_Milestone_Notification_C;
+using HUD_Milestone_Notification_C = ::Game::UI::MainOnscreenHUD::HUD_Milestone_Notification_C;

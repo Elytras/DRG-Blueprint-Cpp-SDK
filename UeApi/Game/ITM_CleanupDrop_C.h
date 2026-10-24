@@ -19,7 +19,7 @@ class ITM_CleanupDrop_C : public ACleanupPodItem
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/ITM_CleanupDrop", "ITM_CleanupDrop_C");
-    using OnScreenIndicator_CleanupDrop_Order_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
+    using OnScreenIndicator_CleanupDrop_Order_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     class AItemMarker* Marker;
@@ -41,4 +41,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using ITM_CleanupDrop_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::ITM_CleanupDrop_C;
+using ITM_CleanupDrop_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::ITM_CleanupDrop_C;

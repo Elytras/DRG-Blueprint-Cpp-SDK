@@ -22,11 +22,11 @@ class Basic_Popup_YesNoPrompt_C : public UYesNoPromptWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/Basic_Popup_YesNoPrompt", "Basic_Popup_YesNoPrompt_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
@@ -60,4 +60,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Popup_YesNoPrompt_C = Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
+using Basic_Popup_YesNoPrompt_C = ::Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;

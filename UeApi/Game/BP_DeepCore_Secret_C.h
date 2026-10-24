@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::DeepCore_Test
 
-using BP_DeepCore_Secret_C = Game::Landscape::Biomes::Biomes_Testing::DeepCore_Test::BP_DeepCore_Secret_C;
+using BP_DeepCore_Secret_C = ::Game::Landscape::Biomes::Biomes_Testing::DeepCore_Test::BP_DeepCore_Secret_C;

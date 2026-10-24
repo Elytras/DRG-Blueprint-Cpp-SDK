@@ -101,4 +101,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Anniversary
 
-using BP_Anniversary_Trophy8_InCave_C = Game::GameElements::Holidays::Anniversary::BP_Anniversary_Trophy8_InCave_C;
+using BP_Anniversary_Trophy8_InCave_C = ::Game::GameElements::Holidays::Anniversary::BP_Anniversary_Trophy8_InCave_C;

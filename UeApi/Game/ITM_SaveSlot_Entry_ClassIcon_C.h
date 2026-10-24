@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_SaveSlots
 
-using ITM_SaveSlot_Entry_ClassIcon_C = Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_ClassIcon_C;
+using ITM_SaveSlot_Entry_ClassIcon_C = ::Game::UI::Menu_SaveSlots::ITM_SaveSlot_Entry_ClassIcon_C;

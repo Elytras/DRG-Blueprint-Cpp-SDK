@@ -30,7 +30,7 @@ class PRJ_OmmoranEnergySprite_C : public AHomingDroneBomb
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/EnergySpriteSwarm/PRJ_OmmoranEnergySprite", "PRJ_OmmoranEnergySprite_C");
-    using BP_EscortDestination_C = Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
+    using BP_EscortDestination_C = ::Game::GameElements::Objectives::Escort::BP_EscortDestination_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPawnStatsComponent* PawnStats;
     class UParticleSystemComponent* P_SpriteAttackTell;
@@ -106,4 +106,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::EnergySpriteSwarm
 
-using PRJ_OmmoranEnergySprite_C = Game::GameElements::Objectives::Escort::EnergySpriteSwarm::PRJ_OmmoranEnergySprite_C;
+using PRJ_OmmoranEnergySprite_C = ::Game::GameElements::Objectives::Escort::EnergySpriteSwarm::PRJ_OmmoranEnergySprite_C;

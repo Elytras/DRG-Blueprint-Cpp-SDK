@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Caretaker {
 
-class BP_CaretakerShredderAction_C : public Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C
+class BP_CaretakerShredderAction_C : public ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/BP_CaretakerShredderAction", "BP_CaretakerShredderAction_C");
@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using BP_CaretakerShredderAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerShredderAction_C;
+using BP_CaretakerShredderAction_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerShredderAction_C;

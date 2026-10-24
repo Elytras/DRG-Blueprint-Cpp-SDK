@@ -17,7 +17,7 @@ class USoundBase;
 
 namespace Game { namespace Enemies { namespace BaseItems {
 
-class BP_Damage_Cloud_Flamable_Base_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
+class BP_Damage_Cloud_Flamable_Base_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/BaseItems/BP_Damage_Cloud_Flamable_Base", "BP_Damage_Cloud_Flamable_Base_C");
@@ -43,6 +43,8 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Sphere";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CombustionDamageFire_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus CombustionDamageIce_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_BP_Damage_Cloud_Flamable_Base_C__UeName = "UberGraphFrame";
         static constexpr const char* CombustionDamageIce__UeScsNode = "96093e657d251c44bfc4cc9a736692ce";
         static constexpr const char* CombustionDamageFire__UeScsNode = "df552dcc2b2e9a419da3791413245a98";
@@ -54,4 +56,4 @@ private:
 
 }}}   // namespace Game::Enemies::BaseItems
 
-using BP_Damage_Cloud_Flamable_Base_C = Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C;
+using BP_Damage_Cloud_Flamable_Base_C = ::Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C;

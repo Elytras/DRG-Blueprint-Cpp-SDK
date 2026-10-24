@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using DEC_ForceStrafe_C = Game::Enemies::Crawler::DEC_ForceStrafe_C;
+using DEC_ForceStrafe_C = ::Game::Enemies::Crawler::DEC_ForceStrafe_C;

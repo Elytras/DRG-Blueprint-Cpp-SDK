@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Upgrades
 
-using BP_Crossbow_Electrobeam_C = Game::WeaponsNTools::Crossbow::Upgrades::BP_Crossbow_Electrobeam_C;
+using BP_Crossbow_Electrobeam_C = ::Game::WeaponsNTools::Crossbow::Upgrades::BP_Crossbow_Electrobeam_C;

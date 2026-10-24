@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Neurotoxin {
 
-class Loadout_GrenadeProxy_Neurotoxin_C : public Game::WeaponsNTools::Grenades::Loadout_GrenadeProxy_Pineapple_C
+class Loadout_GrenadeProxy_Neurotoxin_C : public ::Game::WeaponsNTools::Grenades::Loadout_GrenadeProxy_Pineapple_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Neurotoxin/Loadout_GrenadeProxy_Neurotoxin", "Loadout_GrenadeProxy_Neurotoxin_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeIchRecords = "StaticMesh";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Neurotoxin
 
-using Loadout_GrenadeProxy_Neurotoxin_C = Game::WeaponsNTools::Grenades::Neurotoxin::Loadout_GrenadeProxy_Neurotoxin_C;
+using Loadout_GrenadeProxy_Neurotoxin_C = ::Game::WeaponsNTools::Grenades::Neurotoxin::Loadout_GrenadeProxy_Neurotoxin_C;

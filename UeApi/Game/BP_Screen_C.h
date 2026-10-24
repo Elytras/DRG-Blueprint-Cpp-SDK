@@ -35,4 +35,4 @@ private:
 
 }}   // namespace Game::UI
 
-using BP_Screen_C = Game::UI::BP_Screen_C;
+using BP_Screen_C = ::Game::UI::BP_Screen_C;

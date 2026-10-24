@@ -22,4 +22,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Objectives
 
-using Objective_BASE_C = Game::UI::MainOnscreenHUD::Objectives::Objective_BASE_C;
+using Objective_BASE_C = ::Game::UI::MainOnscreenHUD::Objectives::Objective_BASE_C;

@@ -17,7 +17,7 @@ class UI_LockOn_Counter_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/LockOnRifle/UI/UI_LockOn_Counter_Entry", "UI_LockOn_Counter_Entry_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimLimit;
     UE_READONLY class UWidgetAnimation* AnimPing;
@@ -35,4 +35,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI
 
-using UI_LockOn_Counter_Entry_C = Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_Entry_C;
+using UI_LockOn_Counter_Entry_C = ::Game::WeaponsNTools::LockOnRifle::UI::UI_LockOn_Counter_Entry_C;

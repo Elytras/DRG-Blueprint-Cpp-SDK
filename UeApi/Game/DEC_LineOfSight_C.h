@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::AI::Decorators
 
-using DEC_LineOfSight_C = Game::AI::Decorators::DEC_LineOfSight_C;
+using DEC_LineOfSight_C = ::Game::AI::Decorators::DEC_LineOfSight_C;

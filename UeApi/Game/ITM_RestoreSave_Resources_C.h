@@ -18,7 +18,7 @@ class ITM_RestoreSave_Resources_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_RestoreSave/ITM_RestoreSave_Resources", "ITM_RestoreSave_Resources_C");
-    using ITM_TopBar_ResourceCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
+    using ITM_TopBar_ResourceCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_ResourceCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* ParentBox;
     class UHorizontalBox* ParentBox2;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_RestoreSave
 
-using ITM_RestoreSave_Resources_C = Game::UI::Menu_RestoreSave::ITM_RestoreSave_Resources_C;
+using ITM_RestoreSave_Resources_C = ::Game::UI::Menu_RestoreSave::ITM_RestoreSave_Resources_C;

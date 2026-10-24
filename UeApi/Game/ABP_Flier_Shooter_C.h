@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using ABP_Flier_Shooter_C = Game::Enemies::FlyingBug::Shooter::ABP_Flier_Shooter_C;
+using ABP_Flier_Shooter_C = ::Game::Enemies::FlyingBug::Shooter::ABP_Flier_Shooter_C;

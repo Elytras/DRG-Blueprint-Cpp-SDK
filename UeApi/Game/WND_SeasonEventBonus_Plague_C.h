@@ -19,12 +19,12 @@ namespace Game { namespace UI { namespace Menu_Seasons { class ITM_SeasonPlagueH
 
 namespace Game { namespace UI { namespace Menu_Seasons {
 
-class WND_SeasonEventBonus_Plague_C : public Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C
+class WND_SeasonEventBonus_Plague_C : public ::Game::UI::Menu_Seasons::WND_SeasonEventBonus_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonEventBonus_Plague", "WND_SeasonEventBonus_Plague_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_SeasonPlagueHeartBonus_C = Game::UI::Menu_Seasons::ITM_SeasonPlagueHeartBonus_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_SeasonPlagueHeartBonus_C = ::Game::UI::Menu_Seasons::ITM_SeasonPlagueHeartBonus_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_SeasonEventBonus_Plague_C;
     UE_READONLY class UWidgetAnimation* FlipRows;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -96,4 +96,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_SeasonEventBonus_Plague_C = Game::UI::Menu_Seasons::WND_SeasonEventBonus_Plague_C;
+using WND_SeasonEventBonus_Plague_C = ::Game::UI::Menu_Seasons::WND_SeasonEventBonus_Plague_C;

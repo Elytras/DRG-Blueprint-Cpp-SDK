@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_ArkenStout_C = Game::GameElements::Bar::DrinkEffects::DE_ArkenStout_C;
+using DE_ArkenStout_C = ::Game::GameElements::Bar::DrinkEffects::DE_ArkenStout_C;

@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_Flares_C = Game::Character::Tutorials::Tutorial_Hint_Flares_C;
+using Tutorial_Hint_Flares_C = ::Game::Character::Tutorials::Tutorial_Hint_Flares_C;

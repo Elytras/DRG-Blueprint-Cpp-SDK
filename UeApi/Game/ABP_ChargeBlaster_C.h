@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::ChargeBlaster
 
-using ABP_ChargeBlaster_C = Game::WeaponsNTools::ChargeBlaster::ABP_ChargeBlaster_C;
+using ABP_ChargeBlaster_C = ::Game::WeaponsNTools::ChargeBlaster::ABP_ChargeBlaster_C;

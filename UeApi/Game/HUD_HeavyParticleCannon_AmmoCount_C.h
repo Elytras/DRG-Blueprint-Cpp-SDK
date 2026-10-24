@@ -17,8 +17,8 @@ class HUD_HeavyParticleCannon_AmmoCount_C : public UCustomAmmoCountWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HeavyParticleCannon/HUD_HeavyParticleCannon_AmmoCount", "HUD_HeavyParticleCannon_AmmoCount_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using HUD_HeavyParticleCannon_AmmoCount_Internal_C = Game::WeaponsNTools::HeavyParticleCannon::HUD_HeavyParticleCannon_AmmoCount_Internal_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using HUD_HeavyParticleCannon_AmmoCount_Internal_C = ::Game::WeaponsNTools::HeavyParticleCannon::HUD_HeavyParticleCannon_AmmoCount_Internal_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     HUD_HeavyParticleCannon_AmmoCount_Internal_C* HUD_HeavyParticleCannon_AmmoCount_Internal;
@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using HUD_HeavyParticleCannon_AmmoCount_C = Game::WeaponsNTools::HeavyParticleCannon::HUD_HeavyParticleCannon_AmmoCount_C;
+using HUD_HeavyParticleCannon_AmmoCount_C = ::Game::WeaponsNTools::HeavyParticleCannon::HUD_HeavyParticleCannon_AmmoCount_C;

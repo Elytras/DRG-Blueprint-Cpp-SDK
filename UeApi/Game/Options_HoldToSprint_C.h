@@ -16,7 +16,7 @@ class Options_HoldToSprint_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_HoldToSprint", "Options_HoldToSprint_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     void ExecuteUbergraph_Options_HoldToSprint(int EntryPoint);
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_HoldToSprint_C = Game::UI::Menu_Options::Options_HoldToSprint_C;
+using Options_HoldToSprint_C = ::Game::UI::Menu_Options::Options_HoldToSprint_C;

@@ -14,7 +14,7 @@ class UTextBlock;
 
 namespace Game { namespace WeaponsNTools { namespace BoltActionRifle {
 
-class WeaponDisplay_BoltActionRifle_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_BoltActionRifle_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/BoltActionRifle/WeaponDisplay_BoltActionRifle_AmmoCount", "WeaponDisplay_BoltActionRifle_AmmoCount_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::BoltActionRifle
 
-using WeaponDisplay_BoltActionRifle_AmmoCount_C = Game::WeaponsNTools::BoltActionRifle::WeaponDisplay_BoltActionRifle_AmmoCount_C;
+using WeaponDisplay_BoltActionRifle_AmmoCount_C = ::Game::WeaponsNTools::BoltActionRifle::WeaponDisplay_BoltActionRifle_AmmoCount_C;

@@ -23,7 +23,7 @@ class Cheat_SpawnMeteor_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_SpawnMeteor", "Cheat_SpawnMeteor_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Basic_Label_83;
     class UButton* Button_MeteorShower;
@@ -56,4 +56,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnMeteor_C = Game::UI::Menu_Cheats::Cheat_SpawnMeteor_C;
+using Cheat_SpawnMeteor_C = ::Game::UI::Menu_Cheats::Cheat_SpawnMeteor_C;

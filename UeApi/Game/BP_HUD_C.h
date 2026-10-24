@@ -26,8 +26,8 @@ class BP_HUD_C : public AFSDHUD
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/BP_HUD", "BP_HUD_C");
-    using BP_Invitation_C = Game::UI::Menu_Invitation::BP_Invitation_C;
-    using ScreenOverlay_Afflictions_C = Game::UI::ScreenOverlays::ScreenOverlay_Afflictions_C;
+    using BP_Invitation_C = ::Game::UI::Menu_Invitation::BP_Invitation_C;
+    using ScreenOverlay_Afflictions_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Afflictions_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     TArray<class UWidget*> Widgets;
@@ -90,4 +90,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using BP_HUD_C = Game::UI::MainOnscreenHUD::BP_HUD_C;
+using BP_HUD_C = ::Game::UI::MainOnscreenHUD::BP_HUD_C;

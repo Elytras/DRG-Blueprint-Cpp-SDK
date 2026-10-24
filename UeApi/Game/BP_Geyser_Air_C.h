@@ -7,6 +7,7 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../CoreUObject.h"
 #include "../Engine.h"
+#include "FGeyserTimeStruct.h"
 
 class APlayerCharacter;
 class UAudioComponent;
@@ -31,7 +32,7 @@ class BP_Geyser_Air_C : public AActor
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/AirGeyser/BP_Geyser_Air", "BP_Geyser_Air_C");
-    using BP_DamageTriggerComponent_C = Game::LevelElements::Components::BP_DamageTriggerComponent_C;
+    using BP_DamageTriggerComponent_C = ::Game::LevelElements::Components::BP_DamageTriggerComponent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* Damage;
     class UAudioComponent* BublingAudio;
@@ -61,6 +62,7 @@ public:
     FVector2D _Max_0;
     float TraceDown;
     bool Explode;
+    FGeyserTimeStruct State;
     TSet<class APlayerCharacter*> PlayerInCollision;
     FRuntimeFloatCurve GravityCurve;
     bool EffectsActivated;
@@ -108,9 +110,10 @@ private:
         static constexpr const char* _Max__UeName = " Max";
         static constexpr const char* _Max_0__UeName = " Max";
         static constexpr const char* Explode__Replicated = "OnRep_Explode:";
+        static constexpr const char* State__Replicated = "OnRep_State:";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::AirGeyser
 
-using BP_Geyser_Air_C = Game::LevelElements::RoomObjects::Hazards::AirGeyser::BP_Geyser_Air_C;
+using BP_Geyser_Air_C = ::Game::LevelElements::RoomObjects::Hazards::AirGeyser::BP_Geyser_Air_C;

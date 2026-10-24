@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_Headwear_GreatEggHunt2022_Bunny_C = Game::Character::Vanity2::Headwear::ABP_Headwear_GreatEggHunt2022_Bunny_C;
+using ABP_Headwear_GreatEggHunt2022_Bunny_C = ::Game::Character::Vanity2::Headwear::ABP_Headwear_GreatEggHunt2022_Bunny_C;

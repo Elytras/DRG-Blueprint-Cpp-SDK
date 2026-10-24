@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_Escort_LongComplex_C = Game::GameElements::Missions::DNA_Escort_LongComplex_C;
+using DNA_Escort_LongComplex_C = ::Game::GameElements::Missions::DNA_Escort_LongComplex_C;

@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_PlagueTrail_C = Game::UI::ScreenOverlays::ScreenOverlay_PlagueTrail_C;
+using ScreenOverlay_PlagueTrail_C = ::Game::UI::ScreenOverlays::ScreenOverlay_PlagueTrail_C;

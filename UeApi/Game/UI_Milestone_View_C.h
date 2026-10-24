@@ -16,14 +16,14 @@ namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI { class U
 
 namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI {
 
-class UI_Milestone_View_C : public Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C
+class UI_Milestone_View_C : public ::Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Milestone_View", "UI_Milestone_View_C");
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using UI_AvailablePerkPoints_C = Game::UI::HUD_SpaceRig::KPI::UI_AvailablePerkPoints_C;
-    using UI_Milestone_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Item_C;
-    using UI_MissionStats_Categories_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Categories_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using UI_AvailablePerkPoints_C = ::Game::UI::HUD_SpaceRig::KPI::UI_AvailablePerkPoints_C;
+    using UI_Milestone_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_Item_C;
+    using UI_MissionStats_Categories_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Categories_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWrapBox* ItemWrapBox;
     Basic_ScrollBarBox_C* ScrollBar;
@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Milestone_View_C = Game::UI::HUD_SpaceRig::KPI::UI_Milestone_View_C;
+using UI_Milestone_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Milestone_View_C;

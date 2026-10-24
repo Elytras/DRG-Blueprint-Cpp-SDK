@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Armor {
 
-class PRW_Armor_Gunner_C : public Game::WeaponsNTools::Armor::PRW_Armor_Base_C
+class PRW_Armor_Gunner_C : public ::Game::WeaponsNTools::Armor::PRW_Armor_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/PRW_Armor_Gunner", "PRW_Armor_Gunner_C");
@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using PRW_Armor_Gunner_C = Game::WeaponsNTools::Armor::PRW_Armor_Gunner_C;
+using PRW_Armor_Gunner_C = ::Game::WeaponsNTools::Armor::PRW_Armor_Gunner_C;

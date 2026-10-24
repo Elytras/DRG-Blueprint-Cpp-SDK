@@ -14,12 +14,12 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens { namespace Basics {
 
-class LoreScreen_Assignments_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_Assignments_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/Basics/LoreScreen_Assignments", "LoreScreen_Assignments_C");
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_Basics_Info_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Basics_Info_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_Basics_Info_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_Basics_Info_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Assignments_C;
     Lore_Container_Basics_Info_C* Lore_Container3;
     Lore_Container_Basics_Info_C* Lore_Content1;
@@ -38,4 +38,4 @@ private:
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Basics
 
-using LoreScreen_Assignments_C = Game::UI::Menu_MinersManual::InfoScreens::Basics::LoreScreen_Assignments_C;
+using LoreScreen_Assignments_C = ::Game::UI::Menu_MinersManual::InfoScreens::Basics::LoreScreen_Assignments_C;

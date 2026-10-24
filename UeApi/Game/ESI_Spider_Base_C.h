@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::Spider
 
-using ESI_Spider_Base_C = Game::Enemies::Spider::ESI_Spider_Base_C;
+using ESI_Spider_Base_C = ::Game::Enemies::Spider::ESI_Spider_Base_C;

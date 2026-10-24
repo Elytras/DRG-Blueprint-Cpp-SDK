@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::WeaponDisplays
 
-using WeaponDisplay_Overheat_C = Game::UI::WeaponDisplays::WeaponDisplay_Overheat_C;
+using WeaponDisplay_Overheat_C = ::Game::UI::WeaponDisplays::WeaponDisplay_Overheat_C;

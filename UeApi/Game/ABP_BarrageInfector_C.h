@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::Enemies::BarrageInfector
 
-using ABP_BarrageInfector_C = Game::Enemies::BarrageInfector::ABP_BarrageInfector_C;
+using ABP_BarrageInfector_C = ::Game::Enemies::BarrageInfector::ABP_BarrageInfector_C;

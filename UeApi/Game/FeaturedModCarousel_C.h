@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::CategoryBrowser
 
-using FeaturedModCarousel_C = Modio::UI::Browser::Views::CategoryBrowser::FeaturedModCarousel_C;
+using FeaturedModCarousel_C = ::Modio::UI::Browser::Views::CategoryBrowser::FeaturedModCarousel_C;

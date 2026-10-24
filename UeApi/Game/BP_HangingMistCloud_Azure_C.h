@@ -35,4 +35,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald
 
-using BP_HangingMistCloud_Azure_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::BP_HangingMistCloud_Azure_C;
+using BP_HangingMistCloud_Azure_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::BP_HangingMistCloud_Azure_C;

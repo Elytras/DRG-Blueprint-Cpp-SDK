@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Items
 
-using HUD_Itembar_C = Game::UI::MainOnscreenHUD::Items::HUD_Itembar_C;
+using HUD_Itembar_C = ::Game::UI::MainOnscreenHUD::Items::HUD_Itembar_C;

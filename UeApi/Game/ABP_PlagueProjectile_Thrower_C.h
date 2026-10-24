@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueEnemy_Skeletal_Meshes
 
-using ABP_PlagueProjectile_Thrower_C = Game::Enemies::Plague::PlagueEnemy_Skeletal_Meshes::ABP_PlagueProjectile_Thrower_C;
+using ABP_PlagueProjectile_Thrower_C = ::Game::Enemies::Plague::PlagueEnemy_Skeletal_Meshes::ABP_PlagueProjectile_Thrower_C;

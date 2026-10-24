@@ -49,4 +49,4 @@ private:
 
 }}}   // namespace Game::Critters::Maggot
 
-using ENE_Maggot_C = Game::Critters::Maggot::ENE_Maggot_C;
+using ENE_Maggot_C = ::Game::Critters::Maggot::ENE_Maggot_C;

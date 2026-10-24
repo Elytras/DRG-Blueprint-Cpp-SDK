@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using PRJ_BaseGooProjectile_C = Game::WeaponsNTools::GooCannon::PRJ_BaseGooProjectile_C;
+using PRJ_BaseGooProjectile_C = ::Game::WeaponsNTools::GooCannon::PRJ_BaseGooProjectile_C;

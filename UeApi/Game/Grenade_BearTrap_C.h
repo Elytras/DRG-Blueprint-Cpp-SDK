@@ -22,7 +22,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace BearTrap {
 
-class Grenade_BearTrap_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_BearTrap_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BearTrap/Grenade_BearTrap", "Grenade_BearTrap_C");
@@ -55,6 +55,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_BearTrap_C__UeName = "UberGraphFrame";
         static constexpr const char* UseSphere__UeScsNode = "196b00f0477b244d879e34f3ffa0ba4a";
         static constexpr const char* SingleUsable__UeScsNode = "db1a6912420fe34b89c1c19c6545f4b4";
@@ -71,4 +72,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BearTrap
 
-using Grenade_BearTrap_C = Game::WeaponsNTools::Grenades::BearTrap::Grenade_BearTrap_C;
+using Grenade_BearTrap_C = ::Game::WeaponsNTools::Grenades::BearTrap::Grenade_BearTrap_C;

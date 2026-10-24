@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::Enemies::InfestationLarva
 
-using ABP_SlugShowroom_C = Game::Enemies::InfestationLarva::ABP_SlugShowroom_C;
+using ABP_SlugShowroom_C = ::Game::Enemies::InfestationLarva::ABP_SlugShowroom_C;

@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun
 
-using BP_CombatShotgun_PoisonPlatforms_C = Game::WeaponsNTools::CombatShotgun::BP_CombatShotgun_PoisonPlatforms_C;
+using BP_CombatShotgun_PoisonPlatforms_C = ::Game::WeaponsNTools::CombatShotgun::BP_CombatShotgun_PoisonPlatforms_C;

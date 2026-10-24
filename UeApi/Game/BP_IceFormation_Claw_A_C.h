@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace IceFormation {
 
-class BP_IceFormation_Claw_A_C : public Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Base_C
+class BP_IceFormation_Claw_A_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/IceFormation/BP_IceFormation_Claw_A", "BP_IceFormation_Claw_A_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver";
         static constexpr const char* Ice_ClawFormation_B__UeScsNode = "738418ccd9e5094daf0bb80a55107a0f";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::IceFormation
 
-using BP_IceFormation_Claw_A_C = Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Claw_A_C;
+using BP_IceFormation_Claw_A_C = ::Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Claw_A_C;

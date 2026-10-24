@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_DefaultWeapon_C = Game::Character::Camera::CameraShakes::CameraShake_DefaultWeapon_C;
+using CameraShake_DefaultWeapon_C = ::Game::Character::Camera::CameraShakes::CameraShake_DefaultWeapon_C;

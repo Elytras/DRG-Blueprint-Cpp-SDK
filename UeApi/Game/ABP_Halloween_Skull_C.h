@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Holidays::Halloween
 
-using ABP_Halloween_Skull_C = Game::GameElements::Holidays::Halloween::ABP_Halloween_Skull_C;
+using ABP_Halloween_Skull_C = ::Game::GameElements::Holidays::Halloween::ABP_Halloween_Skull_C;

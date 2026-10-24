@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace CozyTreeHollows {
 
-class BP_CozyTreeHollow_Single_C : public Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C
+class BP_CozyTreeHollow_Single_C : public ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/CozyTreeHollows/BP_CozyTreeHollow_Single", "BP_CozyTreeHollow_Single_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver_Entrance;LevelGenerationCarver_Room;TerrainPlacement";
+    };
 };
 
 }}}}   // namespace Game::LevelElements::RoomObjects::CozyTreeHollows
 
-using BP_CozyTreeHollow_Single_C = Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Single_C;
+using BP_CozyTreeHollow_Single_C = ::Game::LevelElements::RoomObjects::CozyTreeHollows::BP_CozyTreeHollow_Single_C;

@@ -38,4 +38,4 @@ public:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper
 
-using HUD_CrossHair_Soapgun_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::HUD_CrossHair_Soapgun_C;
+using HUD_CrossHair_Soapgun_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::HUD_CrossHair_Soapgun_C;

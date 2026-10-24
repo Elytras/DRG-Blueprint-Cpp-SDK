@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using ABP_LockOnRifle_A_C = Game::WeaponsNTools::LockOnRifle::ABP_LockOnRifle_A_C;
+using ABP_LockOnRifle_A_C = ::Game::WeaponsNTools::LockOnRifle::ABP_LockOnRifle_A_C;

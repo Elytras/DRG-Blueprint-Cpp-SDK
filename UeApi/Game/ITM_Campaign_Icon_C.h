@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_Campaign_Icon_C = Game::UI::Menu_MissionSelectionMK3::ITM_Campaign_Icon_C;
+using ITM_Campaign_Icon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_Campaign_Icon_C;

@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickySmall
 
-using PRJ_Grenade_StickySmall_C = Game::WeaponsNTools::Grenades::StickySmall::PRJ_Grenade_StickySmall_C;
+using PRJ_Grenade_StickySmall_C = ::Game::WeaponsNTools::Grenades::StickySmall::PRJ_Grenade_StickySmall_C;

@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using BP_Coilgun_Trailsegment_Base_C = Game::WeaponsNTools::CoilGun::BP_Coilgun_Trailsegment_Base_C;
+using BP_Coilgun_Trailsegment_Base_C = ::Game::WeaponsNTools::CoilGun::BP_Coilgun_Trailsegment_Base_C;

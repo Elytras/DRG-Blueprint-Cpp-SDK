@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::Enemies::Spider
 
-using BP_BurrowComponent_C = Game::Enemies::Spider::BP_BurrowComponent_C;
+using BP_BurrowComponent_C = ::Game::Enemies::Spider::BP_BurrowComponent_C;

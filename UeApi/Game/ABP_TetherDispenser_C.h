@@ -56,4 +56,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using ABP_TetherDispenser_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ABP_TetherDispenser_C;
+using ABP_TetherDispenser_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::ABP_TetherDispenser_C;

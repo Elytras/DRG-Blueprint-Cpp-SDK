@@ -21,8 +21,8 @@ class ITM_FactionSelect_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_FactionSelect", "ITM_FactionSelect_C");
-    using Basic_ButtonScalable_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_ButtonScalable_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     class UVerticalBox* CCDescription;
@@ -48,4 +48,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_FactionSelect_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionSelect_C;
+using ITM_FactionSelect_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionSelect_C;

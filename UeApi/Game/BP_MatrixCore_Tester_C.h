@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::MatrixCore
 
-using BP_MatrixCore_Tester_C = Game::GameElements::GameEvents::RewardDispenser::MatrixCore::BP_MatrixCore_Tester_C;
+using BP_MatrixCore_Tester_C = ::Game::GameElements::GameEvents::RewardDispenser::MatrixCore::BP_MatrixCore_Tester_C;

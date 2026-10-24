@@ -44,4 +44,4 @@ private:
 
 }}}   // namespace Game::UI::Announcements
 
-using Announcement_Label_C = Game::UI::Announcements::Announcement_Label_C;
+using Announcement_Label_C = ::Game::UI::Announcements::Announcement_Label_C;

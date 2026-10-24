@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_Dropdown_C = Game::UI::Art::WidgetParts::Basic_Dropdown_C;
+using Basic_Dropdown_C = ::Game::UI::Art::WidgetParts::Basic_Dropdown_C;

@@ -109,4 +109,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::DrillDozer
 
-using ABP_DrillDozer_C = Game::GameElements::Objectives::Escort::DrillDozer::ABP_DrillDozer_C;
+using ABP_DrillDozer_C = ::Game::GameElements::Objectives::Escort::DrillDozer::ABP_DrillDozer_C;

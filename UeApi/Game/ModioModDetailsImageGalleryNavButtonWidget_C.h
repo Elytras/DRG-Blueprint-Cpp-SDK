@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::ModDetails
 
-using ModioModDetailsImageGalleryNavButtonWidget_C = Modio::UI::Browser::Views::ModDetails::ModioModDetailsImageGalleryNavButtonWidget_C;
+using ModioModDetailsImageGalleryNavButtonWidget_C = ::Modio::UI::Browser::Views::ModDetails::ModioModDetailsImageGalleryNavButtonWidget_C;

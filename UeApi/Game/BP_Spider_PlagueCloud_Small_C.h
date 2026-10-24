@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Plague {
 
-class BP_Spider_PlagueCloud_Small_C : public Game::Enemies::Plague::BP_Spider_PlagueCloud_C
+class BP_Spider_PlagueCloud_Small_C : public ::Game::Enemies::Plague::BP_Spider_PlagueCloud_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/BP_Spider_PlagueCloud_Small", "BP_Spider_PlagueCloud_Small_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "NS_Plague_Spider_Tank_DeathCloud;AcidCloud;Sphere";
+    };
 };
 
 }}}   // namespace Game::Enemies::Plague
 
-using BP_Spider_PlagueCloud_Small_C = Game::Enemies::Plague::BP_Spider_PlagueCloud_Small_C;
+using BP_Spider_PlagueCloud_Small_C = ::Game::Enemies::Plague::BP_Spider_PlagueCloud_Small_C;

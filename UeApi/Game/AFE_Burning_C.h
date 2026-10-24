@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::Burning
 
-using AFE_Burning_C = Game::GameElements::PawnAffliction::EnemyEffects::Burning::AFE_Burning_C;
+using AFE_Burning_C = ::Game::GameElements::PawnAffliction::EnemyEffects::Burning::AFE_Burning_C;

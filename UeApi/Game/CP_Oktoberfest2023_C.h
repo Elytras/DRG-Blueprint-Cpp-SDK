@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Campaign::OLDSeasonalEventCampaigns
 
-using CP_Oktoberfest2023_C = Game::GameElements::Campaign::OLDSeasonalEventCampaigns::CP_Oktoberfest2023_C;
+using CP_Oktoberfest2023_C = ::Game::GameElements::Campaign::OLDSeasonalEventCampaigns::CP_Oktoberfest2023_C;

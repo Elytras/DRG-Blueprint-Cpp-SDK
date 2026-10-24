@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_PlagueMeteor_Indicator_C = Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteor_Indicator_C;
+using BP_PlagueMeteor_Indicator_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_PlagueMeteor_Indicator_C;

@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder
 
-using OnScreenIndicator_RockCracker_Build_C = Game::WeaponsNTools::RockCrackerBuilder::OnScreenIndicator_RockCracker_Build_C;
+using OnScreenIndicator_RockCracker_Build_C = ::Game::WeaponsNTools::RockCrackerBuilder::OnScreenIndicator_RockCracker_Build_C;

@@ -19,8 +19,8 @@ class AIC_EscortMule_C : public AEscortMuleAIController
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/AIC_EscortMule", "AIC_EscortMule_C");
-    using EWC_Escort_DigPhase_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_DigPhase_C;
-    using EWC_Escort_Refueling_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_Refueling_C;
+    using EWC_Escort_DigPhase_C = ::Game::Enemies::Waves::WaveControllers::EWC_Escort_DigPhase_C;
+    using EWC_Escort_Refueling_C = ::Game::Enemies::Waves::WaveControllers::EWC_Escort_Refueling_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class AEscortMule* EscortMule;
     bool DoDebugPath;
@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using AIC_EscortMule_C = Game::GameElements::Objectives::Escort::AIC_EscortMule_C;
+using AIC_EscortMule_C = ::Game::GameElements::Objectives::Escort::AIC_EscortMule_C;

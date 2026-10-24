@@ -20,7 +20,7 @@ class ITM_Loadout_UpgradeBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_Loadout_UpgradeBar", "ITM_Loadout_UpgradeBar_C");
-    using ITM_UpgGear_UpgIconSingle_C = Game::UI::Menu_Loadout::ITM_UpgGear_UpgIconSingle_C;
+    using ITM_UpgGear_UpgIconSingle_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_UpgIconSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_UpgGear_UpgIconSingle_C* ITM_UpgGear_UpgIconSingle;
     ITM_UpgGear_UpgIconSingle_C* ITM_UpgGear_UpgIconSingle_0;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_Loadout_UpgradeBar_C = Game::UI::Menu_Loadout::ITM_Loadout_UpgradeBar_C;
+using ITM_Loadout_UpgradeBar_C = ::Game::UI::Menu_Loadout::ITM_Loadout_UpgradeBar_C;

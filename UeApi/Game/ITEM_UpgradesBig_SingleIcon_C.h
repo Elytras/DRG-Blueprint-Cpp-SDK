@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ITEM_UpgradesBig_SingleIcon_C = Game::UI::CharacterSelectionMK2::ITEM_UpgradesBig_SingleIcon_C;
+using ITEM_UpgradesBig_SingleIcon_C = ::Game::UI::CharacterSelectionMK2::ITEM_UpgradesBig_SingleIcon_C;

@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Chat
 
-using HUD_ChatLine_C = Game::UI::Chat::HUD_ChatLine_C;
+using HUD_ChatLine_C = ::Game::UI::Chat::HUD_ChatLine_C;

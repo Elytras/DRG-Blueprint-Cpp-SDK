@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher
 
-using PRW_GrenadeLauncher_C = Game::WeaponsNTools::GrenadeLauncher::PRW_GrenadeLauncher_C;
+using PRW_GrenadeLauncher_C = ::Game::WeaponsNTools::GrenadeLauncher::PRW_GrenadeLauncher_C;

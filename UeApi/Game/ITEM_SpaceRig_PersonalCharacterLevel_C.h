@@ -20,9 +20,9 @@ class ITEM_SpaceRig_PersonalCharacterLevel_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ITEM_SpaceRig_PersonalCharacterLevel", "ITEM_SpaceRig_PersonalCharacterLevel_C");
-    using ITM_CharacterBuffIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterBuffIcon_C;
-    using ITM_CharacterData_C = Game::UI::Global_UI_Elements::ITM_CharacterData_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_CharacterBuffIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterBuffIcon_C;
+    using ITM_CharacterData_C = ::Game::UI::Global_UI_Elements::ITM_CharacterData_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UCanvasPanel* CanvasPanel_Base;
     ITM_CharacterBuffIcon_C* ITM_CharacterBuffIcon;
@@ -49,4 +49,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ITEM_SpaceRig_PersonalCharacterLevel_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PersonalCharacterLevel_C;
+using ITEM_SpaceRig_PersonalCharacterLevel_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_PersonalCharacterLevel_C;

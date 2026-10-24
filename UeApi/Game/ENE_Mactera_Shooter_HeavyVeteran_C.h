@@ -13,11 +13,11 @@ namespace Game { namespace Enemies { namespace FlyingBug { namespace Shooter { c
 
 namespace Game { namespace Enemies { namespace FlyingBug { namespace Shooter {
 
-class ENE_Mactera_Shooter_HeavyVeteran_C : public Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Base_C
+class ENE_Mactera_Shooter_HeavyVeteran_C : public ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/ENE_Mactera_Shooter_HeavyVeteran", "ENE_Mactera_Shooter_HeavyVeteran_C");
-    using BP_Mactera_Heavy_ProjectileAttack_C = Game::Enemies::FlyingBug::Shooter::BP_Mactera_Heavy_ProjectileAttack_C;
+    using BP_Mactera_Heavy_ProjectileAttack_C = ::Game::Enemies::FlyingBug::Shooter::BP_Mactera_Heavy_ProjectileAttack_C;
     FPointerToUberGraphFrame UberGraphFrame_ENE_Mactera_Shooter_HeavyVeteran_C;
     BP_Mactera_Heavy_ProjectileAttack_C* Mactera_Heavy_ProjectileAttack;
     class UArmorHealthDamageComponent* ArmorHealthDamage;
@@ -30,6 +30,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent WingSound;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.FrozenPawnImpactComponent FrozenImpact;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.OutlineComponent Outline;/Script/FSD.PawnAlertComponent Alert;/Script/AIModule.PawnSensingComponent Sensing;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent ExplosionSphere;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "DashPoints";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.NormalProjectileAttack Mactera_Heavy_ProjectileAttack_GEN_VARIABLE:NormalProjectileAttack_0";
         static constexpr const char* UberGraphFrame_ENE_Mactera_Shooter_HeavyVeteran_C__UeName = "UberGraphFrame";
         static constexpr const char* Mactera_Heavy_ProjectileAttack__UeScsNode = "21fd5c53a7638f46be92e25d4850c043";
         static constexpr const char* ArmorHealthDamage__UeScsNode = "5e2d3bded62a1843bdea6d062889284b";
@@ -39,4 +41,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using ENE_Mactera_Shooter_HeavyVeteran_C = Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_HeavyVeteran_C;
+using ENE_Mactera_Shooter_HeavyVeteran_C = ::Game::Enemies::FlyingBug::Shooter::ENE_Mactera_Shooter_HeavyVeteran_C;

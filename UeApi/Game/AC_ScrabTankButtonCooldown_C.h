@@ -33,4 +33,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank
 
-using AC_ScrabTankButtonCooldown_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::AC_ScrabTankButtonCooldown_C;
+using AC_ScrabTankButtonCooldown_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::AC_ScrabTankButtonCooldown_C;

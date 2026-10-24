@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using WND_MorkiteExtractorPod_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::WND_MorkiteExtractorPod_C;
+using WND_MorkiteExtractorPod_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::WND_MorkiteExtractorPod_C;

@@ -20,7 +20,7 @@ class HUD_PropHunt_EndScreen_C : public UPropHuntEndScreenWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/UI/HUD_PropHunt_EndScreen", "HUD_PropHunt_EndScreen_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     Basic_Label_C* Hunters_Label;
@@ -39,4 +39,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::UI
 
-using HUD_PropHunt_EndScreen_C = Game::GameElements::Bar::Drinkables::PropHunt::UI::HUD_PropHunt_EndScreen_C;
+using HUD_PropHunt_EndScreen_C = ::Game::GameElements::Bar::Drinkables::PropHunt::UI::HUD_PropHunt_EndScreen_C;

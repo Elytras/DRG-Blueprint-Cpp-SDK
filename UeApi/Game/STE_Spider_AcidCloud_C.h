@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Tank
 
-using STE_Spider_AcidCloud_C = Game::Enemies::Spider::Tank::STE_Spider_AcidCloud_C;
+using STE_Spider_AcidCloud_C = ::Game::Enemies::Spider::Tank::STE_Spider_AcidCloud_C;

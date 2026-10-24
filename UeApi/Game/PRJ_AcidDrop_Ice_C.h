@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace FlyingBug { namespace Bomber {
 
-class PRJ_AcidDrop_Ice_C : public Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop_C
+class PRJ_AcidDrop_Ice_C : public ::Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Bomber/PRJ_AcidDrop_Ice", "PRJ_AcidDrop_Ice_C");
@@ -27,4 +27,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using PRJ_AcidDrop_Ice_C = Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop_Ice_C;
+using PRJ_AcidDrop_Ice_C = ::Game::Enemies::FlyingBug::Bomber::PRJ_AcidDrop_Ice_C;

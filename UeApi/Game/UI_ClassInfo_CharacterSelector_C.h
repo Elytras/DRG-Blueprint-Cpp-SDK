@@ -18,7 +18,7 @@ class UI_ClassInfo_CharacterSelector_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Lobby/UI_ClassInfo_CharacterSelector", "UI_ClassInfo_CharacterSelector_C");
-    using UI_ClassInfo_CharacterIcon_C = Game::UI::Menu_Lobby::UI_ClassInfo_CharacterIcon_C;
+    using UI_ClassInfo_CharacterIcon_C = ::Game::UI::Menu_Lobby::UI_ClassInfo_CharacterIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* IconParent;
     TMulticastInlineDelegate<void(class UClass* playerClass)> OnClassSelected;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Lobby
 
-using UI_ClassInfo_CharacterSelector_C = Game::UI::Menu_Lobby::UI_ClassInfo_CharacterSelector_C;
+using UI_ClassInfo_CharacterSelector_C = ::Game::UI::Menu_Lobby::UI_ClassInfo_CharacterSelector_C;

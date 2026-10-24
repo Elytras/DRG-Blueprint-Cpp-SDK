@@ -53,4 +53,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrossHair_NewSawedOffShotgunDynamic_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_NewSawedOffShotgunDynamic_C;
+using HUD_CrossHair_NewSawedOffShotgunDynamic_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_NewSawedOffShotgunDynamic_C;

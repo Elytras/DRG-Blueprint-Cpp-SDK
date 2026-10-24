@@ -36,7 +36,7 @@ public:
     TEnum<ETimelineDirection> Timeline_0__Direction_2CB0110A43F837100C1A68A2642737BF;
     class UTimelineComponent* Timeline_0;
     int Normal_Gravity;
-    bool Can_Use;
+    bool Can_use;
     class ASkyLight* SkyLight;
     FLinearColor OriginalSkylightClour;
     float OriginalSkyLightIntensity;
@@ -58,10 +58,10 @@ private:
         static constexpr const char* InstantUsable__UeScsNode = "aab97a1ccd173f449657189d56d1f812";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "78ec7b2fcc64164684eb7550d5225f4c";
         static constexpr const char* Normal_Gravity__UeName = "Normal Gravity";
-        static constexpr const char* Can_Use__UeName = "Can Use";
+        static constexpr const char* Can_use__UeName = "Can use";
     };
 };
 
 }}}   // namespace Game::LevelElements::Spacerig
 
-using BP_GravitySwitch_C = Game::LevelElements::Spacerig::BP_GravitySwitch_C;
+using BP_GravitySwitch_C = ::Game::LevelElements::Spacerig::BP_GravitySwitch_C;

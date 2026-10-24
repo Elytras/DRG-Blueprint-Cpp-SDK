@@ -26,8 +26,8 @@ class ITM_CharacterData_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_CharacterData", "ITM_CharacterData_C");
-    using UI_Character_Supplies_C = Game::UI::Global_UI_Elements::UI_Character_Supplies_C;
-    using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
+    using UI_Character_Supplies_C = ::Game::UI::Global_UI_Elements::UI_Character_Supplies_C;
+    using UI_PlayerSpeaking_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* DATA_CharacterLevel;
     class UTextBlock* DATA_CharName;
@@ -75,4 +75,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_CharacterData_C = Game::UI::Global_UI_Elements::ITM_CharacterData_C;
+using ITM_CharacterData_C = ::Game::UI::Global_UI_Elements::ITM_CharacterData_C;

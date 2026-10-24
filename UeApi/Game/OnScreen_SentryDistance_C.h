@@ -19,8 +19,8 @@ class OnScreen_SentryDistance_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/OnScreen_SentryDistance", "OnScreen_SentryDistance_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowSmall_C* BasicWindow_BracketSmall;
     HUD_DefaultLabel_C* Distance;
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using OnScreen_SentryDistance_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::OnScreen_SentryDistance_C;
+using OnScreen_SentryDistance_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::OnScreen_SentryDistance_C;

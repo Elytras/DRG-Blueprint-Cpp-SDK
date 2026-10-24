@@ -34,4 +34,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Carvers
 
-using BP_SandblastedRockIsland_3_C = Game::LevelElements::RoomObjects::Carvers::BP_SandblastedRockIsland_3_C;
+using BP_SandblastedRockIsland_3_C = ::Game::LevelElements::RoomObjects::Carvers::BP_SandblastedRockIsland_3_C;

@@ -19,7 +19,7 @@ class OnScreenIndicator_Actor_Nametag_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_Actor_Nametag", "OnScreenIndicator_Actor_Nametag_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowSmall_C* Basic_HUD_BracketWindowSmall;
     class UTextBlock* DATA_Class;
@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_Actor_Nametag_C = Game::UI::OnScreenIndicators::OnScreenIndicator_Actor_Nametag_C;
+using OnScreenIndicator_Actor_Nametag_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_Actor_Nametag_C;

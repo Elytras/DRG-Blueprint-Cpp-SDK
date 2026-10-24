@@ -18,7 +18,7 @@ class Cheat_GiveBeerBuff_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_GiveBeerBuff", "Cheat_GiveBeerBuff_C");
-    using Cheat_GiveBeerBuff_Row_C = Game::UI::Menu_Cheats::Cheat_GiveBeerBuff_Row_C;
+    using Cheat_GiveBeerBuff_Row_C = ::Game::UI::Menu_Cheats::Cheat_GiveBeerBuff_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UScrollBox* ScrollBox_79;
     TArray<class UTemporaryBuff*> BeerBuffList;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_GiveBeerBuff_C = Game::UI::Menu_Cheats::Cheat_GiveBeerBuff_C;
+using Cheat_GiveBeerBuff_C = ::Game::UI::Menu_Cheats::Cheat_GiveBeerBuff_C;

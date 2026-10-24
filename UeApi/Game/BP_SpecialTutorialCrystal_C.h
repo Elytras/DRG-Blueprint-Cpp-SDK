@@ -28,12 +28,12 @@ public:
     TEnum<ETimelineDirection> Timeline_0__Direction_CD888BD245F644A958710A8BA8A62D72;
     class UTimelineComponent* Timeline_0;
     float InitialIntensity;
-    void Timeline_0__FinishedFunc();
-    void Timeline_0__UpdateFunc();
-    void ReceiveBeginPlay();
-    void OnMatchStarted_Event_0();
-    void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void ExecuteUbergraph_BP_SpecialTutorialCrystal(int EntryPoint);
+    void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
+    void OnMatchStarted_Event_0();
+    void ReceiveBeginPlay();
+    void Timeline_0__UpdateFunc();
+    void Timeline_0__FinishedFunc();
 private:
     struct UeMarkers
     {
@@ -46,4 +46,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Tutorial
 
-using BP_SpecialTutorialCrystal_C = Game::LevelElements::Tutorial::BP_SpecialTutorialCrystal_C;
+using BP_SpecialTutorialCrystal_C = ::Game::LevelElements::Tutorial::BP_SpecialTutorialCrystal_C;

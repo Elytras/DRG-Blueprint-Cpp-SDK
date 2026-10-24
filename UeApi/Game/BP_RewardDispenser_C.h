@@ -26,8 +26,8 @@ class BP_RewardDispenser_C : public AEventRewardDispenser
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/BP_RewardDispenser", "BP_RewardDispenser_C");
-    using BP_CoreInfuser_Rewards_Selector_C = Game::GameElements::GameEvents::CoreInfuser::BP_CoreInfuser_Rewards_Selector_C;
-    using BP_RewardUsableComponent_C = Game::GameElements::GameEvents::RewardDispenser::BP_RewardUsableComponent_C;
+    using BP_CoreInfuser_Rewards_Selector_C = ::Game::GameElements::GameEvents::CoreInfuser::BP_CoreInfuser_Rewards_Selector_C;
+    using BP_RewardUsableComponent_C = ::Game::GameElements::GameEvents::RewardDispenser::BP_RewardUsableComponent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BP_RewardUsableComponent_C* BP_RewardUsableComponent;
     class UChildActorComponent* RewardSelectorActor;
@@ -56,6 +56,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/GameEvents/CoreInfuser/BP_CoreInfuser_Rewards_Selector.BP_CoreInfuser_Rewards_Selector_C RewardSelectorActor_GEN_VARIABLE:RewardSelectorActor_GEN_VARIABLE_BP_CoreInfuser_Hologram_C_CAT";
         static constexpr const char* BP_RewardUsableComponent__UeScsNode = "477f265087e1ef4592dd70c7e583e212";
         static constexpr const char* RewardSelectorActor__UeScsNode = "1110c65d69f5dc46a98aedd1bdff3dd0";
         static constexpr const char* PlayerTrigger__UeScsNode = "121d422d3bd9d04c923a53f92de00ec8";
@@ -69,4 +70,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RewardDispenser
 
-using BP_RewardDispenser_C = Game::GameElements::GameEvents::RewardDispenser::BP_RewardDispenser_C;
+using BP_RewardDispenser_C = ::Game::GameElements::GameEvents::RewardDispenser::BP_RewardDispenser_C;

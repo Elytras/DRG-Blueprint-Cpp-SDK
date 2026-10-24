@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using STE_SentinelGoo_C = Game::Enemies::Spider::TankBoss::BossHeavy::STE_SentinelGoo_C;
+using STE_SentinelGoo_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::STE_SentinelGoo_C;

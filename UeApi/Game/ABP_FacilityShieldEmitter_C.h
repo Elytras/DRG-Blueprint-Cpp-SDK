@@ -46,4 +46,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::VaultShieldEmitter
 
-using ABP_FacilityShieldEmitter_C = Game::GameElements::Objectives::Facility::VaultShieldEmitter::ABP_FacilityShieldEmitter_C;
+using ABP_FacilityShieldEmitter_C = ::Game::GameElements::Objectives::Facility::VaultShieldEmitter::ABP_FacilityShieldEmitter_C;

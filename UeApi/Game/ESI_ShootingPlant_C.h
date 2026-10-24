@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::ShootingPlant
 
-using ESI_ShootingPlant_C = Game::Enemies::ShootingPlant::ESI_ShootingPlant_C;
+using ESI_ShootingPlant_C = ::Game::Enemies::ShootingPlant::ESI_ShootingPlant_C;

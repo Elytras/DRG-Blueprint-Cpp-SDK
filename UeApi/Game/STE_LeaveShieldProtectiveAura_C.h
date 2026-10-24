@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ShieldGenerator
 
-using STE_LeaveShieldProtectiveAura_C = Game::WeaponsNTools::ShieldGenerator::STE_LeaveShieldProtectiveAura_C;
+using STE_LeaveShieldProtectiveAura_C = ::Game::WeaponsNTools::ShieldGenerator::STE_LeaveShieldProtectiveAura_C;

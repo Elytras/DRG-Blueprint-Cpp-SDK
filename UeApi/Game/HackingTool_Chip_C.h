@@ -26,12 +26,12 @@ class HackingTool_Chip_C : public UHackingToolWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Chip/HackingTool_Chip", "HackingTool_Chip_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using UI_CircularProgressBar_C = Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
-    using UI_HackingTool_Button_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
-    using UI_HackingTool_Header_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
-    using UI_HackingTool_Progress_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using UI_CircularProgressBar_C = ::Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
+    using UI_HackingTool_Button_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
+    using UI_HackingTool_Header_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
+    using UI_HackingTool_Progress_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimEnableInterface;
     UE_READONLY class UWidgetAnimation* AnimHackingCompleted;
@@ -111,4 +111,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Chip
 
-using HackingTool_Chip_C = Game::WeaponsNTools::HackingTool::UI::Chip::HackingTool_Chip_C;
+using HackingTool_Chip_C = ::Game::WeaponsNTools::HackingTool::UI::Chip::HackingTool_Chip_C;

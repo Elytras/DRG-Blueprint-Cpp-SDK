@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using UI_UndoIcon_C = Game::UI::Menu_Wardrobe::UI_UndoIcon_C;
+using UI_UndoIcon_C = ::Game::UI::Menu_Wardrobe::UI_UndoIcon_C;

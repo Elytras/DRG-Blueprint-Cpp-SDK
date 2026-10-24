@@ -21,7 +21,7 @@ class HUD_ActorContext_Manager_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_ActorContext_Manager", "HUD_ActorContext_Manager_C");
-    using HUD_PipelineContext_C = Game::LevelElements::Refinery::Pipeline::HUD_PipelineContext_C;
+    using HUD_PipelineContext_C = ::Game::LevelElements::Refinery::Pipeline::HUD_PipelineContext_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UOverlay* ContextParent;
     HUD_PipelineContext_C* HUD_PipelineContext;
@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_ActorContext_Manager_C = Game::UI::MainOnscreenHUD::HUD_ActorContext_Manager_C;
+using HUD_ActorContext_Manager_C = ::Game::UI::MainOnscreenHUD::HUD_ActorContext_Manager_C;

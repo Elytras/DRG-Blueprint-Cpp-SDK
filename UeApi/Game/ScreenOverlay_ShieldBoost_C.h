@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_ShieldBoost_C = Game::UI::ScreenOverlays::ScreenOverlay_ShieldBoost_C;
+using ScreenOverlay_ShieldBoost_C = ::Game::UI::ScreenOverlays::ScreenOverlay_ShieldBoost_C;

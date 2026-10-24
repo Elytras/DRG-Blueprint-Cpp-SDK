@@ -17,7 +17,7 @@ class APB_ShootingPlant_C : public UShootingPlantAnimInstance
 {
 public:
     UE_CLASS("/Game/Enemies/ShootingPlant/APB_ShootingPlant", "APB_ShootingPlant_C");
-    using ENE_ShootingPlant_C = Game::Enemies::ShootingPlant::ENE_ShootingPlant_C;
+    using ENE_ShootingPlant_C = ::Game::Enemies::ShootingPlant::ENE_ShootingPlant_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_3;
@@ -49,4 +49,4 @@ public:
 
 }}}   // namespace Game::Enemies::ShootingPlant
 
-using APB_ShootingPlant_C = Game::Enemies::ShootingPlant::APB_ShootingPlant_C;
+using APB_ShootingPlant_C = ::Game::Enemies::ShootingPlant::APB_ShootingPlant_C;

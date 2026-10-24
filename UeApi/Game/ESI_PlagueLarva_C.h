@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueLarva
 
-using ESI_PlagueLarva_C = Game::Enemies::Plague::PlagueLarva::ESI_PlagueLarva_C;
+using ESI_PlagueLarva_C = ::Game::Enemies::Plague::PlagueLarva::ESI_PlagueLarva_C;

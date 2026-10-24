@@ -18,7 +18,7 @@ class AIC_Shredder_C : public AFSDAIController
 {
 public:
     UE_CLASS("/Game/Enemies/RivalTech/Shredder/AIC_Shredder", "AIC_Shredder_C");
-    using ENE_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
+    using ENE_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::ENE_Jelly_Passive_Mother_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     float SpeedModifier;
@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Shredder
 
-using AIC_Shredder_C = Game::Enemies::RivalTech::Shredder::AIC_Shredder_C;
+using AIC_Shredder_C = ::Game::Enemies::RivalTech::Shredder::AIC_Shredder_C;

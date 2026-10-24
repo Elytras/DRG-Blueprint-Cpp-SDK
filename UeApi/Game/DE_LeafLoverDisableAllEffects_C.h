@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_LeafLoverDisableAllEffects_C = Game::GameElements::Bar::DrinkEffects::DE_LeafLoverDisableAllEffects_C;
+using DE_LeafLoverDisableAllEffects_C = ::Game::GameElements::Bar::DrinkEffects::DE_LeafLoverDisableAllEffects_C;

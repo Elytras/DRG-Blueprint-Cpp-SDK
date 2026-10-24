@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using PRJ_Mortar_Autocannon_C = Game::WeaponsNTools::Autocannon::PRJ_Mortar_Autocannon_C;
+using PRJ_Mortar_Autocannon_C = ::Game::WeaponsNTools::Autocannon::PRJ_Mortar_Autocannon_C;

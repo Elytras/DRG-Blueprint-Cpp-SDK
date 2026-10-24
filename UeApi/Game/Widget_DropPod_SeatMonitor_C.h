@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_SeatMonitor_C = Game::Art::DropPod::Widgets::Widget_DropPod_SeatMonitor_C;
+using Widget_DropPod_SeatMonitor_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_SeatMonitor_C;

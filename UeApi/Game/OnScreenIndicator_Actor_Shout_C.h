@@ -18,7 +18,7 @@ class OnScreenIndicator_Actor_Shout_C : public UShoutWidget
 {
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_Actor_Shout", "OnScreenIndicator_Actor_Shout_C");
-    using UI_ShoutBox_C = Game::UI::MainOnscreenHUD::Subtitles::UI_ShoutBox_C;
+    using UI_ShoutBox_C = ::Game::UI::MainOnscreenHUD::Subtitles::UI_ShoutBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ShoutBox_C* ShoutBox;
     void ExecuteUbergraph_OnScreenIndicator_Actor_Shout(int EntryPoint);
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_Actor_Shout_C = Game::UI::OnScreenIndicators::OnScreenIndicator_Actor_Shout_C;
+using OnScreenIndicator_Actor_Shout_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_Actor_Shout_C;

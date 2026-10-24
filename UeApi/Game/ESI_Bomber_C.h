@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using ESI_Bomber_C = Game::Enemies::FlyingBug::Bomber::ESI_Bomber_C;
+using ESI_Bomber_C = ::Game::Enemies::FlyingBug::Bomber::ESI_Bomber_C;

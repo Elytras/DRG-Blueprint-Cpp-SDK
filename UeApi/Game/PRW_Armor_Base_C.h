@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using PRW_Armor_Base_C = Game::WeaponsNTools::Armor::PRW_Armor_Base_C;
+using PRW_Armor_Base_C = ::Game::WeaponsNTools::Armor::PRW_Armor_Base_C;

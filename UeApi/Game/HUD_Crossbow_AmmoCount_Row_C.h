@@ -21,9 +21,9 @@ class HUD_Crossbow_AmmoCount_Row_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/HUD_Crossbow_AmmoCount_Row", "HUD_Crossbow_AmmoCount_Row_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class USizeBox* Height_Box;
     Basic_Image_C* Icon;
@@ -43,4 +43,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Crossbow
 
-using HUD_Crossbow_AmmoCount_Row_C = Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_Row_C;
+using HUD_Crossbow_AmmoCount_Row_C = ::Game::WeaponsNTools::Crossbow::HUD_Crossbow_AmmoCount_Row_C;

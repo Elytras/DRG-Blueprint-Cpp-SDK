@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies
 
-using AFE_HeroEnemies_C = Game::GameElements::Missions::Warnings::HeroEnemies::AFE_HeroEnemies_C;
+using AFE_HeroEnemies_C = ::Game::GameElements::Missions::Warnings::HeroEnemies::AFE_HeroEnemies_C;

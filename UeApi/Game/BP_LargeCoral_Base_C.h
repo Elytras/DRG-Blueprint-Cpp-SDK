@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::LargeCoral
 
-using BP_LargeCoral_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::LargeCoral::BP_LargeCoral_Base_C;
+using BP_LargeCoral_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::LargeCoral::BP_LargeCoral_Base_C;

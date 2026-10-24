@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using ABP_DLC_11_Gunner_C = Game::Character::Vanity2::Armor::ABP_DLC_11_Gunner_C;
+using ABP_DLC_11_Gunner_C = ::Game::Character::Vanity2::Armor::ABP_DLC_11_Gunner_C;

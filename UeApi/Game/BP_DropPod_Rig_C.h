@@ -24,7 +24,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace Droppod {
 
-class BP_DropPod_Rig_C : public Game::LevelElements::Droppod::BP_DropPod_Base_C
+class BP_DropPod_Rig_C : public ::Game::LevelElements::Droppod::BP_DropPod_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/Droppod/BP_DropPod_Rig", "BP_DropPod_Rig_C");
@@ -71,6 +71,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeIchRecords = "BP_Drop_CamShake;Spawn1;Spawn2;Spawn3;Spawn4;Widget_DangerLevel01;Widget_DangerLevel02;PathfinderBlocker;Ramp;Spot1;Spot2";
+        static constexpr const char* UeTemplateSubobjects = "/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel01_GEN_VARIABLE:Widget_DangerLevel01_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel02_GEN_VARIABLE:Widget_DangerLevel02_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT";
         static constexpr const char* UberGraphFrame_BP_DropPod_Rig_C__UeName = "UberGraphFrame";
         static constexpr const char* ParticleSystem__UeScsNode = "342c4d5f73e7404b9c9ccd0fb74944c2";
         static constexpr const char* Sphere__UeScsNode = "31ae964572b18b41920e7bac26a978f7";
@@ -93,4 +95,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Droppod
 
-using BP_DropPod_Rig_C = Game::LevelElements::Droppod::BP_DropPod_Rig_C;
+using BP_DropPod_Rig_C = ::Game::LevelElements::Droppod::BP_DropPod_Rig_C;

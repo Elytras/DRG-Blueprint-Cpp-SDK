@@ -18,7 +18,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace Art { namespace Environments { namespace Holiday_GreatEggHunt { namespace Blueprint {
 
-class BP_Phys_GreatEggHunt_InflatableCarrot_C : public Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
+class BP_Phys_GreatEggHunt_InflatableCarrot_C : public ::Game::Art::Environments::SpaceRig::BP_Kickable_Base_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/Holiday_GreatEggHunt/Blueprint/BP_Phys_GreatEggHunt_InflatableCarrot", "BP_Phys_GreatEggHunt_InflatableCarrot_C");
@@ -37,6 +37,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Capsule;InstantUsable;Kickable Mesh";
         static constexpr const char* UberGraphFrame_BP_Phys_GreatEggHunt_InflatableCarrot_C__UeName = "UberGraphFrame";
         static constexpr const char* UseableCapsule__UeScsNode = "221abbc506864649a8a85e34457764ef";
         static constexpr const char* PopParticles__UeScsNode = "0d65edb7d5aa7d42a389616976b06fde";
@@ -47,4 +48,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint
 
-using BP_Phys_GreatEggHunt_InflatableCarrot_C = Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_Phys_GreatEggHunt_InflatableCarrot_C;
+using BP_Phys_GreatEggHunt_InflatableCarrot_C = ::Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_Phys_GreatEggHunt_InflatableCarrot_C;

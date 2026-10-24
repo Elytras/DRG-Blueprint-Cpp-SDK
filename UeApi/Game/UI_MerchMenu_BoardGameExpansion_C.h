@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::UI::MENU_Merch::BoardGame
 
-using UI_MerchMenu_BoardGameExpansion_C = Game::UI::MENU_Merch::BoardGame::UI_MerchMenu_BoardGameExpansion_C;
+using UI_MerchMenu_BoardGameExpansion_C = ::Game::UI::MENU_Merch::BoardGame::UI_MerchMenu_BoardGameExpansion_C;

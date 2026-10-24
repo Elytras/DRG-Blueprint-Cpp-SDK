@@ -51,4 +51,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_MissionStats_Category_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Category_C;
+using UI_MissionStats_Category_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_Category_C;

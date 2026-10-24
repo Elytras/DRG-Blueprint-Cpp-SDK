@@ -44,4 +44,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_Anniversary::Blueprint
 
-using BP_Anniversary_RoundLamp_C = Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_RoundLamp_C;
+using BP_Anniversary_RoundLamp_C = ::Game::Art::Environments::Holiday_Anniversary::Blueprint::BP_Anniversary_RoundLamp_C;

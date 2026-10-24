@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_AttachedState_C = Game::Character::States::BP_AttachedState_C;
+using BP_AttachedState_C = ::Game::Character::States::BP_AttachedState_C;

@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace LoosePhysicalObjects { namespace PhysicalPinecones {
 
-class BP_PineconeSpawner_4_C : public Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PineconeSpawner_Base_C
+class BP_PineconeSpawner_4_C : public ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PineconeSpawner_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/LoosePhysicalObjects/PhysicalPinecones/BP_PineconeSpawner_4", "BP_PineconeSpawner_4_C");
@@ -29,4 +29,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones
 
-using BP_PineconeSpawner_4_C = Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PineconeSpawner_4_C;
+using BP_PineconeSpawner_4_C = ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PineconeSpawner_4_C;

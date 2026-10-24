@@ -16,7 +16,7 @@ class ABP_Spike_B_C : public UAnimInstance
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SpikyPlant/ABP_Spike_B", "ABP_Spike_B_C");
-    using BP_SpikeyPlant_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::BP_SpikeyPlant_C;
+    using BP_SpikeyPlant_C = ::Game::LevelElements::RoomObjects::Hazards::SpikyPlant::BP_SpikeyPlant_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_3;
@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpikyPlant
 
-using ABP_Spike_B_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::ABP_Spike_B_C;
+using ABP_Spike_B_C = ::Game::LevelElements::RoomObjects::Hazards::SpikyPlant::ABP_Spike_B_C;

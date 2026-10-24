@@ -18,7 +18,7 @@ class UI_RewardSchematic_C : public URewardWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CampaignNotifications/UI_RewardSchematic", "UI_RewardSchematic_C");
-    using UI_Forge_Schematic_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
+    using UI_Forge_Schematic_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* CelebrationAnim;
     UI_Forge_Schematic_C* UI_Forge_Schematic;
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications
 
-using UI_RewardSchematic_C = Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardSchematic_C;
+using UI_RewardSchematic_C = ::Game::UI::HUD_SpaceRig::CampaignNotifications::UI_RewardSchematic_C;

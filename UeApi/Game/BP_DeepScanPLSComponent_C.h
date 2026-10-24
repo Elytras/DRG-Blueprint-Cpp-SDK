@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_DeepScanPLSComponent_C = Game::GameElements::Objectives::DeepScan::BP_DeepScanPLSComponent_C;
+using BP_DeepScanPLSComponent_C = ::Game::GameElements::Objectives::DeepScan::BP_DeepScanPLSComponent_C;

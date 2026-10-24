@@ -8,23 +8,23 @@ struct FRandomStream;
     void Clear(); \
     bool Contains(const K& Key) const; \
     bool Find(const K& Key, V& Value) const; \
-    void Keys(TArray<K>& Keys); \
+    void Keys(TArray<K>& Keys) const; \
     int Length() const; \
     bool Remove(const K& Key); \
-    void Values(TArray<V>& Values);
+    void Values(TArray<V>& Values) const;
 
 #define UE_CONTAINER_TSet \
     void Add(const T& NewItem); \
     void AddItems(const TArray<T>& NewItems); \
     void Clear(); \
     bool Contains(const T& ItemToFind) const; \
-    void Difference(const TSet<T>& B, TSet<T>& Result); \
-    void Intersection(const TSet<T>& B, TSet<T>& Result); \
+    void Difference(const TSet<T>& B, TSet<T>& Result) const; \
+    void Intersection(const TSet<T>& B, TSet<T>& Result) const; \
     int Length() const; \
     bool Remove(const T& Item); \
     void RemoveItems(const TArray<T>& Items); \
-    void ToArray(TArray<T>& Result); \
-    void Union(const TSet<T>& B, TSet<T>& Result);
+    void ToArray(TArray<T>& Result) const; \
+    void Union(const TSet<T>& B, TSet<T>& Result) const;
 
 #define UE_CONTAINER_TArray \
     int Add(const T& NewItem); \

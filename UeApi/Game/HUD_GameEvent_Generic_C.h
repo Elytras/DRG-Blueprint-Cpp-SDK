@@ -59,4 +59,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events
 
-using HUD_GameEvent_Generic_C = Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Generic_C;
+using HUD_GameEvent_Generic_C = ::Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Generic_C;

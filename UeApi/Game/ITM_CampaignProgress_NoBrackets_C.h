@@ -19,7 +19,7 @@ class ITM_CampaignProgress_NoBrackets_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_CampaignProgress_NoBrackets", "ITM_CampaignProgress_NoBrackets_C");
-    using ITM_CampaignItem_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignItem_C;
+    using ITM_CampaignItem_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* Box_CampaignItems;
     ITM_CampaignItem_C* ITM_CampaignItem;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_CampaignProgress_NoBrackets_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;
+using ITM_CampaignProgress_NoBrackets_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;

@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CroNewPistol_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNewPistol_C;
+using HUD_CroNewPistol_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CroNewPistol_C;

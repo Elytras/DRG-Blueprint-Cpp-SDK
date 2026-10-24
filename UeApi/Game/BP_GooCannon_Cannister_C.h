@@ -14,7 +14,7 @@ class UTimelineComponent;
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class BP_GooCannon_Cannister_C : public Game::WeaponsNTools::MAG_BaseClass_C
+class BP_GooCannon_Cannister_C : public ::Game::WeaponsNTools::MAG_BaseClass_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_Cannister", "BP_GooCannon_Cannister_C");
@@ -32,6 +32,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;Mesh";
         static constexpr const char* UberGraphFrame_BP_GooCannon_Cannister_C__UeName = "UberGraphFrame";
         static constexpr const char* Bar__UeScsNode = "d353f002f7629a4ca342eea2fb5d7a2b";
         static constexpr const char* Timeline_0_NewTrack__UeName = "Timeline_0_NewTrack_0_FBE0858B42174801F4BF1E8D85338A2E";
@@ -40,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooCannon_Cannister_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_Cannister_C;
+using BP_GooCannon_Cannister_C = ::Game::WeaponsNTools::GooCannon::BP_GooCannon_Cannister_C;

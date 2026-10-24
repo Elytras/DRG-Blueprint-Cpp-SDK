@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Refinery_WarningLight_C = Game::LevelElements::Refinery::BP_Refinery_WarningLight_C;
+using BP_Refinery_WarningLight_C = ::Game::LevelElements::Refinery::BP_Refinery_WarningLight_C;

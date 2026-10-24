@@ -18,7 +18,7 @@ class W_TutorialContent_Base_C : public UTutorialContentWidget
 {
 public:
     UE_CLASS("/Game/UI/Tutorial/W_TutorialContent_Base", "W_TutorialContent_Base_C");
-    using ITM_BasicTutorialWindow_C = Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
+    using ITM_BasicTutorialWindow_C = ::Game::UI::Tutorial::ITM_BasicTutorialWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* MainObjectiveAnim;
     ITM_BasicTutorialWindow_C* ITM_BasicTutorialWindow;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Tutorial
 
-using W_TutorialContent_Base_C = Game::UI::Tutorial::W_TutorialContent_Base_C;
+using W_TutorialContent_Base_C = ::Game::UI::Tutorial::W_TutorialContent_Base_C;

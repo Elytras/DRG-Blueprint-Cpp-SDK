@@ -22,8 +22,8 @@ class WND_SeasonLevels_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonLevels", "WND_SeasonLevels_C");
-    using ITM_TreeOfVanity_Node_C = Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;
-    using Itm_LevelSelectIcon_C = Game::UI::Menu_Seasons::Itm_LevelSelectIcon_C;
+    using ITM_TreeOfVanity_Node_C = ::Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;
+    using Itm_LevelSelectIcon_C = ::Game::UI::Menu_Seasons::Itm_LevelSelectIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* NewRow;
     class UButton* Button_Back;
@@ -76,4 +76,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using WND_SeasonLevels_C = Game::UI::Menu_Seasons::WND_SeasonLevels_C;
+using WND_SeasonLevels_C = ::Game::UI::Menu_Seasons::WND_SeasonLevels_C;

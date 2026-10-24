@@ -29,4 +29,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::ModDetails
 
-using ModioModDetailsViewWidget_C = Modio::UI::Browser::Views::ModDetails::ModioModDetailsViewWidget_C;
+using ModioModDetailsViewWidget_C = ::Modio::UI::Browser::Views::ModDetails::ModioModDetailsViewWidget_C;

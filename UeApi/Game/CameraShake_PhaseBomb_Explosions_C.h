@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_PhaseBomb_Explosions_C = Game::Character::Camera::CameraShakes::CameraShake_PhaseBomb_Explosions_C;
+using CameraShake_PhaseBomb_Explosions_C = ::Game::Character::Camera::CameraShakes::CameraShake_PhaseBomb_Explosions_C;

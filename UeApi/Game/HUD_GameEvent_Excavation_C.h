@@ -18,8 +18,8 @@ class HUD_GameEvent_Excavation_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Events/HUD_GameEvent_Excavation", "HUD_GameEvent_Excavation_C");
-    using BP_AmberDepositBase_C = Game::GameElements::Objectives::Excavation::AmberDeposits::BP_AmberDepositBase_C;
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using BP_AmberDepositBase_C = ::Game::GameElements::Objectives::Excavation::AmberDeposits::BP_AmberDepositBase_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UTextBlock* DATA_Header;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events
 
-using HUD_GameEvent_Excavation_C = Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Excavation_C;
+using HUD_GameEvent_Excavation_C = ::Game::UI::MainOnscreenHUD::Events::HUD_GameEvent_Excavation_C;

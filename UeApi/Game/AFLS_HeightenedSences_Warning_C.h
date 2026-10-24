@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::PerkSFX
 
-using AFLS_HeightenedSences_Warning_C = Game::GameElements::KPI::Perks::PerkSFX::AFLS_HeightenedSences_Warning_C;
+using AFLS_HeightenedSences_Warning_C = ::Game::GameElements::KPI::Perks::PerkSFX::AFLS_HeightenedSences_Warning_C;

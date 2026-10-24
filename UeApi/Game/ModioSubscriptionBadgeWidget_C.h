@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioSubscriptionBadgeWidget_C = Modio::UI::Browser::Components::ModioSubscriptionBadgeWidget_C;
+using ModioSubscriptionBadgeWidget_C = ::Modio::UI::Browser::Components::ModioSubscriptionBadgeWidget_C;

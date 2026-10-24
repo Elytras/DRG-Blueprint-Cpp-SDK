@@ -13,7 +13,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace ExploderTank {
 
-class ENE_Spider_ExploderTank_Ghost_C : public Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_C
+class ENE_Spider_ExploderTank_Ghost_C : public ::Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/ExploderTank/ENE_Spider_ExploderTank_Ghost", "ENE_Spider_ExploderTank_Ghost_C");
@@ -28,6 +28,8 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ArmorHealthDamage;Damage;Enemy;P_ExploderTank_CollectingEmbers;Light_BackBody";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_ENE_Spider_ExploderTank_Ghost_C__UeName = "UberGraphFrame";
         static constexpr const char* Audio__UeScsNode = "ee0d451813a0f24fa51703e636b0cf1a";
         static constexpr const char* TerrainScannerMesh__UeScsNode = "02c1d3bc82d9af44b365b5ad7bf09d09";
@@ -36,4 +38,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::ExploderTank
 
-using ENE_Spider_ExploderTank_Ghost_C = Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_Ghost_C;
+using ENE_Spider_ExploderTank_Ghost_C = ::Game::Enemies::Spider::ExploderTank::ENE_Spider_ExploderTank_Ghost_C;

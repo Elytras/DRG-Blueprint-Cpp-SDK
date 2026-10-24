@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm
 
-using STE_InsectDoT_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::STE_InsectDoT_C;
+using STE_InsectDoT_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::STE_InsectDoT_C;

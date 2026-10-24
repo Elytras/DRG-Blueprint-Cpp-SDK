@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace ExplodingGooPlant {
 
-class BP_ExplodingGooPlant_Fast_Large_C : public Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::BP_ExplodingGooPlant_Fast_Base_C
+class BP_ExplodingGooPlant_Fast_Large_C : public ::Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::BP_ExplodingGooPlant_Fast_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ExplodingGooPlant/BP_ExplodingGooPlant_Fast_Large", "BP_ExplodingGooPlant_Fast_Large_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "PointLight;ICH-DefaultSceneRoot;Body;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant
 
-using BP_ExplodingGooPlant_Fast_Large_C = Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::BP_ExplodingGooPlant_Fast_Large_C;
+using BP_ExplodingGooPlant_Fast_Large_C = ::Game::LevelElements::RoomObjects::Hazards::ExplodingGooPlant::BP_ExplodingGooPlant_Fast_Large_C;

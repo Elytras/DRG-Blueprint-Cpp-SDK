@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt
 
-using ITM_PropHunt_HunterItem_C = Game::GameElements::Bar::Drinkables::PropHunt::ITM_PropHunt_HunterItem_C;
+using ITM_PropHunt_HunterItem_C = ::Game::GameElements::Bar::Drinkables::PropHunt::ITM_PropHunt_HunterItem_C;

@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_DLCwidget_Setup_C = Game::UI::Menu_StartScreen::UI_InfoScreen_DLCwidget_Setup_C;
+using UI_InfoScreen_DLCwidget_Setup_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_DLCwidget_Setup_C;

@@ -22,9 +22,9 @@ class Console_MissionStatistics_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/Console_MissionStatistics", "Console_MissionStatistics_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
-    using UI_MissionStats_View_C = Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_View_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using UI_MissionStats_View_C = ::Game::UI::HUD_SpaceRig::KPI::UI_MissionStats_View_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UCanvasPanel* AvailablePerkPoints;
     ConsoleScreen_Notification_C* ConsoleScreen_Notification;
@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using Console_MissionStatistics_C = Game::UI::HUD_SpaceRig::KPI::Console_MissionStatistics_C;
+using Console_MissionStatistics_C = ::Game::UI::HUD_SpaceRig::KPI::Console_MissionStatistics_C;

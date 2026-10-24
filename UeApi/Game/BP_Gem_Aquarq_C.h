@@ -14,7 +14,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace Gems {
 
-class BP_Gem_Aquarq_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_Gem_Aquarq_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_Gem_Aquarq", "BP_Gem_Aquarq_C");
@@ -34,6 +34,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainScannerMesh";
         static constexpr const char* UberGraphFrame_BP_Gem_Aquarq_C__UeName = "UberGraphFrame";
         static constexpr const char* GemAquarqIdle_Cue__UeScsNode = "cd079ef1339ad34590a85d7133a5e056";
         static constexpr const char* GemTracker__UeScsNode = "e0e4e5da543e894791e2e34bcb232c8a";
@@ -49,4 +50,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_Gem_Aquarq_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_Aquarq_C;
+using BP_Gem_Aquarq_C = ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_Aquarq_C;

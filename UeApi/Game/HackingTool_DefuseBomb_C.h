@@ -27,12 +27,12 @@ class HackingTool_DefuseBomb_C : public UHackingToolWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Defuse/HackingTool_DefuseBomb", "HackingTool_DefuseBomb_C");
-    using BP_RivalBombNode_C = Game::GameElements::GameEvents::RivalBombEvent::BP_RivalBombNode_C;
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using DefuseBomb_SocketsAndWire_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_SocketsAndWire_C;
-    using UI_HackingTool_Button_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
-    using UI_HackingTool_Header_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
-    using UI_HackingTool_Progress_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
+    using BP_RivalBombNode_C = ::Game::GameElements::GameEvents::RivalBombEvent::BP_RivalBombNode_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using DefuseBomb_SocketsAndWire_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_SocketsAndWire_C;
+    using UI_HackingTool_Button_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
+    using UI_HackingTool_Header_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Header_C;
+    using UI_HackingTool_Progress_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Progress_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimColorGrid;
     UE_READONLY class UWidgetAnimation* AnimShake;
@@ -95,4 +95,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse
 
-using HackingTool_DefuseBomb_C = Game::WeaponsNTools::HackingTool::UI::Defuse::HackingTool_DefuseBomb_C;
+using HackingTool_DefuseBomb_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::HackingTool_DefuseBomb_C;

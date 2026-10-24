@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::TemperatureShock
 
-using AFE_TP_TemperatureShockDetached_C = Game::GameElements::PawnAffliction::EnemyEffects::TemperatureShock::AFE_TP_TemperatureShockDetached_C;
+using AFE_TP_TemperatureShockDetached_C = ::Game::GameElements::PawnAffliction::EnemyEffects::TemperatureShock::AFE_TP_TemperatureShockDetached_C;

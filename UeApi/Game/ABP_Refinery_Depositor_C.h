@@ -16,7 +16,7 @@ class ABP_Refinery_Depositor_C : public UAnimInstance
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/Refinery/ABP_Refinery_Depositor", "ABP_Refinery_Depositor_C");
-    using BP_Refinery_Depositor_C = Game::LevelElements::Refinery::BP_Refinery_Depositor_C;
+    using BP_Refinery_Depositor_C = ::Game::LevelElements::Refinery::BP_Refinery_Depositor_C;
     FPointerToUberGraphFrame UberGraphFrame;
     FAnimNode_Root AnimGraphNode_Root;
     FAnimNode_TransitionResult AnimGraphNode_TransitionResult_3;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Refinery
 
-using ABP_Refinery_Depositor_C = Game::LevelElements::Refinery::Refinery::ABP_Refinery_Depositor_C;
+using ABP_Refinery_Depositor_C = ::Game::LevelElements::Refinery::Refinery::ABP_Refinery_Depositor_C;

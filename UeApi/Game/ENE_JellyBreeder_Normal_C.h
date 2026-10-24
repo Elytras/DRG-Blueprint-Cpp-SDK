@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Jelly_Breeder {
 
-class ENE_JellyBreeder_Normal_C : public Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Base_C
+class ENE_JellyBreeder_Normal_C : public ::Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Jelly_Breeder/ENE_JellyBreeder_Normal", "ENE_JellyBreeder_Normal_C");
@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using ENE_JellyBreeder_Normal_C = Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Normal_C;
+using ENE_JellyBreeder_Normal_C = ::Game::Enemies::Jelly_Breeder::ENE_JellyBreeder_Normal_C;

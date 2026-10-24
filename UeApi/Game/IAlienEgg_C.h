@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::AlienEgg
 
-using IAlienEgg_C = Game::GameElements::Resources::Embedded::AlienEgg::IAlienEgg_C;
+using IAlienEgg_C = ::Game::GameElements::Resources::Embedded::AlienEgg::IAlienEgg_C;

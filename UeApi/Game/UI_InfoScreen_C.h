@@ -31,21 +31,21 @@ class UI_InfoScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen", "UI_InfoScreen_C");
-    using AnimatedDRGlogo_C = Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
-    using AnimatedStaticOverlay_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
-    using Basic_ButtonMultiline_C = Game::UI::Art::WidgetParts::Basic_ButtonMultiline_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using ITM_Modding_Menu_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Menu_C;
-    using ModioModBrowserWidget_C = Modio::UI::Browser::Views::ModioModBrowserWidget_C;
-    using Options_Language_C = Game::UI::Menu_Options::Options_Language_C;
-    using Options_ShowInfoScreen_C = Game::UI::Menu_Options::Options_ShowInfoScreen_C;
-    using UI_InfoScreen_BackEndNotification_C = Game::UI::Menu_StartScreen::UI_InfoScreen_BackEndNotification_C;
-    using UI_InfoScreen_SeasonDLC_C = Game::UI::Menu_StartScreen::UI_InfoScreen_SeasonDLC_C;
-    using UI_InfoScreen_WebStreamedBanner_C = Game::UI::Menu_StartScreen::UI_InfoScreen_WebStreamedBanner_C;
-    using UI_PatchNotes_C = Game::UI::Menu_StartScreen::UI_PatchNotes_C;
+    using AnimatedDRGlogo_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedDRGlogo_C;
+    using AnimatedStaticOverlay_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_C;
+    using Basic_ButtonMultiline_C = ::Game::UI::Art::WidgetParts::Basic_ButtonMultiline_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using ITM_Modding_Menu_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Menu_C;
+    using ModioModBrowserWidget_C = ::Modio::UI::Browser::Views::ModioModBrowserWidget_C;
+    using Options_Language_C = ::Game::UI::Menu_Options::Options_Language_C;
+    using Options_ShowInfoScreen_C = ::Game::UI::Menu_Options::Options_ShowInfoScreen_C;
+    using UI_InfoScreen_BackEndNotification_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_BackEndNotification_C;
+    using UI_InfoScreen_SeasonDLC_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_SeasonDLC_C;
+    using UI_InfoScreen_WebStreamedBanner_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_WebStreamedBanner_C;
+    using UI_PatchNotes_C = ::Game::UI::Menu_StartScreen::UI_PatchNotes_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -125,4 +125,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_C = Game::UI::Menu_StartScreen::UI_InfoScreen_C;
+using UI_InfoScreen_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_C;

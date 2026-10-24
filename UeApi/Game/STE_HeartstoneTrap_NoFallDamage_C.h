@@ -22,4 +22,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP
 
-using STE_HeartstoneTrap_NoFallDamage_C = Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP::STE_HeartstoneTrap_NoFallDamage_C;
+using STE_HeartstoneTrap_NoFallDamage_C = ::Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP::STE_HeartstoneTrap_NoFallDamage_C;

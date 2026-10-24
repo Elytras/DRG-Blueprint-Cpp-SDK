@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace ExplodingPlant {
 
-class BP_ExplodingPlant_Large_C : public Game::LevelElements::RoomObjects::Hazards::ExplodingPlant::BP_ExplodingPlant_Base_C
+class BP_ExplodingPlant_Large_C : public ::Game::LevelElements::RoomObjects::Hazards::ExplodingPlant::BP_ExplodingPlant_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/ExplodingPlant/BP_ExplodingPlant_Large", "BP_ExplodingPlant_Large_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Damage;PathfinderCollision;SimpleHealth;StaticMesh;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ExplodingPlant
 
-using BP_ExplodingPlant_Large_C = Game::LevelElements::RoomObjects::Hazards::ExplodingPlant::BP_ExplodingPlant_Large_C;
+using BP_ExplodingPlant_Large_C = ::Game::LevelElements::RoomObjects::Hazards::ExplodingPlant::BP_ExplodingPlant_Large_C;

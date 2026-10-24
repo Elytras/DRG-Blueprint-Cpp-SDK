@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::Art::Enemies::Barnacle
 
-using APB_BarnacleAnim_C = Game::Art::Enemies::Barnacle::APB_BarnacleAnim_C;
+using APB_BarnacleAnim_C = ::Game::Art::Enemies::Barnacle::APB_BarnacleAnim_C;

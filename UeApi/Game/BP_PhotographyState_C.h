@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_PhotographyState_C = Game::Character::States::BP_PhotographyState_C;
+using BP_PhotographyState_C = ::Game::Character::States::BP_PhotographyState_C;

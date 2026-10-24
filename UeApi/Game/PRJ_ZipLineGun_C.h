@@ -90,4 +90,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using PRJ_ZipLineGun_C = Game::WeaponsNTools::ZipLineGun::PRJ_ZipLineGun_C;
+using PRJ_ZipLineGun_C = ::Game::WeaponsNTools::ZipLineGun::PRJ_ZipLineGun_C;

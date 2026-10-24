@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Modio::UI::Browser
 
-using ModioFeaturedViewWidget_C = Modio::UI::Browser::ModioFeaturedViewWidget_C;
+using ModioFeaturedViewWidget_C = ::Modio::UI::Browser::ModioFeaturedViewWidget_C;

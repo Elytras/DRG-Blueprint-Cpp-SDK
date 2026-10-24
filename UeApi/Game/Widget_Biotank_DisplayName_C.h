@@ -16,11 +16,11 @@ namespace Game { namespace UI { namespace MainOnscreenHUD { namespace Standard {
 
 namespace Game { namespace GameElements { namespace Plague { namespace Spacerig_Deco {
 
-class Widget_Biotank_DisplayName_C : public Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
+class Widget_Biotank_DisplayName_C : public ::Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/Widget_Biotank_DisplayName", "Widget_Biotank_DisplayName_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame_Widget_Biotank_DisplayName_C;
     UE_READONLY class UWidgetAnimation* NewAnimation;
     Basic_Label_C* DisplayName;
@@ -41,4 +41,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco
 
-using Widget_Biotank_DisplayName_C = Game::GameElements::Plague::Spacerig_Deco::Widget_Biotank_DisplayName_C;
+using Widget_Biotank_DisplayName_C = ::Game::GameElements::Plague::Spacerig_Deco::Widget_Biotank_DisplayName_C;

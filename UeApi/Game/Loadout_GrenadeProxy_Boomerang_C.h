@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace BoomerangBouncy {
 
-class Loadout_GrenadeProxy_Boomerang_C : public Game::WeaponsNTools::Grenades::Loadout_GrenadeProxy_Stick_C
+class Loadout_GrenadeProxy_Boomerang_C : public ::Game::WeaponsNTools::Grenades::Loadout_GrenadeProxy_Stick_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BoomerangBouncy/Loadout_GrenadeProxy_Boomerang", "Loadout_GrenadeProxy_Boomerang_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeIchRecords = "StaticMesh";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BoomerangBouncy
 
-using Loadout_GrenadeProxy_Boomerang_C = Game::WeaponsNTools::Grenades::BoomerangBouncy::Loadout_GrenadeProxy_Boomerang_C;
+using Loadout_GrenadeProxy_Boomerang_C = ::Game::WeaponsNTools::Grenades::BoomerangBouncy::Loadout_GrenadeProxy_Boomerang_C;

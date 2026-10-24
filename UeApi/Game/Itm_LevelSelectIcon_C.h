@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Itm_LevelSelectIcon_C = Game::UI::Menu_Seasons::Itm_LevelSelectIcon_C;
+using Itm_LevelSelectIcon_C = ::Game::UI::Menu_Seasons::Itm_LevelSelectIcon_C;

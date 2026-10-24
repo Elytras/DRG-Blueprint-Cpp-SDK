@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent
 
-using ABP_RivalBombNode_C = Game::GameElements::GameEvents::RivalBombEvent::ABP_RivalBombNode_C;
+using ABP_RivalBombNode_C = ::Game::GameElements::GameEvents::RivalBombEvent::ABP_RivalBombNode_C;

@@ -23,9 +23,9 @@ class WND_MissionComplete_Manager_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/WND_MissionComplete_Manager", "WND_MissionComplete_Manager_C");
-    using ITM_MissionComplete_MissionState_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_C;
-    using SCREEN_MissionComplete_Base_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using ITM_MissionComplete_MissionState_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_C;
+    using SCREEN_MissionComplete_Base_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_MissionComplete_MissionState_C* ITM_MissionResultAnim;
     class USafeZone* SafeZone_0;
@@ -69,4 +69,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using WND_MissionComplete_Manager_C = Game::UI::Menu_MIssionCompleteMK2::WND_MissionComplete_Manager_C;
+using WND_MissionComplete_Manager_C = ::Game::UI::Menu_MIssionCompleteMK2::WND_MissionComplete_Manager_C;

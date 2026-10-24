@@ -17,7 +17,7 @@ class ITM_HealthBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Global_UI_Elements/ITM_HealthBar", "ITM_HealthBar_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UProgressBar* HealthProgress;
     UI_ImageTinted_C* Image_Health;
@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using ITM_HealthBar_C = Game::UI::Global_UI_Elements::ITM_HealthBar_C;
+using ITM_HealthBar_C = ::Game::UI::Global_UI_Elements::ITM_HealthBar_C;

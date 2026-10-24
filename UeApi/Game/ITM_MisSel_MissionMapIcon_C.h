@@ -26,18 +26,18 @@ class ITM_MisSel_MissionMapIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_MissionMapIcon", "ITM_MisSel_MissionMapIcon_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_Campaign_Icon_C = Game::UI::Menu_MissionSelectionMK3::ITM_Campaign_Icon_C;
-    using ITM_MisSel_DotMarker_CaveDifficulty_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
-    using ITM_MisSel_FullBiome_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_FullBiome_C;
-    using ITM_MisSel_MissionIconBasic_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
-    using ITM_MissionMapIcon_LevelLock_C = Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_LevelLock_C;
-    using ITM_MissionMapIcon_Objective_C = Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_Objective_C;
-    using ITM_MissionMap_Icon_BG_C = Game::UI::Menu_MissionSelectionMK3::ITM_MissionMap_Icon_BG_C;
-    using ITM_MutatorIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MutatorIcon_C;
-    using ITM_SeasonChallengeIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_Campaign_Icon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_Campaign_Icon_C;
+    using ITM_MisSel_DotMarker_CaveDifficulty_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
+    using ITM_MisSel_FullBiome_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_FullBiome_C;
+    using ITM_MisSel_MissionIconBasic_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionIconBasic_C;
+    using ITM_MissionMapIcon_LevelLock_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_LevelLock_C;
+    using ITM_MissionMapIcon_Objective_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_Objective_C;
+    using ITM_MissionMap_Icon_BG_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MissionMap_Icon_BG_C;
+    using ITM_MutatorIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MutatorIcon_C;
+    using ITM_SeasonChallengeIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -65,7 +65,7 @@ public:
     FLinearColor Tint_MissionIconColor;
     void ExecuteUbergraph_ITM_MisSel_MissionMapIcon(int EntryPoint);
     void ClickFromCode();
-    void ShowChallengeIcon(bool InHighlight, class UTexture2D* Icon, FLinearColor Color);
+    void ShowChallengeIcon(bool inHighlight, class UTexture2D* Icon, FLinearColor Color);
     void OnTeamMemberCampaignMissionChangedEvent();
     void BndEvt__BTN_HostPublic_K2Node_ComponentBoundEvent_48_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -92,4 +92,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisSel_MissionMapIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionMapIcon_C;
+using ITM_MisSel_MissionMapIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionMapIcon_C;

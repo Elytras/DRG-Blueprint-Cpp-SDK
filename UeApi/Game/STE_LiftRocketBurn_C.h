@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment
 
-using STE_LiftRocketBurn_C = Game::GameElements::Objectives::Excavation::RocketAttachment::STE_LiftRocketBurn_C;
+using STE_LiftRocketBurn_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::STE_LiftRocketBurn_C;

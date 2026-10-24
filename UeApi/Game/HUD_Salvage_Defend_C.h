@@ -22,10 +22,10 @@ class HUD_Salvage_Defend_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Events/HUD_Salvage_Defend", "HUD_Salvage_Defend_C");
-    using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
-    using EVENT_DropPodDefense_Base_C = Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
-    using HUD_Salvage_Defend_PlayerSlot_C = Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_PlayerSlot_C;
+    using Basic_HUD_BracketWindowBig_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
+    using EVENT_DropPodDefense_Base_C = ::Game::GameElements::Objectives::Salvage::EVENT_DropPodDefense_Base_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using HUD_Salvage_Defend_PlayerSlot_C = ::Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_PlayerSlot_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_C* Basic_HUD_BracketWindowBigWindowBracketBig;
     class UProgressBar* DefenseProgress;
@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events
 
-using HUD_Salvage_Defend_C = Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_C;
+using HUD_Salvage_Defend_C = ::Game::UI::MainOnscreenHUD::Events::HUD_Salvage_Defend_C;

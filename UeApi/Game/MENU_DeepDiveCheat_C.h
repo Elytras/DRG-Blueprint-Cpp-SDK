@@ -24,7 +24,7 @@ class MENU_DeepDiveCheat_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/MENU_DeepDiveCheat", "MENU_DeepDiveCheat_C");
-    using UI_DebugDeepDiveStage_C = Game::UI::Menu_Cheats::MissionCheat::UI_DebugDeepDiveStage_C;
+    using UI_DebugDeepDiveStage_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_DebugDeepDiveStage_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UComboBoxString* Biome;
     class UButton* BTN_Close;
@@ -53,4 +53,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using MENU_DeepDiveCheat_C = Game::UI::Menu_Cheats::MissionCheat::MENU_DeepDiveCheat_C;
+using MENU_DeepDiveCheat_C = ::Game::UI::Menu_Cheats::MissionCheat::MENU_DeepDiveCheat_C;

@@ -19,9 +19,9 @@ class ITM_CommunityGoalRecruitment_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoalRecruitment", "ITM_CommunityGoalRecruitment_C");
-    using ITM_CommunityGoalCountdown_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalCountdown_C;
-    using ITM_CommunityGoalResult_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_C;
-    using ITM_ResetFaction_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_ResetFaction_C;
+    using ITM_CommunityGoalCountdown_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalCountdown_C;
+    using ITM_CommunityGoalResult_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalResult_C;
+    using ITM_ResetFaction_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_ResetFaction_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_CommunityGoalResult_C* CurrentFactionGoalResult;
     ITM_CommunityGoalResult_C* Faction1GoalResult;
@@ -44,4 +44,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoalRecruitment_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_C;
+using ITM_CommunityGoalRecruitment_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_C;

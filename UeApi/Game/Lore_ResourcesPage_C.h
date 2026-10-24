@@ -20,9 +20,9 @@ class Lore_ResourcesPage_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_ResourcesPage", "Lore_ResourcesPage_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using Lore_Resources_Content_Frame_C = Game::UI::Menu_MinersManual::Lore_Resources_Content_Frame_C;
-    using Lore_Resources_Content_ResourceInfo_C = Game::UI::Menu_MinersManual::Lore_Resources_Content_ResourceInfo_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using Lore_Resources_Content_Frame_C = ::Game::UI::Menu_MinersManual::Lore_Resources_Content_Frame_C;
+    using Lore_Resources_Content_ResourceInfo_C = ::Game::UI::Menu_MinersManual::Lore_Resources_Content_ResourceInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner_84;
@@ -51,4 +51,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_ResourcesPage_C = Game::UI::Menu_MinersManual::Lore_ResourcesPage_C;
+using Lore_ResourcesPage_C = ::Game::UI::Menu_MinersManual::Lore_ResourcesPage_C;

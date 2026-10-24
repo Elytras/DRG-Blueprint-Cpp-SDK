@@ -15,11 +15,11 @@ namespace Game { namespace LevelElements { namespace Tutorial { class BP_Tutoria
 
 namespace Game { namespace Game {
 
-class GM_Tutorial_New_C : public Game::Game::GM_Mining_C
+class GM_Tutorial_New_C : public ::Game::Game::GM_Mining_C
 {
 public:
     UE_CLASS("/Game/Game/GM_Tutorial_New", "GM_Tutorial_New_C");
-    using BP_TutorialComponent_C = Game::LevelElements::Tutorial::BP_TutorialComponent_C;
+    using BP_TutorialComponent_C = ::Game::LevelElements::Tutorial::BP_TutorialComponent_C;
     FPointerToUberGraphFrame UberGraphFrame_GM_Tutorial_New_C;
     BP_TutorialComponent_C* BP_TutorialComponent;
     void ExecuteUbergraph_GM_Tutorial_New(int EntryPoint);
@@ -31,6 +31,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CritterManager CritterManager;/Script/FSD.EnemySpawnManager EnemySpawnManager;/Script/FSD.FormationsManagerComponent FormationsManager;/Script/FSD.KeepInsideWorld KeepInsideWorld;/Script/FSD.MissionManager MissionManager;/Script/FSD.ObjectivesManager ObjectivesManager;/Script/FSD.PheromoneSpawnerComponent PheromoneManager";
+        static constexpr const char* UeIchRecords = "EnemyWaveManager";
         static constexpr const char* UberGraphFrame_GM_Tutorial_New_C__UeName = "UberGraphFrame";
         static constexpr const char* BP_TutorialComponent__UeScsNode = "401446bc58369a4aabd357723a3c5135";
     };
@@ -38,4 +39,4 @@ private:
 
 }}   // namespace Game::Game
 
-using GM_Tutorial_New_C = Game::Game::GM_Tutorial_New_C;
+using GM_Tutorial_New_C = ::Game::Game::GM_Tutorial_New_C;

@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using UI_InputIcon_C = Game::UI::_GlobalAssets::UI_InputIcon_C;
+using UI_InputIcon_C = ::Game::UI::_GlobalAssets::UI_InputIcon_C;

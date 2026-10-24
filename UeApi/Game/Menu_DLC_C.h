@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_DLC
 
-using Menu_DLC_C = Game::UI::Menu_DLC::Menu_DLC_C;
+using Menu_DLC_C = ::Game::UI::Menu_DLC::Menu_DLC_C;

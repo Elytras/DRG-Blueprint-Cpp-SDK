@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_Thorns_C = Game::GameElements::KPI::Perks::STE_Thorns_C;
+using STE_Thorns_C = ::Game::GameElements::KPI::Perks::STE_Thorns_C;

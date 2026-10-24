@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Plague { namespace WalkingPlagueheartBoss { namespace Assets {
 
-class ABP_MobilePlague_UniqueHead_B_C : public Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_UniqueHead_A_C
+class ABP_MobilePlague_UniqueHead_B_C : public ::Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_UniqueHead_A_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/Assets/ABP_MobilePlague_UniqueHead_B", "ABP_MobilePlague_UniqueHead_B_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Plague::WalkingPlagueheartBoss::Assets
 
-using ABP_MobilePlague_UniqueHead_B_C = Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_UniqueHead_B_C;
+using ABP_MobilePlague_UniqueHead_B_C = ::Game::Enemies::Plague::WalkingPlagueheartBoss::Assets::ABP_MobilePlague_UniqueHead_B_C;

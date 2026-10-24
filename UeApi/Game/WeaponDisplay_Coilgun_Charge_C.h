@@ -17,7 +17,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace CoilGun {
 
-class WeaponDisplay_Coilgun_Charge_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Coilgun_Charge_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/WeaponDisplay_Coilgun_Charge", "WeaponDisplay_Coilgun_Charge_C");
@@ -69,4 +69,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using WeaponDisplay_Coilgun_Charge_C = Game::WeaponsNTools::CoilGun::WeaponDisplay_Coilgun_Charge_C;
+using WeaponDisplay_Coilgun_Charge_C = ::Game::WeaponsNTools::CoilGun::WeaponDisplay_Coilgun_Charge_C;

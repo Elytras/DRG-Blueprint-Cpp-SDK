@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco
 
-using BP_Plague_VialDispenser_C = Game::GameElements::Plague::Spacerig_Deco::BP_Plague_VialDispenser_C;
+using BP_Plague_VialDispenser_C = ::Game::GameElements::Plague::Spacerig_Deco::BP_Plague_VialDispenser_C;

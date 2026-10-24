@@ -20,13 +20,13 @@ namespace Game { namespace UI { namespace Menu_MissionSelectionMK3 { class ITM_C
 
 namespace Game { namespace UI { namespace Menu_Jobs { namespace JobsV2_Redesign {
 
-class Jobs_Header_Assignment_Slot_C : public Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C
+class Jobs_Header_Assignment_Slot_C : public ::Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/JobsV2_Redesign/Jobs_Header_Assignment_Slot", "Jobs_Header_Assignment_Slot_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using ITM_CampaignProgress_NoBrackets_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;
-    using Jobs_List_Element_BG_CutCorner_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using ITM_CampaignProgress_NoBrackets_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_NoBrackets_C;
+    using Jobs_List_Element_BG_CutCorner_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame_Jobs_Header_Assignment_Slot_C;
     class UVerticalBox* AssignmentSelected;
     Basic_ButtonCutCorner_C* B_StopAssignment;
@@ -76,4 +76,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign
 
-using Jobs_Header_Assignment_Slot_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_Header_Assignment_Slot_C;
+using Jobs_Header_Assignment_Slot_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_Header_Assignment_Slot_C;

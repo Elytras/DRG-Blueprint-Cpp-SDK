@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_BobbingRun_C = Game::Character::Camera::CameraShakes::CameraShake_BobbingRun_C;
+using CameraShake_BobbingRun_C = ::Game::Character::Camera::CameraShakes::CameraShake_BobbingRun_C;

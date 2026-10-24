@@ -83,4 +83,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::GlowTrees
 
-using BP_GlowingPlant_C = Game::LevelElements::RoomObjects::Helpers::GlowTrees::BP_GlowingPlant_C;
+using BP_GlowingPlant_C = ::Game::LevelElements::RoomObjects::Helpers::GlowTrees::BP_GlowingPlant_C;

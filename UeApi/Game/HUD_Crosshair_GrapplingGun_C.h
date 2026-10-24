@@ -17,8 +17,8 @@ class HUD_Crosshair_GrapplingGun_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/_Crosshairs/HUD_Crosshair_GrapplingGun", "HUD_Crosshair_GrapplingGun_C");
-    using HUD_AngleIndicator_C = Game::WeaponsNTools::_Crosshairs::HUD_AngleIndicator_C;
-    using HUD_CrossHair_Basic02_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_Basic02_C;
+    using HUD_AngleIndicator_C = ::Game::WeaponsNTools::_Crosshairs::HUD_AngleIndicator_C;
+    using HUD_CrossHair_Basic02_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_Basic02_C;
     HUD_AngleIndicator_C* HUD_AngleIndicator_151;
     HUD_CrossHair_Basic02_C* HUD_Crosshair_Basic02;
     class UTextBlock* TextBlock_177;
@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_Crosshair_GrapplingGun_C = Game::WeaponsNTools::_Crosshairs::HUD_Crosshair_GrapplingGun_C;
+using HUD_Crosshair_GrapplingGun_C = ::Game::WeaponsNTools::_Crosshairs::HUD_Crosshair_GrapplingGun_C;

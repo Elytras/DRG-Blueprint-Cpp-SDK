@@ -22,7 +22,7 @@ class UTerrainScannerStaticMesh;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Salvage {
 
-class BP_Salvage_Point_Uplink_C : public Game::GameElements::Objectives::Salvage::BP_Salvage_Point_Base_C
+class BP_Salvage_Point_Uplink_C : public ::Game::GameElements::Objectives::Salvage::BP_Salvage_Point_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_Point_Uplink", "BP_Salvage_Point_Uplink_C");
@@ -57,6 +57,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;SingleUsable;TerrainPlacement";
         static constexpr const char* UberGraphFrame_BP_Salvage_Point_Uplink_C__UeName = "UberGraphFrame";
         static constexpr const char* TerrainDetect3__UeScsNode = "c1907d36157785498d9ccf042f02bec7";
         static constexpr const char* TerrainDetect2__UeScsNode = "020f34392e867f4abded7a6eb5426c5f";
@@ -80,4 +81,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_Salvage_Point_Uplink_C = Game::GameElements::Objectives::Salvage::BP_Salvage_Point_Uplink_C;
+using BP_Salvage_Point_Uplink_C = ::Game::GameElements::Objectives::Salvage::BP_Salvage_Point_Uplink_C;

@@ -34,4 +34,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Vault
 
-using ABP_MainFacility_C = Game::GameElements::Objectives::Facility::Vault::ABP_MainFacility_C;
+using ABP_MainFacility_C = ::Game::GameElements::Objectives::Facility::Vault::ABP_MainFacility_C;

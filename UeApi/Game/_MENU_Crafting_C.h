@@ -30,16 +30,16 @@ class _MENU_Crafting_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/_MENU_Crafting", "_MENU_Crafting_C");
-    using BTN_ItemCategory_C = Game::UI::Menu_Crafting::BTN_ItemCategory_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_DragRotateCharacter_C = Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
-    using ITM_ItemCategories_C = Game::UI::Menu_Crafting::ITM_ItemCategories_C;
-    using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
-    using ITM_Wardrobe_ClassSelector_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using UI_Crafting_MasteryBar_C = Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_C;
+    using BTN_ItemCategory_C = ::Game::UI::Menu_Crafting::BTN_ItemCategory_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_DragRotateCharacter_C = ::Game::UI::Menu_Wardrobe::ITM_DragRotateCharacter_C;
+    using ITM_ItemCategories_C = ::Game::UI::Menu_Crafting::ITM_ItemCategories_C;
+    using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+    using ITM_Wardrobe_ClassSelector_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ClassSelector_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using UI_Crafting_MasteryBar_C = ::Game::UI::Menu_Crafting::UI_Crafting_MasteryBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ScrollBarBox_C* BasicScrollBarBox;
     Basic_Menu_ColorBar_C* BasicWindow_ColorBar_C_0;
@@ -87,4 +87,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using _MENU_Crafting_C = Game::UI::Menu_Crafting::_MENU_Crafting_C;
+using _MENU_Crafting_C = ::Game::UI::Menu_Crafting::_MENU_Crafting_C;

@@ -69,4 +69,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using ITM_BossFightContainer_C = Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;
+using ITM_BossFightContainer_C = ::Game::UI::MainOnscreenHUD::BossFight::ITM_BossFightContainer_C;

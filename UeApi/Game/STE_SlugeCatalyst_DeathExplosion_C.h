@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pistol
 
-using STE_SlugeCatalyst_DeathExplosion_C = Game::WeaponsNTools::Pistol::STE_SlugeCatalyst_DeathExplosion_C;
+using STE_SlugeCatalyst_DeathExplosion_C = ::Game::WeaponsNTools::Pistol::STE_SlugeCatalyst_DeathExplosion_C;

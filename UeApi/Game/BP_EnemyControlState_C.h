@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_EnemyControlState_C = Game::Character::States::BP_EnemyControlState_C;
+using BP_EnemyControlState_C = ::Game::Character::States::BP_EnemyControlState_C;

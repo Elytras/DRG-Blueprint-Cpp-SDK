@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using ABP_PlasmaCarbine_C = Game::WeaponsNTools::PlasmaCarbine::ABP_PlasmaCarbine_C;
+using ABP_PlasmaCarbine_C = ::Game::WeaponsNTools::PlasmaCarbine::ABP_PlasmaCarbine_C;

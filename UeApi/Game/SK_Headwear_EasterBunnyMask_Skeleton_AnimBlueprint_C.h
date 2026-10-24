@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using SK_Headwear_EasterBunnyMask_Skeleton_AnimBlueprint_C = Game::Character::Vanity2::Headwear::SK_Headwear_EasterBunnyMask_Skeleton_AnimBlueprint_C;
+using SK_Headwear_EasterBunnyMask_Skeleton_AnimBlueprint_C = ::Game::Character::Vanity2::Headwear::SK_Headwear_EasterBunnyMask_Skeleton_AnimBlueprint_C;

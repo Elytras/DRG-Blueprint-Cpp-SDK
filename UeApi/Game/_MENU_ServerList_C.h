@@ -37,21 +37,21 @@ class _MENU_ServerList_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/_MENU_ServerList", "_MENU_ServerList_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_ExpandableMenu_C = Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_RadioButton_C = Game::UI::Art::WidgetParts::Basic_RadioButton_C;
-    using Basic_TextInputField_C = Game::UI::Art::WidgetParts::Basic_TextInputField_C;
-    using Filter_ServerGameType_C = Game::UI::Menu_ServerList::Filter_ServerGameType_C;
-    using Filter_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::Filter_ServerWorkEnvironment_C;
-    using ITM_OnlineRestricted_C = Game::UI::System::ITM_OnlineRestricted_C;
-    using ITM_ServerList_Entry_C = Game::UI::Menu_ServerList::ITM_ServerList_Entry_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using WND_JoinFailed_C = Game::UI::Menu_ServerList::WND_JoinFailed_C;
-    using WND_JoiningModded_C = Game::UI::Menu_ServerList::WND_JoiningModded_C;
-    using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
-    using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_ExpandableMenu_C = ::Game::UI::Art::WidgetParts::Basic_ExpandableMenu_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_RadioButton_C = ::Game::UI::Art::WidgetParts::Basic_RadioButton_C;
+    using Basic_TextInputField_C = ::Game::UI::Art::WidgetParts::Basic_TextInputField_C;
+    using Filter_ServerGameType_C = ::Game::UI::Menu_ServerList::Filter_ServerGameType_C;
+    using Filter_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::Filter_ServerWorkEnvironment_C;
+    using ITM_OnlineRestricted_C = ::Game::UI::System::ITM_OnlineRestricted_C;
+    using ITM_ServerList_Entry_C = ::Game::UI::Menu_ServerList::ITM_ServerList_Entry_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using WND_JoinFailed_C = ::Game::UI::Menu_ServerList::WND_JoinFailed_C;
+    using WND_JoiningModded_C = ::Game::UI::Menu_ServerList::WND_JoiningModded_C;
+    using WND_JoiningPassword_C = ::Game::UI::Menu_ServerList::WND_JoiningPassword_C;
+    using WND_Joining_C = ::Game::UI::Menu_ServerList::WND_Joining_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* LookingForServers;
     Basic_CheckBox_C* AutoRefresh;
@@ -255,4 +255,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using _MENU_ServerList_C = Game::UI::Menu_ServerList::_MENU_ServerList_C;
+using _MENU_ServerList_C = ::Game::UI::Menu_ServerList::_MENU_ServerList_C;

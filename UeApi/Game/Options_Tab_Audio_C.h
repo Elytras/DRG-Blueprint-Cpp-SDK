@@ -17,16 +17,16 @@ class Options_Tab_Audio_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_Audio", "Options_Tab_Audio_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_DisableJukeboxMusic_C = Game::UI::Menu_Options::Options_DisableJukeboxMusic_C;
-    using Options_DisableMasterEQ_C = Game::UI::Menu_Options::Options_DisableMasterEQ_C;
-    using Options_InputAudioSource_C = Game::UI::Menu_Options::Options_InputAudioSource_C;
-    using Options_OutputAudioSource_C = Game::UI::Menu_Options::Options_OutputAudioSource_C;
-    using Options_PushToTalk_C = Game::UI::Menu_Options::Options_PushToTalk_C;
-    using Options_Tinnitus_C = Game::UI::Menu_Options::Options_Tinnitus_C;
-    using Options_VoiceChat_C = Game::UI::Menu_Options::Options_VoiceChat_C;
-    using Options_VolumeSlider_C = Game::UI::Menu_Options::Options_VolumeSlider_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_DisableJukeboxMusic_C = ::Game::UI::Menu_Options::Options_DisableJukeboxMusic_C;
+    using Options_DisableMasterEQ_C = ::Game::UI::Menu_Options::Options_DisableMasterEQ_C;
+    using Options_InputAudioSource_C = ::Game::UI::Menu_Options::Options_InputAudioSource_C;
+    using Options_OutputAudioSource_C = ::Game::UI::Menu_Options::Options_OutputAudioSource_C;
+    using Options_PushToTalk_C = ::Game::UI::Menu_Options::Options_PushToTalk_C;
+    using Options_Tinnitus_C = ::Game::UI::Menu_Options::Options_Tinnitus_C;
+    using Options_VoiceChat_C = ::Game::UI::Menu_Options::Options_VoiceChat_C;
+    using Options_VolumeSlider_C = ::Game::UI::Menu_Options::Options_VolumeSlider_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* Basic_Option;
     Basic_Option_C* Basic_Option_0;
@@ -67,4 +67,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_Audio_C = Game::UI::Menu_Options::Options_Tab_Audio_C;
+using Options_Tab_Audio_C = ::Game::UI::Menu_Options::Options_Tab_Audio_C;

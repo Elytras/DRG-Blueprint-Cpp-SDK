@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::Critters::Prospector
 
-using BP_DirtChunk_C = Game::Critters::Prospector::BP_DirtChunk_C;
+using BP_DirtChunk_C = ::Game::Critters::Prospector::BP_DirtChunk_C;

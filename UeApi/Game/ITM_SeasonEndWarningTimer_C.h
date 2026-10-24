@@ -55,4 +55,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonEndWarningTimer_C = Game::UI::Menu_Seasons::ITM_SeasonEndWarningTimer_C;
+using ITM_SeasonEndWarningTimer_C = ::Game::UI::Menu_Seasons::ITM_SeasonEndWarningTimer_C;

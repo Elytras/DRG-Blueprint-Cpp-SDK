@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Tank {
 
-class ABP_Spider_ShieldTank_C : public Game::Enemies::Spider::Tank::ShieldTank::ABP_Spider_Tank_C
+class ABP_Spider_ShieldTank_C : public ::Game::Enemies::Spider::Tank::ShieldTank::ABP_Spider_Tank_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ABP_Spider_ShieldTank", "ABP_Spider_ShieldTank_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Tank
 
-using ABP_Spider_ShieldTank_C = Game::Enemies::Spider::Tank::ABP_Spider_ShieldTank_C;
+using ABP_Spider_ShieldTank_C = ::Game::Enemies::Spider::Tank::ABP_Spider_ShieldTank_C;

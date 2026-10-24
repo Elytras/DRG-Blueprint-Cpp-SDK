@@ -47,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_LunarFestival::Blueprints
 
-using BP_LunarFestival_LampRandom_C = Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_LunarFestival_LampRandom_C;
+using BP_LunarFestival_LampRandom_C = ::Game::Art::Environments::Holiday_LunarFestival::Blueprints::BP_LunarFestival_LampRandom_C;

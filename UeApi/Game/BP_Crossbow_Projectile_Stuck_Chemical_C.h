@@ -14,7 +14,7 @@ class UProjectileExplosion;
 
 namespace Game { namespace WeaponsNTools { namespace Crossbow { namespace Projectiles {
 
-class BP_Crossbow_Projectile_Stuck_Chemical_C : public Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_C
+class BP_Crossbow_Projectile_Stuck_Chemical_C : public ::Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Crossbow/Projectiles/BP_Crossbow_Projectile_Stuck_Chemical", "BP_Crossbow_Projectile_Stuck_Chemical_C");
@@ -27,6 +27,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
+        static constexpr const char* UeIchRecords = "InstantUsable;BansheePulse;SimpleObjectInfo;mesh_front";
         static constexpr const char* ChemicalParticles__UeScsNode = "5a7f35666348f148babc4adff43148b5";
         static constexpr const char* EffectExploding__UeScsNode = "d31cb5c02458f24d8c2034dc5c6ba8fb";
         static constexpr const char* ProjectileExplosion__UeScsNode = "005978b4693a154f9d921252c99351d6";
@@ -36,4 +37,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using BP_Crossbow_Projectile_Stuck_Chemical_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_Chemical_C;
+using BP_Crossbow_Projectile_Stuck_Chemical_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_Crossbow_Projectile_Stuck_Chemical_C;

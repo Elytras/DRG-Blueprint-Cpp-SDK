@@ -47,6 +47,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0";
         static constexpr const char* FacilityShredderDeath2nd_Cue__UeScsNode = "1593cea7bb533b4d879305b4e3421af6";
         static constexpr const char* FacilityShredderDeath1st_Cue__UeScsNode = "6fd1bf43622ad746a8321b6303e397e8";
         static constexpr const char* spawnParticles__UeScsNode = "a8bcbac25f79064ca99acadac1b7b183";
@@ -64,4 +65,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Shredder
 
-using ENE_Shredder_Base_C = Game::Enemies::RivalTech::Shredder::ENE_Shredder_Base_C;
+using ENE_Shredder_Base_C = ::Game::Enemies::RivalTech::Shredder::ENE_Shredder_Base_C;

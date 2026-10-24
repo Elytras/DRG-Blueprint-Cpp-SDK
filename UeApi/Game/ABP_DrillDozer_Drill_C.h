@@ -23,4 +23,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::DrillDozer
 
-using ABP_DrillDozer_Drill_C = Game::GameElements::Objectives::Escort::DrillDozer::ABP_DrillDozer_Drill_C;
+using ABP_DrillDozer_Drill_C = ::Game::GameElements::Objectives::Escort::DrillDozer::ABP_DrillDozer_Drill_C;

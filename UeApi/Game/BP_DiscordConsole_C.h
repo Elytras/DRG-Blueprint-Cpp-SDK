@@ -25,10 +25,10 @@ class BP_DiscordConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/BP_DiscordConsole", "BP_DiscordConsole_C");
-    using BP_DiscordInstantUsable_C = Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordInstantUsable_C;
-    using BP_PlayerControllerBase_C = Game::Game::BP_PlayerControllerBase_C;
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using Console_DiscordScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordScreen_C;
+    using BP_DiscordInstantUsable_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordInstantUsable_C;
+    using BP_PlayerControllerBase_C = ::Game::Game::BP_PlayerControllerBase_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using Console_DiscordScreen_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* Cube1;
     BP_DiscordInstantUsable_C* BP_DiscordInstantUsable;
@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using BP_DiscordConsole_C = Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsole_C;
+using BP_DiscordConsole_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::BP_DiscordConsole_C;

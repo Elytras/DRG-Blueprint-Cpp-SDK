@@ -25,4 +25,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_PlayerStart_C = Game::Game::BP_PlayerStart_C;
+using BP_PlayerStart_C = ::Game::Game::BP_PlayerStart_C;

@@ -16,7 +16,7 @@ class ITM_PreventDuplicateCharacters_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_PreventDuplicateCharacters", "ITM_PreventDuplicateCharacters_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     void ExecuteUbergraph_ITM_PreventDuplicateCharacters(int EntryPoint);
@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_PreventDuplicateCharacters_C = Game::UI::Menu_EscapeMenu::ITM_PreventDuplicateCharacters_C;
+using ITM_PreventDuplicateCharacters_C = ::Game::UI::Menu_EscapeMenu::ITM_PreventDuplicateCharacters_C;

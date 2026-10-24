@@ -19,8 +19,8 @@ class ITEM_UpgradesSmall_Bar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/ITEM_UpgradesSmall_Bar", "ITEM_UpgradesSmall_Bar_C");
-    using ITEM_UpgradesSmall_SingleIcon_C = Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_C;
-    using ITEM_UpgradesSmall_SingleIcon_Connector_C = Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_Connector_C;
+    using ITEM_UpgradesSmall_SingleIcon_C = ::Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_C;
+    using ITEM_UpgradesSmall_SingleIcon_Connector_C = ::Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_SingleIcon_Connector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITEM_UpgradesSmall_SingleIcon_Connector_C* Connector1_2;
     ITEM_UpgradesSmall_SingleIcon_Connector_C* Connector2_3;
@@ -58,4 +58,4 @@ private:
 
 }}}   // namespace Game::UI::CharacterSelectionMK2
 
-using ITEM_UpgradesSmall_Bar_C = Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_Bar_C;
+using ITEM_UpgradesSmall_Bar_C = ::Game::UI::CharacterSelectionMK2::ITEM_UpgradesSmall_Bar_C;

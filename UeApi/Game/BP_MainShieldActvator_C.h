@@ -24,7 +24,7 @@ class BP_MainShieldActvator_C : public AActor
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/ShieldGenerator/BP_MainShieldActvator", "BP_MainShieldActvator_C");
-    using BP_ShieldBattery_C = Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
+    using BP_ShieldBattery_C = ::Game::GameElements::Objectives::Facility::BP_ShieldBattery_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     class UStaticMeshComponent* Light;
@@ -64,4 +64,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::ShieldGenerator
 
-using BP_MainShieldActvator_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_MainShieldActvator_C;
+using BP_MainShieldActvator_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_MainShieldActvator_C;

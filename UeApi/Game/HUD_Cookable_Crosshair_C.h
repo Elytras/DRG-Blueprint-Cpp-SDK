@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using HUD_Cookable_Crosshair_C = Game::WeaponsNTools::Grenades::HUD_Cookable_Crosshair_C;
+using HUD_Cookable_Crosshair_C = ::Game::WeaponsNTools::Grenades::HUD_Cookable_Crosshair_C;

@@ -19,7 +19,7 @@ class ITM_DeepDive_MisCompBG_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/ITM_DeepDive_MisCompBG", "ITM_DeepDive_MisCompBG_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimBackgroundFloat;
     BlurBackground_C* BlurBackground;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using ITM_DeepDive_MisCompBG_C = Game::UI::Menu_MissionStart::ITM_DeepDive_MisCompBG_C;
+using ITM_DeepDive_MisCompBG_C = ::Game::UI::Menu_MissionStart::ITM_DeepDive_MisCompBG_C;

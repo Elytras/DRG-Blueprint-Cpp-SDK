@@ -19,7 +19,7 @@ class ITM_MissionComplete_Resource_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_Resource", "ITM_MissionComplete_Resource_C");
-    using Basic_ResourceIcon_C = Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
+    using Basic_ResourceIcon_C = ::Game::UI::Art::WidgetParts::Basic_ResourceIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UTextBlock* DataDescription;
@@ -46,4 +46,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_MissionComplete_Resource_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_Resource_C;
+using ITM_MissionComplete_Resource_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_Resource_C;

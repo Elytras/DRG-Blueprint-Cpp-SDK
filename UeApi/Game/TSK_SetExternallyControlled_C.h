@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Enemies::FlyingBug
 
-using TSK_SetExternallyControlled_C = Game::Enemies::FlyingBug::TSK_SetExternallyControlled_C;
+using TSK_SetExternallyControlled_C = ::Game::Enemies::FlyingBug::TSK_SetExternallyControlled_C;

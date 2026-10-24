@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlareGun
 
-using WPN_FlareGun_C = Game::WeaponsNTools::FlareGun::WPN_FlareGun_C;
+using WPN_FlareGun_C = ::Game::WeaponsNTools::FlareGun::WPN_FlareGun_C;

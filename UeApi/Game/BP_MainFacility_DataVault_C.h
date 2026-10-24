@@ -45,12 +45,12 @@ class BP_MainFacility_DataVault_C : public ATetherStation
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_MainFacility_DataVault", "BP_MainFacility_DataVault_C");
-    using BP_FacilityElectricAttack_C = Game::GameElements::Objectives::Facility::BP_FacilityElectricAttack_C;
-    using BP_FacilityTentacleManager_C = Game::GameElements::Objectives::Facility::BP_FacilityTentacleManager_C;
-    using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
-    using BP_MainShieldActvator_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_MainShieldActvator_C;
-    using ENE_FacilityCaretaker_C = Game::GameElements::Objectives::Facility::Caretaker::ENE_FacilityCaretaker_C;
-    using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+    using BP_FacilityElectricAttack_C = ::Game::GameElements::Objectives::Facility::BP_FacilityElectricAttack_C;
+    using BP_FacilityTentacleManager_C = ::Game::GameElements::Objectives::Facility::BP_FacilityTentacleManager_C;
+    using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    using BP_MainShieldActvator_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_MainShieldActvator_C;
+    using ENE_FacilityCaretaker_C = ::Game::GameElements::Objectives::Facility::Caretaker::ENE_FacilityCaretaker_C;
+    using ENE_FacilityTentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UMeshCarverComponent* MeshCarver;
     class UPathfinderCollisionComponent* PathfinderCollision_Hatch4;
@@ -186,6 +186,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent SceneRoot;/Script/Engine.SkeletalMeshComponent BaseMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/Facility/BP_FacilityTentacleManager.BP_FacilityTentacleManager_C TentacleSpawn1_GEN_VARIABLE:TentacleSpawn1_GEN_VARIABLE_BP_FacilityTentacleManager_C_CAT;/Game/GameElements/Objectives/Facility/BP_FacilityTentacleManager.BP_FacilityTentacleManager_C TentacleSpawn2_GEN_VARIABLE:TentacleSpawn2_GEN_VARIABLE_BP_FacilityTentacleManager_C_CAT;/Game/GameElements/Objectives/Facility/BP_FacilityTentacleManager.BP_FacilityTentacleManager_C TentacleSpawn3_GEN_VARIABLE:TentacleSpawn3_GEN_VARIABLE_BP_FacilityTentacleManager_C_CAT;/Game/GameElements/Objectives/Facility/BP_FacilityTentacleManager.BP_FacilityTentacleManager_C TentacleSpawn_GEN_VARIABLE:TentacleSpawn_GEN_VARIABLE_BP_FacilityTentacleManager_C_CAT;/Game/GameElements/Objectives/Facility/BP_Mainfacility_ShieldEmitter_ForceFieldProjector.BP_Mainfacility_ShieldEmitter_ForceFieldProjector_C ShieldEmitter_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_MainFacility_Batteryholder_C_CAT;/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* MeshCarver__UeScsNode = "511a5a09a29ff247ab815e03d7cef29a";
         static constexpr const char* PathfinderCollision_Hatch4__UeScsNode = "31deea2fa151cb44a231151655e1426e";
         static constexpr const char* PathfinderCollision_Hatch3__UeScsNode = "ebca944fba5ef348bc7a6d66aab46fb7";
@@ -235,4 +236,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Facility
 
-using BP_MainFacility_DataVault_C = Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
+using BP_MainFacility_DataVault_C = ::Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;

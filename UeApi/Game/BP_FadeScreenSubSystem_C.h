@@ -19,6 +19,6 @@ public:
 }}}   // namespace Game::Game::SubSystems
 
 /* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
-inline Game::Game::SubSystems::BP_FadeScreenSubSystem_C* Game::Game::SubSystems::BP_FadeScreenSubSystem_C::Get(class UObject* WorldContextObject) { return (BP_FadeScreenSubSystem_C*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, BP_FadeScreenSubSystem_C::StaticClass()); }
+inline ::Game::Game::SubSystems::BP_FadeScreenSubSystem_C* ::Game::Game::SubSystems::BP_FadeScreenSubSystem_C::Get(class UObject* WorldContextObject) { return (BP_FadeScreenSubSystem_C*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, BP_FadeScreenSubSystem_C::StaticClass()); }
 
-using BP_FadeScreenSubSystem_C = Game::Game::SubSystems::BP_FadeScreenSubSystem_C;
+using BP_FadeScreenSubSystem_C = ::Game::Game::SubSystems::BP_FadeScreenSubSystem_C;

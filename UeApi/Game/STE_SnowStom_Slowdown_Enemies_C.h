@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves
 
-using STE_SnowStom_Slowdown_Enemies_C = Game::Landscape::Biomes::Biomes_Ingame::IceCaves::STE_SnowStom_Slowdown_Enemies_C;
+using STE_SnowStom_Slowdown_Enemies_C = ::Game::Landscape::Biomes::Biomes_Ingame::IceCaves::STE_SnowStom_Slowdown_Enemies_C;

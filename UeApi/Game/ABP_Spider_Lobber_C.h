@@ -134,4 +134,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Spider::Lobber
 
-using ABP_Spider_Lobber_C = Game::Enemies::Spider::Lobber::ABP_Spider_Lobber_C;
+using ABP_Spider_Lobber_C = ::Game::Enemies::Spider::Lobber::ABP_Spider_Lobber_C;

@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using PRW_RecallableSentryGun_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::PRW_RecallableSentryGun_C;
+using PRW_RecallableSentryGun_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::PRW_RecallableSentryGun_C;

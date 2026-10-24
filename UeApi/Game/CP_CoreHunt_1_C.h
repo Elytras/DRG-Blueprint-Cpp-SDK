@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_CoreHunt_1_C = Game::GameElements::Campaign::CP_CoreHunt_1_C;
+using CP_CoreHunt_1_C = ::Game::GameElements::Campaign::CP_CoreHunt_1_C;

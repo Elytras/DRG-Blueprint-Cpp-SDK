@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::Landscape::Biomes
 
-using CSC_StormsQuakesEtc_Base_C = Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C;
+using CSC_StormsQuakesEtc_Base_C = ::Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C;

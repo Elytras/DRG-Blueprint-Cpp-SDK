@@ -10,7 +10,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Critters { namespace Maggot {
 
-class BP_GreenMaggot_AcidCloud_C : public Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
+class BP_GreenMaggot_AcidCloud_C : public ::Game::Enemies::BaseItems::BP_Damage_Cloud_Flamable_Base_C
 {
 public:
     UE_CLASS("/Game/Critters/Maggot/BP_GreenMaggot_AcidCloud", "BP_GreenMaggot_AcidCloud_C");
@@ -21,10 +21,12 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "CombustionDamageFire;CombustionDamageIce;AcidCloud;Sphere;StatusEffectTrigger";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CombustionDamageFire_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus CombustionDamageIce_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_BP_GreenMaggot_AcidCloud_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}   // namespace Game::Critters::Maggot
 
-using BP_GreenMaggot_AcidCloud_C = Game::Critters::Maggot::BP_GreenMaggot_AcidCloud_C;
+using BP_GreenMaggot_AcidCloud_C = ::Game::Critters::Maggot::BP_GreenMaggot_AcidCloud_C;

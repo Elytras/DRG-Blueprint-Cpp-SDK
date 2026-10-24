@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using AGG_SupplyPod_Ammo_C = Game::WeaponsNTools::SupplyPod::AGG_SupplyPod_Ammo_C;
+using AGG_SupplyPod_Ammo_C = ::Game::WeaponsNTools::SupplyPod::AGG_SupplyPod_Ammo_C;

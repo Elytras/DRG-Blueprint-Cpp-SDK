@@ -55,4 +55,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom
 
-using BP_Mushroom_Base_C = Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom::BP_Mushroom_Base_C;
+using BP_Mushroom_Base_C = ::Game::LevelElements::RoomObjects::PassiveFoliage::HarmlessSporesMushroom::BP_Mushroom_Base_C;

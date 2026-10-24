@@ -26,8 +26,8 @@ class UI_JettyBoots_Game_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/Jetboots/UI_JettyBoots_Game", "UI_JettyBoots_Game_C");
-    using UI_JettyBoots_Character_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Character_C;
-    using UI_JettyBoots_Obstacle_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Obstacle_C;
+    using UI_JettyBoots_Character_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Character_C;
+    using UI_JettyBoots_Obstacle_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Obstacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_JettyBoots_Character_C* Character_Sprite;
     class UCanvasPanel* Game_Canvas;
@@ -103,4 +103,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Jetboots
 
-using UI_JettyBoots_Game_C = Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;
+using UI_JettyBoots_Game_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::UI_JettyBoots_Game_C;

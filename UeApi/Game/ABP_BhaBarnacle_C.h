@@ -22,4 +22,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Resources::Collectibles::BhaBarnacle::Assets
 
-using ABP_BhaBarnacle_C = Game::GameElements::Resources::Collectibles::BhaBarnacle::Assets::ABP_BhaBarnacle_C;
+using ABP_BhaBarnacle_C = ::Game::GameElements::Resources::Collectibles::BhaBarnacle::Assets::ABP_BhaBarnacle_C;

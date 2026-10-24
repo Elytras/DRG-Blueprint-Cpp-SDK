@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight
 
-using HUD_BossFight_Manager_C = Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_Manager_C;
+using HUD_BossFight_Manager_C = ::Game::UI::MainOnscreenHUD::BossFight::HUD_BossFight_Manager_C;

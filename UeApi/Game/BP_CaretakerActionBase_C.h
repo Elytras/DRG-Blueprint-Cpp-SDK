@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using BP_CaretakerActionBase_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C;
+using BP_CaretakerActionBase_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C;

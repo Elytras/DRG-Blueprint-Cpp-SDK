@@ -12,11 +12,11 @@ namespace Game { namespace UI { namespace _GlobalAssets { namespace CircularProg
 
 namespace Game { namespace WeaponsNTools { namespace Grenades {
 
-class HUD_Cookable_HighExplosive_C : public Game::WeaponsNTools::Grenades::HUD_Cookable_Crosshair_C
+class HUD_Cookable_HighExplosive_C : public ::Game::WeaponsNTools::Grenades::HUD_Cookable_Crosshair_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/HUD_Cookable_HighExplosive", "HUD_Cookable_HighExplosive_C");
-    using UI_CircularProgressBar_C = Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
+    using UI_CircularProgressBar_C = ::Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame_HUD_Cookable_HighExplosive_C;
     UI_CircularProgressBar_C* UI_CircularProgressBar;
     void ExecuteUbergraph_HUD_Cookable_HighExplosive(int EntryPoint);
@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using HUD_Cookable_HighExplosive_C = Game::WeaponsNTools::Grenades::HUD_Cookable_HighExplosive_C;
+using HUD_Cookable_HighExplosive_C = ::Game::WeaponsNTools::Grenades::HUD_Cookable_HighExplosive_C;

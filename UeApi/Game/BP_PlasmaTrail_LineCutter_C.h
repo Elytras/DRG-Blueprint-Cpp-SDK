@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using BP_PlasmaTrail_LineCutter_C = Game::WeaponsNTools::LineCutter::BP_PlasmaTrail_LineCutter_C;
+using BP_PlasmaTrail_LineCutter_C = ::Game::WeaponsNTools::LineCutter::BP_PlasmaTrail_LineCutter_C;

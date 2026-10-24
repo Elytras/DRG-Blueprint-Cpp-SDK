@@ -29,10 +29,10 @@ class ITM_CommunityGoal_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/ITM_CommunityGoal", "ITM_CommunityGoal_C");
-    using ITM_CommunityGoalRewardToolTip_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRewardToolTip_C;
-    using ITM_FactionToolTip_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
-    using UI_GradientMasked_Image_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using ITM_CommunityGoalRewardToolTip_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRewardToolTip_C;
+    using ITM_FactionToolTip_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionToolTip_C;
+    using UI_GradientMasked_Image_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Image_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* BackgroundButton;
     class UTextBlock* BronzeGoalNumber;
@@ -105,4 +105,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using ITM_CommunityGoal_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_C;
+using ITM_CommunityGoal_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_C;

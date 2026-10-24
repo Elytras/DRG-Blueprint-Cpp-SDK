@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::GameElements::Drone
 
-using PRW_Drone_Nurse_C = Game::GameElements::Drone::PRW_Drone_Nurse_C;
+using PRW_Drone_Nurse_C = ::Game::GameElements::Drone::PRW_Drone_Nurse_C;

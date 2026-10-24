@@ -30,12 +30,12 @@ class WND_JoiningModded_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/WND_JoiningModded", "WND_JoiningModded_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_PasswordField_C = Game::UI::Art::WidgetParts::Basic_PasswordField_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_ModdingProgressBar_C = Game::UI::Modding::UI_ModdingProgressBar_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_PasswordField_C = ::Game::UI::Art::WidgetParts::Basic_PasswordField_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_ModdingProgressBar_C = ::Game::UI::Modding::UI_ModdingProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class URichTextSizable* AboutToJoinModdedText;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
@@ -107,4 +107,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using WND_JoiningModded_C = Game::UI::Menu_ServerList::WND_JoiningModded_C;
+using WND_JoiningModded_C = ::Game::UI::Menu_ServerList::WND_JoiningModded_C;

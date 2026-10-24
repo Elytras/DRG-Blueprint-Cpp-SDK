@@ -17,7 +17,7 @@ class BP_Count_Randoms_C : public AActor
 {
 public:
     UE_CLASS("/Game/Maps/UILevels/Assets/HUD/BP_Count_Randoms", "BP_Count_Randoms_C");
-    using BP_Count_Randoms_Widget_C = Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_Widget_C;
+    using BP_Count_Randoms_Widget_C = ::Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_Widget_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetComponent* Widget1;
     class USceneComponent* DefaultSceneRoot;
@@ -40,4 +40,4 @@ private:
 
 }}}}}   // namespace Game::Maps::UILevels::Assets::HUD
 
-using BP_Count_Randoms_C = Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_C;
+using BP_Count_Randoms_C = ::Game::Maps::UILevels::Assets::HUD::BP_Count_Randoms_C;

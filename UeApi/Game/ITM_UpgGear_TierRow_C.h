@@ -21,8 +21,8 @@ class ITM_UpgGear_TierRow_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_TierRow", "ITM_UpgGear_TierRow_C");
-    using ITM_UpgGear_SideBar_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_C;
-    using ITM_UpgGear_UpgIconSingle_C = Game::UI::Menu_Loadout::ITM_UpgGear_UpgIconSingle_C;
+    using ITM_UpgGear_SideBar_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_C;
+    using ITM_UpgGear_UpgIconSingle_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_UpgIconSingle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* BackBar;
     class UBorder* IconColorer;
@@ -66,4 +66,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_TierRow_C = Game::UI::Menu_Loadout::ITM_UpgGear_TierRow_C;
+using ITM_UpgGear_TierRow_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_TierRow_C;

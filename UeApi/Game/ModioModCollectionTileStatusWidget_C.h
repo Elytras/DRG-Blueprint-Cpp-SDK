@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::Collection
 
-using ModioModCollectionTileStatusWidget_C = Modio::UI::Browser::Views::Collection::ModioModCollectionTileStatusWidget_C;
+using ModioModCollectionTileStatusWidget_C = ::Modio::UI::Browser::Views::Collection::ModioModCollectionTileStatusWidget_C;

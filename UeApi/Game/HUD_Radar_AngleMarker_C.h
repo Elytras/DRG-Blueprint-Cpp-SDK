@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::UI::Radar
 
-using HUD_Radar_AngleMarker_C = Game::UI::Radar::HUD_Radar_AngleMarker_C;
+using HUD_Radar_AngleMarker_C = ::Game::UI::Radar::HUD_Radar_AngleMarker_C;

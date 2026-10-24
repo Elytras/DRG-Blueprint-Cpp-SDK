@@ -44,4 +44,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_TargetBeam_C = Game::GameElements::Objectives::Escort::BP_TargetBeam_C;
+using BP_TargetBeam_C = ::Game::GameElements::Objectives::Escort::BP_TargetBeam_C;

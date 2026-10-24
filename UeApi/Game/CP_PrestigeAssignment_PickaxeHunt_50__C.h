@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_PrestigeAssignment_PickaxeHunt_50__C = Game::GameElements::Campaign::CP_PrestigeAssignment_PickaxeHunt_50__C;
+using CP_PrestigeAssignment_PickaxeHunt_50__C = ::Game::GameElements::Campaign::CP_PrestigeAssignment_PickaxeHunt_50__C;

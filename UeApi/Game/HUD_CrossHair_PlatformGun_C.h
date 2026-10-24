@@ -26,4 +26,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrossHair_PlatformGun_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_PlatformGun_C;
+using HUD_CrossHair_PlatformGun_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrossHair_PlatformGun_C;

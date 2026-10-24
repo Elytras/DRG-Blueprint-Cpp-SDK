@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Warnings
 
-using HUDWarning_DefaultEntry_C = Game::UI::MainOnscreenHUD::Warnings::HUDWarning_DefaultEntry_C;
+using HUDWarning_DefaultEntry_C = ::Game::UI::MainOnscreenHUD::Warnings::HUDWarning_DefaultEntry_C;

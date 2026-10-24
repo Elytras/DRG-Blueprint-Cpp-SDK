@@ -20,8 +20,8 @@ class ITM_Modding_ToolTip_Entry_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Modding/ITM_Modding_ToolTip_Entry", "ITM_Modding_ToolTip_Entry_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Approval_Label;
     class UWidgetSwitcher* HasMetaData_Switcher;
@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::UI::Modding
 
-using ITM_Modding_ToolTip_Entry_C = Game::UI::Modding::ITM_Modding_ToolTip_Entry_C;
+using ITM_Modding_ToolTip_Entry_C = ::Game::UI::Modding::ITM_Modding_ToolTip_Entry_C;

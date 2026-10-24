@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::Critters::FesterFlea::Flea
 
-using ESI_Flea_C = Game::Critters::FesterFlea::Flea::ESI_Flea_C;
+using ESI_Flea_C = ::Game::Critters::FesterFlea::Flea::ESI_Flea_C;

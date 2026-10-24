@@ -20,4 +20,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_Facility_DNA_C = Game::GameElements::Missions::DNA_Facility_DNA_C;
+using DNA_Facility_DNA_C = ::Game::GameElements::Missions::DNA_Facility_DNA_C;

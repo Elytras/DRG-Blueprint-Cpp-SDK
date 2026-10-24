@@ -18,9 +18,9 @@ class WND_JoinFailed_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/WND_JoinFailed", "WND_JoinFailed_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_MinimalWindow_C* BasicWindow_Minimal;
     BlurBackground_C* BlurBackground;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using WND_JoinFailed_C = Game::UI::Menu_ServerList::WND_JoinFailed_C;
+using WND_JoinFailed_C = ::Game::UI::Menu_ServerList::WND_JoinFailed_C;

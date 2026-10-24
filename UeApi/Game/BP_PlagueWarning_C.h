@@ -49,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::Plague
 
-using BP_PlagueWarning_C = Game::GameElements::Missions::Warnings::Plague::BP_PlagueWarning_C;
+using BP_PlagueWarning_C = ::Game::GameElements::Missions::Warnings::Plague::BP_PlagueWarning_C;

@@ -55,6 +55,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* Explosion__UeScsNode = "b4342de7b093744f8b4f4f490c99263f";
         static constexpr const char* Damage__UeScsNode = "d69e87a51e12d44fb36eef7331170ef8";
         static constexpr const char* SimpleHealth__UeScsNode = "ca6ad7ea9b516540be29b99b448f13f4";
@@ -68,4 +69,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using BP_Microwave_Heatsink_C = Game::WeaponsNTools::MicrowaveGun::BP_Microwave_Heatsink_C;
+using BP_Microwave_Heatsink_C = ::Game::WeaponsNTools::MicrowaveGun::BP_Microwave_Heatsink_C;

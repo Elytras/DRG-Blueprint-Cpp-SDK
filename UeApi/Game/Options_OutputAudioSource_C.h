@@ -21,10 +21,10 @@ class Options_OutputAudioSource_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_OutputAudioSource", "Options_OutputAudioSource_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeOut;
     Basic_CheckBox_C* Basic_CheckBox;
@@ -52,4 +52,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_OutputAudioSource_C = Game::UI::Menu_Options::Options_OutputAudioSource_C;
+using Options_OutputAudioSource_C = ::Game::UI::Menu_Options::Options_OutputAudioSource_C;

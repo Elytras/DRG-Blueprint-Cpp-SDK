@@ -21,4 +21,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab
 
-using DEC_WalkAndFlyIsFlying_C = Game::Enemies::Ossiran::Scrab::DEC_WalkAndFlyIsFlying_C;
+using DEC_WalkAndFlyIsFlying_C = ::Game::Enemies::Ossiran::Scrab::DEC_WalkAndFlyIsFlying_C;

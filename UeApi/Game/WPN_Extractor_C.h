@@ -51,4 +51,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Extractor
 
-using WPN_Extractor_C = Game::WeaponsNTools::Extractor::WPN_Extractor_C;
+using WPN_Extractor_C = ::Game::WeaponsNTools::Extractor::WPN_Extractor_C;

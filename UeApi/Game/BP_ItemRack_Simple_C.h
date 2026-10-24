@@ -46,4 +46,4 @@ private:
 
 }}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod
 
-using BP_ItemRack_Simple_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_ItemRack_Simple_C;
+using BP_ItemRack_Simple_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_ItemRack_Simple_C;

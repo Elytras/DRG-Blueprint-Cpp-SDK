@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Projectiles
 
-using BP_RicochetArrow_Component_C = Game::WeaponsNTools::Crossbow::Projectiles::BP_RicochetArrow_Component_C;
+using BP_RicochetArrow_Component_C = ::Game::WeaponsNTools::Crossbow::Projectiles::BP_RicochetArrow_Component_C;

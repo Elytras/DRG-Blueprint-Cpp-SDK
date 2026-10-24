@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::GameElements::Treasure
 
-using ABP_TreasureBox_C = Game::GameElements::Treasure::ABP_TreasureBox_C;
+using ABP_TreasureBox_C = ::Game::GameElements::Treasure::ABP_TreasureBox_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using STE_EngineerSpeedBoost_LockOnRifle_C = Game::WeaponsNTools::LockOnRifle::STE_EngineerSpeedBoost_LockOnRifle_C;
+using STE_EngineerSpeedBoost_LockOnRifle_C = ::Game::WeaponsNTools::LockOnRifle::STE_EngineerSpeedBoost_LockOnRifle_C;

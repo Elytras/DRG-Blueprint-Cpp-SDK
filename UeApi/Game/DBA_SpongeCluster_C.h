@@ -23,6 +23,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisMesh D_GrassSmall--2K(0-50)1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Rubble_GEN_VARIABLE:DebrisMesh_0";
         static constexpr const char* D_GrassSmall__2K_0_50_1__UeName = "D_GrassSmall--2K(0-50)1";
         static constexpr const char* D_GrassSmall__2K_0_50_1__UeScsNode = "7dcab4c15eca0342af7646b023622577";
         static constexpr const char* D_Rubble__UeScsNode = "94368dd9ac77364eb20cd19090055387";
@@ -33,4 +34,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::SpongeCluster
 
-using DBA_SpongeCluster_C = Game::Landscape::Biomes::Biomes_Testing::SpongeCluster::DBA_SpongeCluster_C;
+using DBA_SpongeCluster_C = ::Game::Landscape::Biomes::Biomes_Testing::SpongeCluster::DBA_SpongeCluster_C;

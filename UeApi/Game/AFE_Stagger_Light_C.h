@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::PawnAffliction::EnemyEffects::Stagger
 
-using AFE_Stagger_Light_C = Game::GameElements::PawnAffliction::EnemyEffects::Stagger::AFE_Stagger_Light_C;
+using AFE_Stagger_Light_C = ::Game::GameElements::PawnAffliction::EnemyEffects::Stagger::AFE_Stagger_Light_C;

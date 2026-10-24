@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using STE_PlagueEnemies_SlowDeath_C = Game::Enemies::Plague::STE_PlagueEnemies_SlowDeath_C;
+using STE_PlagueEnemies_SlowDeath_C = ::Game::Enemies::Plague::STE_PlagueEnemies_SlowDeath_C;

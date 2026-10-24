@@ -47,4 +47,4 @@ private:
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables
 
-using bp_Boneyard_DestructibleDebris_Base_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleDebris_Base_C;
+using bp_Boneyard_DestructibleDebris_Base_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleDebris_Base_C;

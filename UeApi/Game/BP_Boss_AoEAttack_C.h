@@ -25,4 +25,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank
 
-using BP_Boss_AoEAttack_C = Game::Enemies::Spider::TankBoss::BossTank::BP_Boss_AoEAttack_C;
+using BP_Boss_AoEAttack_C = ::Game::Enemies::Spider::TankBoss::BossTank::BP_Boss_AoEAttack_C;

@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_SocialMediaButtons_C = Game::UI::Menu_EscapeMenu::ITM_SocialMediaButtons_C;
+using ITM_SocialMediaButtons_C = ::Game::UI::Menu_EscapeMenu::ITM_SocialMediaButtons_C;

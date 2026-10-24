@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::BloodSugar
 
-using BP_BloodSugar_C = Game::GameElements::Missions::Mutators::BloodSugar::BP_BloodSugar_C;
+using BP_BloodSugar_C = ::Game::GameElements::Missions::Mutators::BloodSugar::BP_BloodSugar_C;

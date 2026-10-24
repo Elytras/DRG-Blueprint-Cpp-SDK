@@ -18,7 +18,7 @@ class USphereComponent;
 
 namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher {
 
-class PRJ_MicroMissile_Mine_Head_C : public Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
+class PRJ_MicroMissile_Mine_Head_C : public ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/PRJ_MicroMissile_Mine_Head", "PRJ_MicroMissile_Mine_Head_C");
@@ -43,6 +43,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeIchRecords = "MeshRocket";
         static constexpr const char* UberGraphFrame_PRJ_MicroMissile_Mine_Head_C__UeName = "UberGraphFrame";
         static constexpr const char* HitCollider__UeScsNode = "1dfcd728c1ccaf46827beb852c479788";
         static constexpr const char* HealthComponent__UeScsNode = "a6ebcd4d909c3c4c865dd2767bf1fcbd";
@@ -53,4 +54,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicroMissileLauncher
 
-using PRJ_MicroMissile_Mine_Head_C = Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Mine_Head_C;
+using PRJ_MicroMissile_Mine_Head_C = ::Game::WeaponsNTools::MicroMissileLauncher::PRJ_MicroMissile_Mine_Head_C;

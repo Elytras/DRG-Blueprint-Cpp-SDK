@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MisDesMutator_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;
+using ITM_MisDesMutator_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisDesMutator_C;

@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using STE_Player_ShieldBreak_Damage_C = Game::WeaponsNTools::Armor::STE_Player_ShieldBreak_Damage_C;
+using STE_Player_ShieldBreak_Damage_C = ::Game::WeaponsNTools::Armor::STE_Player_ShieldBreak_Damage_C;

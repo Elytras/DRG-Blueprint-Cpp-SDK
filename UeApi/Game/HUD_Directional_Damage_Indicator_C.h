@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::DamageIndicator
 
-using HUD_Directional_Damage_Indicator_C = Game::UI::MainOnscreenHUD::DamageIndicator::HUD_Directional_Damage_Indicator_C;
+using HUD_Directional_Damage_Indicator_C = ::Game::UI::MainOnscreenHUD::DamageIndicator::HUD_Directional_Damage_Indicator_C;

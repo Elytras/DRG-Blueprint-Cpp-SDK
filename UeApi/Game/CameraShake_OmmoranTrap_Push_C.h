@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using CameraShake_OmmoranTrap_Push_C = Game::GameElements::Objectives::Escort::CameraShake_OmmoranTrap_Push_C;
+using CameraShake_OmmoranTrap_Push_C = ::Game::GameElements::Objectives::Escort::CameraShake_OmmoranTrap_Push_C;

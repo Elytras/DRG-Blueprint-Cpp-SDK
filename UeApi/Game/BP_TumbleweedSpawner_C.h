@@ -37,4 +37,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalTumbleWeed
 
-using BP_TumbleweedSpawner_C = Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalTumbleWeed::BP_TumbleweedSpawner_C;
+using BP_TumbleweedSpawner_C = ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalTumbleWeed::BP_TumbleweedSpawner_C;

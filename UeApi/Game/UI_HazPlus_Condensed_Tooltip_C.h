@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_HazPlus_Condensed_Tooltip_C = Game::UI::Global_UI_Elements::UI_HazPlus_Condensed_Tooltip_C;
+using UI_HazPlus_Condensed_Tooltip_C = ::Game::UI::Global_UI_Elements::UI_HazPlus_Condensed_Tooltip_C;

@@ -28,4 +28,4 @@ private:
 
 }}   // namespace Game::UI
 
-using BP_MissionStatScreen_C = Game::UI::BP_MissionStatScreen_C;
+using BP_MissionStatScreen_C = ::Game::UI::BP_MissionStatScreen_C;

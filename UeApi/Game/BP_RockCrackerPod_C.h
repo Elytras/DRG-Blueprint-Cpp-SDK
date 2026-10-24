@@ -38,7 +38,7 @@ class BP_RockCrackerPod_C : public ARockCrackerPod
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/PlagueMeteor/BP_RockCrackerPod", "BP_RockCrackerPod_C");
-    using BP_RockCracker_EndPoint_C = Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;
+    using BP_RockCracker_EndPoint_C = ::Game::WeaponsNTools::RockCrackerBuilder::BP_RockCracker_EndPoint_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* FuelLineStart;
     class UTerrainPlacementComponent* terrainPlacement;
@@ -92,6 +92,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.ContinuousUsableComponent RepairUsable;/Script/FSD.DamageComponent Damage;/Script/FSD.FriendlyHealthComponent PodHealth;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank1_GEN_VARIABLE:BP_OxygenTank1_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C BP_OxygenTank_GEN_VARIABLE:BP_OxygenTank_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C BP_OxygenTankSound_GEN_VARIABLE:BP_OxygenTankSound_GEN_VARIABLE_BP_OxygenTankSound_C_CAT;/Game/WeaponsNTools/RockCrackerBuilder/BP_RockCracker_StartPoint.BP_RockCracker_StartPoint_C FuelLineStart_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_RockCracker_StartPoint_C_CAT;/Script/FSD.FuelLineStartUsable FuelLineStart_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_RockCracker_StartPoint_C_CAT:UsableStartFuelLine;/Script/FSD.OutlineComponent FuelLineStart_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_RockCracker_StartPoint_C_CAT:OutlineComponent;/Script/Engine.SceneComponent FuelLineStart_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_RockCracker_StartPoint_C_CAT:DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent FuelLineStart_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_RockCracker_StartPoint_C_CAT:ObjectInfo;/Script/Engine.StaticMeshComponent FuelLineStart_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_RockCracker_StartPoint_C_CAT:StaticMesh";
         static constexpr const char* FuelLineStart__UeScsNode = "bf3b34c2e2b676409914948cf7e34a68";
         static constexpr const char* terrainPlacement__UeScsNode = "bd70e65348eca94a913d27207a9ef4ec";
         static constexpr const char* PathfinderCollision__UeScsNode = "6af377cb7d4a2b4fb8d4106dfa48d3fe";
@@ -122,4 +123,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor
 
-using BP_RockCrackerPod_C = Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;
+using BP_RockCrackerPod_C = ::Game::GameElements::GameEvents::PlagueMeteor::BP_RockCrackerPod_C;

@@ -18,4 +18,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using BP_RefineryDNA_C = Game::GameElements::Missions::BP_RefineryDNA_C;
+using BP_RefineryDNA_C = ::Game::GameElements::Missions::BP_RefineryDNA_C;

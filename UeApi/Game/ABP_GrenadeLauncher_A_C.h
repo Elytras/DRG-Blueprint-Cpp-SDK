@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher
 
-using ABP_GrenadeLauncher_A_C = Game::WeaponsNTools::GrenadeLauncher::ABP_GrenadeLauncher_A_C;
+using ABP_GrenadeLauncher_A_C = ::Game::WeaponsNTools::GrenadeLauncher::ABP_GrenadeLauncher_A_C;

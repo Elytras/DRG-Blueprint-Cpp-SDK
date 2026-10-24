@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_EscortButton_C = Game::UI::OnScreenIndicators::OnScreenIndicator_EscortButton_C;
+using OnScreenIndicator_EscortButton_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_EscortButton_C;

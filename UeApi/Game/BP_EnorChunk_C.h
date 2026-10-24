@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::EnorPearl
 
-using BP_EnorChunk_C = Game::GameElements::Resources::Embedded::EnorPearl::BP_EnorChunk_C;
+using BP_EnorChunk_C = ::Game::GameElements::Resources::Embedded::EnorPearl::BP_EnorChunk_C;

@@ -17,4 +17,4 @@ public:
 
 }}   // namespace Game::Audio
 
-using BP_DynamicReverb_C = Game::Audio::BP_DynamicReverb_C;
+using BP_DynamicReverb_C = ::Game::Audio::BP_DynamicReverb_C;

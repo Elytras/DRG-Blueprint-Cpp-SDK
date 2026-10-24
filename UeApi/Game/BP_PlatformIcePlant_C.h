@@ -49,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Helpers::PlatformIcePlant
 
-using BP_PlatformIcePlant_C = Game::LevelElements::RoomObjects::Helpers::PlatformIcePlant::BP_PlatformIcePlant_C;
+using BP_PlatformIcePlant_C = ::Game::LevelElements::RoomObjects::Helpers::PlatformIcePlant::BP_PlatformIcePlant_C;

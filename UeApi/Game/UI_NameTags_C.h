@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using UI_NameTags_C = Game::UI::HUD_SpaceRig::UI_NameTags_C;
+using UI_NameTags_C = ::Game::UI::HUD_SpaceRig::UI_NameTags_C;

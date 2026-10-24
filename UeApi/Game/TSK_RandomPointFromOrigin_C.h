@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Drone::Tasks
 
-using TSK_RandomPointFromOrigin_C = Game::GameElements::Drone::Tasks::TSK_RandomPointFromOrigin_C;
+using TSK_RandomPointFromOrigin_C = ::Game::GameElements::Drone::Tasks::TSK_RandomPointFromOrigin_C;

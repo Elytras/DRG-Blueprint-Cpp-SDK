@@ -12,7 +12,7 @@ class USpotLightComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace AirGeyser {
 
-class BP_Geyser_Air_CausticMire_C : public Game::LevelElements::RoomObjects::Hazards::AirGeyser::BP_Geyser_Air_C
+class BP_Geyser_Air_CausticMire_C : public ::Game::LevelElements::RoomObjects::Hazards::AirGeyser::BP_Geyser_Air_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/AirGeyser/BP_Geyser_Air_CausticMire", "BP_Geyser_Air_CausticMire_C");
@@ -21,6 +21,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver_Geyser;Particle_Erupt;Particle_Idle;TerrainPlacement";
         static constexpr const char* PointLight__UeScsNode = "724a9be72977324c8e833fb2077a97df";
         static constexpr const char* SpotLight__UeScsNode = "b57be6ccc973074f861b811f4e34f9bb";
     };
@@ -28,4 +29,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::AirGeyser
 
-using BP_Geyser_Air_CausticMire_C = Game::LevelElements::RoomObjects::Hazards::AirGeyser::BP_Geyser_Air_CausticMire_C;
+using BP_Geyser_Air_CausticMire_C = ::Game::LevelElements::RoomObjects::Hazards::AirGeyser::BP_Geyser_Air_CausticMire_C;

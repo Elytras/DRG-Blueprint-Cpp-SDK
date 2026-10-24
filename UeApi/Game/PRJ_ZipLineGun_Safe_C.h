@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace ZipLineGun {
 
-class PRJ_ZipLineGun_Safe_C : public Game::WeaponsNTools::ZipLineGun::PRJ_ZipLineGun_C
+class PRJ_ZipLineGun_Safe_C : public ::Game::WeaponsNTools::ZipLineGun::PRJ_ZipLineGun_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/ZipLineGun/PRJ_ZipLineGun_Safe", "PRJ_ZipLineGun_Safe_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.TimelineComponent LightTimeLine";
+        static constexpr const char* UeIchRecords = "Light_End;Light_Start;SK_ZipPole_B;SM_ZipPole_Projectile_A";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using PRJ_ZipLineGun_Safe_C = Game::WeaponsNTools::ZipLineGun::PRJ_ZipLineGun_Safe_C;
+using PRJ_ZipLineGun_Safe_C = ::Game::WeaponsNTools::ZipLineGun::PRJ_ZipLineGun_Safe_C;

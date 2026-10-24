@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_SnapToPathfinder_C = Game::AI::Tasks::TSK_SnapToPathfinder_C;
+using TSK_SnapToPathfinder_C = ::Game::AI::Tasks::TSK_SnapToPathfinder_C;

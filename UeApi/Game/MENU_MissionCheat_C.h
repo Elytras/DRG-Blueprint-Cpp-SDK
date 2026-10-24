@@ -35,10 +35,10 @@ class MENU_MissionCheat_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/MENU_MissionCheat", "MENU_MissionCheat_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_ForceMachineEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceMachineEvent_C;
-    using UI_ForceOtherSpecialEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;
-    using UI_ForceSeasonEvent_C = Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_ForceMachineEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceMachineEvent_C;
+    using UI_ForceOtherSpecialEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceOtherSpecialEvent_C;
+    using UI_ForceSeasonEvent_C = ::Game::UI::Menu_Cheats::CheatConsole::UI_ForceSeasonEvent_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UComboBoxString* Anomaly;
     class UComboBoxString* Biome;
@@ -126,4 +126,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using MENU_MissionCheat_C = Game::UI::Menu_Cheats::MissionCheat::MENU_MissionCheat_C;
+using MENU_MissionCheat_C = ::Game::UI::Menu_Cheats::MissionCheat::MENU_MissionCheat_C;

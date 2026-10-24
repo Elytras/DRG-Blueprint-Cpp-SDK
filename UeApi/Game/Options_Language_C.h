@@ -17,8 +17,8 @@ class Options_Language_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Language", "Options_Language_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
     UI_AdvancedLabel_C* WorkInProgress;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Language_C = Game::UI::Menu_Options::Options_Language_C;
+using Options_Language_C = ::Game::UI::Menu_Options::Options_Language_C;

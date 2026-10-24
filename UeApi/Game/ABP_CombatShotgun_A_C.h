@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::CombatShotgun
 
-using ABP_CombatShotgun_A_C = Game::WeaponsNTools::CombatShotgun::ABP_CombatShotgun_A_C;
+using ABP_CombatShotgun_A_C = ::Game::WeaponsNTools::CombatShotgun::ABP_CombatShotgun_A_C;

@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace HollowBough { namespace Assets { namespace Bark {
 
-class BP_PeelingBark_Double_1_C : public Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark::BP_PeelingBark_1_C
+class BP_PeelingBark_Double_1_C : public ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark::BP_PeelingBark_1_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/HollowBough/Assets/Bark/BP_PeelingBark_Double_1", "BP_PeelingBark_Double_1_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "StaticMesh;TerrainPlacement";
+    };
 };
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark
 
-using BP_PeelingBark_Double_1_C = Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark::BP_PeelingBark_Double_1_C;
+using BP_PeelingBark_Double_1_C = ::Game::Landscape::Biomes::Biomes_Ingame::HollowBough::Assets::Bark::BP_PeelingBark_Double_1_C;

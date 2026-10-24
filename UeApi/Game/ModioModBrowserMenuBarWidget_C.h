@@ -16,7 +16,7 @@ class ModioModBrowserMenuBarWidget_C : public UModioMenuBar
 {
 public:
     UE_CLASS("/Modio/UI/Browser/Views/ModioModBrowserMenuBarWidget", "ModioModBrowserMenuBarWidget_C");
-    using UI_InfoScreen_C = Game::UI::Menu_StartScreen::UI_InfoScreen_C;
+    using UI_InfoScreen_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_C;
     class UModioInputBindingImage* ProfileDownloadQueueInputHint;
     UI_InfoScreen_C* UI_Screen;
 private:
@@ -28,4 +28,4 @@ private:
 
 }}}}   // namespace Modio::UI::Browser::Views
 
-using ModioModBrowserMenuBarWidget_C = Modio::UI::Browser::Views::ModioModBrowserMenuBarWidget_C;
+using ModioModBrowserMenuBarWidget_C = ::Modio::UI::Browser::Views::ModioModBrowserMenuBarWidget_C;

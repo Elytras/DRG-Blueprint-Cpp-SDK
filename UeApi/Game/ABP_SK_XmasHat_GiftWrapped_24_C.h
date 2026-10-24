@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_SK_XmasHat_GiftWrapped_24_C = Game::Character::Vanity2::Headwear::ABP_SK_XmasHat_GiftWrapped_24_C;
+using ABP_SK_XmasHat_GiftWrapped_24_C = ::Game::Character::Vanity2::Headwear::ABP_SK_XmasHat_GiftWrapped_24_C;

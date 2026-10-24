@@ -45,4 +45,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using BP_RockpoxBomber_PlaguePuddle_C = Game::Enemies::Plague::BP_RockpoxBomber_PlaguePuddle_C;
+using BP_RockpoxBomber_PlaguePuddle_C = ::Game::Enemies::Plague::BP_RockpoxBomber_PlaguePuddle_C;

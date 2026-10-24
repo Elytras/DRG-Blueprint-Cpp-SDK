@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioProfileButtonWidget_C = Modio::UI::Browser::Components::ModioProfileButtonWidget_C;
+using ModioProfileButtonWidget_C = ::Modio::UI::Browser::Components::ModioProfileButtonWidget_C;

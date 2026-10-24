@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_ThrowCarriable_C = Game::UI::MainOnscreenHUD::HUD_ThrowCarriable_C;
+using HUD_ThrowCarriable_C = ::Game::UI::MainOnscreenHUD::HUD_ThrowCarriable_C;

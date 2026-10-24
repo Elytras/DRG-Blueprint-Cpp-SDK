@@ -39,12 +39,12 @@ class ENE_FacilityCaretaker_C : public ACaretaker
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/ENE_FacilityCaretaker", "ENE_FacilityCaretaker_C");
-    using BP_CaretakerDroneAction_UNUSED_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerDroneAction_UNUSED_C;
-    using BP_CaretakerMortarAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerMortarAction_C;
-    using BP_CaretakerShredderAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerShredderAction_C;
-    using BP_CaretakerTurretAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerTurretAction_C;
-    using BP_Caretaker_AoE_Attack_C = Game::GameElements::Objectives::Facility::Caretaker::BP_Caretaker_AoE_Attack_C;
-    using BP_MainFacility_DataVault_C = Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
+    using BP_CaretakerDroneAction_UNUSED_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerDroneAction_UNUSED_C;
+    using BP_CaretakerMortarAction_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerMortarAction_C;
+    using BP_CaretakerShredderAction_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerShredderAction_C;
+    using BP_CaretakerTurretAction_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerTurretAction_C;
+    using BP_Caretaker_AoE_Attack_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_Caretaker_AoE_Attack_C;
+    using BP_MainFacility_DataVault_C = ::Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UDamageComponent* EndKillAllEnemiesDamageNoKnockBack;
     class UPointLightComponent* PointLight8;
@@ -205,6 +205,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthDamageTracker DamageTracker;/Script/FSD.PassthroughSubHealthComponent SubHealth0;/Script/FSD.PassthroughSubHealthComponent SubHealth1;/Script/FSD.PassthroughSubHealthComponent SubHealth2;/Script/FSD.PassthroughSubHealthComponent SubHealth3;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent BodyMesh;/Script/Engine.SkeletalMeshComponent Eye0;/Script/Engine.SkeletalMeshComponent Eye1;/Script/Engine.SkeletalMeshComponent Eye2;/Script/Engine.SkeletalMeshComponent Eye3;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent AoE_Attack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.KnockbackDamageBonus EndExpolsionDamage_GEN_VARIABLE:KnockbackDamageBonus_0";
         static constexpr const char* EndKillAllEnemiesDamageNoKnockBack__UeScsNode = "cb9e48e8922c0548afb0cc5e32502f6a";
         static constexpr const char* PointLight8__UeScsNode = "6b8f9bfdc83c13428d0fbcc68ae4963d";
         static constexpr const char* TopHatches__UeScsNode = "632c2838874e7243af3f44e9a1f3dbe9";
@@ -267,4 +268,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using ENE_FacilityCaretaker_C = Game::GameElements::Objectives::Facility::Caretaker::ENE_FacilityCaretaker_C;
+using ENE_FacilityCaretaker_C = ::Game::GameElements::Objectives::Facility::Caretaker::ENE_FacilityCaretaker_C;

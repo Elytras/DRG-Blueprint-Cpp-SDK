@@ -35,4 +35,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper
 
-using BP_Plaguesoaper_Dropped_Hologram_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_Plaguesoaper_Dropped_Hologram_C;
+using BP_Plaguesoaper_Dropped_Hologram_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Soaper::BP_Plaguesoaper_Dropped_Hologram_C;

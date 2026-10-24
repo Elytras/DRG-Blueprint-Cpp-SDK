@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using ESI_Woodlouse_C = Game::Enemies::Woodlouse::ESI_Woodlouse_C;
+using ESI_Woodlouse_C = ::Game::Enemies::Woodlouse::ESI_Woodlouse_C;

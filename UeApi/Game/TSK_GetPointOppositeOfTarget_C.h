@@ -33,4 +33,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using TSK_GetPointOppositeOfTarget_C = Game::Enemies::FlyingBug::Bomber::TSK_GetPointOppositeOfTarget_C;
+using TSK_GetPointOppositeOfTarget_C = ::Game::Enemies::FlyingBug::Bomber::TSK_GetPointOppositeOfTarget_C;

@@ -22,9 +22,9 @@ class HUD_ContagionSpike_Health_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/MainOnScreenHUD/ContagionSpike/HUD_ContagionSpike_Health", "HUD_ContagionSpike_Health_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_ContagionSpike_HealthBar_C = Game::UI::Art::MainOnScreenHUD::ContagionSpike::UI_ContagionSpike_HealthBar_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_ContagionSpike_HealthBar_C = ::Game::UI::Art::MainOnScreenHUD::ContagionSpike::UI_ContagionSpike_HealthBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFirstIntro;
     UE_READONLY class UWidgetAnimation* AnimDeath;
@@ -57,4 +57,4 @@ private:
 
 }}}}}   // namespace Game::UI::Art::MainOnScreenHUD::ContagionSpike
 
-using HUD_ContagionSpike_Health_C = Game::UI::Art::MainOnScreenHUD::ContagionSpike::HUD_ContagionSpike_Health_C;
+using HUD_ContagionSpike_Health_C = ::Game::UI::Art::MainOnScreenHUD::ContagionSpike::HUD_ContagionSpike_Health_C;

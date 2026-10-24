@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies
 
-using STE_HeroEnemies_Youngling_C = Game::GameElements::Missions::Warnings::HeroEnemies::STE_HeroEnemies_Youngling_C;
+using STE_HeroEnemies_Youngling_C = ::Game::GameElements::Missions::Warnings::HeroEnemies::STE_HeroEnemies_Youngling_C;

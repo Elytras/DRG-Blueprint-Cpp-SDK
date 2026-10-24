@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using DeepDiveBragger_C = Game::UI::Menu_MissionStart::DeepDiveBragger_C;
+using DeepDiveBragger_C = ::Game::UI::Menu_MissionStart::DeepDiveBragger_C;

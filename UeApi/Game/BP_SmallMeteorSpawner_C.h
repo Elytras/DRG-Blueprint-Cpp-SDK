@@ -25,4 +25,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower
 
-using BP_SmallMeteorSpawner_C = Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteorSpawner_C;
+using BP_SmallMeteorSpawner_C = ::Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteorSpawner_C;

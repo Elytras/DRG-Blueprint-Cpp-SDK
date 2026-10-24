@@ -19,11 +19,11 @@ namespace Game { namespace WeaponsNTools { namespace GatlingGun { namespace UI {
 
 namespace Game { namespace WeaponsNTools { namespace GatlingGun { namespace UI {
 
-class WeaponDisplay_GatlingGun_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_GatlingGun_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GatlingGun/UI/WeaponDisplay_GatlingGun_AmmoCount", "WeaponDisplay_GatlingGun_AmmoCount_C");
-    using ITM_ManualCooling_Bar_C = Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;
+    using ITM_ManualCooling_Bar_C = ::Game::WeaponsNTools::GatlingGun::UI::ITM_ManualCooling_Bar_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_GatlingGun_AmmoCount_C;
     UE_READONLY class UWidgetAnimation* AmmoLow;
     class UTextBlock* AmmoCount;
@@ -61,4 +61,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::GatlingGun::UI
 
-using WeaponDisplay_GatlingGun_AmmoCount_C = Game::WeaponsNTools::GatlingGun::UI::WeaponDisplay_GatlingGun_AmmoCount_C;
+using WeaponDisplay_GatlingGun_AmmoCount_C = ::Game::WeaponsNTools::GatlingGun::UI::WeaponDisplay_GatlingGun_AmmoCount_C;

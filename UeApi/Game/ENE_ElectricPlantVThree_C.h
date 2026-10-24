@@ -93,4 +93,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ElectricPlant
 
-using ENE_ElectricPlantVThree_C = Game::LevelElements::RoomObjects::Hazards::ElectricPlant::ENE_ElectricPlantVThree_C;
+using ENE_ElectricPlantVThree_C = ::Game::LevelElements::RoomObjects::Hazards::ElectricPlant::ENE_ElectricPlantVThree_C;

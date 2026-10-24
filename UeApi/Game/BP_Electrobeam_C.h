@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ElectricPlant
 
-using BP_Electrobeam_C = Game::LevelElements::RoomObjects::Hazards::ElectricPlant::BP_Electrobeam_C;
+using BP_Electrobeam_C = ::Game::LevelElements::RoomObjects::Hazards::ElectricPlant::BP_Electrobeam_C;

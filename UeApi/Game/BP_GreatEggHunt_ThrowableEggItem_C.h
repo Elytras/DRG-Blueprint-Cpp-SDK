@@ -44,4 +44,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Holiday_GreatEggHunt::Blueprint
 
-using BP_GreatEggHunt_ThrowableEggItem_C = Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_ThrowableEggItem_C;
+using BP_GreatEggHunt_ThrowableEggItem_C = ::Game::Art::Environments::Holiday_GreatEggHunt::Blueprint::BP_GreatEggHunt_ThrowableEggItem_C;

@@ -30,4 +30,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Bar::DrinkEffects::Wormhole_Assets
 
-using BP_WormholeLocation_Base_C = Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_Base_C;
+using BP_WormholeLocation_Base_C = ::Game::GameElements::Bar::DrinkEffects::Wormhole_Assets::BP_WormholeLocation_Base_C;

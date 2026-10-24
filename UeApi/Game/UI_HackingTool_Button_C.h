@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI
 
-using UI_HackingTool_Button_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;
+using UI_HackingTool_Button_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Button_C;

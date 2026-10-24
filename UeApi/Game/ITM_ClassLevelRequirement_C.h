@@ -18,7 +18,7 @@ class ITM_ClassLevelRequirement_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Campaign/Requirements/ITM_ClassLevelRequirement", "ITM_ClassLevelRequirement_C");
-    using ITM_JobsEntry_Resource_C = Game::UI::Menu_Jobs::ITM_JobsEntry_Resource_C;
+    using ITM_JobsEntry_Resource_C = ::Game::UI::Menu_Jobs::ITM_JobsEntry_Resource_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFSDLabelWidget* DATA_Class;
     ITM_JobsEntry_Resource_C* ITM_JobsEntry_Resource;
@@ -30,4 +30,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Campaign::Requirements
 
-using ITM_ClassLevelRequirement_C = Game::GameElements::Campaign::Requirements::ITM_ClassLevelRequirement_C;
+using ITM_ClassLevelRequirement_C = ::Game::GameElements::Campaign::Requirements::ITM_ClassLevelRequirement_C;

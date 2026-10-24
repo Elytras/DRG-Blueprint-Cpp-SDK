@@ -46,4 +46,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::DropPodShip
 
-using BP_RamRod_RogueCoreEvent_C = Game::Art::Environments::SpaceRig::DropPodShip::BP_RamRod_RogueCoreEvent_C;
+using BP_RamRod_RogueCoreEvent_C = ::Game::Art::Environments::SpaceRig::DropPodShip::BP_RamRod_RogueCoreEvent_C;

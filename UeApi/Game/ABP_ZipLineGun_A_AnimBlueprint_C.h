@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::ZipLineGun
 
-using ABP_ZipLineGun_A_AnimBlueprint_C = Game::WeaponsNTools::ZipLineGun::ABP_ZipLineGun_A_AnimBlueprint_C;
+using ABP_ZipLineGun_A_AnimBlueprint_C = ::Game::WeaponsNTools::ZipLineGun::ABP_ZipLineGun_A_AnimBlueprint_C;

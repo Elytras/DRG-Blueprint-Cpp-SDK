@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_LowFrictionIce_C = Game::Landscape::ReactiveTerrain::RT_LowFrictionIce_C;
+using RT_LowFrictionIce_C = ::Game::Landscape::ReactiveTerrain::RT_LowFrictionIce_C;

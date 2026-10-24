@@ -12,11 +12,11 @@ namespace Game { namespace GameElements { namespace Missions { namespace Warning
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace Plague { namespace CleaningPod { namespace WalkingPlagueHeart {
 
-class ITM_CleanupDrop_WalkingPlagueHeart_C : public Game::GameElements::Missions::Warnings::Plague::CleaningPod::ITM_CleanupDrop_C
+class ITM_CleanupDrop_WalkingPlagueHeart_C : public ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::ITM_CleanupDrop_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/WalkingPlagueHeart/ITM_CleanupDrop_WalkingPlagueHeart", "ITM_CleanupDrop_WalkingPlagueHeart_C");
-    using OnScreenIndicator_CleanupDrop_Order_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
+    using OnScreenIndicator_CleanupDrop_Order_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::OnScreenIndicator_CleanupDrop_Order_C;
     class AItemMarker* Marker_0;
     OnScreenIndicator_CleanupDrop_Order_C* Widget_0;
 private:
@@ -28,4 +28,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart
 
-using ITM_CleanupDrop_WalkingPlagueHeart_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart::ITM_CleanupDrop_WalkingPlagueHeart_C;
+using ITM_CleanupDrop_WalkingPlagueHeart_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart::ITM_CleanupDrop_WalkingPlagueHeart_C;

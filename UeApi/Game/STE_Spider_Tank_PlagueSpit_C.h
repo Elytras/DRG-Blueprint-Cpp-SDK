@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using STE_Spider_Tank_PlagueSpit_C = Game::Enemies::Plague::STE_Spider_Tank_PlagueSpit_C;
+using STE_Spider_Tank_PlagueSpit_C = ::Game::Enemies::Plague::STE_Spider_Tank_PlagueSpit_C;

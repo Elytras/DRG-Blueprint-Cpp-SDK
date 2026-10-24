@@ -36,4 +36,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05
 
-using BP_PropHunt_CoreStone_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05::BP_PropHunt_CoreStone_C;
+using BP_PropHunt_CoreStone_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Season05::BP_PropHunt_CoreStone_C;

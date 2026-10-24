@@ -22,9 +22,9 @@ class UI_RockCracker_Connection_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/MainOnScreenHUD/MeteorCrackerEvent/UI_RockCracker_Connection", "UI_RockCracker_Connection_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_ProgressBar_C = Game::UI::Art::WidgetParts::Basic_ProgressBar_C;
-    using ITM_Pipeline_BrokenIcon_C = Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_ProgressBar_C = ::Game::UI::Art::WidgetParts::Basic_ProgressBar_C;
+    using ITM_Pipeline_BrokenIcon_C = ::Game::GameElements::Objectives::Refinery::ITM_Pipeline_BrokenIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* CrackerActive;
     UE_READONLY class UWidgetAnimation* AnimCableProgress;
@@ -56,4 +56,4 @@ public:
 
 }}}}}   // namespace Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent
 
-using UI_RockCracker_Connection_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::UI_RockCracker_Connection_C;
+using UI_RockCracker_Connection_C = ::Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::UI_RockCracker_Connection_C;

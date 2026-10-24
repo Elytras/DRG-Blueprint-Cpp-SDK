@@ -22,8 +22,8 @@ class UI_InfoScreen_SeasonDLC_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_SeasonDLC", "UI_InfoScreen_SeasonDLC_C");
-    using Basic_Header_C = Game::UI::Art::WidgetParts::Basic_Header_C;
-    using ITM_GlowBackground_Adjustable_C = Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
+    using Basic_Header_C = ::Game::UI::Art::WidgetParts::Basic_Header_C;
+    using ITM_GlowBackground_Adjustable_C = ::Game::UI::Global_UI_Elements::ITM_GlowBackground_Adjustable_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -47,4 +47,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_SeasonDLC_C = Game::UI::Menu_StartScreen::UI_InfoScreen_SeasonDLC_C;
+using UI_InfoScreen_SeasonDLC_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_SeasonDLC_C;

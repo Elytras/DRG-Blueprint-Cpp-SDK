@@ -17,7 +17,7 @@ class UI_FuelLine_Builder_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/UI_FuelLine_Builder", "UI_FuelLine_Builder_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_AdvancedLabel_C* CancelLabel;
     class UProgressBar* DistanceProgress;
@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder
 
-using UI_FuelLine_Builder_C = Game::WeaponsNTools::FuelLineBuilder::UI_FuelLine_Builder_C;
+using UI_FuelLine_Builder_C = ::Game::WeaponsNTools::FuelLineBuilder::UI_FuelLine_Builder_C;

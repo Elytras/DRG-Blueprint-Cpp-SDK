@@ -30,4 +30,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalBombEvent
 
-using BP_RivalBomb_Cable_C = Game::GameElements::GameEvents::RivalBombEvent::BP_RivalBomb_Cable_C;
+using BP_RivalBomb_Cable_C = ::Game::GameElements::GameEvents::RivalBombEvent::BP_RivalBomb_Cable_C;

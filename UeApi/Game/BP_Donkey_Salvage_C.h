@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Donkey {
 
-class BP_Donkey_Salvage_C : public Game::GameElements::Donkey::BP_Donkey_C
+class BP_Donkey_Salvage_C : public ::Game::GameElements::Donkey::BP_Donkey_C
 {
 public:
     UE_CLASS("/Game/GameElements/Donkey/BP_Donkey_Salvage", "BP_Donkey_Salvage_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HealthComponent HealthComponent;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.ResourceBank ResourceBank;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "ReturnToMissionUsable";
     };
 };
 
 }}}   // namespace Game::GameElements::Donkey
 
-using BP_Donkey_Salvage_C = Game::GameElements::Donkey::BP_Donkey_Salvage_C;
+using BP_Donkey_Salvage_C = ::Game::GameElements::Donkey::BP_Donkey_Salvage_C;

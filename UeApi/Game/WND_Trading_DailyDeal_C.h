@@ -25,9 +25,9 @@ class WND_Trading_DailyDeal_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/WND_Trading_DailyDeal", "WND_Trading_DailyDeal_C");
-    using Basic_ButtonCutCorner_C = Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_Trading_DailyDeal_C = Game::UI::Menu_Trading::ITM_Trading_DailyDeal_C;
+    using Basic_ButtonCutCorner_C = ::Game::UI::Art::WidgetParts::Basic_ButtonCutCorner_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_Trading_DailyDeal_C = ::Game::UI::Menu_Trading::ITM_Trading_DailyDeal_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonCutCorner_C* B_Trade;
     BlurBackground_C* BlurBackground;
@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using WND_Trading_DailyDeal_C = Game::UI::Menu_Trading::WND_Trading_DailyDeal_C;
+using WND_Trading_DailyDeal_C = ::Game::UI::Menu_Trading::WND_Trading_DailyDeal_C;

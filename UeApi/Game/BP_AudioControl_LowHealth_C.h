@@ -74,4 +74,4 @@ private:
 
 }}}   // namespace Game::Audio::SoundControl
 
-using BP_AudioControl_LowHealth_C = Game::Audio::SoundControl::BP_AudioControl_LowHealth_C;
+using BP_AudioControl_LowHealth_C = ::Game::Audio::SoundControl::BP_AudioControl_LowHealth_C;

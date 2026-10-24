@@ -32,11 +32,11 @@ class LVL_SpaceRig_C : public ALevelScriptActor
 {
 public:
     UE_CLASS("/Game/Maps/SpaceRig/LVL_SpaceRig", "LVL_SpaceRig_C");
-    using BP_ConfettiPlane_C = Game::Art::Environments::SpaceRig::PartyStreamers::BP_ConfettiPlane_C;
-    using BP_DropPod_Rig_C = Game::LevelElements::Droppod::BP_DropPod_Rig_C;
-    using BP_ModularLamp_C = Game::Art::Environments::SpaceRig::Furniture::BP_ModularLamp_C;
-    using BP_Phys_Newsstand_FreeBeer_C = Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_FreeBeer_C;
-    using Sign_MemorialUnlock_C = Game::LevelElements::RoomObjects::Sign_MemorialUnlock_C;
+    using BP_ConfettiPlane_C = ::Game::Art::Environments::SpaceRig::PartyStreamers::BP_ConfettiPlane_C;
+    using BP_DropPod_Rig_C = ::Game::LevelElements::Droppod::BP_DropPod_Rig_C;
+    using BP_ModularLamp_C = ::Game::Art::Environments::SpaceRig::Furniture::BP_ModularLamp_C;
+    using BP_Phys_Newsstand_FreeBeer_C = ::Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_FreeBeer_C;
+    using Sign_MemorialUnlock_C = ::Game::LevelElements::RoomObjects::Sign_MemorialUnlock_C;
     FPointerToUberGraphFrame UberGraphFrame;
     float SunSpeed;
     int CurrentNumberOfBarrelsInDroppod;
@@ -147,4 +147,4 @@ private:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using LVL_SpaceRig_C = Game::Maps::SpaceRig::LVL_SpaceRig_C;
+using LVL_SpaceRig_C = ::Game::Maps::SpaceRig::LVL_SpaceRig_C;

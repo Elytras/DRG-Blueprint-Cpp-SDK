@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Critters::Prospector::Assets
 
-using ABP_Prospector_Shield_C = Game::Critters::Prospector::Assets::ABP_Prospector_Shield_C;
+using ABP_Prospector_Shield_C = ::Game::Critters::Prospector::Assets::ABP_Prospector_Shield_C;

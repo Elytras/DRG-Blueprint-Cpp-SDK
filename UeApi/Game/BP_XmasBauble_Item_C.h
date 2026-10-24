@@ -63,4 +63,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_XmasBauble_Item_C = Game::Art::Environments::Holiday_Xmas::BP_XmasBauble_Item_C;
+using BP_XmasBauble_Item_C = ::Game::Art::Environments::Holiday_Xmas::BP_XmasBauble_Item_C;

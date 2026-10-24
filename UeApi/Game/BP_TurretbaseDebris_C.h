@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class BP_TurretbaseDebris_C : public Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
+class BP_TurretbaseDebris_C : public ::Game::GameElements::Objectives::Facility::Tethers::BP_DropToTerrainDebris_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/BP_TurretbaseDebris", "BP_TurretbaseDebris_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "PlayerCollider;SimpleObjectInfo";
         static constexpr const char* StaticMesh__UeScsNode = "e7f6689765e4fd469a43816765bb463f";
     };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using BP_TurretbaseDebris_C = Game::GameElements::Objectives::Facility::DefenseTurret::BP_TurretbaseDebris_C;
+using BP_TurretbaseDebris_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::BP_TurretbaseDebris_C;

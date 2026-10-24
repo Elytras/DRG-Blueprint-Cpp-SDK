@@ -24,8 +24,8 @@ public:
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
     UE_READONLY class UWidgetAnimation* Idle;
-    class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
-    class Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C;
+    class ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
+    class ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C;
     class UButton* Button_Outer;
     class UImage* Glow1;
     class UImage* Glow2;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_Overlay_KickstarterBoardgame_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_KickstarterBoardgame_C;
+using UI_InfoScreen_Overlay_KickstarterBoardgame_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_KickstarterBoardgame_C;

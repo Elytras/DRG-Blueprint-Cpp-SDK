@@ -25,8 +25,8 @@ class ITM_UnlockedCelebration_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UnlockedCelebration", "ITM_UnlockedCelebration_C");
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
-    using UI_MasteryReward_C = Game::UI::Menu_Loadout::UI_MasteryReward_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using UI_MasteryReward_C = ::Game::UI::Menu_Loadout::UI_MasteryReward_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     ITM_BigButton_C* ContinueButton;
@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UnlockedCelebration_C = Game::UI::Menu_Loadout::ITM_UnlockedCelebration_C;
+using ITM_UnlockedCelebration_C = ::Game::UI::Menu_Loadout::ITM_UnlockedCelebration_C;

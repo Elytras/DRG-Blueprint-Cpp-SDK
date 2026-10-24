@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_SelectCharacterOnlyConsole_C = Game::UI::HUD_SpaceRig::BP_SelectCharacterOnlyConsole_C;
+using BP_SelectCharacterOnlyConsole_C = ::Game::UI::HUD_SpaceRig::BP_SelectCharacterOnlyConsole_C;

@@ -53,4 +53,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::JetPack
 
-using WPN_JetPackItem_C = Game::WeaponsNTools::JetPack::WPN_JetPackItem_C;
+using WPN_JetPackItem_C = ::Game::WeaponsNTools::JetPack::WPN_JetPackItem_C;

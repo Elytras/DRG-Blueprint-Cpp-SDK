@@ -26,10 +26,10 @@ class HUD_SentryGunManager_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SentryGun/SentryGun_Engineer/HUD_SentryGunManager", "HUD_SentryGunManager_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
-    using HUD_SentryGunWidget_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryGunWidget_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using HUD_SentryGunWidget_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryGunWidget_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* AmmoHolder;
     HUD_DefaultLabel_C* AmmoLabel;
@@ -71,4 +71,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using HUD_SentryGunManager_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryGunManager_C;
+using HUD_SentryGunManager_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::HUD_SentryGunManager_C;

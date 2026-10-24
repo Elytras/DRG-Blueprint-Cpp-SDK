@@ -17,4 +17,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP
 
-using STE_HeartstoneTrap_Overlay_C = Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP::STE_HeartstoneTrap_Overlay_C;
+using STE_HeartstoneTrap_Overlay_C = ::Game::GameElements::Objectives::Escort::HeartStoneCore::HeartStoneTRAP::STE_HeartstoneTrap_Overlay_C;

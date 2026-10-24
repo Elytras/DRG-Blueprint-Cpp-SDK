@@ -123,4 +123,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using ABP_Caretaker_C = Game::GameElements::Objectives::Facility::Caretaker::ABP_Caretaker_C;
+using ABP_Caretaker_C = ::Game::GameElements::Objectives::Facility::Caretaker::ABP_Caretaker_C;

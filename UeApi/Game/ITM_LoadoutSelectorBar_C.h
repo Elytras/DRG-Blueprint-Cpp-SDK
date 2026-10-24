@@ -25,11 +25,11 @@ class ITM_LoadoutSelectorBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/LoadoutSelection/ITM_LoadoutSelectorBar", "ITM_LoadoutSelectorBar_C");
-    using Basic_Popup_YesNoPrompt_C = Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
-    using Basic_ToolTip_HeadlineAndText_C = Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using ITM_LoadoutIconSelector_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIconSelector_C;
-    using ITM_LoadoutSelectButton_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectButton_C;
+    using Basic_Popup_YesNoPrompt_C = ::Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
+    using Basic_ToolTip_HeadlineAndText_C = ::Game::UI::ToolTips::Basic_ToolTip_HeadlineAndText_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using ITM_LoadoutIconSelector_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutIconSelector_C;
+    using ITM_LoadoutSelectButton_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectButton_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHorizontalBox* HorizontalBox_100;
     class UHorizontalBox* HorizontalBox_Buttons;
@@ -90,4 +90,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Loadout::LoadoutSelection
 
-using ITM_LoadoutSelectorBar_C = Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;
+using ITM_LoadoutSelectorBar_C = ::Game::UI::Menu_Loadout::LoadoutSelection::ITM_LoadoutSelectorBar_C;

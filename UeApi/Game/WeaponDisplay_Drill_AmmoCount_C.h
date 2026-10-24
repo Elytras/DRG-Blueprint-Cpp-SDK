@@ -14,7 +14,7 @@ class UTextBlock;
 
 namespace Game { namespace WeaponsNTools { namespace Drills {
 
-class WeaponDisplay_Drill_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Drill_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Drills/WeaponDisplay_Drill_AmmoCount", "WeaponDisplay_Drill_AmmoCount_C");
@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Drills
 
-using WeaponDisplay_Drill_AmmoCount_C = Game::WeaponsNTools::Drills::WeaponDisplay_Drill_AmmoCount_C;
+using WeaponDisplay_Drill_AmmoCount_C = ::Game::WeaponsNTools::Drills::WeaponDisplay_Drill_AmmoCount_C;

@@ -25,4 +25,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG
 
-using BP_TowerModuleController_C = Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG::BP_TowerModuleController_C;
+using BP_TowerModuleController_C = ::Game::GameElements::GameEvents::GuntowerEvent::GunTower_Module_AimingLMG::BP_TowerModuleController_C;

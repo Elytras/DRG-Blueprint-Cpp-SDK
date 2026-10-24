@@ -27,12 +27,12 @@ class ITM_UpgGear_SideBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_SideBar", "ITM_UpgGear_SideBar_C");
-    using Basic_FlatButton_C = Game::UI::Art::WidgetParts::Basic_FlatButton_C;
-    using Basic_Popup_YesNoPrompt_C = Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
-    using ITM_MasteryBar_C = Game::UI::Menu_Loadout::ITM_MasteryBar_C;
-    using ITM_Overclocks_Equip_C = Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_C;
-    using ITM_UpgGear_TierRow_C = Game::UI::Menu_Loadout::ITM_UpgGear_TierRow_C;
-    using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+    using Basic_FlatButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatButton_C;
+    using Basic_Popup_YesNoPrompt_C = ::Game::UI::Art::WidgetParts::Basic_Popup_YesNoPrompt_C;
+    using ITM_MasteryBar_C = ::Game::UI::Menu_Loadout::ITM_MasteryBar_C;
+    using ITM_Overclocks_Equip_C = ::Game::UI::Menu_Loadout::Overclocks::ITM_Overclocks_Equip_C;
+    using ITM_UpgGear_TierRow_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_TierRow_C;
+    using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button_Collapse;
     class UVerticalBox* BuyBox;
@@ -73,4 +73,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_SideBar_C = Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_C;
+using ITM_UpgGear_SideBar_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_SideBar_C;

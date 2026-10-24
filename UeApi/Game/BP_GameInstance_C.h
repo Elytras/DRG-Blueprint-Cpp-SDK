@@ -20,9 +20,9 @@ class BP_GameInstance_C : public UFSDGameInstance
 {
 public:
     UE_CLASS("/Game/Game/BP_GameInstance", "BP_GameInstance_C");
-    using WND_JoiningModded_C = Game::UI::Menu_ServerList::WND_JoiningModded_C;
-    using WND_JoiningPassword_C = Game::UI::Menu_ServerList::WND_JoiningPassword_C;
-    using WND_Joining_C = Game::UI::Menu_ServerList::WND_Joining_C;
+    using WND_JoiningModded_C = ::Game::UI::Menu_ServerList::WND_JoiningModded_C;
+    using WND_JoiningPassword_C = ::Game::UI::Menu_ServerList::WND_JoiningPassword_C;
+    using WND_Joining_C = ::Game::UI::Menu_ServerList::WND_Joining_C;
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void(TArray<TScriptInterface<class ICraftable>>& NewItems)> OnAvailableCraftingItems;
     bool EligibleForRetirementAssignment;
@@ -78,4 +78,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_GameInstance_C = Game::Game::BP_GameInstance_C;
+using BP_GameInstance_C = ::Game::Game::BP_GameInstance_C;

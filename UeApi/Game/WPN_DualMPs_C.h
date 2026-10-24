@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols
 
-using WPN_DualMPs_C = Game::WeaponsNTools::DualMachinePistols::WPN_DualMPs_C;
+using WPN_DualMPs_C = ::Game::WeaponsNTools::DualMachinePistols::WPN_DualMPs_C;

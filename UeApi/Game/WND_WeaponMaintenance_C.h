@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::WeaponMaintenance
 
-using WND_WeaponMaintenance_C = Game::UI::WeaponMaintenance::WND_WeaponMaintenance_C;
+using WND_WeaponMaintenance_C = ::Game::UI::WeaponMaintenance::WND_WeaponMaintenance_C;

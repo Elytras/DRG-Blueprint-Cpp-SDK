@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindLocationKeepDistance_C = Game::AI::Tasks::TSK_FindLocationKeepDistance_C;
+using TSK_FindLocationKeepDistance_C = ::Game::AI::Tasks::TSK_FindLocationKeepDistance_C;

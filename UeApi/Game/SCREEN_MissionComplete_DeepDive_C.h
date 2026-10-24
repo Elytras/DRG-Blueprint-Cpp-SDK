@@ -21,16 +21,16 @@ namespace Game { namespace UI { namespace Menu_MissionStart { class ITM_Characte
 
 namespace Game { namespace UI { namespace Menu_MIssionCompleteMK2 {
 
-class SCREEN_MissionComplete_DeepDive_C : public Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C
+class SCREEN_MissionComplete_DeepDive_C : public ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/SCREEN_MissionComplete_DeepDive", "SCREEN_MissionComplete_DeepDive_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using ITM_CharacterDeepDive_C = Game::UI::Menu_MissionStart::ITM_CharacterDeepDive_C;
-    using ITM_DeepDiveHeader_C = Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
-    using ITM_DeepDiveStatus_Animator_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Animator_C;
-    using ITM_DeepDiveStatus_Stage_C = Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Stage_C;
-    using ITM_DeepDive_MisCompBG_C = Game::UI::Menu_MissionStart::ITM_DeepDive_MisCompBG_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using ITM_CharacterDeepDive_C = ::Game::UI::Menu_MissionStart::ITM_CharacterDeepDive_C;
+    using ITM_DeepDiveHeader_C = ::Game::UI::Menu_MissionStart::ITM_DeepDiveHeader_C;
+    using ITM_DeepDiveStatus_Animator_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Animator_C;
+    using ITM_DeepDiveStatus_Stage_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_DeepDiveStatus_Stage_C;
+    using ITM_DeepDive_MisCompBG_C = ::Game::UI::Menu_MissionStart::ITM_DeepDive_MisCompBG_C;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_MissionComplete_DeepDive_C;
     Basic_ButtonScalable2_C* BTN_Continue;
     class UTextBlock* Data_CodeName;
@@ -82,4 +82,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using SCREEN_MissionComplete_DeepDive_C = Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_DeepDive_C;
+using SCREEN_MissionComplete_DeepDive_C = ::Game::UI::Menu_MIssionCompleteMK2::SCREEN_MissionComplete_DeepDive_C;

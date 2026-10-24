@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using MAG_Flamethrower_BottleTP_C = Game::WeaponsNTools::FlameThrower::MAG_Flamethrower_BottleTP_C;
+using MAG_Flamethrower_BottleTP_C = ::Game::WeaponsNTools::FlameThrower::MAG_Flamethrower_BottleTP_C;

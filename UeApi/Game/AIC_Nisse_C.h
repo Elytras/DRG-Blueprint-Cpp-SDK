@@ -26,4 +26,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Holidays::Xmas::Nisse
 
-using AIC_Nisse_C = Game::GameElements::Holidays::Xmas::Nisse::AIC_Nisse_C;
+using AIC_Nisse_C = ::Game::GameElements::Holidays::Xmas::Nisse::AIC_Nisse_C;

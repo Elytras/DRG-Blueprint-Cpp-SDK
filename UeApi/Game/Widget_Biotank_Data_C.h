@@ -13,7 +13,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace GameElements { namespace Plague { namespace Spacerig_Deco {
 
-class Widget_Biotank_Data_C : public Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
+class Widget_Biotank_Data_C : public ::Game::GameElements::Objectives::Facility::Tethers::Assets::UI_HackingPod_Screen_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Plague/Spacerig_Deco/Widget_Biotank_Data", "Widget_Biotank_Data_C");
@@ -33,4 +33,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Plague::Spacerig_Deco
 
-using Widget_Biotank_Data_C = Game::GameElements::Plague::Spacerig_Deco::Widget_Biotank_Data_C;
+using Widget_Biotank_Data_C = ::Game::GameElements::Plague::Spacerig_Deco::Widget_Biotank_Data_C;

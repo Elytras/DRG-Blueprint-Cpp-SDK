@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioEditableEmailTextBox_C = Modio::UI::Browser::Components::ModioEditableEmailTextBox_C;
+using ModioEditableEmailTextBox_C = ::Modio::UI::Browser::Components::ModioEditableEmailTextBox_C;

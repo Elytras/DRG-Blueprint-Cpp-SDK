@@ -24,4 +24,4 @@ public:
 
 }}}}}   // namespace Game::Enemies::Spider::Stinger::assets
 
-using ABP_StingerClaw_C = Game::Enemies::Spider::Stinger::assets::ABP_StingerClaw_C;
+using ABP_StingerClaw_C = ::Game::Enemies::Spider::Stinger::assets::ABP_StingerClaw_C;

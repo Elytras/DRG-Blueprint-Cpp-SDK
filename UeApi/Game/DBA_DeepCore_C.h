@@ -28,7 +28,7 @@ public:
     class UDebrisItemComponent* I_FrostGeyser__10K_20_80__5K_50_70_;
     class UDebrisItemComponent* I_IceFormation2Platuaes__DISABLED;
     class UDebrisDataComponent* C_FlatRocks__10K_60_90_;
-    class USceneComponent* rocks;
+    class USceneComponent* Rocks;
     class UDebrisItemComponent* I_ClawRockFormation__10K_50_75_;
     class UDebrisItemComponent* I_ClawRockFormation_Dense__10K_75_100_;
     class UDebrisItemComponent* I_Glaciers__5K_40_70___A_1_5_;
@@ -47,6 +47,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_BigCrystal_Floor--10K(0-70)_5C(0-5)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_BigCrystal_Roof--10K(0-70)_5C(0-5)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_BigIcicles_Floor--10K(0-70)_5C(0-20)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_BigIcicles_Roof--10K(0-70)_5C(0-20)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_FlatRocks--10K(60-90)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved C_TallRocks--10K(70-100)_1K(0-15)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisCarved DeepSnow--2K(0-75)_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisMesh D_EggPlant_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_GeyserPods_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_Grass_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_RoofSpikes--10K(0-70)_5C(30-100)_GEN_VARIABLE:DebrisMesh_1;/Script/FSD.DebrisPositioning I_ClawRockFormation--10K(50-75)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_ClawRockFormation_Dense--10K(75-100)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Crevasse_Trap--5K(0-35)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_DropIceSpikes_Cave--10K(75-100)_5K(0-50)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_ExplodingPlants--10K(50-90)_5K(0-35)_2K(0-30)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_FrostGeyser--10K(20-80)_5K(50-70)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Glaciers--5K(40-70)__A(1-5)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_HotSpring--5K(71-100)__A(10-15)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_IceFormation2Platuaes--DISABLED_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_IcePlantPlatform--10K(40-70)_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning IceLights_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* I_ExplodingPlants__10K_50_90__5K_0_35__2K_0_30___UeName = "I_ExplodingPlants--10K(50-90)_5K(0-35)_2K(0-30)";
         static constexpr const char* I_ExplodingPlants__10K_50_90__5K_0_35__2K_0_30___UeScsNode = "06a9c34ce807a348a6cc74126c655bc1";
         static constexpr const char* I_IcePlantPlatform__10K_40_70___UeName = "I_IcePlantPlatform--10K(40-70)";
@@ -66,7 +67,7 @@ private:
         static constexpr const char* I_IceFormation2Platuaes__DISABLED__UeScsNode = "e58db5be4e06084f8770e726c432d40b";
         static constexpr const char* C_FlatRocks__10K_60_90___UeName = "C_FlatRocks--10K(60-90)";
         static constexpr const char* C_FlatRocks__10K_60_90___UeScsNode = "acf5fc442988af4f9b84c88b0cfd35cb";
-        static constexpr const char* rocks__UeScsNode = "1914b9d68e91194abed2cb0dbc627227";
+        static constexpr const char* Rocks__UeScsNode = "1914b9d68e91194abed2cb0dbc627227";
         static constexpr const char* I_ClawRockFormation__10K_50_75___UeName = "I_ClawRockFormation--10K(50-75)";
         static constexpr const char* I_ClawRockFormation__10K_50_75___UeScsNode = "8d1433f0c5594744b100ef3b5144999b";
         static constexpr const char* I_ClawRockFormation_Dense__10K_75_100___UeName = "I_ClawRockFormation_Dense--10K(75-100)";
@@ -97,4 +98,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Testing::DeepCore_Test
 
-using DBA_DeepCore_C = Game::Landscape::Biomes::Biomes_Testing::DeepCore_Test::DBA_DeepCore_C;
+using DBA_DeepCore_C = ::Game::Landscape::Biomes::Biomes_Testing::DeepCore_Test::DBA_DeepCore_C;

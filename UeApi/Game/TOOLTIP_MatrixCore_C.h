@@ -19,10 +19,10 @@ class TOOLTIP_MatrixCore_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/TOOLTIP_MatrixCore", "TOOLTIP_MatrixCore_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using UI_Forge_Schematic_OwnerIcon_C = Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using UI_Forge_Schematic_OwnerIcon_C = ::Game::UI::HUD_SpaceRig::Forge::UI_Forge_Schematic_OwnerIcon_C;
     Basic_Menu_MinimalWindow_C* Basic_Menu_MinimalWindow;
     ITM_CharacterIcon_C* ITM_CharacterIcon;
     Basic_Label_C* SchematicCategory;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using TOOLTIP_MatrixCore_C = Game::UI::Menu_MissionStart::TOOLTIP_MatrixCore_C;
+using TOOLTIP_MatrixCore_C = ::Game::UI::Menu_MissionStart::TOOLTIP_MatrixCore_C;

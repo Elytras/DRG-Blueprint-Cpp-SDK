@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::UI::MENU_Merch::_Common
 
-using UI_MerchEntry_Base_C = Game::UI::MENU_Merch::_Common::UI_MerchEntry_Base_C;
+using UI_MerchEntry_Base_C = ::Game::UI::MENU_Merch::_Common::UI_MerchEntry_Base_C;

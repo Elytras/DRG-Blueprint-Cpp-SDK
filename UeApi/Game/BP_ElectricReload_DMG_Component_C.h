@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::AssaultRifle::Overclocks::OC_BonusesAndPenalties
 
-using BP_ElectricReload_DMG_Component_C = Game::WeaponsNTools::AssaultRifle::Overclocks::OC_BonusesAndPenalties::BP_ElectricReload_DMG_Component_C;
+using BP_ElectricReload_DMG_Component_C = ::Game::WeaponsNTools::AssaultRifle::Overclocks::OC_BonusesAndPenalties::BP_ElectricReload_DMG_Component_C;

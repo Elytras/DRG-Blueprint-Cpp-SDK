@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace BearTrap {
 
-class PRW_Grenade_BearTrap_C : public Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C
+class PRW_Grenade_BearTrap_C : public ::Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/BearTrap/PRW_Grenade_BearTrap", "PRW_Grenade_BearTrap_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "StaticMesh";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::BearTrap
 
-using PRW_Grenade_BearTrap_C = Game::WeaponsNTools::Grenades::BearTrap::PRW_Grenade_BearTrap_C;
+using PRW_Grenade_BearTrap_C = ::Game::WeaponsNTools::Grenades::BearTrap::PRW_Grenade_BearTrap_C;

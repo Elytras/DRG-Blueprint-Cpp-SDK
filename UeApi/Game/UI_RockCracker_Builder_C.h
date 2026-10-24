@@ -17,7 +17,7 @@ class UI_RockCracker_Builder_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/RockCrackerBuilder/UI_RockCracker_Builder", "UI_RockCracker_Builder_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_AdvancedLabel_C* CancelLabel;
     class UProgressBar* DistanceProgress;
@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder
 
-using UI_RockCracker_Builder_C = Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;
+using UI_RockCracker_Builder_C = ::Game::WeaponsNTools::RockCrackerBuilder::UI_RockCracker_Builder_C;

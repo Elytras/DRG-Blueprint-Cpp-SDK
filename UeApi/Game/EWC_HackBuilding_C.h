@@ -17,11 +17,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace GameElements { namespace Objectives { namespace HackBuilding {
 
-class EWC_HackBuilding_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_HackBuilding_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/HackBuilding/EWC_HackBuilding", "EWC_HackBuilding_C");
-    using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
     FPointerToUberGraphFrame UberGraphFrame_EWC_HackBuilding_C;
     BP_Facility_PowerStation_GeneratorBase_C* FromGenerator;
     FVector WaveOrigin;
@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::HackBuilding
 
-using EWC_HackBuilding_C = Game::GameElements::Objectives::HackBuilding::EWC_HackBuilding_C;
+using EWC_HackBuilding_C = ::Game::GameElements::Objectives::HackBuilding::EWC_HackBuilding_C;

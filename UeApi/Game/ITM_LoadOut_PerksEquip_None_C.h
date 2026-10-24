@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks
 
-using ITM_LoadOut_PerksEquip_None_C = Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_None_C;
+using ITM_LoadOut_PerksEquip_None_C = ::Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_None_C;

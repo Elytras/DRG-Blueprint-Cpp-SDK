@@ -71,4 +71,4 @@ private:
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion
 
-using ENE_BoughWasp_Nest_Small_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Small_C;
+using ENE_BoughWasp_Nest_Small_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Small_C;

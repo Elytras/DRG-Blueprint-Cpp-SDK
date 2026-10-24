@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_MarathonGuy_SprintBoostTime_C = Game::GameElements::KPI::Perks::BP_MarathonGuy_SprintBoostTime_C;
+using BP_MarathonGuy_SprintBoostTime_C = ::Game::GameElements::KPI::Perks::BP_MarathonGuy_SprintBoostTime_C;

@@ -19,7 +19,7 @@ class Cheat_Haz5Plus_Row_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Cheat_Haz5Plus_Row", "Cheat_Haz5Plus_Row_C");
-    using Cheat_SetPerk_Row_C = Game::UI::Menu_Cheats::Cheat_SetPerk_Row_C;
+    using Cheat_SetPerk_Row_C = ::Game::UI::Menu_Cheats::Cheat_SetPerk_Row_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* MinusBtn;
     class UButton* PlusBtn;
@@ -43,4 +43,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_Haz5Plus_Row_C = Game::UI::Menu_Cheats::Cheat_Haz5Plus_Row_C;
+using Cheat_Haz5Plus_Row_C = ::Game::UI::Menu_Cheats::Cheat_Haz5Plus_Row_C;

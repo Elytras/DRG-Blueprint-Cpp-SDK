@@ -52,4 +52,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption
 
-using BP_CoreCorruption_Pillar_C = Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Pillar_C;
+using BP_CoreCorruption_Pillar_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Pillar_C;

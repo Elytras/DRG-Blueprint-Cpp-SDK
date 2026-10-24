@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::PawnAffliction::Common
 
-using STE_Freeze_C = Game::GameElements::PawnAffliction::Common::STE_Freeze_C;
+using STE_Freeze_C = ::Game::GameElements::PawnAffliction::Common::STE_Freeze_C;

@@ -21,4 +21,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::BloodSugar
 
-using BP_BloodSugarCharacterSpeak_C = Game::GameElements::Missions::Mutators::BloodSugar::BP_BloodSugarCharacterSpeak_C;
+using BP_BloodSugarCharacterSpeak_C = ::Game::GameElements::Missions::Mutators::BloodSugar::BP_BloodSugarCharacterSpeak_C;

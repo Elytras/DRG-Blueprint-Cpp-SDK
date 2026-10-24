@@ -20,11 +20,11 @@ class POPUP_KickPlayerConfirm_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/KickPlayer/POPUP_KickPlayerConfirm", "POPUP_KickPlayerConfirm_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox_AFK;
     Basic_CheckBox_C* Basic_CheckBox_NoReason;
@@ -62,4 +62,4 @@ public:
 
 }}}   // namespace Game::UI::KickPlayer
 
-using POPUP_KickPlayerConfirm_C = Game::UI::KickPlayer::POPUP_KickPlayerConfirm_C;
+using POPUP_KickPlayerConfirm_C = ::Game::UI::KickPlayer::POPUP_KickPlayerConfirm_C;

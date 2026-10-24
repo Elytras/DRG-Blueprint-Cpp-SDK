@@ -38,4 +38,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard
 
-using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;

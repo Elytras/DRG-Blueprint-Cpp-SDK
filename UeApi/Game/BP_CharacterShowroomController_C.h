@@ -22,4 +22,4 @@ public:
 
 }}}   // namespace Game::UI::Showroom
 
-using BP_CharacterShowroomController_C = Game::UI::Showroom::BP_CharacterShowroomController_C;
+using BP_CharacterShowroomController_C = ::Game::UI::Showroom::BP_CharacterShowroomController_C;

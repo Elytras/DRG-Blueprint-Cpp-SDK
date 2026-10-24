@@ -23,8 +23,8 @@ class ConsoleScreenMemorialWall_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreenMemorialWall", "ConsoleScreenMemorialWall_C");
-    using AnimatedStaticOverlay_WithScanlines_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
-    using UI_ConsoleMemorialLine_C = Game::UI::HUD_SpaceRig::UI_ConsoleMemorialLine_C;
+    using AnimatedStaticOverlay_WithScanlines_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
+    using UI_ConsoleMemorialLine_C = ::Game::UI::HUD_SpaceRig::UI_ConsoleMemorialLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* TextAnim;
     AnimatedStaticOverlay_WithScanlines_C* AnimatedStaticOverlay_WithScanlines;
@@ -57,4 +57,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreenMemorialWall_C = Game::UI::HUD_SpaceRig::ConsoleScreenMemorialWall_C;
+using ConsoleScreenMemorialWall_C = ::Game::UI::HUD_SpaceRig::ConsoleScreenMemorialWall_C;

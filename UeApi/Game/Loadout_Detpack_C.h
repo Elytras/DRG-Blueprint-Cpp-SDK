@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DetPack
 
-using Loadout_Detpack_C = Game::WeaponsNTools::DetPack::Loadout_Detpack_C;
+using Loadout_Detpack_C = ::Game::WeaponsNTools::DetPack::Loadout_Detpack_C;

@@ -68,4 +68,4 @@ private:
 
 }}}}}   // namespace Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty
 
-using BP_Zhukov_IceMines_C = Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_Zhukov_IceMines_C;
+using BP_Zhukov_IceMines_C = ::Game::WeaponsNTools::BurstFirePistol::Overclocks::OCBonusPenalty::BP_Zhukov_IceMines_C;

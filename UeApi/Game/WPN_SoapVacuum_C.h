@@ -70,4 +70,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum
 
-using WPN_SoapVacuum_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum::WPN_SoapVacuum_C;
+using WPN_SoapVacuum_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum::WPN_SoapVacuum_C;

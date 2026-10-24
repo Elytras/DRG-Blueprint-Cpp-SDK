@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ExplosiveEnemies
 
-using BP_ExplosiveEnemiesDamageTiny_C = Game::GameElements::Missions::Warnings::ExplosiveEnemies::BP_ExplosiveEnemiesDamageTiny_C;
+using BP_ExplosiveEnemiesDamageTiny_C = ::Game::GameElements::Missions::Warnings::ExplosiveEnemies::BP_ExplosiveEnemiesDamageTiny_C;

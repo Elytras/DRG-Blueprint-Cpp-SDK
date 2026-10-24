@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_ConvertSave_C = Game::UI::Menu_Cheats::Cheat_ConvertSave_C;
+using Cheat_ConvertSave_C = ::Game::UI::Menu_Cheats::Cheat_ConvertSave_C;

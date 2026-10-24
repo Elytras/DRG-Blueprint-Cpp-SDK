@@ -31,4 +31,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_MotivationalQuotes_C = Game::UI::HUD_SpaceRig::BP_MotivationalQuotes_C;
+using BP_MotivationalQuotes_C = ::Game::UI::HUD_SpaceRig::BP_MotivationalQuotes_C;

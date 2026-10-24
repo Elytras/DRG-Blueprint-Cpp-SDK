@@ -13,7 +13,7 @@ class UEnemyWaveManager;
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_PumpSequence_ConstantPresure_Refinery_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_PumpSequence_ConstantPresure_Refinery_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_PumpSequence_ConstantPresure_Refinery", "EWC_PumpSequence_ConstantPresure_Refinery_C");
@@ -37,4 +37,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_PumpSequence_ConstantPresure_Refinery_C = Game::Enemies::Waves::WaveControllers::EWC_PumpSequence_ConstantPresure_Refinery_C;
+using EWC_PumpSequence_ConstantPresure_Refinery_C = ::Game::Enemies::Waves::WaveControllers::EWC_PumpSequence_ConstantPresure_Refinery_C;

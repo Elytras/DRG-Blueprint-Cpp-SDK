@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::UI::ScreenOverlays
 
-using ScreenOverlay_Goo_C = Game::UI::ScreenOverlays::ScreenOverlay_Goo_C;
+using ScreenOverlay_Goo_C = ::Game::UI::ScreenOverlays::ScreenOverlay_Goo_C;

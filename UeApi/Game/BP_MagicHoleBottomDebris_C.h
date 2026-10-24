@@ -31,4 +31,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole
 
-using BP_MagicHoleBottomDebris_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::BP_MagicHoleBottomDebris_C;
+using BP_MagicHoleBottomDebris_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicHole::BP_MagicHoleBottomDebris_C;

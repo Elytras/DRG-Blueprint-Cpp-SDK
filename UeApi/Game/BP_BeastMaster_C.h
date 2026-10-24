@@ -69,4 +69,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster
 
-using BP_BeastMaster_C = Game::GameElements::KPI::Perks::BeastMaster::BP_BeastMaster_C;
+using BP_BeastMaster_C = ::Game::GameElements::KPI::Perks::BeastMaster::BP_BeastMaster_C;

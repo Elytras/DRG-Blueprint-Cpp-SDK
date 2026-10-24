@@ -27,4 +27,4 @@ public:
 
 }}}}}}}   // namespace Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::Animations
 
-using ABP_OssiranScrab_ScrabTank_C = Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::Animations::ABP_OssiranScrab_ScrabTank_C;
+using ABP_OssiranScrab_ScrabTank_C = ::Game::GameElements::Seasons::Season06::SpaceRig_Decor::ScrabTank::Animations::ABP_OssiranScrab_ScrabTank_C;

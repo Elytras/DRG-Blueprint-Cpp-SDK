@@ -32,7 +32,7 @@ class BP_Refinery_Extractor_C : public APipelineExtractorPod
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/BP_Refinery_Extractor", "BP_Refinery_Extractor_C");
-    using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
+    using BP_Extractor_Shell_C = ::Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UChildActorComponent* BP_Extractor_Lamp02;
     class UChildActorComponent* BP_Extractor_Lamp01;
@@ -77,6 +77,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeTemplateSubobjects = "/Game/LevelElements/Refinery/BP_Extractor_Lamp.BP_Extractor_Lamp_C BP_Extractor_Lamp01_GEN_VARIABLE:BP_Extractor_Lamp_GEN_VARIABLE_BP_Extractor_Lamp_C_CAT;/Game/LevelElements/Refinery/BP_Extractor_Lamp.BP_Extractor_Lamp_C BP_Extractor_Lamp02_GEN_VARIABLE:BP_Extractor_Lamp_GEN_VARIABLE_BP_Extractor_Lamp_C_CAT";
         static constexpr const char* BP_Extractor_Lamp02__UeScsNode = "99a2d546dadade45ad6a6b688e2b0a40";
         static constexpr const char* BP_Extractor_Lamp01__UeScsNode = "57d395e4d5d66f4495e3271b2ef3b1ea";
         static constexpr const char* SM_railconnector_02__UeScsNode = "89d667248c328042b2ff043302e897d1";
@@ -106,4 +107,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Refinery
 
-using BP_Refinery_Extractor_C = Game::LevelElements::Refinery::BP_Refinery_Extractor_C;
+using BP_Refinery_Extractor_C = ::Game::LevelElements::Refinery::BP_Refinery_Extractor_C;

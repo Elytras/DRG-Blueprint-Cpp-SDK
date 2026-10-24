@@ -25,4 +25,4 @@ public:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Bar::Hoops
 
-using UI_Hoop_HistoryLine_C = Game::LevelElements::Spacerig::Bar::Hoops::UI_Hoop_HistoryLine_C;
+using UI_Hoop_HistoryLine_C = ::Game::LevelElements::Spacerig::Bar::Hoops::UI_Hoop_HistoryLine_C;

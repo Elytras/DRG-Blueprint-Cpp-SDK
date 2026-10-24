@@ -24,4 +24,4 @@ public:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_EndMission_MotherLode_C = Game::Enemies::Waves::WaveControllers::EWC_EndMission_MotherLode_C;
+using EWC_EndMission_MotherLode_C = ::Game::Enemies::Waves::WaveControllers::EWC_EndMission_MotherLode_C;

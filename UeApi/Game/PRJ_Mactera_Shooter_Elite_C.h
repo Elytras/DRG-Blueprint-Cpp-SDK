@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using PRJ_Mactera_Shooter_Elite_C = Game::Enemies::FlyingBug::Shooter::PRJ_Mactera_Shooter_Elite_C;
+using PRJ_Mactera_Shooter_Elite_C = ::Game::Enemies::FlyingBug::Shooter::PRJ_Mactera_Shooter_Elite_C;

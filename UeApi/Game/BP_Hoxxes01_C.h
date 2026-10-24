@@ -173,4 +173,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Space::HoxxesMK2
 
-using BP_Hoxxes01_C = Game::Art::Environments::Space::HoxxesMK2::BP_Hoxxes01_C;
+using BP_Hoxxes01_C = ::Game::Art::Environments::Space::HoxxesMK2::BP_Hoxxes01_C;

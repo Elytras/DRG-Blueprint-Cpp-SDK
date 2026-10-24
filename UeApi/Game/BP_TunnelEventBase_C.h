@@ -24,7 +24,7 @@ class BP_TunnelEventBase_C : public ATunnelEventBase
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEventBase", "BP_TunnelEventBase_C");
-    using BP_Gem_C = Game::GameElements::Resources::Embedded::Gems::BP_Gem_C;
+    using BP_Gem_C = ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TerrainScannerMesh;
     class UBoxComponent* OnEnteredTrigger;
@@ -60,4 +60,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent
 
-using BP_TunnelEventBase_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C;
+using BP_TunnelEventBase_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C;

@@ -12,7 +12,7 @@ class AActor;
 
 namespace Game { namespace WeaponsNTools { namespace GooCannon {
 
-class BP_GooCannon_GooPuddle_ImprovedSlow_C : public Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C
+class BP_GooCannon_GooPuddle_ImprovedSlow_C : public ::Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/GooCannon/BP_GooCannon_GooPuddle_ImprovedSlow", "BP_GooCannon_GooPuddle_ImprovedSlow_C");
@@ -25,10 +25,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* UeIchRecords = "Niagara";
         static constexpr const char* UberGraphFrame_BP_GooCannon_GooPuddle_ImprovedSlow_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooCannon_GooPuddle_ImprovedSlow_C = Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_ImprovedSlow_C;
+using BP_GooCannon_GooPuddle_ImprovedSlow_C = ::Game::WeaponsNTools::GooCannon::BP_GooCannon_GooPuddle_ImprovedSlow_C;

@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using ShadowBG_C = Game::UI::_GlobalAssets::ShadowBG_C;
+using ShadowBG_C = ::Game::UI::_GlobalAssets::ShadowBG_C;

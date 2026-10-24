@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::UI::IngameTextDisplay
 
-using BP_TextDisplay_C = Game::UI::IngameTextDisplay::BP_TextDisplay_C;
+using BP_TextDisplay_C = ::Game::UI::IngameTextDisplay::BP_TextDisplay_C;

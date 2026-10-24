@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Armor
 
-using STE_ShieldBreak_Stun_C = Game::WeaponsNTools::Armor::STE_ShieldBreak_Stun_C;
+using STE_ShieldBreak_Stun_C = ::Game::WeaponsNTools::Armor::STE_ShieldBreak_Stun_C;

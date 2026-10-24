@@ -38,24 +38,24 @@ class _SCREEN_MissionSelectionMK3_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/_SCREEN_MissionSelectionMK3", "_SCREEN_MissionSelectionMK3_C");
-    using AnimatedStaticOverlay_WithScanlines_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using ITM_CampaignProgress_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_C;
-    using ITM_Challenge_InfoBox_C = Game::UI::Menu_Seasons::ITM_Challenge_InfoBox_C;
-    using ITM_MisSel_BG_Planet_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_BG_Planet_C;
-    using ITM_MisSel_Biome_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Biome_C;
-    using ITM_MisSel_FullBiome_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_FullBiome_C;
-    using ITM_MisSel_MissionMapIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionMapIcon_C;
-    using ITM_MisSel_PlanetZone_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_PlanetZone_C;
-    using ITM_MisSel_RegionImage_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_RegionImage_C;
-    using ITM_MisSel_Timer_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Timer_C;
-    using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
-    using WND_MisSel_BiomeDescription_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_BiomeDescription_C;
-    using WND_MisSel_MissionDescription_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionDescription_C;
-    using WND_MisSel_MissionOptions_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionOptions_C;
+    using AnimatedStaticOverlay_WithScanlines_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using ITM_CampaignProgress_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_C;
+    using ITM_Challenge_InfoBox_C = ::Game::UI::Menu_Seasons::ITM_Challenge_InfoBox_C;
+    using ITM_MisSel_BG_Planet_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_BG_Planet_C;
+    using ITM_MisSel_Biome_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Biome_C;
+    using ITM_MisSel_FullBiome_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_FullBiome_C;
+    using ITM_MisSel_MissionMapIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_MissionMapIcon_C;
+    using ITM_MisSel_PlanetZone_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_PlanetZone_C;
+    using ITM_MisSel_RegionImage_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_RegionImage_C;
+    using ITM_MisSel_Timer_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_Timer_C;
+    using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using WND_MisSel_BiomeDescription_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_BiomeDescription_C;
+    using WND_MisSel_MissionDescription_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionDescription_C;
+    using WND_MisSel_MissionOptions_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionOptions_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OnDiceClick;
     UE_READONLY class UWidgetAnimation* OnDiceHover;
@@ -129,7 +129,7 @@ public:
     TArray<ITM_MisSel_PlanetZone_C*> ZoneLocks;
     TArray<class UBiome*> NewBiomes;
     FVector2D CurrPos;
-    FVector2D TargetPos;
+    FVector2D targetPos;
     bool IsBiomeHovered;
     bool CanParalaxCamera;
     float BiomeHoverStartTime;
@@ -183,4 +183,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using _SCREEN_MissionSelectionMK3_C = Game::UI::Menu_MissionSelectionMK3::_SCREEN_MissionSelectionMK3_C;
+using _SCREEN_MissionSelectionMK3_C = ::Game::UI::Menu_MissionSelectionMK3::_SCREEN_MissionSelectionMK3_C;

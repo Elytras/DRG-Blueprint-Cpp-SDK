@@ -23,7 +23,7 @@ class UTunnelEventParentSpawner;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace TunnelEvent {
 
-class BP_TunnelEvent_01_C : public Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C
+class BP_TunnelEvent_01_C : public ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEventBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelEvent_01", "BP_TunnelEvent_01_C");
@@ -133,6 +133,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BillboardComponent EntranceIndicator;/Script/Engine.SceneComponent Adders;/Script/Engine.SceneComponent DebrisParent;/Script/Engine.SceneComponent Removers;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SceneComponent TunnelEntranceCarvers";
+        static constexpr const char* UeIchRecords = "OnEnteredTrigger";
         static constexpr const char* UberGraphFrame_BP_TunnelEvent_01_C__UeName = "UberGraphFrame";
         static constexpr const char* VertebraeSpawner_014__UeScsNode = "8f2b74a3f50a904da7eaf43fd73ce300";
         static constexpr const char* RandomLevelGenerationCarver6__UeScsNode = "66bf5498eaaae140868e82ca528c06ec";
@@ -239,4 +240,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent
 
-using BP_TunnelEvent_01_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEvent_01_C;
+using BP_TunnelEvent_01_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelEvent_01_C;

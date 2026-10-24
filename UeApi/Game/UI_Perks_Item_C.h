@@ -22,8 +22,8 @@ class UI_Perks_Item_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Perks_Item", "UI_Perks_Item_C");
-    using UI_PerkBackground_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
-    using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
+    using UI_PerkBackground_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
+    using UI_PerkIcon_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Ping;
     class UButton* ClickButton;
@@ -70,4 +70,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Perks_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
+using UI_Perks_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;

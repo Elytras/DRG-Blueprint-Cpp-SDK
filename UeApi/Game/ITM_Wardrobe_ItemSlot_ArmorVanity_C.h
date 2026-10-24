@@ -11,14 +11,14 @@ class UVanityItem;
 
 namespace Game { namespace UI { namespace Menu_Wardrobe {
 
-class ITM_Wardrobe_ItemSlot_ArmorVanity_C : public Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Vanity_C
+class ITM_Wardrobe_ItemSlot_ArmorVanity_C : public ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_Vanity_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_ArmorVanity", "ITM_Wardrobe_ItemSlot_ArmorVanity_C");
-    void SetSelectedItem(class UVanityItem* Item);
     void ReceiveToggleType(bool& success);
+    void SetSelectedItem(class UVanityItem* Item);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using ITM_Wardrobe_ItemSlot_ArmorVanity_C = Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_ArmorVanity_C;
+using ITM_Wardrobe_ItemSlot_ArmorVanity_C = ::Game::UI::Menu_Wardrobe::ITM_Wardrobe_ItemSlot_ArmorVanity_C;

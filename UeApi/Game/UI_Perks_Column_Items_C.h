@@ -19,8 +19,8 @@ class UI_Perks_Column_Items_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Perks_Column_Items", "UI_Perks_Column_Items_C");
-    using UI_Perks_Column_Unlocks_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_C;
-    using UI_Perks_Item_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
+    using UI_Perks_Column_Unlocks_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Unlocks_C;
+    using UI_Perks_Item_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UUniformGridPanel* PerksGrid;
     class UBorder* TierBorder;
@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI
 
-using UI_Perks_Column_Items_C = Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Items_C;
+using UI_Perks_Column_Items_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Items_C;

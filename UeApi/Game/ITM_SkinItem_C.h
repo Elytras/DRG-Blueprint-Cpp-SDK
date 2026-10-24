@@ -21,8 +21,8 @@ class ITM_SkinItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_SkinItem", "ITM_SkinItem_C");
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_SkinIcon_C = ::Game::UI::Menu_Loadout::ITM_SkinIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimIntro;
     UE_READONLY class UWidgetAnimation* AnimPing;
@@ -72,4 +72,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_SkinItem_C = Game::UI::Menu_Loadout::ITM_SkinItem_C;
+using ITM_SkinItem_C = ::Game::UI::Menu_Loadout::ITM_SkinItem_C;

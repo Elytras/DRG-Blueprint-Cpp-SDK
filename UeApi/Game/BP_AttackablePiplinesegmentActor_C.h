@@ -40,4 +40,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using BP_AttackablePiplinesegmentActor_C = Game::LevelElements::Refinery::Pipeline::BP_AttackablePiplinesegmentActor_C;
+using BP_AttackablePiplinesegmentActor_C = ::Game::LevelElements::Refinery::Pipeline::BP_AttackablePiplinesegmentActor_C;

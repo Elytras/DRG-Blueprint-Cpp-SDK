@@ -26,8 +26,8 @@ class ITM_Challenge_InfoBox_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_Challenge_InfoBox", "ITM_Challenge_InfoBox_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Itm_SeasonChallenge_Small_C = Game::UI::Menu_Seasons::Itm_SeasonChallenge_Small_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Itm_SeasonChallenge_Small_C = ::Game::UI::Menu_Seasons::Itm_SeasonChallenge_Small_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* HoverAnim;
     UE_READONLY class UWidgetAnimation* ClickAnim;
@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_Challenge_InfoBox_C = Game::UI::Menu_Seasons::ITM_Challenge_InfoBox_C;
+using ITM_Challenge_InfoBox_C = ::Game::UI::Menu_Seasons::ITM_Challenge_InfoBox_C;

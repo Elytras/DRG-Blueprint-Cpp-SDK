@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_BugThingComponent_C = Game::GameElements::KPI::Perks::BP_BugThingComponent_C;
+using BP_BugThingComponent_C = ::Game::GameElements::KPI::Perks::BP_BugThingComponent_C;

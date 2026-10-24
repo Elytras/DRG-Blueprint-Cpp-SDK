@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace BoneYards { namespace Destructables {
 
-class bp_Boneyard_DestructibleBones_Vertebrae_01_C : public Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleDebris_Base_C
+class bp_Boneyard_DestructibleBones_Vertebrae_01_C : public ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleDebris_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Destructables/bp_Boneyard_DestructibleBones_Vertebrae_01", "bp_Boneyard_DestructibleBones_Vertebrae_01_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "PathfinderCollision;StaticMesh";
         static constexpr const char* Preview1__UeScsNode = "e456426fe28b2643ac1b6368be7c83c3";
     };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables
 
-using bp_Boneyard_DestructibleBones_Vertebrae_01_C = Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleBones_Vertebrae_01_C;
+using bp_Boneyard_DestructibleBones_Vertebrae_01_C = ::Game::Landscape::Biomes::Biomes_Ingame::BoneYards::Destructables::bp_Boneyard_DestructibleBones_Vertebrae_01_C;

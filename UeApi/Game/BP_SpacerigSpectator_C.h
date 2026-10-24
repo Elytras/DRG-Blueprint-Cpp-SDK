@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_SpacerigSpectator_C = Game::Game::SpaceRig::BP_SpacerigSpectator_C;
+using BP_SpacerigSpectator_C = ::Game::Game::SpaceRig::BP_SpacerigSpectator_C;

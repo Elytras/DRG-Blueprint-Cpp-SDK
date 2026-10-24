@@ -55,4 +55,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using BP_LaserPointerWaypoint_C = Game::WeaponsNTools::LaserPointer::BP_LaserPointerWaypoint_C;
+using BP_LaserPointerWaypoint_C = ::Game::WeaponsNTools::LaserPointer::BP_LaserPointerWaypoint_C;

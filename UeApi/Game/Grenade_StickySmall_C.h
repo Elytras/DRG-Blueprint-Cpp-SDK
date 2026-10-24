@@ -16,7 +16,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace StickySmall {
 
-class Grenade_StickySmall_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_StickySmall_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/StickySmall/Grenade_StickySmall", "Grenade_StickySmall_C");
@@ -30,6 +30,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Box;StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_StickySmall_C__UeName = "UberGraphFrame";
         static constexpr const char* BluntDamage__UeScsNode = "264b64d20b95164998bd454baa4a0bfa";
     };
@@ -37,4 +38,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::StickySmall
 
-using Grenade_StickySmall_C = Game::WeaponsNTools::Grenades::StickySmall::Grenade_StickySmall_C;
+using Grenade_StickySmall_C = ::Game::WeaponsNTools::Grenades::StickySmall::Grenade_StickySmall_C;

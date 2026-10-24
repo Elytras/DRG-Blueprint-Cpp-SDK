@@ -49,4 +49,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SpikyPlant
 
-using ABP_SpikeyPlant_A_C = Game::LevelElements::RoomObjects::Hazards::SpikyPlant::ABP_SpikeyPlant_A_C;
+using ABP_SpikeyPlant_A_C = ::Game::LevelElements::RoomObjects::Hazards::SpikyPlant::ABP_SpikeyPlant_A_C;

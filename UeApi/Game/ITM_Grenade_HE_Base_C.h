@@ -16,7 +16,7 @@ class USoundBase;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades {
 
-class ITM_Grenade_HE_Base_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class ITM_Grenade_HE_Base_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/ITM_Grenade_HE_Base", "ITM_Grenade_HE_Base_C");
@@ -32,6 +32,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "Widget";
         static constexpr const char* UberGraphFrame_ITM_Grenade_HE_Base_C__UeName = "UberGraphFrame";
         static constexpr const char* Damage__UeScsNode = "a601a2e69d4b9045b8cc061b1fba6a52";
         static constexpr const char* Explosion__UeScsNode = "7057c5a628942f4baf809323c08b4b4f";
@@ -40,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using ITM_Grenade_HE_Base_C = Game::WeaponsNTools::Grenades::ITM_Grenade_HE_Base_C;
+using ITM_Grenade_HE_Base_C = ::Game::WeaponsNTools::Grenades::ITM_Grenade_HE_Base_C;

@@ -44,4 +44,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::HackingTool::UI::Defuse
 
-using DefuseBomb_Wire_C = Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Wire_C;
+using DefuseBomb_Wire_C = ::Game::WeaponsNTools::HackingTool::UI::Defuse::DefuseBomb_Wire_C;

@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_AnimatedNumber_C = Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
+using Basic_AnimatedNumber_C = ::Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;

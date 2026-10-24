@@ -30,7 +30,7 @@ class Menu_QuickCheats_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/Menu_QuickCheats", "Menu_QuickCheats_C");
-    using Cheat_SpawnEnemyAdvanced_C = Game::UI::Menu_Cheats::Cheat_SpawnEnemyAdvanced_C;
+    using Cheat_SpawnEnemyAdvanced_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEnemyAdvanced_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* Button_Close;
     class UButton* Button_CompleteMission;
@@ -142,4 +142,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Menu_QuickCheats_C = Game::UI::Menu_Cheats::Menu_QuickCheats_C;
+using Menu_QuickCheats_C = ::Game::UI::Menu_Cheats::Menu_QuickCheats_C;

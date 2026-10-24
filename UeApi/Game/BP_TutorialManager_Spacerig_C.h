@@ -16,7 +16,7 @@ class BP_TutorialManager_Spacerig_C : public ATutorialManager
 {
 public:
     UE_CLASS("/Game/Character/Tutorials/BP_TutorialManager_Spacerig", "BP_TutorialManager_Spacerig_C");
-    using Tutorial_Hint_Spaceball_C = Game::Character::Tutorials::Tutorial_Hint_Spaceball_C;
+    using Tutorial_Hint_Spaceball_C = ::Game::Character::Tutorials::Tutorial_Hint_Spaceball_C;
     Tutorial_Hint_Spaceball_C* Tutorial_Hint_Spaceball;
     class USceneComponent* DefaultSceneRoot;
 private:
@@ -29,4 +29,4 @@ private:
 
 }}}   // namespace Game::Character::Tutorials
 
-using BP_TutorialManager_Spacerig_C = Game::Character::Tutorials::BP_TutorialManager_Spacerig_C;
+using BP_TutorialManager_Spacerig_C = ::Game::Character::Tutorials::BP_TutorialManager_Spacerig_C;

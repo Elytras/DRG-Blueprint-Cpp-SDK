@@ -34,4 +34,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::UI
 
-using UI_PropHunt_ContestantCount_C = Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_ContestantCount_C;
+using UI_PropHunt_ContestantCount_C = ::Game::GameElements::Bar::Drinkables::PropHunt::UI::UI_PropHunt_ContestantCount_C;

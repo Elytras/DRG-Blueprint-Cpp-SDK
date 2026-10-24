@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_CharacterBeerLabel_C = Game::UI::MainOnscreenHUD::HUD_CharacterBeerLabel_C;
+using HUD_CharacterBeerLabel_C = ::Game::UI::MainOnscreenHUD::HUD_CharacterBeerLabel_C;

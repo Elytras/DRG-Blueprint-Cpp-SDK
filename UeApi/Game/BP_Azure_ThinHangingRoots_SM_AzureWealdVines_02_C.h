@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace AzureWeald { namespace SMCs {
 
-class BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C : public Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs::BP_Azure_HureRoots_Base_C
+class BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C : public ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs::BP_Azure_HureRoots_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/SMCs/BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02", "BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
+    };
 };
 
 }}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs
 
-using BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs::BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C;
+using BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::SMCs::BP_Azure_ThinHangingRoots_SM_AzureWealdVines_02_C;

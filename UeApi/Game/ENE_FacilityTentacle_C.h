@@ -36,10 +36,10 @@ class ENE_FacilityTentacle_C : public AFacilityTentacle
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/ENE_FacilityTentacle", "ENE_FacilityTentacle_C");
-    using BP_MainFacility_DataVault_C = Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
-    using BP_TentacleBurrowAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleBurrowAttack_C;
-    using BP_TentacleMeleeAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleMeleeAttack_C;
-    using BP_Tentacle_RangedAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Tentacle_RangedAttack_C;
+    using BP_MainFacility_DataVault_C = ::Game::GameElements::Objectives::Facility::BP_MainFacility_DataVault_C;
+    using BP_TentacleBurrowAttack_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleBurrowAttack_C;
+    using BP_TentacleMeleeAttack_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleMeleeAttack_C;
+    using BP_Tentacle_RangedAttack_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Tentacle_RangedAttack_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWeakpointGlowComponent* WeaponFireGlow;
     class UNiagaraComponent* NS_Inner_Energy;
@@ -97,7 +97,7 @@ public:
     void UserConstructionScript();
     void CheckLoS(class AActor* LoSCheckTargetActor, bool& ClearLoSToTarget);
     void HitTerrainAndStop(FVector TargetLocation_0, float Penetration, FVector& NewTargetLocation, bool& HitTerrain);
-    void GetTentacle(ENE_FacilityTentacle_C*& Tentacle);
+    void GetTentacle(ENE_FacilityTentacle_C*& tentacle);
     class USceneComponent* GetHeadRoot();
     class USceneComponent* GetHeadRotator();
     UE_PURE FVector GetTargetCenterMass() const;
@@ -106,6 +106,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_2;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_3;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_4;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_5;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_6;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_7";
         static constexpr const char* WeaponFireGlow__UeScsNode = "8dfb9d2ec50ad44e89f5df29a9858abb";
         static constexpr const char* NS_Inner_Energy__UeScsNode = "28c77bd9ab1b8d4e88a1fb5ca1e3aecf";
         static constexpr const char* Head_Mesh__UeScsNode = "8b7866e9f73ae14090f858283bff72b1";
@@ -133,4 +134,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using ENE_FacilityTentacle_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;
+using ENE_FacilityTentacle_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::ENE_FacilityTentacle_C;

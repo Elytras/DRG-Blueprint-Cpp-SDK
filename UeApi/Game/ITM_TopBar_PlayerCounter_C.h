@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_TopBar
 
-using ITM_TopBar_PlayerCounter_C = Game::UI::Menu_TopBar::ITM_TopBar_PlayerCounter_C;
+using ITM_TopBar_PlayerCounter_C = ::Game::UI::Menu_TopBar::ITM_TopBar_PlayerCounter_C;

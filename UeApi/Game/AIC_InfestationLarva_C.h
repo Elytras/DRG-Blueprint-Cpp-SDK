@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::Enemies::InfestationLarva
 
-using AIC_InfestationLarva_C = Game::Enemies::InfestationLarva::AIC_InfestationLarva_C;
+using AIC_InfestationLarva_C = ::Game::Enemies::InfestationLarva::AIC_InfestationLarva_C;

@@ -38,4 +38,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Basic_BG_CutCorner_W_Image_C = Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;
+using Basic_BG_CutCorner_W_Image_C = ::Game::UI::Menu_MinersManual::Basic_BG_CutCorner_W_Image_C;

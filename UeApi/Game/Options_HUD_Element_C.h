@@ -19,8 +19,8 @@ class Options_HUD_Element_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/HUD/Options_HUD_Element", "Options_HUD_Element_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Option_C* Basic_Option;
     Basic_OptionSwitcher_C* Basic_OptionSwitcher;
@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::HUD
 
-using Options_HUD_Element_C = Game::UI::Menu_Options::HUD::Options_HUD_Element_C;
+using Options_HUD_Element_C = ::Game::UI::Menu_Options::HUD::Options_HUD_Element_C;

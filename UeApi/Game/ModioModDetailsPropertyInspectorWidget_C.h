@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Modio::UI::Browser::Views::ModDetails
 
-using ModioModDetailsPropertyInspectorWidget_C = Modio::UI::Browser::Views::ModDetails::ModioModDetailsPropertyInspectorWidget_C;
+using ModioModDetailsPropertyInspectorWidget_C = ::Modio::UI::Browser::Views::ModDetails::ModioModDetailsPropertyInspectorWidget_C;

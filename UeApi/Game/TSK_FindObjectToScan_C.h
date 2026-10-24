@@ -19,7 +19,7 @@ class TSK_FindObjectToScan_C : public UBTTask_BlueprintBase
 {
 public:
     UE_CLASS("/Game/AI/Tasks/TSK_FindObjectToScan", "TSK_FindObjectToScan_C");
-    using AIC_Prospector_C = Game::Critters::Prospector::AIC_Prospector_C;
+    using AIC_Prospector_C = ::Game::Critters::Prospector::AIC_Prospector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     float SearchRadius;
     FBlackboardKeySelector Target;
@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindObjectToScan_C = Game::AI::Tasks::TSK_FindObjectToScan_C;
+using TSK_FindObjectToScan_C = ::Game::AI::Tasks::TSK_FindObjectToScan_C;

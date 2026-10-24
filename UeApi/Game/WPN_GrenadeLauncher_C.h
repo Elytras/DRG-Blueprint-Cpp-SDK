@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GrenadeLauncher
 
-using WPN_GrenadeLauncher_C = Game::WeaponsNTools::GrenadeLauncher::WPN_GrenadeLauncher_C;
+using WPN_GrenadeLauncher_C = ::Game::WeaponsNTools::GrenadeLauncher::WPN_GrenadeLauncher_C;

@@ -48,6 +48,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/WeaponsNTools/SentryGun/BP_Turret_Arc_Indicator.BP_Turret_Arc_Indicator_C ArcIndicator_GEN_VARIABLE:ArcIndicator_GEN_VARIABLE_BP_Turret_Arc_Indicator_C_CAT";
         static constexpr const char* ArcIndicator__UeScsNode = "82d27f15e0dcda4a8d642b1d2cb043a9";
         static constexpr const char* SkeletalMesh__UeScsNode = "c6b1f4792a24f74f9569296cb384f13a";
         static constexpr const char* Scene__UeScsNode = "bc08e539a9480549a946f3ae09c275ea";
@@ -61,4 +62,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::SentryGun::SentryGun_Engineer
 
-using BP_SentryItem_PlaceMarker_C = Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryItem_PlaceMarker_C;
+using BP_SentryItem_PlaceMarker_C = ::Game::WeaponsNTools::SentryGun::SentryGun_Engineer::BP_SentryItem_PlaceMarker_C;

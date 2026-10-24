@@ -17,7 +17,7 @@ class WPN_FuelLine_Builder_C : public AFuelLineBuilderItem
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FuelLineBuilder/WPN_FuelLine_Builder", "WPN_FuelLine_Builder_C");
-    using UI_FuelLine_Builder_C = Game::WeaponsNTools::FuelLineBuilder::UI_FuelLine_Builder_C;
+    using UI_FuelLine_Builder_C = ::Game::WeaponsNTools::FuelLineBuilder::UI_FuelLine_Builder_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     void ExecuteUbergraph_WPN_FuelLine_Builder(int EntryPoint);
@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder
 
-using WPN_FuelLine_Builder_C = Game::WeaponsNTools::FuelLineBuilder::WPN_FuelLine_Builder_C;
+using WPN_FuelLine_Builder_C = ::Game::WeaponsNTools::FuelLineBuilder::WPN_FuelLine_Builder_C;

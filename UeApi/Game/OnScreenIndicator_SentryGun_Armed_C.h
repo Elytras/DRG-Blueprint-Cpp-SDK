@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_SentryGun_Armed_C = Game::UI::OnScreenIndicators::OnScreenIndicator_SentryGun_Armed_C;
+using OnScreenIndicator_SentryGun_Armed_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_SentryGun_Armed_C;

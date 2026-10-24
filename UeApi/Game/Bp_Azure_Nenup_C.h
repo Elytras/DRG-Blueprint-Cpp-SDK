@@ -17,7 +17,7 @@ class UTimelineComponent;
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace AzureWeald { namespace Assets { namespace Nenup {
 
-class Bp_Azure_Nenup_C : public Game::LevelElements::RoomObjects::PassiveFoliage::BP_Foliage_OpenOnProximity_C
+class Bp_Azure_Nenup_C : public ::Game::LevelElements::RoomObjects::PassiveFoliage::BP_Foliage_OpenOnProximity_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/AzureWeald/Assets/Nenup/Bp_Azure_Nenup", "Bp_Azure_Nenup_C");
@@ -40,6 +40,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "Box;HitBox_Closed;HitBox_Open;PathfinderCollision1;ICH-DefaultSceneRoot;Mesh;WalkinTrigger;TerrainDetect;TerrainPlacement";
         static constexpr const char* UberGraphFrame_Bp_Azure_Nenup_C__UeName = "UberGraphFrame";
         static constexpr const char* ParticleSystem__UeScsNode = "9657fab7cf01e144bce6e853fca5d201";
         static constexpr const char* PointLight__UeScsNode = "b2c014512e74f04082d97f476ad72da4";
@@ -51,4 +52,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::Nenup
 
-using Bp_Azure_Nenup_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::Nenup::Bp_Azure_Nenup_C;
+using Bp_Azure_Nenup_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::Nenup::Bp_Azure_Nenup_C;

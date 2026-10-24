@@ -28,4 +28,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::PlagueMeteor::PlagueHeart_Models
 
-using ABP_plagueHeart_C = Game::GameElements::GameEvents::PlagueMeteor::PlagueHeart_Models::ABP_plagueHeart_C;
+using ABP_plagueHeart_C = ::Game::GameElements::GameEvents::PlagueMeteor::PlagueHeart_Models::ABP_plagueHeart_C;

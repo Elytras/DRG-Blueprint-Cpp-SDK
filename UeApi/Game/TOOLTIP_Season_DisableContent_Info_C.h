@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using TOOLTIP_Season_DisableContent_Info_C = Game::UI::Menu_Seasons::TOOLTIP_Season_DisableContent_Info_C;
+using TOOLTIP_Season_DisableContent_Info_C = ::Game::UI::Menu_Seasons::TOOLTIP_Season_DisableContent_Info_C;

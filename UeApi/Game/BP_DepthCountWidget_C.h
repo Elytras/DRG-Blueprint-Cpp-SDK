@@ -34,4 +34,4 @@ public:
 
 }}}}}   // namespace Game::Maps::UILevels::Assets::HUD
 
-using BP_DepthCountWidget_C = Game::Maps::UILevels::Assets::HUD::BP_DepthCountWidget_C;
+using BP_DepthCountWidget_C = ::Game::Maps::UILevels::Assets::HUD::BP_DepthCountWidget_C;

@@ -24,10 +24,10 @@ class ITM_LoadOut_PerksEquip_Slot_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/Perks/ITM_LoadOut_PerksEquip_Slot", "ITM_LoadOut_PerksEquip_Slot_C");
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
-    using UI_PerkBackground_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
-    using UI_PerkIcon_C = Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
-    using UI_Perk_ToolTip_C = Game::UI::HUD_SpaceRig::KPI::UI_Perk_ToolTip_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using UI_PerkBackground_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkBackground_C;
+    using UI_PerkIcon_C = ::Game::UI::HUD_SpaceRig::KPI::UI_PerkIcon_C;
+    using UI_Perk_ToolTip_C = ::Game::UI::HUD_SpaceRig::KPI::UI_Perk_ToolTip_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UWidgetSwitcher* ContentSwitcher;
     UI_ImageTinted_C* LockedIcon;
@@ -65,4 +65,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Loadout::Perks
 
-using ITM_LoadOut_PerksEquip_Slot_C = Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Slot_C;
+using ITM_LoadOut_PerksEquip_Slot_C = ::Game::UI::Menu_Loadout::Perks::ITM_LoadOut_PerksEquip_Slot_C;

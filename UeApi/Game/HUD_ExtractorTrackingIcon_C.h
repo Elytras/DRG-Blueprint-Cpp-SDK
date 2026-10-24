@@ -22,8 +22,8 @@ class HUD_ExtractorTrackingIcon_C : public UActorTrackingWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Extractor/HUD_ExtractorTrackingIcon", "HUD_ExtractorTrackingIcon_C");
-    using Basic_HUD_BracketWindowSmall_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
-    using HUD_DefaultLabel_C = Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
+    using Basic_HUD_BracketWindowSmall_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowSmall_C;
+    using HUD_DefaultLabel_C = ::Game::UI::MainOnscreenHUD::Standard::HUD_DefaultLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Shots_Fired;
     class UProgressBar* AmmoProgress;
@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Extractor
 
-using HUD_ExtractorTrackingIcon_C = Game::WeaponsNTools::Extractor::HUD_ExtractorTrackingIcon_C;
+using HUD_ExtractorTrackingIcon_C = ::Game::WeaponsNTools::Extractor::HUD_ExtractorTrackingIcon_C;

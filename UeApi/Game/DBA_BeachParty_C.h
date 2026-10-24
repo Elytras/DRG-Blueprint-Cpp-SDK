@@ -21,6 +21,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisPositioning DebrisItem_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* DebrisItem__UeScsNode = "9b041137fca5c44188f4baab1ed5f5d5";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "28dd79daba536a4697ab29cb3edebc70";
     };
@@ -28,4 +29,4 @@ private:
 
 }}}}   // namespace Game::Game::Events::BeachParty
 
-using DBA_BeachParty_C = Game::Game::Events::BeachParty::DBA_BeachParty_C;
+using DBA_BeachParty_C = ::Game::Game::Events::BeachParty::DBA_BeachParty_C;

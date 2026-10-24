@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_ImpactCompensators_C = Game::GameElements::KPI::Perks::BP_ImpactCompensators_C;
+using BP_ImpactCompensators_C = ::Game::GameElements::KPI::Perks::BP_ImpactCompensators_C;

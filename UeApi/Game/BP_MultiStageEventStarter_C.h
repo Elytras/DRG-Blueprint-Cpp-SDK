@@ -62,4 +62,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::EventStart
 
-using BP_MultiStageEventStarter_C = Game::GameElements::GameEvents::EventStart::BP_MultiStageEventStarter_C;
+using BP_MultiStageEventStarter_C = ::Game::GameElements::GameEvents::EventStart::BP_MultiStageEventStarter_C;

@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Oktoberfest2026_C = Game::GameElements::Campaign::CP_Oktoberfest2026_C;
+using CP_Oktoberfest2026_C = ::Game::GameElements::Campaign::CP_Oktoberfest2026_C;

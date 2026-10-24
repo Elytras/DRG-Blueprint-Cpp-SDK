@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using BP_QuickRecoveryLogic_C = Game::GameElements::KPI::Perks::BP_QuickRecoveryLogic_C;
+using BP_QuickRecoveryLogic_C = ::Game::GameElements::KPI::Perks::BP_QuickRecoveryLogic_C;

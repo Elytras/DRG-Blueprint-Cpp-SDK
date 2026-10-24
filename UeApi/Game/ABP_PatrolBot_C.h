@@ -55,4 +55,4 @@ public:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using ABP_PatrolBot_C = Game::Enemies::RivalTech::PatrolBot::ABP_PatrolBot_C;
+using ABP_PatrolBot_C = ::Game::Enemies::RivalTech::PatrolBot::ABP_PatrolBot_C;

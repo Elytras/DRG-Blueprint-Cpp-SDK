@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::AI::Services
 
-using SER_FindAlly_C = Game::AI::Services::SER_FindAlly_C;
+using SER_FindAlly_C = ::Game::AI::Services::SER_FindAlly_C;

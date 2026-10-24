@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using BP_Mactera_TrippleShooter_Attack_Elite_C = Game::Enemies::FlyingBug::Shooter::BP_Mactera_TrippleShooter_Attack_Elite_C;
+using BP_Mactera_TrippleShooter_Attack_Elite_C = ::Game::Enemies::FlyingBug::Shooter::BP_Mactera_TrippleShooter_Attack_Elite_C;

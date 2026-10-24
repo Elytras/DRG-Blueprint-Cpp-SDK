@@ -7,6 +7,7 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../UeMeta.h"
 #include "../Engine.h"
 #include "../FSD.h"
+#include "FEnemySpawnWave.h"
 
 class AActor;
 class APawn;
@@ -30,6 +31,7 @@ public:
     int MaxTotalSpawnCount;
     class UEnemySpawnManager* Manager;
     TMulticastInlineDelegate<void()> On_Begin_Play;
+    TArray<FEnemySpawnWave> Spawns;
     TArray<class UEnemyDescriptor*> SpawnQueue;
     bool IsAlertet;
     bool PlayersClose;
@@ -56,4 +58,4 @@ private:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using ENE_EnemySpawner_C = Game::Enemies::EnemySpawner::ENE_EnemySpawner_C;
+using ENE_EnemySpawner_C = ::Game::Enemies::EnemySpawner::ENE_EnemySpawner_C;

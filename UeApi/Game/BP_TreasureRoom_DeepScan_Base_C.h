@@ -19,7 +19,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace DeepScan { namespace TreasureRooms {
 
-class BP_TreasureRoom_DeepScan_Base_C : public Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Basier_C
+class BP_TreasureRoom_DeepScan_Base_C : public ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Basier_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_TreasureRoom_DeepScan_Base", "BP_TreasureRoom_DeepScan_Base_C");
@@ -49,6 +49,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisMesh D_Geode_Crystal_GEN_VARIABLE:DebrisMesh_2";
         static constexpr const char* D_Geode_Crystal__UeScsNode = "a3aeb600a9349d4e8b94f9ca82992a36";
         static constexpr const char* NS_Treasure_Room_Atmosphere__UeScsNode = "13e72afebca4814ab692ab108d83fd41";
         static constexpr const char* CrystalMaterialFillCarver__UeScsNode = "3387b0ac3f9beb4f86e2a0bbb075d37e";
@@ -68,4 +69,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepScan::TreasureRooms
 
-using BP_TreasureRoom_DeepScan_Base_C = Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Base_C;
+using BP_TreasureRoom_DeepScan_Base_C = ::Game::GameElements::Objectives::DeepScan::TreasureRooms::BP_TreasureRoom_DeepScan_Base_C;

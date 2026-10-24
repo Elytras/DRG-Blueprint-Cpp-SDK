@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers
 
-using Lore_Container_Text_Without_BG_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_Without_BG_C;
+using Lore_Container_Text_Without_BG_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_Text_Without_BG_C;

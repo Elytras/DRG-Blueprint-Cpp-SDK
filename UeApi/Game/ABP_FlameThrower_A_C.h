@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::FlameThrower
 
-using ABP_FlameThrower_A_C = Game::WeaponsNTools::FlameThrower::ABP_FlameThrower_A_C;
+using ABP_FlameThrower_A_C = ::Game::WeaponsNTools::FlameThrower::ABP_FlameThrower_A_C;

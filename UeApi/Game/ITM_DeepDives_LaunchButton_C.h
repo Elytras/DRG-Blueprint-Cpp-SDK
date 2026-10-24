@@ -25,7 +25,7 @@ public:
     UE_READONLY class UWidgetAnimation* HoverStart;
     UE_READONLY class UWidgetAnimation* Hover;
     UE_READONLY class UWidgetAnimation* Idle;
-    class UImage* BgGlow;
+    class UImage* BGglow;
     class UBorder* Border_129;
     class UButton* Button_0;
     class UImage* Image_86;
@@ -50,4 +50,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_DeepDives
 
-using ITM_DeepDives_LaunchButton_C = Game::UI::Menu_DeepDives::ITM_DeepDives_LaunchButton_C;
+using ITM_DeepDives_LaunchButton_C = ::Game::UI::Menu_DeepDives::ITM_DeepDives_LaunchButton_C;

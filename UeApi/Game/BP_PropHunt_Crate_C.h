@@ -35,4 +35,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Season06
 
-using BP_PropHunt_Crate_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Season06::BP_PropHunt_Crate_C;
+using BP_PropHunt_Crate_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Season06::BP_PropHunt_Crate_C;

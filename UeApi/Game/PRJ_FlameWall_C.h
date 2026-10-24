@@ -30,6 +30,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_1";
         static constexpr const char* StaticMesh__UeScsNode = "92d63ed8187fc446a18f307faf023546";
         static constexpr const char* ParticleComponent__UeScsNode = "0294557f9e5fe34bad0173efd9739b22";
         static constexpr const char* Damage__UeScsNode = "c7c94760dd16af49a8973689c31fea12";
@@ -38,4 +39,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::FlameThrower::Projectile
 
-using PRJ_FlameWall_C = Game::WeaponsNTools::FlameThrower::Projectile::PRJ_FlameWall_C;
+using PRJ_FlameWall_C = ::Game::WeaponsNTools::FlameThrower::Projectile::PRJ_FlameWall_C;

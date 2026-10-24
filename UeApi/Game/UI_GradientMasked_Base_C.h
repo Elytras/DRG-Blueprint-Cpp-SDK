@@ -29,4 +29,4 @@ public:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_GradientMasked_Base_C = Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Base_C;
+using UI_GradientMasked_Base_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_GradientMasked_Base_C;

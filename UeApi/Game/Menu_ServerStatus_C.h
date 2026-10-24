@@ -19,8 +19,8 @@ class Menu_ServerStatus_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/Menu_ServerStatus", "Menu_ServerStatus_C");
-    using Lobby_BarTop_Countdown_C = Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
-    using WND_MissionBar_C = Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_C;
+    using Lobby_BarTop_Countdown_C = ::Game::UI::CharacterSelectionMK2::Lobby_BarTop_Countdown_C;
+    using WND_MissionBar_C = ::Game::UI::HUD_SpaceRig::MissionOverview::WND_MissionBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Lobby_BarTop_Countdown_C* CharSelect_Countdown;
     WND_MissionBar_C* WND_MissionBar;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using Menu_ServerStatus_C = Game::UI::HUD_SpaceRig::Menu_ServerStatus_C;
+using Menu_ServerStatus_C = ::Game::UI::HUD_SpaceRig::Menu_ServerStatus_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Swarmer
 
-using STE_RadioactiveGlyphidPoison_C = Game::Enemies::Spider::Swarmer::STE_RadioactiveGlyphidPoison_C;
+using STE_RadioactiveGlyphidPoison_C = ::Game::Enemies::Spider::Swarmer::STE_RadioactiveGlyphidPoison_C;

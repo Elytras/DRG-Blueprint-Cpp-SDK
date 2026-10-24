@@ -64,4 +64,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_SupplyPod_Beacon_C = Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C;
+using BP_SupplyPod_Beacon_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyPod_Beacon_C;

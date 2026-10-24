@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using ESI_TentaclePlant_C = Game::Enemies::TentaclePlant::ESI_TentaclePlant_C;
+using ESI_TentaclePlant_C = ::Game::Enemies::TentaclePlant::ESI_TentaclePlant_C;

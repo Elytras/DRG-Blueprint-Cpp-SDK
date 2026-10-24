@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Critters::Prospector
 
-using STE_Prospector_RunningOneWeakpoint_C = Game::Critters::Prospector::STE_Prospector_RunningOneWeakpoint_C;
+using STE_Prospector_RunningOneWeakpoint_C = ::Game::Critters::Prospector::STE_Prospector_RunningOneWeakpoint_C;

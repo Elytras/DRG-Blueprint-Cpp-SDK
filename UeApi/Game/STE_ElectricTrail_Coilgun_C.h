@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using STE_ElectricTrail_Coilgun_C = Game::WeaponsNTools::CoilGun::STE_ElectricTrail_Coilgun_C;
+using STE_ElectricTrail_Coilgun_C = ::Game::WeaponsNTools::CoilGun::STE_ElectricTrail_Coilgun_C;

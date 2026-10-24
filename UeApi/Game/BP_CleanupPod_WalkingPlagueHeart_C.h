@@ -13,7 +13,7 @@ class UParticleSystemComponent;
 
 namespace Game { namespace GameElements { namespace Missions { namespace Warnings { namespace Plague { namespace CleaningPod { namespace WalkingPlagueHeart {
 
-class BP_CleanupPod_WalkingPlagueHeart_C : public Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_C
+class BP_CleanupPod_WalkingPlagueHeart_C : public ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::BP_CleanupPod_C
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/WalkingPlagueHeart/BP_CleanupPod_WalkingPlagueHeart", "BP_CleanupPod_WalkingPlagueHeart_C");
@@ -27,9 +27,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent RemovePlague";
+        static constexpr const char* UeIchRecords = "ParticleSysyem_Idle";
     };
 };
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart
 
-using BP_CleanupPod_WalkingPlagueHeart_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart::BP_CleanupPod_WalkingPlagueHeart_C;
+using BP_CleanupPod_WalkingPlagueHeart_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::WalkingPlagueHeart::BP_CleanupPod_WalkingPlagueHeart_C;

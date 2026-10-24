@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnEnemy_C = Game::UI::Menu_Cheats::Cheat_SpawnEnemy_C;
+using Cheat_SpawnEnemy_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEnemy_C;

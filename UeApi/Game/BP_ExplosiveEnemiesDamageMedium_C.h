@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ExplosiveEnemies
 
-using BP_ExplosiveEnemiesDamageMedium_C = Game::GameElements::Missions::Warnings::ExplosiveEnemies::BP_ExplosiveEnemiesDamageMedium_C;
+using BP_ExplosiveEnemiesDamageMedium_C = ::Game::GameElements::Missions::Warnings::ExplosiveEnemies::BP_ExplosiveEnemiesDamageMedium_C;

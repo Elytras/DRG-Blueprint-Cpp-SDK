@@ -20,7 +20,7 @@ class UI_RandomizeIcon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_RandomizeIcon", "UI_RandomizeIcon_C");
-    using ITM_VanityTag_CheckBox_C = Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_CheckBox_C;
+    using ITM_VanityTag_CheckBox_C = ::Game::UI::Menu_Wardrobe::FilterSelector::ITM_VanityTag_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHover;
     UE_READONLY class UWidgetAnimation* AnimActivate;
@@ -53,4 +53,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using UI_RandomizeIcon_C = Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
+using UI_RandomizeIcon_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;

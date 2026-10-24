@@ -83,4 +83,4 @@ private:
 
 }}}   // namespace Game::Enemies::Woodlouse
 
-using ENE_Woodlouse_C = Game::Enemies::Woodlouse::ENE_Woodlouse_C;
+using ENE_Woodlouse_C = ::Game::Enemies::Woodlouse::ENE_Woodlouse_C;

@@ -26,9 +26,9 @@ class ITM_IngameTab_Mod_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/Modding/ITM_IngameTab_Mod", "ITM_IngameTab_Mod_C");
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using ITM_Mod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Mod_C;
-    using ITM_Modding_Menu_C = Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Menu_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using ITM_Mod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Mod_C;
+    using ITM_Modding_Menu_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_Modding_Menu_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Background;
     class UImage* backgroundOutline;
@@ -113,4 +113,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_EscapeMenu::Modding
 
-using ITM_IngameTab_Mod_C = Game::UI::Menu_EscapeMenu::Modding::ITM_IngameTab_Mod_C;
+using ITM_IngameTab_Mod_C = ::Game::UI::Menu_EscapeMenu::Modding::ITM_IngameTab_Mod_C;

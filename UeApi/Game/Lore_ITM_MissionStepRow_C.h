@@ -18,7 +18,7 @@ class Lore_ITM_MissionStepRow_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_ITM_MissionStepRow", "Lore_ITM_MissionStepRow_C");
-    using Lore_ITM_MissionStep_C = Game::UI::Menu_MinersManual::Lore_ITM_MissionStep_C;
+    using Lore_ITM_MissionStep_C = ::Game::UI::Menu_MinersManual::Lore_ITM_MissionStep_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Arrow_1;
     class UImage* Arrow_2;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_ITM_MissionStepRow_C = Game::UI::Menu_MinersManual::Lore_ITM_MissionStepRow_C;
+using Lore_ITM_MissionStepRow_C = ::Game::UI::Menu_MinersManual::Lore_ITM_MissionStepRow_C;

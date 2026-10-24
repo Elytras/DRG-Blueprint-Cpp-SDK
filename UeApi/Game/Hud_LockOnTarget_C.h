@@ -49,4 +49,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI
 
-using Hud_LockOnTarget_C = Game::WeaponsNTools::LockOnRifle::UI::Hud_LockOnTarget_C;
+using Hud_LockOnTarget_C = ::Game::WeaponsNTools::LockOnRifle::UI::Hud_LockOnTarget_C;

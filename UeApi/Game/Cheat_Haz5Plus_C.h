@@ -30,4 +30,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_Haz5Plus_C = Game::UI::Menu_Cheats::Cheat_Haz5Plus_C;
+using Cheat_Haz5Plus_C = ::Game::UI::Menu_Cheats::Cheat_Haz5Plus_C;

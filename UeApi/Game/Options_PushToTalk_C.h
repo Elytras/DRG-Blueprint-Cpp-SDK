@@ -17,8 +17,8 @@ class Options_PushToTalk_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_PushToTalk", "Options_PushToTalk_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     UI_AdvancedLabel_C* PushToTalkLabel;
@@ -32,4 +32,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_PushToTalk_C = Game::UI::Menu_Options::Options_PushToTalk_C;
+using Options_PushToTalk_C = ::Game::UI::Menu_Options::Options_PushToTalk_C;

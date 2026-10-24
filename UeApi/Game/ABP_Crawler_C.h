@@ -110,4 +110,4 @@ public:
 
 }}}   // namespace Game::Enemies::Crawler
 
-using ABP_Crawler_C = Game::Enemies::Crawler::ABP_Crawler_C;
+using ABP_Crawler_C = ::Game::Enemies::Crawler::ABP_Crawler_C;

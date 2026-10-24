@@ -13,7 +13,7 @@ class AActor;
 
 namespace Game { namespace Enemies { namespace Waves { namespace WaveControllers {
 
-class EWC_Escort_Refueling_C : public Game::Enemies::Waves::WaveControllers::EWC_Base_C
+class EWC_Escort_Refueling_C : public ::Game::Enemies::Waves::WaveControllers::EWC_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Waves/WaveControllers/EWC_Escort_Refueling", "EWC_Escort_Refueling_C");
@@ -35,4 +35,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Waves::WaveControllers
 
-using EWC_Escort_Refueling_C = Game::Enemies::Waves::WaveControllers::EWC_Escort_Refueling_C;
+using EWC_Escort_Refueling_C = ::Game::Enemies::Waves::WaveControllers::EWC_Escort_Refueling_C;

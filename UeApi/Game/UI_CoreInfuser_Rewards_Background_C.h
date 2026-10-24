@@ -17,10 +17,10 @@ class UI_CoreInfuser_Rewards_Background_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreInfuser/UI_CoreInfuser_Rewards_Background", "UI_CoreInfuser_Rewards_Background_C");
-    using UI_CoreInfuser_Reward_Background_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Background_C;
-    using UI_CoreInfuser_Reward_Icon_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Icon_C;
-    using UI_CoreInfuser_Rewards_Animator_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Animator_C;
-    using UI_CoreInfuser_Rewards_Selector_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Selector_C;
+    using UI_CoreInfuser_Reward_Background_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Background_C;
+    using UI_CoreInfuser_Reward_Icon_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Icon_C;
+    using UI_CoreInfuser_Rewards_Animator_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Animator_C;
+    using UI_CoreInfuser_Rewards_Selector_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Selector_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_CoreInfuser_Rewards_Animator_C* RewardsAnimator;
     UI_CoreInfuser_Reward_Background_C* Wedge_Center;
@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreInfuser
 
-using UI_CoreInfuser_Rewards_Background_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Background_C;
+using UI_CoreInfuser_Rewards_Background_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Rewards_Background_C;

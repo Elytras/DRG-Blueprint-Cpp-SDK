@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::Extractor
 
-using UI_OilExtractor_Bar_C = Game::WeaponsNTools::Extractor::UI_OilExtractor_Bar_C;
+using UI_OilExtractor_Bar_C = ::Game::WeaponsNTools::Extractor::UI_OilExtractor_Bar_C;

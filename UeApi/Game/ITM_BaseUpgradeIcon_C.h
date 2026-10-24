@@ -60,4 +60,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_BaseUpgradeIcon_C = Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;
+using ITM_BaseUpgradeIcon_C = ::Game::UI::Menu_Loadout::ITM_BaseUpgradeIcon_C;

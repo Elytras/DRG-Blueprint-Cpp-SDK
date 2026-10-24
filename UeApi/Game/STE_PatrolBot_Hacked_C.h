@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::PatrolBot
 
-using STE_PatrolBot_Hacked_C = Game::Enemies::RivalTech::PatrolBot::STE_PatrolBot_Hacked_C;
+using STE_PatrolBot_Hacked_C = ::Game::Enemies::RivalTech::PatrolBot::STE_PatrolBot_Hacked_C;

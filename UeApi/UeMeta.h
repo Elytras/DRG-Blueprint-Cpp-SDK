@@ -16,6 +16,11 @@ This is the one hand-written file here; UeApi.h beside it is generated.
   static class UClass         *StaticClass()
 
 /*
+A mod's own type needs no marker to say whose it is: a class, struct or enum declared in a file of a mod's folder (the
+file holds that mod's UE_MOD_PACKAGE, or the nearest folder above it holds sources that all name one) is that mod's,
+cooked there and imported by every other mod that includes the header. The _IN forms below are for a header in no
+mod's folder, or in one that several mods' sources share.
+
 UE_CLASS for a mod's own Blueprint class, named by its owner's UE_MOD_PACKAGE alone:
 `UE_CLASS_IN("/Game/_MyMods/Turrets");` in UTurretDef is
 UE_CLASS("/Game/_MyMods/Turrets/UTurretDef", "UTurretDef_C"). The compiler appends
@@ -25,7 +30,26 @@ the class's namespaces and name, as UE_STRUCT_IN does, so the name is written on
   static constexpr const char *UeClassInMeta = ModPackage;                                                             \
   static class UClass         *StaticClass()
 
-/* Marks a struct to be cooked as a UserDefinedStruct asset in the mod package. */
+/* X::StaticClass() where X is only declared so far: `EggClass = StaticClassOf<PRJ_Egg>();`. Two classes whose
+   defaults name each other's class cannot both have the other complete, and clang needs a class complete for
+   X::StaticClass(); a template argument may be a class declared but not defined. Never defined: AssetGen reads it. */
+class UClass;
+template <class T> UClass *StaticClassOf(T * = nullptr);
+/* A struct's UScriptStruct, as an object value: `.ClassStructOrEnum = StaticStructOf<FNiagaraFloat>()` (a Niagara type
+   definition names the struct of its values). The engine struct's /Script one, or a UE_STRUCT's asset. */
+class UScriptStruct;    // MSVC reads `template <class T> class UScriptStruct *` as a class template
+template <class T> UScriptStruct *StaticStructOf(T * = nullptr);
+
+/* A member an engine struct's constructor call leaves as the engine's own constructor makes it, unwritten, as braces
+   leave out a member of a struct with no constructor: `FTerrainPlacementBox(Min, Max, Type, UE_KEEP)`. Only where
+   the value starts fresh: a container's element, a class's own default. */
+struct UeKeep__ {
+  template <class T> operator T() const;
+};
+#define UE_KEEP (UeKeep__{})
+
+/* Marks a struct to be cooked as a UserDefinedStruct asset in the mod package. A plain struct of a mod's folder needs
+   none once a member, parameter, local or container of a mod class names it; the marker cooks one nothing names. */
 #define UE_STRUCT static constexpr bool UeStructMeta = true
 
 /*
@@ -36,10 +60,15 @@ a struct cannot carry both macros.
 */
 #define UE_STRUCT_IN(ModPackage) static constexpr const char *UeStructMeta = ModPackage
 
+/* A game Blueprint's struct (a UserDefinedStruct the game cooks), as genueapi writes it: imported from Package, named
+   Name, its members by their engine names (__UeName). Never cooked. */
+#define UE_GAME_STRUCT(Package, Name) static constexpr const char *UeStructMeta = Package ":" Name
+
 /*
 A uint8 enum cooked as a UserDefinedEnum, after its declaration: `enum class EMood : uint8 { Calm, Angry };
 UE_ENUM(EMood);`. Its enumerators keep their C++ names and values. UE_ENUM_IN(EMood, "/Game/...") in a
-shared header names the mod that cooks it, as UE_STRUCT_IN does.
+shared header names the mod that cooks it, as UE_STRUCT_IN does. A `: uint8` enum of a mod's folder that a reflected
+position names needs neither; an int32 or int64 one still takes UE_ENUM.
 */
 #define UE_ENUM(Enum) static constexpr bool Enum##__UeEnum = true
 
@@ -157,7 +186,7 @@ struct (FVector, FRotator, ...) or an element, whose other parts are unknown her
 
 A game Blueprint's class defaults are edited by a patch of the class:
 
-    class MyGruntPatch : public Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Normal_C {
+    class MyGruntPatch : public ::Game::Enemies::Spider::Grunt::ENE_Spider_Grunt_Normal_C {
       UE_PATCH;
       UE_DEFAULTS {
         SomeMember = 5;                     // a member of the class or of any class above it
@@ -198,6 +227,13 @@ replicate: each is refused, not dropped.
 #define UE_PATCH static constexpr bool UePatchMeta = true
 
 /*
+UE_COOKED: a class of the mod's own folder that ships as the cooked package it was built from (bpbuild `kept:`),
+declared for the mod's code to name, derive from and call. AssetGen imports it, as it imports another mod's class, and
+never cooks it. A class bpdecomp recovered but AssetGen cannot write yet carries it; drop it once it can.
+*/
+#define UE_COOKED static constexpr bool UeCookedMeta = true
+
+/*
 `All`: every UE_ASSET_AT in this namespace and the ones inside it whose class is Class or derives from it, as soft
 pointers, so nothing loads until asked. Each UeAssets/<Class>.h declares one, `UeAssets::USoundWave::All`. Like any
 namespace-scope variable a mod uses, it is kept in the default object of a class the compiler generates for it.
@@ -228,17 +264,25 @@ the default; an implementing class's UE_DEFAULTS may give its own.
 
 With generate_api, the editor API stub of an interface is a Blueprint Interface asset, so a Blueprint made in the
 editor can implement it too. Its variables are not in the stub, and such a Blueprint does not have them.
+
+`IMarkable::StaticClass()` names the interface's class, as a native interface's does:
+`UKismetSystemLibrary::DoesImplementInterface(Obj, IMarkable::StaticClass())`.
 */
-#define UE_INTERFACE static constexpr bool UeInterfaceMeta = true
+#define UE_INTERFACE                                                                                                   \
+  static constexpr bool UeInterfaceMeta = true;                                                                        \
+  static class UClass  *StaticClass()
 
 /*
-A component on a mod actor, the "Add Component" list in the editor:
-    UE_COMPONENT(UStaticMeshComponent, Mesh);
-Declares Mesh as an ordinary class variable AND an SCS node that instantiates a
-Mesh_GEN_VARIABLE archetype into it at spawn. The first scene component declared becomes the
-actor's root; later ones attach to it, unless UE_DEFAULTS places one with SetupAttachment
-(below). Set its defaults in the UE_DEFAULTS block, not with an
-initializer - they live on the archetype, not on the actor CDO.
+A component on a mod actor, the "Add Component" list in the editor, made as UE C++ makes one:
+    UStaticMeshComponent *Mesh;
+    AMyActor() { Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh"); }
+Mesh is an ordinary class variable AND an SCS node that instantiates a Mesh_GEN_VARIABLE
+archetype into it at spawn; the component is named after its member (a text that differs is
+warned about and not used). The in-class `UStaticMeshComponent *Mesh = CreateDefaultSubobject<...>("Mesh");`
+and a UE_DEFAULTS line do the same, and so does the older UE_COMPONENT(UStaticMeshComponent, Mesh);.
+The first scene component declared becomes the actor's root; later ones attach to it, unless
+the constructor places one with SetupAttachment (below). Set its defaults in the constructor or
+UE_DEFAULTS, not with an initializer - they live on the archetype, not on the actor CDO.
 
 Per-component and inherited-property defaults, the static-init block the editor's details panel
 writes for you:
@@ -256,6 +300,28 @@ as their initializers, its other statements as this block's, after them.
   static constexpr const char *Name##__UeComponent = #Type;                                                            \
   Type                        *Name
 #define UE_DEFAULTS void UeDefaults__()
+/* Never defined: AssetGen reads it, in a constructor or UE_DEFAULTS, and nowhere else. */
+template <class T> T *CreateDefaultSubobject(const char *Name, bool bTransient = false);
+
+/*
+An object instanced in a default, the editor's Instanced (EditInlineNew) values: a status effect's items, a projectile
+attack's projectiles, a damage component's bonuses. NewObject in the constructor (or UE_DEFAULTS) makes it where a
+default points at it:
+    AMyEnemy() {
+      UDotStatusEffectItem *Burn = NewObject<UDotStatusEffectItem>(this, "Burn");
+      Burn->damageAmount = FRandRange{2.0f, 3.0f};
+      StatusEffects = {Burn};
+      Attack->Projectiles = {NewObject<UNormalProjectileAttack>(Attack, "NormalProjectileAttack_0")};
+    }
+UE_INSTANCED(Type, Outer, Name) is the older spelling of NewObject<Type>(Outer, Name).
+Its outer is `this` (the default object), one of the class's components, its own or inherited, or another instanced
+object; a local holds one whose own members are set. The name, a literal unique under its outer, is the export's.
+Named as an object its outer's archetype holds (the parent class's NormalProjectileAttack_0 in its Attack), it is this
+class's copy of that one: what it leaves unset keeps the parent's values. Otherwise it starts from its class's
+defaults. Like the rest of the constructor it is read, never run.
+*/
+template <class T> T *NewObject(class UObject *Outer, const char *Name);
+#define UE_INSTANCED(Type, Outer, Name) NewObject<Type>(Outer, Name)
 
 /*
 A widget of a UUserWidget class's designer tree, which the class's constructor lays out:
@@ -286,6 +352,25 @@ that runs: like the rest of the layout they are read, and only in the constructo
 #define UE_SLOT(Slot, Content) UeSlot__(Slot, Content)
 #define UE_BIND(Widget, Property, Function) UeBind__(Widget->Property##Delegate, Widget->Property, Function)
 void                                                 UeSlot__(class UNamedSlot *Slot, class UWidget *Content);
+
+/*
+A widget animation, the designer's Animations panel, and the channels it keys:
+    UE_ANIMATION(Pop);                               // UWidgetAnimation *Pop, as long as its last key
+    UE_ANIMATION(Fade, 1.5f);                        // or a length in seconds
+    UMyCard() {
+      UE_KEYS(Pop, Icon->RenderTransform.Scale.X, (0, 1), (0.25, 1.2, Cubic), (0.5, 1, Cubic));
+      UE_KEYS(Pop, Icon->RenderTransform.Angle, (0, 0), (0.5, 90, Cubic, 0));
+    }
+UE_KEYS goes in the constructor with the rest of the layout. Its channel is one of a UE_WIDGET's
+RenderTransform: Translation.X/Y, Angle, Scale.X/Y or Shear.X/Y. A key is (time, value), Linear to the
+next unless Cubic or Constant follows; a Cubic key's tangents are the editor's Auto ones, or the slope
+after Cubic, in value per second, on both sides. Play it with PlayAnimation(Pop).
+*/
+#define UE_ANIMATION(Name, ...)                                                                                        \
+  static constexpr const char *Name##__UeAnimation = "" #__VA_ARGS__;                                                  \
+  UWidgetAnimation            *Name
+#define UE_KEYS(Animation, Channel, ...) UeKeys__(Animation, Channel, #__VA_ARGS__)
+void UeKeys__(class UWidgetAnimation *Animation, const float &Channel, const char *Keys);
 template <class D, class C, class V> void UeBind__(D &Delegate, const V &Property, V (C::*Function)() const);
 template <class D, class C, class V> void UeBind__(D &Delegate, const V &Property, V (C::*Function)());
 
@@ -384,6 +469,14 @@ void __Await__(TMulticastInlineDelegate<void()> &Dispatcher);
 template <class A> A __Await__(TMulticastInlineDelegate<void(A)> &Dispatcher);
 template <class A, class B, class... R> TAwaitValues<A, B, R...> __Await__(TMulticastInlineDelegate<void(A, B, R...)> &Dispatcher);
 #define UE_AWAIT(Dispatcher) __Await__(Dispatcher)
+
+/*
+UE_FORCE_BROADCAST(OnDestroyed).Broadcast(this): broadcasts a native dispatcher the engine does not mark
+BlueprintCallable, which the editor's Call node refuses and a plain Broadcast is refused for. The VM never checks the
+flag (execCallMulticastDelegate), so the handlers run; AssetGen warns that the editor would refuse it. Only Broadcast.
+*/
+template <class D> D &__ForceBroadcast__(D &Dispatcher);
+#define UE_FORCE_BROADCAST(Dispatcher) __ForceBroadcast__(Dispatcher)
 
 /*
 switch on an FName:
@@ -592,14 +685,16 @@ track (UE_FLOAT_TRACK_CURVE), a default or code, and another mod names it with U
 /*
 The /Game package that the classes in a mod source are written into. A namespace is a folder: a class, struct,
 interface, UE_ENUM or asset in `namespace Weapons::Rifles` goes to <Path>/Weapons/Rifles. A namespace that starts at
-Game is a /Game path of its own, `namespace Game::Weapons::Rifles { class X ... }` being /Game/Weapons/Rifles/X, the
+Game is a /Game path of its own, `namespace ::Game::Weapons::Rifles { class X ... }` being /Game/Weapons/Rifles/X, the
 namespace UeApi gives a game Blueprint there, so a child can sit beside the class it extends. A path outside <Path>
 is written under the Content folder the output directory sits in, as bpbuild stages a mod.
 */
 #define UE_MOD_PACKAGE(Path) static constexpr const char *UeModPackage = Path
 
 /*
-Marks a method BlueprintPure: `UE_PURE FName MakeKey(FText Prefix)`, `UE_PURE static int32 F()`.
+Marks a method BlueprintPure: `UE_PURE FName MakeKey(FText Prefix)`, `UE_PURE static int32 F()`. A const method that
+returns a value is BlueprintPure without it, as UHT makes one, but only UE_PURE promises no side effects, so only its
+unused calls are dropped.
 An attribute survives the JSON dump as its kind alone, which is all a flag needs. clang drops
 gnu::pure (with a warning) from a function returning void, so a pure method returns its value.
 Only AssetGen's clang reads it; an MSVC-mode IntelliSense would flag the attribute (C5030).

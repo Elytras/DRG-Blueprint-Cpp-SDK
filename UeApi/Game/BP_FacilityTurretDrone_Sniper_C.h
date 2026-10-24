@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace DefenseTurret {
 
-class BP_FacilityTurretDrone_Sniper_C : public Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_C
+class BP_FacilityTurretDrone_Sniper_C : public ::Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefenseTurret/BP_FacilityTurretDrone_Sniper", "BP_FacilityTurretDrone_Sniper_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "JetParticles1;JetParticles2;JetParticles3;JetParticles";
     };
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using BP_FacilityTurretDrone_Sniper_C = Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_Sniper_C;
+using BP_FacilityTurretDrone_Sniper_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_Sniper_C;

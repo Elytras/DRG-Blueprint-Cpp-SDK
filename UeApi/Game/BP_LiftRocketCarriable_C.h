@@ -15,7 +15,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Excavation { namespace RocketAttachment {
 
-class BP_LiftRocketCarriable_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_LiftRocketCarriable_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Excavation/RocketAttachment/BP_LiftRocketCarriable", "BP_LiftRocketCarriable_C");
@@ -37,6 +37,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;Sphere;TerrainScannerMesh";
         static constexpr const char* UberGraphFrame_BP_LiftRocketCarriable_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight__UeScsNode = "3be29149d5b4c3408346d34e61522fc3";
         static constexpr const char* DistressSphere__UeScsNode = "ee2d4ae8637c8745bb16184ee5241236";
@@ -47,4 +48,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment
 
-using BP_LiftRocketCarriable_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftRocketCarriable_C;
+using BP_LiftRocketCarriable_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_LiftRocketCarriable_C;

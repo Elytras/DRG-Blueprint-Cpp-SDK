@@ -12,7 +12,7 @@ class URoomGenerator;
 
 namespace Game { namespace Landscape { namespace ProceduralLevelSetups { namespace Alpha02 {
 
-class PLS_Motherlode_Star_C : public Game::Landscape::ProceduralLevelSetups::PLS_Motherlode_Base_C
+class PLS_Motherlode_Star_C : public ::Game::Landscape::ProceduralLevelSetups::PLS_Motherlode_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/ProceduralLevelSetups/Alpha02/PLS_Motherlode_Star", "PLS_Motherlode_Star_C");
@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Landscape::ProceduralLevelSetups::Alpha02
 
-using PLS_Motherlode_Star_C = Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_Motherlode_Star_C;
+using PLS_Motherlode_Star_C = ::Game::Landscape::ProceduralLevelSetups::Alpha02::PLS_Motherlode_Star_C;

@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs
 
-using HUD_CrosNewFlameThrower_C = Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosNewFlameThrower_C;
+using HUD_CrosNewFlameThrower_C = ::Game::WeaponsNTools::_Crosshairs::NewCrossHairs::HUD_CrosNewFlameThrower_C;

@@ -20,9 +20,9 @@ class Options_Gamepad_KeyBinding_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_Gamepad_KeyBinding", "Options_Gamepad_KeyBinding_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_Gamepad_KeyCapture_C = Game::UI::Keybindings::Options_Gamepad_KeyCapture_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_Gamepad_KeyCapture_C = ::Game::UI::Keybindings::Options_Gamepad_KeyCapture_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Error;
     Basic_Option_C* Basic_Option;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_Gamepad_KeyBinding_C = Game::UI::Keybindings::Options_Gamepad_KeyBinding_C;
+using Options_Gamepad_KeyBinding_C = ::Game::UI::Keybindings::Options_Gamepad_KeyBinding_C;

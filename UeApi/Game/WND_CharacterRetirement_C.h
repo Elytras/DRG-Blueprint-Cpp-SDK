@@ -31,14 +31,14 @@ class WND_CharacterRetirement_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Retirement/WND_CharacterRetirement", "WND_CharacterRetirement_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_LargeWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_Craft_ResourceBig_C = Game::UI::Menu_Crafting::ITM_Craft_ResourceBig_C;
-    using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
-    using OVERLAY_RetirementGranted_C = Game::UI::Menu_MIssionCompleteMK2::OVERLAY_RetirementGranted_C;
-    using UI_PlayerSpeaking_List_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_LargeWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_Craft_ResourceBig_C = ::Game::UI::Menu_Crafting::ITM_Craft_ResourceBig_C;
+    using MissionControl_MainDialogue_C = ::Game::UI::MissionControl::MissionControl_MainDialogue_C;
+    using OVERLAY_RetirementGranted_C = ::Game::UI::Menu_MIssionCompleteMK2::OVERLAY_RetirementGranted_C;
+    using UI_PlayerSpeaking_List_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_List_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimPanBackground;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -96,4 +96,4 @@ private:
 
 }}}}   // namespace Game::UI::CharacterSelectionMK2::Retirement
 
-using WND_CharacterRetirement_C = Game::UI::CharacterSelectionMK2::Retirement::WND_CharacterRetirement_C;
+using WND_CharacterRetirement_C = ::Game::UI::CharacterSelectionMK2::Retirement::WND_CharacterRetirement_C;

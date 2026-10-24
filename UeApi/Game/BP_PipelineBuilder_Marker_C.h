@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace PipelineBuilder {
 
-class BP_PipelineBuilder_Marker_C : public Game::WeaponsNTools::BaseBlueprints::BP_ItemMarker_Base_C
+class BP_PipelineBuilder_Marker_C : public ::Game::WeaponsNTools::BaseBlueprints::BP_ItemMarker_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PipelineBuilder/BP_PipelineBuilder_Marker", "BP_PipelineBuilder_Marker_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
+    };
 };
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder
 
-using BP_PipelineBuilder_Marker_C = Game::WeaponsNTools::PipelineBuilder::BP_PipelineBuilder_Marker_C;
+using BP_PipelineBuilder_Marker_C = ::Game::WeaponsNTools::PipelineBuilder::BP_PipelineBuilder_Marker_C;

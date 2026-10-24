@@ -23,7 +23,7 @@ class HUD_Chat_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Chat/HUD_Chat", "HUD_Chat_C");
-    using HUD_ChatLine_C = Game::UI::Chat::HUD_ChatLine_C;
+    using HUD_ChatLine_C = ::Game::UI::Chat::HUD_ChatLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* BackgroundFade;
     class UBorder* Border_0;
@@ -85,4 +85,4 @@ private:
 
 }}}   // namespace Game::UI::Chat
 
-using HUD_Chat_C = Game::UI::Chat::HUD_Chat_C;
+using HUD_Chat_C = ::Game::UI::Chat::HUD_Chat_C;

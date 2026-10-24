@@ -20,9 +20,9 @@ class ITM_WeaponAndPerkInfo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_EscapeMenu/ITM_WeaponAndPerkInfo", "ITM_WeaponAndPerkInfo_C");
-    using Basic_Window_CutCorner_Gradient_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_Gradient_C;
-    using ITM_PerkInfoBox_C = Game::UI::Menu_EscapeMenu::ITM_PerkInfoBox_C;
-    using ITM_WeaponInfo_C = Game::UI::Menu_EscapeMenu::ITM_WeaponInfo_C;
+    using Basic_Window_CutCorner_Gradient_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_Gradient_C;
+    using ITM_PerkInfoBox_C = ::Game::UI::Menu_EscapeMenu::ITM_PerkInfoBox_C;
+    using ITM_WeaponInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_WeaponInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Enter;
     Basic_Window_CutCorner_Gradient_C* Basic_Window_CutCorner_Gradient;
@@ -45,4 +45,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_EscapeMenu
 
-using ITM_WeaponAndPerkInfo_C = Game::UI::Menu_EscapeMenu::ITM_WeaponAndPerkInfo_C;
+using ITM_WeaponAndPerkInfo_C = ::Game::UI::Menu_EscapeMenu::ITM_WeaponAndPerkInfo_C;

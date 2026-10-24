@@ -28,4 +28,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::GuntowerEvent
 
-using ABP_DestoyedModule_C = Game::GameElements::GameEvents::GuntowerEvent::ABP_DestoyedModule_C;
+using ABP_DestoyedModule_C = ::Game::GameElements::GameEvents::GuntowerEvent::ABP_DestoyedModule_C;

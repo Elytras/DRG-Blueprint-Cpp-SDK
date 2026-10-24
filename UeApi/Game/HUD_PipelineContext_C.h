@@ -22,7 +22,7 @@ class HUD_PipelineContext_C : public UActorContextWidget
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/Pipeline/HUD_PipelineContext", "HUD_PipelineContext_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_AdvancedLabel_C* ContextLabel;
     class UProgressBar* HealthProgressBar;
@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using HUD_PipelineContext_C = Game::LevelElements::Refinery::Pipeline::HUD_PipelineContext_C;
+using HUD_PipelineContext_C = ::Game::LevelElements::Refinery::Pipeline::HUD_PipelineContext_C;

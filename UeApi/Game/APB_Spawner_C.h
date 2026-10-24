@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::Enemies::EnemySpawner
 
-using APB_Spawner_C = Game::Enemies::EnemySpawner::APB_Spawner_C;
+using APB_Spawner_C = ::Game::Enemies::EnemySpawner::APB_Spawner_C;

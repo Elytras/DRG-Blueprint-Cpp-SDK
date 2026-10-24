@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using BP_UITesting_C = Game::UI::MainOnscreenHUD::BP_UITesting_C;
+using BP_UITesting_C = ::Game::UI::MainOnscreenHUD::BP_UITesting_C;

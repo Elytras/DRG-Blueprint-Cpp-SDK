@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindFormation_C = Game::AI::Tasks::TSK_FindFormation_C;
+using TSK_FindFormation_C = ::Game::AI::Tasks::TSK_FindFormation_C;

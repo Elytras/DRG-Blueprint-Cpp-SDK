@@ -23,9 +23,9 @@ class HUD_DeepScan_DistanceDisplay_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/HUD_DeepScan_DistanceDisplay", "HUD_DeepScan_DistanceDisplay_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_ProgressBar_C = Game::UI::_GlobalAssets::UI_ProgressBar_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_ProgressBar_C = ::Game::UI::_GlobalAssets::UI_ProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFirstIntro;
     UE_READONLY class UWidgetAnimation* AnimDeath;
@@ -100,4 +100,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using HUD_DeepScan_DistanceDisplay_C = Game::GameElements::Objectives::DeepScan::HUD_DeepScan_DistanceDisplay_C;
+using HUD_DeepScan_DistanceDisplay_C = ::Game::GameElements::Objectives::DeepScan::HUD_DeepScan_DistanceDisplay_C;

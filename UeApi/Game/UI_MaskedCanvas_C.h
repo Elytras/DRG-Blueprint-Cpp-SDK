@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_MaskedCanvas_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedCanvas_C;
+using UI_MaskedCanvas_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedCanvas_C;

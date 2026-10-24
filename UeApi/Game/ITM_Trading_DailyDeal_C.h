@@ -19,7 +19,7 @@ class ITM_Trading_DailyDeal_C : public UDealWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_Trading_DailyDeal", "ITM_Trading_DailyDeal_C");
-    using ITM_Trading_ResourcePoster_C = Game::UI::Menu_Trading::ITM_Trading_ResourcePoster_C;
+    using ITM_Trading_ResourcePoster_C = ::Game::UI::Menu_Trading::ITM_Trading_ResourcePoster_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* SalesBubblePing;
     class UImage* I_SaleBubble;
@@ -42,4 +42,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using ITM_Trading_DailyDeal_C = Game::UI::Menu_Trading::ITM_Trading_DailyDeal_C;
+using ITM_Trading_DailyDeal_C = ::Game::UI::Menu_Trading::ITM_Trading_DailyDeal_C;

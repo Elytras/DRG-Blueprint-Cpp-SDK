@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ScrabNestingGrounds
 
-using BP_ScrabNestingGrounds_C = Game::GameElements::Missions::Warnings::ScrabNestingGrounds::BP_ScrabNestingGrounds_C;
+using BP_ScrabNestingGrounds_C = ::Game::GameElements::Missions::Warnings::ScrabNestingGrounds::BP_ScrabNestingGrounds_C;

@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using BP_SupplyDropToTerrainLogic_C = Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;
+using BP_SupplyDropToTerrainLogic_C = ::Game::WeaponsNTools::SupplyPod::BP_SupplyDropToTerrainLogic_C;

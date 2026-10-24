@@ -68,4 +68,4 @@ private:
 
 }}}   // namespace Game::UI::Global_UI_Elements
 
-using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
+using UI_RunningText_C = ::Game::UI::Global_UI_Elements::UI_RunningText_C;

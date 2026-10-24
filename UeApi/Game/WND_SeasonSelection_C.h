@@ -20,7 +20,7 @@ class WND_SeasonSelection_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/SeasonSelector/WND_SeasonSelection", "WND_SeasonSelection_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UUniformGridPanel* Items_Grid;
     Basic_Label_C* SinglePlayerText;
@@ -42,4 +42,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_Seasons::SeasonSelector
 
-using WND_SeasonSelection_C = Game::UI::Menu_Seasons::SeasonSelector::WND_SeasonSelection_C;
+using WND_SeasonSelection_C = ::Game::UI::Menu_Seasons::SeasonSelector::WND_SeasonSelection_C;

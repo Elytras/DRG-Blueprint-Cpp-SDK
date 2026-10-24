@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::Reparation
 
-using OBJ_DD_RepairMinimules_C = Game::GameElements::Objectives::DeepDive::Reparation::OBJ_DD_RepairMinimules_C;
+using OBJ_DD_RepairMinimules_C = ::Game::GameElements::Objectives::DeepDive::Reparation::OBJ_DD_RepairMinimules_C;

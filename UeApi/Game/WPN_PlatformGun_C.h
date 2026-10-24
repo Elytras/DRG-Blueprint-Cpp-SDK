@@ -52,4 +52,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlatformGun
 
-using WPN_PlatformGun_C = Game::WeaponsNTools::PlatformGun::WPN_PlatformGun_C;
+using WPN_PlatformGun_C = ::Game::WeaponsNTools::PlatformGun::WPN_PlatformGun_C;

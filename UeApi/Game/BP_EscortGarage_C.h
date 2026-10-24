@@ -151,4 +151,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_EscortGarage_C = Game::GameElements::Objectives::Escort::BP_EscortGarage_C;
+using BP_EscortGarage_C = ::Game::GameElements::Objectives::Escort::BP_EscortGarage_C;

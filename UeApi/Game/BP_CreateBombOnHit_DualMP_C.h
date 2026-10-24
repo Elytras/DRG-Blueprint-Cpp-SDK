@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties
 
-using BP_CreateBombOnHit_DualMP_C = Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties::BP_CreateBombOnHit_DualMP_C;
+using BP_CreateBombOnHit_DualMP_C = ::Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties::BP_CreateBombOnHit_DualMP_C;

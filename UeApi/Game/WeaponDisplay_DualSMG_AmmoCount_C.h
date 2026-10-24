@@ -14,11 +14,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace DualMachinePistols {
 
-class WeaponDisplay_DualSMG_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_DualSMG_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/DualMachinePistols/WeaponDisplay_DualSMG_AmmoCount", "WeaponDisplay_DualSMG_AmmoCount_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_DualSMG_AmmoCount_C;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
     class UTextBlock* DATA_AmmoClip;
@@ -36,4 +36,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols
 
-using WeaponDisplay_DualSMG_AmmoCount_C = Game::WeaponsNTools::DualMachinePistols::WeaponDisplay_DualSMG_AmmoCount_C;
+using WeaponDisplay_DualSMG_AmmoCount_C = ::Game::WeaponsNTools::DualMachinePistols::WeaponDisplay_DualSMG_AmmoCount_C;

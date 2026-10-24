@@ -30,12 +30,12 @@ class WND_Crafting_Unlock_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/WND_Crafting_Unlock", "WND_Crafting_Unlock_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_FlatButton_C = Game::UI::Art::WidgetParts::Basic_FlatButton_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_Craft_ItemIcon_C = Game::UI::Menu_Crafting::ITM_Craft_ItemIcon_C;
-    using ITM_Craft_ResourceSmall_C = Game::UI::Menu_Crafting::ITM_Craft_ResourceSmall_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_FlatButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatButton_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_Craft_ItemIcon_C = ::Game::UI::Menu_Crafting::ITM_Craft_ItemIcon_C;
+    using ITM_Craft_ResourceSmall_C = ::Game::UI::Menu_Crafting::ITM_Craft_ResourceSmall_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* SwitchToEquip;
     class UBorder* Border;
@@ -80,4 +80,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using WND_Crafting_Unlock_C = Game::UI::Menu_Crafting::WND_Crafting_Unlock_C;
+using WND_Crafting_Unlock_C = ::Game::UI::Menu_Crafting::WND_Crafting_Unlock_C;

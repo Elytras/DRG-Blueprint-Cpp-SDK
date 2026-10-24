@@ -33,4 +33,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RivalIncursion
 
-using BP_RivalIncursionWarning_C = Game::GameElements::Missions::Warnings::RivalIncursion::BP_RivalIncursionWarning_C;
+using BP_RivalIncursionWarning_C = ::Game::GameElements::Missions::Warnings::RivalIncursion::BP_RivalIncursionWarning_C;

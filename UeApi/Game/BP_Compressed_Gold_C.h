@@ -14,7 +14,7 @@ class UPointLightComponent;
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace CompressedGold {
 
-class BP_Compressed_Gold_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_Compressed_Gold_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/CompressedGold/BP_Compressed_Gold", "BP_Compressed_Gold_C");
@@ -33,6 +33,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo";
         static constexpr const char* UberGraphFrame_BP_Compressed_Gold_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight6__UeScsNode = "109ae01030510a4fa9456012ba6d0895";
         static constexpr const char* PointLight5__UeScsNode = "8ead766d49ae734ca4f41836bb9ec0e4";
@@ -46,4 +47,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::CompressedGold
 
-using BP_Compressed_Gold_C = Game::GameElements::Resources::Embedded::CompressedGold::BP_Compressed_Gold_C;
+using BP_Compressed_Gold_C = ::Game::GameElements::Resources::Embedded::CompressedGold::BP_Compressed_Gold_C;

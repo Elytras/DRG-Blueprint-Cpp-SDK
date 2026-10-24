@@ -23,4 +23,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioTagListWidget_C = Modio::UI::Browser::Components::ModioTagListWidget_C;
+using ModioTagListWidget_C = ::Modio::UI::Browser::Components::ModioTagListWidget_C;

@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_Star_Complex_C = Game::GameElements::Missions::DNA_Star_Complex_C;
+using DNA_Star_Complex_C = ::Game::GameElements::Missions::DNA_Star_Complex_C;

@@ -14,7 +14,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace Autocannon {
 
-class WeaponDisplay_Autocannon_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_Autocannon_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Autocannon/WeaponDisplay_Autocannon_AmmoCount", "WeaponDisplay_Autocannon_AmmoCount_C");
@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Autocannon
 
-using WeaponDisplay_Autocannon_AmmoCount_C = Game::WeaponsNTools::Autocannon::WeaponDisplay_Autocannon_AmmoCount_C;
+using WeaponDisplay_Autocannon_AmmoCount_C = ::Game::WeaponsNTools::Autocannon::WeaponDisplay_Autocannon_AmmoCount_C;

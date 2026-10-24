@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::Character::Tutorials
 
-using Tutorial_Hint_DeepScan_FindCrystals_C = Game::Character::Tutorials::Tutorial_Hint_DeepScan_FindCrystals_C;
+using Tutorial_Hint_DeepScan_FindCrystals_C = ::Game::Character::Tutorials::Tutorial_Hint_DeepScan_FindCrystals_C;

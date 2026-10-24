@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Veins::ResourceChunks
 
-using BP_IronChunk_C = Game::GameElements::Resources::Veins::ResourceChunks::BP_IronChunk_C;
+using BP_IronChunk_C = ::Game::GameElements::Resources::Veins::ResourceChunks::BP_IronChunk_C;

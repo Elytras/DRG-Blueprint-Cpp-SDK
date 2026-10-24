@@ -43,4 +43,4 @@ public:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using BP_Terminator_ElectricAttack_C = Game::Enemies::RivalTech::Terminator::BP_Terminator_ElectricAttack_C;
+using BP_Terminator_ElectricAttack_C = ::Game::Enemies::RivalTech::Terminator::BP_Terminator_ElectricAttack_C;

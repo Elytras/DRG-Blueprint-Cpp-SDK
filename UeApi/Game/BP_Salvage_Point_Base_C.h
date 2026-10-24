@@ -17,7 +17,7 @@ class UTerrainPlacementComponent;
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Salvage {
 
-class BP_Salvage_Point_Base_C : public Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C
+class BP_Salvage_Point_Base_C : public ::Game::GameElements::Objectives::Salvage::BP_Salvage_Point_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Salvage/BP_Salvage_Point_Base", "BP_Salvage_Point_Base_C");
@@ -43,4 +43,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using BP_Salvage_Point_Base_C = Game::GameElements::Objectives::Salvage::BP_Salvage_Point_Base_C;
+using BP_Salvage_Point_Base_C = ::Game::GameElements::Objectives::Salvage::BP_Salvage_Point_Base_C;

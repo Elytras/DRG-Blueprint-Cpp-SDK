@@ -34,9 +34,9 @@ class CharacterSelectionSwitcher_C : public ACharacterSelectionSwitcher
 {
 public:
     UE_CLASS("/Game/Character/CharacterSelection/CharacterSelectionSwitcher", "CharacterSelectionSwitcher_C");
-    using BP_Endscreen_Lamp_C = Game::Character::CharacterSelection::BP_Endscreen_Lamp_C;
-    using EndScreenActorController_C = Game::Character::CharacterSelection::EndScreenActorController_C;
-    using EndScreenSetups_C = Game::Character::CharacterSelection::EndScreenSetups_C;
+    using BP_Endscreen_Lamp_C = ::Game::Character::CharacterSelection::BP_Endscreen_Lamp_C;
+    using EndScreenActorController_C = ::Game::Character::CharacterSelection::EndScreenActorController_C;
+    using EndScreenSetups_C = ::Game::Character::CharacterSelection::EndScreenSetups_C;
     FPointerToUberGraphFrame UberGraphFrame;
     EndScreenSetups_C* EndScreenSetups;
     EndScreenActorController_C* EndScreenActorController3;
@@ -165,4 +165,4 @@ private:
 
 }}}   // namespace Game::Character::CharacterSelection
 
-using CharacterSelectionSwitcher_C = Game::Character::CharacterSelection::CharacterSelectionSwitcher_C;
+using CharacterSelectionSwitcher_C = ::Game::Character::CharacterSelection::CharacterSelectionSwitcher_C;

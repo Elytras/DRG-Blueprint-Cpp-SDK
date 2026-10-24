@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::SandArches
 
-using BP_SandArch_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::SandArches::BP_SandArch_Base_C;
+using BP_SandArch_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::SandArches::BP_SandArch_Base_C;

@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Halloween
 
-using BP_Halloween_SmokyPumpkin_C = Game::Art::Environments::Holiday_Halloween::BP_Halloween_SmokyPumpkin_C;
+using BP_Halloween_SmokyPumpkin_C = ::Game::Art::Environments::Holiday_Halloween::BP_Halloween_SmokyPumpkin_C;

@@ -68,4 +68,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::Space::HoxxesMK2
 
-using BP_AsteroidField_C = Game::Art::Environments::Space::HoxxesMK2::BP_AsteroidField_C;
+using BP_AsteroidField_C = ::Game::Art::Environments::Space::HoxxesMK2::BP_AsteroidField_C;

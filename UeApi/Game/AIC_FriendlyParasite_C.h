@@ -26,4 +26,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders
 
-using AIC_FriendlyParasite_C = Game::WeaponsNTools::Grenades::FriendlyShredders::AIC_FriendlyParasite_C;
+using AIC_FriendlyParasite_C = ::Game::WeaponsNTools::Grenades::FriendlyShredders::AIC_FriendlyParasite_C;

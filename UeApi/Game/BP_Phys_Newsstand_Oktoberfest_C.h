@@ -9,14 +9,19 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Art { namespace Environments { namespace SpaceRig { namespace Newsstand {
 
-class BP_Phys_Newsstand_Oktoberfest_C : public Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_C
+class BP_Phys_Newsstand_Oktoberfest_C : public ::Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_C
 {
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Newsstand/BP_Phys_Newsstand_Oktoberfest", "BP_Phys_Newsstand_Oktoberfest_C");
     bool UseVersion2Texture;
     void UserConstructionScript();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Kickable Mesh";
+    };
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Newsstand
 
-using BP_Phys_Newsstand_Oktoberfest_C = Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_Oktoberfest_C;
+using BP_Phys_Newsstand_Oktoberfest_C = ::Game::Art::Environments::SpaceRig::Newsstand::BP_Phys_Newsstand_Oktoberfest_C;

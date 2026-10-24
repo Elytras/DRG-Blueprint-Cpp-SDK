@@ -20,7 +20,7 @@ class UWeakpointGlowComponent;
 
 namespace Game { namespace Enemies { namespace Spider { namespace Buffer {
 
-class ENE_Spider_Buffer_C : public Game::Enemies::Spider::ENE_SpiderBase_Large_C
+class ENE_Spider_Buffer_C : public ::Game::Enemies::Spider::ENE_SpiderBase_Large_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Buffer/ENE_Spider_Buffer", "ENE_Spider_Buffer_C");
@@ -43,6 +43,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;PawnSensing;DropShadow";
         static constexpr const char* UberGraphFrame_ENE_Spider_Buffer_C__UeName = "UberGraphFrame";
         static constexpr const char* WeakpointGlow__UeScsNode = "9d8ac7a57100a441bac22da6724d70c6";
         static constexpr const char* Capsule__UeScsNode = "ab43e1056a4c4a4f8021d90d4952bffe";
@@ -56,4 +57,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Buffer
 
-using ENE_Spider_Buffer_C = Game::Enemies::Spider::Buffer::ENE_Spider_Buffer_C;
+using ENE_Spider_Buffer_C = ::Game::Enemies::Spider::Buffer::ENE_Spider_Buffer_C;

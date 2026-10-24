@@ -25,4 +25,4 @@ public:
 
 }}}}   // namespace Game::Enemies::HydraWeed::Assets
 
-using ABP_HydraShooter_ESI_C = Game::Enemies::HydraWeed::Assets::ABP_HydraShooter_ESI_C;
+using ABP_HydraShooter_ESI_C = ::Game::Enemies::HydraWeed::Assets::ABP_HydraShooter_ESI_C;

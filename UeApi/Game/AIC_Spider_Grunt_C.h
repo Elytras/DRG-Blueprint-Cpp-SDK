@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Grunt {
 
-class AIC_Spider_Grunt_C : public Game::Enemies::Spider::AIC_Spider_C
+class AIC_Spider_Grunt_C : public ::Game::Enemies::Spider::AIC_Spider_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/AIC_Spider_Grunt", "AIC_Spider_Grunt_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Grunt
 
-using AIC_Spider_Grunt_C = Game::Enemies::Spider::Grunt::AIC_Spider_Grunt_C;
+using AIC_Spider_Grunt_C = ::Game::Enemies::Spider::Grunt::AIC_Spider_Grunt_C;

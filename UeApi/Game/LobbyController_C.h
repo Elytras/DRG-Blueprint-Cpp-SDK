@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Lobby
 
-using LobbyController_C = Game::UI::Menu_Lobby::LobbyController_C;
+using LobbyController_C = ::Game::UI::Menu_Lobby::LobbyController_C;

@@ -28,4 +28,4 @@ private:
 
 }}}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Confetti
 
-using BP_ConffetiPipe_A_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Confetti::BP_ConffetiPipe_A_C;
+using BP_ConffetiPipe_A_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Confetti::BP_ConffetiPipe_A_C;

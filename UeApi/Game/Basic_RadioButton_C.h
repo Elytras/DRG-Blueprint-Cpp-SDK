@@ -58,4 +58,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_RadioButton_C = Game::UI::Art::WidgetParts::Basic_RadioButton_C;
+using Basic_RadioButton_C = ::Game::UI::Art::WidgetParts::Basic_RadioButton_C;

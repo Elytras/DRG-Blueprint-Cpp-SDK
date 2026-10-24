@@ -28,4 +28,4 @@ public:
 
 }}}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers::Assets
 
-using ScrollingText01_C = Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText01_C;
+using ScrollingText01_C = ::Game::GameElements::Objectives::Facility::Tethers::Assets::ScrollingText01_C;

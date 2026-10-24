@@ -17,10 +17,10 @@ class ITM_CharacterDeepDive_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionStart/ITM_CharacterDeepDive", "ITM_CharacterDeepDive_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using UI_Character_Supplies_C = Game::UI::Global_UI_Elements::UI_Character_Supplies_C;
-    using UI_ScalableLevelDisplay_C = Game::UI::Global_UI_Elements::UI_ScalableLevelDisplay_C;
-    using UI_ScalableMissionStats_C = Game::UI::Global_UI_Elements::UI_ScalableMissionStats_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using UI_Character_Supplies_C = ::Game::UI::Global_UI_Elements::UI_Character_Supplies_C;
+    using UI_ScalableLevelDisplay_C = ::Game::UI::Global_UI_Elements::UI_ScalableLevelDisplay_C;
+    using UI_ScalableMissionStats_C = ::Game::UI::Global_UI_Elements::UI_ScalableMissionStats_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_ScalableLevelDisplay_C* DATA_Class;
     UI_ScalableLevelDisplay_C* DATA_Player;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionStart
 
-using ITM_CharacterDeepDive_C = Game::UI::Menu_MissionStart::ITM_CharacterDeepDive_C;
+using ITM_CharacterDeepDive_C = ::Game::UI::Menu_MissionStart::ITM_CharacterDeepDive_C;

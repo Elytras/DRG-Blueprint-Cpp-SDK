@@ -20,7 +20,7 @@ class ITM_MissionComplete_MissionState_Failure_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MIssionCompleteMK2/ITM_MissionComplete_MissionState_Failure", "ITM_MissionComplete_MissionState_Failure_C");
-    using UI_RunningText_C = Game::UI::Global_UI_Elements::UI_RunningText_C;
+    using UI_RunningText_C = ::Game::UI::Global_UI_Elements::UI_RunningText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* StateTextAppear;
     class UTextBlock* DATA_MissionState;
@@ -56,4 +56,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MIssionCompleteMK2
 
-using ITM_MissionComplete_MissionState_Failure_C = Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_Failure_C;
+using ITM_MissionComplete_MissionState_Failure_C = ::Game::UI::Menu_MIssionCompleteMK2::ITM_MissionComplete_MissionState_Failure_C;

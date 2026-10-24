@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace CoilGun { namespace Trails {
 
-class BP_CoilgunTrail_Burn_C : public Game::WeaponsNTools::CoilGun::Trails::BP_CoilgunTrail_Base_C
+class BP_CoilgunTrail_Burn_C : public ::Game::WeaponsNTools::CoilGun::Trails::BP_CoilgunTrail_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/Trails/BP_CoilgunTrail_Burn", "BP_CoilgunTrail_Burn_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::CoilGun::Trails
 
-using BP_CoilgunTrail_Burn_C = Game::WeaponsNTools::CoilGun::Trails::BP_CoilgunTrail_Burn_C;
+using BP_CoilgunTrail_Burn_C = ::Game::WeaponsNTools::CoilGun::Trails::BP_CoilgunTrail_Burn_C;

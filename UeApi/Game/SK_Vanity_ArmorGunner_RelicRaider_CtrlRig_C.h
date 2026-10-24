@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Armor
 
-using SK_Vanity_ArmorGunner_RelicRaider_CtrlRig_C = Game::Character::Vanity2::Armor::SK_Vanity_ArmorGunner_RelicRaider_CtrlRig_C;
+using SK_Vanity_ArmorGunner_RelicRaider_CtrlRig_C = ::Game::Character::Vanity2::Armor::SK_Vanity_ArmorGunner_RelicRaider_CtrlRig_C;

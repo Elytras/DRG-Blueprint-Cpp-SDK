@@ -25,4 +25,4 @@ private:
 
 }}}   // namespace Game::Game::StartMenu
 
-using BP_StartMenu_GameMode_C = Game::Game::StartMenu::BP_StartMenu_GameMode_C;
+using BP_StartMenu_GameMode_C = ::Game::Game::StartMenu::BP_StartMenu_GameMode_C;

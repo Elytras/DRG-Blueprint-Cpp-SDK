@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace NeedleSprayer {
 
-class PRW_Grenade_NeedleSprayer_C : public Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C
+class PRW_Grenade_NeedleSprayer_C : public ::Game::WeaponsNTools::Grenades::PRW_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/NeedleSprayer/PRW_Grenade_NeedleSprayer", "PRW_Grenade_NeedleSprayer_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "StaticMesh";
+    };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::NeedleSprayer
 
-using PRW_Grenade_NeedleSprayer_C = Game::WeaponsNTools::Grenades::NeedleSprayer::PRW_Grenade_NeedleSprayer_C;
+using PRW_Grenade_NeedleSprayer_C = ::Game::WeaponsNTools::Grenades::NeedleSprayer::PRW_Grenade_NeedleSprayer_C;

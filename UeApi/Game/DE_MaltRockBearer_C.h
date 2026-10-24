@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects
 
-using DE_MaltRockBearer_C = Game::GameElements::Bar::DrinkEffects::DE_MaltRockBearer_C;
+using DE_MaltRockBearer_C = ::Game::GameElements::Bar::DrinkEffects::DE_MaltRockBearer_C;

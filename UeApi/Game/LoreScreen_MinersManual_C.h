@@ -14,11 +14,11 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens {
 
-class LoreScreen_MinersManual_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_MinersManual_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_MinersManual", "LoreScreen_MinersManual_C");
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_MinersManual_C;
     class UImage* Image_381;
     LoreScreen_Template_C* LoreScreen_Template;
@@ -36,4 +36,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_MinersManual_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MinersManual_C;
+using LoreScreen_MinersManual_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_MinersManual_C;

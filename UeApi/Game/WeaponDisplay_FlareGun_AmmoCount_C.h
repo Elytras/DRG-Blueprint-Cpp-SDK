@@ -14,11 +14,11 @@ namespace Game { namespace Art { namespace _TestingGrounds { namespace UItesting
 
 namespace Game { namespace WeaponsNTools { namespace FlareGun {
 
-class WeaponDisplay_FlareGun_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_FlareGun_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/FlareGun/WeaponDisplay_FlareGun_AmmoCount", "WeaponDisplay_FlareGun_AmmoCount_C");
-    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
+    using AnimatedStaticOverlay_WithScanlines_LightVersion_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_LightVersion_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_FlareGun_AmmoCount_C;
     class UTextBlock* AmmoCount;
     AnimatedStaticOverlay_WithScanlines_LightVersion_C* AnimatedStaticOverlay_WithScanlines_LightVersion;
@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::FlareGun
 
-using WeaponDisplay_FlareGun_AmmoCount_C = Game::WeaponsNTools::FlareGun::WeaponDisplay_FlareGun_AmmoCount_C;
+using WeaponDisplay_FlareGun_AmmoCount_C = ::Game::WeaponsNTools::FlareGun::WeaponDisplay_FlareGun_AmmoCount_C;

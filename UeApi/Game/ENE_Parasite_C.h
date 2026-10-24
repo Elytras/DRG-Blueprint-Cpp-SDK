@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::Enemies::MuleInfected::Parasite
 
-using ENE_Parasite_C = Game::Enemies::MuleInfected::Parasite::ENE_Parasite_C;
+using ENE_Parasite_C = ::Game::Enemies::MuleInfected::Parasite::ENE_Parasite_C;

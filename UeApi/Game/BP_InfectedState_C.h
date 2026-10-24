@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::Character::States
 
-using BP_InfectedState_C = Game::Character::States::BP_InfectedState_C;
+using BP_InfectedState_C = ::Game::Character::States::BP_InfectedState_C;

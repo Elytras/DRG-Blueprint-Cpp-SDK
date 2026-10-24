@@ -53,4 +53,4 @@ private:
 
 }}}}}}   // namespace Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets
 
-using BP_DrinksBox_C = Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;
+using BP_DrinksBox_C = ::Game::LevelElements::Spacerig::Bar::DrinksDispenser::Assets::BP_DrinksBox_C;

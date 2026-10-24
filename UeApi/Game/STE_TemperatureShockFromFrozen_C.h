@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Temperature
 
-using STE_TemperatureShockFromFrozen_C = Game::GameElements::Temperature::STE_TemperatureShockFromFrozen_C;
+using STE_TemperatureShockFromFrozen_C = ::Game::GameElements::Temperature::STE_TemperatureShockFromFrozen_C;

@@ -11,7 +11,7 @@ class ULevelGenerationCarverComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace Bones {
 
-class BP_HugeBones_Jaw_04_C : public Game::LevelElements::RoomObjects::HugeCarvers::Bones::BP_HugeBones_Jaw_01_C
+class BP_HugeBones_Jaw_04_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::Bones::BP_HugeBones_Jaw_01_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/Bones/BP_HugeBones_Jaw_04", "BP_HugeBones_Jaw_04_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "TerrainPlacement";
         static constexpr const char* LevelGenerationCarver1__UeScsNode = "e70ea6ef362c014287bdc8e2bc2b1ae8";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Bones
 
-using BP_HugeBones_Jaw_04_C = Game::LevelElements::RoomObjects::HugeCarvers::Bones::BP_HugeBones_Jaw_04_C;
+using BP_HugeBones_Jaw_04_C = ::Game::LevelElements::RoomObjects::HugeCarvers::Bones::BP_HugeBones_Jaw_04_C;

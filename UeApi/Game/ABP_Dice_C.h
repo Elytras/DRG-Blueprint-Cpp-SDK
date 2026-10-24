@@ -26,4 +26,4 @@ public:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TrashKit
 
-using ABP_Dice_C = Game::Art::Environments::SpaceRig::TrashKit::ABP_Dice_C;
+using ABP_Dice_C = ::Game::Art::Environments::SpaceRig::TrashKit::ABP_Dice_C;

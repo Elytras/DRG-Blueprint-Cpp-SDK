@@ -71,4 +71,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using BP_FacilityTurretDrone_C = Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_C;
+using BP_FacilityTurretDrone_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_C;

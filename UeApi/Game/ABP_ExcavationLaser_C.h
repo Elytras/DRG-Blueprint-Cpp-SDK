@@ -34,4 +34,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::AmberDeposits
 
-using ABP_ExcavationLaser_C = Game::GameElements::Objectives::Excavation::AmberDeposits::ABP_ExcavationLaser_C;
+using ABP_ExcavationLaser_C = ::Game::GameElements::Objectives::Excavation::AmberDeposits::ABP_ExcavationLaser_C;

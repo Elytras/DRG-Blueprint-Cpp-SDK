@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Grunt {
 
-class ESI_Grunt_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Grunt_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/ESI_Grunt", "ESI_Grunt_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
+    };
 };
 
 }}}}   // namespace Game::Enemies::Spider::Grunt
 
-using ESI_Grunt_C = Game::Enemies::Spider::Grunt::ESI_Grunt_C;
+using ESI_Grunt_C = ::Game::Enemies::Spider::Grunt::ESI_Grunt_C;

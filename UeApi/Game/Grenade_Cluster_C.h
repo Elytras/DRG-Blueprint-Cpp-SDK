@@ -14,7 +14,7 @@ class USoundBase;
 
 namespace Game { namespace WeaponsNTools { namespace Grenades { namespace Cluster {
 
-class Grenade_Cluster_C : public Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
+class Grenade_Cluster_C : public ::Game::WeaponsNTools::Grenades::ITM_Grenade_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/Cluster/Grenade_Cluster", "Grenade_Cluster_C");
@@ -31,10 +31,11 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ProjectileMovementComponent ProjectileMovement";
+        static constexpr const char* UeIchRecords = "StaticMesh;UpgradableGear";
         static constexpr const char* UberGraphFrame_Grenade_Cluster_C__UeName = "UberGraphFrame";
     };
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Cluster
 
-using Grenade_Cluster_C = Game::WeaponsNTools::Grenades::Cluster::Grenade_Cluster_C;
+using Grenade_Cluster_C = ::Game::WeaponsNTools::Grenades::Cluster::Grenade_Cluster_C;

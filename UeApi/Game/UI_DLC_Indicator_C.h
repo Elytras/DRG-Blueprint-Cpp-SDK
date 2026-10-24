@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using UI_DLC_Indicator_C = Game::UI::Menu_Loadout::UI_DLC_Indicator_C;
+using UI_DLC_Indicator_C = ::Game::UI::Menu_Loadout::UI_DLC_Indicator_C;

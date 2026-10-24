@@ -87,4 +87,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall
 
-using BP_Spacerig_Spaceball_Goal_C = Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall::BP_Spacerig_Spaceball_Goal_C;
+using BP_Spacerig_Spaceball_Goal_C = ::Game::LevelElements::Spacerig::Spacerig_Fun::SpaceBall::BP_Spacerig_Spaceball_Goal_C;

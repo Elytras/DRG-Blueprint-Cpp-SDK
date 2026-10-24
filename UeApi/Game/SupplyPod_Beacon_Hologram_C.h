@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::SupplyPod
 
-using SupplyPod_Beacon_Hologram_C = Game::WeaponsNTools::SupplyPod::SupplyPod_Beacon_Hologram_C;
+using SupplyPod_Beacon_Hologram_C = ::Game::WeaponsNTools::SupplyPod::SupplyPod_Beacon_Hologram_C;

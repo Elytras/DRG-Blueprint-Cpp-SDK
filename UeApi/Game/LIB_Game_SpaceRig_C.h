@@ -18,8 +18,8 @@ class LIB_Game_SpaceRig_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/Game/LIB_Game_SpaceRig", "LIB_Game_SpaceRig_C");
-    using BP_GameState_SpaceRig_C = Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
-    using BP_SR_PlayerControllerBase_C = Game::Game::SpaceRig::BP_SR_PlayerControllerBase_C;
+    using BP_GameState_SpaceRig_C = ::Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
+    using BP_SR_PlayerControllerBase_C = ::Game::Game::SpaceRig::BP_SR_PlayerControllerBase_C;
     static void GetSRController(class UObject* __WorldContext, BP_SR_PlayerControllerBase_C*& SRController);
     static void GetSRGameState(class UObject* __WorldContext, BP_GameState_SpaceRig_C*& GameState);
     static void SetSpaceRigUpgradePreview(class APlayerController* PlayerController, class UItemUpgrade* ItemUpgrade, class UObject* __WorldContext);
@@ -29,4 +29,4 @@ public:
 
 }}   // namespace Game::Game
 
-using LIB_Game_SpaceRig_C = Game::Game::LIB_Game_SpaceRig_C;
+using LIB_Game_SpaceRig_C = ::Game::Game::LIB_Game_SpaceRig_C;

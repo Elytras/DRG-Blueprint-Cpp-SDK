@@ -23,7 +23,7 @@ class UI_LoadingTips_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Tips/UI_LoadingTips", "UI_LoadingTips_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* FadeIn;
     UE_READONLY class UWidgetAnimation* FadeOut;
@@ -60,4 +60,4 @@ private:
 
 }}}   // namespace Game::UI::Tips
 
-using UI_LoadingTips_C = Game::UI::Tips::UI_LoadingTips_C;
+using UI_LoadingTips_C = ::Game::UI::Tips::UI_LoadingTips_C;

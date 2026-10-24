@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon
 
-using HUD_HeavyParticleCannon_AmmoCount_Internal_C = Game::WeaponsNTools::HeavyParticleCannon::HUD_HeavyParticleCannon_AmmoCount_Internal_C;
+using HUD_HeavyParticleCannon_AmmoCount_Internal_C = ::Game::WeaponsNTools::HeavyParticleCannon::HUD_HeavyParticleCannon_AmmoCount_Internal_C;

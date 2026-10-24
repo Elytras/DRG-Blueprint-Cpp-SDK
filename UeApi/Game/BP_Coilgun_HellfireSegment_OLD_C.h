@@ -17,7 +17,7 @@ class UStatusEffectTriggerComponent;
 
 namespace Game { namespace WeaponsNTools { namespace CoilGun {
 
-class BP_Coilgun_HellfireSegment_OLD_C : public Game::WeaponsNTools::CoilGun::BP_Coilgun_Trailsegment_Base_C
+class BP_Coilgun_HellfireSegment_OLD_C : public ::Game::WeaponsNTools::CoilGun::BP_Coilgun_Trailsegment_Base_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/CoilGun/BP_Coilgun_HellfireSegment_OLD", "BP_Coilgun_HellfireSegment_OLD_C");
@@ -46,4 +46,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using BP_Coilgun_HellfireSegment_OLD_C = Game::WeaponsNTools::CoilGun::BP_Coilgun_HellfireSegment_OLD_C;
+using BP_Coilgun_HellfireSegment_OLD_C = ::Game::WeaponsNTools::CoilGun::BP_Coilgun_HellfireSegment_OLD_C;

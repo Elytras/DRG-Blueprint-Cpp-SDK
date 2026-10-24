@@ -51,4 +51,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossHeavy
 
-using PRJ_Spider_Boss_Heavy_C = Game::Enemies::Spider::TankBoss::BossHeavy::PRJ_Spider_Boss_Heavy_C;
+using PRJ_Spider_Boss_Heavy_C = ::Game::Enemies::Spider::TankBoss::BossHeavy::PRJ_Spider_Boss_Heavy_C;

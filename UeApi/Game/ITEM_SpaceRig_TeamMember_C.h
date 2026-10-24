@@ -26,10 +26,10 @@ class ITEM_SpaceRig_TeamMember_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ITEM_SpaceRig_TeamMember", "ITEM_SpaceRig_TeamMember_C");
-    using ITM_RetirementBadge_C = Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
-    using UI_MaskedImage_C = Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
-    using UI_NameTags_C = Game::UI::HUD_SpaceRig::UI_NameTags_C;
-    using UI_PlayerSpeaking_C = Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
+    using ITM_RetirementBadge_C = ::Game::UI::HUD_SpaceRig::ITM_RetirementBadge_C;
+    using UI_MaskedImage_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_MaskedImage_C;
+    using UI_NameTags_C = ::Game::UI::HUD_SpaceRig::UI_NameTags_C;
+    using UI_PlayerSpeaking_C = ::Game::UI::Art::WidgetParts::UI_PlayerSpeaking_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UBorder* Border_CharacterLevel;
     class UBorder* Border_CharacterName;
@@ -67,4 +67,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ITEM_SpaceRig_TeamMember_C = Game::UI::HUD_SpaceRig::ITEM_SpaceRig_TeamMember_C;
+using ITEM_SpaceRig_TeamMember_C = ::Game::UI::HUD_SpaceRig::ITEM_SpaceRig_TeamMember_C;

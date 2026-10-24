@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_IronWill_C = Game::GameElements::KPI::Perks::STE_IronWill_C;
+using STE_IronWill_C = ::Game::GameElements::KPI::Perks::STE_IronWill_C;

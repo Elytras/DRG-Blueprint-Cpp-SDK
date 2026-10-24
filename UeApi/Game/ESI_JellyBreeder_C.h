@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::Jelly_Breeder
 
-using ESI_JellyBreeder_C = Game::Enemies::Jelly_Breeder::ESI_JellyBreeder_C;
+using ESI_JellyBreeder_C = ::Game::Enemies::Jelly_Breeder::ESI_JellyBreeder_C;

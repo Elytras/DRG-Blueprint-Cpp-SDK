@@ -19,7 +19,7 @@ class UI_InfoScreen_Overlay_Merch_June2020_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_StartScreen/UI_InfoScreen_Overlay_Merch_June2020", "UI_InfoScreen_Overlay_Merch_June2020_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Click;
     UE_READONLY class UWidgetAnimation* Hover;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_StartScreen
 
-using UI_InfoScreen_Overlay_Merch_June2020_C = Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_Merch_June2020_C;
+using UI_InfoScreen_Overlay_Merch_June2020_C = ::Game::UI::Menu_StartScreen::UI_InfoScreen_Overlay_Merch_June2020_C;

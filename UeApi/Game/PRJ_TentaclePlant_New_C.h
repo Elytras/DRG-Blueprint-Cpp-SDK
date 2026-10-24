@@ -58,4 +58,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using PRJ_TentaclePlant_New_C = Game::Enemies::TentaclePlant::PRJ_TentaclePlant_New_C;
+using PRJ_TentaclePlant_New_C = ::Game::Enemies::TentaclePlant::PRJ_TentaclePlant_New_C;

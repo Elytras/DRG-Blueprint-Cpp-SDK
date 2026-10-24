@@ -41,4 +41,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::GooCannon
 
-using BP_GooExplosiontComponent_C = Game::WeaponsNTools::GooCannon::BP_GooExplosiontComponent_C;
+using BP_GooExplosiontComponent_C = ::Game::WeaponsNTools::GooCannon::BP_GooExplosiontComponent_C;

@@ -23,8 +23,8 @@ class HUD_Resources_Player_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Resources/HUD_Resources_Player", "HUD_Resources_Player_C");
-    using HUD_OptionalHudElement_C = Game::UI::MainOnscreenHUD::HUD_OptionalHudElement_C;
-    using HUD_Resources_Player_Icon_C = Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Player_Icon_C;
+    using HUD_OptionalHudElement_C = ::Game::UI::MainOnscreenHUD::HUD_OptionalHudElement_C;
+    using HUD_Resources_Player_Icon_C = ::Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Player_Icon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     HUD_OptionalHudElement_C* HUD_OptionalHudElement;
     class UHorizontalBox* ResourceParent;
@@ -52,4 +52,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Resources
 
-using HUD_Resources_Player_C = Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Player_C;
+using HUD_Resources_Player_C = ::Game::UI::MainOnscreenHUD::Resources::HUD_Resources_Player_C;

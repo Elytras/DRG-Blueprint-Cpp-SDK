@@ -35,8 +35,8 @@ class BP_MorkiteExtractorPod_C : public ARefineryExtractorPod
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/BP_MorkiteExtractorPod", "BP_MorkiteExtractorPod_C");
-    using BP_Extractor_Shell_C = Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
-    using OBJ_DD_MorkiteWell_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::OBJ_DD_MorkiteWell_C;
+    using BP_Extractor_Shell_C = ::Game::LevelElements::Refinery::Extractor::BP_Extractor_Shell_C;
+    using OBJ_DD_MorkiteWell_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::OBJ_DD_MorkiteWell_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainDetectComponent* TerrainDetect;
     class UDropToTerrainComponent* DropToTerrain;
@@ -81,6 +81,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent SkeletalMesh_Base;/Script/UMG.WidgetComponent ProgressWidget";
+        static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Objectives/DeepDive/LiquidMorkite_Refinery/BP_MorkiteExtractor_Pipeline_Start.BP_MorkiteExtractor_Pipeline_Start_C BP_Pipeline_Start_GEN_VARIABLE:BP_Pipeline_Start_GEN_VARIABLE_BP_MorkiteExtractor_Pipeline_Start_C_CAT;/Script/FSD.TrackBuilderUsable BP_Pipeline_Start_GEN_VARIABLE:BP_Pipeline_Start_GEN_VARIABLE_BP_MorkiteExtractor_Pipeline_Start_C_CAT:PipelineStartUsable";
         static constexpr const char* TerrainDetect__UeScsNode = "74f269c6311e1641bfe2766be4e6973b";
         static constexpr const char* DropToTerrain__UeScsNode = "4f82f4764abfb74ba3b8df000f96b791";
         static constexpr const char* Widget__UeScsNode = "56301979fce57b4fb40df4fa3f79f3b9";
@@ -109,4 +110,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery
 
-using BP_MorkiteExtractorPod_C = Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::BP_MorkiteExtractorPod_C;
+using BP_MorkiteExtractorPod_C = ::Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery::BP_MorkiteExtractorPod_C;

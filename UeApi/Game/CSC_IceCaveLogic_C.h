@@ -25,4 +25,4 @@ public:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::IceCaves
 
-using CSC_IceCaveLogic_C = Game::Landscape::Biomes::Biomes_Ingame::IceCaves::CSC_IceCaveLogic_C;
+using CSC_IceCaveLogic_C = ::Game::Landscape::Biomes::Biomes_Ingame::IceCaves::CSC_IceCaveLogic_C;

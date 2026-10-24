@@ -22,4 +22,4 @@ private:
 
 }}}}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals
 
-using STE_MagicCrystalDefense_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::STE_MagicCrystalDefense_C;
+using STE_MagicCrystalDefense_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::Assets::MagicCrystals::STE_MagicCrystalDefense_C;

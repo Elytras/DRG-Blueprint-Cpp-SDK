@@ -26,4 +26,4 @@ private:
 
 }}}   // namespace Game::Critters::JellyPlatform
 
-using AIC_Jelly_Passive_Mother_C = Game::Critters::JellyPlatform::AIC_Jelly_Passive_Mother_C;
+using AIC_Jelly_Passive_Mother_C = ::Game::Critters::JellyPlatform::AIC_Jelly_Passive_Mother_C;

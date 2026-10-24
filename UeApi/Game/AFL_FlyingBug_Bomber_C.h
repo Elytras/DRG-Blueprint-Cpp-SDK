@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Afflictions
 
-using AFL_FlyingBug_Bomber_C = Game::Enemies::FlyingBug::Afflictions::AFL_FlyingBug_Bomber_C;
+using AFL_FlyingBug_Bomber_C = ::Game::Enemies::FlyingBug::Afflictions::AFL_FlyingBug_Bomber_C;

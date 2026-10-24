@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::Character::States
 
-using BP_PassedOut_C = Game::Character::States::BP_PassedOut_C;
+using BP_PassedOut_C = ::Game::Character::States::BP_PassedOut_C;

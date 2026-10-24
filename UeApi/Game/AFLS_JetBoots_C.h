@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::GameElements::JetBoots::Blueprint
 
-using AFLS_JetBoots_C = Game::GameElements::JetBoots::Blueprint::AFLS_JetBoots_C;
+using AFLS_JetBoots_C = ::Game::GameElements::JetBoots::Blueprint::AFLS_JetBoots_C;

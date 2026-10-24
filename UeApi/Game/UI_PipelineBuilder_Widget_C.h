@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::PipelineBuilder
 
-using UI_PipelineBuilder_Widget_C = Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Widget_C;
+using UI_PipelineBuilder_Widget_C = ::Game::WeaponsNTools::PipelineBuilder::UI_PipelineBuilder_Widget_C;

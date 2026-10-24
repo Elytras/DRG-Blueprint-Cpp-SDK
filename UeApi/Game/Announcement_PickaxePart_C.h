@@ -22,8 +22,8 @@ class Announcement_PickaxePart_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Announcements/Announcement_PickaxePart", "Announcement_PickaxePart_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using ITM_GeneratedIcon_Item_C = Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using ITM_GeneratedIcon_Item_C = ::Game::UI::Menu_Wardrobe::ITM_GeneratedIcon_Item_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnnounceAnim;
     class UBorder* InnerBorder;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::Announcements
 
-using Announcement_PickaxePart_C = Game::UI::Announcements::Announcement_PickaxePart_C;
+using Announcement_PickaxePart_C = ::Game::UI::Announcements::Announcement_PickaxePart_C;

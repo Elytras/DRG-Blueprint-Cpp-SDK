@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Shooter
 
-using STE_Spider_Shooter_Acid_C = Game::Enemies::Spider::Shooter::STE_Spider_Shooter_Acid_C;
+using STE_Spider_Shooter_Acid_C = ::Game::Enemies::Spider::Shooter::STE_Spider_Shooter_Acid_C;

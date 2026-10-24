@@ -33,4 +33,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::CaveAssets::Foliage::DrippingPlant
 
-using PRJ_DrippingPlant_C = Game::Landscape::CaveAssets::Foliage::DrippingPlant::PRJ_DrippingPlant_C;
+using PRJ_DrippingPlant_C = ::Game::Landscape::CaveAssets::Foliage::DrippingPlant::PRJ_DrippingPlant_C;

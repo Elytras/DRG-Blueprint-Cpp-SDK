@@ -34,4 +34,4 @@ public:
 
 }}}}   // namespace Game::Art::_TestingGrounds::UItesting
 
-using NewsTicker_C = Game::Art::_TestingGrounds::UItesting::NewsTicker_C;
+using NewsTicker_C = ::Game::Art::_TestingGrounds::UItesting::NewsTicker_C;

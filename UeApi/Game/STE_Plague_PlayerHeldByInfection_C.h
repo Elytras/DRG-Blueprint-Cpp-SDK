@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Character::Affliction
 
-using STE_Plague_PlayerHeldByInfection_C = Game::Character::Affliction::STE_Plague_PlayerHeldByInfection_C;
+using STE_Plague_PlayerHeldByInfection_C = ::Game::Character::Affliction::STE_Plague_PlayerHeldByInfection_C;

@@ -14,12 +14,12 @@ namespace Game { namespace UI { namespace Menu_Cheats { class CheatMenu_BasicBut
 
 namespace Game { namespace UI { namespace Menu_Cheats { namespace MissionCheat {
 
-class UI_EggHunt_Cheat_C : public Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C
+class UI_EggHunt_Cheat_C : public ::Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_EggHunt_Cheat", "UI_EggHunt_Cheat_C");
-    using BP_AlienEgg_C = Game::GameElements::Resources::Embedded::AlienEgg::BP_AlienEgg_C;
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using BP_AlienEgg_C = ::Game::GameElements::Resources::Embedded::AlienEgg::BP_AlienEgg_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* Left;
     TArray<BP_AlienEgg_C*> Eggs;
@@ -31,4 +31,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_EggHunt_Cheat_C = Game::UI::Menu_Cheats::MissionCheat::UI_EggHunt_Cheat_C;
+using UI_EggHunt_Cheat_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_EggHunt_Cheat_C;

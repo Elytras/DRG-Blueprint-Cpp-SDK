@@ -25,10 +25,10 @@ class Widget_DropPod_Complexity_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/Art/DropPod/Widgets/Widget_DropPod_Complexity", "Widget_DropPod_Complexity_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_MisSel_DotMarker_CaveDifficulty_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
-    using ITM_MisSel_DotMarker_MissionLength_C = Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
-    using WarningBox_C = Game::UI::Global_UI_Elements::WarningBox_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_MisSel_DotMarker_CaveDifficulty_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_CaveDifficulty_C;
+    using ITM_MisSel_DotMarker_MissionLength_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MisSel_DotMarker_MissionLength_C;
+    using WarningBox_C = ::Game::UI::Global_UI_Elements::WarningBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_C_0;
@@ -68,4 +68,4 @@ public:
 
 }}}}   // namespace Game::Art::DropPod::Widgets
 
-using Widget_DropPod_Complexity_C = Game::Art::DropPod::Widgets::Widget_DropPod_Complexity_C;
+using Widget_DropPod_Complexity_C = ::Game::Art::DropPod::Widgets::Widget_DropPod_Complexity_C;

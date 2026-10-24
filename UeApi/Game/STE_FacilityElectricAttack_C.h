@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using STE_FacilityElectricAttack_C = Game::GameElements::Objectives::Facility::Caretaker::STE_FacilityElectricAttack_C;
+using STE_FacilityElectricAttack_C = ::Game::GameElements::Objectives::Facility::Caretaker::STE_FacilityElectricAttack_C;

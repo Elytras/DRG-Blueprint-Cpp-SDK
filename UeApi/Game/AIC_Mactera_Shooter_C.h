@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using AIC_Mactera_Shooter_C = Game::Enemies::FlyingBug::Shooter::AIC_Mactera_Shooter_C;
+using AIC_Mactera_Shooter_C = ::Game::Enemies::FlyingBug::Shooter::AIC_Mactera_Shooter_C;

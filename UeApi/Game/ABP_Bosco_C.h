@@ -127,4 +127,4 @@ public:
 
 }}}   // namespace Game::GameElements::Drone
 
-using ABP_Bosco_C = Game::GameElements::Drone::ABP_Bosco_C;
+using ABP_Bosco_C = ::Game::GameElements::Drone::ABP_Bosco_C;

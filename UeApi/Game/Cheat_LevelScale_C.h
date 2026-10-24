@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_LevelScale_C = Game::UI::Menu_Cheats::Cheat_LevelScale_C;
+using Cheat_LevelScale_C = ::Game::UI::Menu_Cheats::Cheat_LevelScale_C;

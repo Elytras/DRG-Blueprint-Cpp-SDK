@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Landscape::ReactiveTerrain
 
-using RT_HollowBoughBranches_C = Game::Landscape::ReactiveTerrain::RT_HollowBoughBranches_C;
+using RT_HollowBoughBranches_C = ::Game::Landscape::ReactiveTerrain::RT_HollowBoughBranches_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using PRW_PlasmaCarbine_C = Game::WeaponsNTools::PlasmaCarbine::PRW_PlasmaCarbine_C;
+using PRW_PlasmaCarbine_C = ::Game::WeaponsNTools::PlasmaCarbine::PRW_PlasmaCarbine_C;

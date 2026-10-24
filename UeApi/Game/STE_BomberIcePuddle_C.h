@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using STE_BomberIcePuddle_C = Game::Enemies::FlyingBug::Bomber::STE_BomberIcePuddle_C;
+using STE_BomberIcePuddle_C = ::Game::Enemies::FlyingBug::Bomber::STE_BomberIcePuddle_C;

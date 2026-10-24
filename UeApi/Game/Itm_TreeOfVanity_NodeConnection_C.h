@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Itm_TreeOfVanity_NodeConnection_C = Game::UI::Menu_Seasons::Itm_TreeOfVanity_NodeConnection_C;
+using Itm_TreeOfVanity_NodeConnection_C = ::Game::UI::Menu_Seasons::Itm_TreeOfVanity_NodeConnection_C;

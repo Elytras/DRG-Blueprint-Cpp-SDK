@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Stinger
 
-using STE_StingerMobilityLimiter_C = Game::Enemies::Spider::Stinger::STE_StingerMobilityLimiter_C;
+using STE_StingerMobilityLimiter_C = ::Game::Enemies::Spider::Stinger::STE_StingerMobilityLimiter_C;

@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Flares
 
-using PRW_Flare_Base_C = Game::WeaponsNTools::Flares::PRW_Flare_Base_C;
+using PRW_Flare_Base_C = ::Game::WeaponsNTools::Flares::PRW_Flare_Base_C;

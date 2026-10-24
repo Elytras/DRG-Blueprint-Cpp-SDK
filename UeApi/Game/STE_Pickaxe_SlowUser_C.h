@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Pickaxe
 
-using STE_Pickaxe_SlowUser_C = Game::WeaponsNTools::Pickaxe::STE_Pickaxe_SlowUser_C;
+using STE_Pickaxe_SlowUser_C = ::Game::WeaponsNTools::Pickaxe::STE_Pickaxe_SlowUser_C;

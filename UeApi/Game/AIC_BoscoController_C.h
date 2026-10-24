@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Drone
 
-using AIC_BoscoController_C = Game::GameElements::Drone::AIC_BoscoController_C;
+using AIC_BoscoController_C = ::Game::GameElements::Drone::AIC_BoscoController_C;

@@ -63,4 +63,4 @@ public:
 
 }}}}   // namespace Game::Enemies::MuleInfected::Animations
 
-using ABP_InfectedMule_C = Game::Enemies::MuleInfected::Animations::ABP_InfectedMule_C;
+using ABP_InfectedMule_C = ::Game::Enemies::MuleInfected::Animations::ABP_InfectedMule_C;

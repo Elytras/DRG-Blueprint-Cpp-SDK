@@ -23,8 +23,8 @@ class HUD_PlayerPerks_Icon_C : public UPerkHUDIconWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/Perks/HUD_PlayerPerks_Icon", "HUD_PlayerPerks_Icon_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_RoundedCanvas_C = Game::UI::_GlobalAssets::MaskedImage::UI_RoundedCanvas_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_RoundedCanvas_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_RoundedCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimCoolingDown;
     UE_READONLY class UWidgetAnimation* AnimCoolDownFinished;
@@ -68,4 +68,4 @@ private:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Perks
 
-using HUD_PlayerPerks_Icon_C = Game::UI::MainOnscreenHUD::Perks::HUD_PlayerPerks_Icon_C;
+using HUD_PlayerPerks_Icon_C = ::Game::UI::MainOnscreenHUD::Perks::HUD_PlayerPerks_Icon_C;

@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::Radar
 
-using HUD_RadarPoint_Player_C = Game::UI::Radar::HUD_RadarPoint_Player_C;
+using HUD_RadarPoint_Player_C = ::Game::UI::Radar::HUD_RadarPoint_Player_C;

@@ -27,7 +27,7 @@ class Wnd_SeasonBriefing_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/Wnd_SeasonBriefing", "Wnd_SeasonBriefing_C");
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     class UBorder* Border;
@@ -63,4 +63,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using Wnd_SeasonBriefing_C = Game::UI::Menu_Seasons::Wnd_SeasonBriefing_C;
+using Wnd_SeasonBriefing_C = ::Game::UI::Menu_Seasons::Wnd_SeasonBriefing_C;

@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_OptionalHudElement_C = Game::UI::MainOnscreenHUD::HUD_OptionalHudElement_C;
+using HUD_OptionalHudElement_C = ::Game::UI::MainOnscreenHUD::HUD_OptionalHudElement_C;

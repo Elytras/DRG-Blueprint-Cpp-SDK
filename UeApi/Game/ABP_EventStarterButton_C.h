@@ -39,4 +39,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::EventButtons
 
-using ABP_EventStarterButton_C = Game::GameElements::GameEvents::RewardDispenser::EventButtons::ABP_EventStarterButton_C;
+using ABP_EventStarterButton_C = ::Game::GameElements::GameEvents::RewardDispenser::EventButtons::ABP_EventStarterButton_C;

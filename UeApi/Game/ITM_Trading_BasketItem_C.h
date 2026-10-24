@@ -21,7 +21,7 @@ class ITM_Trading_BasketItem_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Trading/ITM_Trading_BasketItem", "ITM_Trading_BasketItem_C");
-    using Basic_AnimatedNumber_C = Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
+    using Basic_AnimatedNumber_C = ::Game::UI::Art::WidgetParts::Basic_AnimatedNumber_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Intro;
     class UBorder* Border_ColorGradient;
@@ -47,4 +47,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using ITM_Trading_BasketItem_C = Game::UI::Menu_Trading::ITM_Trading_BasketItem_C;
+using ITM_Trading_BasketItem_C = ::Game::UI::Menu_Trading::ITM_Trading_BasketItem_C;

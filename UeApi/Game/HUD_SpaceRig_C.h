@@ -29,23 +29,23 @@ class HUD_SpaceRig_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/HUD_SpaceRig", "HUD_SpaceRig_C");
-    using HUD_ActionHoldProgress_C = Game::UI::MainOnscreenHUD::HUD_ActionHoldProgress_C;
-    using HUD_CrossHair_BasicDot_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_BasicDot_C;
-    using HUD_Frozen_C = Game::UI::MainOnscreenHUD::HUD_Frozen_C;
-    using HUD_MinersManualNotification_Manager_C = Game::UI::MainOnscreenHUD::MinersManualNotifications::HUD_MinersManualNotification_Manager_C;
-    using HUD_Modding_Downloads_C = Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_C;
-    using HUD_Subtitles_C = Game::UI::MainOnscreenHUD::Subtitles::HUD_Subtitles_C;
-    using HUD_ThrowCarriable_C = Game::UI::MainOnscreenHUD::HUD_ThrowCarriable_C;
-    using HUD_TutorialWidget_C = Game::UI::Tutorial::HUD_TutorialWidget_C;
-    using Menu_ServerStatus_C = Game::UI::HUD_SpaceRig::Menu_ServerStatus_C;
-    using MissionControl_MainDialogue_C = Game::UI::MissionControl::MissionControl_MainDialogue_C;
-    using OnScreenIndicator_UsableItem_Simple_C = Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_Simple_C;
-    using OnScreenIndicator_UsableItem_WithDescription_C = Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_WithDescription_C;
-    using Screen_CharacterInfo_C = Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
-    using UI_BeerBuff_Spacerig_C = Game::UI::HUD_SpaceRig::UI_BeerBuff_Spacerig_C;
-    using UI_CurvedCanvas_C = Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;
-    using UI_FPS_C = Game::UI::Global_UI_Elements::UI_FPS_C;
-    using UI_NetInfo_C = Game::UI::Global_UI_Elements::UI_NetInfo_C;
+    using HUD_ActionHoldProgress_C = ::Game::UI::MainOnscreenHUD::HUD_ActionHoldProgress_C;
+    using HUD_CrossHair_BasicDot_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_BasicDot_C;
+    using HUD_Frozen_C = ::Game::UI::MainOnscreenHUD::HUD_Frozen_C;
+    using HUD_MinersManualNotification_Manager_C = ::Game::UI::MainOnscreenHUD::MinersManualNotifications::HUD_MinersManualNotification_Manager_C;
+    using HUD_Modding_Downloads_C = ::Game::UI::HUD_SpaceRig::Modding::HUD_Modding_Downloads_C;
+    using HUD_Subtitles_C = ::Game::UI::MainOnscreenHUD::Subtitles::HUD_Subtitles_C;
+    using HUD_ThrowCarriable_C = ::Game::UI::MainOnscreenHUD::HUD_ThrowCarriable_C;
+    using HUD_TutorialWidget_C = ::Game::UI::Tutorial::HUD_TutorialWidget_C;
+    using Menu_ServerStatus_C = ::Game::UI::HUD_SpaceRig::Menu_ServerStatus_C;
+    using MissionControl_MainDialogue_C = ::Game::UI::MissionControl::MissionControl_MainDialogue_C;
+    using OnScreenIndicator_UsableItem_Simple_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_Simple_C;
+    using OnScreenIndicator_UsableItem_WithDescription_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_WithDescription_C;
+    using Screen_CharacterInfo_C = ::Game::UI::HUD_SpaceRig::Screen_CharacterInfo_C;
+    using UI_BeerBuff_Spacerig_C = ::Game::UI::HUD_SpaceRig::UI_BeerBuff_Spacerig_C;
+    using UI_CurvedCanvas_C = ::Game::UI::Global_UI_Elements::UI_CurvedCanvas_C;
+    using UI_FPS_C = ::Game::UI::Global_UI_Elements::UI_FPS_C;
+    using UI_NetInfo_C = ::Game::UI::Global_UI_Elements::UI_NetInfo_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* BeerBuffAnimation;
     OnScreenIndicator_UsableItem_Simple_C* BS_UsableItem_384;
@@ -75,4 +75,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using HUD_SpaceRig_C = Game::UI::HUD_SpaceRig::HUD_SpaceRig_C;
+using HUD_SpaceRig_C = ::Game::UI::HUD_SpaceRig::HUD_SpaceRig_C;

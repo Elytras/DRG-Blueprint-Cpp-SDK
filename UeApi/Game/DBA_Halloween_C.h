@@ -22,6 +22,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisPositioning I_MorePumpkins_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning I_Pumpkins_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* I_MorePumpkins__UeScsNode = "0650354bbaa9a348ad2e03eb1123c58e";
         static constexpr const char* I_Pumpkins__UeScsNode = "300527db9b3b1d459cb7f543a6fe4bdd";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "a9eb5e97dce05f4d846b20c7e932eecc";
@@ -30,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Game::Events::Halloween
 
-using DBA_Halloween_C = Game::Game::Events::Halloween::DBA_Halloween_C;
+using DBA_Halloween_C = ::Game::Game::Events::Halloween::DBA_Halloween_C;

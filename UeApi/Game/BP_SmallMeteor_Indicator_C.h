@@ -26,4 +26,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::MeteorShower
 
-using BP_SmallMeteor_Indicator_C = Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteor_Indicator_C;
+using BP_SmallMeteor_Indicator_C = ::Game::GameElements::GameEvents::MeteorShower::BP_SmallMeteor_Indicator_C;

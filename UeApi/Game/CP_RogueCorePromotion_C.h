@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_RogueCorePromotion_C = Game::GameElements::Campaign::CP_RogueCorePromotion_C;
+using CP_RogueCorePromotion_C = ::Game::GameElements::Campaign::CP_RogueCorePromotion_C;

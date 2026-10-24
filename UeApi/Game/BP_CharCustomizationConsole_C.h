@@ -47,6 +47,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Game/Art/Environments/SpaceRig/Furniture/BP_ModularLamp.BP_ModularLamp_C ChildActor_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_ModularLamp_C_CAT";
         static constexpr const char* PointLight1__UeScsNode = "ffea6afa71534047bd6583e9a76a4981";
         static constexpr const char* PointLight__UeScsNode = "ceac26ef4789fc4683fe2577b6c675dc";
         static constexpr const char* Widget3__UeScsNode = "48a072c7582df54b993e1bfd89d58621";
@@ -69,4 +70,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_CharCustomizationConsole_C = Game::UI::HUD_SpaceRig::BP_CharCustomizationConsole_C;
+using BP_CharCustomizationConsole_C = ::Game::UI::HUD_SpaceRig::BP_CharCustomizationConsole_C;

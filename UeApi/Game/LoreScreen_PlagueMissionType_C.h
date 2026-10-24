@@ -23,12 +23,12 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens {
 
-class LoreScreen_PlagueMissionType_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_PlagueMissionType_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/LoreScreen_PlagueMissionType", "LoreScreen_PlagueMissionType_C");
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_ITM_MissionStepRow_C = Game::UI::Menu_MinersManual::Lore_ITM_MissionStepRow_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_ITM_MissionStepRow_C = ::Game::UI::Menu_MinersManual::Lore_ITM_MissionStepRow_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_PlagueMissionType_C;
     UE_READONLY class UWidgetAnimation* HoverStep;
     class UTextBlock* Big_Headline;
@@ -66,4 +66,4 @@ private:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens
 
-using LoreScreen_PlagueMissionType_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_PlagueMissionType_C;
+using LoreScreen_PlagueMissionType_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_PlagueMissionType_C;

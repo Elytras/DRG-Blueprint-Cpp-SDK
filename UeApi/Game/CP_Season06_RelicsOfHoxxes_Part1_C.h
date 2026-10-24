@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Season06_RelicsOfHoxxes_Part1_C = Game::GameElements::Campaign::CP_Season06_RelicsOfHoxxes_Part1_C;
+using CP_Season06_RelicsOfHoxxes_Part1_C = ::Game::GameElements::Campaign::CP_Season06_RelicsOfHoxxes_Part1_C;

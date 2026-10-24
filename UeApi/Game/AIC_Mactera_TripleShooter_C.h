@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace FlyingBug { namespace Shooter {
 
-class AIC_Mactera_TripleShooter_C : public Game::Enemies::FlyingBug::Shooter::AIC_Mactera_Shooter_C
+class AIC_Mactera_TripleShooter_C : public ::Game::Enemies::FlyingBug::Shooter::AIC_Mactera_Shooter_C
 {
 public:
     UE_CLASS("/Game/Enemies/FlyingBug/Shooter/AIC_Mactera_TripleShooter", "AIC_Mactera_TripleShooter_C");
@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter
 
-using AIC_Mactera_TripleShooter_C = Game::Enemies::FlyingBug::Shooter::AIC_Mactera_TripleShooter_C;
+using AIC_Mactera_TripleShooter_C = ::Game::Enemies::FlyingBug::Shooter::AIC_Mactera_TripleShooter_C;

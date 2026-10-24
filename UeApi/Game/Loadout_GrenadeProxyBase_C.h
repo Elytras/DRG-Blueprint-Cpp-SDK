@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Grenades
 
-using Loadout_GrenadeProxyBase_C = Game::WeaponsNTools::Grenades::Loadout_GrenadeProxyBase_C;
+using Loadout_GrenadeProxyBase_C = ::Game::WeaponsNTools::Grenades::Loadout_GrenadeProxyBase_C;

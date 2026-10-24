@@ -20,12 +20,12 @@ namespace Game { namespace UI { namespace Menu_Jobs { namespace JobsV2_Redesign 
 
 namespace Game { namespace UI { namespace Menu_Jobs {
 
-class WND_JobsEntryV2_C : public Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C
+class WND_JobsEntryV2_C : public ::Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/WND_JobsEntryV2", "WND_JobsEntryV2_C");
-    using ITM_Prerequisites_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;
-    using Jobs_List_Element_BG_CutCorner_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
+    using ITM_Prerequisites_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Prerequisites_C;
+    using Jobs_List_Element_BG_CutCorner_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_List_Element_BG_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame_WND_JobsEntryV2_C;
     class UImage* Assignment_Image;
     class UHorizontalBox* Box_CampaignItems;
@@ -62,4 +62,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Jobs
 
-using WND_JobsEntryV2_C = Game::UI::Menu_Jobs::WND_JobsEntryV2_C;
+using WND_JobsEntryV2_C = ::Game::UI::Menu_Jobs::WND_JobsEntryV2_C;

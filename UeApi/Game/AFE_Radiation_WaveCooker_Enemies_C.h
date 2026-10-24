@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE
 
-using AFE_Radiation_WaveCooker_Enemies_C = Game::WeaponsNTools::MicrowaveGun::STE::AFE_Radiation_WaveCooker_Enemies_C;
+using AFE_Radiation_WaveCooker_Enemies_C = ::Game::WeaponsNTools::MicrowaveGun::STE::AFE_Radiation_WaveCooker_Enemies_C;

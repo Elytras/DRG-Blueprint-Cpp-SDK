@@ -65,4 +65,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::Revolver
 
-using WPN_Revolver_C = Game::WeaponsNTools::Revolver::WPN_Revolver_C;
+using WPN_Revolver_C = ::Game::WeaponsNTools::Revolver::WPN_Revolver_C;

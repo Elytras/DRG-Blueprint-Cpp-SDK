@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Pheromone
 
-using BP_PheromoneAttackerPositioning_Propogated_C = Game::WeaponsNTools::Grenades::Pheromone::BP_PheromoneAttackerPositioning_Propogated_C;
+using BP_PheromoneAttackerPositioning_Propogated_C = ::Game::WeaponsNTools::Grenades::Pheromone::BP_PheromoneAttackerPositioning_Propogated_C;

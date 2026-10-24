@@ -17,8 +17,8 @@ class DLCclaimPopup_DLC05_RivalTech_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/DLCclaimPopups/DLCclaimPopup_DLC05_RivalTech", "DLCclaimPopup_DLC05_RivalTech_C");
-    using _DLCclaimPopup_Base_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
-    using _DLCclaimPopup_TextLine_C = Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
+    using _DLCclaimPopup_Base_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_Base_C;
+    using _DLCclaimPopup_TextLine_C = ::Game::UI::DLCclaimPopups::_DLCclaimPopup_TextLine_C;
     FPointerToUberGraphFrame UberGraphFrame;
     _DLCclaimPopup_Base_C* DLCclaimPopup_Base;
     _DLCclaimPopup_TextLine_C* UI_ClaimableDLC_TextLine;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::DLCclaimPopups
 
-using DLCclaimPopup_DLC05_RivalTech_C = Game::UI::DLCclaimPopups::DLCclaimPopup_DLC05_RivalTech_C;
+using DLCclaimPopup_DLC05_RivalTech_C = ::Game::UI::DLCclaimPopups::DLCclaimPopup_DLC05_RivalTech_C;

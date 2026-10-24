@@ -18,7 +18,7 @@ class ConsoleScreen_Tutorial_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/ConsoleScreen_Tutorial", "ConsoleScreen_Tutorial_C");
-    using ConsoleScreen_BGtemplate_C = Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
+    using ConsoleScreen_BGtemplate_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_BGtemplate_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* TextAnim;
     ConsoleScreen_BGtemplate_C* ConsoleScreen_BGtemplate;
@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using ConsoleScreen_Tutorial_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Tutorial_C;
+using ConsoleScreen_Tutorial_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Tutorial_C;

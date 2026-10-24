@@ -17,11 +17,11 @@ class OnScreenIndicator_RocketAttachment_Attach_C : public UFSDInWorldWidget
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_RocketAttachment_Attach", "OnScreenIndicator_RocketAttachment_Attach_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UImage* Img_Icon;
+    class UImage* IMG_Icon;
     void ExecuteUbergraph_OnScreenIndicator_RocketAttachment_Attach(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_RocketAttachment_Attach_C = Game::UI::OnScreenIndicators::OnScreenIndicator_RocketAttachment_Attach_C;
+using OnScreenIndicator_RocketAttachment_Attach_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_RocketAttachment_Attach_C;

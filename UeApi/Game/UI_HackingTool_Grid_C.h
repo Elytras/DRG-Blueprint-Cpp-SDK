@@ -17,7 +17,7 @@ class UI_HackingTool_Grid_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HackingTool/UI/UI_HackingTool_Grid", "UI_HackingTool_Grid_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFill;
     Basic_Image_C* Grid_Image;
@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI
 
-using UI_HackingTool_Grid_C = Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Grid_C;
+using UI_HackingTool_Grid_C = ::Game::WeaponsNTools::HackingTool::UI::UI_HackingTool_Grid_C;

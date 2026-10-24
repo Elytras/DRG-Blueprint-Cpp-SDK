@@ -28,9 +28,9 @@ class ITM_TreeOfVanity_Node_C : public UTreeOfVanityItemWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_TreeOfVanity_Node", "ITM_TreeOfVanity_Node_C");
-    using ITM_SeasonReward_Owned_C = Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;
-    using ITM_Season_RewardImageSingle_C = Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
-    using Tooltip_TreeOfVanityReward_C = Game::UI::Menu_Seasons::Tooltip_TreeOfVanityReward_C;
+    using ITM_SeasonReward_Owned_C = ::Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;
+    using ITM_Season_RewardImageSingle_C = ::Game::UI::Menu_Seasons::ITM_Season_RewardImageSingle_C;
+    using Tooltip_TreeOfVanityReward_C = ::Game::UI::Menu_Seasons::Tooltip_TreeOfVanityReward_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* BoughtBigAnim;
     UE_READONLY class UWidgetAnimation* BoughtAnim;
@@ -98,4 +98,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_TreeOfVanity_Node_C = Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;
+using ITM_TreeOfVanity_Node_C = ::Game::UI::Menu_Seasons::ITM_TreeOfVanity_Node_C;

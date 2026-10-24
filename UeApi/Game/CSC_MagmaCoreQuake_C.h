@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Landscape { namespace Biomes { namespace Biomes_Ingame { namespace MagmaCaves {
 
-class CSC_MagmaCoreQuake_C : public Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C
+class CSC_MagmaCoreQuake_C : public ::Game::Landscape::Biomes::CSC_StormsQuakesEtc_Base_C
 {
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/MagmaCaves/CSC_MagmaCoreQuake", "CSC_MagmaCoreQuake_C");
@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves
 
-using CSC_MagmaCoreQuake_C = Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::CSC_MagmaCoreQuake_C;
+using CSC_MagmaCoreQuake_C = ::Game::Landscape::Biomes::Biomes_Ingame::MagmaCaves::CSC_MagmaCoreQuake_C;

@@ -33,4 +33,4 @@ public:
 
 }}}}}}}   // namespace Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum
 
-using HUD_CrossHair_Vacuum_C = Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum::HUD_CrossHair_Vacuum_C;
+using HUD_CrossHair_Vacuum_C = ::Game::GameElements::Missions::Warnings::Plague::CleaningPod::Vacuum::HUD_CrossHair_Vacuum_C;

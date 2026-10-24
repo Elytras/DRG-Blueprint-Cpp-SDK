@@ -40,4 +40,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber
 
-using ABP_Bomber_C = Game::Enemies::FlyingBug::Bomber::ABP_Bomber_C;
+using ABP_Bomber_C = ::Game::Enemies::FlyingBug::Bomber::ABP_Bomber_C;

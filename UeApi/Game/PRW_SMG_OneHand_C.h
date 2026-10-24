@@ -33,4 +33,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SMG
 
-using PRW_SMG_OneHand_C = Game::WeaponsNTools::SMG::PRW_SMG_OneHand_C;
+using PRW_SMG_OneHand_C = ::Game::WeaponsNTools::SMG::PRW_SMG_OneHand_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors
 
-using STE_SandStom_Slowdown_Enemies_C = Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::STE_SandStom_Slowdown_Enemies_C;
+using STE_SandStom_Slowdown_Enemies_C = ::Game::Landscape::Biomes::Biomes_Ingame::SandblastedCorridors::STE_SandStom_Slowdown_Enemies_C;

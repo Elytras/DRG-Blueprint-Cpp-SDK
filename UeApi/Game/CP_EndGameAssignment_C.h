@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_EndGameAssignment_C = Game::GameElements::Campaign::CP_EndGameAssignment_C;
+using CP_EndGameAssignment_C = ::Game::GameElements::Campaign::CP_EndGameAssignment_C;

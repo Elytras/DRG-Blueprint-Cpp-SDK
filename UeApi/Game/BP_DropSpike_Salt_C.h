@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace DropSpike {
 
-class BP_DropSpike_Salt_C : public Game::LevelElements::RoomObjects::Hazards::DropSpike::BP_DropSpike_Base_C
+class BP_DropSpike_Salt_C : public ::Game::LevelElements::RoomObjects::Hazards::DropSpike::BP_DropSpike_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/DropSpike/BP_DropSpike_Salt", "BP_DropSpike_Salt_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SpikeCapsule;SimpleObjectInfo;Spike;TerrainPlacement";
+    };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::DropSpike
 
-using BP_DropSpike_Salt_C = Game::LevelElements::RoomObjects::Hazards::DropSpike::BP_DropSpike_Salt_C;
+using BP_DropSpike_Salt_C = ::Game::LevelElements::RoomObjects::Hazards::DropSpike::BP_DropSpike_Salt_C;

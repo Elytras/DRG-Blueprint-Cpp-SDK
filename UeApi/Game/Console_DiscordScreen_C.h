@@ -31,15 +31,15 @@ class Console_DiscordScreen_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/Console_DiscordScreen", "Console_DiscordScreen_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
-    using Basic_Menu_LargeWindowWithHeader_C = Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
-    using ConsoleScreen_Notification_C = Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
-    using ITM_CommunityGoalRecruitment_ConsoleScreenV1_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_ConsoleScreenV1_C;
-    using ITM_CommunityGoal_ConsoleScreenV2_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_ConsoleScreenV2_C;
-    using ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C;
-    using ITM_Community_Console_ClaimReward_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_Community_Console_ClaimReward_C;
-    using ITM_FactionLogo_C = Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionLogo_C;
-    using UI_ImageTinted_C = Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using Basic_Menu_LargeWindowWithHeader_C = ::Game::UI::Art::WidgetParts::Basic_Menu_LargeWindowWithHeader_C;
+    using ConsoleScreen_Notification_C = ::Game::UI::HUD_SpaceRig::ConsoleScreen_Notification_C;
+    using ITM_CommunityGoalRecruitment_ConsoleScreenV1_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoalRecruitment_ConsoleScreenV1_C;
+    using ITM_CommunityGoal_ConsoleScreenV2_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_ConsoleScreenV2_C;
+    using ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_CommunityGoal_TotalProgress_ConsoleScreenV2_C;
+    using ITM_Community_Console_ClaimReward_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_Community_Console_ClaimReward_C;
+    using ITM_FactionLogo_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::ITM_FactionLogo_C;
+    using UI_ImageTinted_C = ::Game::UI::MainOnscreenHUD::Standard::UI_ImageTinted_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Disappear;
     UE_READONLY class UWidgetAnimation* CreditsBlinkAnimation;
@@ -138,4 +138,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal
 
-using Console_DiscordScreen_C = Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordScreen_C;
+using Console_DiscordScreen_C = ::Game::UI::HUD_SpaceRig::CommunityTerminal::Console_DiscordScreen_C;

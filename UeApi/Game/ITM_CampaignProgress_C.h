@@ -23,9 +23,9 @@ class ITM_CampaignProgress_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_CampaignProgress", "ITM_CampaignProgress_C");
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
-    using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
-    using ITM_CampaignItem_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignItem_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;
+    using ITM_CampaignItem_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignItem_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical_154;
@@ -55,4 +55,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_CampaignProgress_C = Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_C;
+using ITM_CampaignProgress_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_CampaignProgress_C;

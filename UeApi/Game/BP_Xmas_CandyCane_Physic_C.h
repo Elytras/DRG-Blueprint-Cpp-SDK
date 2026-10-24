@@ -31,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::Holiday_Xmas
 
-using BP_Xmas_CandyCane_Physic_C = Game::Art::Environments::Holiday_Xmas::BP_Xmas_CandyCane_Physic_C;
+using BP_Xmas_CandyCane_Physic_C = ::Game::Art::Environments::Holiday_Xmas::BP_Xmas_CandyCane_Physic_C;

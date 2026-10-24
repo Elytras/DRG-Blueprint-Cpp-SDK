@@ -25,9 +25,9 @@ class BP_Invitation_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Invitation/BP_Invitation", "BP_Invitation_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Hide;
     UE_READONLY class UWidgetAnimation* Show;
@@ -66,4 +66,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Invitation
 
-using BP_Invitation_C = Game::UI::Menu_Invitation::BP_Invitation_C;
+using BP_Invitation_C = ::Game::UI::Menu_Invitation::BP_Invitation_C;

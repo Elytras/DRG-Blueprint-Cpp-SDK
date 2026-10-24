@@ -38,4 +38,4 @@ public:
 
 }}}}   // namespace Game::Enemies::FlyingBug::Grabber
 
-using ABP_Grabber_C = Game::Enemies::FlyingBug::Grabber::ABP_Grabber_C;
+using ABP_Grabber_C = ::Game::Enemies::FlyingBug::Grabber::ABP_Grabber_C;

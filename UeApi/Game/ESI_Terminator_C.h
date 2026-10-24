@@ -71,4 +71,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using ESI_Terminator_C = Game::Enemies::RivalTech::Terminator::ESI_Terminator_C;
+using ESI_Terminator_C = ::Game::Enemies::RivalTech::Terminator::ESI_Terminator_C;

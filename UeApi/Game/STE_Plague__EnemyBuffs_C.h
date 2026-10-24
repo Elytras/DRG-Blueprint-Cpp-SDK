@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::Enemies::Plague
 
-using STE_Plague__EnemyBuffs_C = Game::Enemies::Plague::STE_Plague__EnemyBuffs_C;
+using STE_Plague__EnemyBuffs_C = ::Game::Enemies::Plague::STE_Plague__EnemyBuffs_C;

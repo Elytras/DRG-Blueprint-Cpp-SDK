@@ -23,4 +23,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using BP_TentacleMeleeAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleMeleeAttack_C;
+using BP_TentacleMeleeAttack_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_TentacleMeleeAttack_C;

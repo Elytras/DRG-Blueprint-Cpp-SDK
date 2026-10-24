@@ -20,7 +20,7 @@ class UI_HorizontalResourceBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/UI_HorizontalResourceBar", "UI_HorizontalResourceBar_C");
-    using ITM_UpgGear_ResourceCounter_C = Game::UI::Menu_Loadout::ITM_UpgGear_ResourceCounter_C;
+    using ITM_UpgGear_ResourceCounter_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_ResourceCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTextBlock* NoResourcesLabel;
     class UHorizontalBox* ResourcesBox;
@@ -47,4 +47,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using UI_HorizontalResourceBar_C = Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;
+using UI_HorizontalResourceBar_C = ::Game::UI::Menu_Loadout::UI_HorizontalResourceBar_C;

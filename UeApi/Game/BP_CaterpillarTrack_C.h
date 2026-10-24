@@ -57,4 +57,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::DrillDozer
 
-using BP_CaterpillarTrack_C = Game::GameElements::Objectives::Escort::DrillDozer::BP_CaterpillarTrack_C;
+using BP_CaterpillarTrack_C = ::Game::GameElements::Objectives::Escort::DrillDozer::BP_CaterpillarTrack_C;

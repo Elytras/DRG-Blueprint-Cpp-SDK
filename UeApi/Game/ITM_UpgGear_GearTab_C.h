@@ -24,8 +24,8 @@ class ITM_UpgGear_GearTab_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_UpgGear_GearTab", "ITM_UpgGear_GearTab_C");
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using MENU_UpgradeScreen_C = Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using MENU_UpgradeScreen_C = ::Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UButton* ClickButton;
     class UOverlay* ContentOverlay;
@@ -66,4 +66,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_UpgGear_GearTab_C = Game::UI::Menu_Loadout::ITM_UpgGear_GearTab_C;
+using ITM_UpgGear_GearTab_C = ::Game::UI::Menu_Loadout::ITM_UpgGear_GearTab_C;

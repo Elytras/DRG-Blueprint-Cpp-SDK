@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Landscape::Biomes::Biomes_Ingame::AzureWeald
 
-using BP_PostProcessing_AzureWeald_C = Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::BP_PostProcessing_AzureWeald_C;
+using BP_PostProcessing_AzureWeald_C = ::Game::Landscape::Biomes::Biomes_Ingame::AzureWeald::BP_PostProcessing_AzureWeald_C;

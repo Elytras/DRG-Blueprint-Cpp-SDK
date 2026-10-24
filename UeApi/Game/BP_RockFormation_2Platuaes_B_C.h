@@ -11,7 +11,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace HugeCarvers { namespace IceFormation {
 
-class BP_RockFormation_2Platuaes_B_C : public Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Base_C
+class BP_RockFormation_2Platuaes_B_C : public ::Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_IceFormation_Base_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/IceFormation/BP_RockFormation_2Platuaes_B", "BP_RockFormation_2Platuaes_B_C");
@@ -19,10 +19,11 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver;TerrainPlacement";
         static constexpr const char* Ice_Formation_A__UeScsNode = "5f63bc85cfe0f44f8bc841139bb83465";
     };
 };
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::IceFormation
 
-using BP_RockFormation_2Platuaes_B_C = Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_RockFormation_2Platuaes_B_C;
+using BP_RockFormation_2Platuaes_B_C = ::Game::LevelElements::RoomObjects::HugeCarvers::IceFormation::BP_RockFormation_2Platuaes_B_C;

@@ -27,7 +27,7 @@ public:
     class UImage* Image_Resource_2;
     class UImage* Image_Resource_3;
     class UImage* Image_Resource_4;
-    class UImage* IMG_Background;
+    class UImage* Img_Background;
     class UImage* IMG_GradientOverlay;
     void ExecuteUbergraph_ITM_Trading_ResourcePoster(int EntryPoint);
     void SetData(class UTexture2D* Icon);
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Trading
 
-using ITM_Trading_ResourcePoster_C = Game::UI::Menu_Trading::ITM_Trading_ResourcePoster_C;
+using ITM_Trading_ResourcePoster_C = ::Game::UI::Menu_Trading::ITM_Trading_ResourcePoster_C;

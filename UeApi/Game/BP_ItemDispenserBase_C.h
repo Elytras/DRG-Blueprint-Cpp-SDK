@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::ItemDispenser
 
-using BP_ItemDispenserBase_C = Game::GameElements::ItemDispenser::BP_ItemDispenserBase_C;
+using BP_ItemDispenserBase_C = ::Game::GameElements::ItemDispenser::BP_ItemDispenserBase_C;

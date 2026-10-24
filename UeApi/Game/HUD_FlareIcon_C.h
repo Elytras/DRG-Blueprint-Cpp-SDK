@@ -40,4 +40,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_FlareIcon_C = Game::UI::MainOnscreenHUD::HUD_FlareIcon_C;
+using HUD_FlareIcon_C = ::Game::UI::MainOnscreenHUD::HUD_FlareIcon_C;

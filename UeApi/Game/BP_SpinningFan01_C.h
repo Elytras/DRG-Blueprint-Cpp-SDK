@@ -31,4 +31,4 @@ private:
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::Big_Structures
 
-using BP_SpinningFan01_C = Game::Art::Environments::SpaceRig::Big_Structures::BP_SpinningFan01_C;
+using BP_SpinningFan01_C = ::Game::Art::Environments::SpaceRig::Big_Structures::BP_SpinningFan01_C;

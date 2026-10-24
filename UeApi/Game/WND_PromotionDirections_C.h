@@ -24,8 +24,8 @@ class WND_PromotionDirections_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/WND_PromotionDirections", "WND_PromotionDirections_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
-    using ITM_Special_ButtonCutCorner_C = Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using ITM_Special_ButtonCutCorner_C = ::Game::UI::Menu_EscapeMenu::ITM_Special_ButtonCutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* IntroOutro;
     Basic_Window_CutCorner_C* Basic_Window_CutCorner;
@@ -48,4 +48,4 @@ public:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using WND_PromotionDirections_C = Game::UI::HUD_SpaceRig::WND_PromotionDirections_C;
+using WND_PromotionDirections_C = ::Game::UI::HUD_SpaceRig::WND_PromotionDirections_C;

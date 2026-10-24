@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_HoverBootsBurn_C = Game::GameElements::KPI::Perks::STE_HoverBootsBurn_C;
+using STE_HoverBootsBurn_C = ::Game::GameElements::KPI::Perks::STE_HoverBootsBurn_C;

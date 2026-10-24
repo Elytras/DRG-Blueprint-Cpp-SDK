@@ -27,12 +27,12 @@ class WND_MisSel_MissionOptions_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/WND_MisSel_MissionOptions", "WND_MisSel_MissionOptions_C");
-    using Basic_OptionSwitcher_C = Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
-    using Basic_PasswordField_C = Game::UI::Art::WidgetParts::Basic_PasswordField_C;
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using ITM_BigButton_C = Game::UI::_GlobalAssets::ITM_BigButton_C;
-    using ITM_OnlineRestricted_C = Game::UI::System::ITM_OnlineRestricted_C;
-    using WND_MisSel_Mission_HazPlus_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_Mission_HazPlus_C;
+    using Basic_OptionSwitcher_C = ::Game::UI::Art::WidgetParts::Basic_OptionSwitcher_C;
+    using Basic_PasswordField_C = ::Game::UI::Art::WidgetParts::Basic_PasswordField_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using ITM_BigButton_C = ::Game::UI::_GlobalAssets::ITM_BigButton_C;
+    using ITM_OnlineRestricted_C = ::Game::UI::System::ITM_OnlineRestricted_C;
+    using WND_MisSel_Mission_HazPlus_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_Mission_HazPlus_C;
     FPointerToUberGraphFrame UberGraphFrame;
     BlurBackground_C* BlurBackground;
     ITM_BigButton_C* BTN_ConfirmMission2;
@@ -92,4 +92,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using WND_MisSel_MissionOptions_C = Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionOptions_C;
+using WND_MisSel_MissionOptions_C = ::Game::UI::Menu_MissionSelectionMK3::WND_MisSel_MissionOptions_C;

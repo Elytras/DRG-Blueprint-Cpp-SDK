@@ -32,4 +32,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::RivalFortifiedCaveEvent
 
-using BP_RivalFortifiedNodePlacer_C = Game::GameElements::GameEvents::RivalFortifiedCaveEvent::BP_RivalFortifiedNodePlacer_C;
+using BP_RivalFortifiedNodePlacer_C = ::Game::GameElements::GameEvents::RivalFortifiedCaveEvent::BP_RivalFortifiedNodePlacer_C;

@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using UI_DLC_Season_C = Game::UI::Menu_Seasons::UI_DLC_Season_C;
+using UI_DLC_Season_C = ::Game::UI::Menu_Seasons::UI_DLC_Season_C;

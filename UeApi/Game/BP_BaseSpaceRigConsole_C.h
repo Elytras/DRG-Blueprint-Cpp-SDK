@@ -27,7 +27,7 @@ class BP_BaseSpaceRigConsole_C : public AActor
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_BaseSpaceRigConsole", "BP_BaseSpaceRigConsole_C");
-    using BP_PlayerController_SpaceRig_C = Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
+    using BP_PlayerController_SpaceRig_C = ::Game::Game::SpaceRig::BP_PlayerController_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UPointLightComponent* PointLight;
     class UTextRenderComponent* TextRender;
@@ -71,4 +71,4 @@ private:
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_BaseSpaceRigConsole_C = Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C;
+using BP_BaseSpaceRigConsole_C = ::Game::UI::HUD_SpaceRig::BP_BaseSpaceRigConsole_C;

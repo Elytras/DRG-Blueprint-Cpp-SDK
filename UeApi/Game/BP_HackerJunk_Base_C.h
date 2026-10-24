@@ -37,4 +37,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Tethers
 
-using BP_HackerJunk_Base_C = Game::GameElements::Objectives::Facility::Tethers::BP_HackerJunk_Base_C;
+using BP_HackerJunk_Base_C = ::Game::GameElements::Objectives::Facility::Tethers::BP_HackerJunk_Base_C;

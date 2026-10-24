@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::StatusEffects
 
-using STE_Crossbow_FreezeRadiance_C = Game::WeaponsNTools::Crossbow::StatusEffects::STE_Crossbow_FreezeRadiance_C;
+using STE_Crossbow_FreezeRadiance_C = ::Game::WeaponsNTools::Crossbow::StatusEffects::STE_Crossbow_FreezeRadiance_C;

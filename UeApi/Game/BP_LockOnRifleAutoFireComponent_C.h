@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::LockOnRifle
 
-using BP_LockOnRifleAutoFireComponent_C = Game::WeaponsNTools::LockOnRifle::BP_LockOnRifleAutoFireComponent_C;
+using BP_LockOnRifleAutoFireComponent_C = ::Game::WeaponsNTools::LockOnRifle::BP_LockOnRifleAutoFireComponent_C;

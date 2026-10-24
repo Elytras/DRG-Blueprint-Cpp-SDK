@@ -62,4 +62,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones
 
-using BP_PineconeSpawner_Base_C = Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PineconeSpawner_Base_C;
+using BP_PineconeSpawner_Base_C = ::Game::LevelElements::RoomObjects::LoosePhysicalObjects::PhysicalPinecones::BP_PineconeSpawner_Base_C;

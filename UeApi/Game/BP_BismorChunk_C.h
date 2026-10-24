@@ -36,4 +36,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Resources::Carved::Bismor
 
-using BP_BismorChunk_C = Game::GameElements::Resources::Carved::Bismor::BP_BismorChunk_C;
+using BP_BismorChunk_C = ::Game::GameElements::Resources::Carved::Bismor::BP_BismorChunk_C;

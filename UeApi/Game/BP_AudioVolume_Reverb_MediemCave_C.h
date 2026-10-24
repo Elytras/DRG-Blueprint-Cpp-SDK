@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::Audio::SoundControl
 
-using BP_AudioVolume_Reverb_MediemCave_C = Game::Audio::SoundControl::BP_AudioVolume_Reverb_MediemCave_C;
+using BP_AudioVolume_Reverb_MediemCave_C = ::Game::Audio::SoundControl::BP_AudioVolume_Reverb_MediemCave_C;

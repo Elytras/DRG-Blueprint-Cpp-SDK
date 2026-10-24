@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::GameElements::Missions
 
-using DNA_SalvageFractured_Medium_C = Game::GameElements::Missions::DNA_SalvageFractured_Medium_C;
+using DNA_SalvageFractured_Medium_C = ::Game::GameElements::Missions::DNA_SalvageFractured_Medium_C;

@@ -17,7 +17,7 @@ class UPointLightComponent;
 
 namespace Game { namespace Critters { namespace Prospector {
 
-class BP_DataCell_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_DataCell_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/Critters/Prospector/BP_DataCell", "BP_DataCell_C");
@@ -38,6 +38,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;Carriable;FirstPersonStaticMesh;SimpleObjectInfo;Sphere;TerrainScannerMesh;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_DataCell_C__UeName = "UberGraphFrame";
         static constexpr const char* outline__UeScsNode = "4bf9c3fa48b8664ca80598052fbdc63c";
         static constexpr const char* Niagara__UeScsNode = "4c5430c75d8a9840b504c013f352fc2e";
@@ -50,4 +51,4 @@ private:
 
 }}}   // namespace Game::Critters::Prospector
 
-using BP_DataCell_C = Game::Critters::Prospector::BP_DataCell_C;
+using BP_DataCell_C = ::Game::Critters::Prospector::BP_DataCell_C;

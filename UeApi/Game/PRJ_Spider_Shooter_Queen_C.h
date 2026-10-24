@@ -43,4 +43,4 @@ private:
 
 }}}}}   // namespace Game::Enemies::Spider::Shooter::ShooterQueen
 
-using PRJ_Spider_Shooter_Queen_C = Game::Enemies::Spider::Shooter::ShooterQueen::PRJ_Spider_Shooter_Queen_C;
+using PRJ_Spider_Shooter_Queen_C = ::Game::Enemies::Spider::Shooter::ShooterQueen::PRJ_Spider_Shooter_Queen_C;

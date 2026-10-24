@@ -56,4 +56,4 @@ private:
 
 }}}}   // namespace Game::Art::Environments::SpaceRig
 
-using BP_LightPost01_C = Game::Art::Environments::SpaceRig::BP_LightPost01_C;
+using BP_LightPost01_C = ::Game::Art::Environments::SpaceRig::BP_LightPost01_C;

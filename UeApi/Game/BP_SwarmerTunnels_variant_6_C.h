@@ -14,7 +14,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace SwarmerTunnel {
 
-class BP_SwarmerTunnels_variant_6_C : public Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel::BP_SwarmerTunnelsBase_C
+class BP_SwarmerTunnels_variant_6_C : public ::Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel::BP_SwarmerTunnelsBase_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/SwarmerTunnel/BP_SwarmerTunnels_variant_6", "BP_SwarmerTunnels_variant_6_C");
@@ -53,6 +53,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "BAckTunnel2;SM_Prim_Cylinder_08sides";
         static constexpr const char* t3_0__UeScsNode = "d3e06a2bdac2144abbf51f386546f84c";
         static constexpr const char* e3_0__UeScsNode = "3b7f0cf4ed4cea44b7270c7d1c4731d4";
         static constexpr const char* t9_0__UeScsNode = "fb657d078d23474fb887b33f8e339eea";
@@ -79,4 +80,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel
 
-using BP_SwarmerTunnels_variant_6_C = Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel::BP_SwarmerTunnels_variant_6_C;
+using BP_SwarmerTunnels_variant_6_C = ::Game::LevelElements::RoomObjects::Hazards::SwarmerTunnel::BP_SwarmerTunnels_variant_6_C;

@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Throwable::Snowball
 
-using BP_Snowball_C = Game::WeaponsNTools::Throwable::Snowball::BP_Snowball_C;
+using BP_Snowball_C = ::Game::WeaponsNTools::Throwable::Snowball::BP_Snowball_C;

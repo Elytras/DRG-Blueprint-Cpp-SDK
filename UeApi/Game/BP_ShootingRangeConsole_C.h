@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace UI { namespace HUD_SpaceRig {
 
-class BP_ShootingRangeConsole_C : public Game::UI::HUD_SpaceRig::BP_TutorialConsole_C
+class BP_ShootingRangeConsole_C : public ::Game::UI::HUD_SpaceRig::BP_TutorialConsole_C
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/BP_ShootingRangeConsole", "BP_ShootingRangeConsole_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "TextRender";
+    };
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig
 
-using BP_ShootingRangeConsole_C = Game::UI::HUD_SpaceRig::BP_ShootingRangeConsole_C;
+using BP_ShootingRangeConsole_C = ::Game::UI::HUD_SpaceRig::BP_ShootingRangeConsole_C;

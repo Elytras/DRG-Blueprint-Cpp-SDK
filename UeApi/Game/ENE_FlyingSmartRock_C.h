@@ -101,4 +101,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Escort::FlyingSmartRocks
 
-using ENE_FlyingSmartRock_C = Game::GameElements::Objectives::Escort::FlyingSmartRocks::ENE_FlyingSmartRock_C;
+using ENE_FlyingSmartRock_C = ::Game::GameElements::Objectives::Escort::FlyingSmartRocks::ENE_FlyingSmartRock_C;

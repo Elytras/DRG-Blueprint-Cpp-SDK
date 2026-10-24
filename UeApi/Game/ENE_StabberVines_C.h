@@ -26,7 +26,7 @@ class ENE_StabberVines_C : public AEnemyPawn
 {
 public:
     UE_CLASS("/Game/Enemies/StabberVine/ENE_StabberVines", "ENE_StabberVines_C");
-    using ENE_StabberVine_Tentacle_C = Game::Enemies::StabberVine::ENE_StabberVine_Tentacle_C;
+    using ENE_StabberVine_Tentacle_C = ::Game::Enemies::StabberVine::ENE_StabberVine_Tentacle_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UOutlineComponent* outline;
     class UBillboardComponent* AttackPosition;
@@ -83,4 +83,4 @@ private:
 
 }}}   // namespace Game::Enemies::StabberVine
 
-using ENE_StabberVines_C = Game::Enemies::StabberVine::ENE_StabberVines_C;
+using ENE_StabberVines_C = ::Game::Enemies::StabberVine::ENE_StabberVines_C;

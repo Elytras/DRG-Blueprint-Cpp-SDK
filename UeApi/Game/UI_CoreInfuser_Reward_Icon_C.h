@@ -25,8 +25,8 @@ class UI_CoreInfuser_Reward_Icon_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/CoreInfuser/UI_CoreInfuser_Reward_Icon", "UI_CoreInfuser_Reward_Icon_C");
-    using ITM_CharacterIcon_C = Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using ITM_CharacterIcon_C = ::Game::UI::Global_UI_Elements::ITM_CharacterIcon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFade;
     UE_READONLY class UWidgetAnimation* AnimHover;
@@ -71,4 +71,4 @@ public:
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreInfuser
 
-using UI_CoreInfuser_Reward_Icon_C = Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Icon_C;
+using UI_CoreInfuser_Reward_Icon_C = ::Game::GameElements::GameEvents::CoreInfuser::UI_CoreInfuser_Reward_Icon_C;

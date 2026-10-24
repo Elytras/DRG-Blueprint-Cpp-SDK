@@ -32,4 +32,4 @@ public:
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage
 
-using UI_RoundedCanvas_C = Game::UI::_GlobalAssets::MaskedImage::UI_RoundedCanvas_C;
+using UI_RoundedCanvas_C = ::Game::UI::_GlobalAssets::MaskedImage::UI_RoundedCanvas_C;

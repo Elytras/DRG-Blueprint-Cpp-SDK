@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::GameElements::Campaign
 
-using CP_Retirement_Scout_C = Game::GameElements::Campaign::CP_Retirement_Scout_C;
+using CP_Retirement_Scout_C = ::Game::GameElements::Campaign::CP_Retirement_Scout_C;

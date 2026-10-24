@@ -16,11 +16,11 @@ namespace Game { namespace Landscape { class BP_ProceduralController_C; }}
 
 namespace Game { namespace Game {
 
-class BP_PlayerController_C : public Game::Game::BP_PlayerControllerBase_C
+class BP_PlayerController_C : public ::Game::Game::BP_PlayerControllerBase_C
 {
 public:
     UE_CLASS("/Game/Game/BP_PlayerController", "BP_PlayerController_C");
-    using BP_ProceduralController_C = Game::Landscape::BP_ProceduralController_C;
+    using BP_ProceduralController_C = ::Game::Landscape::BP_ProceduralController_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_PlayerController_C;
     BP_ProceduralController_C* ProceduralController;
     TMulticastInlineDelegate<void()> MainMenuRequested;
@@ -30,26 +30,9 @@ public:
     class UClass* MouseCursor_DO_NOT_DELETE;
     TMulticastInlineDelegate<void()> ToggleFPS;
     TMulticastInlineDelegate<void()> QuickCheatMenuRequested;
-    void UpdateTutorialComplete();
-    UE_PURE bool ShouldSkipEndscreen();
-    void DestroyCharacter();
-    void IsHUDVisible(bool& Visible);
-    void OnLoaded_0556572242FB261AF5947C9A16CF353A(class UObject* Loaded);
-    void InpActEvt_O_K2Node_InputKeyEvent_17(FKey Key);
-    void InpActEvt_PushToTalk_K2Node_InputActionEvent_3(FKey Key);
-    void InpActEvt_PushToTalk_K2Node_InputActionEvent_2(FKey Key);
-    void InpActEvt_MenuButton_K2Node_InputActionEvent_1(FKey Key);
-    void InpActEvt_Eight_K2Node_InputKeyEvent_16(FKey Key);
-    void InpActEvt_Eight_K2Node_InputKeyEvent_15(FKey Key);
-    void InpActEvt_Nine_K2Node_InputKeyEvent_14(FKey Key);
-    void InpActEvt_Nine_K2Node_InputKeyEvent_13(FKey Key);
-    void InpActEvt_Zero_K2Node_InputKeyEvent_12(FKey Key);
-    void InpActEvt_Zero_K2Node_InputKeyEvent_11(FKey Key);
-    void InpActEvt_Chat_K2Node_InputActionEvent_0(FKey Key);
-    void InpActEvt_Gamepad_LeftThumbstick_K2Node_InputKeyEvent_10(FKey Key);
-    void InpActEvt_Gamepad_LeftThumbstick_K2Node_InputKeyEvent_9(FKey Key);
     void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_8(FKey Key);
     void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_7(FKey Key);
+    void InpActEvt_Gamepad_LeftThumbstick_K2Node_InputKeyEvent_9(FKey Key);
     void InpActEvt_H_K2Node_InputKeyEvent_6(FKey Key);
     void InpActEvt_Subtract_K2Node_InputKeyEvent_5(FKey Key);
     void InpActEvt_Add_K2Node_InputKeyEvent_4(FKey Key);
@@ -70,6 +53,23 @@ public:
     void Receive_EndLevel_WaitForData(bool areObjectivesCompleted_Receive_EndLevel_WaitForData, int numberOfPlayersInPod_Receive_EndLevel_WaitForData);
     UE_SERVER UE_RELIABLE void Server_SetLag();
     void ExecuteUbergraph_BP_PlayerController(int EntryPoint);
+    void UpdateTutorialComplete();
+    UE_PURE bool ShouldSkipEndscreen();
+    void DestroyCharacter();
+    void IsHUDVisible(bool& Visible);
+    void OnLoaded_0556572242FB261AF5947C9A16CF353A(class UObject* Loaded);
+    void InpActEvt_O_K2Node_InputKeyEvent_17(FKey Key);
+    void InpActEvt_PushToTalk_K2Node_InputActionEvent_3(FKey Key);
+    void InpActEvt_PushToTalk_K2Node_InputActionEvent_2(FKey Key);
+    void InpActEvt_MenuButton_K2Node_InputActionEvent_1(FKey Key);
+    void InpActEvt_Eight_K2Node_InputKeyEvent_16(FKey Key);
+    void InpActEvt_Eight_K2Node_InputKeyEvent_15(FKey Key);
+    void InpActEvt_Nine_K2Node_InputKeyEvent_14(FKey Key);
+    void InpActEvt_Nine_K2Node_InputKeyEvent_13(FKey Key);
+    void InpActEvt_Zero_K2Node_InputKeyEvent_12(FKey Key);
+    void InpActEvt_Zero_K2Node_InputKeyEvent_11(FKey Key);
+    void InpActEvt_Chat_K2Node_InputActionEvent_0(FKey Key);
+    void InpActEvt_Gamepad_LeftThumbstick_K2Node_InputKeyEvent_10(FKey Key);
 private:
     struct UeMarkers
     {
@@ -84,4 +84,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_PlayerController_C = Game::Game::BP_PlayerController_C;
+using BP_PlayerController_C = ::Game::Game::BP_PlayerController_C;

@@ -19,7 +19,7 @@ class Check_ServerWorkEnvironment_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_ServerList/Check_ServerWorkEnvironment", "Check_ServerWorkEnvironment_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* CheckBox;
     class UButton* ClickButton;
@@ -39,4 +39,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_ServerList
 
-using Check_ServerWorkEnvironment_C = Game::UI::Menu_ServerList::Check_ServerWorkEnvironment_C;
+using Check_ServerWorkEnvironment_C = ::Game::UI::Menu_ServerList::Check_ServerWorkEnvironment_C;

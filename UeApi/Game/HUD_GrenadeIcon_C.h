@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_GrenadeIcon_C = Game::UI::MainOnscreenHUD::HUD_GrenadeIcon_C;
+using HUD_GrenadeIcon_C = ::Game::UI::MainOnscreenHUD::HUD_GrenadeIcon_C;

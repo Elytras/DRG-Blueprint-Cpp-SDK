@@ -23,8 +23,8 @@ class UI_RandomizeLoadoutWithUndo_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/UI_RandomizeLoadoutWithUndo", "UI_RandomizeLoadoutWithUndo_C");
-    using UI_RandomizeIcon_C = Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
-    using UI_UndoIcon_C = Game::UI::Menu_Wardrobe::UI_UndoIcon_C;
+    using UI_RandomizeIcon_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeIcon_C;
+    using UI_UndoIcon_C = ::Game::UI::Menu_Wardrobe::UI_UndoIcon_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* OnHoverV2;
     UE_READONLY class UWidgetAnimation* OnHover;
@@ -71,4 +71,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Wardrobe
 
-using UI_RandomizeLoadoutWithUndo_C = Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;
+using UI_RandomizeLoadoutWithUndo_C = ::Game::UI::Menu_Wardrobe::UI_RandomizeLoadoutWithUndo_C;

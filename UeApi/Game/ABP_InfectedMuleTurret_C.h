@@ -52,4 +52,4 @@ public:
 
 }}}}   // namespace Game::Enemies::MuleInfected::Animations
 
-using ABP_InfectedMuleTurret_C = Game::Enemies::MuleInfected::Animations::ABP_InfectedMuleTurret_C;
+using ABP_InfectedMuleTurret_C = ::Game::Enemies::MuleInfected::Animations::ABP_InfectedMuleTurret_C;

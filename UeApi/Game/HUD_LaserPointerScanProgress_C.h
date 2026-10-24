@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer
 
-using HUD_LaserPointerScanProgress_C = Game::WeaponsNTools::LaserPointer::HUD_LaserPointerScanProgress_C;
+using HUD_LaserPointerScanProgress_C = ::Game::WeaponsNTools::LaserPointer::HUD_LaserPointerScanProgress_C;

@@ -19,11 +19,11 @@ namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher { name
 
 namespace Game { namespace WeaponsNTools { namespace MicroMissileLauncher { namespace UI {
 
-class WeaponDisplay_MicroMissileLauncher_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_MicroMissileLauncher_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicroMissileLauncher/UI/WeaponDisplay_MicroMissileLauncher", "WeaponDisplay_MicroMissileLauncher_C");
-    using UI_MicroMissileLauncher_Charge_C = Game::WeaponsNTools::MicroMissileLauncher::UI::UI_MicroMissileLauncher_Charge_C;
+    using UI_MicroMissileLauncher_Charge_C = ::Game::WeaponsNTools::MicroMissileLauncher::UI::UI_MicroMissileLauncher_Charge_C;
     FPointerToUberGraphFrame UberGraphFrame_WeaponDisplay_MicroMissileLauncher_C;
     class UTextBlock* AmmoCount;
     class UHorizontalBox* ChargeBox;
@@ -67,4 +67,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::MicroMissileLauncher::UI
 
-using WeaponDisplay_MicroMissileLauncher_C = Game::WeaponsNTools::MicroMissileLauncher::UI::WeaponDisplay_MicroMissileLauncher_C;
+using WeaponDisplay_MicroMissileLauncher_C = ::Game::WeaponsNTools::MicroMissileLauncher::UI::WeaponDisplay_MicroMissileLauncher_C;

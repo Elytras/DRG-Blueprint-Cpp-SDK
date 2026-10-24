@@ -18,12 +18,12 @@ class Options_SonyInput_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/SonyOptions/Options_SonyINput", "Options_SonyInput_C");
-    using Basic_ButtonWithControls_C = Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Options_SonyInputBoolOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputBoolOption_C;
-    using Options_SonyInputFloatOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputFloatOption_C;
-    using Options_SonyInputLightOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputLightOption_C;
-    using Options_SonyInputMotionAxisMappingOption_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInputMotionAxisMappingOption_C;
+    using Basic_ButtonWithControls_C = ::Game::UI::Art::WidgetParts::Basic_ButtonWithControls_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Options_SonyInputBoolOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputBoolOption_C;
+    using Options_SonyInputFloatOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputFloatOption_C;
+    using Options_SonyInputLightOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputLightOption_C;
+    using Options_SonyInputMotionAxisMappingOption_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInputMotionAxisMappingOption_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ButtonWithControls_C* BTN_DualSense_ResetToDefaults;
     Basic_ButtonWithControls_C* BTN_Motion_ResetToDefaults;
@@ -85,4 +85,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Options::SonyOptions
 
-using Options_SonyInput_C = Game::UI::Menu_Options::SonyOptions::Options_SonyInput_C;
+using Options_SonyInput_C = ::Game::UI::Menu_Options::SonyOptions::Options_SonyInput_C;

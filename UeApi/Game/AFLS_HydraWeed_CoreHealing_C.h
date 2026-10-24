@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Enemies::HydraWeed
 
-using AFLS_HydraWeed_CoreHealing_C = Game::Enemies::HydraWeed::AFLS_HydraWeed_CoreHealing_C;
+using AFLS_HydraWeed_CoreHealing_C = ::Game::Enemies::HydraWeed::AFLS_HydraWeed_CoreHealing_C;

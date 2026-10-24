@@ -34,4 +34,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using Loadout_BP_Sentry_C = Game::WeaponsNTools::SentryGun::Loadout_BP_Sentry_C;
+using Loadout_BP_Sentry_C = ::Game::WeaponsNTools::SentryGun::Loadout_BP_Sentry_C;

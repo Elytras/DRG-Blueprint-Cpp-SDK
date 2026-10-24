@@ -17,11 +17,11 @@ namespace Game { namespace GameElements { namespace Objectives { namespace Facil
 
 namespace Game { namespace GameElements { namespace Objectives { namespace Facility { namespace Caretaker {
 
-class BP_CaretakerTurretAction_C : public Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C
+class BP_CaretakerTurretAction_C : public ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerActionBase_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/Caretaker/BP_CaretakerTurretAction", "BP_CaretakerTurretAction_C");
-    using BP_FacilityTurretDrone_C = Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_C;
+    using BP_FacilityTurretDrone_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::BP_FacilityTurretDrone_C;
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<FTransform> TurretTransforms;
     TArray<class UClass*> ChosenTurrets;
@@ -58,4 +58,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::Caretaker
 
-using BP_CaretakerTurretAction_C = Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerTurretAction_C;
+using BP_CaretakerTurretAction_C = ::Game::GameElements::Objectives::Facility::Caretaker::BP_CaretakerTurretAction_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Spider::Tank
 
-using STE_RadioactiveTank_Radiation_C = Game::Enemies::Spider::Tank::STE_RadioactiveTank_Radiation_C;
+using STE_RadioactiveTank_Radiation_C = ::Game::Enemies::Spider::Tank::STE_RadioactiveTank_Radiation_C;

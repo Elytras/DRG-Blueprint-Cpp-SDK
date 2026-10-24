@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::Critters::Prospector::Assets
 
-using ABP_Prospector_C = Game::Critters::Prospector::Assets::ABP_Prospector_C;
+using ABP_Prospector_C = ::Game::Critters::Prospector::Assets::ABP_Prospector_C;

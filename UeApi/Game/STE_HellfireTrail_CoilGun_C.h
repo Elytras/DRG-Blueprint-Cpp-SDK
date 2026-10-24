@@ -22,4 +22,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::CoilGun
 
-using STE_HellfireTrail_CoilGun_C = Game::WeaponsNTools::CoilGun::STE_HellfireTrail_CoilGun_C;
+using STE_HellfireTrail_CoilGun_C = ::Game::WeaponsNTools::CoilGun::STE_HellfireTrail_CoilGun_C;

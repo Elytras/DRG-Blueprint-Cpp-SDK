@@ -34,8 +34,8 @@ class BP_Pipeline_Segment_C : public APipelineSegment
 {
 public:
     UE_CLASS("/Game/LevelElements/Refinery/Pipeline/BP_Pipeline_Segment", "BP_Pipeline_Segment_C");
-    using BP_AttackablePiplinesegmentActor_C = Game::LevelElements::Refinery::Pipeline::BP_AttackablePiplinesegmentActor_C;
-    using BP_Pipeline_Movement_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Movement_C;
+    using BP_AttackablePiplinesegmentActor_C = ::Game::LevelElements::Refinery::Pipeline::BP_AttackablePiplinesegmentActor_C;
+    using BP_Pipeline_Movement_C = ::Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Movement_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UTerrainScannerStaticMesh* TerrainScannerStaticMesh;
     class UTerrainScannerSplineMesh* TerrainScannerSplineMesh;
@@ -130,6 +130,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DroneUseComponent DroneUseComponent;/Script/FSD.PathfinderSplineSegmentCollisionComponent PathfinderComponent;/Script/Engine.SceneComponent DefaultSceneRoot;/Script/FSD.SimpleHealthComponent SegmentHealthComponent;/Script/FSD.SingleUsableComponent ActivateSegmentUsable;/Script/FSD.SingleUsableComponent RepairSegmentUsable;/Script/Engine.SkeletalMeshComponent EndPostMesh;/Script/Engine.SkeletalMeshComponent PipelineCapMesh;/Script/Engine.SplineComponent MovementSpline;/Script/Engine.SplineComponent MovementSplineLeft;/Script/Engine.SplineComponent MovementSplineRight;/Script/Engine.SplineMeshComponent PipelineMesh;/Script/Engine.SplineMeshComponent PipelineOuterMesh;/Script/Engine.StaticMeshComponent EndPostMeshStatic;/Script/FSD.TrackBuilderUsable NextSegmentUsable";
+        static constexpr const char* UeTemplateSubobjects = "/Game/LevelElements/Refinery/Pipeline/BP_Pipeline_Build_Hologram.BP_Pipeline_Build_Hologram_C ActivateHologram_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_Pipeline_Build_Hologram_C_CAT;/Game/LevelElements/Refinery/BP_Pipeline_StatusLamp.BP_Pipeline_StatusLamp_C BP_StatusLamp_GEN_VARIABLE:BP_StatusLamp_GEN_VARIABLE_BP_Pipeline_StatusLamp_C_CAT";
         static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "759ff286ae926e4c80fe09bef82eda9d";
         static constexpr const char* TerrainScannerSplineMesh__UeScsNode = "621e1becd9720c4d98e7d4c496deab33";
         static constexpr const char* ActivateLightCone__UeScsNode = "9fd12444ff812e46b2dffbebe0ed4cb1";
@@ -171,4 +172,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::Refinery::Pipeline
 
-using BP_Pipeline_Segment_C = Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Segment_C;
+using BP_Pipeline_Segment_C = ::Game::LevelElements::Refinery::Pipeline::BP_Pipeline_Segment_C;

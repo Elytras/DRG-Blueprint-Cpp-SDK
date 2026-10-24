@@ -26,4 +26,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_MissionMapIcon_Objective_C = Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_Objective_C;
+using ITM_MissionMapIcon_Objective_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_MissionMapIcon_Objective_C;

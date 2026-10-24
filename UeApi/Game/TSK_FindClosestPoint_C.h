@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::AI::Tasks
 
-using TSK_FindClosestPoint_C = Game::AI::Tasks::TSK_FindClosestPoint_C;
+using TSK_FindClosestPoint_C = ::Game::AI::Tasks::TSK_FindClosestPoint_C;

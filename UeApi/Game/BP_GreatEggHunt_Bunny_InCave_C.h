@@ -79,4 +79,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Holidays::Easter
 
-using BP_GreatEggHunt_Bunny_InCave_C = Game::GameElements::Holidays::Easter::BP_GreatEggHunt_Bunny_InCave_C;
+using BP_GreatEggHunt_Bunny_InCave_C = ::Game::GameElements::Holidays::Easter::BP_GreatEggHunt_Bunny_InCave_C;

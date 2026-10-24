@@ -25,4 +25,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::Geyser
 
-using BP_Geyser_Base_C = Game::LevelElements::RoomObjects::Hazards::Geyser::BP_Geyser_Base_C;
+using BP_Geyser_Base_C = ::Game::LevelElements::RoomObjects::Hazards::Geyser::BP_Geyser_Base_C;

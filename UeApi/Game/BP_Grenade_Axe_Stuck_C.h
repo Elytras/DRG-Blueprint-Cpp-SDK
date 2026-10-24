@@ -73,4 +73,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::Axe
 
-using BP_Grenade_Axe_Stuck_C = Game::WeaponsNTools::Grenades::Axe::BP_Grenade_Axe_Stuck_C;
+using BP_Grenade_Axe_Stuck_C = ::Game::WeaponsNTools::Grenades::Axe::BP_Grenade_Axe_Stuck_C;

@@ -36,4 +36,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Objectives::Salvage
 
-using APB_Uplink_C = Game::GameElements::Objectives::Salvage::APB_Uplink_C;
+using APB_Uplink_C = ::Game::GameElements::Objectives::Salvage::APB_Uplink_C;

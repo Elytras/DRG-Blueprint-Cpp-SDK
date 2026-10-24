@@ -25,7 +25,7 @@ class BP_SpaceRig_Gamemode_C : public AFSDGameModeSpaceRig
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_SpaceRig_GamemOde", "BP_SpaceRig_Gamemode_C");
-    using BP_GameState_SpaceRig_C = Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
+    using BP_GameState_SpaceRig_C = ::Game::Game::SpaceRig::BP_GameState_SpaceRig_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UDifficultyManager* DifficultyManager;
     class USceneComponent* DefaultSceneRoot;
@@ -59,4 +59,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_SpaceRig_Gamemode_C = Game::Game::SpaceRig::BP_SpaceRig_Gamemode_C;
+using BP_SpaceRig_Gamemode_C = ::Game::Game::SpaceRig::BP_SpaceRig_Gamemode_C;

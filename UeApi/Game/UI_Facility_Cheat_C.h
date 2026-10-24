@@ -20,8 +20,8 @@ class UI_Facility_Cheat_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_Facility_Cheat", "UI_Facility_Cheat_C");
-    using BP_Facility_PowerStation_GeneratorBase_C = Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using BP_Facility_PowerStation_GeneratorBase_C = ::Game::GameElements::Objectives::Facility::ShieldGenerator::BP_Facility_PowerStation_GeneratorBase_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     CheatMenu_BasicButtonWText_C* CheatMenu_CallTetherdispenser1;
     CheatMenu_BasicButtonWText_C* CheatMenu_CallTetherdispenser2;
@@ -59,4 +59,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_Facility_Cheat_C = Game::UI::Menu_Cheats::MissionCheat::UI_Facility_Cheat_C;
+using UI_Facility_Cheat_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_Facility_Cheat_C;

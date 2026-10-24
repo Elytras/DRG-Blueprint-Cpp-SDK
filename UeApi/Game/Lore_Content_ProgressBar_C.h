@@ -19,7 +19,7 @@ class Lore_Content_ProgressBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Lore_Content_ProgressBar", "Lore_Content_ProgressBar_C");
-    using Basic_Menu_ColorBarVertical_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
+    using Basic_Menu_ColorBarVertical_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBarVertical_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBarVertical_C* Basic_Menu_ColorBarVertical;
     class UTextBlock* MainText;
@@ -37,4 +37,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Lore_Content_ProgressBar_C = Game::UI::Menu_MinersManual::Lore_Content_ProgressBar_C;
+using Lore_Content_ProgressBar_C = ::Game::UI::Menu_MinersManual::Lore_Content_ProgressBar_C;

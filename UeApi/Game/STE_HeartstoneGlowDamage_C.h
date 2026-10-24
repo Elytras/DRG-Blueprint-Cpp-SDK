@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using STE_HeartstoneGlowDamage_C = Game::GameElements::Objectives::Escort::STE_HeartstoneGlowDamage_C;
+using STE_HeartstoneGlowDamage_C = ::Game::GameElements::Objectives::Escort::STE_HeartstoneGlowDamage_C;

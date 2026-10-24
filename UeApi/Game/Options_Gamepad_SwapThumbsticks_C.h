@@ -16,7 +16,7 @@ class Options_Gamepad_SwapThumbsticks_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Keybindings/Options_Gamepad_SwapThumbsticks", "Options_Gamepad_SwapThumbsticks_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* Basic_CheckBox;
     void ExecuteUbergraph_Options_Gamepad_SwapThumbsticks(int EntryPoint);
@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::UI::Keybindings
 
-using Options_Gamepad_SwapThumbsticks_C = Game::UI::Keybindings::Options_Gamepad_SwapThumbsticks_C;
+using Options_Gamepad_SwapThumbsticks_C = ::Game::UI::Keybindings::Options_Gamepad_SwapThumbsticks_C;

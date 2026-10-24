@@ -81,4 +81,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::QuakeCrevasse
 
-using BP_MagmaQuakeCrevasse_Trap_C = Game::LevelElements::RoomObjects::Hazards::QuakeCrevasse::BP_MagmaQuakeCrevasse_Trap_C;
+using BP_MagmaQuakeCrevasse_Trap_C = ::Game::LevelElements::RoomObjects::Hazards::QuakeCrevasse::BP_MagmaQuakeCrevasse_Trap_C;

@@ -17,4 +17,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::PerkFX
 
-using AFE_FP_ShieldBoost_C = Game::GameElements::KPI::Perks::PerkFX::AFE_FP_ShieldBoost_C;
+using AFE_FP_ShieldBoost_C = ::Game::GameElements::KPI::Perks::PerkFX::AFE_FP_ShieldBoost_C;

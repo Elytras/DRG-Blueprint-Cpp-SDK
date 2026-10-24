@@ -38,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using BP_EletrocutedSentry_C = Game::WeaponsNTools::SentryGun::BP_EletrocutedSentry_C;
+using BP_EletrocutedSentry_C = ::Game::WeaponsNTools::SentryGun::BP_EletrocutedSentry_C;

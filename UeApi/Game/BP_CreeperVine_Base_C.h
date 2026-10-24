@@ -79,4 +79,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::ThornBranches
 
-using BP_CreeperVine_Base_C = Game::LevelElements::RoomObjects::ThornBranches::BP_CreeperVine_Base_C;
+using BP_CreeperVine_Base_C = ::Game::LevelElements::RoomObjects::ThornBranches::BP_CreeperVine_Base_C;

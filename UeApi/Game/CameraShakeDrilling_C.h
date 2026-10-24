@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShakeDrilling_C = Game::Character::Camera::CameraShakes::CameraShakeDrilling_C;
+using CameraShakeDrilling_C = ::Game::Character::Camera::CameraShakes::CameraShakeDrilling_C;

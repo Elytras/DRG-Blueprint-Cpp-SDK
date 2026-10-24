@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::Assets
 
-using ABP_ExcavationMount_C = Game::GameElements::Objectives::Excavation::Assets::ABP_ExcavationMount_C;
+using ABP_ExcavationMount_C = ::Game::GameElements::Objectives::Excavation::Assets::ABP_ExcavationMount_C;

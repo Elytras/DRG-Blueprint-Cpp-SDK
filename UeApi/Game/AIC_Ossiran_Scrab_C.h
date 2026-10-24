@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab
 
-using AIC_Ossiran_Scrab_C = Game::Enemies::Ossiran::Scrab::AIC_Ossiran_Scrab_C;
+using AIC_Ossiran_Scrab_C = ::Game::Enemies::Ossiran::Scrab::AIC_Ossiran_Scrab_C;

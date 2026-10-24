@@ -23,4 +23,4 @@ private:
 
 }}}   // namespace Game::GameElements::MovieMode
 
-using BP_MovieMode_VanityCharacter_C = Game::GameElements::MovieMode::BP_MovieMode_VanityCharacter_C;
+using BP_MovieMode_VanityCharacter_C = ::Game::GameElements::MovieMode::BP_MovieMode_VanityCharacter_C;

@@ -24,7 +24,7 @@ class OnScreenIndicator_UsableItem_WithDescription_C : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_UsableItem_WithDescription", "OnScreenIndicator_UsableItem_WithDescription_C");
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* fade;
     class UVerticalBox* holder;
@@ -54,4 +54,4 @@ private:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_UsableItem_WithDescription_C = Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_WithDescription_C;
+using OnScreenIndicator_UsableItem_WithDescription_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_UsableItem_WithDescription_C;

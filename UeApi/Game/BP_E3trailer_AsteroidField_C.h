@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Art::Cinematics::E3trailer2017
 
-using BP_E3trailer_AsteroidField_C = Game::Art::Cinematics::E3trailer2017::BP_E3trailer_AsteroidField_C;
+using BP_E3trailer_AsteroidField_C = ::Game::Art::Cinematics::E3trailer2017::BP_E3trailer_AsteroidField_C;

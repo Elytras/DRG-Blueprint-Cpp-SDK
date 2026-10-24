@@ -32,4 +32,4 @@ private:
 
 }}}   // namespace Game::GameElements::Missions
 
-using BP_TutorialHeadline_C = Game::GameElements::Missions::BP_TutorialHeadline_C;
+using BP_TutorialHeadline_C = ::Game::GameElements::Missions::BP_TutorialHeadline_C;

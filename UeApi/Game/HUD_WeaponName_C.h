@@ -20,7 +20,7 @@ class HUD_WeaponName_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_WeaponName", "HUD_WeaponName_C");
-    using Basic_HUD_BracketWindowBig_Single_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
+    using Basic_HUD_BracketWindowBig_Single_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_Single_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     class UTextBlock* DATA_ItemCategory;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_WeaponName_C = Game::UI::MainOnscreenHUD::HUD_WeaponName_C;
+using HUD_WeaponName_C = ::Game::UI::MainOnscreenHUD::HUD_WeaponName_C;

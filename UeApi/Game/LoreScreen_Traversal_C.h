@@ -16,13 +16,13 @@ namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScre
 
 namespace Game { namespace UI { namespace Menu_MinersManual { namespace InfoScreens { namespace Basics {
 
-class LoreScreen_Traversal_C : public Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
+class LoreScreen_Traversal_C : public ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Master_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/InfoScreens/Basics/LoreScreen_Traversal", "LoreScreen_Traversal_C");
-    using Basic_IconWithOutline_C = Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
-    using LoreScreen_Template_C = Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
-    using Lore_Container_PictureOverText_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_PictureOverText_C;
+    using Basic_IconWithOutline_C = ::Game::UI::Art::WidgetParts::Basic_IconWithOutline_C;
+    using LoreScreen_Template_C = ::Game::UI::Menu_MinersManual::InfoScreens::LoreScreen_Template_C;
+    using Lore_Container_PictureOverText_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_PictureOverText_C;
     FPointerToUberGraphFrame UberGraphFrame_LoreScreen_Traversal_C;
     Basic_IconWithOutline_C* DrillerIcon;
     Basic_IconWithOutline_C* EngineerIcon;
@@ -50,4 +50,4 @@ private:
 
 }}}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens::Basics
 
-using LoreScreen_Traversal_C = Game::UI::Menu_MinersManual::InfoScreens::Basics::LoreScreen_Traversal_C;
+using LoreScreen_Traversal_C = ::Game::UI::Menu_MinersManual::InfoScreens::Basics::LoreScreen_Traversal_C;

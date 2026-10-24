@@ -25,4 +25,4 @@ public:
 
 }}}   // namespace Game::UI::OnScreenIndicators
 
-using OnScreenIndicator_SlowGrenade_C = Game::UI::OnScreenIndicators::OnScreenIndicator_SlowGrenade_C;
+using OnScreenIndicator_SlowGrenade_C = ::Game::UI::OnScreenIndicators::OnScreenIndicator_SlowGrenade_C;

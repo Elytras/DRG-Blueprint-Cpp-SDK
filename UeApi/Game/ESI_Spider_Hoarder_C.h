@@ -11,7 +11,7 @@ class USkeletalMeshComponent;
 
 namespace Game { namespace Critters { namespace LootBug { namespace Hoarder {
 
-class ESI_Spider_Hoarder_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Spider_Hoarder_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Critters/LootBug/Hoarder/ESI_Spider_Hoarder", "ESI_Spider_Hoarder_C");
@@ -20,6 +20,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* SK_HoarderBack_A__UeScsNode = "393ef7de4183ed45ab58ca45c725626c";
         static constexpr const char* SK_HoarderHead_A__UeScsNode = "270a2b6b1641864b87a83f5f801a0094";
     };
@@ -27,4 +28,4 @@ private:
 
 }}}}   // namespace Game::Critters::LootBug::Hoarder
 
-using ESI_Spider_Hoarder_C = Game::Critters::LootBug::Hoarder::ESI_Spider_Hoarder_C;
+using ESI_Spider_Hoarder_C = ::Game::Critters::LootBug::Hoarder::ESI_Spider_Hoarder_C;

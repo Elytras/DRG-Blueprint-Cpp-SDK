@@ -29,11 +29,11 @@ class WND_Skins_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/WND_Skins", "WND_Skins_C");
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using ITM_SkinIcon_C = Game::UI::Menu_Loadout::ITM_SkinIcon_C;
-    using ITM_SkinItem_C = Game::UI::Menu_Loadout::ITM_SkinItem_C;
-    using UI_FocusableCanvas_C = Game::UI::Global_UI_Elements::UI_FocusableCanvas_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using ITM_SkinIcon_C = ::Game::UI::Menu_Loadout::ITM_SkinIcon_C;
+    using ITM_SkinItem_C = ::Game::UI::Menu_Loadout::ITM_SkinItem_C;
+    using UI_FocusableCanvas_C = ::Game::UI::Global_UI_Elements::UI_FocusableCanvas_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* ButtonHover;
     UE_READONLY class UWidgetAnimation* WindowAppear;
@@ -89,4 +89,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using WND_Skins_C = Game::UI::Menu_Loadout::WND_Skins_C;
+using WND_Skins_C = ::Game::UI::Menu_Loadout::WND_Skins_C;

@@ -23,8 +23,8 @@ class Basic_ToolTip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/ToolTips/Basic_ToolTip", "Basic_ToolTip_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Menu_MinimalWindow_C = Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Menu_MinimalWindow_C = ::Game::UI::Art::WidgetParts::Basic_Menu_MinimalWindow_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimFadeIn;
     UE_READONLY class UWidgetAnimation* Intro;
@@ -61,4 +61,4 @@ private:
 
 }}}   // namespace Game::UI::ToolTips
 
-using Basic_ToolTip_C = Game::UI::ToolTips::Basic_ToolTip_C;
+using Basic_ToolTip_C = ::Game::UI::ToolTips::Basic_ToolTip_C;

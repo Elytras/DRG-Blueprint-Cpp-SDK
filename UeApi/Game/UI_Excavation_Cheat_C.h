@@ -14,12 +14,12 @@ namespace Game { namespace UI { namespace Menu_Cheats { class CheatMenu_BasicBut
 
 namespace Game { namespace UI { namespace Menu_Cheats { namespace MissionCheat {
 
-class UI_Excavation_Cheat_C : public Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C
+class UI_Excavation_Cheat_C : public ::Game::UI::Menu_Cheats::MissionCheat::UI_MissionCheat_Base_C
 {
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/MissionCheat/UI_Excavation_Cheat", "UI_Excavation_Cheat_C");
-    using BP_AmberDepositBase_C = Game::GameElements::Objectives::Excavation::AmberDeposits::BP_AmberDepositBase_C;
-    using CheatMenu_BasicButtonWText_C = Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
+    using BP_AmberDepositBase_C = ::Game::GameElements::Objectives::Excavation::AmberDeposits::BP_AmberDepositBase_C;
+    using CheatMenu_BasicButtonWText_C = ::Game::UI::Menu_Cheats::CheatMenu_BasicButtonWText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UVerticalBox* Left;
     class UVerticalBox* Middle;
@@ -37,4 +37,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_Cheats::MissionCheat
 
-using UI_Excavation_Cheat_C = Game::UI::Menu_Cheats::MissionCheat::UI_Excavation_Cheat_C;
+using UI_Excavation_Cheat_C = ::Game::UI::Menu_Cheats::MissionCheat::UI_Excavation_Cheat_C;

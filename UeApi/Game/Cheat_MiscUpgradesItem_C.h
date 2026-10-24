@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_MiscUpgradesItem_C = Game::UI::Menu_Cheats::Cheat_MiscUpgradesItem_C;
+using Cheat_MiscUpgradesItem_C = ::Game::UI::Menu_Cheats::Cheat_MiscUpgradesItem_C;

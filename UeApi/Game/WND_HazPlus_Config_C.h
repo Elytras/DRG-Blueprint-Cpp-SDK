@@ -20,8 +20,8 @@ class WND_HazPlus_Config_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/WND_HazPlus_Config", "WND_HazPlus_Config_C");
-    using Basic_FlatButton_C = Game::UI::Art::WidgetParts::Basic_FlatButton_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_FlatButton_C = ::Game::UI::Art::WidgetParts::Basic_FlatButton_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Basic_Label;
     Basic_FlatButton_C* BTN_Cancel;
@@ -46,4 +46,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using WND_HazPlus_Config_C = Game::UI::Menu_MissionSelectionMK3::WND_HazPlus_Config_C;
+using WND_HazPlus_Config_C = ::Game::UI::Menu_MissionSelectionMK3::WND_HazPlus_Config_C;

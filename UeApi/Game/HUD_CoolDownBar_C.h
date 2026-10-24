@@ -46,4 +46,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_CoolDownBar_C = Game::WeaponsNTools::_Crosshairs::HUD_CoolDownBar_C;
+using HUD_CoolDownBar_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CoolDownBar_C;

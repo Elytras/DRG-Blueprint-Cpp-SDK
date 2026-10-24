@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_CareTaker_Impact_C = Game::Character::Camera::CameraShakes::CameraShake_CareTaker_Impact_C;
+using CameraShake_CareTaker_Impact_C = ::Game::Character::Camera::CameraShakes::CameraShake_CareTaker_Impact_C;

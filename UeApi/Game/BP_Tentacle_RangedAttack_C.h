@@ -27,4 +27,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles
 
-using BP_Tentacle_RangedAttack_C = Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Tentacle_RangedAttack_C;
+using BP_Tentacle_RangedAttack_C = ::Game::GameElements::Objectives::Facility::DefensiveTentacles::BP_Tentacle_RangedAttack_C;

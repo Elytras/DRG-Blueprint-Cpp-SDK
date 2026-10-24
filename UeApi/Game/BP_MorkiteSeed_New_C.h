@@ -64,4 +64,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_MorkiteSeed_New_C = Game::GameElements::Objectives::DeepScan::BP_MorkiteSeed_New_C;
+using BP_MorkiteSeed_New_C = ::Game::GameElements::Objectives::DeepScan::BP_MorkiteSeed_New_C;

@@ -14,7 +14,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace MicrowaveGun {
 
-class WeaponDisplay_MicrowaveGun_AmmoCounter_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_MicrowaveGun_AmmoCounter_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/MicrowaveGun/WeaponDisplay_MicrowaveGun_AmmoCounter", "WeaponDisplay_MicrowaveGun_AmmoCounter_C");
@@ -50,4 +50,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::MicrowaveGun
 
-using WeaponDisplay_MicrowaveGun_AmmoCounter_C = Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_AmmoCounter_C;
+using WeaponDisplay_MicrowaveGun_AmmoCounter_C = ::Game::WeaponsNTools::MicrowaveGun::WeaponDisplay_MicrowaveGun_AmmoCounter_C;

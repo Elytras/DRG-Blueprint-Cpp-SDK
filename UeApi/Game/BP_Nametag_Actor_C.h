@@ -31,4 +31,4 @@ private:
 
 }}   // namespace Game::UI
 
-using BP_Nametag_Actor_C = Game::UI::BP_Nametag_Actor_C;
+using BP_Nametag_Actor_C = ::Game::UI::BP_Nametag_Actor_C;

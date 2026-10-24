@@ -25,13 +25,13 @@ class _Menu_JobsV3_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Jobs/_Menu_JobsV3", "_Menu_JobsV3_C");
-    using Basic_ScrollBarBox_C = Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
-    using ITM_Job_Section_Header_C = Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Job_Section_Header_C;
-    using Jobs_Header_Assignment_Slot_C = Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_Header_Assignment_Slot_C;
-    using MENU_SpaceRigTemplate_C = Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
-    using WND_JobsEntryV2_C = Game::UI::Menu_Jobs::WND_JobsEntryV2_C;
-    using WND_JobsEntry_WeeklyV2_C = Game::UI::Menu_Jobs::WND_JobsEntry_WeeklyV2_C;
-    using WND_Jobs_Entry_Base_C = Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C;
+    using Basic_ScrollBarBox_C = ::Game::UI::Art::WidgetParts::Basic_ScrollBarBox_C;
+    using ITM_Job_Section_Header_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::ITM_Job_Section_Header_C;
+    using Jobs_Header_Assignment_Slot_C = ::Game::UI::Menu_Jobs::JobsV2_Redesign::Jobs_Header_Assignment_Slot_C;
+    using MENU_SpaceRigTemplate_C = ::Game::UI::Menu_TopBar::MENU_SpaceRigTemplate_C;
+    using WND_JobsEntryV2_C = ::Game::UI::Menu_Jobs::WND_JobsEntryV2_C;
+    using WND_JobsEntry_WeeklyV2_C = ::Game::UI::Menu_Jobs::WND_JobsEntry_WeeklyV2_C;
+    using WND_Jobs_Entry_Base_C = ::Game::UI::Menu_Jobs::WND_Jobs_Entry_Base_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox;
     Basic_ScrollBarBox_C* Basic_ScrollBarBox_1;
@@ -66,4 +66,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Jobs
 
-using _Menu_JobsV3_C = Game::UI::Menu_Jobs::_Menu_JobsV3_C;
+using _Menu_JobsV3_C = ::Game::UI::Menu_Jobs::_Menu_JobsV3_C;

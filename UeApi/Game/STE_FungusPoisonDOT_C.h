@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus
 
-using STE_FungusPoisonDOT_C = Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus::STE_FungusPoisonDOT_C;
+using STE_FungusPoisonDOT_C = ::Game::LevelElements::RoomObjects::Hazards::PoisonGasFungus::STE_FungusPoisonDOT_C;

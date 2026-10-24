@@ -28,7 +28,7 @@ class WPN_PlasmaCarbine_C : public APlasmaCarbine
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/PlasmaCarbine/WPN_PlasmaCarbine", "WPN_PlasmaCarbine_C");
-    using WeaponDisplay_PlasmaCarbine_AmmoCounter_C = Game::WeaponsNTools::PlasmaCarbine::UI::WeaponDisplay_PlasmaCarbine_AmmoCounter_C;
+    using WeaponDisplay_PlasmaCarbine_AmmoCounter_C = ::Game::WeaponsNTools::PlasmaCarbine::UI::WeaponDisplay_PlasmaCarbine_AmmoCounter_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UHeatMaterialComponent* HeatMaterial;
     class UDamageComponent* AoEDamageComponent;
@@ -39,7 +39,7 @@ public:
     float Overheat_Ammo_Regen_Effect_6788C26846C5EA00DB58E08FBF311673;
     TEnum<ETimelineDirection> Overheat_Ammo_Regen__Direction_6788C26846C5EA00DB58E08FBF311673;
     class UTimelineComponent* Overheat_Ammo_Regen;
-    float OverHeat;
+    float Overheat;
     bool HasOverheated;
     bool RegenAmmoOnOverheat;
     bool AoeOnOverheat;
@@ -76,6 +76,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus AoeDamageComponent_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* HeatMaterial__UeScsNode = "70a466791c9510419c80dd16bf982692";
         static constexpr const char* AoEDamageComponent__UeScsNode = "e3ff6cb433326646bcc5782094b52d59";
         static constexpr const char* OverHeatSound__UeScsNode = "ca6f5013cece3d449da0222f536fd4ce";
@@ -92,4 +93,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine
 
-using WPN_PlasmaCarbine_C = Game::WeaponsNTools::PlasmaCarbine::WPN_PlasmaCarbine_C;
+using WPN_PlasmaCarbine_C = ::Game::WeaponsNTools::PlasmaCarbine::WPN_PlasmaCarbine_C;

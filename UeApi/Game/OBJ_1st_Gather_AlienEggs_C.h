@@ -13,7 +13,7 @@ class AActor;
 
 namespace Game { namespace GameElements { namespace Objectives {
 
-class OBJ_1st_Gather_AlienEggs_C : public Game::GameElements::Objectives::OBJ_Gather_Gems_Base_C
+class OBJ_1st_Gather_AlienEggs_C : public ::Game::GameElements::Objectives::OBJ_Gather_Gems_Base_C
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/OBJ_1st_Gather_AlienEggs", "OBJ_1st_Gather_AlienEggs_C");
@@ -27,4 +27,4 @@ public:
 
 }}}   // namespace Game::GameElements::Objectives
 
-using OBJ_1st_Gather_AlienEggs_C = Game::GameElements::Objectives::OBJ_1st_Gather_AlienEggs_C;
+using OBJ_1st_Gather_AlienEggs_C = ::Game::GameElements::Objectives::OBJ_1st_Gather_AlienEggs_C;

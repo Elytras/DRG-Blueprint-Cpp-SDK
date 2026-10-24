@@ -10,15 +10,20 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace Enemies { namespace Spider { namespace Tank { namespace Rock {
 
-class ESI_Tank_Rock_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Tank_Rock_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Spider/Tank/Rock/ESI_Tank_Rock", "ESI_Tank_Rock_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_ESI_Tank_Rock(int EntryPoint);
     void ReceiveBeginPlay();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
+    };
 };
 
 }}}}}   // namespace Game::Enemies::Spider::Tank::Rock
 
-using ESI_Tank_Rock_C = Game::Enemies::Spider::Tank::Rock::ESI_Tank_Rock_C;
+using ESI_Tank_Rock_C = ::Game::Enemies::Spider::Tank::Rock::ESI_Tank_Rock_C;

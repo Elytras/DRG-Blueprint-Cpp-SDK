@@ -18,8 +18,8 @@ class MENU_Loadout_Bosco_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Bosco/Menu_Loadout_Bosco", "MENU_Loadout_Bosco_C");
-    using Basic_CheckBox_C = Game::UI::Art::WidgetParts::Basic_CheckBox_C;
-    using MENU_UpgradeScreen_C = Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
+    using Basic_CheckBox_C = ::Game::UI::Art::WidgetParts::Basic_CheckBox_C;
+    using MENU_UpgradeScreen_C = ::Game::UI::Menu_Loadout::MENU_UpgradeScreen_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_CheckBox_C* AllowBosco;
     MENU_UpgradeScreen_C* MENU_UpgradeScreen;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Bosco
 
-using MENU_Loadout_Bosco_C = Game::UI::Menu_Bosco::MENU_Loadout_Bosco_C;
+using MENU_Loadout_Bosco_C = ::Game::UI::Menu_Bosco::MENU_Loadout_Bosco_C;

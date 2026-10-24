@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::_Crosshairs
 
-using HUD_CrossHair_BasicDot_C = Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_BasicDot_C;
+using HUD_CrossHair_BasicDot_C = ::Game::WeaponsNTools::_Crosshairs::HUD_CrossHair_BasicDot_C;

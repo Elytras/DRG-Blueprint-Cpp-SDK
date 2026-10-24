@@ -70,4 +70,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefenseTurret
 
-using ENE_FacilityTurret_Spinning_C = Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Spinning_C;
+using ENE_FacilityTurret_Spinning_C = ::Game::GameElements::Objectives::Facility::DefenseTurret::ENE_FacilityTurret_Spinning_C;

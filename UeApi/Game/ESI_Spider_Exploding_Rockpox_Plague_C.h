@@ -12,7 +12,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace Enemies { namespace Plague { namespace PlagueExploder {
 
-class ESI_Spider_Exploding_Rockpox_Plague_C : public Game::Enemies::Spider::ESI_Spider_Base_C
+class ESI_Spider_Exploding_Rockpox_Plague_C : public ::Game::Enemies::Spider::ESI_Spider_Base_C
 {
 public:
     UE_CLASS("/Game/Enemies/Plague/PlagueExploder/ESI_Spider_Exploding_Rockpox_Plague", "ESI_Spider_Exploding_Rockpox_Plague_C");
@@ -22,6 +22,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeIchRecords = "SkeletalMesh";
         static constexpr const char* SporeCloud__UeScsNode = "a07e49c010bc2d479c3013cfac77f8bf";
         static constexpr const char* InfectionPoint7__UeScsNode = "87b01c656988b84684c3cfb4c90e0595";
         static constexpr const char* InfectionPoint5__UeScsNode = "1d2f518f5ff5b640a813bdb3e473dcbe";
@@ -30,4 +31,4 @@ private:
 
 }}}}   // namespace Game::Enemies::Plague::PlagueExploder
 
-using ESI_Spider_Exploding_Rockpox_Plague_C = Game::Enemies::Plague::PlagueExploder::ESI_Spider_Exploding_Rockpox_Plague_C;
+using ESI_Spider_Exploding_Rockpox_Plague_C = ::Game::Enemies::Plague::PlagueExploder::ESI_Spider_Exploding_Rockpox_Plague_C;

@@ -40,4 +40,4 @@ public:
 
 }}}}}   // namespace Game::GameElements::GameEvents::RewardDispenser::Assets
 
-using ABP_RewardDispenser_C = Game::GameElements::GameEvents::RewardDispenser::Assets::ABP_RewardDispenser_C;
+using ABP_RewardDispenser_C = ::Game::GameElements::GameEvents::RewardDispenser::Assets::ABP_RewardDispenser_C;

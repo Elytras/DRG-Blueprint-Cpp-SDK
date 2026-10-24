@@ -28,4 +28,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_PlayerClass_Label_C = Game::UI::MainOnscreenHUD::HUD_PlayerClass_Label_C;
+using HUD_PlayerClass_Label_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerClass_Label_C;

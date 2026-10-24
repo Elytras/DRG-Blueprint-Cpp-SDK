@@ -17,4 +17,4 @@ public:
 
 }}}   // namespace Game::Maps::SpaceRig
 
-using SLVL_SpaceRig_BaseMesh_C = Game::Maps::SpaceRig::SLVL_SpaceRig_BaseMesh_C;
+using SLVL_SpaceRig_BaseMesh_C = ::Game::Maps::SpaceRig::SLVL_SpaceRig_BaseMesh_C;

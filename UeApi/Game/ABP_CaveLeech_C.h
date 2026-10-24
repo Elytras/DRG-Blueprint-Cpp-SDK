@@ -58,4 +58,4 @@ public:
 
 }}}   // namespace Game::Enemies::CaveLeech
 
-using ABP_CaveLeech_C = Game::Enemies::CaveLeech::ABP_CaveLeech_C;
+using ABP_CaveLeech_C = ::Game::Enemies::CaveLeech::ABP_CaveLeech_C;

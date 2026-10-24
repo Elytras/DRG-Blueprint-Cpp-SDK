@@ -9,13 +9,18 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Treasure {
 
-class BP_HoloLid_C : public Game::WeaponsNTools::MAG_BaseClass_C
+class BP_HoloLid_C : public ::Game::WeaponsNTools::MAG_BaseClass_C
 {
 public:
     UE_CLASS("/Game/GameElements/Treasure/BP_HoloLid", "BP_HoloLid_C");
     bool OnSpawnRelease_Released();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "Box;Mesh";
+    };
 };
 
 }}}   // namespace Game::GameElements::Treasure
 
-using BP_HoloLid_C = Game::GameElements::Treasure::BP_HoloLid_C;
+using BP_HoloLid_C = ::Game::GameElements::Treasure::BP_HoloLid_C;

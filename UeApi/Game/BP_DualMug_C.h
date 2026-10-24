@@ -28,4 +28,4 @@ private:
 
 }}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments
 
-using BP_DualMug_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::BP_DualMug_C;
+using BP_DualMug_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::BP_DualMug_C;

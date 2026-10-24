@@ -33,4 +33,4 @@ private:
 
 }}}}}}}   // namespace Game::GameElements::Bar::Drinkables::PropHunt::Props::Xmas
 
-using BP_PropHunt_XmasTree_C = Game::GameElements::Bar::Drinkables::PropHunt::Props::Xmas::BP_PropHunt_XmasTree_C;
+using BP_PropHunt_XmasTree_C = ::Game::GameElements::Bar::Drinkables::PropHunt::Props::Xmas::BP_PropHunt_XmasTree_C;

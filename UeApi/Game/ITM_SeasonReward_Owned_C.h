@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Seasons
 
-using ITM_SeasonReward_Owned_C = Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;
+using ITM_SeasonReward_Owned_C = ::Game::UI::Menu_Seasons::ITM_SeasonReward_Owned_C;

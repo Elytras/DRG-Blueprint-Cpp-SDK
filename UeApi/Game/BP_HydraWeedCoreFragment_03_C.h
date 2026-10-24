@@ -9,7 +9,7 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Resources { namespace Embedded { namespace Gems {
 
-class BP_HydraWeedCoreFragment_03_C : public Game::GameElements::Resources::Embedded::Gems::BP_HydraWeedCoreFragment_C
+class BP_HydraWeedCoreFragment_03_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_HydraWeedCoreFragment_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Embedded/Gems/BP_HydraWeedCoreFragment_03", "BP_HydraWeedCoreFragment_03_C");
@@ -17,9 +17,10 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh";
     };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Embedded::Gems
 
-using BP_HydraWeedCoreFragment_03_C = Game::GameElements::Resources::Embedded::Gems::BP_HydraWeedCoreFragment_03_C;
+using BP_HydraWeedCoreFragment_03_C = ::Game::GameElements::Resources::Embedded::Gems::BP_HydraWeedCoreFragment_03_C;

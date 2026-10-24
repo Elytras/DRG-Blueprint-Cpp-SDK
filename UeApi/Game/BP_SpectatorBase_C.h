@@ -36,4 +36,4 @@ private:
 
 }}   // namespace Game::Game
 
-using BP_SpectatorBase_C = Game::Game::BP_SpectatorBase_C;
+using BP_SpectatorBase_C = ::Game::Game::BP_SpectatorBase_C;

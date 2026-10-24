@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::GameElements::KPI::Perks
 
-using STE_Dash_C = Game::GameElements::KPI::Perks::STE_Dash_C;
+using STE_Dash_C = ::Game::GameElements::KPI::Perks::STE_Dash_C;

@@ -28,4 +28,4 @@ private:
 
 }}}}}}}   // namespace Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Flares
 
-using BP_FlareJugge_S05_C = Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Flares::BP_FlareJugge_S05_C;
+using BP_FlareJugge_S05_C = ::Game::CharacterStructure::Gear_Unarmed::TP::EndScreenAnims::Attachments::Flares::BP_FlareJugge_S05_C;

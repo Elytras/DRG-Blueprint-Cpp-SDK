@@ -21,8 +21,8 @@ class UI_Bar_UnlockBeerPopup_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/UI/UI_Bar_UnlockBeerPopup", "UI_Bar_UnlockBeerPopup_C");
-    using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
-    using UI_RunningMultiText_C = Game::UI::Global_UI_Elements::UI_RunningMultiText_C;
+    using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;
+    using UI_RunningMultiText_C = ::Game::UI::Global_UI_Elements::UI_RunningMultiText_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Fill;
     BlurBackground_C* BlurBackground;
@@ -45,4 +45,4 @@ public:
 
 }}}}   // namespace Game::GameElements::Bar::UI
 
-using UI_Bar_UnlockBeerPopup_C = Game::GameElements::Bar::UI::UI_Bar_UnlockBeerPopup_C;
+using UI_Bar_UnlockBeerPopup_C = ::Game::GameElements::Bar::UI::UI_Bar_UnlockBeerPopup_C;

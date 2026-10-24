@@ -57,4 +57,4 @@ public:
 
 }}}}   // namespace Game::WeaponsNTools::GooCannon::Animations
 
-using ABP_GooCannon_B_Skeleton_AnimBlueprint_C = Game::WeaponsNTools::GooCannon::Animations::ABP_GooCannon_B_Skeleton_AnimBlueprint_C;
+using ABP_GooCannon_B_Skeleton_AnimBlueprint_C = ::Game::WeaponsNTools::GooCannon::Animations::ABP_GooCannon_B_Skeleton_AnimBlueprint_C;

@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_EggBasket_C = Game::Character::Vanity2::Headwear::ABP_EggBasket_C;
+using ABP_EggBasket_C = ::Game::Character::Vanity2::Headwear::ABP_EggBasket_C;

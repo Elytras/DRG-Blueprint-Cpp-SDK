@@ -18,10 +18,10 @@ class Options_Tab_Saves_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Options/Options_Tab_Saves", "Options_Tab_Saves_C");
-    using Basic_Option_C = Game::UI::Art::WidgetParts::Basic_Option_C;
-    using Menu_SaveSlots_C = Game::UI::Menu_SaveSlots::Menu_SaveSlots_C;
-    using Options_ResetProgress_C = Game::UI::Menu_Options::Options_ResetProgress_C;
-    using Options_RestoreSave_C = Game::UI::Menu_Options::Options_RestoreSave_C;
+    using Basic_Option_C = ::Game::UI::Art::WidgetParts::Basic_Option_C;
+    using Menu_SaveSlots_C = ::Game::UI::Menu_SaveSlots::Menu_SaveSlots_C;
+    using Options_ResetProgress_C = ::Game::UI::Menu_Options::Options_ResetProgress_C;
+    using Options_RestoreSave_C = ::Game::UI::Menu_Options::Options_RestoreSave_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Menu_SaveSlots_C* Menu_SaveSlots;
     Options_ResetProgress_C* Options_ResetProgress;
@@ -35,4 +35,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Options
 
-using Options_Tab_Saves_C = Game::UI::Menu_Options::Options_Tab_Saves_C;
+using Options_Tab_Saves_C = ::Game::UI::Menu_Options::Options_Tab_Saves_C;

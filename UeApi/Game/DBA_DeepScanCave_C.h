@@ -29,6 +29,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisCarved C_Big_Crystals_Caves--2K(41-100)_50(51-70)_GEN_VARIABLE:DebrisCarved_1;/Script/FSD.DebrisCarved C_Floor_Carver_GEN_VARIABLE:DebrisCarved_0;/Script/FSD.DebrisMesh D_SmallInfluencerCrystals1_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh D_SmallInfluencerCrystals_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh DebrisData_Floor_Bigger_Chunks_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisMesh DebrisData_GEN_VARIABLE:DebrisMesh_0;/Script/FSD.DebrisPositioning ITM_CeilingCrystal_GEN_VARIABLE:DebrisPositioning_0;/Script/FSD.DebrisPositioning ITM_Treasure_Nut_GEN_VARIABLE:DebrisPositioning_0";
         static constexpr const char* C_Floor_Carver__UeScsNode = "957127ebddb8784dbdf87bd443bf1e4d";
         static constexpr const char* DebrisData_Floor_Bigger_Chunks__UeScsNode = "101cf62a5e10f84eb7a9b11d57b8f75d";
         static constexpr const char* D_SmallInfluencerCrystals1__UeScsNode = "980897970fa9914b8af9b322e93552f3";
@@ -44,4 +45,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using DBA_DeepScanCave_C = Game::GameElements::Objectives::DeepScan::DBA_DeepScanCave_C;
+using DBA_DeepScanCave_C = ::Game::GameElements::Objectives::DeepScan::DBA_DeepScanCave_C;

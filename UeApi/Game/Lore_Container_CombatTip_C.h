@@ -21,7 +21,7 @@ class Lore_Container_CombatTip_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/Containers/Lore_Container_CombatTip", "Lore_Container_CombatTip_C");
-    using Basic_Window_CutCorner_C = Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
+    using Basic_Window_CutCorner_C = ::Game::UI::Art::WidgetParts::Basic_Window_CutCorner_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* Intro;
     Basic_Window_CutCorner_C* Basic_Window;
@@ -39,4 +39,4 @@ public:
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers
 
-using Lore_Container_CombatTip_C = Game::UI::Menu_MinersManual::Containers::Lore_Container_CombatTip_C;
+using Lore_Container_CombatTip_C = ::Game::UI::Menu_MinersManual::Containers::Lore_Container_CombatTip_C;

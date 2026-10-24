@@ -39,4 +39,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Cheats
 
-using Cheat_SpawnEnemySingleWidget_C = Game::UI::Menu_Cheats::Cheat_SpawnEnemySingleWidget_C;
+using Cheat_SpawnEnemySingleWidget_C = ::Game::UI::Menu_Cheats::Cheat_SpawnEnemySingleWidget_C;

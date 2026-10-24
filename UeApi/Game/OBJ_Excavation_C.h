@@ -44,4 +44,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Excavation
 
-using OBJ_Excavation_C = Game::GameElements::Objectives::Excavation::OBJ_Excavation_C;
+using OBJ_Excavation_C = ::Game::GameElements::Objectives::Excavation::OBJ_Excavation_C;

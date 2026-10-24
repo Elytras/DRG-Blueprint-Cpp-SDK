@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_Headwear_Summer_Swimglasses_C = Game::Character::Vanity2::Headwear::ABP_Headwear_Summer_Swimglasses_C;
+using ABP_Headwear_Summer_Swimglasses_C = ::Game::Character::Vanity2::Headwear::ABP_Headwear_Summer_Swimglasses_C;

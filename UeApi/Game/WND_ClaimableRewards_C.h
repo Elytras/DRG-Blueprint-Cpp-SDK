@@ -21,8 +21,8 @@ class WND_ClaimableRewards_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/ClaimableRewards/WND_ClaimableRewards", "WND_ClaimableRewards_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using UI_ClaimableRewards_View_C = Game::UI::ClaimableRewards::UI_ClaimableRewards_View_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using UI_ClaimableRewards_View_C = ::Game::UI::ClaimableRewards::UI_ClaimableRewards_View_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimBlurIn;
     Basic_ButtonScalable2_C* ContinueButton;
@@ -41,4 +41,4 @@ public:
 
 }}}   // namespace Game::UI::ClaimableRewards
 
-using WND_ClaimableRewards_C = Game::UI::ClaimableRewards::WND_ClaimableRewards_C;
+using WND_ClaimableRewards_C = ::Game::UI::ClaimableRewards::WND_ClaimableRewards_C;

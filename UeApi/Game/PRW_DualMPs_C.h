@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::DualMachinePistols
 
-using PRW_DualMPs_C = Game::WeaponsNTools::DualMachinePistols::PRW_DualMPs_C;
+using PRW_DualMPs_C = ::Game::WeaponsNTools::DualMachinePistols::PRW_DualMPs_C;

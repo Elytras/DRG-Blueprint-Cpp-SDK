@@ -9,12 +9,17 @@ A member is here if and only if AssetGen can compile a use of it.
 
 namespace Game { namespace GameElements { namespace Resources { namespace Collectibles { namespace Barley {
 
-class BP_Barley3_2_C : public Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_B2_C
+class BP_Barley3_2_C : public ::Game::GameElements::Resources::Collectibles::Barley::BP_Collectible_Barley_B2_C
 {
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Barley3_2", "BP_Barley3_2_C");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeIchRecords = "InstantUsable;SimpleObjectInfo;Fruit1;Fruit2;Stem1;Stem2";
+    };
 };
 
 }}}}}   // namespace Game::GameElements::Resources::Collectibles::Barley
 
-using BP_Barley3_2_C = Game::GameElements::Resources::Collectibles::Barley::BP_Barley3_2_C;
+using BP_Barley3_2_C = ::Game::GameElements::Resources::Collectibles::Barley::BP_Barley3_2_C;

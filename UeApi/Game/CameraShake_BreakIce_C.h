@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::Character::Camera::CameraShakes
 
-using CameraShake_BreakIce_C = Game::Character::Camera::CameraShakes::CameraShake_BreakIce_C;
+using CameraShake_BreakIce_C = ::Game::Character::Camera::CameraShakes::CameraShake_BreakIce_C;

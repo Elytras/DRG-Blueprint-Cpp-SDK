@@ -98,4 +98,4 @@ private:
 
 }}}}   // namespace Game::Game::Events::BeachParty
 
-using BP_BeachParty_Inflatable_InCave_C = Game::Game::Events::BeachParty::BP_BeachParty_Inflatable_InCave_C;
+using BP_BeachParty_Inflatable_InCave_C = ::Game::Game::Events::BeachParty::BP_BeachParty_Inflatable_InCave_C;

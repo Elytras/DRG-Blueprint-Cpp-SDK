@@ -39,4 +39,4 @@ private:
 
 }}}}   // namespace Game::Enemies::RivalTech::Terminator
 
-using BP_Tentacle_ClawParts_C = Game::Enemies::RivalTech::Terminator::BP_Tentacle_ClawParts_C;
+using BP_Tentacle_ClawParts_C = ::Game::Enemies::RivalTech::Terminator::BP_Tentacle_ClawParts_C;

@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::LineCutter
 
-using ABP_LineCutter_C = Game::WeaponsNTools::LineCutter::ABP_LineCutter_C;
+using ABP_LineCutter_C = ::Game::WeaponsNTools::LineCutter::ABP_LineCutter_C;

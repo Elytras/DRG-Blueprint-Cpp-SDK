@@ -48,4 +48,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::Crossbow::Animation
 
-using BP_AnimatedArrow_C = Game::WeaponsNTools::Crossbow::Animation::BP_AnimatedArrow_C;
+using BP_AnimatedArrow_C = ::Game::WeaponsNTools::Crossbow::Animation::BP_AnimatedArrow_C;

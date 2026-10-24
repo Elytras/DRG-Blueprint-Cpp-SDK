@@ -33,4 +33,4 @@ public:
 
 }}}   // namespace Game::UI::MissionControl
 
-using MissionControl_TextAnimator_C = Game::UI::MissionControl::MissionControl_TextAnimator_C;
+using MissionControl_TextAnimator_C = ::Game::UI::MissionControl::MissionControl_TextAnimator_C;

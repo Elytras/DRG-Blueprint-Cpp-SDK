@@ -22,8 +22,8 @@ class _Menu_MinersManualStandalone_C : public UWindowWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MinersManual/_Menu_MinersManualStandalone", "_Menu_MinersManualStandalone_C");
-    using ITM_MenuBackground_C = Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
-    using _MENU_MinersManual_C = Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
+    using ITM_MenuBackground_C = ::Game::UI::Menu_EscapeMenu::ITM_MenuBackground_C;
+    using _MENU_MinersManual_C = ::Game::UI::Menu_MinersManual::_MENU_MinersManual_C;
     FPointerToUberGraphFrame UberGraphFrame;
     ITM_MenuBackground_C* ITM_EscapeMenuBackground;
     class UOverlay* Overlay_Holder;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using _Menu_MinersManualStandalone_C = Game::UI::Menu_MinersManual::_Menu_MinersManualStandalone_C;
+using _Menu_MinersManualStandalone_C = ::Game::UI::Menu_MinersManual::_Menu_MinersManualStandalone_C;

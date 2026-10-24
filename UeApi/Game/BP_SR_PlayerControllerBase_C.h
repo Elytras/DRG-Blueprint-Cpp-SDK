@@ -13,7 +13,7 @@ class UWindowWidget;
 
 namespace Game { namespace Game { namespace SpaceRig {
 
-class BP_SR_PlayerControllerBase_C : public Game::Game::BP_PlayerControllerBase_C
+class BP_SR_PlayerControllerBase_C : public ::Game::Game::BP_PlayerControllerBase_C
 {
 public:
     UE_CLASS("/Game/Game/SpaceRig/BP_SR_PlayerControllerBase", "BP_SR_PlayerControllerBase_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::Game::SpaceRig
 
-using BP_SR_PlayerControllerBase_C = Game::Game::SpaceRig::BP_SR_PlayerControllerBase_C;
+using BP_SR_PlayerControllerBase_C = ::Game::Game::SpaceRig::BP_SR_PlayerControllerBase_C;

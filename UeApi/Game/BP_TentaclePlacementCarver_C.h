@@ -28,4 +28,4 @@ private:
 
 }}}   // namespace Game::Enemies::TentaclePlant
 
-using BP_TentaclePlacementCarver_C = Game::Enemies::TentaclePlant::BP_TentaclePlacementCarver_C;
+using BP_TentaclePlacementCarver_C = ::Game::Enemies::TentaclePlant::BP_TentaclePlacementCarver_C;

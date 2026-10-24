@@ -22,7 +22,7 @@ class Widget_HandheldTablet_UseProgress_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/HandheldTablet/Widget_HandheldTablet_UseProgress", "Widget_HandheldTablet_UseProgress_C");
-    using AnimatedStaticOverlay_WithScanlines_C = Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
+    using AnimatedStaticOverlay_WithScanlines_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
     FPointerToUberGraphFrame UberGraphFrame;
     AnimatedStaticOverlay_WithScanlines_C* AnimatedStaticOverlay_WithScanlines;
     class UImage* UseImage;
@@ -40,4 +40,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::HandheldTablet
 
-using Widget_HandheldTablet_UseProgress_C = Game::WeaponsNTools::HandheldTablet::Widget_HandheldTablet_UseProgress_C;
+using Widget_HandheldTablet_UseProgress_C = ::Game::WeaponsNTools::HandheldTablet::Widget_HandheldTablet_UseProgress_C;

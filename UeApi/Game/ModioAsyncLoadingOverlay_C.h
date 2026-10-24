@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioAsyncLoadingOverlay_C = Modio::UI::Browser::Components::ModioAsyncLoadingOverlay_C;
+using ModioAsyncLoadingOverlay_C = ::Modio::UI::Browser::Components::ModioAsyncLoadingOverlay_C;

@@ -20,4 +20,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioErrorWithRetryWidget_C = Modio::UI::Browser::Components::ModioErrorWithRetryWidget_C;
+using ModioErrorWithRetryWidget_C = ::Modio::UI::Browser::Components::ModioErrorWithRetryWidget_C;

@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards
 
-using STE_Radiation_MiniNuke_Player_C = Game::LevelElements::RoomObjects::Hazards::STE_Radiation_MiniNuke_Player_C;
+using STE_Radiation_MiniNuke_Player_C = ::Game::LevelElements::RoomObjects::Hazards::STE_Radiation_MiniNuke_Player_C;

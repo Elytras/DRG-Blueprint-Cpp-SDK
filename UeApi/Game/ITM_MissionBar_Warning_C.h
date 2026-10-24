@@ -40,4 +40,4 @@ private:
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionOverview
 
-using ITM_MissionBar_Warning_C = Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Warning_C;
+using ITM_MissionBar_Warning_C = ::Game::UI::HUD_SpaceRig::MissionOverview::ITM_MissionBar_Warning_C;

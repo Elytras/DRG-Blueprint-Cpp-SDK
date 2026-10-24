@@ -18,9 +18,9 @@ public:
     UE_CLASS("/Game/LevelElements/Triggers/BP_TriggerBase", "BP_TriggerBase_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    void SendMessage();
-    void ReceiveBeginPlay();
     void ExecuteUbergraph_BP_TriggerBase(int EntryPoint);
+    void ReceiveBeginPlay();
+    void SendMessage();
 private:
     struct UeMarkers
     {
@@ -30,4 +30,4 @@ private:
 
 }}}   // namespace Game::LevelElements::Triggers
 
-using BP_TriggerBase_C = Game::LevelElements::Triggers::BP_TriggerBase_C;
+using BP_TriggerBase_C = ::Game::LevelElements::Triggers::BP_TriggerBase_C;

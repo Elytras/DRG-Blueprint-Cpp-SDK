@@ -100,4 +100,4 @@ private:
 
 }}}   // namespace Game::Enemies::CaveLeech
 
-using ENE_CaveLeech_C = Game::Enemies::CaveLeech::ENE_CaveLeech_C;
+using ENE_CaveLeech_C = ::Game::Enemies::CaveLeech::ENE_CaveLeech_C;

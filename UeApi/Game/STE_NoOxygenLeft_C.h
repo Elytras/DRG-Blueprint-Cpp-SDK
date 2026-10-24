@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::NoOxygen
 
-using STE_NoOxygenLeft_C = Game::GameElements::Missions::Warnings::NoOxygen::STE_NoOxygenLeft_C;
+using STE_NoOxygenLeft_C = ::Game::GameElements::Missions::Warnings::NoOxygen::STE_NoOxygenLeft_C;

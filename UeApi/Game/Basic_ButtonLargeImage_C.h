@@ -50,4 +50,4 @@ private:
 
 }}}}   // namespace Game::UI::Art::WidgetParts
 
-using Basic_ButtonLargeImage_C = Game::UI::Art::WidgetParts::Basic_ButtonLargeImage_C;
+using Basic_ButtonLargeImage_C = ::Game::UI::Art::WidgetParts::Basic_ButtonLargeImage_C;

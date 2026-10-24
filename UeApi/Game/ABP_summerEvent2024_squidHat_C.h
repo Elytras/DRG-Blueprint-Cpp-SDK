@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::Character::Vanity2::Headwear
 
-using ABP_summerEvent2024_squidHat_C = Game::Character::Vanity2::Headwear::ABP_summerEvent2024_squidHat_C;
+using ABP_summerEvent2024_squidHat_C = ::Game::Character::Vanity2::Headwear::ABP_summerEvent2024_squidHat_C;

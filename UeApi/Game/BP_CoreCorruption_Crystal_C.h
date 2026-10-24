@@ -28,7 +28,7 @@ class BP_CoreCorruption_Crystal_C : public ACoreCorruptionCrystal
 {
 public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/CoreCorruption/BP_CoreCorruption_Crystal", "BP_CoreCorruption_Crystal_C");
-    using EWC_CoreCorruption_C = Game::GameElements::Missions::Warnings::CoreCorruption::EWC_CoreCorruption_C;
+    using EWC_CoreCorruption_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::EWC_CoreCorruption_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_CoreCorruption_Trail;
     class UStatusEffectsComponent* StatusEffects;
@@ -66,6 +66,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent AliveSound;/Script/Engine.CapsuleComponent WeakpointCollisionComponent;/Script/FSD.CoreCorruptionPillarSpawnerComponent SpawnerComponent;/Script/FSD.DamageComponent EndExplosionDamageComponent;/Script/FSD.DamageComponent KnockbackDamageComponent;/Script/FSD.EnemyComponent EnemyComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.KnockbackDamageBonus KnockbackDamageComponent:KnockbackDamageBonus_0;/Script/Niagara.NiagaraComponent EnergyParticleComponent;/Script/Niagara.NiagaraComponent RockShieldComponent;/Script/FSD.PathfinderCollisionComponent ShieldCollision;/Script/Engine.PointLightComponent LargeLightComponent;/Script/Engine.PointLightComponent LightComponent;/Script/FSD.RotatingSceneComponent BobbingComponent;/Script/FSD.RotatingSceneComponent RotatorComponent;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent SKMeshComponent;/Script/Engine.SphereComponent KnockbackTriggerComponent;/Script/Engine.StaticMeshComponent ShieldMesh";
+        static constexpr const char* UeTemplateSubobjects = "/Script/Niagara.NiagaraDataInterfaceSpline NS_CoreCorruption_Trail_GEN_VARIABLE:NiagaraDataInterfaceSpline_0";
         static constexpr const char* NS_CoreCorruption_Trail__UeScsNode = "c17538fe17a03748ac17c640d649fbd4";
         static constexpr const char* StatusEffects__UeScsNode = "577e6b54ba79774689345a7c2b67b767";
         static constexpr const char* outline__UeScsNode = "262f34667224934482c65ab6469bafa8";
@@ -77,4 +78,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::CoreCorruption
 
-using BP_CoreCorruption_Crystal_C = Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Crystal_C;
+using BP_CoreCorruption_Crystal_C = ::Game::GameElements::Missions::Warnings::CoreCorruption::BP_CoreCorruption_Crystal_C;

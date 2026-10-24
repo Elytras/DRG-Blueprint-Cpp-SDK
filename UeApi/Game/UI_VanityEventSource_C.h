@@ -20,8 +20,8 @@ class UI_VanityEventSource_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Crafting/UI_VanityEventSource", "UI_VanityEventSource_C");
-    using Basic_Image_C = Game::UI::Art::WidgetParts::Basic_Image_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Image_C = ::Game::UI::Art::WidgetParts::Basic_Image_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UCanvasPanel* RootCanvas;
     Basic_Image_C* Source_Image;
@@ -36,4 +36,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_Crafting
 
-using UI_VanityEventSource_C = Game::UI::Menu_Crafting::UI_VanityEventSource_C;
+using UI_VanityEventSource_C = ::Game::UI::Menu_Crafting::UI_VanityEventSource_C;

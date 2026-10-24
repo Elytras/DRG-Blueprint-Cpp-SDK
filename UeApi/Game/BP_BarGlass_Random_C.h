@@ -13,11 +13,11 @@ namespace Game { namespace GameElements { namespace Bar { class BP_BarGlass_Stan
 
 namespace Game { namespace GameElements { namespace Bar {
 
-class BP_BarGlass_Random_C : public Game::GameElements::Bar::BP_BarGlass_Standard_C
+class BP_BarGlass_Random_C : public ::Game::GameElements::Bar::BP_BarGlass_Standard_C
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/BP_BarGlass_Random", "BP_BarGlass_Random_C");
-    using BP_BarGlass_Standard_C = Game::GameElements::Bar::BP_BarGlass_Standard_C;
+    using BP_BarGlass_Standard_C = ::Game::GameElements::Bar::BP_BarGlass_Standard_C;
     FPointerToUberGraphFrame UberGraphFrame_BP_BarGlass_Random_C;
     TArray<class UDrinkableDataAsset*> BeerEffects;
     BP_BarGlass_Standard_C* RandomDrink;
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::GameElements::Bar
 
-using BP_BarGlass_Random_C = Game::GameElements::Bar::BP_BarGlass_Random_C;
+using BP_BarGlass_Random_C = ::Game::GameElements::Bar::BP_BarGlass_Random_C;

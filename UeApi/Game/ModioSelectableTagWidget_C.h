@@ -17,4 +17,4 @@ public:
 
 }}}}   // namespace Modio::UI::Browser::Components
 
-using ModioSelectableTagWidget_C = Modio::UI::Browser::Components::ModioSelectableTagWidget_C;
+using ModioSelectableTagWidget_C = ::Modio::UI::Browser::Components::ModioSelectableTagWidget_C;

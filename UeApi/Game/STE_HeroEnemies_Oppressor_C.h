@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::HeroEnemies
 
-using STE_HeroEnemies_Oppressor_C = Game::GameElements::Missions::Warnings::HeroEnemies::STE_HeroEnemies_Oppressor_C;
+using STE_HeroEnemies_Oppressor_C = ::Game::GameElements::Missions::Warnings::HeroEnemies::STE_HeroEnemies_Oppressor_C;

@@ -42,4 +42,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::HugeCarvers::Rockformation
 
-using BP_RockFormation_Base_C = Game::LevelElements::RoomObjects::HugeCarvers::Rockformation::BP_RockFormation_Base_C;
+using BP_RockFormation_Base_C = ::Game::LevelElements::RoomObjects::HugeCarvers::Rockformation::BP_RockFormation_Base_C;

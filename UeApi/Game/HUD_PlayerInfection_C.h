@@ -43,4 +43,4 @@ public:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_PlayerInfection_C = Game::UI::MainOnscreenHUD::HUD_PlayerInfection_C;
+using HUD_PlayerInfection_C = ::Game::UI::MainOnscreenHUD::HUD_PlayerInfection_C;

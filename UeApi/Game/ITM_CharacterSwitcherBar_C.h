@@ -26,11 +26,11 @@ class ITM_CharacterSwitcherBar_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_Loadout/ITM_CharacterSwitcherBar", "ITM_CharacterSwitcherBar_C");
-    using Basic_ButtonScalable2_C = Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
-    using Basic_Menu_ColorBar_C = Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
-    using Basic_ScrollArrow_C = Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
-    using ITM_ItemUnlockedIcon_C = Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using Basic_ButtonScalable2_C = ::Game::UI::Art::WidgetParts::Basic_ButtonScalable2_C;
+    using Basic_Menu_ColorBar_C = ::Game::UI::Art::WidgetParts::Basic_Menu_ColorBar_C;
+    using Basic_ScrollArrow_C = ::Game::UI::Art::WidgetParts::Basic_ScrollArrow_C;
+    using ITM_ItemUnlockedIcon_C = ::Game::UI::Menu_Loadout::ITM_ItemUnlockedIcon_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar;
     Basic_Menu_ColorBar_C* Basic_Menu_ColorBar_0;
@@ -76,4 +76,4 @@ private:
 
 }}}   // namespace Game::UI::Menu_Loadout
 
-using ITM_CharacterSwitcherBar_C = Game::UI::Menu_Loadout::ITM_CharacterSwitcherBar_C;
+using ITM_CharacterSwitcherBar_C = ::Game::UI::Menu_Loadout::ITM_CharacterSwitcherBar_C;

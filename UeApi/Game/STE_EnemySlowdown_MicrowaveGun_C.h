@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::WeaponsNTools::MicrowaveGun::STE
 
-using STE_EnemySlowdown_MicrowaveGun_C = Game::WeaponsNTools::MicrowaveGun::STE::STE_EnemySlowdown_MicrowaveGun_C;
+using STE_EnemySlowdown_MicrowaveGun_C = ::Game::WeaponsNTools::MicrowaveGun::STE::STE_EnemySlowdown_MicrowaveGun_C;

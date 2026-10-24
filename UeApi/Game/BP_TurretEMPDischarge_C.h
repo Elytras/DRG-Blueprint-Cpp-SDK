@@ -28,6 +28,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* UeTemplateSubobjects = "/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* Audio__UeScsNode = "94d5480ac82dbd438e08557a5feb7ad3";
         static constexpr const char* Damage__UeScsNode = "fe752756b1615c4597e4136e217708a1";
         static constexpr const char* ParticleSystem__UeScsNode = "d56c37a0106c8a44b22a770b402c90a8";
@@ -37,4 +38,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SentryGun
 
-using BP_TurretEMPDischarge_C = Game::WeaponsNTools::SentryGun::BP_TurretEMPDischarge_C;
+using BP_TurretEMPDischarge_C = ::Game::WeaponsNTools::SentryGun::BP_TurretEMPDischarge_C;

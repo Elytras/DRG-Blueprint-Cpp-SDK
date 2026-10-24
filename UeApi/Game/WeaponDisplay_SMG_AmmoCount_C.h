@@ -13,7 +13,7 @@ class UWidgetAnimation;
 
 namespace Game { namespace WeaponsNTools { namespace SMG {
 
-class WeaponDisplay_SMG_AmmoCount_C : public Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
+class WeaponDisplay_SMG_AmmoCount_C : public ::Game::UI::WeaponDisplays::WeaponDisplay_Base_AmmoCount_C
 {
 public:
     UE_CLASS("/Game/WeaponsNTools/SMG/WeaponDisplay_SMG_AmmoCount", "WeaponDisplay_SMG_AmmoCount_C");
@@ -35,4 +35,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::SMG
 
-using WeaponDisplay_SMG_AmmoCount_C = Game::WeaponsNTools::SMG::WeaponDisplay_SMG_AmmoCount_C;
+using WeaponDisplay_SMG_AmmoCount_C = ::Game::WeaponsNTools::SMG::WeaponDisplay_SMG_AmmoCount_C;

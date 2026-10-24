@@ -40,4 +40,4 @@ public:
 
 }}}}}   // namespace Game::Art::DropPod::Assets::Ramp
 
-using ABP_DroppodRamp_C = Game::Art::DropPod::Assets::Ramp::ABP_DroppodRamp_C;
+using ABP_DroppodRamp_C = ::Game::Art::DropPod::Assets::Ramp::ABP_DroppodRamp_C;

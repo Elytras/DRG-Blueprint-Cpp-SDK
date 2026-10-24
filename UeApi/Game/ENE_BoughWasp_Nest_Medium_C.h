@@ -13,7 +13,7 @@ class UStaticMeshComponent;
 
 namespace Game { namespace LevelElements { namespace RoomObjects { namespace Hazards { namespace InsectSwarm { namespace HollowBoughVersion {
 
-class ENE_BoughWasp_Nest_Medium_C : public Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Small_C
+class ENE_BoughWasp_Nest_Medium_C : public ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Small_C
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/Hazards/InsectSwarm/HollowBoughVersion/ENE_BoughWasp_Nest_Medium", "ENE_BoughWasp_Nest_Medium_C");
@@ -27,6 +27,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "PathfinderCollision;SM_HollowboughWaspNest_01;TerrainPlacement";
         static constexpr const char* UberGraphFrame_ENE_BoughWasp_Nest_Medium_C__UeName = "UberGraphFrame";
         static constexpr const char* SM_HollowboughWaspNest_03__UeScsNode = "f0c9fbd79395104bba185fac770d4bde";
     };
@@ -34,4 +35,4 @@ private:
 
 }}}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion
 
-using ENE_BoughWasp_Nest_Medium_C = Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Medium_C;
+using ENE_BoughWasp_Nest_Medium_C = ::Game::LevelElements::RoomObjects::Hazards::InsectSwarm::HollowBoughVersion::ENE_BoughWasp_Nest_Medium_C;

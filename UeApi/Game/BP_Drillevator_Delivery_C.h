@@ -32,7 +32,7 @@ class BP_Drillevator_Delivery_C : public ADroppableOutpost
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/BP_Drillevator_Delivery", "BP_Drillevator_Delivery_C");
-    using BP_Drillevator_LandingZone_C = Game::GameElements::Objectives::DeepScan::BP_Drillevator_LandingZone_C;
+    using BP_Drillevator_LandingZone_C = ::Game::GameElements::Objectives::DeepScan::BP_Drillevator_LandingZone_C;
     FPointerToUberGraphFrame UberGraphFrame;
     class UStaticMeshComponent* TerrainScannerMesh;
     class UBillboardComponent* RespawnPoint;
@@ -144,4 +144,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan
 
-using BP_Drillevator_Delivery_C = Game::GameElements::Objectives::DeepScan::BP_Drillevator_Delivery_C;
+using BP_Drillevator_Delivery_C = ::Game::GameElements::Objectives::DeepScan::BP_Drillevator_Delivery_C;

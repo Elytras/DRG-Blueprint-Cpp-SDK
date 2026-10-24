@@ -22,4 +22,4 @@ private:
 
 }}}}}   // namespace Game::LevelElements::RoomObjects::Hazards::ElectricPlant
 
-using STE_ElecticPlant_slowdown_C = Game::LevelElements::RoomObjects::Hazards::ElectricPlant::STE_ElecticPlant_slowdown_C;
+using STE_ElecticPlant_slowdown_C = ::Game::LevelElements::RoomObjects::Hazards::ElectricPlant::STE_ElecticPlant_slowdown_C;

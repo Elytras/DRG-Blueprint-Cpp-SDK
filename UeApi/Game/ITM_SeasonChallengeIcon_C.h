@@ -29,4 +29,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3
 
-using ITM_SeasonChallengeIcon_C = Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;
+using ITM_SeasonChallengeIcon_C = ::Game::UI::Menu_MissionSelectionMK3::ITM_SeasonChallengeIcon_C;

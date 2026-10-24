@@ -46,4 +46,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Treasure::LostPack
 
-using BP_LostPackDebrisPart_C = Game::GameElements::Treasure::LostPack::BP_LostPackDebrisPart_C;
+using BP_LostPackDebrisPart_C = ::Game::GameElements::Treasure::LostPack::BP_LostPackDebrisPart_C;

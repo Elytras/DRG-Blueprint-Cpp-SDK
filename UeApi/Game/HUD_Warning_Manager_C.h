@@ -27,4 +27,4 @@ public:
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Warnings
 
-using HUD_Warning_Manager_C = Game::UI::MainOnscreenHUD::Warnings::HUD_Warning_Manager_C;
+using HUD_Warning_Manager_C = ::Game::UI::MainOnscreenHUD::Warnings::HUD_Warning_Manager_C;

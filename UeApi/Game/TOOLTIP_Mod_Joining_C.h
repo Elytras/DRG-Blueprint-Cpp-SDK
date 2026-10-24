@@ -19,7 +19,7 @@ class TOOLTIP_Mod_Joining_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Modding/TOOLTIP_Mod_Joining", "TOOLTIP_Mod_Joining_C");
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
     FPointerToUberGraphFrame UberGraphFrame;
     Basic_Label_C* Mod_ApprovalStatus_Text;
     Basic_Label_C* Mod_Author_Text;
@@ -49,4 +49,4 @@ private:
 
 }}}   // namespace Game::UI::Modding
 
-using TOOLTIP_Mod_Joining_C = Game::UI::Modding::TOOLTIP_Mod_Joining_C;
+using TOOLTIP_Mod_Joining_C = ::Game::UI::Modding::TOOLTIP_Mod_Joining_C;

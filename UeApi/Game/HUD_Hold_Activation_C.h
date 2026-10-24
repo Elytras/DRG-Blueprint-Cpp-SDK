@@ -24,10 +24,10 @@ class HUD_Hold_Activation_C : public UPerkHUDActivationWidget
 {
 public:
     UE_CLASS("/Game/UI/MainOnscreenHUD/HUD_Hold_Activation", "HUD_Hold_Activation_C");
-    using Basic_HUD_BracketWindowBig_C = Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
-    using Basic_Label_C = Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
-    using UI_AdvancedLabel_C = Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
-    using UI_CircularProgressBar_C = Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
+    using Basic_HUD_BracketWindowBig_C = ::Game::UI::Art::WidgetParts::Basic_HUD_BracketWindowBig_C;
+    using Basic_Label_C = ::Game::UI::MainOnscreenHUD::Standard::Basic_Label_C;
+    using UI_AdvancedLabel_C = ::Game::UI::Global_UI_Elements::UI_AdvancedLabel_C;
+    using UI_CircularProgressBar_C = ::Game::UI::_GlobalAssets::CircularProgressBar::UI_CircularProgressBar_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimHolding;
     UE_READONLY class UWidgetAnimation* AnimCountDown;
@@ -77,4 +77,4 @@ private:
 
 }}}   // namespace Game::UI::MainOnscreenHUD
 
-using HUD_Hold_Activation_C = Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;
+using HUD_Hold_Activation_C = ::Game::UI::MainOnscreenHUD::HUD_Hold_Activation_C;

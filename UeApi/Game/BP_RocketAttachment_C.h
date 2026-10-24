@@ -103,4 +103,4 @@ private:
 
 }}}}}   // namespace Game::GameElements::Objectives::Excavation::RocketAttachment
 
-using BP_RocketAttachment_C = Game::GameElements::Objectives::Excavation::RocketAttachment::BP_RocketAttachment_C;
+using BP_RocketAttachment_C = ::Game::GameElements::Objectives::Excavation::RocketAttachment::BP_RocketAttachment_C;

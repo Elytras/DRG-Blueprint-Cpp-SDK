@@ -72,4 +72,4 @@ private:
 
 }}}   // namespace Game::WeaponsNTools::LaserPistol
 
-using WPN_LaserPistol_C = Game::WeaponsNTools::LaserPistol::WPN_LaserPistol_C;
+using WPN_LaserPistol_C = ::Game::WeaponsNTools::LaserPistol::WPN_LaserPistol_C;

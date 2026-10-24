@@ -17,4 +17,4 @@ public:
 
 }}   // namespace Game::Maps
 
-using LVL_StartingScreen_C = Game::Maps::LVL_StartingScreen_C;
+using LVL_StartingScreen_C = ::Game::Maps::LVL_StartingScreen_C;

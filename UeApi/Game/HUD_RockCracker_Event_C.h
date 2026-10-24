@@ -20,9 +20,9 @@ class HUD_RockCracker_Event_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Art/MainOnScreenHUD/MeteorCrackerEvent/HUD_RockCracker_Event", "HUD_RockCracker_Event_C");
-    using Basic_ProgressBar_C = Game::UI::Art::WidgetParts::Basic_ProgressBar_C;
-    using EVENT_MeteorDefence_C = Game::GameElements::GameEvents::PlagueMeteor::EVENT_MeteorDefence_C;
-    using UI_RockCracker_Connection_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::UI_RockCracker_Connection_C;
+    using Basic_ProgressBar_C = ::Game::UI::Art::WidgetParts::Basic_ProgressBar_C;
+    using EVENT_MeteorDefence_C = ::Game::GameElements::GameEvents::PlagueMeteor::EVENT_MeteorDefence_C;
+    using UI_RockCracker_Connection_C = ::Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::UI_RockCracker_Connection_C;
     FPointerToUberGraphFrame UberGraphFrame;
     UI_RockCracker_Connection_C* Connection_Left;
     UI_RockCracker_Connection_C* Connection_Right;
@@ -42,4 +42,4 @@ public:
 
 }}}}}   // namespace Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent
 
-using HUD_RockCracker_Event_C = Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;
+using HUD_RockCracker_Event_C = ::Game::UI::Art::MainOnScreenHUD::MeteorCrackerEvent::HUD_RockCracker_Event_C;

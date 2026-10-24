@@ -49,4 +49,4 @@ private:
 
 }}}}   // namespace Game::GameElements::Objectives::Escort
 
-using BP_EscortGarage_Beacon_C = Game::GameElements::Objectives::Escort::BP_EscortGarage_Beacon_C;
+using BP_EscortGarage_Beacon_C = ::Game::GameElements::Objectives::Escort::BP_EscortGarage_Beacon_C;

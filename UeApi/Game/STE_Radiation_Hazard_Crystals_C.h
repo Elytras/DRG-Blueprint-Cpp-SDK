@@ -22,4 +22,4 @@ private:
 
 }}}}   // namespace Game::LevelElements::RoomObjects::Hazards
 
-using STE_Radiation_Hazard_Crystals_C = Game::LevelElements::RoomObjects::Hazards::STE_Radiation_Hazard_Crystals_C;
+using STE_Radiation_Hazard_Crystals_C = ::Game::LevelElements::RoomObjects::Hazards::STE_Radiation_Hazard_Crystals_C;

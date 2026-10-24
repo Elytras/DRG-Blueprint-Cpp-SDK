@@ -24,4 +24,4 @@ public:
 
 }}}   // namespace Game::WeaponsNTools::SMG
 
-using ABP_SMG_A_C = Game::WeaponsNTools::SMG::ABP_SMG_A_C;
+using ABP_SMG_A_C = ::Game::WeaponsNTools::SMG::ABP_SMG_A_C;

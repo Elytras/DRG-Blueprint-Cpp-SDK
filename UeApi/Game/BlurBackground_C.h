@@ -31,4 +31,4 @@ public:
 
 }}}   // namespace Game::UI::_GlobalAssets
 
-using BlurBackground_C = Game::UI::_GlobalAssets::BlurBackground_C;
+using BlurBackground_C = ::Game::UI::_GlobalAssets::BlurBackground_C;

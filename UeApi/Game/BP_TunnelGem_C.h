@@ -17,7 +17,7 @@ class UPrimitiveComponent;
 
 namespace Game { namespace GameElements { namespace GameEvents { namespace TunnelEvent {
 
-class BP_TunnelGem_C : public Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
+class BP_TunnelGem_C : public ::Game::GameElements::Resources::Embedded::Gems::BP_Gem_C
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/TunnelEvent/BP_TunnelGem", "BP_TunnelGem_C");
@@ -40,6 +40,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
+        static constexpr const char* UeIchRecords = "Box;Carriable;FirstPersonStaticMesh;SimpleObjectInfo;Sphere;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
         static constexpr const char* UberGraphFrame_BP_TunnelGem_C__UeName = "UberGraphFrame";
         static constexpr const char* Audio__UeScsNode = "b7a18ed98181e44ebb49dc77c53998f4";
         static constexpr const char* PointLight__UeScsNode = "338476daacd03540a4e43cbc0d7926dc";
@@ -48,4 +49,4 @@ private:
 
 }}}}   // namespace Game::GameElements::GameEvents::TunnelEvent
 
-using BP_TunnelGem_C = Game::GameElements::GameEvents::TunnelEvent::BP_TunnelGem_C;
+using BP_TunnelGem_C = ::Game::GameElements::GameEvents::TunnelEvent::BP_TunnelGem_C;

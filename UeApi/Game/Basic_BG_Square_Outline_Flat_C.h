@@ -21,4 +21,4 @@ public:
 
 }}}   // namespace Game::UI::Menu_MinersManual
 
-using Basic_BG_Square_Outline_Flat_C = Game::UI::Menu_MinersManual::Basic_BG_Square_Outline_Flat_C;
+using Basic_BG_Square_Outline_Flat_C = ::Game::UI::Menu_MinersManual::Basic_BG_Square_Outline_Flat_C;

@@ -12415,9 +12415,11 @@ public:
     UE_PURE TArray<class UActorComponent*> K2_GetComponentsByClass(TSubclassOf<class UActorComponent> ComponentClass) const;
     UE_PURE class USceneComponent* K2_GetRootComponent() const;
     UE_PURE bool WasRecentlyRendered(float Tolerance) const;
-    /* The editor's Get Components by Class node: K2_GetComponentsByClass(T::StaticClass()), its array of
-       UActorComponent* taken as an array of T* (every element is a T). AssetGen lowers it; no UFunction. */
+    /* The editor's Get Component(s) by Class nodes: K2_GetComponentsByClass(T::StaticClass()) and
+       GetComponentByClass(T::StaticClass()), their UActorComponent* taken as T* (every one is a T).
+       AssetGen lowers them; no UFunction. */
     template <class T> TArray<T *> GetComponentsByClass() const;
+    template <class T> T *GetComponentByClass() const;
 private:
     struct UeMarkers
     {

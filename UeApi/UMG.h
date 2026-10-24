@@ -1545,6 +1545,7 @@ class UPropertyBinding : public UObject
 {
 public:
     UE_CLASS("/Script/UMG", "PropertyBinding");
+    TWeakObjectPtr<class UObject> SourceObject;
     FDynamicPropertyPath SourcePath;
     FName DestinationProperty;
 };

@@ -12264,6 +12264,7 @@ public:
     UE_READONLY class USceneComponent* RootComponent;
     TArray<class AMatineeActor*> ControllingMatineeActors;
     TArray<FName> Layers;
+    TWeakObjectPtr<class UChildActorComponent> ParentComponent;
     TArray<FName> Tags;
     TMulticastSparseDelegate<void(class AActor* DamagedActor, float Damage, class UDamageType* DamageType, class AController* InstigatedBy, class AActor* DamageCauser)> OnTakeAnyDamage;
     TMulticastSparseDelegate<void(class AActor* DamagedActor, float Damage, class AController* InstigatedBy, FVector HitLocation, class UPrimitiveComponent* FHitComponent, FName BoneName, FVector ShotFromDirection, class UDamageType* DamageType, class AActor* DamageCauser)> OnTakePointDamage;
@@ -12538,6 +12539,7 @@ class USceneComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/Engine", "SceneComponent");
+    TWeakObjectPtr<class APhysicsVolume> PhysicsVolume;
     class USceneComponent* AttachParent;
     FName AttachSocketName;
     TArray<class USceneComponent*> AttachChildren;
@@ -13826,6 +13828,7 @@ public:
     TMulticastInlineDelegate<void(class USoundWave* PlayingSoundWave, float EnvelopeValue)> OnAudioSingleEnvelopeValue;
     TMulticastInlineDelegate<void(float AverageEnvelopeValue, float MaxEnvelope, int NumWaveInstances)> OnAudioMultiEnvelopeValue;
     TDelegate<void(TArray<FSubtitleCue> Subtitles, float CueDuration)> OnQueueSubtitles;
+    TWeakObjectPtr<class USceneComponent> AutoAttachParent;
     FName AutoAttachSocketName;
     void AdjustAttenuation(const FSoundAttenuationSettings& InAttenuationSettings);
     void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel, TEnum<EAudioFaderCurve> FadeCurve);
@@ -14792,6 +14795,7 @@ class USkinnedMeshComponent : public UMeshComponent
 public:
     UE_CLASS("/Script/Engine", "SkinnedMeshComponent");
     UE_READONLY class USkeletalMesh* SkeletalMesh;
+    UE_READONLY TWeakObjectPtr<class USkinnedMeshComponent> MasterPoseComponent;
     UE_READONLY TArray<ESkinCacheUsage> SkinCacheUsage;
     UE_READONLY TArray<FVertexOffsetUsage> VertexOffsetUsage;
     UE_READONLY class UPhysicsAsset* PhysicsAssetOverride;
@@ -16233,6 +16237,7 @@ public:
     float MaxTimeBeforeForceUpdateTransform;
     TArray<class UParticleSystemReplay*> ReplayClips;
     float CustomTimeDilation;
+    TWeakObjectPtr<class USceneComponent> AutoAttachParent;
     FName AutoAttachSocketName;
     TEnum<EAttachmentRule> AutoAttachLocationRule;
     TEnum<EAttachmentRule> AutoAttachRotationRule;
@@ -16684,6 +16689,7 @@ public:
     TMulticastInlineDelegate<void(FHitResult ImpactResult, FVector ImpactVelocity)> OnProjectileBounce;
     TMulticastInlineDelegate<void(FHitResult ImpactResult)> OnProjectileStop;
     float HomingAccelerationMagnitude;
+    TWeakObjectPtr<class USceneComponent> HomingTargetComponent;
     float MaxSimulationTimeStep;
     int MaxSimulationIterations;
     int BounceAdditionalIterations;
@@ -20159,6 +20165,7 @@ class UCanvasRenderTarget2D : public UTextureRenderTarget2D
 public:
     UE_CLASS("/Script/Engine", "CanvasRenderTarget2D");
     TMulticastInlineDelegate<void(class UCanvas* Canvas, int Width, int Height)> OnCanvasRenderTargetUpdate;
+    TWeakObjectPtr<class UWorld> World;
     bool bShouldClearRenderTargetOnReceiveUpdate;
     static class UCanvasRenderTarget2D* CreateCanvasRenderTarget2D(class UObject* WorldContextObject, TSubclassOf<class UCanvasRenderTarget2D> CanvasRenderTarget2DClass, int Width, int Height);
     static class UCanvasRenderTarget2D* CreateCanvasRenderTarget2D(TSubclassOf<class UCanvasRenderTarget2D> CanvasRenderTarget2DClass, int Width, int Height);

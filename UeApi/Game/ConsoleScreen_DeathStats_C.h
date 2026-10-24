@@ -30,6 +30,7 @@ public:
     BP_PlayerController_SpaceRig_C* Player;
     class AFSDPlayerState* Owner_State;
     void ExecuteUbergraph_ConsoleScreen_DeathStats(int EntryPoint);
+    void SetStatsOwner(class AFSDPlayerState* const& Player_State);
 private:
     struct UeMarkers
     {

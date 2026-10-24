@@ -1761,6 +1761,7 @@ public:
     UE_READONLY FModioUIStyleRef DialogStyle;
     UE_READONLY FMargin ButtonSpacing;
     class UWidget* SubHeaderWidget;
+    TWeakObjectPtr<class UModioDialogController> Controller;
     class UWidget* InputWidget;
     class UWidget* ButtonWidget;
     void OnNavigateDownFromCodeInputWidget();

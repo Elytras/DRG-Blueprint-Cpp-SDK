@@ -2005,6 +2005,7 @@ public:
     float MaxTimeBeforeForceUpdateTransform;
     TArray<FNiagaraMaterialOverride> EmitterMaterials;
     TMulticastInlineDelegate<void(class UNiagaraComponent* PSystem)> OnSystemFinished;
+    TWeakObjectPtr<class USceneComponent> AutoAttachParent;
     FName AutoAttachSocketName;
     TEnum<EAttachmentRule> AutoAttachLocationRule;
     TEnum<EAttachmentRule> AutoAttachRotationRule;

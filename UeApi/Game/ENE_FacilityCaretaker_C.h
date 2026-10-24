@@ -196,6 +196,7 @@ public:
     void TurnOffWeakpointParticles();
     void GetRandomStageActions(TArray<class UCaretakerActionComponent*>& Array);
     void ActivateRandomAction(class UCaretakerActionComponent*& Output_Get);
+    void DeactivateWeakpointParticle(class UDestructibleSubHealthComponent* const& Key);
     void Begin_Opening_Eyes();
     void CheckIfOnlyOnePlayerIsAllive();
     bool IsStillValid();

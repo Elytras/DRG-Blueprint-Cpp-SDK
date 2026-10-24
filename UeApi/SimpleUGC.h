@@ -148,6 +148,7 @@ class UUGCLatentActionManager : public UObject
 public:
     UE_CLASS("/Script/SimpleUGC", "UGCLatentActionManager");
     UE_READONLY TMap<int64, class UTexture2DDynamic*> ModioModThumbnails;
+    UE_READONLY TWeakObjectPtr<class UModioTermsWrapper> LatestModioTermsAndConditions;
     TMap<int64, class UModioModInfoWrapper*> ModioModMetaDatas;
     UE_PURE class UModioModInfoWrapper* GetCachedModioModMetaData(int64 ModId);
     void RemoveTermsAndConditionLatent();

@@ -81,6 +81,7 @@ class UMaterialInstanceConstant;
 class UMaterialInstanceDynamic;
 class UMaterialInterface;
 class UMaterialParameterCollection;
+class UMediaPlayer;
 class UMediaTexture;
 class UMeshComponent;
 class UNetDriver;
@@ -10164,6 +10165,10 @@ public:
     TEnum<EPipelineBuildState> PipelineState;
     TEnum<ERefineryState> RefineryState;
     float RotationSpeed;
+    TWeakObjectPtr<class APipelineExtractorPod> pod;
+    TWeakObjectPtr<class APipelineSegment> ConnectedSegment;
+    TWeakObjectPtr<class APipelineStart> PipelineStart;
+    TWeakObjectPtr<class AFSDRefinery> Refinery;
 };
 
 class UFSDRefineryAnimInstance : public UAnimInstance
@@ -10239,6 +10244,7 @@ public:
     UE_CLASS("/Script/FSD", "ShootingSpiderAnimInstance");
     UE_READONLY float LookAtBlend;
     bool CheckCurve;
+    TWeakObjectPtr<class AActor> TargetActor;
     UE_READONLY FVector LookAtLocation;
 };
 
@@ -10638,6 +10644,7 @@ public:
     TMulticastInlineDelegate<void(FName Message)> OnMessageBehaviorTreeEvent;
     TMulticastInlineDelegate<void()> OnAlertedEvent;
     TEnum<ECollisionChannel> LOSTraceChannel;
+    TWeakObjectPtr<class APlayerCharacter> TargetedPlayer;
     void OnAttackingChanged(bool attacking);
     void PauseLogic();
     void Recieve_BlackboardValueChanged(const FName& KeyName);
@@ -11053,6 +11060,7 @@ public:
     class UDamageComponent* EndExplosionDamage;
     UE_READONLY TArray<class UAmberEventEnemyPool*> EnemyPools;
     TArray<class AFSDPawn*> spawnedEnemies;
+    TWeakObjectPtr<class UAmberEventEnemyPool> CurrentPool;
     UE_READONLY float InitialDelayBeforeSpawn;
     UE_READONLY float MaxSpawnRange;
     void OnEnemySpawned(class APawn* Pawn);
@@ -11060,6 +11068,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* CurrentPool__Replicated = ":";
         static constexpr const char* EndExplosionDamage__UeSubobject = "ExplosionDamage /Script/FSD.DamageComponent";
         static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
         static constexpr const char* StartEventObject__UeSubobject = "StartEventObject /Script/Engine.ChildActorComponent";
@@ -11377,6 +11386,7 @@ public:
     UE_READONLY class USoundCue* PickupSound;
     UE_READONLY class UResourceData* ResourceData;
     TArray<class APlayerCharacter*> OverlappingPlayers;
+    TWeakObjectPtr<class APlayerCharacter> CollectedBy;
     void CalcMovement(float InProgress, const FVector& InVector, FVector& OutVelocity, FVector& OutAngularVelocity);
     void OnRep_CollectedBy();
     void SetCollectOpen();
@@ -11385,6 +11395,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* CollectedBy__Replicated = "OnRep_CollectedBy:";
         static constexpr const char* InfoComponent__UeSubobject = "Info /Script/FSD.SimpleObjectInfoComponent";
     };
 };
@@ -11415,6 +11426,7 @@ class AAdicPuddle : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "AdicPuddle");
+    TWeakObjectPtr<class UPrimitiveComponent> TriggerCollider;
     UE_READONLY class USphereComponent* SphereTrigger;
     UE_READONLY class USoundBase* SpawnSound;
     UE_READONLY TSubclassOf<class UStatusEffect> InflictedStatusEffect;
@@ -11715,6 +11727,7 @@ public:
     TSubclassOf<class UStatusEffect> CarryingThrowingStatusEffect;
     UE_READONLY float ThrowCarriableProgress;
     TMap<uint8, class UCharacterStateComponent*> CharacterStates;
+    TWeakObjectPtr<class ATutorialManager> TutorialManager;
     class UCharacterStateComponent* ActiveCharacterState;
     bool IsInDropPod;
     bool IsInEscapePod;
@@ -12235,6 +12248,7 @@ public:
     UE_READONLY float MinTracerDistance;
     UE_READONLY float TracerSpeed;
     UE_READONLY class USoundBase* ReviveSirens;
+    TWeakObjectPtr<class UAudioComponent> ReviveSirensComponent;
     UE_READONLY float DistanceToFacePlayer;
     UE_READONLY float RotationSpeed;
     UE_READONLY float PrepareToMineRange;
@@ -12581,6 +12595,7 @@ public:
     UE_READONLY FVector VineVelocity;
     UE_READONLY FVector VineLocation;
     UE_READONLY FVector VineStartLocation;
+    UE_READONLY TWeakObjectPtr<class UHealthComponent> Target;
     void BP_OnInitialized();
     void BP_OnTargetChanged(class UHealthComponent* NewTarget);
 private:
@@ -13652,6 +13667,7 @@ public:
     UE_READONLY class UOutlineComponent* OutlineComponent;
     float ShowButtonDelay;
     TMulticastInlineDelegate<void()> OnReachedDropShip;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> CalledBy;
     void AddTrayEffect(class UNiagaraSystem* Effect, int numberOfTraysAffected);
     void EnableButton();
     void OnRep_CalledBy();
@@ -13664,6 +13680,7 @@ private:
     {
         static constexpr const char* OnCalledByChanged__UeDispatcher = "Assignable";
         static constexpr const char* OnReachedDropShip__UeDispatcher = "Assignable Callable";
+        static constexpr const char* CalledBy__Replicated = "OnRep_CalledBy:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
         static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -14763,6 +14780,8 @@ class ATrackBuilderSegment : public AActor
 public:
     UE_CLASS("/Script/FSD", "TrackBuilderSegment");
     UE_READONLY class UTrackBuilderUsable* NextSegmentUsable;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> BuiltByCharacter;
+    UE_READONLY TWeakObjectPtr<class UTrackBuilderUsable> BuiltFromUsable;
     FTrackBuilderPoint SegmentEndTransform;
     FTrackBuilderPoint ServerSegmentEndTransform;
     bool CanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint, class AItem* PlaceableItem);
@@ -14784,6 +14803,8 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* BuiltByCharacter__Replicated = ":";
+        static constexpr const char* BuiltFromUsable__Replicated = ":";
         static constexpr const char* ServerSegmentEndTransform__Replicated = "OnRep_SegmentEndTransform:";
         static constexpr const char* NextSegmentUsable__UeSubobject = "NextSegmentUsable /Script/FSD.TrackBuilderUsable";
         static constexpr const char* RootComponent__UeSubobject = "DefaultSceneRoot /Script/Engine.SceneComponent";
@@ -15172,6 +15193,7 @@ public:
     TMulticastInlineDelegate<void(class APostProcessingManager* PostProcessingManager)> OnNewPostProcessingManager;
     TMulticastInlineDelegate<void(class UItemSkin* Skin)> OnPreviewSkinChanged;
     bool ShowingReconnectScreen;
+    UE_READONLY TWeakObjectPtr<class UMouseCursorWidget> MouseCursorWidget;
     TMulticastInlineDelegate<void(TSubclassOf<class APlayerCharacter> NewCharacter, ECharselectionCameraLocation selectionLocation)> OnShowCharacterSelector;
     TMulticastInlineDelegate<void(TSubclassOf<class AActor> Actor, ECharselectionCameraLocation selectionLocation)> OnShowViewer3D;
     TMulticastInlineDelegate<void(int EquipSlot)> OnShowCharacterSelectorEquipSlot;
@@ -15199,6 +15221,7 @@ public:
     FTransform LoaderViewTargetTransform;
     TMulticastInlineDelegate<void(class UGeneratedMission* OutGeneratedMission)> OnGeneratedMissionChanged;
     TMulticastInlineDelegate<void(class AMolly* InDonkey)> OnDonkeyChanged;
+    UE_READONLY TWeakObjectPtr<class AMolly> Donkey;
     TMulticastInlineDelegate<void(class ABosco* Bosco)> OnBoscoChanged;
     UE_READONLY bool DEBUGUseDebugSeedForMissions;
     UE_READONLY bool DEBUGAutoRotateMissions;
@@ -15218,6 +15241,11 @@ public:
     TMulticastInlineDelegate<void(EMinersManualSection Section, FGuid ObjectID, FText Text)> OnMinersManualNotification;
     TMulticastInlineDelegate<void(class UHUDWarningWidget* newWidget)> OnNewHUDWarning;
     float LastDreadnaughtKillTime;
+    TWeakObjectPtr<class UWindowWidget> ActiveEscapeMenu;
+    TWeakObjectPtr<class APostProcessingManager> PostProcessingManager;
+    UE_READONLY TWeakObjectPtr<class ABosco> Drone;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> LocalPlayerCharacter;
+    UE_READONLY TWeakObjectPtr<class ATutorialManager> TutorialManager;
     UE_READONLY class ACharacterSelectionSwitcher* CharacterSelectionSwitcher;
     UE_READONLY bool bGameSettingsChanged;
     UE_READONLY FFSDServerSearchOptions ServerSearchOptions;
@@ -15830,6 +15858,7 @@ public:
     UE_READONLY class UEnemyHealthComponent* Health;
     UE_READONLY class UStaticMeshComponent* Mesh;
     UE_READONLY class UWeakpointGlowComponent* HitGlow;
+    TWeakObjectPtr<class UEnemyHealthComponent> ParentHealth;
     UE_READONLY class UDamageClass* DamageToParent;
     UE_READONLY class UParticleSystem* deathParticles;
     UE_READONLY class USoundCue* deathSound;
@@ -16609,6 +16638,8 @@ class ALaserPointerWaypoint : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "LaserPointerWaypoint");
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> Character;
+    UE_READONLY TWeakObjectPtr<class ALaserPointerItem> LaserPointer;
     UE_READONLY FVector Normal;
     UE_READONLY int Index_0;
     void OnHide();
@@ -16634,6 +16665,8 @@ public:
     class UMaterialInterface* BlockedBeamMaterial;
     class UMaterialInterface* SeekerMaterial;
     float BeamThicknessScale;
+    UE_READONLY TWeakObjectPtr<class ALockOnWeapon> Item;
+    UE_READONLY TWeakObjectPtr<class AActor> TargetActor;
     FBeamCollision Collision;
     void ReceiveItemSet();
 private:
@@ -16788,7 +16821,13 @@ class UCrossbowProjectileMagnetic : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "CrossbowProjectileMagnetic");
     TArray<TSubclassOf<class UStatusEffect>> ElectricEffects;
+    TWeakObjectPtr<class AFSDPawn> TargetEnemy;
     float OverlapCheckSize;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* TargetEnemy__Replicated = ":";
+    };
 };
 
 class ATetherStation : public AActor
@@ -16949,6 +16988,8 @@ public:
     float Damage;
     float TargetYaw;
     float TargetPitch;
+    TWeakObjectPtr<class UHealthComponentBase> LastTarget;
+    TWeakObjectPtr<class UHealthComponentBase> PrioritizedTarget;
     class UWeaponFireComponent* WeaponFire;
     class UAudioComponent* ShootingAudioComponent;
     void AmmoSpent();
@@ -16977,6 +17018,8 @@ private:
         static constexpr const char* MaxAmmoCount__Replicated = "OnRep_MaxAmmoCount:";
         static constexpr const char* TargetYaw__Replicated = ":";
         static constexpr const char* TargetPitch__Replicated = ":";
+        static constexpr const char* LastTarget__Replicated = "OnRep_LastTarget:";
+        static constexpr const char* PrioritizedTarget__Replicated = ":";
         static constexpr const char* RootComponent__UeSubobject = "TurretLegs /Script/Engine.SceneComponent";
         static constexpr const char* SentryGunMesh__UeSubobject = "SentryGunMesh /Script/Engine.SkeletalMeshComponent";
     };
@@ -17292,7 +17335,13 @@ class UPetComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "PetComponent");
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> OwningPlayer;
     void ReceiveOwningPlayerChanged();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OwningPlayer__Replicated = "ReceiveOwningPlayerChanged:";
+    };
 };
 
 class UBeastMasterUseSphere : public USphereComponent
@@ -17357,6 +17406,7 @@ class AZipLineConnector : public AActor
 {
 public:
     UE_CLASS("/Script/FSD", "ZipLineConnector");
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> Character;
     UE_READONLY FVector ZipLineLocation;
     UE_READONLY FVector ZipLineDirection;
     UE_READONLY FRotator RotationOffset;
@@ -17403,6 +17453,7 @@ public:
     UE_READONLY bool bSegmentBroken;
     UE_READONLY float SegmentActivatedProgress;
     UE_READONLY TEnum<EPipelineBuildState> PipelineState;
+    UE_READONLY TWeakObjectPtr<class APipelineStart> PipelineStart;
     UE_READONLY float MinValidLength;
     UE_READONLY float MaxValidLength;
     UE_READONLY float TooSharpExtraLength;
@@ -17478,6 +17529,7 @@ public:
     float DebrisLightDistanceFromGround;
     float RemoveDebrisLightUpdateRate;
     bool DebugDrawDebrisLight;
+    TWeakObjectPtr<class APlagueInfectionNode> TargetedPlagueNode;
     bool CanDropWeaponPod(float& TimeLeft);
     void EquipPlaguePod(class APlayerCharacter* Player);
     void PushDebrisLights();
@@ -17926,6 +17978,7 @@ class APipelineExtractorPod : public ARessuplyPod
 {
 public:
     UE_CLASS("/Script/FSD", "PipelineExtractorPod");
+    UE_READONLY TWeakObjectPtr<class APipelineSegment> ConnectedSegment;
     float TargetRotation;
     void ExtractorPodOrderedEvent(class APlayerCharacter* InUser);
     void OnRep_ConnectedSegment();
@@ -17934,6 +17987,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* ConnectedSegment__Replicated = "OnRep_ConnectedSegment:";
         static constexpr const char* TargetRotation__Replicated = ":";
         static constexpr const char* Damage__UeSubobject = "Damage /Script/FSD.DamageComponent";
         static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
@@ -18543,8 +18597,10 @@ public:
     float AutoRecallDistance;
     float RelocateLandingHeight;
     TSubclassOf<class AActor> RelocationMarkerType;
+    UE_READONLY TWeakObjectPtr<class AActor> RecallTarget;
     UE_READONLY TEnum<ERecallableActorState> State;
     bool RelocateLanding;
+    TWeakObjectPtr<class AActor> RelocationMarker;
     bool bInitialized;
     UE_AUTHORITY_ONLY void BeginMove();
     void OnMoveFinished(bool returnedHome);
@@ -18571,6 +18627,7 @@ private:
         static constexpr const char* OnStateChanged__UeDispatcher = "Assignable";
         static constexpr const char* OnReturnFinish__UeDispatcher = "Assignable";
         static constexpr const char* OnRelocateFinished__UeDispatcher = "Assignable";
+        static constexpr const char* RecallTarget__Replicated = "OnRep_RecallTarget:";
         static constexpr const char* State__Replicated = "OnRep_State:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -18615,6 +18672,7 @@ public:
     TMulticastInlineDelegate<void(float Progress)> OnDeployProgressEvent;
     UE_READONLY class UActorTrackingComponent* ActorTrackingIcon;
     UE_READONLY class UOutlineComponent* outline;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> SentryGunOwner;
     UE_READONLY bool bOutlineAndIconVisible;
     UE_READONLY TEnum<ERedeployableSentryGunState> State;
     float PlasmaLineMaxRange;
@@ -18651,6 +18709,7 @@ private:
         static constexpr const char* OnDeployFinished__UeDispatcher = "Assignable";
         static constexpr const char* OnDismantleFinished__UeDispatcher = "Assignable";
         static constexpr const char* OnDeployProgressEvent__UeDispatcher = "Assignable Callable";
+        static constexpr const char* SentryGunOwner__Replicated = "OnRep_SentryGunOwner:";
         static constexpr const char* State__Replicated = "OnRep_State:";
         static constexpr const char* ActorTrackingIcon__UeSubobject = "ActorTrackingIcon /Script/FSD.ActorTrackingComponent";
         static constexpr const char* RootComponent__UeSubobject = "TurretLegs /Script/Engine.SceneComponent";
@@ -19082,6 +19141,10 @@ public:
     float MinimumTimeBetweenTutorials;
     bool ResetTutorialsOnStart;
     bool ShowTutorialsDebug;
+    TWeakObjectPtr<class AFSDPlayerController> PlayerController;
+    TWeakObjectPtr<class APlayerCharacter> PlayerCharacter;
+    TWeakObjectPtr<class UFSDSaveGame> SaveGame;
+    TWeakObjectPtr<class UTutorialComponent> ActiveTutorial;
 };
 
 class UTutorialComponent : public UActorComponent
@@ -19096,6 +19159,11 @@ public:
     bool bAutoRegisterWithManager;
     bool bDebugAlwaysShow;
     bool ManuallyMarkViews;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> PlayerCharacter;
+    UE_READONLY TWeakObjectPtr<class AFSDPlayerState> PlayerState;
+    UE_READONLY TWeakObjectPtr<class AFSDPlayerController> PlayerController;
+    UE_READONLY TWeakObjectPtr<class UFSDSaveGame> SaveGame;
+    UE_READONLY TWeakObjectPtr<class ATutorialManager> TutorialManager;
     UE_READONLY bool bTutorialInitialized;
     UE_READONLY bool bTutorialReady;
     UE_READONLY bool bTutorialVisible;
@@ -19626,6 +19694,8 @@ public:
     UE_READONLY class USoundBase* DeathPanicSound;
     UE_READONLY class UParticleSystem* BleedParticles;
     UE_READONLY class USoundBase* BladderDestroyedNoise;
+    TWeakObjectPtr<class UParticleSystemComponent> BleedParticlesComponent;
+    TWeakObjectPtr<class UAudioComponent> PanicAudioComponent;
     UE_READONLY float RagdollForceModifier;
     UE_READONLY float DeathYRotationSpeed;
     UE_READONLY float DeathXRotationSpeed;
@@ -19724,6 +19794,7 @@ public:
     UE_READONLY float SpawnHeightOffset;
     UE_READONLY float AlertDistance;
     float respawnDelay;
+    UE_READONLY TWeakObjectPtr<class AInsectSwarmEnemy> SwarmInstance;
     void OnSwarmDestroyed(class AActor* DestroyedActor);
     void OnSwarmSpawned(class AInsectSwarmEnemy* Swarm);
     class UStaticMeshComponent* Receive_GetStaticMesh() const;
@@ -19786,6 +19857,7 @@ public:
     UE_READONLY TEnum<ECaveLeechState> State;
     UE_READONLY FVector_NetQuantize TentacleLocation;
     UE_READONLY FVector_NetQuantize TentacleVelocity;
+    UE_READONLY TWeakObjectPtr<class AActor> Target;
     UE_READONLY class UHealthComponent* HealthTarget;
     UE_READONLY class USceneComponent* TentacleHead;
     void BP_OnBite(class UHealthComponent* TargetHealth);
@@ -19802,6 +19874,7 @@ private:
         static constexpr const char* State__Replicated = "OnRep_State:";
         static constexpr const char* TentacleLocation__Replicated = ":";
         static constexpr const char* TentacleVelocity__Replicated = ":";
+        static constexpr const char* Target__Replicated = ":";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* GrabberComponent__UeSubobject = "Grabber /Script/FSD.GrabberComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
@@ -20205,6 +20278,7 @@ public:
     UE_READONLY class USoundBase* LaserSound;
     UE_READONLY class USoundBase* LastPowerDownSound;
     UE_READONLY class USoundBase* PowerUpSound;
+    TWeakObjectPtr<class UAudioComponent> LaserSoundComp;
     float IntroductionTime;
     bool IsIntroducing;
     bool IntroductionDone;
@@ -20674,6 +20748,7 @@ public:
     UE_READONLY bool bDidMajorCarve;
     UE_READONLY float StateTime;
     UE_READONLY TEnum<EPitJawState> State;
+    UE_READONLY TWeakObjectPtr<class AActor> Target;
     UE_READONLY class UHealthComponent* HealthTarget;
     void BP_FinishRelocation(FTransform relocationPoint);
     void BP_OnMajorCarve();
@@ -20703,6 +20778,7 @@ private:
         static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* RelocationPoints__Replicated = ":";
         static constexpr const char* State__Replicated = "OnRep_State:";
+        static constexpr const char* Target__Replicated = ":";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Bite__UeSubobject = "Bite /Script/FSD.MeleeAttackComponent";
         static constexpr const char* FirstBite__UeSubobject = "FirstBite /Script/FSD.MeleeAttackComponent";
@@ -21085,6 +21161,7 @@ public:
     UE_READONLY float TiltAlpha;
     UE_READONLY class USoundBase* RollingSound;
     UE_READONLY FName RollingSpeedParamName;
+    TWeakObjectPtr<class UAudioComponent> RollingSoundComponent;
     class UFakeMoverSettings* RollMoveSettings;
     class UFakeMoverSettings* StopRollMoveSettings;
     FGameplayTagQuery TargetQuery;
@@ -21609,6 +21686,7 @@ public:
     UE_READONLY class USoundCue* FireSoundTail;
     UE_READONLY bool IsFireSoundTail2D;
     class UForceFeedbackEffect* FireForceFeedbackEffect;
+    UE_READONLY TWeakObjectPtr<class UAudioComponent> FireSoundInstance;
     float FireSoundFadeDuration;
     class USoundCue* ReloadSound;
     int BulletsRemainingForNearEmptySound;
@@ -21866,8 +21944,12 @@ public:
     static float AddHeroXP(class UObject* WorldContextObject, class UPlayerCharacterID* characterID, float amount);
     static float AddHeroXP(class UPlayerCharacterID* characterID, float amount);
     static TArray<class UMaterialInstanceDynamic*> CreateDynamicMaterialInstances(class UMeshComponent* Mesh);
+    static void DissolveMaterials(class UObject* WorldContextObject, class UMeshComponent* const& Mesh, float Duration);
+    static void DissolveMaterials(class UMeshComponent* const& Mesh, float Duration);
     UE_PURE static float EvaluateRuntimeCurve(class UObject* WorldContextObject, const FRuntimeFloatCurve& Curve, float Time);
     UE_PURE static float EvaluateRuntimeCurve(const FRuntimeFloatCurve& Curve, float Time);
+    static void FadeMaterials(class UObject* WorldContextObject, class UMeshComponent* const& Mesh, float Duration);
+    static void FadeMaterials(class UMeshComponent* const& Mesh, float Duration);
     UE_AUTHORITY_ONLY static FVector FindCharacterTeleportLocation(class UObject* WorldContextObject, const FVector& closeToLocation, float desiredDistance);
     UE_AUTHORITY_ONLY static FVector FindCharacterTeleportLocation(const FVector& closeToLocation, float desiredDistance);
     static class AActor* FindClosestEnemyFromActor(class AActor* FromActor, float range, bool LineOfSightCheck, const FGameplayTagQuery& tagQuery, const FVector& Offset);
@@ -21992,6 +22074,7 @@ public:
     bool VisibleOnHoldTAB;
     bool VisibleFromStart;
     bool bIconHidden;
+    TWeakObjectPtr<class UActorTrackingWidget> Widget;
     void OnHoldTAB(bool IsDown);
     void ShowAlwaysOn(bool IsActive_0);
     void ToggleIcon(bool Visible);
@@ -22039,6 +22122,7 @@ class UActorTrackingWidget : public UFSDUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "ActorTrackingWidget");
+    UE_READONLY TWeakObjectPtr<class USceneComponent> TargetComponent;
     float WorldHeightOffset;
     float ScaleBy;
     FMargin ScreenMargin;
@@ -22254,6 +22338,8 @@ public:
     TMulticastInlineDelegate<void(class AActor* aGrabbedActor, bool fullGrabElapsed)> OnReleasedActor;
     FGameplayTagQuery TagFilter;
     class UAudioComponent* GrabLoopSoundInstance;
+    TWeakObjectPtr<class ADeepPathfinderCharacter> PathfinderOwner;
+    TWeakObjectPtr<class USkeletalMeshComponent> OwnerMesh;
     UE_READONLY class USoundCue* BeginGrabedSound;
     UE_READONLY class USoundCue* GrabedLoopSound;
     UE_READONLY class USoundCue* EndGrabedSound;
@@ -22587,6 +22673,7 @@ class UInDangerComponent : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "InDangerComponent");
     TMulticastInlineDelegate<void()> OnInDanger;
+    UE_READONLY TWeakObjectPtr<class UHealthComponentBase> ParentHealthComponent;
     UE_READONLY float DamageTimeLimit;
     UE_READONLY float DamageThreshold;
     bool RunsOnClients;
@@ -22706,6 +22793,7 @@ class ACleanupPodItem : public ARessuplyPodItem
 public:
     UE_CLASS("/Script/FSD", "CleanupPodItem");
     TMulticastInlineDelegate<void()> OnCleaningPodLaunched;
+    TWeakObjectPtr<class APlagueControlActor> PlagueController;
     void CallUpdateWidget();
     UE_SERVER UE_RELIABLE void Server_Call_CleaningPod(const FVector& Location, class APlagueInfectionNode* plagueNode);
     void UpdateWidget(TEnum<EPlaceableObstructionType> reason, float TimeLeft);
@@ -22969,6 +23057,7 @@ class UCustomAmmoCountWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "CustomAmmoCountWidget");
+    UE_READONLY TWeakObjectPtr<class AItem> Item;
     void ReceiveItemSet();
 };
 
@@ -23285,6 +23374,7 @@ public:
     UE_CLASS("/Script/FSD", "CableEndPoint");
     TMulticastInlineDelegate<void(class UCableEndPoint* EndPoint, class ACable* Cable)> OnConnected;
     TSubclassOf<class ACable> ConnectType;
+    UE_READONLY TWeakObjectPtr<class ACable> ConnectedCable;
     float MaxConnectRadius;
     float ConnectDistance;
     FVector MaxAngles;
@@ -23297,6 +23387,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* OnConnected__UeDispatcher = "Assignable";
+        static constexpr const char* ConnectedCable__Replicated = "OnRep_ConnectedCable:";
         static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
         static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
     };
@@ -24654,6 +24745,7 @@ class UBarMenuWidget : public UWindowWidget
 {
 public:
     UE_CLASS("/Script/FSD", "BarMenuWidget");
+    UE_READONLY TWeakObjectPtr<class ASpaceRigBar> SpaceRigBar;
 };
 
 class UFSDKismetArrayExtensionFunctions : public UKismetArrayLibrary
@@ -25380,6 +25472,7 @@ class UCoolDownProgressWidget : public UUserWidget
 public:
     UE_CLASS("/Script/FSD", "CoolDownProgressWidget");
     UE_READONLY FCoolDownProgressStyle Style;
+    TWeakObjectPtr<class UObject> CoolDownObject;
     UE_READONLY bool bIsFinished;
     void Init(class UObject* InCoolDownObject, const FCoolDownProgressStyle& InStyle);
     void ReceiveInitWidget();
@@ -25487,6 +25580,7 @@ class UBodyRotationManagerComponent : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "BodyRotationManagerComponent");
     FRuntimeFloatCurve KnockBackCurve;
+    TWeakObjectPtr<class USceneComponent> RotationComponent;
     float LerpSpeed;
     void ApplyKnockBack(float force, float Duration, const FVector& Direction);
 };
@@ -25519,6 +25613,7 @@ class UTentacleManagerComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "TentacleManagerComponent");
+    TWeakObjectPtr<class UNiagaraComponent> Tentacles;
     FRuntimeFloatCurve SpeedCurve;
     FRuntimeFloatCurve ReachCurve;
     FName Param_Speed;
@@ -26074,6 +26169,7 @@ public:
     UE_READONLY TArray<class UItemUpgrade*> Upgrades;
     UE_READONLY TSubclassOf<class AProjectileBase> ProjectileClass;
     UE_READONLY TSubclassOf<class ADroneStream> StreamClass;
+    UE_READONLY TWeakObjectPtr<class ABosco> AbillityOwner;
     TArray<class UItemUpgrade*> ProjectileUpgrades;
     class UBoscoProjectileAbillity* AbilityData;
     bool InitializeAtBeginPlay;
@@ -26687,6 +26783,7 @@ public:
     class USkeletalMeshComponent* TailMesh;
     class UHitReactionComponent* HitReacts;
     FRuntimeFloatCurve MovementCurve;
+    TWeakObjectPtr<class AActor> SyncedTarget;
     FName TailSocket;
     FName HeadSocket;
     class UPointLightComponent* GrabLight;
@@ -26717,6 +26814,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* SyncedTarget__Replicated = ":";
         static constexpr const char* Using__Replicated = "OnRep_Using:";
     };
 };
@@ -26831,6 +26929,8 @@ public:
     UE_READONLY class USplineComponent* CableSplineComponent;
     UE_READONLY class UStaticMeshComponent* CableEndPostMesh;
     UE_READONLY class USceneComponent* PreviewEndPostLocation;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> BuiltByCharacter;
+    UE_READONLY TWeakObjectPtr<class UCableUsable> BuiltFromUsable;
     FCablePoint CableEndTransform;
     FCablePoint ServerCableEndTransform;
     float MaxLength;
@@ -26848,6 +26948,8 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* BuiltByCharacter__Replicated = ":";
+        static constexpr const char* BuiltFromUsable__Replicated = ":";
         static constexpr const char* ServerCableEndTransform__Replicated = "OnRep_CableEndTransform:";
         static constexpr const char* CableEndPostMesh__UeSubobject = "CableEndPostMesh /Script/Engine.StaticMeshComponent";
         static constexpr const char* CableSplineComponent__UeSubobject = "CableSplineComponent /Script/Engine.SplineComponent";
@@ -26921,6 +27023,7 @@ public:
     FString ColliderName;
     class USceneComponent* CableStartComponent;
     class ACable* Cable;
+    TWeakObjectPtr<class APlayerCharacter> InUseBy;
     class ACableEnd* DesignatedCableEnd;
     void FinishUse(class APlayerCharacter* User, class ACable* InCable);
     void OnRep_CableSegment();
@@ -26930,6 +27033,7 @@ private:
     {
         static constexpr const char* OnCableChanged__UeDispatcher = "Assignable";
         static constexpr const char* Cable__Replicated = "OnRep_CableSegment:";
+        static constexpr const char* InUseBy__Replicated = ":";
         static constexpr const char* DesignatedCableEnd__Replicated = ":";
     };
 };
@@ -27303,6 +27407,11 @@ public:
     float TargetMaxDistance;
     TEnum<ECollisionChannel> TraceChannel;
     UE_READONLY class APlayerCharacter* Character;
+    UE_READONLY TWeakObjectPtr<class AActor> TargetActor;
+    UE_READONLY TWeakObjectPtr<class UPrimitiveComponent> TargetPrimitive;
+    UE_READONLY TWeakObjectPtr<class USimpleObjectInfoComponent> TargetInfo;
+    UE_READONLY TWeakObjectPtr<class UTemperatureComponent> TargetTemperature;
+    UE_READONLY TWeakObjectPtr<class UPawnAfflictionComponent> TargetAfflictions;
     UE_READONLY TScriptInterface<class IHealth> TargetHealth;
     UE_READONLY TScriptInterface<class ITargetable> TargetTargetable;
     UE_READONLY float TargetTime;
@@ -27677,7 +27786,10 @@ class UDamageFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Script/FSD", "DamageFunctionLibrary");
+    static FName FindClosestBone(class USkeletalMeshComponent* const& Mesh, const FVector& Location, class ULimbDismembermentList* dismembermentList, float MaxDistance);
+    static int FindClosestBoneIndex(class USkeletalMeshComponent* const& Mesh, const FVector& Location, class ULimbDismembermentList* dismembermentList, float MaxDistance);
     static class UDamageImpulse* GetDamageImpulse(const FDamageData& DamageData);
+    static FVector GetForceFromDamageImpulse(class AActor* const& Target, const FDamageData& DamageData);
     UE_PURE static bool IsBurnDeath(class UDamageClass* DamageClass, const TArray<class UDamageTag*>& Tags);
     UE_PURE static bool IsCookedDeath(const TArray<class UDamageTag*>& Tags);
     UE_PURE static bool IsCorrosiveDeath(class UDamageClass* DamageClass, const TArray<class UDamageTag*>& Tags);
@@ -28100,6 +28212,7 @@ class UShoutWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "ShoutWidget");
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> Sender;
     UE_READONLY FText Text;
     UE_READONLY float Duration;
     void OnShout();
@@ -28128,6 +28241,7 @@ public:
     TArray<FActiveOutline> ActiveOutlines;
     class APlayerCharacter* Character;
     class UDialogDataAsset* LastShout;
+    TWeakObjectPtr<class UAudioComponent> ShoutAudioComponent;
     TMap<class UDialogDataAsset*, float> ShoutHistory;
     TArray<FMissionShoutQueueItem> MissionShoutQueue;
     static void MissionShout(class UObject* WorldContext, class UDialogDataAsset* Shout_0, bool bPriority);
@@ -28965,6 +29079,7 @@ public:
     TSubclassOf<class ACrossbowElectroBeam> PlasmaBeamClass;
     TSubclassOf<class AActor> ElectrocutionActorClass;
     float PlasmaLineMaxRange;
+    TWeakObjectPtr<class AActor> ElectrocutionActor;
     void OnElectrocutionActorDestroyed(class AActor* Actor);
 };
 
@@ -29198,7 +29313,13 @@ class UDestinationActorComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "DestinationActorComponent");
+    UE_READONLY TWeakObjectPtr<class AActor> DestinationActor;
     UE_PURE float GetDistToDestinationActor() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* DestinationActor__Replicated = ":";
+    };
 };
 
 class UCustomKeyBindingLibrary : public UBlueprintFunctionLibrary
@@ -30040,7 +30161,9 @@ public:
     static void EvalCurve2D(const FInterpCurveVector2D& Curve, float Key, FVector2D& OutPosition, FVector2D& OutTangent);
     static void EvalCurveScaled2D(const FInterpCurveVector2D& Curve, float Key, FVector2D ScaleBy, FVector2D& OutPosition, FVector2D& OutTangent);
     static void GetLocationAndTangentsAtSplinePoint(class USplineComponent* Spline, int PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace);
+    static TArray<FTransform> GetSplineComponentTransforms(class USplineComponent* const& SplineComponent, float StepSize, TEnum<ESplineCoordinateSpace> Space);
     static void SetStartAndEndTangentsCurve2D(FInterpCurveVector2D& Curve, FVector2D StartTangent, FVector2D EndTangent);
+    static bool SplineComponentSphereTrace(class USplineComponent* const& SplineComponent, float Radius, TEnum<ETraceTypeQuery> TraceType, float StepSize, TArray<class AActor*> IgnoreActors, FHitResult& OutHitResult, FVector Offset);
 };
 
 class UWalkAndFlyEnemyComponent : public UActorComponent
@@ -30061,6 +30184,7 @@ public:
     UE_READONLY float FlyTimeRandomOffset;
     UE_READONLY bool FlyUseTimer;
     UE_READONLY FStateStats FlyStats;
+    TWeakObjectPtr<class ADeepPathfinderCharacter> OwningPathfinder;
     void OnRep_StateChange(bool bOldIsFlying);
     void SetAllowedToChangeState(bool bIsAllowed);
     void SetIsFlying(bool bIsFlying);
@@ -31097,6 +31221,7 @@ public:
     TMulticastInlineDelegate<void()> OnStopUse;
     TMulticastInlineDelegate<void(float Progress)> OnProgress;
     class UDialogDataAsset* BoscoLaserpointerShout;
+    TWeakObjectPtr<class USingleUsableComponent> SyncToUsable;
     UE_READONLY float Progress;
     float useDuration;
     bool ResetOnFail;
@@ -31322,6 +31447,7 @@ class AHackingToolItem : public AAnimatedItem
 {
 public:
     UE_CLASS("/Script/FSD", "HackingToolItem");
+    UE_READONLY TWeakObjectPtr<class UHackingUsableComponent> HackingUsable;
     void HackingCompleted(bool InHackingSuccessful);
     void OnRep_HackingUsable();
     void ReceiveActionClick();
@@ -31332,6 +31458,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* HackingUsable__Replicated = "OnRep_HackingUsable:";
         static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
         static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
         static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
@@ -31449,6 +31576,7 @@ class UEndStatusEffectOnLanding : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "EndStatusEffectOnLanding");
+    TWeakObjectPtr<class UStatusEffect> EffectToCancel;
     void OnOwnerStateChanged(TEnum<ECharacterState> State);
 };
 
@@ -31925,6 +32053,7 @@ public:
     TMulticastInlineDelegate<void(float FloatValue)> OnTemperatureEffectChanged;
     TMulticastInlineDelegate<void(float FloatValue)> OnIsFrozenChanged;
     TMulticastInlineDelegate<void(float FloatValue)> OnIsOnFireChanged;
+    TWeakObjectPtr<class UEnemyTemperatureComponent> EnemyTemperatureComponent;
     int TemperatureEffect;
     bool bIsFrozen;
     bool bIsOnFire;
@@ -32802,6 +32931,16 @@ class UFadeVisibilitySubSystem : public UWorldSubsystem
 {
 public:
     UE_CLASS("/Script/FSD", "FadeVisibilitySubSystem");
+    static void FadeInLight(class ULightComponent* const& Light, float Duration, float startIntensityAtPercent);
+    static void FadeInMaterialByIndex(class UMeshComponent* const& Component, int MaterialIndex, FName ParameterName, float Duration);
+    static void FadeInMaterialByName(class UMeshComponent* const& Component, FName Name_0, FName ParameterName, float Duration);
+    static void FadeLightByCurve(class ULightComponent* const& Light, FRuntimeFloatCurve& Curve);
+    static void FadeOutLight(class ULightComponent* const& Light, float Duration);
+    static void FadeOutMaterialByIndex(class UMeshComponent* const& Component, int MaterialIndex, FName ParameterName, float Duration);
+    static void FadeOutMaterialByName(class UMeshComponent* const& Component, FName Name_0, FName ParameterName, float Duration);
+    static void ScaleInPrimitive(class UPrimitiveComponent* const& Component, float Duration);
+    static void ScaleOutPrimitive(class UPrimitiveComponent* const& Component, float Duration);
+    static void ScalePrimitive(class UPrimitiveComponent* const& Component, FVector StartScale, FVector EndScale, float Duration);
     static UFadeVisibilitySubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
@@ -34269,6 +34408,7 @@ public:
     UE_CLASS("/Script/FSD", "TrackBuilderConnectPoint");
     TMulticastInlineDelegate<void(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment)> OnConnectedWithSegment;
     TSubclassOf<class ATrackBuilderSegment> ConnectType;
+    UE_READONLY TWeakObjectPtr<class ATrackBuilderSegment> ConnectedSegment;
     float MaxConnectRadius;
     float ConnectDistance;
     FVector MaxAngles;
@@ -34281,6 +34421,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* OnConnectedWithSegment__UeDispatcher = "Assignable";
+        static constexpr const char* ConnectedSegment__Replicated = "OnRep_ConnectedSegment:";
         static constexpr const char* AttachParent__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
         static constexpr const char* LODParentPrimitive__UeSubobject = "ConnectorSplineCache /Script/Engine.SplineComponent";
     };
@@ -34392,6 +34533,7 @@ public:
     FString ColliderName;
     class USceneComponent* TrackStartComponent;
     class ATrackBuilderSegment* NextSegment;
+    TWeakObjectPtr<class APlayerCharacter> InUseBy;
     void FinishUse(class APlayerCharacter* User, class ATrackBuilderSegment* InSegment);
     void OnNextSegmentDestroyed(class AActor* InActor);
     void OnRep_NextSegment();
@@ -34401,6 +34543,7 @@ private:
     {
         static constexpr const char* OnNextSegmentChanged__UeDispatcher = "Assignable";
         static constexpr const char* NextSegment__Replicated = "OnRep_NextSegment:";
+        static constexpr const char* InUseBy__Replicated = ":";
     };
 };
 
@@ -34816,6 +34959,7 @@ public:
     UE_READONLY bool FlyUseTimer;
     UE_READONLY FStateStats FlyStats;
     bool IsFlying;
+    TWeakObjectPtr<class ADeepPathfinderCharacter> OwningPathfinder;
     void Engage();
     void OnRep_StateChange();
     void SetAllowedToChangeState(bool aIsAllowed);
@@ -34928,6 +35072,8 @@ public:
     TMulticastInlineDelegate<void(int InNextStage, int InTotalStages)> OnHackingStageCompleted;
     TMulticastInlineDelegate<void(bool InSuccess)> OnHackingCompleted;
     TMulticastInlineDelegate<void()> OnRequestUnequipHackingTool;
+    UE_READONLY TWeakObjectPtr<class UHackingUsableComponent> HackingUsable;
+    UE_READONLY TWeakObjectPtr<class AHackingToolItem> HackingTool;
     void HackingComplete(bool InSuccess);
     void HackingStageComplete(int InNextStage, int InTotalStages);
     void ReceiveActionClick();
@@ -36510,6 +36656,7 @@ class UMoveComponentToAction : public UTickableActionBase
 {
 public:
     UE_CLASS("/Script/FSD", "MoveComponentToAction");
+    TWeakObjectPtr<class USceneComponent> Component;
     TMulticastInlineDelegate<void(class USceneComponent* Component_0)> Completed;
     static class UMoveComponentToAction* EaseComponentTo(class UObject* WorldContext, class USceneComponent* InComponent, FTransform InEndTransform, TEnum<EEasingFunc> InEasingMode, bool InWorldSpace, float InDuration);
     static class UMoveComponentToAction* EaseComponentTo(class USceneComponent* InComponent, FTransform InEndTransform, TEnum<EEasingFunc> InEasingMode, bool InWorldSpace, float InDuration);
@@ -36734,6 +36881,7 @@ public:
     TSoftObjectPtr<class USoundCue> AudioGameLost;
     void GetHunterThrowableImpactFX(class UObject* WorldContext, class AActor* InHitActor, class USoundCue*& OutSound, class UNiagaraSystem*& OutParticles) const;
     void GetHunterThrowableImpactFX(class AActor* InHitActor, class USoundCue*& OutSound, class UNiagaraSystem*& OutParticles) const;
+    void PlayEventAudio(class APawn* const& InCharacter, TEnum<EPropHuntEvent> InEvent, bool InPlay2D) const;
 };
 
 class IUpgradable
@@ -36833,6 +36981,10 @@ class UKeepInsideWorld : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "KeepInsideWorld");
     int IteratorIndex;
+    UE_AUTHORITY_ONLY static void RegisterForKeepInsideWorld(class UObject* WorldContextObject, class AActor* const& Actor);
+    UE_AUTHORITY_ONLY static void RegisterForKeepInsideWorld(class AActor* const& Actor);
+    UE_AUTHORITY_ONLY static void UnregisterForKeepInsideWorld(class UObject* WorldContextObject, class AActor* const& Actor);
+    UE_AUTHORITY_ONLY static void UnregisterForKeepInsideWorld(class AActor* const& Actor);
 };
 
 class UTetherComponent : public UActorComponent
@@ -36923,6 +37075,7 @@ public:
     TMulticastInlineDelegate<void(FVector Location, FText Name_0, FLinearColor Color, class AActor* Target, ELaserPointerTargetType TypeOfTarget)> OnMarkerPlaced;
     TSubclassOf<class ALaserPointerMarker> MarkerType;
     TSubclassOf<class ALaserPointerMarker> SecondaryMarkerType;
+    TWeakObjectPtr<class ALaserPointerMarker> ActiveMarker;
     FGameplayTagContainer enemyTags;
     TSubclassOf<class ALaserPointerWaypoint> WaypointType;
     int MaxWaypoints;
@@ -36933,6 +37086,8 @@ public:
     class UDialogDataAsset* DefaultEnemyShout;
     UE_READONLY class USceneComponent* PointerComponent;
     UE_READONLY FHitResult LookAtHit;
+    UE_READONLY TWeakObjectPtr<class UObjectInfoComponent> LookAtInfo;
+    UE_READONLY TWeakObjectPtr<class UTerrainMaterial> LookAtTerrainMaterial;
     UE_READONLY FLaserPointerData LookAtData;
     UE_READONLY float LookAtDistance;
     UE_READONLY class UDialogDataAsset* LookAtShout;
@@ -37321,6 +37476,10 @@ public:
     UE_CLASS("/Script/FSD", "LookingAtWidget");
     UE_READONLY float TargetSelectDuration;
     UE_READONLY float TargetLostDuration;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> Character;
+    UE_READONLY TWeakObjectPtr<class UCharacterSightComponent> CharacterSight;
+    UE_READONLY TWeakObjectPtr<class AActor> CurrentTarget;
+    UE_READONLY TWeakObjectPtr<class UPawnAfflictionComponent> CurrentTargetAfflictions;
     UE_READONLY TScriptInterface<class IHealth> CurrentTargetHealth;
     UE_READONLY bool CanCurrentTargetTakeDamage;
     UE_READONLY float TargetLostTime;
@@ -37341,7 +37500,12 @@ class ULookingAtContentWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "LookingAtContentWidget");
+    UE_READONLY TWeakObjectPtr<class AActor> CurrentTarget;
+    UE_READONLY TWeakObjectPtr<class UPawnAfflictionComponent> CurrentTargetAfflictions;
+    UE_READONLY TWeakObjectPtr<class USimpleObjectInfoComponent> CurrentTargetInfo;
     UE_READONLY TScriptInterface<class IHealth> CurrentTargetHealth;
+    UE_READONLY TWeakObjectPtr<class UHackingUsableComponent> CurrentHackingComponent;
+    UE_READONLY TWeakObjectPtr<class UPetComponent> CurrentPetComponent;
     UE_READONLY bool bWeakPointHit;
     void ReceiveNewTarget(class AActor* InCurrentTarget);
     void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
@@ -37407,6 +37571,10 @@ public:
     TSoftObjectPtr<class UMediaTexture> SoftMediaTexture;
     TSoftObjectPtr<class USoundClass> SoftMediaSoundClass;
     TSoftObjectPtr<class UFileMediaSource> SoftMediaSource;
+    TWeakObjectPtr<class UMediaTexture> WeakMediaTexture;
+    TWeakObjectPtr<class USoundClass> WeakMediaSoundClass;
+    TWeakObjectPtr<class UMediaPlayer> WeakMediaPlayer;
+    TWeakObjectPtr<class UFileMediaSource> WeakMediaSource;
     UE_READONLY TEnum<EMediaPlayerState> PlayerState;
     UE_READONLY class UImage* OutputImage;
     void Callback_MediaClosed();
@@ -37550,6 +37718,7 @@ public:
     float RadiantSuperheaterFrostTransferFactor;
     float RadiantSuperheaterHeatTransferFactor;
     float ColdTempAmpMultiplier;
+    TWeakObjectPtr<class UEnemyTemperatureComponent> RadiantSuperheaterTarget;
     bool SlowOnHit;
     TSubclassOf<class AActor> HeatSink;
     UE_MULTICAST void All_ShowNeuroSpread(const FVector& Location);
@@ -38467,6 +38636,7 @@ public:
     UE_READONLY TEnum<EOutline> CurrentOutline;
     TArray<class UPrimitiveComponent*> OutlinedComponents;
     TArray<class UPrimitiveComponent*> ExcludedComponents;
+    TWeakObjectPtr<class APlayerCharacter> Character;
     void AddActorToOutline(class AActor* Actor);
     void AddToOutline(class UPrimitiveComponent* Component);
     void DisableActiveOnHoldTab();
@@ -39096,6 +39266,7 @@ public:
     TMulticastInlineDelegate<void(class UPlayerAfflictionOverlay* Overlay)> OnShowOverlay;
     TMulticastInlineDelegate<void(class UPlayerAfflictionOverlay* Overlay)> OnHideOverlay;
     TMap<class UPlayerAfflictionOverlay*, int> ActiveOverlays;
+    TWeakObjectPtr<class APlayerCharacter> Character;
     void HidePlayerOverlay(class UPlayerAfflictionOverlay* Overlay);
     void ShowPlayerOverlay(class UPlayerAfflictionOverlay* Overlay);
 private:
@@ -39238,6 +39409,7 @@ public:
     float LedgeClimbZVelocity;
     UE_READONLY float MovementPenalty;
     class APlayerCharacter* Character;
+    TWeakObjectPtr<class UCharacterStateComponent> CurrentPhysUpdateState;
     void AddGravityModifier(class AActor* SourceActor, float Effect);
     void RemoveGravityModifier(class AActor* SourceActor);
 };
@@ -39436,6 +39608,10 @@ class UProceduralResources : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "ProceduralResources");
+    static void GenerateCarvedResources_Async(class AProceduralSetup* const& Setup, FLatentActionInfo LatentInfo);
+    static void GenerateCarvedResources_Async(class AProceduralSetup* const& Setup);
+    static void GenerateMissingCarvedResources_Async(class AProceduralSetup* const& Setup, FLatentActionInfo LatentInfo);
+    static void GenerateMissingCarvedResources_Async(class AProceduralSetup* const& Setup);
     void CountFinalGeneratedCarvedResources();
     void CountGeneratedCarvedResources();
     void CreateResourcesFromObjectives();
@@ -39468,6 +39644,12 @@ class UProceduralVeinsComponent : public UActorComponent
 public:
     UE_CLASS("/Script/FSD", "ProceduralVeinsComponent");
     TArray<FVeinResource> VeinResources;
+    static void GenerateDebrisVeins_Async(class AProceduralSetup* const& Setup, TEnum<EDebrisCarvedType> CarverType, FLatentActionInfo LatentInfo);
+    static void GenerateDebrisVeins_Async(class AProceduralSetup* const& Setup, TEnum<EDebrisCarvedType> CarverType);
+    static void GenerateMissingResourceVeins_Async(class AProceduralSetup* const& Setup, FLatentActionInfo LatentInfo);
+    static void GenerateMissingResourceVeins_Async(class AProceduralSetup* const& Setup);
+    static void GenerateResourceVeins_Async(class AProceduralSetup* const& Setup, FLatentActionInfo LatentInfo);
+    static void GenerateResourceVeins_Async(class AProceduralSetup* const& Setup);
     void CalculateResourceDistribution();
     void CountFinalGeneratedResourcesInVeins();
     void CountGeneratedResourcesInVeins();
@@ -39541,6 +39723,8 @@ public:
     TMulticastInlineDelegate<void(class UPropHuntContestant* ContestantComponent)> OnStateChanged;
     FPropHuntContestantState State;
     FPropHuntContestantState previousState;
+    TWeakObjectPtr<class APropHuntDisguiseActor> DisguiseActor;
+    TWeakObjectPtr<class UPropHuntOverlayWidget> OverlayWidget;
     FPropHuntContestantState CurrentState;
     UE_CLIENT UE_RELIABLE void Client_ShowEndScreen(TEnum<EPropHuntEndScreen> EndScreenType, bool GameWon);
     void OnItemUnequipped(class AItem* InItem);
@@ -39564,6 +39748,9 @@ class UPropHuntOverlayWidget : public UUserWidget
 {
 public:
     UE_CLASS("/Script/FSD", "PropHuntOverlayWidget");
+    UE_READONLY TWeakObjectPtr<class UPropHuntManager> PropHuntManager;
+    UE_READONLY TWeakObjectPtr<class UPropHuntContestant> ContestantComponent;
+    UE_READONLY TWeakObjectPtr<class APlayerCharacter> PlayerCharacter;
     void HideMe();
     void ShowMe();
 };
@@ -39580,10 +39767,12 @@ class APropHuntHunterItem : public AThrowableItem
 {
 public:
     UE_CLASS("/Script/FSD", "PropHuntHunterItem");
+    TWeakObjectPtr<class UPropHuntContestant> ContestantComponent;
     void CameraModeUpdated(TEnum<ECharacterCameraMode> NewCameraMode, TEnum<ECharacterCameraMode> OldCameraMode);
 private:
     struct UeMarkers
     {
+        static constexpr const char* ContestantComponent__Replicated = ":";
         static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
         static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";
         static constexpr const char* Skinnable__UeSubobject = "Skinnable /Script/FSD.SkinnableComponent";
@@ -39604,9 +39793,15 @@ public:
     UE_CLASS("/Script/FSD", "ProspectorObjective");
     UE_READONLY TSoftClassPtr<class UClass> ProspectorClass;
     class UDebrisPositioning* DebrisPositioning;
+    TWeakObjectPtr<class AProspectorRobot> ActiveProspector;
     void OnProspectorDeath(class UHealthComponentBase* Health);
     void OnRep_ActiveProspector();
     UE_PURE bool IsProspectorDead() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ActiveProspector__Replicated = "OnRep_ActiveProspector:";
+    };
 };
 
 class URagdollEliminationComponent : public USceneComponent
@@ -39693,6 +39888,7 @@ class URefineryHintComponent : public UTutorialHintComponent
 {
 public:
     UE_CLASS("/Script/FSD", "RefineryHintComponent");
+    UE_READONLY TWeakObjectPtr<class AFSDRefinery> Refinery;
     void OnRefinerySpawned(class AFSDRefinery* InRefinery);
     void ReceiveExtractorPodSpawned(class APipelineExtractorPod* InExtractorPod);
     void ReceivePipelineSegmentPlaced(class APipelineSegment* InSegment);
@@ -39705,6 +39901,7 @@ public:
     UE_CLASS("/Script/FSD", "RefineryObjective");
     TMulticastInlineDelegate<void(class AFSDRefinery* InRefinery)> OnRefinerySpawned;
     TSoftClassPtr<class UClass> refineryClass;
+    UE_READONLY TWeakObjectPtr<class AFSDRefinery> Refinery;
     UE_READONLY TEnum<ERefineryState> RefineryState;
     class UDebrisPositioning* RefineryPlacement;
     TSoftClassPtr<class UClass> RawMaterialClass;
@@ -39723,6 +39920,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* OnRefinerySpawned__UeDispatcher = "Assignable";
+        static constexpr const char* Refinery__Replicated = "OnRep_Refinery:";
     };
 };
 
@@ -40795,6 +40993,7 @@ public:
     bool bReloading;
     class UAudioComponent* ReloadAudioComponent;
     float AmmoPerSec;
+    TWeakObjectPtr<class APlayerCharacter> OwningPlayerCharacter;
     class ASentryGun* SentryGun;
     void OnReloadAudioFinished();
     void OnRep_Reloading();
@@ -40805,6 +41004,7 @@ private:
     {
         static constexpr const char* Usable__Replicated = ":";
         static constexpr const char* bReloading__Replicated = "OnRep_Reloading:";
+        static constexpr const char* OwningPlayerCharacter__Replicated = ":";
     };
 };
 
@@ -41047,6 +41247,7 @@ public:
     UE_READONLY float EnvironmentalDamageResistance;
     bool bShowHealthBar;
     FVector HealthBarOffsetWorld;
+    TWeakObjectPtr<class UEnemyComponent> EnemyComponent;
     UE_READONLY TMap<class UPawnStat*, float> Resistances;
     TArray<class UDamageTag*> RequiredDamageTags;
     bool AutomaticFlushNetDormancy;
@@ -41642,6 +41843,7 @@ class UAddComponentStatusEffectItem : public UStatusEffectItem
 public:
     UE_CLASS("/Script/FSD", "AddComponentStatusEffectItem");
     TSubclassOf<class UActorComponent> ComponentClass;
+    TWeakObjectPtr<class UActorComponent> AddedComponent;
 };
 
 class UStatChangeStackedStatusEffectItem : public UStatusEffectItem
@@ -41703,6 +41905,7 @@ public:
     TMulticastInlineDelegate<void()> Yes;
     TMulticastInlineDelegate<void()> No;
     TDelegate<void(bool Yes)> YesNoDelegate;
+    TWeakObjectPtr<class UYesNoPromptWidget> ActivePrompt;
     static class UYesNoPromptAction* PromptPurchase(class UObject* WorldContext, FYesNoPromptSettings Prompt, const TMap<class UResourceData*, int>& Resources);
     static class UYesNoPromptAction* PromptPurchase(FYesNoPromptSettings Prompt, const TMap<class UResourceData*, int>& Resources);
     static class UYesNoPromptAction* PromptYesNo(class UObject* WorldContext, FYesNoPromptSettings Prompt);
@@ -41722,6 +41925,8 @@ class UStingerIdleAudioComponent : public UActorComponent
 {
 public:
     UE_CLASS("/Script/FSD", "StingerIdleAudioComponent");
+    TWeakObjectPtr<class UAudioComponent> AudioComponent;
+    TWeakObjectPtr<class UHealthComponentBase> HealthComponent;
     float FadeInTime;
     float FadeOutTime;
 };
@@ -42593,6 +42798,7 @@ public:
     UE_AUTHORITY_ONLY void EnableWeakpointRegistration(bool Enabled);
     void SetChannelEnabled(bool Enabled, int Channel);
     int SetUpWeakPointGlowOnMesh(class UMeshComponent* Mesh, int MaterialIndex, class UFSDPhysicalMaterial* PhysicalMaterial, class UHealthComponentBase* HealthComponent);
+    void SetUpWeakPointGlowOnMeshByBone(class USkeletalMeshComponent* const& Mesh, int MaterialIndex, FName Bone, class UHealthComponentBase* HealthComponent);
     void ShowBodypartHit(float amount, float BaseAmount, const FDamageData& DamageData);
     bool StopLoopingGlow(int aGlowID, bool aFade);
 };
@@ -42710,6 +42916,7 @@ public:
     UE_READONLY bool RotateProjectileUntillStop;
     UE_READONLY bool ExplodeLastProjectileOnNextFireAttempt;
     TArray<class UItemUpgrade*> Upgrades;
+    UE_READONLY TWeakObjectPtr<class ALineCutterProjectile> LastProjectile;
     float MinExplosiveGoodbyeActivationTimme;
     void OnFireWhileLastProjectileAlive(class ALineCutterProjectile* Projectile);
     void OnProjectileLaunched(class AProjectileBase* Projectile);
@@ -42720,6 +42927,7 @@ public:
 private:
     struct UeMarkers
     {
+        static constexpr const char* LastProjectile__Replicated = "OnRep_LastProjectile:";
         static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.AmmoDriveWeaponAggregator";
         static constexpr const char* FPMesh__UeSubobject = "FPMesh /Script/FSD.FirstPersonSkeletalMeshComponent";
         static constexpr const char* RootComponent__UeSubobject = "Root /Script/Engine.SceneComponent";

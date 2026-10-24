@@ -12,6 +12,7 @@ class AActor;
 class UAnimSequence;
 class UEnum;
 class UObject;
+class USkeletalMeshComponent;
 class USkeleton;
 
 struct FAnimationSetup
@@ -78,6 +79,8 @@ class UAnimSharingTransitionInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimationSharing", "AnimSharingTransitionInstance");
+    UE_READONLY TWeakObjectPtr<class USkeletalMeshComponent> FromComponent;
+    UE_READONLY TWeakObjectPtr<class USkeletalMeshComponent> ToComponent;
     UE_READONLY float BlendTime;
     UE_READONLY bool bBlendBool;
 };
@@ -98,6 +101,8 @@ class UAnimSharingAdditiveInstance : public UAnimInstance
 {
 public:
     UE_CLASS("/Script/AnimationSharing", "AnimSharingAdditiveInstance");
+    UE_READONLY TWeakObjectPtr<class USkeletalMeshComponent> BaseComponent;
+    UE_READONLY TWeakObjectPtr<class UAnimSequence> AdditiveAnimation;
     UE_READONLY float alpha;
     UE_READONLY bool bStateBool;
 private:

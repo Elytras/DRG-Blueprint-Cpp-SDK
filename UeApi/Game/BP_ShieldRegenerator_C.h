@@ -67,6 +67,8 @@ public:
     void IntroAnim__UpdateFunc();
     void IntroAnim__FinishedFunc();
     void UserConstructionScript();
+    void AddPlayer(class APlayerCharacter* const& Player);
+    void RemovePlayer(class APlayerCharacter* const& Player);
     void SetScale(float Scale);
     void ReturnHome();
 private:

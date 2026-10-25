@@ -32,7 +32,7 @@ public:
     FLinearColor DefeatColor;
     void ExecuteUbergraph_BP_MisComp_FXspawner(int EntryPoint);
     void SetSurvived(bool Survived_0);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -31,9 +31,9 @@ public:
     class ARedeployableSentryGun* Redeployable_Sentry_Gun;
     void ExecuteUbergraph_BP_TurretEMPDischarge_Indicator(int EntryPoint);
     void OnStateChanged_Event(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
-    void OnItemUnequipped(class AItem* Item);
+    UE_BLUEPRINT_CALLABLE void OnItemUnequipped(class AItem* Item);
     void OnItemEquipped_Event(class AItem* Item);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void AnimIntro__UpdateFunc();
     void AnimIntro__FinishedFunc();
     void UpdateState(bool animate);

@@ -22,9 +22,9 @@ public:
     FVector InitialDirection;
     class UClass* WallSawSpawnable;
     void ExecuteUbergraph_Grenade_WallSaw(int EntryPoint);
-    void OnExploded();
-    void ReceiveBeginPlay();
-    void GetDurationBeforeExpiration(float& Duration_0);
+    UE_PROTECTED void OnExploded();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE void GetDurationBeforeExpiration(float& Duration_0);
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers

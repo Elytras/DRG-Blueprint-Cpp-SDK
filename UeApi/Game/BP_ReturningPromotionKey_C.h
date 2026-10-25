@@ -30,7 +30,7 @@ public:
     FVector StartLocation;
     void ExecuteUbergraph_BP_ReturningPromotionKey(int EntryPoint);
     void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathFinished__DelegateSignature(bool success);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void MoveToCharacter(class APlayerCharacter* InTarget);
     void Completed_FDAEBDB24C3AD5E8021577B83AA4B3FD(float DeltaTime, float NormalizedTime);
     void OnTick_FDAEBDB24C3AD5E8021577B83AA4B3FD(float DeltaTime, float NormalizedTime);

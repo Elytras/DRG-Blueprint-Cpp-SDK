@@ -23,7 +23,7 @@ public:
     class UStaticMeshComponent* DataRack;
     void ExecuteUbergraph_BP_Donkey_Facility(int EntryPoint);
     void OnResourceIncreased(class UCappedResource* Resource, float amount);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

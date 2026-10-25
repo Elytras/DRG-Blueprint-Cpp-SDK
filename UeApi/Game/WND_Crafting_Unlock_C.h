@@ -72,10 +72,10 @@ public:
     void Show(TScriptInterface<class ICraftable> Item_0, class AFSDPlayerState* Player_0, class UClass* Character_0);
     void Cancel();
     void BuyWithResources();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void CreateResources();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    bool ReceiveCanCloseWindow(FName InActionName, FKey InKey, bool InIsMouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool ReceiveCanCloseWindow(FName InActionName, FKey InKey, bool InIsMouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Crafting

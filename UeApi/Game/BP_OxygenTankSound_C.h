@@ -21,7 +21,7 @@ public:
     class USoundAttenuation* OverrideAttenuation;
     void ExecuteUbergraph_BP_OxygenTankSound(int EntryPoint);
     void OnOxygenActivationChanged_Event_0(bool IsActive);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

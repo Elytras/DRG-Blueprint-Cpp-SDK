@@ -71,13 +71,13 @@ public:
     TMulticastInlineDelegate<void()> OnPodLanded;
     bool Landed;
     void ExecuteUbergraph_BP_SampleExtractionPod(int EntryPoint);
-    void OnLanded();
-    void OnDroppodCloseToImpact();
+    UE_BLUEPRINT_CALLABLE void OnLanded();
+    UE_PROTECTED void OnDroppodCloseToImpact();
     void OnSampleCollected();
     void BndEvt__BP_SampleExtractionPod_ResourceBank_K2Node_ComponentBoundEvent_0_ResourceDelegate__DelegateSignature(class UResourceData* Resource, float amount);
-    void OnDroppodImpact();
-    void OnDropStarted();
-    void UserConstructionScript();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_PROTECTED void OnDropStarted();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_SampleCollected();
     void SetupBlinking();
     void OnRep_Landed();

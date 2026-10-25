@@ -30,9 +30,9 @@ public:
     void Reset();
     void OnCheckedChanged(Check_ServerWorkEnvironment_C* CheckBox, class UDifficultySetting* Difficulty, bool IsChecked);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Add_Work_Environment(class UDifficultySetting* Difficulty, Check_ServerWorkEnvironment_C*& OutWidget, bool& OutIsChecked);
-    void UpdateSubheader();
-    void IsDifficultySelected(class UDifficultySetting* InDifficulty, bool& Selected);
+    UE_PRIVATE void Add_Work_Environment(class UDifficultySetting* Difficulty, Check_ServerWorkEnvironment_C*& OutWidget, bool& OutIsChecked);
+    UE_PRIVATE void UpdateSubheader();
+    UE_BLUEPRINT_PURE void IsDifficultySelected(class UDifficultySetting* InDifficulty, bool& Selected);
     void GetSelectedDifficulties(TArray<class UDifficultySetting*>& Difficulties);
     void OpenMenu(bool Open);
 private:

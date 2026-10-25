@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ESI_Tank", "ESI_Tank_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_ESI_Tank(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

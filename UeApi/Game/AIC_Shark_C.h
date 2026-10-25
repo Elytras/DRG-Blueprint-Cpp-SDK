@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/Enemies/Shark/AIC_Shark", "AIC_Shark_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Shark(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
 private:
     struct UeMarkers
     {

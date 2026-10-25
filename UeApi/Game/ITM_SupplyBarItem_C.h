@@ -29,7 +29,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetOn(bool IsOn);
-    void SetProgress(float InProgress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float InProgress);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

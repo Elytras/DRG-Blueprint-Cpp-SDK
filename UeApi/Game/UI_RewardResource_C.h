@@ -31,7 +31,7 @@ public:
     UE_READONLY int amount;
     class UAudioComponent* AudioCounting;
     void ExecuteUbergraph_UI_RewardResource(int EntryPoint);
-    void PlayReceiveAnim();
+    UE_PROTECTED void PlayReceiveAnim();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

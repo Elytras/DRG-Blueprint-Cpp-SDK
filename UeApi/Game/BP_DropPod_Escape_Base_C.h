@@ -79,7 +79,7 @@ public:
     class UParticleSystemComponent* SmallRocks;
     class UParticleSystemComponent* ConcSmallRocks;
     void ExecuteUbergraph_BP_DropPod_Escape_Base(int EntryPoint);
-    void OnAllDwavesInsidePod(bool AllInside);
+    UE_PROTECTED void OnAllDwavesInsidePod(bool AllInside);
     UE_AUTHORITY_ONLY void RecieveReturnTimerExpired();
     UE_AUTHORITY_ONLY void RecieveReturnTimerFifteenSecondWarning();
     void ForceTakeoff();
@@ -92,20 +92,20 @@ public:
     void OnCharacterExit(class APlayerCharacter* Character);
     void OnCharacterEnter(class APlayerCharacter* Character);
     void OnMuleLoaded();
-    void OnPrepForTakeOff();
-    void OnDeparting();
+    UE_PROTECTED void OnPrepForTakeOff();
+    UE_PROTECTED void OnDeparting();
     void OnDonkeyReachedDropShip();
-    void ReceiveBeginPlay();
-    void OnDrillingStarted();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnDrillingStarted();
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void OnDroppodImpact();
-    void UserConstructionScript();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void LockCharactersInPod();
-    void IsAnyCharacterInEscapePod(bool& EscapePodPopulated);
-    void HandlePhotosentitivity();
+    UE_BLUEPRINT_PURE void IsAnyCharacterInEscapePod(bool& EscapePodPopulated);
+    UE_PRIVATE void HandlePhotosentitivity();
     void DisableDynamicElements(bool Enabled);
-    void GetFrontLocation(FVector& DoorLocation) const;
+    UE_BLUEPRINT_PURE void GetFrontLocation(FVector& DoorLocation) const;
 private:
     struct UeMarkers
     {

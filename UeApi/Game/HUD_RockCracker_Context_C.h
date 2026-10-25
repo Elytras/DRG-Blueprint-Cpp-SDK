@@ -30,11 +30,11 @@ public:
     class APlayerCharacter* Character;
     class AFuelLineSegment* FuelLineSegment;
     void ExecuteUbergraph_HUD_RockCracker_Context(int EntryPoint);
-    void ReceiveShow(class UPrimitiveComponent* InContextPrimitive);
-    void ReceiveUpdate(class UPrimitiveComponent* InContextPrimitive);
+    UE_PROTECTED void ReceiveShow(class UPrimitiveComponent* InContextPrimitive);
+    UE_PROTECTED void ReceiveUpdate(class UPrimitiveComponent* InContextPrimitive);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveContextActorChanged(class AActor* InContextActor);
-    void UpdateWidget(class UPrimitiveComponent* InPrimitive);
+    UE_PROTECTED void ReceiveContextActorChanged(class AActor* InContextActor);
+    UE_BLUEPRINT_CALLABLE void UpdateWidget(class UPrimitiveComponent* InPrimitive);
 };
 
 }}}   // namespace Game::WeaponsNTools::RockCrackerBuilder

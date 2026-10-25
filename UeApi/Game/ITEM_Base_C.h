@@ -25,11 +25,11 @@ public:
     void ExecuteUbergraph_ITEM_Base(int EntryPoint);
     void OnItemUpdated();
     void UpdateEquipment(class UClass* PlayerCharacter_0);
-    void OnClear();
+    UE_BLUEPRINT_CALLABLE void OnClear();
     UE_COSMETIC void Construct();
     void Clear();
-    void GetItemCountString(class UClass* playerClass, FText& Result) const;
-    void GetNumberOfItems(class UClass* playerClass, int& ItemCount) const;
+    UE_BLUEPRINT_PURE void GetItemCountString(class UClass* playerClass, FText& Result) const;
+    UE_BLUEPRINT_PURE void GetNumberOfItems(class UClass* playerClass, int& ItemCount) const;
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

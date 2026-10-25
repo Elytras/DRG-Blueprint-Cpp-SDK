@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FBlackboardKeySelector TargetKey;
     void ExecuteUbergraph_BTTask_ResetIfDead(int EntryPoint);
-    void ReceiveExecute(class AActor* OwnerActor);
+    UE_PROTECTED void ReceiveExecute(class AActor* OwnerActor);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

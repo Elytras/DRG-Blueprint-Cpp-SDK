@@ -56,9 +56,9 @@ public:
     bool HasHovered;
     Button_Spacerig_Map_Circle_C* ActiveButton;
     void ExecuteUbergraph_LoreScreen_Spacerig(int EntryPoint);
-    void OnUnhover(Button_Spacerig_Map_Circle_C* Button);
+    UE_BLUEPRINT_CALLABLE void OnUnhover(Button_Spacerig_Map_Circle_C* Button);
     void PlayButtonPings();
-    void OnHover(Button_Spacerig_Map_Circle_C* Button, class UMinersManualData* Data);
+    UE_BLUEPRINT_CALLABLE void OnHover(Button_Spacerig_Map_Circle_C* Button, class UMinersManualData* Data);
     void RefreshContent();
     UE_COSMETIC void Construct();
 private:

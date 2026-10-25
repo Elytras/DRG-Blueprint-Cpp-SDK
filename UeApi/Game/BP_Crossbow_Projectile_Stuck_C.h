@@ -40,7 +40,7 @@ public:
     class UInstantUsable* InstantUsable;
     float LightIntensity_Point;
     float LightIntensity_Spot;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

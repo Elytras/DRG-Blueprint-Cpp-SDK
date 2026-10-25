@@ -20,9 +20,9 @@ public:
     FTimerHandle LookAtHandle;
     void ExecuteUbergraph_BP_Tentacle_RangedAttack(int EntryPoint);
     void Face();
-    void ReceiveAbortAttack();
-    void ReceiveCompleteAttack();
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAbortAttack();
+    UE_PROTECTED void ReceiveCompleteAttack();
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

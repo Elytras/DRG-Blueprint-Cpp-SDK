@@ -35,11 +35,11 @@ public:
     UE_COSMETIC void Construct();
     void Set_Selected(bool CategorySelected_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void IsSelected(bool& CategorySelected_0);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    void GetCategoryIcon(class UTexture2D*& CategoryIcon_0);
+    UE_BLUEPRINT_PURE void IsSelected(bool& CategorySelected_0);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_BLUEPRINT_PURE void GetCategoryIcon(class UTexture2D*& CategoryIcon_0);
     void Click();
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

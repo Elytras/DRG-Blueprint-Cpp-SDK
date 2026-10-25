@@ -24,7 +24,7 @@ public:
     class UMissionTemplate* MissionTemplate;
     void ExecuteUbergraph_ITM_MisSel_MissionIcon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UMissionTemplate* InMissionTemplate);
+    UE_BLUEPRINT_CALLABLE void SetData(class UMissionTemplate* InMissionTemplate);
     void SetIcon(FObjectiveMissionIcon MissionIcon);
 };
 

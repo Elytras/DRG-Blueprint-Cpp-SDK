@@ -39,13 +39,13 @@ public:
     class USoundCue* ImpactSound;
     class UMaterialInstanceDynamic* FuelbarMat;
     void ExecuteUbergraph_WPN_OilExtractor(int EntryPoint);
-    void OnValidSurfaceChanged(bool IsValid);
+    UE_PROTECTED void OnValidSurfaceChanged(bool IsValid);
     void BndEvt__DroppedCollider_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void ReceiveTick(float DeltaSeconds);
-    void RecieveUnequipped();
-    void RecieveEquipped();
-    void ReceiveBeginPlay();
-    void OnCurrentLoadChanged(float load);
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnCurrentLoadChanged(float load);
     void SetFilledUI(class UWidgetComponent* Widget, float FilledAmount);
 private:
     struct UeMarkers

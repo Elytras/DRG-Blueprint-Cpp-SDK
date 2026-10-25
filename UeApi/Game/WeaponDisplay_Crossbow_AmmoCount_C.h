@@ -34,10 +34,10 @@ public:
     void OnCrossbowEquipped();
     void OnItemSet();
     void OnArrowChanged(bool InDefaultArrow);
-    void OnAmountChanged(int amount);
+    UE_BLUEPRINT_CALLABLE void OnAmountChanged(int amount);
     void SetItem(class AItem* InItem);
     void Refresh();
-    void GetArrowIcon(class UTexture2D*& OutIcon);
+    UE_BLUEPRINT_PURE void GetArrowIcon(class UTexture2D*& OutIcon);
 };
 
 }}}   // namespace Game::WeaponsNTools::Crossbow

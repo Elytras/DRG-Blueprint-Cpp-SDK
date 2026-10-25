@@ -27,7 +27,7 @@ public:
     class USphereComponent* Sphere;
     class UAudioComponent* SwarmerIdle_Cue;
     void ExecuteUbergraph_ENE_Spider_Swarmer(int EntryPoint);
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void ChangeVisibility(bool bNewVisibility);
     void OnDeathBase();
 private:

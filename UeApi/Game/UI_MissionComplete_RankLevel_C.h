@@ -34,9 +34,9 @@ public:
     float StartTime;
     void ExecuteUbergraph_UI_MissionComplete_RankLevel(int EntryPoint);
     void Start_Counter(FPlayerProgress PlayerProgressStart, FPlayerProgress PlayerProgressFinish, FCharacterProgress CharacterProgressStart, FCharacterProgress CharacterProgressFinish);
-    void PingCharacterLevel(int Level, int Stars);
-    void UpdateValues(int PlayerRank, int PlayerStars, int CharacterLevel, float CharacterProgress);
-    void PingPlayerRank();
+    UE_PROTECTED void PingCharacterLevel(int Level, int Stars);
+    UE_PROTECTED void UpdateValues(int PlayerRank, int PlayerStars, int CharacterLevel, float CharacterProgress);
+    UE_PROTECTED void PingPlayerRank();
     void Finish(class AFSDPlayerState* PlayerState);
     void Begin(class AFSDPlayerState* PlayerState);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

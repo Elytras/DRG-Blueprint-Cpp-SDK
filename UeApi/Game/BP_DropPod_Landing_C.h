@@ -38,12 +38,12 @@ public:
     void OnPlayerCharacterRegistered(class APlayerCharacter* PlayerCharacter);
     void OnCharacterExit(class APlayerCharacter* Character);
     void OnCharacterEnter(class APlayerCharacter* Character);
-    void OnDeparting();
+    UE_PROTECTED void OnDeparting();
     void BndEvt__LeaveDropShipTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__LeaveDropShipTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
-    void OnDrillingStarted();
-    void OnDroppodImpact();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnDrillingStarted();
+    UE_PROTECTED void OnDroppodImpact();
     void OnAllPlayersLeftPod();
     void SpawnAndStoreAudio(class USoundBase* Sound, class USceneComponent* AttachToComponent, class UAudioComponent*& AudioComponent);
     void DetachAll();

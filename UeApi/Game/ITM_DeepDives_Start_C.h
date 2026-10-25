@@ -58,8 +58,8 @@ public:
     void OnFailure_14795847495E51F942775B86C1C4BCCF();
     void OnSuccess_00D4455F48B21EAE6492C6AB27B0D8F5();
     void OnFailure_00D4455F48B21EAE6492C6AB27B0D8F5();
-    void UpdateOptions();
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_PRIVATE void UpdateOptions();
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void HandleKeyDown(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
 private:
     struct UeMarkers

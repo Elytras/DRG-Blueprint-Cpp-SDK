@@ -72,14 +72,14 @@ public:
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_3_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void Spike_extrusion();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Retract_spikes__DeactivateHit__EventFunc();
     void Retract_spikes__UpdateFunc();
     void Retract_spikes__FinishedFunc();
     void Extrude_spikes__HitActors__EventFunc();
     void Extrude_spikes__UpdateFunc();
     void Extrude_spikes__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_IsExtruded();
     void OnRep_SpikeTransforms();
     void AddSpikeAndCollision(FTransform WorldTransform, bool IsFirstSpike);

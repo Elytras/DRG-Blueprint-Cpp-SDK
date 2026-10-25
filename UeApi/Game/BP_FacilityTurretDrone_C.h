@@ -45,8 +45,8 @@ public:
     void SpawnDust(FVector DustLocation);
     void OnDeploy();
     void OnMessageAI(FName TriggerName);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetSpawnTransform(FTransform NewParam);
     void OnRep_UnSpawn();
     void OnRep_Deploy();

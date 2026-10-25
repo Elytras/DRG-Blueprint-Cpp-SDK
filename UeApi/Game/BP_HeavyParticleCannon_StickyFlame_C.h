@@ -23,7 +23,7 @@ public:
     class UPathfinderCollisionComponent* PathfinderCollision;
     class USphereComponent* Sphere;
     void ExecuteUbergraph_BP_HeavyParticleCannon_StickyFlame(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

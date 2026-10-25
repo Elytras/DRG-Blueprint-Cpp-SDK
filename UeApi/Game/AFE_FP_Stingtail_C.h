@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/PawnAffliction/FPEffects/AFE_FP_Stingtail", "AFE_FP_Stingtail_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AFE_FP_Stingtail(int EntryPoint);
-    void ReceiveBeginEffect(class UPawnAfflictionComponent* Target);
+    UE_PROTECTED void ReceiveBeginEffect(class UPawnAfflictionComponent* Target);
 };
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects

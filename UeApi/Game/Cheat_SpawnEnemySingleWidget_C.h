@@ -25,10 +25,10 @@ public:
     class UObject* Item;
     bool IsSelected;
     void ExecuteUbergraph_Cheat_SpawnEnemySingleWidget(int EntryPoint);
-    void BP_OnItemSelectionChanged(bool bIsSelected);
-    void OnListItemObjectSet(class UObject* ListItemObject);
-    void BP_OnItemExpansionChanged(bool bIsExpanded);
-    void BP_OnEntryReleased();
+    UE_PROTECTED void BP_OnItemSelectionChanged(bool bIsSelected);
+    UE_PROTECTED void OnListItemObjectSet(class UObject* ListItemObject);
+    UE_PROTECTED void BP_OnItemExpansionChanged(bool bIsExpanded);
+    UE_PROTECTED void BP_OnEntryReleased();
     UE_PURE FLinearColor GetBrushColor_BG();
 private:
     struct UeMarkers

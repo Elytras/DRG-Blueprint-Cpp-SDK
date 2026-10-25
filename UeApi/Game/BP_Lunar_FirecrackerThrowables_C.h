@@ -40,7 +40,7 @@ public:
     class UNiagaraComponent* Selected;
     void ExecuteUbergraph_BP_Lunar_FirecrackerThrowables(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_AmountLit();
 private:
     struct UeMarkers

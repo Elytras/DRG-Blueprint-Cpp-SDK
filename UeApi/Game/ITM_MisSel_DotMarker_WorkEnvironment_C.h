@@ -34,7 +34,7 @@ public:
     float Size;
     float RenderAngle;
     void ExecuteUbergraph_ITM_MisSel_DotMarker_WorkEnvironment(int EntryPoint);
-    void SetData(class UDifficultySetting* Difficulty);
+    UE_BLUEPRINT_CALLABLE void SetData(class UDifficultySetting* Difficulty);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

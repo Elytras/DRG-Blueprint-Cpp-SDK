@@ -20,7 +20,7 @@ public:
     class UStaticMeshComponent* InnerIndicator1;
     class UStaticMeshComponent* OuterIndicator;
     void ExecuteUbergraph_BP_PlagueMeteor_Indicator(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

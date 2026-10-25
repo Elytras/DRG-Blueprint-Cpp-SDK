@@ -120,7 +120,7 @@ public:
     void BndEvt__Button_Light_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_General_K2Node_ComponentBoundEvent_323_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature();
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SelectTab(int Index_0, class UButton* Tab_Button);
     void DeselectTab(class UButton* Active_Tab);
     void SetOnOffTexts(bool Condition, class UTextBlock* OffText_0, class UTextBlock* OnText_0);

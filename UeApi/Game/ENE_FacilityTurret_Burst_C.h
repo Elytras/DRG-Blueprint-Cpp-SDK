@@ -34,11 +34,11 @@ public:
     class UTimelineComponent* Timeline_0;
     bool UpperBarrel;
     void ExecuteUbergraph_ENE_FacilityTurret_Burst(int EntryPoint);
-    void OnProjectileSpawned();
+    UE_PROTECTED void OnProjectileSpawned();
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnAttack();
-    void OnEngagedChanged(bool engaged);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnEngagedChanged(bool engaged);
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

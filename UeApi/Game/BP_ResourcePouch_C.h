@@ -36,7 +36,7 @@ public:
     class UCarriableComponent* Carriable;
     FVector throwForce;
     void ExecuteUbergraph_BP_ResourcePouch(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnAttachChanged(bool Attached);
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
     void Throw(FVector force);

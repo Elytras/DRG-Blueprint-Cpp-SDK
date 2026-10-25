@@ -19,8 +19,8 @@ public:
     UE_CLASS("/Game/Enemies/CoreSpawn/BP_CoreSpawnEnemy", "BP_CoreSpawnEnemy_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_CoreSpawnEnemy(int EntryPoint);
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__ENE_Crawler_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnRep_IsFrozen2();
 private:

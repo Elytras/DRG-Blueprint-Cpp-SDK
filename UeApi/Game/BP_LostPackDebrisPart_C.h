@@ -29,7 +29,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     int Version;
     void ExecuteUbergraph_BP_LostPackDebrisPart(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_Version();
 private:
     struct UeMarkers

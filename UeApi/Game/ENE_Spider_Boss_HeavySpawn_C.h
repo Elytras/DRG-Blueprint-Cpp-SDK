@@ -27,10 +27,10 @@ public:
     class UMeleeAttackComponent* StabAttack;
     void ExecuteUbergraph_ENE_Spider_Boss_HeavySpawn(int EntryPoint);
     void Play_Frozen_Death();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void OnDeathBase();
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
 private:
     struct UeMarkers
     {

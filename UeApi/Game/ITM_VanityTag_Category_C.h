@@ -36,8 +36,8 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Category_and_Tags(class UDetailedTagCategory* InCategory, FDetailedTagSet InTagSet, FDetailedTagSet InSelectedTagSet);
-    void GetSelected(TArray<class UDetailedTag*>& OutSelected);
-    void EntryClicked();
+    UE_BLUEPRINT_PURE void GetSelected(TArray<class UDetailedTag*>& OutSelected);
+    UE_PRIVATE void EntryClicked();
     void SetSelected(TArray<class UDetailedTag*>& InSelectedTags);
     void ClearSelected();
 private:

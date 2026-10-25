@@ -34,8 +34,8 @@ public:
     void MetorSpawned(class AActor* Actor);
     void SpawnSequenceComplete();
     void SpawnedMeteor(class AActor* spawned);
-    void ReceiveBeginPlay();
-    FTransform GetSpawnTransform();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE FTransform GetSpawnTransform();
     void GetValidMeteor(BP_SmallMeteor_C*& meteor);
 private:
     struct UeMarkers

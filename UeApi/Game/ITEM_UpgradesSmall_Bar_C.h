@@ -45,7 +45,7 @@ public:
     UE_COSMETIC void Construct();
     void OnUpgradeClicked(class UItemUpgrade* Upgrade);
     void ShowUpgradeBar(class UClass* Item_0);
-    void GetFSDPlayerState(class AFSDPlayerState*& AsFSDPlayer_State);
+    UE_BLUEPRINT_PURE void GetFSDPlayerState(class AFSDPlayerState*& AsFSDPlayer_State);
 private:
     struct UeMarkers
     {

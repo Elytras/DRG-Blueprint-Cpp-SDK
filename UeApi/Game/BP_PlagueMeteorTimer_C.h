@@ -22,7 +22,7 @@ public:
     void ExecuteUbergraph_BP_PlagueMeteorTimer(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_PlayWarningSound();
     void PreEventSpawn();
-    FTransform GetSpawnTransform();
+    UE_BLUEPRINT_PURE FTransform GetSpawnTransform();
 private:
     struct UeMarkers
     {

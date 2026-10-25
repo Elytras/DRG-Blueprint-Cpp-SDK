@@ -169,17 +169,17 @@ public:
     UE_MULTICAST UE_RELIABLE void MixerClientSpawnConfettii(FVector Location, FRotator Rotation);
     void On_Temporary_Buff_Changed(class UTemporaryBuff* buff, class APlayerCharacter* AffectedPlayer);
     void ResetSaveGameIDInEditor();
-    void ReceiveOnHeadlightOn();
+    UE_PROTECTED void ReceiveOnHeadlightOn();
     void SetDustVisible(bool Visible);
     void Init_Selfie_Cam();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DamageSig__DelegateSignature(float amount);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void CharacterState_Changed(TEnum<ECharacterState> NewState);
-    void BP_OnUpdateMeshes();
+    UE_PROTECTED void BP_OnUpdateMeshes();
     void StopRegenAudio();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_ArmorHealedSig__DelegateSignature(float amount);
-    void ReceiveBeginPlay();
-    void BP_OnControllerReady();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void BP_OnControllerReady();
     void InpActEvt_Delete_K2Node_InputKeyEvent_0(FKey Key);
     void InpActEvt_Delete_K2Node_InputKeyEvent_1(FKey Key);
     void InpActEvt_Insert_K2Node_InputKeyEvent_2(FKey Key);
@@ -204,11 +204,11 @@ public:
     void UpdateHeadLight();
     void CharacterAudioThrottled(class UDialogDataAsset* Shout);
     void ChromaEffect(uint8 Effect);
-    class USceneComponent* GetDownCameraRotationPoint();
-    class USceneComponent* GetDownCameraAttachPoint();
+    UE_BLUEPRINT_CALLABLE class USceneComponent* GetDownCameraRotationPoint();
+    UE_BLUEPRINT_CALLABLE class USceneComponent* GetDownCameraAttachPoint();
     void SetActiveSelfiePoint(BP_SelfiePoint_C* InSelfiePoint);
     void GotoNextSelfiePoint(bool ForceExitSelfieMode);
-    void UpdateWeaponLicenseStat();
+    UE_PRIVATE void UpdateWeaponLicenseStat();
     UE_PURE bool DamageCausesReaction(class UDamageClass* DamageClass) const;
     UE_PURE class UUsableComponent* GetBeastMasterUsableComponent() const;
 private:

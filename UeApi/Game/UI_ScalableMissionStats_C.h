@@ -40,7 +40,7 @@ public:
     void SetColors();
     void SetLeftMargin(float LeftMargin_0);
     void SetWidth(float Width_0);
-    void SetData(int Kills, float ResourcesMined, int PlayersRevived, int TimesKilled);
+    UE_BLUEPRINT_CALLABLE void SetData(int Kills, float ResourcesMined, int PlayersRevived, int TimesKilled);
     void FromPlayerState(class AFSDPlayerState* PlayerState);
 };
 

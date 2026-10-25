@@ -38,7 +38,7 @@ public:
     bool IsActive;
     bool FirstTimeFadeOut;
     void ExecuteUbergraph_BP_Crossbow_Projectile_Stuck_Electric(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void CancelEffect();
     void FadeInAndOut();
     void DoIndicatorPulse();
@@ -48,7 +48,7 @@ public:
     void Fadeout__FinishedFunc();
     void RingPulse__UpdateFunc();
     void RingPulse__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

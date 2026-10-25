@@ -40,18 +40,18 @@ public:
     TMulticastInlineDelegate<void()> OnDispenserFinished;
     void ExecuteUbergraph_BP_RewardDispenser(int EntryPoint);
     void Turn_On_Buttons();
-    void OnRewardSelected();
+    UE_PROTECTED void OnRewardSelected();
     void On_Selector_Finished(class USchematic* SchematicReward);
-    void OnOpenDispenser();
-    void Initialize();
+    UE_PROTECTED void OnOpenDispenser();
+    UE_BLUEPRINT_CALLABLE void Initialize();
     void BndEvt__BP_RewardUsableComponent_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__PlayerTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__PlayerTrigger_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void OnPoweredUp();
-    void OnOwnerAssigned();
-    void ToggleRewardSelector(bool InVisible);
-    void IsPlayerLocallyControlled(bool& LocallyControlled);
-    void GetRewardSelector(BP_CoreInfuser_Rewards_Selector_C*& Selector);
+    UE_PROTECTED void OnPoweredUp();
+    UE_PROTECTED void OnOwnerAssigned();
+    UE_PRIVATE void ToggleRewardSelector(bool InVisible);
+    UE_BLUEPRINT_PURE void IsPlayerLocallyControlled(bool& LocallyControlled);
+    UE_BLUEPRINT_PURE void GetRewardSelector(BP_CoreInfuser_Rewards_Selector_C*& Selector);
     UE_PURE bool IsStateValid();
 private:
     struct UeMarkers

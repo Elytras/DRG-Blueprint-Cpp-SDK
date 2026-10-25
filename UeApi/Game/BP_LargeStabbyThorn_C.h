@@ -37,7 +37,7 @@ public:
     void Extend();
     void Retract();
     void OnPlayerProximity(class APlayerCharacter* Player, bool enteredTrigger);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_Retracted();
 private:
     struct UeMarkers

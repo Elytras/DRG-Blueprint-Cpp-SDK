@@ -20,8 +20,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_ENE_Shredder_C;
     class UEnemyComponent* enemy;
     void ExecuteUbergraph_ENE_Shredder(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
 private:
     struct UeMarkers
     {

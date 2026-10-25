@@ -29,15 +29,15 @@ public:
     void OnMissionStatChanged(class UObject* WorldContext, class UMissionStat* MissionStat, float Value);
     void OnMissionStatChanged(class UMissionStat* MissionStat, float Value);
     void CheckCampaign();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_CLIENT UE_RELIABLE void WatchStat(class UMissionStat* MissionStat);
-    void UserConstructionScript();
-    void GetHealthInsuranceStatus(int& HealthInsuranceStatus_0);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void GetHealthInsuranceStatus(int& HealthInsuranceStatus_0);
     void OnRep_MissionStats();
-    void IsListeningToMissionStat(class UMissionStat* MissionStat, bool& HasStat);
+    UE_BLUEPRINT_PURE void IsListeningToMissionStat(class UMissionStat* MissionStat, bool& HasStat);
     void UpdateMissionStat(class UMissionStat* MissionStat, float Value);
     void SendMissionStatData(class UMissionStat* MissionStat, float Value);
-    void GetMissionStatValue(class UMissionStat* MissionStat, FText& StatValue, bool& Valid);
+    UE_BLUEPRINT_PURE void GetMissionStatValue(class UMissionStat* MissionStat, FText& StatValue, bool& Valid);
 private:
     struct UeMarkers
     {

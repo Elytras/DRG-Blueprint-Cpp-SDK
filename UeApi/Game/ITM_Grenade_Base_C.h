@@ -45,11 +45,11 @@ public:
     class UDialogDataAsset* OutOfGrenadesShout;
     void ExecuteUbergraph_ITM_Grenade_Base(int EntryPoint);
     void OnBeginPlay();
-    void OnExploded();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnExploded();
+    UE_PROTECTED void ReceiveBeginPlay();
     float GetCooldownTime();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

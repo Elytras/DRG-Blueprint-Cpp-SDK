@@ -47,7 +47,7 @@ public:
     float AdjustedSize;
     void ExecuteUbergraph_WND_SeasonLevels(int EntryPoint);
     void OnRewardWindowClosed();
-    void OnShown();
+    UE_BLUEPRINT_CALLABLE void OnShown();
     void OnRewardClaimed(class UReward* Reward);
     void ScrollWheelDown();
     void ScrollWheelUp();
@@ -64,7 +64,7 @@ public:
     void BndEvt__Button_Back_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Next_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(int FirstLevel, bool WithAnim, float Direction);
+    UE_BLUEPRINT_CALLABLE void SetData(int FirstLevel, bool WithAnim, float Direction);
     void AddGradientLevel(int Level, bool IsStartGradient);
     void AddInfinityReward();
     void TickMoveAnim();

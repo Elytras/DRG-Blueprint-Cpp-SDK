@@ -16,7 +16,7 @@ class DEC_IsInJump_C : public UBTDecorator_BlueprintBase
 {
 public:
     UE_CLASS("/Game/Enemies/Crawler/DEC_IsInJump", "DEC_IsInJump_C");
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::Enemies::Crawler

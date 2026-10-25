@@ -25,7 +25,7 @@ public:
     class UTimelineComponent* Timeline_0;
     float StartZScale;
     void ExecuteUbergraph_BP_GooCannon_Cannister(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     bool OnSpawnRelease_Attached(class AActor* Parent);

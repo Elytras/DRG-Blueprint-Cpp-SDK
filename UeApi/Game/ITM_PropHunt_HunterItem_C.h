@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Throwlocation;
     void ExecuteUbergraph_ITM_PropHunt_HunterItem(int EntryPoint);
-    void RemovedFromInventory(class ACharacter* oldCharacter);
+    UE_PROTECTED void RemovedFromInventory(class ACharacter* oldCharacter);
 private:
     struct UeMarkers
     {

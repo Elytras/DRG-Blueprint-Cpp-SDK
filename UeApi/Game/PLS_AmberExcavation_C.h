@@ -32,7 +32,7 @@ public:
     void CreateCaveGraph();
     UE_PURE class URoomGenerator* SelectRoom(int RoomDepth);
     void AddPossibleOffshoot(int fromID, FVector Location);
-    void GetCavernLocation(FVector BaseLocation, FVector& CavernLocation);
+    UE_BLUEPRINT_PURE void GetCavernLocation(FVector BaseLocation, FVector& CavernLocation);
 private:
     struct UeMarkers
     {

@@ -71,7 +71,7 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void Timeline_InflateAnim__UpdateFunc();
     void Timeline_InflateAnim__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     UE_PURE float DistanceToLocalPlayer();
 private:
     struct UeMarkers

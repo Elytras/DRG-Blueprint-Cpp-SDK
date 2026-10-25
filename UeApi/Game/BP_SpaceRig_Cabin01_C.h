@@ -79,7 +79,7 @@ public:
     class USceneComponent* Scene;
     void ExecuteUbergraph_BP_SpaceRig_Cabin01(int EntryPoint);
     void Steam();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

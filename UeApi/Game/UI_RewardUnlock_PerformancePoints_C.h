@@ -54,10 +54,10 @@ public:
     void ExecuteUbergraph_UI_RewardUnlock_PerformancePoints(int EntryPoint);
     void OnLevelReached(int Level);
     UE_COSMETIC void Construct();
-    void PlayReceiveAnim();
+    UE_PROTECTED void PlayReceiveAnim();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetUnlockDetails(FText& Text);
-    void SelectCharacterID(class UPlayerCharacterID* OptionalID, class UPlayerCharacterID*& OutputPin);
+    UE_BLUEPRINT_PURE void GetUnlockDetails(FText& Text);
+    UE_BLUEPRINT_PURE void SelectCharacterID(class UPlayerCharacterID* OptionalID, class UPlayerCharacterID*& OutputPin);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications

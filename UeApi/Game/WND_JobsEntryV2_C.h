@@ -52,7 +52,7 @@ public:
     void SetInfo();
     UE_PURE bool VisibleAndEnabled(class UWidget* Widget);
     UE_PURE bool CanStartCampaign(class UCampaign* InCampaign);
-    void SetData(class UCampaign* Campaign_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0);
 private:
     struct UeMarkers
     {

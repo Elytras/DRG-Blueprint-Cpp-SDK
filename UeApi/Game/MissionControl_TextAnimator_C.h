@@ -28,7 +28,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText InText, int& Unformatted_Length);
     void SetAnimProgress(float AnimProgress_0);
-    void GetFirstWord(FString inString, FString& OutWord);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetFirstWord(FString inString, FString& OutWord);
 };
 
 }}}   // namespace Game::UI::MissionControl

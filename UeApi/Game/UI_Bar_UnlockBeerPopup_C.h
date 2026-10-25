@@ -36,8 +36,8 @@ public:
     class UDrinkableDataAsset* DrinkableData;
     TMulticastInlineDelegate<void()> OnUnlockAnimFinished;
     void ExecuteUbergraph_UI_Bar_UnlockBeerPopup(int EntryPoint);
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void OnTurnOffTextRunner();
     void SetDrink(class UDrinkableDataAsset* InDrinkableData);
     void SequenceEvent__ENTRYPOINTUI_Bar_UnlockBeerPopup_0();

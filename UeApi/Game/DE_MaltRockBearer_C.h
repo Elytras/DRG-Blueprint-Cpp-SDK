@@ -30,8 +30,8 @@ public:
     void ExecuteUbergraph_DE_MaltRockBearer(int EntryPoint);
     void Reset_Voice();
     void Handle_Scaling(float DeltaTime);
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void TraceForScaledCollision(bool& IsNextScaleColliding);
     void OnRep_Current_Scale();

@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     void ExecuteUbergraph_BP_PlagueController(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_PlagueController_CallWeaponPodUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__BP_PlagueController_CallWeaponPodUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 private:

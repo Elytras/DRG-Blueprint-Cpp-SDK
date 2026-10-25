@@ -67,25 +67,25 @@ public:
     bool HasFearTrail;
     void ExecuteUbergraph_WPN_CoilGun(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_PlayFireKillEffects(FVector_NetQuantize Location);
-    void Receive_Overheated();
-    void OnShieldBrokenBoost();
-    void OnShieldBrokeBoostStopped();
+    UE_PROTECTED void Receive_Overheated();
+    UE_PROTECTED void OnShieldBrokenBoost();
+    UE_PROTECTED void OnShieldBrokeBoostStopped();
     void OnChargeChanged_Event_0(float charge);
-    void ReceiveBeginPlay();
-    void RecieveStoppedCharging(float ChargeProgress_0);
-    void RecieveStartedCharging();
-    void OnFireKill(class AActor* Target);
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void RecieveStoppedCharging(float ChargeProgress_0);
+    UE_PROTECTED void RecieveStartedCharging();
+    UE_PROTECTED void OnFireKill(class AActor* Target);
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
     void OnSkinChanged(class USkinEffect* Skin);
     void ReceiveOverheatedChanged(bool isOverheated);
-    void RecieveUnequipped();
+    UE_PROTECTED void RecieveUnequipped();
     void FadeTimeline__UpdateFunc();
     void FadeTimeline__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void HandleChargeAudio(float charge);
     void HandleHeatAudio();
-    void FadeOutIfValid(class UAudioComponent*& AC);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PRIVATE void FadeOutIfValid(class UAudioComponent*& AC);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

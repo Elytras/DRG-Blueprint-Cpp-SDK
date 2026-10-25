@@ -78,12 +78,12 @@ public:
     UE_COSMETIC void Construct();
     void Yes_026492834E69A68487066993DA576F51();
     void No_026492834E69A68487066993DA576F51();
-    void GetBorderColor(FLinearColor& OutputColor);
+    UE_BLUEPRINT_PURE void GetBorderColor(FLinearColor& OutputColor);
     void UpdateItemStatus();
-    void GetTemporaryBuf(class UTemporaryBuff*& buff);
+    UE_BLUEPRINT_PURE void GetTemporaryBuf(class UTemporaryBuff*& buff);
     UE_PURE bool HasPlayerRank();
     UE_PURE class UDrinkableDataAsset* GetSelectedDrinkableType();
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}}   // namespace Game::GameElements::Bar::UI

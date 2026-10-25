@@ -66,21 +66,21 @@ public:
     void BndEvt__Outline_K2Node_ComponentBoundEvent_0_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     UE_MULTICAST UE_RELIABLE void PlayAttackCue();
     UE_MULTICAST UE_RELIABLE void PlayPreAttackSound();
-    void Recieve_OnRep_Owner();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void Recieve_OnRep_Owner();
+    UE_PROTECTED void ReceiveBeginPlay();
     void KillTentacle();
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__DamageSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void DoMeleeAttack(class AActor* AttackTarget);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     UE_MULTICAST void HydraMeleeTell(FLinearColor NewColor);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void CheckLoS(class AActor* LoSCheckTargetActor, bool& ClearLoSToTarget);
     void HitTerrainAndStop(FVector TargetLocation_0, float Penetration, FVector& NewTargetLocation, bool& HitTerrain);
     void OnRep_TentaclesBody_BP();
-    void GetDistanceToHead(FVector InLocation, float& Distance);
-    class USceneComponent* GetHeadRoot();
-    class USceneComponent* GetHeadRotator();
+    UE_BLUEPRINT_PURE void GetDistanceToHead(FVector InLocation, float& Distance);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeadRoot();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeadRotator();
     UE_PURE FVector GetTargetCenterMass() const;
 private:
     struct UeMarkers

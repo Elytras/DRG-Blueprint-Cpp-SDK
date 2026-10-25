@@ -35,7 +35,7 @@ public:
     void ExecuteUbergraph_Donkey_BreadCrumb(int EntryPoint);
     void Blink_Photosensitive();
     void Blink();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SetNextArrowPoint(FVector NextPoint);
     void OnRep_NextPointLookat();
     UE_PURE FVector GetArrowPoint() const;

@@ -17,7 +17,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/TreasureRooms/BP_TreasureRoom_DeepScan_Basier", "BP_TreasureRoom_DeepScan_Basier_C");
     class USceneComponent* DefaultSceneRoot;
     float ShellRadius;
-    void GetDroppodLandingZoneLocation(FVector& Location);
+    UE_BLUEPRINT_PURE void GetDroppodLandingZoneLocation(FVector& Location);
 private:
     struct UeMarkers
     {

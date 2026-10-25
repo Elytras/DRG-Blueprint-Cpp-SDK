@@ -30,7 +30,7 @@ public:
     int MaxTries;
     int CurrentTries;
     void ExecuteUbergraph_TSK_FindRandomPointFrom(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector& Location);
     UE_PURE FVector GetLocation();
     void GetBestFlatGround(FVector Origin, FVector& Array_Element);

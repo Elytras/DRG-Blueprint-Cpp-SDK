@@ -44,14 +44,14 @@ public:
     void OnDropped_Event_0();
     void SetVisibleOnScanner();
     void DisableDistressSphere();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Beacon__UpdateFunc();
     void Beacon__FinishedFunc();
     void OnRep_IsVisibleOnScanner();
     void SetPingedByMule(BP_MiniMule_Salvage_C* InMiniMule, bool InPinged);
     void InitVisibleOnScanner();
     void UpdateBeacon();
-    void GetDistToNearestMULE(float& OutDist);
+    UE_BLUEPRINT_PURE void GetDistToNearestMULE(float& OutDist);
 private:
     struct UeMarkers
     {

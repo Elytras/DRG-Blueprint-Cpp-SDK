@@ -15,7 +15,7 @@ public:
     UE_CLASS("/Game/Maps/SpaceRig/SLVL_SpaceRig_Oktoberfest", "SLVL_SpaceRig_Oktoberfest_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_SLVL_SpaceRig_Oktoberfest(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 };
 
 }}}   // namespace Game::Maps::SpaceRig

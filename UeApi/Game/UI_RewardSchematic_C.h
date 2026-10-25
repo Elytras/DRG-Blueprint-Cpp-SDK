@@ -24,7 +24,7 @@ public:
     UI_Forge_Schematic_C* UI_Forge_Schematic;
     class UTextBlock* UnlockedText;
     void ExecuteUbergraph_UI_RewardSchematic(int EntryPoint);
-    void PlayReceiveAnim();
+    UE_PROTECTED void PlayReceiveAnim();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

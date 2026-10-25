@@ -26,7 +26,7 @@ public:
     class UStaticMeshComponent* SM_CactusSpikeProjectile;
     class UParticleSystem* ImpactParticle;
     void ExecuteUbergraph_PRJ_TripleShooter(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers

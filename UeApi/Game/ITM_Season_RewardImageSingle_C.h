@@ -91,7 +91,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void AnimTick();
     UE_PURE class UWidget* Get_Image_Main_ToolTipWidget();
-    void GetPickaxe(class UPlayerCharacterID* characterID, class UItemID*& Output);
+    UE_BLUEPRINT_PURE void GetPickaxe(class UPlayerCharacterID* characterID, class UItemID*& Output);
     void SetupMaterial();
     void SetCharacterIcon(class UPlayerCharacterID* Target);
     void SequenceEvent__ENTRYPOINTITM_Season_RewardImageSingle_0();

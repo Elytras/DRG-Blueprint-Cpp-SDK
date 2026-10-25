@@ -20,7 +20,7 @@ public:
     void ExecuteUbergraph_SLVL_SpaceRig_Beach_Party(int EntryPoint);
     void CrankFun();
     void OnJukeboxStreamerModeChanged_Event_0(bool NewValue);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void FindAmbientMusicPlayers();
     void UpdateAmbientMusic();
 };

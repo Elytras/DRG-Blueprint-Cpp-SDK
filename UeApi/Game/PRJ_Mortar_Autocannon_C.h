@@ -28,7 +28,7 @@ public:
     class UStaticMeshComponent* mesh_front;
     void ExecuteUbergraph_PRJ_Mortar_Autocannon(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
-    class UDamageComponent* GetDamageComponent();
+    UE_BLUEPRINT_CALLABLE class UDamageComponent* GetDamageComponent();
 private:
     struct UeMarkers
     {

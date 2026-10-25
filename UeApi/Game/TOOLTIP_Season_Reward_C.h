@@ -55,7 +55,7 @@ public:
     void Setup(bool ShowCost, int Cost);
     void SetDataFromReward(class UReward* Reward_0, bool ShowCost, int Cost);
     void SetCount(int Count);
-    void SetData(class UMaterialInstanceDynamic* DynMat, class UReward* Reward_0, bool ShowCost, int Cost);
+    UE_BLUEPRINT_CALLABLE void SetData(class UMaterialInstanceDynamic* DynMat, class UReward* Reward_0, bool ShowCost, int Cost);
     void SetInfo(FText InTitle, FText InCategory, FText InDescription, class UPlayerCharacterID* InCharacterID, bool inShowIcon);
 };
 

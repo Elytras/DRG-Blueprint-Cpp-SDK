@@ -53,7 +53,7 @@ public:
     void Setup_Invite_Handling();
     UE_CLIENT UE_RELIABLE void Return_Client_Camera();
     UE_SERVER UE_RELIABLE void SetPhotographyMode(bool Active);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void InpActEvt_Ctrl_O_K2Node_InputKeyEvent_0(FKey Key);
     void InpActEvt_IgnoreInvite_K2Node_InputActionEvent_0(FKey Key);
     void InpActEvt_RejectInvite_K2Node_InputActionEvent_1(FKey Key);
@@ -62,13 +62,13 @@ public:
     void StopAnsel();
     void StartAnsel();
     void ReStartAnsel();
-    void GetUnlockedItems(TEnum<EItemCategory> Category, TArray<class UClass*>& Unlocked_Items);
+    UE_BLUEPRINT_PURE void GetUnlockedItems(TEnum<EItemCategory> Category, TArray<class UClass*>& Unlocked_Items);
     void SetUnlockAnalytics(TArray<class UClass*>& Primary, TArray<class UClass*>& Secundary);
     void SetClassAnalytics();
     void ItemFilter(class UClass* itemClass, bool& Result);
     void SetHasShownCharacterSelector(bool HasShown);
     void SetIsEscapeMenuEnabled(bool IsEscapeMenuEnabled);
-    void GetEditorCharacterClass(class UPlayerCharacterID*& Character_Class);
+    UE_BLUEPRINT_PURE void GetEditorCharacterClass(class UPlayerCharacterID*& Character_Class);
 private:
     struct UeMarkers
     {

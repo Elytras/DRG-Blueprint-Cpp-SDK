@@ -33,7 +33,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_bp_BoneyardSpine_Spawner(int EntryPoint);
     void OnMatchStarted_BeginPlay();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

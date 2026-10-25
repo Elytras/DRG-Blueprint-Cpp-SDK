@@ -49,9 +49,9 @@ public:
     void Show(float DelayBetweenItems, class USoundBase* ItemSound);
     void CreateIcons(TArray<ITM_MissionComplete_Resource_C*>& OutWidgets);
     void AddIcon(bool ForceNewLine, float SizeScale, ITM_MissionComplete_Resource_C*& OutIconWidget);
-    void GetOrCreateHorizontalBar(bool ForceNewLine, class UHorizontalBox*& OutHorizontal);
+    UE_BLUEPRINT_PURE void GetOrCreateHorizontalBar(bool ForceNewLine, class UHorizontalBox*& OutHorizontal);
     void ClearIcons();
-    void IsBarleyResource(class UResourceData* InResource, bool& OutIsBarley);
+    UE_PRIVATE UE_BLUEPRINT_PURE void IsBarleyResource(class UResourceData* InResource, bool& OutIsBarley);
 private:
     struct UeMarkers
     {

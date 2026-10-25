@@ -24,7 +24,7 @@ public:
     void SetBoolUserSetting(class UBoolUserSettingAsset* InSetting);
     UE_PURE bool GetValue();
     void SetValue(bool InValue);
-    void OnClicked(bool InChecked);
+    UE_BLUEPRINT_CALLABLE void OnClicked(bool InChecked);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 private:
     struct UeMarkers

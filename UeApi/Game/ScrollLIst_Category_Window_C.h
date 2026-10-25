@@ -45,15 +45,15 @@ public:
     UE_COSMETIC void OnInitialized();
     void PrepareNewSection(int NumberOfButtons);
     void ScrollIntoViewDelay(class UWidget* WidgetToFind);
-    void CustomEvent(float CurrentOffset);
+    UE_BLUEPRINT_CALLABLE void CustomEvent(float CurrentOffset);
     UE_COSMETIC void Construct();
     void CheckForHeader(Lore_List_Element_C* Target);
     void PlayAnimInternal(Lore_List_Element_C* Target);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Clear();
     void PlayButtonIntro(Lore_List_Element_C* Target);
-    void SetData(_MENU_MinersManual_C* _MENU_MinersManual_0);
-    void OnClicked(int Index_0);
+    UE_BLUEPRINT_CALLABLE void SetData(_MENU_MinersManual_C* _MENU_MinersManual_0);
+    UE_BLUEPRINT_CALLABLE void OnClicked(int Index_0);
     void SelectNext(int Direction);
 private:
     struct UeMarkers

@@ -41,8 +41,8 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetOption(class UDetailedTag* InFilterTag);
     void SetChecked(bool InIsChecked);
-    void GetIsChecked(bool& Is_Checked_0);
-    void GetTagIfChecked(class UDetailedTag*& FilterTag_0);
+    UE_BLUEPRINT_PURE void GetIsChecked(bool& Is_Checked_0);
+    UE_BLUEPRINT_PURE void GetTagIfChecked(class UDetailedTag*& FilterTag_0);
 private:
     struct UeMarkers
     {

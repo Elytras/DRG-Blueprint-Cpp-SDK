@@ -30,11 +30,11 @@ public:
     class UPointLightComponent* PointLight;
     BP_BurrowComponent_C* BP_BurrowComponent;
     void ExecuteUbergraph_ENE_Spider_RapidShooter(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnDeathBase();
     void BndEvt__BP_BurrowComponent_K2Node_ComponentBoundEvent_1_OnBurrow__DelegateSignature();
     void BndEvt__BP_BurrowComponent_K2Node_ComponentBoundEvent_0_OnUnBurrow__DelegateSignature();
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
 private:
     struct UeMarkers
     {

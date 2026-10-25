@@ -18,8 +18,8 @@ public:
     float FirstTimeDelay;
     float AfterUseDelay;
     void ExecuteUbergraph_Tutorial_Hint_Flares(int EntryPoint);
-    void ReceiveOnInitialized();
-    void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnHidden();
     void OnFlareThrown();
 };
 

@@ -21,9 +21,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Throwlocation;
     void ExecuteUbergraph_BP_SnowballItem(int EntryPoint);
-    void OnReceiveEquippedFinished();
-    void RemovedFromInventory(class ACharacter* oldCharacter);
-    void ReceiveItemThrown(class AThrowableActor* thrownActor);
+    UE_PROTECTED void OnReceiveEquippedFinished();
+    UE_PROTECTED void RemovedFromInventory(class ACharacter* oldCharacter);
+    UE_PROTECTED void ReceiveItemThrown(class AThrowableActor* thrownActor);
 private:
     struct UeMarkers
     {

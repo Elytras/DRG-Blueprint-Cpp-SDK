@@ -37,7 +37,7 @@ public:
     int StepsInRow;
     void ExecuteUbergraph_Lore_ITM_MissionStep(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FMissionStepDescription step, int StepNumber_0, int StepsInRow_0);
+    UE_BLUEPRINT_CALLABLE void SetData(FMissionStepDescription step, int StepNumber_0, int StepsInRow_0);
     void BndEvt__Button_Image_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_Image_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
 };

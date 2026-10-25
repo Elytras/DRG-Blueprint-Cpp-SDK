@@ -37,7 +37,7 @@ public:
     void OnAnnounceAnimFinished();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetTitleProgress(float InProgress);
+    UE_PRIVATE void SetTitleProgress(float InProgress);
 };
 
 }}}   // namespace Game::UI::Announcements

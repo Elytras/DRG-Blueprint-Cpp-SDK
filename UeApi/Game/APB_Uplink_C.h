@@ -30,7 +30,7 @@ public:
     bool IsUplinking;
     bool Uplinked;
     void ExecuteUbergraph_APB_Uplink(int EntryPoint);
-    void SetProgress(float Progress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Progress);
     void AnimGraph(FPoseLink& AnimGraph_0);
 };
 

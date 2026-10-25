@@ -33,9 +33,9 @@ public:
     float Width;
     void ExecuteUbergraph_UI_ScalableLevelDisplay(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetMargin(float In_Size_X);
-    void SetWidth(float InWidth);
-    void SetMode(bool InShowClass);
+    UE_PRIVATE void SetMargin(float In_Size_X);
+    UE_PRIVATE void SetWidth(float InWidth);
+    UE_PRIVATE void SetMode(bool InShowClass);
     void SetText(FText Text, bool UpperCase);
     void SetLevel(int Level);
 };

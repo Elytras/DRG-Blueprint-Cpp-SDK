@@ -19,8 +19,8 @@ public:
     float GracePeriod;
     void ExecuteUbergraph_BP_InfectedState(int EntryPoint);
     void StartDamage();
-    void ReceiveStateExit();
-    void ReceiveStateEnter();
+    UE_PROTECTED void ReceiveStateExit();
+    UE_PROTECTED void ReceiveStateEnter();
 };
 
 }}}   // namespace Game::Character::States

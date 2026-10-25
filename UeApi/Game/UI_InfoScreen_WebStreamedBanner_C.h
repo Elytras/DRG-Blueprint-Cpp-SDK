@@ -60,7 +60,7 @@ public:
     void OnSuccess_3BC30184406EF3F09D3E01AAA4A8C949(class UTexture2DDynamic* Texture);
     void OnFail_3BC30184406EF3F09D3E01AAA4A8C949(class UTexture2DDynamic* Texture);
     void OpenDLCInSteamBrowser();
-    void GetSeasonDLC(class UGameDLC*& Season_DLC);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetSeasonDLC(class UGameDLC*& Season_DLC);
     UE_PURE FSlateBrush Get_DLC_Image_Brush_0();
     UE_PURE FLinearColor Get_DLC_Image_ColorAndOpacity_0();
 private:

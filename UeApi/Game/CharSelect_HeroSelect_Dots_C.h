@@ -32,7 +32,7 @@ public:
     void Set_Character_Class(class UPlayerCharacterID* CharacterClass_0);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void UpdateDots();
+    UE_PRIVATE void UpdateDots();
 private:
     struct UeMarkers
     {

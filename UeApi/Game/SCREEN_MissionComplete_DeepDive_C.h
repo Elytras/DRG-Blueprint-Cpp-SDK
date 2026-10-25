@@ -68,7 +68,7 @@ public:
     void CreateResources();
     void AddResource(class UCappedResource* Resource);
     UE_PURE class UDeepDive* GetCurrentDeepDive();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE bool IsValidResource(class UCappedResource* Resource) const;
 private:
     struct UeMarkers

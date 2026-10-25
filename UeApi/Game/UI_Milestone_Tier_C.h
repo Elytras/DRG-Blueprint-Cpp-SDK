@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_UI_Milestone_Tier(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Set_Tier(int Tier);
-    void InitTierImage(class UImage* Image);
+    UE_PRIVATE void InitTierImage(class UImage* Image);
 private:
     struct UeMarkers
     {

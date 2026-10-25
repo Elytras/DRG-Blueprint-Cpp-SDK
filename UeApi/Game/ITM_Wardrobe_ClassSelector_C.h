@@ -63,12 +63,12 @@ public:
     void SelectPrev();
     void BndEvt__ScrollRight_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature();
     void BndEvt__ScrollLeft_K2Node_ComponentBoundEvent_5_OnClicked__DelegateSignature();
-    void SetData(class UPlayerCharacterID* Character, class UObject* CategoryID_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* Character, class UObject* CategoryID_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetCharacterInfo(class UPlayerCharacterID* characterID);
-    void GetBPGameState(BP_GameState_C*& GameState);
-    void GetNextCharacter(class UPlayerCharacterID*& Character);
-    void GetPrevCharacter(class UPlayerCharacterID*& Character);
+    UE_BLUEPRINT_PURE void GetBPGameState(BP_GameState_C*& GameState);
+    UE_BLUEPRINT_PURE void GetNextCharacter(class UPlayerCharacterID*& Character);
+    UE_BLUEPRINT_PURE void GetPrevCharacter(class UPlayerCharacterID*& Character);
     void SetSwitchButtonState();
     FEventReply HandleKeyInput(FKeyEvent& InKeyEvent, bool& Handled);
 };

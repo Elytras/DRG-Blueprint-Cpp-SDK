@@ -48,7 +48,7 @@ public:
     void OnFirstWindowOpened();
     UE_COSMETIC void Construct();
     void UpdateIcons();
-    void GetTeam(TArray<class AFSDPlayerState*>& OutTeamMembers);
+    UE_BLUEPRINT_PURE void GetTeam(TArray<class AFSDPlayerState*>& OutTeamMembers);
     void GetParents(TArray<FString>& Names1);
 private:
     struct UeMarkers

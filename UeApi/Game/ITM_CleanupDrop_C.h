@@ -26,11 +26,11 @@ public:
     OnScreenIndicator_CleanupDrop_Order_C* Widget;
     void ExecuteUbergraph_ITM_CleanupDrop(int EntryPoint);
     void SetMarkerAndWidget(class AItemMarker* Marker_0);
-    void UpdateWidget(TEnum<EPlaceableObstructionType> reason, float TimeLeft);
-    void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
+    UE_PROTECTED void UpdateWidget(TEnum<EPlaceableObstructionType> reason, float TimeLeft);
+    UE_PROTECTED void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
     void OnMarkerSpawned_Event(class AItemMarker* Marker_0);
-    void RecieveEquipped();
-    void RecieveCycledItem();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void RecieveCycledItem();
 private:
     struct UeMarkers
     {

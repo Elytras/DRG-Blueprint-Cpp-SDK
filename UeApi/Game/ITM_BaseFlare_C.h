@@ -41,15 +41,15 @@ public:
     void ExecuteUbergraph_ITM_BaseFlare(int EntryPoint);
     void ActivateFlare();
     void OnUpdateShadowRadius();
-    void ReceiveBeginPlay();
-    void OnFlareExtinguish();
-    void OnFlareIgnite();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnFlareExtinguish();
+    UE_PROTECTED void OnFlareIgnite();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void StartFadeOut(float& Time);
     void UpdateShadowRadius();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

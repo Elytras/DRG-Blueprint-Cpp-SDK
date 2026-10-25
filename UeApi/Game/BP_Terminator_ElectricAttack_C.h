@@ -30,12 +30,12 @@ public:
     class UAudioComponent* ChargeupSound;
     FTimerHandle Handle_ChargeDelay;
     void ExecuteUbergraph_BP_Terminator_ElectricAttack(int EntryPoint);
-    void DoAttack();
+    UE_BLUEPRINT_CALLABLE void DoAttack();
     void ParentDied(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
-    void ReceiveAbortAttack();
+    UE_PROTECTED void ReceiveAbortAttack();
     UE_MULTICAST void AttackEffets();
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
     void ReceiveTick(float DeltaSeconds);
     void SetupDamage(class UDamageComponent* Damage);
     void OnRep_Stage();

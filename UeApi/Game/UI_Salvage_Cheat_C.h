@@ -34,7 +34,7 @@ public:
     void BndEvt__CheatMenu_ActivateSalvagePod_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(CheatMenu_BasicButtonWText_C* Button);
     void BndEvt__CheatMenu_BasicButtonWText_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(CheatMenu_BasicButtonWText_C* Button);
     UE_COSMETIC void Construct();
-    void GetSalvageObjective(class USalvageObjective*& AsSalvage_Objective);
+    UE_BLUEPRINT_PURE void GetSalvageObjective(class USalvageObjective*& AsSalvage_Objective);
     CheatMenu_BasicButtonWText_C* CreateMinimuleButton(FString MuleName);
     void TeleportToMule(class AActor* MULE);
 };

@@ -84,9 +84,9 @@ public:
     void TestCommunityGoals();
     void SetGoals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members);
     void SetGoalState(bool isGoal, bool isRecruitment);
-    void CurrentPlayerFaction(class UCommunityGoalFaction*& Current_Faction);
+    UE_BLUEPRINT_PURE void CurrentPlayerFaction(class UCommunityGoalFaction*& Current_Faction);
     void BuildRewardUI();
-    void MinersUnionTier(float& DSMUTier);
+    UE_BLUEPRINT_PURE void MinersUnionTier(float& DSMUTier);
     void AwardRewards();
     void SetResult(ITM_CommunityGoalResult_C* ResultUI, int FactionID);
     void RefreshCurrentState();

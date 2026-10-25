@@ -32,7 +32,7 @@ public:
     UE_COSMETIC void Construct();
     void SetTotalCount(int Value);
     void SetNumber(int Value, class UTextBlock* Label, int& OutValue);
-    void UpdateAmmoCritical();
+    UE_PRIVATE void UpdateAmmoCritical();
     void UpdateClipCount();
 private:
     struct UeMarkers

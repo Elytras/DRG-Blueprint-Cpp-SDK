@@ -23,7 +23,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     FVector BoundsSize;
     bool Unbound;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -27,7 +27,7 @@ public:
     class UStaticMeshComponent* InfectionPoint6;
     class UStaticMeshComponent* InfectionPoint9;
     void ExecuteUbergraph_ESI_Bomber_Rockpox_Plague(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

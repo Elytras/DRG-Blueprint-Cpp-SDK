@@ -37,8 +37,8 @@ public:
     void SetStartAndEnd(FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent);
     void SetIsCuttable(bool InCuttable);
     void SetCuttableTint(FLinearColor Appearance_Cuttable_Tint);
-    void GetWireDistance(float InStartKey, float InEndKey, float& OutDist);
-    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
+    UE_BLUEPRINT_PURE void GetWireDistance(float InStartKey, float InEndKey, float& OutDist);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE void OnPaint(FPaintContext& Context) const;
     void DrawCurveEnd(FPaintContext& Context, const FVector2D& DrawSize, FCurve2DAppearance InAppearance, float Start, float End, bool InvertTangents) const;
 };
 

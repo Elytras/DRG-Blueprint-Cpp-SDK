@@ -24,8 +24,8 @@ public:
     class UChildActorComponent* HunterIndicator;
     TArray<class UMaterialInterface*> MaterialsCache;
     void ExecuteUbergraph_BP_BarGlass_PropHunt(int EntryPoint);
-    void OnRep_BarSlotIndex();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnRep_BarSlotIndex();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Refresh();
 private:
     struct UeMarkers

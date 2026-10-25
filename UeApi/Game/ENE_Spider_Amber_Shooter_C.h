@@ -33,9 +33,9 @@ public:
     class AGameEvent* Event;
     void ExecuteUbergraph_ENE_Spider_Amber_Shooter(int EntryPoint);
     void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
-    void OnEventFinished(bool eventSuccess);
+    UE_BLUEPRINT_CALLABLE void OnEventFinished(bool eventSuccess);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void OnEventTriggered();
+    UE_BLUEPRINT_CALLABLE void OnEventTriggered();
     void OnEventProgress(float Progress);
     void OnEventOpened();
     bool SetupEvent(class AGameEvent* GameEvent);

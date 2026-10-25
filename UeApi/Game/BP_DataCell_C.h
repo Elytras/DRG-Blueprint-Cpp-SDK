@@ -33,7 +33,7 @@ public:
     void BndEvt__BP_DataCell_Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void BndEvt__BP_DataCell_Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void UpdateAttachState(bool Attached);
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
 private:
     struct UeMarkers
     {

@@ -125,7 +125,7 @@ public:
     void BndEvt__ITM_RestoreSave_K2Node_ComponentBoundEvent_6_OnShowRestoreSaveClicked__DelegateSignature();
     void BndEvt__BTN_Modding_K2Node_ComponentBoundEvent_5_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__BTN_PatchNotes_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
-    void OnNewTopWindow();
+    UE_PROTECTED void OnNewTopWindow();
     void BndEvt__BTN_ChangeProfile_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void BndEvt__B_Leave_K2Node_ComponentBoundEvent_8_OnClicked__DelegateSignature();
     void BndEvt__B_Exit_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
@@ -139,8 +139,8 @@ public:
     void BndEvt__BTN_Survey2_K2Node_ComponentBoundEvent_12_OnClicked__DelegateSignature();
     void BndEvt__BTN_CallToAction2_K2Node_ComponentBoundEvent_11_OnClicked__DelegateSignature();
     void BndEvt__BTN_Resume2_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__BTN_Discord_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature();
     UE_COSMETIC void Construct();
@@ -153,18 +153,18 @@ public:
     void No_AE1052D648D3B4733E52C594A5522CE9();
     void OnSuccess_B9B49EC34D71CFDC07BF12AA58CE1ADE();
     void OnFailure_B9B49EC34D71CFDC07BF12AA58CE1ADE();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetupLeaveButton();
     void UpdateDebugTerrainHash();
     bool NotInParty();
     void SetHUDVisible(bool Visible);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OpenSection(class UWindowWidget* InSection);
     void ToggleButton(Header_ButtonCutCorner_C* InButton);
     void OnMinersManualNotification(TEnum<EMinersManualSection> PendingSection, FGuid Pending_ID, FText Text);
     void OnMinersManualOpen(class UObject* IdentifyingObject, bool Open_Specific_Page, TEnum<EMinersManualSinglePage> page);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void Should_Modding_Menu_Be_Enabled(bool& Result);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void Should_Modding_Menu_Be_Enabled(bool& Result);
     void Remove_Button_If_Condition(Header_ButtonCutCorner_C* InButton, bool InCondition);
     void Remove_Buttons_If_Condition(TArray<Header_ButtonCutCorner_C*>& InButtons, bool InCondition);
 private:

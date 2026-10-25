@@ -42,9 +42,9 @@ public:
     UE_COSMETIC void Construct();
     void SetObjective(class UObjective* obj);
     void SetRefinery(class AFSDRefinery* InRefinery);
-    void OnSetupPipeline(class APipelineStart* InPipelineStart);
-    void OnProgressChanged(float InProgress01);
-    void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
+    UE_PRIVATE void OnSetupPipeline(class APipelineStart* InPipelineStart);
+    UE_PRIVATE void OnProgressChanged(float InProgress01);
+    UE_PRIVATE void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery

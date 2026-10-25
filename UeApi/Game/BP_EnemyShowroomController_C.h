@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/UI/Showroom/BP_EnemyShowroomController", "BP_EnemyShowroomController_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_EnemyShowroomController(int EntryPoint);
-    void Receive_PlayAttack(class UAnimSequenceBase* attackAnimation);
+    UE_PROTECTED void Receive_PlayAttack(class UAnimSequenceBase* attackAnimation);
 };
 
 }}}   // namespace Game::UI::Showroom

@@ -55,19 +55,19 @@ public:
     TMulticastInlineDelegate<void()> OnHoldingFinished;
     UE_READONLY bool Hide_Timer;
     void ExecuteUbergraph_HUD_Hold_Activation(int EntryPoint);
-    void OnPerkActivationFinished();
+    UE_BLUEPRINT_CALLABLE void OnPerkActivationFinished();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void AnimCountDownFinished();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetActionHeader(const FText& InText);
     void SetInputText(FText InInputText, FText InInputTextController);
-    void SetCountDown(float InTime, float InTotalDuration, bool& Finished);
+    UE_PRIVATE void SetCountDown(float InTime, float InTotalDuration, bool& Finished);
     void BeginCountDown(float InDuration);
-    void SetCountDownProgress(float InProgress);
+    UE_PRIVATE void SetCountDownProgress(float InProgress);
     void CancelCountDown(bool HideCountDown);
     void SetHolding(bool IsHolding);
-    void SetHoldingProgress(float InProgress);
+    UE_PRIVATE void SetHoldingProgress(float InProgress);
 private:
     struct UeMarkers
     {

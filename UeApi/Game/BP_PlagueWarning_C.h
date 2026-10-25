@@ -34,7 +34,7 @@ public:
     void FirstPlayerNear_Tower(class AActor* SporeTower);
     void CustomEvent_0();
     void CheckIfTargetingPlague();
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
     void StartTimer();
     void FirstSpawn();
     void SpawnInfectedEnemies();

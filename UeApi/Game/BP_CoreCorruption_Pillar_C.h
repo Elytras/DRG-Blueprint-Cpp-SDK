@@ -30,11 +30,11 @@ public:
     TSubclassOf<class UCameraShakeBase> PillarCameraShake;
     class UTerrainMaterial* CarveMaterial;
     void ExecuteUbergraph_BP_CoreCorruption_Pillar(int EntryPoint);
-    void DestroyTrailParticles();
+    UE_PROTECTED void DestroyTrailParticles();
     void SpawnTrailParticles();
     void ActivatePillar();
     UE_MULTICAST UE_RELIABLE void All_ActivatePillar();
-    void CarvePillar();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE void CarvePillar();
     void Increase_Stone_Glow__UpdateFunc();
     void Increase_Stone_Glow__FinishedFunc();
     void FadeParticles__UpdateFunc();

@@ -18,8 +18,8 @@ public:
     void ExecuteUbergraph_BP_ResupplierLogic(int EntryPoint);
     UE_CLIENT UE_RELIABLE void Client_InstantlyReload();
     void OnResupplied(float percentage);
-    void StartLogic(int Rank);
-    FText GetAdditionalText(int Rank) const;
+    UE_PROTECTED void StartLogic(int Rank);
+    UE_BLUEPRINT_CALLABLE FText GetAdditionalText(int Rank) const;
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

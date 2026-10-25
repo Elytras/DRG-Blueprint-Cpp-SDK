@@ -40,11 +40,11 @@ public:
     class UTimelineComponent* DistressLightIntensity;
     float DistressLightIntensity_;
     void ExecuteUbergraph_BP_DropPod_Escape_Damaged(int EntryPoint);
-    void OnPoweredUp();
-    void OnPoweringUp();
+    UE_PROTECTED void OnPoweredUp();
+    UE_PROTECTED void OnPoweringUp();
     void OnMatchStarted_Event_0();
     void OnMuleLoaded();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void DistressLightIntensity__UpdateFunc();
     void DistressLightIntensity__FinishedFunc();
     void Handle_PhotosenitivityDamagedPod();

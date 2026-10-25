@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_MiniMule(int EntryPoint);
     void CustomEvent_0();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

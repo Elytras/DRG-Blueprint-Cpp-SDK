@@ -86,8 +86,8 @@ public:
     void OnModioUserAuthenticated(bool Authenticated);
     void ReloadWorldAndJoin();
     void AnsweredTerms(bool Agree);
-    void ReceiveOkCommand();
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveOkCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Button_Join_K2Node_ComponentBoundEvent_45_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature();

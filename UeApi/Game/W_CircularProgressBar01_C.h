@@ -36,7 +36,7 @@ public:
     void SetRingRadius(float Value);
     void SetRingThickness(float Value);
     void SetClockwise(bool ShowClockwise);
-    void GetPercent(float& Percent_0);
+    UE_BLUEPRINT_PURE void GetPercent(float& Percent_0);
     void IncPercent(float Value, float& Percent_0);
     void SetTintOpacity(float TintOpacity_0);
 private:

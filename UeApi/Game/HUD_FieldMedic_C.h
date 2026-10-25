@@ -39,7 +39,7 @@ public:
     void OnFirePressed();
     void OnBeginUsingEvent_Event_0(class UUsableComponentBase* Component);
     void OnFireReleased();
-    void GetPerk(class UFloatPerkAsset*& Perks_FieldMedic);
+    UE_BLUEPRINT_PURE void GetPerk(class UFloatPerkAsset*& Perks_FieldMedic);
     void GetInstantRevivablePlayer(class UUsableComponentBase* TargetUseComponent, class APlayerCharacter*& outPlayer);
 };
 

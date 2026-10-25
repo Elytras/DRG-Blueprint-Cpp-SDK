@@ -30,7 +30,7 @@ public:
     void SpawnBigWave();
     void StopConstantPreassure();
     void StartWave();
-    void GetDestinationLocation(FVector& Location);
+    UE_BLUEPRINT_PURE void GetDestinationLocation(FVector& Location);
 private:
     struct UeMarkers
     {

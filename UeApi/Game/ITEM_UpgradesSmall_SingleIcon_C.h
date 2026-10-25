@@ -30,7 +30,7 @@ public:
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void Show(class UItemUpgrade* Upgrade_0, class UClass* Item);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

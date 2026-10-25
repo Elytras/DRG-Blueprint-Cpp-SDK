@@ -13,7 +13,7 @@ class BP_CrystalArch_2_C : public ::Game::LevelElements::RoomObjects::HugeCarver
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/CrystalArches/BP_CrystalArch_2", "BP_CrystalArch_2_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

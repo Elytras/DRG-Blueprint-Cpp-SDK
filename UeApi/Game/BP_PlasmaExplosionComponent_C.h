@@ -42,8 +42,8 @@ public:
     void OnDeathEvent(class UHealthComponentBase* HealthComponent);
     void InitializeEffect(class UStatusEffect* Effect, class AActor* EffectOwner);
     void ReceiveBeginPlay();
-    void GetFXMeshScale(float& Scale);
-    void FindOrCreateDamageComponent(class AActor* Actor, class UDamageComponent*& DamageComponent);
+    UE_BLUEPRINT_PURE void GetFXMeshScale(float& Scale);
+    UE_PRIVATE void FindOrCreateDamageComponent(class AActor* Actor, class UDamageComponent*& DamageComponent);
 };
 
 }}}   // namespace Game::WeaponsNTools::PlasmaCarbine

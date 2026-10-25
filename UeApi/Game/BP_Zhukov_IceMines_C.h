@@ -46,8 +46,8 @@ public:
     void GetArmed();
     void TriggerExplosion();
     void BndEvt__Area_Trigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_Triggered();
     void OnRep_Ready();
 private:

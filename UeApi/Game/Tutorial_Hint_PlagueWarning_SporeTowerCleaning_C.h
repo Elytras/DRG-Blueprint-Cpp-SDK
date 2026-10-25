@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_PlagueWarning_SporeTowerCleaning(int EntryPoint);
     void OnTutorialTaskFinished();
     void OnTriggerCleaningTutorial();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

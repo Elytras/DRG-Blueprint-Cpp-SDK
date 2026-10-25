@@ -59,8 +59,8 @@ public:
     UE_COSMETIC void Construct();
     void AddSentry(int Index_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OutOfAmmo(bool& OutOfAmmo_0);
-    void ItemEquipped(bool& IsEquipped);
+    UE_BLUEPRINT_PURE void OutOfAmmo(bool& OutOfAmmo_0);
+    UE_BLUEPRINT_PURE void ItemEquipped(bool& IsEquipped);
 private:
     struct UeMarkers
     {

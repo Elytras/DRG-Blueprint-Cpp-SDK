@@ -40,10 +40,10 @@ public:
     class UEnemyWaveController* ActiveWave;
     bool OverChargerCalled;
     void ExecuteUbergraph_BP_ProspectorDataDeposit(int EntryPoint);
-    void OnHackingComplete();
+    UE_PROTECTED void OnHackingComplete();
     void FirstConnect_Event(BP_Facility_PowerStation_GeneratorBase_C* Generator, class UTetherComponent* tetherlineStart);
     void OnOverChargerCalled_Event_0(FVector Location, int roomIndex_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnLoaded_B91065F0477C87A6C355AF868F6F6BB2(TSubclassOf<class UObject> Loaded);
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
     void SpawnDataCell();

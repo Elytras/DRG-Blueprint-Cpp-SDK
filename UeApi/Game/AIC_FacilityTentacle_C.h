@@ -25,8 +25,8 @@ public:
     bool IsChildOfOtherTentacle;
     void ExecuteUbergraph_AIC_FacilityTentacle(int EntryPoint);
     void SetPaused(bool IsPaused);
-    void ReceivePossess(class APawn* PossessedPawn);
-    void Recieve_BlackboardValueChanged(const FName& KeyName);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void Recieve_BlackboardValueChanged(const FName& KeyName);
 private:
     struct UeMarkers
     {

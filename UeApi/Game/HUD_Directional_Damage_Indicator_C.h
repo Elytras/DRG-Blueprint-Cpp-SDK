@@ -31,7 +31,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Hit(float Damage, class AActor* DamageCauser_0, class APlayerCharacter* victim, class UUserWidget*& Widget);
-    void MoveTowards(float Value, float End, float Delta, float& Result);
+    UE_PRIVATE UE_BLUEPRINT_PURE void MoveTowards(float Value, float End, float Delta, float& Result);
     void SetAngle(float Angle);
     void UpdatePosition(float InputPin);
 };

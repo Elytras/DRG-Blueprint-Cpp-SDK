@@ -81,27 +81,27 @@ public:
     void UpdateModifed();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FString InModName, FString InModVersion, FString InModURL, FString InModCategory, TEnum<EUGCApprovalStatus> InModStatus, TEnum<EUGCDownloadVersion> InModDownloadVersion, FString InModDescription, FString InModAuthor, FString InModAuthorURL, bool InModIsMounted, bool InModPendingMounted, bool InModIsDeprecated, bool InDependencyRemoved, bool InShowStatus, bool InCrashed, bool InWrongVersion);
+    UE_BLUEPRINT_CALLABLE void SetData(FString InModName, FString InModVersion, FString InModURL, FString InModCategory, TEnum<EUGCApprovalStatus> InModStatus, TEnum<EUGCDownloadVersion> InModDownloadVersion, FString InModDescription, FString InModAuthor, FString InModAuthorURL, bool InModIsMounted, bool InModPendingMounted, bool InModIsDeprecated, bool InDependencyRemoved, bool InShowStatus, bool InCrashed, bool InWrongVersion);
     void SetColors();
-    void GetStatusText(bool InShowStatus, TEnum<EUGCApprovalStatus> InStatus, FText& OutStatus);
-    void GetTruncatedString(FString inString, int InMaxLength, FString& OutResult);
-    void GetStringOrDefault(FString inString, FText InDefault, FString& OutValue);
+    UE_BLUEPRINT_PURE void GetStatusText(bool InShowStatus, TEnum<EUGCApprovalStatus> InStatus, FText& OutStatus);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetTruncatedString(FString inString, int InMaxLength, FString& OutResult);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetStringOrDefault(FString inString, FText InDefault, FString& OutValue);
     void OnThumbnailFetched(class UTexture2DDynamic* ModioModThumbnail);
-    void GetStatusToolTip(bool InShowStatus, TEnum<EUGCApprovalStatus> InStatus, FText& OutStatus);
+    UE_BLUEPRINT_PURE void GetStatusToolTip(bool InShowStatus, TEnum<EUGCApprovalStatus> InStatus, FText& OutStatus);
     void SetCompactMode(bool SimpleMode);
-    void HasCrashed(bool& OutHasCrashed);
+    UE_BLUEPRINT_PURE void HasCrashed(bool& OutHasCrashed);
     void On_Overlay_Closed();
     void SetModEnabled(bool InEnabled);
     void ResetModEnabled();
     void OnModStateDependencyChanged(bool IsChecked, bool ShouldDisableCheckmark, bool& HasChanged);
     void CheckGameVersionBeforeEnable(bool InEnabled);
-    class UWidget* CreateversionTooltip();
+    UE_BLUEPRINT_PURE class UWidget* CreateversionTooltip();
     void FindParentsInArray(TArray<class UWidget*>& PotentialParents);
     UE_PURE class UWidget* GetDependencyCheckboxTooltip();
     void SetFromPackage(class UUGCPackage* InPackage);
     void CheckIfSavedInSlot();
-    void GetDownloadVersionText(TEnum<EUGCDownloadVersion> InDownloadVersion, FText& OutStatus);
-    void GetDownloadVersionToolTip(TEnum<EUGCDownloadVersion> InStatus, FText& OutStatus);
+    UE_BLUEPRINT_PURE void GetDownloadVersionText(TEnum<EUGCDownloadVersion> InDownloadVersion, FText& OutStatus);
+    UE_BLUEPRINT_PURE void GetDownloadVersionToolTip(TEnum<EUGCDownloadVersion> InStatus, FText& OutStatus);
     void ITM_Mod_AutoGenFunc(FString LastURL);
 private:
     struct UeMarkers

@@ -24,7 +24,7 @@ public:
     class UParticleSystemComponent* P_CaveFX_Rain01;
     class USceneComponent* DefaultSceneRoot;
     bool PlayerInsideGas;
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ExecuteUbergraph_BP_RainFallLocal(int EntryPoint);
 private:
     struct UeMarkers

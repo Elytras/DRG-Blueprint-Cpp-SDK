@@ -110,7 +110,7 @@ public:
     void BndEvt__BP_PlagueMeteor_AutoCarver_K2Node_ComponentBoundEvent_0_CarveDoneDelegate__DelegateSignature();
     void LastaudioSignal();
     void WorkingPodCountChanged(int OldCount, int NewCount);
-    void StateChanged(TEnum<ERockCrackerstate> CurrentState, TEnum<ERockCrackerstate> previousState);
+    UE_BLUEPRINT_CALLABLE void StateChanged(TEnum<ERockCrackerstate> CurrentState, TEnum<ERockCrackerstate> previousState);
     void StartBreakThroughTimer();
     UE_MULTICAST void SpawnBreakThroughParticle(FVector Location);
     void TestIfRoofBreak();
@@ -130,13 +130,13 @@ public:
     void success();
     void failed();
     void PowerLineConnected(BP_RockCracker_EndPoint_C* EndPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void EnableVisuals();
     void Impacted();
     void DropStarted();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_ShowOnScanner();
-    void ConvertToImpactPos(FTransform InTransform, FTransform& outTransform);
+    UE_BLUEPRINT_PURE void ConvertToImpactPos(FTransform InTransform, FTransform& outTransform);
     void OnRep_EventUIActive();
     void OnRep_Event_MeteorDefence();
     void SetWorkingPodCount(int Count);

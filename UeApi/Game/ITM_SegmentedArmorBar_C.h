@@ -40,7 +40,7 @@ public:
     void SetInvulnerability(bool IsInvulnerability);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void AddSection(bool AddLeftPadding, class USubHealthComponent* Health);
-    void SetData(class AActor* ArmoredEnemy, class UEnemyHealthComponent* EnemyHealth_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class AActor* ArmoredEnemy, class UEnemyHealthComponent* EnemyHealth_0);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

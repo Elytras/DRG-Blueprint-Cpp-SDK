@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Critters/GliderBeast/AIC_GliderBeast", "AIC_GliderBeast_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_GliderBeast(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

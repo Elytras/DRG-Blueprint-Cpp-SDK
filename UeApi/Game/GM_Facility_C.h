@@ -52,7 +52,7 @@ public:
     void SubscribeToShieldEvents(BP_Facility_PowerStation_GeneratorBase_C* Generator);
     void OnOverChargerCalled(FVector Location, int roomIndex);
     void GeneratorCharged(BP_Facility_PowerStation_GeneratorBase_C* Generator);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void Damaged();
     void OnFacilityDestroyed();
@@ -60,7 +60,7 @@ public:
     void SetObjective(OBJ_1st_Facility_C* Objective_0);
     void OnLoaded_363A1A82446FF4B3B30843A806542007(class UObject* Loaded_0);
     void GetTargetRooms();
-    void GetGeneratorRooms(TArray<int>& Array);
+    UE_BLUEPRINT_PURE void GetGeneratorRooms(TArray<int>& Array);
     void StopOverChargerWave(BP_Facility_PowerStation_GeneratorBase_C* WaveOrigin);
 private:
     struct UeMarkers

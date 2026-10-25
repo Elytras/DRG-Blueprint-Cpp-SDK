@@ -59,7 +59,7 @@ public:
     void ScheduleRefreshCanAfford();
     void BndEvt___MENU_Crafting_MasteryBar_K2Node_ComponentBoundEvent_4_OnMasteryAnimFinished__DelegateSignature();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_2_NewLoadoutSelected__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void BndEvt__ITM_ItemCategories_K2Node_ComponentBoundEvent_1_BTN_HairColorClicked__DelegateSignature();
     void Update();
     void BndEvt__ITM_ItemCategories_K2Node_ComponentBoundEvent_16_BTN_SkinColorClicked__DelegateSignature();
@@ -69,7 +69,7 @@ public:
     void BndEvt__ITM_ItemCategories_K2Node_ComponentBoundEvent_11_BTN_EyebrowsClicked__DelegateSignature();
     void BndEvt__ITM_ItemCategories_K2Node_ComponentBoundEvent_10_BTN_BeardClicked__DelegateSignature();
     void BndEvt__ITM_ItemCategories_K2Node_ComponentBoundEvent_3_BTN_ArmorClicked__DelegateSignature();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void BndEvt__ClassSelector_K2Node_ComponentBoundEvent_0_OnCharacterChanged__DelegateSignature(class UClass* Character_0);
     void HidePreview(TScriptInterface<class ICraftable> Target);
     void PreviewItem(TScriptInterface<class ICraftable> Item);
@@ -79,8 +79,8 @@ public:
     void ClearItems();
     void NextGroup();
     void PrevGroup();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void GetNextAvailableRank(TArray<class UVanityItem*>& In_Vanity_Items, int& VisibleRank);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetNextAvailableRank(TArray<class UVanityItem*>& In_Vanity_Items, int& VisibleRank);
     void SetPreviewItem(TScriptInterface<class ICraftable> Item, bool Show);
     void RefreshCanAfford();
 };

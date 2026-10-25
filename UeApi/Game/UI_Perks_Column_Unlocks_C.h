@@ -27,7 +27,7 @@ public:
     void Set_Unlocked_Count(int UnlockedCount_0);
     void Set_Arrow_Count(int ArrowCount_0, int UnlockedCount_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void IsUnlocked(bool& Unlocked);
+    UE_BLUEPRINT_PURE void IsUnlocked(bool& Unlocked);
 private:
     struct UeMarkers
     {

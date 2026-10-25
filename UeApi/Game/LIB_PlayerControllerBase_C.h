@@ -17,7 +17,7 @@ class LIB_PlayerControllerBase_C : public UBlueprintFunctionLibrary
 public:
     UE_CLASS("/Game/Game/Libs/LIB_PlayerControllerBase", "LIB_PlayerControllerBase_C");
     using BP_PlayerControllerBase_C = ::Game::Game::BP_PlayerControllerBase_C;
-    static void GetPlayerControllerBase(class UObject* __WorldContext, BP_PlayerControllerBase_C*& Controller);
+    UE_BLUEPRINT_PURE static void GetPlayerControllerBase(class UObject* __WorldContext, BP_PlayerControllerBase_C*& Controller);
 };
 
 }}}   // namespace Game::Game::Libs

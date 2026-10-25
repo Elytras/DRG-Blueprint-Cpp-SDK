@@ -47,7 +47,7 @@ public:
     class UTextBlock* TextBlock_Title_1;
     void ExecuteUbergraph_ITM_Season_NextReward(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FSeasonLevel Season_Level);
+    UE_BLUEPRINT_CALLABLE void SetData(FSeasonLevel Season_Level);
     UE_PURE class UWidget* Get_Tooltip();
 private:
     struct UeMarkers

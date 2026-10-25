@@ -40,12 +40,12 @@ public:
     bool ObjectiveIsComplete;
     class AActor* hologramRef;
     void ExecuteUbergraph_WPN_PlagueSoaper(int EntryPoint);
-    void OnObjectiveChanged(class UObjective* Objective);
-    void RecieveStopUsing();
-    void RecieveStartUsing();
+    UE_PROTECTED void OnObjectiveChanged(class UObjective* Objective);
+    UE_PROTECTED void RecieveStopUsing();
+    UE_PROTECTED void RecieveStartUsing();
     void BndEvt__DroppedCollider_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

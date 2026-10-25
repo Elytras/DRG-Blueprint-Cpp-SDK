@@ -24,8 +24,8 @@ public:
     void Receive_AddEnemies(class AProceduralSetup* Setup);
     void OnCoreDeposited();
     void ReceiveBeginPlay();
-    FText GetObjectiveDescription(float missionLength);
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
     UE_PURE bool IsObjectiveResource(class UResourceData* InResource) const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;

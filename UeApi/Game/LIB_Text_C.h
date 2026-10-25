@@ -19,16 +19,16 @@ class LIB_Text_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/Game/Text/LIB_Text", "LIB_Text_C");
-    static void GetDisconnectReasonText(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, FText& Text);
-    static void GetDisconnectReasonCaption(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, FText& Text);
+    UE_BLUEPRINT_PURE static void GetDisconnectReasonText(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, FText& Text);
+    UE_BLUEPRINT_PURE static void GetDisconnectReasonCaption(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, FText& Text);
     static void SetTextUpperCased(class UTextBlock* Target, FText InText, class UObject* __WorldContext);
     static void SetFontSize(class UTextBlock*& Label, int NewSize, class UObject* __WorldContext);
-    static void GetFontSize(class UTextBlock*& Label, class UObject* __WorldContext, int& Size);
+    UE_BLUEPRINT_PURE static void GetFontSize(class UTextBlock*& Label, class UObject* __WorldContext, int& Size);
     static void SetTextCased(class UTextBlock*& Target, FText InText, uint8 Text_Case, class UObject* __WorldContext);
-    static void GetTimeText(float Dividend, class UObject* __WorldContext, FText& Text);
-    static void Select_Character_ID_Text(class UPlayerCharacterID* characterID, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
-    static void Select_Character_Class_Text(class UPlayerCharacterID* CharacterClass, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
-    static void Select_CharacterText(class APlayerCharacter* Character, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
+    UE_BLUEPRINT_PURE static void GetTimeText(float Dividend, class UObject* __WorldContext, FText& Text);
+    UE_BLUEPRINT_PURE static void Select_Character_ID_Text(class UPlayerCharacterID* characterID, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
+    UE_BLUEPRINT_PURE static void Select_Character_Class_Text(class UPlayerCharacterID* CharacterClass, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
+    UE_BLUEPRINT_PURE static void Select_CharacterText(class APlayerCharacter* Character, FText DrillerText, FText GunnerText, FText ScoutText, FText EngineerText, FText BoscoText, FText NoneText, class UObject* __WorldContext, FText& OutText);
 private:
     struct UeMarkers
     {

@@ -38,9 +38,9 @@ public:
     void ExecuteUbergraph_BP_CaterpillarTrack(int EntryPoint);
     void ParentOutlineChanged(TEnum<EOutline> InOutline);
     void UpdateTrackSpeed();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
-    void Line_Trace(FVector Start, FVector End, FVector& Hit, bool& DidHit);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void Line_Trace(FVector Start, FVector End, FVector& Hit, bool& DidHit);
 private:
     struct UeMarkers
     {

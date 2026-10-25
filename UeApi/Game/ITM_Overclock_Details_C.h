@@ -25,7 +25,7 @@ public:
     int Linespace;
     void ExecuteUbergraph_ITM_Overclock_Details(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UItemUpgrade* InUpgrade);
+    UE_BLUEPRINT_CALLABLE void SetData(class UItemUpgrade* InUpgrade);
     void AddStat(FItemUpgradeStatText InStat);
     void Clear();
 };

@@ -41,7 +41,7 @@ public:
     void ExecuteUbergraph_ENE_Spider_Tank_RockpoxPlague(int EntryPoint);
     void BndEvt__ENE_Spider_Tank_TentacleInfection_ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void PopAllWeakPoints(class UHealthComponentBase* HealthComponent_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

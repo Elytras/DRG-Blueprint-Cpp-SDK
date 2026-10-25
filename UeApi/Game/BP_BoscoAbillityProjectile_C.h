@@ -28,7 +28,7 @@ public:
     class UProjectileExplosion* ProjectileExplosion;
     class UDamageComponent* Damage;
     void ExecuteUbergraph_BP_BoscoAbillityProjectile(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers

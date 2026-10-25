@@ -70,9 +70,9 @@ public:
     void BndEvt__Button_Name_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Category_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature();
     void SetSortBy(TEnum<EPackageSortField> InField, bool InAscending);
-    void GetSortBy(EPackageSortField& Field_0, bool& Ascending_0);
-    void Click(TEnum<EPackageSortField> InField);
-    void UpdateHovered();
+    UE_BLUEPRINT_PURE void GetSortBy(EPackageSortField& Field_0, bool& Ascending_0);
+    UE_PRIVATE void Click(TEnum<EPackageSortField> InField);
+    UE_PRIVATE void UpdateHovered();
     void Refresh();
 };
 

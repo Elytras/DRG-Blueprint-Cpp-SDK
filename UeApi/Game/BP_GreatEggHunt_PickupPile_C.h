@@ -28,7 +28,7 @@ public:
     int AnimationSetting;
     void ExecuteUbergraph_BP_GreatEggHunt_PickupPile(int EntryPoint);
     void SetRandomAnimation();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_GreatEggHunt_PickupPile_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnRep_AnimationSettings();
 private:

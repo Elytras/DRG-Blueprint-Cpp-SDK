@@ -25,7 +25,7 @@ public:
     bool IsAlert;
     void ExecuteUbergraph_MOD_Proxy_SpawnEnemy(int EntryPoint);
     void spawned(class APawn* enemy_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

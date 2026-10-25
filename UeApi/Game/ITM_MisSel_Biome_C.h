@@ -69,7 +69,7 @@ public:
     void ShowUnlockZone();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void BndEvt__MainButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
-    void SetData(const TArray<class UGeneratedMission*>& missions_0, bool IsNewBiome, int BiomeIndex_0);
+    UE_BLUEPRINT_CALLABLE void SetData(const TArray<class UGeneratedMission*>& missions_0, bool IsNewBiome, int BiomeIndex_0);
     void BndEvt__Button_229_K2Node_ComponentBoundEvent_42_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_229_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -77,7 +77,7 @@ public:
     void Unselect();
     void GetMissionsForBiome(TArray<class UGeneratedMission*>& Array, TArray<class UGeneratedMission*>& missions_0);
     void SortMissions(TArray<class UGeneratedMission*>& missions_0, TMap<class UMissionTemplate*, int>& MissionCount1);
-    void GetController(BP_PlayerController_SpaceRig_C*& AsBP_Player_Controller_Space_Rig);
+    UE_BLUEPRINT_PURE void GetController(BP_PlayerController_SpaceRig_C*& AsBP_Player_Controller_Space_Rig);
     UE_PURE bool HasMissions();
     void CreateMissionIcons(TArray<class UGeneratedMission*>& Array);
     UE_PURE bool IsUnlocked();

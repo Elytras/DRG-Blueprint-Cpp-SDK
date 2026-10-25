@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Critters/LootBug/Hoarder/AIC_Spider_Hoarder", "AIC_Spider_Hoarder_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Hoarder_C;
     void ExecuteUbergraph_AIC_Spider_Hoarder(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

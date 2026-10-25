@@ -27,7 +27,7 @@ public:
     FBlackboardKeySelector FromKey;
     bool UseFromActor;
     void ExecuteUbergraph_SER_GetEnemyTarget(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
     void GetEnemyTarget(class AActor* FromActor);
 private:
     struct UeMarkers

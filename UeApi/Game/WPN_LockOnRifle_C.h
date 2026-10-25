@@ -48,13 +48,13 @@ public:
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
     void OnSkinChanged(class USkinEffect* Skin);
-    void RecieveEquipped();
-    void Recieve_UpdateMeshses(bool IsFirstPerson_0);
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void Recieve_UpdateMeshses(bool IsFirstPerson_0);
     void CustomEvent1(class UItemUpgrade* Event);
     void LockingStopped_Event();
     void LockingStarted_Event();
-    void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

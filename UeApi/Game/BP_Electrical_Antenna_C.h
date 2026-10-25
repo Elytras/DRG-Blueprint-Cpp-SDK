@@ -28,10 +28,10 @@ public:
     void ExecuteUbergraph_BP_Electrical_Antenna(int EntryPoint);
     void Retract();
     void DeactivateAnenna();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void OnRep_Active();
+    UE_BLUEPRINT_CALLABLE void OnRep_Active();
 private:
     struct UeMarkers
     {

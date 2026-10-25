@@ -56,7 +56,7 @@ public:
     void BndEvt__ITM_SeasonPlagueHeartBonus_Button_Selector_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ITM_SeasonPlagueHeartBonus_Button_Selector_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void ScaleWidget(bool ScaleDown_0, bool WithAnim);
-    void SetData(int numberOfFragments_0, bool IsClaimed_0);
+    UE_BLUEPRINT_CALLABLE void SetData(int numberOfFragments_0, bool IsClaimed_0);
     void SetShadeAlpha(float alpha);
     void BndEvt__ITM_SeasonPlagueHeartBonus_Button_Selector_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void SetUnlocked(bool IsUnlocked, bool WithAnim);

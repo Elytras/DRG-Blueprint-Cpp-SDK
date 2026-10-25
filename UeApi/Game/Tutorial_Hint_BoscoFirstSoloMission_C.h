@@ -19,7 +19,7 @@ public:
     FTutorialHint ReminderHint;
     void ExecuteUbergraph_Tutorial_Hint_BoscoFirstSoloMission(int EntryPoint);
     void OnLaserPointerEvent(const FLaserPointerTarget& HitInfo);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

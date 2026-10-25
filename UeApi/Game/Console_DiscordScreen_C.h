@@ -105,7 +105,7 @@ public:
     void RequestUserInByTime();
     void TimedUserRequest(float Time);
     void Stop();
-    void Init();
+    UE_BLUEPRINT_CALLABLE void Init();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Do_Running_Text(FText Text, int Index_0, class UTextBlock* Target);
     void UserInServer(bool isInServer);
@@ -122,7 +122,7 @@ public:
     void FactionLogosOn();
     void StopAllLogos();
     void Set_Goals(TArray<FString>& Goals, TArray<float>& Values, TArray<int>& Members);
-    void MinersUnionTier(float& DSMUTier);
+    UE_BLUEPRINT_PURE void MinersUnionTier(float& DSMUTier);
     void Update_Content_Switcher_Content();
     void Handle_Community_Goal_Content_state();
 private:

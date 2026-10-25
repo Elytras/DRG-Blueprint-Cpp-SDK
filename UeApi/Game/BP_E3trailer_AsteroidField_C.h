@@ -25,7 +25,7 @@ public:
     int Number_of_meshes;
     FRandomStream Random_seed;
     float Scale;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

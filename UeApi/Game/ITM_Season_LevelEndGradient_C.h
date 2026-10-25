@@ -32,7 +32,7 @@ public:
     bool NormalRewardLoaded;
     bool SpecialRewardLoaded;
     void ExecuteUbergraph_ITM_Season_LevelEndGradient(int EntryPoint);
-    void OnShown();
+    UE_BLUEPRINT_CALLABLE void OnShown();
     void SlowDownRender();
     void Set_Data(int Level_0, bool FirstInRow);
 private:

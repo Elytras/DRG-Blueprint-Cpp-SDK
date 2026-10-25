@@ -30,8 +30,8 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Reset(bool InSandbox);
     void Verify(const TArray<EGameType>& InSelectedGameTypes);
-    void GetIsChecked(bool& Checked) const;
-    UE_COSMETIC bool IsInteractable() const;
+    UE_BLUEPRINT_PURE void GetIsChecked(bool& Checked) const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

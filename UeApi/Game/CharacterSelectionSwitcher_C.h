@@ -119,7 +119,7 @@ public:
     void EquipSlot(int EquipSlot_0);
     void SwitchToWeapon(int WeaponIndex);
     void OnShowCharacterSelector(TSubclassOf<class APlayerCharacter> NewCharacter, TEnum<ECharselectionCameraLocation> selectionLocation_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnCompleted_6DC7882842E914A95C4ACD9AF2E9C943(FName NotifyName);
     void OnBlendOut_6DC7882842E914A95C4ACD9AF2E9C943(FName NotifyName);
     void OnInterrupted_6DC7882842E914A95C4ACD9AF2E9C943(FName NotifyName);

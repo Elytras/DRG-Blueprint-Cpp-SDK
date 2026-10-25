@@ -23,7 +23,7 @@ public:
     void ExecuteUbergraph_LVL_Loading_StartMission01(int EntryPoint);
     void PlayerStop();
     void PlayerStart(class ULevelSequence* LoaderLevelSequence);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void StartPlayer(class ULevelSequence* LevelSequence);
     void StopPlayer();
     void OnFinshed();

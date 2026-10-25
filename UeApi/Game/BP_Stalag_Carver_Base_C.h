@@ -14,7 +14,7 @@ class BP_Stalag_Carver_Base_C : public ::Game::Landscape::Biomes::Biomes_Ingame:
 public:
     UE_CLASS("/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/Carvers/BP_Stalag_Carver_Base", "BP_Stalag_Carver_Base_C");
     TArray<FTransform> TransformsRockFormation;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

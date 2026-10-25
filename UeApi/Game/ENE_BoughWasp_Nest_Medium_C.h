@@ -21,8 +21,8 @@ public:
     class UStaticMeshComponent* SM_HollowboughWaspNest_03;
     void ExecuteUbergraph_ENE_BoughWasp_Nest_Medium(int EntryPoint);
     void OnNestDeath();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
 private:
     struct UeMarkers
     {

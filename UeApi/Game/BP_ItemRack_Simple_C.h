@@ -31,7 +31,7 @@ public:
     TSoftClassPtr<class UClass> itemClass;
     void ExecuteUbergraph_BP_ItemRack_Simple(int EntryPoint);
     void BndEvt__BP_ItemRack_Simple_InstantUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_ItemRack_Simple_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 private:
     struct UeMarkers

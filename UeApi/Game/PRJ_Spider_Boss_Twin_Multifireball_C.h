@@ -30,7 +30,7 @@ public:
     class UPointLightComponent* PointLight;
     float LightIntensity;
     void ExecuteUbergraph_PRJ_Spider_Boss_Twin_Multifireball(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers

@@ -37,7 +37,7 @@ public:
     class UStaticMeshComponent* MeteoritePath1;
     class ULevelGenerationCarverComponent* LevelGenerationCarver_MeteoritePath1;
     void ExecuteUbergraph_BP_Plague_Spore_Tower_InfectionSource(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

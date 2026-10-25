@@ -24,7 +24,7 @@ public:
     class UTerrainMaterial* Material;
     float TargetAmount;
     void ExecuteUbergraph_Cheat_MaterialInfo(int EntryPoint);
-    void SetData(float spawned, float Target);
+    UE_BLUEPRINT_CALLABLE void SetData(float spawned, float Target);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
 };

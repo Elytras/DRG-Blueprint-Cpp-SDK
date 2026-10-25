@@ -36,14 +36,14 @@ public:
     void K2_OnRestartPlayer(class AController* NewPlayer);
     void K2_OnLogout(class AController* ExitingController);
     void OnCountdownComplete();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnSuccess_509E599D4BB91C15BA2979B190501E9F();
     void OnFailure_509E599D4BB91C15BA2979B190501E9F();
     void OnSuccess_1E75EB674DDE2C1E6C7EC18D18AFDB55();
     void OnFailure_1E75EB674DDE2C1E6C7EC18D18AFDB55();
     class UClass* GetDefaultPawnClassForController(class AController* InController);
-    void GetGameState(BP_GameState_SpaceRig_C*& GameState_0);
-    class AActor* ChoosePlayerStart(class AController* Player);
+    UE_BLUEPRINT_PURE void GetGameState(BP_GameState_SpaceRig_C*& GameState_0);
+    UE_BLUEPRINT_CALLABLE class AActor* ChoosePlayerStart(class AController* Player);
     void SelectRandomAvailableClass(class AFSDPlayerState* Player);
     void SendMissionStartAnalytics();
     bool PlayerCanRestart(class APlayerController* Player);

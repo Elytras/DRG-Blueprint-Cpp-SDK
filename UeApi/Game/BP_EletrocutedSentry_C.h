@@ -24,7 +24,7 @@ public:
     class UAudioComponent* Audio;
     class UParticleSystemComponent* ParticleSystem;
     class USceneComponent* DefaultSceneRoot;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -27,9 +27,9 @@ public:
     void ExecuteUbergraph_ScreenOverlay_HeartstoneBeam(int EntryPoint);
     void OnAnimFadingFinished();
     void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
-    void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
+    UE_PROTECTED void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     UE_COSMETIC void Construct();
-    void ReceiveEndOverlay();
+    UE_PROTECTED void ReceiveEndOverlay();
 private:
     struct UeMarkers
     {

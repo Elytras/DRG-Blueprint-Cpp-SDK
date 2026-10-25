@@ -16,7 +16,7 @@ class BP_EscortCannisterUsable_C : public UBPInstantUsable
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/Escort/BP_EscortCannisterUsable", "BP_EscortCannisterUsable_C");
-    bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

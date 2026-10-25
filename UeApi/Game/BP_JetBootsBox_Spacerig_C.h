@@ -39,10 +39,10 @@ public:
     class UTimelineComponent* Sphere_Timeline;
     TArray<class APlayerCharacter*> HasEquipped;
     void ExecuteUbergraph_BP_JetBootsBox_Spacerig(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveOnRepEquipped();
     void BndEvt__BP_JetBootsBox_EquipUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_HasEquipped();
 private:
     struct UeMarkers

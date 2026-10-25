@@ -104,7 +104,7 @@ public:
     void SpawnChunks();
     void SetupChunkSpawn();
     void OnLocalPlayerCollectedTreasure(class APlayerCharacter* Player);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ActivateBeacon();
     void OnRep_BackPackVersion();
 private:

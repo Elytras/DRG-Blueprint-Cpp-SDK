@@ -26,8 +26,8 @@ public:
     class USceneComponent* DefaultSceneRoot;
     FVector StartLocation;
     void ExecuteUbergraph_BP_BarGlass(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnRep_DrinkableData();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnRep_DrinkableData();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 private:
     struct UeMarkers

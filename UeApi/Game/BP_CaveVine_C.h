@@ -43,9 +43,9 @@ public:
     class USphereComponent* SphereCollider;
     void ExecuteUbergraph_BP_CaveVine(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_3_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void BP_OnTargetChanged(class UHealthComponent* NewTarget);
-    void BP_OnInitialized();
-    void UserConstructionScript();
+    UE_PROTECTED void BP_OnTargetChanged(class UHealthComponent* NewTarget);
+    UE_PROTECTED void BP_OnInitialized();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

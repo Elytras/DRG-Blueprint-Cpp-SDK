@@ -21,7 +21,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_ESI_PlagueLarva(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

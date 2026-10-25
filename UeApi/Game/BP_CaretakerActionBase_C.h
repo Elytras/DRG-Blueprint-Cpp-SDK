@@ -18,10 +18,10 @@ public:
     TArray<FName> PhaseBombSockets;
     float EstimatedStartDuration;
     float InitialDelay;
-    FVector GetRandomLaunchLocation();
-    void GetClosestLaunchLocation(FVector& TargetLocation, FVector& Result);
+    UE_BLUEPRINT_PURE FVector GetRandomLaunchLocation();
+    UE_BLUEPRINT_PURE void GetClosestLaunchLocation(FVector& TargetLocation, FVector& Result);
     UE_PURE bool HasAutority();
-    void GetClosestPhaseBombSocket(FVector Location, FName& Result);
+    UE_BLUEPRINT_PURE void GetClosestPhaseBombSocket(FVector Location, FName& Result);
     void GetEstimatedStartDuration(float& StartDuration);
     void SpawnPatrolBots();
 };

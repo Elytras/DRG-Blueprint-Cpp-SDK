@@ -37,7 +37,7 @@ public:
     bool IsAccurate;
     void ExecuteUbergraph_HUD_CrossHair_NewSawedOffShotgunDynamic(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class AAmmoDrivenWeapon* Weapon);
+    UE_BLUEPRINT_CALLABLE void SetData(class AAmmoDrivenWeapon* Weapon);
     void OnClipCountChanged(int amount);
     void OnSpreadChanged(float HorizontalSpread, float VerticalSpread, bool isAtRest);
     void OnDamagedEnemy_Event(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);

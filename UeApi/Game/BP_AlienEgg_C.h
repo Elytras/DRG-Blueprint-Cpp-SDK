@@ -42,7 +42,7 @@ public:
     void ExecuteUbergraph_BP_AlienEgg(int EntryPoint);
     void SetSpecialEgg();
     UE_MULTICAST void All_PlayDugFree();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void ModulateLights(float NewIntensity);

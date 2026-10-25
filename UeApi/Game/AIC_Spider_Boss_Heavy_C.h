@@ -26,17 +26,17 @@ public:
     FTimerHandle HandleSafetyTimer;
     float SentinelSafetyTime;
     void ExecuteUbergraph_AIC_Spider_Boss_Heavy(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void OnDeathEvent(class UHealthComponentBase* HealthComponent);
     void OnEnemySpawned(class APawn* enemy);
     void SpawnEnemies();
     void OnMessageBehaviorTreeEvent_Event_0(FName Message);
-    void ReceiveBeginPlay();
-    void GetTankBoss(ENE_Spider_Boss_Heavy_C*& AsENE_Tank_Boss_Heavy);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE void GetTankBoss(ENE_Spider_Boss_Heavy_C*& AsENE_Tank_Boss_Heavy);
     void UpdateHasSpawned();
     void StartSafetyTimer();
     void SpawnSentinelsBySafetyTimer();
-    bool CanSpawnSentinels();
+    UE_BLUEPRINT_PURE bool CanSpawnSentinels();
 private:
     struct UeMarkers
     {

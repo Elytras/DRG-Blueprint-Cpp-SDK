@@ -43,13 +43,13 @@ public:
     void BndEvt__ITM_VanityTag_CheckBox_ClickButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetHovered(bool InIsHovered);
+    UE_PRIVATE void SetHovered(bool InIsHovered);
     void SetSelected(bool InIsSelected);
-    void GetSelected(bool& Selected_0);
+    UE_BLUEPRINT_PURE void GetSelected(bool& Selected_0);
     void SetTag(class UDetailedTag* InTag, bool InIsSelected);
-    void GetTag(class UDetailedTag*& Tag_0);
+    UE_BLUEPRINT_PURE void GetTag(class UDetailedTag*& Tag_0);
     void SetSidePadding(int InSidePadding);
-    void GetTagIfSelected(class UDetailedTag*& Tag_0);
+    UE_BLUEPRINT_PURE void GetTagIfSelected(class UDetailedTag*& Tag_0);
 };
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector

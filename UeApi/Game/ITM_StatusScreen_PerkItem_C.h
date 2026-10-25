@@ -43,7 +43,7 @@ public:
     void Set_Selected(bool IsSelected);
     void Set_Perk(class UPerkAsset* PerkAsset_0);
     UE_PURE class UWidget* Get_ItemButton_ToolTipWidget();
-    void GetPerkAsset(class UPerkAsset*& PerkAsset_0) const;
+    UE_BLUEPRINT_PURE void GetPerkAsset(class UPerkAsset*& PerkAsset_0) const;
 private:
     struct UeMarkers
     {

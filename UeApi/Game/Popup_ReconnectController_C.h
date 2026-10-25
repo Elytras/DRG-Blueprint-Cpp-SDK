@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_Popup_ReconnectController(int EntryPoint);
     void Close();
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 
 }}}   // namespace Game::UI::System

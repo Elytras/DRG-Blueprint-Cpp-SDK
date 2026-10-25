@@ -24,7 +24,7 @@ public:
     FGameplayTagQuery Query;
     void ExecuteUbergraph_BP_VampireComponent(int EntryPoint);
     UE_CLIENT void Client_VampireTriggered();
-    void Receive_OnInitialized();
+    UE_PROTECTED void Receive_OnInitialized();
     void OnEnemyKilled(const FGameplayTagContainer& enemyTags, class AActor* enemy, class UDamageClass* DamageClass);
 };
 

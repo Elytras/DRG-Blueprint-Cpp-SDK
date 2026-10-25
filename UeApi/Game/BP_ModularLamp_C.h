@@ -29,7 +29,7 @@ public:
     FVector LightOffset;
     float MaterialModifier;
     class UMaterialInstanceDynamic* DynLightMaterial;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetLightColor(FLinearColor LightColor_0);
 private:
     struct UeMarkers

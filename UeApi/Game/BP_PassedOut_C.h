@@ -19,14 +19,14 @@ public:
     FTransform Start_Transform;
     bool WakeInBed;
     void ExecuteUbergraph_BP_PassedOut(int EntryPoint);
-    void ReceiveTeamPassedOut();
+    UE_PROTECTED void ReceiveTeamPassedOut();
     void Remove_Drinking_Mugs();
     void Turn_Off_Juke_Box();
-    void ReceiveStateExit();
-    void ReceiveStateEnter();
+    UE_PROTECTED void ReceiveStateExit();
+    UE_PROTECTED void ReceiveStateEnter();
     UE_CLIENT UE_RELIABLE void BeginFadeToBlack();
     void ReceiveBeginPlay();
-    void AllPassedOut(bool& AllPassedOut_0);
+    UE_BLUEPRINT_PURE void AllPassedOut(bool& AllPassedOut_0);
 private:
     struct UeMarkers
     {

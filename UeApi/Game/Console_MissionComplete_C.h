@@ -69,7 +69,7 @@ public:
     UE_COSMETIC void Construct();
     void BeginScreen();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetMissionResult(class UMissionResultInfo*& MissionResultInfo);
+    UE_BLUEPRINT_PURE void GetMissionResult(class UMissionResultInfo*& MissionResultInfo);
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

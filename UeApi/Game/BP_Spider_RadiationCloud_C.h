@@ -28,7 +28,7 @@ public:
     class UTimelineComponent* Timeline_0;
     float BaseIntensity;
     void ExecuteUbergraph_BP_Spider_RadiationCloud(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

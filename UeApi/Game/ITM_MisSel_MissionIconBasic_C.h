@@ -36,7 +36,7 @@ public:
     FObjectiveMissionIcon MissionIcon;
     bool DataSet;
     void ExecuteUbergraph_ITM_MisSel_MissionIconBasic(int EntryPoint);
-    void SetData(FObjectiveMissionIcon MissionIcon_0);
+    UE_BLUEPRINT_CALLABLE void SetData(FObjectiveMissionIcon MissionIcon_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMission(class UGeneratedMission* InMission);
     void SetSelected(bool InSelected);

@@ -29,7 +29,7 @@ public:
     class UTextBlock* ErrorCode;
     class UTextBlock* TextBlock_128;
     void ExecuteUbergraph_WND_JoinFailed(int EntryPoint);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void Cancel();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();

@@ -58,19 +58,19 @@ public:
     void OnDeployProgress_Event(float Progress);
     void Check_For_Ammo_Depletion();
     void OnGunStateChanged(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
-    void OnItemEquipped(class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void OnItemEquipped(class AItem* Item_0);
     void Set_Selected(bool Is_Selected);
     void OnSelectedItemChanged(class ARecallableSentryGun* SentryGun_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Update_State(FString reason);
-    void OnStateChanged(class ARecallableActor* Sender, TEnum<ERecallableActorState> State);
+    UE_BLUEPRINT_CALLABLE void OnStateChanged(class ARecallableActor* Sender, TEnum<ERecallableActorState> State);
     void OnActiveItemsChanged(class ARecallableSentryGunItem* Item_0);
-    void Init(class UInventoryComponent* Inventory_0, class ARecallableSentryGunItem* Item_0, int Param_Index_0);
+    UE_BLUEPRINT_CALLABLE void Init(class UInventoryComponent* Inventory_0, class ARecallableSentryGunItem* Item_0, int Param_Index_0);
     void On_Ammo_Count_Changed(int AmmoCount, int Change);
     void Set_Sentry_Home();
     void Set_Sentry(class ARecallableSentryGun* Sentry_Gun);
-    void GetMovementState(ERecallableActorState& State);
-    void IsOutOfAmmo(bool& OutOfAmmo);
+    UE_BLUEPRINT_PURE void GetMovementState(ERecallableActorState& State);
+    UE_BLUEPRINT_PURE void IsOutOfAmmo(bool& OutOfAmmo);
 private:
     struct UeMarkers
     {

@@ -25,7 +25,7 @@ public:
     class UTerrainPlacementComponent* terrainPlacement_0;
     class USceneComponent* Scene;
     void ExecuteUbergraph_BP_CausticCrevasse_Small(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

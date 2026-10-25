@@ -36,11 +36,11 @@ public:
     void ExecuteUbergraph_BP_GuntowerActivationPlatfrom(int EntryPoint);
     void PlayerSteppedOff(int CurrentCount);
     void PlayerSteppedOn(int CurrentCount);
-    void OnFinished();
-    void OnShutDown();
-    void OnDisabledChanged(bool IsDisabled);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void OnFinished();
+    UE_PROTECTED void OnShutDown();
+    UE_PROTECTED void OnDisabledChanged(bool IsDisabled);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void DisableLight();
     void SetLightColor(FColor LightColor);
 private:

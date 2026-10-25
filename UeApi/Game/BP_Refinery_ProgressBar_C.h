@@ -31,11 +31,11 @@ public:
     TEnum<ERefineryState> State;
     void ExecuteUbergraph_BP_Refinery_ProgressBar(int EntryPoint);
     void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Completed_321D738B4128D90EE5392DBACA2273B4(float DeltaTime, float NormalizedTime);
     void OnTick_321D738B4128D90EE5392DBACA2273B4(float DeltaTime, float NormalizedTime);
-    void UserConstructionScript();
-    void SetProgress(float InProgress01);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void SetProgress(float InProgress01);
     void SetColors(FLinearColor InStartColor, FLinearColor InEndColor, FLinearColor InBackgroundColor);
 private:
     struct UeMarkers

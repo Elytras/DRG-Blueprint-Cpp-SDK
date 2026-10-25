@@ -23,7 +23,7 @@ public:
     void TetherPickedup(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnOverChargerCalled_Event_0(FVector Location, int roomIndex);
     void OnBoscoChanged(class ABosco* Bosco);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

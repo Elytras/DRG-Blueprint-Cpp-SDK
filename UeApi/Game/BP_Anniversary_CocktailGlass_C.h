@@ -36,8 +36,8 @@ public:
     void ExecuteUbergraph_BP_Anniversary_CocktailGlass(int EntryPoint);
     void BndEvt__BP_Anniversary_CocktailGlass_Sphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__BP_Anniversary_CocktailGlass_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_UsedMesh();
     void OnRep_IsBroken();
 private:

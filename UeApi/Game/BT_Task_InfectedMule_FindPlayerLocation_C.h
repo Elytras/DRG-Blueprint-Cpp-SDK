@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FBlackboardKeySelector LocationKey;
     void ExecuteUbergraph_BT_Task_InfectedMule_FindPlayerLocation(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::Enemies::MuleInfected

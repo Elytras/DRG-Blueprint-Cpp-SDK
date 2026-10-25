@@ -68,7 +68,7 @@ public:
     void Feed_Cosmetics();
     void BndEvt__BP_ScrabTank2_InstantUsablePunish_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_ScrabTank2_InstantUsableReward_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ActivateAnnoy(bool Activate);
     void RandomPlayDwarfSpeak(float percentage, class UDialogDataAsset* Shout, class APlayerCharacter* PlayerCharacter, bool& Played);
 private:

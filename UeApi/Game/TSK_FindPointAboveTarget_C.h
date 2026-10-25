@@ -25,7 +25,7 @@ public:
     float Height;
     FVector ManualOffset;
     void ExecuteUbergraph_TSK_FindPointAboveTarget(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Tasks

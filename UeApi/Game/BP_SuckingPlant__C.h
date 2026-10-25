@@ -84,7 +84,7 @@ public:
     void BndEvt__Capsule_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__Capsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__PawnSensing_K2Node_ComponentBoundEvent_3_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Pulsating_shell__UpdateFunc();
     void Pulsating_shell__FinishedFunc();
     void Move_towards_target__UpdateFunc();
@@ -92,7 +92,7 @@ public:
     void Sucking_Duration__Stop_Particle_System__EventFunc();
     void Sucking_Duration__UpdateFunc();
     void Sucking_Duration__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void Suck_In_Target_Element(class APlayerCharacter* Input_Character);
     void OnRep_PlantState();
     void OnRep_Current_Rotation();

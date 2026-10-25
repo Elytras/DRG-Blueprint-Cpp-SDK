@@ -23,11 +23,11 @@ public:
     class UTextBlock* DATA_Total;
     void ExecuteUbergraph_HUD_AmmoCount(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnTotalVisibleChanged(bool Visible);
+    UE_PROTECTED void OnTotalVisibleChanged(bool Visible);
     UE_COSMETIC void Construct();
-    void OnVisibleChanged(bool Visible, bool showClipCount);
-    void OnAmountChanged(int Count);
-    void OnTotalChanged(int Total);
+    UE_PROTECTED void OnVisibleChanged(bool Visible, bool showClipCount);
+    UE_PROTECTED void OnAmountChanged(int Count);
+    UE_PROTECTED void OnTotalChanged(int Total);
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

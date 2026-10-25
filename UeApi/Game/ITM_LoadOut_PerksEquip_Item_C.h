@@ -51,9 +51,9 @@ public:
     void Refresh();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void IsItemLocked(bool& ItemLocked_0);
-    class UWidget* CreateToolTip();
-    void GetPerkAsset(class UPerkAsset*& PerkAsset_0) const;
+    UE_BLUEPRINT_PURE void IsItemLocked(bool& ItemLocked_0);
+    UE_BLUEPRINT_PURE class UWidget* CreateToolTip();
+    UE_BLUEPRINT_PURE void GetPerkAsset(class UPerkAsset*& PerkAsset_0) const;
 private:
     struct UeMarkers
     {

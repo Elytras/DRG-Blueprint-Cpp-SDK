@@ -75,14 +75,14 @@ public:
     void Grow();
     void DamageJEB();
     void CheckIfCanAttackJEB();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void GrowLight__UpdateFunc();
     void GrowLight__FinishedFunc();
     void CheckLOStoJEB(bool& HaveLOStoJEB);
     void OnRep_IsAttackingJEB();
     void OnRep_FinishedCarving();
     void OnRep_DoGrow();
-    void IsDestroyed(bool& isDestoyed);
+    UE_BLUEPRINT_PURE void IsDestroyed(bool& isDestoyed);
     void OnRep_NumPointsRemoved();
 private:
     struct UeMarkers

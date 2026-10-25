@@ -23,7 +23,7 @@ public:
     BP_BarGlass_Standard_C* RandomDrink;
     class UDrinkableDataAsset* RandomDrinkData;
     void ExecuteUbergraph_BP_BarGlass_Random(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_RandomDrink();
 private:
     struct UeMarkers

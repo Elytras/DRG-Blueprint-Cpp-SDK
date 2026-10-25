@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/RivalTech/Terminator/AIC_Terminator", "AIC_Terminator_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Terminator(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

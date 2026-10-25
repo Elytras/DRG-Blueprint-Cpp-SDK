@@ -33,8 +33,8 @@ public:
     FVector2D BoxScale;
     bool Visible;
     void ExecuteUbergraph_Sign_MemorialUnlock(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -57,23 +57,23 @@ public:
     void StartMoveOut();
     void EndHover();
     void BeginHover(class UPlayerCharacterID* Character);
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void BndEvt__CharSelect_HeroSelect_K2Node_ComponentBoundEvent_2_OnCharacterUnhovered__DelegateSignature(class UPlayerCharacterID* characterID);
     void BndEvt__CharSelect_HeroSelect_K2Node_ComponentBoundEvent_1_OnCharacterHovered__DelegateSignature(class UPlayerCharacterID* Character);
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     void BndEvt__CloseButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void BndEvt__CharSelect_HeroSelect_K2Node_ComponentBoundEvent_2_OnRetireCharacter__DelegateSignature(class UPlayerCharacterID* Character);
     void Show();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void OnSelectedCharacterChanged_Event(TSubclassOf<class APlayerCharacter> NewCharacter);
     void BackPressed();
     UE_COSMETIC void Construct();
-    void OnCloseMenuReleased(bool& Handled);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_CALLABLE void OnCloseMenuReleased(bool& Handled);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void RetireCharacter(class UPlayerCharacterID* playerClass);
     void Set_Retirement_Info(class UPlayerCharacterID* Character);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 private:
     struct UeMarkers
     {

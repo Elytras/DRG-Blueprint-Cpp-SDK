@@ -65,7 +65,7 @@ public:
     void SpawnTentacleParts();
     void HandleDeath();
     void OnRangedAttack();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void KillTentacle();
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnCompleted_A95BA6584C48C6EABBD6A895A1E446D7(FName NotifyName);
@@ -73,14 +73,14 @@ public:
     void OnInterrupted_A95BA6584C48C6EABBD6A895A1E446D7(FName NotifyName);
     void OnNotifyBegin_A95BA6584C48C6EABBD6A895A1E446D7(FName NotifyName);
     void OnNotifyEnd_A95BA6584C48C6EABBD6A895A1E446D7(FName NotifyName);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void HitTerrainAndStop(FVector TargetLocation_0, float Penetration, FVector& NewTargetLocation, bool& HitTerrain);
-    void GetTentacle(ENE_TerminatorTentacle_C*& tentacle);
-    class USceneComponent* GetHeadRoot();
-    class USceneComponent* GetHeadRotator();
+    UE_BLUEPRINT_PURE void GetTentacle(ENE_TerminatorTentacle_C*& tentacle);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeadRoot();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeadRotator();
     void Spawn_Crush_Particles();
     UE_PURE FVector GetTargetCenterMass() const;
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
     UE_PURE bool GetIsTargetable() const;
 private:
     struct UeMarkers

@@ -36,7 +36,7 @@ public:
     void UseLessFallDamageMaterial();
     void SetCarverMeshScale(FVector Scale);
     void Set_Carver_mesh(class UStaticMesh* Mesh_to_use);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();

@@ -38,7 +38,7 @@ public:
     void ExecuteUbergraph_BP_PickaxeRandomizer(int EntryPoint);
     void LoadedMaterial();
     void Loaded();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SelectRandomMesh(TArray<TSoftObjectPtr<class UStaticMesh>>& Array);
     void SetStaticMesh(class UStaticMeshComponent* MeshComponent, int Index_0);
 private:

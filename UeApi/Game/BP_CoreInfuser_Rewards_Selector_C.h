@@ -33,9 +33,9 @@ public:
     void SetSelectedReward(class USchematic* InReward);
     void OnRewardSelectedEvent(class USchematic* Reward);
     void SetVisible(bool InVisible);
-    void ReceiveBeginPlay();
-    void GetRewardsWidget(UI_CoreInfuser_Rewards_Selector_C*& Widget);
-    void GetBackgroundsWidget(UI_CoreInfuser_Rewards_Background_C*& Widget);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetRewardsWidget(UI_CoreInfuser_Rewards_Selector_C*& Widget);
+    UE_BLUEPRINT_PURE void GetBackgroundsWidget(UI_CoreInfuser_Rewards_Background_C*& Widget);
 private:
     struct UeMarkers
     {

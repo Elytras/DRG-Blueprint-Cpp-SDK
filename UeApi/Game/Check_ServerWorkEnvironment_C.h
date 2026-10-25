@@ -33,8 +33,8 @@ public:
     void BndEvt__CheckBox_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetIsChecked(bool InIsChecked);
-    void GetIsChecked(bool& Checked) const;
-    UE_COSMETIC bool IsInteractable() const;
+    UE_BLUEPRINT_PURE void GetIsChecked(bool& Checked) const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

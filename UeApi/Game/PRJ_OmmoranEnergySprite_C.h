@@ -68,8 +68,8 @@ public:
     void TurnHomingOff();
     void ResetTargeting();
     void BndEvt__CollisionComponent_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_Explode();
     void OnRep_Impact();
     void OnRep_RepMaxSpeed();

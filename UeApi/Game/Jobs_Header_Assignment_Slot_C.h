@@ -66,7 +66,7 @@ public:
     void OnAnswer(bool Yes);
     void BndEvt__B_StopAssignment_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void AbortPressed(bool& Handled);
-    void SetData(class UCampaign* Campaign_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0);
 private:
     struct UeMarkers
     {

@@ -107,8 +107,8 @@ public:
     void BndEvt__Button_210_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature();
     void FadeIt(bool FadeIn_0, float& Duration);
     void UpdateButtons(bool HasClaimed, bool IsFollowing);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

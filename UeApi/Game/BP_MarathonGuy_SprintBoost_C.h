@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_MarathonGuy_SprintBoost", "BP_MarathonGuy_SprintBoost_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_MarathonGuy_SprintBoost(int EntryPoint);
-    void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
+    UE_PROTECTED void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

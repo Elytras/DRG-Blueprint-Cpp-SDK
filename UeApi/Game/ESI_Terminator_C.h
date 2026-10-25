@@ -41,7 +41,7 @@ public:
     void ExecuteUbergraph_ESI_Terminator(int EntryPoint);
     void Random_Rotations();
     void Random_Locations();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

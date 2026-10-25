@@ -26,7 +26,7 @@ public:
     class UVerticalBox* VertBox;
     class UTerrainMaterial* Material;
     void ExecuteUbergraph_Cheat_RoomList(int EntryPoint);
-    void BP_OnRefresh();
+    UE_PROTECTED void BP_OnRefresh();
     UE_COSMETIC void Construct();
 };
 

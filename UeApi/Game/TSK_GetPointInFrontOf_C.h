@@ -23,7 +23,7 @@ public:
     float range;
     int Forward;
     void ExecuteUbergraph_TSK_GetPointInFrontOf(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}   // namespace Game::GameElements::Drone::Tasks

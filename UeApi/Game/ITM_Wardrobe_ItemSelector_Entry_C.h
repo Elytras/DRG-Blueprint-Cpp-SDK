@@ -51,12 +51,12 @@ public:
     void BndEvt__EntryButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__EntryButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__EntryButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-    void UpdateBorder();
+    UE_PRIVATE void UpdateBorder();
     void SetSelected(bool InSelected);
-    void SetHovered(bool InHovered);
-    void GetTags(FDetailedTagSet& OutTags);
-    UE_PURE class UWidget* Get_EntryButton_ToolTipWidget();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_PRIVATE void SetHovered(bool InHovered);
+    UE_BLUEPRINT_PURE void GetTags(FDetailedTagSet& OutTags);
+    UE_PRIVATE UE_PURE class UWidget* Get_EntryButton_ToolTipWidget();
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 private:
     struct UeMarkers
     {

@@ -37,23 +37,23 @@ public:
     void ExecuteUbergraph_ITM_BarGlass_Item(int EntryPoint);
     void ThrowDrink();
     void SkinThrownGlass();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__ParticleSystem_K2Node_ComponentBoundEvent_0_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset);
     void SetEmpty();
     UE_MULTICAST void All_Throw();
     UE_MULTICAST void All_Drink();
     UE_SERVER UE_RELIABLE void Server_Use();
-    void RecieveStartUsing();
-    void UserConstructionScript();
+    UE_PROTECTED void RecieveStartUsing();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     float PlayDrinkPlayer();
     void PlayDrinkFoam();
     float PlayThrow();
-    void IsDrinking(bool& IsDrinking_0);
+    UE_BLUEPRINT_PURE void IsDrinking(bool& IsDrinking_0);
     void OnRep_IsFull();
     void OnRep_Visible();
     void OnRep_ThrownGlass();
     void OnEmpty();
-    bool CheckCanSalute() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool CheckCanSalute() const;
 private:
     struct UeMarkers
     {

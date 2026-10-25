@@ -39,12 +39,12 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Clear();
     void AddEntry(FText InName, FText InDescription, bool InOwned, bool InEquipped, class UObject* InData, FText InCategory, bool AlwaysOwned, bool SchematicOwned, bool HasSchematic_0, class UObject* contextObject, Cheat_EquipList_Entry_C*& OutEntryWidget);
-    void GetEntries(TArray<Cheat_EquipList_Entry_C*>& OutEntries);
+    UE_BLUEPRINT_PURE void GetEntries(TArray<Cheat_EquipList_Entry_C*>& OutEntries);
     void SetTitle(FText Text);
     void Refresh();
     void GetSchematicFromAquisition(class UItemAquisitionBase* Aquisition, class UPlayerCharacterID* characterID, class USchematic*& Schematic);
-    void HasSchematic(class UItemAquisitionBase* Aquisition, class UPlayerCharacterID* characterID, bool& HasSchematic_0);
-    void IsSchematicOwned(class UItemAquisitionBase* Aquisition, class UPlayerCharacterID* characterID, bool& IsOwned);
+    UE_BLUEPRINT_PURE void HasSchematic(class UItemAquisitionBase* Aquisition, class UPlayerCharacterID* characterID, bool& HasSchematic_0);
+    UE_BLUEPRINT_PURE void IsSchematicOwned(class UItemAquisitionBase* Aquisition, class UPlayerCharacterID* characterID, bool& IsOwned);
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets

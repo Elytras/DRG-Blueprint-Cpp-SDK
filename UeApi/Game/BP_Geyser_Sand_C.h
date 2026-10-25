@@ -62,7 +62,7 @@ public:
     void CloseGeyser();
     void OpenGeyser();
     void EnterGeyser();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Shake__UpdateFunc();
     void Shake__FinishedFunc();
     void OnRep_VolcanoEruptionDanger();

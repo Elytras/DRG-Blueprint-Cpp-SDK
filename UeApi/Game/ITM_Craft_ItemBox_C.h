@@ -58,7 +58,7 @@ public:
     void BndEvt__Button_1_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_1_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(TScriptInterface<class ICraftable> Item_0, class UClass* Character_0);
+    UE_BLUEPRINT_CALLABLE void SetData(TScriptInterface<class ICraftable> Item_0, class UClass* Character_0);
     void SetCanUnlock();
     void SetTextAndIcon();
     void SetRankRequirements();

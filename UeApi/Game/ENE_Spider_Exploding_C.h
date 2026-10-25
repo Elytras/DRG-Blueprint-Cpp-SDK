@@ -39,12 +39,12 @@ public:
     void StopMontagesOnDeath();
     void DisableExplosion();
     void Play_Frozen_Death();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void Play_Body_Death_Effects();
     void Play_Burn_Death();
     void OnMessageAI(FName TriggerName);
-    void OnExploded();
+    UE_BLUEPRINT_CALLABLE void OnExploded();
     void Explode();
     void OnRep_Exploded();
     void MakeNearbyExplodersFlee();

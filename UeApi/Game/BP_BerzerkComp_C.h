@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_BerzerkComp(int EntryPoint);
     void OnItemEquipped_Event_0(class AItem* Item);
-    void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
+    UE_PROTECTED void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

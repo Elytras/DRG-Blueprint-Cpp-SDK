@@ -34,7 +34,7 @@ public:
     void ExecuteUbergraph_OnScreenIndicator_UsableItem_Simple(int EntryPoint);
     void VisChanged(bool IsVisible_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnItemEquipped(class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void OnItemEquipped(class AItem* Item_0);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
 };

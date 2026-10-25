@@ -42,7 +42,7 @@ public:
     UE_COSMETIC void Construct();
     UE_PURE bool ReadyForExtractor();
     void Reset();
-    void SetProgress(float CurrentLoad);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float CurrentLoad);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::DrillingVehicle

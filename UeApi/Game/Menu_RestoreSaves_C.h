@@ -67,12 +67,12 @@ public:
     void ReenableLoadmoreButton();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveOkCommand();
+    UE_PROTECTED void ReceiveOkCommand();
     void BndEvt__LoadMoreCloudsavesButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void CloudFailed();
     void Refresh();
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void Back();
     void BndEvt__BTN_Back_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
     void CreateSaveList();

@@ -45,7 +45,7 @@ public:
     void ShowTemperature();
     void OnTemperatureChangeRate_Event(int ChangeRate);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnTemperatureChanged(float temperature, float Change);
+    UE_BLUEPRINT_CALLABLE void OnTemperatureChanged(float temperature, float Change);
     UE_COSMETIC void Construct();
     void UpdateArrows();
     void UpdateTemperature(float InTemperature, float InChange);

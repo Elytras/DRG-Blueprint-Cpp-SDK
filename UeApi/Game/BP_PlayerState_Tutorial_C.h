@@ -13,7 +13,7 @@ class BP_PlayerState_Tutorial_C : public ::Game::Game::BP_PlayerState_C
 {
 public:
     UE_CLASS("/Game/Game/BP_PlayerState_Tutorial", "BP_PlayerState_Tutorial_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

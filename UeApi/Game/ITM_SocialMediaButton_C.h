@@ -27,7 +27,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__ITM_SocialMediaButton_Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void CreateToolTip() const;
+    UE_PRIVATE void CreateToolTip() const;
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

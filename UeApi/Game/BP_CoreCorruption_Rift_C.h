@@ -69,13 +69,13 @@ public:
     void ExecuteUbergraph_BP_CoreCorruption_Rift(int EntryPoint);
     UE_MULTICAST void All_PlayImplosion();
     void Receive_MakeDormant();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void StartCrevasse();
     void OnCrevasseCarved();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_InitialCracksdone();
-    void GetSpawnPoints(TArray<FVector>& SpawnPoints);
-    TArray<FTransform> GetFallbackPillarTransforms();
+    UE_BLUEPRINT_PURE void GetSpawnPoints(TArray<FVector>& SpawnPoints);
+    UE_BLUEPRINT_CALLABLE TArray<FTransform> GetFallbackPillarTransforms();
 private:
     struct UeMarkers
     {

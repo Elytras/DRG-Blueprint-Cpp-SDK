@@ -46,7 +46,7 @@ public:
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnMessageAI(FName TriggerName);
     void StartFizzle();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ToggleBonePhysics(bool BonePhysics);
     void SpawnDeathParticles();
 private:

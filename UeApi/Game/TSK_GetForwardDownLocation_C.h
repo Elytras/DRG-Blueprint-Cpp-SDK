@@ -26,7 +26,7 @@ public:
     bool Continue;
     FVector Location;
     void ExecuteUbergraph_TSK_GetForwardDownLocation(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void GetEnd(FVector PawnLocation, FVector TargetLocation, FVector PawnForward);
 };
 

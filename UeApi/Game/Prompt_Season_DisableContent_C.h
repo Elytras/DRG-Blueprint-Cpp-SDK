@@ -28,7 +28,7 @@ public:
     UI_Season_Popup_C* Season_Popup;
     ITM_Special_ButtonCutCorner_C* YesBtn;
     void ExecuteUbergraph_Prompt_Season_DisableContent(int EntryPoint);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void No();
     void Yes();
     void BndEvt__Prompt_Season_DisableContent_NoBtn_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();

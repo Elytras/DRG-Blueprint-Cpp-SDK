@@ -57,8 +57,8 @@ public:
     float AudioUpdateTime;
     void ExecuteUbergraph_BP_Halloween_Skull(int EntryPoint);
     void UpdateSpeedForAudio();
-    void OnJawClosed();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnJawClosed();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_AUTHORITY_ONLY void BndEvt__BP_Halloween_Skull_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_2_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void BndEvt__BP_Nisse_HealthComponent_K2Node_ComponentBoundEvent_3_DamageSig__DelegateSignature(float amount);
@@ -69,7 +69,7 @@ public:
     void Timeline_0__FinishedFunc();
     void ScaleUpFlames__UpdateFunc();
     void ScaleUpFlames__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

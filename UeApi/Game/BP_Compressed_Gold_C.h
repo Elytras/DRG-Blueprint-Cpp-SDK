@@ -27,7 +27,7 @@ public:
     class UPointLightComponent* PointLight1;
     class UPointLightComponent* PointLight;
     void ExecuteUbergraph_BP_Compressed_Gold(int EntryPoint);
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
     UE_MULTICAST void All_PlayDugFree();
 private:
     struct UeMarkers

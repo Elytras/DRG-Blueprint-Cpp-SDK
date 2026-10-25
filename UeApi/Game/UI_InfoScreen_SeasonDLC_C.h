@@ -42,7 +42,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void OpenDLCInSteamBrowser();
-    void GetSeasonDLC(class UGameDLC*& Season_DLC);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetSeasonDLC(class UGameDLC*& Season_DLC);
 };
 
 }}}   // namespace Game::UI::Menu_StartScreen

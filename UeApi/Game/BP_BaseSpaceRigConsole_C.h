@@ -46,14 +46,14 @@ public:
     bool CreateMenuOnStartup;
     class UWindowWidget* WindowInstance;
     void ExecuteUbergraph_BP_BaseSpaceRigConsole(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PIE_QuickUse();
     void OnWindowCreated(class UWindowWidget* WindowWidget);
     void OnOpenConsole(BP_PlayerController_SpaceRig_C* InPlayerController);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
-    void SetCreateMenuOnStartUp(bool InCreateOnStartUp);
+    UE_PRIVATE void SetCreateMenuOnStartUp(bool InCreateOnStartUp);
     void ShowNotification(bool IsVisible);
 private:
     struct UeMarkers

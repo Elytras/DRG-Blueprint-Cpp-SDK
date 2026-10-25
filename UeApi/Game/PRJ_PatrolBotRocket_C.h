@@ -43,7 +43,7 @@ public:
     class AActor* Target;
     void ExecuteUbergraph_PRJ_PatrolBotRocket(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnRep_Explode();
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation) const;

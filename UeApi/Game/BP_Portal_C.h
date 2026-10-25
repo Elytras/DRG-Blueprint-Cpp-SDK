@@ -24,7 +24,7 @@ public:
     class USceneCaptureComponent2D* NewVar_0;
     class UObject* SceneReference;
     void ExecuteUbergraph_BP_Portal(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

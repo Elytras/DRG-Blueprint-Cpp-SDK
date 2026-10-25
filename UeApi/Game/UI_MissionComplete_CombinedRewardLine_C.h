@@ -44,7 +44,7 @@ public:
     void SetDescription(const FText& InText, bool InUpperCase);
     void SetAmount(int Value);
     void SetIcon(class UTexture2D* Texture, FLinearColor TextureTint);
-    void GetAmount(int& amount_0);
+    UE_BLUEPRINT_PURE void GetAmount(int& amount_0);
 private:
     struct UeMarkers
     {

@@ -30,10 +30,10 @@ public:
     class USchematic* Schematic;
     void ExecuteUbergraph_BP_MatrixCore_Tester(int EntryPoint);
     void ReceiveActorBeginOverlap(class AActor* OtherActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);
 private:

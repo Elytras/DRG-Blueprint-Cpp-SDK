@@ -47,7 +47,7 @@ public:
     void SetOptionsAlignment(bool InAlignedRight);
     void SetOptionsVisible(bool InOptionsVisible);
     void AssertOtherChecked(ITM_VanityTag_CheckBox_C* InCheckBox);
-    void GetSelectedTags(FDetailedTagSet& OutTags);
+    UE_BLUEPRINT_PURE void GetSelectedTags(FDetailedTagSet& OutTags);
     void SetAllowOptions(bool InAllowOptions);
 };
 

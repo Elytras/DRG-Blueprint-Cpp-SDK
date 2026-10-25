@@ -88,7 +88,7 @@ public:
     UE_COSMETIC void Construct();
     void Yes_E6C47A9D469243C399A8EE948A23FA13();
     void No_E6C47A9D469243C399A8EE948A23FA13();
-    void GetInfo(FChallengeInfo& Challenge);
+    UE_BLUEPRINT_PURE void GetInfo(FChallengeInfo& Challenge);
     void SequenceEvent__ENTRYPOINTITM_Season_Challenge_0();
     void SequenceEvent__ENTRYPOINTITM_Season_Challenge_1();
 };

@@ -56,7 +56,7 @@ public:
     void BndEvt__ENE_Spider_Stalker_Base_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__ENE_Spider_Stalker_Base_HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void Uncloak();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void FadeValue__UpdateFunc();

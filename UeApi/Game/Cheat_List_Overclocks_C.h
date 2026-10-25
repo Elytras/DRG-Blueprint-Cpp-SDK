@@ -23,14 +23,14 @@ public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Overclocks", "Cheat_List_Overclocks_C");
     using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     TArray<EItemCategory> WeaponCategories;
-    void GetCharacterID(class UPlayerCharacterID*& characterID);
-    void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
-    void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
-    void GetCharacter(class APlayerCharacter*& OutCharacter);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetCharacterID(class UPlayerCharacterID*& characterID);
+    UE_PRIVATE void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
+    UE_PRIVATE void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& OutCharacter);
     void Refresh();
-    void ReceiveEntrySchematicClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
-    void GetOverClock(class USchematic* Schematic, class UItemUpgrade*& Overclock);
-    void GetOwningItem(class USchematic* Schematic, class UItemID*& Owning_Item);
+    UE_PRIVATE void ReceiveEntrySchematicClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
+    UE_BLUEPRINT_PURE void GetOverClock(class USchematic* Schematic, class UItemUpgrade*& Overclock);
+    UE_BLUEPRINT_PURE void GetOwningItem(class USchematic* Schematic, class UItemID*& Owning_Item);
 };
 
 }}}}   // namespace Game::UI::Menu_Cheats::VanityCheatWidgets

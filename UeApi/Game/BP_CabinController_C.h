@@ -36,7 +36,7 @@ public:
     void Controller_leave(class AActor* DestroyedActor);
     void Set_Cabin_Owner(class AFSDPlayerController* Controller);
     void RemoveOwner();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_OwnerState();
 private:
     struct UeMarkers

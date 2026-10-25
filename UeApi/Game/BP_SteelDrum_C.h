@@ -48,7 +48,7 @@ public:
     class UStaticMeshComponent* StaticMesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_SteelDrum(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

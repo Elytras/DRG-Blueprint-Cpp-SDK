@@ -48,7 +48,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Ping();
-    void GetMissionIcon(class UTexture2D*& Mission_Icon);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetMissionIcon(class UTexture2D*& Mission_Icon);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

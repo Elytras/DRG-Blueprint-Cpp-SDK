@@ -60,26 +60,26 @@ public:
     void On_Unhovered_Event(ITM_Loadout_ItemWindow_C* Item);
     void LoadoutRefreshed();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_1_NewLoadoutSelected__DelegateSignature();
-    void ReceiveSelectPreviousCommand();
-    void ReceiveSelectNextCommand();
-    void ReceiveSelectCharacterCommand();
-    void OnNewTopWindow();
+    UE_PROTECTED void ReceiveSelectPreviousCommand();
+    UE_PROTECTED void ReceiveSelectNextCommand();
+    UE_PROTECTED void ReceiveSelectCharacterCommand();
+    UE_PROTECTED void OnNewTopWindow();
     void Setup_Loadout_Items();
     void Refresh_Loadout_Items();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void Start_Ansel();
     void Stop_Ansel();
     void BndEvt__ITM_Loadout_CharSelect_K2Node_ComponentBoundEvent_0_OnCharacterChanged__DelegateSignature(class UClass* Character);
     void Refresh();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetClassFromPlayerState(class UPlayerCharacterID*& SelectedCharacter);
-    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetClassFromPlayerState(class UPlayerCharacterID*& SelectedCharacter);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void CheckForNotification();
     void PlayIntroAnimations();
-    void GetCharacter(class APlayerCharacter*& Character);
+    UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& Character);
 private:
     struct UeMarkers
     {

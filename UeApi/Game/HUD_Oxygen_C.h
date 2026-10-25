@@ -32,7 +32,7 @@ public:
     void ExecuteUbergraph_HUD_Oxygen(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void SetProgress(float CurrentProgress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float CurrentProgress);
     void Four0PercentOxygenLeft();
     void OnOxygenReplenishingEvent_Event_0(bool IsActive);
     void OnOxygenChanged_Event_0(int oxygenLevel);

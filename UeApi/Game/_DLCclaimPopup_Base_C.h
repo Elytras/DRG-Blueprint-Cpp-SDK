@@ -59,7 +59,7 @@ public:
     void SetHeader(FText InHeader);
     void SetBottomText(FText BottomText_0);
     void SetHeaderTexture(class UTexture2D* HeaderTexture_0);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetButtonText(FText InText);
 };
 

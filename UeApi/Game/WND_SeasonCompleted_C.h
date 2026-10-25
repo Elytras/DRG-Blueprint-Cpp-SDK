@@ -30,7 +30,7 @@ public:
     UI_Season_Popup_C* UI_Season_Popup;
     void ExecuteUbergraph_WND_SeasonCompleted(int EntryPoint);
     void PlaySlamAudio(UI_Season_Popup_C* UI_Season_Popup_0);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void BndEvt__WND_SeasonCompleted_CloseButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Finished_D60067AF43B35249409EB2A2A048F4AB();
     void SequenceEvent__ENTRYPOINTWND_SeasonCompleted_0(UI_Season_Popup_C* UI_Season_Popup_0);

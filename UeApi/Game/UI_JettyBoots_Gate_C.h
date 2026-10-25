@@ -29,8 +29,8 @@ public:
     bool PreviewFirstGate;
     void ExecuteUbergraph_UI_JettyBoots_Gate(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Intersects(FSpriteRect InRect, bool& OutIntersects);
-    void OnInitialize(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutStartX, int& OutEndX);
+    UE_BLUEPRINT_PURE void Intersects(FSpriteRect InRect, bool& OutIntersects);
+    UE_PROTECTED void OnInitialize(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutStartX, int& OutEndX);
 private:
     struct UeMarkers
     {

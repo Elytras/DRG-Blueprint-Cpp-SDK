@@ -34,7 +34,7 @@ public:
     class UPointLightComponent* PointLight;
     class UArrowComponent* Arrow;
     void ExecuteUbergraph_BP_PropHunt_CorePod(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

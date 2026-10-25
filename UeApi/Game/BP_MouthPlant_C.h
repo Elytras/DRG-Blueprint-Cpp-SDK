@@ -19,7 +19,7 @@ public:
     class USphereComponent* Sphere;
     class UInstantUsable* InstantUsable;
     class USphereComponent* SphereCollision;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

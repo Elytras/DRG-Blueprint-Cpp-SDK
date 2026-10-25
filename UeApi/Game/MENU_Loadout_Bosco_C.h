@@ -29,8 +29,8 @@ public:
     UE_COSMETIC void Construct();
     void OnCloseClicked_Event_0();
     void OneUpgradeInAllTiers(class UClass* Item);
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void BndEvt__Basic_CheckBox_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
 };
 

@@ -63,13 +63,13 @@ public:
     class UParticleSystemComponent* DropParticles2;
     class UAudioComponent* DrillingSound;
     void ExecuteUbergraph_BP_CleanupPod(int EntryPoint);
-    void OnObjectiveChanged(class UObjective* Objective);
+    UE_PROTECTED void OnObjectiveChanged(class UObjective* Objective);
     void FinishTutorialTask();
-    void OnDropStarted();
+    UE_PROTECTED void OnDropStarted();
     void ResizeCarver();
-    void OnDroppodCloseToImpact();
-    void OnDroppodImpact();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnDroppodCloseToImpact();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

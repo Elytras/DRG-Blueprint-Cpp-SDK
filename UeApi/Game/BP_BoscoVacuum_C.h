@@ -21,7 +21,7 @@ public:
     class UParticleSystemComponent* ParticleSystem;
     class UAudioComponent* VacuumSound;
     void ExecuteUbergraph_BP_BoscoVacuum(int EntryPoint);
-    void Receive_OnAbilityDataSet();
+    UE_PROTECTED void Receive_OnAbilityDataSet();
     void ReceiveDestroyed();
 private:
     struct UeMarkers

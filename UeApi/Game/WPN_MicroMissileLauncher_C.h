@@ -41,7 +41,7 @@ public:
     PRJ_MicroMissile_C* OldestMissile;
     float NextClusterProjectileDelay;
     void ExecuteUbergraph_WPN_MicroMissileLauncher(int EntryPoint);
-    void OnTriggerCluster();
+    UE_PROTECTED void OnTriggerCluster();
     void OnProjectileSpawned_Event(class AProjectileBase* Projectile);
     UE_SERVER UE_RELIABLE void TriggerCluster();
     UE_MULTICAST void All_SetHomingLocation(FVector_NetQuantize HomingLocation);
@@ -49,9 +49,9 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void SetHomingTarget();
     void CustomEvent1(class UItemUpgrade* Event);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SetUpgradeModifiers(class UItemUpgrade* ItemUpgrade);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

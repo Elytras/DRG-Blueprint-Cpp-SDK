@@ -63,30 +63,30 @@ public:
     bool PrevUseRandom;
     void ExecuteUbergraph__MENU_Wardrobe(int EntryPoint);
     void TryCloseCmd();
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     void SaveAndClose();
     void BndEvt___MENU_Wardrobe_UI_RandomizeLoadoutWithUndo_K2Node_ComponentBoundEvent_3_LoadoutRefreshed__DelegateSignature();
     void CloseSelectors();
     void LoadoutRefreshed();
     void OnEquippedChanged_Event_0();
     UE_COSMETIC void Construct();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void SetCharacter(class UPlayerCharacterID* PlayerCharacter_0);
     void Refresh();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_2_NewLoadoutSelected__DelegateSignature();
     void BndEvt__ClassSelector_K2Node_ComponentBoundEvent_0_OnCharacterChanged__DelegateSignature(class UClass* Character);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__MENU_SpaceRig_K2Node_ComponentBoundEvent_0_OnClosedClicked__DelegateSignature();
-    void GetCharacter(bool IgnorePreviewCharacter, class APlayerCharacter*& Character);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetCharacter(bool IgnorePreviewCharacter, class APlayerCharacter*& Character);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void ReleaseRenderTargets();
     void RefreshSlots();
     void InitSlotColumn(class UPanelWidget* InBox, ITM_Wardrobe_ItemSelector_C* InSelector, bool InLeftSide);
     void CheckArmorMasteryUnlocks();
     void PlayIntroAnimations();
     void EquipRandomItems();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

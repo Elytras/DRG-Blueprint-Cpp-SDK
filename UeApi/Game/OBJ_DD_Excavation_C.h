@@ -14,7 +14,7 @@ class OBJ_DD_Excavation_C : public ::Game::GameElements::Objectives::Excavation:
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_Excavation", "OBJ_DD_Excavation_C");
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
 private:
     struct UeMarkers

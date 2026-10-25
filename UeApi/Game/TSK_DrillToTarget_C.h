@@ -31,9 +31,9 @@ public:
     float RotateSpeedMod;
     FRotator NewRotation;
     void ExecuteUbergraph_TSK_DrillToTarget(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void FindNextLoc(float DeltaSeconds, float& additionalProgress, FVector& NewLoc, FRotator& NewRotation_0);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_BLUEPRINT_PURE void FindNextLoc(float DeltaSeconds, float& additionalProgress, FVector& NewLoc, FRotator& NewRotation_0);
 };
 
 }}}   // namespace Game::AI::Tasks

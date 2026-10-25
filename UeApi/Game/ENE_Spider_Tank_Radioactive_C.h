@@ -41,14 +41,14 @@ public:
     bool RadiationAttackActive;
     void ExecuteUbergraph_ENE_Spider_Tank_Radioactive(int EntryPoint);
     void SpecialAttackFlow_1();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__RadiationAttack_K2Node_ComponentBoundEvent_0_NameDelegate__DelegateSignature(FName nameValue);
     void CancelRadionGlow();
     void CancelSpecialAttack();
     void DoRadiationGlow();
     void OnDeathBase();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Radiation__UpdateFunc();
     void Radiation__FinishedFunc();
     void OnRep_RadiationAttackActive();

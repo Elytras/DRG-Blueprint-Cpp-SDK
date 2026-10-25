@@ -63,8 +63,8 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetFromSaveGame(bool animate);
-    void SetLerpProgress(float Value);
-    void StartCounting(int InStartLevel, float InStartXP);
+    UE_PRIVATE void SetLerpProgress(float Value);
+    UE_PRIVATE void StartCounting(int InStartLevel, float InStartXP);
     void SetRewardFromLevel(int InLevel);
     void SetClaimButtonEnabled(bool InEnabled);
 };

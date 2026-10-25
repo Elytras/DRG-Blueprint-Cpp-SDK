@@ -123,7 +123,7 @@ public:
     int CreditsPage;
     TArray<FText> texts;
     void ExecuteUbergraph_MENU_Credits(int EntryPoint);
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_47_OnClicked__DelegateSignature();

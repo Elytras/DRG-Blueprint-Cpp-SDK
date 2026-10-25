@@ -22,7 +22,7 @@ public:
     void ExecuteUbergraph_BP_Mactera_Heavy_ProjectileAttack(int EntryPoint);
     void ReceiveBeginPlay();
     void SetArmorBroken(bool Broken);
-    class UAnimMontage* SelectMontage() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UAnimMontage* SelectMontage() const;
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Shooter

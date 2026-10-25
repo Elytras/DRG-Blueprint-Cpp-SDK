@@ -23,8 +23,8 @@ public:
     class UParticleSystemComponent* FireEffect;
     class UAudioComponent* BurningSoundEffect;
     void ExecuteUbergraph_DE_BurningLove(int EntryPoint);
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

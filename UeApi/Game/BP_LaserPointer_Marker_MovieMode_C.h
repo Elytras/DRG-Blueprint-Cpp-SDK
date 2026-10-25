@@ -35,7 +35,7 @@ public:
     void OnDeath_Event(class UHealthComponentBase* HealthComponent_0);
     void OnDestroyed_Self(class AActor* DestroyedActor);
     void OnDestroyed_Target(class AActor* DestroyedActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void UpdateMaterial();
 private:
     struct UeMarkers

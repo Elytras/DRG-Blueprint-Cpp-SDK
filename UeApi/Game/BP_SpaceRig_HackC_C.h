@@ -40,7 +40,7 @@ public:
     void OnPlayerSalute(class APlayerCharacter* ShoutingPlayer);
     UE_MULTICAST void All_PlaySalute();
     void BndEvt__BP_SpaceRig_Hacksy_erwwer_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -29,7 +29,7 @@ public:
     int RequiredImpactsToPop;
     void ExecuteUbergraph_BP_InflatablePretzel(int EntryPoint);
     void BndEvt__BP_Phys_InflatableSausage_Kickable_Mesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_IsBroken();
 private:
     struct UeMarkers

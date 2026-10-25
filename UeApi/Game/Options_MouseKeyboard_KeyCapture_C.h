@@ -33,9 +33,9 @@ public:
     FKey NoneKey;
     FKey CurrentKey;
     void ExecuteUbergraph_Options_MouseKeyboard_KeyCapture(int EntryPoint);
-    void ReceiveCapturingChanged(bool InCapturing);
-    void ReceiveKeyCaptured(FKey InKey);
-    void ReceiveKeyChanged(FKey InKey);
+    UE_PROTECTED void ReceiveCapturingChanged(bool InCapturing);
+    UE_PROTECTED void ReceiveKeyCaptured(FKey InKey);
+    UE_PROTECTED void ReceiveKeyChanged(FKey InKey);
     UE_COSMETIC void Construct();
     void OnCustomKeyBindingsChanged();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

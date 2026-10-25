@@ -28,8 +28,8 @@ public:
     class UChildActorComponent* Weakpoint;
     void ExecuteUbergraph_BP_Guntower_Module_RandomFire(int EntryPoint);
     void OnTearArmor();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

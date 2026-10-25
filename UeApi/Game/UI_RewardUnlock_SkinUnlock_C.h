@@ -39,10 +39,10 @@ public:
     class UTextBlock* UnlockTitle;
     void ExecuteUbergraph_UI_RewardUnlock_SkinUnlock(int EntryPoint);
     UE_COSMETIC void Construct();
-    void PlayReceiveAnim();
+    UE_PROTECTED void PlayReceiveAnim();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetUnlockDetails(FText& OutTitle, FText& OutSubTitle, class UTexture*& Icon);
-    void SelectCharacterID(class UPlayerCharacterID* OptionalID, class UPlayerCharacterID*& OutputPin);
+    UE_BLUEPRINT_PURE void GetUnlockDetails(FText& OutTitle, FText& OutSubTitle, class UTexture*& Icon);
+    UE_BLUEPRINT_PURE void SelectCharacterID(class UPlayerCharacterID* OptionalID, class UPlayerCharacterID*& OutputPin);
     void SetCharacterIcon(class UPlayerCharacterID* characterID, class UPlayerCharacterID*& OutCharacterID);
 };
 

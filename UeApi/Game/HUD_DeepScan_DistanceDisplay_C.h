@@ -77,7 +77,7 @@ public:
     void DoPing(float PercentDistance, float Delay, float VerticalDistance, int TargetIndex, bool Continuous);
     void OnStayVisibleTimeOut();
     void Finished_E8ADEB6E45A88879CBB3CEB89297A096();
-    void GetVerticalIndex(float VerticalDistance, int& Index_0);
+    UE_BLUEPRINT_PURE void GetVerticalIndex(float VerticalDistance, int& Index_0);
 private:
     struct UeMarkers
     {

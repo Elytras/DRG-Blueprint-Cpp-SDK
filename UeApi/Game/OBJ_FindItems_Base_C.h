@@ -17,10 +17,10 @@ class OBJ_FindItems_Base_C : public UGatheItemsObjective
 public:
     UE_CLASS("/Game/GameElements/Objectives/OBJ_FindItems_Base", "OBJ_FindItems_Base_C");
     FText ObjectiveDescription;
-    FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
     UE_PURE bool IsObjectiveResource(class UResourceData* InResource) const;

@@ -39,9 +39,9 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void SetNumPlayers(int NumPlayers_0, TArray<class UPlayerCharacterID*>& Players_0, bool IsClassLocked);
-    void SetIndexBrush(int NumPlayers_0, int EntryNum, class UImage* Target, TArray<class UPlayerCharacterID*>& Players_0, bool IsClassLocked);
+    UE_PRIVATE void SetIndexBrush(int NumPlayers_0, int EntryNum, class UImage* Target, TArray<class UPlayerCharacterID*>& Players_0, bool IsClassLocked);
     UE_PURE TOOLTIP_ServerEntry_Team_C* GetToolTip();
-    void Get_Player_Details(TArray<class UPlayerCharacterID*>& Players_0, int PlayerIndex, bool IsClassLocked, FLinearColor& OutColor, class UTexture2D*& OutIcon, class UPlayerCharacterID*& outPlayer);
+    UE_BLUEPRINT_PURE void Get_Player_Details(TArray<class UPlayerCharacterID*>& Players_0, int PlayerIndex, bool IsClassLocked, FLinearColor& OutColor, class UTexture2D*& OutIcon, class UPlayerCharacterID*& outPlayer);
 private:
     struct UeMarkers
     {

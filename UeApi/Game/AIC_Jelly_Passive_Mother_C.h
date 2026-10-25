@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Critters/JellyPlatform/AIC_Jelly_Passive_Mother", "AIC_Jelly_Passive_Mother_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Jelly_Passive_Mother(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

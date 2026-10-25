@@ -44,7 +44,7 @@ public:
     void BndEvt__MENU_DeepDiveCheat_BTN_Close_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
     void BndEvt__MENU_DeepDiveCheat_BTN_StartMission_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-    void GetSelectedBiome(class UBiome*& Biome_0);
+    UE_BLUEPRINT_PURE void GetSelectedBiome(class UBiome*& Biome_0);
     void GenerateBiomeOptions();
     void GenerateDeepDive(class UDeepDive*& ReturnValue2);
     UE_PURE class UDeepDiveTemplate* GetTemplate();

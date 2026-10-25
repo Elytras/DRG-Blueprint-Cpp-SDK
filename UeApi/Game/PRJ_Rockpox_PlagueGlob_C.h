@@ -26,7 +26,7 @@ public:
     class UAudioComponent* Audio;
     void ExecuteUbergraph_PRJ_Rockpox_PlagueGlob(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers

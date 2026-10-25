@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_IronWillActivation", "BP_IronWillActivation_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_IronWillActivation(int EntryPoint);
-    void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
+    UE_PROTECTED void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

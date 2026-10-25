@@ -85,7 +85,7 @@ public:
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     UE_MULTICAST void PlayDamageSound(FVector Location);
     void BurnPlayers();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void TL_LightIdle__UpdateFunc();
     void TL_LightIdle__FinishedFunc();
     void TL_LightErupt__UpdateFunc();

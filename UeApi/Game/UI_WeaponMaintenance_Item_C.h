@@ -57,13 +57,13 @@ public:
     void BndEvt__UI_WeaponMaintenance_Item_ClaimButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_WeaponMaintenance_Item_ClaimButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_WeaponMaintenance_Item_ClaimButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-    void Receive_RefreshedFromSavegame();
+    UE_PROTECTED void Receive_RefreshedFromSavegame();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Refresh();
     void SetHeight(int InHeight);
     UE_PURE class UWidget* GetToolTip();
     void ShowState(TEnum<EWeaponMaintenanceState> InState, int InXP, int InTargetXP, int InLevel, int InMaxLevel);
-    void GetPct(int Current, int Target, float& Pct);
+    UE_BLUEPRINT_PURE void GetPct(int Current, int Target, float& Pct);
 };
 
 }}}   // namespace Game::UI::WeaponMaintenance

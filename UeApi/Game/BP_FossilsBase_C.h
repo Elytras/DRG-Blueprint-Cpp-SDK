@@ -29,8 +29,8 @@ public:
     FRandRange RandomScale;
     void ExecuteUbergraph_BP_FossilsBase(int EntryPoint);
     void OnLocalPlayerClose(class APlayerCharacter* Player, bool enteredTrigger);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -26,7 +26,7 @@ public:
     void OnDonkeyChanged_Event_0(class AMolly* InDonkey);
     void SpawnEbonites();
     void StartTimer();
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RockInfestation

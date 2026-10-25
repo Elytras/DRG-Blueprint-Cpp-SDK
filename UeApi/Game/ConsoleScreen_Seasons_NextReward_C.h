@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_ConsoleScreen_Seasons_NextReward(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FSeasonLevel Season_Level);
+    UE_BLUEPRINT_CALLABLE void SetData(FSeasonLevel Season_Level);
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

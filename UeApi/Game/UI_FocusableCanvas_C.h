@@ -27,7 +27,7 @@ public:
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnFocusLost(FFocusEvent InFocusEvent);
     UE_COSMETIC void Construct();
-    UE_COSMETIC FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

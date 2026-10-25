@@ -102,35 +102,35 @@ public:
     void BndEvt__ITM_Skins_Mesh_K2Node_ComponentBoundEvent_6_OnOpened__DelegateSignature();
     void BndEvt__ITM_Skins_Color_K2Node_ComponentBoundEvent_5_OnOpened__DelegateSignature();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_0_NewLoadoutSelected__DelegateSignature();
-    void OnFinished(TArray<class UUnlockReward*>& Rewards);
+    UE_BLUEPRINT_CALLABLE void OnFinished(TArray<class UUnlockReward*>& Rewards);
     void OnItemRewarded(FMasteryItem Reward);
     void OnPreviewUpgradeChangedEvent(class UItemUpgrade* PreviewUpgrade);
     void OnGrenadeSelected(class UClass* itemClass_0, bool Equip, bool IsUnlocked);
-    void ReceiveOkCommand();
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveOkCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     void BndEvt__BTN_Info_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__BTN_Info_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__ITM_UpgGear_Upgrades_K2Node_ComponentBoundEvent_1_OnItemPurchased__DelegateSignature();
-    void OnShown();
-    void OnClosed();
+    UE_PROTECTED void OnShown();
+    UE_PROTECTED void OnClosed();
     UE_COSMETIC void Construct();
-    void ReceiveSelectPreviousCommand();
-    void ReceiveSelectNextCommand();
+    UE_PROTECTED void ReceiveSelectPreviousCommand();
+    UE_PROTECTED void ReceiveSelectNextCommand();
     void BndEvt__MENU_SpaceRigTemplate_K2Node_ComponentBoundEvent_24_OnClosedClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Show(class UClass* InCharacterClass, class UClass* InItemClass, TEnum<EItemCategory> InItemCategory);
-    void RefreshItemDetails();
+    UE_PRIVATE void RefreshItemDetails();
     void ChangeItem(class UClass* InItemClass);
-    void BuildGearTabs();
-    void GetTabItems(class UClass* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UClass*>& Tab_Items);
+    UE_PRIVATE void BuildGearTabs();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetTabItems(class UClass* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UClass*>& Tab_Items);
     void RefreshGearStats(FString entry);
     void GetYesNoPrompt(Basic_Popup_YesNoPrompt_C*& YesNoPrompt);
     void SelectNextTab(int Direction);
-    void GetItemTabIndex(class UClass* InItemClass, int& OutIndex);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetItemTabIndex(class UClass* InItemClass, int& OutIndex);
     void ChangeItemCustom(class UClass* InItemClass, bool EquipItem, bool IsUnlocked);
-    void Toggle_Auto_GearStats_Preview(bool IsOn);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_PRIVATE void Toggle_Auto_GearStats_Preview(bool IsOn);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

@@ -31,10 +31,10 @@ public:
     FLinearColor StartColor;
     FName ColorName;
     void ExecuteUbergraph_BP_CleanupPod_Marker(int EntryPoint);
-    void OnMarkerVisibilityChanged(bool Visible);
-    void OnMarkerValidChanged(bool Valid);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void OnMarkerVisibilityChanged(bool Visible);
+    UE_PROTECTED void OnMarkerValidChanged(bool Valid);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetMaterials(class UMaterial* ParentMaterial, class UMeshComponent* Mesh, class UMaterialInstanceDynamic*& DynamicMaterial);
 private:
     struct UeMarkers

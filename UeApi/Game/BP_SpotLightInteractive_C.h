@@ -49,7 +49,7 @@ public:
     float LightIntensity;
     void ExecuteUbergraph_BP_SpotLightInteractive(int EntryPoint);
     void UpdateShadows();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Activate();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();

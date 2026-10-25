@@ -73,15 +73,15 @@ public:
     void BndEvt__UsableOrderExtractor_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__PipelineEndConnection_K2Node_ComponentBoundEvent_0_ConnectionDelegate__DelegateSignature(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
     void StartBlinking();
-    void ReceiveExtractorPodSpawned(class APipelineExtractorPod* InExtractorPod);
+    UE_PROTECTED void ReceiveExtractorPodSpawned(class APipelineExtractorPod* InExtractorPod);
     void OnStateChanged_Event(class ARessuplyPod* InPod, TEnum<ERessuplyPodState> InState);
     void StopBlinking();
     void Ping(bool InValidPlacement);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
     void UpdateIsRefining();
-    FVector GetLandingOffset();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE FVector GetLandingOffset();
 private:
     struct UeMarkers
     {

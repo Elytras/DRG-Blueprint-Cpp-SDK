@@ -92,12 +92,12 @@ public:
     void Reset();
     void TestDestroy();
     void SetGemtrackerCustom();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void RemoveScabs__FireEffect__EventFunc();
     void RemoveScabs__UpdateFunc();
     void RemoveScabs__FinishedFunc();
-    void UserConstructionScript();
-    void ArePlayersInRange(float Distance, bool& InRange);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void ArePlayersInRange(float Distance, bool& InRange);
     void Set_Health_Bar_Visible(bool InShowHealth);
 private:
     struct UeMarkers

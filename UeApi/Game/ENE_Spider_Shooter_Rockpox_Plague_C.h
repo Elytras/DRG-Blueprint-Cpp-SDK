@@ -46,10 +46,10 @@ public:
     void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void BndEvt__ENE_Spider_Grunt_TentacleInfection_ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void PopAllWeakPoints(class UHealthComponentBase* HealthComponent_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnDeathBase();
-    void OnRagdoll();
-    void GetEnemySpawnedCount(int& SpawnCount);
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
 private:
     struct UeMarkers
     {

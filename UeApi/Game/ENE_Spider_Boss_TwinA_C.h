@@ -24,7 +24,7 @@ public:
     class UProjectileAttackComponent* Projectile_Fireball;
     void ExecuteUbergraph_ENE_Spider_Boss_TwinA(int EntryPoint);
     void BndEvt__Projectile_MinesBarrage_K2Node_ComponentBoundEvent_1_ProjectileAttackDelegate__DelegateSignature();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

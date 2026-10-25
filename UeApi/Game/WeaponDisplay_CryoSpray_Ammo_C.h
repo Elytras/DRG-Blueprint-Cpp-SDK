@@ -27,9 +27,9 @@ public:
     class UMaterialInstanceDynamic* ProgressMaterial;
     class AItem* Item;
     void ExecuteUbergraph_WeaponDisplay_CryoSpray_Ammo(int EntryPoint);
-    void OnItemEquipped();
-    void OnItemUnequipped();
-    void Init(class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void OnItemEquipped();
+    UE_BLUEPRINT_CALLABLE void OnItemUnequipped();
+    UE_BLUEPRINT_CALLABLE void Init(class AItem* Item_0);
     void Set_Progress(float Progress);
 private:
     struct UeMarkers

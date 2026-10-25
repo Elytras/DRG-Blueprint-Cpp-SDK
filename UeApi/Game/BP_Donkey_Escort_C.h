@@ -24,7 +24,7 @@ public:
     class UStaticMeshComponent* HearthStone;
     void ExecuteUbergraph_BP_Donkey_Escort(int EntryPoint);
     void OnResourceAdded_Event_0(class UCappedResource* Resource);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

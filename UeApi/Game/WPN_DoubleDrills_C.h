@@ -40,19 +40,19 @@ public:
     WeaponDisplay_Overheat_C* OverheaWidget2;
     WeaponDisplay_Drill_Heat_C* OverheatWidget;
     void ExecuteUbergraph_WPN_DoubleDrills(int EntryPoint);
-    void RecieveCycledItem();
+    UE_PROTECTED void RecieveCycledItem();
     UE_SERVER void Gunsling();
-    void ReceiveBeginPlay();
-    void Receive_Overheated();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_Overheated();
     void OnStopDrilling();
     void OnStartDrilling();
     void BP_OnDrillDamage();
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
     void Decrease_FOV();
     void Increase_FOV();
     void OnTemperatureChanged(float temperature, bool overheated_0);
-    class USceneComponent* GetHeatingAudioSceneComponent();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeatingAudioSceneComponent();
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

@@ -53,7 +53,7 @@ public:
     bool CheatKill;
     void ExecuteUbergraph_BP_RiftCrystal(int EntryPoint);
     void Cheat_Kill();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpawnReinforcements();
     void Receive_EnteredState(TEnum<ERiftCrystalState> State_0);
     void Receive_ExitedState(TEnum<ERiftCrystalState> State_0);

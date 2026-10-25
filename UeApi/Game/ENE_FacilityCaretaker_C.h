@@ -162,7 +162,7 @@ public:
     void OnNewStage(int stageIndex);
     void OnThirdStage();
     void OnSecondStage();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__Health_K2Node_ComponentBoundEvent_3_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void CreateBossFIght();
     void StageTransition();
@@ -186,15 +186,15 @@ public:
     void Timeline_0__FinishedFunc();
     void FadeEyeLights__UpdateFunc();
     void FadeEyeLights__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void GetEyeLights(class USkeletalMeshComponent* eye, class UStaticMeshComponent*& LightCone, class UMaterialInstanceDynamic*& LightConeMaterial, class USpotLightComponent*& SpotLight_0, class UPointLightComponent*& PoiintLight);
     UE_PURE bool AreWeapointsDead();
     void ToggleWeakpoint(class UDestructibleSubHealthComponent* Health_0, bool Active);
     void ToggleWeakpoints(bool Active);
     UE_PURE int GetNumDeadWeakpoints();
-    void GetFacility(BP_MainFacility_DataVault_C*& mainFacility);
+    UE_BLUEPRINT_PURE void GetFacility(BP_MainFacility_DataVault_C*& mainFacility);
     void TurnOffWeakpointParticles();
-    void GetRandomStageActions(TArray<class UCaretakerActionComponent*>& Array);
+    UE_BLUEPRINT_PURE void GetRandomStageActions(TArray<class UCaretakerActionComponent*>& Array);
     void ActivateRandomAction(class UCaretakerActionComponent*& Output_Get);
     void DeactivateWeakpointParticle(class UDestructibleSubHealthComponent* const& Key);
     void Begin_Opening_Eyes();

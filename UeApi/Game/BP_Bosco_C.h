@@ -49,10 +49,10 @@ public:
     void StateChanged(TEnum<EDroneAIState> aCurrentState);
     void SelfDestruct();
     void OnMessageAI(FName TriggerName);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     bool OnTriggerAI(FName TriggerName);
     void ScareEffect();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState_0, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState_0, TArray<FGearStatEntry>& Stats) const;
     void Handle_Projectile_diffs(FGearStatEntry Gear_stat, TEnum<EItemPreviewStatus> Cryo_upgrade_preview_status, TEnum<EDamageUpgrade> damage_upgrade_type, class AFSDPlayerState* FSD_player_state, FGearStatEntry& gear_stat_out) const;
 private:
     struct UeMarkers

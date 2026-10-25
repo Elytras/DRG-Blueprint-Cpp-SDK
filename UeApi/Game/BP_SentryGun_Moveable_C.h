@@ -38,23 +38,23 @@ public:
     void OnToggleNameplatesEvent_Event_0(bool boolValue);
     void OnSentryStateChanged(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
     void Update_Outline_And_Icon();
-    void ReceiveOnStateChanged();
+    UE_PROTECTED void ReceiveOnStateChanged();
     void AudioReturnedHome();
     void AudioMoveFinished();
     void AudioBeginMove();
-    void OnMoveFinished(bool returnedHome);
-    void OnMoving();
+    UE_PROTECTED void OnMoveFinished(bool returnedHome);
+    UE_PROTECTED void OnMoving();
     void AudioReadyToBuild();
     void OnAmmoCountChanged_Event_0(int AmmoCount, int Change);
-    void ReceiveOnSentryReady(class ASentryGun* SentryGun, class APlayerCharacter* PlayerCharacter);
+    UE_PROTECTED void ReceiveOnSentryReady(class ASentryGun* SentryGun, class APlayerCharacter* PlayerCharacter);
     void OnStateChanged_Event(class ARedeployableSentryGun* Sender, TEnum<ERedeployableSentryGunState> NewState);
-    void OnMoveRequested();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnMoveRequested();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE class ASentryGun* GetSentryGun();
-    void GetSentryOwner(class APlayerCharacter*& AsPlayer_Character);
+    UE_BLUEPRINT_PURE void GetSentryOwner(class APlayerCharacter*& AsPlayer_Character);
     void SpawnAudioOnPlayer(class USoundBase* Audio);
     UE_PURE TSubclassOf<class ASentryGun> GetSentryGunClass() const;
-    void GetStateDescription(FText& Description) const;
+    UE_BLUEPRINT_PURE void GetStateDescription(FText& Description) const;
 private:
     struct UeMarkers
     {

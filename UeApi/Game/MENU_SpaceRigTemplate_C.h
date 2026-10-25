@@ -91,7 +91,7 @@ public:
     void SetCloseButtonVisible(bool ShowCloseButton_0);
     void UpdatePlayerCount();
     void SetBackMode(bool Close_Is_Back);
-    void IsCloseButtonVisible(bool& Visible);
+    UE_BLUEPRINT_PURE void IsCloseButtonVisible(bool& Visible);
 private:
     struct UeMarkers
     {

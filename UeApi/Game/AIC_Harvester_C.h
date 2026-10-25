@@ -22,9 +22,9 @@ public:
     class UBehaviorTree* BehaviorTree;
     class UHealthComponentBase* HealthComponent;
     void ExecuteUbergraph_AIC_Harvester(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

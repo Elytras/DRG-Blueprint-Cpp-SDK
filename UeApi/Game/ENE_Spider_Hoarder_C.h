@@ -73,13 +73,13 @@ public:
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void DropLoot();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
-    void ReceiveBeginPlay();
-    void OnRagdoll();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     void Timeline_2__UpdateFunc();
     void Timeline_2__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void HasLoot(bool& Has_Loot);
+    UE_BLUEPRINT_PURE void HasLoot(bool& Has_Loot);
     void UpdateTarget(float MaxDistance, bool& OutTargetChanged);
 private:
     struct UeMarkers

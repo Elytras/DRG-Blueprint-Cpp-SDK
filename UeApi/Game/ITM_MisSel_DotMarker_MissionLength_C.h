@@ -27,7 +27,7 @@ public:
     float Size;
     float RenderAngle;
     void ExecuteUbergraph_ITM_MisSel_DotMarker_MissionLength(int EntryPoint);
-    void SetData(int Level);
+    UE_BLUEPRINT_CALLABLE void SetData(int Level);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

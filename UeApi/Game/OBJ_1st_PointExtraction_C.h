@@ -14,7 +14,7 @@ class OBJ_1st_PointExtraction_C : public ::Game::GameElements::Objectives::OBJ_G
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/OBJ_1st_PointExtraction", "OBJ_1st_PointExtraction_C");
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
 };
 
 }}}   // namespace Game::GameElements::Objectives

@@ -19,7 +19,7 @@ public:
     using AnimatedStaticOverlay_WithScanlines_C = ::Game::Art::_TestingGrounds::UItesting::AnimatedStaticOverlay_WithScanlines_C;
     AnimatedStaticOverlay_WithScanlines_C* AnimatedStaticOverlay_WithScanlines;
     class UCanvasPanel* CanvasPanel_0;
-    void GetBasePanel(class UCanvasPanel*& Panel);
+    UE_BLUEPRINT_PURE void GetBasePanel(class UCanvasPanel*& Panel);
 };
 
 }}}}   // namespace Game::UI::Menu_MissionSelectionMK3::BiomeWidgets

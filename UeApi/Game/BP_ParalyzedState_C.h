@@ -19,8 +19,8 @@ public:
     FRotator StoredRotation;
     float Camera_Arm_Y_Rotation_;
     void ExecuteUbergraph_BP_ParalyzedState(int EntryPoint);
-    void ReceiveStateExit();
-    void ReceiveStateEnter();
+    UE_PROTECTED void ReceiveStateExit();
+    UE_PROTECTED void ReceiveStateEnter();
 private:
     struct UeMarkers
     {

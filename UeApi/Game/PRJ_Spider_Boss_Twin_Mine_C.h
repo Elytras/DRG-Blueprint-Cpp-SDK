@@ -39,7 +39,7 @@ public:
     class USoundBase* WarningLoopCue;
     void ExecuteUbergraph_PRJ_Spider_Boss_Twin_Mine(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_Impact(FVector_NetQuantize Location);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_HasExploded();
 private:

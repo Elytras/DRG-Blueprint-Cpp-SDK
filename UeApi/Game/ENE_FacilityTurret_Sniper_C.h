@@ -34,9 +34,9 @@ public:
     void BndEvt__ENE_FacilityTurret_Sniper_SniperAttack_K2Node_ComponentBoundEvent_2_ProjectileAttackDelegate__DelegateSignature();
     UE_MULTICAST void All_SpawnMuzzleFlash();
     void OnAttack();
-    void OnLockedOn(bool lockedOn);
-    void ReceiveBeginPlay();
-    void OnEngagedChanged(bool engaged);
+    UE_PROTECTED void OnLockedOn(bool lockedOn);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnEngagedChanged(bool engaged);
 private:
     struct UeMarkers
     {

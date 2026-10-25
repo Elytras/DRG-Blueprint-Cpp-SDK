@@ -24,7 +24,7 @@ public:
     float EffectRadius;
     void ExecuteUbergraph_Grenade_Pheromone(int EntryPoint);
     void ApplyPheromones();
-    void OnExploded();
+    UE_PROTECTED void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers

@@ -36,7 +36,7 @@ public:
     void BndEvt__DorettaHeadChecker_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_SERVER UE_RELIABLE void ServerHandleDorettaHead(class ADorrettaHead* DorettaHead);
     UE_MULTICAST UE_RELIABLE void Transfer_Doretta(FTransform DorettaHeadTransform);
-    void OnPrepForTakeOff();
+    UE_PROTECTED void OnPrepForTakeOff();
     void DorettaHeadMove__UpdateFunc();
     void DorettaHeadMove__FinishedFunc();
     void OnRep_IsDorettaHeadInside();

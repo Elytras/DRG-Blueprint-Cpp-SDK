@@ -23,7 +23,7 @@ public:
     FTutorialHint ReminderHint;
     void ExecuteUbergraph_Tutorial_Hint_LaserPointer(int EntryPoint);
     void OnMarkerPlaced_Event(FVector Location, const FText& Name_0, FLinearColor Color, class AActor* Target, TEnum<ELaserPointerTargetType> TypeOfTarget);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

@@ -20,7 +20,7 @@ public:
     class UWidgetComponent* Widget;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Nametag_Actor(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

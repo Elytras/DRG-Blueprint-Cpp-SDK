@@ -29,9 +29,9 @@ public:
     class UAudioComponent* ExplosionSound;
     void ExecuteUbergraph_DE_FlintLockesDelight(int EntryPoint);
     UE_MULTICAST void Stop_Effects();
-    void OnStopEffect();
+    UE_PROTECTED void OnStopEffect();
     UE_MULTICAST void Trigger_Explosion();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void OnRep_Trigger_Explosion();
 private:

@@ -28,7 +28,7 @@ public:
     float MinHeightAboveTarget;
     float MaxHeightAboveTarget;
     void ExecuteUbergraph_TSK_GetPointOppositeOfTarget(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

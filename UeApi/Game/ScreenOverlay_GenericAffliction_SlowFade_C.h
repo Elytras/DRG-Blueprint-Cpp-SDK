@@ -27,8 +27,8 @@ public:
     void ExecuteUbergraph_ScreenOverlay_GenericAffliction_SlowFade(int EntryPoint);
     void OnAnimFadingFinished();
     void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
-    void ReceiveEndOverlay();
-    void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
+    UE_PROTECTED void ReceiveEndOverlay();
+    UE_PROTECTED void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     UE_COSMETIC void Construct();
 private:
     struct UeMarkers

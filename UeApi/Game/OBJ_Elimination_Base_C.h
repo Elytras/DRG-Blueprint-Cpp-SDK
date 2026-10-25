@@ -20,12 +20,12 @@ public:
     FText Title;
     FText Description;
     void ExecuteUbergraph_OBJ_Elimination_Base(int EntryPoint);
-    void ReceiveTargetSpawned();
-    void ReceiveTargetKilled();
-    FText GetObjectiveDescription(float missionLength);
+    UE_PROTECTED void ReceiveTargetSpawned();
+    UE_PROTECTED void ReceiveTargetKilled();
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
 };

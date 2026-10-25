@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_BP_ToxicCatalystComponent(int EntryPoint);
     void OnDeath_Event_0(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
-    void GetFXMeshScale(float& Scale);
+    UE_BLUEPRINT_PURE void GetFXMeshScale(float& Scale);
 };
 
 }}}   // namespace Game::WeaponsNTools::Pistol

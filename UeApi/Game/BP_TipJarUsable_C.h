@@ -22,7 +22,7 @@ public:
     void ExecuteUbergraph_BP_TipJarUsable(int EntryPoint);
     void SetTipAmount(int Credits);
     UE_PURE FText GetUseText(class APlayerCharacter* User);
-    bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
 };
 
 }}}}}   // namespace Game::Art::Environments::SpaceRig::TipMachine

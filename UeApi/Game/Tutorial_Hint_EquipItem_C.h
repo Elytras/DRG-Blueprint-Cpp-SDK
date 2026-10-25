@@ -22,9 +22,9 @@ public:
     bool HasEquipped;
     TEnum<EItemCategory> ItemCategory;
     void ExecuteUbergraph_Tutorial_Hint_EquipItem(int EntryPoint);
-    void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnHidden();
     void ItemEquipped(class AItem* Item);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

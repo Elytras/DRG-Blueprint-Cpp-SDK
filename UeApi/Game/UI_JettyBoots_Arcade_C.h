@@ -77,20 +77,20 @@ public:
     void BndEvt__UI_JettyBoots_Arcade_Game_UI_K2Node_ComponentBoundEvent_1_OnGateCleared__DelegateSignature();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void SetAudioSceneComponent(class USceneComponent* Audio_Scene_Component_0);
-    void Display_State(int InLevel, int InScore, int InLives);
+    UE_PRIVATE void Display_State(int InLevel, int InScore, int InLives);
     void Display_HighScore(int InHighScore);
     void Display_Score(int InValue);
     void Display_Lives(int InValue, bool& OutGameOver);
     void Display_Level(int InValue);
     void SetHighScores(TArray<FJettyBootsScore>& InHighScores, int InLastIndex);
     void StartGame(class APlayerCharacter* InUser, class AJettyBootsArcadeActor* InArcade);
-    void GetUserName(FString& OutName);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetUserName(FString& OutName);
     void StopGame();
     void ReplayGame(FJettyBootsReplay InReplay);
-    void GetScoreStatus(int InNewScore, bool& OutOnList, int& OutIndex);
-    void StartNextLevel();
-    void Check_FSDEvents();
-    void IsJumpPressed(bool& OutPressed) const;
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetScoreStatus(int InNewScore, bool& OutOnList, int& OutIndex);
+    UE_PRIVATE void StartNextLevel();
+    UE_PRIVATE void Check_FSDEvents();
+    UE_PRIVATE UE_BLUEPRINT_PURE void IsJumpPressed(bool& OutPressed) const;
 private:
     struct UeMarkers
     {

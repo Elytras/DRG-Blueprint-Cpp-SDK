@@ -35,7 +35,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void CreateBindingWidgets();
     void SetOpen(bool Index_0);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 
 }}}   // namespace Game::UI::Keybindings

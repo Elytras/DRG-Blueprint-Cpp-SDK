@@ -32,7 +32,7 @@ public:
     FLinearColor Tint_Edge;
     FLinearColor Tint_Class;
     void ExecuteUbergraph_HUD_PlayerClass_Icon(int EntryPoint);
-    void SetData(class UPlayerCharacterID* playerClass, int TimesRetired, bool IsServer);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* playerClass, int TimesRetired, bool IsServer);
     void OnTemporaryBuffChanged(class UTemporaryBuff* buff, class APlayerCharacter* AffectedPlayer);
     void FromPlayerState(class APlayerState* PlayerState, class UClass* playerClass);
     UE_COSMETIC void Construct();

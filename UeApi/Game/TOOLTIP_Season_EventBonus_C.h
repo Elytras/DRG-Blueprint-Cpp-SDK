@@ -33,7 +33,7 @@ public:
     void ExecuteUbergraph_TOOLTIP_Season_EventBonus(int EntryPoint);
     UE_COSMETIC void Construct();
     void SetBackRowText(bool IsBackRowClaimed);
-    void SetData(TEnum<ESeasonVisibilityState> State);
+    UE_BLUEPRINT_CALLABLE void SetData(TEnum<ESeasonVisibilityState> State);
     UE_PURE TEnum<ESlateVisibility> SetScripAmountVisibility();
 private:
     struct UeMarkers

@@ -26,8 +26,8 @@ public:
     void ExecuteUbergraph_DE_WormholeSpecial(int EntryPoint);
     void Disable_Active_Location_Effects();
     void Spawn_Teleport_Effects();
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void Set_Original_position();
     void IsLastActiveWormholeEffect(bool& was_last_effect);

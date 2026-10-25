@@ -36,13 +36,13 @@ public:
     void RandomiseGrabTime();
     void FollowTarget();
     void Blood_Particles();
-    void ReceiveCompleteAttack();
-    void CustomEvent(class AActor* aGrabbedActor, bool fullGrabElapsed);
+    UE_PROTECTED void ReceiveCompleteAttack();
+    UE_BLUEPRINT_CALLABLE void CustomEvent(class AActor* aGrabbedActor, bool fullGrabElapsed);
     void CustomEvent_1(class AActor* aGrabbedActor);
     void PlayCancelAttackSound();
     void StartHeadTerrainCheck();
     UE_MULTICAST UE_RELIABLE void PlayPreAttackSound();
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
     void FinalCheckRangeTargetLOS(class AActor* CurrentTarget_0, bool& HaveLOS);

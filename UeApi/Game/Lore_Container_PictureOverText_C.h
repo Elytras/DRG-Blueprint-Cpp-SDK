@@ -41,8 +41,8 @@ public:
     float ImageScale;
     float ImageRightSidePadding;
     void ExecuteUbergraph_Lore_Container_PictureOverText(int EntryPoint);
-    void UpdateWidget();
-    void SetData(class UMinersManualData* InData);
+    UE_BLUEPRINT_CALLABLE void UpdateWidget();
+    UE_BLUEPRINT_CALLABLE void SetData(class UMinersManualData* InData);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SwitchDataEvent();
     void SequenceEvent__ENTRYPOINTLore_Container_PictureOverText_0();

@@ -36,7 +36,7 @@ public:
     UE_AUTHORITY_ONLY void BndEvt__ENE_Spider_Spawn_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Play_Spawn();
     void Spawn_Behavior();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Spawn__UpdateFunc();
     void Spawn__FinishedFunc();
     void OnRep_TargetLocation();

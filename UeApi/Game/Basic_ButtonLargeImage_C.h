@@ -39,7 +39,7 @@ public:
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-    void IsPressed(bool& IsPressed_0);
+    UE_BLUEPRINT_PURE void IsPressed(bool& IsPressed_0);
     void SetTexture(class UTexture2D* Texture_0);
 private:
     struct UeMarkers

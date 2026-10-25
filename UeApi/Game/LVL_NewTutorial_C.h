@@ -28,7 +28,7 @@ public:
     class AFSDPlayerController* PlayerController;
     void ExecuteUbergraph_LVL_NewTutorial(int EntryPoint);
     void objectivesCompleted();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void MessageReceived_Event_0(FName TriggerName);
 };
 

@@ -28,7 +28,7 @@ public:
     float LastPlayTime;
     void ExecuteUbergraph_ESI_HydraWeed(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

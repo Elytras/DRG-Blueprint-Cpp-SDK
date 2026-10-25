@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_ITM_Season_CharacterIcon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void SetData(class UPlayerCharacterID* characterID, bool ShowIcon);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* characterID, bool ShowIcon);
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

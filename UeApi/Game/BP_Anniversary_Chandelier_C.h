@@ -29,7 +29,7 @@ public:
     FTimerHandle Timer;
     float RotationSpeed;
     void ExecuteUbergraph_BP_Anniversary_Chandelier(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void CustomEvent_0();
     void BndEvt__BP_Anniversary_Chandelier_SK_Anniversary_Chandelier_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnCollide();

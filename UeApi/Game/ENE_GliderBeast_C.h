@@ -36,7 +36,7 @@ public:
     class UAudioComponent* LastPlayedScream;
     class UAudioComponent* NewVar_0;
     void ExecuteUbergraph_ENE_GliderBeast(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ScreamUpdate();
     void OnControlledByPlayer(bool IsControlled_0, bool IsLocallyControlled_0);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);

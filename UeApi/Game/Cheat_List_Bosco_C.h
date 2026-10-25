@@ -20,11 +20,11 @@ class Cheat_List_Bosco_C : public ::Game::UI::Menu_Cheats::VanityCheatWidgets::C
 public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Bosco", "Cheat_List_Bosco_C");
     using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
-    void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
-    void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
-    void GetItemID(class UItemID*& ItemID);
-    UE_PURE class AFSDPlayerState* GetState();
-    void GetEquippedSkins(class UItemID* ItemID, TArray<class UItemSkin*>& OutSkins);
+    UE_PRIVATE void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
+    UE_PRIVATE void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetItemID(class UItemID*& ItemID);
+    UE_PRIVATE UE_PURE class AFSDPlayerState* GetState();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetEquippedSkins(class UItemID* ItemID, TArray<class UItemSkin*>& OutSkins);
     void Refresh();
 };
 

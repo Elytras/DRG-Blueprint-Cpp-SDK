@@ -48,7 +48,7 @@ public:
     TMulticastInlineDelegate<void(ITM_LoadoutSelectButton_C* LoadoutButton)> OnPaste;
     TMulticastInlineDelegate<void(bool IsHovered_0, ITM_LoadoutSelectButton_C* Button)> OnCopyPasteHovered;
     void ExecuteUbergraph_ITM_LoadoutSelectButton(int EntryPoint);
-    void SetData(bool ShowCopyPaste);
+    UE_BLUEPRINT_CALLABLE void SetData(bool ShowCopyPaste);
     void SetSelected(bool InSelected);
     void BndEvt__ITM_LoadoutSelectButton_Button_CopyPaste_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature();
     void BndEvt__ITM_LoadoutSelectButton_Button_CopyPaste_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature();

@@ -38,7 +38,7 @@ public:
     void StopClaimable();
     void StartClaimable();
     UE_COSMETIC void Construct();
-    void HasClaimablePerkPoints(bool& Claimable);
+    UE_BLUEPRINT_PURE void HasClaimablePerkPoints(bool& Claimable);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

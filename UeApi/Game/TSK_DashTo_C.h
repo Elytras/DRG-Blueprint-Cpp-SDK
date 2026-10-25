@@ -21,9 +21,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UDashPoints* DashPoints;
     void ExecuteUbergraph_TSK_DashTo(int EntryPoint);
-    void CustomEvent();
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_BLUEPRINT_CALLABLE void CustomEvent();
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 private:
     struct UeMarkers
     {

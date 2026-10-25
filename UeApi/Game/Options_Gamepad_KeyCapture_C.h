@@ -32,13 +32,13 @@ public:
     TMulticastInlineDelegate<void(bool InCapturing)> OnCapturingChanged;
     void ExecuteUbergraph_Options_Gamepad_KeyCapture(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveKeyCaptured(FKey InKey);
+    UE_PROTECTED void ReceiveKeyCaptured(FKey InKey);
     void OnCustomKeyBindingsChanged();
     UE_COSMETIC void Construct();
-    void ReceiveKeyChanged(FKey InKey);
-    void ReceiveCapturingChanged(bool InCapturing);
+    UE_PROTECTED void ReceiveKeyChanged(FKey InKey);
+    UE_PROTECTED void ReceiveCapturingChanged(bool InCapturing);
     void UpdateKeyDisplay(FKey InKey);
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}   // namespace Game::UI::Keybindings

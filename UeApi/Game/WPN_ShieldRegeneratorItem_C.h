@@ -23,16 +23,16 @@ public:
     class UAudioComponent* RechargeAudio;
     class UMaterialInterface* RechargedMaterial;
     void ExecuteUbergraph_WPN_ShieldRegeneratorItem(int EntryPoint);
-    void ReceiveGeneratorReturned();
+    UE_PROTECTED void ReceiveGeneratorReturned();
     void BndEvt__ChargeCapacity_K2Node_ComponentBoundEvent_1_AmountChangedSignature__DelegateSignature(int amount);
     void BndEvt__CarryCapacity_K2Node_ComponentBoundEvent_0_AmountChangedSignature__DelegateSignature(int amount);
-    void ReceiveGeneratorRechargeProgress(float Progress);
-    void ReceiveGeneratorRecharged();
-    void ReceiveItemThrown(class AThrowableActor* thrownActor);
-    void RecieveStartUsing();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveGeneratorRechargeProgress(float Progress);
+    UE_PROTECTED void ReceiveGeneratorRecharged();
+    UE_PROTECTED void ReceiveItemThrown(class AThrowableActor* thrownActor);
+    UE_PROTECTED void RecieveStartUsing();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateMaterial();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

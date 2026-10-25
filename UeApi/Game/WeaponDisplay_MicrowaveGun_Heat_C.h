@@ -35,7 +35,7 @@ public:
     void ExecuteUbergraph_WeaponDisplay_MicrowaveGun_Heat(int EntryPoint);
     void OnUnEquipped();
     void OnEquipped();
-    void Init(class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void Init(class AItem* Item_0);
     UE_COSMETIC void Construct();
     void SetHeatValue(float HeatPercentage, bool overheated);
 };

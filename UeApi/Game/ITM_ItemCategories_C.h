@@ -45,9 +45,9 @@ public:
     TMulticastInlineDelegate<void()> BTN_MoustacheClicked;
     TMulticastInlineDelegate<void()> BTN_HairColorClicked;
     void ExecuteUbergraph_ITM_ItemCategories(int EntryPoint);
-    void OnClosed();
+    UE_BLUEPRINT_CALLABLE void OnClosed();
     void BndEvt__BTN_HairColor_K2Node_ComponentBoundEvent_0_ButtonClicked__DelegateSignature();
-    void SetData(class UPlayerCharacterID* characterID);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* characterID);
     void BndEvt__BTN_Sideburns_K2Node_ComponentBoundEvent_9_ButtonClicked__DelegateSignature();
     void BndEvt__BTN_Moustache_K2Node_ComponentBoundEvent_8_ButtonClicked__DelegateSignature();
     void BndEvt__BTN_Headwear_K2Node_ComponentBoundEvent_7_ButtonClicked__DelegateSignature();

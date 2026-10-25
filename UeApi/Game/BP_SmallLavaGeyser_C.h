@@ -75,7 +75,7 @@ public:
     void ShowErruptionGFX();
     void PlayErruptionAudio();
     void BndEvt__ErruptState_K2Node_ComponentBoundEvent_0_StateDelegate__DelegateSignature(class UActorStateComponent* State);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void LightIntensity__UpdateFunc();
     void LightIntensity__FinishedFunc();
 private:

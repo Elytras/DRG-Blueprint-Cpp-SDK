@@ -28,11 +28,11 @@ public:
     TMulticastInlineDelegate<void()> OnClicked;
     void ExecuteUbergraph_ITM_EscapeMenu_MissionModifier(int EntryPoint);
     void BndEvt__Button_Warning_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-    void Hide();
+    UE_BLUEPRINT_CALLABLE void Hide();
     void SetMutator(class UMissionMutator* Mutator);
     void SetWarning(class UMissionWarning* Warning);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetToolTipWidget(class UWidget*& return_value);
+    UE_BLUEPRINT_PURE void GetToolTipWidget(class UWidget*& return_value);
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

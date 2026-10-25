@@ -44,7 +44,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void ShowCurrentState();
-    void GetObjectiveDescription(class UClass* InClass, float missionLength, FText& MissionDescription);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetObjectiveDescription(class UClass* InClass, float missionLength, FText& MissionDescription);
     void ShowNoData();
     void ShowMission(class UDeepDive* InDeepDive, int InCurrentStage);
     void SetMutators(class UGeneratedMission* mission);

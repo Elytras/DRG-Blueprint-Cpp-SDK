@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_BP_PetUsable(int EntryPoint);
     void OnUsedBy_Event_0(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveBeginPlay();
-    bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
 };
 
 }}}}}   // namespace Game::GameElements::KPI::Perks::BeastMaster

@@ -21,7 +21,7 @@ public:
     class UStaticMeshComponent* Mesh;
     class USphereComponent* Sphere;
     void ExecuteUbergraph_BP_DirtChunk(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SetMaterial();
 private:
     struct UeMarkers

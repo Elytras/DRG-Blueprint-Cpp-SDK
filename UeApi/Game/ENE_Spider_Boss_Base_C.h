@@ -30,10 +30,10 @@ public:
     void ExecuteUbergraph_ENE_Spider_Boss_Base(int EntryPoint);
     void OnAllDwarvesDown();
     void OnDamagedPlayer(class APlayerCharacter* Player, float amount);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void FindMostDamagedPlayer(class APlayerCharacter*& Designated_Decoy);
     void OnBossFightCompleted();
-    void DifficultyAsInt(int& Difficulty);
+    UE_BLUEPRINT_PURE void DifficultyAsInt(int& Difficulty);
     void Check_Without_A_Paddle_Achievement();
 private:
     struct UeMarkers

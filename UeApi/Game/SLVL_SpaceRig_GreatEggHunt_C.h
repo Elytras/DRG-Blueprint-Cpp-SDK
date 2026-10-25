@@ -19,7 +19,7 @@ public:
     TArray<class UAudioComponent*> AmbientAudioComponents;
     void ExecuteUbergraph_SLVL_SpaceRig_GreatEggHunt(int EntryPoint);
     void OnJukeboxStreamerModeChanged_Event_0(bool NewValue);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void FindAmbientMusicPlayers();
     void UpdateAmbientMusic();
 };

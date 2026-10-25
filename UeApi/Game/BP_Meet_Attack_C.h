@@ -19,11 +19,11 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     float BurrowDuration;
     void ExecuteUbergraph_BP_Meet_Attack(int EntryPoint);
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
     void OnBurrowedDone(bool IsEmerging);
     void OnUnburrowed(bool IsEmerging);
     void StartMeeting();
-    void ReceiveAbortAttack();
+    UE_PROTECTED void ReceiveAbortAttack();
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

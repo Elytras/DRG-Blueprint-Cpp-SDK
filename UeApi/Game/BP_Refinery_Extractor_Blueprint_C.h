@@ -20,7 +20,7 @@ public:
     class USceneComponent* AttachmentPoint;
     class USkeletalMeshComponent* SkeletalMesh;
     class USceneComponent* Scene;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     UE_PURE FVector GetAttachementLocation(bool WorldCoordinates);
     void SetValid(bool IsValid);
 private:

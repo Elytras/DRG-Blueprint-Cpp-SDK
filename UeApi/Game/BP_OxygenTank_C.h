@@ -25,7 +25,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_OxygenTank(int EntryPoint);
     void OnOxygenActivationChanged_Event_0(bool IsActive);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

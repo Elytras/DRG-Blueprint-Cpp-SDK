@@ -23,7 +23,7 @@ public:
     float maxSnapDistance;
     FVector SurfacePoint;
     void ExecuteUbergraph_TSK_FindClosestPoint(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Tasks

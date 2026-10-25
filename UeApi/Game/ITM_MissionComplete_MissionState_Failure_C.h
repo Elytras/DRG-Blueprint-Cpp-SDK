@@ -47,7 +47,7 @@ public:
     UE_READONLY bool AbortByHost;
     void ExecuteUbergraph_ITM_MissionComplete_MissionState_Failure(int EntryPoint);
     void BndEvt__UI_RunningText_HostAbort_K2Node_ComponentBoundEvent_1_OnFinished__DelegateSignature();
-    void OnFinished();
+    UE_BLUEPRINT_CALLABLE void OnFinished();
     void BndEvt__UI_RunningText_K2Node_ComponentBoundEvent_0_OnFinished__DelegateSignature();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

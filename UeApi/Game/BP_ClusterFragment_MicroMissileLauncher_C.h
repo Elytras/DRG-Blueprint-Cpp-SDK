@@ -21,7 +21,7 @@ public:
     class URotatingMovementComponent* RotatingMovement;
     class UNiagaraComponent* NS_MicroMissile_Cluster_Trail;
     void ExecuteUbergraph_BP_ClusterFragment_MicroMissileLauncher(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds_0);
     void OnInitialized();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);

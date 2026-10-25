@@ -26,7 +26,7 @@ public:
     class UStaticMeshComponent* StaticMesh;
     class UStaticMeshComponent* SM_Plague_Biotank_Stand;
     void ExecuteUbergraph_BP_BioTank_Small(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -22,7 +22,7 @@ public:
     float MaxDistToPlayers;
     float ApproximateDestDistance;
     void ExecuteUbergraph_TSK_ChangeDestIfFarAway(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::GameElements::Donkey

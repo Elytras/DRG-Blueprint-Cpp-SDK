@@ -94,14 +94,14 @@ public:
     BP_DropPod_Base_C* TargetDropPod;
     void ExecuteUbergraph_BP_MiniMule_Salvage(int EntryPoint);
     UE_AUTHORITY_ONLY void CheatRepair();
-    void OnRep_IsDown();
+    UE_PROTECTED void OnRep_IsDown();
     void SetControlledByDropShip(bool Control);
     void BndEvt__UsableScan_K2Node_ComponentBoundEvent_5_ProgressSignature__DelegateSignature(float Progress);
     void BndEvt__TutorialTrigger_K2Node_ComponentBoundEvent_3_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_MULTICAST void PingFX();
     void BndEvt__UsableRepair_K2Node_ComponentBoundEvent_4_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__UsableScan_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    UE_AUTHORITY_ONLY void OnLegsSetVisible();
+    UE_AUTHORITY_ONLY UE_PROTECTED void OnLegsSetVisible();
     void OnFallToTerrainStateChanged(bool IsFalling);
     void OnMessageAI(FName TriggerName);
     void BndEvt__RepairableUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
@@ -112,18 +112,18 @@ public:
     void Stop_Beacon();
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__Sphere1_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Cheat_TeleportPlayer();
     void GotoDropPod(BP_DropPod_Base_C* DropPod);
     void Intensity__UpdateFunc();
     void Intensity__FinishedFunc();
     void Sphere_Timeline__UpdateFunc();
     void Sphere_Timeline__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void TryDestroyComponent(class UActorComponent* Component);
     void PlayDistressAudio();
     void Set_Detect_Lost_Legs(bool InDetect);
-    void GetNeedsLegs(bool& OutNeedsLegs);
+    UE_BLUEPRINT_PURE void GetNeedsLegs(bool& OutNeedsLegs);
 private:
     struct UeMarkers
     {

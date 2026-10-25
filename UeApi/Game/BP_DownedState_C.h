@@ -23,7 +23,7 @@ public:
     UE_SERVER void Server_SpawnDBField();
     UE_MULTICAST void All_ShowBombIntro();
     UE_MULTICAST void All_ShowDownedBomb();
-    void Receive_TriggerDownedBomb();
+    UE_PROTECTED void Receive_TriggerDownedBomb();
     void ReceiveBeginPlay();
     void OnLoaded_369215DE4E9E3D75961755AB344B6937(class UObject* Loaded);
     void OnLoaded_EE490F594C2547CD96CB63943EA06475(class UObject* Loaded);

@@ -40,12 +40,12 @@ public:
     float SoloActivationDuration;
     void ExecuteUbergraph_BP_MultiStageEventStarter(int EntryPoint);
     void BndEvt__BP_MultiStageEventStarter_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnOpenedForUse(bool wasOpened);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_EffectsShown();
     void ShowUsedEffects();
-    void CheckTerrain(bool& ShouldCarve) const;
+    UE_BLUEPRINT_PURE void CheckTerrain(bool& ShouldCarve) const;
 private:
     struct UeMarkers
     {

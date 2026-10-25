@@ -19,10 +19,10 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/OBJ_1st_Gather_AlienEggs", "OBJ_1st_Gather_AlienEggs_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_OBJ_1st_Gather_AlienEggs(int EntryPoint);
-    void Receive_StartTracking();
+    UE_PROTECTED void Receive_StartTracking();
     void TurnOnSpecialEggs();
-    void GetNumberOfSpeicalEggs(const TArray<class AActor*>& TargetArray, int& Count);
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_PURE void GetNumberOfSpeicalEggs(const TArray<class AActor*>& TargetArray, int& Count);
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
 };
 
 }}}   // namespace Game::GameElements::Objectives

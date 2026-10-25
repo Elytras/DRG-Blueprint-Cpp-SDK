@@ -27,7 +27,7 @@ public:
     FVector OriginVec;
     FVector Vector;
     void ExecuteUbergraph_TSK_RandomPointFromOrigin(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void snap(bool snap_0, class UDeepPathfinderMovement* Path, FVector Origin_0);
     void ActorOrVector();
 };

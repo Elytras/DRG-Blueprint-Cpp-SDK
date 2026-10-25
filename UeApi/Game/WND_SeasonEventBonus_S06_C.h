@@ -54,7 +54,7 @@ public:
     int LastClaimedScripIndex;
     int NumberOfFrontRowScrip;
     void ExecuteUbergraph_WND_SeasonEventBonus_S06(int EntryPoint);
-    void OnShown();
+    UE_BLUEPRINT_CALLABLE void OnShown();
     void ScaleWidgets(class UCanvasPanel* Row, bool ScaleDown);
     void MoveToFront(class UCanvasPanel* Row);
     void SetRowLooks(class UCanvasPanel* Row, bool IsInFront);

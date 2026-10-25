@@ -14,7 +14,7 @@ class BP_Phys_Newsstand_Oktoberfest_C : public ::Game::Art::Environments::SpaceR
 public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/Newsstand/BP_Phys_Newsstand_Oktoberfest", "BP_Phys_Newsstand_Oktoberfest_C");
     bool UseVersion2Texture;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

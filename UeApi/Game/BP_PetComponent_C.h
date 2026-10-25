@@ -27,7 +27,7 @@ public:
     class UParticleSystem* PetParticles;
     class UParticleSystemComponent* Emitter;
     void ExecuteUbergraph_BP_PetComponent(int EntryPoint);
-    void ReceiveOwningPlayerChanged();
+    UE_PROTECTED void ReceiveOwningPlayerChanged();
     void OnDeath_Event_0(class UHealthComponentBase* HealthComponent);
     void ReceiveBeginPlay();
     void OnDeath(class UHealthComponentBase* HealthComponent);

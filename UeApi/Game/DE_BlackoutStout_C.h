@@ -24,8 +24,8 @@ public:
     class UAudioComponent* soundComp;
     class UAudioComponent* soundCompDown;
     void ExecuteUbergraph_DE_BlackoutStout(int EntryPoint);
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character);
 private:
     struct UeMarkers
     {

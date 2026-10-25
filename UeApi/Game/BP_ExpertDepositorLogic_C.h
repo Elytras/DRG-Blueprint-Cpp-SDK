@@ -34,9 +34,9 @@ public:
     void ExecuteUbergraph_BP_ExpertDepositorLogic(int EntryPoint);
     void Try_start_logic();
     void CheckMollyDistance();
-    void StartLogic(int Rank);
+    UE_PROTECTED void StartLogic(int Rank);
     void CheckInRange(class AActor* OtherActor);
-    FText GetAdditionalText(int Rank) const;
+    UE_BLUEPRINT_CALLABLE FText GetAdditionalText(int Rank) const;
 private:
     struct UeMarkers
     {

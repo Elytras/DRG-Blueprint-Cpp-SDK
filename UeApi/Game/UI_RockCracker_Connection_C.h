@@ -49,7 +49,7 @@ public:
     void SetEventStarted();
     void PlayActiveAnim(bool Active);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetCableAnimProgress(float InValue);
+    UE_PRIVATE void SetCableAnimProgress(float InValue);
     void SetHealth(float InHealth);
     void SetPlayCableAnim(bool InPlay);
 };

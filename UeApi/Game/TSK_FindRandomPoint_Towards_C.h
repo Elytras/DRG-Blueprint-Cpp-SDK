@@ -34,9 +34,9 @@ public:
     float MinDot;
     float MaxDot;
     void ExecuteUbergraph_TSK_FindRandomPoint_Towards(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector& Location);
-    void IsFacing(FVector NewPosition, FVector SelfPosition, bool& IsFacing_0);
+    UE_BLUEPRINT_PURE void IsFacing(FVector NewPosition, FVector SelfPosition, bool& IsFacing_0);
 };
 
 }}}   // namespace Game::AI::Tasks

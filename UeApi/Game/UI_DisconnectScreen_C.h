@@ -50,9 +50,9 @@ public:
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void FadeIt(bool FadeIn_0, float& Duration);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void GetBaseFSPGameInstance(class UFSDGameInstance*& AsFSDGame_Instance);
-    void IsKickTheReason(TEnum<EDisconnectReason> reason, bool& Kicked);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetBaseFSPGameInstance(class UFSDGameInstance*& AsFSDGame_Instance);
+    UE_BLUEPRINT_PURE void IsKickTheReason(TEnum<EDisconnectReason> reason, bool& Kicked);
 private:
     struct UeMarkers
     {

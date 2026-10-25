@@ -45,20 +45,20 @@ public:
     float PuddleAmmoPool;
     void ExecuteUbergraph_WPN_GooCannon(int EntryPoint);
     void OnPuddleSuckedIn();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_SERVER void ServerSuckInPuddle(BP_GooCannon_GooPuddle_C* puddle);
     void SuckInPuddle(BP_GooCannon_GooPuddle_C* puddle);
     void ReloadEvent();
     void CustomEvent1(class UItemUpgrade* Event);
     void OnChargeChanged_Event_0(float charge);
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
-    void RecieveUnequipped();
-    void UserConstructionScript();
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void RecieveUnequipped();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void Handle_Charge_Audio(float charge);
-    void FadeOutIfValid(class UAudioComponent*& AC);
+    UE_PRIVATE void FadeOutIfValid(class UAudioComponent*& AC);
     void GetNearbyPuddles();
     void ApplyUpgradeModifiers(class UItemUpgrade* ItemUpgrade);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

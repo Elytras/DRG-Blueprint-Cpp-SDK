@@ -18,9 +18,9 @@ public:
     UE_CLASS("/Game/Enemies/Spider/RapidShooter/AIC_Spider_RapidShooter", "AIC_Spider_RapidShooter_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_RapidShooter_C;
     void ExecuteUbergraph_AIC_Spider_RapidShooter(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
-    void Recieve_BlackboardValueChanged(const FName& KeyName);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void Recieve_BlackboardValueChanged(const FName& KeyName);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

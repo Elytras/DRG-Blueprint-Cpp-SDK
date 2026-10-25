@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_Escort_BoscoDefend(int EntryPoint);
     void OnObjectiveUpdated(class UObjective* Objective);
     void OnBoscoChanged(class ABosco* Bosco);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

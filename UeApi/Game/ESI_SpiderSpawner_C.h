@@ -44,9 +44,9 @@ public:
     void Delay2();
     void Delay1();
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
-    void GetPointPos(int Index_0, FVector& Pos);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void GetPointPos(int Index_0, FVector& Pos);
     void WalkToPoint(class USkeletalMeshComponent* Spider);
     void UpdateWalking();
 private:

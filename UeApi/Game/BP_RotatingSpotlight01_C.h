@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_RotatingSpotlight01_C;
     class USpotLightComponent* SpotLight;
     void ExecuteUbergraph_BP_RotatingSpotlight01(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

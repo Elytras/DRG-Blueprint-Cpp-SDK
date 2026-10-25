@@ -50,20 +50,20 @@ public:
     int AttackIndex;
     void ExecuteUbergraph_ENE_Spider_Lobber_Base(int EntryPoint);
     void OnMessageAI(FName TriggerName);
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     void SetParametersFromFloat(float Param);
     void StartFadeBody();
     void OnRangedAttackNotify_Event_0();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void GetEnemySpawnedCount(int& SpawnCount);
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
     void SpawnFragments();
     void InitDynamicMaterials();
-    void IsFirstAttack(bool& IsFirst);
+    UE_BLUEPRINT_PURE void IsFirstAttack(bool& IsFirst);
     void OnRep_AttackIndex();
 private:
     struct UeMarkers

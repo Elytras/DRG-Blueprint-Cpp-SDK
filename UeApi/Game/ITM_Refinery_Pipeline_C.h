@@ -36,7 +36,7 @@ public:
     void ExecuteUbergraph_ITM_Refinery_Pipeline(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetPipelineStart(class APipelineStart* InPipelineStart);
-    void OnStateChanged(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
+    UE_PRIVATE UE_BLUEPRINT_CALLABLE void OnStateChanged(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Refinery

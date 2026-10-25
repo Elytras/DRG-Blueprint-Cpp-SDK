@@ -47,7 +47,7 @@ public:
     void ExecuteUbergraph_WND_KPI(int EntryPoint);
     void selectperks();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void Close_Window();
     void BndEvt__KPIView_K2Node_ComponentBoundEvent_3_OnHasClaimableChanged__DelegateSignature(bool HasClaimable);
     void SelectStatistics();
@@ -55,9 +55,9 @@ public:
     void BndEvt__BTN_KPI_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void BndEvt__BTN_Controls_K2Node_ComponentBoundEvent_13_OnClicked__DelegateSignature();
     void SelectTab(Basic_ButtonTab_C* Button, UI_KPI_Tab_C* Content);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SelectNextTab(int Direction);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

@@ -13,7 +13,7 @@ class WND_RetirementRewards_C : public ::Game::UI::ClaimableRewards::WND_Claimab
 {
 public:
     UE_CLASS("/Game/UI/CharacterSelectionMK2/Retirement/WND_RetirementRewards", "WND_RetirementRewards_C");
-    void GetData(FClaimableRewardView& OutData);
+    UE_BLUEPRINT_PURE void GetData(FClaimableRewardView& OutData);
 };
 
 }}}}   // namespace Game::UI::CharacterSelectionMK2::Retirement

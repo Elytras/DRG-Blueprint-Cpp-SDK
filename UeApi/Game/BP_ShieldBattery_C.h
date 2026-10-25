@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/BP_ShieldBattery", "BP_ShieldBattery_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_ShieldBattery_C;
     void ExecuteUbergraph_BP_ShieldBattery(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

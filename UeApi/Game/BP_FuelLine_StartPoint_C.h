@@ -27,9 +27,9 @@ public:
     void ExecuteUbergraph_BP_FuelLine_StartPoint(int EntryPoint);
     void BndEvt__UsableStartFuelLine_K2Node_ComponentBoundEvent_1_SegmentDelegate__DelegateSignature(class UTrackBuilderUsable* InUsable, class ATrackBuilderSegment* InSegment);
     void FuelPodLanded();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__UsableStartFuelLine_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
     void SetMaterial(FName InSlotName, class UMaterialInterface* InMaterial);
 private:

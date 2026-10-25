@@ -33,7 +33,7 @@ public:
     float MinDesiredWidth;
     void ExecuteUbergraph_Lore_Content_Text_Header(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FText Header_Text, class UTexture2D* Icon, FObjectiveMissionIcon MissionIcon);
+    UE_BLUEPRINT_CALLABLE void SetData(FText Header_Text, class UTexture2D* Icon, FObjectiveMissionIcon MissionIcon);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

@@ -79,7 +79,7 @@ public:
     void FinishMasteryReward();
     void BndEvt__MENU_Forge_Forge_Rewards_Selector_K2Node_ComponentBoundEvent_5_OnRewardSelected__DelegateSignature(class USchematic* InReward);
     void BndEvt__ButtonSkip_K2Node_ComponentBoundEvent_9_OnClicked__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void ShoutLocallySoftPtr(float Delay, TSoftObjectPtr<class UDialogDataAsset> ShoutData);
     void ShoutLocally(float Delay, class UDialogDataAsset* ShoutData);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -94,13 +94,13 @@ public:
     void BndEvt__CancelForgeBtn_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void OnForgingXPChanged_Event(float XP);
     void BndEvt__MENU_SpaceRigTemplate_K2Node_ComponentBoundEvent_8_OnBackClicked__DelegateSignature();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void BndEvt__TabOverclocks_K2Node_ComponentBoundEvent_2_OnItemClicked__DelegateSignature(UI_Forge_Schematic_C* Item);
     void UpdateLevelProgress(bool animate);
     void Refresh();
-    void ShowItem(UI_Forge_Schematic_C* Item);
+    UE_PRIVATE void ShowItem(UI_Forge_Schematic_C* Item);
     void ShowList(bool History, bool Force_Rebuild);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void ShowSkipButton(bool InVisible);
     void SetHeader(FText InText);
     void IncreaseCraftingStat();
@@ -108,7 +108,7 @@ public:
     void ToggleItemPopUp(bool Visible);
     void Forge_Schematic(UI_Forge_Schematic_C* InSchematic, bool& success);
     void ToggleMasteryBar(bool Visible, bool AllowClaimButton);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCursorVisible(bool IsVisible_0);
 private:
     struct UeMarkers

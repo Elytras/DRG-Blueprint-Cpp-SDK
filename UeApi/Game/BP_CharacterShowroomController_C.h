@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_CharacterShowroomController(int EntryPoint);
     void EquipWeapon(TEnum<EItemCategory> Category);
-    void Receive_CharacterShown();
+    UE_PROTECTED void Receive_CharacterShown();
 };
 
 }}}   // namespace Game::UI::Showroom

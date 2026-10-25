@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_CleanupPod_Beacon_C;
     class UTerrainPlacementComponent* terrainPlacement;
     void ExecuteUbergraph_BP_CleanupPod_Beacon(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

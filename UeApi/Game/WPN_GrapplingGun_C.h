@@ -44,23 +44,23 @@ public:
     HUD_CroNew_GrapplingGun_C* Crosshair;
     float LastFailMessageTime;
     void ExecuteUbergraph_WPN_GrapplingGun(int EntryPoint);
-    void OnGrappleFailed(bool TooFar);
-    void OnGrappleEnd();
-    void OnGrappleStart();
-    void OnGrappleUpdate(float DeltaSeconds);
+    UE_PROTECTED void OnGrappleFailed(bool TooFar);
+    UE_PROTECTED void OnGrappleEnd();
+    UE_PROTECTED void OnGrappleStart();
+    UE_PROTECTED void OnGrappleUpdate(float DeltaSeconds);
     UE_MULTICAST void Gunsling();
-    void RecieveCycledItem();
-    void ReceiveBeginPlay();
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void RecieveCycledItem();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
     void ProjectileMovement__UpdateFunc();
     void ProjectileMovement__FinishedFunc();
-    void UserConstructionScript();
-    void GetAimView(FVector& Location, FVector& Forward);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void GetAimView(FVector& Location, FVector& Forward);
     void ToggleCable(bool bNewVisibility);
-    void GetCableParent(class USceneComponent*& Muzzle);
+    UE_BLUEPRINT_PURE void GetCableParent(class USceneComponent*& Muzzle);
     void SetCableEndPoint(FVector Location);
     UE_PURE FTransform GetCableTransform();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

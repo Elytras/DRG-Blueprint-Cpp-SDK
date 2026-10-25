@@ -43,7 +43,7 @@ public:
     void Set_Tool_Tip_Owner(class UWidget* Owner);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTarget(class UWidget* Target_Widget);
-    void SetData(FText Headline_0, FText Text_0, FActionIconMapping Icon_0);
+    UE_BLUEPRINT_CALLABLE void SetData(FText Headline_0, FText Text_0, FActionIconMapping Icon_0);
     void SetPostionAndAlignment(FVector2D InPosition, FVector2D InAlignment);
     void SetMinWidth(float MinWidth);
     void SetMaxWidth(float MaxWidth);

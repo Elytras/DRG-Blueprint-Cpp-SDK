@@ -127,10 +127,10 @@ public:
     void BndEvt__InsideDroppodTriggerBox_K2Node_ActorBoundEvent_4_ActorBeginOverlapSignature__DelegateSignature(class AActor* OverlappedActor, class AActor* OtherActor);
     void BndEvt__DockingBayTriggerBox_K2Node_ActorBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature(class AActor* OverlappedActor, class AActor* OtherActor);
     void OnLeaveSpacerig_Event_0();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnLoaded_C80486AD4277C47F32FE05A37AB96333(TSubclassOf<class UObject> Loaded);
     void Set_Beer_Event_Active(bool Is_Active);
-    void GetEventOrDefaultAmbiance(class USoundCue*& OutAmbiance);
+    UE_BLUEPRINT_PURE void GetEventOrDefaultAmbiance(class USoundCue*& OutAmbiance);
     void OnRep_BarLightColor();
     void UpdateAmbienceAudioComponents();
 private:

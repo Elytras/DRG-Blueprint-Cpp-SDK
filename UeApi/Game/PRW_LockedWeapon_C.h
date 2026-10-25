@@ -25,7 +25,7 @@ public:
     class USceneComponent* Scaler;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_PRW_LockedWeapon(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

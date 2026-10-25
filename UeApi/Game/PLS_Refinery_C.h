@@ -27,7 +27,7 @@ public:
     void ExecuteUbergraph_PLS_Refinery(int EntryPoint);
     void CreateCaveGraph();
     UE_PURE class URoomGenerator* SelectRoomFromDNA(int QueryIndex);
-    void GetDNARoomCount(int& RoomCount);
+    UE_BLUEPRINT_PURE void GetDNARoomCount(int& RoomCount);
 private:
     struct UeMarkers
     {

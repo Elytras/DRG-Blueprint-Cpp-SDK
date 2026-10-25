@@ -31,7 +31,7 @@ public:
     TArray<class UMaterialInterface*> Mats_Note;
     int RandomPresentSound;
     void ExecuteUbergraph_BP_GiftBox_Weightless(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_KickSoundLocation();
 private:
     struct UeMarkers

@@ -70,15 +70,15 @@ public:
     UE_MULTICAST void PlayHitReact();
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_HealthChangedSig__DelegateSignature(float Health_0);
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void OnBodypartHit(float amount, float BaseAmount, const FDamageData& DamageData);
     void BndEvt__PawnSensing_K2Node_ComponentBoundEvent_0_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Spawn_Sound(class USoundCue* Sound, float Volume);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SpawnDeathEffects();
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
 private:
     struct UeMarkers
     {

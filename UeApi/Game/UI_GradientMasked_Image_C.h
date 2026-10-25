@@ -25,7 +25,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnMaterialRefreshed();
     void SetImage(class UTexture2D* InTexture);
-    UE_PURE class UTexture2D* GetTextureOrDefault();
+    UE_PRIVATE UE_PURE class UTexture2D* GetTextureOrDefault();
 private:
     struct UeMarkers
     {

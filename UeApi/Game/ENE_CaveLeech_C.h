@@ -60,13 +60,13 @@ public:
     void ExecuteUbergraph_ENE_CaveLeech(int EntryPoint);
     void StopEmissiveOff();
     void StopEmissiveOn();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void OnDeath();
     void ShowHead(bool bNewVisibility);
-    void BP_OnStateChanged(TEnum<ECaveLeechState> NewState);
-    void ReceiveBeginPlay();
-    void BP_OnBite(class UHealthComponent* TargetHealth);
+    UE_PROTECTED void BP_OnStateChanged(TEnum<ECaveLeechState> NewState);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void BP_OnBite(class UHealthComponent* TargetHealth);
     void Light_on__UpdateFunc();
     void Light_on__FinishedFunc();
     void Light_off__UpdateFunc();
@@ -75,7 +75,7 @@ public:
     void Emissive_off__FinishedFunc();
     void Emissive_on__UpdateFunc();
     void Emissive_on__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void PlayAudioHead(class USoundBase* NewSound);
     void CreateDynamicMaterials();
     UE_PURE FVector GetMouthLocation() const;

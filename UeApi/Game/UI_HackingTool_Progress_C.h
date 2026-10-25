@@ -32,9 +32,9 @@ public:
     void SetMaxStages(int MaxStages_0);
     void SetCurrentStage(int InCurrentStage);
     void NextStage();
-    void GetCurrentStage(int& CurrentStage_0);
+    UE_BLUEPRINT_PURE void GetCurrentStage(int& CurrentStage_0);
     void Update(int InCurrent, int InMax);
-    void GetMaxStages(int& MaxStages_0) const;
+    UE_BLUEPRINT_PURE void GetMaxStages(int& MaxStages_0) const;
 };
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI

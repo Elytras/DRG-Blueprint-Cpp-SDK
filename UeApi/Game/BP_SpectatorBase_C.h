@@ -21,7 +21,7 @@ public:
     class UAudioComponent* Menu_Music;
     class UAudioComponent* Menu_StaticRadio;
     TArray<TSoftObjectPtr<class UObject>> LoadingSounds;
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveDestroyed();
     void StartLoadingMusic(class USoundBase* LoadingMusic, class USoundBase* LoadingAmbient);
     void CustomEvent_0();

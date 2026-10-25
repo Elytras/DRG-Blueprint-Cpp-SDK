@@ -24,7 +24,7 @@ public:
     bool IsOpen;
     TMulticastInlineDelegate<void(bool Open)> OnOpenChanged;
     void SetOpen(bool InIsOpen);
-    void GetIsOpen(bool& IsOpen_0);
+    UE_BLUEPRINT_PURE void GetIsOpen(bool& IsOpen_0);
     void ShowAsReward(bool IsReward);
 };
 

@@ -24,8 +24,8 @@ public:
     class UArrowComponent* Arrow;
     TArray<class UStaticMesh*> Meshes;
     void ExecuteUbergraph_BP_PropHunt_AnniversaryBottle(int EntryPoint);
-    void ReceiveRefresh(FRandomStream InRandom);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveRefresh(FRandomStream InRandom);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

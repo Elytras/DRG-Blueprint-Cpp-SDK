@@ -27,7 +27,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     float RotationRate;
     void ExecuteUbergraph_BP_RadarDish01(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SetRotationRate(class URotatingMovementComponent* self2, float RotationRate_0);
 private:
     struct UeMarkers

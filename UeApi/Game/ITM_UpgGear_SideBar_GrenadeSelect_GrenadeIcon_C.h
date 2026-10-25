@@ -55,16 +55,16 @@ public:
     void SetItem(class UItemID* GrenadeClass, class UPlayerCharacterID* characterID, EItemUpgradeStatus& OutState);
     void Refresh(EItemUpgradeStatus& OutState);
     void SetState(TEnum<EItemUpgradeStatus> InItemStatus, int InRequiredCharacterLevel);
-    void GetCurrentState(EItemUpgradeStatus& Item_State);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetCurrentState(EItemUpgradeStatus& Item_State);
     void UpdateToolTip();
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void GetCraftingCost(TArray<FCraftingCost>& Cost);
-    void GetGrenadeInfo(FText& Name_0, FText& Description);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetCraftingCost(TArray<FCraftingCost>& Cost);
+    UE_BLUEPRINT_PURE void GetGrenadeInfo(FText& Name_0, FText& Description);
     void TryPurchaseItem(bool& success);
     void EquipItem();
     void SetIsHovered(bool InHovered);
     UE_PURE class UWidget* GetUpgradeToolTip();
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

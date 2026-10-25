@@ -31,7 +31,7 @@ public:
     void ExecuteUbergraph_BP_SpecialTutorialCrystal(int EntryPoint);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void OnMatchStarted_Event_0();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

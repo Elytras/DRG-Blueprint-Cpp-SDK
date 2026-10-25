@@ -45,7 +45,7 @@ public:
     bool Force_Intro_Screen;
     FString Current_Id;
     void OnModdedSaveCancelled();
-    void ShouldPromptUserToDeleteMainSaves(bool& Should, TArray<class UFSDSaveGame*>& outMainSaves);
+    UE_BLUEPRINT_PURE void ShouldPromptUserToDeleteMainSaves(bool& Should, TArray<class UFSDSaveGame*>& outMainSaves);
     void Prompt_Delete_Main_Save(TArray<class UFSDSaveGame*>& Saves);
     void ModdingSavegameCheck(bool& WaitForCallback);
     void JoinInvite();
@@ -62,7 +62,7 @@ public:
     void OnLoaded_7CBF629D4A9F4FCA015C509A49AA71BD(class UObject* Loaded);
     void Failure_A762B3074BCAECF6699852A5ADC2AD7E(FString CurrentGuid);
     void Success_A762B3074BCAECF6699852A5ADC2AD7E(FString CurrentGuid);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void PressStart();
     void OnClose_Event_0(UI_InfoScreen_C* Screen);
     void InpAxisKeyEvt_MouseX_K2Node_InputAxisKeyEvent_0(float AxisValue);

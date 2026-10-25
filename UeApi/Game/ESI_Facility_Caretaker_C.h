@@ -23,7 +23,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh1;
     class USkeletalMeshComponent* ActiveEye;
     void ExecuteUbergraph_ESI_Facility_Caretaker(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

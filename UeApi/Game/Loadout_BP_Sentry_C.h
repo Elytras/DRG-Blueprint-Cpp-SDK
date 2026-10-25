@@ -21,8 +21,8 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_Loadout_BP_Sentry(int EntryPoint);
-    void RecieveUnequipped();
-    void RecieveEquipped();
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
 private:
     struct UeMarkers
     {

@@ -27,17 +27,17 @@ public:
     class UHackingToolWidget* HackingWidget;
     UE_READONLY TSoftClassPtr<class UClass> PreviewWidget;
     void ExecuteUbergraph_HackingTool_Controller(int EntryPoint);
-    void ReceiveActionReleased();
-    void ReceiveActionPressed();
-    void ReceiveActionClick();
-    void ReceiveHackingToolUnequipped();
-    void ReceiveHackingStarted();
+    UE_PROTECTED void ReceiveActionReleased();
+    UE_PROTECTED void ReceiveActionPressed();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE void ReceiveActionClick();
+    UE_PROTECTED void ReceiveHackingToolUnequipped();
+    UE_PROTECTED void ReceiveHackingStarted();
     void StartHackingCustom(TSoftClassPtr<class UClass> InWidget, class UHackingUsableComponent* InHackingUsable, class AHackingToolItem* InHackingTool);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SpawnHackingWidget(TSoftClassPtr<class UClass> InWidget, class UHackingUsableComponent* InHackingUsable, class AHackingToolItem* InHackingTool);
-    void ReceivedHackingComplete(bool InSuccess);
-    void ReceivedUnequipTool();
-    void ReceiveHackingStageCompleted(int InNextStage, int InTotalStages);
+    UE_PRIVATE void SpawnHackingWidget(TSoftClassPtr<class UClass> InWidget, class UHackingUsableComponent* InHackingUsable, class AHackingToolItem* InHackingTool);
+    UE_PRIVATE void ReceivedHackingComplete(bool InSuccess);
+    UE_PRIVATE void ReceivedUnequipTool();
+    UE_PRIVATE void ReceiveHackingStageCompleted(int InNextStage, int InTotalStages);
 };
 
 }}}}   // namespace Game::WeaponsNTools::HackingTool::UI

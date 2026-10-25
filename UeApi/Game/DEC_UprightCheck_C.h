@@ -17,7 +17,7 @@ class DEC_UprightCheck_C : public UBTDecorator_BlueprintBase
 public:
     UE_CLASS("/Game/AI/Decorators/DEC_UprightCheck", "DEC_UprightCheck_C");
     float ZComponent;
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Decorators

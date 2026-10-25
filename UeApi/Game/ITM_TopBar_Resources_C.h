@@ -31,7 +31,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime_0);
     void SetResources(TArray<class UResourceData*>& InResources);
     void AddResource(class UResourceData* InResource, bool InHideWhenZero);
-    void GetResourceAmount(class UResourceData* Resource, float& amount);
+    UE_BLUEPRINT_PURE void GetResourceAmount(class UResourceData* Resource, float& amount);
 };
 
 }}}   // namespace Game::UI::Menu_TopBar

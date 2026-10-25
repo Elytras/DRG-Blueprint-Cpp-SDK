@@ -18,8 +18,8 @@ public:
     UE_CLASS("/Game/GameElements/PawnAffliction/FPEffects/AFE_PowerAttack", "AFE_PowerAttack_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AFE_PowerAttack(int EntryPoint);
-    void ReceiveEndEffect(class UPawnAfflictionComponent* Target);
-    void ReceiveBeginEffect(class UPawnAfflictionComponent* Target);
+    UE_PROTECTED void ReceiveEndEffect(class UPawnAfflictionComponent* Target);
+    UE_PROTECTED void ReceiveBeginEffect(class UPawnAfflictionComponent* Target);
 };
 
 }}}}   // namespace Game::GameElements::PawnAffliction::FPEffects

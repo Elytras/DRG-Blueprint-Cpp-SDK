@@ -31,14 +31,14 @@ public:
     class UItemID* PickAxe;
     ITM_GeneratedIcon_Item_C* EquippedWidget;
     void ExecuteUbergraph_ITM_Pickaxe_Slot(int EntryPoint);
-    void ReceiveReleaseResource(class UWidget* InWidget);
-    void ReceivePreConstruct();
+    UE_PROTECTED void ReceiveReleaseResource(class UWidget* InWidget);
+    UE_PROTECTED void ReceivePreConstruct();
     void InitializePickAxe(class UPlayerCharacterID* InCharacter, class UItemID* InItem);
-    void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
-    void ReceiveGetSelectedIndex(int& OutIndex);
-    void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
-    void ReceiveEquipItem(int InIndex, bool& OutSuccess);
-    void GetItemDLC(class UPickaxePart* Target, class UDLCBase*& FromDLC);
+    UE_PROTECTED void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
+    UE_PROTECTED UE_BLUEPRINT_PURE void ReceiveGetSelectedIndex(int& OutIndex);
+    UE_PROTECTED void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
+    UE_PROTECTED void ReceiveEquipItem(int InIndex, bool& OutSuccess);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetItemDLC(class UPickaxePart* Target, class UDLCBase*& FromDLC);
 private:
     struct UeMarkers
     {

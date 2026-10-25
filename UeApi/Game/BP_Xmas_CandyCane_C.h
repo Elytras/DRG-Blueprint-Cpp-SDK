@@ -45,7 +45,7 @@ public:
     void OnWiggle(float Strength);
     UE_MULTICAST void All_AddForce(FVector Position, float ForceScale);
     void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ImpulseSlapTree(FVector_NetQuantize PlayerPosition);
     void OnRep_RandomSeed();
 private:

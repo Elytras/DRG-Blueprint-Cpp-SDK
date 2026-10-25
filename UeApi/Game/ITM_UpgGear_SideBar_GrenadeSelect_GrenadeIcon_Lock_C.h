@@ -25,7 +25,7 @@ public:
     class UImage* Image_4;
     class UTextBlock* ValueLabel;
     void ExecuteUbergraph_ITM_UpgGear_SideBar_GrenadeSelect_GrenadeIcon_Lock(int EntryPoint);
-    void SetData(int CharacterLevel);
+    UE_BLUEPRINT_CALLABLE void SetData(int CharacterLevel);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

@@ -20,10 +20,10 @@ public:
     UE_CLASS("/Game/UI/Menu_Cheats/VanityCheatWidgets/Cheat_List_Vanity", "Cheat_List_Vanity_C");
     using Cheat_EquipList_Entry_C = ::Game::UI::Menu_Cheats::VanityCheatWidgets::Cheat_EquipList_Entry_C;
     TArray<EVanitySlot> Vanity_Types;
-    void GetCharacterID(class UPlayerCharacterID*& characterID);
-    void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
-    void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
-    void GetCharacter(class APlayerCharacter*& OutCharacter);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetCharacterID(class UPlayerCharacterID*& characterID);
+    UE_PRIVATE void ReceiveEntryEquipClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InEquipped);
+    UE_PRIVATE void ReceiveEntryOwnedClick(Cheat_EquipList_Entry_C* InEntryWidget, class UObject* InData, bool InOwned);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& OutCharacter);
     void Refresh();
 private:
     struct UeMarkers

@@ -51,10 +51,10 @@ public:
     void BndEvt__ITM_InfoBox_Custom_Inner_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     void Finished_BAB669A648F9A07A5AD271B7BD1F329C();
     void Finished_44F92FFB4C53CEA417DF3591220F8176();
-    void SetOpen(bool InOpen);
-    void UpdateIconHovered();
-    void UpdateContentHovered();
-    void SetPlacement(bool InPlacementLeft, bool InPlacementBottom);
+    UE_PRIVATE void SetOpen(bool InOpen);
+    UE_PRIVATE void UpdateIconHovered();
+    UE_PRIVATE void UpdateContentHovered();
+    UE_PRIVATE void SetPlacement(bool InPlacementLeft, bool InPlacementBottom);
 };
 
 }}}   // namespace Game::UI::_GlobalAssets

@@ -42,11 +42,11 @@ public:
     void Begin_Lift_Off_Effects();
     void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(TEnum<EDeepMovementState> State);
     UE_MULTICAST UE_RELIABLE void All_LiftOff(FVector InHoverPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void LiftOff__UpdateFunc();
     void LiftOff__FinishedFunc();
     bool MoveToInstigator();
-    void FindTakeOffPoint(FVector& TakeOffPoint);
+    UE_BLUEPRINT_PURE void FindTakeOffPoint(FVector& TakeOffPoint);
 private:
     struct UeMarkers
     {

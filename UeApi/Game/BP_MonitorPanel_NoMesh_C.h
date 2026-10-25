@@ -20,7 +20,7 @@ public:
     class UWidgetComponent* Widget;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_MonitorPanel_NoMesh(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -42,9 +42,9 @@ public:
     void Update();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void GetEquippedPerksByType(class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& perks);
+    UE_PRIVATE void GetEquippedPerksByType(class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& perks);
     void CreateSlots(class UPanelWidget* InSlotsBox, TEnum<EPerkUsageType> InType);
-    void GetEquippedPerkAt(int Idx, TArray<class UPerkAsset*>& perks, class UPerkAsset*& Perk);
+    UE_BLUEPRINT_PURE void GetEquippedPerkAt(int Idx, TArray<class UPerkAsset*>& perks, class UPerkAsset*& Perk);
 };
 
 }}}   // namespace Game::UI::Menu_EscapeMenu

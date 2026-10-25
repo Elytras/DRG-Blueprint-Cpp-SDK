@@ -22,9 +22,9 @@ public:
     void ExecuteUbergraph_BP_SR_PlayerControllerBase(int EntryPoint);
     void ShowForgeWorkshop();
     void ShowCharacterSelectionBackground(bool resetToDefaultWeapon, TEnum<ECharselectionCameraLocation> cameraLocation);
-    void GetCrafting(class UWindowWidget*& Widget);
-    void GetPopupCrafting(class UWindowWidget*& Widget);
-    void GetMissionSelect(class UWindowWidget*& Widget);
+    UE_BLUEPRINT_PURE void GetCrafting(class UWindowWidget*& Widget);
+    UE_BLUEPRINT_PURE void GetPopupCrafting(class UWindowWidget*& Widget);
+    UE_BLUEPRINT_PURE void GetMissionSelect(class UWindowWidget*& Widget);
 private:
     struct UeMarkers
     {

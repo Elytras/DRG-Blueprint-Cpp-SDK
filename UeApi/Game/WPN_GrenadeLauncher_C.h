@@ -26,8 +26,8 @@ public:
     class UProjectileLauncherComponent* projectileLauncher;
     void ExecuteUbergraph_WPN_GrenadeLauncher(int EntryPoint);
     void CustomEvent1(class UItemUpgrade* Event);
-    void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

@@ -113,7 +113,7 @@ public:
     void BndEvt__ITM_Modding_Menu_BTN_Reload_K2Node_ComponentBoundEvent_13_OnClicked__DelegateSignature();
     void BndEvt__ITM_Modding_Menu_InstallNewModsButtonExternal_K2Node_ComponentBoundEvent_11_OnClicked__DelegateSignature();
     void BndEvt__ITM_Modding_Menu_InstallNewModsButtonCenterExternal_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature();
-    void Initialize();
+    UE_BLUEPRINT_CALLABLE void Initialize();
     void BndEvt__ITM_Tab_Modding_BTN_Exit_K2Node_ComponentBoundEvent_10_OnClicked__DelegateSignature();
     void Start_Screen_Apply();
     void Reload_Tab();
@@ -149,8 +149,8 @@ public:
     void CheckTermsAndConditions(bool& Accepted);
     void OnTermsAndConditionAnswered(bool Agree);
     void On_Fetched_Terms_and_Conditions(class UModioTermsWrapper* Terms);
-    void GetPendingModStatus(FText& ModStatus);
-    void JoinWithTitle(FText InTitle, TArray<FString>& Install, FString& OutResult);
+    UE_BLUEPRINT_PURE void GetPendingModStatus(FText& ModStatus);
+    UE_BLUEPRINT_PURE void JoinWithTitle(FText InTitle, TArray<FString>& Install, FString& OutResult);
     void OnDownloadExtractMods(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading, int Progress, int Total);
     void SetInteractability();
     void SetCompactMode(bool CompactView_0);
@@ -159,13 +159,13 @@ public:
     void ReorderInstalledMods(TEnum<EPackageSortField> InField, bool InAscending);
     void RemovePendingRequests();
     void RefreshApplyCancelButtons();
-    void IsUGCSubsystemAndRegistryValid(bool& IsValid);
+    UE_BLUEPRINT_PURE void IsUGCSubsystemAndRegistryValid(bool& IsValid);
     void GatherChangedMods();
     void ApplyChangedMods();
-    void GetModSlotStatusText(FText& ModSlotStatus);
+    UE_BLUEPRINT_PURE void GetModSlotStatusText(FText& ModSlotStatus);
     UE_PURE FText GetTermsOfUseAcesssText();
-    void Should_Modding_Menu_Be_Enabled(bool& Result);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void Should_Modding_Menu_Be_Enabled(bool& Result);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

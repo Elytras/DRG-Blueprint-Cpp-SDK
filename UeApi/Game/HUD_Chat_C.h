@@ -68,13 +68,13 @@ public:
     void OnOpenChat();
     void BeginChat();
     void OpenChat();
-    void GetSenderType(EChatSenderType& SenderType_0);
+    UE_BLUEPRINT_PURE void GetSenderType(EChatSenderType& SenderType_0);
     void UpdateChatMessages(bool resetAge);
     void SetMaxLinesFromFontSize(int FontSize);
-    void FilterProfanityMessage(FString MessageToFilter, FString& OutMessage);
-    void FilterMessage(FFSDChatMessage InMessage, FFSDChatMessage& FilteredMessage);
-    void FilterBlockedUserMessage(FFSDChatMessage InMessage, EChatMessageType& FilteredMessageType, FString& FilteredMessage);
-    void IsStringNotEmpty(FString String, bool& isEmpty) const;
+    UE_BLUEPRINT_PURE void FilterProfanityMessage(FString MessageToFilter, FString& OutMessage);
+    UE_BLUEPRINT_PURE void FilterMessage(FFSDChatMessage InMessage, FFSDChatMessage& FilteredMessage);
+    UE_BLUEPRINT_PURE void FilterBlockedUserMessage(FFSDChatMessage InMessage, EChatMessageType& FilteredMessageType, FString& FilteredMessage);
+    UE_PRIVATE UE_BLUEPRINT_PURE void IsStringNotEmpty(FString String, bool& isEmpty) const;
 private:
     struct UeMarkers
     {

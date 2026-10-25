@@ -37,8 +37,8 @@ public:
     void OnPerkPointsChanged(int PerkPoints, int Change);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetPerkPointsText(int Points);
-    void CountPerkPoints(float DeltaTime);
+    UE_PRIVATE void SetPerkPointsText(int Points);
+    UE_PRIVATE void CountPerkPoints(float DeltaTime);
 private:
     struct UeMarkers
     {

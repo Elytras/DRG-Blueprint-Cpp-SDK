@@ -19,10 +19,10 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_AlienEggs", "OBJ_DD_AlienEggs_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_OBJ_DD_AlienEggs(int EntryPoint);
-    void Receive_StartTracking();
+    UE_PROTECTED void Receive_StartTracking();
     void TurnOnSpecialEggs();
-    void GetNumberOfSpeicalEggs(const TArray<class AActor*>& TargetArray, int& Count);
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_PURE void GetNumberOfSpeicalEggs(const TArray<class AActor*>& TargetArray, int& Count);
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepDive

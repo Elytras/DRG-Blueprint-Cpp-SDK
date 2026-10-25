@@ -33,12 +33,12 @@ public:
     FLinearColor FillTint;
     FLinearColor BackgroundTint;
     void ExecuteUbergraph_HUD_CooldownWidget(int EntryPoint);
-    void ReceiveUpdateProgress(float InProgress);
+    UE_PROTECTED void ReceiveUpdateProgress(float InProgress);
     void OnAnimFadeoutFinished();
     void SetHeightScale(float Scale);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveInitWidget();
+    UE_PROTECTED void ReceiveInitWidget();
     void SetPercent(float InPercent);
     void SetFillTint(FLinearColor Value);
     void SetBackgroundTint(FLinearColor Value);

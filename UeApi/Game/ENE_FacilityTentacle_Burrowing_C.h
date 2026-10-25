@@ -28,14 +28,14 @@ public:
     FVector Target;
     class AActor* SpawnActor;
     void ExecuteUbergraph_ENE_FacilityTentacle_Burrowing(int EntryPoint);
-    void Recieve_OnRep_Owner();
+    UE_PROTECTED void Recieve_OnRep_Owner();
     void HandleDeath();
     UE_MULTICAST void PlayPreBurrowSound();
     void ChildTentacleDied(class UHealthComponentBase* HealthComponent);
     void BurrowingAttack(class AActor* AttackTarget, FVector BurrowLocation);
-    void FindGroundLocation(bool& success, FVector& Location);
+    UE_BLUEPRINT_PURE void FindGroundLocation(bool& success, FVector& Location);
     void PlaceEndTentacles(FVector PlayerLocation, bool& success, class AActor*& SpawnedTentacle);
-    void GetTentacle(ENE_FacilityTentacle_C*& tentacle);
+    UE_BLUEPRINT_PURE void GetTentacle(ENE_FacilityTentacle_C*& tentacle);
 private:
     struct UeMarkers
     {

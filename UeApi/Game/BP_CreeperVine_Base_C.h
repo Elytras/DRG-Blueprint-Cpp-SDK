@@ -48,15 +48,15 @@ public:
     float LastPlayerHitTime;
     void ExecuteUbergraph_BP_CreeperVine_Base(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_3_HealthChangedSig__DelegateSignature(float Health);
-    void ReceiveMovementFinished(float InDistanceProgress);
+    UE_PROTECTED void ReceiveMovementFinished(float InDistanceProgress);
     void Retract();
     void PlayHurtAudio(float InDamage);
     void InitiateChainRetract();
-    void ReceivePrepareSpline(class USplineComponent* InSplineComponent, int InSeed);
+    UE_PROTECTED void ReceivePrepareSpline(class USplineComponent* InSplineComponent, int InSeed);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_IsRetracted();
     void PrepareSpline(class USplineComponent* InSplineComponent, int InSeed);
     void HandleActorHit(class AActor* SelfActor, class AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);

@@ -45,7 +45,7 @@ public:
     void ReceiveIgnoreCharacter(class APlayerCharacter* Character);
     void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_UsedMaterial();
 private:
     struct UeMarkers

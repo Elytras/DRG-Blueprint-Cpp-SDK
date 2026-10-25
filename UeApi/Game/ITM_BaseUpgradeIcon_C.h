@@ -55,7 +55,7 @@ public:
     void BndEvt__WidgetButton_K2Node_ComponentBoundEvent_92_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__WidgetButton_K2Node_ComponentBoundEvent_79_OnButtonHoverEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

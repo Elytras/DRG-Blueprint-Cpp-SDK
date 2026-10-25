@@ -42,7 +42,7 @@ public:
     void SetMask(class UTexture* Value);
     void SetMaskInverted(bool Invert);
     void SetDrawAs(TEnum<ESlateBrushDrawType> InBrush_DrawAs);
-    void UpdateMaterial();
+    UE_PRIVATE void UpdateMaterial();
     void SetMaskBlack(bool Index_0);
 private:
     struct UeMarkers

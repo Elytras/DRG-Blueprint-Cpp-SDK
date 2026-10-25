@@ -67,7 +67,7 @@ public:
     UI_PatchNotes_C* UI_PatchNotes;
     TMulticastInlineDelegate<void(UI_InfoScreen_Xbox_C* Screen)> OnClose;
     int PathNodeIndex;
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry_OnKeyUp, FKeyEvent InKeyEvent_OnKeyUp);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry_OnKeyUp, FKeyEvent InKeyEvent_OnKeyUp);
     void HasJoinedXboxClub(bool& joined);
     void UpdateButtons(bool HasClaimed, bool IsFollowing);
     void FadeIt(bool FadeIn, float& Duration);

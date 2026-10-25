@@ -56,23 +56,23 @@ public:
     UE_COSMETIC void Construct();
     void OnDrinkUnlocked(class UDrinkableDataAsset* Drink);
     void BndEvt__MENU_SpaceRigTemplate_K2Node_ComponentBoundEvent_11_OnClosedClicked__DelegateSignature();
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     void OnNewDrinkableSpecial(class UDrinkableDataAsset* Drinkable);
     void SetBartender(class ASpaceRigBar* BarActor_0);
     void BndEvt__UI_Bar_OrderMenu_ItemSpecial_K2Node_ComponentBoundEvent_1_OnDrinksPurchased__DelegateSignature(class UDrinkableDataAsset* Drink);
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void BndEvt__UI_Bar_OrderMenu_ItemSpecial_K2Node_ComponentBoundEvent_0_OnPurchaseDenied__DelegateSignature();
     void BndEvt__UI_Bar_OrderMenu_ItemSpecial_K2Node_ComponentBoundEvent_43_OnHover__DelegateSignature(class USpaceRigBarMenuItem* OrderItem);
     void OnPurchaseDenied_Event();
     void BndEvt__Preview_K2Node_ComponentBoundEvent_2_OnPreviewItemChanged__DelegateSignature(class USpaceRigBarMenuItem* Previous_Item, class USpaceRigBarMenuItem* New_Item);
     void OnHover_Event(class USpaceRigBarMenuItem* OrderItem);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void Cancel_Order();
     void OnDrinksPurchased_Event(class UDrinkableDataAsset* Drink);
     void OnDrinkAdded(UI_Bar_OrderMenu_Item_C* DrinkWidget);
-    void SetMenu(class UDrinkableDataAsset* Special, TArray<class UDrinkableDataAsset*>& Drinks, class UDrinkableDataAsset* SpecialEventBeer);
-    TArray<class UDrinkableDataAsset*> GetDrinkables(class UDrinkableDataAsset*& SpecialEventBeer);
+    UE_PRIVATE void SetMenu(class UDrinkableDataAsset* Special, TArray<class UDrinkableDataAsset*>& Drinks, class UDrinkableDataAsset* SpecialEventBeer);
+    UE_BLUEPRINT_PURE TArray<class UDrinkableDataAsset*> GetDrinkables(class UDrinkableDataAsset*& SpecialEventBeer);
 private:
     struct UeMarkers
     {

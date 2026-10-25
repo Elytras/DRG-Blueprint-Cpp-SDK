@@ -83,7 +83,7 @@ public:
     bool IsPouring;
     TMap<EHolidayType, class USkeletalMeshComponent*> HolidayAssetMap;
     void ExecuteUbergraph_BP_SpaceRig_Bartender(int EntryPoint);
-    void PlayBartenderTip(class APlayerCharacter* User);
+    UE_PROTECTED void PlayBartenderTip(class APlayerCharacter* User);
     void OnUsableChanged_Mixer(bool CanUse);
     void InitializeMixer();
     void Toggle_Fireworks(bool Enabled);
@@ -102,14 +102,14 @@ public:
     void OnPlayerLeave_Event(class AFSDPlayerState* PlayerState);
     UE_MULTICAST UE_RELIABLE void LookAtCustomer(class APlayerCharacter* Customer);
     void BndEvt__BarUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BarUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void FinishedTimeline__UpdateFunc();
     void FinishedTimeline__FinishedFunc();
     void LerpTimeline__UpdateFunc();
     void LerpTimeline__FinishedFunc();
-    void UserConstructionScript();
-    void CanOrderNewRound(bool& CanOrder);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_PRIVATE UE_BLUEPRINT_PURE void CanOrderNewRound(bool& CanOrder);
     void SetCustomer(class APlayerCharacter* Customer);
     void OnRep_CurrentCustomerState();
     void SetBartenderLightMaterial(class UMaterialInterface* SourceMaterial);

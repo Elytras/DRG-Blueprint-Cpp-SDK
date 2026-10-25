@@ -30,7 +30,7 @@ public:
     TArray<class UImage*> Icons;
     void ExecuteUbergraph_ITM_MisSel_DotMarker_CaveDifficulty(int EntryPoint);
     UE_COSMETIC void Construct();
-    void SetData(int Level);
+    UE_BLUEPRINT_CALLABLE void SetData(int Level);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

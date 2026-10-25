@@ -25,7 +25,7 @@ public:
     class USphereComponent* Sphere;
     class UPointLightComponent* PointLight;
     void ExecuteUbergraph_BP_Grenade_Incendiary_Flame(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

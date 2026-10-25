@@ -31,7 +31,7 @@ public:
     class UParticleSystem* ImpactParticles;
     void ExecuteUbergraph_PRJ_Facility_Laser_Base(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

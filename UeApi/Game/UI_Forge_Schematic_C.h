@@ -75,12 +75,12 @@ public:
     void BndEvt__ItemButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void SetSchematic(class USchematic* InSchematic);
     void Refresh(bool RefreshImage);
-    void GetSchematic(class USchematic*& Schematic_0);
-    void OnItemChanged(class USchematic* Schematic_0);
+    UE_BLUEPRINT_PURE void GetSchematic(class USchematic*& Schematic_0);
+    UE_PRIVATE void OnItemChanged(class USchematic* Schematic_0);
     void TryBuildSchematic(bool& success);
-    void SetHovering(bool InHovering);
-    void OnItemReset(class USchematic* Schematic_0);
-    void GetCategory(class USchematicCategory*& Category);
+    UE_PRIVATE void SetHovering(bool InHovering);
+    UE_PRIVATE void OnItemReset(class USchematic* Schematic_0);
+    UE_BLUEPRINT_PURE void GetCategory(class USchematicCategory*& Category);
     void PlayRevealAnim(float Duration);
     void PrepareRevealAnim();
     void ReleaseRenderTarget();

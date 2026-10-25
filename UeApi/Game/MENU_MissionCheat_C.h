@@ -90,17 +90,17 @@ public:
     UE_COSMETIC void Construct();
     void OnSuccess_7138AEF44F9FC9F667DF87911EB7E3E2();
     void OnFailure_7138AEF44F9FC9F667DF87911EB7E3E2();
-    void GetSelectedBiome(class UBiome*& Biome_0);
-    void GetSelectedMissionType(class UMissionTemplate*& Template);
-    void GetComplexity(class UMissionComplexity*& Output);
-    void GetDuration(class UMissionDuration*& Output);
-    void GetAnomaly(class UMissionMutator*& Output);
-    void Get_Warning_A(class UMissionWarning*& Output);
-    void Get_Warning_B(class UMissionWarning*& Output);
+    UE_BLUEPRINT_PURE void GetSelectedBiome(class UBiome*& Biome_0);
+    UE_BLUEPRINT_PURE void GetSelectedMissionType(class UMissionTemplate*& Template);
+    UE_BLUEPRINT_PURE void GetComplexity(class UMissionComplexity*& Output);
+    UE_BLUEPRINT_PURE void GetDuration(class UMissionDuration*& Output);
+    UE_BLUEPRINT_PURE void GetAnomaly(class UMissionMutator*& Output);
+    UE_BLUEPRINT_PURE void Get_Warning_A(class UMissionWarning*& Output);
+    UE_BLUEPRINT_PURE void Get_Warning_B(class UMissionWarning*& Output);
     UE_PURE bool IsCustomMissionAllowed();
-    void GetSecondary(TArray<class UClass*>& Output);
+    UE_BLUEPRINT_PURE void GetSecondary(TArray<class UClass*>& Output);
     void RefreshSecondaries();
-    void GetDifficulty(class UDifficultySetting*& Output);
+    UE_BLUEPRINT_PURE void GetDifficulty(class UDifficultySetting*& Output);
     void SetMissionName(class UGeneratedMission* mission);
     void GenerateBiomeOptions();
     void GenerateMissionTypeOptions();
@@ -110,11 +110,11 @@ public:
     void GenerateWarningBOptions();
     void RefreshComplexity();
     void GenerateChallengeOptions();
-    void GetChallenge(class UMissionChallenge*& Output);
-    void GetGameDifficulty(FGameDifficulty& Difficulty_0);
-    void GetGameHazard(float& Hazard);
+    UE_BLUEPRINT_PURE void GetChallenge(class UMissionChallenge*& Output);
+    UE_BLUEPRINT_PURE void GetGameDifficulty(FGameDifficulty& Difficulty_0);
+    UE_BLUEPRINT_PURE void GetGameHazard(float& Hazard);
     void GenerateResourceOptions();
-    void GetGemResource(class UGemResourceData*& Output);
+    UE_BLUEPRINT_PURE void GetGemResource(class UGemResourceData*& Output);
 private:
     struct UeMarkers
     {

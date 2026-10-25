@@ -19,7 +19,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_LocalWaveTrigger(int EntryPoint);
     void CheckForNearbyPlayers();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

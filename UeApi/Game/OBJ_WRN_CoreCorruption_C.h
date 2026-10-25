@@ -15,7 +15,7 @@ class OBJ_WRN_CoreCorruption_C : public UCoreCorruptionObjective
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/CoreCorruption/OBJ_WRN_CoreCorruption", "OBJ_WRN_CoreCorruption_C");
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
 };

@@ -23,11 +23,11 @@ public:
     class AItemMarker* Marker;
     OnScreenIndicator_SupplyDrop_Order_C* Widget;
     void ExecuteUbergraph_ITM_SupplyDrop(int EntryPoint);
-    void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
+    UE_PROTECTED void ReceiveItemPlacerSpawned(class UItemPlacerAggregator* InItemPlacer);
     void Update_Widget();
     void OnMarkerSpawned_Event(class AItemMarker* Marker_0);
-    void RecieveEquipped();
-    void RecieveCycledItem();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void RecieveCycledItem();
 private:
     struct UeMarkers
     {

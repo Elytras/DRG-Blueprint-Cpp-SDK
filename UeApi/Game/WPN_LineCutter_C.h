@@ -55,20 +55,20 @@ public:
     UE_MULTICAST void All_StopHoming(class AProjectile* InProjectile);
     UE_MULTICAST void All_SetHomingLocation(FVector_NetQuantize InLocation);
     UE_SERVER UE_RELIABLE void Server_StopHoming(class AProjectile* InProjectile);
-    void ReceiveBeginPlay();
-    void RecieveStopUsing();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void RecieveStopUsing();
     void OnHomingHit(const FHitResult& Result);
     UE_SERVER void Server_SetHomingLocation(FVector_NetQuantize HomingLocation);
     void StopHoming();
     void UpdateHomingTarget();
     void BndEvt__WPN_LineCutter_ProjectileLauncher_K2Node_ComponentBoundEvent_0_ProjectileSpawned__DelegateSignature(class AProjectileBase* Projectile);
-    void OnFireWhileLastProjectileAlive(class ALineCutterProjectile* Projectile);
+    UE_PROTECTED void OnFireWhileLastProjectileAlive(class ALineCutterProjectile* Projectile);
     void Flicker_Brightness__UpdateFunc();
     void Flicker_Brightness__FinishedFunc();
-    void UserConstructionScript();
-    void GetHomingIgnoreList(TArray<class AActor*>& OutTargets);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void GetHomingIgnoreList(TArray<class AActor*>& OutTargets);
     void Get_Homing_Target_Location(FVector& OutLocation);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

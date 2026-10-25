@@ -19,7 +19,7 @@ public:
     class URotatingMovementComponent* RotatingMovement;
     float Speed;
     void ExecuteUbergraph_BP_SpinningFan01(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SetSpeed(float Speed_0);
 private:
     struct UeMarkers

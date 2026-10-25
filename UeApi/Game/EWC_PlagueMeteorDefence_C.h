@@ -35,7 +35,7 @@ public:
     void PodRevived(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PodDied(class UHealthComponentBase* HealthComponent);
     void StartWave();
-    void PodsAlive(bool& IsActive);
+    UE_BLUEPRINT_PURE void PodsAlive(bool& IsActive);
 private:
     struct UeMarkers
     {

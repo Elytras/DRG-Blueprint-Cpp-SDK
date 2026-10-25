@@ -98,7 +98,7 @@ public:
     UE_AUTHORITY_ONLY void SetGotoDropShip(const FVector& Location);
     void OnPlayerLeft(class AFSDPlayerState* PlayerState_0);
     void SetControlledByDropShip(bool Control);
-    void OnRep_IsDown();
+    UE_PROTECTED void OnRep_IsDown();
     void EnableButton();
     void BndEvt__OxygenSource_K2Node_ComponentBoundEvent_9_OxygenActiveDelegate__DelegateSignature(bool IsActive);
     void Update_Button_State();
@@ -114,8 +114,8 @@ public:
     void On_Goto_Dropship();
     UE_MULTICAST void SetDonkeyPos(FVector Pos);
     void OnDonkeyCalled(FVector Position, class APlayerCharacter* requester);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetDestination(FVector Destination, class APlayerCharacter* InCalledBy);
     void Set_Controlled_by_Drop_Ship(bool Control);
     void GotoDropship(FVector Pos);
@@ -123,7 +123,7 @@ public:
     void HandlePhotosensitivity();
     void UpdateStopCallRequests();
     void CheckRockEnemiesWarning();
-    class UDialogDataAsset* GetCallingShout() const;
+    UE_BLUEPRINT_CALLABLE class UDialogDataAsset* GetCallingShout() const;
 private:
     struct UeMarkers
     {

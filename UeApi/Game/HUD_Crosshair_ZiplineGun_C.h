@@ -34,7 +34,7 @@ public:
     FLinearColor BaseColor;
     void ExecuteUbergraph_HUD_Crosshair_ZiplineGun(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetText(FText Value);
+    UE_PRIVATE void SetText(FText Value);
     void FailMessage(FText Msg);
     void DistanceMessage(float Dist, bool InRange);
     void ClearMessage();

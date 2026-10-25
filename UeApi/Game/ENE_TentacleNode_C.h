@@ -29,15 +29,15 @@ public:
     float ParticleDistance;
     TArray<FVector> SplineLocations;
     void ExecuteUbergraph_ENE_TentacleNode(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void CacheSplineLocations();
     UE_MULTICAST UE_RELIABLE void SpawnCableParticleEffects();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__ENE_TentacleNode_Health_K2Node_ComponentBoundEvent_1_DamageSig__DelegateSignature(float amount);
     void ReceiveDestroyed();
     void BndEvt__ENE_TentacleNode_Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void GetLocationsEqualDistanceAlongSpline(float Distance, TArray<FVector>& Locations);
+    UE_BLUEPRINT_PURE void GetLocationsEqualDistanceAlongSpline(float Distance, TArray<FVector>& Locations);
 private:
     struct UeMarkers
     {

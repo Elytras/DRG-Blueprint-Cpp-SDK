@@ -34,14 +34,14 @@ public:
     void TestLatjoin();
     void CharacterSelected();
     void LogState();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnLateJoinFinished();
     void OnLoaded_97A4F0694E71C770F24EA6A654B14857(TSubclassOf<class UObject> Loaded);
     void OnLoaded_E2B28351414D5B2A20966496F0955946(TSubclassOf<class UObject> Loaded);
     void SpawnPlayerDirectly(class AController* Player);
     void SpawnPlayerInPod(class AFSDPlayerController* Player);
-    void GetRessuplySpawnClass(class UClass*& PodSpawnClass_0);
-    void GetRessupyBeaconClass(class UClass*& PodSpawnClass_0);
+    UE_BLUEPRINT_PURE void GetRessuplySpawnClass(class UClass*& PodSpawnClass_0);
+    UE_BLUEPRINT_PURE void GetRessupyBeaconClass(class UClass*& PodSpawnClass_0);
     UE_PURE TArray<FCreditsReward> GetDeepDiveCreditsReward(int StagesCompleted, int goldCollected);
 private:
     struct UeMarkers

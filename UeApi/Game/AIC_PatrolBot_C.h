@@ -22,7 +22,7 @@ public:
     void ActivateDrone();
     void Hacked(class APlayerCharacter* HackingPlayer);
     void SetReadyToHack(bool boolValue);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void SetActive(bool boolValue);
 private:
     struct UeMarkers

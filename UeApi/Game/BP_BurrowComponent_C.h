@@ -38,7 +38,7 @@ public:
     UE_AUTHORITY_ONLY void Unburrow(class UAnimMontage* customMontage);
     void PlayUnburrow(class UAnimMontage* MontageToPlay);
     void PlayBurrow(class UAnimMontage* MontageToPlay);
-    void GetPawn(class AEnemyDeepPathfinderCharacter*& AsEnemy_Deep_Pathfinder_Character);
+    UE_BLUEPRINT_PURE void GetPawn(class AEnemyDeepPathfinderCharacter*& AsEnemy_Deep_Pathfinder_Character);
     void OnRep_IsBurrowed();
 private:
     struct UeMarkers

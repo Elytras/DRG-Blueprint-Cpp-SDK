@@ -78,10 +78,10 @@ public:
     FText DefaultSubtitle;
     class UAudioComponent* IdleAudioComponent;
     void ExecuteUbergraph_HackingTool_Chip(int EntryPoint);
-    void ReceiveActionClick();
-    void ReceiveHackingToolUnequipped();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE void ReceiveActionClick();
+    UE_PROTECTED void ReceiveHackingToolUnequipped();
     void BndEvt__Interface_Progress_K2Node_ComponentBoundEvent_0_OnNextStage__DelegateSignature(int InNewStage, int InTotalStages);
-    void ReceiveHackingStarted();
+    UE_PROTECTED void ReceiveHackingStarted();
     void Shake(class UWidgetAnimation* InContinueAnimation, int NumLoopsToPlay, float PlaybackSpeed);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Finished_303E4D8F4F741AD74469EFA5F9ACB30F();
@@ -100,9 +100,9 @@ public:
     void SetCameraPosition(FVector2D CameraCenter);
     void SetChipPosition(float InAngle, float InDistance);
     void SetDotAngle(float InAngle);
-    void HandleClick();
-    void SetHorizontalTailSize(float TailSize);
-    void SetVerticalTailSize(float TailSize);
+    UE_PRIVATE void HandleClick();
+    UE_PRIVATE void SetHorizontalTailSize(float TailSize);
+    UE_PRIVATE void SetVerticalTailSize(float TailSize);
     void SetFinalPanAndZoom(float InFinalPanAndZoom);
     void SetColoredGridProgress(float InValue);
     void PlayAudioOnDevice(class USoundCue* InCue);

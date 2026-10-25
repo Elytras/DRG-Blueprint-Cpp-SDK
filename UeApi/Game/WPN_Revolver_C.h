@@ -39,13 +39,13 @@ public:
     void ExecuteUbergraph_WPN_Revolver(int EntryPoint);
     void OnSkinChanged(class USkinEffect* Skin);
     void OnSpreadChanged_Event_0(float HorizontalSpread, float VerticalSpread, bool isAtRest);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
-    class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
 private:
     struct UeMarkers
     {

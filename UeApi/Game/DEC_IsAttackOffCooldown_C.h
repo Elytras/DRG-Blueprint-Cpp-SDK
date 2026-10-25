@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/DEC_IsAttackOffCooldown", "DEC_IsAttackOffCooldown_C");
     bool Any;
     FName AttackName;
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTwins

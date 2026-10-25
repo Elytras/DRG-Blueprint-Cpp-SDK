@@ -81,7 +81,7 @@ public:
     void OnScannerAssembled(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__BP_Gem_HotCold_Target_CalldownScannerUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ShowOnScanner();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpawnerScannerPod(const FVector& Location);
     void OnRep_DugFree();
     void OnRep_HasConnected();

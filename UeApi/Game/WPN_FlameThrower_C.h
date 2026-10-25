@@ -48,21 +48,21 @@ public:
     void OnChargeEnd();
     void OnChargeBegin();
     void CustomEvent1(class UItemUpgrade* Event);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__WPN_FlameThrower_ProjectileLancher_K2Node_ComponentBoundEvent_0_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
     void OnSkinChanged(class USkinEffect* Skin);
     void BndEvt__WeaponImpact_K2Node_ComponentBoundEvent_1_HightAccelerationSignature__DelegateSignature();
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
-    void Recieve_UpdateMeshses(bool IsFirstPerson_0);
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void Recieve_UpdateMeshses(bool IsFirstPerson_0);
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
-    void RecieveUnequipped();
-    void RecieveEquipped();
-    void UserConstructionScript();
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetTorchTimeoutHack();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
-    class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
 private:
     struct UeMarkers
     {

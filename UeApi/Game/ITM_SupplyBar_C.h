@@ -35,7 +35,7 @@ public:
     class UTexture2D* SupplyIcon;
     void ExecuteUbergraph_ITM_SupplyBar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(float Progress__0_1_);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Progress__0_1_);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

@@ -55,14 +55,14 @@ public:
     void ExecuteUbergraph_PRJ_ZipLineGun(int EntryPoint);
     void BndEvt__PRJ_ZipLineGun_ZipLineUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     UE_MULTICAST void All_ConnectWithZipLine(FVector Location, float VerticalSpeed);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     UE_MULTICAST UE_RELIABLE void SetCollider();
-    void OnShoot(FVector Origin, FVector EndLocation);
+    UE_PROTECTED void OnShoot(FVector Origin, FVector EndLocation);
     void On_Hit();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void Finish_Zip_Line();
-    void GetNearestPointOnLine(FVector WorldPosition, FVector LineStart, FVector LineEnd, FVector& NearestLinePosition);
+    UE_BLUEPRINT_PURE void GetNearestPointOnLine(FVector WorldPosition, FVector LineStart, FVector LineEnd, FVector& NearestLinePosition);
 private:
     struct UeMarkers
     {

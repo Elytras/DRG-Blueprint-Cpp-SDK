@@ -85,7 +85,7 @@ public:
     void ExecuteUbergraph_BP_LureTarget(int EntryPoint);
     void BndEvt__BP_LureTarget_FakeFall_K2Node_ComponentBoundEvent_0_BoolDelegate__DelegateSignature(bool boolValue);
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__FriendlyHealth_K2Node_ComponentBoundEvent_3_HealthChangedSig__DelegateSignature(float Health);
     void BndEvt__FriendlyHealth_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void GlitchAnimationRate__UpdateFunc();
@@ -98,7 +98,7 @@ public:
     void Disappear__FinishedFunc();
     void GrowHologramZ__UpdateFunc();
     void GrowHologramZ__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetScaleLerpFromRandom(float ZRandomConnection, float YRandomConnection, float XRandomConnection);
     void SetScaleUpLerp(float Z, float Y, float X);
     void SetScaleDownLerp(float Z, float Y, float X);

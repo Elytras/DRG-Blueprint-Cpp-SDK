@@ -50,14 +50,14 @@ public:
     void SpawnEventBonusWindow(class UClass* Class_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void OnXPChanged();
     void OnSeasonCompleted_Closed(class UWindowWidget* Window);
     void CheckShowSeasonCompleted();
     void BndEvt__WND_SeasonOverview_WND_SeasonLevels_K2Node_ComponentBoundEvent_0_RewardClaimed__DelegateSignature(class UReward* Reward);
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void Scroll_with_controller(float Pitch, float Yaw);
-    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_PURE int CaclFirstLevel();
     void ScrollRow(float Value, bool& didScroll);
 private:

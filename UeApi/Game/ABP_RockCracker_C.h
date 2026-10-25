@@ -40,7 +40,7 @@ public:
     FAnimNode_StateMachine AnimGraphNode_StateMachine;
     bool Landed;
     void ExecuteUbergraph_ABP_RockCracker(int EntryPoint);
-    void OnLanded();
+    UE_BLUEPRINT_CALLABLE void OnLanded();
     void BlueprintBeginPlay();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_RockCracker_AnimGraphNode_TransitionResult_1628EA1D4047D0802177A2ABB12B8BB8();
     void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_RockCracker_AnimGraphNode_TransitionResult_4F363A124EA775D40E57C88C36C13789();

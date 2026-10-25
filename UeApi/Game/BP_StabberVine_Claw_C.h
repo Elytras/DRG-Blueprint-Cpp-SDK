@@ -28,7 +28,7 @@ public:
     void ExecuteUbergraph_BP_StabberVine_Claw(int EntryPoint);
     void AddImpulse();
     void dissolve();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

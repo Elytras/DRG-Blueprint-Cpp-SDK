@@ -65,9 +65,9 @@ public:
     void UpdateProgressBarAndTimer();
     void Turn_On_Light_Cone();
     void UpdateState();
-    void ReceiveStateUpdated();
+    UE_PROTECTED void ReceiveStateUpdated();
     void SetAllLightsMaterial(class UMaterialInterface* Material);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void TurnOnLight__UpdateFunc();
     void TurnOnLight__FinishedFunc();
     void SetCableConnected(bool InConnected);

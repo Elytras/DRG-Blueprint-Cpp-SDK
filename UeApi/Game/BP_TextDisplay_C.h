@@ -23,7 +23,7 @@ public:
     FText Text;
     FSlateFontInfo NewVar_0;
     void ExecuteUbergraph_BP_TextDisplay(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

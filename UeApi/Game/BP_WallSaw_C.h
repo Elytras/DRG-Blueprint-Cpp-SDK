@@ -51,10 +51,10 @@ public:
     class UParticleSystem* SlicingOnImpactParticles;
     FRotator StartRotation;
     void ExecuteUbergraph_BP_WallSaw(int EntryPoint);
-    void GrazeOverlapCallback(class AActor* Actor, class UPrimitiveComponent* prim);
+    UE_PROTECTED void GrazeOverlapCallback(class AActor* Actor, class UPrimitiveComponent* prim);
     void DestroySelf();
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpawnWobble__UpdateFunc();
     void SpawnWobble__FinishedFunc();
 private:

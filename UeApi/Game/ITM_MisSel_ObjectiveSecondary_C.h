@@ -24,7 +24,7 @@ public:
     class UImage* Image_0;
     void ExecuteUbergraph_ITM_MisSel_ObjectiveSecondary(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UClass* Objective, float missionLength, float HazardBonus);
+    UE_BLUEPRINT_CALLABLE void SetData(class UClass* Objective, float missionLength, float HazardBonus);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

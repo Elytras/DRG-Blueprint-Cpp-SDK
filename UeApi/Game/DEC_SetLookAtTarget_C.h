@@ -20,9 +20,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FBlackboardKeySelector TargetKey;
     void ExecuteUbergraph_DEC_SetLookAtTarget(int EntryPoint);
-    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
-    void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
+    UE_PROTECTED void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Decorators

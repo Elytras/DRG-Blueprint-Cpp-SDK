@@ -46,7 +46,7 @@ public:
     void OnDonkeyChanged(class AMolly* InDonkey);
     void SetPlayerState(class APlayerState* InPlayerState);
     void SetDonkey(class AMolly* InDonkey);
-    void GetIsPlayerCalling(bool& OutIsCalling);
+    UE_BLUEPRINT_PURE void GetIsPlayerCalling(bool& OutIsCalling);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Team_Display

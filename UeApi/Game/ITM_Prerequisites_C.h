@@ -32,7 +32,7 @@ public:
     void CreateAnyRequirement(class UCampaignRequirement* Requirenent, class UCampaign* Campaign_0);
     void CreateCampaignCompletedRequirement(class UCamapaignCompletedRequirement* CampaignReq, class UCampaign* Campaign_0);
     void CreateValidSeedRequirement(class UCampaignRequirement* Requirement, class UCampaign* Campaign_0);
-    void SetData(class UCampaign* Campaign_0, bool& RequirementsMet);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0, bool& RequirementsMet);
 };
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign

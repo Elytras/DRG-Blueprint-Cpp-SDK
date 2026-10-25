@@ -41,7 +41,7 @@ public:
     void SetAutoWrapText(bool AutoTextWrap_0);
     void SetWrapTextAt(float WrapTextAt_0);
     void SetWrappingPolicy(TEnum<ETextWrappingPolicy> WrappingPolicy_0);
-    void GetText(FText& Text_0);
+    UE_BLUEPRINT_PURE void GetText(FText& Text_0);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Standard

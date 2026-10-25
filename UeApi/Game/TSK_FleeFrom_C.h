@@ -26,10 +26,10 @@ public:
     float WaitAfterFleeing;
     float RandomWaitTime;
     void ExecuteUbergraph_TSK_FleeFrom(int EntryPoint);
-    void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void RefreshDest();
     void PathDone(bool success);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void OutsideDanger(class AActor* Pawn, bool& res);
     void SetFleeFalse(class AController* Controller);
     UE_PURE FVector GetDanagerLocation();

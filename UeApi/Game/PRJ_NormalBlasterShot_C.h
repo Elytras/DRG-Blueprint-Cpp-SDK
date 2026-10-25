@@ -34,7 +34,7 @@ public:
     bool HotPlasma;
     void ExecuteUbergraph_PRJ_NormalBlasterShot(int EntryPoint);
     void BndEvt__CollisionComponent_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void CustomEvent(class UItemUpgrade* Event);
+    UE_PROTECTED void CustomEvent(class UItemUpgrade* Event);
     UE_MULTICAST void DoEffects(FVector Location, FVector Normal);
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void MakeBouncy();

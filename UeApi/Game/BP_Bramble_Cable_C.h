@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     void ExecuteUbergraph_BP_Bramble_Cable(int EntryPoint);
-    void OnUpdateMaterials();
+    UE_PROTECTED void OnUpdateMaterials();
 private:
     struct UeMarkers
     {

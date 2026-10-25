@@ -56,13 +56,13 @@ public:
     void UpdateShadows();
     void Deploy();
     void Sentry_Gun_Ready();
-    void ReceiveBeginPlay();
-    void AmmoSpent();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void AmmoSpent();
     void Undeploy__UpdateFunc();
     void Undeploy__FinishedFunc();
     void DeployTimeline__UpdateFunc();
     void DeployTimeline__FinishedFunc();
-    void SignOrZero(float Value, float& Sign);
+    UE_BLUEPRINT_PURE void SignOrZero(float Value, float& Sign);
     void OnRep_IsDeployed();
     void ConditionallyEnableShadows();
     UE_PURE float GetDeployProgress() const;

@@ -17,9 +17,9 @@ public:
     UE_CLASS("/Game/Character/States/BP_ZipLineState", "BP_ZipLineState_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_ZipLineState(int EntryPoint);
-    void ReceiveSpeedBoostDeactivated();
-    void ReceiveSpeedBoostActivated();
-    FVector GetJumpVector(FVector LookVector, FVector CurrentVelocity);
+    UE_PROTECTED void ReceiveSpeedBoostDeactivated();
+    UE_PROTECTED void ReceiveSpeedBoostActivated();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE FVector GetJumpVector(FVector LookVector, FVector CurrentVelocity);
 };
 
 }}}   // namespace Game::Character::States

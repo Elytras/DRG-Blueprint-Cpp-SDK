@@ -55,7 +55,7 @@ public:
     void OnSuccess_01B969514F5C76910A60AC87B4757BE7();
     void OnFailure_01B969514F5C76910A60AC87B4757BE7();
     void SetValues(int PlayerRank, int Credits, int PromotionRank, FString slotName, bool CurrentSave, class UFSDSaveGame* SaveGameInstance);
-    class UWidget* CreateToolTipWidget();
+    UE_BLUEPRINT_PURE class UWidget* CreateToolTipWidget();
 };
 
 }}}   // namespace Game::UI::Menu_RestoreSave

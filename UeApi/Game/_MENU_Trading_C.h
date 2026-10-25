@@ -48,11 +48,11 @@ public:
     void BndEvt__WND_DailyDeal_K2Node_ComponentBoundEvent_2_OnDealBought__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Back();
-    void OnShown();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_PROTECTED void OnShown();
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Trading

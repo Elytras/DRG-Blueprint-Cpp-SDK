@@ -56,13 +56,13 @@ public:
     float SoloActivationDuration;
     void ExecuteUbergraph_BP_LaserEventStarter(int EntryPoint);
     void BndEvt__BP_LaserEventStarter_Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
-    void OnEventFinished(bool eventSuccess);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void OnEventFinished(bool eventSuccess);
     void OnOpenedForUse(bool wasOpened);
-    void OnEventTriggered();
+    UE_BLUEPRINT_CALLABLE void OnEventTriggered();
     void OnEventProgress(float Progress);
     void OnEventOpened();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UsedEffects();
     bool SetupEvent(class AGameEvent* GameEvent);
     bool AdvanceOneObjective();

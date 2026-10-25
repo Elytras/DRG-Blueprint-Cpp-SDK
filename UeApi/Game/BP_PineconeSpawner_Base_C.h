@@ -39,7 +39,7 @@ public:
     TArray<class UStaticMeshComponent*> DeadCones;
     TArray<class UStaticMeshComponent*> AliveCones;
     void ExecuteUbergraph_BP_PineconeSpawner_Base(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void SpawnPinecone(class UStaticMeshComponent* PineCone);

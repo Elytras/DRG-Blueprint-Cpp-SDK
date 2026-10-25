@@ -16,7 +16,7 @@ class LIB_LoaderImages_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/Maps/UILevels/ScreenShots/LIB_LoaderImages", "LIB_LoaderImages_C");
-    static void GetRandomSpacerigLoadImagePath(class UObject* __WorldContext, TSoftObjectPtr<class UTexture>& Output);
+    UE_BLUEPRINT_PURE static void GetRandomSpacerigLoadImagePath(class UObject* __WorldContext, TSoftObjectPtr<class UTexture>& Output);
 };
 
 }}}}   // namespace Game::Maps::UILevels::ScreenShots

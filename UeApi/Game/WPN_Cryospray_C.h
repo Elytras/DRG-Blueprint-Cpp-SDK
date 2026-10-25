@@ -44,17 +44,17 @@ public:
     class UParticleSystem* LaunchProjectileParticlesTP;
     void ExecuteUbergraph_WPN_Cryospray(int EntryPoint);
     void CustomEvent1(class UItemUpgrade* Event);
-    void OnPreProjectileLaunch();
-    void ReceiveBeginPlay();
-    void OnProjectileLaunched(const FVector& Location);
+    UE_PROTECTED void OnPreProjectileLaunch();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnProjectileLaunched(const FVector& Location);
     void Toggle_RepressurerisingFX(bool On);
-    void RecieveUnequipped();
-    void RecieveEquipped();
-    void ReceiveRepressurisingChanged(bool Value);
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void ReceiveRepressurisingChanged(bool Value);
     void Update_Ammo_Display();
     void BndEvt__Aggregator_K2Node_ComponentBoundEvent_0_AmountChangedSignature__DelegateSignature(int amount);
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

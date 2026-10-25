@@ -19,8 +19,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     TArray<class UAnimMontage*> SPMontages;
     void ExecuteUbergraph_BP_Boss_AoEAttack(int EntryPoint);
-    void Receive_OnPerformAttack();
-    class UAnimMontage* SelectMontage() const;
+    UE_PROTECTED void Receive_OnPerformAttack();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UAnimMontage* SelectMontage() const;
 };
 
 }}}}}   // namespace Game::Enemies::Spider::TankBoss::BossTank

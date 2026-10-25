@@ -40,8 +40,8 @@ public:
     class UPawnSensingComponent* PawnSensing;
     class USphereComponent* Sphere;
     void ExecuteUbergraph_ENE_Shredder_Base(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
 private:
     struct UeMarkers

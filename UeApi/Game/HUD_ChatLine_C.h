@@ -41,10 +41,10 @@ public:
     UE_COSMETIC void Construct();
     void SetMessage(TEnum<EChatMessageType> MsgType, FString SenderStr, TEnum<EChatSenderType> SenderType, FString MsgStr);
     void UpdateOpacity();
-    void UpdateUserIcon(TEnum<EChatMessageType> MessageType, TEnum<EChatSenderType> SenderType);
-    void StyledText(FText style_Name, FText Text, FText& Result);
-    void EncloseText(FString Pre, FText Text, FString Post, FText& Result);
-    void RemoveTags(FString Source, FString& Result);
+    UE_PRIVATE void UpdateUserIcon(TEnum<EChatMessageType> MessageType, TEnum<EChatSenderType> SenderType);
+    UE_BLUEPRINT_PURE void StyledText(FText style_Name, FText Text, FText& Result);
+    UE_BLUEPRINT_PURE void EncloseText(FString Pre, FText Text, FString Post, FText& Result);
+    UE_BLUEPRINT_PURE void RemoveTags(FString Source, FString& Result);
     void ChangeFontSize(int InSize);
 };
 

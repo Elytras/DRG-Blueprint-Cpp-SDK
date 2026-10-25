@@ -35,8 +35,8 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Reset();
     void OnCheckedChanged(Check_ServerWorkEnvironment_C* CheckBox, class UDifficultySetting* Difficulty, bool IsChecked);
-    void Add_Work_Environment(class UDifficultySetting* Difficulty, Check_ServerWorkEnvironment_C*& OutWidget, bool& OutIsChecked);
-    void UpdateSubheader();
+    UE_PRIVATE void Add_Work_Environment(class UDifficultySetting* Difficulty, Check_ServerWorkEnvironment_C*& OutWidget, bool& OutIsChecked);
+    UE_PRIVATE void UpdateSubheader();
     void OpenMenu(bool Open);
 private:
     struct UeMarkers

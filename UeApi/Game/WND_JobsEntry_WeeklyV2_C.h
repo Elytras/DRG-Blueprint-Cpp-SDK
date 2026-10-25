@@ -50,7 +50,7 @@ public:
     UE_PURE bool IsActiveCampaign();
     void SetInfo();
     UE_PURE bool VisibleAndEnabled(class UWidget* Widget);
-    void SetData(class UCampaign* Campaign_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0);
 private:
     struct UeMarkers
     {

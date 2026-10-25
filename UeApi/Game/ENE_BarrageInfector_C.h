@@ -41,14 +41,14 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_ENE_BarrageInfector(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnRep_Target();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnRep_Target();
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__PawnSensing_K2Node_ComponentBoundEvent_0_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     void BndEvt__Health_K2Node_ComponentBoundEvent_31_HealthChangedSig__DelegateSignature(float Health_0);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
 private:
     struct UeMarkers
     {

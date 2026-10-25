@@ -93,7 +93,7 @@ public:
     void TurnOff();
     void CancelCurrentWave();
     void UpdateState();
-    void ReceiveDataCellPickedUp();
+    UE_PROTECTED void ReceiveDataCellPickedUp();
     void ShowDamageZone();
     void Setup_WeakPoints();
     void TimeProgressChanged_Event(float CurrentProgress);
@@ -105,7 +105,7 @@ public:
     void FinishEventUI();
     void OnEventFinished(bool eventSuccess);
     void OnEventTriggered();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void StartEventUI();
     void AnimDamageZone__UpdateFunc();
     void AnimDamageZone__FinishedFunc();

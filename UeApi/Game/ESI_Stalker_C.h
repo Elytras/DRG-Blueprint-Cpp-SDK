@@ -35,7 +35,7 @@ public:
     float ToggleSpeed;
     void ExecuteUbergraph_ESI_Stalker(int EntryPoint);
     void ToggleCloak();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_2__UpdateFunc();
     void Timeline_2__FinishedFunc();
     void Timeline_1__UpdateFunc();

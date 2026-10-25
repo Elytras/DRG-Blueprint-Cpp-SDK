@@ -28,7 +28,7 @@ public:
     bool UseFromActor;
     float SkipChance;
     void ExecuteUbergraph_SER_GetEnemyTarget_Chance(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
     void GetEnemyTargetChance(class AActor* FromAcor);
 private:
     struct UeMarkers

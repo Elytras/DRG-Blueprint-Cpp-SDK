@@ -22,7 +22,7 @@ public:
     bool FoundPowerstation;
     void ExecuteUbergraph_Tutorial_Hint_Sabotage_FollowTheCables(int EntryPoint);
     void FacilityWasFound();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 private:
     struct UeMarkers
     {

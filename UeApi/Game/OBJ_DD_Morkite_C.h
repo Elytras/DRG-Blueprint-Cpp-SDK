@@ -14,7 +14,7 @@ class OBJ_DD_Morkite_C : public ::Game::GameElements::Objectives::OBJ_Extraction
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepDive/OBJ_DD_Morkite", "OBJ_DD_Morkite_C");
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepDive

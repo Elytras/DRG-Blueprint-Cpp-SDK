@@ -23,7 +23,7 @@ public:
     Lore_Content_ProgressBar_C* Bar_Speed;
     Lore_Content_Weaknesses_C* Lore_Content_Resistances;
     Lore_Content_Weaknesses_C* Lore_Content_Weaknesses;
-    void SetData(class UEnemyMinersManualData* enemy, const TArray<FDamageTypeDescription>& WeaknessesIcons, const TArray<FDamageTypeDescription>& ResistancesIcons);
+    UE_BLUEPRINT_CALLABLE void SetData(class UEnemyMinersManualData* enemy, const TArray<FDamageTypeDescription>& WeaknessesIcons, const TArray<FDamageTypeDescription>& ResistancesIcons);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

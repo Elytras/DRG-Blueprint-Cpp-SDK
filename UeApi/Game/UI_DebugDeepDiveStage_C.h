@@ -38,17 +38,17 @@ public:
     void SetTemplate(class UDeepDiveTemplate* Template_0);
     void BndEvt__UI_DebugDeepDiveStage_MissionType_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetSelectedMissionType(class UMissionTemplate*& Template_0);
-    void GetComplexity(class UMissionComplexity*& Output);
-    void GetDuration(class UMissionDuration*& Output);
-    void GetAnomaly(class UMissionMutator*& Output);
-    void Get_Warning_A(class UMissionWarning*& Output);
+    UE_BLUEPRINT_PURE void GetSelectedMissionType(class UMissionTemplate*& Template_0);
+    UE_BLUEPRINT_PURE void GetComplexity(class UMissionComplexity*& Output);
+    UE_BLUEPRINT_PURE void GetDuration(class UMissionDuration*& Output);
+    UE_BLUEPRINT_PURE void GetAnomaly(class UMissionMutator*& Output);
+    UE_BLUEPRINT_PURE void Get_Warning_A(class UMissionWarning*& Output);
     void GenerateMissionTypeOptions();
     void GenerateMutatorOptions();
     void GenerateWarningAOptions();
     void RefreshComplexity();
-    void GetDeepDiveStage(FDeepDiveTesterItem& Stage_0);
-    void GetDDSecondary(class UClass*& Output);
+    UE_BLUEPRINT_PURE void GetDeepDiveStage(FDeepDiveTesterItem& Stage_0);
+    UE_BLUEPRINT_PURE void GetDDSecondary(class UClass*& Output);
     void RefreshDDSecondaries();
 private:
     struct UeMarkers

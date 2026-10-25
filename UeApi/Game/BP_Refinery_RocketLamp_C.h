@@ -27,7 +27,7 @@ public:
     TEnum<ERefineryState> State;
     void ExecuteUbergraph_BP_Refinery_RocketLamp(int EntryPoint);
     void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

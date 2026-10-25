@@ -50,7 +50,7 @@ public:
     class AStaticMeshActor* SM_Plague_Soaper2_17_EdGraph_0_RefProperty;
     class AStaticMeshActor* SM_Plague_Soaper9_EdGraph_0_RefProperty;
     void ExecuteUbergraph_SLVL_SpaceRig_Season04(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_SpawnSeed();
     void Unhide(FRandomStream& RandomStream, const TArray<class AStaticMeshActor*>& Meshes, int Number_To_Unhide);
 private:

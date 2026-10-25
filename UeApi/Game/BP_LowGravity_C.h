@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Mutators/LowGravity/BP_LowGravity", "BP_LowGravity_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_LowGravity(int EntryPoint);
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::LowGravity

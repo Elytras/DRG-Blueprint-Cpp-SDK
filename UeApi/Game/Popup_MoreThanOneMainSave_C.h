@@ -38,7 +38,7 @@ public:
     FString TmpSaveslot;
     void RemoveTempSave();
     void CreateTempSave();
-    void TransformSavenameByBranch(FString InSaveName, FString& Savename);
+    UE_BLUEPRINT_PURE void TransformSavenameByBranch(FString InSaveName, FString& Savename);
     void CreateMainSaveslots();
     void Reset_Color_on_Non_Selected_Save(class UFSDSaveGame* SaveSlot);
     void BindSaveslotEvents(ITM_SaveSlot_Entry_C* SaveslotWidget);

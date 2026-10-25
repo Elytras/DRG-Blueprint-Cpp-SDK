@@ -28,11 +28,11 @@ public:
     void FinalEvent();
     void OnAllDwarvesDown();
     void SpawnGarage();
-    void OnMuleDied(class UHealthComponentBase* HealthComponent);
-    void OnEscortMuleSpawnedEvent();
+    UE_PROTECTED void OnMuleDied(class UHealthComponentBase* HealthComponent);
+    UE_PROTECTED void OnEscortMuleSpawnedEvent();
     void ReceiveBeginPlay();
-    FText GetObjectiveDescription(float missionLength);
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
 private:

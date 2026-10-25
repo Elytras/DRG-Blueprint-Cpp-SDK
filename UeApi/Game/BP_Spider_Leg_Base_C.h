@@ -24,7 +24,7 @@ public:
     class UBoxComponent* Box;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Spider_Leg_Base(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

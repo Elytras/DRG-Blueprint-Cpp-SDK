@@ -21,7 +21,7 @@ public:
     class UTextBlock* DATA_ObjectiveResource;
     class UImage* ICON_ObjectiveResource;
     class UHorizontalBox* ObjectiveMarker;
-    void SetData(class UTexture2D* Texture, FText InText);
+    UE_BLUEPRINT_CALLABLE void SetData(class UTexture2D* Texture, FText InText);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

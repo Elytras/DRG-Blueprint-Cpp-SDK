@@ -25,7 +25,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     void ExecuteUbergraph_BP_BhaBarnacleWorm2(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

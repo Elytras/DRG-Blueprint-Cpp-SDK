@@ -22,7 +22,7 @@ public:
     class UImage* FadeInImage;
     void ExecuteUbergraph_UI_MediaPlayer(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveStateChanged(TEnum<EMediaPlayerState> InState);
+    UE_PROTECTED void ReceiveStateChanged(TEnum<EMediaPlayerState> InState);
     UE_COSMETIC void Construct();
     void UpdateState();
 };

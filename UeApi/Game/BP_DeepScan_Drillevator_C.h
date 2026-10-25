@@ -163,10 +163,10 @@ public:
     TArray<class APlayerCharacter*> DeadPlayers;
     void ExecuteUbergraph_BP_DeepScan_Drillevator(int EntryPoint);
     void OnEngineStateChanged(TEnum<EDrillevatorEngineState> NewState, TEnum<EDrillevatorEngineState> oldState, BP_DrillevatorEngine_C* Engine);
-    void OnCloseToTargetDepth();
+    UE_PROTECTED void OnCloseToTargetDepth();
     void OnTriggerBoscoTutorialForMorkiteSeeds();
     void BndEvt__KillSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void OnMovingChanged(bool IsMoving);
+    UE_PROTECTED void OnMovingChanged(bool IsMoving);
     void CacheEngines();
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__TriggerOutline_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -185,8 +185,8 @@ public:
     void BndEvt__BP_DeepScan_Drillevator_EquipJetBootsUsable_Right_K2Node_ComponentBoundEvent_4_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__BP_DeepScan_Drillevator_EquipJetBootsUsable_Left_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__BP_DeepScan_Drillevator_StartEngineUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void OnEnterState(TEnum<EDrillevatorState> NewState);
-    void OnExitState(TEnum<EDrillevatorState> oldState);
+    UE_PROTECTED void OnEnterState(TEnum<EDrillevatorState> NewState);
+    UE_PROTECTED void OnExitState(TEnum<EDrillevatorState> oldState);
     void ActivateReturnMechanic();
     void BndEvt__BP_DeepScan_Drillevator_SingleUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void InitialDrillingStart();
@@ -197,21 +197,21 @@ public:
     void ToggleElevatorPathfinding(bool PathfindingActive);
     void StartMoving();
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void StartEngine__UpdateFunc();
     void StartEngine__FinishedFunc();
     void RailingTimeline__UpdateFunc();
     void RailingTimeline__FinishedFunc();
     void SetEngineStates(BP_DrillevatorEngine_C* Exclude, TEnum<EDrillevatorEngineState> InState);
     void UpdateMovementSpeed(float SpeedMode);
-    void AreAllEnginesOn(bool& AllOn);
+    UE_BLUEPRINT_PURE void AreAllEnginesOn(bool& AllOn);
     void SetupUsables();
     void OnRep_LeftJetBootsActive();
     void OnRep_RightJetBootsActive();
     void TryAddJetBoots(class AActor* Actor, class USingleUsableComponent* Usable);
     void OnRep_ReadyToStart();
     void DisableCarversOnConsoles();
-    class USkeletalMeshComponent* GetCenterEngineComponent() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetCenterEngineComponent() const;
 private:
     struct UeMarkers
     {

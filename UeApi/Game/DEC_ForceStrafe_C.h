@@ -19,9 +19,9 @@ public:
     UE_CLASS("/Game/Enemies/Crawler/DEC_ForceStrafe", "DEC_ForceStrafe_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_DEC_ForceStrafe(int EntryPoint);
-    void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, TEnum<EBTNodeResult> NodeResult);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::Enemies::Crawler

@@ -36,7 +36,7 @@ public:
     void OnIntroStarted();
     UE_COSMETIC void Construct();
     void Show(class USchematic* InSchematic);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

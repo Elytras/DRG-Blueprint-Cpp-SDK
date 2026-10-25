@@ -49,7 +49,7 @@ public:
     void Attach(class AActor* ParentActor, class USceneComponent* ParentComponent_0, FName ParentSocketName, bool CanRetrieve);
     void Detach_Axe();
     void PickUpAxe(class AThrownGrenadeItem* ThrownGrenadeItem);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_AxeGrenadeItem();
     void OnRep_StandOnMe();
     void OnRep_SimulateAxePhysics();

@@ -21,7 +21,7 @@ public:
     float MinimumAmount;
     float DelayBeforeActive;
     void ExecuteUbergraph_Tutorial_Hint_Nitra(int EntryPoint);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
     void OnIncreased_Event(class UCappedResource* Resource_0, float amount);
 };
 

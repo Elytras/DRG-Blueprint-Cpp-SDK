@@ -42,7 +42,7 @@ public:
     void SpawnFromQueue();
     void SpawnActor(class UEnemyDescriptor* Class_0);
     void Spawn();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     bool CanSpawn(class UEnemyDescriptor* EnemyClass);
     void SetInactive(class AActor* Target);
     void SetReferenceToSpawner(class AActor* Actor);

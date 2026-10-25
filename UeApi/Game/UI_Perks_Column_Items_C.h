@@ -38,7 +38,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void AddPerk(class UPerkAsset* Perk, class UPerkAsset*& OutPerk, UI_Perks_Item_C*& OutWidget);
     void RefreshTier();
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::KPI

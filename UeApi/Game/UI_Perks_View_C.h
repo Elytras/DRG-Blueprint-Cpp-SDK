@@ -53,7 +53,7 @@ public:
     void BndEvt__UI_Perks_Buy_K2Node_ComponentBoundEvent_0_OnPerkClaimed__DelegateSignature();
     void OnPerkClicked_Event(UI_Perks_Item_C* PerkWidget);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SelectPerkWidget(UI_Perks_Item_C* PerkWidget);
+    UE_PRIVATE void SelectPerkWidget(UI_Perks_Item_C* PerkWidget);
     void HandleKeyEvent(FKeyEvent InKeyEvent, bool InUp, bool& OutHandled);
     void HandleMouseEvent(const FPointerEvent& InMouseEvent, bool InUp, bool& OutHandled);
     void SetColors();

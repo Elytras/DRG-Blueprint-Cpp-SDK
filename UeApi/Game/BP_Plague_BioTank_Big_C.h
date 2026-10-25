@@ -46,9 +46,9 @@ public:
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player, bool ShouldReact, bool ShouldStartMC);
     void OnKnock(class APlayerCharacter* Player);
     void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void UpdateMeshesForHolidays();
-    void GetSeasonBarrelSpawnChance(float& Out);
+    UE_BLUEPRINT_PURE void GetSeasonBarrelSpawnChance(float& Out);
 private:
     struct UeMarkers
     {

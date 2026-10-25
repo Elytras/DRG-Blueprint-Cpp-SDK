@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_BP_ScrabNestingGrounds(int EntryPoint);
     void SpawnScrabs();
     void StartTimer();
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ScrabNestingGrounds

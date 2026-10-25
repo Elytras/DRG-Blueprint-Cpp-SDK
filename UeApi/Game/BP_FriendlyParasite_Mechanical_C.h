@@ -29,7 +29,7 @@ public:
     FVector CurrentDireciton;
     void ExecuteUbergraph_BP_FriendlyParasite_Mechanical(int EntryPoint);
     void TurnTowardsMotion();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

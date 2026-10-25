@@ -20,7 +20,7 @@ public:
     FBlackboardKeySelector Key;
     bool Value;
     void ExecuteUbergraph_TSK_SetBool(int EntryPoint);
-    void ReceiveExecute(class AActor* OwnerActor);
+    UE_PROTECTED void ReceiveExecute(class AActor* OwnerActor);
 };
 
 }}}   // namespace Game::AI::Tasks

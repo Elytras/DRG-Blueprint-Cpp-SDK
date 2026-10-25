@@ -23,7 +23,7 @@ public:
     bool MustBeAlive;
     FBlackboardKeySelector PlayerKey;
     void ExecuteUbergraph_SER_FindPlayer(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
     void FindNearestPlayer(class AActor* from);
 };
 

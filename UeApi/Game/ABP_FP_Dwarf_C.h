@@ -122,8 +122,8 @@ public:
     void AnimNotify_Generic();
     void AnimNotify_EndBuild();
     void AnimNotify_BeginBuild();
-    void StopInspectWeapon();
-    void StartInspectWeapon();
+    UE_PROTECTED void StopInspectWeapon();
+    UE_PROTECTED void StartInspectWeapon();
     void AnimNotify_Mine();
     void AnimGraph(FPoseLink& AnimGraph_0);
 };

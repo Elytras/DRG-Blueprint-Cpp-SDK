@@ -73,8 +73,8 @@ public:
     void BndEvt__BTN_Saves_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
     void UpdateTabs(TEnum<EFSDInputSource> InputSource);
     void BndEvt__BTN_Layout_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void OnShown();
-    void OnClosed();
+    UE_PROTECTED void OnShown();
+    UE_PROTECTED void OnClosed();
     void BndEvt__BTN_Privacy_K2Node_ComponentBoundEvent_17_OnClicked__DelegateSignature();
     void BndEvt__BTN_Gameplay_K2Node_ComponentBoundEvent_29_OnClicked__DelegateSignature();
     void BndEvt__BTN_UI_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature();
@@ -85,7 +85,7 @@ public:
     void SelectFirstTab();
     void SelectTab(int Index_0, bool WithSound);
     void DeselectTab(Basic_ButtonTab_C* Tab);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void ReplaceGFXOptionsWithConsoleGFOptions();
     void HandleKeyInput(FKeyEvent InKeyEvent, bool InPressed, FEventReply& OutReply);
 };

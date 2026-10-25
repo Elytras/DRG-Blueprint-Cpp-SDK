@@ -24,7 +24,7 @@ public:
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
     class USceneComponent* DefaultRoot;
     class UMaterialInstanceDynamic* MonitorMaterial;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetBackgroundColor(FLinearColor Value);
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);

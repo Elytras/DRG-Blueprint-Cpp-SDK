@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Tank/ShieldTank/AIC_Spider_Tank_Shield", "AIC_Spider_Tank_Shield_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Tank_Shield_C;
     void ExecuteUbergraph_AIC_Spider_Tank_Shield(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

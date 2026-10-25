@@ -37,11 +37,11 @@ public:
     class UPointLightComponent* Light_Phaser03;
     class UPointLightComponent* Light_RightShield;
     void ExecuteUbergraph_BP_Facility_PowerStation_ShieldGenerator(int EntryPoint);
-    void OnHackingComplete();
+    UE_PROTECTED void OnHackingComplete();
     void LaunchPlates();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Rep_IsCharged(bool isCharged);
-    void GetConnectorPoint(TArray<FTransform>& outTransform);
+    UE_BLUEPRINT_PURE void GetConnectorPoint(TArray<FTransform>& outTransform);
     TSubclassOf<class UBossFightWidget> GetWidgetClass();
 private:
     struct UeMarkers

@@ -16,7 +16,7 @@ class ITM_SeasonReward_Owned_C : public UUserWidget
 public:
     UE_CLASS("/Game/UI/Menu_Seasons/ITM_SeasonReward_Owned", "ITM_SeasonReward_Owned_C");
     class UCanvasPanel* AlreadyOwned_Canvas;
-    void SetData(bool InShowNotification, bool InEnableNotification);
+    UE_BLUEPRINT_CALLABLE void SetData(bool InShowNotification, bool InEnableNotification);
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

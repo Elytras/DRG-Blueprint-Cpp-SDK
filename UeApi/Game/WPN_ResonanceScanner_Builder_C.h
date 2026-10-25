@@ -21,9 +21,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UFirstPersonWidgetComponent* MonitorWidget;
     void ExecuteUbergraph_WPN_ResonanceScanner_Builder(int EntryPoint);
-    void ReceivePlacementUpdated(bool InCanPlace, bool InConnecting, float InDistanceProgress);
-    void ReceiveBeginPlaceSegment();
-    void GetMonitorWidget(UI_RockCracker_Builder_C*& MonitorUI);
+    UE_PROTECTED void ReceivePlacementUpdated(bool InCanPlace, bool InConnecting, float InDistanceProgress);
+    UE_PROTECTED void ReceiveBeginPlaceSegment();
+    UE_BLUEPRINT_PURE void GetMonitorWidget(UI_RockCracker_Builder_C*& MonitorUI);
 private:
     struct UeMarkers
     {

@@ -35,11 +35,11 @@ public:
     void ExecuteUbergraph_WPN_M1000(int EntryPoint);
     UE_AUTHORITY_ONLY void BndEvt__WPN_M1000_Damage_K2Node_ComponentBoundEvent_1_OnEnemyDamagedDelegate__DelegateSignature(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* Component, class UFSDPhysicalMaterial* PhysicalMaterial);
     void CustomEvent1(class UItemUpgrade* Event);
-    void RecieveEquipped();
-    void Recieve_UpdateMeshses(bool IsFirstPerson_0);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void Recieve_UpdateMeshses(bool IsFirstPerson_0);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

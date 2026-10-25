@@ -79,7 +79,7 @@ public:
     void SetIsEditing();
     void BndEvt__Button_Outer_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_Outer_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
-    void OnDataUpdated();
+    UE_PROTECTED void OnDataUpdated();
     void BndEvt__Button_Outer_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE class UWidget* Get_ToolTipWidget();
@@ -87,7 +87,7 @@ public:
     void AdjacentNodeBought();
     void SetInfo(FText Title_0, class UPlayerCharacterID* OptionalCharacterID_0);
     void UpdateBoughtLook();
-    void GetReward(class UReward*& OutReward);
+    UE_BLUEPRINT_PURE void GetReward(class UReward*& OutReward);
 private:
     struct UeMarkers
     {

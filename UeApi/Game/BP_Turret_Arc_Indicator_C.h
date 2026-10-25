@@ -20,7 +20,7 @@ public:
     class UStaticMeshComponent* RangeSphere;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Turret_Arc_Indicator(int EntryPoint);
-    void SetArcIndicatorActive(bool Active);
+    UE_BLUEPRINT_CALLABLE void SetArcIndicatorActive(bool Active);
 private:
     struct UeMarkers
     {

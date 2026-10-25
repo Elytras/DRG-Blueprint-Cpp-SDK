@@ -15,10 +15,10 @@ class BP_ProceduralController_C : public UProceduralController
 public:
     UE_CLASS("/Game/Landscape/BP_ProceduralController", "BP_ProceduralController_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    void SendRoomData();
-    void SendTunnelData();
-    void ReceivedRoomData(int Seed_ReceivedRoomData, const TArray<FRoomNode>& Rooms_ReceivedRoomData, const TArray<FPathObstacle>& Obstacles_ReceivedRoomData);
-    void ReceivedTunnelData(const TArray<FTunnelNode>& tunnels_ReceivedTunnelData);
+    UE_PROTECTED void SendRoomData();
+    UE_PROTECTED void SendTunnelData();
+    UE_PROTECTED void ReceivedRoomData(int Seed_ReceivedRoomData, const TArray<FRoomNode>& Rooms_ReceivedRoomData, const TArray<FPathObstacle>& Obstacles_ReceivedRoomData);
+    UE_PROTECTED void ReceivedTunnelData(const TArray<FTunnelNode>& tunnels_ReceivedTunnelData);
     UE_SERVER UE_RELIABLE void Server_RequestPLSData();
     UE_SERVER UE_RELIABLE void Server_RequestCarverData(TEnum<EDebrisItemPass> pass);
     void RequestPLSData();

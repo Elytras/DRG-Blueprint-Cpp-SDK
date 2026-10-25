@@ -21,8 +21,8 @@ public:
     void ExecuteUbergraph_BP_QuickRecoveryLogic(int EntryPoint);
     UE_MULTICAST void PlayFleeEffect();
     void RevivedOther();
-    void StartLogic(int Rank);
-    FText GetAdditionalText(int Rank) const;
+    UE_PROTECTED void StartLogic(int Rank);
+    UE_BLUEPRINT_CALLABLE FText GetAdditionalText(int Rank) const;
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

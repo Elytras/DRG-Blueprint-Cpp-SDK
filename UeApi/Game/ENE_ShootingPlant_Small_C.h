@@ -59,13 +59,13 @@ public:
     void ExecuteUbergraph_ENE_ShootingPlant_Small(int EntryPoint);
     UE_AUTHORITY_ONLY void BndEvt__ENE_ShootingPlant_Small_Health_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void ToggleAggressionLevel(bool BePassive);
-    void OnRep_Target();
+    UE_PROTECTED void OnRep_Target();
     void WeakpointDeath();
     void NormalDeath();
     void WakeUp();
-    void ReceiveBeginPlay();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__PawnSensing_K2Node_ComponentBoundEvent_0_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     void BndEvt__Health_K2Node_ComponentBoundEvent_31_HealthChangedSig__DelegateSignature(float Health_0);
     void Growth__UpdateFunc();
@@ -73,8 +73,8 @@ public:
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void OnRep_DeathType();
-    class USkeletalMeshComponent* GetMesh() const;
-    class UMeshComponent* Receive_GetMeshComponent() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UMeshComponent* Receive_GetMeshComponent() const;
     UE_PURE bool GetIsTargetable() const;
 private:
     struct UeMarkers

@@ -15,7 +15,7 @@ class ITM_MisSel_BiomeBase_C : public UUserWidget
 {
 public:
     UE_CLASS("/Game/UI/Menu_MissionSelectionMK3/ITM_MisSel_BiomeBase", "ITM_MisSel_BiomeBase_C");
-    void GetBasePanel(class UCanvasPanel*& Panel);
+    UE_BLUEPRINT_PURE void GetBasePanel(class UCanvasPanel*& Panel);
     void AddPlagueOverlay();
     void RemovePlagueOverlay();
 };

@@ -40,11 +40,11 @@ public:
     void ExecuteUbergraph_ITM_Craft_ItemIcon(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(TScriptInterface<class ICraftable> Item_0, class UClass* CharacterClass);
-    void GetPlayerState(class AFSDPlayerState*& AsFSDPlayer_State);
+    UE_BLUEPRINT_CALLABLE void SetData(TScriptInterface<class ICraftable> Item_0, class UClass* CharacterClass);
+    UE_BLUEPRINT_PURE void GetPlayerState(class AFSDPlayerState*& AsFSDPlayer_State);
     void SetIconTexture(class UObject* Object);
     void FreeRenderTarget();
-    void GetBorderColor(FLinearColor& OutputColor);
+    UE_BLUEPRINT_PURE void GetBorderColor(FLinearColor& OutputColor);
 };
 
 }}}   // namespace Game::UI::Menu_Crafting

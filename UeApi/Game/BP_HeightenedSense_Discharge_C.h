@@ -20,7 +20,7 @@ public:
     class UParticleSystemComponent* ParticleSystem;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_HeightenedSense_Discharge(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

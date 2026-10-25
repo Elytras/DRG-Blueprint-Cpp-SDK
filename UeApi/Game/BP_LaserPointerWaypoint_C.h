@@ -32,9 +32,9 @@ public:
     TEnum<ETimelineDirection> Scanner_Object_Timeline__Direction_EC07CDDA40AC89EA6875FCB53F3F2A41;
     class UTimelineComponent* Scanner_Object_Timeline;
     void ExecuteUbergraph_BP_LaserPointerWaypoint(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnHide();
-    void OnShow();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnHide();
+    UE_PROTECTED void OnShow();
     void Scanner_Object_Timeline__UpdateFunc();
     void Scanner_Object_Timeline__FinishedFunc();
 private:

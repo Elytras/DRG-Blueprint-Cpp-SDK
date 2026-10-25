@@ -50,9 +50,9 @@ public:
     void Initialize_Upgrade_Widget(ITM_UpgGear_UpgIconSingle_C* Widget);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    UE_PURE bool GetIsRowLocked();
+    UE_PRIVATE UE_PURE bool GetIsRowLocked();
     void SetPurchasedShout(class UDialogDataAsset* InShout);
-    void UpdateBackBar();
+    UE_PRIVATE void UpdateBackBar();
 private:
     struct UeMarkers
     {

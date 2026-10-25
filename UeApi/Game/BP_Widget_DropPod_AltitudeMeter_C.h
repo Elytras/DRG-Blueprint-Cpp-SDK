@@ -30,7 +30,7 @@ public:
     float currentDepth;
     void ExecuteUbergraph_BP_Widget_DropPod_AltitudeMeter(int EntryPoint);
     void OnMissionChanged(class UGeneratedMission* OutGeneratedMission);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     void TriggerCountdown();
 private:

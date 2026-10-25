@@ -26,7 +26,7 @@ public:
     void ExecuteUbergraph_UI_Character_Supplies(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSupplyStatusChangedEvent(float ammoStatus01, float healthStatus01);
-    void SetData(class AFSDPlayerState* Player);
+    UE_BLUEPRINT_CALLABLE void SetData(class AFSDPlayerState* Player);
     void HandleVisiblity();
 };
 

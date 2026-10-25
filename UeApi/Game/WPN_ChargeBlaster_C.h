@@ -60,18 +60,18 @@ public:
     class UParticleSystemComponent* OverheatEmitterInstance;
     class UMaterialInstanceDynamic* SlideParameter;
     void ExecuteUbergraph_WPN_ChargeBlaster(int EntryPoint);
-    void RecieveFiredWeapon();
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void RecieveFiredWeapon();
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
     void OnSkinChanged(class USkinEffect* Skin);
     void ReceiveOverheatedChanged(bool isOverheated);
-    void RecieveUnequipped();
-    void ChargeChanged(float charge);
+    UE_PROTECTED void RecieveUnequipped();
+    UE_BLUEPRINT_CALLABLE void ChargeChanged(float charge);
     void OnHeatChanged_Event_0(float charge);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void HandleChargeAudio(float charge);
     void HandleHeatAudio();
-    void Fade_Out_if_Valid(class UAudioComponent*& AC);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PRIVATE void Fade_Out_if_Valid(class UAudioComponent*& AC);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

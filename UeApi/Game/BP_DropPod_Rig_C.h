@@ -60,13 +60,13 @@ public:
     void BndEvt__ATeamAchievementCollider1_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void OnHostTimerChanged(float newTime);
     void OnCountdownCompleted();
-    void OnHostInsidePod(bool isInside);
-    void OnAllDwavesInsidePod(bool AllInside);
+    UE_PROTECTED void OnHostInsidePod(bool isInside);
+    UE_PROTECTED void OnAllDwavesInsidePod(bool AllInside);
     void OnMissionSelected(class UGeneratedMission* mission);
     UE_PURE int ActivePlayerCount();
     void OnCharacterExit(class APlayerCharacter* Character);
     void OnCharacterEnter(class APlayerCharacter* Character);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -35,7 +35,7 @@ public:
     void ExecuteUbergraph_BP_BoscoStateDisplay(int EntryPoint);
     void SetupFollowtargetDelegate(class ABoscoController* NewParam);
     void FollowTargetChanged(class AActor* FollowTarget);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SetState(TEnum<EDroneAIState> State);
     void SetMaterial(class UMaterialInstance* NewParam);
 private:

@@ -44,7 +44,7 @@ public:
     void BndEvt__OPT_PersonalData_K2Node_ComponentBoundEvent_186_OnHoveringEnd__DelegateSignature();
     void BndEvt__OPT_PersonalData_K2Node_ComponentBoundEvent_170_OnHoveringBegin__DelegateSignature();
     UE_COSMETIC void Construct();
-    class UWidget* CreateAppearOfflineOptionToolTip();
+    UE_BLUEPRINT_PURE class UWidget* CreateAppearOfflineOptionToolTip();
 };
 
 }}}   // namespace Game::UI::Menu_Options

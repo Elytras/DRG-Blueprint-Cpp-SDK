@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_ExploderTank_C;
     void ExecuteUbergraph_AIC_Spider_ExploderTank(int EntryPoint);
     void TookDamage(float amount);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
 private:
     struct UeMarkers
     {

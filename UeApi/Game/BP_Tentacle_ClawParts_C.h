@@ -24,7 +24,7 @@ public:
     class USceneComponent* Scene;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Tentacle_ClawParts(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

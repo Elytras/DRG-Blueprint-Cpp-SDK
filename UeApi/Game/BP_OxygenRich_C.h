@@ -18,8 +18,8 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Mutators/OxygenRich/BP_OxygenRich", "BP_OxygenRich_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_OxygenRich(int EntryPoint);
-    void PlayerSpawned(class APlayerCharacter* PlayerCharacter);
-    void StartLogic();
+    UE_BLUEPRINT_CALLABLE void PlayerSpawned(class APlayerCharacter* PlayerCharacter);
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::OxygenRich

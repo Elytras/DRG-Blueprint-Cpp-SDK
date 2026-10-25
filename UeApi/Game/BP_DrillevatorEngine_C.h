@@ -88,8 +88,8 @@ public:
     void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_11_ProgressSignature__DelegateSignature(float Progress);
     void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_10_OnFailed__DelegateSignature();
     void BndEvt__BP_DrillevatorEngine_MaintainerUsableComponent_K2Node_ComponentBoundEvent_9_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void OnRep_DamageLevel();
-    void OnRep_State(TEnum<EDrillevatorEngineState> oldState);
+    UE_PROTECTED void OnRep_DamageLevel();
+    UE_PROTECTED void OnRep_State(TEnum<EDrillevatorEngineState> oldState);
     void TurnOffLights();
     void StopActiveSound();
     void SetDrainRate();
@@ -100,10 +100,10 @@ public:
     void BndEvt__BP_DrillevatorEngine_StartEngineUsable_K2Node_ComponentBoundEvent_3_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__BP_DrillevatorEngine_RepairUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SetColor(int Index_0);
-    void OnExitState(TEnum<EDrillevatorEngineState> oldState);
-    void OnEnterState(TEnum<EDrillevatorEngineState> State_0);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void OnExitState(TEnum<EDrillevatorEngineState> oldState);
+    UE_BLUEPRINT_CALLABLE void OnEnterState(TEnum<EDrillevatorEngineState> State_0);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void EvaluateColor(int& DamageLevel_0);
     void ToggleHologram(bool Visible);
     void StartTrack();

@@ -47,24 +47,24 @@ public:
     bool WeaponFired;
     void ExecuteUbergraph_WPN_ZipLineGun(int EntryPoint);
     void BndEvt__ZiplineLauncher_K2Node_ComponentBoundEvent_2_WeaponFiredDelegate__DelegateSignature(const FVector& Location);
-    void RecieveUnequipped();
+    UE_PROTECTED void RecieveUnequipped();
     void BndEvt__CrosshairAggregator_K2Node_ComponentBoundEvent_0_CrosshairCreated__DelegateSignature(class UUserWidget* Crosshair_0);
-    void ReceiveBeginPlay();
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
-    void RecieveEquipped();
-    void RecieveStopUsing();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void RecieveStopUsing();
     void ReceiveTick(float DeltaSeconds);
     void LineTrace(FHitResult& OutHit, FVector& Direction, float& Distance, bool& HitAny);
     UE_PURE FVector GetStartLocation();
-    void Can_Fire(FText& FailMsg, class UDialogDataAsset*& FailShout, bool& CanShoot);
-    void Between(float Value, float Min, float Max, bool& IsBetween);
-    void Negate(float Value, float& Result);
+    UE_BLUEPRINT_PURE void Can_Fire(FText& FailMsg, class UDialogDataAsset*& FailShout, bool& CanShoot);
+    UE_BLUEPRINT_PURE void Between(float Value, float Min, float Max, bool& IsBetween);
+    UE_BLUEPRINT_PURE void Negate(float Value, float& Result);
     void Update_Line_Of_Sight(FVector Direction, FVector End, bool DidHit);
-    void GetCrosshair(HUD_Crosshair_ZiplineGun_C*& Result);
-    bool CanFireWeapon(FText& FailMsg, class UDialogDataAsset*& FailShout);
+    UE_BLUEPRINT_PURE void GetCrosshair(HUD_Crosshair_ZiplineGun_C*& Result);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool CanFireWeapon(FText& FailMsg, class UDialogDataAsset*& FailShout);
     UE_PURE FVector CalcFirstPersonMuzzleLocation();
-    void GetGrounded(bool& OutGrounded);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE void GetGrounded(bool& OutGrounded);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

@@ -44,7 +44,7 @@ public:
     void OnEventFinished(bool eventSuccess);
     void PodRevived(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void PodDied(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_Progress();
     UE_PURE bool AnyPodsActive();
     UE_PURE float GetDefenderBonus(int DefendingPlayers_0);

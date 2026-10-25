@@ -55,11 +55,11 @@ public:
     void OnConfigureClicked(FDifficultyMutatorItem Mutator);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetCurrentHazardBonus(class UDifficultySetting* Difficulty, float& OutBonus);
-    void GetDifficultyMutators(TArray<FDifficultyMutatorItem>& OutMutators);
-    void Get_Hovered_Item(ITM_HazPlusItem_C*& OutItem);
-    void Update_Hovered_Item(ITM_HazPlusItem_C* InHovered);
-    void HidePopup();
+    UE_BLUEPRINT_PURE void GetCurrentHazardBonus(class UDifficultySetting* Difficulty, float& OutBonus);
+    UE_BLUEPRINT_PURE void GetDifficultyMutators(TArray<FDifficultyMutatorItem>& OutMutators);
+    UE_BLUEPRINT_PURE void Get_Hovered_Item(ITM_HazPlusItem_C*& OutItem);
+    UE_PRIVATE void Update_Hovered_Item(ITM_HazPlusItem_C* InHovered);
+    UE_PRIVATE void HidePopup();
     UE_PURE bool IsHazPlusUnlocked();
 private:
     struct UeMarkers

@@ -31,8 +31,8 @@ public:
     class USizeBox* Sizer;
     class UWidgetSwitcher* switcher;
     void ExecuteUbergraph_UI_RichTextInput(int EntryPoint);
-    void ReceiveInputUnknown();
-    void ReceiveInputDetails(const FInputDisplay& InDisplay);
+    UE_PROTECTED void ReceiveInputUnknown();
+    UE_PROTECTED void ReceiveInputDetails(const FInputDisplay& InDisplay);
     void ShowAsIcon(class UTexture2D* InTexture, FLinearColor InTint);
     void SetSize(float InHeightOverride, float InWidthOverride, float InMinDesiredWidth);
     void ShowAsText(FText InText, FLinearColor InTint);

@@ -13,7 +13,7 @@ class BP_RewardUsableComponent_C : public UEventRewarderUsableComponent
 {
 public:
     UE_CLASS("/Game/GameElements/GameEvents/RewardDispenser/BP_RewardUsableComponent", "BP_RewardUsableComponent_C");
-    FText CreateUseText(int blankSchematicCount) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE FText CreateUseText(int blankSchematicCount) const;
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::RewardDispenser

@@ -72,7 +72,7 @@ public:
     void StopTell();
     UE_MULTICAST UE_RELIABLE void AttackTargetEffects(FVector TargetLocation);
     void CheckTargetLOS();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void CollideDamageDie(class AActor* OtherActor);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void Timeline_1__UpdateFunc();
@@ -81,7 +81,7 @@ public:
     void Timeline_0__FinishedFunc();
     void AttackTell__UpdateFunc();
     void AttackTell__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* Niagara;
     void ExecuteUbergraph_BP_LockOnBeam(int EntryPoint);
-    void ReceiveItemSet();
+    UE_PROTECTED void ReceiveItemSet();
 private:
     struct UeMarkers
     {

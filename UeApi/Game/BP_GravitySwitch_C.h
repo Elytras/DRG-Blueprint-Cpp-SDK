@@ -44,7 +44,7 @@ public:
     void ExecuteUbergraph_BP_GravitySwitch(int EntryPoint);
     UE_MULTICAST void ResetSkyLight();
     UE_MULTICAST void ChangeSkyLight();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User_0, TEnum<EInputKeys> Key);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();

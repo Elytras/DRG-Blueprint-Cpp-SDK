@@ -26,7 +26,7 @@ public:
     float LifeTime;
     void ExecuteUbergraph_BP_SMG_ElectrifiedPlatforms(int EntryPoint);
     void BndEvt__BP_SMG_ElectrifiedPlatforms_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

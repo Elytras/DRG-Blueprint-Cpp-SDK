@@ -53,7 +53,7 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void Grow__UpdateFunc();
     void Grow__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_IsReady();
 private:
     struct UeMarkers

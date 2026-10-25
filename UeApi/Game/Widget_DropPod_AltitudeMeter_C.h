@@ -34,7 +34,7 @@ public:
     void ExecuteUbergraph_Widget_DropPod_AltitudeMeter(int EntryPoint);
     void OnGeneratedMissionChanged(class UGeneratedMission* OutGeneratedMission);
     UE_COSMETIC void Construct();
-    void SetProgress(float Progress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Progress);
     void UpdateDepthText();
     void UpdateHeader(FText InText);
 };

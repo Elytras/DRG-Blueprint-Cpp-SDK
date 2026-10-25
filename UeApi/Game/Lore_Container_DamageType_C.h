@@ -31,7 +31,7 @@ public:
     bool IconOutline;
     void ExecuteUbergraph_Lore_Container_DamageType(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FDamageTypeDescription Damage_Description);
+    UE_BLUEPRINT_CALLABLE void SetData(FDamageTypeDescription Damage_Description);
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::Containers

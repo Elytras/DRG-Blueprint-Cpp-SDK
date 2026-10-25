@@ -22,9 +22,9 @@ public:
     class UCrosshairAggregator* CrosshairAggregator;
     float NextHitTime;
     void ExecuteUbergraph_WPN_Pickaxe(int EntryPoint);
-    void ReceiveBeginPlay();
-    void SpecialTargetDamageEffects(const FVector& ImpactPoint, const FVector& ImpactNormal);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void SpecialTargetDamageEffects(const FVector& ImpactPoint, const FVector& ImpactNormal);
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

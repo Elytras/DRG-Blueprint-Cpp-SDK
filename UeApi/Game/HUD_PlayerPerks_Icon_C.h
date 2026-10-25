@@ -49,10 +49,10 @@ public:
     void Begin_Cool_Down(float Duration);
     void OnAnimCoolDownFinished();
     UE_COSMETIC void Construct();
-    void ReceivePerkAssetChanged();
+    UE_PROTECTED void ReceivePerkAssetChanged();
     void Completed_64B6D09E4CB7705CDF68E9949787003B(float DeltaTime, float NormalizedTime);
     void OnTick_64B6D09E4CB7705CDF68E9949787003B(float DeltaTime, float NormalizedTime);
-    void SetProgress(float InProgress, float& OutProgress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float InProgress, float& OutProgress);
     void SetCounter(int InCount);
     void RefreshCounterAndProgress(bool& CoolDownActive);
     UE_PURE int GetRemainingUseCharges();

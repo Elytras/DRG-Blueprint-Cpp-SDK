@@ -43,18 +43,18 @@ public:
     FVector LastClosestHit;
     bool LastHitEnemy;
     void ExecuteUbergraph_WPN_MicrowaveGun(int EntryPoint);
-    void RecieveUnequipped();
+    UE_PROTECTED void RecieveUnequipped();
     void OnStartCharacterOverheat_Event();
     void BndEvt__WPN_MicrowaveGun_CapsuleHitscanComp_K2Node_ComponentBoundEvent_0_OnClosestHitDelegate__DelegateSignature(const FVector& Location, const FVector& Normal, bool bHitEnemy);
-    void RecieveStopUsing();
-    void HeatUpdated(float SmoothedTemperature);
-    void Receive_IsFiringChanged(bool NewValue);
+    UE_PROTECTED void RecieveStopUsing();
+    UE_PROTECTED void HeatUpdated(float SmoothedTemperature);
+    UE_PROTECTED void Receive_IsFiringChanged(bool NewValue);
     void CustomEvent1(class UItemUpgrade* Event);
     void OnTemperatureChanged(float temperature, bool overheated_0);
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

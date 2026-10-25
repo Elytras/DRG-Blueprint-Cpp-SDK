@@ -24,7 +24,7 @@ public:
     void ExecuteUbergraph_LoreScreen_Master(int EntryPoint);
     void PlayIntroAnim();
     void RefreshContent();
-    void OnShown();
+    UE_BLUEPRINT_CALLABLE void OnShown();
 };
 
 }}}}   // namespace Game::UI::Menu_MinersManual::InfoScreens

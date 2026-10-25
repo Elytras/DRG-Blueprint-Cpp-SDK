@@ -44,8 +44,8 @@ public:
     void SaveNameInputError();
     void SaveSlotNameExists(bool& Exists);
     void ChangeSave(FString Name_0, bool Reset, bool StartTutorial);
-    void CheckForIlligalChars(FString inString, bool& IsIlligal);
-    class UWidget* CreateCurrentProgressButtonToolTip();
+    UE_BLUEPRINT_PURE void CheckForIlligalChars(FString inString, bool& IsIlligal);
+    UE_BLUEPRINT_PURE class UWidget* CreateCurrentProgressButtonToolTip();
 };
 
 }}}   // namespace Game::UI::Menu_SaveSlots

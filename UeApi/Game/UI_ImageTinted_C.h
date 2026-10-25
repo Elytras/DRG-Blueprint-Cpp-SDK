@@ -27,7 +27,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetBrush(const FSlateBrush& InBrush);
     void SetBrushFromTexture(class UTexture2D* Texture, bool MatchSize);
-    void GetBrush(FSlateBrush& Brush_0);
+    UE_BLUEPRINT_PURE void GetBrush(FSlateBrush& Brush_0);
     void SetBrushSize(FVector2D Brush_Image_Size);
 private:
     struct UeMarkers

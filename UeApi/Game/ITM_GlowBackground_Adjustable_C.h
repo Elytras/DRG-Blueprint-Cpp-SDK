@@ -37,8 +37,8 @@ public:
     void SetGlowActive(bool InGlowActive);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetAnimSpeed(float InDuration, float& OutSpeed);
-    void SetGlowParams(class UImage* InImage, FLinearColor InTint, float InSpeed);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetAnimSpeed(float InDuration, float& OutSpeed);
+    UE_PRIVATE void SetGlowParams(class UImage* InImage, FLinearColor InTint, float InSpeed);
 private:
     struct UeMarkers
     {

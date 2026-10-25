@@ -43,7 +43,7 @@ public:
     class UMaterialInstanceDynamic* NewVar_0;
     int OldPlayerCount;
     void ExecuteUbergraph_UI_GuntowerProgressBar_2(int EntryPoint);
-    void OnFinished();
+    UE_BLUEPRINT_CALLABLE void OnFinished();
     void PlayerCountChanged(int playerCount);
     void OnProgress(float Progress);
     void SetStarterPlatform(class AGuntowerActivationPlatform* Starterplatform);

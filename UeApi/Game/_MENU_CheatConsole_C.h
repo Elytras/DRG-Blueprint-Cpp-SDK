@@ -93,10 +93,10 @@ public:
     void BndEvt__Button_Resources_K2Node_ComponentBoundEvent_242_OnClicked__DelegateSignature();
     void BndEvt__Button_Credits_K2Node_ComponentBoundEvent_239_OnClicked__DelegateSignature();
     void BndEvt__Button_XP_K2Node_ComponentBoundEvent_238_OnClicked__DelegateSignature();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnLoaded_5087EABD4CB81111640A91B2888B99F6(TSubclassOf<class UObject> Loaded);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

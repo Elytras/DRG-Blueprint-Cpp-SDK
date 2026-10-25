@@ -21,7 +21,7 @@ public:
     FName TrayOpen;
     bool Open;
     void ExecuteUbergraph_TSK_OpenTray(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::GameElements::Donkey

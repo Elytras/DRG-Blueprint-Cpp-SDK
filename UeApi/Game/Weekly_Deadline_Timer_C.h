@@ -30,7 +30,7 @@ public:
     class UWeeklyTimerCampaignRequirement* Requirement;
     void ExecuteUbergraph_Weekly_Deadline_Timer(int EntryPoint);
     void Update_Time();
-    void SetData(class UCampaign* Campaign_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 private:
     struct UeMarkers

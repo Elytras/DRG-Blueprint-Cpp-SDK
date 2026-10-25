@@ -41,9 +41,9 @@ public:
     void Refresh();
     void OnCheckForUpdateComplete(bool IsUpdatePending);
     void SetPreviewState(int Index_0);
-    void Int2Text(int InValue, FText& OutText);
+    UE_PRIVATE UE_BLUEPRINT_PURE void Int2Text(int InValue, FText& OutText);
     void On_Request_Season_End_Complete(FDateTime EndTime, bool validExpireTime);
-    void GetFormattedDateString(FTimespan Remaining_Time, FText& Remaining_time_Text);
+    UE_BLUEPRINT_PURE void GetFormattedDateString(FTimespan Remaining_Time, FText& Remaining_time_Text);
 private:
     struct UeMarkers
     {

@@ -29,7 +29,7 @@ public:
     _DLCclaimPopup_TextLine_C* UI_ClaimableDLC_TextLine_C_50;
     class UGameDLC* DLC;
     void ExecuteUbergraph_DLCclaimPopup_DLC03_Roughneck(int EntryPoint);
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void BndEvt__DLCclaimPopup_Base_K2Node_ComponentBoundEvent_0_OnCloseClicked__DelegateSignature();
 };
 

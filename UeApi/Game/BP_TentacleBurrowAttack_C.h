@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/BP_TentacleBurrowAttack", "BP_TentacleBurrowAttack_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_TentacleBurrowAttack(int EntryPoint);
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

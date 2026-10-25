@@ -45,15 +45,15 @@ public:
     void ExecuteUbergraph_ENE_BoughWasp_Nest_Small(int EntryPoint);
     UE_AUTHORITY_ONLY void BndEvt__ENE_BoughWasp_Nest_Small_Health_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void OnNestDeath();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void OnSwarmSpawned(class AInsectSwarmEnemy* Swarm);
+    UE_PROTECTED void OnSwarmSpawned(class AInsectSwarmEnemy* Swarm);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    class UStaticMeshComponent* Receive_GetStaticMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UStaticMeshComponent* Receive_GetStaticMesh() const;
 private:
     struct UeMarkers
     {

@@ -39,7 +39,7 @@ public:
     void BndEvt__UI_Forge_MasteryBar_SelectorItem_Item_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__UI_Forge_MasteryBar_SelectorItem_Item_Button_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_Forge_MasteryBar_SelectorItem_Item_Button_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
-    void SetData(class UPlayerCharacterID* InCharacterID, class USchematic* InSchematic, bool& OutValidReward);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* InCharacterID, class USchematic* InSchematic, bool& OutValidReward);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

@@ -47,7 +47,7 @@ public:
     void SetMenuOpen(bool IsOpen, bool& OutIsOpen);
     void SetHeader1(FText InText);
     void SetHeader2(FText InText);
-    void SetHovered(bool InHovered);
+    UE_PRIVATE void SetHovered(bool InHovered);
     void SetOpenHeight(float OpenHeight_0);
     void SetFixedSizeOpenHeight(int Item_Count, float Item_Height);
     void InstaOpenMenu(bool Open);

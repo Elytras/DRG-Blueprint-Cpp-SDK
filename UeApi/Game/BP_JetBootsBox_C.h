@@ -82,7 +82,7 @@ public:
     void PlayDistressCall();
     void AnimateLights();
     void BndEvt__BP_JetBootsBox_EquipUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_JetBootsBox_HackingUsable_K2Node_ComponentBoundEvent_0_HackedDelegate__DelegateSignature(class APlayerCharacter* InHackedBy);
     void SwitchNextMaterial();
     void DoOpeningSequence();

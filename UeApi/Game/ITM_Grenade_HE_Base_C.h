@@ -26,7 +26,7 @@ public:
     class UParticleSystem* ExplosionParticles;
     class USoundBase* ExplosionSound;
     void ExecuteUbergraph_ITM_Grenade_HE_Base(int EntryPoint);
-    void OnExploded();
+    UE_PROTECTED void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers

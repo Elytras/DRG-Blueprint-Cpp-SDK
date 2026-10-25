@@ -28,7 +28,7 @@ public:
     void OnCountdownFinished();
     void OnCountdownTimeChanged(int SecondsLeft);
     void CountdownStarted(const FText& countdownText);
-    void FormatTime(int Time, FText& Text);
+    UE_BLUEPRINT_PURE void FormatTime(int Time, FText& Text);
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

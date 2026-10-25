@@ -51,8 +51,8 @@ public:
     void SpeakManually(class UDialogDataAsset* MissionShout, float& Duration_0, class UAudioComponent*& AudioComponent);
     void SpeakEntryManually(FDialogStruct entry, float& Duration_0, class UAudioComponent*& AudioComponent);
     void StopRunningText();
-    void TickRunningText();
-    void SetProgress(float Progress, bool& Finished);
+    UE_PRIVATE void TickRunningText();
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Progress, bool& Finished);
     void Reset();
     void SetPreview(class UDialogDataAsset* PreviewShout_0);
 private:

@@ -39,16 +39,16 @@ public:
     float StartTime;
     void ExecuteUbergraph_WPN_Autocannon(int EntryPoint);
     void CustomEvent1(class UItemUpgrade* Event);
-    void RecieveFiredWeapon();
+    UE_PROTECTED void RecieveFiredWeapon();
     void BndEvt__WeaponImpact_K2Node_ComponentBoundEvent_1_HightAccelerationSignature__DelegateSignature();
-    void Receive_IsFiringChanged(bool NewValue);
-    void RecieveEquipped();
-    void RecieveUnequipped();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_IsFiringChanged(bool NewValue);
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ShowCurentFireTime();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    UE_PURE FText RoundStatValue(const FText& InText, FString Suffix, bool KeepSign) const;
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED UE_PURE FText RoundStatValue(const FText& InText, FString Suffix, bool KeepSign) const;
 private:
     struct UeMarkers
     {

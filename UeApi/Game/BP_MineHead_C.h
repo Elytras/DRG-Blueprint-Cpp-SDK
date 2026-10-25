@@ -133,10 +133,10 @@ public:
     void BndEvt__Usable_LaunchRocket_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void objectivesCompleted();
     void OnLiftoff();
-    void ReceiveBeginPlay();
-    void OnDroppodImpact();
-    void OnDrillingStarted();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_PROTECTED void OnDrillingStarted();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_IsLiftingOff();
     void OnRep_CanLaunch();
     void HandleDeadPlayers();

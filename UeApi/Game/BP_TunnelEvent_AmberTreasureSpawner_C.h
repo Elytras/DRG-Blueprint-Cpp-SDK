@@ -49,7 +49,7 @@ public:
     void ExecuteUbergraph_BP_TunnelEvent_AmberTreasureSpawner(int EntryPoint);
     void OnLoadedDependencies();
     UE_MULTICAST void Multi_Play_Released_Sound();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnGemReleased();
     void SelectRandomMesh();
     void OnRep_SelectedMeshIdx();

@@ -39,7 +39,7 @@ public:
     void LoadThumbnail();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void FromMetaData(class UModioModInfoWrapper* InMetaData);
-    void SetData(FString InModID, FString InName, FString InVersion, FString InDescription, FString InAuthor, TEnum<EUGCApprovalStatus> InApprovalState, bool InFetchThumbnail);
+    UE_BLUEPRINT_CALLABLE void SetData(FString InModID, FString InName, FString InVersion, FString InDescription, FString InAuthor, TEnum<EUGCApprovalStatus> InApprovalState, bool InFetchThumbnail);
 private:
     struct UeMarkers
     {

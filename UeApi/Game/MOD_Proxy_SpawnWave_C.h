@@ -22,7 +22,7 @@ public:
     class UClass* Wave;
     class UEnemyWaveController* WaveInstance;
     void ExecuteUbergraph_MOD_Proxy_SpawnWave(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

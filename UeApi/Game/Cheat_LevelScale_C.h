@@ -21,7 +21,7 @@ public:
     class UTextBlock* TextBlock_0;
     class UCollectableResourceData* Resource;
     void ExecuteUbergraph_Cheat_LevelScale(int EntryPoint);
-    void BP_OnRefresh();
+    UE_PROTECTED void BP_OnRefresh();
     UE_COSMETIC void Construct();
 };
 

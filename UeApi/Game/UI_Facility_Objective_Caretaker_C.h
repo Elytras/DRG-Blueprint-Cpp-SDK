@@ -37,7 +37,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Refresh();
     void TryFindMainFacility();
-    void GetCaretakerIsAlive(bool& IsAlive);
+    UE_BLUEPRINT_PURE void GetCaretakerIsAlive(bool& IsAlive);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::UI

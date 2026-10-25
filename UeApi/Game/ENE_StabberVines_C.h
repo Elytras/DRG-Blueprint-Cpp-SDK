@@ -58,9 +58,9 @@ public:
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void RemoveHead(ENE_StabberVine_Tentacle_C* HeadRef);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void GenerateRandomSpikePositions(int SpikeIndex, FVector& SpikeLocation, FRotator& SpikeRotation);
-    void AreAllTentaclesDead(bool& OutAllDead);
+    UE_BLUEPRINT_PURE void AreAllTentaclesDead(bool& OutAllDead);
     void TryStartMeleeAttack();
 private:
     struct UeMarkers

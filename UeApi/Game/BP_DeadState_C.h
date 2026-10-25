@@ -27,8 +27,8 @@ public:
     float Effect_start_delay;
     void ExecuteUbergraph_BP_DeadState(int EntryPoint);
     void SetDeathParameters(float respawnDelay_0, float effectDelay, class UAnimMontage* deathMontage_0, class UParticleSystem* deathEffect_0, bool useAnimationTimeAsRespawnTime);
-    void ReceiveStateEnter();
-    void ReceiveStateExit();
+    UE_PROTECTED void ReceiveStateEnter();
+    UE_PROTECTED void ReceiveStateExit();
     void ReceiveBeginPlay();
 private:
     struct UeMarkers

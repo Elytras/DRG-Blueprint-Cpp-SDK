@@ -29,7 +29,7 @@ public:
     FDamageTypeDescription DamageType;
     void ExecuteUbergraph_Lore_DamageTypeIcon(int EntryPoint);
     void PlayIntro(float Delay);
-    void SetData(FDamageTypeDescription DamageType_0);
+    UE_BLUEPRINT_CALLABLE void SetData(FDamageTypeDescription DamageType_0);
     UE_COSMETIC void Construct();
     UE_PURE class UWidget* GetToolTipWidget_0();
 };

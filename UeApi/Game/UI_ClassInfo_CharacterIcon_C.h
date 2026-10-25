@@ -45,15 +45,15 @@ public:
     UE_COSMETIC void Construct();
     void Select(bool FirstTime);
     void Deselect();
-    void Init(class UClass* playerClass_0, UI_ClassInfo_CharacterSelector_C* Selector_0);
+    UE_BLUEPRINT_CALLABLE void Init(class UClass* playerClass_0, UI_ClassInfo_CharacterSelector_C* Selector_0);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void OnClassSelected(class UClass* playerClass_0);
     void SetScale(float Scale, bool Immediatly);
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetBorderAlpha(float alpha);
-    void GetBorderAlpha(float& alpha);
+    UE_BLUEPRINT_PURE void GetBorderAlpha(float& alpha);
 };
 
 }}}   // namespace Game::UI::Menu_Lobby

@@ -31,7 +31,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTangent(FVector2D InTangent);
     void SetHighlighted(bool InHighlighted);
-    void Update();
+    UE_PRIVATE void Update();
     void SetSocketIndex(int SocketIndex_0);
     void TrySelectSocket(int InIndex);
     void Reset();

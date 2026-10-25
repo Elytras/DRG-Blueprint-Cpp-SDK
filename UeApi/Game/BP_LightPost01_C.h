@@ -36,8 +36,8 @@ public:
     FVector Light_Offset;
     class UMaterialInstanceDynamic* DynamicMaterial;
     void ExecuteUbergraph_BP_LightPost01(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

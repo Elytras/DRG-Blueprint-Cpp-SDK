@@ -25,8 +25,8 @@ public:
     bool FailIfCantTurn;
     int MaxTries;
     void ExecuteUbergraph_TSK_FaceTargetToCarve(int EntryPoint);
-    void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     UE_PURE bool IsFacingTarget(class AActor* Tank);
 };
 

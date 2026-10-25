@@ -39,7 +39,7 @@ public:
     void ReceiveTick(float DeltaSeconds);
     void SetTarget(class APlayerCharacter* Player);
     void UpdateCurrLocation(float DeltaTime);
-    void GetLocation(FVector& TargetLocation);
+    UE_BLUEPRINT_PURE void GetLocation(FVector& TargetLocation);
 };
 
 }}}}   // namespace Game::GameElements::Objectives::Escort

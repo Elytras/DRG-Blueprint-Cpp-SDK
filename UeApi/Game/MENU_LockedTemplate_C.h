@@ -46,13 +46,13 @@ public:
     UE_COSMETIC void Construct();
     void Close();
     void BndEvt__CloseButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetMenuLocked(bool IsLocked, bool& Locked_0);
     void SetMessaqe(FText InText);
     void SetLockIcon(class UTexture2D* Texture);
     void RequireOnePromotedCharacter(bool& Locked_0);
-    void GetIsLocked(bool& Locked_0);
-    void GetIsUnlocked(bool& Locked_0);
+    UE_BLUEPRINT_PURE void GetIsLocked(bool& Locked_0);
+    UE_BLUEPRINT_PURE void GetIsUnlocked(bool& Locked_0);
 };
 
 }}}   // namespace Game::UI::Menu_TopBar

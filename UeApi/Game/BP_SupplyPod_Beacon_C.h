@@ -41,8 +41,8 @@ public:
     FLinearColor LightColor;
     void ExecuteUbergraph_BP_SupplyPod_Beacon(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetBlinkIntensity(float BlinkIntensity);
 private:
     struct UeMarkers

@@ -27,7 +27,7 @@ public:
     float MaxHeightBelowCeiling;
     FVector TargetLocation;
     void ExecuteUbergraph_TSK_GetPointNearCeiling(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

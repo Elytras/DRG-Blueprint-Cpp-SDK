@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_ENE_Spider_Shooter_Queen(int EntryPoint);
     void OnDeathBase();
     void BndEvt__BP_BurrowComponent_K2Node_ComponentBoundEvent_0_OnUnBurrow__DelegateSignature();
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
 private:
     struct UeMarkers
     {

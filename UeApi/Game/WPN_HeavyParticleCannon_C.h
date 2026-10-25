@@ -53,18 +53,18 @@ public:
     float BeamTimeAlpha;
     void ExecuteUbergraph_WPN_HeavyParticleCannon(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_ExplodePlatform(FVector Location);
-    void Server_ExplodePlatform(FVector Location);
-    void ChargeChanged(bool isCharging);
-    void IsHittngEnemyChanged(bool isHittingEnemy);
+    UE_PROTECTED void Server_ExplodePlatform(FVector Location);
+    UE_PROTECTED void ChargeChanged(bool isCharging);
+    UE_PROTECTED void IsHittngEnemyChanged(bool isHittingEnemy);
     void UpdateReload(float alpha);
     void Upgraded(const TArray<class UItemUpgrade*>& Upgrades);
-    void UpdateBeamsVisibility(bool isBeamVisible);
+    UE_PROTECTED void UpdateBeamsVisibility(bool isBeamVisible);
     void BndEvt__WeaponImpact_K2Node_ComponentBoundEvent_1_HightAccelerationSignature__DelegateSignature();
-    void RecieveUnequipped();
-    void RecieveEquipped();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

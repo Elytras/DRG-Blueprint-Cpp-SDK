@@ -46,16 +46,16 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnDamagedEnemy(const TScriptInterface<class IHealth>& EnemyHealth, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     UE_COSMETIC void Construct();
-    void ReceiveNewTarget(class AActor* InCurrentTarget);
-    void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
-    void ReceiveTargetLost();
+    UE_PROTECTED void ReceiveNewTarget(class AActor* InCurrentTarget);
+    UE_PROTECTED void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
+    UE_PROTECTED void ReceiveTargetLost();
     void SetIsVisible(bool IsVisible_0);
-    void HandleTargetDamaged(TScriptInterface<class IHealth> Health, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
+    UE_PRIVATE void HandleTargetDamaged(TScriptInterface<class IHealth> Health, float Damage, float DamageModifier, float HealthRemaining, bool IsWeakPoint, bool IsRadial);
     void UpdateWidgets(bool Reset);
-    void ClampToScreenHeight(float CoordinateY, float Bound, float& ClampedY);
+    UE_BLUEPRINT_PURE void ClampToScreenHeight(float CoordinateY, float Bound, float& ClampedY);
     void UpdateScreenPosition();
     void SelectContent();
-    void GetContent(class ULookingAtContentWidget*& OutActiveContent);
+    UE_BLUEPRINT_PURE void GetContent(class ULookingAtContentWidget*& OutActiveContent);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar

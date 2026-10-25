@@ -47,7 +47,7 @@ public:
     void RetireCharacter(class UPlayerCharacterID* Character);
     void RetirementUnHovered(class UPlayerCharacterID* Character);
     void RetirementHovered(class UPlayerCharacterID* Character);
-    void OnSelect();
+    UE_BLUEPRINT_CALLABLE void OnSelect();
     void OnHovered_Event_0(class UPlayerCharacterID* Character);
     void Update();
     void OnCharacterSelected_Event(class UPlayerCharacterID* Character);
@@ -55,10 +55,10 @@ public:
     void Prev();
     void Select();
     FEventReply HandleKeyEvent(FKeyEvent& InKeyEvent, bool IsDown, bool& Handled);
-    void GetSelectedIndex(int& Index_0);
+    UE_BLUEPRINT_PURE void GetSelectedIndex(int& Index_0);
     void SetSelectedIndex(int Index_0, bool& Valid);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void HighlightClassChallenge(TArray<class UObject*>& ClassRefs, bool ShouldHighlight, class USeasonChallenge* Challenge);
 };
 

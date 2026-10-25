@@ -23,7 +23,7 @@ public:
     FSlateFontInfo Font;
     void ExecuteUbergraph_ITM_TimeText(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FTimespan Timespan, bool ShowDays);
+    UE_BLUEPRINT_CALLABLE void SetData(FTimespan Timespan, bool ShowDays);
 };
 
 }}}}   // namespace Game::UI::Menu_Jobs::JobsV2_Redesign

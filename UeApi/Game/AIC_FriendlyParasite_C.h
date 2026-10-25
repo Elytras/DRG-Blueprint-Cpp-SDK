@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/AIC_FriendlyParasite", "AIC_FriendlyParasite_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_FriendlyParasite(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

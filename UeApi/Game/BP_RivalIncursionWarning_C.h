@@ -28,7 +28,7 @@ public:
     void FirstSpawn();
     void SpawnRivalBots();
     void StartTimer();
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::RivalIncursion

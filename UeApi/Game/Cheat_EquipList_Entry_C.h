@@ -52,13 +52,13 @@ public:
     void BndEvt__EquipButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void Refresh();
     void SetValues(FText Param_Name_0, FText Description_0, bool owned_0, bool Equipped_0, class UObject* Data_0);
-    void GetValues(FText& Param_Name_0, FText& Description_0, bool& owned_0, bool& Equipped_0, class UObject*& Data_0);
+    UE_BLUEPRINT_PURE void GetValues(FText& Param_Name_0, FText& Description_0, bool& owned_0, bool& Equipped_0, class UObject*& Data_0);
     void SetEquipped(bool InEquipped);
     void SetEquippedData(TArray<class UObject*>& InEquippedData);
     void SetOwned(bool owned_0);
     void SetOwnedData(TArray<class UObject*>& InOwnedData);
     void SetSchematicOwned(bool SchematicOwned_0);
-    void GetEquipped(bool& Equipped_0);
+    UE_BLUEPRINT_PURE void GetEquipped(bool& Equipped_0);
 private:
     struct UeMarkers
     {

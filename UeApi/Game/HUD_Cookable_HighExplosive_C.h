@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_HUD_Cookable_HighExplosive_C;
     UI_CircularProgressBar_C* UI_CircularProgressBar;
     void ExecuteUbergraph_HUD_Cookable_HighExplosive(int EntryPoint);
-    void UpdateCookTime(float Progress);
+    UE_BLUEPRINT_CALLABLE void UpdateCookTime(float Progress);
     UE_COSMETIC void Construct();
 private:
     struct UeMarkers

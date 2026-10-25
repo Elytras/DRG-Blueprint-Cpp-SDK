@@ -67,8 +67,8 @@ public:
     void OnPlayerJoined_Event(class AFSDPlayerState* PlayerState);
     void RefreshSpeakVisibility();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetToggles(bool PlayerName, bool PlayerRank, bool CharacterName, bool CharacterLevel, bool XPcounter, bool XPbar, bool Supplies);
-    void SetData(FString PlayerName, const FText& HeroName, int PlayerRank, int CharacterLevel, float LevelProgress, int CurrentXP, int RequiredXP, class AFSDPlayerState* PlayerState);
+    UE_PRIVATE void SetToggles(bool PlayerName, bool PlayerRank, bool CharacterName, bool CharacterLevel, bool XPcounter, bool XPbar, bool Supplies);
+    UE_BLUEPRINT_CALLABLE void SetData(FString PlayerName, const FText& HeroName, int PlayerRank, int CharacterLevel, float LevelProgress, int CurrentXP, int RequiredXP, class AFSDPlayerState* PlayerState);
     void FromPlayerCharacter(class APlayerCharacter* SetCharacter);
     void FromPlayerState(class AFSDPlayerState* InPlayerState, class UPlayerCharacterID* OptionalCharacterClass);
 };

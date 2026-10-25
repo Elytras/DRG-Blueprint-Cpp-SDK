@@ -23,8 +23,8 @@ public:
     class UCappedResource* Resource;
     void ExecuteUbergraph_Tutorial_Hint_Spaceball(int EntryPoint);
     void OnUse(class UUsableComponentBase* Component);
-    void ReceiveOnInitialized();
-    void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnHidden();
 };
 
 }}}   // namespace Game::Character::Tutorials

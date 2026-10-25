@@ -39,7 +39,7 @@ public:
     float Room5VerticalOffset;
     void ExecuteUbergraph_PLS_Facility(int EntryPoint);
     void CreateCaveGraph();
-    void CustomEvent();
+    UE_BLUEPRINT_CALLABLE void CustomEvent();
     void Circular_Simple();
     void SuperCompactLinear();
     void SuperCompactCircular();

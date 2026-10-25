@@ -37,10 +37,10 @@ public:
     void ExecuteUbergraph_ITM_ManualCooling_Bar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetCharges(int InMax, int InCount, bool InAnimate);
-    void OnAmmoChanged();
-    void SetPingProgress(float Value);
+    UE_PRIVATE void OnAmmoChanged();
+    UE_PRIVATE void SetPingProgress(float Value);
     void SetItem(class AAmmoDrivenWeapon* InItem);
-    void Initialize();
+    UE_PRIVATE UE_BLUEPRINT_CALLABLE void Initialize();
 };
 
 }}}}   // namespace Game::WeaponsNTools::GatlingGun::UI

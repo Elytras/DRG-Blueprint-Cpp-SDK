@@ -15,7 +15,7 @@ public:
     UE_CLASS("/Game/Game/SpaceRig/BP_SpacerigSpectator", "BP_SpacerigSpectator_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_SpacerigSpectator(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

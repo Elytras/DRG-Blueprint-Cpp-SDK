@@ -21,8 +21,8 @@ public:
     class UAudioComponent* Audio;
     class UStaticMeshComponent* TerrainScannerMesh;
     void ExecuteUbergraph_ENE_Spider_ExploderTank_Ghost(int EntryPoint);
-    void OnUnFrozen();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE bool GetIsTargetable() const;
 private:
     struct UeMarkers

@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/InfestationLarva/AIC_InfestationLarva", "AIC_InfestationLarva_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_InfestationLarva(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

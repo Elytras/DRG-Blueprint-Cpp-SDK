@@ -40,7 +40,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetSkin(class UItemSkin* InSkin, bool InIsLocked, bool inIsDefault);
     void SetSize(float InSize);
-    void GetIsLocked(bool& IsLocked_0);
+    UE_BLUEPRINT_PURE void GetIsLocked(bool& IsLocked_0);
     void SetOutlineTint(FLinearColor Color);
     void SetBucketVisibility(bool ShowBucket_0);
     void SetIconColor(FLinearColor InColorAndOpacity);

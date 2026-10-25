@@ -32,7 +32,7 @@ public:
     void OnLockOnCountChanged(int InCurrentCount);
     void SetItem(class ALockOnWeapon* InItem);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetupTargetCounter(bool WasCreated, class UUserWidget* Widget, int ActiveIndex);
+    UE_PRIVATE void SetupTargetCounter(bool WasCreated, class UUserWidget* Widget, int ActiveIndex);
     void SetMaxTargets(int Count);
     void SetCurrentTargets(int InCount);
 };

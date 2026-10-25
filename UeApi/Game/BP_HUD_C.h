@@ -57,22 +57,22 @@ public:
     void OnEndLevelReceived_Event();
     void CameraDroneSpawned(class APlayerCameraDrone* Drone);
     void ReceiveDestroyed();
-    void OnVisibilityChanged();
+    UE_PROTECTED void OnVisibilityChanged();
     void HandleSeamlessTravel();
     void RadarPointAdded(class URadarPointComponent* radarPoint);
     void PlayerSpawned(class APlayerCharacter* Player);
-    void Add_Widget_Class(class UClass* Class_0, class UWidget*& Widget);
-    void AddAllWidgetToViewport();
-    void RemoveAllWidgetsFromParents();
-    void CreateCheatsIfNotCreated();
+    UE_PROTECTED void Add_Widget_Class(class UClass* Class_0, class UWidget*& Widget);
+    UE_PROTECTED void AddAllWidgetToViewport();
+    UE_PROTECTED void RemoveAllWidgetsFromParents();
+    UE_PROTECTED void CreateCheatsIfNotCreated();
     void PushEvent(class UWidget* eventWidget, bool Left);
-    void CreateQuickCheatsIfNotCreated();
+    UE_PROTECTED void CreateQuickCheatsIfNotCreated();
     void IsInitialized(bool& Out);
-    void CreateEscMenu();
+    UE_PROTECTED void CreateEscMenu();
     void PopEvent(class UWidget* eventWidget, bool Left);
-    void GetEscapeMenu(class UWindowWidget*& EscMenu_0);
-    void GetCheatMenu(class UWindowWidget*& CheatMenu_0);
-    void GetQuickCheatMenu(class UWindowWidget*& QuickCheatMenu_0);
+    UE_BLUEPRINT_PURE void GetEscapeMenu(class UWindowWidget*& EscMenu_0);
+    UE_BLUEPRINT_PURE void GetCheatMenu(class UWindowWidget*& CheatMenu_0);
+    UE_BLUEPRINT_PURE void GetQuickCheatMenu(class UWindowWidget*& QuickCheatMenu_0);
     UE_PURE class UFSDMainHUDWidget* GetHUDWidget() const;
 private:
     struct UeMarkers

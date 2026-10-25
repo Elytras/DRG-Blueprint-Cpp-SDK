@@ -30,7 +30,7 @@ public:
     float RotationSpeed;
     int NumberOfMarkers;
     void ExecuteUbergraph_BP_Hologram(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 private:
     struct UeMarkers

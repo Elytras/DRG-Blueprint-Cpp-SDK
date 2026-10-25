@@ -47,12 +47,12 @@ public:
     class USceneComponent* Scene;
     void ExecuteUbergraph_BP_RockEnemiesEvent(int EntryPoint);
     void TriggerDamage();
-    void EnemySpawnedAfterComplete(class APawn* spawnedEnemy);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void EnemySpawnedAfterComplete(class APawn* spawnedEnemy);
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnEventTriggered();
     void Spawn_Enemies();
     void OnEventFinished(bool eventSuccess);
-    void OnShoot();
+    UE_PROTECTED void OnShoot();
 private:
     struct UeMarkers
     {

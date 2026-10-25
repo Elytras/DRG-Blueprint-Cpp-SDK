@@ -55,7 +55,7 @@ public:
     void SetStatsOwner(class AFSDPlayerState* Player_State);
     void Set_Selected_Item(UI_InfirmaryStats_Item_C* SelectedLine_0);
     void Store_Mode(int Index_0);
-    void GetMissionStats(TArray<class UMissionStat*>& assets);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetMissionStats(TArray<class UMissionStat*>& assets);
     void SortStats(TArray<class UMissionStat*>& InStats, TArray<class UTexture2D*>& Categories, TArray<class UMissionStat*>& Sorted_Stats);
 private:
     struct UeMarkers

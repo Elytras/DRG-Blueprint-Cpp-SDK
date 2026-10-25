@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/WND_ForgeAvailableMessage", "WND_ForgeAvailableMessage_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_WND_ForgeAvailableMessage(int EntryPoint);
-    void OnShown();
+    UE_PROTECTED void OnShown();
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

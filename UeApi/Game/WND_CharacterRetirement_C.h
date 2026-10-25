@@ -70,23 +70,23 @@ public:
     void TestRetire();
     void AfterMissionControlSpeak();
     void BndEvt__SkipButton_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void Stop_Character_Audio();
     void FadeInBackground(float Duration);
     void Retire();
     void BndEvt__OVERLAY_RetirementGranted_K2Node_ComponentBoundEvent_1_OnFinished__DelegateSignature();
     void HideMouseCursor();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__BTN_Yes_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void SetData(class UPlayerCharacterID* characterID_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* characterID_0);
     void BndEvt__BTN_No_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void OnSuccess_8D7CEF664ECE349247F068951073F0FE();
     void OnFailure_8D7CEF664ECE349247F068951073F0FE();
     void BuildCostList();
     UE_PURE bool IsAudioFinished(class UAudioComponent* InAudioComponent);
     void StopAudio(class UAudioComponent* InAudioComponent);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

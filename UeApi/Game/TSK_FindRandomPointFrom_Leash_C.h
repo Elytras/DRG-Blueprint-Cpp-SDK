@@ -45,12 +45,12 @@ public:
     void Debug_Sphere(FVector Center, FLinearColor LineColor, float Radius);
     void ContinueWithBadVal();
     void CheckAgain();
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector& Location);
     UE_PURE FVector GetLocation();
-    void PassHeightCheck(FVector Candidate, FVector Origin_0, bool& pass);
+    UE_BLUEPRINT_PURE void PassHeightCheck(FVector Candidate, FVector Origin_0, bool& pass);
     void GetBestFlatGround(FVector Location, FVector& Array_Element);
-    void PassCeilingCheck(FVector Candidate, bool& pass);
+    UE_BLUEPRINT_PURE void PassCeilingCheck(FVector Candidate, bool& pass);
     void Prune_Bad_Points(TArray<FVector>& InArr, TArray<FVector>& PrunedArr);
 private:
     struct UeMarkers

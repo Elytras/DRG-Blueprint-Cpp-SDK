@@ -52,7 +52,7 @@ public:
     void UpdateHUDVisibility();
     void OnReviveused(int ReviveCount);
     void Update_State_Icon(class UTexture2D* Texture, FLinearColor InColorAndOpacity);
-    void OnStateChanged(TEnum<EDroneAIState> aCurrentState);
+    UE_BLUEPRINT_CALLABLE void OnStateChanged(TEnum<EDroneAIState> aCurrentState);
     void OnBoscoChanged(class ABosco* Bosco_0);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

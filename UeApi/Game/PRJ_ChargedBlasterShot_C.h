@@ -53,13 +53,13 @@ public:
     void SetAoEEnabled();
     void OnInitialized();
     UE_MULTICAST void UpdateFNRadius(float New_Radius);
-    void OnAoEDamageEnabled();
+    UE_PROTECTED void OnAoEDamageEnabled();
     void BndEvt__AoEDamageSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Grow_Time_Line__UpdateFunc();
     void Grow_Time_Line__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

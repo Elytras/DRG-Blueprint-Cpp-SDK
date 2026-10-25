@@ -25,8 +25,8 @@ public:
     class UTexture2D* Icon;
     void ExecuteUbergraph_BP_PointOfInterest(int EntryPoint);
     void Finished_Event();
-    void ReceiveBeginPlay();
-    void Init(class UTexture2D* Texture);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void Init(class UTexture2D* Texture);
 private:
     struct UeMarkers
     {

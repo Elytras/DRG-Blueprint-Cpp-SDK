@@ -30,7 +30,7 @@ public:
     int PlayerArrayIndex;
     class AFSDPlayerState* PlayerState;
     void ExecuteUbergraph_ITM_CharacterDeepDive(int EntryPoint);
-    void SetData(int InPlayerArrayIndex);
+    UE_BLUEPRINT_CALLABLE void SetData(int InPlayerArrayIndex);
 };
 
 }}}   // namespace Game::UI::Menu_MissionStart

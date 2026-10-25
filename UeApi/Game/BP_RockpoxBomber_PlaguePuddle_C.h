@@ -27,7 +27,7 @@ public:
     class USphereComponent* Sphere2;
     class USphereComponent* Sphere1;
     class UParticleSystemComponent* ParticleSystem;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

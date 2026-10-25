@@ -30,7 +30,7 @@ public:
     void ExecuteUbergraph_BP_BurrowAttackComponent(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void ShowDamageEffects(FVector_NetQuantize Location);
     UE_MULTICAST UE_RELIABLE void ShowTargetEffects(FVector_NetQuantize Location);
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
 };
 
 }}}   // namespace Game::Enemies::Attacks

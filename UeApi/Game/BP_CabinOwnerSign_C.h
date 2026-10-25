@@ -26,10 +26,10 @@ public:
     class UStaticMeshComponent* Lamp;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_CabinOwnerSign(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ChangeName(FString NewName);
     void SetCabinOwner(class AFSDPlayerState* PlayerState);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetPlayerName(FText& Value);
 private:
     struct UeMarkers

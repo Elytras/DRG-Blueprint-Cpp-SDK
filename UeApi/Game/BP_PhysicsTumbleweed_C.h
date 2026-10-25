@@ -20,7 +20,7 @@ public:
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     class UStaticMeshComponent* TumbleWeedModel;
     TArray<class UStaticMesh*> StatichMeshOptions;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

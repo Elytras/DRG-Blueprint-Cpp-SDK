@@ -21,7 +21,7 @@ public:
     class UMeleeAttackComponent* StabAttack;
     void ExecuteUbergraph_ENE_Spider_Tank_Generic(int EntryPoint);
     void MakeElite();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

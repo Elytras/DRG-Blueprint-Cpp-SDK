@@ -19,9 +19,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     TMulticastInlineDelegate<void()> OnAllActorsSalvaged;
     void ExecuteUbergraph_OBJ_1st_Salvage(int EntryPoint);
-    void AllActorsSalvaged();
-    FText GetObjectiveDescription(float missionLength);
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_PROTECTED void AllActorsSalvaged();
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
     UE_PURE FText GetInMissionCounterText() const;

@@ -38,7 +38,7 @@ public:
     UI_HorizontalResourceBar_C* UI_HorizontalResourceBar;
     TMulticastInlineDelegate<void(bool InYes)> OnClickedYesNo;
     void ExecuteUbergraph_Basic_Popup_YesNoPrompt(int EntryPoint);
-    void OnClicked(bool Yes_0);
+    UE_PROTECTED void OnClicked(bool Yes_0);
     void SetMappedResources(const TMap<class UResourceData*, int>& Resources);
     void SetResources(const TArray<FCraftingCost>& Resources);
     void Add_Resource(class UResourceData* InResource, float InAmount);
@@ -48,8 +48,8 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__BTN_No_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__BTN_Yes_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void OnShow(const FText& Title, const FText& Message);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_PROTECTED void OnShow(const FText& Title, const FText& Message);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

@@ -36,13 +36,13 @@ public:
     UE_COSMETIC void Construct();
     void BndEvt__ITM_Loadout_PerksEquip_Selection_K2Node_ComponentBoundEvent_4_OnPerkClicked__DelegateSignature(class UPerkAsset* PerkAsset);
     void Set_Character_Class(class UPlayerCharacterID* characterID);
-    void UpdateEquippedPerks();
-    void GetEquippedPerkAt(int Index_0, const TArray<class UPerkAsset*>& TargetArray, class UPerkAsset*& Perk);
-    UE_PURE class UWidget* Get_PerkStar_ToolTipWidget_0();
-    void UpdateSlots();
-    void CreateSlots(class UVerticalBox* InSlotsBox, class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType);
-    void SelectSlot(ITM_LoadOut_PerksEquip_Slot_C* InSlot);
-    void GetEquippedPerksByType(class UPlayerCharacterID* InCharacterClass, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& OutPerks);
+    UE_PRIVATE void UpdateEquippedPerks();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetEquippedPerkAt(int Index_0, const TArray<class UPerkAsset*>& TargetArray, class UPerkAsset*& Perk);
+    UE_PRIVATE UE_PURE class UWidget* Get_PerkStar_ToolTipWidget_0();
+    UE_PRIVATE void UpdateSlots();
+    UE_PRIVATE void CreateSlots(class UVerticalBox* InSlotsBox, class UPlayerCharacterID* InCharacter, TEnum<EPerkUsageType> InType);
+    UE_PRIVATE void SelectSlot(ITM_LoadOut_PerksEquip_Slot_C* InSlot);
+    UE_PRIVATE void GetEquippedPerksByType(class UPlayerCharacterID* InCharacterClass, TEnum<EPerkUsageType> InType, TArray<class UPerkAsset*>& OutPerks);
 private:
     struct UeMarkers
     {

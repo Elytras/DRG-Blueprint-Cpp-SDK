@@ -21,11 +21,11 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_UI_JettyBoots_Obstacle(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Intersects(FSpriteRect InRect, bool& OutIntersects);
-    void Init(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutEndX);
-    void OnInitialize(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutStartX, int& OutEndX);
-    void SetColumnRect(UI_JettyBoots_Column_C* Column, FSpriteRect Rect, float StartX);
-    void CalculateColumn(UI_JettyBoots_Column_C* InColumn, int InStartX, int InGateWidth, float InTop, float InBottom, FSpriteRect& OutRect);
+    UE_BLUEPRINT_PURE void Intersects(FSpriteRect InRect, bool& OutIntersects);
+    UE_BLUEPRINT_CALLABLE void Init(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutEndX);
+    UE_PROTECTED void OnInitialize(FRandomStream& InRandom, FJettyBootSetting InLevelSettings, int InCanvasHeight, int InStartX, bool InIsFirstGate, int& OutStartX, int& OutEndX);
+    UE_PROTECTED void SetColumnRect(UI_JettyBoots_Column_C* Column, FSpriteRect Rect, float StartX);
+    UE_PROTECTED void CalculateColumn(UI_JettyBoots_Column_C* InColumn, int InStartX, int InGateWidth, float InTop, float InBottom, FSpriteRect& OutRect);
     void PointsGathered(FSpriteRect InRect, bool& OutGatheredPoints, int& OutPoints);
 };
 

@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_ENE_Spider_Grunt_Base_C;
     class USphereComponent* Sphere;
     void ExecuteUbergraph_ENE_Spider_Grunt_Base(int EntryPoint);
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     UE_PURE bool GetIsTargetable() const;
 private:
     struct UeMarkers

@@ -16,9 +16,9 @@ class LIB_MenuColors_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/LIB_MenuColors", "LIB_MenuColors_C");
-    static void MenuColors(uint8 ColorSelector, class UObject* __WorldContext, FLinearColor& OutputColor);
-    static void MenuColorsAndOpacity(uint8 ColorSelector, float Opacity, class UObject* __WorldContext, FLinearColor& OutputColor);
-    static void SelectMenuColor(uint8 FALSE_0, uint8 TRUE_0, bool Condition, class UObject* __WorldContext, FLinearColor& OutputColor);
+    UE_BLUEPRINT_PURE static void MenuColors(uint8 ColorSelector, class UObject* __WorldContext, FLinearColor& OutputColor);
+    UE_BLUEPRINT_PURE static void MenuColorsAndOpacity(uint8 ColorSelector, float Opacity, class UObject* __WorldContext, FLinearColor& OutputColor);
+    UE_BLUEPRINT_PURE static void SelectMenuColor(uint8 FALSE_0, uint8 TRUE_0, bool Condition, class UObject* __WorldContext, FLinearColor& OutputColor);
     static void SetTextColor(class UTextBlock* Text, uint8 Color, class UObject* __WorldContext);
     static void SelectTextColor(class UTextBlock* Text, uint8 FALSE_0, uint8 TRUE_0, bool Condition, class UObject* __WorldContext);
     static void WindowColors(uint8 InColor, class UObject* __WorldContext, FLinearColor& Color1, FLinearColor& Color2);

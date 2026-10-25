@@ -29,10 +29,10 @@ public:
     void ExecuteUbergraph_BP_GameState(int EntryPoint);
     void CustomEvent_0();
     void ReceiveTick(float DeltaSeconds);
-    void HandleSeamlessTravelEvent();
+    UE_PROTECTED void HandleSeamlessTravelEvent();
     UE_SERVER UE_RELIABLE void StartGame();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void GetRandomIntialHero(class UPlayerCharacterID*& HeroClass);
     UE_PURE TArray<class UPlayerCharacterID*> GetPlayableCharacterIDs();
     void GetAnimSharingAssets(TSoftObjectPtr<class UAnimationSharingSetup> AnimSharing, TArray<TSoftObjectPtr<class UObject>>& assets);

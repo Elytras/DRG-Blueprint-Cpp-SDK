@@ -88,9 +88,9 @@ public:
     void BndEvt__KillSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void StopFoldParticles();
     void PlayShellFold();
-    void OnDroppodImpact();
-    void OnDrillingStarted();
-    void UserConstructionScript();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_PROTECTED void OnDrillingStarted();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -32,7 +32,7 @@ public:
     float Rot_speed;
     void ExecuteUbergraph_BP_MinersManual_Hologram(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

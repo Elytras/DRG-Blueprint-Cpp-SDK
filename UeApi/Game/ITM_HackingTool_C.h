@@ -30,13 +30,13 @@ public:
     class UFirstPersonStaticMeshComponent* FirstPersonStaticMesh;
     HackingTool_Controller_C* HackingControllerWidget;
     void ExecuteUbergraph_ITM_HackingTool(int EntryPoint);
-    void ReceivedActionReleased();
-    void ReceivedActionPressed();
-    void ReceiveActionClick();
-    void RecieveUnequipped();
+    UE_PROTECTED void ReceivedActionReleased();
+    UE_PROTECTED void ReceivedActionPressed();
+    UE_PROTECTED void ReceiveActionClick();
+    UE_PROTECTED void RecieveUnequipped();
     void OnRequestUnequip();
     void OnHackingCompleted(bool InSuccess);
-    void ReceiveHackingStarted();
+    UE_PROTECTED void ReceiveHackingStarted();
     void AudioOnFail(class USoundCue* InFailCue, class UDialogDataAsset* InShout);
 private:
     struct UeMarkers

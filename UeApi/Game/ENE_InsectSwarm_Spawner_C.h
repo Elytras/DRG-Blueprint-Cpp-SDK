@@ -37,15 +37,15 @@ public:
     TEnum<ETimelineDirection> Timeline_0__Direction_24041E04487F50C14665D9A721366BB3;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_ENE_InsectSwarm_Spawner(int EntryPoint);
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void OnSwarmSpawned(class AInsectSwarmEnemy* Swarm);
+    UE_PROTECTED void OnSwarmSpawned(class AInsectSwarmEnemy* Swarm);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    class UStaticMeshComponent* Receive_GetStaticMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UStaticMeshComponent* Receive_GetStaticMesh() const;
 private:
     struct UeMarkers
     {

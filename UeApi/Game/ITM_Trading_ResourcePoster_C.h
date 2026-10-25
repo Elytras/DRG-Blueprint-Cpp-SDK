@@ -30,7 +30,7 @@ public:
     class UImage* Img_Background;
     class UImage* IMG_GradientOverlay;
     void ExecuteUbergraph_ITM_Trading_ResourcePoster(int EntryPoint);
-    void SetData(class UTexture2D* Icon);
+    UE_BLUEPRINT_CALLABLE void SetData(class UTexture2D* Icon);
     UE_COSMETIC void Construct();
 };
 

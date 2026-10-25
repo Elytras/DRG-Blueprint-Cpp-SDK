@@ -23,7 +23,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     bool ShowBG;
     void ExecuteUbergraph_BP_TextField_Screen_SeeThrough(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

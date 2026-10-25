@@ -48,7 +48,7 @@ public:
     void spawned(class APawn* enemy);
     void SpawnCustom();
     void OnMatchStarted();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnEggBroken();
     void LightIntensity__UpdateFunc();
     void LightIntensity__FinishedFunc();

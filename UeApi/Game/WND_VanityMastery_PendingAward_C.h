@@ -30,8 +30,8 @@ public:
     Basic_Image_C* ResourceIcon;
     void ExecuteUbergraph_WND_VanityMastery_PendingAward(int EntryPoint);
     void BndEvt__WND_VanityMastery_PendingAward_ContinueBtn_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-    void ReceiveCloseCommand();
-    void OnShown();
+    UE_PROTECTED void ReceiveCloseCommand();
+    UE_PROTECTED void OnShown();
     void Finished_8C36011C4DFA52BA25DA7285ADF20DA5();
 };
 

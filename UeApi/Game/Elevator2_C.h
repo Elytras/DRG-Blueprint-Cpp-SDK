@@ -39,7 +39,7 @@ public:
     float ElevatorSpeed;
     void ExecuteUbergraph_Elevator2(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_GoingUp();
 private:
     struct UeMarkers

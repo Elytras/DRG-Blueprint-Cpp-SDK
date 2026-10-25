@@ -18,8 +18,8 @@ public:
     UE_CLASS("/Game/GameElements/Bar/DrinkEffects/DE_GenericBuffEffect", "DE_GenericBuffEffect_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_DE_GenericBuffEffect(int EntryPoint);
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character);
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

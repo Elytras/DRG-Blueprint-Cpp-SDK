@@ -47,8 +47,8 @@ public:
     void Setup_Cheat_Menu();
     void CheatMenuRequest();
     void Setup_Notification_Queue();
-    void ReceiveNotificationAdded();
-    void ReceiveNotificationQueueActivated();
+    UE_PROTECTED void ReceiveNotificationAdded();
+    UE_PROTECTED void ReceiveNotificationQueueActivated();
     void Setup_Game_DLC_Announcements();
     void Stop_Check_For_Tutorial_Prompt();
     void CheckForTutorialPrompt();
@@ -67,9 +67,9 @@ public:
     void Handle_Count_Down();
     void Update_Visibility();
     void OnCountdownCompleted();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveDestroyed();
-    void OnVisibilityChanged();
+    UE_PROTECTED void OnVisibilityChanged();
     void PlayerSpawned(class APlayerCharacter* Player);
     void EnqueueWindow(TSoftClassPtr<class UClass> WidgetClass);
     void FetchPromotionRewards(bool& OutSuccess);

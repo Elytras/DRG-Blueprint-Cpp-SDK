@@ -43,16 +43,16 @@ public:
     void CustomEvent1(class UItemUpgrade* Event);
     void BndEvt__WeaponImpact_K2Node_ComponentBoundEvent_1_HightAccelerationSignature__DelegateSignature();
     void OnSkinChanged(class USkinEffect* Skin);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnTemperatureChanged(float temperature, bool overheated_0);
     UE_SERVER UE_RELIABLE void TriggerCriticalOverheat();
     UE_MULTICAST void All_SpawnHeatBurst();
-    void RecieveUnequipped();
-    void RecieveEquipped();
-    void Receive_IsFiringChanged(bool NewValue);
-    void Receive_Overheated();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void Receive_IsFiringChanged(bool NewValue);
+    UE_PROTECTED void Receive_Overheated();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

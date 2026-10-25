@@ -25,7 +25,7 @@ public:
     class UTextBlock* TextBlock_Status;
     class UTextBlock* TextBlock_Title;
     void ExecuteUbergraph_TOOLTIP_Season_Levels(int EntryPoint);
-    void SetData(TEnum<ESeasonVisibilityState> State);
+    UE_BLUEPRINT_CALLABLE void SetData(TEnum<ESeasonVisibilityState> State);
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

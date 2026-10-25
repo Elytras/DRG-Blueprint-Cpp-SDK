@@ -25,7 +25,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_Escort_Repair(int EntryPoint);
     void DorettaDamaged(float amount);
     void OnPermanentDamage(int currSegment, int prevSegment);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

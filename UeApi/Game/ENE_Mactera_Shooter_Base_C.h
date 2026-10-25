@@ -32,11 +32,11 @@ public:
     class UAnimMontage* ChemExplosionAnim;
     FTimerHandle RagdollTimer;
     void ExecuteUbergraph_ENE_Mactera_Shooter_Base(int EntryPoint);
-    void OnTriggerFadeRagdoll();
+    UE_PROTECTED void OnTriggerFadeRagdoll();
     void DissolveMesh();
     void Death_ChemicalExplosion();
     UE_AUTHORITY_ONLY void BndEvt__ENE_Mactera_Shooter_Base_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Cooked_Death();
     void Death_Burned();
     UE_MULTICAST void All_BreakLimb(uint8 BoneIndex);
@@ -44,10 +44,10 @@ public:
     void FadeMaterials();
     void Death_Corrosive();
     void MakeElite();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void All_PlayAlertedSound();
-    UE_AUTHORITY_ONLY void Receive_Alerted();
-    void UserConstructionScript();
+    UE_AUTHORITY_ONLY UE_PROTECTED void Receive_Alerted();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_DeathType();
     void Death_Weakpoint();
     void Death_Normal();
@@ -55,7 +55,7 @@ public:
     void SetBurnMaterialSettings();
     void SetCookMaterialSettings();
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemcialArrow);
-    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0) const;
+    UE_BLUEPRINT_PURE bool ShouldExplode(TArray<class UDamageTag*>& Tags_0) const;
 private:
     struct UeMarkers
     {

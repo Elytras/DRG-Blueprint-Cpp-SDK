@@ -32,8 +32,8 @@ public:
     void UpdateEntries();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetPlayerState(int Index_0, class AFSDPlayerState*& State);
-    void GetPlayerStates(TArray<class AFSDPlayerState*>& OutStates);
+    UE_BLUEPRINT_PURE void GetPlayerState(int Index_0, class AFSDPlayerState*& State);
+    UE_BLUEPRINT_PURE void GetPlayerStates(TArray<class AFSDPlayerState*>& OutStates);
     void CreateEntries();
 };
 

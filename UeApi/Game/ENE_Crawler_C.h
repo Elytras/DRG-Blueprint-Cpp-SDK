@@ -46,13 +46,13 @@ public:
     class UAudioComponent* ProxySound;
     class UAudioComponent* JumpLoop;
     void ExecuteUbergraph_ENE_Crawler(int EntryPoint);
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__ENE_Crawler_BallisticMovement_K2Node_ComponentBoundEvent_3_LaunchDelegate__DelegateSignature();
     void BndEvt__ENE_Crawler_PlayerProximity_K2Node_ComponentBoundEvent_1_PlayerProximitySignature__DelegateSignature();
     void BndEvt__ENE_Crawler_BallisticMovement_K2Node_ComponentBoundEvent_0_LaunchDelegate__DelegateSignature();
     void BndEvt__ENE_Crawler_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

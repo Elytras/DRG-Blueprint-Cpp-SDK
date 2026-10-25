@@ -19,9 +19,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_OBJ_WRN_Plague(int EntryPoint);
     void ReceiveBeginPlay();
-    FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
     void OnRep_CurrPlagueCount();
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;

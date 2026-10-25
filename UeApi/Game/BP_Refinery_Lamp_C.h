@@ -25,7 +25,7 @@ public:
     class UStaticMeshComponent* Lamp_Mesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Refinery_Lamp(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
 private:
     struct UeMarkers

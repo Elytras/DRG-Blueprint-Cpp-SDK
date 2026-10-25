@@ -44,10 +44,10 @@ public:
     void ExecuteUbergraph_BP_UITesting(int EntryPoint);
     void OnShowMainMenu();
     void OnHit_Event(float Damage, const FDamageData& DamageData, bool anyHealthLost);
-    void OnItemEquipped(class AItem* Item);
+    UE_BLUEPRINT_CALLABLE void OnItemEquipped(class AItem* Item);
     void OnToggleMapTool(bool Visible);
     void Spin_Crosshair();
-    void OnVisibilityChanged();
+    UE_PROTECTED void OnVisibilityChanged();
     void HandleSeamlessTravel();
     void RadarPointAdded(class URadarPointComponent* radarPoint);
     void PlayerSpawned(class APlayerCharacter* Player);

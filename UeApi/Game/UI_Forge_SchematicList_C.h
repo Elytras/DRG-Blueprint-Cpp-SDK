@@ -45,12 +45,12 @@ public:
     void ExecuteUbergraph_UI_Forge_SchematicList(int EntryPoint);
     UE_COSMETIC void Construct();
     void Clear();
-    void AddSchematic(class USchematic* InSchematic);
-    void ItemClicked(UI_Forge_Schematic_C* Item);
+    UE_PRIVATE void AddSchematic(class USchematic* InSchematic);
+    UE_PRIVATE void ItemClicked(UI_Forge_Schematic_C* Item);
     void Refresh();
-    void AddNext();
-    void GetCategoryOrder(class USchematic* Schematic, int& OutOrder, FText& OutName);
-    void TryAddSeparator(class USchematic* InNextSchematic);
+    UE_PRIVATE void AddNext();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetCategoryOrder(class USchematic* Schematic, int& OutOrder, FText& OutName);
+    UE_PRIVATE void TryAddSeparator(class USchematic* InNextSchematic);
     void PopulateList();
     void AddSeparator(FText Text);
 private:

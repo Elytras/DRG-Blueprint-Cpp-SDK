@@ -22,7 +22,7 @@ public:
     class USoundBase* DischargeSound;
     float AoESpawnDelay;
     void ExecuteUbergraph_ITM_AOE_Grenade_Base(int EntryPoint);
-    void OnExploded();
+    UE_PROTECTED void OnExploded();
 private:
     struct UeMarkers
     {

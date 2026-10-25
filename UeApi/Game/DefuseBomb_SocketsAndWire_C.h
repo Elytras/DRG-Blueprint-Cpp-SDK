@@ -54,18 +54,18 @@ public:
     void Try_Highlight_Socket(int InIndex, bool& OutHighlighted);
     void SetCuttable(bool InCuttable);
     void TrySelectSocket(int InIndex, bool& OutWireSelected, bool& OutSocketSelected);
-    void SetWireOpacity(float InOpacity);
+    UE_PRIVATE void SetWireOpacity(float InOpacity);
     void FadeOut();
     void FadeIn();
     void Reset();
-    void SetCuttingPosition(float InPosition);
+    UE_PRIVATE void SetCuttingPosition(float InPosition);
     void TryCutWire(bool& OutWireCut);
     void SetCuttableTint(FLinearColor Appearance_Cuttable_Tint);
-    void GetWireLength(float& OutDist);
+    UE_BLUEPRINT_PURE void GetWireLength(float& OutDist);
     void PingSockets();
     UE_PURE bool IsWireSelected();
-    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
-    void IsWireCut(bool& WireCut_0) const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE void OnPaint(FPaintContext& Context) const;
+    UE_BLUEPRINT_PURE void IsWireCut(bool& WireCut_0) const;
 private:
     struct UeMarkers
     {

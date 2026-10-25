@@ -52,7 +52,7 @@ public:
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_ProgressSignature__DelegateSignature(float Progress);
     void OnDefenseComplete();
     void OnDefenseStart();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void HandlePhotosensitivity();
 private:
     struct UeMarkers

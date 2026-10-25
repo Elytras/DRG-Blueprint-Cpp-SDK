@@ -29,9 +29,9 @@ public:
     void BndEvt__InputField_K2Node_ComponentBoundEvent_0_OnEditableTextBoxChangedEvent__DelegateSignature(const FText& Text);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE FText GetText();
-    void GetHint(FText& HintText_0);
+    UE_BLUEPRINT_PURE void GetHint(FText& HintText_0);
     void SetText(FText InText);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

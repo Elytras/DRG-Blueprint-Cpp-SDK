@@ -29,7 +29,7 @@ public:
     bool ChangeTargeOnlyBasedOnDistance;
     class APawn* MyPawn;
     void ExecuteUbergraph_SER_FindNearestPlayerTarget(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 };
 
 }}}   // namespace Game::AI::Services

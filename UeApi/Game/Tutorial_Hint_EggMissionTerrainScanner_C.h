@@ -21,10 +21,10 @@ public:
     UE_READONLY class UClass* Target_Objective;
     UE_READONLY float AfterUseDelay;
     void ExecuteUbergraph_Tutorial_Hint_EggMissionTerrainScanner(int EntryPoint);
-    void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnHidden();
     void Mark_Ready();
     void OnToggleMapTool_Event(bool Visible);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 private:
     struct UeMarkers
     {

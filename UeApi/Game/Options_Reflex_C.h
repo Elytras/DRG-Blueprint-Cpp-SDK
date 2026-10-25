@@ -25,8 +25,8 @@ public:
     void ShowOptions();
     void UINeedsUpdate();
     UE_COSMETIC void Construct();
-    void IndexToId(int Index_0, int& ID);
-    void IdToIndex(int ID, int& Index_0);
+    UE_BLUEPRINT_PURE void IndexToId(int Index_0, int& ID);
+    UE_BLUEPRINT_PURE void IdToIndex(int ID, int& Index_0);
     void AddIndex(FText Option, int ID);
 };
 

@@ -42,7 +42,7 @@ public:
     class APlayerController* PlayerController;
     FText KickReason;
     void ExecuteUbergraph_HUD_TabPlayerListEntry_InteractableV2(int EntryPoint);
-    void OnFinished();
+    UE_BLUEPRINT_CALLABLE void OnFinished();
     void BndEvt__BTN_Respawn_Spacerig_K2Node_ComponentBoundEvent_15_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void BndEvt__BTN_Kick_K2Node_ComponentBoundEvent_11_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void BndEvt__BTN_Gamercard_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);

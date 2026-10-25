@@ -23,7 +23,7 @@ public:
     class UPointLightComponent* PointLight;
     class UStaticMeshComponent* Cube;
     void ExecuteUbergraph_BP_BismorChunk(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

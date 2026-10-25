@@ -63,8 +63,8 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void OnMatchStarted_Event_0();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetupConnection(class USceneComponent* BeamSource, class USceneComponent* BeamTarget, class AActor* Neighbour);
     void LineTraceConnection(class USceneComponent* Source, class USceneComponent* Target, class AActor* Neighbour, bool& Result);
     void CreateBeam(class USceneComponent* Source, class USceneComponent* Target, class AElectroBeam*& Beam);

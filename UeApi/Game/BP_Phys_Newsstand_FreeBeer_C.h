@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_BP_Phys_Newsstand_FreeBeer(int EntryPoint);
     void TrySetupEventText();
     void SetEventMaterial(TSoftObjectPtr<class UMaterialInterface> Material);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

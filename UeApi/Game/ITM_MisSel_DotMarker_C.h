@@ -26,7 +26,7 @@ public:
     class USizeBox* SizeBox_3;
     float Size;
     void ExecuteUbergraph_ITM_MisSel_DotMarker(int EntryPoint);
-    void SetData(int Level);
+    UE_BLUEPRINT_CALLABLE void SetData(int Level);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

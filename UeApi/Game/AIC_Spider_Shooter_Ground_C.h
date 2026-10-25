@@ -16,8 +16,8 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/AIC_Spider_Shooter_Ground", "AIC_Spider_Shooter_Ground_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Shooter_Ground_C;
     void ExecuteUbergraph_AIC_Spider_Shooter_Ground(int EntryPoint);
-    void Recieve_BlackboardValueChanged(const FName& KeyName);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void Recieve_BlackboardValueChanged(const FName& KeyName);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

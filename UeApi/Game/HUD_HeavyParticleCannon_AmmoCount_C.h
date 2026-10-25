@@ -23,8 +23,8 @@ public:
     Basic_HUD_BracketWindowBig_Single_C* Basic_HUD_BracketWindowBig_Single;
     HUD_HeavyParticleCannon_AmmoCount_Internal_C* HUD_HeavyParticleCannon_AmmoCount_Internal;
     void ExecuteUbergraph_HUD_HeavyParticleCannon_AmmoCount(int EntryPoint);
-    void SetData(int ClipSize, float ReloadDuration);
-    void ReceiveItemSet();
+    UE_BLUEPRINT_CALLABLE void SetData(int ClipSize, float ReloadDuration);
+    UE_PROTECTED void ReceiveItemSet();
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

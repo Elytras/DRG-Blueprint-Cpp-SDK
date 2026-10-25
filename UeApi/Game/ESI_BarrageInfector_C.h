@@ -23,7 +23,7 @@ public:
     float NextAnimTime;
     void ExecuteUbergraph_ESI_BarrageInfector(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnCompleted_607445684735AE18607BFCB27EC9535F(FName NotifyName);
     void OnBlendOut_607445684735AE18607BFCB27EC9535F(FName NotifyName);
     void OnInterrupted_607445684735AE18607BFCB27EC9535F(FName NotifyName);

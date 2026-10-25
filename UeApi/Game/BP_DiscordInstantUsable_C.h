@@ -16,7 +16,7 @@ class BP_DiscordInstantUsable_C : public UBPInstantUsable
 {
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/CommunityTerminal/BP_DiscordInstantUsable", "BP_DiscordInstantUsable_C");
-    bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

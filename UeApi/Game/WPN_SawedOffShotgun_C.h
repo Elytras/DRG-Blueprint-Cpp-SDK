@@ -28,9 +28,9 @@ public:
     class UCrosshairAggregator* CrosshairAggregator;
     class UMultiHitscanComponent* MultiHitscan;
     void ExecuteUbergraph_WPN_SawedOffShotgun(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

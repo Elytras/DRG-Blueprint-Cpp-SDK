@@ -35,7 +35,7 @@ public:
     void BndEvt__Carriable_K2Node_ComponentBoundEvent_2_CarriableEvent__DelegateSignature();
     void OnPickedUpLeg();
     void OnDropped_Leg();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE float GetPingDelay(float MinDist, float MaxDist, float MinDelay, float MaxDelay);
 private:
     struct UeMarkers

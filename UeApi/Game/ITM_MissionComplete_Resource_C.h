@@ -29,12 +29,12 @@ public:
     FText Description;
     UE_READONLY int Size;
     void ExecuteUbergraph_ITM_MissionComplete_Resource(int EntryPoint);
-    void Init(FText Description_0, int amount_0);
+    UE_BLUEPRINT_CALLABLE void Init(FText Description_0, int amount_0);
     void Start_Counter();
     void Init_No_Anim(FText Description_0, int amount_0, class UTexture2D* Texture);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Init_With_Icon(FText Description_0, int amount_0, class UTexture2D* Texture);
-    UE_PURE float Scale(float OriginalSize);
+    UE_PRIVATE UE_PURE float Scale(float OriginalSize);
 private:
     struct UeMarkers
     {

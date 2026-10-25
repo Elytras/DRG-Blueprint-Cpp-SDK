@@ -34,7 +34,7 @@ public:
     float CurrentDistance;
     float InitialDistance;
     void ExecuteUbergraph_BP_Anniversary_Sparkler(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_MULTICAST void All_BindGenericDelegate(class APlayerCharacter* Player);
     void OnKnock(class APlayerCharacter* Player);
     void ReceiveTick(float DeltaSeconds);

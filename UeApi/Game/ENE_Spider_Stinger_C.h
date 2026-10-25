@@ -41,12 +41,12 @@ public:
     TArray<class UMaterialInterface*> TailMateirals;
     void ExecuteUbergraph_ENE_Spider_Stinger(int EntryPoint);
     void StartCorrosiveDissovle();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__ENE_Spider_Stinger_HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void StartDissolve();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

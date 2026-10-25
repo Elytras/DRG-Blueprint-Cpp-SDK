@@ -40,9 +40,9 @@ public:
     void OnCountChanged_Event(class UMissionStat* MissionStat, float Value);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetMissionStat(class UMissionStat*& Mission_Stat_0);
+    UE_BLUEPRINT_PURE void GetMissionStat(class UMissionStat*& Mission_Stat_0);
     void SetCategoryFilter(TArray<class UTexture2D*>& Filter);
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

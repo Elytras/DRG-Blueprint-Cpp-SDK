@@ -70,13 +70,13 @@ public:
     class UAudioComponent* DrillSoundInstance;
     void ExecuteUbergraph_BP_ResonanceScannerPod(int EntryPoint);
     void ResizeCarver();
-    void OnDropStarted();
-    void OnDroppodImpact();
+    UE_PROTECTED void OnDropStarted();
+    UE_PROTECTED void OnDroppodImpact();
     void OnConnectedToTarget();
     void OnNewState(class ARessuplyPod* pod, TEnum<ERessuplyPodState> NewParam);
     void OnFirstFuelLineSegment(class AFuelLineSegment* InFirstSegment);
     void BndEvt__BP_RockCrackerPod_DropToTerrain_K2Node_ComponentBoundEvent_3_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void UpdateLights(class UMaterialInterface* NewMaterial);
     void OnRep_FuelLineStartLocation();
 private:

@@ -29,10 +29,10 @@ public:
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     class UParticleSystem* DeathParticle;
     void ExecuteUbergraph_ENE_Maggot(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Died();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__PathfinderMovement_K2Node_ComponentBoundEvent_0_PathStateChangedDelegate__DelegateSignature(TEnum<EDeepMovementState> State);
     void OnRep_Moving();

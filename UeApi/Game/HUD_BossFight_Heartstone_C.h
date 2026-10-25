@@ -42,7 +42,7 @@ public:
     void OnBossRemoved(const TScriptInterface<class IBossFightInterface>& BossFight_0);
     void OnProgressUpdated(float Progress);
     UE_COSMETIC void Construct();
-    float CalcPercentage(float Progress, int& CurrStage);
+    UE_BLUEPRINT_PURE float CalcPercentage(float Progress, int& CurrStage);
 private:
     struct UeMarkers
     {

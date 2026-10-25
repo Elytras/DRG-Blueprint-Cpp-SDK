@@ -79,14 +79,14 @@ public:
     UE_COSMETIC void Construct();
     void Unselect();
     void Reset();
-    void SetData(class UGeneratedMission* mission_0, ITM_MisSel_FullBiome_C* BiomeController_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UGeneratedMission* mission_0, ITM_MisSel_FullBiome_C* BiomeController_0);
     UE_PURE bool HasMission();
     void GetNumberOfActiveMissions(TArray<FBlueprintSessionResult>& Array, int& sessions);
     void SelectOptions();
-    void GetPlayerController(BP_PlayerController_SpaceRig_C*& AsBP_Player_Controller_Space_Rig);
-    void ShouldEnableJoinButton(bool& Show);
-    void ShouldEnableHostButton(bool& Show);
-    void ShouldEnableSoloButton(bool& Show);
+    UE_BLUEPRINT_PURE void GetPlayerController(BP_PlayerController_SpaceRig_C*& AsBP_Player_Controller_Space_Rig);
+    UE_BLUEPRINT_PURE void ShouldEnableJoinButton(bool& Show);
+    UE_BLUEPRINT_PURE void ShouldEnableHostButton(bool& Show);
+    UE_BLUEPRINT_PURE void ShouldEnableSoloButton(bool& Show);
     void SetMutators(class UGeneratedMission* Target);
 };
 

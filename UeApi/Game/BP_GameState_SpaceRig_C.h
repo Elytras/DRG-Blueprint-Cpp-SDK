@@ -37,9 +37,9 @@ public:
     void ExecuteUbergraph_BP_GameState_SpaceRig(int EntryPoint);
     void Shout_Cooldown_Started();
     void ManualRefreshServerList();
-    void ReceiveGeneratedMissionReplicated();
+    UE_PROTECTED void ReceiveGeneratedMissionReplicated();
     void Search();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_MULTICAST UE_RELIABLE void CountDownCompleted();
     void StopHostTimer();
     void StartHostTimer();

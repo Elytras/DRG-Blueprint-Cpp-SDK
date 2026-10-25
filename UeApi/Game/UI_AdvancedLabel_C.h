@@ -32,11 +32,11 @@ public:
     FLinearColor Shadow_Color;
     FVector2D Shadow_Offset;
     void ExecuteUbergraph_UI_AdvancedLabel(int EntryPoint);
-    void OnReset();
-    void OnAddString(FString Value);
-    void OnAddKeyName(FString Name_0);
-    void OnAddIcon(FString Name_0, const FActionIconMapping& Icon);
-    void OnNewLine(int Index_0);
+    UE_PROTECTED void OnReset();
+    UE_PROTECTED void OnAddString(FString Value);
+    UE_PROTECTED void OnAddKeyName(FString Name_0);
+    UE_PROTECTED void OnAddIcon(FString Name_0, const FActionIconMapping& Icon);
+    UE_PROTECTED void OnNewLine(int Index_0);
     void SetTextTint(FLinearColor Text_Tint_0);
     void SetIconTint(FLinearColor PC__Icon_Tint_0, FLinearColor Controller_Icon_Tint_0);
     void SetKeyNameTint(FLinearColor Key_Name_Tint_0);

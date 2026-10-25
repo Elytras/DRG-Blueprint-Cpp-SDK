@@ -432,6 +432,26 @@ never expanded in place.
 #endif
 
 /*
+How genueapi marks a game Blueprint's function, so that its header alone gives its flags (no table entry for it):
+UE_PROTECTED and UE_PRIVATE its access, UE_BLUEPRINT_PURE a BlueprintPure function that UE_PURE does not mark (one
+answering through an out-parameter, or one whose calls must not be dropped), UE_BLUEPRINT_CALLABLE a function graph
+overriding a native event the engine does not mark BlueprintCallable (UserConstructionScript): the editor makes every
+function graph callable, which an override of it copies. Marks, not C++ access: the engine never checks a Blueprint
+function's access, so a mod may call a protected one. Attribute kinds, as above.
+*/
+#ifdef __clang__
+#define UE_PROTECTED [[gnu::leaf]]
+#define UE_PRIVATE [[clang::minsize]]
+#define UE_BLUEPRINT_PURE [[gnu::no_split_stack]]
+#define UE_BLUEPRINT_CALLABLE [[gnu::returns_twice]]
+#else
+#define UE_PROTECTED
+#define UE_PRIVATE
+#define UE_BLUEPRINT_PURE
+#define UE_BLUEPRINT_CALLABLE
+#endif
+
+/*
 UE_NO_OPTIMIZE: AssetGen lowers the function as written: an unused pure call and an unread local stay, and a
 harmless `&&` / `||` keeps its branch. It is the real attribute, so `#pragma clang optimize off` /
 `#pragma optimize("", off)` over a run of functions does the same.

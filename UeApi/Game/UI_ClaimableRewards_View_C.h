@@ -43,9 +43,9 @@ public:
     bool RewardsAndMissionControlFinished;
     TArray<class UClaimableRewardEntryWidget*> RewardEntries;
     void ExecuteUbergraph_UI_ClaimableRewards_View(int EntryPoint);
-    void ReceiveBeginFlow();
-    void ReceiveDataChanged();
-    void ReceiveEndFlow();
+    UE_PROTECTED void ReceiveBeginFlow();
+    UE_PROTECTED void ReceiveDataChanged();
+    UE_PROTECTED void ReceiveEndFlow();
     void OnRewardClaimed(class UClaimableRewardEntryWidget* InEntryWidget);
     void Move_In_Rewards();
     void ShowMouseCursor();
@@ -53,10 +53,10 @@ public:
     void Start_Mission_Control_Speak();
     void OnAudioFinished_Event();
     void StopAudio();
-    void TryFinish();
-    void SetupView(FClaimableRewardView InViewData);
-    void GetLine(class UHorizontalBox*& EntryBox_0);
-    void GetEntryWidgetClass(TSoftClassPtr<class UClass> InOverridetClass, class UClass*& OutWidgetClass);
+    UE_PRIVATE void TryFinish();
+    UE_PRIVATE void SetupView(FClaimableRewardView InViewData);
+    UE_BLUEPRINT_PURE void GetLine(class UHorizontalBox*& EntryBox_0);
+    UE_BLUEPRINT_PURE void GetEntryWidgetClass(TSoftClassPtr<class UClass> InOverridetClass, class UClass*& OutWidgetClass);
 private:
     struct UeMarkers
     {

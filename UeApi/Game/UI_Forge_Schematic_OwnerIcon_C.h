@@ -36,7 +36,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMaxSize(int InWidth, int InHeight);
     void FromSchematic(class USchematic* InSchematic);
-    void SetIconAndVisibility(class UTexture2D* Texture, FLinearColor InColor);
+    UE_PRIVATE void SetIconAndVisibility(class UTexture2D* Texture, FLinearColor InColor);
     void FromItemID(class UItemID* ItemID);
     void FromActorClass(class UItemData* ItemData);
 };

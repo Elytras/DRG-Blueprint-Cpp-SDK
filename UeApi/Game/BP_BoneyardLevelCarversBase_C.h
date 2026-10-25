@@ -21,10 +21,10 @@ public:
     class UStaticMeshComponent* PreviewMesh;
     bool DebugDrawRocks;
     TArray<class UTerrainMaterial*> EligibleMaterialsRockFormation;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void AddRockFormation(FTransform RelativeTransform, float TraceDistance, float RotationRandomAngle, float OffsetAlongSurface);
     void RepositionToMiddle(TArray<class UStaticMesh*>& InStaticMeshes, TArray<float>& InHeights, TArray<float>& InTraceThresholds);
-    int GetDistanceIndex(float InputValue, TArray<float>& ThresholdLevels, bool& InRange);
+    UE_BLUEPRINT_PURE int GetDistanceIndex(float InputValue, TArray<float>& ThresholdLevels, bool& InRange);
 private:
     struct UeMarkers
     {

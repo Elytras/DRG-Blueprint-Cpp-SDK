@@ -17,7 +17,7 @@ class BP_Collectible_Barley_Base_C : public ::Game::GameElements::Resources::Col
 public:
     UE_CLASS("/Game/GameElements/Resources/Collectibles/Barley/BP_Collectible_Barley_Base", "BP_Collectible_Barley_Base_C");
     class UMaterialInstance* FruitMaterial;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void PickBerry(class USceneComponent* Berry, class USceneComponent* Stem);
     UE_PURE float GetPickDelay() const;
 private:

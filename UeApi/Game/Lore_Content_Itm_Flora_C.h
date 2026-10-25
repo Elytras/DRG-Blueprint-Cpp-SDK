@@ -26,7 +26,7 @@ public:
     FText Name_0;
     FText Description;
     void ExecuteUbergraph_Lore_Content_Itm_Flora(int EntryPoint);
-    void SetData(FText Param_Name_0, FText Description_0, class UTexture2D* Texture, FGuid ObjectID);
+    UE_BLUEPRINT_CALLABLE void SetData(FText Param_Name_0, FText Description_0, class UTexture2D* Texture, FGuid ObjectID);
     UE_PURE class UWidget* GetToolTipWidget_0();
 private:
     struct UeMarkers

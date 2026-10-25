@@ -20,7 +20,7 @@ public:
     UE_READONLY class UClass* Target_Objective;
     float DelayBeforeShowingHint;
     void ExecuteUbergraph_Tutorial_Hint_DeepScan_FindCrystals(int EntryPoint);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 private:
     struct UeMarkers
     {

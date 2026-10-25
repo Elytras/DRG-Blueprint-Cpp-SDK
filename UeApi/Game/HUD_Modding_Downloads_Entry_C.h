@@ -39,12 +39,12 @@ public:
     bool IsFinished;
     void ExecuteUbergraph_HUD_Modding_Downloads_Entry(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(FString InModName, bool InDownloading, int InDownloaded, int InTotal);
-    void GetModName(FString& ModName_0);
-    void GetProgress(float& Progress_0);
+    UE_BLUEPRINT_CALLABLE void SetProgress(FString InModName, bool InDownloading, int InDownloaded, int InTotal);
+    UE_BLUEPRINT_PURE void GetModName(FString& ModName_0);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetProgress(float& Progress_0);
     void Finish();
     void Error(TEnum<EUGCPackageError> InErrorType);
-    void GetIsFinished(bool& IsFinished_0);
+    UE_BLUEPRINT_PURE void GetIsFinished(bool& IsFinished_0);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Modding

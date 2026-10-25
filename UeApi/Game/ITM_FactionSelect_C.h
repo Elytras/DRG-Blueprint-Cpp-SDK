@@ -43,7 +43,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetFee(int New_Fee);
     void SetFaction(class UCommunityGoalFaction* Faction_0);
-    void Initialize(int New_Fee, class UCommunityGoalFaction* Faction_0);
+    UE_BLUEPRINT_CALLABLE void Initialize(int New_Fee, class UCommunityGoalFaction* Faction_0);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

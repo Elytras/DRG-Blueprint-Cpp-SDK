@@ -28,12 +28,12 @@ public:
     class UCrosshairAggregator* CrosshairAggregator;
     class UProjectileLauncherComponent* projectileLauncher;
     void ExecuteUbergraph_WPN_Crossbow(int EntryPoint);
-    void SetAnimatedTPMeshComponentFromBP(class AActor* animatedArrow);
-    void SetAnimatedFPMeshComponentFromBP(class AActor* animatedArrow);
-    void UpdateRecallProgress();
-    void ReceiveBeginPlay();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    void GetEquippedSpecialArrow(class AFSDPlayerState* Player, class UClass*& Projectile) const;
+    UE_PROTECTED void SetAnimatedTPMeshComponentFromBP(class AActor* animatedArrow);
+    UE_PROTECTED void SetAnimatedFPMeshComponentFromBP(class AActor* animatedArrow);
+    UE_PROTECTED void UpdateRecallProgress();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE void GetEquippedSpecialArrow(class AFSDPlayerState* Player, class UClass*& Projectile) const;
     void Get_Reload_Stat(class AFSDPlayerState* PlayerState, FGearStatEntry& GearStatEntry) const;
 private:
     struct UeMarkers

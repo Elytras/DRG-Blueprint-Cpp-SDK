@@ -27,7 +27,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_LowOnAmmo(int EntryPoint);
     void OnResourceMined(class UCappedResource* Resource_0, float amount);
     void OnSupplyStatusChangedEvent(float ammoStatus01, float healthStatus01);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

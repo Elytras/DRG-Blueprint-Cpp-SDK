@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_DownedBomb", "BP_DownedBomb_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_DownedBomb(int EntryPoint);
-    void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
+    UE_PROTECTED void Receive_ActivatePerk(class APlayerCharacter* Character, float Value);
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

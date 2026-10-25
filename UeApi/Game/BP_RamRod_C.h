@@ -28,7 +28,7 @@ public:
     bool DropPodHome_;
     void ExecuteUbergraph_BP_RamRod(int EntryPoint);
     void Recieve_DropPod();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

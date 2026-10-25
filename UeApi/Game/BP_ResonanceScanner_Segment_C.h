@@ -33,12 +33,12 @@ public:
     void ExecuteUbergraph_BP_ResonanceScanner_Segment(int EntryPoint);
     void BndEvt__DeconstructHealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__DeconstructHealthComponent_K2Node_ComponentBoundEvent_1_HealthChangedSig__DelegateSignature(float Health);
-    void ReceivPlacementValidChanged(bool InIsValid);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivPlacementValidChanged(bool InIsValid);
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__NextSegmentUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void ReceivePlacementStateChanged(TEnum<ETrackBuildPlacementState> NewState);
-    void UserConstructionScript();
-    bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
+    UE_PROTECTED void ReceivePlacementStateChanged(TEnum<ETrackBuildPlacementState> NewState);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, class UTrackBuilderConnectPoint* InConnectPoint);
     void UpdateVisualState();
     void OverrideMaterialByName(class UMeshComponent* InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, FName InMaterialSlotName, class UMaterialInterface* InMaterial);
     void OverrideMaterialByIndex(class UPrimitiveComponent*& InMesh, TArray<class UMaterialInterface*>& InDefaultMaterials, int InIndex, class UMaterialInterface* InMaterial);

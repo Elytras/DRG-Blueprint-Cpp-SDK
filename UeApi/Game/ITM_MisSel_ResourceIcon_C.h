@@ -23,7 +23,7 @@ public:
     Basic_ResourceIcon_C* Basic_ResourceIcon;
     class UTextBlock* DATA_ResourceName;
     void ExecuteUbergraph_ITM_MisSel_ResourceIcon(int EntryPoint);
-    void SetData(class UResourceData* Resource);
+    UE_BLUEPRINT_CALLABLE void SetData(class UResourceData* Resource);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

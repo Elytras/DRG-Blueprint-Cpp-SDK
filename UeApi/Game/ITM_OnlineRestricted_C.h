@@ -48,10 +48,10 @@ public:
     void Refresh_Block_Reasons();
     void Resolve_Issue();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Should_Show_Online_Restriction(bool& Should_Show);
+    UE_BLUEPRINT_PURE void Should_Show_Online_Restriction(bool& Should_Show);
     void SetBlockedReasonString(TArray<EBlueprintablePrivilegeResults>& InResults);
     void SetBlockSolution(TEnum<EBlueprintablePrivilegeResults> priviligeResults);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetFontSize(int inFontSize);
     void Handle_Key_Down(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
 private:

@@ -24,7 +24,7 @@ public:
     UI_AdvancedLabel_C* FireLabel;
     void ExecuteUbergraph_UI_FuelLine_Builder_CleanupPod(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(float InPercent);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float InPercent);
 };
 
 }}}   // namespace Game::WeaponsNTools::FuelLineBuilder

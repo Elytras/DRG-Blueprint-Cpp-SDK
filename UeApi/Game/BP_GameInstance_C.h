@@ -58,7 +58,7 @@ public:
     void OnFailure_7B3ECFCE46627790F0C9B89A6B449207();
     void OnSuccess_7B3ECFCE46627790F0C9B89A0D72085C();
     void OnFailure_7B3ECFCE46627790F0C9B89A0D72085C();
-    void IsEligibleForRetirementAassignment(bool& EligibleForRetirementAssignment_0);
+    UE_BLUEPRINT_PURE void IsEligibleForRetirementAassignment(bool& EligibleForRetirementAssignment_0);
     void Setup_Join_with_Password(FBlueprintSessionResult Session);
     void SetupJoinModded(FBlueprintSessionResult Session);
     void ShouldPromptSandboxUser(FBlueprintSessionResult Session, bool& Yes);

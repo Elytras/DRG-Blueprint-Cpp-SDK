@@ -30,10 +30,10 @@ public:
     class UEnemyComponent* enemy;
     class UParticleSystemComponent* P_InsectSwarm;
     void ExecuteUbergraph_ENE_InsectSwarm(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     UE_PURE bool GetIsTargetable() const;
 private:
     struct UeMarkers

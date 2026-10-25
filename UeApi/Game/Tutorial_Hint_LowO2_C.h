@@ -23,7 +23,7 @@ public:
     class AEscortMule* Drilldozer;
     class UFriendlyHealthComponent* DrilldozerHealth;
     void ExecuteUbergraph_Tutorial_Hint_LowO2(int EntryPoint);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

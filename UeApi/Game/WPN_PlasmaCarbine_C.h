@@ -60,18 +60,18 @@ public:
     UE_SERVER void ServerPushSpeedBoost();
     UE_MULTICAST void Trigger_Aoe_Effects();
     UE_SERVER void Server_Trigger_Aoe();
-    void RecieveStartUsing();
-    void Receive_Overheated();
-    void Receive_IsFiringChanged(bool NewValue);
+    UE_PROTECTED void RecieveStartUsing();
+    UE_PROTECTED void Receive_Overheated();
+    UE_PROTECTED void Receive_IsFiringChanged(bool NewValue);
     void OnTemperatureChanged(float temperature, bool overheated_0);
     void CustomEvent1(class UItemUpgrade* Event);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Overheat_Ammo_Regen__UpdateFunc();
     void Overheat_Ammo_Regen__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetUpgradesAndOverclocks(class UItemUpgrade* ItemUpgrade);
-    void GetAmmoWidget(WeaponDisplay_PlasmaCarbine_AmmoCounter_C*& AsWeapon_Display_Plasma_Carbine_Ammo_Counter);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE void GetAmmoWidget(WeaponDisplay_PlasmaCarbine_AmmoCounter_C*& AsWeapon_Display_Plasma_Carbine_Ammo_Counter);
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

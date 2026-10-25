@@ -45,7 +45,7 @@ public:
     void ExecuteUbergraph_PRJ_Grenade_StickySmall(int EntryPoint);
     void Beep();
     UE_MULTICAST void Boom();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void OnRep_Stick();
 private:

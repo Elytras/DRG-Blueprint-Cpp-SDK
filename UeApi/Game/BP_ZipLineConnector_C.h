@@ -26,7 +26,7 @@ public:
     class UStaticMeshComponent* ConnectorMesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_ZipLineConnector(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void UpdateLocation(FVector Location, FVector Direction);
     void ReceiveUpdateZipLinePoint(const FVector& WorldLocation, const FVector& Directioy, bool Speeding);
     void ReceiveDisconnected();

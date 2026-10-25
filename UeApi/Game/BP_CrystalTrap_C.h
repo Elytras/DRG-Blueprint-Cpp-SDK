@@ -80,7 +80,7 @@ public:
     void Explode();
     void OnDead();
     void Deactivate();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ScaleDown__UpdateFunc();
     void ScaleDown__FinishedFunc();
     void OnRep_Exploded();

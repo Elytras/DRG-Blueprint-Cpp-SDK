@@ -46,7 +46,7 @@ public:
     void OnChanged(class UCappedResource* Resource_0, float amount_0);
     void Init_Resource();
     void SetResource(class UCappedResource* InResource, bool HideIfEmpty_0);
-    void UpdateAmount(float DeltaSeconds);
+    UE_PRIVATE void UpdateAmount(float DeltaSeconds);
 private:
     struct UeMarkers
     {

@@ -59,7 +59,7 @@ public:
     FName ImpactSoundParameter;
     void ExecuteUbergraph_BP_Anniversary_Trophy8_InCave(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void TalkToSelf();
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
     void BndEvt__BP_InCaveOktoberfestMug_Box_K2Node_ComponentBoundEvent_6_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void SetMeshVisibility(bool IsAttached);
     void CheckForPlayersNearby();
@@ -73,8 +73,8 @@ public:
     void BndEvt__BP_InCaveOktoberfestMug_TerrainDetect2_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__BP_InCaveOktoberfestMug_TerrainDetect1_K2Node_ComponentBoundEvent_1_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__BP_InCaveOktoberfestMug_TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_ShowOnTerrainScanner();
 private:
     struct UeMarkers

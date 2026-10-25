@@ -33,9 +33,9 @@ public:
     ITM_MisSel_BiomeBase_C* BiomeMapWidget;
     bool Is_In_Season_Event_Zone;
     void ExecuteUbergraph_ITM_MisSel_FullBiome(int EntryPoint);
-    void SetData(const TArray<class UGeneratedMission*>& missions, class UBiome* Biome_0);
+    UE_BLUEPRINT_CALLABLE void SetData(const TArray<class UGeneratedMission*>& missions, class UBiome* Biome_0);
     UE_COSMETIC void Construct();
-    void GetAllAllMissionSlots(TArray<ITM_MisSel_MissionMapIcon_C*>& Items1);
+    UE_BLUEPRINT_PURE void GetAllAllMissionSlots(TArray<ITM_MisSel_MissionMapIcon_C*>& Items1);
     void ClearMissions();
     void GetRandomFreeMissionSlot(ITM_MisSel_MissionMapIcon_C*& Output);
     void UpdateMapPan(FVector2D InPosition);

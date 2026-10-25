@@ -38,13 +38,13 @@ public:
     class UClass* GetLoaderScreenUIClass();
     void CleanupUI();
     void GetNonTakenHero(class UPlayerCharacterID*& SelectedClass);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnBack();
     void OnPlayerCharacterPossesed_Event(class APawn* Pawn);
     UE_SERVER UE_RELIABLE void Server_RequestNonTakenHero();
     UE_CLIENT UE_RELIABLE void Client_RecieveNonTakenHero(class UPlayerCharacterID* New_Character);
     UE_SERVER UE_RELIABLE void Server_SetCharacterSelected();
-    void RecievePreClientTravel();
+    UE_PROTECTED void RecievePreClientTravel();
     void ReceiveDestroyed();
     void ShowReconnect(bool Show);
     void ExecuteUbergraph_BP_NetworkPlayerController(int EntryPoint);

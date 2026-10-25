@@ -26,7 +26,7 @@ public:
     float MaxRangeAboveTarget;
     FVector TempStorage;
     void ExecuteUbergraph_TSK_GetPointAboveTarget(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}   // namespace Game::Enemies::FlyingBug::Bomber

@@ -51,10 +51,10 @@ public:
     void StopGlow();
     void DoGlow();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Glowtimeline__UpdateFunc();
     void Glowtimeline__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_Glow();
 private:
     struct UeMarkers

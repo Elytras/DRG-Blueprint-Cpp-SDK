@@ -47,7 +47,7 @@ public:
     UE_PURE bool GetIsChecked();
     void SetIsChecked(bool InIsChecked);
     void SetText(FText InText, bool InUpperCase);
-    void GetText(FText& Text_0);
+    UE_BLUEPRINT_PURE void GetText(FText& Text_0);
 private:
     struct UeMarkers
     {

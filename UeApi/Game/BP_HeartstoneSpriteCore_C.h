@@ -29,7 +29,7 @@ public:
     int MinNumSprites;
     void ExecuteUbergraph_BP_HeartstoneSpriteCore(int EntryPoint);
     void StopSpawningSprites();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpawnEnergySpriteWave();
     void OnRep_SpriteSpawnDelay();
 private:

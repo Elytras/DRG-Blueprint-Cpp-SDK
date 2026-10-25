@@ -30,7 +30,7 @@ public:
     class UGameDLC* DLC;
     void ExecuteUbergraph_DLCclaimPopup_DLC07_Biohazard(int EntryPoint);
     void BndEvt__DLCclaimPopup_Base_K2Node_ComponentBoundEvent_0_OnCloseClicked__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
 };
 
 }}}   // namespace Game::UI::DLCclaimPopups

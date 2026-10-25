@@ -34,7 +34,7 @@ public:
     class UBiome* Biome;
     void ExecuteUbergraph_TOOLTIP_ServerEntry_Biome(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UBiome* InBiome);
+    UE_BLUEPRINT_CALLABLE void SetData(class UBiome* InBiome);
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

@@ -56,7 +56,7 @@ public:
     void EventStarted();
     void ShouldAnimate(bool ShouldAnimate_0);
     void HideEndpoint(bool shouldHide_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__ConnectPoint_K2Node_ComponentBoundEvent_0_ConnectionDelegate__DelegateSignature(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
     void UpdateState();
     void GetRockCrackerPod(class ATrackBuilderSegment* Segment, BP_RockCrackerPod_C*& pod);

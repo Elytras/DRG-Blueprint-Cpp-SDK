@@ -23,9 +23,9 @@ public:
     class UBoxComponent* UsableCollider;
     TArray<class UMaterialInterface*> DefaultMaterials;
     void ExecuteUbergraph_BP_ResonanceScanner_StartPoint(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__UsableStartFuelLine_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
     void SetMaterial(FName InSlotName, class UMaterialInterface* InMaterial);
 private:

@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/Enemies/Plague/PlagueShark/AIC_PlagueShark", "AIC_PlagueShark_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_PlagueShark(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
 private:
     struct UeMarkers
     {

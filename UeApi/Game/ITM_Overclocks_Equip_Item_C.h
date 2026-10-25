@@ -47,7 +47,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetIconSize(int NewSize);
     void SetOverclock(class UItemUpgrade* InOverclock);
-    void GetOverClock(class UItemUpgrade*& Overclock_0);
+    UE_BLUEPRINT_PURE void GetOverClock(class UItemUpgrade*& Overclock_0);
     void SetState(TEnum<EItemUpgradeStatus> InState);
     UE_PURE class UWidget* GetToolTipWidget();
 };

@@ -54,7 +54,7 @@ public:
     class UParticleSystem* ChemExplosionParticles;
     float DeathEmissive;
     void ExecuteUbergraph_ENE_Ossiran_Scrab(int EntryPoint);
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void ReceiveDestroyed();
     void DeathPlasmaExplosion();
     void DeathGibbed();
@@ -68,15 +68,15 @@ public:
     void StartDissolve();
     void DissolveAfterRagdoll();
     UE_AUTHORITY_ONLY void BndEvt__ENE_Ossiran_Scrab_HealthComponent_K2Node_ComponentBoundEvent_1_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
-    void ReceiveStopFly();
-    void ReceiveBeginFly();
-    void OnStartedFleeing();
+    UE_PROTECTED void ReceiveStopFly();
+    UE_PROTECTED void ReceiveBeginFly();
+    UE_PROTECTED void OnStartedFleeing();
     void BndEvt__ENE_Ossiran_Scrab_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void EmissiveDarken__UpdateFunc();
     void EmissiveDarken__FinishedFunc();
     void PlayDeathFX();
     void OnRep_DeathType();
-    void CalculateDissolveDelay(float& Delay);
+    UE_BLUEPRINT_PURE void CalculateDissolveDelay(float& Delay);
     void SetBurnMaterialSettings();
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemicalArrow);
 private:

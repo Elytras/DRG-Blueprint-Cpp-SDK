@@ -24,8 +24,8 @@ public:
     class USpotLightComponent* SpotLight2;
     class UStaticMeshComponent* StaticMesh;
     void ExecuteUbergraph_BP_ShowroomStageSeason(int EntryPoint);
-    void ReceiveBeginPlay();
-    class UTextureRenderTarget2D* CreateRenderTarget();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE class UTextureRenderTarget2D* CreateRenderTarget();
 private:
     struct UeMarkers
     {

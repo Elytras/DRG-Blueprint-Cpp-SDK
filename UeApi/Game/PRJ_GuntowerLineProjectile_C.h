@@ -24,8 +24,8 @@ public:
     class UParticleSystemComponent* HitparticleSystem;
     void ExecuteUbergraph_PRJ_GuntowerLineProjectile(int EntryPoint);
     void OnLineDestroy_Event_0(FHitResult Result);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

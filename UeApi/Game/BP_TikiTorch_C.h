@@ -42,7 +42,7 @@ public:
     class UMaterialInstanceDynamic* DynamicMaterial;
     bool NewVar_0;
     void ExecuteUbergraph_BP_TikiTorch(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

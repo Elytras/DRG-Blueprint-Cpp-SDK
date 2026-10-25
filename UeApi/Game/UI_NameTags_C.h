@@ -25,7 +25,7 @@ public:
     void ExecuteUbergraph_UI_NameTags(int EntryPoint);
     void OnPlayerNameChanged_Event_0(FString NewName);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class AFSDPlayerState* Player);
+    UE_BLUEPRINT_CALLABLE void SetData(class AFSDPlayerState* Player);
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

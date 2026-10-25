@@ -48,7 +48,7 @@ public:
     FVector2D ImageSize;
     void ExecuteUbergraph_Lore_Container_Text_W_Image(int EntryPoint);
     void Refresh();
-    void SetData(class UMinersManualData* Data_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UMinersManualData* Data_0);
     void AddItem(class UWidget* Content, TEnum<EHorizontalAlignment> InHorizontalAlignment, TEnum<EVerticalAlignment> InVerticalAlignment, FMargin InPadding, TEnum<ESlateSizeRule> Size_Rule);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

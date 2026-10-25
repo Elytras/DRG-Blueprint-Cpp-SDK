@@ -27,11 +27,11 @@ public:
     class UFXSystemAsset* OnExplosionParticles;
     float ImpulseStrength;
     void ExecuteUbergraph_BP_GreatEggHunt_ThrowableEggItem(int EntryPoint);
-    void ReceiveItemSpawned(class AThrowableActor* thrownActor);
-    void RecieveEquipped();
-    void OnReceiveEquippedFinished();
-    void RemovedFromInventory(class ACharacter* oldCharacter);
-    void ReceiveItemThrown(class AThrowableActor* thrownActor);
+    UE_PROTECTED void ReceiveItemSpawned(class AThrowableActor* thrownActor);
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void OnReceiveEquippedFinished();
+    UE_PROTECTED void RemovedFromInventory(class ACharacter* oldCharacter);
+    UE_PROTECTED void ReceiveItemThrown(class AThrowableActor* thrownActor);
     void OnRep_UsedMaterial();
     FVector GetThrowLocation() const;
 private:

@@ -26,7 +26,7 @@ public:
     class UChildActorComponent* Weakpoint;
     void ExecuteUbergraph_BP_Guntower_Module_RadialFire_new(int EntryPoint);
     void OnTearArmor();
-    void OnFire();
+    UE_PROTECTED void OnFire();
 private:
     struct UeMarkers
     {

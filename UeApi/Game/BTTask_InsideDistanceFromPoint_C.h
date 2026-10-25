@@ -20,7 +20,7 @@ public:
     FBlackboardKeySelector PointKey;
     float Distance;
     void ExecuteUbergraph_BTTask_InsideDistanceFromPoint(int EntryPoint);
-    void ReceiveExecute(class AActor* OwnerActor);
+    UE_PROTECTED void ReceiveExecute(class AActor* OwnerActor);
 };
 
 }}}}   // namespace Game::Critters::LootBug::Hoarder

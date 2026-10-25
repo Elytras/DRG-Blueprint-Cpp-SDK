@@ -24,10 +24,10 @@ public:
     TArray<ITM_VanityTag_Category_C*> CategoryWidgets;
     TMulticastInlineDelegate<void()> OnRequestClose;
     void SetAllTags(FDetailedTagSet InAllTags, FDetailedTagSet InSelectedTags);
-    void EntryChanged();
+    UE_PRIVATE void EntryChanged();
     UE_PURE FDetailedTagSet GetSelectedTags();
     void Clear();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}}   // namespace Game::UI::Menu_Wardrobe::FilterSelector

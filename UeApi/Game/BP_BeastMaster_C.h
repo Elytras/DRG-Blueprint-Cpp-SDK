@@ -53,8 +53,8 @@ public:
     void ReceiveBeginPlay();
     void OnLoaded_8AE17C7C4ABC357330FD319C5F5E7796(TSubclassOf<class UObject> Loaded);
     UE_PURE bool CanBefriend(class ASpiderEnemy* enemy);
-    void GetPerk(class UFloatPerkAsset*& Perks_Beast_Master);
-    void GetPlayerCharacter(class APlayerCharacter*& AsPlayer_Character);
+    UE_BLUEPRINT_PURE void GetPerk(class UFloatPerkAsset*& Perks_Beast_Master);
+    UE_BLUEPRINT_PURE void GetPlayerCharacter(class APlayerCharacter*& AsPlayer_Character);
     void SetupStatusEffects(class ASpiderEnemy* enemy);
     UE_PURE class AFSDPlayerController* GetPlayerController();
     void ChangeAttacks(class ASpiderEnemy* enemy);

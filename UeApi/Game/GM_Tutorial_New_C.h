@@ -23,9 +23,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_GM_Tutorial_New_C;
     BP_TutorialComponent_C* BP_TutorialComponent;
     void ExecuteUbergraph_GM_Tutorial_New(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpawnBosco(FTransform Location);
-    void GetEscapepodLocation(FTransform& Location);
+    UE_BLUEPRINT_PURE void GetEscapepodLocation(FTransform& Location);
     class UClass* GetDefaultPawnClassForController(class AController* InController);
 private:
     struct UeMarkers

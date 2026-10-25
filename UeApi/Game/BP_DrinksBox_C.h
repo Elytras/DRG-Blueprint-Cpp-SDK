@@ -35,8 +35,8 @@ public:
     void OnDrinkableDestroyed(class AActor* DestroyedActor);
     void Spawn_Drink(class UDrinkableDataAsset* Drinkable);
     void OnLoaded_C20044584A6E4C14650B318543524FEE(TSubclassOf<class UObject> Loaded);
-    void OnRep_State();
-    void IsAvailable(bool& IsAvailable_0);
+    UE_BLUEPRINT_CALLABLE void OnRep_State();
+    UE_BLUEPRINT_PURE void IsAvailable(bool& IsAvailable_0);
     void OnRep_DrinkableActor();
 private:
     struct UeMarkers

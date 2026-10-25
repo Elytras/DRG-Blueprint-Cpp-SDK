@@ -35,11 +35,11 @@ public:
     float Scale;
     void ExecuteUbergraph_ITM_RetirementBadge(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class AFSDPlayerState* Player);
-    void SelectIcon(int RetirementLevel, class UTexture2D*& Icon);
+    UE_BLUEPRINT_CALLABLE void SetData(class AFSDPlayerState* Player);
+    UE_BLUEPRINT_PURE void SelectIcon(int RetirementLevel, class UTexture2D*& Icon);
     void SetCharacterClass(class AFSDPlayerState* PlayerState, class UPlayerCharacterID* Character);
     void SetTimesRetired(int TimesRetired);
-    void GetTexture(int Index_0, class UTexture2D*& AsTexture_2D);
+    UE_BLUEPRINT_PURE void GetTexture(int Index_0, class UTexture2D*& AsTexture_2D);
     void SetSize(int InSize);
 };
 

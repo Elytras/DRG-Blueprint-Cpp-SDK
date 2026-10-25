@@ -45,7 +45,7 @@ public:
     void ExecuteUbergraph_WND_MisSel_BiomeDescription(int EntryPoint);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UBiome* Biome_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UBiome* Biome_0);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

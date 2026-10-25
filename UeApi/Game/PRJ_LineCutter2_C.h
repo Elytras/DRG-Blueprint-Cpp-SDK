@@ -59,7 +59,7 @@ public:
     void OnInitialized();
     void StartSpawningTrail();
     void LeaveTrail();
-    void SetExtraBeamVisibility(bool IsVisible);
+    UE_PROTECTED void SetExtraBeamVisibility(bool IsVisible);
     void OnLineDestroyed(const FHitResult& Result);
     void ThereCanBeOnlyOne();
     void LineReducing();
@@ -68,13 +68,13 @@ public:
     void K2_OnReset();
     void CheckTerrainCall();
     void StartLineExpansion();
-    void ReceiveEndPlay(TEnum<EEndPlayReason> EndPlayReason);
+    UE_PROTECTED void ReceiveEndPlay(TEnum<EEndPlayReason> EndPlayReason);
     void DoDamage();
     void ExpandLine();
     UE_MULTICAST UE_RELIABLE void DisableProjectile();
     void ProjectileSlowdown__UpdateFunc();
     void ProjectileSlowdown__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void AdjustLineSize();
 private:
     struct UeMarkers

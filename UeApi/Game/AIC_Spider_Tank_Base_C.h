@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Tank_Base_C;
     bool HasSpecialAttack;
     void ExecuteUbergraph_AIC_Spider_Tank_Base(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

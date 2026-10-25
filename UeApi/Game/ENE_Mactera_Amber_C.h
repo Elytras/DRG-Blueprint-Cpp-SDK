@@ -28,9 +28,9 @@ public:
     void ExecuteUbergraph_ENE_Mactera_Amber(int EntryPoint);
     void BndEvt__FrozenImpact_K2Node_ComponentBoundEvent_1_Delegate__DelegateSignature();
     void StartFizzle();
-    void OnEventFinished(bool eventSuccess);
+    UE_BLUEPRINT_CALLABLE void OnEventFinished(bool eventSuccess);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void OnEventTriggered();
+    UE_BLUEPRINT_CALLABLE void OnEventTriggered();
     void OnEventProgress(float Progress);
     void OnEventOpened();
     bool SetupEvent(class AGameEvent* GameEvent_0);

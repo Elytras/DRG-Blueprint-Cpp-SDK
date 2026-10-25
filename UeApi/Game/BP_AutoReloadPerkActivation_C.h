@@ -24,7 +24,7 @@ public:
     class APlayerCharacter* Character;
     void ExecuteUbergraph_BP_AutoReloadPerkActivation(int EntryPoint);
     void OnItemEquipped_Event_0(class AItem* Item);
-    void Receive_ActivatePerk(class APlayerCharacter* Character_0, float Value);
+    UE_PROTECTED void Receive_ActivatePerk(class APlayerCharacter* Character_0, float Value);
 private:
     struct UeMarkers
     {

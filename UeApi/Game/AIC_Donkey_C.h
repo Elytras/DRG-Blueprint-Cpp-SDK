@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Donkey(int EntryPoint);
     void OnOverlapsChanged(int OverlapCount);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

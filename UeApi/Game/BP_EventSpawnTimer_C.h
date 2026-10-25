@@ -53,9 +53,9 @@ public:
     void SpawnImmediately();
     void Match_Started();
     void SpawnEvent();
-    void ReceiveBeginPlay();
-    FTransform GetSpawnTransform();
-    void CheckAllowedToSpawn(bool& Allowed);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE FTransform GetSpawnTransform();
+    UE_BLUEPRINT_PURE void CheckAllowedToSpawn(bool& Allowed);
 private:
     struct UeMarkers
     {

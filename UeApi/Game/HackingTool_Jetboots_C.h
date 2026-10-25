@@ -43,12 +43,12 @@ public:
     void ExecuteUbergraph_HackingTool_Jetboots(int EntryPoint);
     void DoAnimEnableInterface();
     void DoIntro();
-    void ReceiveHackingToolUnequipped();
-    void ReceiveHackingStarted();
+    UE_PROTECTED void ReceiveHackingToolUnequipped();
+    UE_PROTECTED void ReceiveHackingStarted();
     void BndEvt__HackingTool_Jetboots_FlappyBoots_Game_K2Node_ComponentBoundEvent_4_OnProgressChanged__DelegateSignature(int InCurrentGate, int InTotalGates);
     void BndEvt__HackingTool_Jetboots_FlappyBoots_Game_K2Node_ComponentBoundEvent_0_OnDistanceChanged__DelegateSignature(float InDistance);
-    void ReceiveActionReleased();
-    void ReceiveActionPressed();
+    UE_PROTECTED void ReceiveActionReleased();
+    UE_PROTECTED void ReceiveActionPressed();
     void Finished_B7281C05489FC801BDD3239EE3A97710();
     void Finished_661252654895433540ECBEA6768753E2();
     void Finished_94D73EF544B2F122FA0E3081DAC6AE14();

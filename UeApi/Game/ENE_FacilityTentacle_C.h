@@ -79,7 +79,7 @@ public:
     void BndEvt__Outline_K2Node_ComponentBoundEvent_0_OutlineChanged__DelegateSignature(TEnum<EOutline> InOutline);
     UE_MULTICAST UE_RELIABLE void PlayAttackCue();
     UE_MULTICAST UE_RELIABLE void PlayPreAttackSound();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void KillTentacle();
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__DamageSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -94,14 +94,14 @@ public:
     void OnInterrupted_B4D1D3344A61A929F5F4A39F56548CF8(FName NotifyName);
     void OnNotifyBegin_B4D1D3344A61A929F5F4A39F56548CF8(FName NotifyName);
     void OnNotifyEnd_B4D1D3344A61A929F5F4A39F56548CF8(FName NotifyName);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void CheckLoS(class AActor* LoSCheckTargetActor, bool& ClearLoSToTarget);
     void HitTerrainAndStop(FVector TargetLocation_0, float Penetration, FVector& NewTargetLocation, bool& HitTerrain);
-    void GetTentacle(ENE_FacilityTentacle_C*& tentacle);
-    class USceneComponent* GetHeadRoot();
-    class USceneComponent* GetHeadRotator();
+    UE_BLUEPRINT_PURE void GetTentacle(ENE_FacilityTentacle_C*& tentacle);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeadRoot();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USceneComponent* GetHeadRotator();
     UE_PURE FVector GetTargetCenterMass() const;
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
 private:
     struct UeMarkers
     {

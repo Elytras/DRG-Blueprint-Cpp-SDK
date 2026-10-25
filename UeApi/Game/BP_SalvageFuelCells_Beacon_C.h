@@ -42,11 +42,11 @@ public:
     float LightIntensity;
     FLinearColor LightColor;
     void ExecuteUbergraph_BP_SalvageFuelCells_Beacon(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     void Light_Animation__UpdateFunc();
     void Light_Animation__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

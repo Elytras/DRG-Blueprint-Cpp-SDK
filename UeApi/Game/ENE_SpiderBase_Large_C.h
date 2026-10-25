@@ -47,8 +47,8 @@ public:
     void ExecuteUbergraph_ENE_SpiderBase_Large(int EntryPoint);
     void TriggerDissolve();
     void DissolveAfterRagdoll();
-    void OnTriggerFadeRagdoll();
-    void OnRagdoll();
+    UE_PROTECTED void OnTriggerFadeRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     void PlasmaExplosionDeath();
     void OnDeathBase();
     void ChemicalExplosionDeath();
@@ -71,30 +71,30 @@ public:
     void ExplodedDeath();
     void PlayAnimatedDeath(int AnimationIndex);
     UE_MULTICAST void SendRagdollImpulse(FVector_NetQuantize Impulse, uint8 BoneIndex);
-    void OnFrozen(class AActor* Source);
-    void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
     void StartBurn();
     void Play_Frozen_Death();
     void StartDissolve();
     void Play_Burn_Death();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetRagdollImpulse(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     void SpawnLeg(FName InSocketName, FVector force);
     void OnRep_DeathType();
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void SetAnimatedDeathType(int AnimationIndex);
-    void GetEnemySpawnedCount(int& SpawnCount);
-    void IsWeakPointDeath(class UFSDPhysicalMaterial* Material, bool& IsWeakPoint);
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
+    UE_BLUEPRINT_PURE void IsWeakPointDeath(class UFSDPhysicalMaterial* Material, bool& IsWeakPoint);
     UE_PURE bool ShouldMelt(const TArray<class UDamageTag*>& TargetArray, class UDamageClass* DamageClass);
     void SetBurnMaterialSettings();
     void SetCookMaterialSettings();
     void SetDeathAnimationCategory(TEnum<ESpiderDeathAnimationCategory> Category);
-    FVector GetImpactImpulse(TEnum<EImpulseDirectionSource> Selection, FDamageData& DamageData, float UpForceScale);
+    UE_BLUEPRINT_PURE FVector GetImpactImpulse(TEnum<EImpulseDirectionSource> Selection, FDamageData& DamageData, float UpForceScale);
     void HandleNormalDeath(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
     void HandleWeapointDeath(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
-    void GetFXMeshScale(float& Scale);
+    UE_BLUEPRINT_PURE void GetFXMeshScale(float& Scale);
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemicalArrow);
-    void CalcDissolveDelay(float& Delay);
+    UE_BLUEPRINT_PURE void CalcDissolveDelay(float& Delay);
 private:
     struct UeMarkers
     {

@@ -30,19 +30,19 @@ public:
     UE_READONLY FText DefaultItemName;
     void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_Vanity(int EntryPoint);
     void PostInitilization();
-    void ReceivePreConstruct();
-    void ReceiveReleaseResource(class UWidget* InWidget);
+    UE_PROTECTED void ReceivePreConstruct();
+    UE_PROTECTED void ReceiveReleaseResource(class UWidget* InWidget);
     void SetSelectedItem(class UVanityItem* Item);
     void CreateItemWidget(bool InBackgroundVisible, bool InShowToolTip, ITM_GeneratedIcon_Item_C*& OutItemWidget);
-    void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
-    void ReceiveGetSelectedIndex(int& OutIndex);
-    void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
-    void ReceiveEquipItem(int InIndex, bool& OutSuccess);
+    UE_PROTECTED void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
+    UE_PROTECTED UE_BLUEPRINT_PURE void ReceiveGetSelectedIndex(int& OutIndex);
+    UE_PROTECTED void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
+    UE_PROTECTED void ReceiveEquipItem(int InIndex, bool& OutSuccess);
     void UpdateItemWidget(ITM_GeneratedIcon_Item_C* InWidget, class UVanityItem* InVanityItem, bool In_Show_Tool_Tip, FName In_Cancel_Group);
-    UE_PURE FText GetVanityName(class UVanityItem* InVanityItem);
-    void GetVanityDLC(class UVanityItem* InItem, class UDLCBase*& Required_DLC);
-    UE_PURE class UVanityItem* GetDefaultItem();
-    void ReceiveShowShuffleOptions(bool& OutShowOptions);
+    UE_PRIVATE UE_PURE FText GetVanityName(class UVanityItem* InVanityItem);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetVanityDLC(class UVanityItem* InItem, class UDLCBase*& Required_DLC);
+    UE_PROTECTED UE_PURE class UVanityItem* GetDefaultItem();
+    UE_PROTECTED UE_BLUEPRINT_PURE void ReceiveShowShuffleOptions(bool& OutShowOptions);
 private:
     struct UeMarkers
     {

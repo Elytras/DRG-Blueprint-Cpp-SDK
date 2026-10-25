@@ -24,7 +24,7 @@ public:
     FTransform TargetTransform;
     bool IsSetup;
     void ExecuteUbergraph_AIC_FacilityTurretDrone(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void SetTargetTransform(FTransform TargetTransform_0);
 private:
     struct UeMarkers

@@ -52,7 +52,7 @@ public:
     void SetFrameLinearColor(FLinearColor Color);
     void SetCategory(class USchematicCategory* InCategory);
     void FromSchematicType(TEnum<ESchematicType> InType);
-    void GetFrameLinearColor(FLinearColor& ColorAndOpacity_0);
+    UE_BLUEPRINT_PURE void GetFrameLinearColor(FLinearColor& ColorAndOpacity_0);
     UE_PURE class UWidget* GetOverclockTooltip();
     void SetOverclockTooltip(class UItemUpgrade* Overclock_0);
 };

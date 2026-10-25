@@ -36,9 +36,9 @@ public:
     void Setup_Widget_Events(UI_MissionStats_Category_C* Widget);
     void Set_Categories(const TArray<class UTexture2D*>& CategoryIcons_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetCategorySelection(TArray<class UTexture2D*>& Selection);
+    UE_BLUEPRINT_PURE void GetCategorySelection(TArray<class UTexture2D*>& Selection);
     void Add_Category(class UTexture2D* CategoryIcon, bool IsAllCategory, UI_MissionStats_Category_C*& CategoryWidget);
-    void Add_Vertical_Bar();
+    UE_PRIVATE void Add_Vertical_Bar();
     void SelectNext(bool ForwardDirection);
 private:
     struct UeMarkers

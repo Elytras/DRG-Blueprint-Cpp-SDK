@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/AI/Tasks/TSK_FindFormation", "TSK_FindFormation_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_TSK_FindFormation(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Tasks

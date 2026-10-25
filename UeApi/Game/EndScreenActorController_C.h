@@ -44,7 +44,7 @@ public:
     void PoseFinished(class UAnimMontage* Montage, bool bInterrupted);
     void Play(class APlayerCharacter* PlayerCharacter, bool SurvivedInPod, FTransform SpawnTransform, FEndScreenMove ESMoveSet, int Seed);
     void ReceiveBeginPlay();
-    void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
+    UE_BLUEPRINT_PURE void RandomAnimElement(TArray<class UAnimSequence*>& Array, class UAnimSequence*& Output);
     void InitFXLights(FTransform SpawnTransform, bool Survived);
     void Cleanup();
     void SpawnAttachmentIfNeeded();

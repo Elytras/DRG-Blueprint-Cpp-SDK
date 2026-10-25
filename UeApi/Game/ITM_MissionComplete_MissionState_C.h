@@ -38,9 +38,9 @@ public:
     void Fade_Out_Overlay(float Duration);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SignalAnimDone();
+    UE_PRIVATE void SignalAnimDone();
     void ShowCurrentMission(float StartDelay);
-    void SetCanvasWidget(class UWidget* Content);
+    UE_PRIVATE void SetCanvasWidget(class UWidget* Content);
     void UpdateBackgroundImage();
 private:
     struct UeMarkers

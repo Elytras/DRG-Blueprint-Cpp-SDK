@@ -63,7 +63,7 @@ public:
     void OpenGeyser();
     UE_MULTICAST void PlayDamageSound(FVector Location);
     void EnterGeyser();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_VolcanoEruptionDanger();
     void OnRep_Explode();
 private:

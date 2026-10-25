@@ -41,10 +41,10 @@ public:
     class USoundMix* ExplosionMixModifier;
     class APlayerCharacter* Character;
     void ExecuteUbergraph_Grenade_BouncyBoomerang(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnExploded();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnExploded();
     void ReceiveTick(float DeltaSeconds);
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

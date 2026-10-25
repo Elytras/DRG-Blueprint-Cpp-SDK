@@ -25,7 +25,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     float LifeTime;
     void ExecuteUbergraph_BP_CombatShotgun_PoisonPlatforms(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

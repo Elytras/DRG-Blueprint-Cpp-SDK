@@ -21,7 +21,7 @@ public:
     float FirstTimeDelay;
     void ExecuteUbergraph_Tutorial_Hint_Deposite(int EntryPoint);
     void DepositEnd(class UResourceBank* ResourceBank);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
     void OnCallDonkey();
     void OnResourceFull(class UCappedResource* Resource);
 };

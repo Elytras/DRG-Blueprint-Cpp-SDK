@@ -36,8 +36,8 @@ public:
     void BndEvt__BTN_ResetToDefaults_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void CreateBindingWidgets();
     void SetOpen(bool Index_0);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void ContainsAnyName(FCustomKeySetting Button, const TArray<FName>& ActionNames, bool& Result);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void ContainsAnyName(FCustomKeySetting Button, const TArray<FName>& ActionNames, bool& Result);
 };
 
 }}}   // namespace Game::UI::Keybindings

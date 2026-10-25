@@ -39,7 +39,7 @@ public:
     void ExecuteUbergraph_PRJ_Facility_Barrier_Base(int EntryPoint);
     void CrumbleShield();
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
     void Growth__UpdateFunc();

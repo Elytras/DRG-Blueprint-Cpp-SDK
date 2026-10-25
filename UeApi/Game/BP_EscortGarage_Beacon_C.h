@@ -32,7 +32,7 @@ public:
     float StartFadeTime;
     void ExecuteUbergraph_BP_EscortGarage_Beacon(int EntryPoint);
     void FadeOut();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void FadeIn__UpdateFunc();
     void FadeIn__FinishedFunc();
     void Fade__UpdateFunc();

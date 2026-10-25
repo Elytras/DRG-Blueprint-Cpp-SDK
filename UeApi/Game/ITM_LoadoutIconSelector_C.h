@@ -31,7 +31,7 @@ public:
     TArray<class UTexture2D*> TempIconList;
     void ExecuteUbergraph_ITM_LoadoutIconSelector(int EntryPoint);
     void OnIconClicked(class UTexture2D* Texture, int ImageIndex);
-    void SetData();
+    UE_BLUEPRINT_CALLABLE void SetData();
     void FillGrid();
 };
 

@@ -21,8 +21,8 @@ public:
     UE_READONLY class UWidgetAnimation* Hover;
     class UImage* Controller;
     void ExecuteUbergraph_UI_Cursor_Controller(int EntryPoint);
-    void OnUnhover();
-    void OnHover();
+    UE_PROTECTED void OnUnhover();
+    UE_PROTECTED void OnHover();
 };
 
 }}}   // namespace Game::UI::Mouse_Cursor

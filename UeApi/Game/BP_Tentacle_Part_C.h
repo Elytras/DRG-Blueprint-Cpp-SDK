@@ -22,7 +22,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     TArray<class UStaticMesh*> Meshes;
     void ExecuteUbergraph_BP_Tentacle_Part(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

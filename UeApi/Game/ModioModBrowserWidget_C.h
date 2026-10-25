@@ -29,7 +29,7 @@ public:
     UI_InfoScreen_C* UI_Info_Screen;
     void ExecuteUbergraph_ModioModBrowserWidget(int EntryPoint);
     UE_COSMETIC void Construct();
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 private:
     struct UeMarkers
     {

@@ -25,10 +25,10 @@ public:
     void UpdateScreenPosAndDistance();
     void BndEvt__OnScreenIndicator_Actor_Shout_ShoutBox_K2Node_ComponentBoundEvent_0_OnShoutActiveChanged__DelegateSignature(bool InShoutActive);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnShout();
+    UE_PROTECTED void OnShout();
     UE_COSMETIC void Construct();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
-    UE_PURE FVector2D CalculateScreenPos();
+    UE_PRIVATE UE_PURE FVector2D CalculateScreenPos();
 };
 
 }}}   // namespace Game::UI::OnScreenIndicators

@@ -54,7 +54,7 @@ public:
     void BndEvt__ButtonBuy_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Basic_FlatButton_C* Button);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetPerk(class UPerkAsset* InPerk, int InTier);
-    void CanBuyPerk(bool& Can_Buy);
+    UE_BLUEPRINT_PURE void CanBuyPerk(bool& Can_Buy);
 private:
     struct UeMarkers
     {

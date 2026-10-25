@@ -32,10 +32,10 @@ public:
     float ParticleDeactivationAdvance;
     float TriggerRadius;
     void ExecuteUbergraph_BP_Damage_Cloud_Base(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void TriggerGrowth__UpdateFunc();
     void TriggerGrowth__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateSphereRadius(float InSphereRadius);
 private:
     struct UeMarkers

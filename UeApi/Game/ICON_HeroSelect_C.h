@@ -91,21 +91,21 @@ public:
     void BndEvt__BTN_Retire_K2Node_ComponentBoundEvent_0_OnUnhovered__DelegateSignature();
     void BndEvt__BTN_Retire_K2Node_ComponentBoundEvent_25_OnHovered__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Init(class UPlayerCharacterID* Character_0);
+    UE_BLUEPRINT_CALLABLE void Init(class UPlayerCharacterID* Character_0);
     void OnCharacterStatsChanged_Event(class AFSDPlayerState* PlayerState_0);
     void SelectedCharacterChanged(TSubclassOf<class APlayerCharacter> NewCharacter);
     void On_Click();
     UE_COSMETIC void OnMouseLeave(const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCharacterClass(class UPlayerCharacterID* Class_0);
-    void IsSelected(bool& IsSelected_0);
-    void UpdateSelected();
+    UE_BLUEPRINT_PURE void IsSelected(bool& IsSelected_0);
+    UE_PRIVATE void UpdateSelected();
     void SetScale(float Scale);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    void GetSelectedClass(class UPlayerCharacterID*& DesiredCharacterClass);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_BLUEPRINT_PURE void GetSelectedClass(class UPlayerCharacterID*& DesiredCharacterClass);
     UE_PURE bool IsEligibleForPromotion();
-    void InternalUpdateHovered();
-    UE_COSMETIC bool IsInteractable() const;
+    UE_PRIVATE void InternalUpdateHovered();
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

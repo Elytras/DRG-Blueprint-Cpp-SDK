@@ -25,7 +25,7 @@ public:
     bool StartReady;
     void ExecuteUbergraph_BP_BarrelDispenser(int EntryPoint);
     void SetOutline(float ActiveTime);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ManageOutline(float ActiveTime);
 private:
     struct UeMarkers

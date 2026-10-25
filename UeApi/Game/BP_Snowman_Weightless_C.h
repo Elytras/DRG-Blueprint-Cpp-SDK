@@ -40,7 +40,7 @@ public:
     TArray<FVector> Directions;
     void ExecuteUbergraph_BP_Snowman_Weightless(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_KickSoundLocation();
     void OnRep_RandomSeed();
 private:

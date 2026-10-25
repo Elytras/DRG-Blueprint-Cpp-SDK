@@ -25,20 +25,20 @@ public:
     FTimerHandle RagdollTimer;
     void ExecuteUbergraph_ENE_Grabber(int EntryPoint);
     void DissolveMesh();
-    void OnTriggerFadeRagdoll();
+    UE_PROTECTED void OnTriggerFadeRagdoll();
     void FadeMaterials();
     UE_AUTHORITY_ONLY void BndEvt__ENE_Grabber_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void Death_Normal();
     void Death_Corrosive();
     void Death_Weakpoint();
     void MakeElite();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__GrabberComp_K2Node_ComponentBoundEvent_4_ReleasedActorSig__DelegateSignature(class AActor* aGrabbedActor, bool fullGrabElapsed);
     void BndEvt__GrabberComp_K2Node_ComponentBoundEvent_3_GrabbedActorSig__DelegateSignature(class AActor* aGrabbedActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnMessageAI(FName TriggerName);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_DeathType();
 private:
     struct UeMarkers

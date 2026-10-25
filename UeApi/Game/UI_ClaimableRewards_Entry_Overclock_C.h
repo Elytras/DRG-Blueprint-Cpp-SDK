@@ -67,13 +67,13 @@ public:
     void ExecuteUbergraph_UI_ClaimableRewards_Entry_Overclock(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
-    void ReceiveMoveIn(float InStartDelay);
+    UE_PROTECTED void ReceiveMoveIn(float InStartDelay);
     void PlaySlamAudio();
     void BndEvt__ITM_BigButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void OnClaimAnimFinished();
-    void PlayRevealAudio();
+    UE_PRIVATE void PlayRevealAudio();
     void Refresh();
-    void GetSchematic(class USchematic*& OutSchematic, ESchematicType& OutType);
+    UE_BLUEPRINT_PURE void GetSchematic(class USchematic*& OutSchematic, ESchematicType& OutType);
     void SetSchematic(class USchematic* InSchematic, TEnum<ESchematicType> InType);
     void SetDetails(FText WindowTitle, FText InTitle, FText InSubtitle, class UPlayerCharacterID* InUser, class UWidget* InIconContext);
     void SequenceEvent__ENTRYPOINTUI_ClaimableRewards_Entry_Overclock_0();

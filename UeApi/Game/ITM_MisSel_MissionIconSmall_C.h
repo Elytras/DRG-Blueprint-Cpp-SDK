@@ -23,7 +23,7 @@ public:
     ITM_MisSel_MissionIconBasic_C* ITEM_MissionSelection_MissionIconBasic;
     ITM_MisSel_MissionIconBasic_Locked_C* ITM_MisSel_MissionIconBasic_Locked;
     void ExecuteUbergraph_ITM_MisSel_MissionIconSmall(int EntryPoint);
-    void SetData(class UGeneratedMission* mission);
+    UE_BLUEPRINT_CALLABLE void SetData(class UGeneratedMission* mission);
 };
 
 }}}   // namespace Game::UI::Menu_MissionSelectionMK3

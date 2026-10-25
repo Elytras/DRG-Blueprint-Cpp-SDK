@@ -24,7 +24,7 @@ public:
     void ExecuteUbergraph_UI_PendingReward_RewardLine(int EntryPoint);
     void Init_Simple(FText Description, FText Postfix, int amount);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Init(FText Description, FText Postfix, int amount, float StartDelay, class USoundBase* Sound);
+    UE_BLUEPRINT_CALLABLE void Init(FText Description, FText Postfix, int amount, float StartDelay, class USoundBase* Sound);
 private:
     struct UeMarkers
     {

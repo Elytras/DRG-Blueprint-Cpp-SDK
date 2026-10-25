@@ -27,7 +27,7 @@ public:
     class UTextBlock* TextBlock_Headline;
     UI_AdvancedLabel_C* UI_AdvancedLabel;
     void ExecuteUbergraph_HUD_MinersManualNotification(int EntryPoint);
-    void OnFinished();
+    UE_BLUEPRINT_CALLABLE void OnFinished();
     void Show(FText Text, float TimeOnScreen);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };

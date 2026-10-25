@@ -23,8 +23,8 @@ public:
     class UAudioComponent* MoonriderSound;
     class UParticleSystemComponent* ParticleEffect;
     void ExecuteUbergraph_DE_SeasonedMoonrider(int EntryPoint);
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

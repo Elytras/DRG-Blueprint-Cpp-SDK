@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Grunt/ENE_Spider_Grunt_Normal", "ENE_Spider_Grunt_Normal_C");
     class UMeleeAttackComponent* MeleeAttack;
     class USimpleArmorDamageComponent* SimpleArmorDamage;
-    void GetEnemySpawnedCount(int& SpawnCount);
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
 private:
     struct UeMarkers
     {

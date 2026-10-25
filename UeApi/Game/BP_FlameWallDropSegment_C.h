@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UNiagaraComponent* NS_Inferno_Projectile_Drop;
     void ExecuteUbergraph_BP_FlameWallDropSegment(int EntryPoint);
-    void OnDeactivate();
+    UE_PROTECTED void OnDeactivate();
 private:
     struct UeMarkers
     {

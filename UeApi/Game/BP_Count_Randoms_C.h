@@ -28,7 +28,7 @@ public:
     float NewDepth;
     float currentDepth;
     void ExecuteUbergraph_BP_Count_Randoms(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
 private:
     struct UeMarkers

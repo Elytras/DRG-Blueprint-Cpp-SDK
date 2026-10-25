@@ -20,7 +20,7 @@ public:
     class ULevelGenerationDebris* LevelGenerationDebris;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_MagicHoleBottomDebris(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

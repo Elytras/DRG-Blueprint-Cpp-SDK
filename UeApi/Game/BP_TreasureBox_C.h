@@ -91,7 +91,7 @@ public:
     void BndEvt__Repairable_K2Node_ComponentBoundEvent_4_RepairedDelegate__DelegateSignature(class URepairableComponent* Component);
     void BndEvt__Repairable_K2Node_ComponentBoundEvent_1_RepairedDelegate__DelegateSignature(class URepairableComponent* Component);
     void BndEvt__Repairable_K2Node_ComponentBoundEvent_0_RepairedDelegate__DelegateSignature(class URepairableComponent* Component);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnCompleted_4D05B8034ED2139CE2AAD8BD828BDF32(FName NotifyName);
     void OnBlendOut_4D05B8034ED2139CE2AAD8BD828BDF32(FName NotifyName);
     void OnInterrupted_4D05B8034ED2139CE2AAD8BD828BDF32(FName NotifyName);
@@ -104,7 +104,7 @@ public:
     void Grow_Hologram__UpdateFunc();
     void Grow_Hologram__FinishedFunc();
     void OnRep_Hammered();
-    void GetTotalTimePlayed(int& TotalTimePlayed);
+    UE_BLUEPRINT_PURE void GetTotalTimePlayed(int& TotalTimePlayed);
     void OnRep_BatteryInserted();
 private:
     struct UeMarkers

@@ -22,7 +22,7 @@ public:
     class UParticleSystemComponent* P_Grenade_Neurotoxin_NozzleCone3;
     class UParticleSystemComponent* P_Grenade_Neurotoxin_NozzleCone2;
     void ExecuteUbergraph_Grenade_Neurotoxin(int EntryPoint);
-    void OnExploded();
+    UE_PROTECTED void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers

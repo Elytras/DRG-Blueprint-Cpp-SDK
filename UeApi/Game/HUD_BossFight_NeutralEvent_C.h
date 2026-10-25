@@ -42,7 +42,7 @@ public:
     void SetupTemperature();
     void OnRemoveBossFight();
     UE_COSMETIC void Construct();
-    void InternalSetPct(class UProgressBar* InHealthBar, class UProgressBar* InTrailingHealthBar, class UWidgetAnimation* InHitAnimation, float InPct, bool Reset);
+    UE_PRIVATE void InternalSetPct(class UProgressBar* InHealthBar, class UProgressBar* InTrailingHealthBar, class UWidgetAnimation* InHitAnimation, float InPct, bool Reset);
     void SetTemperatureEffect(float InTempEffect);
     void OnHealthChanged(float Health);
     void OnDeath();

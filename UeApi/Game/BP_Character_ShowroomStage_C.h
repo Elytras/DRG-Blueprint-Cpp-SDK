@@ -29,8 +29,8 @@ public:
     class USpotLightComponent* SpotLight1;
     class USkeletalMeshComponent* PreviewMesh;
     void ExecuteUbergraph_BP_Character_ShowroomStage(int EntryPoint);
-    void ReceiveBeginPlay();
-    class UTextureRenderTarget2D* CreateRenderTarget();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE class UTextureRenderTarget2D* CreateRenderTarget();
     void UpdateActorsToHide();
 private:
     struct UeMarkers

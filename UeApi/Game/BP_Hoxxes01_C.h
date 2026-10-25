@@ -91,8 +91,8 @@ public:
     class USceneComponent* Scene;
     float Scale;
     void ExecuteUbergraph_BP_Hoxxes01(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

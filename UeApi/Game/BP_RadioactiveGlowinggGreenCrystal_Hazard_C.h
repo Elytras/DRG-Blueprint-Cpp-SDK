@@ -42,7 +42,7 @@ public:
     UE_AUTHORITY_ONLY void BndEvt__StatusEffectTrigger_K2Node_ComponentBoundEvent_0_EffectTriggeredDelegate__DelegateSignature(class AActor* TargetActor, bool entered);
     void DamageGlowPulse__UpdateFunc();
     void DamageGlowPulse__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void CanApplyEffect(class UClass* Effect, bool& Result);
     void OnRep_DoPulse();
 private:

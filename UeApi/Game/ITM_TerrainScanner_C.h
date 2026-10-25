@@ -30,7 +30,7 @@ public:
     void ExecuteUbergraph_ITM_TerrainScanner(int EntryPoint);
     void OnTerrainScannerReleased();
     void OnTerrainScannerPressed();
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
 private:
     struct UeMarkers
     {

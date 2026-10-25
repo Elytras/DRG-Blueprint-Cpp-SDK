@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_Azure_CombaCharm_Egg_C;
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     void ExecuteUbergraph_BP_Azure_CombaCharm_Egg(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

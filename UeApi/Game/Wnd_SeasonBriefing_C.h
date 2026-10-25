@@ -53,8 +53,8 @@ public:
     void OnAudioFinished();
     void SetMuteVisible(bool Muted);
     void AsyncLoadShowRoom();
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnLoaded_E25AAB194DE5E00F1D91D68D1A67E597(TSubclassOf<class UObject> Loaded);

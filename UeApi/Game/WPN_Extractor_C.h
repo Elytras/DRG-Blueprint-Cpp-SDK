@@ -30,14 +30,14 @@ public:
     FVector ThrowVelocity;
     void ExecuteUbergraph_WPN_Extractor(int EntryPoint);
     void Cheat_Fill();
-    void Drop(FVector Impulse, FVector Location);
-    void RecieveUnequipped();
-    void RecieveEquipped();
+    UE_BLUEPRINT_CALLABLE void Drop(FVector Impulse, FVector Location);
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
     void OnThrown(FVector Direction);
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

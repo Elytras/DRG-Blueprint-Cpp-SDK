@@ -75,9 +75,9 @@ public:
     void WaitForHit();
     void PlayEnragedAnimation();
     void FractureArmor(FVector HitPoint);
-    void ReceiveBeginPlay();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void CheckForLastPlayerStanding();
     void BndEvt__DestructibleSubHealth_K2Node_ComponentBoundEvent_0_SubHealthDestroyed__DelegateSignature(class UDestructibleSubHealthComponent* subHealth);
     void BndEvt__DestructibleSubHealth_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
@@ -86,18 +86,18 @@ public:
     void PlayAnimatedDeath(int AnimationIndex);
     void RegrowShieldFX();
     void RegrowShield();
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     void Butt_FadeOut__UpdateFunc();
     void Butt_FadeOut__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_TankArmorIntact();
     UE_PURE float GetEnemyDamageResistance();
     void OnRep_FaceTargetWhenStationary();
     void CheckForPlayersAliveWithNoAmmo();
     void Set_achievement_from_server_to_all(class UFSDAchievement* achievement_to_set, float Progress);
-    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
+    UE_BLUEPRINT_PURE bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void CheckIfOnlyOnePlayerAlive();
 private:

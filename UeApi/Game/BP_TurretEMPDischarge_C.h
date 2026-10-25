@@ -24,7 +24,7 @@ public:
     class UParticleSystemComponent* ParticleSystem;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_TurretEMPDischarge(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -23,7 +23,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class UArrowComponent* Arrow;
     void ExecuteUbergraph_BP_PropHunt_CoreStone(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

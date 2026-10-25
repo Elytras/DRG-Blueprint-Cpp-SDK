@@ -29,8 +29,8 @@ public:
     class UPointLightComponent* PointLight;
     class UOutlineComponent* outline;
     void ExecuteUbergraph_BP_EscortGem_Heartstone(int EntryPoint);
-    void ReceiveBeginPlay();
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
 private:
     struct UeMarkers
     {

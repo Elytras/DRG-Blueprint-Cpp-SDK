@@ -108,12 +108,12 @@ public:
     UE_PURE class UWidget* GetMissionToolTip();
     void SetVisibleElements(bool InShowComplexity, bool InShowDifficulty, bool InShowLength, bool InShowTime, bool InShowWarningsAndMutators);
     void SetMissionNameWidth(float Width);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetServername();
     void OpenProfile();
     void SetHovered(bool InHovered);
-    void GetServerID(FString& ID);
+    UE_BLUEPRINT_PURE void GetServerID(FString& ID);
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

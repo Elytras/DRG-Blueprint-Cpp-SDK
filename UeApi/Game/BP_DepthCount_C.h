@@ -31,7 +31,7 @@ public:
     FTimerHandle PingHandle;
     void ExecuteUbergraph_BP_DepthCount(int EntryPoint);
     void DoPing();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     void SetPingActive(bool InPingActive);
 private:

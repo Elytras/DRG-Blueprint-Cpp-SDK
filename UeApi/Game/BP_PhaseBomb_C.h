@@ -42,7 +42,7 @@ public:
     TMulticastInlineDelegate<void()> Event_StartRise;
     class UNiagaraComponent* BuildUpSystem;
     void ExecuteUbergraph_BP_PhaseBomb(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

@@ -43,13 +43,13 @@ public:
     void DeathDetailedBase(float amount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void StartFadeBody();
     void OnDeathBase();
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     void ButtTurnOff__UpdateFunc();
     void ButtTurnOff__FinishedFunc();
-    void GetEnemySpawnedCount(int& SpawnCount);
-    void IsWeakPointDeath(class UFSDPhysicalMaterial* Material, bool& IsWeakPoint);
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
+    UE_BLUEPRINT_PURE void IsWeakPointDeath(class UFSDPhysicalMaterial* Material, bool& IsWeakPoint);
     void CreateButtDynamicMaterial();
-    void GetFXMeshScale(float& Scale);
+    UE_BLUEPRINT_PURE void GetFXMeshScale(float& Scale);
 private:
     struct UeMarkers
     {

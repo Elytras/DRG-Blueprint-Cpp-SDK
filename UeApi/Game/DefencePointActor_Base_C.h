@@ -28,12 +28,12 @@ public:
     class UTerrainPlacementComponent* terrainPlacement;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_DefencePointActor_Base(int EntryPoint);
-    void ReceiveBeginPlay();
-    void DefenseFail();
-    void DefenseComplete();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void DefenseFail();
+    UE_PROTECTED void DefenseComplete();
     void OnDefenceFailed();
     void OnDefenseSucceed();
-    void DefenseStart();
+    UE_PROTECTED void DefenseStart();
 private:
     struct UeMarkers
     {

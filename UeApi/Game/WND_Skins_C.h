@@ -75,10 +75,10 @@ public:
     void SetSkinData(class UItemID* itemClass, class UPlayerCharacterID* PlayerCharacterClass);
     void AddSkin(class UItemSkin* InSkin, class UClass* InItem, class UClass* InPlayerCharacter, int InIndex, ITM_SkinItem_C*& OutSkinWidget);
     void SetWindowVisible(bool IsVisible_0, bool& VisibilityChanged, bool& NewVisibility);
-    void PopulateSkinWindow(bool& isEmpty);
-    void IsWindowVisible(bool& Visible);
+    UE_PRIVATE void PopulateSkinWindow(bool& isEmpty);
+    UE_BLUEPRINT_PURE void IsWindowVisible(bool& Visible);
     void UpdateBorder();
-    void GetItemsWindow(class UWidget*& Widget);
+    UE_BLUEPRINT_PURE void GetItemsWindow(class UWidget*& Widget);
     void RefreshWindowItems();
     void RefreshSelectorButton();
     void OnUnlockedSkin(class UItemSkin* SkinItem);

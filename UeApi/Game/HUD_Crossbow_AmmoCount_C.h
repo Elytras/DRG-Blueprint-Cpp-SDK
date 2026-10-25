@@ -33,10 +33,10 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnArrowTypeChanged(bool InDefaultArrow);
     void OnAmmoCountChanged(int amount);
-    void ReceiveItemSet();
+    UE_PROTECTED void ReceiveItemSet();
     void Finished_7D5D15E24B34D3D4466E3BA129F1FC49();
     void Refresh();
-    void GetArrowIcon(bool InDefaultArrow, class UTexture2D*& OutTexture, bool& OutValid);
+    UE_BLUEPRINT_PURE void GetArrowIcon(bool InDefaultArrow, class UTexture2D*& OutTexture, bool& OutValid);
 };
 
 }}}   // namespace Game::WeaponsNTools::Crossbow

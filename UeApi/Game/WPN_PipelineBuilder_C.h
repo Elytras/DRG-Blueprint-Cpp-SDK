@@ -31,15 +31,15 @@ public:
     bool PlacementValid;
     void ExecuteUbergraph_WPN_PipelineBuilder(int EntryPoint);
     void OnCharacterStateChanged_Event(TEnum<ECharacterState> NewState);
-    void AddedToInventory(class APlayerCharacter* ItemOwner);
+    UE_PROTECTED void AddedToInventory(class APlayerCharacter* ItemOwner);
     void TraceForConnector();
-    void RecieveUnequipped();
-    void RecieveEquipped();
-    void ReceiveBeginPlaceSegment();
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void ReceiveBeginPlaceSegment();
     void BndEvt__SegmentPlacer_K2Node_ComponentBoundEvent_0_PlacementUpdatedDelegate__DelegateSignature(bool InPlacementValid, const FTransform& InPlacement);
-    void RecieveStartUsing();
+    UE_PROTECTED void RecieveStartUsing();
     void Update_Placement_Transform(bool& OutSuccess, FTransform& outTransform);
-    void GetCrosshair(UI_PipelineBuilder_Crosshair_C*& Result);
+    UE_BLUEPRINT_PURE void GetCrosshair(UI_PipelineBuilder_Crosshair_C*& Result);
 private:
     struct UeMarkers
     {

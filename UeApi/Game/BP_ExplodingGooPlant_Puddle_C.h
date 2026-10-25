@@ -27,7 +27,7 @@ public:
     class USphereComponent* Sphere;
     class UTerrainPlacementComponent* terrainPlacement;
     class UParticleSystemComponent* ParticleSystem;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

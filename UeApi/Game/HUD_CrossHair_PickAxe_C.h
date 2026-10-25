@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_1;
     void ExecuteUbergraph_HUD_CrossHair_PickAxe(int EntryPoint);
-    void SetData(class APickaxeItem* PickAxe);
+    UE_BLUEPRINT_CALLABLE void SetData(class APickaxeItem* PickAxe);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

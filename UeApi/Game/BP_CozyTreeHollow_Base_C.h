@@ -31,7 +31,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_CozyTreeHollow_Base(int EntryPoint);
     void Spawn_Sugar();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -32,7 +32,7 @@ public:
     float IntialIntensity;
     void ExecuteUbergraph_BP_GlowingBlueCrystal_Base(int EntryPoint);
     void HeartDestroyed(class USceneComponent* Point);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

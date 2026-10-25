@@ -25,7 +25,7 @@ public:
     float Move_Distance;
     float Random_Deviation;
     void ExecuteUbergraph_TSK_FindDiagonalPointTowardsTarget(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 private:
     struct UeMarkers
     {

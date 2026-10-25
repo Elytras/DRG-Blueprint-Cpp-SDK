@@ -20,8 +20,8 @@ public:
     class USpawnActorWithDebrisPosComponent* SpawnActorWithDebrisPos;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_RivalFortifiedNodePlacer(int EntryPoint);
-    void ReceiveBeginPlay();
-    void GetRoomLocation(FVector& Position) const;
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE void GetRoomLocation(FVector& Position) const;
 private:
     struct UeMarkers
     {

@@ -57,7 +57,7 @@ public:
     void Ping();
     void ReceiveBeginPlay();
     void GetPingDelay(float MinDist, float MaxDist, float MinDelay, float MaxDelay, float& Delay, float& DistanceToClosest, float& VerticalDistance_0, int& TargetIndex, bool& AllEquipmentCalled);
-    void GetCharacter(class APlayerCharacter*& AsPlayer_Character);
+    UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& AsPlayer_Character);
     bool GetHiddenItems(TArray<class ADeepScanHiddenCrystal*>& Hidden_Item_Instances);
 private:
     struct UeMarkers

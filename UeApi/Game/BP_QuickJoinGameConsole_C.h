@@ -34,7 +34,7 @@ public:
     void ExecuteUbergraph_BP_QuickJoinGameConsole(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

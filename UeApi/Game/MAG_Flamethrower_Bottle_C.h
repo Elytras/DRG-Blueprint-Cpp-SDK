@@ -25,7 +25,7 @@ public:
     class UCapsuleComponent* Capsule;
     class USceneComponent* Scene;
     void ExecuteUbergraph_MAG_Flamethrower_Bottle(int EntryPoint);
-    void OnItemSkinned(class USkinEffect* Skin);
+    UE_PROTECTED void OnItemSkinned(class USkinEffect* Skin);
     void DoRelease();
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);

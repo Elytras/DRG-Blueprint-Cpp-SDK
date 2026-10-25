@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_BP_TruckerBalls(int EntryPoint);
     UE_MULTICAST void Move_ALL(bool SelectFirst);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

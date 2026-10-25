@@ -13,7 +13,7 @@ class BP_BrokenDNA_2_C : public ::Game::LevelElements::RoomObjects::HugeCarvers:
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/BrokenDNA/BP_BrokenDNA_2", "BP_BrokenDNA_2_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

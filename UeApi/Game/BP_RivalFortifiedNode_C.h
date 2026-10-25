@@ -67,13 +67,13 @@ public:
     UE_MULTICAST void ShutDown();
     void OnTurretDeath_Event(class UHealthComponentBase* HealthComponent);
     void BndEvt__HackingUsable_K2Node_ComponentBoundEvent_0_HackedDelegate__DelegateSignature(class APlayerCharacter* InHackedBy);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void LightBreath__UpdateFunc();
     void LightBreath__FinishedFunc();
     void TurnOffLight__UpdateFunc();
     void TurnOffLight__FinishedFunc();
     void SpawnDefenses(class UClass* SpawnedActorClass, float Radius, class UDebrisPositioning* DebrisPositioning, class UCurveFloat* AvoidCostCurve, int ExtraDefenses);
-    void OnRep_Active();
+    UE_BLUEPRINT_CALLABLE void OnRep_Active();
     void SpawnDebisChunks(TArray<class UStaticMeshComponent*>& NewParam);
 private:
     struct UeMarkers

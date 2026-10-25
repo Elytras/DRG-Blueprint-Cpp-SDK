@@ -23,7 +23,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     bool PlayerInsideGas;
     void ExecuteUbergraph_BP_HangingDustCloud(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

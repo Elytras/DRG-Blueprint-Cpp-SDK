@@ -75,13 +75,13 @@ public:
     void BndEvt__CharSelect_HeroSelect_K2Node_ComponentBoundEvent_4_OnCharacterHovered__DelegateSignature(class UPlayerCharacterID* Character);
     void Show();
     void OnNewLoadout();
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     void BndEvt__CloseButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void StopMovie();
     void CreateMovie();
-    void OnClosed();
-    void OnShown();
-    void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
+    UE_BLUEPRINT_CALLABLE void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
     void UpdateCharacterDescription(class UPlayerCharacterID* CharacterClass);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnSelectedCharacterChanged_Event(TSubclassOf<class APlayerCharacter> NewCharacter);
@@ -91,9 +91,9 @@ public:
     void OnSuccess_0D1BB19C4CA8D7117BC6A688077A0BDE();
     void OnFailure_0D1BB19C4CA8D7117BC6A688077A0BDE();
     UE_PURE class UPlayerCharacterID* GetSelectedClass();
-    void OnCloseMenuReleased(bool& Handled);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_CALLABLE void OnCloseMenuReleased(bool& Handled);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void HighlightClassChallenges(TArray<class UObject*>& AssetReferences, bool ShouldHighlight, class USeasonChallenge* Challenge);
 private:
     struct UeMarkers

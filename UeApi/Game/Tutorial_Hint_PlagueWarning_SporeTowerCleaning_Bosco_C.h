@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_PlagueWarning_SporeTowerCleaning_Bosco(int EntryPoint);
     void OnItemEquipped_LithoFoamer(class AItem* Item);
     void OnTriggerCleaningTutorial();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

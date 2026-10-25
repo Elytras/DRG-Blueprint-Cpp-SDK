@@ -24,7 +24,7 @@ public:
     class UStatusEffectTriggerComponent* StatusEffectTrigger;
     class UAudioComponent* Audio;
     class USceneComponent* DefaultSceneRoot;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -35,9 +35,9 @@ public:
     void ExecuteUbergraph_ENE_Spider_Buffer(int EntryPoint);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_2_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void BndEvt__EnemyBuffer_K2Node_ComponentBoundEvent_1_BuffingChangedDelegate__DelegateSignature(bool boolValue);
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
-    void OnRagdoll();
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     void HandleWeapointDeath(FDamageData& DamageData, TArray<class UDamageTag*>& Tags_0);
 private:
     struct UeMarkers

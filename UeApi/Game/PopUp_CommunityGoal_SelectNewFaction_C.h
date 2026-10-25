@@ -40,7 +40,7 @@ public:
     void Faction2Selected();
     void Faction1Selected();
     UE_COSMETIC void Construct();
-    void Initialize(int Fee_0, class UCommunityGoalFaction* Faction1_0, class UCommunityGoalFaction* Faction2_0);
+    UE_BLUEPRINT_CALLABLE void Initialize(int Fee_0, class UCommunityGoalFaction* Faction1_0, class UCommunityGoalFaction* Faction2_0);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CommunityTerminal

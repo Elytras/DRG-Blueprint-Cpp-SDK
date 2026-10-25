@@ -46,7 +46,7 @@ public:
     bool IconOutline;
     bool IconAtRightSide;
     void ExecuteUbergraph_Lore_Container_WindowTextAndIcon(int EntryPoint);
-    void OnFinished();
+    UE_BLUEPRINT_CALLABLE void OnFinished();
     void ActiveRunningText();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText Headline_0, FText TextBody_0);

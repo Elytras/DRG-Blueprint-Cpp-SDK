@@ -31,11 +31,11 @@ public:
     void ExecuteUbergraph__Menu_MinersManualStandalone(int EntryPoint);
     void OpenMinersManualPage(TEnum<EMinersManualSinglePage> page);
     void OpenMinersManualFromID(TEnum<EMinersManualSection> Section, const FGuid& ID);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void OnMinersManualClosed(class UWindowWidget* Window);
     UE_COSMETIC void Construct();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

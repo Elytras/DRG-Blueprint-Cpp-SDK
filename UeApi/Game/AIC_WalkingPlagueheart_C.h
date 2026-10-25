@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Plague/WalkingPlagueheartBoss/AIC_WalkingPlagueheart", "AIC_WalkingPlagueheart_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_WalkingPlagueheart_C;
     void ExecuteUbergraph_AIC_WalkingPlagueheart(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -27,7 +27,7 @@ public:
     float ChangeFovDelay;
     bool ApplySkin;
     void ExecuteUbergraph_MAG_BaseClass(int EntryPoint);
-    void OnItemSkinned(class USkinEffect* Skin);
+    UE_PROTECTED void OnItemSkinned(class USkinEffect* Skin);
     void DoRelease();
     bool OnSpawnRelease_Released();
     bool OnSpawnRelease_Attached(class AActor* Parent);

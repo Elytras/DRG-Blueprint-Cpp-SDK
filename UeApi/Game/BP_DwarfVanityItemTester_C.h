@@ -47,8 +47,8 @@ public:
     class USkeletalMeshComponent* Armor;
     class USkeletalMeshComponent* NewVar_0;
     void ExecuteUbergraph_BP_DwarfVanityItemTester(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetBeardPiece(class USkeletalMesh* Mesh, class UMaterialInterface* HairOverride);
     void SetAnim(class USkeletalMeshComponent* Target);
 private:

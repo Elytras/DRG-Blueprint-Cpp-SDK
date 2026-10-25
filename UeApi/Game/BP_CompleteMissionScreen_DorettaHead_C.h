@@ -25,7 +25,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_CompleteMissionScreen_DorettaHead(int EntryPoint);
     void StartPlay(TEnum<ECharselectionCameraLocation> selectionLocation);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

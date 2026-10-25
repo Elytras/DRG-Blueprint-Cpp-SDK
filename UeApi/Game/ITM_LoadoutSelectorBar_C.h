@@ -61,7 +61,7 @@ public:
     int PastedButtonIdx;
     void ExecuteUbergraph_ITM_LoadoutSelectorBar(int EntryPoint);
     void BndEvt__ITM_LoadoutSelectorBar_Itm_LoadoutSelectButton_6_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(ITM_LoadoutSelectButton_C* Button);
-    void OnClicked(bool Yes);
+    UE_BLUEPRINT_CALLABLE void OnClicked(bool Yes);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnCopyPasteHovered(bool IsHovered_0, ITM_LoadoutSelectButton_C* Button);
     void OnPaste(ITM_LoadoutSelectButton_C* LoadoutButton);
@@ -77,10 +77,10 @@ public:
     void BndEvt__Itm_LoadoutSelectButton_1_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature(ITM_LoadoutSelectButton_C* Button);
     void BndEvt__Itm_LoadoutSelectButton_0_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature(ITM_LoadoutSelectButton_C* Button);
     void SetSelected(int Index_0);
-    void SetData(class UPlayerCharacterID* CharacterClass);
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* CharacterClass);
     UE_PURE class UWidget* GetToolTipWidget();
-    void Get_Selected_Button(ITM_LoadoutSelectButton_C*& Button, int& Index_0);
-    void GetToolTipText(FText& Headline, FText& Text);
+    UE_BLUEPRINT_PURE void Get_Selected_Button(ITM_LoadoutSelectButton_C*& Button, int& Index_0);
+    UE_BLUEPRINT_PURE void GetToolTipText(FText& Headline, FText& Text);
 private:
     struct UeMarkers
     {

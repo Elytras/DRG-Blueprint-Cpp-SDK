@@ -89,7 +89,7 @@ public:
     void OnProgressBarUpdateStep();
     void OnUpdateProgressBarFinished();
     void OnProgressBarMoveFinished();
-    void OnNewTopWindow();
+    UE_PROTECTED void OnNewTopWindow();
     void Reward_Claimed();
     void Count_Down();
     void On_Mission_Control_Finished();
@@ -99,15 +99,15 @@ public:
     void CursorInputHack();
     void Continue();
     void SetMissionControlPaused(bool IsPaused);
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void BndEvt__ContinueButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Add_Reward(class UReward* Reward);
     void Add_Reward_List(const TArray<class UReward*>& List);
     void CreateRewardWidget(class UReward* Reward, class URewardWidget*& Widget);
-    void GetMissionCompleteShout(class UDialogDataAsset*& MissionCompleteShout);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetMissionCompleteShout(class UDialogDataAsset*& MissionCompleteShout);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE bool IsWindowOpen();
     void UpdateCampaignProgressBar(bool ShowLastMission);
     void UpdateGoogleAnalytics();

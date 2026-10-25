@@ -45,11 +45,11 @@ public:
     TEnum<ETimelineDirection> Disassemble_uplink__Direction_8BB753934FA5061C0948A886CF6B0D73;
     class UTimelineComponent* Disassemble_uplink;
     void ExecuteUbergraph_DefencePoint_Uplink(int EntryPoint);
-    void DefenseComplete();
-    void DefenseStart();
-    void DefenseFail();
+    UE_PROTECTED void DefenseComplete();
+    UE_PROTECTED void DefenseStart();
+    UE_PROTECTED void DefenseFail();
     void BndEvt__DefendPointUsable_K2Node_ComponentBoundEvent_0_ProgressSignature__DelegateSignature(float Progress);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Disassemble_uplink__UpdateFunc();
     void Disassemble_uplink__FinishedFunc();
 private:

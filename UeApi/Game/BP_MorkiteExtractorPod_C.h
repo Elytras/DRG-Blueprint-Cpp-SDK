@@ -68,14 +68,14 @@ public:
     void ExecuteUbergraph_BP_MorkiteExtractorPod(int EntryPoint);
     void BndEvt__BP_MorkiteExtractorPod_SingleUsable_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ResizeCarver();
-    void OnExtractorStateChanged(TEnum<ERefineryExtractorPodState> NewState);
+    UE_PROTECTED void OnExtractorStateChanged(TEnum<ERefineryExtractorPodState> NewState);
     void OnPipeLineCompleted();
     void BndEvt__BP_MorkiteExtractorPod_SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void OnDropStarted();
-    void OnDroppodImpact();
+    UE_PROTECTED void OnDropStarted();
+    UE_PROTECTED void OnDroppodImpact();
     void TakeOff();
     void OnBuildStateChanged_Event_0(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE OBJ_DD_MorkiteWell_C* GetObjective();
 private:
     struct UeMarkers

@@ -20,7 +20,7 @@ public:
     class UTerrainPlacementComponent* terrainPlacement;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Facility_Tentacle_SpawnPoint(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -16,8 +16,8 @@ class LIB_PerkColors_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/UI/Art/WidgetParts/LIB_PerkColors", "LIB_PerkColors_C");
-    static void PerkColorByState(TEnum<EPerkUsageType> InPerkType, TEnum<EPerkTierState> InPerkState, class UObject* __WorldContext, FLinearColor& OutBackground, FLinearColor& OutBorder, FLinearColor& OutIcon);
-    static void PerkColorFromType(TEnum<EPerkUsageType> InType, class UObject* __WorldContext, FLinearColor& OutColor);
+    UE_BLUEPRINT_PURE static void PerkColorByState(TEnum<EPerkUsageType> InPerkType, TEnum<EPerkTierState> InPerkState, class UObject* __WorldContext, FLinearColor& OutBackground, FLinearColor& OutBorder, FLinearColor& OutIcon);
+    UE_BLUEPRINT_PURE static void PerkColorFromType(TEnum<EPerkUsageType> InType, class UObject* __WorldContext, FLinearColor& OutColor);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

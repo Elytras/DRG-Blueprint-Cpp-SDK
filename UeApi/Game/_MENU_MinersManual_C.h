@@ -86,11 +86,11 @@ public:
     void SelectResourcesPage(int Index_0);
     void LoadSinglePage(TSoftClassPtr<class UClass> PageRef);
     void SelectOverview();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    void OpenPageInternal(TEnum<EMinersManualSection> Section, TSoftClassPtr<class UClass> page);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void IsCreatureUnlocked(class UEnemyMinersManualData* enemy, bool& IsUnlocked);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_PRIVATE void OpenPageInternal(TEnum<EMinersManualSection> Section, TSoftClassPtr<class UClass> page);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void IsCreatureUnlocked(class UEnemyMinersManualData* enemy, bool& IsUnlocked);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

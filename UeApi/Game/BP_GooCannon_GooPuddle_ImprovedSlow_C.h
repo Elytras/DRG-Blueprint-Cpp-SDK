@@ -20,7 +20,7 @@ public:
     void ExecuteUbergraph_BP_GooCannon_GooPuddle_ImprovedSlow(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveActorBeginOverlap(class AActor* OtherActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

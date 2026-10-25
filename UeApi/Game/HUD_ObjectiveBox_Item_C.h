@@ -28,8 +28,8 @@ public:
     class UObjective* Objective;
     bool Primary;
     void ExecuteUbergraph_HUD_ObjectiveBox_Item(int EntryPoint);
-    void ReceiveObjectiveUpdated();
-    void ReceiveObjectiveInitialized();
+    UE_PROTECTED void ReceiveObjectiveUpdated();
+    UE_PROTECTED void ReceiveObjectiveInitialized();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

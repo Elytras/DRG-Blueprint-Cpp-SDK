@@ -66,13 +66,13 @@ public:
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__Health_K2Node_ComponentBoundEvent_2_DamageSig__DelegateSignature(float amount);
     void BndEvt__Health_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void Drop_Loot(FVector Impulse, FVector DropOffset, bool& success);
-    void Has_Loot(bool& Has_Loot_0);
+    UE_BLUEPRINT_PURE void Has_Loot(bool& Has_Loot_0);
     bool OnTriggerAI(FName TriggerName);
     void EatChunk(class AResourceChunk* chunk);
     void DropEatenLott(FVector DropOffset);

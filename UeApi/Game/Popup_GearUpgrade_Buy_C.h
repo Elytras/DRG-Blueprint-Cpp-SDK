@@ -42,14 +42,14 @@ public:
     class UAudioComponent* ShoutAudioComponent;
     bool HasAllUpgradesForItem;
     void ExecuteUbergraph_Popup_GearUpgrade_Buy(int EntryPoint);
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void Buy();
     void Back();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__BTN_No_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__BTN_Yes_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void Show(class UClass* Item_0, class UItemUpgrade* Upgrade_0);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
 };
 
 }}}   // namespace Game::UI::CharacterSelectionMK2

@@ -32,7 +32,7 @@ public:
     _MENU_MinersManual_C* _Menu_Lore;
     int CurrIndex;
     void ExecuteUbergraph_Itm_MinersManual_TabsHeader(int EntryPoint);
-    void SetData(_MENU_MinersManual_C* _Menu_Lore_0);
+    UE_BLUEPRINT_CALLABLE void SetData(_MENU_MinersManual_C* _Menu_Lore_0);
     void BndEvt__Itm_HeaderCategory2_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__Itm_HeaderCategory1_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     UE_COSMETIC void Construct();

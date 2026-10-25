@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     BP_Anniversary_Sparkler_C* BP_Anniversary_Sparkler11_2_ExecuteUbergraph_SLVL_SpaceRig_Anniversary_RefProperty;
     void ExecuteUbergraph_SLVL_SpaceRig_Anniversary(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 };
 
 }}}   // namespace Game::Maps::SpaceRig

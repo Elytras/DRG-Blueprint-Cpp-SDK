@@ -36,7 +36,7 @@ public:
     void ProgressSound();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
-    void Initialize(class UCoolDownItemAggregator* CoolDown, class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void Initialize(class UCoolDownItemAggregator* CoolDown, class AItem* Item_0);
 private:
     struct UeMarkers
     {

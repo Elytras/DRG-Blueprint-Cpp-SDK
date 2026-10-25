@@ -31,7 +31,7 @@ public:
     void OnAfflictionActivatedEvent_Event_0(class UPawnAffliction* Affliction_0);
     void TryTriggerExplosion();
     void TriggerExplosion();
-    void GetFXMeshScale(float& Scale);
+    UE_BLUEPRINT_PURE void GetFXMeshScale(float& Scale);
 private:
     struct UeMarkers
     {

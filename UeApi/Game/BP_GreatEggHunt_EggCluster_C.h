@@ -23,7 +23,7 @@ public:
     FRandomStream RandomStream;
     int RandomSeed;
     void ExecuteUbergraph_BP_GreatEggHunt_EggCluster(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_UsedMesh();
     void OnRep_UsedTextures();
     void OnRep_RandomSeed();

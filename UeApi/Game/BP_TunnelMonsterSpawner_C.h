@@ -47,7 +47,7 @@ public:
     void Carve();
     void BndEvt__BP_TunnelMonsterSpawner_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__BP_FleshWorm_Spawner_Base_SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnLoaded_60341DEA4956809FFDEC0E9A1EC1648F(class UObject* Loaded);
 private:
     struct UeMarkers

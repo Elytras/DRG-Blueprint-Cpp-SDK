@@ -33,20 +33,20 @@ public:
     bool ProspectorAlive;
     void ExecuteUbergraph_AIC_Prospector(int EntryPoint);
     void ProspectorDied(class UHealthComponentBase* HealthComponent);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void RemoveSlowImmunity();
     void AddSlowImmunity();
     void RemoveAllStatusEffects();
     void FirstWeakpointDestroyed();
     void OnRunning();
     void StartFleeing();
-    void Recieve_BlackboardValueChanged(const FName& KeyName);
+    UE_PROTECTED void Recieve_BlackboardValueChanged(const FName& KeyName);
     void SetHackable();
     void OnMessageBehaviorTreeEvent_Event_0(FName Message);
     void OnDamageTaken();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnMessageAI(FName TriggerName);
-    void GetProspector(ENE_Prospector_C*& AsENE_Prospector);
+    UE_BLUEPRINT_PURE void GetProspector(ENE_Prospector_C*& AsENE_Prospector);
     bool OnTriggerAI(FName TriggerName);
 private:
     struct UeMarkers

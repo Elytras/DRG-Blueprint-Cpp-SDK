@@ -43,11 +43,11 @@ public:
     void TryPing();
     void OnIntroEnded();
     void OnIntroStarted();
-    void OnClicked(class USchematic* InSchematic);
+    UE_BLUEPRINT_CALLABLE void OnClicked(class USchematic* InSchematic);
     UE_COSMETIC void Construct();
     void Begin_Pick_Reward(int InLevel, int InSeed);
-    void PopRandomReward(const TMap<class UPlayerCharacterID*, class USchematic*>& Rewards, FRandomStream Random, class UPlayerCharacterID*& OutCharacter, class USchematic*& OutReward);
-    void EndPickReward(class USchematic* InReward);
+    UE_PRIVATE UE_BLUEPRINT_PURE void PopRandomReward(const TMap<class UPlayerCharacterID*, class USchematic*>& Rewards, FRandomStream Random, class UPlayerCharacterID*& OutCharacter, class USchematic*& OutReward);
+    UE_PRIVATE void EndPickReward(class USchematic* InReward);
     void Reset();
 private:
     struct UeMarkers

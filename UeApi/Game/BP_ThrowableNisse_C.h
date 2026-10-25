@@ -32,8 +32,8 @@ public:
     class USimpleObjectInfoComponent* SimpleObjectInfo;
     bool CanTriggerSound;
     void ExecuteUbergraph_BP_ThrowableNisse(int EntryPoint);
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void ReceiveBeginPlay();
     void Throw(FVector force);
     void AddImpulse(FVector Impulse);
 private:

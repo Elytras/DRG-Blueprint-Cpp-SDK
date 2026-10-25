@@ -22,7 +22,7 @@ public:
     void ExecuteUbergraph_WND_Jobs_Entry_Base(int EntryPoint);
     void Unfold();
     void Refresh();
-    void SetData(class UCampaign* Campaign);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign);
     void fold();
 };
 

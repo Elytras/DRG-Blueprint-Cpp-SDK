@@ -27,7 +27,7 @@ public:
     BP_CleanupPod_C* CleanupPod;
     void ExecuteUbergraph_Tutorial_Hint_DeepScan_MorkiteSeed_Bosco(int EntryPoint);
     void OnDrillevatorLanded();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

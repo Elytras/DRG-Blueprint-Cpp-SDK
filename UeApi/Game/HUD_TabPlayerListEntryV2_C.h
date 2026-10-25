@@ -52,7 +52,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void Set_Data(class AFSDPlayerState* State);
-    void UpdateVolatileStats();
+    UE_PRIVATE void UpdateVolatileStats();
     void UpdatePlayerClass();
 private:
     struct UeMarkers

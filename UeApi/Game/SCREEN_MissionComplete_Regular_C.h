@@ -116,7 +116,7 @@ public:
     void ShowPlayerReviewDialog();
     void StartSeasonFlow();
     void SeasonFlowEnd();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void Continue();
     void BndEvt__BTN_Continue_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -124,18 +124,18 @@ public:
     UE_COSMETIC void Construct();
     void Completed_C30CBAF14A22846A9888EF9778195507();
     void OnTick_C30CBAF14A22846A9888EF9778195507();
-    void GetTimeText(float Seconds, FText& Text);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetTimeText(float Seconds, FText& Text);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void GetMissionXP(int& Output_Get);
-    void GetMissionResultInfo(class UMissionResultInfo*& MissionResultInfo);
-    void SetupCharacterBar();
+    UE_BLUEPRINT_PURE void GetMissionResultInfo(class UMissionResultInfo*& MissionResultInfo);
+    UE_PRIVATE void SetupCharacterBar();
     void AddSpacerIf(bool Condition);
     void ShowCursor();
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetAnsel(bool Active);
     UE_PURE TEnum<ESlateVisibility> Get_Button_GiveAllocade_Visiblity();
     void SendHostAnalytics();
-    void GetIsTutorialBiome(bool& IsTutorialBiome);
+    UE_BLUEPRINT_PURE void GetIsTutorialBiome(bool& IsTutorialBiome);
 private:
     struct UeMarkers
     {

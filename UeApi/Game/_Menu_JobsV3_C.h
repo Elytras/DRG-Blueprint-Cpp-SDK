@@ -56,12 +56,12 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Back();
-    void OnShown();
-    void GetFSDPlayer(class AFSDPlayerController*& AsFSDPlayer_Controller);
+    UE_PROTECTED void OnShown();
+    UE_BLUEPRINT_PURE void GetFSDPlayer(class AFSDPlayerController*& AsFSDPlayer_Controller);
     void AddJobEntry(class UCampaign* Campaign);
     void RefreshJobs();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void HasCompletedIntro(bool& OutCompleted);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void HasCompletedIntro(bool& OutCompleted);
 };
 
 }}}   // namespace Game::UI::Menu_Jobs

@@ -29,9 +29,9 @@ public:
     void OnCountdownFinished();
     void BndEvt__ObjectivesManager_K2Node_ComponentBoundEvent_0_DelegateEvent__DelegateSignature();
     void OnMatchStarted_();
-    void ReceiveBeginPlay();
-    void GetMineHead(BP_MineHead_C*& Output);
-    void GetLandingZoneLocation(FVector& Output);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE void GetMineHead(BP_MineHead_C*& Output);
+    UE_BLUEPRINT_PURE void GetLandingZoneLocation(FVector& Output);
     void OnRep_SelectedSpawnLocation();
 private:
     struct UeMarkers

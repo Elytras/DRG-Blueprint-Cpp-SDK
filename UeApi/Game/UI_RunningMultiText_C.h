@@ -36,9 +36,9 @@ public:
     void SetTexts(TArray<FText>& InTexts);
     void SetTextRunnerActive(bool Inactive);
     void SetRunnerProgress(float InProgress, bool& Finished);
-    void SetNextLine();
-    void InitRun();
-    void PlayCue(class USoundCue* InSound);
+    UE_PRIVATE void SetNextLine();
+    UE_PRIVATE void InitRun();
+    UE_PRIVATE void PlayCue(class USoundCue* InSound);
 private:
     struct UeMarkers
     {

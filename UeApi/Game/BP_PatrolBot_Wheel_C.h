@@ -20,7 +20,7 @@ public:
     class UStaticMeshComponent* StaticMesh;
     class USphereComponent* Sphere;
     void ExecuteUbergraph_BP_PatrolBot_Wheel(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -33,10 +33,10 @@ public:
     TMulticastInlineDelegate<void()> OnHeartDeposited;
     void ExecuteUbergraph_BP_PlagueHeart(int EntryPoint);
     UE_MULTICAST UE_RELIABLE void All_CountHeartDeposit(bool DepositedInMolly);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_PlagueHeart_Carriable_K2Node_ComponentBoundEvent_4_CarriableEvent__DelegateSignature();
     void BndEvt__BP_PlagueHeart_Carriable_K2Node_ComponentBoundEvent_3_CarriableEvent__DelegateSignature();
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
 private:
     struct UeMarkers
     {

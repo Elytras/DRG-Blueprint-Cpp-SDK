@@ -25,7 +25,7 @@ public:
     class UClass* ClassToSpawn;
     void ExecuteUbergraph_BP_TumbleweedSpawner(int EntryPoint);
     void SpawnPinecone();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

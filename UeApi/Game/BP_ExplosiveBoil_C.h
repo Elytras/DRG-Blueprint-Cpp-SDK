@@ -42,7 +42,7 @@ public:
     void BndEvt__BP_ExplosiveBoil_EnemyHealth_K2Node_ComponentBoundEvent_4_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnDeath_Event(class UHealthComponentBase* HealthComponent);
     void OnDestroyed_Event(class AActor* DestroyedActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Grow__UpdateFunc();
     void Grow__FinishedFunc();
     void CopyGlobalWeakpointModSettings(class UObject* Object);

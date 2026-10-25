@@ -23,7 +23,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_PRW_DualMPs(int EntryPoint);
-    void OnSkinItem(class USkinEffect* Skin);
+    UE_PROTECTED void OnSkinItem(class USkinEffect* Skin);
 private:
     struct UeMarkers
     {

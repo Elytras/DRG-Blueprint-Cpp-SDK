@@ -45,15 +45,15 @@ public:
     class UCampaign* Campaign;
     TMulticastInlineDelegate<void()> Updated;
     void ExecuteUbergraph_WND_Assignment_Popup(int EntryPoint);
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void BndEvt__WND_Assignment_Popup_B_AcceptNoMissionAssignment_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void OnAnswer(bool Yes);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__B_AbortAssignment_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void BndEvt__B_StartAssignment_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
     void BndEvt__B_ClosePopup_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Basic_ButtonCutCorner_C* Button);
-    void SetData(class UCampaign* Campaign_0);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void UpdateActiveButton();
 };
 

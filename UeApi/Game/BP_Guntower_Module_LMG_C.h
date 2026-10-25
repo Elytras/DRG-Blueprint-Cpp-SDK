@@ -35,8 +35,8 @@ public:
     void ExecuteUbergraph_BP_Guntower_Module_LMG(int EntryPoint);
     void OnTearArmor();
     void OnActivationChanged(bool IsActivated);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

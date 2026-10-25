@@ -112,10 +112,10 @@ public:
     void BndEvt__Button_Driller_K2Node_ComponentBoundEvent_758_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Engineer_K2Node_ComponentBoundEvent_735_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Gunner_K2Node_ComponentBoundEvent_683_OnButtonClickedEvent__DelegateSignature();
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void BndEvt__Button_Close_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature();
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE float Get_HealthSlider_Value_0();
     UE_PURE TEnum<ESlateVisibility> Get_ActivateCommonCheatsButton_Visibility_0();
     class UWidget* OnGetMenuContent_0();

@@ -32,8 +32,8 @@ public:
     bool EnabledEffect;
     void ExecuteUbergraph_DE_DiscoLight(int EntryPoint);
     void Set_Light();
-    void OnStopEffect();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
     void ReceiveBeginPlay();
     void OnLoaded_9A4F10A04AD1DAA8BA45FFA4A7DB3EEC(class UObject* Loaded);

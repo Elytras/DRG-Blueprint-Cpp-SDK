@@ -23,7 +23,7 @@ public:
     float NextAnimTime;
     void ExecuteUbergraph_ESI_Crawler(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnCompleted_BE9FD27546DC255F49A9C2BA512ED40E(FName NotifyName);
     void OnBlendOut_BE9FD27546DC255F49A9C2BA512ED40E(FName NotifyName);
     void OnInterrupted_BE9FD27546DC255F49A9C2BA512ED40E(FName NotifyName);

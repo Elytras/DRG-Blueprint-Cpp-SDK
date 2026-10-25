@@ -48,7 +48,7 @@ public:
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     void OnSelectedCharacterChanged(TSubclassOf<class APlayerCharacter> NewCharacter);
     void NameChanged(FString NewName);
-    void Init(class AFSDPlayerState* PlayerState_0);
+    UE_BLUEPRINT_CALLABLE void Init(class AFSDPlayerState* PlayerState_0);
     void ReadyChanged(bool IsReady_0);
     void SetReady(bool IsReady_0);
     void HideClass();

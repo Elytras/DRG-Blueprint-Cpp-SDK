@@ -59,17 +59,17 @@ public:
     void ExecuteUbergraph_BP_ShieldRegenerator(int EntryPoint);
     void Failsafe_Hit_Object();
     void BndEvt__FleeCollider_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
-    void ReceiveHitObject();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveHitObject();
     UE_MULTICAST UE_RELIABLE void AllBeginDestroy();
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void IntroAnim__UpdateFunc();
     void IntroAnim__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void AddPlayer(class APlayerCharacter* const& Player);
     void RemovePlayer(class APlayerCharacter* const& Player);
-    void SetScale(float Scale);
+    UE_PRIVATE void SetScale(float Scale);
     void ReturnHome();
 private:
     struct UeMarkers

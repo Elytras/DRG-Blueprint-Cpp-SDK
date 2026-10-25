@@ -50,7 +50,7 @@ public:
     class UMaterialInstanceDynamic* DynamicMaterialInstance;
     void ExecuteUbergraph_PRJ_StaticBomber(int EntryPoint);
     void BndEvt__PRJ_StaticBomber_SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void RemoveInAirEffects();
     void BndEvt__PRJ_StaticBomber_SimpleHealth_K2Node_ComponentBoundEvent_3_HitSig__DelegateSignature(float Damage_0, const FDamageData& DamageData, bool anyHealthLost);
     void TriggerFuse();

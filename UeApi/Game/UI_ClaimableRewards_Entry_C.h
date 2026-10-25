@@ -38,14 +38,14 @@ public:
     class UTextBlock* TextHeader;
     class UBorder* WindowBorder;
     void ExecuteUbergraph_UI_ClaimableRewards_Entry(int EntryPoint);
-    void ReceiveMoveIn(float InStartDelay);
+    UE_PROTECTED void ReceiveMoveIn(float InStartDelay);
     void PlaySlamAudio();
     void OnPopupImageLoaded();
     void BndEvt__ITM_BigButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void OnClaimAnimFinished();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void PlayRevealAudio();
+    UE_PRIVATE void PlayRevealAudio();
     void Refresh();
     void SequenceEvent__ENTRYPOINTUI_ClaimableRewards_Entry_0();
     void SequenceEvent__ENTRYPOINTUI_ClaimableRewards_Entry_1();

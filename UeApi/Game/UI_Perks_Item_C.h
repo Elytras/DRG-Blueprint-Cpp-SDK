@@ -55,8 +55,8 @@ public:
     void Set_Hovered(bool Hovered);
     void OnPerkClaimed(class UPerkAsset* Perk, int ClaimedTier);
     void Refresh();
-    void GetPerkAsset(class UPerkAsset*& PerkAsset_0, EPerkTierState& State, int& Tier_0);
-    class UWidget* CreateToolTipWidget();
+    UE_BLUEPRINT_PURE void GetPerkAsset(class UPerkAsset*& PerkAsset_0, EPerkTierState& State, int& Tier_0);
+    UE_BLUEPRINT_PURE class UWidget* CreateToolTipWidget();
     void ShowAs(class UPerkAsset* InPerkAsset, int InRank, TEnum<EPerkTierState> InState, bool InHovered, bool InPerkHighlighted, bool InSelected);
     void Set_Selected(bool InSelected);
     void SetIconSize(int InSize);

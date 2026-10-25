@@ -36,8 +36,8 @@ public:
     void SlowTick();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetPlayerName(class AFSDPlayerController* PlayerController, FString& Name_0);
-    void GetPktLossString(FText& Names, FText& PktLossIn, FText& PktLossOut, FText& Ping, FText& Jitter, bool& IsValid);
+    UE_BLUEPRINT_PURE void GetPlayerName(class AFSDPlayerController* PlayerController, FString& Name_0);
+    UE_BLUEPRINT_PURE void GetPktLossString(FText& Names, FText& PktLossIn, FText& PktLossOut, FText& Ping, FText& Jitter, bool& IsValid);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

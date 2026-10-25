@@ -67,7 +67,7 @@ public:
     void ClearAmount();
     void SetAvailableBalance(int CreditsLeft_0);
     void UpdateNumber(bool DoClearAnim_0, bool DoTradeAnim_0, float InitialDelay);
-    void SetData(class UResourceData* Resource_0, ITM_Trading_BasketItem_C* TradeBasket_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UResourceData* Resource_0, ITM_Trading_BasketItem_C* TradeBasket_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateChangeAmount(int IncrementAmount, bool& DidUpdate);
 };

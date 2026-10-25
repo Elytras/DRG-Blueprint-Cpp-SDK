@@ -23,7 +23,7 @@ public:
     TMulticastInlineDelegate<void()> OnWeaponMaintenanceChanged;
     void ExecuteUbergraph_WND_WeaponMaintenance(int EntryPoint);
     void OnSavegameChanged();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     UE_COSMETIC void Construct();
 };
 

@@ -49,7 +49,7 @@ public:
     void Driver__UpdateFunc();
     void Driver__FinishedFunc();
     void OnRep_IsOpen();
-    void HasPlayersNearby(bool& AnyPlayers);
+    UE_BLUEPRINT_PURE void HasPlayersNearby(bool& AnyPlayers);
 private:
     struct UeMarkers
     {

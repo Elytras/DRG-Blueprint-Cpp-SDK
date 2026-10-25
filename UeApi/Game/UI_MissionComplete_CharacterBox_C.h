@@ -50,7 +50,7 @@ public:
     TMulticastInlineDelegate<void(UI_MissionComplete_CharacterBox_C* Widget)> OnMoveInFinished;
     void ExecuteUbergraph_UI_MissionComplete_CharacterBox(int EntryPoint);
     UE_COSMETIC void Construct();
-    void Init(class AFSDPlayerState* State);
+    UE_BLUEPRINT_CALLABLE void Init(class AFSDPlayerState* State);
     void BndEvt__Button_52_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     void MoveInFinished();
     void BeginMoveIn(float InDelay, float InDuration);

@@ -20,7 +20,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UBehaviorTree* BehaviourTree;
     void ExecuteUbergraph_AIC_Flea(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
 private:
     struct UeMarkers
     {

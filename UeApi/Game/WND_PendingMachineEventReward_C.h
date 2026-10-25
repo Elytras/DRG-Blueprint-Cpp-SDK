@@ -34,7 +34,7 @@ public:
     void ExecuteUbergraph_WND_PendingMachineEventReward(int EntryPoint);
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_2_OnHovered__DelegateSignature();
     void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
-    void OnShown();
+    UE_PROTECTED void OnShown();
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

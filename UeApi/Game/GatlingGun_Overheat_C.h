@@ -24,7 +24,7 @@ public:
     void ExecuteUbergraph_GatlingGun_Overheat(int EntryPoint);
     void OnUnEquipped();
     void OnEquipped();
-    void Init(class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void Init(class AItem* Item_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Construct();
     void SetHeatValue(float HeatPercentage, bool overheated);

@@ -36,7 +36,7 @@ public:
     TArray<BP_PlayerController_SpaceRig_C*> PlayersThatHaveUsed;
     void ExecuteUbergraph_BP_TradingConsole(int EntryPoint);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void IsNewPlayer(BP_PlayerController_SpaceRig_C* PlayerController, bool& IsNewPlayer_0);
 private:
     struct UeMarkers

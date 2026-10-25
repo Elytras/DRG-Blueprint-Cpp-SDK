@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Woodlouse/AIC_Woodlouse", "AIC_Woodlouse_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Woodlouse(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

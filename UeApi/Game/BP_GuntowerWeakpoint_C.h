@@ -31,9 +31,9 @@ public:
     class UEnemyComponent* enemy;
     class UPawnStatsComponent* PawnStats;
     void ExecuteUbergraph_BP_GuntowerWeakpoint(int EntryPoint);
-    void OnExposedChanged(bool isExposed);
+    UE_PROTECTED void OnExposedChanged(bool isExposed);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE FVector GetTargetCenterMass() const;
 private:
     struct UeMarkers

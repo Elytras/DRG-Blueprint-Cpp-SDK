@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/GameElements/Objectives/Facility/DefensiveTentacles/BP_TentacleMeleeAttack", "BP_TentacleMeleeAttack_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_TentacleMeleeAttack(int EntryPoint);
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::Facility::DefensiveTentacles

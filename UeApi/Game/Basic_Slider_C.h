@@ -45,8 +45,8 @@ public:
     void BndEvt__Slider_K2Node_ComponentBoundEvent_4_OnFloatValueChangedEvent__DelegateSignature(float Value);
     void Set_Percent(float New_Percent);
     void Set_Value(float Value);
-    void Get_Percent(float& Percent);
-    void Get_Value(float& Value);
+    UE_BLUEPRINT_PURE void Get_Percent(float& Percent);
+    UE_BLUEPRINT_PURE void Get_Value(float& Value);
     void Set_Text(FText New_Text);
     void SetMinTextWidth(float InMinDesiredWidth);
 private:

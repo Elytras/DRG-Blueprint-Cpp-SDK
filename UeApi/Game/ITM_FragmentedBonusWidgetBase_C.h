@@ -19,7 +19,7 @@ public:
     bool IsClaimed;
     bool CanClaim;
     int numberOfFragments;
-    void SetData(int numberOfFragments_0, bool IsClaimed_0);
+    UE_BLUEPRINT_CALLABLE void SetData(int numberOfFragments_0, bool IsClaimed_0);
     void SetShadeAlpha(float alpha);
     void ScaleWidget(bool ScaleDown, bool WithAnim);
     bool EvaluateCanClaim();

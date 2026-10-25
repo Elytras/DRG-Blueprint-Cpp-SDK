@@ -34,18 +34,18 @@ public:
     float ShoutCooldownMin;
     float BeginShoutIntoxicationLimit;
     void ExecuteUbergraph_BP_IntoxicationComponent(int EntryPoint);
-    void ReceiveDrunkBegin();
-    void ReceiveDrunkEnd();
+    UE_PROTECTED void ReceiveDrunkBegin();
+    UE_PROTECTED void ReceiveDrunkEnd();
     void Lerp_Post_Process_Strength(float DeltaTime);
-    void ReceivePassOutDrunk();
-    void ReceiveDrunkTick(float DeltaTime, float DrunkTime);
+    UE_PROTECTED void ReceivePassOutDrunk();
+    UE_PROTECTED void ReceiveDrunkTick(float DeltaTime, float DrunkTime);
     void Pop_Effects(FString DebugReason);
     void Push_Effects();
     void Lerp_Movement_Stength(float DeltaTime);
     void SetPostProcessStrength(float NewStrength);
-    void MyLerp(float Current_Value, float Target_Value, float Delta_Time, float& Result);
-    void ToPercentStr(float Progress, FString& PercentString);
-    int GetAlcoholPct(TEnum<EDrinkableAlcoholStrength> Strength) const;
+    UE_BLUEPRINT_PURE void MyLerp(float Current_Value, float Target_Value, float Delta_Time, float& Result);
+    UE_BLUEPRINT_PURE void ToPercentStr(float Progress, FString& PercentString);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE int GetAlcoholPct(TEnum<EDrinkableAlcoholStrength> Strength) const;
 private:
     struct UeMarkers
     {

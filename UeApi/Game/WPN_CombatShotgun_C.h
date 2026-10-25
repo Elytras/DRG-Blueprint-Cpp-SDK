@@ -35,18 +35,18 @@ public:
     FTimerHandle PumpActionTimer;
     void ExecuteUbergraph_WPN_CombatShotgun(int EntryPoint);
     void PumpAction();
-    void RecieveUnequipped();
-    void RecieveFiredWeapon();
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveFiredWeapon();
     void AddPoisonToPlatform(const FHitResult& Hit, bool alwaysPenetrate);
     void CustomEvent1(class UItemUpgrade* Event);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnCompleted_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void OnBlendOut_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void OnInterrupted_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void OnNotifyBegin_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
     void OnNotifyEnd_4B7DB4F44E81366933E16CAB9B80C557(FName NotifyName);
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

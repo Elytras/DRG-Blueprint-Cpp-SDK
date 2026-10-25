@@ -65,12 +65,12 @@ public:
     void LUse_All();
     void BndEvt__LUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__RUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_LUsed();
     void OnRep_RUsed();
     void LaunchBattery(BP_ShieldBattery_C* Battery, class USceneComponent* Direction, float force);
-    void GetConnectorPoints(FTransform& ConnectorL, FTransform& ConnectorR);
+    UE_BLUEPRINT_PURE void GetConnectorPoints(FTransform& ConnectorL, FTransform& ConnectorR);
     void Expose();
     void OnRep_Open();
 private:

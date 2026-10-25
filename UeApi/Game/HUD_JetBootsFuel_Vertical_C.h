@@ -49,7 +49,7 @@ public:
     void ExecuteUbergraph_HUD_JetBootsFuel_Vertical(int EntryPoint);
     void ShowMK2(bool IsVisible_0);
     void SetIsActive(bool IsActive);
-    void SetProgress(float CurrentProgress, bool overheated);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float CurrentProgress, bool overheated);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

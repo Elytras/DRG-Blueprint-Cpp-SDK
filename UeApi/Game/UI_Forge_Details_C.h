@@ -64,10 +64,10 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void ShowSchematic(class USchematic* InSchematic);
-    void SetItemDescription(FText Title, FText Subtitle);
+    UE_PRIVATE void SetItemDescription(FText Title, FText Subtitle);
     void OpenMatrixCore();
     void SetCountProgress(float InValue);
-    void StartCounting();
+    UE_PRIVATE void StartCounting();
     void SequenceEvent__ENTRYPOINTUI_Forge_Details_0();
 private:
     struct UeMarkers

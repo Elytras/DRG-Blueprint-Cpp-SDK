@@ -18,7 +18,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/SawedOffShotgun/BP_Shotgun_A_ShellTP", "BP_Shotgun_A_ShellTP_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Shotgun_A_ShellTP_C;
     void ExecuteUbergraph_BP_Shotgun_A_ShellTP(int EntryPoint);
-    void OnItemSkinned(class USkinEffect* Skin);
+    UE_PROTECTED void OnItemSkinned(class USkinEffect* Skin);
 private:
     struct UeMarkers
     {

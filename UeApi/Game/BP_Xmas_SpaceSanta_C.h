@@ -23,7 +23,7 @@ public:
     class UStaticMeshComponent* SM_SantaSleigh;
     float Radius;
     void ExecuteUbergraph_BP_Xmas_SpaceSanta(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -42,13 +42,13 @@ public:
     class UCrosshairAggregator* CrosshairAggregator;
     void ExecuteUbergraph_WPN_LaserPistol(int EntryPoint);
     void OnTemperatureChanged(float temperature, bool overheated_0);
-    void ReceiveBeginPlay();
-    void Receive_IsFiringChanged(bool NewValue);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_IsFiringChanged(bool NewValue);
     void BndEvt__Hitscan_K2Node_ComponentBoundEvent_0_HitDelegate__DelegateSignature(const FHitResult& Hit, bool alwaysPenetrate);
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

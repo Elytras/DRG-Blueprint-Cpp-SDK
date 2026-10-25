@@ -33,12 +33,12 @@ public:
     FVector EndLocation;
     FRuntimeFloatCurve ScaleCurve;
     void ExecuteUbergraph_ITM_GrenadeThrow(int EntryPoint);
-    void UpdateCookTime(float Time);
+    UE_PROTECTED void UpdateCookTime(float Time);
     void GrenadeThrown();
     void Set_Is_Visible(bool Visible);
-    void ReceiveBeginPlay();
-    void RecieveUnequipped();
-    void RecieveEquipped();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void RecieveEquipped();
     void ReceiveTick(float DeltaSeconds);
     void UpdateSpline(TArray<FVector>& Array, float& DeltaTime);
 private:

@@ -17,7 +17,7 @@ public:
     UE_CLASS("/Game/Maps/LVL_Procedural", "LVL_Procedural_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void OnLoaded_7F31DA1545372482BDFD4D8E06981759(TSubclassOf<class UObject> Loaded);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ExecuteUbergraph_LVL_Procedural(int EntryPoint);
 };
 

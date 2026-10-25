@@ -24,15 +24,15 @@ public:
     FText Description;
     bool IsFirstDigsite;
     void ExecuteUbergraph_OBJ_Excavation(int EntryPoint);
-    void Receive_StartTracking();
-    void ReceiveSubObjectiveCompleted(class ABatchSubObjective* SubObjective, class APlayerCharacter* instigatingPlayer);
-    void ReceiveSubObjectiveActivated(class ABatchSubObjective* SubObjective, class APlayerCharacter* instigatingPlayer);
-    FText GetObjectiveDescription(float missionLength);
+    UE_PROTECTED void Receive_StartTracking();
+    UE_PROTECTED void ReceiveSubObjectiveCompleted(class ABatchSubObjective* SubObjective, class APlayerCharacter* instigatingPlayer);
+    UE_PROTECTED void ReceiveSubObjectiveActivated(class ABatchSubObjective* SubObjective, class APlayerCharacter* instigatingPlayer);
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
     void MarkSpecialDigsites();
-    void GetNumberOfSpecialDigsites(TArray<class AActor*>& TargetArray, int& Count);
+    UE_BLUEPRINT_PURE void GetNumberOfSpecialDigsites(TArray<class AActor*>& TargetArray, int& Count);
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
 private:

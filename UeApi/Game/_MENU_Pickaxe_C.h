@@ -56,22 +56,22 @@ public:
     void BndEvt___MENU_Pickaxe_UI_RandomizeLoadoutWithUndo_K2Node_ComponentBoundEvent_3_LoadoutRefreshed__DelegateSignature();
     void LoadoutRefreshed();
     void OnEquippedChanged();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void SetCharacter(class UPlayerCharacterID* PlayerCharacter_0);
     void Refresh();
     void BndEvt__ITM_LoadoutSelectorBar_K2Node_ComponentBoundEvent_2_NewLoadoutSelected__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveCloseCommand();
+    UE_PROTECTED void ReceiveCloseCommand();
     void BndEvt__MENU_SpaceRig_K2Node_ComponentBoundEvent_0_OnClosedClicked__DelegateSignature();
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void BndEvt__ClassSelector_K2Node_ComponentBoundEvent_0_OnCharacterChanged__DelegateSignature(class UClass* Character);
-    void GetCharacter(class APlayerCharacter*& Character);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& Character);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void ShowPickaxe();
-    void GetPickaxeID(class UItemID*& Output);
+    UE_BLUEPRINT_PURE void GetPickaxeID(class UItemID*& Output);
     void InitSlots();
     void PlayIntroAnimations();
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 };
 
 }}}   // namespace Game::UI::Menu_Pickaxe

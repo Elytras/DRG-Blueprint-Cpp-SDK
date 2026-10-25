@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/GameElements/Holidays/Easter/AIC_GreatEggHunt_SpringBunny", "AIC_GreatEggHunt_SpringBunny_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_GreatEggHunt_SpringBunny(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

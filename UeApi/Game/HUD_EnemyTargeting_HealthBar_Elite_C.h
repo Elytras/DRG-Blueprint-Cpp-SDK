@@ -45,11 +45,11 @@ public:
     class UWidgetAnimation* HitAnimation;
     void ExecuteUbergraph_HUD_EnemyTargeting_HealthBar_Elite(int EntryPoint);
     UE_COSMETIC void Construct();
-    void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
-    void ReceiveNewTarget(class AActor* InCurrentTarget);
+    UE_PROTECTED void ReceiveUpdateTarget(class AActor* InCurrentTarget, float DeltaTime);
+    UE_PROTECTED void ReceiveNewTarget(class AActor* InCurrentTarget);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Refresh(bool Reset);
-    void GetCharacter(class APlayerCharacter*& Character);
+    UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& Character);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::EnemyHealthBar

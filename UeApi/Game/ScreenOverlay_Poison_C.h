@@ -27,9 +27,9 @@ public:
     class UImage* AfflictionImage;
     float FadeDuration;
     void ExecuteUbergraph_ScreenOverlay_Poison(int EntryPoint);
-    void ReceiveEndOverlay();
+    UE_PROTECTED void ReceiveEndOverlay();
     UE_COSMETIC void Construct();
-    void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
+    UE_PROTECTED void ReceiveBeginOverlay(class UTexture2D* InTexture, FLinearColor InTint);
     void OnAnimFadingFinished();
     void Play_Fade(TEnum<EUMGSequencePlayMode> PlayMode);
 private:

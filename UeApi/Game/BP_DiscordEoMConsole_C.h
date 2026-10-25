@@ -32,7 +32,7 @@ public:
     void ExecuteUbergraph_BP_DiscordEoMConsole(int EntryPoint);
     void RecieveEoMData(bool HasEoM);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

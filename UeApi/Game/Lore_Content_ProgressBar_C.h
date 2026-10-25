@@ -32,7 +32,7 @@ public:
     void ExecuteUbergraph_Lore_Content_ProgressBar(int EntryPoint);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(int Progress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(int Progress);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

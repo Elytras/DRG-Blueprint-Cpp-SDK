@@ -26,8 +26,8 @@ public:
     class USceneComponent* DefaultSceneRoot;
     TArray<class UMaterialInterface*> HologramMaterials;
     void ExecuteUbergraph_BP_Hologram_Base(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetHologramMaterials(TArray<class UMaterialInterface*>& InMaterials);
 private:
     struct UeMarkers

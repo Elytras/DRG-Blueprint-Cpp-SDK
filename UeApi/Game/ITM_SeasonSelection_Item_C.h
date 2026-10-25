@@ -53,9 +53,9 @@ public:
     void OnFailure_E47DA09849E05DD0CBF29E9E15383A02();
     void Yes_3A673F4F4C9578D8D5472FBA5AFF05AF();
     void No_3A673F4F4C9578D8D5472FBA5AFF05AF();
-    void SetSeason(class USeason* InSeason, int InIndex);
-    void SetSeasonActive(bool InSeasonActive);
-    void CanActivateSeason(bool& OutCanActivate);
+    UE_PRIVATE void SetSeason(class USeason* InSeason, int InIndex);
+    UE_PRIVATE void SetSeasonActive(bool InSeasonActive);
+    UE_PRIVATE UE_BLUEPRINT_PURE void CanActivateSeason(bool& OutCanActivate);
 private:
     struct UeMarkers
     {

@@ -36,7 +36,7 @@ public:
     int debugStartRoom;
     FTimerHandle SpeedModifierHandle;
     void ExecuteUbergraph_AIC_EscortMule(int EntryPoint);
-    void OnPathComplete();
+    UE_PROTECTED void OnPathComplete();
     void DrawDebugPath();
     void ArrivedAtStop();
     void SetIsRefueled();
@@ -48,13 +48,13 @@ public:
     void Cheat_IncreaseSpeed();
     void OnActivatePressed();
     void OnMessageBehaviorTreeEvent_Event(FName Message);
-    void ReceivePossess(class APawn* PossessedPawn);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceiveBeginPlay();
     void DebugPath(TArray<FVector>& inArray, FLinearColor Color);
     void UpdateDrillSegmentCubic();
-    void GetPointBehindMule(float atDistance, FVector& Point);
+    UE_BLUEPRINT_PURE void GetPointBehindMule(float atDistance, FVector& Point);
     void CalculateSpeedModifier();
-    FVector GetPointBehindEscortMule(float Distance);
+    UE_BLUEPRINT_CALLABLE FVector GetPointBehindEscortMule(float Distance);
 private:
     struct UeMarkers
     {

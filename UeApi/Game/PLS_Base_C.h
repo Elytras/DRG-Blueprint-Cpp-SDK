@@ -56,10 +56,10 @@ public:
     void CreateSpawn();
     void FinalCommitDone();
     void BaseLayerCommitDone();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnLoaded_C0B2FCB247E1A2F8766E5E93EBF80DF8(TSubclassOf<class UObject> Loaded);
     void OnLoaded_11827D59481E498DEC10999DAE2915BF(TSubclassOf<class UObject> Loaded);
-    void GetRandomRoom(TArray<class URoomGenerator*>& Rooms_0, bool RemoveRoom, class URoomGenerator*& Room);
+    UE_BLUEPRINT_PURE void GetRandomRoom(TArray<class URoomGenerator*>& Rooms_0, bool RemoveRoom, class URoomGenerator*& Room);
     void CreateCaveGraph();
     void SaveInitialState();
     void PlayMusicAndAmbient(int musicIndex);

@@ -45,7 +45,7 @@ public:
     class UMaterialInterface* CurrentMat2;
     void ExecuteUbergraph_BP_XmasGift_Item(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     UE_MULTICAST void XmasLaugh(FVector Location);
     void OnRep_CurrentGiftOption();

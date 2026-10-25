@@ -38,7 +38,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetTarget(class UWidget* Target_Widget);
     void SetPostionAndAlignment(FVector2D InPosition, FVector2D InAlignment);
-    void SetData(class UResourceData* ResourceA, class UResourceData* ResourceB);
+    UE_BLUEPRINT_CALLABLE void SetData(class UResourceData* ResourceA, class UResourceData* ResourceB);
 private:
     struct UeMarkers
     {

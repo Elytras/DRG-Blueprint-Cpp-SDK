@@ -29,7 +29,7 @@ public:
     void BndEvt__ServerPassword_K2Node_ComponentBoundEvent_10_OnEditableTextBoxChangedEvent__DelegateSignature(const FText& Text);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE FText GetPasswordHint();
-    void GetPassword(FText& Password);
+    UE_BLUEPRINT_PURE void GetPassword(FText& Password);
 };
 
 }}}}   // namespace Game::UI::Art::WidgetParts

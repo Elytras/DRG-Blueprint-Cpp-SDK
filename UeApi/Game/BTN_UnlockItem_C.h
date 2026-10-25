@@ -36,7 +36,7 @@ public:
     float Tint_Hover;
     void ExecuteUbergraph_BTN_UnlockItem(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(TScriptInterface<class ICraftable> Item, class UClass* Character);
+    UE_BLUEPRINT_CALLABLE void SetData(TScriptInterface<class ICraftable> Item, class UClass* Character);
 };
 
 }}}   // namespace Game::UI::Menu_Crafting

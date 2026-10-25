@@ -26,7 +26,7 @@ public:
     FLinearColor Tint;
     FText Text;
     void ExecuteUbergraph_ITM_JobsEntry_Resource(int EntryPoint);
-    void SetData(int RequiredLevel);
+    UE_BLUEPRINT_CALLABLE void SetData(int RequiredLevel);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

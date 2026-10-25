@@ -45,7 +45,7 @@ public:
     void AddCeilingCrystals();
     void AddTreasureNuts();
     void CarveLargeCrystals();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -34,8 +34,8 @@ public:
     void OnAdjustRemoteCarryLocation();
     void BndEvt__BP_TunnelGem_Carriable_K2Node_ComponentBoundEvent_3_CarriableEvent__DelegateSignature();
     UE_MULTICAST UE_RELIABLE void GrantBoneFragmentProcess(FVector Location);
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

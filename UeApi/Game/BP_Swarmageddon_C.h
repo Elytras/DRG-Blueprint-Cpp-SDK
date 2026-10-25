@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_BP_Swarmageddon(int EntryPoint);
     void SpawnExploders();
     void StartTimer();
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::Swarmageddon

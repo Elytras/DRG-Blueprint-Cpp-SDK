@@ -57,12 +57,12 @@ public:
     void EventSucceded();
     void EventFailed();
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_Progress();
     void OnRep_Defending_player_count();
-    void AnyPlayersDefending(bool& IsPlayersDefending);
-    void GetDefenderBonus(int DefendingPlayerCount, float& DefenseBonus);
+    UE_BLUEPRINT_PURE void AnyPlayersDefending(bool& IsPlayersDefending);
+    UE_BLUEPRINT_PURE void GetDefenderBonus(int DefendingPlayerCount, float& DefenseBonus);
     void UpdateDefenderCount();
 private:
     struct UeMarkers

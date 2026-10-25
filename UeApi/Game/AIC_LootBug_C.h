@@ -20,8 +20,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_LootBug(int EntryPoint);
     void OnDeath(class UHealthComponentBase* HealthComponent);
-    void ReceivePossess(class APawn* PossessedPawn);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

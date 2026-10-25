@@ -31,9 +31,9 @@ public:
     ITM_MisSel_MissionIcon_C* ITM_MisSel_MissionIcon_C_0;
     void ExecuteUbergraph_ITM_DeepDive_ObjectiveIcon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UGeneratedMission* InMission);
-    void SetObjectiveIcon(UI_MaskedImage_C* Icon, class UClass* Objective);
-    void SetTemplateIcon(ITM_MisSel_MissionIcon_C* Icon, class UMissionTemplate* InMissionTemplate);
+    UE_BLUEPRINT_CALLABLE void SetData(class UGeneratedMission* InMission);
+    UE_PRIVATE void SetObjectiveIcon(UI_MaskedImage_C* Icon, class UClass* Objective);
+    UE_PRIVATE void SetTemplateIcon(ITM_MisSel_MissionIcon_C* Icon, class UMissionTemplate* InMissionTemplate);
 };
 
 }}}   // namespace Game::UI::Menu_MissionStart

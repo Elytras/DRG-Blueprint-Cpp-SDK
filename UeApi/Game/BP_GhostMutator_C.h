@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Ghost/BP_GhostMutator", "BP_GhostMutator_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_GhostMutator(int EntryPoint);
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::Ghost

@@ -26,7 +26,7 @@ public:
     class USimpleHealthComponent* SimpleHealth;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_AttackablePiplinesegmentActor(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE FVector GetTargetCenterMass() const;
 private:
     struct UeMarkers

@@ -55,17 +55,17 @@ public:
     void ExecuteUbergraph_ENE_SmallShootingPlant_RegenPod(int EntryPoint);
     UE_MULTICAST void PausePupating();
     UE_MULTICAST void ContinuePupating();
-    void OnUnFrozen();
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnUnFrozen();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void ToggleHealing(bool CanHeal);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    class UMeshComponent* Receive_GetMeshComponent() const;
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UMeshComponent* Receive_GetMeshComponent() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
     UE_PURE FVector GetTargetCenterMass() const;
 private:
     struct UeMarkers

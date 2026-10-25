@@ -82,10 +82,10 @@ public:
     void BndEvt__SingleUsable4_K2Node_ComponentBoundEvent_12_UserCountChangedDelegate__DelegateSignature(int userCount);
     void BndEvt__SingleUsable2_K2Node_ComponentBoundEvent_11_UserCountChangedDelegate__DelegateSignature(int userCount);
     void BndEvt__SingleUsable1_K2Node_ComponentBoundEvent_10_UserCountChangedDelegate__DelegateSignature(int userCount);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void UsableChanged(bool CanUse, class UPrimitiveComponent* useCollider, class USkeletalMeshComponent* DoorMesh);
     void SupplyUsed(class APlayerCharacter* User, class USingleUsableComponent* Target);
-    void OnTunnelBLocked();
+    UE_PROTECTED void OnTunnelBLocked();
     void BndEvt__SingleUsable4_K2Node_ComponentBoundEvent_8_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__SingleUsable3_K2Node_ComponentBoundEvent_7_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__SingleUsable2_K2Node_ComponentBoundEvent_6_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
@@ -95,9 +95,9 @@ public:
     void BndEvt__SingleUsable3_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__SingleUsable1_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void ReceiveTick(float DeltaSeconds);
-    void OnDropStarted();
-    void OnDroppodImpact();
-    void UserConstructionScript();
+    UE_PROTECTED void OnDropStarted();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void ResupplyUser(class APlayerCharacter* User);
     void DisableUsable(class UPrimitiveComponent* collider, class USkeletalMeshComponent* DoorMesh);
     void HealUser(class APlayerCharacter* User);

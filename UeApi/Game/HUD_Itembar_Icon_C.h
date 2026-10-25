@@ -32,10 +32,10 @@ public:
     class UImage* NumberBG;
     FSlateColor NumberColor;
     void ExecuteUbergraph_HUD_Itembar_Icon(int EntryPoint);
-    void OnInit();
+    UE_PROTECTED void OnInit();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnSelect();
-    void OnUnselect();
+    UE_PROTECTED void OnSelect();
+    UE_PROTECTED void OnUnselect();
     void SetSelected(bool IsSelected);
 };
 

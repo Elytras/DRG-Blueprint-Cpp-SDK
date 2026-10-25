@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/LevelElements/RoomObjects/PassiveFoliage/BP_NetFungus", "BP_NetFungus_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_NetFungus_C;
     void ExecuteUbergraph_BP_NetFungus(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -40,7 +40,7 @@ public:
     void Set_Font_Size(int FontSize_0);
     void Set_Text(FText Text_0, bool UpperCase_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

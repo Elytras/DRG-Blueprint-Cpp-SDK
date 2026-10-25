@@ -60,7 +60,7 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void ScaleDown__UpdateFunc();
     void ScaleDown__FinishedFunc();
-    void OnRep_State();
+    UE_BLUEPRINT_CALLABLE void OnRep_State();
     void ShowOpen2();
 private:
     struct UeMarkers

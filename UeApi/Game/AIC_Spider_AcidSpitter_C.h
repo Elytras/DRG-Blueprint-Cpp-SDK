@@ -18,8 +18,8 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Shooter/AIC_Spider_AcidSpitter", "AIC_Spider_AcidSpitter_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_AcidSpitter_C;
     void ExecuteUbergraph_AIC_Spider_AcidSpitter(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

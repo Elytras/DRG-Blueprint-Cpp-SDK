@@ -27,7 +27,7 @@ public:
     TMulticastInlineDelegate<void(float Duration)> OnTentaclePause;
     void ExecuteUbergraph_BP_Caretaker_AoE_Attack(int EntryPoint);
     void Cheat_TestAttack();
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
     void StopAttack();
     void TickTimer();
     void EnableAttack();

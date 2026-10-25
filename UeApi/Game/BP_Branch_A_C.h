@@ -27,7 +27,7 @@ public:
     float TwigProbability;
     void ExecuteUbergraph_BP_Branch_A(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

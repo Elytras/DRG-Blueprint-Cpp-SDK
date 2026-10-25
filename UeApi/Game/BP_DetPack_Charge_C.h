@@ -42,12 +42,12 @@ public:
     bool IsPlaced;
     void ExecuteUbergraph_BP_DetPack_Charge(int EntryPoint);
     void Show_Warning_Sphere();
-    void OnExploded();
-    void RecieveHitObject();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnExploded();
+    UE_PROTECTED void RecieveHitObject();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SphereTimeline__UpdateFunc();
     void SphereTimeline__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_IsPlaced();
 private:
     struct UeMarkers

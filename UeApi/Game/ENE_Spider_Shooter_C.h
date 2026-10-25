@@ -22,8 +22,8 @@ public:
     class USphereComponent* Sphere;
     void ExecuteUbergraph_ENE_Spider_Shooter(int EntryPoint);
     void OnDeathBase();
-    void OnRagdoll();
-    void GetEnemySpawnedCount(int& SpawnCount);
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
 private:
     struct UeMarkers
     {

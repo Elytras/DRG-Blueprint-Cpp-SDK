@@ -21,8 +21,8 @@ public:
     class UBoxComponent* BoxTrigger;
     class UParticleSystemComponent* ParticleSystem;
     void ExecuteUbergraph_BP_BomberAcidPuddle_Ice(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

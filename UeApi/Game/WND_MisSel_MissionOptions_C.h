@@ -81,12 +81,12 @@ public:
     void OnFailure_E07C54DA4555FCCB80821BA994BEDE78();
     void UpdateHazardBonus();
     UE_PURE bool IsFriendsOnly();
-    void GetPassword(FText& Password, bool& HasPassword);
+    UE_BLUEPRINT_PURE void GetPassword(FText& Password, bool& HasPassword);
     void SetMissionLocked(bool IsLocked, FText Explanation);
     void UpdateConfirmButton();
     UE_PURE FGameDifficulty GetSelectedDifficulty();
     void HandleKeyUp(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void UpdateHazPlusVisibility();
 };
 

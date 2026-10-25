@@ -21,7 +21,7 @@ public:
     FVector EndOffsetVector;
     FBlackboardKeySelector TargetKey;
     FVector TraceToLocation;
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void ActorOrVector();
 };
 

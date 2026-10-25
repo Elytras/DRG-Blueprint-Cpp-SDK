@@ -42,7 +42,7 @@ public:
     void EndHover();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnDepositingBegin(class UResourceBank* ResourceBank);
-    void SetAction(FText NewText, FText OverrideControllerText);
+    UE_PRIVATE void SetAction(FText NewText, FText OverrideControllerText);
     void SetTitle(FText InText);
     UE_PURE class UUsableComponentBase* GetUsable();
 private:

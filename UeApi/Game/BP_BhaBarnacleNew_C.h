@@ -49,7 +49,7 @@ public:
     class UOutlineComponent* outline;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_BhaBarnacleNew(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_BahBarnacleNew_EnemyHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     UE_AUTHORITY_ONLY void BndEvt__BP_BhaBarnacleNew_EnemyHealth_K2Node_ComponentBoundEvent_1_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);

@@ -19,8 +19,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Tank_Boss_C;
     void ExecuteUbergraph_AIC_Spider_Tank_Boss(int EntryPoint);
     void StartSpeedModifier();
-    void ReceiveBeginPlay();
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void OnArmorDestroyed(float EnrageDuration);
 private:
     struct UeMarkers

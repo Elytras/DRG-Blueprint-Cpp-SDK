@@ -56,7 +56,7 @@ public:
     void BndEvt__BP_PlagueHeartShield_InfectionPointCleaning_K2Node_ComponentBoundEvent_4_Delegate__DelegateSignature();
     void OnStageChanged();
     void BndEvt__BP_PlagueHeartShield_InfectionPointCleaning_K2Node_ComponentBoundEvent_0_Delegate__DelegateSignature();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void GrowInnerBoils__UpdateFunc();
     void GrowInnerBoils__FinishedFunc();
     void OnRep_Stage();

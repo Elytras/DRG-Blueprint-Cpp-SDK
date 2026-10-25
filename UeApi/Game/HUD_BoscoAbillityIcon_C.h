@@ -36,8 +36,8 @@ public:
     void OnChargeUsed(int aCurrentCharges);
     void On_Flare_Production_Finished();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Init(int Param_Index_0, class UBoscoAbillityComponent* Abillity_0);
-    void SetProgress(float Percent, bool DisableAnim);
+    UE_BLUEPRINT_CALLABLE void Init(int Param_Index_0, class UBoscoAbillityComponent* Abillity_0);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Percent, bool DisableAnim);
 private:
     struct UeMarkers
     {

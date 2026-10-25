@@ -29,7 +29,7 @@ public:
     class APlayerCharacter* Character;
     void ExecuteUbergraph_HUD_WeaponName(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnItemEquipped(class AItem* Item);
+    UE_BLUEPRINT_CALLABLE void OnItemEquipped(class AItem* Item);
     UE_COSMETIC void Construct();
     void UpdateLabel();
 };

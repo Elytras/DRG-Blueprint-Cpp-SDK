@@ -237,10 +237,10 @@ public:
     void SpawnRocks(int SpawnCountPerGroup, int NumGroups);
     void OnEnterStage();
     void DrillingComplete();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ScaleTriggerUp__UpdateFunc();
     void ScaleTriggerUp__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_NumActiveFlyingRocks();
     void ReleaseShellCustom(BP_Extractor_Shell_C* Shell);
     void OnRep_Stage();

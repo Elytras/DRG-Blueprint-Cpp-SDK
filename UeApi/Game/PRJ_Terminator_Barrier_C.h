@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_PRJ_Terminator_Barrier_C;
     class UAudioComponent* Audio;
     void ExecuteUbergraph_PRJ_Terminator_Barrier(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers

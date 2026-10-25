@@ -28,8 +28,8 @@ public:
     FName ColorName;
     FLinearColor ValidColor;
     void ExecuteUbergraph_BP_ItemMarker_Base(int EntryPoint);
-    void OnMarkerValidChanged(bool Valid);
-    void UserConstructionScript();
+    UE_PROTECTED void OnMarkerValidChanged(bool Valid);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetMaterials(class UMeshComponent* Mesh, class UMaterialInterface* ParentMaterial, class UMaterialInstanceDynamic*& DynamicMaterial);
 private:
     struct UeMarkers

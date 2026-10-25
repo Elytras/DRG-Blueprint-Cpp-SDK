@@ -26,7 +26,7 @@ public:
     TEnum<EOffsetFrom> offsetFrom;
     float OffsetFromDistance;
     void ExecuteUbergraph_TSK_FindRandomPoint(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void snap(bool SnapToCeiling_0, class UDeepPathfinderMovement* Pathfinder, FVector& Location);
 };
 

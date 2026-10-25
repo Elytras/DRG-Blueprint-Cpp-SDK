@@ -37,20 +37,20 @@ public:
     void SetDrillevatorLanded(const FTransform& SpawnTransform);
     void DisableScannerUI();
     void OnTriangulatorDone();
-    void CreateUndergroundCave();
+    UE_PROTECTED void CreateUndergroundCave();
     void SelectDrillevatorLocation();
     void OnDrillevatorLocationSelected(FTransform Location);
     void Spawn_Treasure_Room();
     void SpawnDrillevator(bool PlayMCShout);
     void OnObjectiveStateChanged_Event_0();
     void ReceiveBeginPlay();
-    FText GetObjectiveDescription(float missionLength);
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
 private:
     struct UeMarkers
     {

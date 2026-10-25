@@ -13,7 +13,7 @@ class BP_BrokenDNA_4_AutoRot_C : public ::Game::LevelElements::RoomObjects::Huge
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/BrokenDNA/BP_BrokenDNA_4_AutoRot", "BP_BrokenDNA_4_AutoRot_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

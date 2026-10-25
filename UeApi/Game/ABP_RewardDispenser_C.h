@@ -31,7 +31,7 @@ public:
     FAnimNode_StateMachine AnimGraphNode_StateMachine;
     void ExecuteUbergraph_ABP_RewardDispenser(int EntryPoint);
     void SetMatrixCoreVisible(bool IsVisible);
-    void OnRewardSelected();
+    UE_PROTECTED void OnRewardSelected();
     void BlueprintInitializeAnimation();
     void AnimNotify_InsertingCore();
     void BlueprintBeginPlay();

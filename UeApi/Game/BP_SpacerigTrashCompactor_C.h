@@ -43,7 +43,7 @@ public:
     TArray<class UStaticMesh*> SeasonList;
     void ExecuteUbergraph_BP_SpacerigTrashCompactor(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Fadeout__UpdateFunc();
     void Fadeout__FinishedFunc();
     void SetupInstances();

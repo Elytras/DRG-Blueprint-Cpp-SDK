@@ -25,7 +25,7 @@ public:
     float RangeToReCheck;
     bool MustBeAlive;
     void ExecuteUbergraph_SER_FindAlly(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 };
 
 }}}   // namespace Game::AI::Services

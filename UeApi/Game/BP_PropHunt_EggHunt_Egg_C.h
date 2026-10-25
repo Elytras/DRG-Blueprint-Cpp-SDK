@@ -24,8 +24,8 @@ public:
     class UArrowComponent* Arrow;
     TArray<class UMaterialInterface*> Materials;
     void ExecuteUbergraph_BP_PropHunt_EggHunt_Egg(int EntryPoint);
-    void ReceiveRefresh(FRandomStream InRandom);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveRefresh(FRandomStream InRandom);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

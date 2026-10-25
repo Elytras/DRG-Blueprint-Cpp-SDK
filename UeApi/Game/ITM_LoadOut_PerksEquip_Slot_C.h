@@ -49,17 +49,17 @@ public:
     void BndEvt__SlotButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__SlotButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void UpdateIconAndBackground();
+    UE_PRIVATE void UpdateIconAndBackground();
     void SetLockedIcon(class UTexture2D* InTexture);
     void SetLocked(bool IsLocked_0);
     void SetPerkAsset(class UPerkAsset* PerkAsset_0);
-    void GetPerkAsset(class UPerkAsset*& PerkAsset_0);
-    void GetSlotType(EPerkUsageType& SlotType_0);
-    void GetIsLocked(bool& IsLocked_0);
+    UE_BLUEPRINT_PURE void GetPerkAsset(class UPerkAsset*& PerkAsset_0);
+    UE_BLUEPRINT_PURE void GetSlotType(EPerkUsageType& SlotType_0);
+    UE_BLUEPRINT_PURE void GetIsLocked(bool& IsLocked_0);
     void SetHovered(bool Hovered_0);
     void SetSelected(bool InSelected);
-    void UpdateSelectionBorder();
-    void GetIsSelected(bool& IsSelected_0);
+    UE_PRIVATE void UpdateSelectionBorder();
+    UE_BLUEPRINT_PURE void GetIsSelected(bool& IsSelected_0);
     UE_PURE class UWidget* GetPerkToolTip();
 };
 

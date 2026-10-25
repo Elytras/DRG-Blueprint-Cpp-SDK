@@ -62,7 +62,7 @@ public:
     BP_Xmas_CandyCane_C* BP_Xmas_CandyCane_6_EdGraph_0_RefProperty;
     void ExecuteUbergraph_SLVL_SpaceRig_Xmas(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_SpawnSeed();
 private:
     struct UeMarkers

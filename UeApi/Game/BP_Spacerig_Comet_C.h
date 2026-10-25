@@ -22,7 +22,7 @@ public:
     float Speed_X;
     void ExecuteUbergraph_BP_Spacerig_Comet(int EntryPoint);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

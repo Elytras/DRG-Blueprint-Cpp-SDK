@@ -20,12 +20,12 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UMaterialInstanceDynamic* StatusMaterial;
     void ExecuteUbergraph_WPN_DetPack_Detonator(int EntryPoint);
-    void Receive_OnRep_IsDetonatorOut();
-    void ReceiveResupply(float percentage);
-    void RecieveEquipped();
-    void RecieveStartUsing();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED void Receive_OnRep_IsDetonatorOut();
+    UE_PROTECTED void ReceiveResupply(float percentage);
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void RecieveStartUsing();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

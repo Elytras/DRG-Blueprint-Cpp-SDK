@@ -68,8 +68,8 @@ public:
     void BndEvt__ENE_TunnelEvent_Spider_BP_BurrowComponent_K2Node_ComponentBoundEvent_3_OnBurrow__DelegateSignature();
     void BndEvt__ENE_TunnelEvent_Spider_BP_BurrowComponent_K2Node_ComponentBoundEvent_5_OnBurrowComplete__DelegateSignature(bool IsEmerging);
     void BndEvt__ENE_TunnelEvent_Spider_HealthComponent_K2Node_ComponentBoundEvent_1_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
-    void ReceiveBeginPlay();
-    void GetEnemySpawnedCount(int& SpawnCount);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE void GetEnemySpawnedCount(int& SpawnCount);
     void QuerySpawnDebrisPool();
     void OnRep_HeadingForTunnel();
     bool OnTriggerAI(FName TriggerName);

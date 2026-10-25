@@ -58,9 +58,9 @@ public:
     UE_MULTICAST void OnTerrainPointRemoved();
     void OnEggBroken();
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_3_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
-    void ReceiveBeginPlay();
-    void GetEliminationObjective(class UEliminationObjective*& AsElimination_Objective);
-    void GetEnemyToSpawn(class UEnemyDescriptor*& enemy);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_PURE void GetEliminationObjective(class UEliminationObjective*& AsElimination_Objective);
+    UE_BLUEPRINT_PURE void GetEnemyToSpawn(class UEnemyDescriptor*& enemy);
     void CheckSecondaryObjective();
 private:
     struct UeMarkers

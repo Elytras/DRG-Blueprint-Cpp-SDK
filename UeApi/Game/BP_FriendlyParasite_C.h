@@ -18,7 +18,7 @@ public:
     float MaxParasiteLifetime;
     void ExecuteUbergraph_BP_FriendlyParasite(int EntryPoint);
     void LifetimeExceded();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

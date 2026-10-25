@@ -13,7 +13,7 @@ class BP_SmallMangroveRoot_4_C : public ::Game::LevelElements::RoomObjects::Huge
 {
 public:
     UE_CLASS("/Game/LevelElements/RoomObjects/HugeCarvers/MangroveRockStructures/BP_SmallMangroveRoot_4", "BP_SmallMangroveRoot_4_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

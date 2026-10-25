@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/HUD_Cookable_Crosshair", "HUD_Cookable_Crosshair_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_HUD_Cookable_Crosshair(int EntryPoint);
-    void UpdateCookTime(float Progress);
+    UE_BLUEPRINT_CALLABLE void UpdateCookTime(float Progress);
 };
 
 }}}   // namespace Game::WeaponsNTools::Grenades

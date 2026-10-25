@@ -38,13 +38,13 @@ public:
     void OnSkinChanged(class USkinEffect* Skin);
     void Receive_ReloadEnd();
     void Receive_ReloadBegin();
-    void ReceiveBeginPlay();
-    void Recieve_UpdateMeshses(bool IsFirstPerson_0);
-    void RecieveEquipped();
-    void UserConstructionScript();
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-    class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
-    class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void Recieve_UpdateMeshses(bool IsFirstPerson_0);
+    UE_PROTECTED void RecieveEquipped();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
 private:
     struct UeMarkers
     {

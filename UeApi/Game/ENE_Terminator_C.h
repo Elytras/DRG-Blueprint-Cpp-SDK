@@ -94,7 +94,7 @@ public:
     void Start();
     void BndEvt__ENE_Terminator_PawnSensing_K2Node_ComponentBoundEvent_5_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
     UE_MULTICAST void All_Detected();
-    UE_AUTHORITY_ONLY void Receive_Alerted();
+    UE_AUTHORITY_ONLY UE_PROTECTED void Receive_Alerted();
     void TentacleOutlineChanged(TEnum<EOutline> InOutline);
     void BndEvt__ENE_Terminator_ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void CallPhaseBombBarrage();
@@ -103,7 +103,7 @@ public:
     UE_MULTICAST void All_ShowCarve();
     void BndEvt__CarveAttack_K2Node_ComponentBoundEvent_1_MeleeAttackDelegate__DelegateSignature();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_3_HitSig__DelegateSignature(float Damage, const FDamageData& DamageData, bool anyHealthLost);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnCompleted_90FF725A419E06548840228AD88DAC76(FName NotifyName);
     void OnBlendOut_90FF725A419E06548840228AD88DAC76(FName NotifyName);
     void OnInterrupted_90FF725A419E06548840228AD88DAC76(FName NotifyName);
@@ -128,11 +128,11 @@ public:
     void Fade__FinishedFunc();
     void Flutter__UpdateFunc();
     void Flutter__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetupArmor();
     void SetupWeakpoints();
     void SetupTentacles(TArray<BP_TentacleGrab_C*>& TentacleAttacks);
-    void AnyArmBusy(bool& isBusy);
+    UE_BLUEPRINT_PURE void AnyArmBusy(bool& isBusy);
     void UpdateEyeLight(float Power);
     void CreateTalkMaterials();
 private:

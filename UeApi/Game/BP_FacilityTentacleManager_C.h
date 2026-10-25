@@ -36,8 +36,8 @@ public:
     void OnTentacleDeath(class UHealthComponentBase* HealthComponent);
     void KillTentacle();
     void SpawnTentacle();
-    void HasActiveTentacle(bool& HasSpawned);
-    void CanSpawnTentacle(bool& IsBossfightActive);
+    UE_BLUEPRINT_PURE void HasActiveTentacle(bool& HasSpawned);
+    UE_BLUEPRINT_PURE void CanSpawnTentacle(bool& IsBossfightActive);
     void OnRep_HasTentacle();
 private:
     struct UeMarkers

@@ -24,7 +24,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Refinery_WarningLight(int EntryPoint);
     void OnRefineryStateChanged(TEnum<ERefineryState> InRefineryState);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

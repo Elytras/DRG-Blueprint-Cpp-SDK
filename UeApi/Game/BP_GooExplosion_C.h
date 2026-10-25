@@ -26,7 +26,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     FRuntimeFloatCurve Curve;
     void ExecuteUbergraph_BP_GooExplosion(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

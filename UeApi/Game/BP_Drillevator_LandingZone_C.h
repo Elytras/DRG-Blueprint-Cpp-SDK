@@ -35,7 +35,7 @@ public:
     TArray<class UMaterialInstanceDynamic*> Materials;
     void ExecuteUbergraph_BP_Drillevator_LandingZone(int EntryPoint);
     void InitializeMaterials();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void Timeline_1__UpdateFunc();

@@ -48,7 +48,7 @@ public:
     void BndEvt__Button_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Update();
+    UE_PRIVATE void Update();
     void SetText(FText NewText, FText OverrideControllerText);
     void SetFontSize(int inFontSize);
 };

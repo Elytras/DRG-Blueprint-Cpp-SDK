@@ -25,8 +25,8 @@ public:
     UE_COSMETIC void Construct();
     void ShowOptions();
     void UINeedsUpdate();
-    void IndexToMode(int Index_0, EUFSDStreamlineDLSSGMode& Mode);
-    void ModeToIndex(TEnum<EUFSDStreamlineDLSSGMode> Mode, int& Index_0);
+    UE_BLUEPRINT_PURE void IndexToMode(int Index_0, EUFSDStreamlineDLSSGMode& Mode);
+    UE_BLUEPRINT_PURE void ModeToIndex(TEnum<EUFSDStreamlineDLSSGMode> Mode, int& Index_0);
 };
 
 }}}   // namespace Game::UI::Menu_Options

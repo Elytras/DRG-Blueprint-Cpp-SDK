@@ -31,7 +31,7 @@ public:
     void ExecuteUbergraph_BP_Lunar_HorseStatue(int EntryPoint);
     UE_MULTICAST void All_PlayParticles();
     void BndEvt__BP_Plague_BioTank_Big_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

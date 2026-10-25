@@ -79,21 +79,21 @@ public:
     void OnActionKey(bool InKeyDown);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
-    void CreateLevel(int InSeed);
+    UE_PRIVATE void CreateLevel(int InSeed);
     void StartGame();
-    void GetStartPos(FVector2D& outPos);
-    void SetCharacterPos(FVector2D InPos, bool InMoveCamera);
-    void CheckCharacterState();
-    void GetBoostActive(bool& OutBoosting);
-    void DoAudio(class USoundCue* InSound, class UAudioComponent* InOptionalAudioComponent, class UAudioComponent*& OutAudioComponent);
-    void Shout(class UDialogDataAsset* InShout);
-    void GetNextGateIndex(int& OutIndex);
-    void SetNextGate(int InIndex);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetStartPos(FVector2D& outPos);
+    UE_PRIVATE void SetCharacterPos(FVector2D InPos, bool InMoveCamera);
+    UE_PRIVATE void CheckCharacterState();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetBoostActive(bool& OutBoosting);
+    UE_PRIVATE void DoAudio(class USoundCue* InSound, class UAudioComponent* InOptionalAudioComponent, class UAudioComponent*& OutAudioComponent);
+    UE_PRIVATE void Shout(class UDialogDataAsset* InShout);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetNextGateIndex(int& OutIndex);
+    UE_PRIVATE void SetNextGate(int InIndex);
     void StartGameSeeded(int InSeed);
     void StopGame();
     void ReceiveReplay(FJettyBootsReplay InReplay);
-    void UpdateReplaying();
-    void InSafeZone(bool& OutValue);
+    UE_PRIVATE void UpdateReplaying();
+    UE_PRIVATE UE_BLUEPRINT_PURE void InSafeZone(bool& OutValue);
 private:
     struct UeMarkers
     {

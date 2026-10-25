@@ -23,8 +23,8 @@ public:
     class UClass* StatusEffect;
     bool AttackIsActive;
     void ExecuteUbergraph_BP_ConeAttackBase(int EntryPoint);
-    void ReceiveAbortAttack();
-    void OnFrozen(bool IsFrozen);
+    UE_PROTECTED void ReceiveAbortAttack();
+    UE_PROTECTED void OnFrozen(bool IsFrozen);
     void Cone_End_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void Cone_Begin_Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void SetConeCollider(class UPrimitiveComponent* ConeCollider_0);

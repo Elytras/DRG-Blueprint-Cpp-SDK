@@ -207,7 +207,7 @@ public:
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void Construct();
     void ToggleHUD(bool IsVisible_0, bool Instant);
-    FText Get_TEMPtestSeedText_Text_0();
+    UE_BLUEPRINT_PURE FText Get_TEMPtestSeedText_Text_0();
     void FixupRetainerWidgets();
     UE_PURE class UJetBootsFuelWidget* GetHudJetBootsFuelVertical() const;
 private:

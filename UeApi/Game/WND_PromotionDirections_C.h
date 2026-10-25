@@ -41,9 +41,9 @@ public:
     void SetCharacter(class UPlayerCharacterID* Character);
     void BndEvt__ITM_Special_ButtonCutCorner_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void Finished_A0ADC2C4421D1470173667A7D2CBA086();
-    bool ReceiveCanCloseWindow(FName InActionName, FKey InKey, bool InIsMouseEvent);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool ReceiveCanCloseWindow(FName InActionName, FKey InKey, bool InIsMouseEvent);
 };
 
 }}}   // namespace Game::UI::HUD_SpaceRig

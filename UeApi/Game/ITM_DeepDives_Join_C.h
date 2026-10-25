@@ -70,11 +70,11 @@ public:
     void OnFailure_1FB10C08435EA9BCE39BD9ABFF154396();
     void PopulateServerViews();
     void ClearServerViews();
-    void PopulateNext();
+    UE_PRIVATE void PopulateNext();
     void PopulateServerViewsIfVisible();
     void UpdateTextSearchAndGametypeFilter();
     void DisableProgressionModsandJoin(FBlueprintSessionResult Session);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void HandleKeyDown(const FKeyEvent& KeyEvent, bool& OutHandled, FEventReply& OutReply);
 private:
     struct UeMarkers

@@ -33,8 +33,8 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMutators(TArray<FDifficultyMutatorItem>& InMutator);
-    UE_PURE class UWidget* GetToolTip();
-    void GetMutators(TArray<FDifficultyMutatorItem>& OutResult);
+    UE_PRIVATE UE_PURE class UWidget* GetToolTip();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetMutators(TArray<FDifficultyMutatorItem>& OutResult);
 private:
     struct UeMarkers
     {

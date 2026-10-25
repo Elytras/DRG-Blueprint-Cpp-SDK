@@ -40,18 +40,18 @@ public:
     void ExecuteUbergraph_HUD_ItemWheel(int EntryPoint);
     void OnFadeInOutStarted();
     void OnFadeInOutFinished();
-    void OnSupplyItemEquipped(class UItemsBarIcon* ItemIcon);
-    void OnSupplyItemUnequipped(class UItemsBarIcon* ItemIcon);
-    void OnSupplyItemAdded(class UItemsBarIcon* ItemIcon);
-    void OnItemClicked();
+    UE_PROTECTED void OnSupplyItemEquipped(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnSupplyItemUnequipped(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnSupplyItemAdded(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnItemClicked();
     void Show();
     void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
-    void OnClear();
+    UE_PROTECTED void OnClear();
     void AddIcon(class UItemsBarIcon* Icon, int Index_0);
-    void OnItemEquipped(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnItemEquipped(class UItemsBarIcon* ItemIcon);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnItemAdded(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnItemAdded(class UItemsBarIcon* ItemIcon);
     void SwapUpperItems(class UWidget* Unselected, class UWidget* Selected);
 };
 

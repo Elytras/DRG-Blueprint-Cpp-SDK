@@ -59,8 +59,8 @@ public:
     UE_COSMETIC void Construct();
     void OnSuccess_1E7B4EA94EB1E25E604B80A4114A24A4(class UTexture2DDynamic* Texture);
     void OnFail_1E7B4EA94EB1E25E604B80A4114A24A4(class UTexture2DDynamic* Texture);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void Initialize(FDiscordUserDataSDK User_Data, float TimeElapsed);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_CALLABLE void Initialize(FDiscordUserDataSDK User_Data, float TimeElapsed);
     void ReplyInvite(int Reply);
 };
 

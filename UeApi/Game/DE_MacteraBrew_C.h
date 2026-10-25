@@ -23,8 +23,8 @@ public:
     class UParticleSystemComponent* Particle_Effect;
     class UAudioComponent* soundComp;
     void ExecuteUbergraph_DE_MacteraBrew(int EntryPoint);
-    void OnStartEffect(class APlayerCharacter* Character);
-    void OnStopEffect();
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character);
+    UE_PROTECTED void OnStopEffect();
 private:
     struct UeMarkers
     {

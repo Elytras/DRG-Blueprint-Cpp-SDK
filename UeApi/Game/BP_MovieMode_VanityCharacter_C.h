@@ -13,7 +13,7 @@ class BP_MovieMode_VanityCharacter_C : public AVanityCharacter
 {
 public:
     UE_CLASS("/Game/GameElements/MovieMode/BP_MovieMode_VanityCharacter", "BP_MovieMode_VanityCharacter_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

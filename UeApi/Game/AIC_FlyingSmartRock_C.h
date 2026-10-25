@@ -22,9 +22,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     ENE_Jelly_Passive_Mother_C* Mother;
     void ExecuteUbergraph_AIC_FlyingSmartRock(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     ENE_Jelly_Passive_Mother_C* FindNewMother();
 private:
     struct UeMarkers

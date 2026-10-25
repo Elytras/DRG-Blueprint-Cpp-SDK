@@ -271,24 +271,24 @@ public:
     int EventInclusionWeight;
     void ExecuteUbergraph_BP_AmberDepositBase(int EntryPoint);
     UE_MULTICAST void All_PlayRoar();
-    void BP_OnSubObjectiveActivated();
+    UE_PROTECTED void BP_OnSubObjectiveActivated();
     void DisablePathfinding();
     void OnExcavationShoutCooldownExpired();
     void OnTerrainPointRemoved(class USceneComponent* Point);
     void ReceiveTick(float DeltaSeconds);
-    UE_MULTICAST UE_RELIABLE void TakeOff();
+    UE_MULTICAST UE_RELIABLE UE_BLUEPRINT_CALLABLE void TakeOff();
     void BndEvt__BP_AmberDepositBase_TriggerSphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     UE_MULTICAST void CarveFree();
     void SetIsSpecial();
     void BndEvt__BP_AmberExcavationBase_TriggerSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnLaunchButtonPressed(class APlayerCharacter* instigatingPlayer);
-    void ReceiveExcavationPhaseComplete();
-    void ReceiveAttachmentPhaseComplete();
+    UE_PROTECTED void ReceiveExcavationPhaseComplete();
+    UE_PROTECTED void ReceiveAttachmentPhaseComplete();
     void LaunchRotation__UpdateFunc();
     void LaunchRotation__FinishedFunc();
-    void UserConstructionScript();
-    void GetExcavationProgress(float& Progress, bool& IsComplete);
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
+    UE_BLUEPRINT_PURE void GetExcavationProgress(float& Progress, bool& IsComplete);
     void OnRep_RemovedPoints();
     void SetupExcavationFX();
     void TraceForLasers();
@@ -296,8 +296,8 @@ public:
     void GetInclusionMesh(class UStaticMesh*& InclusionMesh_0, FRotator& Rotator);
     void OnRep_InclusionMesh();
     void OnRep_InclusionRotator();
-    TArray<FVector> GetExcavationPoints() const;
-    TArray<class ARocketAttachment*> GetRocketAttachments() const;
+    UE_BLUEPRINT_CALLABLE TArray<FVector> GetExcavationPoints() const;
+    UE_BLUEPRINT_CALLABLE TArray<class ARocketAttachment*> GetRocketAttachments() const;
 private:
     struct UeMarkers
     {

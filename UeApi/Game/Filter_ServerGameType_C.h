@@ -36,13 +36,13 @@ public:
     UE_COSMETIC void Construct();
     void OnGameTypeChanged(bool IsChecked, TEnum<EGameType> Gametype);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void UpdateSubheader();
+    UE_PRIVATE void UpdateSubheader();
     void OpenMenu(bool Open);
-    void GetSelectedGameTypes(TArray<EGameType>& GameTypes);
+    UE_BLUEPRINT_PURE void GetSelectedGameTypes(TArray<EGameType>& GameTypes);
     void Reset();
-    void CreateEntries();
-    void IsSandBoxMode(bool& SandboxMode);
-    void VerifyRules();
+    UE_PRIVATE void CreateEntries();
+    UE_PRIVATE UE_BLUEPRINT_PURE void IsSandBoxMode(bool& SandboxMode);
+    UE_PRIVATE void VerifyRules();
     void VerifyOnlyModded(TEnum<EGameType> LastClicked);
 };
 

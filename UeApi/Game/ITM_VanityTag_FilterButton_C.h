@@ -62,10 +62,10 @@ public:
     void SetMenuOpen(bool InOpen);
     void Clear();
     void SetAllTags(FDetailedTagSet InTags, FDetailedTagSet InSelectedTags);
-    void GetSelectedTags(FDetailedTagSet& OutSelectedTags);
+    UE_BLUEPRINT_PURE void GetSelectedTags(FDetailedTagSet& OutSelectedTags);
     void SetItemsHidden(int InCount);
-    void IsMenuOpen(bool& OutMenuOpen);
-    void CanMenuOpen(bool& OutCanOpen);
+    UE_BLUEPRINT_PURE void IsMenuOpen(bool& OutMenuOpen);
+    UE_BLUEPRINT_PURE void CanMenuOpen(bool& OutCanOpen);
 private:
     struct UeMarkers
     {

@@ -37,7 +37,7 @@ public:
     void ExecuteUbergraph_BP_SpringDwarfMiner(int EntryPoint);
     UE_MULTICAST void ImpulseSpringDwarf();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void GetSpringDwarf(class UStaticMeshComponent*& Dwarf);
+    UE_BLUEPRINT_PURE void GetSpringDwarf(class UStaticMeshComponent*& Dwarf);
 private:
     struct UeMarkers
     {

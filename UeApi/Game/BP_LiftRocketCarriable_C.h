@@ -27,7 +27,7 @@ public:
     void ExecuteUbergraph_BP_LiftRocketCarriable(int EntryPoint);
     void FixWeldedCollision();
     void BndEvt__BP_LiftRocketCarriable_Carriable_K2Node_ComponentBoundEvent_0_CarriableEvent__DelegateSignature();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_MULTICAST void All_PlayDugFree();
     void BndEvt__BP_LiftRocketCarriable_Carriable_K2Node_ComponentBoundEvent_1_CarriableEvent__DelegateSignature();
     void UpdateAttachState(bool Attached);

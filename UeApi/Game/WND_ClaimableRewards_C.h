@@ -34,9 +34,9 @@ public:
     void BndEvt__ContinueButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     void DoClose();
     void BndEvt__RewardView_K2Node_ComponentBoundEvent_1_OnRewardsClaimed__DelegateSignature();
-    void OnShown();
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
-    void GetData(FClaimableRewardView& OutData);
+    UE_PROTECTED void OnShown();
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetData(FClaimableRewardView& OutData);
 };
 
 }}}   // namespace Game::UI::ClaimableRewards

@@ -65,8 +65,8 @@ public:
     void BndEvt__UI_RandomizeLoadoutWithUndo_ShuffleButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__UI_RandomizeLoadoutWithUndo_Button_Undo_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__UI_RandomizeLoadoutWithUndo_ShuffleButton_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
-    void GetCharacter(class APlayerCharacter*& AsPlayer_Character);
-    void GetCharacterID(class UPlayerCharacterID*& characterID_0);
+    UE_BLUEPRINT_PURE void GetCharacter(class APlayerCharacter*& AsPlayer_Character);
+    UE_BLUEPRINT_PURE void GetCharacterID(class UPlayerCharacterID*& characterID_0);
 };
 
 }}}   // namespace Game::UI::Menu_Wardrobe

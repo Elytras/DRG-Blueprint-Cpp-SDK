@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_HeightenedSenses(int EntryPoint);
     void OnKilledGrabber_Event(class AActor* Grabber);
-    void Receive_OnInitialized();
+    UE_PROTECTED void Receive_OnInitialized();
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

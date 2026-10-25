@@ -29,7 +29,7 @@ public:
     void PickedUp();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

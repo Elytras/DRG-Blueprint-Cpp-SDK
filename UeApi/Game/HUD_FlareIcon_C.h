@@ -28,8 +28,8 @@ public:
     void On_Flare_Production_Finished();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnFlareCountChanged(int CurrentCount, class UInventoryComponent* Inventory_0);
-    void Init(int Param_Index_0, class UInventoryComponent* Inventory_0);
-    void SetProgress(float Percent);
+    UE_BLUEPRINT_CALLABLE void Init(int Param_Index_0, class UInventoryComponent* Inventory_0);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Percent);
 private:
     struct UeMarkers
     {

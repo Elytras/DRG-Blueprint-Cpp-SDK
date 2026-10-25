@@ -35,7 +35,7 @@ public:
     class UButton* Open_Button;
     class UCanvasPanel* Root_Canvas;
     class UGameDLC* DLC;
-    void GetSeasonDLC(class UGameDLC*& Season_DLC);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetSeasonDLC(class UGameDLC*& Season_DLC);
     void OpenDLCInSteamBrowser();
     UE_COSMETIC void PreConstruct(bool IsDesignTime_PreConstruct);
     void BndEvt__UI_InfoScreen_SeasonDLC_Open_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();

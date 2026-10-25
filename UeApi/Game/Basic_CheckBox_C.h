@@ -43,7 +43,7 @@ public:
     TEnum<ECheckBoxState> State;
     float TextWidth;
     void ExecuteUbergraph_Basic_CheckBox(int EntryPoint);
-    void OnClicked(bool InChecked);
+    UE_BLUEPRINT_CALLABLE void OnClicked(bool InChecked);
     void ClickButton();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
@@ -52,9 +52,9 @@ public:
     UE_PURE bool GetIsChecked();
     void SetIsChecked(bool InIsChecked);
     void SetText(FText InText, bool InUpperCase);
-    void GetUpperCased(bool& UpperCase_0);
+    UE_BLUEPRINT_PURE void GetUpperCased(bool& UpperCase_0);
     void SetState(TEnum<ECheckBoxState> InState);
-    void GetState(ECheckBoxState& State_0);
+    UE_BLUEPRINT_PURE void GetState(ECheckBoxState& State_0);
     void SetSize(float InSize);
     void SetHovered(bool InHovered);
     void SetTextWidth(float InWidthOverride);

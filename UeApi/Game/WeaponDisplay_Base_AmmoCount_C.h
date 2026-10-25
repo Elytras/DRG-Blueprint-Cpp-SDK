@@ -23,8 +23,8 @@ public:
     class AItem* Item;
     class UWidgetComponent* WidgComp;
     void ExecuteUbergraph_WeaponDisplay_Base_AmmoCount(int EntryPoint);
-    void OnItemEquipped();
-    void OnItemUnequipped();
+    UE_BLUEPRINT_CALLABLE void OnItemEquipped();
+    UE_BLUEPRINT_CALLABLE void OnItemUnequipped();
     void Reload_Time_Tick(float amount);
     void Total_Ammo_left_changed(int amount);
     void Max_Ammo_Changed(int amount);
@@ -37,7 +37,7 @@ public:
     void OnTotalAmountChanged(int amount);
     void SetClipCount(int Value);
     void SetTotalCount(int Value);
-    void RequestRedraw();
+    UE_PRIVATE void RequestRedraw();
     void SetMaxAmmo(int Value);
 private:
     struct UeMarkers

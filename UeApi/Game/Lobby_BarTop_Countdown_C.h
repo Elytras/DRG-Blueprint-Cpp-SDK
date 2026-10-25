@@ -35,7 +35,7 @@ public:
     bool Ansel;
     void ExecuteUbergraph_Lobby_BarTop_Countdown(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void CustomEvent(float newTime);
+    UE_BLUEPRINT_CALLABLE void CustomEvent(float newTime);
     void HostCoundownChanged(bool IsActive);
     void TimerChanged(float newTime);
     void CountDownChanged(bool IsActive);

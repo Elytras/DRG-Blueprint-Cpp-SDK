@@ -36,7 +36,7 @@ public:
     int SafetyValve;
     void ExecuteUbergraph_WND_MissionComplete_Manager(int EntryPoint);
     void AddCompleteScreen(class UClass* Widget_MissionComplete);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void Setup_Continue_Count_Down();
     void OnContinueCountdownChanged();
     void Transition_To_Normal_End_Screen();
@@ -49,7 +49,7 @@ public:
     void OnLoaded_FD59AC8A419416B6454AA4BDCCA31D69(class UObject* Loaded);
     void OnLoaded_FD59AC8A419416B6454AA4BD22EFF1A7(class UObject* Loaded);
     void SetOverlay(class UUserWidget* Content);
-    void AreAllEndResultsReady(bool& AllPlayersReady);
+    UE_BLUEPRINT_PURE void AreAllEndResultsReady(bool& AllPlayersReady);
     void StartMenuMusic();
     void FadeoutMenuMusic(float FadeoutDuration);
     UE_PURE bool ShowSpaceLoadRigOnContinue();

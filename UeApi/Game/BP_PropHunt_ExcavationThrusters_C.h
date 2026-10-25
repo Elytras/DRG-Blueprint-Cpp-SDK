@@ -21,7 +21,7 @@ public:
     class USkeletalMeshComponent* SK_ExcavationThruster;
     class UArrowComponent* Arrow;
     void ExecuteUbergraph_BP_PropHunt_ExcavationThrusters(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

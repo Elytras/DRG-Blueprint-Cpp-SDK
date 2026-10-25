@@ -25,7 +25,7 @@ public:
     float CurrentClusterPitch;
     float ClusterEjectionForce;
     void ExecuteUbergraph_Grenade_Cluster(int EntryPoint);
-    void OnExploded();
+    UE_PROTECTED void OnExploded();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers

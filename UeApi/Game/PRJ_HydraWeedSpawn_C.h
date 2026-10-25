@@ -26,7 +26,7 @@ public:
     class USoundBase* SeedImpactSound;
     void ExecuteUbergraph_PRJ_HydraWeedSpawn(int EntryPoint);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     bool NewFunction_0();
 private:
     struct UeMarkers

@@ -28,10 +28,10 @@ public:
     bool PlacementValid;
     void ExecuteUbergraph_BP_FuelLine_EndPoint(int EntryPoint);
     void PingAudio(bool InNewPing, bool InPlacementValidChanged);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__ConnectPoint_K2Node_ComponentBoundEvent_0_ConnectionDelegate__DelegateSignature(class UTrackBuilderConnectPoint* InConnectPoint, class ATrackBuilderSegment* InSegment);
     void ReceivePing(bool InValidPlacement);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
 private:
     struct UeMarkers

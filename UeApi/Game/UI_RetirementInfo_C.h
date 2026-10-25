@@ -42,7 +42,7 @@ public:
     UE_READONLY bool Enable_Preview;
     void ExecuteUbergraph_UI_RetirementInfo(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(class UClass* Character);
+    UE_BLUEPRINT_CALLABLE void SetData(class UClass* Character);
     void UpdateBenefits(bool InNoCharactersPromoted, int InCharacterRetirementCount);
 private:
     struct UeMarkers

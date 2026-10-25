@@ -22,7 +22,7 @@ public:
     class UCrossbowStuckProjectileEffectExploding* EffectExploding;
     class UProjectileExplosion* ProjectileExplosion;
     class UDamageComponent* Damage;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

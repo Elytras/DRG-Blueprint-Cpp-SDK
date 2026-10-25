@@ -63,7 +63,7 @@ public:
     void BndEvt__BP_DeepScan_TreasureNut_TerrainDetect3_K2Node_ComponentBoundEvent_4_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__BP_DeepScan_TreasureNut_TerrainDetect1_K2Node_ComponentBoundEvent_3_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__BP_DeepScan_TreasureNut_TerrainDetect_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnHasDropped();
     void PlayDeath();
     void CrackOpen();
@@ -74,7 +74,7 @@ public:
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
     void ScaleDown__UpdateFunc();
     void ScaleDown__FinishedFunc();
-    void OnRep_State();
+    UE_BLUEPRINT_CALLABLE void OnRep_State();
     void ShowOpen2();
     void OnRep_MorkiteSeed();
     UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;

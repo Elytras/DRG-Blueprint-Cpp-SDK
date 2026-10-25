@@ -13,7 +13,7 @@ class Bar_Glass_Physics_GlyphidSlammer_Support_C : public ::Game::GameElements::
 {
 public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/Bar_Glass_Physics_GlyphidSlammer_Support", "Bar_Glass_Physics_GlyphidSlammer_Support_C");
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

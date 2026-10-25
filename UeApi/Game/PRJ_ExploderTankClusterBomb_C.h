@@ -32,7 +32,7 @@ public:
     bool HasExploded;
     void ExecuteUbergraph_PRJ_ExploderTankClusterBomb(int EntryPoint);
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_MULTICAST void GoBoom();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Explode(FVector Location);

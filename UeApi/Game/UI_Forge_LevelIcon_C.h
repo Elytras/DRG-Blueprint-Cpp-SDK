@@ -33,7 +33,7 @@ public:
     void SetSize(float InSize);
     void SetLevel(int InLevel);
     void SetLevelFromSchematic(class USchematic* Schematic);
-    void GetLevel(int& Level_0);
+    UE_BLUEPRINT_PURE void GetLevel(int& Level_0);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::Forge

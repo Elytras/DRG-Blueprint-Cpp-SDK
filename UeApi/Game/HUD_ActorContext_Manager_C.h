@@ -33,7 +33,7 @@ public:
     void OnTargetChanged(class AActor* NewTarget, class UPrimitiveComponent* NewPrimitive);
     UE_COSMETIC void Construct();
     void SetContextWidget(class UActorContextWidget* InWidget, class UPrimitiveComponent* InPrimitive);
-    void GetContextWidgetFromActor(class AActor* InActor, class UActorContextWidget*& OutWidget);
+    UE_BLUEPRINT_PURE void GetContextWidgetFromActor(class AActor* InActor, class UActorContextWidget*& OutWidget);
 };
 
 }}}   // namespace Game::UI::MainOnscreenHUD

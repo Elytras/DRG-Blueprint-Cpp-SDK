@@ -31,7 +31,7 @@ public:
     void ExecuteUbergraph_BP_Coilgun_HellfireSegment_OLD(int EntryPoint);
     void OnStartEffects();
     void OnEndEffects();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

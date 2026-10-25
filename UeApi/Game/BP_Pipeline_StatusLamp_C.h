@@ -26,8 +26,8 @@ public:
     void ExecuteUbergraph_BP_Pipeline_StatusLamp(int EntryPoint);
     void OnBuildStateChanged_Event(class APipelineStart* InPipelineStart, TEnum<EPipelineBuildState> InPipelineState);
     void ListenToPipelineStart(class APipelineStart* InPipelineStart);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
 private:
     struct UeMarkers

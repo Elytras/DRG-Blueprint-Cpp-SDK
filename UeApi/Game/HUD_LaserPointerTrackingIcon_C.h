@@ -42,12 +42,12 @@ public:
     bool IsCanvasVisible;
     float TimeNotLookingAt;
     void ExecuteUbergraph_HUD_LaserPointerTrackingIcon(int EntryPoint);
-    void OnTargetSet(class AActor* NewTarget);
-    void OnTargetDistanceChanged(float Distance);
+    UE_PROTECTED void OnTargetSet(class AActor* NewTarget);
+    UE_PROTECTED void OnTargetDistanceChanged(float Distance);
     void OnShow();
     void UpdateArrow(bool inView, float Angle);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnInViewChanged(bool inView, float Angle);
+    UE_PROTECTED void OnInViewChanged(bool inView, float Angle);
     void UpdatePixelOffset();
     void UpdateVisibility();
     void SetIconColor(FLinearColor InColor);

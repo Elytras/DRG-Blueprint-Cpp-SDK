@@ -30,9 +30,9 @@ public:
     void DropPodSpawned(class ADroppableOutpost* InDroppableOutpost);
     void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     void OnMatchStarted_Event_0();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Spawn_Refinery_And_Wells(class URefineryObjective* Refinery);
-    void IsComplexMission(bool& IsComplex);
+    UE_BLUEPRINT_PURE void IsComplexMission(bool& IsComplex);
 private:
     struct UeMarkers
     {

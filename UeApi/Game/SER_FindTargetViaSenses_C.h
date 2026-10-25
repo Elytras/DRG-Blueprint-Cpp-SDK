@@ -22,9 +22,9 @@ public:
     FBlackboardKeySelector TargetKey;
     FGameplayTagContainer AllowedTargets;
     void ExecuteUbergraph_SER_FindTargetViaSenses(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
     void OnSensePawn(class APawn* Pawn);
-    void ReceiveSearchStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveSearchStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Services

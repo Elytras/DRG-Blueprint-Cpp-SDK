@@ -33,9 +33,9 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void Level_Up(int InNewLevel);
     UE_COSMETIC void Construct();
-    void BeginFadeOut();
-    void EndFadeOut();
-    void Hide();
+    UE_PRIVATE void BeginFadeOut();
+    UE_PRIVATE void EndFadeOut();
+    UE_BLUEPRINT_CALLABLE void Hide();
 private:
     struct UeMarkers
     {

@@ -16,8 +16,8 @@ public:
     UE_CLASS("/Game/Character/Tutorials/BP_Tutorial_Hint_BrokenMiniMule", "BP_Tutorial_Hint_BrokenMiniMule_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_Tutorial_Hint_BrokenMiniMule(int EntryPoint);
-    void ReceiveOnShown();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnShown();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

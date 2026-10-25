@@ -44,8 +44,8 @@ public:
     class UStaticMeshComponent* mesh_front;
     class UBoxComponent* Box;
     void ExecuteUbergraph_PRJ_Crossbow_Projectile(int EntryPoint);
-    void SetSimpleDamageComponentFromBP();
-    void SetMainDamageComponentFromBP();
+    UE_PROTECTED void SetSimpleDamageComponentFromBP();
+    UE_PROTECTED void SetMainDamageComponentFromBP();
 private:
     struct UeMarkers
     {

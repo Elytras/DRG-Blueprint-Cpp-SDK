@@ -25,7 +25,7 @@ public:
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_PlasmaTrail_LineCutter(int EntryPoint);
     void SetLineWidth(float Width);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

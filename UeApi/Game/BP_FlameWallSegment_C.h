@@ -21,7 +21,7 @@ public:
     class UAudioComponent* FlameThrow_FireWall_ProjectileLoop_Cue;
     class UNiagaraComponent* NS_Inferno_Projectile;
     void ExecuteUbergraph_BP_FlameWallSegment(int EntryPoint);
-    void OnDeactivate();
+    UE_PROTECTED void OnDeactivate();
 private:
     struct UeMarkers
     {

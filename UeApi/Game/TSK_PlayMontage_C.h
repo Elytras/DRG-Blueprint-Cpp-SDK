@@ -23,8 +23,8 @@ public:
     bool WaitForCompletion;
     bool FreezeAlignment;
     void ExecuteUbergraph_TSK_PlayMontage(int EntryPoint);
-    void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Tasks

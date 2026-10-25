@@ -51,7 +51,7 @@ public:
     void BndEvt__ProxmityTrigger_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void UserIn(bool isInServer);
     void ReceiveTick(float DeltaSeconds);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Answer(bool Yes);
     void SetUsable(bool Usable);
     void ValidGetPlayer(BP_PlayerController_SpaceRig_C*& Player_0);

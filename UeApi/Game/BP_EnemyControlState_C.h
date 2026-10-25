@@ -19,8 +19,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UAnimMontage* GetOnMontage;
     void ExecuteUbergraph_BP_EnemyControlState(int EntryPoint);
-    void OnControllingEnemyAttached();
-    void OnControllingEnemy(bool IsControlling);
+    UE_PROTECTED void OnControllingEnemyAttached();
+    UE_PROTECTED void OnControllingEnemy(bool IsControlling);
     void OnCompleted_C6BE400543D83DD77DB15BA38DC1ED24(FName NotifyName);
     void OnBlendOut_C6BE400543D83DD77DB15BA38DC1ED24(FName NotifyName);
     void OnInterrupted_C6BE400543D83DD77DB15BA38DC1ED24(FName NotifyName);

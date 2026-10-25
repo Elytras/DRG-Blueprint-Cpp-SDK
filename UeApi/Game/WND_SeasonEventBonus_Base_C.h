@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/UI/Menu_Seasons/WND_SeasonEventBonus_Base", "WND_SeasonEventBonus_Base_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_WND_SeasonEventBonus_Base(int EntryPoint);
-    void OnShown();
+    UE_BLUEPRINT_CALLABLE void OnShown();
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

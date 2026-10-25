@@ -35,9 +35,9 @@ public:
     float MovementSpeedPenaltyReduction;
     void ExecuteUbergraph_ENE_Spider_ShieldTank(int EntryPoint);
     UE_AUTHORITY_ONLY void TargetDamaged(class UHealthComponentBase* Health, float amount, class UPrimitiveComponent* Component, class UFSDPhysicalMaterial* PhysicalMaterial);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_MULTICAST void All_PlayImpactSound(class AActor* Actor);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

@@ -185,7 +185,7 @@ public:
     void BndEvt__Button_Time_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Mission_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Filter_ServerWorkEnvironment_K2Node_ComponentBoundEvent_6_OnSelectionChanged__DelegateSignature();
-    void OnClosed();
+    UE_PROTECTED void OnClosed();
     void RefreshServerList();
     void BndEvt__BTN_Refresh_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
     void BndEvt__AutoRefresh_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
@@ -195,7 +195,7 @@ public:
     void BndEvt__Basic_RadioButton_SD_Far_K2Node_ComponentBoundEvent_2_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void BndEvt__Basic_RadioButton_SD_Medium_K2Node_ComponentBoundEvent_1_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void BndEvt__Basic_RadioButton_SD_Close_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
-    void OnShown();
+    UE_PROTECTED void OnShown();
     void OnJoiningSession();
     void BndEvt__BTN_ServerList_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
@@ -222,7 +222,7 @@ public:
     void OnFailure_155E2CBD4AAE55F9B2CDDA9239840B3A();
     void CreateSubMenus();
     void PopulateServerList(TArray<FBlueprintSessionResult>& servers);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void SetSelectedSearchDistance();
     void ShowNoServersFound(bool Visible);
     void AddOrUpdateEntry(const FBlueprintSessionResult& Result, FString& OutServerID, ITM_ServerList_Entry_C*& OutWidget);
@@ -233,17 +233,17 @@ public:
     void SetSelectedServerType();
     void GetColumnWidths(TArray<float>& OutWidths);
     void SetSortFunction(TEnum<EServerSortOrder> NewSortingMethod);
-    void GetActiveDifficulties(TArray<class UDifficultySetting*>& Array);
+    UE_BLUEPRINT_PURE void GetActiveDifficulties(TArray<class UDifficultySetting*>& Array);
     void UpdateSearchOptionsFromRestrictedMission();
     void UpdateSearchOptionsFromSearchField();
     void UpdateFromWorkEnvironment();
     void UpdateFromGametype();
     void Disable_Progression_Mods_and_Join(FBlueprintSessionResult Session);
     void GetHoveredEntryInfo(ITM_ServerList_Entry_C*& EntryWidget, float& WidgetMouseOffset, FString& ServerID);
-    void GetWidgetMousePosition(class UWidget* InWidget, FVector2D& OutLocalPos);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_BLUEPRINT_PURE void GetWidgetMousePosition(class UWidget* InWidget, FVector2D& OutLocalPos);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void UpdateSeasonSearch();
-    void GetActiveSeasons(TArray<class USeason*>& Seasons1);
+    UE_BLUEPRINT_PURE void GetActiveSeasons(TArray<class USeason*>& Seasons1);
     void UpdateSeasonHeader();
 private:
     struct UeMarkers

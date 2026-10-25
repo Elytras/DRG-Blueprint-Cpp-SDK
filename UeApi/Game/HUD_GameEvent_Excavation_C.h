@@ -35,7 +35,7 @@ public:
     void TryInitProgressWidget();
     void RefreshExcavationProgress(float Progress_0, bool IsComplete_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void FormatTime(int Time, FText& Text);
+    UE_BLUEPRINT_PURE void FormatTime(int Time, FText& Text);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Events

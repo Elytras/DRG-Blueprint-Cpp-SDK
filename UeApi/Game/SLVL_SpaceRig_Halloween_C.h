@@ -18,7 +18,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class AStaticMeshActor* SM_Halloween_BloodyPickaxe_31_ExecuteUbergraph_SLVL_SpaceRig_Halloween_RefProperty;
     void ExecuteUbergraph_SLVL_SpaceRig_Halloween(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 };
 
 }}}   // namespace Game::Maps::SpaceRig

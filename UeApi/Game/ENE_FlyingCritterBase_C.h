@@ -49,10 +49,10 @@ public:
     class UFXSystemAsset* deathParticles;
     class UPhysicalMaterial* FrozenMaterial;
     void ExecuteUbergraph_ENE_FlyingCritterBase(int EntryPoint);
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void RandomFlight();
     void LookforPlayers();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__InDanger_K2Node_ComponentBoundEvent_2_IsInDangerSig__DelegateSignature();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnMessageAI(FName TriggerName);

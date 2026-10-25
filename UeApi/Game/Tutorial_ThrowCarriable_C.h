@@ -21,7 +21,7 @@ public:
     void ExecuteUbergraph_Tutorial_ThrowCarriable(int EntryPoint);
     void OnThrowCarriableProgress(float Progress, float timeToCancel, bool isDone);
     void OnCarriableChangedEvent(class AActor* carriedActor);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

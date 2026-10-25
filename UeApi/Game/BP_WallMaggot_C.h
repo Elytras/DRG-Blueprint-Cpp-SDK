@@ -50,8 +50,8 @@ public:
     void Extend();
     void Retract();
     void TriggerHide(class APlayerCharacter* Player, bool enteredTrigger);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_Hide();
 private:
     struct UeMarkers

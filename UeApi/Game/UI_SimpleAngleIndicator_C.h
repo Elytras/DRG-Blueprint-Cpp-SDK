@@ -37,7 +37,7 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void Tick(FGeometry MyGeometry, float InDeltaTime);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetAngle(float AngleDegrees);
+    UE_PRIVATE void SetAngle(float AngleDegrees);
 };
 
 }}}}   // namespace Game::WeaponsNTools::_Crosshairs::NewCrossHairs

@@ -38,10 +38,10 @@ public:
     class UTextBlock* UnlockedText;
     class UTextBlock* UnlockTitle;
     void ExecuteUbergraph_UI_RewardUnlock(int EntryPoint);
-    void PlayReceiveAnim();
+    UE_PROTECTED void PlayReceiveAnim();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void GetUnlockDetails(bool& IsHidden, FText& OutTitle, class UTexture*& Icon, FLinearColor& IconTint, class UTexture2D*& BigImage_0);
-    void SelectCharacterID(class UPlayerCharacterID* OptionalID, class UPlayerCharacterID*& OutputPin);
+    UE_BLUEPRINT_PURE void GetUnlockDetails(bool& IsHidden, FText& OutTitle, class UTexture*& Icon, FLinearColor& IconTint, class UTexture2D*& BigImage_0);
+    UE_BLUEPRINT_PURE void SelectCharacterID(class UPlayerCharacterID* OptionalID, class UPlayerCharacterID*& OutputPin);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications

@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Tank/AIC_Spider_Tank_Normal", "AIC_Spider_Tank_Normal_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Tank_Normal_C;
     void ExecuteUbergraph_AIC_Spider_Tank_Normal(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

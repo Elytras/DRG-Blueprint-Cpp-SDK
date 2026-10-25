@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/GameElements/Holidays/Xmas/Nisse/AIC_Nisse", "AIC_Nisse_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_Nisse(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -74,8 +74,8 @@ public:
     void Cheat_Test_Mesh_Grow();
     void Cheat_Activate();
     void ActivateRift(float Delay, EWC_CoreRift_C* Wave_0, class URiftSpawnerComponent* Spawner_0);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void GetSpawnPoints(TArray<FVector>& Locations);
     void OnRep_InitialCracksdone();
 private:

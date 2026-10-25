@@ -20,10 +20,10 @@ public:
     void ExecuteUbergraph_OBJ_DD_MorkiteWell(int EntryPoint);
     void OnObjectiveUpdated_Event_0(class UObjective* Objective);
     void ReceiveBeginPlay();
-    void OnStateChanged(TEnum<ERefinerySecondaryState> NewState);
-    FText GetObjectiveDescription(float missionLength);
+    UE_PROTECTED void OnStateChanged(TEnum<ERefinerySecondaryState> NewState);
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
     UE_PURE FText GetInMissionText() const;
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
 };
 
 }}}}}   // namespace Game::GameElements::Objectives::DeepDive::LiquidMorkite_Refinery

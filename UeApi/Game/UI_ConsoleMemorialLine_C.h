@@ -26,7 +26,7 @@ public:
     float AnimationSpeed;
     ConsoleScreenMemorialWall_C* Mywall;
     void ExecuteUbergraph_UI_ConsoleMemorialLine(int EntryPoint);
-    void OnMoveFinished();
+    UE_BLUEPRINT_CALLABLE void OnMoveFinished();
     UE_COSMETIC void Construct();
     void SetText(FText Text);
     void SetSpeed(float Speed);

@@ -53,24 +53,24 @@ public:
     void BndEvt__UpgradeIcon_K2Node_ComponentBoundEvent_122_OnHoverBegin__DelegateSignature(ITM_BaseUpgradeIcon_C* Widget);
     void Refresh();
     void Show(class UItemUpgrade* InUpgrade, class UClass* InItemClass, class UPlayerCharacterID* PlayerCharacterID, class AFSDPlayerState* InPlayerState, bool ShowEquipAsBorder, bool InTierLocked);
-    void GetUpgradeStatus(EItemUpgradeStatus& Status_0);
+    UE_BLUEPRINT_PURE void GetUpgradeStatus(EItemUpgradeStatus& Status_0);
     void TryPurchaseUpgrade(bool& Purchased);
     void TryEquipUpgrade(bool& Equipped);
-    void GetItemUpgrade(class UItemUpgrade*& Upgrade_0);
-    void GetItemClass(class UClass*& itemClass_0);
-    void GetPlayerState(class AFSDPlayerState*& PlayerState_0);
+    UE_BLUEPRINT_PURE void GetItemUpgrade(class UItemUpgrade*& Upgrade_0);
+    UE_BLUEPRINT_PURE void GetItemClass(class UClass*& itemClass_0);
+    UE_BLUEPRINT_PURE void GetPlayerState(class AFSDPlayerState*& PlayerState_0);
     void ShowTier(class UClass* InItemClass, class UPlayerCharacterID* InCharacterID, int InTierIndex, FUpgradeTier InTier, class AFSDPlayerState* InPlayerState, bool InShowLockRequirement, bool ShowToolTip);
-    void IsTierIsAffordable(FUpgradeTier& TierUpgrades, class UClass* InItemClass, class AFSDPlayerState* InPlayer, class UClass* InCharacter, bool& Is_Affordable);
-    void GetTierStatus(FUpgradeTier InTier, int InTierIndex, class UPlayerCharacterID* InCharacterID, class UClass* InItem, class AFSDPlayerState* InPlayer, EItemUpgradeStatus& DefaultStatus);
+    UE_BLUEPRINT_PURE void IsTierIsAffordable(FUpgradeTier& TierUpgrades, class UClass* InItemClass, class AFSDPlayerState* InPlayer, class UClass* InCharacter, bool& Is_Affordable);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetTierStatus(FUpgradeTier InTier, int InTierIndex, class UPlayerCharacterID* InCharacterID, class UClass* InItem, class AFSDPlayerState* InPlayer, EItemUpgradeStatus& DefaultStatus);
     void GetGoogleAnalytics(class UItemUpgrade* Upgrade_0);
     UE_PURE class UTexture2D* GetUpgradeIcon();
-    void GetUpgradeCategory(class UItemUpgradeCategory*& Category);
+    UE_BLUEPRINT_PURE void GetUpgradeCategory(class UItemUpgradeCategory*& Category);
     void TryUnequipUpgrade(bool& success);
     void ToggleStatPreview(bool Preview);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE class UWidget* Get_UpgradeIcon_ToolTip();
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

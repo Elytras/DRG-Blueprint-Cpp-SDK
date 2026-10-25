@@ -31,7 +31,7 @@ public:
     float Displacement_Burst;
     void ExecuteUbergraph_ENE_Parasite(int EntryPoint);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation) const;
 private:
     struct UeMarkers

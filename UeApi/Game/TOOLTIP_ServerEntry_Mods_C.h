@@ -42,9 +42,9 @@ public:
     void ExecuteUbergraph_TOOLTIP_ServerEntry_Mods(int EntryPoint);
     UE_COSMETIC void Destruct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(TArray<FString>& InModNames, class UGeneratedMission* InMission);
+    UE_BLUEPRINT_CALLABLE void SetData(TArray<FString>& InModNames, class UGeneratedMission* InMission);
     void SetModNames(class UVerticalBox*& InBox, TArray<FString>& InNames, bool InInstalled);
-    void SplitByInstalled(TArray<FString>& InNames, TArray<FString>& OutPending, TArray<FString>& OutInstalled);
+    UE_BLUEPRINT_PURE void SplitByInstalled(TArray<FString>& InNames, TArray<FString>& OutPending, TArray<FString>& OutInstalled);
 };
 
 }}}   // namespace Game::UI::Menu_ServerList

@@ -24,7 +24,7 @@ public:
     class UTextBlock* DATA_Amount;
     class UTextBlock* DATA_ResourceName;
     void ExecuteUbergraph_ITM_Biome_ResourceIcon(int EntryPoint);
-    void SetData(class UResourceData* Resource, bool IsScarce);
+    UE_BLUEPRINT_CALLABLE void SetData(class UResourceData* Resource, bool IsScarce);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

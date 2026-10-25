@@ -30,10 +30,10 @@ public:
     class UOutlineComponent* outline;
     class UMaterialInterface* MarkerRingMaterial;
     void ExecuteUbergraph_BP_MorkiteExtractor_Pipeline_Start(int EntryPoint);
-    void ReceiveBuildStateChanged(TEnum<EPipelineBuildState> InBuildState);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBuildStateChanged(TEnum<EPipelineBuildState> InBuildState);
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__PipelineStartUsable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
     void UpdatePipelineNumber();
 private:

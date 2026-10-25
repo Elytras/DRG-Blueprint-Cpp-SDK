@@ -43,7 +43,7 @@ public:
     bool IsHot;
     void ExecuteUbergraph_PRJ_PlasmaCarbineShot(int EntryPoint);
     void BndEvt__CollisionComponent_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void CustomEvent(class UItemUpgrade* Event);
+    UE_PROTECTED void CustomEvent(class UItemUpgrade* Event);
     void OnUpgradeElementAdded(class UProjectileUpgradeElement* element);
     void OnInitialized();
     void DoOnSpawn();
@@ -54,7 +54,7 @@ public:
     void BounceFeedback();
     void HandleImpact(FHitResult& HitResult);
     bool ShouldBreakArmorBeforeDamage(class AActor* Target);
-    class UDamageComponent* GetDamageComponent();
+    UE_BLUEPRINT_CALLABLE class UDamageComponent* GetDamageComponent();
 private:
     struct UeMarkers
     {

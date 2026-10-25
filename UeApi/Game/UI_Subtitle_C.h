@@ -26,7 +26,7 @@ public:
     void ExecuteUbergraph_UI_Subtitle(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void ShoutStart(class APlayerCharacter* InSender, FText InText, float InDuration);
-    void OnShoutEnd();
+    UE_PRIVATE UE_BLUEPRINT_CALLABLE void OnShoutEnd();
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Subtitles

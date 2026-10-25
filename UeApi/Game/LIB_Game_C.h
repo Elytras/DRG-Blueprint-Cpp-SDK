@@ -21,16 +21,16 @@ class LIB_Game_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/Game/LIB_Game", "LIB_Game_C");
-    static void IsKickReason(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, bool& Kicked);
+    UE_BLUEPRINT_PURE static void IsKickReason(TEnum<EDisconnectReason> DisconnectReason, class UObject* __WorldContext, bool& Kicked);
     static void SelectVisibility(class UWidget* Widget, TEnum<ESlateVisibility> FALSE_0, TEnum<ESlateVisibility> TRUE_0, bool Index_0, class UObject* __WorldContext, bool& IsVisible, bool& VisibilityChanged, ESlateVisibility& New_Visibility);
     static void LoadMission(FSoftObjectPath NewParam, class UObject* __WorldContext);
     static void SetVisibilityIf(class UWidget* Widget, TEnum<ESlateVisibility> Visibility, bool Condition, class UObject* __WorldContext, bool& IsVisible);
     static void UpdateBool(bool& Variable, bool InValue, class UObject* __WorldContext, bool& ValueChanged, bool& OutValue);
     static void SetTextureAndTint(class UImage* Target, class UTexture2D* Texture, bool bMatchSize, FLinearColor Tint, class UObject* __WorldContext);
     static void SetSoftTextureAndTint(class UImage* Target, TSoftObjectPtr<class UTexture2D> Texture, bool bMatchSize, FLinearColor Tint, class UObject* __WorldContext);
-    static void IsFlaggedVisible(class UWidget* InWidget, class UObject* __WorldContext, bool& IsFlaggedVisible_0);
+    UE_BLUEPRINT_PURE static void IsFlaggedVisible(class UWidget* InWidget, class UObject* __WorldContext, bool& IsFlaggedVisible_0);
     static void SetTextureAndColor(class UImage* Target, class UTexture2D* Texture, bool bMatchSize, FLinearColor InColorAndOpacity, class UObject* __WorldContext);
-    static void IsOnSpaceRig(class UObject* __WorldContext, bool& OnSpaceRig);
+    UE_BLUEPRINT_PURE static void IsOnSpaceRig(class UObject* __WorldContext, bool& OnSpaceRig);
 };
 
 }}   // namespace Game::Game

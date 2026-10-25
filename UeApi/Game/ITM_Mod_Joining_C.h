@@ -53,12 +53,12 @@ public:
     UE_COSMETIC void Destruct();
     void BndEvt__LinkButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
-    void OnDownloadExtractMod(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading, int Progress, int Total);
-    void OnDownloadExtractModFinished(FString ModName_0, FString ModId_0);
+    UE_PRIVATE void OnDownloadExtractMod(FString Name_0, const TArray<FString>& ModsPendingDownload, bool Downloading, int Progress, int Total);
+    UE_PRIVATE void OnDownloadExtractModFinished(FString ModName_0, FString ModId_0);
     UE_PURE class UWidget* Get_LinkButton_ToolTip();
     void SetMetaData(class UModioModInfoWrapper* InModMetaData);
     void Update();
-    void GetModName(FString& ModName_0);
+    UE_BLUEPRINT_PURE void GetModName(FString& ModName_0);
 };
 
 }}}   // namespace Game::UI::Modding

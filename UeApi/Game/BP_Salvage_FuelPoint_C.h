@@ -27,13 +27,13 @@ public:
     FVector InitalLocation;
     int TriesToSpawn;
     void ExecuteUbergraph_BP_Salvage_FuelPoint(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Call_In_Pod();
     void OnDefenseFail();
     void OnDefenseComplete();
     void OnDefenseStart();
     void EnableRepair();
-    void CheckIfCloseToInvalidators(bool& IsClose);
+    UE_BLUEPRINT_PURE void CheckIfCloseToInvalidators(bool& IsClose);
     void SolveTooCloseToInvalidator();
 private:
     struct UeMarkers

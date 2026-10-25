@@ -17,7 +17,7 @@ class BP_Armor_Driller_C : public AArmorPiece
 public:
     UE_CLASS("/Game/WeaponsNTools/Armor/BP_Armor_Driller", "BP_Armor_Driller_C");
     class USceneComponent* DefaultSceneRoot;
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+    UE_BLUEPRINT_PURE UE_BLUEPRINT_CALLABLE void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:
     struct UeMarkers
     {

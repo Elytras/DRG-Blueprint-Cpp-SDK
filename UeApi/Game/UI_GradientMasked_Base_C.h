@@ -23,8 +23,8 @@ public:
     void ExecuteUbergraph_UI_GradientMasked_Base(int EntryPoint);
     void OnMaterialRefreshed();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void Refresh();
-    void GetDynamicMaterial(class UMaterialInstanceDynamic*& Material_0);
+    UE_PROTECTED void Refresh();
+    UE_PROTECTED UE_BLUEPRINT_PURE void GetDynamicMaterial(class UMaterialInstanceDynamic*& Material_0);
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

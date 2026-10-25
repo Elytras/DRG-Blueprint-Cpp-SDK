@@ -32,16 +32,16 @@ public:
     FTimerHandle RagdollTimer;
     void ExecuteUbergraph_ENE_Bomber(int EntryPoint);
     void DissolveMesh();
-    void OnTriggerFadeRagdoll();
+    UE_PROTECTED void OnTriggerFadeRagdoll();
     void BndEvt__ENE_Bomber_HealthComponent_K2Node_ComponentBoundEvent_3_DamageSig__DelegateSignature(float amount);
     UE_AUTHORITY_ONLY void BndEvt__ENE_Bomber_HealthComponent_K2Node_ComponentBoundEvent_2_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void OnFrozen(class AActor* Source);
-    void OnStartDeathPanic();
+    UE_PROTECTED void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnStartDeathPanic();
     void BndEvt__ArmorHealthDamage_K2Node_ComponentBoundEvent_0_AmorPartDestroyedDelegate__DelegateSignature(FName Name_0);
     void OnMessageAI(FName TriggerName);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void InitCharge();
     void OnRep_DeathType();
 private:

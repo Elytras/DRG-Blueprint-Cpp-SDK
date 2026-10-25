@@ -53,8 +53,8 @@ public:
     UE_COSMETIC void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     UE_COSMETIC void OnFocusLost(FFocusEvent InFocusEvent);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    UE_COSMETIC FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);
-    void IsMouseOver(bool& MouseOver_0);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);
+    UE_BLUEPRINT_PURE void IsMouseOver(bool& MouseOver_0);
 private:
     struct UeMarkers
     {

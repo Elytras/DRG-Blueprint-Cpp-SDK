@@ -75,14 +75,14 @@ public:
     void UpdateItem();
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(int Tier, float Progress, float CurrentCount, float TargetCount, bool IsClaimable);
-    void SetHovered(bool Hovered);
-    UE_COSMETIC FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_PRIVATE UE_BLUEPRINT_CALLABLE void SetProgress(int Tier, float Progress, float CurrentCount, float TargetCount, bool IsClaimable);
+    UE_PRIVATE void SetHovered(bool Hovered);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SetCategoryFilter(TArray<class UTexture2D*>& Filter);
-    void GetIcon(class UTexture2D*& Icon);
-    void GetIsClaimable(bool& ItemClaimable_0);
-    void UpdateRewardStar(int Index_0);
+    UE_BLUEPRINT_PURE void GetIcon(class UTexture2D*& Icon);
+    UE_BLUEPRINT_PURE void GetIsClaimable(bool& ItemClaimable_0);
+    UE_PRIVATE void UpdateRewardStar(int Index_0);
 private:
     struct UeMarkers
     {

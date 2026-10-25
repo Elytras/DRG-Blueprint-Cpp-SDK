@@ -35,9 +35,9 @@ public:
     TArray<FName> Ring_D_Sockets;
     TArray<BP_Electrical_Antenna_C*> Antennaes;
     void ExecuteUbergraph_BP_FacilityElectricAttack(int EntryPoint);
-    void ReceiveAbortAttack();
+    UE_PROTECTED void ReceiveAbortAttack();
     UE_MULTICAST void AttackEffets();
-    void ReceiveAttackTarget(class AActor* Target);
+    UE_PROTECTED void ReceiveAttackTarget(class AActor* Target);
     void ReceiveTick(float DeltaSeconds);
     void SetupDamage(class UDamageComponent* Damage, TArray<int>& Feedbackbar_0);
     void OnRep_Stage();

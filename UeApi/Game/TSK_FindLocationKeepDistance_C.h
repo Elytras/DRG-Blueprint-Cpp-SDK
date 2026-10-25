@@ -24,7 +24,7 @@ public:
     float IdealDistance;
     FBlackboardKeySelector TargetLocation;
     void ExecuteUbergraph_TSK_FindLocationKeepDistance(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Tasks

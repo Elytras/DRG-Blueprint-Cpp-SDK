@@ -22,7 +22,7 @@ public:
     int PreviousScore;
     int Score;
     float CountProgress;
-    void SetCountProgress(float InProgress);
+    UE_PRIVATE void SetCountProgress(float InProgress);
     void SetScore(int InScore);
 };
 

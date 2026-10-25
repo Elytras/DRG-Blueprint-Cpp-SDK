@@ -71,8 +71,8 @@ public:
     void SetSelectedColor();
     void SaveNameExists(FString Name_0, bool& Exists);
     void SetIfSaveIsActive(bool IsMainSlot);
-    class UWidget* CreateLoadButtonToolTip();
-    class UWidget* CreateDeleteButtonToolTip();
+    UE_BLUEPRINT_PURE class UWidget* CreateLoadButtonToolTip();
+    UE_BLUEPRINT_PURE class UWidget* CreateDeleteButtonToolTip();
 };
 
 }}}   // namespace Game::UI::Menu_SaveSlots

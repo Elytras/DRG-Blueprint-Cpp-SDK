@@ -22,7 +22,7 @@ public:
     class UCapsuleComponent* ConeCapsule;
     BP_ConeAttackBase_C* ConeAttack;
     void ExecuteUbergraph_ENE_Spider_Tank_Normal(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

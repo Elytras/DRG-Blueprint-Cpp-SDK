@@ -56,14 +56,14 @@ public:
     UE_AUTHORITY_ONLY void BndEvt__ENE_SpiderBase_Large_HealthComponent_K2Node_ComponentBoundEvent_0_DeathSigDetailed__DelegateSignature(class UHealthComponent* HealthComponent_0, float damageAmount, const FDamageData& DamageData, const TArray<class UDamageTag*>& Tags_0);
     void IncrementCommunityGoal();
     void ChangePhysicsAsset();
-    void BumpedTarget();
-    void SwitchedState(TEnum<EWoodLouseState> CurrentState_0);
+    UE_PROTECTED void BumpedTarget();
+    UE_PROTECTED void SwitchedState(TEnum<EWoodLouseState> CurrentState_0);
     void Fizzle();
     void OnMessageAI(FName TriggerName);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
     void OnRep_DeathType();
     void SetCookMaterialSettings();
-    void GetFXMeshScale(float& NewParam);
+    UE_BLUEPRINT_PURE void GetFXMeshScale(float& NewParam);
     void SetBurnMaterialSettings();
     void FindChemicalArrow(class ACrossbowProjectileStuck*& ChemicalArrow);
 private:

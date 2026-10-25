@@ -31,12 +31,12 @@ public:
     TEnum<ETimelineDirection> ThrusterAudioTimeLine__Direction_8AF52364460D65D4AF1B6CA27FE77FA0;
     class UTimelineComponent* ThrusterAudioTimeLine;
     void ExecuteUbergraph_WPN_JetPackItem(int EntryPoint);
-    void ReceiveBeginPlay();
-    void OnRep_Active();
-    void OnFuelChanged(float Value, float Delta);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void OnRep_Active();
+    UE_PROTECTED void OnFuelChanged(float Value, float Delta);
     void ThrusterAudioTimeLine__UpdateFunc();
     void ThrusterAudioTimeLine__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void ToggleThrusters(bool On);
 private:
     struct UeMarkers

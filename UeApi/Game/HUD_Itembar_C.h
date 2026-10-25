@@ -29,13 +29,13 @@ public:
     void ExecuteUbergraph_HUD_Itembar(int EntryPoint);
     void FadeOutFinished();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnItemClicked();
+    UE_PROTECTED void OnItemClicked();
     void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     void Show();
-    void OnItemEquipped(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnItemEquipped(class UItemsBarIcon* ItemIcon);
     UE_COSMETIC void Construct();
-    void OnClear();
-    void OnItemAdded(class UItemsBarIcon* ItemIcon);
+    UE_PROTECTED void OnClear();
+    UE_PROTECTED void OnItemAdded(class UItemsBarIcon* ItemIcon);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Items

@@ -23,7 +23,7 @@ public:
     void ExecuteUbergraph_ITM_TopBar_PlayerCounter(int EntryPoint);
     UE_COSMETIC void Construct();
     void Refresh();
-    void GetPlayerClass(class UPlayerCharacterID*& OutPlayerCharacter);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetPlayerClass(class UPlayerCharacterID*& OutPlayerCharacter);
 private:
     struct UeMarkers
     {

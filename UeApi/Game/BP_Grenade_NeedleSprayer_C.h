@@ -31,9 +31,9 @@ public:
     class UHitscanComponent* HitScan;
     class UDamageComponent* Damage;
     void ExecuteUbergraph_BP_Grenade_NeedleSprayer(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveDestroyed();
-    void OnSpinningChanged(bool isSpinning);
+    UE_PROTECTED void OnSpinningChanged(bool isSpinning);
 private:
     struct UeMarkers
     {

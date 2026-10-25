@@ -22,7 +22,7 @@ public:
     void ExecuteUbergraph_UI_MerchEntry_Base(int EntryPoint);
     void On_Overlay_Closed(FString LastURL);
     void OpenLink();
-    void Log(FString InText);
+    UE_PRIVATE void Log(FString InText);
 private:
     struct UeMarkers
     {

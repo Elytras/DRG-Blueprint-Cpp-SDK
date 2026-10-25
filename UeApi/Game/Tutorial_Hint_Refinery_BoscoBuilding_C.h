@@ -24,7 +24,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_Refinery_BoscoBuilding(int EntryPoint);
     void PipelineSegmentPlaced(class APipelineSegment* InSegment);
     void OnBoscoChanged(class ABosco* Bosco);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 private:
     struct UeMarkers
     {

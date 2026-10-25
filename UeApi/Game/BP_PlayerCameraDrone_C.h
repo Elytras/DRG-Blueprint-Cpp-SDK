@@ -40,8 +40,8 @@ public:
     int QuickCheatCounter;
     int MovieModeCounter;
     void ExecuteUbergraph_BP_PlayerCameraDrone(int EntryPoint);
-    void ReceiveBeginPlay();
-    void CreateHUD();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED void CreateHUD();
     UE_MULTICAST UE_RELIABLE void SetDroneVisiblity();
     void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_0(FKey Key);
     void InpActEvt_Gamepad_RightThumbstick_K2Node_InputKeyEvent_1(FKey Key);

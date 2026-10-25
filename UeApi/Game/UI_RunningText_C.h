@@ -53,7 +53,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetText(FText InText);
     void SetJustification(TEnum<ETextJustify> InJustification);
-    void step(float InDeltaTime, bool& Finished);
+    UE_PRIVATE void step(float InDeltaTime, bool& Finished);
     void SetFont(FSlateFontInfo InFontInfo);
     UE_PURE FText GetCursorText(float Time_0, bool TextFinished);
 private:

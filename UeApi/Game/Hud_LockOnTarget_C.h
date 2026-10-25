@@ -43,8 +43,8 @@ public:
     void OnLockOn(int numberOfLockOnsOnThisTarget, int totalNumberOfLockOns);
     void UpdateArrow(bool inView, float Angle);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnInViewChanged(bool inView, float Angle);
-    void OnTargetDistanceChanged(float Distance);
+    UE_PROTECTED void OnInViewChanged(bool inView, float Angle);
+    UE_PROTECTED void OnTargetDistanceChanged(float Distance);
 };
 
 }}}}   // namespace Game::WeaponsNTools::LockOnRifle::UI

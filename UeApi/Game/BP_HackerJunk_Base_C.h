@@ -24,8 +24,8 @@ public:
     class USceneComponent* DefaultSceneRoot;
     TArray<class UStaticMesh*> Meshes;
     void ExecuteUbergraph_BP_HackerJunk_Base(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

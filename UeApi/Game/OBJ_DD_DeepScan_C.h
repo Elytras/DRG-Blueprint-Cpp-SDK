@@ -15,13 +15,13 @@ class OBJ_DD_DeepScan_C : public UDeepScanSecondaryObjective
 {
 public:
     UE_CLASS("/Game/GameElements/Objectives/DeepScan/OBJ_DD_DeepScan", "OBJ_DD_DeepScan_C");
-    FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
     UE_PURE FText GetInMissionCounterText() const;
     UE_PURE class UTexture2D* GetInMissionCounterIcon() const;
     UE_PURE FText GetInMissionText() const;
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
-    FObjectiveMissionIcon GetMissionIcon() const;
+    UE_BLUEPRINT_CALLABLE FObjectiveMissionIcon GetMissionIcon() const;
 };
 
 }}}}   // namespace Game::GameElements::Objectives::DeepScan

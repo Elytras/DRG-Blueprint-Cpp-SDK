@@ -55,7 +55,7 @@ public:
     void destroy(class AActor* DestroyedActor);
     void HandleRotationToTarget(float DeltaTime);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     UE_MULTICAST void RemoveSpeedBoost();
     UE_MULTICAST void GiveSpeedBoost();

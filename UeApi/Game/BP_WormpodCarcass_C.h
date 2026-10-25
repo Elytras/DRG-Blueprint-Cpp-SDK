@@ -23,7 +23,7 @@ public:
     class USimpleHealthComponent* SimpleHealth;
     class UStaticMeshComponent* StaticMesh;
     void ExecuteUbergraph_BP_WormpodCarcass(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_WormpodCarcas_DropToTerrain_K2Node_ComponentBoundEvent_0_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
 private:
     struct UeMarkers

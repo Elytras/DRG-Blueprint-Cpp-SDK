@@ -155,10 +155,10 @@ public:
     void BndEvt__ENE_WalkingPlagueheart_HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     void TrySpawnEnemies();
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_isHealthbarVisile();
-    void ArePlayersInRange(float Distance, bool& InRange);
+    UE_BLUEPRINT_PURE void ArePlayersInRange(float Distance, bool& InRange);
     void ConsiderSpecialAttacking(bool& didSpecialAttack);
     void UpdateHUDShieldStatus();
     void OnRep_CleaningPodHasBeenCalled();
@@ -167,7 +167,7 @@ public:
     void RemoveAttackBlocker(class AActor* blocker);
     void UpdateIsBlocked();
     void KnockbackFromShield(BP_PlagueHeartShield_Base_C* Shield);
-    void GetAttachedActorsIfValid(class AActor* Actor, TArray<class AActor*>& AttachedActors);
+    UE_BLUEPRINT_PURE void GetAttachedActorsIfValid(class AActor* Actor, TArray<class AActor*>& AttachedActors);
     void AddBoots();
     class UInfectionPointCleaningComponent* GetCleaningPoints(FVector fromLocation);
     UE_PURE FVector GetTargetCenterMass() const;

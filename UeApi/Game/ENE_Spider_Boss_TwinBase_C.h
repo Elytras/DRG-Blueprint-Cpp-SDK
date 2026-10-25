@@ -56,7 +56,7 @@ public:
     void MatchHealthToMe(float HealthChange);
     void GoVulnerable();
     UE_MULTICAST void GoInvulnerable();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void RemoveDR();
     void ApplyDR();
     void MatchHealth();
@@ -67,9 +67,9 @@ public:
     void BndEvt__BP_BurrowComponent_K2Node_ComponentBoundEvent_1_OnBurrow__DelegateSignature();
     void BndEvt__BP_BurrowComponent_K2Node_ComponentBoundEvent_0_OnUnBurrow__DelegateSignature();
     void PlayAnimatedDeath(int AnimationIndex);
-    void OnRagdoll();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
     UE_PURE float GetEnemyDamageResistance();
-    bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
+    UE_BLUEPRINT_PURE bool ShouldExplode(TArray<class UDamageTag*>& Tags_0);
     void TrySelectDeathAnimation(bool WasWeakpoint, int& AnimationIndex, bool& HasSelectedAnimation);
     void AddDamageDoneToTwinMap();
     UE_PURE bool IsTwinAlive() const;

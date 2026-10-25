@@ -25,9 +25,9 @@ public:
     void ExecuteUbergraph_AIC_FriendlyShredder(int EntryPoint);
     void StartSpeedModifier();
     void Speed_Changer();
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     ENE_Jelly_Passive_Mother_C* FindNewMother();
 private:
     struct UeMarkers

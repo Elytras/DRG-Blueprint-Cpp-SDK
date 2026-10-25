@@ -19,8 +19,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Mouse;
     void ExecuteUbergraph_UI_Cursor_Mouse(int EntryPoint);
-    void OnUnhover();
-    void OnHover();
+    UE_PROTECTED void OnUnhover();
+    UE_PROTECTED void OnHover();
 };
 
 }}}   // namespace Game::UI::Mouse_Cursor

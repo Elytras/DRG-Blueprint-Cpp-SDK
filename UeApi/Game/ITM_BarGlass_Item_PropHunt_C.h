@@ -16,8 +16,8 @@ public:
     UE_CLASS("/Game/GameElements/Bar/Drinkables/PropHunt/ITM_BarGlass_Item_PropHunt", "ITM_BarGlass_Item_PropHunt_C");
     FPointerToUberGraphFrame UberGraphFrame_ITM_BarGlass_Item_PropHunt_C;
     void ExecuteUbergraph_ITM_BarGlass_Item_PropHunt(int EntryPoint);
-    void ReceiveConsumed();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveConsumed();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Refresh();
 private:
     struct UeMarkers

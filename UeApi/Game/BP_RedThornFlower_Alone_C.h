@@ -46,7 +46,7 @@ public:
     float Spike_Origin_Height;
     void ExecuteUbergraph_BP_RedThornFlower_Alone(int EntryPoint);
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_HealthChangedSig__DelegateSignature(float Health);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
 private:
     struct UeMarkers

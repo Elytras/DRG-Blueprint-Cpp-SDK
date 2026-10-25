@@ -29,7 +29,7 @@ public:
     class USkeletalMesh* UsedLampMesh;
     FTimerHandle Timer;
     void ExecuteUbergraph_BP_Anniversary_MiniChandelier(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void OnCollide();
     void OnRep_UsedLampMesh();

@@ -33,8 +33,8 @@ public:
     void ExecuteUbergraph_BP_AmberChunk(int EntryPoint);
     void Time();
     void DestroySelf();
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_Destroyed();
 private:
     struct UeMarkers

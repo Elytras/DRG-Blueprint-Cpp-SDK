@@ -27,9 +27,9 @@ public:
     class UParticleSystemComponent* FogParticles;
     class UAudioComponent* SoundEffect;
     void ExecuteUbergraph_DE_BlacklockLager(int EntryPoint);
-    void OnStopEffect();
+    UE_PROTECTED void OnStopEffect();
     UE_CLIENT void Activate_Effects();
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
     void ReceiveTick(float DeltaSeconds);
 private:
     struct UeMarkers

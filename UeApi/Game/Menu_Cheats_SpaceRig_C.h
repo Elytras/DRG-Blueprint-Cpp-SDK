@@ -139,8 +139,8 @@ public:
     void BndEvt__Button_Driller_K2Node_ComponentBoundEvent_758_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Engineer_K2Node_ComponentBoundEvent_735_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__Button_Gunner_K2Node_ComponentBoundEvent_683_OnButtonClickedEvent__DelegateSignature();
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void BndEvt__Button_Controls_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     void Init_Tabs();
     void SelectFirstTab();
@@ -149,7 +149,7 @@ public:
     void SelectTab(int Index_0, class UButton* TabButton);
     void DeselectTab(class UButton* Tab);
     void Get_Character_to_change(FText Character, class UPlayerCharacterID*& character_out);
-    UE_COSMETIC FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     UE_PURE float Get_HealthSlider_Value_0();
     UE_PURE TEnum<ESlateVisibility> Get_ActivateCommonCheatsButton_Visibility_0();
     class UWidget* OnGetMenuContent_0();

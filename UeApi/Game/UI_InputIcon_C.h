@@ -27,10 +27,10 @@ public:
     void OnInputSourceChanged(TEnum<EFSDInputSource> InputSource);
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    FName GetCurrentMenuAction(EFSDInputSource& OutSource);
-    void Refresh();
-    void GetIconSize(class UTexture2D* InTexture, FVector2D& OutSize);
-    void GetBrushTint(bool IsTintable, FLinearColor& OutputColor);
+    UE_PRIVATE UE_BLUEPRINT_PURE FName GetCurrentMenuAction(EFSDInputSource& OutSource);
+    UE_PRIVATE void Refresh();
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetIconSize(class UTexture2D* InTexture, FVector2D& OutSize);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetBrushTint(bool IsTintable, FLinearColor& OutputColor);
 private:
     struct UeMarkers
     {

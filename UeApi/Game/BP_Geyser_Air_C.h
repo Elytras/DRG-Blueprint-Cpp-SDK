@@ -76,9 +76,9 @@ public:
     void BndEvt__TerrainDetect2_K2Node_ComponentBoundEvent_2_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void BndEvt__TerrainDetect1_K2Node_ComponentBoundEvent_1_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     UE_MULTICAST void PlayDamageSound(FVector Location);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_Explode();
-    void OnRep_State();
+    UE_BLUEPRINT_CALLABLE void OnRep_State();
 private:
     struct UeMarkers
     {

@@ -29,7 +29,7 @@ public:
     class UTimelineComponent* Timeline_0;
     TArray<class UMaterialInstanceDynamic*> Materials;
     void ExecuteUbergraph_BP_Refinery_LandingZone(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();

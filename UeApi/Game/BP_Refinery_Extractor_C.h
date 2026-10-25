@@ -63,15 +63,15 @@ public:
     bool ItemEquipped;
     void ExecuteUbergraph_BP_Refinery_Extractor(int EntryPoint);
     void OnPipelineStateChanged(TEnum<EPipelineBuildState> InPipelineState);
-    void OnDroppodImpact();
+    UE_PROTECTED void OnDroppodImpact();
     void Setup_ItemEquipped();
-    void ReceiveConnectedToSegment(class APipelineSegment* InConnectedSegment);
+    UE_PROTECTED void ReceiveConnectedToSegment(class APipelineSegment* InConnectedSegment);
     void SetPipelineBuilderEquipped(bool InEquipped);
     void OnItemEquipped_Event(class AItem* Item);
-    void OnDropStarted();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnDropStarted();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ExtractorPodOrderedEvent(class APlayerCharacter* InUser);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateState();
 private:
     struct UeMarkers

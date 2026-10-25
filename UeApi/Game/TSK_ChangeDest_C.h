@@ -23,7 +23,7 @@ public:
     FBlackboardKeySelector DestKey;
     float ApproximatePlayerDistance;
     void ExecuteUbergraph_TSK_ChangeDest(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
     void FindPlayer(class AActor* from, class APlayerCharacter*& Player, FVector& Location);
 };
 

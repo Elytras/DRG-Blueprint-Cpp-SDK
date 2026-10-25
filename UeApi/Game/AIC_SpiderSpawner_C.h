@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/EnemySpawner/AIC_SpiderSpawner", "AIC_SpiderSpawner_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_SpiderSpawner(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

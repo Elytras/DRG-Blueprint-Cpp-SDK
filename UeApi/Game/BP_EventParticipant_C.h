@@ -19,10 +19,10 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_EventParticipant(int EntryPoint);
-    void OnEventTriggered();
+    UE_BLUEPRINT_CALLABLE void OnEventTriggered();
     void OnEventProgress(float Progress);
     void OnEventOpened();
-    void OnEventFinished(bool eventSuccess);
+    UE_BLUEPRINT_CALLABLE void OnEventFinished(bool eventSuccess);
     bool SetupEvent(class AGameEvent* GameEvent);
     bool AdvanceOneObjective();
     bool AddEventProgress(float Progress);

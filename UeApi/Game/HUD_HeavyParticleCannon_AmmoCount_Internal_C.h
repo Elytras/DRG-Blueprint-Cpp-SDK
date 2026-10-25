@@ -30,12 +30,12 @@ public:
     float MappedAlpha;
     void ExecuteUbergraph_HUD_HeavyParticleCannon_AmmoCount_Internal(int EntryPoint);
     void OnReloadTimeChanged_Event(float amount);
-    void SetData(int ClipSize_0, float ReloadDuration_0);
+    UE_BLUEPRINT_CALLABLE void SetData(int ClipSize_0, float ReloadDuration_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnTotalVisibleChanged(bool Visible);
-    void OnVisibleChanged(bool Visible, bool showClipCount);
-    void OnAmountChanged(int Count);
-    void OnTotalChanged(int Total);
+    UE_PROTECTED void OnTotalVisibleChanged(bool Visible);
+    UE_PROTECTED void OnVisibleChanged(bool Visible, bool showClipCount);
+    UE_PROTECTED void OnAmountChanged(int Count);
+    UE_PROTECTED void OnTotalChanged(int Total);
 };
 
 }}}   // namespace Game::WeaponsNTools::HeavyParticleCannon

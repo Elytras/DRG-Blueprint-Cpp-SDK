@@ -20,9 +20,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_AIC_BarrageInfector(int EntryPoint);
     void StartBehavior();
-    void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
     void OnDeath(class UHealthComponentBase* HealthComponent);
-    void Recieve_BlackboardValueChanged(const FName& KeyName);
+    UE_PROTECTED void Recieve_BlackboardValueChanged(const FName& KeyName);
 private:
     struct UeMarkers
     {

@@ -54,7 +54,7 @@ public:
     UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
     void ShieldFade__UpdateFunc();
     void ShieldFade__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     class AActor* GetBossActor();
     bool IsStillValid();
     TSubclassOf<class UBossFightWidget> GetWidgetClass();

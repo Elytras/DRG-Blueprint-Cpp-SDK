@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/Plague/CleaningPod/Soaper/BP_Bosco_FoamGlob", "BP_Bosco_FoamGlob_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_Bosco_FoamGlob_C;
     void ExecuteUbergraph_BP_Bosco_FoamGlob(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

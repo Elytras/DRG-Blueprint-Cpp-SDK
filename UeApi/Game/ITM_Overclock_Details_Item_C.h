@@ -25,7 +25,7 @@ public:
     int FontSize;
     void ExecuteUbergraph_ITM_Overclock_Details_Item(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FText InText, bool InIsAdvantagous);
+    UE_BLUEPRINT_CALLABLE void SetData(FText InText, bool InIsAdvantagous);
     void SetFontSize(int NewSize);
 };
 

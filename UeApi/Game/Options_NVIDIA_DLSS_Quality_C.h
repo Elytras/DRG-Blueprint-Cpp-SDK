@@ -26,9 +26,9 @@ public:
     void ShowOptions();
     void UINeedsUpdate();
     UE_COSMETIC void Construct();
-    void GetDLSSModeName(TEnum<EUDLSSMode> Mode, FText& Name_0);
-    void IndexToMode(int Index_0, EUDLSSMode& Mode);
-    void ModeToIndex(TEnum<EUDLSSMode> Mode, int& Index_0);
+    UE_BLUEPRINT_PURE void GetDLSSModeName(TEnum<EUDLSSMode> Mode, FText& Name_0);
+    UE_BLUEPRINT_PURE void IndexToMode(int Index_0, EUDLSSMode& Mode);
+    UE_BLUEPRINT_PURE void ModeToIndex(TEnum<EUDLSSMode> Mode, int& Index_0);
     void Add_Index(TEnum<EUDLSSMode> Mode);
 private:
     struct UeMarkers

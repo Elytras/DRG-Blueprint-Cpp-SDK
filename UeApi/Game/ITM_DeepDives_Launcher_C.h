@@ -82,10 +82,10 @@ public:
     UE_COSMETIC void Construct();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetMovie(class UMediaSource* InMovie);
-    UE_PURE class UDeepDive* GetDeepDive();
+    UE_PRIVATE UE_PURE class UDeepDive* GetDeepDive();
     void Refresh();
     void SetButtonsEnabled(bool bInIsEnabled, FText DisabledExplanation);
-    void UpdateBiomeQuote(class UDeepDive* InDeepDive);
+    UE_PRIVATE void UpdateBiomeQuote(class UDeepDive* InDeepDive);
     void SetPersonalBest(int TotalSeconds);
     void SetBestTime();
     void OnMovieLoaded();

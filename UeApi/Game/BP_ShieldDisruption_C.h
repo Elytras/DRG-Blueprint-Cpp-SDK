@@ -18,8 +18,8 @@ public:
     UE_CLASS("/Game/GameElements/Missions/Warnings/ShieldDisruption/BP_ShieldDisruption", "BP_ShieldDisruption_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_ShieldDisruption(int EntryPoint);
-    void PlayerSpawned(class APlayerCharacter* PlayerCharacter);
-    void StartLogic();
+    UE_BLUEPRINT_CALLABLE void PlayerSpawned(class APlayerCharacter* PlayerCharacter);
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Warnings::ShieldDisruption

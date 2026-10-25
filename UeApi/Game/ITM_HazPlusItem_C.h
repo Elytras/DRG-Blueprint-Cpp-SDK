@@ -58,16 +58,16 @@ public:
     void BndEvt__ITM_HazPlusItem_Button_Left_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
     void BndEvt__ITM_HazPlusItem_Button_Right_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
     void BndEvt__ITM_HazPlusItem_Button_Right_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
-    void ButtonHoveredChanged(class UButton* InButton, Basic_Image_C* InArrow);
-    void ClickButton(class UButton* InButton, Basic_Image_C* InArrow, int InIncrement);
+    UE_PRIVATE void ButtonHoveredChanged(class UButton* InButton, Basic_Image_C* InArrow);
+    UE_PRIVATE void ClickButton(class UButton* InButton, Basic_Image_C* InArrow, int InIncrement);
     void Refresh();
-    void SetAmount(int InAmount, int& OutAmount);
+    UE_PRIVATE void SetAmount(int InAmount, int& OutAmount);
     void RefreshFromManager();
     void SetIsUnlocked(bool InIsUnlocked);
-    void GetInfo(FDifficultyMutatorInfo& Info);
+    UE_BLUEPRINT_PURE void GetInfo(FDifficultyMutatorInfo& Info);
     UE_PURE bool IsItemHovered();
-    void SetData(FDifficultyMutatorItem InMutator, bool InIs_Unlocked);
-    void GetAmountFromManager(int& OutAmount);
+    UE_BLUEPRINT_CALLABLE void SetData(FDifficultyMutatorItem InMutator, bool InIs_Unlocked);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetAmountFromManager(int& OutAmount);
 private:
     struct UeMarkers
     {

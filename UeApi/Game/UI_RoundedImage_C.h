@@ -26,9 +26,9 @@ public:
     float EdgeSharpness;
     void ExecuteUbergraph_UI_RoundedImage(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void UpdateMaterial();
+    UE_PRIVATE void UpdateMaterial();
     void SetImage(class UTexture2D* Texture_0);
-    UE_COSMETIC void OnPaint(FPaintContext& Context) const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE void OnPaint(FPaintContext& Context) const;
 };
 
 }}}}   // namespace Game::UI::_GlobalAssets::MaskedImage

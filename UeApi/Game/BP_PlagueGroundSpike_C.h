@@ -42,7 +42,7 @@ public:
     class USoundBase* BurstFromGround_Cue;
     float InitialLightIntensity;
     void ExecuteUbergraph_BP_PlagueGroundSpike(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void SpikeDurationFade__UpdateFunc();
     void SpikeDurationFade__FinishedFunc();
 private:

@@ -26,9 +26,9 @@ public:
     class UImage* Icon;
     void ExecuteUbergraph_HUD_Itemwheel_Icon(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void OnInit();
-    void OnSelect();
-    void OnUnselect();
+    UE_PROTECTED void OnInit();
+    UE_PROTECTED void OnSelect();
+    UE_PROTECTED void OnUnselect();
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::Items

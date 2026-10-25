@@ -42,7 +42,7 @@ public:
     void Max_Ammo_Changed(int amount);
     void SetTotalCount(int Value);
     void UpdateAmount(int Value);
-    void SetProgress(float Value);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Value);
     void OverheatStatus(bool Condition);
     void Scrub_Animation(class UWidgetAnimation* InAnimation, float InProgress);
     void SetProgressColor(FLinearColor InColor);

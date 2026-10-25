@@ -63,11 +63,11 @@ public:
     TArray<FLinearColor> WiresToCut;
     bool DoShouts;
     void ExecuteUbergraph_HackingTool_DefuseBomb(int EntryPoint);
-    void ReceiveActionClick();
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE void ReceiveActionClick();
     void Setup_Bomb_Event();
-    void ReceiveHackingToolUnequipped();
+    UE_PROTECTED void ReceiveHackingToolUnequipped();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void ReceiveHackingStarted();
+    UE_PROTECTED void ReceiveHackingStarted();
     void UpdateTimeText();
     void ShakeAndContinue(class UUserWidget* InWidget, class UWidgetAnimation* InAnimation);
     void Finished_0FEF1054496B26DF35D844906C248D31();
@@ -76,15 +76,15 @@ public:
     void Finished_A52BBDD14D1C3758CF01F7A2BAC2D4B5();
     void Finished_6438649444085A754F40E691D18B14D3();
     void Finished_C3D3196641A63C5F00D8FE8E04A1FBC1();
-    void SpawnWires();
-    void ShuffleWires();
-    void SetHighlightSocketProgress(float InProgress);
+    UE_PRIVATE void SpawnWires();
+    UE_PRIVATE void ShuffleWires();
+    UE_PRIVATE void SetHighlightSocketProgress(float InProgress);
     void HandleClick();
     void SetGridColorProgress(float InProgress);
     void PlayAudioOnDevice(class USoundCue* InCue);
     void SpawnAudioOnDevice(class USoundCue* InCue, float InFadeIn, class UAudioComponent*& AudioComponent);
     bool SortByDistance(class UWidget* InFirstWidget, class UWidget* InSecondWidget);
-    void OnWireCut();
+    UE_PRIVATE void OnWireCut();
     void Shout(class UDialogDataAsset* InShout);
 private:
     struct UeMarkers

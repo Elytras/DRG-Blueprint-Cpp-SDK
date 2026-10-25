@@ -54,7 +54,7 @@ public:
     void Use_Timer_Elapsed();
     void BndEvt__BP_RocketAttachment_ThrusterParticles_K2Node_ComponentBoundEvent_7_ActorComponentDeactivateSignature__DelegateSignature(class UActorComponent* Component);
     void BndEvt__BP_RocketAttachment_ThrusterParticles_K2Node_ComponentBoundEvent_6_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_5_GenericUsableDelegate__DelegateSignature();
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void SetThrusterAnimBP(class UClass* ThrusterAnimBP, FName BoneNameToFollow);
@@ -62,22 +62,22 @@ public:
     UE_MULTICAST void CarveFree();
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_2_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__BP_RocketAttachment_AttachUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveFreeAttachment();
-    void OnEnterState(TEnum<ERocketAttachmentState> NewState);
+    UE_PROTECTED void ReceiveFreeAttachment();
+    UE_PROTECTED void OnEnterState(TEnum<ERocketAttachmentState> NewState);
     void BndEvt__BP_RocketAttachment_BuildUsable_K2Node_ComponentBoundEvent_4_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OverrideMaterial(class UMaterialInterface* Material, class UMaterialInterface* LampOverrideMaterial);
     void OnHidden();
     void OnReadyToAttach();
     void OnReadyToBuild();
     void OnBuilt();
     void OnLaunching();
-    void OnFinished();
+    UE_BLUEPRINT_CALLABLE void OnFinished();
     void SetupExcavationFX();
     void UpdateUsableAndWidget(bool CanAttach, bool CanBuild);
     void UpdateCollisionEnabled(bool CollisionEnabled);
-    void GetLaserOrigin(FVector& LaserOrigin);
-    FVector GetDroneUseLocation() const;
+    UE_BLUEPRINT_PURE void GetLaserOrigin(FVector& LaserOrigin);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE FVector GetDroneUseLocation() const;
 private:
     struct UeMarkers
     {

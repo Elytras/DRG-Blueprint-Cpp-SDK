@@ -29,8 +29,8 @@ public:
     TEnum<ETimelineDirection> Timeline_0__Direction_859263F34EED5A2D6A4CEF82230780FC;
     class UTimelineComponent* Timeline_0;
     void ExecuteUbergraph_BP_StickyIce(int EntryPoint);
-    void OnIceExpire();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnIceExpire();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

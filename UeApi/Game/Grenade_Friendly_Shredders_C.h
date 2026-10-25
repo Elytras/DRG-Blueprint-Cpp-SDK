@@ -31,10 +31,10 @@ public:
     void ExecuteUbergraph_Grenade_Friendly_Shredders(int EntryPoint);
     void KillOtherGrenades();
     void OnDeathShredder(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveParticleData(const TArray<FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem);
-    void OnExploded();
-    void UserConstructionScript();
+    UE_PROTECTED void OnExploded();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void OnRep_ParticleRandomSeed();
     void AddGearStateEntries(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
 private:

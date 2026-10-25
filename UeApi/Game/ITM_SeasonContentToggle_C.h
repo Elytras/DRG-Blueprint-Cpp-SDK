@@ -44,8 +44,8 @@ public:
     void BndEvt__ITM_SeasonContentToggle_CHK_IsUsingSeasonContent_K2Node_ComponentBoundEvent_0_OnCheckStateChanged__DelegateSignature(bool IsChecked);
     void Yes_E59D9B694ED0DF638B899C84F7ED8DB2();
     void No_E59D9B694ED0DF638B899C84F7ED8DB2();
-    class UWidget* CreateToolTip();
-    class UWidget* CreateInfoToolTip();
+    UE_BLUEPRINT_PURE class UWidget* CreateToolTip();
+    UE_BLUEPRINT_PURE class UWidget* CreateInfoToolTip();
 };
 
 }}}   // namespace Game::UI::Menu_Seasons

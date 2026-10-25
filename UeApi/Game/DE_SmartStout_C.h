@@ -23,7 +23,7 @@ public:
     class UAudioComponent* MoonriderSound;
     class UParticleSystemComponent* ParticleEffect;
     void ExecuteUbergraph_DE_SmartStout(int EntryPoint);
-    void OnStartEffect(class APlayerCharacter* Character_0);
+    UE_PROTECTED void OnStartEffect(class APlayerCharacter* Character_0);
 };
 
 }}}}   // namespace Game::GameElements::Bar::DrinkEffects

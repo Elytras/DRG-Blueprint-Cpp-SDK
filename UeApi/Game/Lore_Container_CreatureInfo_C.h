@@ -61,8 +61,8 @@ public:
     float BoxPadding;
     void ExecuteUbergraph_Lore_Container_CreatureInfo(int EntryPoint);
     void FillInAttacks(class UWrapBox* Container, const TArray<FEnemyAttackDescription>& Attacks);
-    void SetData(class UEnemyMinersManualData* Creature, class UMinersManual* MinersManual_0);
-    void GetTypeText(TEnum<EEnemyType> InType, FText& DisplayText, class UTexture2D*& Icon);
+    UE_BLUEPRINT_CALLABLE void SetData(class UEnemyMinersManualData* Creature, class UMinersManual* MinersManual_0);
+    UE_BLUEPRINT_PURE void GetTypeText(TEnum<EEnemyType> InType, FText& DisplayText, class UTexture2D*& Icon);
     void TwinsCustomAttack(class UEnemyMinersManualData* enemy);
 };
 

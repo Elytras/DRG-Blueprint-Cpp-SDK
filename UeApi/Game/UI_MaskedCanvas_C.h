@@ -26,7 +26,7 @@ public:
     class UTexture* Mask;
     void ExecuteUbergraph_UI_MaskedCanvas(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void UpdateMaterial();
+    UE_PRIVATE void UpdateMaterial();
     void SetMask(class UTexture* Texture);
 };
 

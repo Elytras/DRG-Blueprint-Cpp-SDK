@@ -94,8 +94,8 @@ public:
     void BndEvt__BTN_ClearChallenges_K2Node_ComponentBoundEvent_5_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__BTN_NewChallenge_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__BTN_ResetReroll_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
-    void OnClosed();
-    void OnShown();
+    UE_PROTECTED void OnClosed();
+    UE_PROTECTED void OnShown();
     void BndEvt__BTN_TestEndFlow_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void OnClickedWithoutTokens();
     void OnTokensChanged(int NumberOfTokens, int Change);
@@ -104,10 +104,10 @@ public:
     void BndEvt__BTN_TreeOfVanity_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void BndEvt__BTN_Season_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature(Header_ButtonCutCorner_C* Button);
     void Toggle_Button_On(Header_ButtonCutCorner_C* Button);
-    UE_COSMETIC FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
-    UE_COSMETIC FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     void Start_End_Flow(int numberOfChallenges, bool hasEvent, int ExtrsXP);
-    UE_COSMETIC FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void SelectSection(class UWindowWidget* InSection, Header_ButtonCutCorner_C* InButton);
 private:
     struct UeMarkers

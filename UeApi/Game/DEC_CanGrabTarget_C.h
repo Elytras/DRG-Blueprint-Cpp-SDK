@@ -17,7 +17,7 @@ class DEC_CanGrabTarget_C : public UBTDecorator_BlueprintBase
 public:
     UE_CLASS("/Game/AI/Decorators/DEC_CanGrabTarget", "DEC_CanGrabTarget_C");
     FBlackboardKeySelector Target;
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::AI::Decorators

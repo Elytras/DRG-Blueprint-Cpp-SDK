@@ -30,8 +30,8 @@ public:
     FVector Light_Offset;
     class UMaterialInstanceDynamic* DynamicMaterial;
     void ExecuteUbergraph_BP_Endscreen_Lamp(int EntryPoint);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateLights();
 private:
     struct UeMarkers

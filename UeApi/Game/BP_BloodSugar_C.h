@@ -23,7 +23,7 @@ public:
     void OnPlayerCharacterRegistered_Event_0(class APlayerCharacter* PlayerCharacter);
     void SpawnSwarmer();
     void StartTimer();
-    void StartLogic();
+    UE_PROTECTED void StartLogic();
 };
 
 }}}}}   // namespace Game::GameElements::Missions::Mutators::BloodSugar

@@ -80,12 +80,12 @@ public:
     void BndEvt__Filter_TextSearch_K2Node_ComponentBoundEvent_1_OnTextChanged__DelegateSignature(FText Text);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     UE_PURE FText GetTextFilter();
-    void UpdateSearchDistance(TEnum<ESteamSearchRegion> SearchRegion);
+    UE_PRIVATE void UpdateSearchDistance(TEnum<ESteamSearchRegion> SearchRegion);
     void IsDifficultySelected(class UDifficultySetting* InDifficulty, bool& Selected);
-    void FilterSession(FBlueprintSessionResult InSession, bool& Should_Filter);
-    void GetAutoRefresh(bool& AutoRefresh_0);
-    void UpdatePasswordFilter();
-    void GetGametypeFilter(TArray<EGameType>& SelectedGametypes);
+    UE_BLUEPRINT_PURE void FilterSession(FBlueprintSessionResult InSession, bool& Should_Filter);
+    UE_BLUEPRINT_PURE void GetAutoRefresh(bool& AutoRefresh_0);
+    UE_PRIVATE void UpdatePasswordFilter();
+    UE_BLUEPRINT_PURE void GetGametypeFilter(TArray<EGameType>& SelectedGametypes);
 private:
     struct UeMarkers
     {

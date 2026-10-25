@@ -68,8 +68,8 @@ public:
     class UFSDAchievement* BarrelKickerAchievement;
     class UCommunicationComponent* Communication_Component;
     void ExecuteUbergraph_BP_HoopsGame(int EntryPoint);
-    void UpdateScoreAchievementProgress();
-    void MoveDirectionChanged();
+    UE_PROTECTED void UpdateScoreAchievementProgress();
+    UE_PROTECTED void MoveDirectionChanged();
     void BndEvt__BP_HoopsGame_Box2_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_MULTICAST UE_RELIABLE void All_PlayComboLostSFX();
     void ReceiveTick(float DeltaSeconds);
@@ -79,9 +79,9 @@ public:
     void BndEvt__FailCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_3_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void BndEvt__Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
-    int GetBarrelScoreData(class APhysicsBarrel* Barrel, class APhysicsBarrel*& OutBarrel);
-    FVector CalculateMovementVector(float nextFlipTime, float DeltaTime, bool bIsMovingRight);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_PROTECTED int GetBarrelScoreData(class APhysicsBarrel* Barrel, class APhysicsBarrel*& OutBarrel);
+    UE_PROTECTED FVector CalculateMovementVector(float nextFlipTime, float DeltaTime, bool bIsMovingRight);
 private:
     struct UeMarkers
     {

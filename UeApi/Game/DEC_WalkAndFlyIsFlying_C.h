@@ -16,7 +16,7 @@ class DEC_WalkAndFlyIsFlying_C : public UBTDecorator_BlueprintBase
 {
 public:
     UE_CLASS("/Game/Enemies/Ossiran/Scrab/DEC_WalkAndFlyIsFlying", "DEC_WalkAndFlyIsFlying_C");
-    bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}   // namespace Game::Enemies::Ossiran::Scrab

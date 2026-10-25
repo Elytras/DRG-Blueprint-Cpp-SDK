@@ -37,7 +37,7 @@ public:
     void ExecuteUbergraph_BP_GreatEggHunt_EggWithBow(int EntryPoint);
     UE_MULTICAST void AddImpulseFromLocation(FVector_NetQuantize playerPos);
     void BndEvt__BP_SummerEvent_PalmTree_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_RandomSeed();
 private:
     struct UeMarkers

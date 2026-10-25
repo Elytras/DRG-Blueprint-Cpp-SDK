@@ -24,7 +24,7 @@ public:
     void ExecuteUbergraph_Tutorial_Hint_FocusShot(int EntryPoint);
     void FullyFocusedEvent_Event();
     void OnItemEquipped_Event(class AItem* Item);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

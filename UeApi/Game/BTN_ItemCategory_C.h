@@ -51,8 +51,8 @@ public:
     TEnum<EVanitySlot> VanitySlot;
     class UPlayerCharacterID* characterID;
     void ExecuteUbergraph_BTN_ItemCategory(int EntryPoint);
-    void OnClosed();
-    void SetData(class UPlayerCharacterID* characterID_0);
+    UE_BLUEPRINT_CALLABLE void OnClosed();
+    UE_BLUEPRINT_CALLABLE void SetData(class UPlayerCharacterID* characterID_0);
     void Toggle(bool On);
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();

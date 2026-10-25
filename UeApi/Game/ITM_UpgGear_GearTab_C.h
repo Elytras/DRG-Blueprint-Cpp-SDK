@@ -59,9 +59,9 @@ public:
     void SetHovered(bool InItemHovered);
     void Refresh();
     UE_PURE bool IsItemClass(class UClass* InItemClass);
-    void GetItemClass(class UClass*& itemClass_0);
+    UE_BLUEPRINT_PURE void GetItemClass(class UClass*& itemClass_0);
     void UpdateNotification(bool IsItemUnlocked);
-    class UWidget* CreateToolTip();
+    UE_BLUEPRINT_PURE class UWidget* CreateToolTip();
 };
 
 }}}   // namespace Game::UI::Menu_Loadout

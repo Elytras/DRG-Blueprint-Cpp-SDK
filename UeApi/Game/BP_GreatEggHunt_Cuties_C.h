@@ -19,7 +19,7 @@ public:
     TArray<class UStaticMesh*> Meshes;
     class UStaticMesh* UsedMesh;
     void ExecuteUbergraph_BP_GreatEggHunt_Cuties(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_UsedMesh();
 private:
     struct UeMarkers

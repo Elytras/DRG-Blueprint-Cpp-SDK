@@ -46,8 +46,8 @@ public:
     UE_MULTICAST void Kill();
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_1_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     void DisableAnimations();
-    void OnEngagedChanged(bool engaged);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnEngagedChanged(bool engaged);
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnAttack();
     void Timeline_0__UpdateFunc();

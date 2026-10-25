@@ -30,9 +30,9 @@ public:
     void BndEvt__Cheat_FSDEvents_HolidayDropDown_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetupHolidays();
-    void GetEvent(FString InName, class UFSDEvent*& OutEvent);
+    UE_BLUEPRINT_PURE void GetEvent(FString InName, class UFSDEvent*& OutEvent);
     void Refresh();
-    void GetActiveEvent(int& OutIndex, FString& OutName);
+    UE_BLUEPRINT_PURE void GetActiveEvent(int& OutIndex, FString& OutName);
 };
 
 }}}   // namespace Game::UI::Menu_Cheats

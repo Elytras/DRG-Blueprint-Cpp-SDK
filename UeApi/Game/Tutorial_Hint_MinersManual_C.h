@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     float FirstTimeDelay;
     void ExecuteUbergraph_Tutorial_Hint_MinersManual(int EntryPoint);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

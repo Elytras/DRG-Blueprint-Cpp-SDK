@@ -29,7 +29,7 @@ public:
     void ExecuteUbergraph_UI_MissionReadOut_Base(int EntryPoint);
     void OnGeneratedMissionChanged(class UGeneratedMission* OutGeneratedMission);
     UE_COSMETIC void Construct();
-    void CanShowMissionType(class UGeneratedMission* InMission, bool& CanShow);
+    UE_BLUEPRINT_PURE void CanShowMissionType(class UGeneratedMission* InMission, bool& CanShow);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::MissionReadouts

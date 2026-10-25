@@ -18,7 +18,7 @@ public:
     TArray<class UStaticMesh*> StaticMeshes;
     TArray<float> MeshHeights;
     TArray<float> DistanceThresholds;
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

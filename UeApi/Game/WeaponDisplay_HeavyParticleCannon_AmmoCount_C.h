@@ -50,15 +50,15 @@ public:
     void ExecuteUbergraph_WeaponDisplay_HeavyParticleCannon_AmmoCount(int EntryPoint);
     void OnEquipped();
     void OnUnEquipped();
-    void Init(class AItem* ParticleWeapon);
+    UE_BLUEPRINT_CALLABLE void Init(class AItem* ParticleWeapon);
     void UpdateClipInfo(float Percent);
     void UpdateTotalInfo(float Percent);
-    void DoItemEquipped();
-    void OnTotalChanged(int Total);
-    void OnAmountChanged(int Count);
+    UE_PROTECTED void DoItemEquipped();
+    UE_PROTECTED void OnTotalChanged(int Total);
+    UE_PROTECTED void OnAmountChanged(int Count);
     void OnReloadTimeChanged_Event(float amount);
     UE_COSMETIC void Construct();
-    void SetData(int ClipSize_0, float ReloadDuration_0, int MaxAmmo_0);
+    UE_BLUEPRINT_CALLABLE void SetData(int ClipSize_0, float ReloadDuration_0, int MaxAmmo_0);
 private:
     struct UeMarkers
     {

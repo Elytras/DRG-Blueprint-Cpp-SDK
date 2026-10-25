@@ -37,15 +37,15 @@ public:
     void LoaderStart(class ULevelSequence* LoaderLevelSequence);
     void Return_Camera();
     void TogglePhotographyMode(bool Active);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ReceiveTick(float DeltaSeconds);
     UE_COSMETIC void OnPhotographySessionStart();
     UE_COSMETIC void OnPhotographySessionEnd();
     void ReceiveDestroyed();
-    UE_COSMETIC void PhotographyCameraModify(FVector NewCameraLocation, FVector PreviousCameraLocation, FVector OriginalCameraLocation, FVector& ResultCameraLocation);
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE void PhotographyCameraModify(FVector NewCameraLocation, FVector PreviousCameraLocation, FVector OriginalCameraLocation, FVector& ResultCameraLocation);
     void ReturnCameraMode(class APlayerCharacter* Target, TEnum<ECharacterCameraMode> NewCameraMode);
     void SetToThirdPersonCamera(FVector& New_Camera_Position);
-    void SphereDirectionToPlayer(FVector& Direction);
+    UE_BLUEPRINT_PURE void SphereDirectionToPlayer(FVector& Direction);
     UE_PURE float SmoothReturnVelocity(FVector New_Camera_Location);
     void ChangeSpeed(float MaxSpeed_0);
     void ChangeMaxDistance(float MaxDistance_0);

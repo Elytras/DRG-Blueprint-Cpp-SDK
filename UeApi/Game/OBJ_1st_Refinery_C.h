@@ -20,9 +20,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_OBJ_1st_Refinery(int EntryPoint);
     void OnRefineryStateChangedBP(TEnum<ERefineryState> InRefineryState);
-    void ReceiveRefinerySpawned(class AFSDRefinery* InRefinery);
-    FText GetObjectiveDescription(float missionLength);
-    class UTexture2D* GetObjectiveIcon() const;
+    UE_PROTECTED void ReceiveRefinerySpawned(class AFSDRefinery* InRefinery);
+    UE_BLUEPRINT_CALLABLE FText GetObjectiveDescription(float missionLength);
+    UE_BLUEPRINT_CALLABLE class UTexture2D* GetObjectiveIcon() const;
     UE_PURE FText GetInMissionText() const;
     UE_PURE int GetObjectiveAmount(float missionLength) const;
 };

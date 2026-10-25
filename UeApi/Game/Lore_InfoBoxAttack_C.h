@@ -32,7 +32,7 @@ public:
     void ExecuteUbergraph_Lore_InfoBoxAttack(int EntryPoint);
     void SetColor(FLinearColor InColorAndOpacity);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetData(FText Text_0, FDamageTypeDescription Icon_0, FText GrayText_0);
+    UE_BLUEPRINT_CALLABLE void SetData(FText Text_0, FDamageTypeDescription Icon_0, FText GrayText_0);
 };
 
 }}}   // namespace Game::UI::Menu_MinersManual

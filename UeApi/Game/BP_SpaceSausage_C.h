@@ -22,7 +22,7 @@ public:
     class UStaticMeshComponent* SM_InflatableSausage;
     float Radius;
     void ExecuteUbergraph_BP_SpaceSausage(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -25,7 +25,7 @@ public:
     FVector ScaleMin;
     FVector ScaleMax;
     void ExecuteUbergraph_BP_BigCrystal(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

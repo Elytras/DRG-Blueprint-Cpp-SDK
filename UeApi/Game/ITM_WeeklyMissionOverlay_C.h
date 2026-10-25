@@ -45,7 +45,7 @@ public:
     void ExecuteUbergraph_ITM_WeeklyMissionOverlay(int EntryPoint);
     void SetInvalid(class UCampaign* Campaign_0);
     void Update_Time();
-    void SetData(class UCampaign* Campaign_0, FText Headline, bool ShowTimer, bool AllRequirementsMet);
+    UE_BLUEPRINT_CALLABLE void SetData(class UCampaign* Campaign_0, FText Headline, bool ShowTimer, bool AllRequirementsMet);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 private:
     struct UeMarkers

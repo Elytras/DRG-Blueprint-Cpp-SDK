@@ -32,9 +32,9 @@ public:
     FLinearColor FillColorAndOpacity;
     void ExecuteUbergraph_UI_ProgressBar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetAnimationProgress(float AnimationProgress_0);
+    UE_PRIVATE void SetAnimationProgress(float AnimationProgress_0);
     void SetPercent(float InPercent, float InEaseDuration, bool ForceEase);
-    void GetPercent(float& OutPercent);
+    UE_BLUEPRINT_PURE void GetPercent(float& OutPercent);
     void SetStyle(FProgressBarStyle InStyle);
     void SetFillColorAndOpacity(FLinearColor InColor);
 };

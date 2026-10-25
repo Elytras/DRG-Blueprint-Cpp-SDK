@@ -48,9 +48,9 @@ public:
     void OnCharacterStateChanged(TEnum<ECharacterState> NewState);
     void OnCharacterChanged(class APlayerCharacter* PlayerCharacter);
     void OnUpdateName(FString NewName);
-    void OnTargetDistanceChanged(float Distance_0);
-    void OnTargetSet(class AActor* NewTarget);
-    void OnInViewChanged(bool inView, float Angle);
+    UE_PROTECTED void OnTargetDistanceChanged(float Distance_0);
+    UE_PROTECTED void OnTargetSet(class AActor* NewTarget);
+    UE_PROTECTED void OnInViewChanged(bool inView, float Angle);
     void OnShow();
     void UpdateArrow(bool inView, float Angle);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);

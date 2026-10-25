@@ -36,7 +36,7 @@ public:
     class UAudioComponent* Audio;
     class UPointLightComponent* PointLight;
     void ExecuteUbergraph_PRJ_TentaclePlant_New(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_1_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void GoBoom();
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);

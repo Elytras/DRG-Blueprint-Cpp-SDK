@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UProgressBar* ProgressBar_59;
     void ExecuteUbergraph_HUD_LaserPointerScanProgress(int EntryPoint);
-    void SetProgress(float Progress);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float Progress);
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer

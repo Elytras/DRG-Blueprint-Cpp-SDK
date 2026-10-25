@@ -29,9 +29,9 @@ public:
     void ContinueChange();
     void BndEvt__ITM_BasicTutorialWindow_K2Node_ComponentBoundEvent_1_CompleteAnimationFinished__DelegateSignature();
     void BndEvt__ITM_BasicTutorialWindow_K2Node_ComponentBoundEvent_0_RemoveAnimationFinished__DelegateSignature();
-    void OnHide(bool watched);
+    UE_PROTECTED void OnHide(bool watched);
     UE_COSMETIC void Construct();
-    void OnShow(const FText& Text, const FText& Title, const FText& TaskText, class UTexture2D* Image);
+    UE_PROTECTED void OnShow(const FText& Text, const FText& Title, const FText& TaskText, class UTexture2D* Image);
 };
 
 }}}   // namespace Game::UI::Tutorial

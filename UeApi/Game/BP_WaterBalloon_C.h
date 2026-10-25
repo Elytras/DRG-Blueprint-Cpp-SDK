@@ -32,7 +32,7 @@ public:
     FName ImpulseSocketName;
     class USoundCue* Death_Sound;
     void ExecuteUbergraph_BP_WaterBalloon(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void ApplyForceSM(class UStaticMeshComponent* Component, FVector Position);
     void ApplyForceSK(class USkeletalMeshComponent* Component, FVector Position);
     UE_MULTICAST void Impact(class AActor* Other, FVector HitPosition);

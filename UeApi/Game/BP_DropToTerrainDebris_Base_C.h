@@ -29,7 +29,7 @@ public:
     class USoundBase* FallImpactSound;
     void ExecuteUbergraph_BP_DropToTerrainDebris_Base(int EntryPoint);
     void BndEvt__DropToTerrain_K2Node_ComponentBoundEvent_0_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

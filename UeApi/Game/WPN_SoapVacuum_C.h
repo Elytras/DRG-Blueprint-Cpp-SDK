@@ -43,16 +43,16 @@ public:
     void ExecuteUbergraph_WPN_SoapVacuum(int EntryPoint);
     void StartVacuumEffectTick();
     void OnFoamPuddleCollected_Unreliable();
-    void OnObjectiveChanged(class UObjective* Objective);
-    void RecieveEquipped();
-    void RecieveStopUsing();
-    void RecieveStartUsing();
+    UE_PROTECTED void OnObjectiveChanged(class UObjective* Objective);
+    UE_PROTECTED void RecieveEquipped();
+    UE_PROTECTED void RecieveStopUsing();
+    UE_PROTECTED void RecieveStartUsing();
     void BndEvt__DroppedCollider_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     void BndEvt__PickupUsable_K2Node_ComponentBoundEvent_1_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void RecieveUnequipped();
-    void OnReceiveEquippedFinished();
-    void ReceiveBeginPlay();
-    class USceneComponent* GetVacuumSource() const;
+    UE_PROTECTED void RecieveUnequipped();
+    UE_PROTECTED void OnReceiveEquippedFinished();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE class USceneComponent* GetVacuumSource() const;
 private:
     struct UeMarkers
     {

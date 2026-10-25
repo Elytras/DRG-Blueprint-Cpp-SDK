@@ -82,7 +82,7 @@ public:
     void BndEvt__SimpleHealth_K2Node_ComponentBoundEvent_40_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void BndEvt__OpenLeafTrigger_K2Node_ComponentBoundEvent_26_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__DipEnterTriggerBox_K2Node_ComponentBoundEvent_310_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__DipExitTriggerBox_K2Node_ComponentBoundEvent_0_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BaseTangentShift__UpdateFunc();
     void BaseTangentShift__FinishedFunc();

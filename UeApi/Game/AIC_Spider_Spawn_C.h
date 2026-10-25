@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/Swarmer/Spawn/AIC_Spider_Spawn", "AIC_Spider_Spawn_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Spawn_C;
     void ExecuteUbergraph_AIC_Spider_Spawn(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

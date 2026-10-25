@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/BTService_GetOffsetMoveToTargetLocation", "BTService_GetOffsetMoveToTargetLocation_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BTService_GetOffsetMoveToTargetLocation(int EntryPoint);
-    void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+    UE_PROTECTED void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

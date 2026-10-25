@@ -39,10 +39,10 @@ public:
     FLinearColor ValidColor;
     class ARecallableSentryGunItem* Item;
     void ExecuteUbergraph_BP_SentryItem_PlaceMarker(int EntryPoint);
-    void SetArcIndicatorActive(bool Active);
-    void OnMarkerValidChanged(bool Valid);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void SetArcIndicatorActive(bool Active);
+    UE_PROTECTED void OnMarkerValidChanged(bool Valid);
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void SetMaterials(class UMeshComponent* Mesh, class UMaterialInterface* ParentMaterial, class UMaterialInstanceDynamic*& DynamicMaterial);
     void SetAngleRestriction(float AngleRestriction);
 private:

@@ -38,11 +38,11 @@ public:
     void SpecialAttackFlow();
     void StartFadeBody();
     void OnDeathBase();
-    void OnRagdoll();
-    void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void OnRagdoll();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_1_0__UpdateFunc();
     void Timeline_1_0__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void BeginSpecialAttack(int SpecialAttackIndex, class UAnimMontage*& Montage);
 private:
     struct UeMarkers

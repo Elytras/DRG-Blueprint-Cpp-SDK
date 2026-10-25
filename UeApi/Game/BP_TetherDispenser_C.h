@@ -26,9 +26,9 @@ public:
     TArray<BP_TransmitterNode_C*> Tethers;
     float CustomConnectionRange;
     void ExecuteUbergraph_BP_TetherDispenser(int EntryPoint);
-    void OnPickedUpItem(class AActor* Item);
-    void OnOpenChanged(bool Open_0);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void OnPickedUpItem(class AActor* Item);
+    UE_PROTECTED void OnOpenChanged(bool Open_0);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

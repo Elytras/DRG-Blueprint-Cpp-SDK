@@ -27,7 +27,7 @@ public:
     BP_CleanupPod_C* CleanupPod;
     void ExecuteUbergraph_Tutorial_Hint_CoreStone_Bosco(int EntryPoint);
     void OnCorestoneTriggered(TEnum<ERiftCrystalState> State);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

@@ -16,7 +16,7 @@ public:
     UE_CLASS("/Game/Enemies/Spider/TankBoss/BossTwins/AIC_Spider_Boss_TwinB", "AIC_Spider_Boss_TwinB_C");
     FPointerToUberGraphFrame UberGraphFrame_AIC_Spider_Boss_TwinB_C;
     void ExecuteUbergraph_AIC_Spider_Boss_TwinB(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

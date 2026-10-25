@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/WeaponsNTools/Grenades/FriendlyShredders/BTTask_SetEnemyOffsetPositionForTrackingMovement", "BTTask_SetEnemyOffsetPositionForTrackingMovement_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BTTask_SetEnemyOffsetPositionForTrackingMovement(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}}   // namespace Game::WeaponsNTools::Grenades::FriendlyShredders

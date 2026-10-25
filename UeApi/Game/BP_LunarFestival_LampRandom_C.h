@@ -33,7 +33,7 @@ public:
     void ExecuteUbergraph_BP_LunarFestival_LampRandom(int EntryPoint);
     void OnCollide();
     void BndEvt__BP_LunarFestival_Lamp01_SK_LunarFestival_Lamp_01_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_Random_Seed();
 private:
     struct UeMarkers

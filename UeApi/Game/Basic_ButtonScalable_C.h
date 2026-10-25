@@ -48,7 +48,7 @@ public:
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetFontSize(int FontSize);
     void SetButtonText(FText Text);
-    void IsPressed(bool& IsPressed_0);
+    UE_BLUEPRINT_PURE void IsPressed(bool& IsPressed_0);
 private:
     struct UeMarkers
     {

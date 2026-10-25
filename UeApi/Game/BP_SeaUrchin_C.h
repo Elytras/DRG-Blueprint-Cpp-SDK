@@ -57,7 +57,7 @@ public:
     void Timeline_0__FinishedFunc();
     void Reduce_Offset__UpdateFunc();
     void Reduce_Offset__FinishedFunc();
-    void UserConstructionScript();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
 private:
     struct UeMarkers
     {

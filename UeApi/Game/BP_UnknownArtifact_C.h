@@ -35,7 +35,7 @@ public:
     FLinearColor LightColor;
     void ExecuteUbergraph_BP_UnknownArtifact(int EntryPoint);
     UE_MULTICAST void All_PlayDugFree();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
 private:

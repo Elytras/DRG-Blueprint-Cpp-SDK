@@ -20,7 +20,7 @@ public:
     float CoolDown;
     class UClass* Projectile;
     void ExecuteUbergraph_BP_Mule_PowerAttackBooster(int EntryPoint);
-    void StartLogic();
+    UE_BLUEPRINT_CALLABLE void StartLogic();
     UE_MULTICAST void All_ShotEffects();
     void Spawn();
     void OnLoaded_009E312840AE3A93A8E068AC7AD23D0F(TSubclassOf<class UObject> Loaded);

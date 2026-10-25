@@ -49,7 +49,7 @@ public:
     class UAudioComponent* StaticNoiseAudio;
     void ExecuteUbergraph_HUD_PlayerDown(int EntryPoint);
     void Start_Player_Down();
-    void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
+    UE_PROTECTED void ReceiveNewVisibility(TEnum<ESlateVisibility> NewVisibility);
     void End_Player_Down();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnDownCameraTargetChanged(class APlayerCharacter* Target);

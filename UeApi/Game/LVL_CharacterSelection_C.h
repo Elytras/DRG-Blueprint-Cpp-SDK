@@ -28,14 +28,14 @@ public:
     class ACameraActor* CameraActor_1_ExecuteUbergraph_LVL_CharacterSelection_RefProperty;
     void ExecuteUbergraph_LVL_CharacterSelection(int EntryPoint);
     void ReceiveDestroyed();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void StartLevelSeq(class ULevelSequence* CharacterLevelSequence);
     void StartPlay(TEnum<ECharselectionCameraLocation> selectionLocation);
     void StopPlay();
     void StartPlayer(TEnum<ECharselectionCameraLocation> CamSetting);
     void StopPlayer();
     void PlaySpecificSequence(class ULevelSequence* LevelSequence);
-    void MakeVanity(bool UseSleves, FEquippedVanity& UseSleveless);
+    UE_BLUEPRINT_PURE void MakeVanity(bool UseSleves, FEquippedVanity& UseSleveless);
 };
 
 }}}   // namespace Game::Maps::UILevels

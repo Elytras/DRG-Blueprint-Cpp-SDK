@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_0;
     void ExecuteUbergraph_ITEM_UpgradesBig_SingleIcon_Connector(int EntryPoint);
-    void SetData(bool IsLocked);
+    UE_BLUEPRINT_CALLABLE void SetData(bool IsLocked);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
 };
 

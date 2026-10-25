@@ -41,11 +41,11 @@ public:
     void Set_Options(TArray<FText>& options_0, int DefaultIndex);
     void SetSelectedIndex(int NewIndex);
     void SetSelectedValue(FText Value);
-    void GetSelectedIndex(int& Index_0);
-    void GetSelectedValue(FText& Value);
+    UE_BLUEPRINT_PURE void GetSelectedIndex(int& Index_0);
+    UE_BLUEPRINT_PURE void GetSelectedValue(FText& Value);
     void Add_Option(FText Option, int& Index_0);
     void ClearOptions();
-    void GetOptionCount(int& Count);
+    UE_BLUEPRINT_PURE void GetOptionCount(int& Count);
     bool RemoveOption(FText& Item);
     void ContainsOption(FText Option, bool& DoesContain);
 private:

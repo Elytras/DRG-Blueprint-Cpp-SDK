@@ -79,11 +79,11 @@ public:
     void BndEvt__Button_0_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature();
     UE_COSMETIC void Construct();
     UE_PURE bool IsHovering();
-    void SetHovered(bool InHovered);
+    UE_PRIVATE void SetHovered(bool InHovered);
     void SetCharacterClass(class UPlayerCharacterID* InCharacterClass);
-    void GetSelectedItem(class UItemID*& itemClass_0, EItemCategory& Item_Category_0);
-    void GetOwnedItems(class UPlayerCharacterID* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UItemID*>& Owned_Items, bool& NewWeaponNotification);
-    void GetNextItem(int Direction, class UItemID*& NextItem);
+    UE_BLUEPRINT_PURE void GetSelectedItem(class UItemID*& itemClass_0, EItemCategory& Item_Category_0);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetOwnedItems(class UPlayerCharacterID* InCharacterClass, TEnum<EItemCategory> InCategory, TArray<class UItemID*>& Owned_Items, bool& NewWeaponNotification);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetNextItem(int Direction, class UItemID*& NextItem);
     void SetHideCounter(bool HideCounter_0);
 private:
     struct UeMarkers

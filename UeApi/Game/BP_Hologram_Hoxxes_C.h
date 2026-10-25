@@ -25,7 +25,7 @@ public:
     class URotatingMovementComponent* RotatingMovement;
     class USceneComponent* SharedRoot;
     void ExecuteUbergraph_BP_Hologram_Hoxxes(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

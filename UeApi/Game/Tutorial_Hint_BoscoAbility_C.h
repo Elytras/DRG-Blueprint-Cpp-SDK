@@ -23,8 +23,8 @@ public:
     void OnLaserPointerEvent(const FLaserPointerTarget& HitInfo);
     void OnBoscoChanged(class ABosco* Bosco);
     void Mark_Ready_If(bool Condition);
-    void ReceiveOnInitialized();
-    void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnHidden();
 private:
     struct UeMarkers
     {

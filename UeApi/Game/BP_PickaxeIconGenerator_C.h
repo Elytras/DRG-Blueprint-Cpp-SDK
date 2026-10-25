@@ -43,7 +43,7 @@ public:
     TEnum<EVanitySlot> VanityCategory;
     FString Path;
     void ExecuteUbergraph_BP_PickaxeIconGenerator(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

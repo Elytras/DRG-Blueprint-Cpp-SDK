@@ -62,8 +62,8 @@ public:
     void UpdateAttachState(bool Attached);
     void OnAttachChanged(bool Attached);
     void Cheat_ReleaseToWorld();
-    void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void Receive_OnDeposited(class APlayerCharacter* fromPlayer, class AActor* toActor);
+    UE_PROTECTED void ReceiveBeginPlay();
     void Throw(FVector force);
     void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsableChangedSignature__DelegateSignature(bool CanUse);
     void BndEvt__Usable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);

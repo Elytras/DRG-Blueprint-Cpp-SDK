@@ -38,7 +38,7 @@ public:
     void AddSection(bool AddLeftPadding);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void OnNewHealthSegment(int currSegment, int prevSegment);
-    void SetData(class UHealthComponent* HealthComponent_0);
+    UE_BLUEPRINT_CALLABLE void SetData(class UHealthComponent* HealthComponent_0);
 };
 
 }}}}   // namespace Game::UI::MainOnscreenHUD::BossFight

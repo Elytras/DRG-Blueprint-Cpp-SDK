@@ -38,7 +38,7 @@ public:
     void SetSize(int InIconSize, int inFontSize, int InTextOffset);
     UE_PURE bool IsMutatorType(FDifficultyMutatorItem InMutator);
     void Set_Icon_Active(bool InIconActive);
-    void GetMutator(FDifficultyMutatorItem& OutMutator);
+    UE_BLUEPRINT_PURE void GetMutator(FDifficultyMutatorItem& OutMutator);
 private:
     struct UeMarkers
     {

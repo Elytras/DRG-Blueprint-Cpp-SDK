@@ -72,7 +72,7 @@ public:
     class UParticleSystemComponent* DrillingParticles;
     FVector FuelLineStartLocation;
     void ExecuteUbergraph_BP_RockCrackerPod(int EntryPoint);
-    void SwitchYellowLights(bool isGreen);
+    UE_PROTECTED void SwitchYellowLights(bool isGreen);
     void BndEvt__BP_RockCrackerPod_Health_K2Node_ComponentBoundEvent_7_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
     void OnExitState(TEnum<ERockCrackerstate> PodState_0);
     void OnEnterState(TEnum<ERockCrackerstate> PodState_0);
@@ -80,12 +80,12 @@ public:
     void BndEvt__BP_RockCrackerPod_DropToTerrain_K2Node_ComponentBoundEvent_3_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
     void SetEndPoint(BP_RockCracker_EndPoint_C* EndPoint_0);
     void ResizeCarver();
-    void OnDroppodImpact();
-    void OnEventEnded(bool wasSuccess);
-    void OnEventStarted();
+    UE_PROTECTED void OnDroppodImpact();
+    UE_PROTECTED void OnEventEnded(bool wasSuccess);
+    UE_PROTECTED void OnEventStarted();
     void BndEvt__BP_RockCrackerPod_ReviveUsable_K2Node_ComponentBoundEvent_2_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    void ReceiveBeginPlay();
-    void UserConstructionScript();
+    UE_PROTECTED void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE void UserConstructionScript();
     void UpdateLights(class UMaterialInterface* NewMaterial);
     void OnRep_FuelLineStartLocation();
 private:

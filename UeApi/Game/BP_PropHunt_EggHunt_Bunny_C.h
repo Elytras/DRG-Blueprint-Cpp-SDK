@@ -21,7 +21,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class UArrowComponent* Arrow;
     void ExecuteUbergraph_BP_PropHunt_EggHunt_Bunny(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

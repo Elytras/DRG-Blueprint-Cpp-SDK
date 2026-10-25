@@ -75,13 +75,13 @@ public:
     void BndEvt__BuyButton_K2Node_ComponentBoundEvent_115_OnButtonHoverEvent__DelegateSignature();
     void Yes_0F2CD82B4BA6006B33BED8B78B16B74B();
     void No_0F2CD82B4BA6006B33BED8B78B16B74B();
-    void GetBorderColor(FLinearColor& OutputColor);
+    UE_BLUEPRINT_PURE void GetBorderColor(FLinearColor& OutputColor);
     void UpdateItem();
-    void GetTemporaryBuf(class UTemporaryBuff*& buff);
+    UE_BLUEPRINT_PURE void GetTemporaryBuf(class UTemporaryBuff*& buff);
     UE_PURE bool HasPlayerRank();
     UE_PURE bool AreBeersFreee();
     UE_PURE class UDrinkableDataAsset* GetSelectedDrinkableType();
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 private:
     struct UeMarkers
     {

@@ -26,7 +26,7 @@ public:
     UI_AdvancedLabel_C* KeyLabel;
     ITM_ManualCooling_Bar_C* ManualCooling_Charges;
     void ExecuteUbergraph_HUD_GatlingGun_Additional(int EntryPoint);
-    void ReceiveItemSet();
+    UE_PROTECTED void ReceiveItemSet();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void UpdateManualCooling();
 };

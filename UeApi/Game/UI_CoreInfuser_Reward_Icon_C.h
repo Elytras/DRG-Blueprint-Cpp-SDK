@@ -59,14 +59,14 @@ public:
     void BndEvt__IconButton_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
     void SetHover(bool InHovering);
     void SetFaded(bool InFade);
-    void SetUseProgress(float InProgress, bool& Finished);
-    void GetUseProgress(float& Progress);
+    UE_PRIVATE void SetUseProgress(float InProgress, bool& Finished);
+    UE_PRIVATE UE_BLUEPRINT_PURE void GetUseProgress(float& Progress);
     void TrySelectReward(bool& Reward_Given);
-    void GetIsRewardSelected(bool& IsSelected);
+    UE_BLUEPRINT_PURE void GetIsRewardSelected(bool& IsSelected);
     void SetSchematicReward(class USchematic* InSchematic);
-    void GetReward(class USchematic*& SchematicReward_0);
+    UE_BLUEPRINT_PURE void GetReward(class USchematic*& SchematicReward_0);
     void ToggleActivateAudio(bool AudioActive);
-    UE_COSMETIC bool IsInteractable() const;
+    UE_COSMETIC UE_BLUEPRINT_CALLABLE bool IsInteractable() const;
 };
 
 }}}}   // namespace Game::GameElements::GameEvents::CoreInfuser

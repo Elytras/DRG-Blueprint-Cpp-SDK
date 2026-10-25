@@ -65,9 +65,9 @@ public:
     void SetItem(class UClass*& InCharacterClass, class UClass*& InItemClass, EItemCategory& InCategory);
     void SetUpgradePurchasedShout(class UDialogDataAsset* ShoutUpgradePurchased_0);
     void SetCompactModeProgress(float InValue);
-    void SetActivePage(class UWidget* Widget);
+    UE_PRIVATE void SetActivePage(class UWidget* Widget);
     UE_PURE bool IsUpgrading();
-    UE_PURE class UWidget* Get_Button_Collapse_ToolTip();
+    UE_PRIVATE UE_PURE class UWidget* Get_Button_Collapse_ToolTip();
     UE_PURE bool GetCanCollapse();
 };
 

@@ -58,7 +58,7 @@ public:
     void BndEvt__SkinButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
     void Refresh();
     UE_PURE bool IsUnlocked();
-    void SetState(class UItemSkin* InSkin, bool InLocked, bool InHovered, bool InEquipped);
+    UE_PRIVATE void SetState(class UItemSkin* InSkin, bool InLocked, bool InHovered, bool InEquipped);
     void ClearEventHandlers();
     void SetIsDefaultItem(bool InDefault);
 private:

@@ -39,7 +39,7 @@ public:
     void ExecuteUbergraph_WeaponDisplay_ChargeBlaster_Charge(int EntryPoint);
     void OnEquipped();
     void On_UnEquipped();
-    void Init(class AItem* Item_0);
+    UE_BLUEPRINT_CALLABLE void Init(class AItem* Item_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
     void SetChargeValue(float ChargeValue, bool overheated, bool ready, bool FullCharge);
     UE_COSMETIC void Construct();

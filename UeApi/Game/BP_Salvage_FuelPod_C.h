@@ -73,15 +73,15 @@ public:
     void BndEvt__DropToTerrain_K2Node_ComponentBoundEvent_1_OnIsFallingToTerrainChanged__DelegateSignature(bool IsFalling);
     void SignalFuelLineStart();
     void BndEvt__UsableActivate_K2Node_ComponentBoundEvent_3_UsableChangedSignature__DelegateSignature(bool CanUse);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnDefenseFailed();
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_ProgressSignature__DelegateSignature(float Progress);
     void OnDefenseComplete();
     void OnDefenseStart();
     void BndEvt__SingleUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void ReceiveTick(float DeltaSeconds);
-    void OnDropStarted();
-    void OnDroppodImpact();
+    UE_PROTECTED void OnDropStarted();
+    UE_PROTECTED void OnDroppodImpact();
     void UpdateDistressSphere();
 private:
     struct UeMarkers

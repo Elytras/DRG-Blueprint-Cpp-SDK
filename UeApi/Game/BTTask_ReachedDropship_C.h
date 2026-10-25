@@ -19,7 +19,7 @@ public:
     UE_CLASS("/Game/GameElements/Donkey/BTTask_ReachedDropship", "BTTask_ReachedDropship_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BTTask_ReachedDropship(int EntryPoint);
-    void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+    UE_PROTECTED void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 };
 
 }}}   // namespace Game::GameElements::Donkey

@@ -18,8 +18,8 @@ public:
     int SugarRushRank;
     void ExecuteUbergraph_BP_RedSugarRocksLogic(int EntryPoint);
     void OnHealedFromCrystal();
-    void StartLogic(int Rank);
-    FText GetAdditionalText(int Rank) const;
+    UE_PROTECTED void StartLogic(int Rank);
+    UE_BLUEPRINT_CALLABLE FText GetAdditionalText(int Rank) const;
 };
 
 }}}}   // namespace Game::GameElements::KPI::Perks

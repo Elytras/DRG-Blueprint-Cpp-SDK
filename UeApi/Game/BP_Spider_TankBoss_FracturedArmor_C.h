@@ -39,7 +39,7 @@ public:
     class UStaticMeshComponent* StaticMesh1;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Spider_TankBoss_FracturedArmor(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

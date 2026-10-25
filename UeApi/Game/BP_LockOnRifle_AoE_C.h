@@ -26,7 +26,7 @@ public:
     class UNiagaraComponent* particle;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_LockOnRifle_AoE(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

@@ -23,7 +23,7 @@ public:
     class UStaticMeshComponent* SM_RiftPodDrill;
     class UStaticMeshComponent* SM_DropPod_Drill;
     void ExecuteUbergraph_BP_DetachableDrill(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

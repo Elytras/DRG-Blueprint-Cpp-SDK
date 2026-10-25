@@ -38,7 +38,7 @@ public:
     void BndEvt__MovementComponent_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     void Delayed_Sine();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void OnRep_HasExploaded();
 private:
     struct UeMarkers

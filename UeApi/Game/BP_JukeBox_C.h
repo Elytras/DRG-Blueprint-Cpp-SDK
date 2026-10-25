@@ -68,14 +68,14 @@ public:
     void BndEvt__DanceSphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
     void BndEvt__DanceSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void ToggleSpeakerRocking();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
     void OnLoaded_C15A19DC4718016F57823CA232EE5860(class UObject* Loaded);
     void Timeline_0__UpdateFunc();
     void Timeline_0__FinishedFunc();
     void OnRep_MusicIndex();
     void PayCredits(class APlayerCharacter* User, int amount, bool& Purchased);
-    void GetAvailableMusic(TArray<TSoftObjectPtr<class USoundBase>>& OutMusicList);
+    UE_BLUEPRINT_PURE void GetAvailableMusic(TArray<TSoftObjectPtr<class USoundBase>>& OutMusicList);
     void UpdateCurrentMusic();
 private:
     struct UeMarkers

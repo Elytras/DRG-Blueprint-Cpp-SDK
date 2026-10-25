@@ -26,8 +26,8 @@ public:
     bool IsTutorialActive;
     void ExecuteUbergraph_Tutorial_Hint_Resupply(int EntryPoint);
     void ResourceAdded(class UCappedResource* Resource_0, float amount);
-    void ReceiveOnHidden();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

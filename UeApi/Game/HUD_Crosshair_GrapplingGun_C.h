@@ -22,7 +22,7 @@ public:
     HUD_AngleIndicator_C* HUD_AngleIndicator_151;
     HUD_CrossHair_Basic02_C* HUD_Crosshair_Basic02;
     class UTextBlock* TextBlock_177;
-    void SetText(FText Value, FLinearColor Color);
+    UE_PRIVATE void SetText(FText Value, FLinearColor Color);
     void FailMessage(FText Msg);
     void DistanceMessage(float Dist);
     void ClearMessage();

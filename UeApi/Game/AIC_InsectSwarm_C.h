@@ -19,8 +19,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     FName IsAlertedKey;
     void ExecuteUbergraph_AIC_InsectSwarm(int EntryPoint);
-    void ReceivePossess(class APawn* PossessedPawn);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceivePossess(class APawn* PossessedPawn);
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

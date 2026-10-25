@@ -37,11 +37,11 @@ public:
     int CurrentTotal;
     void ExecuteUbergraph_UI_ModdingProgressBar(int EntryPoint);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(bool Downloading, int Progress, int Total);
+    UE_BLUEPRINT_CALLABLE void SetProgress(bool Downloading, int Progress, int Total);
     UE_PURE FText Int2Text(int Value);
     void FinishExtracting();
     void Error(TEnum<EUGCPackageError> InErrorType);
-    void GetTotal(int& Total);
+    UE_BLUEPRINT_PURE void GetTotal(int& Total);
     void SetProgressCustomText(FText Text, int Progress, int Total);
 };
 

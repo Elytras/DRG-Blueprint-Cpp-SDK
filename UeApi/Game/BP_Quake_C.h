@@ -20,7 +20,7 @@ public:
     class UAudioComponent* EarthQuakeSound;
     class USceneComponent* DefaultSceneRoot;
     void ExecuteUbergraph_BP_Quake(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

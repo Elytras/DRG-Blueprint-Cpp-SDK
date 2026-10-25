@@ -31,9 +31,9 @@ public:
     void ExecuteUbergraph_UI_RewardResourcesBox(int EntryPoint);
     void Clear();
     void AddResource(class URewardWidget* RewardWidget);
-    void PlayReceiveAnim();
+    UE_PROTECTED void PlayReceiveAnim();
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void HasResources(bool& HasResources_0);
+    UE_BLUEPRINT_PURE void HasResources(bool& HasResources_0);
 };
 
 }}}}   // namespace Game::UI::HUD_SpaceRig::CampaignNotifications

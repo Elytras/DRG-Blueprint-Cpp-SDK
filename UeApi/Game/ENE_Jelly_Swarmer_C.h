@@ -35,7 +35,7 @@ public:
     class USphereComponent* Sphere;
     class UParticleSystem* Deathpaticles;
     void ExecuteUbergraph_ENE_Jelly_Swarmer(int EntryPoint);
-    void OnFrozen(class AActor* Source);
+    UE_PROTECTED void OnFrozen(class AActor* Source);
     void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent_0);
 private:
     struct UeMarkers

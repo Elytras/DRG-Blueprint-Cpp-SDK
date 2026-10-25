@@ -34,7 +34,7 @@ public:
     void OnChangeVacuumStateDelegate_Event(TEnum<EVacuumState> State_0);
     UE_AUTHORITY_ONLY void SetPuddleLifetime(float LifeTime);
     void ScaleOutAndDestroy();
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Timeline_1__UpdateFunc();
     void Timeline_1__FinishedFunc();
     void Timeline_0__UpdateFunc();

@@ -48,11 +48,11 @@ public:
     void Carve();
     UE_MULTICAST void Kill();
     void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_1_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
-    void OnEngagedChanged(bool engaged);
+    UE_PROTECTED void OnEngagedChanged(bool engaged);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     UE_PURE FVector GetTargetCenterMass() const;
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
 private:
     struct UeMarkers
     {

@@ -30,7 +30,7 @@ public:
     void OnOutroFinished();
     void OnIntroFinished();
     UE_COSMETIC void Construct();
-    void Init(class UTexture2D* Texture_0);
+    UE_BLUEPRINT_CALLABLE void Init(class UTexture2D* Texture_0);
 };
 
 }}}   // namespace Game::WeaponsNTools::LaserPointer

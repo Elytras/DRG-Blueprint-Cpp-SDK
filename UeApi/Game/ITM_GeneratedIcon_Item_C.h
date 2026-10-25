@@ -66,7 +66,7 @@ public:
     void SetIconSize(int InSize);
     void SetShowBorders(bool InBorderVisible);
     void ReleaseRenderTarget();
-    void SetRenderTarget(class UTextureRenderTarget2D* InTexture);
+    UE_PRIVATE void SetRenderTarget(class UTextureRenderTarget2D* InTexture);
     void SetShowBackground(bool InBackgroundVisible);
     UE_PURE class UWidget* GetIconToolTip();
     UE_PURE class UMaterialInstanceDynamic* GetRenderTarget();

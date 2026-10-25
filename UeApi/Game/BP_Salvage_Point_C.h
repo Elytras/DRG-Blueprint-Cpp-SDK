@@ -25,7 +25,7 @@ public:
     void EnableRepair();
     void OnDefenseStart();
     void OnDefenseComplete();
-    void OnRep_State();
+    UE_BLUEPRINT_CALLABLE void OnRep_State();
     void SetSalvagePointState(uint8 State);
 private:
     struct UeMarkers

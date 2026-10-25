@@ -16,9 +16,9 @@ public:
     UE_CLASS("/Game/Character/States/BP_FrozenState", "BP_FrozenState_C");
     FPointerToUberGraphFrame UberGraphFrame;
     void ExecuteUbergraph_BP_FrozenState(int EntryPoint);
-    void ReceiveOnDefrosting();
-    void ReceiveStateExit();
-    void ReceiveStateEnter();
+    UE_PROTECTED void ReceiveOnDefrosting();
+    UE_PROTECTED void ReceiveStateExit();
+    UE_PROTECTED void ReceiveStateEnter();
 };
 
 }}}   // namespace Game::Character::States

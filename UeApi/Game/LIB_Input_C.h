@@ -17,7 +17,7 @@ class LIB_Input_C : public UBlueprintFunctionLibrary
 {
 public:
     UE_CLASS("/Game/UI/LIB_Input", "LIB_Input_C");
-    static bool IsCloseOrBackMenu(FKeyEvent& Input, class UObject* __WorldContext);
+    UE_BLUEPRINT_PURE static bool IsCloseOrBackMenu(FKeyEvent& Input, class UObject* __WorldContext);
     UE_PURE static bool IsCloseOrBackMenuKey(FKey InKey, class UObject* __WorldContext);
     UE_PURE static bool IsOkMenu(const FKeyEvent& Input, class UObject* __WorldContext);
     UE_PURE static bool IsUseButton(const FKeyEvent& Input, class UObject* __WorldContext);

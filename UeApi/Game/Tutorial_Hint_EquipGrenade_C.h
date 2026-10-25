@@ -19,8 +19,8 @@ public:
     float FirstTimeDelay;
     float AfterUseDelay;
     void ExecuteUbergraph_Tutorial_Hint_EquipGrenade(int EntryPoint);
-    void ReceiveOnHidden();
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnHidden();
+    UE_PROTECTED void ReceiveOnInitialized();
     void GrenadeThrown();
 };
 

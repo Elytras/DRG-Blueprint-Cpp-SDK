@@ -29,7 +29,7 @@ public:
     bool wasLastEquippedItemTool;
     void ExecuteUbergraph_Tutorial_Hint_PlagueWarning_SporeTowerCleaning_BoscoGrabThatTool(int EntryPoint);
     void OnItemEquipped_LithoFoamer(class AItem* Item);
-    void ReceiveOnInitialized();
+    UE_PROTECTED void ReceiveOnInitialized();
 };
 
 }}}   // namespace Game::Character::Tutorials

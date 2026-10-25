@@ -112,7 +112,7 @@ public:
     void DoGlow();
     void BndEvt__Health_K2Node_ComponentBoundEvent_2_DamageSig__DelegateSignature(float amount);
     void BndEvt__Health_K2Node_ComponentBoundEvent_0_DeathSig__DelegateSignature(class UHealthComponentBase* HealthComponent);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void GlowIntensity__UpdateFunc();
     void GlowIntensity__FinishedFunc();
     void OnRep_IsOpen();
@@ -120,12 +120,12 @@ public:
     void LaunchSeed(FVector& TargetLocation, class UClass* ProjectileClass);
     void SpawnGems();
     UE_PURE int ClampMaxShooters(int DesiredCount);
-    int GetMaxAllowedHealersToSpawn();
-    void ArePlayersInRange(float Distance, bool& InRange);
+    UE_BLUEPRINT_PURE int GetMaxAllowedHealersToSpawn();
+    UE_BLUEPRINT_PURE void ArePlayersInRange(float Distance, bool& InRange);
     void OnRep_IsHealthbarVisible();
-    class UMeshComponent* Receive_GetMeshComponent() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class UMeshComponent* Receive_GetMeshComponent() const;
     UE_PURE bool GetIsTargetable() const;
-    class USkeletalMeshComponent* GetMesh() const;
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE class USkeletalMeshComponent* GetMesh() const;
     UE_PURE FVector GetTargetCenterMass() const;
 private:
     struct UeMarkers

@@ -24,7 +24,7 @@ public:
     void ExecuteUbergraph_LVL_Loading_DeepDive_B(int EntryPoint);
     void PlayerStop();
     void PlayerStart(class ULevelSequence* LoaderLevelSequence);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
     void Start_Player(class ULevelSequence* LevelSequence);
     void StopPlayer();
 private:

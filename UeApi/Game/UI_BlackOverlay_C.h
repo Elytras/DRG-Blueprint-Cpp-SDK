@@ -35,7 +35,7 @@ public:
     void ExecuteUbergraph_UI_BlackOverlay(int EntryPoint);
     void SetFadeProgress(float fade_0, bool ToSpaceRig_0, class UTexture* LoadingImage_0);
     UE_COSMETIC void PreConstruct(bool IsDesignTime);
-    void SetProgress(float InFade, bool InToSpacerig, class UTexture* InLoadingImage);
+    UE_BLUEPRINT_CALLABLE void SetProgress(float InFade, bool InToSpacerig, class UTexture* InLoadingImage);
 };
 
 }}}   // namespace Game::UI::Global_UI_Elements

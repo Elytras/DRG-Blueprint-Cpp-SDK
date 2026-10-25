@@ -17,7 +17,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame_BP_GreenMaggot_AcidCloud_C;
     float InitialDamageDelay;
     void ExecuteUbergraph_BP_GreenMaggot_AcidCloud(int EntryPoint);
-    void ReceiveBeginPlay();
+    UE_PROTECTED void ReceiveBeginPlay();
 private:
     struct UeMarkers
     {

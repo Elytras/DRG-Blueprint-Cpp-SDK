@@ -10855,6 +10855,14 @@ private:
     };
 };
 
+class ITriggerAI
+{
+public:
+    UE_CLASS("/Script/FSD", "TriggerAI");
+    void OnMessageAI(FName TriggerName);
+    bool OnTriggerAI(FName TriggerName);
+};
+
 class UFuelCannisterItemAnimInstance : public UAnimInstance
 {
 public:
@@ -11111,6 +11119,13 @@ private:
     };
 };
 
+class IUpgradableGear
+{
+public:
+    UE_CLASS("/Script/FSD", "UpgradableGear");
+    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
+};
+
 class UCharacterStateComponent : public UActorComponent
 {
 public:
@@ -11334,6 +11349,16 @@ class ABhaBarnacle : public ATaggedActor
 public:
     UE_CLASS("/Script/FSD", "BhaBarnacle");
     bool IsDead;
+};
+
+class ITargetable
+{
+public:
+    UE_CLASS("/Script/FSD", "Targetable");
+    UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
+    UE_PURE bool GetIsTargetable() const;
+    UE_PURE FVector GetTargetCenterMass() const;
+    UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
 };
 
 class ADisplayCase : public AActor
@@ -12078,6 +12103,13 @@ private:
     };
 };
 
+class IPlagueCleaning
+{
+public:
+    UE_CLASS("/Script/FSD", "PlagueCleaning");
+    class UInfectionPointCleaningComponent* GetCleaningPoints(FVector fromLocation);
+};
+
 class AFSDPawn : public APawn
 {
 public:
@@ -12330,6 +12362,15 @@ private:
         static constexpr const char* Upgradable__UeSubobject = "Upgradable /Script/FSD.UpgradableBoscoComponent";
         static constexpr const char* temperature__UeSubobject = "temperature /Script/FSD.EnemyTemperatureComponent";
     };
+};
+
+class IBossFightInterface
+{
+public:
+    UE_CLASS("/Script/FSD", "BossFightInterface");
+    class AActor* GetBossActor();
+    TSubclassOf<class UBossFightWidget> GetWidgetClass();
+    bool IsStillValid();
 };
 
 class UAttackBaseComponent : public UActorComponent
@@ -14168,6 +14209,19 @@ private:
     };
 };
 
+class IEventParticipant
+{
+public:
+    UE_CLASS("/Script/FSD", "EventParticipant");
+    bool AddEventProgress(float Progress);
+    bool AdvanceOneObjective();
+    void OnEventFinished(bool eventSuccess);
+    void OnEventOpened();
+    void OnEventProgress(float Progress);
+    void OnEventTriggered();
+    bool SetupEvent(class AGameEvent* GameEvent);
+};
+
 class AEventSpawnTimer : public AActor
 {
 public:
@@ -15601,6 +15655,14 @@ public:
     void OnItemSkinned(class USkinEffect* Skin);
 };
 
+class ISpawnReleasedActor
+{
+public:
+    UE_CLASS("/Script/FSD", "SpawnReleasedActor");
+    bool OnSpawnRelease_Attached(class AActor* Parent);
+    bool OnSpawnRelease_Released();
+};
+
 class AGooGunPuddle : public AActor
 {
 public:
@@ -15634,6 +15696,13 @@ private:
         static constexpr const char* SimpleHealth__UeSubobject = "SimpleHealth /Script/FSD.SimpleHealthComponent";
         static constexpr const char* SphereTrigger__UeSubobject = "SphereTrigger /Script/Engine.SphereComponent";
     };
+};
+
+class IStatusAddedComponent
+{
+public:
+    UE_CLASS("/Script/FSD", "StatusAddedComponent");
+    void InitializeEffect(class UStatusEffect* Effect, class AActor* EffectOwner);
 };
 
 class UGrabbedStateComponent : public UCharacterStateComponent
@@ -22955,13 +23024,6 @@ private:
     };
 };
 
-class IUpgradableGear
-{
-public:
-    UE_CLASS("/Script/FSD", "UpgradableGear");
-    void GetGearStatEntry(class AFSDPlayerState* PlayerState, TArray<FGearStatEntry>& Stats) const;
-};
-
 class UBTTask_MessageAI : public UBTTaskNode
 {
 public:
@@ -26298,15 +26360,6 @@ private:
     };
 };
 
-class IBossFightInterface
-{
-public:
-    UE_CLASS("/Script/FSD", "BossFightInterface");
-    class AActor* GetBossActor();
-    TSubclassOf<class UBossFightWidget> GetWidgetClass();
-    bool IsStillValid();
-};
-
 class UAnimNotify_FootStep : public UAnimNotify
 {
 public:
@@ -27227,16 +27280,6 @@ private:
         static constexpr const char* TotalCollected__Replicated = ":";
         static constexpr const char* FullFlag__Replicated = "OnRep_FullFlag:";
     };
-};
-
-class ITargetable
-{
-public:
-    UE_CLASS("/Script/FSD", "Targetable");
-    UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
-    UE_PURE bool GetIsTargetable() const;
-    UE_PURE FVector GetTargetCenterMass() const;
-    UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
 };
 
 class UCarriableInstantUsable : public UInstantUsable
@@ -34627,19 +34670,6 @@ public:
     UE_READONLY FLinearColor BackgroundTint;
 };
 
-class IEventParticipant
-{
-public:
-    UE_CLASS("/Script/FSD", "EventParticipant");
-    bool AddEventProgress(float Progress);
-    bool AdvanceOneObjective();
-    void OnEventFinished(bool eventSuccess);
-    void OnEventOpened();
-    void OnEventProgress(float Progress);
-    void OnEventTriggered();
-    bool SetupEvent(class AGameEvent* GameEvent);
-};
-
 class UGameFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
@@ -35392,14 +35422,6 @@ public:
     static UPresenceSubSystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
-class ITriggerAI
-{
-public:
-    UE_CLASS("/Script/FSD", "TriggerAI");
-    void OnMessageAI(FName TriggerName);
-    bool OnTriggerAI(FName TriggerName);
-};
-
 class IAquisitionable
 {
 public:
@@ -35523,13 +35545,6 @@ private:
         static constexpr const char* OnImpactedEvent__UeDispatcher = "Assignable";
         static constexpr const char* OnHighAcceleration__UeDispatcher = "Assignable";
     };
-};
-
-class IPlagueCleaning
-{
-public:
-    UE_CLASS("/Script/FSD", "PlagueCleaning");
-    class UInfectionPointCleaningComponent* GetCleaningPoints(FVector fromLocation);
 };
 
 class IWeaponFireOwner
@@ -35860,14 +35875,6 @@ class IRejoinListener
 {
 public:
     UE_CLASS("/Script/FSD", "RejoinListener");
-};
-
-class ISpawnReleasedActor
-{
-public:
-    UE_CLASS("/Script/FSD", "SpawnReleasedActor");
-    bool OnSpawnRelease_Attached(class AActor* Parent);
-    bool OnSpawnRelease_Released();
 };
 
 class UAnimNotify_CycleItemComplete : public UAnimNotify
@@ -41605,13 +41612,6 @@ public:
     void AddStatCount(FString Key, int Count);
     void AddStatValue(FString Key, float Value);
     static UStatHat* Get(class UObject* WorldContextObject = nullptr);
-};
-
-class IStatusAddedComponent
-{
-public:
-    UE_CLASS("/Script/FSD", "StatusAddedComponent");
-    void InitializeEffect(class UStatusEffect* Effect, class AActor* EffectOwner);
 };
 
 class UTerrainScannerStaticMesh : public UStaticMeshComponent

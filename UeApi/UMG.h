@@ -585,6 +585,13 @@ private:
     };
 };
 
+class IUserObjectListEntry
+{
+public:
+    UE_CLASS("/Script/UMG", "UserObjectListEntry");
+    void OnListItemObjectSet(class UObject* ListItemObject);
+};
+
 class URichTextBlockDecorator : public UObject
 {
 public:
@@ -1855,13 +1862,6 @@ private:
         static constexpr const char* OnKeySelected__UeDispatcher = "Assignable";
         static constexpr const char* OnIsSelectingKeyChanged__UeDispatcher = "Assignable";
     };
-};
-
-class IUserObjectListEntry
-{
-public:
-    UE_CLASS("/Script/UMG", "UserObjectListEntry");
-    void OnListItemObjectSet(class UObject* ListItemObject);
 };
 
 class UUserObjectListEntryLibrary : public UBlueprintFunctionLibrary

@@ -592,6 +592,10 @@ method but an override of a parent's event - and the variables that are not priv
 #define UE_CATEGORY__JOIN(A, B) UE_CATEGORY__JOIN2(A, B)
 #define UE_CATEGORY(Text) static constexpr const char *UE_CATEGORY__JOIN(UeCategory__, __COUNTER__) = Text
 
+/* The named reference parameter of the next method is an output pin, not an input-reference pin.
+   C++ callers still pass a variable by reference. Put this on the declaration: UE_OUT(Result);. */
+#define UE_OUT(Param) static constexpr const char *UE_CATEGORY__JOIN(UeOutParam__, __COUNTER__) = #Param
+
 /*
 The tooltip and the search keywords of the method that follows, as the editor's Details panel of a function sets them:
 

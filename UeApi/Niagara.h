@@ -2077,6 +2077,13 @@ private:
     };
 };
 
+class INiagaraParticleCallbackHandler
+{
+public:
+    UE_CLASS("/Script/Niagara", "NiagaraParticleCallbackHandler");
+    void ReceiveParticleData(const TArray<FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem);
+};
+
 class UMovieSceneNiagaraTrack : public UMovieSceneNameableTrack
 {
 public:
@@ -2456,13 +2463,6 @@ class UNiagaraDataInterfaceDebugDraw : public UNiagaraDataInterface
 {
 public:
     UE_CLASS("/Script/Niagara", "NiagaraDataInterfaceDebugDraw");
-};
-
-class INiagaraParticleCallbackHandler
-{
-public:
-    UE_CLASS("/Script/Niagara", "NiagaraParticleCallbackHandler");
-    void ReceiveParticleData(const TArray<FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem);
 };
 
 class UNiagaraDataInterfaceExport : public UNiagaraDataInterface

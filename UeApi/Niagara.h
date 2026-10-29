@@ -164,6 +164,14 @@ enum class ENiagaraCompileUsageStaticSwitch : uint8
     ENiagaraCompileUsageStaticSwitch_MAX = 5,
 };
 
+enum class ENiagaraCoordinateSpace : uint8
+{
+    Simulation                  = 0,
+    World                       = 1,
+    Local                       = 2,
+    ENiagaraCoordinateSpace_MAX = 3,
+};
+
 enum class ENiagaraCullReaction : uint32
 {
     Deactivate                = 0,

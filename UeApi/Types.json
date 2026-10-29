@@ -819,6 +819,7 @@
     "ENiagaraBindingSource": {"package": "/Script/Niagara", "name": "ENiagaraBindingSource", "underlying": "uint8", "first": "ImplicitFromSource", "form": "TEnumAsByte"},
     "ENiagaraCollisionMode": {"package": "/Script/Niagara", "name": "ENiagaraCollisionMode", "underlying": "uint8", "first": "None"},
     "ENiagaraCompileUsageStaticSwitch": {"package": "/Script/Niagara", "name": "ENiagaraCompileUsageStaticSwitch", "underlying": "uint8", "first": "Spawn"},
+    "ENiagaraCoordinateSpace": {"package": "/Script/Niagara", "name": "ENiagaraCoordinateSpace", "underlying": "uint8", "first": "Simulation"},
     "ENiagaraCullReaction": {"package": "/Script/Niagara", "name": "ENiagaraCullReaction", "underlying": "uint32", "first": "Deactivate", "form": "EnumClass"},
     "ENiagaraDataSetType": {"package": "/Script/Niagara", "name": "ENiagaraDataSetType", "underlying": "uint8", "first": "ParticleData", "form": "EnumClass"},
     "ENiagaraDebugHudFont": {"package": "/Script/Niagara", "name": "ENiagaraDebugHudFont", "underlying": "uint32", "first": "Small", "form": "EnumClass"},

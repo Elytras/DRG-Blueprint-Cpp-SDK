@@ -62,6 +62,21 @@ int32 Sounds = UeAssets::USoundWave::All.Num();
 | `UeApi/NotCallable.json`          | the functions that are neither BlueprintCallable nor a BlueprintEvent (RPCs, `OnRep_*`, exec commands), which an event can't bind |
 | `UeApi/UeMeta.h`, `UeApi/Types.h` | hand-written: `UE_CLASS` / `UE_STRUCT` / `UE_ENUM` macros and integer spellings                                                   |
 | `UeAssets/<Class>.h`              | every game asset of that class, named by its path (Blueprint classes are in `UeApi/Game`)                                         |
+| `Extensions/`                     | APIs of other mods (ModHub's interfaces, Elytras Mod Manager's API), over the vanilla `UeApi/`: see below                         |
+
+## Extensions
+
+`UeApi/` is the stock game only. `Extensions/` holds the APIs that are not the game's own but that many mods build
+against: ModHub's six interfaces (`Extensions/ModHub`) and Elytras Mod Manager's public API (`Extensions/EMM`). A mod
+includes them by path, with `UeApi/` and `Extensions/` side by side:
+
+```cpp
+#include "../Extensions/ModHub/ModHubApi.h"
+#include "../Extensions/EMM/EmmApi_C.h"
+```
+
+They are imported, never cooked into your pak, so players need the mod that provides each API installed: ModHub,
+Unified UI or EMM for `ModHub/`, EMM for `EMM/`. `Extensions/README.md` lists what each one matches, and the rules.
 
 ## Regenerating after a game update
 

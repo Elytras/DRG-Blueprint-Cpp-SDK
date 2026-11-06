@@ -2204,6 +2204,8 @@ public:
     FIntPoint FramesPerDimension;
     TArray<FNiagaraBakerTextureSettings> OutputTextures;
     TEnum<ENiagaraBakerViewMode> CameraViewportMode;
+    FVector CameraViewportLocation[7];
+    FRotator CameraViewportRotation[7];
     float CameraOrbitDistance;
     float CameraFOV;
     float CameraOrthoWidth;

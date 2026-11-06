@@ -324,6 +324,22 @@ template <class T> T *NewObject(class UObject *Outer, const char *Name);
 #define UE_INSTANCED(Type, Outer, Name) NewObject<Type>(Outer, Name)
 
 /*
+An asset whose defaults are statements, so that it can hold objects of its own, as a particle system holds its emitters
+and modules. It is cooked at <UE_MOD_PACKAGE>/<namespace folders>/<Name>, as a braced asset is, and `&Name` points at
+it. The block is read as a class's UE_DEFAULTS is, with `this` the asset:
+    UE_ASSET_DEFAULTS(UParticleSystem, P_Zap) {
+      UParticleSpriteEmitter *Bolts = UE_INSTANCED(UParticleSpriteEmitter, this, "Bolts");
+      Emitters = {Bolts};
+    }
+*/
+#define UE_ASSET_DEFAULTS(Type, Name)                                                                                  \
+  extern Type Name;                                                                                                    \
+  struct UeAssetDefaults__##Name : Type {                                                                              \
+    void UeDefaults__();                                                                                               \
+  };                                                                                                                   \
+  inline void UeAssetDefaults__##Name::UeDefaults__()
+
+/*
 A widget of a UUserWidget class's designer tree, which the class's constructor lays out:
     UE_WIDGET(UCanvasPanel, Root);                   // the first UE_WIDGET is the tree's root
     UE_WIDGET(UTextBlock, Title);

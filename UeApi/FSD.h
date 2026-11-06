@@ -11156,16 +11156,21 @@ public:
     float MaxPitch;
 };
 
-class ATargetDummyPawn : public AActor
+class ITargetable
+{
+public:
+    UE_CLASS("/Script/FSD", "Targetable");
+    UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
+    UE_PURE bool GetIsTargetable() const;
+    UE_PURE FVector GetTargetCenterMass() const;
+    UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
+};
+
+class ATargetDummyPawn : public AActor, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "TargetDummyPawn");
     FGameplayTagContainer GameplayTags;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
-    };
 };
 
 class UWeaponFireComponent : public UActorComponent
@@ -11349,16 +11354,6 @@ class ABhaBarnacle : public ATaggedActor
 public:
     UE_CLASS("/Script/FSD", "BhaBarnacle");
     bool IsDead;
-};
-
-class ITargetable
-{
-public:
-    UE_CLASS("/Script/FSD", "Targetable");
-    UE_AUTHORITY_ONLY void ShowDamageEffects(class UParticleSystem* Particles, FVector Location, FRotator Orientation);
-    UE_PURE bool GetIsTargetable() const;
-    UE_PURE FVector GetTargetCenterMass() const;
-    UE_PURE class UHealthComponentBase* GetTargetHealthComponent() const;
 };
 
 class ADisplayCase : public AActor
@@ -12199,7 +12194,7 @@ private:
     };
 };
 
-class ABosco : public ADeepPathfinderCharacter
+class ABosco : public ADeepPathfinderCharacter, public ITriggerAI, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "Bosco");
@@ -12324,7 +12319,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITriggerAI IUpgradableGear";
         static constexpr const char* OnReviveused__UeDispatcher = "Assignable";
         static constexpr const char* OnStateChanged__UeDispatcher = "Assignable";
         static constexpr const char* RotateTarget__Replicated = ":";
@@ -12508,7 +12502,7 @@ private:
     };
 };
 
-class AFlare : public AFSDPhysicsActor
+class AFlare : public AFSDPhysicsActor, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "Flare");
@@ -12541,7 +12535,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
         static constexpr const char* Duration__Replicated = ":";
         static constexpr const char* IsFlareOn__Replicated = "OnRep_IsFlareOn:";
         static constexpr const char* IsInfiniteLight__Replicated = ":";
@@ -12829,7 +12822,7 @@ private:
     };
 };
 
-class ACoreCorruptionCrystal : public APawn
+class ACoreCorruptionCrystal : public APawn, public IBossFightInterface
 {
 public:
     UE_CLASS("/Script/FSD", "CoreCorruptionCrystal");
@@ -12900,7 +12893,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IBossFightInterface";
         static constexpr const char* OnStateChanged__UeDispatcher = "Assignable";
         static constexpr const char* Rift__Replicated = ":";
         static constexpr const char* Pillar__Replicated = ":";
@@ -13047,7 +13039,7 @@ private:
     };
 };
 
-class AEnemyDeepPathfinderCharacter : public ADeepPathfinderCharacter
+class AEnemyDeepPathfinderCharacter : public ADeepPathfinderCharacter, public ITriggerAI
 {
 public:
     UE_CLASS("/Script/FSD", "EnemyDeepPathfinderCharacter");
@@ -13058,7 +13050,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITriggerAI";
         static constexpr const char* QueuedMontage__Replicated = "OnRep_QueuedMontage:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
@@ -14130,7 +14121,7 @@ private:
     };
 };
 
-class AEscortMule : public AFSDPawn
+class AEscortMule : public AFSDPawn, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "EscortMule");
@@ -14183,7 +14174,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* OnMuleActivated__UeDispatcher = "Assignable";
         static constexpr const char* OnSpeedChanged__UeDispatcher = "Assignable";
         static constexpr const char* OnFullCanistersChanged__UeDispatcher = "Assignable";
@@ -15919,7 +15909,7 @@ private:
     };
 };
 
-class AGuntowerWeakPoint : public AFSDPawn
+class AGuntowerWeakPoint : public AFSDPawn, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "GuntowerWeakPoint");
@@ -15937,7 +15927,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
         static constexpr const char* HitGlow__UeSubobject = "WeakpointGlow /Script/FSD.WeakpointGlowComponent";
         static constexpr const char* Mesh__UeSubobject = "StaticMesh /Script/Engine.StaticMeshComponent";
@@ -17094,7 +17083,7 @@ private:
     };
 };
 
-class AMiniMule : public AMULE
+class AMiniMule : public AMULE, public ITriggerAI
 {
 public:
     UE_CLASS("/Script/FSD", "MiniMule");
@@ -17106,7 +17095,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITriggerAI";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.HealthComponent";
         static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -18322,7 +18310,7 @@ public:
     void Ricochet(const FHitResult& HitResult, const FVector& RelativeLocation);
 };
 
-class ARiftCrystal : public APawn
+class ARiftCrystal : public APawn, public IBossFightInterface
 {
 public:
     UE_CLASS("/Script/FSD", "RiftCrystal");
@@ -18417,7 +18405,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IBossFightInterface";
         static constexpr const char* OnStateChanged__UeDispatcher = "Assignable";
         static constexpr const char* State__Replicated = "OnRep_State:";
         static constexpr const char* Bobber__UeSubobject = "BobbingComponent /Script/FSD.RotatingSceneComponent";
@@ -18731,7 +18718,18 @@ private:
     };
 };
 
-class ARedeployableSentryGun : public ASentryGun
+class IWeaponFireOwner
+{
+public:
+    UE_CLASS("/Script/FSD", "WeaponFireOwner");
+    UE_PURE bool GetIsFirstPerson() const;
+    UE_PURE bool GetIsLocallyControlled() const;
+    UE_PURE FVector GetMuzzleLocation() const;
+    UE_PURE FQuat GetMuzzleQuat() const;
+    UE_PURE class APlayerCharacter* GetPlayerCharacter() const;
+};
+
+class ARedeployableSentryGun : public ASentryGun, public IWeaponFireOwner
 {
 public:
     UE_CLASS("/Script/FSD", "RedeployableSentryGun");
@@ -19686,7 +19684,7 @@ private:
     };
 };
 
-class AAFlyingBug : public AEnemyDeepPathfinderCharacter
+class AAFlyingBug : public AEnemyDeepPathfinderCharacter, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "AFlyingBug");
@@ -19821,7 +19819,17 @@ private:
     };
 };
 
-class ASpiderEnemy : public AEnemyDeepPathfinderCharacter
+class INetMontageAble
+{
+public:
+    UE_CLASS("/Script/FSD", "NetMontageAble");
+    float QueueMontage(class UAnimMontage* Montage);
+    UE_PURE class UAnimInstance* GetAnimInstance() const;
+    UE_PURE FName GetCenterOfMassSocketName() const;
+    UE_PURE class USkeletalMeshComponent* GetSkeletalMesh() const;
+};
+
+class ASpiderEnemy : public AEnemyDeepPathfinderCharacter, public INetMontageAble, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "SpiderEnemy");
@@ -19840,7 +19848,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* LookAtTarget__Replicated = "OnRep_LookAtTarget:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
@@ -19880,7 +19887,7 @@ private:
     };
 };
 
-class AInsectSwarmEnemy : public AEnemyDeepPathfinderCharacter
+class AInsectSwarmEnemy : public AEnemyDeepPathfinderCharacter, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "InsectSwarmEnemy");
@@ -19888,7 +19895,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
         static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -20057,7 +20063,7 @@ private:
     };
 };
 
-class AFacilityTentacle : public ATentacleBase
+class AFacilityTentacle : public ATentacleBase, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "FacilityTentacle");
@@ -20075,7 +20081,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* TentacleState__Replicated = "OnRep_TentacleState:";
         static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
@@ -20129,7 +20134,7 @@ private:
     };
 };
 
-class ASpinningFacilityturret : public AFacilityTurret
+class ASpinningFacilityturret : public AFacilityTurret, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "SpinningFacilityturret");
@@ -20142,7 +20147,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* TargetRotation__Replicated = ":";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
@@ -20157,7 +20161,7 @@ private:
     };
 };
 
-class AAimingFacilityTurret : public AFacilityTurret
+class AAimingFacilityTurret : public AFacilityTurret, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "AimingFacilityTurret");
@@ -20191,7 +20195,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* IsLockedOn__Replicated = "OnRep_IsLockedOn:";
         static constexpr const char* IndicatorMode__Replicated = "OnRep_IndicatorMode:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
@@ -20298,7 +20301,7 @@ private:
     };
 };
 
-class AHydraWeedCore : public AEnemyPawn
+class AHydraWeedCore : public AEnemyPawn, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedCore");
@@ -20308,7 +20311,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
         static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
@@ -20523,7 +20525,7 @@ private:
     };
 };
 
-class ACaveWorm : public ADeepPathfinderCharacter
+class ACaveWorm : public ADeepPathfinderCharacter, public ITriggerAI
 {
 public:
     UE_CLASS("/Script/FSD", "CaveWorm");
@@ -20538,7 +20540,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITriggerAI";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.SimpleHealthComponent";
         static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -20567,7 +20568,7 @@ private:
     };
 };
 
-class AScrab : public AEnemyDeepPathfinderCharacter
+class AScrab : public AEnemyDeepPathfinderCharacter, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "Scrab");
@@ -20616,7 +20617,7 @@ private:
     };
 };
 
-class AParasiteEnemy : public AEnemyPawn
+class AParasiteEnemy : public AEnemyPawn, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "ParasiteEnemy");
@@ -20631,7 +20632,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
         static constexpr const char* Mesh__UeSubobject = "Mesh /Script/Engine.SkeletalMeshComponent";
@@ -20779,7 +20779,7 @@ private:
     };
 };
 
-class APitJaw : public AEnemyPawn
+class APitJaw : public AEnemyPawn, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "PitJaw");
@@ -20844,7 +20844,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* RelocationPoints__Replicated = ":";
         static constexpr const char* State__Replicated = "OnRep_State:";
         static constexpr const char* Target__Replicated = ":";
@@ -20867,7 +20866,7 @@ private:
     };
 };
 
-class ASharkEnemy : public AEnemyDeepPathfinderCharacter
+class ASharkEnemy : public AEnemyDeepPathfinderCharacter, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "SharkEnemy");
@@ -20960,7 +20959,7 @@ private:
     };
 };
 
-class AProspectorRobot : public AEnemyDeepPathfinderCharacter
+class AProspectorRobot : public AEnemyDeepPathfinderCharacter, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "ProspectorRobot");
@@ -20982,7 +20981,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* ProspectorState__Replicated = "OnRep_ProspectorState:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.DeepPatherFinderCharacterAfflictionComponent";
         static constexpr const char* HealthComponent__UeSubobject = "HealthComponent /Script/FSD.EnemyHealthComponent";
@@ -20994,7 +20992,7 @@ private:
     };
 };
 
-class AHydraWeedShooter : public AShootingPlant
+class AHydraWeedShooter : public AShootingPlant, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedShooter");
@@ -21002,7 +21000,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
         static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
@@ -21013,7 +21010,7 @@ private:
     };
 };
 
-class AHydraWeedHealer : public AEnemyPawn
+class AHydraWeedHealer : public AEnemyPawn, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "HydraWeedHealer");
@@ -21021,7 +21018,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
         static constexpr const char* PawnStatsInstance__UeSubobject = "Stats /Script/FSD.PawnStatsComponent";
@@ -21032,7 +21028,7 @@ private:
     };
 };
 
-class AStabberVine : public ATentacleBase
+class AStabberVine : public ATentacleBase, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "StabberVine");
@@ -21041,7 +21037,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
@@ -21080,7 +21075,7 @@ private:
     };
 };
 
-class ATentaclePlant : public AShootingPlant
+class ATentaclePlant : public AShootingPlant, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "TentaclePlant");
@@ -21099,7 +21094,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* IsVulnerable__Replicated = "OnRep_IsVulnerable:";
         static constexpr const char* Affliction__UeSubobject = "Affliction /Script/FSD.EnemyPawnAfflictionComponent";
         static constexpr const char* Health__UeSubobject = "Health /Script/FSD.EnemyHealthComponent";
@@ -21111,7 +21105,7 @@ private:
     };
 };
 
-class ATerminatorTentacle : public ATentacleBase
+class ATerminatorTentacle : public ATentacleBase, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "TerminatorTentacle");
@@ -21140,7 +21134,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "ITargetable";
         static constexpr const char* OnTentacleStateChangedEvent__UeDispatcher = "Assignable";
         static constexpr const char* TentacleState__Replicated = "OnRep_TentacleState:";
         static constexpr const char* DesiredTarget__Replicated = "OnRep_DesiredTarget:";
@@ -21179,7 +21172,7 @@ private:
     };
 };
 
-class AWoodLouse : public AEnemyDeepPathfinderCharacter
+class AWoodLouse : public AEnemyDeepPathfinderCharacter, public ITargetable
 {
 public:
     UE_CLASS("/Script/FSD", "WoodLouse");
@@ -21717,7 +21710,7 @@ private:
     };
 };
 
-class AAmmoDrivenWeapon : public AAnimatedItem
+class AAmmoDrivenWeapon : public AAnimatedItem, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "AmmoDrivenWeapon");
@@ -21827,7 +21820,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
         static constexpr const char* OnClipCountChanged__UeDispatcher = "Assignable";
         static constexpr const char* OnTryReloadEvent__UeDispatcher = "Assignable";
         static constexpr const char* OnReloadingEvent__UeDispatcher = "Assignable";
@@ -30655,7 +30647,7 @@ public:
     UE_PURE bool TagQueryMatches(const FDetailedTagQuery& InQuery, const FDetailedTagSet& InTags);
 };
 
-class ADetPackItem : public AAnimatedItem
+class ADetPackItem : public AAnimatedItem, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "DetPackItem");
@@ -30697,7 +30689,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
         static constexpr const char* IsDetonatorOut__Replicated = "OnRep_IsDetonatorOut:";
         static constexpr const char* HasThrownPack__Replicated = ":";
         static constexpr const char* Capacity__UeSubobject = "Aggregator /Script/FSD.CapacityHoldingItemAggregator";
@@ -30824,7 +30815,7 @@ public:
     UE_CLASS("/Script/FSD", "DoubleDrillAggregator");
 };
 
-class ADoubleDrillItem : public ADualAnimatedItem
+class ADoubleDrillItem : public ADualAnimatedItem, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "DoubleDrillItem");
@@ -30891,7 +30882,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
         static constexpr const char* IsMining__Replicated = "OnRep_SimulatingMining:";
         static constexpr const char* IsGunslinging__Replicated = "OnRep_IsGunslinging:";
         static constexpr const char* Aggregator__UeSubobject = "Aggregator /Script/FSD.DoubleDrillAggregator";
@@ -35134,7 +35124,14 @@ public:
     TArray<FRoomLinePoint> Points;
 };
 
-class AHeavyParticleCannon : public AAmmoDrivenWeapon
+class IUpgradable
+{
+public:
+    UE_CLASS("/Script/FSD", "Upgradable");
+    void Upgraded(const TArray<class UItemUpgrade*>& Upgrades);
+};
+
+class AHeavyParticleCannon : public AAmmoDrivenWeapon, public IUpgradable
 {
 public:
     UE_CLASS("/Script/FSD", "HeavyParticleCannon");
@@ -35197,7 +35194,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradable";
         static constexpr const char* OnBoosterActiveChanged__UeDispatcher = "Assignable";
         static constexpr const char* BoostActive__Replicated = "OnRep_BoostActive:";
         static constexpr const char* bIsBeamActive__Replicated = "OnRep_bIsBeamActive:";
@@ -35547,27 +35543,6 @@ private:
     };
 };
 
-class IWeaponFireOwner
-{
-public:
-    UE_CLASS("/Script/FSD", "WeaponFireOwner");
-    UE_PURE bool GetIsFirstPerson() const;
-    UE_PURE bool GetIsLocallyControlled() const;
-    UE_PURE FVector GetMuzzleLocation() const;
-    UE_PURE FQuat GetMuzzleQuat() const;
-    UE_PURE class APlayerCharacter* GetPlayerCharacter() const;
-};
-
-class INetMontageAble
-{
-public:
-    UE_CLASS("/Script/FSD", "NetMontageAble");
-    float QueueMontage(class UAnimMontage* Montage);
-    UE_PURE class UAnimInstance* GetAnimInstance() const;
-    UE_PURE FName GetCenterOfMassSocketName() const;
-    UE_PURE class USkeletalMeshComponent* GetSkeletalMesh() const;
-};
-
 class UInfectionMasterComponent : public UActorComponent
 {
 public:
@@ -35705,6 +35680,7 @@ public:
     TArray<class AActor*> ActorsNonSelectable;
     FEquippedActorData ReplicatedEquippedActor;
     FEquippedActorData EquippedActor;
+    class AActor* LastEquippedActors[2];
     FDelayedActorSwitchData DelayedActorSwitchOldActor;
     void EquipAtIndex(int Index_0, bool ignoreUsing);
     void EquipLast();
@@ -36889,13 +36865,6 @@ public:
     void GetHunterThrowableImpactFX(class UObject* WorldContext, class AActor* InHitActor, class USoundCue*& OutSound, class UNiagaraSystem*& OutParticles) const;
     void GetHunterThrowableImpactFX(class AActor* InHitActor, class USoundCue*& OutSound, class UNiagaraSystem*& OutParticles) const;
     void PlayEventAudio(class APawn* const& InCharacter, TEnum<EPropHuntEvent> InEvent, bool InPlay2D) const;
-};
-
-class IUpgradable
-{
-public:
-    UE_CLASS("/Script/FSD", "Upgradable");
-    void Upgraded(const TArray<class UItemUpgrade*>& Upgrades);
 };
 
 class UJetBootsFuelWidget : public UFSDUserWidget
@@ -38889,7 +38858,7 @@ public:
     static bool RemovePickaxePartFromOwned(class UPickaxePart* part);
 };
 
-class APickaxeItem : public AItem
+class APickaxeItem : public AItem, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "PickaxeItem");
@@ -38959,7 +38928,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
         static constexpr const char* State__Replicated = "OnRep_State:";
         static constexpr const char* DamageComponent__UeSubobject = "Damage /Script/FSD.DamageComponent";
         static constexpr const char* FP_Root__UeSubobject = "FP_Root /Script/Engine.SceneComponent";
@@ -41157,7 +41125,7 @@ public:
     static void StopVoice();
 };
 
-class AShieldGeneratorItem : public AThrowableItem
+class AShieldGeneratorItem : public AThrowableItem, public IUpgradableGear
 {
 public:
     UE_CLASS("/Script/FSD", "ShieldGeneratorItem");
@@ -41178,7 +41146,6 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeNativeInterfaces = "IUpgradableGear";
         static constexpr const char* UnchargedCount__Replicated = "OnRep_UnchargedCount:";
         static constexpr const char* CarryCapacity__UeSubobject = "Capacity /Script/FSD.CapacityHoldingItemAggregator";
         static constexpr const char* ChargeCapacity__UeSubobject = "ChargeCapacity /Script/FSD.CapacityHoldingItemAggregator";

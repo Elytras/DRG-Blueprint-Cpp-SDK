@@ -1895,7 +1895,10 @@ class UMovieScene2DTransformSection : public UMovieSceneSection
 public:
     UE_CLASS("/Script/UMG", "MovieScene2DTransformSection");
     FMovieScene2DTransformMask TransformMask;
+    FMovieSceneFloatChannel Translation[2];
     FMovieSceneFloatChannel Rotation;
+    FMovieSceneFloatChannel Scale[2];
+    FMovieSceneFloatChannel Shear[2];
 };
 
 class UMovieSceneMarginPropertySystem : public UMovieScenePropertySystem

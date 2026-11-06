@@ -150,6 +150,7 @@ public:
     FFloatInterval ScaleX;
     FFloatInterval ScaleY;
     FFloatInterval ScaleZ;
+    FFoliageVertexColorChannelMask VertexColorMaskByChannel[4];
     TEnum<EFoliageVertexColorMask> VertexColorMask;
     float VertexColorMaskThreshold;
     bool VertexColorMaskInvert;

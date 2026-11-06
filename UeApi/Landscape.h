@@ -793,6 +793,7 @@ class ULandscapeSplineSegment : public UObject
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeSplineSegment");
+    FLandscapeSplineSegmentConnection Connections[2];
     FInterpCurveVector SplineInfo;
     TArray<FLandscapeSplineInterpPoint> Points;
     FBox Bounds;
@@ -821,6 +822,7 @@ class ULandscapeWeightmapUsage : public UObject
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeWeightmapUsage");
+    class ULandscapeComponent* ChannelUsage[4];
     FGuid LayerGuid;
 };
 

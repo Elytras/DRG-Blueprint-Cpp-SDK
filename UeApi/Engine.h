@@ -13697,6 +13697,7 @@ public:
     TMulticastInlineDelegate<void(bool bFadeOut, float FadeTime)> OnAudioFadeChangeEvent;
     TArray<class AEmitterCameraLensEffectBase*> CameraLensEffects;
     class UCameraModifier_CameraShake* CachedCameraShakeMod;
+    class UCameraAnimInst* AnimInstPool[8];
     TArray<FPostProcessSettings> PostProcessBlendCache;
     TArray<class UCameraAnimInst*> ActiveAnims;
     TArray<class UCameraAnimInst*> FreeAnims;
@@ -14737,6 +14738,7 @@ public:
     FVector MaxInput;
     FVector MinOutput;
     FVector MaxOutput;
+    TEnum<EDistributionParamMode> ParamModes[3];
 };
 
 class UMaterialExpressionMaterialAttributeLayers : public UMaterialExpression
@@ -15188,6 +15190,7 @@ class UMaterialExpressionShadingPathSwitch : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionShadingPathSwitch");
     FExpressionInput Default;
+    FExpressionInput Inputs[3];
 };
 
 class ALightmassPortal : public AActor
@@ -15637,12 +15640,14 @@ public:
     UE_CLASS("/Script/Engine", "BlendSpaceBase");
     bool bRotationBlendInMeshSpace;
     float AnimLength;
+    FInterpolationParameter InterpolationParam[3];
     float TargetWeightInterpolationSpeedPerSec;
     TEnum<ENotifyTriggerMode> NotifyTriggerMode;
     TArray<FPerBoneInterpolation> PerBoneBlend;
     int SampleIndexWithMarkers;
     TArray<FBlendSample> SampleData;
     TArray<FEditorElement> GridSamples;
+    FBlendParameter BlendParameters[3];
 };
 
 class UBlendSpace : public UBlendSpaceBase
@@ -17305,6 +17310,7 @@ class UMaterialInstance : public UMaterialInterface
 public:
     UE_CLASS("/Script/Engine", "MaterialInstance");
     class UPhysicalMaterial* PhysMaterial;
+    class UPhysicalMaterial* PhysicalMaterialMap[8];
     UE_READONLY class UMaterialInterface* Parent;
     bool bHasStaticPermutationResource;
     UE_READONLY bool bOverrideSubsurfaceProfile;
@@ -20438,6 +20444,7 @@ class UCurveLinearColor : public UCurveBase
 {
 public:
     UE_CLASS("/Script/Engine", "CurveLinearColor");
+    FRichCurve FloatCurves[4];
     float AdjustHue;
     float AdjustSaturation;
     float AdjustBrightness;
@@ -20482,6 +20489,7 @@ class UCurveVector : public UCurveBase
 {
 public:
     UE_CLASS("/Script/Engine", "CurveVector");
+    FRichCurve FloatCurves[3];
     UE_PURE FVector GetVectorValue(float InTime) const;
 };
 
@@ -21056,6 +21064,7 @@ public:
     FVector Min;
     bool bLockAxes;
     TEnum<EDistributionVectorLockFlags> LockedAxes;
+    TEnum<EDistributionVectorMirrorFlags> MirrorFlags[3];
     bool bUseExtremes;
 };
 
@@ -21117,6 +21126,8 @@ public:
     FInterpCurveTwoVectors ConstantCurve;
     bool bLockAxes1;
     bool bLockAxes2;
+    TEnum<EDistributionVectorLockFlags> LockedAxes[2];
+    TEnum<EDistributionVectorMirrorFlags> MirrorFlags[3];
     bool bUseExtremes;
 };
 
@@ -23319,6 +23330,7 @@ public:
     UE_CLASS("/Script/Engine", "Material");
     class UPhysicalMaterial* PhysMaterial;
     class UPhysicalMaterialMask* PhysMaterialMask;
+    class UPhysicalMaterial* PhysicalMaterialMap[8];
     FScalarMaterialInput Metallic;
     FScalarMaterialInput Specular;
     FScalarMaterialInput Anisotropy;
@@ -23778,6 +23790,7 @@ public:
     FExpressionInput ClearCoatRoughness;
     FExpressionInput AmbientOcclusion;
     FExpressionInput Refraction;
+    FExpressionInput CustomizedUVs[8];
     FExpressionInput PixelDepthOffset;
     FExpressionInput ShadingModel;
 };
@@ -23964,6 +23977,7 @@ class UMaterialExpressionQualitySwitch : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionQualitySwitch");
     FExpressionInput Default;
+    FExpressionInput Inputs[4];
 };
 
 class UMaterialExpressionRayTracingQualitySwitch : public UMaterialExpression

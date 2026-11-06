@@ -43,4 +43,5 @@ class UShaderPlatformQualitySettings : public UObject
 {
 public:
     UE_CLASS("/Script/MaterialShaderQualitySettings", "ShaderPlatformQualitySettings");
+    FMaterialQualityOverrides QualityOverrides[4];
 };

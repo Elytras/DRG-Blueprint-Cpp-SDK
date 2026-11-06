@@ -661,6 +661,9 @@ class UMovieScene3DTransformSection : public UMovieSceneSection
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScene3DTransformSection");
     FMovieSceneTransformMask TransformMask;
+    FMovieSceneFloatChannel Translation[3];
+    FMovieSceneFloatChannel Rotation[3];
+    FMovieSceneFloatChannel Scale[3];
     FMovieSceneFloatChannel ManualWeight;
     bool bUseQuaternionInterpolation;
 };
@@ -1267,6 +1270,7 @@ class UMovieSceneVectorSection : public UMovieSceneSection
 {
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneVectorSection");
+    FMovieSceneFloatChannel Curves[4];
     int ChannelsUsed;
 };
 

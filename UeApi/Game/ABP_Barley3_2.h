@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "InstantUsable;SimpleObjectInfo;Fruit1;Fruit2;Stem1;Stem2";
+        static constexpr const char* UeIchRecords = "Fruit1;Fruit2;InstantUsable;SimpleObjectInfo;Stem1;Stem2";
     };
 };
 

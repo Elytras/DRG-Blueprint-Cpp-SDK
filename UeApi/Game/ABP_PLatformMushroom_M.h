@@ -19,7 +19,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "LevelGenerationCarver;ICH-DefaultSceneRoot;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "ICH-DefaultSceneRoot;LevelGenerationCarver;TerrainPlacement";
         static constexpr const char* LevelGenerationCarverStem__UeScsNode = "7486099a5e33954794aac9830d4827ec";
     };
 };

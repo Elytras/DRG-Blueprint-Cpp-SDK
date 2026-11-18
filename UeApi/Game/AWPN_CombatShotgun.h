@@ -50,7 +50,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_0;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_1;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_0;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_1;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b18b4327d171804a8ca37713ce12880b";
         static constexpr const char* FirstPersonWidget__UeScsNode = "bc0ced2124bfa249a3b3d31b342ee4ac";
         static constexpr const char* Damage__UeScsNode = "982ca0b2d1b40c48a9de784db6f2b085";

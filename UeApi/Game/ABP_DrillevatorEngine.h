@@ -111,7 +111,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SingleUsableComponent UsableComponent;/Script/Engine.SkeletalMeshComponent EngineMeshComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SkeletalMeshComponent EngineMeshComponent;/Script/FSD.SingleUsableComponent UsableComponent";
         static constexpr const char* Carver__UeScsNode = "048af9b41f643b43aa4e104db385e916";
         static constexpr const char* UseCollision__UeScsNode = "116b3374a5412647bd183f4442c0c989";
         static constexpr const char* Niagara__UeScsNode = "21645a547b648f4fa89646304c008fdd";

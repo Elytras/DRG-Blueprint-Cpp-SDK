@@ -40,7 +40,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "Box;HitBox_Closed;HitBox_Open;PathfinderCollision1;ICH-DefaultSceneRoot;Mesh;WalkinTrigger;TerrainDetect;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "Box;HitBox_Closed;HitBox_Open;ICH-DefaultSceneRoot;Mesh;PathfinderCollision1;TerrainDetect;TerrainPlacement;WalkinTrigger";
         static constexpr const char* UberGraphFrame_Bp_Azure_Nenup_C__UeName = "UberGraphFrame";
         static constexpr const char* ParticleSystem__UeScsNode = "9657fab7cf01e144bce6e853fca5d201";
         static constexpr const char* PointLight__UeScsNode = "b2c014512e74f04082d97f476ad72da4";

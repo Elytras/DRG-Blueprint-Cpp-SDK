@@ -69,7 +69,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Pointer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Pointer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* FirstPersonWidget__UeScsNode = "a2ae0199ca35384aa2345b8d5d2b746a";
         static constexpr const char* FPTransform__UeScsNode = "32f1617ce0799d4dbb024cc979d25c52";
         static constexpr const char* LightBeam_Cylinder__UeScsNode = "3986a7820f25f842ab97c010ff060703";

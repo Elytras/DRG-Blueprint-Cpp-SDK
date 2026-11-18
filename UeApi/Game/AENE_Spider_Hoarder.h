@@ -84,8 +84,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
-        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;DropShadow";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "DropShadow;Enemy;GlyphidPraetorianIdle_Cue";
         static constexpr const char* UberGraphFrame_ENE_Spider_Hoarder_C__UeName = "UberGraphFrame";
         static constexpr const char* PointLight3__UeScsNode = "c74ea9b1a6edbb4488e4785089091993";
         static constexpr const char* PointLight2__UeScsNode = "63aa218a47c94a44956835b0f3a74e5b";

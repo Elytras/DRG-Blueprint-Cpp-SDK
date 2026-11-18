@@ -26,7 +26,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent RemovePlague";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent RemovePlague;/Script/FSD.DamageComponent Damage";
         static constexpr const char* UeIchRecords = "ParticleSysyem_Idle";
     };
 };

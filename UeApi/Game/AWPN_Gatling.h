@@ -56,7 +56,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BarrelProximityDamage;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageConversionBonus BarrelProximityDamage:DamageConversionBonus_0;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.AmmoDriveWeaponAggregator Aggregator;/Script/FSD.DamageComponent BarrelProximityDamage;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageConversionBonus BarrelProximityDamage:DamageConversionBonus_0;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_2;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_3;/Script/FSD.SkinUnlock Upgradable:SkinUnlock_4;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CritcalOverheatDamage_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* ParticleSystem__UeScsNode = "33e5fa0ceb39af47b8fe33fe95ff83dd";
         static constexpr const char* WeaponImpact__UeScsNode = "7cec97977bde9b4cbf16dd9700314d93";

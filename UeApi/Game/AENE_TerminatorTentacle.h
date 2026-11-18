@@ -85,7 +85,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.GrabberComponent Grabber;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* TentacleBusy__UeScsNode = "6507992d861f484f9a8cb2a31877ba3b";
         static constexpr const char* GrabAttack__UeScsNode = "baa5dcb99a91af42a7f64f85bf89a734";
         static constexpr const char* WeaponFireGlow__UeScsNode = "8dfb9d2ec50ad44e89f5df29a9858abb";

@@ -38,7 +38,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* MovingAudioComponent__UeScsNode = "03e6f60dae35c2419681fb1edb878db8";
         static constexpr const char* KeyMesh__UeScsNode = "f7676aeef18cf44ca4900a2ecea5ddd4";
         static constexpr const char* KeyMover__UeScsNode = "64afd5fffb08a14bb96b244d0ea72142";

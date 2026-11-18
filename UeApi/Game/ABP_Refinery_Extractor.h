@@ -76,7 +76,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0";
         static constexpr const char* UeTemplateSubobjects = "/Game/LevelElements/Refinery/BP_Extractor_Lamp.BP_Extractor_Lamp_C BP_Extractor_Lamp01_GEN_VARIABLE:BP_Extractor_Lamp_GEN_VARIABLE_BP_Extractor_Lamp_C_CAT;/Game/LevelElements/Refinery/BP_Extractor_Lamp.BP_Extractor_Lamp_C BP_Extractor_Lamp02_GEN_VARIABLE:BP_Extractor_Lamp_GEN_VARIABLE_BP_Extractor_Lamp_C_CAT";
         static constexpr const char* BP_Extractor_Lamp02__UeScsNode = "99a2d546dadade45ad6a6b688e2b0a40";
         static constexpr const char* BP_Extractor_Lamp01__UeScsNode = "57d395e4d5d66f4495e3271b2ef3b1ea";

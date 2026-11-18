@@ -79,7 +79,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent InitialDamageComponent;/Script/FSD.DamageConversionBonus DamageComponent:DamageConversionBonus_0;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.ParticleSystemComponent LeftImpact;/Script/Engine.ParticleSystemComponent RightImpact;/Script/FSD.PushStatusEffectDamageBonus DamageComponent:PushStatusEffectDamageBonus_0;/Script/Engine.SceneComponent LineRoot;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ParticleSystemComponent LeftImpact;/Script/Engine.ParticleSystemComponent RightImpact;/Script/Engine.SceneComponent LineRoot;/Script/Engine.SphereComponent SphereComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DamageComponent InitialDamageComponent;/Script/FSD.DamageConversionBonus DamageComponent:DamageConversionBonus_0;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/FSD.PushStatusEffectDamageBonus DamageComponent:PushStatusEffectDamageBonus_0";
         static constexpr const char* P_Plasma_Projectile3__UeScsNode = "afb2634c24cd0649b07c10185e1ddc1c";
         static constexpr const char* SM_Linecutter_Projectile_A_Right3__UeScsNode = "54dd7e0ee6f5e14fb2688edc2b7ead6b";
         static constexpr const char* SphereRight3__UeScsNode = "19e7e08f0bdf174996057f2eedd327ab";

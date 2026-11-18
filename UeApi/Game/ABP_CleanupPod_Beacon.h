@@ -23,7 +23,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "SimpleObjectInfo;Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
+        static constexpr const char* UeIchRecords = "Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3;SimpleObjectInfo";
         static constexpr const char* UberGraphFrame_BP_CleanupPod_Beacon_C__UeName = "UberGraphFrame";
         static constexpr const char* terrainPlacement__UeScsNode = "34302ab890a6d240a6547023add263b1";
     };

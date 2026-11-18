@@ -25,7 +25,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* UeIchRecords = "Enemy";
         static constexpr const char* UberGraphFrame_ENE_Jelly_Passive_Mother_C__UeName = "UberGraphFrame";
         static constexpr const char* ParticleSystem__UeScsNode = "9c5df0437398da4780f8059f0d5aa72e";

@@ -26,7 +26,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* UeIchRecords = "PathfinderCollision;SM_HollowboughWaspNest_01;TerrainPlacement";
         static constexpr const char* UberGraphFrame_ENE_BoughWasp_Nest_Medium_C__UeName = "UberGraphFrame";
         static constexpr const char* SM_HollowboughWaspNest_03__UeScsNode = "f0c9fbd79395104bba185fac770d4bde";

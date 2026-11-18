@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent Collider;/Script/Engine.ParticleSystemComponent BeamEffect";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent ZappSound;/Script/Engine.CapsuleComponent collider;/Script/Engine.ParticleSystemComponent BeamEffect";
     };
 };
 

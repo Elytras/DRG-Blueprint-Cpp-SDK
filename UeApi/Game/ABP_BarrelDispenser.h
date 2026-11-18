@@ -30,7 +30,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.InstantUsable Usable;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.InstantUsable Usable";
         static constexpr const char* SkeletalMesh__UeScsNode = "8a9bc12faf64b54999ff5b7642945bb6";
         static constexpr const char* outline__UeScsNode = "c086f888773d9042afaeecfe5818ee26";
         static constexpr const char* Sphere__UeScsNode = "af9c1997ade4864aba1a60299a862181";

@@ -19,7 +19,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* UeIchRecords = "BounceBox";
         static constexpr const char* CareTakerBarrierProjectile_Cue__UeScsNode = "7c368acf7a62f14d899a16f8d5d7942d";
     };

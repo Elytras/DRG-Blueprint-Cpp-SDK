@@ -79,7 +79,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.SimpleHealthComponent Health;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* Sphere__UeScsNode = "b7d33d2648993f41acf77b1485e919c6";
         static constexpr const char* InstantUsable__UeScsNode = "d8c3a6a0079b654ebc7b3272845ffc91";
         static constexpr const char* DropShadow__UeScsNode = "88c2c8ed34358a4db782e3540ae18212";

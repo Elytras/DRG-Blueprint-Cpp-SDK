@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Collision;/Script/Niagara.NiagaraComponent TrailNiagara;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.CapsuleComponent Collision;/Script/Engine.SceneComponent RootComponent;/Script/Niagara.NiagaraComponent TrailNiagara";
     };
 };
 

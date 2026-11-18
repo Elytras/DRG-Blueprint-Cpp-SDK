@@ -391,6 +391,44 @@ template <class D, class C, class V> void UeBind__(D &Delegate, const V &Propert
 template <class D, class C, class V> void UeBind__(D &Delegate, const V &Property, V (C::*Function)());
 
 /*
+An Anim Blueprint: a UAnimInstance class whose anim nodes are its struct members, wired in its constructor.
+    UE_SKELETON("/Game/Enemies/Crawler/SK_Crawler_Skeleton");
+    FAnimNode_SequencePlayer Walk;
+    FAnimNode_Slot Slot;
+    FAnimNode_Root Output;                           // the graph's output pose, the one FAnimNode_Root
+    MyAnim() {
+      Walk.Sequence = &Anim_Walk;
+      Slot.Source = UE_LINK(Walk);                   // a pose input: the node it reads
+      Output.Result = UE_LINK(Slot);
+    }
+    void BlueprintUpdateAnimation(float Dt) { Walk.PlayRate = Speed / 600.0f; }
+A state machine's states and transitions, also in the constructor:
+    UE_STATE(Locomotion, Idle);                      // FAnimNode_StateResult Idle; the first state is the entry
+    UE_STATE_AS(Locomotion, JumpEnd, "Jump End");    // a state named other than its node
+    UE_CONDUIT(Locomotion, NotStaggered, "Not Staggered");        // a conduit: its FAnimNode_TransitionResult is its rule
+    UE_TRANSITION(Locomotion, Idle, Moving, ToMoving, 0.2f);       // ToMoving: an FAnimNode_TransitionResult
+    UE_TRANSITION_AUTO(Locomotion, Attack, Idle, AttackDone, 0.2f) // taken when Attack's animation ends
+A transition is taken while its rule's bCanEnterTransition is true, which BlueprintUpdateAnimation sets.
+A component-space input (FComponentSpacePoseLink: a bone control's ComponentPose) is UE_LINK_CS(Node).
+*/
+#define UE_SKELETON(Path) static constexpr const char *UeSkeleton__ = Path
+#define UE_LINK(Node) UeLink__(Node)
+#define UE_LINK_CS(Node) UeLinkCs__(Node)
+#define UE_STATE(Machine, State) UeState__(Machine, State, "")
+#define UE_STATE_AS(Machine, State, Name) UeState__(Machine, State, Name)
+#define UE_CONDUIT(Machine, Rule, Name) UeConduit__(Machine, Rule, Name)
+#define UE_TRANSITION(Machine, From, To, Rule, Crossfade) UeTransition__(Machine, From, To, Rule, Crossfade, false)
+#define UE_TRANSITION_AUTO(Machine, From, To, Rule, Crossfade) UeTransition__(Machine, From, To, Rule, Crossfade, true)
+struct FPoseLink                                     UeLink__(const struct FAnimNode_Base &Node);
+struct FComponentSpacePoseLink                       UeLinkCs__(const struct FAnimNode_Base &Node);
+void UeState__(const struct FAnimNode_StateMachine &Machine, const struct FAnimNode_StateResult &State, const char *Name);
+void UeConduit__(const struct FAnimNode_StateMachine &Machine, const struct FAnimNode_TransitionResult &Rule,
+                 const char *Name);
+void UeTransition__(const struct FAnimNode_StateMachine &Machine, const struct FAnimNode_Base &From,
+                    const struct FAnimNode_Base &To, const struct FAnimNode_TransitionResult &Rule, float Crossfade,
+                    bool bAutomatic);
+
+/*
 An event dispatcher on a mod class: `UE_DISPATCHER(OnScored, int32 Points, AActor* By);`. Declares the
 dispatcher OnScored and its signature function OnScored__DelegateSignature, which is where the
 parameter names survive the AST dump.

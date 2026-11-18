@@ -36,7 +36,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineConnectPoint ConnectPoint;/Script/Engine.SceneComponent RootComponent;/Script/Engine.SplineComponent ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SplineComponent ConnectPoint:ConnectorSplineCache;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.FuelLineConnectPoint ConnectPoint";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "e583f9ab5379de4480e6ef1740ff7b93";
         static constexpr const char* P_Extractor_PipeLinkUp__UeScsNode = "da2167e3dea04048ae28502d8f4a1b0d";
     };

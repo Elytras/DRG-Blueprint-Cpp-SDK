@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "PointLight;SimpleObjectInfo;Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3";
+        static constexpr const char* UeIchRecords = "Mesh_Hologram1;Mesh_Hologram2;Mesh_Hologram3;PointLight;SimpleObjectInfo";
     };
 };
 

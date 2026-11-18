@@ -57,7 +57,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* PointLight__UeScsNode = "80bb45267629a84a824a79a383cd8547";
         static constexpr const char* TerrainDetect__UeScsNode = "c1892a258176d64c87ea262950a46fdf";
         static constexpr const char* terrainPlacement__UeScsNode = "dee02b535c76344b9e78211e87bcf28f";

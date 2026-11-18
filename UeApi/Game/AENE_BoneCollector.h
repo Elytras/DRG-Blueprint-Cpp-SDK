@@ -77,8 +77,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
-        static constexpr const char* UeIchRecords = "GlyphidPraetorianIdle_Cue;Enemy;IK;Outline;PathfinderReactiveTerrainTracker";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.HitReactionComponent HitReactions;/Script/FSD.PawnStatsComponent PawnStats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "Enemy;GlyphidPraetorianIdle_Cue;IK;Outline;PathfinderReactiveTerrainTracker";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent CarveAttack_GEN_VARIABLE:DamageComponent_1;/Script/FSD.MeshCarveAttackEffect CarveAttack_GEN_VARIABLE:MeshCarveAttackEffect_0";
         static constexpr const char* UberGraphFrame_ENE_BoneCollector_C__UeName = "UberGraphFrame";
         static constexpr const char* PlayerFleeTrigger__UeScsNode = "778055f141a07f44b58e5d5dff9c0622";

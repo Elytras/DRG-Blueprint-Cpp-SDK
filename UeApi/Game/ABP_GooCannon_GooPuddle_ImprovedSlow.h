@@ -24,7 +24,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger;/Script/FSD.SimpleHealthComponent SimpleHealth";
         static constexpr const char* UeIchRecords = "Niagara";
         static constexpr const char* UberGraphFrame_BP_GooCannon_GooPuddle_ImprovedSlow_C__UeName = "UberGraphFrame";
     };

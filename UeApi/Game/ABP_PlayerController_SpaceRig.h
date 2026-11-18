@@ -189,7 +189,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
         static constexpr const char* UberGraphFrame_BP_PlayerController_SpaceRig_C__UeName = "UberGraphFrame";
         static constexpr const char* Medbay_speech_counter__UeName = "Medbay speech counter";
         static constexpr const char* Time_between_shouts__UeName = "Time between shouts";

@@ -43,7 +43,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Engine.SceneComponent PuddleRoot;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent PuddleRoot;/Script/Engine.SceneComponent Root;/Script/Niagara.NiagaraComponent NS_Vacuum_FP";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "52857381bce39743ad61d71a9c34f2dd";
         static constexpr const char* Box__UeScsNode = "323917cf83e4184abcf2508c87cab05a";
         static constexpr const char* Sphere__UeScsNode = "36e82c022eb1b146a25e6a6b983137ba";

@@ -23,7 +23,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "UseCapsule_ForKicking;StaticMesh";
+        static constexpr const char* UeIchRecords = "StaticMesh;UseCapsule_ForKicking";
         static constexpr const char* UberGraphFrame_BP_Azure_CombaCharm_Egg_C__UeName = "UberGraphFrame";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "a1e80a76a60ae145acda51f233a3da1e";
     };

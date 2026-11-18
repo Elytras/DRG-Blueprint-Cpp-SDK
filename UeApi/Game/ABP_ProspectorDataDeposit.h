@@ -50,7 +50,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "ConnectionBeam;PathfinderCollision;SimpleObjectInfo;ActivateUsable;SkeletalMesh;Usable;GunTower_Carver01;TerrainScannerMesh;TerrainPlacement;Tether";
+        static constexpr const char* UeIchRecords = "ActivateUsable;ConnectionBeam;GunTower_Carver01;PathfinderCollision;SimpleObjectInfo;SkeletalMesh;TerrainPlacement;TerrainScannerMesh;Tether;Usable";
         static constexpr const char* UberGraphFrame_BP_ProspectorDataDeposit_C__UeName = "UberGraphFrame";
         static constexpr const char* ProspectingDataDepositIdle__UeScsNode = "67112f500ea3444ab9c3cb6efcf0a552";
         static constexpr const char* NS_DoorOpenSteam__UeScsNode = "bc54d73451e9444e85320b36d1bdc9f1";

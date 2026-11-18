@@ -73,7 +73,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent TransformComponent0;/Script/FSD.FSDWidgetEffectsComponent WidgetEffects;/Script/FSD.PerkUsageComponent PerkUsageCompent;/Script/FSD.TerrainLatejoinComponent TerrainLateJoin;/Script/FSD.WindowManager WindowManager";
         static constexpr const char* UberGraphFrame_BP_PlayerController_C__UeName = "UberGraphFrame";
         static constexpr const char* ProceduralController__UeScsNode = "22ad02c578cf2f40b9bcf6b2598f0d2f";
         static constexpr const char* InpActEvt_Ctrl_Alt_N_K2Node_InputKeyEvent_2__UeName = "InpActEvt_Ctrl+Alt_N_K2Node_InputKeyEvent_2";

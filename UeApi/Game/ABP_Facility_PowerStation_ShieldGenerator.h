@@ -46,7 +46,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "ConnectionBeam;PathfinderCollision;ICH-DefaultSceneRoot;SimpleObjectInfo;SkeletalMesh";
+        static constexpr const char* UeIchRecords = "ConnectionBeam;ICH-DefaultSceneRoot;PathfinderCollision;SimpleObjectInfo;SkeletalMesh";
         static constexpr const char* UberGraphFrame_BP_Facility_PowerStation_ShieldGenerator_C__UeName = "UberGraphFrame";
         static constexpr const char* ActiveParticles1__UeScsNode = "ca10076f721ff848b918710bd18a9c43";
         static constexpr const char* PathfinderCollision1__UeScsNode = "d573bb7c600a3145bc6fa17ec3bba3f8";

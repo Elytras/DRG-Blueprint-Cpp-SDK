@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.SimpleHealthComponent SimpleHealth;/Script/Engine.SphereComponent SphereTrigger";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.SphereComponent SphereTrigger;/Script/FSD.SimpleHealthComponent SimpleHealth";
         static constexpr const char* UeIchRecords = "ExplosionDamage;Niagara";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus ExplosionDamage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.PushStatusEffectDamageBonus ExplosionDamage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
     };

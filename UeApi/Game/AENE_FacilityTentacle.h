@@ -105,7 +105,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_0;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_1;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_2;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_3;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_4;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_5;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_6;/Script/FSD.NormalProjectileAttack RangedAttack_GEN_VARIABLE:NormalProjectileAttack_7";
         static constexpr const char* WeaponFireGlow__UeScsNode = "8dfb9d2ec50ad44e89f5df29a9858abb";
         static constexpr const char* NS_Inner_Energy__UeScsNode = "28c77bd9ab1b8d4e88a1fb5ca1e3aecf";

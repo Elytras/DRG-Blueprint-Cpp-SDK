@@ -31,7 +31,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageModifier Damage_GEN_VARIABLE:DamageModifier_0;/Script/FSD.TargetTagsDamageCondition Damage_GEN_VARIABLE:DamageModifier_0:TargetTagsDamageCondition_0";
         static constexpr const char* Niagara__UeScsNode = "3ca6d0c220800a4e812c1593d795ae5b";
         static constexpr const char* Damage__UeScsNode = "8c6fcedac4058243a7c3515bd3f6b2e2";

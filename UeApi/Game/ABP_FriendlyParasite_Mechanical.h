@@ -33,7 +33,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.PushStatusEffectDamageBonus DamageComponent:PushStatusEffectDamageBonus_0;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.SphereComponent Collision;/Script/Engine.SphereComponent FindEnemyCollision;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.PushStatusEffectDamageBonus DamageComponent:PushStatusEffectDamageBonus_0;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* UberGraphFrame_BP_FriendlyParasite_Mechanical_C__UeName = "UberGraphFrame";
         static constexpr const char* Particle_Trail__UeScsNode = "e3d50a034afd6043ba390708ad591dbd";
         static constexpr const char* StaticMesh__UeScsNode = "30fbbf986474e840a21fc7a8641a2cce";

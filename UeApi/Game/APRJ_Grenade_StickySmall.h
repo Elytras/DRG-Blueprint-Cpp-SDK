@@ -51,7 +51,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* Explosion__UeScsNode = "fffc1d6989f45b478155512416476b25";
         static constexpr const char* BoomDamage__UeScsNode = "8862c92d6d67c544b0dabfa4f9572e71";
         static constexpr const char* SpikeDamage__UeScsNode = "b356f7d00f8cc9429ebf4493703fb214";

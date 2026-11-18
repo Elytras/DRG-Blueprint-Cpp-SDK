@@ -109,8 +109,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
-        static constexpr const char* UeIchRecords = "Widget_DangerLevel01;Widget_DangerLevel02;OxygenSource;SimpleObjectInfo;SK_DropPod_Airlock";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.AutoCarverComponent AutoCarver";
+        static constexpr const char* UeIchRecords = "OxygenSource;SimpleObjectInfo;SK_DropPod_Airlock;Widget_DangerLevel01;Widget_DangerLevel02";
         static constexpr const char* UeTemplateSubobjects = "/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel01_GEN_VARIABLE:Widget_DangerLevel01_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel02_GEN_VARIABLE:Widget_DangerLevel02_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT";
         static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Base_C__UeName = "UberGraphFrame";
         static constexpr const char* TerrainScannerStaticMesh__UeScsNode = "dc5038726050704f8094a166ba3cf75f";

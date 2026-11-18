@@ -43,7 +43,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CrosshairAggregator CrosshairAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator SegmentPlacer;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.CrosshairAggregator CrosshairAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.ItemPlacerAggregator SegmentPlacer;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* SmallScreenWidget__UeScsNode = "176e6d55a5b6d54c9ff69b70faa101f0";
         static constexpr const char* LargeScreenWidget__UeScsNode = "57c709f8417d7b4592f92d7df50c0a33";
         static constexpr const char* Update_Placement_Transform__UeName = "Update Placement Transform";

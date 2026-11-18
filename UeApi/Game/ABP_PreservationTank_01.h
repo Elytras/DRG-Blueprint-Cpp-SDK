@@ -20,7 +20,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent ContentMesh";
-        static constexpr const char* UeIchRecords = "InstantUsable;NS_Biotank_BubbleReact;NS_Biotank_Bubbles;BlueLight;PointLight;SpotLight1;SpotLight;SM_Plague_Biotank_01;DisplayName2;Widget_Bars2";
+        static constexpr const char* UeIchRecords = "BlueLight;DisplayName2;InstantUsable;NS_Biotank_BubbleReact;NS_Biotank_Bubbles;PointLight;SM_Plague_Biotank_01;SpotLight;SpotLight1;Widget_Bars2";
         static constexpr const char* PointLight1__UeScsNode = "6785ff02b87faf41a3c413560aded722";
     };
 };

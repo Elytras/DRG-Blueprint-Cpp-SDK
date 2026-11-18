@@ -23,8 +23,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
-        static constexpr const char* UeIchRecords = "Damage;Niagara;Trail;Body";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
+        static constexpr const char* UeIchRecords = "Body;Damage;Niagara;Trail";
         static constexpr const char* UberGraphFrame_PRJ_FacilityTurretLaser_Sniper_C__UeName = "UberGraphFrame";
         static constexpr const char* ProjectileExplosion__UeScsNode = "174ed3749f8a43408bd2806de739cd8e";
     };

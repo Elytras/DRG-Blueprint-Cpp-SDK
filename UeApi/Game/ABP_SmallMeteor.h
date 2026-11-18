@@ -77,7 +77,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent ImpactDamgage;/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent MeteorMesh;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/Engine.StaticMeshComponent MeteorMesh;/Script/FSD.DamageComponent ImpactDamgage;/Script/FSD.TerrainPlacementComponent terrainPlacement";
         static constexpr const char* ImpactCraterCarver1__UeScsNode = "2baf9e72dcb6754690c1bcb845ee06b7";
         static constexpr const char* PlagueheartLocation__UeScsNode = "a70d80a955d22843a7aba2367a9a9bf4";
         static constexpr const char* PathfinderCollision__UeScsNode = "7e4ca0688f48cd4babb8a2ad4c88edae";

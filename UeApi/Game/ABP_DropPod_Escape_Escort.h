@@ -43,7 +43,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.AutoCarverComponent AutoCarver";
         static constexpr const char* UberGraphFrame_BP_DropPod_Escape_Escort_C__UeName = "UberGraphFrame";
         static constexpr const char* SM_Doretta_Broken__UeScsNode = "cad576bbb19c574d8fc51c517ac17a87";
         static constexpr const char* DorettaCollision__UeScsNode = "27642ebda3a28d40a1fc81305d8f055a";

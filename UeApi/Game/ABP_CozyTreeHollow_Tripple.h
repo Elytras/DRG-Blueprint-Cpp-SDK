@@ -23,7 +23,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "SugarChunksLocation;LevelGenerationCarver_Entrance;LevelGenerationCarver_Room;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "LevelGenerationCarver_Entrance;LevelGenerationCarver_Room;SugarChunksLocation;TerrainPlacement";
         static constexpr const char* StaticMesh_Room2__UeScsNode = "033466276f38d243bd809b4fbc3c9dba";
         static constexpr const char* LevelGenerationCarver_Room2__UeScsNode = "e6959fa00cef3448ac514819bffd8fe4";
         static constexpr const char* StaticMesh_Room1__UeScsNode = "988650dfab62074eaee2162de628c894";

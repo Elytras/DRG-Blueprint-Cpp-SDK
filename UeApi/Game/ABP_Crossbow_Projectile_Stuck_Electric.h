@@ -53,7 +53,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
-        static constexpr const char* UeIchRecords = "BansheePulse;SimpleObjectInfo;mesh_front";
+        static constexpr const char* UeIchRecords = "BansheePulse;mesh_front;SimpleObjectInfo";
         static constexpr const char* ArcAreaDisplay__UeScsNode = "d34ef430a18a2b4983fb9c5c76475dfa";
         static constexpr const char* EffectElectric__UeScsNode = "a9e8a19a1210ac45b74ebe90eceda798";
     };

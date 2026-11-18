@@ -70,8 +70,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
-        static constexpr const char* UeIchRecords = "BP_Drop_CamShake;Spawn1;Spawn2;Spawn3;Spawn4;Widget_DangerLevel01;Widget_DangerLevel02;PathfinderBlocker;Ramp;Spot1;Spot2";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.AutoCarverComponent AutoCarver";
+        static constexpr const char* UeIchRecords = "BP_Drop_CamShake;PathfinderBlocker;Ramp;Spawn1;Spawn2;Spawn3;Spawn4;Spot1;Spot2;Widget_DangerLevel01;Widget_DangerLevel02";
         static constexpr const char* UeTemplateSubobjects = "/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel01_GEN_VARIABLE:Widget_DangerLevel01_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel02_GEN_VARIABLE:Widget_DangerLevel02_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT";
         static constexpr const char* UberGraphFrame_BP_DropPod_Rig_C__UeName = "UberGraphFrame";
         static constexpr const char* ParticleSystem__UeScsNode = "342c4d5f73e7404b9c9ccd0fb74944c2";

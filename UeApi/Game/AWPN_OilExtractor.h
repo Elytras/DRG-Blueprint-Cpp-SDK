@@ -50,8 +50,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.ParticleSystemComponent InvalidSurfaceParticles;/Script/Engine.ParticleSystemComponent MeltingEffect;/Script/Engine.ParticleSystemComponent MuzzleEffect;/Script/Engine.ParticleSystemComponent MuzzleEInvalidffect;/Script/Engine.ParticleSystemComponent TPMuzzleEffect;/Script/Engine.ParticleSystemComponent TPMuzzleInvalidEffect;/Script/Engine.PointLightComponent SurfaceLight;/Script/Engine.SkeletalMeshComponent DropppedMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
-        static constexpr const char* UeIchRecords = "UsableCapsule;PickupUsable;TerrainScannerMesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.ParticleSystemComponent InvalidSurfaceParticles;/Script/Engine.ParticleSystemComponent MeltingEffect;/Script/Engine.ParticleSystemComponent MuzzleEffect;/Script/Engine.ParticleSystemComponent MuzzleEInvalidffect;/Script/Engine.ParticleSystemComponent TPMuzzleEffect;/Script/Engine.ParticleSystemComponent TPMuzzleInvalidEffect;/Script/Engine.PointLightComponent SurfaceLight;/Script/Engine.SkeletalMeshComponent DropppedMesh;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.FSDAudioComponent Audio;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeIchRecords = "PickupUsable;TerrainScannerMesh;UsableCapsule";
         static constexpr const char* UberGraphFrame_WPN_OilExtractor_C__UeName = "UberGraphFrame";
         static constexpr const char* OilExtractorHitPositive__UeScsNode = "f0895cee22f6ca4484f1e6a6dcf213b5";
         static constexpr const char* OilExtractorHitNegative__UeScsNode = "f04d1128fd5ddf439d9dcaa6d389a087";

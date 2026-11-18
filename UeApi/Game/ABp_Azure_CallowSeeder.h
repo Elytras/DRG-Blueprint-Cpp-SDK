@@ -29,7 +29,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "HitBox_Closed;HitBox_Open;PathfinderCollision1;Mesh;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "HitBox_Closed;HitBox_Open;Mesh;PathfinderCollision1;TerrainPlacement";
         static constexpr const char* UberGraphFrame_Bp_Azure_CallowSeeder_C__UeName = "UberGraphFrame";
         static constexpr const char* Capsule1__UeScsNode = "dca9a8d2cc37d846875bb7cbe1671456";
         static constexpr const char* Capsule__UeScsNode = "88c656e3142bb54c90f871fd0fb0daf2";

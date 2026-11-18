@@ -27,7 +27,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ScalePoint;/Script/FSD.SimpleHealthComponent Health;/Script/Engine.SkeletalMeshComponent PodMesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ScalePoint;/Script/Engine.SkeletalMeshComponent PodMesh;/Script/FSD.SimpleHealthComponent Health";
         static constexpr const char* NS_Spores__UeScsNode = "b77e26839fef7e448b689b4a1f840cae";
         static constexpr const char* PointLight__UeScsNode = "8b2c3c7d50137945ae73541be9ff0788";
         static constexpr const char* enemy__UeScsNode = "ceb6b9ef6da45b449b643f28c267a458";

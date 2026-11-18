@@ -34,7 +34,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneCaptureComponent2D TerrainScannerCapture;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TerrainScannerRoot;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneCaptureComponent2D TerrainScannerCapture;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TerrainScannerRoot;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* Screen_Rays__UeScsNode = "4e6d1dd84777ec4e8d160115fd8d3c21";
         static constexpr const char* SM_HandheldTablet__UeScsNode = "3a88054947685f469bc5255ddbebf794";
         static constexpr const char* PointLight__UeScsNode = "e01905377ec20a4a9f6434c9fe1b0601";

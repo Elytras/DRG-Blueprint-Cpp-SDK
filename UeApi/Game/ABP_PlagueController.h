@@ -26,7 +26,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Niagara.NiagaraComponent DebrisLight;/Script/FSD.PlagueUsable Usable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.PlagueUsable Usable;/Script/Niagara.NiagaraComponent DebrisLight";
         static constexpr const char* SpawnActorWithDebrisPos__UeScsNode = "64b52eb99fa77043930c250ac6aa3276";
     };
 };

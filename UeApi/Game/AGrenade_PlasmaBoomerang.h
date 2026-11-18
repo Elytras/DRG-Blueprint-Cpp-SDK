@@ -21,7 +21,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Box;/Script/FSD.DamageComponent Damage;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent MeshPivot;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent Mesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Box;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SceneComponent MeshPivot;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent Mesh;/Script/FSD.DamageComponent Damage";
         static constexpr const char* UpgradableGear__UeScsNode = "40e6c27bfc41224db0a577fa0720b8fa";
         static constexpr const char* P_GrenadeTrail__UeScsNode = "53a9d459d375314ab6c9df727187d2d5";
     };

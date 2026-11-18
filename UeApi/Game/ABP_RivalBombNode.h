@@ -79,7 +79,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HackingUsableComponent HackingUsable;/Script/Engine.SceneComponent DefaultRootComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultRootComponent;/Script/FSD.HackingUsableComponent HackingUsable";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.KnockbackDamageBonus PushPlayerDamage_GEN_VARIABLE:KnockbackDamageBonus_0;/Script/FSD.PushStatusEffectDamageBonus PushPlayerDamage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* NS_RivalBombNode_Electricity__UeScsNode = "8778560fbc8a6e4da0529b502717d895";
         static constexpr const char* terrainPlacement__UeScsNode = "dad4f2e99862dd4bae20139d9b852613";

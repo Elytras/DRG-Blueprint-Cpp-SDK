@@ -22,7 +22,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "LevelGenerationCarver;PointLight;ICH-DefaultSceneRoot;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "ICH-DefaultSceneRoot;LevelGenerationCarver;PointLight;TerrainPlacement";
         static constexpr const char* StaticMesh3__UeScsNode = "42fd882c3d2cb941bfe74eed80024cfb";
         static constexpr const char* LevelGenerationCarver_Rock__UeScsNode = "82de0cbbbac42e44b296e3728a260d23";
         static constexpr const char* SM_Crystal_Simple002_PivotBtm__UeScsNode = "fd49c821e7edad4c8cd65bbd1fcb07c6";

@@ -35,7 +35,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
-        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5";
         static constexpr const char* UberGraphFrame_BP_EscortGem_Heartstone_C__UeName = "UberGraphFrame";
         static constexpr const char* LightStrobing__UeScsNode = "90dc148baa463e40aa985b8e128a9fad";
         static constexpr const char* HeartStoneGemIdle__UeScsNode = "ba85f0090fb2ca44bec8a79583f09b5e";

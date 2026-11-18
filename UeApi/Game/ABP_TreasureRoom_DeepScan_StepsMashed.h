@@ -25,7 +25,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "D_Geode_Crystal;NS_Treasure_Room_Atmosphere;Carvers;ICH-DefaultSceneRoot";
+        static constexpr const char* UeIchRecords = "Carvers;D_Geode_Crystal;ICH-DefaultSceneRoot;NS_Treasure_Room_Atmosphere";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisMesh D_Geode_Crystal_GEN_VARIABLE:DebrisMesh_0";
         static constexpr const char* LevelGenerationCarver4__UeScsNode = "4d774ad88ab8de4ea277aec05651764d";
         static constexpr const char* LevelGenerationCarver3__UeScsNode = "1fafb4405facbe44b87423cdd4f06959";

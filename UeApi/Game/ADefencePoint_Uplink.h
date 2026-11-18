@@ -56,7 +56,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.SingleUsableComponent DefendPointUsable";
-        static constexpr const char* UeIchRecords = "UseableCollider;SimpleObjectInfo;DistressSphere;Terrain scanner mesh;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "DistressSphere;SimpleObjectInfo;Terrain scanner mesh;TerrainPlacement;UseableCollider";
         static constexpr const char* UeTemplateSubobjects = "/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank01_GEN_VARIABLE:OxygenTank01_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTank.BP_OxygenTank_C OxygenTank02_GEN_VARIABLE:OxygenTank02_GEN_VARIABLE_BP_OxygenTank_C_CAT;/Game/GameElements/Missions/Warnings/NoOxygen/BP_OxygenTankSound.BP_OxygenTankSound_C ChildActor_GEN_VARIABLE:ChildActor_GEN_VARIABLE_BP_OxygenTankSound_C_CAT";
         static constexpr const char* UberGraphFrame_DefencePoint_Uplink_C__UeName = "UberGraphFrame";
         static constexpr const char* TerrainDetect3__UeScsNode = "796d57a0b6134443a7138fedd8196a1c";

@@ -29,7 +29,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "LevelGenerationCarver;PointLight;ICH-DefaultSceneRoot;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "ICH-DefaultSceneRoot;LevelGenerationCarver;PointLight;TerrainPlacement";
         static constexpr const char* Sphere__UeScsNode = "918ae52d7352fc48b43da4ef3def4ea7";
         static constexpr const char* StatusEffectTrigger__UeScsNode = "bda242d31f3ba4458aaab70123a28a88";
         static constexpr const char* Idle_Sound__UeName = "Idle Sound";

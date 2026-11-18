@@ -42,7 +42,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent RockIdleSound;/Script/FSD.MeshCarverComponent DestroyPillarCarver;/Script/FSD.MeshCarverComponent PillarCarver;/Script/FSD.MeshCarverComponent SpaceCarver;/Script/Niagara.NiagaraComponent PillarParticles;/Script/Niagara.NiagaraComponent ShieldBeam;/Script/Engine.PointLightComponent Light;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent StoneRoot;/Script/Engine.SplineComponent ShieldBeamSpline;/Script/Engine.StaticMeshComponent PillarMesh;/Script/Engine.StaticMeshComponent StoneMesh;/Script/FSD.TerrainDetectComponent TerrainDetector;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.AudioComponent RockIdleSound;/Script/Engine.PointLightComponent Light;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent StoneRoot;/Script/Engine.SplineComponent ShieldBeamSpline;/Script/Engine.StaticMeshComponent PillarMesh;/Script/Engine.StaticMeshComponent StoneMesh;/Script/FSD.MeshCarverComponent DestroyPillarCarver;/Script/FSD.MeshCarverComponent PillarCarver;/Script/FSD.MeshCarverComponent SpaceCarver;/Script/FSD.TerrainDetectComponent TerrainDetector;/Script/FSD.TerrainPlacementComponent terrainPlacement;/Script/Niagara.NiagaraComponent PillarParticles;/Script/Niagara.NiagaraComponent ShieldBeam";
         static constexpr const char* NS_RockCarvingTrail__UeScsNode = "e60f833c5ac18b49b1c33ad2f43d7123";
         static constexpr const char* Increase_Stone_Glow__UeName = "Increase Stone Glow";
         static constexpr const char* Increase_Stone_Glow__UpdateFunc__UeName = "Increase Stone Glow__UpdateFunc";

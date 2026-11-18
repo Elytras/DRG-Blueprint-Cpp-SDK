@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "NS_Plague_Spider_Tank_DeathCloud;AcidCloud;Sphere";
+        static constexpr const char* UeIchRecords = "AcidCloud;NS_Plague_Spider_Tank_DeathCloud;Sphere";
     };
 };
 

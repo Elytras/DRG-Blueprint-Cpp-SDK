@@ -36,7 +36,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BoxCollision;/Script/FSD.CarriableComponent Carriable;/Script/FSD.FirstPersonStaticMeshComponent FirstPersonMesh;/Script/FSD.InstantUsable Usable;/Script/Engine.SphereComponent UseSphere;/Script/Engine.StaticMeshComponent ThirdpersonMesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BoxCollision;/Script/Engine.SphereComponent UseSphere;/Script/Engine.StaticMeshComponent ThirdpersonMesh;/Script/FSD.CarriableComponent Carriable;/Script/FSD.FirstPersonStaticMeshComponent FirstPersonMesh;/Script/FSD.InstantUsable Usable";
         static constexpr const char* outline__UeScsNode = "630dfdc601a2424eaf0755dde2cb2d84";
         static constexpr const char* PointLight__UeScsNode = "ae28f61d247b454786bb01a7900e86f9";
         static constexpr const char* TerrainScannerMesh__UeScsNode = "4b292d2277cac942ad31fe195b01f768";

@@ -56,7 +56,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "Spider Spawn Point;Egg Broken;Egg Whole;ICH-DefaultSceneRoot;SimpleHealth;SimpleObjectInfo;TerrainDetect;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "Egg Broken;Egg Whole;ICH-DefaultSceneRoot;SimpleHealth;SimpleObjectInfo;Spider Spawn Point;TerrainDetect;TerrainPlacement";
         static constexpr const char* UberGraphFrame_BP_DreadnoughtEgg_C__UeName = "UberGraphFrame";
         static constexpr const char* TerrainScannerMesh__UeScsNode = "2bacd0589ff7db48a0aecd0690810815";
         static constexpr const char* BranchCarver2__UeScsNode = "2151bf056ad5b54da1375f697506a875";

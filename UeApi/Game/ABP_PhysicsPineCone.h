@@ -19,7 +19,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "UseCapsule_ForKicking;StaticMesh";
+        static constexpr const char* UeIchRecords = "StaticMesh;UseCapsule_ForKicking";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "11fcf435f0661c4c8cf91f4c9b9ae19a";
     };
 };

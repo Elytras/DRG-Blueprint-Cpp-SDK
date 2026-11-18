@@ -85,7 +85,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/FSD.SingleUsableComponent UsableOrderExtractor;/Script/Engine.SplineComponent TrackEndConnection:ConnectorSplineCache;/Script/FSD.TrackBuilderConnectPoint TrackEndConnection";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultSceneRoot;/Script/Engine.SplineComponent TrackEndConnection:ConnectorSplineCache;/Script/FSD.SingleUsableComponent UsableOrderExtractor;/Script/FSD.TrackBuilderConnectPoint TrackEndConnection";
         static constexpr const char* UeTemplateSubobjects = "/Game/LevelElements/Refinery/BP_Refinery_Extractor_Blueprint.BP_Refinery_Extractor_Blueprint_C ExtractorBlueprintChildActor_GEN_VARIABLE:ExtractorBlueprintChildActor_GEN_VARIABLE_BP_Refinery_Extractor_Blueprint_C_CAT";
         static constexpr const char* PathfinderCollision__UeScsNode = "e6a1135533620b4882122718fbb5ef49";
         static constexpr const char* Audio__UeScsNode = "f5d9e4270f97f74b9b1c0113ebefc933";

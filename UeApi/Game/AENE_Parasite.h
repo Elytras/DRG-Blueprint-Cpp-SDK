@@ -36,7 +36,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyComponent Enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.OutlineComponent OutLine;/Script/FSD.PawnStatsComponent Stats;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.StaticMeshComponent Tentacles1;/Script/Engine.StaticMeshComponent Tentacles2;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent Mesh;/Script/Engine.StaticMeshComponent Tentacles1;/Script/Engine.StaticMeshComponent Tentacles2;/Script/FSD.EnemyComponent enemy;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyPawnAfflictionComponent Affliction;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.OutlineComponent outline;/Script/FSD.PawnStatsComponent Stats;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* WeakpointGlow__UeScsNode = "3da9c0fbc023df4984044fa705dc09ac";
         static constexpr const char* Sphere__UeScsNode = "0e57a2740ca4664b81ee3372e613f216";
         static constexpr const char* Dynamic_Material__UeName = "Dynamic Material";

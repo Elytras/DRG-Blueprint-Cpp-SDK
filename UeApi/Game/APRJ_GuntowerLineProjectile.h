@@ -29,7 +29,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.ParticleSystemComponent BeamParticles;/Script/Engine.SceneComponent LeftLinePoint;/Script/Engine.SceneComponent RightLinePoint;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ParticleSystemComponent BeamParticles;/Script/Engine.SceneComponent LeftLinePoint;/Script/Engine.SceneComponent RightLinePoint;/Script/Engine.SphereComponent SphereComponent;/Script/FSD.DamageComponent DamageComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* GunTowerLineProjectile_Cue__UeScsNode = "adaddcf341aec9429ed881728db3fac8";
         static constexpr const char* ProjectileExplosion__UeScsNode = "d70bce81943cde438579e2a394ac09e1";
         static constexpr const char* HitparticleSystem__UeScsNode = "79755f2a14b2f14781ad15e88ad00474";

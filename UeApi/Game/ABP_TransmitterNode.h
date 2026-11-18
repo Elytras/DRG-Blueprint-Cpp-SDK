@@ -73,7 +73,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableComponent CarryComponent;/Script/FSD.DamageComponent ExplosionDamage;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent Tetherbeam;/Script/Engine.SkeletalMeshComponent BaseMesh;/Script/Engine.SphereComponent PhysCollision;/Script/Engine.SphereComponent UseTrigger";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent BaseMesh;/Script/Engine.SphereComponent PhysCollision;/Script/Engine.SphereComponent UseTrigger;/Script/FSD.CarriableComponent CarryComponent;/Script/FSD.DamageComponent ExplosionDamage;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent TetherBeam";
         static constexpr const char* TetherConnectionCollider__UeScsNode = "5a030017aac6794198be50e19ac0b9d8";
         static constexpr const char* outline__UeScsNode = "761b32f1968e3e4cbe6a9ea7df8196ac";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "fbba8a652f5b1a4bbf202fe5c6149881";

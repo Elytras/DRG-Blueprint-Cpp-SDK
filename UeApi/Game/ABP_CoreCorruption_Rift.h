@@ -79,7 +79,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent CrystalDeathPosition;/Script/Engine.SceneComponent CrystalSpawnPosition;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent placement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent CrystalDeathPosition;/Script/Engine.SceneComponent CrystalSpawnPosition;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent Placement";
         static constexpr const char* UeTemplateSubobjects = "/Script/Niagara.NiagaraDataInterfaceSkeletalMesh CarveParticles_GEN_VARIABLE:NiagaraDataInterfaceSkeletalMesh_0";
         static constexpr const char* LevelGenerationCorruptionCarver1__UeScsNode = "b86640cc1e76d74f8bf742a435c43975";
         static constexpr const char* LevelGenerationCorruptionCarver__UeScsNode = "39181f378497d843bb382bfc5b7d5775";

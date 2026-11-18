@@ -19,7 +19,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/FSD.SpawnActorWithDebrisPosComponent SpawnComponent;/Script/Engine.SphereComponent SpawnSphere";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.ChildActorComponent StartEventObject;/Script/Engine.SceneComponent Root;/Script/Engine.SphereComponent SpawnSphere;/Script/FSD.SpawnActorWithDebrisPosComponent SpawnComponent";
     };
 };
 

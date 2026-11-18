@@ -20,7 +20,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* UeIchRecords = "Damage;Niagara;StaticMesh";
         static constexpr const char* UberGraphFrame_PRJ_GooProjectile_Fragment_Base_C__UeName = "UberGraphFrame";
     };

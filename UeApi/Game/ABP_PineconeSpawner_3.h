@@ -20,7 +20,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "PineCones;SM_HollowBoughBranch_05;U33_BiomPlant_Pinecone;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "PineCones;SM_HollowBoughBranch_05;TerrainPlacement;U33_BiomPlant_Pinecone";
         static constexpr const char* U33_BiomPlant_Pinecone2__UeScsNode = "322dc5aa0e54a94da0898ba0c1d37021";
         static constexpr const char* U33_BiomPlant_Pinecone1__UeScsNode = "0983d2ff530765459d0111fe6e5f4a03";
     };

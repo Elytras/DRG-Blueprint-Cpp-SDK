@@ -36,7 +36,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CapacityHoldingItemAggregator Capacity;/Script/FSD.CapacityHoldingItemAggregator ChargeCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.CapacityHoldingItemAggregator Capacity;/Script/FSD.CapacityHoldingItemAggregator ChargeCapacity;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* RechargeAudio__UeScsNode = "676d842f2be1184ea4c2457dbd4b218c";
     };
 };

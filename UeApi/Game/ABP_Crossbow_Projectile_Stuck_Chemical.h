@@ -27,7 +27,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent Root";
-        static constexpr const char* UeIchRecords = "InstantUsable;BansheePulse;SimpleObjectInfo;mesh_front";
+        static constexpr const char* UeIchRecords = "BansheePulse;InstantUsable;mesh_front;SimpleObjectInfo";
         static constexpr const char* ChemicalParticles__UeScsNode = "5a7f35666348f148babc4adff43148b5";
         static constexpr const char* EffectExploding__UeScsNode = "d31cb5c02458f24d8c2034dc5c6ba8fb";
         static constexpr const char* ProjectileExplosion__UeScsNode = "005978b4693a154f9d921252c99351d6";

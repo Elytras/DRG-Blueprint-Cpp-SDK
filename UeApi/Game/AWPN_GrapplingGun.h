@@ -64,7 +64,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CoolDownItemAggregator CoolDownAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.CoolDownItemAggregator CoolDownAggregator;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* AudioMoving__UeScsNode = "e52ea4e265161744adeea72d779cb8ed";
         static constexpr const char* FirstPersonStaticMesh__UeScsNode = "b9343a100d61f944b147076d829b7ebe";
         static constexpr const char* CoolDownWidgetFirstPerson__UeScsNode = "254f37ec96e6ea42b9458103adef31b8";

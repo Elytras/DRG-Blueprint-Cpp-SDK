@@ -95,7 +95,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.TerrainPlacementComponent terrainPlacement";
         static constexpr const char* SM_GunTower_Carver01__UeScsNode = "f654b330946fd0419aac17065be78a1b";
         static constexpr const char* LevelGenerationCarver__UeScsNode = "0d102fcee883db4883ef21903d19b4b3";
         static constexpr const char* HologramLight__UeScsNode = "3a592e051a831349bebdda4af7a7f018";

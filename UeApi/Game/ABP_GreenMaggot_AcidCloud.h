@@ -21,7 +21,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "CombustionDamageFire;CombustionDamageIce;AcidCloud;Sphere;StatusEffectTrigger";
+        static constexpr const char* UeIchRecords = "AcidCloud;CombustionDamageFire;CombustionDamageIce;Sphere;StatusEffectTrigger";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus CombustionDamageFire_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus CombustionDamageIce_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_BP_GreenMaggot_AcidCloud_C__UeName = "UberGraphFrame";
     };

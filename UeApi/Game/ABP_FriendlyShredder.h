@@ -64,8 +64,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.StatusEffectsComponent StatusEffects";
-        static constexpr const char* UeIchRecords = "FacilityShredderDeath1st_Cue;FacilityShredderDeath2nd_Cue;IdleSound;MeleeAttack;NS_Trail;SpawnParticles;Outline;P_TMP_Shredder_Trail;Sphere";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.DeepPatherFinderCharacterAfflictionComponent Affliction;/Script/FSD.DeepPathfinderMovement PathfinderMovement;/Script/FSD.DeepPathfinderSceneComponent SceneComponent;/Script/FSD.EnemyHealthComponent HealthComponent;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeIchRecords = "FacilityShredderDeath1st_Cue;FacilityShredderDeath2nd_Cue;IdleSound;MeleeAttack;NS_Trail;Outline;P_TMP_Shredder_Trail;SpawnParticles;Sphere";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageComponent MeleeAttack_GEN_VARIABLE:DamageComponent_0;/Script/FSD.PushStatusEffectDamageBonus MeleeAttack_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_0;/Script/FSD.PushStatusEffectDamageBonus MeleeAttack_GEN_VARIABLE:DamageComponent_0:PushStatusEffectDamageBonus_1";
         static constexpr const char* UberGraphFrame_BP_FriendlyShredder_C__UeName = "UberGraphFrame";
         static constexpr const char* SimpleObjectInfo__UeScsNode = "a0025cfd5da95046943f8e7550f7b3b7";

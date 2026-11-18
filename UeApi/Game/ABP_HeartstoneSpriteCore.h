@@ -35,7 +35,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureComponent Temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
+        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.StatusEffectsComponent StatusEffects";
         static constexpr const char* enemy__UeScsNode = "32ed224404f11547af4cd0a4ffb18fc9";
         static constexpr const char* Sphere__UeScsNode = "9a571a8488ee3d4b9c70abebd02bd7f4";
         static constexpr const char* DefaultSceneRoot__UeScsNode = "f234dca866e0fd44a1fdebcc8500e320";

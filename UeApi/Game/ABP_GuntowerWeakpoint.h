@@ -38,7 +38,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent Temperature;/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WeakpointGlowComponent WeakpointGlow";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.EnemyHealthComponent Health;/Script/FSD.EnemyTemperatureComponent temperature;/Script/FSD.StatusEffectsComponent StatusEffects;/Script/FSD.WeakpointGlowComponent WeakpointGlow";
         static constexpr const char* PawnAffliction__UeScsNode = "02c43a48e5c3d84199d07ad4d6d47128";
         static constexpr const char* PointLight__UeScsNode = "2a606d4c3891a24d9eefe064af8594f9";
         static constexpr const char* ProjectileCollision___UeName = "ProjectileCollision'";

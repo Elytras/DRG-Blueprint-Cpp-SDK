@@ -109,7 +109,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.DamageComponent Damage;/Script/FSD.KnockbackDamageBonus Damage:KnockbackDamageBonus_0";
         static constexpr const char* UeTemplateSubobjects = "/Game/Art/DropPod/Widgets/BP_Widget_DropPod_Complexity.BP_Widget_DropPod_Complexity_C CaveData_GEN_VARIABLE:CaveData_GEN_VARIABLE_BP_DropPodScreenActor3_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_MissionType.BP_Widget_DropPod_MissionType_C MisisonData_GEN_VARIABLE:MissionData_GEN_VARIABLE_BP_DropPodScreenActor4_C_CAT";
         static constexpr const char* TerrainDetect1__UeScsNode = "71c1ca4d13f91e448c2caeac1ce5fb5e";
         static constexpr const char* TerrainDetect__UeScsNode = "5982827d1ab53744ae3e50bcc9c8cd6f";

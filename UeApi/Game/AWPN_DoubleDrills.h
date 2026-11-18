@@ -56,7 +56,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.BreakIceBonus Damage:BreakIceBonus_0;/Script/FSD.DamageComponent Damage;/Script/FSD.DoubleDrillAggregator Aggregator;/Script/FSD.FirstPersonParticleSystemComponent FP_Left_DrillParticles;/Script/FSD.FirstPersonParticleSystemComponent FP_Right_DrillParticles;/Script/FSD.FirstPersonSkeletalMeshComponent FPLMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPRMesh;/Script/FSD.FSDAudioComponent Audio;/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPLMesh;/Script/Engine.SkeletalMeshComponent TPRMesh;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent TPLMesh;/Script/Engine.SkeletalMeshComponent TPRMesh;/Script/FSD.BreakIceBonus Damage:BreakIceBonus_0;/Script/FSD.DamageComponent Damage;/Script/FSD.DoubleDrillAggregator Aggregator;/Script/FSD.FirstPersonParticleSystemComponent FP_Left_DrillParticles;/Script/FSD.FirstPersonParticleSystemComponent FP_Right_DrillParticles;/Script/FSD.FirstPersonSkeletalMeshComponent FPLMesh;/Script/FSD.FirstPersonSkeletalMeshComponent FPRMesh;/Script/FSD.FSDAudioComponent Audio;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* Widget_Heat__UeScsNode = "de62c620c9d56641a969852a49bf455d";
         static constexpr const char* Widget_Fuel__UeScsNode = "485d5d1de1dc1041a3dec4c1fbdcc970";
         static constexpr const char* FirstPersonStaticMesh1__UeScsNode = "f23b12573ddf1c4cb91895e8f715608c";

@@ -20,7 +20,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "StaticMesh1;StaticMesh2;StaticMesh3;StaticMesh";
+        static constexpr const char* UeIchRecords = "StaticMesh;StaticMesh1;StaticMesh2;StaticMesh3";
         static constexpr const char* UberGraphFrame_BP_LasePointer_SecondaryMarker_C__UeName = "UberGraphFrame";
     };
 };

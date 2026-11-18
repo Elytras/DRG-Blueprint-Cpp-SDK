@@ -126,7 +126,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BarUsableColiider;/Script/FSD.InstantUsable BarUsable;/Script/Engine.SceneComponent Root Component";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent BarUsableColiider;/Script/Engine.SceneComponent Root Component;/Script/FSD.InstantUsable BarUsable";
         static constexpr const char* Hat_Easter__UeScsNode = "764ed49fba092f4a9cf974a45dd7b500";
         static constexpr const char* Hat_Anniversary__UeScsNode = "1bac51c1835b3a4b98ae195b590d7aba";
         static constexpr const char* SK_Moustache_Rig_A_003__UeScsNode = "62275677073c4b4c8b1eeaa205da319a";

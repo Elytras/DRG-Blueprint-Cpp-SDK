@@ -56,7 +56,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.CapsuleComponent VacuumCollision;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Niagara.NiagaraComponent NS_Vacuum_TP;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.CapsuleComponent VacuumCollision;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/Engine.SphereComponent UseSphere;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable;/Script/Niagara.NiagaraComponent NS_Vacuum_FP;/Script/Niagara.NiagaraComponent NS_Vacuum_TP";
         static constexpr const char* BoscoCarryingDetail__UeScsNode = "cb3c8b879577984f946ff524ced45753";
         static constexpr const char* VacuumSource__UeScsNode = "094462459f3bbc4392d6334b13bf2cba";
         static constexpr const char* GroundImpact__UeScsNode = "e704ab4eb3f1054c9b7213779bd13979";

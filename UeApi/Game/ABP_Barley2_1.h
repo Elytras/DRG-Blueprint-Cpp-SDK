@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "InstantUsable;ICH-DefaultSceneRoot;SimpleObjectInfo;UseTrigger;Fruit";
+        static constexpr const char* UeIchRecords = "Fruit;ICH-DefaultSceneRoot;InstantUsable;SimpleObjectInfo;UseTrigger";
     };
 };
 

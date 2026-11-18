@@ -54,8 +54,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
-        static constexpr const char* UeIchRecords = "Widget_DangerLevel01;Widget_DangerLevel02;PathfinderBlocker;PathfinderWalkable;StaticMesh7;TerrainPlacement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.AutoCarverComponent AutoCarver";
+        static constexpr const char* UeIchRecords = "PathfinderBlocker;PathfinderWalkable;StaticMesh7;TerrainPlacement;Widget_DangerLevel01;Widget_DangerLevel02";
         static constexpr const char* UeTemplateSubobjects = "/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel01_GEN_VARIABLE:Widget_DangerLevel01_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT;/Game/Art/DropPod/Widgets/BP_Widget_DropPod_DangerLevel.BP_Widget_DropPod_DangerLevel_C Widget_DangerLevel02_GEN_VARIABLE:Widget_DangerLevel02_GEN_VARIABLE_BP_Widget_DropPod_DangerLevel_C_CAT";
         static constexpr const char* UberGraphFrame_BP_DropPod_Landing_C__UeName = "UberGraphFrame";
         static constexpr const char* BoscoSpawningPoint__UeScsNode = "7f6a88c547cfa3408c9de31d51c6b007";

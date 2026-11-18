@@ -110,7 +110,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.OncePerPlayerUsableComponent CollectUsable;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.OncePerPlayerUsableComponent CollectUsable";
         static constexpr const char* TerrainDetect3__UeScsNode = "7ddc33b4975e5a41a003a547dc75b0f0";
         static constexpr const char* TerrainDetect2__UeScsNode = "61555ea48d27da40b15cd69c9a171649";
         static constexpr const char* TerrainDetect1__UeScsNode = "109d3001e97d5a41800c11b046a4cd90";

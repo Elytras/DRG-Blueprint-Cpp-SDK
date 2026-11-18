@@ -16,8 +16,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
-        static constexpr const char* UeIchRecords = "Box;MainDamage;SimpleDamage;BansheePulse;NS_Trail;P_Crossbow_Trail;SimpleObjectInfo;mesh_front";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
+        static constexpr const char* UeIchRecords = "BansheePulse;Box;MainDamage;mesh_front;NS_Trail;P_Crossbow_Trail;SimpleDamage;SimpleObjectInfo";
     };
 };
 

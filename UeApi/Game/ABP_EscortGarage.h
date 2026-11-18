@@ -101,7 +101,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.DamageComponent Damage;/Script/Engine.SceneComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/FSD.DamageComponent Damage";
         static constexpr const char* KillWhileDropping__UeScsNode = "eddeeb88d66d0d4494579394b17ea889";
         static constexpr const char* KillEnemiesSphere__UeScsNode = "b83465f2d4d1e049ba7ddd93bdd09d7d";
         static constexpr const char* DroppodImpactCarver1__UeScsNode = "f4cf6f3d43597744a90feaea08d7dd88";

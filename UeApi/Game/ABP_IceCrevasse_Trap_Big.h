@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "Box;LevelGenerationCarver_warning;ICH-DefaultSceneRoot;Crevasse;Step1;Step2;Step3;Step4;Step5;Step6;Tell1;Tell2;Tell3;Tell4;TerrainPlacement";
+        static constexpr const char* UeIchRecords = "Box;Crevasse;ICH-DefaultSceneRoot;LevelGenerationCarver_warning;Step1;Step2;Step3;Step4;Step5;Step6;Tell1;Tell2;Tell3;Tell4;TerrainPlacement";
     };
 };
 

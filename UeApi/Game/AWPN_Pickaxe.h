@@ -28,7 +28,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.BreakIceBonus Damage:BreakIceBonus_0;/Script/FSD.BreakIceBonus SpecialDamage:BreakIceBonus_0;/Script/FSD.DamageComponent Damage;/Script/FSD.DamageComponent SpecialDamage;/Script/Engine.SceneComponent FP_Root;/Script/Engine.SceneComponent FP_Scale;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TP_Root;/Script/Engine.SceneComponent TP_Scale;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent FP_Root;/Script/Engine.SceneComponent FP_Scale;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent TP_Root;/Script/Engine.SceneComponent TP_Scale;/Script/FSD.BreakIceBonus Damage:BreakIceBonus_0;/Script/FSD.BreakIceBonus SpecialDamage:BreakIceBonus_0;/Script/FSD.DamageComponent Damage;/Script/FSD.DamageComponent SpecialDamage;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* CrosshairAggregator__UeScsNode = "2d244225be75ad4f8e985cb30bd6e76a";
     };
 };

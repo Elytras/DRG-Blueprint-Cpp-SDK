@@ -38,7 +38,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDAudioComponent FuseSound;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent MovingSparks;/Script/Engine.SkeletalMeshComponent Root";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SkeletalMeshComponent Root;/Script/FSD.FSDAudioComponent FuseSound;/Script/FSD.InstantUsable Usable;/Script/Niagara.NiagaraComponent MovingSparks";
         static constexpr const char* Capsule__UeScsNode = "1ef2a0e58ece614f863a20ceef01a71b";
         static constexpr const char* SM_LunarFestival_FirecrackerSmall9__UeScsNode = "719f9bea55b343429623768284e38a17";
         static constexpr const char* SM_LunarFestival_FirecrackerSmall8__UeScsNode = "530b8ca05692e944a79000d53aef8198";

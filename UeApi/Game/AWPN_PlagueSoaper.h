@@ -49,7 +49,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/FSD.ProjectileLauncherComponent ProjectileLauncher;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/FSD.SkinnableComponent Skinnable;/Script/Engine.SphereComponent UseSphere;/Script/FSD.UpgradableItemComponent Upgradable";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Root;/Script/Engine.SkeletalMeshComponent TPMesh;/Script/Engine.SphereComponent UseSphere;/Script/FSD.CrosshairAggregator Crosshair;/Script/FSD.FirstPersonSkeletalMeshComponent FPMesh;/Script/FSD.InstantUsable PickupUsable;/Script/FSD.KeepInsideWorld KeepInWorld;/Script/FSD.ProjectileLauncherComponent projectileLauncher;/Script/FSD.SkinnableComponent Skinnable;/Script/FSD.UpgradableItemComponent Upgradable";
         static constexpr const char* BoscoCarryingDetail__UeScsNode = "d69400329046cb44a71b12b3ea760d0e";
         static constexpr const char* Niagara3P__UeScsNode = "fe23668e07f0a74e849bb10718a09b59";
         static constexpr const char* GroundImpact__UeScsNode = "ecb3c2719d99d046854b41e413d02864";

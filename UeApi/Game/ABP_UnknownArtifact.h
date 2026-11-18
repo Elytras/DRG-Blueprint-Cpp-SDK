@@ -42,7 +42,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
-        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5;TerrainDetect";
+        static constexpr const char* UeIchRecords = "Box;FirstPersonStaticMesh;SimpleObjectInfo;TerrainDetect;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect4;TerrainDetect5";
         static constexpr const char* UberGraphFrame_BP_UnknownArtifact_C__UeName = "UberGraphFrame";
         static constexpr const char* outline__UeScsNode = "bc85e4f89f376846872cab54339bdfb9";
         static constexpr const char* PointLight6__UeScsNode = "8a6be903e223f64cae993353797d890c";

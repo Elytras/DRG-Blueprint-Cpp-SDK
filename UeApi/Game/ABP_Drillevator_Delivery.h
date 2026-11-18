@@ -94,7 +94,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.AutoCarverComponent AutoCarver;/Script/Engine.SceneComponent RootComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent RootComponent;/Script/FSD.AutoCarverComponent AutoCarver";
         static constexpr const char* TerrainScannerMesh__UeScsNode = "d23444303c34224dbc0680ba5696d209";
         static constexpr const char* RespawnPoint__UeScsNode = "1cb8fcbe05fc9c418e1bce39b8d05b36";
         static constexpr const char* MeshCarver_LandedArea__UeScsNode = "9e49745b8823f74bb5205d42885498e5";

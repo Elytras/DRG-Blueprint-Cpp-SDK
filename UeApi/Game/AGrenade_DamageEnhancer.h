@@ -49,7 +49,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Box;/Script/Engine.BoxComponent Root;/Script/FSD.CapsuleHitscanComponent CapsuleHitScan;/Script/FSD.DamageComponent Damage;/Script/FSD.HealthComponent Health;/Script/FSD.HitscanComponent HitScan;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/FSD.ReflectionHitscanComponent ReflectionHitScan;/Script/Engine.SphereComponent Sphere;/Script/Engine.StaticMeshComponent Mesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.BoxComponent Box;/Script/Engine.BoxComponent Root;/Script/Engine.ProjectileMovementComponent ProjectileMovement;/Script/Engine.SphereComponent Sphere;/Script/Engine.StaticMeshComponent Mesh;/Script/FSD.CapsuleHitscanComponent CapsuleHitScan;/Script/FSD.DamageComponent Damage;/Script/FSD.HealthComponent Health;/Script/FSD.HitscanComponent HitScan;/Script/FSD.ReflectionHitscanComponent ReflectionHitScan";
         static constexpr const char* Mesh_Projector__UeScsNode = "6e3f1fc4d4ef6c4fbe5573e1f8da1609";
         static constexpr const char* KeepOut_Capsule__UeScsNode = "909182a3d2e75844ac94a7fa6b5ddb07";
         static constexpr const char* StatusEffectTrigger__UeScsNode = "cbfb78992f71a74385af00b526cda2c2";

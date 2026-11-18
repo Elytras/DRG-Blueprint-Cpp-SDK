@@ -37,7 +37,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.HitscanComponent HitscanComponent;/Script/FSD.HitscanComponent OnSpawnedEffect;/Script/Niagara.NiagaraComponent ImpactNiagara;/Script/Niagara.NiagaraComponent MuzzleFlashNiagara;/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ShotOriginPivot;/Script/Engine.SkeletalMeshComponent Mesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.PointLightComponent MuzzleFlash;/Script/Engine.SceneComponent Root;/Script/Engine.SceneComponent ShotOriginPivot;/Script/Engine.SkeletalMeshComponent Mesh;/Script/FSD.HitscanComponent HitscanComponent;/Script/FSD.HitscanComponent OnSpawnedEffect;/Script/Niagara.NiagaraComponent ImpactNiagara;/Script/Niagara.NiagaraComponent MuzzleFlashNiagara";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageModifier Damage_GEN_VARIABLE:DamageModifier_0;/Script/FSD.DamageModifier Damage_GEN_VARIABLE:DamageModifier_1;/Script/FSD.DistanceToTargetDamageCondition Damage_GEN_VARIABLE:DamageModifier_0:DistanceToTargetDamageCondition_0;/Script/FSD.DistanceToTargetDamageCondition Damage_GEN_VARIABLE:DamageModifier_1:DistanceToTargetDamageCondition_0;/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* SpotLightCloseShadowCast__UeScsNode = "f91e603c949735449090b8815ce262fc";
         static constexpr const char* GrenadeStart__UeScsNode = "ed6953e1c500ec459832dbe83ea7cf8c";

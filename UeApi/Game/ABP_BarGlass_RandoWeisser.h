@@ -16,7 +16,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "ParticleSystem;ICH-DefaultSceneRoot;SkeletalMesh";
+        static constexpr const char* UeIchRecords = "ICH-DefaultSceneRoot;ParticleSystem;SkeletalMesh";
     };
 };
 

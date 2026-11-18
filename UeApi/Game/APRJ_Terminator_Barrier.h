@@ -24,7 +24,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* UeIchRecords = "BounceBox;Damage";
         static constexpr const char* UberGraphFrame_PRJ_Terminator_Barrier_C__UeName = "UberGraphFrame";
         static constexpr const char* Audio__UeScsNode = "139a8c73632e8d4090fa6ff73d4c01a3";

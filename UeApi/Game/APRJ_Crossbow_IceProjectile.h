@@ -25,8 +25,8 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
-        static constexpr const char* UeIchRecords = "MainDamage;BansheePulse;NS_Trail;P_Crossbow_Trail;SimpleObjectInfo;mesh_front";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
+        static constexpr const char* UeIchRecords = "BansheePulse;MainDamage;mesh_front;NS_Trail;P_Crossbow_Trail;SimpleObjectInfo";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.TargetSpecificDamageBonus MainDamage_GEN_VARIABLE:TargetSpecificDamageBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_Crossbow_IceProjectile_C__UeName = "UberGraphFrame";
         static constexpr const char* FlammableCollision__UeScsNode = "3e6b9b1370b00f4ab14c39c1fc0f5ede";

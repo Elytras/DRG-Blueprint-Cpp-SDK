@@ -81,7 +81,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent InitialRotationComponent;/Script/Engine.SceneComponent RootComp;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent placement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.InstancedStaticMeshComponent SpikesComponent_0;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_1;/Script/Engine.InstancedStaticMeshComponent SpikesComponent_2;/Script/Engine.SceneComponent InitialRotationComponent;/Script/Engine.SceneComponent RootComp;/Script/Engine.SceneComponent SpikesRootComponent;/Script/Engine.SplineComponent SpikelocationComponent;/Script/FSD.TerrainPlacementComponent Placement";
         static constexpr const char* BlockAll__UeScsNode = "e922f04e1d25c242b49b9bd202521232";
         static constexpr const char* PointLight__UeScsNode = "7c3a6501ad57624b94ff502f47d28a23";
         static constexpr const char* PointLight_Intense__UeScsNode = "ae7b49015088224c9f2d533c1bc7560d";

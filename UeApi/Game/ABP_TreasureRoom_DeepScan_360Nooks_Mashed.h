@@ -33,7 +33,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "D_Geode_Crystal;NS_Treasure_Room_Atmosphere;Carvers;ICH-DefaultSceneRoot";
+        static constexpr const char* UeIchRecords = "Carvers;D_Geode_Crystal;ICH-DefaultSceneRoot;NS_Treasure_Room_Atmosphere";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DebrisMesh D_Geode_Crystal_GEN_VARIABLE:DebrisMesh_0";
         static constexpr const char* LevelGenerationCarverMulti3__UeScsNode = "2f995dfd30ac004e91f0cb77c7d3a260";
         static constexpr const char* MainCavityCarver_Multi_10__UeScsNode = "66c8735aa40ff646ba7394e7cf836ba7";

@@ -39,7 +39,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FSDProjectileMovementComponent ProjectileComponent;/Script/Engine.SphereComponent SphereComponent";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DirectDamageCondition Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0:DirectDamageCondition_0;/Script/FSD.PushStatusEffectDamageBonus Damage_GEN_VARIABLE:PushStatusEffectDamageBonus_0";
         static constexpr const char* P_SpiderLobber_Projecitle_Trail_TEMP_Converted__UeScsNode = "a4fba5ec3c1aca4b83b9c1dd244eb239";
         static constexpr const char* GooParticle__UeScsNode = "d1a08dd64475754ebf7e98d6205d9633";

@@ -35,7 +35,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.FuelLineStartUsable UsableStartFuelLine;/Script/FSD.OutlineComponent OutlineComponent;/Script/Engine.SceneComponent DefaultRootComponent;/Script/FSD.SimpleObjectInfoComponent ObjectInfo;/Script/Engine.StaticMeshComponent StaticMesh";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent DefaultRootComponent;/Script/Engine.StaticMeshComponent StaticMesh;/Script/FSD.FuelLineStartUsable UsableStartFuelLine;/Script/FSD.OutlineComponent OutlineComponent;/Script/FSD.SimpleObjectInfoComponent ObjectInfo";
         static constexpr const char* WidgetStartFuelLine__UeScsNode = "2c5c0ce09877cf4b8677114be090f924";
         static constexpr const char* UsableCollider__UeScsNode = "980f75c1b349984b8bd765b2dcfee42b";
     };

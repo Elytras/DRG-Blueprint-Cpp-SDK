@@ -17,7 +17,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeIchRecords = "GlassMesh;Collider";
+        static constexpr const char* UeIchRecords = "Collider;GlassMesh";
     };
 };
 

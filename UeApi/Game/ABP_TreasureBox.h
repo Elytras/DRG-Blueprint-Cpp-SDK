@@ -109,7 +109,7 @@ public:
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.OncePerPlayerUsableComponent CollectUsable;/Script/FSD.RepairableComponent Repairable;/Script/FSD.RepairableUsable RepairUsable;/Script/Engine.SceneComponent Root;/Script/FSD.SingleUsableComponent HammeringUsable;/Script/Engine.SkeletalMeshComponent BoxMesh;/Script/Engine.StaticMeshComponent MiddlePlane;/Script/FSD.TerrainPlacementComponent TerrainPlacement";
+        static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SceneComponent Root;/Script/Engine.SkeletalMeshComponent BoxMesh;/Script/Engine.StaticMeshComponent MiddlePlane;/Script/FSD.OncePerPlayerUsableComponent CollectUsable;/Script/FSD.RepairableComponent repairable;/Script/FSD.RepairableUsable RepairUsable;/Script/FSD.SingleUsableComponent HammeringUsable;/Script/FSD.TerrainPlacementComponent terrainPlacement";
         static constexpr const char* TerrainDetect3__UeScsNode = "910657373c694445a9a5794b25cdef2b";
         static constexpr const char* TerrainDetect2__UeScsNode = "ee45fc910284104fb0c001bb9455196b";
         static constexpr const char* TerrainDetect1__UeScsNode = "96d5c90d7f6e4e4091210f500454e60c";

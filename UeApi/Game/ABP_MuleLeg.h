@@ -56,7 +56,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/FSD.CarriableInstantUsable Usable";
-        static constexpr const char* UeIchRecords = "Box;Carriable;FirstPersonStaticMesh;SimpleObjectInfo;Sphere;TerrainScannerMesh;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect5;TerrainDetect";
+        static constexpr const char* UeIchRecords = "Box;Carriable;FirstPersonStaticMesh;SimpleObjectInfo;Sphere;TerrainDetect;TerrainDetect1;TerrainDetect2;TerrainDetect3;TerrainDetect5;TerrainScannerMesh";
         static constexpr const char* UberGraphFrame_BP_MuleLeg_C__UeName = "UberGraphFrame";
         static constexpr const char* MiniMuleLegPickUp__UeScsNode = "7bd24d421dd0284ab958ebf29a253746";
         static constexpr const char* MiniMuleLegDrop__UeScsNode = "146e0ff1c056b74ea7a057ecebe441e9";

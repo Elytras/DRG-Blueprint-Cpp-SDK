@@ -782,3 +782,17 @@ Only AssetGen's clang reads it; an MSVC-mode IntelliSense would flag the attribu
 #else
 #define UE_PURE
 #endif
+
+/*
+Marks a getter whose repeated calls AssetGen may reuse: `UE_STABLE SavegameBase* GetSave(FName Name)`. The first call
+may act (load a save from disk, create one, log once), but every later call with the same arguments returns the same
+value and out-values and adds nothing visible; only an error text on a failure path may differ. A later identical call
+that the first one is sure to have run before, with no other call or store in between that could change its answer, is
+then the first call's value, read from the local it was stored in. Its reference parameters are outputs: it does not
+read them. Only AssetGen reads it: it is no Blueprint flag (an interface method may carry it).
+*/
+#ifdef __clang__
+#define UE_STABLE [[clang::annotate("ue_stable")]]
+#else
+#define UE_STABLE
+#endif

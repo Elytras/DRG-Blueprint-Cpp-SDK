@@ -1,0 +1,331 @@
+﻿#pragma once
+/* UE integer spellings for clang; nothing here has behaviour. */
+using int8  = signed char;
+using int16 = short;
+using int32 = int;
+using int64 = long long;
+
+using uint8  = unsigned char;
+using uint16 = unsigned short;
+using uint32 = unsigned int;
+using uint64 = unsigned long long;
+
+using WChar = wchar_t;
+
+/*
+FString / FName / FText exist so clang accepts a mod source; AssetGen lowers by the clang types
+alone. Conv.h supplies one constructor per Kismet Conv_XToY (implicit) and one explicit operator
+per scalar target, so `Key = Label + Count` and `int(Label)` both spell a Kismet conversion.
+Every `+` yields an FString: AssetGen converts each operand to a string, concatenates, and
+converts the result to the destination type.
+*/
+struct FName;
+struct FText;
+#include "Conv.h"
+
+/* Methods_<T>.inc, included last in FString, FName, FText and the soft pointers: every library static taking the
+   value first as a method (`Path.MakeSoftClassPath()`), which AssetGen calls with the value first, and each
+   one-parameter Conv_ as To<Target>() (`Path.ToSoftClassPtr()`). Methods.h declares what they name. */
+#include "Methods.h"
+
+struct FString {
+  WChar *Data;
+  int32  Length;
+  int32  Capacity;
+
+  FString() = default;
+  FString(const WChar *) {}
+  FString(const char *) {}
+  FString(double) {} // a FloatingLiteral, so `Str + 0.5` is not ambiguous across the scalar ctors
+  UE_CONV_FString
+
+#include "Methods_FString.inc"
+};
+
+struct FName {
+  WChar *Val;
+
+  FName() = default;
+  FName(const WChar *) {}
+  FName(const char *) {}
+  FName(double) {}
+  UE_CONV_FName
+  explicit operator bool() const; // `if (Name)`: Name != None
+
+#include "Methods_FName.inc"
+};
+
+struct FText {
+  WChar *Val;
+
+  FText() = default;
+  FText(const WChar *) {}
+  FText(const char *) {}
+  FText(double) {}
+  UE_CONV_FText
+
+#include "Methods_FText.inc"
+};
+
+inline FString operator+(const FString &, const FString &) { return FString(); }
+
+/* Class and soft references, and Cast<T>: AssetGen lowers them to ClassProperty /
+   SoftObjectProperty / SoftClassProperty, EX_ObjectConst, EX_SoftObjectConst and EX_DynamicCast. */
+class UClass;
+class UObject;
+
+template <class T> struct TSubclassOf {
+  UClass *Ptr;
+  TSubclassOf() = default;
+  TSubclassOf(UClass *) {}
+  operator UClass *() const { return Ptr; }
+};
+
+/* An enum that knows its names: `TEnum<EMood> Mood = EMood::Calm;` compiles to a plain EMood - the same property,
+   the same bytes - and converts both ways, so it switches, compares and assigns like one. `Mood.Name()` is the
+   enumerator's name and `Mood.String()` its display name, read off the UEnum by the engine (KismetNodeHelperLibrary's
+   GetEnumeratorName / GetEnumeratorUserFriendlyName, what the editor's Enum to Name / Enum to String nodes call).
+   UeApi spells every enum field and return value this way. A uint8 enum only: those two take a uint8. */
+template <class E> struct TEnum {
+  TEnum() = default;
+  TEnum(E) {}
+  operator E() const { return E(); }
+  FName   Name() const;
+  FString String() const;
+};
+
+/* A Blueprint bitmask over an enum: `TEnumMask<EMood> Moods;` compiles to a plain int32 - what the editor's Bitmask
+   variable over a Bitmask Flags enum is - whose bit N stands for the enumerator whose value is N; the enum itself stays
+   0, 1, 2, ... The methods are KismetNodeHelperLibrary's bit functions with the enumerator as the bit index: Has is
+   BitIsMarked, Add MarkBit, Remove ClearBit, Clear ClearAllBits. It converts to and from int32, so `|`, `&` and `~`
+   work on whole masks. A native enum whose values are already flags (1, 2, 4, ...) is not one of these: test it with
+   `&` on an int32. */
+template <class E> struct TEnumMask {
+  TEnumMask() = default;
+  TEnumMask(int32) {}
+  operator int32() const { return 0; }
+  bool Has(E) const;
+  void Add(E);
+  void Remove(E);
+  void Clear();
+};
+
+/* A soft pointer to a subclass passes where one to its parent is wanted, as UE's converts. Conv.h
+   adds Kismet's conversions: from the object (the class) it names and from a soft path, to its path
+   as a string, and back with an explicit operator, `(AItem *)Soft`, null unless it is loaded. */
+template <class T> struct TSoftObjectPtr {
+  WChar *Path;
+  TSoftObjectPtr() = default;
+  TSoftObjectPtr(const char *) {}
+  TSoftObjectPtr(const WChar *) {}
+  template <class U> TSoftObjectPtr(const TSoftObjectPtr<U> &) {}
+  UE_CONV_TSoftObjectPtr
+
+#include "Methods_TSoftObjectPtr.inc"
+};
+
+template <class T> struct TSoftClassPtr {
+  WChar *Path;
+  TSoftClassPtr() = default;
+  TSoftClassPtr(const char *) {}
+  TSoftClassPtr(const WChar *) {}
+  template <class U> TSoftClassPtr(const TSoftClassPtr<U> &) {}
+  UE_CONV_TSoftClassPtr
+
+#include "Methods_TSoftClassPtr.inc"
+};
+
+/* A native struct's or class's weak member (WeakObjectProperty), read like an object reference, as a Blueprint's
+   Break node reads one: `Data.Instigator->K2_GetPawn()`, `AActor *A = Data.DamageCauser;`, `if (Data.DamageCauser)`.
+   The VM hands the object out of the weak pointer, None once it is gone. No assignment: the game's are read-only. */
+template <class T> struct TWeakObjectPtr {
+  T *Ptr;
+  T *operator->() const;
+  operator T *() const { return Ptr; }
+};
+
+template <class T, class U> inline T *Cast(U *) { return nullptr; }
+template <class T, class U> inline T *Cast(const TWeakObjectPtr<U> &) { return nullptr; }     // the object it reads as
+
+/* The class default object of a class value, the editor's Get Class Defaults: `->Member` and `->Fn()` on it run in
+   EX_ClassContext(Class). Class holds a T: a TSubclassOf<T> or of a subclass, or any class for T = UObject. */
+template <class T> inline const T *GetDefault(UClass *) { return nullptr; }
+template <class T> inline T *GetMutableDefault(UClass *) { return nullptr; }
+
+/* An object seen through one of its interfaces: InterfaceProperty. Made from an object
+   (EX_ObjToInterfaceCast) or another interface (EX_CrossInterfaceCast); GetObject() is
+   EX_InterfaceToObjCast, and `I->Fn()` runs Fn in EX_InterfaceContext(I). */
+template <class T> struct TScriptInterface {
+  UObject *Object;
+  T       *Interface;
+  TScriptInterface() = default;
+  TScriptInterface(UObject *) {}
+  template <class U> TScriptInterface(const TScriptInterface<U> &) {}
+  UObject *GetObject() const;
+  T       *operator->() const;
+  /* `if (I)`, `!I`, `I == nullptr`: whether an object is behind it (CST_InterfaceToBool). */
+  explicit operator bool() const;
+  bool     operator==(decltype(nullptr)) const;
+  bool     operator!=(decltype(nullptr)) const;
+};
+
+/* Delegates. A delegate value is `{this, &Class::Handler}`, self's function bound by name
+   (EX_InstanceDelegate). A dispatcher takes Add / Remove / Clear, and Broadcast when AssetGen knows
+   its signature function, which it does for one declared with UE_DISPATCHER. */
+/* A handler's parameters match a signature's when each is the same type, by value or `const&`: a native signature's
+   UeApi spelling does not say which its parameter is (the dump keeps no CPF_ReferenceParm), and the engine hands a
+   handler the value either way. TSubclassOf<UObject> is a UClass*, both a ClassProperty of UObject. */
+template <class T> struct UeBareT { using Type = T; };
+template <class T> struct UeBareT<const T> { using Type = typename UeBareT<T>::Type; };
+template <class T> struct UeBareT<T &> { using Type = typename UeBareT<T>::Type; };
+template <> struct UeBareT<TSubclassOf<UObject>> { using Type = UClass *; };
+template <class E> struct UeBareT<TEnum<E>> { using Type = E; };
+template <class X, class Y> constexpr bool UeSameT = false;
+template <class X> constexpr bool          UeSameT<X, X> = true;
+template <class... X> struct UeParams {};
+template <class P, class Q> constexpr bool UeSameParams = false;
+template <class... X, class... Y>
+  requires(sizeof...(X) == sizeof...(Y))
+constexpr bool UeSameParams<UeParams<X...>, UeParams<Y...>> =
+    (UeSameT<typename UeBareT<X>::Type, typename UeBareT<Y>::Type> && ...);
+
+template <class Sig> struct TDelegate;
+template <class R, class... A> struct TDelegate<R(A...)> {
+  uint8 Opaque[16];
+  TDelegate() = default;
+  template <class O, class C, class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  TDelegate(O *, R (C::*)(B...)) {}
+  /* Calls the bound function. A Blueprint has no node for it, so AssetGen adds the value to a dispatcher local of this
+     signature and broadcasts that: an unbound value does nothing, and a value-returning signature is refused. */
+  R Execute(A...) const;
+  R ExecuteIfBound(A...) const;
+};
+
+template <class Sig> struct TMulticastInlineDelegate;
+template <class R, class... A> struct TMulticastInlineDelegate<R(A...)> {
+  uint8 Opaque[16];
+  template <class O, class C, class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Add(O *, R (C::*)(B...));
+  template <class O, class C, class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Remove(O *, R (C::*)(B...));
+  /* A delegate value bound already, a variable or parameter: the editor's Add / Remove node fed a delegate pin. */
+  template <class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Add(const TDelegate<R(B...)> &);
+  template <class... B>
+    requires UeSameParams<UeParams<A...>, UeParams<B...>>
+  void Remove(const TDelegate<R(B...)> &);
+  void Clear();
+  void Broadcast(A...);
+};
+
+template <class Sig> using TMulticastSparseDelegate = TMulticastInlineDelegate<Sig>;
+
+/* Containers. Containers.h declares every Kismet Array_ / Set_ / Map_ function as a method of the
+   template it takes; AssetGen compiles `Items.Add(X)` back to Array_Add(Items, X). Num() is
+   Length(). `A[i]` is EX_ArrayGetByRef. */
+#include "Containers.h"
+
+/* A container's braced list. As a member default AssetGen writes it into the CDO / asset:
+   `TArray<int32> Primes = { 2, 3, 5 };`, `TMap<FName, int32> Cost = { { "Gold", 5 } };`. In a function, or as
+   the value of a `static inline const` class variable (UeMeta.h), it is a Make Array / Set / Map where it is used. */
+#include <initializer_list>
+
+/* A container of objects passes where one of a base class is wanted: `TArray<AActor*>` for a `const TArray<UObject*>&`
+   or by-value parameter, member, initialiser or return, as the editor links an Actor array pin to an Object array one
+   (ArePinTypesCompatible). The bytes are the same pointers, so nothing converts. Each element, key and value is the same
+   type or an object pointer to a base class; an interface is no UObject, so `IScorable*` never is. A non-const
+   `TArray<UObject*>&` takes no `TArray<AActor*>`: a write through it could put a UObject in an Actor array. */
+template <class From, class To> struct UeTwoPtrs { static constexpr bool Value = false; };
+template <class D, class B> struct UeTwoPtrs<D *, B *> {
+  static constexpr bool Value = !UeSameT<D, B>;
+  using Derived = D;
+  using Base    = B;
+};
+/* A conjunction stops at its first false part: the trait sees two distinct classes, both complete. */
+template <class From, class To>
+concept UeUpcast = UeTwoPtrs<From, To>::Value
+                && requires { sizeof(typename UeTwoPtrs<From, To>::Derived) + sizeof(typename UeTwoPtrs<From, To>::Base); }
+                && __is_base_of(UObject, typename UeTwoPtrs<From, To>::Base)
+                && __is_base_of(typename UeTwoPtrs<From, To>::Base, typename UeTwoPtrs<From, To>::Derived);
+template <class From, class To> concept UeSameOrUpcast = UeSameT<From, To> || UeUpcast<From, To>;
+
+/* `for (auto& [Item, Index] : Items.Enumerate())`: Item is the element where it lives, so a write lands in the array, and
+   Index is its int32 index, which nothing assigns. `const auto&` makes Item read-only too; `auto [Item, Index]` copies
+   the element. A method, not `auto& [A, B] : Items` itself, which C++ reads as unpacking each element (a struct's two
+   members). AssetGen lowers it as any range-for over the array, by index; the methods have no body. */
+template <class T> struct TIndexed {
+  T           Item;
+  const int32 Index;
+};
+template <class T> struct TEnumerated {
+  TIndexed<T> *begin();
+  TIndexed<T> *end();
+};
+
+template <class T> struct TArray {
+  T    *Data = nullptr;
+  int32 Num_ = 0;
+  int32 Max_ = 0;
+
+  TArray() = default;
+  TArray(std::initializer_list<T>) {}
+  template <class E> requires UeUpcast<E, T> TArray(const TArray<E> &) {}
+  UE_CONTAINER_TArray int32 Num() const;
+  T                        &operator[](int32 I) { return Data[I]; }
+  const T                  &operator[](int32 I) const { return Data[I]; }
+  /* Range-for: AssetGen walks the array in place by index; a T& loop variable writes through. */
+  T       *begin();
+  T       *end();
+  const T *begin() const;
+  const T *end() const;
+  TEnumerated<T>       Enumerate();
+  TEnumerated<const T> Enumerate() const;
+};
+
+template <class T> struct TSet {
+  uint8 Opaque[80] = {};
+
+  TSet() = default;
+  TSet(std::initializer_list<T>) {}
+  template <class E> requires UeUpcast<E, T> TSet(const TSet<E> &) {}
+  UE_CONTAINER_TSet int32 Num() const;
+  /* Set_Union, Set_Difference and Set_Intersection as values: `Wanted - Active`. Both sides must be set variables or
+     the result of another of these. */
+  TSet operator+(const TSet &B) const;
+  TSet operator-(const TSet &B) const;
+  TSet operator&(const TSet &B) const;
+  /* Range-for: over a ToArray() copy, so elements are read-only. */
+  const T *begin() const;
+  const T *end() const;
+};
+
+/* A TMap element, for `for (auto [Key, Value] : Map)`. */
+template <class K, class V> struct TPair {
+  K Key;
+  V Value;
+};
+
+template <class K, class V> struct TMap {
+  uint8 Opaque[80] = {};
+
+  TMap() = default;
+  TMap(std::initializer_list<TPair<K, V>>) {}
+  template <class K2, class V2>
+    requires UeSameOrUpcast<K2, K> && UeSameOrUpcast<V2, V> && (!UeSameT<K2, K> || !UeSameT<V2, V>)
+  TMap(const TMap<K2, V2> &) {}
+  UE_CONTAINER_TMap int32 Num() const;
+  /* A read is Find(), the value type's default for a missing key; `Map[Key] = V` is Add(). A container method on
+     `Map[Key]` runs on a copy, stored back when it writes. */
+  V       &operator[](const K &Key);
+  const V &operator[](const K &Key) const;
+  /* Range-for: `auto& [Key, Value]` walks the map's own slots, so Value is the value where it lives. A body that adds
+     to, removes from or sorts a map of this type, or a by-value `auto [Key, Value]`, walks a copy of Keys() instead. */
+  TPair<const K, V>       *begin();
+  TPair<const K, V>       *end();
+  const TPair<const K, V> *begin() const;
+  const TPair<const K, V> *end() const;
+};

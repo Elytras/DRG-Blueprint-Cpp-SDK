@@ -25,7 +25,7 @@ public:
     class UProjectileExplosion* ProjectileExplosion;
     class UDamageComponent* Damage;
     class UParticleSystemComponent* P_GrenadeTrail;
-    class UStaticMeshComponent* mesh_front;
+    class UStaticMeshComponent* Mesh_Front;
     virtual void ExecuteUbergraph_PRJ_Mortar_Autocannon(int EntryPoint);
     virtual void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     UE_BLUEPRINT_CALLABLE virtual class UDamageComponent* GetDamageComponent();
@@ -37,7 +37,7 @@ private:
         static constexpr const char* ProjectileExplosion__UeScsNode = "1fb95bbecf4f9d459b01b5d2b4f3ad1d";
         static constexpr const char* Damage__UeScsNode = "864ec3671b937748ad2c8ffdb020fa37";
         static constexpr const char* P_GrenadeTrail__UeScsNode = "5dcebd0fcb90ce41b00298686e4cc341";
-        static constexpr const char* mesh_front__UeScsNode = "9f90a2f6e5d66a4ab4def462bf7b3f9b";
+        static constexpr const char* Mesh_Front__UeScsNode = "9f90a2f6e5d66a4ab4def462bf7b3f9b";
     };
 };
 

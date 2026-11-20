@@ -32,19 +32,19 @@ public:
     class AFSDPlayerState* OwnerState;
     class ASpacerigStart* StartSpot;
     ABP_DeathStats* InfirmaryStats;
-    virtual void OnRep_OwnerState();
-    UE_PROTECTED virtual void ReceiveBeginPlay();
-    virtual void RemoveOwner();
-    virtual void Set_Cabin_Owner(class AFSDPlayerController* Controller);
-    virtual void Controller_leave(class AActor* DestroyedActor);
     virtual void ExecuteUbergraph_BP_CabinController(int EntryPoint);
+    virtual void Controller_leave(class AActor* DestroyedActor);
+    virtual void Set_Cabin_Owner(class AFSDPlayerController* Controller);
+    virtual void RemoveOwner();
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void OnRep_OwnerState();
 private:
     struct UeMarkers
     {
         static constexpr const char* DefaultSceneRoot__UeScsNode = "414f9180f9da41428a5f2ae200bf79b8";
         static constexpr const char* OwnerState__Replicated = "OnRep_OwnerState:";
-        static constexpr const char* Set_Cabin_Owner__UeName = "Set Cabin Owner";
         static constexpr const char* Controller_leave__UeName = "Controller leave";
+        static constexpr const char* Set_Cabin_Owner__UeName = "Set Cabin Owner";
     };
 };
 

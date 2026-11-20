@@ -818,7 +818,6 @@ UE_ASSET_AT(::UMaterialInstanceConstant, M_Bobble_A_Inst, "/Game/Art/Particles/M
 UE_ASSET_AT(::UMaterialInstanceConstant, M_impact_splash_subUV_Emissive, "/Game/Art/Particles/M_impact_splash_subUV_Emissive");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_impact_splash_subUV_Emissive_Depthfade10, "/Game/Art/Particles/M_impact_splash_subUV_Emissive_Depthfade10");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_P_BasicMeshParticle01, "/Game/Art/Particles/M_P_BasicMeshParticle01");
-UE_ASSET_AT(::UMaterialInstanceConstant, M_P_BasicMeshParticle01_Unlit_Additive, "/Game/Art/Particles/M_P_BasicMeshParticle01_Unlit_Additive");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_P_BasicMeshParticle01_Unlit_Translucent, "/Game/Art/Particles/M_P_BasicMeshParticle01_Unlit_Translucent");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_P_BasicMovementTrail, "/Game/Art/Particles/M_P_BasicMovementTrail");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_P_Explosion_SubUV_DepthFade25, "/Game/Art/Particles/M_P_Explosion_SubUV_DepthFade25");
@@ -3225,6 +3224,7 @@ UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Particle, "/Game/Lands
 UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Showroom, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_Showroom");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Terrain_2, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_Terrain_2");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Terrain_2_Object, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_Terrain_2_Object");
+UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Terrain_2_Particles, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_Terrain_2_Particles");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Terrain_BonePiles, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_Terrain_BonePiles");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_Terrain_BonePiles_Object, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_Terrain_BonePiles_Object");
 UE_ASSET_AT(::UMaterialInstanceConstant, M_Biome_Boneyard_TunnelCrystal, "/Game/Landscape/Biomes/Biomes_Ingame/BoneYards/M_Biome_Boneyard_TunnelCrystal");

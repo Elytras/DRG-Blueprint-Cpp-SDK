@@ -29,9 +29,9 @@ public:
     class USceneComponent* DefaultSceneRoot;
     float RotationSpeed;
     int NumberOfMarkers;
-    virtual void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ExecuteUbergraph_BP_Hologram(int EntryPoint);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
 private:
     struct UeMarkers
     {

@@ -23,13 +23,13 @@ public:
     virtual void ExecuteUbergraph_BP_ClusterFragment_MicroMissileLauncher(int EntryPoint);
     UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ReceiveTick(float DeltaSeconds_0);
-    virtual void OnInitialized();
     virtual void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
+    virtual void OnInitialized();
 private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
-        static constexpr const char* UeIchRecords = "Damage;Light_DistanceIndicator;Light_Exhaust;MeshRocket;Particle_Exhaust;particle_Trail;ProjectileExplosion";
+        static constexpr const char* UeIchRecords = "Damage;Light_DistanceIndicator;Light_Exhaust;MeshRocket;Particle_Exhaust;Particle_Trail;ProjectileExplosion";
         static constexpr const char* UberGraphFrame_BP_ClusterFragment_MicroMissileLauncher_C__UeName = "UberGraphFrame";
         static constexpr const char* RotatingMovement__UeScsNode = "6d49dedb8218c64c9eff857af0b467d8";
         static constexpr const char* NS_MicroMissile_Cluster_Trail__UeScsNode = "edd0bd4ba4354f43aba70c3f4132a34e";

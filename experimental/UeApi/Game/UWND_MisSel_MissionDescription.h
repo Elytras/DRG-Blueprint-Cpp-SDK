@@ -45,7 +45,7 @@ public:
     UBasic_Menu_ColorBar* ColorBar_Bottom;
     class UTextBlock* DATADescription_Assignment;
     class UTextBlock* DATADescription_Assignment_Locked;
-    class UTextBlock* DATAMissionName;
+    class UTextBlock* DataMissionName;
     class UTextBlock* DATAMissionType;
     UITM_MisSel_DotMarker_CaveDifficulty* DotMarker_Complexity;
     UITM_MisSel_DotMarker_MissionLength* DotMarker_Length;

@@ -17,7 +17,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
-        static constexpr const char* UeIchRecords = "particle_Trail";
+        static constexpr const char* UeIchRecords = "Particle_Trail";
     };
 };
 

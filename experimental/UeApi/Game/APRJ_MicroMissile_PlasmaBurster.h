@@ -41,7 +41,7 @@ private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
-        static constexpr const char* UeIchRecords = "Damage;Light_Exhaust;MeshRocket;Particle_Exhaust;particle_Trail;ProjectileExplosion";
+        static constexpr const char* UeIchRecords = "Damage;Light_Exhaust;MeshRocket;Particle_Exhaust;Particle_Trail;ProjectileExplosion";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus PenetrationDamage-NOTUSED_GEN_VARIABLE:DamageConversionBonus_0";
         static constexpr const char* UberGraphFrame_PRJ_MicroMissile_PlasmaBurster_C__UeName = "UberGraphFrame";
         static constexpr const char* SM_HandGrenade_I__UeScsNode = "bb304298ddf4ab49a4d0e8a28e61a71d";

@@ -27,7 +27,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     UBlurBackground* BlurBackground;
     class UTextBlock* DATA_Rank;
-    class UImage* ICON_Padlock;
+    class UImage* Icon_Padlock;
     class UImage* ICON_Rank;
     class UImage* Image_106;
     class UVerticalBox* RankLock;

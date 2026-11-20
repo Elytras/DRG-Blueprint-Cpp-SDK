@@ -20,8 +20,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* Image_41;
     class UBiome* Biome;
-    UE_COSMETIC virtual void Construct();
     virtual void ExecuteUbergraph_LCD_MissionReadout_Garbage01(int EntryPoint);
+    UE_COSMETIC virtual void Construct();
 };
 
 using LCD_MissionReadout_Garbage01_C = ::Game::UI::HUD_SpaceRig::MissionReadouts::ULCD_MissionReadout_Garbage01;

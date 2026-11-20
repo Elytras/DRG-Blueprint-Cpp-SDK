@@ -41,16 +41,16 @@ public:
     int ClipCountTrailing;
     bool IsCounting;
     virtual void ExecuteUbergraph_WeaponDisplay_GatlingGun_AmmoCount(int EntryPoint);
-    virtual void SetClipCount(int Value);
     virtual void InitializeAmmoWidget(class AItem* OwningItem, class UWidgetComponent* WidgetComp);
     virtual void OnAmmoLowFinished();
     UE_COSMETIC virtual void Construct();
-    virtual void SetMaxAmmo(int Value);
-    virtual void SetTotalCount(int Value);
     virtual void Check_AmmoLow();
     virtual void AdjustProgressBar();
     virtual void AnimateClipCount();
     virtual void AdjustPercentage();
+    virtual void SetClipCount(int Value);
+    virtual void SetMaxAmmo(int Value);
+    virtual void SetTotalCount(int Value);
 private:
     struct UeMarkers
     {

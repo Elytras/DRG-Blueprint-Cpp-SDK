@@ -27,7 +27,7 @@ public:
     class USphereComponent* Sphere;
     class UDamageComponent* Damage;
     class UProjectileExplosion* ProjectileExplosion;
-    class UStaticMeshComponent* mesh_front;
+    class UStaticMeshComponent* Mesh_Front;
     virtual void ExecuteUbergraph_PRJ_SentryOvercharge_Projectile(int EntryPoint);
     virtual void MakeBouncy();
     UE_PROTECTED virtual void ReceiveBeginPlay();
@@ -42,7 +42,7 @@ private:
         static constexpr const char* Sphere__UeScsNode = "dd9d7e7d60d6b044a19a4735fc36a214";
         static constexpr const char* Damage__UeScsNode = "82fef54d9c10ec48882fa93575e2c12f";
         static constexpr const char* ProjectileExplosion__UeScsNode = "d1a467784b06fa41a3eafa1e61ab4d12";
-        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* Mesh_Front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     };
 };
 

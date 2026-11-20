@@ -8554,11 +8554,10 @@ struct FRequiredMissionItem
     class UMissionTemplate* MissionTemplate;
     class UMissionComplexity* Complexity;
     class UMissionDuration* Duration;
-    class UMissionWarning* RequiredWarning;
     bool CanHaveMutators;
 
     FRequiredMissionItem() = default;
-    FRequiredMissionItem(class UMissionTemplate* MissionTemplate, class UMissionComplexity* Complexity, class UMissionDuration* Duration, class UMissionWarning* RequiredWarning, bool CanHaveMutators) {}
+    FRequiredMissionItem(class UMissionTemplate* MissionTemplate, class UMissionComplexity* Complexity, class UMissionDuration* Duration, bool CanHaveMutators) {}
 };
 
 struct FResourceDebris

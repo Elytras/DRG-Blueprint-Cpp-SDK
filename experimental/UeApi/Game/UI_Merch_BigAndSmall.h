@@ -38,7 +38,7 @@ public:
     UBasic_Image* Image_Big;
     UBasic_Image* Image_Hovered;
     UI_MediaPlayer* Image_MediaPlayer;
-    UBasic_Image* IMG_Shadow;
+    UBasic_Image* Img_Shadow;
     class UOverlay* Overlay_Big;
     class UHorizontalBox* Small_Box;
     FText Description;

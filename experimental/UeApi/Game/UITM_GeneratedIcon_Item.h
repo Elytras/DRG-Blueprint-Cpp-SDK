@@ -42,7 +42,7 @@ public:
     class UOverlay* Busy_Overlay;
     class UImage* Icon_Image;
     class UImage* ICON_Item;
-    class UImage* ICON_Padlock;
+    class UImage* Icon_Padlock;
     class UScaleBox* IconScaleBox;
     class USizeBox* IconSizer;
     class UWidgetSwitcher* IconTypeSwitcher;

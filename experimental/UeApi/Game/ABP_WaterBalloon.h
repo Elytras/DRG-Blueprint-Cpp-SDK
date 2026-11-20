@@ -31,13 +31,13 @@ public:
     float ImpulseStrength;
     FName ImpulseSocketName;
     class USoundCue* Death_Sound;
-    virtual void ReceiveHit(class UPrimitiveComponent* MyComp_ReceiveHit, class AActor* Other_ReceiveHit, class UPrimitiveComponent* OtherComp_ReceiveHit, bool bSelfMoved_ReceiveHit, FVector HitLocation_ReceiveHit, FVector HitNormal_ReceiveHit, FVector NormalImpulse_ReceiveHit, const FHitResult& Hit_ReceiveHit);
-    virtual void ReceiveIgnoreCharacter(class APlayerCharacter* Character_ReceiveIgnoreCharacter);
-    UE_MULTICAST virtual void Impact(class AActor* Other, FVector HitPosition);
-    virtual void ApplyForceSK(class USkeletalMeshComponent* Component, FVector Position);
-    virtual void ApplyForceSM(class UStaticMeshComponent* Component, FVector Position);
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ExecuteUbergraph_BP_WaterBalloon(int EntryPoint);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void ApplyForceSM(class UStaticMeshComponent* Component, FVector Position);
+    virtual void ApplyForceSK(class USkeletalMeshComponent* Component, FVector Position);
+    UE_MULTICAST virtual void Impact(class AActor* Other, FVector HitPosition);
+    virtual void ReceiveIgnoreCharacter(class APlayerCharacter* Character);
+    virtual void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit);
 private:
     struct UeMarkers
     {

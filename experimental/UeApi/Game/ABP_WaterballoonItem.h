@@ -20,8 +20,8 @@ public:
     UE_CLASS("/Game/Art/Environments/Holiday_BeachParty/BP_WaterballoonItem", "BP_WaterballoonItem_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* Throwlocation;
-    UE_PROTECTED virtual void RecieveEquipped();
     virtual void ExecuteUbergraph_BP_WaterballoonItem(int EntryPoint);
+    UE_PROTECTED virtual void RecieveEquipped();
     UE_PROTECTED virtual void RemovedFromInventory(class ACharacter* oldCharacter);
     UE_PROTECTED virtual void ReceiveItemThrown(class AThrowableActor* thrownActor);
 private:

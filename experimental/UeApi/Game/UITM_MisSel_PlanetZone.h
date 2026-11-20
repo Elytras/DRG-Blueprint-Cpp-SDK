@@ -30,7 +30,7 @@ public:
     UBasic_Menu_MinimalWindow* Basic_Menu_MinimalWindow;
     UBasic_Menu_MinimalWindow* BasicWindow_Minimal;
     class UImage* IMG_Padlock;
-    class UImage* IMG_Shadow;
+    class UImage* Img_Shadow;
     class UImage* IMG_TooltipArrow;
     class UButton* MainButton;
     class UVerticalBox* VertBox_Tooltip;

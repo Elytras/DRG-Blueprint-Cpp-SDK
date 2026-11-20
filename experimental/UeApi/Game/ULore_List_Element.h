@@ -43,7 +43,7 @@ public:
     class UWidgetSwitcher* WidgetSwitcher_Navigation;
     FText Header;
     FText SubText;
-    class UTexture2D* BGimage;
+    class UTexture2D* BGImage;
     FLinearColor BackgroundColor;
     class UTexture2D* FrontImage;
     FObjectiveMissionIcon MissionIcon;

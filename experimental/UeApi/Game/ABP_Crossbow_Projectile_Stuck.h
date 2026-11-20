@@ -35,7 +35,7 @@ public:
     class UPointLightComponent* PointLight1;
     class UNiagaraComponent* BansheePulse;
     class USphereComponent* UseableTrigger1;
-    class UStaticMeshComponent* mesh_front;
+    class UStaticMeshComponent* Mesh_Front;
     class UTerrainDetectComponent* TerrainDetect;
     class UInstantUsable* InstantUsable;
     float LightIntensity_Point;
@@ -54,7 +54,7 @@ private:
         static constexpr const char* PointLight1__UeScsNode = "6ac50d779e4ef94b879edc0b5fbe5126";
         static constexpr const char* BansheePulse__UeScsNode = "d31ad1a14979224faaf6ae1849daf35f";
         static constexpr const char* UseableTrigger1__UeScsNode = "3970a8c29e6de048abcaf12e23465a6d";
-        static constexpr const char* mesh_front__UeScsNode = "4a5674e72f3825479f254493688527ed";
+        static constexpr const char* Mesh_Front__UeScsNode = "4a5674e72f3825479f254493688527ed";
         static constexpr const char* TerrainDetect__UeScsNode = "d7647e2a3e61cd41849f8d2c68f345e8";
         static constexpr const char* InstantUsable__UeScsNode = "d856aca6f825d84a9cd4df0bced8bd0c";
     };

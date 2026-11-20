@@ -28,7 +28,7 @@ public:
     class UPointLightComponent* PointLight;
     class UStaticMeshComponent* SM_Light02;
     class UPointLightComponent* PointLight_NoShadow;
-    class UStaticMeshComponent* mesh_front;
+    class UStaticMeshComponent* Mesh_Front;
     class UStaticMeshComponent* Mesh_Light;
     class USceneComponent* Scene;
     FRotator NextPointLookat;
@@ -51,7 +51,7 @@ private:
         static constexpr const char* PointLight__UeScsNode = "90694c4d32fbca47a824a229fbe51c8f";
         static constexpr const char* SM_Light02__UeScsNode = "db39aacaf049fb4b8e288698cc97bb2c";
         static constexpr const char* PointLight_NoShadow__UeScsNode = "6a26563995042444b173e21a92ef8fcc";
-        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* Mesh_Front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
         static constexpr const char* Mesh_Light__UeScsNode = "0724e69dcddae346a0fe8d7a24416e16";
         static constexpr const char* Scene__UeScsNode = "bf8bb96e030a5740a3b53fffd61e7455";
         static constexpr const char* NextPointLookat__Replicated = "OnRep_NextPointLookat:";

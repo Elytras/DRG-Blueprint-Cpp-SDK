@@ -19,10 +19,10 @@ public:
     UE_CLASS("/Game/Art/Environments/SpaceRig/TipMachine/BP_TipJarUsable", "BP_TipJarUsable_C");
     FPointerToUberGraphFrame UberGraphFrame;
     int TipAmount;
-    UE_PURE virtual FText GetUseText(class APlayerCharacter* User_GetUseText);
-    virtual void SetTipAmount(int Credits);
     virtual void ExecuteUbergraph_BP_TipJarUsable(int EntryPoint);
-    UE_PROTECTED UE_BLUEPRINT_CALLABLE virtual bool BPCanUse(class APlayerCharacter* User_BPCanUse, class USceneComponent* useCollider_BPCanUse) const;
+    virtual void SetTipAmount(int Credits);
+    UE_PURE virtual FText GetUseText(class APlayerCharacter* User);
+    UE_PROTECTED UE_BLUEPRINT_CALLABLE virtual bool BPCanUse(class APlayerCharacter* User, class USceneComponent* useCollider) const;
 };
 
 using BP_TipJarUsable_C = ::Game::Art::Environments::SpaceRig::TipMachine::UBP_TipJarUsable;

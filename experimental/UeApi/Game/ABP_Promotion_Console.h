@@ -20,8 +20,8 @@ public:
     using ABP_PlayerController_SpaceRig = ::Game::Game::SpaceRig::ABP_PlayerController_SpaceRig;
     FPointerToUberGraphFrame UberGraphFrame_BP_Promotion_Console_C;
     class UAudioComponent* Audio;
-    virtual void OnOpenConsole(ABP_PlayerController_SpaceRig* InPlayerController_OnOpenConsole);
     virtual void ExecuteUbergraph_BP_Promotion_Console(int EntryPoint);
+    virtual void OnOpenConsole(ABP_PlayerController_SpaceRig* InPlayerController);
 private:
     struct UeMarkers
     {

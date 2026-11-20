@@ -26,7 +26,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimUnlocked;
     class UProgressBar* BG;
-    class UImage* ICON_Padlock;
+    class UImage* Icon_Padlock;
     class UImage* Icon_Unlock;
     class UImage* Image_BG;
     class UImage* Image_Glow;

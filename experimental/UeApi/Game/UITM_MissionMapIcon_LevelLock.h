@@ -19,7 +19,7 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class UImage* ICON_Border1;
     class UImage* ICON_Border2;
-    class UImage* ICON_Padlock;
+    class UImage* Icon_Padlock;
     virtual void ExecuteUbergraph_ITM_MissionMapIcon_LevelLock(int EntryPoint);
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
 };

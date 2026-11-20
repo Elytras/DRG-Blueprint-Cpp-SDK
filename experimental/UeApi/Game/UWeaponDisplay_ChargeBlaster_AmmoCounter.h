@@ -29,12 +29,12 @@ public:
     class UImage* Image_88;
     class UImage* WarningOverlay;
     virtual void ExecuteUbergraph_WeaponDisplay_ChargeBlaster_AmmoCounter(int EntryPoint);
-    virtual void SetClipCount(int Value);
     virtual void Total_Ammo_left_changed(int amount);
     virtual void Max_Ammo_Changed(int amount);
     UE_COSMETIC virtual void Construct();
-    virtual void SetTotalCount(int Value);
     virtual void UpdateAmount(int Value);
+    virtual void SetClipCount(int Value);
+    virtual void SetTotalCount(int Value);
 private:
     struct UeMarkers
     {

@@ -30,7 +30,7 @@ public:
     class UBorder* Border_Outside;
     class UBorder* BorderBG;
     class UImage* ICON_Item;
-    class UImage* ICON_Padlock;
+    class UImage* Icon_Padlock;
     class UImage* Shadow;
     class USizeBox* SizeBox_1;
     TScriptInterface<class ICraftable> Item;
